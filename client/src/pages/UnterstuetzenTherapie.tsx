@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb } from "lucide-react";
+import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, Image } from "lucide-react";
 import { Link } from "wouter";
 
 export default function UnterstuetzenTherapie() {
@@ -233,6 +233,70 @@ export default function UnterstuetzenTherapie() {
                   </ul>
                 </CardContent>
               </Card>
+            </motion.div>
+
+            {/* Materialien zum Download */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Download className="w-8 h-8 text-[oklch(0.45_0.05_250)]" />
+                Materialien zum Thema
+              </h2>
+              
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    title: "Validierungs-Stufenmodell",
+                    description: "Die 6 Stufen der Validierung",
+                    type: "PNG",
+                    rating: "22/24",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xLQHqLJRQTkLMXqV.png"
+                  },
+                  {
+                    title: "Eiertanz-Dynamik",
+                    description: "Die Beziehungsdynamik verstehen",
+                    type: "PNG",
+                    rating: "21/24",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vMQZPNhJYhLgkJWc.png"
+                  }
+                ].map((item, index) => (
+                  <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-[oklch(0.90_0.03_250)] flex items-center justify-center flex-shrink-0">
+                          <Image className="w-4 h-4 text-[oklch(0.45_0.05_250)]" />
+                        </div>
+                        <span className="text-xs bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)] px-2 py-0.5 rounded-full">
+                          {item.rating}
+                        </span>
+                      </div>
+                      <h3 className="font-medium text-foreground text-sm mb-1">{item.title}</h3>
+                      <p className="text-xs text-muted-foreground mb-2">{item.description}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-muted-foreground">{item.type}</span>
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" download>
+                          <Button size="sm" variant="outline" className="h-7 text-xs">
+                            <Download className="w-3 h-3 mr-1" />
+                            Download
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              <div className="mt-4 text-center">
+                <Link href="/materialien">
+                  <Button variant="link" className="text-[oklch(0.45_0.05_250)]">
+                    Alle Materialien ansehen →
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Navigation */}

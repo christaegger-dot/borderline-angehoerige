@@ -186,19 +186,19 @@ export default function UnterstuetzenUebersicht() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "Vier Arten von Grenzen",
-                    description: "Zeitliche, emotionale, physische und Kommunikations-Grenzen",
+                    title: "Der Eiertanz",
+                    description: "Warum wir auf Zehenspitzen gehen – der Teufelskreis und der Ausweg",
                     type: "PNG",
                     rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xBJjrppYdghIkNtF.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izUnFdVOmLVUwSFD.png",
                     isNew: true
                   },
                   {
-                    title: "Die Grenzen-Leiter",
-                    description: "Eskalationsstufen – von freundlicher Erinnerung bis Kontaktpause",
+                    title: "Die 3 Säulen der Unterstützung",
+                    description: "Präsenz, Validierung, Stabilität – wie Sie wirklich helfen",
                     type: "PNG",
                     rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VGuivmsKMULEAWgP.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zmMFRewcjaAWQcZf.png",
                     isNew: true
                   }
                 ].map((item, index) => (

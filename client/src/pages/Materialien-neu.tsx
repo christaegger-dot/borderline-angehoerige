@@ -2,19 +2,14 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, FileText, Filter, BookOpen, Heart, MessageCircle, Shield, ExternalLink, AlertTriangle, Image as ImageIcon } from "lucide-react";
+import { Download, FileText, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, Image as ImageIcon } from "lucide-react";
 import { useState } from "react";
 
-// ═══════════════════════════════════════════════════════════════════════════
-// BEREINIGTE INFOGRAFIK-SAMMLUNG
-// Qualitätsgeprüft: Keine Redundanzen, stilistisch konsistent, vollständig
-// Stand: 05.02.2026
-// ═══════════════════════════════════════════════════════════════════════════
-
+// BEREINIGTE Infografiken-Daten - ohne Redundanzen, stilistisch konsistent
 const infografiken = [
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   // KATEGORIE: VERSTEHEN
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "spaltungs-zyklus",
     title: "Der Spaltungs-Zyklus",
@@ -52,9 +47,9 @@ const infografiken = [
     isNew: false
   },
 
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   // KATEGORIE: UNTERSTÜTZEN
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "eiertanz",
     title: "Der Eiertanz",
@@ -101,9 +96,9 @@ const infografiken = [
     isNew: true
   },
 
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   // KATEGORIE: KOMMUNIZIEREN
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "validierung-6-stufen",
     title: "Die 6 Stufen der Validierung",
@@ -123,9 +118,9 @@ const infografiken = [
     isNew: true
   },
 
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   // KATEGORIE: GRENZEN
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "vier-arten-grenzen",
     title: "Vier Arten von Grenzen",
@@ -163,18 +158,9 @@ const infografiken = [
     isNew: false
   },
 
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════
   // KATEGORIE: SELBSTFÜRSORGE
-  // ─────────────────────────────────────────────────────────────────────────
-  {
-    id: "selbstfuersorge-strategien",
-    title: "Selbstfürsorge für Angehörige",
-    description: "Die 4 Säulen der Selbstfürsorge: Körper, Geist, Beziehungen, Grenzen – mit Warnsignalen für Burnout.",
-    category: "selbstfuersorge",
-    type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wAgGnqlabUDXlySo.png",
-    isNew: true
-  },
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "fog-nebel",
     title: "Der Nebel (FOG)",
@@ -193,15 +179,16 @@ const infografiken = [
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NKouihgSdwkyJtNV.pdf",
     isNew: false
   },
+  // LÜCKE: Selbstfürsorge-Strategien Infografik fehlt noch
 ];
 
 const categories = [
-  { id: "alle", label: "Alle Materialien", icon: Filter },
-  { id: "verstehen", label: "Verstehen", icon: BookOpen },
-  { id: "unterstuetzen", label: "Unterstützen", icon: Heart },
-  { id: "kommunizieren", label: "Kommunizieren", icon: MessageCircle },
-  { id: "grenzen", label: "Grenzen", icon: Shield },
-  { id: "selbstfuersorge", label: "Selbstfürsorge", icon: AlertTriangle },
+  { id: "alle", label: "Alle Materialien", icon: Filter, count: infografiken.length },
+  { id: "verstehen", label: "Verstehen", icon: BookOpen, count: infografiken.filter(i => i.category === "verstehen").length },
+  { id: "unterstuetzen", label: "Unterstützen", icon: Heart, count: infografiken.filter(i => i.category === "unterstuetzen").length },
+  { id: "kommunizieren", label: "Kommunizieren", icon: MessageCircle, count: infografiken.filter(i => i.category === "kommunizieren").length },
+  { id: "grenzen", label: "Grenzen", icon: Shield, count: infografiken.filter(i => i.category === "grenzen").length },
+  { id: "selbstfuersorge", label: "Selbstfürsorge", icon: AlertTriangle, count: infografiken.filter(i => i.category === "selbstfuersorge").length },
 ];
 
 export default function Materialien() {
@@ -211,10 +198,6 @@ export default function Materialien() {
   const filteredInfografiken = activeCategory === "alle" 
     ? infografiken 
     : infografiken.filter(i => i.category === activeCategory);
-
-  // Zähler für Statistik
-  const pngCount = infografiken.filter(i => i.type === "png").length;
-  const pdfCount = infografiken.filter(i => i.type === "pdf").length;
 
   return (
     <Layout>
@@ -233,11 +216,10 @@ export default function Materialien() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
               Materialien & Infografiken
             </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+            <p className="text-lg text-muted-foreground mb-6">
               Alle Infografiken und Handouts zum Herunterladen, Ausdrucken und Teilen. 
               Ideal für Beratungsgespräche, Selbsthilfegruppen oder zur persönlichen Vertiefung.
             </p>
@@ -245,11 +227,11 @@ export default function Materialien() {
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
                 <ImageIcon className="w-4 h-4" />
-                {pngCount} Infografiken
+                {infografiken.filter(i => i.type === "png").length} Infografiken
               </span>
               <span className="flex items-center gap-1">
                 <FileText className="w-4 h-4" />
-                {pdfCount} PDF-Handouts
+                {infografiken.filter(i => i.type === "pdf").length} PDF-Handouts
               </span>
             </div>
           </motion.div>
@@ -257,25 +239,24 @@ export default function Materialien() {
       </section>
 
       {/* Filter */}
-      <section className="py-6 border-b border-border sticky top-16 bg-background/95 backdrop-blur z-10">
+      <section className="py-8 border-b border-border">
         <div className="container">
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => {
               const Icon = cat.icon;
-              const count = cat.id === "alle" 
-                ? infografiken.length 
-                : infografiken.filter(i => i.category === cat.id).length;
               return (
                 <Button
                   key={cat.id}
                   variant={activeCategory === cat.id ? "default" : "outline"}
                   size="sm"
                   onClick={() => setActiveCategory(cat.id)}
-                  className={activeCategory === cat.id ? "bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]" : ""}
+                  className={activeCategory === cat.id 
+                    ? "bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]" 
+                    : ""}
                 >
                   <Icon className="w-4 h-4 mr-2" />
                   {cat.label}
-                  <span className="ml-2 text-xs opacity-70">({count})</span>
+                  <span className="ml-2 text-xs opacity-70">({cat.count})</span>
                 </Button>
               );
             })}
@@ -283,66 +264,68 @@ export default function Materialien() {
         </div>
       </section>
 
-      {/* Grid */}
-      <section className="py-12 md:py-16">
+      {/* Materialien Grid */}
+      <section className="py-12">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredInfografiken.map((item, index) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Card className="h-full hover:shadow-lg transition-all hover:border-[oklch(0.55_0.10_145)]/30 overflow-hidden">
-                  {/* Vorschaubild für PNG-Dateien */}
-                  {item.type === "png" ? (
-                    <div 
-                      className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
-                      onClick={() => setPreviewImage(item.url)}
-                    >
-                      <img 
-                        src={item.url} 
-                        alt={item.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                        <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
-                      </div>
-                      {/* Badge */}
-                      {item.isNew && (
-                        <span className="absolute top-2 right-2 text-xs px-2 py-1 rounded-full bg-[oklch(0.75_0.15_55)] text-white font-medium">
-                          NEU
-                        </span>
-                      )}
-                    </div>
-                  ) : (
-                    /* PDF-Platzhalter */
-                    <div className="relative aspect-[4/3] bg-gradient-to-br from-[oklch(0.95_0.02_25)] to-[oklch(0.90_0.04_25)] flex items-center justify-center">
-                      <div className="text-center">
-                        <FileText className="w-16 h-16 text-[oklch(0.55_0.15_25)] mx-auto mb-2" />
-                        <span className="text-sm font-medium text-[oklch(0.45_0.10_25)]">PDF-Dokument</span>
-                      </div>
-                    </div>
-                  )}
-                  
+                <Card className="h-full border-border/50 hover:shadow-lg transition-all hover:border-[oklch(0.55_0.10_145)]/30">
                   <CardContent className="p-5">
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                        item.type === "pdf" 
+                          ? "bg-[oklch(0.92_0.06_35)]" 
+                          : "bg-[oklch(0.88_0.04_145)]"
+                      }`}>
+                        {item.type === "pdf" 
+                          ? <FileText className="w-5 h-5 text-[oklch(0.50_0.15_35)]" />
+                          : <ImageIcon className="w-5 h-5 text-[oklch(0.45_0.08_145)]" />
+                        }
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {item.isNew && (
+                          <span className="text-xs bg-[oklch(0.75_0.15_55)] text-white px-2 py-0.5 rounded-full font-medium">
+                            NEU
+                          </span>
+                        )}
+                        <span className="text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full uppercase">
+                          {item.type}
+                        </span>
+                      </div>
+                    </div>
+                    
                     <h3 className="font-display font-semibold text-foreground mb-2">
                       {item.title}
                     </h3>
-                    
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                       {item.description}
                     </p>
                     
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground uppercase">
-                        {item.type}
-                      </span>
-                      <a href={item.url} target="_blank" rel="noopener noreferrer" download>
-                        <Button size="sm" className="bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]">
+                    <div className="flex items-center gap-2">
+                      {item.type === "png" && (
+                        <Button 
+                          size="sm" 
+                          variant="outline" 
+                          className="flex-1"
+                          onClick={() => setPreviewImage(item.url)}
+                        >
+                          Vorschau
+                        </Button>
+                      )}
+                      <a 
+                        href={item.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        download
+                        className="flex-1"
+                      >
+                        <Button size="sm" className="w-full bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]">
                           <Download className="w-4 h-4 mr-2" />
                           Download
                         </Button>
@@ -353,37 +336,13 @@ export default function Materialien() {
               </motion.div>
             ))}
           </div>
-          
-          {filteredInfografiken.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">Keine Materialien in dieser Kategorie gefunden.</p>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Nutzungshinweis */}
-      <section className="py-12 bg-muted/30">
-        <div className="container">
-          <Card className="bg-[oklch(0.95_0.03_85)] border-[oklch(0.60_0.10_85)]">
-            <CardContent className="p-6">
-              <h3 className="font-display font-semibold text-foreground mb-2">
-                Nutzungshinweis
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Alle Materialien dürfen für private und nicht-kommerzielle Zwecke frei verwendet werden. 
-                Bei Weitergabe bitte die Quelle angeben: <strong>eiertanz.manus.space</strong> – 
-                erstellt von Christa Egger, Angehörigenarbeit PUK Zürich.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Lightbox für Bildvorschau */}
+      {/* Lightbox Preview */}
       {previewImage && (
         <div 
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-pointer"
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
           onClick={() => setPreviewImage(null)}
         >
           <motion.div
@@ -402,6 +361,24 @@ export default function Materialien() {
           </motion.div>
         </div>
       )}
+
+      {/* Hinweis */}
+      <section className="py-12 bg-muted/30">
+        <div className="container">
+          <Card className="bg-[oklch(0.95_0.03_85)] border-[oklch(0.60_0.10_85)]">
+            <CardContent className="p-6">
+              <h3 className="font-display font-semibold text-foreground mb-2">
+                Nutzungshinweis
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Alle Materialien dürfen für private und nicht-kommerzielle Zwecke frei verwendet werden. 
+                Bei Weitergabe bitte die Quelle angeben: <strong>eiertanz.manus.space</strong> – 
+                erstellt von Christa Egger, Angehörigenarbeit PUK Zürich.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     </Layout>
   );
 }

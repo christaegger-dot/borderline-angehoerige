@@ -325,20 +325,20 @@ export default function UnterstuetzenKrise() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "Grenzen als Geländer, nicht als Mauer",
-                    description: "Warum Grenzen für Menschen mit BPD hilfreich sind",
+                    title: "In der Krise unterstützen",
+                    description: "Das Ampel-System und 4 Schritte der Deeskalation",
                     type: "PNG",
                     rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zMFfHFCOztVWyzCA.png",
                     isNew: true,
                     icon: "image"
                   },
                   {
-                    title: "Der Nebel (FOG) – Emotionale Muster",
-                    description: "Fear, Obligation, Guilt – erkennen und entkommen",
+                    title: "Grenzen als Geländer",
+                    description: "Warum Grenzen für Menschen mit BPD hilfreich sind",
                     type: "PNG",
                     rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/doxRJKzyLuIwYzXV.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
                     isNew: true,
                     icon: "image"
                   }

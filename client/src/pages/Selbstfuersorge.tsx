@@ -663,15 +663,15 @@ export default function Selbstfuersorge() {
                         <BookOpen className="w-6 h-6 text-[oklch(0.45_0.10_145)]" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground mb-1">Der Nebel (FOG)</h3>
-                        <p className="text-sm text-muted-foreground mb-2">Fear, Obligation, Guilt – was uns gefangen hält</p>
-                        <span className="inline-flex items-center gap-1 text-xs bg-[oklch(0.55_0.10_145)]/20 text-[oklch(0.45_0.10_145)] px-2 py-1 rounded-full">
+                        <h3 className="font-display font-semibold text-foreground mb-1">Selbstfürsorge für Angehörige</h3>
+                        <p className="text-sm text-muted-foreground mb-2">Die 4 Säulen der Selbstfürsorge mit Warnsignalen</p>
+                        <span className="inline-flex items-center gap-1 text-xs bg-[oklch(0.75_0.15_55)] text-white px-2 py-1 rounded-full">
                           NEU · PNG
                         </span>
                       </div>
                     </div>
                     <a 
-                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/trxdqyIMGIBQpQgg.png"
+                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wAgGnqlabUDXlySo.png"
                       download
                       className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.45_0.12_145)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     >
@@ -688,15 +688,15 @@ export default function Selbstfuersorge() {
                         <BookOpen className="w-6 h-6 text-[oklch(0.55_0.14_55)]" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground mb-1">Der Eiertanz</h3>
-                        <p className="text-sm text-muted-foreground mb-2">Der Teufelskreis und der Ausweg</p>
-                        <span className="inline-flex items-center gap-1 text-xs bg-[oklch(0.65_0.12_55)]/20 text-[oklch(0.55_0.14_55)] px-2 py-1 rounded-full">
+                        <h3 className="font-display font-semibold text-foreground mb-1">Der Nebel (FOG)</h3>
+                        <p className="text-sm text-muted-foreground mb-2">Fear, Obligation, Guilt – emotionale Muster erkennen</p>
+                        <span className="inline-flex items-center gap-1 text-xs bg-[oklch(0.75_0.15_55)] text-white px-2 py-1 rounded-full">
                           NEU · PNG
                         </span>
                       </div>
                     </div>
                     <a 
-                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izUnFdVOmLVUwSFD.png"
+                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/doxRJKzyLuIwYzXV.png"
                       download
                       className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     >

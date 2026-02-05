@@ -373,32 +373,40 @@ export default function Grenzen() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "Grenzen setzen: Praktische Anleitung",
+                    title: "Vier Arten von Grenzen",
+                    description: "Zeitliche, emotionale, physische und Kommunikations-Grenzen",
                     type: "PNG",
-                    rating: "24/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sWrGzfdVjABcfZHV.png",
-                    icon: Image
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xBJjrppYdghIkNtF.png",
+                    icon: Image,
+                    isNew: true
+                  },
+                  {
+                    title: "Die Grenzen-Leiter",
+                    description: "Eskalationsstufen bei Grenzverletzungen",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VGuivmsKMULEAWgP.png",
+                    icon: Image,
+                    isNew: true
+                  },
+                  {
+                    title: "Grenzen setzen",
+                    description: "Schritt-für-Schritt-Anleitung",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yUNPfTDyQWmciNRz.png",
+                    icon: Image,
+                    isNew: true
                   },
                   {
                     title: "Grenzsetzung als Orientierung",
+                    description: "Ausführliches PDF-Handout",
                     type: "PDF",
                     rating: "24/24",
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WnqfDwuBRErJrLPY.pdf",
-                    icon: FileText
-                  },
-                  {
-                    title: "Grenzen setzen: 5 praktische Ansätze",
-                    type: "PNG",
-                    rating: "23/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YuHdFnBIxTtnylpH.png",
-                    icon: Image
-                  },
-                  {
-                    title: "Die Grenzen-Pyramide",
-                    type: "PNG",
-                    rating: "22/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EGaWNVcKclZYNmVr.png",
-                    icon: Image
+                    icon: FileText,
+                    isNew: false
                   }
                 ].map((item, index) => {
                   const Icon = item.icon;
@@ -409,11 +417,12 @@ export default function Grenzen() {
                           <div className="w-8 h-8 rounded-lg bg-[oklch(0.92_0.06_35)] flex items-center justify-center flex-shrink-0">
                             <Icon className="w-4 h-4 text-[oklch(0.50_0.15_35)]" />
                           </div>
-                          <span className="text-xs bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)] px-2 py-0.5 rounded-full">
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${item.isNew ? 'bg-[oklch(0.75_0.15_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
                             {item.rating}
                           </span>
                         </div>
-                        <h3 className="font-medium text-foreground text-sm mb-2">{item.title}</h3>
+                        <h3 className="font-medium text-foreground text-sm mb-1">{item.title}</h3>
+                        <p className="text-xs text-muted-foreground mb-2">{item.description}</p>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-muted-foreground">{item.type}</span>
                           <a href={item.url} target="_blank" rel="noopener noreferrer" download>

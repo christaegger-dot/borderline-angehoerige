@@ -250,16 +250,20 @@ export default function Kommunizieren() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "Validierungs-Stufenmodell",
+                    title: "Die 6 Stufen der Validierung",
+                    description: "Von aufmerksamem Zuhören bis radikaler Echtheit",
                     type: "PNG",
-                    rating: "22/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GpULhcISAfiJyzgJ.png"
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UamrzhkaRxuPSDVi.png",
+                    isNew: true
                   },
                   {
                     title: "SET-Kommunikation",
+                    description: "Support, Empathy, Truth für schwierige Gespräche",
                     type: "PNG",
-                    rating: "22/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cfAdmAmZEXbNNxZl.png"
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BkgLXBtsiscPljTj.png",
+                    isNew: true
                   }
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">
@@ -268,11 +272,12 @@ export default function Kommunizieren() {
                         <div className="w-8 h-8 rounded-lg bg-[oklch(0.90_0.03_250)] flex items-center justify-center flex-shrink-0">
                           <Image className="w-4 h-4 text-[oklch(0.45_0.05_250)]" />
                         </div>
-                        <span className="text-xs bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)] px-2 py-0.5 rounded-full">
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${item.isNew ? 'bg-[oklch(0.75_0.15_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
                           {item.rating}
                         </span>
                       </div>
-                      <h3 className="font-medium text-foreground text-sm mb-2">{item.title}</h3>
+                      <h3 className="font-medium text-foreground text-sm mb-1">{item.title}</h3>
+                      <p className="text-xs text-muted-foreground mb-2">{item.description}</p>
                       <div className="flex items-center justify-between">
                         <span className="text-xs text-muted-foreground">{item.type}</span>
                         <a href={item.url} target="_blank" rel="noopener noreferrer" download>

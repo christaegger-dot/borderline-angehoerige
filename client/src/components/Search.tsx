@@ -219,6 +219,43 @@ const searchableContent = [
     section: "Selbsttest"
   },
   
+  // Selbsthilfegruppen
+  {
+    title: "Selbsthilfegruppen & Netzwerke",
+    description: "Angebote für Angehörige in der Schweiz",
+    keywords: ["selbsthilfe", "selbsthilfegruppe", "netzwerk", "gruppe", "austausch", "angehörige"],
+    href: "/selbsthilfegruppen",
+    section: "Selbsthilfegruppen"
+  },
+  {
+    title: "Stand by You Schweiz",
+    description: "Netzwerk für Angehörige von Menschen mit psychischen Erkrankungen (ehemals VASK)",
+    keywords: ["stand by you", "vask", "angehörige", "netzwerk", "beratung", "schweiz", "podcast"],
+    href: "/selbsthilfegruppen",
+    section: "Selbsthilfegruppen"
+  },
+  {
+    title: "Selbsthilfe Schweiz",
+    description: "Datenbank für Selbsthilfegruppen in der ganzen Schweiz",
+    keywords: ["selbsthilfe schweiz", "datenbank", "gruppen", "regional", "zürich", "bern", "winterthur"],
+    href: "/selbsthilfegruppen",
+    section: "Selbsthilfegruppen"
+  },
+  {
+    title: "Pro Mente Sana",
+    description: "Beratung für psychisch Betroffene und Angehörige",
+    keywords: ["pro mente sana", "beratung", "telefon", "email", "kostenlos"],
+    href: "/selbsthilfegruppen",
+    section: "Selbsthilfegruppen"
+  },
+  {
+    title: "Fachstelle Angehörigenarbeit PUK Zürich",
+    description: "Kostenlose, vertrauliche Beratung für Angehörige im Kanton Zürich",
+    keywords: ["fachstelle", "angehörigenarbeit", "puk", "zürich", "beratung", "kostenlos"],
+    href: "/selbsthilfegruppen",
+    section: "Selbsthilfegruppen"
+  },
+  
   // Spezifische Begriffe
   {
     title: "DBT (Dialektisch-Behaviorale Therapie)",
@@ -228,11 +265,18 @@ const searchableContent = [
     section: "Unterstützen"
   },
   {
-    title: "Stand by You",
-    description: "Netzwerk für Angehörige von Menschen mit psychischen Erkrankungen",
-    keywords: ["stand by you", "angehörige", "netzwerk", "selbsthilfe", "schweiz"],
-    href: "/selbstfuersorge",
-    section: "Selbstfürsorge"
+    title: "PUK Zürich Notfall",
+    description: "Psychiatrische Notdienste für Kinder, Erwachsene und Senioren",
+    keywords: ["puk", "notfall", "psychiatrie", "zürich", "kinder", "erwachsene", "senioren", "kiz"],
+    href: "/notfall",
+    section: "Krisenressourcen"
+  },
+  {
+    title: "McLean-Studie & CLPS-Studie",
+    description: "Langzeitstudien zur Remission bei Borderline",
+    keywords: ["mclean", "clps", "studie", "forschung", "zanarini", "gunderson", "langzeit"],
+    href: "/genesung",
+    section: "Genesung"
   },
 ];
 

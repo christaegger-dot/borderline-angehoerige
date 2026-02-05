@@ -235,6 +235,11 @@ export default function Layout({ children }: LayoutProps) {
                     Feedback geben
                   </Link>
                 </li>
+                <li>
+                  <Link href="/glossar" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                    Glossar
+                  </Link>
+                </li>
               </ul>
             </div>
 

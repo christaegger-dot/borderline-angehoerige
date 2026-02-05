@@ -278,6 +278,64 @@ const searchableContent = [
     href: "/genesung",
     section: "Genesung"
   },
+  
+  // Glossar
+  {
+    title: "Glossar – Fachbegriffe erklärt",
+    description: "DBT, Validierung, SET-Kommunikation und weitere Begriffe verständlich erklärt",
+    keywords: ["glossar", "fachbegriffe", "lexikon", "erklärung", "definition", "begriffe"],
+    href: "/glossar",
+    section: "Glossar"
+  },
+  {
+    title: "Splitting",
+    description: "Schwarz-Weiss-Denken bei Borderline – Glossar-Eintrag",
+    keywords: ["splitting", "schwarz-weiss", "idealisierung", "entwertung", "glossar"],
+    href: "/glossar",
+    section: "Glossar"
+  },
+  {
+    title: "Mentalisierung",
+    description: "Die Fähigkeit, Verhalten als Ausdruck von Gedanken und Gefühlen zu verstehen",
+    keywords: ["mentalisierung", "mentalisieren", "verstehen", "gedanken", "gefühle", "glossar"],
+    href: "/glossar",
+    section: "Glossar"
+  },
+  {
+    title: "Dissoziation",
+    description: "Zustand der Abgetrenntheit von sich selbst oder der Umgebung",
+    keywords: ["dissoziation", "dissoziieren", "abgetrennt", "unwirklich", "glossar"],
+    href: "/glossar",
+    section: "Glossar"
+  },
+  {
+    title: "Co-Abhängigkeit",
+    description: "Wenn das eigene Wohlbefinden vom Zustand des anderen abhängt",
+    keywords: ["co-abhängigkeit", "abhängigkeit", "muster", "angehörige", "glossar"],
+    href: "/glossar",
+    section: "Glossar"
+  },
+  {
+    title: "Enabling",
+    description: "Unbeabsichtigtes Ermöglichen von problematischem Verhalten",
+    keywords: ["enabling", "ermöglichen", "verstärken", "konsequenzen", "glossar"],
+    href: "/glossar",
+    section: "Glossar"
+  },
+  {
+    title: "DEARMAN",
+    description: "DBT-Technik für effektive Kommunikation",
+    keywords: ["dearman", "kommunikation", "dbt", "technik", "glossar"],
+    href: "/glossar",
+    section: "Glossar"
+  },
+  {
+    title: "Leuchtturm-Prinzip",
+    description: "Metapher für die Rolle von Angehörigen – stabil sein, ohne zu steuern",
+    keywords: ["leuchtturm", "prinzip", "metapher", "rolle", "angehörige", "glossar"],
+    href: "/glossar",
+    section: "Glossar"
+  },
 ];
 
 interface SearchProps {

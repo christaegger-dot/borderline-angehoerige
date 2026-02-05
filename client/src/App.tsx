@@ -22,6 +22,7 @@ import Datenschutz from "./pages/Datenschutz";
 import Genesung from "./pages/Genesung";
 import Selbsthilfegruppen from "./pages/Selbsthilfegruppen";
 import Feedback from "./pages/Feedback";
+import Glossar from "./pages/Glossar";
 
 function Router() {
   return (
@@ -44,6 +45,7 @@ function Router() {
       <Route path="/genesung" component={Genesung} />
       <Route path="/selbsthilfegruppen" component={Selbsthilfegruppen} />
       <Route path="/feedback" component={Feedback} />
+      <Route path="/glossar" component={Glossar} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

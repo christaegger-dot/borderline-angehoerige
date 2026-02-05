@@ -16,7 +16,8 @@ import {
   CheckCircle2,
   AlertTriangle,
   Compass,
-  TrendingUp
+  TrendingUp,
+  Info
 } from "lucide-react";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wNcJxGFEHelzxZEE.png";
@@ -139,10 +140,18 @@ export default function Home() {
                 Für Angehörige von Menschen mit Borderline
               </span>
               
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
                 Schluss mit dem{" "}
                 <span className="text-[oklch(0.65_0.12_55)]">Eiertanz</span>
               </h1>
+              
+              <div className="flex items-start gap-2 mb-6 p-3 rounded-lg bg-background/60 backdrop-blur-sm border border-border/30 max-w-xl">
+                <Info className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">«Eiertanz»</span> – so beschreiben Paul T. Mason und Randi Kreger in ihrem Standardwerk das Gefühl vieler Angehöriger: ständig auf der Hut, um niemanden zu verletzen.{" "}
+                  <Link href="/buchempfehlungen" className="text-[oklch(0.55_0.12_55)] hover:underline">Zum Buch →</Link>
+                </p>
+              </div>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
                 Sie können helfen – und dabei auf sich achten. Evidenzbasierte Strategien für den Alltag mit einem Menschen, der an Borderline leidet.

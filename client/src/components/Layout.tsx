@@ -240,6 +240,11 @@ export default function Layout({ children }: LayoutProps) {
                     Glossar
                   </Link>
                 </li>
+                <li>
+                  <Link href="/buchempfehlungen" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                    Buchempfehlungen
+                  </Link>
+                </li>
               </ul>
             </div>
 

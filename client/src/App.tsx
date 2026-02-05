@@ -23,6 +23,7 @@ import Genesung from "./pages/Genesung";
 import Selbsthilfegruppen from "./pages/Selbsthilfegruppen";
 import Feedback from "./pages/Feedback";
 import Glossar from "./pages/Glossar";
+import Buchempfehlungen from "./pages/Buchempfehlungen";
 
 function Router() {
   return (
@@ -46,6 +47,7 @@ function Router() {
       <Route path="/selbsthilfegruppen" component={Selbsthilfegruppen} />
       <Route path="/feedback" component={Feedback} />
       <Route path="/glossar" component={Glossar} />
+      <Route path="/buchempfehlungen" component={Buchempfehlungen} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

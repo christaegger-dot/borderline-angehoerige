@@ -5,31 +5,41 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
+import Verstehen from "./pages/Verstehen";
+import Unterstuetzen from "./pages/Unterstuetzen";
+import UnterstuetzenUebersicht from "./pages/UnterstuetzenUebersicht";
+import UnterstuetzenAlltag from "./pages/UnterstuetzenAlltag";
+import UnterstuetzenTherapie from "./pages/UnterstuetzenTherapie";
+import UnterstuetzenKrise from "./pages/UnterstuetzenKrise";
+import Kommunizieren from "./pages/Kommunizieren";
+import Grenzen from "./pages/Grenzen";
+import Selbstfuersorge from "./pages/Selbstfuersorge";
+import Notfall from "./pages/Notfall";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/verstehen" component={Verstehen} />
+      <Route path="/unterstuetzen" component={Unterstuetzen} />
+      <Route path="/unterstuetzen/uebersicht" component={UnterstuetzenUebersicht} />
+      <Route path="/unterstuetzen/alltag" component={UnterstuetzenAlltag} />
+      <Route path="/unterstuetzen/therapie" component={UnterstuetzenTherapie} />
+      <Route path="/unterstuetzen/krise" component={UnterstuetzenKrise} />
+      <Route path="/kommunizieren" component={Kommunizieren} />
+      <Route path="/grenzen" component={Grenzen} />
+      <Route path="/selbstfuersorge" component={Selbstfuersorge} />
+      <Route path="/notfall" component={Notfall} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />

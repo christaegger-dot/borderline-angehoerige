@@ -245,6 +245,11 @@ export default function Layout({ children }: LayoutProps) {
                     Buchempfehlungen
                   </Link>
                 </li>
+                <li>
+                  <Link href="/therapieangebote" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                    Therapieangebote Zürich
+                  </Link>
+                </li>
               </ul>
             </div>
 

@@ -230,6 +230,11 @@ export default function Layout({ children }: LayoutProps) {
                     Selbsthilfegruppen
                   </Link>
                 </li>
+                <li>
+                  <Link href="/feedback" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                    Feedback geben
+                  </Link>
+                </li>
               </ul>
             </div>
 

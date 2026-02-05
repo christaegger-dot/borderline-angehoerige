@@ -199,7 +199,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <div className="border-t border-border/50 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2024 Schluss mit dem Eiertanz. Alle Rechte vorbehalten.
+              © 2025 Schluss mit dem Eiertanz. Alle Rechte vorbehalten.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { 
   Sparkles, ArrowRight, CheckCircle2, Heart, AlertTriangle, Users, 
   Clock, Brain, Wind, Lightbulb, Shield, BookOpen, Phone, Download,
-  ChevronDown, ChevronUp
+  ChevronDown, ChevronUp, UserCircle
 } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
@@ -714,6 +714,69 @@ export default function Selbstfuersorge() {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
+              </div>
+            </motion.div>
+
+            {/* Hinweise für verschiedene Angehörigengruppen */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Users className="w-8 h-8 text-[oklch(0.55_0.12_250)]" />
+                Hinweise für Ihre Situation
+              </h2>
+              
+              <div className="space-y-4">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)] bg-[oklch(0.97_0.01_35)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_35)] flex items-center justify-center flex-shrink-0">
+                        <Heart className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als Partner/in</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Ihre Beziehung ist nicht Ihre einzige Identität. Pflegen Sie Freundschaften und Hobbys ausserhalb der Partnerschaft. Es ist kein Verrat, Zeit für sich zu beanspruchen – es ist Überlebensstrategie.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.12_250)] bg-[oklch(0.97_0.01_250)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_250)] flex items-center justify-center flex-shrink-0">
+                        <Users className="w-5 h-5 text-[oklch(0.55_0.12_250)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als Elternteil</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Elterliche Schuldgefühle sind normal, aber oft unbegründet. Borderline hat komplexe Ursachen – Sie haben nicht «versagt». Erlauben Sie sich, auch stolz auf das zu sein, was Sie richtig gemacht haben. Und: Sie dürfen auch mal wütend sein.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)] bg-[oklch(0.97_0.01_145)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_145)] flex items-center justify-center flex-shrink-0">
+                        <UserCircle className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Sie mussten früh erwachsen werden und Verantwortung übernehmen, die nicht Ihre war. Selbstfürsorge kann sich fremd anfühlen – üben Sie sie trotzdem. Sie haben ein Recht auf ein eigenes Leben, ohne ständig verfügbar zu sein.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </motion.div>
 

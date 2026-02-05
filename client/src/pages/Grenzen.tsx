@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image, Clock, HeartHandshake, Home, Wallet } from "lucide-react";
+import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image, Clock, HeartHandshake, Home, Wallet, Users, Baby, UserCircle } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Grenzen() {
@@ -435,6 +435,69 @@ export default function Grenzen() {
                     Alle Materialien ansehen →
                   </Button>
                 </Link>
+              </div>
+            </motion.div>
+
+            {/* Hinweise für verschiedene Angehörigengruppen */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Users className="w-8 h-8 text-[oklch(0.55_0.12_250)]" />
+                Hinweise für Ihre Situation
+              </h2>
+              
+              <div className="space-y-4">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)] bg-[oklch(0.97_0.01_35)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_35)] flex items-center justify-center flex-shrink-0">
+                        <Heart className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als Partner/in</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Die Entscheidung, in der Beziehung zu bleiben, ist Ihre – und beide Optionen sind legitim. Grenzen zu setzen bedeutet nicht, die Beziehung aufzugeben. Es bedeutet, sie auf eine gesündere Basis zu stellen. Erlauben Sie sich, auch Ihre eigenen Bedürfnisse ernst zu nehmen.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.12_250)] bg-[oklch(0.97_0.01_250)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_250)] flex items-center justify-center flex-shrink-0">
+                        <Users className="w-5 h-5 text-[oklch(0.55_0.12_250)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als Elternteil</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Sie tragen keine Verantwortung für die Erkrankung Ihres Kindes – aber Sie können ein stabilisierender Faktor sein. Grenzen zu setzen ist kein Zeichen von Ablehnung, sondern ein Modell für gesunde Beziehungen. Ihr erwachsenes Kind braucht Eltern, die auch auf sich selbst achten.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)] bg-[oklch(0.97_0.01_145)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_145)] flex items-center justify-center flex-shrink-0">
+                        <UserCircle className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Sie sind nicht verpflichtet, die emotionalen Bedürfnisse Ihres Elternteils zu erfüllen – das war nie Ihre Aufgabe. Grenzen zu setzen kann sich wie Verrat anfühlen, ist aber ein wichtiger Schritt zu Ihrer eigenen emotionalen Gesundheit. Sie dürfen Ihr eigenes Leben leben.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </motion.div>
 

@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, Image, Eye, MessageSquare, Sparkles, History, Users, Star } from "lucide-react";
+import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle } from "lucide-react";
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
 
@@ -426,6 +426,69 @@ export default function Kommunizieren() {
                   </div>
                 </CardContent>
               </Card>
+            </motion.div>
+
+            {/* Hinweise für verschiedene Angehörigengruppen */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Users className="w-8 h-8 text-[oklch(0.55_0.12_250)]" />
+                Hinweise für Ihre Situation
+              </h2>
+              
+              <div className="space-y-4">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)] bg-[oklch(0.97_0.01_35)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_35)] flex items-center justify-center flex-shrink-0">
+                        <Heart className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als Partner/in</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          In Partnerschaften ist die emotionale Intensität oft am höchsten. Validierung bedeutet nicht, dass Sie mit allem einverstanden sind. Sie können die Gefühle Ihres Partners anerkennen und trotzdem bei Ihrer eigenen Wahrnehmung bleiben.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.12_250)] bg-[oklch(0.97_0.01_250)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_250)] flex items-center justify-center flex-shrink-0">
+                        <Users className="w-5 h-5 text-[oklch(0.55_0.12_250)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als Elternteil</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Die Eltern-Kind-Dynamik macht Kommunikation besonders komplex. Alte Muster sitzen tief. Versuchen Sie, Ihr erwachsenes Kind als eigenständige Person zu sehen – nicht als das Kind, das Sie einmal großgezogen haben. Das verändert den Ton.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)] bg-[oklch(0.97_0.01_145)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_145)] flex items-center justify-center flex-shrink-0">
+                        <UserCircle className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          Sie haben vielleicht gelernt, Ihre eigenen Gefühle zu unterdrücken, um Ihren Elternteil nicht zu «provozieren». Ihre Gefühle sind genauso gültig. Sie dürfen auch mal sagen: «Ich brauche gerade Abstand» – ohne schlechtes Gewissen.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </motion.div>
 
             {/* Navigation */}

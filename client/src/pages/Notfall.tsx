@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Phone, AlertTriangle, ExternalLink, Clock, MapPin } from "lucide-react";
+import { Phone, AlertTriangle, ExternalLink, Clock, MapPin, Baby, User, Users } from "lucide-react";
 
 export default function Notfall() {
   return (
@@ -113,7 +113,7 @@ export default function Notfall() {
               </div>
             </motion.div>
 
-            {/* Psychiatrische Notdienste */}
+            {/* Psychiatrische Notdienste Kanton Zürich */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -122,40 +122,149 @@ export default function Notfall() {
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Clock className="w-8 h-8 text-[oklch(0.55_0.15_35)]" />
-                Psychiatrische Notdienste
+                Psychiatrische Notdienste Kanton Zürich
               </h2>
               
-              <Card className="border-border/50 mb-4">
+              <Card className="border-border/50 mb-6">
                 <CardContent className="p-6">
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    In der Schweiz gibt es in jedem Kanton psychiatrische Notdienste. Diese sind rund um die Uhr erreichbar und können bei akuten psychischen Krisen helfen.
+                  <p className="text-muted-foreground leading-relaxed mb-2">
+                    Die <strong>Psychiatrische Universitätsklinik Zürich (PUK)</strong> bietet rund um die Uhr psychiatrische Notfalldienste für alle Altersgruppen.
                   </p>
-                  <p className="text-foreground font-medium">
-                    Fragen Sie bei der Dargebotenen Hand (143) nach dem zuständigen psychiatrischen Notdienst in Ihrer Region.
+                  <p className="text-sm text-muted-foreground">
+                    Standort: Lenggstrasse 31, 8032 Zürich
                   </p>
                 </CardContent>
               </Card>
               
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  { city: "Zürich", name: "PUK Zürich Notfall", info: "Lenggstrasse 31" },
-                  { city: "Bern", name: "UPD Bern Notfall", info: "Bolligenstrasse 111" },
-                  { city: "Basel", name: "UPK Basel Notfall", info: "Wilhelm Klein-Strasse 27" },
-                  { city: "Luzern", name: "Lups Notfall", info: "Schafmattstrasse 1" }
-                ].map((item, index) => (
-                  <Card key={index} className="border-border/50">
+              <div className="space-y-4">
+                {/* Kinder und Jugendliche */}
+                <Card className="border-l-4 border-[oklch(0.60_0.15_200)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.05_200)] flex items-center justify-center flex-shrink-0">
+                        <Baby className="w-6 h-6 text-[oklch(0.50_0.15_200)]" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-display font-semibold text-foreground mb-1">Kinder und Jugendliche</h3>
+                        <p className="text-muted-foreground text-sm mb-3">Kinder- und Jugendpsychiatrie der PUK Zürich (bis 18 Jahre)</p>
+                        <a href="tel:+41583846666">
+                          <Button 
+                            size="lg" 
+                            className="font-bold bg-[oklch(0.50_0.15_200)] hover:bg-[oklch(0.45_0.15_200)]"
+                          >
+                            <Phone className="w-4 h-4 mr-2" />
+                            058 384 66 66
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Erwachsene */}
+                <Card className="border-l-4 border-[oklch(0.55_0.15_145)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.05_145)] flex items-center justify-center flex-shrink-0">
+                        <User className="w-6 h-6 text-[oklch(0.45_0.12_145)]" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-display font-semibold text-foreground mb-1">Erwachsene</h3>
+                        <p className="text-muted-foreground text-sm mb-3">Psychiatrische Notaufnahme für Erwachsene (ab 18 Jahren)</p>
+                        <a href="tel:+41583842000">
+                          <Button 
+                            size="lg" 
+                            className="font-bold bg-[oklch(0.45_0.12_145)] hover:bg-[oklch(0.40_0.12_145)]"
+                          >
+                            <Phone className="w-4 h-4 mr-2" />
+                            058 384 20 00
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Senioren */}
+                <Card className="border-l-4 border-[oklch(0.55_0.12_55)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.05_55)] flex items-center justify-center flex-shrink-0">
+                        <Users className="w-6 h-6 text-[oklch(0.50_0.12_55)]" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-display font-semibold text-foreground mb-1">Senioren</h3>
+                        <p className="text-muted-foreground text-sm mb-3">Alterspsychiatrie der PUK Zürich (ab 65 Jahren)</p>
+                        <a href="tel:+41583844682">
+                          <Button 
+                            size="lg" 
+                            className="font-bold bg-[oklch(0.50_0.12_55)] hover:bg-[oklch(0.45_0.12_55)]"
+                          >
+                            <Phone className="w-4 h-4 mr-2" />
+                            058 384 46 82
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Kriseninterventionszentrum */}
+                <Card className="border-l-4 border-[oklch(0.50_0.10_280)]">
+                  <CardContent className="p-5">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.04_280)] flex items-center justify-center flex-shrink-0">
+                        <AlertTriangle className="w-6 h-6 text-[oklch(0.45_0.10_280)]" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-display font-semibold text-foreground mb-1">Kriseninterventionszentrum (KIZ)</h3>
+                        <p className="text-muted-foreground text-sm mb-3">Für akute psychiatrische Krisen bei Erwachsenen</p>
+                        <a href="tel:+41583846500">
+                          <Button 
+                            size="lg" 
+                            className="font-bold bg-[oklch(0.45_0.10_280)] hover:bg-[oklch(0.40_0.10_280)]"
+                          >
+                            <Phone className="w-4 h-4 mr-2" />
+                            058 384 65 00
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Weitere wichtige Nummern */}
+              <div className="mt-6 pt-6 border-t border-border/50">
+                <h3 className="font-display font-semibold text-foreground mb-4">Weitere wichtige Nummern</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <Card className="border-border/50">
                     <CardContent className="p-4">
-                      <div className="flex items-start gap-2">
-                        <MapPin className="w-4 h-4 text-[oklch(0.55_0.15_35)] mt-1 flex-shrink-0" />
+                      <div className="flex items-center justify-between">
                         <div>
-                          <h3 className="font-semibold text-foreground">{item.city}</h3>
-                          <p className="text-muted-foreground text-sm">{item.name}</p>
-                          <p className="text-muted-foreground text-xs">{item.info}</p>
+                          <p className="font-medium text-foreground">Ärztefon Zürich</p>
+                          <p className="text-sm text-muted-foreground">Hausbesuche durch Notfall-Psychiater</p>
                         </div>
+                        <a href="tel:0800336655" className="font-bold text-[oklch(0.55_0.15_145)] hover:underline">
+                          0800 33 66 55
+                        </a>
                       </div>
                     </CardContent>
                   </Card>
-                ))}
+                  <Card className="border-border/50">
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-medium text-foreground">PUK Zentrale</p>
+                          <p className="text-sm text-muted-foreground">Allgemeine Anfragen</p>
+                        </div>
+                        <a href="tel:+41583842111" className="font-bold text-[oklch(0.55_0.15_145)] hover:underline">
+                          058 384 21 11
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </motion.div>
 

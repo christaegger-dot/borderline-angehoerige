@@ -169,12 +169,41 @@ export function TableOfContents() {
     return () => observer.disconnect();
   }, [headings]);
 
+  // Body-Scroll-Lock für Mobile-Drawer: Verhindert Hintergrund-Scrollen auf iOS/Safari
+  useEffect(() => {
+    if (isOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
+    }
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   if (headings.length < 3) return null;
 
   const scrollToHeading = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const offset = 100;
+      // Dynamischer Offset basierend auf Header-Höhe
+      const header = document.querySelector('header');
+      const headerHeight = header?.getBoundingClientRect().height || 80;
+      const offset = headerHeight + 20; // Header + Puffer
       const top = el.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: "smooth" });
       setIsOpen(false);

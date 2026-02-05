@@ -9,6 +9,36 @@ import { useState } from "react";
 const infografiken = [
   // NEU: Konsistente Infografiken im Website-Stil
   {
+    id: "eiertanz-neu",
+    title: "Der Eiertanz (Website-Stil)",
+    description: "Warum wir auf Zehenspitzen gehen – der Teufelskreis und der Ausweg.",
+    category: "unterstuetzen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jtiefECukwYuyZwf.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "scham-schuld-neu",
+    title: "Scham vs. Schuld (Website-Stil)",
+    description: "Der wichtige Unterschied – und warum er für Angehörige entscheidend ist.",
+    category: "selbstfuersorge",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wICPqjepJtgkLBzk.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "fog-nebel-neu",
+    title: "Der Nebel – FOG (Website-Stil)",
+    description: "Fear, Obligation, Guilt – was uns gefangen hält und wie wir entkommen.",
+    category: "selbstfuersorge",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kLAbCmpxnOxbIMUH.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
     id: "grenzen-setzen-neu",
     title: "Grenzen setzen (Website-Stil)",
     description: "Schritt-für-Schritt-Anleitung zum Setzen von Grenzen – im einheitlichen Design.",

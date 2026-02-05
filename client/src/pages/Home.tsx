@@ -123,9 +123,9 @@ export default function Home() {
           <img 
             src={heroImage} 
             alt="" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-50"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         </div>
         
         <div className="container relative z-10 py-16 md:py-24 lg:py-32">

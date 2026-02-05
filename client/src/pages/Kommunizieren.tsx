@@ -4,10 +4,13 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, Image, Eye, MessageSquare, Sparkles, History, Users, Star } from "lucide-react";
 import { Link } from "wouter";
+import { TableOfContents } from "@/components/UXEnhancements";
 
 export default function Kommunizieren() {
   return (
     <Layout>
+      {/* Inhaltsverzeichnis */}
+      <TableOfContents />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.90_0.03_250)]/30 to-background">
         <div className="container">

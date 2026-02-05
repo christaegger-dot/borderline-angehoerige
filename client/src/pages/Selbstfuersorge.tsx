@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
+import { TableOfContents } from "@/components/UXEnhancements";
 
 // Atemübung Komponente
 function AtemuebungCard() {
@@ -145,6 +146,8 @@ function UebungAkkordeon({ title, icon: Icon, children, color }: {
 export default function Selbstfuersorge() {
   return (
     <Layout>
+      {/* Inhaltsverzeichnis */}
+      <TableOfContents />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.05_320)]/30 to-background">
         <div className="container">

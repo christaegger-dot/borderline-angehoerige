@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { TableOfContents } from "@/components/UXEnhancements";
 
 export default function Verstehen() {
   return (
     <Layout>
+      {/* Inhaltsverzeichnis */}
+      <TableOfContents />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.88_0.04_145)]/30 to-background">
         <div className="container">

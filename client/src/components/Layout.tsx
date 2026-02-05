@@ -4,6 +4,7 @@ import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Downl
 import Search from "@/components/Search";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { ReadingProgress, ScrollToTop, Breadcrumbs, KeyboardShortcuts } from "@/components/UXEnhancements";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -36,6 +37,9 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      {/* Lesefortschritt-Anzeige */}
+      <ReadingProgress />
+      
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
         <div className="container">
@@ -163,6 +167,9 @@ export default function Layout({ children }: LayoutProps) {
         </AnimatePresence>
       </header>
 
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs />
+
       {/* Main Content */}
       <main className="flex-1">
         {children}
@@ -264,6 +271,12 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Search Modal */}
       <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+      
+      {/* Zurück nach oben Button */}
+      <ScrollToTop />
+      
+      {/* Tastaturkürzel-Hinweis */}
+      <KeyboardShortcuts />
     </div>
   );
 }

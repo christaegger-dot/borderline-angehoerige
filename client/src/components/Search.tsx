@@ -336,6 +336,154 @@ const searchableContent = [
     href: "/glossar",
     section: "Glossar"
   },
+  
+  // Buchempfehlungen
+  {
+    title: "Buchempfehlungen für Angehörige",
+    description: "Kuratierte deutschsprachige Bücher für Partner, Eltern und Kinder",
+    keywords: ["buch", "bücher", "buchempfehlung", "lesen", "ratgeber", "literatur"],
+    href: "/buchempfehlungen",
+    section: "Buchempfehlungen"
+  },
+  {
+    title: "Schluss mit dem Eiertanz (Buch)",
+    description: "Das Standardwerk von Mason & Kreger für Angehörige",
+    keywords: ["eiertanz", "mason", "kreger", "buch", "partner", "angehörige"],
+    href: "/buchempfehlungen",
+    section: "Buchempfehlungen"
+  },
+  {
+    title: "Ich hasse dich – verlass mich nicht",
+    description: "Klassiker zum Verständnis von Borderline",
+    keywords: ["ich hasse dich", "verlass mich nicht", "kreisman", "straus", "buch"],
+    href: "/buchempfehlungen",
+    section: "Buchempfehlungen"
+  },
+  {
+    title: "Kinderbücher über psychische Erkrankungen",
+    description: "Bücher, die Kindern helfen, psychische Erkrankungen zu verstehen",
+    keywords: ["kinderbuch", "kinder", "erklären", "mama", "papa", "psychisch"],
+    href: "/buchempfehlungen",
+    section: "Buchempfehlungen"
+  },
+  
+  // Therapieangebote
+  {
+    title: "Therapieangebote im Kanton Zürich",
+    description: "Spezialisierte Borderline-Behandlung an der PUK Zürich",
+    keywords: ["therapie", "zürich", "puk", "behandlung", "angebot", "kanton"],
+    href: "/therapieangebote",
+    section: "Therapieangebote"
+  },
+  {
+    title: "DBT-Station PUK Zürich",
+    description: "Stationäre DBT-Behandlung für Erwachsene in Rheinau",
+    keywords: ["dbt", "station", "stationär", "rheinau", "puk", "erwachsene"],
+    href: "/therapieangebote",
+    section: "Therapieangebote"
+  },
+  {
+    title: "HYPE ZÜRI – Frühintervention für Jugendliche",
+    description: "Spezialisiertes Programm für Jugendliche ab 13 Jahren",
+    keywords: ["hype", "jugendliche", "früh", "intervention", "13", "teenager"],
+    href: "/therapieangebote",
+    section: "Therapieangebote"
+  },
+  {
+    title: "Alterspsychiatrie PUK Zürich",
+    description: "Psychiatrische Versorgung für Senioren ab 65 Jahren",
+    keywords: ["alter", "senioren", "65", "alterspsychiatrie", "puk"],
+    href: "/therapieangebote",
+    section: "Therapieangebote"
+  },
+  
+  // FAQ
+  {
+    title: "Häufig gestellte Fragen (FAQ)",
+    description: "20 Fragen, die Angehörige am häufigsten stellen – mit Antworten",
+    keywords: ["faq", "fragen", "antworten", "häufig", "gestellt"],
+    href: "/faq",
+    section: "FAQ"
+  },
+  {
+    title: "Soll ich die Diagnose ansprechen?",
+    description: "FAQ: Wann und wie über die Borderline-Diagnose sprechen",
+    keywords: ["diagnose", "ansprechen", "gespräch", "faq"],
+    href: "/faq",
+    section: "FAQ"
+  },
+  {
+    title: "Ist Borderline heilbar?",
+    description: "FAQ: Prognose und Genesungschancen bei Borderline",
+    keywords: ["heilbar", "heilung", "prognose", "chancen", "faq"],
+    href: "/faq",
+    section: "FAQ"
+  },
+  {
+    title: "Wann ist eine Einweisung nötig?",
+    description: "FAQ: Kriterien für psychiatrische Einweisung",
+    keywords: ["einweisung", "klinik", "stationär", "wann", "nötig", "faq"],
+    href: "/faq",
+    section: "FAQ"
+  },
+  {
+    title: "Darf ich meinen Angehörigen verlassen?",
+    description: "FAQ: Trennung bei psychischer Erkrankung des Partners",
+    keywords: ["verlassen", "trennung", "beziehung", "ende", "darf", "faq"],
+    href: "/faq",
+    section: "FAQ"
+  },
+  {
+    title: "Mein Angehöriger will keine Therapie",
+    description: "FAQ: Was tun, wenn Betroffene Behandlung ablehnen",
+    keywords: ["therapie", "ablehnen", "will nicht", "verweigert", "faq"],
+    href: "/faq",
+    section: "FAQ"
+  },
+  {
+    title: "Bin ich co-abhängig?",
+    description: "FAQ: Warnsignale für Co-Abhängigkeit erkennen",
+    keywords: ["co-abhängig", "abhängigkeit", "warnsignale", "muster", "faq"],
+    href: "/faq",
+    section: "FAQ"
+  },
+  {
+    title: "Wie schütze ich meine Kinder?",
+    description: "FAQ: Kinder vor den Auswirkungen schützen",
+    keywords: ["kinder", "schützen", "schutz", "familie", "faq"],
+    href: "/faq",
+    section: "FAQ"
+  },
+  
+  // Krisenszenarien (Notfall-Seite)
+  {
+    title: "Suiziddrohung – Was tun?",
+    description: "Schritt-für-Schritt-Anleitung bei Suiziddrohungen",
+    keywords: ["suizid", "drohung", "selbstmord", "will nicht mehr", "umbringen"],
+    href: "/notfall",
+    section: "Krisenressourcen"
+  },
+  {
+    title: "Selbstverletzung – Was tun?",
+    description: "Anleitung bei Ritzen, Brennen oder anderen Selbstverletzungen",
+    keywords: ["selbstverletzung", "ritzen", "schneiden", "brennen", "svv"],
+    href: "/notfall",
+    section: "Krisenressourcen"
+  },
+  {
+    title: "Aggressive Eskalation – Was tun?",
+    description: "Deeskalation bei Schreien, Drohen oder Gewalt",
+    keywords: ["aggression", "eskalation", "gewalt", "schreien", "drohen", "wut"],
+    href: "/notfall",
+    section: "Krisenressourcen"
+  },
+  {
+    title: "Emotionale Erpressung – Was tun?",
+    description: "Umgang mit manipulativen Drohungen und Schuldvorwürfen",
+    keywords: ["erpressung", "manipulation", "schuld", "drohung", "wenn du gehst"],
+    href: "/notfall",
+    section: "Krisenressourcen"
+  },
 ];
 
 interface SearchProps {

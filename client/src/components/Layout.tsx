@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon } from "lucide-react";
+import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon, TrendingUp } from "lucide-react";
 import Search from "@/components/Search";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,6 +16,7 @@ const navItems = [
   { href: "/kommunizieren", label: "Kommunizieren", icon: MessageCircle },
   { href: "/grenzen", label: "Grenzen", icon: Shield },
   { href: "/selbstfuersorge", label: "Selbstfürsorge", icon: Sparkles },
+  { href: "/genesung", label: "Genesung", icon: TrendingUp },
 ];
 
 export default function Layout({ children }: LayoutProps) {
@@ -272,6 +273,9 @@ export default function Layout({ children }: LayoutProps) {
               © 2026 Schluss mit dem Eiertanz. Alle Rechte vorbehalten.
             </p>
             <div className="flex gap-4">
+              <Link href="/ueber-uns" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Über uns
+              </Link>
               <Link href="/impressum" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Impressum
               </Link>

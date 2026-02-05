@@ -89,7 +89,8 @@ const pageNames: Record<string, string> = {
   "/genesung": "Genesung",
   "/selbsthilfegruppen": "Selbsthilfegruppen",
   "/impressum": "Impressum",
-  "/datenschutz": "Datenschutz"
+  "/datenschutz": "Datenschutz",
+  "/ueber-uns": "Über uns"
 };
 
 export function Breadcrumbs() {

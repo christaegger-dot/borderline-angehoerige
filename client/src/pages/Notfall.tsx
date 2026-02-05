@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Phone, AlertTriangle, ExternalLink, Clock, MapPin, Baby, User, Users, ChevronDown, Shield, Heart, Hand, MessageCircle, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
 import {
   Accordion,
   AccordionContent,
@@ -30,12 +31,19 @@ export default function Notfall() {
             </div>
             
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
-              Notfall & Krisenressourcen
+              Soforthilfe bei akuter Gefahr
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Hier finden Sie wichtige Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+              Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz – wenn sofortiges Handeln erforderlich ist.
             </p>
+            
+            <div className="p-4 rounded-xl bg-[oklch(0.96_0.02_85)] border border-[oklch(0.90_0.04_85)]">
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Unterschied Notfall vs. Krise:</strong> Diese Seite ist für <strong>akute Gefahrensituationen</strong> (Suizidgefahr, Selbstverletzung, Gewalt). Für Deeskalationstechniken bei <strong>emotionalen Krisen ohne akute Gefahr</strong> besuchen Sie unsere Seite{" "}
+                <Link href="/unterstuetzen/krise" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">In der Krise unterstützen →</Link>
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

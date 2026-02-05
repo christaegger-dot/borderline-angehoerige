@@ -32,9 +32,16 @@ export default function UnterstuetzenKrise() {
               In der Krise unterstützen
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
               Krisen gehören zum Leben mit Borderline. Hier erfahren Sie, wie Sie Krisen erkennen, deeskalieren und Sicherheit gewährleisten – ohne sich selbst zu gefährden.
             </p>
+            
+            <div className="p-4 rounded-xl bg-[oklch(0.96_0.02_85)] border border-[oklch(0.90_0.04_85)]">
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Unterschied Krise vs. Notfall:</strong> Diese Seite ist für <strong>emotionale Krisen und Eskalationen</strong> (starke Emotionen, Konflikte, Rückzug). Bei <strong>akuter Gefahr</strong> (Suizidgefahr, Selbstverletzung) gehen Sie direkt zu{" "}
+                <Link href="/notfall" className="text-[oklch(0.55_0.20_25)] hover:underline font-medium">Soforthilfe & Notfallnummern →</Link>
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

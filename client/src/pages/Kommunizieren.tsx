@@ -261,36 +261,136 @@ export default function Kommunizieren() {
               </div>
             </motion.div>
 
-            {/* Beispieldialoge */}
+            {/* Konkrete Beispiel-Dialoge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Beispiel: Vorher und Nachher
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <MessageCircle className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
+                Konkrete Formulierungen für den Alltag
               </h2>
               
-              <div className="grid gap-4">
-                <Card className="border-[oklch(0.55_0.15_25)] bg-[oklch(0.95_0.02_25)]">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">❌ Weniger hilfreich:</h3>
-                    <p className="text-muted-foreground italic">
-                      "Du überreagierst mal wieder. Kannst du nicht einmal normal reagieren? Ich habe doch nur gesagt, dass ich später komme!"
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-[oklch(0.55_0.10_145)] bg-[oklch(0.92_0.03_145)]">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">✓ Hilfreicher:</h3>
-                    <p className="text-muted-foreground italic">
-                      "Ich sehe, dass dich das sehr aufgeregt hat. Es tut mir leid, dass ich nicht früher Bescheid gesagt habe. Ich verstehe, dass sich das für dich wie Zurückweisung anfühlen kann. Das war nicht meine Absicht."
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Hier finden Sie konkrete Sätze, die Sie in verschiedenen Situationen verwenden können. Passen Sie sie an Ihre Beziehung und Situation an.
+              </p>
+
+              {/* Situation 1: Intensive Emotionen */}
+              <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
+                <CardContent className="p-5">
+                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                    🌊 Wenn Ihr Angehöriger von Emotionen überflutet wird
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                      <p className="text-foreground font-medium">"Ich sehe, dass dich das gerade sehr mitnimmt. Ich bin hier. Wir müssen das jetzt nicht lösen."</p>
+                    </div>
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Oder:</p>
+                      <p className="text-foreground font-medium">"Das klingt wirklich schmerzhaft. Möchtest du mir mehr erzählen, oder soll ich einfach bei dir sein?"</p>
+                    </div>
+                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                      <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
+                      <p className="text-foreground">"Beruhige dich!" / "Das ist doch nicht so schlimm." / "Du überreagierst."</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Situation 2: Vorwürfe */}
+              <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
+                <CardContent className="p-5">
+                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                    ⚡ Wenn Sie mit Vorwürfen konfrontiert werden
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                      <p className="text-foreground font-medium">"Ich höre, dass du dich von mir im Stich gelassen fühlst. Das war nicht meine Absicht. Kannst du mir sagen, was du gerade brauchst?"</p>
+                    </div>
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Oder:</p>
+                      <p className="text-foreground font-medium">"Es tut mir leid, dass mein Verhalten dich verletzt hat. Das wollte ich nicht. Lass uns darüber sprechen."</p>
+                    </div>
+                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                      <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
+                      <p className="text-foreground">"Du bist unfair!" / "Das stimmt doch gar nicht!" / "Du verdrehst alles."</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Situation 3: Rückzug */}
+              <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
+                <CardContent className="p-5">
+                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                    🚪 Wenn Ihr Angehöriger sich zurückzieht
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                      <p className="text-foreground font-medium">"Ich merke, dass du gerade Abstand brauchst. Das ist okay. Ich bin da, wenn du bereit bist."</p>
+                    </div>
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Oder:</p>
+                      <p className="text-foreground font-medium">"Du musst jetzt nicht reden. Ich lasse dir Raum. Sag mir einfach, wenn du etwas brauchst."</p>
+                    </div>
+                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                      <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
+                      <p className="text-foreground">"Rede endlich mit mir!" / "Du kannst nicht einfach weglaufen!" / "Typisch, du machst dicht."</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Situation 4: Schwarz-Weiss-Denken */}
+              <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
+                <CardContent className="p-5">
+                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                    ⚫⚪ Bei Schwarz-Weiss-Aussagen ("Du liebst mich nicht mehr!")
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                      <p className="text-foreground font-medium">"Ich verstehe, dass es sich gerade so anfühlt. Meine Gefühle für dich haben sich nicht geändert, auch wenn wir gerade Schwierigkeiten haben."</p>
+                    </div>
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Oder:</p>
+                      <p className="text-foreground font-medium">"Ich liebe dich. Und ich bin auch frustriert über diese Situation. Beides ist wahr."</p>
+                    </div>
+                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                      <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
+                      <p className="text-foreground">"Das ist Quatsch!" / "Natürlich liebe ich dich, hör auf damit!" / "Schon wieder diese Diskussion."</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Situation 5: Nach einem Streit */}
+              <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
+                <CardContent className="p-5">
+                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                    🕊️ Nach einem Streit wieder ins Gespräch kommen
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                      <p className="text-foreground font-medium">"Ich möchte über gestern sprechen, wenn du bereit bist. Nicht um Recht zu haben, sondern um zu verstehen."</p>
+                    </div>
+                    <div className="bg-[oklch(0.92_0.03_145)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.10_145)]">
+                      <p className="text-sm text-muted-foreground mb-1">Oder:</p>
+                      <p className="text-foreground font-medium">"Es tut mir leid, wie ich reagiert habe. Ich war überfordert. Können wir nochmal von vorne anfangen?"</p>
+                    </div>
+                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                      <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
+                      <p className="text-foreground">"Siehst du jetzt ein, dass du falsch lagst?" / "Können wir das einfach vergessen?" / Schweigen als Strafe.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Navigation */}

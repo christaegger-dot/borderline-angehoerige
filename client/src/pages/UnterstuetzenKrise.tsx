@@ -179,6 +179,70 @@ export default function UnterstuetzenKrise() {
               </div>
             </motion.div>
 
+            {/* Konkrete Formulierungen für die Krise */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Was Sie in der Krise sagen können
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                In einer Krise zählt jedes Wort. Diese Formulierungen haben sich bewährt:
+              </p>
+              
+              <div className="space-y-4">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Präsenz zeigen</h3>
+                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                      <p className="text-sm text-foreground font-medium">"Ich bin hier. Ich gehe nicht weg. Du bist nicht allein."</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Gefühle validieren</h3>
+                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                      <p className="text-sm text-foreground font-medium">"Ich sehe, dass du gerade unglaublich viel Schmerz fühlst. Das muss sich furchtbar anfühlen."</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Hoffnung vermitteln</h3>
+                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                      <p className="text-sm text-foreground font-medium">"Dieses Gefühl wird vorbeigehen. Es fühlt sich jetzt endlos an, aber es wird sich verändern."</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Konkrete Hilfe anbieten</h3>
+                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                      <p className="text-sm text-foreground font-medium">"Was brauchst du gerade am meisten? Soll ich einfach hier sitzen? Oder sollen wir zusammen atmen?"</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Bei Suizidgedanken direkt ansprechen</h3>
+                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                      <p className="text-sm text-foreground font-medium">"Ich mache mir Sorgen um dich. Hast du gerade Gedanken, dir etwas anzutun?"</p>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-2">Hinweis: Direktes Fragen erhöht das Risiko nicht, sondern zeigt, dass Sie die Situation ernst nehmen.</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
+
             {/* Was Sie NICHT tun sollten */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

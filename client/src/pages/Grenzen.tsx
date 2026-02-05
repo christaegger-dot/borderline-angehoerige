@@ -205,6 +205,100 @@ export default function Grenzen() {
               </div>
             </motion.div>
 
+            {/* Konkrete Beispiel-Dialoge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Konkrete Formulierungen für schwierige Situationen
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Hier finden Sie Beispielsätze, die Sie direkt verwenden können. Das Prinzip: <strong>Spiegeln statt Aufnehmen</strong> – Sie nehmen die Gefühle wahr, ohne sie zu übernehmen.
+              </p>
+              
+              <div className="space-y-6">
+                {/* Situation 1 */}
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Bei Vorwürfen und Schuldzuweisungen</h3>
+                    <div className="space-y-3">
+                      <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-3">
+                        <p className="text-sm text-muted-foreground mb-1">Statt:</p>
+                        <p className="text-sm text-foreground line-through">"Das stimmt doch gar nicht!" oder "Du bist ungerecht!"</p>
+                      </div>
+                      <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                        <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                        <p className="text-sm text-foreground font-medium">"Ich höre, dass du das so siehst. Ich sehe es anders, und ich möchte verstehen, was dich beschäftigt."</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Situation 2 */}
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Bei intensiven Gefühlsausbrüchen</h3>
+                    <div className="space-y-3">
+                      <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-3">
+                        <p className="text-sm text-muted-foreground mb-1">Statt:</p>
+                        <p className="text-sm text-foreground line-through">"Beruhige dich!" oder "Das ist doch nicht so schlimm!"</p>
+                      </div>
+                      <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                        <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                        <p className="text-sm text-foreground font-medium">"Ich sehe, dass du gerade sehr aufgewühlt bist. Das klingt wirklich schwer für dich. Ich bin hier."</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Situation 3 */}
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Beim Grenzen setzen</h3>
+                    <div className="space-y-3">
+                      <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-3">
+                        <p className="text-sm text-muted-foreground mb-1">Statt:</p>
+                        <p className="text-sm text-foreground line-through">"Ich halte das nicht mehr aus!" oder "Du machst mich fertig!"</p>
+                      </div>
+                      <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                        <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                        <p className="text-sm text-foreground font-medium">"Ich liebe dich, und gleichzeitig brauche ich jetzt eine Pause. Lass uns in einer Stunde weiterreden, wenn wir beide ruhiger sind."</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Situation 4 */}
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Bei Drohungen oder Manipulation</h3>
+                    <div className="space-y-3">
+                      <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-3">
+                        <p className="text-sm text-muted-foreground mb-1">Statt:</p>
+                        <p className="text-sm text-foreground line-through">Nachgeben aus Angst oder Schuldgefühlen</p>
+                      </div>
+                      <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                        <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
+                        <p className="text-sm text-foreground font-medium">"Ich nehme deine Gefühle ernst. Und ich bleibe bei meiner Entscheidung. Beides ist möglich."</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <Card className="mt-6 bg-[oklch(0.95_0.02_55)] border-[oklch(0.85_0.05_55)]">
+                <CardContent className="p-4">
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Tipp:</strong> Üben Sie diese Sätze laut vor dem Spiegel oder mit einer Vertrauensperson. In emotionalen Momenten ist es leichter, auf eingeübte Formulierungen zurückzugreifen.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
             {/* Häufige Fehler */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -25,6 +25,7 @@ import Feedback from "./pages/Feedback";
 import Glossar from "./pages/Glossar";
 import Buchempfehlungen from "./pages/Buchempfehlungen";
 import Therapieangebote from "./pages/Therapieangebote";
+import FAQ from "./pages/FAQ";
 
 function Router() {
   return (
@@ -50,6 +51,7 @@ function Router() {
       <Route path="/glossar" component={Glossar} />
       <Route path="/buchempfehlungen" component={Buchempfehlungen} />
       <Route path="/therapieangebote" component={Therapieangebote} />
+      <Route path="/faq" component={FAQ} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

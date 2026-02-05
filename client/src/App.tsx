@@ -15,6 +15,7 @@ import Kommunizieren from "./pages/Kommunizieren";
 import Grenzen from "./pages/Grenzen";
 import Selbstfuersorge from "./pages/Selbstfuersorge";
 import Notfall from "./pages/Notfall";
+import Materialien from "./pages/Materialien";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/grenzen" component={Grenzen} />
       <Route path="/selbstfuersorge" component={Selbstfuersorge} />
       <Route path="/notfall" component={Notfall} />
+      <Route path="/materialien" component={Materialien} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { useState } from "react";
-import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles } from "lucide-react";
+import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -176,9 +176,9 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Literaturempfehlungen
-                  </a>
+                  <Link href="/materialien" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                    Materialien & Handouts
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">

@@ -202,12 +202,12 @@ export default function Layout({ children }: LayoutProps) {
               © 2025 Schluss mit dem Eiertanz. Alle Rechte vorbehalten.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              <Link href="/impressum" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Impressum
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              </Link>
+              <Link href="/datenschutz" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Datenschutz
-              </a>
+              </Link>
             </div>
           </div>
         </div>

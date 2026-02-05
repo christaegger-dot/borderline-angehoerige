@@ -17,6 +17,8 @@ import Selbstfuersorge from "./pages/Selbstfuersorge";
 import Notfall from "./pages/Notfall";
 import Materialien from "./pages/Materialien";
 import SelbsttestPage from "./pages/SelbsttestPage";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
 
 function Router() {
   return (
@@ -34,6 +36,8 @@ function Router() {
       <Route path="/notfall" component={Notfall} />
       <Route path="/materialien" component={Materialien} />
       <Route path="/selbsttest" component={SelbsttestPage} />
+      <Route path="/impressum" component={Impressum} />
+      <Route path="/datenschutz" component={Datenschutz} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

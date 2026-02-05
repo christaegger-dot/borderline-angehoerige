@@ -16,6 +16,7 @@ import Grenzen from "./pages/Grenzen";
 import Selbstfuersorge from "./pages/Selbstfuersorge";
 import Notfall from "./pages/Notfall";
 import Materialien from "./pages/Materialien";
+import SelbsttestPage from "./pages/SelbsttestPage";
 
 function Router() {
   return (
@@ -32,6 +33,7 @@ function Router() {
       <Route path="/selbstfuersorge" component={Selbstfuersorge} />
       <Route path="/notfall" component={Notfall} />
       <Route path="/materialien" component={Materialien} />
+      <Route path="/selbsttest" component={SelbsttestPage} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

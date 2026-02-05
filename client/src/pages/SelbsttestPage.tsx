@@ -1,0 +1,59 @@
+import Layout from "@/components/Layout";
+import Selbsttest from "@/components/Selbsttest";
+import { motion } from "framer-motion";
+import { Compass } from "lucide-react";
+
+export default function SelbsttestPage() {
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.04_55)]/50 to-background">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <div className="w-16 h-16 rounded-2xl bg-[oklch(0.65_0.12_55)] flex items-center justify-center mx-auto mb-6">
+              <Compass className="w-8 h-8 text-white" />
+            </div>
+            
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+              Finden Sie Ihren Weg
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+              Dieser kurze Test hilft Ihnen, die für Ihre aktuelle Situation passenden Inhalte zu finden. 
+              Er dauert nur etwa 2 Minuten.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Test */}
+      <section className="py-8 md:py-12">
+        <div className="container">
+          <div className="max-w-2xl mx-auto">
+            <Selbsttest />
+          </div>
+        </div>
+      </section>
+
+      {/* Info */}
+      <section className="py-8 md:py-12">
+        <div className="container">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-muted/30 rounded-xl p-6 text-center">
+              <p className="text-sm text-muted-foreground">
+                Dieser Test ersetzt keine professionelle Beratung. Er dient lediglich als Orientierungshilfe, 
+                um Ihnen den Einstieg in unsere Inhalte zu erleichtern. Bei akuten Krisen wenden Sie sich 
+                bitte an die <a href="/notfall" className="text-[oklch(0.55_0.20_25)] underline hover:no-underline">Notfallressourcen</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}

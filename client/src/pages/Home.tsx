@@ -14,7 +14,8 @@ import {
   ArrowRight,
   Clock,
   CheckCircle2,
-  AlertTriangle
+  AlertTriangle,
+  Compass
 } from "lucide-react";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wNcJxGFEHelzxZEE.png";
@@ -178,9 +179,15 @@ export default function Home() {
             <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-3">
               Wo stehen Sie gerade?
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-4">
               Wählen Sie die Situation, die am besten zu Ihrer aktuellen Lage passt.
             </p>
+            <Link href="/selbsttest">
+              <Button variant="outline" size="sm" className="gap-2">
+                <Compass className="w-4 h-4" />
+                Oder machen Sie unseren kurzen Selbsttest
+              </Button>
+            </Link>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, Image } from "lucide-react";
+import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, Image, MapPin, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 
 export default function UnterstuetzenTherapie() {
@@ -92,6 +92,31 @@ export default function UnterstuetzenTherapie() {
                   </Card>
                 ))}
               </div>
+              
+              {/* Link zu Therapieangeboten */}
+              <Card className="mt-6 bg-[oklch(0.92_0.04_145)] border-[oklch(0.80_0.08_145)]">
+                <CardContent className="p-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.88_0.05_145)] flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 text-[oklch(0.45_0.10_145)]" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-display font-semibold text-foreground mb-1">
+                        Therapieangebote im Kanton Zürich
+                      </h3>
+                      <p className="text-muted-foreground text-sm mb-3">
+                        Übersicht über spezialisierte DBT-Stationen und Behandlungsangebote der PUK Zürich – für Kinder, Jugendliche, Erwachsene und Senioren.
+                      </p>
+                      <Link href="/therapieangebote">
+                        <Button size="sm" variant="outline" className="border-[oklch(0.70_0.08_145)] hover:bg-[oklch(0.88_0.05_145)]">
+                          Therapieangebote ansehen
+                          <ExternalLink className="w-3 h-3 ml-2" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* DBT-Skills für Angehörige */}

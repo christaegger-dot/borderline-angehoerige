@@ -2,7 +2,14 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Phone, AlertTriangle, ExternalLink, Clock, MapPin, Baby, User, Users } from "lucide-react";
+import { Phone, AlertTriangle, ExternalLink, Clock, MapPin, Baby, User, Users, ChevronDown, Shield, Heart, Hand, MessageCircle, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Notfall() {
   return (
@@ -315,6 +322,311 @@ export default function Notfall() {
                   </Card>
                 ))}
               </div>
+            </motion.div>
+
+            {/* Krisenszenarien */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                Was tun in konkreten Krisensituationen?
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Klicken Sie auf eine Situation für konkrete Schritt-für-Schritt-Anleitungen.
+              </p>
+              
+              <Accordion type="single" collapsible className="space-y-4">
+                {/* Suiziddrohung */}
+                <AccordionItem value="suizid" className="border rounded-lg border-[oklch(0.55_0.20_25)] bg-[oklch(0.98_0.02_25)]">
+                  <AccordionTrigger className="px-5 py-4 hover:no-underline">
+                    <div className="flex items-center gap-3 text-left">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.20_25)] flex items-center justify-center flex-shrink-0">
+                        <AlertTriangle className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground">Suiziddrohung oder -gedanken</h3>
+                        <p className="text-sm text-muted-foreground font-normal">«Ich will nicht mehr leben», «Ohne mich wärt ihr besser dran»</p>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-5 pb-5">
+                    <div className="space-y-4 pt-2">
+                      <div className="p-4 bg-[oklch(0.55_0.20_25)]/10 rounded-lg border border-[oklch(0.55_0.20_25)]/30">
+                        <p className="font-semibold text-[oklch(0.45_0.15_25)] mb-2">Wichtig zu wissen:</p>
+                        <p className="text-sm text-muted-foreground">Suiziddrohungen bei Borderline sind ernst zu nehmen, aber nicht immer ein akuter Notfall. Unterscheiden Sie zwischen chronischer Suizidalität (wiederkehrende Gedanken) und akuter Krise (konkrete Pläne, Mittel vorhanden).</p>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.20_25)] text-white text-sm flex items-center justify-center">1</span>
+                          Ruhe bewahren und zuhören
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• Nehmen Sie die Äusserung ernst, ohne in Panik zu geraten</li>
+                          <li>• Fragen Sie direkt: «Hast du konkrete Pläne, dir etwas anzutun?»</li>
+                          <li>• Hören Sie zu, ohne zu urteilen oder zu beschwichtigen</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.20_25)] text-white text-sm flex items-center justify-center">2</span>
+                          Risiko einschätzen
+                        </h4>
+                        <div className="ml-8 grid sm:grid-cols-2 gap-3">
+                          <div className="p-3 bg-[oklch(0.55_0.20_25)]/5 rounded-lg">
+                            <p className="font-medium text-[oklch(0.45_0.15_25)] text-sm mb-1">Hohes Risiko → Notruf 144</p>
+                            <ul className="text-xs text-muted-foreground space-y-0.5">
+                              <li>• Konkrete Pläne vorhanden</li>
+                              <li>• Mittel beschafft (Medikamente, etc.)</li>
+                              <li>• Früherer Suizidversuch</li>
+                              <li>• Abschiedsbriefe geschrieben</li>
+                            </ul>
+                          </div>
+                          <div className="p-3 bg-[oklch(0.55_0.10_145)]/10 rounded-lg">
+                            <p className="font-medium text-[oklch(0.45_0.10_145)] text-sm mb-1">Moderates Risiko → Fachperson</p>
+                            <ul className="text-xs text-muted-foreground space-y-0.5">
+                              <li>• Gedanken, aber keine Pläne</li>
+                              <li>• Kann Gründe zum Leben nennen</li>
+                              <li>• Ist ansprechbar und kooperativ</li>
+                              <li>• Hat Therapeut/Psychiater</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.20_25)] text-white text-sm flex items-center justify-center">3</span>
+                          Handeln
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• <strong>Bei hohem Risiko:</strong> Notruf 144 oder Polizei 117 – auch gegen den Willen der Person</li>
+                          <li>• <strong>Bei moderatem Risiko:</strong> Therapeut/Psychiater kontaktieren, Krisenplan aktivieren</li>
+                          <li>• Bleiben Sie bei der Person, bis professionelle Hilfe da ist</li>
+                          <li>• Entfernen Sie wenn möglich Zugang zu Mitteln (Medikamente, scharfe Gegenstände)</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="p-4 bg-[oklch(0.88_0.04_145)]/30 rounded-lg border border-[oklch(0.55_0.10_145)]/30">
+                        <p className="text-sm text-muted-foreground">
+                          <strong className="text-foreground">Validieren Sie das Leid, nicht die Lösung:</strong> «Ich höre, dass du gerade unglaublich leidest. Ich bin froh, dass du mir das sagst. Lass uns gemeinsam schauen, wie wir durch diese Nacht kommen.»
+                        </p>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Selbstverletzung */}
+                <AccordionItem value="selbstverletzung" className="border rounded-lg border-[oklch(0.55_0.15_35)] bg-[oklch(0.98_0.02_35)]">
+                  <AccordionTrigger className="px-5 py-4 hover:no-underline">
+                    <div className="flex items-center gap-3 text-left">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.15_35)] flex items-center justify-center flex-shrink-0">
+                        <Hand className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground">Selbstverletzung (Ritzen, Brennen, Schlagen)</h3>
+                        <p className="text-sm text-muted-foreground font-normal">Akute Selbstverletzung oder Entdeckung von Verletzungen</p>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-5 pb-5">
+                    <div className="space-y-4 pt-2">
+                      <div className="p-4 bg-[oklch(0.55_0.15_35)]/10 rounded-lg border border-[oklch(0.55_0.15_35)]/30">
+                        <p className="font-semibold text-[oklch(0.45_0.12_35)] mb-2">Wichtig zu verstehen:</p>
+                        <p className="text-sm text-muted-foreground">Selbstverletzung ist meist <strong>kein</strong> Suizidversuch, sondern ein Versuch, unerträgliche emotionale Schmerzen zu regulieren. Sie dient oft dazu, Spannung abzubauen oder «wieder etwas zu fühlen».</p>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_35)] text-white text-sm flex items-center justify-center">1</span>
+                          Sofortmassnahmen
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• <strong>Bei starker Blutung oder tiefen Wunden:</strong> Notruf 144</li>
+                          <li>• Bei oberflächlichen Verletzungen: Wunde versorgen (reinigen, desinfizieren, verbinden)</li>
+                          <li>• Ruhig bleiben – Ihre Panik verstärkt die Scham</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_35)] text-white text-sm flex items-center justify-center">2</span>
+                          Kommunikation
+                        </h4>
+                        <div className="ml-8 grid sm:grid-cols-2 gap-3">
+                          <div className="p-3 bg-[oklch(0.55_0.10_145)]/10 rounded-lg">
+                            <p className="font-medium text-[oklch(0.45_0.10_145)] text-sm mb-1">✓ Hilfreich</p>
+                            <ul className="text-xs text-muted-foreground space-y-0.5">
+                              <li>• «Ich sehe, dass du leidest.»</li>
+                              <li>• «Wie kann ich dir jetzt helfen?»</li>
+                              <li>• «Lass uns die Wunde versorgen.»</li>
+                            </ul>
+                          </div>
+                          <div className="p-3 bg-[oklch(0.55_0.15_25)]/10 rounded-lg">
+                            <p className="font-medium text-[oklch(0.45_0.12_25)] text-sm mb-1">✗ Vermeiden</p>
+                            <ul className="text-xs text-muted-foreground space-y-0.5">
+                              <li>• «Warum tust du dir das an?»</li>
+                              <li>• «Das ist doch Erpressung!»</li>
+                              <li>• «Denk doch mal an uns!»</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_35)] text-white text-sm flex items-center justify-center">3</span>
+                          Nachsorge
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• Therapeut/Psychiater zeitnah informieren</li>
+                          <li>• Gemeinsam über Alternativen sprechen (Eiswürfel, rote Farbe, Sport)</li>
+                          <li>• Nicht überwachen oder kontrollieren – das verstärkt Heimlichkeit</li>
+                          <li>• Eigene Gefühle mit Fachperson besprechen</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Aggressive Eskalation */}
+                <AccordionItem value="aggression" className="border rounded-lg border-[oklch(0.50_0.15_280)] bg-[oklch(0.98_0.02_280)]">
+                  <AccordionTrigger className="px-5 py-4 hover:no-underline">
+                    <div className="flex items-center gap-3 text-left">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.50_0.15_280)] flex items-center justify-center flex-shrink-0">
+                        <Shield className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground">Aggressive Eskalation</h3>
+                        <p className="text-sm text-muted-foreground font-normal">Schreien, Drohen, Werfen von Gegenständen, körperliche Gewalt</p>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-5 pb-5">
+                    <div className="space-y-4 pt-2">
+                      <div className="p-4 bg-[oklch(0.55_0.20_25)]/10 rounded-lg border border-[oklch(0.55_0.20_25)]/30">
+                        <p className="font-semibold text-[oklch(0.45_0.15_25)] mb-2">Ihre Sicherheit geht vor!</p>
+                        <p className="text-sm text-muted-foreground">Bei körperlicher Gewalt oder konkreten Drohungen: Verlassen Sie die Situation und rufen Sie die Polizei (117). Borderline erklärt Verhalten, entschuldigt es aber nicht.</p>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_280)] text-white text-sm flex items-center justify-center">1</span>
+                          Deeskalieren (wenn sicher)
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• Ruhig und langsam sprechen, Stimme senken</li>
+                          <li>• Abstand halten, nicht in die Enge treiben</li>
+                          <li>• Blickkontakt halten, aber nicht starren</li>
+                          <li>• Offene Körperhaltung, Hände sichtbar</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_280)] text-white text-sm flex items-center justify-center">2</span>
+                          Kommunikation
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• Validieren: «Ich sehe, dass du gerade extrem wütend bist.»</li>
+                          <li>• Grenze setzen: «Ich möchte dir zuhören, aber nicht wenn du schreist.»</li>
+                          <li>• Option geben: «Sollen wir 10 Minuten Pause machen?»</li>
+                          <li>• Nicht argumentieren, rechtfertigen oder beschuldigen</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_280)] text-white text-sm flex items-center justify-center">3</span>
+                          Wenn Deeskalation nicht funktioniert
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• <strong>Ankündigen:</strong> «Ich gehe jetzt in ein anderes Zimmer. Wir können später weiterreden.»</li>
+                          <li>• <strong>Gehen:</strong> Raum verlassen, Tür nicht abschliessen</li>
+                          <li>• <strong>Bei Gewalt:</strong> Haus verlassen, Polizei 117 rufen</li>
+                          <li>• <strong>Später:</strong> Im ruhigen Moment über Konsequenzen sprechen</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="p-4 bg-[oklch(0.88_0.04_145)]/30 rounded-lg border border-[oklch(0.55_0.10_145)]/30">
+                        <p className="text-sm text-muted-foreground">
+                          <strong className="text-foreground">Merke:</strong> Sie müssen sich nicht anschreien oder bedrohen lassen. Das Verlassen einer eskalierenden Situation ist keine Bestrafung, sondern Selbstschutz und gibt beiden Zeit zur Regulation.
+                        </p>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Emotionale Erpressung */}
+                <AccordionItem value="erpressung" className="border rounded-lg border-[oklch(0.55_0.10_85)] bg-[oklch(0.98_0.02_85)]">
+                  <AccordionTrigger className="px-5 py-4 hover:no-underline">
+                    <div className="flex items-center gap-3 text-left">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.10_85)] flex items-center justify-center flex-shrink-0">
+                        <MessageCircle className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-display font-semibold text-foreground">Emotionale Erpressung / Manipulation</h3>
+                        <p className="text-sm text-muted-foreground font-normal">«Wenn du gehst, bringe ich mich um», «Du bist schuld, dass es mir so geht»</p>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-5 pb-5">
+                    <div className="space-y-4 pt-2">
+                      <div className="p-4 bg-[oklch(0.55_0.10_85)]/10 rounded-lg border border-[oklch(0.55_0.10_85)]/30">
+                        <p className="font-semibold text-[oklch(0.45_0.08_85)] mb-2">Wichtig zu verstehen:</p>
+                        <p className="text-sm text-muted-foreground">Menschen mit Borderline manipulieren selten bewusst. Hinter solchen Äusserungen steckt meist extreme Verlassensangst und die verzweifelte Überzeugung, dass sie ohne Sie nicht überleben können.</p>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.10_85)] text-white text-sm flex items-center justify-center">1</span>
+                          Das Gefühl validieren, nicht die Forderung
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• «Ich höre, dass du gerade panische Angst hast, mich zu verlieren.»</li>
+                          <li>• «Deine Angst ist real und ich nehme sie ernst.»</li>
+                          <li>• <strong>Aber:</strong> «Ich kann nicht bleiben, weil du mir drohst.»</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.10_85)] text-white text-sm flex items-center justify-center">2</span>
+                          Klare Grenze setzen
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• «Ich bin nicht verantwortlich für deine Entscheidungen.»</li>
+                          <li>• «Wenn du sagst, du bringst dich um, muss ich den Notruf rufen.»</li>
+                          <li>• «Ich liebe dich, aber ich lasse mich nicht erpressen.»</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-foreground flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.10_85)] text-white text-sm flex items-center justify-center">3</span>
+                          Konsequent handeln
+                        </h4>
+                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
+                          <li>• Bei Suiziddrohung: Notruf 144 oder 143 – jedes Mal</li>
+                          <li>• Nicht nachgeben, um «Ruhe zu haben» – das verstärkt das Muster</li>
+                          <li>• Später im ruhigen Moment besprechen, was passiert ist</li>
+                          <li>• Eigene Therapie/Beratung in Anspruch nehmen</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="p-4 bg-[oklch(0.88_0.04_145)]/30 rounded-lg border border-[oklch(0.55_0.10_145)]/30">
+                        <p className="text-sm text-muted-foreground">
+                          <strong className="text-foreground">Denken Sie daran:</strong> Sie können die Angst Ihres Angehörigen nicht wegnehmen, indem Sie Ihre eigenen Bedürfnisse aufgeben. Langfristig hilft nur, dass Ihr Angehöriger lernt, mit der Angst umzugehen – nicht, dass Sie sie vermeiden.
+                        </p>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </motion.div>
 
             {/* Krisenplan */}

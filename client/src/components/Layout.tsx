@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
-import { useState } from "react";
-import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon } from "lucide-react";
+import Search from "@/components/Search";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -19,6 +20,19 @@ const navItems = [
 export default function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  // Keyboard shortcut for search (Ctrl/Cmd + K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -56,8 +70,21 @@ export default function Layout({ children }: LayoutProps) {
               })}
             </nav>
 
-            {/* Emergency Button & Mobile Menu */}
+            {/* Search, Emergency Button & Mobile Menu */}
             <div className="flex items-center gap-2">
+              {/* Search Button */}
+              <button
+                onClick={() => setSearchOpen(true)}
+                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all text-sm"
+                aria-label="Suche öffnen"
+              >
+                <SearchIcon className="w-4 h-4" />
+                <span className="hidden md:inline">Suchen</span>
+                <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">
+                  <span className="text-xs">⌘</span>K
+                </kbd>
+              </button>
+
               <Link href="/notfall">
                 <Button
                   variant="default"
@@ -119,6 +146,17 @@ export default function Layout({ children }: LayoutProps) {
                   <Phone className="w-5 h-5" />
                   Soforthilfe
                 </Link>
+                {/* Mobile Search Button */}
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setSearchOpen(true);
+                  }}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted mt-2 border border-border/50"
+                >
+                  <SearchIcon className="w-5 h-5" />
+                  Suchen
+                </button>
               </nav>
             </motion.div>
           )}
@@ -223,6 +261,9 @@ export default function Layout({ children }: LayoutProps) {
           <Phone className="w-6 h-6" />
         </Button>
       </Link>
+
+      {/* Search Modal */}
+      <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </div>
   );
 }

@@ -18,16 +18,7 @@ const infografiken = [
     rating: "NEU",
     isNew: true
   },
-  {
-    id: "scham-schuld-neu",
-    title: "Scham vs. Schuld (Website-Stil)",
-    description: "Der wichtige Unterschied – und warum er für Angehörige entscheidend ist.",
-    category: "selbstfuersorge",
-    type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wICPqjepJtgkLBzk.png",
-    rating: "NEU",
-    isNew: true
-  },
+
   {
     id: "fog-nebel-neu",
     title: "Der Nebel – FOG (Website-Stil)",
@@ -246,15 +237,7 @@ const infografiken = [
     rating: "24/24"
   },
   // Selbstfürsorge
-  {
-    id: "scham-schuld",
-    title: "Scham vs. Schuld",
-    description: "Der wichtige Unterschied zwischen Scham und Schuld.",
-    category: "selbstfuersorge",
-    type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DcZleVymAZPtBcGB.png",
-    rating: "24/24"
-  },
+
   {
     id: "nebel-pdf",
     title: "Der Nebel (FOG) – PDF-Handout",

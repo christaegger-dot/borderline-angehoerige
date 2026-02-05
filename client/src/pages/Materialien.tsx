@@ -7,6 +7,57 @@ import { useState } from "react";
 
 // Infografiken-Daten mit CDN-URLs
 const infografiken = [
+  // NEU: Konsistente Infografiken im Website-Stil
+  {
+    id: "grenzen-setzen-neu",
+    title: "Grenzen setzen (Website-Stil)",
+    description: "Schritt-für-Schritt-Anleitung zum Setzen von Grenzen – im einheitlichen Design.",
+    category: "grenzen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OyvpiurGzlIPaQWH.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "set-kommunikation-neu",
+    title: "SET-Kommunikation (Website-Stil)",
+    description: "Support, Empathy, Truth – die bewährte Kommunikationstechnik im einheitlichen Design.",
+    category: "kommunizieren",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BNKeTgeVWhbfziTn.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "validierung-neu",
+    title: "Validierungs-Stufenmodell (Website-Stil)",
+    description: "Gefühle anerkennen in 4 Schritten – im einheitlichen Design.",
+    category: "kommunizieren",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GoCqBXFdUGHQltmS.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "krisenbegleitung-neu",
+    title: "In der Krise unterstützen (Website-Stil)",
+    description: "Das Ampel-System und 4 Schritte der Deeskalation – im einheitlichen Design.",
+    category: "unterstuetzen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JkxTXiXzrhakizYL.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "3-saeulen-neu",
+    title: "Die 3 Säulen der Unterstützung (Website-Stil)",
+    description: "Präsenz, Validierung, Stabilität – wie Sie wirklich helfen können.",
+    category: "unterstuetzen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jYYFqLdDeSRVGztK.png",
+    rating: "NEU",
+    isNew: true
+  },
   // Verstehen
   {
     id: "spaltungs-zyklus",
@@ -274,7 +325,7 @@ export default function Materialien() {
                           <Image className="w-5 h-5 text-[oklch(0.40_0.08_145)]" />
                         )}
                       </div>
-                      <span className="text-xs bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)] px-2 py-1 rounded-full">
+                      <span className={`text-xs px-2 py-1 rounded-full ${item.isNew ? 'bg-[oklch(0.65_0.12_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
                         {item.rating}
                       </span>
                     </div>

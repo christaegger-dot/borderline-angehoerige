@@ -241,7 +241,7 @@ export default function Materialien() {
               Ideal für Beratungsgespräche, Selbsthilfegruppen oder zur persönlichen Vertiefung.
             </p>
             
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
               <span className="flex items-center gap-1">
                 <ImageIcon className="w-4 h-4" />
                 {pngCount} Infografiken
@@ -251,6 +251,19 @@ export default function Materialien() {
                 {pdfCount} PDF-Handouts
               </span>
             </div>
+            
+            {/* Sammel-PDF Download */}
+            <a 
+              href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OKDeJmoLODeNjbpf.pdf" 
+              download="Infografik-Sammlung-Eiertanz.pdf"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)] text-white font-medium transition-colors"
+            >
+              <Download className="w-5 h-5" />
+              Alle Infografiken als PDF (69 MB)
+            </a>
+            <p className="text-xs text-muted-foreground mt-2">
+              Für Therapeuten & Beratungsstellen: Deckblatt, Inhaltsverzeichnis, alle 15 Infografiken, Quellenverzeichnis
+            </p>
           </motion.div>
         </div>
       </section>

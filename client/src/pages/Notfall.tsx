@@ -178,9 +178,9 @@ export default function Notfall() {
                     description: "Beratung für psychisch Betroffene und Angehörige"
                   },
                   {
-                    name: "VASK Schweiz",
-                    url: "https://www.vfrp.ch",
-                    description: "Vereinigung der Angehörigen von Schizophrenie/Psychose-Kranken"
+                    name: "Stand by You",
+                    url: "https://www.stand-by-you.ch",
+                    description: "Netzwerk für Angehörige von Menschen mit psychischen Erkrankungen"
                   },
                   {
                     name: "Equilibrium",

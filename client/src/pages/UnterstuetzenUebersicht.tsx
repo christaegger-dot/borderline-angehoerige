@@ -190,14 +190,14 @@ export default function UnterstuetzenUebersicht() {
                     description: "Wie Sie unterstützen und sich schützen",
                     type: "PNG",
                     rating: "23/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ygWVmZbLEuGhgfHF.png"
+                    url: "/materialien"
                   },
                   {
                     title: "Grenzen-Leiter",
                     description: "Schrittweise Grenzen aufbauen",
                     type: "PNG",
                     rating: "22/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MqLqYXmJYXJKWvkT.png"
+                    url: "/materialien"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">

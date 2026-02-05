@@ -376,28 +376,28 @@ export default function Grenzen() {
                     title: "Grenzen setzen: Praktische Anleitung",
                     type: "PNG",
                     rating: "24/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FhSNwNMQxOkbvjRF.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sWrGzfdVjABcfZHV.png",
                     icon: Image
                   },
                   {
                     title: "Grenzsetzung als Orientierung",
                     type: "PDF",
                     rating: "24/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iZlDzSNGeurWekaN.pdf",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WnqfDwuBRErJrLPY.pdf",
                     icon: FileText
                   },
                   {
                     title: "Grenzen setzen: 5 praktische Ansätze",
                     type: "PNG",
                     rating: "23/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DLqPLzKxrfPhVjbx.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YuHdFnBIxTtnylpH.png",
                     icon: Image
                   },
                   {
                     title: "Die Grenzen-Pyramide",
                     type: "PNG",
                     rating: "22/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VMXGFPguowqwxleh.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EGaWNVcKclZYNmVr.png",
                     icon: Image
                   }
                 ].map((item, index) => {

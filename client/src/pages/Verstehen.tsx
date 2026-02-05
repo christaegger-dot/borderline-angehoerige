@@ -217,7 +217,7 @@ export default function Verstehen() {
                     description: "Verstehen Sie den Unterschied",
                     type: "PNG",
                     rating: "24/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cLmzJxAQYvQrMBYn.png",
+                    url: "/materialien",
                     icon: Image
                   },
                   {
@@ -225,7 +225,7 @@ export default function Verstehen() {
                     description: "Das Schwarz-Weiss-Denken erklärt",
                     type: "PNG",
                     rating: "20/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DuQWiGLXNqRbWLzc.png",
+                    url: "/materialien",
                     icon: Image
                   },
                   {
@@ -233,7 +233,7 @@ export default function Verstehen() {
                     description: "Die Beziehungsdynamik verstehen",
                     type: "PDF",
                     rating: "23/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JhyxWqcwPBqgDhkT.pdf",
+                    url: "/materialien",
                     icon: FileText
                   },
                   {
@@ -241,7 +241,7 @@ export default function Verstehen() {
                     description: "Die 'heisse Kartoffel' erklärt",
                     type: "PDF",
                     rating: "23/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hPTTqPNHQxSqkOKE.pdf",
+                    url: "/materialien",
                     icon: FileText
                   }
                 ].map((item, index) => {

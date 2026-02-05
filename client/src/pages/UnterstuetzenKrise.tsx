@@ -329,14 +329,14 @@ export default function UnterstuetzenKrise() {
                     description: "Der Ausweg aus dem Eiertanz",
                     type: "PDF",
                     rating: "24/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JwWvqPDYJKNJwkgZ.pdf"
+                    url: "/materialien"
                   },
                   {
                     title: "Der Nebel (FOG)",
                     description: "Emotionale Dynamiken verstehen",
                     type: "PDF",
                     rating: "17/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JVFdWJWJVPdZVVHy.pdf"
+                    url: "/materialien"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">

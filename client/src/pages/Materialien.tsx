@@ -14,7 +14,7 @@ const infografiken = [
     description: "Warum wir auf Zehenspitzen gehen – der Teufelskreis und der Ausweg.",
     category: "unterstuetzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jtiefECukwYuyZwf.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izUnFdVOmLVUwSFD.png",
     rating: "NEU",
     isNew: true
   },
@@ -25,7 +25,7 @@ const infografiken = [
     description: "Fear, Obligation, Guilt – was uns gefangen hält und wie wir entkommen.",
     category: "selbstfuersorge",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kLAbCmpxnOxbIMUH.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/trxdqyIMGIBQpQgg.png",
     rating: "NEU",
     isNew: true
   },
@@ -35,7 +35,7 @@ const infografiken = [
     description: "Schritt-für-Schritt-Anleitung zum Setzen von Grenzen – im einheitlichen Design.",
     category: "grenzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OyvpiurGzlIPaQWH.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yUNPfTDyQWmciNRz.png",
     rating: "NEU",
     isNew: true
   },
@@ -45,7 +45,7 @@ const infografiken = [
     description: "Support, Empathy, Truth – die bewährte Kommunikationstechnik im einheitlichen Design.",
     category: "kommunizieren",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BNKeTgeVWhbfziTn.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BkgLXBtsiscPljTj.png",
     rating: "NEU",
     isNew: true
   },
@@ -55,7 +55,7 @@ const infografiken = [
     description: "Gefühle anerkennen in 4 Schritten – im einheitlichen Design.",
     category: "kommunizieren",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GoCqBXFdUGHQltmS.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fPXKfUWQikqYzuxp.png",
     rating: "NEU",
     isNew: true
   },
@@ -65,7 +65,7 @@ const infografiken = [
     description: "Das Ampel-System und 4 Schritte der Deeskalation – im einheitlichen Design.",
     category: "unterstuetzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JkxTXiXzrhakizYL.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zMFfHFCOztVWyzCA.png",
     rating: "NEU",
     isNew: true
   },
@@ -75,7 +75,7 @@ const infografiken = [
     description: "Präsenz, Validierung, Stabilität – wie Sie wirklich helfen können.",
     category: "unterstuetzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jYYFqLdDeSRVGztK.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zmMFRewcjaAWQcZf.png",
     rating: "NEU",
     isNew: true
   },
@@ -86,7 +86,7 @@ const infografiken = [
     description: "Wie Idealisierung und Entwertung zusammenhängen und was dahinter steckt.",
     category: "verstehen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VnytmZxwbgjonttZ.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DtmYPzvHXkOCbvyM.png",
     rating: "20/24"
   },
   {
@@ -95,7 +95,7 @@ const infografiken = [
     description: "Die typischen Phasen in Beziehungen mit Menschen mit Borderline.",
     category: "verstehen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IVAvSOConfhmllvC.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fjVQcqMEfbeeRgQd.png",
     rating: "19/24"
   },
   {
@@ -104,7 +104,7 @@ const infografiken = [
     description: "Die vier häufigsten Beziehungsdynamiken erklärt.",
     category: "verstehen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vEpxOsKMPzqkImlS.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JUWgIUqBlBqHBdEV.png",
     rating: "19/24"
   },
   {
@@ -113,7 +113,7 @@ const infografiken = [
     description: "Wie Umwelt und Vulnerabilität zusammenwirken.",
     category: "verstehen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iqfZXeFRSzQUzrsq.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KSyqqXeMXVevPanR.png",
     rating: "18/24"
   },
   {
@@ -122,7 +122,7 @@ const infografiken = [
     description: "Wie die Störung das gesamte Familiensystem beeinflusst.",
     category: "verstehen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kSDkJzYVaqdcyggV.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VljeyQzCXsdelHDp.png",
     rating: "18/24"
   },
   // Unterstützen
@@ -132,7 +132,7 @@ const infografiken = [
     description: "Warum wir auf Zehenspitzen gehen und wie wir da rauskommen.",
     category: "unterstuetzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tKVRaACvFlfsVotW.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wCINqnWPYdfAQsDJ.png",
     rating: "23/24"
   },
   {
@@ -141,7 +141,7 @@ const infografiken = [
     description: "Ausführliches Handout zum Eiertanz-Phänomen mit Lösungsansätzen.",
     category: "unterstuetzen",
     type: "pdf",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vGabdRGfjgBiGNSS.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EtZamHaKralgSpPi.pdf",
     rating: "23/24"
   },
   {
@@ -150,7 +150,7 @@ const infografiken = [
     description: "Wie Gefühle übertragen werden und was Sie dagegen tun können.",
     category: "unterstuetzen",
     type: "pdf",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ckmhZvvCJWYMerqA.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TFSgvXpFAgQUQoIp.pdf",
     rating: "23/24"
   },
   {
@@ -159,7 +159,7 @@ const infografiken = [
     description: "Konkrete Strategien, um aus dem Eiertanz auszubrechen.",
     category: "unterstuetzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JYbDWQjxdCSntzVZ.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KYyauSgqEqxvFGrx.png",
     rating: "21/24"
   },
   // Kommunizieren
@@ -169,7 +169,7 @@ const infografiken = [
     description: "Die 6 Stufen der Validierung nach Linehan.",
     category: "kommunizieren",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fHCgKTQDJKRYmUvj.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GpULhcISAfiJyzgJ.png",
     rating: "22/24"
   },
   {
@@ -178,7 +178,7 @@ const infografiken = [
     description: "Support, Empathy, Truth – die bewährte Kommunikationstechnik.",
     category: "kommunizieren",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qGWtMGfiRJzqWJEz.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cfAdmAmZEXbNNxZl.png",
     rating: "22/24"
   },
   // Grenzen setzen
@@ -188,7 +188,7 @@ const infografiken = [
     description: "Schritt-für-Schritt-Anleitung zum Setzen von Grenzen.",
     category: "grenzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FhSNwNMQxOkbvjRF.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sWrGzfdVjABcfZHV.png",
     rating: "24/24"
   },
   {
@@ -197,7 +197,7 @@ const infografiken = [
     description: "Wie Sie Grenzen setzen und gleichzeitig emotional unterstützen.",
     category: "grenzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mwwMCocczTtmKrfM.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EnKcFJwvcqclkAtM.png",
     rating: "23/24"
   },
   {
@@ -206,7 +206,7 @@ const infografiken = [
     description: "Fünf bewährte Methoden für das Setzen von Grenzen.",
     category: "grenzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DLqPLzKxrfPhVjbx.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YuHdFnBIxTtnylpH.png",
     rating: "23/24"
   },
   {
@@ -215,7 +215,7 @@ const infografiken = [
     description: "Hierarchie der Grenzen von weich bis hart.",
     category: "grenzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VMXGFPguowqwxleh.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EGaWNVcKclZYNmVr.png",
     rating: "22/24"
   },
   {
@@ -224,7 +224,7 @@ const infografiken = [
     description: "Schrittweise Eskalation von Grenzen.",
     category: "grenzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRoNBnzXeOlTKcQo.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bDVmdeDhbOTgygXj.png",
     rating: "22/24"
   },
   {
@@ -233,7 +233,7 @@ const infografiken = [
     description: "Ausführliches Handout zur Grenzsetzung.",
     category: "grenzen",
     type: "pdf",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iZlDzSNGeurWekaN.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WnqfDwuBRErJrLPY.pdf",
     rating: "24/24"
   },
   // Selbstfürsorge
@@ -244,7 +244,7 @@ const infografiken = [
     description: "Fear, Obligation, Guilt – und wie Sie daraus entkommen.",
     category: "selbstfuersorge",
     type: "pdf",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cHROAICvNENBQJCA.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NKouihgSdwkyJtNV.pdf",
     rating: "21/24"
   },
 ];

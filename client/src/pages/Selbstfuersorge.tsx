@@ -671,7 +671,7 @@ export default function Selbstfuersorge() {
                       </div>
                     </div>
                     <a 
-                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kLAbCmpxnOxbIMUH.png"
+                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/trxdqyIMGIBQpQgg.png"
                       download
                       className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.45_0.12_145)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     >
@@ -696,7 +696,7 @@ export default function Selbstfuersorge() {
                       </div>
                     </div>
                     <a 
-                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jtiefECukwYuyZwf.png"
+                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izUnFdVOmLVUwSFD.png"
                       download
                       className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     >

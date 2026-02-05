@@ -253,13 +253,13 @@ export default function Kommunizieren() {
                     title: "Validierungs-Stufenmodell",
                     type: "PNG",
                     rating: "22/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fHCgKTQDJKRYmUvj.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GpULhcISAfiJyzgJ.png"
                   },
                   {
                     title: "SET-Kommunikation",
                     type: "PNG",
                     rating: "22/24",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qGWtMGfiRJzqWJEz.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cfAdmAmZEXbNNxZl.png"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">

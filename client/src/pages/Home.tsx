@@ -20,9 +20,9 @@ import {
   Info
 } from "lucide-react";
 
-const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wNcJxGFEHelzxZEE.png";
+const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZeIhbfgnqoOROQeY.png";
 
-const supportImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QQWESvrKXIWrtzrh.png";
+const supportImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EnFtIYXOJxBJdSnJ.png";
 
 const topics = [
   {

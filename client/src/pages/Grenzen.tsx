@@ -373,6 +373,15 @@ export default function Grenzen() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
+                    title: "Grenzen als Geländer",
+                    description: "Warum Grenzen für Menschen mit BPD hilfreich sind",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
+                    icon: Image,
+                    isNew: true
+                  },
+                  {
                     title: "Vier Arten von Grenzen",
                     description: "Zeitliche, emotionale, physische und Kommunikations-Grenzen",
                     type: "PNG",

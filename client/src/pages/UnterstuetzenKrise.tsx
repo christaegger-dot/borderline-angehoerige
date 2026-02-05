@@ -334,11 +334,11 @@ export default function UnterstuetzenKrise() {
                     icon: "image"
                   },
                   {
-                    title: "Grenzen als Geländer",
-                    description: "Warum Grenzen für Menschen mit BPD hilfreich sind",
+                    title: "Der Nebel (FOG)",
+                    description: "Fear, Obligation, Guilt – emotionale Muster erkennen",
                     type: "PNG",
                     rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/doxRJKzyLuIwYzXV.png",
                     isNew: true,
                     icon: "image"
                   }

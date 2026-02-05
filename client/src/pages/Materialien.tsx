@@ -91,16 +91,6 @@ const infografiken = [
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zMFfHFCOztVWyzCA.png",
     isNew: true
   },
-  {
-    id: "grenzsetzung-orientierung",
-    title: "Grenzen als Geländer",
-    description: "Warum Grenzen für Menschen mit BPD hilfreich sind – Struktur, Sicherheit, Fürsorge.",
-    category: "unterstuetzen",
-    type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
-    isNew: true
-  },
-
   // ─────────────────────────────────────────────────────────────────────────
   // KATEGORIE: KOMMUNIZIEREN
   // ─────────────────────────────────────────────────────────────────────────
@@ -126,6 +116,15 @@ const infografiken = [
   // ─────────────────────────────────────────────────────────────────────────
   // KATEGORIE: GRENZEN
   // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: "grenzsetzung-orientierung",
+    title: "Grenzen als Geländer",
+    description: "Warum Grenzen für Menschen mit BPD hilfreich sind – Struktur, Sicherheit, Fürsorge.",
+    category: "grenzen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
+    isNew: true
+  },
   {
     id: "vier-arten-grenzen",
     title: "Vier Arten von Grenzen",

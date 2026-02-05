@@ -20,6 +20,7 @@ import SelbsttestPage from "./pages/SelbsttestPage";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import Genesung from "./pages/Genesung";
+import Selbsthilfegruppen from "./pages/Selbsthilfegruppen";
 
 function Router() {
   return (
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/impressum" component={Impressum} />
       <Route path="/datenschutz" component={Datenschutz} />
       <Route path="/genesung" component={Genesung} />
+      <Route path="/selbsthilfegruppen" component={Selbsthilfegruppen} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

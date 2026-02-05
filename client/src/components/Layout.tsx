@@ -219,9 +219,9 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                  <Link href="/selbsthilfegruppen" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
                     Selbsthilfegruppen
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -237,7 +237,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <div className="border-t border-border/50 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2025 Schluss mit dem Eiertanz. Alle Rechte vorbehalten.
+              © 2026 Schluss mit dem Eiertanz. Alle Rechte vorbehalten.
             </p>
             <div className="flex gap-4">
               <Link href="/impressum" className="text-muted-foreground hover:text-foreground text-sm transition-colors">

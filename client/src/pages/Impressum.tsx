@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { FileText, BookOpen, ExternalLink } from "lucide-react";
+import { FileText, BookOpen, ExternalLink, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Impressum() {
   return (
@@ -50,6 +50,55 @@ export default function Impressum() {
                       Diese Website ist eine private Ressource für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung. 
                       Sie wurde im Rahmen der Angehörigenberatung erstellt und wird von Angehörigenberater:innen 
                       gezielt an Ratsuchende weitergegeben.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Kontakt */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <Card className="border-[oklch(0.55_0.10_145)]/30 bg-[oklch(0.95_0.04_145)]/30">
+                <CardContent className="p-6">
+                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                    Beratung für Angehörige
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    Die <strong>Fachstelle Angehörigenarbeit</strong> an der Psychiatrischen Universitätsklinik Zürich (PUK) 
+                    bietet Unterstützung und Beratung für Angehörige von psychisch erkrankten Menschen.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.90_0.05_145)] flex items-center justify-center flex-shrink-0">
+                        <Phone className="w-5 h-5 text-[oklch(0.45_0.10_145)]" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">Telefon</p>
+                        <a href="tel:+41583843800" className="font-medium text-foreground hover:text-[oklch(0.55_0.10_145)] transition-colors">
+                          +41 58 384 38 00
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.90_0.05_145)] flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-5 h-5 text-[oklch(0.45_0.10_145)]" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">E-Mail</p>
+                        <a href="mailto:angehoerigenarbeit@pukzh.ch" className="font-medium text-foreground hover:text-[oklch(0.55_0.10_145)] transition-colors">
+                          angehoerigenarbeit@pukzh.ch
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-border/50">
+                    <p className="text-sm text-muted-foreground">
+                      Die Beratung ist <strong>kostenlos</strong> und steht allen Angehörigen von psychisch kranken Menschen 
+                      im Kanton Zürich vertraulich zur Verfügung.
                     </p>
                   </div>
                 </CardContent>
@@ -216,7 +265,7 @@ export default function Impressum() {
               viewport={{ once: true }}
             >
               <p className="text-center text-sm text-muted-foreground">
-                Stand: Februar 2025
+                Stand: Februar 2026
               </p>
             </motion.div>
           </div>

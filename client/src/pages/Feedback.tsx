@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { MessageSquare, Send, CheckCircle2, Heart, Star, ThumbsUp, AlertCircle } from "lucide-react";
+import { MessageSquare, Send, CheckCircle2, Heart, Star, ThumbsUp, AlertCircle, Mail } from "lucide-react";
 import { useState } from "react";
 
 export default function Feedback() {
@@ -250,6 +250,34 @@ export default function Feedback() {
                       sammelt keine persönlichen Daten. Ihre IP-Adresse wird nicht gespeichert. 
                       Das Feedback wird nur lokal in Ihrem Browser gespeichert und nicht an einen Server übertragen.
                     </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Direkter Kontakt */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-[oklch(0.90_0.03_145)]/30 border-[oklch(0.75_0.08_145)]/30">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 rounded-full bg-[oklch(0.88_0.04_145)] flex items-center justify-center mx-auto mb-4">
+                      <Mail className="w-6 h-6 text-[oklch(0.45_0.08_145)]" />
+                    </div>
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                      Möchten Sie uns direkt erreichen?
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      Für persönliche Rückfragen oder ausführlicheres Feedback können Sie uns gerne per E-Mail kontaktieren.
+                    </p>
+                    <a 
+                      href="mailto:angehoerigenarbeit@pukzh.ch"
+                      className="inline-flex items-center gap-2 text-[oklch(0.45_0.08_145)] hover:text-[oklch(0.35_0.08_145)] font-medium transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                      angehoerigenarbeit@pukzh.ch
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>

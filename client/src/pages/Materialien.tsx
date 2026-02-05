@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, FileText, Image, Filter, BookOpen, Heart, MessageCircle, Shield } from "lucide-react";
+import { Download, FileText, Filter, BookOpen, Heart, MessageCircle, Shield, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 // Infografiken-Daten mit CDN-URLs
@@ -260,6 +260,7 @@ const categories = [
 
 export default function Materialien() {
   const [activeCategory, setActiveCategory] = useState("alle");
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
   
   const filteredInfografiken = activeCategory === "alle" 
     ? infografiken 
@@ -328,21 +329,42 @@ export default function Materialien() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardContent className="p-5">
-                    <div className="flex items-start justify-between gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.88_0.04_145)] flex items-center justify-center flex-shrink-0">
-                        {item.type === "pdf" ? (
-                          <FileText className="w-5 h-5 text-[oklch(0.40_0.08_145)]" />
-                        ) : (
-                          <Image className="w-5 h-5 text-[oklch(0.40_0.08_145)]" />
-                        )}
+                <Card className="h-full hover:shadow-lg transition-shadow overflow-hidden">
+                  {/* Vorschaubild für PNG-Dateien */}
+                  {item.type === "png" ? (
+                    <div 
+                      className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
+                      onClick={() => setPreviewImage(item.url)}
+                    >
+                      <img 
+                        src={item.url} 
+                        alt={item.title}
+                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
                       </div>
-                      <span className={`text-xs px-2 py-1 rounded-full ${item.isNew ? 'bg-[oklch(0.65_0.12_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
+                      {/* Badge */}
+                      <span className={`absolute top-2 right-2 text-xs px-2 py-1 rounded-full ${item.isNew ? 'bg-[oklch(0.65_0.12_55)] text-white' : 'bg-white/90 text-[oklch(0.40_0.08_145)]'}`}>
                         {item.rating}
                       </span>
                     </div>
-                    
+                  ) : (
+                    /* PDF-Platzhalter */
+                    <div className="relative aspect-[4/3] bg-gradient-to-br from-[oklch(0.95_0.02_25)] to-[oklch(0.90_0.04_25)] flex items-center justify-center">
+                      <div className="text-center">
+                        <FileText className="w-16 h-16 text-[oklch(0.55_0.15_25)] mx-auto mb-2" />
+                        <span className="text-sm font-medium text-[oklch(0.45_0.10_25)]">PDF-Dokument</span>
+                      </div>
+                      {/* Badge */}
+                      <span className={`absolute top-2 right-2 text-xs px-2 py-1 rounded-full ${item.isNew ? 'bg-[oklch(0.65_0.12_55)] text-white' : 'bg-white/90 text-[oklch(0.40_0.08_145)]'}`}>
+                        {item.rating}
+                      </span>
+                    </div>
+                  )}
+                  
+                  <CardContent className="p-5">
                     <h3 className="font-display font-semibold text-foreground mb-2">
                       {item.title}
                     </h3>
@@ -375,6 +397,47 @@ export default function Materialien() {
           )}
         </div>
       </section>
+
+      {/* Lightbox für Bildvorschau */}
+      {previewImage && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setPreviewImage(null)}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="relative max-w-5xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={previewImage} 
+              alt="Vorschau" 
+              className="w-full h-full object-contain rounded-lg"
+            />
+            <button
+              onClick={() => setPreviewImage(null)}
+              className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center text-foreground hover:bg-white transition-colors"
+            >
+              ✕
+            </button>
+            <a 
+              href={previewImage} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              download
+              className="absolute bottom-4 right-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)]">
+                <Download className="w-4 h-4 mr-2" />
+                Herunterladen
+              </Button>
+            </a>
+          </motion.div>
+        </div>
+      )}
 
       {/* Hinweis */}
       <section className="py-8 bg-[oklch(0.99_0.008_85)]">

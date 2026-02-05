@@ -204,7 +204,7 @@ export default function Home() {
                 >
                   <Link href={item.href}>
                     <Card 
-                      className="h-full border-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+                      className="group h-full border-2 border-dashed transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-solid hover:scale-[1.02] cursor-pointer"
                       style={{ 
                         borderColor: item.color,
                         backgroundColor: item.bgColor 
@@ -212,7 +212,7 @@ export default function Home() {
                     >
                       <CardContent className="p-5">
                         <div 
-                          className="w-10 h-10 rounded-full flex items-center justify-center mb-3"
+                          className="w-10 h-10 rounded-full flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110"
                           style={{ backgroundColor: item.color }}
                         >
                           <Icon className="w-5 h-5 text-white" />
@@ -224,11 +224,11 @@ export default function Home() {
                           {item.description}
                         </p>
                         <span 
-                          className="text-sm font-medium flex items-center gap-1"
+                          className="text-sm font-medium flex items-center gap-1 transition-all duration-300 group-hover:gap-2"
                           style={{ color: item.color }}
                         >
                           {item.action}
-                          <ArrowRight className="w-4 h-4" />
+                          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </span>
                       </CardContent>
                     </Card>

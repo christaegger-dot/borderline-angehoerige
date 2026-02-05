@@ -213,28 +213,12 @@ export default function Verstehen() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "Scham vs. Schuld",
-                    description: "Verstehen Sie den Unterschied",
-                    type: "PNG",
-                    rating: "24/24",
-                    url: "/materialien",
-                    icon: Image
-                  },
-                  {
                     title: "Spaltungs-Zyklus",
                     description: "Das Schwarz-Weiss-Denken erklärt",
                     type: "PNG",
                     rating: "20/24",
                     url: "/materialien",
                     icon: Image
-                  },
-                  {
-                    title: "Der Eiertanz",
-                    description: "Die Beziehungsdynamik verstehen",
-                    type: "PDF",
-                    rating: "23/24",
-                    url: "/materialien",
-                    icon: FileText
                   },
                   {
                     title: "Übertragungsdynamik",

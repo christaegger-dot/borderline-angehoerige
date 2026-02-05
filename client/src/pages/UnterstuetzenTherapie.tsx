@@ -280,13 +280,6 @@ export default function UnterstuetzenTherapie() {
                     type: "PNG",
                     rating: "22/24",
                     url: "/materialien"
-                  },
-                  {
-                    title: "Eiertanz-Dynamik",
-                    description: "Die Beziehungsdynamik verstehen",
-                    type: "PNG",
-                    rating: "21/24",
-                    url: "/materialien"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">

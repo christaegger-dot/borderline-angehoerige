@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, Image, FileText } from "lucide-react";
+import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
@@ -91,40 +91,71 @@ export default function Verstehen() {
                 Die Kernsymptome
               </h2>
               
-              <div className="grid gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
                     title: "Emotionale Instabilität",
-                    description: "Schnelle, intensive Stimmungswechsel, die von aussen oft nicht nachvollziehbar erscheinen."
+                    description: "Schnelle, intensive Stimmungswechsel, die von aussen oft nicht nachvollziehbar erscheinen.",
+                    icon: Waves,
+                    color: "oklch(0.65_0.12_55)",
+                    bgColor: "oklch(0.92_0.06_55)"
                   },
                   {
                     title: "Verlassensangst",
-                    description: "Intensive Angst vor Zurückweisung oder Verlassenwerden, die zu verzweifelten Versuchen führen kann, dies zu verhindern."
+                    description: "Intensive Angst vor Zurückweisung oder Verlassenwerden, die zu verzweifelten Versuchen führen kann, dies zu verhindern.",
+                    icon: UserX,
+                    color: "oklch(0.55_0.15_25)",
+                    bgColor: "oklch(0.92_0.05_25)"
                   },
                   {
                     title: "Instabiles Selbstbild",
-                    description: "Unsicherheit darüber, wer man ist, was man will und welche Werte man hat."
+                    description: "Unsicherheit darüber, wer man ist, was man will und welche Werte man hat.",
+                    icon: Fingerprint,
+                    color: "oklch(0.45_0.08_250)",
+                    bgColor: "oklch(0.92_0.03_250)"
                   },
                   {
                     title: "Schwarz-Weiss-Denken",
-                    description: "Die Tendenz, Menschen und Situationen als entweder 'ganz gut' oder 'ganz schlecht' zu sehen."
+                    description: "Die Tendenz, Menschen und Situationen als entweder 'ganz gut' oder 'ganz schlecht' zu sehen.",
+                    icon: Contrast,
+                    color: "oklch(0.35_0.02_250)",
+                    bgColor: "oklch(0.92_0.01_250)"
                   },
                   {
                     title: "Impulsivität",
-                    description: "Handlungen ohne Nachdenken über die Konsequenzen, oft in Bereichen wie Geldausgaben, Essen oder Beziehungen."
+                    description: "Handlungen ohne Nachdenken über die Konsequenzen, oft in Bereichen wie Geldausgaben, Essen oder Beziehungen.",
+                    icon: Zap,
+                    color: "oklch(0.60_0.15_85)",
+                    bgColor: "oklch(0.92_0.05_85)"
                   },
                   {
                     title: "Selbstverletzendes Verhalten",
-                    description: "Handlungen, die dem eigenen Körper schaden, oft als Versuch, intensive Emotionen zu regulieren."
+                    description: "Handlungen, die dem eigenen Körper schaden, oft als Versuch, intensive Emotionen zu regulieren.",
+                    icon: Scissors,
+                    color: "oklch(0.65_0.08_145)",
+                    bgColor: "oklch(0.92_0.04_145)"
                   }
-                ].map((item, index) => (
-                  <Card key={index} className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-display font-semibold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                ].map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <Card key={index} className="border-border/50 hover:shadow-md transition-all duration-300">
+                      <CardContent className="p-5">
+                        <div className="flex items-start gap-4">
+                          <div 
+                            className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                            style={{ backgroundColor: item.bgColor }}
+                          >
+                            <Icon className="w-6 h-6" style={{ color: item.color }} />
+                          </div>
+                          <div>
+                            <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                            <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </motion.div>
 
@@ -141,23 +172,26 @@ export default function Verstehen() {
               </h2>
               
               <div className="prose prose-lg max-w-none">
-                <p className="text-muted-foreground leading-relaxed mb-4">
+                <p className="text-muted-foreground leading-relaxed mb-6">
                   Wenn Sie verstehen, dass das Verhalten Ihres Angehörigen nicht gegen Sie gerichtet ist, sondern Ausdruck einer Erkrankung, können Sie anders reagieren. Sie können:
                 </p>
                 
-                <ul className="space-y-3 mb-6">
+                <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    "Verhalten von Person trennen – und weniger persönlich nehmen",
-                    "Muster erkennen – und früher deeskalieren",
-                    "Mitgefühl entwickeln – ohne sich selbst aufzugeben",
-                    "Realistische Erwartungen haben – an sich und an Ihren Angehörigen"
+                    { text: "Verhalten von Person trennen", sub: "und weniger persönlich nehmen", icon: "🎯" },
+                    { text: "Muster erkennen", sub: "und früher deeskalieren", icon: "🔍" },
+                    { text: "Mitgefühl entwickeln", sub: "ohne sich selbst aufzugeben", icon: "💚" },
+                    { text: "Realistische Erwartungen haben", sub: "an sich und an Ihren Angehörigen", icon: "⚖️" }
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-[oklch(0.65_0.08_145)] mt-2 flex-shrink-0" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
+                    <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-[oklch(0.97_0.015_85)] border border-border/30">
+                      <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                      <div>
+                        <span className="font-medium text-foreground block">{item.text}</span>
+                        <span className="text-sm text-muted-foreground">{item.sub}</span>
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </motion.div>
 

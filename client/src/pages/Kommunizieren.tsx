@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, CheckCircle2, Heart, Lightbulb, Download, Image } from "lucide-react";
+import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, Image, Eye, MessageSquare, Sparkles, History, Users, Star } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Kommunizieren() {
@@ -67,27 +67,41 @@ export default function Kommunizieren() {
               
               <div className="space-y-3">
                 {[
-                  { level: 1, title: "Präsent sein", example: "Aufmerksam zuhören, Blickkontakt halten" },
-                  { level: 2, title: "Genau reflektieren", example: "\"Du sagst, du fühlst dich allein gelassen.\"" },
-                  { level: 3, title: "Unausgesprochenes benennen", example: "\"Das klingt, als wärst du auch wütend darüber.\"" },
-                  { level: 4, title: "Verhalten aus der Geschichte erklären", example: "\"Nach allem, was du erlebt hast, ist es verständlich, dass du so reagierst.\"" },
-                  { level: 5, title: "Normalität bestätigen", example: "\"Jeder würde in dieser Situation so fühlen.\"" },
-                  { level: 6, title: "Radikale Echtheit", example: "\"Ich glaube an dich. Du schaffst das.\"" }
-                ].map((item) => (
-                  <Card key={item.level} className="border-border/50">
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-3">
-                        <span className="w-6 h-6 rounded-full bg-[oklch(0.65_0.12_55)] text-white text-sm flex items-center justify-center flex-shrink-0">
-                          {item.level}
-                        </span>
-                        <div>
-                          <h4 className="font-semibold text-foreground">{item.title}</h4>
-                          <p className="text-muted-foreground text-sm italic">{item.example}</p>
+                  { level: 1, title: "Präsent sein", example: "Aufmerksam zuhören, Blickkontakt halten", icon: Eye, color: "oklch(0.70_0.08_55)" },
+                  { level: 2, title: "Genau reflektieren", example: "\"Du sagst, du fühlst dich allein gelassen.\"", icon: MessageSquare, color: "oklch(0.65_0.10_55)" },
+                  { level: 3, title: "Unausgesprochenes benennen", example: "\"Das klingt, als wärst du auch wütend darüber.\"", icon: Sparkles, color: "oklch(0.60_0.12_55)" },
+                  { level: 4, title: "Verhalten aus der Geschichte erklären", example: "\"Nach allem, was du erlebt hast, ist es verständlich, dass du so reagierst.\"", icon: History, color: "oklch(0.55_0.12_55)" },
+                  { level: 5, title: "Normalität bestätigen", example: "\"Jeder würde in dieser Situation so fühlen.\"", icon: Users, color: "oklch(0.50_0.12_55)" },
+                  { level: 6, title: "Radikale Echtheit", example: "\"Ich glaube an dich. Du schaffst das.\"", icon: Star, color: "oklch(0.45_0.14_55)" }
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Card key={item.level} className="border-border/50 hover:shadow-md transition-all duration-300" style={{ borderLeftWidth: '4px', borderLeftColor: item.color }}>
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-4">
+                          <div className="flex items-center gap-3">
+                            <span 
+                              className="w-8 h-8 rounded-full text-white text-sm font-bold flex items-center justify-center flex-shrink-0"
+                              style={{ backgroundColor: item.color }}
+                            >
+                              {item.level}
+                            </span>
+                            <div 
+                              className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                              style={{ backgroundColor: `color-mix(in oklch, ${item.color} 15%, white)` }}
+                            >
+                              <Icon className="w-5 h-5" style={{ color: item.color }} />
+                            </div>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-foreground">{item.title}</h4>
+                            <p className="text-muted-foreground text-sm mt-1 bg-muted/30 rounded-lg px-3 py-2 italic">{item.example}</p>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </motion.div>
 
@@ -166,34 +180,52 @@ export default function Kommunizieren() {
               </h2>
               
               <div className="grid sm:grid-cols-2 gap-4">
-                <Card className="border-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)] bg-[oklch(0.92_0.04_145)]/30">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                    <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.10_145)] flex items-center justify-center">
+                        <CheckCircle2 className="w-5 h-5 text-white" />
+                      </div>
                       Hilfreich
                     </h3>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Ich-Botschaften verwenden</li>
-                      <li>• Ruhig und langsam sprechen</li>
-                      <li>• Pausen zulassen</li>
-                      <li>• Gefühle benennen</li>
-                      <li>• Nachfragen statt annehmen</li>
+                    <ul className="space-y-3 text-sm">
+                      {[
+                        "Ich-Botschaften verwenden",
+                        "Ruhig und langsam sprechen",
+                        "Pausen zulassen",
+                        "Gefühle benennen",
+                        "Nachfragen statt annehmen"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-2 text-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </CardContent>
                 </Card>
                 
-                <Card className="border-[oklch(0.55_0.15_25)]">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_25)] bg-[oklch(0.92_0.05_25)]/30">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <span className="text-[oklch(0.55_0.15_25)]">✗</span>
+                    <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_25)] flex items-center justify-center">
+                        <XCircle className="w-5 h-5 text-white" />
+                      </div>
                       Vermeiden
                     </h3>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• "Du machst immer..."</li>
-                      <li>• "Beruhige dich!"</li>
-                      <li>• "Das ist doch nicht so schlimm"</li>
-                      <li>• Sarkasmus oder Ironie</li>
-                      <li>• Unterbrechen oder Augenrollen</li>
+                    <ul className="space-y-3 text-sm">
+                      {[
+                        "\"Du machst immer...\"",
+                        "\"Beruhige dich!\"",
+                        "\"Das ist doch nicht so schlimm\"",
+                        "Sarkasmus oder Ironie",
+                        "Unterbrechen oder Augenrollen"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-2 text-foreground">
+                          <XCircle className="w-4 h-4 text-[oklch(0.55_0.15_25)] flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </CardContent>
                 </Card>

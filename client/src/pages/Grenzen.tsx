@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image } from "lucide-react";
+import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image, Clock, HeartHandshake, Home, Wallet } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Grenzen() {
@@ -112,39 +112,64 @@ export default function Grenzen() {
                 Arten von Grenzen
               </h2>
               
-              <div className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
                     title: "Zeitliche Grenzen",
                     description: "Wann sind Sie erreichbar? Wann brauchen Sie Ruhe?",
-                    example: "\"Nach 22 Uhr bin ich nicht mehr erreichbar für Telefonate.\""
+                    example: "\"Nach 22 Uhr bin ich nicht mehr erreichbar für Telefonate.\"",
+                    icon: Clock,
+                    color: "oklch(0.55_0.12_250)",
+                    bgColor: "oklch(0.92_0.04_250)"
                   },
                   {
                     title: "Emotionale Grenzen",
                     description: "Welches Verhalten können Sie tolerieren? Was nicht?",
-                    example: "\"Wenn du mich anschreist, verlasse ich den Raum.\""
+                    example: "\"Wenn du mich anschreist, verlasse ich den Raum.\"",
+                    icon: HeartHandshake,
+                    color: "oklch(0.55_0.15_25)",
+                    bgColor: "oklch(0.92_0.05_25)"
                   },
                   {
                     title: "Physische Grenzen",
                     description: "Ihr Körper, Ihr Raum, Ihre Privatsphäre.",
-                    example: "\"Mein Zimmer ist mein Rückzugsort. Bitte klopfe an.\""
+                    example: "\"Mein Zimmer ist mein Rückzugsort. Bitte klopfe an.\"",
+                    icon: Home,
+                    color: "oklch(0.55_0.10_145)",
+                    bgColor: "oklch(0.92_0.04_145)"
                   },
                   {
                     title: "Finanzielle Grenzen",
                     description: "Wie viel Unterstützung können und wollen Sie geben?",
-                    example: "\"Ich kann dir einmal im Monat mit X Franken helfen.\""
+                    example: "\"Ich kann dir einmal im Monat mit X Franken helfen.\"",
+                    icon: Wallet,
+                    color: "oklch(0.55_0.12_85)",
+                    bgColor: "oklch(0.92_0.04_85)"
                   }
-                ].map((item, index) => (
-                  <Card key={index} className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-display font-semibold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm mb-3">{item.description}</p>
-                      <div className="bg-muted/50 rounded-lg p-3">
-                        <p className="text-sm text-foreground italic">{item.example}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                ].map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <Card key={index} className="border-border/50 hover:shadow-md transition-all duration-300" style={{ borderTopWidth: '4px', borderTopColor: item.color }}>
+                      <CardContent className="p-5">
+                        <div className="flex items-start gap-4 mb-3">
+                          <div 
+                            className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                            style={{ backgroundColor: item.bgColor }}
+                          >
+                            <Icon className="w-6 h-6" style={{ color: item.color }} />
+                          </div>
+                          <div>
+                            <h3 className="font-display font-semibold text-foreground">{item.title}</h3>
+                            <p className="text-muted-foreground text-sm">{item.description}</p>
+                          </div>
+                        </div>
+                        <div className="bg-muted/50 rounded-lg p-3 mt-3">
+                          <p className="text-sm text-foreground italic">{item.example}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </motion.div>
 

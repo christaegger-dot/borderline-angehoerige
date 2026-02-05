@@ -237,70 +237,76 @@ export default function Selbstfuersorge() {
                 Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr Selbstfürsorge brauchen:
               </p>
               
-              <div className="space-y-4">
-                <Card className="border-[oklch(0.55_0.15_35)]/30">
+              <div className="grid sm:grid-cols-3 gap-4">
+                <Card className="border-t-4 border-t-[oklch(0.60_0.15_85)] bg-[oklch(0.97_0.02_85)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <Brain className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
-                      Emotionale Warnsignale
-                    </h3>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-[oklch(0.60_0.15_85)] flex items-center justify-center">
+                        <Brain className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="font-display font-semibold text-foreground">Emotional</h3>
+                    </div>
                     <ul className="space-y-2">
                       {[
-                        "Ständige Gereiztheit oder kurze Zündschnur",
-                        "Gefühl der Hoffnungslosigkeit oder Resignation",
-                        "Emotionale Taubheit oder Gleichgültigkeit",
-                        "Schuldgefühle, wenn Sie etwas für sich tun",
-                        "Angst, die Kontrolle zu verlieren"
+                        "Gereiztheit",
+                        "Hoffnungslosigkeit",
+                        "Emotionale Taubheit",
+                        "Schuldgefühle",
+                        "Kontrollverlust-Angst"
                       ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
-                          <span className="text-[oklch(0.55_0.15_35)]">⚠</span>
-                          {item}
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          <AlertTriangle className="w-4 h-4 text-[oklch(0.60_0.15_85)] flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                 </Card>
                 
-                <Card className="border-[oklch(0.55_0.15_35)]/30">
+                <Card className="border-t-4 border-t-[oklch(0.55_0.15_25)] bg-[oklch(0.97_0.02_25)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <Heart className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
-                      Körperliche Warnsignale
-                    </h3>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-[oklch(0.55_0.15_25)] flex items-center justify-center">
+                        <Heart className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="font-display font-semibold text-foreground">Körperlich</h3>
+                    </div>
                     <ul className="space-y-2">
                       {[
-                        "Ständige Erschöpfung, auch nach ausreichend Schlaf",
-                        "Schlafprobleme (Ein- oder Durchschlafstörungen)",
-                        "Appetitveränderungen (zu viel oder zu wenig)",
-                        "Häufige Kopfschmerzen oder Verspannungen",
-                        "Erhöhte Anfälligkeit für Infekte"
+                        "Erschöpfung",
+                        "Schlafprobleme",
+                        "Appetitveränderung",
+                        "Kopfschmerzen",
+                        "Infektanfälligkeit"
                       ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
-                          <span className="text-[oklch(0.55_0.15_35)]">⚠</span>
-                          {item}
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          <AlertTriangle className="w-4 h-4 text-[oklch(0.55_0.15_25)] flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                 </Card>
                 
-                <Card className="border-[oklch(0.55_0.15_35)]/30">
+                <Card className="border-t-4 border-t-[oklch(0.50_0.12_250)] bg-[oklch(0.97_0.02_250)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <Users className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
-                      Soziale Warnsignale
-                    </h3>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-[oklch(0.50_0.12_250)] flex items-center justify-center">
+                        <Users className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="font-display font-semibold text-foreground">Sozial</h3>
+                    </div>
                     <ul className="space-y-2">
                       {[
-                        "Rückzug von Freunden und Familie",
-                        "Vernachlässigung von Hobbys und Interessen",
-                        "Gefühl der Isolation ('Niemand versteht mich')",
-                        "Vermeidung von sozialen Situationen",
-                        "Alles dreht sich nur noch um den Angehörigen"
+                        "Rückzug",
+                        "Hobbys vernachlässigt",
+                        "Isolationsgefühl",
+                        "Vermeidung",
+                        "Nur noch Angehöriger"
                       ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
-                          <span className="text-[oklch(0.55_0.15_35)]">⚠</span>
-                          {item}
+                        <li key={i} className="flex items-start gap-2 text-sm">
+                          <AlertTriangle className="w-4 h-4 text-[oklch(0.50_0.12_250)] flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">{item}</span>
                         </li>
                       ))}
                     </ul>

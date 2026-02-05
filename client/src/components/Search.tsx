@@ -160,21 +160,21 @@ const searchableContent = [
     title: "Notfallnummern Schweiz",
     description: "144 Sanitätsnotruf, 143 Dargebotene Hand, 117 Polizei",
     keywords: ["notfall", "notruf", "144", "143", "117", "telefon", "hilfe", "akut"],
-    href: "/notfall",
+    href: "/soforthilfe",
     section: "Krisenressourcen"
   },
   {
     title: "Psychiatrische Notdienste",
     description: "Regionale psychiatrische Notaufnahmen in der Schweiz",
     keywords: ["psychiatrie", "notdienst", "notaufnahme", "klinik", "zürich", "bern", "basel"],
-    href: "/notfall",
+    href: "/soforthilfe",
     section: "Krisenressourcen"
   },
   {
     title: "Krisenplan erstellen",
     description: "Einen persönlichen Krisenplan gemeinsam vorbereiten",
     keywords: ["krisenplan", "vorbereitung", "notfall", "plan", "sicherheit"],
-    href: "/notfall",
+    href: "/soforthilfe",
     section: "Krisenressourcen"
   },
   
@@ -268,7 +268,7 @@ const searchableContent = [
     title: "PUK Zürich Notfall",
     description: "Psychiatrische Notdienste für Kinder, Erwachsene und Senioren",
     keywords: ["puk", "notfall", "psychiatrie", "zürich", "kinder", "erwachsene", "senioren", "kiz"],
-    href: "/notfall",
+    href: "/soforthilfe",
     section: "Krisenressourcen"
   },
   {
@@ -460,28 +460,28 @@ const searchableContent = [
     title: "Suiziddrohung – Was tun?",
     description: "Schritt-für-Schritt-Anleitung bei Suiziddrohungen",
     keywords: ["suizid", "drohung", "selbstmord", "will nicht mehr", "umbringen"],
-    href: "/notfall",
+    href: "/soforthilfe",
     section: "Krisenressourcen"
   },
   {
     title: "Selbstverletzung – Was tun?",
     description: "Anleitung bei Ritzen, Brennen oder anderen Selbstverletzungen",
     keywords: ["selbstverletzung", "ritzen", "schneiden", "brennen", "svv"],
-    href: "/notfall",
+    href: "/soforthilfe",
     section: "Krisenressourcen"
   },
   {
     title: "Aggressive Eskalation – Was tun?",
     description: "Deeskalation bei Schreien, Drohen oder Gewalt",
     keywords: ["aggression", "eskalation", "gewalt", "schreien", "drohen", "wut"],
-    href: "/notfall",
+    href: "/soforthilfe",
     section: "Krisenressourcen"
   },
   {
     title: "Emotionale Erpressung – Was tun?",
     description: "Umgang mit manipulativen Drohungen und Schuldvorwürfen",
     keywords: ["erpressung", "manipulation", "schuld", "drohung", "wenn du gehst"],
-    href: "/notfall",
+    href: "/soforthilfe",
     section: "Krisenressourcen"
   },
 ];

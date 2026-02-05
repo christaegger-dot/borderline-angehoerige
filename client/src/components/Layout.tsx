@@ -12,7 +12,7 @@ interface LayoutProps {
 
 const navItems = [
   { href: "/verstehen", label: "Verstehen", icon: BookOpen },
-  { href: "/unterstuetzen", label: "Unterstützen", icon: Heart },
+  { href: "/unterstuetzen/uebersicht", label: "Unterstützen", icon: Heart },
   { href: "/kommunizieren", label: "Kommunizieren", icon: MessageCircle },
   { href: "/grenzen", label: "Grenzen", icon: Shield },
   { href: "/selbstfuersorge", label: "Selbstfürsorge", icon: Sparkles },
@@ -90,7 +90,7 @@ export default function Layout({ children }: LayoutProps) {
                 </kbd>
               </button>
 
-              <Link href="/notfall">
+              <Link href="/soforthilfe">
                 <Button
                   variant="default"
                   size="sm"
@@ -144,7 +144,7 @@ export default function Layout({ children }: LayoutProps) {
                   );
                 })}
                 <Link
-                  href="/notfall"
+                  href="/soforthilfe"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium bg-[oklch(0.55_0.20_25)] text-white mt-2"
                 >
@@ -217,8 +217,8 @@ export default function Layout({ children }: LayoutProps) {
               <h4 className="font-display font-semibold text-foreground mb-4">Ressourcen</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/notfall" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Krisenressourcen
+                  <Link href="/soforthilfe" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                    Soforthilfe
                   </Link>
                 </li>
                 <li>
@@ -288,7 +288,7 @@ export default function Layout({ children }: LayoutProps) {
       </footer>
 
       {/* Fixed Emergency Button (Mobile) */}
-      <Link href="/notfall" className="sm:hidden fixed bottom-4 right-4 z-50">
+      <Link href="/soforthilfe" className="sm:hidden fixed bottom-4 right-4 z-50">
         <Button
           variant="default"
           size="icon"

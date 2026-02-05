@@ -48,7 +48,7 @@ export default function SelbsttestPage() {
               <p className="text-sm text-muted-foreground">
                 Dieser Test ersetzt keine professionelle Beratung. Er dient lediglich als Orientierungshilfe, 
                 um Ihnen den Einstieg in unsere Inhalte zu erleichtern. Bei akuten Krisen wenden Sie sich 
-                bitte an die <a href="/notfall" className="text-[oklch(0.55_0.20_25)] underline hover:no-underline">Notfallressourcen</a>.
+                bitte an die <a href="/soforthilfe" className="text-[oklch(0.55_0.20_25)] underline hover:no-underline">Notfallressourcen</a>.
               </p>
             </div>
           </div>

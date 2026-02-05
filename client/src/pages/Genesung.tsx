@@ -485,7 +485,7 @@ export default function Genesung() {
                 begleiten können – ohne sich selbst zu verlieren.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/unterstuetzen">
+                <Link href="/unterstuetzen/uebersicht">
                   <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)]">
                     Unterstützen lernen
                     <ArrowRight className="w-4 h-4 ml-2" />

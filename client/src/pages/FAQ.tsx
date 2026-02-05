@@ -61,7 +61,7 @@ export default function FAQ() {
         {
           question: "Wie reagiere ich auf Drohungen?",
           answer: "Unterscheiden Sie zwischen Suiziddrohungen und anderen Drohungen. Bei Suiziddrohungen: Nehmen Sie diese immer ernst, aber lassen Sie sich nicht erpressen. Sagen Sie: «Ich höre, dass du gerade sehr leidest. Wenn du sagst, du willst dir etwas antun, muss ich den Notruf rufen.» Und tun Sie das auch – jedes Mal. Bei anderen Drohungen (z.B. «Dann verlasse ich dich»): Bleiben Sie ruhig, validieren Sie das Gefühl («Ich höre, dass du wütend bist»), aber geben Sie nicht nach. Drohungen sind oft ein verzweifelter Versuch, Kontrolle zu gewinnen, wenn sich jemand machtlos fühlt.",
-          links: [{ text: "Krisenszenarien-Anleitungen", url: "/notfall" }]
+          links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }]
         },
         {
           question: "Was sage ich, wenn mein Angehöriger mich beschuldigt?",
@@ -86,7 +86,7 @@ export default function FAQ() {
         {
           question: "Wann ist eine Einweisung nötig?",
           answer: "Eine psychiatrische Einweisung (freiwillig oder unfreiwillig) ist angezeigt bei: akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung, die medizinische Versorgung erfordert, Fremdgefährdung, oder wenn die Person so dekompensiert ist, dass sie sich nicht mehr selbst versorgen kann. In der Schweiz kann eine fürsorgerische Unterbringung (FU) durch einen Arzt angeordnet werden, wenn eine ernsthafte Selbst- oder Fremdgefährdung vorliegt. Rufen Sie im Zweifelsfall den psychiatrischen Notdienst an – die können die Situation einschätzen.",
-          links: [{ text: "Notfallnummern", url: "/notfall" }]
+          links: [{ text: "Notfallnummern", url: "/soforthilfe" }]
         },
         {
           question: "Darf ich meinen Angehörigen verlassen?",

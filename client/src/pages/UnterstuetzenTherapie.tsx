@@ -17,7 +17,7 @@ export default function UnterstuetzenTherapie() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <Link href="/unterstuetzen" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
+            <Link href="/unterstuetzen/uebersicht" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
               ← Zurück zur Übersicht
             </Link>
             

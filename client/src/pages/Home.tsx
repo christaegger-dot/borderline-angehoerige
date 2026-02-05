@@ -78,7 +78,7 @@ const crisisMatrix = [
     title: "Akute Krise",
     description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
     action: "Sofort handeln",
-    href: "/notfall",
+    href: "/soforthilfe",
     color: "oklch(0.55 0.20 25)",
     bgColor: "oklch(0.95 0.05 25)",
     icon: AlertTriangle
@@ -158,7 +158,7 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/unterstuetzen">
+                <Link href="/unterstuetzen/uebersicht">
                   <Button size="lg" className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white w-full sm:w-auto">
                     <Heart className="w-5 h-5 mr-2" />
                     Wie kann ich helfen?
@@ -369,7 +369,7 @@ export default function Home() {
                 ))}
               </ul>
               
-              <Link href="/unterstuetzen">
+              <Link href="/unterstuetzen/uebersicht">
                 <Button size="lg" className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white">
                   Unterstützungsstrategien entdecken
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -465,7 +465,7 @@ export default function Home() {
                 Hier finden Sie sofortige Hilfe und Notfallnummern.
               </p>
             </div>
-            <Link href="/notfall">
+            <Link href="/soforthilfe">
               <Button size="lg" variant="secondary" className="bg-white text-[oklch(0.55_0.20_25)] hover:bg-white/90">
                 <Phone className="w-5 h-5 mr-2" />
                 Soforthilfe öffnen

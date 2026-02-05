@@ -17,7 +17,7 @@ export default function UnterstuetzenKrise() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <Link href="/unterstuetzen" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
+            <Link href="/unterstuetzen/uebersicht" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
               ← Zurück zur Übersicht
             </Link>
             
@@ -39,7 +39,7 @@ export default function UnterstuetzenKrise() {
             <div className="p-4 rounded-xl bg-[oklch(0.96_0.02_85)] border border-[oklch(0.90_0.04_85)]">
               <p className="text-sm text-muted-foreground">
                 <strong className="text-foreground">Unterschied Krise vs. Notfall:</strong> Diese Seite ist für <strong>emotionale Krisen und Eskalationen</strong> (starke Emotionen, Konflikte, Rückzug). Bei <strong>akuter Gefahr</strong> (Suizidgefahr, Selbstverletzung) gehen Sie direkt zu{" "}
-                <Link href="/notfall" className="text-[oklch(0.55_0.20_25)] hover:underline font-medium">Soforthilfe & Notfallnummern →</Link>
+                <Link href="/soforthilfe" className="text-[oklch(0.55_0.20_25)] hover:underline font-medium">Soforthilfe & Notfallnummern →</Link>
               </p>
             </div>
           </motion.div>
@@ -53,7 +53,7 @@ export default function UnterstuetzenKrise() {
             <p className="text-white text-center sm:text-left">
               <strong>Bei akuter Suizidgefahr:</strong> Rufen Sie sofort den Notruf 144 oder die Dargebotene Hand 143
             </p>
-            <Link href="/notfall">
+            <Link href="/soforthilfe">
               <Button variant="secondary" size="sm" className="bg-white text-[oklch(0.55_0.20_25)]">
                 <Phone className="w-4 h-4 mr-2" />
                 Alle Notfallnummern

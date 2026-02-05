@@ -80,10 +80,14 @@ const pageNames: Record<string, string> = {
   "/": "Startseite",
   "/verstehen": "Borderline verstehen",
   "/unterstuetzen": "Unterstützen",
+  "/unterstuetzen/uebersicht": "Unterstützen: Grundlagen",
+  "/unterstuetzen/alltag": "Unterstützen: Alltag",
+  "/unterstuetzen/therapie": "Unterstützen: Therapie",
+  "/unterstuetzen/krise": "Unterstützen: Krise",
   "/kommunizieren": "Kommunizieren",
   "/grenzen": "Grenzen setzen",
   "/selbstfuersorge": "Selbstfürsorge",
-  "/notfall": "Soforthilfe",
+  "/soforthilfe": "Soforthilfe",
   "/materialien": "Materialien",
   "/selbsttest": "Selbsttest",
   "/genesung": "Genesung",
@@ -321,7 +325,7 @@ export function KeyboardShortcuts() {
           "3": "/kommunizieren",
           "4": "/grenzen",
           "5": "/selbstfuersorge",
-          "n": "/notfall",
+          "n": "/soforthilfe",
           "h": "/"
         };
         

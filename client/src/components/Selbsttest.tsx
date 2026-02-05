@@ -159,7 +159,7 @@ const results: Result[] = [
     id: "notfall",
     title: "Sofortige Hilfe",
     description: "In einer akuten Krise ist schnelles Handeln wichtig. Hier finden Sie Notfallnummern und Anlaufstellen.",
-    primaryLink: "/notfall",
+    primaryLink: "/soforthilfe",
     primaryText: "Zu den Notfallressourcen",
     secondaryLinks: [
       { href: "/unterstuetzen/krise", text: "Krisenbegleitung lernen" }
@@ -176,7 +176,7 @@ const results: Result[] = [
     primaryText: "Krisenbegleitung lernen",
     secondaryLinks: [
       { href: "/kommunizieren", text: "Kommunikationsstrategien" },
-      { href: "/notfall", text: "Notfallnummern" }
+      { href: "/soforthilfe", text: "Soforthilfe" }
     ],
     icon: Clock,
     color: "oklch(0.60 0.15 55)",

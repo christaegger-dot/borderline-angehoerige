@@ -569,7 +569,7 @@ export default function Therapieangebote() {
                 </div>
               </div>
               <div className="mt-4 text-center">
-                <Link href="/notfall">
+                <Link href="/soforthilfe">
                   <Button variant="outline" size="sm">
                     Alle Notfall-Ressourcen <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>

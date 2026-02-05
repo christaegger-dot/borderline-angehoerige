@@ -183,7 +183,7 @@ export default function UeberUns() {
                   <h3 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Diese Website ersetzt keine professionelle Beratung, Therapie oder medizinische Behandlung. Die Inhalte dienen der Information und Orientierung. Bei akuten Krisen wenden Sie sich bitte an die{" "}
-                    <Link href="/notfall" className="text-[oklch(0.55_0.20_25)] hover:underline font-medium">
+                    <Link href="/soforthilfe" className="text-[oklch(0.55_0.20_25)] hover:underline font-medium">
                       Notfallnummern
                     </Link>. Für eine individuelle Beratung empfehlen wir den Kontakt zu{" "}
                     <Link href="/selbsthilfegruppen" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">

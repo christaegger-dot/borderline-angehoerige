@@ -7,7 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Verstehen from "./pages/Verstehen";
-import Unterstuetzen from "./pages/Unterstuetzen";
+// Unterstuetzen Hub entfernt - Redirect zu Übersicht
 import UnterstuetzenUebersicht from "./pages/UnterstuetzenUebersicht";
 import UnterstuetzenAlltag from "./pages/UnterstuetzenAlltag";
 import UnterstuetzenTherapie from "./pages/UnterstuetzenTherapie";
@@ -15,7 +15,8 @@ import UnterstuetzenKrise from "./pages/UnterstuetzenKrise";
 import Kommunizieren from "./pages/Kommunizieren";
 import Grenzen from "./pages/Grenzen";
 import Selbstfuersorge from "./pages/Selbstfuersorge";
-import Notfall from "./pages/Notfall";
+import Soforthilfe from "./pages/Soforthilfe";
+import { Redirect } from "wouter";
 import Materialien from "./pages/Materialien";
 import SelbsttestPage from "./pages/SelbsttestPage";
 import Impressum from "./pages/Impressum";
@@ -34,7 +35,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/verstehen" component={Verstehen} />
-      <Route path="/unterstuetzen" component={Unterstuetzen} />
+      <Route path="/unterstuetzen">{() => <Redirect to="/unterstuetzen/uebersicht" />}</Route>
       <Route path="/unterstuetzen/uebersicht" component={UnterstuetzenUebersicht} />
       <Route path="/unterstuetzen/alltag" component={UnterstuetzenAlltag} />
       <Route path="/unterstuetzen/therapie" component={UnterstuetzenTherapie} />
@@ -42,7 +43,8 @@ function Router() {
       <Route path="/kommunizieren" component={Kommunizieren} />
       <Route path="/grenzen" component={Grenzen} />
       <Route path="/selbstfuersorge" component={Selbstfuersorge} />
-      <Route path="/notfall" component={Notfall} />
+      <Route path="/soforthilfe" component={Soforthilfe} />
+      <Route path="/notfall">{() => <Redirect to="/soforthilfe" />}</Route>
       <Route path="/materialien" component={Materialien} />
       <Route path="/selbsttest" component={SelbsttestPage} />
       <Route path="/impressum" component={Impressum} />

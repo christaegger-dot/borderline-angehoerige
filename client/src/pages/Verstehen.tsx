@@ -306,7 +306,7 @@ export default function Verstehen() {
               <p className="text-muted-foreground mb-6">
                 Jetzt, da Sie die Grundlagen verstehen, erfahren Sie, wie Sie konkret unterstützen können.
               </p>
-              <Link href="/unterstuetzen">
+              <Link href="/unterstuetzen/uebersicht">
                 <Button size="lg" className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white">
                   Weiter zu: Unterstützen
                   <ArrowRight className="w-5 h-5 ml-2" />

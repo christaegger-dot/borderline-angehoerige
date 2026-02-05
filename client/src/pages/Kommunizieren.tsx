@@ -503,7 +503,7 @@ export default function Kommunizieren() {
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/unterstuetzen">
+              <Link href="/unterstuetzen/uebersicht">
                 <Button variant="ghost">
                   ← Unterstützen
                 </Button>

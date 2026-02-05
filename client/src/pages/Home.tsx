@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Erfahrungsberichte from "@/components/Erfahrungsberichte";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -361,6 +362,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Erfahrungsberichte */}
+      <Erfahrungsberichte maxBerichte={3} />
 
       {/* Emergency CTA */}
       <section className="py-12 md:py-16 bg-[oklch(0.55_0.20_25)]">

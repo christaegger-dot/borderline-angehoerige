@@ -19,6 +19,7 @@ import Materialien from "./pages/Materialien";
 import SelbsttestPage from "./pages/SelbsttestPage";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import Genesung from "./pages/Genesung";
 
 function Router() {
   return (
@@ -38,6 +39,7 @@ function Router() {
       <Route path="/selbsttest" component={SelbsttestPage} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/datenschutz" component={Datenschutz} />
+      <Route path="/genesung" component={Genesung} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

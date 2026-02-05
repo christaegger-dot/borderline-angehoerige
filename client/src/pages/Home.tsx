@@ -15,7 +15,8 @@ import {
   Clock,
   CheckCircle2,
   AlertTriangle,
-  Compass
+  Compass,
+  TrendingUp
 } from "lucide-react";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wNcJxGFEHelzxZEE.png";
@@ -348,7 +349,7 @@ export default function Home() {
               
               <ul className="space-y-3 mb-8">
                 {[
-                  "Genesung ist möglich – die Forschung zeigt es",
+                  "Genesung ist möglich – 85–93% erreichen Remission",
                   "Ihre Unterstützung macht einen Unterschied",
                   "Sie müssen nicht perfekt sein, nur präsent"
                 ].map((item, i) => (
@@ -366,6 +367,76 @@ export default function Home() {
                 </Button>
               </Link>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Genesung ist möglich */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-10"
+            >
+              <div className="w-16 h-16 rounded-full bg-[oklch(0.88_0.04_145)] flex items-center justify-center mx-auto mb-6">
+                <TrendingUp className="w-8 h-8 text-[oklch(0.55_0.10_145)]" />
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+                Genesung ist möglich
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
+                Entgegen früherer Annahmen zeigt die Langzeitforschung: Die meisten Menschen mit Borderline 
+                erleben eine deutliche Besserung ihrer Symptome.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center p-6 bg-[oklch(0.95_0.03_145)] rounded-xl"
+              >
+                <div className="text-4xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">85–93%</div>
+                <p className="text-sm text-muted-foreground">erreichen symptomatische Remission</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-center p-6 bg-[oklch(0.95_0.03_145)] rounded-xl"
+              >
+                <div className="text-4xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">50%</div>
+                <p className="text-sm text-muted-foreground">erreichen vollständige Genesung</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-center p-6 bg-[oklch(0.95_0.03_145)] rounded-xl"
+              >
+                <div className="text-4xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">10 J.</div>
+                <p className="text-sm text-muted-foreground">Follow-up der Langzeitstudien</p>
+              </motion.div>
+            </div>
+
+            <div className="text-center">
+              <Link href="/genesung">
+                <Button variant="outline" size="lg" className="gap-2">
+                  Mehr über Genesung erfahren
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+              <p className="text-xs text-muted-foreground mt-4">
+                Quellen: McLean Study (Zanarini et al.), CLPS Study (Gunderson et al.)
+              </p>
+            </div>
           </div>
         </div>
       </section>

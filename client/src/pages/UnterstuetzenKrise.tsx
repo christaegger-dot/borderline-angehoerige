@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { AlertTriangle, ArrowRight, Phone, Shield, Clock, Download, FileText } from "lucide-react";
+import { AlertTriangle, ArrowRight, Phone, Shield, Clock, Download, FileText, Image } from "lucide-react";
 import { Link } from "wouter";
 
 export default function UnterstuetzenKrise() {
@@ -325,27 +325,31 @@ export default function UnterstuetzenKrise() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "Grenzsetzung als Orientierung",
-                    description: "Der Ausweg aus dem Eiertanz",
-                    type: "PDF",
-                    rating: "24/24",
-                    url: "/materialien"
+                    title: "Grenzen als Geländer, nicht als Mauer",
+                    description: "Warum Grenzen für Menschen mit BPD hilfreich sind",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
+                    isNew: true,
+                    icon: "image"
                   },
                   {
-                    title: "Der Nebel (FOG)",
-                    description: "Emotionale Dynamiken verstehen",
-                    type: "PDF",
-                    rating: "17/24",
-                    url: "/materialien"
+                    title: "Der Nebel (FOG) – Emotionale Muster",
+                    description: "Fear, Obligation, Guilt – erkennen und entkommen",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/doxRJKzyLuIwYzXV.png",
+                    isNew: true,
+                    icon: "image"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div className="w-8 h-8 rounded-lg bg-[oklch(0.92_0.06_35)] flex items-center justify-center flex-shrink-0">
-                          <FileText className="w-4 h-4 text-[oklch(0.50_0.15_35)]" />
+                          {item.icon === "image" ? <Image className="w-4 h-4 text-[oklch(0.50_0.15_35)]" /> : <FileText className="w-4 h-4 text-[oklch(0.50_0.15_35)]" />}
                         </div>
-                        <span className="text-xs bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)] px-2 py-0.5 rounded-full">
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${item.isNew ? 'bg-[oklch(0.75_0.15_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
                           {item.rating}
                         </span>
                       </div>

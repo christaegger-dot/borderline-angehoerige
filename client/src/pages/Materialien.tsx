@@ -83,11 +83,22 @@ const infografiken = [
   {
     id: "spaltungs-zyklus",
     title: "Der Spaltungs-Zyklus",
-    description: "Wie Idealisierung und Entwertung zusammenhängen und was dahinter steckt.",
+    description: "Das Schwarz-Weiss-Denken bei Borderline erklärt – Idealisierung, Enttäuschung, Abwertung, Versöhnung.",
     category: "verstehen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DtmYPzvHXkOCbvyM.png",
-    rating: "20/24"
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ftmYWlyHNOJrccxR.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "uebertragungsdynamik",
+    title: "Die heisse Kartoffel – Übertragungsdynamik",
+    description: "Wie Gefühle (Scham, Wut, Schuld) unbewusst übertragen werden und was Sie dagegen tun können.",
+    category: "verstehen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wHkzslYknZJsYcqO.png",
+    rating: "NEU",
+    isNew: true
   },
   {
     id: "beziehungszyklus",
@@ -164,13 +175,14 @@ const infografiken = [
   },
   // Kommunizieren
   {
-    id: "validierung",
-    title: "Validierungs-Stufenmodell",
-    description: "Die 6 Stufen der Validierung nach Linehan.",
+    id: "validierung-6-stufen",
+    title: "Die 6 Stufen der Validierung",
+    description: "Von aufmerksamem Zuhören bis radikaler Echtheit – das Stufenmodell nach Linehan.",
     category: "kommunizieren",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GpULhcISAfiJyzgJ.png",
-    rating: "22/24"
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UamrzhkaRxuPSDVi.png",
+    rating: "NEU",
+    isNew: true
   },
   {
     id: "set-kommunikation",
@@ -221,11 +233,22 @@ const infografiken = [
   {
     id: "grenzen-leiter",
     title: "Die Grenzen-Leiter",
-    description: "Schrittweise Eskalation von Grenzen.",
+    description: "Eskalationsstufen bei Grenzverletzungen – von freundlicher Erinnerung bis Kontaktpause.",
     category: "grenzen",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bDVmdeDhbOTgygXj.png",
-    rating: "22/24"
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VGuivmsKMULEAWgP.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "vier-arten-grenzen",
+    title: "Vier Arten von Grenzen",
+    description: "Zeitliche, emotionale, physische und Kommunikations-Grenzen mit Beispielsätzen.",
+    category: "grenzen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xBJjrppYdghIkNtF.png",
+    rating: "NEU",
+    isNew: true
   },
   {
     id: "grenzsetzung-pdf",
@@ -236,8 +259,27 @@ const infografiken = [
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WnqfDwuBRErJrLPY.pdf",
     rating: "24/24"
   },
-  // Selbstfürsorge
-
+  // Selbstfürsorge & Krise
+  {
+    id: "fog-nebel-infografik",
+    title: "Der Nebel (FOG) – Emotionale Muster erkennen",
+    description: "Fear, Obligation, Guilt – wie Sie Manipulation erkennen und aus dem Nebel treten.",
+    category: "selbstfuersorge",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/doxRJKzyLuIwYzXV.png",
+    rating: "NEU",
+    isNew: true
+  },
+  {
+    id: "grenzsetzung-orientierung",
+    title: "Grenzen als Geländer, nicht als Mauer",
+    description: "Warum Grenzen für Menschen mit BPD hilfreich sind – Struktur, Sicherheit, Fürsorge.",
+    category: "grenzen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
+    rating: "NEU",
+    isNew: true
+  },
   {
     id: "nebel-pdf",
     title: "Der Nebel (FOG) – PDF-Handout",

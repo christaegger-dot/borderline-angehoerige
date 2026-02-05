@@ -186,18 +186,20 @@ export default function UnterstuetzenUebersicht() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "Grenzen setzen: Emotionale Unterstützung",
-                    description: "Wie Sie unterstützen und sich schützen",
+                    title: "Vier Arten von Grenzen",
+                    description: "Zeitliche, emotionale, physische und Kommunikations-Grenzen",
                     type: "PNG",
-                    rating: "23/24",
-                    url: "/materialien"
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xBJjrppYdghIkNtF.png",
+                    isNew: true
                   },
                   {
-                    title: "Grenzen-Leiter",
-                    description: "Schrittweise Grenzen aufbauen",
+                    title: "Die Grenzen-Leiter",
+                    description: "Eskalationsstufen – von freundlicher Erinnerung bis Kontaktpause",
                     type: "PNG",
-                    rating: "22/24",
-                    url: "/materialien"
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VGuivmsKMULEAWgP.png",
+                    isNew: true
                   }
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">
@@ -206,7 +208,7 @@ export default function UnterstuetzenUebersicht() {
                         <div className="w-8 h-8 rounded-lg bg-[oklch(0.85_0.08_55)] flex items-center justify-center flex-shrink-0">
                           <Image className="w-4 h-4 text-[oklch(0.45_0.12_55)]" />
                         </div>
-                        <span className="text-xs bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)] px-2 py-0.5 rounded-full">
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${item.isNew ? 'bg-[oklch(0.75_0.15_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
                           {item.rating}
                         </span>
                       </div>

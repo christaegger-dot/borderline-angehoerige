@@ -213,20 +213,22 @@ export default function Verstehen() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "Spaltungs-Zyklus",
-                    description: "Das Schwarz-Weiss-Denken erklärt",
+                    title: "Der Spaltungs-Zyklus",
+                    description: "Das Schwarz-Weiss-Denken bei Borderline erklärt",
                     type: "PNG",
-                    rating: "20/24",
-                    url: "/materialien",
-                    icon: Image
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ftmYWlyHNOJrccxR.png",
+                    icon: Image,
+                    isNew: true
                   },
                   {
-                    title: "Übertragungsdynamik",
-                    description: "Die 'heisse Kartoffel' erklärt",
-                    type: "PDF",
-                    rating: "23/24",
-                    url: "/materialien",
-                    icon: FileText
+                    title: "Die heisse Kartoffel",
+                    description: "Übertragungsdynamik – wie Gefühle weitergegeben werden",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wHkzslYknZJsYcqO.png",
+                    icon: Image,
+                    isNew: true
                   }
                 ].map((item, index) => {
                   const Icon = item.icon;
@@ -237,7 +239,7 @@ export default function Verstehen() {
                           <div className="w-8 h-8 rounded-lg bg-[oklch(0.88_0.04_145)] flex items-center justify-center flex-shrink-0">
                             <Icon className="w-4 h-4 text-[oklch(0.45_0.08_145)]" />
                           </div>
-                          <span className="text-xs bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)] px-2 py-0.5 rounded-full">
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${item.isNew ? 'bg-[oklch(0.75_0.15_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
                             {item.rating}
                           </span>
                         </div>

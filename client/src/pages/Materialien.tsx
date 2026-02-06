@@ -33,24 +33,8 @@ const infografiken = [
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wHkzslYknZJsYcqO.png",
     isNew: true
   },
-  {
-    id: "familiensystem",
-    title: "Borderline im Familiensystem",
-    description: "Wie die Störung das gesamte Familiensystem beeinflusst – Rollen und Dynamiken.",
-    category: "verstehen",
-    type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VljeyQzCXsdelHDp.png",
-    isNew: false
-  },
-  {
-    id: "transaktionales-modell",
-    title: "Transaktionales Modell",
-    description: "Wie Umwelt und Vulnerabilität bei Borderline zusammenwirken.",
-    category: "verstehen",
-    type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KSyqqXeMXVevPanR.png",
-    isNew: false
-  },
+
+
 
   // ─────────────────────────────────────────────────────────────────────────
   // KATEGORIE: UNTERSTÜTZEN

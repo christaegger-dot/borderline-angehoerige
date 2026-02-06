@@ -65,6 +65,7 @@ export default function Verstehen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
+              id="was-ist-borderline"
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Brain className="w-8 h-8 text-[oklch(0.65_0.08_145)]" />
@@ -412,6 +413,7 @@ export default function Verstehen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
+              id="kernsymptome"
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <AlertCircle className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
@@ -492,6 +494,7 @@ export default function Verstehen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
+              id="emotionale-demenz"
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Clock className="w-8 h-8 text-[oklch(0.55_0.15_25)]" />
@@ -542,6 +545,7 @@ export default function Verstehen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
+              id="4-phasen-zyklus"
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <RefreshCw className="w-8 h-8 text-[oklch(0.45_0.08_250)]" />
@@ -593,6 +597,7 @@ export default function Verstehen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
+              id="warum-wichtig"
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Lightbulb className="w-8 h-8 text-[oklch(0.60_0.15_85)]" />
@@ -629,6 +634,7 @@ export default function Verstehen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
+              id="materialien"
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-[oklch(0.45_0.08_145)]" />

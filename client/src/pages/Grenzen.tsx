@@ -488,6 +488,11 @@ export default function Grenzen() {
                     title: "Grenzen kommunizieren",
                     description: "Beispielsätze für den Alltag",
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oTZaYTwVoWeGevLM.png"
+                  },
+                  {
+                    title: "Spickzettel Grenzen",
+                    description: "A4 zum Laminieren – alle Sätze auf einen Blick",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OtKtidMYyEWMOKyp.png"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group">

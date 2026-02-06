@@ -279,6 +279,15 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oTZaYTwVoWeGevLM.png",
     isNew: true
   },
+  {
+    id: "k4-8-spickzettel-grenzen",
+    title: "Spickzettel Grenzen – Die wichtigsten Sätze",
+    description: "A4-Spickzettel zum Laminieren: DEAR-Technik, L.M.K.-Formel, Spiegeln statt Aufsaugen – alle wichtigen Sätze auf einen Blick.",
+    category: "grenzen",
+    type: "Spickzettel PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OtKtidMYyEWMOKyp.png",
+    isNew: true
+  },
 ];
 
 const categories = [

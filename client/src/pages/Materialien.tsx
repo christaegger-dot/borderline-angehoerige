@@ -222,7 +222,7 @@ const infografiken: Array<{
     description: "4-Stufen-Treppe: Beschreiben → Äussern → Behaupten → Verstärken. Die DBT-Methode für respektvolle Grenzsetzung.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GpkkjgkSdRnexnac.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PxzHeunAWohBbUwz.png",
     isNew: true
   },
   {
@@ -231,7 +231,7 @@ const infografiken: Array<{
     description: "Split-Screen-Vergleich: Schwamm vs. Spiegel. Sie können Gefühle anerkennen, ohne sie zu Ihren eigenen zu machen.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xmLVUEtqTShlaigK.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FqhUAZdQCSplTTDr.png",
     isNew: true
   },
   {
@@ -240,7 +240,7 @@ const infografiken: Array<{
     description: "4-Quadranten: Physische, emotionale, zeitliche und materielle Grenzen – mit konkreten Beispielsätzen.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tIojfZTaoQyrCWDj.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pWWXLaHHMNteMPmi.png",
     isNew: true
   },
   {
@@ -249,7 +249,7 @@ const infografiken: Array<{
     description: "Körper-Silhouette mit 5 Signalen: Bauch, Brust, Nacken, Erschöpfung, Fluchtimpuls. Lernen Sie, auf Ihren Körper zu hören.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bxbxrdsKVgAoTSdF.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qutlJrbHtdlIisDv.png",
     isNew: true
   },
   {
@@ -258,7 +258,7 @@ const infografiken: Array<{
     description: "5-Säulen-Modell: Identität, Struktur, Sicherheit, Intimität, Vorbild – Grenzen sind kein Liebesentzug.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KDxHdlDcZhYxEkMD.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JrawebXkisbnuqir.png",
     isNew: true
   },
   {
@@ -267,7 +267,7 @@ const infografiken: Array<{
     description: "Entscheidungsbaum mit Anwendungskontext: Grenze → Reaktion → Konsequenz. Keine Strafe – sondern Selbstschutz.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TcbKSNtqZbXHqDri.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JekVLuPUNFqETzWn.png",
     isNew: true
   },
   {
@@ -276,7 +276,7 @@ const infografiken: Array<{
     description: "4 Situationen mit fertigen Sätzen: Bei Beschimpfungen, Schuldzuweisungen, Forderungen, Drohungen.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oTZaYTwVoWeGevLM.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fNjHhGjwCaFvBgdl.png",
     isNew: true
   },
   {
@@ -285,7 +285,7 @@ const infografiken: Array<{
     description: "A4-Spickzettel zum Laminieren: DEAR-Technik, L.M.K.-Formel, Spiegeln statt Aufsaugen – alle wichtigen Sätze auf einen Blick.",
     category: "grenzen",
     type: "Spickzettel PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OtKtidMYyEWMOKyp.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OCJYbdNwSvTdwMOB.png",
     isNew: true
   },
 ];

@@ -457,42 +457,42 @@ export default function Grenzen() {
                   {
                     title: "Die DEAR-Technik",
                     description: "4 Schritte für respektvolle Grenzsetzung",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GpkkjgkSdRnexnac.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PxzHeunAWohBbUwz.png"
                   },
                   {
                     title: "Spiegeln statt Aufsaugen",
                     description: "Mitfühlen ohne Übernehmen",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xmLVUEtqTShlaigK.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FqhUAZdQCSplTTDr.png"
                   },
                   {
                     title: "Die 4 Arten von Grenzen",
                     description: "Physisch, emotional, zeitlich, materiell",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tIojfZTaoQyrCWDj.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pWWXLaHHMNteMPmi.png"
                   },
                   {
                     title: "Grenzen erkennen",
                     description: "5 Warnsignale Ihres Körpers",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bxbxrdsKVgAoTSdF.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qutlJrbHtdlIisDv.png"
                   },
                   {
                     title: "Warum Grenzen helfen",
                     description: "Grenzen sind kein Liebesentzug",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KDxHdlDcZhYxEkMD.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JrawebXkisbnuqir.png"
                   },
                   {
                     title: "L.M.K. (Lebe Mit Konsequenzen)",
                     description: "Wenn Grenzen nicht respektiert werden",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TcbKSNtqZbXHqDri.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JekVLuPUNFqETzWn.png"
                   },
                   {
                     title: "Grenzen kommunizieren",
                     description: "Beispielsätze für den Alltag",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oTZaYTwVoWeGevLM.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fNjHhGjwCaFvBgdl.png"
                   },
                   {
                     title: "Spickzettel Grenzen",
                     description: "A4 zum Laminieren – alle Sätze auf einen Blick",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OtKtidMYyEWMOKyp.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OCJYbdNwSvTdwMOB.png"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group">

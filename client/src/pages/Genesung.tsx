@@ -661,6 +661,12 @@ export default function Genesung() {
                     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
                     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EbMUjOHuCQRAoyMK.pdf"
                   },
+                  {
+                    title: "Ihre Rolle im Genesungsprozess",
+                    desc: "Was Sie tun können (und was nicht)",
+                    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/nFoVeLJURBcMhQBT.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FxkhPJHjIBbWdpWl.pdf"
+                  },
                 ].map((item, i) => (
                   <Card key={i} className="overflow-hidden border-border/50 hover:shadow-md transition-shadow">
                     <div className="aspect-[3/4] overflow-hidden bg-muted">

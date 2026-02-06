@@ -421,6 +421,16 @@ const infografiken: Array<{
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EbMUjOHuCQRAoyMK.pdf",
     isNew: true
   },
+  {
+    id: "k6-5-ihre-rolle-genesungsprozess",
+    title: "Ihre Rolle im Genesungsprozess",
+    description: "Waage-Modell: Was Sie tun können (Konsistenz, realistische Hoffnung, eigene Grenzen, Fortschritte benennen, professionelle Hilfe unterstützen) vs. was nicht Ihre Aufgabe ist.",
+    category: "genesung",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/nFoVeLJURBcMhQBT.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FxkhPJHjIBbWdpWl.pdf",
+    isNew: true
+  },
 ];
 
 const categories = [

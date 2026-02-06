@@ -405,31 +405,31 @@ export default function UnterstuetzenUebersicht() {
                 {[
                   {
                     title: "Im Krisenmodus – Orientierung geben",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xtLfLjrMcXYGTwxM.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp"
                   },
                   {
                     title: "Ihre Rolle klären",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vaCFqwCuuKxsdrNX.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mTlmmrXfScSCxoiC.webp"
                   },
                   {
                     title: "Drei Säulen hilfreicher Unterstützung",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YHowYJcztGiSoHgG.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TaDXhEgHiyBeiQsT.webp"
                   },
                   {
                     title: "Konsistenz-Prinzip",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xTKHgAUyCVKxSkUf.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MCMaGcrhifsekEqb.webp"
                   },
                   {
                     title: "6 Leitlinien für Angehörige",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XnTABWiNreMbJdDF.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UYzFtDygMzdBJaVD.webp"
                   },
                   {
                     title: "Beziehungs-Achtsamkeit",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LpcrkEadNAXxIvPd.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xwVvAHgRQPALOgcm.webp"
                   },
                   {
                     title: "4 Alltags-Tipps",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/uOrYGTcGgbyHKrGp.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rnwlrkNLwFQsLjnU.webp"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow">

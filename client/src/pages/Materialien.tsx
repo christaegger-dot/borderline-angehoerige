@@ -93,8 +93,9 @@ const infografiken: Array<{
     title: "Wenn Gespräche kippen: 3 Schritte, die helfen",
     description: "Timeline mit Reset-Loop: In Hochstress hilft ein Standardablauf – beruhigen, verbinden, begrenzen + Plan.",
     category: "kommunizieren",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NHwJBJOisdMBlske.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DQBcrvUpLbeePIcF.pdf",
     isNew: true
   },
   {
@@ -102,8 +103,9 @@ const infografiken: Array<{
     title: "Der Standardsatz: 2 Sätze, die deeskalieren",
     description: "Copy-ready Sätze zum Ablesen: Erst Gefühl anerkennen, dann Grenze + Plan – ohne Diskussion.",
     category: "kommunizieren",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KnTbEkRJKARpfZUn.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GsxAMfgNLVAWUpwA.pdf",
     isNew: true
   },
   {
@@ -111,8 +113,9 @@ const infografiken: Array<{
     title: "Grenzen setzen, ohne zu eskalieren",
     description: "3-Kacheln-Formel: Fakt + Ich-Grenze + nächster Schritt – kurz und klar.",
     category: "kommunizieren",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PNJVxxvEPKiGWGEw.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XgcfOMoqhHGutcAe.pdf",
     isNew: true
   },
   {
@@ -120,8 +123,9 @@ const infografiken: Array<{
     title: "Pause statt Streit: so beenden Sie ein Gespräch sicher",
     description: "Ampel-Zustandsdiagramm: Wenn Respekt nicht möglich ist, ist eine Pause die beste Deeskalation.",
     category: "kommunizieren",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KwpkUVzgwMIXDJQA.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xyxBQZqwmoCJXUdC.pdf",
     isNew: true
   },
   {
@@ -129,8 +133,9 @@ const infografiken: Array<{
     title: "Zuhören ohne Zustimmen – so geht das konkret",
     description: "2-Spalten mit Brücke: Sie können Gefühle anerkennen, ohne Verhalten gutzuheissen.",
     category: "kommunizieren",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AjwTxyISldFJZOAc.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dpOnSpcYKcaGwUsr.pdf",
     isNew: true
   },
   {
@@ -138,8 +143,9 @@ const infografiken: Array<{
     title: "Beispiel-Dialog: kurz bleiben, ruhig bleiben",
     description: "Chat-Sequenzdiagramm: Kurz + ruhig + wiederholbar wirkt in Krisen stärker als Argumente.",
     category: "kommunizieren",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iEvsaSHHCkBeAxtw.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QIUSiqlCOSZNIVon.pdf",
     isNew: true
   },
   // ═══════════════════════════════════════════════════════════════════════════
@@ -150,8 +156,9 @@ const infografiken: Array<{
     title: "Spickzettel Krisenkommunikation (A4)",
     description: "Laminierbarer 1-Seiter mit allen Standardsätzen für die Krise – zum Ablesen in akuten Situationen.",
     category: "kommunizieren",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PuRcoSiRiDEyUyfJ.png",
+    type: "Spickzettel",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KOdAnsuLuWTbgugk.pdf",
     isNew: true
   },
   // ═══════════════════════════════════════════════════════════════════════════
@@ -162,8 +169,9 @@ const infografiken: Array<{
     title: "Im Krisenmodus – Orientierung geben",
     description: "Zustandsdiagramm: Wie ein verlorenes Kind braucht Ihr Gegenüber in der Krise Ruhe und Orientierung – nicht Argumente.",
     category: "unterstuetzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xtLfLjrMcXYGTwxM.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BbnlWVWaxUeNDYvi.pdf",
     isNew: true
   },
   {
@@ -171,8 +179,9 @@ const infografiken: Array<{
     title: "Ihre Rolle klären – Was Sie sein können (und was nicht)",
     description: "2-Spalten-Vergleich: Sie sind Angehörige/r – nicht Therapeut/in. Diese Klarheit entlastet beide Seiten.",
     category: "unterstuetzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vaCFqwCuuKxsdrNX.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mTlmmrXfScSCxoiC.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QdotIAuRiArcunzw.pdf",
     isNew: true
   },
   {
@@ -180,8 +189,9 @@ const infografiken: Array<{
     title: "Drei Säulen hilfreicher Unterstützung",
     description: "3-Kacheln: Präsenz zeigen, Gefühle validieren, Stabilität bieten – das Fundament guter Begleitung.",
     category: "unterstuetzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YHowYJcztGiSoHgG.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TaDXhEgHiyBeiQsT.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MFpipriJIGJRQWBP.pdf",
     isNew: true
   },
   {
@@ -189,8 +199,9 @@ const infografiken: Array<{
     title: "Konsistenz-Prinzip – als Team wird es leichter",
     description: "Kausal-Loop: Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener.",
     category: "unterstuetzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xTKHgAUyCVKxSkUf.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MCMaGcrhifsekEqb.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ssHFmXnhPaiGnfQm.pdf",
     isNew: true
   },
   {
@@ -198,8 +209,9 @@ const infografiken: Array<{
     title: "6 Leitlinien für Angehörige – So können Sie unterstützen",
     description: "Evidenzbasierte Empfehlungen nach Gunderson: 6 konkrete Leitlinien zum Abhaken und Umsetzen.",
     category: "unterstuetzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XnTABWiNreMbJdDF.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UYzFtDygMzdBJaVD.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tkzCKCZmvPggPJzT.pdf",
     isNew: true
   },
   {
@@ -207,8 +219,9 @@ const infografiken: Array<{
     title: "Beziehungs-Achtsamkeit – 4 Schritte im Alltag",
     description: "Timeline: Innehalten → Wahrnehmen → Nicht bewerten → Bewusst handeln – weniger Autopilot, mehr Klarheit.",
     category: "unterstuetzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LpcrkEadNAXxIvPd.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xwVvAHgRQPALOgcm.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yCnoIKuZmpfPFbmC.pdf",
     isNew: true
   },
   {
@@ -216,8 +229,9 @@ const infografiken: Array<{
     title: "Was Sie konkret tun können – 4 Alltags-Tipps",
     description: "4-Kacheln-Checkliste: Übungspartner sein, Fortschritte anerkennen, Vorhersehbar sein, Gemeinsam Probleme lösen.",
     category: "unterstuetzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/uOrYGTcGgbyHKrGp.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rnwlrkNLwFQsLjnU.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EBqMZCZaVYhVklrB.pdf",
     isNew: true
   },
   // ═══════════════════════════════════════════════════════════════════════════
@@ -228,8 +242,9 @@ const infografiken: Array<{
     title: "Die DEAR-Technik – Grenzen setzen ohne Vorwürfe",
     description: "4-Stufen-Treppe: Beschreiben → Äussern → Behaupten → Verstärken. Die DBT-Methode für respektvolle Grenzsetzung.",
     category: "grenzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AgAggkliBSItqYDr.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sHAAizMXNqAZSlEn.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MvJAukzcocWgADRx.pdf",
     isNew: true
   },
   {
@@ -237,8 +252,9 @@ const infografiken: Array<{
     title: "Spiegeln statt Aufsaugen – Mitfühlen ohne Übernehmen",
     description: "Split-Screen-Vergleich: Schwamm vs. Spiegel. Sie können Gefühle anerkennen, ohne sie zu Ihren eigenen zu machen.",
     category: "grenzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FqhUAZdQCSplTTDr.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dbTRALbBXTpWdIFc.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FGzazGnLxIEmXPfG.pdf",
     isNew: true
   },
   {
@@ -246,8 +262,9 @@ const infografiken: Array<{
     title: "Die 4 Arten von Grenzen – Wissen, was Sie schützen",
     description: "4-Quadranten: Physische, emotionale, zeitliche und materielle Grenzen – mit konkreten Beispielsätzen.",
     category: "grenzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pWWXLaHHMNteMPmi.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DRIOXYdXxPGeVnra.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DWqzlhkjrzyHkvhb.pdf",
     isNew: true
   },
   {
@@ -255,8 +272,9 @@ const infografiken: Array<{
     title: "Grenzen erkennen – 5 Warnsignale Ihres Körpers",
     description: "Körper-Silhouette mit 5 Signalen: Bauch, Brust, Nacken, Erschöpfung, Fluchtimpuls. Lernen Sie, auf Ihren Körper zu hören.",
     category: "grenzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qutlJrbHtdlIisDv.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ygTqOQYNTBmkEaim.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LMKLnWxmcLXzeTbf.pdf",
     isNew: true
   },
   {
@@ -264,8 +282,9 @@ const infografiken: Array<{
     title: "Warum Grenzen auch dem Borderliner helfen",
     description: "5-Säulen-Modell: Identität, Struktur, Sicherheit, Intimität, Vorbild – Grenzen sind kein Liebesentzug.",
     category: "grenzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JrawebXkisbnuqir.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skjcpJqOmcldYXbm.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UnXDfBEavTklhetV.pdf",
     isNew: true
   },
   {
@@ -273,8 +292,9 @@ const infografiken: Array<{
     title: "L.M.K. (Lebe Mit Konsequenzen) – Wenn Grenzen nicht respektiert werden",
     description: "Entscheidungsbaum mit Anwendungskontext: Grenze → Reaktion → Konsequenz. Keine Strafe – sondern Selbstschutz.",
     category: "grenzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JekVLuPUNFqETzWn.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aAHNYbmetQXpdBOS.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NMzgafvdNvzovKcq.pdf",
     isNew: true
   },
   {
@@ -282,8 +302,9 @@ const infografiken: Array<{
     title: "Grenzen kommunizieren – Beispielsätze für den Alltag",
     description: "4 Situationen mit fertigen Sätzen: Bei Beschimpfungen, Schuldzuweisungen, Forderungen, Drohungen.",
     category: "grenzen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DanNemCkHZyosGIB.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dfwRqrujZwwwPRJo.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MkJyjgTqTgBvpdwz.pdf",
     isNew: true
   },
   {
@@ -291,8 +312,9 @@ const infografiken: Array<{
     title: "Spickzettel Grenzen – Die wichtigsten Sätze",
     description: "A4-Spickzettel zum Laminieren: DEAR-Technik, L.M.K.-Formel, Spiegeln statt Aufsaugen – alle wichtigen Sätze auf einen Blick.",
     category: "grenzen",
-    type: "Spickzettel PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OCJYbdNwSvTdwMOB.png",
+    type: "Spickzettel",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tahWXflXNFEcSrog.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BqsfiottQigBlNqQ.pdf",
     isNew: true
   },
 ];

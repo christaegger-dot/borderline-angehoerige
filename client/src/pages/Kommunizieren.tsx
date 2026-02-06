@@ -347,31 +347,31 @@ export default function Kommunizieren() {
                 {[
                   {
                     title: "Wenn Gespräche kippen: 3 Schritte",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NHwJBJOisdMBlske.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp"
                   },
                   {
                     title: "Der Standardsatz: 2 Sätze",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KnTbEkRJKARpfZUn.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp"
                   },
                   {
                     title: "Grenzen setzen, ohne zu eskalieren",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PNJVxxvEPKiGWGEw.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp"
                   },
                   {
                     title: "Pause statt Streit",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KwpkUVzgwMIXDJQA.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp"
                   },
                   {
                     title: "Zuhören ohne Zustimmen",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AjwTxyISldFJZOAc.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp"
                   },
                   {
                     title: "Beispiel-Dialog",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iEvsaSHHCkBeAxtw.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp"
                   },
                   {
                     title: "Spickzettel Krisenkommunikation (A4)",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PuRcoSiRiDEyUyfJ.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="overflow-hidden hover:shadow-lg transition-all">

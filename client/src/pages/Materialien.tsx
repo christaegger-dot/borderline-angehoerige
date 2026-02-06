@@ -135,6 +135,18 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iEvsaSHHCkBeAxtw.png",
     isNew: true
   },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SPICKZETTEL (A4, laminierbar)
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "spickzettel-krisenkommunikation",
+    title: "Spickzettel Krisenkommunikation (A4)",
+    description: "Laminierbarer 1-Seiter mit allen Standardsätzen für die Krise – zum Ablesen in akuten Situationen.",
+    category: "kommunizieren",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PuRcoSiRiDEyUyfJ.png",
+    isNew: true
+  },
 ];
 
 const categories = [

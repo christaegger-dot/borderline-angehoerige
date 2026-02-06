@@ -368,6 +368,10 @@ export default function Kommunizieren() {
                   {
                     title: "Beispiel-Dialog",
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iEvsaSHHCkBeAxtw.png"
+                  },
+                  {
+                    title: "Spickzettel Krisenkommunikation (A4)",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PuRcoSiRiDEyUyfJ.png"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="overflow-hidden hover:shadow-lg transition-all">

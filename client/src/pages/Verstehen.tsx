@@ -649,10 +649,10 @@ export default function Verstehen() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* 1.1 Leuchtturm */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GlUhswKtlvohFlIh.png" target="_blank" rel="noopener noreferrer">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp" target="_blank" rel="noopener noreferrer">
                     <div className="aspect-[3/4] bg-muted">
                       <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GlUhswKtlvohFlIh.png" 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp" 
                         alt="Der Leuchtturm – Ihre Rolle als Angehörige/r"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
@@ -662,10 +662,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der Leuchtturm</h3>
                     <p className="text-sm text-muted-foreground mb-3">Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GlUhswKtlvohFlIh.png" download>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aGFxQRURQcMiVRbs.pdf" download>
                       <Button size="sm" variant="outline" className="w-full">
                         <Download className="w-4 h-4 mr-2" />
-                        Herunterladen
+                        PDF herunterladen
                       </Button>
                     </a>
                   </CardContent>
@@ -673,10 +673,10 @@ export default function Verstehen() {
 
                 {/* 1.2 Eisberg */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PbEHipeLgAfCDHrD.png" target="_blank" rel="noopener noreferrer">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp" target="_blank" rel="noopener noreferrer">
                     <div className="aspect-[3/4] bg-muted">
                       <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PbEHipeLgAfCDHrD.png" 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp" 
                         alt="Der Eisberg – Wut ist oft die Spitze"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
@@ -686,10 +686,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der Eisberg</h3>
                     <p className="text-sm text-muted-foreground mb-3">Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PbEHipeLgAfCDHrD.png" download>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ctvGVbdDNWreFnVo.pdf" download>
                       <Button size="sm" variant="outline" className="w-full">
                         <Download className="w-4 h-4 mr-2" />
-                        Herunterladen
+                        PDF herunterladen
                       </Button>
                     </a>
                   </CardContent>
@@ -697,10 +697,10 @@ export default function Verstehen() {
 
                 {/* 1.3 Spaltung */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QpYHKGyJuyXSDvFd.png" target="_blank" rel="noopener noreferrer">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp" target="_blank" rel="noopener noreferrer">
                     <div className="aspect-[3/4] bg-muted">
                       <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QpYHKGyJuyXSDvFd.png" 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp" 
                         alt="Spaltung – das Pendel zwischen Extremen"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
@@ -710,10 +710,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Spaltung</h3>
                     <p className="text-sm text-muted-foreground mb-3">Das Pendel zwischen Extremen – die Grauzone stärken.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QpYHKGyJuyXSDvFd.png" download>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MmTaAMmsDWFnKegB.pdf" download>
                       <Button size="sm" variant="outline" className="w-full">
                         <Download className="w-4 h-4 mr-2" />
-                        Herunterladen
+                        PDF herunterladen
                       </Button>
                     </a>
                   </CardContent>
@@ -721,10 +721,10 @@ export default function Verstehen() {
 
                 {/* 1.4 Alarm-Modus vs. Denk-Modus */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KbfVuBlwpRcOnfnK.png" target="_blank" rel="noopener noreferrer">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp" target="_blank" rel="noopener noreferrer">
                     <div className="aspect-[3/4] bg-muted">
                       <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KbfVuBlwpRcOnfnK.png" 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp" 
                         alt="Alarm-Modus vs. Denk-Modus"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
@@ -734,10 +734,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Alarm-Modus vs. Denk-Modus</h3>
                     <p className="text-sm text-muted-foreground mb-3">Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KbfVuBlwpRcOnfnK.png" download>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xEugiONCOEPRnzAk.pdf" download>
                       <Button size="sm" variant="outline" className="w-full">
                         <Download className="w-4 h-4 mr-2" />
-                        Herunterladen
+                        PDF herunterladen
                       </Button>
                     </a>
                   </CardContent>

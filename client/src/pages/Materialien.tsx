@@ -19,6 +19,7 @@ const infografiken: Array<{
   category: string;
   type: string;
   url: string;
+  downloadUrl?: string;
   isNew?: boolean;
 }> = [
   // ═══════════════════════════════════════════════════════════════════════════
@@ -29,8 +30,9 @@ const infografiken: Array<{
     title: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
     description: "Zustandsdiagramm: Stabil bleiben trotz Sturm. Sie können das Schiff nicht steuern – aber Orientierung geben.",
     category: "verstehen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GlUhswKtlvohFlIh.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aGFxQRURQcMiVRbs.pdf",
     isNew: true
   },
   {
@@ -38,8 +40,9 @@ const infografiken: Array<{
     title: "Der Eisberg – Wut ist oft die Spitze",
     description: "Stock-&-Flow-Diagramm: Was Sie sehen (Wut) ist oft nur die Spitze – darunter liegen Schmerz, Angst, Scham.",
     category: "verstehen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PbEHipeLgAfCDHrD.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ctvGVbdDNWreFnVo.pdf",
     isNew: true
   },
   {
@@ -47,8 +50,9 @@ const infografiken: Array<{
     title: "Spaltung – das Pendel zwischen Extremen",
     description: "Zustandsdiagramm: Unter Stress kippt die Bewertung leicht ins Extreme – die Grauzone wird schwer erreichbar.",
     category: "verstehen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QpYHKGyJuyXSDvFd.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MmTaAMmsDWFnKegB.pdf",
     isNew: true
   },
   {
@@ -56,8 +60,9 @@ const infografiken: Array<{
     title: "Alarm-Modus vs. Denk-Modus",
     description: "Zustandsdiagramm: Im Alarm-Modus ist Logik oft nicht erreichbar – erst beruhigen, dann klären.",
     category: "verstehen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KbfVuBlwpRcOnfnK.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xEugiONCOEPRnzAk.pdf",
     isNew: true
   },
   {
@@ -450,10 +455,10 @@ export default function Materialien() {
                         <span className="text-xs text-muted-foreground uppercase">
                           {item.type}
                         </span>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer" download>
+                        <a href={item.downloadUrl || item.url} target="_blank" rel="noopener noreferrer" download>
                           <Button size="sm" className="bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]">
                             <Download className="w-4 h-4 mr-2" />
-                            Download
+                            {item.downloadUrl ? "PDF" : "Download"}
                           </Button>
                         </a>
                       </div>

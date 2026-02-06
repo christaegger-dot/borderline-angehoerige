@@ -744,6 +744,18 @@ export default function Selbstfuersorge() {
                     desc: "5 Schritte aus der Stressspirale: Stopp, Tief atmen, Orientieren, Perspektive, Plan \u2013 in 30 Sekunden.",
                     webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NLqFdIwgTNYtrHrP.webp",
                     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bhRfLbiALRyDPmVy.pdf"
+                  },
+                  {
+                    title: "Ihr Energie-Konto",
+                    desc: "Stock-&-Flow-Diagramm: Was f\u00fcllt Ihre Batterie auf, was leert sie? Achten Sie auf die Balance.",
+                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tLphIwdMNjFIjltr.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ovLjgqiuBwDHrzco.pdf"
+                  },
+                  {
+                    title: "Erlaubnis-Karte",
+                    desc: "9 Erlaubnisse, die sich Angeh\u00f6rige oft nicht geben \u2013 g\u00fcltig ab sofort, unbefristet.",
+                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YuJEhBgjQWuztswb.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QTZNugMQQrDeZgIZ.pdf"
                   }
                 ].map((item, i) => (
                   <Card key={i} className="overflow-hidden border-border/50 hover:shadow-md transition-shadow">

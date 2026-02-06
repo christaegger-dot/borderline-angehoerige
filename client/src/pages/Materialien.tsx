@@ -360,6 +360,26 @@ const infografiken: Array<{
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bhRfLbiALRyDPmVy.pdf",
     isNew: true
   },
+  {
+    id: "k5-5-energie-konto",
+    title: "Ihr Energie-Konto – Was füllt, was leert",
+    description: "Stock-&-Flow-Diagramm: Welche Aktivitäten füllen Ihre Batterie auf, welche leeren sie? Achten Sie auf die Balance, bevor Burnout droht.",
+    category: "selbstfuersorge",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tLphIwdMNjFIjltr.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ovLjgqiuBwDHrzco.pdf",
+    isNew: true
+  },
+  {
+    id: "k5-6-erlaubnis-karte",
+    title: "Erlaubnis-Karte – Was Sie sich erlauben dürfen",
+    description: "Checkliste: 9 Erlaubnisse, die sich Angehörige oft nicht geben – gültig ab sofort, unbefristet, ausgestellt von Ihnen selbst.",
+    category: "selbstfuersorge",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YuJEhBgjQWuztswb.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QTZNugMQQrDeZgIZ.pdf",
+    isNew: true
+  },
 ];
 
 const categories = [

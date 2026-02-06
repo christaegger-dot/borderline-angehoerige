@@ -628,7 +628,7 @@ export default function Verstehen() {
               </div>
             </motion.div>
 
-            {/* Materialien zum Download */}
+            {/* Materialien zum Download – Platzhalter */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -641,81 +641,26 @@ export default function Verstehen() {
                 Materialien zum Thema
               </h2>
               
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "Der Leuchtturm: Ihre Rolle",
-                    description: "Stabil bleiben, Orientierung geben – die Leuchtturm-Metapher",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dZvPdFGXTuwBuhTW.png",
-                    icon: Image,
-                    isNew: true
-                  },
-                  {
-                    title: "Der Eisberg: Wut = Trauer",
-                    description: "Was Sie sehen ist nur die Spitze – darunter liegt Trauer",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TUTOoesvzWPNeIca.png",
-                    icon: Image,
-                    isNew: true
-                  },
-                  {
-                    title: "Die Spaltung verstehen",
-                    description: "Warum Liebe und Hass BEIDE ehrlich sind",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SZXYImDhcfQFLirX.png",
-                    icon: Image,
-                    isNew: true
-                  },
-                  {
-                    title: "Der Spaltungs-Zyklus",
-                    description: "Das Schwarz-Weiss-Denken bei Borderline erklärt",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ftmYWlyHNOJrccxR.png",
-                    icon: Image,
-                    isNew: true
-                  }
-                ].map((item, index) => {
-                  const Icon = item.icon;
-                  return (
-                    <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">
-                      <CardContent className="p-4">
-                        <div className="flex items-start justify-between gap-3 mb-2">
-                          <div className="w-8 h-8 rounded-lg bg-[oklch(0.88_0.04_145)] flex items-center justify-center flex-shrink-0">
-                            <Icon className="w-4 h-4 text-[oklch(0.45_0.08_145)]" />
-                          </div>
-                          <span className={`text-xs px-2 py-0.5 rounded-full ${item.isNew ? 'bg-[oklch(0.75_0.15_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
-                            {item.rating}
-                          </span>
-                        </div>
-                        <h3 className="font-medium text-foreground text-sm mb-1">{item.title}</h3>
-                        <p className="text-xs text-muted-foreground mb-2">{item.description}</p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-muted-foreground">{item.type}</span>
-                          <a href={item.url} target="_blank" rel="noopener noreferrer" download>
-                            <Button size="sm" variant="outline" className="h-7 text-xs">
-                              <Download className="w-3 h-3 mr-1" />
-                              Download
-                            </Button>
-                          </a>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-              
-              <div className="mt-4 text-center">
-                <Link href="/materialien">
-                  <Button variant="link" className="text-[oklch(0.45_0.08_145)]">
-                    Alle Materialien ansehen →
-                  </Button>
-                </Link>
-              </div>
+              <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
+                      <RefreshCw className="w-5 h-5 text-[oklch(0.50_0.12_85)]" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Neue Infografiken zum Thema "Verstehen" werden gerade erstellt und sind bald verfügbar.
+                      </p>
+                      <Link href="/materialien">
+                        <Button variant="outline" size="sm">
+                          Zur Materialien-Seite
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Hoffnung */}

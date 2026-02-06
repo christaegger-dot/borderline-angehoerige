@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle } from "lucide-react";
+import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
 
@@ -343,90 +343,26 @@ export default function Kommunizieren() {
                 Materialien zum Thema
               </h2>
               
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "U.M.W.E.G.© – Das Gesamtsystem",
-                    description: "Meta-Ebene (E.G.) + Akut-Ebene (U.M.W.) – das vollständige System",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YQNPBzrLjvCXccpR.png",
-                    isNew: true
-                  },
-                  {
-                    title: "Die U.M.W.-Formel",
-                    description: "Schritt-für-Schritt mit Gehirn-Mapping: Amygdala → Hippocampus → Cortex",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yaqKsPLHawpXuAcX.png",
-                    isNew: true
-                  },
-                  {
-                    title: "U.M.W.E.G.© Praxis + Exit",
-                    description: "Beispiel-Dialog und L.M.K. (Lebe mit Konsequenzen) wenn nichts mehr geht",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oLaLYuNVMpqhktjf.png",
-                    isNew: true
-                  },
-                  {
-                    title: "Die U.M.W.-Formel in der Praxis",
-                    description: "Exakte Formulierungen: M → U → W mit Betonung auf DEIN, DIR und WIR",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LAkOpcXRhlUJoRUa.png",
-                    isNew: true
-                  },
-                  {
-                    title: "Die 6 Stufen der Validierung",
-                    description: "Von aufmerksamem Zuhören bis radikaler Echtheit",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UamrzhkaRxuPSDVi.png",
-                    isNew: true
-                  },
-                  {
-                    title: "SET-Kommunikation",
-                    description: "Support, Empathy, Truth für schwierige Gespräche",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BkgLXBtsiscPljTj.png",
-                    isNew: true
-                  }
-                ].map((item, index) => (
-                  <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <div className="flex items-start justify-between gap-3 mb-2">
-                        <div className="w-8 h-8 rounded-lg bg-[oklch(0.90_0.03_250)] flex items-center justify-center flex-shrink-0">
-                          <Image className="w-4 h-4 text-[oklch(0.45_0.05_250)]" />
-                        </div>
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${item.isNew ? 'bg-[oklch(0.75_0.15_55)] text-white' : 'bg-[oklch(0.92_0.05_145)] text-[oklch(0.40_0.08_145)]'}`}>
-                          {item.rating}
-                        </span>
-                      </div>
-                      <h3 className="font-medium text-foreground text-sm mb-1">{item.title}</h3>
-                      <p className="text-xs text-muted-foreground mb-2">{item.description}</p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-muted-foreground">{item.type}</span>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer" download>
-                          <Button size="sm" variant="outline" className="h-7 text-xs">
-                            <Download className="w-3 h-3 mr-1" />
-                            Download
-                          </Button>
-                        </a>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              
-              <div className="mt-4 text-center">
-                <Link href="/materialien">
-                  <Button variant="link" className="text-[oklch(0.45_0.05_250)]">
-                    Alle Materialien ansehen →
-                  </Button>
-                </Link>
-              </div>
+              <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
+                      <RefreshCw className="w-5 h-5 text-[oklch(0.50_0.12_85)]" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Neue Infografiken zum Thema "Kommunizieren" (inkl. U.M.W.E.G.©, SET, Validierung) werden gerade erstellt.
+                      </p>
+                      <Link href="/materialien">
+                        <Button variant="outline" size="sm">
+                          Zur Materialien-Seite
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Konkrete Beispiel-Dialoge */}

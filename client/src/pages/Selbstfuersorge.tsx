@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { 
   Sparkles, ArrowRight, CheckCircle2, Heart, AlertTriangle, Users, 
   Clock, Brain, Wind, Lightbulb, Shield, BookOpen, Phone, Download,
-  ChevronDown, ChevronUp, UserCircle
+  ChevronDown, ChevronUp, UserCircle, RefreshCw
 } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
@@ -719,91 +719,26 @@ export default function Selbstfuersorge() {
                 Materialien zum Download
               </h2>
               
-              <div className="grid sm:grid-cols-2 gap-4">
-                <Card className="border-border/50 hover:border-[oklch(0.55_0.10_145)] transition-colors">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-[oklch(0.92_0.05_145)] flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="w-6 h-6 text-[oklch(0.45_0.10_145)]" />
-                      </div>
-                      <div>
-                        <h3 className="font-display font-semibold text-foreground mb-1">Die 5 Leitlinien für den Alltag</h3>
-                        <p className="text-sm text-muted-foreground mb-2">Keine Hektik, Routinen, Ruhe, Team, Grenzen</p>
-                        <span className="inline-flex items-center gap-1 text-xs bg-[oklch(0.75_0.15_55)] text-white px-2 py-1 rounded-full">
-                          NEU · PNG
-                        </span>
-                      </div>
+              <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
+                      <RefreshCw className="w-5 h-5 text-[oklch(0.50_0.12_85)]" />
                     </div>
-                    <a 
-                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vyggthdjKtssZyYi.png"
-                      download
-                      className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.45_0.12_145)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                    >
-                      <Download className="w-4 h-4" />
-                      Herunterladen
-                    </a>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-border/50 hover:border-[oklch(0.55_0.10_145)] transition-colors">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-[oklch(0.92_0.05_145)] flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="w-6 h-6 text-[oklch(0.45_0.10_145)]" />
-                      </div>
-                      <div>
-                        <h3 className="font-display font-semibold text-foreground mb-1">Selbstfürsorge für Angehörige</h3>
-                        <p className="text-sm text-muted-foreground mb-2">Die 4 Säulen der Selbstfürsorge mit Warnsignalen</p>
-                        <span className="inline-flex items-center gap-1 text-xs bg-[oklch(0.75_0.15_55)] text-white px-2 py-1 rounded-full">
-                          NEU · PNG
-                        </span>
-                      </div>
+                    <div>
+                      <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Neue Infografiken zum Thema "Selbstfürsorge" (inkl. Warnsignale, Radikale Akzeptanz) werden gerade erstellt.
+                      </p>
+                      <Link href="/materialien">
+                        <Button variant="outline" size="sm">
+                          Zur Materialien-Seite
+                        </Button>
+                      </Link>
                     </div>
-                    <a 
-                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wAgGnqlabUDXlySo.png"
-                      download
-                      className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.45_0.12_145)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                    >
-                      <Download className="w-4 h-4" />
-                      Herunterladen
-                    </a>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-border/50 hover:border-[oklch(0.65_0.12_55)] transition-colors">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-[oklch(0.92_0.05_55)] flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="w-6 h-6 text-[oklch(0.55_0.14_55)]" />
-                      </div>
-                      <div>
-                        <h3 className="font-display font-semibold text-foreground mb-1">Der Nebel (FOG)</h3>
-                        <p className="text-sm text-muted-foreground mb-2">Fear, Obligation, Guilt – emotionale Muster erkennen</p>
-                        <span className="inline-flex items-center gap-1 text-xs bg-[oklch(0.75_0.15_55)] text-white px-2 py-1 rounded-full">
-                          NEU · PNG
-                        </span>
-                      </div>
-                    </div>
-                    <a 
-                      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/doxRJKzyLuIwYzXV.png"
-                      download
-                      className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                    >
-                      <Download className="w-4 h-4" />
-                      Herunterladen
-                    </a>
-                  </CardContent>
-                </Card>
-              </div>
-              
-              <div className="mt-4 text-center">
-                <Link href="/materialien">
-                  <Button variant="outline" className="gap-2">
-                    Alle Materialien ansehen
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </Link>
-              </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Hinweise für verschiedene Angehörigengruppen */}

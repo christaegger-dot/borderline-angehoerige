@@ -189,7 +189,7 @@ export default function UeberUns() {
                     <Link href="/selbsthilfegruppen" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">
                       Selbsthilfegruppen
                     </Link>{" "}oder{" "}
-                    <Link href="/therapieangebote" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">
+                    <Link href="/unterstuetzen/therapie#therapieangebote" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">
                       spezialisierten Therapeuten
                     </Link>.
                   </p>

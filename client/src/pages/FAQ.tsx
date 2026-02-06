@@ -112,7 +112,7 @@ export default function FAQ() {
         {
           question: "Mein Angehöriger will keine Therapie – was tun?",
           answer: "Sie können niemanden zur Therapie zwingen (ausser bei akuter Gefährdung). Was Sie tun können: Informieren Sie sich selbst über Borderline und ändern Sie Ihr eigenes Verhalten – das kann indirekt helfen. Sprechen Sie Therapie als Möglichkeit an, ohne zu drängen. Nutzen Sie «Ich»-Aussagen: «Ich mache mir Sorgen und wünsche mir, dass du Unterstützung bekommst.» Setzen Sie Grenzen für inakzeptables Verhalten – manchmal motiviert das zur Veränderung. Und: Holen Sie sich selbst Unterstützung, unabhängig davon, ob Ihr Angehöriger Therapie macht.",
-          links: [{ text: "Therapieangebote Zürich", url: "/therapieangebote" }]
+          links: [{ text: "Therapieangebote Zürich", url: "/unterstuetzen/therapie#therapieangebote" }]
         },
         {
           question: "Welche Therapie ist am besten?",

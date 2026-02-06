@@ -222,7 +222,7 @@ const infografiken: Array<{
     description: "4-Stufen-Treppe: Beschreiben → Äussern → Behaupten → Verstärken. Die DBT-Methode für respektvolle Grenzsetzung.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PxzHeunAWohBbUwz.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wpSgbGdgwteKtkEZ.png",
     isNew: true
   },
   {

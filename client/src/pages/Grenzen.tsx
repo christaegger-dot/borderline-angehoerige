@@ -457,7 +457,7 @@ export default function Grenzen() {
                   {
                     title: "Die DEAR-Technik",
                     description: "4 Schritte für respektvolle Grenzsetzung",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PxzHeunAWohBbUwz.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wpSgbGdgwteKtkEZ.png"
                   },
                   {
                     title: "Spiegeln statt Aufsaugen",

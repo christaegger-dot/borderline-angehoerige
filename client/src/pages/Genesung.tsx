@@ -2,7 +2,8 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Heart, Clock, BookOpen, ExternalLink, ArrowRight, AlertTriangle, RefreshCw, Users } from "lucide-react";
+import { Sparkles, TrendingUp, Heart, Clock, BookOpen, ExternalLink, ArrowRight, AlertTriangle, RefreshCw, Users, Download, Image as ImageIcon } from "lucide-react";
+import { useState } from "react";
 import { Link } from "wouter";
 
 export default function Genesung() {
@@ -608,6 +609,84 @@ export default function Genesung() {
                   </div>
                 </CardContent>
               </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Infografiken zum Herunterladen */}
+      <section className="py-12 md:py-16">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-center mb-10">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[oklch(0.88_0.04_145)]/40 text-[oklch(0.45_0.10_145)] text-sm font-medium mb-4">
+                  <ImageIcon className="w-4 h-4" />
+                  Infografiken
+                </span>
+                <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-3">
+                  Genesung verstehen – auf einen Blick
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Alle Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "Genesung in Zahlen",
+                    desc: "Orientierungs-Tracker mit Langzeitdaten",
+                    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ItokRaWotdNKpoEx.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/deGKYGDYjvAXWWxE.pdf"
+                  },
+                  {
+                    title: "Das Fortschritt-Paradox",
+                    desc: "Warum Rückfälle zum Weg gehören",
+                    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xjUbWjBdgOfAOBSO.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KKJDrFZiXpfzzolY.pdf"
+                  },
+                  {
+                    title: "Remission vs. Heilung",
+                    desc: "Was Besserung wirklich bedeutet",
+                    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tbZXsVZHQhEaDQKT.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HBTJgTGVTPgZVhjh.pdf"
+                  },
+                  {
+                    title: "5 Faktoren, die Genesung fördern",
+                    desc: "Säulen-Modell: Was positiv beeinflusst",
+                    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EbMUjOHuCQRAoyMK.pdf"
+                  },
+                ].map((item, i) => (
+                  <Card key={i} className="overflow-hidden border-border/50 hover:shadow-md transition-shadow">
+                    <div className="aspect-[3/4] overflow-hidden bg-muted">
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                      <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
+                      <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" size="sm" className="w-full">
+                          <Download className="w-4 h-4 mr-2" />
+                          PDF herunterladen
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="text-center mt-8">
+                <Link href="/materialien">
+                  <Button variant="outline">
+                    Alle Materialien ansehen
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, RefreshCw, Image as ImageIcon } from "lucide-react";
+import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, RefreshCw, Image as ImageIcon, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
@@ -380,6 +380,47 @@ const infografiken: Array<{
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QTZNugMQQrDeZgIZ.pdf",
     isNew: true
   },
+  // === K6 GENESUNG ===
+  {
+    id: "k6-1-genesung-in-zahlen",
+    title: "Genesung in Zahlen – Was die Forschung zeigt",
+    description: "Orientierungs-Tracker: 85–93 % erreichen symptomatische Remission, 50 % vollständige Genesung – belegt durch Langzeitstudien (Zanarini et al.).",
+    category: "genesung",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ItokRaWotdNKpoEx.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/deGKYGDYjvAXWWxE.pdf",
+    isNew: true
+  },
+  {
+    id: "k6-2-fortschritt-paradox",
+    title: "Das Fortschritt-Paradox – Warum Rückfälle zum Weg gehören",
+    description: "Aufwärts-Spirale: Genesung verläuft nicht linear. Rückfälle bedeuten nicht Scheitern – sie sind Teil des Weges nach oben.",
+    category: "genesung",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xjUbWjBdgOfAOBSO.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KKJDrFZiXpfzzolY.pdf",
+    isNew: true
+  },
+  {
+    id: "k6-3-remission-vs-heilung",
+    title: "Remission vs. Heilung – Was Besserung wirklich bedeutet",
+    description: "2-Spalten-Vergleich: Was Remission NICHT bedeutet vs. was sie tatsächlich bedeutet – realistische Erwartungen statt Perfektionsanspruch.",
+    category: "genesung",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tbZXsVZHQhEaDQKT.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HBTJgTGVTPgZVhjh.pdf",
+    isNew: true
+  },
+  {
+    id: "k6-4-fuenf-faktoren-genesung",
+    title: "5 Faktoren, die Genesung fördern",
+    description: "Säulen-Modell: Spezialisierte Therapie, stabile Beziehungen, strukturierter Alltag, Begleiterkrankungen behandeln und eigene Motivation – auf dem Fundament von Zeit und Geduld.",
+    category: "genesung",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EbMUjOHuCQRAoyMK.pdf",
+    isNew: true
+  },
 ];
 
 const categories = [
@@ -389,6 +430,7 @@ const categories = [
   { id: "kommunizieren", label: "Kommunizieren", icon: MessageCircle },
   { id: "grenzen", label: "Grenzen", icon: Shield },
   { id: "selbstfuersorge", label: "Selbstfürsorge", icon: AlertTriangle },
+  { id: "genesung", label: "Genesung", icon: TrendingUp },
 ];
 
 export default function Materialien() {

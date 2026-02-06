@@ -745,10 +745,10 @@ export default function Verstehen() {
 
                 {/* 1.5 4-Phasen-Zyklus */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOBpgEsUQzJNRQhJ.png" target="_blank" rel="noopener noreferrer">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp" target="_blank" rel="noopener noreferrer">
                     <div className="aspect-[3/4] bg-muted">
                       <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOBpgEsUQzJNRQhJ.png" 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp" 
                         alt="Der 4-Phasen-Zyklus"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
@@ -758,10 +758,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der 4-Phasen-Zyklus</h3>
                     <p className="text-sm text-muted-foreground mb-3">Das vorhersehbare Muster – Krisen folgen oft einem Ablauf.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOBpgEsUQzJNRQhJ.png" download>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ixtfXLgxmZJawKhi.pdf" download>
                       <Button size="sm" variant="outline" className="w-full">
                         <Download className="w-4 h-4 mr-2" />
-                        Herunterladen
+                        PDF herunterladen
                       </Button>
                     </a>
                   </CardContent>
@@ -769,10 +769,10 @@ export default function Verstehen() {
 
                 {/* 1.6 Gehirn verstehen */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png" target="_blank" rel="noopener noreferrer">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp" target="_blank" rel="noopener noreferrer">
                     <div className="aspect-[3/4] bg-muted">
                       <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png" 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp" 
                         alt="Das Gehirn verstehen"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
@@ -782,10 +782,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Das Gehirn verstehen</h3>
                     <p className="text-sm text-muted-foreground mb-3">Neurobiologie einfach erklärt – warum Stress Denken blockiert.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png" download>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KVAAxkRpNMpEuKyQ.pdf" download>
                       <Button size="sm" variant="outline" className="w-full">
                         <Download className="w-4 h-4 mr-2" />
-                        Herunterladen
+                        PDF herunterladen
                       </Button>
                     </a>
                   </CardContent>

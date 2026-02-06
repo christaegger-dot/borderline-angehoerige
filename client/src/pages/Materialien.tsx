@@ -70,8 +70,9 @@ const infografiken: Array<{
     title: "Der 4-Phasen-Zyklus – das vorhersehbare Muster",
     description: "Kausal-Loop: Krisen wirken chaotisch – folgen aber oft einem wiederkehrenden Ablauf.",
     category: "verstehen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOBpgEsUQzJNRQhJ.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ixtfXLgxmZJawKhi.pdf",
     isNew: true
   },
   {
@@ -79,8 +80,9 @@ const infografiken: Array<{
     title: "Das Gehirn verstehen – Neurobiologie einfach erklärt",
     description: "Sequenzdiagramm: Bei starkem Stress dominiert Alarm – erst danach wird klares Denken wieder möglich.",
     category: "verstehen",
-    type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KVAAxkRpNMpEuKyQ.pdf",
     isNew: true
   },
   // ═══════════════════════════════════════════════════════════════════════════

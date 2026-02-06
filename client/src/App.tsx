@@ -26,7 +26,7 @@ import Selbsthilfegruppen from "./pages/Selbsthilfegruppen";
 import Feedback from "./pages/Feedback";
 import Glossar from "./pages/Glossar";
 import Buchempfehlungen from "./pages/Buchempfehlungen";
-import Therapieangebote from "./pages/Therapieangebote";
+// Therapieangebote wurde in Unterstützen/Therapie integriert
 import FAQ from "./pages/FAQ";
 import UeberUns from "./pages/UeberUns";
 
@@ -54,7 +54,7 @@ function Router() {
       <Route path="/feedback" component={Feedback} />
       <Route path="/glossar" component={Glossar} />
       <Route path="/buchempfehlungen" component={Buchempfehlungen} />
-      <Route path="/therapieangebote" component={Therapieangebote} />
+      <Route path="/therapieangebote">{() => <Redirect to="/unterstuetzen/therapie#therapieangebote" />}</Route>
       <Route path="/faq" component={FAQ} />
       <Route path="/ueber-uns" component={UeberUns} />
       <Route path="/404" component={NotFound} />

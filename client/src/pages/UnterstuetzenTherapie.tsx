@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, Image, MapPin, ExternalLink } from "lucide-react";
+import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, Image, MapPin, ExternalLink, Home, Calendar, Building2, Baby, User, Phone, Mail } from "lucide-react";
 import { Link } from "wouter";
 
 export default function UnterstuetzenTherapie() {
@@ -93,7 +93,7 @@ export default function UnterstuetzenTherapie() {
                 ))}
               </div>
               
-              {/* Link zu Therapieangeboten */}
+              {/* Hinweis auf Therapieangebote weiter unten */}
               <Card className="mt-6 bg-[oklch(0.92_0.04_145)] border-[oklch(0.80_0.08_145)]">
                 <CardContent className="p-5">
                   <div className="flex items-start gap-4">
@@ -104,15 +104,9 @@ export default function UnterstuetzenTherapie() {
                       <h3 className="font-display font-semibold text-foreground mb-1">
                         Therapieangebote im Kanton Zürich
                       </h3>
-                      <p className="text-muted-foreground text-sm mb-3">
-                        Übersicht über spezialisierte DBT-Stationen und Behandlungsangebote der PUK Zürich – für Kinder, Jugendliche, Erwachsene und Senioren.
+                      <p className="text-muted-foreground text-sm">
+                        Weiter unten finden Sie eine Übersicht über spezialisierte DBT-Stationen und Behandlungsangebote der PUK Zürich – für Kinder, Jugendliche, Erwachsene und Senioren.
                       </p>
-                      <Link href="/therapieangebote">
-                        <Button size="sm" variant="outline" className="border-[oklch(0.70_0.08_145)] hover:bg-[oklch(0.88_0.05_145)]">
-                          Therapieangebote ansehen
-                          <ExternalLink className="w-3 h-3 ml-2" />
-                        </Button>
-                      </Link>
                     </div>
                   </div>
                 </CardContent>
@@ -256,6 +250,143 @@ export default function UnterstuetzenTherapie() {
                       </li>
                     ))}
                   </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Therapieangebote Kanton Zürich */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+              id="therapieangebote"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <MapPin className="w-8 h-8 text-[oklch(0.45_0.10_145)]" />
+                Therapieangebote im Kanton Zürich
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Die Psychiatrische Universitätsklinik Zürich (PUK) bietet spezialisierte Behandlungsangebote für verschiedene Altersgruppen – ambulant, teilstationär und stationär.
+              </p>
+              
+              {/* Settings-Übersicht */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                {[
+                  { icon: Home, label: "Ambulant", desc: "Regelmässige Termine, Leben zu Hause" },
+                  { icon: Calendar, label: "Teilstationär", desc: "Tagesklinik, abends zu Hause" },
+                  { icon: Building2, label: "Stationär", desc: "Aufenthalt in der Klinik" }
+                ].map((setting, i) => (
+                  <div key={i} className="flex items-center gap-2 px-3 py-2 bg-muted/30 rounded-lg">
+                    <setting.icon className="w-4 h-4 text-muted-foreground" />
+                    <div>
+                      <span className="font-medium text-foreground text-sm">{setting.label}</span>
+                      <p className="text-xs text-muted-foreground">{setting.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Kinder und Jugendliche */}
+              <Card className="border-2 border-[oklch(0.85_0.08_280)] mb-4">
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.90_0.08_280)] flex items-center justify-center">
+                      <Baby className="w-5 h-5 text-[oklch(0.50_0.15_280)]" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-semibold text-foreground">HYPE ZÜRI</h3>
+                      <p className="text-xs text-muted-foreground">Helping Young People Early – Jugendliche ab 13 Jahren</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-3">
+                    Frühinterventionsprogramm für Jugendliche mit Verdacht, erhöhtem Risiko oder bereits diagnostizierter Borderline-Störung. Max. 16 Sitzungen über 6-9 Monate.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <a href="tel:+41583846600" className="text-sm text-[oklch(0.50_0.15_280)] hover:underline flex items-center gap-1">
+                      <Phone className="w-3 h-3" /> +41 58 384 66 00
+                    </a>
+                    <a href="mailto:kjpp.ambizh@pukzh.ch" className="text-sm text-[oklch(0.50_0.15_280)] hover:underline flex items-center gap-1">
+                      <Mail className="w-3 h-3" /> kjpp.ambizh@pukzh.ch
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Erwachsene */}
+              <Card className="border-2 border-[oklch(0.85_0.08_145)] mb-4">
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.90_0.05_145)] flex items-center justify-center">
+                      <User className="w-5 h-5 text-[oklch(0.45_0.10_145)]" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-semibold text-foreground">DBT-Station für Erwachsene</h3>
+                      <p className="text-xs text-muted-foreground">Station B2 – Erwachsene 18-65 Jahre</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-3">
+                    Spezialisierte DBT-Station mit strukturiertem Therapieprogramm: Einzeltherapie, Skillstraining, Achtsamkeit und Körpertherapie.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <a href="tel:+41583842111" className="text-sm text-[oklch(0.45_0.10_145)] hover:underline flex items-center gap-1">
+                      <Phone className="w-3 h-3" /> +41 58 384 21 11
+                    </a>
+                    <a href="mailto:klinik.hard@pukzh.ch" className="text-sm text-[oklch(0.45_0.10_145)] hover:underline flex items-center gap-1">
+                      <Mail className="w-3 h-3" /> klinik.hard@pukzh.ch
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Weitere Angebote */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Card className="border-border/50">
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground text-sm mb-1">Clienia Schlössli – Station A2</h4>
+                    <p className="text-xs text-muted-foreground mb-2">
+                      Stationäres Integratives Therapieprogramm für Emotionsregulation (SITE)
+                    </p>
+                    <a href="https://www.clienia.ch/de/standorte/clienia-schloessli/stationen/a2/" target="_blank" rel="noopener noreferrer" className="text-xs text-[oklch(0.45_0.10_145)] hover:underline flex items-center gap-1">
+                      Website besuchen <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </CardContent>
+                </Card>
+                <Card className="border-border/50">
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground text-sm mb-1">DBT-Therapeuten finden</h4>
+                    <p className="text-xs text-muted-foreground mb-2">
+                      Therapeutenlandkarte mit zertifizierten DBT-Therapeuten in der Schweiz
+                    </p>
+                    <a href="https://www.dachverband-dbt.de/dbt-therapieangebote" target="_blank" rel="noopener noreferrer" className="text-xs text-[oklch(0.45_0.10_145)] hover:underline flex items-center gap-1">
+                      Therapeutensuche <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              {/* Notfall-Nummern */}
+              <Card className="mt-4 bg-[oklch(0.95_0.05_25)] border-[oklch(0.75_0.12_25)]">
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-foreground text-sm mb-3 flex items-center gap-2">
+                    <Phone className="w-4 h-4 text-[oklch(0.55_0.15_25)]" />
+                    Notfall-Nummern PUK Zürich (24/7)
+                  </h4>
+                  <div className="grid grid-cols-3 gap-3 text-center">
+                    <div>
+                      <p className="text-xs text-muted-foreground">Kinder & Jugendliche</p>
+                      <a href="tel:+41583846666" className="text-sm font-semibold text-foreground hover:underline">058 384 66 66</a>
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Erwachsene (ab 18)</p>
+                      <a href="tel:+41583842000" className="text-sm font-semibold text-foreground hover:underline">058 384 20 00</a>
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Senioren (ab 65)</p>
+                      <a href="tel:+41583844682" className="text-sm font-semibold text-foreground hover:underline">058 384 46 82</a>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

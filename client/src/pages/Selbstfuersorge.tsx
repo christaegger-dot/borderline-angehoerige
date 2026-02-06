@@ -730,8 +730,8 @@ export default function Selbstfuersorge() {
                   {
                     title: "Die Sauerstoffmaske",
                     desc: "Kreislauf-Diagramm: Teufelskreis vs. positiver Kreislauf \u2013 warum Selbstf\u00fcrsorge keine Selbstsucht ist.",
-                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fbyANMtxbUHCBPYk.webp",
-                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VQAElwZvlqSaMBsP.pdf"
+                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRRUMsKJubrsepfQ.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CrkOXfLHkRgJVlJT.pdf"
                   },
                   {
                     title: "Radikale Akzeptanz",
@@ -742,8 +742,8 @@ export default function Selbstfuersorge() {
                   {
                     title: "Die STOPP-Technik",
                     desc: "5 Schritte aus der Stressspirale: Stopp, Tief atmen, Orientieren, Perspektive, Plan \u2013 in 30 Sekunden.",
-                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NLqFdIwgTNYtrHrP.webp",
-                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bhRfLbiALRyDPmVy.pdf"
+                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BnWHSnpWkkqoKOIi.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GQuGQszUicUrRdYS.pdf"
                   },
                   {
                     title: "Ihr Energie-Konto",

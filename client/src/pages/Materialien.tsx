@@ -336,8 +336,8 @@ const infografiken: Array<{
     description: "Kreislauf-Diagramm: Teufelskreis ohne Selbstfürsorge vs. positiver Kreislauf mit Selbstfürsorge – setzen Sie zuerst Ihre eigene Maske auf.",
     category: "selbstfuersorge",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fbyANMtxbUHCBPYk.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VQAElwZvlqSaMBsP.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRRUMsKJubrsepfQ.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CrkOXfLHkRgJVlJT.pdf",
     isNew: true
   },
   {
@@ -356,8 +356,8 @@ const infografiken: Array<{
     description: "Stufen-Modell: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden anwendbar bei akuter Belastung.",
     category: "selbstfuersorge",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NLqFdIwgTNYtrHrP.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bhRfLbiALRyDPmVy.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BnWHSnpWkkqoKOIi.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GQuGQszUicUrRdYS.pdf",
     isNew: true
   },
   {

@@ -78,6 +78,63 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png",
     isNew: true
   },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KATEGORIE 2: KOMMUNIZIEREN
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "2-1-drei-schritte",
+    title: "Wenn Gespräche kippen: 3 Schritte, die helfen",
+    description: "Timeline mit Reset-Loop: In Hochstress hilft ein Standardablauf – beruhigen, verbinden, begrenzen + Plan.",
+    category: "kommunizieren",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NHwJBJOisdMBlske.png",
+    isNew: true
+  },
+  {
+    id: "2-2-standardsatz",
+    title: "Der Standardsatz: 2 Sätze, die deeskalieren",
+    description: "Copy-ready Sätze zum Ablesen: Erst Gefühl anerkennen, dann Grenze + Plan – ohne Diskussion.",
+    category: "kommunizieren",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KnTbEkRJKARpfZUn.png",
+    isNew: true
+  },
+  {
+    id: "2-3-grenzen-setzen",
+    title: "Grenzen setzen, ohne zu eskalieren",
+    description: "3-Kacheln-Formel: Fakt + Ich-Grenze + nächster Schritt – kurz und klar.",
+    category: "kommunizieren",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PNJVxxvEPKiGWGEw.png",
+    isNew: true
+  },
+  {
+    id: "2-4-pause-exit",
+    title: "Pause statt Streit: so beenden Sie ein Gespräch sicher",
+    description: "Ampel-Zustandsdiagramm: Wenn Respekt nicht möglich ist, ist eine Pause die beste Deeskalation.",
+    category: "kommunizieren",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KwpkUVzgwMIXDJQA.png",
+    isNew: true
+  },
+  {
+    id: "2-5-zuhoeren-ohne-zustimmen",
+    title: "Zuhören ohne Zustimmen – so geht das konkret",
+    description: "2-Spalten mit Brücke: Sie können Gefühle anerkennen, ohne Verhalten gutzuheissen.",
+    category: "kommunizieren",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AjwTxyISldFJZOAc.png",
+    isNew: true
+  },
+  {
+    id: "2-6-beispiel-dialog",
+    title: "Beispiel-Dialog: kurz bleiben, ruhig bleiben",
+    description: "Chat-Sequenzdiagramm: Kurz + ruhig + wiederholbar wirkt in Krisen stärker als Argumente.",
+    category: "kommunizieren",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iEvsaSHHCkBeAxtw.png",
+    isNew: true
+  },
 ];
 
 const categories = [

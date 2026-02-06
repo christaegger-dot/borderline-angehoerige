@@ -317,6 +317,49 @@ const infografiken: Array<{
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BqsfiottQigBlNqQ.pdf",
     isNew: true
   },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KATEGORIE 5: SELBSTFÜRSORGE
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "k5-1-warnsignale",
+    title: "Warnsignale der Überlastung",
+    description: "Ampel-Stufenmodell: Erkennen Sie rechtzeitig, wann es zu viel wird – von Grün (noch im Rahmen) über Gelb (Achtung) bis Rot (Hilfe suchen).",
+    category: "selbstfuersorge",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tpAIcOfgaoOyBsXq.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lGAViqmCntrSgvgp.pdf",
+    isNew: true
+  },
+  {
+    id: "k5-2-sauerstoffmaske",
+    title: "Die Sauerstoffmaske – Warum Selbstfürsorge keine Selbstsucht ist",
+    description: "Kreislauf-Diagramm: Teufelskreis ohne Selbstfürsorge vs. positiver Kreislauf mit Selbstfürsorge – setzen Sie zuerst Ihre eigene Maske auf.",
+    category: "selbstfuersorge",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fbyANMtxbUHCBPYk.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VQAElwZvlqSaMBsP.pdf",
+    isNew: true
+  },
+  {
+    id: "k5-3-radikale-akzeptanz",
+    title: "Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln",
+    description: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung zum sofortigen Anwenden.",
+    category: "selbstfuersorge",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qJdMwWgUcXMyAvka.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NRUAfrXcenmYKrBI.pdf",
+    isNew: true
+  },
+  {
+    id: "k5-4-stopp-technik",
+    title: "Die STOPP-Technik – 5 Schritte aus der Stressspirale",
+    description: "Stufen-Modell: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden anwendbar bei akuter Belastung.",
+    category: "selbstfuersorge",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NLqFdIwgTNYtrHrP.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bhRfLbiALRyDPmVy.pdf",
+    isNew: true
+  },
 ];
 
 const categories = [

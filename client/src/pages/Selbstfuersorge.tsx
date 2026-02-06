@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { 
   Sparkles, ArrowRight, CheckCircle2, Heart, AlertTriangle, Users, 
   Clock, Brain, Wind, Lightbulb, Shield, BookOpen, Phone, Download,
-  ChevronDown, ChevronUp, UserCircle, RefreshCw
+  ChevronDown, ChevronUp, UserCircle
 } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
@@ -719,26 +719,56 @@ export default function Selbstfuersorge() {
                 Materialien zum Download
               </h2>
               
-              <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
-                      <RefreshCw className="w-5 h-5 text-[oklch(0.50_0.12_85)]" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "Warnsignale der \u00dcberlastung",
+                    desc: "Ampel-Stufenmodell: Gr\u00fcn \u2192 Gelb \u2192 Rot \u2013 erkennen Sie rechtzeitig, wann es zu viel wird.",
+                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tpAIcOfgaoOyBsXq.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lGAViqmCntrSgvgp.pdf"
+                  },
+                  {
+                    title: "Die Sauerstoffmaske",
+                    desc: "Kreislauf-Diagramm: Teufelskreis vs. positiver Kreislauf \u2013 warum Selbstf\u00fcrsorge keine Selbstsucht ist.",
+                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fbyANMtxbUHCBPYk.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VQAElwZvlqSaMBsP.pdf"
+                  },
+                  {
+                    title: "Radikale Akzeptanz",
+                    desc: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-\u00dcbung.",
+                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qJdMwWgUcXMyAvka.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NRUAfrXcenmYKrBI.pdf"
+                  },
+                  {
+                    title: "Die STOPP-Technik",
+                    desc: "5 Schritte aus der Stressspirale: Stopp, Tief atmen, Orientieren, Perspektive, Plan \u2013 in 30 Sekunden.",
+                    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NLqFdIwgTNYtrHrP.webp",
+                    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bhRfLbiALRyDPmVy.pdf"
+                  }
+                ].map((item, i) => (
+                  <Card key={i} className="overflow-hidden border-border/50 hover:shadow-md transition-shadow">
+                    <div className="aspect-[3/4] overflow-hidden bg-muted">
+                      <img src={item.webp} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
                     </div>
-                    <div>
-                      <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Neue Infografiken zum Thema "Selbstfürsorge" (inkl. Warnsignale, Radikale Akzeptanz) werden gerade erstellt.
-                      </p>
-                      <Link href="/materialien">
-                        <Button variant="outline" size="sm">
-                          Zur Materialien-Seite
+                    <CardContent className="p-4">
+                      <h3 className="font-medium text-foreground mb-1 text-sm">{item.title}</h3>
+                      <p className="text-xs text-muted-foreground mb-3">{item.desc}</p>
+                      <a href={item.pdf} target="_blank" rel="noopener noreferrer" download>
+                        <Button variant="outline" size="sm" className="w-full gap-2">
+                          <Download className="w-4 h-4" /> PDF herunterladen
                         </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                      </a>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="mt-4 text-center">
+                <Link href="/materialien">
+                  <Button variant="outline" size="sm">
+                    Alle Materialien anzeigen
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Hinweise für verschiedene Angehörigengruppen */}

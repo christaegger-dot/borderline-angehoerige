@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, RefreshCw, Image as ImageIcon, TrendingUp } from "lucide-react";
+import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
@@ -495,22 +495,18 @@ export default function Materialien() {
       {/* Überarbeitungs-Hinweis */}
       <section className="py-8">
         <div className="container">
-          <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
+          <Card className="bg-[oklch(0.95_0.05_145)] border-[oklch(0.80_0.08_145)]">
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
-                  <RefreshCw className="w-6 h-6 text-[oklch(0.50_0.12_85)]" />
+                <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.06_145)] flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-6 h-6 text-[oklch(0.45_0.12_145)]" />
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-foreground mb-2">
-                    Downloads werden aktuell überarbeitet
+                    Alle 39 Infografiken verfügbar
                   </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Wir erstellen gerade neue, verbesserte Infografiken für Sie. 
-                    Die neuen Materialien werden schrittweise Kategorie für Kategorie veröffentlicht.
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    <strong>Geplante Kategorien:</strong> Verstehen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung
+                  <p className="text-muted-foreground">
+                    Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung
                   </p>
                 </div>
               </div>

@@ -213,6 +213,72 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/uOrYGTcGgbyHKrGp.png",
     isNew: true
   },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KATEGORIE 4: GRENZEN
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "k4-1-dear-technik",
+    title: "Die DEAR-Technik – Grenzen setzen ohne Vorwürfe",
+    description: "4-Stufen-Treppe: Beschreiben → Äussern → Behaupten → Verstärken. Die DBT-Methode für respektvolle Grenzsetzung.",
+    category: "grenzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GpkkjgkSdRnexnac.png",
+    isNew: true
+  },
+  {
+    id: "k4-2-spiegeln-aufsaugen",
+    title: "Spiegeln statt Aufsaugen – Mitfühlen ohne Übernehmen",
+    description: "Split-Screen-Vergleich: Schwamm vs. Spiegel. Sie können Gefühle anerkennen, ohne sie zu Ihren eigenen zu machen.",
+    category: "grenzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xmLVUEtqTShlaigK.png",
+    isNew: true
+  },
+  {
+    id: "k4-3-vier-arten-grenzen",
+    title: "Die 4 Arten von Grenzen – Wissen, was Sie schützen",
+    description: "4-Quadranten: Physische, emotionale, zeitliche und materielle Grenzen – mit konkreten Beispielsätzen.",
+    category: "grenzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tIojfZTaoQyrCWDj.png",
+    isNew: true
+  },
+  {
+    id: "k4-4-grenzen-erkennen",
+    title: "Grenzen erkennen – 5 Warnsignale Ihres Körpers",
+    description: "Körper-Silhouette mit 5 Signalen: Bauch, Brust, Nacken, Erschöpfung, Fluchtimpuls. Lernen Sie, auf Ihren Körper zu hören.",
+    category: "grenzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bxbxrdsKVgAoTSdF.png",
+    isNew: true
+  },
+  {
+    id: "k4-5-warum-grenzen-helfen",
+    title: "Warum Grenzen auch dem Borderliner helfen",
+    description: "5-Säulen-Modell: Identität, Struktur, Sicherheit, Intimität, Vorbild – Grenzen sind kein Liebesentzug.",
+    category: "grenzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KDxHdlDcZhYxEkMD.png",
+    isNew: true
+  },
+  {
+    id: "k4-6-lmk-exit-strategie",
+    title: "L.M.K. – Wenn Grenzen nicht respektiert werden",
+    description: "Entscheidungsbaum: Grenze → Reaktion → Konsequenz. 'Lebe Mit Konsequenzen' – die Exit-Strategie.",
+    category: "grenzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MKXShSkeagmSgRLp.png",
+    isNew: true
+  },
+  {
+    id: "k4-7-grenzen-kommunizieren",
+    title: "Grenzen kommunizieren – Beispielsätze für den Alltag",
+    description: "4 Situationen mit fertigen Sätzen: Bei Beschimpfungen, Schuldzuweisungen, Forderungen, Drohungen.",
+    category: "grenzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oTZaYTwVoWeGevLM.png",
+    isNew: true
+  },
 ];
 
 const categories = [

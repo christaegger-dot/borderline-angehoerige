@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image, Clock, HeartHandshake, Home, Wallet, Users, Baby, UserCircle, RefreshCw } from "lucide-react";
+import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image, Clock, HeartHandshake, Home, Wallet, Users, Baby, UserCircle } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Grenzen() {
@@ -445,29 +445,78 @@ export default function Grenzen() {
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-[oklch(0.55_0.15_35)]" />
-                Materialien zum Thema
+                Infografiken zum Thema Grenzen
               </h2>
               
-              <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
-                      <RefreshCw className="w-5 h-5 text-[oklch(0.50_0.12_85)]" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Neue Infografiken zum Thema "Grenzen" (inkl. DEAR-Technik, LMK-Formel) werden gerade erstellt.
-                      </p>
-                      <Link href="/materialien">
-                        <Button variant="outline" size="sm">
-                          Zur Materialien-Seite
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <p className="text-muted-foreground mb-6">
+                Alle Infografiken können Sie herunterladen, ausdrucken und teilen. Klicken Sie auf ein Bild für die Vollansicht.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    title: "Die DEAR-Technik",
+                    description: "4 Schritte für respektvolle Grenzsetzung",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GpkkjgkSdRnexnac.png"
+                  },
+                  {
+                    title: "Spiegeln statt Aufsaugen",
+                    description: "Mitfühlen ohne Übernehmen",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xmLVUEtqTShlaigK.png"
+                  },
+                  {
+                    title: "Die 4 Arten von Grenzen",
+                    description: "Physisch, emotional, zeitlich, materiell",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tIojfZTaoQyrCWDj.png"
+                  },
+                  {
+                    title: "Grenzen erkennen",
+                    description: "5 Warnsignale Ihres Körpers",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bxbxrdsKVgAoTSdF.png"
+                  },
+                  {
+                    title: "Warum Grenzen helfen",
+                    description: "Grenzen sind kein Liebesentzug",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KDxHdlDcZhYxEkMD.png"
+                  },
+                  {
+                    title: "L.M.K. – Exit-Strategie",
+                    description: "Wenn Grenzen nicht respektiert werden",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MKXShSkeagmSgRLp.png"
+                  },
+                  {
+                    title: "Grenzen kommunizieren",
+                    description: "Beispielsätze für den Alltag",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oTZaYTwVoWeGevLM.png"
+                  }
+                ].map((item, index) => (
+                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                      <div className="relative aspect-[3/4] bg-muted overflow-hidden">
+                        <img 
+                          src={item.url} 
+                          alt={item.title}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                          <h3 className="font-semibold text-sm mb-1">{item.title}</h3>
+                          <p className="text-xs text-white/80">{item.description}</p>
+                        </div>
+                      </div>
+                    </a>
+                  </Card>
+                ))}
+              </div>
+              
+              <div className="mt-6 text-center">
+                <Link href="/materialien">
+                  <Button variant="outline">
+                    Alle Materialien ansehen
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Hinweise für verschiedene Angehörigengruppen */}

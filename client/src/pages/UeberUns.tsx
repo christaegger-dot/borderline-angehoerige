@@ -50,7 +50,7 @@ export default function UeberUns() {
               
               <div className="prose prose-lg text-muted-foreground">
                 <p className="leading-relaxed mb-4">
-                  Wenn ein nahestehender Mensch an Borderline leidet, stehen Angehörige oft vor einer doppelten Herausforderung: Sie wollen helfen – und fühlen sich gleichzeitig hilflos. Sie lieben – und sind erschöpft. Sie verstehen nicht, was passiert – und haben Angst, etwas falsch zu machen.
+                  Wenn ein nahestehender Mensch eine Borderline-Persönlichkeitsstörung hat, stehen Angehörige oft vor einer doppelten Herausforderung: Sie wollen helfen – und fühlen sich gleichzeitig hilflos. Sie lieben – und sind erschöpft. Sie verstehen nicht, was passiert – und haben Angst, etwas falsch zu machen.
                 </p>
                 
                 <p className="leading-relaxed mb-4">

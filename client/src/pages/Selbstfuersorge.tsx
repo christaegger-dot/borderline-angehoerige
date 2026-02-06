@@ -8,6 +8,9 @@ import {
   ChevronDown, ChevronUp, UserCircle
 } from "lucide-react";
 import { Link } from "wouter";
+import { kontaktById } from "@/data/kontakte";
+
+const proMente = kontaktById("INFO_PROMENTE")!;
 import { useState } from "react";
 import { TableOfContents } from "@/components/UXEnhancements";
 
@@ -598,7 +601,7 @@ export default function Selbstfuersorge() {
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Phone className="w-4 h-4" />
-                      <span className="text-sm">Pro Mente Sana Beratung: 0848 800 858</span>
+                      <span className="text-sm">Pro Mente Sana Beratung: <a href={`tel:${proMente.tel}`} className="text-[oklch(0.45_0.08_250)] hover:underline">{proMente.nummer}</a></span>
                     </div>
                   </div>
                 </CardContent>

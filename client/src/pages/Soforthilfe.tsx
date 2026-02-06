@@ -1,8 +1,13 @@
+/**
+ * Soforthilfe-Seite
+ * Alle Kontakte aus @/data/kontakte.ts (Single Source of Truth).
+ * Reihenfolge: ROT → GELB → GRÜN → INFO → Online → Krisensituationen → Krisenplan
+ */
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Phone, AlertTriangle, ExternalLink, Clock, MapPin, Baby, User, Users, ChevronDown, Shield, Heart, Hand, MessageCircle, CheckCircle2 } from "lucide-react";
+import { Phone, AlertTriangle, ExternalLink, Clock, Baby, User, Users, ChevronDown, Shield, Heart, Hand, MessageCircle, CheckCircle2, Info } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import {
@@ -11,8 +16,125 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  WEBSITE_ROT,
+  GELB,
+  GRUEN,
+  INFO,
+  TEXTE,
+  ADRESSEN,
+  URLS,
+  kontaktById,
+  urlById,
+  type Kontakt,
+} from "@/data/kontakte";
+
+// ─── Farben pro Kategorie ────────────────────────────────
+
+const FARBEN = {
+  rot: {
+    bg: "oklch(0.55 0.20 25)",
+    bgLight: "oklch(0.98 0.02 25)",
+    border: "oklch(0.55 0.20 25)",
+    hover: "oklch(0.50 0.20 25)",
+  },
+  gelb: {
+    bg: "oklch(0.55 0.18 85)",
+    bgLight: "oklch(0.97 0.02 85)",
+    border: "oklch(0.65 0.18 85)",
+    hover: "oklch(0.50 0.18 85)",
+  },
+  gruen: {
+    bg: "oklch(0.55 0.15 145)",
+    bgLight: "oklch(0.97 0.02 145)",
+    border: "oklch(0.55 0.15 145)",
+    hover: "oklch(0.50 0.15 145)",
+  },
+  info: {
+    bg: "oklch(0.55 0.18 85)",
+    bgLight: "oklch(0.97 0.02 250)",
+    border: "oklch(0.65 0.10 250)",
+    hover: "oklch(0.50 0.10 250)",
+  },
+} as const;
+
+// ─── Wiederverwendbare Kontakt-Karte ─────────────────────
+
+function KontaktButton({ kontakt }: { kontakt: Kontakt }) {
+  const farbe = FARBEN[kontakt.kategorie];
+  return (
+    <a href={`tel:${kontakt.tel}`}>
+      <Button
+        size="lg"
+        className="font-bold text-lg"
+        style={{ backgroundColor: farbe.bg }}
+      >
+        <Phone className="w-4 h-4 mr-2" />
+        {kontakt.nummer}
+      </Button>
+    </a>
+  );
+}
+
+function KontaktKarte({ kontakt, icon }: { kontakt: Kontakt; icon?: React.ReactNode }) {
+  const farbe = FARBEN[kontakt.kategorie];
+  return (
+    <Card style={{ borderColor: farbe.border }} className="border-l-4">
+      <CardContent className="p-5">
+        <div className="flex items-start gap-4">
+          {icon && (
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+              style={{ backgroundColor: `${farbe.bg}20` }}
+            >
+              {icon}
+            </div>
+          )}
+          <div className="flex-1">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <h3 className="font-display font-semibold text-foreground mb-1">{kontakt.label}</h3>
+                <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
+              </div>
+              <KontaktButton kontakt={kontakt} />
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+// ─── PUK-Karte mit Icon ──────────────────────────────────
+
+const PUK_ICONS: Record<string, React.ReactNode> = {
+  GELB_PUK_KJP: <Baby className="w-6 h-6 text-[oklch(0.55_0.18_85)]" />,
+  GELB_PUK_ERW: <User className="w-6 h-6 text-[oklch(0.55_0.18_85)]" />,
+  GELB_PUK_65: <Users className="w-6 h-6 text-[oklch(0.55_0.18_85)]" />,
+  GELB_KIZ: <AlertTriangle className="w-6 h-6 text-[oklch(0.55_0.18_85)]" />,
+};
+
+// ─── Online-Ressourcen aus Master ────────────────────────
+
+const ONLINE_RESSOURCEN = [
+  { id: "URL_PROMENTE", beschreibung: "Beratung für psychisch Betroffene und Angehörige" },
+  { id: "URL_STANDBYYOU", beschreibung: "Netzwerk für Angehörige von Menschen mit psychischen Erkrankungen" },
+  { id: "URL_DEPRESS", beschreibung: "Verein zur Bewältigung von Depressionen" },
+];
+
+// ─── Soforthilfe-Seite ──────────────────────────────────
 
 export default function Notfall() {
+  // Nummern für Fliesstext-Verweise in Krisensituationen
+  const rot144 = kontaktById("ROT_144")!;
+  const rot117 = kontaktById("ROT_117")!;
+  const rot112 = kontaktById("ROT_112")!;
+
+  // INFO-Kontakte für Soforthilfe (nur Ärztefon + PUK Zentrale)
+  const soforthilfeInfo = INFO.filter(
+    (k) => k.id === "INFO_AERZTEFON" || k.id === "INFO_PUK_ZENTRALE"
+  );
+
   return (
     <Layout>
       {/* Hero */}
@@ -53,15 +175,20 @@ export default function Notfall() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3 text-white">
-              <AlertTriangle className="w-6 h-6" />
-              <p className="font-semibold">
-                Bei akuter Lebensgefahr: Sofort Notruf wählen!
-              </p>
+              <AlertTriangle className="w-6 h-6 flex-shrink-0" />
+              <div>
+                <p className="font-semibold">
+                  Bei akuter Lebensgefahr: Sofort Notruf wählen!
+                </p>
+                <p className="text-white/80 text-xs mt-0.5">
+                  {TEXTE.pukLabel}
+                </p>
+              </div>
             </div>
-            <a href="tel:144">
+            <a href={`tel:${rot144.tel}`}>
               <Button size="lg" className="bg-white text-[oklch(0.55_0.20_25)] hover:bg-white/90 font-bold">
                 <Phone className="w-5 h-5 mr-2" />
-                144 anrufen
+                {rot144.nummer} anrufen
               </Button>
             </a>
           </div>
@@ -72,7 +199,8 @@ export default function Notfall() {
       <section className="py-12 md:py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            {/* Sofort-Hilfe */}
+
+            {/* ═══ ROT: Sofort-Hilfe (24/7) ═══ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -84,43 +212,15 @@ export default function Notfall() {
               </h2>
               
               <div className="space-y-4">
-                {[
-                  {
-                    name: "Sanitätsnotruf",
-                    number: "144",
-                    description: "Bei akuter Lebensgefahr, Selbstverletzung oder Suizidversuch",
-                    color: "oklch(0.55 0.20 25)"
-                  },
-                  {
-                    name: "Die Dargebotene Hand",
-                    number: "143",
-                    description: "Telefonseelsorge, 24 Stunden erreichbar, anonym und kostenlos",
-                    color: "oklch(0.55 0.15 145)"
-                  },
-                  {
-                    name: "Polizei",
-                    number: "117",
-                    description: "Bei Gewalt oder wenn Sie sich bedroht fühlen",
-                    color: "oklch(0.45 0.05 250)"
-                  }
-                ].map((item, index) => (
-                  <Card key={index} style={{ borderColor: item.color }} className="border-l-4">
+                {WEBSITE_ROT.map((kontakt) => (
+                  <Card key={kontakt.id} style={{ borderColor: FARBEN.rot.bg }} className="border-l-4">
                     <CardContent className="p-5">
                       <div className="flex items-center justify-between gap-4">
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-1">{item.name}</h3>
-                          <p className="text-muted-foreground text-sm">{item.description}</p>
+                          <h3 className="font-display font-semibold text-foreground mb-1">{kontakt.label}</h3>
+                          <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
                         </div>
-                        <a href={`tel:${item.number}`}>
-                          <Button 
-                            size="lg" 
-                            className="font-bold text-lg"
-                            style={{ backgroundColor: item.color }}
-                          >
-                            <Phone className="w-4 h-4 mr-2" />
-                            {item.number}
-                          </Button>
-                        </a>
+                        <KontaktButton kontakt={kontakt} />
                       </div>
                     </CardContent>
                   </Card>
@@ -128,162 +228,114 @@ export default function Notfall() {
               </div>
             </motion.div>
 
-            {/* Psychiatrische Notdienste Kanton Zürich */}
+            {/* ═══ GELB: Psychiatrische Notdienste PUK Zürich (24/7) ═══ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Clock className="w-8 h-8 text-[oklch(0.55_0.15_35)]" />
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
+                <Clock className="w-8 h-8 text-[oklch(0.65_0.18_85)]" />
                 Psychiatrische Notdienste Kanton Zürich
               </h2>
+              <p className="text-sm text-muted-foreground mb-6 ml-11">
+                Wenn eine akute psychische Krise vorliegt, aber keine unmittelbare Lebensgefahr besteht.
+              </p>
               
-              <Card className="border-border/50 mb-6">
+              {/* Info-Box: Was ist PUK? */}
+              <Card className="border-l-4 border-[oklch(0.65_0.18_85)] bg-[oklch(0.97_0.02_85)] mb-6">
                 <CardContent className="p-6">
-                  <p className="text-muted-foreground leading-relaxed mb-2">
-                    Die <strong>Psychiatrische Universitätsklinik Zürich (PUK)</strong> bietet rund um die Uhr psychiatrische Notfalldienste für alle Altersgruppen.
+                  <h3 className="font-display font-semibold text-foreground mb-3">PUK Zürich – psychiatrische Notfallhilfe (24/7)</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-3">
+                    {TEXTE.pukEinleitung}
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    Standort: Lenggstrasse 31, 8032 Zürich
+                  <div className="p-3 rounded-md bg-[oklch(0.94_0.03_85)] border border-[oklch(0.88_0.05_85)]">
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">Was passiert beim Anruf?</strong> {TEXTE.pukTriage}
+                    </p>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-3">
+                    Standort: {ADRESSEN[0].adresse}
                   </p>
                 </CardContent>
               </Card>
               
               <div className="space-y-4">
-                {/* Kinder und Jugendliche */}
-                <Card className="border-l-4 border-[oklch(0.60_0.15_200)]">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.05_200)] flex items-center justify-center flex-shrink-0">
-                        <Baby className="w-6 h-6 text-[oklch(0.50_0.15_200)]" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-display font-semibold text-foreground mb-1">Kinder und Jugendliche</h3>
-                        <p className="text-muted-foreground text-sm mb-3">Kinder- und Jugendpsychiatrie der PUK Zürich (bis 18 Jahre)</p>
-                        <a href="tel:+41583846666">
-                          <Button 
-                            size="lg" 
-                            className="font-bold bg-[oklch(0.50_0.15_200)] hover:bg-[oklch(0.45_0.15_200)]"
-                          >
-                            <Phone className="w-4 h-4 mr-2" />
-                            058 384 66 66
-                          </Button>
-                        </a>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Erwachsene */}
-                <Card className="border-l-4 border-[oklch(0.55_0.15_145)]">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.05_145)] flex items-center justify-center flex-shrink-0">
-                        <User className="w-6 h-6 text-[oklch(0.45_0.12_145)]" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-display font-semibold text-foreground mb-1">Erwachsene</h3>
-                        <p className="text-muted-foreground text-sm mb-3">Psychiatrische Notaufnahme für Erwachsene (ab 18 Jahren)</p>
-                        <a href="tel:+41583842000">
-                          <Button 
-                            size="lg" 
-                            className="font-bold bg-[oklch(0.45_0.12_145)] hover:bg-[oklch(0.40_0.12_145)]"
-                          >
-                            <Phone className="w-4 h-4 mr-2" />
-                            058 384 20 00
-                          </Button>
-                        </a>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Senioren */}
-                <Card className="border-l-4 border-[oklch(0.55_0.12_55)]">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.05_55)] flex items-center justify-center flex-shrink-0">
-                        <Users className="w-6 h-6 text-[oklch(0.50_0.12_55)]" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-display font-semibold text-foreground mb-1">Senioren</h3>
-                        <p className="text-muted-foreground text-sm mb-3">Alterspsychiatrie der PUK Zürich (ab 65 Jahren)</p>
-                        <a href="tel:+41583844682">
-                          <Button 
-                            size="lg" 
-                            className="font-bold bg-[oklch(0.50_0.12_55)] hover:bg-[oklch(0.45_0.12_55)]"
-                          >
-                            <Phone className="w-4 h-4 mr-2" />
-                            058 384 46 82
-                          </Button>
-                        </a>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Kriseninterventionszentrum */}
-                <Card className="border-l-4 border-[oklch(0.50_0.10_280)]">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.04_280)] flex items-center justify-center flex-shrink-0">
-                        <AlertTriangle className="w-6 h-6 text-[oklch(0.45_0.10_280)]" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-display font-semibold text-foreground mb-1">Kriseninterventionszentrum (KIZ)</h3>
-                        <p className="text-muted-foreground text-sm mb-3">Für akute psychiatrische Krisen bei Erwachsenen</p>
-                        <a href="tel:+41583846500">
-                          <Button 
-                            size="lg" 
-                            className="font-bold bg-[oklch(0.45_0.10_280)] hover:bg-[oklch(0.40_0.10_280)]"
-                          >
-                            <Phone className="w-4 h-4 mr-2" />
-                            058 384 65 00
-                          </Button>
-                        </a>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                {GELB.map((kontakt) => (
+                  <KontaktKarte
+                    key={kontakt.id}
+                    kontakt={kontakt}
+                    icon={PUK_ICONS[kontakt.id]}
+                  />
+                ))}
               </div>
 
-              {/* Weitere wichtige Nummern */}
+              {/* Beratung & Fachstellen (INFO, nur Soforthilfe-relevante) */}
               <div className="mt-6 pt-6 border-t border-border/50">
-                <h3 className="font-display font-semibold text-foreground mb-4">Weitere wichtige Nummern</h3>
+                <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <Info className="w-5 h-5 text-muted-foreground" />
+                  Beratung & Fachstellen
+                </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <Card className="border-border/50">
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="font-medium text-foreground">Ärztefon Zürich</p>
-                          <p className="text-sm text-muted-foreground">Hausbesuche durch Notfall-Psychiater</p>
+                  {soforthilfeInfo.map((kontakt) => (
+                    <Card key={kontakt.id} className="border-border/50">
+                      <CardContent className="p-4">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="font-medium text-foreground">{kontakt.label}</p>
+                            <p className="text-sm text-muted-foreground">{kontakt.hinweis}</p>
+                          </div>
+                          <a href={`tel:${kontakt.tel}`} className="font-bold text-[oklch(0.55_0.18_85)] hover:underline">
+                            {kontakt.nummer}
+                          </a>
                         </div>
-                        <a href="tel:0800336655" className="font-bold text-[oklch(0.55_0.15_145)] hover:underline">
-                          0800 33 66 55
-                        </a>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  <Card className="border-border/50">
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="font-medium text-foreground">PUK Zentrale</p>
-                          <p className="text-sm text-muted-foreground">Allgemeine Anfragen</p>
-                        </div>
-                        <a href="tel:+41583842111" className="font-bold text-[oklch(0.55_0.15_145)] hover:underline">
-                          058 384 21 11
-                        </a>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
               </div>
             </motion.div>
 
-            {/* Online-Ressourcen */}
+            {/* ═══ GRÜN: Zuhören & Entlastung ═══ */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
+                <Heart className="w-8 h-8 text-[oklch(0.55_0.15_145)]" />
+                Zuhören & Entlastung
+              </h2>
+              <p className="text-sm text-muted-foreground mb-6 ml-11">
+                Kein Einsatzdienst – es kommt niemand vorbei. Für emotionale Unterstützung und Entlastung.
+              </p>
+              
+              <div className="space-y-4">
+                {GRUEN.map((kontakt) => (
+                  <Card key={kontakt.id} style={{ borderColor: FARBEN.gruen.border }} className="border-l-4">
+                    <CardContent className="p-5">
+                      <div className="flex items-center justify-between gap-4">
+                        <div>
+                          <h3 className="font-display font-semibold text-foreground mb-1">{kontakt.label}</h3>
+                          <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
+                        </div>
+                        <KontaktButton kontakt={kontakt} />
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <div className="mt-4 p-4 rounded-lg bg-[oklch(0.96_0.02_25)] border border-[oklch(0.90_0.04_25)]">
+                <p className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">Bei akuter Gefahr für sich oder andere:</strong> {TEXTE.gruenGefahrenhinweis}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* ═══ Online-Ressourcen & Beratung ═══ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -295,44 +347,32 @@ export default function Notfall() {
               </h2>
               
               <div className="space-y-4">
-                {[
-                  {
-                    name: "Pro Mente Sana",
-                    url: "https://www.promentesana.ch",
-                    description: "Beratung für psychisch Betroffene und Angehörige"
-                  },
-                  {
-                    name: "Stand by You",
-                    url: "https://www.stand-by-you.ch",
-                    description: "Netzwerk für Angehörige von Menschen mit psychischen Erkrankungen"
-                  },
-                  {
-                    name: "Equilibrium",
-                    url: "https://www.depressionen.ch",
-                    description: "Verein zur Bewältigung von Depressionen"
-                  }
-                ].map((item, index) => (
-                  <Card key={index} className="border-border/50 hover:border-[oklch(0.65_0.12_55)] transition-colors">
-                    <CardContent className="p-5">
-                      <div className="flex items-center justify-between gap-4">
-                        <div>
-                          <h3 className="font-display font-semibold text-foreground mb-1">{item.name}</h3>
-                          <p className="text-muted-foreground text-sm">{item.description}</p>
+                {ONLINE_RESSOURCEN.map((res) => {
+                  const url = urlById(res.id);
+                  if (!url) return null;
+                  return (
+                    <Card key={res.id} className="border-border/50 hover:border-[oklch(0.65_0.12_55)] transition-colors">
+                      <CardContent className="p-5">
+                        <div className="flex items-center justify-between gap-4">
+                          <div>
+                            <h3 className="font-display font-semibold text-foreground mb-1">{url.label}</h3>
+                            <p className="text-muted-foreground text-sm">{res.beschreibung}</p>
+                          </div>
+                          <a href={url.url} target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline" size="sm">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Website
+                            </Button>
+                          </a>
                         </div>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">
-                          <Button variant="outline" size="sm">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Website
-                          </Button>
-                        </a>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </motion.div>
 
-            {/* Krisenszenarien */}
+            {/* ═══ Krisensituationen ═══ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -386,7 +426,7 @@ export default function Notfall() {
                         </h4>
                         <div className="ml-8 grid sm:grid-cols-2 gap-3">
                           <div className="p-3 bg-[oklch(0.55_0.20_25)]/5 rounded-lg">
-                            <p className="font-medium text-[oklch(0.45_0.15_25)] text-sm mb-1">Hohes Risiko → Notruf 144</p>
+                            <p className="font-medium text-[oklch(0.45_0.15_25)] text-sm mb-1">Hohes Risiko → Notruf {rot144.nummer}</p>
                             <ul className="text-xs text-muted-foreground space-y-0.5">
                               <li>• Konkrete Pläne vorhanden</li>
                               <li>• Mittel beschafft (Medikamente, etc.)</li>
@@ -412,7 +452,7 @@ export default function Notfall() {
                           Handeln
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• <strong>Bei hohem Risiko:</strong> Notruf 144 oder Polizei 117 – auch gegen den Willen der Person</li>
+                          <li>• <strong>Bei hohem Risiko:</strong> Notruf {rot144.nummer} oder Polizei {rot117.nummer} – auch gegen den Willen der Person</li>
                           <li>• <strong>Bei moderatem Risiko:</strong> Therapeut/Psychiater kontaktieren, Krisenplan aktivieren</li>
                           <li>• Bleiben Sie bei der Person, bis professionelle Hilfe da ist</li>
                           <li>• Entfernen Sie wenn möglich Zugang zu Mitteln (Medikamente, scharfe Gegenstände)</li>
@@ -454,7 +494,7 @@ export default function Notfall() {
                           Sofortmassnahmen
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• <strong>Bei starker Blutung oder tiefen Wunden:</strong> Notruf 144</li>
+                          <li>• <strong>Bei starker Blutung oder tiefen Wunden:</strong> Notruf {rot144.nummer}</li>
                           <li>• Bei oberflächlichen Verletzungen: Wunde versorgen (reinigen, desinfizieren, verbinden)</li>
                           <li>• Ruhig bleiben – Ihre Panik verstärkt die Scham</li>
                         </ul>
@@ -518,7 +558,7 @@ export default function Notfall() {
                     <div className="space-y-4 pt-2">
                       <div className="p-4 bg-[oklch(0.55_0.20_25)]/10 rounded-lg border border-[oklch(0.55_0.20_25)]/30">
                         <p className="font-semibold text-[oklch(0.45_0.15_25)] mb-2">Ihre Sicherheit geht vor!</p>
-                        <p className="text-sm text-muted-foreground">Bei körperlicher Gewalt oder konkreten Drohungen: Verlassen Sie die Situation und rufen Sie die Polizei (117). Borderline erklärt Verhalten, entschuldigt es aber nicht.</p>
+                        <p className="text-sm text-muted-foreground">Bei körperlicher Gewalt oder konkreten Drohungen: Verlassen Sie die Situation und rufen Sie die Polizei ({rot117.nummer}). Borderline erklärt Verhalten, entschuldigt es aber nicht.</p>
                       </div>
                       
                       <div className="space-y-3">
@@ -555,7 +595,7 @@ export default function Notfall() {
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
                           <li>• <strong>Ankündigen:</strong> «Ich gehe jetzt in ein anderes Zimmer. Wir können später weiterreden.»</li>
                           <li>• <strong>Gehen:</strong> Raum verlassen, Tür nicht abschliessen</li>
-                          <li>• <strong>Bei Gewalt:</strong> Haus verlassen, Polizei 117 rufen</li>
+                          <li>• <strong>Bei Gewalt:</strong> Haus verlassen, Polizei {rot117.nummer} rufen</li>
                           <li>• <strong>Später:</strong> Im ruhigen Moment über Konsequenzen sprechen</li>
                         </ul>
                       </div>
@@ -619,7 +659,7 @@ export default function Notfall() {
                           Konsequent handeln
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• Bei Suiziddrohung: Notruf 144 oder 143 – jedes Mal</li>
+                          <li>• Bei akuter Gefahr: Notruf {rot144.nummer} oder Polizei {rot117.nummer} oder {rot112.nummer} – jedes Mal</li>
                           <li>• Nicht nachgeben, um «Ruhe zu haben» – das verstärkt das Muster</li>
                           <li>• Später im ruhigen Moment besprechen, was passiert ist</li>
                           <li>• Eigene Therapie/Beratung in Anspruch nehmen</li>
@@ -637,7 +677,7 @@ export default function Notfall() {
               </Accordion>
             </motion.div>
 
-            {/* Krisenplan */}
+            {/* ═══ Persönlicher Krisenplan ═══ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -671,7 +711,7 @@ export default function Notfall() {
               </Card>
             </motion.div>
 
-            {/* Hinweis */}
+            {/* ═══ Hinweis ═══ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

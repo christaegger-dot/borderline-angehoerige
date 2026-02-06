@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, Image, MapPin, ExternalLink, Home, Calendar, Building2, Baby, User, Phone, Mail } from "lucide-react";
 import { Link } from "wouter";
+import { kontaktById, emailById, GELB } from "@/data/kontakte";
+
+const hype = kontaktById("INFO_PUK_KJPP_HYPE")!;
+const emailKjpp = emailById("EMAIL_KJPP")!;
+const pukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
+const emailHard = emailById("EMAIL_HARD")!;
 
 export default function UnterstuetzenTherapie() {
   return (
@@ -304,11 +310,11 @@ export default function UnterstuetzenTherapie() {
                     Frühinterventionsprogramm für Jugendliche mit Verdacht, erhöhtem Risiko oder bereits diagnostizierter Borderline-Störung. Max. 16 Sitzungen über 6-9 Monate.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <a href="tel:+41583846600" className="text-sm text-[oklch(0.50_0.15_280)] hover:underline flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +41 58 384 66 00
+                    <a href={`tel:${hype.tel}`} className="text-sm text-[oklch(0.50_0.15_280)] hover:underline flex items-center gap-1">
+                      <Phone className="w-3 h-3" /> {hype.nummer}
                     </a>
-                    <a href="mailto:kjpp.ambizh@pukzh.ch" className="text-sm text-[oklch(0.50_0.15_280)] hover:underline flex items-center gap-1">
-                      <Mail className="w-3 h-3" /> kjpp.ambizh@pukzh.ch
+                    <a href={`mailto:${emailKjpp.adresse}`} className="text-sm text-[oklch(0.50_0.15_280)] hover:underline flex items-center gap-1">
+                      <Mail className="w-3 h-3" /> {emailKjpp.adresse}
                     </a>
                   </div>
                 </CardContent>
@@ -330,11 +336,11 @@ export default function UnterstuetzenTherapie() {
                     Spezialisierte DBT-Station mit strukturiertem Therapieprogramm: Einzeltherapie, Skillstraining, Achtsamkeit und Körpertherapie.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <a href="tel:+41583842111" className="text-sm text-[oklch(0.45_0.10_145)] hover:underline flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +41 58 384 21 11
+                    <a href={`tel:${pukZentrale.tel}`} className="text-sm text-[oklch(0.45_0.10_145)] hover:underline flex items-center gap-1">
+                      <Phone className="w-3 h-3" /> {pukZentrale.nummer}
                     </a>
-                    <a href="mailto:klinik.hard@pukzh.ch" className="text-sm text-[oklch(0.45_0.10_145)] hover:underline flex items-center gap-1">
-                      <Mail className="w-3 h-3" /> klinik.hard@pukzh.ch
+                    <a href={`mailto:${emailHard.adresse}`} className="text-sm text-[oklch(0.45_0.10_145)] hover:underline flex items-center gap-1">
+                      <Mail className="w-3 h-3" /> {emailHard.adresse}
                     </a>
                   </div>
                 </CardContent>
@@ -374,18 +380,12 @@ export default function UnterstuetzenTherapie() {
                     Notfall-Nummern PUK Zürich (24/7)
                   </h4>
                   <div className="grid grid-cols-3 gap-3 text-center">
-                    <div>
-                      <p className="text-xs text-muted-foreground">Kinder & Jugendliche</p>
-                      <a href="tel:+41583846666" className="text-sm font-semibold text-foreground hover:underline">058 384 66 66</a>
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Erwachsene (ab 18)</p>
-                      <a href="tel:+41583842000" className="text-sm font-semibold text-foreground hover:underline">058 384 20 00</a>
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Senioren (ab 65)</p>
-                      <a href="tel:+41583844682" className="text-sm font-semibold text-foreground hover:underline">058 384 46 82</a>
-                    </div>
+                    {GELB.filter(k => k.id !== "GELB_KIZ").map((k) => (
+                      <div key={k.id}>
+                        <p className="text-xs text-muted-foreground">{k.fuerWen || k.label}</p>
+                        <a href={`tel:${k.tel}`} className="text-sm font-semibold text-foreground hover:underline">{k.nummer}</a>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>

@@ -2,6 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
+import { kontaktById } from "@/data/kontakte";
+
+const rot144 = kontaktById("ROT_144")!;
+const gruen143 = kontaktById("GRUEN_143")!;
+const rot117 = kontaktById("ROT_117")!;
 
 // Suchbare Inhalte der Website
 const searchableContent = [
@@ -158,7 +163,7 @@ const searchableContent = [
   // Notfall
   {
     title: "Notfallnummern Schweiz",
-    description: "144 Sanitätsnotruf, 143 Dargebotene Hand, 117 Polizei",
+    description: `${rot144.nummer} ${rot144.label}, ${gruen143.nummer} ${gruen143.label}, ${rot117.nummer} ${rot117.label}`,
     keywords: ["notfall", "notruf", "144", "143", "117", "telefon", "hilfe", "akut"],
     href: "/soforthilfe",
     section: "Krisenressourcen"

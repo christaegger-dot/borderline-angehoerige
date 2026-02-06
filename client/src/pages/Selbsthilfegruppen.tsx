@@ -3,6 +3,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Calendar } from "lucide-react";
+import { kontaktById, emailById, urlById } from "@/data/kontakte";
+
+const selbsthilfeCH = kontaktById("INFO_SELBSTHILFE_CH")!;
+const selbsthilfeInfo = kontaktById("INFO_SELBSTHILFE_INFO")!;
+const proMente = kontaktById("INFO_PROMENTE")!;
+const fachstelle = kontaktById("INFO_FACHSTELLE")!;
+const emailAngehoerigen = emailById("EMAIL_ANGEHOERIGEN")!;
+const urlStandByYou = urlById("URL_STANDBYYOU")!;
+const urlSelbsthilfe = urlById("URL_SELBSTHILFE_CH")!;
+const urlProMente = urlById("URL_PROMENTE")!;
+const urlDepress = urlById("URL_DEPRESS")!;
 
 export default function Selbsthilfegruppen() {
   return (
@@ -72,8 +83,8 @@ export default function Selbsthilfegruppen() {
                       <Phone className="w-5 h-5 text-[oklch(0.55_0.12_145)]" />
                       <div>
                         <p className="text-sm text-muted-foreground">Beratungstelefon</p>
-                        <a href="tel:0800840400" className="font-medium text-foreground hover:text-[oklch(0.55_0.12_145)]">
-                          0800 840 400
+                        <a href={`tel:${selbsthilfeCH.tel}`} className="font-medium text-foreground hover:text-[oklch(0.55_0.12_145)]">
+                          {selbsthilfeCH.nummer}
                         </a>
                         <p className="text-xs text-muted-foreground">(kostenlos)</p>
                       </div>
@@ -244,8 +255,8 @@ export default function Selbsthilfegruppen() {
                     Rufen Sie die Infoline von Selbsthilfe Schweiz an – sie helfen Ihnen, eine passende 
                     Gruppe zu finden oder eine neue zu gründen.
                   </p>
-                  <a href="tel:0848339900" className="font-bold text-[oklch(0.55_0.12_145)] hover:underline">
-                    0848 33 99 00
+                  <a href={`tel:${selbsthilfeInfo.tel}`} className="font-bold text-[oklch(0.55_0.12_145)] hover:underline">
+                    {selbsthilfeInfo.nummer}
                   </a>
                 </CardContent>
               </Card>
@@ -274,8 +285,8 @@ export default function Selbsthilfegruppen() {
                           und E-Mail-Beratung.
                         </p>
                         <div className="flex items-center gap-4 text-sm">
-                          <a href="tel:0848800858" className="text-[oklch(0.55_0.12_145)] hover:underline font-medium">
-                            0848 800 858
+                          <a href={`tel:${proMente.tel}`} className="text-[oklch(0.55_0.12_145)] hover:underline font-medium">
+                            {proMente.nummer}
                           </a>
                           <a 
                             href="https://www.promentesana.ch" 
@@ -345,14 +356,14 @@ export default function Selbsthilfegruppen() {
                           Menschen im Kanton Zürich.
                         </p>
                         <div className="flex items-center gap-4 text-sm">
-                          <a href="tel:+41583843800" className="text-[oklch(0.55_0.12_145)] hover:underline font-medium">
-                            058 384 38 00
+                          <a href={`tel:${fachstelle.tel}`} className="text-[oklch(0.55_0.12_145)] hover:underline font-medium">
+                            {fachstelle.nummer}
                           </a>
                           <a 
-                            href="mailto:angehoerigenarbeit@pukzh.ch"
+                            href={`mailto:${emailAngehoerigen.adresse}`}
                             className="text-muted-foreground hover:text-foreground"
                           >
-                            angehoerigenarbeit@pukzh.ch
+                            {emailAngehoerigen.adresse}
                           </a>
                         </div>
                       </div>

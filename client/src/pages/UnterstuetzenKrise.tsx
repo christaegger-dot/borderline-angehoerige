@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { AlertTriangle, ArrowRight, Phone, Shield, Clock, Download, FileText, Image, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
+import { kontaktById, WEBSITE_ROT } from "@/data/kontakte";
+
+const rot144 = kontaktById("ROT_144")!;
+const gruen143 = kontaktById("GRUEN_143")!;
 
 export default function UnterstuetzenKrise() {
   return (
@@ -51,7 +55,10 @@ export default function UnterstuetzenKrise() {
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-white text-center sm:text-left">
-              <strong>Bei akuter Suizidgefahr:</strong> Rufen Sie sofort den Notruf 144 oder die Dargebotene Hand 143
+              <strong>Bei akuter Suizidgefahr:</strong> Rufen Sie sofort den Notruf{" "}
+              <a href={`tel:${rot144.tel}`} className="underline font-bold">{rot144.nummer}</a>.
+              Zur Entlastung danach:{" "}
+              <a href={`tel:${gruen143.tel}`} className="underline">{gruen143.label} ({gruen143.nummer})</a>
             </p>
             <Link href="/soforthilfe">
               <Button variant="secondary" size="sm" className="bg-white text-[oklch(0.55_0.20_25)]">

@@ -2,6 +2,13 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { FileText, BookOpen, ExternalLink, Phone, Mail, MapPin } from "lucide-react";
+import { kontaktById, emailById, WEBSITE_ROT } from "@/data/kontakte";
+
+const fachstelle = kontaktById("INFO_FACHSTELLE")!;
+const emailAngehoerigen = emailById("EMAIL_ANGEHOERIGEN")!;
+const rot144 = kontaktById("ROT_144")!;
+const rot117 = kontaktById("ROT_117")!;
+const gruen143 = kontaktById("GRUEN_143")!;
 
 export default function Impressum() {
   return (
@@ -78,8 +85,8 @@ export default function Impressum() {
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">Telefon</p>
-                        <a href="tel:+41583843800" className="font-medium text-foreground hover:text-[oklch(0.55_0.10_145)] transition-colors">
-                          +41 58 384 38 00
+                        <a href={`tel:${fachstelle.tel}`} className="font-medium text-foreground hover:text-[oklch(0.55_0.10_145)] transition-colors">
+                          {fachstelle.nummer}
                         </a>
                       </div>
                     </div>
@@ -89,8 +96,8 @@ export default function Impressum() {
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">E-Mail</p>
-                        <a href="mailto:angehoerigenarbeit@pukzh.ch" className="font-medium text-foreground hover:text-[oklch(0.55_0.10_145)] transition-colors">
-                          angehoerigenarbeit@pukzh.ch
+                        <a href={`mailto:${emailAngehoerigen.adresse}`} className="font-medium text-foreground hover:text-[oklch(0.55_0.10_145)] transition-colors">
+                          {emailAngehoerigen.adresse}
                         </a>
                       </div>
                     </div>
@@ -180,7 +187,8 @@ export default function Impressum() {
                     <p>
                       <strong>Diese Website ersetzt keine professionelle Beratung, Diagnose oder Behandlung.</strong> Bei 
                       psychischen Krisen oder Notfällen wenden Sie sich bitte umgehend an die entsprechenden 
-                      Notfallnummern (144, 143, 117) oder den psychiatrischen Notdienst.
+                      Notfallnummern ({rot144.nummer} / {rot117.nummer}) oder den psychiatrischen Notdienst.
+                      Zur Entlastung: {gruen143.label} ({gruen143.nummer}).
                     </p>
                     <p>
                       Für externe Links wird keine Haftung übernommen. Für den Inhalt der verlinkten Seiten 

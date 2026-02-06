@@ -154,7 +154,7 @@ export default function Home() {
               </div>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
-                Sie können helfen – und dabei auf sich achten. Evidenzbasierte Strategien für den Alltag mit einem Menschen, der an Borderline leidet.
+                Sie können helfen – und dabei auf sich achten. Evidenzbasierte Strategien für den Alltag mit einem Menschen mit Borderline-Persönlichkeitsstörung.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -358,7 +358,7 @@ export default function Home() {
               
               <ul className="space-y-3 mb-8">
                 {[
-                  "Genesung ist möglich – 85–93% erreichen Remission",
+                  "Genesung ist möglich – Langzeitstudien zeigen hohe Remissionsraten",
                   "Ihre Unterstützung macht einen Unterschied",
                   "Sie müssen nicht perfekt sein, nur präsent"
                 ].map((item, i) => (
@@ -444,6 +444,12 @@ export default function Home() {
               </Link>
               <p className="text-xs text-muted-foreground mt-4">
                 Quellen: McLean Study (Zanarini et al.), CLPS Study (Gunderson et al.)
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Orientierungswerte aus Langzeitstudien; individuelle Verläufe können abweichen.
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Remission = diagnostische Kriterien über eine definierte Zeit nicht mehr erfüllt. Genesung = zusätzlich alltags- und funktionsbezogene Stabilität.
               </p>
             </div>
           </div>

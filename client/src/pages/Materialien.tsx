@@ -43,7 +43,7 @@ const infografiken = [
     id: "eiertanz",
     title: "Der Eiertanz",
     description: "Warum wir auf Zehenspitzen gehen – der Teufelskreis und der Ausweg.",
-    category: "unterstuetzen",
+    category: "verstehen",
     type: "png",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izUnFdVOmLVUwSFD.png",
     isNew: true
@@ -138,7 +138,7 @@ const infografiken = [
     id: "fog-nebel",
     title: "Der Nebel (FOG)",
     description: "Fear, Obligation, Guilt – emotionale Muster erkennen und aus dem Nebel treten.",
-    category: "selbstfuersorge",
+    category: "verstehen",
     type: "png",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/doxRJKzyLuIwYzXV.png",
     isNew: true

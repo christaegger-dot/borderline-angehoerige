@@ -108,6 +108,58 @@ export default function Kommunizieren() {
               </div>
             </motion.div>
 
+            {/* Zuhören ohne Zustimmen */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Zuhören ohne Zustimmen
+              </h2>
+              
+              <Card className="bg-[oklch(0.95_0.03_145)]/50 border-[oklch(0.55_0.10_145)]/30 mb-6">
+                <CardContent className="p-6">
+                  <p className="text-foreground leading-relaxed">
+                    <strong>Wichtig:</strong> Validierung bedeutet nicht, dass Sie allem zustimmen müssen. Sie können sagen: «Ich verstehe, dass du das so erlebst» – ohne zu sagen «Du hast recht».
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <div className="grid sm:grid-cols-3 gap-4">
+                <Card className="border-border/50">
+                  <CardContent className="p-4">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.55_0.10_145)] flex items-center justify-center mb-3">
+                      <Heart className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-foreground text-sm mb-2">Validierung</h4>
+                    <p className="text-xs text-muted-foreground italic">«Ich höre, dass du wütend bist. Das klingt sehr belastend.»</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-border/50">
+                  <CardContent className="p-4">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.55_0.12_55)] flex items-center justify-center mb-3">
+                      <MessageSquare className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-foreground text-sm mb-2">Keine Zustimmung nötig</h4>
+                    <p className="text-xs text-muted-foreground italic">Sie müssen nicht bestätigen, dass die Wut berechtigt ist.</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-border/50">
+                  <CardContent className="p-4">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.45_0.05_250)] flex items-center justify-center mb-3">
+                      <UserCircle className="w-5 h-5 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-foreground text-sm mb-2">Ihre Wahrheit bleibt</h4>
+                    <p className="text-xs text-muted-foreground italic">«Gleichzeitig sehe ich die Situation anders.»</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
+
             {/* SET-Kommunikation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -168,6 +220,50 @@ export default function Kommunizieren() {
                   </Card>
                 ))}
               </div>
+            </motion.div>
+
+            {/* Fallbeispiel */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Beispiel: Validierung in der Praxis
+              </h2>
+              
+              <Card className="border-l-4 border-l-[oklch(0.55_0.12_55)] bg-[oklch(0.95_0.04_55)]/20">
+                <CardContent className="p-6">
+                  <div className="mb-4">
+                    <span className="text-xs font-medium text-[oklch(0.55_0.12_55)] bg-[oklch(0.85_0.08_55)]/30 px-2 py-1 rounded">Situation</span>
+                    <p className="text-foreground mt-2 leading-relaxed">
+                      Lisa kommt auflöst nach Hause: <span className="italic">«Meine Kollegin hasst mich! Sie hat mich heute nicht begrüsst!»</span>
+                    </p>
+                  </div>
+                  
+                  <div className="grid sm:grid-cols-2 gap-4 mt-6">
+                    <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_25)] border border-[oklch(0.55_0.15_25)]/20">
+                      <span className="text-sm font-medium text-[oklch(0.55_0.15_25)] block mb-2">❌ Invalidierung:</span>
+                      <p className="text-sm text-muted-foreground italic">«Das bildest du dir ein. Sie war bestimmt nur in Eile.»</p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-[oklch(0.95_0.03_145)] border border-[oklch(0.55_0.10_145)]/20">
+                      <span className="text-sm font-medium text-[oklch(0.55_0.10_145)] block mb-2">✓ Mit Validierung:</span>
+                      <p className="text-sm text-muted-foreground italic">«Das klingt wirklich verletzend. Ich kann verstehen, dass dich das beschäftigt.»</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-[oklch(0.92_0.04_145)]/50 rounded-xl">
+                    <h4 className="font-semibold text-foreground text-sm mb-2">Dann, wenn sie ruhiger ist:</h4>
+                    <p className="text-sm text-muted-foreground italic">
+                      «Könnte es sein, dass sie einfach in Eile war? Was denkst du?»
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      → Erst das Herz erreichen, dann den Kopf.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Praktische Tipps */}

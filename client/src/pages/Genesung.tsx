@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Heart, Clock, BookOpen, ExternalLink, ArrowRight } from "lucide-react";
+import { Sparkles, TrendingUp, Heart, Clock, BookOpen, ExternalLink, ArrowRight, AlertTriangle, RefreshCw, Users } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Genesung() {
@@ -185,8 +185,153 @@ export default function Genesung() {
         </div>
       </section>
 
-      {/* Faktoren für Genesung */}
+      {/* Fortschritt-Paradox */}
       <section className="py-12 md:py-16">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-10"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 flex items-center gap-3">
+                <RefreshCw className="w-8 h-8 text-[oklch(0.55_0.12_55)]" />
+                Das Fortschritt-Paradox
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Ein häufiges Phänomen, das viele Angehörige verwirrt: Gerade wenn es besser wird, kommt ein Rückfall.
+              </p>
+            </motion.div>
+
+            <Card className="border-l-4 border-l-[oklch(0.55_0.12_55)] bg-[oklch(0.95_0.04_55)]/30 mb-8">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <AlertTriangle className="w-6 h-6 text-[oklch(0.55_0.12_55)] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Warum passiert das?</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Fortschritt bedeutet Veränderung – und Veränderung löst bei Menschen mit Borderline oft Angst aus. 
+                      Die Verbesserung selbst kann als Bedrohung erlebt werden: «Was, wenn ich ohne meine Symptome 
+                      nicht mehr ich bin?» oder «Was, wenn die anderen mich verlassen, wenn ich «gesund» bin?»
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="grid sm:grid-cols-3 gap-4 mb-8">
+              {[
+                { title: "Rückfälle nicht als Scheitern werten", desc: "Sie sind Teil des Prozesses, nicht das Ende" },
+                { title: "Fortschritte klein benennen", desc: "Konkret und spezifisch, nicht pauschal" },
+                { title: "Geduld haben", desc: "Genesung verläuft nicht linear" }
+              ].map((item, i) => (
+                <Card key={i} className="border-border/50">
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground text-sm mb-1">{item.title}</h4>
+                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <p className="text-xs text-muted-foreground">
+              Quelle: Gunderson, J.G. (2011), Guidelines for Families
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Realistische Erwartungen */}
+      <section className="py-12 md:py-16 bg-[oklch(0.99_0.008_85)]">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-10"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                Realistische Erwartungen
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Remission bedeutet nicht «Heilung» im klassischen Sinn. Viele Menschen mit Borderline berichten, 
+                dass sie auch nach Jahren der Besserung noch mit bestimmten Mustern kämpfen – aber sie haben gelernt, 
+                damit umzugehen.
+              </p>
+            </motion.div>
+
+            <Card className="bg-[oklch(0.88_0.04_145)]/20 border-[oklch(0.55_0.10_145)]/30 mb-8">
+              <CardContent className="p-6">
+                <p className="text-foreground leading-relaxed text-lg text-center italic">
+                  «Das Ziel ist nicht Perfektion, sondern ein lebenswertes Leben.»
+                </p>
+              </CardContent>
+            </Card>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_25)] border border-[oklch(0.55_0.15_25)]/20">
+                <span className="text-lg font-medium text-foreground block mb-2">❌ Was Remission NICHT bedeutet:</span>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>Nie wieder schwierige Gefühle</li>
+                  <li>Perfekte Beziehungen</li>
+                  <li>Keine Unterstützung mehr nötig</li>
+                </ul>
+              </div>
+              <div className="p-4 rounded-xl bg-[oklch(0.95_0.03_145)] border border-[oklch(0.55_0.10_145)]/20">
+                <span className="text-lg font-medium text-foreground block mb-2">✓ Was Remission bedeutet:</span>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>Bessere Emotionsregulation</li>
+                  <li>Stabilere Beziehungen</li>
+                  <li>Mehr Lebensqualität</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wie Sie zur Genesung beitragen können */}
+      <section className="py-12 md:py-16">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-10"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 flex items-center gap-3">
+                <Users className="w-8 h-8 text-[oklch(0.55_0.10_145)]" />
+                Wie Sie zur Genesung beitragen können
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Als Angehöriger können Sie den Genesungsprozess positiv beeinflussen – ohne sich selbst aufzugeben.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {[
+                { title: "Konsistenz", desc: "Bleiben Sie berechenbar und verlässlich. Ihre Stabilität gibt Halt." },
+                { title: "Realistische Hoffnung", desc: "Vermitteln Sie, dass Besserung möglich ist – ohne Druck." },
+                { title: "Eigene Grenzen", desc: "Ihre Stabilität ist Teil der Genesung. Achten Sie auf sich." },
+                { title: "Professionelle Hilfe", desc: "Unterstützen Sie den Therapieprozess, ohne ihn zu ersetzen." }
+              ].map((item, i) => (
+                <Card key={i} className="border-border/50 hover:shadow-md transition-shadow">
+                  <CardContent className="p-5">
+                    <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Faktoren für Genesung */}
+      <section className="py-12 md:py-16 bg-[oklch(0.99_0.008_85)]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <motion.div

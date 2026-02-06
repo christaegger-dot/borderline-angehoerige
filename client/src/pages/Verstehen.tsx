@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors } from "lucide-react";
+import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors, Clock, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
@@ -159,6 +159,107 @@ export default function Verstehen() {
                     </Card>
                   );
                 })}
+              </div>
+            </motion.div>
+
+            {/* Emotionale Demenz */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Clock className="w-8 h-8 text-[oklch(0.55_0.15_25)]" />
+                «Emotionale Demenz» – Warum Argumente nicht helfen
+              </h2>
+              
+              <div className="prose prose-lg max-w-none">
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Wenn ein Mensch in akuter emotionaler Überflutung ist, funktioniert sein Gehirn anders. Marcus Jähn beschreibt dies als <strong>«emotionale Demenz»</strong>: In diesem Zustand existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt.
+                </p>
+                
+                <Card className="bg-[oklch(0.95_0.03_25)]/50 border-[oklch(0.55_0.15_25)]/30 mb-6">
+                  <CardContent className="p-5">
+                    <p className="text-foreground leading-relaxed">
+                      <strong>Warum das wichtig ist:</strong> Logische Argumente helfen in Krisenmomenten nicht. Das Gehirn kann sie schlicht nicht verarbeiten. Erst wenn die Amygdala (das Angstzentrum) beruhigt ist, wird der präfrontale Kortex (rationales Denken) wieder zugänglich.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_25)] border border-[oklch(0.55_0.15_25)]/20">
+                    <span className="text-lg font-medium text-foreground block mb-2">❌ Was nicht hilft:</span>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>«Beruhige dich doch!»</li>
+                      <li>«Das ist doch nicht so schlimm»</li>
+                      <li>«Denk mal logisch nach»</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.03_145)] border border-[oklch(0.55_0.10_145)]/20">
+                    <span className="text-lg font-medium text-foreground block mb-2">✓ Was hilft:</span>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>Präsent sein, ohne zu urteilen</li>
+                      <li>Gefühle anerkennen</li>
+                      <li>Warten, bis die Welle abebbt</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <p className="text-xs text-muted-foreground mt-4">
+                  Quelle: Marcus Jähn, U.M.W.E.G.©-Methode; Neurowissenschaftliche Grundlagen nach LeDoux (1996)
+                </p>
+              </div>
+            </motion.div>
+
+            {/* 4-Phasen-Zyklus */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <RefreshCw className="w-8 h-8 text-[oklch(0.45_0.08_250)]" />
+                Der 4-Phasen-Zyklus
+              </h2>
+              
+              <div className="prose prose-lg max-w-none">
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Viele Angehörige berichten von einem wiederkehrenden Muster. Dieses Muster zu kennen, hilft Ihnen, nicht jede Phase persönlich zu nehmen – und sich auf die nächste vorzubereiten.
+                </p>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[
+                    { phase: "1", title: "Explosion", desc: "Intensive Emotionen brechen aus", color: "oklch(0.55_0.20_25)", bgColor: "oklch(0.95_0.05_25)" },
+                    { phase: "2", title: "Schweigen", desc: "Rückzug und Isolation", color: "oklch(0.45_0.08_250)", bgColor: "oklch(0.95_0.03_250)" },
+                    { phase: "3", title: "Freundlichkeit", desc: "Ruhige, oft liebevolle Phase", color: "oklch(0.55_0.10_145)", bgColor: "oklch(0.95_0.03_145)" },
+                    { phase: "4", title: "Verschlechterung", desc: "Spannung baut sich auf", color: "oklch(0.55_0.12_55)", bgColor: "oklch(0.95_0.04_55)" }
+                  ].map((item) => (
+                    <div key={item.phase} className="text-center p-4 rounded-xl" style={{ backgroundColor: item.bgColor }}>
+                      <div 
+                        className="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center text-white font-bold"
+                        style={{ backgroundColor: item.color }}
+                      >
+                        {item.phase}
+                      </div>
+                      <h4 className="font-semibold text-foreground text-sm mb-1">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                
+                <Card className="mt-6 border-l-4 border-l-[oklch(0.55_0.10_145)] bg-[oklch(0.95_0.02_145)]/30">
+                  <CardContent className="p-5">
+                    <p className="text-foreground leading-relaxed">
+                      <strong>Wichtig:</strong> Dieser Zyklus ist kein Schicksal. Mit Therapie und Unterstützung können die Phasen weniger intensiv werden und die stabilen Zeiten länger dauern.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <p className="text-xs text-muted-foreground mt-4">
+                  Quelle: Mason & Kreger, «Schluss mit dem Eiertanz» (2010)
+                </p>
               </div>
             </motion.div>
 

@@ -230,6 +230,84 @@ export default function Grenzen() {
               </div>
             </motion.div>
 
+            {/* DEAR-Technik */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Die DEAR-Technik (nach Marsha Linehan)
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Die DEAR-Technik aus der Dialektisch-Behavioralen Therapie (DBT) hilft Ihnen, Grenzen klar und respektvoll zu kommunizieren – ohne Vorwürfe, aber mit Wirkung.
+              </p>
+              
+              <div className="space-y-4">
+                {[
+                  {
+                    letter: "D",
+                    title: "Describe (Beschreiben)",
+                    description: "Beschreiben Sie die Situation sachlich, ohne Bewertung oder Interpretation.",
+                    example: "«Wenn du mich anrufst und ich nicht sofort abhebe...»"
+                  },
+                  {
+                    letter: "E",
+                    title: "Express (Ausdrücken)",
+                    description: "Drücken Sie Ihre Gefühle aus – mit Ich-Botschaften, nicht mit Vorwürfen.",
+                    example: "«...fühle ich mich unter Druck gesetzt.»"
+                  },
+                  {
+                    letter: "A",
+                    title: "Assert (Bitten)",
+                    description: "Formulieren Sie eine klare Bitte oder Grenze – konkret und umsetzbar.",
+                    example: "«Ich möchte, dass du mir 30 Minuten Zeit gibst, bevor du erneut anrufst.»"
+                  },
+                  {
+                    letter: "R",
+                    title: "Reinforce (Verstärken)",
+                    description: "Zeigen Sie die positiven Konsequenzen auf – was hat die andere Person davon?",
+                    example: "«Dann kann ich entspannter mit dir sprechen und bin wirklich für dich da.»"
+                  }
+                ].map((item) => (
+                  <Card key={item.letter} className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-4">
+                        <span className="w-10 h-10 rounded-full bg-[oklch(0.55_0.10_145)] text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                          {item.letter}
+                        </span>
+                        <div>
+                          <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                          <p className="text-muted-foreground text-sm mb-2">{item.description}</p>
+                          <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                            <p className="text-sm text-foreground italic">{item.example}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              <Card className="mt-6 bg-[oklch(0.95_0.03_145)]/50 border-[oklch(0.55_0.10_145)]/30">
+                <CardContent className="p-5">
+                  <h4 className="font-semibold text-foreground mb-2">Beispiel komplett:</h4>
+                  <p className="text-foreground leading-relaxed italic">
+                    «Wenn du mich anrufst und ich nicht sofort abhebe <span className="text-muted-foreground">(D)</span>, 
+                    fühle ich mich unter Druck gesetzt <span className="text-muted-foreground">(E)</span>. 
+                    Ich möchte, dass du mir 30 Minuten Zeit gibst, bevor du erneut anrufst <span className="text-muted-foreground">(A)</span>. 
+                    Dann kann ich entspannter mit dir sprechen und bin wirklich für dich da <span className="text-muted-foreground">(R)</span>.»
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quelle: Marsha M. Linehan, DBT Skills Training Manual (2015)
+              </p>
+            </motion.div>
+
             {/* Konkrete Beispiel-Dialoge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

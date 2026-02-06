@@ -605,6 +605,70 @@ export default function Selbstfuersorge() {
               </Card>
             </motion.div>
 
+            {/* Radikale Akzeptanz */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Radikale Akzeptanz
+              </h2>
+              
+              <Card className="bg-[oklch(0.95_0.03_145)]/50 border-[oklch(0.55_0.10_145)]/30 mb-6">
+                <CardContent className="p-6">
+                  <p className="text-foreground leading-relaxed text-lg italic text-center">
+                    «Es ist, wie es ist.»
+                  </p>
+                  <p className="text-muted-foreground text-sm text-center mt-2">
+                    – Dieser Satz kann befreiend sein.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Radikale Akzeptanz bedeutet nicht, dass Sie die Situation gutheissen. Es bedeutet, dass Sie aufhören, gegen die Realität zu kämpfen. Dieses Konzept aus der DBT (Dialektisch-Behaviorale Therapie) kann auch für Angehörige sehr hilfreich sein.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_25)] border border-[oklch(0.55_0.15_25)]/20">
+                  <span className="text-lg font-medium text-foreground block mb-2">❌ Was radikale Akzeptanz NICHT ist:</span>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Aufgeben</li>
+                    <li>• Gutheissen</li>
+                    <li>• Passivität</li>
+                    <li>• Resignation</li>
+                  </ul>
+                </div>
+                <div className="p-4 rounded-xl bg-[oklch(0.95_0.03_145)] border border-[oklch(0.55_0.10_145)]/20">
+                  <span className="text-lg font-medium text-foreground block mb-2">✓ Was radikale Akzeptanz IST:</span>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Anerkennen, was Sie nicht ändern können</li>
+                    <li>• Energie sparen für das, was Sie beeinflussen können</li>
+                    <li>• Inneren Frieden finden trotz äusserer Turbulenzen</li>
+                    <li>• Loslassen von «Es sollte anders sein»</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <CardContent className="p-5">
+                  <h4 className="font-semibold text-foreground mb-2">Übung: Radikale Akzeptanz praktizieren</h4>
+                  <ol className="text-sm text-muted-foreground space-y-2">
+                    <li><strong>1.</strong> Benennen Sie die Situation: «Es ist so, dass...»</li>
+                    <li><strong>2.</strong> Spüren Sie den Widerstand: «Ich wünschte, es wäre anders.»</li>
+                    <li><strong>3.</strong> Lassen Sie los: «Ich kann diese Realität nicht ändern.»</li>
+                    <li><strong>4.</strong> Richten Sie den Fokus neu: «Was kann ich jetzt tun?»</li>
+                  </ol>
+                </CardContent>
+              </Card>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quelle: Marsha M. Linehan, DBT Skills Training Manual (2015)
+              </p>
+            </motion.div>
+
             {/* Erlaubnis geben */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

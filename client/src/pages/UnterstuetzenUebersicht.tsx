@@ -129,6 +129,97 @@ export default function UnterstuetzenUebersicht() {
               </div>
             </motion.div>
 
+            {/* Das verlorene Kind */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Das verlorene Kind verstehen
+              </h2>
+              
+              <Card className="bg-[oklch(0.95_0.04_55)]/30 border-[oklch(0.65_0.12_55)]/50">
+                <CardContent className="p-6">
+                  <p className="text-foreground leading-relaxed mb-4">
+                    Stellen Sie sich ein <strong>7-jähriges Kind</strong> vor, das sich allein auf dem Times Square verirrt hat. Es ist überwältigt, verängstigt und reagiert impulsiv. Würden Sie dieses Kind anschreien oder ihm Vorwürfe machen?
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    Menschen mit Borderline erleben in emotionalen Krisen oft genau diesen Zustand: Sie fühlen sich verloren, überwältigt und allein – auch wenn sie erwachsen sind. Ihr emotionales Erleben entspricht in diesen Momenten dem eines verängstigten Kindes.
+                  </p>
+                  <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-4">
+                    <p className="text-sm text-foreground">
+                      <strong>Was hilft:</strong> Reagieren Sie so, wie Sie einem verlorenen Kind begegnen würden – mit Ruhe, Geduld und der Versicherung: «Ich bin hier. Du bist nicht allein.»
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <p className="text-xs text-muted-foreground mt-3">
+                Quelle: Mason & Kreger, "Schluss mit dem Eiertanz" (2010)
+              </p>
+            </motion.div>
+
+            {/* Konsistenz-Prinzip */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Das Konsistenz-Prinzip
+              </h2>
+              
+              <Card className="bg-[oklch(0.95_0.03_145)]/50 border-[oklch(0.55_0.10_145)]/30 mb-6">
+                <CardContent className="p-6">
+                  <p className="text-foreground leading-relaxed text-lg">
+                    <strong>Kernaussage:</strong> Wenn mehrere Angehörige involviert sind, müssen alle an einem Strang ziehen.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Inkonsistentes Verhalten verschiedener Familienmitglieder kann die Situation verschlimmern. Wenn eine Person Grenzen setzt und eine andere sie aufhebt, entsteht Verwirrung und die Spaltungsdynamik wird verstärkt.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)]" />
+                      Hilfreich
+                    </h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Gemeinsame Absprachen treffen</li>
+                      <li>• Einheitliche Grenzen setzen</li>
+                      <li>• Regelmässige Familien-Meetings</li>
+                      <li>• Sich gegenseitig unterstützen</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_25)]">
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <XCircle className="w-4 h-4 text-[oklch(0.55_0.15_25)]" />
+                      Vermeiden
+                    </h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Widersprüchliche Botschaften</li>
+                      <li>• «Guter Cop / Böser Cop»-Dynamik</li>
+                      <li>• Heimliche Absprachen mit dem Betroffenen</li>
+                      <li>• Sich gegeneinander ausspielen lassen</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quelle: Gunderson, J.G. et al. (2011). Family Guidelines for BPD
+              </p>
+            </motion.div>
+
             {/* Die drei Säulen */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -169,6 +260,133 @@ export default function UnterstuetzenUebersicht() {
                   </Card>
                 ))}
               </div>
+            </motion.div>
+
+            {/* 15 Leitlinien Übersicht */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                15 evidenzbasierte Leitlinien
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Diese Leitlinien wurden von Dr. John Gunderson (McLean Hospital/Harvard) entwickelt und sind wissenschaftlich fundiert. Sie fassen zusammen, was wirklich hilft.
+              </p>
+              
+              <div className="space-y-6">
+                {/* Ziele */}
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Ziele: Langsam vorgehen</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.55_0.10_145)] font-bold">1.</span>
+                        <span><strong className="text-foreground">Veränderung ist schwierig</strong> – Fortschritt kann Verlassensängste auslösen und zu Rückfällen führen.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.55_0.10_145)] font-bold">2.</span>
+                        <span><strong className="text-foreground">Erwartungen senken</strong> – Kleine Schritte feiern, realistische Ziele setzen.</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                
+                {/* Familienumgebung */}
+                <Card className="border-l-4 border-l-[oklch(0.65_0.12_55)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Familienumgebung gestalten</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.65_0.12_55)] font-bold">3.</span>
+                        <span><strong className="text-foreground">Ruhe bewahren</strong> – Eine kühle, ruhige Atmosphäre schaffen.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.65_0.12_55)] font-bold">4.</span>
+                        <span><strong className="text-foreground">Routinen beibehalten</strong> – Struktur gibt Sicherheit.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.65_0.12_55)] font-bold">5.</span>
+                        <span><strong className="text-foreground">Zeit zum Reden finden</strong> – Regelmässige, geplante Gespräche.</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                
+                {/* Krisen managen */}
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Krisen managen</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.55_0.15_35)] font-bold">6.</span>
+                        <span><strong className="text-foreground">Nicht defensiv werden</strong> – Nicht rechtfertigen oder verteidigen.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.55_0.15_35)] font-bold">7.</span>
+                        <span><strong className="text-foreground">Selbstverletzendes Verhalten ernst nehmen</strong> – Aufmerksamkeit geben, nicht ignorieren.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.55_0.15_35)] font-bold">8.</span>
+                        <span><strong className="text-foreground">Zuhören</strong> – Gefühle anerkennen, nicht wegargumentieren.</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                
+                {/* Probleme angehen */}
+                <Card className="border-l-4 border-l-[oklch(0.45_0.05_250)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Probleme angehen</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.45_0.05_250)] font-bold">9.</span>
+                        <span><strong className="text-foreground">Drei «Musts»</strong> – Einbeziehen, fragen ob sie können, fragen ob Hilfe gewünscht ist.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.45_0.05_250)] font-bold">10.</span>
+                        <span><strong className="text-foreground">Familie handelt gemeinsam</strong> – Konsistenz zwischen allen Familienmitgliedern.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.45_0.05_250)] font-bold">11.</span>
+                        <span><strong className="text-foreground">Kommunikation mit Therapeuten</strong> – Bedenken offen äussern.</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                
+                {/* Grenzen setzen */}
+                <Card className="border-l-4 border-l-[oklch(0.50_0.12_320)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Grenzen setzen</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.50_0.12_320)] font-bold">12.</span>
+                        <span><strong className="text-foreground">Grenzen klar kommunizieren</strong> – Erwartungen deutlich machen.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.50_0.12_320)] font-bold">13.</span>
+                        <span><strong className="text-foreground">Natürliche Konsequenzen zulassen</strong> – Nicht vor der Realität schützen.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.50_0.12_320)] font-bold">14.</span>
+                        <span><strong className="text-foreground">Missbrauch nicht tolerieren</strong> – Verbale/körperliche Gewalt = rote Linie.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[oklch(0.50_0.12_320)] font-bold">15.</span>
+                        <span><strong className="text-foreground">Drohungen und Ultimaten</strong> – Nur aussprechen, wenn Sie sie durchziehen können.</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quelle: Gunderson, J.G. et al. (2011). Family Guidelines for BPD. McLean Hospital / NEA-BPD
+              </p>
             </motion.div>
 
             {/* Materialien zum Download */}

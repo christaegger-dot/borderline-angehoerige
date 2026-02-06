@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Calendar, ArrowRight, CheckCircle2, Heart, Clock, Users } from "lucide-react";
+import { Calendar, ArrowRight, CheckCircle2, Heart, Clock, Users, Lightbulb } from "lucide-react";
 import { Link } from "wouter";
 
 export default function UnterstuetzenAlltag() {
@@ -127,6 +127,73 @@ export default function UnterstuetzenAlltag() {
               </Card>
             </motion.div>
 
+            {/* Beziehungs-Achtsamkeit */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Beziehungs-Achtsamkeit
+              </h2>
+              
+              <Card className="bg-[oklch(0.95_0.03_145)]/50 border-[oklch(0.55_0.10_145)]/30 mb-6">
+                <CardContent className="p-6">
+                  <p className="text-foreground leading-relaxed">
+                    <strong>Beziehungs-Achtsamkeit</strong> bedeutet, bewusst und nicht-wertend wahrzunehmen, was in der Interaktion gerade passiert – bei Ihnen und bei Ihrem Gegenüber.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Dieses Konzept aus dem Family Connections Programm hilft Ihnen, automatische Reaktionsmuster zu unterbrechen und bewusster zu handeln.
+              </p>
+              
+              <div className="space-y-3">
+                {[
+                  {
+                    step: "1",
+                    title: "Innehalten",
+                    description: "Bevor Sie reagieren, halten Sie kurz inne. Atmen Sie einmal tief durch."
+                  },
+                  {
+                    step: "2",
+                    title: "Wahrnehmen",
+                    description: "Was passiert gerade? Was fühlen Sie? Was fühlt Ihr Gegenüber vermutlich?"
+                  },
+                  {
+                    step: "3",
+                    title: "Nicht bewerten",
+                    description: "Beobachten Sie ohne zu urteilen. «Es ist, wie es ist.»"
+                  },
+                  {
+                    step: "4",
+                    title: "Bewusst handeln",
+                    description: "Wählen Sie Ihre Reaktion bewusst, statt automatisch zu reagieren."
+                  }
+                ].map((item) => (
+                  <Card key={item.step} className="border-border/50">
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-3">
+                        <span className="w-8 h-8 rounded-full bg-[oklch(0.55_0.10_145)] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
+                          {item.step}
+                        </span>
+                        <div>
+                          <h4 className="font-semibold text-foreground">{item.title}</h4>
+                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quelle: Family Connections Program (NEA-BPD)
+              </p>
+            </motion.div>
+
             {/* Gemeinsame Aktivitäten */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -168,7 +235,109 @@ export default function UnterstuetzenAlltag() {
               </Card>
             </motion.div>
 
-            {/* Grenzen der Unterstützung */}
+            {/* Konkrete Tipps */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Lightbulb className="w-8 h-8 text-[oklch(0.60_0.15_85)]" />
+                Was Sie konkret tun können
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Hier sind praktische Handlungen, die im Alltag einen Unterschied machen:
+              </p>
+              
+              <div className="space-y-4">
+                <Card className="border-border/50">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Übungspartner für Skills sein</h3>
+                    <p className="text-muted-foreground text-sm mb-3">
+                      Wenn Ihr Angehöriger in Therapie ist, können Sie beim Üben neuer Fähigkeiten helfen:
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2 text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <span>Gemeinsam Atemübungen machen (auch wenn keine Krise ist)</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <span>Bei Achtsamkeitsübungen mitmachen</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <span>Sanft an Skills erinnern: «Möchtest du die Übung ausprobieren, die dir letztens geholfen hat?»</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-border/50">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Fortschritte anerkennen</h3>
+                    <p className="text-muted-foreground text-sm mb-3">
+                      Kleine Erfolge zu bemerken und zu benennen stärkt die Motivation:
+                    </p>
+                    <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                      <p className="text-sm text-foreground italic">
+                        «Ich habe bemerkt, dass du heute ruhig geblieben bist, obwohl die Situation schwierig war. Das war stark.»
+                      </p>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-3">
+                      <strong>Wichtig:</strong> Anerkennen Sie den Fortschritt, aber betonen Sie auch, dass Sie wissen, wie schwer es ist. Das verhindert Überforderung.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-border/50">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Vorhersehbar sein</h3>
+                    <p className="text-muted-foreground text-sm mb-3">
+                      Menschen mit Borderline reagieren stark auf Unsicherheit. Sie können helfen durch:
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2 text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <span>Änderungen frühzeitig ankündigen</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <span>Versprechen halten oder erklären, warum nicht</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <span>Klare Zeiten für Erreichbarkeit kommunizieren</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-border/50">
+                  <CardContent className="p-5">
+                    <h3 className="font-display font-semibold text-foreground mb-3">Gemeinsam Probleme lösen</h3>
+                    <p className="text-muted-foreground text-sm mb-3">
+                      Statt Lösungen vorzugeben, fragen Sie:
+                    </p>
+                    <div className="space-y-2">
+                      <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                        <p className="text-sm text-foreground italic">«Was wäre dein Vorschlag?»</p>
+                      </div>
+                      <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                        <p className="text-sm text-foreground italic">«Wie kann ich dir dabei helfen?»</p>
+                      </div>
+                      <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                        <p className="text-sm text-foreground italic">«Was brauchst du gerade von mir?»</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
+
+            {/* Grenzen der Alltagsunterstützung */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -177,8 +346,7 @@ export default function UnterstuetzenAlltag() {
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Grenzen der Alltagsunterstützung
-              </h2>
-              
+              </h2>            
               <Card className="border-l-4 border-l-[oklch(0.55_0.15_25)] bg-[oklch(0.95_0.03_25)]">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">

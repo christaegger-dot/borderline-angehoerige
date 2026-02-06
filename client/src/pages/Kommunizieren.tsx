@@ -274,6 +274,14 @@ export default function Kommunizieren() {
                     isNew: true
                   },
                   {
+                    title: "Die U.M.W.-Formel in der Praxis",
+                    description: "Exakte Formulierungen: M → U → W mit Betonung auf DEIN, DIR und WIR",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LAkOpcXRhlUJoRUa.png",
+                    isNew: true
+                  },
+                  {
                     title: "Die 6 Stufen der Validierung",
                     description: "Von aufmerksamem Zuhören bis radikaler Echtheit",
                     type: "PNG",

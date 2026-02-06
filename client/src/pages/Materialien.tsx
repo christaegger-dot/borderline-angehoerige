@@ -125,6 +125,15 @@ const infografiken = [
     isNew: true
   },
   {
+    id: "umweg-praxis-formel",
+    title: "Die U.M.W.-Formel in der Praxis",
+    description: "Die exakte Formel für die akute Krise: „Sei dir sicher... Ich spüre deine Angst“ → „Sei dir sicher, ich unterstütze dich“ → „Die Wahrheit aber ist... WIR ein Team bleiben!“",
+    category: "kommunizieren",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LAkOpcXRhlUJoRUa.png",
+    isNew: true
+  },
+  {
     id: "validierung-6-stufen",
     title: "Die 6 Stufen der Validierung",
     description: "Von aufmerksamem Zuhören bis radikaler Echtheit – das Stufenmodell nach Linehan.",

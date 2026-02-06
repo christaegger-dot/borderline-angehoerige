@@ -252,6 +252,13 @@ const searchableContent = [
     section: "Materialien"
   },
   {
+    title: "Die U.M.W.-Formel in der Praxis",
+    description: "Infografik: Exakte Formulierungen für die akute Krise mit Betonung auf DEIN, DIR und WIR",
+    keywords: ["umweg", "formel", "praxis", "krise", "team", "dein", "dir", "wir", "infografik"],
+    href: "/materialien",
+    section: "Materialien"
+  },
+  {
     title: "Die 5 Leitlinien für den Alltag",
     description: "Infografik: Keine Hektik, Routinen, Ruhe, Team, Grenzen",
     keywords: ["leitlinien", "alltag", "hektik", "routinen", "ruhe", "team", "grenzen", "infografik"],

@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors, Clock, RefreshCw } from "lucide-react";
+import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors, Clock, RefreshCw, Layers, Users, Activity, XCircle } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
@@ -82,6 +82,330 @@ export default function Verstehen() {
               </div>
             </motion.div>
 
+            {/* Die 9 DSM-5 Kriterien */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+              id="symptome"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <AlertCircle className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
+                Die 9 DSM-5 Kriterien
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Für eine Diagnose müssen mindestens <strong>5 von 9 Kriterien</strong> erfüllt sein. Hier sind alle Kriterien verständlich erklärt:
+              </p>
+              
+              <div className="space-y-3">
+                {[
+                  {
+                    num: "1",
+                    title: "Verzweifelte Bemühungen, Verlassenwerden zu vermeiden",
+                    example: "Panische Anrufe, wenn der Partner später kommt; extreme Reaktionen auf kleine Trennungen",
+                    color: "oklch(0.55_0.15_25)"
+                  },
+                  {
+                    num: "2",
+                    title: "Instabile, intensive Beziehungen",
+                    example: "Wechsel zwischen Idealisierung («Du bist perfekt!») und Entwertung («Du bist das Schlimmste!»)",
+                    color: "oklch(0.65_0.12_55)"
+                  },
+                  {
+                    num: "3",
+                    title: "Identitätsstörung: instabiles Selbstbild",
+                    example: "Unsicherheit über Ziele, Werte, Berufswahl, Freundschaften, sexuelle Orientierung",
+                    color: "oklch(0.45_0.08_250)"
+                  },
+                  {
+                    num: "4",
+                    title: "Impulsivität in mindestens zwei Bereichen",
+                    example: "Geldausgaben, Essanfälle, Substanzmissbrauch, riskantes Fahren, ungeschützter Sex",
+                    color: "oklch(0.60_0.15_85)"
+                  },
+                  {
+                    num: "5",
+                    title: "Wiederkehrende Suiziddrohungen oder Selbstverletzung",
+                    example: "Ritzen, Verbrennen, Suizidankündigungen – oft als Versuch, unerträgliche Gefühle zu regulieren",
+                    color: "oklch(0.50_0.18_25)"
+                  },
+                  {
+                    num: "6",
+                    title: "Affektive Instabilität",
+                    example: "Intensive Stimmungswechsel innerhalb von Stunden – von Euphorie zu Verzweiflung",
+                    color: "oklch(0.55_0.12_55)"
+                  },
+                  {
+                    num: "7",
+                    title: "Chronisches Gefühl der Leere",
+                    example: "«Ich fühle mich wie ein schwarzes Loch» – ein tiefes, anhaltendes Gefühl von Hohlheit",
+                    color: "oklch(0.35_0.02_250)"
+                  },
+                  {
+                    num: "8",
+                    title: "Unangemessene, heftige Wut",
+                    example: "Wutausbrüche, die für Aussenstehende übertrieben wirken; Schwierigkeit, Wut zu kontrollieren",
+                    color: "oklch(0.55_0.20_25)"
+                  },
+                  {
+                    num: "9",
+                    title: "Vorübergehende paranoide oder dissoziative Symptome",
+                    example: "Unter Stress: Misstrauen, Gefühl der Unwirklichkeit, «neben sich stehen»",
+                    color: "oklch(0.45_0.05_250)"
+                  }
+                ].map((item) => (
+                  <Card key={item.num} className="border-l-4" style={{ borderLeftColor: item.color }}>
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-3">
+                        <span 
+                          className="w-7 h-7 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                          style={{ backgroundColor: item.color }}
+                        >
+                          {item.num}
+                        </span>
+                        <div>
+                          <h4 className="font-semibold text-foreground text-sm mb-1">{item.title}</h4>
+                          <p className="text-xs text-muted-foreground italic">{item.example}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quelle: Diagnostic and Statistical Manual of Mental Disorders, 5th Edition (DSM-5), American Psychiatric Association
+              </p>
+            </motion.div>
+
+            {/* Ursachen: Bio-Psycho-Soziales Modell */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+              id="ursachen"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Layers className="w-8 h-8 text-[oklch(0.55_0.10_145)]" />
+                Ursachen: Das Bio-Psycho-Soziale Modell
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Borderline entsteht nicht durch <em>eine</em> Ursache, sondern durch das Zusammenspiel mehrerer Faktoren. Niemand ist «schuld» – weder die Betroffenen noch die Angehörigen.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-4">
+                <Card className="border-t-4 border-t-[oklch(0.55_0.15_25)]">
+                  <CardContent className="p-5">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.95_0.05_25)] flex items-center justify-center mb-3">
+                      <Brain className="w-5 h-5 text-[oklch(0.55_0.15_25)]" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">Biologisch</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Genetische Veranlagung (30-60%)</li>
+                      <li>• Veränderungen in Hirnstrukturen</li>
+                      <li>• Überempfindliches Stresssystem</li>
+                      <li>• Neurotransmitter-Ungleichgewicht</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-t-4 border-t-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.95_0.03_145)] flex items-center justify-center mb-3">
+                      <Heart className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">Psychologisch</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Frühe Bindungserfahrungen</li>
+                      <li>• Emotionale Vernachlässigung</li>
+                      <li>• Traumatische Erlebnisse</li>
+                      <li>• Invalidierung von Gefühlen</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-t-4 border-t-[oklch(0.45_0.08_250)]">
+                  <CardContent className="p-5">
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.95_0.02_250)] flex items-center justify-center mb-3">
+                      <Users className="w-5 h-5 text-[oklch(0.45_0.08_250)]" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">Sozial</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Instabile Familienverhältnisse</li>
+                      <li>• Fehlende soziale Unterstützung</li>
+                      <li>• Mobbing oder Ausgrenzung</li>
+                      <li>• Kulturelle Faktoren</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <Card className="mt-6 bg-[oklch(0.95_0.02_145)]/50 border-[oklch(0.55_0.10_145)]/30">
+                <CardContent className="p-5">
+                  <p className="text-foreground leading-relaxed">
+                    <strong>Wichtig für Angehörige:</strong> Auch wenn frühe Erfahrungen eine Rolle spielen, bedeutet das nicht, dass Eltern «schuld» sind. Viele Faktoren liegen ausserhalb der Kontrolle von Familien. Schuldzuweisungen helfen niemandem – Verständnis und Unterstützung schon.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quelle: Linehan, M.M. (1993); Paris, J. (2019). Borderline Personality Disorder
+              </p>
+            </motion.div>
+
+            {/* Neurobiologie */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+              id="neurobiologie"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Activity className="w-8 h-8 text-[oklch(0.50_0.12_320)]" />
+                Das Gehirn bei Borderline
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Neurowissenschaftliche Forschung zeigt: Bei Borderline funktionieren bestimmte Hirnregionen anders. Das erklärt, warum Betroffene Emotionen so intensiv erleben.
+              </p>
+              
+              <div className="space-y-4">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.20_25)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <span className="w-8 h-8 rounded-full bg-[oklch(0.55_0.20_25)] text-white flex items-center justify-center text-sm font-bold">A</span>
+                      Amygdala – Das Alarmzentrum
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      Die Amygdala ist bei Borderline <strong>überaktiv</strong>. Sie reagiert stärker und schneller auf emotionale Reize – besonders auf Gesichtsausdrücke, die als bedrohlich interpretiert werden könnten.
+                    </p>
+                    <div className="bg-[oklch(0.95_0.03_25)] rounded-lg p-3">
+                      <p className="text-xs text-foreground">
+                        <strong>Für Angehörige:</strong> Deshalb können neutrale Gesichtsausdrücke als ablehnend wahrgenommen werden. Es ist keine Absicht – das Gehirn interpretiert anders.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <span className="w-8 h-8 rounded-full bg-[oklch(0.55_0.10_145)] text-white flex items-center justify-center text-sm font-bold">H</span>
+                      Hippocampus – Das Gedächtniszentrum
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      Der Hippocampus ist bei vielen Betroffenen <strong>verkleinert</strong>. Er ist zuständig für Gedächtnis und das Einordnen von Erfahrungen in einen Kontext.
+                    </p>
+                    <div className="bg-[oklch(0.95_0.02_145)] rounded-lg p-3">
+                      <p className="text-xs text-foreground">
+                        <strong>Für Angehörige:</strong> In Krisen kann es schwer sein, sich an positive Erfahrungen zu erinnern. «Du hast mich NIE unterstützt» ist keine Lüge – in diesem Moment ist die Erinnerung blockiert.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-l-4 border-l-[oklch(0.45_0.08_250)]">
+                  <CardContent className="p-5">
+                    <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <span className="w-8 h-8 rounded-full bg-[oklch(0.45_0.08_250)] text-white flex items-center justify-center text-sm font-bold">P</span>
+                      Präfrontaler Kortex – Die Kontrollinstanz
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      Der präfrontale Kortex ist für rationales Denken, Impulskontrolle und Emotionsregulation zuständig. Bei Borderline ist die <strong>Verbindung zur Amygdala geschwächt</strong>.
+                    </p>
+                    <div className="bg-[oklch(0.95_0.02_250)] rounded-lg p-3">
+                      <p className="text-xs text-foreground">
+                        <strong>Für Angehörige:</strong> In emotionalen Momenten ist der «rationale Teil» des Gehirns quasi offline. Deshalb helfen logische Argumente in Krisen nicht – erst muss die Amygdala beruhigt werden.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <Card className="mt-6 bg-[oklch(0.92_0.04_55)]/30 border-[oklch(0.65_0.12_55)]/50">
+                <CardContent className="p-5">
+                  <h4 className="font-semibold text-foreground mb-2">Die gute Nachricht: Neuroplastizität</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Das Gehirn kann sich verändern. Durch Therapie (besonders DBT) können neue neuronale Verbindungen entstehen. Studien zeigen, dass sich die Hirnaktivität nach erfolgreicher Therapie normalisieren kann.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quellen: Marcus Jähn, U.M.W.E.G.©-Methode; Schmahl & Bremner (2006); Ruocco et al. (2013)
+              </p>
+            </motion.div>
+
+            {/* Häufige Missverständnisse */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+              id="missverstaendnisse"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <XCircle className="w-8 h-8 text-[oklch(0.55_0.15_25)]" />
+                Häufige Missverständnisse
+              </h2>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Über Borderline kursieren viele Mythen. Hier ist, was <strong>nicht</strong> stimmt:
+              </p>
+              
+              <div className="space-y-4">
+                {[
+                  {
+                    myth: "«Borderliner manipulieren absichtlich»",
+                    truth: "Das Verhalten ist keine bewusste Strategie, sondern ein verzweifelter Versuch, mit überwältigenden Emotionen umzugehen. Es fehlen oft die Fähigkeiten, Bedürfnisse anders auszudrücken."
+                  },
+                  {
+                    myth: "«Borderline ist unheilbar»",
+                    truth: "Studien zeigen: 85-90% der Betroffenen erfüllen nach 10 Jahren nicht mehr die Diagnosekriterien. Mit Therapie ist deutliche Besserung möglich."
+                  },
+                  {
+                    myth: "«Sie könnten sich zusammenreissen, wenn sie wollten»",
+                    truth: "Borderline ist eine anerkannte psychische Erkrankung mit neurobiologischen Grundlagen. Es ist keine Frage des Willens, sondern der Fähigkeiten – die erlernbar sind."
+                  },
+                  {
+                    myth: "«Nur Frauen haben Borderline»",
+                    truth: "Borderline betrifft alle Geschlechter etwa gleich häufig. Männer werden jedoch seltener diagnostiziert, da sie oft andere Symptome zeigen (mehr Wut, weniger Selbstverletzung)."
+                  },
+                  {
+                    myth: "«Borderliner sind gefährlich»",
+                    truth: "Menschen mit Borderline sind viel häufiger Opfer als Täter. Die Aggression richtet sich meist gegen sich selbst, nicht gegen andere."
+                  },
+                  {
+                    myth: "«Das ist nur Aufmerksamkeitssuche»",
+                    truth: "Selbstverletzendes Verhalten ist ein ernsthafter Bewältigungsversuch für unerträgliche Gefühle – kein Ruf nach Aufmerksamkeit. Es verdient Mitgefühl, nicht Verurteilung."
+                  }
+                ].map((item, index) => (
+                  <Card key={index} className="border-border/50">
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-3">
+                        <XCircle className="w-5 h-5 text-[oklch(0.55_0.15_25)] flex-shrink-0 mt-0.5" />
+                        <div>
+                          <h4 className="font-semibold text-[oklch(0.55_0.15_25)] mb-2">{item.myth}</h4>
+                          <p className="text-muted-foreground text-sm leading-relaxed">
+                            <strong className="text-foreground">Realität:</strong> {item.truth}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                Quellen: APA Practice Guideline (2024); Zanarini et al. (2012); Grant et al. (2008)
+              </p>
+            </motion.div>
+
             {/* Kernsymptome */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -91,7 +415,7 @@ export default function Verstehen() {
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <AlertCircle className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
-                Die Kernsymptome
+                Die Kernsymptome im Überblick
               </h2>
               
               <div className="grid sm:grid-cols-2 gap-4">

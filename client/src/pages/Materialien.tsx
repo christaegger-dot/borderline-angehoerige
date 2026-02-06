@@ -431,6 +431,19 @@ const infografiken: Array<{
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FxkhPJHjIBbWdpWl.pdf",
     isNew: true
   },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // NOTFALLKARTE
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "notfallkarte-zuerich",
+    title: "Notfallkarte Zürich – Psychische Krise",
+    description: "Ampel-Logik (ROT / GELB / GRÜN) mit Schnell-Entscheid: Alle wichtigen Nummern für Angehörige auf einer A4-Seite.",
+    category: "soforthilfe",
+    type: "Notfallkarte",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZQvtZgegdqQJmRdy.pdf",
+    isNew: true
+  },
 ];
 
 const categories = [
@@ -441,6 +454,7 @@ const categories = [
   { id: "grenzen", label: "Grenzen", icon: Shield },
   { id: "selbstfuersorge", label: "Selbstfürsorge", icon: AlertTriangle },
   { id: "genesung", label: "Genesung", icon: TrendingUp },
+  { id: "soforthilfe", label: "Soforthilfe", icon: AlertTriangle },
 ];
 
 export default function Materialien() {
@@ -484,7 +498,7 @@ export default function Materialien() {
               <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
                 <span className="flex items-center gap-1">
                   <ImageIcon className="w-4 h-4" />
-                  {pngCount} Infografiken
+                  {pngCount} Materialien
                 </span>
               </div>
             )}

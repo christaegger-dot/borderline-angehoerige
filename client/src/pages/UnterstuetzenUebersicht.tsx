@@ -17,8 +17,8 @@ export default function UnterstuetzenUebersicht() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <Link href="/unterstuetzen/uebersicht" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
-              ← Zurück zur Übersicht
+            <Link href="/verstehen" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
+              ← Zurück zu Verstehen
             </Link>
             
             <div className="flex items-center gap-3 mb-6 mt-4">
@@ -486,9 +486,9 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/unterstuetzen/uebersicht">
+              <Link href="/verstehen">
                 <Button variant="ghost">
-                  ← Übersicht
+                  ← Verstehen
                 </Button>
               </Link>
               <Link href="/unterstuetzen/alltag">

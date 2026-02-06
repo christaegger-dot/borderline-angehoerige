@@ -11,7 +11,7 @@ import { Link } from "wouter";
 // Stand: 06.02.2026
 // ═══════════════════════════════════════════════════════════════════════════
 
-// Platzhalter: Infografiken werden Kategorie für Kategorie neu erstellt
+// Kategorie 1: Verstehen (6 Infografiken)
 const infografiken: Array<{
   id: string;
   title: string;
@@ -20,7 +20,65 @@ const infografiken: Array<{
   type: string;
   url: string;
   isNew?: boolean;
-}> = [];
+}> = [
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KATEGORIE 1: VERSTEHEN
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "1-1-leuchtturm",
+    title: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
+    description: "Zustandsdiagramm: Stabil bleiben trotz Sturm. Sie können das Schiff nicht steuern – aber Orientierung geben.",
+    category: "verstehen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GlUhswKtlvohFlIh.png",
+    isNew: true
+  },
+  {
+    id: "1-2-eisberg",
+    title: "Der Eisberg – Wut ist oft die Spitze",
+    description: "Stock-&-Flow-Diagramm: Was Sie sehen (Wut) ist oft nur die Spitze – darunter liegen Schmerz, Angst, Scham.",
+    category: "verstehen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PbEHipeLgAfCDHrD.png",
+    isNew: true
+  },
+  {
+    id: "1-3-spaltung",
+    title: "Spaltung – das Pendel zwischen Extremen",
+    description: "Zustandsdiagramm: Unter Stress kippt die Bewertung leicht ins Extreme – die Grauzone wird schwer erreichbar.",
+    category: "verstehen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QpYHKGyJuyXSDvFd.png",
+    isNew: true
+  },
+  {
+    id: "1-4-alarm-denk-modus",
+    title: "Alarm-Modus vs. Denk-Modus",
+    description: "Zustandsdiagramm: Im Alarm-Modus ist Logik oft nicht erreichbar – erst beruhigen, dann klären.",
+    category: "verstehen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KbfVuBlwpRcOnfnK.png",
+    isNew: true
+  },
+  {
+    id: "1-5-vier-phasen-zyklus",
+    title: "Der 4-Phasen-Zyklus – das vorhersehbare Muster",
+    description: "Kausal-Loop: Krisen wirken chaotisch – folgen aber oft einem wiederkehrenden Ablauf.",
+    category: "verstehen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOBpgEsUQzJNRQhJ.png",
+    isNew: true
+  },
+  {
+    id: "1-6-gehirn-verstehen",
+    title: "Das Gehirn verstehen – Neurobiologie einfach erklärt",
+    description: "Sequenzdiagramm: Bei starkem Stress dominiert Alarm – erst danach wird klares Denken wieder möglich.",
+    category: "verstehen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png",
+    isNew: true
+  },
+];
 
 const categories = [
   { id: "alle", label: "Alle Materialien", icon: Filter },

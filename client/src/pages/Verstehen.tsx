@@ -628,7 +628,7 @@ export default function Verstehen() {
               </div>
             </motion.div>
 
-            {/* Materialien zum Download – Platzhalter */}
+            {/* Materialien zum Download – Kategorie 1: Verstehen */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -638,29 +638,167 @@ export default function Verstehen() {
             >
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-[oklch(0.45_0.08_145)]" />
-                Materialien zum Thema
+                Infografiken zum Thema
               </h2>
               
-              <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
-                      <RefreshCw className="w-5 h-5 text-[oklch(0.50_0.12_85)]" />
+              <p className="text-muted-foreground mb-6">
+                Diese Infografiken fassen die wichtigsten Konzepte zum Verstehen von Borderline zusammen. 
+                Klicken Sie auf ein Bild für die Vollansicht oder laden Sie es direkt herunter.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* 1.1 Leuchtturm */}
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GlUhswKtlvohFlIh.png" target="_blank" rel="noopener noreferrer">
+                    <div className="aspect-[3/4] bg-muted">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GlUhswKtlvohFlIh.png" 
+                        alt="Der Leuchtturm – Ihre Rolle als Angehörige/r"
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
                     </div>
-                    <div>
-                      <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Neue Infografiken zum Thema "Verstehen" werden gerade erstellt und sind bald verfügbar.
-                      </p>
-                      <Link href="/materialien">
-                        <Button variant="outline" size="sm">
-                          Zur Materialien-Seite
-                        </Button>
-                      </Link>
+                  </a>
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-foreground mb-1">Der Leuchtturm</h3>
+                    <p className="text-sm text-muted-foreground mb-3">Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.</p>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GlUhswKtlvohFlIh.png" download>
+                      <Button size="sm" variant="outline" className="w-full">
+                        <Download className="w-4 h-4 mr-2" />
+                        Herunterladen
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+
+                {/* 1.2 Eisberg */}
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PbEHipeLgAfCDHrD.png" target="_blank" rel="noopener noreferrer">
+                    <div className="aspect-[3/4] bg-muted">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PbEHipeLgAfCDHrD.png" 
+                        alt="Der Eisberg – Wut ist oft die Spitze"
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </a>
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-foreground mb-1">Der Eisberg</h3>
+                    <p className="text-sm text-muted-foreground mb-3">Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.</p>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PbEHipeLgAfCDHrD.png" download>
+                      <Button size="sm" variant="outline" className="w-full">
+                        <Download className="w-4 h-4 mr-2" />
+                        Herunterladen
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+
+                {/* 1.3 Spaltung */}
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QpYHKGyJuyXSDvFd.png" target="_blank" rel="noopener noreferrer">
+                    <div className="aspect-[3/4] bg-muted">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QpYHKGyJuyXSDvFd.png" 
+                        alt="Spaltung – das Pendel zwischen Extremen"
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-foreground mb-1">Spaltung</h3>
+                    <p className="text-sm text-muted-foreground mb-3">Das Pendel zwischen Extremen – die Grauzone stärken.</p>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QpYHKGyJuyXSDvFd.png" download>
+                      <Button size="sm" variant="outline" className="w-full">
+                        <Download className="w-4 h-4 mr-2" />
+                        Herunterladen
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+
+                {/* 1.4 Alarm-Modus vs. Denk-Modus */}
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KbfVuBlwpRcOnfnK.png" target="_blank" rel="noopener noreferrer">
+                    <div className="aspect-[3/4] bg-muted">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KbfVuBlwpRcOnfnK.png" 
+                        alt="Alarm-Modus vs. Denk-Modus"
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-foreground mb-1">Alarm-Modus vs. Denk-Modus</h3>
+                    <p className="text-sm text-muted-foreground mb-3">Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.</p>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KbfVuBlwpRcOnfnK.png" download>
+                      <Button size="sm" variant="outline" className="w-full">
+                        <Download className="w-4 h-4 mr-2" />
+                        Herunterladen
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+
+                {/* 1.5 4-Phasen-Zyklus */}
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOBpgEsUQzJNRQhJ.png" target="_blank" rel="noopener noreferrer">
+                    <div className="aspect-[3/4] bg-muted">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOBpgEsUQzJNRQhJ.png" 
+                        alt="Der 4-Phasen-Zyklus"
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-foreground mb-1">Der 4-Phasen-Zyklus</h3>
+                    <p className="text-sm text-muted-foreground mb-3">Das vorhersehbare Muster – Krisen folgen oft einem Ablauf.</p>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOBpgEsUQzJNRQhJ.png" download>
+                      <Button size="sm" variant="outline" className="w-full">
+                        <Download className="w-4 h-4 mr-2" />
+                        Herunterladen
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+
+                {/* 1.6 Gehirn verstehen */}
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png" target="_blank" rel="noopener noreferrer">
+                    <div className="aspect-[3/4] bg-muted">
+                      <img 
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png" 
+                        alt="Das Gehirn verstehen"
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-foreground mb-1">Das Gehirn verstehen</h3>
+                    <p className="text-sm text-muted-foreground mb-3">Neurobiologie einfach erklärt – warum Stress Denken blockiert.</p>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ijWNborYXfQWvfcG.png" download>
+                      <Button size="sm" variant="outline" className="w-full">
+                        <Download className="w-4 h-4 mr-2" />
+                        Herunterladen
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="mt-6 text-center">
+                <Link href="/materialien">
+                  <Button variant="outline">
+                    Alle Materialien anzeigen
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Hoffnung */}

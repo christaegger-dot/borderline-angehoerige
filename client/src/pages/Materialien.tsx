@@ -276,7 +276,7 @@ const infografiken: Array<{
     description: "4 Situationen mit fertigen Sätzen: Bei Beschimpfungen, Schuldzuweisungen, Forderungen, Drohungen.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fNjHhGjwCaFvBgdl.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DanNemCkHZyosGIB.png",
     isNew: true
   },
   {

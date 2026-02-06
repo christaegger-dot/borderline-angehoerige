@@ -263,11 +263,11 @@ const infografiken: Array<{
   },
   {
     id: "k4-6-lmk-exit-strategie",
-    title: "L.M.K. – Wenn Grenzen nicht respektiert werden",
-    description: "Entscheidungsbaum: Grenze → Reaktion → Konsequenz. 'Lebe Mit Konsequenzen' – die Exit-Strategie.",
+    title: "L.M.K. (Lebe Mit Konsequenzen) – Wenn Grenzen nicht respektiert werden",
+    description: "Entscheidungsbaum mit Anwendungskontext: Grenze → Reaktion → Konsequenz. Keine Strafe – sondern Selbstschutz.",
     category: "grenzen",
     type: "Infografik PNG",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MKXShSkeagmSgRLp.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TcbKSNtqZbXHqDri.png",
     isNew: true
   },
   {

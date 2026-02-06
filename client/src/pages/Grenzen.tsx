@@ -480,9 +480,9 @@ export default function Grenzen() {
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KDxHdlDcZhYxEkMD.png"
                   },
                   {
-                    title: "L.M.K. – Exit-Strategie",
+                    title: "L.M.K. (Lebe Mit Konsequenzen)",
                     description: "Wenn Grenzen nicht respektiert werden",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MKXShSkeagmSgRLp.png"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TcbKSNtqZbXHqDri.png"
                   },
                   {
                     title: "Grenzen kommunizieren",

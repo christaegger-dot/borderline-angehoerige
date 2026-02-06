@@ -213,20 +213,38 @@ export default function Verstehen() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
+                    title: "Der Leuchtturm: Ihre Rolle",
+                    description: "Stabil bleiben, Orientierung geben – die Leuchtturm-Metapher",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dZvPdFGXTuwBuhTW.png",
+                    icon: Image,
+                    isNew: true
+                  },
+                  {
+                    title: "Der Eisberg: Wut = Trauer",
+                    description: "Was Sie sehen ist nur die Spitze – darunter liegt Trauer",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TUTOoesvzWPNeIca.png",
+                    icon: Image,
+                    isNew: true
+                  },
+                  {
+                    title: "Die Spaltung verstehen",
+                    description: "Warum Liebe und Hass BEIDE ehrlich sind",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SZXYImDhcfQFLirX.png",
+                    icon: Image,
+                    isNew: true
+                  },
+                  {
                     title: "Der Spaltungs-Zyklus",
                     description: "Das Schwarz-Weiss-Denken bei Borderline erklärt",
                     type: "PNG",
                     rating: "NEU",
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ftmYWlyHNOJrccxR.png",
-                    icon: Image,
-                    isNew: true
-                  },
-                  {
-                    title: "Die heisse Kartoffel",
-                    description: "Übertragungsdynamik – wie Gefühle weitergegeben werden",
-                    type: "PNG",
-                    rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/wHkzslYknZJsYcqO.png",
                     icon: Image,
                     isNew: true
                   }

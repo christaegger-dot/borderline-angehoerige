@@ -16,6 +16,33 @@ const infografiken = [
   // KATEGORIE: VERSTEHEN
   // ─────────────────────────────────────────────────────────────────────────
   {
+    id: "leuchtturm-metapher",
+    title: "Der Leuchtturm: Ihre Rolle als Angehörige/r",
+    description: "Die Leuchtturm-Metapher erklärt Ihre Rolle: stabil bleiben, Orientierung geben, ohne Ihre Position zu verlassen.",
+    category: "verstehen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dZvPdFGXTuwBuhTW.png",
+    isNew: true
+  },
+  {
+    id: "eisberg-wut-trauer",
+    title: "Der Eisberg: Wut = Trauer",
+    description: "Was Sie sehen (Wut, Vorwürfe) ist nur die Spitze – darunter liegen Trauer, Scham und existenzielle Verlassensangst.",
+    category: "verstehen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TUTOoesvzWPNeIca.png",
+    isNew: true
+  },
+  {
+    id: "spaltung-verstehen",
+    title: "Die Spaltung verstehen",
+    description: "Warum ‚Ich liebe dich' und ‚Ich hasse dich' BEIDE ehrlich sind – das Pendel zwischen Idealisierung und Entwertung.",
+    category: "verstehen",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SZXYImDhcfQFLirX.png",
+    isNew: true
+  },
+  {
     id: "spaltungs-zyklus",
     title: "Der Spaltungs-Zyklus",
     description: "Das Schwarz-Weiss-Denken bei Borderline erklärt – Idealisierung, Enttäuschung, Abwertung, Versöhnung.",
@@ -71,6 +98,15 @@ const infografiken = [
   // KATEGORIE: KOMMUNIZIEREN
   // ─────────────────────────────────────────────────────────────────────────
   {
+    id: "umweg-krisenkommunikation",
+    title: "U.M.W.E.G.: Krisenkommunikation",
+    description: "Erst das Herz erreichen (Mitgefühl, Unterstützung), dann den Kopf (Wahrheit) – die neurologisch fundierte Reihenfolge.",
+    category: "kommunizieren",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/scePBqKtzmwPxnkx.png",
+    isNew: true
+  },
+  {
     id: "validierung-6-stufen",
     title: "Die 6 Stufen der Validierung",
     description: "Von aufmerksamem Zuhören bis radikaler Echtheit – das Stufenmodell nach Linehan.",
@@ -125,6 +161,15 @@ const infografiken = [
   // ─────────────────────────────────────────────────────────────────────────
   // KATEGORIE: SELBSTFÜRSORGE
   // ─────────────────────────────────────────────────────────────────────────
+  {
+    id: "5-leitlinien-alltag",
+    title: "Die 5 Leitlinien für den Alltag",
+    description: "Keine Hektik, Routinen beibehalten, Ruhe in Krisen, als Team arbeiten, Grenzen setzen – Stabilität durch Konsistenz.",
+    category: "selbstfuersorge",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vyggthdjKtssZyYi.png",
+    isNew: true
+  },
   {
     id: "selbstfuersorge-strategien",
     title: "Selbstfürsorge für Angehörige",

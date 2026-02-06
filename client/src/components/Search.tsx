@@ -209,6 +209,41 @@ const searchableContent = [
     href: "/materialien",
     section: "Materialien"
   },
+  {
+    title: "Der Leuchtturm: Ihre Rolle als Angehörige/r",
+    description: "Infografik: Stabil bleiben, Orientierung geben – die Leuchtturm-Metapher",
+    keywords: ["leuchtturm", "rolle", "stabil", "orientierung", "metapher", "infografik"],
+    href: "/materialien",
+    section: "Materialien"
+  },
+  {
+    title: "Der Eisberg: Wut = Trauer",
+    description: "Infografik: Was Sie sehen ist nur die Spitze – darunter liegt Trauer",
+    keywords: ["eisberg", "wut", "trauer", "gefühle", "verborgen", "infografik"],
+    href: "/materialien",
+    section: "Materialien"
+  },
+  {
+    title: "Die Spaltung verstehen",
+    description: "Infografik: Warum Liebe und Hass BEIDE ehrlich sind",
+    keywords: ["spaltung", "pendel", "idealisierung", "entwertung", "ehrlich", "infografik"],
+    href: "/materialien",
+    section: "Materialien"
+  },
+  {
+    title: "U.M.W.E.G.: Krisenkommunikation",
+    description: "Infografik: Erst Herz (M-U), dann Kopf (W) – neurologisch fundiert",
+    keywords: ["umweg", "krise", "kommunikation", "mitgefühl", "unterstützung", "wahrheit", "infografik"],
+    href: "/materialien",
+    section: "Materialien"
+  },
+  {
+    title: "Die 5 Leitlinien für den Alltag",
+    description: "Infografik: Keine Hektik, Routinen, Ruhe, Team, Grenzen",
+    keywords: ["leitlinien", "alltag", "hektik", "routinen", "ruhe", "team", "grenzen", "infografik"],
+    href: "/materialien",
+    section: "Materialien"
+  },
   
   // Selbsttest
   {

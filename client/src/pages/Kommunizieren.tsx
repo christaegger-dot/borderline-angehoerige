@@ -250,6 +250,14 @@ export default function Kommunizieren() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
+                    title: "U.M.W.E.G.: Krisenkommunikation",
+                    description: "Erst Herz (M-U), dann Kopf (W) – neurologisch fundiert",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/scePBqKtzmwPxnkx.png",
+                    isNew: true
+                  },
+                  {
                     title: "Die 6 Stufen der Validierung",
                     description: "Von aufmerksamem Zuhören bis radikaler Echtheit",
                     type: "PNG",

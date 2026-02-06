@@ -279,7 +279,7 @@ const infografiken: Array<{
   },
   {
     id: "k4-5-warum-grenzen-helfen",
-    title: "Warum Grenzen auch dem Borderliner helfen",
+    title: "Warum Grenzen auch der betroffenen Person helfen",
     description: "5-Säulen-Modell: Identität, Struktur, Sicherheit, Intimität, Vorbild – Grenzen sind kein Liebesentzug.",
     category: "grenzen",
     type: "Infografik",

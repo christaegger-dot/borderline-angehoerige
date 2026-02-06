@@ -98,12 +98,30 @@ const infografiken = [
   // KATEGORIE: KOMMUNIZIEREN
   // ─────────────────────────────────────────────────────────────────────────
   {
-    id: "umweg-krisenkommunikation",
-    title: "U.M.W.E.G.: Krisenkommunikation",
-    description: "Erst das Herz erreichen (Mitgefühl, Unterstützung), dann den Kopf (Wahrheit) – die neurologisch fundierte Reihenfolge.",
+    id: "umweg-system",
+    title: "U.M.W.E.G.© – Das Gesamtsystem",
+    description: "Zweistufige Krisenkommunikation: Meta-Ebene (Empathie + Geduld) und Akut-Ebene (Mitgefühl → Unterstützung → Wahrheit).",
     category: "kommunizieren",
     type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/scePBqKtzmwPxnkx.png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YQNPBzrLjvCXccpR.png",
+    isNew: true
+  },
+  {
+    id: "umweg-formel",
+    title: "Die U.M.W.-Formel: So sprechen Sie in der Krise",
+    description: "Schritt-für-Schritt mit Gehirn-Mapping: Erst Gefühl (Amygdala), dann Erinnerung (Hippocampus), dann Vernunft (Präfrontaler Cortex).",
+    category: "kommunizieren",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yaqKsPLHawpXuAcX.png",
+    isNew: true
+  },
+  {
+    id: "umweg-praxis",
+    title: "U.M.W.E.G.© in der Praxis + Exit-Strategie",
+    description: "Beispiel-Dialog mit der vollständigen Formel und L.M.K. (Lebe mit Konsequenzen) wenn nichts mehr geht.",
+    category: "kommunizieren",
+    type: "png",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oLaLYuNVMpqhktjf.png",
     isNew: true
   },
   {

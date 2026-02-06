@@ -231,9 +231,23 @@ const searchableContent = [
     section: "Materialien"
   },
   {
-    title: "U.M.W.E.G.: Krisenkommunikation",
-    description: "Infografik: Erst Herz (M-U), dann Kopf (W) – neurologisch fundiert",
-    keywords: ["umweg", "krise", "kommunikation", "mitgefühl", "unterstützung", "wahrheit", "infografik"],
+    title: "U.M.W.E.G.© – Das Gesamtsystem",
+    description: "Infografik: Meta-Ebene (E.G.) + Akut-Ebene (U.M.W.) – das vollständige System",
+    keywords: ["umweg", "krise", "kommunikation", "empathie", "geduld", "system", "infografik"],
+    href: "/materialien",
+    section: "Materialien"
+  },
+  {
+    title: "Die U.M.W.-Formel: So sprechen Sie in der Krise",
+    description: "Infografik: Schritt-für-Schritt mit Gehirn-Mapping (Amygdala, Hippocampus, Präfrontaler Cortex)",
+    keywords: ["umweg", "formel", "amygdala", "hippocampus", "cortex", "gehirn", "infografik"],
+    href: "/materialien",
+    section: "Materialien"
+  },
+  {
+    title: "U.M.W.E.G.© Praxis + Exit-Strategie",
+    description: "Infografik: Beispiel-Dialog und L.M.K. (Lebe mit Konsequenzen) wenn nichts mehr geht",
+    keywords: ["umweg", "praxis", "exit", "lmk", "konsequenzen", "dialog", "infografik"],
     href: "/materialien",
     section: "Materialien"
   },

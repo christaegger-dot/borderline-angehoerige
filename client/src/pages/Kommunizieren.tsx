@@ -250,11 +250,27 @@ export default function Kommunizieren() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: "U.M.W.E.G.: Krisenkommunikation",
-                    description: "Erst Herz (M-U), dann Kopf (W) – neurologisch fundiert",
+                    title: "U.M.W.E.G.© – Das Gesamtsystem",
+                    description: "Meta-Ebene (E.G.) + Akut-Ebene (U.M.W.) – das vollständige System",
                     type: "PNG",
                     rating: "NEU",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/scePBqKtzmwPxnkx.png",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YQNPBzrLjvCXccpR.png",
+                    isNew: true
+                  },
+                  {
+                    title: "Die U.M.W.-Formel",
+                    description: "Schritt-für-Schritt mit Gehirn-Mapping: Amygdala → Hippocampus → Cortex",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yaqKsPLHawpXuAcX.png",
+                    isNew: true
+                  },
+                  {
+                    title: "U.M.W.E.G.© Praxis + Exit",
+                    description: "Beispiel-Dialog und L.M.K. (Lebe mit Konsequenzen) wenn nichts mehr geht",
+                    type: "PNG",
+                    rating: "NEU",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oLaLYuNVMpqhktjf.png",
                     isNew: true
                   },
                   {

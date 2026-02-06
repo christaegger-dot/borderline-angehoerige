@@ -401,26 +401,66 @@ export default function UnterstuetzenUebersicht() {
                 Materialien zum Thema
               </h2>
               
-              <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
-                      <RefreshCw className="w-5 h-5 text-[oklch(0.50_0.12_85)]" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  {
+                    title: "Im Krisenmodus – Orientierung geben",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xtLfLjrMcXYGTwxM.png"
+                  },
+                  {
+                    title: "Ihre Rolle klären",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vaCFqwCuuKxsdrNX.png"
+                  },
+                  {
+                    title: "Drei Säulen hilfreicher Unterstützung",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YHowYJcztGiSoHgG.png"
+                  },
+                  {
+                    title: "Konsistenz-Prinzip",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xTKHgAUyCVKxSkUf.png"
+                  },
+                  {
+                    title: "6 Leitlinien für Angehörige",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XnTABWiNreMbJdDF.png"
+                  },
+                  {
+                    title: "Beziehungs-Achtsamkeit",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LpcrkEadNAXxIvPd.png"
+                  },
+                  {
+                    title: "4 Alltags-Tipps",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/uOrYGTcGgbyHKrGp.png"
+                  }
+                ].map((item, index) => (
+                  <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow">
+                    <div className="aspect-[4/3] bg-muted overflow-hidden">
+                      <img 
+                        src={item.url} 
+                        alt={item.title}
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
                     </div>
-                    <div>
-                      <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Neue Infografiken zum Thema "Unterstützen" werden gerade erstellt.
-                      </p>
-                      <Link href="/materialien">
-                        <Button variant="outline" size="sm">
-                          Zur Materialien-Seite
+                    <CardContent className="p-4">
+                      <h4 className="font-medium text-sm text-foreground mb-2">{item.title}</h4>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" download>
+                        <Button size="sm" variant="outline" className="w-full">
+                          <Download className="w-4 h-4 mr-2" />
+                          Download
                         </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                      </a>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              <div className="mt-4 text-center">
+                <Link href="/materialien">
+                  <Button variant="outline" size="sm">
+                    Alle Materialien anzeigen
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Wichtiger Hinweis */}

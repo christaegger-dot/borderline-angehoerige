@@ -147,6 +147,72 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PuRcoSiRiDEyUyfJ.png",
     isNew: true
   },
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KATEGORIE 3: UNTERSTÜTZEN
+  // ═══════════════════════════════════════════════════════════════════════════
+  {
+    id: "k3-1-krisenmodus",
+    title: "Im Krisenmodus – Orientierung geben",
+    description: "Zustandsdiagramm: Wie ein verlorenes Kind braucht Ihr Gegenüber in der Krise Ruhe und Orientierung – nicht Argumente.",
+    category: "unterstuetzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xtLfLjrMcXYGTwxM.png",
+    isNew: true
+  },
+  {
+    id: "k3-2-rolle-klaeren",
+    title: "Ihre Rolle klären – Was Sie sein können (und was nicht)",
+    description: "2-Spalten-Vergleich: Sie sind Angehörige/r – nicht Therapeut/in. Diese Klarheit entlastet beide Seiten.",
+    category: "unterstuetzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vaCFqwCuuKxsdrNX.png",
+    isNew: true
+  },
+  {
+    id: "k3-3-drei-saeulen",
+    title: "Drei Säulen hilfreicher Unterstützung",
+    description: "3-Kacheln: Präsenz zeigen, Gefühle validieren, Stabilität bieten – das Fundament guter Begleitung.",
+    category: "unterstuetzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YHowYJcztGiSoHgG.png",
+    isNew: true
+  },
+  {
+    id: "k3-4-konsistenz",
+    title: "Konsistenz-Prinzip – als Team wird es leichter",
+    description: "Kausal-Loop: Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener.",
+    category: "unterstuetzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xTKHgAUyCVKxSkUf.png",
+    isNew: true
+  },
+  {
+    id: "k3-5-leitlinien",
+    title: "6 Leitlinien für Angehörige – So können Sie unterstützen",
+    description: "Evidenzbasierte Empfehlungen nach Gunderson: 6 konkrete Leitlinien zum Abhaken und Umsetzen.",
+    category: "unterstuetzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XnTABWiNreMbJdDF.png",
+    isNew: true
+  },
+  {
+    id: "k3-6-achtsamkeit",
+    title: "Beziehungs-Achtsamkeit – 4 Schritte im Alltag",
+    description: "Timeline: Innehalten → Wahrnehmen → Nicht bewerten → Bewusst handeln – weniger Autopilot, mehr Klarheit.",
+    category: "unterstuetzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LpcrkEadNAXxIvPd.png",
+    isNew: true
+  },
+  {
+    id: "k3-7-alltags-tipps",
+    title: "Was Sie konkret tun können – 4 Alltags-Tipps",
+    description: "4-Kacheln-Checkliste: Übungspartner sein, Fortschritte anerkennen, Vorhersehbar sein, Gemeinsam Probleme lösen.",
+    category: "unterstuetzen",
+    type: "Infografik PNG",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/uOrYGTcGgbyHKrGp.png",
+    isNew: true
+  },
 ];
 
 const categories = [

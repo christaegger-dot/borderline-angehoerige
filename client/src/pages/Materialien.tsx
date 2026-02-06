@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, FileText, Filter, BookOpen, Heart, MessageCircle, Shield, ExternalLink, AlertTriangle, Image as ImageIcon } from "lucide-react";
+import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, ExternalLink, AlertTriangle, Image as ImageIcon } from "lucide-react";
 import { useState } from "react";
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -64,15 +64,7 @@ const infografiken = [
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izUnFdVOmLVUwSFD.png",
     isNew: true
   },
-  {
-    id: "eiertanz-pdf",
-    title: "Der Eiertanz (Handout)",
-    description: "Ausführliches PDF-Handout zum Eiertanz-Phänomen mit Lösungsansätzen.",
-    category: "unterstuetzen",
-    type: "pdf",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EtZamHaKralgSpPi.pdf",
-    isNew: false
-  },
+
   {
     id: "3-saeulen",
     title: "Die 3 Säulen der Unterstützung",
@@ -116,15 +108,7 @@ const infografiken = [
   // ─────────────────────────────────────────────────────────────────────────
   // KATEGORIE: GRENZEN
   // ─────────────────────────────────────────────────────────────────────────
-  {
-    id: "grenzsetzung-orientierung",
-    title: "Grenzen als Geländer",
-    description: "Warum Grenzen für Menschen mit BPD hilfreich sind – Struktur, Sicherheit, Fürsorge.",
-    category: "grenzen",
-    type: "png",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XHSLURAgeFTGugYr.png",
-    isNew: true
-  },
+
   {
     id: "vier-arten-grenzen",
     title: "Vier Arten von Grenzen",
@@ -152,15 +136,7 @@ const infografiken = [
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yUNPfTDyQWmciNRz.png",
     isNew: true
   },
-  {
-    id: "grenzsetzung-pdf",
-    title: "Grenzsetzung als Orientierung (Handout)",
-    description: "Ausführliches PDF-Handout zur Grenzsetzung mit praktischen Beispielen.",
-    category: "grenzen",
-    type: "pdf",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WnqfDwuBRErJrLPY.pdf",
-    isNew: false
-  },
+
 
   // ─────────────────────────────────────────────────────────────────────────
   // KATEGORIE: SELBSTFÜRSORGE
@@ -183,15 +159,7 @@ const infografiken = [
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/doxRJKzyLuIwYzXV.png",
     isNew: true
   },
-  {
-    id: "nebel-pdf",
-    title: "Der Nebel (FOG) – Handout",
-    description: "Ausführliches PDF-Handout zu Fear, Obligation, Guilt und Auswegen.",
-    category: "selbstfuersorge",
-    type: "pdf",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NKouihgSdwkyJtNV.pdf",
-    isNew: false
-  },
+
 ];
 
 const categories = [
@@ -212,8 +180,7 @@ export default function Materialien() {
     : infografiken.filter(i => i.category === activeCategory);
 
   // Zähler für Statistik
-  const pngCount = infografiken.filter(i => i.type === "png").length;
-  const pdfCount = infografiken.filter(i => i.type === "pdf").length;
+  const pngCount = infografiken.length;
 
   return (
     <Layout>
@@ -245,10 +212,6 @@ export default function Materialien() {
               <span className="flex items-center gap-1">
                 <ImageIcon className="w-4 h-4" />
                 {pngCount} Infografiken
-              </span>
-              <span className="flex items-center gap-1">
-                <FileText className="w-4 h-4" />
-                {pdfCount} PDF-Handouts
               </span>
             </div>
             
@@ -308,37 +271,27 @@ export default function Materialien() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
                 <Card className="h-full hover:shadow-lg transition-all hover:border-[oklch(0.55_0.10_145)]/30 overflow-hidden">
-                  {/* Vorschaubild für PNG-Dateien */}
-                  {item.type === "png" ? (
-                    <div 
-                      className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
-                      onClick={() => setPreviewImage(item.url)}
-                    >
-                      <img 
-                        src={item.url} 
-                        alt={item.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                        <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
-                      </div>
-                      {/* Badge */}
-                      {item.isNew && (
-                        <span className="absolute top-2 right-2 text-xs px-2 py-1 rounded-full bg-[oklch(0.75_0.15_55)] text-white font-medium">
-                          NEU
-                        </span>
-                      )}
+                  {/* Vorschaubild */}
+                  <div 
+                    className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
+                    onClick={() => setPreviewImage(item.url)}
+                  >
+                    <img 
+                      src={item.url} 
+                      alt={item.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                      <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
                     </div>
-                  ) : (
-                    /* PDF-Platzhalter */
-                    <div className="relative aspect-[4/3] bg-gradient-to-br from-[oklch(0.95_0.02_25)] to-[oklch(0.90_0.04_25)] flex items-center justify-center">
-                      <div className="text-center">
-                        <FileText className="w-16 h-16 text-[oklch(0.55_0.15_25)] mx-auto mb-2" />
-                        <span className="text-sm font-medium text-[oklch(0.45_0.10_25)]">PDF-Dokument</span>
-                      </div>
-                    </div>
-                  )}
+                    {/* Badge */}
+                    {item.isNew && (
+                      <span className="absolute top-2 right-2 text-xs px-2 py-1 rounded-full bg-[oklch(0.75_0.15_55)] text-white font-medium">
+                        NEU
+                      </span>
+                    )}
+                  </div>
                   
                   <CardContent className="p-5">
                     <h3 className="font-display font-semibold text-foreground mb-2">

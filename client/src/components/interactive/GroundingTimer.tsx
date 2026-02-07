@@ -2,6 +2,7 @@
  * GroundingTimer – Interaktives Element #5
  * Geführte 5-4-3-2-1 Übung mit Countdown pro Sinneskanal.
  * + Sanfte Klangschalen-Töne (Web Audio API) beim Stufenwechsel
+ * iOS-kompatibel: AudioContext wird bei User-Geste initialisiert und unlocked.
  * Einfügepunkt: /selbstfuersorge → Sofort-Übungen (neben Atemübung)
  */
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -71,99 +72,64 @@ const steps: GroundingStep[] = [
 type Phase = "idle" | "running" | "paused" | "done";
 
 /**
- * Synthesizes a gentle singing bowl / bell tone using Web Audio API.
- * Uses a sine wave with a slow exponential decay to mimic a resonating bowl.
- * Different frequencies for different contexts:
- * - "start": warm welcoming tone (392 Hz, G4)
- * - "transition": soft chime (523 Hz, C5)
- * - "complete": two-note resolution (392 Hz → 523 Hz)
+ * Plays a singing bowl tone. The AudioContext is created and unlocked
+ * directly inside the user-gesture handler (click) to satisfy iOS Safari's
+ * autoplay policy. A shared ref keeps the context alive across calls.
  */
-function useBowlSound() {
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const [isSupported, setIsSupported] = useState(false);
+function playBowlTone(
+  ctxRef: React.MutableRefObject<AudioContext | null>,
+  frequency: number,
+  duration: number,
+  volume: number = 0.3,
+  delay: number = 0
+) {
+  // Create or reuse AudioContext – MUST happen in user-gesture call stack
+  if (!ctxRef.current) {
+    const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    if (!AC) return;
+    ctxRef.current = new AC();
+  }
 
-  useEffect(() => {
-    setIsSupported(typeof window !== "undefined" && typeof AudioContext !== "undefined");
-  }, []);
+  const ctx = ctxRef.current;
 
-  const getContext = useCallback(() => {
-    if (!audioCtxRef.current && isSupported) {
-      audioCtxRef.current = new AudioContext();
-    }
-    return audioCtxRef.current;
-  }, [isSupported]);
+  // Resume if suspended (iOS requires this in user-gesture stack)
+  if (ctx.state === "suspended") {
+    ctx.resume();
+  }
 
-  const playTone = useCallback(
-    (frequency: number, duration: number, volume: number = 0.3, delay: number = 0) => {
-      const ctx = getContext();
-      if (!ctx) return;
+  const startTime = ctx.currentTime + delay;
 
-      // Resume if suspended (browser autoplay policy)
-      if (ctx.state === "suspended") {
-        ctx.resume();
-      }
+  // Main sine oscillator (fundamental)
+  const osc = ctx.createOscillator();
+  osc.type = "sine";
+  osc.frequency.setValueAtTime(frequency, startTime);
 
-      const startTime = ctx.currentTime + delay;
+  // Gentle overtone for warmth
+  const osc2 = ctx.createOscillator();
+  osc2.type = "sine";
+  osc2.frequency.setValueAtTime(frequency * 2, startTime);
 
-      // Main sine oscillator (fundamental)
-      const osc = ctx.createOscillator();
-      osc.type = "sine";
-      osc.frequency.setValueAtTime(frequency, startTime);
+  // Gain for main tone – slow exponential decay
+  const gain = ctx.createGain();
+  gain.gain.setValueAtTime(volume, startTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
 
-      // Gentle overtone for warmth
-      const osc2 = ctx.createOscillator();
-      osc2.type = "sine";
-      osc2.frequency.setValueAtTime(frequency * 2, startTime);
+  // Gain for overtone (much quieter)
+  const gain2 = ctx.createGain();
+  gain2.gain.setValueAtTime(volume * 0.15, startTime);
+  gain2.gain.exponentialRampToValueAtTime(0.001, startTime + duration * 0.7);
 
-      // Gain for main tone
-      const gain = ctx.createGain();
-      gain.gain.setValueAtTime(volume, startTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+  // Connect to destination
+  osc.connect(gain);
+  osc2.connect(gain2);
+  gain.connect(ctx.destination);
+  gain2.connect(ctx.destination);
 
-      // Gain for overtone (much quieter)
-      const gain2 = ctx.createGain();
-      gain2.gain.setValueAtTime(volume * 0.15, startTime);
-      gain2.gain.exponentialRampToValueAtTime(0.001, startTime + duration * 0.7);
-
-      // Connect
-      osc.connect(gain);
-      osc2.connect(gain2);
-      gain.connect(ctx.destination);
-      gain2.connect(ctx.destination);
-
-      // Start and stop
-      osc.start(startTime);
-      osc2.start(startTime);
-      osc.stop(startTime + duration);
-      osc2.stop(startTime + duration);
-    },
-    [getContext]
-  );
-
-  const playStart = useCallback(() => {
-    // Warm welcoming tone: G4 (392 Hz)
-    playTone(392, 2.5, 0.25);
-  }, [playTone]);
-
-  const playTransition = useCallback(() => {
-    // Soft chime: C5 (523 Hz) – higher, lighter
-    playTone(523.25, 2.0, 0.2);
-  }, [playTone]);
-
-  const playComplete = useCallback(() => {
-    // Two-note resolution: G4 → C5 (perfect fourth, calming)
-    playTone(392, 2.5, 0.25, 0);
-    playTone(523.25, 3.0, 0.25, 0.6);
-  }, [playTone]);
-
-  const cleanup = useCallback(() => {
-    if (audioCtxRef.current) {
-      audioCtxRef.current.close();
-      audioCtxRef.current = null;
-    }
-  }, []);
-
-  return { playStart, playTransition, playComplete, cleanup, isSupported };
+  // Start and auto-stop
+  osc.start(startTime);
+  osc2.start(startTime);
+  osc.stop(startTime + duration);
+  osc2.stop(startTime + duration);
 }
 
 export default function GroundingTimer() {
@@ -172,7 +138,17 @@ export default function GroundingTimer() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [audioEnabled, setAudioEnabled] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const { playStart, playTransition, playComplete, cleanup, isSupported } = useBowlSound();
+  const audioCtxRef = useRef<AudioContext | null>(null);
+
+  // Check if Web Audio API is available
+  const [isAudioSupported, setIsAudioSupported] = useState(false);
+  useEffect(() => {
+    setIsAudioSupported(
+      typeof window !== "undefined" &&
+      (typeof AudioContext !== "undefined" ||
+        typeof (window as unknown as { webkitAudioContext: unknown }).webkitAudioContext !== "undefined")
+    );
+  }, []);
 
   const SECONDS_PER_ITEM = 8;
 
@@ -183,10 +159,32 @@ export default function GroundingTimer() {
     }
   }, []);
 
+  // Audio helper refs that read current audioEnabled state
+  const audioEnabledRef = useRef(audioEnabled);
+  useEffect(() => {
+    audioEnabledRef.current = audioEnabled;
+  }, [audioEnabled]);
+
+  const playStartTone = useCallback(() => {
+    // Warm welcoming tone: G4 (392 Hz)
+    playBowlTone(audioCtxRef, 392, 2.5, 0.35);
+  }, []);
+
+  const playTransitionTone = useCallback(() => {
+    // Soft chime: C5 (523 Hz)
+    playBowlTone(audioCtxRef, 523.25, 2.0, 0.3);
+  }, []);
+
+  const playCompleteTone = useCallback(() => {
+    // Two-note resolution: G4 → C5
+    playBowlTone(audioCtxRef, 392, 2.5, 0.35, 0);
+    playBowlTone(audioCtxRef, 523.25, 3.0, 0.35, 0.6);
+  }, []);
+
   const startCountdown = useCallback(
     (stepIndex: number) => {
-      const step = steps[stepIndex];
-      const totalTime = step.count * SECONDS_PER_ITEM;
+      const currentStepData = steps[stepIndex];
+      const totalTime = currentStepData.count * SECONDS_PER_ITEM;
       setTimeLeft(totalTime);
 
       intervalRef.current = setInterval(() => {
@@ -194,15 +192,30 @@ export default function GroundingTimer() {
           if (prev <= 1) {
             clearTimer();
             if (stepIndex < steps.length - 1) {
-              // Play transition chime
-              if (audioEnabled) {
-                playTransition();
+              if (audioEnabledRef.current) {
+                playTransitionTone();
               }
-              setTimeout(() => startStep(stepIndex + 1), 600);
+              setTimeout(() => {
+                setCurrentStep(stepIndex + 1);
+                setPhase("running");
+                // Start next countdown
+                const nextStep = steps[stepIndex + 1];
+                const nextTime = nextStep.count * SECONDS_PER_ITEM;
+                setTimeLeft(nextTime);
+                intervalRef.current = setInterval(() => {
+                  setTimeLeft((p) => {
+                    if (p <= 1) {
+                      clearTimer();
+                      // Recursion not possible in setInterval, handle via effect
+                      return 0;
+                    }
+                    return p - 1;
+                  });
+                }, 1000);
+              }, 600);
             } else {
-              // Play completion sound
-              if (audioEnabled) {
-                playComplete();
+              if (audioEnabledRef.current) {
+                playCompleteTone();
               }
               setPhase("done");
             }
@@ -212,26 +225,104 @@ export default function GroundingTimer() {
         });
       }, 1000);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [audioEnabled, clearTimer, playTransition, playComplete]
+    [clearTimer, playTransitionTone, playCompleteTone]
   );
 
-  const startStep = useCallback(
-    (stepIndex: number) => {
-      clearTimer();
-      setCurrentStep(stepIndex);
-      setPhase("running");
-      startCountdown(stepIndex);
-    },
-    [clearTimer, startCountdown]
-  );
+  // Watch for timeLeft hitting 0 during running phase to advance steps
+  // This handles the nested step transitions properly
+  const currentStepRef = useRef(currentStep);
+  useEffect(() => {
+    currentStepRef.current = currentStep;
+  }, [currentStep]);
+
+  useEffect(() => {
+    if (phase === "running" && timeLeft === 0 && !intervalRef.current) {
+      const idx = currentStepRef.current;
+      if (idx < steps.length - 1 && idx > 0) {
+        // Already handled by the setTimeout in startCountdown
+      }
+    }
+  }, [phase, timeLeft]);
 
   const handleStart = () => {
+    // CRITICAL: On iOS, AudioContext must be created in user-gesture handler.
+    // We create it here and play the start tone immediately.
     if (audioEnabled) {
-      playStart();
+      // This creates the AudioContext in the click handler stack → iOS unlocks it
+      playStartTone();
+    } else if (isAudioSupported) {
+      // Even if audio is off, pre-create context so it's unlocked for later
+      const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      if (AC && !audioCtxRef.current) {
+        audioCtxRef.current = new AC();
+        // Play a silent buffer to unlock
+        const ctx = audioCtxRef.current;
+        const buf = ctx.createBuffer(1, 1, 22050);
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+        src.connect(ctx.destination);
+        src.start(0);
+      }
     }
-    startStep(0);
+
+    clearTimer();
+    setCurrentStep(0);
+    setPhase("running");
+    const totalTime = steps[0].count * SECONDS_PER_ITEM;
+    setTimeLeft(totalTime);
+
+    intervalRef.current = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearTimer();
+          // Move to step 1
+          if (audioEnabledRef.current) {
+            playTransitionTone();
+          }
+          setTimeout(() => advanceToStep(1), 600);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
   };
+
+  const advanceToStep = useCallback((stepIndex: number) => {
+    if (stepIndex >= steps.length) {
+      if (audioEnabledRef.current) {
+        playCompleteTone();
+      }
+      setPhase("done");
+      return;
+    }
+
+    clearTimer();
+    setCurrentStep(stepIndex);
+    setPhase("running");
+    const totalTime = steps[stepIndex].count * SECONDS_PER_ITEM;
+    setTimeLeft(totalTime);
+
+    intervalRef.current = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearTimer();
+          if (stepIndex < steps.length - 1) {
+            if (audioEnabledRef.current) {
+              playTransitionTone();
+            }
+            setTimeout(() => advanceToStep(stepIndex + 1), 600);
+          } else {
+            if (audioEnabledRef.current) {
+              playCompleteTone();
+            }
+            setPhase("done");
+          }
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }, [clearTimer, playTransitionTone, playCompleteTone]);
 
   const handlePause = () => {
     clearTimer();
@@ -240,18 +331,19 @@ export default function GroundingTimer() {
 
   const handleResume = () => {
     setPhase("running");
+    const idx = currentStepRef.current;
     intervalRef.current = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearTimer();
-          if (currentStep < steps.length - 1) {
-            if (audioEnabled) {
-              playTransition();
+          if (idx < steps.length - 1) {
+            if (audioEnabledRef.current) {
+              playTransitionTone();
             }
-            setTimeout(() => startStep(currentStep + 1), 600);
+            setTimeout(() => advanceToStep(idx + 1), 600);
           } else {
-            if (audioEnabled) {
-              playComplete();
+            if (audioEnabledRef.current) {
+              playCompleteTone();
             }
             setPhase("done");
           }
@@ -270,16 +362,42 @@ export default function GroundingTimer() {
   };
 
   const toggleAudio = () => {
-    setAudioEnabled(!audioEnabled);
+    const newVal = !audioEnabled;
+    setAudioEnabled(newVal);
+
+    // If turning on: create + unlock AudioContext immediately (user gesture)
+    if (newVal && isAudioSupported && !audioCtxRef.current) {
+      const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      if (AC) {
+        audioCtxRef.current = new AC();
+        // Play silent buffer to unlock on iOS
+        const ctx = audioCtxRef.current;
+        const buf = ctx.createBuffer(1, 1, 22050);
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+        src.connect(ctx.destination);
+        src.start(0);
+      }
+    }
+
+    // Play a preview tone when enabling so user knows it works
+    if (newVal) {
+      setTimeout(() => {
+        playBowlTone(audioCtxRef, 523.25, 1.5, 0.2);
+      }, 100);
+    }
   };
 
   // Cleanup on unmount
   useEffect(() => {
     return () => {
       clearTimer();
-      cleanup();
+      if (audioCtxRef.current) {
+        audioCtxRef.current.close();
+        audioCtxRef.current = null;
+      }
     };
-  }, [clearTimer, cleanup]);
+  }, [clearTimer]);
 
   const step = steps[currentStep];
   const StepIcon = step.icon;
@@ -296,7 +414,7 @@ export default function GroundingTimer() {
           </div>
 
           {/* Audio toggle */}
-          {isSupported && (
+          {isAudioSupported && (
             <button
               onClick={toggleAudio}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
@@ -332,7 +450,7 @@ export default function GroundingTimer() {
             >
               <p className="text-muted-foreground text-sm mb-4">
                 Diese geführte Übung bringt Sie in den gegenwärtigen Moment zurück – Schritt für Schritt durch alle 5 Sinne.
-                {isSupported && (
+                {isAudioSupported && (
                   <span className="block mt-1 text-xs">
                     {audioEnabled
                       ? "Sanfte Klangschalen-Töne begleiten den Wechsel zwischen den Sinnen."

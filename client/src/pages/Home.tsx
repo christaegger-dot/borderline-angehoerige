@@ -22,6 +22,7 @@ import {
   Download,
   FileText
 } from "lucide-react";
+import AnimatedStat from "@/components/AnimatedStat";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZeIhbfgnqoOROQeY.png";
 
@@ -416,35 +417,28 @@ export default function Home() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-center p-6 bg-[oklch(0.95_0.03_145)] rounded-xl"
-              >
-                <div className="text-4xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">85–93%</div>
-                <p className="text-sm text-muted-foreground">erreichen symptomatische Remission</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-center p-6 bg-[oklch(0.95_0.03_145)] rounded-xl"
-              >
-                <div className="text-4xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">50%</div>
-                <p className="text-sm text-muted-foreground">erreichen vollständige Genesung</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="text-center p-6 bg-[oklch(0.95_0.03_145)] rounded-xl"
-              >
-                <div className="text-4xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">10 J.</div>
-                <p className="text-sm text-muted-foreground">Follow-up der Langzeitstudien</p>
-              </motion.div>
+              <AnimatedStat
+                end={93}
+                prefix="85–"
+                suffix="%"
+                label="erreichen symptomatische Remission"
+                duration={2200}
+                delay={0}
+              />
+              <AnimatedStat
+                end={50}
+                suffix="%"
+                label="erreichen vollständige Genesung"
+                duration={1800}
+                delay={0.1}
+              />
+              <AnimatedStat
+                end={10}
+                suffix=" J."
+                label="Follow-up der Langzeitstudien"
+                duration={1500}
+                delay={0.2}
+              />
             </div>
 
             <div className="text-center">
@@ -505,7 +499,7 @@ export default function Home() {
       </section>
 
       {/* Erfahrungsberichte */}
-      <Erfahrungsberichte maxBerichte={3} />
+      <Erfahrungsberichte maxBerichte={4} variant="carousel" />
 
       {/* Emergency CTA */}
       <section className="py-12 md:py-16 bg-[oklch(0.55_0.20_25)]">

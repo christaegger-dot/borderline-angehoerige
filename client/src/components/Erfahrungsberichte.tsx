@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
-import { Quote, Heart, Users, User } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Quote, Heart, Users, User, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
 
 interface Erfahrungsbericht {
   text: string;
@@ -50,16 +51,136 @@ const iconMap = {
 interface ErfahrungsberichteProps {
   maxBerichte?: number;
   showTitle?: boolean;
-  variant?: "full" | "compact";
+  variant?: "full" | "compact" | "carousel";
 }
 
 export default function Erfahrungsberichte({ 
-  maxBerichte = 3, 
+  maxBerichte = 4, 
   showTitle = true,
-  variant = "full" 
+  variant = "carousel" 
 }: ErfahrungsberichteProps) {
   const displayBerichte = berichte.slice(0, maxBerichte);
-  
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const goTo = useCallback((index: number, dir: number) => {
+    setDirection(dir);
+    setCurrent(index);
+  }, []);
+
+  const next = useCallback(() => {
+    goTo((current + 1) % displayBerichte.length, 1);
+  }, [current, displayBerichte.length, goTo]);
+
+  const prev = useCallback(() => {
+    goTo((current - 1 + displayBerichte.length) % displayBerichte.length, -1);
+  }, [current, displayBerichte.length, goTo]);
+
+  // Auto-advance every 8 seconds
+  useEffect(() => {
+    if (isPaused || variant !== "carousel") return;
+    const timer = setInterval(next, 8000);
+    return () => clearInterval(timer);
+  }, [next, isPaused, variant]);
+
+  // Grid variant (original)
+  if (variant !== "carousel") {
+    return (
+      <section className="py-12 md:py-16">
+        <div className="container">
+          {showTitle && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                Stimmen von Angehörigen
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Sie sind nicht allein. Andere Angehörige teilen ihre Erfahrungen – 
+                die Herausforderungen, aber auch die Hoffnung.
+              </p>
+            </motion.div>
+          )}
+          
+          <div className={`grid gap-6 ${variant === "full" ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2"}`}>
+            {displayBerichte.map((bericht, index) => {
+              const Icon = iconMap[bericht.icon];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="h-full border-border/50 hover:border-[oklch(0.65_0.10_55)] transition-colors">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-[oklch(0.92_0.05_55)] flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">{bericht.autor}</p>
+                          <p className="text-sm text-muted-foreground">{bericht.beziehung}</p>
+                        </div>
+                      </div>
+                      
+                      <Quote className="w-8 h-8 text-[oklch(0.85_0.05_55)] mb-3" />
+                      
+                      <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+                        {bericht.text}
+                      </p>
+                      
+                      {bericht.highlight && (
+                        <div className="bg-[oklch(0.95_0.03_55)] rounded-lg p-3 border-l-2 border-[oklch(0.65_0.10_55)]">
+                          <p className="text-sm font-medium text-foreground italic">
+                            "{bericht.highlight}"
+                          </p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center text-sm text-muted-foreground mt-8"
+          >
+            * Alle Namen wurden zum Schutz der Privatsphäre geändert.
+          </motion.p>
+        </div>
+      </section>
+    );
+  }
+
+  // Carousel variant
+  const bericht = displayBerichte[current];
+  const Icon = iconMap[bericht.icon];
+
+  const slideVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -300 : 300,
+      opacity: 0,
+    }),
+  };
+
   return (
     <section className="py-12 md:py-16">
       <div className="container">
@@ -80,38 +201,61 @@ export default function Erfahrungsberichte({
           </motion.div>
         )}
         
-        <div className={`grid gap-6 ${variant === "full" ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2"}`}>
-          {displayBerichte.map((bericht, index) => {
-            const Icon = iconMap[bericht.icon];
-            return (
+        <div 
+          className="relative max-w-3xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Navigation arrows */}
+          <button
+            onClick={prev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+            aria-label="Vorheriger Bericht"
+          >
+            <ChevronLeft className="w-5 h-5 text-foreground" />
+          </button>
+          
+          <button
+            onClick={next}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+            aria-label="Nächster Bericht"
+          >
+            <ChevronRight className="w-5 h-5 text-foreground" />
+          </button>
+
+          {/* Card container with fixed height */}
+          <div className="overflow-hidden px-2">
+            <AnimatePresence mode="wait" custom={direction}>
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                key={current}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
               >
-                <Card className="h-full border-border/50 hover:border-[oklch(0.65_0.10_55)] transition-colors">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-[oklch(0.92_0.05_55)] flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
+                <Card className="border-border/50 shadow-lg">
+                  <CardContent className="p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-[oklch(0.92_0.05_55)] flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-[oklch(0.55_0.15_55)]" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground">{bericht.autor}</p>
+                        <p className="font-medium text-foreground text-lg">{bericht.autor}</p>
                         <p className="text-sm text-muted-foreground">{bericht.beziehung}</p>
                       </div>
                     </div>
                     
-                    <Quote className="w-8 h-8 text-[oklch(0.85_0.05_55)] mb-3" />
+                    <Quote className="w-10 h-10 text-[oklch(0.85_0.05_55)] mb-4" />
                     
-                    <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+                    <p className="text-muted-foreground leading-relaxed mb-6 text-base">
                       {bericht.text}
                     </p>
                     
                     {bericht.highlight && (
-                      <div className="bg-[oklch(0.95_0.03_55)] rounded-lg p-3 border-l-2 border-[oklch(0.65_0.10_55)]">
-                        <p className="text-sm font-medium text-foreground italic">
+                      <div className="bg-[oklch(0.95_0.03_55)] rounded-xl p-4 border-l-3 border-[oklch(0.65_0.10_55)]">
+                        <p className="text-base font-medium text-foreground italic">
                           "{bericht.highlight}"
                         </p>
                       </div>
@@ -119,15 +263,44 @@ export default function Erfahrungsberichte({
                   </CardContent>
                 </Card>
               </motion.div>
-            );
-          })}
+            </AnimatePresence>
+          </div>
+
+          {/* Dots indicator */}
+          <div className="flex items-center justify-center gap-2 mt-6">
+            {displayBerichte.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goTo(index, index > current ? 1 : -1)}
+                className={`transition-all duration-300 rounded-full ${
+                  index === current 
+                    ? "w-8 h-2.5 bg-[oklch(0.65_0.12_55)]" 
+                    : "w-2.5 h-2.5 bg-border hover:bg-muted-foreground/40"
+                }`}
+                aria-label={`Bericht ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Progress bar */}
+          {!isPaused && (
+            <div className="mt-3 max-w-xs mx-auto h-0.5 bg-border rounded-full overflow-hidden">
+              <motion.div
+                key={current}
+                className="h-full bg-[oklch(0.65_0.12_55)] rounded-full"
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 8, ease: "linear" }}
+              />
+            </div>
+          )}
         </div>
         
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm text-muted-foreground mt-8"
+          className="text-center text-sm text-muted-foreground mt-6"
         >
           * Alle Namen wurden zum Schutz der Privatsphäre geändert.
         </motion.p>

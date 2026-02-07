@@ -5,6 +5,7 @@ import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, I
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
+import ContentSection from "@/components/ContentSection";
 
 export default function Verstehen() {
   return (
@@ -47,7 +48,7 @@ export default function Verstehen() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-8"
             >
               <Card className="border-l-4 border-l-[oklch(0.65_0.08_145)] bg-[oklch(0.88_0.04_145)]/20">
                 <CardContent className="p-6">
@@ -60,18 +61,13 @@ export default function Verstehen() {
             </motion.div>
 
             {/* Was ist Borderline */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Was ist Borderline?"
+              icon={<Brain className="w-7 h-7 text-[oklch(0.65_0.08_145)]" />}
               id="was-ist-borderline"
+              defaultOpen={true}
+              preview="Die Borderline-Persönlichkeitsstörung (BPS) ist eine psychische Erkrankung, die durch intensive Emotionen, instabile Beziehungen und ein schwankendes Selbstbild gekennzeichnet ist."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Brain className="w-8 h-8 text-[oklch(0.65_0.08_145)]" />
-                Was ist Borderline?
-              </h2>
-              
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Die Borderline-Persönlichkeitsstörung (BPS) ist eine psychische Erkrankung, die durch intensive Emotionen, instabile Beziehungen und ein schwankendes Selbstbild gekennzeichnet ist. Menschen mit Borderline erleben Gefühle oft viel intensiver als andere – sowohl positive als auch negative.
@@ -81,21 +77,15 @@ export default function Verstehen() {
                   Stellen Sie sich vor, Sie hätten keine "Haut" für Ihre Emotionen. Jedes Gefühl trifft Sie mit voller Wucht, ohne Puffer. Das ist die Realität vieler Menschen mit Borderline.
                 </p>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Die 9 DSM-5 Kriterien */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Die 9 DSM-5 Kriterien"
+              icon={<AlertCircle className="w-7 h-7 text-[oklch(0.65_0.12_55)]" />}
               id="symptome"
+              preview="Für eine Diagnose müssen mindestens 5 von 9 Kriterien erfüllt sein."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <AlertCircle className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
-                Die 9 DSM-5 Kriterien
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Für eine Diagnose müssen mindestens <strong>5 von 9 Kriterien</strong> erfüllt sein. Hier sind alle Kriterien verständlich erklärt:
               </p>
@@ -179,21 +169,15 @@ export default function Verstehen() {
               <p className="text-xs text-muted-foreground mt-4">
                 Quelle: Diagnostic and Statistical Manual of Mental Disorders, 5th Edition (DSM-5), American Psychiatric Association
               </p>
-            </motion.div>
+            </ContentSection>
 
             {/* Ursachen: Bio-Psycho-Soziales Modell */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Ursachen: Das Bio-Psycho-Soziale Modell"
+              icon={<Layers className="w-7 h-7 text-[oklch(0.55_0.10_145)]" />}
               id="ursachen"
+              preview="Borderline entsteht nicht durch eine Ursache, sondern durch das Zusammenspiel biologischer, psychologischer und sozialer Faktoren."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Layers className="w-8 h-8 text-[oklch(0.55_0.10_145)]" />
-                Ursachen: Das Bio-Psycho-Soziale Modell
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Borderline entsteht nicht durch <em>eine</em> Ursache, sondern durch das Zusammenspiel mehrerer Faktoren. Niemand ist «schuld» – weder die Betroffenen noch die Angehörigen.
               </p>
@@ -256,21 +240,15 @@ export default function Verstehen() {
               <p className="text-xs text-muted-foreground mt-4">
                 Quelle: Linehan, M.M. (1993); Paris, J. (2019). Borderline Personality Disorder
               </p>
-            </motion.div>
+            </ContentSection>
 
             {/* Neurobiologie */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Das Gehirn bei Borderline"
+              icon={<Activity className="w-7 h-7 text-[oklch(0.50_0.12_320)]" />}
               id="neurobiologie"
+              preview="Neurowissenschaftliche Forschung zeigt: Bei Borderline funktionieren bestimmte Hirnregionen anders."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Activity className="w-8 h-8 text-[oklch(0.50_0.12_320)]" />
-                Das Gehirn bei Borderline
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Neurowissenschaftliche Forschung zeigt: Bei Borderline funktionieren bestimmte Hirnregionen anders. Das erklärt, warum Betroffene Emotionen so intensiv erleben.
               </p>
@@ -340,21 +318,15 @@ export default function Verstehen() {
               <p className="text-xs text-muted-foreground mt-4">
                 Quellen: Marcus Jähn, U.M.W.E.G.©-Methode; Schmahl & Bremner (2006); Ruocco et al. (2013)
               </p>
-            </motion.div>
+            </ContentSection>
 
             {/* Häufige Missverständnisse */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Häufige Missverständnisse"
+              icon={<XCircle className="w-7 h-7 text-[oklch(0.55_0.15_25)]" />}
               id="missverstaendnisse"
+              preview="Über Borderline kursieren viele Mythen. Hier ist, was nicht stimmt."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <XCircle className="w-8 h-8 text-[oklch(0.55_0.15_25)]" />
-                Häufige Missverständnisse
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Über Borderline kursieren viele Mythen. Hier ist, was <strong>nicht</strong> stimmt:
               </p>
@@ -405,21 +377,15 @@ export default function Verstehen() {
               <p className="text-xs text-muted-foreground mt-4">
                 Quellen: APA Practice Guideline (2024); Zanarini et al. (2012); Grant et al. (2008)
               </p>
-            </motion.div>
+            </ContentSection>
 
             {/* Kernsymptome */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Die Kernsymptome im Überblick"
+              icon={<AlertCircle className="w-7 h-7 text-[oklch(0.65_0.12_55)]" />}
               id="kernsymptome"
+              preview="Emotionale Instabilität, Verlassensangst, instabiles Selbstbild und weitere Kernsymptome verständlich erklärt."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <AlertCircle className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
-                Die Kernsymptome im Überblick
-              </h2>
-              
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   {
@@ -486,21 +452,15 @@ export default function Verstehen() {
                   );
                 })}
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Emotionale Demenz */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="«Emotionale Demenz» – Warum Argumente nicht helfen"
+              icon={<Clock className="w-7 h-7 text-[oklch(0.55_0.15_25)]" />}
               id="emotionale-demenz"
+              preview="In akuter emotionaler Überflutung existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Clock className="w-8 h-8 text-[oklch(0.55_0.15_25)]" />
-                «Emotionale Demenz» – Warum Argumente nicht helfen
-              </h2>
-              
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Wenn ein Mensch in akuter emotionaler Überflutung ist, funktioniert sein Gehirn anders. Marcus Jähn beschreibt dies als <strong>«emotionale Demenz»</strong>: In diesem Zustand existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt.
@@ -537,21 +497,15 @@ export default function Verstehen() {
                   Quelle: Marcus Jähn, U.M.W.E.G.©-Methode; Neurowissenschaftliche Grundlagen nach LeDoux (1996)
                 </p>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* 4-Phasen-Zyklus */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Der 4-Phasen-Zyklus"
+              icon={<RefreshCw className="w-7 h-7 text-[oklch(0.45_0.08_250)]" />}
               id="4-phasen-zyklus"
+              preview="Viele Angehörige berichten von einem wiederkehrenden Muster: Explosion, Schweigen, Freundlichkeit, Verschlechterung."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <RefreshCw className="w-8 h-8 text-[oklch(0.45_0.08_250)]" />
-                Der 4-Phasen-Zyklus
-              </h2>
-              
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Viele Angehörige berichten von einem wiederkehrenden Muster. Dieses Muster zu kennen, hilft Ihnen, nicht jede Phase persönlich zu nehmen – und sich auf die nächste vorzubereiten.
@@ -589,21 +543,15 @@ export default function Verstehen() {
                   Quelle: Mason & Kreger, «Schluss mit dem Eiertanz» (2010)
                 </p>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Warum ist das wichtig */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Warum ist dieses Wissen wichtig?"
+              icon={<Lightbulb className="w-7 h-7 text-[oklch(0.60_0.15_85)]" />}
               id="warum-wichtig"
+              preview="Wenn Sie verstehen, dass das Verhalten Ihres Angehörigen nicht gegen Sie gerichtet ist, können Sie anders reagieren."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Lightbulb className="w-8 h-8 text-[oklch(0.60_0.15_85)]" />
-                Warum ist dieses Wissen wichtig?
-              </h2>
-              
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Wenn Sie verstehen, dass das Verhalten Ihres Angehörigen nicht gegen Sie gerichtet ist, sondern Ausdruck einer Erkrankung, können Sie anders reagieren. Sie können:
@@ -626,7 +574,7 @@ export default function Verstehen() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Materialien zum Download – Kategorie 1: Verstehen */}
             <motion.div

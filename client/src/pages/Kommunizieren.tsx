@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
+import ContentSection from "@/components/ContentSection";
 
 export default function Kommunizieren() {
   return (
@@ -43,17 +44,13 @@ export default function Kommunizieren() {
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {/* Validierung */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Validierung: Die wichtigste Technik"
+              icon={<Heart className="w-7 h-7 text-[oklch(0.65_0.12_55)]" />}
+              id="validierung"
+              defaultOpen={true}
+              preview="Validierung bedeutet, die Gefühle und Erfahrungen eines Menschen anzuerkennen – ohne sie zu bewerten."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Heart className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
-                Validierung: Die wichtigste Technik
-              </h2>
-              
               <Card className="bg-[oklch(0.85_0.08_55)]/10 border-[oklch(0.65_0.12_55)] mb-6">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed text-lg">
@@ -106,19 +103,15 @@ export default function Kommunizieren() {
                   );
                 })}
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Zuhören ohne Zustimmen */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Zuhören ohne Zustimmen"
+              icon={<MessageSquare className="w-7 h-7 text-[oklch(0.55_0.10_145)]" />}
+              id="zuhoeren"
+              preview="Validierung bedeutet nicht, dass Sie allem zustimmen müssen."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Zuhören ohne Zustimmen
-              </h2>
-              
               <Card className="bg-[oklch(0.95_0.03_145)]/50 border-[oklch(0.55_0.10_145)]/30 mb-6">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed">
@@ -158,19 +151,15 @@ export default function Kommunizieren() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* SET-Kommunikation */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="SET-Kommunikation"
+              icon={<MessageCircle className="w-7 h-7 text-[oklch(0.45_0.05_250)]" />}
+              id="set-kommunikation"
+              preview="Support, Empathy, Truth – eine Kommunikationstechnik speziell für den Umgang mit Menschen mit Borderline."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                SET-Kommunikation
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 SET ist eine Kommunikationstechnik, die speziell für den Umgang mit Menschen mit Borderline entwickelt wurde. Sie besteht aus drei Elementen:
               </p>
@@ -220,19 +209,15 @@ export default function Kommunizieren() {
                   </Card>
                 ))}
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Fallbeispiel */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Beispiel: Validierung in der Praxis"
+              icon={<Lightbulb className="w-7 h-7 text-[oklch(0.60_0.15_85)]" />}
+              id="fallbeispiel"
+              preview="Lisa kommt aufgelöst nach Hause: «Meine Kollegin hasst mich!» – So reagieren Sie richtig."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Beispiel: Validierung in der Praxis
-              </h2>
-              
               <Card className="border-l-4 border-l-[oklch(0.55_0.12_55)] bg-[oklch(0.95_0.04_55)]/20">
                 <CardContent className="p-6">
                   <div className="mb-4">
@@ -264,20 +249,15 @@ export default function Kommunizieren() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Praktische Tipps */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Praktische Kommunikationstipps"
+              icon={<Lightbulb className="w-7 h-7 text-[oklch(0.60_0.15_85)]" />}
+              id="tipps"
+              preview="Hilfreich vs. Vermeiden – konkrete Dos and Don'ts für den Alltag."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Lightbulb className="w-8 h-8 text-[oklch(0.60_0.15_85)]" />
-                Praktische Kommunikationstipps
-              </h2>
-              
               <div className="grid sm:grid-cols-2 gap-4">
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)] bg-[oklch(0.92_0.04_145)]/30">
                   <CardContent className="p-5">
@@ -329,89 +309,15 @@ export default function Kommunizieren() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
-
-            {/* Materialien zum Download */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-[oklch(0.45_0.05_250)]" />
-                Materialien zum Thema
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                {[
-                  {
-                    title: "Wenn Gespräche kippen: 3 Schritte",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp"
-                  },
-                  {
-                    title: "Der Standardsatz: 2 Sätze",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp"
-                  },
-                  {
-                    title: "Grenzen setzen, ohne zu eskalieren",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp"
-                  },
-                  {
-                    title: "Pause statt Streit",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp"
-                  },
-                  {
-                    title: "Zuhören ohne Zustimmen",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp"
-                  },
-                  {
-                    title: "Beispiel-Dialog",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp"
-                  },
-                  {
-                    title: "Spickzettel Krisenkommunikation (A4)",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp"
-                  }
-                ].map((item, index) => (
-                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all">
-                    <div className="aspect-[4/3] bg-muted">
-                      <img src={item.url} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
-                    </div>
-                    <CardContent className="p-4">
-                      <h4 className="font-medium text-foreground text-sm mb-2">{item.title}</h4>
-                      <a href={item.url} target="_blank" rel="noopener noreferrer" download>
-                        <Button size="sm" variant="outline" className="w-full">
-                          <Download className="w-4 h-4 mr-2" />
-                          Herunterladen
-                        </Button>
-                      </a>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              
-              <div className="text-center">
-                <Link href="/materialien">
-                  <Button variant="outline">
-                    Alle Materialien ansehen
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Konkrete Beispiel-Dialoge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Konkrete Formulierungen für den Alltag"
+              icon={<MessageCircle className="w-7 h-7 text-[oklch(0.65_0.12_55)]" />}
+              id="formulierungen"
+              preview="Konkrete Sätze für verschiedene Situationen: Emotionen, Vorwürfe, Rückzug, Schwarz-Weiss-Denken."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <MessageCircle className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
-                Konkrete Formulierungen für den Alltag
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Hier finden Sie konkrete Sätze, die Sie in verschiedenen Situationen verwenden können. Passen Sie sie an Ihre Beziehung und Situation an.
               </p>
@@ -530,20 +436,15 @@ export default function Kommunizieren() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Hinweise für verschiedene Angehörigengruppen */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Hinweise für Ihre Situation"
+              icon={<Users className="w-7 h-7 text-[oklch(0.55_0.12_250)]" />}
+              id="angehoerigengruppen"
+              preview="Spezifische Kommunikationstipps für Partner, Eltern und erwachsene Kinder."
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Users className="w-8 h-8 text-[oklch(0.55_0.12_250)]" />
-                Hinweise für Ihre Situation
-              </h2>
-              
               <div className="space-y-4">
                 <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)] bg-[oklch(0.97_0.01_35)]">
                   <CardContent className="p-5">
@@ -592,6 +493,75 @@ export default function Kommunizieren() {
                     </div>
                   </CardContent>
                 </Card>
+              </div>
+            </ContentSection>
+
+            {/* Materialien zum Download */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Download className="w-8 h-8 text-[oklch(0.45_0.05_250)]" />
+                Materialien zum Thema
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                {[
+                  {
+                    title: "Wenn Gespräche kippen: 3 Schritte",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp"
+                  },
+                  {
+                    title: "Der Standardsatz: 2 Sätze",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp"
+                  },
+                  {
+                    title: "Grenzen setzen, ohne zu eskalieren",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp"
+                  },
+                  {
+                    title: "Pause statt Streit",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp"
+                  },
+                  {
+                    title: "Zuhören ohne Zustimmen",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp"
+                  },
+                  {
+                    title: "Beispiel-Dialog",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp"
+                  },
+                  {
+                    title: "Spickzettel Krisenkommunikation (A4)",
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp"
+                  }
+                ].map((item, index) => (
+                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all">
+                    <div className="aspect-[4/3] bg-muted">
+                      <img src={item.url} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
+                    </div>
+                    <CardContent className="p-4">
+                      <h4 className="font-medium text-foreground text-sm mb-2">{item.title}</h4>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" download>
+                        <Button size="sm" variant="outline" className="w-full">
+                          <Download className="w-4 h-4 mr-2" />
+                          Herunterladen
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <Link href="/materialien">
+                  <Button variant="outline">
+                    Alle Materialien ansehen
+                  </Button>
+                </Link>
               </div>
             </motion.div>
 

@@ -550,7 +550,7 @@ export default function Selbstfuersorge() {
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Phone className="w-4 h-4" />
-                        <span className="text-sm">Stand by You (Angehörige psychisch Kranker): <a href="https://www.stand-by-you.ch" className="text-slate-dark underline">www.stand-by-you.ch</a></span>
+                        <span className="text-sm">Stand by You (Angehörige psychisch Kranker): <a href="https://www.stand-by-you.ch" target="_blank" rel="noopener noreferrer" className="text-slate-dark underline">www.stand-by-you.ch</a></span>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Phone className="w-4 h-4" />
@@ -663,7 +663,7 @@ export default function Selbstfuersorge() {
                 preview="Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken."
               >
                 <p className="text-sm text-muted-foreground mb-4">
-                  «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+                  <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[

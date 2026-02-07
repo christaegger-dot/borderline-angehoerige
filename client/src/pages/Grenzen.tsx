@@ -578,7 +578,7 @@ export default function Grenzen() {
                       onClick={() => {
                         setActiveFilter(cat.id);
                         setTimeout(() => {
-                          gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                          gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }, 50);
                       }}
                       className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""}`}

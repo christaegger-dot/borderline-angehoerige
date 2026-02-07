@@ -534,7 +534,7 @@ export default function Kommunizieren() {
                       <div>
                         <h3 className="font-semibold text-foreground mb-2">Als Elternteil</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Die Eltern-Kind-Dynamik macht Kommunikation besonders komplex. Alte Muster sitzen tief. Versuchen Sie, Ihr erwachsenes Kind als eigenständige Person zu sehen – nicht als das Kind, das Sie einmal großgezogen haben. Das verändert den Ton.
+                          Die Eltern-Kind-Dynamik macht Kommunikation besonders komplex. Alte Muster sitzen tief. Versuchen Sie, Ihr erwachsenes Kind als eigenständige Person zu sehen – nicht als das Kind, das Sie einmal grossgezogen haben. Das verändert den Ton.
                         </p>
                       </div>
                     </div>
@@ -590,7 +590,7 @@ export default function Kommunizieren() {
                       onClick={() => {
                         setActiveFilter(cat.id);
                         setTimeout(() => {
-                          gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                          gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }, 50);
                       }}
                       className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""}`}

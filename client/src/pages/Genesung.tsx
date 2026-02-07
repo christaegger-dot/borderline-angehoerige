@@ -496,7 +496,7 @@ export default function Genesung() {
               >
                 <p className="text-muted-foreground mb-6">
                   Alle Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken.
-                  «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+                  <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {[

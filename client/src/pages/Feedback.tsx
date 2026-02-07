@@ -52,9 +52,9 @@ export default function Feedback() {
                 <CheckCircle2 className="w-10 h-10 text-sage-dark" />
               </div>
               
-              <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
                 Herzlichen Dank!
-              </h1>
+              </h2>
               
               <p className="text-lg text-muted-foreground mb-8">
                 Ihr Feedback hilft uns, diese Ressource für Angehörige weiter zu verbessern. 

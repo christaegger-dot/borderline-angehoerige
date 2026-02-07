@@ -675,7 +675,7 @@ export default function Materialien() {
             <img 
               src={previewImage} 
               alt="Vorschau" 
-              className="w-full h-auto rounded-lg shadow-2xl" width={1600} height={892} decoding="async"
+              className="w-full h-auto rounded-lg shadow-2xl" width={1600} height={892} loading="lazy" decoding="async"
             />
             <p className="text-center text-white mt-4 text-sm">
               Klicken Sie irgendwo, um zu schliessen

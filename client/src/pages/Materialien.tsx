@@ -488,11 +488,11 @@ export default function Materialien() {
         </div>
       </section>
 
-      {/* Filter (nur anzeigen wenn Infografiken vorhanden) */}
+      {/* Filter – Sticky mit horizontalem Scroll auf Mobile */}
       {infografiken.length > 0 && (
-        <section className="py-6 border-b border-border sticky top-16 bg-background/95 backdrop-blur z-10">
+        <section className="py-4 md:py-6 border-b border-border/60 sticky top-16 md:top-20 bg-background/95 backdrop-blur-md z-20 shadow-[0_4px_12px_-4px_rgba(0,0,0,0.08)] transition-shadow">
           <div className="container">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible">
               {categories.map((cat) => {
                 const Icon = cat.icon;
                 const count = cat.id === "alle" 
@@ -504,11 +504,11 @@ export default function Materialien() {
                     variant={activeCategory === cat.id ? "default" : "outline"}
                     size="sm"
                     onClick={() => setActiveCategory(cat.id)}
-                    className={activeCategory === cat.id ? "bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]" : ""}
+                    className={`whitespace-nowrap shrink-0 ${activeCategory === cat.id ? "bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]" : ""}`}
                   >
-                    <Icon className="w-4 h-4 mr-2" />
+                    <Icon className="w-4 h-4 mr-1.5" />
                     {cat.label}
-                    <span className="ml-2 text-xs opacity-70">({count})</span>
+                    <span className="ml-1.5 text-xs opacity-70">({count})</span>
                   </Button>
                 );
               })}

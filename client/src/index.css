@@ -488,3 +488,12 @@
     print-color-adjust: exact !important;
   }
 }
+
+/* Scrollbar ausblenden für horizontale Tab-Leisten */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

@@ -556,10 +556,10 @@ export default function Materialien() {
                         src={item.url} 
                         alt={item.title}
                         className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
+                        loading={index < 4 ? "eager" : "lazy"}
                         width={400}
                         height={223}
-                        decoding="async"
+                        decoding={index < 4 ? "sync" : "async"}
                       />
                       {/* Hover-Overlay */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">

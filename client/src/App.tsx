@@ -31,7 +31,6 @@ const Glossar = lazy(() => import("./pages/Glossar"));
 const Buchempfehlungen = lazy(() => import("./pages/Buchempfehlungen"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const UeberUns = lazy(() => import("./pages/UeberUns"));
-const AudioTest = lazy(() => import("./pages/AudioTest"));
 
 // Minimaler Lade-Spinner für Suspense-Fallback
 function PageLoader() {
@@ -73,7 +72,6 @@ function Router() {
         <Route path="/therapieangebote">{() => <Redirect to="/unterstuetzen/therapie#therapieangebote" />}</Route>
         <Route path="/faq" component={FAQ} />
         <Route path="/ueber-uns" component={UeberUns} />
-        <Route path="/audio-test" component={AudioTest} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

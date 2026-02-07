@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Phone, AlertTriangle, ExternalLink, Clock, Baby, User, Users, ChevronDown, Shield, Heart, Hand, MessageCircle, CheckCircle2, Info } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
   Accordion,
@@ -122,7 +122,81 @@ const ONLINE_RESSOURCEN = [
   { id: "URL_DEPRESS", beschreibung: "Verein zur Bewältigung von Depressionen" },
 ];
 
-// ─── Soforthilfe-Seite ──────────────────────────────────
+// ─── Sticky Ampel-Leiste ───────────────────────────────────────────
+
+function StickyAmpelLeiste() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const ampelItems = [
+    {
+      id: "rot",
+      label: "Lebensgefahr",
+      sublabel: "144 / 117 / 112",
+      bg: "oklch(0.55 0.20 25)",
+      hoverBg: "oklch(0.50 0.22 25)",
+    },
+    {
+      id: "gelb",
+      label: "Psychiatrische Krise",
+      sublabel: "PUK 24/7",
+      bg: "oklch(0.55 0.18 85)",
+      hoverBg: "oklch(0.50 0.20 85)",
+    },
+    {
+      id: "gruen",
+      label: "Jemand zum Reden",
+      sublabel: "143",
+      bg: "oklch(0.55 0.15 145)",
+      hoverBg: "oklch(0.50 0.17 145)",
+    },
+  ] as const;
+
+  return (
+    <div
+      className={`sticky top-0 z-40 transition-all duration-300 ${
+        visible
+          ? "opacity-100 translate-y-0 shadow-md"
+          : "opacity-100 translate-y-0"
+      }`}
+    >
+      <div className="bg-background/95 backdrop-blur-md border-b border-border/50">
+        <div className="container py-2">
+          <div className="flex flex-col sm:flex-row gap-2">
+            {ampelItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-white font-medium text-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
+                style={{ backgroundColor: item.bg }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = item.hoverBg)}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = item.bg)}
+              >
+                <span className="font-semibold">{item.label}</span>
+                <span className="text-white/80 text-xs hidden sm:inline">→ {item.sublabel}</span>
+                <span className="text-white/80 text-xs sm:hidden">({item.sublabel})</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Soforthilfe-Seite ──────────────────────────────────────────────
 
 export default function Notfall() {
   // Nummern für Fliesstext-Verweise in Krisensituationen
@@ -170,30 +244,8 @@ export default function Notfall() {
         </div>
       </section>
 
-      {/* Emergency Banner */}
-      <section className="py-6 bg-[oklch(0.55_0.20_25)]">
-        <div className="container">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-white">
-              <AlertTriangle className="w-6 h-6 flex-shrink-0" />
-              <div>
-                <p className="font-semibold">
-                  Bei akuter Lebensgefahr: Sofort Notruf wählen!
-                </p>
-                <p className="text-white/80 text-xs mt-0.5">
-                  {TEXTE.pukLabel}
-                </p>
-              </div>
-            </div>
-            <a href={`tel:${rot144.tel}`}>
-              <Button size="lg" className="bg-white text-[oklch(0.55_0.20_25)] hover:bg-white/90 font-bold">
-                <Phone className="w-5 h-5 mr-2" />
-                {rot144.nummer} anrufen
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* ═══ Sticky Ampel-Leiste ═══ */}
+      <StickyAmpelLeiste />
 
       {/* Content */}
       <section className="py-12 md:py-16">
@@ -201,6 +253,7 @@ export default function Notfall() {
           <div className="max-w-3xl mx-auto">
 
             {/* ═══ ROT: Sofort-Hilfe (24/7) ═══ */}
+            <div id="rot" className="scroll-mt-28">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +281,10 @@ export default function Notfall() {
               </div>
             </motion.div>
 
+            </div>
+
             {/* ═══ GELB: Psychiatrische Notdienste PUK Zürich (24/7) ═══ */}
+            <div id="gelb" className="scroll-mt-28">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -300,7 +356,10 @@ export default function Notfall() {
               </div>
             </motion.div>
 
+            </div>
+
             {/* ═══ GRÜN: Zuhören & Entlastung ═══ */}
+            <div id="gruen" className="scroll-mt-28">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -337,6 +396,8 @@ export default function Notfall() {
                 </p>
               </div>
             </motion.div>
+
+            </div>
 
             {/* ═══ Notfallkarte zum Ausdrucken ═══ */}
             <motion.div

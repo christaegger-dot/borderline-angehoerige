@@ -77,7 +77,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Search, Emergency Button & Mobile Menu */}
             <div className="flex items-center gap-2">
-              {/* Search Button */}
+              {/* Search Button – Desktop */}
               <button
                 onClick={() => setSearchOpen(true)}
                 className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all text-sm"
@@ -88,6 +88,14 @@ export default function Layout({ children }: LayoutProps) {
                 <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">
                   <span className="text-xs">⌘</span>K
                 </kbd>
+              </button>
+              {/* Search Button – Mobile (nur Icon) */}
+              <button
+                onClick={() => setSearchOpen(true)}
+                className="sm:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all"
+                aria-label="Suche öffnen"
+              >
+                <SearchIcon className="w-5 h-5" />
               </button>
 
               <Link href="/soforthilfe">
@@ -287,14 +295,14 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </footer>
 
-      {/* Fixed Emergency Button (Mobile) */}
+      {/* Fixed Emergency Button (Mobile) – Pill mit Label */}
       <Link href="/soforthilfe" className="sm:hidden fixed bottom-4 right-4 z-50">
         <Button
           variant="default"
-          size="icon"
-          className="w-14 h-14 rounded-full bg-[oklch(0.55_0.20_25)] hover:bg-[oklch(0.50_0.22_25)] text-white shadow-lg animate-breathe"
+          className="h-14 px-5 rounded-full bg-[oklch(0.55_0.20_25)] hover:bg-[oklch(0.50_0.22_25)] text-white shadow-lg animate-breathe gap-2 text-base font-semibold"
         >
-          <Phone className="w-6 h-6" />
+          <Phone className="w-5 h-5" />
+          Hilfe
         </Button>
       </Link>
 

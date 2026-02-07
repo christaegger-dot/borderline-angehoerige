@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 interface UseCountUpOptions {
   end: number;
@@ -12,6 +12,12 @@ interface UseCountUpOptions {
 /**
  * Hook für animierte Zähler, die beim Sichtbarwerden hochzählen.
  * Verwendet IntersectionObserver und requestAnimationFrame.
+ *
+ * Fix: Zeigt den Endwert sofort als Fallback an (kein "0%" sichtbar).
+ * Die Animation läuft nur als visuelles Enhancement, wenn der Block
+ * im Viewport sichtbar wird.
+ *
+ * WICHTIG: Hook-Reihenfolge ist fix (useState → useCallback → useRef → useEffect).
  */
 export function useCountUp({
   end,
@@ -21,10 +27,36 @@ export function useCountUp({
   separator = "",
   decimals = 0,
 }: UseCountUpOptions) {
-  const [displayValue, setDisplayValue] = useState(`${prefix}0${suffix}`);
+  // 1. useState – Endwert als Initialwert (nie "0%" sichtbar)
+  const [displayValue, setDisplayValue] = useState(() => {
+    const formatted =
+      decimals > 0 ? end.toFixed(decimals) : Math.round(end).toString();
+    const withSeparator = separator
+      ? formatted.replace(/\B(?=(\d{3})+(?!\d))/g, separator)
+      : formatted;
+    return `${prefix}${withSeparator}${suffix}`;
+  });
+
+  // 2. useState
   const [hasAnimated, setHasAnimated] = useState(false);
+
+  // 3. useCallback
+  const formatValue = useCallback(
+    (value: number) => {
+      const formatted =
+        decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString();
+      const withSeparator = separator
+        ? formatted.replace(/\B(?=(\d{3})+(?!\d))/g, separator)
+        : formatted;
+      return `${prefix}${withSeparator}${suffix}`;
+    },
+    [prefix, suffix, separator, decimals]
+  );
+
+  // 4. useRef
   const ref = useRef<HTMLDivElement>(null);
 
+  // 5. useEffect – IntersectionObserver
   useEffect(() => {
     const element = ref.current;
     if (!element || hasAnimated) return;
@@ -34,7 +66,23 @@ export function useCountUp({
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
-            animate();
+            // Kurz den Startwert setzen, dann hochzählen
+            setDisplayValue(formatValue(0));
+
+            const startTime = performance.now();
+            const step = (currentTime: number) => {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              // Easing: easeOutCubic für natürliches Abbremsen
+              const easedProgress = 1 - Math.pow(1 - progress, 3);
+              const currentValue = easedProgress * end;
+              setDisplayValue(formatValue(currentValue));
+              if (progress < 1) {
+                requestAnimationFrame(step);
+              }
+            };
+
+            requestAnimationFrame(step);
           }
         });
       },
@@ -43,37 +91,7 @@ export function useCountUp({
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [hasAnimated]);
-
-  const animate = () => {
-    const startTime = performance.now();
-
-    const step = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // Easing: easeOutExpo für natürliches Abbremsen
-      const easedProgress = 1 - Math.pow(1 - progress, 3);
-
-      const currentValue = easedProgress * end;
-      const formatted = decimals > 0
-        ? currentValue.toFixed(decimals)
-        : Math.round(currentValue).toString();
-
-      // Tausender-Separator einfügen falls gewünscht
-      const withSeparator = separator
-        ? formatted.replace(/\B(?=(\d{3})+(?!\d))/g, separator)
-        : formatted;
-
-      setDisplayValue(`${prefix}${withSeparator}${suffix}`);
-
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    };
-
-    requestAnimationFrame(step);
-  };
+  }, [hasAnimated, formatValue, duration, end]);
 
   return { ref, displayValue };
 }

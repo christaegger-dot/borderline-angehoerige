@@ -477,7 +477,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">
-                    Alle 39 Infografiken verfügbar
+                    Alle 40 Materialien verfügbar
                   </h3>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung
@@ -527,6 +527,13 @@ export default function Materialien() {
       {/* Grid oder Platzhalter */}
       <section ref={gridRef} className="py-12 md:py-16">
         <div className="container">
+          {/* Erwartungsmanagement */}
+          <div className="mb-6 p-3 rounded-lg bg-sand border border-sand-subtle flex items-center gap-2">
+            <Eye className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+            <p className="text-sm text-muted-foreground">
+              <strong className="text-foreground">Vorschau = Web-Bild.</strong> Download = A4-PDF (hochauflösend, zum Ausdrucken).
+            </p>
+          </div>
           {filteredInfografiken.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredInfografiken.map((item, index) => (

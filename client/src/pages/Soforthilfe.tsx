@@ -176,10 +176,10 @@ function StickyAmpelLeiste() {
         <div className="container py-2">
           <div className="flex flex-col sm:flex-row gap-2">
             {ampelItems.map((item) => (
-              <button
+                <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-white font-medium text-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-white font-medium text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm"
                 style={{ backgroundColor: item.bg }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = item.hoverBg)}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = item.bg)}
@@ -317,6 +317,20 @@ export default function Notfall() {
                 </CardContent>
               </Card>
               
+              {/* Wahlhilfe: Für wen? */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="text-sm font-medium text-foreground">Für wen?</span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-terracotta-wash text-terracotta-dark border border-terracotta/30">
+                  <Baby className="w-3.5 h-3.5" /> bis 18
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-terracotta-wash text-terracotta-dark border border-terracotta/30">
+                  <User className="w-3.5 h-3.5" /> ab 18
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-terracotta-wash text-terracotta-dark border border-terracotta/30">
+                  <Users className="w-3.5 h-3.5" /> ab 65
+                </span>
+              </div>
+
               <div className="space-y-4">
                 {GELB.map((kontakt) => (
                   <KontaktKarte
@@ -370,9 +384,14 @@ export default function Notfall() {
                 <Heart className="w-8 h-8 text-sage-mid" />
                 Zuhören & Entlastung
               </h2>
-              <p className="text-sm text-muted-foreground mb-6 ml-11">
+              <p className="text-sm text-muted-foreground mb-3 ml-11">
                 Kein Einsatzdienst – es kommt niemand vorbei. Für emotionale Unterstützung und Entlastung.
               </p>
+              <div className="ml-11 mb-6 p-3 rounded-lg bg-alert-wash border border-alert-light">
+                <p className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">Bei akuter Gefahr:</strong> Immer zuerst <strong>144 / 117 / 112</strong> rufen.
+                </p>
+              </div>
               
               <div className="space-y-4">
                 {GRUEN.map((kontakt) => (
@@ -390,11 +409,7 @@ export default function Notfall() {
                 ))}
               </div>
 
-              <div className="mt-4 p-4 rounded-lg bg-alert-wash border border-alert-light">
-                <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Bei akuter Gefahr für sich oder andere:</strong> {TEXTE.gruenGefahrenhinweis}
-                </p>
-              </div>
+
             </motion.div>
 
             </div>

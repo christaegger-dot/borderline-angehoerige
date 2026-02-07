@@ -772,9 +772,12 @@ export default function Notfall() {
                           style={{ backgroundColor: "var(--color-sage-mid)" }}
                         >
                           <ExternalLink className="w-4 h-4" />
-                          PDF herunterladen
+                          PDF öffnen
                         </a>
                       </div>
+                      <p className="text-xs text-muted-foreground mt-2">
+                        öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+                      </p>
                       <p className="text-xs text-muted-foreground mt-3">
                         Stand: 06.02.2026 · Version 04 · Quelle: pukzh.ch
                       </p>

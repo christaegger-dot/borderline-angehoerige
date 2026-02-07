@@ -496,6 +496,7 @@ export default function Genesung() {
               >
                 <p className="text-muted-foreground mb-6">
                   Alle Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken.
+                  «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {[
@@ -540,7 +541,7 @@ export default function Genesung() {
                         <a href={item.pdf} target="_blank" rel="noopener noreferrer">
                           <Button variant="outline" size="sm" className="w-full">
                             <Download className="w-4 h-4 mr-2" />
-                            PDF herunterladen
+                            PDF öffnen
                           </Button>
                         </a>
                       </CardContent>

@@ -117,11 +117,12 @@ export default function Layout({ children }: LayoutProps) {
                 <SearchIcon className="w-5 h-5" />
               </button>
 
-              <Link href="/soforthilfe">
+              <Link href="/soforthilfe" aria-label="Soforthilfe – Notfallnummern und Krisenberatung">
                 <Button
                   variant="default"
                   size="sm"
                   className="bg-alert hover:bg-alert text-white animate-breathe hidden sm:flex"
+                  tabIndex={-1}
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Soforthilfe
@@ -326,10 +327,11 @@ export default function Layout({ children }: LayoutProps) {
       </footer>
 
       {/* Fixed Emergency Button (Mobile) – Pill mit Label */}
-      <Link href="/soforthilfe" className="sm:hidden fixed bottom-4 right-4 z-50">
+      <Link href="/soforthilfe" className="sm:hidden fixed bottom-4 right-4 z-50" aria-label="Soforthilfe – Notfallnummern und Krisenberatung">
         <Button
           variant="default"
           className="h-14 px-5 rounded-full bg-alert hover:bg-alert text-white shadow-lg animate-breathe gap-2 text-base font-semibold"
+          tabIndex={-1}
         >
           <Phone className="w-5 h-5" />
           Hilfe

@@ -7,6 +7,8 @@ import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileT
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
 import { useState, useRef } from "react";
+import SpiegelnUebung from "@/components/interactive/SpiegelnUebung";
+import DEARSatzbaukasten from "@/components/interactive/DEARSatzbaukasten";
 
 const grenzenSubcategories = [
   { id: "alle", label: "Alle", icon: Filter },
@@ -367,6 +369,15 @@ export default function Grenzen() {
               <p className="text-xs text-muted-foreground mt-4">
                 Quelle: Marsha M. Linehan, DBT Skills Training Manual (2015)
               </p>
+
+              {/* Interaktiver DEAR-Satzbaukasten */}
+              <div className="mt-8 pt-6 border-t border-border/50">
+                <h4 className="font-semibold text-foreground mb-1">Jetzt selbst ausprobieren</h4>
+                <p className="text-sm text-muted-foreground mb-0">
+                  Formulieren Sie Ihren eigenen DEAR-Satz für eine aktuelle Situation:
+                </p>
+                <DEARSatzbaukasten />
+              </div>
             </ContentSection>
 
             {/* Konkrete Beispiel-Dialoge */}
@@ -376,75 +387,11 @@ export default function Grenzen() {
               id="formulierungen"
               preview="Spiegeln statt Aufnehmen – Beispielsätze für Vorwürfe, Gefühlsausbrüche, Grenzsetzung und Drohungen."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Hier finden Sie Beispielsätze, die Sie direkt verwenden können. Das Prinzip: <strong>Spiegeln statt Aufnehmen</strong> – Sie nehmen die Gefühle wahr, ohne sie zu übernehmen.
+              <p className="text-muted-foreground leading-relaxed mb-2">
+                Lesen Sie die Situation und überlegen Sie kurz, bevor Sie die empfohlene Antwort aufdecken. Das Prinzip: <strong>Spiegeln statt Aufnehmen</strong> – Sie nehmen die Gefühle wahr, ohne sie zu übernehmen.
               </p>
               
-              <div className="space-y-6">
-                <Card className="border-l-4 border-l-sage-mid">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Bei Vorwürfen und Schuldzuweisungen</h3>
-                    <div className="space-y-3">
-                      <div className="bg-terracotta-wash rounded-lg p-3">
-                        <p className="text-sm text-muted-foreground mb-1">Statt:</p>
-                        <p className="text-sm text-foreground line-through">"Das stimmt doch gar nicht!" oder "Du bist ungerecht!"</p>
-                      </div>
-                      <div className="bg-sage-lighter rounded-lg p-3">
-                        <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
-                        <p className="text-sm text-foreground font-medium">"Ich höre, dass du das so siehst. Ich sehe es anders, und ich möchte verstehen, was dich beschäftigt."</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-l-4 border-l-sage-mid">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Bei intensiven Gefühlsausbrüchen</h3>
-                    <div className="space-y-3">
-                      <div className="bg-terracotta-wash rounded-lg p-3">
-                        <p className="text-sm text-muted-foreground mb-1">Statt:</p>
-                        <p className="text-sm text-foreground line-through">"Beruhige dich!" oder "Das ist doch nicht so schlimm!"</p>
-                      </div>
-                      <div className="bg-sage-lighter rounded-lg p-3">
-                        <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
-                        <p className="text-sm text-foreground font-medium">"Ich sehe, dass du gerade sehr aufgewühlt bist. Das klingt wirklich schwer für dich. Ich bin hier."</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-l-4 border-l-sage-mid">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Beim Grenzen setzen</h3>
-                    <div className="space-y-3">
-                      <div className="bg-terracotta-wash rounded-lg p-3">
-                        <p className="text-sm text-muted-foreground mb-1">Statt:</p>
-                        <p className="text-sm text-foreground line-through">"Ich halte das nicht mehr aus!" oder "Du machst mich fertig!"</p>
-                      </div>
-                      <div className="bg-sage-lighter rounded-lg p-3">
-                        <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
-                        <p className="text-sm text-foreground font-medium">"Ich liebe dich, und gleichzeitig brauche ich jetzt eine Pause. Lass uns in einer Stunde weiterreden, wenn wir beide ruhiger sind."</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-l-4 border-l-sage-mid">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Bei Drohungen oder Manipulation</h3>
-                    <div className="space-y-3">
-                      <div className="bg-terracotta-wash rounded-lg p-3">
-                        <p className="text-sm text-muted-foreground mb-1">Statt:</p>
-                        <p className="text-sm text-foreground line-through">Nachgeben aus Angst oder Schuldgefühlen</p>
-                      </div>
-                      <div className="bg-sage-lighter rounded-lg p-3">
-                        <p className="text-sm text-muted-foreground mb-1">Sagen Sie:</p>
-                        <p className="text-sm text-foreground font-medium">"Ich nehme deine Gefühle ernst. Und ich bleibe bei meiner Entscheidung. Beides ist möglich."</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <SpiegelnUebung />
               
               <Card className="mt-6 bg-terracotta-wash border-terracotta-light">
                 <CardContent className="p-4">

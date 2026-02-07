@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
+import MythosFlipCards from "@/components/interactive/MythosFlipCards";
 
 
 const verstehenInfografiken = [
@@ -399,56 +400,11 @@ export default function Verstehen() {
               id="missverstaendnisse"
               preview="Über Borderline kursieren viele Mythen. Hier ist, was nicht stimmt."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Über Borderline kursieren viele Mythen. Hier ist, was <strong>nicht</strong> stimmt:
+              <p className="text-muted-foreground leading-relaxed mb-2">
+                Über Borderline kursieren viele Mythen. Tippen Sie auf eine Karte, um die Realität aufzudecken:
               </p>
               
-              <div className="space-y-4">
-                {[
-                  {
-                    myth: "«Borderliner manipulieren absichtlich»",
-                    truth: "Das Verhalten ist keine bewusste Strategie, sondern ein verzweifelter Versuch, mit überwältigenden Emotionen umzugehen. Es fehlen oft die Fähigkeiten, Bedürfnisse anders auszudrücken."
-                  },
-                  {
-                    myth: "«Borderline ist unheilbar»",
-                    truth: "Studien zeigen: 85-90% der Betroffenen erfüllen nach 10 Jahren nicht mehr die Diagnosekriterien. Mit Therapie ist deutliche Besserung möglich."
-                  },
-                  {
-                    myth: "«Sie könnten sich zusammenreissen, wenn sie wollten»",
-                    truth: "Borderline ist eine anerkannte psychische Erkrankung mit neurobiologischen Grundlagen. Es ist keine Frage des Willens, sondern der Fähigkeiten – die erlernbar sind."
-                  },
-                  {
-                    myth: "«Nur Frauen haben Borderline»",
-                    truth: "Borderline betrifft alle Geschlechter etwa gleich häufig. Männer werden jedoch seltener diagnostiziert, da sie oft andere Symptome zeigen (mehr Wut, weniger Selbstverletzung)."
-                  },
-                  {
-                    myth: "«Borderliner sind gefährlich»",
-                    truth: "Menschen mit Borderline sind viel häufiger Opfer als Täter. Die Aggression richtet sich meist gegen sich selbst, nicht gegen andere."
-                  },
-                  {
-                    myth: "«Das ist nur Aufmerksamkeitssuche»",
-                    truth: "Selbstverletzendes Verhalten ist ein ernsthafter Bewältigungsversuch für unerträgliche Gefühle – kein Ruf nach Aufmerksamkeit. Es verdient Mitgefühl, nicht Verurteilung."
-                  }
-                ].map((item, index) => (
-                  <Card key={index} className="border-border/50">
-                    <CardContent className="p-5">
-                      <div className="flex items-start gap-3">
-                        <XCircle className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
-                        <div>
-                          <h4 className="font-semibold text-terracotta-mid mb-2">{item.myth}</h4>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
-                            <strong className="text-foreground">Realität:</strong> {item.truth}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              
-              <p className="text-xs text-muted-foreground mt-4">
-                Quellen: APA Practice Guideline (2024); Zanarini et al. (2012); Grant et al. (2008)
-              </p>
+              <MythosFlipCards />
             </ContentSection>
 
             {/* Kernsymptome */}

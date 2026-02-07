@@ -8,6 +8,7 @@ import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
+import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
 
 
 const kommSubcategories = [
@@ -128,44 +129,7 @@ export default function Kommunizieren() {
               
               <h3 className="text-xl font-semibold text-foreground mb-4">Die 6 Stufen der Validierung</h3>
               
-              <div className="space-y-3">
-                {[
-                  { level: 1, title: "Präsent sein", example: "Aufmerksam zuhören, Blickkontakt halten", icon: Eye, color: "var(--color-sand-border)" },
-                  { level: 2, title: "Genau reflektieren", example: "\"Du sagst, du fühlst dich allein gelassen.\"", icon: MessageSquare, color: "var(--color-terracotta)" },
-                  { level: 3, title: "Unausgesprochenes benennen", example: "\"Das klingt, als wärst du auch wütend darüber.\"", icon: Sparkles, color: "var(--color-sand-mid)" },
-                  { level: 4, title: "Verhalten aus der Geschichte erklären", example: "\"Nach allem, was du erlebt hast, ist es verständlich, dass du so reagierst.\"", icon: History, color: "var(--color-terracotta-mid)" },
-                  { level: 5, title: "Normalität bestätigen", example: "\"Jeder würde in dieser Situation so fühlen.\"", icon: Users, color: "var(--color-terracotta-dark)" },
-                  { level: 6, title: "Radikale Echtheit", example: "\"Ich glaube an dich. Du schaffst das.\"", icon: Star, color: "var(--color-terracotta-dark)" }
-                ].map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Card key={item.level} className="border-border/50 hover:shadow-md transition-all duration-500" style={{ borderLeftWidth: '4px', borderLeftColor: item.color }}>
-                      <CardContent className="p-4">
-                        <div className="flex items-start gap-4">
-                          <div className="flex items-center gap-3">
-                            <span 
-                              className="w-8 h-8 rounded-full text-white text-sm font-bold flex items-center justify-center flex-shrink-0"
-                              style={{ backgroundColor: item.color }}
-                            >
-                              {item.level}
-                            </span>
-                            <div 
-                              className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                              style={{ backgroundColor: `color-mix(in oklch, ${item.color} 15%, white)` }}
-                            >
-                              <Icon className="w-5 h-5" style={{ color: item.color }} />
-                            </div>
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-foreground text-base">{item.title}</h3>
-                            <p className="text-muted-foreground text-sm mt-1 bg-muted/30 rounded-lg px-3 py-2 italic">{item.example}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
+              <ValidierungsStufenleiter />
             </ContentSection>
 
             {/* Zuhören ohne Zustimmen */}

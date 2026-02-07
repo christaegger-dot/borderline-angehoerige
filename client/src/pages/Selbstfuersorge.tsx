@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktById } from "@/data/kontakte";
+import GroundingTimer from "@/components/interactive/GroundingTimer";
 
 
 const proMente = kontaktById("INFO_PROMENTE")!;
@@ -390,33 +391,7 @@ export default function Selbstfuersorge() {
                 <div className="grid md:grid-cols-[7fr_5fr] gap-4 mb-6">
                   <AtemuebungCard />
                   
-                  <Card className="bg-gradient-to-br from-slate-light/30 to-slate-wash/20 border-slate-dark">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Lightbulb className="w-6 h-6 text-slate-dark" />
-                        <h3 className="font-semibold text-foreground">5-4-3-2-1 Grounding</h3>
-                      </div>
-                      
-                      <p className="text-muted-foreground text-sm mb-4">
-                        Diese Technik hilft, aus Grübeln und Sorgen in den gegenwärtigen Moment zurückzukehren.
-                      </p>
-                      
-                      <div className="space-y-2">
-                        {[
-                          { n: "5", t: "Dinge, die Sie sehen" },
-                          { n: "4", t: "Dinge, die Sie hören" },
-                          { n: "3", t: "Dinge, die Sie fühlen (berühren)" },
-                          { n: "2", t: "Dinge, die Sie riechen" },
-                          { n: "1", t: "Ding, das Sie schmecken" }
-                        ].map((item, i) => (
-                          <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <span className="w-6 h-6 rounded-full bg-slate-dark/20 flex items-center justify-center text-xs font-medium">{item.n}</span>
-                            {item.t}
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <GroundingTimer />
                 </div>
                 
                 <Card className="border-border/50">

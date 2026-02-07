@@ -24,6 +24,7 @@ import {
   FileText
 } from "lucide-react";
 import AnimatedStat from "@/components/AnimatedStat";
+import Schnelleinstieg from "@/components/interactive/Schnelleinstieg";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XkvykpgJHYsCUUQW.webp";
 const heroImageMobile = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fYVyThTdLUpjIoVU.webp";
@@ -225,6 +226,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Schnelleinstieg */}
+      <Schnelleinstieg />
 
       {/* Crisis Matrix */}
       <section className="py-12 md:py-16 bg-cream wave-divider-top" style={{ '--wave-color': 'var(--color-cream)' } as React.CSSProperties}>

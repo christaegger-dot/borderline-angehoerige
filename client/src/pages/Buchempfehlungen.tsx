@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -214,6 +215,7 @@ export default function Buchempfehlungen() {
 
   return (
     <Layout>
+      <SEO title="Buchempfehlungen" description="Empfohlene Bücher für Angehörige von Menschen mit Borderline." path="/buchempfehlungen" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sand/50 to-background wave-divider">
         <div className="container">
@@ -336,7 +338,7 @@ export default function Buchempfehlungen() {
                           </div>
 
                           {/* Publisher & Year */}
-                          <p className="text-xs text-muted-foreground/70 mb-3">
+                          <p className="text-xs text-muted-foreground mb-3">
                             {book.publisher}{book.year && `, ${book.year}`}
                           </p>
 

@@ -344,9 +344,9 @@ export default function Selbsttest() {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Unsere Empfehlung für Sie</p>
-                <h3 className="text-2xl font-semibold text-foreground">
+                <h2 className="text-2xl font-semibold text-foreground">
                   {result.title}
-                </h3>
+                </h2>
               </div>
             </div>
             
@@ -438,9 +438,9 @@ export default function Selbsttest() {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
+            <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
               {question.text}
-            </h3>
+            </h2>
             {question.subtext && (
               <p className="text-muted-foreground mb-6">
                 {question.subtext}

@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +10,7 @@ import { Link } from "wouter";
 export default function UnterstuetzenAlltag() {
   return (
     <Layout>
+      <SEO title="Unterstützen im Alltag" description="Praktische Strategien für den Alltag mit einem Menschen mit Borderline-Persönlichkeitsstörung." path="/unterstuetzen/alltag" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
         <div className="container">

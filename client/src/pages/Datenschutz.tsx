@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,6 +8,7 @@ import { Shield, Cookie, Server, Eye, Lock, ExternalLink, Download, Scale, FileT
 export default function Datenschutz() {
   return (
     <Layout>
+      <SEO title="Datenschutz" description="Datenschutzerklärung der Website." path="/datenschutz" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sand-muted/50 to-background wave-divider">
         <div className="container">

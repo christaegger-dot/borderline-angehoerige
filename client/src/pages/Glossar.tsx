@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -197,6 +198,7 @@ export default function Glossar() {
 
   return (
     <Layout>
+      <SEO title="Glossar" description="Fachbegriffe rund um Borderline einfach erklärt." path="/glossar" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background wave-divider">
         <div className="container">
@@ -305,14 +307,14 @@ export default function Glossar() {
                             {/* Header */}
                             <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                               <div>
-                                <h3 className="text-xl font-semibold text-foreground">
+                                <h2 className="text-xl font-semibold text-foreground">
                                   {term.term}
                                   {term.abbreviation && (
                                     <span className="ml-2 text-base font-normal text-muted-foreground">
                                       ({term.abbreviation})
                                     </span>
                                   )}
-                                </h3>
+                                </h2>
                                 <div className="flex items-center gap-2 mt-1">
                                   <category.icon className="w-4 h-4" style={{ color: category.color }} />
                                   <span className="text-sm text-muted-foreground">{category.label}</span>
@@ -368,9 +370,9 @@ export default function Glossar() {
                   <Users className="w-6 h-6 text-slate-mid" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                  <h2 className="text-lg font-semibold text-foreground mb-2">
                     Begriffe im Kontext verstehen
-                  </h3>
+                  </h2>
                   <p className="text-muted-foreground leading-relaxed">
                     Dieses Glossar bietet vereinfachte Erklärungen für Angehörige. Die Begriffe werden 
                     in der Fachliteratur und klinischen Praxis oft differenzierter verwendet. 

@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,6 +14,7 @@ const gruen143 = kontaktById("GRUEN_143")!;
 export default function UnterstuetzenKrise() {
   return (
     <Layout>
+      <SEO title="Krisenbegleitung" description="Wie Sie in akuten Krisen richtig reagieren und Hilfe leisten können." path="/unterstuetzen/krise" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/30 to-background wave-divider">
         <div className="container">

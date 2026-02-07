@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,7 @@ import ContentSection from "@/components/ContentSection";
 export default function Kommunizieren() {
   return (
     <Layout>
+      <SEO title="Kommunizieren" description="Wirksame Kommunikationsstrategien für den Umgang mit Menschen mit Borderline." path="/kommunizieren" />
       {/* Inhaltsverzeichnis */}
       <TableOfContents />
       {/* Hero */}
@@ -94,7 +96,7 @@ export default function Kommunizieren() {
                             </div>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-foreground">{item.title}</h4>
+                            <h3 className="font-semibold text-foreground text-base">{item.title}</h3>
                             <p className="text-muted-foreground text-sm mt-1 bg-muted/30 rounded-lg px-3 py-2 italic">{item.example}</p>
                           </div>
                         </div>
@@ -126,7 +128,7 @@ export default function Kommunizieren() {
                     <div className="w-10 h-10 rounded-full bg-sage-mid flex items-center justify-center mb-3">
                       <Heart className="w-5 h-5 text-white" />
                     </div>
-                    <h4 className="font-semibold text-foreground text-sm mb-2">Validierung</h4>
+                    <h3 className="font-semibold text-foreground text-sm mb-2">Validierung</h3>
                     <p className="text-xs text-muted-foreground italic">«Ich höre, dass du wütend bist. Das klingt sehr belastend.»</p>
                   </CardContent>
                 </Card>
@@ -136,7 +138,7 @@ export default function Kommunizieren() {
                     <div className="w-10 h-10 rounded-full bg-terracotta-mid flex items-center justify-center mb-3">
                       <MessageSquare className="w-5 h-5 text-white" />
                     </div>
-                    <h4 className="font-semibold text-foreground text-sm mb-2">Keine Zustimmung nötig</h4>
+                    <h3 className="font-semibold text-foreground text-sm mb-2">Keine Zustimmung nötig</h3>
                     <p className="text-xs text-muted-foreground italic">Sie müssen nicht bestätigen, dass die Wut berechtigt ist.</p>
                   </CardContent>
                 </Card>
@@ -146,7 +148,7 @@ export default function Kommunizieren() {
                     <div className="w-10 h-10 rounded-full bg-slate-blue flex items-center justify-center mb-3">
                       <UserCircle className="w-5 h-5 text-white" />
                     </div>
-                    <h4 className="font-semibold text-foreground text-sm mb-2">Ihre Wahrheit bleibt</h4>
+                    <h3 className="font-semibold text-foreground text-sm mb-2">Ihre Wahrheit bleibt</h3>
                     <p className="text-xs text-muted-foreground italic">«Gleichzeitig sehe ich die Situation anders.»</p>
                   </CardContent>
                 </Card>
@@ -239,7 +241,7 @@ export default function Kommunizieren() {
                   </div>
                   
                   <div className="mt-6 p-4 bg-sage-lighter/50 rounded-xl">
-                    <h4 className="font-semibold text-foreground text-sm mb-2">Dann, wenn sie ruhiger ist:</h4>
+                    <h3 className="font-semibold text-foreground text-sm mb-2">Dann, wenn sie ruhiger ist:</h3>
                     <p className="text-sm text-muted-foreground italic">
                       «Könnte es sein, dass sie einfach in Eile war? Was denkst du?»
                     </p>
@@ -545,7 +547,7 @@ export default function Kommunizieren() {
                       <img src={item.url} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
                     </div>
                     <CardContent className="p-4">
-                      <h4 className="font-medium text-foreground text-sm mb-2">{item.title}</h4>
+                      <h3 className="font-medium text-foreground text-sm mb-2">{item.title}</h3>
                       <a href={item.url} target="_blank" rel="noopener noreferrer" download>
                         <Button size="sm" variant="outline" className="w-full">
                           <Download className="w-4 h-4 mr-2" />

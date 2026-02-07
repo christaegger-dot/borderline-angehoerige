@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,7 @@ import { TableOfContents } from "@/components/UXEnhancements";
 export default function Genesung() {
   return (
     <Layout>
+      <SEO title="Genesung" description="Genesungswege bei Borderline – was Angehörige über Therapieerfolge wissen sollten." path="/genesung" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background relative overflow-hidden wave-divider">
         <div className="absolute inset-0 opacity-10">

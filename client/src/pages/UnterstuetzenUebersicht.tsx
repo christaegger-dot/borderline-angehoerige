@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +10,7 @@ import { Link } from "wouter";
 export default function UnterstuetzenUebersicht() {
   return (
     <Layout>
+      <SEO title="Unterstützen – Übersicht" description="Wie Sie einen Menschen mit Borderline unterstützen können: Alltag, Therapie und Krisenbegleitung." path="/unterstuetzen/uebersicht" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-light/30 to-background wave-divider">
         <div className="container">
@@ -173,10 +175,10 @@ export default function UnterstuetzenUebersicht() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-4">
-                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-base">
                       <CheckCircle2 className="w-4 h-4 text-sage-mid" />
                       Hilfreich
-                    </h4>
+                    </h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• Gemeinsame Absprachen treffen</li>
                       <li>• Einheitliche Grenzen setzen</li>
@@ -187,10 +189,10 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
                 <Card className="border-l-4 border-l-terracotta-mid">
                   <CardContent className="p-4">
-                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2 text-base">
                       <XCircle className="w-4 h-4 text-terracotta-mid" />
                       Vermeiden
-                    </h4>
+                    </h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• Widersprüchliche Botschaften</li>
                       <li>• «Guter Cop / Böser Cop»-Dynamik</li>
@@ -420,7 +422,7 @@ export default function UnterstuetzenUebersicht() {
                       />
                     </div>
                     <CardContent className="p-4">
-                      <h4 className="font-medium text-sm text-foreground mb-2">{item.title}</h4>
+                      <h3 className="font-medium text-sm text-foreground mb-2">{item.title}</h3>
                       <a href={item.url} target="_blank" rel="noopener noreferrer" download>
                         <Button size="sm" variant="outline" className="w-full">
                           <Download className="w-4 h-4 mr-2" />

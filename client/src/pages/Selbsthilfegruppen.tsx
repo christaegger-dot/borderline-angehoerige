@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,6 +20,7 @@ const urlDepress = urlById("URL_DEPRESS")!;
 export default function Selbsthilfegruppen() {
   return (
     <Layout>
+      <SEO title="Selbsthilfegruppen" description="Selbsthilfegruppen für Angehörige von Menschen mit Borderline in der Schweiz." path="/selbsthilfegruppen" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-lighter/50 to-background wave-divider">
         <div className="container">

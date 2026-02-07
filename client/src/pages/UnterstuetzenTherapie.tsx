@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,6 +16,7 @@ const emailHard = emailById("EMAIL_HARD")!;
 export default function UnterstuetzenTherapie() {
   return (
     <Layout>
+      <SEO title="Therapie unterstützen" description="Wie Sie die Therapie eines Menschen mit Borderline sinnvoll begleiten können." path="/unterstuetzen/therapie" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background wave-divider">
         <div className="container">

@@ -1,3 +1,5 @@
+import SEO from "@/components/SEO";
+import { FAQSchema } from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -157,6 +159,8 @@ export default function FAQ() {
 
   return (
     <Layout>
+      <SEO title="Häufige Fragen" description="Antworten auf die häufigsten Fragen von Angehörigen zu Borderline." path="/faq" />
+      <FAQSchema questions={faqCategories.flatMap(c => c.questions.map(q => ({ question: q.question, answer: q.answer })))} />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background wave-divider">
         <div className="container">

@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import ContentSection from "@/components/ContentSection";
 export default function Grenzen() {
   return (
     <Layout>
+      <SEO title="Grenzen setzen" description="Gesunde Grenzen setzen und wahren – für Angehörige von Menschen mit Borderline." path="/grenzen" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/30 to-background wave-divider">
         <div className="container">

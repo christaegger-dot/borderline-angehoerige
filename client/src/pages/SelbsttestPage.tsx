@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import Selbsttest from "@/components/Selbsttest";
 import { motion } from "framer-motion";
@@ -6,6 +7,7 @@ import { Compass } from "lucide-react";
 export default function SelbsttestPage() {
   return (
     <Layout>
+      <SEO title="Selbsttest" description="Selbsttest für Angehörige: Wie belastet sind Sie? Anonyme Einschätzung." path="/selbsttest" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/50 to-background wave-divider">
         <div className="container">

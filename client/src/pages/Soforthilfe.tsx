@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 /**
  * Soforthilfe-Seite
  * Alle Kontakte aus @/data/kontakte.ts (Single Source of Truth).
@@ -211,6 +212,7 @@ export default function Notfall() {
 
   return (
     <Layout>
+      <SEO title="Soforthilfe" description="Sofortige Hilfe in Krisensituationen – Notfallnummern und Handlungsanleitungen." path="/soforthilfe" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-alert-light/50 to-background wave-divider">
         <div className="container">

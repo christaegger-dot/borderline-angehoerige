@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -430,6 +431,7 @@ export default function Materialien() {
 
   return (
     <Layout>
+      <SEO title="Materialien" description="Herunterladbare Materialien, Infografiken und Arbeitsblätter für Angehörige." path="/materialien" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
         <div className="container">

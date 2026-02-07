@@ -166,6 +166,49 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // React core – cached long-term
+          'vendor-react': ['react', 'react-dom'],
+          // Animation library – used on many pages but heavy
+          'vendor-motion': ['framer-motion'],
+          // Radix UI primitives – shared across components
+          'vendor-radix': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-select',
+            '@radix-ui/react-scroll-area',
+            '@radix-ui/react-separator',
+            '@radix-ui/react-slot',
+            '@radix-ui/react-toggle',
+            '@radix-ui/react-toggle-group',
+            '@radix-ui/react-collapsible',
+            '@radix-ui/react-label',
+            '@radix-ui/react-progress',
+            '@radix-ui/react-switch',
+            '@radix-ui/react-checkbox',
+            '@radix-ui/react-radio-group',
+          ],
+          // Utility libraries
+          'vendor-utils': [
+            'clsx',
+            'tailwind-merge',
+            'class-variance-authority',
+            'wouter',
+            'sonner',
+            'zod',
+            'nanoid',
+          ],
+          // Icons – large but tree-shakeable
+          'vendor-icons': ['lucide-react'],
+        },
+      },
+    },
   },
   server: {
     port: 3000,

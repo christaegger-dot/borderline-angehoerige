@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -10,6 +11,7 @@ import ContentSection from "@/components/ContentSection";
 export default function Verstehen() {
   return (
     <Layout>
+      <SEO title="Borderline verstehen" description="Was ist Borderline-Persönlichkeitsstörung? Symptome, Ursachen und Auswirkungen verständlich erklärt." path="/verstehen" />
       {/* Inhaltsverzeichnis */}
       <TableOfContents />
       {/* Hero */}

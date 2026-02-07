@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import { Link } from "wouter";
 export default function UeberUns() {
   return (
     <Layout>
+      <SEO title="Über uns" description="Über das Projekt Schluss mit dem Eiertanz." path="/ueber-uns" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background wave-divider">
         <div className="container">

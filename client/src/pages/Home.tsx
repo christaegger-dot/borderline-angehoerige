@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Erfahrungsberichte from "@/components/Erfahrungsberichte";
+import SEO, { WebsiteSchema, MedicalPageSchema } from "@/components/SEO";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -141,6 +142,17 @@ const crisisMatrix = [
 export default function Home() {
   return (
     <Layout>
+      <SEO
+        title="Startseite"
+        description="Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung. Verstehen, unterstützen, kommunizieren – ohne sich selbst zu verlieren."
+        path="/"
+      />
+      <WebsiteSchema />
+      <MedicalPageSchema
+        title="Schluss mit dem Eiertanz – Für Angehörige von Menschen mit Borderline"
+        description="Evidenzbasierte Strategien für den Alltag mit einem Menschen mit Borderline-Persönlichkeitsstörung."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">

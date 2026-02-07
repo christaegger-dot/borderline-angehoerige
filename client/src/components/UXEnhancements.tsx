@@ -405,7 +405,7 @@ export function TableOfContents() {
       <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
         <div className="bg-background/90 backdrop-blur-md rounded-xl border border-border/50 shadow-sm overflow-hidden flex flex-col max-h-[70vh]">
           <div className="px-4 pt-4 pb-2">
-            <h4 className="font-semibold text-foreground text-sm">Auf dieser Seite</h4>
+            <h3 className="font-semibold text-foreground text-sm">Auf dieser Seite</h3>
           </div>
           <nav className="overflow-y-auto overscroll-contain px-2 pb-3 flex-1">
             <ul className="space-y-0.5">
@@ -474,7 +474,7 @@ export function KeyboardShortcuts() {
           exit={{ opacity: 0, y: 20 }}
           className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-foreground text-background rounded-xl p-4 shadow-xl"
         >
-          <h4 className="font-semibold mb-2">Tastaturkürzel</h4>
+          <h3 className="font-semibold mb-2 text-sm">Tastaturkürzel</h3>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm">
             <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">1-5</kbd> Hauptseiten</div>
             <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">N</kbd> Notfall</div>

@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -152,6 +153,7 @@ function UebungAkkordeon({ title, icon: Icon, children, color }: {
 export default function Selbstfuersorge() {
   return (
     <Layout>
+      <SEO title="Selbstfürsorge" description="Selbstfürsorge für Angehörige: Burnout vermeiden und eigene Bedürfnisse wahrnehmen." path="/selbstfuersorge" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-lighter/30 to-background wave-divider">
         <div className="container">

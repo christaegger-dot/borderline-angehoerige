@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -38,6 +39,7 @@ export default function Feedback() {
   if (submitted) {
     return (
       <Layout>
+      <SEO title="Feedback" description="Geben Sie uns Ihr Feedback zur Website." path="/feedback" />
         <section className="py-20 md:py-32">
           <div className="container">
             <motion.div
@@ -83,6 +85,7 @@ export default function Feedback() {
 
   return (
     <Layout>
+      <SEO title="Feedback" description="Geben Sie uns Ihr Feedback zur Website." path="/feedback" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background wave-divider">
         <div className="container">

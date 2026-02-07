@@ -386,13 +386,13 @@ export default function UnterstuetzenTherapie() {
               <Card className="bg-sand-muted border-sand-border">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-terracotta-light flex items-center justify-center flex-shrink-0">
-                      <RefreshCw className="w-5 h-5 text-sand-warm" />
+                    <div className="w-10 h-10 rounded-lg bg-sage-lighter flex items-center justify-center flex-shrink-0">
+                      <Download className="w-5 h-5 text-sage-mid" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
+                      <h3 className="font-medium text-foreground mb-2">Alle Materialien als PDF verfügbar</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        Neue Infografiken zum Thema "Therapie" werden gerade erstellt.
+                        Infografiken und Handouts zum Thema Therapiebegleitung finden Sie auf der Materialien-Seite.
                       </p>
                       <Link href="/materialien">
                         <Button variant="outline" size="sm">

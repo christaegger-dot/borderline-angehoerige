@@ -284,7 +284,7 @@ export default function Datenschutz() {
               viewport={{ once: true }}
             >
               <p className="text-center text-sm text-muted-foreground">
-                Stand: Februar 2025
+                Stand: Februar 2026
               </p>
             </motion.div>
           </div>

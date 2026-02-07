@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -19,7 +19,8 @@ interface ContentSectionProps {
 
 /**
  * Aufklappbarer Inhaltsabschnitt mit sanfter Animation.
- * Ersetzt die statischen motion.div-Wrapper auf langen Inhaltsseiten.
+ * Unterstützt programmatisches Öffnen via Custom Event "open-section".
+ * Nach dem Öffnen scrollt die Komponente sanft in den Viewport.
  */
 export default function ContentSection({
   title,
@@ -30,9 +31,55 @@ export default function ContentSection({
   preview,
 }: ContentSectionProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const pendingScrollRef = useRef(false);
+
+  // Auf Custom Event "open-section" lauschen
+  useEffect(() => {
+    if (!id) return;
+
+    const handleOpenSection = (e: Event) => {
+      const detail = (e as CustomEvent<{ sectionId: string }>).detail;
+      if (detail.sectionId === id) {
+        if (!isOpen) {
+          pendingScrollRef.current = true;
+          setIsOpen(true);
+        } else {
+          // Bereits offen → direkt scrollen
+          scrollToSection();
+        }
+      }
+    };
+
+    window.addEventListener("open-section", handleOpenSection);
+    return () => window.removeEventListener("open-section", handleOpenSection);
+  }, [id, isOpen]);
+
+  // Nach dem Öffnen (State-Wechsel) sanft scrollen
+  useEffect(() => {
+    if (isOpen && pendingScrollRef.current) {
+      pendingScrollRef.current = false;
+      // Kurz warten bis die Animation begonnen hat
+      const timer = setTimeout(() => {
+        scrollToSection();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
+  const scrollToSection = () => {
+    if (!sectionRef.current) return;
+    const header = document.querySelector("header");
+    const headerHeight = header?.getBoundingClientRect().height || 80;
+    const offset = headerHeight + 20;
+    const top =
+      sectionRef.current.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
 
   return (
     <motion.div
+      ref={sectionRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -73,9 +120,7 @@ export default function ContentSection({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-6 px-1">
-              {children}
-            </div>
+            <div className="pt-6 px-1">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>

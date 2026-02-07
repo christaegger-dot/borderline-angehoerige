@@ -141,14 +141,28 @@ export function TableOfContents() {
     const items: TOCItem[] = [];
     
     elements.forEach((el, index) => {
-      const id = el.id || `heading-${index}`;
-      if (!el.id) el.id = id;
+      // Prüfen ob das Heading innerhalb einer ContentSection liegt
+      // ContentSection hat aria-expanded auf dem Button und eine manuelle ID auf dem Wrapper
+      const contentSectionWrapper = el.closest('[id]:not(h2):not(h3)');
+      const isInsideContentSection = contentSectionWrapper?.querySelector('[aria-expanded]') !== null;
       
-      items.push({
-        id,
-        text: el.textContent || "",
-        level: el.tagName === "H2" ? 2 : 3
-      });
+      let id: string;
+      if (isInsideContentSection && contentSectionWrapper?.id && !contentSectionWrapper.id.startsWith('heading-')) {
+        // Verwende die ID des ContentSection-Wrappers
+        id = contentSectionWrapper.id;
+      } else {
+        id = el.id || `heading-${index}`;
+        if (!el.id) el.id = id;
+      }
+      
+      // Duplikate vermeiden (mehrere H-Elemente in derselben ContentSection)
+      if (!items.some(item => item.id === id)) {
+        items.push({
+          id,
+          text: el.textContent || "",
+          level: el.tagName === "H2" ? 2 : 3
+        });
+      }
     });
     
     setHeadings(items);
@@ -205,12 +219,24 @@ export function TableOfContents() {
   const scrollToHeading = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      // Dynamischer Offset basierend auf Header-Höhe
-      const header = document.querySelector('header');
-      const headerHeight = header?.getBoundingClientRect().height || 80;
-      const offset = headerHeight + 20; // Header + Puffer
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: "smooth" });
+      // Prüfen ob es sich um eine ContentSection handelt
+      const isContentSection = el.querySelector('[aria-expanded]') !== null;
+
+      if (isContentSection) {
+        // ContentSection aufklappen via Custom Event
+        // Die ContentSection übernimmt auch das Scrollen
+        window.dispatchEvent(
+          new CustomEvent("open-section", { detail: { sectionId: id } })
+        );
+      } else {
+        // Normales Heading: direkt scrollen
+        const header = document.querySelector('header');
+        const headerHeight = header?.getBoundingClientRect().height || 80;
+        const offset = headerHeight + 20;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+
       setIsOpen(false);
     }
   };

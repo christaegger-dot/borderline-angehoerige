@@ -1,7 +1,7 @@
 /**
  * GroundingTimer – Interaktives Element #5
  * Geführte 5-4-3-2-1 Übung mit Countdown pro Sinneskanal.
- * + Audio-geführte Version mit Web Speech API (SpeechSynthesis)
+ * + Sanfte Klangschalen-Töne (Web Audio API) beim Stufenwechsel
  * Einfügepunkt: /selbstfuersorge → Sofort-Übungen (neben Atemübung)
  */
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -18,8 +18,6 @@ interface GroundingStep {
   bgColor: string;
   instruction: string;
   prompt: string;
-  spokenIntro: string;
-  spokenOutro: string;
 }
 
 const steps: GroundingStep[] = [
@@ -31,8 +29,6 @@ const steps: GroundingStep[] = [
     bgColor: "var(--color-sage-wash)",
     instruction: "Benennen Sie 5 Dinge, die Sie sehen.",
     prompt: "Schauen Sie sich um. Was fällt Ihnen auf?",
-    spokenIntro: "Schauen Sie sich um. Benennen Sie fünf Dinge, die Sie sehen können. Nehmen Sie sich Zeit.",
-    spokenOutro: "Sehr gut. Weiter zum nächsten Sinn.",
   },
   {
     count: 4,
@@ -42,8 +38,6 @@ const steps: GroundingStep[] = [
     bgColor: "var(--color-slate-wash)",
     instruction: "Benennen Sie 4 Dinge, die Sie hören.",
     prompt: "Schliessen Sie kurz die Augen. Was hören Sie?",
-    spokenIntro: "Schliessen Sie kurz die Augen. Benennen Sie vier Dinge, die Sie hören können. Auch leise Geräusche zählen.",
-    spokenOutro: "Gut gemacht. Weiter.",
   },
   {
     count: 3,
@@ -53,8 +47,6 @@ const steps: GroundingStep[] = [
     bgColor: "var(--color-terracotta-wash)",
     instruction: "Benennen Sie 3 Dinge, die Sie berühren/fühlen.",
     prompt: "Berühren Sie etwas. Wie fühlt es sich an?",
-    spokenIntro: "Berühren Sie etwas in Ihrer Nähe. Benennen Sie drei Dinge, die Sie fühlen können. Wie fühlt sich die Oberfläche an?",
-    spokenOutro: "Wunderbar. Weiter zum nächsten Sinn.",
   },
   {
     count: 2,
@@ -64,8 +56,6 @@ const steps: GroundingStep[] = [
     bgColor: "var(--color-sand-muted)",
     instruction: "Benennen Sie 2 Dinge, die Sie riechen.",
     prompt: "Atmen Sie bewusst ein. Was riechen Sie?",
-    spokenIntro: "Atmen Sie tief ein. Benennen Sie zwei Dinge, die Sie riechen können.",
-    spokenOutro: "Fast geschafft.",
   },
   {
     count: 1,
@@ -75,61 +65,105 @@ const steps: GroundingStep[] = [
     bgColor: "var(--color-terracotta-wash)",
     instruction: "Benennen Sie 1 Ding, das Sie schmecken.",
     prompt: "Konzentrieren Sie sich auf Ihren Geschmack.",
-    spokenIntro: "Konzentrieren Sie sich auf Ihren Geschmack. Benennen Sie eine Sache, die Sie schmecken können.",
-    spokenOutro: "Ausgezeichnet.",
   },
 ];
 
 type Phase = "idle" | "running" | "paused" | "done";
 
-function useSpeechSynthesis() {
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+/**
+ * Synthesizes a gentle singing bowl / bell tone using Web Audio API.
+ * Uses a sine wave with a slow exponential decay to mimic a resonating bowl.
+ * Different frequencies for different contexts:
+ * - "start": warm welcoming tone (392 Hz, G4)
+ * - "transition": soft chime (523 Hz, C5)
+ * - "complete": two-note resolution (392 Hz → 523 Hz)
+ */
+function useBowlSound() {
+  const audioCtxRef = useRef<AudioContext | null>(null);
   const [isSupported, setIsSupported] = useState(false);
 
   useEffect(() => {
-    setIsSupported(typeof window !== "undefined" && "speechSynthesis" in window);
+    setIsSupported(typeof window !== "undefined" && typeof AudioContext !== "undefined");
   }, []);
 
-  const speak = useCallback(
-    (text: string, onEnd?: () => void) => {
-      if (!isSupported) {
-        onEnd?.();
-        return;
-      }
-      // Cancel any ongoing speech
-      window.speechSynthesis.cancel();
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = "de-DE";
-      utterance.rate = 0.85;
-      utterance.pitch = 1.0;
-      utterance.volume = 1.0;
-
-      // Try to find a German voice
-      const voices = window.speechSynthesis.getVoices();
-      const germanVoice = voices.find(
-        (v) => v.lang.startsWith("de") && v.localService
-      ) || voices.find((v) => v.lang.startsWith("de"));
-      if (germanVoice) {
-        utterance.voice = germanVoice;
-      }
-
-      utterance.onend = () => onEnd?.();
-      utterance.onerror = () => onEnd?.();
-
-      utteranceRef.current = utterance;
-      window.speechSynthesis.speak(utterance);
-    },
-    [isSupported]
-  );
-
-  const cancel = useCallback(() => {
-    if (isSupported) {
-      window.speechSynthesis.cancel();
+  const getContext = useCallback(() => {
+    if (!audioCtxRef.current && isSupported) {
+      audioCtxRef.current = new AudioContext();
     }
+    return audioCtxRef.current;
   }, [isSupported]);
 
-  return { speak, cancel, isSupported };
+  const playTone = useCallback(
+    (frequency: number, duration: number, volume: number = 0.3, delay: number = 0) => {
+      const ctx = getContext();
+      if (!ctx) return;
+
+      // Resume if suspended (browser autoplay policy)
+      if (ctx.state === "suspended") {
+        ctx.resume();
+      }
+
+      const startTime = ctx.currentTime + delay;
+
+      // Main sine oscillator (fundamental)
+      const osc = ctx.createOscillator();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(frequency, startTime);
+
+      // Gentle overtone for warmth
+      const osc2 = ctx.createOscillator();
+      osc2.type = "sine";
+      osc2.frequency.setValueAtTime(frequency * 2, startTime);
+
+      // Gain for main tone
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(volume, startTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+
+      // Gain for overtone (much quieter)
+      const gain2 = ctx.createGain();
+      gain2.gain.setValueAtTime(volume * 0.15, startTime);
+      gain2.gain.exponentialRampToValueAtTime(0.001, startTime + duration * 0.7);
+
+      // Connect
+      osc.connect(gain);
+      osc2.connect(gain2);
+      gain.connect(ctx.destination);
+      gain2.connect(ctx.destination);
+
+      // Start and stop
+      osc.start(startTime);
+      osc2.start(startTime);
+      osc.stop(startTime + duration);
+      osc2.stop(startTime + duration);
+    },
+    [getContext]
+  );
+
+  const playStart = useCallback(() => {
+    // Warm welcoming tone: G4 (392 Hz)
+    playTone(392, 2.5, 0.25);
+  }, [playTone]);
+
+  const playTransition = useCallback(() => {
+    // Soft chime: C5 (523 Hz) – higher, lighter
+    playTone(523.25, 2.0, 0.2);
+  }, [playTone]);
+
+  const playComplete = useCallback(() => {
+    // Two-note resolution: G4 → C5 (perfect fourth, calming)
+    playTone(392, 2.5, 0.25, 0);
+    playTone(523.25, 3.0, 0.25, 0.6);
+  }, [playTone]);
+
+  const cleanup = useCallback(() => {
+    if (audioCtxRef.current) {
+      audioCtxRef.current.close();
+      audioCtxRef.current = null;
+    }
+  }, []);
+
+  return { playStart, playTransition, playComplete, cleanup, isSupported };
 }
 
 export default function GroundingTimer() {
@@ -137,9 +171,8 @@ export default function GroundingTimer() {
   const [currentStep, setCurrentStep] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
   const [audioEnabled, setAudioEnabled] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const { speak, cancel, isSupported } = useSpeechSynthesis();
+  const { playStart, playTransition, playComplete, cleanup, isSupported } = useBowlSound();
 
   const SECONDS_PER_ITEM = 8;
 
@@ -160,26 +193,18 @@ export default function GroundingTimer() {
         setTimeLeft((prev) => {
           if (prev <= 1) {
             clearTimer();
-            // Speak outro then move to next step
-            if (audioEnabled) {
-              setIsSpeaking(true);
-              speak(step.spokenOutro, () => {
-                setIsSpeaking(false);
-                if (stepIndex < steps.length - 1) {
-                  // Small pause before next step
-                  setTimeout(() => startStep(stepIndex + 1), 400);
-                } else {
-                  speak("Gut gemacht. Sie sind wieder im Hier und Jetzt.", () => {
-                    setPhase("done");
-                  });
-                }
-              });
-            } else {
-              if (stepIndex < steps.length - 1) {
-                setTimeout(() => startStep(stepIndex + 1), 600);
-              } else {
-                setPhase("done");
+            if (stepIndex < steps.length - 1) {
+              // Play transition chime
+              if (audioEnabled) {
+                playTransition();
               }
+              setTimeout(() => startStep(stepIndex + 1), 600);
+            } else {
+              // Play completion sound
+              if (audioEnabled) {
+                playComplete();
+              }
+              setPhase("done");
             }
             return 0;
           }
@@ -188,7 +213,7 @@ export default function GroundingTimer() {
       }, 1000);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [audioEnabled, clearTimer, speak]
+    [audioEnabled, clearTimer, playTransition, playComplete]
   );
 
   const startStep = useCallback(
@@ -196,41 +221,20 @@ export default function GroundingTimer() {
       clearTimer();
       setCurrentStep(stepIndex);
       setPhase("running");
-
-      if (audioEnabled) {
-        setIsSpeaking(true);
-        speak(steps[stepIndex].spokenIntro, () => {
-          setIsSpeaking(false);
-          startCountdown(stepIndex);
-        });
-      } else {
-        startCountdown(stepIndex);
-      }
+      startCountdown(stepIndex);
     },
-    [audioEnabled, clearTimer, speak, startCountdown]
+    [clearTimer, startCountdown]
   );
 
   const handleStart = () => {
     if (audioEnabled) {
-      setIsSpeaking(true);
-      speak(
-        "Willkommen zur Fünf-Vier-Drei-Zwei-Eins Grounding-Übung. Wir gehen Schritt für Schritt durch alle fünf Sinne. Machen Sie es sich bequem.",
-        () => {
-          setIsSpeaking(false);
-          startStep(0);
-        }
-      );
-      setPhase("running");
-      setCurrentStep(0);
-    } else {
-      startStep(0);
+      playStart();
     }
+    startStep(0);
   };
 
   const handlePause = () => {
     clearTimer();
-    cancel();
-    setIsSpeaking(false);
     setPhase("paused");
   };
 
@@ -241,8 +245,14 @@ export default function GroundingTimer() {
         if (prev <= 1) {
           clearTimer();
           if (currentStep < steps.length - 1) {
+            if (audioEnabled) {
+              playTransition();
+            }
             setTimeout(() => startStep(currentStep + 1), 600);
           } else {
+            if (audioEnabled) {
+              playComplete();
+            }
             setPhase("done");
           }
           return 0;
@@ -254,18 +264,12 @@ export default function GroundingTimer() {
 
   const handleReset = () => {
     clearTimer();
-    cancel();
-    setIsSpeaking(false);
     setPhase("idle");
     setCurrentStep(0);
     setTimeLeft(0);
   };
 
   const toggleAudio = () => {
-    if (audioEnabled) {
-      cancel();
-      setIsSpeaking(false);
-    }
     setAudioEnabled(!audioEnabled);
   };
 
@@ -273,9 +277,9 @@ export default function GroundingTimer() {
   useEffect(() => {
     return () => {
       clearTimer();
-      cancel();
+      cleanup();
     };
-  }, [clearTimer, cancel]);
+  }, [clearTimer, cleanup]);
 
   const step = steps[currentStep];
   const StepIcon = step.icon;
@@ -300,18 +304,18 @@ export default function GroundingTimer() {
                   ? "bg-slate-dark text-white"
                   : "bg-muted/50 text-muted-foreground hover:bg-muted"
               }`}
-              aria-label={audioEnabled ? "Audio-Anleitung deaktivieren" : "Audio-Anleitung aktivieren"}
+              aria-label={audioEnabled ? "Klänge deaktivieren" : "Klänge aktivieren"}
               aria-pressed={audioEnabled}
             >
               {audioEnabled ? (
                 <>
                   <Volume2 className="w-3.5 h-3.5" />
-                  <span>Audio an</span>
+                  <span>Klang an</span>
                 </>
               ) : (
                 <>
                   <VolumeX className="w-3.5 h-3.5" />
-                  <span>Audio aus</span>
+                  <span>Klang aus</span>
                 </>
               )}
             </button>
@@ -331,8 +335,8 @@ export default function GroundingTimer() {
                 {isSupported && (
                   <span className="block mt-1 text-xs">
                     {audioEnabled
-                      ? "Die Übung wird mit gesprochenen Anweisungen begleitet."
-                      : "Aktivieren Sie «Audio», um gesprochene Anweisungen zu erhalten."}
+                      ? "Sanfte Klangschalen-Töne begleiten den Wechsel zwischen den Sinnen."
+                      : "Aktivieren Sie «Klang», um beruhigende Töne beim Stufenwechsel zu hören."}
                   </span>
                 )}
               </p>
@@ -374,14 +378,6 @@ export default function GroundingTimer() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
             >
-              {/* Speaking indicator */}
-              {isSpeaking && audioEnabled && (
-                <div className="flex items-center gap-2 mb-3 px-3 py-2 rounded-lg bg-slate-dark/10">
-                  <Volume2 className="w-4 h-4 text-slate-dark animate-pulse" />
-                  <span className="text-xs text-slate-dark font-medium">Spricht…</span>
-                </div>
-              )}
-
               {/* Progress dots */}
               <div className="flex items-center justify-center gap-2 mb-4">
                 {steps.map((s, i) => (

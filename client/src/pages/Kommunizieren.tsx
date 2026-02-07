@@ -7,6 +7,7 @@ import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Dow
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
+import { downloadFile } from "@/lib/downloadFile";
 
 export default function Kommunizieren() {
   return (
@@ -548,12 +549,10 @@ export default function Kommunizieren() {
                     </div>
                     <CardContent className="p-4">
                       <h3 className="font-medium text-foreground text-sm mb-2">{item.title}</h3>
-                      <a href={item.url} target="_blank" rel="noopener noreferrer" download>
-                        <Button size="sm" variant="outline" className="w-full">
+                      <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile(item.url, item.title.replace(/[^a-zA-Z0-9\u00e4\u00f6\u00fc\u00c4\u00d6\u00dc\u00df\-_ ]/g, '') + '.webp')}>
                           <Download className="w-4 h-4 mr-2" />
                           Herunterladen
-                        </Button>
-                      </a>
+                      </Button>
                     </CardContent>
                   </Card>
                 ))}

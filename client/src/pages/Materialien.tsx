@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
+import { downloadFile } from "@/lib/downloadFile";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MATERIALIEN-SEITE – ÜBERARBEITUNG IN PROGRESS
@@ -584,12 +585,17 @@ export default function Materialien() {
                       </p>
                       
                       <div className="flex items-center justify-end">
-                        <a href={item.downloadUrl || item.url} target="_blank" rel="noopener noreferrer" download>
-                          <Button size="sm" className="bg-sage-dark hover:bg-sage-dark text-white">
-                            <Download className="w-4 h-4 mr-2" />
-                            {item.downloadUrl ? "PDF" : "Download"}
-                          </Button>
-                        </a>
+                        <Button
+                          size="sm"
+                          className="bg-sage-dark hover:bg-sage-dark text-white"
+                          onClick={() => downloadFile(
+                            item.downloadUrl || item.url,
+                            item.title.replace(/[^a-zA-Z0-9äöüÄÖÜß\-_ ]/g, '') + (item.downloadUrl ? '.pdf' : '.webp')
+                          )}
+                        >
+                          <Download className="w-4 h-4 mr-2" />
+                          {item.downloadUrl ? "PDF" : "Download"}
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>

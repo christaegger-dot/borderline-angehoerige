@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktById } from "@/data/kontakte";
+import { downloadFile } from "@/lib/downloadFile";
 
 const proMente = kontaktById("INFO_PROMENTE")!;
 import { useState } from "react";
@@ -707,11 +708,9 @@ export default function Selbstfuersorge() {
                       <CardContent className="p-4">
                         <h3 className="font-medium text-foreground mb-1 text-sm">{item.title}</h3>
                         <p className="text-xs text-muted-foreground mb-3">{item.desc}</p>
-                        <a href={item.pdf} target="_blank" rel="noopener noreferrer" download>
-                          <Button variant="outline" size="sm" className="w-full gap-2">
+                        <Button variant="outline" size="sm" className="w-full gap-2" onClick={() => downloadFile(item.pdf, item.title.replace(/[^a-zA-Z0-9\u00e4\u00f6\u00fc\u00c4\u00d6\u00dc\u00df\-_ ]/g, '') + '.pdf')}>
                             <Download className="w-4 h-4" /> PDF herunterladen
-                          </Button>
-                        </a>
+                        </Button>
                       </CardContent>
                     </Card>
                   ))}

@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
+import { downloadFile } from "@/lib/downloadFile";
 
 export default function Verstehen() {
   return (
@@ -616,12 +617,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der Leuchtturm</h3>
                     <p className="text-sm text-muted-foreground mb-3">Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rvxNLrJSUBsMAByU.pdf" download>
-                      <Button size="sm" variant="outline" className="w-full">
+                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rvxNLrJSUBsMAByU.pdf', 'Der-Leuchtturm.pdf')}>
                         <Download className="w-4 h-4 mr-2" />
                         PDF herunterladen
-                      </Button>
-                    </a>
+                    </Button>
                   </CardContent>
                 </Card>
 
@@ -643,12 +642,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der Eisberg</h3>
                     <p className="text-sm text-muted-foreground mb-3">Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ecVVNozrluFJGAic.pdf" download>
-                      <Button size="sm" variant="outline" className="w-full">
+                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ecVVNozrluFJGAic.pdf', 'Der-Eisberg.pdf')}>
                         <Download className="w-4 h-4 mr-2" />
                         PDF herunterladen
-                      </Button>
-                    </a>
+                    </Button>
                   </CardContent>
                 </Card>
 
@@ -670,12 +667,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Spaltung</h3>
                     <p className="text-sm text-muted-foreground mb-3">Das Pendel zwischen Extremen – die Grauzone stärken.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ROOtCLvQAliCecKS.pdf" download>
-                      <Button size="sm" variant="outline" className="w-full">
+                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ROOtCLvQAliCecKS.pdf', 'Spaltung.pdf')}>
                         <Download className="w-4 h-4 mr-2" />
                         PDF herunterladen
-                      </Button>
-                    </a>
+                    </Button>
                   </CardContent>
                 </Card>
 
@@ -697,12 +692,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Alarm-Modus vs. Denk-Modus</h3>
                     <p className="text-sm text-muted-foreground mb-3">Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qbewiFzVNMjrPKrS.pdf" download>
-                      <Button size="sm" variant="outline" className="w-full">
+                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qbewiFzVNMjrPKrS.pdf', 'Alarm-Modus-vs-Denk-Modus.pdf')}>
                         <Download className="w-4 h-4 mr-2" />
                         PDF herunterladen
-                      </Button>
-                    </a>
+                    </Button>
                   </CardContent>
                 </Card>
 
@@ -724,12 +717,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der 4-Phasen-Zyklus</h3>
                     <p className="text-sm text-muted-foreground mb-3">Das vorhersehbare Muster – Krisen folgen oft einem Ablauf.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TANpVexahqGbpEAn.pdf" download>
-                      <Button size="sm" variant="outline" className="w-full">
+                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TANpVexahqGbpEAn.pdf', 'Der-4-Phasen-Zyklus.pdf')}>
                         <Download className="w-4 h-4 mr-2" />
                         PDF herunterladen
-                      </Button>
-                    </a>
+                    </Button>
                   </CardContent>
                 </Card>
 
@@ -751,12 +742,10 @@ export default function Verstehen() {
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Das Gehirn verstehen</h3>
                     <p className="text-sm text-muted-foreground mb-3">Neurobiologie einfach erklärt – warum Stress Denken blockiert.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MpBTEakVWqFCzkGD.pdf" download>
-                      <Button size="sm" variant="outline" className="w-full">
+                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MpBTEakVWqFCzkGD.pdf', 'Das-Gehirn-verstehen.pdf')}>
                         <Download className="w-4 h-4 mr-2" />
                         PDF herunterladen
-                      </Button>
-                    </a>
+                    </Button>
                   </CardContent>
                 </Card>
               </div>

@@ -71,7 +71,7 @@ function AtemuebungCard() {
       <CardContent className="p-6">
         <div className="flex items-center gap-3 mb-4">
           <Wind className="w-6 h-6 text-sage-mid" />
-          <h2 className="font-semibold text-foreground text-base">4-4-6 Atemübung</h2>
+          <span className="font-semibold text-foreground text-base block" role="heading" aria-level={2}>4-4-6 Atemübung</span>
         </div>
         
         <p className="text-muted-foreground text-sm mb-4">
@@ -702,7 +702,7 @@ export default function Selbstfuersorge() {
                   ].map((item, i) => (
                     <Card key={i} className={`overflow-hidden border-border/50 hover:shadow-md transition-shadow ${i === 0 ? "md:col-span-2" : ""}`}>
                       <div className="aspect-[3/4] overflow-hidden bg-muted">
-                        <img src={item.webp} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
+                        <img src={item.webp} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" width={400} height={223} decoding="async" />
                       </div>
                       <CardContent className="p-4">
                         <h3 className="font-medium text-foreground mb-1 text-sm">{item.title}</h3>

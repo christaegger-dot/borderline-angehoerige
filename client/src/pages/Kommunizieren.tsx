@@ -544,7 +544,7 @@ export default function Kommunizieren() {
                 ].map((item, index) => (
                   <Card key={index} className={`overflow-hidden hover:shadow-lg transition-all ${index === 0 ? "md:col-span-2" : ""}`}>
                     <div className="aspect-[4/3] bg-muted">
-                      <img src={item.url} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
+                      <img src={item.url} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" width={400} height={223} decoding="async" />
                     </div>
                     <CardContent className="p-4">
                       <h3 className="font-medium text-foreground text-sm mb-2">{item.title}</h3>

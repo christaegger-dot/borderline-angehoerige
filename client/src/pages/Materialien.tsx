@@ -557,6 +557,9 @@ export default function Materialien() {
                         alt={item.title}
                         className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
+                        width={400}
+                        height={223}
+                        decoding="async"
                       />
                       {/* Hover-Overlay */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
@@ -667,7 +670,7 @@ export default function Materialien() {
             <img 
               src={previewImage} 
               alt="Vorschau" 
-              className="w-full h-auto rounded-lg shadow-2xl"
+              className="w-full h-auto rounded-lg shadow-2xl" width={1600} height={892} decoding="async"
             />
             <p className="text-center text-white mt-4 text-sm">
               Klicken Sie irgendwo, um zu schliessen

@@ -607,6 +607,9 @@ export default function Verstehen() {
                         alt="Der Leuchtturm – Ihre Rolle als Angehörige/r"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
+                        width={400}
+                        height={223}
+                        decoding="async"
                       />
                     </div>
                   </a>
@@ -631,6 +634,9 @@ export default function Verstehen() {
                         alt="Der Eisberg – Wut ist oft die Spitze"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
+                        width={400}
+                        height={223}
+                        decoding="async"
                       />
                     </div>
                   </a>
@@ -655,6 +661,9 @@ export default function Verstehen() {
                         alt="Spaltung – das Pendel zwischen Extremen"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
+                        width={400}
+                        height={223}
+                        decoding="async"
                       />
                     </div>
                   </a>
@@ -679,6 +688,9 @@ export default function Verstehen() {
                         alt="Alarm-Modus vs. Denk-Modus"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
+                        width={400}
+                        height={223}
+                        decoding="async"
                       />
                     </div>
                   </a>
@@ -703,6 +715,9 @@ export default function Verstehen() {
                         alt="Der 4-Phasen-Zyklus"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
+                        width={400}
+                        height={223}
+                        decoding="async"
                       />
                     </div>
                   </a>
@@ -727,6 +742,9 @@ export default function Verstehen() {
                         alt="Das Gehirn verstehen"
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
+                        width={400}
+                        height={223}
+                        decoding="async"
                       />
                     </div>
                   </a>

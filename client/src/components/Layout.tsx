@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon, TrendingUp } from "lucide-react";
-import Search from "@/components/Search";
+const Search = lazy(() => import("@/components/Search"));
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReadingProgress, ScrollToTop, Breadcrumbs, KeyboardShortcuts } from "@/components/UXEnhancements";
@@ -337,7 +337,11 @@ export default function Layout({ children }: LayoutProps) {
       </Link>
 
       {/* Search Modal */}
-      <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+      {searchOpen && (
+        <Suspense fallback={null}>
+          <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+        </Suspense>
+      )}
       
       {/* Zurück nach oben Button */}
       <ScrollToTop />

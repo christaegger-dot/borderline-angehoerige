@@ -190,9 +190,7 @@ export default defineConfig({
             '@radix-ui/react-collapsible',
             '@radix-ui/react-label',
             '@radix-ui/react-progress',
-            '@radix-ui/react-switch',
             '@radix-ui/react-checkbox',
-            '@radix-ui/react-radio-group',
           ],
           // Utility libraries
           'vendor-utils': [
@@ -202,7 +200,6 @@ export default defineConfig({
             'wouter',
             'sonner',
             'zod',
-            'nanoid',
           ],
           // Icons – large but tree-shakeable
           'vendor-icons': ['lucide-react'],

@@ -532,7 +532,7 @@ export default function Genesung() {
                   ].map((item, i) => (
                     <Card key={i} className={`overflow-hidden border-border/50 hover:shadow-md transition-shadow ${i === 0 ? "sm:col-span-2" : ""}`}>
                       <div className="aspect-[3/4] overflow-hidden bg-muted">
-                        <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
+                        <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" width={400} height={223} decoding="async" />
                       </div>
                       <CardContent className="p-4">
                         <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>

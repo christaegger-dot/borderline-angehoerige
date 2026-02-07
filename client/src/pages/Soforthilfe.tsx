@@ -748,6 +748,10 @@ export default function Notfall() {
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp"
                         alt="Notfallkarte Zürich – Vorschau"
                         className="rounded-lg shadow-md max-h-64 w-auto"
+                        width={400}
+                        height={223}
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     {/* Text + Download */}

@@ -25,9 +25,10 @@ import {
 } from "lucide-react";
 import AnimatedStat from "@/components/AnimatedStat";
 
-const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZeIhbfgnqoOROQeY.png";
+const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XkvykpgJHYsCUUQW.webp";
+const heroImageMobile = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fYVyThTdLUpjIoVU.webp";
 
-const supportImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EnFtIYXOJxBJdSnJ.png";
+const supportImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QOtPbYSrYvKYybbO.webp";
 
 const topics = [
   {
@@ -156,11 +157,18 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Warme Landschaft als Hintergrundbild" 
-            className="w-full h-full object-cover opacity-50"
-          />
+          <picture>
+            <source media="(max-width: 768px)" srcSet={heroImageMobile} />
+            <img 
+              src={heroImage} 
+              alt="Warme Landschaft als Hintergrundbild" 
+              className="w-full h-full object-cover opacity-50"
+              width={1920}
+              height={1071}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         </div>
         
@@ -385,6 +393,10 @@ export default function Home() {
                 src={supportImage} 
                 alt="Unterstützung symbolisiert durch zwei Hände" 
                 className="rounded-2xl shadow-lg w-full max-w-md mx-auto"
+                width={800}
+                height={446}
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
             

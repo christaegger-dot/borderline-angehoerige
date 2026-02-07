@@ -15,12 +15,12 @@ export default function UnterstuetzenTherapie() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <Link href="/unterstuetzen/uebersicht" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
@@ -46,7 +46,7 @@ export default function UnterstuetzenTherapie() {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {/* Wirksame Therapien */}

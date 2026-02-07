@@ -136,7 +136,7 @@ export default function Layout({ children }: LayoutProps) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="lg:hidden border-t border-border/50 bg-background"
             >
               <nav className="container py-4 flex flex-col gap-2">

@@ -431,12 +431,12 @@ export default function Materialien() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -467,7 +467,7 @@ export default function Materialien() {
       </section>
 
       {/* Überarbeitungs-Hinweis */}
-      <section className="py-8">
+      <section className="py-8 wave-divider-top">
         <div className="container">
           <Card className="bg-sage-wash border-sage-light">
             <CardContent className="p-6">
@@ -535,7 +535,7 @@ export default function Materialien() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
                 >
                   <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
                     {/* Vorschaubild mit Hover-Overlay */}
@@ -627,7 +627,7 @@ export default function Materialien() {
       </section>
 
       {/* Nutzungshinweis */}
-      <section className="py-12 bg-muted/30">
+      <section className="py-12 bg-muted/30 wave-divider-top">
         <div className="container">
           <Card className="bg-sand-muted border-sand-mid">
             <CardContent className="p-6">

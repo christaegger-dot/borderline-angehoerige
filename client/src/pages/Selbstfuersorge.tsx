@@ -151,12 +151,12 @@ export default function Selbstfuersorge() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-lighter/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-lighter/30 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -186,7 +186,7 @@ export default function Selbstfuersorge() {
       </section>
 
       {/* Aufklappbare Abschnitte */}
-      <section className="py-8 md:py-12">
+      <section className="py-8 md:py-12 wave-divider-top">
         <div className="container">
           <div className="flex gap-8 max-w-6xl mx-auto">
             {/* Sidebar TOC – Desktop */}
@@ -239,7 +239,7 @@ export default function Selbstfuersorge() {
                   Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr Selbstfürsorge brauchen:
                 </p>
                 
-                <div className="grid sm:grid-cols-3 gap-4">
+                <div className="grid sm:grid-cols-3 gap-4 [&>*:first-child]:sm:col-span-2">
                   <Card className="border-t-4 border-t-sand-mid bg-sand">
                     <CardContent className="p-5">
                       <div className="flex items-center gap-3 mb-4">

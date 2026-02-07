@@ -30,7 +30,7 @@ export function ReadingProgress() {
         style={{ width: `${progress}%` }}
         initial={{ width: 0 }}
         animate={{ width: `${progress}%` }}
-        transition={{ duration: 0.1 }}
+        transition={{ duration: 0.1, ease: "easeOut" }}
       />
     </div>
   );
@@ -63,7 +63,7 @@ export function ScrollToTop() {
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           onClick={scrollToTop}
           className="fixed bottom-4 sm:bottom-6 left-4 sm:left-auto sm:right-4 z-40 w-12 h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors"
           aria-label="Nach oben scrollen"
@@ -358,7 +358,7 @@ export function TableOfContents() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
-            transition={{ type: "spring", damping: 28, stiffness: 300 }}
+            transition={{ type: "spring", damping: 28, stiffness: 300, ease: "easeOut" }}
             className="lg:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Drawer Handle */}

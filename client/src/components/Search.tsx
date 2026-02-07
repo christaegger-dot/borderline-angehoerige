@@ -651,7 +651,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
             onClick={onClose}
           />
@@ -661,7 +661,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 px-4"
           >
             <div className="bg-background rounded-2xl shadow-2xl border border-border overflow-hidden">

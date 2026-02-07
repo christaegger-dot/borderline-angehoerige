@@ -198,12 +198,12 @@ export default function Glossar() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -290,7 +290,7 @@ export default function Glossar() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
+                    transition={{ delay: index * 0.05, ease: "easeOut" }}
                   >
                     <Card className="overflow-hidden hover:shadow-md transition-shadow">
                       <CardContent className="p-0">
@@ -359,7 +359,7 @@ export default function Glossar() {
       </section>
 
       {/* Hinweis */}
-      <section className="py-12 bg-sand">
+      <section className="py-12 bg-sand wave-divider-top">
         <div className="container">
           <Card className="bg-white border-sand-subtle">
             <CardContent className="p-6 md:p-8">

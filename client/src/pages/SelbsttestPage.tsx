@@ -7,12 +7,12 @@ export default function SelbsttestPage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/50 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/50 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl mx-auto text-center"
           >
             <div className="w-16 h-16 rounded-2xl bg-terracotta flex items-center justify-center mx-auto mb-6">
@@ -32,7 +32,7 @@ export default function SelbsttestPage() {
       </section>
 
       {/* Test */}
-      <section className="py-8 md:py-12">
+      <section className="py-8 md:py-12 wave-divider-top">
         <div className="container">
           <div className="max-w-2xl mx-auto">
             <Selbsttest />

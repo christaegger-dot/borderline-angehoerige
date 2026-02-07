@@ -325,7 +325,7 @@ export default function Selbsttest() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <Card 
           className="border-2 overflow-hidden"
@@ -406,7 +406,7 @@ export default function Selbsttest() {
           className="h-full bg-terracotta"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         />
       </div>
       
@@ -436,7 +436,7 @@ export default function Selbsttest() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
               {question.text}
@@ -454,7 +454,7 @@ export default function Selbsttest() {
                   key={option.value}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
                   onClick={() => handleAnswer(option)}
                   className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 ${
                     selectedOption === option.value

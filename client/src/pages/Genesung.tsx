@@ -11,7 +11,7 @@ export default function Genesung() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background relative overflow-hidden wave-divider">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-terracotta blur-3xl" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-sage blur-3xl" />
@@ -20,7 +20,7 @@ export default function Genesung() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -43,7 +43,7 @@ export default function Genesung() {
       </section>
 
       {/* Kernbotschaft – bleibt immer offen */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function Genesung() {
                 </div>
 
                 {/* Statistiken */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 [&>*:first-child]:md:col-span-2">
                   <div className="text-center p-6 bg-white/60 rounded-xl">
                     <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
                       85–93%
@@ -561,7 +561,7 @@ export default function Genesung() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-sand-muted">
+      <section className="py-12 md:py-16 bg-sand-muted wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div

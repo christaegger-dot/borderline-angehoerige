@@ -157,7 +157,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-sage-light text-sage-darker text-sm font-medium mb-6">
                 Für Angehörige von Menschen mit Borderline
@@ -213,7 +213,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-center mb-10"
           >
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
@@ -239,7 +239,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                 >
                   <Link href={item.href}>
                     <Card 
@@ -286,7 +286,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
@@ -307,7 +307,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                   className={isFeatured ? 'md:col-span-2 lg:col-span-2' : ''}
                 >
                   <Link href={topic.href}>
@@ -367,7 +367,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <img 
                 src={supportImage} 
@@ -380,7 +380,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-terracotta-light text-terracotta-dark text-sm font-medium mb-4">
                 Neue Perspektive
@@ -426,7 +426,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-center mb-10"
             >
               <div className="w-16 h-16 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-6">
@@ -494,7 +494,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <Card className="border-2 border-dashed border-sand-border bg-white">
               <CardContent className="p-8 md:p-10">

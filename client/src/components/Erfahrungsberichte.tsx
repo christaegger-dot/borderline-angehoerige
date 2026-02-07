@@ -115,7 +115,7 @@ export default function Erfahrungsberichte({
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.1, ease: "easeOut" }}
                 >
                   <Card className="h-full border-border/50 hover:border-terracotta transition-colors">
                     <CardContent className="p-6">

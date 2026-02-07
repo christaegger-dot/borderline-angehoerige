@@ -43,7 +43,7 @@ export default function Feedback() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="max-w-xl mx-auto text-center"
             >
               <div className="w-20 h-20 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-6">
@@ -84,12 +84,12 @@ export default function Feedback() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -112,7 +112,7 @@ export default function Feedback() {
       </section>
 
       {/* Feedback Form */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-8">

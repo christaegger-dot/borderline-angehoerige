@@ -215,12 +215,12 @@ export default function Buchempfehlungen() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sand/50 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sand/50 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -284,7 +284,7 @@ export default function Buchempfehlungen() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: catIndex * 0.1 }}
+                transition={{ delay: catIndex * 0.1, ease: "easeOut" }}
               >
                 {/* Category Header */}
                 <div className="flex items-start gap-4 mb-8">
@@ -310,7 +310,7 @@ export default function Buchempfehlungen() {
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: bookIndex * 0.05 }}
+                      transition={{ delay: bookIndex * 0.05, ease: "easeOut" }}
                     >
                       <Card className={`h-full transition-all hover:shadow-md ${book.highlight ? 'ring-2 ring-sand-border' : ''}`}>
                         <CardContent className="p-6">
@@ -373,7 +373,7 @@ export default function Buchempfehlungen() {
       </section>
 
       {/* Hinweis */}
-      <section className="py-12 bg-slate-pale">
+      <section className="py-12 bg-slate-pale wave-divider-top">
         <div className="container">
           <Card className="bg-white border-slate-light">
             <CardContent className="p-6 md:p-8">

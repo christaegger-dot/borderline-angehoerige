@@ -158,12 +158,12 @@ export default function FAQ() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -184,7 +184,7 @@ export default function FAQ() {
       </section>
 
       {/* FAQ Categories */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {faqCategories.map((category, categoryIndex) => (
@@ -193,7 +193,7 @@ export default function FAQ() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: categoryIndex * 0.1 }}
+                transition={{ delay: categoryIndex * 0.1, ease: "easeOut" }}
                 className="mb-8"
               >
                 <div 

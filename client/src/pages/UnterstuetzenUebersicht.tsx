@@ -9,12 +9,12 @@ export default function UnterstuetzenUebersicht() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-light/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-light/30 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
             <Link href="/verstehen" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
@@ -40,7 +40,7 @@ export default function UnterstuetzenUebersicht() {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {/* Leuchtturm Metapher */}
@@ -78,7 +78,7 @@ export default function UnterstuetzenUebersicht() {
                 Ihre Rolle klären
               </h2>
               
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-6 [&>*:first-child]:md:col-span-2">
                 {/* Was Sie sind */}
                 <Card className="border-sage-mid">
                   <CardContent className="p-6">

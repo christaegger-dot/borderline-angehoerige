@@ -41,7 +41,7 @@ export default function AnimatedStat({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay }}
+      transition={{ delay, ease: "easeOut" }}
       className="text-center p-6 bg-sage-wash rounded-xl"
     >
       <div className="text-4xl font-bold text-sage-mid mb-2">

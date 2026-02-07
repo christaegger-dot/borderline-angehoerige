@@ -12,7 +12,6 @@ import {
 import { Link } from "wouter";
 import { kontaktById } from "@/data/kontakte";
 import GroundingTimer from "@/components/interactive/GroundingTimer";
-import GroundingTimerNatur from "@/components/interactive/GroundingTimerNatur";
 
 
 const proMente = kontaktById("INFO_PROMENTE")!;
@@ -395,9 +394,6 @@ export default function Selbstfuersorge() {
                   <GroundingTimer />
                 </div>
 
-                <div className="mb-6">
-                  <GroundingTimerNatur />
-                </div>
                 
                 <Card className="border-border/50">
                   <CardContent className="p-5">

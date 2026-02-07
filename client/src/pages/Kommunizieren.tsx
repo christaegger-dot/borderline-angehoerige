@@ -3,13 +3,73 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, ExternalLink, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle, RefreshCw } from "lucide-react";
+import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, ExternalLink, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle, RefreshCw, Filter, BookOpen, ShieldAlert, Wrench } from "lucide-react";
+import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 
 
+const kommSubcategories = [
+  { id: "alle", label: "Alle", icon: Filter },
+  { id: "techniken", label: "Techniken", icon: BookOpen },
+  { id: "konflikte", label: "Konflikte", icon: ShieldAlert },
+  { id: "praxis", label: "Praxis", icon: Wrench },
+];
+
+const kommItems = [
+  {
+    title: "Wenn Gespräche kippen: 3 Schritte",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gGsRoFAZIZBfLwmf.pdf",
+    category: "techniken"
+  },
+  {
+    title: "Der Standardsatz: 2 Sätze",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kRytgldypavAUJDr.pdf",
+    category: "techniken"
+  },
+  {
+    title: "Grenzen setzen, ohne zu eskalieren",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eLoMJrpVlKhOueFR.pdf",
+    category: "konflikte"
+  },
+  {
+    title: "Pause statt Streit",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kPmrXWJQbTNpJbSA.pdf",
+    category: "konflikte"
+  },
+  {
+    title: "Zuhören ohne Zustimmen",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eMYmpdECocTQbVet.pdf",
+    category: "techniken"
+  },
+  {
+    title: "Beispiel-Dialog",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/meEvvJarNxmPJExY.pdf",
+    category: "praxis"
+  },
+  {
+    title: "Spickzettel Krisenkommunikation (A4)",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KvmohTCDARNXkHIY.pdf",
+    category: "praxis"
+  }
+];
+
 export default function Kommunizieren() {
+  const [activeFilter, setActiveFilter] = useState("alle");
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const filteredItems = activeFilter === "alle"
+    ? kommItems
+    : kommItems.filter(i => i.category === activeFilter);
+
   return (
     <Layout>
       <SEO title="Kommunizieren" description="Wirksame Kommunikationsstrategien für den Umgang mit Menschen mit Borderline." path="/kommunizieren" />
@@ -511,49 +571,41 @@ export default function Kommunizieren() {
                 <Download className="w-8 h-8 text-slate-blue" />
                 Materialien zum Thema
               </h2>
-              <p className="text-sm text-muted-foreground mb-4">
-                «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+              <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
+                <Eye className="w-4 h-4 flex-shrink-0" />
+                <span><strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.</span>
               </p>
+              {/* Filter-Tabs */}
+              <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-1 px-1">
+                {kommSubcategories.map((cat) => {
+                  const Icon = cat.icon;
+                  const count = cat.id === "alle"
+                    ? kommItems.length
+                    : kommItems.filter(i => i.category === cat.id).length;
+                  return (
+                    <Button
+                      key={cat.id}
+                      variant={activeFilter === cat.id ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => {
+                        setActiveFilter(cat.id);
+                        setTimeout(() => {
+                          gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 50);
+                      }}
+                      className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""}`}
+                    >
+                      <Icon className="w-4 h-4 mr-1.5" />
+                      {cat.label}
+                      <span className="ml-1.5 text-xs opacity-90">({count})</span>
+                    </Button>
+                  );
+                })}
+              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                {[
-                  {
-                    title: "Wenn Gespräche kippen: 3 Schritte",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gGsRoFAZIZBfLwmf.pdf"
-                  },
-                  {
-                    title: "Der Standardsatz: 2 Sätze",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kRytgldypavAUJDr.pdf"
-                  },
-                  {
-                    title: "Grenzen setzen, ohne zu eskalieren",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eLoMJrpVlKhOueFR.pdf"
-                  },
-                  {
-                    title: "Pause statt Streit",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kPmrXWJQbTNpJbSA.pdf"
-                  },
-                  {
-                    title: "Zuhören ohne Zustimmen",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eMYmpdECocTQbVet.pdf"
-                  },
-                  {
-                    title: "Beispiel-Dialog",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/meEvvJarNxmPJExY.pdf"
-                  },
-                  {
-                    title: "Spickzettel Krisenkommunikation (A4)",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KvmohTCDARNXkHIY.pdf"
-                  }
-                ].map((item, index) => (
-                  <Card key={index} className={`overflow-hidden hover:shadow-lg transition-all ${index === 0 ? "md:col-span-2" : ""}`}>
+              <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {filteredItems.map((item, index) => (
+                  <Card key={item.title} className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""}`}>
                     <div className="aspect-[4/3] bg-muted">
                       <img src={item.url} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" width={400} height={223} decoding="async" />
                     </div>

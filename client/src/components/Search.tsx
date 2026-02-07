@@ -327,7 +327,7 @@ const searchableContent = [
   },
   {
     title: "PUK Zürich Notfall",
-    description: "Psychiatrische Notdienste für Kinder, Erwachsene und Senioren",
+    description: "Psychiatrische Notdienste für Kinder, Erwachsene und Menschen ab 65",
     keywords: ["puk", "notfall", "psychiatrie", "zürich", "kinder", "erwachsene", "senioren", "kiz"],
     href: "/soforthilfe",
     section: "Krisenressourcen"
@@ -451,8 +451,8 @@ const searchableContent = [
     section: "Therapie"
   },
   {
-    title: "Alterspsychiatrie PUK Zürich",
-    description: "Psychiatrische Versorgung für Senioren ab 65 Jahren",
+    title: "PUK Erwachsene (ab 65) Zürich",
+    description: "Psychiatrische Versorgung für Erwachsene ab 65 Jahren",
     keywords: ["alter", "senioren", "65", "alterspsychiatrie", "puk"],
     href: "/unterstuetzen/therapie#therapieangebote",
     section: "Therapie"

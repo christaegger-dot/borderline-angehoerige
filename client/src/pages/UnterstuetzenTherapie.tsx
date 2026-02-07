@@ -111,7 +111,7 @@ export default function UnterstuetzenTherapie() {
                         Therapieangebote im Kanton Zürich
                       </h3>
                       <p className="text-muted-foreground text-sm">
-                        Weiter unten finden Sie eine Übersicht über spezialisierte DBT-Stationen und Behandlungsangebote der PUK Zürich – für Kinder, Jugendliche, Erwachsene und Senioren.
+                        Weiter unten finden Sie eine Übersicht über spezialisierte DBT-Stationen und Behandlungsangebote der PUK Zürich – für Kinder, Jugendliche, Erwachsene und Erwachsene ab 65.
                       </p>
                     </div>
                   </div>

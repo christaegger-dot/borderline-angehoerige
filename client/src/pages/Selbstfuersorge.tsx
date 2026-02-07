@@ -597,7 +597,7 @@ export default function Selbstfuersorge() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Phone className="w-4 h-4" />
-                      <span className="text-sm">Stand by You (Angehörige psychisch Kranker): <a href="http://www.stand-by-you.ch" className="text-[oklch(0.45_0.08_250)] underline">www.stand-by-you.ch</a></span>
+                      <span className="text-sm">Stand by You (Angehörige psychisch Kranker): <a href="https://www.stand-by-you.ch" className="text-[oklch(0.45_0.08_250)] underline">www.stand-by-you.ch</a></span>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Phone className="w-4 h-4" />

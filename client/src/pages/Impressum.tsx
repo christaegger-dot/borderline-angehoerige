@@ -129,7 +129,7 @@ export default function Impressum() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    «Schluss mit dem Eiertanz» bietet Angehörigen von Menschen mit Borderline-Persönlichkeitsstörung:
+                    Diese Website bietet Angehörigen von Menschen mit Borderline-Persönlichkeitsstörung:
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">

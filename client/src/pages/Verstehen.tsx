@@ -1,15 +1,84 @@
+import { useState, useRef } from "react";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, ExternalLink, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors, Clock, RefreshCw, Layers, Users, Activity, XCircle, Download } from "lucide-react";
+import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, ExternalLink, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors, Clock, RefreshCw, Layers, Users, Activity, XCircle, Download, Filter } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 
 
+const verstehenInfografiken = [
+  {
+    id: "leuchtturm",
+    title: "Der Leuchtturm",
+    description: "Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.",
+    category: "grundlagen",
+    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rvxNLrJSUBsMAByU.pdf",
+    alt: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
+    featured: true,
+  },
+  {
+    id: "eisberg",
+    title: "Der Eisberg",
+    description: "Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.",
+    category: "grundlagen",
+    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ecVVNozrluFJGAic.pdf",
+    alt: "Der Eisberg – Wut ist oft die Spitze",
+  },
+  {
+    id: "spaltung",
+    title: "Spaltung",
+    description: "Das Pendel zwischen Extremen – die Grauzone stärken.",
+    category: "grundlagen",
+    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ROOtCLvQAliCecKS.pdf",
+    alt: "Spaltung – das Pendel zwischen Extremen",
+  },
+  {
+    id: "alarm-modus",
+    title: "Alarm-Modus vs. Denk-Modus",
+    description: "Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.",
+    category: "neurobiologie",
+    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qbewiFzVNMjrPKrS.pdf",
+    alt: "Alarm-Modus vs. Denk-Modus",
+  },
+  {
+    id: "4-phasen",
+    title: "Der 4-Phasen-Zyklus",
+    description: "Das vorhersehbare Muster – Krisen folgen oft einem Ablauf.",
+    category: "neurobiologie",
+    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TANpVexahqGbpEAn.pdf",
+    alt: "Der 4-Phasen-Zyklus",
+  },
+  {
+    id: "gehirn",
+    title: "Das Gehirn verstehen",
+    description: "Neurobiologie einfach erklärt – warum Stress Denken blockiert.",
+    category: "neurobiologie",
+    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MpBTEakVWqFCzkGD.pdf",
+    alt: "Das Gehirn verstehen",
+  },
+];
+
+const verstehenCategories = [
+  { id: "alle", label: "Alle", icon: Filter, count: verstehenInfografiken.length },
+  { id: "grundlagen", label: "Grundlagen", icon: BookOpen, count: verstehenInfografiken.filter(i => i.category === "grundlagen").length },
+  { id: "neurobiologie", label: "Neurobiologie", icon: Brain, count: verstehenInfografiken.filter(i => i.category === "neurobiologie").length },
+];
+
 export default function Verstehen() {
+  const [activeFilter, setActiveFilter] = useState("alle");
+  const gridRef = useRef<HTMLDivElement>(null);
+  const filteredItems = activeFilter === "alle" ? verstehenInfografiken : verstehenInfografiken.filter(i => i.category === activeFilter);
+
   return (
     <Layout>
       <SEO title="Borderline verstehen" description="Was ist Borderline-Persönlichkeitsstörung? Symptome, Ursachen und Auswirkungen verständlich erklärt." path="/verstehen" />
@@ -594,17 +663,37 @@ export default function Verstehen() {
               </h2>
               
               <p className="text-muted-foreground mb-6">
-                Diese Infografiken fassen die wichtigsten Konzepte zum Verstehen von Borderline zusammen. 
-                «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+                Vorschau = Web-Bild. «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
               </p>
+
+              {/* Filter Tabs */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {verstehenCategories.map((cat) => (
+                  <Button
+                    key={cat.id}
+                    variant={activeFilter === cat.id ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => {
+                      setActiveFilter(cat.id);
+                      setTimeout(() => {
+                        gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }, 50);
+                    }}
+                    className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-sage-dark hover:bg-sage-mid text-white" : ""}`}
+                  >
+                    <cat.icon className="w-4 h-4 mr-1.5" />
+                    {cat.label} ({cat.count})
+                  </Button>
+                ))}
+              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* 1.1 Leuchtturm */}
-                <Card className="md:col-span-2 overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp', '_blank')}>
-                      <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp" 
-                        alt="Der Leuchtturm – Ihre Rolle als Angehörige/r"
+              <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {filteredItems.map((item) => (
+                  <Card key={item.id} className={`${item.featured && activeFilter === "alle" ? "md:col-span-2" : ""} overflow-hidden hover:shadow-lg transition-shadow`}>
+                    <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open(item.webpUrl, '_blank')}>
+                      <img
+                        src={item.webpUrl}
+                        alt={item.alt}
                         className="w-full h-full object-cover object-top"
                         loading="lazy"
                         width={400}
@@ -612,130 +701,16 @@ export default function Verstehen() {
                         decoding="async"
                       />
                     </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-medium text-foreground mb-1">Der Leuchtturm</h3>
-                    <p className="text-sm text-muted-foreground mb-3">Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rvxNLrJSUBsMAByU.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Der Leuchtturm (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
+                    <CardContent className="p-4">
+                      <h3 className="font-medium text-foreground mb-1">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-3">{item.description}</p>
+                      <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" aria-label={`PDF öffnen: ${item.title} (neuer Tab)`} className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
                         <ExternalLink className="w-4 h-4" />
                         PDF öffnen
-                    </a>
-                  </CardContent>
-                </Card>
-
-                {/* 1.2 Eisberg */}
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp', '_blank')}>
-                      <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp" 
-                        alt="Der Eisberg – Wut ist oft die Spitze"
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                        width={400}
-                        height={223}
-                        decoding="async"
-                      />
-                    </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-medium text-foreground mb-1">Der Eisberg</h3>
-                    <p className="text-sm text-muted-foreground mb-3">Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ecVVNozrluFJGAic.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Der Eisberg (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                        PDF öffnen
-                    </a>
-                  </CardContent>
-                </Card>
-
-                {/* 1.3 Spaltung */}
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp', '_blank')}>
-                      <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp" 
-                        alt="Spaltung – das Pendel zwischen Extremen"
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                        width={400}
-                        height={223}
-                        decoding="async"
-                      />
-                    </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-medium text-foreground mb-1">Spaltung</h3>
-                    <p className="text-sm text-muted-foreground mb-3">Das Pendel zwischen Extremen – die Grauzone stärken.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ROOtCLvQAliCecKS.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Spaltung (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                        PDF öffnen
-                    </a>
-                  </CardContent>
-                </Card>
-
-                {/* 1.4 Alarm-Modus vs. Denk-Modus */}
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp', '_blank')}>
-                      <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp" 
-                        alt="Alarm-Modus vs. Denk-Modus"
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                        width={400}
-                        height={223}
-                        decoding="async"
-                      />
-                    </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-medium text-foreground mb-1">Alarm-Modus vs. Denk-Modus</h3>
-                    <p className="text-sm text-muted-foreground mb-3">Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qbewiFzVNMjrPKrS.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Alarm-Modus vs. Denk-Modus (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                        PDF öffnen
-                    </a>
-                  </CardContent>
-                </Card>
-
-                {/* 1.5 4-Phasen-Zyklus */}
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp', '_blank')}>
-                      <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp" 
-                        alt="Der 4-Phasen-Zyklus"
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                        width={400}
-                        height={223}
-                        decoding="async"
-                      />
-                    </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-medium text-foreground mb-1">Der 4-Phasen-Zyklus</h3>
-                    <p className="text-sm text-muted-foreground mb-3">Das vorhersehbare Muster – Krisen folgen oft einem Ablauf.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TANpVexahqGbpEAn.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Der 4-Phasen-Zyklus (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                        PDF öffnen
-                    </a>
-                  </CardContent>
-                </Card>
-
-                {/* 1.6 Gehirn verstehen */}
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp', '_blank')}>
-                      <img 
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp" 
-                        alt="Das Gehirn verstehen"
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                        width={400}
-                        height={223}
-                        decoding="async"
-                      />
-                    </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-medium text-foreground mb-1">Das Gehirn verstehen</h3>
-                    <p className="text-sm text-muted-foreground mb-3">Neurobiologie einfach erklärt – warum Stress Denken blockiert.</p>
-                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MpBTEakVWqFCzkGD.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Das Gehirn verstehen (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                        PDF öffnen
-                    </a>
-                  </CardContent>
-                </Card>
+                      </a>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
 
               <div className="mt-6 text-center">

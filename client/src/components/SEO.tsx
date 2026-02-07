@@ -7,12 +7,12 @@ interface SEOProps {
   type?: "website" | "article";
 }
 
-const SITE_NAME = "Schluss mit dem Eiertanz";
+const SITE_NAME = "Borderline · Hilfe für Angehörige";
 const BASE_DESCRIPTION = "Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung.";
 const OG_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AihcWLWGvqtfJHTJ.png";
 
 export default function SEO({ title, description, path = "/", type = "website" }: SEOProps) {
-  const fullTitle = title ? `${title} – ${SITE_NAME}` : `${SITE_NAME} – Für Angehörige von Menschen mit Borderline`;
+  const fullTitle = title ? `${title} – ${SITE_NAME}` : `${SITE_NAME} – Evidenzbasierte Unterstützung`;
   const metaDescription = description || BASE_DESCRIPTION;
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export function WebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": SITE_NAME,
-    "alternateName": "Eiertanz",
+    "alternateName": "Borderline Angehörige",
     "url": "https://eiertanz.manus.space",
     "description": BASE_DESCRIPTION,
     "inLanguage": "de",
@@ -68,7 +68,7 @@ export function WebsiteSchema() {
       "name": SITE_NAME,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VUiUoLVmqgJpSOle.png"
+        "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JNUJrQSrMjSGxgQV.png"
       }
     },
     "potentialAction": {

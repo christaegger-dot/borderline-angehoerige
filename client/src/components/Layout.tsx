@@ -55,22 +55,15 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-terracotta to-sage flex items-center justify-center">
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Leuchtturm-Icon */}
-                  <path d="M12 2L12 4" />
-                  <path d="M9 22H15" />
-                  <path d="M10 22L10.5 16H13.5L14 22" />
-                  <path d="M10.5 16L9.5 10H14.5L13.5 16" />
-                  <path d="M9.5 10L9 7H15L14.5 10" />
-                  <path d="M9 7L10 4H14L15 7" />
-                  <path d="M7 10H9.5" />
-                  <path d="M14.5 10H17" />
-                  <circle cx="12" cy="5.5" r="0.5" fill="currentColor" />
-                </svg>
-              </div>
-              <span className="font-semibold text-lg md:text-xl text-foreground group-hover:text-terracotta transition-colors">
-                Eiertanz
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JNUJrQSrMjSGxgQV.png"
+                alt="Startseite"
+                className="w-8 h-8 md:w-10 md:h-10 rounded-full"
+                width={40}
+                height={40}
+              />
+              <span className="hidden lg:inline font-medium text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                Borderline · Hilfe für Angehörige
               </span>
             </Link>
 
@@ -212,21 +205,15 @@ export default function Layout({ children }: LayoutProps) {
             {/* Brand */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-terracotta to-sage flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2L12 4" />
-                    <path d="M9 22H15" />
-                    <path d="M10 22L10.5 16H13.5L14 22" />
-                    <path d="M10.5 16L9.5 10H14.5L13.5 16" />
-                    <path d="M9.5 10L9 7H15L14.5 10" />
-                    <path d="M9 7L10 4H14L15 7" />
-                    <path d="M7 10H9.5" />
-                    <path d="M14.5 10H17" />
-                    <circle cx="12" cy="5.5" r="0.5" fill="currentColor" />
-                  </svg>
-                </div>
-                <span className="font-semibold text-xl text-foreground">
-                  Eiertanz
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JNUJrQSrMjSGxgQV.png"
+                  alt="Startseite"
+                  className="w-10 h-10 rounded-full"
+                  width={40}
+                  height={40}
+                />
+                <span className="font-medium text-base text-foreground">
+                  Borderline · Hilfe für Angehörige
                 </span>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -309,7 +296,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <div className="border-t border-border/50 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2026 Schluss mit dem Eiertanz. Alle Rechte vorbehalten.
+              © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
             </p>
             <div className="flex gap-4">
               <Link href="/ueber-uns" className="text-muted-foreground hover:text-foreground text-sm transition-colors">

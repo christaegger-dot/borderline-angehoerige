@@ -18,7 +18,7 @@ import {
   AlertTriangle,
   Compass,
   TrendingUp,
-  Info,
+
   Sprout,
   Download,
   FileText
@@ -151,7 +151,7 @@ export default function Home() {
       />
       <WebsiteSchema />
       <MedicalPageSchema
-        title="Schluss mit dem Eiertanz – Für Angehörige von Menschen mit Borderline"
+        title="Borderline: Hilfe für Angehörige – Evidenzbasierte Unterstützung"
         description="Evidenzbasierte Strategien für den Alltag mit einem Menschen mit Borderline-Persönlichkeitsstörung."
         path="/"
       />
@@ -185,20 +185,12 @@ export default function Home() {
               </span>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
-                Schluss mit dem{" "}
-                <span className="text-terracotta">Eiertanz</span>
+                Sie können{" "}
+                <span className="text-terracotta">helfen</span>
               </h1>
               
-              <div className="flex items-start gap-2 mb-6 p-3 rounded-lg bg-background/60 backdrop-blur-sm border border-border/30 max-w-xl">
-                <Info className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">«Eiertanz»</span> – so beschreiben Paul T. Mason und Randi Kreger in ihrem Standardwerk das Gefühl vieler Angehöriger: ständig auf der Hut, um niemanden zu verletzen.{" "}
-                  <Link href="/buchempfehlungen" className="text-terracotta-mid hover:underline">Zum Buch →</Link>
-                </p>
-              </div>
-              
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
-                Sie können helfen – und dabei auf sich achten. Evidenzbasierte Strategien für den Alltag mit einem Menschen mit Borderline-Persönlichkeitsstörung.
+                Evidenzbasierte Strategien für den Alltag mit einem Menschen mit Borderline – damit Sie unterstützen können, ohne sich selbst zu verlieren.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">

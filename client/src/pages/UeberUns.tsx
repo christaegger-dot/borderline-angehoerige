@@ -9,7 +9,7 @@ import { Link } from "wouter";
 export default function UeberUns() {
   return (
     <Layout>
-      <SEO title="Über uns" description="Über das Projekt Schluss mit dem Eiertanz." path="/ueber-uns" />
+      <SEO title="Über uns" description="Über das Projekt Borderline · Hilfe für Angehörige." path="/ueber-uns" />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background wave-divider">
         <div className="container">
@@ -30,7 +30,7 @@ export default function UeberUns() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Warum es «Schluss mit dem Eiertanz» gibt – und wer dahinter steht.
+              Warum es diese Website gibt – und wer dahinter steht.
             </p>
           </motion.div>
         </div>

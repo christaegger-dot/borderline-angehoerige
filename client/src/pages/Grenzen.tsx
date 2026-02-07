@@ -3,11 +3,85 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image, Clock, HeartHandshake, Home, Wallet, Users, Baby, UserCircle, ExternalLink, Eye } from "lucide-react";
+import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image, Clock, HeartHandshake, Home, Wallet, Users, Baby, UserCircle, ExternalLink, Eye, Filter, Search, MessageSquare, HandMetal } from "lucide-react";
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
+import { useState, useRef } from "react";
+
+const grenzenSubcategories = [
+  { id: "alle", label: "Alle", icon: Filter },
+  { id: "erkennen", label: "Erkennen", icon: Search },
+  { id: "kommunizieren", label: "Kommunizieren", icon: MessageSquare },
+  { id: "handeln", label: "Handeln", icon: HandMetal },
+];
 
 export default function Grenzen() {
+  const [activeFilter, setActiveFilter] = useState("alle");
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const grenzenItems = [
+    {
+      title: "Die DEAR-Technik",
+      description: "4 Schritte für respektvolle Grenzsetzung",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sHAAizMXNqAZSlEn.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/paQhPvSEeVFldFly.pdf",
+      category: "kommunizieren"
+    },
+    {
+      title: "Spiegeln statt Aufsaugen",
+      description: "Mitfühlen ohne Übernehmen",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dbTRALbBXTpWdIFc.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vonZwVksXmKubcoV.pdf",
+      category: "kommunizieren"
+    },
+    {
+      title: "Die 4 Arten von Grenzen",
+      description: "Physisch, emotional, zeitlich, materiell",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DRIOXYdXxPGeVnra.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HYXOHsOYKkirFsAw.pdf",
+      category: "erkennen"
+    },
+    {
+      title: "Grenzen erkennen",
+      description: "5 Warnsignale Ihres Körpers",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ygTqOQYNTBmkEaim.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRxYofCvmJLaNrJq.pdf",
+      category: "erkennen"
+    },
+    {
+      title: "Warum Grenzen helfen",
+      description: "Grenzen sind kein Liebesentzug",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skjcpJqOmcldYXbm.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OqhEzMeLpTbBtWJK.pdf",
+      category: "erkennen"
+    },
+    {
+      title: "L.M.K. (Lebe Mit Konsequenzen)",
+      description: "Wenn Grenzen nicht respektiert werden",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aAHNYbmetQXpdBOS.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xPwKbMxFXGMwUeIx.pdf",
+      category: "handeln"
+    },
+    {
+      title: "Grenzen kommunizieren",
+      description: "Beispielsätze für den Alltag",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dfwRqrujZwwwPRJo.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WCKlwBXhspmnwAsS.pdf",
+      category: "kommunizieren"
+    },
+    {
+      title: "Spickzettel Grenzen",
+      description: "A4 zum Laminieren – alle Sätze auf einen Blick",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tahWXflXNFEcSrog.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fpiWoEEuimfWEknU.pdf",
+      category: "handeln"
+    }
+  ];
+
+  const filteredItems = activeFilter === "alle"
+    ? grenzenItems
+    : grenzenItems.filter(i => i.category === activeFilter);
+
   return (
     <Layout>
       <SEO title="Grenzen setzen" description="Gesunde Grenzen setzen und wahren – für Angehörige von Menschen mit Borderline." path="/grenzen" />
@@ -488,59 +562,38 @@ export default function Grenzen() {
                 <Eye className="w-4 h-4 flex-shrink-0" />
                 <span><strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.</span>
               </p>
+
+              {/* Filter-Tabs */}
+              <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-1 px-1">
+                {grenzenSubcategories.map((cat) => {
+                  const Icon = cat.icon;
+                  const count = cat.id === "alle"
+                    ? grenzenItems.length
+                    : grenzenItems.filter(i => i.category === cat.id).length;
+                  return (
+                    <Button
+                      key={cat.id}
+                      variant={activeFilter === cat.id ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => {
+                        setActiveFilter(cat.id);
+                        setTimeout(() => {
+                          gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 50);
+                      }}
+                      className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""}`}
+                    >
+                      <Icon className="w-4 h-4 mr-1.5" />
+                      {cat.label}
+                      <span className="ml-1.5 text-xs opacity-90">({count})</span>
+                    </Button>
+                  );
+                })}
+              </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "Die DEAR-Technik",
-                    description: "4 Schritte für respektvolle Grenzsetzung",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sHAAizMXNqAZSlEn.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/paQhPvSEeVFldFly.pdf"
-                  },
-                  {
-                    title: "Spiegeln statt Aufsaugen",
-                    description: "Mitfühlen ohne Übernehmen",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dbTRALbBXTpWdIFc.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vonZwVksXmKubcoV.pdf"
-                  },
-                  {
-                    title: "Die 4 Arten von Grenzen",
-                    description: "Physisch, emotional, zeitlich, materiell",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DRIOXYdXxPGeVnra.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HYXOHsOYKkirFsAw.pdf"
-                  },
-                  {
-                    title: "Grenzen erkennen",
-                    description: "5 Warnsignale Ihres Körpers",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ygTqOQYNTBmkEaim.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRxYofCvmJLaNrJq.pdf"
-                  },
-                  {
-                    title: "Warum Grenzen helfen",
-                    description: "Grenzen sind kein Liebesentzug",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skjcpJqOmcldYXbm.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OqhEzMeLpTbBtWJK.pdf"
-                  },
-                  {
-                    title: "L.M.K. (Lebe Mit Konsequenzen)",
-                    description: "Wenn Grenzen nicht respektiert werden",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aAHNYbmetQXpdBOS.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xPwKbMxFXGMwUeIx.pdf"
-                  },
-                  {
-                    title: "Grenzen kommunizieren",
-                    description: "Beispielsätze für den Alltag",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dfwRqrujZwwwPRJo.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WCKlwBXhspmnwAsS.pdf"
-                  },
-                  {
-                    title: "Spickzettel Grenzen",
-                    description: "A4 zum Laminieren – alle Sätze auf einen Blick",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tahWXflXNFEcSrog.webp",
-                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fpiWoEEuimfWEknU.pdf"
-                  }
-                ].map((item, index) => (
-                  <Card key={index} className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${index === 0 ? "sm:col-span-2" : ""}`}>
+              <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {filteredItems.map((item, index) => (
+                  <Card key={item.title} className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""}`}>
                     <div className="relative aspect-[3/4] bg-muted overflow-hidden">
                       <img 
                         src={item.url} 

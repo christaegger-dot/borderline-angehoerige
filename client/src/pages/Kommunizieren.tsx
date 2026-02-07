@@ -3,11 +3,11 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle, RefreshCw } from "lucide-react";
+import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, ExternalLink, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
-import { downloadFile } from "@/lib/downloadFile";
+
 
 export default function Kommunizieren() {
   return (
@@ -511,36 +511,46 @@ export default function Kommunizieren() {
                 <Download className="w-8 h-8 text-slate-blue" />
                 Materialien zum Thema
               </h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+              </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 {[
                   {
                     title: "Wenn Gespräche kippen: 3 Schritte",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gGsRoFAZIZBfLwmf.pdf"
                   },
                   {
                     title: "Der Standardsatz: 2 Sätze",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kRytgldypavAUJDr.pdf"
                   },
                   {
                     title: "Grenzen setzen, ohne zu eskalieren",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eLoMJrpVlKhOueFR.pdf"
                   },
                   {
                     title: "Pause statt Streit",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kPmrXWJQbTNpJbSA.pdf"
                   },
                   {
                     title: "Zuhören ohne Zustimmen",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eMYmpdECocTQbVet.pdf"
                   },
                   {
                     title: "Beispiel-Dialog",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/meEvvJarNxmPJExY.pdf"
                   },
                   {
                     title: "Spickzettel Krisenkommunikation (A4)",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KvmohTCDARNXkHIY.pdf"
                   }
                 ].map((item, index) => (
                   <Card key={index} className={`overflow-hidden hover:shadow-lg transition-all ${index === 0 ? "md:col-span-2" : ""}`}>
@@ -549,10 +559,16 @@ export default function Kommunizieren() {
                     </div>
                     <CardContent className="p-4">
                       <h3 className="font-medium text-foreground text-sm mb-2">{item.title}</h3>
-                      <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile(item.url, item.title.replace(/[^a-zA-Z0-9\u00e4\u00f6\u00fc\u00c4\u00d6\u00dc\u00df\-_ ]/g, '') + '.webp')}>
-                          <Download className="w-4 h-4 mr-2" />
-                          Herunterladen
-                      </Button>
+                      <a
+                        href={item.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        PDF öffnen
+                      </a>
                     </CardContent>
                   </Card>
                 ))}

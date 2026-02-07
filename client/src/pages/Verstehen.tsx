@@ -2,12 +2,12 @@ import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, Download, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors, Clock, RefreshCw, Layers, Users, Activity, XCircle } from "lucide-react";
+import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, ExternalLink, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors, Clock, RefreshCw, Layers, Users, Activity, XCircle, Download } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
-import { downloadFile } from "@/lib/downloadFile";
+
 
 export default function Verstehen() {
   return (
@@ -595,14 +595,13 @@ export default function Verstehen() {
               
               <p className="text-muted-foreground mb-6">
                 Diese Infografiken fassen die wichtigsten Konzepte zum Verstehen von Borderline zusammen. 
-                Klicken Sie auf ein Bild für die Vollansicht oder laden Sie es direkt herunter.
+                «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* 1.1 Leuchtturm */}
                 <Card className="md:col-span-2 overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp" target="_blank" rel="noopener noreferrer">
-                    <div className="aspect-[3/4] bg-muted">
+                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp', '_blank')}>
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp" 
                         alt="Der Leuchtturm – Ihre Rolle als Angehörige/r"
@@ -613,21 +612,19 @@ export default function Verstehen() {
                         decoding="async"
                       />
                     </div>
-                  </a>
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der Leuchtturm</h3>
                     <p className="text-sm text-muted-foreground mb-3">Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.</p>
-                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rvxNLrJSUBsMAByU.pdf', 'Der-Leuchtturm.pdf')}>
-                        <Download className="w-4 h-4 mr-2" />
-                        PDF herunterladen
-                    </Button>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rvxNLrJSUBsMAByU.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Der Leuchtturm (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
+                        <ExternalLink className="w-4 h-4" />
+                        PDF öffnen
+                    </a>
                   </CardContent>
                 </Card>
 
                 {/* 1.2 Eisberg */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp" target="_blank" rel="noopener noreferrer">
-                    <div className="aspect-[3/4] bg-muted">
+                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp', '_blank')}>
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp" 
                         alt="Der Eisberg – Wut ist oft die Spitze"
@@ -638,21 +635,19 @@ export default function Verstehen() {
                         decoding="async"
                       />
                     </div>
-                  </a>
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der Eisberg</h3>
                     <p className="text-sm text-muted-foreground mb-3">Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.</p>
-                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ecVVNozrluFJGAic.pdf', 'Der-Eisberg.pdf')}>
-                        <Download className="w-4 h-4 mr-2" />
-                        PDF herunterladen
-                    </Button>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ecVVNozrluFJGAic.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Der Eisberg (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
+                        <ExternalLink className="w-4 h-4" />
+                        PDF öffnen
+                    </a>
                   </CardContent>
                 </Card>
 
                 {/* 1.3 Spaltung */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp" target="_blank" rel="noopener noreferrer">
-                    <div className="aspect-[3/4] bg-muted">
+                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp', '_blank')}>
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp" 
                         alt="Spaltung – das Pendel zwischen Extremen"
@@ -663,21 +658,19 @@ export default function Verstehen() {
                         decoding="async"
                       />
                     </div>
-                  </a>
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Spaltung</h3>
                     <p className="text-sm text-muted-foreground mb-3">Das Pendel zwischen Extremen – die Grauzone stärken.</p>
-                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ROOtCLvQAliCecKS.pdf', 'Spaltung.pdf')}>
-                        <Download className="w-4 h-4 mr-2" />
-                        PDF herunterladen
-                    </Button>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ROOtCLvQAliCecKS.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Spaltung (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
+                        <ExternalLink className="w-4 h-4" />
+                        PDF öffnen
+                    </a>
                   </CardContent>
                 </Card>
 
                 {/* 1.4 Alarm-Modus vs. Denk-Modus */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp" target="_blank" rel="noopener noreferrer">
-                    <div className="aspect-[3/4] bg-muted">
+                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp', '_blank')}>
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp" 
                         alt="Alarm-Modus vs. Denk-Modus"
@@ -688,21 +681,19 @@ export default function Verstehen() {
                         decoding="async"
                       />
                     </div>
-                  </a>
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Alarm-Modus vs. Denk-Modus</h3>
                     <p className="text-sm text-muted-foreground mb-3">Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.</p>
-                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qbewiFzVNMjrPKrS.pdf', 'Alarm-Modus-vs-Denk-Modus.pdf')}>
-                        <Download className="w-4 h-4 mr-2" />
-                        PDF herunterladen
-                    </Button>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qbewiFzVNMjrPKrS.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Alarm-Modus vs. Denk-Modus (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
+                        <ExternalLink className="w-4 h-4" />
+                        PDF öffnen
+                    </a>
                   </CardContent>
                 </Card>
 
                 {/* 1.5 4-Phasen-Zyklus */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp" target="_blank" rel="noopener noreferrer">
-                    <div className="aspect-[3/4] bg-muted">
+                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp', '_blank')}>
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp" 
                         alt="Der 4-Phasen-Zyklus"
@@ -713,21 +704,19 @@ export default function Verstehen() {
                         decoding="async"
                       />
                     </div>
-                  </a>
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Der 4-Phasen-Zyklus</h3>
                     <p className="text-sm text-muted-foreground mb-3">Das vorhersehbare Muster – Krisen folgen oft einem Ablauf.</p>
-                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TANpVexahqGbpEAn.pdf', 'Der-4-Phasen-Zyklus.pdf')}>
-                        <Download className="w-4 h-4 mr-2" />
-                        PDF herunterladen
-                    </Button>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TANpVexahqGbpEAn.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Der 4-Phasen-Zyklus (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
+                        <ExternalLink className="w-4 h-4" />
+                        PDF öffnen
+                    </a>
                   </CardContent>
                 </Card>
 
                 {/* 1.6 Gehirn verstehen */}
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp" target="_blank" rel="noopener noreferrer">
-                    <div className="aspect-[3/4] bg-muted">
+                  <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp', '_blank')}>
                       <img 
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp" 
                         alt="Das Gehirn verstehen"
@@ -738,14 +727,13 @@ export default function Verstehen() {
                         decoding="async"
                       />
                     </div>
-                  </a>
                   <CardContent className="p-4">
                     <h3 className="font-medium text-foreground mb-1">Das Gehirn verstehen</h3>
                     <p className="text-sm text-muted-foreground mb-3">Neurobiologie einfach erklärt – warum Stress Denken blockiert.</p>
-                    <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile('https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MpBTEakVWqFCzkGD.pdf', 'Das-Gehirn-verstehen.pdf')}>
-                        <Download className="w-4 h-4 mr-2" />
-                        PDF herunterladen
-                    </Button>
+                    <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MpBTEakVWqFCzkGD.pdf" target="_blank" rel="noopener noreferrer" aria-label="PDF öffnen: Das Gehirn verstehen (neuer Tab)" className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
+                        <ExternalLink className="w-4 h-4" />
+                        PDF öffnen
+                    </a>
                   </CardContent>
                 </Card>
               </div>

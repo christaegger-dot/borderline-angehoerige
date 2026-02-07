@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { 
   Sparkles, ArrowRight, CheckCircle2, Heart, AlertTriangle, Users, 
-  Clock, Brain, Wind, Lightbulb, Shield, BookOpen, Phone, Download,
+  Clock, Brain, Wind, Lightbulb, Shield, BookOpen, Phone, Download, ExternalLink,
   ChevronDown, ChevronUp, UserCircle
 } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktById } from "@/data/kontakte";
-import { downloadFile } from "@/lib/downloadFile";
+
 
 const proMente = kontaktById("INFO_PROMENTE")!;
 import { useState } from "react";
@@ -662,6 +662,9 @@ export default function Selbstfuersorge() {
                 id="materialien-download"
                 preview="Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken."
               >
+                <p className="text-sm text-muted-foreground mb-4">
+                  «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
                     {
@@ -708,9 +711,15 @@ export default function Selbstfuersorge() {
                       <CardContent className="p-4">
                         <h3 className="font-medium text-foreground mb-1 text-sm">{item.title}</h3>
                         <p className="text-xs text-muted-foreground mb-3">{item.desc}</p>
-                        <Button variant="outline" size="sm" className="w-full gap-2" onClick={() => downloadFile(item.pdf, item.title.replace(/[^a-zA-Z0-9\u00e4\u00f6\u00fc\u00c4\u00d6\u00dc\u00df\-_ ]/g, '') + '.pdf')}>
-                            <Download className="w-4 h-4" /> PDF herunterladen
-                        </Button>
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                          className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" /> PDF öffnen
+                        </a>
                       </CardContent>
                     </Card>
                   ))}

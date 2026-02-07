@@ -3,10 +3,10 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
+import { Download, ExternalLink, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
-import { downloadFile } from "@/lib/downloadFile";
+
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MATERIALIEN-SEITE – ÜBERARBEITUNG IN PROGRESS
@@ -534,7 +534,7 @@ export default function Materialien() {
           <div className="mb-6 p-3 rounded-lg bg-sand border border-sand-subtle flex items-center gap-2">
             <Eye className="w-4 h-4 text-muted-foreground flex-shrink-0" />
             <p className="text-sm text-muted-foreground">
-              <strong className="text-foreground">Vorschau = Web-Bild.</strong> Download = A4-PDF (hochauflösend, zum Ausdrucken).
+              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
             </p>
           </div>
           {filteredInfografiken.length > 0 ? (
@@ -585,17 +585,16 @@ export default function Materialien() {
                       </p>
                       
                       <div className="flex items-center justify-end">
-                        <Button
-                          size="sm"
-                          className="bg-sage-dark hover:bg-sage-dark text-white"
-                          onClick={() => downloadFile(
-                            item.downloadUrl || item.url,
-                            item.title.replace(/[^a-zA-Z0-9äöüÄÖÜß\-_ ]/g, '') + (item.downloadUrl ? '.pdf' : '.webp')
-                          )}
+                        <a
+                          href={item.downloadUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                          className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
                         >
-                          <Download className="w-4 h-4 mr-2" />
-                          {item.downloadUrl ? "PDF" : "Download"}
-                        </Button>
+                          <ExternalLink className="w-4 h-4" />
+                          PDF öffnen
+                        </a>
                       </div>
                     </CardContent>
                   </Card>

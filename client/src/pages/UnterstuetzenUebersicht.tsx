@@ -4,9 +4,9 @@ import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Compass, ArrowRight, CheckCircle2, XCircle, Lightbulb, Download, Image, RefreshCw, Users, Shield, BookOpen } from "lucide-react";
+import { Compass, ArrowRight, CheckCircle2, XCircle, Lightbulb, Download, ExternalLink, Image, RefreshCw, Users, Shield, BookOpen } from "lucide-react";
 import { Link } from "wouter";
-import { downloadFile } from "@/lib/downloadFile";
+
 
 export default function UnterstuetzenUebersicht() {
   return (
@@ -381,36 +381,46 @@ export default function UnterstuetzenUebersicht() {
                 <Download className="w-8 h-8 text-terracotta-dark" />
                 Materialien zum Thema
               </h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+              </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   {
                     title: "Im Krisenmodus – Orientierung geben",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FOZYnweFmVcMXYyr.pdf"
                   },
                   {
                     title: "Ihre Rolle klären",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mTlmmrXfScSCxoiC.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mTlmmrXfScSCxoiC.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LEKuHRVBIRdTClYJ.pdf"
                   },
                   {
                     title: "Drei Säulen hilfreicher Unterstützung",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TaDXhEgHiyBeiQsT.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TaDXhEgHiyBeiQsT.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bWugGxMdeykNGBUW.pdf"
                   },
                   {
                     title: "Konsistenz-Prinzip",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MCMaGcrhifsekEqb.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MCMaGcrhifsekEqb.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vfDYZzjEwJsEhzch.pdf"
                   },
                   {
                     title: "6 Leitlinien für Angehörige",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UYzFtDygMzdBJaVD.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UYzFtDygMzdBJaVD.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GaQLbgKUokbWwUUi.pdf"
                   },
                   {
                     title: "Beziehungs-Achtsamkeit",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xwVvAHgRQPALOgcm.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xwVvAHgRQPALOgcm.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/umhOiOvEhETLRqtq.pdf"
                   },
                   {
                     title: "4 Alltags-Tipps",
-                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rnwlrkNLwFQsLjnU.webp"
+                    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rnwlrkNLwFQsLjnU.webp",
+                    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IokELYIzmFREYEyL.pdf"
                   }
                 ].map((item, index) => (
                   <Card key={index} className={`overflow-hidden ${index === 0 ? "md:col-span-2" : ""}`}>
@@ -427,10 +437,16 @@ export default function UnterstuetzenUebersicht() {
                     </div>
                     <CardContent className="p-4">
                       <h3 className="font-medium text-sm text-foreground mb-2">{item.title}</h3>
-                      <Button size="sm" variant="outline" className="w-full" onClick={() => downloadFile(item.url, item.title.replace(/[^a-zA-Z0-9\u00e4\u00f6\u00fc\u00c4\u00d6\u00dc\u00df\-_ ]/g, '') + '.webp')}>
-                          <Download className="w-4 h-4 mr-2" />
-                          Download
-                      </Button>
+                      <a
+                        href={item.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        PDF öffnen
+                      </a>
                     </CardContent>
                   </Card>
                 ))}

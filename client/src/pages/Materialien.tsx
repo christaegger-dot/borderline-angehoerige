@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp } from "lucide-react";
+import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 
@@ -531,7 +531,7 @@ export default function Materialien() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
                   <Card className="h-full hover:shadow-lg transition-all hover:border-[oklch(0.55_0.10_145)]/30 overflow-hidden">
-                    {/* Vorschaubild */}
+                    {/* Vorschaubild mit Hover-Overlay */}
                     <div 
                       className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
                       onClick={() => setPreviewImage(item.url)}
@@ -539,10 +539,20 @@ export default function Materialien() {
                       <img 
                         src={item.url} 
                         alt={item.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
-
+                      {/* Hover-Overlay */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                          <ZoomIn className="w-4 h-4 text-foreground" />
+                          <span className="text-sm font-medium text-foreground">Vergrössern</span>
+                        </div>
+                      </div>
+                      {/* Typ-Badge */}
+                      <div className="absolute top-2 left-2 bg-background/85 backdrop-blur-sm px-2 py-0.5 rounded text-xs font-medium text-muted-foreground">
+                        {item.type}
+                      </div>
                     </div>
                     
                     <CardContent className="p-5">
@@ -554,10 +564,7 @@ export default function Materialien() {
                         {item.description}
                       </p>
                       
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-muted-foreground uppercase">
-                          {item.type}
-                        </span>
+                      <div className="flex items-center justify-end">
                         <a href={item.downloadUrl || item.url} target="_blank" rel="noopener noreferrer" download>
                           <Button size="sm" className="bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]">
                             <Download className="w-4 h-4 mr-2" />

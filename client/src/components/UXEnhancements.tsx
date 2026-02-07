@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { ChevronUp, ChevronRight, Home } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { ChevronUp, ChevronRight, Home, List, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -123,7 +123,7 @@ export function Breadcrumbs() {
   );
 }
 
-// Inhaltsverzeichnis (Table of Contents)
+// Inhaltsverzeichnis (Table of Contents) mit aktiver Markierung und Mobile Drawer
 interface TOCItem {
   id: string;
   text: string;
@@ -134,61 +134,105 @@ export function TableOfContents() {
   const [headings, setHeadings] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
   const [isOpen, setIsOpen] = useState(false);
+  // Scroll-basierte aktive Markierung (kein IntersectionObserver nötig)
+  const activeNavRef = useRef<HTMLButtonElement | null>(null);
 
+  // Headings scannen
   useEffect(() => {
-    // Alle H2 und H3 Überschriften finden
-    const elements = document.querySelectorAll("h2, h3");
-    const items: TOCItem[] = [];
-    
-    elements.forEach((el, index) => {
-      // Prüfen ob das Heading innerhalb einer ContentSection liegt
-      // ContentSection hat aria-expanded auf dem Button und eine manuelle ID auf dem Wrapper
-      const contentSectionWrapper = el.closest('[id]:not(h2):not(h3)');
-      const isInsideContentSection = contentSectionWrapper?.querySelector('[aria-expanded]') !== null;
+    // Kurz warten, damit ContentSections gerendert sind
+    const timer = setTimeout(() => {
+      const elements = document.querySelectorAll("h2, h3");
+      const items: TOCItem[] = [];
       
-      let id: string;
-      if (isInsideContentSection && contentSectionWrapper?.id && !contentSectionWrapper.id.startsWith('heading-')) {
-        // Verwende die ID des ContentSection-Wrappers
-        id = contentSectionWrapper.id;
-      } else {
-        id = el.id || `heading-${index}`;
-        if (!el.id) el.id = id;
-      }
+      elements.forEach((el, index) => {
+        // Prüfen ob das Heading innerhalb einer ContentSection liegt
+        const contentSectionWrapper = el.closest('[id]:not(h2):not(h3)');
+        const isInsideContentSection = contentSectionWrapper?.querySelector('[aria-expanded]') !== null;
+        
+        let id: string;
+        if (isInsideContentSection && contentSectionWrapper?.id && !contentSectionWrapper.id.startsWith('heading-')) {
+          id = contentSectionWrapper.id;
+        } else {
+          id = el.id || `heading-${index}`;
+          if (!el.id) el.id = id;
+        }
+        
+        // Duplikate vermeiden
+        if (!items.some(item => item.id === id)) {
+          items.push({
+            id,
+            text: el.textContent || "",
+            level: el.tagName === "H2" ? 2 : 3
+          });
+        }
+      });
       
-      // Duplikate vermeiden (mehrere H-Elemente in derselben ContentSection)
-      if (!items.some(item => item.id === id)) {
-        items.push({
-          id,
-          text: el.textContent || "",
-          level: el.tagName === "H2" ? 2 : 3
-        });
+      setHeadings(items);
+      // Ersten Eintrag als aktiv setzen
+      if (items.length > 0) {
+        setActiveId(items[0].id);
       }
-    });
-    
-    setHeadings(items);
+    }, 200);
+
+    return () => clearTimeout(timer);
   }, []);
 
+  // Scroll-basierte aktive Markierung
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-100px 0px -80% 0px" }
-    );
+    if (headings.length === 0) return;
 
-    headings.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    // Scroll-basierte Erkennung: Welcher Abschnitt ist am nächsten am oberen Viewport-Rand?
+    const handleScroll = () => {
+      const headerHeight = 80;
+      let bestId = headings[0]?.id || "";
+      let bestDistance = -Infinity;
 
-    return () => observer.disconnect();
+      headings.forEach(({ id }) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        
+        const rect = el.getBoundingClientRect();
+        const distance = rect.top - headerHeight;
+        
+        // Wähle den letzten Abschnitt, der den Header-Bereich passiert hat (distance <= 100)
+        // oder noch knapp darunter ist
+        if (distance <= 100 && distance > bestDistance) {
+          bestDistance = distance;
+          bestId = id;
+        }
+      });
+
+      // Fallback: Wenn kein Abschnitt den Header passiert hat, nimm den ersten
+      if (bestDistance === -Infinity) {
+        bestId = headings[0]?.id || "";
+      }
+
+      // Wenn wir ganz unten sind, den letzten Eintrag aktivieren
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+        bestId = headings[headings.length - 1]?.id || bestId;
+      }
+
+      if (bestId) {
+        setActiveId(bestId);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial ausführen
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [headings]);
 
-  // Body-Scroll-Lock für Mobile-Drawer: Verhindert Hintergrund-Scrollen auf iOS/Safari
+  // Aktiven Eintrag in der Desktop-Sidebar in den sichtbaren Bereich scrollen
+  useEffect(() => {
+    if (activeNavRef.current) {
+      activeNavRef.current.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }, [activeId]);
+
+  // Body-Scroll-Lock für Mobile-Drawer
   useEffect(() => {
     if (isOpen) {
       const scrollY = window.scrollY;
@@ -214,22 +258,16 @@ export function TableOfContents() {
     };
   }, [isOpen]);
 
-  if (headings.length < 3) return null;
-
-  const scrollToHeading = (id: string) => {
+  const scrollToHeading = useCallback((id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      // Prüfen ob es sich um eine ContentSection handelt
       const isContentSection = el.querySelector('[aria-expanded]') !== null;
 
       if (isContentSection) {
-        // ContentSection aufklappen via Custom Event
-        // Die ContentSection übernimmt auch das Scrollen
         window.dispatchEvent(
           new CustomEvent("open-section", { detail: { sectionId: id } })
         );
       } else {
-        // Normales Heading: direkt scrollen
         const header = document.querySelector('header');
         const headerHeight = header?.getBoundingClientRect().height || 80;
         const offset = headerHeight + 20;
@@ -237,59 +275,81 @@ export function TableOfContents() {
         window.scrollTo({ top, behavior: "smooth" });
       }
 
+      setActiveId(id);
       setIsOpen(false);
     }
-  };
+  }, []);
+
+  if (headings.length < 3) return null;
+
+  // Aktiver Eintrag Styling
+  const activeClass = "bg-[oklch(0.92_0.06_55)] text-[oklch(0.35_0.10_55)] font-semibold border-l-2 border-l-[oklch(0.55_0.12_55)]";
+  const inactiveClass = "text-muted-foreground hover:text-foreground hover:bg-muted/60";
 
   return (
     <>
-      {/* Mobile Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed bottom-20 sm:bottom-6 left-4 z-40 px-4 py-2 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+      {/* ─── Mobile: Floating TOC Button ─── */}
+      <motion.button
+        onClick={() => setIsOpen(true)}
+        className="lg:hidden fixed bottom-20 sm:bottom-6 left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+        whileTap={{ scale: 0.95 }}
+        aria-label="Inhaltsverzeichnis öffnen"
       >
+        <List className="w-4 h-4" />
         <span>Inhalt</span>
-        <ChevronRight className={`w-4 h-4 transition-transform ${isOpen ? "rotate-90" : ""}`} />
-      </button>
+      </motion.button>
 
-      {/* Mobile Overlay */}
+      {/* ─── Mobile: Overlay ─── */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="lg:hidden fixed inset-0 bg-black/50 z-40"
+            className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
             onClick={() => setIsOpen(false)}
           />
         )}
       </AnimatePresence>
 
-      {/* Mobile Drawer */}
+      {/* ─── Mobile: Drawer von unten ─── */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="lg:hidden fixed left-0 top-0 bottom-0 w-72 bg-background z-50 shadow-xl overflow-y-auto"
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%" }}
+            transition={{ type: "spring", damping: 28, stiffness: 300 }}
+            className="lg:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
           >
-            <div className="p-4 border-b border-border">
-              <h3 className="font-display font-semibold text-foreground">Inhaltsverzeichnis</h3>
+            {/* Drawer Handle */}
+            <div className="flex justify-center pt-3 pb-1">
+              <div className="w-10 h-1 rounded-full bg-border" />
             </div>
-            <nav className="p-4">
-              <ul className="space-y-1">
+
+            {/* Drawer Header */}
+            <div className="flex items-center justify-between px-5 py-3 border-b border-border">
+              <h3 className="font-display font-semibold text-foreground text-base">Inhaltsverzeichnis</h3>
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="w-8 h-8 rounded-full hover:bg-muted flex items-center justify-center"
+                aria-label="Schliessen"
+              >
+                <X className="w-4 h-4 text-muted-foreground" />
+              </button>
+            </div>
+
+            {/* Drawer Content */}
+            <nav className="overflow-y-auto overscroll-contain px-3 py-3 flex-1">
+              <ul className="space-y-0.5">
                 {headings.map(({ id, text, level }) => (
                   <li key={id}>
                     <button
                       onClick={() => scrollToHeading(id)}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                        level === 3 ? "pl-6" : ""
+                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
+                        level === 3 ? "pl-7" : ""
                       } ${
-                        activeId === id
-                          ? "bg-[oklch(0.85_0.08_55)] text-[oklch(0.35_0.08_55)] font-medium"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        activeId === id ? activeClass : inactiveClass
                       }`}
                     >
                       {text}
@@ -302,22 +362,23 @@ export function TableOfContents() {
         )}
       </AnimatePresence>
 
-      {/* Desktop Sidebar - nur auf grossen Bildschirmen */}
-      <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30">
-        <div className="bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 p-4 shadow-sm">
-          <h4 className="font-display font-semibold text-foreground text-sm mb-3">Auf dieser Seite</h4>
-          <nav>
-            <ul className="space-y-1">
-              {headings.slice(0, 8).map(({ id, text, level }) => (
+      {/* ─── Desktop: Sticky Sidebar ─── */}
+      <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
+        <div className="bg-background/90 backdrop-blur-md rounded-xl border border-border/50 shadow-sm overflow-hidden flex flex-col max-h-[70vh]">
+          <div className="px-4 pt-4 pb-2">
+            <h4 className="font-display font-semibold text-foreground text-sm">Auf dieser Seite</h4>
+          </div>
+          <nav className="overflow-y-auto overscroll-contain px-2 pb-3 flex-1">
+            <ul className="space-y-0.5">
+              {headings.map(({ id, text, level }) => (
                 <li key={id}>
                   <button
+                    ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
-                    className={`w-full text-left px-2 py-1.5 rounded text-xs transition-colors line-clamp-2 ${
-                      level === 3 ? "pl-4" : ""
+                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-all duration-200 line-clamp-2 ${
+                      level === 3 ? "pl-5" : ""
                     } ${
-                      activeId === id
-                        ? "bg-[oklch(0.85_0.08_55)] text-[oklch(0.35_0.08_55)] font-medium"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      activeId === id ? activeClass : inactiveClass
                     }`}
                   >
                     {text}

@@ -21,7 +21,7 @@ export default function Datenschutz() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Datenschutzerklärung
             </h1>
             
@@ -48,7 +48,7 @@ export default function Datenschutz() {
                   <div className="flex items-start gap-4">
                     <Lock className="w-8 h-8 text-[oklch(0.55_0.10_145)] flex-shrink-0 mt-1" />
                     <div>
-                      <h2 className="font-display text-xl font-semibold text-foreground mb-2">
+                      <h2 className="text-xl font-semibold text-foreground mb-2">
                         Unser Grundsatz
                       </h2>
                       <p className="text-muted-foreground leading-relaxed">
@@ -70,7 +70,7 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Verantwortliche Stelle
                   </h2>
                   <div className="text-muted-foreground leading-relaxed">
@@ -92,7 +92,7 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                     <Server className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
                     Erhebung und Verarbeitung von Daten
                   </h2>
@@ -148,7 +148,7 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                     <Cookie className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
                     Cookies
                   </h2>
@@ -183,7 +183,7 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                     <Eye className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
                     Analyse- und Tracking-Tools
                   </h2>
@@ -210,7 +210,7 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Externe Links
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -231,7 +231,7 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Downloads und Materialien
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -251,7 +251,7 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Ihre Rechte
                   </h2>
                   <div className="text-muted-foreground leading-relaxed space-y-4">
@@ -294,7 +294,7 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Änderungen dieser Datenschutzerklärung
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">

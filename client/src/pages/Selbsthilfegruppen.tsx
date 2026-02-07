@@ -33,7 +33,7 @@ export default function Selbsthilfegruppen() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Selbsthilfegruppen & Netzwerke
             </h1>
             
@@ -63,7 +63,7 @@ export default function Selbsthilfegruppen() {
                       <Heart className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <h2 className="font-display text-2xl font-semibold text-foreground mb-1">
+                      <h2 className="text-2xl font-semibold text-foreground mb-1">
                         Stand by You Schweiz
                       </h2>
                       <p className="text-sm text-muted-foreground">
@@ -137,7 +137,7 @@ export default function Selbsthilfegruppen() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Selbsthilfegruppen für Borderline-Angehörige
               </h2>
               
@@ -269,7 +269,7 @@ export default function Selbsthilfegruppen() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Weitere Anlaufstellen
               </h2>
               
@@ -380,7 +380,7 @@ export default function Selbsthilfegruppen() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Online-Angebote
               </h2>
               

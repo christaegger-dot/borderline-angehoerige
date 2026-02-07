@@ -172,7 +172,7 @@ const glossaryTerms: GlossaryTerm[] = [
 
 const categoryInfo = {
   therapie: { label: "Therapie & Behandlung", icon: Brain, color: "oklch(0.55_0.08_250)" },
-  kommunikation: { label: "Kommunikation", icon: MessageCircle, color: "oklch(0.65_0.12_25)" },
+  kommunikation: { label: "Kommunikation", icon: MessageCircle, color: "oklch(0.65_0.12_55)" },
   symptome: { label: "Symptome & Muster", icon: AlertTriangle, color: "oklch(0.65_0.15_55)" },
   selbsthilfe: { label: "Selbsthilfe & Angehörige", icon: Heart, color: "oklch(0.55_0.08_145)" }
 };
@@ -213,7 +213,7 @@ export default function Glossar() {
               <span className="text-sm font-medium text-[oklch(0.45_0.08_250)]">{glossaryTerms.length} Begriffe</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Glossar
             </h1>
             
@@ -305,7 +305,7 @@ export default function Glossar() {
                             {/* Header */}
                             <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                               <div>
-                                <h3 className="font-display text-xl font-semibold text-foreground">
+                                <h3 className="text-xl font-semibold text-foreground">
                                   {term.term}
                                   {term.abbreviation && (
                                     <span className="ml-2 text-base font-normal text-muted-foreground">
@@ -368,7 +368,7 @@ export default function Glossar() {
                   <Users className="w-6 h-6 text-[oklch(0.55_0.08_250)]" />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
                     Begriffe im Kontext verstehen
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">

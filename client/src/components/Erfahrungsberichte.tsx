@@ -96,7 +96,7 @@ export default function Erfahrungsberichte({
               viewport={{ once: true }}
               className="text-center mb-10"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
                 Stimmen von Angehörigen
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -191,7 +191,7 @@ export default function Erfahrungsberichte({
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
               Stimmen von Angehörigen
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">

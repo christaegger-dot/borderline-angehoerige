@@ -13,7 +13,7 @@ export default function UnterstuetzenKrise() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.06_35)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.06_55)]/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,13 +26,13 @@ export default function UnterstuetzenKrise() {
             </Link>
             
             <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.06_35)] flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-[oklch(0.50_0.15_35)]" />
+              <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.06_55)] flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-[oklch(0.50_0.15_55)]" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.50_0.15_35)]">Lesezeit: 6 Minuten</span>
+              <span className="text-sm font-medium text-[oklch(0.50_0.15_55)]">Lesezeit: 6 Minuten</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               In der Krise unterstützen
             </h1>
             
@@ -43,7 +43,7 @@ export default function UnterstuetzenKrise() {
             <div className="p-4 rounded-xl bg-[oklch(0.96_0.02_85)] border border-[oklch(0.90_0.04_85)]">
               <p className="text-sm text-muted-foreground">
                 <strong className="text-foreground">Unterschied Krise vs. Notfall:</strong> Diese Seite ist für <strong>emotionale Krisen und Eskalationen</strong> (starke Emotionen, Konflikte, Rückzug). Bei <strong>akuter Gefahr</strong> (Suizidgefahr, Selbstverletzung) gehen Sie direkt zu{" "}
-                <Link href="/soforthilfe" className="text-[oklch(0.55_0.20_25)] hover:underline font-medium">Soforthilfe & Notfallnummern →</Link>
+                <Link href="/soforthilfe" className="text-[oklch(0.55_0.20_55)] hover:underline font-medium">Soforthilfe & Notfallnummern →</Link>
               </p>
             </div>
           </motion.div>
@@ -51,7 +51,7 @@ export default function UnterstuetzenKrise() {
       </section>
 
       {/* Emergency Banner */}
-      <section className="py-4 bg-[oklch(0.55_0.20_25)]">
+      <section className="py-4 bg-[oklch(0.55_0.20_55)]">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-white text-center sm:text-left">
@@ -61,7 +61,7 @@ export default function UnterstuetzenKrise() {
               <a href={`tel:${gruen143.tel}`} className="underline">{gruen143.label} ({gruen143.nummer})</a>
             </p>
             <Link href="/soforthilfe">
-              <Button variant="secondary" size="sm" className="bg-white text-[oklch(0.55_0.20_25)]">
+              <Button variant="secondary" size="sm" className="bg-white text-[oklch(0.55_0.20_55)]">
                 <Phone className="w-4 h-4 mr-2" />
                 Alle Notfallnummern
               </Button>
@@ -81,7 +81,7 @@ export default function UnterstuetzenKrise() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Das Ampel-System: Krisen erkennen
               </h2>
               
@@ -116,13 +116,13 @@ export default function UnterstuetzenKrise() {
                     level: "Rot – Akute Krise",
                     description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
                     action: "Professionelle Hilfe holen, Notruf wenn nötig",
-                    color: "oklch(0.50 0.20 25)",
-                    bgColor: "oklch(0.95 0.05 25)"
+                    color: "oklch(0.50 0.20 55)",
+                    bgColor: "oklch(0.95 0.05 55)"
                   }
                 ].map((item, index) => (
                   <Card key={index} style={{ borderColor: item.color, backgroundColor: item.bgColor }} className="border-l-4">
                     <CardContent className="p-5">
-                      <h3 className="font-display font-semibold text-foreground mb-2">{item.level}</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{item.level}</h3>
                       <p className="text-muted-foreground text-sm mb-2">{item.description}</p>
                       <p className="text-sm">
                         <strong className="text-foreground">Ihre Reaktion:</strong>{" "}
@@ -141,8 +141,8 @@ export default function UnterstuetzenKrise() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Shield className="w-8 h-8 text-[oklch(0.55_0.15_35)]" />
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Shield className="w-8 h-8 text-[oklch(0.55_0.15_55)]" />
                 4 Schritte der Deeskalation
               </h2>
               
@@ -176,11 +176,11 @@ export default function UnterstuetzenKrise() {
                   <Card key={index} className="border-border/50">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_35)] text-white flex items-center justify-center font-semibold flex-shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_55)] text-white flex items-center justify-center font-semibold flex-shrink-0">
                           {item.step}
                         </div>
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-2">{item.title}</h3>
+                          <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
                           <p className="text-muted-foreground text-sm mb-2">{item.description}</p>
                           <div className="bg-muted/50 rounded-lg p-3">
                             <p className="text-sm text-foreground italic">{item.example}</p>
@@ -200,7 +200,7 @@ export default function UnterstuetzenKrise() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Was Sie in der Krise sagen können
               </h2>
               
@@ -211,7 +211,7 @@ export default function UnterstuetzenKrise() {
               <div className="space-y-4">
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Präsenz zeigen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Präsenz zeigen</h3>
                     <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Ich bin hier. Ich gehe nicht weg. Du bist nicht allein."</p>
                     </div>
@@ -220,7 +220,7 @@ export default function UnterstuetzenKrise() {
                 
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Gefühle validieren</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Gefühle validieren</h3>
                     <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Ich sehe, dass du gerade unglaublich viel Schmerz fühlst. Das muss sich furchtbar anfühlen."</p>
                     </div>
@@ -229,7 +229,7 @@ export default function UnterstuetzenKrise() {
                 
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Hoffnung vermitteln</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Hoffnung vermitteln</h3>
                     <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Dieses Gefühl wird vorbeigehen. Es fühlt sich jetzt endlos an, aber es wird sich verändern."</p>
                     </div>
@@ -238,7 +238,7 @@ export default function UnterstuetzenKrise() {
                 
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Konkrete Hilfe anbieten</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Konkrete Hilfe anbieten</h3>
                     <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Was brauchst du gerade am meisten? Soll ich einfach hier sitzen? Oder sollen wir zusammen atmen?"</p>
                     </div>
@@ -247,7 +247,7 @@ export default function UnterstuetzenKrise() {
                 
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Bei Suizidgedanken direkt ansprechen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Bei Suizidgedanken direkt ansprechen</h3>
                     <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Ich mache mir Sorgen um dich. Hast du gerade Gedanken, dir etwas anzutun?"</p>
                     </div>
@@ -264,11 +264,11 @@ export default function UnterstuetzenKrise() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Was Sie in der Krise vermeiden sollten
               </h2>
               
-              <Card className="border-l-4 border-l-[oklch(0.55_0.20_25)] bg-[oklch(0.95_0.03_25)]">
+              <Card className="border-l-4 border-l-[oklch(0.55_0.20_55)] bg-[oklch(0.95_0.03_55)]">
                 <CardContent className="p-6">
                   <ul className="space-y-3">
                     {[
@@ -280,7 +280,7 @@ export default function UnterstuetzenKrise() {
                       "Sich selbst in Gefahr bringen"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-[oklch(0.55_0.20_25)]">✗</span>
+                        <span className="text-[oklch(0.55_0.20_55)]">✗</span>
                         {item}
                       </li>
                     ))}
@@ -296,7 +296,7 @@ export default function UnterstuetzenKrise() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Clock className="w-8 h-8 text-[oklch(0.65_0.08_145)]" />
                 Nach der Krise
               </h2>
@@ -331,8 +331,8 @@ export default function UnterstuetzenKrise() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-[oklch(0.50_0.15_35)]" />
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Download className="w-8 h-8 text-[oklch(0.50_0.15_55)]" />
                 Materialien zum Thema
               </h2>
               

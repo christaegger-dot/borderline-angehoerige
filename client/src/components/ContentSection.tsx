@@ -94,7 +94,7 @@ export default function ContentSection({
         <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-[oklch(0.97_0.01_85)] hover:bg-[oklch(0.95_0.02_85)] border border-border/40 transition-all duration-200">
           <div className="flex items-center gap-3 min-w-0">
             {icon}
-            <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground">
+            <h2 className="text-xl md:text-2xl font-semibold text-foreground">
               {title}
             </h2>
           </div>

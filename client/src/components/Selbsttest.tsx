@@ -165,8 +165,8 @@ const results: Result[] = [
       { href: "/unterstuetzen/krise", text: "Krisenbegleitung lernen" }
     ],
     icon: AlertTriangle,
-    color: "oklch(0.55 0.20 25)",
-    bgColor: "oklch(0.95 0.05 25)"
+    color: "oklch(0.55 0.20 55)",
+    bgColor: "oklch(0.95 0.05 55)"
   },
   {
     id: "krise",
@@ -235,8 +235,8 @@ const results: Result[] = [
       { href: "/kommunizieren", text: "Kommunikationstechniken" }
     ],
     icon: Shield,
-    color: "oklch(0.55 0.15 35)",
-    bgColor: "oklch(0.92 0.06 35)"
+    color: "oklch(0.55 0.15 55)",
+    bgColor: "oklch(0.92 0.06 55)"
   },
   {
     id: "selbstfuersorge",
@@ -249,8 +249,8 @@ const results: Result[] = [
       { href: "/materialien", text: "Materialien & Ressourcen" }
     ],
     icon: Sparkles,
-    color: "oklch(0.55 0.12 320)",
-    bgColor: "oklch(0.92 0.05 320)"
+    color: "oklch(0.55 0.12 145)",
+    bgColor: "oklch(0.92 0.05 145)"
   }
 ];
 
@@ -344,7 +344,7 @@ export default function Selbsttest() {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Unsere Empfehlung für Sie</p>
-                <h3 className="font-display text-2xl font-semibold text-foreground">
+                <h3 className="text-2xl font-semibold text-foreground">
                   {result.title}
                 </h3>
               </div>
@@ -438,7 +438,7 @@ export default function Selbsttest() {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-2">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
               {question.text}
             </h3>
             {question.subtext && (

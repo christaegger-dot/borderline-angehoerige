@@ -28,7 +28,7 @@ export default function Impressum() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Impressum
             </h1>
           </motion.div>
@@ -47,7 +47,7 @@ export default function Impressum() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Verantwortlich für den Inhalt
                   </h2>
                   <div className="text-muted-foreground leading-relaxed space-y-2">
@@ -71,7 +71,7 @@ export default function Impressum() {
             >
               <Card className="border-[oklch(0.55_0.10_145)]/30 bg-[oklch(0.95_0.04_145)]/30">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Beratung für Angehörige
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -120,7 +120,7 @@ export default function Impressum() {
             >
               <Card className="border-[oklch(0.65_0.12_55)]/30 bg-[oklch(0.95_0.04_55)]/30">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Wichtiger Hinweis
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
@@ -140,7 +140,7 @@ export default function Impressum() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Zweck der Website
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -176,7 +176,7 @@ export default function Impressum() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Haftungsausschluss
                   </h2>
                   <div className="text-muted-foreground leading-relaxed space-y-4">
@@ -207,7 +207,7 @@ export default function Impressum() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
                     Quellenangaben
                   </h2>
@@ -249,7 +249,7 @@ export default function Impressum() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                  <h2 className="text-xl font-semibold text-foreground mb-4">
                     Urheberrecht
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">

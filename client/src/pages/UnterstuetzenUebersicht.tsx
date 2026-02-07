@@ -28,7 +28,7 @@ export default function UnterstuetzenUebersicht() {
               <span className="text-sm font-medium text-[oklch(0.45_0.12_55)]">Lesezeit: 4 Minuten</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Wie kann ich helfen?
             </h1>
             
@@ -55,7 +55,7 @@ export default function UnterstuetzenUebersicht() {
                   <div className="flex items-start gap-4">
                     <span className="text-4xl">🏠</span>
                     <div>
-                      <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                      <h3 className="text-xl font-semibold text-foreground mb-3">
                         Die Leuchtturm-Metapher
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
@@ -74,7 +74,7 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Ihre Rolle klären
               </h2>
               
@@ -82,7 +82,7 @@ export default function UnterstuetzenUebersicht() {
                 {/* Was Sie sind */}
                 <Card className="border-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-6">
-                    <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                       <CheckCircle2 className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
                       Was Sie sein können
                     </h3>
@@ -104,10 +104,10 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
 
                 {/* Was Sie nicht sind */}
-                <Card className="border-[oklch(0.55_0.15_25)]">
+                <Card className="border-[oklch(0.55_0.15_55)]">
                   <CardContent className="p-6">
-                    <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <XCircle className="w-5 h-5 text-[oklch(0.55_0.15_25)]" />
+                    <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <XCircle className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
                       Was nicht Ihre Rolle ist
                     </h3>
                     <ul className="space-y-3">
@@ -119,7 +119,7 @@ export default function UnterstuetzenUebersicht() {
                         "Der Verantwortliche für die Genesung"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-[oklch(0.55_0.15_25)]">✗</span>
+                          <span className="text-[oklch(0.55_0.15_55)]">✗</span>
                           {item}
                         </li>
                       ))}
@@ -136,7 +136,7 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Das verlorene Kind verstehen
               </h2>
               
@@ -168,7 +168,7 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Das Konsistenz-Prinzip
               </h2>
               
@@ -199,10 +199,10 @@ export default function UnterstuetzenUebersicht() {
                     </ul>
                   </CardContent>
                 </Card>
-                <Card className="border-l-4 border-l-[oklch(0.55_0.15_25)]">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)]">
                   <CardContent className="p-4">
                     <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <XCircle className="w-4 h-4 text-[oklch(0.55_0.15_25)]" />
+                      <XCircle className="w-4 h-4 text-[oklch(0.55_0.15_55)]" />
                       Vermeiden
                     </h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -227,7 +227,7 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Die drei Säulen hilfreicher Unterstützung
               </h2>
               
@@ -251,7 +251,7 @@ export default function UnterstuetzenUebersicht() {
                 ].map((pillar, index) => (
                   <Card key={index} className="border-border/50">
                     <CardContent className="p-6">
-                      <h3 className="font-display font-semibold text-foreground mb-2">{pillar.title}</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{pillar.title}</h3>
                       <p className="text-muted-foreground mb-3">{pillar.description}</p>
                       <div className="bg-muted/50 rounded-lg p-3">
                         <p className="text-sm text-foreground italic">Beispiel: {pillar.example}</p>
@@ -269,7 +269,7 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 15 evidenzbasierte Leitlinien
               </h2>
               
@@ -281,7 +281,7 @@ export default function UnterstuetzenUebersicht() {
                 {/* Ziele */}
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Ziele: Langsam vorgehen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Ziele: Langsam vorgehen</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <span className="text-[oklch(0.55_0.10_145)] font-bold">1.</span>
@@ -298,7 +298,7 @@ export default function UnterstuetzenUebersicht() {
                 {/* Familienumgebung */}
                 <Card className="border-l-4 border-l-[oklch(0.65_0.12_55)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Familienumgebung gestalten</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Familienumgebung gestalten</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <span className="text-[oklch(0.65_0.12_55)] font-bold">3.</span>
@@ -317,20 +317,20 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
                 
                 {/* Krisen managen */}
-                <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)]">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Krisen managen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Krisen managen</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.15_35)] font-bold">6.</span>
+                        <span className="text-[oklch(0.55_0.15_55)] font-bold">6.</span>
                         <span><strong className="text-foreground">Nicht defensiv werden</strong> – Nicht rechtfertigen oder verteidigen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.15_35)] font-bold">7.</span>
+                        <span className="text-[oklch(0.55_0.15_55)] font-bold">7.</span>
                         <span><strong className="text-foreground">Selbstverletzendes Verhalten ernst nehmen</strong> – Aufmerksamkeit geben, nicht ignorieren.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.15_35)] font-bold">8.</span>
+                        <span className="text-[oklch(0.55_0.15_55)] font-bold">8.</span>
                         <span><strong className="text-foreground">Zuhören</strong> – Gefühle anerkennen, nicht wegargumentieren.</span>
                       </li>
                     </ul>
@@ -340,7 +340,7 @@ export default function UnterstuetzenUebersicht() {
                 {/* Probleme angehen */}
                 <Card className="border-l-4 border-l-[oklch(0.45_0.05_250)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Probleme angehen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Probleme angehen</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <span className="text-[oklch(0.45_0.05_250)] font-bold">9.</span>
@@ -359,24 +359,24 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
                 
                 {/* Grenzen setzen */}
-                <Card className="border-l-4 border-l-[oklch(0.50_0.12_320)]">
+                <Card className="border-l-4 border-l-[oklch(0.50_0.12_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Grenzen setzen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Grenzen setzen</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.50_0.12_320)] font-bold">12.</span>
+                        <span className="text-[oklch(0.50_0.12_145)] font-bold">12.</span>
                         <span><strong className="text-foreground">Grenzen klar kommunizieren</strong> – Erwartungen deutlich machen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.50_0.12_320)] font-bold">13.</span>
+                        <span className="text-[oklch(0.50_0.12_145)] font-bold">13.</span>
                         <span><strong className="text-foreground">Natürliche Konsequenzen zulassen</strong> – Nicht vor der Realität schützen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.50_0.12_320)] font-bold">14.</span>
+                        <span className="text-[oklch(0.50_0.12_145)] font-bold">14.</span>
                         <span><strong className="text-foreground">Missbrauch nicht tolerieren</strong> – Verbale/körperliche Gewalt = rote Linie.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.50_0.12_320)] font-bold">15.</span>
+                        <span className="text-[oklch(0.50_0.12_145)] font-bold">15.</span>
                         <span><strong className="text-foreground">Drohungen und Ultimaten</strong> – Nur aussprechen, wenn Sie sie durchziehen können.</span>
                       </li>
                     </ul>
@@ -396,7 +396,7 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-[oklch(0.45_0.12_55)]" />
                 Materialien zum Thema
               </h2>
@@ -475,7 +475,7 @@ export default function UnterstuetzenUebersicht() {
                   <div className="flex items-start gap-4">
                     <Lightbulb className="w-6 h-6 text-[oklch(0.60_0.10_85)] flex-shrink-0" />
                     <div>
-                      <h3 className="font-display font-semibold text-foreground mb-2">
+                      <h3 className="font-semibold text-foreground mb-2">
                         Denken Sie daran
                       </h3>
                       <p className="text-muted-foreground">

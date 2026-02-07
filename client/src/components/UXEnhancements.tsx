@@ -368,7 +368,7 @@ export function TableOfContents() {
 
             {/* Drawer Header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-border">
-              <h3 className="font-display font-semibold text-foreground text-base">Inhaltsverzeichnis</h3>
+              <h3 className="font-semibold text-foreground text-base">Inhaltsverzeichnis</h3>
               <button 
                 onClick={() => setIsOpen(false)}
                 className="w-8 h-8 rounded-full hover:bg-muted flex items-center justify-center"
@@ -405,7 +405,7 @@ export function TableOfContents() {
       <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
         <div className="bg-background/90 backdrop-blur-md rounded-xl border border-border/50 shadow-sm overflow-hidden flex flex-col max-h-[70vh]">
           <div className="px-4 pt-4 pb-2">
-            <h4 className="font-display font-semibold text-foreground text-sm">Auf dieser Seite</h4>
+            <h4 className="font-semibold text-foreground text-sm">Auf dieser Seite</h4>
           </div>
           <nav className="overflow-y-auto overscroll-contain px-2 pb-3 flex-1">
             <ul className="space-y-0.5">

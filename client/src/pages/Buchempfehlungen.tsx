@@ -30,7 +30,7 @@ const bookCategories: BookCategory[] = [
     title: "Für Partner & Ehepartner",
     subtitle: "Wenn Ihr Partner oder Ihre Partnerin betroffen ist",
     icon: Heart,
-    color: "oklch(0.65_0.12_25)",
+    color: "oklch(0.65_0.12_55)",
     books: [
       {
         title: "Schluss mit dem Eiertanz",
@@ -229,7 +229,7 @@ export default function Buchempfehlungen() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Buchempfehlungen
             </h1>
             
@@ -295,7 +295,7 @@ export default function Buchempfehlungen() {
                     <category.icon className="w-7 h-7" />
                   </div>
                   <div>
-                    <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
                       {category.title}
                     </h2>
                     <p className="text-muted-foreground mt-1">{category.subtitle}</p>
@@ -325,7 +325,7 @@ export default function Buchempfehlungen() {
                                   </span>
                                 )}
                               </div>
-                              <h3 className="font-display text-lg font-semibold text-foreground leading-tight">
+                              <h3 className="text-lg font-semibold text-foreground leading-tight">
                                 {book.title}
                               </h3>
                               <p className="text-sm text-muted-foreground mt-1">
@@ -382,7 +382,7 @@ export default function Buchempfehlungen() {
                   <BookOpen className="w-6 h-6 text-[oklch(0.55_0.08_250)]" />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
                     Hinweis zu den Empfehlungen
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">

@@ -56,9 +56,9 @@ export default function Layout({ children }: LayoutProps) {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.12_55)] to-[oklch(0.65_0.08_145)] flex items-center justify-center">
-                <span className="text-white font-display font-semibold text-sm md:text-base">E</span>
+                <span className="text-white font-semibold text-sm md:text-base">E</span>
               </div>
-              <span className="font-display font-semibold text-lg md:text-xl text-foreground group-hover:text-[oklch(0.65_0.12_55)] transition-colors">
+              <span className="font-semibold text-lg md:text-xl text-foreground group-hover:text-[oklch(0.65_0.12_55)] transition-colors">
                 Eiertanz
               </span>
             </Link>
@@ -200,9 +200,9 @@ export default function Layout({ children }: LayoutProps) {
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.12_55)] to-[oklch(0.65_0.08_145)] flex items-center justify-center">
-                  <span className="text-white font-display font-semibold">E</span>
+                  <span className="text-white font-semibold">E</span>
                 </div>
-                <span className="font-display font-semibold text-xl text-foreground">
+                <span className="font-semibold text-xl text-foreground">
                   Eiertanz
                 </span>
               </Link>
@@ -213,7 +213,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Navigation */}
             <div>
-              <h4 className="font-display font-semibold text-foreground mb-4">Themen</h4>
+              <h4 className="font-semibold text-foreground mb-4">Themen</h4>
               <ul className="space-y-2">
                 {navItems.map((item) => (
                   <li key={item.href}>
@@ -230,7 +230,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Resources */}
             <div>
-              <h4 className="font-display font-semibold text-foreground mb-4">Ressourcen</h4>
+              <h4 className="font-semibold text-foreground mb-4">Ressourcen</h4>
               <ul className="space-y-2">
                 <li>
                   <Link href="/soforthilfe" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
@@ -277,7 +277,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Contact */}
             <div>
-              <h4 className="font-display font-semibold text-foreground mb-4">Hinweis</h4>
+              <h4 className="font-semibold text-foreground mb-4">Hinweis</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Diese Website ersetzt keine professionelle Beratung oder Therapie. Bei akuten Krisen wenden Sie sich bitte an die Notfallnummern.
               </p>

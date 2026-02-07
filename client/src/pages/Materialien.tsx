@@ -445,7 +445,7 @@ export default function Materialien() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Materialien & Infografiken
             </h1>
             
@@ -476,7 +476,7 @@ export default function Materialien() {
                   <CheckCircle2 className="w-6 h-6 text-[oklch(0.45_0.12_145)]" />
                 </div>
                 <div>
-                  <h3 className="font-display font-semibold text-foreground mb-2">
+                  <h3 className="font-semibold text-foreground mb-2">
                     Alle 39 Infografiken verfügbar
                   </h3>
                   <p className="text-muted-foreground">
@@ -563,7 +563,7 @@ export default function Materialien() {
                     </div>
                     
                     <CardContent className="p-5">
-                      <h3 className="font-display font-semibold text-foreground mb-2">
+                      <h3 className="font-semibold text-foreground mb-2">
                         {item.title}
                       </h3>
                       
@@ -631,7 +631,7 @@ export default function Materialien() {
         <div className="container">
           <Card className="bg-[oklch(0.95_0.03_85)] border-[oklch(0.60_0.10_85)]">
             <CardContent className="p-6">
-              <h3 className="font-display font-semibold text-foreground mb-2">
+              <h3 className="font-semibold text-foreground mb-2">
                 Nutzungshinweis
               </h3>
               <p className="text-sm text-muted-foreground">

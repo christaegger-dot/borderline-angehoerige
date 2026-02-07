@@ -28,7 +28,7 @@ export default function Verstehen() {
               <span className="text-sm font-medium text-[oklch(0.45_0.08_145)]">Lesezeit: 15 Minuten</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Borderline verstehen
             </h1>
             
@@ -96,7 +96,7 @@ export default function Verstehen() {
                     num: "1",
                     title: "Verzweifelte Bemühungen, Verlassenwerden zu vermeiden",
                     example: "Panische Anrufe, wenn der Partner später kommt; extreme Reaktionen auf kleine Trennungen",
-                    color: "oklch(0.55_0.15_25)"
+                    color: "oklch(0.55_0.15_55)"
                   },
                   {
                     num: "2",
@@ -120,7 +120,7 @@ export default function Verstehen() {
                     num: "5",
                     title: "Wiederkehrende Suiziddrohungen oder Selbstverletzung",
                     example: "Ritzen, Verbrennen, Suizidankündigungen – oft als Versuch, unerträgliche Gefühle zu regulieren",
-                    color: "oklch(0.50_0.18_25)"
+                    color: "oklch(0.50_0.18_55)"
                   },
                   {
                     num: "6",
@@ -138,7 +138,7 @@ export default function Verstehen() {
                     num: "8",
                     title: "Unangemessene, heftige Wut",
                     example: "Wutausbrüche, die für Aussenstehende übertrieben wirken; Schwierigkeit, Wut zu kontrollieren",
-                    color: "oklch(0.55_0.20_25)"
+                    color: "oklch(0.55_0.20_55)"
                   },
                   {
                     num: "9",
@@ -183,10 +183,10 @@ export default function Verstehen() {
               </p>
               
               <div className="grid md:grid-cols-3 gap-4">
-                <Card className="border-t-4 border-t-[oklch(0.55_0.15_25)]">
+                <Card className="border-t-4 border-t-[oklch(0.55_0.15_55)]">
                   <CardContent className="p-5">
-                    <div className="w-10 h-10 rounded-full bg-[oklch(0.95_0.05_25)] flex items-center justify-center mb-3">
-                      <Brain className="w-5 h-5 text-[oklch(0.55_0.15_25)]" />
+                    <div className="w-10 h-10 rounded-full bg-[oklch(0.95_0.05_55)] flex items-center justify-center mb-3">
+                      <Brain className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
                     </div>
                     <h3 className="font-semibold text-foreground mb-2">Biologisch</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -245,7 +245,7 @@ export default function Verstehen() {
             {/* Neurobiologie */}
             <ContentSection
               title="Das Gehirn bei Borderline"
-              icon={<Activity className="w-7 h-7 text-[oklch(0.50_0.12_320)]" />}
+              icon={<Activity className="w-7 h-7 text-[oklch(0.50_0.12_145)]" />}
               id="neurobiologie"
               preview="Neurowissenschaftliche Forschung zeigt: Bei Borderline funktionieren bestimmte Hirnregionen anders."
             >
@@ -254,16 +254,16 @@ export default function Verstehen() {
               </p>
               
               <div className="space-y-4">
-                <Card className="border-l-4 border-l-[oklch(0.55_0.20_25)]">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.20_55)]">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-full bg-[oklch(0.55_0.20_25)] text-white flex items-center justify-center text-sm font-bold">A</span>
+                      <span className="w-8 h-8 rounded-full bg-[oklch(0.55_0.20_55)] text-white flex items-center justify-center text-sm font-bold">A</span>
                       Amygdala – Das Alarmzentrum
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
                       Die Amygdala ist bei Borderline <strong>überaktiv</strong>. Sie reagiert stärker und schneller auf emotionale Reize – besonders auf Gesichtsausdrücke, die als bedrohlich interpretiert werden könnten.
                     </p>
-                    <div className="bg-[oklch(0.95_0.03_25)] rounded-lg p-3">
+                    <div className="bg-[oklch(0.95_0.03_55)] rounded-lg p-3">
                       <p className="text-xs text-foreground">
                         <strong>Für Angehörige:</strong> Deshalb können neutrale Gesichtsausdrücke als ablehnend wahrgenommen werden. Es ist keine Absicht – das Gehirn interpretiert anders.
                       </p>
@@ -323,7 +323,7 @@ export default function Verstehen() {
             {/* Häufige Missverständnisse */}
             <ContentSection
               title="Häufige Missverständnisse"
-              icon={<XCircle className="w-7 h-7 text-[oklch(0.55_0.15_25)]" />}
+              icon={<XCircle className="w-7 h-7 text-[oklch(0.55_0.15_55)]" />}
               id="missverstaendnisse"
               preview="Über Borderline kursieren viele Mythen. Hier ist, was nicht stimmt."
             >
@@ -361,9 +361,9 @@ export default function Verstehen() {
                   <Card key={index} className="border-border/50">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-3">
-                        <XCircle className="w-5 h-5 text-[oklch(0.55_0.15_25)] flex-shrink-0 mt-0.5" />
+                        <XCircle className="w-5 h-5 text-[oklch(0.55_0.15_55)] flex-shrink-0 mt-0.5" />
                         <div>
-                          <h4 className="font-semibold text-[oklch(0.55_0.15_25)] mb-2">{item.myth}</h4>
+                          <h4 className="font-semibold text-[oklch(0.55_0.15_55)] mb-2">{item.myth}</h4>
                           <p className="text-muted-foreground text-sm leading-relaxed">
                             <strong className="text-foreground">Realität:</strong> {item.truth}
                           </p>
@@ -399,8 +399,8 @@ export default function Verstehen() {
                     title: "Verlassensangst",
                     description: "Intensive Angst vor Zurückweisung oder Verlassenwerden, die zu verzweifelten Versuchen führen kann, dies zu verhindern.",
                     icon: UserX,
-                    color: "oklch(0.55_0.15_25)",
-                    bgColor: "oklch(0.92_0.05_25)"
+                    color: "oklch(0.55_0.15_55)",
+                    bgColor: "oklch(0.92_0.05_55)"
                   },
                   {
                     title: "Instabiles Selbstbild",
@@ -443,7 +443,7 @@ export default function Verstehen() {
                             <Icon className="w-6 h-6" style={{ color: item.color }} />
                           </div>
                           <div>
-                            <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                            <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                             <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                           </div>
                         </div>
@@ -457,7 +457,7 @@ export default function Verstehen() {
             {/* Emotionale Demenz */}
             <ContentSection
               title="«Emotionale Demenz» – Warum Argumente nicht helfen"
-              icon={<Clock className="w-7 h-7 text-[oklch(0.55_0.15_25)]" />}
+              icon={<Clock className="w-7 h-7 text-[oklch(0.55_0.15_55)]" />}
               id="emotionale-demenz"
               preview="In akuter emotionaler Überflutung existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt."
             >
@@ -466,7 +466,7 @@ export default function Verstehen() {
                   Wenn ein Mensch in akuter emotionaler Überflutung ist, funktioniert sein Gehirn anders. Marcus Jähn beschreibt dies als <strong>«emotionale Demenz»</strong>: In diesem Zustand existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt.
                 </p>
                 
-                <Card className="bg-[oklch(0.95_0.03_25)]/50 border-[oklch(0.55_0.15_25)]/30 mb-6">
+                <Card className="bg-[oklch(0.95_0.03_55)]/50 border-[oklch(0.55_0.15_55)]/30 mb-6">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       <strong>Warum das wichtig ist:</strong> Logische Argumente helfen in Krisenmomenten nicht. Das Gehirn kann sie schlicht nicht verarbeiten. Erst wenn die Amygdala (das Angstzentrum) beruhigt ist, wird der präfrontale Kortex (rationales Denken) wieder zugänglich.
@@ -475,7 +475,7 @@ export default function Verstehen() {
                 </Card>
                 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_25)] border border-[oklch(0.55_0.15_25)]/20">
+                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_55)] border border-[oklch(0.55_0.15_55)]/20">
                     <span className="text-lg font-medium text-foreground block mb-2">❌ Was nicht hilft:</span>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>«Beruhige dich doch!»</li>
@@ -513,7 +513,7 @@ export default function Verstehen() {
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
-                    { phase: "1", title: "Explosion", desc: "Intensive Emotionen brechen aus", color: "oklch(0.55_0.20_25)", bgColor: "oklch(0.95_0.05_25)" },
+                    { phase: "1", title: "Explosion", desc: "Intensive Emotionen brechen aus", color: "oklch(0.55_0.20_55)", bgColor: "oklch(0.95_0.05_55)" },
                     { phase: "2", title: "Schweigen", desc: "Rückzug und Isolation", color: "oklch(0.45_0.08_250)", bgColor: "oklch(0.95_0.03_250)" },
                     { phase: "3", title: "Freundlichkeit", desc: "Ruhige, oft liebevolle Phase", color: "oklch(0.55_0.10_145)", bgColor: "oklch(0.95_0.03_145)" },
                     { phase: "4", title: "Verschlechterung", desc: "Spannung baut sich auf", color: "oklch(0.55_0.12_55)", bgColor: "oklch(0.95_0.04_55)" }
@@ -584,7 +584,7 @@ export default function Verstehen() {
               className="mb-12"
               id="materialien"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-[oklch(0.45_0.08_145)]" />
                 Infografiken zum Thema
               </h2>
@@ -761,7 +761,7 @@ export default function Verstehen() {
                   <div className="flex items-start gap-4">
                     <Heart className="w-8 h-8 text-[oklch(0.65_0.08_145)] flex-shrink-0" />
                     <div>
-                      <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                      <h3 className="text-xl font-semibold text-foreground mb-3">
                         Genesung ist möglich
                       </h3>
                       <p className="text-muted-foreground leading-relaxed mb-4">

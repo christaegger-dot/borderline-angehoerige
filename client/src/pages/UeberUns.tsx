@@ -22,7 +22,7 @@ export default function UeberUns() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Über diese Website
             </h1>
             
@@ -44,7 +44,7 @@ export default function UeberUns() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Warum diese Website?
               </h2>
               
@@ -70,7 +70,7 @@ export default function UeberUns() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Unsere Prinzipien
               </h2>
               
@@ -124,7 +124,7 @@ export default function UeberUns() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Wissenschaftliche Grundlagen
               </h2>
               
@@ -178,12 +178,12 @@ export default function UeberUns() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="border-[oklch(0.55_0.15_35)]/30 bg-[oklch(0.98_0.02_35)]">
+              <Card className="border-[oklch(0.55_0.15_55)]/30 bg-[oklch(0.98_0.02_55)]">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Diese Website ersetzt keine professionelle Beratung, Therapie oder medizinische Behandlung. Die Inhalte dienen der Information und Orientierung. Bei akuten Krisen wenden Sie sich bitte an die{" "}
-                    <Link href="/soforthilfe" className="text-[oklch(0.55_0.20_25)] hover:underline font-medium">
+                    <Link href="/soforthilfe" className="text-[oklch(0.55_0.20_55)] hover:underline font-medium">
                       Notfallnummern
                     </Link>. Für eine individuelle Beratung empfehlen wir den Kontakt zu{" "}
                     <Link href="/selbsthilfegruppen" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">
@@ -203,7 +203,7 @@ export default function UeberUns() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Feedback & Kontakt
               </h2>
               

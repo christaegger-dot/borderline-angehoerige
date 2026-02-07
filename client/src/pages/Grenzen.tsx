@@ -10,7 +10,7 @@ export default function Grenzen() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.06_35)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.06_55)]/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -19,13 +19,13 @@ export default function Grenzen() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.06_35)] flex items-center justify-center">
-                <Shield className="w-6 h-6 text-[oklch(0.50_0.15_35)]" />
+              <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.06_55)] flex items-center justify-center">
+                <Shield className="w-6 h-6 text-[oklch(0.50_0.15_55)]" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.50_0.15_35)]">Lesezeit: 12 Minuten</span>
+              <span className="text-sm font-medium text-[oklch(0.50_0.15_55)]">Lesezeit: 12 Minuten</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Grenzen setzen
             </h1>
             
@@ -43,12 +43,12 @@ export default function Grenzen() {
             {/* Warum Grenzen wichtig sind */}
             <ContentSection
               title="Warum Grenzen wichtig sind"
-              icon={<Shield className="w-7 h-7 text-[oklch(0.50_0.15_35)]" />}
+              icon={<Shield className="w-7 h-7 text-[oklch(0.50_0.15_55)]" />}
               id="warum-grenzen"
               defaultOpen={true}
               preview="Grenzen zu setzen ist kein Zeichen von Lieblosigkeit – es ist ein Zeichen von Selbstachtung und Respekt."
             >
-              <Card className="bg-[oklch(0.92_0.06_35)]/20 border-[oklch(0.55_0.15_35)] mb-6">
+              <Card className="bg-[oklch(0.92_0.06_55)]/20 border-[oklch(0.55_0.15_55)] mb-6">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed">
                     Grenzen zu setzen ist kein Zeichen von Lieblosigkeit – es ist ein Zeichen von Selbstachtung und Respekt. Klare Grenzen helfen beiden Seiten:
@@ -59,7 +59,7 @@ export default function Grenzen() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Für Sie:</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Für Sie:</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
@@ -79,7 +79,7 @@ export default function Grenzen() {
                 
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Für Ihren Angehörigen:</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Für Ihren Angehörigen:</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
@@ -121,8 +121,8 @@ export default function Grenzen() {
                     description: "Welches Verhalten können Sie tolerieren? Was nicht?",
                     example: "\"Wenn du mich anschreist, verlasse ich den Raum.\"",
                     icon: HeartHandshake,
-                    color: "oklch(0.55_0.15_25)",
-                    bgColor: "oklch(0.92_0.05_25)"
+                    color: "oklch(0.55_0.15_55)",
+                    bgColor: "oklch(0.92_0.05_55)"
                   },
                   {
                     title: "Physische Grenzen",
@@ -153,7 +153,7 @@ export default function Grenzen() {
                             <Icon className="w-6 h-6" style={{ color: item.color }} />
                           </div>
                           <div>
-                            <h3 className="font-display font-semibold text-foreground">{item.title}</h3>
+                            <h3 className="font-semibold text-foreground">{item.title}</h3>
                             <p className="text-muted-foreground text-sm">{item.description}</p>
                           </div>
                         </div>
@@ -206,7 +206,7 @@ export default function Grenzen() {
                           {item.letter}
                         </span>
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                          <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                           <p className="text-muted-foreground text-sm mb-2">{item.description}</p>
                           <div className="bg-[oklch(0.85_0.08_55)]/20 rounded-lg p-3">
                             <p className="text-sm text-foreground italic">{item.example}</p>
@@ -264,7 +264,7 @@ export default function Grenzen() {
                           {item.letter}
                         </span>
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                          <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                           <p className="text-muted-foreground text-sm mb-2">{item.description}</p>
                           <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
                             <p className="text-sm text-foreground italic">{item.example}</p>
@@ -296,7 +296,7 @@ export default function Grenzen() {
             {/* Konkrete Beispiel-Dialoge */}
             <ContentSection
               title="Konkrete Formulierungen für schwierige Situationen"
-              icon={<HeartHandshake className="w-7 h-7 text-[oklch(0.55_0.15_25)]" />}
+              icon={<HeartHandshake className="w-7 h-7 text-[oklch(0.55_0.15_55)]" />}
               id="formulierungen"
               preview="Spiegeln statt Aufnehmen – Beispielsätze für Vorwürfe, Gefühlsausbrüche, Grenzsetzung und Drohungen."
             >
@@ -307,9 +307,9 @@ export default function Grenzen() {
               <div className="space-y-6">
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Bei Vorwürfen und Schuldzuweisungen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Bei Vorwürfen und Schuldzuweisungen</h3>
                     <div className="space-y-3">
-                      <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-3">
+                      <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-3">
                         <p className="text-sm text-muted-foreground mb-1">Statt:</p>
                         <p className="text-sm text-foreground line-through">"Das stimmt doch gar nicht!" oder "Du bist ungerecht!"</p>
                       </div>
@@ -323,9 +323,9 @@ export default function Grenzen() {
                 
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Bei intensiven Gefühlsausbrüchen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Bei intensiven Gefühlsausbrüchen</h3>
                     <div className="space-y-3">
-                      <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-3">
+                      <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-3">
                         <p className="text-sm text-muted-foreground mb-1">Statt:</p>
                         <p className="text-sm text-foreground line-through">"Beruhige dich!" oder "Das ist doch nicht so schlimm!"</p>
                       </div>
@@ -339,9 +339,9 @@ export default function Grenzen() {
                 
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Beim Grenzen setzen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Beim Grenzen setzen</h3>
                     <div className="space-y-3">
-                      <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-3">
+                      <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-3">
                         <p className="text-sm text-muted-foreground mb-1">Statt:</p>
                         <p className="text-sm text-foreground line-through">"Ich halte das nicht mehr aus!" oder "Du machst mich fertig!"</p>
                       </div>
@@ -355,9 +355,9 @@ export default function Grenzen() {
                 
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Bei Drohungen oder Manipulation</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Bei Drohungen oder Manipulation</h3>
                     <div className="space-y-3">
-                      <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-3">
+                      <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-3">
                         <p className="text-sm text-muted-foreground mb-1">Statt:</p>
                         <p className="text-sm text-foreground line-through">Nachgeben aus Angst oder Schuldgefühlen</p>
                       </div>
@@ -382,11 +382,11 @@ export default function Grenzen() {
             {/* Häufige Fehler */}
             <ContentSection
               title="Häufige Fehler vermeiden"
-              icon={<AlertTriangle className="w-7 h-7 text-[oklch(0.55_0.15_25)]" />}
+              icon={<AlertTriangle className="w-7 h-7 text-[oklch(0.55_0.15_55)]" />}
               id="haeufige-fehler"
               preview="Die 5 häufigsten Fehler beim Grenzen setzen – und wie Sie es besser machen."
             >
-              <Card className="border-l-4 border-l-[oklch(0.55_0.15_25)] bg-[oklch(0.95_0.03_25)]">
+              <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)] bg-[oklch(0.95_0.03_55)]">
                 <CardContent className="p-6">
                   <ul className="space-y-3">
                     {[
@@ -397,7 +397,7 @@ export default function Grenzen() {
                       { wrong: "Grenzen ohne Vorwarnung", right: "Ankündigen und erklären" }
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-4">
-                        <span className="text-[oklch(0.55_0.15_25)] flex-shrink-0">✗</span>
+                        <span className="text-[oklch(0.55_0.15_55)] flex-shrink-0">✗</span>
                         <span className="text-muted-foreground line-through">{item.wrong}</span>
                         <span className="text-[oklch(0.55_0.10_145)]">→</span>
                         <span className="text-foreground">{item.right}</span>
@@ -416,14 +416,14 @@ export default function Grenzen() {
               preview="Spezifische Hinweise zum Grenzen setzen für Partner, Eltern und erwachsene Kinder."
             >
               <div className="space-y-4">
-                <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)] bg-[oklch(0.97_0.01_35)]">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)] bg-[oklch(0.97_0.01_55)]">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_35)] flex items-center justify-center flex-shrink-0">
-                        <Heart className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_55)] flex items-center justify-center flex-shrink-0">
+                        <Heart className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground mb-2">Als Partner/in</h3>
+                        <h3 className="font-semibold text-foreground mb-2">Als Partner/in</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Die Entscheidung, in der Beziehung zu bleiben, ist Ihre – und beide Optionen sind legitim. Grenzen zu setzen bedeutet nicht, die Beziehung aufzugeben. Es bedeutet, sie auf eine gesündere Basis zu stellen. Erlauben Sie sich, auch Ihre eigenen Bedürfnisse ernst zu nehmen.
                         </p>
@@ -439,7 +439,7 @@ export default function Grenzen() {
                         <Users className="w-5 h-5 text-[oklch(0.55_0.12_250)]" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground mb-2">Als Elternteil</h3>
+                        <h3 className="font-semibold text-foreground mb-2">Als Elternteil</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Sie tragen keine Verantwortung für die Erkrankung Ihres Kindes – aber Sie können ein stabilisierender Faktor sein. Grenzen zu setzen ist kein Zeichen von Ablehnung, sondern ein Modell für gesunde Beziehungen. Ihr erwachsenes Kind braucht Eltern, die auch auf sich selbst achten.
                         </p>
@@ -455,7 +455,7 @@ export default function Grenzen() {
                         <UserCircle className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
+                        <h3 className="font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Sie sind nicht verpflichtet, die emotionalen Bedürfnisse Ihres Elternteils zu erfüllen – das war nie Ihre Aufgabe. Grenzen zu setzen kann sich wie Verrat anfühlen, ist aber ein wichtiger Schritt zu Ihrer eigenen emotionalen Gesundheit. Sie dürfen Ihr eigenes Leben leben.
                         </p>
@@ -473,8 +473,8 @@ export default function Grenzen() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-[oklch(0.55_0.15_35)]" />
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+                <Download className="w-8 h-8 text-[oklch(0.55_0.15_55)]" />
                 Infografiken zum Thema Grenzen
               </h2>
               
@@ -563,7 +563,7 @@ export default function Grenzen() {
             >
               <Card className="bg-[oklch(0.88_0.04_145)]/30 border-[oklch(0.65_0.08_145)]">
                 <CardContent className="p-6">
-                  <h3 className="font-display font-semibold text-foreground mb-3">
+                  <h3 className="font-semibold text-foreground mb-3">
                     Denken Sie daran
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">

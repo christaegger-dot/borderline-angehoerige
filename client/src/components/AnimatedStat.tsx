@@ -44,7 +44,7 @@ export default function AnimatedStat({
       transition={{ delay }}
       className="text-center p-6 bg-[oklch(0.95_0.03_145)] rounded-xl"
     >
-      <div className="text-4xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">
+      <div className="text-4xl font-bold text-[oklch(0.55_0.10_145)] mb-2">
         {displayValue}
       </div>
       <p className="text-sm text-muted-foreground">{label}</p>

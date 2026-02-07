@@ -29,7 +29,7 @@ export default function Genesung() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Genesung ist <span className="text-[oklch(0.55_0.10_145)]">möglich</span>
             </h1>
             
@@ -58,7 +58,7 @@ export default function Genesung() {
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h2 className="font-display text-2xl font-semibold text-foreground mb-2">
+                    <h2 className="text-2xl font-semibold text-foreground mb-2">
                       Was die Forschung zeigt
                     </h2>
                     <p className="text-muted-foreground">
@@ -71,7 +71,7 @@ export default function Genesung() {
                 {/* Statistiken */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">
+                    <div className="text-4xl md:text-5xl font-bold text-[oklch(0.55_0.10_145)] mb-2">
                       85–93%
                     </div>
                     <p className="text-sm text-muted-foreground">
@@ -79,7 +79,7 @@ export default function Genesung() {
                     </p>
                   </div>
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">
+                    <div className="text-4xl md:text-5xl font-bold text-[oklch(0.55_0.10_145)] mb-2">
                       50%
                     </div>
                     <p className="text-sm text-muted-foreground">
@@ -87,7 +87,7 @@ export default function Genesung() {
                     </p>
                   </div>
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-[oklch(0.55_0.10_145)] mb-2">
+                    <div className="text-4xl md:text-5xl font-bold text-[oklch(0.55_0.10_145)] mb-2">
                       77%
                     </div>
                     <p className="text-sm text-muted-foreground">
@@ -137,7 +137,7 @@ export default function Genesung() {
                       <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_55)] flex items-center justify-center mb-4">
                         <Clock className="w-5 h-5 text-[oklch(0.45_0.12_55)]" />
                       </div>
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-3">
+                      <h3 className="text-lg font-semibold text-foreground mb-3">
                         Symptomatische Remission
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -158,7 +158,7 @@ export default function Genesung() {
                       <div className="w-10 h-10 rounded-lg bg-[oklch(0.88_0.04_145)] flex items-center justify-center mb-4">
                         <Heart className="w-5 h-5 text-[oklch(0.40_0.08_145)]" />
                       </div>
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-3">
+                      <h3 className="text-lg font-semibold text-foreground mb-3">
                         Vollständige Genesung (Recovery)
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -245,7 +245,7 @@ export default function Genesung() {
                 </Card>
 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_25)] border border-[oklch(0.55_0.15_25)]/20">
+                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_55)] border border-[oklch(0.55_0.15_55)]/20">
                     <span className="text-lg font-medium text-foreground block mb-2">❌ Was Remission NICHT bedeutet:</span>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>Nie wieder schwierige Gefühle</li>
@@ -338,7 +338,7 @@ export default function Genesung() {
                             {index + 1}
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-display font-semibold text-foreground mb-2">
+                            <h3 className="font-semibold text-foreground mb-2">
                               {item.title}
                             </h3>
                             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
@@ -385,7 +385,7 @@ export default function Genesung() {
                   ].map((item, i) => (
                     <Card key={i} className="h-full bg-white border-[oklch(0.65_0.08_145)]/20">
                       <CardContent className="p-6">
-                        <h3 className="font-display text-lg font-semibold text-[oklch(0.55_0.10_145)] mb-4">
+                        <h3 className="text-lg font-semibold text-[oklch(0.55_0.10_145)] mb-4">
                           {item.title}
                         </h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">
@@ -533,7 +533,7 @@ export default function Genesung() {
                         <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
                       </div>
                       <CardContent className="p-4">
-                        <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                        <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                         <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
                         <a href={item.pdf} target="_blank" rel="noopener noreferrer">
                           <Button variant="outline" size="sm" className="w-full">
@@ -569,7 +569,7 @@ export default function Genesung() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
                 Wie können Sie unterstützen?
               </h2>
               <p className="text-muted-foreground mb-8">

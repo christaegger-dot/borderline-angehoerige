@@ -28,7 +28,7 @@ export default function UnterstuetzenAlltag() {
               <span className="text-sm font-medium text-[oklch(0.45_0.08_145)]">Lesezeit: 8 Minuten</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Im Alltag unterstützen
             </h1>
             
@@ -50,7 +50,7 @@ export default function UnterstuetzenAlltag() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Clock className="w-8 h-8 text-[oklch(0.65_0.08_145)]" />
                 Stabilität und Struktur bieten
               </h2>
@@ -79,7 +79,7 @@ export default function UnterstuetzenAlltag() {
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-display font-semibold text-foreground mb-2">{item.title}</h3>
+                      <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
                       <p className="text-muted-foreground text-sm mb-3">{item.description}</p>
                       <div className="bg-[oklch(0.88_0.04_145)]/30 rounded-lg p-3">
                         <p className="text-sm text-foreground italic">{item.example}</p>
@@ -97,7 +97,7 @@ export default function UnterstuetzenAlltag() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Heart className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
                 Emotionale Verfügbarkeit zeigen
               </h2>
@@ -108,7 +108,7 @@ export default function UnterstuetzenAlltag() {
               
               <Card className="bg-[oklch(0.85_0.08_55)]/10 border-[oklch(0.65_0.12_55)]">
                 <CardContent className="p-6">
-                  <h3 className="font-display font-semibold text-foreground mb-4">Praktische Tipps</h3>
+                  <h3 className="font-semibold text-foreground mb-4">Praktische Tipps</h3>
                   <ul className="space-y-3">
                     {[
                       "Legen Sie das Handy weg, wenn Sie miteinander sprechen",
@@ -134,7 +134,7 @@ export default function UnterstuetzenAlltag() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Beziehungs-Achtsamkeit
               </h2>
               
@@ -201,7 +201,7 @@ export default function UnterstuetzenAlltag() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Users className="w-8 h-8 text-[oklch(0.45_0.05_250)]" />
                 Gemeinsame Aktivitäten gestalten
               </h2>
@@ -219,7 +219,7 @@ export default function UnterstuetzenAlltag() {
                 ].map((item, index) => (
                   <Card key={index} className="border-border/50">
                     <CardContent className="p-4">
-                      <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                      <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                       <p className="text-muted-foreground text-sm">{item.examples}</p>
                     </CardContent>
                   </Card>
@@ -242,7 +242,7 @@ export default function UnterstuetzenAlltag() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Lightbulb className="w-8 h-8 text-[oklch(0.60_0.15_85)]" />
                 Was Sie konkret tun können
               </h2>
@@ -254,7 +254,7 @@ export default function UnterstuetzenAlltag() {
               <div className="space-y-4">
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Übungspartner für Skills sein</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Übungspartner für Skills sein</h3>
                     <p className="text-muted-foreground text-sm mb-3">
                       Wenn Ihr Angehöriger in Therapie ist, können Sie beim Üben neuer Fähigkeiten helfen:
                     </p>
@@ -277,7 +277,7 @@ export default function UnterstuetzenAlltag() {
                 
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Fortschritte anerkennen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Fortschritte anerkennen</h3>
                     <p className="text-muted-foreground text-sm mb-3">
                       Kleine Erfolge zu bemerken und zu benennen stärkt die Motivation:
                     </p>
@@ -294,7 +294,7 @@ export default function UnterstuetzenAlltag() {
                 
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Vorhersehbar sein</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Vorhersehbar sein</h3>
                     <p className="text-muted-foreground text-sm mb-3">
                       Menschen mit Borderline reagieren stark auf Unsicherheit. Sie können helfen durch:
                     </p>
@@ -317,7 +317,7 @@ export default function UnterstuetzenAlltag() {
                 
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">Gemeinsam Probleme lösen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Gemeinsam Probleme lösen</h3>
                     <p className="text-muted-foreground text-sm mb-3">
                       Statt Lösungen vorzugeben, fragen Sie:
                     </p>
@@ -344,10 +344,10 @@ export default function UnterstuetzenAlltag() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Grenzen der Alltagsunterstützung
               </h2>            
-              <Card className="border-l-4 border-l-[oklch(0.55_0.15_25)] bg-[oklch(0.95_0.03_25)]">
+              <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)] bg-[oklch(0.95_0.03_55)]">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Auch im Alltag gibt es Grenzen. Sie können nicht:
@@ -360,7 +360,7 @@ export default function UnterstuetzenAlltag() {
                       "Die Therapie ersetzen"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-[oklch(0.55_0.15_25)]">•</span>
+                        <span className="text-[oklch(0.55_0.15_55)]">•</span>
                         {item}
                       </li>
                     ))}

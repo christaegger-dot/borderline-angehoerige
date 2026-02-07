@@ -61,8 +61,8 @@ const topics = [
     icon: Shield,
     title: "Grenzen setzen",
     description: "Warum Grenzen wichtig sind und wie Sie sie liebevoll, aber klar kommunizieren.",
-    color: "oklch(0.55 0.15 35)", // Warm Orange
-    bgColor: "oklch(0.92 0.06 35)",
+    color: "oklch(0.55 0.15 55)", // Warm Orange
+    bgColor: "oklch(0.92 0.06 55)",
     time: "12 Min"
   },
   {
@@ -70,8 +70,8 @@ const topics = [
     icon: Sparkles,
     title: "Selbstfürsorge",
     description: "Wie Sie auf sich selbst achten, Burnout vermeiden und Ihre eigenen Ressourcen stärken.",
-    color: "oklch(0.55 0.12 320)", // Soft Purple
-    bgColor: "oklch(0.92 0.05 320)",
+    color: "oklch(0.55 0.12 145)", // Soft Purple
+    bgColor: "oklch(0.92 0.05 145)",
     time: "10 Min"
   },
   {
@@ -79,8 +79,8 @@ const topics = [
     icon: Sprout,
     title: "Genesung",
     description: "Warum Genesung möglich ist, was Langzeitstudien zeigen und wie Sie Hoffnung bewahren können.",
-    color: "oklch(0.50 0.12 160)", // Teal
-    bgColor: "oklch(0.90 0.05 160)",
+    color: "oklch(0.50 0.12 145)", // Teal
+    bgColor: "oklch(0.90 0.05 145)",
     time: "8 Min"
   },
 ];
@@ -132,8 +132,8 @@ const crisisMatrix = [
     description: "Erschöpfung, Überforderung, eigene Grenzen erreicht",
     action: "Für mich sorgen",
     href: "/selbstfuersorge",
-    color: "oklch(0.50 0.08 270)",
-    bgColor: "oklch(0.95 0.02 270)",
+    color: "oklch(0.50 0.08 250)",
+    bgColor: "oklch(0.95 0.02 250)",
     icon: Sparkles
   },
 ];
@@ -163,7 +163,7 @@ export default function Home() {
                 Für Angehörige von Menschen mit Borderline
               </span>
               
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
                 Schluss mit dem{" "}
                 <span className="text-[oklch(0.65_0.12_55)]">Eiertanz</span>
               </h1>
@@ -216,7 +216,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-center mb-10"
           >
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
               Wo stehen Sie gerade?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-4">
@@ -256,7 +256,7 @@ export default function Home() {
                         >
                           <Icon className="w-5 h-5 text-white" />
                         </div>
-                        <h3 className="font-display font-semibold text-foreground mb-1">
+                        <h3 className="font-semibold text-foreground mb-1">
                           {item.title}
                         </h3>
                         <p className="text-sm text-muted-foreground mb-3">
@@ -289,7 +289,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
               Themen erkunden
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -322,7 +322,7 @@ export default function Home() {
                         </div>
                         
                         <div className="flex items-center gap-2 mb-3">
-                          <h3 className="font-display text-xl font-semibold text-foreground">
+                          <h3 className="text-xl font-semibold text-foreground">
                             {topic.title}
                           </h3>
                           <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
@@ -378,7 +378,7 @@ export default function Home() {
                 Neue Perspektive
               </span>
               
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6">
                 Sie sind nicht allein – und Sie können helfen
               </h2>
               
@@ -424,7 +424,7 @@ export default function Home() {
               <div className="w-16 h-16 rounded-full bg-[oklch(0.88_0.04_145)] flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="w-8 h-8 text-[oklch(0.55_0.10_145)]" />
               </div>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
                 Genesung ist möglich
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
@@ -495,7 +495,7 @@ export default function Home() {
                     <FileText className="w-8 h-8 md:w-10 md:h-10 text-[oklch(0.55_0.12_55)]" />
                   </div>
                   <div className="text-center md:text-left flex-1">
-                    <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-2">
+                    <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
                       Materialien herunterladen
                     </h3>
                     <p className="text-muted-foreground mb-4">
@@ -523,7 +523,7 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-white mb-2">
+              <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">
                 In einer akuten Krise?
               </h2>
               <p className="text-white/80">

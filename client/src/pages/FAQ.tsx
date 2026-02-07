@@ -31,7 +31,7 @@ export default function FAQ() {
     {
       title: "Diagnose & Krankheitsverständnis",
       icon: <HelpCircle className="w-5 h-5" />,
-      color: "oklch(0.55 0.15 200)",
+      color: "oklch(0.55 0.15 250)",
       questions: [
         {
           question: "Soll ich die Diagnose ansprechen?",
@@ -81,7 +81,7 @@ export default function FAQ() {
     {
       title: "Grenzen & Selbstschutz",
       icon: <Shield className="w-5 h-5" />,
-      color: "oklch(0.55 0.15 35)",
+      color: "oklch(0.55 0.15 55)",
       questions: [
         {
           question: "Wann ist eine Einweisung nötig?",
@@ -107,7 +107,7 @@ export default function FAQ() {
     {
       title: "Therapie & Behandlung",
       icon: <Heart className="w-5 h-5" />,
-      color: "oklch(0.55 0.12 280)",
+      color: "oklch(0.55 0.12 250)",
       questions: [
         {
           question: "Mein Angehöriger will keine Therapie – was tun?",
@@ -158,7 +158,7 @@ export default function FAQ() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.05_200)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.05_250)]/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -167,12 +167,12 @@ export default function FAQ() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.55_0.15_200)] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-[oklch(0.55_0.15_250)] flex items-center justify-center">
                 <HelpCircle className="w-6 h-6 text-white" />
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Häufig gestellte Fragen
             </h1>
             
@@ -206,7 +206,7 @@ export default function FAQ() {
                   >
                     {category.icon}
                   </div>
-                  <h2 className="font-display text-xl md:text-2xl font-semibold text-foreground">
+                  <h2 className="text-xl md:text-2xl font-semibold text-foreground">
                     {category.title}
                   </h2>
                 </div>
@@ -260,7 +260,7 @@ export default function FAQ() {
               <Card className="bg-[oklch(0.95_0.03_55)] border-[oklch(0.65_0.12_55)]">
                 <CardContent className="p-6 text-center">
                   <Lightbulb className="w-8 h-8 text-[oklch(0.55_0.12_55)] mx-auto mb-3" />
-                  <h3 className="font-display font-semibold text-foreground mb-2">
+                  <h3 className="font-semibold text-foreground mb-2">
                     Ihre Frage ist nicht dabei?
                   </h3>
                   <p className="text-muted-foreground mb-4">
@@ -274,7 +274,7 @@ export default function FAQ() {
                       </span>
                     </Link>
                     <Link href="/glossar">
-                      <span className="inline-flex items-center gap-2 text-sm font-medium text-[oklch(0.55_0.15_200)] hover:underline">
+                      <span className="inline-flex items-center gap-2 text-sm font-medium text-[oklch(0.55_0.15_250)] hover:underline">
                         Zum Glossar
                         <ChevronRight className="w-4 h-4" />
                       </span>

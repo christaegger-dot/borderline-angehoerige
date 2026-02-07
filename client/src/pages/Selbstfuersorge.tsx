@@ -70,7 +70,7 @@ function AtemuebungCard() {
       <CardContent className="p-6">
         <div className="flex items-center gap-3 mb-4">
           <Wind className="w-6 h-6 text-[oklch(0.55_0.10_145)]" />
-          <h3 className="font-display font-semibold text-foreground">4-4-6 Atemübung</h3>
+          <h3 className="font-semibold text-foreground">4-4-6 Atemübung</h3>
         </div>
         
         <p className="text-muted-foreground text-sm mb-4">
@@ -80,7 +80,7 @@ function AtemuebungCard() {
         {isActive ? (
           <div className="text-center py-6">
             <div className="w-24 h-24 mx-auto rounded-full bg-[oklch(0.55_0.10_145)]/20 flex items-center justify-center mb-4">
-              <span className="text-4xl font-display font-bold text-[oklch(0.45_0.10_145)]">{count}</span>
+              <span className="text-4xl font-bold text-[oklch(0.45_0.10_145)]">{count}</span>
             </div>
             <p className="text-lg font-medium text-[oklch(0.45_0.10_145)]">
               {phase === 'einatmen' && 'Einatmen...'}
@@ -134,7 +134,7 @@ function UebungAkkordeon({ title, icon: Icon, children, color }: {
           <div className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center`}>
             <Icon className="w-5 h-5 text-white" />
           </div>
-          <span className="font-display font-semibold text-foreground">{title}</span>
+          <span className="font-semibold text-foreground">{title}</span>
         </div>
         {isOpen ? <ChevronUp className="w-5 h-5 text-muted-foreground" /> : <ChevronDown className="w-5 h-5 text-muted-foreground" />}
       </button>
@@ -151,7 +151,7 @@ export default function Selbstfuersorge() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.05_320)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.05_145)]/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -160,13 +160,13 @@ export default function Selbstfuersorge() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.05_320)] flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-[oklch(0.50_0.12_320)]" />
+              <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.05_145)] flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-[oklch(0.50_0.12_145)]" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.50_0.12_320)]">Lesezeit: 12 Minuten</span>
+              <span className="text-sm font-medium text-[oklch(0.50_0.12_145)]">Lesezeit: 12 Minuten</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Selbstfürsorge für Angehörige
             </h1>
             
@@ -174,7 +174,7 @@ export default function Selbstfuersorge() {
               Sie können nur dann für andere da sein, wenn Sie auch für sich selbst sorgen. Selbstfürsorge ist kein Luxus – sie ist eine Notwendigkeit für Ihre Gesundheit und Ihre Beziehung.
             </p>
 
-            <Card className="bg-[oklch(0.92_0.05_320)]/20 border-[oklch(0.55_0.12_320)]">
+            <Card className="bg-[oklch(0.92_0.05_145)]/20 border-[oklch(0.55_0.12_145)]">
               <CardContent className="p-5">
                 <p className="text-foreground leading-relaxed italic">
                   "Wenn Sie sich um einen Menschen mit Borderline kümmern, ist es wie bei einem Langstreckenflug: Setzen Sie zuerst Ihre eigene Sauerstoffmaske auf, bevor Sie anderen helfen."
@@ -198,7 +198,7 @@ export default function Selbstfuersorge() {
               {/* ═══ 1. Warum Selbstfürsorge wichtig ist ═══ */}
               <ContentSection
                 title="Warum Selbstfürsorge so wichtig ist"
-                icon={<Heart className="w-6 h-6 text-[oklch(0.55_0.15_35)]" />}
+                icon={<Heart className="w-6 h-6 text-[oklch(0.55_0.15_55)]" />}
                 id="warum-wichtig"
                 defaultOpen={true}
                 preview="Angehörige tragen eine besondere Last. Selbstfürsorge ist keine Selbstsucht, sondern Selbsterhaltung."
@@ -216,7 +216,7 @@ export default function Selbstfuersorge() {
                       "Körperliche Beschwerden"
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-2 text-muted-foreground">
-                        <div className="w-2 h-2 rounded-full bg-[oklch(0.55_0.15_35)]" />
+                        <div className="w-2 h-2 rounded-full bg-[oklch(0.55_0.15_55)]" />
                         {item}
                       </div>
                     ))}
@@ -231,7 +231,7 @@ export default function Selbstfuersorge() {
               {/* ═══ 2. Warnsignale für Überlastung ═══ */}
               <ContentSection
                 title="Warnsignale für Überlastung"
-                icon={<AlertTriangle className="w-6 h-6 text-[oklch(0.55_0.15_35)]" />}
+                icon={<AlertTriangle className="w-6 h-6 text-[oklch(0.55_0.15_55)]" />}
                 id="warnsignale"
                 preview="Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr Selbstfürsorge brauchen."
               >
@@ -246,7 +246,7 @@ export default function Selbstfuersorge() {
                         <div className="w-10 h-10 rounded-full bg-[oklch(0.60_0.15_85)] flex items-center justify-center">
                           <Brain className="w-5 h-5 text-white" />
                         </div>
-                        <h3 className="font-display font-semibold text-foreground">Emotional</h3>
+                        <h3 className="font-semibold text-foreground">Emotional</h3>
                       </div>
                       <ul className="space-y-2">
                         {["Gereiztheit", "Hoffnungslosigkeit", "Emotionale Taubheit", "Schuldgefühle", "Kontrollverlust-Angst"].map((item, i) => (
@@ -259,18 +259,18 @@ export default function Selbstfuersorge() {
                     </CardContent>
                   </Card>
                   
-                  <Card className="border-t-4 border-t-[oklch(0.55_0.15_25)] bg-[oklch(0.97_0.02_25)]">
+                  <Card className="border-t-4 border-t-[oklch(0.55_0.15_55)] bg-[oklch(0.97_0.02_55)]">
                     <CardContent className="p-5">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-[oklch(0.55_0.15_25)] flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-full bg-[oklch(0.55_0.15_55)] flex items-center justify-center">
                           <Heart className="w-5 h-5 text-white" />
                         </div>
-                        <h3 className="font-display font-semibold text-foreground">Körperlich</h3>
+                        <h3 className="font-semibold text-foreground">Körperlich</h3>
                       </div>
                       <ul className="space-y-2">
                         {["Erschöpfung", "Schlafprobleme", "Appetitveränderung", "Kopfschmerzen", "Infektanfälligkeit"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2 text-sm">
-                            <AlertTriangle className="w-4 h-4 text-[oklch(0.55_0.15_25)] flex-shrink-0 mt-0.5" />
+                            <AlertTriangle className="w-4 h-4 text-[oklch(0.55_0.15_55)] flex-shrink-0 mt-0.5" />
                             <span className="text-foreground">{item}</span>
                           </li>
                         ))}
@@ -284,7 +284,7 @@ export default function Selbstfuersorge() {
                         <div className="w-10 h-10 rounded-full bg-[oklch(0.50_0.12_250)] flex items-center justify-center">
                           <Users className="w-5 h-5 text-white" />
                         </div>
-                        <h3 className="font-display font-semibold text-foreground">Sozial</h3>
+                        <h3 className="font-semibold text-foreground">Sozial</h3>
                       </div>
                       <ul className="space-y-2">
                         {["Rückzug", "Hobbys vernachlässigt", "Isolationsgefühl", "Vermeidung", "Nur noch Angehöriger"].map((item, i) => (
@@ -298,7 +298,7 @@ export default function Selbstfuersorge() {
                   </Card>
                 </div>
                 
-                <Card className="mt-6 bg-[oklch(0.55_0.15_35)]/10 border-[oklch(0.55_0.15_35)]">
+                <Card className="mt-6 bg-[oklch(0.55_0.15_55)]/10 border-[oklch(0.55_0.15_55)]">
                   <CardContent className="p-5">
                     <p className="text-foreground font-medium">
                       Wenn Sie mehrere dieser Warnsignale bei sich bemerken, ist es Zeit zu handeln. Sprechen Sie mit Ihrem Hausarzt oder suchen Sie professionelle Unterstützung.
@@ -325,7 +325,7 @@ export default function Selbstfuersorge() {
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-4">
                         <Lightbulb className="w-6 h-6 text-[oklch(0.45_0.08_250)]" />
-                        <h3 className="font-display font-semibold text-foreground">5-4-3-2-1 Grounding</h3>
+                        <h3 className="font-semibold text-foreground">5-4-3-2-1 Grounding</h3>
                       </div>
                       
                       <p className="text-muted-foreground text-sm mb-4">
@@ -352,7 +352,7 @@ export default function Selbstfuersorge() {
                 
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3">STOPP-Technik</h3>
+                    <h3 className="font-semibold text-foreground mb-3">STOPP-Technik</h3>
                     <p className="text-muted-foreground text-sm mb-4">
                       Wenn Sie merken, dass Sie in einen Strudel aus Sorgen oder Ärger geraten:
                     </p>
@@ -365,7 +365,7 @@ export default function Selbstfuersorge() {
                         { letter: "P", text: "Praktizieren – Einen Schritt tun" }
                       ].map((item, i) => (
                         <div key={i} className="flex items-center gap-3">
-                          <span className="w-8 h-8 rounded-lg bg-[oklch(0.65_0.12_55)]/20 flex items-center justify-center font-display font-bold text-[oklch(0.55_0.14_55)]">
+                          <span className="w-8 h-8 rounded-lg bg-[oklch(0.65_0.12_55)]/20 flex items-center justify-center font-bold text-[oklch(0.55_0.14_55)]">
                             {item.letter}
                           </span>
                           <span className="text-sm text-muted-foreground">{item.text}</span>
@@ -475,7 +475,7 @@ export default function Selbstfuersorge() {
                   <UebungAkkordeon 
                     title="Professionelle Unterstützung" 
                     icon={Shield}
-                    color="bg-[oklch(0.50_0.12_320)]"
+                    color="bg-[oklch(0.50_0.12_145)]"
                   >
                     <div className="space-y-4 pt-4">
                       <p className="text-muted-foreground text-sm">
@@ -525,7 +525,7 @@ export default function Selbstfuersorge() {
                       Der Austausch mit anderen Angehörigen kann enorm entlastend sein. Sie sind nicht allein mit Ihren Erfahrungen.
                     </p>
                     
-                    <h3 className="font-display font-semibold text-foreground mb-3">Vorteile von Selbsthilfegruppen:</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Vorteile von Selbsthilfegruppen:</h3>
                     <ul className="space-y-2 mb-6">
                       {[
                         "Austausch mit Menschen, die Ähnliches erleben",
@@ -541,7 +541,7 @@ export default function Selbstfuersorge() {
                       ))}
                     </ul>
                     
-                    <h3 className="font-display font-semibold text-foreground mb-3">Anlaufstellen in der Schweiz:</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Anlaufstellen in der Schweiz:</h3>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Phone className="w-4 h-4" />
@@ -579,7 +579,7 @@ export default function Selbstfuersorge() {
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_25)] border border-[oklch(0.55_0.15_25)]/20">
+                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_55)] border border-[oklch(0.55_0.15_55)]/20">
                     <span className="text-lg font-medium text-foreground block mb-2">❌ Was radikale Akzeptanz NICHT ist:</span>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• Aufgeben</li>
@@ -653,7 +653,7 @@ export default function Selbstfuersorge() {
               {/* ═══ 8. Materialien zum Download ═══ */}
               <ContentSection
                 title="Materialien zum Download"
-                icon={<Download className="w-6 h-6 text-[oklch(0.50_0.12_320)]" />}
+                icon={<Download className="w-6 h-6 text-[oklch(0.50_0.12_145)]" />}
                 id="materialien-download"
                 preview="Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken."
               >
@@ -729,14 +729,14 @@ export default function Selbstfuersorge() {
                 preview="Spezifische Hinweise für Partner/innen, Elternteile und erwachsene Kinder."
               >
                 <div className="space-y-4">
-                  <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)] bg-[oklch(0.97_0.01_35)]">
+                  <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)] bg-[oklch(0.97_0.01_55)]">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_35)] flex items-center justify-center flex-shrink-0">
-                          <Heart className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
+                        <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_55)] flex items-center justify-center flex-shrink-0">
+                          <Heart className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
                         </div>
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-2">Als Partner/in</h3>
+                          <h3 className="font-semibold text-foreground mb-2">Als Partner/in</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             Ihre Beziehung ist nicht Ihre einzige Identität. Pflegen Sie Freundschaften und Hobbys ausserhalb der Partnerschaft. Es ist kein Verrat, Zeit für sich zu beanspruchen – es ist Überlebensstrategie.
                           </p>
@@ -752,7 +752,7 @@ export default function Selbstfuersorge() {
                           <Users className="w-5 h-5 text-[oklch(0.55_0.12_250)]" />
                         </div>
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-2">Als Elternteil</h3>
+                          <h3 className="font-semibold text-foreground mb-2">Als Elternteil</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             Elterliche Schuldgefühle sind normal, aber oft unbegründet. Borderline hat komplexe Ursachen – Sie haben nicht «versagt». Erlauben Sie sich, auch stolz auf das zu sein, was Sie richtig gemacht haben. Und: Sie dürfen auch mal wütend sein.
                           </p>
@@ -768,7 +768,7 @@ export default function Selbstfuersorge() {
                           <UserCircle className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
                         </div>
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
+                          <h3 className="font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             Sie mussten früh erwachsen werden und Verantwortung übernehmen, die nicht Ihre war. Selbstfürsorge kann sich fremd anfühlen – üben Sie sie trotzdem. Sie haben ein Recht auf ein eigenes Leben, ohne ständig verfügbar zu sein.
                           </p>
@@ -788,7 +788,7 @@ export default function Selbstfuersorge() {
               >
                 <Card className="bg-muted/30 border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                       <BookOpen className="w-5 h-5 text-muted-foreground" />
                       Worauf stützt sich das?
                     </h3>
@@ -808,10 +808,10 @@ export default function Selbstfuersorge() {
                 viewport={{ once: true }}
                 className="mb-12"
               >
-                <Card className="bg-gradient-to-br from-[oklch(0.92_0.05_320)]/30 to-[oklch(0.88_0.04_145)]/30 border-transparent">
+                <Card className="bg-gradient-to-br from-[oklch(0.92_0.05_145)]/30 to-[oklch(0.88_0.04_145)]/30 border-transparent">
                   <CardContent className="p-6 text-center">
-                    <Sparkles className="w-10 h-10 text-[oklch(0.55_0.12_320)] mx-auto mb-4" />
-                    <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                    <Sparkles className="w-10 h-10 text-[oklch(0.55_0.12_145)] mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold text-foreground mb-3">
                       Denken Sie daran
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">

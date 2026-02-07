@@ -50,7 +50,7 @@ export default function Feedback() {
                 <CheckCircle2 className="w-10 h-10 text-[oklch(0.45_0.08_145)]" />
               </div>
               
-              <h1 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
                 Herzlichen Dank!
               </h1>
               
@@ -59,9 +59,9 @@ export default function Feedback() {
                 Wir schätzen es sehr, dass Sie sich die Zeit genommen haben.
               </p>
               
-              <Card className="bg-[oklch(0.92_0.05_320)]/20 border-[oklch(0.75_0.08_320)]/30">
+              <Card className="bg-[oklch(0.92_0.05_145)]/20 border-[oklch(0.75_0.08_145)]/30">
                 <CardContent className="p-6">
-                  <Heart className="w-8 h-8 text-[oklch(0.65_0.12_320)] mx-auto mb-3" />
+                  <Heart className="w-8 h-8 text-[oklch(0.65_0.12_145)] mx-auto mb-3" />
                   <p className="text-foreground">
                     Denken Sie daran: Sie sind nicht allein. Viele Angehörige gehen einen ähnlichen Weg.
                   </p>
@@ -69,7 +69,7 @@ export default function Feedback() {
               </Card>
               
               <Button 
-                className="mt-8 bg-[oklch(0.65_0.12_25)] hover:bg-[oklch(0.55_0.12_25)]"
+                className="mt-8 bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.12_55)]"
                 onClick={() => window.location.href = '/'}
               >
                 Zurück zur Startseite
@@ -99,7 +99,7 @@ export default function Feedback() {
               <span className="text-sm font-medium text-[oklch(0.45_0.08_250)]">Anonym & vertraulich</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Ihr Feedback
             </h1>
             
@@ -125,7 +125,7 @@ export default function Feedback() {
               >
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                    <h2 className="text-xl font-semibold text-foreground mb-4">
                       Wie hilfreich fanden Sie diese Website?
                     </h2>
                     <div className="flex gap-2 justify-center">
@@ -136,8 +136,8 @@ export default function Feedback() {
                           onClick={() => setRating(star)}
                           className={`p-2 rounded-lg transition-all ${
                             rating && rating >= star
-                              ? 'text-[oklch(0.70_0.15_70)] scale-110'
-                              : 'text-muted-foreground/40 hover:text-[oklch(0.70_0.15_70)]/60'
+                              ? 'text-[oklch(0.70_0.15_85)] scale-110'
+                              : 'text-muted-foreground/40 hover:text-[oklch(0.70_0.15_85)]/60'
                           }`}
                         >
                           <Star className={`w-10 h-10 ${rating && rating >= star ? 'fill-current' : ''}`} />
@@ -163,7 +163,7 @@ export default function Feedback() {
               >
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                    <h2 className="text-xl font-semibold text-foreground mb-4">
                       Was war für Sie besonders hilfreich?
                     </h2>
                     <div className="grid grid-cols-2 gap-3">
@@ -203,14 +203,14 @@ export default function Feedback() {
               >
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="font-display text-xl font-semibold text-foreground mb-4">
+                    <h2 className="text-xl font-semibold text-foreground mb-4">
                       Was möchten Sie uns mitteilen?
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                       {[
                         { id: 'lob', label: 'Lob', icon: ThumbsUp, color: 'oklch(0.65_0.08_145)' },
                         { id: 'verbesserung', label: 'Verbesserungsvorschlag', icon: MessageSquare, color: 'oklch(0.55_0.08_250)' },
-                        { id: 'fehler', label: 'Fehler melden', icon: AlertCircle, color: 'oklch(0.65_0.12_25)' },
+                        { id: 'fehler', label: 'Fehler melden', icon: AlertCircle, color: 'oklch(0.65_0.12_55)' },
                       ].map((type) => (
                         <button
                           key={type.id}
@@ -268,7 +268,7 @@ export default function Feedback() {
                     <div className="w-12 h-12 rounded-full bg-[oklch(0.88_0.04_145)] flex items-center justify-center mx-auto mb-4">
                       <Mail className="w-6 h-6 text-[oklch(0.45_0.08_145)]" />
                     </div>
-                    <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
                       Möchten Sie uns direkt erreichen?
                     </h3>
                     <p className="text-muted-foreground mb-4">
@@ -295,7 +295,7 @@ export default function Feedback() {
                 <Button 
                   type="submit"
                   size="lg"
-                  className="bg-[oklch(0.65_0.12_25)] hover:bg-[oklch(0.55_0.12_25)] text-white px-8"
+                  className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.12_55)] text-white px-8"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Feedback absenden

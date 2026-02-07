@@ -28,7 +28,7 @@ export default function Kommunizieren() {
               <span className="text-sm font-medium text-[oklch(0.45_0.05_250)]">Lesezeit: 15 Minuten</span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Kommunizieren
             </h1>
             
@@ -63,7 +63,7 @@ export default function Kommunizieren() {
                 Validierung ist nicht dasselbe wie Zustimmung. Sie können ein Gefühl anerkennen, ohne das Verhalten gutzuheissen. Das ist ein wichtiger Unterschied.
               </p>
               
-              <h3 className="font-display text-xl font-semibold text-foreground mb-4">Die 6 Stufen der Validierung</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Die 6 Stufen der Validierung</h3>
               
               <div className="space-y-3">
                 {[
@@ -198,7 +198,7 @@ export default function Kommunizieren() {
                           {item.letter}
                         </span>
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-1">{item.title}</h3>
+                          <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                           <p className="text-muted-foreground text-sm mb-2">{item.description}</p>
                           <div className="bg-muted/50 rounded-lg p-3">
                             <p className="text-sm text-foreground italic">{item.example}</p>
@@ -228,8 +228,8 @@ export default function Kommunizieren() {
                   </div>
                   
                   <div className="grid sm:grid-cols-2 gap-4 mt-6">
-                    <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_25)] border border-[oklch(0.55_0.15_25)]/20">
-                      <span className="text-sm font-medium text-[oklch(0.55_0.15_25)] block mb-2">❌ Invalidierung:</span>
+                    <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_55)] border border-[oklch(0.55_0.15_55)]/20">
+                      <span className="text-sm font-medium text-[oklch(0.55_0.15_55)] block mb-2">❌ Invalidierung:</span>
                       <p className="text-sm text-muted-foreground italic">«Das bildest du dir ein. Sie war bestimmt nur in Eile.»</p>
                     </div>
                     <div className="p-4 rounded-xl bg-[oklch(0.95_0.03_145)] border border-[oklch(0.55_0.10_145)]/20">
@@ -261,7 +261,7 @@ export default function Kommunizieren() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)] bg-[oklch(0.92_0.04_145)]/30">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                       <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.10_145)] flex items-center justify-center">
                         <CheckCircle2 className="w-5 h-5 text-white" />
                       </div>
@@ -284,10 +284,10 @@ export default function Kommunizieren() {
                   </CardContent>
                 </Card>
                 
-                <Card className="border-l-4 border-l-[oklch(0.55_0.15_25)] bg-[oklch(0.92_0.05_25)]/30">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)] bg-[oklch(0.92_0.05_55)]/30">
                   <CardContent className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_25)] flex items-center justify-center">
+                    <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_55)] flex items-center justify-center">
                         <XCircle className="w-5 h-5 text-white" />
                       </div>
                       Vermeiden
@@ -301,7 +301,7 @@ export default function Kommunizieren() {
                         "Unterbrechen oder Augenrollen"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-2 text-foreground">
-                          <XCircle className="w-4 h-4 text-[oklch(0.55_0.15_25)] flex-shrink-0" />
+                          <XCircle className="w-4 h-4 text-[oklch(0.55_0.15_55)] flex-shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -325,7 +325,7 @@ export default function Kommunizieren() {
               {/* Situation 1: Intensive Emotionen */}
               <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
                 <CardContent className="p-5">
-                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                  <h3 className="font-semibold text-foreground mb-3 text-lg">
                     🌊 Wenn Ihr Angehöriger von Emotionen überflutet wird
                   </h3>
                   <div className="space-y-3">
@@ -337,7 +337,7 @@ export default function Kommunizieren() {
                       <p className="text-sm text-muted-foreground mb-1">Oder:</p>
                       <p className="text-foreground font-medium">"Das klingt wirklich schmerzhaft. Möchtest du mir mehr erzählen, oder soll ich einfach bei dir sein?"</p>
                     </div>
-                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                    <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_55)]">
                       <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
                       <p className="text-foreground">"Beruhige dich!" / "Das ist doch nicht so schlimm." / "Du überreagierst."</p>
                     </div>
@@ -348,7 +348,7 @@ export default function Kommunizieren() {
               {/* Situation 2: Vorwürfe */}
               <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
                 <CardContent className="p-5">
-                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                  <h3 className="font-semibold text-foreground mb-3 text-lg">
                     ⚡ Wenn Sie mit Vorwürfen konfrontiert werden
                   </h3>
                   <div className="space-y-3">
@@ -360,7 +360,7 @@ export default function Kommunizieren() {
                       <p className="text-sm text-muted-foreground mb-1">Oder:</p>
                       <p className="text-foreground font-medium">"Es tut mir leid, dass mein Verhalten dich verletzt hat. Das wollte ich nicht. Lass uns darüber sprechen."</p>
                     </div>
-                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                    <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_55)]">
                       <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
                       <p className="text-foreground">"Du bist unfair!" / "Das stimmt doch gar nicht!" / "Du verdrehst alles."</p>
                     </div>
@@ -371,7 +371,7 @@ export default function Kommunizieren() {
               {/* Situation 3: Rückzug */}
               <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
                 <CardContent className="p-5">
-                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                  <h3 className="font-semibold text-foreground mb-3 text-lg">
                     🚪 Wenn Ihr Angehöriger sich zurückzieht
                   </h3>
                   <div className="space-y-3">
@@ -383,7 +383,7 @@ export default function Kommunizieren() {
                       <p className="text-sm text-muted-foreground mb-1">Oder:</p>
                       <p className="text-foreground font-medium">"Du musst jetzt nicht reden. Ich lasse dir Raum. Sag mir einfach, wenn du etwas brauchst."</p>
                     </div>
-                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                    <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_55)]">
                       <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
                       <p className="text-foreground">"Rede endlich mit mir!" / "Du kannst nicht einfach weglaufen!" / "Typisch, du machst dicht."</p>
                     </div>
@@ -394,7 +394,7 @@ export default function Kommunizieren() {
               {/* Situation 4: Schwarz-Weiss-Denken */}
               <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
                 <CardContent className="p-5">
-                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                  <h3 className="font-semibold text-foreground mb-3 text-lg">
                     ⚫⚪ Bei Schwarz-Weiss-Aussagen ("Du liebst mich nicht mehr!")
                   </h3>
                   <div className="space-y-3">
@@ -406,7 +406,7 @@ export default function Kommunizieren() {
                       <p className="text-sm text-muted-foreground mb-1">Oder:</p>
                       <p className="text-foreground font-medium">"Ich liebe dich. Und ich bin auch frustriert über diese Situation. Beides ist wahr."</p>
                     </div>
-                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                    <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_55)]">
                       <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
                       <p className="text-foreground">"Das ist Quatsch!" / "Natürlich liebe ich dich, hör auf damit!" / "Schon wieder diese Diskussion."</p>
                     </div>
@@ -417,7 +417,7 @@ export default function Kommunizieren() {
               {/* Situation 5: Nach einem Streit */}
               <Card className="mb-4 border-[oklch(0.65_0.12_55)]/30">
                 <CardContent className="p-5">
-                  <h3 className="font-display font-semibold text-foreground mb-3 text-lg">
+                  <h3 className="font-semibold text-foreground mb-3 text-lg">
                     🕊️ Nach einem Streit wieder ins Gespräch kommen
                   </h3>
                   <div className="space-y-3">
@@ -429,7 +429,7 @@ export default function Kommunizieren() {
                       <p className="text-sm text-muted-foreground mb-1">Oder:</p>
                       <p className="text-foreground font-medium">"Es tut mir leid, wie ich reagiert habe. Ich war überfordert. Können wir nochmal von vorne anfangen?"</p>
                     </div>
-                    <div className="bg-[oklch(0.95_0.02_25)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_25)]">
+                    <div className="bg-[oklch(0.95_0.02_55)] rounded-lg p-4 border-l-4 border-[oklch(0.55_0.15_55)]">
                       <p className="text-sm text-muted-foreground mb-1">Vermeiden Sie:</p>
                       <p className="text-foreground">"Siehst du jetzt ein, dass du falsch lagst?" / "Können wir das einfach vergessen?" / Schweigen als Strafe.</p>
                     </div>
@@ -446,14 +446,14 @@ export default function Kommunizieren() {
               preview="Spezifische Kommunikationstipps für Partner, Eltern und erwachsene Kinder."
             >
               <div className="space-y-4">
-                <Card className="border-l-4 border-l-[oklch(0.55_0.15_35)] bg-[oklch(0.97_0.01_35)]">
+                <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)] bg-[oklch(0.97_0.01_55)]">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_35)] flex items-center justify-center flex-shrink-0">
-                        <Heart className="w-5 h-5 text-[oklch(0.55_0.15_35)]" />
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.06_55)] flex items-center justify-center flex-shrink-0">
+                        <Heart className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground mb-2">Als Partner/in</h3>
+                        <h3 className="font-semibold text-foreground mb-2">Als Partner/in</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           In Partnerschaften ist die emotionale Intensität oft am höchsten. Validierung bedeutet nicht, dass Sie mit allem einverstanden sind. Sie können die Gefühle Ihres Partners anerkennen und trotzdem bei Ihrer eigenen Wahrnehmung bleiben.
                         </p>
@@ -469,7 +469,7 @@ export default function Kommunizieren() {
                         <Users className="w-5 h-5 text-[oklch(0.55_0.12_250)]" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground mb-2">Als Elternteil</h3>
+                        <h3 className="font-semibold text-foreground mb-2">Als Elternteil</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Die Eltern-Kind-Dynamik macht Kommunikation besonders komplex. Alte Muster sitzen tief. Versuchen Sie, Ihr erwachsenes Kind als eigenständige Person zu sehen – nicht als das Kind, das Sie einmal großgezogen haben. Das verändert den Ton.
                         </p>
@@ -485,7 +485,7 @@ export default function Kommunizieren() {
                         <UserCircle className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
+                        <h3 className="font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           Sie haben vielleicht gelernt, Ihre eigenen Gefühle zu unterdrücken, um Ihren Elternteil nicht zu «provozieren». Ihre Gefühle sind genauso gültig. Sie dürfen auch mal sagen: «Ich brauche gerade Abstand» – ohne schlechtes Gewissen.
                         </p>
@@ -503,7 +503,7 @@ export default function Kommunizieren() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-[oklch(0.45_0.05_250)]" />
                 Materialien zum Thema
               </h2>

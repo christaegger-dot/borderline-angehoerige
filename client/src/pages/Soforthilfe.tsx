@@ -93,7 +93,7 @@ function KontaktKarte({ kontakt, icon }: { kontakt: Kontakt; icon?: React.ReactN
           <div className="flex-1">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <h3 className="font-display font-semibold text-foreground mb-1">{kontakt.label}</h3>
+                <h3 className="font-semibold text-foreground mb-1">{kontakt.label}</h3>
                 <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
               </div>
               <KontaktButton kontakt={kontakt} />
@@ -226,7 +226,7 @@ export default function Notfall() {
               </div>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Soforthilfe bei akuter Gefahr
             </h1>
             
@@ -260,7 +260,7 @@ export default function Notfall() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Sofort-Hilfe (24/7)
               </h2>
               
@@ -270,7 +270,7 @@ export default function Notfall() {
                     <CardContent className="p-5">
                       <div className="flex items-center justify-between gap-4">
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-1">{kontakt.label}</h3>
+                          <h3 className="font-semibold text-foreground mb-1">{kontakt.label}</h3>
                           <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
                         </div>
                         <KontaktButton kontakt={kontakt} />
@@ -291,7 +291,7 @@ export default function Notfall() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
                 <Clock className="w-8 h-8 text-[oklch(0.65_0.18_85)]" />
                 Psychiatrische Notdienste Kanton Zürich
               </h2>
@@ -302,7 +302,7 @@ export default function Notfall() {
               {/* Info-Box: Was ist PUK? */}
               <Card className="border-l-4 border-[oklch(0.65_0.18_85)] bg-[oklch(0.97_0.02_85)] mb-6">
                 <CardContent className="p-6">
-                  <h3 className="font-display font-semibold text-foreground mb-3">PUK Zürich – psychiatrische Notfallhilfe (24/7)</h3>
+                  <h3 className="font-semibold text-foreground mb-3">PUK Zürich – psychiatrische Notfallhilfe (24/7)</h3>
                   <p className="text-muted-foreground leading-relaxed mb-3">
                     {TEXTE.pukEinleitung}
                   </p>
@@ -329,7 +329,7 @@ export default function Notfall() {
 
               {/* Beratung & Fachstellen (INFO, nur Soforthilfe-relevante) */}
               <div className="mt-6 pt-6 border-t border-border/50">
-                <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                   <Info className="w-5 h-5 text-muted-foreground" />
                   Beratung & Fachstellen
                 </h3>
@@ -366,7 +366,7 @@ export default function Notfall() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
                 <Heart className="w-8 h-8 text-[oklch(0.55_0.15_145)]" />
                 Zuhören & Entlastung
               </h2>
@@ -380,7 +380,7 @@ export default function Notfall() {
                     <CardContent className="p-5">
                       <div className="flex items-center justify-between gap-4">
                         <div>
-                          <h3 className="font-display font-semibold text-foreground mb-1">{kontakt.label}</h3>
+                          <h3 className="font-semibold text-foreground mb-1">{kontakt.label}</h3>
                           <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
                         </div>
                         <KontaktButton kontakt={kontakt} />
@@ -406,7 +406,7 @@ export default function Notfall() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
                 Was tun in konkreten Krisensituationen?
               </h2>
               <p className="text-muted-foreground mb-6">
@@ -422,7 +422,7 @@ export default function Notfall() {
                         <AlertTriangle className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground">Suiziddrohung oder -gedanken</h3>
+                        <h3 className="font-semibold text-foreground">Suiziddrohung oder -gedanken</h3>
                         <p className="text-sm text-muted-foreground font-normal">«Ich will nicht mehr leben», «Ohne mich wärt ihr besser dran»</p>
                       </div>
                     </div>
@@ -496,28 +496,28 @@ export default function Notfall() {
                 </AccordionItem>
 
                 {/* Selbstverletzung */}
-                <AccordionItem value="selbstverletzung" className="border rounded-lg border-[oklch(0.55_0.15_35)] bg-[oklch(0.98_0.02_35)]">
+                <AccordionItem value="selbstverletzung" className="border rounded-lg border-[oklch(0.55_0.15_55)] bg-[oklch(0.98_0.02_55)]">
                   <AccordionTrigger className="px-5 py-4 hover:no-underline">
                     <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.15_35)] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.15_55)] flex items-center justify-center flex-shrink-0">
                         <Hand className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground">Selbstverletzung (Ritzen, Brennen, Schlagen)</h3>
+                        <h3 className="font-semibold text-foreground">Selbstverletzung (Ritzen, Brennen, Schlagen)</h3>
                         <p className="text-sm text-muted-foreground font-normal">Akute Selbstverletzung oder Entdeckung von Verletzungen</p>
                       </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="px-5 pb-5">
                     <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-[oklch(0.55_0.15_35)]/10 rounded-lg border border-[oklch(0.55_0.15_35)]/30">
-                        <p className="font-semibold text-[oklch(0.45_0.12_35)] mb-2">Wichtig zu verstehen:</p>
+                      <div className="p-4 bg-[oklch(0.55_0.15_55)]/10 rounded-lg border border-[oklch(0.55_0.15_55)]/30">
+                        <p className="font-semibold text-[oklch(0.45_0.12_55)] mb-2">Wichtig zu verstehen:</p>
                         <p className="text-sm text-muted-foreground">Selbstverletzung ist meist <strong>kein</strong> Suizidversuch, sondern ein Versuch, unerträgliche emotionale Schmerzen zu regulieren. Sie dient oft dazu, Spannung abzubauen oder «wieder etwas zu fühlen».</p>
                       </div>
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_35)] text-white text-sm flex items-center justify-center">1</span>
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_55)] text-white text-sm flex items-center justify-center">1</span>
                           Sofortmassnahmen
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -529,7 +529,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_35)] text-white text-sm flex items-center justify-center">2</span>
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_55)] text-white text-sm flex items-center justify-center">2</span>
                           Kommunikation
                         </h4>
                         <div className="ml-8 grid sm:grid-cols-2 gap-3">
@@ -554,7 +554,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_35)] text-white text-sm flex items-center justify-center">3</span>
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_55)] text-white text-sm flex items-center justify-center">3</span>
                           Nachsorge
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -569,14 +569,14 @@ export default function Notfall() {
                 </AccordionItem>
 
                 {/* Aggressive Eskalation */}
-                <AccordionItem value="aggression" className="border rounded-lg border-[oklch(0.50_0.15_280)] bg-[oklch(0.98_0.02_280)]">
+                <AccordionItem value="aggression" className="border rounded-lg border-[oklch(0.50_0.15_250)] bg-[oklch(0.98_0.02_250)]">
                   <AccordionTrigger className="px-5 py-4 hover:no-underline">
                     <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.50_0.15_280)] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.50_0.15_250)] flex items-center justify-center flex-shrink-0">
                         <Shield className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground">Aggressive Eskalation</h3>
+                        <h3 className="font-semibold text-foreground">Aggressive Eskalation</h3>
                         <p className="text-sm text-muted-foreground font-normal">Schreien, Drohen, Werfen von Gegenständen, körperliche Gewalt</p>
                       </div>
                     </div>
@@ -590,7 +590,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_280)] text-white text-sm flex items-center justify-center">1</span>
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_250)] text-white text-sm flex items-center justify-center">1</span>
                           Deeskalieren (wenn sicher)
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -603,7 +603,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_280)] text-white text-sm flex items-center justify-center">2</span>
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_250)] text-white text-sm flex items-center justify-center">2</span>
                           Kommunikation
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -616,7 +616,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_280)] text-white text-sm flex items-center justify-center">3</span>
+                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_250)] text-white text-sm flex items-center justify-center">3</span>
                           Wenn Deeskalation nicht funktioniert
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -644,7 +644,7 @@ export default function Notfall() {
                         <MessageCircle className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-display font-semibold text-foreground">Emotionale Erpressung / Manipulation</h3>
+                        <h3 className="font-semibold text-foreground">Emotionale Erpressung / Manipulation</h3>
                         <p className="text-sm text-muted-foreground font-normal">«Wenn du gehst, bringe ich mich um», «Du bist schuld, dass es mir so geht»</p>
                       </div>
                     </div>
@@ -712,7 +712,7 @@ export default function Notfall() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Notfallkarte zum Ausdrucken
               </h2>
 
@@ -720,7 +720,7 @@ export default function Notfall() {
                 <CardContent className="p-0">
                   <div className="md:flex">
                     {/* Vorschau-Bild */}
-                    <div className="md:w-1/3 bg-[oklch(0.96_0.01_80)] p-4 flex items-center justify-center">
+                    <div className="md:w-1/3 bg-[oklch(0.96_0.01_85)] p-4 flex items-center justify-center">
                       <img
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp"
                         alt="Notfallkarte Zürich – Vorschau"
@@ -764,7 +764,7 @@ export default function Notfall() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Online-Ressourcen & Beratung
               </h2>
               
@@ -777,7 +777,7 @@ export default function Notfall() {
                       <CardContent className="p-5">
                         <div className="flex items-center justify-between gap-4">
                           <div>
-                            <h3 className="font-display font-semibold text-foreground mb-1">{url.label}</h3>
+                            <h3 className="font-semibold text-foreground mb-1">{url.label}</h3>
                             <p className="text-muted-foreground text-sm">{res.beschreibung}</p>
                           </div>
                           <a href={url.url} target="_blank" rel="noopener noreferrer">
@@ -802,7 +802,7 @@ export default function Notfall() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Persönlicher Krisenplan
               </h2>
               

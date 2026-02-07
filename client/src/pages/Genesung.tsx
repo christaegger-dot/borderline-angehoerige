@@ -3,10 +3,134 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Heart, Clock, BookOpen, ExternalLink, ArrowRight, AlertTriangle, RefreshCw, Users, Download, Image as ImageIcon } from "lucide-react";
+import { Sparkles, TrendingUp, Heart, Clock, BookOpen, ExternalLink, ArrowRight, AlertTriangle, RefreshCw, Users, Download, Image as ImageIcon, Filter, Search, HandHeart } from "lucide-react";
+import { useState, useRef } from "react";
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
 import { TableOfContents } from "@/components/UXEnhancements";
+
+const genesungCategories = [
+  { id: "alle", label: "Alle", icon: Filter },
+  { id: "verstehen", label: "Verstehen", icon: Search },
+  { id: "handeln", label: "Handeln", icon: HandHeart },
+];
+
+const genesungItems = [
+  {
+    title: "Genesung in Zahlen",
+    desc: "Orientierungs-Tracker mit Langzeitdaten",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ItokRaWotdNKpoEx.webp",
+    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NLLCJFBzWWbSNONT.pdf",
+    category: "verstehen",
+  },
+  {
+    title: "Das Fortschritt-Paradox",
+    desc: "Warum R\u00fcckf\u00e4lle zum Weg geh\u00f6ren",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xjUbWjBdgOfAOBSO.webp",
+    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fXdbQhOkZRXfkBlk.pdf",
+    category: "verstehen",
+  },
+  {
+    title: "Remission vs. Heilung",
+    desc: "Was Besserung wirklich bedeutet",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tbZXsVZHQhEaDQKT.webp",
+    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/USrkPreGMsZiBDAr.pdf",
+    category: "verstehen",
+  },
+  {
+    title: "5 Faktoren, die Genesung f\u00f6rdern",
+    desc: "S\u00e4ulen-Modell: Was positiv beeinflusst",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
+    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TMzKmKoTIocOMGFv.pdf",
+    category: "handeln",
+  },
+  {
+    title: "Ihre Rolle im Genesungsprozess",
+    desc: "Was Sie tun k\u00f6nnen (und was nicht)",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/nFoVeLJURBcMhQBT.webp",
+    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mxRTIiuzODSXVagK.pdf",
+    category: "handeln",
+  },
+];
+
+function GenesungInfografiken() {
+  const [activeFilter, setActiveFilter] = useState("alle");
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const filteredItems = activeFilter === "alle"
+    ? genesungItems
+    : genesungItems.filter(i => i.category === activeFilter);
+
+  return (
+    <ContentSection
+      title="Genesung verstehen \u2013 auf einen Blick"
+      icon={<ImageIcon className="w-6 h-6 text-sage-dark" />}
+      id="infografiken"
+      preview="Alle Infografiken als hochaufl\u00f6sende PDFs zum Herunterladen und Ausdrucken."
+    >
+      <p className="text-muted-foreground mb-6">
+        Alle Infografiken als hochaufl\u00f6sende PDFs zum Herunterladen und Ausdrucken.{" "}
+        <strong className="text-foreground">Vorschau = Web-Bild.</strong> \u00abPDF \u00f6ffnen\u00bb \u00f6ffnet die A4-Druckversion im neuen Tab \u2013 Download im PDF-Viewer oben rechts.
+      </p>
+
+      {/* Filter-Tabs */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {genesungCategories.map(cat => {
+          const count = cat.id === "alle" ? genesungItems.length : genesungItems.filter(i => i.category === cat.id).length;
+          return (
+            <Button
+              key={cat.id}
+              variant={activeFilter === cat.id ? "default" : "outline"}
+              size="sm"
+              onClick={() => {
+                setActiveFilter(cat.id);
+                setTimeout(() => {
+                  gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+              }}
+              className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""}`}
+            >
+              <cat.icon className="w-4 h-4 mr-1.5" />
+              {cat.label} ({count})
+            </Button>
+          );
+        })}
+      </div>
+
+      <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {filteredItems.map((item, index) => (
+          <Card key={item.title} className={`overflow-hidden border-border/50 hover:shadow-lg transition-all duration-500 group ${filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""}`}>
+            <div className="aspect-[3/4] overflow-hidden bg-muted">
+              <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" loading="lazy" width={400} height={223} decoding="async" />
+            </div>
+            <CardContent className="p-4">
+              <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+              <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
+              <a
+                href={item.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`PDF \u00f6ffnen: ${item.title} (neuer Tab)`}
+                className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                PDF \u00f6ffnen
+              </a>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      <div className="text-center mt-8">
+        <Link href="/materialien">
+          <Button variant="outline">
+            Alle Materialien ansehen
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+        </Link>
+      </div>
+    </ContentSection>
+  );
+}
 
 export default function Genesung() {
   return (
@@ -488,79 +612,7 @@ export default function Genesung() {
               </ContentSection>
 
               {/* ═══ 8. Infografiken zum Herunterladen ═══ */}
-              <ContentSection
-                title="Genesung verstehen – auf einen Blick"
-                icon={<ImageIcon className="w-6 h-6 text-sage-dark" />}
-                id="infografiken"
-                preview="Alle Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken."
-              >
-                <p className="text-muted-foreground mb-6">
-                  Alle Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken.
-                  <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {[
-                    {
-                      title: "Genesung in Zahlen",
-                      desc: "Orientierungs-Tracker mit Langzeitdaten",
-                      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ItokRaWotdNKpoEx.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NLLCJFBzWWbSNONT.pdf"
-                    },
-                    {
-                      title: "Das Fortschritt-Paradox",
-                      desc: "Warum Rückfälle zum Weg gehören",
-                      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xjUbWjBdgOfAOBSO.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fXdbQhOkZRXfkBlk.pdf"
-                    },
-                    {
-                      title: "Remission vs. Heilung",
-                      desc: "Was Besserung wirklich bedeutet",
-                      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tbZXsVZHQhEaDQKT.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/USrkPreGMsZiBDAr.pdf"
-                    },
-                    {
-                      title: "5 Faktoren, die Genesung fördern",
-                      desc: "Säulen-Modell: Was positiv beeinflusst",
-                      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TMzKmKoTIocOMGFv.pdf"
-                    },
-                    {
-                      title: "Ihre Rolle im Genesungsprozess",
-                      desc: "Was Sie tun können (und was nicht)",
-                      img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/nFoVeLJURBcMhQBT.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mxRTIiuzODSXVagK.pdf"
-                    },
-                  ].map((item, i) => (
-                    <Card key={i} className={`overflow-hidden border-border/50 hover:shadow-md transition-shadow ${i === 0 ? "sm:col-span-2" : ""}`}>
-                      <div className="aspect-[3/4] overflow-hidden bg-muted">
-                        <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" width={400} height={223} decoding="async" />
-                      </div>
-                      <CardContent className="p-4">
-                        <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
-                        <a
-                          href={item.pdf}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                          className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          PDF öffnen
-                        </a>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-                <div className="text-center mt-8">
-                  <Link href="/materialien">
-                    <Button variant="outline">
-                      Alle Materialien ansehen
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </div>
-              </ContentSection>
+              <GenesungInfografiken />
 
             </div>
           </div>

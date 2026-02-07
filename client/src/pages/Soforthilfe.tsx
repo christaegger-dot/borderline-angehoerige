@@ -289,7 +289,8 @@ export default function Notfall() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 wave-divider-top"
+              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
                 <Clock className="w-8 h-8 text-sand-accent" />
@@ -378,7 +379,8 @@ export default function Notfall() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 wave-divider-top"
+              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
                 <Heart className="w-8 h-8 text-sage-mid" />
@@ -777,7 +779,8 @@ export default function Notfall() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 wave-divider-top"
+              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Online-Ressourcen & Beratung
@@ -815,7 +818,8 @@ export default function Notfall() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 wave-divider-top"
+              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Persönlicher Krisenplan

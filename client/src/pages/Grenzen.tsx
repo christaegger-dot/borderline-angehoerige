@@ -471,7 +471,8 @@ export default function Grenzen() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 wave-divider-top"
+              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-terracotta-mid" />
@@ -559,7 +560,8 @@ export default function Grenzen() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 wave-divider-top"
+              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
             >
               <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6">

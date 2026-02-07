@@ -92,8 +92,8 @@
   --color-alert-wash:         oklch(0.96 0.02 25);  /* Sehr heller Alert-BG */
   
   /* Typography – Design-Lock: Inter exklusiv */
-  --font-display: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Inter', 'Inter fallback', sans-serif;
+  --font-body: 'Inter', 'Inter fallback', sans-serif;
 }
 
 :root {

@@ -538,11 +538,15 @@ export default function Genesung() {
                       <CardContent className="p-4">
                         <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                         <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
-                        <a href={item.pdf} target="_blank" rel="noopener noreferrer">
-                          <Button variant="outline" size="sm" className="w-full">
-                            <Download className="w-4 h-4 mr-2" />
-                            PDF öffnen
-                          </Button>
+                        <a
+                          href={item.pdf}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                          className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          PDF öffnen
                         </a>
                       </CardContent>
                     </Card>

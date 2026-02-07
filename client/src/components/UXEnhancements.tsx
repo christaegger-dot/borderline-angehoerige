@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ChevronUp, ChevronRight, Home, List, X } from "lucide-react";
+import { ChevronUp, ChevronRight, ChevronLeft, Home, List, X, ArrowLeft } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -75,15 +75,15 @@ export function ScrollToTop() {
   );
 }
 
-// Breadcrumb-Navigation
+// Breadcrumb-Navigation mit Zurück-Pfeil und kontextbezogener Hierarchie
 const pageNames: Record<string, string> = {
   "/": "Startseite",
   "/verstehen": "Borderline verstehen",
   "/unterstuetzen": "Unterstützen",
-  "/unterstuetzen/uebersicht": "Unterstützen: Grundlagen",
-  "/unterstuetzen/alltag": "Unterstützen: Alltag",
-  "/unterstuetzen/therapie": "Unterstützen: Therapie",
-  "/unterstuetzen/krise": "Unterstützen: Krise",
+  "/unterstuetzen/uebersicht": "Grundlagen",
+  "/unterstuetzen/alltag": "Alltag",
+  "/unterstuetzen/therapie": "Therapie",
+  "/unterstuetzen/krise": "Krise",
   "/kommunizieren": "Kommunizieren",
   "/grenzen": "Grenzen setzen",
   "/selbstfuersorge": "Selbstfürsorge",
@@ -94,8 +94,21 @@ const pageNames: Record<string, string> = {
   "/selbsthilfegruppen": "Selbsthilfegruppen",
   "/impressum": "Impressum",
   "/datenschutz": "Datenschutz",
-  "/ueber-uns": "Über uns"
+  "/ueber-uns": "Über uns",
+  "/faq": "Häufige Fragen",
+  "/glossar": "Glossar",
+  "/buchempfehlungen": "Buchempfehlungen",
+  "/feedback": "Feedback"
 };
+
+// Kontextbezogene Elternseite bestimmen
+function getParentInfo(location: string): { href: string; label: string } | null {
+  // Unterstützen-Unterseiten → Elternseite ist Unterstützen
+  if (location.startsWith("/unterstuetzen/")) {
+    return { href: "/unterstuetzen/uebersicht", label: "Unterstützen" };
+  }
+  return null;
+}
 
 export function Breadcrumbs() {
   const [location] = useLocation();
@@ -103,22 +116,48 @@ export function Breadcrumbs() {
   // Nicht auf der Startseite anzeigen
   if (location === "/") return null;
 
-  const pageName = pageNames[location] || location.replace("/", "");
+  const pageName = pageNames[location] || location.split("/").pop()?.replace(/-/g, " ") || "";
+  const parent = getParentInfo(location);
+
+  // Zurück-Ziel bestimmen: Elternseite oder Startseite
+  const backHref = parent?.href || "/";
+  const backLabel = parent?.label || "Startseite";
 
   return (
     <nav className="container py-3" aria-label="Breadcrumb">
-      <ol className="flex items-center gap-2 text-sm text-muted-foreground">
-        <li>
-          <Link href="/" className="flex items-center gap-1 hover:text-foreground transition-colors">
-            <Home className="w-4 h-4" />
-            <span className="hidden sm:inline">Startseite</span>
-          </Link>
-        </li>
-        <li className="flex items-center gap-2">
-          <ChevronRight className="w-4 h-4" />
-          <span className="text-foreground font-medium">{pageName}</span>
-        </li>
-      </ol>
+      <div className="flex items-center justify-between">
+        {/* Zurück-Pfeil (Mobile: prominent, Desktop: dezent) */}
+        <Link
+          href={backHref}
+          className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group sm:hidden"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+          <span>{backLabel}</span>
+        </Link>
+
+        {/* Desktop Breadcrumb-Pfad */}
+        <ol className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
+          <li>
+            <Link href="/" className="flex items-center gap-1 hover:text-foreground transition-colors group">
+              <ArrowLeft className="w-3.5 h-3.5 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
+              <Home className="w-4 h-4" />
+              <span>Startseite</span>
+            </Link>
+          </li>
+          {parent && (
+            <li className="flex items-center gap-2">
+              <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+              <Link href={parent.href} className="hover:text-foreground transition-colors">
+                {parent.label}
+              </Link>
+            </li>
+          )}
+          <li className="flex items-center gap-2">
+            <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+            <span className="text-foreground font-medium">{pageName}</span>
+          </li>
+        </ol>
+      </div>
     </nav>
   );
 }

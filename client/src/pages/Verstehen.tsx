@@ -183,7 +183,7 @@ export default function Verstehen() {
               </p>
               
               <div className="grid md:grid-cols-3 gap-4">
-                <Card className="border-t-4 border-t-terracotta-mid">
+                <Card className="md:col-span-2 border-t-4 border-t-terracotta-mid">
                   <CardContent className="p-5">
                     <div className="w-10 h-10 rounded-full bg-terracotta-wash flex items-center justify-center mb-3">
                       <Brain className="w-5 h-5 text-terracotta-mid" />
@@ -433,7 +433,7 @@ export default function Verstehen() {
                 ].map((item, index) => {
                   const Icon = item.icon;
                   return (
-                    <Card key={index} className="border-border/50 hover:shadow-md transition-all duration-500">
+                    <Card key={index} className={`border-border/50 hover:shadow-md transition-all duration-500 ${index === 0 ? "sm:col-span-2" : ""}`}>
                       <CardContent className="p-5">
                         <div className="flex items-start gap-4">
                           <div 
@@ -597,7 +597,7 @@ export default function Verstehen() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* 1.1 Leuchtturm */}
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <Card className="md:col-span-2 overflow-hidden hover:shadow-lg transition-shadow">
                   <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp" target="_blank" rel="noopener noreferrer">
                     <div className="aspect-[3/4] bg-muted">
                       <img 

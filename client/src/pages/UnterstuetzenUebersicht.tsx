@@ -432,7 +432,7 @@ export default function UnterstuetzenUebersicht() {
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rnwlrkNLwFQsLjnU.webp"
                   }
                 ].map((item, index) => (
-                  <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow">
+                  <Card key={index} className={`overflow-hidden hover:shadow-md transition-shadow ${index === 0 ? "md:col-span-2" : ""}`}>
                     <div className="aspect-[4/3] bg-muted overflow-hidden">
                       <img 
                         src={item.url} 

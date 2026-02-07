@@ -217,7 +217,7 @@ export default function UnterstuetzenAlltag() {
                   { title: "Natur", examples: "Garten, Park, Ausflüge" },
                   { title: "Entspannung", examples: "Film schauen, Lesen, Kaffee trinken" }
                 ].map((item, index) => (
-                  <Card key={index} className="border-border/50">
+                  <Card key={index} className={`border-border/50 ${index === 0 ? "md:col-span-2" : ""}`}>
                     <CardContent className="p-4">
                       <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                       <p className="text-muted-foreground text-sm">{item.examples}</p>

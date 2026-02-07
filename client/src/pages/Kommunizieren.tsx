@@ -258,7 +258,7 @@ export default function Kommunizieren() {
               id="tipps"
               preview="Hilfreich vs. Vermeiden – konkrete Dos and Don'ts für den Alltag."
             >
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-[7fr_5fr] gap-4">
                 <Card className="border-l-4 border-l-sage-mid bg-sage-lighter/30">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
@@ -540,7 +540,7 @@ export default function Kommunizieren() {
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp"
                   }
                 ].map((item, index) => (
-                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all">
+                  <Card key={index} className={`overflow-hidden hover:shadow-lg transition-all ${index === 0 ? "md:col-span-2" : ""}`}>
                     <div className="aspect-[4/3] bg-muted">
                       <img src={item.url} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
                     </div>

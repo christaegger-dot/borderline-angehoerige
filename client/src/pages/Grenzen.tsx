@@ -143,7 +143,7 @@ export default function Grenzen() {
                 ].map((item, index) => {
                   const Icon = item.icon;
                   return (
-                    <Card key={index} className="border-border/50 hover:shadow-md transition-all duration-500" style={{ borderTopWidth: '4px', borderTopColor: item.color }}>
+                    <Card key={index} className={`border-border/50 hover:shadow-md transition-all duration-500 ${index === 0 ? "sm:col-span-2" : ""}`} style={{ borderTopWidth: '4px', borderTopColor: item.color }}>
                       <CardContent className="p-5">
                         <div className="flex items-start gap-4 mb-3">
                           <div 
@@ -526,7 +526,7 @@ export default function Grenzen() {
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tahWXflXNFEcSrog.webp"
                   }
                 ].map((item, index) => (
-                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-500 group">
+                  <Card key={index} className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${index === 0 ? "sm:col-span-2" : ""}`}>
                     <a href={item.url} target="_blank" rel="noopener noreferrer">
                       <div className="relative aspect-[3/4] bg-muted overflow-hidden">
                         <img 

@@ -131,7 +131,7 @@ export default function Genesung() {
                   In der Forschung werden diese Begriffe präzise definiert, um Fortschritte messbar zu machen.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-[7fr_5fr] gap-6">
                   <Card className="h-full border-border/50">
                     <CardContent className="p-6">
                       <div className="w-10 h-10 rounded-lg bg-terracotta-light flex items-center justify-center mb-4">
@@ -209,7 +209,7 @@ export default function Genesung() {
                     { title: "Fortschritte klein benennen", desc: "Konkret und spezifisch, nicht pauschal" },
                     { title: "Geduld haben", desc: "Genesung verläuft nicht linear" }
                   ].map((item, i) => (
-                    <Card key={i} className="border-border/50">
+                    <Card key={i} className={`border-border/50 ${i === 0 ? "sm:col-span-2" : ""}`}>
                       <CardContent className="p-4">
                         <h4 className="font-semibold text-foreground text-sm mb-1">{item.title}</h4>
                         <p className="text-xs text-muted-foreground">{item.desc}</p>
@@ -282,7 +282,7 @@ export default function Genesung() {
                     { title: "Eigene Grenzen", desc: "Ihre Stabilität ist Teil der Genesung. Achten Sie auf sich." },
                     { title: "Professionelle Hilfe", desc: "Unterstützen Sie den Therapieprozess, ohne ihn zu ersetzen." }
                   ].map((item, i) => (
-                    <Card key={i} className="border-border/50 hover:shadow-md transition-shadow">
+                    <Card key={i} className={`border-border/50 hover:shadow-md transition-shadow ${i === 0 ? "sm:col-span-2" : ""}`}>
                       <CardContent className="p-5">
                         <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
                         <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -364,7 +364,7 @@ export default function Genesung() {
                 id="fuer-angehoerige"
                 preview="Hoffnung ist berechtigt, Geduld ist wichtig, Ihre Rolle ist wertvoll."
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-[7fr_5fr] gap-6">
                   {[
                     {
                       title: "Hoffnung ist berechtigt",
@@ -528,7 +528,7 @@ export default function Genesung() {
                       pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mxRTIiuzODSXVagK.pdf"
                     },
                   ].map((item, i) => (
-                    <Card key={i} className="overflow-hidden border-border/50 hover:shadow-md transition-shadow">
+                    <Card key={i} className={`overflow-hidden border-border/50 hover:shadow-md transition-shadow ${i === 0 ? "sm:col-span-2" : ""}`}>
                       <div className="aspect-[3/4] overflow-hidden bg-muted">
                         <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
                       </div>

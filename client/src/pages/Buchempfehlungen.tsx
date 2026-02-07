@@ -311,6 +311,7 @@ export default function Buchempfehlungen() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: bookIndex * 0.05, ease: "easeOut" }}
+                      className={bookIndex === 0 ? "md:col-span-2" : ""}
                     >
                       <Card className={`h-full transition-all hover:shadow-md ${book.highlight ? 'ring-2 ring-sand-border' : ''}`}>
                         <CardContent className="p-6">

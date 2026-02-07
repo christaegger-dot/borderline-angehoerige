@@ -157,7 +157,7 @@ export default function UnterstuetzenTherapie() {
                     color: "var(--color-slate-blue)"
                   }
                 ].map((skill, index) => (
-                  <Card key={index} style={{ borderColor: skill.color }} className="border-2">
+                  <Card key={index} style={{ borderColor: skill.color }} className={`border-2 ${index === 0 ? "sm:col-span-2" : ""}`}>
                     <CardContent className="p-5">
                       <h3 className="font-semibold text-foreground mb-2">{skill.title}</h3>
                       <p className="text-muted-foreground text-sm">{skill.description}</p>

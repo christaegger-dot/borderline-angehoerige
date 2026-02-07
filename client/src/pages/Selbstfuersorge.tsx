@@ -318,7 +318,7 @@ export default function Selbstfuersorge() {
                   Diese Übungen können Sie jederzeit anwenden, wenn Sie merken, dass der Stress überhand nimmt:
                 </p>
                 
-                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <div className="grid md:grid-cols-[7fr_5fr] gap-4 mb-6">
                   <AtemuebungCard />
                   
                   <Card className="bg-gradient-to-br from-slate-light/30 to-slate-wash/20 border-slate-dark">
@@ -696,7 +696,7 @@ export default function Selbstfuersorge() {
                       pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hFNkSlPhSDWvVuwK.pdf"
                     }
                   ].map((item, i) => (
-                    <Card key={i} className="overflow-hidden border-border/50 hover:shadow-md transition-shadow">
+                    <Card key={i} className={`overflow-hidden border-border/50 hover:shadow-md transition-shadow ${i === 0 ? "md:col-span-2" : ""}`}>
                       <div className="aspect-[3/4] overflow-hidden bg-muted">
                         <img src={item.webp} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" />
                       </div>

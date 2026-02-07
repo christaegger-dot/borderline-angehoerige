@@ -31,7 +31,7 @@ const infografiken: Array<{
     category: "verstehen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zUJsXECPDUPuIxKP.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aGFxQRURQcMiVRbs.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CCbAzKmVsoRDnJWi.pdf",
   },
   {
     id: "1-2-eisberg",
@@ -40,7 +40,7 @@ const infografiken: Array<{
     category: "verstehen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZwsWnqLofvcvpMaZ.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ctvGVbdDNWreFnVo.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MmowkXEvMBxLRKtw.pdf",
   },
   {
     id: "1-3-spaltung",
@@ -49,7 +49,7 @@ const infografiken: Array<{
     category: "verstehen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BwqZmzcxPLdpGBOL.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MmTaAMmsDWFnKegB.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qgYallUbPGueIXcU.pdf",
   },
   {
     id: "1-4-alarm-denk-modus",
@@ -58,7 +58,7 @@ const infografiken: Array<{
     category: "verstehen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xEugiONCOEPRnzAk.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zPdmrwRLcRWKxynE.pdf",
   },
   {
     id: "1-5-vier-phasen-zyklus",
@@ -67,7 +67,7 @@ const infografiken: Array<{
     category: "verstehen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ixtfXLgxmZJawKhi.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kOMGyISvDZXihWxO.pdf",
   },
   {
     id: "1-6-gehirn-verstehen",
@@ -76,7 +76,7 @@ const infografiken: Array<{
     category: "verstehen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KVAAxkRpNMpEuKyQ.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HfyQjNxvthksLpbU.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 2: KOMMUNIZIEREN
@@ -88,7 +88,7 @@ const infografiken: Array<{
     category: "kommunizieren",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DQBcrvUpLbeePIcF.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gGsRoFAZIZBfLwmf.pdf",
   },
   {
     id: "2-2-standardsatz",
@@ -97,7 +97,7 @@ const infografiken: Array<{
     category: "kommunizieren",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GsxAMfgNLVAWUpwA.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kRytgldypavAUJDr.pdf",
   },
   {
     id: "2-3-grenzen-setzen",
@@ -106,7 +106,7 @@ const infografiken: Array<{
     category: "kommunizieren",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XgcfOMoqhHGutcAe.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eLoMJrpVlKhOueFR.pdf",
   },
   {
     id: "2-4-pause-exit",
@@ -115,7 +115,7 @@ const infografiken: Array<{
     category: "kommunizieren",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xyxBQZqwmoCJXUdC.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kPmrXWJQbTNpJbSA.pdf",
   },
   {
     id: "2-5-zuhoeren-ohne-zustimmen",
@@ -124,7 +124,7 @@ const infografiken: Array<{
     category: "kommunizieren",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dpOnSpcYKcaGwUsr.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eMYmpdECocTQbVet.pdf",
   },
   {
     id: "2-6-beispiel-dialog",
@@ -133,7 +133,7 @@ const infografiken: Array<{
     category: "kommunizieren",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QIUSiqlCOSZNIVon.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/meEvvJarNxmPJExY.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // SPICKZETTEL (A4, laminierbar)
@@ -145,7 +145,7 @@ const infografiken: Array<{
     category: "kommunizieren",
     type: "Spickzettel",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KOdAnsuLuWTbgugk.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KvmohTCDARNXkHIY.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 3: UNTERSTÜTZEN
@@ -157,7 +157,7 @@ const infografiken: Array<{
     category: "unterstuetzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BbnlWVWaxUeNDYvi.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FOZYnweFmVcMXYyr.pdf",
   },
   {
     id: "k3-2-rolle-klaeren",
@@ -166,7 +166,7 @@ const infografiken: Array<{
     category: "unterstuetzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mTlmmrXfScSCxoiC.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QdotIAuRiArcunzw.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LEKuHRVBIRdTClYJ.pdf",
   },
   {
     id: "k3-3-drei-saeulen",
@@ -175,7 +175,7 @@ const infografiken: Array<{
     category: "unterstuetzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TaDXhEgHiyBeiQsT.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MFpipriJIGJRQWBP.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bWugGxMdeykNGBUW.pdf",
   },
   {
     id: "k3-4-konsistenz",
@@ -184,7 +184,7 @@ const infografiken: Array<{
     category: "unterstuetzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MCMaGcrhifsekEqb.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ssHFmXnhPaiGnfQm.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vfDYZzjEwJsEhzch.pdf",
   },
   {
     id: "k3-5-leitlinien",
@@ -193,7 +193,7 @@ const infografiken: Array<{
     category: "unterstuetzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UYzFtDygMzdBJaVD.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tkzCKCZmvPggPJzT.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GaQLbgKUokbWwUUi.pdf",
   },
   {
     id: "k3-6-achtsamkeit",
@@ -202,7 +202,7 @@ const infografiken: Array<{
     category: "unterstuetzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xwVvAHgRQPALOgcm.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yCnoIKuZmpfPFbmC.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/umhOiOvEhETLRqtq.pdf",
   },
   {
     id: "k3-7-alltags-tipps",
@@ -211,7 +211,7 @@ const infografiken: Array<{
     category: "unterstuetzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rnwlrkNLwFQsLjnU.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EBqMZCZaVYhVklrB.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IokELYIzmFREYEyL.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 4: GRENZEN
@@ -223,7 +223,7 @@ const infografiken: Array<{
     category: "grenzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sHAAizMXNqAZSlEn.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MvJAukzcocWgADRx.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/paQhPvSEeVFldFly.pdf",
   },
   {
     id: "k4-2-spiegeln-aufsaugen",
@@ -232,7 +232,7 @@ const infografiken: Array<{
     category: "grenzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dbTRALbBXTpWdIFc.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FGzazGnLxIEmXPfG.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vonZwVksXmKubcoV.pdf",
   },
   {
     id: "k4-3-vier-arten-grenzen",
@@ -241,7 +241,7 @@ const infografiken: Array<{
     category: "grenzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DRIOXYdXxPGeVnra.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DWqzlhkjrzyHkvhb.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HYXOHsOYKkirFsAw.pdf",
   },
   {
     id: "k4-4-grenzen-erkennen",
@@ -250,7 +250,7 @@ const infografiken: Array<{
     category: "grenzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ygTqOQYNTBmkEaim.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LMKLnWxmcLXzeTbf.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRxYofCvmJLaNrJq.pdf",
   },
   {
     id: "k4-5-warum-grenzen-helfen",
@@ -259,7 +259,7 @@ const infografiken: Array<{
     category: "grenzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skjcpJqOmcldYXbm.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UnXDfBEavTklhetV.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OqhEzMeLpTbBtWJK.pdf",
   },
   {
     id: "k4-6-lmk-exit-strategie",
@@ -268,7 +268,7 @@ const infografiken: Array<{
     category: "grenzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aAHNYbmetQXpdBOS.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NMzgafvdNvzovKcq.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xPwKbMxFXGMwUeIx.pdf",
   },
   {
     id: "k4-7-grenzen-kommunizieren",
@@ -277,7 +277,7 @@ const infografiken: Array<{
     category: "grenzen",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dfwRqrujZwwwPRJo.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MkJyjgTqTgBvpdwz.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WCKlwBXhspmnwAsS.pdf",
   },
   {
     id: "k4-8-spickzettel-grenzen",
@@ -286,7 +286,7 @@ const infografiken: Array<{
     category: "grenzen",
     type: "Spickzettel",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tahWXflXNFEcSrog.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BqsfiottQigBlNqQ.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fpiWoEEuimfWEknU.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 5: SELBSTFÜRSORGE
@@ -298,7 +298,7 @@ const infografiken: Array<{
     category: "selbstfuersorge",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tpAIcOfgaoOyBsXq.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lGAViqmCntrSgvgp.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MsnEWTYKhKjWlcWT.pdf",
   },
   {
     id: "k5-2-sauerstoffmaske",
@@ -307,7 +307,7 @@ const infografiken: Array<{
     category: "selbstfuersorge",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRRUMsKJubrsepfQ.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CrkOXfLHkRgJVlJT.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PBsmQYlZQEoWHNQn.pdf",
   },
   {
     id: "k5-3-radikale-akzeptanz",
@@ -316,7 +316,7 @@ const infografiken: Array<{
     category: "selbstfuersorge",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qJdMwWgUcXMyAvka.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NRUAfrXcenmYKrBI.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BqXdCJCcYGtIAWvl.pdf",
   },
   {
     id: "k5-4-stopp-technik",
@@ -325,7 +325,7 @@ const infografiken: Array<{
     category: "selbstfuersorge",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BnWHSnpWkkqoKOIi.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GQuGQszUicUrRdYS.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GaLovONlhqYHGIlm.pdf",
   },
   {
     id: "k5-5-energie-konto",
@@ -334,7 +334,7 @@ const infografiken: Array<{
     category: "selbstfuersorge",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tLphIwdMNjFIjltr.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ovLjgqiuBwDHrzco.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DJTAFcqMvbRpGaBP.pdf",
   },
   {
     id: "k5-6-erlaubnis-karte",
@@ -343,7 +343,7 @@ const infografiken: Array<{
     category: "selbstfuersorge",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YuJEhBgjQWuztswb.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QTZNugMQQrDeZgIZ.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ttTtLWeYiUiQaBnR.pdf",
   },
   // === K6 GENESUNG ===
   {
@@ -353,7 +353,7 @@ const infografiken: Array<{
     category: "genesung",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ItokRaWotdNKpoEx.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/deGKYGDYjvAXWWxE.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HxKACGuyOnlrGyHX.pdf",
   },
   {
     id: "k6-2-fortschritt-paradox",
@@ -362,7 +362,7 @@ const infografiken: Array<{
     category: "genesung",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xjUbWjBdgOfAOBSO.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KKJDrFZiXpfzzolY.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EajEIAEeOKqxFrTB.pdf",
   },
   {
     id: "k6-3-remission-vs-heilung",
@@ -371,7 +371,7 @@ const infografiken: Array<{
     category: "genesung",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tbZXsVZHQhEaDQKT.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HBTJgTGVTPgZVhjh.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vAIgOqKhoorEdMbu.pdf",
   },
   {
     id: "k6-4-fuenf-faktoren-genesung",
@@ -380,7 +380,7 @@ const infografiken: Array<{
     category: "genesung",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EbMUjOHuCQRAoyMK.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zwrhfhOYAmpNBsHP.pdf",
   },
   {
     id: "k6-5-ihre-rolle-genesungsprozess",
@@ -389,7 +389,7 @@ const infografiken: Array<{
     category: "genesung",
     type: "Infografik",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/nFoVeLJURBcMhQBT.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FxkhPJHjIBbWdpWl.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JviFfFHCaSIpsKDF.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // NOTFALLKARTE
@@ -401,7 +401,7 @@ const infografiken: Array<{
     category: "soforthilfe",
     type: "Notfallkarte",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZQvtZgegdqQJmRdy.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lDmTYiyvVMQWXbvG.pdf",
   },
 ];
 

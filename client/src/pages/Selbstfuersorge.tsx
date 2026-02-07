@@ -663,37 +663,37 @@ export default function Selbstfuersorge() {
                       title: "Warnsignale der Überlastung",
                       desc: "Ampel-Stufenmodell: Grün → Gelb → Rot – erkennen Sie rechtzeitig, wann es zu viel wird.",
                       webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tpAIcOfgaoOyBsXq.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lGAViqmCntrSgvgp.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/canZVmoUNvnwMWlq.pdf"
                     },
                     {
                       title: "Die Sauerstoffmaske",
                       desc: "Kreislauf-Diagramm: Teufelskreis vs. positiver Kreislauf – warum Selbstfürsorge keine Selbstsucht ist.",
                       webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRRUMsKJubrsepfQ.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CrkOXfLHkRgJVlJT.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iwXpWPMASzcZQJuD.pdf"
                     },
                     {
                       title: "Radikale Akzeptanz",
                       desc: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung.",
                       webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qJdMwWgUcXMyAvka.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NRUAfrXcenmYKrBI.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ndcjDugDmbuGOmpm.pdf"
                     },
                     {
                       title: "Die STOPP-Technik",
                       desc: "5 Schritte aus der Stressspirale: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden.",
                       webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BnWHSnpWkkqoKOIi.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GQuGQszUicUrRdYS.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sUpspkQvInhoxNHw.pdf"
                     },
                     {
                       title: "Ihr Energie-Konto",
                       desc: "Stock-&-Flow-Diagramm: Was füllt Ihre Batterie auf, was leert sie? Achten Sie auf die Balance.",
                       webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tLphIwdMNjFIjltr.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ovLjgqiuBwDHrzco.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sHloduAxWVzRBaQS.pdf"
                     },
                     {
                       title: "Erlaubnis-Karte",
                       desc: "9 Erlaubnisse, die sich Angehörige oft nicht geben – gültig ab sofort, unbefristet.",
                       webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YuJEhBgjQWuztswb.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QTZNugMQQrDeZgIZ.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hFNkSlPhSDWvVuwK.pdf"
                     }
                   ].map((item, i) => (
                     <Card key={i} className="overflow-hidden border-border/50 hover:shadow-md transition-shadow">

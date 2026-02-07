@@ -501,31 +501,31 @@ export default function Genesung() {
                       title: "Genesung in Zahlen",
                       desc: "Orientierungs-Tracker mit Langzeitdaten",
                       img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ItokRaWotdNKpoEx.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/deGKYGDYjvAXWWxE.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NLLCJFBzWWbSNONT.pdf"
                     },
                     {
                       title: "Das Fortschritt-Paradox",
                       desc: "Warum Rückfälle zum Weg gehören",
                       img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xjUbWjBdgOfAOBSO.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KKJDrFZiXpfzzolY.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fXdbQhOkZRXfkBlk.pdf"
                     },
                     {
                       title: "Remission vs. Heilung",
                       desc: "Was Besserung wirklich bedeutet",
                       img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tbZXsVZHQhEaDQKT.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HBTJgTGVTPgZVhjh.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/USrkPreGMsZiBDAr.pdf"
                     },
                     {
                       title: "5 Faktoren, die Genesung fördern",
                       desc: "Säulen-Modell: Was positiv beeinflusst",
                       img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EbMUjOHuCQRAoyMK.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TMzKmKoTIocOMGFv.pdf"
                     },
                     {
                       title: "Ihre Rolle im Genesungsprozess",
                       desc: "Was Sie tun können (und was nicht)",
                       img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/nFoVeLJURBcMhQBT.webp",
-                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FxkhPJHjIBbWdpWl.pdf"
+                      pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mxRTIiuzODSXVagK.pdf"
                     },
                   ].map((item, i) => (
                     <Card key={i} className="overflow-hidden border-border/50 hover:shadow-md transition-shadow">

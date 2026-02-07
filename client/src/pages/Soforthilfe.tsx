@@ -399,95 +399,6 @@ export default function Notfall() {
 
             </div>
 
-            {/* ═══ Notfallkarte zum Ausdrucken ═══ */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Notfallkarte zum Ausdrucken
-              </h2>
-
-              <Card className="bg-card border overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="md:flex">
-                    {/* Vorschau-Bild */}
-                    <div className="md:w-1/3 bg-[oklch(0.96_0.01_80)] p-4 flex items-center justify-center">
-                      <img
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp"
-                        alt="Notfallkarte Zürich – Vorschau"
-                        className="rounded-lg shadow-md max-h-64 w-auto"
-                      />
-                    </div>
-                    {/* Text + Download */}
-                    <div className="md:w-2/3 p-6 flex flex-col justify-center">
-                      <h3 className="font-semibold text-lg text-foreground mb-2">
-                        Notfallkarte Zürich (PDF, A4)
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                        Alle wichtigen Nummern auf einer Seite – zum Ausdrucken, Aufhängen oder Weitergeben.
-                        Enthält die Ampel-Logik (ROT / GELB / GRÜN) und den Schnell-Entscheid.
-                      </p>
-                      <div className="flex flex-wrap gap-3">
-                        <a
-                          href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZQvtZgegdqQJmRdy.pdf"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm text-white transition-colors"
-                          style={{ backgroundColor: "oklch(0.55 0.15 145)" }}
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          PDF herunterladen
-                        </a>
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-3">
-                        Stand: 06.02.2026 · Version 04 · Quelle: pukzh.ch
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* ═══ Online-Ressourcen & Beratung ═══ */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Online-Ressourcen & Beratung
-              </h2>
-              
-              <div className="space-y-4">
-                {ONLINE_RESSOURCEN.map((res) => {
-                  const url = urlById(res.id);
-                  if (!url) return null;
-                  return (
-                    <Card key={res.id} className="border-border/50 hover:border-[oklch(0.65_0.12_55)] transition-colors">
-                      <CardContent className="p-5">
-                        <div className="flex items-center justify-between gap-4">
-                          <div>
-                            <h3 className="font-display font-semibold text-foreground mb-1">{url.label}</h3>
-                            <p className="text-muted-foreground text-sm">{res.beschreibung}</p>
-                          </div>
-                          <a href={url.url} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" size="sm">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Website
-                            </Button>
-                          </a>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            </motion.div>
-
             {/* ═══ Krisensituationen ═══ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -792,6 +703,97 @@ export default function Notfall() {
                 </AccordionItem>
               </Accordion>
             </motion.div>
+
+
+            {/* ═══ Notfallkarte zum Ausdrucken ═══ */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Notfallkarte zum Ausdrucken
+              </h2>
+
+              <Card className="bg-card border overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="md:flex">
+                    {/* Vorschau-Bild */}
+                    <div className="md:w-1/3 bg-[oklch(0.96_0.01_80)] p-4 flex items-center justify-center">
+                      <img
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp"
+                        alt="Notfallkarte Zürich – Vorschau"
+                        className="rounded-lg shadow-md max-h-64 w-auto"
+                      />
+                    </div>
+                    {/* Text + Download */}
+                    <div className="md:w-2/3 p-6 flex flex-col justify-center">
+                      <h3 className="font-semibold text-lg text-foreground mb-2">
+                        Notfallkarte Zürich (PDF, A4)
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                        Alle wichtigen Nummern auf einer Seite – zum Ausdrucken, Aufhängen oder Weitergeben.
+                        Enthält die Ampel-Logik (ROT / GELB / GRÜN) und den Schnell-Entscheid.
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZQvtZgegdqQJmRdy.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm text-white transition-colors"
+                          style={{ backgroundColor: "oklch(0.55 0.15 145)" }}
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          PDF herunterladen
+                        </a>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-3">
+                        Stand: 06.02.2026 · Version 04 · Quelle: pukzh.ch
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* ═══ Online-Ressourcen & Beratung ═══ */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Online-Ressourcen & Beratung
+              </h2>
+              
+              <div className="space-y-4">
+                {ONLINE_RESSOURCEN.map((res) => {
+                  const url = urlById(res.id);
+                  if (!url) return null;
+                  return (
+                    <Card key={res.id} className="border-border/50 hover:border-[oklch(0.65_0.12_55)] transition-colors">
+                      <CardContent className="p-5">
+                        <div className="flex items-center justify-between gap-4">
+                          <div>
+                            <h3 className="font-display font-semibold text-foreground mb-1">{url.label}</h3>
+                            <p className="text-muted-foreground text-sm">{res.beschreibung}</p>
+                          </div>
+                          <a href={url.url} target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline" size="sm">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Website
+                            </Button>
+                          </a>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </motion.div>
+
 
             {/* ═══ Persönlicher Krisenplan ═══ */}
             <motion.div

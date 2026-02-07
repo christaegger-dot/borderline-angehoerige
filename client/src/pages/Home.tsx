@@ -126,6 +126,16 @@ const crisisMatrix = [
     bgColor: "oklch(0.95 0.03 145)",
     icon: CheckCircle2
   },
+  {
+    level: "erschoepft",
+    title: "Ich bin am Limit",
+    description: "Erschöpfung, Überforderung, eigene Grenzen erreicht",
+    action: "Für mich sorgen",
+    href: "/selbstfuersorge",
+    color: "oklch(0.50 0.08 270)",
+    bgColor: "oklch(0.95 0.02 270)",
+    icon: Sparkles
+  },
 ];
 
 export default function Home() {
@@ -184,6 +194,13 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
+              <div className="mt-4">
+                <Link href="/soforthilfe" className="inline-flex items-center gap-2 text-[oklch(0.50_0.20_25)] hover:text-[oklch(0.45_0.22_25)] font-medium transition-colors group">
+                  <Phone className="w-4 h-4" />
+                  <span>Akute Krise? Soforthilfe</span>
+                  <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -213,7 +230,7 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {crisisMatrix.map((item, index) => {
               const Icon = item.icon;
               return (
@@ -482,12 +499,12 @@ export default function Home() {
                       Materialien herunterladen
                     </h3>
                     <p className="text-muted-foreground mb-4">
-                      Infografiken als A4-PDF – für Beratung und Alltag
+                      40 Infografiken &amp; Handouts als A4-PDF – für Beratung und Alltag
                     </p>
                     <Link href="/materialien">
                       <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white gap-2">
                         <Download className="w-4 h-4" />
-                        Zu den Materialien
+                        40 Materialien durchsuchen
                       </Button>
                     </Link>
                   </div>

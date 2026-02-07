@@ -401,7 +401,7 @@ const infografiken: Array<{
     category: "soforthilfe",
     type: "Notfallkarte",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lDmTYiyvVMQWXbvG.pdf",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FTdjCPHRXUSxwbVS.pdf",
   },
 ];
 

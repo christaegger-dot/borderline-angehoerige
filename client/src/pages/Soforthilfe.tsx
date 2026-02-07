@@ -738,7 +738,7 @@ export default function Notfall() {
                       </p>
                       <div className="flex flex-wrap gap-3">
                         <a
-                          href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iTdFELKKPuNlujhR.pdf"
+                          href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FTdjCPHRXUSxwbVS.pdf"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm text-white transition-colors"

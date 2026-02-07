@@ -1,10 +1,11 @@
 import Layout from "@/components/Layout";
+import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { AlertTriangle, ArrowRight, Phone, Shield, Clock, Download, FileText, Image, RefreshCw } from "lucide-react";
+import { AlertTriangle, ArrowRight, Phone, Shield, Clock, Download, MessageCircle, XCircle, RefreshCw } from "lucide-react";
 import { Link } from "wouter";
-import { kontaktById, WEBSITE_ROT } from "@/data/kontakte";
+import { kontaktById } from "@/data/kontakte";
 
 const rot144 = kontaktById("ROT_144")!;
 const gruen143 = kontaktById("GRUEN_143")!;
@@ -74,17 +75,15 @@ export default function UnterstuetzenKrise() {
       <section className="py-12 md:py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+
             {/* Ampel-System */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Das Ampel-System: Krisen erkennen"
+              icon={<AlertTriangle className="w-7 h-7 text-terracotta-mid" />}
+              id="ampel-system"
+              defaultOpen={true}
+              preview="Nicht jede schwierige Situation ist eine Krise. Das Ampel-System hilft Ihnen, die Intensität einzuschätzen."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Das Ampel-System: Krisen erkennen
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nicht jede schwierige Situation ist eine Krise. Das Ampel-System hilft Ihnen, die Intensität einzuschätzen und angemessen zu reagieren.
               </p>
@@ -132,20 +131,15 @@ export default function UnterstuetzenKrise() {
                   </Card>
                 ))}
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* 4 Schritte der Deeskalation */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="4 Schritte der Deeskalation"
+              icon={<Shield className="w-7 h-7 text-terracotta-mid" />}
+              id="deeskalation"
+              preview="Sicherheit prüfen, Ruhe bewahren, Validieren, Skills anbieten – ein bewährtes Vorgehen."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Shield className="w-8 h-8 text-terracotta-mid" />
-                4 Schritte der Deeskalation
-              </h2>
-              
               <div className="space-y-4">
                 {[
                   {
@@ -191,19 +185,15 @@ export default function UnterstuetzenKrise() {
                   </Card>
                 ))}
               </div>
-            </motion.div>
+            </ContentSection>
 
-            {/* Konkrete Formulierungen für die Krise */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            {/* Was Sie in der Krise sagen können */}
+            <ContentSection
+              title="Was Sie in der Krise sagen können"
+              icon={<MessageCircle className="w-7 h-7 text-sage" />}
+              id="formulierungen"
+              preview="In einer Krise zählt jedes Wort. Diese Formulierungen haben sich bewährt."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Was Sie in der Krise sagen können
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 In einer Krise zählt jedes Wort. Diese Formulierungen haben sich bewährt:
               </p>
@@ -255,19 +245,15 @@ export default function UnterstuetzenKrise() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Was Sie NICHT tun sollten */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Was Sie in der Krise vermeiden sollten"
+              icon={<XCircle className="w-7 h-7 text-alert" />}
+              id="vermeiden"
+              preview="Drohen, Vorwürfe machen oder Gefühle herunterspielen – diese Reaktionen können die Krise verschärfen."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Was Sie in der Krise vermeiden sollten
-              </h2>
-              
               <Card className="border-l-4 border-l-alert bg-terracotta-wash">
                 <CardContent className="p-6">
                   <ul className="space-y-3">
@@ -287,20 +273,15 @@ export default function UnterstuetzenKrise() {
                   </ul>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Nach der Krise */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Nach der Krise"
+              icon={<Clock className="w-7 h-7 text-sage" />}
+              id="nach-der-krise"
+              preview="Wenn die akute Krise vorbei ist, ist es wichtig, das Erlebte zu verarbeiten – für Sie beide."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Clock className="w-8 h-8 text-sage" />
-                Nach der Krise
-              </h2>
-              
               <Card className="bg-sage-light/20 border-sage">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -322,7 +303,7 @@ export default function UnterstuetzenKrise() {
                   </ul>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Materialien zum Download */}
             <motion.div

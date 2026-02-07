@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
+import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Calendar } from "lucide-react";
+import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Calendar, Headphones, MessageCircle } from "lucide-react";
 import { kontaktById, emailById, urlById } from "@/data/kontakte";
 
 const selbsthilfeCH = kontaktById("INFO_SELBSTHILFE_CH")!;
@@ -49,28 +50,20 @@ export default function Selbsthilfegruppen() {
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            {/* Stand by You */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+
+            {/* Stand by You – immer offen als Hauptanlaufstelle */}
+            <ContentSection
+              title="Stand by You Schweiz"
+              icon={<Heart className="w-7 h-7 text-sage-mid" />}
+              id="stand-by-you"
+              defaultOpen={true}
+              preview="Die zentrale Anlaufstelle für Angehörige von Menschen mit psychischen Erkrankungen in der Schweiz."
             >
               <Card className="border-sage-mid/30 bg-sage-wash/30 overflow-hidden">
                 <CardContent className="p-6 md:p-8">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-sage-mid flex items-center justify-center flex-shrink-0">
-                      <Heart className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <h2 className="text-2xl font-semibold text-foreground mb-1">
-                        Stand by You Schweiz
-                      </h2>
-                      <p className="text-sm text-muted-foreground">
-                        Ehemals VASK (Vereinigung Angehöriger von Schizophrenie/Psychisch-Kranken)
-                      </p>
-                    </div>
-                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Ehemals VASK (Vereinigung Angehöriger von Schizophrenie/Psychisch-Kranken)
+                  </p>
                   
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     Stand by You macht Angehörige und Vertraute von Menschen mit psychischen Erkrankungen 
@@ -128,19 +121,15 @@ export default function Selbsthilfegruppen() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
-            {/* Selbsthilfe Schweiz */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            {/* Selbsthilfegruppen nach Region */}
+            <ContentSection
+              title="Selbsthilfegruppen für Borderline-Angehörige"
+              icon={<MapPin className="w-7 h-7 text-terracotta-mid" />}
+              id="selbsthilfegruppen"
+              preview="Selbsthilfe Schweiz koordiniert Gruppen in der ganzen Schweiz – finden Sie eine Gruppe in Ihrer Nähe."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Selbsthilfegruppen für Borderline-Angehörige
-              </h2>
-              
               <Card className="border-border/50 mb-6">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -260,19 +249,15 @@ export default function Selbsthilfegruppen() {
                   </a>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Weitere Organisationen */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Weitere Anlaufstellen"
+              icon={<Globe className="w-7 h-7 text-slate-blue" />}
+              id="weitere-anlaufstellen"
+              preview="Pro Mente Sana, Equilibrium und die Fachstelle Angehörigenarbeit PUK Zürich bieten zusätzliche Unterstützung."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Weitere Anlaufstellen
-              </h2>
-              
               <div className="space-y-4">
                 {/* Pro Mente Sana */}
                 <Card className="border-border/50">
@@ -371,19 +356,15 @@ export default function Selbsthilfegruppen() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Online-Angebote */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Online-Angebote"
+              icon={<Headphones className="w-7 h-7 text-terracotta" />}
+              id="online-angebote"
+              preview="Podcast, Online-Foren und virtuelle Selbsthilfegruppen – Unterstützung von überall."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Online-Angebote
-              </h2>
-              
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <div className="space-y-4">
@@ -413,9 +394,9 @@ export default function Selbsthilfegruppen() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
-            {/* Hinweis */}
+            {/* Hinweis – bleibt als motion.div (Abschluss-Card) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

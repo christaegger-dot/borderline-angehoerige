@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
+import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Compass, ArrowRight, CheckCircle2, XCircle, Lightbulb, Download, Image, RefreshCw } from "lucide-react";
+import { Compass, ArrowRight, CheckCircle2, XCircle, Lightbulb, Download, Image, RefreshCw, Users, Shield, BookOpen } from "lucide-react";
 import { Link } from "wouter";
 
 export default function UnterstuetzenUebersicht() {
@@ -43,21 +44,20 @@ export default function UnterstuetzenUebersicht() {
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            {/* Leuchtturm Metapher */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+
+            {/* Leuchtturm Metapher – immer offen als Einstieg */}
+            <ContentSection
+              title="Die Leuchtturm-Metapher"
+              icon={<Compass className="w-7 h-7 text-terracotta" />}
+              id="leuchtturm"
+              defaultOpen={true}
+              preview="Sie können das Meer nicht beruhigen – aber Sie können Licht geben und Orientierung bieten."
             >
               <Card className="bg-terracotta-light/20 border-terracotta">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl">🏠</span>
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-3">
-                        Die Leuchtturm-Metapher
-                      </h3>
                       <p className="text-muted-foreground leading-relaxed">
                         Stellen Sie sich vor, Sie sind ein Leuchtturm. Sie stehen fest auf Ihrem Fundament, während die Wellen um Sie herum toben. Sie können das Meer nicht beruhigen – aber Sie können Licht geben und Orientierung bieten. Sie zeigen den Weg, ohne selbst ins Wasser zu springen.
                       </p>
@@ -65,21 +65,16 @@ export default function UnterstuetzenUebersicht() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Ihre Rolle */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Ihre Rolle klären"
+              icon={<Users className="w-7 h-7 text-sage-dark" />}
+              id="rolle"
+              preview="Was Sie sein können – und was nicht Ihre Aufgabe ist."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Ihre Rolle klären
-              </h2>
-              
               <div className="grid md:grid-cols-2 gap-6 [&>*:first-child]:md:col-span-2">
-                {/* Was Sie sind */}
                 <Card className="border-sage-mid">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
@@ -103,7 +98,6 @@ export default function UnterstuetzenUebersicht() {
                   </CardContent>
                 </Card>
 
-                {/* Was Sie nicht sind */}
                 <Card className="border-terracotta-mid">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
@@ -127,19 +121,15 @@ export default function UnterstuetzenUebersicht() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Das verlorene Kind */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Das verlorene Kind verstehen"
+              icon={<Lightbulb className="w-7 h-7 text-terracotta-mid" />}
+              id="verlorenes-kind"
+              preview="Menschen mit Borderline erleben in Krisen oft den Zustand eines verängstigten Kindes – und brauchen entsprechende Reaktionen."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Das verlorene Kind verstehen
-              </h2>
-              
               <Card className="bg-terracotta-wash/30 border-terracotta/50">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed mb-4">
@@ -159,19 +149,15 @@ export default function UnterstuetzenUebersicht() {
               <p className="text-xs text-muted-foreground mt-3">
                 Quelle: Mason & Kreger, "Schluss mit dem Eiertanz" (2010)
               </p>
-            </motion.div>
+            </ContentSection>
 
             {/* Konsistenz-Prinzip */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Das Konsistenz-Prinzip"
+              icon={<Shield className="w-7 h-7 text-sage-mid" />}
+              id="konsistenz"
+              preview="Wenn mehrere Angehörige involviert sind, müssen alle an einem Strang ziehen."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Das Konsistenz-Prinzip
-              </h2>
-              
               <Card className="bg-sage-wash/50 border-sage-mid/30 mb-6">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed text-lg">
@@ -216,21 +202,17 @@ export default function UnterstuetzenUebersicht() {
               </div>
               
               <p className="text-xs text-muted-foreground mt-4">
-                Quelle: Gunderson, J.G. et al. (2011). Family Guidelines for BPD
+                Quelle: Mason & Kreger, "Schluss mit dem Eiertanz" (2010)
               </p>
-            </motion.div>
+            </ContentSection>
 
             {/* Die drei Säulen */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Die drei Säulen hilfreicher Unterstützung"
+              icon={<CheckCircle2 className="w-7 h-7 text-sage-mid" />}
+              id="drei-saeulen"
+              preview="Präsenz, Validierung und Stabilität – die drei Grundpfeiler, die wirklich helfen."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Die drei Säulen hilfreicher Unterstützung
-              </h2>
-              
               <div className="space-y-4">
                 {[
                   {
@@ -260,19 +242,15 @@ export default function UnterstuetzenUebersicht() {
                   </Card>
                 ))}
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* 15 Leitlinien Übersicht */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="15 evidenzbasierte Leitlinien"
+              icon={<BookOpen className="w-7 h-7 text-slate-blue" />}
+              id="leitlinien"
+              preview="Von Dr. John Gunderson (McLean Hospital/Harvard) entwickelt – wissenschaftlich fundierte Leitlinien für Angehörige."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                15 evidenzbasierte Leitlinien
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Diese Leitlinien wurden von Dr. John Gunderson (McLean Hospital/Harvard) entwickelt und sind wissenschaftlich fundiert. Sie fassen zusammen, was wirklich hilft.
               </p>
@@ -387,9 +365,9 @@ export default function UnterstuetzenUebersicht() {
               <p className="text-xs text-muted-foreground mt-4">
                 Quelle: Gunderson, J.G. et al. (2011). Family Guidelines for BPD. McLean Hospital / NEA-BPD
               </p>
-            </motion.div>
+            </ContentSection>
 
-            {/* Materialien zum Download */}
+            {/* Materialien zum Download – bleibt als motion.div */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -432,7 +410,7 @@ export default function UnterstuetzenUebersicht() {
                     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rnwlrkNLwFQsLjnU.webp"
                   }
                 ].map((item, index) => (
-                  <Card key={index} className={`overflow-hidden hover:shadow-md transition-shadow ${index === 0 ? "md:col-span-2" : ""}`}>
+                  <Card key={index} className={`overflow-hidden ${index === 0 ? "md:col-span-2" : ""}`}>
                     <div className="aspect-[4/3] bg-muted overflow-hidden">
                       <img 
                         src={item.url} 

@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
+import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Calendar, ArrowRight, CheckCircle2, Heart, Clock, Users, Lightbulb } from "lucide-react";
+import { Calendar, ArrowRight, CheckCircle2, Heart, Clock, Users, Lightbulb, AlertTriangle } from "lucide-react";
 import { Link } from "wouter";
 
 export default function UnterstuetzenAlltag() {
@@ -43,18 +44,15 @@ export default function UnterstuetzenAlltag() {
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+
             {/* Stabilität bieten */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Stabilität und Struktur bieten"
+              icon={<Clock className="w-7 h-7 text-sage" />}
+              id="stabilitaet"
+              defaultOpen={true}
+              preview="Menschen mit Borderline erleben oft inneres Chaos. Äussere Struktur kann helfen, dieses Chaos zu regulieren."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Clock className="w-8 h-8 text-sage" />
-                Stabilität und Struktur bieten
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Menschen mit Borderline erleben oft inneres Chaos. Äussere Struktur kann helfen, dieses Chaos zu regulieren. Sie können Stabilität bieten durch:
               </p>
@@ -88,20 +86,15 @@ export default function UnterstuetzenAlltag() {
                   </Card>
                 ))}
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Emotionale Verfügbarkeit */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Emotionale Verfügbarkeit zeigen"
+              icon={<Heart className="w-7 h-7 text-terracotta" />}
+              id="emotionale-verfuegbarkeit"
+              preview="Emotionale Verfügbarkeit bedeutet nicht, immer verfügbar zu sein. Es bedeutet, in den Momenten, in denen Sie da sind, wirklich präsent zu sein."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Heart className="w-8 h-8 text-terracotta" />
-                Emotionale Verfügbarkeit zeigen
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Emotionale Verfügbarkeit bedeutet nicht, immer verfügbar zu sein. Es bedeutet, in den Momenten, in denen Sie da sind, wirklich präsent zu sein.
               </p>
@@ -125,19 +118,15 @@ export default function UnterstuetzenAlltag() {
                   </ul>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Beziehungs-Achtsamkeit */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Beziehungs-Achtsamkeit"
+              icon={<Users className="w-7 h-7 text-sage-mid" />}
+              id="beziehungs-achtsamkeit"
+              preview="Bewusst und nicht-wertend wahrnehmen, was in der Interaktion gerade passiert – bei Ihnen und bei Ihrem Gegenüber."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Beziehungs-Achtsamkeit
-              </h2>
-              
               <Card className="bg-sage-wash/50 border-sage-mid/30 mb-6">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed">
@@ -192,20 +181,15 @@ export default function UnterstuetzenAlltag() {
               <p className="text-xs text-muted-foreground mt-4">
                 Quelle: Family Connections Program (NEA-BPD)
               </p>
-            </motion.div>
+            </ContentSection>
 
             {/* Gemeinsame Aktivitäten */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Gemeinsame Aktivitäten gestalten"
+              icon={<Users className="w-7 h-7 text-slate-blue" />}
+              id="gemeinsame-aktivitaeten"
+              preview="Positive gemeinsame Erlebnisse stärken die Beziehung und schaffen Ressourcen für schwierige Zeiten."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Users className="w-8 h-8 text-slate-blue" />
-                Gemeinsame Aktivitäten gestalten
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Positive gemeinsame Erlebnisse stärken die Beziehung und schaffen Ressourcen für schwierige Zeiten. Wichtig ist: Die Aktivität sollte beiden Freude machen.
               </p>
@@ -229,24 +213,19 @@ export default function UnterstuetzenAlltag() {
               <Card className="mt-6 bg-sand-muted border-sand-mid">
                 <CardContent className="p-5">
                   <p className="text-muted-foreground text-sm">
-                    <strong className="text-foreground">Tipp:</strong> Planen Sie regelmässige "Qualitätszeit" ein – auch wenn es nur 15 Minuten sind. Die Regelmässigkeit ist wichtiger als die Dauer.
+                    <strong className="text-foreground">Tipp:</strong> Planen Sie regelmässige «Positiv-Termine» ein – auch wenn es nur 15 Minuten sind. Qualität zählt mehr als Quantität.
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Konkrete Tipps */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Was Sie konkret tun können"
+              icon={<Lightbulb className="w-7 h-7 text-sand-mid" />}
+              id="konkrete-tipps"
+              preview="Praktische Handlungen, die im Alltag einen Unterschied machen."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Lightbulb className="w-8 h-8 text-sand-mid" />
-                Was Sie konkret tun können
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Hier sind praktische Handlungen, die im Alltag einen Unterschied machen:
               </p>
@@ -335,19 +314,15 @@ export default function UnterstuetzenAlltag() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Grenzen der Alltagsunterstützung */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
-              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
+            <ContentSection
+              title="Grenzen der Alltagsunterstützung"
+              icon={<AlertTriangle className="w-7 h-7 text-terracotta-mid" />}
+              id="grenzen"
+              preview="Auch im Alltag gibt es Grenzen. Sie müssen nicht perfekt sein – nur beständig und wohlwollend."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Grenzen der Alltagsunterstützung
-              </h2>            
               <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -371,7 +346,7 @@ export default function UnterstuetzenAlltag() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Navigation */}
             <motion.div

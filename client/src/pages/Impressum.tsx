@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
+import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { FileText, BookOpen, ExternalLink, Phone, Mail, MapPin } from "lucide-react";
-import { kontaktById, emailById, WEBSITE_ROT } from "@/data/kontakte";
+import { FileText, BookOpen, Phone, Mail, Shield, Target, Scale, Copyright } from "lucide-react";
+import { kontaktById, emailById } from "@/data/kontakte";
 
 const fachstelle = kontaktById("INFO_FACHSTELLE")!;
 const emailAngehoerigen = emailById("EMAIL_ANGEHOERIGEN")!;
@@ -38,18 +39,18 @@ export default function Impressum() {
       {/* Content */}
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
-          <div className="max-w-3xl mx-auto space-y-8">
-            {/* Verantwortlich */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+          <div className="max-w-3xl mx-auto">
+
+            {/* Verantwortlich + Kontakt – immer offen */}
+            <ContentSection
+              title="Verantwortlich für den Inhalt"
+              icon={<Mail className="w-7 h-7 text-sage-mid" />}
+              id="verantwortlich"
+              defaultOpen={true}
+              preview="Christa Egger, Angehörigenberaterin – Fachstelle Angehörigenarbeit PUK Zürich."
             >
-              <Card className="border-border/50">
+              <Card className="border-border/50 mb-4">
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-foreground mb-4">
-                    Verantwortlich für den Inhalt
-                  </h2>
                   <div className="text-muted-foreground leading-relaxed space-y-2">
                     <p className="font-medium text-foreground">Christa Egger</p>
                     <p>Angehörigenberaterin</p>
@@ -61,19 +62,12 @@ export default function Impressum() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
 
-            {/* Kontakt */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
               <Card className="border-sage-mid/30 bg-sage-wash/30">
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-foreground mb-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">
                     Beratung für Angehörige
-                  </h2>
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Die <strong>Fachstelle Angehörigenarbeit</strong> an der Psychiatrischen Universitätsklinik Zürich (PUK) 
                     bietet Unterstützung und Beratung für Angehörige von psychisch erkrankten Menschen.
@@ -110,19 +104,18 @@ export default function Impressum() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
-            {/* Hinweis */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            {/* Hinweis + Zweck */}
+            <ContentSection
+              title="Zweck der Website"
+              icon={<Target className="w-7 h-7 text-terracotta" />}
+              id="zweck"
+              preview="Evidenzbasierte Informationen, praktische Strategien und Ressourcen zur Selbstfürsorge."
             >
-              <Card className="border-terracotta/30 bg-terracotta-wash/30">
+              <Card className="border-terracotta/30 bg-terracotta-wash/30 mb-4">
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-foreground mb-4">
-                    Wichtiger Hinweis
-                  </h2>
+                  <h3 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Diese Website ist <strong>keine offizielle Website</strong> der Psychiatrischen Universitätsklinik Zürich (PUK) 
                     oder einer anderen Institution. Sie stellt eine unabhängige Informationsressource dar, die auf Basis 
@@ -130,19 +123,9 @@ export default function Impressum() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
 
-            {/* Zweck */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-foreground mb-4">
-                    Zweck der Website
-                  </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     «Schluss mit dem Eiertanz» bietet Angehörigen von Menschen mit Borderline-Persönlichkeitsstörung:
                   </p>
@@ -166,19 +149,17 @@ export default function Impressum() {
                   </ul>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Haftungsausschluss */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <ContentSection
+              title="Haftungsausschluss"
+              icon={<Shield className="w-7 h-7 text-slate-blue" />}
+              id="haftung"
+              preview="Keine Gewähr für Richtigkeit – ersetzt keine professionelle Beratung, Diagnose oder Behandlung."
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-foreground mb-4">
-                    Haftungsausschluss
-                  </h2>
                   <div className="text-muted-foreground leading-relaxed space-y-4">
                     <p>
                       Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, 
@@ -197,20 +178,17 @@ export default function Impressum() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Quellenangaben */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <ContentSection
+              title="Quellenangaben"
+              icon={<BookOpen className="w-7 h-7 text-sage-mid" />}
+              id="quellen"
+              preview="Fachliteratur von Mason/Kreger, Linehan, Fruzzetti und Gunderson/Hoffman."
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-sage-mid" />
-                    Quellenangaben
-                  </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Die Inhalte dieser Website basieren auf anerkannter Fachliteratur und evidenzbasierten Methoden, 
                     insbesondere:
@@ -239,19 +217,17 @@ export default function Impressum() {
                   </ul>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Urheberrecht */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <ContentSection
+              title="Urheberrecht"
+              icon={<Copyright className="w-7 h-7 text-terracotta-mid" />}
+              id="urheberrecht"
+              preview="Schweizerisches Urheberrecht – Materialien für persönlichen Gebrauch und Angehörigenberatung."
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-foreground mb-4">
-                    Urheberrecht
-                  </h2>
                   <p className="text-muted-foreground leading-relaxed">
                     Die Inhalte und Werke auf dieser Website unterliegen dem schweizerischen Urheberrecht. 
                     Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb 
@@ -264,7 +240,7 @@ export default function Impressum() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Stand */}
             <motion.div

@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
+import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Heart, BookOpen, Shield, Users, Mail, ExternalLink } from "lucide-react";
+import { Heart, BookOpen, Shield, Users, Mail, ExternalLink, Target, FileText } from "lucide-react";
 import { Link } from "wouter";
 
 export default function UeberUns() {
@@ -37,17 +38,15 @@ export default function UeberUns() {
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            {/* Motivation */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+
+            {/* Motivation – immer offen */}
+            <ContentSection
+              title="Warum diese Website?"
+              icon={<Target className="w-7 h-7 text-terracotta" />}
+              id="motivation"
+              defaultOpen={true}
+              preview="Angehörige stehen oft vor einer doppelten Herausforderung: helfen wollen und sich hilflos fühlen."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Warum diese Website?
-              </h2>
-              
               <div className="prose prose-lg text-muted-foreground">
                 <p className="leading-relaxed mb-4">
                   Wenn ein nahestehender Mensch eine Borderline-Persönlichkeitsstörung hat, stehen Angehörige oft vor einer doppelten Herausforderung: Sie wollen helfen – und fühlen sich gleichzeitig hilflos. Sie lieben – und sind erschöpft. Sie verstehen nicht, was passiert – und haben Angst, etwas falsch zu machen.
@@ -61,19 +60,15 @@ export default function UeberUns() {
                   Diese Website möchte Angehörigen evidenzbasierte Werkzeuge an die Hand geben – nicht um die Erkrankung zu «heilen», sondern um den Alltag besser zu bewältigen, die Beziehung zu stärken und dabei auf sich selbst zu achten.
                 </p>
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Prinzipien */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Unsere Prinzipien"
+              icon={<Shield className="w-7 h-7 text-sage-mid" />}
+              id="prinzipien"
+              preview="Evidenzbasiert, entstigmatisierend, selbstfürsorge-orientiert und praxisnah."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Unsere Prinzipien
-              </h2>
-              
               <div className="grid gap-4">
                 {[
                   {
@@ -115,20 +110,15 @@ export default function UeberUns() {
                   );
                 })}
               </div>
-            </motion.div>
+            </ContentSection>
 
             {/* Quellen */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
-              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
+            <ContentSection
+              title="Wissenschaftliche Grundlagen"
+              icon={<FileText className="w-7 h-7 text-slate-blue" />}
+              id="quellen"
+              preview="DBT, Family Connections und die Standardwerke von Mason/Kreger und Kreisman/Straus."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Wissenschaftliche Grundlagen
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Die Inhalte dieser Website stützen sich auf etablierte Forschung und Therapieansätze:
               </p>
@@ -170,9 +160,9 @@ export default function UeberUns() {
                   Buchempfehlungen-Seite
                 </Link>.
               </p>
-            </motion.div>
+            </ContentSection>
 
-            {/* Hinweis */}
+            {/* Hinweis – bleibt als motion.div */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

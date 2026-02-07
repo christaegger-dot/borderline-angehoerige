@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
+import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, Image, MapPin, ExternalLink, Home, Calendar, Building2, Baby, User, Phone, Mail } from "lucide-react";
+import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, MapPin, ExternalLink, Home, Calendar, Building2, Baby, User, Phone, Mail } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktById, emailById, GELB } from "@/data/kontakte";
 
@@ -49,18 +50,15 @@ export default function UnterstuetzenTherapie() {
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+
             {/* Wirksame Therapien */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Wirksame Therapieformen"
+              icon={<Brain className="w-7 h-7 text-slate-blue" />}
+              id="therapieformen"
+              defaultOpen={true}
+              preview="DBT, MBT und Schematherapie – die drei evidenzbasierten Therapien für Borderline im Überblick."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Brain className="w-8 h-8 text-slate-blue" />
-                Wirksame Therapieformen
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Es gibt mehrere evidenzbasierte Therapien für Borderline. Die bekannteste und am besten erforschte ist die DBT (Dialektisch-Behaviorale Therapie).
               </p>
@@ -99,7 +97,6 @@ export default function UnterstuetzenTherapie() {
                 ))}
               </div>
               
-              {/* Hinweis auf Therapieangebote weiter unten */}
               <Card className="mt-6 bg-sage-lighter border-sage-light">
                 <CardContent className="p-5">
                   <div className="flex items-start gap-4">
@@ -117,19 +114,15 @@ export default function UnterstuetzenTherapie() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* DBT-Skills für Angehörige */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="DBT-Skills verstehen"
+              icon={<Lightbulb className="w-7 h-7 text-terracotta" />}
+              id="dbt-skills"
+              preview="Achtsamkeit, Stresstoleranz, Emotionsregulation, Zwischenmenschliche Skills – die vier Säulen der DBT."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                DBT-Skills verstehen
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Die DBT vermittelt vier Gruppen von Skills. Wenn Sie diese kennen, können Sie Ihren Angehörigen besser unterstützen – und einige Skills auch selbst nutzen.
               </p>
@@ -187,20 +180,15 @@ export default function UnterstuetzenTherapie() {
                   </ul>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Fortschritte würdigen */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Fortschritte würdigen"
+              icon={<Heart className="w-7 h-7 text-terracotta" />}
+              id="fortschritte"
+              preview="Genesung ist kein linearer Prozess. Kleine Fortschritte zu erkennen und zu würdigen ist wichtig."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Heart className="w-8 h-8 text-terracotta" />
-                Fortschritte würdigen
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Genesung ist kein linearer Prozess. Kleine Fortschritte zu erkennen und zu würdigen ist wichtig – für Sie beide.
               </p>
@@ -224,20 +212,15 @@ export default function UnterstuetzenTherapie() {
                   </ul>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Mit Rückschlägen umgehen */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Mit Rückschlägen umgehen"
+              icon={<RefreshCw className="w-7 h-7 text-terracotta-mid" />}
+              id="rueckschlaege"
+              preview="Rückschläge gehören zur Genesung. Sie sind keine Zeichen des Scheiterns, sondern Teil des Prozesses."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <RefreshCw className="w-8 h-8 text-terracotta-mid" />
-                Mit Rückschlägen umgehen
-              </h2>
-              
               <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -258,21 +241,15 @@ export default function UnterstuetzenTherapie() {
                   </ul>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Therapieangebote Kanton Zürich */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+            <ContentSection
+              title="Therapieangebote im Kanton Zürich"
+              icon={<MapPin className="w-7 h-7 text-sage-dark" />}
               id="therapieangebote"
+              preview="PUK Zürich: Spezialisierte DBT-Stationen für Jugendliche (HYPE ZÜRI), Erwachsene und Ältere."
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <MapPin className="w-8 h-8 text-sage-dark" />
-                Therapieangebote im Kanton Zürich
-              </h2>
-              
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Die Psychiatrische Universitätsklinik Zürich (PUK) bietet spezialisierte Behandlungsangebote für verschiedene Altersgruppen – ambulant, teilstationär und stationär.
               </p>
@@ -389,7 +366,7 @@ export default function UnterstuetzenTherapie() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ContentSection>
 
             {/* Materialien zum Download */}
             <motion.div

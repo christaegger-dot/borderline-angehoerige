@@ -185,6 +185,7 @@ export default function Layout({ children }: LayoutProps) {
                     setSearchOpen(true);
                   }}
                   className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted mt-2 border border-border/50"
+                  aria-label="Suche öffnen"
                 >
                   <SearchIcon className="w-5 h-5" />
                   Suchen
@@ -234,7 +235,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Navigation */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Themen</h4>
+              <h3 className="font-semibold text-foreground mb-4 text-base">Themen</h3>
               <ul className="space-y-2">
                 {navItems.map((item) => (
                   <li key={item.href}>
@@ -251,7 +252,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Resources */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Ressourcen</h4>
+              <h3 className="font-semibold text-foreground mb-4 text-base">Ressourcen</h3>
               <ul className="space-y-2">
                 <li>
                   <Link href="/soforthilfe" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
@@ -298,7 +299,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Contact */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Hinweis</h4>
+              <h3 className="font-semibold text-foreground mb-4 text-base">Hinweis</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Diese Website ersetzt keine professionelle Beratung oder Therapie. Bei akuten Krisen wenden Sie sich bitte an die Notfallnummern.
               </p>

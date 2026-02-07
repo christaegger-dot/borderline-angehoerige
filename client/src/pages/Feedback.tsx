@@ -139,6 +139,7 @@ export default function Feedback() {
                               ? 'text-sand-accent scale-110'
                               : 'text-muted-foreground/40 hover:text-sand-accent/60'
                           }`}
+                          aria-label={`${star} von 5 Sternen bewerten`}
                         >
                           <Star className={`w-10 h-10 ${rating && rating >= star ? 'fill-current' : ''}`} />
                         </button>

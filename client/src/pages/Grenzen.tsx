@@ -537,7 +537,7 @@ export default function Grenzen() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                           <h3 className="font-semibold text-sm mb-1">{item.title}</h3>
-                          <p className="text-xs text-white/80">{item.description}</p>
+                          <p className="text-xs text-white">{item.description}</p>
                         </div>
                       </div>
                     </a>

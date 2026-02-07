@@ -146,7 +146,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImage} 
-            alt="" 
+            alt="Warme Landschaft als Hintergrundbild" 
             className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
@@ -534,7 +534,7 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">
                 In einer akuten Krise?
               </h2>
-              <p className="text-white/80">
+              <p className="text-white">
                 Hier finden Sie sofortige Hilfe und Notfallnummern.
               </p>
             </div>

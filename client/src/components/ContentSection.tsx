@@ -90,6 +90,7 @@ export default function ContentSection({
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 rounded-xl"
         aria-expanded={isOpen}
+        aria-label={`Abschnitt ${title} ${isOpen ? 'zuklappen' : 'aufklappen'}`}
       >
         <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-cream hover:bg-sand-muted border border-border/40 transition-all duration-400">
           <div className="flex items-center gap-3 min-w-0">

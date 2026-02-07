@@ -209,7 +209,7 @@ export default function Erfahrungsberichte({
           {/* Navigation arrows */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-11 h-11 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
             aria-label="Vorheriger Bericht"
           >
             <ChevronLeft className="w-5 h-5 text-foreground" />
@@ -217,7 +217,7 @@ export default function Erfahrungsberichte({
           
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-11 h-11 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
             aria-label="Nächster Bericht"
           >
             <ChevronRight className="w-5 h-5 text-foreground" />
@@ -267,18 +267,20 @@ export default function Erfahrungsberichte({
           </div>
 
           {/* Dots indicator */}
-          <div className="flex items-center justify-center gap-2 mt-6">
+          <div className="flex items-center justify-center gap-0 mt-6">
             {displayBerichte.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goTo(index, index > current ? 1 : -1)}
-                className={`transition-all duration-500 rounded-full ${
+                className="relative flex items-center justify-center min-w-[44px] min-h-[44px]"
+                aria-label={`Bericht ${index + 1}`}
+              >
+                <span className={`block transition-all duration-500 rounded-full ${
                   index === current 
                     ? "w-8 h-2.5 bg-terracotta" 
                     : "w-2.5 h-2.5 bg-border hover:bg-muted-foreground/40"
-                }`}
-                aria-label={`Bericht ${index + 1}`}
-              />
+                }`} />
+              </button>
             ))}
           </div>
 

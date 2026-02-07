@@ -482,7 +482,7 @@ export function KeyboardShortcuts() {
             <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">⌘K</kbd> Suche</div>
             <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">?</kbd> Diese Hilfe</div>
           </div>
-          <p className="text-xs mt-2 opacity-70">Drücken Sie ? zum Schliessen</p>
+          <p className="text-xs mt-2 opacity-90">Drücken Sie ? zum Schliessen</p>
         </motion.div>
       )}
     </AnimatePresence>

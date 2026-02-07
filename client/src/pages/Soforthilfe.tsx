@@ -185,8 +185,8 @@ function StickyAmpelLeiste() {
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = item.bg)}
               >
                 <span className="font-semibold">{item.label}</span>
-                <span className="text-white/80 text-xs hidden sm:inline">→ {item.sublabel}</span>
-                <span className="text-white/80 text-xs sm:hidden">({item.sublabel})</span>
+                <span className="text-white text-xs hidden sm:inline">→ {item.sublabel}</span>
+                <span className="text-white text-xs sm:hidden">({item.sublabel})</span>
               </button>
             ))}
           </div>

@@ -476,9 +476,9 @@ export default function Materialien() {
                   <CheckCircle2 className="w-6 h-6 text-sage-dark" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">
+                  <h2 className="font-semibold text-foreground mb-2 text-lg">
                     Alle 40 Materialien verfügbar
-                  </h3>
+                  </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung
                   </p>
@@ -511,11 +511,11 @@ export default function Materialien() {
                         gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }, 50);
                     }}
-                    className={`whitespace-nowrap shrink-0 ${activeCategory === cat.id ? "bg-sage-mid hover:bg-sage-mid" : ""}`}
+                    className={`whitespace-nowrap shrink-0 ${activeCategory === cat.id ? "bg-sage-dark hover:bg-sage-dark text-white" : ""}`}
                   >
                     <Icon className="w-4 h-4 mr-1.5" />
                     {cat.label}
-                    <span className="ml-1.5 text-xs opacity-70">({count})</span>
+                    <span className="ml-1.5 text-xs opacity-90">({count})</span>
                   </Button>
                 );
               })}
@@ -570,9 +570,9 @@ export default function Materialien() {
                     </div>
                     
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
+                      <h2 className="font-semibold text-foreground mb-2 text-lg">
                         {item.title}
-                      </h3>
+                      </h2>
                       
                       <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                         {item.description}
@@ -580,7 +580,7 @@ export default function Materialien() {
                       
                       <div className="flex items-center justify-end">
                         <a href={item.downloadUrl || item.url} target="_blank" rel="noopener noreferrer" download>
-                          <Button size="sm" className="bg-sage-mid hover:bg-sage-mid">
+                          <Button size="sm" className="bg-sage-dark hover:bg-sage-dark text-white">
                             <Download className="w-4 h-4 mr-2" />
                             {item.downloadUrl ? "PDF" : "Download"}
                           </Button>
@@ -638,9 +638,9 @@ export default function Materialien() {
         <div className="container">
           <Card className="bg-sand-muted border-sand-mid">
             <CardContent className="p-6">
-              <h3 className="font-semibold text-foreground mb-2">
+              <h2 className="font-semibold text-foreground mb-2 text-lg">
                 Nutzungshinweis
-              </h3>
+              </h2>
               <p className="text-sm text-muted-foreground">
                 Alle Materialien dürfen für private und nicht-kommerzielle Zwecke frei verwendet werden. 
                 Bei Weitergabe bitte die Quelle angeben: <strong>eiertanz.manus.space</strong> – 
@@ -667,7 +667,7 @@ export default function Materialien() {
               alt="Vorschau" 
               className="w-full h-auto rounded-lg shadow-2xl"
             />
-            <p className="text-center text-white/70 mt-4 text-sm">
+            <p className="text-center text-white mt-4 text-sm">
               Klicken Sie irgendwo, um zu schliessen
             </p>
           </motion.div>

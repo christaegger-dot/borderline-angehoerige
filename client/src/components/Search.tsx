@@ -680,6 +680,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                   <button
                     onClick={() => setQuery("")}
                     className="p-1 hover:bg-muted rounded-md transition-colors"
+                    aria-label="Sucheingabe löschen"
                   >
                     <X className="w-4 h-4 text-muted-foreground" />
                   </button>
@@ -699,6 +700,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                           key={term}
                           onClick={() => setQuery(term)}
                           className="px-3 py-1.5 bg-muted hover:bg-muted/80 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+                          aria-label={`Nach ${term} suchen`}
                         >
                           {term}
                         </button>

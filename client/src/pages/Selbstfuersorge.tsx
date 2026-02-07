@@ -129,6 +129,8 @@ function UebungAkkordeon({ title, icon: Icon, children, color }: {
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-5 flex items-center justify-between text-left hover:bg-muted/30 transition-colors"
+        aria-expanded={isOpen}
+        aria-label={`${title} ${isOpen ? 'zuklappen' : 'aufklappen'}`}
       >
         <div className="flex items-center gap-3">
           <div className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center`}>

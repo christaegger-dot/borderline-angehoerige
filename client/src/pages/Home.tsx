@@ -17,7 +17,10 @@ import {
   AlertTriangle,
   Compass,
   TrendingUp,
-  Info
+  Info,
+  Sprout,
+  Download,
+  FileText
 } from "lucide-react";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZeIhbfgnqoOROQeY.png";
@@ -69,6 +72,15 @@ const topics = [
     color: "oklch(0.55 0.12 320)", // Soft Purple
     bgColor: "oklch(0.92 0.05 320)",
     time: "10 Min"
+  },
+  {
+    href: "/genesung",
+    icon: Sprout,
+    title: "Genesung",
+    description: "Warum Genesung möglich ist, was Langzeitstudien zeigen und wie Sie Hoffnung bewahren können.",
+    color: "oklch(0.50 0.12 160)", // Teal
+    bgColor: "oklch(0.90 0.05 160)",
+    time: "8 Min"
   },
 ];
 
@@ -453,6 +465,42 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Materialien CTA */}
+      <section className="py-12 md:py-16 bg-[oklch(0.97_0.01_85)]">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Card className="border-2 border-dashed border-[oklch(0.75_0.06_85)] bg-white">
+              <CardContent className="p-8 md:p-10">
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[oklch(0.92_0.04_55)] flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-8 h-8 md:w-10 md:h-10 text-[oklch(0.55_0.12_55)]" />
+                  </div>
+                  <div className="text-center md:text-left flex-1">
+                    <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-2">
+                      Materialien herunterladen
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      Infografiken als A4-PDF – für Beratung und Alltag
+                    </p>
+                    <Link href="/materialien">
+                      <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white gap-2">
+                        <Download className="w-4 h-4" />
+                        Zu den Materialien
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </section>
 

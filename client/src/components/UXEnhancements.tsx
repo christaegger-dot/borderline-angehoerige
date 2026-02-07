@@ -65,7 +65,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="fixed bottom-20 sm:bottom-6 right-4 z-40 w-12 h-12 rounded-full bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.45_0.12_145)] text-white shadow-lg flex items-center justify-center transition-colors"
+          className="fixed bottom-4 sm:bottom-6 left-4 sm:left-auto sm:right-4 z-40 w-12 h-12 rounded-full bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.45_0.12_145)] text-white shadow-lg flex items-center justify-center transition-colors"
           aria-label="Nach oben scrollen"
         >
           <ChevronUp className="w-6 h-6" />

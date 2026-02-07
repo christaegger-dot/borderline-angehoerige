@@ -286,8 +286,11 @@ export default function Notfall() {
                             <p className="font-medium text-foreground">{kontakt.label}</p>
                             <p className="text-sm text-muted-foreground">{kontakt.hinweis}</p>
                           </div>
-                          <a href={`tel:${kontakt.tel}`} className="font-bold text-[oklch(0.55_0.18_85)] hover:underline">
-                            {kontakt.nummer}
+                          <a href={`tel:${kontakt.tel}`}>
+                            <Button variant="outline" size="sm" className="font-bold border-[oklch(0.65_0.10_250)] text-[oklch(0.45_0.10_250)] hover:bg-[oklch(0.95_0.02_250)]">
+                              <Phone className="w-3.5 h-3.5 mr-1.5" />
+                              {kontakt.nummer}
+                            </Button>
                           </a>
                         </div>
                       </CardContent>
@@ -333,6 +336,58 @@ export default function Notfall() {
                   <strong className="text-foreground">Bei akuter Gefahr für sich oder andere:</strong> {TEXTE.gruenGefahrenhinweis}
                 </p>
               </div>
+            </motion.div>
+
+            {/* ═══ Notfallkarte zum Ausdrucken ═══ */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Notfallkarte zum Ausdrucken
+              </h2>
+
+              <Card className="bg-card border overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="md:flex">
+                    {/* Vorschau-Bild */}
+                    <div className="md:w-1/3 bg-[oklch(0.96_0.01_80)] p-4 flex items-center justify-center">
+                      <img
+                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp"
+                        alt="Notfallkarte Zürich – Vorschau"
+                        className="rounded-lg shadow-md max-h-64 w-auto"
+                      />
+                    </div>
+                    {/* Text + Download */}
+                    <div className="md:w-2/3 p-6 flex flex-col justify-center">
+                      <h3 className="font-semibold text-lg text-foreground mb-2">
+                        Notfallkarte Zürich (PDF, A4)
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                        Alle wichtigen Nummern auf einer Seite – zum Ausdrucken, Aufhängen oder Weitergeben.
+                        Enthält die Ampel-Logik (ROT / GELB / GRÜN) und den Schnell-Entscheid.
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZQvtZgegdqQJmRdy.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm text-white transition-colors"
+                          style={{ backgroundColor: "oklch(0.55 0.15 145)" }}
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          PDF herunterladen
+                        </a>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-3">
+                        Stand: 06.02.2026 · Version 04 · Quelle: pukzh.ch
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* ═══ Online-Ressourcen & Beratung ═══ */}
@@ -675,58 +730,6 @@ export default function Notfall() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-            </motion.div>
-
-            {/* ═══ Notfallkarte zum Ausdrucken ═══ */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Notfallkarte zum Ausdrucken
-              </h2>
-
-              <Card className="bg-card border overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="md:flex">
-                    {/* Vorschau-Bild */}
-                    <div className="md:w-1/3 bg-[oklch(0.96_0.01_80)] p-4 flex items-center justify-center">
-                      <img
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp"
-                        alt="Notfallkarte Zürich – Vorschau"
-                        className="rounded-lg shadow-md max-h-64 w-auto"
-                      />
-                    </div>
-                    {/* Text + Download */}
-                    <div className="md:w-2/3 p-6 flex flex-col justify-center">
-                      <h3 className="font-semibold text-lg text-foreground mb-2">
-                        Notfallkarte Zürich (PDF, A4)
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                        Alle wichtigen Nummern auf einer Seite – zum Ausdrucken, Aufhängen oder Weitergeben.
-                        Enthält die Ampel-Logik (ROT / GELB / GRÜN) und den Schnell-Entscheid.
-                      </p>
-                      <div className="flex flex-wrap gap-3">
-                        <a
-                          href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ZQvtZgegdqQJmRdy.pdf"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm text-white transition-colors"
-                          style={{ backgroundColor: "oklch(0.55 0.15 145)" }}
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          PDF herunterladen
-                        </a>
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-3">
-                        Stand: 06.02.2026 · Version 04 · Quelle: pukzh.ch
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </motion.div>
 
             {/* ═══ Persönlicher Krisenplan ═══ */}

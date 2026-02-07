@@ -725,11 +725,11 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                       >
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-xs font-medium text-[oklch(0.55_0.12_145)] bg-[oklch(0.92_0.05_145)] px-2 py-0.5 rounded">
+                            <span className="text-xs font-medium text-sage-mid bg-sage-lighter px-2 py-0.5 rounded">
                               {result.section}
                             </span>
                           </div>
-                          <h4 className="font-medium text-foreground mt-1 group-hover:text-[oklch(0.55_0.12_55)] transition-colors">
+                          <h4 className="font-medium text-foreground mt-1 group-hover:text-terracotta-mid transition-colors">
                             {result.title}
                           </h4>
                           <p className="text-sm text-muted-foreground line-clamp-1 mt-0.5">

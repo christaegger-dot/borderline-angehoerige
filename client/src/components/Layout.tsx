@@ -41,7 +41,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Skip-Navigation für Accessibility (WCAG 2.1 Level A) */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[oklch(0.65_0.12_55)] focus:text-white focus:rounded-lg focus:text-sm focus:font-medium focus:shadow-lg focus:outline-none"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-terracotta focus:text-white focus:rounded-lg focus:text-sm focus:font-medium focus:shadow-lg focus:outline-none"
       >
         Zum Inhalt springen
       </a>
@@ -55,10 +55,10 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.12_55)] to-[oklch(0.65_0.08_145)] flex items-center justify-center">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-terracotta to-sage flex items-center justify-center">
                 <span className="text-white font-semibold text-sm md:text-base">E</span>
               </div>
-              <span className="font-semibold text-lg md:text-xl text-foreground group-hover:text-[oklch(0.65_0.12_55)] transition-colors">
+              <span className="font-semibold text-lg md:text-xl text-foreground group-hover:text-terracotta transition-colors">
                 Eiertanz
               </span>
             </Link>
@@ -71,9 +71,9 @@ export default function Layout({ children }: LayoutProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-500 ${
                       isActive
-                        ? "bg-[oklch(0.85_0.08_55)] text-[oklch(0.35_0.08_55)]"
+                        ? "bg-terracotta-light text-terracotta-darker"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }`}
                   >
@@ -110,7 +110,7 @@ export default function Layout({ children }: LayoutProps) {
                 <Button
                   variant="default"
                   size="sm"
-                  className="bg-[oklch(0.55_0.20_25)] hover:bg-[oklch(0.50_0.22_25)] text-white animate-breathe hidden sm:flex"
+                  className="bg-alert hover:bg-alert text-white animate-breathe hidden sm:flex"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Soforthilfe
@@ -150,7 +150,7 @@ export default function Layout({ children }: LayoutProps) {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all ${
                         isActive
-                          ? "bg-[oklch(0.85_0.08_55)] text-[oklch(0.35_0.08_55)]"
+                          ? "bg-terracotta-light text-terracotta-darker"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted"
                       }`}
                     >
@@ -162,7 +162,7 @@ export default function Layout({ children }: LayoutProps) {
                 <Link
                   href="/soforthilfe"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium bg-[oklch(0.55_0.20_25)] text-white mt-2"
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium bg-alert text-white mt-2"
                 >
                   <Phone className="w-5 h-5" />
                   Soforthilfe
@@ -193,13 +193,13 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[oklch(0.94_0.02_85)] border-t border-border/50 mt-auto">
+      <footer className="bg-sand-muted border-t border-border/50 mt-auto">
         <div className="container py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.12_55)] to-[oklch(0.65_0.08_145)] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-terracotta to-sage flex items-center justify-center">
                   <span className="text-white font-semibold">E</span>
                 </div>
                 <span className="font-semibold text-xl text-foreground">
@@ -307,7 +307,7 @@ export default function Layout({ children }: LayoutProps) {
       <Link href="/soforthilfe" className="sm:hidden fixed bottom-4 right-4 z-50">
         <Button
           variant="default"
-          className="h-14 px-5 rounded-full bg-[oklch(0.55_0.20_25)] hover:bg-[oklch(0.50_0.22_25)] text-white shadow-lg animate-breathe gap-2 text-base font-semibold"
+          className="h-14 px-5 rounded-full bg-alert hover:bg-alert text-white shadow-lg animate-breathe gap-2 text-base font-semibold"
         >
           <Phone className="w-5 h-5" />
           Hilfe

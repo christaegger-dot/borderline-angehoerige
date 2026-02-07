@@ -13,7 +13,7 @@ export default function UnterstuetzenKrise() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.06_55)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,10 +26,10 @@ export default function UnterstuetzenKrise() {
             </Link>
             
             <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.06_55)] flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-[oklch(0.50_0.15_55)]" />
+              <div className="w-12 h-12 rounded-xl bg-terracotta-lighter flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-terracotta-mid" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.50_0.15_55)]">Lesezeit: 6 Minuten</span>
+              <span className="text-sm font-medium text-terracotta-mid">Lesezeit: 6 Minuten</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
@@ -40,10 +40,10 @@ export default function UnterstuetzenKrise() {
               Krisen gehören zum Leben mit Borderline. Hier erfahren Sie, wie Sie Krisen erkennen, deeskalieren und Sicherheit gewährleisten – ohne sich selbst zu gefährden.
             </p>
             
-            <div className="p-4 rounded-xl bg-[oklch(0.96_0.02_85)] border border-[oklch(0.90_0.04_85)]">
+            <div className="p-4 rounded-xl bg-sand border border-sand-subtle">
               <p className="text-sm text-muted-foreground">
                 <strong className="text-foreground">Unterschied Krise vs. Notfall:</strong> Diese Seite ist für <strong>emotionale Krisen und Eskalationen</strong> (starke Emotionen, Konflikte, Rückzug). Bei <strong>akuter Gefahr</strong> (Suizidgefahr, Selbstverletzung) gehen Sie direkt zu{" "}
-                <Link href="/soforthilfe" className="text-[oklch(0.55_0.20_55)] hover:underline font-medium">Soforthilfe & Notfallnummern →</Link>
+                <Link href="/soforthilfe" className="text-alert hover:underline font-medium">Soforthilfe & Notfallnummern →</Link>
               </p>
             </div>
           </motion.div>
@@ -51,7 +51,7 @@ export default function UnterstuetzenKrise() {
       </section>
 
       {/* Emergency Banner */}
-      <section className="py-4 bg-[oklch(0.55_0.20_55)]">
+      <section className="py-4 bg-alert">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-white text-center sm:text-left">
@@ -61,7 +61,7 @@ export default function UnterstuetzenKrise() {
               <a href={`tel:${gruen143.tel}`} className="underline">{gruen143.label} ({gruen143.nummer})</a>
             </p>
             <Link href="/soforthilfe">
-              <Button variant="secondary" size="sm" className="bg-white text-[oklch(0.55_0.20_55)]">
+              <Button variant="secondary" size="sm" className="bg-white text-alert">
                 <Phone className="w-4 h-4 mr-2" />
                 Alle Notfallnummern
               </Button>
@@ -95,29 +95,29 @@ export default function UnterstuetzenKrise() {
                     level: "Grün – Stabil",
                     description: "Alltägliche Stimmungsschwankungen, normale Belastungen",
                     action: "Präsent sein, zuhören, Routinen beibehalten",
-                    color: "oklch(0.55 0.15 145)",
-                    bgColor: "oklch(0.92 0.05 145)"
+                    color: "var(--color-sage-mid)",
+                    bgColor: "var(--color-sage-lighter)"
                   },
                   {
                     level: "Gelb – Angespannt",
                     description: "Erhöhte Reizbarkeit, Rückzug, erkennbare Trigger",
                     action: "Validieren, Skills anbieten, Raum geben",
-                    color: "oklch(0.60 0.15 85)",
-                    bgColor: "oklch(0.95 0.05 85)"
+                    color: "var(--color-sand-mid)",
+                    bgColor: "var(--color-sand-muted)"
                   },
                   {
                     level: "Orange – Eskalierend",
                     description: "Starke Emotionen, verbale Aggression, Kontrollverlust",
                     action: "Deeskalieren, Sicherheit prüfen, Grenzen setzen",
-                    color: "oklch(0.55 0.18 55)",
-                    bgColor: "oklch(0.95 0.05 55)"
+                    color: "var(--color-terracotta-mid)",
+                    bgColor: "var(--color-terracotta-wash)"
                   },
                   {
                     level: "Rot – Akute Krise",
                     description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
                     action: "Professionelle Hilfe holen, Notruf wenn nötig",
-                    color: "oklch(0.50 0.20 55)",
-                    bgColor: "oklch(0.95 0.05 55)"
+                    color: "var(--color-alert)",
+                    bgColor: "var(--color-terracotta-wash)"
                   }
                 ].map((item, index) => (
                   <Card key={index} style={{ borderColor: item.color, backgroundColor: item.bgColor }} className="border-l-4">
@@ -142,7 +142,7 @@ export default function UnterstuetzenKrise() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Shield className="w-8 h-8 text-[oklch(0.55_0.15_55)]" />
+                <Shield className="w-8 h-8 text-terracotta-mid" />
                 4 Schritte der Deeskalation
               </h2>
               
@@ -176,7 +176,7 @@ export default function UnterstuetzenKrise() {
                   <Card key={index} className="border-border/50">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_55)] text-white flex items-center justify-center font-semibold flex-shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-terracotta-mid text-white flex items-center justify-center font-semibold flex-shrink-0">
                           {item.step}
                         </div>
                         <div>
@@ -209,46 +209,46 @@ export default function UnterstuetzenKrise() {
               </p>
               
               <div className="space-y-4">
-                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Präsenz zeigen</h3>
-                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                    <div className="bg-sage-lighter rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Ich bin hier. Ich gehe nicht weg. Du bist nicht allein."</p>
                     </div>
                   </CardContent>
                 </Card>
                 
-                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Gefühle validieren</h3>
-                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                    <div className="bg-sage-lighter rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Ich sehe, dass du gerade unglaublich viel Schmerz fühlst. Das muss sich furchtbar anfühlen."</p>
                     </div>
                   </CardContent>
                 </Card>
                 
-                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Hoffnung vermitteln</h3>
-                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                    <div className="bg-sage-lighter rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Dieses Gefühl wird vorbeigehen. Es fühlt sich jetzt endlos an, aber es wird sich verändern."</p>
                     </div>
                   </CardContent>
                 </Card>
                 
-                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Konkrete Hilfe anbieten</h3>
-                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                    <div className="bg-sage-lighter rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Was brauchst du gerade am meisten? Soll ich einfach hier sitzen? Oder sollen wir zusammen atmen?"</p>
                     </div>
                   </CardContent>
                 </Card>
                 
-                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Bei Suizidgedanken direkt ansprechen</h3>
-                    <div className="bg-[oklch(0.92_0.05_145)] rounded-lg p-3">
+                    <div className="bg-sage-lighter rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Ich mache mir Sorgen um dich. Hast du gerade Gedanken, dir etwas anzutun?"</p>
                     </div>
                     <p className="text-xs text-muted-foreground mt-2">Hinweis: Direktes Fragen erhöht das Risiko nicht, sondern zeigt, dass Sie die Situation ernst nehmen.</p>
@@ -268,7 +268,7 @@ export default function UnterstuetzenKrise() {
                 Was Sie in der Krise vermeiden sollten
               </h2>
               
-              <Card className="border-l-4 border-l-[oklch(0.55_0.20_55)] bg-[oklch(0.95_0.03_55)]">
+              <Card className="border-l-4 border-l-alert bg-terracotta-wash">
                 <CardContent className="p-6">
                   <ul className="space-y-3">
                     {[
@@ -280,7 +280,7 @@ export default function UnterstuetzenKrise() {
                       "Sich selbst in Gefahr bringen"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-[oklch(0.55_0.20_55)]">✗</span>
+                        <span className="text-alert">✗</span>
                         {item}
                       </li>
                     ))}
@@ -297,11 +297,11 @@ export default function UnterstuetzenKrise() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Clock className="w-8 h-8 text-[oklch(0.65_0.08_145)]" />
+                <Clock className="w-8 h-8 text-sage" />
                 Nach der Krise
               </h2>
               
-              <Card className="bg-[oklch(0.88_0.04_145)]/20 border-[oklch(0.65_0.08_145)]">
+              <Card className="bg-sage-light/20 border-sage">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Wenn die akute Krise vorbei ist, ist es wichtig, das Erlebte zu verarbeiten – für Sie beide:
@@ -315,7 +315,7 @@ export default function UnterstuetzenKrise() {
                       "Holen Sie sich bei Bedarf selbst Unterstützung"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-[oklch(0.55_0.10_145)]">→</span>
+                        <span className="text-sage-mid">→</span>
                         {item}
                       </li>
                     ))}
@@ -332,15 +332,15 @@ export default function UnterstuetzenKrise() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-[oklch(0.50_0.15_55)]" />
+                <Download className="w-8 h-8 text-terracotta-mid" />
                 Materialien zum Thema
               </h2>
               
-              <Card className="bg-[oklch(0.95_0.04_85)] border-[oklch(0.75_0.10_85)]">
+              <Card className="bg-sand-muted border-sand-border">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_85)] flex items-center justify-center flex-shrink-0">
-                      <RefreshCw className="w-5 h-5 text-[oklch(0.50_0.12_85)]" />
+                    <div className="w-10 h-10 rounded-lg bg-terracotta-light flex items-center justify-center flex-shrink-0">
+                      <RefreshCw className="w-5 h-5 text-sand-warm" />
                     </div>
                     <div>
                       <h3 className="font-medium text-foreground mb-2">Downloads werden überarbeitet</h3>
@@ -371,7 +371,7 @@ export default function UnterstuetzenKrise() {
                 </Button>
               </Link>
               <Link href="/kommunizieren">
-                <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white">
+                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
                   Weiter: Kommunizieren
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

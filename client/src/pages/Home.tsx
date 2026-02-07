@@ -34,8 +34,8 @@ const topics = [
     icon: BookOpen,
     title: "Verstehen",
     description: "Was ist Borderline? Symptome, Ursachen und wie die Störung das Erleben beeinflusst.",
-    color: "oklch(0.65 0.08 145)", // Sage
-    bgColor: "oklch(0.88 0.04 145)",
+    color: "var(--color-sage)", // Sage
+    bgColor: "var(--color-sage-light)",
     time: "15 Min"
   },
   {
@@ -43,8 +43,8 @@ const topics = [
     icon: Heart,
     title: "Unterstützen",
     description: "Wie Sie Ihren Angehörigen im Alltag, in der Therapie und in Krisen begleiten können.",
-    color: "oklch(0.65 0.12 55)", // Terracotta
-    bgColor: "oklch(0.85 0.08 55)",
+    color: "var(--color-terracotta)", // Terracotta
+    bgColor: "var(--color-terracotta-light)",
     time: "20 Min"
   },
   {
@@ -52,8 +52,8 @@ const topics = [
     icon: MessageCircle,
     title: "Kommunizieren",
     description: "Validierung, SET-Kommunikation und wie Sie auch in schwierigen Momenten im Gespräch bleiben.",
-    color: "oklch(0.45 0.05 250)", // Slate Blue
-    bgColor: "oklch(0.90 0.03 250)",
+    color: "var(--color-slate-blue)", // Slate Blue
+    bgColor: "var(--color-slate-light)",
     time: "15 Min"
   },
   {
@@ -61,8 +61,8 @@ const topics = [
     icon: Shield,
     title: "Grenzen setzen",
     description: "Warum Grenzen wichtig sind und wie Sie sie liebevoll, aber klar kommunizieren.",
-    color: "oklch(0.55 0.15 55)", // Warm Orange
-    bgColor: "oklch(0.92 0.06 55)",
+    color: "var(--color-terracotta-mid)", // Warm Orange
+    bgColor: "var(--color-terracotta-lighter)",
     time: "12 Min"
   },
   {
@@ -70,8 +70,8 @@ const topics = [
     icon: Sparkles,
     title: "Selbstfürsorge",
     description: "Wie Sie auf sich selbst achten, Burnout vermeiden und Ihre eigenen Ressourcen stärken.",
-    color: "oklch(0.55 0.12 145)", // Soft Purple
-    bgColor: "oklch(0.92 0.05 145)",
+    color: "var(--color-sage-mid)", // Soft Purple
+    bgColor: "var(--color-sage-lighter)",
     time: "10 Min"
   },
   {
@@ -79,8 +79,8 @@ const topics = [
     icon: Sprout,
     title: "Genesung",
     description: "Warum Genesung möglich ist, was Langzeitstudien zeigen und wie Sie Hoffnung bewahren können.",
-    color: "oklch(0.50 0.12 145)", // Teal
-    bgColor: "oklch(0.90 0.05 145)",
+    color: "var(--color-sage-mid)", // Teal
+    bgColor: "var(--color-sage-light)",
     time: "8 Min"
   },
 ];
@@ -92,8 +92,8 @@ const crisisMatrix = [
     description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
     action: "Sofort handeln",
     href: "/soforthilfe",
-    color: "oklch(0.55 0.20 25)",
-    bgColor: "oklch(0.95 0.05 25)",
+    color: "var(--color-alert)",
+    bgColor: "var(--color-alert-wash)",
     icon: AlertTriangle
   },
   {
@@ -102,8 +102,8 @@ const crisisMatrix = [
     description: "Starke Emotionen, drohende Eskalation",
     action: "Deeskalieren",
     href: "/unterstuetzen/krise",
-    color: "oklch(0.60 0.15 55)",
-    bgColor: "oklch(0.95 0.04 55)",
+    color: "var(--color-sand-mid)",
+    bgColor: "var(--color-terracotta-wash)",
     icon: Clock
   },
   {
@@ -112,8 +112,8 @@ const crisisMatrix = [
     description: "Konflikte, Missverständnisse, Rückzug",
     action: "Kommunizieren",
     href: "/kommunizieren",
-    color: "oklch(0.55 0.10 85)",
-    bgColor: "oklch(0.95 0.03 85)",
+    color: "var(--color-sand-warm)",
+    bgColor: "var(--color-sand-muted)",
     icon: MessageCircle
   },
   {
@@ -122,8 +122,8 @@ const crisisMatrix = [
     description: "Ruhige Zeit, Gelegenheit zum Lernen",
     action: "Vertiefen",
     href: "/verstehen",
-    color: "oklch(0.55 0.10 145)",
-    bgColor: "oklch(0.95 0.03 145)",
+    color: "var(--color-sage-mid)",
+    bgColor: "var(--color-sage-wash)",
     icon: CheckCircle2
   },
   {
@@ -132,8 +132,8 @@ const crisisMatrix = [
     description: "Erschöpfung, Überforderung, eigene Grenzen erreicht",
     action: "Für mich sorgen",
     href: "/selbstfuersorge",
-    color: "oklch(0.50 0.08 250)",
-    bgColor: "oklch(0.95 0.02 250)",
+    color: "var(--color-slate-dark)",
+    bgColor: "var(--color-slate-wash)",
     icon: Sparkles
   },
 ];
@@ -159,20 +159,20 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[oklch(0.88_0.04_145)] text-[oklch(0.40_0.08_145)] text-sm font-medium mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-sage-light text-sage-darker text-sm font-medium mb-6">
                 Für Angehörige von Menschen mit Borderline
               </span>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
                 Schluss mit dem{" "}
-                <span className="text-[oklch(0.65_0.12_55)]">Eiertanz</span>
+                <span className="text-terracotta">Eiertanz</span>
               </h1>
               
               <div className="flex items-start gap-2 mb-6 p-3 rounded-lg bg-background/60 backdrop-blur-sm border border-border/30 max-w-xl">
-                <Info className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                <Info className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
                 <p className="text-sm text-muted-foreground">
                   <span className="font-medium text-foreground">«Eiertanz»</span> – so beschreiben Paul T. Mason und Randi Kreger in ihrem Standardwerk das Gefühl vieler Angehöriger: ständig auf der Hut, um niemanden zu verletzen.{" "}
-                  <Link href="/buchempfehlungen" className="text-[oklch(0.55_0.12_55)] hover:underline">Zum Buch →</Link>
+                  <Link href="/buchempfehlungen" className="text-terracotta-mid hover:underline">Zum Buch →</Link>
                 </p>
               </div>
               
@@ -182,7 +182,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/unterstuetzen/uebersicht">
-                  <Button size="lg" className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white w-full sm:w-auto">
+                  <Button size="lg" className="bg-terracotta hover:bg-terracotta-mid text-white w-full sm:w-auto">
                     <Heart className="w-5 h-5 mr-2" />
                     Wie kann ich helfen?
                   </Button>
@@ -195,7 +195,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="mt-4">
-                <Link href="/soforthilfe" className="inline-flex items-center gap-2 text-[oklch(0.50_0.20_25)] hover:text-[oklch(0.45_0.22_25)] font-medium transition-colors group">
+                <Link href="/soforthilfe" className="inline-flex items-center gap-2 text-alert hover:text-alert-dark font-medium transition-colors group">
                   <Phone className="w-4 h-4" />
                   <span>Akute Krise? Soforthilfe</span>
                   <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
@@ -207,7 +207,7 @@ export default function Home() {
       </section>
 
       {/* Crisis Matrix */}
-      <section className="py-12 md:py-16 bg-[oklch(0.99_0.008_85)]">
+      <section className="py-12 md:py-16 bg-cream wave-divider-top" style={{ '--wave-color': 'var(--color-cream)' } as React.CSSProperties}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -243,7 +243,7 @@ export default function Home() {
                 >
                   <Link href={item.href}>
                     <Card 
-                      className="group h-full border-2 border-dashed transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-solid hover:scale-[1.02] cursor-pointer"
+                      className="group h-full border-2 border-dashed transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:border-solid hover:scale-[1.02] cursor-pointer"
                       style={{ 
                         borderColor: item.color,
                         backgroundColor: item.bgColor 
@@ -251,7 +251,7 @@ export default function Home() {
                     >
                       <CardContent className="p-5">
                         <div 
-                          className="w-10 h-10 rounded-full flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110"
+                          className="w-10 h-10 rounded-full flex items-center justify-center mb-3 transition-transform duration-500 group-hover:scale-110"
                           style={{ backgroundColor: item.color }}
                         >
                           <Icon className="w-5 h-5 text-white" />
@@ -263,11 +263,11 @@ export default function Home() {
                           {item.description}
                         </p>
                         <span 
-                          className="text-sm font-medium flex items-center gap-1 transition-all duration-300 group-hover:gap-2"
+                          className="text-sm font-medium flex items-center gap-1 transition-all duration-500 group-hover:gap-2"
                           style={{ color: item.color }}
                         >
                           {item.action}
-                          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                          <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
                         </span>
                       </CardContent>
                     </Card>
@@ -280,7 +280,7 @@ export default function Home() {
       </section>
 
       {/* Topics Grid */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 wave-divider-top" style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -300,6 +300,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {topics.map((topic, index) => {
               const Icon = topic.icon;
+              const isFeatured = index === 0;
               return (
                 <motion.div
                   key={topic.href}
@@ -307,40 +308,47 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={isFeatured ? 'md:col-span-2 lg:col-span-2' : ''}
                 >
                   <Link href={topic.href}>
-                    <Card className="h-full group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-transparent hover:border-border">
-                      <CardContent className="p-6">
+                    <Card className={`h-full group cursor-pointer transition-all duration-500 hover:shadow-xl hover:-translate-y-2 border-transparent hover:border-border ${
+                      isFeatured ? 'bg-sage-lighter/40 border-sage-light/50' : ''
+                    }`}>
+                      <CardContent className={isFeatured ? 'p-8 md:flex md:items-center md:gap-8' : 'p-6'}>
                         <div 
-                          className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+                          className={`rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${
+                            isFeatured ? 'w-16 h-16 md:w-20 md:h-20 mb-5 md:mb-0 flex-shrink-0' : 'w-14 h-14 mb-5'
+                          }`}
                           style={{ backgroundColor: topic.bgColor }}
                         >
                           <Icon 
-                            className="w-7 h-7" 
+                            className={isFeatured ? 'w-8 h-8 md:w-10 md:h-10' : 'w-7 h-7'}
                             style={{ color: topic.color }}
                           />
                         </div>
                         
-                        <div className="flex items-center gap-2 mb-3">
-                          <h3 className="text-xl font-semibold text-foreground">
-                            {topic.title}
-                          </h3>
-                          <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-                            {topic.time}
+                        <div className={isFeatured ? 'flex-1' : ''}>
+                          <div className="flex items-center gap-2 mb-3">
+                            <h3 className={`font-semibold text-foreground ${isFeatured ? 'text-2xl' : 'text-xl'}`}>
+                              {topic.title}
+                            </h3>
+                            <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                              {topic.time}
+                            </span>
+                          </div>
+                          
+                          <p className="text-muted-foreground leading-relaxed mb-4">
+                            {topic.description}
+                          </p>
+                          
+                          <span 
+                            className="text-sm font-medium flex items-center gap-1 transition-colors"
+                            style={{ color: topic.color }}
+                          >
+                            Mehr erfahren
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                           </span>
                         </div>
-                        
-                        <p className="text-muted-foreground leading-relaxed mb-4">
-                          {topic.description}
-                        </p>
-                        
-                        <span 
-                          className="text-sm font-medium flex items-center gap-1 transition-colors"
-                          style={{ color: topic.color }}
-                        >
-                          Mehr erfahren
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </span>
                       </CardContent>
                     </Card>
                   </Link>
@@ -352,7 +360,7 @@ export default function Home() {
       </section>
 
       {/* Support Section */}
-      <section className="py-16 md:py-24 bg-[oklch(0.94_0.02_85)]">
+      <section className="py-16 md:py-24 bg-sand-muted wave-divider-top" style={{ '--wave-color': 'var(--color-sand-muted)' } as React.CSSProperties}>
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -374,7 +382,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[oklch(0.85_0.08_55)] text-[oklch(0.45_0.10_55)] text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-terracotta-light text-terracotta-dark text-sm font-medium mb-4">
                 Neue Perspektive
               </span>
               
@@ -393,14 +401,14 @@ export default function Home() {
                   "Sie müssen nicht perfekt sein, nur präsent"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-sage-mid mt-0.5 flex-shrink-0" />
                     <span className="text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
               
               <Link href="/unterstuetzen/uebersicht">
-                <Button size="lg" className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white">
+                <Button size="lg" className="bg-terracotta hover:bg-terracotta-mid text-white">
                   Unterstützungsstrategien entdecken
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -411,7 +419,7 @@ export default function Home() {
       </section>
 
       {/* Genesung ist möglich */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 wave-divider-top" style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}>
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -421,8 +429,8 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-center mb-10"
             >
-              <div className="w-16 h-16 rounded-full bg-[oklch(0.88_0.04_145)] flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-8 h-8 text-[oklch(0.55_0.10_145)]" />
+              <div className="w-16 h-16 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-6">
+                <TrendingUp className="w-8 h-8 text-sage-mid" />
               </div>
               <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
                 Genesung ist möglich
@@ -480,7 +488,7 @@ export default function Home() {
       </section>
 
       {/* Materialien CTA */}
-      <section className="py-12 md:py-16 bg-[oklch(0.97_0.01_85)]">
+      <section className="py-12 md:py-16 bg-cream">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -488,11 +496,11 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="border-2 border-dashed border-[oklch(0.75_0.06_85)] bg-white">
+            <Card className="border-2 border-dashed border-sand-border bg-white">
               <CardContent className="p-8 md:p-10">
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[oklch(0.92_0.04_55)] flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-8 h-8 md:w-10 md:h-10 text-[oklch(0.55_0.12_55)]" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-8 h-8 md:w-10 md:h-10 text-terracotta-mid" />
                   </div>
                   <div className="text-center md:text-left flex-1">
                     <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
@@ -502,7 +510,7 @@ export default function Home() {
                       40 Infografiken &amp; Handouts als A4-PDF – für Beratung und Alltag
                     </p>
                     <Link href="/materialien">
-                      <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white gap-2">
+                      <Button className="bg-terracotta hover:bg-terracotta-mid text-white gap-2">
                         <Download className="w-4 h-4" />
                         40 Materialien durchsuchen
                       </Button>
@@ -519,7 +527,7 @@ export default function Home() {
       <Erfahrungsberichte maxBerichte={4} variant="carousel" />
 
       {/* Emergency CTA */}
-      <section className="py-12 md:py-16 bg-[oklch(0.55_0.20_25)]">
+      <section className="py-12 md:py-16 bg-alert">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
@@ -531,7 +539,7 @@ export default function Home() {
               </p>
             </div>
             <Link href="/soforthilfe">
-              <Button size="lg" variant="secondary" className="bg-white text-[oklch(0.55_0.20_25)] hover:bg-white/90">
+              <Button size="lg" variant="secondary" className="bg-white text-alert hover:bg-white/90">
                 <Phone className="w-5 h-5 mr-2" />
                 Soforthilfe öffnen
               </Button>

@@ -8,7 +8,7 @@ export default function UeberUns() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.88_0.04_145)]/40 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -17,8 +17,8 @@ export default function UeberUns() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.04_145)] flex items-center justify-center">
-                <Heart className="w-6 h-6 text-[oklch(0.55_0.10_145)]" />
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+                <Heart className="w-6 h-6 text-sage-mid" />
               </div>
             </div>
             
@@ -102,8 +102,8 @@ export default function UeberUns() {
                     <Card key={index} className="border-border/50">
                       <CardContent className="p-5">
                         <div className="flex gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-[oklch(0.88_0.04_145)] flex items-center justify-center flex-shrink-0">
-                            <Icon className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                          <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-5 h-5 text-sage-mid" />
                           </div>
                           <div>
                             <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
@@ -155,9 +155,9 @@ export default function UeberUns() {
                     description: "Evidenzbasiertes Programm für Angehörige, entwickelt an der University of Nevada."
                   }
                 ].map((source, index) => (
-                  <div key={index} className="p-4 rounded-lg bg-[oklch(0.98_0.01_85)] border border-border/30">
+                  <div key={index} className="p-4 rounded-lg bg-cream border border-border/30">
                     <p className="font-medium text-foreground">{source.title}</p>
-                    <p className="text-sm text-[oklch(0.55_0.10_145)]">{source.author}</p>
+                    <p className="text-sm text-sage-mid">{source.author}</p>
                     <p className="text-sm text-muted-foreground mt-1">{source.description}</p>
                   </div>
                 ))}
@@ -165,7 +165,7 @@ export default function UeberUns() {
               
               <p className="text-sm text-muted-foreground mt-6">
                 Eine vollständige Liste unserer Buchempfehlungen finden Sie auf der{" "}
-                <Link href="/buchempfehlungen" className="text-[oklch(0.55_0.12_55)] hover:underline">
+                <Link href="/buchempfehlungen" className="text-terracotta-mid hover:underline">
                   Buchempfehlungen-Seite
                 </Link>.
               </p>
@@ -178,18 +178,18 @@ export default function UeberUns() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="border-[oklch(0.55_0.15_55)]/30 bg-[oklch(0.98_0.02_55)]">
+              <Card className="border-terracotta-mid/30 bg-cream">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Diese Website ersetzt keine professionelle Beratung, Therapie oder medizinische Behandlung. Die Inhalte dienen der Information und Orientierung. Bei akuten Krisen wenden Sie sich bitte an die{" "}
-                    <Link href="/soforthilfe" className="text-[oklch(0.55_0.20_55)] hover:underline font-medium">
+                    <Link href="/soforthilfe" className="text-alert hover:underline font-medium">
                       Notfallnummern
                     </Link>. Für eine individuelle Beratung empfehlen wir den Kontakt zu{" "}
-                    <Link href="/selbsthilfegruppen" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">
+                    <Link href="/selbsthilfegruppen" className="text-terracotta-mid hover:underline font-medium">
                       Selbsthilfegruppen
                     </Link>{" "}oder{" "}
-                    <Link href="/unterstuetzen/therapie#therapieangebote" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">
+                    <Link href="/unterstuetzen/therapie#therapieangebote" className="text-terracotta-mid hover:underline font-medium">
                       spezialisierten Therapeuten
                     </Link>.
                   </p>
@@ -212,11 +212,11 @@ export default function UeberUns() {
               </p>
               
               <Link href="/feedback">
-                <Card className="border-border/50 hover:border-[oklch(0.55_0.10_145)] transition-colors cursor-pointer">
+                <Card className="border-border/50 hover:border-sage-mid transition-colors cursor-pointer">
                   <CardContent className="p-5">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.88_0.04_145)] flex items-center justify-center">
-                        <Mail className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                      <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center">
+                        <Mail className="w-5 h-5 text-sage-mid" />
                       </div>
                       <div className="flex-1">
                         <p className="font-medium text-foreground">Feedback geben</p>

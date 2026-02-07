@@ -9,7 +9,7 @@ export default function UnterstuetzenAlltag() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.88_0.04_145)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,10 +22,10 @@ export default function UnterstuetzenAlltag() {
             </Link>
             
             <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.04_145)] flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-[oklch(0.45_0.08_145)]" />
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+                <Calendar className="w-6 h-6 text-sage-dark" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.45_0.08_145)]">Lesezeit: 8 Minuten</span>
+              <span className="text-sm font-medium text-sage-dark">Lesezeit: 8 Minuten</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
@@ -51,7 +51,7 @@ export default function UnterstuetzenAlltag() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Clock className="w-8 h-8 text-[oklch(0.65_0.08_145)]" />
+                <Clock className="w-8 h-8 text-sage" />
                 Stabilität und Struktur bieten
               </h2>
               
@@ -81,7 +81,7 @@ export default function UnterstuetzenAlltag() {
                     <CardContent className="p-5">
                       <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
                       <p className="text-muted-foreground text-sm mb-3">{item.description}</p>
-                      <div className="bg-[oklch(0.88_0.04_145)]/30 rounded-lg p-3">
+                      <div className="bg-sage-light/30 rounded-lg p-3">
                         <p className="text-sm text-foreground italic">{item.example}</p>
                       </div>
                     </CardContent>
@@ -98,7 +98,7 @@ export default function UnterstuetzenAlltag() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Heart className="w-8 h-8 text-[oklch(0.65_0.12_55)]" />
+                <Heart className="w-8 h-8 text-terracotta" />
                 Emotionale Verfügbarkeit zeigen
               </h2>
               
@@ -106,7 +106,7 @@ export default function UnterstuetzenAlltag() {
                 Emotionale Verfügbarkeit bedeutet nicht, immer verfügbar zu sein. Es bedeutet, in den Momenten, in denen Sie da sind, wirklich präsent zu sein.
               </p>
               
-              <Card className="bg-[oklch(0.85_0.08_55)]/10 border-[oklch(0.65_0.12_55)]">
+              <Card className="bg-terracotta-light/10 border-terracotta">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-4">Praktische Tipps</h3>
                   <ul className="space-y-3">
@@ -118,7 +118,7 @@ export default function UnterstuetzenAlltag() {
                       "Zeigen Sie Interesse an den Dingen, die Ihrem Angehörigen wichtig sind"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-sage-mid mt-0.5 flex-shrink-0" />
                         <span className="text-muted-foreground">{item}</span>
                       </li>
                     ))}
@@ -138,7 +138,7 @@ export default function UnterstuetzenAlltag() {
                 Beziehungs-Achtsamkeit
               </h2>
               
-              <Card className="bg-[oklch(0.95_0.03_145)]/50 border-[oklch(0.55_0.10_145)]/30 mb-6">
+              <Card className="bg-sage-wash/50 border-sage-mid/30 mb-6">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed">
                     <strong>Beziehungs-Achtsamkeit</strong> bedeutet, bewusst und nicht-wertend wahrzunehmen, was in der Interaktion gerade passiert – bei Ihnen und bei Ihrem Gegenüber.
@@ -176,7 +176,7 @@ export default function UnterstuetzenAlltag() {
                   <Card key={item.step} className="border-border/50">
                     <CardContent className="p-4">
                       <div className="flex items-start gap-3">
-                        <span className="w-8 h-8 rounded-full bg-[oklch(0.55_0.10_145)] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        <span className="w-8 h-8 rounded-full bg-sage-mid text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
                           {item.step}
                         </span>
                         <div>
@@ -202,7 +202,7 @@ export default function UnterstuetzenAlltag() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Users className="w-8 h-8 text-[oklch(0.45_0.05_250)]" />
+                <Users className="w-8 h-8 text-slate-blue" />
                 Gemeinsame Aktivitäten gestalten
               </h2>
               
@@ -226,7 +226,7 @@ export default function UnterstuetzenAlltag() {
                 ))}
               </div>
               
-              <Card className="mt-6 bg-[oklch(0.95_0.03_85)] border-[oklch(0.60_0.10_85)]">
+              <Card className="mt-6 bg-sand-muted border-sand-mid">
                 <CardContent className="p-5">
                   <p className="text-muted-foreground text-sm">
                     <strong className="text-foreground">Tipp:</strong> Planen Sie regelmässige "Qualitätszeit" ein – auch wenn es nur 15 Minuten sind. Die Regelmässigkeit ist wichtiger als die Dauer.
@@ -243,7 +243,7 @@ export default function UnterstuetzenAlltag() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Lightbulb className="w-8 h-8 text-[oklch(0.60_0.15_85)]" />
+                <Lightbulb className="w-8 h-8 text-sand-mid" />
                 Was Sie konkret tun können
               </h2>
               
@@ -260,15 +260,15 @@ export default function UnterstuetzenAlltag() {
                     </p>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
                         <span>Gemeinsam Atemübungen machen (auch wenn keine Krise ist)</span>
                       </li>
                       <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
                         <span>Bei Achtsamkeitsübungen mitmachen</span>
                       </li>
                       <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
                         <span>Sanft an Skills erinnern: «Möchtest du die Übung ausprobieren, die dir letztens geholfen hat?»</span>
                       </li>
                     </ul>
@@ -281,7 +281,7 @@ export default function UnterstuetzenAlltag() {
                     <p className="text-muted-foreground text-sm mb-3">
                       Kleine Erfolge zu bemerken und zu benennen stärkt die Motivation:
                     </p>
-                    <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                    <div className="bg-sage-lighter/50 rounded-lg p-3">
                       <p className="text-sm text-foreground italic">
                         «Ich habe bemerkt, dass du heute ruhig geblieben bist, obwohl die Situation schwierig war. Das war stark.»
                       </p>
@@ -300,15 +300,15 @@ export default function UnterstuetzenAlltag() {
                     </p>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
                         <span>Änderungen frühzeitig ankündigen</span>
                       </li>
                       <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
                         <span>Versprechen halten oder erklären, warum nicht</span>
                       </li>
                       <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)] mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
                         <span>Klare Zeiten für Erreichbarkeit kommunizieren</span>
                       </li>
                     </ul>
@@ -322,13 +322,13 @@ export default function UnterstuetzenAlltag() {
                       Statt Lösungen vorzugeben, fragen Sie:
                     </p>
                     <div className="space-y-2">
-                      <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                      <div className="bg-sage-lighter/50 rounded-lg p-3">
                         <p className="text-sm text-foreground italic">«Was wäre dein Vorschlag?»</p>
                       </div>
-                      <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                      <div className="bg-sage-lighter/50 rounded-lg p-3">
                         <p className="text-sm text-foreground italic">«Wie kann ich dir dabei helfen?»</p>
                       </div>
-                      <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-3">
+                      <div className="bg-sage-lighter/50 rounded-lg p-3">
                         <p className="text-sm text-foreground italic">«Was brauchst du gerade von mir?»</p>
                       </div>
                     </div>
@@ -347,7 +347,7 @@ export default function UnterstuetzenAlltag() {
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Grenzen der Alltagsunterstützung
               </h2>            
-              <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)] bg-[oklch(0.95_0.03_55)]">
+              <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Auch im Alltag gibt es Grenzen. Sie können nicht:
@@ -360,7 +360,7 @@ export default function UnterstuetzenAlltag() {
                       "Die Therapie ersetzen"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-[oklch(0.55_0.15_55)]">•</span>
+                        <span className="text-terracotta-mid">•</span>
                         {item}
                       </li>
                     ))}
@@ -385,7 +385,7 @@ export default function UnterstuetzenAlltag() {
                 </Button>
               </Link>
               <Link href="/unterstuetzen/therapie">
-                <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white">
+                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
                   Weiter: Therapie begleiten
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

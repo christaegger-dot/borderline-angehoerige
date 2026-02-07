@@ -91,7 +91,7 @@ export default function ContentSection({
         className="w-full text-left group"
         aria-expanded={isOpen}
       >
-        <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-[oklch(0.97_0.01_85)] hover:bg-[oklch(0.95_0.02_85)] border border-border/40 transition-all duration-200">
+        <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-cream hover:bg-sand-muted border border-border/40 transition-all duration-400">
           <div className="flex items-center gap-3 min-w-0">
             {icon}
             <h2 className="text-xl md:text-2xl font-semibold text-foreground">
@@ -99,7 +99,7 @@ export default function ContentSection({
             </h2>
           </div>
           <ChevronDown
-            className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${
+            className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-500 ${
               isOpen ? "rotate-180" : ""
             }`}
           />

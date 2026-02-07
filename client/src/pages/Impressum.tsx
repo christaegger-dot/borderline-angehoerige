@@ -14,7 +14,7 @@ export default function Impressum() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.94_0.02_85)]/50 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sand-muted/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -23,8 +23,8 @@ export default function Impressum() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.04_145)] flex items-center justify-center">
-                <FileText className="w-6 h-6 text-[oklch(0.40_0.08_145)]" />
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+                <FileText className="w-6 h-6 text-sage-darker" />
               </div>
             </div>
             
@@ -69,7 +69,7 @@ export default function Impressum() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="border-[oklch(0.55_0.10_145)]/30 bg-[oklch(0.95_0.04_145)]/30">
+              <Card className="border-sage-mid/30 bg-sage-wash/30">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold text-foreground mb-4">
                     Beratung für Angehörige
@@ -80,23 +80,23 @@ export default function Impressum() {
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.90_0.05_145)] flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-5 h-5 text-[oklch(0.45_0.10_145)]" />
+                      <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center flex-shrink-0">
+                        <Phone className="w-5 h-5 text-sage-dark" />
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">Telefon</p>
-                        <a href={`tel:${fachstelle.tel}`} className="font-medium text-foreground hover:text-[oklch(0.55_0.10_145)] transition-colors">
+                        <a href={`tel:${fachstelle.tel}`} className="font-medium text-foreground hover:text-sage-mid transition-colors">
                           {fachstelle.nummer}
                         </a>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.90_0.05_145)] flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-5 h-5 text-[oklch(0.45_0.10_145)]" />
+                      <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-5 h-5 text-sage-dark" />
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">E-Mail</p>
-                        <a href={`mailto:${emailAngehoerigen.adresse}`} className="font-medium text-foreground hover:text-[oklch(0.55_0.10_145)] transition-colors">
+                        <a href={`mailto:${emailAngehoerigen.adresse}`} className="font-medium text-foreground hover:text-sage-mid transition-colors">
                           {emailAngehoerigen.adresse}
                         </a>
                       </div>
@@ -118,7 +118,7 @@ export default function Impressum() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="border-[oklch(0.65_0.12_55)]/30 bg-[oklch(0.95_0.04_55)]/30">
+              <Card className="border-terracotta/30 bg-terracotta-wash/30">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold text-foreground mb-4">
                     Wichtiger Hinweis
@@ -148,19 +148,19 @@ export default function Impressum() {
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                      <span className="text-sage-mid">•</span>
                       Evidenzbasierte Informationen zum Verständnis der Störung
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                      <span className="text-sage-mid">•</span>
                       Praktische Strategien für den Alltag und Krisensituationen
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                      <span className="text-sage-mid">•</span>
                       Kommunikationstechniken für schwierige Gespräche
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                      <span className="text-sage-mid">•</span>
                       Ressourcen zur Selbstfürsorge und Burnout-Prävention
                     </li>
                   </ul>
@@ -208,7 +208,7 @@ export default function Impressum() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                    <BookOpen className="w-5 h-5 text-sage-mid" />
                     Quellenangaben
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-4">
@@ -216,22 +216,22 @@ export default function Impressum() {
                     insbesondere:
                   </p>
                   <ul className="space-y-3 text-muted-foreground">
-                    <li className="border-l-2 border-[oklch(0.65_0.08_145)] pl-4">
+                    <li className="border-l-2 border-sage pl-4">
                       <p className="font-medium text-foreground">Mason, P. T. & Kreger, R.</p>
                       <p className="text-sm">Schluss mit dem Eiertanz: Für Angehörige von Menschen mit Borderline. 
                       Balance Buch + Medien Verlag.</p>
                     </li>
-                    <li className="border-l-2 border-[oklch(0.65_0.08_145)] pl-4">
+                    <li className="border-l-2 border-sage pl-4">
                       <p className="font-medium text-foreground">Linehan, M. M.</p>
                       <p className="text-sm">Dialektisch-Behaviorale Therapie der Borderline-Persönlichkeitsstörung. 
                       CIP-Medien.</p>
                     </li>
-                    <li className="border-l-2 border-[oklch(0.65_0.08_145)] pl-4">
+                    <li className="border-l-2 border-sage pl-4">
                       <p className="font-medium text-foreground">Fruzzetti, A. E.</p>
                       <p className="text-sm">The High-Conflict Couple: A Dialectical Behavior Therapy Guide. 
                       New Harbinger Publications.</p>
                     </li>
-                    <li className="border-l-2 border-[oklch(0.65_0.08_145)] pl-4">
+                    <li className="border-l-2 border-sage pl-4">
                       <p className="font-medium text-foreground">Gunderson, J. G. & Hoffman, P. D.</p>
                       <p className="text-sm">Understanding and Treating Borderline Personality Disorder. 
                       American Psychiatric Publishing.</p>

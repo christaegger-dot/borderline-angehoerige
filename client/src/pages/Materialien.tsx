@@ -431,7 +431,7 @@ export default function Materialien() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.88_0.04_145)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -440,8 +440,8 @@ export default function Materialien() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.04_145)] flex items-center justify-center">
-                <Download className="w-6 h-6 text-[oklch(0.40_0.08_145)]" />
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+                <Download className="w-6 h-6 text-sage-darker" />
               </div>
             </div>
             
@@ -469,11 +469,11 @@ export default function Materialien() {
       {/* Überarbeitungs-Hinweis */}
       <section className="py-8">
         <div className="container">
-          <Card className="bg-[oklch(0.95_0.05_145)] border-[oklch(0.80_0.08_145)]">
+          <Card className="bg-sage-wash border-sage-light">
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.06_145)] flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-6 h-6 text-[oklch(0.45_0.12_145)]" />
+                <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-6 h-6 text-sage-dark" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">
@@ -511,7 +511,7 @@ export default function Materialien() {
                         gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }, 50);
                     }}
-                    className={`whitespace-nowrap shrink-0 ${activeCategory === cat.id ? "bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]" : ""}`}
+                    className={`whitespace-nowrap shrink-0 ${activeCategory === cat.id ? "bg-sage-mid hover:bg-sage-mid" : ""}`}
                   >
                     <Icon className="w-4 h-4 mr-1.5" />
                     {cat.label}
@@ -537,7 +537,7 @@ export default function Materialien() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <Card className="h-full hover:shadow-lg transition-all hover:border-[oklch(0.55_0.10_145)]/30 overflow-hidden">
+                  <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
                     {/* Vorschaubild mit Hover-Overlay */}
                     <div 
                       className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
@@ -550,8 +550,8 @@ export default function Materialien() {
                         loading="lazy"
                       />
                       {/* Hover-Overlay */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                           <ZoomIn className="w-4 h-4 text-foreground" />
                           <span className="text-sm font-medium text-foreground">Vergrössern</span>
                         </div>
@@ -573,7 +573,7 @@ export default function Materialien() {
                       
                       <div className="flex items-center justify-end">
                         <a href={item.downloadUrl || item.url} target="_blank" rel="noopener noreferrer" download>
-                          <Button size="sm" className="bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]">
+                          <Button size="sm" className="bg-sage-mid hover:bg-sage-mid">
                             <Download className="w-4 h-4 mr-2" />
                             {item.downloadUrl ? "PDF" : "Download"}
                           </Button>
@@ -629,7 +629,7 @@ export default function Materialien() {
       {/* Nutzungshinweis */}
       <section className="py-12 bg-muted/30">
         <div className="container">
-          <Card className="bg-[oklch(0.95_0.03_85)] border-[oklch(0.60_0.10_85)]">
+          <Card className="bg-sand-muted border-sand-mid">
             <CardContent className="p-6">
               <h3 className="font-semibold text-foreground mb-2">
                 Nutzungshinweis

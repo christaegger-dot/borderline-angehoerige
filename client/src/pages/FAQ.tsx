@@ -31,7 +31,7 @@ export default function FAQ() {
     {
       title: "Diagnose & Krankheitsverständnis",
       icon: <HelpCircle className="w-5 h-5" />,
-      color: "oklch(0.55 0.15 250)",
+      color: "var(--color-slate-mid)",
       questions: [
         {
           question: "Soll ich die Diagnose ansprechen?",
@@ -56,7 +56,7 @@ export default function FAQ() {
     {
       title: "Kommunikation & Konflikte",
       icon: <MessageCircle className="w-5 h-5" />,
-      color: "oklch(0.55 0.15 145)",
+      color: "var(--color-sage-mid)",
       questions: [
         {
           question: "Wie reagiere ich auf Drohungen?",
@@ -81,7 +81,7 @@ export default function FAQ() {
     {
       title: "Grenzen & Selbstschutz",
       icon: <Shield className="w-5 h-5" />,
-      color: "oklch(0.55 0.15 55)",
+      color: "var(--color-terracotta-mid)",
       questions: [
         {
           question: "Wann ist eine Einweisung nötig?",
@@ -107,7 +107,7 @@ export default function FAQ() {
     {
       title: "Therapie & Behandlung",
       icon: <Heart className="w-5 h-5" />,
-      color: "oklch(0.55 0.12 250)",
+      color: "var(--color-slate-mid)",
       questions: [
         {
           question: "Mein Angehöriger will keine Therapie – was tun?",
@@ -132,7 +132,7 @@ export default function FAQ() {
     {
       title: "Alltag & Beziehung",
       icon: <Users className="w-5 h-5" />,
-      color: "oklch(0.55 0.12 55)",
+      color: "var(--color-terracotta-mid)",
       questions: [
         {
           question: "Wie erkläre ich die Situation Freunden/Familie?",
@@ -158,7 +158,7 @@ export default function FAQ() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.05_250)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -167,7 +167,7 @@ export default function FAQ() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.55_0.15_250)] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-slate-mid flex items-center justify-center">
                 <HelpCircle className="w-6 h-6 text-white" />
               </div>
             </div>
@@ -257,9 +257,9 @@ export default function FAQ() {
               viewport={{ once: true }}
               className="mt-12"
             >
-              <Card className="bg-[oklch(0.95_0.03_55)] border-[oklch(0.65_0.12_55)]">
+              <Card className="bg-terracotta-wash border-terracotta">
                 <CardContent className="p-6 text-center">
-                  <Lightbulb className="w-8 h-8 text-[oklch(0.55_0.12_55)] mx-auto mb-3" />
+                  <Lightbulb className="w-8 h-8 text-terracotta-mid mx-auto mb-3" />
                   <h3 className="font-semibold text-foreground mb-2">
                     Ihre Frage ist nicht dabei?
                   </h3>
@@ -268,13 +268,13 @@ export default function FAQ() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link href="/impressum">
-                      <span className="inline-flex items-center gap-2 text-sm font-medium text-[oklch(0.55_0.15_145)] hover:underline">
+                      <span className="inline-flex items-center gap-2 text-sm font-medium text-sage-mid hover:underline">
                         Zur Beratung
                         <ChevronRight className="w-4 h-4" />
                       </span>
                     </Link>
                     <Link href="/glossar">
-                      <span className="inline-flex items-center gap-2 text-sm font-medium text-[oklch(0.55_0.15_250)] hover:underline">
+                      <span className="inline-flex items-center gap-2 text-sm font-medium text-slate-mid hover:underline">
                         Zum Glossar
                         <ChevronRight className="w-4 h-4" />
                       </span>

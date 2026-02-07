@@ -7,7 +7,7 @@ export default function Datenschutz() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.94_0.02_85)]/50 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sand-muted/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -16,8 +16,8 @@ export default function Datenschutz() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.04_145)] flex items-center justify-center">
-                <Shield className="w-6 h-6 text-[oklch(0.40_0.08_145)]" />
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+                <Shield className="w-6 h-6 text-sage-darker" />
               </div>
             </div>
             
@@ -43,10 +43,10 @@ export default function Datenschutz() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="border-[oklch(0.65_0.08_145)]/30 bg-[oklch(0.88_0.04_145)]/20">
+              <Card className="border-sage/30 bg-sage-light/20">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <Lock className="w-8 h-8 text-[oklch(0.55_0.10_145)] flex-shrink-0 mt-1" />
+                    <Lock className="w-8 h-8 text-sage-mid flex-shrink-0 mt-1" />
                     <div>
                       <h2 className="text-xl font-semibold text-foreground mb-2">
                         Unser Grundsatz
@@ -93,7 +93,7 @@ export default function Datenschutz() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <Server className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                    <Server className="w-5 h-5 text-sage-mid" />
                     Erhebung und Verarbeitung von Daten
                   </h2>
                   <div className="text-muted-foreground leading-relaxed space-y-4">
@@ -105,27 +105,27 @@ export default function Datenschutz() {
                       </p>
                       <ul className="mt-2 space-y-1 text-sm">
                         <li className="flex items-start gap-2">
-                          <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                          <span className="text-sage-mid">•</span>
                           Browsertyp und Browserversion
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                          <span className="text-sage-mid">•</span>
                           Verwendetes Betriebssystem
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                          <span className="text-sage-mid">•</span>
                           Referrer URL (die zuvor besuchte Seite)
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                          <span className="text-sage-mid">•</span>
                           Hostname des zugreifenden Rechners
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                          <span className="text-sage-mid">•</span>
                           Uhrzeit der Serveranfrage
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                          <span className="text-sage-mid">•</span>
                           IP-Adresse (anonymisiert)
                         </li>
                       </ul>
@@ -149,7 +149,7 @@ export default function Datenschutz() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <Cookie className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                    <Cookie className="w-5 h-5 text-sage-mid" />
                     Cookies
                   </h2>
                   <div className="text-muted-foreground leading-relaxed space-y-4">
@@ -184,7 +184,7 @@ export default function Datenschutz() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <Eye className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                    <Eye className="w-5 h-5 text-sage-mid" />
                     Analyse- und Tracking-Tools
                   </h2>
                   <div className="text-muted-foreground leading-relaxed space-y-4">
@@ -261,19 +261,19 @@ export default function Datenschutz() {
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         <span><strong>Auskunftsrecht:</strong> Sie können Auskunft über Ihre gespeicherten personenbezogenen Daten verlangen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         <span><strong>Berichtigungsrecht:</strong> Sie können die Berichtigung unrichtiger Daten verlangen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         <span><strong>Löschungsrecht:</strong> Sie können die Löschung Ihrer Daten verlangen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         <span><strong>Widerspruchsrecht:</strong> Sie können der Verarbeitung Ihrer Daten widersprechen.</span>
                       </li>
                     </ul>

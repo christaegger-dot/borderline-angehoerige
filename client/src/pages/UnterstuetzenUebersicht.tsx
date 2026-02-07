@@ -9,7 +9,7 @@ export default function UnterstuetzenUebersicht() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.85_0.08_55)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-light/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,10 +22,10 @@ export default function UnterstuetzenUebersicht() {
             </Link>
             
             <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.85_0.08_55)] flex items-center justify-center">
-                <Compass className="w-6 h-6 text-[oklch(0.45_0.12_55)]" />
+              <div className="w-12 h-12 rounded-xl bg-terracotta-light flex items-center justify-center">
+                <Compass className="w-6 h-6 text-terracotta-dark" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.45_0.12_55)]">Lesezeit: 4 Minuten</span>
+              <span className="text-sm font-medium text-terracotta-dark">Lesezeit: 4 Minuten</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
@@ -50,7 +50,7 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="bg-[oklch(0.85_0.08_55)]/20 border-[oklch(0.65_0.12_55)]">
+              <Card className="bg-terracotta-light/20 border-terracotta">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl">🏠</span>
@@ -80,10 +80,10 @@ export default function UnterstuetzenUebersicht() {
               
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Was Sie sind */}
-                <Card className="border-[oklch(0.55_0.10_145)]">
+                <Card className="border-sage-mid">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                      <CheckCircle2 className="w-5 h-5 text-sage-mid" />
                       Was Sie sein können
                     </h3>
                     <ul className="space-y-3">
@@ -95,7 +95,7 @@ export default function UnterstuetzenUebersicht() {
                         "Jemand, der Grenzen setzt und hält"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-[oklch(0.55_0.10_145)]">✓</span>
+                          <span className="text-sage-mid">✓</span>
                           {item}
                         </li>
                       ))}
@@ -104,10 +104,10 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
 
                 {/* Was Sie nicht sind */}
-                <Card className="border-[oklch(0.55_0.15_55)]">
+                <Card className="border-terracotta-mid">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <XCircle className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
+                      <XCircle className="w-5 h-5 text-terracotta-mid" />
                       Was nicht Ihre Rolle ist
                     </h3>
                     <ul className="space-y-3">
@@ -119,7 +119,7 @@ export default function UnterstuetzenUebersicht() {
                         "Der Verantwortliche für die Genesung"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-[oklch(0.55_0.15_55)]">✗</span>
+                          <span className="text-terracotta-mid">✗</span>
                           {item}
                         </li>
                       ))}
@@ -140,7 +140,7 @@ export default function UnterstuetzenUebersicht() {
                 Das verlorene Kind verstehen
               </h2>
               
-              <Card className="bg-[oklch(0.95_0.04_55)]/30 border-[oklch(0.65_0.12_55)]/50">
+              <Card className="bg-terracotta-wash/30 border-terracotta/50">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed mb-4">
                     Stellen Sie sich ein <strong>7-jähriges Kind</strong> vor, das sich allein auf dem Times Square verirrt hat. Es ist überwältigt, verängstigt und reagiert impulsiv. Würden Sie dieses Kind anschreien oder ihm Vorwürfe machen?
@@ -148,7 +148,7 @@ export default function UnterstuetzenUebersicht() {
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Menschen mit Borderline erleben in emotionalen Krisen oft genau diesen Zustand: Sie fühlen sich verloren, überwältigt und allein – auch wenn sie erwachsen sind. Ihr emotionales Erleben entspricht in diesen Momenten dem eines verängstigten Kindes.
                   </p>
-                  <div className="bg-[oklch(0.92_0.04_145)]/50 rounded-lg p-4">
+                  <div className="bg-sage-lighter/50 rounded-lg p-4">
                     <p className="text-sm text-foreground">
                       <strong>Was hilft:</strong> Reagieren Sie so, wie Sie einem verlorenen Kind begegnen würden – mit Ruhe, Geduld und der Versicherung: «Ich bin hier. Du bist nicht allein.»
                     </p>
@@ -172,7 +172,7 @@ export default function UnterstuetzenUebersicht() {
                 Das Konsistenz-Prinzip
               </h2>
               
-              <Card className="bg-[oklch(0.95_0.03_145)]/50 border-[oklch(0.55_0.10_145)]/30 mb-6">
+              <Card className="bg-sage-wash/50 border-sage-mid/30 mb-6">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed text-lg">
                     <strong>Kernaussage:</strong> Wenn mehrere Angehörige involviert sind, müssen alle an einem Strang ziehen.
@@ -185,10 +185,10 @@ export default function UnterstuetzenUebersicht() {
               </p>
               
               <div className="grid sm:grid-cols-2 gap-4">
-                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-4">
                     <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[oklch(0.55_0.10_145)]" />
+                      <CheckCircle2 className="w-4 h-4 text-sage-mid" />
                       Hilfreich
                     </h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -199,10 +199,10 @@ export default function UnterstuetzenUebersicht() {
                     </ul>
                   </CardContent>
                 </Card>
-                <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)]">
+                <Card className="border-l-4 border-l-terracotta-mid">
                   <CardContent className="p-4">
                     <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <XCircle className="w-4 h-4 text-[oklch(0.55_0.15_55)]" />
+                      <XCircle className="w-4 h-4 text-terracotta-mid" />
                       Vermeiden
                     </h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -279,16 +279,16 @@ export default function UnterstuetzenUebersicht() {
               
               <div className="space-y-6">
                 {/* Ziele */}
-                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Ziele: Langsam vorgehen</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.10_145)] font-bold">1.</span>
+                        <span className="text-sage-mid font-bold">1.</span>
                         <span><strong className="text-foreground">Veränderung ist schwierig</strong> – Fortschritt kann Verlassensängste auslösen und zu Rückfällen führen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.10_145)] font-bold">2.</span>
+                        <span className="text-sage-mid font-bold">2.</span>
                         <span><strong className="text-foreground">Erwartungen senken</strong> – Kleine Schritte feiern, realistische Ziele setzen.</span>
                       </li>
                     </ul>
@@ -296,20 +296,20 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
                 
                 {/* Familienumgebung */}
-                <Card className="border-l-4 border-l-[oklch(0.65_0.12_55)]">
+                <Card className="border-l-4 border-l-terracotta">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Familienumgebung gestalten</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.65_0.12_55)] font-bold">3.</span>
+                        <span className="text-terracotta font-bold">3.</span>
                         <span><strong className="text-foreground">Ruhe bewahren</strong> – Eine kühle, ruhige Atmosphäre schaffen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.65_0.12_55)] font-bold">4.</span>
+                        <span className="text-terracotta font-bold">4.</span>
                         <span><strong className="text-foreground">Routinen beibehalten</strong> – Struktur gibt Sicherheit.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.65_0.12_55)] font-bold">5.</span>
+                        <span className="text-terracotta font-bold">5.</span>
                         <span><strong className="text-foreground">Zeit zum Reden finden</strong> – Regelmässige, geplante Gespräche.</span>
                       </li>
                     </ul>
@@ -317,20 +317,20 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
                 
                 {/* Krisen managen */}
-                <Card className="border-l-4 border-l-[oklch(0.55_0.15_55)]">
+                <Card className="border-l-4 border-l-terracotta-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Krisen managen</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.15_55)] font-bold">6.</span>
+                        <span className="text-terracotta-mid font-bold">6.</span>
                         <span><strong className="text-foreground">Nicht defensiv werden</strong> – Nicht rechtfertigen oder verteidigen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.15_55)] font-bold">7.</span>
+                        <span className="text-terracotta-mid font-bold">7.</span>
                         <span><strong className="text-foreground">Selbstverletzendes Verhalten ernst nehmen</strong> – Aufmerksamkeit geben, nicht ignorieren.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.15_55)] font-bold">8.</span>
+                        <span className="text-terracotta-mid font-bold">8.</span>
                         <span><strong className="text-foreground">Zuhören</strong> – Gefühle anerkennen, nicht wegargumentieren.</span>
                       </li>
                     </ul>
@@ -338,20 +338,20 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
                 
                 {/* Probleme angehen */}
-                <Card className="border-l-4 border-l-[oklch(0.45_0.05_250)]">
+                <Card className="border-l-4 border-l-slate-blue">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Probleme angehen</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.45_0.05_250)] font-bold">9.</span>
+                        <span className="text-slate-blue font-bold">9.</span>
                         <span><strong className="text-foreground">Drei «Musts»</strong> – Einbeziehen, fragen ob sie können, fragen ob Hilfe gewünscht ist.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.45_0.05_250)] font-bold">10.</span>
+                        <span className="text-slate-blue font-bold">10.</span>
                         <span><strong className="text-foreground">Familie handelt gemeinsam</strong> – Konsistenz zwischen allen Familienmitgliedern.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.45_0.05_250)] font-bold">11.</span>
+                        <span className="text-slate-blue font-bold">11.</span>
                         <span><strong className="text-foreground">Kommunikation mit Therapeuten</strong> – Bedenken offen äussern.</span>
                       </li>
                     </ul>
@@ -359,24 +359,24 @@ export default function UnterstuetzenUebersicht() {
                 </Card>
                 
                 {/* Grenzen setzen */}
-                <Card className="border-l-4 border-l-[oklch(0.50_0.12_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-3">Grenzen setzen</h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.50_0.12_145)] font-bold">12.</span>
+                        <span className="text-sage-mid font-bold">12.</span>
                         <span><strong className="text-foreground">Grenzen klar kommunizieren</strong> – Erwartungen deutlich machen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.50_0.12_145)] font-bold">13.</span>
+                        <span className="text-sage-mid font-bold">13.</span>
                         <span><strong className="text-foreground">Natürliche Konsequenzen zulassen</strong> – Nicht vor der Realität schützen.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.50_0.12_145)] font-bold">14.</span>
+                        <span className="text-sage-mid font-bold">14.</span>
                         <span><strong className="text-foreground">Missbrauch nicht tolerieren</strong> – Verbale/körperliche Gewalt = rote Linie.</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.50_0.12_145)] font-bold">15.</span>
+                        <span className="text-sage-mid font-bold">15.</span>
                         <span><strong className="text-foreground">Drohungen und Ultimaten</strong> – Nur aussprechen, wenn Sie sie durchziehen können.</span>
                       </li>
                     </ul>
@@ -397,7 +397,7 @@ export default function UnterstuetzenUebersicht() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-[oklch(0.45_0.12_55)]" />
+                <Download className="w-8 h-8 text-terracotta-dark" />
                 Materialien zum Thema
               </h2>
               
@@ -470,10 +470,10 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="bg-[oklch(0.95_0.03_85)] border-[oklch(0.60_0.10_85)]">
+              <Card className="bg-sand-muted border-sand-mid">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <Lightbulb className="w-6 h-6 text-[oklch(0.60_0.10_85)] flex-shrink-0" />
+                    <Lightbulb className="w-6 h-6 text-sand-mid flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">
                         Denken Sie daran
@@ -500,7 +500,7 @@ export default function UnterstuetzenUebersicht() {
                 </Button>
               </Link>
               <Link href="/unterstuetzen/alltag">
-                <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white">
+                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
                   Weiter: Im Alltag unterstützen
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

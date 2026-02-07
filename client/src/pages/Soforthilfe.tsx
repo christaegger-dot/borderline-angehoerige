@@ -33,28 +33,28 @@ import {
 
 const FARBEN = {
   rot: {
-    bg: "oklch(0.55 0.20 25)",
-    bgLight: "oklch(0.98 0.02 25)",
-    border: "oklch(0.55 0.20 25)",
-    hover: "oklch(0.50 0.20 25)",
+    bg: "var(--color-alert)",
+    bgLight: "var(--color-alert-wash)",
+    border: "var(--color-alert)",
+    hover: "var(--color-alert)",
   },
   gelb: {
-    bg: "oklch(0.55 0.18 85)",
-    bgLight: "oklch(0.97 0.02 85)",
-    border: "oklch(0.65 0.18 85)",
-    hover: "oklch(0.50 0.18 85)",
+    bg: "var(--color-terracotta-mid)",
+    bgLight: "var(--color-sand)",
+    border: "var(--color-sand-accent)",
+    hover: "var(--color-terracotta-mid)",
   },
   gruen: {
-    bg: "oklch(0.55 0.15 145)",
-    bgLight: "oklch(0.97 0.02 145)",
-    border: "oklch(0.55 0.15 145)",
-    hover: "oklch(0.50 0.15 145)",
+    bg: "var(--color-sage-mid)",
+    bgLight: "var(--color-sage-pale)",
+    border: "var(--color-sage-mid)",
+    hover: "var(--color-sage-mid)",
   },
   info: {
-    bg: "oklch(0.55 0.18 85)",
-    bgLight: "oklch(0.97 0.02 250)",
-    border: "oklch(0.65 0.10 250)",
-    hover: "oklch(0.50 0.10 250)",
+    bg: "var(--color-terracotta-mid)",
+    bgLight: "var(--color-slate-pale)",
+    border: "var(--color-slate-mid)",
+    hover: "var(--color-slate-mid)",
   },
 } as const;
 
@@ -108,10 +108,10 @@ function KontaktKarte({ kontakt, icon }: { kontakt: Kontakt; icon?: React.ReactN
 // ─── PUK-Karte mit Icon ──────────────────────────────────
 
 const PUK_ICONS: Record<string, React.ReactNode> = {
-  GELB_PUK_KJP: <Baby className="w-6 h-6 text-[oklch(0.55_0.18_85)]" />,
-  GELB_PUK_ERW: <User className="w-6 h-6 text-[oklch(0.55_0.18_85)]" />,
-  GELB_PUK_65: <Users className="w-6 h-6 text-[oklch(0.55_0.18_85)]" />,
-  GELB_KIZ: <AlertTriangle className="w-6 h-6 text-[oklch(0.55_0.18_85)]" />,
+  GELB_PUK_KJP: <Baby className="w-6 h-6 text-terracotta-mid" />,
+  GELB_PUK_ERW: <User className="w-6 h-6 text-terracotta-mid" />,
+  GELB_PUK_65: <Users className="w-6 h-6 text-terracotta-mid" />,
+  GELB_KIZ: <AlertTriangle className="w-6 h-6 text-terracotta-mid" />,
 };
 
 // ─── Online-Ressourcen aus Master ────────────────────────
@@ -145,28 +145,28 @@ function StickyAmpelLeiste() {
       id: "rot",
       label: "Lebensgefahr",
       sublabel: "144 / 117 / 112",
-      bg: "oklch(0.55 0.20 25)",
-      hoverBg: "oklch(0.50 0.22 25)",
+      bg: "var(--color-alert)",
+      hoverBg: "var(--color-alert)",
     },
     {
       id: "gelb",
       label: "Psychiatrische Krise",
       sublabel: "PUK 24/7",
-      bg: "oklch(0.55 0.18 85)",
-      hoverBg: "oklch(0.50 0.20 85)",
+      bg: "var(--color-terracotta-mid)",
+      hoverBg: "var(--color-terracotta-mid)",
     },
     {
       id: "gruen",
       label: "Jemand zum Reden",
       sublabel: "143",
-      bg: "oklch(0.55 0.15 145)",
-      hoverBg: "oklch(0.50 0.17 145)",
+      bg: "var(--color-sage-mid)",
+      hoverBg: "var(--color-sage-mid)",
     },
   ] as const;
 
   return (
     <div
-      className={`sticky top-0 z-40 transition-all duration-300 ${
+      className={`sticky top-0 z-40 transition-all duration-500 ${
         visible
           ? "opacity-100 translate-y-0 shadow-md"
           : "opacity-100 translate-y-0"
@@ -212,7 +212,7 @@ export default function Notfall() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.08_25)]/50 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-alert-light/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -221,7 +221,7 @@ export default function Notfall() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.55_0.20_25)] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-alert flex items-center justify-center">
                 <Phone className="w-6 h-6 text-white" />
               </div>
             </div>
@@ -234,10 +234,10 @@ export default function Notfall() {
               Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz – wenn sofortiges Handeln erforderlich ist.
             </p>
             
-            <div className="p-4 rounded-xl bg-[oklch(0.96_0.02_85)] border border-[oklch(0.90_0.04_85)]">
+            <div className="p-4 rounded-xl bg-sand border border-sand-subtle">
               <p className="text-sm text-muted-foreground">
                 <strong className="text-foreground">Unterschied Notfall vs. Krise:</strong> Diese Seite ist für <strong>akute Gefahrensituationen</strong> (Suizidgefahr, Selbstverletzung, Gewalt). Für Deeskalationstechniken bei <strong>emotionalen Krisen ohne akute Gefahr</strong> besuchen Sie unsere Seite{" "}
-                <Link href="/unterstuetzen/krise" className="text-[oklch(0.55_0.12_55)] hover:underline font-medium">In der Krise unterstützen →</Link>
+                <Link href="/unterstuetzen/krise" className="text-terracotta-mid hover:underline font-medium">In der Krise unterstützen →</Link>
               </p>
             </div>
           </motion.div>
@@ -292,7 +292,7 @@ export default function Notfall() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
-                <Clock className="w-8 h-8 text-[oklch(0.65_0.18_85)]" />
+                <Clock className="w-8 h-8 text-sand-accent" />
                 Psychiatrische Notdienste Kanton Zürich
               </h2>
               <p className="text-sm text-muted-foreground mb-6 ml-11">
@@ -300,13 +300,13 @@ export default function Notfall() {
               </p>
               
               {/* Info-Box: Was ist PUK? */}
-              <Card className="border-l-4 border-[oklch(0.65_0.18_85)] bg-[oklch(0.97_0.02_85)] mb-6">
+              <Card className="border-l-4 border-sand-accent bg-sand mb-6">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">PUK Zürich – psychiatrische Notfallhilfe (24/7)</h3>
                   <p className="text-muted-foreground leading-relaxed mb-3">
                     {TEXTE.pukEinleitung}
                   </p>
-                  <div className="p-3 rounded-md bg-[oklch(0.94_0.03_85)] border border-[oklch(0.88_0.05_85)]">
+                  <div className="p-3 rounded-md bg-sand-muted border border-sand-subtle">
                     <p className="text-sm text-muted-foreground">
                       <strong className="text-foreground">Was passiert beim Anruf?</strong> {TEXTE.pukTriage}
                     </p>
@@ -343,7 +343,7 @@ export default function Notfall() {
                             <p className="text-sm text-muted-foreground">{kontakt.hinweis}</p>
                           </div>
                           <a href={`tel:${kontakt.tel}`}>
-                            <Button variant="outline" size="sm" className="font-bold border-[oklch(0.65_0.10_250)] text-[oklch(0.45_0.10_250)] hover:bg-[oklch(0.95_0.02_250)]">
+                            <Button variant="outline" size="sm" className="font-bold border-slate-mid text-slate-dark hover:bg-slate-wash">
                               <Phone className="w-3.5 h-3.5 mr-1.5" />
                               {kontakt.nummer}
                             </Button>
@@ -367,7 +367,7 @@ export default function Notfall() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
-                <Heart className="w-8 h-8 text-[oklch(0.55_0.15_145)]" />
+                <Heart className="w-8 h-8 text-sage-mid" />
                 Zuhören & Entlastung
               </h2>
               <p className="text-sm text-muted-foreground mb-6 ml-11">
@@ -390,7 +390,7 @@ export default function Notfall() {
                 ))}
               </div>
 
-              <div className="mt-4 p-4 rounded-lg bg-[oklch(0.96_0.02_25)] border border-[oklch(0.90_0.04_25)]">
+              <div className="mt-4 p-4 rounded-lg bg-alert-wash border border-alert-light">
                 <p className="text-sm text-muted-foreground">
                   <strong className="text-foreground">Bei akuter Gefahr für sich oder andere:</strong> {TEXTE.gruenGefahrenhinweis}
                 </p>
@@ -415,10 +415,10 @@ export default function Notfall() {
               
               <Accordion type="single" collapsible className="space-y-4">
                 {/* Suiziddrohung */}
-                <AccordionItem value="suizid" className="border rounded-lg border-[oklch(0.55_0.20_25)] bg-[oklch(0.98_0.02_25)]">
+                <AccordionItem value="suizid" className="border rounded-lg border-alert bg-alert-wash">
                   <AccordionTrigger className="px-5 py-4 hover:no-underline">
                     <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.20_25)] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-alert flex items-center justify-center flex-shrink-0">
                         <AlertTriangle className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -429,14 +429,14 @@ export default function Notfall() {
                   </AccordionTrigger>
                   <AccordionContent className="px-5 pb-5">
                     <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-[oklch(0.55_0.20_25)]/10 rounded-lg border border-[oklch(0.55_0.20_25)]/30">
-                        <p className="font-semibold text-[oklch(0.45_0.15_25)] mb-2">Wichtig zu wissen:</p>
+                      <div className="p-4 bg-alert/10 rounded-lg border border-alert/30">
+                        <p className="font-semibold text-alert-dark mb-2">Wichtig zu wissen:</p>
                         <p className="text-sm text-muted-foreground">Suiziddrohungen bei Borderline sind ernst zu nehmen, aber nicht immer ein akuter Notfall. Unterscheiden Sie zwischen chronischer Suizidalität (wiederkehrende Gedanken) und akuter Krise (konkrete Pläne, Mittel vorhanden).</p>
                       </div>
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.20_25)] text-white text-sm flex items-center justify-center">1</span>
+                          <span className="w-6 h-6 rounded-full bg-alert text-white text-sm flex items-center justify-center">1</span>
                           Ruhe bewahren und zuhören
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -448,12 +448,12 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.20_25)] text-white text-sm flex items-center justify-center">2</span>
+                          <span className="w-6 h-6 rounded-full bg-alert text-white text-sm flex items-center justify-center">2</span>
                           Risiko einschätzen
                         </h4>
                         <div className="ml-8 grid sm:grid-cols-2 gap-3">
-                          <div className="p-3 bg-[oklch(0.55_0.20_25)]/5 rounded-lg">
-                            <p className="font-medium text-[oklch(0.45_0.15_25)] text-sm mb-1">Hohes Risiko → Notruf {rot144.nummer}</p>
+                          <div className="p-3 bg-alert/5 rounded-lg">
+                            <p className="font-medium text-alert-dark text-sm mb-1">Hohes Risiko → Notruf {rot144.nummer}</p>
                             <ul className="text-xs text-muted-foreground space-y-0.5">
                               <li>• Konkrete Pläne vorhanden</li>
                               <li>• Mittel beschafft (Medikamente, etc.)</li>
@@ -461,8 +461,8 @@ export default function Notfall() {
                               <li>• Abschiedsbriefe geschrieben</li>
                             </ul>
                           </div>
-                          <div className="p-3 bg-[oklch(0.55_0.10_145)]/10 rounded-lg">
-                            <p className="font-medium text-[oklch(0.45_0.10_145)] text-sm mb-1">Moderates Risiko → Fachperson</p>
+                          <div className="p-3 bg-sage-mid/10 rounded-lg">
+                            <p className="font-medium text-sage-dark text-sm mb-1">Moderates Risiko → Fachperson</p>
                             <ul className="text-xs text-muted-foreground space-y-0.5">
                               <li>• Gedanken, aber keine Pläne</li>
                               <li>• Kann Gründe zum Leben nennen</li>
@@ -475,7 +475,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.20_25)] text-white text-sm flex items-center justify-center">3</span>
+                          <span className="w-6 h-6 rounded-full bg-alert text-white text-sm flex items-center justify-center">3</span>
                           Handeln
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -486,7 +486,7 @@ export default function Notfall() {
                         </ul>
                       </div>
                       
-                      <div className="p-4 bg-[oklch(0.88_0.04_145)]/30 rounded-lg border border-[oklch(0.55_0.10_145)]/30">
+                      <div className="p-4 bg-sage-light/30 rounded-lg border border-sage-mid/30">
                         <p className="text-sm text-muted-foreground">
                           <strong className="text-foreground">Validieren Sie das Leid, nicht die Lösung:</strong> «Ich höre, dass du gerade unglaublich leidest. Ich bin froh, dass du mir das sagst. Lass uns gemeinsam schauen, wie wir durch diese Nacht kommen.»
                         </p>
@@ -496,10 +496,10 @@ export default function Notfall() {
                 </AccordionItem>
 
                 {/* Selbstverletzung */}
-                <AccordionItem value="selbstverletzung" className="border rounded-lg border-[oklch(0.55_0.15_55)] bg-[oklch(0.98_0.02_55)]">
+                <AccordionItem value="selbstverletzung" className="border rounded-lg border-terracotta-mid bg-cream">
                   <AccordionTrigger className="px-5 py-4 hover:no-underline">
                     <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.15_55)] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-terracotta-mid flex items-center justify-center flex-shrink-0">
                         <Hand className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -510,14 +510,14 @@ export default function Notfall() {
                   </AccordionTrigger>
                   <AccordionContent className="px-5 pb-5">
                     <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-[oklch(0.55_0.15_55)]/10 rounded-lg border border-[oklch(0.55_0.15_55)]/30">
-                        <p className="font-semibold text-[oklch(0.45_0.12_55)] mb-2">Wichtig zu verstehen:</p>
+                      <div className="p-4 bg-terracotta-mid/10 rounded-lg border border-terracotta-mid/30">
+                        <p className="font-semibold text-terracotta-dark mb-2">Wichtig zu verstehen:</p>
                         <p className="text-sm text-muted-foreground">Selbstverletzung ist meist <strong>kein</strong> Suizidversuch, sondern ein Versuch, unerträgliche emotionale Schmerzen zu regulieren. Sie dient oft dazu, Spannung abzubauen oder «wieder etwas zu fühlen».</p>
                       </div>
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_55)] text-white text-sm flex items-center justify-center">1</span>
+                          <span className="w-6 h-6 rounded-full bg-terracotta-mid text-white text-sm flex items-center justify-center">1</span>
                           Sofortmassnahmen
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -529,20 +529,20 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_55)] text-white text-sm flex items-center justify-center">2</span>
+                          <span className="w-6 h-6 rounded-full bg-terracotta-mid text-white text-sm flex items-center justify-center">2</span>
                           Kommunikation
                         </h4>
                         <div className="ml-8 grid sm:grid-cols-2 gap-3">
-                          <div className="p-3 bg-[oklch(0.55_0.10_145)]/10 rounded-lg">
-                            <p className="font-medium text-[oklch(0.45_0.10_145)] text-sm mb-1">✓ Hilfreich</p>
+                          <div className="p-3 bg-sage-mid/10 rounded-lg">
+                            <p className="font-medium text-sage-dark text-sm mb-1">✓ Hilfreich</p>
                             <ul className="text-xs text-muted-foreground space-y-0.5">
                               <li>• «Ich sehe, dass du leidest.»</li>
                               <li>• «Wie kann ich dir jetzt helfen?»</li>
                               <li>• «Lass uns die Wunde versorgen.»</li>
                             </ul>
                           </div>
-                          <div className="p-3 bg-[oklch(0.55_0.15_25)]/10 rounded-lg">
-                            <p className="font-medium text-[oklch(0.45_0.12_25)] text-sm mb-1">✗ Vermeiden</p>
+                          <div className="p-3 bg-terracotta-mid/10 rounded-lg">
+                            <p className="font-medium text-alert-dark text-sm mb-1">✗ Vermeiden</p>
                             <ul className="text-xs text-muted-foreground space-y-0.5">
                               <li>• «Warum tust du dir das an?»</li>
                               <li>• «Das ist doch Erpressung!»</li>
@@ -554,7 +554,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_55)] text-white text-sm flex items-center justify-center">3</span>
+                          <span className="w-6 h-6 rounded-full bg-terracotta-mid text-white text-sm flex items-center justify-center">3</span>
                           Nachsorge
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -569,10 +569,10 @@ export default function Notfall() {
                 </AccordionItem>
 
                 {/* Aggressive Eskalation */}
-                <AccordionItem value="aggression" className="border rounded-lg border-[oklch(0.50_0.15_250)] bg-[oklch(0.98_0.02_250)]">
+                <AccordionItem value="aggression" className="border rounded-lg border-slate-mid bg-slate-pale">
                   <AccordionTrigger className="px-5 py-4 hover:no-underline">
                     <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.50_0.15_250)] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-slate-mid flex items-center justify-center flex-shrink-0">
                         <Shield className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -583,14 +583,14 @@ export default function Notfall() {
                   </AccordionTrigger>
                   <AccordionContent className="px-5 pb-5">
                     <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-[oklch(0.55_0.20_25)]/10 rounded-lg border border-[oklch(0.55_0.20_25)]/30">
-                        <p className="font-semibold text-[oklch(0.45_0.15_25)] mb-2">Ihre Sicherheit geht vor!</p>
+                      <div className="p-4 bg-alert/10 rounded-lg border border-alert/30">
+                        <p className="font-semibold text-alert-dark mb-2">Ihre Sicherheit geht vor!</p>
                         <p className="text-sm text-muted-foreground">Bei körperlicher Gewalt oder konkreten Drohungen: Verlassen Sie die Situation und rufen Sie die Polizei ({rot117.nummer}). Borderline erklärt Verhalten, entschuldigt es aber nicht.</p>
                       </div>
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_250)] text-white text-sm flex items-center justify-center">1</span>
+                          <span className="w-6 h-6 rounded-full bg-slate-mid text-white text-sm flex items-center justify-center">1</span>
                           Deeskalieren (wenn sicher)
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -603,7 +603,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_250)] text-white text-sm flex items-center justify-center">2</span>
+                          <span className="w-6 h-6 rounded-full bg-slate-mid text-white text-sm flex items-center justify-center">2</span>
                           Kommunikation
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -616,7 +616,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.50_0.15_250)] text-white text-sm flex items-center justify-center">3</span>
+                          <span className="w-6 h-6 rounded-full bg-slate-mid text-white text-sm flex items-center justify-center">3</span>
                           Wenn Deeskalation nicht funktioniert
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -627,7 +627,7 @@ export default function Notfall() {
                         </ul>
                       </div>
                       
-                      <div className="p-4 bg-[oklch(0.88_0.04_145)]/30 rounded-lg border border-[oklch(0.55_0.10_145)]/30">
+                      <div className="p-4 bg-sage-light/30 rounded-lg border border-sage-mid/30">
                         <p className="text-sm text-muted-foreground">
                           <strong className="text-foreground">Merke:</strong> Sie müssen sich nicht anschreien oder bedrohen lassen. Das Verlassen einer eskalierenden Situation ist keine Bestrafung, sondern Selbstschutz und gibt beiden Zeit zur Regulation.
                         </p>
@@ -637,10 +637,10 @@ export default function Notfall() {
                 </AccordionItem>
 
                 {/* Emotionale Erpressung */}
-                <AccordionItem value="erpressung" className="border rounded-lg border-[oklch(0.55_0.10_85)] bg-[oklch(0.98_0.02_85)]">
+                <AccordionItem value="erpressung" className="border rounded-lg border-sand-warm bg-cream">
                   <AccordionTrigger className="px-5 py-4 hover:no-underline">
                     <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.10_85)] flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-sand-warm flex items-center justify-center flex-shrink-0">
                         <MessageCircle className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -651,14 +651,14 @@ export default function Notfall() {
                   </AccordionTrigger>
                   <AccordionContent className="px-5 pb-5">
                     <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-[oklch(0.55_0.10_85)]/10 rounded-lg border border-[oklch(0.55_0.10_85)]/30">
-                        <p className="font-semibold text-[oklch(0.45_0.08_85)] mb-2">Wichtig zu verstehen:</p>
+                      <div className="p-4 bg-sand-warm/10 rounded-lg border border-sand-warm/30">
+                        <p className="font-semibold text-terracotta-dark mb-2">Wichtig zu verstehen:</p>
                         <p className="text-sm text-muted-foreground">Menschen mit Borderline manipulieren selten bewusst. Hinter solchen Äusserungen steckt meist extreme Verlassensangst und die verzweifelte Überzeugung, dass sie ohne Sie nicht überleben können.</p>
                       </div>
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.10_85)] text-white text-sm flex items-center justify-center">1</span>
+                          <span className="w-6 h-6 rounded-full bg-sand-warm text-white text-sm flex items-center justify-center">1</span>
                           Das Gefühl validieren, nicht die Forderung
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -670,7 +670,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.10_85)] text-white text-sm flex items-center justify-center">2</span>
+                          <span className="w-6 h-6 rounded-full bg-sand-warm text-white text-sm flex items-center justify-center">2</span>
                           Klare Grenze setzen
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -682,7 +682,7 @@ export default function Notfall() {
                       
                       <div className="space-y-3">
                         <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-[oklch(0.55_0.10_85)] text-white text-sm flex items-center justify-center">3</span>
+                          <span className="w-6 h-6 rounded-full bg-sand-warm text-white text-sm flex items-center justify-center">3</span>
                           Konsequent handeln
                         </h4>
                         <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
@@ -693,7 +693,7 @@ export default function Notfall() {
                         </ul>
                       </div>
                       
-                      <div className="p-4 bg-[oklch(0.88_0.04_145)]/30 rounded-lg border border-[oklch(0.55_0.10_145)]/30">
+                      <div className="p-4 bg-sage-light/30 rounded-lg border border-sage-mid/30">
                         <p className="text-sm text-muted-foreground">
                           <strong className="text-foreground">Denken Sie daran:</strong> Sie können die Angst Ihres Angehörigen nicht wegnehmen, indem Sie Ihre eigenen Bedürfnisse aufgeben. Langfristig hilft nur, dass Ihr Angehöriger lernt, mit der Angst umzugehen – nicht, dass Sie sie vermeiden.
                         </p>
@@ -720,7 +720,7 @@ export default function Notfall() {
                 <CardContent className="p-0">
                   <div className="md:flex">
                     {/* Vorschau-Bild */}
-                    <div className="md:w-1/3 bg-[oklch(0.96_0.01_85)] p-4 flex items-center justify-center">
+                    <div className="md:w-1/3 bg-sand p-4 flex items-center justify-center">
                       <img
                         src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp"
                         alt="Notfallkarte Zürich – Vorschau"
@@ -742,7 +742,7 @@ export default function Notfall() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm text-white transition-colors"
-                          style={{ backgroundColor: "oklch(0.55 0.15 145)" }}
+                          style={{ backgroundColor: "var(--color-sage-mid)" }}
                         >
                           <ExternalLink className="w-4 h-4" />
                           PDF herunterladen
@@ -773,7 +773,7 @@ export default function Notfall() {
                   const url = urlById(res.id);
                   if (!url) return null;
                   return (
-                    <Card key={res.id} className="border-border/50 hover:border-[oklch(0.65_0.12_55)] transition-colors">
+                    <Card key={res.id} className="border-border/50 hover:border-terracotta transition-colors">
                       <CardContent className="p-5">
                         <div className="flex items-center justify-between gap-4">
                           <div>
@@ -806,7 +806,7 @@ export default function Notfall() {
                 Persönlicher Krisenplan
               </h2>
               
-              <Card className="bg-[oklch(0.88_0.04_145)]/20 border-[oklch(0.65_0.08_145)]">
+              <Card className="bg-sage-light/20 border-sage">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Erstellen Sie gemeinsam mit Ihrem Angehörigen einen persönlichen Krisenplan. Dieser sollte enthalten:
@@ -820,7 +820,7 @@ export default function Notfall() {
                       "Was Sie als Angehöriger tun können – und was nicht"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         {item}
                       </li>
                     ))}
@@ -835,7 +835,7 @@ export default function Notfall() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-[oklch(0.95_0.03_55)] border-[oklch(0.65_0.12_55)]">
+              <Card className="bg-terracotta-wash border-terracotta">
                 <CardContent className="p-6 text-center">
                   <p className="text-muted-foreground">
                     Diese Seite ersetzt keine professionelle Beratung. Bei akuten Krisen wenden Sie sich bitte immer an die Notfallnummern oder den psychiatrischen Notdienst.

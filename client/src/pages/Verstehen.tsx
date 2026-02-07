@@ -13,7 +13,7 @@ export default function Verstehen() {
       {/* Inhaltsverzeichnis */}
       <TableOfContents />
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.88_0.04_145)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,10 +22,10 @@ export default function Verstehen() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.04_145)] flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-[oklch(0.45_0.08_145)]" />
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+                <BookOpen className="w-6 h-6 text-sage-dark" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.45_0.08_145)]">Lesezeit: 15 Minuten</span>
+              <span className="text-sm font-medium text-sage-dark">Lesezeit: 15 Minuten</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
@@ -50,7 +50,7 @@ export default function Verstehen() {
               viewport={{ once: true }}
               className="mb-8"
             >
-              <Card className="border-l-4 border-l-[oklch(0.65_0.08_145)] bg-[oklch(0.88_0.04_145)]/20">
+              <Card className="border-l-4 border-l-sage bg-sage-light/20">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed italic">
                     "Wenn ich verstehe, warum mein Angehöriger so reagiert, kann ich anders damit umgehen. Nicht besser oder schlechter – anders. Und das macht einen riesigen Unterschied."
@@ -63,7 +63,7 @@ export default function Verstehen() {
             {/* Was ist Borderline */}
             <ContentSection
               title="Was ist Borderline?"
-              icon={<Brain className="w-7 h-7 text-[oklch(0.65_0.08_145)]" />}
+              icon={<Brain className="w-7 h-7 text-sage" />}
               id="was-ist-borderline"
               defaultOpen={true}
               preview="Die Borderline-Persönlichkeitsstörung (BPS) ist eine psychische Erkrankung, die durch intensive Emotionen, instabile Beziehungen und ein schwankendes Selbstbild gekennzeichnet ist."
@@ -82,7 +82,7 @@ export default function Verstehen() {
             {/* Die 9 DSM-5 Kriterien */}
             <ContentSection
               title="Die 9 DSM-5 Kriterien"
-              icon={<AlertCircle className="w-7 h-7 text-[oklch(0.65_0.12_55)]" />}
+              icon={<AlertCircle className="w-7 h-7 text-terracotta" />}
               id="symptome"
               preview="Für eine Diagnose müssen mindestens 5 von 9 Kriterien erfüllt sein."
             >
@@ -96,55 +96,55 @@ export default function Verstehen() {
                     num: "1",
                     title: "Verzweifelte Bemühungen, Verlassenwerden zu vermeiden",
                     example: "Panische Anrufe, wenn der Partner später kommt; extreme Reaktionen auf kleine Trennungen",
-                    color: "oklch(0.55_0.15_55)"
+                    color: "var(--color-terracotta-mid)"
                   },
                   {
                     num: "2",
                     title: "Instabile, intensive Beziehungen",
                     example: "Wechsel zwischen Idealisierung («Du bist perfekt!») und Entwertung («Du bist das Schlimmste!»)",
-                    color: "oklch(0.65_0.12_55)"
+                    color: "var(--color-terracotta)"
                   },
                   {
                     num: "3",
                     title: "Identitätsstörung: instabiles Selbstbild",
                     example: "Unsicherheit über Ziele, Werte, Berufswahl, Freundschaften, sexuelle Orientierung",
-                    color: "oklch(0.45_0.08_250)"
+                    color: "var(--color-slate-dark)"
                   },
                   {
                     num: "4",
                     title: "Impulsivität in mindestens zwei Bereichen",
                     example: "Geldausgaben, Essanfälle, Substanzmissbrauch, riskantes Fahren, ungeschützter Sex",
-                    color: "oklch(0.60_0.15_85)"
+                    color: "var(--color-sand-mid)"
                   },
                   {
                     num: "5",
                     title: "Wiederkehrende Suiziddrohungen oder Selbstverletzung",
                     example: "Ritzen, Verbrennen, Suizidankündigungen – oft als Versuch, unerträgliche Gefühle zu regulieren",
-                    color: "oklch(0.50_0.18_55)"
+                    color: "var(--color-terracotta-mid)"
                   },
                   {
                     num: "6",
                     title: "Affektive Instabilität",
                     example: "Intensive Stimmungswechsel innerhalb von Stunden – von Euphorie zu Verzweiflung",
-                    color: "oklch(0.55_0.12_55)"
+                    color: "var(--color-terracotta-mid)"
                   },
                   {
                     num: "7",
                     title: "Chronisches Gefühl der Leere",
                     example: "«Ich fühle mich wie ein schwarzes Loch» – ein tiefes, anhaltendes Gefühl von Hohlheit",
-                    color: "oklch(0.35_0.02_250)"
+                    color: "var(--color-charcoal)"
                   },
                   {
                     num: "8",
                     title: "Unangemessene, heftige Wut",
                     example: "Wutausbrüche, die für Aussenstehende übertrieben wirken; Schwierigkeit, Wut zu kontrollieren",
-                    color: "oklch(0.55_0.20_55)"
+                    color: "var(--color-alert)"
                   },
                   {
                     num: "9",
                     title: "Vorübergehende paranoide oder dissoziative Symptome",
                     example: "Unter Stress: Misstrauen, Gefühl der Unwirklichkeit, «neben sich stehen»",
-                    color: "oklch(0.45_0.05_250)"
+                    color: "var(--color-slate-blue)"
                   }
                 ].map((item) => (
                   <Card key={item.num} className="border-l-4" style={{ borderLeftColor: item.color }}>
@@ -174,7 +174,7 @@ export default function Verstehen() {
             {/* Ursachen: Bio-Psycho-Soziales Modell */}
             <ContentSection
               title="Ursachen: Das Bio-Psycho-Soziale Modell"
-              icon={<Layers className="w-7 h-7 text-[oklch(0.55_0.10_145)]" />}
+              icon={<Layers className="w-7 h-7 text-sage-mid" />}
               id="ursachen"
               preview="Borderline entsteht nicht durch eine Ursache, sondern durch das Zusammenspiel biologischer, psychologischer und sozialer Faktoren."
             >
@@ -183,10 +183,10 @@ export default function Verstehen() {
               </p>
               
               <div className="grid md:grid-cols-3 gap-4">
-                <Card className="border-t-4 border-t-[oklch(0.55_0.15_55)]">
+                <Card className="border-t-4 border-t-terracotta-mid">
                   <CardContent className="p-5">
-                    <div className="w-10 h-10 rounded-full bg-[oklch(0.95_0.05_55)] flex items-center justify-center mb-3">
-                      <Brain className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
+                    <div className="w-10 h-10 rounded-full bg-terracotta-wash flex items-center justify-center mb-3">
+                      <Brain className="w-5 h-5 text-terracotta-mid" />
                     </div>
                     <h3 className="font-semibold text-foreground mb-2">Biologisch</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -198,10 +198,10 @@ export default function Verstehen() {
                   </CardContent>
                 </Card>
                 
-                <Card className="border-t-4 border-t-[oklch(0.55_0.10_145)]">
+                <Card className="border-t-4 border-t-sage-mid">
                   <CardContent className="p-5">
-                    <div className="w-10 h-10 rounded-full bg-[oklch(0.95_0.03_145)] flex items-center justify-center mb-3">
-                      <Heart className="w-5 h-5 text-[oklch(0.55_0.10_145)]" />
+                    <div className="w-10 h-10 rounded-full bg-sage-wash flex items-center justify-center mb-3">
+                      <Heart className="w-5 h-5 text-sage-mid" />
                     </div>
                     <h3 className="font-semibold text-foreground mb-2">Psychologisch</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -213,10 +213,10 @@ export default function Verstehen() {
                   </CardContent>
                 </Card>
                 
-                <Card className="border-t-4 border-t-[oklch(0.45_0.08_250)]">
+                <Card className="border-t-4 border-t-slate-dark">
                   <CardContent className="p-5">
-                    <div className="w-10 h-10 rounded-full bg-[oklch(0.95_0.02_250)] flex items-center justify-center mb-3">
-                      <Users className="w-5 h-5 text-[oklch(0.45_0.08_250)]" />
+                    <div className="w-10 h-10 rounded-full bg-slate-wash flex items-center justify-center mb-3">
+                      <Users className="w-5 h-5 text-slate-dark" />
                     </div>
                     <h3 className="font-semibold text-foreground mb-2">Sozial</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -229,7 +229,7 @@ export default function Verstehen() {
                 </Card>
               </div>
               
-              <Card className="mt-6 bg-[oklch(0.95_0.02_145)]/50 border-[oklch(0.55_0.10_145)]/30">
+              <Card className="mt-6 bg-sage-wash/50 border-sage-mid/30">
                 <CardContent className="p-5">
                   <p className="text-foreground leading-relaxed">
                     <strong>Wichtig für Angehörige:</strong> Auch wenn frühe Erfahrungen eine Rolle spielen, bedeutet das nicht, dass Eltern «schuld» sind. Viele Faktoren liegen ausserhalb der Kontrolle von Familien. Schuldzuweisungen helfen niemandem – Verständnis und Unterstützung schon.
@@ -245,7 +245,7 @@ export default function Verstehen() {
             {/* Neurobiologie */}
             <ContentSection
               title="Das Gehirn bei Borderline"
-              icon={<Activity className="w-7 h-7 text-[oklch(0.50_0.12_145)]" />}
+              icon={<Activity className="w-7 h-7 text-sage-mid" />}
               id="neurobiologie"
               preview="Neurowissenschaftliche Forschung zeigt: Bei Borderline funktionieren bestimmte Hirnregionen anders."
             >
@@ -254,16 +254,16 @@ export default function Verstehen() {
               </p>
               
               <div className="space-y-4">
-                <Card className="border-l-4 border-l-[oklch(0.55_0.20_55)]">
+                <Card className="border-l-4 border-l-alert">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-full bg-[oklch(0.55_0.20_55)] text-white flex items-center justify-center text-sm font-bold">A</span>
+                      <span className="w-8 h-8 rounded-full bg-alert text-white flex items-center justify-center text-sm font-bold">A</span>
                       Amygdala – Das Alarmzentrum
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
                       Die Amygdala ist bei Borderline <strong>überaktiv</strong>. Sie reagiert stärker und schneller auf emotionale Reize – besonders auf Gesichtsausdrücke, die als bedrohlich interpretiert werden könnten.
                     </p>
-                    <div className="bg-[oklch(0.95_0.03_55)] rounded-lg p-3">
+                    <div className="bg-terracotta-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
                         <strong>Für Angehörige:</strong> Deshalb können neutrale Gesichtsausdrücke als ablehnend wahrgenommen werden. Es ist keine Absicht – das Gehirn interpretiert anders.
                       </p>
@@ -271,16 +271,16 @@ export default function Verstehen() {
                   </CardContent>
                 </Card>
                 
-                <Card className="border-l-4 border-l-[oklch(0.55_0.10_145)]">
+                <Card className="border-l-4 border-l-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-full bg-[oklch(0.55_0.10_145)] text-white flex items-center justify-center text-sm font-bold">H</span>
+                      <span className="w-8 h-8 rounded-full bg-sage-mid text-white flex items-center justify-center text-sm font-bold">H</span>
                       Hippocampus – Das Gedächtniszentrum
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
                       Der Hippocampus ist bei vielen Betroffenen <strong>verkleinert</strong>. Er ist zuständig für Gedächtnis und das Einordnen von Erfahrungen in einen Kontext.
                     </p>
-                    <div className="bg-[oklch(0.95_0.02_145)] rounded-lg p-3">
+                    <div className="bg-sage-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
                         <strong>Für Angehörige:</strong> In Krisen kann es schwer sein, sich an positive Erfahrungen zu erinnern. «Du hast mich NIE unterstützt» ist keine Lüge – in diesem Moment ist die Erinnerung blockiert.
                       </p>
@@ -288,16 +288,16 @@ export default function Verstehen() {
                   </CardContent>
                 </Card>
                 
-                <Card className="border-l-4 border-l-[oklch(0.45_0.08_250)]">
+                <Card className="border-l-4 border-l-slate-dark">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-full bg-[oklch(0.45_0.08_250)] text-white flex items-center justify-center text-sm font-bold">P</span>
+                      <span className="w-8 h-8 rounded-full bg-slate-dark text-white flex items-center justify-center text-sm font-bold">P</span>
                       Präfrontaler Kortex – Die Kontrollinstanz
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
                       Der präfrontale Kortex ist für rationales Denken, Impulskontrolle und Emotionsregulation zuständig. Bei Borderline ist die <strong>Verbindung zur Amygdala geschwächt</strong>.
                     </p>
-                    <div className="bg-[oklch(0.95_0.02_250)] rounded-lg p-3">
+                    <div className="bg-slate-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
                         <strong>Für Angehörige:</strong> In emotionalen Momenten ist der «rationale Teil» des Gehirns quasi offline. Deshalb helfen logische Argumente in Krisen nicht – erst muss die Amygdala beruhigt werden.
                       </p>
@@ -306,7 +306,7 @@ export default function Verstehen() {
                 </Card>
               </div>
               
-              <Card className="mt-6 bg-[oklch(0.92_0.04_55)]/30 border-[oklch(0.65_0.12_55)]/50">
+              <Card className="mt-6 bg-terracotta-lighter/30 border-terracotta/50">
                 <CardContent className="p-5">
                   <h4 className="font-semibold text-foreground mb-2">Die gute Nachricht: Neuroplastizität</h4>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -323,7 +323,7 @@ export default function Verstehen() {
             {/* Häufige Missverständnisse */}
             <ContentSection
               title="Häufige Missverständnisse"
-              icon={<XCircle className="w-7 h-7 text-[oklch(0.55_0.15_55)]" />}
+              icon={<XCircle className="w-7 h-7 text-terracotta-mid" />}
               id="missverstaendnisse"
               preview="Über Borderline kursieren viele Mythen. Hier ist, was nicht stimmt."
             >
@@ -361,9 +361,9 @@ export default function Verstehen() {
                   <Card key={index} className="border-border/50">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-3">
-                        <XCircle className="w-5 h-5 text-[oklch(0.55_0.15_55)] flex-shrink-0 mt-0.5" />
+                        <XCircle className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
                         <div>
-                          <h4 className="font-semibold text-[oklch(0.55_0.15_55)] mb-2">{item.myth}</h4>
+                          <h4 className="font-semibold text-terracotta-mid mb-2">{item.myth}</h4>
                           <p className="text-muted-foreground text-sm leading-relaxed">
                             <strong className="text-foreground">Realität:</strong> {item.truth}
                           </p>
@@ -382,7 +382,7 @@ export default function Verstehen() {
             {/* Kernsymptome */}
             <ContentSection
               title="Die Kernsymptome im Überblick"
-              icon={<AlertCircle className="w-7 h-7 text-[oklch(0.65_0.12_55)]" />}
+              icon={<AlertCircle className="w-7 h-7 text-terracotta" />}
               id="kernsymptome"
               preview="Emotionale Instabilität, Verlassensangst, instabiles Selbstbild und weitere Kernsymptome verständlich erklärt."
             >
@@ -392,48 +392,48 @@ export default function Verstehen() {
                     title: "Emotionale Instabilität",
                     description: "Schnelle, intensive Stimmungswechsel, die von aussen oft nicht nachvollziehbar erscheinen.",
                     icon: Waves,
-                    color: "oklch(0.65_0.12_55)",
-                    bgColor: "oklch(0.92_0.06_55)"
+                    color: "var(--color-terracotta)",
+                    bgColor: "var(--color-terracotta-lighter)"
                   },
                   {
                     title: "Verlassensangst",
                     description: "Intensive Angst vor Zurückweisung oder Verlassenwerden, die zu verzweifelten Versuchen führen kann, dies zu verhindern.",
                     icon: UserX,
-                    color: "oklch(0.55_0.15_55)",
-                    bgColor: "oklch(0.92_0.05_55)"
+                    color: "var(--color-terracotta-mid)",
+                    bgColor: "var(--color-terracotta-lighter)"
                   },
                   {
                     title: "Instabiles Selbstbild",
                     description: "Unsicherheit darüber, wer man ist, was man will und welche Werte man hat.",
                     icon: Fingerprint,
-                    color: "oklch(0.45_0.08_250)",
-                    bgColor: "oklch(0.92_0.03_250)"
+                    color: "var(--color-slate-dark)",
+                    bgColor: "var(--color-slate-lighter)"
                   },
                   {
                     title: "Schwarz-Weiss-Denken",
                     description: "Die Tendenz, Menschen und Situationen als entweder 'ganz gut' oder 'ganz schlecht' zu sehen.",
                     icon: Contrast,
-                    color: "oklch(0.35_0.02_250)",
-                    bgColor: "oklch(0.92_0.01_250)"
+                    color: "var(--color-charcoal)",
+                    bgColor: "var(--color-slate-lighter)"
                   },
                   {
                     title: "Impulsivität",
                     description: "Handlungen ohne Nachdenken über die Konsequenzen, oft in Bereichen wie Geldausgaben, Essen oder Beziehungen.",
                     icon: Zap,
-                    color: "oklch(0.60_0.15_85)",
-                    bgColor: "oklch(0.92_0.05_85)"
+                    color: "var(--color-sand-mid)",
+                    bgColor: "var(--color-terracotta-lighter)"
                   },
                   {
                     title: "Selbstverletzendes Verhalten",
                     description: "Handlungen, die dem eigenen Körper schaden, oft als Versuch, intensive Emotionen zu regulieren.",
                     icon: Scissors,
-                    color: "oklch(0.65_0.08_145)",
-                    bgColor: "oklch(0.92_0.04_145)"
+                    color: "var(--color-sage)",
+                    bgColor: "var(--color-sage-lighter)"
                   }
                 ].map((item, index) => {
                   const Icon = item.icon;
                   return (
-                    <Card key={index} className="border-border/50 hover:shadow-md transition-all duration-300">
+                    <Card key={index} className="border-border/50 hover:shadow-md transition-all duration-500">
                       <CardContent className="p-5">
                         <div className="flex items-start gap-4">
                           <div 
@@ -457,7 +457,7 @@ export default function Verstehen() {
             {/* Emotionale Demenz */}
             <ContentSection
               title="«Emotionale Demenz» – Warum Argumente nicht helfen"
-              icon={<Clock className="w-7 h-7 text-[oklch(0.55_0.15_55)]" />}
+              icon={<Clock className="w-7 h-7 text-terracotta-mid" />}
               id="emotionale-demenz"
               preview="In akuter emotionaler Überflutung existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt."
             >
@@ -466,7 +466,7 @@ export default function Verstehen() {
                   Wenn ein Mensch in akuter emotionaler Überflutung ist, funktioniert sein Gehirn anders. Marcus Jähn beschreibt dies als <strong>«emotionale Demenz»</strong>: In diesem Zustand existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt.
                 </p>
                 
-                <Card className="bg-[oklch(0.95_0.03_55)]/50 border-[oklch(0.55_0.15_55)]/30 mb-6">
+                <Card className="bg-terracotta-wash/50 border-terracotta-mid/30 mb-6">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       <strong>Warum das wichtig ist:</strong> Logische Argumente helfen in Krisenmomenten nicht. Das Gehirn kann sie schlicht nicht verarbeiten. Erst wenn die Amygdala (das Angstzentrum) beruhigt ist, wird der präfrontale Kortex (rationales Denken) wieder zugänglich.
@@ -475,7 +475,7 @@ export default function Verstehen() {
                 </Card>
                 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_55)] border border-[oklch(0.55_0.15_55)]/20">
+                  <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">❌ Was nicht hilft:</span>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>«Beruhige dich doch!»</li>
@@ -483,7 +483,7 @@ export default function Verstehen() {
                       <li>«Denk mal logisch nach»</li>
                     </ul>
                   </div>
-                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.03_145)] border border-[oklch(0.55_0.10_145)]/20">
+                  <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">✓ Was hilft:</span>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>Präsent sein, ohne zu urteilen</li>
@@ -502,7 +502,7 @@ export default function Verstehen() {
             {/* 4-Phasen-Zyklus */}
             <ContentSection
               title="Der 4-Phasen-Zyklus"
-              icon={<RefreshCw className="w-7 h-7 text-[oklch(0.45_0.08_250)]" />}
+              icon={<RefreshCw className="w-7 h-7 text-slate-dark" />}
               id="4-phasen-zyklus"
               preview="Viele Angehörige berichten von einem wiederkehrenden Muster: Explosion, Schweigen, Freundlichkeit, Verschlechterung."
             >
@@ -513,10 +513,10 @@ export default function Verstehen() {
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
-                    { phase: "1", title: "Explosion", desc: "Intensive Emotionen brechen aus", color: "oklch(0.55_0.20_55)", bgColor: "oklch(0.95_0.05_55)" },
-                    { phase: "2", title: "Schweigen", desc: "Rückzug und Isolation", color: "oklch(0.45_0.08_250)", bgColor: "oklch(0.95_0.03_250)" },
-                    { phase: "3", title: "Freundlichkeit", desc: "Ruhige, oft liebevolle Phase", color: "oklch(0.55_0.10_145)", bgColor: "oklch(0.95_0.03_145)" },
-                    { phase: "4", title: "Verschlechterung", desc: "Spannung baut sich auf", color: "oklch(0.55_0.12_55)", bgColor: "oklch(0.95_0.04_55)" }
+                    { phase: "1", title: "Explosion", desc: "Intensive Emotionen brechen aus", color: "var(--color-alert)", bgColor: "var(--color-terracotta-wash)" },
+                    { phase: "2", title: "Schweigen", desc: "Rückzug und Isolation", color: "var(--color-slate-dark)", bgColor: "var(--color-slate-wash)" },
+                    { phase: "3", title: "Freundlichkeit", desc: "Ruhige, oft liebevolle Phase", color: "var(--color-sage-mid)", bgColor: "var(--color-sage-wash)" },
+                    { phase: "4", title: "Verschlechterung", desc: "Spannung baut sich auf", color: "var(--color-terracotta-mid)", bgColor: "var(--color-terracotta-wash)" }
                   ].map((item) => (
                     <div key={item.phase} className="text-center p-4 rounded-xl" style={{ backgroundColor: item.bgColor }}>
                       <div 
@@ -531,7 +531,7 @@ export default function Verstehen() {
                   ))}
                 </div>
                 
-                <Card className="mt-6 border-l-4 border-l-[oklch(0.55_0.10_145)] bg-[oklch(0.95_0.02_145)]/30">
+                <Card className="mt-6 border-l-4 border-l-sage-mid bg-sage-wash/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       <strong>Wichtig:</strong> Dieser Zyklus ist kein Schicksal. Mit Therapie und Unterstützung können die Phasen weniger intensiv werden und die stabilen Zeiten länger dauern.
@@ -548,7 +548,7 @@ export default function Verstehen() {
             {/* Warum ist das wichtig */}
             <ContentSection
               title="Warum ist dieses Wissen wichtig?"
-              icon={<Lightbulb className="w-7 h-7 text-[oklch(0.60_0.15_85)]" />}
+              icon={<Lightbulb className="w-7 h-7 text-sand-mid" />}
               id="warum-wichtig"
               preview="Wenn Sie verstehen, dass das Verhalten Ihres Angehörigen nicht gegen Sie gerichtet ist, können Sie anders reagieren."
             >
@@ -564,7 +564,7 @@ export default function Verstehen() {
                     { text: "Mitgefühl entwickeln", sub: "ohne sich selbst aufzugeben", icon: "💚" },
                     { text: "Realistische Erwartungen haben", sub: "an sich und an Ihren Angehörigen", icon: "⚖️" }
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-[oklch(0.97_0.015_85)] border border-border/30">
+                    <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30">
                       <span className="text-2xl flex-shrink-0">{item.icon}</span>
                       <div>
                         <span className="font-medium text-foreground block">{item.text}</span>
@@ -585,7 +585,7 @@ export default function Verstehen() {
               id="materialien"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-[oklch(0.45_0.08_145)]" />
+                <Download className="w-8 h-8 text-sage-dark" />
                 Infografiken zum Thema
               </h2>
               
@@ -756,10 +756,10 @@ export default function Verstehen() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="bg-[oklch(0.88_0.04_145)]/30 border-[oklch(0.65_0.08_145)]">
+              <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4">
-                    <Heart className="w-8 h-8 text-[oklch(0.65_0.08_145)] flex-shrink-0" />
+                    <Heart className="w-8 h-8 text-sage flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-semibold text-foreground mb-3">
                         Genesung ist möglich
@@ -787,7 +787,7 @@ export default function Verstehen() {
                 Jetzt, da Sie die Grundlagen verstehen, erfahren Sie, wie Sie konkret unterstützen können.
               </p>
               <Link href="/unterstuetzen/uebersicht">
-                <Button size="lg" className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)] text-white">
+                <Button size="lg" className="bg-terracotta hover:bg-terracotta-mid text-white">
                   Weiter zu: Unterstützen
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>

@@ -30,7 +30,7 @@ const bookCategories: BookCategory[] = [
     title: "Für Partner & Ehepartner",
     subtitle: "Wenn Ihr Partner oder Ihre Partnerin betroffen ist",
     icon: Heart,
-    color: "oklch(0.65_0.12_55)",
+    color: "var(--color-terracotta)",
     books: [
       {
         title: "Schluss mit dem Eiertanz",
@@ -84,7 +84,7 @@ const bookCategories: BookCategory[] = [
     title: "Für Eltern",
     subtitle: "Wenn Ihr Kind (Jugendliche oder Erwachsene) betroffen ist",
     icon: Users,
-    color: "oklch(0.55_0.08_250)",
+    color: "var(--color-slate-mid)",
     books: [
       {
         title: "DBT-Familienskills: Ein Praxisleitfaden",
@@ -126,7 +126,7 @@ const bookCategories: BookCategory[] = [
     title: "Kinderbücher",
     subtitle: "Für Kinder, deren Elternteil betroffen ist",
     icon: Baby,
-    color: "oklch(0.65_0.15_145)",
+    color: "var(--color-sage)",
     books: [
       {
         title: "Mama, Mia und das Schleuderprogramm",
@@ -173,7 +173,7 @@ const bookCategories: BookCategory[] = [
     title: "Erfahrungsberichte",
     subtitle: "Persönliche Geschichten von Betroffenen und Angehörigen",
     icon: Sparkles,
-    color: "oklch(0.65_0.08_85)",
+    color: "var(--color-terracotta)",
     books: [
       {
         title: "Leben auf der Grenze",
@@ -215,7 +215,7 @@ export default function Buchempfehlungen() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.96_0.02_85)]/50 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sand/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -224,8 +224,8 @@ export default function Buchempfehlungen() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.03_85)] flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-[oklch(0.55_0.08_85)]" />
+              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
+                <BookOpen className="w-6 h-6 text-sand-warm" />
               </div>
             </div>
             
@@ -250,7 +250,7 @@ export default function Buchempfehlungen() {
               onClick={() => setActiveCategory(null)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === null
-                  ? 'bg-[oklch(0.45_0.08_85)] text-white'
+                  ? 'bg-terracotta-dark text-white'
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted'
               }`}
             >
@@ -262,7 +262,7 @@ export default function Buchempfehlungen() {
                 onClick={() => setActiveCategory(activeCategory === category.id ? null : category.id)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
                   activeCategory === category.id
-                    ? 'bg-[oklch(0.45_0.08_85)] text-white'
+                    ? 'bg-terracotta-dark text-white'
                     : 'bg-muted/50 text-muted-foreground hover:bg-muted'
                 }`}
               >
@@ -312,14 +312,14 @@ export default function Buchempfehlungen() {
                       viewport={{ once: true }}
                       transition={{ delay: bookIndex * 0.05 }}
                     >
-                      <Card className={`h-full transition-all hover:shadow-md ${book.highlight ? 'ring-2 ring-[oklch(0.75_0.08_85)]' : ''}`}>
+                      <Card className={`h-full transition-all hover:shadow-md ${book.highlight ? 'ring-2 ring-sand-border' : ''}`}>
                         <CardContent className="p-6">
                           {/* Book Header */}
                           <div className="flex items-start justify-between gap-3 mb-3">
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-1">
                                 {book.highlight && (
-                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[oklch(0.92_0.05_85)] text-[oklch(0.45_0.08_85)] text-xs font-medium">
+                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-terracotta-lighter text-terracotta-dark text-xs font-medium">
                                     <Star className="w-3 h-3" />
                                     Empfehlung
                                   </span>
@@ -354,7 +354,7 @@ export default function Buchempfehlungen() {
                                 href={book.amazonLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-xs text-[oklch(0.55_0.08_250)] hover:text-[oklch(0.45_0.08_250)] transition-colors"
+                                className="inline-flex items-center gap-1 text-xs text-slate-mid hover:text-slate-dark transition-colors"
                               >
                                 Ansehen
                                 <ExternalLink className="w-3 h-3" />
@@ -373,13 +373,13 @@ export default function Buchempfehlungen() {
       </section>
 
       {/* Hinweis */}
-      <section className="py-12 bg-[oklch(0.96_0.01_250)]">
+      <section className="py-12 bg-slate-pale">
         <div className="container">
-          <Card className="bg-white border-[oklch(0.88_0.03_250)]">
+          <Card className="bg-white border-slate-light">
             <CardContent className="p-6 md:p-8">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.03_250)] flex items-center justify-center flex-shrink-0">
-                  <BookOpen className="w-6 h-6 text-[oklch(0.55_0.08_250)]" />
+                <div className="w-12 h-12 rounded-xl bg-slate-lighter flex items-center justify-center flex-shrink-0">
+                  <BookOpen className="w-6 h-6 text-slate-mid" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">

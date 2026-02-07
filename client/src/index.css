@@ -42,15 +42,54 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* Custom colors for Sanctuary Calm */
-  --color-sand: oklch(0.96 0.02 85);
-  --color-terracotta: oklch(0.65 0.12 55);
-  --color-terracotta-light: oklch(0.85 0.08 55);
-  --color-sage: oklch(0.65 0.08 145);
-  --color-sage-light: oklch(0.88 0.04 145);
-  --color-slate-blue: oklch(0.45 0.05 250);
-  --color-charcoal: oklch(0.30 0.02 250);
-  --color-cream: oklch(0.98 0.01 85); /* Sand-Light Alias – hellere Variante von Sand (#F4F1EA) */
+  /* =============================================
+     SANCTUARY CALM – Design Token Palette
+     Alle Farben zentral definiert. Keine hard-coded
+     oklch/hex-Werte in Komponenten verwenden!
+     ============================================= */
+  
+  /* --- Warm Family (Hue 55/85) --- */
+  --color-terracotta-darker:  oklch(0.35 0.10 55);  /* Dunkler Text auf warmen BGs */
+  --color-terracotta-dark:    oklch(0.45 0.12 55);  /* Hover/Active States */
+  --color-terracotta-mid:     oklch(0.55 0.15 55);  /* Starker Akzent-Text, Borders */
+  --color-terracotta:         oklch(0.65 0.12 55);  /* Primary */
+  --color-terracotta-light:   oklch(0.85 0.08 55);  /* Light Accent */
+  --color-terracotta-lighter: oklch(0.92 0.05 55);  /* Subtle Backgrounds */
+  --color-terracotta-wash:    oklch(0.95 0.02 55);  /* Sehr helle Hintergründe */
+  --color-sand-warm:          oklch(0.55 0.10 85);  /* Warme Borders/Dividers */
+  --color-sand-mid:           oklch(0.60 0.10 85);  /* Borders, muted elements */
+  --color-sand-accent:        oklch(0.65 0.15 85);  /* Warmer Akzent */
+  --color-sand-border:        oklch(0.75 0.08 85);  /* Card Borders */
+  --color-sand-subtle:        oklch(0.88 0.04 85);  /* Subtle Borders */
+  --color-sand-muted:         oklch(0.94 0.02 85);  /* Muted Backgrounds */
+  --color-sand:               oklch(0.96 0.02 85);  /* Background */
+  --color-cream:              oklch(0.98 0.01 85);  /* Card BG */
+  
+  /* --- Sage Family (Hue 145) --- */
+  --color-sage-darker:        oklch(0.35 0.08 145); /* Dunkler Text auf Sage-BGs */
+  --color-sage-dark:          oklch(0.45 0.10 145); /* Hover/Active States */
+  --color-sage-mid:           oklch(0.55 0.12 145); /* Akzent-Text */
+  --color-sage:               oklch(0.65 0.08 145); /* Secondary */
+  --color-sage-light:         oklch(0.88 0.04 145); /* Light */
+  --color-sage-lighter:       oklch(0.92 0.04 145); /* Subtle BG */
+  --color-sage-wash:          oklch(0.95 0.03 145); /* Sehr helle Hintergründe */
+  --color-sage-pale:          oklch(0.97 0.01 145); /* Palest Sage */
+  
+  /* --- Slate Family (Hue 250) --- */
+  --color-charcoal:           oklch(0.30 0.02 250); /* Darkest text */
+  --color-slate-blue:         oklch(0.45 0.05 250); /* Links */
+  --color-slate-dark:         oklch(0.45 0.08 250); /* Stärkere Links/Icons */
+  --color-slate-mid:          oklch(0.55 0.10 250); /* Muted text/icons */
+  --color-slate-light:        oklch(0.90 0.03 250); /* Light BGs, Borders */
+  --color-slate-lighter:      oklch(0.92 0.04 250); /* Lighter BGs */
+  --color-slate-wash:         oklch(0.95 0.02 250); /* Sehr helle Hintergründe */
+  --color-slate-pale:         oklch(0.97 0.01 250); /* Palest Slate */
+  
+  /* --- Alert Family (Hue 25) --- */
+  --color-alert-dark:         oklch(0.45 0.15 25);  /* Dunkler Alert-Text */
+  --color-alert:              oklch(0.55 0.20 25);  /* Destructive/Notfall */
+  --color-alert-light:        oklch(0.92 0.06 25);  /* Alert Background */
+  --color-alert-wash:         oklch(0.96 0.02 25);  /* Sehr heller Alert-BG */
   
   /* Typography – Design-Lock: Inter exklusiv */
   --font-display: 'Inter', sans-serif;
@@ -192,9 +231,17 @@
     font-family: var(--font-body);
   }
   
-  /* Smooth transitions for therapeutic feel */
+  /* Smooth transitions for therapeutic feel
+     Sanctuary-Easing: bewusst langsam, beruhigend
+     Standard: 500ms | Schnell: 400ms | Langsam: 600ms */
   .transition-sanctuary {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .transition-sanctuary-fast {
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .transition-sanctuary-slow {
+    transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   /* Breathing animation for emergency button */
@@ -223,37 +270,94 @@
     animation: fadeInUp 0.6s ease-out forwards;
   }
   
-  /* Wave divider */
+  /* ===== Wave Divider System =====
+     Organische Wellenlinien zwischen Sektionen.
+     Farbe via CSS-Variable --wave-color (default: --background).
+     Varianten: bottom (default), top (invertiert).
+  */
   .wave-divider {
     position: relative;
+    --wave-color: var(--background);
+  }
+  .wave-divider-cream {
+    --wave-color: var(--color-cream);
+  }
+  .wave-divider-sand {
+    --wave-color: var(--color-sand-muted);
   }
   
+  /* Bottom wave (default) – Welle am unteren Rand */
   .wave-divider::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     right: 0;
-    height: 60px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23F5F0E8' d='M0,30 C360,60 720,0 1080,30 C1260,45 1380,45 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat bottom;
-    background-size: cover;
+    height: 48px;
+    background: var(--wave-color);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Top wave – Welle am oberen Rand (invertiert) */
+  .wave-divider-top {
+    position: relative;
+    --wave-color: var(--background);
+    padding-top: 4rem;
+  }
+  @media (min-width: 768px) {
+    .wave-divider-top {
+      padding-top: 5rem;
+    }
+  }
+  .wave-divider-top::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: var(--wave-color);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0,24 C240,0 480,48 720,24 C960,0 1200,48 1440,24 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0,24 C240,0 480,48 720,24 C960,0 1200,48 1440,24 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    pointer-events: none;
+    z-index: 1;
   }
 }
 
-/* Prose styling for article content */
+/* Prose styling for article content – alle Werte via Tokens */
 .prose-sanctuary {
-  --tw-prose-body: oklch(0.30 0.02 250);
-  --tw-prose-headings: oklch(0.25 0.02 250);
-  --tw-prose-links: oklch(0.45 0.05 250);
-  --tw-prose-bold: oklch(0.25 0.02 250);
-  --tw-prose-quotes: oklch(0.40 0.02 250);
-  --tw-prose-quote-borders: oklch(0.65 0.12 55);
+  --tw-prose-body: var(--color-charcoal);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-links: var(--color-slate-blue);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-quotes: var(--muted-foreground);
+  --tw-prose-quote-borders: var(--color-terracotta);
 }
 
 
 /* ========================================
    PRINT STYLES - Druckerfreundliche Version
+   Print-Tokens: Bewusst einfache Graustufen
+   für maximale Druckkompatibilität.
    ======================================== */
+:root {
+  --print-border-light: #ddd;
+  --print-border-mid: #999;
+  --print-border-dark: #333;
+  --print-bg-subtle: #f9f9f9;
+  --print-bg-header: #f0f0f0;
+  --print-bg-badge: #f5f5f5;
+  --print-text-muted: #666;
+  --print-border-accent: #ccc;
+}
+
 @media print {
   /* Grundlegende Print-Einstellungen */
   @page {
@@ -304,7 +408,7 @@
     margin-bottom: 0.3cm !important;
     color: black !important;
     page-break-after: avoid;
-    border-bottom: 1pt solid #ccc;
+    border-bottom: 1pt solid var(--print-border-accent);
     padding-bottom: 0.2cm;
   }
   
@@ -328,7 +432,7 @@
   a[href^="https"]:after {
     content: " (" attr(href) ")";
     font-size: 9pt;
-    color: #666;
+    color: var(--print-text-muted);
     word-break: break-all;
   }
   
@@ -340,7 +444,7 @@
   /* Karten für Druck optimieren */
   .card,
   [class*="Card"] {
-    border: 1pt solid #ddd !important;
+    border: 1pt solid var(--print-border-light) !important;
     box-shadow: none !important;
     background: white !important;
     page-break-inside: avoid;
@@ -373,11 +477,11 @@
   blockquote,
   .quote-box,
   [class*="quote"] {
-    border-left: 3pt solid #999 !important;
+    border-left: 3pt solid var(--print-border-mid) !important;
     padding-left: 0.5cm !important;
     margin: 0.5cm 0 !important;
     font-style: italic;
-    background: #f9f9f9 !important;
+    background: var(--print-bg-subtle) !important;
     page-break-inside: avoid;
   }
   
@@ -389,13 +493,13 @@
   }
   
   th, td {
-    border: 1pt solid #ddd;
+    border: 1pt solid var(--print-border-light);
     padding: 0.2cm;
     text-align: left;
   }
   
   th {
-    background: #f0f0f0 !important;
+    background: var(--print-bg-header) !important;
     font-weight: bold;
   }
   
@@ -409,9 +513,9 @@
   .warning,
   [class*="Alert"],
   [class*="Warning"] {
-    border: 2pt solid #333 !important;
+    border: 2pt solid var(--print-border-dark) !important;
     padding: 0.3cm !important;
-    background: #fff !important;
+    background: white !important;
     page-break-inside: avoid;
   }
   
@@ -427,8 +531,8 @@
   /* Farbige Badges in Graustufen */
   .badge,
   [class*="Badge"] {
-    border: 1pt solid #999 !important;
-    background: #f5f5f5 !important;
+    border: 1pt solid var(--print-border-mid) !important;
+    background: var(--print-bg-badge) !important;
     color: black !important;
   }
   
@@ -441,7 +545,7 @@
   /* Krisenmatrix-Karten für Druck */
   .crisis-card,
   [class*="crisis"] {
-    border: 1pt solid #666 !important;
+    border: 1pt solid var(--print-text-muted) !important;
     background: white !important;
   }
   
@@ -459,7 +563,7 @@
     text-align: center;
     margin-bottom: 1cm;
     padding-bottom: 0.5cm;
-    border-bottom: 2pt solid #333;
+    border-bottom: 2pt solid var(--print-border-dark);
   }
   
   /* Print-spezifischer Footer */
@@ -471,8 +575,8 @@
     right: 0;
     text-align: center;
     font-size: 9pt;
-    color: #666;
-    border-top: 1pt solid #ccc;
+    color: var(--print-text-muted);
+    border-top: 1pt solid var(--print-border-accent);
     padding-top: 0.2cm;
   }
   

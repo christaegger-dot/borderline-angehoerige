@@ -165,8 +165,8 @@ const results: Result[] = [
       { href: "/unterstuetzen/krise", text: "Krisenbegleitung lernen" }
     ],
     icon: AlertTriangle,
-    color: "oklch(0.55 0.20 55)",
-    bgColor: "oklch(0.95 0.05 55)"
+    color: "var(--color-alert)",
+    bgColor: "var(--color-terracotta-wash)"
   },
   {
     id: "krise",
@@ -179,8 +179,8 @@ const results: Result[] = [
       { href: "/soforthilfe", text: "Soforthilfe" }
     ],
     icon: Clock,
-    color: "oklch(0.60 0.15 55)",
-    bgColor: "oklch(0.95 0.04 55)"
+    color: "var(--color-sand-mid)",
+    bgColor: "var(--color-terracotta-wash)"
   },
   {
     id: "kommunizieren",
@@ -193,8 +193,8 @@ const results: Result[] = [
       { href: "/verstehen", text: "Borderline verstehen" }
     ],
     icon: MessageCircle,
-    color: "oklch(0.45 0.05 250)",
-    bgColor: "oklch(0.90 0.03 250)"
+    color: "var(--color-slate-blue)",
+    bgColor: "var(--color-slate-light)"
   },
   {
     id: "verstehen",
@@ -207,8 +207,8 @@ const results: Result[] = [
       { href: "/kommunizieren", text: "Kommunikation verbessern" }
     ],
     icon: BookOpen,
-    color: "oklch(0.65 0.08 145)",
-    bgColor: "oklch(0.88 0.04 145)"
+    color: "var(--color-sage)",
+    bgColor: "var(--color-sage-light)"
   },
   {
     id: "unterstuetzen",
@@ -221,8 +221,8 @@ const results: Result[] = [
       { href: "/unterstuetzen/therapie", text: "Therapie unterstützen" }
     ],
     icon: Heart,
-    color: "oklch(0.65 0.12 55)",
-    bgColor: "oklch(0.85 0.08 55)"
+    color: "var(--color-terracotta)",
+    bgColor: "var(--color-terracotta-light)"
   },
   {
     id: "grenzen",
@@ -235,8 +235,8 @@ const results: Result[] = [
       { href: "/kommunizieren", text: "Kommunikationstechniken" }
     ],
     icon: Shield,
-    color: "oklch(0.55 0.15 55)",
-    bgColor: "oklch(0.92 0.06 55)"
+    color: "var(--color-terracotta-mid)",
+    bgColor: "var(--color-terracotta-lighter)"
   },
   {
     id: "selbstfuersorge",
@@ -249,8 +249,8 @@ const results: Result[] = [
       { href: "/materialien", text: "Materialien & Ressourcen" }
     ],
     icon: Sparkles,
-    color: "oklch(0.55 0.12 145)",
-    bgColor: "oklch(0.92 0.05 145)"
+    color: "var(--color-sage-mid)",
+    bgColor: "var(--color-sage-lighter)"
   }
 ];
 
@@ -403,7 +403,7 @@ export default function Selbsttest() {
       {/* Progress bar */}
       <div className="h-1.5 bg-muted">
         <motion.div 
-          className="h-full bg-[oklch(0.65_0.12_55)]"
+          className="h-full bg-terracotta"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.3 }}
@@ -456,16 +456,16 @@ export default function Selbsttest() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.2, delay: index * 0.05 }}
                   onClick={() => handleAnswer(option)}
-                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${
+                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 ${
                     selectedOption === option.value
-                      ? "border-[oklch(0.65_0.12_55)] bg-[oklch(0.95_0.04_55)]"
-                      : "border-border/50 hover:border-[oklch(0.65_0.12_55)]/50 hover:bg-muted/50"
+                      ? "border-terracotta bg-terracotta-wash"
+                      : "border-border/50 hover:border-terracotta/50 hover:bg-muted/50"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
                       selectedOption === option.value
-                        ? "border-[oklch(0.65_0.12_55)] bg-[oklch(0.65_0.12_55)]"
+                        ? "border-terracotta bg-terracotta"
                         : "border-muted-foreground/30"
                     }`}>
                       {selectedOption === option.value && (

@@ -7,7 +7,7 @@ export default function SelbsttestPage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.04_55)]/50 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ export default function SelbsttestPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <div className="w-16 h-16 rounded-2xl bg-[oklch(0.65_0.12_55)] flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-terracotta flex items-center justify-center mx-auto mb-6">
               <Compass className="w-8 h-8 text-white" />
             </div>
             
@@ -48,7 +48,7 @@ export default function SelbsttestPage() {
               <p className="text-sm text-muted-foreground">
                 Dieser Test ersetzt keine professionelle Beratung. Er dient lediglich als Orientierungshilfe, 
                 um Ihnen den Einstieg in unsere Inhalte zu erleichtern. Bei akuten Krisen wenden Sie sich 
-                bitte an die <a href="/soforthilfe" className="text-[oklch(0.55_0.20_55)] underline hover:no-underline">Notfallressourcen</a>.
+                bitte an die <a href="/soforthilfe" className="text-alert underline hover:no-underline">Notfallressourcen</a>.
               </p>
             </div>
           </div>

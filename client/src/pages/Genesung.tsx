@@ -11,10 +11,10 @@ export default function Genesung() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.88_0.04_145)]/40 to-background relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-[oklch(0.65_0.12_55)] blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-[oklch(0.65_0.08_145)] blur-3xl" />
+          <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-terracotta blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-sage blur-3xl" />
         </div>
         <div className="container relative">
           <motion.div
@@ -24,13 +24,13 @@ export default function Genesung() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.88_0.04_145)] flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-[oklch(0.40_0.08_145)]" />
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-sage-darker" />
               </div>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
-              Genesung ist <span className="text-[oklch(0.55_0.10_145)]">möglich</span>
+              Genesung ist <span className="text-sage-mid">möglich</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -51,10 +51,10 @@ export default function Genesung() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <Card className="border-[oklch(0.65_0.08_145)]/30 bg-gradient-to-br from-[oklch(0.95_0.03_145)] to-[oklch(0.98_0.01_85)]">
+            <Card className="border-sage/30 bg-gradient-to-br from-sage-wash to-cream">
               <CardContent className="p-8 md:p-10">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-[oklch(0.65_0.08_145)] flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-sage flex items-center justify-center flex-shrink-0">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -71,7 +71,7 @@ export default function Genesung() {
                 {/* Statistiken */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-[oklch(0.55_0.10_145)] mb-2">
+                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
                       85–93%
                     </div>
                     <p className="text-sm text-muted-foreground">
@@ -79,7 +79,7 @@ export default function Genesung() {
                     </p>
                   </div>
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-[oklch(0.55_0.10_145)] mb-2">
+                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
                       50%
                     </div>
                     <p className="text-sm text-muted-foreground">
@@ -87,7 +87,7 @@ export default function Genesung() {
                     </p>
                   </div>
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-[oklch(0.55_0.10_145)] mb-2">
+                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
                       77%
                     </div>
                     <p className="text-sm text-muted-foreground">
@@ -122,7 +122,7 @@ export default function Genesung() {
               {/* ═══ 1. Was bedeutet Remission? ═══ */}
               <ContentSection
                 title="Was bedeutet «Remission» und «Genesung»?"
-                icon={<Clock className="w-6 h-6 text-[oklch(0.45_0.12_55)]" />}
+                icon={<Clock className="w-6 h-6 text-terracotta-dark" />}
                 id="remission"
                 defaultOpen={true}
                 preview="In der Forschung werden diese Begriffe präzise definiert, um Fortschritte messbar zu machen."
@@ -134,8 +134,8 @@ export default function Genesung() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Card className="h-full border-border/50">
                     <CardContent className="p-6">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.85_0.08_55)] flex items-center justify-center mb-4">
-                        <Clock className="w-5 h-5 text-[oklch(0.45_0.12_55)]" />
+                      <div className="w-10 h-10 rounded-lg bg-terracotta-light flex items-center justify-center mb-4">
+                        <Clock className="w-5 h-5 text-terracotta-dark" />
                       </div>
                       <h3 className="text-lg font-semibold text-foreground mb-3">
                         Symptomatische Remission
@@ -145,7 +145,7 @@ export default function Genesung() {
                         für BPD. Die typischen Symptome wie emotionale Instabilität, Impulsivität und 
                         Beziehungsprobleme sind deutlich zurückgegangen.
                       </p>
-                      <div className="bg-[oklch(0.95_0.03_55)]/50 rounded-lg p-3">
+                      <div className="bg-terracotta-wash/50 rounded-lg p-3">
                         <p className="text-xs text-muted-foreground">
                           <strong>85–93%</strong> der Betroffenen erreichen dies innerhalb von 10 Jahren.
                         </p>
@@ -155,8 +155,8 @@ export default function Genesung() {
 
                   <Card className="h-full border-border/50">
                     <CardContent className="p-6">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.88_0.04_145)] flex items-center justify-center mb-4">
-                        <Heart className="w-5 h-5 text-[oklch(0.40_0.08_145)]" />
+                      <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center mb-4">
+                        <Heart className="w-5 h-5 text-sage-darker" />
                       </div>
                       <h3 className="text-lg font-semibold text-foreground mb-3">
                         Vollständige Genesung (Recovery)
@@ -166,7 +166,7 @@ export default function Genesung() {
                         regelmässigen Arbeit oder Ausbildung nachgehen und erlebt eine gute 
                         allgemeine Lebensqualität.
                       </p>
-                      <div className="bg-[oklch(0.88_0.04_145)]/30 rounded-lg p-3">
+                      <div className="bg-sage-light/30 rounded-lg p-3">
                         <p className="text-xs text-muted-foreground">
                           <strong>50%</strong> erreichen diese umfassende Genesung innerhalb von 10 Jahren.
                         </p>
@@ -179,7 +179,7 @@ export default function Genesung() {
               {/* ═══ 2. Das Fortschritt-Paradox ═══ */}
               <ContentSection
                 title="Das Fortschritt-Paradox"
-                icon={<RefreshCw className="w-6 h-6 text-[oklch(0.55_0.12_55)]" />}
+                icon={<RefreshCw className="w-6 h-6 text-terracotta-mid" />}
                 id="fortschritt-paradox"
                 preview="Ein häufiges Phänomen: Gerade wenn es besser wird, kommt ein Rückfall."
               >
@@ -187,10 +187,10 @@ export default function Genesung() {
                   Ein häufiges Phänomen, das viele Angehörige verwirrt: Gerade wenn es besser wird, kommt ein Rückfall.
                 </p>
 
-                <Card className="border-l-4 border-l-[oklch(0.55_0.12_55)] bg-[oklch(0.95_0.04_55)]/30 mb-8">
+                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/30 mb-8">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <AlertTriangle className="w-6 h-6 text-[oklch(0.55_0.12_55)] flex-shrink-0 mt-1" />
+                      <AlertTriangle className="w-6 h-6 text-terracotta-mid flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-semibold text-foreground mb-2">Warum passiert das?</h3>
                         <p className="text-muted-foreground leading-relaxed">
@@ -226,7 +226,7 @@ export default function Genesung() {
               {/* ═══ 3. Realistische Erwartungen ═══ */}
               <ContentSection
                 title="Realistische Erwartungen"
-                icon={<Heart className="w-6 h-6 text-[oklch(0.55_0.10_145)]" />}
+                icon={<Heart className="w-6 h-6 text-sage-mid" />}
                 id="realistische-erwartungen"
                 preview="Remission bedeutet nicht «Heilung» im klassischen Sinn."
               >
@@ -236,7 +236,7 @@ export default function Genesung() {
                   damit umzugehen.
                 </p>
 
-                <Card className="bg-[oklch(0.88_0.04_145)]/20 border-[oklch(0.55_0.10_145)]/30 mb-8">
+                <Card className="bg-sage-light/20 border-sage-mid/30 mb-8">
                   <CardContent className="p-6">
                     <p className="text-foreground leading-relaxed text-lg text-center italic">
                       «Das Ziel ist nicht Perfektion, sondern ein lebenswertes Leben.»
@@ -245,7 +245,7 @@ export default function Genesung() {
                 </Card>
 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.02_55)] border border-[oklch(0.55_0.15_55)]/20">
+                  <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">❌ Was Remission NICHT bedeutet:</span>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>Nie wieder schwierige Gefühle</li>
@@ -253,7 +253,7 @@ export default function Genesung() {
                       <li>Keine Unterstützung mehr nötig</li>
                     </ul>
                   </div>
-                  <div className="p-4 rounded-xl bg-[oklch(0.95_0.03_145)] border border-[oklch(0.55_0.10_145)]/20">
+                  <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">✓ Was Remission bedeutet:</span>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>Bessere Emotionsregulation</li>
@@ -267,7 +267,7 @@ export default function Genesung() {
               {/* ═══ 4. Wie Sie zur Genesung beitragen können ═══ */}
               <ContentSection
                 title="Wie Sie zur Genesung beitragen können"
-                icon={<Users className="w-6 h-6 text-[oklch(0.55_0.10_145)]" />}
+                icon={<Users className="w-6 h-6 text-sage-mid" />}
                 id="beitragen"
                 preview="Als Angehöriger können Sie den Genesungsprozess positiv beeinflussen – ohne sich selbst aufzugeben."
               >
@@ -295,7 +295,7 @@ export default function Genesung() {
               {/* ═══ 5. Was fördert die Genesung? ═══ */}
               <ContentSection
                 title="Was fördert die Genesung?"
-                icon={<TrendingUp className="w-6 h-6 text-[oklch(0.55_0.10_145)]" />}
+                icon={<TrendingUp className="w-6 h-6 text-sage-mid" />}
                 id="faktoren"
                 preview="Die Forschung hat mehrere Faktoren identifiziert, die eine positive Entwicklung begünstigen."
               >
@@ -334,7 +334,7 @@ export default function Genesung() {
                     <Card key={index} className="border-border/50 hover:shadow-md transition-shadow">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="w-8 h-8 rounded-full bg-[oklch(0.65_0.08_145)] flex items-center justify-center flex-shrink-0 text-white font-semibold text-sm">
+                          <div className="w-8 h-8 rounded-full bg-sage flex items-center justify-center flex-shrink-0 text-white font-semibold text-sm">
                             {index + 1}
                           </div>
                           <div className="flex-1">
@@ -344,8 +344,8 @@ export default function Genesung() {
                             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
                               {item.description}
                             </p>
-                            <div className="inline-block bg-[oklch(0.95_0.03_145)] rounded-full px-3 py-1">
-                              <p className="text-xs text-[oklch(0.40_0.08_145)] font-medium">
+                            <div className="inline-block bg-sage-wash rounded-full px-3 py-1">
+                              <p className="text-xs text-sage-darker font-medium">
                                 {item.highlight}
                               </p>
                             </div>
@@ -360,7 +360,7 @@ export default function Genesung() {
               {/* ═══ 6. Was bedeutet das für Angehörige? ═══ */}
               <ContentSection
                 title="Was bedeutet das für Sie als Angehörige?"
-                icon={<Heart className="w-6 h-6 text-[oklch(0.55_0.12_55)]" />}
+                icon={<Heart className="w-6 h-6 text-terracotta-mid" />}
                 id="fuer-angehoerige"
                 preview="Hoffnung ist berechtigt, Geduld ist wichtig, Ihre Rolle ist wertvoll."
               >
@@ -383,9 +383,9 @@ export default function Genesung() {
                       text: "Die besten Ergebnisse werden mit spezialisierter Psychotherapie erzielt. Ermutigen Sie Ihren Angehörigen, professionelle Hilfe anzunehmen – aber akzeptieren Sie auch, dass Sie diese Entscheidung nicht erzwingen können."
                     }
                   ].map((item, i) => (
-                    <Card key={i} className="h-full bg-white border-[oklch(0.65_0.08_145)]/20">
+                    <Card key={i} className="h-full bg-white border-sage/20">
                       <CardContent className="p-6">
-                        <h3 className="text-lg font-semibold text-[oklch(0.55_0.10_145)] mb-4">
+                        <h3 className="text-lg font-semibold text-sage-mid mb-4">
                           {item.title}
                         </h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">
@@ -400,7 +400,7 @@ export default function Genesung() {
               {/* ═══ 7. Evidenz & Grenzen ═══ */}
               <ContentSection
                 title="Evidenz & Grenzen"
-                icon={<BookOpen className="w-6 h-6 text-[oklch(0.55_0.10_145)]" />}
+                icon={<BookOpen className="w-6 h-6 text-sage-mid" />}
                 id="evidenz"
                 preview="Wissenschaftliche Grundlage, Einschränkungen und weiterführende Literatur."
               >
@@ -415,12 +415,12 @@ export default function Genesung() {
                         </p>
                         <ul className="space-y-2 text-sm text-muted-foreground">
                           <li className="flex items-start gap-2">
-                            <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                            <span className="text-sage-mid">•</span>
                             <span><strong>McLean Study of Adult Development (MSAD)</strong> – 290 Teilnehmende, 
                             Follow-up über 24 Jahre (Zanarini et al.)</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                            <span className="text-sage-mid">•</span>
                             <span><strong>Collaborative Longitudinal Personality Disorders Study (CLPS)</strong> – 
                             175 Teilnehmende, Follow-up über 10 Jahre (Gunderson et al.)</span>
                           </li>
@@ -431,17 +431,17 @@ export default function Genesung() {
                         <h3 className="font-medium text-foreground mb-2">Einschränkungen</h3>
                         <ul className="space-y-2 text-sm text-muted-foreground">
                           <li className="flex items-start gap-2">
-                            <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                            <span className="text-sage-mid">•</span>
                             <span>Die Studien wurden hauptsächlich in den USA durchgeführt; kulturelle 
                             Unterschiede können die Übertragbarkeit beeinflussen.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                            <span className="text-sage-mid">•</span>
                             <span>Die meisten Teilnehmenden waren zu Beginn stationär behandelt worden – 
                             ambulante Patient:innen könnten andere Verläufe zeigen.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-[oklch(0.55_0.10_145)]">•</span>
+                            <span className="text-sage-mid">•</span>
                             <span>Symptomatische Remission bedeutet nicht automatisch gute Lebensqualität – 
                             funktionelle Beeinträchtigungen können bestehen bleiben.</span>
                           </li>
@@ -455,7 +455,7 @@ export default function Genesung() {
                             href="https://pubmed.ncbi.nlm.nih.gov/20395399/" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm text-[oklch(0.55_0.10_145)] hover:underline"
+                            className="flex items-center gap-2 text-sm text-sage-mid hover:underline"
                           >
                             <ExternalLink className="w-4 h-4" />
                             Zanarini et al. (2010): Time-to-Attainment of Recovery from BPD
@@ -464,7 +464,7 @@ export default function Genesung() {
                             href="https://pubmed.ncbi.nlm.nih.gov/21464344/" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm text-[oklch(0.55_0.10_145)] hover:underline"
+                            className="flex items-center gap-2 text-sm text-sage-mid hover:underline"
                           >
                             <ExternalLink className="w-4 h-4" />
                             Gunderson et al. (2011): Ten-Year Course of BPD
@@ -473,7 +473,7 @@ export default function Genesung() {
                             href="https://pubmed.ncbi.nlm.nih.gov/22737693/" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm text-[oklch(0.55_0.10_145)] hover:underline"
+                            className="flex items-center gap-2 text-sm text-sage-mid hover:underline"
                           >
                             <ExternalLink className="w-4 h-4" />
                             Zanarini et al. (2012): 16-year prospective follow-up study
@@ -488,7 +488,7 @@ export default function Genesung() {
               {/* ═══ 8. Infografiken zum Herunterladen ═══ */}
               <ContentSection
                 title="Genesung verstehen – auf einen Blick"
-                icon={<ImageIcon className="w-6 h-6 text-[oklch(0.45_0.10_145)]" />}
+                icon={<ImageIcon className="w-6 h-6 text-sage-dark" />}
                 id="infografiken"
                 preview="Alle Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken."
               >
@@ -561,7 +561,7 @@ export default function Genesung() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-[oklch(0.94_0.02_85)]">
+      <section className="py-12 md:py-16 bg-sand-muted">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -578,7 +578,7 @@ export default function Genesung() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/unterstuetzen/uebersicht">
-                  <Button className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.14_55)]">
+                  <Button className="bg-terracotta hover:bg-terracotta-mid">
                     Unterstützen lernen
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>

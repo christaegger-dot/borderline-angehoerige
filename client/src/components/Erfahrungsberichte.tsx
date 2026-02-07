@@ -117,11 +117,11 @@ export default function Erfahrungsberichte({
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="h-full border-border/50 hover:border-[oklch(0.65_0.10_55)] transition-colors">
+                  <Card className="h-full border-border/50 hover:border-terracotta transition-colors">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-[oklch(0.92_0.05_55)] flex items-center justify-center">
-                          <Icon className="w-5 h-5 text-[oklch(0.55_0.15_55)]" />
+                        <div className="w-10 h-10 rounded-full bg-terracotta-lighter flex items-center justify-center">
+                          <Icon className="w-5 h-5 text-terracotta-mid" />
                         </div>
                         <div>
                           <p className="font-medium text-foreground">{bericht.autor}</p>
@@ -129,14 +129,14 @@ export default function Erfahrungsberichte({
                         </div>
                       </div>
                       
-                      <Quote className="w-8 h-8 text-[oklch(0.85_0.05_55)] mb-3" />
+                      <Quote className="w-8 h-8 text-terracotta-light mb-3" />
                       
                       <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
                         {bericht.text}
                       </p>
                       
                       {bericht.highlight && (
-                        <div className="bg-[oklch(0.95_0.03_55)] rounded-lg p-3 border-l-2 border-[oklch(0.65_0.10_55)]">
+                        <div className="bg-terracotta-wash rounded-lg p-3 border-l-2 border-terracotta">
                           <p className="text-sm font-medium text-foreground italic">
                             "{bericht.highlight}"
                           </p>
@@ -238,8 +238,8 @@ export default function Erfahrungsberichte({
                 <Card className="border-border/50 shadow-lg">
                   <CardContent className="p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-12 h-12 rounded-full bg-[oklch(0.92_0.05_55)] flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-[oklch(0.55_0.15_55)]" />
+                      <div className="w-12 h-12 rounded-full bg-terracotta-lighter flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-terracotta-mid" />
                       </div>
                       <div>
                         <p className="font-medium text-foreground text-lg">{bericht.autor}</p>
@@ -247,14 +247,14 @@ export default function Erfahrungsberichte({
                       </div>
                     </div>
                     
-                    <Quote className="w-10 h-10 text-[oklch(0.85_0.05_55)] mb-4" />
+                    <Quote className="w-10 h-10 text-terracotta-light mb-4" />
                     
                     <p className="text-muted-foreground leading-relaxed mb-6 text-base">
                       {bericht.text}
                     </p>
                     
                     {bericht.highlight && (
-                      <div className="bg-[oklch(0.95_0.03_55)] rounded-xl p-4 border-l-3 border-[oklch(0.65_0.10_55)]">
+                      <div className="bg-terracotta-wash rounded-xl p-4 border-l-3 border-terracotta">
                         <p className="text-base font-medium text-foreground italic">
                           "{bericht.highlight}"
                         </p>
@@ -272,9 +272,9 @@ export default function Erfahrungsberichte({
               <button
                 key={index}
                 onClick={() => goTo(index, index > current ? 1 : -1)}
-                className={`transition-all duration-300 rounded-full ${
+                className={`transition-all duration-500 rounded-full ${
                   index === current 
-                    ? "w-8 h-2.5 bg-[oklch(0.65_0.12_55)]" 
+                    ? "w-8 h-2.5 bg-terracotta" 
                     : "w-2.5 h-2.5 bg-border hover:bg-muted-foreground/40"
                 }`}
                 aria-label={`Bericht ${index + 1}`}
@@ -287,7 +287,7 @@ export default function Erfahrungsberichte({
             <div className="mt-3 max-w-xs mx-auto h-0.5 bg-border rounded-full overflow-hidden">
               <motion.div
                 key={current}
-                className="h-full bg-[oklch(0.65_0.12_55)] rounded-full"
+                className="h-full bg-terracotta rounded-full"
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 8, ease: "linear" }}

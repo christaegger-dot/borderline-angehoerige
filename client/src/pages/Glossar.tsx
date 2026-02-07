@@ -171,10 +171,10 @@ const glossaryTerms: GlossaryTerm[] = [
 ];
 
 const categoryInfo = {
-  therapie: { label: "Therapie & Behandlung", icon: Brain, color: "oklch(0.55_0.08_250)" },
-  kommunikation: { label: "Kommunikation", icon: MessageCircle, color: "oklch(0.65_0.12_55)" },
-  symptome: { label: "Symptome & Muster", icon: AlertTriangle, color: "oklch(0.65_0.15_55)" },
-  selbsthilfe: { label: "Selbsthilfe & Angehörige", icon: Heart, color: "oklch(0.55_0.08_145)" }
+  therapie: { label: "Therapie & Behandlung", icon: Brain, color: "var(--color-slate-mid)" },
+  kommunikation: { label: "Kommunikation", icon: MessageCircle, color: "var(--color-terracotta)" },
+  symptome: { label: "Symptome & Muster", icon: AlertTriangle, color: "var(--color-terracotta)" },
+  selbsthilfe: { label: "Selbsthilfe & Angehörige", icon: Heart, color: "var(--color-sage-mid)" }
 };
 
 export default function Glossar() {
@@ -198,7 +198,7 @@ export default function Glossar() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.03_250)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -207,10 +207,10 @@ export default function Glossar() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.90_0.03_250)] flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-[oklch(0.45_0.08_250)]" />
+              <div className="w-12 h-12 rounded-xl bg-slate-light flex items-center justify-center">
+                <BookOpen className="w-6 h-6 text-slate-dark" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.45_0.08_250)]">{glossaryTerms.length} Begriffe</span>
+              <span className="text-sm font-medium text-slate-dark">{glossaryTerms.length} Begriffe</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
@@ -237,7 +237,7 @@ export default function Glossar() {
                 placeholder="Begriff suchen..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-[oklch(0.65_0.08_250)]"
+                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-slate-mid"
               />
             </div>
             
@@ -247,7 +247,7 @@ export default function Glossar() {
                 onClick={() => setSelectedCategory(null)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   selectedCategory === null
-                    ? 'bg-[oklch(0.45_0.08_250)] text-white'
+                    ? 'bg-slate-dark text-white'
                     : 'bg-muted/50 text-muted-foreground hover:bg-muted'
                 }`}
               >
@@ -321,7 +321,7 @@ export default function Glossar() {
                               
                               {term.relatedPage && (
                                 <Link href={term.relatedPage}>
-                                  <span className="inline-flex items-center gap-1 text-sm text-[oklch(0.55_0.08_250)] hover:text-[oklch(0.45_0.08_250)] transition-colors">
+                                  <span className="inline-flex items-center gap-1 text-sm text-slate-mid hover:text-slate-dark transition-colors">
                                     {term.relatedPageTitle}
                                     <ArrowRight className="w-4 h-4" />
                                   </span>
@@ -336,9 +336,9 @@ export default function Glossar() {
                             
                             {/* Example */}
                             {term.example && (
-                              <div className="bg-[oklch(0.96_0.01_85)] rounded-lg p-4 border-l-4 border-[oklch(0.75_0.08_85)]">
+                              <div className="bg-sand rounded-lg p-4 border-l-4 border-sand-border">
                                 <div className="flex items-start gap-3">
-                                  <Lightbulb className="w-5 h-5 text-[oklch(0.55_0.12_85)] flex-shrink-0 mt-0.5" />
+                                  <Lightbulb className="w-5 h-5 text-sand-warm flex-shrink-0 mt-0.5" />
                                   <p className="text-sm text-muted-foreground">
                                     <span className="font-medium text-foreground">Beispiel: </span>
                                     {term.example}
@@ -359,13 +359,13 @@ export default function Glossar() {
       </section>
 
       {/* Hinweis */}
-      <section className="py-12 bg-[oklch(0.96_0.01_85)]">
+      <section className="py-12 bg-sand">
         <div className="container">
-          <Card className="bg-white border-[oklch(0.88_0.03_85)]">
+          <Card className="bg-white border-sand-subtle">
             <CardContent className="p-6 md:p-8">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[oklch(0.92_0.03_250)] flex items-center justify-center flex-shrink-0">
-                  <Users className="w-6 h-6 text-[oklch(0.55_0.08_250)]" />
+                <div className="w-12 h-12 rounded-xl bg-slate-lighter flex items-center justify-center flex-shrink-0">
+                  <Users className="w-6 h-6 text-slate-mid" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">

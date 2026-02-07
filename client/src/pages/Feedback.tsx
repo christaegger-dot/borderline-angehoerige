@@ -46,8 +46,8 @@ export default function Feedback() {
               transition={{ duration: 0.5 }}
               className="max-w-xl mx-auto text-center"
             >
-              <div className="w-20 h-20 rounded-full bg-[oklch(0.88_0.04_145)] flex items-center justify-center mx-auto mb-6">
-                <CheckCircle2 className="w-10 h-10 text-[oklch(0.45_0.08_145)]" />
+              <div className="w-20 h-20 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="w-10 h-10 text-sage-dark" />
               </div>
               
               <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
@@ -59,9 +59,9 @@ export default function Feedback() {
                 Wir schätzen es sehr, dass Sie sich die Zeit genommen haben.
               </p>
               
-              <Card className="bg-[oklch(0.92_0.05_145)]/20 border-[oklch(0.75_0.08_145)]/30">
+              <Card className="bg-sage-lighter/20 border-sage/30">
                 <CardContent className="p-6">
-                  <Heart className="w-8 h-8 text-[oklch(0.65_0.12_145)] mx-auto mb-3" />
+                  <Heart className="w-8 h-8 text-sage mx-auto mb-3" />
                   <p className="text-foreground">
                     Denken Sie daran: Sie sind nicht allein. Viele Angehörige gehen einen ähnlichen Weg.
                   </p>
@@ -69,7 +69,7 @@ export default function Feedback() {
               </Card>
               
               <Button 
-                className="mt-8 bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.12_55)]"
+                className="mt-8 bg-terracotta hover:bg-terracotta-mid"
                 onClick={() => window.location.href = '/'}
               >
                 Zurück zur Startseite
@@ -84,7 +84,7 @@ export default function Feedback() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.90_0.03_250)]/30 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -93,10 +93,10 @@ export default function Feedback() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.90_0.03_250)] flex items-center justify-center">
-                <MessageSquare className="w-6 h-6 text-[oklch(0.45_0.08_250)]" />
+              <div className="w-12 h-12 rounded-xl bg-slate-light flex items-center justify-center">
+                <MessageSquare className="w-6 h-6 text-slate-dark" />
               </div>
-              <span className="text-sm font-medium text-[oklch(0.45_0.08_250)]">Anonym & vertraulich</span>
+              <span className="text-sm font-medium text-slate-dark">Anonym & vertraulich</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
@@ -136,8 +136,8 @@ export default function Feedback() {
                           onClick={() => setRating(star)}
                           className={`p-2 rounded-lg transition-all ${
                             rating && rating >= star
-                              ? 'text-[oklch(0.70_0.15_85)] scale-110'
-                              : 'text-muted-foreground/40 hover:text-[oklch(0.70_0.15_85)]/60'
+                              ? 'text-sand-accent scale-110'
+                              : 'text-muted-foreground/40 hover:text-sand-accent/60'
                           }`}
                         >
                           <Star className={`w-10 h-10 ${rating && rating >= star ? 'fill-current' : ''}`} />
@@ -183,8 +183,8 @@ export default function Feedback() {
                           onClick={() => setFoundHelpful(foundHelpful === item.id ? '' : item.id)}
                           className={`p-3 rounded-lg border text-left transition-all ${
                             foundHelpful === item.id
-                              ? 'border-[oklch(0.65_0.08_145)] bg-[oklch(0.88_0.04_145)]/50 text-foreground'
-                              : 'border-border hover:border-[oklch(0.65_0.08_145)]/50 text-muted-foreground'
+                              ? 'border-sage bg-sage-light/50 text-foreground'
+                              : 'border-border hover:border-sage/50 text-muted-foreground'
                           }`}
                         >
                           <span className="text-sm font-medium">{item.label}</span>
@@ -208,9 +208,9 @@ export default function Feedback() {
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                       {[
-                        { id: 'lob', label: 'Lob', icon: ThumbsUp, color: 'oklch(0.65_0.08_145)' },
-                        { id: 'verbesserung', label: 'Verbesserungsvorschlag', icon: MessageSquare, color: 'oklch(0.55_0.08_250)' },
-                        { id: 'fehler', label: 'Fehler melden', icon: AlertCircle, color: 'oklch(0.65_0.12_55)' },
+                        { id: 'lob', label: 'Lob', icon: ThumbsUp, color: 'var(--color-sage)' },
+                        { id: 'verbesserung', label: 'Verbesserungsvorschlag', icon: MessageSquare, color: 'var(--color-slate-mid)' },
+                        { id: 'fehler', label: 'Fehler melden', icon: AlertCircle, color: 'var(--color-terracotta)' },
                       ].map((type) => (
                         <button
                           key={type.id}
@@ -234,7 +234,7 @@ export default function Feedback() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Ihre Nachricht (optional)..."
-                      className="w-full h-32 p-4 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-[oklch(0.65_0.08_145)] resize-none"
+                      className="w-full h-32 p-4 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-sage resize-none"
                     />
                   </CardContent>
                 </Card>
@@ -246,7 +246,7 @@ export default function Feedback() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-[oklch(0.96_0.01_85)] border-[oklch(0.88_0.03_85)]">
+                <Card className="bg-sand border-sand-subtle">
                   <CardContent className="p-4">
                     <p className="text-sm text-muted-foreground">
                       <strong className="text-foreground">Hinweis zur Anonymität:</strong> Dieses Feedback-Formular 
@@ -263,10 +263,10 @@ export default function Feedback() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-[oklch(0.90_0.03_145)]/30 border-[oklch(0.75_0.08_145)]/30">
+                <Card className="bg-sage-light/30 border-sage/30">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 rounded-full bg-[oklch(0.88_0.04_145)] flex items-center justify-center mx-auto mb-4">
-                      <Mail className="w-6 h-6 text-[oklch(0.45_0.08_145)]" />
+                    <div className="w-12 h-12 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-4">
+                      <Mail className="w-6 h-6 text-sage-dark" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
                       Möchten Sie uns direkt erreichen?
@@ -276,7 +276,7 @@ export default function Feedback() {
                     </p>
                     <a 
                       href={`mailto:${emailAngehoerigen.adresse}`}
-                      className="inline-flex items-center gap-2 text-[oklch(0.45_0.08_145)] hover:text-[oklch(0.35_0.08_145)] font-medium transition-colors"
+                      className="inline-flex items-center gap-2 text-sage-dark hover:text-sage-darker font-medium transition-colors"
                     >
                       <Mail className="w-4 h-4" />
                       {emailAngehoerigen.adresse}
@@ -295,7 +295,7 @@ export default function Feedback() {
                 <Button 
                   type="submit"
                   size="lg"
-                  className="bg-[oklch(0.65_0.12_55)] hover:bg-[oklch(0.55_0.12_55)] text-white px-8"
+                  className="bg-terracotta hover:bg-terracotta-mid text-white px-8"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Feedback absenden

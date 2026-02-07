@@ -19,7 +19,7 @@ export default function Selbsthilfegruppen() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-[oklch(0.92_0.05_145)]/50 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-lighter/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function Selbsthilfegruppen() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[oklch(0.55_0.12_145)] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sage-mid flex items-center justify-center">
                 <Users className="w-6 h-6 text-white" />
               </div>
             </div>
@@ -56,10 +56,10 @@ export default function Selbsthilfegruppen() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="border-[oklch(0.55_0.12_145)]/30 bg-[oklch(0.96_0.02_145)]/30 overflow-hidden">
+              <Card className="border-sage-mid/30 bg-sage-wash/30 overflow-hidden">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-[oklch(0.55_0.12_145)] flex items-center justify-center flex-shrink-0">
+                    <div className="w-14 h-14 rounded-xl bg-sage-mid flex items-center justify-center flex-shrink-0">
                       <Heart className="w-7 h-7 text-white" />
                     </div>
                     <div>
@@ -80,24 +80,24 @@ export default function Selbsthilfegruppen() {
 
                   <div className="grid sm:grid-cols-2 gap-4 mb-6">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-[oklch(0.55_0.12_145)]" />
+                      <Phone className="w-5 h-5 text-sage-mid" />
                       <div>
                         <p className="text-sm text-muted-foreground">Beratungstelefon</p>
-                        <a href={`tel:${selbsthilfeCH.tel}`} className="font-medium text-foreground hover:text-[oklch(0.55_0.12_145)]">
+                        <a href={`tel:${selbsthilfeCH.tel}`} className="font-medium text-foreground hover:text-sage-mid">
                           {selbsthilfeCH.nummer}
                         </a>
                         <p className="text-xs text-muted-foreground">(kostenlos)</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Globe className="w-5 h-5 text-[oklch(0.55_0.12_145)]" />
+                      <Globe className="w-5 h-5 text-sage-mid" />
                       <div>
                         <p className="text-sm text-muted-foreground">Website</p>
                         <a 
                           href="https://www.stand-by-you.ch" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="font-medium text-foreground hover:text-[oklch(0.55_0.12_145)]"
+                          className="font-medium text-foreground hover:text-sage-mid"
                         >
                           www.stand-by-you.ch
                         </a>
@@ -109,19 +109,19 @@ export default function Selbsthilfegruppen() {
                     <h3 className="font-semibold text-foreground mb-2">Angebote von Stand by You:</h3>
                     <ul className="space-y-1 text-muted-foreground text-sm">
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.12_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         Kostenlose telefonische Beratung für Angehörige
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.12_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         Angehörigenkurse (z.B. "Wegweiser"-Kurs)
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.12_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         Podcast "Mal Mut, mal Wut" mit Erfahrungsberichten
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-[oklch(0.55_0.12_145)]">•</span>
+                        <span className="text-sage-mid">•</span>
                         Vernetzung mit anderen Angehörigen
                       </li>
                     </ul>
@@ -165,8 +165,8 @@ export default function Selbsthilfegruppen() {
                 <Card className="border-border/50">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_55)] flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-[oklch(0.55_0.12_55)]" />
+                      <div className="w-10 h-10 rounded-lg bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-terracotta-mid" />
                       </div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-foreground mb-1">Raum Zürich</h3>
@@ -194,8 +194,8 @@ export default function Selbsthilfegruppen() {
                 <Card className="border-border/50">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_55)] flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-[oklch(0.55_0.12_55)]" />
+                      <div className="w-10 h-10 rounded-lg bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-terracotta-mid" />
                       </div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-foreground mb-1">Winterthur / Schaffhausen</h3>
@@ -221,8 +221,8 @@ export default function Selbsthilfegruppen() {
                 <Card className="border-border/50">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.92_0.04_55)] flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-[oklch(0.55_0.12_55)]" />
+                      <div className="w-10 h-10 rounded-lg bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-terracotta-mid" />
                       </div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-foreground mb-1">Raum Bern</h3>
@@ -248,14 +248,14 @@ export default function Selbsthilfegruppen() {
               <Card className="border-border/50 mt-6 bg-muted/30">
                 <CardContent className="p-5">
                   <div className="flex items-center gap-3 mb-3">
-                    <Phone className="w-5 h-5 text-[oklch(0.55_0.12_145)]" />
+                    <Phone className="w-5 h-5 text-sage-mid" />
                     <p className="font-medium text-foreground">Keine Gruppe in Ihrer Nähe?</p>
                   </div>
                   <p className="text-muted-foreground text-sm mb-3">
                     Rufen Sie die Infoline von Selbsthilfe Schweiz an – sie helfen Ihnen, eine passende 
                     Gruppe zu finden oder eine neue zu gründen.
                   </p>
-                  <a href={`tel:${selbsthilfeInfo.tel}`} className="font-bold text-[oklch(0.55_0.12_145)] hover:underline">
+                  <a href={`tel:${selbsthilfeInfo.tel}`} className="font-bold text-sage-mid hover:underline">
                     {selbsthilfeInfo.nummer}
                   </a>
                 </CardContent>
@@ -285,7 +285,7 @@ export default function Selbsthilfegruppen() {
                           und E-Mail-Beratung.
                         </p>
                         <div className="flex items-center gap-4 text-sm">
-                          <a href={`tel:${proMente.tel}`} className="text-[oklch(0.55_0.12_145)] hover:underline font-medium">
+                          <a href={`tel:${proMente.tel}`} className="text-sage-mid hover:underline font-medium">
                             {proMente.nummer}
                           </a>
                           <a 
@@ -344,7 +344,7 @@ export default function Selbsthilfegruppen() {
                 </Card>
 
                 {/* Fachstelle Angehörigenarbeit PUK */}
-                <Card className="border-[oklch(0.55_0.12_145)]/30 bg-[oklch(0.96_0.02_145)]/20">
+                <Card className="border-sage-mid/30 bg-sage-wash/20">
                   <CardContent className="p-5">
                     <div className="flex items-start justify-between gap-4">
                       <div>
@@ -356,7 +356,7 @@ export default function Selbsthilfegruppen() {
                           Menschen im Kanton Zürich.
                         </p>
                         <div className="flex items-center gap-4 text-sm">
-                          <a href={`tel:${fachstelle.tel}`} className="text-[oklch(0.55_0.12_145)] hover:underline font-medium">
+                          <a href={`tel:${fachstelle.tel}`} className="text-sage-mid hover:underline font-medium">
                             {fachstelle.nummer}
                           </a>
                           <a 
@@ -397,7 +397,7 @@ export default function Selbsthilfegruppen() {
                         href="https://www.stand-by-you.ch" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-sm text-[oklch(0.55_0.12_145)] hover:underline"
+                        className="text-sm text-sage-mid hover:underline"
                       >
                         Zum Podcast →
                       </a>
@@ -421,7 +421,7 @@ export default function Selbsthilfegruppen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-[oklch(0.95_0.03_55)] border-[oklch(0.65_0.12_55)]">
+              <Card className="bg-terracotta-wash border-terracotta">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-2">Warum Selbsthilfe?</h3>
                   <p className="text-muted-foreground leading-relaxed">

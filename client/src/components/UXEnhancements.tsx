@@ -26,7 +26,7 @@ export function ReadingProgress() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[60] h-1 bg-transparent pointer-events-none">
       <motion.div
-        className="h-full bg-gradient-to-r from-[oklch(0.65_0.12_55)] to-[oklch(0.55_0.10_145)]"
+        className="h-full bg-gradient-to-r from-terracotta to-sage-mid"
         style={{ width: `${progress}%` }}
         initial={{ width: 0 }}
         animate={{ width: `${progress}%` }}
@@ -65,7 +65,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="fixed bottom-4 sm:bottom-6 left-4 sm:left-auto sm:right-4 z-40 w-12 h-12 rounded-full bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.45_0.12_145)] text-white shadow-lg flex items-center justify-center transition-colors"
+          className="fixed bottom-4 sm:bottom-6 left-4 sm:left-auto sm:right-4 z-40 w-12 h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors"
           aria-label="Nach oben scrollen"
         >
           <ChevronUp className="w-6 h-6" />
@@ -139,7 +139,7 @@ export function Breadcrumbs() {
         <ol className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="flex items-center gap-1 hover:text-foreground transition-colors group">
-              <ArrowLeft className="w-3.5 h-3.5 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
+              <ArrowLeft className="w-3.5 h-3.5 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-400" />
               <Home className="w-4 h-4" />
               <span>Startseite</span>
             </Link>
@@ -322,7 +322,7 @@ export function TableOfContents() {
   if (headings.length < 3) return null;
 
   // Aktiver Eintrag Styling
-  const activeClass = "bg-[oklch(0.92_0.06_55)] text-[oklch(0.35_0.10_55)] font-semibold border-l-2 border-l-[oklch(0.55_0.12_55)]";
+  const activeClass = "bg-terracotta-lighter text-terracotta-darker font-semibold border-l-2 border-l-terracotta-mid";
   const inactiveClass = "text-muted-foreground hover:text-foreground hover:bg-muted/60";
 
   return (
@@ -385,7 +385,7 @@ export function TableOfContents() {
                   <li key={id}>
                     <button
                       onClick={() => scrollToHeading(id)}
-                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-200 ${
+                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-400 ${
                         level === 3 ? "pl-7" : ""
                       } ${
                         activeId === id ? activeClass : inactiveClass
@@ -414,7 +414,7 @@ export function TableOfContents() {
                   <button
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
-                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-all duration-200 line-clamp-2 ${
+                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-all duration-400 line-clamp-2 ${
                       level === 3 ? "pl-5" : ""
                     } ${
                       activeId === id ? activeClass : inactiveClass

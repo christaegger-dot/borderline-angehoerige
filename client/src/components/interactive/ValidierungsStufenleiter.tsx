@@ -2,13 +2,15 @@
  * ValidierungsStufenleiter – Interaktives Element #3
  * Interaktiver Stepper: Klick auf jede Stufe zeigt Beispiel-Dialog mit Highlight.
  * Einfügepunkt: /kommunizieren → 6 Stufen der Validierung
- * Design: Tokens only, Inter only, mobile-first (375px safe)
+ * + localStorage-Fortschritts-Tracker (tracks which steps have been visited)
  */
-import { useState } from "react";
-import { Eye, MessageSquare, Sparkles, History, Users, Star, ChevronRight, ChevronLeft } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Eye, MessageSquare, Sparkles, History, Users, Star, ChevronRight, ChevronLeft, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useProgress } from "@/hooks/useProgress";
+import ProgressBar from "./ProgressBar";
 
 interface Stufe {
   level: number;
@@ -107,11 +109,27 @@ const stufen: Stufe[] = [
 
 export default function ValidierungsStufenleiter() {
   const [activeLevel, setActiveLevel] = useState(0);
+  const progress = useProgress("validierung_stufen", stufen.length);
   const current = stufen[activeLevel];
-  const Icon = current.icon;
+
+  // Mark current step as visited whenever it changes
+  useEffect(() => {
+    progress.markRevealed(activeLevel);
+  }, [activeLevel]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="mt-6">
+      {/* Progress bar */}
+      <div className="mb-4">
+        <ProgressBar
+          revealed={progress.revealed}
+          total={progress.total}
+          percentage={progress.percentage}
+          color="var(--color-terracotta)"
+          label="besucht"
+        />
+      </div>
+
       <p className="text-sm text-muted-foreground mb-5">
         Klicken Sie auf eine Stufe, um den Beispiel-Dialog zu sehen. Arbeiten Sie sich von Stufe 1 nach oben.
       </p>
@@ -121,7 +139,7 @@ export default function ValidierungsStufenleiter() {
         {stufen.map((stufe, index) => {
           const SIcon = stufe.icon;
           const isActive = index === activeLevel;
-          const isPast = index < activeLevel;
+          const isVisited = progress.isRevealed(index);
           return (
             <button
               key={stufe.level}
@@ -129,17 +147,20 @@ export default function ValidierungsStufenleiter() {
               className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-mid ${
                 isActive
                   ? "text-white shadow-md"
-                  : isPast
+                  : isVisited
                   ? "bg-sage-wash text-sage-dark"
                   : "bg-muted/50 text-muted-foreground hover:bg-muted"
               }`}
               style={isActive ? { backgroundColor: stufe.color } : undefined}
-              aria-label={`Stufe ${stufe.level}: ${stufe.title}`}
+              aria-label={`Stufe ${stufe.level}: ${stufe.title}${isVisited && !isActive ? " (besucht)" : ""}`}
               aria-pressed={isActive}
             >
-              <SIcon className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{stufe.level}</span>
-              <span className="sm:hidden">{stufe.level}</span>
+              {isVisited && !isActive ? (
+                <CheckCircle2 className="w-3.5 h-3.5" />
+              ) : (
+                <SIcon className="w-3.5 h-3.5" />
+              )}
+              <span>{stufe.level}</span>
             </button>
           );
         })}

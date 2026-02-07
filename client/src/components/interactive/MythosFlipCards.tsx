@@ -2,11 +2,13 @@
  * MythosFlipCards – Interaktives Element #1
  * 6 Missverständnisse als Flip-Cards: Klick dreht die Karte um und zeigt die Realität.
  * Einfügepunkt: /verstehen → Missverständnisse-Sektion
- * Design: Tokens only, Inter only, mobile-first (375px safe)
+ * + localStorage-Fortschritts-Tracker
  */
 import { useState } from "react";
 import { XCircle, CheckCircle2, RotateCcw } from "lucide-react";
 import { motion } from "framer-motion";
+import { useProgress } from "@/hooks/useProgress";
+import ProgressBar from "./ProgressBar";
 
 interface MythCard {
   myth: string;
@@ -40,8 +42,24 @@ const myths: MythCard[] = [
   },
 ];
 
-function FlipCard({ card, index }: { card: MythCard; index: number }) {
+function FlipCard({
+  card,
+  index,
+  wasRevealed,
+  onReveal,
+}: {
+  card: MythCard;
+  index: number;
+  wasRevealed: boolean;
+  onReveal: () => void;
+}) {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+    const next = !isFlipped;
+    setIsFlipped(next);
+    if (next) onReveal();
+  };
 
   return (
     <motion.div
@@ -52,7 +70,7 @@ function FlipCard({ card, index }: { card: MythCard; index: number }) {
       className="perspective-[800px]"
     >
       <button
-        onClick={() => setIsFlipped(!isFlipped)}
+        onClick={handleClick}
         className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-mid focus-visible:ring-offset-2 rounded-xl"
         aria-label={isFlipped ? `Zurück zum Mythos: ${card.myth}` : `Aufdecken: ${card.myth}`}
         aria-pressed={isFlipped}
@@ -75,10 +93,15 @@ function FlipCard({ card, index }: { card: MythCard; index: number }) {
                 {card.myth}
               </p>
             </div>
-            <p className="text-xs text-terracotta-mid mt-3 flex items-center gap-1">
-              <RotateCcw className="w-3 h-3" />
-              Antippen für die Realität
-            </p>
+            <div className="flex items-center justify-between mt-3">
+              <p className="text-xs text-terracotta-mid flex items-center gap-1">
+                <RotateCcw className="w-3 h-3" />
+                Antippen für die Realität
+              </p>
+              {wasRevealed && !isFlipped && (
+                <CheckCircle2 className="w-4 h-4 text-sage-mid/60" />
+              )}
+            </div>
           </div>
 
           {/* Back – Realität */}
@@ -110,16 +133,26 @@ function FlipCard({ card, index }: { card: MythCard; index: number }) {
 }
 
 export default function MythosFlipCards() {
-  const [allRevealed, setAllRevealed] = useState(false);
+  const progress = useProgress("mythos_flip", myths.length);
   const [key, setKey] = useState(0);
 
   const handleReset = () => {
     setKey((prev) => prev + 1);
-    setAllRevealed(false);
+    progress.reset();
   };
 
   return (
     <div className="mt-6">
+      {/* Progress bar */}
+      <div className="mb-4">
+        <ProgressBar
+          revealed={progress.revealed}
+          total={progress.total}
+          percentage={progress.percentage}
+          color="var(--color-terracotta-mid)"
+        />
+      </div>
+
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm text-muted-foreground">
           Tippen Sie auf eine Karte, um die Realität aufzudecken.
@@ -136,7 +169,13 @@ export default function MythosFlipCards() {
 
       <div key={key} className="grid sm:grid-cols-2 gap-4">
         {myths.map((card, index) => (
-          <FlipCard key={index} card={card} index={index} />
+          <FlipCard
+            key={index}
+            card={card}
+            index={index}
+            wasRevealed={progress.isRevealed(index)}
+            onReveal={() => progress.markRevealed(index)}
+          />
         ))}
       </div>
 

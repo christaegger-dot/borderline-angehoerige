@@ -2,12 +2,14 @@
  * SpiegelnUebung – Interaktives Element #4
  * Szenario-Karten mit „Aufdecken"-Button: erst das Szenario, dann die empfohlene Antwort.
  * Einfügepunkt: /grenzen → Formulierungen-Sektion (Spiegeln statt Aufnehmen)
- * Design: Tokens only, Inter only, mobile-first (375px safe)
+ * + localStorage-Fortschritts-Tracker
  */
 import { useState } from "react";
-import { Eye, EyeOff, RotateCcw, MessageSquare } from "lucide-react";
+import { Eye, EyeOff, RotateCcw, MessageSquare, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useProgress } from "@/hooks/useProgress";
+import ProgressBar from "./ProgressBar";
 
 interface Szenario {
   situation: string;
@@ -48,8 +50,23 @@ const szenarien: Szenario[] = [
   },
 ];
 
-function SzenarioCard({ szenario, index }: { szenario: Szenario; index: number }) {
+function SzenarioCard({
+  szenario,
+  index,
+  wasRevealed,
+  onReveal,
+}: {
+  szenario: Szenario;
+  index: number;
+  wasRevealed: boolean;
+  onReveal: () => void;
+}) {
   const [revealed, setRevealed] = useState(false);
+
+  const handleReveal = () => {
+    setRevealed(true);
+    onReveal();
+  };
 
   return (
     <motion.div
@@ -61,9 +78,14 @@ function SzenarioCard({ szenario, index }: { szenario: Szenario; index: number }
     >
       {/* Kategorie-Badge + Situation */}
       <div className="p-5">
-        <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-slate-wash text-slate-dark mb-3">
-          {szenario.kategorie}
-        </span>
+        <div className="flex items-center justify-between mb-3">
+          <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-slate-wash text-slate-dark">
+            {szenario.kategorie}
+          </span>
+          {wasRevealed && !revealed && (
+            <CheckCircle2 className="w-4 h-4 text-sage-mid/60" />
+          )}
+        </div>
         <div className="flex items-start gap-3">
           <MessageSquare className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
           <p className="text-sm font-medium text-foreground leading-relaxed">
@@ -87,7 +109,7 @@ function SzenarioCard({ szenario, index }: { szenario: Szenario; index: number }
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setRevealed(true)}
+              onClick={handleReveal}
               className="w-full gap-2 border-sage-mid/50 text-sage-dark hover:bg-sage-wash"
             >
               <Eye className="w-4 h-4" />
@@ -140,16 +162,32 @@ function SzenarioCard({ szenario, index }: { szenario: Szenario; index: number }
 }
 
 export default function SpiegelnUebung() {
+  const progress = useProgress("spiegeln_uebung", szenarien.length);
   const [key, setKey] = useState(0);
+
+  const handleReset = () => {
+    setKey((prev) => prev + 1);
+    progress.reset();
+  };
 
   return (
     <div className="mt-6">
+      {/* Progress bar */}
+      <div className="mb-4">
+        <ProgressBar
+          revealed={progress.revealed}
+          total={progress.total}
+          percentage={progress.percentage}
+          color="var(--color-sage-mid)"
+        />
+      </div>
+
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm text-muted-foreground">
           Lesen Sie die Situation und überlegen Sie, bevor Sie aufdecken.
         </p>
         <button
-          onClick={() => setKey((prev) => prev + 1)}
+          onClick={handleReset}
           className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
           aria-label="Alle Karten zurücksetzen"
         >
@@ -160,7 +198,13 @@ export default function SpiegelnUebung() {
 
       <div key={key} className="space-y-4">
         {szenarien.map((szenario, index) => (
-          <SzenarioCard key={index} szenario={szenario} index={index} />
+          <SzenarioCard
+            key={index}
+            szenario={szenario}
+            index={index}
+            wasRevealed={progress.isRevealed(index)}
+            onReveal={() => progress.markRevealed(index)}
+          />
         ))}
       </div>
     </div>

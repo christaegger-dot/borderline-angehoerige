@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
+import SETDragDrop from "@/components/interactive/SETDragDrop";
 
 
 const kommSubcategories = [
@@ -235,6 +236,15 @@ export default function Kommunizieren() {
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+
+              {/* SET Zuordnungsübung */}
+              <div className="mt-8 pt-6 border-t border-border/50">
+                <h3 className="font-semibold text-foreground text-base mb-1">Übung: SET zuordnen</h3>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Testen Sie Ihr Verständnis: Ordnen Sie Aussagen der richtigen SET-Kategorie zu.
+                </p>
+                <SETDragDrop />
               </div>
             </ContentSection>
 

@@ -558,7 +558,7 @@ export default function Materialien() {
                         className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         loading={index < 4 ? "eager" : "lazy"}
                         width={400}
-                        height={223}
+                        height={300}
                         decoding={index < 4 ? "sync" : "async"}
                       />
                       {/* Hover-Overlay */}

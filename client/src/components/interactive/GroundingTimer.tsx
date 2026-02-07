@@ -2,9 +2,9 @@
  * GroundingTimer – Interaktives Element #5
  * Geführte 5-4-3-2-1 Übung mit Countdown pro Sinneskanal.
  *
- * Audio: Komplett über HTML5 <audio> DOM-Elemente (KEIN Web Audio API).
- * iOS-Unlock: unmute-ios-audio Paket + manueller play()-Aufruf bei pointerdown.
- * Fehlerhandling: Bei rejected play() → Hinweismeldung an User.
+ * Audio: HTML5 <audio> DOM-Elemente. Kein Web Audio API, kein crossOrigin.
+ * iOS-Unlock: unmute-ios-audio + direkter play() im User-Gesture-Handler.
+ * Debug: Alle audio events (error/stalled/waiting) werden geloggt.
  *
  * Design-Lock: Inter, Tokens, kein Dark Mode. Nur Fix, kein neues UI.
  */
@@ -78,6 +78,14 @@ type SoundKey = keyof typeof AUDIO_URLS;
 
 type Phase = "idle" | "running" | "paused" | "done";
 
+/* ── Debug logger ────────────────────────────────────── */
+
+const dbg = (msg: string, ...args: unknown[]) => {
+  if (typeof console !== "undefined") {
+    console.log(`[GroundingAudio] ${msg}`, ...args);
+  }
+};
+
 /* ── Component ───────────────────────────────────────── */
 
 export default function GroundingTimer() {
@@ -86,7 +94,6 @@ export default function GroundingTimer() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [audioEnabled, setAudioEnabled] = useState(false);
   const [audioBlocked, setAudioBlocked] = useState(false);
-  const [iosUnlocked, setIosUnlocked] = useState(false);
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const audioEnabledRef = useRef(audioEnabled);
@@ -107,9 +114,8 @@ export default function GroundingTimer() {
 
   /* ── iOS global unlock (runs once) ─────────────────── */
   useEffect(() => {
-    // unmute-ios-audio: registers pointerdown/touchend listeners globally
-    // and plays a silent <audio> + AudioContext to unlock iOS audio pipeline
     unmuteAudio();
+    dbg("unmute-ios-audio initialized");
   }, []);
 
   /* ── Create DOM <audio> elements on mount ──────────── */
@@ -121,11 +127,37 @@ export default function GroundingTimer() {
       el.preload = "auto";
       el.setAttribute("playsinline", "");
       el.setAttribute("x-webkit-airplay", "deny");
-      el.crossOrigin = "anonymous";
+      // NO crossOrigin – not needed for simple playback, avoids CORS issues
       el.volume = 0.7;
       el.src = AUDIO_URLS[key];
+
+      // Debug event listeners
+      el.addEventListener("error", () => {
+        dbg(`ERROR on ${key}:`, el.error?.code, el.error?.message);
+      });
+      el.addEventListener("stalled", () => {
+        dbg(`STALLED on ${key}, networkState:`, el.networkState);
+      });
+      el.addEventListener("waiting", () => {
+        dbg(`WAITING on ${key}, readyState:`, el.readyState);
+      });
+      el.addEventListener("canplaythrough", () => {
+        dbg(`READY ${key}, readyState:`, el.readyState);
+      });
+      el.addEventListener("playing", () => {
+        dbg(`PLAYING ${key}`);
+      });
+
+      // CRITICAL: Insert into DOM – iOS Safari requires audio elements in the DOM
+      el.style.position = "absolute";
+      el.style.width = "0";
+      el.style.height = "0";
+      el.style.opacity = "0";
+      el.style.pointerEvents = "none";
+      document.body.appendChild(el);
       el.load();
       audioElsRef.current[key] = el;
+      dbg(`Created & appended <audio> for ${key}`);
     });
 
     return () => {
@@ -135,6 +167,7 @@ export default function GroundingTimer() {
           el.pause();
           el.removeAttribute("src");
           el.load();
+          if (el.parentNode) el.parentNode.removeChild(el);
           audioElsRef.current[key] = null;
         }
       });
@@ -144,67 +177,78 @@ export default function GroundingTimer() {
   /* ── Play a sound via DOM <audio> ──────────────────── */
   const playSound = useCallback((key: SoundKey) => {
     const el = audioElsRef.current[key];
-    if (!el) return;
+    if (!el) {
+      dbg(`playSound(${key}): element is null`);
+      return;
+    }
+
+    dbg(`playSound(${key}): readyState=${el.readyState}, paused=${el.paused}, networkState=${el.networkState}`);
 
     el.currentTime = 0;
     el.volume = 0.7;
 
     const p = el.play();
     if (p) {
-      p.catch(() => {
-        // Playback rejected – iOS may still be locked
-        // Don't set audioBlocked here for non-user-gesture calls;
-        // the transition/complete sounds fire from timers, not gestures.
+      p.then(() => {
+        dbg(`playSound(${key}): play() resolved OK`);
+      }).catch((e: Error) => {
+        dbg(`playSound(${key}): play() REJECTED:`, e.name, e.message);
       });
     }
   }, []);
 
   /**
-   * iOS unlock: play each audio element once from a direct user gesture.
-   * This "warms" the audio elements so subsequent play() calls work.
-   * Uses pointerdown timing (called from onClick which fires after pointerdown).
+   * Direct user-gesture handler: play the preview tone IMMEDIATELY.
+   * No setTimeout – iOS requires play() in the synchronous call stack of the gesture.
    */
-  const unlockAndPreview = useCallback(() => {
+  const handleToggleAudio = () => {
+    const newVal = !audioEnabled;
+    setAudioEnabled(newVal);
     setAudioBlocked(false);
 
-    const keys: SoundKey[] = ["start", "transition", "complete"];
+    if (newVal) {
+      dbg("Audio ON – attempting direct play in user gesture");
 
-    // First: play + immediately pause each audio to unlock them on iOS
-    keys.forEach((key) => {
-      const el = audioElsRef.current[key];
-      if (el) {
-        el.volume = 0.01; // nearly silent for unlock
-        el.currentTime = 0;
-        const p = el.play();
-        if (p) {
-          p.then(() => {
-            el.pause();
-            el.currentTime = 0;
-            el.volume = 0.7;
-          }).catch(() => {
-            el.volume = 0.7;
-          });
-        }
-      }
-    });
-
-    setIosUnlocked(true);
-
-    // Then: play audible preview tone after a short delay
-    setTimeout(() => {
+      // Play the transition sound directly as preview (MUST be in gesture stack)
       const preview = audioElsRef.current.transition;
       if (preview) {
         preview.currentTime = 0;
         preview.volume = 0.7;
         const p = preview.play();
         if (p) {
-          p.catch(() => {
+          p.then(() => {
+            dbg("Preview tone: play() resolved OK");
+          }).catch((e: Error) => {
+            dbg("Preview tone: play() REJECTED:", e.name, e.message);
             setAudioBlocked(true);
           });
         }
       }
-    }, 150);
-  }, []);
+
+      // Also warm up the other audio elements (silent play + pause)
+      (["start", "complete"] as SoundKey[]).forEach((key) => {
+        const el = audioElsRef.current[key];
+        if (el) {
+          el.volume = 0.01;
+          el.currentTime = 0;
+          const p = el.play();
+          if (p) {
+            p.then(() => {
+              el.pause();
+              el.currentTime = 0;
+              el.volume = 0.7;
+              dbg(`Warm-up ${key}: OK`);
+            }).catch((e: Error) => {
+              el.volume = 0.7;
+              dbg(`Warm-up ${key}: REJECTED:`, e.name, e.message);
+            });
+          }
+        }
+      });
+    } else {
+      dbg("Audio OFF");
+    }
+  };
 
   /* ── Timer helpers ─────────────────────────────────── */
 
@@ -248,25 +292,30 @@ export default function GroundingTimer() {
 
   /* ── User actions ──────────────────────────────────── */
 
-  const handleToggleAudio = () => {
-    const newVal = !audioEnabled;
-    setAudioEnabled(newVal);
-    setAudioBlocked(false);
-
-    if (newVal) {
-      // Direct user gesture → unlock + preview
-      unlockAndPreview();
-    }
-  };
-
   const handleStart = () => {
-    // Always re-unlock on start (direct user gesture)
-    if (audioEnabled && !iosUnlocked) {
-      unlockAndPreview();
-    }
+    dbg("handleStart, audioEnabled:", audioEnabled);
 
+    // Re-warm audio elements in direct user gesture
     if (audioEnabled) {
-      setTimeout(() => playSound("start"), 100);
+      const keys: SoundKey[] = ["start", "transition", "complete"];
+      keys.forEach((key) => {
+        const el = audioElsRef.current[key];
+        if (el) {
+          el.volume = 0.01;
+          el.currentTime = 0;
+          const p = el.play();
+          if (p) {
+            p.then(() => {
+              el.pause();
+              el.currentTime = 0;
+              el.volume = 0.7;
+            }).catch(() => { el.volume = 0.7; });
+          }
+        }
+      });
+
+      // Play start sound directly (still in gesture stack)
+      playSound("start");
     }
 
     clearTimer();
@@ -294,7 +343,7 @@ export default function GroundingTimer() {
   };
 
   const handleResume = () => {
-    // Re-unlock on resume (direct user gesture)
+    // Re-warm in direct user gesture
     if (audioEnabled) {
       const keys: SoundKey[] = ["start", "transition", "complete"];
       keys.forEach((key) => {
@@ -313,6 +362,14 @@ export default function GroundingTimer() {
 
     setPhase("running");
     const idx = currentStepRef.current;
+    const remaining = timeLeft;
+
+    if (remaining <= 0) {
+      advanceToStep(idx + 1);
+      return;
+    }
+
+    setTimeLeft(remaining);
 
     intervalRef.current = setInterval(() => {
       setTimeLeft((prev) => {

@@ -127,6 +127,10 @@ const ONLINE_RESSOURCEN = [
 
 function StickyAmpelLeiste() {
   const [visible, setVisible] = useState(false);
+  const rot144 = kontaktById("ROT_144")!;
+  const rot117 = kontaktById("ROT_117")!;
+  const rot112 = kontaktById("ROT_112")!;
+  const gruen143 = kontaktById("GRUEN_143")!;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -145,7 +149,7 @@ function StickyAmpelLeiste() {
     {
       id: "rot",
       label: "Lebensgefahr",
-      sublabel: "144 / 117 / 112",
+      sublabel: `${rot144.nummer} / ${rot117.nummer} / ${rot112.nummer}`,
       bg: "var(--color-alert)",
       hoverBg: "var(--color-alert)",
     },
@@ -159,7 +163,7 @@ function StickyAmpelLeiste() {
     {
       id: "gruen",
       label: "Jemand zum Reden",
-      sublabel: "143",
+      sublabel: gruen143.nummer,
       bg: "var(--color-sage-mid)",
       hoverBg: "var(--color-sage-mid)",
     },
@@ -393,7 +397,7 @@ export default function Notfall() {
               </p>
               <div className="ml-11 mb-6 p-3 rounded-lg bg-alert-wash border border-alert-light">
                 <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Bei akuter Gefahr:</strong> Immer zuerst <strong>144 / 117 / 112</strong> rufen.
+                  <strong className="text-foreground">Bei akuter Gefahr:</strong> Immer zuerst <strong>{rot144.nummer} / {rot117.nummer} / {rot112.nummer}</strong> rufen.
                 </p>
               </div>
               

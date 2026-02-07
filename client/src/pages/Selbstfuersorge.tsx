@@ -71,7 +71,7 @@ function AtemuebungCard() {
       <CardContent className="p-6">
         <div className="flex items-center gap-3 mb-4">
           <Wind className="w-6 h-6 text-sage-mid" />
-          <h3 className="font-semibold text-foreground">4-4-6 Atemübung</h3>
+          <h2 className="font-semibold text-foreground text-base">4-4-6 Atemübung</h2>
         </div>
         
         <p className="text-muted-foreground text-sm mb-4">

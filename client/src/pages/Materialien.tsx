@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Download, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "wouter";
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -419,6 +419,7 @@ const categories = [
 export default function Materialien() {
   const [activeCategory, setActiveCategory] = useState("alle");
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const gridRef = useRef<HTMLElement>(null);
   
   const filteredInfografiken = activeCategory === "alle" 
     ? infografiken 
@@ -503,7 +504,13 @@ export default function Materialien() {
                     key={cat.id}
                     variant={activeCategory === cat.id ? "default" : "outline"}
                     size="sm"
-                    onClick={() => setActiveCategory(cat.id)}
+                    onClick={() => {
+                      setActiveCategory(cat.id);
+                      // Sanft zum Anfang der Karten scrollen
+                      setTimeout(() => {
+                        gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }, 50);
+                    }}
                     className={`whitespace-nowrap shrink-0 ${activeCategory === cat.id ? "bg-[oklch(0.55_0.10_145)] hover:bg-[oklch(0.50_0.12_145)]" : ""}`}
                   >
                     <Icon className="w-4 h-4 mr-1.5" />
@@ -518,7 +525,7 @@ export default function Materialien() {
       )}
 
       {/* Grid oder Platzhalter */}
-      <section className="py-12 md:py-16">
+      <section ref={gridRef} className="py-12 md:py-16">
         <div className="container">
           {filteredInfografiken.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

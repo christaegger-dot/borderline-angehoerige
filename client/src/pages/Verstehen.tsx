@@ -18,7 +18,7 @@ const verstehenInfografiken = [
     description: "Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.",
     category: "grundlagen",
     webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GbFCyQhEWIKomzXw.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rvxNLrJSUBsMAByU.pdf",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
     alt: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
     featured: true,
   },
@@ -28,7 +28,7 @@ const verstehenInfografiken = [
     description: "Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.",
     category: "grundlagen",
     webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MLLwefeyaKvtThbK.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ecVVNozrluFJGAic.pdf",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RNKtfQQMvhlSyiIp.pdf",
     alt: "Der Eisberg – Wut ist oft die Spitze",
   },
   {
@@ -37,7 +37,7 @@ const verstehenInfografiken = [
     description: "Das Pendel zwischen Extremen – die Grauzone stärken.",
     category: "grundlagen",
     webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gNpeJqfUBZRASmzM.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ROOtCLvQAliCecKS.pdf",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BSFCCqVxxwxDolfw.pdf",
     alt: "Spaltung – das Pendel zwischen Extremen",
   },
   {
@@ -46,7 +46,7 @@ const verstehenInfografiken = [
     description: "Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.",
     category: "neurobiologie",
     webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sSUJoOUTiuWgrkiZ.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qbewiFzVNMjrPKrS.pdf",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tlKAOpYHdCNAtovE.pdf",
     alt: "Alarm-Modus vs. Denk-Modus",
   },
   {
@@ -55,7 +55,7 @@ const verstehenInfografiken = [
     description: "Das vorhersehbare Muster – Krisen folgen oft einem Ablauf.",
     category: "neurobiologie",
     webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BYDbBJaIhetrjHRq.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TANpVexahqGbpEAn.pdf",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PBYpNxZamAxjOHYd.pdf",
     alt: "Der 4-Phasen-Zyklus",
   },
   {
@@ -64,7 +64,7 @@ const verstehenInfografiken = [
     description: "Neurobiologie einfach erklärt – warum Stress Denken blockiert.",
     category: "neurobiologie",
     webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ImASzOTHYdFpxOUI.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MpBTEakVWqFCzkGD.pdf",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NViSBQtRBvGWOHPE.pdf",
     alt: "Das Gehirn verstehen",
   },
 ];

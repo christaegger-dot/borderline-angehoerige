@@ -2,11 +2,12 @@
  * GroundingTimer – Interaktives Element #5
  * Geführte 5-4-3-2-1 Übung mit Countdown pro Sinneskanal.
  *
- * Audio: Web Audio API (AudioContext + fetch + decodeAudioData).
- * - Umgeht CORS-Probleme bei <audio>-Elementen
- * - AudioContext wird im User-Gesture-Handler erstellt (iOS-Pflicht)
- * - navigator.audioSession.type = "playback" für iOS 17+
- * - Fallback: stille Ausführung ohne Fehler
+ * Audio: HTML5 <audio> DOM-Elemente (bewährter Ansatz).
+ * - Kein crossOrigin (nicht nötig für simples Abspielen)
+ * - Kein Web Audio API / AudioContext
+ * - play() wird synchron im onClick-Handler aufgerufen (kein setTimeout)
+ * - Debug-Logging für error/stalled/waiting/canplaythrough/playing Events
+ * - play().catch() mit Fehlermeldung in Console
  *
  * Design-Lock: Inter, Tokens, kein Dark Mode. Nur Fix, kein neues UI.
  */
@@ -65,15 +66,15 @@ const steps: GroundingStep[] = [
   },
 ];
 
-/* ── Audio CDN URLs ──────────────────────────────────── */
+/* ── Audio CDN URLs (echte tibetische Klangschalen, CC0) ── */
 
-const AUDIO_URLS = {
+const AUDIO_URLS: Record<string, string> = {
   start: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bvhMdjsjiExijpNW.mp3",
   transition: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bOVIOdxQlvzyWtFR.mp3",
   complete: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qHUTqWpRUySaJmID.mp3",
-} as const;
+};
 
-type SoundKey = keyof typeof AUDIO_URLS;
+type SoundKey = "start" | "transition" | "complete";
 
 /* ── Types ───────────────────────────────────────────── */
 
@@ -87,100 +88,28 @@ const dbg = (msg: string, ...args: unknown[]) => {
   }
 };
 
-/* ── Web Audio API helper ────────────────────────────── */
+/* ── HTML5 Audio helper ─────────────────────────────── */
 
 /**
- * Singleton AudioContext + decoded buffers.
- * AudioContext is created lazily on first user gesture (iOS requirement).
+ * Creates an HTML5 Audio element with debug event listeners.
+ * No crossOrigin attribute (not needed for simple playback).
  */
-let audioCtx: AudioContext | null = null;
-const audioBuffers: Partial<Record<SoundKey, AudioBuffer>> = {};
-let buffersLoading = false;
-let buffersLoaded = false;
+function createAudioElement(key: string, url: string): HTMLAudioElement {
+  const audio = new Audio(url);
+  audio.preload = "auto";
+  audio.volume = 0.5;
 
-function getOrCreateAudioContext(): AudioContext {
-  if (!audioCtx) {
-    // Use webkitAudioContext as fallback for older Safari
-    const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-    audioCtx = new AC();
-    dbg("AudioContext created, state:", audioCtx.state);
+  // Debug event listeners
+  audio.addEventListener("canplaythrough", () => dbg(`${key}: canplaythrough`));
+  audio.addEventListener("playing", () => dbg(`${key}: playing`));
+  audio.addEventListener("error", () => {
+    const err = audio.error;
+    dbg(`${key}: error – code=${err?.code}, message=${err?.message}`);
+  });
+  audio.addEventListener("stalled", () => dbg(`${key}: stalled`));
+  audio.addEventListener("waiting", () => dbg(`${key}: waiting`));
 
-    // iOS 17+: Set audio session type to playback (works even in silent mode)
-    try {
-      const nav = navigator as unknown as { audioSession?: { type: string } };
-      if (nav.audioSession) {
-        nav.audioSession.type = "playback";
-        dbg("navigator.audioSession.type set to 'playback'");
-      }
-    } catch (e) {
-      dbg("audioSession not available:", e);
-    }
-  }
-  return audioCtx;
-}
-
-async function ensureResumed(ctx: AudioContext): Promise<void> {
-  if (ctx.state === "suspended") {
-    dbg("Resuming suspended AudioContext...");
-    await ctx.resume();
-    dbg("AudioContext resumed, state:", ctx.state);
-  }
-}
-
-async function loadAllBuffers(ctx: AudioContext): Promise<void> {
-  if (buffersLoaded || buffersLoading) return;
-  buffersLoading = true;
-
-  const keys: SoundKey[] = ["start", "transition", "complete"];
-
-  await Promise.all(
-    keys.map(async (key) => {
-      try {
-        dbg(`Fetching ${key}...`);
-        const response = await fetch(AUDIO_URLS[key]);
-        if (!response.ok) {
-          dbg(`Fetch ${key} failed: ${response.status}`);
-          return;
-        }
-        const arrayBuffer = await response.arrayBuffer();
-        dbg(`Decoding ${key} (${arrayBuffer.byteLength} bytes)...`);
-        const decoded = await ctx.decodeAudioData(arrayBuffer);
-        audioBuffers[key] = decoded;
-        dbg(`${key} decoded: ${decoded.duration.toFixed(2)}s, ${decoded.sampleRate}Hz`);
-      } catch (e) {
-        dbg(`Error loading ${key}:`, e);
-      }
-    })
-  );
-
-  buffersLoaded = true;
-  buffersLoading = false;
-  dbg("All buffers loaded:", Object.keys(audioBuffers));
-}
-
-function playBuffer(key: SoundKey, volume = 0.7): void {
-  const ctx = audioCtx;
-  const buffer = audioBuffers[key];
-  if (!ctx || !buffer) {
-    dbg(`playBuffer(${key}): ctx=${!!ctx}, buffer=${!!buffer} – skipping`);
-    return;
-  }
-
-  try {
-    const source = ctx.createBufferSource();
-    source.buffer = buffer;
-
-    const gainNode = ctx.createGain();
-    gainNode.gain.value = volume;
-
-    source.connect(gainNode);
-    gainNode.connect(ctx.destination);
-    source.start(0);
-
-    dbg(`playBuffer(${key}): playing at volume ${volume}`);
-  } catch (e) {
-    dbg(`playBuffer(${key}): error:`, e);
-  }
+  return audio;
 }
 
 /* ── Component ───────────────────────────────────────── */
@@ -195,6 +124,7 @@ export default function GroundingTimer() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const audioEnabledRef = useRef(audioEnabled);
   const currentStepRef = useRef(currentStep);
+  const audioElementsRef = useRef<Record<string, HTMLAudioElement> | null>(null);
 
   const SECONDS_PER_ITEM = 8;
 
@@ -202,40 +132,77 @@ export default function GroundingTimer() {
   useEffect(() => { audioEnabledRef.current = audioEnabled; }, [audioEnabled]);
   useEffect(() => { currentStepRef.current = currentStep; }, [currentStep]);
 
-  /* ── Play a sound via Web Audio API ───────────────── */
-  const playSound = useCallback((key: SoundKey) => {
-    playBuffer(key, 0.7);
+  /**
+   * Initialize audio elements (lazy, on first enable).
+   * Creates 3 Audio elements, one per sound key.
+   */
+  const initAudioElements = useCallback(() => {
+    if (audioElementsRef.current) return audioElementsRef.current;
+
+    dbg("Creating HTML5 Audio elements...");
+    const elements: Record<string, HTMLAudioElement> = {};
+    for (const [key, url] of Object.entries(AUDIO_URLS)) {
+      elements[key] = createAudioElement(key, url);
+      dbg(`Created audio element: ${key} → ${url.slice(-20)}`);
+    }
+    audioElementsRef.current = elements;
+    return elements;
   }, []);
 
   /**
-   * Toggle audio: MUST be called from direct user gesture.
-   * Creates AudioContext, resumes it, loads buffers, plays preview tone.
+   * Play a sound. Rewinds to start and calls play() synchronously.
+   * MUST be called from a direct user gesture (or shortly after).
    */
-  const handleToggleAudio = async () => {
+  const playSound = useCallback((key: SoundKey) => {
+    if (!audioEnabledRef.current) return;
+
+    const elements = audioElementsRef.current;
+    if (!elements || !elements[key]) {
+      dbg(`playSound(${key}): no audio element – skipping`);
+      return;
+    }
+
+    const audio = elements[key];
+    audio.currentTime = 0;
+    dbg(`playSound(${key}): calling play()...`);
+
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => dbg(`playSound(${key}): play() resolved`))
+        .catch((e) => {
+          dbg(`playSound(${key}): play() REJECTED – ${e.name}: ${e.message}`);
+        });
+    }
+  }, []);
+
+  /**
+   * Toggle audio: called from direct user gesture (click on "Klang an/aus").
+   * Creates Audio elements on first enable and plays a preview tone.
+   */
+  const handleToggleAudio = () => {
     const newVal = !audioEnabled;
     setAudioEnabled(newVal);
 
     if (newVal) {
-      dbg("Audio ON – initializing Web Audio API in user gesture");
+      dbg("Audio ON – initializing HTML5 Audio elements in user gesture");
 
-      try {
-        // Step 1: Create/get AudioContext (MUST be in gesture stack)
-        const ctx = getOrCreateAudioContext();
+      const elements = initAudioElements();
 
-        // Step 2: Resume if suspended (MUST be in gesture stack)
-        await ensureResumed(ctx);
-
-        // Step 3: Load buffers if not yet loaded
-        await loadAllBuffers(ctx);
-
-        setAudioReady(true);
-
-        // Step 4: Play preview tone
-        playBuffer("transition", 0.7);
-        dbg("Preview tone played");
-      } catch (e) {
-        dbg("Audio init error:", e);
-        setAudioReady(false);
+      // Play preview tone synchronously in the click handler
+      const preview = elements["transition"];
+      if (preview) {
+        preview.currentTime = 0;
+        const p = preview.play();
+        if (p !== undefined) {
+          p.then(() => {
+            dbg("Preview tone played successfully");
+            setAudioReady(true);
+          }).catch((e) => {
+            dbg(`Preview play REJECTED: ${e.name}: ${e.message}`);
+            setAudioReady(false);
+          });
+        }
       }
     } else {
       dbg("Audio OFF");
@@ -284,19 +251,13 @@ export default function GroundingTimer() {
 
   /* ── User actions ──────────────────────────────────── */
 
-  const handleStart = async () => {
+  const handleStart = () => {
     dbg("handleStart, audioEnabled:", audioEnabled);
 
-    // Ensure AudioContext is ready in this user gesture
     if (audioEnabled) {
-      try {
-        const ctx = getOrCreateAudioContext();
-        await ensureResumed(ctx);
-        if (!buffersLoaded) await loadAllBuffers(ctx);
-        playSound("start");
-      } catch (e) {
-        dbg("handleStart audio error:", e);
-      }
+      // Ensure elements exist
+      initAudioElements();
+      playSound("start");
     }
 
     clearTimer();
@@ -323,16 +284,7 @@ export default function GroundingTimer() {
     setPhase("paused");
   };
 
-  const handleResume = async () => {
-    // Re-ensure AudioContext is active in this user gesture
-    if (audioEnabled && audioCtx) {
-      try {
-        await ensureResumed(audioCtx);
-      } catch (e) {
-        dbg("handleResume audio error:", e);
-      }
-    }
-
+  const handleResume = () => {
     setPhase("running");
     const idx = currentStepRef.current;
     const remaining = timeLeft;

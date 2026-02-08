@@ -96,11 +96,11 @@ export default function Layout({ children }: LayoutProps) {
               <button
                 onClick={() => setSearchOpen(true)}
                 className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all text-sm"
-                aria-label="Suche öffnen"
+                aria-label="Suchen"
               >
                 <SearchIcon className="w-4 h-4" />
                 <span className="hidden md:inline">Suchen</span>
-                <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">
+                <kbd aria-hidden="true" className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">
                   <span className="text-xs">⌘</span>K
                 </kbd>
               </button>

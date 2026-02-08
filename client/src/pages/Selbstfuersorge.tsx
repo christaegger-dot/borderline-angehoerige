@@ -554,46 +554,25 @@ export default function Selbstfuersorge() {
                 </div>
               </ContentSection>
 
-              {/* ═══ 5. Selbsthilfegruppen ═══ */}
+              {/* ═══ 5. Beratung & Netzwerke (Kurzhinweis) ═══ */}
               <ContentSection
-                title="Selbsthilfegruppen für Angehörige"
+                title="Beratung & Netzwerke"
                 icon={<Users className="w-6 h-6 text-slate-blue" />}
-                id="selbsthilfegruppen"
-                preview="Der Austausch mit anderen Angehörigen kann enorm entlastend sein."
+                id="beratung-netzwerke"
+                preview="Sie müssen das nicht allein tragen – professionelle Beratung und Austausch mit anderen Angehörigen helfen."
               >
                 <Card className="bg-slate-light/20 border-slate-blue">
                   <CardContent className="p-6">
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      Der Austausch mit anderen Angehörigen kann enorm entlastend sein. Sie sind nicht allein mit Ihren Erfahrungen.
+                      Der Austausch mit anderen Angehörigen kann enorm entlastend sein. Professionelle Beratungsstellen 
+                      und Selbsthilfegruppen bieten Orientierung, praktische Tipps und das Gefühl, nicht allein zu sein.
                     </p>
-                    
-                    <h3 className="font-semibold text-foreground mb-3">Vorteile von Selbsthilfegruppen:</h3>
-                    <ul className="space-y-2 mb-6">
-                      {[
-                        "Austausch mit Menschen, die Ähnliches erleben",
-                        "Praktische Tipps aus erster Hand",
-                        "Entlastung durch Verständnis",
-                        "Neue Perspektiven und Hoffnung",
-                        "Keine Erklärungen nötig – alle verstehen"
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                          <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    <h3 className="font-semibold text-foreground mb-3">Anlaufstellen in der Schweiz:</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Phone className="w-4 h-4" />
-                        <span className="text-sm">Stand by You (Angehörige psychisch Kranker): <a href="https://www.stand-by-you.ch" target="_blank" rel="noopener noreferrer" className="text-slate-dark underline">www.stand-by-you.ch</a></span>
-                      </div>
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Phone className="w-4 h-4" />
-                        <span className="text-sm">Pro Mente Sana Beratung: <a href={`tel:${proMente.tel}`} className="text-slate-dark hover:underline">{proMente.nummer}</a></span>
-                      </div>
-                    </div>
+                    <Link href="/beratung">
+                      <span className="inline-flex items-center gap-2 text-sm font-medium text-slate-blue hover:text-slate-dark transition-colors cursor-pointer">
+                        Alle Beratungsangebote & Netzwerke ansehen
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </Link>
                   </CardContent>
                 </Card>
               </ContentSection>

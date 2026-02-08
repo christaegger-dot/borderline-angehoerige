@@ -91,6 +91,7 @@ const pageNames: Record<string, string> = {
   "/materialien": "Materialien",
   "/selbsttest": "Selbsttest",
   "/genesung": "Genesung",
+  "/beratung": "Beratung & Netzwerke",
   "/selbsthilfegruppen": "Selbsthilfegruppen",
   "/impressum": "Impressum",
   "/datenschutz": "Datenschutz",

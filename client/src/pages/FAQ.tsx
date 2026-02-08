@@ -147,7 +147,7 @@ export default function FAQ() {
         {
           question: "Kann ich noch ein normales Leben führen?",
           answer: "Ja, aber es erfordert bewusste Anstrengung. Pflegen Sie Ihre eigenen Freundschaften, Hobbys und Interessen – das ist kein Verrat, sondern notwendig. Planen Sie «Auszeiten» ein, auch wenn es nur ein Spaziergang ist. Akzeptieren Sie, dass Ihr Leben anders aussieht als das anderer – aber «anders» bedeutet nicht «schlechter». Viele Angehörige berichten, dass sie durch die Erfahrung empathischer, geduldiger und selbstbewusster geworden sind. Suchen Sie sich Unterstützung (Therapie, Gruppen), damit Sie nicht allein tragen.",
-          links: [{ text: "Selbstfürsorge-Strategien", url: "/selbstfuersorge" }, { text: "Selbsthilfegruppen", url: "/selbsthilfegruppen" }]
+          links: [{ text: "Selbstfürsorge-Strategien", url: "/selbstfuersorge" }, { text: "Beratung & Netzwerke", url: "/beratung" }]
         },
         {
           question: "Wann wird es besser?",

@@ -282,39 +282,39 @@ const searchableContent = [
   
   // Selbsthilfegruppen
   {
-    title: "Selbsthilfegruppen & Netzwerke",
-    description: "Angebote für Angehörige in der Schweiz",
-    keywords: ["selbsthilfe", "selbsthilfegruppe", "netzwerk", "gruppe", "austausch", "angehörige"],
-    href: "/selbsthilfegruppen",
-    section: "Selbsthilfegruppen"
+    title: "Beratung & Netzwerke",
+    description: "Professionelle Beratung, Selbsthilfegruppen und Netzwerke für Angehörige",
+    keywords: ["beratung", "selbsthilfe", "selbsthilfegruppe", "netzwerk", "gruppe", "austausch", "angehörige"],
+    href: "/beratung",
+    section: "Beratung & Netzwerke"
   },
   {
     title: "Stand by You Schweiz",
     description: "Netzwerk für Angehörige von Menschen mit psychischen Erkrankungen (ehemals VASK)",
     keywords: ["stand by you", "vask", "angehörige", "netzwerk", "beratung", "schweiz", "podcast"],
-    href: "/selbsthilfegruppen",
-    section: "Selbsthilfegruppen"
+    href: "/beratung",
+    section: "Beratung & Netzwerke"
   },
   {
     title: "Selbsthilfe Schweiz",
     description: "Datenbank für Selbsthilfegruppen in der ganzen Schweiz",
     keywords: ["selbsthilfe schweiz", "datenbank", "gruppen", "regional", "zürich", "bern", "winterthur"],
-    href: "/selbsthilfegruppen",
-    section: "Selbsthilfegruppen"
+    href: "/beratung",
+    section: "Beratung & Netzwerke"
   },
   {
     title: "Pro Mente Sana",
     description: "Beratung für psychisch Betroffene und Angehörige",
     keywords: ["pro mente sana", "beratung", "telefon", "email", "kostenlos"],
-    href: "/selbsthilfegruppen",
-    section: "Selbsthilfegruppen"
+    href: "/beratung",
+    section: "Beratung & Netzwerke"
   },
   {
     title: "Fachstelle Angehörigenarbeit PUK Zürich",
     description: "Kostenlose, vertrauliche Beratung für Angehörige im Kanton Zürich",
     keywords: ["fachstelle", "angehörigenarbeit", "puk", "zürich", "beratung", "kostenlos"],
-    href: "/selbsthilfegruppen",
-    section: "Selbsthilfegruppen"
+    href: "/beratung",
+    section: "Beratung & Netzwerke"
   },
   
   // Spezifische Begriffe

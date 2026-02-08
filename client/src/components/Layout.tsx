@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect, lazy, Suspense } from "react";
-import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon, TrendingUp } from "lucide-react";
+import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon, TrendingUp, Users } from "lucide-react";
 const Search = lazy(() => import("@/components/Search"));
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,6 +17,7 @@ const navItems = [
   { href: "/grenzen", label: "Grenzen", icon: Shield },
   { href: "/selbstfuersorge", label: "Selbstfürsorge", icon: Sparkles },
   { href: "/genesung", label: "Genesung", icon: TrendingUp },
+  { href: "/beratung", label: "Beratung", icon: Users },
 ];
 
 export default function Layout({ children }: LayoutProps) {
@@ -253,8 +254,8 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/selbsthilfegruppen" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Selbsthilfegruppen
+                  <Link href="/beratung" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                    Beratung & Netzwerke
                   </Link>
                 </li>
                 <li>

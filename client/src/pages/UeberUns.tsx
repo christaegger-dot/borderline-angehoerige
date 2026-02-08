@@ -179,8 +179,8 @@ export default function UeberUns() {
                     <Link href="/soforthilfe" className="text-alert hover:underline font-medium">
                       Notfallnummern
                     </Link>. Für eine individuelle Beratung empfehlen wir den Kontakt zu{" "}
-                    <Link href="/selbsthilfegruppen" className="text-terracotta-mid hover:underline font-medium">
-                      Selbsthilfegruppen
+                    <Link href="/beratung" className="text-terracotta-mid hover:underline font-medium">
+                      Beratungsstellen
                     </Link>{" "}oder{" "}
                     <Link href="/unterstuetzen/therapie#therapieangebote" className="text-terracotta-mid hover:underline font-medium">
                       spezialisierten Therapeuten

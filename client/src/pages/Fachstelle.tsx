@@ -2,7 +2,7 @@ import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Building2, Mail, MapPin, Users, BookOpen, Phone, Heart, ArrowRight, Info } from "lucide-react";
+import { Building2, Mail, MapPin, Users, BookOpen, Phone, Heart, ArrowRight, Info, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
@@ -137,6 +137,7 @@ export default function Fachstelle() {
                       </div>
                       <div>
                         <p className="text-foreground">Lenggstrasse 31</p>
+                        <p className="text-foreground">Postfach</p>
                         <p className="text-foreground">8032 Zürich</p>
                       </div>
                     </div>
@@ -168,6 +169,23 @@ export default function Fachstelle() {
                           angehoerigenarbeit@pukzh.ch
                         </a>
                         <p className="text-sm text-muted-foreground mt-0.5">Terminvereinbarung per E-Mail</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center flex-shrink-0">
+                        <ExternalLink className="w-5 h-5 text-sage-mid" />
+                      </div>
+                      <div>
+                        <a
+                          href="https://www.pukzh.ch"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sage-mid hover:text-sage-dark font-medium transition-colors"
+                        >
+                          www.pukzh.ch
+                        </a>
+                        <p className="text-sm text-muted-foreground mt-0.5">Website der PUK Zürich</p>
                       </div>
                     </div>
                   </div>

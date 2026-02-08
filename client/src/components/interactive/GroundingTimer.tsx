@@ -68,9 +68,9 @@ const steps: GroundingStep[] = [
 /* ── Audio CDN URLs ──────────────────────────────────── */
 
 const AUDIO_URLS = {
-  start: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GKtjZNZDuEaUAmbl.mp3",
-  transition: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NuJzTwfObzgArAmO.mp3",
-  complete: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xIUYbPjSjZIjAzza.mp3",
+  start: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bvhMdjsjiExijpNW.mp3",
+  transition: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bOVIOdxQlvzyWtFR.mp3",
+  complete: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qHUTqWpRUySaJmID.mp3",
 } as const;
 
 type SoundKey = keyof typeof AUDIO_URLS;

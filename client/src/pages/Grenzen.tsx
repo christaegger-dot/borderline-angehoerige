@@ -511,7 +511,7 @@ export default function Grenzen() {
               </p>
 
               {/* Filter-Tabs */}
-              <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-1 px-1">
+              <div className="flex flex-wrap gap-2 pb-3 mb-6 -mx-1 px-1">
                 {grenzenSubcategories.map((cat) => {
                   const Icon = cat.icon;
                   const count = cat.id === "alle"
@@ -528,7 +528,7 @@ export default function Grenzen() {
                           gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }, 50);
                       }}
-                      className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""}`}
+                      className={`whitespace-nowrap ${activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""}`}
                     >
                       <Icon className="w-4 h-4 mr-1.5" />
                       {cat.label}

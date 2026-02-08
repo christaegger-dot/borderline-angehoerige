@@ -401,7 +401,7 @@ export default function Home() {
       {/* Support Section */}
       <section className="py-16 md:py-24 bg-sand-muted wave-divider-top" style={{ '--wave-color': 'var(--color-sand-muted)' } as React.CSSProperties}>
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-w-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}

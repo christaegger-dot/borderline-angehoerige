@@ -67,7 +67,7 @@ function KontaktButton({ kontakt }: { kontakt: Kontakt }) {
     <a href={`tel:${kontakt.tel}`}>
       <Button
         size="lg"
-        className="font-bold text-lg"
+        className="font-bold text-base sm:text-lg whitespace-nowrap"
         style={{ backgroundColor: farbe.bg }}
       >
         <Phone className="w-4 h-4 mr-2" />
@@ -91,9 +91,9 @@ function KontaktKarte({ kontakt, icon }: { kontakt: Kontakt; icon?: React.ReactN
               {icon}
             </div>
           )}
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-4">
-              <div>
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div className="min-w-0">
                 <h3 className="font-semibold text-foreground mb-1">{kontakt.label}</h3>
                 <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
               </div>

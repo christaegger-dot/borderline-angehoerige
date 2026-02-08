@@ -27,6 +27,8 @@ import AnimatedStat from "@/components/AnimatedStat";
 import Schnelleinstieg from "@/components/interactive/Schnelleinstieg";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XkvykpgJHYsCUUQW.webp";
+const heroImage1280 = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/smWfBdfAvQptVoCP.webp";
+const heroImage768 = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VEYeFPLYdBHjfcQo.webp";
 const heroImageMobile = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fYVyThTdLUpjIoVU.webp";
 
 const supportImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QOtPbYSrYvKYybbO.webp";
@@ -159,11 +161,15 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <picture>
-            <source media="(max-width: 768px)" srcSet={heroImageMobile} />
+            <source media="(max-width: 640px)" srcSet={heroImageMobile} />
+            <source media="(max-width: 768px)" srcSet={heroImage768} />
+            <source media="(max-width: 1280px)" srcSet={heroImage1280} />
             <img 
               src={heroImage} 
               alt="Warme Landschaft als Hintergrundbild" 
               className="w-full h-full object-cover opacity-50"
+              srcSet={`${heroImage768} 768w, ${heroImage1280} 1280w, ${heroImage} 1920w`}
+              sizes="100vw"
               width={1920}
               height={1071}
               fetchPriority="high"

@@ -57,7 +57,7 @@ export default function Layout({ children }: LayoutProps) {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JNUJrQSrMjSGxgQV.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NqViLFGTREhdSTsm.webp"
                 alt="Startseite"
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full"
                 width={40}
@@ -209,7 +209,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JNUJrQSrMjSGxgQV.png"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NqViLFGTREhdSTsm.webp"
                   alt="Startseite"
                   className="w-10 h-10 rounded-full"
                   width={40}

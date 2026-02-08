@@ -68,7 +68,7 @@ export function WebsiteSchema() {
       "name": SITE_NAME,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JNUJrQSrMjSGxgQV.png"
+        "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IVTKZhDIvOTxINBf.webp"
       }
     },
     "potentialAction": {

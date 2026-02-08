@@ -28,8 +28,8 @@ const kommItems = [
   },
   {
     title: "Der Standardsatz: 2 Sätze",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kRytgldypavAUJDr.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BhSMyAxexIXKHZAr.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DzgeeeiROfGFvSfv.pdf",
     category: "techniken"
   },
   {

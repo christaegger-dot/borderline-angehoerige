@@ -98,8 +98,8 @@ const infografiken: Array<{
     description: "Copy-ready Sätze zum Ablesen: Erst Gefühl anerkennen, dann Grenze + Plan – ohne Diskussion.",
     category: "kommunizieren",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qDElFLTOpRzEEAOz.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kRytgldypavAUJDr.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BhSMyAxexIXKHZAr.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DzgeeeiROfGFvSfv.pdf",
   },
   {
     id: "2-3-grenzen-setzen",

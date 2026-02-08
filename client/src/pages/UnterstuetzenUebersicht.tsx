@@ -192,41 +192,74 @@ export default function UnterstuetzenUebersicht() {
               id="verlorenes-kind"
               preview="Menschen mit Borderline erleben in Krisen oft den Zustand eines verängstigten Kindes – und brauchen entsprechende Reaktionen."
             >
-              <Card className="bg-terracotta-wash/30 border-terracotta/50">
-                <CardContent className="p-6">
-                  <p className="text-foreground leading-relaxed mb-4">
-                    Stellen Sie sich ein <strong>siebenjähriges Kind</strong> vor, das sich allein auf dem Times Square verirrt hat. Umgeben von Lärm, blinkenden Lichtern und Fremden ist es völlig überwältigt, starr vor Angst oder reagiert kopflos und impulsiv. Würden Sie dieses Kind für seine Panik bestrafen, es anschreien oder ihm Vorwürfe machen? Sicherlich nicht.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Menschen mit einer Borderline-Persönlichkeitsstörung erleben in emotionalen Krisen einen fast identischen Zustand: Das limbische System im Gehirn schlägt Alarm, als bestünde Lebensgefahr. Auch wenn sie äusserlich erwachsen sind, entspricht ihr inneres Erleben in diesem Moment dem eines verängstigten, schutzlosen Kindes.
-                  </p>
+              <div className="space-y-4">
+                {/* Szenario */}
+                <Card className="bg-terracotta-wash/30 border-terracotta/50">
+                  <CardContent className="p-5 sm:p-6">
+                    <p className="text-foreground leading-relaxed">
+                      Stellen Sie sich ein <strong>siebenjähriges Kind</strong> vor, das sich allein auf dem Times Square verirrt hat. Umgeben von Lärm, blinkenden Lichtern und Fremden ist es völlig überwältigt, starr vor Angst oder reagiert kopflos und impulsiv. Würden Sie dieses Kind für seine Panik bestrafen, es anschreien oder ihm Vorwürfe machen? Sicherlich nicht.
+                    </p>
+                  </CardContent>
+                </Card>
 
-                  <p className="text-foreground font-semibold mb-3">Was in diesem Moment wirklich hilft:</p>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                {/* Kernaussage 1: Neurologische Erklärung */}
+                <blockquote className="border-l-4 border-terracotta-mid bg-terracotta-wash/20 rounded-r-lg px-4 py-3 sm:px-5 sm:py-4">
+                  <p className="text-foreground leading-relaxed text-[0.95rem] italic">
+                    Menschen mit einer Borderline-Persönlichkeitsstörung erleben in emotionalen Krisen einen fast identischen Zustand: Das limbische System im Gehirn schlägt Alarm, als bestünde Lebensgefahr.
+                  </p>
+                  <p className="text-muted-foreground text-sm mt-2">
+                    Auch wenn sie äusserlich erwachsen sind, entspricht ihr inneres Erleben in diesem Moment dem eines verängstigten, schutzlosen Kindes.
+                  </p>
+                </blockquote>
+
+                {/* Was hilft */}
+                <div className="pt-1">
+                  <p className="text-foreground font-semibold mb-2 text-base">Was in diesem Moment wirklich hilft:</p>
+                  <p className="text-muted-foreground leading-relaxed mb-4 text-sm sm:text-base">
                     Reagieren Sie so, wie Sie diesem verlorenen Kind begegnen würden – nicht indem Sie die (vielleicht unsachlichen) Vorwürfe diskutieren, sondern indem Sie die Not dahinter adressieren:
                   </p>
-                  <ul className="space-y-2 mb-5 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-sage-mid mt-0.5">•</span>
-                      <span><strong className="text-foreground">Sicherheit durch Ruhe:</strong> Ihre eigene Gelassenheit ist der Anker.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sage-mid mt-0.5">•</span>
-                      <span><strong className="text-foreground">Präsenz zeigen:</strong> «Ich sehe, dass es dir gerade schlecht geht. Ich bin hier. Du bist nicht allein.»</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-sage-mid mt-0.5">•</span>
-                      <span><strong className="text-foreground">Validierung:</strong> Akzeptieren Sie den Schmerz als real, auch wenn der Auslöser für Sie klein erscheint.</span>
-                    </li>
-                  </ul>
+                </div>
 
-                  <div className="bg-sage-lighter/50 rounded-lg p-4">
-                    <p className="text-sm text-foreground">
-                      <strong>Wichtig:</strong> Dieses Bild dient dazu, in der akuten Krise mit Empathie statt mit Gegendruck zu reagieren. Es bedeutet nicht, dass Sie dauerhaft die Verantwortung für das Handeln des anderen übernehmen – aber es verhindert, dass das Feuer der Krise durch gegenseitige Vorwürfe weiter geschürt wird.
-                    </p>
+                {/* Drei Handlungsempfehlungen als Karten */}
+                <div className="grid gap-3">
+                  <div className="flex items-start gap-3 bg-sage-wash/40 rounded-lg p-3.5 sm:p-4 border border-sage-mid/20">
+                    <div className="w-8 h-8 rounded-full bg-sage-mid/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-sage-mid text-lg">🛡</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground text-sm sm:text-base">Sicherheit durch Ruhe</p>
+                      <p className="text-muted-foreground text-sm mt-0.5">Ihre eigene Gelassenheit ist der Anker.</p>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+
+                  <div className="flex items-start gap-3 bg-slate-wash/40 rounded-lg p-3.5 sm:p-4 border border-slate-dark/10">
+                    <div className="w-8 h-8 rounded-full bg-slate-dark/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-slate-dark text-lg">👁</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground text-sm sm:text-base">Präsenz zeigen</p>
+                      <p className="text-muted-foreground text-sm mt-0.5">«Ich sehe, dass es dir gerade schlecht geht. Ich bin hier. Du bist nicht allein.»</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 bg-sand-muted/40 rounded-lg p-3.5 sm:p-4 border border-sand-mid/20">
+                    <div className="w-8 h-8 rounded-full bg-sand-mid/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-sand-mid text-lg">💛</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground text-sm sm:text-base">Validierung</p>
+                      <p className="text-muted-foreground text-sm mt-0.5">Akzeptieren Sie den Schmerz als real, auch wenn der Auslöser für Sie klein erscheint.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Wichtig-Hinweis */}
+                <blockquote className="border-l-4 border-sage-mid bg-sage-lighter/50 rounded-r-lg px-4 py-3 sm:px-5 sm:py-4">
+                  <p className="text-sm text-foreground leading-relaxed">
+                    <strong>Wichtig:</strong> Dieses Bild dient dazu, in der akuten Krise mit Empathie statt mit Gegendruck zu reagieren. Es bedeutet nicht, dass Sie dauerhaft die Verantwortung für das Handeln des anderen übernehmen – aber es verhindert, dass das Feuer der Krise durch gegenseitige Vorwürfe weiter geschürt wird.
+                  </p>
+                </blockquote>
+              </div>
               
               <p className="text-xs text-muted-foreground mt-3">
                 Quelle: Mason & Kreger, «Schluss mit dem Eiertanz» (2010)

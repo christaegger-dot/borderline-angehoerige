@@ -195,21 +195,41 @@ export default function UnterstuetzenUebersicht() {
               <Card className="bg-terracotta-wash/30 border-terracotta/50">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed mb-4">
-                    Stellen Sie sich ein <strong>7-jähriges Kind</strong> vor, das sich allein auf dem Times Square verirrt hat. Es ist überwältigt, verängstigt und reagiert impulsiv. Würden Sie dieses Kind anschreien oder ihm Vorwürfe machen?
+                    Stellen Sie sich ein <strong>siebenjähriges Kind</strong> vor, das sich allein auf dem Times Square verirrt hat. Umgeben von Lärm, blinkenden Lichtern und Fremden ist es völlig überwältigt, starr vor Angst oder reagiert kopflos und impulsiv. Würden Sie dieses Kind für seine Panik bestrafen, es anschreien oder ihm Vorwürfe machen? Sicherlich nicht.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Menschen mit Borderline erleben in emotionalen Krisen oft genau diesen Zustand: Sie fühlen sich verloren, überwältigt und allein – auch wenn sie erwachsen sind. Ihr emotionales Erleben entspricht in diesen Momenten dem eines verängstigten Kindes.
+                    Menschen mit einer Borderline-Persönlichkeitsstörung erleben in emotionalen Krisen einen fast identischen Zustand: Das limbische System im Gehirn schlägt Alarm, als bestünde Lebensgefahr. Auch wenn sie äusserlich erwachsen sind, entspricht ihr inneres Erleben in diesem Moment dem eines verängstigten, schutzlosen Kindes.
                   </p>
+
+                  <p className="text-foreground font-semibold mb-3">Was in diesem Moment wirklich hilft:</p>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    Reagieren Sie so, wie Sie diesem verlorenen Kind begegnen würden – nicht indem Sie die (vielleicht unsachlichen) Vorwürfe diskutieren, sondern indem Sie die Not dahinter adressieren:
+                  </p>
+                  <ul className="space-y-2 mb-5 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-mid mt-0.5">•</span>
+                      <span><strong className="text-foreground">Sicherheit durch Ruhe:</strong> Ihre eigene Gelassenheit ist der Anker.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-mid mt-0.5">•</span>
+                      <span><strong className="text-foreground">Präsenz zeigen:</strong> «Ich sehe, dass es dir gerade schlecht geht. Ich bin hier. Du bist nicht allein.»</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-sage-mid mt-0.5">•</span>
+                      <span><strong className="text-foreground">Validierung:</strong> Akzeptieren Sie den Schmerz als real, auch wenn der Auslöser für Sie klein erscheint.</span>
+                    </li>
+                  </ul>
+
                   <div className="bg-sage-lighter/50 rounded-lg p-4">
                     <p className="text-sm text-foreground">
-                      <strong>Was hilft:</strong> Reagieren Sie so, wie Sie einem verlorenen Kind begegnen würden – mit Ruhe, Geduld und der Versicherung: «Ich bin hier. Du bist nicht allein.»
+                      <strong>Wichtig:</strong> Dieses Bild dient dazu, in der akuten Krise mit Empathie statt mit Gegendruck zu reagieren. Es bedeutet nicht, dass Sie dauerhaft die Verantwortung für das Handeln des anderen übernehmen – aber es verhindert, dass das Feuer der Krise durch gegenseitige Vorwürfe weiter geschürt wird.
                     </p>
                   </div>
                 </CardContent>
               </Card>
               
               <p className="text-xs text-muted-foreground mt-3">
-                Quelle: Mason & Kreger, "Schluss mit dem Eiertanz" (2010)
+                Quelle: Mason & Kreger, «Schluss mit dem Eiertanz» (2010)
               </p>
             </ContentSection>
 

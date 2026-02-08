@@ -62,6 +62,8 @@ export default function Layout({ children }: LayoutProps) {
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full"
                 width={40}
                 height={40}
+                loading="eager"
+                decoding="async"
               />
               <span className="hidden lg:inline font-medium text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                 Borderline · Hilfe für Angehörige
@@ -212,6 +214,8 @@ export default function Layout({ children }: LayoutProps) {
                   className="w-10 h-10 rounded-full"
                   width={40}
                   height={40}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <span className="font-medium text-base text-foreground">
                   Borderline · Hilfe für Angehörige

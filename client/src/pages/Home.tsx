@@ -234,7 +234,7 @@ export default function Home() {
             <p className="text-muted-foreground text-sm flex-1">
               Beratung, Orientierung und Materialien für Angehörige.
             </p>
-            <Link href="/fachstelle" className="text-sage-mid hover:text-sage-dark text-sm font-medium transition-colors flex items-center gap-1 flex-shrink-0">
+            <Link href="/fachstelle" className="text-sage-darker hover:text-slate-dark text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-darker">
               Angebot & Kontakt
               <ArrowRight className="w-4 h-4" />
             </Link>

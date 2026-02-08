@@ -25,7 +25,7 @@ const genesungItems = [
   },
   {
     title: "Das Fortschritt-Paradox",
-    desc: "Warum R\u00fcckf\u00e4lle zum Weg geh\u00f6ren",
+    desc: "Warum Rückfälle zum Weg gehören",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xjUbWjBdgOfAOBSO.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fXdbQhOkZRXfkBlk.pdf",
     category: "verstehen",
@@ -38,15 +38,15 @@ const genesungItems = [
     category: "verstehen",
   },
   {
-    title: "5 Faktoren, die Genesung f\u00f6rdern",
-    desc: "S\u00e4ulen-Modell: Was positiv beeinflusst",
+    title: "5 Faktoren, die Genesung fördern",
+    desc: "Säulen-Modell: Was positiv beeinflusst",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TMzKmKoTIocOMGFv.pdf",
     category: "handeln",
   },
   {
     title: "Ihre Rolle im Genesungsprozess",
-    desc: "Was Sie tun k\u00f6nnen (und was nicht)",
+    desc: "Was Sie tun können (und was nicht)",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/nFoVeLJURBcMhQBT.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mxRTIiuzODSXVagK.pdf",
     category: "handeln",
@@ -63,14 +63,14 @@ function GenesungInfografiken() {
 
   return (
     <ContentSection
-      title="Genesung verstehen \u2013 auf einen Blick"
+      title="Genesung verstehen – auf einen Blick"
       icon={<ImageIcon className="w-6 h-6 text-sage-dark" />}
       id="infografiken"
-      preview="Alle Infografiken als hochaufl\u00f6sende PDFs zum Herunterladen und Ausdrucken."
+      preview="Alle Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken."
     >
       <p className="text-muted-foreground mb-6">
-        Alle Infografiken als hochaufl\u00f6sende PDFs zum Herunterladen und Ausdrucken.{" "}
-        <strong className="text-foreground">Vorschau = Web-Bild.</strong> \u00abPDF \u00f6ffnen\u00bb \u00f6ffnet die A4-Druckversion im neuen Tab \u2013 Download im PDF-Viewer oben rechts.
+        Alle Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken.{" "}
+        <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
       </p>
 
       {/* Filter-Tabs */}
@@ -110,11 +110,11 @@ function GenesungInfografiken() {
                 href={item.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`PDF \u00f6ffnen: ${item.title} (neuer Tab)`}
+                aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
                 className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
-                PDF \u00f6ffnen
+                PDF öffnen
               </a>
             </CardContent>
           </Card>

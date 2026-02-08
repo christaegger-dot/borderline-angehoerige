@@ -17,19 +17,19 @@ const unterstuetzenSubcategories = [
 
 const unterstuetzenItems = [
   {
-    title: "Im Krisenmodus \u2013 Orientierung geben",
+    title: "Im Krisenmodus – Orientierung geben",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp",
     pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FOZYnweFmVcMXYyr.pdf",
     category: "grundlagen"
   },
   {
-    title: "Ihre Rolle kl\u00e4ren",
+    title: "Ihre Rolle klären",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mTlmmrXfScSCxoiC.webp",
     pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LEKuHRVBIRdTClYJ.pdf",
     category: "grundlagen"
   },
   {
-    title: "Drei S\u00e4ulen hilfreicher Unterst\u00fctzung",
+    title: "Drei Säulen hilfreicher Unterstützung",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TaDXhEgHiyBeiQsT.webp",
     pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bWugGxMdeykNGBUW.pdf",
     category: "grundlagen"
@@ -41,7 +41,7 @@ const unterstuetzenItems = [
     category: "haltung"
   },
   {
-    title: "6 Leitlinien f\u00fcr Angeh\u00f6rige",
+    title: "6 Leitlinien für Angehörige",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UYzFtDygMzdBJaVD.webp",
     pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GaQLbgKUokbWwUUi.pdf",
     category: "alltag"

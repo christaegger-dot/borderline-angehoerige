@@ -42,20 +42,20 @@ const unterstuetzenItems = [
   },
   {
     title: "6 Leitlinien für Angehörige",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UYzFtDygMzdBJaVD.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GaQLbgKUokbWwUUi.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JBcudxMTJSKMmNTN.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LBGlXrHsWLMyIhOB.pdf",
     category: "alltag"
   },
   {
     title: "Beziehungs-Achtsamkeit",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xwVvAHgRQPALOgcm.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/umhOiOvEhETLRqtq.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YtNfLnzlgsamxRcW.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RWeBPlYGYPyGJdur.pdf",
     category: "haltung"
   },
   {
     title: "4 Alltags-Tipps",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rnwlrkNLwFQsLjnU.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IokELYIzmFREYEyL.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GppaEBvvDepiLtjB.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/uigcPaSnajslSrhN.pdf",
     category: "alltag"
   }
 ];

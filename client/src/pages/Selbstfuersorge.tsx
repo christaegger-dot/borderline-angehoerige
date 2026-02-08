@@ -159,7 +159,7 @@ const selbstfuersorgeInfografiken = [
     title: "Warnsignale der Überlastung",
     desc: "Ampel-Stufenmodell: Grün → Gelb → Rot – erkennen Sie rechtzeitig, wann es zu viel wird.",
     category: "erkennen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tpAIcOfgaoOyBsXq.webp",
+    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/optYiKokWKIQjSrN.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/canZVmoUNvnwMWlq.pdf",
     featured: true,
   },
@@ -168,7 +168,7 @@ const selbstfuersorgeInfografiken = [
     title: "Die Sauerstoffmaske",
     desc: "Kreislauf-Diagramm: Teufelskreis vs. positiver Kreislauf – warum Selbstfürsorge keine Selbstsucht ist.",
     category: "erkennen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRRUMsKJubrsepfQ.webp",
+    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XrKGgWknFEUwpxuV.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iwXpWPMASzcZQJuD.pdf",
   },
   {
@@ -176,7 +176,7 @@ const selbstfuersorgeInfografiken = [
     title: "Radikale Akzeptanz",
     desc: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung.",
     category: "techniken",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qJdMwWgUcXMyAvka.webp",
+    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fJJJbVQIXEemvDkN.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ndcjDugDmbuGOmpm.pdf",
   },
   {
@@ -184,7 +184,7 @@ const selbstfuersorgeInfografiken = [
     title: "Die STOPP-Technik",
     desc: "5 Schritte aus der Stressspirale: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden.",
     category: "techniken",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BnWHSnpWkkqoKOIi.webp",
+    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bTeBnWhFYxeIjIXl.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sUpspkQvInhoxNHw.pdf",
   },
   {
@@ -192,7 +192,7 @@ const selbstfuersorgeInfografiken = [
     title: "Ihr Energie-Konto",
     desc: "Stock-&-Flow-Diagramm: Was füllt Ihre Batterie auf, was leert sie? Achten Sie auf die Balance.",
     category: "ressourcen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tLphIwdMNjFIjltr.webp",
+    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kncWqqNBswzUDchf.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sHloduAxWVzRBaQS.pdf",
   },
   {

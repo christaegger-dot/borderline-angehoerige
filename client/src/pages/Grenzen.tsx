@@ -32,22 +32,22 @@ export default function Grenzen() {
     {
       title: "Spiegeln statt Aufsaugen",
       description: "Mitfühlen ohne Übernehmen",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dbTRALbBXTpWdIFc.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vonZwVksXmKubcoV.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gihCucGMxjKsBsyh.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zAWpEOBGTINRpKZo.pdf",
       category: "kommunizieren"
     },
     {
       title: "Die 4 Arten von Grenzen",
       description: "Physisch, emotional, zeitlich, materiell",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DRIOXYdXxPGeVnra.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HYXOHsOYKkirFsAw.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/otBFiwevLwWQsinR.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KiiZJfLHYOlNVTsn.pdf",
       category: "erkennen"
     },
     {
       title: "Grenzen erkennen",
       description: "5 Warnsignale Ihres Körpers",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ygTqOQYNTBmkEaim.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SRxYofCvmJLaNrJq.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yJNGnFEtIpWQvjnU.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TvkuXNqrjiHxfOkS.pdf",
       category: "erkennen"
     },
     {
@@ -74,8 +74,8 @@ export default function Grenzen() {
     {
       title: "Spickzettel Grenzen",
       description: "A4 zum Laminieren – alle Sätze auf einen Blick",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tahWXflXNFEcSrog.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fpiWoEEuimfWEknU.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KZVNxsreyIArkAOx.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TDHoWgpbVLVrtEFT.pdf",
       category: "handeln"
     }
   ];

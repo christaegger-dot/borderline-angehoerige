@@ -330,7 +330,7 @@ export function TableOfContents() {
       {/* ─── Mobile: Floating TOC Button ─── */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="lg:hidden fixed bottom-20 sm:bottom-6 left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+        className="min-[1400px]:hidden fixed bottom-20 sm:bottom-6 left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
         whileTap={{ scale: 0.95 }}
         aria-label="Inhaltsverzeichnis öffnen"
       >
@@ -345,7 +345,7 @@ export function TableOfContents() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+            className="min-[1400px]:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
             onClick={() => setIsOpen(false)}
           />
         )}
@@ -359,7 +359,7 @@ export function TableOfContents() {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 28, stiffness: 300, ease: "easeOut" }}
-            className="lg:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
+            className="min-[1400px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Drawer Handle */}
             <div className="flex justify-center pt-3 pb-1">
@@ -402,7 +402,7 @@ export function TableOfContents() {
       </AnimatePresence>
 
       {/* ─── Desktop: Sticky Sidebar ─── */}
-      <div className="hidden xl:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
+      <div className="hidden min-[1400px]:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
         <div className="bg-background/90 backdrop-blur-md rounded-xl border border-border/50 shadow-sm overflow-hidden flex flex-col max-h-[70vh]">
           <div className="px-4 pt-4 pb-2">
             <span className="font-semibold text-foreground text-sm" role="heading" aria-level={2}>Auf dieser Seite</span>

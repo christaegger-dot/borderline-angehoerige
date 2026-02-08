@@ -136,6 +136,8 @@ export default function Genesung() {
   return (
     <Layout>
       <SEO title="Genesung" description="Genesungswege bei Borderline – was Angehörige über Therapieerfolge wissen sollten." path="/genesung" />
+      {/* Inhaltsverzeichnis */}
+      <TableOfContents />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background relative overflow-hidden wave-divider">
         <div className="absolute inset-0 opacity-10">
@@ -238,12 +240,7 @@ export default function Genesung() {
       {/* Aufklappbare Abschnitte */}
       <section className="py-8 md:py-12">
         <div className="container">
-          <div className="flex gap-8 max-w-6xl mx-auto">
-            {/* Sidebar TOC – Desktop */}
-            <TableOfContents />
-
-            {/* Hauptinhalt */}
-            <div className="flex-1 max-w-4xl">
+          <div className="max-w-3xl mx-auto">
 
               {/* ═══ 1. Was bedeutet Remission? ═══ */}
               <ContentSection
@@ -614,7 +611,6 @@ export default function Genesung() {
               {/* ═══ 8. Infografiken zum Herunterladen ═══ */}
               <GenesungInfografiken />
 
-            </div>
           </div>
         </div>
       </section>

@@ -220,6 +220,8 @@ export default function Selbstfuersorge() {
   return (
     <Layout>
       <SEO title="Selbstfürsorge" description="Selbstfürsorge für Angehörige: Burnout vermeiden und eigene Bedürfnisse wahrnehmen." path="/selbstfuersorge" />
+      {/* Inhaltsverzeichnis */}
+      <TableOfContents />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-lighter/30 to-background wave-divider">
         <div className="container">
@@ -258,12 +260,7 @@ export default function Selbstfuersorge() {
       {/* Aufklappbare Abschnitte */}
       <section className="py-8 md:py-12 wave-divider-top">
         <div className="container">
-          <div className="flex gap-8 max-w-6xl mx-auto">
-            {/* Sidebar TOC – Desktop */}
-            <TableOfContents />
-
-            {/* Hauptinhalt */}
-            <div className="flex-1 max-w-3xl">
+          <div className="max-w-3xl mx-auto">
 
               {/* ═══ 1. Warum Selbstfürsorge wichtig ist ═══ */}
               <ContentSection
@@ -878,7 +875,6 @@ export default function Selbstfuersorge() {
                   </Button>
                 </Link>
               </motion.div>
-            </div>
           </div>
         </div>
       </section>

@@ -2,9 +2,11 @@
  * GroundingTimer – Interaktives Element #5
  * Geführte 5-4-3-2-1 Übung mit Countdown pro Sinneskanal.
  *
- * Audio: HTML5 <audio> DOM-Elemente. Kein Web Audio API, kein crossOrigin.
- * iOS-Unlock: unmute-ios-audio + direkter play() im User-Gesture-Handler.
- * Debug: Alle audio events (error/stalled/waiting) werden geloggt.
+ * Audio: Web Audio API (AudioContext + fetch + decodeAudioData).
+ * - Umgeht CORS-Probleme bei <audio>-Elementen
+ * - AudioContext wird im User-Gesture-Handler erstellt (iOS-Pflicht)
+ * - navigator.audioSession.type = "playback" für iOS 17+
+ * - Fallback: stille Ausführung ohne Fehler
  *
  * Design-Lock: Inter, Tokens, kein Dark Mode. Nur Fix, kein neues UI.
  */
@@ -12,12 +14,11 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Eye, Ear, Hand, Wind as Nose, Coffee,
   Play, RotateCcw, Pause, CheckCircle2,
-  Volume2, VolumeX, AlertCircle,
+  Volume2, VolumeX,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import unmuteAudio from "unmute-ios-audio";
 
 /* ── Grounding Steps ─────────────────────────────────── */
 
@@ -86,6 +87,102 @@ const dbg = (msg: string, ...args: unknown[]) => {
   }
 };
 
+/* ── Web Audio API helper ────────────────────────────── */
+
+/**
+ * Singleton AudioContext + decoded buffers.
+ * AudioContext is created lazily on first user gesture (iOS requirement).
+ */
+let audioCtx: AudioContext | null = null;
+const audioBuffers: Partial<Record<SoundKey, AudioBuffer>> = {};
+let buffersLoading = false;
+let buffersLoaded = false;
+
+function getOrCreateAudioContext(): AudioContext {
+  if (!audioCtx) {
+    // Use webkitAudioContext as fallback for older Safari
+    const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    audioCtx = new AC();
+    dbg("AudioContext created, state:", audioCtx.state);
+
+    // iOS 17+: Set audio session type to playback (works even in silent mode)
+    try {
+      const nav = navigator as unknown as { audioSession?: { type: string } };
+      if (nav.audioSession) {
+        nav.audioSession.type = "playback";
+        dbg("navigator.audioSession.type set to 'playback'");
+      }
+    } catch (e) {
+      dbg("audioSession not available:", e);
+    }
+  }
+  return audioCtx;
+}
+
+async function ensureResumed(ctx: AudioContext): Promise<void> {
+  if (ctx.state === "suspended") {
+    dbg("Resuming suspended AudioContext...");
+    await ctx.resume();
+    dbg("AudioContext resumed, state:", ctx.state);
+  }
+}
+
+async function loadAllBuffers(ctx: AudioContext): Promise<void> {
+  if (buffersLoaded || buffersLoading) return;
+  buffersLoading = true;
+
+  const keys: SoundKey[] = ["start", "transition", "complete"];
+
+  await Promise.all(
+    keys.map(async (key) => {
+      try {
+        dbg(`Fetching ${key}...`);
+        const response = await fetch(AUDIO_URLS[key]);
+        if (!response.ok) {
+          dbg(`Fetch ${key} failed: ${response.status}`);
+          return;
+        }
+        const arrayBuffer = await response.arrayBuffer();
+        dbg(`Decoding ${key} (${arrayBuffer.byteLength} bytes)...`);
+        const decoded = await ctx.decodeAudioData(arrayBuffer);
+        audioBuffers[key] = decoded;
+        dbg(`${key} decoded: ${decoded.duration.toFixed(2)}s, ${decoded.sampleRate}Hz`);
+      } catch (e) {
+        dbg(`Error loading ${key}:`, e);
+      }
+    })
+  );
+
+  buffersLoaded = true;
+  buffersLoading = false;
+  dbg("All buffers loaded:", Object.keys(audioBuffers));
+}
+
+function playBuffer(key: SoundKey, volume = 0.7): void {
+  const ctx = audioCtx;
+  const buffer = audioBuffers[key];
+  if (!ctx || !buffer) {
+    dbg(`playBuffer(${key}): ctx=${!!ctx}, buffer=${!!buffer} – skipping`);
+    return;
+  }
+
+  try {
+    const source = ctx.createBufferSource();
+    source.buffer = buffer;
+
+    const gainNode = ctx.createGain();
+    gainNode.gain.value = volume;
+
+    source.connect(gainNode);
+    gainNode.connect(ctx.destination);
+    source.start(0);
+
+    dbg(`playBuffer(${key}): playing at volume ${volume}`);
+  } catch (e) {
+    dbg(`playBuffer(${key}): error:`, e);
+  }
+}
+
 /* ── Component ───────────────────────────────────────── */
 
 export default function GroundingTimer() {
@@ -93,18 +190,11 @@ export default function GroundingTimer() {
   const [currentStep, setCurrentStep] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
   const [audioEnabled, setAudioEnabled] = useState(false);
-  const [audioBlocked, setAudioBlocked] = useState(false);
+  const [audioReady, setAudioReady] = useState(false);
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const audioEnabledRef = useRef(audioEnabled);
   const currentStepRef = useRef(currentStep);
-
-  // DOM audio elements – created once, reused
-  const audioElsRef = useRef<Record<SoundKey, HTMLAudioElement | null>>({
-    start: null,
-    transition: null,
-    complete: null,
-  });
 
   const SECONDS_PER_ITEM = 8;
 
@@ -112,139 +202,41 @@ export default function GroundingTimer() {
   useEffect(() => { audioEnabledRef.current = audioEnabled; }, [audioEnabled]);
   useEffect(() => { currentStepRef.current = currentStep; }, [currentStep]);
 
-  /* ── iOS global unlock (runs once) ─────────────────── */
-  useEffect(() => {
-    unmuteAudio();
-    dbg("unmute-ios-audio initialized");
-  }, []);
-
-  /* ── Create DOM <audio> elements on mount ──────────── */
-  useEffect(() => {
-    const keys: SoundKey[] = ["start", "transition", "complete"];
-
-    keys.forEach((key) => {
-      const el = document.createElement("audio");
-      el.preload = "auto";
-      el.setAttribute("playsinline", "");
-      el.setAttribute("x-webkit-airplay", "deny");
-      // NO crossOrigin – not needed for simple playback, avoids CORS issues
-      el.volume = 0.7;
-      el.src = AUDIO_URLS[key];
-
-      // Debug event listeners
-      el.addEventListener("error", () => {
-        dbg(`ERROR on ${key}:`, el.error?.code, el.error?.message);
-      });
-      el.addEventListener("stalled", () => {
-        dbg(`STALLED on ${key}, networkState:`, el.networkState);
-      });
-      el.addEventListener("waiting", () => {
-        dbg(`WAITING on ${key}, readyState:`, el.readyState);
-      });
-      el.addEventListener("canplaythrough", () => {
-        dbg(`READY ${key}, readyState:`, el.readyState);
-      });
-      el.addEventListener("playing", () => {
-        dbg(`PLAYING ${key}`);
-      });
-
-      // CRITICAL: Insert into DOM – iOS Safari requires audio elements in the DOM
-      el.style.position = "absolute";
-      el.style.width = "0";
-      el.style.height = "0";
-      el.style.opacity = "0";
-      el.style.pointerEvents = "none";
-      document.body.appendChild(el);
-      el.load();
-      audioElsRef.current[key] = el;
-      dbg(`Created & appended <audio> for ${key}`);
-    });
-
-    return () => {
-      keys.forEach((key) => {
-        const el = audioElsRef.current[key];
-        if (el) {
-          el.pause();
-          el.removeAttribute("src");
-          el.load();
-          if (el.parentNode) el.parentNode.removeChild(el);
-          audioElsRef.current[key] = null;
-        }
-      });
-    };
-  }, []);
-
-  /* ── Play a sound via DOM <audio> ──────────────────── */
+  /* ── Play a sound via Web Audio API ───────────────── */
   const playSound = useCallback((key: SoundKey) => {
-    const el = audioElsRef.current[key];
-    if (!el) {
-      dbg(`playSound(${key}): element is null`);
-      return;
-    }
-
-    dbg(`playSound(${key}): readyState=${el.readyState}, paused=${el.paused}, networkState=${el.networkState}`);
-
-    el.currentTime = 0;
-    el.volume = 0.7;
-
-    const p = el.play();
-    if (p) {
-      p.then(() => {
-        dbg(`playSound(${key}): play() resolved OK`);
-      }).catch((e: Error) => {
-        dbg(`playSound(${key}): play() REJECTED:`, e.name, e.message);
-      });
-    }
+    playBuffer(key, 0.7);
   }, []);
 
   /**
-   * Direct user-gesture handler: play the preview tone IMMEDIATELY.
-   * No setTimeout – iOS requires play() in the synchronous call stack of the gesture.
+   * Toggle audio: MUST be called from direct user gesture.
+   * Creates AudioContext, resumes it, loads buffers, plays preview tone.
    */
-  const handleToggleAudio = () => {
+  const handleToggleAudio = async () => {
     const newVal = !audioEnabled;
     setAudioEnabled(newVal);
-    setAudioBlocked(false);
 
     if (newVal) {
-      dbg("Audio ON – attempting direct play in user gesture");
+      dbg("Audio ON – initializing Web Audio API in user gesture");
 
-      // Play the transition sound directly as preview (MUST be in gesture stack)
-      const preview = audioElsRef.current.transition;
-      if (preview) {
-        preview.currentTime = 0;
-        preview.volume = 0.7;
-        const p = preview.play();
-        if (p) {
-          p.then(() => {
-            dbg("Preview tone: play() resolved OK");
-          }).catch((e: Error) => {
-            dbg("Preview tone: play() REJECTED:", e.name, e.message);
-            setAudioBlocked(true);
-          });
-        }
+      try {
+        // Step 1: Create/get AudioContext (MUST be in gesture stack)
+        const ctx = getOrCreateAudioContext();
+
+        // Step 2: Resume if suspended (MUST be in gesture stack)
+        await ensureResumed(ctx);
+
+        // Step 3: Load buffers if not yet loaded
+        await loadAllBuffers(ctx);
+
+        setAudioReady(true);
+
+        // Step 4: Play preview tone
+        playBuffer("transition", 0.7);
+        dbg("Preview tone played");
+      } catch (e) {
+        dbg("Audio init error:", e);
+        setAudioReady(false);
       }
-
-      // Also warm up the other audio elements (silent play + pause)
-      (["start", "complete"] as SoundKey[]).forEach((key) => {
-        const el = audioElsRef.current[key];
-        if (el) {
-          el.volume = 0.01;
-          el.currentTime = 0;
-          const p = el.play();
-          if (p) {
-            p.then(() => {
-              el.pause();
-              el.currentTime = 0;
-              el.volume = 0.7;
-              dbg(`Warm-up ${key}: OK`);
-            }).catch((e: Error) => {
-              el.volume = 0.7;
-              dbg(`Warm-up ${key}: REJECTED:`, e.name, e.message);
-            });
-          }
-        }
-      });
     } else {
       dbg("Audio OFF");
     }
@@ -292,30 +284,19 @@ export default function GroundingTimer() {
 
   /* ── User actions ──────────────────────────────────── */
 
-  const handleStart = () => {
+  const handleStart = async () => {
     dbg("handleStart, audioEnabled:", audioEnabled);
 
-    // Re-warm audio elements in direct user gesture
+    // Ensure AudioContext is ready in this user gesture
     if (audioEnabled) {
-      const keys: SoundKey[] = ["start", "transition", "complete"];
-      keys.forEach((key) => {
-        const el = audioElsRef.current[key];
-        if (el) {
-          el.volume = 0.01;
-          el.currentTime = 0;
-          const p = el.play();
-          if (p) {
-            p.then(() => {
-              el.pause();
-              el.currentTime = 0;
-              el.volume = 0.7;
-            }).catch(() => { el.volume = 0.7; });
-          }
-        }
-      });
-
-      // Play start sound directly (still in gesture stack)
-      playSound("start");
+      try {
+        const ctx = getOrCreateAudioContext();
+        await ensureResumed(ctx);
+        if (!buffersLoaded) await loadAllBuffers(ctx);
+        playSound("start");
+      } catch (e) {
+        dbg("handleStart audio error:", e);
+      }
     }
 
     clearTimer();
@@ -342,22 +323,14 @@ export default function GroundingTimer() {
     setPhase("paused");
   };
 
-  const handleResume = () => {
-    // Re-warm in direct user gesture
-    if (audioEnabled) {
-      const keys: SoundKey[] = ["start", "transition", "complete"];
-      keys.forEach((key) => {
-        const el = audioElsRef.current[key];
-        if (el) {
-          el.volume = 0.01;
-          el.currentTime = 0;
-          const p = el.play();
-          if (p) {
-            p.then(() => { el.pause(); el.currentTime = 0; el.volume = 0.7; })
-              .catch(() => { el.volume = 0.7; });
-          }
-        }
-      });
+  const handleResume = async () => {
+    // Re-ensure AudioContext is active in this user gesture
+    if (audioEnabled && audioCtx) {
+      try {
+        await ensureResumed(audioCtx);
+      } catch (e) {
+        dbg("handleResume audio error:", e);
+      }
     }
 
     setPhase("running");
@@ -394,7 +367,6 @@ export default function GroundingTimer() {
     setPhase("idle");
     setCurrentStep(0);
     setTimeLeft(0);
-    setAudioBlocked(false);
   };
 
   // Cleanup on unmount
@@ -434,14 +406,6 @@ export default function GroundingTimer() {
             )}
           </button>
         </div>
-
-        {/* Audio blocked warning */}
-        {audioBlocked && (
-          <div className="flex items-center gap-2 p-2.5 mb-3 rounded-lg bg-terracotta-wash text-terracotta-dark text-xs">
-            <AlertCircle className="w-4 h-4 flex-shrink-0" />
-            <span>Audio blockiert – bitte einmal auf den Bildschirm tippen und erneut «Klang an» drücken.</span>
-          </div>
-        )}
 
         <AnimatePresence mode="wait">
           {/* ── IDLE ─────────────────────────────────── */}

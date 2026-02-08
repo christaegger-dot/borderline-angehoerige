@@ -32,8 +32,8 @@ const infografiken: Array<{
     description: "Zustandsdiagramm: Stabil bleiben trotz Sturm. Sie können das Schiff nicht steuern – aber Orientierung geben.",
     category: "verstehen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/veWXvwMfgJEMpZeH.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jxArAWKKKMGbmBZK.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GbFCyQhEWIKomzXw.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
   },
   {
     id: "1-2-eisberg",
@@ -41,8 +41,8 @@ const infografiken: Array<{
     description: "Stock-&-Flow-Diagramm: Was Sie sehen (Wut) ist oft nur die Spitze – darunter liegen Schmerz, Angst, Scham.",
     category: "verstehen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aAQXJRtODdbbbqkT.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/liyETBaOPXxDfICb.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MLLwefeyaKvtThbK.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RNKtfQQMvhlSyiIp.pdf",
   },
   {
     id: "1-3-spaltung",
@@ -50,8 +50,8 @@ const infografiken: Array<{
     description: "Zustandsdiagramm: Unter Stress kippt die Bewertung leicht ins Extreme – die Grauzone wird schwer erreichbar.",
     category: "verstehen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cHqBgZJxcFLrtFDh.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hUHbxoQQUJVIRiiG.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gNpeJqfUBZRASmzM.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BSFCCqVxxwxDolfw.pdf",
   },
   {
     id: "1-4-alarm-denk-modus",
@@ -59,8 +59,8 @@ const infografiken: Array<{
     description: "Zustandsdiagramm: Im Alarm-Modus ist Logik oft nicht erreichbar – erst beruhigen, dann klären.",
     category: "verstehen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UwkFCuhnGKuGlfxd.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zPdmrwRLcRWKxynE.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sSUJoOUTiuWgrkiZ.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tlKAOpYHdCNAtovE.pdf",
   },
   {
     id: "1-5-vier-phasen-zyklus",
@@ -68,8 +68,8 @@ const infografiken: Array<{
     description: "Kausal-Loop: Krisen wirken chaotisch – folgen aber oft einem wiederkehrenden Ablauf.",
     category: "verstehen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BVJkEshGOYQYPKXY.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kOMGyISvDZXihWxO.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BYDbBJaIhetrjHRq.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PBYpNxZamAxjOHYd.pdf",
   },
   {
     id: "1-6-gehirn-verstehen",
@@ -77,8 +77,8 @@ const infografiken: Array<{
     description: "Sequenzdiagramm: Bei starkem Stress dominiert Alarm – erst danach wird klares Denken wieder möglich.",
     category: "verstehen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/lrvRCgtlqzJxXloX.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HfyQjNxvthksLpbU.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ImASzOTHYdFpxOUI.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NViSBQtRBvGWOHPE.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 2: KOMMUNIZIEREN
@@ -89,8 +89,8 @@ const infografiken: Array<{
     description: "Timeline mit Reset-Loop: In Hochstress hilft ein Standardablauf – beruhigen, verbinden, begrenzen + Plan.",
     category: "kommunizieren",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/iozawzMBMWEAosrn.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gGsRoFAZIZBfLwmf.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kWTjVSZAwAXAymgw.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eEpcTcWSbYQpNzJv.pdf",
   },
   {
     id: "2-2-standardsatz",
@@ -107,8 +107,8 @@ const infografiken: Array<{
     description: "3-Kacheln-Formel: Fakt + Ich-Grenze + nächster Schritt – kurz und klar.",
     category: "kommunizieren",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jhoTZqSrvikwyDRw.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eLoMJrpVlKhOueFR.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QrgVLpdeorAWgKvg.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YyBYayMoMIGwTZtM.pdf",
   },
   {
     id: "2-4-pause-exit",
@@ -116,8 +116,8 @@ const infografiken: Array<{
     description: "Ampel-Zustandsdiagramm: Wenn Respekt nicht möglich ist, ist eine Pause die beste Deeskalation.",
     category: "kommunizieren",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NgZFpDxatDgLaEQK.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kPmrXWJQbTNpJbSA.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VCooXJsQnRmSZGul.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fGgpuKMuDfzJYgrc.pdf",
   },
   {
     id: "2-5-zuhoeren-ohne-zustimmen",
@@ -125,8 +125,8 @@ const infografiken: Array<{
     description: "2-Spalten mit Brücke: Sie können Gefühle anerkennen, ohne Verhalten gutzuheissen.",
     category: "kommunizieren",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/awvjvWAYWJkviuMK.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eMYmpdECocTQbVet.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eeZIHGmfprWnoPPf.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toeDsBefZFNbxXYc.pdf",
   },
   {
     id: "2-6-beispiel-dialog",
@@ -134,8 +134,8 @@ const infografiken: Array<{
     description: "Chat-Sequenzdiagramm: Kurz + ruhig + wiederholbar wirkt in Krisen stärker als Argumente.",
     category: "kommunizieren",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NCdekDCZFVeQSMtM.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/meEvvJarNxmPJExY.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // SPICKZETTEL (A4, laminierbar)
@@ -146,8 +146,8 @@ const infografiken: Array<{
     description: "Laminierbarer 1-Seiter mit allen Standardsätzen für die Krise – zum Ablesen in akuten Situationen.",
     category: "kommunizieren",
     type: "Spickzettel",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jSGtEkuvzMQpgWWa.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KvmohTCDARNXkHIY.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tgVHTaXVryVEuEss.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YvXkEbRmwIcCFtsj.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 3: UNTERSTÜTZEN
@@ -167,8 +167,8 @@ const infografiken: Array<{
     description: "2-Spalten-Vergleich: Sie sind Angehörige/r – nicht Therapeut/in. Diese Klarheit entlastet beide Seiten.",
     category: "unterstuetzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mTlmmrXfScSCxoiC.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LEKuHRVBIRdTClYJ.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WUiQpUWjKIjpSRDC.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JMOjSacqrnDcAkoB.pdf",
   },
   {
     id: "k3-3-drei-saeulen",
@@ -176,8 +176,8 @@ const infografiken: Array<{
     description: "3-Kacheln: Präsenz zeigen, Gefühle validieren, Stabilität bieten – das Fundament guter Begleitung.",
     category: "unterstuetzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TaDXhEgHiyBeiQsT.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bWugGxMdeykNGBUW.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WuCBUdnlHakpSnbY.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AalrNrybgxuMcRcX.pdf",
   },
   {
     id: "k3-4-konsistenz",
@@ -194,8 +194,8 @@ const infografiken: Array<{
     description: "Evidenzbasierte Empfehlungen nach Gunderson: 6 konkrete Leitlinien zum Abhaken und Umsetzen.",
     category: "unterstuetzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JBcudxMTJSKMmNTN.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LBGlXrHsWLMyIhOB.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OfOPUMQpHXrpSPgw.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IIcvvdvSlDcXqwbL.pdf",
   },
   {
     id: "k3-6-achtsamkeit",
@@ -203,8 +203,8 @@ const infografiken: Array<{
     description: "Timeline: Innehalten → Wahrnehmen → Nicht bewerten → Bewusst handeln – weniger Autopilot, mehr Klarheit.",
     category: "unterstuetzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YtNfLnzlgsamxRcW.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RWeBPlYGYPyGJdur.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toOMoXhzHiaZUlBg.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oPRapPNKMLHWEior.pdf",
   },
   {
     id: "k3-7-alltags-tipps",
@@ -212,8 +212,8 @@ const infografiken: Array<{
     description: "4-Kacheln-Checkliste: Übungspartner sein, Fortschritte anerkennen, Vorhersehbar sein, Gemeinsam Probleme lösen.",
     category: "unterstuetzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GppaEBvvDepiLtjB.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/uigcPaSnajslSrhN.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cwhMoIHSUeEWpyWo.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ipyRcgPjVrRKYqyd.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 4: GRENZEN
@@ -224,8 +224,8 @@ const infografiken: Array<{
     description: "4-Stufen-Treppe: Beschreiben → Äussern → Behaupten → Verstärken. Die DBT-Methode für respektvolle Grenzsetzung.",
     category: "grenzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sHAAizMXNqAZSlEn.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/paQhPvSEeVFldFly.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yBSkvBJGSeNvxINq.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DDkqUiaNJwizEtPv.pdf",
   },
   {
     id: "k4-2-spiegeln-aufsaugen",
@@ -233,8 +233,8 @@ const infografiken: Array<{
     description: "Split-Screen-Vergleich: Schwamm vs. Spiegel. Sie können Gefühle anerkennen, ohne sie zu Ihren eigenen zu machen.",
     category: "grenzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gihCucGMxjKsBsyh.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zAWpEOBGTINRpKZo.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rbDvjxTUWJMXQCPj.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jJFieYXEiIxbrazO.pdf",
   },
   {
     id: "k4-3-vier-arten-grenzen",
@@ -251,8 +251,8 @@ const infografiken: Array<{
     description: "Körper-Silhouette mit 5 Signalen: Bauch, Brust, Nacken, Erschöpfung, Fluchtimpuls. Lernen Sie, auf Ihren Körper zu hören.",
     category: "grenzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yJNGnFEtIpWQvjnU.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TvkuXNqrjiHxfOkS.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pPRcjWVKERfSWUPL.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FftUeWuOzmxjrUEi.pdf",
   },
   {
     id: "k4-5-warum-grenzen-helfen",
@@ -260,8 +260,8 @@ const infografiken: Array<{
     description: "5-Säulen-Modell: Identität, Struktur, Sicherheit, Intimität, Vorbild – Grenzen sind kein Liebesentzug.",
     category: "grenzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skjcpJqOmcldYXbm.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OqhEzMeLpTbBtWJK.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OThoeNNdbDhNrJNh.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DpeSphZCAdlpzyAm.pdf",
   },
   {
     id: "k4-6-lmk-exit-strategie",
@@ -269,8 +269,8 @@ const infografiken: Array<{
     description: "Entscheidungsbaum mit Anwendungskontext: Grenze → Reaktion → Konsequenz. Keine Strafe – sondern Selbstschutz.",
     category: "grenzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aAHNYbmetQXpdBOS.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xPwKbMxFXGMwUeIx.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izBLuzTFtMDeQYoc.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eyhngTnxXoekiWwJ.pdf",
   },
   {
     id: "k4-7-grenzen-kommunizieren",
@@ -278,8 +278,8 @@ const infografiken: Array<{
     description: "4 Situationen mit fertigen Sätzen: Bei Beschimpfungen, Schuldzuweisungen, Forderungen, Drohungen.",
     category: "grenzen",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dfwRqrujZwwwPRJo.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WCKlwBXhspmnwAsS.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pnhMjTPpcABZhMju.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WtwEVMqmpQQAvNJC.pdf",
   },
   {
     id: "k4-8-spickzettel-grenzen",
@@ -287,8 +287,8 @@ const infografiken: Array<{
     description: "A4-Spickzettel zum Laminieren: DEAR-Technik, L.M.K.-Formel, Spiegeln statt Aufsaugen – alle wichtigen Sätze auf einen Blick.",
     category: "grenzen",
     type: "Spickzettel",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KZVNxsreyIArkAOx.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TDHoWgpbVLVrtEFT.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/avGqFKFuKFfFYANu.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/obwIZiRPiVPphIUX.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 5: SELBSTFÜRSORGE
@@ -299,8 +299,8 @@ const infografiken: Array<{
     description: "Ampel-Stufenmodell: Erkennen Sie rechtzeitig, wann es zu viel wird – von Grün (noch im Rahmen) über Gelb (Achtung) bis Rot (Hilfe suchen).",
     category: "selbstfuersorge",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/optYiKokWKIQjSrN.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JWKBxhpFugmhqkAZ.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OEUNVdTyojBBYTic.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VdAxPxngFzgNImxg.pdf",
   },
   {
     id: "k5-2-sauerstoffmaske",
@@ -308,8 +308,8 @@ const infografiken: Array<{
     description: "Kreislauf-Diagramm: Teufelskreis ohne Selbstfürsorge vs. positiver Kreislauf mit Selbstfürsorge – setzen Sie zuerst Ihre eigene Maske auf.",
     category: "selbstfuersorge",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XrKGgWknFEUwpxuV.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MBXwKlBmHdpPjqdy.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IQwhlqUMporMKdmH.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yIWenSfOeiUHdMIc.pdf",
   },
   {
     id: "k5-3-radikale-akzeptanz",
@@ -317,8 +317,8 @@ const infografiken: Array<{
     description: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung zum sofortigen Anwenden.",
     category: "selbstfuersorge",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fJJJbVQIXEemvDkN.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KgnzamInWmCveufi.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OmxdguWaaXAkElDp.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SkBpjnDHfNmPbmnd.pdf",
   },
   {
     id: "k5-4-stopp-technik",
@@ -326,8 +326,8 @@ const infografiken: Array<{
     description: "Stufen-Modell: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden anwendbar bei akuter Belastung.",
     category: "selbstfuersorge",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/bTeBnWhFYxeIjIXl.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qtWmgDMgSFSbGyvk.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qvJDZrQvvOlErFQu.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VnQKfkkQbPunhDed.pdf",
   },
   {
     id: "k5-5-energie-konto",
@@ -335,8 +335,8 @@ const infografiken: Array<{
     description: "Stock-&-Flow-Diagramm: Welche Aktivitäten füllen Ihre Batterie auf, welche leeren sie? Achten Sie auf die Balance, bevor Burnout droht.",
     category: "selbstfuersorge",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kncWqqNBswzUDchf.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BfBWLDWOYPjrcRpl.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xqJbxqEDoAqplbhl.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gvhhnlTvDmgPHFUq.pdf",
   },
   {
     id: "k5-6-erlaubnis-karte",
@@ -344,8 +344,8 @@ const infografiken: Array<{
     description: "Checkliste: 9 Erlaubnisse, die sich Angehörige oft nicht geben – gültig ab sofort, unbefristet, ausgestellt von Ihnen selbst.",
     category: "selbstfuersorge",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YuJEhBgjQWuztswb.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ttTtLWeYiUiQaBnR.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OMXnbczdvCPBRNTA.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DSOVugQyCvvOACIO.pdf",
   },
   // === K6 GENESUNG ===
   {
@@ -354,8 +354,8 @@ const infografiken: Array<{
     description: "Orientierungs-Tracker: 85–93 % erreichen symptomatische Remission, 50 % vollständige Genesung – belegt durch Langzeitstudien (Zanarini et al.).",
     category: "genesung",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ItokRaWotdNKpoEx.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HxKACGuyOnlrGyHX.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tyFTHNjsUagqrXiS.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MunlHDCNqnsOhBFn.pdf",
   },
   {
     id: "k6-2-fortschritt-paradox",
@@ -363,8 +363,8 @@ const infografiken: Array<{
     description: "Aufwärts-Spirale: Genesung verläuft nicht linear. Rückfälle bedeuten nicht Scheitern – sie sind Teil des Weges nach oben.",
     category: "genesung",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xjUbWjBdgOfAOBSO.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/EajEIAEeOKqxFrTB.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DPkqytVYFcreeBlC.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UFLdEEGIDxKdRUZO.pdf",
   },
   {
     id: "k6-3-remission-vs-heilung",
@@ -372,8 +372,8 @@ const infografiken: Array<{
     description: "2-Spalten-Vergleich: Was Remission NICHT bedeutet vs. was sie tatsächlich bedeutet – realistische Erwartungen statt Perfektionsanspruch.",
     category: "genesung",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tbZXsVZHQhEaDQKT.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vAIgOqKhoorEdMbu.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HPRsNmCUFirjnraj.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KMjqRDjDjWVZpjhJ.pdf",
   },
   {
     id: "k6-4-fuenf-faktoren-genesung",
@@ -381,8 +381,8 @@ const infografiken: Array<{
     description: "Säulen-Modell: Spezialisierte Therapie, stabile Beziehungen, strukturierter Alltag, Begleiterkrankungen behandeln und eigene Motivation – auf dem Fundament von Zeit und Geduld.",
     category: "genesung",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VIpkSYqaeNUrJASc.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zwrhfhOYAmpNBsHP.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mFhtxtPMBkCEVPII.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qgrRYtMKOvwWmuah.pdf",
   },
   {
     id: "k6-5-ihre-rolle-genesungsprozess",
@@ -390,8 +390,8 @@ const infografiken: Array<{
     description: "Waage-Modell: Was Sie tun können (Konsistenz, realistische Hoffnung, eigene Grenzen, Fortschritte benennen, professionelle Hilfe unterstützen) vs. was nicht Ihre Aufgabe ist.",
     category: "genesung",
     type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/nFoVeLJURBcMhQBT.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JviFfFHCaSIpsKDF.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GhgPDkJhqlqJkYzE.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CZdiDaadpIWNOBFb.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // NOTFALLKARTE

@@ -25,15 +25,15 @@ export default function Grenzen() {
     {
       title: "Die DEAR-Technik",
       description: "4 Schritte für respektvolle Grenzsetzung",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sHAAizMXNqAZSlEn.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/paQhPvSEeVFldFly.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yBSkvBJGSeNvxINq.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DDkqUiaNJwizEtPv.pdf",
       category: "kommunizieren"
     },
     {
       title: "Spiegeln statt Aufsaugen",
       description: "Mitfühlen ohne Übernehmen",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gihCucGMxjKsBsyh.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/zAWpEOBGTINRpKZo.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rbDvjxTUWJMXQCPj.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jJFieYXEiIxbrazO.pdf",
       category: "kommunizieren"
     },
     {
@@ -46,36 +46,36 @@ export default function Grenzen() {
     {
       title: "Grenzen erkennen",
       description: "5 Warnsignale Ihres Körpers",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yJNGnFEtIpWQvjnU.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TvkuXNqrjiHxfOkS.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pPRcjWVKERfSWUPL.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FftUeWuOzmxjrUEi.pdf",
       category: "erkennen"
     },
     {
       title: "Warum Grenzen helfen",
       description: "Grenzen sind kein Liebesentzug",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skjcpJqOmcldYXbm.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OqhEzMeLpTbBtWJK.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OThoeNNdbDhNrJNh.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DpeSphZCAdlpzyAm.pdf",
       category: "erkennen"
     },
     {
       title: "L.M.K. (Lebe Mit Konsequenzen)",
       description: "Wenn Grenzen nicht respektiert werden",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/aAHNYbmetQXpdBOS.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xPwKbMxFXGMwUeIx.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izBLuzTFtMDeQYoc.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eyhngTnxXoekiWwJ.pdf",
       category: "handeln"
     },
     {
       title: "Grenzen kommunizieren",
       description: "Beispielsätze für den Alltag",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/dfwRqrujZwwwPRJo.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WCKlwBXhspmnwAsS.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pnhMjTPpcABZhMju.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WtwEVMqmpQQAvNJC.pdf",
       category: "kommunizieren"
     },
     {
       title: "Spickzettel Grenzen",
       description: "A4 zum Laminieren – alle Sätze auf einen Blick",
-      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KZVNxsreyIArkAOx.webp",
-      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TDHoWgpbVLVrtEFT.pdf",
+      url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/avGqFKFuKFfFYANu.webp",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/obwIZiRPiVPphIUX.pdf",
       category: "handeln"
     }
   ];

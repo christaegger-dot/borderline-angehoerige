@@ -4,7 +4,7 @@ import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Compass, ArrowRight, CheckCircle2, XCircle, Lightbulb, Download, ExternalLink, Image, RefreshCw, Users, Shield, BookOpen, Filter, Eye, Heart, ListChecks } from "lucide-react";
+import { Compass, ArrowRight, CheckCircle2, XCircle, Lightbulb, Download, ExternalLink, Image, RefreshCw, Users, Shield, BookOpen, Filter, Eye, Heart, ListChecks, Anchor, HandHeart } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useRef } from "react";
 
@@ -224,7 +224,7 @@ export default function UnterstuetzenUebersicht() {
                 <div className="grid gap-3">
                   <div className="flex items-start gap-3 bg-sage-wash/40 rounded-lg p-3.5 sm:p-4 border border-sage-mid/20">
                     <div className="w-8 h-8 rounded-full bg-sage-mid/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-sage-mid text-lg">🛡</span>
+                      <Anchor className="w-4 h-4 text-sage-mid" />
                     </div>
                     <div>
                       <p className="font-semibold text-foreground text-sm sm:text-base">Sicherheit durch Ruhe</p>
@@ -234,7 +234,7 @@ export default function UnterstuetzenUebersicht() {
 
                   <div className="flex items-start gap-3 bg-slate-wash/40 rounded-lg p-3.5 sm:p-4 border border-slate-dark/10">
                     <div className="w-8 h-8 rounded-full bg-slate-dark/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-slate-dark text-lg">👁</span>
+                      <Eye className="w-4 h-4 text-slate-dark" />
                     </div>
                     <div>
                       <p className="font-semibold text-foreground text-sm sm:text-base">Präsenz zeigen</p>
@@ -244,7 +244,7 @@ export default function UnterstuetzenUebersicht() {
 
                   <div className="flex items-start gap-3 bg-sand-muted/40 rounded-lg p-3.5 sm:p-4 border border-sand-mid/20">
                     <div className="w-8 h-8 rounded-full bg-sand-mid/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-sand-mid text-lg">💛</span>
+                      <HandHeart className="w-4 h-4 text-sand-mid" />
                     </div>
                     <div>
                       <p className="font-semibold text-foreground text-sm sm:text-base">Validierung</p>

@@ -4,7 +4,8 @@ import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Calendar, Headphones, MessageCircle } from "lucide-react";
+import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Calendar, Headphones, MessageCircle, Building2 } from "lucide-react";
+import { Link } from "wouter";
 import { kontaktById, emailById, urlById } from "@/data/kontakte";
 
 const selbsthilfeCH = kontaktById("INFO_SELBSTHILFE_CH")!;
@@ -53,12 +54,76 @@ export default function Selbsthilfegruppen() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
 
-            {/* Stand by You – immer offen als Hauptanlaufstelle */}
+            {/* Fachstelle Angehörigenarbeit – zuoberst als Absender */}
+            <ContentSection
+              title="Fachstelle Angehörigenarbeit (PUK Zürich)"
+              icon={<Building2 className="w-7 h-7 text-sage-darker" />}
+              id="fachstelle"
+              defaultOpen={true}
+              preview="Kostenlose Beratung für Angehörige von psychisch erkrankten Menschen – Psychiatrische Universitätsklinik Zürich."
+            >
+              <Card className="border-sage-darker/20 bg-sage-wash/40 overflow-hidden">
+                <CardContent className="p-6 md:p-8">
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Die <strong>Fachstelle Angehörigenarbeit</strong> an der Psychiatrischen Universitätsklinik Zürich (PUK) bietet Unterstützung und Beratung für Angehörige von psychisch erkrankten Menschen. Die Beratung ist kostenlos.
+                  </p>
+
+                  <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-5 h-5 text-sage-mid" />
+                      <div>
+                        <p className="text-sm text-muted-foreground">Telefon</p>
+                        <a href="tel:+41583843800" className="font-medium text-foreground hover:text-sage-mid">
+                          +41 58 384 38 00
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Mail className="w-5 h-5 text-sage-mid" />
+                      <div>
+                        <p className="text-sm text-muted-foreground">E-Mail</p>
+                        <a href="mailto:angehoerigenarbeit@pukzh.ch" className="font-medium text-foreground hover:text-sage-mid">
+                          angehoerigenarbeit@pukzh.ch
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-5 h-5 text-sage-mid" />
+                      <div>
+                        <p className="text-foreground text-sm">Lenggstrasse 31, Postfach</p>
+                        <p className="text-foreground text-sm">8032 Zürich</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Globe className="w-5 h-5 text-sage-mid" />
+                      <div>
+                        <p className="text-sm text-muted-foreground">Website</p>
+                        <a href="https://www.pukzh.ch" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-sage-mid">
+                          www.pukzh.ch
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link href="/fachstelle">
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-sage-mid hover:text-sage-dark transition-colors cursor-pointer">
+                      Mehr über die Fachstelle erfahren
+                      <ExternalLink className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </CardContent>
+              </Card>
+            </ContentSection>
+
+            {/* Stand by You */}
             <ContentSection
               title="Stand by You Schweiz"
               icon={<Heart className="w-7 h-7 text-sage-mid" />}
               id="stand-by-you"
-              defaultOpen={true}
+              defaultOpen={false}
               preview="Die zentrale Anlaufstelle für Angehörige von Menschen mit psychischen Erkrankungen in der Schweiz."
             >
               <Card className="border-sage-mid/30 bg-sage-wash/30 overflow-hidden">

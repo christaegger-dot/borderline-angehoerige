@@ -57,9 +57,10 @@ export default function Impressum() {
                     <p className="font-medium text-foreground">Christa Egger</p>
                     <p>Angehörigenberaterin</p>
                     <p className="mt-4 text-sm">
-                      Diese Website ist eine private Ressource für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung. 
-                      Sie wurde im Rahmen der Angehörigenberatung erstellt und wird von Angehörigenberater:innen 
-                      gezielt an Ratsuchende weitergegeben.
+                      Erstellt von Ch. Egger, Fachstelle Angehörigenarbeit (PUK Zürich). Inhaltliche Verantwortung: Fachstelle Angehörigenarbeit. Gestaltung folgt einem eigenständigen Informationsdesign (nicht PUK-CI).
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground/80">
+                      Unabhängiges Informationsangebot der Fachstelle Angehörigenarbeit. Nicht offizieller Kommunikationskanal der PUK Zürich.
                     </p>
                   </div>
                 </CardContent>
@@ -119,9 +120,7 @@ export default function Impressum() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Diese Website ist <strong>keine offizielle Website</strong> der Psychiatrischen Universitätsklinik Zürich (PUK) 
-                    oder einer anderen Institution. Sie stellt eine unabhängige Informationsressource dar, die auf Basis 
-                    evidenzbasierter Fachliteratur und praktischer Erfahrung in der Angehörigenberatung erstellt wurde.
+                    Unabhängiges Informationsangebot der Fachstelle Angehörigenarbeit. Nicht offizieller Kommunikationskanal der PUK Zürich. Die Website stellt eine eigenständige Informationsressource dar, die auf Basis evidenzbasierter Fachliteratur und praktischer Erfahrung in der Angehörigenberatung erstellt wurde.
                   </p>
                 </CardContent>
               </Card>

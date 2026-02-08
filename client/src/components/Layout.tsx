@@ -202,7 +202,7 @@ export default function Layout({ children }: LayoutProps) {
       <footer className="bg-sand-muted border-t border-border/50 mt-auto">
         <div className="container py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {/* Brand */}
+            {/* Brand + Absender */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <img
@@ -258,8 +258,8 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/feedback" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Feedback geben
+                  <Link href="/fachstelle" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                    Fachstelle & Kontakt
                   </Link>
                 </li>
                 <li>
@@ -285,7 +285,7 @@ export default function Layout({ children }: LayoutProps) {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Hinweis */}
             <div>
               <h3 className="font-semibold text-foreground mb-4 text-base">Hinweis</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -294,11 +294,24 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
-          <div className="border-t border-border/50 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          {/* Absender-Einordnung */}
+          <div className="border-t border-border/50 mt-8 pt-8">
+            <p className="text-sm text-foreground leading-relaxed">
+              Für Angehörige – Fachstelle Angehörigenarbeit, Psychiatrische Universitätsklinik Zürich (PUK) – Ch. Egger
+            </p>
+            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+              Unabhängiges Informationsangebot der Fachstelle Angehörigenarbeit. Nicht offizieller Kommunikationskanal der PUK Zürich.
+            </p>
+          </div>
+
+          <div className="border-t border-border/50 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
               © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
             </p>
             <div className="flex gap-4">
+              <Link href="/fachstelle" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Fachstelle
+              </Link>
               <Link href="/ueber-uns" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Über uns
               </Link>

@@ -190,6 +190,26 @@ export default function UeberUns() {
               </Card>
             </motion.div>
 
+            {/* Einordnung */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <Card className="border-sage-mid/20 bg-sage-wash/30">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-foreground mb-3">Einordnung</h3>
+                  <p className="text-sm text-foreground leading-relaxed mb-2">
+                    Erstellt von Ch. Egger, Fachstelle Angehörigenarbeit (PUK Zürich). Inhaltliche Verantwortung: Fachstelle Angehörigenarbeit. Gestaltung folgt einem eigenständigen Informationsdesign (nicht PUK-CI).
+                  </p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Unabhängiges Informationsangebot der Fachstelle Angehörigenarbeit. Nicht offizieller Kommunikationskanal der PUK Zürich.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
             {/* Kontakt */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

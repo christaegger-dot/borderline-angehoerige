@@ -38,6 +38,7 @@ export default function Layout({ children }: LayoutProps) {
   const [ressourcenOpen, setRessourcenOpen] = useState(false);
   const [mobileRessourcenOpen, setMobileRessourcenOpen] = useState(false);
   const ressourcenRef = useRef<HTMLDivElement>(null);
+  const ressourcenButtonRef = useRef<HTMLButtonElement>(null);
   const ressourcenTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Keyboard shortcut for search (Ctrl/Cmd + K)
@@ -49,6 +50,8 @@ export default function Layout({ children }: LayoutProps) {
       }
       if (e.key === "Escape") {
         setRessourcenOpen(false);
+        // Fokus zurück auf den Trigger-Button
+        ressourcenButtonRef.current?.focus();
       }
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -148,6 +151,7 @@ export default function Layout({ children }: LayoutProps) {
                 onMouseLeave={handleRessourcenLeave}
               >
                 <button
+                  ref={ressourcenButtonRef}
                   onClick={() => setRessourcenOpen(!ressourcenOpen)}
                   className={`flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-500 whitespace-nowrap ${
                     isRessourcenActive || ressourcenOpen
@@ -156,6 +160,7 @@ export default function Layout({ children }: LayoutProps) {
                   }`}
                   aria-expanded={ressourcenOpen}
                   aria-haspopup="true"
+                  aria-controls="ressourcen-menu"
                 >
                   Ressourcen
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${ressourcenOpen ? "rotate-180" : ""}`} />
@@ -168,6 +173,9 @@ export default function Layout({ children }: LayoutProps) {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -4, scale: 0.98 }}
                       transition={{ duration: 0.15, ease: "easeOut" }}
+                      id="ressourcen-menu"
+                      role="menu"
+                      aria-label="Ressourcen-Navigation"
                       className="absolute right-0 top-full mt-1 w-64 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/8 overflow-hidden z-50"
                     >
                       <div className="py-2">
@@ -183,6 +191,7 @@ export default function Layout({ children }: LayoutProps) {
                               )}
                               <Link
                                 href={item.href}
+                                role="menuitem"
                                 onClick={() => setRessourcenOpen(false)}
                                 className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all ${
                                   isSoforthilfe
@@ -287,6 +296,8 @@ export default function Layout({ children }: LayoutProps) {
                 <div className="mt-1">
                   <button
                     onClick={() => setMobileRessourcenOpen(!mobileRessourcenOpen)}
+                    aria-expanded={mobileRessourcenOpen}
+                    aria-controls="mobile-ressourcen-menu"
                     className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all ${
                       isRessourcenActive
                         ? "bg-terracotta-light text-terracotta-darker"
@@ -309,7 +320,7 @@ export default function Layout({ children }: LayoutProps) {
                         transition={{ duration: 0.3, ease: "easeOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-4 mt-1 flex flex-col gap-1">
+                        <div id="mobile-ressourcen-menu" role="menu" aria-label="Ressourcen-Navigation" className="pl-4 mt-1 flex flex-col gap-1">
                           {ressourcenItems.map((item) => {
                             const Icon = item.icon;
                             const isActive = location === item.href.split('#')[0];
@@ -318,6 +329,7 @@ export default function Layout({ children }: LayoutProps) {
                               <Link
                                 key={item.href}
                                 href={item.href}
+                                role="menuitem"
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileRessourcenOpen(false);

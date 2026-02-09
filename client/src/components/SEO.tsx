@@ -35,7 +35,7 @@ export default function SEO({ title, description, path = "/", type = "website" }
     updateMeta("og:title", fullTitle, true);
     updateMeta("og:description", metaDescription, true);
     updateMeta("og:type", type, true);
-    updateMeta("og:url", `https://eiertanz.manus.space${path}`, true);
+    updateMeta("og:url", `https://borderline-angehoerige.manus.space${path}`, true);
     updateMeta("og:image", OG_IMAGE, true);
     updateMeta("twitter:title", fullTitle);
     updateMeta("twitter:description", metaDescription);
@@ -47,7 +47,7 @@ export default function SEO({ title, description, path = "/", type = "website" }
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = `https://eiertanz.manus.space${path}`;
+    canonical.href = `https://borderline-angehoerige.manus.space${path}`;
   }, [fullTitle, metaDescription, path, type]);
 
   return null;
@@ -60,7 +60,7 @@ export function WebsiteSchema() {
     "@type": "WebSite",
     "name": SITE_NAME,
     "alternateName": "Borderline Angehörige",
-    "url": "https://eiertanz.manus.space",
+    "url": "https://borderline-angehoerige.manus.space",
     "description": BASE_DESCRIPTION,
     "inLanguage": "de",
     "publisher": {
@@ -73,7 +73,7 @@ export function WebsiteSchema() {
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://eiertanz.manus.space/?q={search_term_string}",
+      "target": "https://borderline-angehoerige.manus.space/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -99,7 +99,7 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
     "@type": "MedicalWebPage",
     "name": title,
     "description": description,
-    "url": `https://eiertanz.manus.space${path}`,
+    "url": `https://borderline-angehoerige.manus.space${path}`,
     "inLanguage": "de",
     "about": {
       "@type": "MedicalCondition",

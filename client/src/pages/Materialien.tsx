@@ -579,7 +579,7 @@ export default function Materialien() {
               </h2>
               <p className="text-sm text-muted-foreground">
                 Alle Materialien dürfen für private und nicht-kommerzielle Zwecke frei verwendet werden. 
-                Bei Weitergabe bitte die Quelle angeben: <strong>eiertanz.manus.space</strong> – 
+                Bei Weitergabe bitte die Quelle angeben: <strong>borderline-angehoerige.manus.space</strong> – 
                 erstellt von Christa Egger, Angehörigenarbeit PUK Zürich.
               </p>
             </CardContent>

@@ -146,6 +146,16 @@ export default function Layout({ children }: LayoutProps) {
     setMobileRessourcenOpen(false);
   }, [location]);
 
+  // Set data-attribute on body when mobile menu is open (for CSS-based FAB hiding)
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.setAttribute('data-mobile-menu', 'open');
+    } else {
+      document.body.removeAttribute('data-mobile-menu');
+    }
+    return () => document.body.removeAttribute('data-mobile-menu');
+  }, [mobileMenuOpen]);
+
   const handleRessourcenEnter = () => {
     if (ressourcenTimeoutRef.current) {
       clearTimeout(ressourcenTimeoutRef.current);
@@ -354,9 +364,13 @@ export default function Layout({ children }: LayoutProps) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="lg:hidden border-t border-border/50 bg-background"
+              className="lg:hidden border-t border-border/50 bg-background overflow-y-auto overscroll-contain"
+              style={{
+                maxHeight: 'calc(100dvh - 5rem)',
+                WebkitOverflowScrolling: 'touch',
+              }}
             >
-              <nav className="container py-4 flex flex-col gap-2">
+              <nav className="container py-4 flex flex-col gap-2" style={{ paddingBottom: 'calc(16px + env(safe-area-inset-bottom, 0px) + 88px)' }}>
                 {navItems.map((item) => {
                   const Icon = item.icon;
                   const isActive = location.startsWith(item.href);

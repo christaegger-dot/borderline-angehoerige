@@ -602,3 +602,24 @@
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+
+/* ── Mobile-Menü offen: Floating Buttons ausblenden ── */
+/* Verhindert Overlap mit ScrollToTop, TOC-Button und anderen FABs */
+body[data-mobile-menu="open"] .fixed {
+  /* Nur die floating Buttons unten ausblenden, nicht den Header */
+}
+/* Spezifischer: Alle fixed-Elemente mit bottom-Positionierung ausblenden */
+@media (max-width: 1023px) {
+  body[data-mobile-menu="open"] button.fixed[class*="bottom-"],
+  body[data-mobile-menu="open"] a.fixed[class*="bottom-"] {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.2s ease;
+  }
+}
+
+/* ── Safe-Area-Utility für iOS ── */
+.safe-bottom-pad {
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+}

@@ -200,6 +200,7 @@ export default function ValidierungsStufenleiter() {
           const isVisited = progress.isRevealed(index);
           return (
             <button
+              type="button"
               key={stufe.level}
               onClick={() => setActiveLevel(index)}
               className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-sage-mid ${

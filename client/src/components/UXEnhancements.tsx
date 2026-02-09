@@ -370,7 +370,8 @@ export function TableOfContents() {
             {/* Drawer Header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-border">
               <span className="font-semibold text-foreground text-base" role="heading" aria-level={2}>Inhaltsverzeichnis</span>
-              <button 
+              <button
+                type="button" 
                 onClick={() => setIsOpen(false)}
                 className="w-8 h-8 rounded-full hover:bg-muted flex items-center justify-center"
                 aria-label="Schliessen"
@@ -385,6 +386,7 @@ export function TableOfContents() {
                 {headings.map(({ id, text, level }) => (
                   <li key={id}>
                     <button
+                      type="button"
                       onClick={() => scrollToHeading(id)}
                       className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-400 ${
                         level === 3 ? "pl-7" : ""
@@ -413,6 +415,7 @@ export function TableOfContents() {
               {headings.map(({ id, text, level }) => (
                 <li key={id}>
                   <button
+                    type="button"
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
                     className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-all duration-400 line-clamp-2 ${

@@ -188,6 +188,7 @@ export default function SETDragDrop() {
           Ordnen Sie jede Aussage der richtigen SET-Kategorie zu.
         </p>
         <button
+          type="button"
           onClick={handleReset}
           className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
           aria-label="Übung zurücksetzen"
@@ -281,6 +282,7 @@ export default function SETDragDrop() {
               <div className="grid grid-cols-3 gap-3">
                 {categories.map((cat) => (
                   <button
+                    type="button"
                     key={cat.key}
                     onClick={() => handleAssign(cat.key)}
                     className={`relative p-4 rounded-xl border-2 transition-all duration-200 text-center

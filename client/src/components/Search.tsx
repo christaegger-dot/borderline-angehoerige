@@ -678,6 +678,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                 />
                 {query && (
                   <button
+                    type="button"
                     onClick={() => setQuery("")}
                     className="p-1 hover:bg-muted rounded-md transition-colors"
                     aria-label="Sucheingabe löschen"
@@ -697,6 +698,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                     <div className="mt-4 flex flex-wrap justify-center gap-2">
                       {["Validierung", "Grenzen", "Krise", "Selbstfürsorge", "DBT"].map(term => (
                         <button
+                          type="button"
                           key={term}
                           onClick={() => setQuery(term)}
                           className="px-3 py-1.5 bg-muted hover:bg-muted/80 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors"

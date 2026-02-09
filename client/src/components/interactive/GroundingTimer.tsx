@@ -80,13 +80,12 @@ type SoundKey = "start" | "transition" | "complete";
 
 type Phase = "idle" | "running" | "paused" | "done";
 
-/* ── Debug logger (nur im Dev-Modus) ────────────────── */
+/* ── Debug logger (nur im Dev-Modus, Tree-Shaking-freundlich) ── */
 
-const dbg = (msg: string, ...args: unknown[]) => {
-  if (import.meta.env.DEV && typeof console !== "undefined") {
-    console.log(`[GroundingAudio] ${msg}`, ...args);
-  }
-};
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const dbg: (msg: string, ...args: unknown[]) => void = import.meta.env.DEV
+  ? (msg, ...args) => console.log(`[GroundingAudio] ${msg}`, ...args)
+  : () => {};
 
 /* ── HTML5 Audio helper ─────────────────────────────── */
 
@@ -342,6 +341,7 @@ export default function GroundingTimer() {
           </div>
 
           <button
+            type="button"
             onClick={handleToggleAudio}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
               audioEnabled

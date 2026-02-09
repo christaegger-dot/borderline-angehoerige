@@ -87,6 +87,7 @@ export default function ContentSection({
       id={id}
     >
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 rounded-xl"
         aria-expanded={isOpen}

@@ -178,6 +178,7 @@ export default function DEARSatzbaukasten() {
               )}
             </Button>
             <button
+              type="button"
               onClick={handleReset}
               className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
             >

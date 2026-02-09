@@ -147,6 +147,7 @@ function SzenarioCard({
 
             <div className="px-5 pb-4">
               <button
+                type="button"
                 onClick={() => setRevealed(false)}
                 className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
               >
@@ -187,6 +188,7 @@ export default function SpiegelnUebung() {
           Lesen Sie die Situation und überlegen Sie, bevor Sie aufdecken.
         </p>
         <button
+          type="button"
           onClick={handleReset}
           className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
           aria-label="Alle Karten zurücksetzen"

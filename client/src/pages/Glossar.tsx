@@ -246,6 +246,7 @@ export default function Glossar() {
             {/* Category Filter */}
             <div className="flex flex-wrap gap-2">
               <button
+                type="button"
                 onClick={() => setSelectedCategory(null)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   selectedCategory === null
@@ -257,6 +258,7 @@ export default function Glossar() {
               </button>
               {Object.entries(categoryInfo).map(([key, info]) => (
                 <button
+                  type="button"
                   key={key}
                   onClick={() => setSelectedCategory(selectedCategory === key ? null : key)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${

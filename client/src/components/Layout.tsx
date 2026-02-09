@@ -222,6 +222,7 @@ export default function Layout({ children }: LayoutProps) {
                 onMouseLeave={handleRessourcenLeave}
               >
                 <button
+                  type="button"
                   ref={ressourcenButtonRef}
                   onClick={() => ressourcenOpen ? setRessourcenOpen(false) : openAndFocusFirst()}
                   onKeyDown={(e) => {
@@ -299,6 +300,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="flex items-center gap-2 shrink-0">
               {/* Search Button – Desktop */}
               <button
+                type="button"
                 onClick={() => setSearchOpen(true)}
                 className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all text-sm"
                 aria-label="Suchen"
@@ -311,6 +313,7 @@ export default function Layout({ children }: LayoutProps) {
               </button>
               {/* Search Button – Mobile (nur Icon) */}
               <button
+                type="button"
                 onClick={() => setSearchOpen(true)}
                 className="sm:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all"
                 aria-label="Suche öffnen"
@@ -332,6 +335,7 @@ export default function Layout({ children }: LayoutProps) {
               
               {/* Mobile Menu Button */}
               <button
+                type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
                 aria-label="Menü öffnen"
@@ -376,6 +380,7 @@ export default function Layout({ children }: LayoutProps) {
                 {/* Mobile Ressourcen Accordion */}
                 <div className="mt-1">
                   <button
+                    type="button"
                     onClick={() => setMobileRessourcenOpen(!mobileRessourcenOpen)}
                     aria-expanded={mobileRessourcenOpen}
                     aria-controls="mobile-ressourcen-menu"
@@ -444,6 +449,7 @@ export default function Layout({ children }: LayoutProps) {
                 </Link>
                 {/* Mobile Search Button */}
                 <button
+                  type="button"
                   onClick={() => {
                     setMobileMenuOpen(false);
                     setSearchOpen(true);

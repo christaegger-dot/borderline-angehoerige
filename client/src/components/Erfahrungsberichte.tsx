@@ -208,6 +208,7 @@ export default function Erfahrungsberichte({
         >
           {/* Navigation arrows */}
           <button
+            type="button"
             onClick={prev}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-11 h-11 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
             aria-label="Vorheriger Bericht"
@@ -216,6 +217,7 @@ export default function Erfahrungsberichte({
           </button>
           
           <button
+            type="button"
             onClick={next}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-11 h-11 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
             aria-label="Nächster Bericht"
@@ -270,6 +272,7 @@ export default function Erfahrungsberichte({
           <div className="flex items-center justify-center gap-0 mt-6">
             {displayBerichte.map((_, index) => (
               <button
+                type="button"
                 key={index}
                 onClick={() => goTo(index, index > current ? 1 : -1)}
                 className="relative flex items-center justify-center min-w-[44px] min-h-[44px]"

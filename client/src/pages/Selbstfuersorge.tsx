@@ -130,7 +130,8 @@ function UebungAkkordeon({ title, icon: Icon, children, color }: {
   
   return (
     <Card className="border-border/50 overflow-hidden">
-      <button 
+      <button
+        type="button" 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-5 flex items-center justify-between text-left hover:bg-muted/30 transition-colors"
         aria-expanded={isOpen}

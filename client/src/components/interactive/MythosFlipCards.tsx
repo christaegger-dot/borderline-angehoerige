@@ -73,6 +73,7 @@ function FlipCard({
       transition={{ duration: 0.4, delay: index * 0.08 }}
     >
       <button
+        type="button"
         onClick={handleClick}
         className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-mid focus-visible:ring-offset-2 rounded-xl"
         aria-label={isFlipped ? `Zurück zum Mythos: ${card.myth}` : `Aufdecken: ${card.myth}`}
@@ -162,6 +163,7 @@ export default function MythosFlipCards() {
           Tippen Sie auf eine Karte, um die Realität aufzudecken.
         </p>
         <button
+          type="button"
           onClick={handleReset}
           className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
           aria-label="Alle Karten zurücksetzen"

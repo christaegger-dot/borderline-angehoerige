@@ -249,6 +249,7 @@ export default function Buchempfehlungen() {
         <div className="container">
           <div className="flex flex-wrap gap-2">
             <button
+              type="button"
               onClick={() => setActiveCategory(null)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === null
@@ -260,6 +261,7 @@ export default function Buchempfehlungen() {
             </button>
             {bookCategories.map((category) => (
               <button
+                type="button"
                 key={category.id}
                 onClick={() => setActiveCategory(activeCategory === category.id ? null : category.id)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${

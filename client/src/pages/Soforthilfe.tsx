@@ -182,6 +182,7 @@ function StickyAmpelLeiste() {
           <div className="flex flex-col sm:flex-row gap-2">
             {ampelItems.map((item) => (
                 <button
+                  type="button"
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-white font-medium text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm"

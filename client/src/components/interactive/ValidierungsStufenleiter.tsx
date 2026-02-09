@@ -3,9 +3,13 @@
  * Interaktiver Stepper: Klick auf jede Stufe zeigt Beispiel-Dialog mit Highlight.
  * Einfügepunkt: /kommunizieren → 6 Stufen der Validierung
  * + localStorage-Fortschritts-Tracker (tracks which steps have been visited)
+ * 
+ * Inhalt basiert auf: Marsha M. Linehan, DBT Skills Training Manual (2015),
+ * Handout 18: A "How To" Guide to Validation – 6 Levels of Validation.
+ * Angepasst für Angehörige von Menschen mit Borderline.
  */
 import { useState, useEffect } from "react";
-import { Eye, MessageSquare, Sparkles, History, Users, Star, ChevronRight, ChevronLeft, CheckCircle2 } from "lucide-react";
+import { Eye, MessageSquare, Sparkles, History, Users, Star, ChevronRight, ChevronLeft, CheckCircle2, AlertTriangle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,95 +19,149 @@ import ProgressBar from "./ProgressBar";
 interface Stufe {
   level: number;
   title: string;
+  subtitle: string;
   icon: React.ElementType;
   color: string;
-  description: string;
-  example: string;
+  ziel: string;
+  soGehts: string[];
+  beispielsaetze: string[];
+  typischerFehler: string;
   dialog: {
     angehoeriger: string;
     betroffener: string;
   };
-  tipp: string;
 }
 
 const stufen: Stufe[] = [
   {
     level: 1,
-    title: "Präsent sein",
+    title: "Aufmerksam sein",
+    subtitle: "«Ich bin jetzt wirklich da.»",
     icon: Eye,
     color: "var(--color-sand-border)",
-    description: "Aufmerksam zuhören, Blickkontakt halten, nicht abgelenkt sein.",
-    example: "Sie legen das Handy weg und wenden sich Ihrem Angehörigen zu.",
+    ziel: "Sicherheit durch Präsenz.",
+    soGehts: [
+      "Kurz innehalten, Blick und Körper zuwenden",
+      "Handy weg, nicht nebenbei «argumentieren»",
+      "Ruhige Stimme",
+    ],
+    beispielsaetze: [
+      "«Ich bin da. Sag mir, was los ist.»",
+      "«Ich möchte dich verstehen. Erzähl.»",
+    ],
+    typischerFehler: "Gleich Lösungen, Ratschläge oder Logik («Du musst doch nur…»).",
     dialog: {
       betroffener: "Mir geht es nicht gut heute…",
-      angehoeriger: "(Handy weglegen, Blickkontakt) Ich bin da. Erzähl mir.",
+      angehoeriger: "(Handy weglegen, Blickkontakt) Ich bin da. Erzähl mir, was los ist.",
     },
-    tipp: "Schon allein Ihre volle Aufmerksamkeit kann beruhigend wirken.",
   },
   {
     level: 2,
-    title: "Genau reflektieren",
+    title: "Spiegeln",
+    subtitle: "«Ich habe verstanden, was du meinst.»",
     icon: MessageSquare,
     color: "var(--color-terracotta)",
-    description: "Das Gehörte in eigenen Worten wiedergeben – ohne Interpretation.",
-    example: "«Du sagst, du fühlst dich allein gelassen.»",
+    ziel: "Missverständnisse reduzieren, Tempo rausnehmen.",
+    soGehts: [
+      "In eigenen Worten zusammenfassen",
+      "Ohne Bewertung, ohne Ironie",
+    ],
+    beispielsaetze: [
+      "«Du fühlst dich gerade total verletzt, weil du meinst, ich hätte dich ignoriert.»",
+      "«Wenn ich dich richtig verstehe: Du hast Angst, dass ich dich verlasse.»",
+    ],
+    typischerFehler: "Spiegeln mit «aber» («Ich verstehe, ABER…») – das fühlt sich oft wie Abwertung an.",
     dialog: {
       betroffener: "Niemand ruft mich an. Alle haben mich vergessen.",
-      angehoeriger: "Du sagst, du fühlst dich allein gelassen und vergessen.",
+      angehoeriger: "Du fühlst dich gerade allein gelassen und vergessen. Stimmt das so?",
     },
-    tipp: "Beginnen Sie mit «Du sagst…» oder «Ich höre, dass…».",
   },
   {
     level: 3,
-    title: "Unausgesprochenes benennen",
+    title: "Zwischen den Zeilen verstehen",
+    subtitle: "«Kann es sein, dass…?»",
     icon: Sparkles,
     color: "var(--color-sand-mid)",
-    description: "Gefühle erkennen, die nicht direkt ausgesprochen werden.",
-    example: "«Das klingt, als wärst du auch wütend darüber.»",
+    ziel: "Das Gefühl hinter der Reaktion erkennen (z. B. Scham hinter Wut).",
+    soGehts: [
+      "Vorsichtige Vermutung äussern",
+      "Korrektur erlauben – nachfragen statt behaupten",
+    ],
+    beispielsaetze: [
+      "«Ich frage mich, ob da auch Angst dabei ist – stimmt das?»",
+      "«Bist du gerade eher verletzt als wütend?»",
+    ],
+    typischerFehler: "Gedankenlesen als Tatsache («Du bist doch nur eifersüchtig!»).",
     dialog: {
       betroffener: "Mein Chef hat mich vor allen kritisiert. Egal.",
-      angehoeriger: "Das klingt, als wärst du nicht nur enttäuscht, sondern auch wütend und verletzt.",
+      angehoeriger: "Kann es sein, dass du nicht nur enttäuscht bist, sondern auch wütend und verletzt?",
     },
-    tipp: "Achten Sie auf Körpersprache und Tonfall – sie verraten oft mehr als Worte.",
   },
   {
     level: 4,
-    title: "Aus der Geschichte erklären",
+    title: "Nachvollziehen",
+    subtitle: "«Es macht Sinn, dass das dich triggert.»",
     icon: History,
     color: "var(--color-terracotta-mid)",
-    description: "Das Verhalten im Kontext der Lebensgeschichte verstehen.",
-    example: "«Nach allem, was du erlebt hast, ist es verständlich, dass du so reagierst.»",
+    ziel: "Bedeutung geben, ohne zu bewerten.",
+    soGehts: [
+      "Gründe benennen: Stress, Vergangenheit, Trigger, Überforderung",
+      "Sinn machen statt recht haben",
+    ],
+    beispielsaetze: [
+      "«Wenn du dich schnell verlassen fühlst, ist es logisch, dass das Warten dich so stresst.»",
+      "«Bei dem, was du heute schon alles hattest, ist klar, dass die Nerven dünn sind.»",
+    ],
+    typischerFehler: "Bagatellisieren («So schlimm ist das doch nicht.»).",
     dialog: {
       betroffener: "Ich kann einfach niemandem vertrauen!",
-      angehoeriger: "Nach dem, was du in deiner Kindheit erlebt hast, ist es verständlich, dass Vertrauen so schwer ist.",
+      angehoeriger: "Nach dem, was du erlebt hast, macht es Sinn, dass Vertrauen so schwer ist.",
     },
-    tipp: "Das ist keine Entschuldigung für Verhalten, sondern ein Verstehen der Ursache.",
   },
   {
     level: 5,
-    title: "Normalität bestätigen",
+    title: "Das Gültige anerkennen",
+    subtitle: "«Diesen Teil kann ich gut nachvollziehen.»",
     icon: Users,
     color: "var(--color-terracotta-dark)",
-    description: "Bestätigen, dass die Reaktion in dieser Situation normal ist.",
-    example: "«Jeder würde in dieser Situation so fühlen.»",
+    ziel: "Den «wahren Kern» finden – auch wenn anderes nicht okay war.",
+    soGehts: [
+      "Gefühl oder Bedürfnis anerkennen (z. B. Nähe, Sicherheit, Respekt)",
+      "Ggf. Verhalten später getrennt ansprechen",
+    ],
+    beispielsaetze: [
+      "«Dass du dir Nähe wünschst, ist völlig verständlich.»",
+      "«Ich sehe, dass du gerade dringend Sicherheit brauchst.»",
+      "«Ich verstehe, dass du verzweifelt bist – und ich kann nicht angeschrien werden.»",
+      "«Ich sehe deine Angst – und ich bleibe bei meinem Nein.»",
+    ],
+    typischerFehler: "Validierung mit Nachgeben verwechseln.",
     dialog: {
       betroffener: "Bin ich verrückt, dass mich das so trifft?",
-      angehoeriger: "Nein, das ist eine ganz normale Reaktion. Jeder würde sich in dieser Situation verletzt fühlen.",
+      angehoeriger: "Nein – dass du dir Sicherheit wünschst, ist völlig verständlich. Und ich sage dir auch ehrlich, wo meine Grenze ist.",
     },
-    tipp: "Besonders wirksam bei Menschen, die ihre eigenen Gefühle oft in Frage stellen.",
   },
   {
     level: 6,
-    title: "Radikale Echtheit",
+    title: "Auf Augenhöhe bleiben",
+    subtitle: "«Wir sind zwei gleichwertige Menschen.»",
     icon: Star,
     color: "var(--color-terracotta-dark)",
-    description: "Echtes, tiefes Verständnis und Vertrauen in die Stärke des anderen.",
-    example: "«Ich glaube an dich. Du schaffst das.»",
+    ziel: "Keine Überlegenheit, keine Herablassung, keine «Therapeutenrolle».",
+    soGehts: [
+      "Respektvoll, klar, ruhig",
+      "Kein Spott, keine Diagnosen als Keule («Du bist halt Borderliner…»)",
+      "Kein «Ich weiss schon, was du brauchst»",
+    ],
+    beispielsaetze: [
+      "«Ich nehme dich ernst. Und ich sage dir auch ehrlich, wie es bei mir ankommt.»",
+      "«Wir finden einen Weg, der für uns beide passt.»",
+    ],
+    typischerFehler: "Belehren, analysieren, «psychologisieren».",
     dialog: {
-      betroffener: "Ich weiss nicht, ob ich das jemals schaffe…",
-      angehoeriger: "Ich sehe, wie hart du kämpfst. Und ich glaube an dich – du hast schon so viel geschafft.",
+      betroffener: "Du verstehst mich sowieso nicht…",
+      angehoeriger: "Ich nehme dich ernst. Und ich sage dir auch ehrlich, wie es bei mir ankommt. Lass uns zusammen schauen.",
     },
-    tipp: "Die höchste Stufe: Authentisch sein, nicht perfekt.",
   },
 ];
 
@@ -131,7 +189,7 @@ export default function ValidierungsStufenleiter() {
       </div>
 
       <p className="text-sm text-muted-foreground mb-5">
-        Klicken Sie auf eine Stufe, um den Beispiel-Dialog zu sehen. Arbeiten Sie sich von Stufe 1 nach oben.
+        Klicke auf eine Stufe, um Beispielsätze und den typischen Fehler zu sehen. Arbeite dich von Stufe 1 nach oben.
       </p>
 
       {/* Stufen-Leiste */}
@@ -178,7 +236,7 @@ export default function ValidierungsStufenleiter() {
           <Card className="border-2" style={{ borderColor: current.color }}>
             <CardContent className="p-5">
               {/* Header */}
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-1">
                 <span
                   className="w-9 h-9 rounded-full text-white text-sm font-bold flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: current.color }}
@@ -189,9 +247,48 @@ export default function ValidierungsStufenleiter() {
                   <h4 className="font-semibold text-foreground text-base">
                     {current.title}
                   </h4>
-                  <p className="text-xs text-muted-foreground">
-                    {current.description}
+                  <p className="text-sm text-muted-foreground italic">
+                    {current.subtitle}
                   </p>
+                </div>
+              </div>
+
+              {/* Ziel */}
+              <div className="mt-4 mb-4">
+                <p className="text-sm text-foreground">
+                  <strong>Ziel:</strong> {current.ziel}
+                </p>
+              </div>
+
+              {/* So geht's */}
+              <div className="mb-4">
+                <p className="text-xs font-medium text-muted-foreground mb-2">So geht's:</p>
+                <ul className="space-y-1.5">
+                  {current.soGehts.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-sage-mid flex-shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Beispielsätze */}
+              <div className="mb-4">
+                <p className="text-xs font-medium text-muted-foreground mb-2">Beispielsätze:</p>
+                <div className="space-y-2">
+                  {current.beispielsaetze.map((satz, i) => (
+                    <div
+                      key={i}
+                      className="text-sm font-medium leading-relaxed rounded-md px-3 py-2"
+                      style={{
+                        backgroundColor: `color-mix(in oklch, ${current.color} 10%, white)`,
+                        color: current.color,
+                      }}
+                    >
+                      {satz}
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -224,10 +321,13 @@ export default function ValidierungsStufenleiter() {
                 </div>
               </div>
 
-              {/* Tipp */}
-              <div className="flex items-start gap-2 text-xs text-muted-foreground bg-background rounded-lg p-3 border border-border/50">
-                <Sparkles className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-sage-mid" />
-                <p>{current.tipp}</p>
+              {/* Typischer Fehler */}
+              <div className="flex items-start gap-2 text-xs bg-terracotta-wash/50 rounded-lg p-3 border border-terracotta-mid/20">
+                <AlertTriangle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-terracotta-mid" />
+                <p className="text-foreground">
+                  <strong className="text-terracotta-mid">Typischer Fehler:</strong>{" "}
+                  {current.typischerFehler}
+                </p>
               </div>
 
               {/* Navigation */}
@@ -264,7 +364,7 @@ export default function ValidierungsStufenleiter() {
       </AnimatePresence>
 
       <p className="text-xs text-muted-foreground mt-4">
-        Quelle: Marsha M. Linehan, DBT Skills Training Manual (2015)
+        Quelle: Marsha M. Linehan, DBT Skills Training Handouts and Worksheets, 2nd Edition (2015), Handout 18: A "How To" Guide to Validation.
       </p>
     </div>
   );

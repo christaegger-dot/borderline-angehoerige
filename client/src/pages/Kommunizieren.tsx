@@ -114,23 +114,156 @@ export default function Kommunizieren() {
               icon={<Heart className="w-7 h-7 text-terracotta" />}
               id="validierung"
               defaultOpen={true}
-              preview="Validierung bedeutet, die Gefühle und Erfahrungen eines Menschen anzuerkennen – ohne sie zu bewerten."
+              preview="Validieren heisst: Ich zeige der anderen Person, dass ich sie ernst nehme und dass ihre Gefühle für mich Sinn machen."
             >
+              {/* Was bedeutet validieren? */}
               <Card className="bg-terracotta-light/10 border-terracotta mb-6">
                 <CardContent className="p-6">
-                  <p className="text-foreground leading-relaxed text-lg">
-                    <strong>Validierung</strong> bedeutet, die Gefühle und Erfahrungen eines Menschen anzuerkennen – ohne sie zu bewerten, zu korrigieren oder zu lösen.
+                  <h3 className="font-semibold text-foreground mb-3">Was bedeutet «validieren»?</h3>
+                  <p className="text-foreground leading-relaxed text-lg mb-3">
+                    <strong>Validieren heisst:</strong> Ich zeige der anderen Person, dass ich <strong>sie ernst nehme</strong> und dass ihre Gefühle/Erlebnisse <strong>für mich Sinn machen</strong> – <em>auch wenn ich nicht alles gut finde oder nicht einverstanden bin.</em>
+                  </p>
+                  <p className="text-foreground leading-relaxed mb-3">
+                    Validierung ist <strong>keine Zustimmung</strong>, kein «Du hast recht», und auch kein «Ich gebe nach».
+                  </p>
+                  <p className="text-foreground leading-relaxed font-medium italic">
+                    Es ist eher: «Ich verstehe, dass du dich so fühlst – und ich bleibe mit dir im Kontakt.»
                   </p>
                 </CardContent>
               </Card>
-              
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Validierung ist nicht dasselbe wie Zustimmung. Sie können ein Gefühl anerkennen, ohne das Verhalten gutzuheissen. Das ist ein wichtiger Unterschied.
-              </p>
+
+              {/* Warum ist Validierung bei Borderline so wichtig? */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-foreground mb-3">Warum ist Validierung bei Borderline so wichtig?</h3>
+                <p className="text-muted-foreground leading-relaxed mb-3">
+                  Menschen mit Borderline erleben Gefühle oft <strong className="text-foreground">sehr intensiv</strong> und reagieren schnell auf Signale von <strong className="text-foreground">Ablehnung, Kritik, Distanz oder Unklarheit</strong>. Wenn sie sich <em>nicht gesehen</em> oder <em>missverstanden</em> fühlen, kann das die innere Anspannung massiv erhöhen (z.{"\u00A0"}B. Wut, Angst, Verzweiflung, Rückzug).
+                </p>
+                <Card className="bg-sage-wash/50 border-sage-mid/30">
+                  <CardContent className="p-4">
+                    <p className="text-foreground leading-relaxed font-medium">
+                      Validierung wirkt wie ein emotionales Geländer: Sie senkt Stress, verhindert Eskalation und macht Problemlösen überhaupt erst möglich.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Wann lohnt sich Validierung besonders? */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-foreground mb-3">Wann lohnt sich Validierung besonders?</h3>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  {[
+                    "Wenn die Stimmung kippt (Wut, Tränen, Vorwürfe, Panik)",
+                    "Bei Konflikten (\"Du liebst mich nicht!\", \"Du lässt mich allein!\")",
+                    "Nach Selbstverletzung/Impulsdurchbrüchen (ohne Moralpredigt)",
+                    'Wenn du merkst: «Ich will erklären – aber es wird nur schlimmer.»',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <ArrowRight className="w-4 h-4 text-terracotta-mid flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Card className="bg-terracotta-wash border-terracotta-mid/20">
+                  <CardContent className="p-4">
+                    <p className="text-foreground font-medium text-sm">
+                      Merksatz: <em>Erst beruhigen (Verbindung), dann klären (Inhalt).</em>
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
               
               <h3 className="text-xl font-semibold text-foreground mb-4">Die 6 Stufen der Validierung</h3>
+              <p className="text-muted-foreground leading-relaxed mb-2 text-sm">
+                Einfach, praktisch, mit Beispielsätzen – basierend auf Marsha Linehans DBT-Modell.
+              </p>
               
               <ValidierungsStufenleiter />
+
+              {/* Mini-Leitfaden für schwierige Momente */}
+              <div className="mt-10 pt-6 border-t border-border/50">
+                <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <Lightbulb className="w-5 h-5 text-sand-mid" />
+                  Mini-Leitfaden für schwierige Momente
+                </h3>
+
+                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/30 mb-5">
+                  <CardContent className="p-5">
+                    <h4 className="font-semibold text-foreground mb-3">Wenn es gerade eskaliert:</h4>
+                    <ol className="space-y-3">
+                      {[
+                        { step: "Stoppen:", text: "«Warte kurz. Ich will nicht streiten.»" },
+                        { step: "Validieren (Stufe 1–2):", text: "«Ich höre dich. Du bist gerade sehr verletzt.»" },
+                        { step: "Benennen + Grenze:", text: "«Ich bleibe da, aber nicht bei Beschimpfungen.»" },
+                        { step: "Vorschlag:", text: "«Lass uns 10 Minuten runterfahren und dann weiterreden.»" },
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="w-6 h-6 rounded-full bg-terracotta-mid text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            {i + 1}
+                          </span>
+                          <p className="text-sm text-foreground">
+                            <strong>{item.step}</strong> {item.text}
+                          </p>
+                        </li>
+                      ))}
+                    </ol>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-sage-wash/50 border-sage-mid/30">
+                  <CardContent className="p-5">
+                    <h4 className="font-semibold text-foreground mb-3">3 Sätze, die fast immer helfen</h4>
+                    <div className="space-y-2">
+                      {[
+                        "«Ich sehe, dass es dir gerade richtig schlecht geht.»",
+                        "«Es macht Sinn, dass das dich so trifft.»",
+                        "«Ich bin da – und wir schauen Schritt für Schritt.»",
+                      ].map((satz, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-sage-mid flex-shrink-0 mt-0.5" />
+                          <p className="text-foreground font-medium text-sm">{satz}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Häufige Missverständnisse */}
+              <div className="mt-8 pt-6 border-t border-border/50">
+                <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <RefreshCw className="w-5 h-5 text-slate-mid" />
+                  Häufige Missverständnisse bei Angehörigen
+                </h3>
+
+                <div className="space-y-4">
+                  <Card className="border-border/50">
+                    <CardContent className="p-5">
+                      <h4 className="font-semibold text-foreground mb-2 text-sm">«Wenn ich validiere, bestätige ich doch das Drama.»</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Nein. Du bestätigst <strong className="text-foreground">das Erleben</strong>, nicht jede Interpretation. Du kannst validieren und trotzdem sagen: «Ich sehe dich – und ich bleibe bei meiner Grenze.»
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-border/50">
+                    <CardContent className="p-5">
+                      <h4 className="font-semibold text-foreground mb-2 text-sm">«Soll ich auch validieren, wenn Vorwürfe unfair sind?»</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Ja – <strong className="text-foreground">den emotionalen Kern</strong>, nicht den Vorwurf. Beispiel: «Ich sehe deine Angst/Verletzung» statt «Ja stimmt, ich bin schuld».
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-border/50">
+                    <CardContent className="p-5">
+                      <h4 className="font-semibold text-foreground mb-2 text-sm">«Wann ist der richtige Zeitpunkt für Problemlösen?»</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Meist <strong className="text-foreground">erst nach</strong> etwas Beruhigung. Wenn die Anspannung hoch ist, wirkt Logik wie Ablehnung.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </ContentSection>
 
             {/* Zuhören ohne Zustimmen */}

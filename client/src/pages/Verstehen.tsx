@@ -36,8 +36,8 @@ const verstehenInfografiken = [
     title: "Spaltung",
     description: "Das Pendel zwischen Extremen – die Grauzone stärken.",
     category: "grundlagen",
-    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gNpeJqfUBZRASmzM.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BSFCCqVxxwxDolfw.pdf",
+    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WRORriPmZftmvKTL.webp",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RtdVgflJuCNAhEKk.pdf",
     alt: "Spaltung – das Pendel zwischen Extremen",
   },
   {

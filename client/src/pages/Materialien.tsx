@@ -84,15 +84,6 @@ const infografiken: Array<{
   // KATEGORIE 2: KOMMUNIZIEREN
   // ═══════════════════════════════════════════════════════════════════════════
   {
-    id: "2-6-beispiel-dialog",
-    title: "Beispiel-Dialog: kurz bleiben, ruhig bleiben",
-    description: "Chat-Sequenzdiagramm: Kurz + ruhig + wiederholbar wirkt in Krisen stärker als Argumente.",
-    category: "kommunizieren",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
-  },
-  {
     id: "spickzettel-krisenkommunikation",
     title: "Spickzettel Krisenkommunikation (A4)",
     description: "Laminierbarer 1-Seiter mit allen Standardsätzen für die Krise – zum Ablesen in akuten Situationen.",
@@ -109,6 +100,15 @@ const infografiken: Array<{
     type: "Checkliste",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mORKPLGTfHhGEMau.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skHsKXRHdjFPuonb.pdf",
+  },
+  {
+    id: "2-6-beispiel-dialog",
+    title: "Beispiel-Dialog: kurz bleiben, ruhig bleiben",
+    description: "Chat-Sequenzdiagramm: Kurz + ruhig + wiederholbar wirkt in Krisen stärker als Argumente.",
+    category: "kommunizieren",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 3: UNTERSTÜTZEN

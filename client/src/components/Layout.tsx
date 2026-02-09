@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon, TrendingUp, Users, ChevronDown, FileText, HelpCircle, BookMarked, Building2, Stethoscope, FolderOpen } from "lucide-react";
 const Search = lazy(() => import("@/components/Search"));
 import { Button } from "@/components/ui/button";
@@ -41,11 +41,36 @@ export default function Layout({ children }: LayoutProps) {
   const ressourcenButtonRef = useRef<HTMLButtonElement>(null);
   const ressourcenTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const ressourcenOpenRef = useRef(false);
+  const menuItemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const focusedIndexRef = useRef(-1);
 
   // Sync ref with state so the keydown handler always sees current value
   useEffect(() => {
     ressourcenOpenRef.current = ressourcenOpen;
+    if (!ressourcenOpen) {
+      focusedIndexRef.current = -1;
+    }
   }, [ressourcenOpen]);
+
+  // Focus a menu item by index (clamped to valid range)
+  const focusMenuItem = useCallback((index: number) => {
+    const items = menuItemsRef.current.filter(Boolean) as HTMLAnchorElement[];
+    if (items.length === 0) return;
+    const clamped = ((index % items.length) + items.length) % items.length;
+    focusedIndexRef.current = clamped;
+    items[clamped]?.focus();
+  }, []);
+
+  // Open dropdown and focus first item (WAI-ARIA pattern)
+  const openAndFocusFirst = useCallback(() => {
+    setRessourcenOpen(true);
+    // requestAnimationFrame ensures the menu DOM is rendered before focusing
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        focusMenuItem(0);
+      });
+    });
+  }, [focusMenuItem]);
 
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
@@ -64,6 +89,45 @@ export default function Layout({ children }: LayoutProps) {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  // Keyboard navigation within the open dropdown (Arrow keys, Home, End, Focus-Trap)
+  const handleMenuKeyDown = useCallback((e: React.KeyboardEvent) => {
+    const items = menuItemsRef.current.filter(Boolean) as HTMLAnchorElement[];
+    if (items.length === 0) return;
+
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        focusMenuItem(focusedIndexRef.current + 1);
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        focusMenuItem(focusedIndexRef.current - 1);
+        break;
+      case "Home":
+        e.preventDefault();
+        focusMenuItem(0);
+        break;
+      case "End":
+        e.preventDefault();
+        focusMenuItem(items.length - 1);
+        break;
+      case "Tab": {
+        // Focus-Trap: wrap around instead of leaving the menu
+        e.preventDefault();
+        if (e.shiftKey) {
+          // Shift+Tab on first item → last item
+          focusMenuItem(focusedIndexRef.current - 1);
+        } else {
+          // Tab on last item → first item
+          focusMenuItem(focusedIndexRef.current + 1);
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  }, [focusMenuItem]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -159,7 +223,13 @@ export default function Layout({ children }: LayoutProps) {
               >
                 <button
                   ref={ressourcenButtonRef}
-                  onClick={() => setRessourcenOpen(!ressourcenOpen)}
+                  onClick={() => ressourcenOpen ? setRessourcenOpen(false) : openAndFocusFirst()}
+                  onKeyDown={(e) => {
+                    if (e.key === "ArrowDown") {
+                      e.preventDefault();
+                      openAndFocusFirst();
+                    }
+                  }}
                   className={`flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-500 whitespace-nowrap ${
                     isRessourcenActive || ressourcenOpen
                       ? "bg-terracotta-light text-terracotta-darker"
@@ -183,6 +253,7 @@ export default function Layout({ children }: LayoutProps) {
                       id="ressourcen-menu"
                       role="menu"
                       aria-label="Ressourcen-Navigation"
+                      onKeyDown={handleMenuKeyDown}
                       className="absolute right-0 top-full mt-1 w-64 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/8 overflow-hidden z-50"
                     >
                       <div className="py-2">
@@ -199,13 +270,16 @@ export default function Layout({ children }: LayoutProps) {
                               <Link
                                 href={item.href}
                                 role="menuitem"
+                                tabIndex={-1}
+                                ref={(el: HTMLAnchorElement | null) => { menuItemsRef.current[index] = el; }}
+                                onFocus={() => { focusedIndexRef.current = index; }}
                                 onClick={() => setRessourcenOpen(false)}
-                                className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all ${
+                                className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all outline-none focus-visible:ring-2 focus-visible:ring-terracotta/40 focus-visible:ring-inset ${
                                   isSoforthilfe
-                                    ? "text-alert font-medium hover:bg-alert/8"
+                                    ? "text-alert font-medium hover:bg-alert/8 focus:bg-alert/8"
                                     : isActive
                                       ? "bg-terracotta-light/50 text-terracotta-darker font-medium"
-                                      : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                                      : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
                                 }`}
                               >
                                 <Icon className={`w-4 h-4 shrink-0 ${isSoforthilfe ? "text-alert" : ""}`} />

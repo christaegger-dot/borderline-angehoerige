@@ -53,9 +53,9 @@ export default function Layout({ children }: LayoutProps) {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
         <div className="container">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
+            <Link href="/" className="flex items-center gap-2 group shrink-0">
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NqViLFGTREhdSTsm.webp"
                 alt="Startseite"
@@ -65,20 +65,20 @@ export default function Layout({ children }: LayoutProps) {
                 loading="eager"
                 decoding="async"
               />
-              <span className="hidden lg:inline font-medium text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <span className="hidden 2xl:inline font-medium text-sm text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
                 Borderline · Hilfe für Angehörige
               </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 shrink-0">
               {navItems.map((item) => {
                 const isActive = location.startsWith(item.href);
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-500 ${
+                    className={`px-2.5 lg:px-3 xl:px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-500 whitespace-nowrap ${
                       isActive
                         ? "bg-terracotta-light text-terracotta-darker"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -91,7 +91,7 @@ export default function Layout({ children }: LayoutProps) {
             </nav>
 
             {/* Search, Emergency Button & Mobile Menu */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 shrink-0">
               {/* Search Button – Desktop */}
               <button
                 onClick={() => setSearchOpen(true)}
@@ -99,8 +99,8 @@ export default function Layout({ children }: LayoutProps) {
                 aria-label="Suchen"
               >
                 <SearchIcon className="w-4 h-4" />
-                <span className="hidden md:inline">Suchen</span>
-                <kbd aria-hidden="true" className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">
+                <span className="hidden xl:inline">Suchen</span>
+                <kbd aria-hidden="true" className="hidden xl:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">
                   <span className="text-xs">⌘</span>K
                 </kbd>
               </button>
@@ -120,8 +120,8 @@ export default function Layout({ children }: LayoutProps) {
                   className="bg-alert hover:bg-alert text-white animate-breathe hidden sm:flex"
                   tabIndex={-1}
                 >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Soforthilfe
+                  <Phone className="w-4 h-4 lg:mr-0 xl:mr-2" />
+                  <span className="hidden xl:inline">Soforthilfe</span>
                 </Button>
               </Link>
               

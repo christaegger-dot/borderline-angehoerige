@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, ExternalLink, Image, FileText, Waves, UserX, Fingerprint, Contrast, Zap, Scissors, Clock, RefreshCw, Layers, Users, Activity, XCircle, Download, Filter } from "lucide-react";
+import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, ExternalLink, Image, FileText, Clock, RefreshCw, Layers, Users, Activity, XCircle, Download, Filter } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
@@ -407,81 +407,6 @@ export default function Verstehen() {
               <MythosFlipCards />
             </ContentSection>
 
-            {/* Kernsymptome */}
-            <ContentSection
-              title="Die Kernsymptome im Überblick"
-              icon={<AlertCircle className="w-7 h-7 text-terracotta" />}
-              id="kernsymptome"
-              preview="Emotionale Instabilität, Verlassensangst, instabiles Selbstbild und weitere Kernsymptome verständlich erklärt."
-            >
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "Emotionale Instabilität",
-                    description: "Schnelle, intensive Stimmungswechsel, die von aussen oft nicht nachvollziehbar erscheinen.",
-                    icon: Waves,
-                    color: "var(--color-terracotta)",
-                    bgColor: "var(--color-terracotta-lighter)"
-                  },
-                  {
-                    title: "Verlassensangst",
-                    description: "Intensive Angst vor Zurückweisung oder Verlassenwerden, die zu verzweifelten Versuchen führen kann, dies zu verhindern.",
-                    icon: UserX,
-                    color: "var(--color-terracotta-mid)",
-                    bgColor: "var(--color-terracotta-lighter)"
-                  },
-                  {
-                    title: "Instabiles Selbstbild",
-                    description: "Unsicherheit darüber, wer man ist, was man will und welche Werte man hat.",
-                    icon: Fingerprint,
-                    color: "var(--color-slate-dark)",
-                    bgColor: "var(--color-slate-lighter)"
-                  },
-                  {
-                    title: "Schwarz-Weiss-Denken",
-                    description: "Die Tendenz, Menschen und Situationen als entweder 'ganz gut' oder 'ganz schlecht' zu sehen.",
-                    icon: Contrast,
-                    color: "var(--color-charcoal)",
-                    bgColor: "var(--color-slate-lighter)"
-                  },
-                  {
-                    title: "Impulsivität",
-                    description: "Handlungen ohne Nachdenken über die Konsequenzen, oft in Bereichen wie Geldausgaben, Essen oder Beziehungen.",
-                    icon: Zap,
-                    color: "var(--color-sand-mid)",
-                    bgColor: "var(--color-terracotta-lighter)"
-                  },
-                  {
-                    title: "Selbstverletzendes Verhalten",
-                    description: "Handlungen, die dem eigenen Körper schaden, oft als Versuch, intensive Emotionen zu regulieren.",
-                    icon: Scissors,
-                    color: "var(--color-sage)",
-                    bgColor: "var(--color-sage-lighter)"
-                  }
-                ].map((item, index) => {
-                  const Icon = item.icon;
-                  return (
-                    <Card key={index} className={`border-border/50 hover:shadow-md transition-all duration-500 ${index === 0 ? "sm:col-span-2" : ""}`}>
-                      <CardContent className="p-5">
-                        <div className="flex items-start gap-4">
-                          <div 
-                            className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                            style={{ backgroundColor: item.bgColor }}
-                          >
-                            <Icon className="w-6 h-6" style={{ color: item.color }} />
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            </ContentSection>
-
             {/* Emotionale Demenz */}
             <ContentSection
               title="«Emotionale Demenz» – Warum Argumente nicht helfen"
@@ -695,11 +620,14 @@ export default function Verstehen() {
                         Genesung ist möglich
                       </h3>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        Die Forschung zeigt: Mit der richtigen Behandlung können die meisten Menschen mit Borderline eine deutliche Verbesserung erleben. Nach 10 Jahren erfüllen etwa 85% der Betroffenen nicht mehr die diagnostischen Kriterien.
+                        Borderline ist keine lebenslange Diagnose. Die Forschung zeigt, dass sich die Prognose mit der richtigen Behandlung deutlich verbessert.
                       </p>
-                      <p className="text-sm text-muted-foreground">
-                        Quelle: Zanarini et al. (2012), Journal of Personality Disorders
-                      </p>
+                      <Link href="/genesung">
+                        <Button variant="outline" size="sm" className="gap-2">
+                          <ArrowRight className="w-4 h-4" />
+                          Mehr über Genesung erfahren
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>

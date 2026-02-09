@@ -266,54 +266,6 @@ export default function Kommunizieren() {
               </div>
             </ContentSection>
 
-            {/* Zuhören ohne Zustimmen */}
-            <ContentSection
-              title="Zuhören ohne Zustimmen"
-              icon={<MessageSquare className="w-7 h-7 text-sage-mid" />}
-              id="zuhoeren"
-              preview="Validierung bedeutet nicht, dass Sie allem zustimmen müssen."
-            >
-              <Card className="bg-sage-wash/50 border-sage-mid/30 mb-6">
-                <CardContent className="p-6">
-                  <p className="text-foreground leading-relaxed">
-                    <strong>Wichtig:</strong> Validierung bedeutet nicht, dass Sie allem zustimmen müssen. Sie können sagen: «Ich verstehe, dass du das so erlebst» – ohne zu sagen «Du hast recht».
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <div className="grid sm:grid-cols-3 gap-4 [&>*:first-child]:sm:col-span-2">
-                <Card className="border-border/50">
-                  <CardContent className="p-4">
-                    <div className="w-10 h-10 rounded-full bg-sage-mid flex items-center justify-center mb-3">
-                      <Heart className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="font-semibold text-foreground text-sm mb-2">Validierung</h3>
-                    <p className="text-xs text-muted-foreground italic">«Ich höre, dass du wütend bist. Das klingt sehr belastend.»</p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-border/50">
-                  <CardContent className="p-4">
-                    <div className="w-10 h-10 rounded-full bg-terracotta-mid flex items-center justify-center mb-3">
-                      <MessageSquare className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="font-semibold text-foreground text-sm mb-2">Keine Zustimmung nötig</h3>
-                    <p className="text-xs text-muted-foreground italic">Sie müssen nicht bestätigen, dass die Wut berechtigt ist.</p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-border/50">
-                  <CardContent className="p-4">
-                    <div className="w-10 h-10 rounded-full bg-slate-blue flex items-center justify-center mb-3">
-                      <UserCircle className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="font-semibold text-foreground text-sm mb-2">Ihre Wahrheit bleibt</h3>
-                    <p className="text-xs text-muted-foreground italic">«Gleichzeitig sehe ich die Situation anders.»</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
             {/* SET-Kommunikation */}
             <ContentSection
               title="SET-Kommunikation"
@@ -419,66 +371,6 @@ export default function Kommunizieren() {
                   </div>
                 </CardContent>
               </Card>
-            </ContentSection>
-
-            {/* Praktische Tipps */}
-            <ContentSection
-              title="Praktische Kommunikationstipps"
-              icon={<Lightbulb className="w-7 h-7 text-sand-mid" />}
-              id="tipps"
-              preview="Hilfreich vs. Vermeiden – konkrete Dos and Don'ts für den Alltag."
-            >
-              <div className="grid sm:grid-cols-[7fr_5fr] gap-4">
-                <Card className="border-l-4 border-l-sage-mid bg-sage-lighter/30">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-sage-mid flex items-center justify-center">
-                        <CheckCircle2 className="w-5 h-5 text-white" />
-                      </div>
-                      Hilfreich
-                    </h3>
-                    <ul className="space-y-3 text-sm">
-                      {[
-                        "Ich-Botschaften verwenden",
-                        "Ruhig und langsam sprechen",
-                        "Pausen zulassen",
-                        "Gefühle benennen",
-                        "Nachfragen statt annehmen"
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-foreground">
-                          <CheckCircle2 className="w-4 h-4 text-sage-mid flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-lighter/30">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-terracotta-mid flex items-center justify-center">
-                        <XCircle className="w-5 h-5 text-white" />
-                      </div>
-                      Vermeiden
-                    </h3>
-                    <ul className="space-y-3 text-sm">
-                      {[
-                        "\"Du machst immer...\"",
-                        "\"Beruhige dich!\"",
-                        "\"Das ist doch nicht so schlimm\"",
-                        "Sarkasmus oder Ironie",
-                        "Unterbrechen oder Augenrollen"
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-foreground">
-                          <XCircle className="w-4 h-4 text-terracotta-mid flex-shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
             </ContentSection>
 
             {/* Konkrete Beispiel-Dialoge */}

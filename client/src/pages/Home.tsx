@@ -556,12 +556,12 @@ export default function Home() {
                       Materialien herunterladen
                     </h3>
                     <p className="text-muted-foreground mb-4">
-                      40 Materialien als A4-PDF – Infografiken, Spickzettel &amp; Notfallkarte
+                      31 Materialien als A4-PDF – Infografiken, Spickzettel &amp; Notfallkarte
                     </p>
                     <Link href="/materialien">
                       <Button className="bg-terracotta hover:bg-terracotta-mid text-white gap-2">
                         <Download className="w-4 h-4" />
-                        40 Materialien durchsuchen
+                        31 Materialien durchsuchen
                       </Button>
                     </Link>
                   </div>

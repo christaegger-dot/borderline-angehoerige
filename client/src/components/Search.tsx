@@ -80,8 +80,8 @@ const searchableContent = [
   },
   {
     title: "Die 6 Stufen der Validierung",
-    description: "Von präsent sein bis radikale Echtheit – konkrete Techniken",
-    keywords: ["stufen", "validierung", "präsent", "reflektieren", "normalität", "echtheit"],
+    description: "Von aufmerksam sein bis auf Augenhöhe bleiben – konkrete Techniken nach Linehan",
+    keywords: ["stufen", "validierung", "aufmerksam", "spiegeln", "augenhöhe", "linehan"],
     href: "/kommunizieren",
     section: "Kommunizieren"
   },

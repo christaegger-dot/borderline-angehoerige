@@ -7,8 +7,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
-// Home bleibt eager – wird immer als erstes geladen
-import Home from "./pages/Home";
+// Home wird ebenfalls lazy geladen um den initialen Bundle zu verkleinern
+const Home = lazy(() => import("./pages/Home"));
 
 // Alle anderen Seiten werden lazy geladen für kleineres initiales Bundle
 const Verstehen = lazy(() => import("./pages/Verstehen"));

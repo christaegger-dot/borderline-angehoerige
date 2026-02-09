@@ -255,7 +255,16 @@ const infografiken: Array<{
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DSOVugQyCvvOACIO.pdf",
   },
   {
-    id: "k5-7-raus-aus-dem-schuldspiel",
+    id: "k5-7-schuld-verantwortung",
+    title: "Schuld, Verantwortung und was dazwischen liegt",
+    description: "Warum Schuldgefühle bei Angehörigen so häufig sind: Was die Forschung zu den Ursachen von BPD zeigt, Schuld vs. Verantwortung im Vergleich, und 5 innere Schuld-Sätze – was wirklich stimmt.",
+    category: "selbstfuersorge",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TgzrtmiUbRscTBlg.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jPuhxPHHtFSjOTly.pdf",
+  },
+  {
+    id: "k5-8-raus-aus-dem-schuldspiel",
     title: "Raus aus dem Schuld-Spiel – nach Fruzzetti",
     description: "Warum Schuldzuweisungen in Familien niemanden weiterbringen: Die 4-Sackgassen-Matrix, der No-Blame-Ausweg (Beschreiben statt Beschuldigen) und 4 Grundannahmen für den Alltag.",
     category: "selbstfuersorge",
@@ -397,7 +406,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 30 Materialien verfügbar
+                    Alle 31 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung

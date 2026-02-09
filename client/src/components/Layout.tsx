@@ -47,6 +47,9 @@ export default function Layout({ children }: LayoutProps) {
         e.preventDefault();
         setSearchOpen(true);
       }
+      if (e.key === "Escape") {
+        setRessourcenOpen(false);
+      }
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);

@@ -155,7 +155,7 @@ export default function Kommunizieren() {
                     "Wenn die Stimmung kippt (Wut, Tränen, Vorwürfe, Panik)",
                     "Bei Konflikten (\"Du liebst mich nicht!\", \"Du lässt mich allein!\")",
                     "Nach Selbstverletzung/Impulsdurchbrüchen (ohne Moralpredigt)",
-                    'Wenn du merkst: «Ich will erklären – aber es wird nur schlimmer.»',
+                    'Wenn Sie merken: «Ich will erklären – aber es wird nur schlimmer.»',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 text-terracotta-mid flex-shrink-0 mt-0.5" />
@@ -240,7 +240,7 @@ export default function Kommunizieren() {
                     <CardContent className="p-5">
                       <h4 className="font-semibold text-foreground mb-2 text-sm">«Wenn ich validiere, bestätige ich doch das Drama.»</h4>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Nein. Du bestätigst <strong className="text-foreground">das Erleben</strong>, nicht jede Interpretation. Du kannst validieren und trotzdem sagen: «Ich sehe dich – und ich bleibe bei meiner Grenze.»
+                        Nein. Sie bestätigen <strong className="text-foreground">das Erleben</strong>, nicht jede Interpretation. Sie können validieren und trotzdem sagen: «Ich sehe dich – und ich bleibe bei meiner Grenze.»
                       </p>
                     </CardContent>
                   </Card>

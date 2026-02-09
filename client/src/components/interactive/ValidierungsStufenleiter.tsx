@@ -189,7 +189,7 @@ export default function ValidierungsStufenleiter() {
       </div>
 
       <p className="text-sm text-muted-foreground mb-5">
-        Klicke auf eine Stufe, um Beispielsätze und den typischen Fehler zu sehen. Arbeite dich von Stufe 1 nach oben.
+        Klicken Sie auf eine Stufe, um Beispielsätze und den typischen Fehler zu sehen. Arbeiten Sie sich von Stufe 1 nach oben.
       </p>
 
       {/* Stufen-Leiste */}

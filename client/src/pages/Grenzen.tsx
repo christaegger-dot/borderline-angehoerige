@@ -384,7 +384,7 @@ export default function Grenzen() {
             <ContentSection
               title="Konkrete Formulierungen für schwierige Situationen"
               icon={<HeartHandshake className="w-7 h-7 text-terracotta-mid" />}
-              id="formulierungen"
+              id="grenzen-formulierungen"
               preview="Spiegeln statt Aufnehmen – Beispielsätze für Vorwürfe, Gefühlsausbrüche, Grenzsetzung und Drohungen."
             >
               <p className="text-muted-foreground leading-relaxed mb-2">
@@ -435,7 +435,7 @@ export default function Grenzen() {
             <ContentSection
               title="Hinweise für Ihre Situation"
               icon={<Users className="w-7 h-7 text-slate-mid" />}
-              id="angehoerigengruppen"
+              id="grenzen-angehoerigengruppen"
               preview="Spezifische Hinweise zum Grenzen setzen für Partner, Eltern und erwachsene Kinder."
             >
               <div className="space-y-4">

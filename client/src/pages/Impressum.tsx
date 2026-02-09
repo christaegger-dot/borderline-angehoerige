@@ -185,7 +185,7 @@ export default function Impressum() {
             <ContentSection
               title="Quellenangaben"
               icon={<BookOpen className="w-7 h-7 text-sage-mid" />}
-              id="quellen"
+              id="impressum-quellen"
               preview="Fachliteratur von Mason/Kreger, Linehan, Fruzzetti und Gunderson/Hoffman."
             >
               <Card className="border-border/50">

@@ -365,6 +365,12 @@ export const URLS: UrlKontakt[] = [
     label: "DBT-Dachverband",
     sourceRef: "UnterstuetzenTherapie.tsx:362",
   },
+  {
+    id: "URL_PUK",
+    url: "https://www.pukzh.ch",
+    label: "PUK Zürich – Website",
+    sourceRef: "Fachstelle.tsx:181, Selbsthilfegruppen.tsx:104",
+  },
 ];
 
 // ─── Verbindliche Texte ──────────────────────────────────
@@ -406,6 +412,11 @@ export function emailById(id: string): EmailKontakt | undefined {
 /** URL nach ID finden */
 export function urlById(id: string): UrlKontakt | undefined {
   return URLS.find((u) => u.id === id);
+}
+
+/** Adresse nach ID finden */
+export function adresseById(id: string): AdresseKontakt | undefined {
+  return ADRESSEN.find((a) => a.id === id);
 }
 
 // ─── QA-Guardrail: Validierung ───────────────────────────

@@ -577,7 +577,7 @@ export default function Verstehen() {
             <ContentSection
               title="Warum ist dieses Wissen wichtig?"
               icon={<Lightbulb className="w-7 h-7 text-sand-mid" />}
-              id="warum-wichtig"
+              id="verstehen-warum-wichtig"
               preview="Wenn Sie verstehen, dass das Verhalten Ihres Angehörigen nicht gegen Sie gerichtet ist, können Sie anders reagieren."
             >
               <div className="prose prose-lg max-w-none">
@@ -646,7 +646,7 @@ export default function Verstehen() {
               <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {filteredItems.map((item) => (
                   <Card key={item.id} className={`${item.featured && activeFilter === "alle" ? "md:col-span-2" : ""} overflow-hidden hover:shadow-lg transition-shadow`}>
-                    <div className="aspect-[3/4] bg-muted cursor-pointer" onClick={() => window.open(item.webpUrl, '_blank')}>
+                    <button type="button" className="aspect-[3/4] bg-muted cursor-pointer w-full" onClick={() => window.open(item.webpUrl, '_blank')} aria-label={`${item.alt} – Vorschau öffnen`}>
                       <img
                         src={item.webpUrl}
                         alt={item.alt}
@@ -656,7 +656,7 @@ export default function Verstehen() {
                         height={223}
                         decoding="async"
                       />
-                    </div>
+                    </button>
                     <CardContent className="p-4">
                       <h3 className="font-medium text-foreground mb-1">{item.title}</h3>
                       <p className="text-sm text-muted-foreground mb-3">{item.description}</p>

@@ -118,7 +118,7 @@ export default function UeberUns() {
             <ContentSection
               title="Wissenschaftliche Grundlagen"
               icon={<FileText className="w-7 h-7 text-slate-blue" />}
-              id="quellen"
+              id="ueber-uns-quellen"
               preview="DBT, Family Connections und die Standardwerke von Mason/Kreger und Kreisman/Straus."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">

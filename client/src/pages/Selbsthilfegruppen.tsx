@@ -6,11 +6,14 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Headphones, Building2, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
-import { kontaktById, emailById, urlById } from "@/data/kontakte";
+import { kontaktById, emailById, urlById, adresseById } from "@/data/kontakte";
 
 const selbsthilfeCH = kontaktById("INFO_SELBSTHILFE_CH")!;
 const selbsthilfeInfo = kontaktById("INFO_SELBSTHILFE_INFO")!;
 const proMente = kontaktById("INFO_PROMENTE")!;
+const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
+const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
+const pukUrl = urlById("URL_PUK")!;
 
 export default function Selbsthilfegruppen() {
   return (
@@ -73,8 +76,8 @@ export default function Selbsthilfegruppen() {
                         <Phone className="w-5 h-5 text-sage-mid flex-shrink-0" />
                         <div>
                           <p className="text-sm text-muted-foreground">Telefon</p>
-                          <a href="tel:+41583843800" className="font-medium text-foreground hover:text-sage-mid">
-                            +41 58 384 38 00
+                          <a href={`tel:${fachstelleTel.tel}`} className="font-medium text-foreground hover:text-sage-mid">
+                            {fachstelleTel.nummer}
                           </a>
                         </div>
                       </div>
@@ -82,8 +85,8 @@ export default function Selbsthilfegruppen() {
                         <Mail className="w-5 h-5 text-sage-mid flex-shrink-0" />
                         <div>
                           <p className="text-sm text-muted-foreground">E-Mail</p>
-                          <a href="mailto:angehoerigenarbeit@pukzh.ch" className="font-medium text-foreground hover:text-sage-mid">
-                            angehoerigenarbeit@pukzh.ch
+                          <a href={`mailto:${fachstelleEmail.adresse}`} className="font-medium text-foreground hover:text-sage-mid">
+                            {fachstelleEmail.adresse}
                           </a>
                         </div>
                       </div>
@@ -101,8 +104,8 @@ export default function Selbsthilfegruppen() {
                         <Globe className="w-5 h-5 text-sage-mid flex-shrink-0" />
                         <div>
                           <p className="text-sm text-muted-foreground">Website</p>
-                          <a href="https://www.pukzh.ch" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-sage-mid">
-                            www.pukzh.ch
+                          <a href={pukUrl.url} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-sage-mid">
+                            {pukUrl.url.replace("https://", "")}
                           </a>
                         </div>
                       </div>

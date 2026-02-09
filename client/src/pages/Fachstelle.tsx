@@ -5,6 +5,12 @@ import { motion } from "framer-motion";
 import { Building2, Mail, MapPin, Users, BookOpen, Phone, Heart, ArrowRight, Info, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { kontaktById, emailById, urlById, adresseById } from "@/data/kontakte";
+
+const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
+const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
+const pukUrl = urlById("URL_PUK")!;
+const pukAdresse = adresseById("ADRESSE_PUK")!;
 
 export default function Fachstelle() {
   return (
@@ -148,10 +154,10 @@ export default function Fachstelle() {
                       </div>
                       <div>
                         <a
-                          href="tel:+41583843800"
+                          href={`tel:${fachstelleTel.tel}`}
                           className="text-sage-mid hover:text-sage-dark font-medium transition-colors"
                         >
-                          +41 58 384 38 00
+                          {fachstelleTel.nummer}
                         </a>
                         <p className="text-sm text-muted-foreground mt-0.5">Terminvereinbarung telefonisch</p>
                       </div>
@@ -163,10 +169,10 @@ export default function Fachstelle() {
                       </div>
                       <div>
                         <a
-                          href="mailto:angehoerigenarbeit@pukzh.ch"
+                          href={`mailto:${fachstelleEmail.adresse}`}
                           className="text-sage-mid hover:text-sage-dark font-medium transition-colors"
                         >
-                          angehoerigenarbeit@pukzh.ch
+                          {fachstelleEmail.adresse}
                         </a>
                         <p className="text-sm text-muted-foreground mt-0.5">Terminvereinbarung per E-Mail</p>
                       </div>
@@ -178,12 +184,12 @@ export default function Fachstelle() {
                       </div>
                       <div>
                         <a
-                          href="https://www.pukzh.ch"
+                          href={pukUrl.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sage-mid hover:text-sage-dark font-medium transition-colors"
                         >
-                          www.pukzh.ch
+                          {pukUrl.url.replace("https://", "")}
                         </a>
                         <p className="text-sm text-muted-foreground mt-0.5">Website der PUK Zürich</p>
                       </div>

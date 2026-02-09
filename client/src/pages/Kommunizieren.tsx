@@ -352,7 +352,7 @@ export default function Kommunizieren() {
             <ContentSection
               title="Konkrete Formulierungen für den Alltag"
               icon={<MessageCircle className="w-7 h-7 text-terracotta" />}
-              id="formulierungen"
+              id="kommunizieren-formulierungen"
               preview="Konkrete Sätze für verschiedene Situationen: Emotionen, Vorwürfe, Rückzug, Schwarz-Weiss-Denken."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -479,7 +479,7 @@ export default function Kommunizieren() {
             <ContentSection
               title="Hinweise für Ihre Situation"
               icon={<Users className="w-7 h-7 text-slate-mid" />}
-              id="angehoerigengruppen"
+              id="kommunizieren-angehoerigengruppen"
               preview="Spezifische Kommunikationstipps für Partner, Eltern und erwachsene Kinder."
             >
               <div className="space-y-4">

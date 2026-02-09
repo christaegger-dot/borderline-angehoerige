@@ -193,7 +193,7 @@ export default function UnterstuetzenKrise() {
             <ContentSection
               title="Was Sie in der Krise sagen können"
               icon={<MessageCircle className="w-7 h-7 text-sage" />}
-              id="formulierungen"
+              id="krise-formulierungen"
               preview="In einer Krise zählt jedes Wort. Diese Formulierungen haben sich bewährt."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">

@@ -266,7 +266,7 @@ export default function Selbstfuersorge() {
               <ContentSection
                 title="Warum Selbstfürsorge so wichtig ist"
                 icon={<Heart className="w-6 h-6 text-terracotta-mid" />}
-                id="warum-wichtig"
+                id="selbstfuersorge-warum-wichtig"
                 defaultOpen={true}
                 preview="Angehörige tragen eine besondere Last. Selbstfürsorge ist keine Selbstsucht, sondern Selbsterhaltung."
               >

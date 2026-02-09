@@ -80,10 +80,10 @@ type SoundKey = "start" | "transition" | "complete";
 
 type Phase = "idle" | "running" | "paused" | "done";
 
-/* ── Debug logger ────────────────────────────────────── */
+/* ── Debug logger (nur im Dev-Modus) ────────────────── */
 
 const dbg = (msg: string, ...args: unknown[]) => {
-  if (typeof console !== "undefined") {
+  if (import.meta.env.DEV && typeof console !== "undefined") {
     console.log(`[GroundingAudio] ${msg}`, ...args);
   }
 };

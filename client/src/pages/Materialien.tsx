@@ -155,8 +155,8 @@ const infografiken: Array<{
     description: "Die 6 Stufen nach Linehan mit Beispielsätzen, Mini-Leitfaden für Eskalation und 3 Universalsätzen – zum Ausdrucken und Üben.",
     category: "kommunizieren",
     type: "Checkliste",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TPDWiHrAxJIEspZG.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IybSlBkWHsNGWldy.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mORKPLGTfHhGEMau.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skHsKXRHdjFPuonb.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 3: UNTERSTÜTZEN

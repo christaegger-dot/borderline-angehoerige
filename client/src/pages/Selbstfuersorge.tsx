@@ -12,6 +12,7 @@ import {
 import { Link } from "wouter";
 import { kontaktById } from "@/data/kontakte";
 import GroundingTimer from "@/components/interactive/GroundingTimer";
+import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
 
 
 const proMente = kontaktById("INFO_PROMENTE")!;
@@ -374,6 +375,11 @@ export default function Selbstfuersorge() {
                   </CardContent>
                 </Card>
               </ContentSection>
+
+              {/* ═══ Selbstfürsorge-Kurzcheck ═══ */}
+              <div className="my-6">
+                <SelbstfuersorgeCheck />
+              </div>
 
               {/* ═══ 3. Sofort-Übungen ═══ */}
               <ContentSection

@@ -431,11 +431,11 @@ export default function Grenzen() {
               </Card>
             </ContentSection>
 
-            {/* Hinweise für verschiedene Angehörigengruppen */}
+            {/* Hinweise für verschiedene Situationen */}
             <ContentSection
               title="Hinweise für Ihre Situation"
               icon={<Users className="w-7 h-7 text-slate-mid" />}
-              id="grenzen-angehoerigengruppen"
+              id="grenzen-situationen"
               preview="Spezifische Hinweise zum Grenzen setzen für Partner, Eltern und erwachsene Kinder."
             >
               <div className="space-y-4">

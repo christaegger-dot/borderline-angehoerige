@@ -475,11 +475,11 @@ export default function Kommunizieren() {
               </Card>
             </ContentSection>
 
-            {/* Hinweise für verschiedene Angehörigengruppen */}
+            {/* Hinweise für verschiedene Situationen */}
             <ContentSection
               title="Hinweise für Ihre Situation"
               icon={<Users className="w-7 h-7 text-slate-mid" />}
-              id="kommunizieren-angehoerigengruppen"
+              id="kommunizieren-situationen"
               preview="Spezifische Kommunikationstipps für Partner, Eltern und erwachsene Kinder."
             >
               <div className="space-y-4">

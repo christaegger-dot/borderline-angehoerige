@@ -2,7 +2,7 @@ import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Building2, Mail, MapPin, Users, BookOpen, Phone, Heart, ArrowRight, Info, ExternalLink } from "lucide-react";
+import { Building2, Mail, MapPin, Users, BookOpen, Phone, ArrowRight, Info, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { kontaktById, emailById, urlById, adresseById } from "@/data/kontakte";
@@ -75,11 +75,6 @@ export default function Fachstelle() {
                     icon: BookOpen,
                     title: "Psychoedukation & Materialien",
                     description: "Evidenzbasierte Informationsmaterialien, Handouts und Infografiken zu Borderline und anderen Erkrankungen."
-                  },
-                  {
-                    icon: Heart,
-                    title: "Angehörigengruppen",
-                    description: "Begleitete Gruppenangebote zum Austausch und zur gegenseitigen Unterstützung unter Angehörigen."
                   },
                   {
                     icon: Phone,

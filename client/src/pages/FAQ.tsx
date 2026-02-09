@@ -101,7 +101,7 @@ export default function FAQ() {
         },
         {
           question: "Bin ich co-abhängig?",
-          answer: "Co-Abhängigkeit bedeutet, dass Ihr eigenes Wohlbefinden übermässig vom Zustand des anderen abhängt und Sie Ihre eigenen Bedürfnisse vernachlässigen, um den anderen zu «retten». Warnsignale: Sie entschuldigen ständig das Verhalten Ihres Angehörigen, Sie haben Ihr soziales Leben aufgegeben, Sie fühlen sich verantwortlich für seine Gefühle, Sie können nicht «Nein» sagen ohne Schuldgefühle. Wenn Sie sich wiedererkennen: Das ist kein Charakterfehler, sondern ein erlerntes Muster. Eigene Therapie oder eine Angehörigengruppe kann helfen, gesündere Grenzen zu entwickeln.",
+          answer: "Co-Abhängigkeit bedeutet, dass Ihr eigenes Wohlbefinden übermässig vom Zustand des anderen abhängt und Sie Ihre eigenen Bedürfnisse vernachlässigen, um den anderen zu «retten». Warnsignale: Sie entschuldigen ständig das Verhalten Ihres Angehörigen, Sie haben Ihr soziales Leben aufgegeben, Sie fühlen sich verantwortlich für seine Gefühle, Sie können nicht «Nein» sagen ohne Schuldgefühle. Wenn Sie sich wiedererkennen: Das ist kein Charakterfehler, sondern ein erlerntes Muster. Eigene Therapie oder eine Gruppe für Angehörige kann helfen, gesündere Grenzen zu entwickeln.",
           links: [{ text: "Selbstfürsorge", url: "/selbstfuersorge" }, { text: "Glossar: Co-Abhängigkeit", url: "/glossar" }]
         }
       ]

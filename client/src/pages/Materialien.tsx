@@ -71,15 +71,7 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BYDbBJaIhetrjHRq.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PBYpNxZamAxjOHYd.pdf",
   },
-  {
-    id: "1-6-gehirn-verstehen",
-    title: "Das Gehirn verstehen – Neurobiologie einfach erklärt",
-    description: "Sequenzdiagramm: Bei starkem Stress dominiert Alarm – erst danach wird klares Denken wieder möglich.",
-    category: "verstehen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ImASzOTHYdFpxOUI.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NViSBQtRBvGWOHPE.pdf",
-  },
+
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 2: KOMMUNIZIEREN
   // ═══════════════════════════════════════════════════════════════════════════
@@ -113,15 +105,7 @@ const infografiken: Array<{
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 3: UNTERSTÜTZEN
   // ═══════════════════════════════════════════════════════════════════════════
-  {
-    id: "k3-1-krisenmodus",
-    title: "Im Krisenmodus – Orientierung geben",
-    description: "Zustandsdiagramm: Wie ein verlorenes Kind braucht Ihr Gegenüber in der Krise Ruhe und Orientierung – nicht Argumente.",
-    category: "unterstuetzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FOZYnweFmVcMXYyr.pdf",
-  },
+
   {
     id: "k3-2-rolle-klaeren",
     title: "Ihre Rolle klären – Was Sie sein können (und was nicht)",
@@ -131,15 +115,7 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WUiQpUWjKIjpSRDC.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JMOjSacqrnDcAkoB.pdf",
   },
-  {
-    id: "k3-3-drei-saeulen",
-    title: "Drei Säulen hilfreicher Unterstützung",
-    description: "3-Kacheln: Präsenz zeigen, Gefühle validieren, Stabilität bieten – das Fundament guter Begleitung.",
-    category: "unterstuetzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WuCBUdnlHakpSnbY.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AalrNrybgxuMcRcX.pdf",
-  },
+
   {
     id: "k3-4-konsistenz",
     title: "Konsistenz-Prinzip – als Team wird es leichter",
@@ -167,15 +143,7 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toOMoXhzHiaZUlBg.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oPRapPNKMLHWEior.pdf",
   },
-  {
-    id: "k3-7-alltags-tipps",
-    title: "Was Sie konkret tun können – 4 Alltags-Tipps",
-    description: "4-Kacheln-Checkliste: Übungspartner sein, Fortschritte anerkennen, Vorhersehbar sein, Gemeinsam Probleme lösen.",
-    category: "unterstuetzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cwhMoIHSUeEWpyWo.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ipyRcgPjVrRKYqyd.pdf",
-  },
+
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 4: GRENZEN
   // ═══════════════════════════════════════════════════════════════════════════
@@ -215,33 +183,9 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pPRcjWVKERfSWUPL.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FftUeWuOzmxjrUEi.pdf",
   },
-  {
-    id: "k4-5-warum-grenzen-helfen",
-    title: "Warum Grenzen bei Borderline sowohl Angehörigen als auch der betroffenen Person helfen",
-    description: "5-Säulen-Modell: Identität, Struktur, Sicherheit, Intimität, Vorbild – Grenzen sind kein Liebesentzug.",
-    category: "grenzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OThoeNNdbDhNrJNh.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DpeSphZCAdlpzyAm.pdf",
-  },
-  {
-    id: "k4-6-lmk-exit-strategie",
-    title: "L.M.K. (Lebe Mit Konsequenzen) – Wenn Grenzen nicht respektiert werden",
-    description: "Entscheidungsbaum mit Anwendungskontext: Grenze → Reaktion → Konsequenz. Keine Strafe – sondern Selbstschutz.",
-    category: "grenzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izBLuzTFtMDeQYoc.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eyhngTnxXoekiWwJ.pdf",
-  },
-  {
-    id: "k4-7-grenzen-kommunizieren",
-    title: "Grenzen kommunizieren – Beispielsätze für den Alltag",
-    description: "4 Situationen mit fertigen Sätzen: Bei Beschimpfungen, Schuldzuweisungen, Forderungen, Drohungen.",
-    category: "grenzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pnhMjTPpcABZhMju.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WtwEVMqmpQQAvNJC.pdf",
-  },
+
+
+
   {
     id: "k4-8-spickzettel-grenzen",
     title: "Spickzettel Grenzen – Die wichtigsten Sätze",
@@ -263,15 +207,7 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OEUNVdTyojBBYTic.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VdAxPxngFzgNImxg.pdf",
   },
-  {
-    id: "k5-2-sauerstoffmaske",
-    title: "Die Sauerstoffmaske – Warum Selbstfürsorge keine Selbstsucht ist",
-    description: "Kreislauf-Diagramm: Teufelskreis ohne Selbstfürsorge vs. positiver Kreislauf mit Selbstfürsorge – setzen Sie zuerst Ihre eigene Maske auf.",
-    category: "selbstfuersorge",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IQwhlqUMporMKdmH.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yIWenSfOeiUHdMIc.pdf",
-  },
+
   {
     id: "k5-3-radikale-akzeptanz",
     title: "Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln",
@@ -290,15 +226,7 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qvJDZrQvvOlErFQu.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VnQKfkkQbPunhDed.pdf",
   },
-  {
-    id: "k5-5-energie-konto",
-    title: "Ihr Energie-Konto – Was füllt, was leert",
-    description: "Stock-&-Flow-Diagramm: Welche Aktivitäten füllen Ihre Batterie auf, welche leeren sie? Achten Sie auf die Balance, bevor Burnout droht.",
-    category: "selbstfuersorge",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xqJbxqEDoAqplbhl.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gvhhnlTvDmgPHFUq.pdf",
-  },
+
   {
     id: "k5-6-erlaubnis-karte",
     title: "Erlaubnis-Karte – Was Sie sich erlauben dürfen",
@@ -327,15 +255,7 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DPkqytVYFcreeBlC.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UFLdEEGIDxKdRUZO.pdf",
   },
-  {
-    id: "k6-3-remission-vs-heilung",
-    title: "Remission vs. Heilung – Was Besserung wirklich bedeutet",
-    description: "2-Spalten-Vergleich: Was Remission NICHT bedeutet vs. was sie tatsächlich bedeutet – realistische Erwartungen statt Perfektionsanspruch.",
-    category: "genesung",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HPRsNmCUFirjnraj.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KMjqRDjDjWVZpjhJ.pdf",
-  },
+
   {
     id: "k6-4-fuenf-faktoren-genesung",
     title: "5 Faktoren, die Genesung fördern",
@@ -441,7 +361,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 36 Materialien verfügbar
+                    Alle 26 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung

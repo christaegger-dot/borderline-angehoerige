@@ -155,11 +155,11 @@ export default function Erfahrungsberichte({
             viewport={{ once: true }}
             className="text-center text-sm text-muted-foreground mt-8"
           >
-            * Alle Namen wurden zum Schutz der Privatsphäre geändert.
-          </motion.p>
-        </div>
-      </section>
-    );
+          * Die Erfahrungsberichte sind redaktionell nachempfunden und basieren auf typischen Erfahrungen von Angehörigen. Namen und Details wurden verändert.
+        </motion.p>
+      </div>
+    </section>
+  );
   }
 
   // Carousel variant
@@ -304,7 +304,7 @@ export default function Erfahrungsberichte({
           viewport={{ once: true }}
           className="text-center text-sm text-muted-foreground mt-6"
         >
-          * Alle Namen wurden zum Schutz der Privatsphäre geändert.
+          * Die Erfahrungsberichte sind redaktionell nachempfunden und basieren auf typischen Erfahrungen von Angehörigen. Namen und Details wurden verändert.
         </motion.p>
       </div>
     </section>

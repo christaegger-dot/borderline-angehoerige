@@ -304,45 +304,106 @@ export default function Genesung() {
                 title="Das Fortschritt-Paradox"
                 icon={<RefreshCw className="w-6 h-6 text-terracotta-mid" />}
                 id="fortschritt-paradox"
-                preview="Ein häufiges Phänomen: Gerade wenn es besser wird, kommt ein Rückfall."
+                preview="Fortschritt ist real – und trotzdem sind Rückschritte möglich. Das ist kein Scheitern, sondern ein bekanntes Muster."
               >
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Ein häufiges Phänomen, das viele Angehörige verunsichert: Gerade wenn es besser wird, 
+                  kommt ein Rückschritt. <span className="font-medium text-foreground">Das heisst nicht, dass alles umsonst war.</span> Oft 
+                  sinkt in «guten Phasen» die Wachsamkeit – oder man steigert Tempo und Erwartungen zu schnell.
+                </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Ein häufiges Phänomen, das viele Angehörige verwirrt: Gerade wenn es besser wird, kommt ein Rückfall.
+                  Hilfreich ist, Erfolge zu feiern <span className="italic">und</span> gleichzeitig einen kleinen Plan 
+                  für schwierige Momente bereit zu haben.
                 </p>
 
+                {/* Warum passiert das? */}
                 <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/30 mb-8">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <AlertTriangle className="w-6 h-6 text-terracotta-mid flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-semibold text-foreground mb-2">Warum passiert das?</h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Fortschritt bedeutet Veränderung – und Veränderung löst bei Menschen mit Borderline oft Angst aus. 
-                          Die Verbesserung selbst kann als Bedrohung erlebt werden: «Was, wenn ich ohne meine Symptome 
-                          nicht mehr ich bin?» oder «Was, wenn die anderen mich verlassen, wenn ich «gesund» bin?»
+                        <p className="text-muted-foreground leading-relaxed mb-3">
+                          In der Dialektisch-Behavioralen Therapie (DBT) beschreibt Marsha Linehan ein Muster, 
+                          das genau dieses Paradox erklärt – mit zwei typischen «Denkfallen»:
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-3">
+                          <div className="p-3 rounded-lg bg-terracotta-wash/50 border border-terracotta-mid/20">
+                            <span className="text-sm font-semibold text-foreground block mb-1">🔴 «Alles-überstanden»-Modus</span>
+                            <p className="text-xs text-muted-foreground leading-relaxed">
+                              Man fühlt sich sicher und denkt: «Das Problem liegt hinter mir.» 
+                              Die Wachsamkeit sinkt, Warnsignale werden übersehen, alte Muster 
+                              schleichen sich unbemerkt zurück.
+                            </p>
+                          </div>
+                          <div className="p-3 rounded-lg bg-sage-wash border border-sage-mid/20">
+                            <span className="text-sm font-semibold text-foreground block mb-1">🟢 «Klarer-Kopf»-Modus</span>
+                            <p className="text-xs text-muted-foreground leading-relaxed">
+                              Man freut sich über Fortschritte <span className="italic">und</span> bleibt realistisch: 
+                              «Es läuft gut – und ich weiss, dass schwierige Momente kommen können. 
+                              Dafür habe ich einen Plan.»
+                            </p>
+                          </div>
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+                          Der «Klarer-Kopf»-Modus ist kein Pessimismus – er ist das Gegenteil: 
+                          Erfolge geniessen, ohne die Augen zu verschliessen.
                         </p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                {/* Praktischer Leitfaden */}
+                <h3 className="font-semibold text-foreground mb-4">Was Sie als Angehörige konkret tun können</h3>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
                   {[
-                    { title: "Rückfälle nicht als Scheitern werten", desc: "Sie sind Teil des Prozesses, nicht das Ende" },
-                    { title: "Fortschritte klein benennen", desc: "Konkret und spezifisch, nicht pauschal" },
-                    { title: "Geduld haben", desc: "Genesung verläuft nicht linear" }
+                    { 
+                      title: "Rückschritte nicht dramatisieren", 
+                      desc: "Ein Rückschritt ist kein Beweis, dass ‹alles kaputt› ist. Er ist ein Signal, früh gegenzusteuern – nicht aufzugeben.",
+                      color: "bg-terracotta-wash border-terracotta-mid/20"
+                    },
+                    { 
+                      title: "Fortschritte konkret benennen", 
+                      desc: "Statt ‹Du bist so viel besser› lieber: ‹Mir ist aufgefallen, dass du gestern ruhig geblieben bist, als es stressig wurde.›",
+                      color: "bg-sage-wash border-sage-mid/20"
+                    },
+                    { 
+                      title: "Tempo nicht übersteuern", 
+                      desc: "Wenn es besser läuft, steigt die Versuchung, schnell ‹alles nachzuholen›. Besser: kleine Schritte beibehalten.",
+                      color: "bg-sand-light border-border/50"
+                    },
+                    { 
+                      title: "Einen Plan für schwierige Momente haben", 
+                      desc: "Besprechen Sie gemeinsam vorher: ‹Was machen wir, wenn es wieder schwieriger wird?› Das nimmt beiden Seiten die Angst.",
+                      color: "bg-sand-light border-border/50"
+                    }
                   ].map((item, i) => (
-                    <Card key={i} className={`border-border/50 ${i === 0 ? "sm:col-span-2" : ""}`}>
+                    <Card key={i} className={`border ${item.color}`}>
                       <CardContent className="p-4">
-                        <h4 className="font-semibold text-foreground text-sm mb-1">{item.title}</h4>
-                        <p className="text-xs text-muted-foreground">{item.desc}</p>
+                        <h4 className="font-semibold text-foreground text-sm mb-1.5">{item.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
                       </CardContent>
                     </Card>
                   ))}
                 </div>
 
+                {/* Kernbotschaft */}
+                <Card className="bg-sage-light/20 border-sage-mid/30 mb-6">
+                  <CardContent className="p-5">
+                    <p className="text-foreground leading-relaxed text-center">
+                      <span className="text-lg italic block mb-2">«Erwarte das Beste – und plane für die Stolperstellen.»</span>
+                      <span className="text-sm text-muted-foreground">
+                        Wie Spitzensportler: Sie glauben daran, jedes Rennen gewinnen zu können – 
+                        obwohl sie wissen, dass sie auch schon verloren haben und wieder verlieren werden.
+                      </span>
+                    </p>
+                  </CardContent>
+                </Card>
+
                 <p className="text-xs text-muted-foreground">
-                  Quelle: Gunderson, J.G. (2011), Guidelines for Families
+                  Quellen: Linehan, M.M. (2015), <span className="italic">DBT Skills Training Handouts and Worksheets</span>, 2. Aufl., Handouts 17–18; 
+                  Gunderson, J.G. (2011), <span className="italic">Guidelines for Families</span>
                 </p>
               </ContentSection>
 

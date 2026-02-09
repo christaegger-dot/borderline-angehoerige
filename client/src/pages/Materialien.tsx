@@ -284,7 +284,7 @@ const infografiken: Array<{
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CZdiDaadpIWNOBFb.pdf",
   },
   // ═══════════════════════════════════════════════════════════════════════════
-  // NOTFALLKARTE
+  // SOFORTHILFE
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: "notfallkarte-zuerich",
@@ -294,6 +294,15 @@ const infografiken: Array<{
     type: "Notfallkarte",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FTdjCPHRXUSxwbVS.pdf",
+  },
+  {
+    id: "notfallplan-krise",
+    title: "Notfallplan Krise – Suizidgedanken & Selbstverletzung",
+    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit Notfallnummern und Do's & Don'ts.",
+    category: "soforthilfe",
+    type: "Notfallplan",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ABTIHsyOeyMuCAIZ.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tabbTidhzMGGKDDp.pdf",
   },
 ];
 
@@ -370,7 +379,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 27 Materialien verfügbar
+                    Alle 28 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung

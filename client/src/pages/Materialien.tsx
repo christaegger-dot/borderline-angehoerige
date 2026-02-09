@@ -149,6 +149,15 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tgVHTaXVryVEuEss.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YvXkEbRmwIcCFtsj.pdf",
   },
+  {
+    id: "checkliste-validieren-60sek",
+    title: "Validieren in 60 Sekunden – Checkliste (A4)",
+    description: "Die 6 Stufen nach Linehan mit Beispielsätzen, Mini-Leitfaden für Eskalation und 3 Universalsätzen – zum Ausdrucken und Üben.",
+    category: "kommunizieren",
+    type: "Checkliste",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TPDWiHrAxJIEspZG.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IybSlBkWHsNGWldy.pdf",
+  },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 3: UNTERSTÜTZEN
   // ═══════════════════════════════════════════════════════════════════════════
@@ -480,7 +489,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 40 Materialien verfügbar
+                    Alle 41 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung

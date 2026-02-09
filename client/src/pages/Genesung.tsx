@@ -716,7 +716,7 @@ export default function Genesung() {
                             Zanarini et al. (2010): Time-to-Attainment of Recovery from BPD
                           </a>
                           <a 
-                            href="https://pubmed.ncbi.nlm.nih.gov/21464344/" 
+                            href="https://pubmed.ncbi.nlm.nih.gov/21464343/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-sm text-sage-mid hover:underline"

@@ -84,51 +84,6 @@ const infografiken: Array<{
   // KATEGORIE 2: KOMMUNIZIEREN
   // ═══════════════════════════════════════════════════════════════════════════
   {
-    id: "2-1-drei-schritte",
-    title: "Wenn Gespräche kippen: 3 Schritte, die helfen",
-    description: "Timeline mit Reset-Loop: In Hochstress hilft ein Standardablauf – beruhigen, verbinden, begrenzen + Plan.",
-    category: "kommunizieren",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kWTjVSZAwAXAymgw.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eEpcTcWSbYQpNzJv.pdf",
-  },
-  {
-    id: "2-2-standardsatz",
-    title: "Der Standardsatz: 2 Sätze, die deeskalieren",
-    description: "Copy-ready Sätze zum Ablesen: Erst Gefühl anerkennen, dann Grenze + Plan – ohne Diskussion.",
-    category: "kommunizieren",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BhSMyAxexIXKHZAr.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DzgeeeiROfGFvSfv.pdf",
-  },
-  {
-    id: "2-3-grenzen-setzen",
-    title: "Grenzen setzen, ohne zu eskalieren",
-    description: "3-Kacheln-Formel: Fakt + Ich-Grenze + nächster Schritt – kurz und klar.",
-    category: "kommunizieren",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QrgVLpdeorAWgKvg.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YyBYayMoMIGwTZtM.pdf",
-  },
-  {
-    id: "2-4-pause-exit",
-    title: "Pause statt Streit: so beenden Sie ein Gespräch sicher",
-    description: "Ampel-Zustandsdiagramm: Wenn Respekt nicht möglich ist, ist eine Pause die beste Deeskalation.",
-    category: "kommunizieren",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VCooXJsQnRmSZGul.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fGgpuKMuDfzJYgrc.pdf",
-  },
-  {
-    id: "2-5-zuhoeren-ohne-zustimmen",
-    title: "Zuhören ohne Zustimmen – so geht das konkret",
-    description: "2-Spalten mit Brücke: Sie können Gefühle anerkennen, ohne Verhalten gutzuheissen.",
-    category: "kommunizieren",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eeZIHGmfprWnoPPf.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toeDsBefZFNbxXYc.pdf",
-  },
-  {
     id: "2-6-beispiel-dialog",
     title: "Beispiel-Dialog: kurz bleiben, ruhig bleiben",
     description: "Chat-Sequenzdiagramm: Kurz + ruhig + wiederholbar wirkt in Krisen stärker als Argumente.",
@@ -137,9 +92,6 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
   },
-  // ═══════════════════════════════════════════════════════════════════════════
-  // SPICKZETTEL (A4, laminierbar)
-  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: "spickzettel-krisenkommunikation",
     title: "Spickzettel Krisenkommunikation (A4)",
@@ -489,7 +441,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 41 Materialien verfügbar
+                    Alle 36 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung

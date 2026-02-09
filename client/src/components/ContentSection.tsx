@@ -14,7 +14,7 @@ interface ContentSectionProps {
   /** Inhalt des Abschnitts */
   children: React.ReactNode;
   /** Kurze Vorschau, die im geschlossenen Zustand sichtbar bleibt */
-  preview?: string;
+  preview?: React.ReactNode;
 }
 
 /**

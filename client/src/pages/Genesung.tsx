@@ -324,7 +324,7 @@ export default function Genesung() {
                       <div>
                         <h3 className="font-semibold text-foreground mb-2">Warum passiert das?</h3>
                         <p className="text-muted-foreground leading-relaxed mb-3">
-                          In der Dialektisch-Behavioralen Therapie (DBT) beschreibt Marsha Linehan ein Muster, 
+                          In der <Link href="/glossar" className="text-foreground font-medium underline decoration-terracotta-mid/40 hover:decoration-terracotta-mid transition-colors">Dialektisch-Behavioralen Therapie (DBT)</Link> beschreibt Marsha Linehan ein Muster, 
                           das genau dieses Paradox erklärt – mit zwei typischen «Denkfallen»:
                         </p>
                         <div className="grid sm:grid-cols-2 gap-3">
@@ -412,40 +412,93 @@ export default function Genesung() {
                 title="Realistische Erwartungen"
                 icon={<Heart className="w-6 h-6 text-sage-mid" />}
                 id="realistische-erwartungen"
-                preview="Remission bedeutet nicht «Heilung» im klassischen Sinn."
+                preview={<>Was bedeutet <Link href="/glossar" className="underline decoration-sage-mid/40 hover:decoration-sage-mid transition-colors">Remission</Link> wirklich – und was nicht?</>}
               >
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  <Link href="/glossar" className="text-foreground font-medium underline decoration-sage-mid/40 hover:decoration-sage-mid transition-colors">Remission</Link> bedeutet 
+                  nicht «Heilung» im klassischen Sinn. Viele Menschen mit Borderline berichten, 
+                  dass sie auch nach Jahren der Besserung noch mit bestimmten Mustern kämpfen – 
+                  aber sie haben gelernt, damit umzugehen.
+                </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Remission bedeutet nicht «Heilung» im klassischen Sinn. Viele Menschen mit Borderline berichten, 
-                  dass sie auch nach Jahren der Besserung noch mit bestimmten Mustern kämpfen – aber sie haben gelernt, 
-                  damit umzugehen.
+                  In der <Link href="/glossar" className="text-foreground font-medium underline decoration-sage-mid/40 hover:decoration-sage-mid transition-colors">DBT</Link> gibt 
+                  es dafür ein hilfreiches Prinzip: <span className="font-medium text-foreground">«Voll auf Kurs bleiben – 
+                  und für Stolperstellen planen.»</span> Das bedeutet: Man strebt das Bestmögliche an, 
+                  weiss aber, dass ein Ausrutscher kein Grund ist, alles hinzuwerfen. Stattdessen: 
+                  früh gegensteuern, reparieren, weitermachen.
                 </p>
 
+                {/* Angehörigen-Zitat */}
                 <Card className="bg-sage-light/20 border-sage-mid/30 mb-8">
                   <CardContent className="p-6">
-                    <p className="text-foreground leading-relaxed text-lg text-center italic">
-                      «Das Ziel ist nicht Perfektion, sondern ein lebenswertes Leben.»
+                    <p className="text-foreground leading-relaxed text-lg text-center italic mb-3">
+                      «Ich habe gelernt, mich über kleine Schritte zu freuen – und nicht mehr 
+                      zu erwarten, dass alles auf einmal «gut» wird. Das hat uns beiden den Druck genommen.»
+                    </p>
+                    <p className="text-xs text-muted-foreground text-center">
+                      – Angehörige, Selbsthilfegruppe Zürich
                     </p>
                   </CardContent>
                 </Card>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                {/* Was Remission bedeutet / nicht bedeutet */}
+                <div className="grid sm:grid-cols-2 gap-4 mb-8">
                   <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">❌ Was Remission NICHT bedeutet:</span>
-                    <ul className="text-sm text-muted-foreground space-y-1">
+                    <ul className="text-sm text-muted-foreground space-y-1.5">
                       <li>Nie wieder schwierige Gefühle</li>
                       <li>Perfekte Beziehungen</li>
                       <li>Keine Unterstützung mehr nötig</li>
+                      <li>Dass ein Rückschritt «Scheitern» bedeutet</li>
                     </ul>
                   </div>
                   <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">✓ Was Remission bedeutet:</span>
-                    <ul className="text-sm text-muted-foreground space-y-1">
+                    <ul className="text-sm text-muted-foreground space-y-1.5">
                       <li>Bessere Emotionsregulation</li>
                       <li>Stabilere Beziehungen</li>
                       <li>Mehr Lebensqualität</li>
+                      <li>Werkzeuge, um mit Rückschlägen umzugehen</li>
                     </ul>
                   </div>
                 </div>
+
+                {/* DBT-Prinzip: Dialectical Abstinence */}
+                <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30 mb-6">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <BookOpen className="w-6 h-6 text-sage-mid flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-2">Was tun nach einem Rückschritt?</h3>
+                        <p className="text-muted-foreground leading-relaxed text-sm mb-3">
+                          Die <Link href="/glossar" className="text-foreground font-medium underline decoration-sage-mid/40 hover:decoration-sage-mid transition-colors">DBT</Link> empfiehlt 
+                          ein klares Vorgehen – statt Schuld oder Panik:
+                        </p>
+                        <div className="grid sm:grid-cols-3 gap-2">
+                          {[
+                            { step: "1", text: "Nicht dramatisieren – ein Ausrutscher ist kein Weltuntergang" },
+                            { step: "2", text: "Sofort schauen: Was hat den Rückschritt ausgelöst?" },
+                            { step: "3", text: "Wieder einsteigen – mit dem, was vorher funktioniert hat" }
+                          ].map((item) => (
+                            <div key={item.step} className="p-2.5 rounded-lg bg-background/60 border border-sage-mid/10">
+                              <span className="text-sage-mid font-bold text-sm block mb-1">Schritt {item.step}</span>
+                              <p className="text-xs text-muted-foreground leading-relaxed">{item.text}</p>
+                            </div>
+                          ))}
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-3 italic">
+                          «Ein Ausrutscher ist kein Grund zur Katastrophe. Bleiben Sie weg von Schwarz-Weiss-Denken.» 
+                          – Linehan (2015), Handout 17a
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <p className="text-xs text-muted-foreground">
+                  Quellen: Linehan, M.M. (2015), <span className="italic">DBT Skills Training Handouts and Worksheets</span>, 2. Aufl., Handouts 17–17a (Dialectical Abstinence); 
+                  Zanarini et al. (2012), <span className="italic">Journal of Personality Disorders</span>
+                </p>
               </ContentSection>
 
               {/* ═══ 4. Wie Sie zur Genesung beitragen können ═══ */}

@@ -4,16 +4,15 @@ import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Headphones, Building2, ArrowRight } from "lucide-react";
+import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Building2, ArrowRight, Calendar, Clock } from "lucide-react";
 import { Link } from "wouter";
-import { kontaktById, emailById, urlById, adresseById } from "@/data/kontakte";
+import { kontaktById, emailById, urlById } from "@/data/kontakte";
 
-const selbsthilfeCH = kontaktById("INFO_SELBSTHILFE_CH")!;
-const selbsthilfeInfo = kontaktById("INFO_SELBSTHILFE_INFO")!;
-const proMente = kontaktById("INFO_PROMENTE")!;
 const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
 const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
 const pukUrl = urlById("URL_PUK")!;
+const proMente = kontaktById("INFO_PROMENTE")!;
+const standByYouTel = kontaktById("INFO_SELBSTHILFE_CH")!;
 
 export default function Selbsthilfegruppen() {
   return (
@@ -68,8 +67,36 @@ export default function Selbsthilfegruppen() {
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-5">
                       Die Fachstelle an der Psychiatrischen Universitätsklinik Zürich bietet kostenlose, 
-                      vertrauliche Beratung für Angehörige von psychisch erkrankten Menschen.
+                      vertrauliche <strong>Einzelberatung und Entlastungsgespräche</strong> für Angehörige 
+                      von psychisch erkrankten Menschen – unabhängig davon, ob die betroffene Person 
+                      an der PUK behandelt wird.
                     </p>
+
+                    <div className="bg-background/60 rounded-lg p-4 mb-5">
+                      <h4 className="font-semibold text-foreground text-sm mb-2">Was bietet die Fachstelle?</h4>
+                      <ul className="space-y-1 text-muted-foreground text-sm">
+                        <li className="flex items-start gap-2">
+                          <span className="text-sage-mid">•</span>
+                          Vertrauliche Beratung und Entlastungsgespräche (ca. 60 Min.)
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-sage-mid">•</span>
+                          Unterstützung im Umgang mit der Erkrankung im Alltag
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-sage-mid">•</span>
+                          Orientierung zu Hilfs-, Gruppen- und Entlastungsangeboten
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-sage-mid">•</span>
+                          Klärung von Fragen rund um Rolle, Grenzen und Selbstfürsorge
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-sage-mid">•</span>
+                          Kostenlos – Daten werden nicht an die Krankenkasse weitergeleitet
+                        </li>
+                      </ul>
+                    </div>
 
                     <div className="grid sm:grid-cols-2 gap-4 mb-5">
                       <div className="flex items-center gap-3">
@@ -125,13 +152,14 @@ export default function Selbsthilfegruppen() {
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-foreground text-lg mb-2">Pro Mente Sana</h3>
                     <p className="text-muted-foreground text-sm mb-4">
-                      Beratung für psychisch Betroffene und Angehörige. Kostenlose Telefonberatung 
-                      und E-Mail-Beratung zu Fragen rund um psychische Gesundheit.
+                      Die Schweizerische Stiftung Pro Mente Sana bietet psychosoziale und juristische 
+                      Beratung für Betroffene und Angehörige. Kostenlose Telefonberatung zu Fragen 
+                      rund um psychische Gesundheit.
                     </p>
                     <div className="flex flex-wrap items-center gap-4 text-sm">
                       <a href={`tel:${proMente.tel}`} className="inline-flex items-center gap-2 text-sage-mid hover:underline font-medium">
                         <Phone className="w-4 h-4" />
-                        {proMente.nummer}
+                        {proMente.nummer} (Normaltarif)
                       </a>
                       <a 
                         href="https://www.promentesana.ch" 
@@ -148,243 +176,175 @@ export default function Selbsthilfegruppen() {
               </div>
             </ContentSection>
 
-            {/* ═══ Peer-Angebote & Netzwerke ═══ */}
+            {/* ═══ Angehörigen-Netzwerke ═══ */}
             <ContentSection
-              title="Peer-Angebote & Netzwerke"
+              title="Angehörigen-Netzwerke"
               icon={<Heart className="w-7 h-7 text-sage-mid" />}
-              id="peer-angebote"
-              preview="Austausch mit anderen Angehörigen – von Beratungstelefon bis Podcast."
+              id="angehoerigen-netzwerke"
+              preview="Organisationen, die sich speziell für Angehörige von psychisch erkrankten Menschen einsetzen."
             >
-              {/* Stand by You */}
-              <Card className="border-sage-mid/30 bg-sage-wash/30 overflow-hidden mb-4">
-                <CardContent className="p-6 md:p-8">
-                  <h3 className="font-semibold text-foreground text-lg mb-1">Stand by You Schweiz</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Ehemals VASK (Vereinigung Angehöriger von Schizophrenie/Psychisch-Kranken)
-                  </p>
-                  
-                  <p className="text-muted-foreground leading-relaxed mb-5">
-                    Stand by You macht Angehörige und Vertraute von Menschen mit psychischen Erkrankungen 
-                    in der Schweiz sicht-, hör- und spürbar. Die Organisation bietet Beratung, Kurse und 
-                    vernetzt Angehörige untereinander.
-                  </p>
-
-                  <div className="grid sm:grid-cols-2 gap-4 mb-5">
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                      <div>
-                        <p className="text-sm text-muted-foreground">Beratungstelefon</p>
-                        <a href={`tel:${selbsthilfeCH.tel}`} className="font-medium text-foreground hover:text-sage-mid">
-                          {selbsthilfeCH.nummer}
-                        </a>
-                        <p className="text-xs text-muted-foreground">(kostenlos)</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Globe className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                      <div>
-                        <p className="text-sm text-muted-foreground">Website</p>
-                        <a 
-                          href="https://www.stand-by-you.ch" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="font-medium text-foreground hover:text-sage-mid"
-                        >
-                          www.stand-by-you.ch
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-background/50 rounded-lg p-4">
-                    <h4 className="font-semibold text-foreground mb-2">Angebote:</h4>
-                    <ul className="space-y-1 text-muted-foreground text-sm">
-                      <li className="flex items-start gap-2">
-                        <span className="text-sage-mid">•</span>
-                        Kostenlose telefonische Beratung für Angehörige
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-sage-mid">•</span>
-                        Angehörigenkurse (z.B. «Wegweiser»-Kurs)
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-sage-mid">•</span>
-                        Podcast «Mal Mut, mal Wut» mit Erfahrungsberichten
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-sage-mid">•</span>
-                        Vernetzung mit anderen Angehörigen
-                      </li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Equilibrium */}
-              <Card className="border-border/50">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground text-lg mb-2">Equilibrium</h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Verein zur Bewältigung von Depressionen. Bietet auch Unterstützung für 
-                    Angehörige von Menschen mit Depressionen.
-                  </p>
-                  <a 
-                    href="https://www.depressionen.ch" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    <Globe className="w-4 h-4" />
-                    www.depressionen.ch
-                  </a>
-                </CardContent>
-              </Card>
-            </ContentSection>
-
-            {/* ═══ Selbsthilfegruppen nach Region ═══ */}
-            <ContentSection
-              title="Selbsthilfegruppen nach Region"
-              icon={<MapPin className="w-7 h-7 text-terracotta-mid" />}
-              id="selbsthilfegruppen"
-              preview="Selbsthilfe Schweiz koordiniert Gruppen in der ganzen Schweiz – finden Sie eine Gruppe in Ihrer Nähe."
-            >
-              <Card className="border-border/50 mb-6">
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    <strong>Selbsthilfe Schweiz</strong> koordiniert Selbsthilfegruppen in der ganzen Schweiz. 
-                    Über die Datenbank können Sie Gruppen speziell für Angehörige von Menschen mit Borderline finden.
-                  </p>
-                  <a 
-                    href="https://www.selbsthilfeschweiz.ch/shch/de/selbsthilfeangebote/themenliste~thema~Borderline~.html" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="outline" className="gap-2">
-                      <ExternalLink className="w-4 h-4" />
-                      Selbsthilfegruppen suchen
-                    </Button>
-                  </a>
-                </CardContent>
-              </Card>
-
               <div className="space-y-4">
-                {/* Zürich */}
-                <Card className="border-border/50">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-terracotta-mid" />
+                {/* Stand by You Schweiz */}
+                <Card className="border-sage-mid/30 bg-sage-wash/30 overflow-hidden">
+                  <CardContent className="p-6 md:p-8">
+                    <h3 className="font-semibold text-foreground text-lg mb-1">Stand by You Schweiz</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Ehemals VASK Schweiz – Dachverband der Vereinigungen von Angehörigen psychisch Erkrankter. 
+                      Seit Januar 2024 unter neuem Namen.
+                    </p>
+                    
+                    <p className="text-muted-foreground leading-relaxed mb-5">
+                      Stand by You macht Angehörige und Vertraute von Menschen mit psychischen Erkrankungen 
+                      in der Schweiz sicht-, hör- und spürbar. Die Organisation bietet eine kostenlose 
+                      HelpLine, die von Angehörigen für Angehörige betrieben wird.
+                    </p>
+
+                    <div className="grid sm:grid-cols-2 gap-4 mb-5">
+                      <div className="flex items-center gap-3">
+                        <Phone className="w-5 h-5 text-sage-mid flex-shrink-0" />
+                        <div>
+                          <p className="text-sm text-muted-foreground">HelpLine (kostenlos)</p>
+                          <a href={`tel:${standByYouTel.tel}`} className="font-medium text-foreground hover:text-sage-mid">
+                            {standByYouTel.nummer}
+                          </a>
+                        </div>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-foreground mb-1">Raum Zürich</h3>
-                        <p className="text-muted-foreground text-sm mb-2">
-                          Selbsthilfegruppe für Angehörige von Menschen mit Borderline
-                        </p>
-                        <a 
-                          href="https://www.selbsthilfeschweiz.ch" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          <Button variant="outline" size="sm" className="gap-1 text-xs">
-                            <ExternalLink className="w-3 h-3" />
-                            Selbsthilfe Zürich
-                          </Button>
-                        </a>
+                      <div className="flex items-center gap-3">
+                        <Globe className="w-5 h-5 text-sage-mid flex-shrink-0" />
+                        <div>
+                          <p className="text-sm text-muted-foreground">Website</p>
+                          <a 
+                            href="https://www.stand-by-you.ch" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="font-medium text-foreground hover:text-sage-mid"
+                          >
+                            www.stand-by-you.ch
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-background/50 rounded-lg p-4">
+                      <h4 className="font-semibold text-foreground text-sm mb-2">HelpLine-Zeiten:</h4>
+                      <div className="grid grid-cols-2 gap-1 text-sm text-muted-foreground">
+                        <span>Montag</span><span>09:30 – 19:00 Uhr</span>
+                        <span>Dienstag</span><span>10:00 – 18:00 Uhr</span>
+                        <span>Mittwoch</span><span>09:00 – 11:00 Uhr</span>
+                        <span>Donnerstag</span><span>10:00 – 12:00 / 16:00 – 18:00 Uhr</span>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Winterthur */}
+                {/* VASK Zürich */}
                 <Card className="border-border/50">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-terracotta-mid" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-foreground mb-1">Winterthur / Schaffhausen</h3>
-                        <p className="text-muted-foreground text-sm mb-2">
-                          Selbsthilfegruppe Borderline-Angehörige
+                  <CardContent className="p-6 md:p-8">
+                    <h3 className="font-semibold text-foreground text-lg mb-1">VASK Zürich</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Kantonale Vereinigung der Angehörigen von psychisch Kranken – 
+                      mit regelmässigen Beratungs-Treffpunkten in Zürich und Winterthur.
+                    </p>
+
+                    <div className="space-y-4 mb-5">
+                      {/* Treffpunkt Zürich */}
+                      <div className="bg-background/60 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Calendar className="w-4 h-4 text-sage-mid" />
+                          <h4 className="font-semibold text-foreground text-sm">Beratungs-Treffpunkt Zürich</h4>
+                        </div>
+                        <p className="text-muted-foreground text-sm">
+                          Offener Treffpunkt für alle Angehörigen und Freunde
                         </p>
-                        <a 
-                          href="https://www.selbsthilfe-winterthur-schaffhausen.ch/shwin/de/selbsthilfe-gesucht/gruppenliste~thema~Borderline~.html" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          <Button variant="outline" size="sm" className="gap-1 text-xs">
-                            <ExternalLink className="w-3 h-3" />
-                            Selbsthilfe Winterthur
-                          </Button>
-                        </a>
+                        <div className="flex items-center gap-2 mt-2 text-sm text-foreground">
+                          <Clock className="w-4 h-4 text-muted-foreground" />
+                          Jeden letzten Dienstag des Monats, 19:00 – 21:00 Uhr
+                        </div>
+                      </div>
+
+                      {/* Treffpunkt Winterthur */}
+                      <div className="bg-background/60 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Calendar className="w-4 h-4 text-sage-mid" />
+                          <h4 className="font-semibold text-foreground text-sm">Beratungs-Treffpunkt Winterthur</h4>
+                        </div>
+                        <p className="text-muted-foreground text-sm">
+                          Offener Treffpunkt für alle Angehörigen und Freunde
+                        </p>
+                        <div className="flex items-center gap-2 mt-2 text-sm text-foreground">
+                          <Clock className="w-4 h-4 text-muted-foreground" />
+                          Jeden ersten Montag des Monats, 19:00 – 21:00 Uhr
+                        </div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
 
-                {/* Bern */}
-                <Card className="border-border/50">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-terracotta-mid" />
+                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                      <div className="flex items-center gap-3">
+                        <Phone className="w-5 h-5 text-sage-mid flex-shrink-0" />
+                        <div>
+                          <p className="text-sm text-muted-foreground">Beratungstelefon</p>
+                          <a href="tel:+41442404868" className="font-medium text-foreground hover:text-sage-mid">
+                            044 240 48 68
+                          </a>
+                        </div>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-foreground mb-1">Raum Bern</h3>
-                        <p className="text-muted-foreground text-sm mb-2">
-                          Selbsthilfegruppe für Angehörige von Menschen mit Borderline
-                        </p>
-                        <a 
-                          href="https://www.selbsthilfe-be.ch/shbe/de/gruppen-finden/themenliste-a-z~thema~Borderline~.html" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          <Button variant="outline" size="sm" className="gap-1 text-xs">
-                            <ExternalLink className="w-3 h-3" />
-                            Selbsthilfe Bern
-                          </Button>
-                        </a>
+                      <div className="flex items-center gap-3">
+                        <MapPin className="w-5 h-5 text-sage-mid flex-shrink-0" />
+                        <div>
+                          <p className="text-foreground text-sm">Langstrasse 149</p>
+                          <p className="text-foreground text-sm">8004 Zürich</p>
+                        </div>
                       </div>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-4 text-sm">
+                      <a href="mailto:info@vaskzuerich.ch" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground">
+                        <Mail className="w-4 h-4" />
+                        info@vaskzuerich.ch
+                      </a>
+                      <a 
+                        href="https://www.vaskzuerich.ch" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
+                      >
+                        <Globe className="w-4 h-4" />
+                        www.vaskzuerich.ch
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
               </div>
-
-              <Card className="border-border/50 mt-6 bg-muted/30">
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Phone className="w-5 h-5 text-sage-mid" />
-                    <p className="font-medium text-foreground">Keine Gruppe in Ihrer Nähe?</p>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Rufen Sie die Infoline von Selbsthilfe Schweiz an – sie helfen Ihnen, eine passende 
-                    Gruppe zu finden oder eine neue zu gründen.
-                  </p>
-                  <a href={`tel:${selbsthilfeInfo.tel}`} className="font-bold text-sage-mid hover:underline">
-                    {selbsthilfeInfo.nummer}
-                  </a>
-                </CardContent>
-              </Card>
             </ContentSection>
 
-            {/* ═══ Online-Angebote ═══ */}
+            {/* ═══ Selbsthilfegruppen finden ═══ */}
             <ContentSection
-              title="Online-Angebote"
-              icon={<Headphones className="w-7 h-7 text-terracotta" />}
-              id="online-angebote"
-              preview="Online-Foren und virtuelle Selbsthilfegruppen – Unterstützung von überall."
+              title="Selbsthilfegruppen finden"
+              icon={<MapPin className="w-7 h-7 text-terracotta-mid" />}
+              id="selbsthilfegruppen"
+              preview="Selbsthilfe Schweiz ist die zentrale Anlaufstelle für Selbsthilfegruppen in der ganzen Schweiz."
             >
-              <Card className="border-border/50">
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-2">Online-Selbsthilfegruppen</h3>
-                      <p className="text-muted-foreground text-sm">
-                        Auf der Website von Selbsthilfe Schweiz finden Sie auch Online-Selbsthilfegruppen, 
-                        die sich regelmässig per Video treffen – ideal, wenn keine Gruppe in Ihrer Nähe ist.
-                      </p>
-                    </div>
-                  </div>
+              <Card className="border-sage-darker/20 bg-sage-wash/40 overflow-hidden">
+                <CardContent className="p-6 md:p-8">
+                  <h3 className="font-semibold text-foreground text-lg mb-3">Selbsthilfe Schweiz</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-5">
+                    Selbsthilfegruppen für Angehörige von Menschen mit Borderline finden Sie über 
+                    <strong> Selbsthilfe Schweiz</strong> – die zentrale Vermittlungsstelle für 
+                    Selbsthilfegruppen in der ganzen Schweiz. Es gibt Gruppen in mehreren Kantonen, 
+                    sowohl vor Ort als auch online.
+                  </p>
+
+                  <a 
+                    href="https://www.selbsthilfeschweiz.ch/shch/de.html" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline" className="gap-2">
+                      <Globe className="w-4 h-4" />
+                      www.selbsthilfeschweiz.ch
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             </ContentSection>

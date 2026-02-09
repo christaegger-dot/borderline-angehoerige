@@ -40,17 +40,24 @@ export default function Layout({ children }: LayoutProps) {
   const ressourcenRef = useRef<HTMLDivElement>(null);
   const ressourcenButtonRef = useRef<HTMLButtonElement>(null);
   const ressourcenTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const ressourcenOpenRef = useRef(false);
 
-  // Keyboard shortcut for search (Ctrl/Cmd + K)
+  // Sync ref with state so the keydown handler always sees current value
+  useEffect(() => {
+    ressourcenOpenRef.current = ressourcenOpen;
+  }, [ressourcenOpen]);
+
+  // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setSearchOpen(true);
       }
-      if (e.key === "Escape") {
+      if (e.key === "Escape" && ressourcenOpenRef.current) {
+        e.stopPropagation();
         setRessourcenOpen(false);
-        // Fokus zurück auf den Trigger-Button
+        // Fokus zurück auf den Trigger-Button (A11y-Standard)
         ressourcenButtonRef.current?.focus();
       }
     };

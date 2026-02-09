@@ -254,6 +254,15 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OMXnbczdvCPBRNTA.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DSOVugQyCvvOACIO.pdf",
   },
+  {
+    id: "k5-7-raus-aus-dem-schuldspiel",
+    title: "Raus aus dem Schuld-Spiel – nach Fruzzetti",
+    description: "Warum Schuldzuweisungen in Familien niemanden weiterbringen: Die 4-Sackgassen-Matrix, der No-Blame-Ausweg (Beschreiben statt Beschuldigen) und 4 Grundannahmen für den Alltag.",
+    category: "selbstfuersorge",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pcOEhDaZzFxmXWZB.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DUSGEGpxuOpweDVP.pdf",
+  },
   // === K6 GENESUNG ===
   {
     id: "k6-1-genesung-in-zahlen",
@@ -388,7 +397,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 29 Materialien verfügbar
+                    Alle 30 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung

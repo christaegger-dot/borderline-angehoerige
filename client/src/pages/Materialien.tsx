@@ -111,6 +111,15 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
   },
+  {
+    id: "wenn-worte-treffen",
+    title: "Wenn Worte treffen – 5 häufige Schuldzuweisungen",
+    description: "Was hinter Sätzen wie ‹Du bist schuld› oder ‹Ohne dich wäre alles besser› steckt – und wie Sie ruhig und klar reagieren können. Mit 5 konkreten Antwortbeispielen.",
+    category: "kommunizieren",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/azZbLPyPkSupQskI.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hEXKCmWYeiyUnwXr.pdf",
+  },
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 3: UNTERSTÜTZEN
   // ═══════════════════════════════════════════════════════════════════════════
@@ -379,7 +388,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 28 Materialien verfügbar
+                    Alle 29 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung

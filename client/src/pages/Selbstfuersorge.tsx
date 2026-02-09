@@ -597,7 +597,7 @@ export default function Selbstfuersorge() {
                 </Card>
                 
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Radikale Akzeptanz bedeutet nicht, dass Sie die Situation gutheissen. Es bedeutet, dass Sie aufhören, gegen die Realität zu kämpfen. Dieses Konzept aus der DBT (Dialektisch-Behaviorale Therapie) kann auch für Angehörige sehr hilfreich sein.
+                  Radikale Akzeptanz bedeutet nicht, dass Sie die Situation gutheissen. Es bedeutet, dass Sie aufhören, gegen die Realität zu kämpfen. Dieses Konzept aus der <Link to="/glossar?q=DBT" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">DBT (Dialektisch-Behaviorale Therapie)</Link> kann auch für Angehörige sehr hilfreich sein.
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">

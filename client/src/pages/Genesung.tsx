@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Sparkles, TrendingUp, Heart, Clock, BookOpen, ExternalLink, ArrowRight, AlertTriangle, RefreshCw, Users, Download, Image as ImageIcon, Filter, Search, HandHeart } from "lucide-react";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
+import CleanMindCheck from "@/components/interactive/CleanMindCheck";
 import ContentSection from "@/components/ContentSection";
 import { TableOfContents } from "@/components/UXEnhancements";
 
@@ -386,6 +387,23 @@ export default function Genesung() {
                       </CardContent>
                     </Card>
                   ))}
+                </div>
+
+                {/* Interaktiver Selbsttest */}
+                <div className="mb-6">
+                  <CleanMindCheck />
+                </div>
+
+                {/* Angehörigen-Zitat */}
+                <div className="bg-background/60 border border-border/40 rounded-lg p-5 mb-6">
+                  <blockquote className="text-foreground/80 italic leading-relaxed text-center">
+                    <p className="mb-2">
+                      «Am Anfang hat mich jeder Rückfall völlig aus der Bahn geworfen. Heute weiss ich: Ein schlechter Tag ist kein schlechtes Leben. Meine Tochter kämpft – und ich kämpfe mit ihr, aber nicht mehr gegen mich selbst.»
+                    </p>
+                    <footer className="text-sm text-muted-foreground not-italic">
+                      – Angehörige, Selbsthilfegruppe Zürich
+                    </footer>
+                  </blockquote>
                 </div>
 
                 {/* Kernbotschaft */}

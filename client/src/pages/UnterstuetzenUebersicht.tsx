@@ -121,7 +121,7 @@ export default function UnterstuetzenUebersicht() {
                     <span className="text-4xl">🏠</span>
                     <div>
                       <p className="text-muted-foreground leading-relaxed">
-                        Stellen Sie sich vor, Sie sind ein Leuchtturm. Sie stehen fest auf Ihrem Fundament, während die Wellen um Sie herum toben. Sie können das Meer nicht beruhigen – aber Sie können Licht geben und Orientierung bieten. Sie zeigen den Weg, ohne selbst ins Wasser zu springen.
+                        Stellen Sie sich vor, Sie sind ein <Link to="/glossar?q=Leuchtturm" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Leuchtturm</Link>. Sie stehen fest auf Ihrem Fundament, während die Wellen um Sie herum toben. Sie können das Meer nicht beruhigen – aber Sie können Licht geben und Orientierung bieten. Sie zeigen den Weg, ohne selbst ins Wasser zu springen.
                       </p>
                     </div>
                   </div>
@@ -247,7 +247,7 @@ export default function UnterstuetzenUebersicht() {
                       <HandHeart className="w-4 h-4 text-sand-mid" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-sm sm:text-base">Validierung</p>
+                      <p className="font-semibold text-foreground text-sm sm:text-base"><Link to="/glossar?q=Validierung" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Validierung</Link></p>
                       <p className="text-muted-foreground text-sm mt-0.5">Akzeptieren Sie den Schmerz als real, auch wenn der Auslöser für Sie klein erscheint.</p>
                     </div>
                   </div>

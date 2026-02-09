@@ -368,7 +368,7 @@ export default function Verstehen() {
                       Präfrontaler Kortex – Die Kontrollinstanz
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                      Der präfrontale Kortex ist für rationales Denken, Impulskontrolle und Emotionsregulation zuständig. Bei Borderline ist die <strong>Verbindung zur Amygdala geschwächt</strong>.
+                      Der präfrontale Kortex ist für rationales Denken, Impulskontrolle und <Link to="/glossar?q=Emotionale+Dysregulation" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Emotionsregulation</Link> zuständig. Bei Borderline ist die <strong>Verbindung zur Amygdala geschwächt</strong>.
                     </p>
                     <div className="bg-slate-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
@@ -383,7 +383,7 @@ export default function Verstehen() {
                 <CardContent className="p-5">
                   <h4 className="font-semibold text-foreground mb-2">Die gute Nachricht: Neuroplastizität</h4>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    Das Gehirn kann sich verändern. Durch Therapie (besonders DBT) können neue neuronale Verbindungen entstehen. Studien zeigen, dass sich die Hirnaktivität nach erfolgreicher Therapie normalisieren kann.
+                    Das Gehirn kann sich verändern. Durch Therapie (besonders <Link to="/glossar?q=DBT" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">DBT</Link>) können neue neuronale Verbindungen entstehen. Studien zeigen, dass sich die Hirnaktivität nach erfolgreicher Therapie normalisieren kann.
                   </p>
                 </CardContent>
               </Card>

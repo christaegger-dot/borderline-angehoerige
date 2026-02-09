@@ -62,7 +62,7 @@ export default function UnterstuetzenTherapie() {
               preview="DBT, MBT und Schematherapie – die drei evidenzbasierten Therapien für Borderline im Überblick."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Es gibt mehrere evidenzbasierte Therapien für Borderline. Die bekannteste und am besten erforschte ist die DBT (Dialektisch-Behaviorale Therapie).
+                Es gibt mehrere evidenzbasierte Therapien für Borderline. Die bekannteste und am besten erforschte ist die <Link to="/glossar?q=DBT" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">DBT (Dialektisch-Behaviorale Therapie)</Link>.
               </p>
               
               <div className="space-y-4">

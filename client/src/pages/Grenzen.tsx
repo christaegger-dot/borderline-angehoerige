@@ -305,7 +305,7 @@ export default function Grenzen() {
               preview="Describe, Express, Assert, Reinforce – 4 Schritte für respektvolle Grenzsetzung aus der DBT."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Die DEAR-Technik aus der Dialektisch-Behavioralen Therapie (DBT) hilft Ihnen, Grenzen klar und respektvoll zu kommunizieren – ohne Vorwürfe, aber mit Wirkung.
+                Die <Link to="/glossar?q=DEARMAN" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">DEAR-Technik</Link> aus der <Link to="/glossar?q=DBT" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Dialektisch-Behavioralen Therapie (DBT)</Link> hilft Ihnen, Grenzen klar und respektvoll zu kommunizieren – ohne Vorwürfe, aber mit Wirkung.
               </p>
               
               <div className="space-y-4">

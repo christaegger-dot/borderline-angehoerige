@@ -124,7 +124,7 @@ export default function Kommunizieren() {
                     <strong>Validieren heisst:</strong> Ich zeige der anderen Person, dass ich <strong>sie ernst nehme</strong> und dass ihre Gefühle/Erlebnisse <strong>für mich Sinn machen</strong> – <em>auch wenn ich nicht alles gut finde oder nicht einverstanden bin.</em>
                   </p>
                   <p className="text-foreground leading-relaxed mb-3">
-                    Validierung ist <strong>keine Zustimmung</strong>, kein «Du hast recht», und auch kein «Ich gebe nach».
+                    <Link to="/glossar?q=Validierung" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Validierung</Link> ist <strong>keine Zustimmung</strong>, kein «Du hast recht», und auch kein «Ich gebe nach».
                   </p>
                   <p className="text-foreground leading-relaxed font-medium italic">
                     Es ist eher: «Ich verstehe, dass du dich so fühlst – und ich bleibe mit dir im Kontakt.»
@@ -274,7 +274,7 @@ export default function Kommunizieren() {
               preview="Support, Empathy, Truth – eine Kommunikationstechnik speziell für den Umgang mit Menschen mit Borderline."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">
-                SET ist eine Kommunikationstechnik, die speziell für den Umgang mit Menschen mit Borderline entwickelt wurde. Sie besteht aus drei Elementen:
+                <Link to="/glossar?q=SET-Kommunikation" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">SET</Link> ist eine Kommunikationstechnik, die speziell für den Umgang mit Menschen mit Borderline entwickelt wurde. Sie besteht aus drei Elementen:
               </p>
               
               <div className="grid gap-4">
@@ -351,7 +351,7 @@ export default function Kommunizieren() {
                   
                   <div className="grid sm:grid-cols-2 gap-4 mt-6">
                     <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
-                      <span className="text-sm font-medium text-terracotta-mid block mb-2">❌ Invalidierung:</span>
+                      <span className="text-sm font-medium text-terracotta-mid block mb-2">❌ <Link to="/glossar?q=Invalidierung" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Invalidierung</Link>:</span>
                       <p className="text-sm text-muted-foreground italic">«Das bildest du dir ein. Sie war bestimmt nur in Eile.»</p>
                     </div>
                     <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">

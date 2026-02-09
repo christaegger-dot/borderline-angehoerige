@@ -71,6 +71,15 @@ const infografiken: Array<{
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BYDbBJaIhetrjHRq.webp",
     downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PBYpNxZamAxjOHYd.pdf",
   },
+  {
+    id: "1-6-kinder-erklaerung",
+    title: "Wenn Mama oder Papa grosse Gefühle hat",
+    description: "Borderline altersgerecht erklären (4–7, 8–12, 13+ Jahre) – und Kinder schützen. Mit 3 Schutzfaktoren und Geschwister-Abschnitt.",
+    category: "verstehen",
+    type: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PrnKdbomSunLKPVv.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/birikKPATMlHGPWf.pdf",
+  },
 
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 2: KOMMUNIZIEREN
@@ -361,7 +370,7 @@ export default function Materialien() {
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 26 Materialien verfügbar
+                    Alle 27 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
                     Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach den Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung

@@ -3,10 +3,14 @@
  * 6 Missverständnisse als Flip-Cards: Klick dreht die Karte um und zeigt die Realität.
  * Einfügepunkt: /verstehen → Missverständnisse-Sektion
  * + localStorage-Fortschritts-Tracker
+ *
+ * Fix: Statt CSS 3D-Flip (absolute Back-Seite → Overflow-Bug) wird jetzt ein
+ * sauberes Toggle verwendet. Beide Seiten sind im normalen Flow, nur eine
+ * ist sichtbar. Die Kartenhöhe passt sich automatisch an den Inhalt an.
  */
 import { useState } from "react";
 import { XCircle, CheckCircle2, RotateCcw } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useProgress } from "@/hooks/useProgress";
 import ProgressBar from "./ProgressBar";
 
@@ -67,7 +71,6 @@ function FlipCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="perspective-[800px]"
     >
       <button
         onClick={handleClick}
@@ -75,58 +78,59 @@ function FlipCard({
         aria-label={isFlipped ? `Zurück zum Mythos: ${card.myth}` : `Aufdecken: ${card.myth}`}
         aria-pressed={isFlipped}
       >
-        <div
-          className="relative w-full transition-transform duration-500 ease-out"
-          style={{
-            transformStyle: "preserve-3d",
-            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
-          }}
-        >
-          {/* Front – Mythos */}
-          <div
-            className="w-full rounded-xl border-2 border-dashed border-terracotta-mid/40 bg-terracotta-wash p-5 min-h-[140px] flex flex-col justify-between"
-            style={{ backfaceVisibility: "hidden" }}
-          >
-            <div className="flex items-start gap-3">
-              <XCircle className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
-              <p className="font-semibold text-foreground text-sm leading-snug">
-                {card.myth}
-              </p>
-            </div>
-            <div className="flex items-center justify-between mt-3">
-              <p className="text-xs text-terracotta-mid flex items-center gap-1">
-                <RotateCcw className="w-3 h-3" />
-                Antippen für die Realität
-              </p>
-              {wasRevealed && !isFlipped && (
-                <CheckCircle2 className="w-4 h-4 text-sage-mid/60" />
-              )}
-            </div>
-          </div>
-
-          {/* Back – Realität */}
-          <div
-            className="absolute inset-0 w-full rounded-xl border-2 border-sage-mid/40 bg-sage-wash p-5 min-h-[140px] flex flex-col justify-between"
-            style={{
-              backfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
-            }}
-          >
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-sage-mid flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-xs font-medium text-sage-dark mb-1">Realität:</p>
-                <p className="text-sm text-foreground leading-relaxed">
-                  {card.truth}
+        <AnimatePresence mode="wait" initial={false}>
+          {!isFlipped ? (
+            /* Front – Mythos */
+            <motion.div
+              key="myth"
+              initial={{ opacity: 0, rotateY: -90 }}
+              animate={{ opacity: 1, rotateY: 0 }}
+              exit={{ opacity: 0, rotateY: 90 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="w-full rounded-xl border-2 border-dashed border-terracotta-mid/40 bg-terracotta-wash p-5"
+            >
+              <div className="flex items-start gap-3">
+                <XCircle className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
+                <p className="font-semibold text-foreground text-sm leading-snug">
+                  {card.myth}
                 </p>
               </div>
-            </div>
-            <p className="text-xs text-sage-mid mt-3 flex items-center gap-1">
-              <RotateCcw className="w-3 h-3" />
-              Antippen für den Mythos
-            </p>
-          </div>
-        </div>
+              <div className="flex items-center justify-between mt-3">
+                <p className="text-xs text-terracotta-mid flex items-center gap-1">
+                  <RotateCcw className="w-3 h-3" />
+                  Antippen für die Realität
+                </p>
+                {wasRevealed && (
+                  <CheckCircle2 className="w-4 h-4 text-sage-mid/60" />
+                )}
+              </div>
+            </motion.div>
+          ) : (
+            /* Back – Realität */
+            <motion.div
+              key="truth"
+              initial={{ opacity: 0, rotateY: 90 }}
+              animate={{ opacity: 1, rotateY: 0 }}
+              exit={{ opacity: 0, rotateY: -90 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="w-full rounded-xl border-2 border-sage-mid/40 bg-sage-wash p-5"
+            >
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-sage-mid flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-medium text-sage-dark mb-1">Realität:</p>
+                  <p className="text-sm text-foreground leading-relaxed">
+                    {card.truth}
+                  </p>
+                </div>
+              </div>
+              <p className="text-xs text-sage-mid mt-3 flex items-center gap-1">
+                <RotateCcw className="w-3 h-3" />
+                Antippen für den Mythos
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </button>
     </motion.div>
   );

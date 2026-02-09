@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
-import { useState, useEffect, lazy, Suspense } from "react";
-import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon, TrendingUp, Users } from "lucide-react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Download, Search as SearchIcon, TrendingUp, Users, ChevronDown, FileText, HelpCircle, BookMarked, Building2, Stethoscope, FolderOpen } from "lucide-react";
 const Search = lazy(() => import("@/components/Search"));
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -20,10 +20,25 @@ const navItems = [
   { href: "/beratung", label: "Beratung", icon: Users },
 ];
 
+const ressourcenItems = [
+  { href: "/soforthilfe", label: "Soforthilfe", icon: Phone },
+  { href: "/materialien", label: "Materialien & Handouts", icon: Download },
+  { href: "/beratung", label: "Beratung & Netzwerke", icon: Users },
+  { href: "/fachstelle", label: "Fachstelle & Kontakt", icon: Building2 },
+  { href: "/faq", label: "Häufige Fragen (FAQ)", icon: HelpCircle },
+  { href: "/glossar", label: "Glossar", icon: BookMarked },
+  { href: "/buchempfehlungen", label: "Buchempfehlungen", icon: BookOpen },
+  { href: "/unterstuetzen/therapie#therapieangebote", label: "Therapieangebote Zürich", icon: Stethoscope },
+];
+
 export default function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [ressourcenOpen, setRessourcenOpen] = useState(false);
+  const [mobileRessourcenOpen, setMobileRessourcenOpen] = useState(false);
+  const ressourcenRef = useRef<HTMLDivElement>(null);
+  const ressourcenTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Keyboard shortcut for search (Ctrl/Cmd + K)
   useEffect(() => {
@@ -36,6 +51,39 @@ export default function Layout({ children }: LayoutProps) {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ressourcenRef.current && !ressourcenRef.current.contains(e.target as Node)) {
+        setRessourcenOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setRessourcenOpen(false);
+    setMobileRessourcenOpen(false);
+  }, [location]);
+
+  const handleRessourcenEnter = () => {
+    if (ressourcenTimeoutRef.current) {
+      clearTimeout(ressourcenTimeoutRef.current);
+      ressourcenTimeoutRef.current = null;
+    }
+    setRessourcenOpen(true);
+  };
+
+  const handleRessourcenLeave = () => {
+    ressourcenTimeoutRef.current = setTimeout(() => {
+      setRessourcenOpen(false);
+    }, 200);
+  };
+
+  const isRessourcenActive = ressourcenItems.some(item => location.startsWith(item.href.split('#')[0]));
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -88,6 +136,70 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 );
               })}
+
+              {/* Ressourcen Dropdown */}
+              <div 
+                ref={ressourcenRef}
+                className="relative"
+                onMouseEnter={handleRessourcenEnter}
+                onMouseLeave={handleRessourcenLeave}
+              >
+                <button
+                  onClick={() => setRessourcenOpen(!ressourcenOpen)}
+                  className={`flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-500 whitespace-nowrap ${
+                    isRessourcenActive || ressourcenOpen
+                      ? "bg-terracotta-light text-terracotta-darker"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                  aria-expanded={ressourcenOpen}
+                  aria-haspopup="true"
+                >
+                  Ressourcen
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${ressourcenOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {ressourcenOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -4, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -4, scale: 0.98 }}
+                      transition={{ duration: 0.15, ease: "easeOut" }}
+                      className="absolute right-0 top-full mt-1 w-64 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/8 overflow-hidden z-50"
+                    >
+                      <div className="py-2">
+                        {ressourcenItems.map((item, index) => {
+                          const Icon = item.icon;
+                          const isActive = location === item.href.split('#')[0] || location.startsWith(item.href.split('#')[0] + '/');
+                          const isSoforthilfe = item.href === "/soforthilfe";
+                          return (
+                            <div key={item.href}>
+                              {/* Trennlinie nach Soforthilfe */}
+                              {index === 1 && (
+                                <div className="mx-3 my-1 border-t border-border/40" />
+                              )}
+                              <Link
+                                href={item.href}
+                                onClick={() => setRessourcenOpen(false)}
+                                className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all ${
+                                  isSoforthilfe
+                                    ? "text-alert font-medium hover:bg-alert/8"
+                                    : isActive
+                                      ? "bg-terracotta-light/50 text-terracotta-darker font-medium"
+                                      : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                                }`}
+                              >
+                                <Icon className={`w-4 h-4 shrink-0 ${isSoforthilfe ? "text-alert" : ""}`} />
+                                {item.label}
+                              </Link>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </nav>
 
             {/* Search, Emergency Button & Mobile Menu */}
@@ -167,6 +279,65 @@ export default function Layout({ children }: LayoutProps) {
                     </Link>
                   );
                 })}
+
+                {/* Mobile Ressourcen Accordion */}
+                <div className="mt-1">
+                  <button
+                    onClick={() => setMobileRessourcenOpen(!mobileRessourcenOpen)}
+                    className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all ${
+                      isRessourcenActive
+                        ? "bg-terracotta-light text-terracotta-darker"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    <span className="flex items-center gap-3">
+                      <FolderOpen className="w-5 h-5" />
+                      Ressourcen
+                    </span>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileRessourcenOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  
+                  <AnimatePresence>
+                    {mobileRessourcenOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 mt-1 flex flex-col gap-1">
+                          {ressourcenItems.map((item) => {
+                            const Icon = item.icon;
+                            const isActive = location === item.href.split('#')[0];
+                            const isSoforthilfe = item.href === "/soforthilfe";
+                            return (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  setMobileRessourcenOpen(false);
+                                }}
+                                className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                                  isSoforthilfe
+                                    ? "text-alert font-semibold"
+                                    : isActive
+                                      ? "bg-terracotta-light/50 text-terracotta-darker"
+                                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                                }`}
+                              >
+                                <Icon className={`w-4 h-4 ${isSoforthilfe ? "text-alert" : ""}`} />
+                                {item.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 <Link
                   href="/soforthilfe"
                   onClick={() => setMobileMenuOpen(false)}
@@ -247,46 +418,16 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="font-semibold text-foreground mb-4 text-base">Ressourcen</h3>
               <ul className="space-y-2">
-                <li>
-                  <Link href="/soforthilfe" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Soforthilfe
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/materialien" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Materialien & Handouts
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/beratung" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Beratung & Netzwerke
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/fachstelle" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Fachstelle & Kontakt
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/faq" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Häufige Fragen (FAQ)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/glossar" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Glossar
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/buchempfehlungen" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Buchempfehlungen
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/unterstuetzen/therapie#therapieangebote" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
-                    Therapieangebote Zürich
-                  </Link>
-                </li>
+                {ressourcenItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 

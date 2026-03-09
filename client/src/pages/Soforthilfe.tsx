@@ -49,7 +49,7 @@ function StickyAmpelLeiste() {
 
   return (
     <div
-      className={`sticky top-0 z-40 transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-100"}`}
+      className={`sticky top-0 z-40 transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}
       style={{ marginBottom: 0 }}
     >
       <div className="bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
@@ -91,7 +91,7 @@ function NotfallKarte({ nummer, label, hinweis, tel }: { nummer: string; label: 
         <div className="min-w-0">
           <p className="font-bold text-white text-xl sm:text-2xl leading-none mb-0.5">{nummer}</p>
           <p className="text-white/90 font-semibold text-sm">{label}</p>
-          <p className="text-white/70 text-xs leading-snug mt-0.5 hidden sm:block">{hinweis}</p>
+          <p className="text-white/70 text-xs leading-snug mt-0.5">{hinweis}</p>
         </div>
       </div>
       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all">
@@ -146,7 +146,7 @@ function EntlastungKarte({ nummer, label, hinweis, tel, badge }: { nummer: strin
           )}
           <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">{nummer}</p>
           <p className="text-muted-foreground text-xs sm:text-sm font-medium">{label}</p>
-          <p className="text-muted-foreground text-xs leading-snug mt-0.5 hidden sm:block">{hinweis}</p>
+          <p className="text-muted-foreground text-xs leading-snug mt-0.5">{hinweis}</p>
         </div>
       </div>
       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-all">
@@ -168,6 +168,7 @@ export default function Notfall() {
   const gruen143   = kontaktById("GRUEN_143")!;
   const gruenEltern = kontaktById("GRUEN_ELTERN")!;
   const gruen147   = kontaktById("GRUEN_147")!;
+  const rot145         = kontaktById("ROT_145")!;
   const infoAerztefon  = kontaktById("INFO_AERZTEFON")!;
   const infoPukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
 
@@ -180,7 +181,7 @@ export default function Notfall() {
       />
 
       {/* ═══ HERO ═══ */}
-      <section className="py-10 md:py-16 bg-gradient-to-b from-red-50 to-background">
+      <section className="py-6 md:py-16 bg-gradient-to-b from-red-50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -219,7 +220,7 @@ export default function Notfall() {
       <StickyAmpelLeiste />
 
       {/* ═══ INHALT ═══ */}
-      <section className="py-8 md:py-12 pb-24 sm:pb-12">
+      <section className="py-6 md:py-12 pb-32 sm:pb-12">
         <div className="container">
           <div className="max-w-2xl mx-auto space-y-8">
 
@@ -403,18 +404,18 @@ export default function Notfall() {
 
               <div className="px-4 py-4 sm:px-5 bg-white">
                 <a
-                  href="tel:145"
+                  href={`tel:${rot145.tel}`}
                   className="flex items-center justify-between gap-3 p-4 rounded-xl bg-purple-50 border border-purple-200 hover:border-purple-400 hover:shadow-md active:scale-[0.98] transition-all group"
-                  aria-label="Tox Info Suisse anrufen: 145"
+                  aria-label={`${rot145.label} anrufen: ${rot145.nummer}`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
                       <Pill className="w-5 h-5 text-purple-700" />
                     </div>
                     <div>
-                      <p className="font-bold text-foreground text-xl leading-none mb-0.5">145</p>
-                      <p className="text-muted-foreground text-sm font-medium">Tox Info Suisse</p>
-                      <p className="text-muted-foreground text-xs mt-0.5">Bei Vergiftungsverdacht oder Medikamentenüberdosierung</p>
+                      <p className="font-bold text-foreground text-xl leading-none mb-0.5">{rot145.nummer}</p>
+                      <p className="text-muted-foreground text-sm font-medium">{rot145.label}</p>
+                      <p className="text-muted-foreground text-xs mt-0.5">{rot145.hinweis}</p>
                     </div>
                   </div>
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-all">
@@ -450,7 +451,7 @@ export default function Notfall() {
                   <div className="min-w-0">
                     <p className="font-semibold text-foreground text-sm">{infoAerztefon.nummer}</p>
                     <p className="text-muted-foreground text-xs">{infoAerztefon.label}</p>
-                    <p className="text-muted-foreground text-xs hidden sm:block">{infoAerztefon.hinweis}</p>
+                    <p className="text-muted-foreground text-xs">{infoAerztefon.hinweis}</p>
                   </div>
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
                     <Phone className="w-4 h-4 text-muted-foreground" />
@@ -466,7 +467,7 @@ export default function Notfall() {
                   <div className="min-w-0">
                     <p className="font-semibold text-foreground text-sm">{infoPukZentrale.nummer}</p>
                     <p className="text-muted-foreground text-xs">{infoPukZentrale.label}</p>
-                    <p className="text-muted-foreground text-xs hidden sm:block">Allgemeine Auskunft – kein Notfalldienst</p>
+                    <p className="text-muted-foreground text-xs">Allgemeine Auskunft – kein Notfalldienst</p>
                   </div>
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
                     <Phone className="w-4 h-4 text-muted-foreground" />

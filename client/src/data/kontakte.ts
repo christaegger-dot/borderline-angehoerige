@@ -12,7 +12,8 @@
  * - INFO enthält nur Einträge, die im Forensik-Kontaktregister verifiziert sind
  *   (Fundstelle + Quelle). sourceRef ist Pflichtfeld.
  * - Kategorien: ROT (Notruf), GELB (PUK 24/7), GRUEN (Entlastung), INFO (Beratung)
- * - 145/118 nur auf Notfallkarte (PDF), nicht auf der Website
+ * - 118 nur auf Notfallkarte (PDF), nicht auf der Website
+ * - 145 Tox Info Suisse: auf Website (Soforthilfe Block 4) UND Notfallkarte
  * - 143 ist GRUEN, niemals ROT. Niemals gleichrangig neben 144/117.
  * - UI-Trennung: ROT/GELB/GRUEN = Ampel. INFO immer separat als
  *   „Beratung & Fachstellen", damit Nutzer:innen INFO nicht als „akut" interpretieren.
@@ -113,11 +114,10 @@ export const ROT: Kontakt[] = [
     kategorie: "rot",
     nummer: "145",
     tel: "145",
-    label: "Giftnotruf",
-    hinweis: "Vergiftungsverdacht",
-    sourceRef: "Notfallkarte PDF v03",
+    label: "Tox Info Suisse",
+    hinweis: "Bei Vergiftungsverdacht oder Medikamentenüberdosierung",
+    sourceRef: "Notfallkarte PDF v03, Soforthilfe.tsx Block 4",
     verfuegbarkeit: "24/7",
-    nurPdf: true,
   },
   {
     id: "ROT_118",
@@ -190,7 +190,7 @@ export const GRUEN: Kontakt[] = [
     nummer: "143",
     tel: "143",
     label: "Dargebotene Hand (24/7)",
-    hinweis: "Sorgentelefon, anonym, kostenlos. Es kommt niemand vorbei.",
+    hinweis: "Anonymes Gesprächs- und Krisenangebot, vertraulich. Es kommt niemand vorbei.",
     sourceRef: "Soforthilfe.tsx:324, Notfallkarte PDF v03",
     verfuegbarkeit: "24/7",
   },
@@ -200,7 +200,7 @@ export const GRUEN: Kontakt[] = [
     nummer: "147",
     tel: "147",
     label: "Pro Juventute (24/7)",
-    hinweis: "Beratung für Kinder und Jugendliche, vertraulich, kostenlos.",
+    hinweis: "Beratung für Kinder und Jugendliche, anonym, vertraulich.",
     sourceRef: "Soforthilfe.tsx:367, Notfallkarte PDF v03",
     verfuegbarkeit: "24/7",
     fuerWen: "Kinder & Jugendliche",
@@ -430,8 +430,8 @@ export function validateKontakte(): void {
     if (k.id === "GRUEN_143" && k.kategorie !== "gruen") {
       throw new Error("143 muss gruen sein");
     }
-    if ((k.id === "ROT_145" || k.id === "ROT_118") && !k.nurPdf) {
-      throw new Error("145/118 müssen nurPdf=true sein");
+    if (k.id === "ROT_118" && !k.nurPdf) {
+      throw new Error("118 muss nurPdf=true sein");
     }
   }
   // Prüfe, dass nurPdf-Einträge nicht in WEBSITE_KONTAKTE auftauchen

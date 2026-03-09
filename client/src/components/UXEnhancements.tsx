@@ -65,7 +65,8 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           onClick={scrollToTop}
-          className="fixed bottom-4 sm:bottom-6 left-4 sm:left-auto sm:right-4 z-40 w-12 h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors"
+          className="fixed left-4 sm:left-auto sm:right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors"
+          style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))' }}
           aria-label="Nach oben scrollen"
         >
           <ChevronUp className="w-6 h-6" />
@@ -331,7 +332,8 @@ export function TableOfContents() {
       {/* ─── Mobile: Floating TOC Button ─── */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="min-[1400px]:hidden fixed bottom-20 sm:bottom-6 left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+        className="min-[1400px]:hidden fixed left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+        style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))' }}
         whileTap={{ scale: 0.95 }}
         aria-label="Inhaltsverzeichnis öffnen"
       >

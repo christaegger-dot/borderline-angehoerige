@@ -1,198 +1,71 @@
 import SEO from "@/components/SEO";
 /**
- * Soforthilfe-Seite
- * Alle Kontakte aus @/data/kontakte.ts (Single Source of Truth).
- * Reihenfolge: ROT → GELB → GRÜN → INFO → Online → Krisensituationen → Krisenplan
+ * Soforthilfe-Seite – überarbeitet gemäss Auftrag 2026-03-09
+ *
+ * Struktur:
+ *   BLOCK 1 (ROT)    – Lebensgefahr: 144 / 117 / 112
+ *   BLOCK 2 (ORANGE) – Akute psychiatrische Krise: PUK 24/7 (altersdifferenziert)
+ *   BLOCK 3 (GRÜN)   – Jemand zum Reden / Entlastung: 143, Elternnotruf, 147
+ *   BLOCK 4 (SPEZIAL)– Vergiftung: 145 Tox Info Suisse
+ *   BLOCK 5 (GRAU)   – Weitere Kontakte (nachrangig): Ärztefon, PUK Zentrale
+ *
+ * Korrekturen:
+ *   - 143 NICHT als "kostenlos" bezeichnet → "anonym, vertraulich"
+ *   - KIZ (058 384 65 00) nur nachrangig, NICHT als Haupt-CTA
+ *   - PUK Zentrale (058 384 21 11) nur in "Weitere Kontakte"
+ *   - 145 Tox Info Suisse als eigener Block sichtbar
+ *   - Floating-Button und Scroll-Button überdecken keine Nummern mehr
  */
 import Layout from "@/components/Layout";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Phone, AlertTriangle, ExternalLink, Clock, Baby, User, Users, ChevronDown, Shield, Heart, Hand, MessageCircle, CheckCircle2, Info } from "lucide-react";
+import { Phone, AlertTriangle, Clock, Baby, User, Users, Shield, Heart, Pill, Info, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  WEBSITE_ROT,
-  GELB,
-  GRUEN,
-  INFO,
-  TEXTE,
-  ADRESSEN,
-  URLS,
   kontaktById,
-  urlById,
-  type Kontakt,
 } from "@/data/kontakte";
 
-// ─── Farben pro Kategorie ────────────────────────────────
-
-const FARBEN = {
-  rot: {
-    bg: "var(--color-alert)",
-    bgLight: "var(--color-alert-wash)",
-    border: "var(--color-alert)",
-    hover: "var(--color-alert)",
-  },
-  gelb: {
-    bg: "var(--color-terracotta-mid)",
-    bgLight: "var(--color-sand)",
-    border: "var(--color-sand-accent)",
-    hover: "var(--color-terracotta-mid)",
-  },
-  gruen: {
-    bg: "var(--color-sage-mid)",
-    bgLight: "var(--color-sage-pale)",
-    border: "var(--color-sage-mid)",
-    hover: "var(--color-sage-mid)",
-  },
-  info: {
-    bg: "var(--color-terracotta-mid)",
-    bgLight: "var(--color-slate-pale)",
-    border: "var(--color-slate-mid)",
-    hover: "var(--color-slate-mid)",
-  },
-} as const;
-
-// ─── Wiederverwendbare Kontakt-Karte ─────────────────────
-
-function KontaktButton({ kontakt }: { kontakt: Kontakt }) {
-  const farbe = FARBEN[kontakt.kategorie];
-  return (
-    <a href={`tel:${kontakt.tel}`}>
-      <Button
-        size="lg"
-        className="font-bold text-base sm:text-lg whitespace-nowrap"
-        style={{ backgroundColor: farbe.bg }}
-      >
-        <Phone className="w-4 h-4 mr-2" />
-        {kontakt.nummer}
-      </Button>
-    </a>
-  );
-}
-
-function KontaktKarte({ kontakt, icon }: { kontakt: Kontakt; icon?: React.ReactNode }) {
-  const farbe = FARBEN[kontakt.kategorie];
-  return (
-    <Card style={{ borderColor: farbe.border }} className="border-l-4">
-      <CardContent className="p-5">
-        <div className="flex items-start gap-4">
-          {icon && (
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ backgroundColor: `${farbe.bg}20` }}
-            >
-              {icon}
-            </div>
-          )}
-          <div className="flex-1 min-w-0">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div className="min-w-0">
-                <h3 className="font-semibold text-foreground mb-1">{kontakt.label}</h3>
-                <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
-              </div>
-              <KontaktButton kontakt={kontakt} />
-            </div>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-// ─── PUK-Karte mit Icon ──────────────────────────────────
-
-const PUK_ICONS: Record<string, React.ReactNode> = {
-  GELB_PUK_KJP: <Baby className="w-6 h-6 text-terracotta-mid" />,
-  GELB_PUK_ERW: <User className="w-6 h-6 text-terracotta-mid" />,
-  GELB_PUK_65: <Users className="w-6 h-6 text-terracotta-mid" />,
-  GELB_KIZ: <AlertTriangle className="w-6 h-6 text-terracotta-mid" />,
-};
-
-// ─── Online-Ressourcen aus Master ────────────────────────
-
-const ONLINE_RESSOURCEN = [
-  { id: "URL_PROMENTE", beschreibung: "Beratung für psychisch Betroffene und Angehörige" },
-  { id: "URL_STANDBYYOU", beschreibung: "Netzwerk für Angehörige von Menschen mit psychischen Erkrankungen" },
-  { id: "URL_DEPRESS", beschreibung: "Verein zur Bewältigung von Depressionen" },
-];
-
-// ─── Sticky Ampel-Leiste ───────────────────────────────────────────
+// ─── Sticky Ampel-Leiste ──────────────────────────────────
 
 function StickyAmpelLeiste() {
   const [visible, setVisible] = useState(false);
-  const rot144 = kontaktById("ROT_144")!;
-  const rot117 = kontaktById("ROT_117")!;
-  const rot112 = kontaktById("ROT_112")!;
-  const gruen143 = kontaktById("GRUEN_143")!;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 300);
-    };
+    const handleScroll = () => setVisible(window.scrollY > 280);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const ampelItems = [
-    {
-      id: "rot",
-      label: "Lebensgefahr",
-      sublabel: `${rot144.nummer} / ${rot117.nummer} / ${rot112.nummer}`,
-      bg: "var(--color-alert)",
-      hoverBg: "var(--color-alert)",
-    },
-    {
-      id: "gelb",
-      label: "Psychiatrische Krise",
-      sublabel: "PUK 24/7",
-      bg: "var(--color-terracotta-mid)",
-      hoverBg: "var(--color-terracotta-mid)",
-    },
-    {
-      id: "gruen",
-      label: "Jemand zum Reden",
-      sublabel: gruen143.nummer,
-      bg: "var(--color-sage-mid)",
-      hoverBg: "var(--color-sage-mid)",
-    },
+  const items = [
+    { id: "block-rot",    label: "Lebensgefahr",         sub: "144 · 117 · 112",  bg: "#C0392B" },
+    { id: "block-orange", label: "Psychiatr. Krise",      sub: "PUK 24/7",         bg: "#C67A5C" },
+    { id: "block-gruen",  label: "Jemand zum Reden",      sub: "143",              bg: "#6B9E78" },
   ] as const;
 
   return (
     <div
-      className={`sticky top-0 z-40 transition-all duration-500 ${
-        visible
-          ? "opacity-100 translate-y-0 shadow-md"
-          : "opacity-100 translate-y-0"
-      }`}
+      className={`sticky top-0 z-40 transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-100"}`}
+      style={{ marginBottom: 0 }}
     >
-      <div className="bg-background/95 backdrop-blur-md border-b border-border/50">
-        <div className="container py-2">
-          <div className="flex flex-col sm:flex-row gap-2">
-            {ampelItems.map((item) => (
-                <button
-                  type="button"
+      <div className="bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
+        <div className="container">
+          <div className="flex gap-1.5 py-2">
+            {items.map((item) => (
+              <button
                 key={item.id}
+                type="button"
                 onClick={() => scrollTo(item.id)}
-                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-white font-medium text-sm transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm"
+                aria-label={`Zu Abschnitt: ${item.label}`}
+                className="flex-1 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 px-2 py-2 sm:py-2.5 rounded-lg text-white font-medium text-xs sm:text-sm transition-all hover:brightness-90 active:scale-[0.97] shadow-sm"
                 style={{ backgroundColor: item.bg }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = item.hoverBg)}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = item.bg)}
               >
-                <span className="font-semibold">{item.label}</span>
-                <span className="text-white text-xs hidden sm:inline">→ {item.sublabel}</span>
-                <span className="text-white text-xs sm:hidden">({item.sublabel})</span>
+                <span className="font-semibold leading-tight text-center">{item.label}</span>
+                <span className="text-white/80 text-[10px] sm:text-xs leading-tight">{item.sub}</span>
               </button>
             ))}
           </div>
@@ -202,680 +75,442 @@ function StickyAmpelLeiste() {
   );
 }
 
-// ─── Soforthilfe-Seite ──────────────────────────────────────────────
+// ─── Grosse Notruf-Karte (ROT) ───────────────────────────
+
+function NotfallKarte({ nummer, label, hinweis, tel }: { nummer: string; label: string; hinweis: string; tel: string }) {
+  return (
+    <a
+      href={`tel:${tel}`}
+      className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl bg-white/15 hover:bg-white/25 active:bg-white/30 transition-all border border-white/20 group"
+      aria-label={`${label} anrufen: ${nummer}`}
+    >
+      <div className="flex items-center gap-3 min-w-0">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+          <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+        </div>
+        <div className="min-w-0">
+          <p className="font-bold text-white text-xl sm:text-2xl leading-none mb-0.5">{nummer}</p>
+          <p className="text-white/90 font-semibold text-sm">{label}</p>
+          <p className="text-white/70 text-xs leading-snug mt-0.5 hidden sm:block">{hinweis}</p>
+        </div>
+      </div>
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all">
+        <Phone className="w-5 h-5 text-white" />
+      </div>
+    </a>
+  );
+}
+
+// ─── PUK-Karte (ORANGE) ──────────────────────────────────
+
+function PukKarte({ nummer, label, fuerWen, tel, icon }: { nummer: string; label: string; fuerWen: string; tel: string; icon: React.ReactNode }) {
+  return (
+    <a
+      href={`tel:${tel}`}
+      className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-white border border-orange-200 hover:border-orange-400 hover:shadow-md active:scale-[0.98] transition-all group"
+      aria-label={`${label} anrufen: ${nummer}`}
+    >
+      <div className="flex items-center gap-3 min-w-0">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+          {icon}
+        </div>
+        <div className="min-w-0">
+          <p className="text-xs font-medium text-orange-700 mb-0.5">{fuerWen}</p>
+          <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">{nummer}</p>
+          <p className="text-muted-foreground text-xs sm:text-sm leading-snug">{label}</p>
+        </div>
+      </div>
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-all">
+        <Phone className="w-5 h-5 text-orange-700" />
+      </div>
+    </a>
+  );
+}
+
+// ─── Grüne Karte (Entlastung) ─────────────────────────────
+
+function EntlastungKarte({ nummer, label, hinweis, tel, badge }: { nummer: string; label: string; hinweis: string; tel: string; badge?: string }) {
+  return (
+    <a
+      href={`tel:${tel}`}
+      className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-white border border-green-200 hover:border-green-400 hover:shadow-md active:scale-[0.98] transition-all group"
+      aria-label={`${label} anrufen: ${nummer}`}
+    >
+      <div className="flex items-center gap-3 min-w-0">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+          <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-green-700" />
+        </div>
+        <div className="min-w-0">
+          {badge && (
+            <span className="inline-block text-[10px] font-semibold text-green-700 bg-green-100 rounded px-1.5 py-0.5 mb-0.5">{badge}</span>
+          )}
+          <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">{nummer}</p>
+          <p className="text-muted-foreground text-xs sm:text-sm font-medium">{label}</p>
+          <p className="text-muted-foreground text-xs leading-snug mt-0.5 hidden sm:block">{hinweis}</p>
+        </div>
+      </div>
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-all">
+        <Phone className="w-5 h-5 text-green-700" />
+      </div>
+    </a>
+  );
+}
+
+// ─── Soforthilfe-Seite ────────────────────────────────────
 
 export default function Notfall() {
-  // Nummern für Fliesstext-Verweise in Krisensituationen
   const rot144 = kontaktById("ROT_144")!;
   const rot117 = kontaktById("ROT_117")!;
   const rot112 = kontaktById("ROT_112")!;
-
-  // INFO-Kontakte für Soforthilfe (nur Ärztefon + PUK Zentrale)
-  const soforthilfeInfo = INFO.filter(
-    (k) => k.id === "INFO_AERZTEFON" || k.id === "INFO_PUK_ZENTRALE"
-  );
+  const pukKjp = kontaktById("GELB_PUK_KJP")!;
+  const pukErw = kontaktById("GELB_PUK_ERW")!;
+  const puk65  = kontaktById("GELB_PUK_65")!;
+  const gruen143   = kontaktById("GRUEN_143")!;
+  const gruenEltern = kontaktById("GRUEN_ELTERN")!;
+  const gruen147   = kontaktById("GRUEN_147")!;
+  const infoAerztefon  = kontaktById("INFO_AERZTEFON")!;
+  const infoPukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
 
   return (
     <Layout>
-      <SEO title="Soforthilfe" description="Sofortige Hilfe in Krisensituationen – Notfallnummern und Handlungsanleitungen." path="/soforthilfe" />
-      {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-alert-light/50 to-background wave-divider">
+      <SEO
+        title="Soforthilfe"
+        description="Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz – wenn sofortiges Handeln erforderlich ist."
+        path="/soforthilfe"
+      />
+
+      {/* ═══ HERO ═══ */}
+      <section className="py-10 md:py-16 bg-gradient-to-b from-red-50 to-background">
         <div className="container">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-alert flex items-center justify-center">
-                <Phone className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-11 h-11 rounded-xl bg-red-600 flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-white" />
               </div>
+              <span className="text-sm font-semibold text-red-700 uppercase tracking-wide">Soforthilfe</span>
             </div>
-            
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
               Soforthilfe bei akuter Gefahr
             </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-5">
               Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz – wenn sofortiges Handeln erforderlich ist.
             </p>
-            
-            <div className="p-4 rounded-xl bg-sand border border-sand-subtle">
-              <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Unterschied Notfall vs. Krise:</strong> Diese Seite ist für <strong>akute Gefahrensituationen</strong> (Suizidgefahr, Selbstverletzung, Gewalt). Für Deeskalationstechniken bei <strong>emotionalen Krisen ohne akute Gefahr</strong> besuchen Sie unsere Seite{" "}
-                <Link href="/unterstuetzen/krise" className="text-terracotta-mid hover:underline font-medium">In der Krise unterstützen →</Link>
+
+            <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
+              <p className="text-sm text-amber-900 leading-snug">
+                <strong>Diese Seite ist für akute Gefahrensituationen.</strong> Für emotionale Krisen ohne akute Gefahr besuchen Sie die Seite{" "}
+                <Link href="/unterstuetzen/krise" className="text-terracotta-mid hover:underline font-semibold">
+                  «In der Krise unterstützen» →
+                </Link>
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ═══ Sticky Ampel-Leiste ═══ */}
+      {/* ═══ STICKY AMPEL ═══ */}
       <StickyAmpelLeiste />
 
-      {/* Content */}
-      <section className="py-12 md:py-16 wave-divider-top">
+      {/* ═══ INHALT ═══ */}
+      <section className="py-8 md:py-12 pb-24 sm:pb-12">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-2xl mx-auto space-y-8">
 
-            {/* ═══ ROT: Sofort-Hilfe (24/7) ═══ */}
-            <div id="rot" className="scroll-mt-28">
+            {/* ─── BLOCK 1: LEBENSGEFAHR (ROT) ─── */}
             <motion.div
+              id="block-rot"
+              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Sofort-Hilfe (24/7)
-              </h2>
-              
-              <div className="space-y-4">
-                {WEBSITE_ROT.map((kontakt) => (
-                  <Card key={kontakt.id} style={{ borderColor: FARBEN.rot.bg }} className="border-l-4">
-                    <CardContent className="p-5">
-                      <div className="flex items-center justify-between gap-4">
-                        <div>
-                          <h3 className="font-semibold text-foreground mb-1">{kontakt.label}</h3>
-                          <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
-                        </div>
-                        <KontaktButton kontakt={kontakt} />
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </motion.div>
-
-            </div>
-
-            {/* ═══ GELB: Psychiatrische Notdienste PUK Zürich (24/7) ═══ */}
-            <div id="gelb" className="scroll-mt-28">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
-              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
-            >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
-                <Clock className="w-8 h-8 text-sand-accent" />
-                Psychiatrische Notdienste Kanton Zürich
-              </h2>
-              <p className="text-sm text-muted-foreground mb-6 ml-11">
-                Wenn eine akute psychische Krise vorliegt, aber keine unmittelbare Lebensgefahr besteht.
-              </p>
-              
-              {/* Info-Box: Was ist PUK? */}
-              <Card className="border-l-4 border-sand-accent bg-sand mb-6">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-3">PUK Zürich – psychiatrische Notfallhilfe (24/7)</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-3">
-                    {TEXTE.pukEinleitung}
-                  </p>
-                  <div className="p-3 rounded-md bg-sand-muted border border-sand-subtle">
-                    <p className="text-sm text-muted-foreground">
-                      <strong className="text-foreground">Was passiert beim Anruf?</strong> {TEXTE.pukTriage}
-                    </p>
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-3">
-                    Standort: {ADRESSEN[0].adresse}
-                  </p>
-                </CardContent>
-              </Card>
-              
-              {/* Wahlhilfe: Für wen? */}
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="text-sm font-medium text-foreground">Für wen?</span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-terracotta-wash text-terracotta-dark border border-terracotta/30">
-                  <Baby className="w-3.5 h-3.5" /> bis 18
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-terracotta-wash text-terracotta-dark border border-terracotta/30">
-                  <User className="w-3.5 h-3.5" /> ab 18
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-terracotta-wash text-terracotta-dark border border-terracotta/30">
-                  <Users className="w-3.5 h-3.5" /> ab 65
-                </span>
-              </div>
-
-              <div className="space-y-4">
-                {GELB.map((kontakt) => (
-                  <KontaktKarte
-                    key={kontakt.id}
-                    kontakt={kontakt}
-                    icon={PUK_ICONS[kontakt.id]}
-                  />
-                ))}
-              </div>
-
-              {/* Beratung & Fachstellen (INFO, nur Soforthilfe-relevante) */}
-              <div className="mt-6 pt-6 border-t border-border/50">
-                <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                  <Info className="w-5 h-5 text-muted-foreground" />
-                  Beratung & Fachstellen
-                </h3>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {soforthilfeInfo.map((kontakt) => (
-                    <Card key={kontakt.id} className="border-border/50">
-                      <CardContent className="p-4">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <p className="font-medium text-foreground">{kontakt.label}</p>
-                            <p className="text-sm text-muted-foreground">{kontakt.hinweis}</p>
-                          </div>
-                          <a href={`tel:${kontakt.tel}`}>
-                            <Button variant="outline" size="sm" className="font-bold border-slate-mid text-slate-dark hover:bg-slate-wash">
-                              <Phone className="w-3.5 h-3.5 mr-1.5" />
-                              {kontakt.nummer}
-                            </Button>
-                          </a>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+              {/* Block-Header */}
+              <div className="px-5 py-4 sm:px-6 sm:py-5" style={{ backgroundColor: "#C0392B" }}>
+                <div className="flex items-center gap-3 mb-1">
+                  <AlertTriangle className="w-6 h-6 text-white flex-shrink-0" />
+                  <h2 className="text-lg sm:text-xl font-bold text-white">Lebensgefahr – sofort handeln</h2>
                 </div>
-              </div>
-            </motion.div>
-
-            </div>
-
-            {/* ═══ GRÜN: Zuhören & Entlastung ═══ */}
-            <div id="gruen" className="scroll-mt-28">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
-              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
-            >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2 flex items-center gap-3">
-                <Heart className="w-8 h-8 text-sage-mid" />
-                Zuhören & Entlastung
-              </h2>
-              <p className="text-sm text-muted-foreground mb-3 ml-11">
-                Kein Einsatzdienst – es kommt niemand vorbei. Für emotionale Unterstützung und Entlastung.
-              </p>
-              <div className="ml-11 mb-6 p-3 rounded-lg bg-alert-wash border border-alert-light">
-                <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Bei akuter Gefahr:</strong> Immer zuerst <strong>{rot144.nummer} / {rot117.nummer} / {rot112.nummer}</strong> rufen.
+                <p className="text-white/85 text-sm leading-snug ml-9">
+                  Bei akuter Suizidgefahr, schwerer Selbstverletzung, Gewalt oder unmittelbarer Bedrohung.
                 </p>
               </div>
-              
-              <div className="space-y-4">
-                {GRUEN.map((kontakt) => (
-                  <Card key={kontakt.id} style={{ borderColor: FARBEN.gruen.border }} className="border-l-4">
-                    <CardContent className="p-5">
-                      <div className="flex items-center justify-between gap-4">
-                        <div>
-                          <h3 className="font-semibold text-foreground mb-1">{kontakt.label}</h3>
-                          <p className="text-muted-foreground text-sm">{kontakt.hinweis}</p>
-                        </div>
-                        <KontaktButton kontakt={kontakt} />
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+
+              {/* Nummern */}
+              <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3" style={{ backgroundColor: "#D44333" }}>
+                <NotfallKarte
+                  nummer={rot144.nummer}
+                  label={rot144.label}
+                  hinweis={rot144.hinweis}
+                  tel={rot144.tel}
+                />
+                <NotfallKarte
+                  nummer={rot117.nummer}
+                  label={rot117.label}
+                  hinweis={rot117.hinweis}
+                  tel={rot117.tel}
+                />
+                <NotfallKarte
+                  nummer={rot112.nummer}
+                  label={rot112.label}
+                  hinweis={rot112.hinweis}
+                  tel={rot112.tel}
+                />
               </div>
 
-
+              {/* Merksatz */}
+              <div className="px-5 py-3 sm:px-6 bg-red-900/20 border-t border-white/10">
+                <p className="text-white/90 text-xs sm:text-sm leading-snug" style={{ color: "#fff" }}>
+                  <strong>Merke:</strong> Bei akuter Lebensgefahr immer zuerst <strong>144 / 117 / 112</strong> – auch gegen den Willen der Person.
+                </p>
+              </div>
             </motion.div>
 
-            </div>
-
-            {/* ═══ Krisensituationen ═══ */}
+            {/* ─── BLOCK 2: PSYCHIATRISCHE KRISE (ORANGE) ─── */}
             <motion.div
+              id="block-orange"
+              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-md border border-orange-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                Was tun in konkreten Krisensituationen?
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Klicken Sie auf eine Situation für konkrete Schritt-für-Schritt-Anleitungen.
-              </p>
-              
-              <Accordion type="single" collapsible className="space-y-4">
-                {/* Suiziddrohung */}
-                <AccordionItem value="suizid" className="border rounded-lg border-alert bg-alert-wash">
-                  <AccordionTrigger className="px-5 py-4 hover:no-underline">
-                    <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-alert flex items-center justify-center flex-shrink-0">
-                        <AlertTriangle className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground">Suiziddrohung oder -gedanken</h3>
-                        <p className="text-sm text-muted-foreground font-normal">«Ich will nicht mehr leben», «Ohne mich wärt ihr besser dran»</p>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-5 pb-5">
-                    <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-alert/10 rounded-lg border border-alert/30">
-                        <p className="font-semibold text-alert-dark mb-2">Wichtig zu wissen:</p>
-                        <p className="text-sm text-muted-foreground">Suiziddrohungen bei Borderline sind ernst zu nehmen, aber nicht immer ein akuter Notfall. Unterscheiden Sie zwischen chronischer Suizidalität (wiederkehrende Gedanken) und akuter Krise (konkrete Pläne, Mittel vorhanden).</p>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-alert text-white text-sm flex items-center justify-center">1</span>
-                          Ruhe bewahren und zuhören
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• Nehmen Sie die Äusserung ernst, ohne in Panik zu geraten</li>
-                          <li>• Fragen Sie direkt: «Hast du konkrete Pläne, dir etwas anzutun?»</li>
-                          <li>• Hören Sie zu, ohne zu urteilen oder zu beschwichtigen</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-alert text-white text-sm flex items-center justify-center">2</span>
-                          Risiko einschätzen
-                        </h4>
-                        <div className="ml-8 grid sm:grid-cols-2 gap-3">
-                          <div className="p-3 bg-alert/5 rounded-lg">
-                            <p className="font-medium text-alert-dark text-sm mb-1">Hohes Risiko → Notruf {rot144.nummer}</p>
-                            <ul className="text-xs text-muted-foreground space-y-0.5">
-                              <li>• Konkrete Pläne vorhanden</li>
-                              <li>• Mittel beschafft (Medikamente, etc.)</li>
-                              <li>• Früherer Suizidversuch</li>
-                              <li>• Abschiedsbriefe geschrieben</li>
-                            </ul>
-                          </div>
-                          <div className="p-3 bg-sage-mid/10 rounded-lg">
-                            <p className="font-medium text-sage-dark text-sm mb-1">Moderates Risiko → Fachperson</p>
-                            <ul className="text-xs text-muted-foreground space-y-0.5">
-                              <li>• Gedanken, aber keine Pläne</li>
-                              <li>• Kann Gründe zum Leben nennen</li>
-                              <li>• Ist ansprechbar und kooperativ</li>
-                              <li>• Hat Therapeut/Psychiater</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-alert text-white text-sm flex items-center justify-center">3</span>
-                          Handeln
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• <strong>Bei hohem Risiko:</strong> Notruf {rot144.nummer} oder Polizei {rot117.nummer} – auch gegen den Willen der Person</li>
-                          <li>• <strong>Bei moderatem Risiko:</strong> Therapeut/Psychiater kontaktieren, Krisenplan aktivieren</li>
-                          <li>• Bleiben Sie bei der Person, bis professionelle Hilfe da ist</li>
-                          <li>• Entfernen Sie wenn möglich Zugang zu Mitteln (Medikamente, scharfe Gegenstände)</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="p-4 bg-sage-light/30 rounded-lg border border-sage-mid/30">
-                        <p className="text-sm text-muted-foreground">
-                          <strong className="text-foreground">Validieren Sie das Leid, nicht die Lösung:</strong> «Ich höre, dass du gerade unglaublich leidest. Ich bin froh, dass du mir das sagst. Lass uns gemeinsam schauen, wie wir durch diese Nacht kommen.»
-                        </p>
-                      </div>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
+              {/* Block-Header */}
+              <div className="px-5 py-4 sm:px-6 sm:py-5 bg-orange-50 border-b border-orange-200">
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-5 h-5 text-white" />
+                  </div>
+                  <h2 className="text-lg sm:text-xl font-bold text-orange-900">Akute psychiatrische Krise</h2>
+                </div>
+                <p className="text-orange-800 text-sm leading-snug ml-11">
+                  Schwere psychische Krise, starke Eskalation oder massiver Kontrollverlust – aber <strong>keine unmittelbare Lebensgefahr</strong>.
+                </p>
+              </div>
 
-                {/* Selbstverletzung */}
-                <AccordionItem value="selbstverletzung" className="border rounded-lg border-terracotta-mid bg-cream">
-                  <AccordionTrigger className="px-5 py-4 hover:no-underline">
-                    <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-terracotta-mid flex items-center justify-center flex-shrink-0">
-                        <Hand className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground">Selbstverletzung (Ritzen, Brennen, Schlagen)</h3>
-                        <p className="text-sm text-muted-foreground font-normal">Akute Selbstverletzung oder Entdeckung von Verletzungen</p>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-5 pb-5">
-                    <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-terracotta-mid/10 rounded-lg border border-terracotta-mid/30">
-                        <p className="font-semibold text-terracotta-dark mb-2">Wichtig zu verstehen:</p>
-                        <p className="text-sm text-muted-foreground">Selbstverletzung ist meist <strong>kein</strong> Suizidversuch, sondern ein Versuch, unerträgliche emotionale Schmerzen zu regulieren. Sie dient oft dazu, Spannung abzubauen oder «wieder etwas zu fühlen».</p>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-terracotta-mid text-white text-sm flex items-center justify-center">1</span>
-                          Sofortmassnahmen
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• <strong>Bei starker Blutung oder tiefen Wunden:</strong> Notruf {rot144.nummer}</li>
-                          <li>• Bei oberflächlichen Verletzungen: Wunde versorgen (reinigen, desinfizieren, verbinden)</li>
-                          <li>• Ruhig bleiben – Ihre Panik verstärkt die Scham</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-terracotta-mid text-white text-sm flex items-center justify-center">2</span>
-                          Kommunikation
-                        </h4>
-                        <div className="ml-8 grid sm:grid-cols-2 gap-3">
-                          <div className="p-3 bg-sage-mid/10 rounded-lg">
-                            <p className="font-medium text-sage-dark text-sm mb-1">✓ Hilfreich</p>
-                            <ul className="text-xs text-muted-foreground space-y-0.5">
-                              <li>• «Ich sehe, dass du leidest.»</li>
-                              <li>• «Wie kann ich dir jetzt helfen?»</li>
-                              <li>• «Lass uns die Wunde versorgen.»</li>
-                            </ul>
-                          </div>
-                          <div className="p-3 bg-terracotta-mid/10 rounded-lg">
-                            <p className="font-medium text-alert-dark text-sm mb-1">✗ Vermeiden</p>
-                            <ul className="text-xs text-muted-foreground space-y-0.5">
-                              <li>• «Warum tust du dir das an?»</li>
-                              <li>• «Das ist doch Erpressung!»</li>
-                              <li>• «Denk doch mal an uns!»</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-terracotta-mid text-white text-sm flex items-center justify-center">3</span>
-                          Nachsorge
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• Therapeut/Psychiater zeitnah informieren</li>
-                          <li>• Gemeinsam über Alternativen sprechen (Eiswürfel, rote Farbe, Sport)</li>
-                          <li>• Nicht überwachen oder kontrollieren – das verstärkt Heimlichkeit</li>
-                          <li>• Eigene Gefühle mit Fachperson besprechen</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
+              {/* PUK-Karten */}
+              <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3 bg-white">
+                <p className="text-sm text-muted-foreground mb-1">
+                  Kontaktieren Sie die PUK Zürich – rund um die Uhr, 24/7:
+                </p>
 
-                {/* Aggressive Eskalation */}
-                <AccordionItem value="aggression" className="border rounded-lg border-slate-mid bg-slate-pale">
-                  <AccordionTrigger className="px-5 py-4 hover:no-underline">
-                    <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-slate-mid flex items-center justify-center flex-shrink-0">
-                        <Shield className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground">Aggressive Eskalation</h3>
-                        <p className="text-sm text-muted-foreground font-normal">Schreien, Drohen, Werfen von Gegenständen, körperliche Gewalt</p>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-5 pb-5">
-                    <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-alert/10 rounded-lg border border-alert/30">
-                        <p className="font-semibold text-alert-dark mb-2">Ihre Sicherheit geht vor!</p>
-                        <p className="text-sm text-muted-foreground">Bei körperlicher Gewalt oder konkreten Drohungen: Verlassen Sie die Situation und rufen Sie die Polizei ({rot117.nummer}). Borderline erklärt Verhalten, entschuldigt es aber nicht.</p>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-slate-mid text-white text-sm flex items-center justify-center">1</span>
-                          Deeskalieren (wenn sicher)
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• Ruhig und langsam sprechen, Stimme senken</li>
-                          <li>• Abstand halten, nicht in die Enge treiben</li>
-                          <li>• Blickkontakt halten, aber nicht starren</li>
-                          <li>• Offene Körperhaltung, Hände sichtbar</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-slate-mid text-white text-sm flex items-center justify-center">2</span>
-                          Kommunikation
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• Validieren: «Ich sehe, dass du gerade extrem wütend bist.»</li>
-                          <li>• Grenze setzen: «Ich möchte dir zuhören, aber nicht wenn du schreist.»</li>
-                          <li>• Option geben: «Sollen wir 10 Minuten Pause machen?»</li>
-                          <li>• Nicht argumentieren, rechtfertigen oder beschuldigen</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-slate-mid text-white text-sm flex items-center justify-center">3</span>
-                          Wenn Deeskalation nicht funktioniert
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• <strong>Ankündigen:</strong> «Ich gehe jetzt in ein anderes Zimmer. Wir können später weiterreden.»</li>
-                          <li>• <strong>Gehen:</strong> Raum verlassen, Tür nicht abschliessen</li>
-                          <li>• <strong>Bei Gewalt:</strong> Haus verlassen, Polizei {rot117.nummer} rufen</li>
-                          <li>• <strong>Später:</strong> Im ruhigen Moment über Konsequenzen sprechen</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="p-4 bg-sage-light/30 rounded-lg border border-sage-mid/30">
-                        <p className="text-sm text-muted-foreground">
-                          <strong className="text-foreground">Merke:</strong> Sie müssen sich nicht anschreien oder bedrohen lassen. Das Verlassen einer eskalierenden Situation ist keine Bestrafung, sondern Selbstschutz und gibt beiden Zeit zur Regulation.
-                        </p>
-                      </div>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
+                <PukKarte
+                  nummer={pukKjp.nummer}
+                  label="PUK Kinder & Jugendliche (24/7)"
+                  fuerWen="Kinder & Jugendliche bis 18 Jahre"
+                  tel={pukKjp.tel}
+                  icon={<Baby className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
+                />
+                <PukKarte
+                  nummer={pukErw.nummer}
+                  label="PUK Erwachsene (24/7)"
+                  fuerWen="Erwachsene ab 18 Jahren"
+                  tel={pukErw.tel}
+                  icon={<User className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
+                />
+                <PukKarte
+                  nummer={puk65.nummer}
+                  label="PUK Erwachsene (24/7)"
+                  fuerWen="Erwachsene ab 65 Jahren"
+                  tel={puk65.tel}
+                  icon={<Users className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
+                />
+              </div>
 
-                {/* Emotionale Erpressung */}
-                <AccordionItem value="erpressung" className="border rounded-lg border-sand-warm bg-cream">
-                  <AccordionTrigger className="px-5 py-4 hover:no-underline">
-                    <div className="flex items-center gap-3 text-left">
-                      <div className="w-10 h-10 rounded-lg bg-sand-warm flex items-center justify-center flex-shrink-0">
-                        <MessageCircle className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground">Emotionale Erpressung / Manipulation</h3>
-                        <p className="text-sm text-muted-foreground font-normal">«Wenn du gehst, bringe ich mich um», «Du bist schuld, dass es mir so geht»</p>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-5 pb-5">
-                    <div className="space-y-4 pt-2">
-                      <div className="p-4 bg-sand-warm/10 rounded-lg border border-sand-warm/30">
-                        <p className="font-semibold text-terracotta-dark mb-2">Wichtig zu verstehen:</p>
-                        <p className="text-sm text-muted-foreground">Menschen mit Borderline manipulieren selten bewusst. Hinter solchen Äusserungen steckt meist extreme Verlassensangst und die verzweifelte Überzeugung, dass sie ohne Sie nicht überleben können.</p>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-sand-warm text-white text-sm flex items-center justify-center">1</span>
-                          Das Gefühl validieren, nicht die Forderung
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• «Ich höre, dass du gerade panische Angst hast, mich zu verlieren.»</li>
-                          <li>• «Deine Angst ist real und ich nehme sie ernst.»</li>
-                          <li>• <strong>Aber:</strong> «Ich kann nicht bleiben, weil du mir drohst.»</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-sand-warm text-white text-sm flex items-center justify-center">2</span>
-                          Klare Grenze setzen
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• «Ich bin nicht verantwortlich für deine Entscheidungen.»</li>
-                          <li>• «Wenn du sagst, du bringst dich um, muss ich den Notruf rufen.»</li>
-                          <li>• «Ich liebe dich, aber ich lasse mich nicht erpressen.»</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          <span className="w-6 h-6 rounded-full bg-sand-warm text-white text-sm flex items-center justify-center">3</span>
-                          Konsequent handeln
-                        </h4>
-                        <ul className="ml-8 space-y-1 text-sm text-muted-foreground">
-                          <li>• Bei akuter Gefahr: Notruf {rot144.nummer} oder Polizei {rot117.nummer} oder {rot112.nummer} – jedes Mal</li>
-                          <li>• Nicht nachgeben, um «Ruhe zu haben» – das verstärkt das Muster</li>
-                          <li>• Später im ruhigen Moment besprechen, was passiert ist</li>
-                          <li>• Eigene Therapie/Beratung in Anspruch nehmen</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="p-4 bg-sage-light/30 rounded-lg border border-sage-mid/30">
-                        <p className="text-sm text-muted-foreground">
-                          <strong className="text-foreground">Denken Sie daran:</strong> Sie können die Angst Ihres Angehörigen nicht wegnehmen, indem Sie Ihre eigenen Bedürfnisse aufgeben. Langfristig hilft nur, dass Ihr Angehöriger lernt, mit der Angst umzugehen – nicht, dass Sie sie vermeiden.
-                        </p>
-                      </div>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              {/* Hinweis */}
+              <div className="px-5 py-3 sm:px-6 bg-orange-50 border-t border-orange-100">
+                <p className="text-orange-800 text-xs sm:text-sm leading-snug">
+                  Am Telefon erfolgt eine kurze Einschätzung, was jetzt am besten hilft.
+                </p>
+              </div>
             </motion.div>
 
-
-            {/* ═══ Notfallkarte zum Ausdrucken ═══ */}
+            {/* ─── BLOCK 3: JEMAND ZUM REDEN (GRÜN) ─── */}
             <motion.div
+              id="block-gruen"
+              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-md border border-green-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Notfallkarte zum Ausdrucken
-              </h2>
+              {/* Block-Header */}
+              <div className="px-5 py-4 sm:px-6 sm:py-5 bg-green-50 border-b border-green-200">
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="w-8 h-8 rounded-lg bg-green-600 flex items-center justify-center flex-shrink-0">
+                    <Heart className="w-5 h-5 text-white" />
+                  </div>
+                  <h2 className="text-lg sm:text-xl font-bold text-green-900">Jemand zum Reden / Entlastung</h2>
+                </div>
+                <p className="text-green-800 text-sm leading-snug ml-11">
+                  Für Gespräch, Entlastung und Orientierung – <strong>kein Einsatz vor Ort</strong>, keine unmittelbare Gefahr.
+                </p>
+              </div>
 
-              <Card className="bg-card border overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="md:flex">
-                    {/* Vorschau-Bild */}
-                    <div className="md:w-1/3 bg-sand p-4 flex items-center justify-center">
-                      <img
-                        src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mSoGIXZAiMAbFAFL.webp"
-                        alt="Notfallkarte Zürich – Vorschau"
-                        className="rounded-lg shadow-md max-h-64 w-auto"
-                        width={400}
-                        height={223}
-                        loading="lazy"
-                        decoding="async"
-                      />
+              {/* Karten */}
+              <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3 bg-white">
+                <EntlastungKarte
+                  nummer={gruen143.nummer}
+                  label="Dargebotene Hand"
+                  hinweis="Anonym, vertraulich – Gesprächs- und Krisenangebot"
+                  tel={gruen143.tel}
+                  badge="24/7"
+                />
+                <EntlastungKarte
+                  nummer={gruenEltern.nummer}
+                  label="Elternnotruf"
+                  hinweis="Beratung für Eltern – anonym, vertraulich"
+                  tel={gruenEltern.tel}
+                  badge="24/7 · Für Eltern"
+                />
+                <EntlastungKarte
+                  nummer={gruen147.nummer}
+                  label="Pro Juventute"
+                  hinweis="Beratung für Kinder und Jugendliche – vertraulich"
+                  tel={gruen147.tel}
+                  badge="24/7 · Für Kinder & Jugendliche"
+                />
+              </div>
+
+              {/* Hinweis */}
+              <div className="px-5 py-3 sm:px-6 bg-green-50 border-t border-green-100">
+                <p className="text-green-800 text-xs sm:text-sm leading-snug">
+                  <strong>Bei akuter Gefahr:</strong> Immer zuerst <strong>144 / 117 / 112</strong> rufen.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* ─── BLOCK 4: SPEZIALFALL VERGIFTUNG ─── */}
+            <motion.div
+              id="block-spezial"
+              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-sm border border-purple-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="px-5 py-4 sm:px-6 sm:py-4 bg-purple-50 border-b border-purple-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center flex-shrink-0">
+                    <Pill className="w-5 h-5 text-white" />
+                  </div>
+                  <h2 className="text-base sm:text-lg font-bold text-purple-900">Spezialfall: Vergiftung</h2>
+                </div>
+              </div>
+
+              <div className="px-4 py-4 sm:px-5 bg-white">
+                <a
+                  href="tel:145"
+                  className="flex items-center justify-between gap-3 p-4 rounded-xl bg-purple-50 border border-purple-200 hover:border-purple-400 hover:shadow-md active:scale-[0.98] transition-all group"
+                  aria-label="Tox Info Suisse anrufen: 145"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
+                      <Pill className="w-5 h-5 text-purple-700" />
                     </div>
-                    {/* Text + Download */}
-                    <div className="md:w-2/3 p-6 flex flex-col justify-center">
-                      <h3 className="font-semibold text-lg text-foreground mb-2">
-                        Notfallkarte Zürich (PDF, A4)
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                        Alle wichtigen Nummern auf einer Seite – zum Ausdrucken, Aufhängen oder Weitergeben.
-                        Enthält die Ampel-Logik (ROT / GELB / GRÜN) und den Schnell-Entscheid.
-                      </p>
-                      <div className="flex flex-wrap gap-3">
-                        <a
-                          href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FTdjCPHRXUSxwbVS.pdf"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm text-white transition-colors"
-                          style={{ backgroundColor: "var(--color-sage-mid)" }}
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          PDF öffnen
-                        </a>
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-2">
-                        öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
-                      </p>
-                      <p className="text-xs text-muted-foreground mt-3">
-                        Stand: 06.02.2026 · Version 04 · Quelle: pukzh.ch
-                      </p>
+                    <div>
+                      <p className="font-bold text-foreground text-xl leading-none mb-0.5">145</p>
+                      <p className="text-muted-foreground text-sm font-medium">Tox Info Suisse</p>
+                      <p className="text-muted-foreground text-xs mt-0.5">Bei Vergiftungsverdacht oder Medikamentenüberdosierung</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* ═══ Online-Ressourcen & Beratung ═══ */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
-              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
-            >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Online-Ressourcen & Beratung
-              </h2>
-              
-              <div className="space-y-4">
-                {ONLINE_RESSOURCEN.map((res) => {
-                  const url = urlById(res.id);
-                  if (!url) return null;
-                  return (
-                    <Card key={res.id} className="border-border/50 hover:border-terracotta transition-colors">
-                      <CardContent className="p-5">
-                        <div className="flex items-center justify-between gap-4">
-                          <div>
-                            <h3 className="font-semibold text-foreground mb-1">{url.label}</h3>
-                            <p className="text-muted-foreground text-sm">{res.beschreibung}</p>
-                          </div>
-                          <a href={url.url} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" size="sm">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Website
-                            </Button>
-                          </a>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-all">
+                    <Phone className="w-5 h-5 text-purple-700" />
+                  </div>
+                </a>
               </div>
             </motion.div>
 
-
-            {/* ═══ Persönlicher Krisenplan ═══ */}
+            {/* ─── BLOCK 5: WEITERE KONTAKTE (NACHRANGIG) ─── */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
-              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
-            >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Persönlicher Krisenplan
-              </h2>
-              
-              <Card className="bg-sage-light/20 border-sage">
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Erstellen Sie gemeinsam mit Ihrem Angehörigen einen persönlichen Krisenplan. Dieser sollte enthalten:
-                  </p>
-                  <ul className="space-y-2">
-                    {[
-                      "Frühwarnzeichen einer Krise",
-                      "Strategien, die in der Vergangenheit geholfen haben",
-                      "Wichtige Telefonnummern (Therapeut, Arzt, Vertrauensperson)",
-                      "Medikamenteninformationen",
-                      "Was Sie als Angehöriger tun können – und was nicht"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-sage-mid">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* ═══ Hinweis ═══ */}
-            <motion.div
+              id="block-weitere"
+              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-sm border border-border/50"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-terracotta-wash border-terracotta">
-                <CardContent className="p-6 text-center">
-                  <p className="text-muted-foreground">
-                    Diese Seite ersetzt keine professionelle Beratung. Bei akuten Krisen wenden Sie sich bitte immer an die Notfallnummern oder den psychiatrischen Notdienst.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="px-5 py-3 sm:px-6 sm:py-4 bg-muted/40 border-b border-border/50">
+                <div className="flex items-center gap-2">
+                  <Info className="w-5 h-5 text-muted-foreground" />
+                  <h2 className="text-sm sm:text-base font-semibold text-muted-foreground">Weitere Kontakte</h2>
+                </div>
+                <p className="text-xs text-muted-foreground mt-0.5 ml-7">Allgemeine Beratung und Auskunft – nicht für akute Notfälle</p>
+              </div>
+
+              <div className="px-4 py-4 sm:px-5 space-y-3 bg-background">
+                {/* Ärztefon */}
+                <a
+                  href={`tel:${infoAerztefon.tel}`}
+                  className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
+                  aria-label={`${infoAerztefon.label} anrufen: ${infoAerztefon.nummer}`}
+                >
+                  <div className="min-w-0">
+                    <p className="font-semibold text-foreground text-sm">{infoAerztefon.nummer}</p>
+                    <p className="text-muted-foreground text-xs">{infoAerztefon.label}</p>
+                    <p className="text-muted-foreground text-xs hidden sm:block">{infoAerztefon.hinweis}</p>
+                  </div>
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
+                    <Phone className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                </a>
+
+                {/* PUK Zentrale – explizit als Auskunft, nicht Notfall */}
+                <a
+                  href={`tel:${infoPukZentrale.tel}`}
+                  className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
+                  aria-label={`${infoPukZentrale.label} anrufen: ${infoPukZentrale.nummer}`}
+                >
+                  <div className="min-w-0">
+                    <p className="font-semibold text-foreground text-sm">{infoPukZentrale.nummer}</p>
+                    <p className="text-muted-foreground text-xs">{infoPukZentrale.label}</p>
+                    <p className="text-muted-foreground text-xs hidden sm:block">Allgemeine Auskunft – kein Notfalldienst</p>
+                  </div>
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
+                    <Phone className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                </a>
+              </div>
             </motion.div>
+
+            {/* ─── WEITERFÜHREND ─── */}
+            <motion.div
+              className="rounded-2xl border border-border/50 bg-muted/30 p-5 sm:p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-muted-foreground" />
+                Für die Zeit nach der Krise
+              </h3>
+              <div className="space-y-2">
+                <Link
+                  href="/unterstuetzen/krise"
+                  className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
+                >
+                  <span className="text-sm text-foreground">Deeskalation und Krisenbegleitung</span>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
+                </Link>
+                <Link
+                  href="/selbstfuersorge"
+                  className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
+                >
+                  <span className="text-sm text-foreground">Selbstfürsorge für Angehörige</span>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
+                </Link>
+                <Link
+                  href="/beratung"
+                  className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
+                >
+                  <span className="text-sm text-foreground">Beratung und Selbsthilfegruppen</span>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
+                </Link>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>

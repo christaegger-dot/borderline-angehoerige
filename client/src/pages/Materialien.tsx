@@ -489,9 +489,15 @@ export default function Materialien() {
                       }}
                     >
                       {item.isHtml ? (
-                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/30 dark:to-orange-950/30">
-                          <span className="text-5xl mb-2">🆘</span>
-                          <span className="text-sm font-medium text-muted-foreground">Interaktive Notfallkarte</span>
+                        <div className="w-full h-full relative overflow-hidden bg-white">
+                          <iframe
+                            src={item.url}
+                            title={item.title}
+                            className="absolute inset-0 w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none border-0"
+                            tabIndex={-1}
+                            aria-hidden="true"
+                            loading="lazy"
+                          />
                         </div>
                       ) : (
                         <img

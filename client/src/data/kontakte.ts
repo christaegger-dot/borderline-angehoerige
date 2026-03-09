@@ -4,7 +4,7 @@
  * Alle Telefonnummern, E-Mail-Adressen, Adressen und URLs auf der Website
  * kommen ausschliesslich aus dieser Datei. Keine Nummern im Fliesstext.
  *
- * Inventar: 19 Telefonnummern, 3 E-Mail-Adressen, 1 Adresse, 6 URLs.
+ * Inventar: 20 Telefonnummern, 4 E-Mail-Adressen, 1 Adresse, 7 URLs.
  *
  * Regeln:
  * - NO-MIX: PUK ≠ USZ ≠ UZH
@@ -286,6 +286,15 @@ export const INFO: Kontakt[] = [
     hinweis: "Beratung zu psychischer Gesundheit",
     sourceRef: "Selbsthilfegruppen.tsx:277, Selbstfuersorge.tsx:601",
   },
+  {
+    id: "INFO_VASK_ZH",
+    kategorie: "info",
+    nummer: "044 240 48 68",
+    tel: "+41442404868",
+    label: "VASK Zürich",
+    hinweis: "Beratungstelefon für Angehörige von psychisch Kranken",
+    sourceRef: "Selbsthilfegruppen.tsx:286",
+  },
 ];
 
 // ─── E-Mail-Adressen ─────────────────────────────────────
@@ -311,6 +320,13 @@ export const EMAILS: EmailKontakt[] = [
     label: "DBT-Station B2 Hard",
     hinweis: "Stationäre DBT-Behandlung",
     sourceRef: "UnterstuetzenTherapie.tsx:336",
+  },
+  {
+    id: "EMAIL_VASK_ZH",
+    adresse: "info@vaskzuerich.ch",
+    label: "VASK Zürich",
+    hinweis: "Kantonale Vereinigung der Angehörigen von psychisch Kranken",
+    sourceRef: "Selbsthilfegruppen.tsx:301",
   },
 ];
 
@@ -370,6 +386,12 @@ export const URLS: UrlKontakt[] = [
     url: "https://www.pukzh.ch",
     label: "PUK Zürich – Website",
     sourceRef: "Fachstelle.tsx:181, Selbsthilfegruppen.tsx:104",
+  },
+  {
+    id: "URL_VASK_ZH",
+    url: "https://www.vaskzuerich.ch",
+    label: "VASK Zürich",
+    sourceRef: "Selbsthilfegruppen.tsx:306",
   },
 ];
 

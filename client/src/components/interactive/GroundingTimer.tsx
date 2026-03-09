@@ -83,9 +83,7 @@ type Phase = "idle" | "running" | "paused" | "done";
 /* ── Debug logger (nur im Dev-Modus, Tree-Shaking-freundlich) ── */
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const dbg: (msg: string, ...args: unknown[]) => void = import.meta.env.DEV
-  ? (msg, ...args) => console.log(`[GroundingAudio] ${msg}`, ...args)
-  : () => {};
+const dbg: (msg: string, ...args: unknown[]) => void = () => {};
 
 /* ── HTML5 Audio helper ─────────────────────────────── */
 

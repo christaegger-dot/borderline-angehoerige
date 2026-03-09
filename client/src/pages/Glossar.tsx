@@ -3,8 +3,8 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { BookOpen, Search, ArrowRight, Brain, Heart, MessageCircle, Shield, Users, Lightbulb, AlertTriangle, Sparkles } from "lucide-react";
-import { useState } from "react";
-import { Link } from "wouter";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
 
 interface GlossaryTerm {
   term: string;
@@ -181,6 +181,14 @@ const categoryInfo = {
 export default function Glossar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [location] = useLocation();
+
+  // Bug-Fix: URL-Parameter ?q= auslesen und in Suchfeld setzen
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+    if (q) setSearchTerm(q);
+  }, [location]);
 
   const filteredTerms = glossaryTerms.filter(term => {
     const matchesSearch = searchTerm === "" || 
@@ -248,6 +256,8 @@ export default function Glossar() {
               <button
                 type="button"
                 onClick={() => setSelectedCategory(null)}
+                aria-label="Alle Kategorien anzeigen"
+                aria-pressed={selectedCategory === null}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   selectedCategory === null
                     ? 'bg-slate-dark text-white'
@@ -261,6 +271,8 @@ export default function Glossar() {
                   type="button"
                   key={key}
                   onClick={() => setSelectedCategory(selectedCategory === key ? null : key)}
+                  aria-label={info.label}
+                  aria-pressed={selectedCategory === key}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
                     selectedCategory === key
                       ? `bg-[${info.color}] text-white`

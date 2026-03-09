@@ -388,6 +388,7 @@ export function TableOfContents() {
                     <button
                       type="button"
                       onClick={() => scrollToHeading(id)}
+                      aria-label={`Zum Abschnitt: ${text}`}
                       className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-400 ${
                         level === 3 ? "pl-7" : ""
                       } ${
@@ -418,6 +419,7 @@ export function TableOfContents() {
                     type="button"
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
+                    aria-label={`Zum Abschnitt: ${text}`}
                     className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-all duration-400 line-clamp-2 ${
                       level === 3 ? "pl-5" : ""
                     } ${

@@ -251,6 +251,8 @@ export default function Buchempfehlungen() {
             <button
               type="button"
               onClick={() => setActiveCategory(null)}
+              aria-label="Alle Kategorien anzeigen"
+              aria-pressed={activeCategory === null}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === null
                   ? 'bg-terracotta-dark text-white'
@@ -264,6 +266,8 @@ export default function Buchempfehlungen() {
                 type="button"
                 key={category.id}
                 onClick={() => setActiveCategory(activeCategory === category.id ? null : category.id)}
+                aria-label={category.title}
+                aria-pressed={activeCategory === category.id}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
                   activeCategory === category.id
                     ? 'bg-terracotta-dark text-white'

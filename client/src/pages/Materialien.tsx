@@ -347,6 +347,7 @@ const categories = [
 export default function Materialien() {
   const [activeCategory, setActiveCategory] = useState("alle");
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [previewTitle, setPreviewTitle] = useState<string>("Vorschau");
   const gridRef = useRef<HTMLElement>(null);
   
   const filteredInfografiken = activeCategory === "alle" 
@@ -477,7 +478,7 @@ export default function Materialien() {
                     {/* Vorschaubild mit Hover-Overlay */}
                     <div 
                       className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
-                      onClick={() => setPreviewImage(item.url)}
+                      onClick={() => { setPreviewImage(item.url); setPreviewTitle(item.title); }}
                     >
                       <img 
                         src={item.url} 
@@ -600,7 +601,7 @@ export default function Materialien() {
           >
             <img 
               src={previewImage} 
-              alt="Vorschau" 
+              alt={`Vorschau: ${previewTitle}`} 
               className="w-full h-auto rounded-lg shadow-2xl" width={1600} height={892} loading="lazy" decoding="async"
             />
             <p className="text-center text-white mt-4 text-sm">

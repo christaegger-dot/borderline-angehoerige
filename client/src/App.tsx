@@ -68,7 +68,7 @@ function Router() {
         <Route path="/datenschutz" component={Datenschutz} />
         <Route path="/genesung" component={Genesung} />
         <Route path="/beratung" component={Selbsthilfegruppen} />
-        <Route path="/selbsthilfegruppen">{() => <Redirect to="/beratung" />}</Route>
+        <Route path="/selbsthilfegruppen" component={Selbsthilfegruppen} />
         <Route path="/feedback" component={Feedback} />
         <Route path="/glossar" component={Glossar} />
         <Route path="/buchempfehlungen" component={Buchempfehlungen} />

@@ -35,7 +35,7 @@ export default function SEO({ title, description, path = "/", type = "website" }
     updateMeta("og:title", fullTitle, true);
     updateMeta("og:description", metaDescription, true);
     updateMeta("og:type", type, true);
-    updateMeta("og:url", `https://borderline-angehoerige.manus.space${path}`, true);
+    updateMeta("og:url", `https://borderline-angehoerige.netlify.app${path}`, true);
     updateMeta("og:image", OG_IMAGE, true);
     updateMeta("twitter:title", fullTitle);
     updateMeta("twitter:description", metaDescription);
@@ -47,7 +47,7 @@ export default function SEO({ title, description, path = "/", type = "website" }
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = `https://borderline-angehoerige.manus.space${path}`;
+    canonical.href = `https://borderline-angehoerige.netlify.app${path}`;
   }, [fullTitle, metaDescription, path, type]);
 
   return null;
@@ -60,7 +60,7 @@ export function WebsiteSchema() {
     "@type": "WebSite",
     "name": SITE_NAME,
     "alternateName": "Borderline Angehörige",
-    "url": "https://borderline-angehoerige.manus.space",
+    "url": "https://borderline-angehoerige.netlify.app",
     "description": BASE_DESCRIPTION,
     "inLanguage": "de",
     "publisher": {
@@ -73,7 +73,7 @@ export function WebsiteSchema() {
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://borderline-angehoerige.manus.space/?q={search_term_string}",
+      "target": "https://borderline-angehoerige.netlify.app/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -99,7 +99,7 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
     "@type": "MedicalWebPage",
     "name": title,
     "description": description,
-    "url": `https://borderline-angehoerige.manus.space${path}`,
+    "url": `https://borderline-angehoerige.netlify.app${path}`,
     "inLanguage": "de",
     "about": {
       "@type": "MedicalCondition",
@@ -115,7 +115,7 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
       "@type": "PeopleAudience",
       "audienceType": "Angehörige von Menschen mit Borderline-Persönlichkeitsstörung"
     },
-    "lastReviewed": "2026-02-07",
+    "lastReviewed": "2026-03-09",
     "medicalAudience": {
       "@type": "MedicalAudience",
       "audienceType": "Patient"

@@ -81,7 +81,6 @@ Bitte regelmässig prüfen, ob alle Nummern, E-Mails, URLs und Adressen noch akt
 - **PUK-Nummern**: Alle 058 384 xx xx Nummern stammen von der PUK Zürich. Bei Umstrukturierungen können sich diese ändern.
 - ~~044 384 26 00~~ → **korrigiert auf 058 384 38 00** in `SelbstfuersorgeCheck.tsx:139` (bestätigt: Fachstelle Angehörigenarbeit PUK Zürich).
 - **manuscdn.com-URLs**: Alle Bilder/PDFs liegen auf manuscdn.com CDN. Bei Ablauf dieser URLs sind ALLE Materialien betroffen.
-- **Notfallkarte v04**: Verwendet cloudfront.net-URLs statt manuscdn — separates CDN (`client/src/pages/Materialien.tsx:322-323`).
-- **Notfallkarte v04 – Block 2 veraltet**: Die PDF/WebP enthält `058 384 27 00` als einzelne PUK-Nummer. Korrekt sind drei separate Nummern: **058 384 20 00** (Erwachsene 18+), **058 384 66 66** (Kinder/Jugendliche), **058 384 46 82** (ab 65). ⚠️ Nummer ist in der Grafik-Datei eingebettet — erfordert Neuerstellung der Notfallkarte v05.
+- ~~**Notfallkarte v04**~~: CloudFront-URLs ersetzt → **v05 als lokale HTML-Datei** (`client/public/notfallkarte.html`). Block 2 jetzt mit drei korrekten PUK-Nummern: 058 384 20 00 (18+), 058 384 66 66 (Kinder/Jugendliche), 058 384 46 82 (ab 65). ✅ Erledigt 09.03.2026.
 - **058 384 46 82**: ✅ Verifiziert via pukzh.ch am 09.03.2026 als PUK-Nummer für Erwachsene ab 65.
 - **044 389 16 82** (auf uzh.ch): Veraltet — pukzh.ch ist massgebend. Nummer kommt in unserem Code nicht vor, kein Handlungsbedarf.

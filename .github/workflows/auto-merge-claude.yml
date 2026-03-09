@@ -16,25 +16,23 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          set -euo pipefail
           BRANCH="${{ github.ref_name }}"
-
           echo "Branch: $BRANCH"
 
-          # 2) Offene PR suchen
-          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || true)
+          # Offene PR suchen
+          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' || echo "")
 
-          # 3) Keine offene PR → neue erstellen
+          # Keine offene PR → neue erstellen
           if [ -z "$PR_URL" ]; then
             echo "Erstelle neue PR..."
-            if ! PR_URL=$(gh pr create --title "Auto: $BRANCH" --body "Auto-created by workflow" --base main --head "$BRANCH" 2>/tmp/gh-err); then
-              echo "gh pr create stderr:"
-              cat /tmp/gh-err
-              exit 1
-            fi
+            PR_URL=$(gh pr create \
+              --title "Auto: $BRANCH" \
+              --body "Auto-created by workflow" \
+              --base main \
+              --head "$BRANCH") || { echo "PR create failed"; exit 1; }
           fi
 
           echo "PR: $PR_URL"
           sleep 60
-          gh pr merge --auto --merge "$PR_URL" || gh pr merge --merge "$PR_URL"
+          gh pr merge --merge "$PR_URL" || gh pr merge --auto --merge "$PR_URL"
           git push origin --delete "$BRANCH" || true

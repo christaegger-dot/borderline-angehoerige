@@ -79,6 +79,6 @@ Bitte regelmässig prüfen, ob alle Nummern, E-Mails, URLs und Adressen noch akt
 ## Hinweise
 
 - **PUK-Nummern**: Alle 058 384 xx xx Nummern stammen von der PUK Zürich. Bei Umstrukturierungen können sich diese ändern.
-- **044 384 26 00** in `SelbstfuersorgeCheck.tsx:139` weicht vom Schema ab (044 statt 058) — bitte prüfen ob korrekt.
+- ~~044 384 26 00~~ → **korrigiert auf 058 384 38 00** in `SelbstfuersorgeCheck.tsx:139` (bestätigt: Fachstelle Angehörigenarbeit PUK Zürich).
 - **manuscdn.com-URLs**: Alle Bilder/PDFs liegen auf manuscdn.com CDN. Bei Ablauf dieser URLs sind ALLE Materialien betroffen.
 - **Notfallkarte v04**: Verwendet cloudfront.net-URLs statt manuscdn — separates CDN (`client/src/pages/Materialien.tsx:322-323`).

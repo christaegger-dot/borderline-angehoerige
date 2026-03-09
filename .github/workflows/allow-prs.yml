@@ -1,0 +1,18 @@
+# Allow GitHub Actions to create and approve pull requests
+
+# This file will contain workflow to allow GitHub Actions to create and approve PRs.
+
+name: Allow GitHub Actions to Create and Approve PRs
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Approve Pull Request
+        uses: hmarr/auto-approve-action@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -10,37 +10,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Create or find PR
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           BRANCH="${{ github.ref_name }}"
-
-          # Bereits in main gemergt? → sauber abbrechen
-          git fetch origin main
-          MERGED=$(git branch -r --merged origin/main | grep "$BRANCH" || true)
-          if [ -n "$MERGED" ]; then
-            echo "Branch bereits in main gemergt – kein PR nötig."
-            exit 0
-          fi
+          echo "Branch: $BRANCH"
 
           # Offene PR suchen
-          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || true)
+          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' || echo "")
 
           # Keine offene PR → neue erstellen
           if [ -z "$PR_URL" ]; then
+            echo "Erstelle neue PR..."
             PR_URL=$(gh pr create \
               --title "Auto: $BRANCH" \
-              --body "" \
+              --body "Auto-created by workflow" \
               --base main \
-              --head "$BRANCH") || {
-              echo "PR-Erstellung fehlgeschlagen (exit $?)."
-              exit 0
-            }
+              --head "$BRANCH") || { echo "PR create failed"; exit 1; }
           fi
 
-          echo "PR_URL=$PR_URL" >> $GITHUB_OUTPUT
           echo "PR: $PR_URL"
           sleep 60
-          gh pr merge --auto --merge "$PR_URL" || gh pr merge --merge "$PR_URL"
+          gh pr merge --merge "$PR_URL" || gh pr merge --auto --merge "$PR_URL"
           git push origin --delete "$BRANCH" || true

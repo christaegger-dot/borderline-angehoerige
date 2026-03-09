@@ -14,25 +14,32 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set -euo pipefail
           BRANCH="${{ github.ref_name }}"
 
-          # 1) Offene PR suchen
+          echo "Branch: $BRANCH"
+
+          # 1) Prüfe ob es Unterschiede zu main gibt
+          git fetch origin main
+          DIFF=$(git diff origin/main...HEAD --stat)
+          if [ -z "$DIFF" ]; then
+            echo "Keine Unterschiede zu main – nichts zu tun."
+            exit 0
+          fi
+          echo "Änderungen gefunden:"
+          echo "$DIFF"
+
+          # 2) Offene PR suchen
           PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || true)
 
-          # 2) Keine offene PR → neue erstellen
+          # 3) Keine offene PR → neue erstellen
           if [ -z "$PR_URL" ]; then
-            PR_URL=$(gh pr create --title "Auto: $BRANCH" --body "" --base main --head "$BRANCH" 2>&1) || {
-              echo "gh pr create fehlgeschlagen: $PR_URL"
-              echo "Prüfe ob Branch bereits vollständig in main ist..."
-              git fetch origin main
-              DIFF=$(git diff origin/main...HEAD --stat)
-              if [ -z "$DIFF" ]; then
-                echo "Keine Unterschiede zu main – nichts zu tun."
-                exit 0
-              fi
-              echo "Es gibt Unterschiede, aber PR-Erstellung schlug fehl. Abbruch."
+            echo "Erstelle neue PR..."
+            if ! PR_URL=$(gh pr create --title "Auto: $BRANCH" --body "Auto-created by workflow" --base main --head "$BRANCH" 2>/tmp/gh-err); then
+              echo "gh pr create stderr:"
+              cat /tmp/gh-err
               exit 1
-            }
+            fi
           fi
 
           echo "PR: $PR_URL"

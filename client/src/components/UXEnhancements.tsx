@@ -65,7 +65,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           onClick={scrollToTop}
-          className="fixed left-4 sm:left-auto sm:right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors"
+          className="fixed left-4 sm:left-auto sm:right-4 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors"
           style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))' }}
           aria-label="Nach oben scrollen"
         >

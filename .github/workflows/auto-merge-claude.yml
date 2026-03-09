@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Create or find PR
         env:
           GH_TOKEN: ${{ github.token }}
@@ -18,16 +20,6 @@ jobs:
           BRANCH="${{ github.ref_name }}"
 
           echo "Branch: $BRANCH"
-
-          # 1) Prüfe ob es Unterschiede zu main gibt
-          git fetch origin main
-          DIFF=$(git diff origin/main...HEAD --stat)
-          if [ -z "$DIFF" ]; then
-            echo "Keine Unterschiede zu main – nichts zu tun."
-            exit 0
-          fi
-          echo "Änderungen gefunden:"
-          echo "$DIFF"
 
           # 2) Offene PR suchen
           PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || true)

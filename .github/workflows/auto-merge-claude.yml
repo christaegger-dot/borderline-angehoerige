@@ -15,18 +15,26 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           BRANCH="${{ github.ref_name }}"
-          # Abbruch wenn Branch bereits in main gemergt
-          git fetch origin main
-          MERGED=$(git branch -r --merged origin/main | grep "$BRANCH" || true)
-          if [ -n "$MERGED" ]; then
-            echo "Branch bereits in main gemergt – kein PR nötig."
-            exit 0
-          fi
-          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null)
+
+          # 1) Offene PR suchen
+          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || true)
+
+          # 2) Keine offene PR → neue erstellen
           if [ -z "$PR_URL" ]; then
-            PR_URL=$(gh pr create --title "Auto: $BRANCH" --body "" --base main --head "$BRANCH")
+            PR_URL=$(gh pr create --title "Auto: $BRANCH" --body "" --base main --head "$BRANCH" 2>&1) || {
+              echo "gh pr create fehlgeschlagen: $PR_URL"
+              echo "Prüfe ob Branch bereits vollständig in main ist..."
+              git fetch origin main
+              DIFF=$(git diff origin/main...HEAD --stat)
+              if [ -z "$DIFF" ]; then
+                echo "Keine Unterschiede zu main – nichts zu tun."
+                exit 0
+              fi
+              echo "Es gibt Unterschiede, aber PR-Erstellung schlug fehl. Abbruch."
+              exit 1
+            }
           fi
-          echo "PR_URL=$PR_URL" >> $GITHUB_OUTPUT
+
           echo "PR: $PR_URL"
           sleep 60
           gh pr merge --auto --merge "$PR_URL" || gh pr merge --merge "$PR_URL"

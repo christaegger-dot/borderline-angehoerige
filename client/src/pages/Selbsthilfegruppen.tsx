@@ -13,6 +13,12 @@ const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
 const pukUrl = urlById("URL_PUK")!;
 const proMente = kontaktById("INFO_PROMENTE")!;
 const standByYouTel = kontaktById("INFO_SELBSTHILFE_CH")!;
+const vaskZhTel = kontaktById("INFO_VASK_ZH")!;
+const vaskZhEmail = emailById("EMAIL_VASK_ZH")!;
+const vaskZhUrl = urlById("URL_VASK_ZH")!;
+const proMenteUrl = urlById("URL_PROMENTE")!;
+const standByYouUrl = urlById("URL_STANDBYYOU")!;
+const selbsthilfeChUrl = urlById("URL_SELBSTHILFE_CH")!;
 
 export default function Selbsthilfegruppen() {
   return (
@@ -161,14 +167,14 @@ export default function Selbsthilfegruppen() {
                         <Phone className="w-4 h-4" />
                         {proMente.nummer} (Normaltarif)
                       </a>
-                      <a 
-                        href="https://www.promentesana.ch" 
-                        target="_blank" 
+                      <a
+                        href={proMenteUrl.url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
                       >
                         <Globe className="w-4 h-4" />
-                        www.promentesana.ch
+                        {proMenteUrl.url.replace("https://www.", "www.")}
                       </a>
                     </div>
                   </CardContent>
@@ -213,13 +219,13 @@ export default function Selbsthilfegruppen() {
                         <Globe className="w-5 h-5 text-sage-mid flex-shrink-0" />
                         <div>
                           <p className="text-sm text-muted-foreground">Website</p>
-                          <a 
-                            href="https://www.stand-by-you.ch" 
-                            target="_blank" 
+                          <a
+                            href={standByYouUrl.url}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="font-medium text-foreground hover:text-sage-mid"
                           >
-                            www.stand-by-you.ch
+                            {standByYouUrl.url.replace("https://www.", "www.")}
                           </a>
                         </div>
                       </div>
@@ -283,8 +289,8 @@ export default function Selbsthilfegruppen() {
                         <Phone className="w-5 h-5 text-sage-mid flex-shrink-0" />
                         <div>
                           <p className="text-sm text-muted-foreground">Beratungstelefon</p>
-                          <a href="tel:+41442404868" className="font-medium text-foreground hover:text-sage-mid">
-                            044 240 48 68
+                          <a href={`tel:${vaskZhTel.tel}`} className="font-medium text-foreground hover:text-sage-mid">
+                            {vaskZhTel.nummer}
                           </a>
                         </div>
                       </div>
@@ -298,18 +304,18 @@ export default function Selbsthilfegruppen() {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 text-sm">
-                      <a href="mailto:info@vaskzuerich.ch" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground">
+                      <a href={`mailto:${vaskZhEmail.adresse}`} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground">
                         <Mail className="w-4 h-4" />
-                        info@vaskzuerich.ch
+                        {vaskZhEmail.adresse}
                       </a>
-                      <a 
-                        href="https://www.vaskzuerich.ch" 
-                        target="_blank" 
+                      <a
+                        href={vaskZhUrl.url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
                       >
                         <Globe className="w-4 h-4" />
-                        www.vaskzuerich.ch
+                        {vaskZhUrl.url.replace("https://www.", "www.")}
                       </a>
                     </div>
                   </CardContent>
@@ -334,14 +340,14 @@ export default function Selbsthilfegruppen() {
                     sowohl vor Ort als auch online.
                   </p>
 
-                  <a 
-                    href="https://www.selbsthilfeschweiz.ch/shch/de.html" 
-                    target="_blank" 
+                  <a
+                    href={selbsthilfeChUrl.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Button variant="outline" className="gap-2">
                       <Globe className="w-4 h-4" />
-                      www.selbsthilfeschweiz.ch
+                      {selbsthilfeChUrl.url.replace("https://www.", "www.")}
                       <ExternalLink className="w-3.5 h-3.5" />
                     </Button>
                   </a>

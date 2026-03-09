@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, MapPin, ExternalLink, Home, Calendar, Building2, Baby, User, Phone, Mail } from "lucide-react";
 import { Link } from "wouter";
-import { kontaktById, emailById, GELB } from "@/data/kontakte";
+import { kontaktById, emailById, urlById, GELB } from "@/data/kontakte";
 
 const hype = kontaktById("INFO_PUK_KJPP_HYPE")!;
 const emailKjpp = emailById("EMAIL_KJPP")!;
 const pukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
 const emailHard = emailById("EMAIL_HARD")!;
+const clieniaUrl = urlById("URL_CLIENIA")!;
+const dbtDachUrl = urlById("URL_DBT_DACH")!;
 
 export default function UnterstuetzenTherapie() {
   return (
@@ -333,7 +335,7 @@ export default function UnterstuetzenTherapie() {
                     <p className="text-xs text-muted-foreground mb-2">
                       Stationäres Integratives Therapieprogramm für Emotionsregulation (SITE)
                     </p>
-                    <a href="https://www.clienia.ch/de/standorte/clienia-schloessli/stationen/a2/" target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark hover:underline flex items-center gap-1">
+                    <a href={clieniaUrl.url} target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark hover:underline flex items-center gap-1">
                       Website besuchen <ExternalLink className="w-3 h-3" />
                     </a>
                   </CardContent>
@@ -344,7 +346,7 @@ export default function UnterstuetzenTherapie() {
                     <p className="text-xs text-muted-foreground mb-2">
                       Therapeutenlandkarte mit zertifizierten DBT-Therapeuten in der Schweiz
                     </p>
-                    <a href="https://www.dachverband-dbt.de/dbt-therapieangebote" target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark hover:underline flex items-center gap-1">
+                    <a href={dbtDachUrl.url} target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark hover:underline flex items-center gap-1">
                       Therapeutensuche <ExternalLink className="w-3 h-3" />
                     </a>
                   </CardContent>

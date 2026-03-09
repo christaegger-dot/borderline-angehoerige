@@ -22,6 +22,7 @@ const infografiken: Array<{
   type: string;
   url: string;
   downloadUrl?: string;
+  isHtml?: boolean;
 }> = [
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 1: VERSTEHEN
@@ -321,6 +322,7 @@ const infografiken: Array<{
     type: "Notfallkarte",
     url: "/notfallkarte.html",
     downloadUrl: "/notfallkarte.html",
+    isHtml: true,
   },
   {
     id: "notfallplan-krise",
@@ -461,7 +463,7 @@ export default function Materialien() {
           <div className="mb-6 p-3 rounded-lg bg-sand border border-sand-subtle flex items-center gap-2">
             <Eye className="w-4 h-4 text-muted-foreground flex-shrink-0" />
             <p className="text-sm text-muted-foreground">
-              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab. Die Notfallkarte öffnet als interaktive HTML-Seite.
             </p>
           </div>
           {filteredInfografiken.length > 0 ? (
@@ -476,24 +478,37 @@ export default function Materialien() {
                 >
                   <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
                     {/* Vorschaubild mit Hover-Overlay */}
-                    <div 
+                    <div
                       className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
-                      onClick={() => { setPreviewImage(item.url); setPreviewTitle(item.title); }}
+                      onClick={() => {
+                        if (item.isHtml) {
+                          window.open(item.url, '_blank');
+                        } else {
+                          setPreviewImage(item.url); setPreviewTitle(item.title);
+                        }
+                      }}
                     >
-                      <img 
-                        src={item.url} 
-                        alt={item.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        loading={index < 4 ? "eager" : "lazy"}
-                        width={400}
-                        height={300}
-                        decoding={index < 4 ? "sync" : "async"}
-                      />
+                      {item.isHtml ? (
+                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/30 dark:to-orange-950/30">
+                          <span className="text-5xl mb-2">🆘</span>
+                          <span className="text-sm font-medium text-muted-foreground">Interaktive Notfallkarte</span>
+                        </div>
+                      ) : (
+                        <img
+                          src={item.url}
+                          alt={item.title}
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          loading={index < 4 ? "eager" : "lazy"}
+                          width={400}
+                          height={300}
+                          decoding={index < 4 ? "sync" : "async"}
+                        />
+                      )}
                       {/* Hover-Overlay */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                           <ZoomIn className="w-4 h-4 text-foreground" />
-                          <span className="text-sm font-medium text-foreground">Vergrössern</span>
+                          <span className="text-sm font-medium text-foreground">{item.isHtml ? 'Öffnen' : 'Vergrössern'}</span>
                         </div>
                       </div>
                       {/* Typ-Badge */}
@@ -516,11 +531,11 @@ export default function Materialien() {
                           href={item.downloadUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                          aria-label={`${item.isHtml ? 'Notfallkarte' : 'PDF'} öffnen: ${item.title} (neuer Tab)`}
                           className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          PDF öffnen
+                          {item.isHtml ? 'Notfallkarte öffnen' : 'PDF öffnen'}
                         </a>
                       </div>
                     </CardContent>

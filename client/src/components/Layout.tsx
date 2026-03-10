@@ -595,7 +595,7 @@ export default function Layout({ children }: LayoutProps) {
         <Link href="/soforthilfe" className="sm:hidden fixed z-50" style={{ bottom: 'calc(4.5rem + env(safe-area-inset-bottom, 0px))', right: '1rem' }} aria-label="Soforthilfe – Notfallnummern und Krisenberatung">
           <Button
             variant="default"
-            className="h-12 px-4 rounded-full bg-alert hover:bg-alert text-white shadow-lg animate-breathe gap-2 text-sm font-semibold"
+            className="h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg animate-breathe gap-2 text-sm font-semibold"
             tabIndex={-1}
           >
             <Phone className="w-4 h-4" />

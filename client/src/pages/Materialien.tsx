@@ -321,6 +321,7 @@ const infografiken: Array<{
     category: "soforthilfe",
     type: "Notfallkarte",
     url: "/notfallkarte.html",
+    previewUrl: "/notfallkarte-preview.webp",
     downloadUrl: "/notfallkarte.html",
     pdfUrl: "/notfallkarte-zuerich-v06.pdf",
     isHtml: true,
@@ -491,14 +492,20 @@ export default function Materialien() {
                     >
                       {item.isHtml ? (
                         <div className="w-full h-full relative overflow-hidden bg-white">
-                          <iframe
-                            src={item.url}
-                            title={item.title}
-                            className="absolute inset-0 w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none border-0"
-                            tabIndex={-1}
-                            aria-hidden="true"
-                            loading="lazy"
-                          />
+                          {(item as any).previewUrl ? (
+                            <img
+                              src={(item as any).previewUrl}
+                              alt={item.title}
+                              className="w-full h-full object-cover object-top"
+                              loading="lazy"
+                              width={597}
+                              height={826}
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                              <span className="text-xs text-gray-400">Vorschau</span>
+                            </div>
+                          )}
                         </div>
                       ) : (
                         <img

@@ -1,14 +1,11 @@
 name: Auto-PR and merge for Claude Code
-
 on:
   push:
     branches:
       - 'claude/**'
-
 permissions:
   contents: write
   pull-requests: write
-
 jobs:
   create-and-merge:
     runs-on: ubuntu-latest
@@ -16,65 +13,57 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Create or find PR and merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -euo pipefail
           BRANCH="${{ github.ref_name }}"
           echo "Branch: $BRANCH"
 
-          # 1. Bereits in main? → sauber abbrechen
-          git fetch origin main
-          if git merge-base --is-ancestor HEAD origin/main; then
-            echo "Branch bereits in main enthalten – nichts zu tun."
+          # 1. Pruefen ob Branch noch existiert
+          if ! git ls-remote --exit-code origin "$BRANCH" > /dev/null 2>&1; then
+            echo "Branch $BRANCH existiert nicht mehr - Workflow beendet."
             exit 0
           fi
 
-          # 2. Offene PR suchen
-          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || true)
+          # 2. Bereits in main enthalten? -> sauber abbrechen
+          git fetch origin main
+          if git merge-base --is-ancestor HEAD origin/main; then
+            echo "Branch bereits in main enthalten - nichts zu tun."
+            exit 0
+          fi
 
-          # 3. Keine offene PR → neue erstellen
+          # 3. Offene PR suchen
+          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || echo "")
+
+          # 4. Keine offene PR -> neue erstellen
           if [ -z "$PR_URL" ]; then
             echo "Erstelle neue PR..."
-            PR_URL=$(gh pr create \
+            CREATE_OUT=$(gh pr create \
               --title "Auto: $BRANCH" \
-              --body "" \
+              --body "Auto-created by workflow" \
               --base main \
-              --head "$BRANCH" 2>&1) || {
-              echo "PR-Erstellung fehlgeschlagen: $PR_URL"
-              echo "Manuelles Eingreifen nötig."
-              exit 1
-            }
-            echo "PR: $PR_URL"
+              --head "$BRANCH" 2>&1) || true
+            if echo "$CREATE_OUT" | grep -q "https://"; then
+              PR_URL=$(echo "$CREATE_OUT" | grep -o "https://github.com[^ ]*")
+              echo "PR erstellt: $PR_URL"
+            else
+              echo "PR create fehlgeschlagen oder kein Diff: $CREATE_OUT"
+              exit 0
+            fi
           else
             echo "Bestehende PR gefunden: $PR_URL"
           fi
 
-          # 4. Warten auf Netlify Preview (60s)
-          echo "Warte 60s auf Netlify Preview..."
+          # 5. Warten auf GitHub Merge-Status-Berechnung
+          echo "Warte 60s..."
           sleep 60
 
-          # 5. Branch auf main rebasen um Konflikte zu vermeiden
-          echo "Rebase auf main..."
-          git config user.email "github-actions@github.com"
-          git config user.name "GitHub Actions"
-          git fetch origin main
-          git rebase origin/main || {
-            echo "Rebase fehlgeschlagen – Merge-Konflikt muss manuell gelöst werden: $PR_URL"
-            exit 1
-          }
-          git push --force-with-lease origin "$BRANCH"
-
-          # 6. Mergen
-          PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
-          echo "Merge PR #$PR_NUMBER..."
-          gh pr merge "$PR_NUMBER" \
-            --merge \
-            --delete-branch \
-            --admin 2>&1 || {
-            echo "Merge fehlgeschlagen – bitte PR manuell mergen: $PR_URL"
-            exit 1
-          }
-          echo "Fertig."
+          # 6. Merge versuchen
+          if gh pr merge --merge "$PR_URL" 2>&1; then
+            echo "PR erfolgreich gemergt"
+            git push origin --delete "$BRANCH" 2>/dev/null || true
+          else
+            echo "Merge fehlgeschlagen - PR bleibt offen fuer manuelle Bearbeitung"
+            exit 0
+          fi

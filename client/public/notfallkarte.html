@@ -260,6 +260,7 @@ flex-shrink: 0;
 body { background: none; padding: 0; }
 .page { width: 210mm; min-height: 297mm; }
 @page { size: A4; margin: 0; }
+button { display: none !important; }
 }
 </style>
 
@@ -273,6 +274,7 @@ body { background: none; padding: 0; }
   <div class="header">
     <div class="header-title">Notfallkarte Zürich – Psychische Krise</div>
     <div class="header-meta">Für Angehörige · PUK Zürich · v05 · 2026-03-10</div>
+    <button onclick="window.print()" style="background:rgba(255,255,255,0.15); color:white; border:1px solid rgba(255,255,255,0.3); padding:2mm 4mm; border-radius:2mm; font-size:7pt; cursor:pointer; white-space:nowrap;">🖨 Als PDF speichern</button>
   </div>
 
   <!-- BLOCK 1: LEBENSGEFAHR -->

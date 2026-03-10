@@ -56,7 +56,18 @@ jobs:
           echo "Warte 60s auf Netlify Preview..."
           sleep 60
 
-          # 5. Mergen
+          # 5. Branch auf main rebasen um Konflikte zu vermeiden
+          echo "Rebase auf main..."
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git fetch origin main
+          git rebase origin/main || {
+            echo "Rebase fehlgeschlagen – Merge-Konflikt muss manuell gelöst werden: $PR_URL"
+            exit 1
+          }
+          git push --force-with-lease origin "$BRANCH"
+
+          # 6. Mergen
           PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
           echo "Merge PR #$PR_NUMBER..."
           gh pr merge "$PR_NUMBER" \

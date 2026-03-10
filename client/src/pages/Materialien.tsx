@@ -323,7 +323,7 @@ const infografiken: Array<{
     url: "/notfallkarte.html",
     previewUrl: "/notfallkarte-preview.webp",
     downloadUrl: "/notfallkarte.html",
-    pdfUrl: "/notfallkarte-zuerich-v06.pdf",
+    pdfUrl: "/notfallkarte-zuerich-v07.pdf",
     isHtml: true,
   },
   {
@@ -567,7 +567,7 @@ export default function Materialien() {
                           <>
                             <a
                               href={(item as any).pdfUrl}
-                              download="notfallkarte-zuerich-v06.pdf"
+                              download="notfallkarte-zuerich-v07.pdf"
                               aria-label="Notfallkarte als PDF herunterladen"
                               className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
                             >

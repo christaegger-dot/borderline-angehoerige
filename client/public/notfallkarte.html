@@ -105,6 +105,13 @@ font-size: 7.5pt;
 font-weight: 700;
 line-height: 1.3;
 }
+.hinweis-small {
+  font-size: 0.72rem;
+  color: #555;
+  margin: 1px 0 3px;
+  padding: 0 2px;
+  line-height: 1.4;
+}
 .hinweis {
 font-size: 7pt;
 color: #424242;
@@ -164,6 +171,11 @@ a.pill { text-decoration: none; color: inherit; }
 .b1 .trigger      { color: #c62828; }
 .b1 .pill         { border-color: #c62828; }
 .b1 .pill-nr      { color: #c62828; font-size: 26pt; }
+
+/* ── BLOCK 1 pills: 4 Spalten ────────────── */
+.b1 .pills {
+  grid-template-columns: repeat(4, 1fr);
+}
 
 /* ── BLOCK 2 — ORANGE ────────────────────── */
 .b2 .block-header { background: #e65100; }

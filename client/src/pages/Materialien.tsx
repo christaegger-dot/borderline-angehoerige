@@ -565,22 +565,22 @@ export default function Materialien() {
                           </a>
                         ) : (item as any).pdfUrl ? (
                           <>
+                            {/* Mobile: PDF-Download als voller Button, Öffnen als Link */}
                             <a
                               href={(item as any).pdfUrl}
-                              download="notfallkarte-zuerich-v07.pdf"
+                              download="Notfallkarte-Zuerich-Psychische-Krise.pdf"
                               aria-label="Notfallkarte als PDF herunterladen"
-                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
+                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors flex-1 sm:flex-none"
                             >
                               <Download className="w-4 h-4" />
-                              PDF
+                              PDF herunterladen
                             </a>
                             <a
-                              href={item.downloadUrl}
+                              href={item.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => { e.preventDefault(); const w = window.open(item.downloadUrl, '_blank'); if (w) { w.onload = () => w.print(); } }}
-                              aria-label="Notfallkarte drucken"
-                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
+                              aria-label="Notfallkarte in neuem Tab öffnen"
+                              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
                             >
                               <Printer className="w-4 h-4" />
                               Drucken

@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, ExternalLink, Image, FileText, Clock, RefreshCw, Layers, Users, Activity, XCircle, Download, Filter } from "lucide-react";
+import { BookOpen, Brain, Heart, AlertCircle, Lightbulb, ArrowRight, ExternalLink, FileText, Clock, RefreshCw, Layers, Users, Activity, XCircle, Download, Filter } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";

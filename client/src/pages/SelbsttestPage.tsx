@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import Selbsttest from "@/components/Selbsttest";
 import { motion } from "framer-motion";
 import { Compass } from "lucide-react";
+import { Link } from "wouter";
 
 export default function SelbsttestPage() {
   return (
@@ -50,7 +51,7 @@ export default function SelbsttestPage() {
               <p className="text-sm text-muted-foreground">
                 Dieser Test ersetzt keine professionelle Beratung. Er dient lediglich als Orientierungshilfe, 
                 um Ihnen den Einstieg in unsere Inhalte zu erleichtern. Bei akuten Krisen wenden Sie sich 
-                bitte an die <a href="/soforthilfe" className="text-alert underline hover:no-underline">Notfallressourcen</a>.
+                bitte an die <Link href="/soforthilfe" className="text-alert underline hover:no-underline">Notfallressourcen</Link>.
               </p>
             </div>
           </div>

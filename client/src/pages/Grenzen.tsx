@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Image, Clock, HeartHandshake, Home, Wallet, Users, Baby, UserCircle, ExternalLink, Eye, Filter, Search, MessageSquare, HandMetal } from "lucide-react";
+import { Shield, ArrowRight, CheckCircle2, Heart, AlertTriangle, Download, FileText, Clock, HeartHandshake, Home, Wallet, Users, Baby, UserCircle, ExternalLink, Eye, Filter, Search, MessageSquare, HandMetal } from "lucide-react";
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
 import { useState, useRef } from "react";

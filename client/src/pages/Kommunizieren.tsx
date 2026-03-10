@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, ExternalLink, Image, Eye, MessageSquare, Sparkles, History, Users, Star, UserCircle, RefreshCw, Filter, BookOpen, ShieldAlert, Wrench } from "lucide-react";
+import { MessageCircle, ArrowRight, CheckCircle2, XCircle, Heart, Lightbulb, Download, ExternalLink, Eye, Sparkles, Users, UserCircle, RefreshCw, Filter, BookOpen, ShieldAlert, Wrench } from "lucide-react";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";

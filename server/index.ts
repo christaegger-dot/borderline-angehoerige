@@ -10,6 +10,14 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
+  // Security headers
+  app.use((_req, res, next) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("X-Frame-Options", "DENY");
+    res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+    next();
+  });
+
   // Serve static files from dist/public in production
   const staticPath =
     process.env.NODE_ENV === "production"
@@ -18,8 +26,10 @@ async function startServer() {
 
   app.use(express.static(staticPath));
 
-  // Handle client-side routing - serve index.html for all routes
+  // Handle client-side routing - serve index.html for all non-file routes
   app.get("*", (_req, res) => {
+    // express.static already handles existing files (notfallkarte.html etc.)
+    // This catch-all is only for SPA client-side routes
     res.sendFile(path.join(staticPath, "index.html"));
   });
 

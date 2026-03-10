@@ -4,7 +4,7 @@
  * Alle Telefonnummern, E-Mail-Adressen, Adressen und URLs auf der Website
  * kommen ausschliesslich aus dieser Datei. Keine Nummern im Fliesstext.
  *
- * Inventar: 20 Telefonnummern, 4 E-Mail-Adressen, 1 Adresse, 7 URLs.
+ * Inventar: 20 Telefonnummern, 4 E-Mail-Adressen, 1 Adresse, 8 URLs.
  *
  * Regeln:
  * - NO-MIX: PUK ≠ USZ ≠ UZH
@@ -21,7 +21,6 @@
  * tel-Format:
  * - Kurznummern (3-stellig): nur Ziffern, z. B. "144", "117", "143"
  * - CH-Nummern (058/0800/0848): +41… ohne Leerzeichen, z. B. "+41583846666"
- *   Ausnahme: 0848-Nummern dürfen auch digit-only sein, z. B. "0848354555"
  *
  * ID-Schema: KATEGORIE_BEZEICHNUNG (Grossbuchstaben + Unterstriche, keine Umlaute)
  */
@@ -155,7 +154,7 @@ export const GELB: Kontakt[] = [
     hinweis: "Für Erwachsene ab 18 – akute psychische Krise.",
     sourceRef: "Soforthilfe.tsx:207, UnterstuetzenTherapie.tsx:383, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
-    fuerWen: "ab 18 Jahre",
+    fuerWen: "18–64 Jahre",
   },
   {
     id: "GELB_PUK_65",
@@ -167,17 +166,6 @@ export const GELB: Kontakt[] = [
     sourceRef: "Soforthilfe.tsx:231, UnterstuetzenTherapie.tsx:386, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "ab 65 Jahre",
-  },
-  {
-    id: "GELB_KIZ",
-    kategorie: "gelb",
-    nummer: "058 384 65 00",
-    tel: "+41583846500",
-    label: "Kriseninterventionszentrum (KIZ)",
-    hinweis: "Für akute psychiatrische Krisen bei Erwachsenen.",
-    sourceRef: "Soforthilfe.tsx:255",
-    verfuegbarkeit: "24/7",
-    fuerWen: "Erwachsene",
   },
 ];
 
@@ -209,7 +197,7 @@ export const GRUEN: Kontakt[] = [
     id: "GRUEN_ELTERN",
     kategorie: "gruen",
     nummer: "0848 35 45 55",
-    tel: "0848354555",
+    tel: "+41848354555",
     label: "Elternnotruf (24/7)",
     hinweis: "Beratung für Eltern, anonym, vertraulich.",
     sourceRef: "Soforthilfe.tsx:347, Notfallkarte v05 (HTML)",
@@ -223,6 +211,16 @@ export const GRUEN: Kontakt[] = [
 // sondern separat darunter als „Beratung & Fachstellen".
 
 export const INFO: Kontakt[] = [
+  {
+    id: "INFO_KIZ",
+    kategorie: "info",
+    nummer: "058 384 65 00",
+    tel: "+41583846500",
+    label: "Kriseninterventionszentrum (KIZ)",
+    hinweis: "Ambulante Krisenintervention für Erwachsene",
+    sourceRef: "Soforthilfe.tsx Block 5, Notfallkarte v05 (HTML)",
+    fuerWen: "Erwachsene",
+  },
   {
     id: "INFO_AERZTEFON",
     kategorie: "info",

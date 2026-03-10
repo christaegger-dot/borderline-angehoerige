@@ -347,18 +347,18 @@
    Print-Tokens: Bewusst einfache Graustufen
    für maximale Druckkompatibilität.
    ======================================== */
-:root {
-  --print-border-light: #ddd;
-  --print-border-mid: #999;
-  --print-border-dark: #333;
-  --print-bg-subtle: #f9f9f9;
-  --print-bg-header: #f0f0f0;
-  --print-bg-badge: #f5f5f5;
-  --print-text-muted: #666;
-  --print-border-accent: #ccc;
-}
-
 @media print {
+  :root {
+    --print-border-light: #ddd;
+    --print-border-mid: #999;
+    --print-border-dark: #333;
+    --print-bg-subtle: #f9f9f9;
+    --print-bg-header: #f0f0f0;
+    --print-bg-badge: #f5f5f5;
+    --print-text-muted: #666;
+    --print-border-accent: #ccc;
+  }
+
   /* Grundlegende Print-Einstellungen */
   @page {
     size: A4;
@@ -606,10 +606,6 @@
 
 /* ── Mobile-Menü offen: Floating Buttons ausblenden ── */
 /* Verhindert Overlap mit ScrollToTop, TOC-Button und anderen FABs */
-body[data-mobile-menu="open"] .fixed {
-  /* Nur die floating Buttons unten ausblenden, nicht den Header */
-}
-/* Spezifischer: Alle fixed-Elemente mit bottom-Positionierung ausblenden */
 @media (max-width: 1023px) {
   body[data-mobile-menu="open"] button.fixed[class*="bottom-"],
   body[data-mobile-menu="open"] a.fixed[class*="bottom-"] {

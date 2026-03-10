@@ -1,0 +1,10 @@
+[33mea040ee[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m fix(materialien): Notfallkarte v04 – neue CDN-URLs, 5-Block-Struktur
+[33me1e35a8[m refactor(soforthilfe): 5-Block-Struktur, korrekte Nummernlogik, mobile UX
+[33m6cd7942[m fix: 12 Bugs behoben – SEO-Domain, Glossar-URL-Parameter, aria-labels, Manifest, Sitemap
+[33m3b0195a[m[33m ([m[1;31mgithub/main[m[33m)[m chore: ignore local .netlify folder
+[33ma32244f[m fix(netlify): add netlify.toml with build config and SPA redirects
+[33mc52881a[m fix(netlify): add _redirects for SPA client-side routing
+[33mca1faa8[m Checkpoint: Fix: Falsche PubMed-PMID 21464344 (Food Addiction) korrigiert auf 21464343 (Gunderson et al. 2011: Ten-Year Course of BPD). STOP-GATE Mini-Batch abgeschlossen.
+[33ma08882e[m Checkpoint: Spaltung-Infografik v3 integriert: Neue Version aus Angehörigen-Perspektive mit korrigierten Texten (kein 'zeit go' mehr), Umlauten, DBT-Quellen. WebP (355 KB) und PDF (A4, 300 DPI) auf CDN hochgeladen. URLs in Materialien.tsx und Verstehen.tsx aktualisiert.
+[33m2379813[m Checkpoint: Selbstfürsorge-Kurzcheck (5 Fragen, 3 Ergebnis-Stufen) auf Selbstfuersorge.tsx implementiert. Breadcrumb-Navigation mit dritter Ebene auf Unterstützen-Unterseiten verifiziert (bereits korrekt implementiert). TypeScript fehlerfrei.
+[33m6e3dba5[m Checkpoint: Drei Verbesserungen implementiert: (1) 10 Glossar-Links auf 6 Seiten (Verstehen, Unterstützen, Kommunizieren, Grenzen, Selbstfürsorge, Genesung), (2) Angehörigen-Zitat im Fortschritt-Paradox, (3) Interaktiver Clean-Mind-Kurzcheck mit 3 Fragen, Ergebnis-Auswertung, Nochmal-Button und Glossar-Link. TypeScript fehlerfrei.

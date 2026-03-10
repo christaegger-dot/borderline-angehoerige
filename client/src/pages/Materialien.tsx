@@ -317,7 +317,7 @@ const infografiken: Array<{
   {
     id: "notfallkarte-zuerich",
     title: "Notfallkarte Zürich – Psychische Krise",
-    description: "5-Block-Ampel (ROT / ORANGE / BLAU / LILA / GRAU): Alle wichtigen Nummern für Angehörige auf einer A4-Seite. Inkl. 145 Tox Info Suisse und PUK 24/7 altersdifferenziert. v05 · 2026-03-09",
+    description: "5-Block-Ampel (ROT / ORANGE / GRÜN / LILA / GRAU): Alle wichtigen Nummern für Angehörige auf einer A4-Seite. Inkl. 145 Tox Info Suisse und PUK 24/7 altersdifferenziert. v05 · 2026-03-10",
     category: "soforthilfe",
     type: "Notfallkarte",
     url: "/notfallkarte.html",

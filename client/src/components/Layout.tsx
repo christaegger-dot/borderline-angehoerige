@@ -335,7 +335,7 @@ export default function Layout({ children }: LayoutProps) {
                 <Button
                   variant="default"
                   size="sm"
-                  className="bg-alert hover:bg-alert text-white animate-breathe hidden sm:flex"
+                  className="bg-alert hover:bg-alert/85 text-white animate-breathe hidden sm:flex"
                   tabIndex={-1}
                 >
                   <Phone className="w-4 h-4 lg:mr-0 xl:mr-2" />
@@ -348,7 +348,7 @@ export default function Layout({ children }: LayoutProps) {
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-                aria-label="Menü öffnen"
+                aria-label={mobileMenuOpen ? "Menü schliessen" : "Menü öffnen"}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>

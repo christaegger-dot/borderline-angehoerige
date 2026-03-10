@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Eye, EyeOff, RotateCcw, MessageSquare, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { kontaktById } from "@/data/kontakte";
 import { useProgress } from "@/hooks/useProgress";
 import ProgressBar from "./ProgressBar";
 
@@ -45,7 +46,7 @@ const szenarien: Szenario[] = [
     situation: "Ihr Angehöriger droht: «Wenn du gehst, bringe ich mich um!»",
     kategorie: "Drohungen",
     falsch: "«Das sagst du nur, um mich zu erpressen!» oder einfach bleiben aus Angst.",
-    richtig: "«Ich nehme das sehr ernst. Ich rufe jetzt die Dargebotene Hand an (143), damit du Unterstützung bekommst. Ich bin nicht die richtige Person, um dich in diesem Moment zu schützen.»",
+    richtig: `«Ich nehme das sehr ernst. Ich rufe jetzt die Dargebotene Hand an (${kontaktById("GRUEN_143")?.nummer ?? "143"}), damit du Unterstützung bekommst. Ich bin nicht die richtige Person, um dich in diesem Moment zu schützen.»`,
     erklaerung: "Professionelle Hilfe einschalten: Suiziddrohungen immer ernst nehmen, aber die Verantwortung an Fachpersonen übergeben.",
   },
 ];

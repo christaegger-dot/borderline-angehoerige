@@ -12,6 +12,7 @@ import {
   Lightbulb,
   Shield
 } from "lucide-react";
+import { kontaktById } from "@/data/kontakte";
 
 interface Question {
   id: number;
@@ -136,7 +137,7 @@ const results: Record<ResultType, ResultData> = {
     message: "Ihre Antworten deuten darauf hin, dass Sie sich stark verausgaben. Das ist verständlich – aber auf Dauer gefährdet es Ihre Gesundheit und Ihre Fähigkeit, für Ihren Angehörigen da zu sein. Sie verdienen Unterstützung.",
     tips: [
       "Sprechen Sie zeitnah mit Ihrem Hausarzt über Ihre Belastung.",
-      "Die Fachstelle Angehörigenarbeit (PUK Zürich) bietet kostenlose Beratung: 058 384 38 00.",
+      `Die Fachstelle Angehörigenarbeit (PUK Zürich) bietet kostenlose Beratung: ${kontaktById("INFO_FACHSTELLE")?.nummer ?? "058 384 38 00"}.`,
       "Erlauben Sie sich, Hilfe anzunehmen – das ist kein Zeichen von Schwäche."
     ],
     linkText: "Beratungsangebote ansehen",

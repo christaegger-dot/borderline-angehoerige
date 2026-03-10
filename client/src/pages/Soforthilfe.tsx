@@ -171,6 +171,8 @@ export default function Notfall() {
   const rot145         = kontaktById("ROT_145")!;
   const infoAerztefon  = kontaktById("INFO_AERZTEFON")!;
   const infoPukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
+  const infoFachstelle = kontaktById("INFO_FACHSTELLE")!;
+  const infoKiz        = kontaktById("INFO_KIZ")!;
 
   return (
     <Layout>
@@ -301,6 +303,13 @@ export default function Notfall() {
                 </p>
 
                 <PukKarte
+                  nummer={pukErw.nummer}
+                  label="PUK Erwachsene (24/7)"
+                  fuerWen="Erwachsene 18–64 Jahre"
+                  tel={pukErw.tel}
+                  icon={<User className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
+                />
+                <PukKarte
                   nummer={pukKjp.nummer}
                   label="PUK Kinder & Jugendliche (24/7)"
                   fuerWen="Kinder & Jugendliche bis 18 Jahre"
@@ -308,15 +317,8 @@ export default function Notfall() {
                   icon={<Baby className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
                 />
                 <PukKarte
-                  nummer={pukErw.nummer}
-                  label="PUK Erwachsene (24/7)"
-                  fuerWen="Erwachsene ab 18 Jahren"
-                  tel={pukErw.tel}
-                  icon={<User className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
-                />
-                <PukKarte
                   nummer={puk65.nummer}
-                  label="PUK Erwachsene (24/7)"
+                  label="PUK Erwachsene ab 65 (24/7)"
                   fuerWen="Erwachsene ab 65 Jahren"
                   tel={puk65.tel}
                   icon={<Users className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
@@ -468,6 +470,38 @@ export default function Notfall() {
                     <p className="font-semibold text-foreground text-sm">{infoPukZentrale.nummer}</p>
                     <p className="text-muted-foreground text-xs">{infoPukZentrale.label}</p>
                     <p className="text-muted-foreground text-xs">Allgemeine Auskunft – kein Notfalldienst</p>
+                  </div>
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
+                    <Phone className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                </a>
+
+                {/* Fachstelle Angehörigenarbeit */}
+                <a
+                  href={`tel:${infoFachstelle.tel}`}
+                  className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
+                  aria-label={`${infoFachstelle.label} anrufen: ${infoFachstelle.nummer}`}
+                >
+                  <div className="min-w-0">
+                    <p className="font-semibold text-foreground text-sm">{infoFachstelle.nummer}</p>
+                    <p className="text-muted-foreground text-xs">{infoFachstelle.label}</p>
+                    <p className="text-muted-foreground text-xs">{infoFachstelle.hinweis}</p>
+                  </div>
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
+                    <Phone className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                </a>
+
+                {/* KIZ – Kriseninterventionszentrum */}
+                <a
+                  href={`tel:${infoKiz.tel}`}
+                  className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
+                  aria-label={`${infoKiz.label} anrufen: ${infoKiz.nummer}`}
+                >
+                  <div className="min-w-0">
+                    <p className="font-semibold text-foreground text-sm">{infoKiz.nummer}</p>
+                    <p className="text-muted-foreground text-xs">{infoKiz.label}</p>
+                    <p className="text-muted-foreground text-xs">{infoKiz.hinweis}</p>
                   </div>
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
                     <Phone className="w-4 h-4 text-muted-foreground" />

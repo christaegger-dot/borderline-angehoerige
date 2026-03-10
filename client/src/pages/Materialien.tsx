@@ -325,11 +325,11 @@ const infografiken: Array<{
   {
     id: "notfallplan-krise",
     title: "Notfallplan Krise – Suizidgedanken & Selbstverletzung",
-    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit Notfallnummern und Do's & Don'ts.",
+    description: "Orientierung und konkrete Schritte bei Suizidgedanken, Selbstverletzung oder akuter seelischer Krise. Mit korrekten Notfallnummern, 4 Schritten, Do's & Don'ts, Selbstfürsorge. 2 Seiten · v03 · 2026-03-10",
     category: "soforthilfe",
     type: "Notfallplan",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ABTIHsyOeyMuCAIZ.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tabbTidhzMGGKDDp.pdf",
+    url: "/notfallplan-krise-v03-preview.webp",
+    downloadUrl: "/notfallplan-krise-v03.pdf",
   },
 ];
 

@@ -323,7 +323,7 @@ const infografiken: Array<{
     url: "/notfallkarte.html",
     previewUrl: "/notfallkarte-preview.webp",
     downloadUrl: "/notfallkarte.html",
-    pdfUrl: "/notfallkarte-zuerich-v07.pdf",
+    pdfUrl: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
     isHtml: true,
   },
   {

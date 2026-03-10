@@ -10,7 +10,7 @@ import { Link } from "wouter";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MATERIALIEN-SEITE – ÜBERARBEITUNG IN PROGRESS
-// Stand: 06.02.2026
+// Stand: 10.03.2026
 // ═══════════════════════════════════════════════════════════════════════════
 
 // Kategorie 1: Verstehen (6 Infografiken)

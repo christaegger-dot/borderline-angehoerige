@@ -322,6 +322,7 @@ const infografiken: Array<{
     type: "Notfallkarte",
     url: "/notfallkarte.html",
     downloadUrl: "/notfallkarte.html",
+    pdfUrl: "/notfallkarte-zuerich-v06.pdf",
     isHtml: true,
   },
   {
@@ -544,8 +545,8 @@ export default function Materialien() {
                           <ExternalLink className="w-4 h-4" />
                           {item.isHtml ? 'Notfallkarte öffnen' : 'Öffnen'}
                         </a>
-                        {/* Download-Button: nur für PDFs */}
-                        {!item.isHtml && (
+                        {/* Download-Button: für PDFs direkt, für HTML via pdfUrl */}
+                        {!item.isHtml ? (
                           <a
                             href={item.downloadUrl}
                             download
@@ -555,7 +556,30 @@ export default function Materialien() {
                             <Download className="w-4 h-4" />
                             Herunterladen
                           </a>
-                        )}
+                        ) : (item as any).pdfUrl ? (
+                          <>
+                            <a
+                              href={(item as any).pdfUrl}
+                              download="notfallkarte-zuerich-v06.pdf"
+                              aria-label="Notfallkarte als PDF herunterladen"
+                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
+                            >
+                              <Download className="w-4 h-4" />
+                              PDF
+                            </a>
+                            <a
+                              href={item.downloadUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => { e.preventDefault(); const w = window.open(item.downloadUrl, '_blank'); if (w) { w.onload = () => w.print(); } }}
+                              aria-label="Notfallkarte drucken"
+                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
+                            >
+                              <Printer className="w-4 h-4" />
+                              Drucken
+                            </a>
+                          </>
+                        ) : null}
                       </div>
                     </CardContent>
                   </Card>

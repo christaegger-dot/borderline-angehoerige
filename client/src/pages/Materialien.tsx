@@ -532,7 +532,8 @@ export default function Materialien() {
                         {item.description}
                       </p>
                       
-                      <div className="flex items-center justify-end">
+                      <div className="flex items-center gap-2 justify-end flex-wrap">
+                        {/* Öffnen-Button: immer sichtbar */}
                         <a
                           href={item.downloadUrl}
                           target="_blank"
@@ -541,8 +542,20 @@ export default function Materialien() {
                           className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          {item.isHtml ? 'Notfallkarte öffnen' : 'PDF öffnen'}
+                          {item.isHtml ? 'Notfallkarte öffnen' : 'Öffnen'}
                         </a>
+                        {/* Download-Button: nur für PDFs */}
+                        {!item.isHtml && (
+                          <a
+                            href={item.downloadUrl}
+                            download
+                            aria-label={`PDF herunterladen: ${item.title}`}
+                            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
+                          >
+                            <Download className="w-4 h-4" />
+                            Herunterladen
+                          </a>
+                        )}
                       </div>
                     </CardContent>
                   </Card>

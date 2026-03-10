@@ -323,17 +323,17 @@ const infografiken: Array<{
     url: "/notfallkarte.html",
     previewUrl: "/notfallkarte-preview.webp",
     downloadUrl: "/notfallkarte.html",
-    pdfUrl: "/notfallkarte-zuerich-v07.pdf",
+    pdfUrl: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
     isHtml: true,
   },
   {
     id: "notfallplan-krise",
     title: "Notfallplan Krise – Suizidgedanken & Selbstverletzung",
-    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit korrekten Notfallnummern (144 / 0800 33 66 55 / PUK 058 384 20 00).",
+    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit korrekten Notfallnummern (144 / 0800 33 66 55 / PUK 058 384 20 00). v03 · März 2026.",
     category: "soforthilfe",
     type: "Notfallplan",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ABTIHsyOeyMuCAIZ.webp",
-    downloadUrl: "/notfallplan-krise-v02.pdf",
+    downloadUrl: "/notfallplan-krise-v03.pdf",
   },
 ];
 

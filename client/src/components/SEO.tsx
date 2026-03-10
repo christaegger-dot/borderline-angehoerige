@@ -9,7 +9,7 @@ interface SEOProps {
 
 const SITE_NAME = "Borderline · Hilfe für Angehörige";
 const BASE_DESCRIPTION = "Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung.";
-const OG_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/LwBPpqQdVUDZWXKG.png";
+const OG_IMAGE = "https://borderline-angehoerige.netlify.app/og-image.png";
 
 export default function SEO({ title, description, path = "/", type = "website" }: SEOProps) {
   const fullTitle = title ? `${title} – ${SITE_NAME}` : `${SITE_NAME} – Evidenzbasierte Unterstützung`;
@@ -68,7 +68,7 @@ export function WebsiteSchema() {
       "name": SITE_NAME,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IVTKZhDIvOTxINBf.webp"
+        "url": "https://borderline-angehoerige.netlify.app/og-image.png"
       }
     },
     "potentialAction": {

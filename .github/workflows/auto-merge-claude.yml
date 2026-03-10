@@ -1,41 +1,69 @@
 name: Auto-PR and merge for Claude Code
+
 on:
   push:
-    branches: ['claude/**']
+    branches:
+      - 'claude/**'
+
 permissions:
   contents: write
   pull-requests: write
+
 jobs:
   create-and-merge:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create or find PR
+        with:
+          fetch-depth: 0
+
+      - name: Create or find PR and merge
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           BRANCH="${{ github.ref_name }}"
+          echo "Branch: $BRANCH"
 
-          # 1) Offene PR suchen
-          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || true)
-
-          # 2) Keine offene PR → neue erstellen
-          if [ -z "$PR_URL" ]; then
-            PR_URL=$(gh pr create --title "Auto: $BRANCH" --body "" --base main --head "$BRANCH" 2>&1) || {
-              echo "gh pr create fehlgeschlagen: $PR_URL"
-              echo "Prüfe ob Branch bereits vollständig in main ist..."
-              git fetch origin main
-              DIFF=$(git diff origin/main...HEAD --stat)
-              if [ -z "$DIFF" ]; then
-                echo "Keine Unterschiede zu main – nichts zu tun."
-                exit 0
-              fi
-              echo "Es gibt Unterschiede, aber PR-Erstellung schlug fehl. Abbruch."
-              exit 1
-            }
+          # 1. Bereits in main? → sauber abbrechen
+          git fetch origin main
+          if git merge-base --is-ancestor HEAD origin/main; then
+            echo "Branch bereits in main enthalten – nichts zu tun."
+            exit 0
           fi
 
-          echo "PR: $PR_URL"
+          # 2. Offene PR suchen
+          PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || true)
+
+          # 3. Keine offene PR → neue erstellen
+          if [ -z "$PR_URL" ]; then
+            echo "Erstelle neue PR..."
+            PR_URL=$(gh pr create \
+              --title "Auto: $BRANCH" \
+              --body "" \
+              --base main \
+              --head "$BRANCH" 2>&1) || {
+              echo "PR-Erstellung fehlgeschlagen: $PR_URL"
+              echo "Manuelles Eingreifen nötig."
+              exit 1
+            }
+            echo "PR: $PR_URL"
+          else
+            echo "Bestehende PR gefunden: $PR_URL"
+          fi
+
+          # 4. Warten auf Netlify Preview (60s)
+          echo "Warte 60s auf Netlify Preview..."
           sleep 60
-          gh pr merge --auto --merge "$PR_URL" || gh pr merge --merge "$PR_URL"
-          git push origin --delete "$BRANCH" || true
+
+          # 5. Mergen
+          PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
+          echo "Merge PR #$PR_NUMBER..."
+          gh pr merge "$PR_NUMBER" \
+            --merge \
+            --delete-branch \
+            --admin 2>&1 || {
+            echo "Merge fehlgeschlagen – bitte PR manuell mergen: $PR_URL"
+            exit 1
+          }
+          echo "Fertig."

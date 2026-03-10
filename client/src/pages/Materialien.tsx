@@ -329,11 +329,11 @@ const infografiken: Array<{
   {
     id: "notfallplan-krise",
     title: "Notfallplan Krise – Suizidgedanken & Selbstverletzung",
-    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit Notfallnummern und Do's & Don'ts.",
+    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit korrekten Notfallnummern (144 / 0800 33 66 55 / PUK 058 384 20 00).",
     category: "soforthilfe",
     type: "Notfallplan",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ABTIHsyOeyMuCAIZ.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tabbTidhzMGGKDDp.pdf",
+    downloadUrl: "/notfallplan-krise-v02.pdf",
   },
 ];
 

@@ -1,7 +1,8 @@
 name: Auto-PR and merge for Claude Code
 on:
   push:
-    branches: ['claude/**']
+    branches:
+      - 'claude/**'
 permissions:
   contents: write
   pull-requests: write
@@ -12,23 +13,30 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Create or find PR
+      - name: Create or find PR and merge
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH="${{ github.ref_name }}"
           echo "Branch: $BRANCH"
 
-          # Pruefen ob Branch noch existiert
+          # 1. Pruefen ob Branch noch existiert
           if ! git ls-remote --exit-code origin "$BRANCH" > /dev/null 2>&1; then
             echo "Branch $BRANCH existiert nicht mehr - Workflow beendet."
             exit 0
           fi
 
-          # Offene PR suchen
+          # 2. Bereits in main enthalten? -> sauber abbrechen
+          git fetch origin main
+          if git merge-base --is-ancestor HEAD origin/main; then
+            echo "Branch bereits in main enthalten - nichts zu tun."
+            exit 0
+          fi
+
+          # 3. Offene PR suchen
           PR_URL=$(gh pr list --head "$BRANCH" --state open --json url -q '.[0].url' 2>/dev/null || echo "")
 
-          # Keine offene PR -> neue erstellen
+          # 4. Keine offene PR -> neue erstellen
           if [ -z "$PR_URL" ]; then
             echo "Erstelle neue PR..."
             CREATE_OUT=$(gh pr create \
@@ -38,16 +46,20 @@ jobs:
               --head "$BRANCH" 2>&1) || true
             if echo "$CREATE_OUT" | grep -q "https://"; then
               PR_URL=$(echo "$CREATE_OUT" | grep -o "https://github.com[^ ]*")
+              echo "PR erstellt: $PR_URL"
             else
               echo "PR create fehlgeschlagen oder kein Diff: $CREATE_OUT"
               exit 0
             fi
+          else
+            echo "Bestehende PR gefunden: $PR_URL"
           fi
 
-          echo "PR: $PR_URL"
+          # 5. Warten auf GitHub Merge-Status-Berechnung
+          echo "Warte 60s..."
           sleep 60
 
-          # Merge versuchen
+          # 6. Merge versuchen
           if gh pr merge --merge "$PR_URL" 2>&1; then
             echo "PR erfolgreich gemergt"
             git push origin --delete "$BRANCH" 2>/dev/null || true

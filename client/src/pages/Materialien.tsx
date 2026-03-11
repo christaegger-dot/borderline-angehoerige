@@ -3,14 +3,14 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, ExternalLink, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
+import { Download, Printer, ExternalLink, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
 
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MATERIALIEN-SEITE – ÜBERARBEITUNG IN PROGRESS
-// Stand: 06.02.2026
+// Stand: 10.03.2026
 // ═══════════════════════════════════════════════════════════════════════════
 
 // Kategorie 1: Verstehen (6 Infografiken)
@@ -22,6 +22,7 @@ const infografiken: Array<{
   type: string;
   url: string;
   downloadUrl?: string;
+  isHtml?: boolean;
 }> = [
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 1: VERSTEHEN
@@ -316,16 +317,19 @@ const infografiken: Array<{
   {
     id: "notfallkarte-zuerich",
     title: "Notfallkarte Zürich – Psychische Krise",
-    description: "4-Block-Ampel (ROT / ORANGE / GRÜN / LILA): Alle wichtigen Nummern für Angehörige auf einer A4-Seite. Inkl. 145 Tox Info Suisse und PUK 24/7 altersdifferenziert. v07 · 2026-03-10",
+    description: "4-Block-Ampel (ROT / ORANGE / GRÜN / LILA): Alle wichtigen Nummern für Angehörige auf einer A4-Seite. Inkl. 144 Sanität, 0800 33 66 55 AERZTEFON und PUK 24/7. v07 · 2026-03-10",
     category: "soforthilfe",
     type: "Notfallkarte",
-    url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663031008193/8YuwaCAyupr6X8wELZoKnq/notfallkarte_zuerich_v04_preview_b01d4df3.webp",
-    downloadUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310419663031008193/8YuwaCAyupr6X8wELZoKnq/notfallkarte_zuerich_v04_b7630148.pdf",
+    url: "/notfallkarte.html",
+    previewUrl: "/notfallkarte-preview.webp",
+    downloadUrl: "/notfallkarte.html",
+    pdfUrl: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
+    isHtml: true,
   },
   {
     id: "notfallplan-krise",
     title: "Notfallplan Krise – Suizidgedanken & Selbstverletzung",
-    description: "Orientierung und konkrete Schritte bei Suizidgedanken, Selbstverletzung oder akuter seelischer Krise. Mit korrekten Notfallnummern, 4 Schritten, Do's & Don'ts, Selbstfürsorge. 2 Seiten · v03 · 2026-03-10",
+    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit korrekten Notfallnummern (144 / 0800 33 66 55 / PUK 058 384 20 00). v03 · März 2026.",
     category: "soforthilfe",
     type: "Notfallplan",
     url: "/notfallplan-krise-v03-preview.webp",
@@ -461,7 +465,7 @@ export default function Materialien() {
           <div className="mb-6 p-3 rounded-lg bg-sand border border-sand-subtle flex items-center gap-2">
             <Eye className="w-4 h-4 text-muted-foreground flex-shrink-0" />
             <p className="text-sm text-muted-foreground">
-              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab. Die Notfallkarte öffnet als interaktive HTML-Seite.
             </p>
           </div>
           {filteredInfografiken.length > 0 ? (
@@ -476,24 +480,49 @@ export default function Materialien() {
                 >
                   <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
                     {/* Vorschaubild mit Hover-Overlay */}
-                    <div 
+                    <div
                       className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
-                      onClick={() => { setPreviewImage(item.url); setPreviewTitle(item.title); }}
+                      onClick={() => {
+                        if (item.isHtml) {
+                          window.open(item.url, '_blank');
+                        } else {
+                          setPreviewImage(item.url); setPreviewTitle(item.title);
+                        }
+                      }}
                     >
-                      <img 
-                        src={item.url} 
-                        alt={item.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        loading={index < 4 ? "eager" : "lazy"}
-                        width={400}
-                        height={300}
-                        decoding={index < 4 ? "sync" : "async"}
-                      />
+                      {item.isHtml ? (
+                        <div className="w-full h-full relative overflow-hidden bg-white">
+                          {(item as any).previewUrl ? (
+                            <img
+                              src={(item as any).previewUrl}
+                              alt={item.title}
+                              className="w-full h-full object-cover object-top"
+                              loading="lazy"
+                              width={597}
+                              height={826}
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                              <span className="text-xs text-gray-400">Vorschau</span>
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <img
+                          src={item.url}
+                          alt={item.title}
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          loading={index < 4 ? "eager" : "lazy"}
+                          width={400}
+                          height={300}
+                          decoding={index < 4 ? "sync" : "async"}
+                        />
+                      )}
                       {/* Hover-Overlay */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                           <ZoomIn className="w-4 h-4 text-foreground" />
-                          <span className="text-sm font-medium text-foreground">Vergrössern</span>
+                          <span className="text-sm font-medium text-foreground">{item.isHtml ? 'Öffnen' : 'Vergrössern'}</span>
                         </div>
                       </div>
                       {/* Typ-Badge */}
@@ -511,17 +540,53 @@ export default function Materialien() {
                         {item.description}
                       </p>
                       
-                      <div className="flex items-center justify-end">
+                      <div className="flex items-center gap-2 justify-end flex-wrap">
+                        {/* Öffnen-Button: immer sichtbar */}
                         <a
                           href={item.downloadUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                          aria-label={`${item.isHtml ? 'Notfallkarte' : 'PDF'} öffnen: ${item.title} (neuer Tab)`}
                           className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          PDF öffnen
+                          {item.isHtml ? 'Notfallkarte öffnen' : 'Öffnen'}
                         </a>
+                        {/* Download-Button: für PDFs direkt, für HTML via pdfUrl */}
+                        {!item.isHtml ? (
+                          <a
+                            href={item.downloadUrl}
+                            download
+                            aria-label={`PDF herunterladen: ${item.title}`}
+                            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
+                          >
+                            <Download className="w-4 h-4" />
+                            Herunterladen
+                          </a>
+                        ) : (item as any).pdfUrl ? (
+                          <>
+                            {/* Mobile: PDF-Download als voller Button, Öffnen als Link */}
+                            <a
+                              href={(item as any).pdfUrl}
+                              download="Notfallkarte-Zuerich-Psychische-Krise.pdf"
+                              aria-label="Notfallkarte als PDF herunterladen"
+                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors flex-1 sm:flex-none"
+                            >
+                              <Download className="w-4 h-4" />
+                              PDF herunterladen
+                            </a>
+                            <a
+                              href={item.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="Notfallkarte in neuem Tab öffnen"
+                              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
+                            >
+                              <Printer className="w-4 h-4" />
+                              Drucken
+                            </a>
+                          </>
+                        ) : null}
                       </div>
                     </CardContent>
                   </Card>

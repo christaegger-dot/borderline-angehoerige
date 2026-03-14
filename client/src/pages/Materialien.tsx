@@ -23,6 +23,8 @@ const infografiken: Array<{
   url: string;
   downloadUrl?: string;
   isHtml?: boolean;
+  previewUrl?: string;
+  pdfUrl?: string;
 }> = [
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 1: VERSTEHEN
@@ -492,9 +494,9 @@ export default function Materialien() {
                     >
                       {item.isHtml ? (
                         <div className="w-full h-full relative overflow-hidden bg-white">
-                          {(item as any).previewUrl ? (
+                          {item.previewUrl ? (
                             <img
-                              src={(item as any).previewUrl}
+                              src={item.previewUrl}
                               alt={item.title}
                               className="w-full h-full object-cover object-top"
                               loading="lazy"
@@ -563,11 +565,11 @@ export default function Materialien() {
                             <Download className="w-4 h-4" />
                             Herunterladen
                           </a>
-                        ) : (item as any).pdfUrl ? (
+                        ) : item.pdfUrl ? (
                           <>
                             {/* Mobile: PDF-Download als voller Button, Öffnen als Link */}
                             <a
-                              href={(item as any).pdfUrl}
+                              href={item.pdfUrl}
                               download="Notfallkarte-Zuerich-Psychische-Krise.pdf"
                               aria-label="Notfallkarte als PDF herunterladen"
                               className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors flex-1 sm:flex-none"

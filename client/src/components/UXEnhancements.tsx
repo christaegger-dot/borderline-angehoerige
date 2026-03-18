@@ -65,7 +65,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           onClick={scrollToTop}
-          className="fixed left-4 sm:left-auto sm:right-4 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className="fixed left-4 sm:left-auto sm:right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))' }}
           aria-label="Nach oben scrollen"
         >
@@ -363,6 +363,7 @@ export function TableOfContents() {
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 28, stiffness: 300, ease: "easeOut" }}
             className="min-[1400px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
+            style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
           >
             {/* Drawer Handle */}
             <div className="flex justify-center pt-3 pb-1">
@@ -480,7 +481,7 @@ export function KeyboardShortcuts() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-foreground text-background rounded-xl p-4 shadow-xl"
+          className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-foreground text-background rounded-xl p-4 shadow-xl max-w-[calc(100vw-2rem)]"
         >
           <span className="font-semibold mb-2 text-sm block">Tastaturkürzel</span>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm">

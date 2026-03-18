@@ -109,7 +109,6 @@ function SzenarioCard({
             </p>
             <Button
               variant="outline"
-              size="sm"
               onClick={handleReveal}
               className="w-full gap-2 border-sage-mid/50 text-sage-dark hover:bg-sage-wash"
             >

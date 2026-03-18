@@ -325,7 +325,7 @@ export default function Layout({ children }: LayoutProps) {
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="sm:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all"
+                className="sm:hidden p-2.5 -m-0.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all"
                 aria-label="Suche öffnen"
               >
                 <SearchIcon className="w-5 h-5" />
@@ -347,7 +347,7 @@ export default function Layout({ children }: LayoutProps) {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+                className="lg:hidden p-2.5 -m-0.5 rounded-lg hover:bg-muted transition-colors"
                 aria-label={mobileMenuOpen ? "Menü schliessen" : "Menü öffnen"}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -382,7 +382,7 @@ export default function Layout({ children }: LayoutProps) {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all ${
+                      className={`flex items-center gap-3 px-4 py-3.5 rounded-lg text-base font-medium transition-all ${
                         isActive
                           ? "bg-terracotta-light text-terracotta-darker"
                           : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -519,12 +519,12 @@ export default function Layout({ children }: LayoutProps) {
             {/* Navigation */}
             <div>
               <h3 className="font-semibold text-foreground mb-4 text-base">Themen</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {navItems.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                      className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center py-1.5"
                     >
                       {item.label}
                     </Link>
@@ -536,12 +536,12 @@ export default function Layout({ children }: LayoutProps) {
             {/* Resources */}
             <div>
               <h3 className="font-semibold text-foreground mb-4 text-base">Ressourcen</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {ressourcenItems.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                      className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center py-1.5"
                     >
                       {item.label}
                     </Link>
@@ -573,17 +573,17 @@ export default function Layout({ children }: LayoutProps) {
             <p className="text-muted-foreground text-sm">
               © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
             </p>
-            <div className="flex gap-4">
-              <Link href="/fachstelle" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              <Link href="/fachstelle" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
                 Fachstelle
               </Link>
-              <Link href="/ueber-uns" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              <Link href="/ueber-uns" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
                 Über uns
               </Link>
-              <Link href="/impressum" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              <Link href="/impressum" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
                 Impressum
               </Link>
-              <Link href="/datenschutz" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              <Link href="/datenschutz" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
                 Datenschutz
               </Link>
             </div>

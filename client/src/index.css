@@ -90,7 +90,41 @@
   --color-alert:              oklch(0.55 0.20 25);  /* Destructive/Notfall */
   --color-alert-light:        oklch(0.92 0.06 25);  /* Alert Background */
   --color-alert-wash:         oklch(0.96 0.02 25);  /* Sehr heller Alert-BG */
-  
+
+  /* --- Soforthilfe Ampel-Farben (funktional-semantisch) ---
+     Rot = Lebensgefahr, Orange = Psych. Krise, Grün = Entlastung,
+     Lila = Vergiftung, Amber = Warnung. Nur auf Soforthilfe-Seite. */
+  --color-sos-rot:            oklch(0.45 0.18 25);   /* #C0392B – Block Lebensgefahr */
+  --color-sos-rot-body:       oklch(0.50 0.16 25);   /* #D44333 – Karten-Hintergrund */
+  --color-sos-rot-wash:       oklch(0.95 0.02 25);   /* ~red-50 – Hero-Gradient */
+  --color-sos-orange:         oklch(0.60 0.15 55);    /* ~orange-500 – Krisen-Icon-BG */
+  --color-sos-orange-dark:    oklch(0.35 0.08 55);    /* ~orange-900 – Titel */
+  --color-sos-orange-mid:     oklch(0.40 0.10 55);    /* ~orange-800 – Subtext */
+  --color-sos-orange-text:    oklch(0.50 0.12 55);    /* ~orange-700 – Icons/Labels */
+  --color-sos-orange-light:   oklch(0.92 0.04 55);    /* ~orange-100 – Icon-BG */
+  --color-sos-orange-wash:    oklch(0.97 0.02 55);    /* ~orange-50 – Section-BG */
+  --color-sos-orange-border:  oklch(0.85 0.06 55);    /* ~orange-200 – Borders */
+  --color-sos-orange-border-h:oklch(0.75 0.10 55);    /* ~orange-400 – Hover-Border */
+  --color-sos-gruen:          oklch(0.50 0.12 145);   /* ~green-600 – Icon-BG */
+  --color-sos-gruen-dark:     oklch(0.35 0.08 145);   /* ~green-900 – Titel */
+  --color-sos-gruen-mid:      oklch(0.40 0.10 145);   /* ~green-800 – Subtext */
+  --color-sos-gruen-text:     oklch(0.50 0.10 145);   /* ~green-700 – Icons/Labels */
+  --color-sos-gruen-light:    oklch(0.92 0.04 145);   /* ~green-100 – Icon-BG */
+  --color-sos-gruen-wash:     oklch(0.97 0.02 145);   /* ~green-50 – Section-BG */
+  --color-sos-gruen-border:   oklch(0.85 0.06 145);   /* ~green-200 – Borders */
+  --color-sos-gruen-border-h: oklch(0.75 0.10 145);   /* ~green-400 – Hover-Border */
+  --color-sos-lila:           oklch(0.45 0.15 305);   /* ~purple-600 – Icon-BG */
+  --color-sos-lila-dark:      oklch(0.35 0.08 305);   /* ~purple-900 – Titel */
+  --color-sos-lila-text:      oklch(0.50 0.12 305);   /* ~purple-700 – Icons/Labels */
+  --color-sos-lila-light:     oklch(0.92 0.04 305);   /* ~purple-100 – Icon-BG */
+  --color-sos-lila-wash:      oklch(0.97 0.02 305);   /* ~purple-50 – Section-BG */
+  --color-sos-lila-border:    oklch(0.85 0.06 305);   /* ~purple-200 – Borders */
+  --color-sos-lila-border-h:  oklch(0.75 0.10 305);   /* ~purple-400 – Hover-Border */
+  --color-sos-amber-text:     oklch(0.50 0.12 85);    /* ~amber-600 – Warn-Icon */
+  --color-sos-amber-wash:     oklch(0.97 0.03 85);    /* ~amber-50 – Warn-BG */
+  --color-sos-amber-border:   oklch(0.85 0.06 85);    /* ~amber-200 – Warn-Border */
+  --color-sos-amber-dark:     oklch(0.35 0.06 85);    /* ~amber-900 – Warn-Text */
+
   /* Typography – Design-Lock: Inter exklusiv */
   --font-display: 'Inter', 'Inter fallback', sans-serif;
   --font-body: 'Inter', 'Inter fallback', sans-serif;

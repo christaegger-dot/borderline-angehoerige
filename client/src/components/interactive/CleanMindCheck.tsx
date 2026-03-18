@@ -90,9 +90,9 @@ const results: Record<ResultType, ResultData> = {
     type: "mixed",
     title: "Zwischen beiden Modi",
     icon: Lightbulb,
-    iconColor: "text-amber-600",
-    bgColor: "bg-amber-50/50",
-    borderColor: "border-amber-200/50",
+    iconColor: "text-sos-amber-text",
+    bgColor: "bg-sos-amber-wash/50",
+    borderColor: "border-sos-amber-border/50",
     message: "Sie schwanken zwischen Hoffnung und Sorge – das ist völlig normal und menschlich. Wichtig ist, dass Sie dieses Muster jetzt kennen. Allein das Bewusstsein hilft, in kritischen Momenten den «Klarer-Kopf»-Modus bewusst zu wählen.",
     tip: "Wenn Sie merken, dass Sie in Schwarz-Weiss-Denken rutschen, fragen Sie sich: «Ist das gerade der ‹Alles-überstanden›-Modus – oder sehe ich die Situation realistisch?»"
   },

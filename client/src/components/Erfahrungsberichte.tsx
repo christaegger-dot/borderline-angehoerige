@@ -226,7 +226,7 @@ export default function Erfahrungsberichte({
           </button>
 
           {/* Card container with fixed height */}
-          <div className="overflow-hidden px-2">
+          <div className="overflow-hidden px-2" aria-live="polite" aria-atomic="true">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={current}

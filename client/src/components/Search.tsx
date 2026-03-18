@@ -516,6 +516,73 @@ const searchableContent = [
     section: "FAQ"
   },
   
+  // Interaktive Übungen
+  {
+    title: "5-4-3-2-1 Grounding-Übung",
+    description: "Geführte Achtsamkeitsübung: Schritt für Schritt durch alle 5 Sinne zurück ins Hier und Jetzt",
+    keywords: ["grounding", "5-4-3-2-1", "achtsamkeit", "sinne", "übung", "beruhigung", "gegenwart", "erdung"],
+    href: "/selbstfuersorge",
+    section: "Interaktive Übungen"
+  },
+  {
+    title: "DEAR-Satzbaukasten",
+    description: "Interaktives Tool: Eigene DEARMAN-Formulierungen Schritt für Schritt zusammenbauen",
+    keywords: ["dear", "dearman", "satzbaukasten", "kommunikation", "formulierung", "übung"],
+    href: "/kommunizieren",
+    section: "Interaktive Übungen"
+  },
+  {
+    title: "Mythos oder Fakt? – Flip Cards",
+    description: "Häufige Vorurteile über Borderline interaktiv aufklären",
+    keywords: ["mythos", "fakt", "vorurteil", "aufklärung", "flip", "quiz"],
+    href: "/verstehen",
+    section: "Interaktive Übungen"
+  },
+  {
+    title: "Spiegeln-Übung",
+    description: "Validierung üben: Aussagen spiegeln und empathisch reformulieren",
+    keywords: ["spiegeln", "validierung", "übung", "empathie", "reformulieren"],
+    href: "/kommunizieren",
+    section: "Interaktive Übungen"
+  },
+  {
+    title: "Selbstfürsorge-Check",
+    description: "Kurzer Check: Wie gut sorgen Sie aktuell für sich selbst?",
+    keywords: ["selbstfürsorge", "check", "test", "wohlbefinden", "überlastung"],
+    href: "/selbstfuersorge",
+    section: "Interaktive Übungen"
+  },
+  {
+    title: "Validierungsstufenleiter",
+    description: "Die 6 Stufen der Validierung interaktiv erkunden und üben",
+    keywords: ["validierung", "stufen", "leiter", "linehan", "übung", "interaktiv"],
+    href: "/kommunizieren",
+    section: "Interaktive Übungen"
+  },
+
+  // Unterstützen-Unterseiten
+  {
+    title: "Im Alltag unterstützen",
+    description: "Stabilität bieten, Skills unterstützen, gemeinsame Aktivitäten – praktische Tipps für den Alltag",
+    keywords: ["alltag", "stabilität", "routine", "skills", "unterstützen", "praktisch", "tipps"],
+    href: "/unterstuetzen/alltag",
+    section: "Unterstützen"
+  },
+  {
+    title: "Therapie begleiten",
+    description: "DBT und andere Therapien verstehen, Fortschritte würdigen, mit Rückschlägen umgehen",
+    keywords: ["therapie", "dbt", "begleiten", "fortschritte", "rückschläge", "behandlung", "skills"],
+    href: "/unterstuetzen/therapie",
+    section: "Unterstützen"
+  },
+  {
+    title: "In der Krise unterstützen",
+    description: "Krisen erkennen, deeskalieren und Sicherheit gewährleisten – konkrete Handlungsschritte",
+    keywords: ["krise", "deeskalation", "sicherheit", "notfall", "akut", "handeln"],
+    href: "/unterstuetzen/krise",
+    section: "Unterstützen"
+  },
+
   // Krisenszenarien (Notfall-Seite)
   {
     title: "Suiziddrohung – Was tun?",
@@ -696,7 +763,9 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                   placeholder="Suchen Sie nach Themen, z.B. 'Validierung', 'Grenzen setzen', 'Notfall'..."
                   className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none text-base"
                   role="combobox"
+                  aria-label="Website durchsuchen"
                   aria-expanded={results.length > 0}
+                  aria-controls="search-results"
                   aria-activedescendant={activeIndex >= 0 ? `search-result-${activeIndex}` : undefined}
                 />
                 {query && (
@@ -742,7 +811,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                     </p>
                   </div>
                 ) : (
-                  <div className="py-2" ref={resultsRef} role="listbox">
+                  <div className="py-2" ref={resultsRef} role="listbox" id="search-results">
                     {results.map((result, index) => (
                       <Link
                         key={`${result.href}-${index}`}

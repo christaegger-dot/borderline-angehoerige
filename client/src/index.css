@@ -491,6 +491,29 @@
   }
 }
 
+/* Scrollbar ausblenden für horizontale Tab-Leisten */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ── Reduced Motion: Animationen für Nutzer deaktivieren ── */
+/* WCAG 2.3.3 — respektiert Betriebssystem-Einstellung */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ── Mobile-Menü offen: Floating Buttons ausblenden ── */
 /* Verhindert Overlap mit ScrollToTop, TOC-Button und anderen FABs */
 @media (max-width: 1023px) {

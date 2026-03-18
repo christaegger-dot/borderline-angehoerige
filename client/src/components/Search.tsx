@@ -555,7 +555,9 @@ interface SearchProps {
 export default function Search({ isOpen, onClose }: SearchProps) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<typeof searchableContent>([]);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   // Focus input when opened
   useEffect(() => {
@@ -635,11 +637,28 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     });
 
     setResults(matches.slice(0, 8));
+    setActiveIndex(-1);
   }, [query]);
 
   const handleResultClick = () => {
     setQuery("");
     onClose();
+  };
+
+  // Arrow key navigation in results
+  const handleInputKeyDown = (e: React.KeyboardEvent) => {
+    if (results.length === 0) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setActiveIndex(prev => (prev < results.length - 1 ? prev + 1 : 0));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setActiveIndex(prev => (prev > 0 ? prev - 1 : results.length - 1));
+    } else if (e.key === "Enter" && activeIndex >= 0) {
+      e.preventDefault();
+      const link = resultsRef.current?.querySelectorAll("a")[activeIndex] as HTMLAnchorElement | undefined;
+      link?.click();
+    }
   };
 
   return (
@@ -673,8 +692,12 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={handleInputKeyDown}
                   placeholder="Suchen Sie nach Themen, z.B. 'Validierung', 'Grenzen setzen', 'Notfall'..."
                   className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none text-base"
+                  role="combobox"
+                  aria-expanded={results.length > 0}
+                  aria-activedescendant={activeIndex >= 0 ? `search-result-${activeIndex}` : undefined}
                 />
                 {query && (
                   <button
@@ -719,13 +742,16 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                     </p>
                   </div>
                 ) : (
-                  <div className="py-2">
+                  <div className="py-2" ref={resultsRef} role="listbox">
                     {results.map((result, index) => (
                       <Link
                         key={`${result.href}-${index}`}
                         href={result.href}
                         onClick={handleResultClick}
-                        className="flex items-start gap-4 px-4 py-3 hover:bg-muted/50 transition-colors group"
+                        id={`search-result-${index}`}
+                        role="option"
+                        aria-selected={index === activeIndex}
+                        className={`flex items-start gap-4 px-4 py-3 transition-colors group ${index === activeIndex ? "bg-muted/70" : "hover:bg-muted/50"}`}
                       >
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
@@ -749,9 +775,15 @@ export default function Search({ isOpen, onClose }: SearchProps) {
 
               {/* Footer */}
               <div className="px-4 py-3 border-t border-border bg-muted/30 flex items-center justify-between text-xs text-muted-foreground">
-                <span>
-                  <kbd className="px-1.5 py-0.5 bg-background border border-border rounded text-[10px]">ESC</kbd>
-                  {" "}zum Schliessen
+                <span className="flex items-center gap-2">
+                  <span>
+                    <kbd className="px-1.5 py-0.5 bg-background border border-border rounded text-[10px]">↑↓</kbd>
+                    {" "}navigieren
+                  </span>
+                  <span>
+                    <kbd className="px-1.5 py-0.5 bg-background border border-border rounded text-[10px]">ESC</kbd>
+                    {" "}schliessen
+                  </span>
                 </span>
                 {results.length > 0 && (
                   <span>{results.length} Ergebnis{results.length !== 1 ? "se" : ""}</span>

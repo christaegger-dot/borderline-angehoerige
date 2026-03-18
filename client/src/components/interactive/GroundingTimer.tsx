@@ -6,10 +6,6 @@
  * - Kein crossOrigin (nicht nötig für simples Abspielen)
  * - Kein Web Audio API / AudioContext
  * - play() wird synchron im onClick-Handler aufgerufen (kein setTimeout)
- * - Debug-Logging für error/stalled/waiting/canplaythrough/playing Events
- * - play().catch() mit Fehlermeldung in Console
- *
- * Design-Lock: Inter, Tokens, kein Dark Mode. Nur Fix, kein neues UI.
  */
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
@@ -80,32 +76,12 @@ type SoundKey = "start" | "transition" | "complete";
 
 type Phase = "idle" | "running" | "paused" | "done";
 
-/* ── Debug logger (nur im Dev-Modus, Tree-Shaking-freundlich) ── */
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const dbg: (msg: string, ...args: unknown[]) => void = () => {};
-
 /* ── HTML5 Audio helper ─────────────────────────────── */
 
-/**
- * Creates an HTML5 Audio element with debug event listeners.
- * No crossOrigin attribute (not needed for simple playback).
- */
-function createAudioElement(key: string, url: string): HTMLAudioElement {
+function createAudioElement(url: string): HTMLAudioElement {
   const audio = new Audio(url);
   audio.preload = "auto";
   audio.volume = 0.5;
-
-  // Debug event listeners
-  audio.addEventListener("canplaythrough", () => dbg(`${key}: canplaythrough`));
-  audio.addEventListener("playing", () => dbg(`${key}: playing`));
-  audio.addEventListener("error", () => {
-    const err = audio.error;
-    dbg(`${key}: error – code=${err?.code}, message=${err?.message}`);
-  });
-  audio.addEventListener("stalled", () => dbg(`${key}: stalled`));
-  audio.addEventListener("waiting", () => dbg(`${key}: waiting`));
-
   return audio;
 }
 
@@ -116,7 +92,6 @@ export default function GroundingTimer() {
   const [currentStep, setCurrentStep] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
   const [audioEnabled, setAudioEnabled] = useState(false);
-  const [audioReady, setAudioReady] = useState(false);
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const audioEnabledRef = useRef(audioEnabled);
@@ -136,11 +111,9 @@ export default function GroundingTimer() {
   const initAudioElements = useCallback(() => {
     if (audioElementsRef.current) return audioElementsRef.current;
 
-    dbg("Creating HTML5 Audio elements...");
     const elements: Record<string, HTMLAudioElement> = {};
     for (const [key, url] of Object.entries(AUDIO_URLS)) {
-      elements[key] = createAudioElement(key, url);
-      dbg(`Created audio element: ${key} → ${url.slice(-20)}`);
+      elements[key] = createAudioElement(url);
     }
     audioElementsRef.current = elements;
     return elements;
@@ -154,23 +127,11 @@ export default function GroundingTimer() {
     if (!audioEnabledRef.current) return;
 
     const elements = audioElementsRef.current;
-    if (!elements || !elements[key]) {
-      dbg(`playSound(${key}): no audio element – skipping`);
-      return;
-    }
+    if (!elements || !elements[key]) return;
 
     const audio = elements[key];
     audio.currentTime = 0;
-    dbg(`playSound(${key}): calling play()...`);
-
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => dbg(`playSound(${key}): play() resolved`))
-        .catch((e) => {
-          dbg(`playSound(${key}): play() REJECTED – ${e.name}: ${e.message}`);
-        });
-    }
+    audio.play().catch(() => {});
   }, []);
 
   /**
@@ -182,27 +143,14 @@ export default function GroundingTimer() {
     setAudioEnabled(newVal);
 
     if (newVal) {
-      dbg("Audio ON – initializing HTML5 Audio elements in user gesture");
-
       const elements = initAudioElements();
 
       // Play preview tone synchronously in the click handler
       const preview = elements["transition"];
       if (preview) {
         preview.currentTime = 0;
-        const p = preview.play();
-        if (p !== undefined) {
-          p.then(() => {
-            dbg("Preview tone played successfully");
-            setAudioReady(true);
-          }).catch((e) => {
-            dbg(`Preview play REJECTED: ${e.name}: ${e.message}`);
-            setAudioReady(false);
-          });
-        }
+        preview.play().catch(() => {});
       }
-    } else {
-      dbg("Audio OFF");
     }
   };
 
@@ -249,8 +197,6 @@ export default function GroundingTimer() {
   /* ── User actions ──────────────────────────────────── */
 
   const handleStart = () => {
-    dbg("handleStart, audioEnabled:", audioEnabled);
-
     if (audioEnabled) {
       // Ensure elements exist
       initAudioElements();

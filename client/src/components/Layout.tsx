@@ -586,6 +586,9 @@ export default function Layout({ children }: LayoutProps) {
               <Link href="/datenschutz" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
                 Datenschutz
               </Link>
+              <Link href="/feedback" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
+                Feedback
+              </Link>
             </div>
           </div>
         </div>

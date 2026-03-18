@@ -115,9 +115,9 @@ const results: Record<ResultType, ResultData> = {
     type: "achtung",
     title: "Erste Warnsignale",
     icon: Lightbulb,
-    iconColor: "text-amber-600",
-    bgColor: "bg-amber-50/50",
-    borderColor: "border-amber-200/50",
+    iconColor: "text-sos-amber-text",
+    bgColor: "bg-sos-amber-wash/50",
+    borderColor: "border-sos-amber-border/50",
     message: "Sie geben viel – und es zeigt sich. Einige Bereiche verdienen mehr Aufmerksamkeit. Das ist kein Versagen, sondern ein normales Zeichen dafür, dass Sie sich in einer anspruchsvollen Situation befinden.",
     tips: [
       "Planen Sie diese Woche eine konkrete Auszeit ein – auch wenn es nur 30 Minuten sind.",
@@ -198,7 +198,7 @@ export default function SelbstfuersorgeCheck() {
             <div className="h-2 bg-border/50 rounded-full overflow-hidden">
               <motion.div 
                 className={`h-full rounded-full ${
-                  total <= 3 ? "bg-sage-mid" : total <= 6 ? "bg-amber-500" : "bg-terracotta-mid"
+                  total <= 3 ? "bg-sage-mid" : total <= 6 ? "bg-sos-amber-text" : "bg-terracotta-mid"
                 }`}
                 initial={{ width: 0 }}
                 animate={{ width: `${(total / 10) * 100}%` }}

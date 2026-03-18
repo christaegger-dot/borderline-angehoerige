@@ -42,9 +42,9 @@ function StickyAmpelLeiste() {
   };
 
   const items = [
-    { id: "block-rot",    label: "Lebensgefahr",         sub: "144 · 117 · 112",  bg: "#C0392B" },
-    { id: "block-orange", label: "Psychiatr. Krise",      sub: "PUK 24/7",         bg: "#C67A5C" },
-    { id: "block-gruen",  label: "Jemand zum Reden",      sub: "143",              bg: "#6B9E78" },
+    { id: "block-rot",    label: "Lebensgefahr",         sub: "144 · 117 · 112",  bg: "var(--color-sos-rot)" },
+    { id: "block-orange", label: "Psychiatr. Krise",      sub: "PUK 24/7",         bg: "var(--color-sos-orange-text)" },
+    { id: "block-gruen",  label: "Jemand zum Reden",      sub: "143",              bg: "var(--color-sos-gruen-text)" },
   ] as const;
 
   return (
@@ -107,21 +107,21 @@ function PukKarte({ nummer, label, fuerWen, tel, icon }: { nummer: string; label
   return (
     <a
       href={`tel:${tel}`}
-      className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-white border border-orange-200 hover:border-orange-400 hover:shadow-md active:scale-[0.98] transition-all group"
+      className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-white border border-sos-orange-border hover:border-sos-orange-border-h hover:shadow-md active:scale-[0.98] transition-all group"
       aria-label={`${label} anrufen: ${nummer}`}
     >
       <div className="flex items-center gap-3 min-w-0">
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-sos-orange-light flex items-center justify-center flex-shrink-0">
           {icon}
         </div>
         <div className="min-w-0">
-          <p className="text-xs font-medium text-orange-700 mb-0.5">{fuerWen}</p>
+          <p className="text-xs font-medium text-sos-orange-text mb-0.5">{fuerWen}</p>
           <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">{nummer}</p>
           <p className="text-muted-foreground text-xs sm:text-sm leading-snug">{label}</p>
         </div>
       </div>
-      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-all">
-        <Phone className="w-5 h-5 text-orange-700" />
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-orange-light flex items-center justify-center group-hover:bg-sos-orange-border transition-all">
+        <Phone className="w-5 h-5 text-sos-orange-text" />
       </div>
     </a>
   );
@@ -133,24 +133,24 @@ function EntlastungKarte({ nummer, label, hinweis, tel, badge }: { nummer: strin
   return (
     <a
       href={`tel:${tel}`}
-      className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-white border border-green-200 hover:border-green-400 hover:shadow-md active:scale-[0.98] transition-all group"
+      className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-white border border-sos-gruen-border hover:border-sos-gruen-border-h hover:shadow-md active:scale-[0.98] transition-all group"
       aria-label={`${label} anrufen: ${nummer}`}
     >
       <div className="flex items-center gap-3 min-w-0">
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
-          <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-green-700" />
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-sos-gruen-light flex items-center justify-center flex-shrink-0">
+          <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-sos-gruen-text" />
         </div>
         <div className="min-w-0">
           {badge && (
-            <span className="inline-block text-[10px] font-semibold text-green-700 bg-green-100 rounded px-1.5 py-0.5 mb-0.5">{badge}</span>
+            <span className="inline-block text-[10px] font-semibold text-sos-gruen-text bg-sos-gruen-light rounded px-1.5 py-0.5 mb-0.5">{badge}</span>
           )}
           <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">{nummer}</p>
           <p className="text-muted-foreground text-xs sm:text-sm font-medium">{label}</p>
           <p className="text-muted-foreground text-xs leading-snug mt-0.5">{hinweis}</p>
         </div>
       </div>
-      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-all">
-        <Phone className="w-5 h-5 text-green-700" />
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-gruen-light flex items-center justify-center group-hover:bg-sos-gruen-border transition-all">
+        <Phone className="w-5 h-5 text-sos-gruen-text" />
       </div>
     </a>
   );
@@ -183,7 +183,7 @@ export default function Notfall() {
       />
 
       {/* ═══ HERO ═══ */}
-      <section className="py-6 md:py-16 bg-gradient-to-b from-red-50 to-background">
+      <section className="py-6 md:py-16 bg-gradient-to-b from-sos-rot-wash to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -192,10 +192,10 @@ export default function Notfall() {
             className="max-w-2xl"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 rounded-xl bg-red-600 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-sos-rot flex items-center justify-center">
                 <AlertTriangle className="w-6 h-6 text-white" />
               </div>
-              <span className="text-sm font-semibold text-red-700 uppercase tracking-wide">Soforthilfe</span>
+              <span className="text-sm font-semibold text-sos-rot uppercase tracking-wide">Soforthilfe</span>
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
@@ -206,8 +206,8 @@ export default function Notfall() {
               Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz – wenn sofortiges Handeln erforderlich ist.
             </p>
 
-            <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
-              <p className="text-sm text-amber-900 leading-snug">
+            <div className="p-4 rounded-xl bg-sos-amber-wash border border-sos-amber-border">
+              <p className="text-sm text-sos-amber-dark leading-snug">
                 <strong>Diese Seite ist für akute Gefahrensituationen.</strong> Für emotionale Krisen ohne akute Gefahr besuchen Sie die Seite{" "}
                 <Link href="/unterstuetzen/krise" className="text-terracotta-mid hover:underline font-semibold">
                   «In der Krise unterstützen» →
@@ -235,7 +235,7 @@ export default function Notfall() {
               viewport={{ once: true }}
             >
               {/* Block-Header */}
-              <div className="px-5 py-4 sm:px-6 sm:py-5" style={{ backgroundColor: "#C0392B" }}>
+              <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-rot">
                 <div className="flex items-center gap-3 mb-1">
                   <AlertTriangle className="w-6 h-6 text-white flex-shrink-0" />
                   <h2 className="text-lg sm:text-xl font-bold text-white">Lebensgefahr – sofort handeln</h2>
@@ -246,7 +246,7 @@ export default function Notfall() {
               </div>
 
               {/* Nummern */}
-              <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3" style={{ backgroundColor: "#D44333" }}>
+              <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3 bg-sos-rot-body">
                 <NotfallKarte
                   nummer={rot144.nummer}
                   label={rot144.label}
@@ -268,8 +268,8 @@ export default function Notfall() {
               </div>
 
               {/* Merksatz */}
-              <div className="px-5 py-3 sm:px-6 bg-red-900/20 border-t border-white/10">
-                <p className="text-white/90 text-xs sm:text-sm leading-snug" style={{ color: "#fff" }}>
+              <div className="px-5 py-3 sm:px-6 bg-sos-rot/20 border-t border-white/10">
+                <p className="text-white text-xs sm:text-sm leading-snug">
                   <strong>Merke:</strong> Bei akuter Lebensgefahr immer zuerst <strong>144 / 117 / 112</strong> – auch gegen den Willen der Person.
                 </p>
               </div>
@@ -278,20 +278,20 @@ export default function Notfall() {
             {/* ─── BLOCK 2: PSYCHIATRISCHE KRISE (ORANGE) ─── */}
             <motion.div
               id="block-orange"
-              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-md border border-orange-200"
+              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-md border border-sos-orange-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
               {/* Block-Header */}
-              <div className="px-5 py-4 sm:px-6 sm:py-5 bg-orange-50 border-b border-orange-200">
+              <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-orange-wash border-b border-sos-orange-border">
                 <div className="flex items-center gap-3 mb-1">
-                  <div className="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-sos-orange flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-lg sm:text-xl font-bold text-orange-900">Akute psychiatrische Krise</h2>
+                  <h2 className="text-lg sm:text-xl font-bold text-sos-orange-dark">Akute psychiatrische Krise</h2>
                 </div>
-                <p className="text-orange-800 text-sm leading-snug ml-11">
+                <p className="text-sos-orange-mid text-sm leading-snug ml-11">
                   Schwere psychische Krise, starke Eskalation oder massiver Kontrollverlust – aber <strong>keine unmittelbare Lebensgefahr</strong>.
                 </p>
               </div>
@@ -307,27 +307,27 @@ export default function Notfall() {
                   label="PUK Erwachsene (24/7)"
                   fuerWen="Erwachsene 18–64 Jahre"
                   tel={pukErw.tel}
-                  icon={<User className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
+                  icon={<User className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />}
                 />
                 <PukKarte
                   nummer={pukKjp.nummer}
                   label="PUK Kinder & Jugendliche (24/7)"
                   fuerWen="Kinder & Jugendliche bis 18 Jahre"
                   tel={pukKjp.tel}
-                  icon={<Baby className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
+                  icon={<Baby className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />}
                 />
                 <PukKarte
                   nummer={puk65.nummer}
                   label="PUK Erwachsene ab 65 (24/7)"
                   fuerWen="Erwachsene ab 65 Jahren"
                   tel={puk65.tel}
-                  icon={<Users className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" />}
+                  icon={<Users className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />}
                 />
               </div>
 
               {/* Hinweis */}
-              <div className="px-5 py-3 sm:px-6 bg-orange-50 border-t border-orange-100">
-                <p className="text-orange-800 text-xs sm:text-sm leading-snug">
+              <div className="px-5 py-3 sm:px-6 bg-sos-orange-wash border-t border-sos-orange-light">
+                <p className="text-sos-orange-mid text-xs sm:text-sm leading-snug">
                   Am Telefon erfolgt eine kurze Einschätzung, was jetzt am besten hilft.
                 </p>
               </div>
@@ -336,20 +336,20 @@ export default function Notfall() {
             {/* ─── BLOCK 3: JEMAND ZUM REDEN (GRÜN) ─── */}
             <motion.div
               id="block-gruen"
-              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-md border border-green-200"
+              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-md border border-sos-gruen-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
               {/* Block-Header */}
-              <div className="px-5 py-4 sm:px-6 sm:py-5 bg-green-50 border-b border-green-200">
+              <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-gruen-wash border-b border-sos-gruen-border">
                 <div className="flex items-center gap-3 mb-1">
-                  <div className="w-8 h-8 rounded-lg bg-green-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-sos-gruen flex items-center justify-center flex-shrink-0">
                     <Heart className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-lg sm:text-xl font-bold text-green-900">Jemand zum Reden / Entlastung</h2>
+                  <h2 className="text-lg sm:text-xl font-bold text-sos-gruen-dark">Jemand zum Reden / Entlastung</h2>
                 </div>
-                <p className="text-green-800 text-sm leading-snug ml-11">
+                <p className="text-sos-gruen-mid text-sm leading-snug ml-11">
                   Für Gespräch, Entlastung und Orientierung – <strong>kein Einsatz vor Ort</strong>, keine unmittelbare Gefahr.
                 </p>
               </div>
@@ -380,8 +380,8 @@ export default function Notfall() {
               </div>
 
               {/* Hinweis */}
-              <div className="px-5 py-3 sm:px-6 bg-green-50 border-t border-green-100">
-                <p className="text-green-800 text-xs sm:text-sm leading-snug">
+              <div className="px-5 py-3 sm:px-6 bg-sos-gruen-wash border-t border-sos-gruen-light">
+                <p className="text-sos-gruen-mid text-xs sm:text-sm leading-snug">
                   <strong>Bei akuter Gefahr:</strong> Immer zuerst <strong>144 / 117 / 112</strong> rufen.
                 </p>
               </div>
@@ -390,29 +390,29 @@ export default function Notfall() {
             {/* ─── BLOCK 4: SPEZIALFALL VERGIFTUNG ─── */}
             <motion.div
               id="block-spezial"
-              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-sm border border-purple-200"
+              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-sm border border-sos-lila-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="px-5 py-4 sm:px-6 sm:py-4 bg-purple-50 border-b border-purple-100">
+              <div className="px-5 py-4 sm:px-6 sm:py-4 bg-sos-lila-wash border-b border-sos-lila-light">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-sos-lila flex items-center justify-center flex-shrink-0">
                     <Pill className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-base sm:text-lg font-bold text-purple-900">Spezialfall: Vergiftung</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-sos-lila-dark">Spezialfall: Vergiftung</h2>
                 </div>
               </div>
 
               <div className="px-4 py-4 sm:px-5 bg-white">
                 <a
                   href={`tel:${rot145.tel}`}
-                  className="flex items-center justify-between gap-3 p-4 rounded-xl bg-purple-50 border border-purple-200 hover:border-purple-400 hover:shadow-md active:scale-[0.98] transition-all group"
+                  className="flex items-center justify-between gap-3 p-4 rounded-xl bg-sos-lila-wash border border-sos-lila-border hover:border-sos-lila-border-h hover:shadow-md active:scale-[0.98] transition-all group"
                   aria-label={`${rot145.label} anrufen: ${rot145.nummer}`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
-                      <Pill className="w-5 h-5 text-purple-700" />
+                    <div className="w-10 h-10 rounded-xl bg-sos-lila-light flex items-center justify-center flex-shrink-0">
+                      <Pill className="w-5 h-5 text-sos-lila-text" />
                     </div>
                     <div>
                       <p className="font-bold text-foreground text-xl leading-none mb-0.5">{rot145.nummer}</p>
@@ -420,8 +420,8 @@ export default function Notfall() {
                       <p className="text-muted-foreground text-xs mt-0.5">{rot145.hinweis}</p>
                     </div>
                   </div>
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-all">
-                    <Phone className="w-5 h-5 text-purple-700" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-lila-light flex items-center justify-center group-hover:bg-sos-lila-border transition-all">
+                    <Phone className="w-5 h-5 text-sos-lila-text" />
                   </div>
                 </a>
               </div>

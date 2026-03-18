@@ -341,7 +341,7 @@ export default function GroundingTimer() {
           <button
             type="button"
             onClick={handleToggleAudio}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
               audioEnabled
                 ? "bg-slate-dark text-white"
                 : "bg-muted/50 text-muted-foreground hover:bg-muted"

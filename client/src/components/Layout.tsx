@@ -369,6 +369,9 @@ export default function Layout({ children }: LayoutProps) {
                 maxHeight: 'calc(100dvh - 5rem)',
                 WebkitOverflowScrolling: 'touch',
               }}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") setMobileMenuOpen(false);
+              }}
             >
               <nav className="container py-4 flex flex-col gap-2" style={{ paddingBottom: 'calc(16px + env(safe-area-inset-bottom, 0px) + 88px)' }}>
                 {navItems.map((item) => {

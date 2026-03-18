@@ -203,7 +203,7 @@ const results: Result[] = [
     primaryLink: "/verstehen",
     primaryText: "Borderline verstehen",
     secondaryLinks: [
-      { href: "/unterstuetzen", text: "Unterstützungsstrategien" },
+      { href: "/unterstuetzen/uebersicht", text: "Unterstützungsstrategien" },
       { href: "/kommunizieren", text: "Kommunikation verbessern" }
     ],
     icon: BookOpen,
@@ -214,7 +214,7 @@ const results: Result[] = [
     id: "unterstuetzen",
     title: "Unterstützung geben",
     description: "Sie können einen wichtigen Beitrag leisten – nicht als Therapeut, sondern als verlässlicher Begleiter.",
-    primaryLink: "/unterstuetzen",
+    primaryLink: "/unterstuetzen/uebersicht",
     primaryText: "Unterstützungsstrategien entdecken",
     secondaryLinks: [
       { href: "/unterstuetzen/alltag", text: "Alltag gestalten" },
@@ -260,20 +260,23 @@ export default function Selbsttest() {
   const [scores, setScores] = useState<Record<string, number>>({});
   const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleAnswer = (option: Question["options"][0]) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setSelectedOption(option.value);
-    
+
     // Update scores
     const newScores = { ...scores };
     Object.entries(option.weight).forEach(([key, value]) => {
       newScores[key] = (newScores[key] || 0) + value;
     });
     setScores(newScores);
-    
+
     // Save answer
     setAnswers({ ...answers, [questions[currentQuestion].id]: option.value });
-    
+
     // Move to next question or show result
     setTimeout(() => {
       if (currentQuestion < questions.length - 1) {
@@ -282,13 +285,27 @@ export default function Selbsttest() {
       } else {
         setShowResult(true);
       }
+      setIsTransitioning(false);
     }, 300);
   };
 
   const goBack = () => {
     if (currentQuestion > 0) {
+      // Subtract scores of the previous answer before going back
+      const prevQuestionId = questions[currentQuestion - 1].id;
+      const prevAnswerValue = answers[prevQuestionId];
+      if (prevAnswerValue) {
+        const prevOption = questions[currentQuestion - 1].options.find(o => o.value === prevAnswerValue);
+        if (prevOption) {
+          const newScores = { ...scores };
+          Object.entries(prevOption.weight).forEach(([key, value]) => {
+            newScores[key] = (newScores[key] || 0) - value;
+          });
+          setScores(newScores);
+        }
+      }
       setCurrentQuestion(currentQuestion - 1);
-      setSelectedOption(answers[questions[currentQuestion - 1].id] || null);
+      setSelectedOption(answers[prevQuestionId] || null);
     }
   };
 
@@ -326,8 +343,10 @@ export default function Selbsttest() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
+        aria-live="polite"
+        role="status"
       >
-        <Card 
+        <Card
           className="border-2 overflow-hidden"
           style={{ borderColor: result.color }}
         >
@@ -399,9 +418,9 @@ export default function Selbsttest() {
   const question = questions[currentQuestion];
 
   return (
-    <Card className="border-border/50 overflow-hidden">
+    <Card className="border-border/50 overflow-hidden" role="form" aria-label="Selbsttest">
       {/* Progress bar */}
-      <div className="h-1.5 bg-muted">
+      <div className="h-1.5 bg-muted" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label={`Fortschritt: Frage ${currentQuestion + 1} von ${questions.length}`}>
         <motion.div 
           className="h-full bg-terracotta"
           initial={{ width: 0 }}
@@ -448,7 +467,8 @@ export default function Selbsttest() {
             )}
             
             {/* Options */}
-            <div className="space-y-3 mt-6">
+            <fieldset className="space-y-3 mt-6 border-0 p-0 m-0">
+              <legend className="sr-only">{question.text}</legend>
               {question.options.map((option, index) => (
                 <motion.button
                   key={option.value}
@@ -456,6 +476,8 @@ export default function Selbsttest() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
                   onClick={() => handleAnswer(option)}
+                  disabled={isTransitioning}
+                  aria-pressed={selectedOption === option.value}
                   className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 ${
                     selectedOption === option.value
                       ? "border-terracotta bg-terracotta-wash"
@@ -476,7 +498,7 @@ export default function Selbsttest() {
                   </div>
                 </motion.button>
               ))}
-            </div>
+            </fieldset>
           </motion.div>
         </AnimatePresence>
       </CardContent>

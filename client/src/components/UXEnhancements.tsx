@@ -37,7 +37,7 @@ export function ReadingProgress() {
 }
 
 // Zurück-nach-oben-Button
-export function ScrollToTop() {
+export function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -488,7 +488,7 @@ export function KeyboardShortcuts() {
             <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">1-5</kbd> Hauptseiten</div>
             <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">N</kbd> Notfall</div>
             <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">H</kbd> Startseite</div>
-            <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">⌘K</kbd> Suche</div>
+            <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">{navigator.platform?.includes("Mac") ? "⌘" : "Ctrl+"}K</kbd> Suche</div>
             <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">?</kbd> Diese Hilfe</div>
           </div>
           <p className="text-xs mt-2 opacity-90">Drücken Sie ? zum Schliessen</p>

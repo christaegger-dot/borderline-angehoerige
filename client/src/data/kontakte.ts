@@ -20,7 +20,8 @@
  *
  * tel-Format:
  * - Kurznummern (3-stellig): nur Ziffern, z. B. "144", "117", "143"
- * - CH-Nummern (058/0800/0848): +41… ohne Leerzeichen, z. B. "+41583846666"
+ * - CH-Nummern (058/0848): +41… ohne Leerzeichen, z. B. "+41583846666"
+ * - 0800-Gratsnummern: national wählen, z. B. "0800336655"
  *
  * ID-Schema: KATEGORIE_BEZEICHNUNG (Grossbuchstaben + Unterstriche, keine Umlaute)
  */
@@ -225,7 +226,7 @@ export const INFO: Kontakt[] = [
     id: "INFO_AERZTEFON",
     kategorie: "info",
     nummer: "0800 33 66 55",
-    tel: "+41800336655",
+    tel: "0800336655",
     label: "Ärztefon Zürich",
     hinweis: "Ärztliche Beratung und Weitervermittlung, ggf. Hausbesuch",
     sourceRef: "Soforthilfe.tsx:281",
@@ -261,7 +262,7 @@ export const INFO: Kontakt[] = [
     id: "INFO_SELBSTHILFE_CH",
     kategorie: "info",
     nummer: "0800 840 400",
-    tel: "+41800840400",
+    tel: "0800840400",
     label: "Selbsthilfe Schweiz",
     hinweis: "Vermittlung von Selbsthilfegruppen",
     sourceRef: "Selbsthilfegruppen.tsx:75",
@@ -413,8 +414,8 @@ export const WEBSITE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO].
   (k) => !k.nurPdf,
 );
 
-/** Website-ROT (ohne 145/118) */
-export const WEBSITE_ROT = ROT.filter((k) => !k.nurPdf);
+/** Website-ROT: Haupt-Notfallnummern (ohne 118 nur PDF, ohne 145 Spezialnummer) */
+export const WEBSITE_ROT = ROT.filter((k) => !k.nurPdf && k.id !== "ROT_145");
 
 /** Alle Kontakte flach (inkl. nurPdf) */
 export const ALLE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO];

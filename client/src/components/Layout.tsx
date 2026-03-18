@@ -4,7 +4,7 @@ import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Downl
 const Search = lazy(() => import("@/components/Search"));
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { ReadingProgress, ScrollToTop, Breadcrumbs, KeyboardShortcuts } from "@/components/UXEnhancements";
+import { ReadingProgress, ScrollToTopButton, Breadcrumbs, KeyboardShortcuts } from "@/components/UXEnhancements";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -318,7 +318,7 @@ export default function Layout({ children }: LayoutProps) {
                 <SearchIcon className="w-4 h-4" />
                 <span className="hidden xl:inline">Suchen</span>
                 <kbd aria-hidden="true" className="hidden xl:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">
-                  <span className="text-xs">⌘</span>K
+                  <span className="text-xs">{navigator.platform?.includes("Mac") ? "⌘" : "Ctrl+"}</span>K
                 </kbd>
               </button>
               {/* Search Button – Mobile (nur Icon) */}
@@ -618,7 +618,7 @@ export default function Layout({ children }: LayoutProps) {
       )}
       
       {/* Zurück nach oben Button */}
-      <ScrollToTop />
+      <ScrollToTopButton />
       
       {/* Tastaturkürzel-Hinweis */}
       <KeyboardShortcuts />

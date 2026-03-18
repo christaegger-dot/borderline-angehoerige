@@ -71,11 +71,7 @@ export function WebsiteSchema() {
         "url": "https://borderline-angehoerige.netlify.app/og-image.jpg"
       }
     },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://borderline-angehoerige.netlify.app/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": "de-CH"
   };
 
   useEffect(() => {
@@ -87,6 +83,7 @@ export function WebsiteSchema() {
       document.head.appendChild(el);
     }
     el.textContent = JSON.stringify(schema);
+    return () => { el?.remove(); };
   }, []);
 
   return null;
@@ -118,7 +115,7 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
     "lastReviewed": "2026-03-09",
     "medicalAudience": {
       "@type": "MedicalAudience",
-      "audienceType": "Patient"
+      "audienceType": "Caregiver"
     }
   };
 

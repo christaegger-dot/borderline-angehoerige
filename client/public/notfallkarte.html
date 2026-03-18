@@ -177,9 +177,8 @@ a.pill { text-decoration: none; color: inherit; }
 .b1 .block-header { background: #c62828; }
 .b1 .block-body   { background: #fff5f5; }
 .b1 .trigger      { color: #c62828; }
-.b1 .pill         { border-color: #c62828; }
+.b1 .pill         { border-color: #c62828; padding: 1.5mm 0.5mm; }
 .b1 .pill-nr      { color: #c62828; font-size: 22pt; }
-.b1 .pill         { padding: 1.5mm 0.5mm; }
 
 /* ── BLOCK 1 pills: 4 Spalten ────────────── */
 .b1 .pills {
@@ -262,6 +261,23 @@ body { background: none; padding: 0; }
 @page { size: A4; margin: 0; }
 button, a[download] { display: none !important; }
 }
+
+/* ── HEADER ACTIONS ─────────────────────── */
+.header-actions { display: flex; gap: 2mm; flex-shrink: 0; }
+.header-btn {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 2mm 3.5mm;
+  border-radius: 2mm;
+  font-size: 6.5pt;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+/* ── UTILITY ────────────────────────────── */
+.link-inherit { color: inherit; text-decoration: none; }
 </style>
 
 </head>
@@ -274,11 +290,11 @@ button, a[download] { display: none !important; }
   <div class="header">
     <div class="header-title">Notfallkarte Zürich – Psychische Krise</div>
     <div class="header-meta">Für Angehörige · PUK Zürich · v06 · 2026-03-10</div>
-    <div style="display:flex; gap:2mm; flex-shrink:0;">
-      <button onclick="window.print()" style="background:rgba(255,255,255,0.15); color:white; border:1px solid rgba(255,255,255,0.4); padding:2mm 3.5mm; border-radius:2mm; font-size:6.5pt; cursor:pointer; white-space:nowrap;">
+    <div class="header-actions">
+      <button onclick="window.print()" class="header-btn">
         🖨 Drucken / PDF
       </button>
-      <a href="/notfallkarte-zuerich-v07.pdf" download="Notfallkarte-Zuerich-Psychische-Krise.pdf" style="background:rgba(255,255,255,0.15); color:white; border:1px solid rgba(255,255,255,0.4); padding:2mm 3.5mm; border-radius:2mm; font-size:6.5pt; cursor:pointer; white-space:nowrap; text-decoration:none;">
+      <a href="/notfallkarte-zuerich-v07.pdf" download="Notfallkarte-Zuerich-Psychische-Krise.pdf" class="header-btn">
         ⬇ Herunterladen
       </a>
     </div>
@@ -396,7 +412,7 @@ button, a[download] { display: none !important; }
       <span class="block-title">VERGIFTUNG &nbsp;·&nbsp; Tox Info Suisse, 24/7</span>
     </div>
     <div class="block-body">
-      <a href="tel:145" class="b4-nr" style="text-decoration:none;color:inherit">145</a>
+      <a href="tel:145" class="b4-nr link-inherit">145</a>
       <div class="b4-info">
         <div class="b4-name">Tox Info Suisse — Vergiftungsberatung</div>
         <div class="b4-desc">24/7 · kostenlos · ärztliche Auskunft bei Verdacht auf Vergiftung durch Medikamente, Alkohol, Drogen, Haushaltsmittel oder andere Substanzen</div>
@@ -413,8 +429,8 @@ button, a[download] { display: none !important; }
       <span class="f2">Alle Nummern verifiziert 03/2026. Diese Karte ersetzt keine professionelle Beratung.</span>
     </div>
     <div class="footer-right">
-      <span class="f1"><a href="https://borderline-angehoerige.netlify.app" style="color:inherit;text-decoration:none">borderline-angehoerige.netlify.app</a> · v06 · März 2026</span>
-      <span class="f2">Online: <a href="https://borderline-angehoerige.netlify.app/soforthilfe" style="color:inherit;text-decoration:none">borderline-angehoerige.netlify.app/soforthilfe</a></span>
+      <span class="f1"><a href="https://borderline-angehoerige.netlify.app" class="link-inherit">borderline-angehoerige.netlify.app</a> · v06 · März 2026</span>
+      <span class="f2">Online: <a href="https://borderline-angehoerige.netlify.app/soforthilfe" class="link-inherit">borderline-angehoerige.netlify.app/soforthilfe</a></span>
     </div>
   </div>
 

@@ -222,28 +222,6 @@
     }
   }
   
-  /* Sanctuary Calm specific components */
-  .font-display {
-    font-family: var(--font-display);
-  }
-  
-  .font-body {
-    font-family: var(--font-body);
-  }
-  
-  /* Smooth transitions for therapeutic feel
-     Sanctuary-Easing: bewusst langsam, beruhigend
-     Standard: 500ms | Schnell: 400ms | Langsam: 600ms */
-  .transition-sanctuary {
-    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .transition-sanctuary-fast {
-    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .transition-sanctuary-slow {
-    transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
   /* Breathing animation for emergency button */
   @keyframes breathe {
     0%, 100% { transform: scale(1); opacity: 1; }
@@ -254,93 +232,7 @@
     animation: breathe 4s ease-in-out infinite;
   }
   
-  /* Fade in animation */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-  
-  /* ===== Wave Divider System =====
-     Organische Wellenlinien zwischen Sektionen.
-     Farbe via CSS-Variable --wave-color (default: --background).
-     Varianten: bottom (default), top (invertiert).
-  */
-  .wave-divider {
-    position: relative;
-    --wave-color: var(--background);
-  }
-  .wave-divider-cream {
-    --wave-color: var(--color-cream);
-  }
-  .wave-divider-sand {
-    --wave-color: var(--color-sand-muted);
-  }
-  
-  /* Bottom wave (default) – Welle am unteren Rand */
-  .wave-divider::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 48px;
-    background: var(--wave-color);
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z'/%3E%3C/svg%3E");
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-  
-  /* Top wave – Welle am oberen Rand (invertiert) */
-  .wave-divider-top {
-    position: relative;
-    --wave-color: var(--background);
-    padding-top: 4rem;
-  }
-  @media (min-width: 768px) {
-    .wave-divider-top {
-      padding-top: 5rem;
-    }
-  }
-  .wave-divider-top::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: 0;
-    right: 0;
-    height: 48px;
-    background: var(--wave-color);
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0,24 C240,0 480,48 720,24 C960,0 1200,48 1440,24 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M0,24 C240,0 480,48 720,24 C960,0 1200,48 1440,24 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
 }
-
-/* Prose styling for article content – alle Werte via Tokens */
-.prose-sanctuary {
-  --tw-prose-body: var(--color-charcoal);
-  --tw-prose-headings: var(--foreground);
-  --tw-prose-links: var(--color-slate-blue);
-  --tw-prose-bold: var(--foreground);
-  --tw-prose-quotes: var(--muted-foreground);
-  --tw-prose-quote-borders: var(--color-terracotta);
-}
-
 
 /* ========================================
    PRINT STYLES - Druckerfreundliche Version
@@ -557,52 +449,13 @@
     font-size: 12pt !important;
   }
   
-  /* Print-spezifischer Header */
-  .print-header {
-    display: block !important;
-    text-align: center;
-    margin-bottom: 1cm;
-    padding-bottom: 0.5cm;
-    border-bottom: 2pt solid var(--print-border-dark);
-  }
-  
-  /* Print-spezifischer Footer */
-  .print-footer {
-    display: block !important;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 9pt;
-    color: var(--print-text-muted);
-    border-top: 1pt solid var(--print-border-accent);
-    padding-top: 0.2cm;
-  }
-  
   /* Hintergrundfarben entfernen */
   * {
     background-color: transparent !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  
-  /* Ausnahme: Wichtige farbige Elemente behalten */
-  .keep-color {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
 }
-
-/* Scrollbar ausblenden für horizontale Tab-Leisten */
-.scrollbar-none {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-none::-webkit-scrollbar {
-  display: none;
-}
-
 
 /* ── Mobile-Menü offen: Floating Buttons ausblenden ── */
 /* Verhindert Overlap mit ScrollToTop, TOC-Button und anderen FABs */
@@ -615,7 +468,3 @@
   }
 }
 
-/* ── Safe-Area-Utility für iOS ── */
-.safe-bottom-pad {
-  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-}

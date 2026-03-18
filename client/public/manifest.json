@@ -11,19 +11,19 @@
   "categories": ["health", "education"],
   "icons": [
     {
-      "src": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JNUJrQSrMjSGxgQV.png",
+      "src": "/favicon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IquibdmjwGDFfayD.png",
+      "src": "/favicon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/thgizYpPfXOYQpHH.png",
+      "src": "/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "maskable"

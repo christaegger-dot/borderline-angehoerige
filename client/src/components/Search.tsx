@@ -186,7 +186,7 @@ const searchableContent = [
   // Genesung
   {
     title: "Genesung ist möglich",
-    description: "Evidenzbasierte Hoffnung – 85-93% erreichen Remission",
+    description: "Was Langzeitstudien über Remission, Besserung und realistische Hoffnung zeigen",
     keywords: ["genesung", "remission", "recovery", "hoffnung", "prognose", "besserung", "heilung"],
     href: "/genesung",
     section: "Genesung"
@@ -216,21 +216,21 @@ const searchableContent = [
   },
   {
     title: "Der Leuchtturm: Ihre Rolle als Angehörige/r",
-    description: "Infografik: Stabil bleiben, Orientierung geben – die Leuchtturm-Metapher",
+    description: "Infografik: Orientierung, Verlässlichkeit und Selbstschutz in der Angehörigenrolle",
     keywords: ["leuchtturm", "rolle", "stabil", "orientierung", "metapher", "infografik"],
     href: "/materialien",
     section: "Materialien"
   },
   {
-    title: "Der Eisberg: Wut = Trauer",
-    description: "Infografik: Was Sie sehen ist nur die Spitze – darunter liegt Trauer",
+    title: "Der Eisberg: Was hinter Wut liegen kann",
+    description: "Infografik: Hinter sichtbarer Wut liegen oft Schmerz, Angst oder Scham",
     keywords: ["eisberg", "wut", "trauer", "gefühle", "verborgen", "infografik"],
     href: "/materialien",
     section: "Materialien"
   },
   {
     title: "Die Spaltung verstehen",
-    description: "Infografik: Warum Liebe und Hass BEIDE ehrlich sind",
+    description: "Infografik: Wie starke Idealisierung und Entwertung in Krisen entstehen können",
     keywords: ["spaltung", "pendel", "idealisierung", "entwertung", "ehrlich", "infografik"],
     href: "/materialien",
     section: "Materialien"
@@ -251,7 +251,7 @@ const searchableContent = [
   },
   {
     title: "U.M.W.E.G.© Praxis + Exit-Strategie",
-    description: "Infografik: Beispiel-Dialog und L.M.K. (Lebe mit Konsequenzen) wenn nichts mehr geht",
+    description: "Infografik: Beispiel-Dialog und ein klarer Umgang mit Grenzen und Konsequenzen",
     keywords: ["umweg", "praxis", "exit", "lmk", "konsequenzen", "dialog", "infografik"],
     href: "/materialien",
     section: "Materialien"

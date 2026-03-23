@@ -62,7 +62,7 @@ export default function FAQ() {
       questions: [
         {
           question: "Wie reagiere ich auf Drohungen?",
-          answer: "Unterscheiden Sie zwischen Suiziddrohungen und anderen Drohungen. Bei Suiziddrohungen: Nehmen Sie diese immer ernst, aber lassen Sie sich nicht erpressen. Sagen Sie: «Ich höre, dass du gerade sehr leidest. Wenn du sagst, du willst dir etwas antun, muss ich den Notruf rufen.» Und tun Sie das auch – jedes Mal. Bei anderen Drohungen (z.B. «Dann verlasse ich dich»): Bleiben Sie ruhig, validieren Sie das Gefühl («Ich höre, dass du wütend bist»), aber geben Sie nicht nach. Drohungen sind oft ein verzweifelter Versuch, Kontrolle zu gewinnen, wenn sich jemand machtlos fühlt.",
+          answer: "Unterscheiden Sie zwischen Äusserungen von Suizidalität und anderen Drohungen. Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben. Sagen Sie zum Beispiel: «Ich höre, dass du gerade sehr leidest. Wenn du sagst, du willst dir etwas antun, hole ich Hilfe dazu.» Handeln Sie dann auch entsprechend. Bei anderen Drohungen (z.B. «Dann verlasse ich dich») hilft meist: ruhig bleiben, das Gefühl hinter der Aussage ansprechen und gleichzeitig nicht aus Angst nachgeben. Solche Aussagen entstehen oft aus Überforderung, Angst oder dem Wunsch, Kontrolle zurückzugewinnen.",
           links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }]
         },
         {
@@ -92,7 +92,7 @@ export default function FAQ() {
         },
         {
           question: "Darf ich meinen Angehörigen verlassen?",
-          answer: "Ja. Eine Beziehung zu beenden ist immer eine legitime Option – auch wenn Ihr Angehöriger psychisch krank ist. Borderline erklärt Verhalten, entschuldigt es aber nicht. Wenn die Beziehung Ihre eigene psychische oder physische Gesundheit gefährdet, ist Trennung manchmal der richtige Schritt. Wichtig: Trennen Sie sich nicht impulsiv während einer Krise, sondern planen Sie sorgfältig. Informieren Sie den Therapeuten Ihres Angehörigen. Und: Sie können gehen und trotzdem Mitgefühl haben. Beides schliesst sich nicht aus.",
+          answer: "Ja. Eine Beziehung zu beenden kann eine legitime und verantwortbare Entscheidung sein – auch wenn Ihr Angehöriger psychisch krank ist. Wenn die Beziehung Ihre psychische oder körperliche Gesundheit ernsthaft belastet oder gefährdet, braucht dieser Umstand ein grosses Gewicht. Wichtig ist, eine Trennung nach Möglichkeit nicht mitten in einer akuten Krise impulsiv zu vollziehen, sondern vorbereitet und mit Blick auf Sicherheit. Wenn es eine Behandlung gibt, kann es sinnvoll sein, Fachpersonen zu informieren. Und: Sie können eine Grenze ziehen oder gehen und trotzdem Mitgefühl behalten.",
           links: [{ text: "Grenzen setzen", url: "/grenzen" }]
         },
         {
@@ -146,12 +146,12 @@ export default function FAQ() {
         },
         {
           question: "Kann ich noch ein normales Leben führen?",
-          answer: "Ja, aber es erfordert bewusste Anstrengung. Pflegen Sie Ihre eigenen Freundschaften, Hobbys und Interessen – das ist kein Verrat, sondern notwendig. Planen Sie «Auszeiten» ein, auch wenn es nur ein Spaziergang ist. Akzeptieren Sie, dass Ihr Leben anders aussieht als das anderer – aber «anders» bedeutet nicht «schlechter». Viele Angehörige berichten, dass sie durch die Erfahrung empathischer, geduldiger und selbstbewusster geworden sind. Suchen Sie sich Unterstützung (Therapie, Gruppen), damit Sie nicht allein tragen.",
+          answer: "Ja, ein eigenes Leben ist weiterhin möglich, aber oft nicht ohne bewusste Gegenbewegung zur Belastung. Eigene Freundschaften, Interessen und Erholungszeiten sind kein Verrat, sondern wichtig für Ihre Stabilität. Gleichzeitig ist es realistisch, dass Ihr Alltag zeitweise stärker von Unsicherheit geprägt ist als der anderer Menschen. Ziel ist deshalb nicht ein «perfekt normales» Leben, sondern ein tragfähiger Alltag, in dem Beziehung, Selbstschutz und eigene Lebensbereiche nebeneinander Platz haben.",
           links: [{ text: "Selbstfürsorge-Strategien", url: "/selbstfuersorge" }, { text: "Beratung & Netzwerke", url: "/beratung" }]
         },
         {
           question: "Wann wird es besser?",
-          answer: "Das ist die schwierigste Frage. Die ehrliche Antwort: Es ist unvorhersehbar. Manche Betroffene zeigen nach wenigen Monaten Therapie deutliche Fortschritte, bei anderen dauert es Jahre. Was Sie beeinflussen können: Ihr eigenes Verhalten, Ihre Grenzen, Ihre Selbstfürsorge. Was Sie nicht beeinflussen können: Den Zeitpunkt der Besserung Ihres Angehörigen. Fokussieren Sie sich auf das, was in Ihrer Macht liegt. Und: «Besser» bedeutet nicht «perfekt». Lernen Sie, Fortschritte zu sehen, auch wenn sie klein sind."
+          answer: "Das ist für viele Angehörige die schwierigste Frage. Die ehrliche Antwort lautet: Der Verlauf bleibt begrenzt vorhersehbar. Manche Betroffene zeigen nach Monaten deutliche Fortschritte, bei anderen dauert es deutlich länger. Was Sie beeinflussen können, sind Ihr eigenes Verhalten, Ihre Grenzen und Ihre Selbstfürsorge. Was Sie nicht steuern können, ist der Zeitpunkt oder das Tempo der Veränderung Ihres Angehörigen. Hilfreich ist meist, auf Entwicklungen über längere Zeit zu achten statt auf einzelne Tage oder Krisen."
         }
       ]
     }

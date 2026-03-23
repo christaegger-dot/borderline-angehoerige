@@ -309,7 +309,7 @@ export default function Genesung() {
               >
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Ein häufiges Phänomen, das viele Angehörige verunsichert: Gerade wenn es besser wird, 
-                  kommt ein Rückschritt. <span className="font-medium text-foreground">Das heisst nicht, dass alles umsonst war.</span> Oft 
+                  kommt ein Rückschritt. <span className="font-medium text-foreground">Das bedeutet nicht, dass die bisherigen Schritte entwertet sind.</span> Oft 
                   sinkt in «guten Phasen» die Wachsamkeit – oder man steigert Tempo und Erwartungen zu schnell.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
@@ -360,8 +360,8 @@ export default function Genesung() {
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
                   {[
                     { 
-                      title: "Rückschritte nicht dramatisieren", 
-                      desc: "Ein Rückschritt ist kein Beweis, dass ‹alles kaputt› ist. Er ist ein Signal, früh gegenzusteuern – nicht aufzugeben.",
+                      title: "Rückschritte einordnen", 
+                      desc: "Ein Rückschritt ist nicht automatisch ein Zeichen, dass «alles verloren» ist. Oft ist er eher ein Hinweis, genauer hinzuschauen und früh gegenzusteuern.",
                       color: "bg-terracotta-wash border-terracotta-mid/20"
                     },
                     { 
@@ -410,10 +410,9 @@ export default function Genesung() {
                 <Card className="bg-sage-light/20 border-sage-mid/30 mb-6">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed text-center">
-                      <span className="text-lg italic block mb-2">«Erwarte das Beste – und plane für die Stolperstellen.»</span>
+                      <span className="text-lg italic block mb-2">«Hoffnung und Vorbereitung schliessen sich nicht aus.»</span>
                       <span className="text-sm text-muted-foreground">
-                        Wie Spitzensportler: Sie glauben daran, jedes Rennen gewinnen zu können – 
-                        obwohl sie wissen, dass sie auch schon verloren haben und wieder verlieren werden.
+                        Es ist hilfreich, Fortschritte ernst zu nehmen und gleichzeitig mit schwierigen Phasen zu rechnen, ohne sie als Katastrophe zu deuten.
                       </span>
                     </p>
                   </CardContent>
@@ -440,10 +439,7 @@ export default function Genesung() {
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   In der <Link href="/glossar" className="text-foreground font-medium underline decoration-sage-mid/40 hover:decoration-sage-mid transition-colors">DBT</Link> gibt 
-                  es dafür ein hilfreiches Prinzip: <span className="font-medium text-foreground">«Voll auf Kurs bleiben – 
-                  und für Stolperstellen planen.»</span> Das bedeutet: Man strebt das Bestmögliche an, 
-                  weiss aber, dass ein Ausrutscher kein Grund ist, alles hinzuwerfen. Stattdessen: 
-                  früh gegensteuern, reparieren, weitermachen.
+                  es dafür ein hilfreiches Prinzip: Man orientiert sich klar an einem gewünschten Weg und rechnet zugleich damit, dass Rückschläge vorkommen können. Das bedeutet: früh gegensteuern, reparieren und den Prozess wieder aufnehmen, statt in Schwarz-Weiss-Kategorien zu denken.
                 </p>
 
                 {/* Angehörigen-Zitat */}
@@ -464,10 +460,10 @@ export default function Genesung() {
                   <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">❌ Was Remission NICHT bedeutet:</span>
                     <ul className="text-sm text-muted-foreground space-y-1.5">
-                      <li>Nie wieder schwierige Gefühle</li>
-                      <li>Perfekte Beziehungen</li>
+                      <li>Keine schwierigen Gefühle mehr</li>
+                      <li>Dauerhaft konfliktfreie Beziehungen</li>
                       <li>Keine Unterstützung mehr nötig</li>
-                      <li>Dass ein Rückschritt «Scheitern» bedeutet</li>
+                      <li>Dass ein Rückschritt automatisch «Scheitern» bedeutet</li>
                     </ul>
                   </div>
                   <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
@@ -494,7 +490,7 @@ export default function Genesung() {
                         </p>
                         <div className="grid sm:grid-cols-3 gap-2">
                           {[
-                            { step: "1", text: "Nicht dramatisieren – ein Ausrutscher ist kein Weltuntergang" },
+                            { step: "1", text: "Ruhig einordnen – ein Ausrutscher verlangt Aufmerksamkeit, nicht Katastrophendenken" },
                             { step: "2", text: "Sofort schauen: Was hat den Rückschritt ausgelöst?" },
                             { step: "3", text: "Wieder einsteigen – mit dem, was vorher funktioniert hat" }
                           ].map((item) => (
@@ -505,7 +501,7 @@ export default function Genesung() {
                           ))}
                         </div>
                         <p className="text-xs text-muted-foreground mt-3 italic">
-                          «Ein Ausrutscher ist kein Grund zur Katastrophe. Bleiben Sie weg von Schwarz-Weiss-Denken.» 
+                          «Ein Ausrutscher verlangt Klärung und Wiederaufnahme, nicht vorschnelle Schlussfolgerungen.» 
                           – Linehan (2015), Handout 17a
                         </p>
                       </div>
@@ -631,7 +627,7 @@ export default function Genesung() {
                     },
                     {
                       title: "Ihre Rolle ist wertvoll",
-                      text: "Unterstützende Beziehungen können den Genesungsprozess positiv beeinflussen. Gleichzeitig ist es wichtig, dass Sie Ihre eigenen Grenzen wahren und auf Ihre Selbstfürsorge achten. Sie können nur unterstützen, wenn es Ihnen selbst gut geht."
+                      text: "Unterstützende Beziehungen können den Genesungsprozess positiv beeinflussen. Gleichzeitig ist es wichtig, dass Sie Ihre eigenen Grenzen wahren und auf Ihre Selbstfürsorge achten. Auch Ihre Stabilität gehört zu einem tragfähigen Unterstützungssystem."
                     },
                     {
                       title: "Professionelle Hilfe ist entscheidend",

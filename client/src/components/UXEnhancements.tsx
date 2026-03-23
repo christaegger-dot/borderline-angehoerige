@@ -3,39 +3,6 @@ import { ChevronUp, ChevronRight, ChevronLeft, Home, List, X, ArrowLeft } from "
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Lesefortschritt-Anzeige
-export function ReadingProgress() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const updateProgress = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setProgress(Math.min(scrollPercent, 100));
-    };
-
-    window.addEventListener("scroll", updateProgress);
-    updateProgress();
-    return () => window.removeEventListener("scroll", updateProgress);
-  }, []);
-
-  // Nur anzeigen wenn es etwas zu scrollen gibt
-  if (progress === 0 && window.scrollY === 0) return null;
-
-  return (
-    <div className="fixed top-0 left-0 right-0 z-[60] h-1 bg-transparent pointer-events-none">
-      <motion.div
-        className="h-full bg-gradient-to-r from-terracotta to-sage-mid"
-        style={{ width: `${progress}%` }}
-        initial={{ width: 0 }}
-        animate={{ width: `${progress}%` }}
-        transition={{ duration: 0.1, ease: "easeOut" }}
-      />
-    </div>
-  );
-}
-
 // Zurück-nach-oben-Button
 export function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
@@ -133,15 +100,14 @@ export function Breadcrumbs() {
           href={backHref}
           className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group sm:hidden"
         >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+          <ArrowLeft className="w-4 h-4" />
           <span>{backLabel}</span>
         </Link>
 
         {/* Desktop Breadcrumb-Pfad */}
         <ol className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="flex items-center gap-1 hover:text-foreground transition-colors group">
-              <ArrowLeft className="w-3.5 h-3.5 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-400" />
+            <Link href="/" className="flex items-center gap-1 hover:text-foreground transition-colors">
               <Home className="w-4 h-4" />
               <span>Startseite</span>
             </Link>
@@ -334,7 +300,6 @@ export function TableOfContents() {
         onClick={() => setIsOpen(true)}
         className="min-[1400px]:hidden fixed left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
         style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))' }}
-        whileTap={{ scale: 0.95 }}
         aria-label="Inhaltsverzeichnis öffnen"
       >
         <List className="w-4 h-4" />
@@ -348,7 +313,7 @@ export function TableOfContents() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="min-[1400px]:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+            className="min-[1400px]:hidden fixed inset-0 bg-black/30 z-40"
             onClick={() => setIsOpen(false)}
           />
         )}
@@ -361,7 +326,7 @@ export function TableOfContents() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
-            transition={{ type: "spring", damping: 28, stiffness: 300, ease: "easeOut" }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="min-[1400px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
             style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
           >
@@ -392,9 +357,9 @@ export function TableOfContents() {
                       type="button"
                       onClick={() => scrollToHeading(id)}
                       aria-label={`Zum Abschnitt: ${text}`}
-                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-400 ${
-                        level === 3 ? "pl-7" : ""
-                      } ${
+                    className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                      level === 3 ? "pl-7" : ""
+                    } ${
                         activeId === id ? activeClass : inactiveClass
                       }`}
                     >
@@ -423,7 +388,7 @@ export function TableOfContents() {
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
                     aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-all duration-400 line-clamp-2 ${
+                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 ${
                       level === 3 ? "pl-5" : ""
                     } ${
                       activeId === id ? activeClass : inactiveClass
@@ -438,62 +403,5 @@ export function TableOfContents() {
         </div>
       </div>
     </>
-  );
-}
-
-// Tastaturnavigation-Hinweis
-export function KeyboardShortcuts() {
-  const [showHint, setShowHint] = useState(false);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Zeige Hinweis bei "?" Taste
-      if (e.key === "?" && !e.ctrlKey && !e.metaKey) {
-        setShowHint(prev => !prev);
-      }
-      
-      // Schnellnavigation mit Zahlen (nur wenn kein Input fokussiert)
-      if (document.activeElement?.tagName !== "INPUT" && document.activeElement?.tagName !== "TEXTAREA") {
-        const shortcuts: Record<string, string> = {
-          "1": "/verstehen",
-          "2": "/unterstuetzen",
-          "3": "/kommunizieren",
-          "4": "/grenzen",
-          "5": "/selbstfuersorge",
-          "n": "/soforthilfe",
-          "h": "/"
-        };
-        
-        if (shortcuts[e.key]) {
-          window.location.href = shortcuts[e.key];
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {showHint && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-foreground text-background rounded-xl p-4 shadow-xl max-w-[calc(100vw-2rem)]"
-        >
-          <span className="font-semibold mb-2 text-sm block">Tastaturkürzel</span>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm">
-            <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">1-5</kbd> Hauptseiten</div>
-            <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">N</kbd> Notfall</div>
-            <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">H</kbd> Startseite</div>
-            <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">{navigator.platform?.includes("Mac") ? "⌘" : "Ctrl+"}K</kbd> Suche</div>
-            <div><kbd className="px-1.5 py-0.5 bg-background/20 rounded text-xs">?</kbd> Diese Hilfe</div>
-          </div>
-          <p className="text-xs mt-2 opacity-90">Drücken Sie ? zum Schliessen</p>
-        </motion.div>
-      )}
-    </AnimatePresence>
   );
 }

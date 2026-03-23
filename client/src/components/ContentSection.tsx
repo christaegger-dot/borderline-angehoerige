@@ -78,14 +78,7 @@ export default function ContentSection({
   };
 
   return (
-    <motion.div
-      ref={sectionRef}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="mb-6"
-      id={id}
-    >
+    <div ref={sectionRef} className="mb-6" id={id}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -93,7 +86,7 @@ export default function ContentSection({
         aria-expanded={isOpen}
         aria-label={`Abschnitt ${title} ${isOpen ? 'zuklappen' : 'aufklappen'}`}
       >
-        <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-cream hover:bg-sand-muted border border-border/40 transition-all duration-400">
+        <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-cream hover:bg-sand-muted border border-border/40 transition-colors">
           <div className="flex items-center gap-3 min-w-0">
             {icon}
             <h2 className="text-xl md:text-2xl font-semibold text-foreground">
@@ -101,7 +94,7 @@ export default function ContentSection({
             </h2>
           </div>
           <ChevronDown
-            className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-500 ${
+            className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-200 ${
               isOpen ? "rotate-180" : ""
             }`}
           />
@@ -119,13 +112,13 @@ export default function ContentSection({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
             className="overflow-hidden"
           >
             <div className="pt-6 px-1">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }

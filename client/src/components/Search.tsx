@@ -140,15 +140,15 @@ const searchableContent = [
   },
   {
     title: "Selbstfürsorge-Strategien",
-    description: "Konkrete Übungen und Techniken für Ihren Alltag",
-    keywords: ["selbstfürsorge", "strategien", "übungen", "techniken", "entspannung", "achtsamkeit"],
+    description: "Orientierung, Entlastung und alltagstaugliche Schritte für Ihre eigene Stabilität",
+    keywords: ["selbstfürsorge", "strategien", "stabilität", "entlastung", "alltag", "achtsamkeit"],
     href: "/selbstfuersorge",
     section: "Selbstfürsorge"
   },
   {
-    title: "Atemübung",
-    description: "Eine einfache Atemübung zur sofortigen Beruhigung",
-    keywords: ["atemübung", "atmen", "beruhigung", "entspannung", "stress", "sofort"],
+    title: "Atem und Beruhigung",
+    description: "Einfache Möglichkeiten, den Körper in angespannten Momenten wieder zu beruhigen",
+    keywords: ["atem", "atmen", "beruhigung", "entspannung", "stress", "sofort"],
     href: "/selbstfuersorge",
     section: "Selbstfürsorge"
   },
@@ -258,14 +258,14 @@ const searchableContent = [
   },
   {
     title: "Die U.M.W.-Formel in der Praxis",
-    description: "Infografik: Exakte Formulierungen für die akute Krise mit Betonung auf DEIN, DIR und WIR",
+    description: "Infografik: Beispielhafte Formulierungen für akute Krisensituationen",
     keywords: ["umweg", "formel", "praxis", "krise", "team", "dein", "dir", "wir", "infografik"],
     href: "/materialien",
     section: "Materialien"
   },
   {
     title: "Die 5 Leitlinien für den Alltag",
-    description: "Infografik: Keine Hektik, Routinen, Ruhe, Team, Grenzen",
+    description: "Infografik: Orientierung für einen ruhigeren und klareren Alltag",
     keywords: ["leitlinien", "alltag", "hektik", "routinen", "ruhe", "team", "grenzen", "infografik"],
     href: "/materialien",
     section: "Materialien"
@@ -274,7 +274,7 @@ const searchableContent = [
   // Selbsttest
   {
     title: "Selbsttest: Finden Sie Ihren Weg",
-    description: "Ein kurzer Test zur Orientierung auf der Website",
+    description: "Kurze Orientierung, welche Bereiche der Website im Moment am ehesten helfen könnten",
     keywords: ["selbsttest", "test", "orientierung", "fragen", "empfehlung"],
     href: "/selbsttest",
     section: "Selbsttest"
@@ -516,48 +516,48 @@ const searchableContent = [
     section: "FAQ"
   },
   
-  // Interaktive Übungen
+  // Orientierung und Beispiele
   {
-    title: "5-4-3-2-1 Grounding-Übung",
-    description: "Geführte Achtsamkeitsübung: Schritt für Schritt durch alle 5 Sinne zurück ins Hier und Jetzt",
-    keywords: ["grounding", "5-4-3-2-1", "achtsamkeit", "sinne", "übung", "beruhigung", "gegenwart", "erdung"],
+    title: "5-4-3-2-1 Grounding",
+    description: "Schrittweise Orientierung über die fünf Sinne, um im gegenwärtigen Moment anzukommen",
+    keywords: ["grounding", "5-4-3-2-1", "achtsamkeit", "sinne", "beruhigung", "gegenwart", "erdung"],
     href: "/selbstfuersorge",
-    section: "Interaktive Übungen"
+    section: "Selbstfürsorge"
   },
   {
-    title: "DEAR-Satzbaukasten",
-    description: "Interaktives Tool: Eigene DEARMAN-Formulierungen Schritt für Schritt zusammenbauen",
+    title: "DEAR-Formulierungen",
+    description: "Orientierung für klare und respektvolle Formulierungen in schwierigen Gesprächen",
     keywords: ["dear", "dearman", "satzbaukasten", "kommunikation", "formulierung", "übung"],
     href: "/kommunizieren",
-    section: "Interaktive Übungen"
+    section: "Kommunizieren"
   },
   {
-    title: "Mythos oder Fakt? – Flip Cards",
-    description: "Häufige Vorurteile über Borderline interaktiv aufklären",
-    keywords: ["mythos", "fakt", "vorurteil", "aufklärung", "flip", "quiz"],
+    title: "Mythen und Einordnungen",
+    description: "Häufige Missverständnisse über Borderline ruhig und differenziert eingeordnet",
+    keywords: ["mythos", "fakt", "vorurteil", "aufklärung", "einordnung"],
     href: "/verstehen",
-    section: "Interaktive Übungen"
+    section: "Verstehen"
   },
   {
-    title: "Spiegeln-Übung",
-    description: "Validierung üben: Aussagen spiegeln und empathisch reformulieren",
-    keywords: ["spiegeln", "validierung", "übung", "empathie", "reformulieren"],
+    title: "Spiegeln und antworten",
+    description: "Beispiele für hilfreiche und weniger hilfreiche Reaktionen in belastenden Situationen",
+    keywords: ["spiegeln", "validierung", "empathie", "reformulieren", "beispiele"],
     href: "/kommunizieren",
-    section: "Interaktive Übungen"
+    section: "Kommunizieren"
   },
   {
-    title: "Selbstfürsorge-Check",
-    description: "Kurzer Check: Wie gut sorgen Sie aktuell für sich selbst?",
-    keywords: ["selbstfürsorge", "check", "test", "wohlbefinden", "überlastung"],
+    title: "Belastung einordnen",
+    description: "Ruhige Orientierung zu Warnsignalen von Überforderung und Selbstfürsorge",
+    keywords: ["selbstfürsorge", "belastung", "wohlbefinden", "überlastung", "warnsignale"],
     href: "/selbstfuersorge",
-    section: "Interaktive Übungen"
+    section: "Selbstfürsorge"
   },
   {
     title: "Validierungsstufenleiter",
-    description: "Die 6 Stufen der Validierung interaktiv erkunden und üben",
-    keywords: ["validierung", "stufen", "leiter", "linehan", "übung", "interaktiv"],
+    description: "Die sechs Stufen der Validierung ruhig erklärt, mit Beispielen und Stolpersteinen",
+    keywords: ["validierung", "stufen", "leiter", "linehan", "beispiele", "kommunikation"],
     href: "/kommunizieren",
-    section: "Interaktive Übungen"
+    section: "Kommunizieren"
   },
 
   // Unterstützen-Unterseiten
@@ -607,7 +607,7 @@ const searchableContent = [
   },
   {
     title: "Emotionale Erpressung – Was tun?",
-    description: "Umgang mit manipulativen Drohungen und Schuldvorwürfen",
+    description: "Umgang mit Drohungen, Schuldvorwürfen und starkem Beziehungsdruck",
     keywords: ["erpressung", "manipulation", "schuld", "drohung", "wenn du gehst"],
     href: "/soforthilfe",
     section: "Krisenressourcen"
@@ -737,17 +737,17 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-0 bg-black/35 z-50"
             onClick={onClose}
           />
 
           {/* Search Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 px-4"
           >
             <div className="bg-background rounded-2xl shadow-2xl border border-border overflow-hidden">

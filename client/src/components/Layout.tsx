@@ -4,7 +4,7 @@ import { Menu, X, Phone, Heart, BookOpen, MessageCircle, Shield, Sparkles, Downl
 const Search = lazy(() => import("@/components/Search"));
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { ReadingProgress, ScrollToTopButton, Breadcrumbs, KeyboardShortcuts } from "@/components/UXEnhancements";
+import { ScrollToTopButton, Breadcrumbs } from "@/components/UXEnhancements";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -182,9 +182,6 @@ export default function Layout({ children }: LayoutProps) {
         Zum Inhalt springen
       </a>
 
-      {/* Lesefortschritt-Anzeige */}
-      <ReadingProgress />
-      
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
         <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
@@ -312,14 +309,11 @@ export default function Layout({ children }: LayoutProps) {
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-all text-sm"
+                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors text-sm"
                 aria-label="Suchen"
               >
                 <SearchIcon className="w-4 h-4" />
-                <span className="hidden xl:inline">Suchen</span>
-                <kbd aria-hidden="true" className="hidden xl:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-muted rounded text-[10px] font-mono">
-                  <span className="text-xs">{navigator.platform?.includes("Mac") ? "⌘" : "Ctrl+"}</span>K
-                </kbd>
+                <span>Suchen</span>
               </button>
               {/* Search Button – Mobile (nur Icon) */}
               <button
@@ -335,7 +329,7 @@ export default function Layout({ children }: LayoutProps) {
                 <Button
                   variant="default"
                   size="sm"
-                  className="bg-alert hover:bg-alert/85 text-white animate-breathe hidden sm:flex"
+                  className="bg-alert hover:bg-alert/85 text-white hidden sm:flex"
                   tabIndex={-1}
                 >
                   <Phone className="w-4 h-4 lg:mr-0 xl:mr-2" />
@@ -601,7 +595,7 @@ export default function Layout({ children }: LayoutProps) {
         <Link href="/soforthilfe" className="sm:hidden fixed z-50" style={{ bottom: 'calc(4.5rem + env(safe-area-inset-bottom, 0px))', right: '1rem' }} aria-label="Soforthilfe – Notfallnummern und Krisenberatung">
           <Button
             variant="default"
-            className="h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg animate-breathe gap-2 text-sm font-semibold"
+            className="h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg gap-2 text-sm font-semibold"
             tabIndex={-1}
           >
             <Phone className="w-4 h-4" />
@@ -619,9 +613,6 @@ export default function Layout({ children }: LayoutProps) {
       
       {/* Zurück nach oben Button */}
       <ScrollToTopButton />
-      
-      {/* Tastaturkürzel-Hinweis */}
-      <KeyboardShortcuts />
     </div>
   );
 }

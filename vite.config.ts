@@ -150,79 +150,86 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+export default defineConfig(({ command }) => {
+  const isServe = command === "serve";
+  const plugins = [react(), tailwindcss(), jsxLocPlugin()];
 
-export default defineConfig({
-  plugins,
-  resolve: {
-    alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+  if (isServe) {
+    plugins.push(vitePluginManusRuntime(), vitePluginManusDebugCollector());
+  }
+
+  return {
+    plugins,
+    resolve: {
+      alias: {
+        "@": path.resolve(import.meta.dirname, "client", "src"),
+        "@shared": path.resolve(import.meta.dirname, "shared"),
+        "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      },
     },
-  },
-  envDir: path.resolve(import.meta.dirname),
-  root: path.resolve(import.meta.dirname, "client"),
-  build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
-    emptyOutDir: true,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // React core – cached long-term
-          'vendor-react': ['react', 'react-dom'],
-          // Animation library – used on many pages but heavy
-          'vendor-motion': ['framer-motion'],
-          // Radix UI primitives – shared across components
-          'vendor-radix': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-tabs',
-            '@radix-ui/react-tooltip',
-            '@radix-ui/react-select',
-            '@radix-ui/react-scroll-area',
-            '@radix-ui/react-separator',
-            '@radix-ui/react-slot',
-            '@radix-ui/react-toggle',
-            '@radix-ui/react-toggle-group',
-            '@radix-ui/react-collapsible',
-            '@radix-ui/react-label',
-            '@radix-ui/react-progress',
-            '@radix-ui/react-checkbox',
-          ],
-          // Utility libraries
-          'vendor-utils': [
-            'clsx',
-            'tailwind-merge',
-            'class-variance-authority',
-            'wouter',
-            'sonner',
-            'zod',
-          ],
-          // Icons – large but tree-shakeable
-          'vendor-icons': ['lucide-react'],
+    envDir: path.resolve(import.meta.dirname),
+    root: path.resolve(import.meta.dirname, "client"),
+    build: {
+      outDir: path.resolve(import.meta.dirname, "dist/public"),
+      emptyOutDir: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // React core – cached long-term
+            'vendor-react': ['react', 'react-dom'],
+            // Animation library – used on many pages but heavy
+            'vendor-motion': ['framer-motion'],
+            // Radix UI primitives – shared across components
+            'vendor-radix': [
+              '@radix-ui/react-accordion',
+              '@radix-ui/react-dialog',
+              '@radix-ui/react-dropdown-menu',
+              '@radix-ui/react-popover',
+              '@radix-ui/react-tabs',
+              '@radix-ui/react-tooltip',
+              '@radix-ui/react-select',
+              '@radix-ui/react-scroll-area',
+              '@radix-ui/react-separator',
+              '@radix-ui/react-slot',
+              '@radix-ui/react-toggle',
+              '@radix-ui/react-toggle-group',
+              '@radix-ui/react-collapsible',
+              '@radix-ui/react-label',
+              '@radix-ui/react-progress',
+              '@radix-ui/react-checkbox',
+            ],
+            // Utility libraries
+            'vendor-utils': [
+              'clsx',
+              'tailwind-merge',
+              'class-variance-authority',
+              'wouter',
+              'sonner',
+              'zod',
+            ],
+            // Icons – large but tree-shakeable
+            'vendor-icons': ['lucide-react'],
+          },
         },
       },
     },
-  },
-  server: {
-    port: 3000,
-    strictPort: false, // Will find next available port if 3000 is busy
-    host: true,
-    allowedHosts: [
-      ".manuspre.computer",
-      ".manus.computer",
-      ".manus-asia.computer",
-      ".manuscomputer.ai",
-      ".manusvm.computer",
-      "localhost",
-      "127.0.0.1",
-    ],
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
+    server: {
+      port: 3000,
+      strictPort: false, // Will find next available port if 3000 is busy
+      host: true,
+      allowedHosts: [
+        ".manuspre.computer",
+        ".manus.computer",
+        ".manus-asia.computer",
+        ".manuscomputer.ai",
+        ".manusvm.computer",
+        "localhost",
+        "127.0.0.1",
+      ],
+      fs: {
+        strict: true,
+        deny: ["**/.*"],
+      },
     },
-  },
+  };
 });

@@ -19,6 +19,12 @@
   force = true
 
 [[redirects]]
+  from = "/notfall"
+  to = "/soforthilfe"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*.pdf"
   to = "/:splat.pdf"
   status = 200

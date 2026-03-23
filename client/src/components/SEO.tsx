@@ -62,7 +62,6 @@ export function WebsiteSchema() {
     "alternateName": "Borderline Angehörige",
     "url": "https://borderline-angehoerige.netlify.app",
     "description": BASE_DESCRIPTION,
-    "inLanguage": "de",
     "publisher": {
       "@type": "Organization",
       "name": SITE_NAME,

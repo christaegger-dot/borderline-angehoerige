@@ -96,7 +96,7 @@ export default function UnterstuetzenUebersicht() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Als Angehöriger wollen Sie helfen – das ist natürlich und verständlich. Aber wie? Hier erfahren Sie, welche Rolle Sie einnehmen können und wo die Grenzen liegen.
+              Als Angehörige möchten Sie oft gleichzeitig entlasten, schützen, verstehen und Grenzen wahren. Genau diese Gleichzeitigkeit macht die Rolle so anspruchsvoll. Hier geht es darum, was hilfreich sein kann und was Sie nicht allein tragen müssen.
             </p>
           </motion.div>
         </div>
@@ -121,7 +121,7 @@ export default function UnterstuetzenUebersicht() {
                     <span className="text-4xl">🏠</span>
                     <div>
                       <p className="text-muted-foreground leading-relaxed">
-                        Stellen Sie sich vor, Sie sind ein <Link to="/glossar?q=Leuchtturm" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Leuchtturm</Link>. Sie stehen fest auf Ihrem Fundament, während die Wellen um Sie herum toben. Sie können das Meer nicht beruhigen – aber Sie können Licht geben und Orientierung bieten. Sie zeigen den Weg, ohne selbst ins Wasser zu springen.
+                        Das Bild des <Link to="/glossar?q=Leuchtturm" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Leuchtturms</Link> kann Angehörigen helfen: Sie müssen nicht jede Welle auffangen, aber Sie können berechenbar, klar und orientierend bleiben. Die Metapher hat auch Grenzen: Angehörige sind keine neutralen Beobachter, sondern selbst emotional beteiligt. Gerade deshalb braucht auch Ihr eigenes Fundament Schutz.
                       </p>
                     </div>
                   </div>
@@ -147,8 +147,8 @@ export default function UnterstuetzenUebersicht() {
                       {[
                         "Ein verlässlicher Anker",
                         "Ein geduldiger Zuhörer",
-                        "Ein Übungspartner für neue Skills",
-                        "Ein Mensch, der Hoffnung vermittelt",
+                        "Ein möglicher Übungspartner für neue Skills",
+                        "Ein Mensch, der realistische Hoffnung vermittelt",
                         "Jemand, der Grenzen setzt und hält"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-muted-foreground">
@@ -169,8 +169,8 @@ export default function UnterstuetzenUebersicht() {
                     <ul className="space-y-3">
                       {[
                         "Der Therapeut oder die Therapeutin",
-                        "Der Retter, der alles löst",
-                        "Der Sündenbock für alle Probleme",
+                        "Der Retter, der alles auffangen muss",
+                        "Der Blitzableiter für alles Schwierige",
                         "Der Kontrolleur des Verhaltens",
                         "Der Verantwortliche für die Genesung"
                       ].map((item, i) => (
@@ -187,17 +187,17 @@ export default function UnterstuetzenUebersicht() {
 
             {/* Das verlorene Kind */}
             <ContentSection
-              title="Das verlorene Kind verstehen"
+              title="Wenn Alarm alles verengt"
               icon={<Lightbulb className="w-7 h-7 text-terracotta-mid" />}
               id="verlorenes-kind"
-              preview="Menschen mit Borderline erleben in Krisen oft den Zustand eines verängstigten Kindes – und brauchen entsprechende Reaktionen."
+              preview="In schweren Anspannungszuständen können Angst, Scham oder Verlassenheitsgefühl so dominant werden, dass differenziertes Denken kaum noch möglich ist."
             >
               <div className="space-y-4">
                 {/* Szenario */}
                 <Card className="bg-terracotta-wash/30 border-terracotta/50">
                   <CardContent className="p-5 sm:p-6">
                     <p className="text-foreground leading-relaxed">
-                      Stellen Sie sich ein <strong>siebenjähriges Kind</strong> vor, das sich allein auf dem Times Square verirrt hat. Umgeben von Lärm, blinkenden Lichtern und Fremden ist es völlig überwältigt, starr vor Angst oder reagiert kopflos und impulsiv. Würden Sie dieses Kind für seine Panik bestrafen, es anschreien oder ihm Vorwürfe machen? Sicherlich nicht.
+                      In akuten Anspannungszuständen kann ein erwachsener Mensch innerlich so reagieren, als stünde alles auf dem Spiel: Angst, Scham, Wut oder Verlassenheitsgefühl füllen dann den ganzen Raum. Für Angehörige ist das oft schwer auszuhalten, weil äusserlich ein Erwachsener vor ihnen steht, innerlich aber kaum noch Spielraum für Reflexion vorhanden ist.
                     </p>
                   </CardContent>
                 </Card>
@@ -205,10 +205,10 @@ export default function UnterstuetzenUebersicht() {
                 {/* Kernaussage 1: Neurologische Erklärung */}
                 <blockquote className="border-l-4 border-terracotta-mid bg-terracotta-wash/20 rounded-r-lg px-4 py-3 sm:px-5 sm:py-4">
                   <p className="text-foreground leading-relaxed text-[0.95rem] italic">
-                    Menschen mit einer Borderline-Persönlichkeitsstörung erleben in emotionalen Krisen einen fast identischen Zustand: Das limbische System im Gehirn schlägt Alarm, als bestünde Lebensgefahr.
+                    In emotionalen Krisen schlägt das Alarmsystem des Gehirns häufig so an, als bestünde unmittelbar Gefahr. Dann werden Beziehungssignale schnell als bedrohlich erlebt, und differenziertes Denken tritt in den Hintergrund.
                   </p>
                   <p className="text-muted-foreground text-sm mt-2">
-                    Auch wenn sie äusserlich erwachsen sind, entspricht ihr inneres Erleben in diesem Moment dem eines verängstigten, schutzlosen Kindes.
+                    Das bedeutet nicht, dass Betroffene «wie Kinder» wären. Es beschreibt einen vorübergehenden Krisenzustand, in dem Reizfilter, Impulskontrolle und Perspektivenwechsel stark eingeschränkt sein können.
                   </p>
                 </blockquote>
 
@@ -216,7 +216,7 @@ export default function UnterstuetzenUebersicht() {
                 <div className="pt-1">
                   <p className="text-foreground font-semibold mb-2 text-base">Was in diesem Moment wirklich hilft:</p>
                   <p className="text-muted-foreground leading-relaxed mb-4 text-sm sm:text-base">
-                    Reagieren Sie so, wie Sie diesem verlorenen Kind begegnen würden – nicht indem Sie die (vielleicht unsachlichen) Vorwürfe diskutieren, sondern indem Sie die Not dahinter adressieren:
+                    Hilfreich ist meist eine Reaktion, die zuerst Sicherheit und Orientierung vermittelt, statt sofort um Inhalte oder Schuldfragen zu ringen:
                   </p>
                 </div>
 
@@ -248,7 +248,7 @@ export default function UnterstuetzenUebersicht() {
                     </div>
                     <div>
                       <p className="font-semibold text-foreground text-sm sm:text-base"><Link to="/glossar?q=Validierung" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Validierung</Link></p>
-                      <p className="text-muted-foreground text-sm mt-0.5">Akzeptieren Sie den Schmerz als real, auch wenn der Auslöser für Sie klein erscheint.</p>
+                      <p className="text-muted-foreground text-sm mt-0.5">Nehmen Sie den Schmerz ernst, auch wenn Sie den Auslöser anders einschätzen oder das Verhalten nicht gutheissen.</p>
                     </div>
                   </div>
                 </div>
@@ -256,7 +256,7 @@ export default function UnterstuetzenUebersicht() {
                 {/* Wichtig-Hinweis */}
                 <blockquote className="border-l-4 border-sage-mid bg-sage-lighter/50 rounded-r-lg px-4 py-3 sm:px-5 sm:py-4">
                   <p className="text-sm text-foreground leading-relaxed">
-                    <strong>Wichtig:</strong> Dieses Bild dient dazu, in der akuten Krise mit Empathie statt mit Gegendruck zu reagieren. Es bedeutet nicht, dass Sie dauerhaft die Verantwortung für das Handeln des anderen übernehmen – aber es verhindert, dass das Feuer der Krise durch gegenseitige Vorwürfe weiter geschürt wird.
+                    <strong>Wichtig:</strong> Diese Perspektive soll Empathie erleichtern, nicht Erwachsene infantilisieren. Sie müssen nicht alles auffangen und auch nicht alles verstehen. Aber wenn Sie den Krisenzustand als Überforderung statt als reine Absicht lesen, wird ruhigeres und klareres Handeln oft eher möglich.
                   </p>
                 </blockquote>
               </div>

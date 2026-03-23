@@ -40,7 +40,7 @@ export default function UnterstuetzenKrise() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Krisen gehören zum Leben mit Borderline. Hier erfahren Sie, wie Sie Krisen erkennen, deeskalieren und Sicherheit gewährleisten – ohne sich selbst zu gefährden.
+              Viele Angehörige erleben Phasen starker Anspannung, Eskalation oder Rückzug. Hier erfahren Sie, wie Sie Krisen besser einordnen, deeskalierend reagieren und Sicherheit im Blick behalten können, ohne Ihre eigene Grenze aus dem Blick zu verlieren.
             </p>
             
             <div className="p-4 rounded-xl bg-sand border border-sand-subtle">
@@ -206,6 +206,7 @@ export default function UnterstuetzenKrise() {
                     <h3 className="font-semibold text-foreground mb-3">Präsenz zeigen</h3>
                     <div className="bg-sage-lighter rounded-lg p-3">
                       <p className="text-sm text-foreground font-medium">"Ich bin hier. Ich gehe nicht weg. Du bist nicht allein."</p>
+                      <p className="text-xs text-muted-foreground mt-2">Wenn Nähe die Situation verschärft, kann auch eine ruhig angekündigte Distanz hilfreich sein: «Ich bleibe in der Nähe und komme in ein paar Minuten wieder.»</p>
                     </div>
                   </CardContent>
                 </Card>

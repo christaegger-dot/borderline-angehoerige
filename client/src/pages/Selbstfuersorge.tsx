@@ -245,13 +245,13 @@ export default function Selbstfuersorge() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Sie können nur dann für andere da sein, wenn Sie auch für sich selbst sorgen. Selbstfürsorge ist kein Luxus – sie ist eine Notwendigkeit für Ihre Gesundheit und Ihre Beziehung.
+              Wer dauerhaft mit Krisen, Unsicherheit und Loyalitätskonflikten lebt, braucht eigene Regeneration. Selbstfürsorge ist nicht Nebenbei-Pflege, sondern eine fachlich wichtige Grundlage, damit Sie handlungsfähig und innerlich beweglich bleiben.
             </p>
 
             <Card className="bg-sage-lighter/20 border-sage-mid">
               <CardContent className="p-5">
                 <p className="text-foreground leading-relaxed italic">
-                  "Wenn Sie sich um einen Menschen mit Borderline kümmern, ist es wie bei einem Langstreckenflug: Setzen Sie zuerst Ihre eigene Sauerstoffmaske auf, bevor Sie anderen helfen."
+                  "Viele Angehörige merken erst spät, wie erschöpft sie geworden sind. Selbstfürsorge beginnt oft nicht mit grossen Veränderungen, sondern damit, die eigene Belastung überhaupt ernst zu nehmen."
                 </p>
               </CardContent>
             </Card>
@@ -274,7 +274,7 @@ export default function Selbstfuersorge() {
               >
                 <div className="prose prose-slate max-w-none">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Angehörige von Menschen mit Borderline tragen eine besondere Last. Die emotionale Intensität, die Unvorhersehbarkeit und die ständige Sorge können zu chronischem Stress führen. Studien zeigen, dass Angehörige ein erhöhtes Risiko für:
+                    Angehörige von Menschen mit Borderline tragen oft eine besondere Last. Die emotionale Intensität, die Unvorhersehbarkeit und die dauernde innere Wachsamkeit können zu chronischem Stress führen. Nicht jeder entwickelt daraus eine psychische Erkrankung, aber viele geraten über längere Zeit an Grenzen. Studien zeigen ein erhöhtes Risiko für:
                   </p>
                   
                   <div className="grid sm:grid-cols-2 gap-3 mb-6">
@@ -292,7 +292,7 @@ export default function Selbstfuersorge() {
                   </div>
                   
                   <p className="text-muted-foreground leading-relaxed">
-                    Selbstfürsorge ist daher keine Selbstsucht, sondern <strong className="text-foreground">Selbsterhaltung</strong>. Sie ermöglicht es Ihnen, langfristig für Ihren Angehörigen da zu sein – ohne selbst krank zu werden.
+                    Selbstfürsorge ist daher keine Selbstsucht, sondern <strong className="text-foreground">Selbsterhaltung</strong>. Sie erhöht die Chance, dass Sie auf Dauer präsent bleiben können, statt sich Schritt für Schritt zu erschöpfen.
                   </p>
                 </div>
               </ContentSection>
@@ -444,7 +444,7 @@ export default function Selbstfuersorge() {
                   >
                     <div className="space-y-4 pt-4">
                       <p className="text-muted-foreground text-sm">
-                        Planen Sie jeden Tag mindestens 15-30 Minuten nur für sich ein – nicht verhandelbar, nicht verschiebbar.
+                        Versuchen Sie, im Alltag regelmässig kurze Zeiten nur für sich zu reservieren. An manchen Tagen sind 15 bis 30 Minuten realistisch, an anderen vielleicht nur 5. Entscheidend ist die Verlässlichkeit, nicht Perfektion.
                       </p>
                       <div className="grid sm:grid-cols-2 gap-2">
                         {[

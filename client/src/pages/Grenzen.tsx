@@ -108,7 +108,7 @@ export default function Grenzen() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Grenzen sind keine Mauern – sie sind Leitplanken. Sie schützen Sie und geben Ihrem Angehörigen Orientierung. Hier lernen Sie, wie Sie sie liebevoll, aber klar kommunizieren.
+              Grenzen sind kein Gegenpol zu Mitgefühl, sondern ein Teil davon. Sie schützen Ihre Integrität und machen Beziehungen berechenbarer. Gleichzeitig können sie anfangs Spannungen auslösen. Hier geht es darum, wie Sie Grenzen klar und respektvoll vertreten.
             </p>
           </motion.div>
         </div>
@@ -129,7 +129,7 @@ export default function Grenzen() {
               <Card className="bg-terracotta-lighter/20 border-terracotta-mid mb-6">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed">
-                    Grenzen zu setzen ist kein Zeichen von Lieblosigkeit – es ist ein Zeichen von Selbstachtung und Respekt. Klare Grenzen helfen beiden Seiten:
+                    Grenzen zu setzen ist kein Zeichen von Lieblosigkeit, sondern von Selbstachtung und Verantwortung. Sie helfen nicht deshalb, weil danach sofort Ruhe einkehrt, sondern weil Beziehungen ohne Klarheit oft noch instabiler werden. Langfristig können klare Grenzen beiden Seiten Orientierung geben:
                   </p>
                 </CardContent>
               </Card>

@@ -196,7 +196,7 @@ export default function Home() {
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
-                Evidenzbasierte Strategien für den Alltag mit einem Menschen mit Borderline – damit Sie unterstützen können, ohne sich selbst zu verlieren.
+                Orientierung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung: fachlich fundiert, psychologisch differenziert und alltagsnah. Damit Sie besser einordnen können, was geschieht, und tragfähige Wege im Umgang damit finden.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">

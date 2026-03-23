@@ -106,7 +106,7 @@ export default function Verstehen() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Die Borderline-Persönlichkeitsstörung ist eine komplexe Erkrankung, die das Erleben und Verhalten tiefgreifend beeinflusst. Hier erfahren Sie, was dahinter steckt – und warum dieses Wissen Ihnen helfen kann.
+              Die Borderline-Persönlichkeitsstörung ist ein komplexes Störungsbild. Für Angehörige ist es oft entlastend zu verstehen, warum Situationen so schnell kippen können, ohne Verhalten vorschnell zu entschuldigen oder zu verurteilen.
             </p>
           </motion.div>
         </div>
@@ -143,11 +143,11 @@ export default function Verstehen() {
             >
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Die Borderline-Persönlichkeitsstörung (BPS) ist eine psychische Erkrankung, die durch intensive Emotionen, instabile Beziehungen und ein schwankendes Selbstbild gekennzeichnet ist. Menschen mit Borderline erleben Gefühle oft viel intensiver als andere – sowohl positive als auch negative.
+                  Die Borderline-Persönlichkeitsstörung (BPS) ist eine psychische Erkrankung, die mit starker emotionaler Anspannung, Schwierigkeiten in Beziehungen und einem oft instabilen Selbstbild einhergehen kann. Nicht jeder Mensch mit BPS zeigt dieselben Muster, und Ausprägung sowie Verlauf unterscheiden sich deutlich.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Stellen Sie sich vor, Sie hätten keine "Haut" für Ihre Emotionen. Jedes Gefühl trifft Sie mit voller Wucht, ohne Puffer. Das ist die Realität vieler Menschen mit Borderline.
+                  Viele Betroffene beschreiben, dass Gefühle sie sehr rasch und mit grosser Wucht erfassen. Für Angehörige ist wichtig: Hinter heftigen Reaktionen liegen oft nicht Bosheit oder Berechnung, sondern Überforderung, Angst, innere Spannungszustände oder Scham. Das macht Verhalten nicht folgenlos, hilft aber, es genauer einzuordnen.
                 </p>
               </div>
             </ContentSection>
@@ -160,7 +160,7 @@ export default function Verstehen() {
               preview="Für eine Diagnose müssen mindestens 5 von 9 Kriterien erfüllt sein."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Für eine Diagnose müssen mindestens <strong>5 von 9 Kriterien</strong> erfüllt sein. Hier sind alle Kriterien verständlich erklärt:
+                Für eine Diagnose müssen mindestens <strong>5 von 9 Kriterien</strong> erfüllt sein. Die Liste kann helfen, typische Muster besser zu verstehen, ersetzt aber keine fachliche Abklärung. Entscheidend ist immer das Gesamtbild über längere Zeit und in verschiedenen Lebensbereichen.
               </p>
               
               <div className="space-y-3">
@@ -323,7 +323,7 @@ export default function Verstehen() {
               preview="Neurowissenschaftliche Forschung zeigt: Bei Borderline funktionieren bestimmte Hirnregionen anders."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Neurowissenschaftliche Forschung zeigt: Bei Borderline funktionieren bestimmte Hirnregionen anders. Das erklärt, warum Betroffene Emotionen so intensiv erleben.
+                Neurowissenschaftliche Forschung legt nahe, dass Stressverarbeitung, Emotionsregulation und Impulskontrolle bei vielen Menschen mit Borderline anders belastet sind. Diese Modelle erklären etwas, aber nie die ganze Person.
               </p>
               
               <div className="space-y-4">
@@ -338,7 +338,7 @@ export default function Verstehen() {
                     </p>
                     <div className="bg-terracotta-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
-                        <strong>Für Angehörige:</strong> Deshalb können neutrale Gesichtsausdrücke als ablehnend wahrgenommen werden. Es ist keine Absicht – das Gehirn interpretiert anders.
+                        <strong>Für Angehörige:</strong> Deshalb können neutrale Signale schneller als Ablehnung oder Distanz erlebt werden. Das ist nicht einfach «Übertreibung», sondern oft Ausdruck eines hochsensiblen Alarmsystems.
                       </p>
                     </div>
                   </CardContent>
@@ -355,7 +355,7 @@ export default function Verstehen() {
                     </p>
                     <div className="bg-sage-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
-                        <strong>Für Angehörige:</strong> In Krisen kann es schwer sein, sich an positive Erfahrungen zu erinnern. «Du hast mich NIE unterstützt» ist keine Lüge – in diesem Moment ist die Erinnerung blockiert.
+                        <strong>Für Angehörige:</strong> In Krisen kann es schwer sein, positive Beziehungserfahrungen innerlich verfügbar zu halten. Pauschale Vorwürfe müssen nicht bewusst unwahr gemeint sein, fühlen sich für Sie aber trotzdem verletzend an.
                       </p>
                     </div>
                   </CardContent>
@@ -372,7 +372,7 @@ export default function Verstehen() {
                     </p>
                     <div className="bg-slate-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
-                        <strong>Für Angehörige:</strong> In emotionalen Momenten ist der «rationale Teil» des Gehirns quasi offline. Deshalb helfen logische Argumente in Krisen nicht – erst muss die Amygdala beruhigt werden.
+                        <strong>Für Angehörige:</strong> Unter hoher Anspannung ist reflektiertes Denken oft deutlich eingeschränkt. Deshalb bringt reines Argumentieren in Krisen meist wenig, bevor sich die Anspannung etwas gesenkt hat.
                       </p>
                     </div>
                   </CardContent>
@@ -409,20 +409,20 @@ export default function Verstehen() {
 
             {/* Emotionale Demenz */}
             <ContentSection
-              title="«Emotionale Demenz» – Warum Argumente nicht helfen"
+              title="Tunnelblick unter Stress – Warum Argumente oft nicht ankommen"
               icon={<Clock className="w-7 h-7 text-terracotta-mid" />}
               id="emotionale-demenz"
-              preview="In akuter emotionaler Überflutung existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt."
+              preview="Unter hoher emotionaler Überflutung verengt sich der Blick. Dann helfen zuerst Beruhigung und Orientierung, nicht Diskussionen."
             >
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Wenn ein Mensch in akuter emotionaler Überflutung ist, funktioniert sein Gehirn anders. Marcus Jähn beschreibt dies als <strong>«emotionale Demenz»</strong>: In diesem Zustand existiert weder Vergangenheit noch Zukunft – nur das überwältigende Jetzt.
+                  Wenn ein Mensch emotional überflutet ist, verengt sich das Erleben oft stark auf den aktuellen Schmerz, die aktuelle Angst oder den aktuellen Konflikt. In diesem Zustand sind Einordnung, Abwägung und Perspektivenwechsel deutlich erschwert.
                 </p>
                 
                 <Card className="bg-terracotta-wash/50 border-terracotta-mid/30 mb-6">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Warum das wichtig ist:</strong> Logische Argumente helfen in Krisenmomenten nicht. Das Gehirn kann sie schlicht nicht verarbeiten. Erst wenn die Amygdala (das Angstzentrum) beruhigt ist, wird der präfrontale Kortex (rationales Denken) wieder zugänglich.
+                      <strong>Warum das wichtig ist:</strong> Logische Argumente oder Korrekturen kommen in solchen Momenten oft kaum an. Hilfreicher ist zunächst, die Lage zu beruhigen, Sicherheit herzustellen und das emotionale Erleben anzuerkennen. Erst danach wird gemeinsames Nachdenken eher möglich.
                     </p>
                   </CardContent>
                 </Card>
@@ -447,7 +447,7 @@ export default function Verstehen() {
                 </div>
                 
                 <p className="text-xs text-muted-foreground mt-4">
-                  Quelle: Marcus Jähn, U.M.W.E.G.©-Methode; Neurowissenschaftliche Grundlagen nach LeDoux (1996)
+                  Quelle: Neurowissenschaftliche Grundlagen nach LeDoux (1996) und aktueller Forschung zu Stressverarbeitung und Emotionsregulation
                 </p>
               </div>
             </ContentSection>

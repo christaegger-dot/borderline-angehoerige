@@ -98,7 +98,7 @@ export default function Kommunizieren() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Gute Kommunikation ist der Schlüssel zu einer stabilen Beziehung. Hier lernen Sie Techniken, die auch in schwierigen Momenten funktionieren.
+              Kommunikation löst nicht alles. Sie kann Konflikte aber entschärfen, Missverständnisse einordnen helfen und Ihre eigene Position klarer machen. Hier finden Sie Haltungen und Formulierungen für belastende Gespräche.
             </p>
           </motion.div>
         </div>
@@ -141,7 +141,7 @@ export default function Kommunizieren() {
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-4">
                     <p className="text-foreground leading-relaxed font-medium">
-                      Validierung wirkt wie ein emotionales Geländer: Sie senkt Stress, verhindert Eskalation und macht Problemlösen überhaupt erst möglich.
+                      Validierung wirkt oft wie ein emotionales Geländer: Sie kann Stress senken, Eskalation bremsen und den Boden für späteres Problemlösen bereiten.
                     </p>
                   </CardContent>
                 </Card>
@@ -211,7 +211,7 @@ export default function Kommunizieren() {
 
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-5">
-                    <h4 className="font-semibold text-foreground mb-3">3 Sätze, die fast immer helfen</h4>
+                    <h4 className="font-semibold text-foreground mb-3">Drei hilfreiche Sätze als Einstieg</h4>
                     <div className="space-y-2">
                       {[
                         "«Ich sehe, dass es dir gerade richtig schlecht geht.»",
@@ -224,6 +224,9 @@ export default function Kommunizieren() {
                         </div>
                       ))}
                     </div>
+                    <p className="text-xs text-muted-foreground mt-3">
+                      Kein Satz passt immer. Entscheidend sind Tonfall, Timing und ob sich Ihr Gegenüber in diesem Moment eher nach Nähe, Struktur oder Abstand sehnt.
+                    </p>
                   </CardContent>
                 </Card>
               </div>
@@ -238,7 +241,7 @@ export default function Kommunizieren() {
                 <div className="space-y-4">
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h4 className="font-semibold text-foreground mb-2 text-sm">«Wenn ich validiere, bestätige ich doch das Drama.»</h4>
+                      <h4 className="font-semibold text-foreground mb-2 text-sm">«Wenn ich validiere, verstärke ich doch die Situation.»</h4>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         Nein. Sie bestätigen <strong className="text-foreground">das Erleben</strong>, nicht jede Interpretation. Sie können validieren und trotzdem sagen: «Ich sehe dich – und ich bleibe bei meiner Grenze.»
                       </p>
@@ -340,12 +343,12 @@ export default function Kommunizieren() {
               id="fallbeispiel"
               preview="Lisa kommt aufgelöst nach Hause: «Meine Kollegin hasst mich!» – So reagieren Sie richtig."
             >
-              <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/20">
+                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/20">
                 <CardContent className="p-6">
                   <div className="mb-4">
                     <span className="text-xs font-medium text-terracotta-mid bg-terracotta-light/30 px-2 py-1 rounded">Situation</span>
                     <p className="text-foreground mt-2 leading-relaxed">
-                      Lisa kommt auflöst nach Hause: <span className="italic">«Meine Kollegin hasst mich! Sie hat mich heute nicht begrüsst!»</span>
+                      Lisa kommt aufgelöst nach Hause: <span className="italic">«Meine Kollegin hasst mich! Sie hat mich heute nicht begrüsst!»</span>
                     </p>
                   </div>
                   
@@ -365,9 +368,9 @@ export default function Kommunizieren() {
                     <p className="text-sm text-muted-foreground italic">
                       «Könnte es sein, dass sie einfach in Eile war? Was denkst du?»
                     </p>
-                    <p className="text-xs text-muted-foreground mt-2">
-                      → Erst das Herz erreichen, dann den Kopf.
-                    </p>
+                      <p className="text-xs text-muted-foreground mt-2">
+                      → Erst emotional andocken, dann gemeinsam prüfen.
+                      </p>
                   </div>
                 </CardContent>
               </Card>

@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { motion, AnimatePresence } from "framer-motion";
-import { Quote, Heart, Users, User, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { motion } from "framer-motion";
+import { Quote, Heart, Users, User } from "lucide-react";
 
 interface Erfahrungsbericht {
   text: string;
@@ -60,29 +59,6 @@ export default function Erfahrungsberichte({
   variant = "carousel" 
 }: ErfahrungsberichteProps) {
   const displayBerichte = berichte.slice(0, maxBerichte);
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const goTo = useCallback((index: number, dir: number) => {
-    setDirection(dir);
-    setCurrent(index);
-  }, []);
-
-  const next = useCallback(() => {
-    goTo((current + 1) % displayBerichte.length, 1);
-  }, [current, displayBerichte.length, goTo]);
-
-  const prev = useCallback(() => {
-    goTo((current - 1 + displayBerichte.length) % displayBerichte.length, -1);
-  }, [current, displayBerichte.length, goTo]);
-
-  // Auto-advance every 8 seconds
-  useEffect(() => {
-    if (isPaused || variant !== "carousel") return;
-    const timer = setInterval(next, 8000);
-    return () => clearInterval(timer);
-  }, [next, isPaused, variant]);
 
   // Grid variant (original)
   if (variant !== "carousel") {
@@ -162,25 +138,6 @@ export default function Erfahrungsberichte({
   );
   }
 
-  // Carousel variant
-  const bericht = displayBerichte[current];
-  const Icon = iconMap[bericht.icon];
-
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 300 : -300,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -300 : 300,
-      opacity: 0,
-    }),
-  };
-
   return (
     <section className="py-12 md:py-16">
       <div className="container">
@@ -200,105 +157,41 @@ export default function Erfahrungsberichte({
             </p>
           </motion.div>
         )}
-        
-        <div 
-          className="relative max-w-3xl mx-auto"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Navigation arrows */}
-          <button
-            type="button"
-            onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-11 h-11 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
-            aria-label="Vorheriger Bericht"
-          >
-            <ChevronLeft className="w-5 h-5 text-foreground" />
-          </button>
-          
-          <button
-            type="button"
-            onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-11 h-11 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
-            aria-label="Nächster Bericht"
-          >
-            <ChevronRight className="w-5 h-5 text-foreground" />
-          </button>
-
-          {/* Card container with fixed height */}
-          <div className="overflow-hidden px-2" aria-live="polite" aria-atomic="true">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
-                key={current}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              >
-                <Card className="border-border/50 shadow-lg">
-                  <CardContent className="p-6 md:p-8">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-12 h-12 rounded-full bg-terracotta-lighter flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-terracotta-mid" />
+        <div className="grid gap-6 md:grid-cols-2">
+          {displayBerichte.map((bericht, index) => {
+            const Icon = iconMap[bericht.icon];
+            return (
+              <div key={index}>
+                <Card className="h-full border-border/50">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-terracotta-lighter flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-terracotta-mid" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground text-lg">{bericht.autor}</p>
+                        <p className="font-medium text-foreground">{bericht.autor}</p>
                         <p className="text-sm text-muted-foreground">{bericht.beziehung}</p>
                       </div>
                     </div>
-                    
-                    <Quote className="w-10 h-10 text-terracotta-light mb-4" />
-                    
-                    <p className="text-muted-foreground leading-relaxed mb-6 text-base">
+
+                    <Quote className="w-8 h-8 text-terracotta-light mb-3" />
+
+                    <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
                       {bericht.text}
                     </p>
-                    
+
                     {bericht.highlight && (
-                      <div className="bg-terracotta-wash rounded-xl p-4 border-l-3 border-terracotta">
-                        <p className="text-base font-medium text-foreground italic">
+                      <div className="bg-terracotta-wash rounded-lg p-3 border-l-2 border-terracotta">
+                        <p className="text-sm font-medium text-foreground italic">
                           "{bericht.highlight}"
                         </p>
                       </div>
                     )}
                   </CardContent>
                 </Card>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Dots indicator */}
-          <div className="flex items-center justify-center gap-0 mt-6">
-            {displayBerichte.map((_, index) => (
-              <button
-                type="button"
-                key={index}
-                onClick={() => goTo(index, index > current ? 1 : -1)}
-                className="relative flex items-center justify-center min-w-[44px] min-h-[44px]"
-                aria-label={`Bericht ${index + 1}`}
-              >
-                <span className={`block transition-all duration-500 rounded-full ${
-                  index === current 
-                    ? "w-8 h-2.5 bg-terracotta" 
-                    : "w-2.5 h-2.5 bg-border hover:bg-muted-foreground/40"
-                }`} />
-              </button>
-            ))}
-          </div>
-
-          {/* Progress bar */}
-          {!isPaused && (
-            <div className="mt-3 max-w-xs mx-auto h-0.5 bg-border rounded-full overflow-hidden">
-              <motion.div
-                key={current}
-                className="h-full bg-terracotta rounded-full"
-                initial={{ width: "0%" }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 8, ease: "linear" }}
-              />
-            </div>
-          )}
+              </div>
+            );
+          })}
         </div>
         
         <motion.p

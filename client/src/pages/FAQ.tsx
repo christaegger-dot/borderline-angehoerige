@@ -4,7 +4,6 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { HelpCircle, MessageCircle, Shield, Heart, Users, Clock, AlertTriangle, Lightbulb, ChevronRight } from "lucide-react";
-import { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -26,9 +25,18 @@ interface FAQCategory {
   questions: FAQItem[];
 }
 
-export default function FAQ() {
-  const [openCategory, setOpenCategory] = useState<string | null>("diagnose");
+function slugifyCategory(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "und")
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
+export default function FAQ() {
   const faqCategories: FAQCategory[] = [
     {
       title: "Diagnose & Krankheitsverständnis",
@@ -191,19 +199,35 @@ export default function FAQ() {
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            <nav
+              aria-label="Sprungnavigation zu den FAQ-Kategorien"
+              className="mb-8 rounded-xl border border-border/60 bg-muted/20 p-4"
+            >
+              <p className="text-sm font-medium text-foreground mb-3">Direkt zum passenden Themenbereich:</p>
+              <div className="flex flex-wrap gap-2">
+                {faqCategories.map((category) => (
+                  <a
+                    key={category.title}
+                    href={`#${slugifyCategory(category.title)}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground hover:border-foreground/20"
+                  >
+                    {category.title}
+                  </a>
+                ))}
+              </div>
+            </nav>
+
             {faqCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
+                id={slugifyCategory(category.title)}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: categoryIndex * 0.1, ease: "easeOut" }}
-                className="mb-8"
+                className="mb-8 scroll-mt-28"
               >
-                <div 
-                  className="flex items-center gap-3 mb-4 cursor-pointer"
-                  onClick={() => setOpenCategory(openCategory === category.title ? null : category.title)}
-                >
+                <div className="flex items-center gap-3 mb-4">
                   <div 
                     className="w-10 h-10 rounded-lg flex items-center justify-center text-white"
                     style={{ backgroundColor: category.color }}

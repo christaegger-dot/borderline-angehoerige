@@ -573,7 +573,7 @@ export default function Home() {
       </section>
 
       {/* Erfahrungsberichte */}
-      <Erfahrungsberichte maxBerichte={4} variant="carousel" />
+      <Erfahrungsberichte maxBerichte={4} variant="compact" />
 
       {/* Emergency CTA */}
       <section className="py-12 md:py-16 bg-alert">

@@ -103,8 +103,8 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
       "alternateName": ["BPS", "Emotional instabile Persönlichkeitsstörung"],
       "code": {
         "@type": "MedicalCode",
-        "code": "F60.3",
-        "codingSystem": "ICD-10"
+        "code": "6D11",
+        "codingSystem": "ICD-11"
       }
     },
     "audience": {

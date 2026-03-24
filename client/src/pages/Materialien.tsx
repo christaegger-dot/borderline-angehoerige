@@ -465,7 +465,7 @@ export default function Materialien() {
           <div className="mb-6 p-3 rounded-lg bg-sand border border-sand-subtle flex items-center gap-2">
             <Eye className="w-4 h-4 text-muted-foreground flex-shrink-0" />
             <p className="text-sm text-muted-foreground">
-              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab. Die Notfallkarte öffnet als interaktive HTML-Seite.
+              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «Öffnen» öffnet die A4-PDF-Version im neuen Tab. Die Notfallkarte öffnet als interaktive HTML-Seite.
             </p>
           </div>
           {filteredInfografiken.length > 0 ? (

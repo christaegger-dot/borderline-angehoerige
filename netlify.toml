@@ -25,6 +25,18 @@
   force = true
 
 [[redirects]]
+  from = "/selbsttest"
+  to = "/selbsttest/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/selbsttest/"
+  to = "/selbsttest/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*.pdf"
   to = "/:splat.pdf"
   status = 200

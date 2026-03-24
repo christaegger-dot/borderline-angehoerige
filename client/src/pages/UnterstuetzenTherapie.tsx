@@ -118,6 +118,50 @@ export default function UnterstuetzenTherapie() {
                   </div>
                 </CardContent>
               </Card>
+
+              <Card className="mt-4 border-border/50">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-foreground mb-4">Kurze Orientierung zu Versorgungswegen</h3>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        title: "Ambulant",
+                        meaning: "Regelmässige Termine, Alltag bleibt weitgehend wie gewohnt.",
+                        useful: "Kann sinnvoll sein, wenn Stabilität da ist und Therapie im Alltag geübt werden soll.",
+                        family: "Für Angehörige heisst das oft: mittragen, erinnern, zwischen Terminen präsent bleiben."
+                      },
+                      {
+                        title: "Teilstationär",
+                        meaning: "Tagsüber Therapieprogramm, abends und nachts zu Hause.",
+                        useful: "Kann sinnvoll sein, wenn mehr Struktur nötig ist, aber ein Leben zu Hause möglich bleibt.",
+                        family: "Für Angehörige heisst das oft: Tagesbelastung sinkt etwas, Begleitung am Abend bleibt wichtig."
+                      },
+                      {
+                        title: "Stationär",
+                        meaning: "Zeitlich begrenzte Behandlung mit Aufenthalt in der Klinik.",
+                        useful: "Kann sinnvoll sein bei starker Krise, hoher Belastung oder wenn ambulant nicht reicht.",
+                        family: "Für Angehörige heisst das oft: entlastet sein dürfen und trotzdem über Gespräche eingebunden bleiben."
+                      }
+                    ].map((setting, index) => (
+                      <div key={index} className="border-l-2 border-slate-light pl-4">
+                        <h4 className="font-medium text-foreground text-sm mb-1">{setting.title}</h4>
+                        <p className="text-muted-foreground text-sm"><span className="font-medium text-foreground">Was bedeutet das?</span> {setting.meaning}</p>
+                        <p className="text-muted-foreground text-sm"><span className="font-medium text-foreground">Wann sinnvoll?</span> {setting.useful}</p>
+                        <p className="text-muted-foreground text-sm"><span className="font-medium text-foreground">Für Angehörige:</span> {setting.family}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="mt-4 bg-slate-light/30 border-slate-light">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-foreground mb-2">Komorbidität kurz erklärt</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Borderline kommt häufig nicht allein vor. Oft spielen parallel weitere Belastungen mit – zum Beispiel Depression, Angst oder Substanzkonsum. Deshalb werden in der Behandlung häufig mehrere Themen gleichzeitig angeschaut. Das ist normal und nicht für alle gleich.
+                  </p>
+                </CardContent>
+              </Card>
             </ContentSection>
 
             {/* DBT-Skills für Angehörige */}
@@ -257,6 +301,15 @@ export default function UnterstuetzenTherapie() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Die Psychiatrische Universitätsklinik Zürich (PUK) bietet spezialisierte Behandlungsangebote für verschiedene Altersgruppen – ambulant, teilstationär und stationär.
               </p>
+
+              <Card className="mb-6 bg-sage-lighter border-sage-light">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-foreground mb-2">Einordnung CH-/ZH-Kontext</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Viele wissenschaftliche Grundlagen stammen aus internationaler Forschung. Die konkreten Versorgungshinweise auf dieser Website beziehen sich, wenn nicht anders markiert, auf die Schweiz und besonders auf den Kanton Zürich.
+                  </p>
+                </CardContent>
+              </Card>
               
               {/* Settings-Übersicht */}
               <div className="flex flex-wrap gap-3 mb-6">
@@ -367,6 +420,18 @@ export default function UnterstuetzenTherapie() {
                         <a href={`tel:${k.tel}`} className="text-sm font-semibold text-foreground hover:underline">{k.nummer}</a>
                       </div>
                     ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="mt-4 border-border/50">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-foreground mb-3">Wo Angehörige im Versorgungssystem vorkommen</h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p><span className="font-medium text-foreground">Angehörigenberatung:</span> hilft, Situationen einzuordnen und konkrete nächste Schritte zu planen.</p>
+                    <p><span className="font-medium text-foreground">Psychoedukation:</span> vermittelt verständlich, was im Alltag oft hilft und was Krisen verschärfen kann.</p>
+                    <p><span className="font-medium text-foreground">Familien- und Angehörigengespräche:</span> schaffen gemeinsame Absprachen mit Behandlungsteam und Betroffenen.</p>
+                    <p><span className="font-medium text-foreground">Selbsthilfe und Fachstellen:</span> bieten Austausch, Entlastung und Orientierung – auch dann, wenn Sie selbst gerade am Limit sind.</p>
                   </div>
                 </CardContent>
               </Card>

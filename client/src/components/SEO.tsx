@@ -99,8 +99,8 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
     "inLanguage": "de",
     "about": {
       "@type": "MedicalCondition",
-      "name": "Borderline-Persönlichkeitsstörung",
-      "alternateName": ["BPS", "Emotional instabile Persönlichkeitsstörung"],
+      "name": "Persönlichkeitsstörung mit Borderline-Muster",
+      "alternateName": ["Borderline-Muster", "Borderline pattern"],
       "code": {
         "@type": "MedicalCode",
         "code": "6D11",

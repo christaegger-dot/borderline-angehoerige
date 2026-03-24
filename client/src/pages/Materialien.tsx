@@ -418,7 +418,7 @@ export default function Materialien() {
                     Alle 31 Materialien verfügbar
                   </h2>
                   <p className="text-muted-foreground">
-                    Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach 6 Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Soforthilfe
+                    Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach 7 Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung · Soforthilfe
                   </p>
                 </div>
               </div>

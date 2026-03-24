@@ -1,22 +1,22 @@
 import SEO from "@/components/SEO";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { 
   Sparkles, ArrowRight, CheckCircle2, Heart, AlertTriangle, Users, 
-  Clock, Brain, Wind, Lightbulb, Shield, BookOpen, Phone, Download, ExternalLink,
-  ChevronDown, ChevronUp, UserCircle, Filter, Activity, Zap
+  Clock, Brain, Wind, Lightbulb, Shield, BookOpen, Phone, Download,
+  ChevronDown, ChevronUp, UserCircle
 } from "lucide-react";
 import { Link } from "wouter";
+import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
 import { kontaktById } from "@/data/kontakte";
 import GroundingTimer from "@/components/interactive/GroundingTimer";
 import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
 
 
 const proMente = kontaktById("INFO_PROMENTE")!;
-// useState and useRef imported at top
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 
@@ -155,70 +155,7 @@ function UebungAkkordeon({ title, icon: Icon, children, color }: {
   );
 }
 
-const selbstfuersorgeInfografiken = [
-  {
-    id: "warnsignale",
-    title: "Warnsignale der Überlastung",
-    desc: "Ampel-Stufenmodell: Grün → Gelb → Rot – erkennen Sie rechtzeitig, wann es zu viel wird.",
-    category: "erkennen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OEUNVdTyojBBYTic.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VdAxPxngFzgNImxg.pdf",
-    featured: true,
-  },
-  {
-    id: "sauerstoffmaske",
-    title: "Die Sauerstoffmaske",
-    desc: "Kreislauf-Diagramm: Teufelskreis vs. positiver Kreislauf – warum Selbstfürsorge keine Selbstsucht ist.",
-    category: "erkennen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IQwhlqUMporMKdmH.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yIWenSfOeiUHdMIc.pdf",
-  },
-  {
-    id: "radikale-akzeptanz",
-    title: "Radikale Akzeptanz",
-    desc: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung.",
-    category: "techniken",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OmxdguWaaXAkElDp.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SkBpjnDHfNmPbmnd.pdf",
-  },
-  {
-    id: "stopp-technik",
-    title: "Die STOPP-Technik",
-    desc: "5 Schritte aus der Stressspirale: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden.",
-    category: "techniken",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qvJDZrQvvOlErFQu.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VnQKfkkQbPunhDed.pdf",
-  },
-  {
-    id: "energie-konto",
-    title: "Ihr Energie-Konto",
-    desc: "Stock-&-Flow-Diagramm: Was füllt Ihre Batterie auf, was leert sie? Achten Sie auf die Balance.",
-    category: "ressourcen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/xqJbxqEDoAqplbhl.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gvhhnlTvDmgPHFUq.pdf",
-  },
-  {
-    id: "erlaubnis-karte",
-    title: "Erlaubnis-Karte",
-    desc: "9 Erlaubnisse, die sich Angehörige oft nicht geben – gültig ab sofort, unbefristet.",
-    category: "ressourcen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OMXnbczdvCPBRNTA.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DSOVugQyCvvOACIO.pdf",
-  },
-];
-
-const selbstfuersorgeCategories = [
-  { id: "alle", label: "Alle", icon: Filter, count: selbstfuersorgeInfografiken.length },
-  { id: "erkennen", label: "Erkennen", icon: Activity, count: selbstfuersorgeInfografiken.filter(i => i.category === "erkennen").length },
-  { id: "techniken", label: "Techniken", icon: Zap, count: selbstfuersorgeInfografiken.filter(i => i.category === "techniken").length },
-  { id: "ressourcen", label: "Ressourcen", icon: Heart, count: selbstfuersorgeInfografiken.filter(i => i.category === "ressourcen").length },
-];
-
 export default function Selbstfuersorge() {
-  const [sfActiveFilter, setSfActiveFilter] = useState("alle");
-  const sfGridRef = useRef<HTMLDivElement>(null);
-  const sfFilteredItems = sfActiveFilter === "alle" ? selbstfuersorgeInfografiken : selbstfuersorgeInfografiken.filter(i => i.category === sfActiveFilter);
-
   return (
     <Layout>
       <SEO title="Selbstfürsorge" description="Selbstfürsorge für Angehörige: Burnout vermeiden und eigene Bedürfnisse wahrnehmen." path="/selbstfuersorge" />
@@ -679,67 +616,7 @@ export default function Selbstfuersorge() {
               </ContentSection>
 
               {/* ═══ 8. Materialien zum Download ═══ */}
-              <ContentSection
-                title="Materialien zum Download"
-                icon={<Download className="w-6 h-6 text-sage-mid" />}
-                id="materialien-download"
-                preview="Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken."
-              >
-                <p className="text-sm text-muted-foreground mb-4">
-                  <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
-                </p>
-
-                {/* Filter Tabs */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {selbstfuersorgeCategories.map((cat) => (
-                    <Button
-                      key={cat.id}
-                      variant={sfActiveFilter === cat.id ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => {
-                        setSfActiveFilter(cat.id);
-                        setTimeout(() => {
-                          sfGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, 50);
-                      }}
-                      className={`whitespace-nowrap shrink-0 ${sfActiveFilter === cat.id ? "bg-sage-dark hover:bg-sage-mid text-white" : ""}`}
-                    >
-                      <cat.icon className="w-4 h-4 mr-1.5" />
-                      {cat.label} ({cat.count})
-                    </Button>
-                  ))}
-                </div>
-
-                <div ref={sfGridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {sfFilteredItems.map((item) => (
-                    <Card key={item.id} className={`overflow-hidden border-border/50 hover:shadow-md transition-shadow ${item.featured && sfActiveFilter === "alle" ? "md:col-span-2" : ""}`}>
-                      <div className="aspect-[3/4] overflow-hidden bg-muted">
-                        <img src={item.webp} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" width={400} height={223} decoding="async" />
-                      </div>
-                      <CardContent className="p-4">
-                        <h3 className="font-medium text-foreground mb-1 text-sm">{item.title}</h3>
-                        <p className="text-xs text-muted-foreground mb-3">{item.desc}</p>
-                        <a
-                          href={item.pdf}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                          className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                        >
-                          <ExternalLink className="w-4 h-4" /> PDF öffnen
-                        </a>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-                <div className="mt-4 text-center">
-                  <Link href="/materialien">
-                    <Button variant="outline" size="sm">
-                      Alle Materialien anzeigen
-                    </Button>
-                  </Link>
-                </div>
-              </ContentSection>
+              <SelbstfuersorgeInfografikenSection />
 
               {/* ═══ 9. Hinweise für Ihre Situation ═══ */}
               <ContentSection

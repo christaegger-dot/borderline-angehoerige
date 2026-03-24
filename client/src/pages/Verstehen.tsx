@@ -201,7 +201,7 @@ export default function Verstehen() {
                     <strong>DSM-5-TR:</strong> Auf dieser Seite nutzen wir weiterhin die 9 Kriterien als psychoedukative Orientierung für Angehörige.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    <strong>ICD-11:</strong> Im Versorgungskontext in DACH wird Persönlichkeitsstörung dimensional beschrieben (ICD-11: <em>6D10</em>) und das Borderline-Muster als Qualifier ergänzt (<em>6D11</em>).
+                    <strong>ICD-11:</strong> Im Versorgungskontext in DACH wird Borderline als Muster innerhalb der ICD-11-Persönlichkeitsstörungsdiagnostik eingeordnet (u. a. Borderline-Pattern-Qualifier, im Schema aktuell als <em>6D11</em> referenziert).
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Praktisch heisst das: Beide Systeme beschreiben ähnliche klinische Muster, nutzen aber unterschiedliche Struktur- und Kodierungslogiken.

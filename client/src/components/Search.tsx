@@ -433,28 +433,28 @@ const searchableContent = [
     title: "Therapieangebote im Kanton Zürich",
     description: "Spezialisierte Borderline-Behandlung an der PUK Zürich",
     keywords: ["therapie", "zürich", "puk", "behandlung", "angebot", "kanton"],
-    href: "/unterstuetzen/therapie#therapieangebote",
+    href: "/unterstuetzen/therapie",
     section: "Therapie"
   },
   {
     title: "DBT-Station PUK Zürich",
     description: "Stationäre DBT-Behandlung für Erwachsene in Rheinau",
     keywords: ["dbt", "station", "stationär", "rheinau", "puk", "erwachsene"],
-    href: "/unterstuetzen/therapie#therapieangebote",
+    href: "/unterstuetzen/therapie",
     section: "Therapie"
   },
   {
     title: "HYPE ZÜRI – Frühintervention für Jugendliche",
     description: "Spezialisiertes Programm für Jugendliche ab 13 Jahren",
     keywords: ["hype", "jugendliche", "früh", "intervention", "13", "teenager"],
-    href: "/unterstuetzen/therapie#therapieangebote",
+    href: "/unterstuetzen/therapie",
     section: "Therapie"
   },
   {
     title: "PUK Erwachsene (ab 65) Zürich",
     description: "Psychiatrische Versorgung für Erwachsene ab 65 Jahren",
     keywords: ["alter", "senioren", "65", "alterspsychiatrie", "puk"],
-    href: "/unterstuetzen/therapie#therapieangebote",
+    href: "/unterstuetzen/therapie",
     section: "Therapie"
   },
   

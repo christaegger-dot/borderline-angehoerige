@@ -116,19 +116,18 @@
       </div>
     </noscript>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // Umami Analytics – nur laden wenn Env-Variablen beim Build gesetzt wurden
-      (function() {
-        var endpoint = "%VITE_ANALYTICS_ENDPOINT%";
-        var websiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
-        if (endpoint.indexOf("VITE_") === -1 && websiteId.indexOf("VITE_") === -1) {
-          var s = document.createElement("script");
-          s.defer = true;
-          s.src = endpoint + "/umami";
-          s.setAttribute("data-website-id", websiteId);
-          document.head.appendChild(s);
-        }
-      })();
+    <script type="module">
+      // Umami Analytics – nur laden wenn optionale Env-Variablen gesetzt sind
+      const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT?.trim();
+      const websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID?.trim();
+
+      if (endpoint && websiteId) {
+        const s = document.createElement("script");
+        s.defer = true;
+        s.src = `${endpoint}/umami`;
+        s.setAttribute("data-website-id", websiteId);
+        document.head.appendChild(s);
+      }
     </script>
   </body>
 

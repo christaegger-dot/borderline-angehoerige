@@ -93,40 +93,42 @@ export function Breadcrumbs() {
   const backLabel = parent?.label || "Startseite";
 
   return (
-    <nav className="container py-3" aria-label="Breadcrumb">
-      <div className="flex items-center justify-between">
-        {/* Zurück-Pfeil (Mobile: prominent, Desktop: dezent) */}
-        <Link
-          href={backHref}
-          className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group sm:hidden"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>{backLabel}</span>
-        </Link>
+    <div className="border-b border-border/40 bg-background/60">
+      <nav className="container py-3" aria-label="Breadcrumb">
+        <div className="flex items-center justify-between">
+          {/* Zurück-Pfeil (Mobile: prominent, Desktop: dezent) */}
+          <Link
+            href={backHref}
+            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group sm:hidden"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>{backLabel}</span>
+          </Link>
 
-        {/* Desktop Breadcrumb-Pfad */}
-        <ol className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
-          <li>
-            <Link href="/" className="flex items-center gap-1 hover:text-foreground transition-colors">
-              <Home className="w-4 h-4" />
-              <span>Startseite</span>
-            </Link>
-          </li>
-          {parent && (
-            <li className="flex items-center gap-2">
-              <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
-              <Link href={parent.href} className="hover:text-foreground transition-colors">
-                {parent.label}
+          {/* Desktop Breadcrumb-Pfad */}
+          <ol className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
+            <li>
+              <Link href="/" className="flex items-center gap-1 hover:text-foreground transition-colors">
+                <Home className="w-4 h-4" />
+                <span>Startseite</span>
               </Link>
             </li>
-          )}
-          <li className="flex items-center gap-2">
-            <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
-            <span className="text-foreground font-medium">{pageName}</span>
-          </li>
-        </ol>
-      </div>
-    </nav>
+            {parent && (
+              <li className="flex items-center gap-2">
+                <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+                <Link href={parent.href} className="hover:text-foreground transition-colors">
+                  {parent.label}
+                </Link>
+              </li>
+            )}
+            <li className="flex items-center gap-2">
+              <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+              <span className="text-foreground font-medium">{pageName}</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+    </div>
   );
 }
 

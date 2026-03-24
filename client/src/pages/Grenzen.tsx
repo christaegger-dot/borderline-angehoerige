@@ -221,7 +221,7 @@ export default function Grenzen() {
                 ].map((item, index) => {
                   const Icon = item.icon;
                   return (
-                    <Card key={index} className={`border-border/50 hover:shadow-md transition-all duration-500 ${index === 0 ? "sm:col-span-2" : ""}`} style={{ borderTopWidth: '4px', borderTopColor: item.color }}>
+                    <Card key={index} className="border-border/50 hover:shadow-md transition-all duration-500" style={{ borderTopWidth: '4px', borderTopColor: item.color }}>
                       <CardContent className="p-5">
                         <div className="flex items-start gap-4 mb-3">
                           <div 
@@ -539,8 +539,8 @@ export default function Grenzen() {
               </div>
               
               <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {filteredItems.map((item, index) => (
-                  <Card key={item.title} className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""}`}>
+                {filteredItems.map((item) => (
+                  <Card key={item.title} className="h-full overflow-hidden hover:shadow-lg transition-all duration-500 group">
                     <div className="relative aspect-[3/4] bg-muted overflow-hidden">
                       <img 
                         src={item.url} 

@@ -578,7 +578,7 @@ export default function Kommunizieren() {
                 <span><strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.</span>
               </p>
               {/* Filter-Tabs */}
-              <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-1 px-1">
+              <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible">
                 {kommSubcategories.map((cat) => {
                   const Icon = cat.icon;
                   const count = cat.id === "alle"
@@ -605,9 +605,9 @@ export default function Kommunizieren() {
                 })}
               </div>
               
-              <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                {filteredItems.map((item, index) => (
-                  <Card key={item.title} className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""}`}>
+              <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch mb-6">
+                {filteredItems.map((item) => (
+                  <Card key={item.title} className="h-full overflow-hidden hover:shadow-lg transition-all duration-500 group">
                     <div className="aspect-[4/3] bg-muted">
                       <img src={item.url} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" width={400} height={223} decoding="async" />
                     </div>

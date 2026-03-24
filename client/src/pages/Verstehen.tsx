@@ -185,8 +185,29 @@ export default function Verstehen() {
               </div>
               
               <p className="text-xs text-muted-foreground mt-4">
-                Quelle: Diagnostic and Statistical Manual of Mental Disorders, 5th Edition (DSM-5), American Psychiatric Association
+                Quelle: Diagnostic and Statistical Manual of Mental Disorders, 5th Edition, Text Revision (DSM-5-TR), American Psychiatric Association
               </p>
+            </ContentSection>
+
+            <ContentSection
+              title="DSM-5-TR und ICD-11 im Überblick"
+              icon={<FileText className="w-7 h-7 text-slate-dark" />}
+              id="dsm-icd-ueberblick"
+              preview="DSM-5-TR bleibt für die Kriterienliste zentral; im DACH-Raum ist zusätzlich die ICD-11-Einordnung relevant."
+            >
+              <Card className="border-l-4 border-l-slate-dark bg-slate-wash/40">
+                <CardContent className="p-5 space-y-3">
+                  <p className="text-muted-foreground leading-relaxed">
+                    <strong>DSM-5-TR:</strong> Auf dieser Seite nutzen wir weiterhin die 9 Kriterien als psychoedukative Orientierung für Angehörige.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    <strong>ICD-11:</strong> Im Versorgungskontext in DACH wird Persönlichkeitsstörung dimensional beschrieben (ICD-11: <em>6D10</em>) und das Borderline-Muster als Qualifier ergänzt (<em>6D11</em>).
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Praktisch heisst das: Beide Systeme beschreiben ähnliche klinische Muster, nutzen aber unterschiedliche Struktur- und Kodierungslogiken.
+                  </p>
+                </CardContent>
+              </Card>
             </ContentSection>
 
             {/* Ursachen: Bio-Psycho-Soziales Modell */}

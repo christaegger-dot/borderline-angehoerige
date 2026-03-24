@@ -45,28 +45,28 @@ const searchableContent = [
     title: "Wie kann ich helfen?",
     description: "Die Grundlagen: Ihre Rolle verstehen und die Balance zwischen Unterstützen und Selbstschutz finden",
     keywords: ["helfen", "unterstützen", "rolle", "balance", "begleiten"],
-    href: "/unterstuetzen",
+    href: "/unterstuetzen/alltag",
     section: "Unterstützen"
   },
   {
     title: "Im Alltag unterstützen",
     description: "Stabilität bieten, emotionale Verfügbarkeit zeigen und gemeinsame Aktivitäten gestalten",
     keywords: ["alltag", "stabilität", "routine", "aktivitäten", "präsenz", "verfügbarkeit"],
-    href: "/unterstuetzen",
+    href: "/unterstuetzen/alltag",
     section: "Unterstützen"
   },
   {
     title: "Therapie begleiten",
     description: "DBT-Skills verstehen, Fortschritte würdigen und mit Rückschlägen umgehen",
     keywords: ["therapie", "dbt", "dialektisch-behaviorale therapie", "skills", "fortschritte", "rückschläge", "behandlung"],
-    href: "/unterstuetzen",
+    href: "/unterstuetzen/therapie",
     section: "Unterstützen"
   },
   {
     title: "In der Krise unterstützen",
     description: "Krisen erkennen, deeskalieren und Sicherheit gewährleisten",
     keywords: ["krise", "eskalation", "deeskalation", "sicherheit", "notfall", "akut"],
-    href: "/unterstuetzen",
+    href: "/unterstuetzen/krise",
     section: "Unterstützen"
   },
   
@@ -322,7 +322,7 @@ const searchableContent = [
     title: "DBT (Dialektisch-Behaviorale Therapie)",
     description: "Die wichtigste evidenzbasierte Therapie für Borderline",
     keywords: ["dbt", "dialektisch", "behavioral", "therapie", "linehan", "skills"],
-    href: "/unterstuetzen",
+    href: "/unterstuetzen/therapie",
     section: "Unterstützen"
   },
   {

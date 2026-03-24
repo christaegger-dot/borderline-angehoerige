@@ -76,7 +76,7 @@ export default function UeberUns() {
                   {
                     icon: BookOpen,
                     title: "Evidenzbasiert",
-                    description: "Alle Inhalte basieren auf wissenschaftlicher Forschung und bewährten Therapieansätzen wie DBT (Dialektisch-Behaviorale Therapie). Wir nennen unsere Quellen."
+                    description: "Alle Inhalte basieren auf wissenschaftlicher Forschung und bewährten Therapieansätzen wie DBT (Dialektisch-Behaviorale Therapie). Auf Seiten mit Kennzahlen verlinken wir die zentralen Quellen direkt."
                   },
                   {
                     icon: Heart,

@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import AnimatedStat from "@/components/AnimatedStat";
 import Schnelleinstieg from "@/components/interactive/Schnelleinstieg";
+import EvidenceNote from "@/components/EvidenceNote";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XkvykpgJHYsCUUQW.webp";
 const heroImage1280 = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/smWfBdfAvQptVoCP.webp";
@@ -522,9 +523,15 @@ export default function Home() {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
-              <p className="text-xs text-muted-foreground mt-4">
-                Quellen: McLean Study (Zanarini et al.), CLPS Study (Gunderson et al.)
-              </p>
+              <EvidenceNote
+                className="mt-4 text-left"
+                title="Quellen zur Prognose"
+                sources={[
+                  { label: "Zanarini et al. (2010) – 10-Jahres-Verlauf", href: "https://pubmed.ncbi.nlm.nih.gov/20334540/" },
+                  { label: "Zanarini et al. (2012) – Recovery in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/22737693/" },
+                  { label: "Gunderson et al. (2011) – CLPS", href: "https://pubmed.ncbi.nlm.nih.gov/21668726/" },
+                ]}
+              />
               <p className="text-xs text-muted-foreground mt-1">
                 Orientierungswerte aus Langzeitstudien; individuelle Verläufe können abweichen.
               </p>

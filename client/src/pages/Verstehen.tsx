@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 import MythosFlipCards from "@/components/interactive/MythosFlipCards";
+import EvidenceNote from "@/components/EvidenceNote";
 
 
 const verstehenInfografiken = [
@@ -132,6 +133,17 @@ export default function Verstehen() {
                 </CardContent>
               </Card>
             </motion.div>
+
+            <EvidenceNote
+              className="mb-8"
+              title="Evidenzbasis dieser Seite"
+              sources={[
+                { label: "Linehan, M.M. (1993), Cognitive-Behavioral Treatment of BPD" },
+                { label: "Paris, J. (2019), Stepped Care for BPD" },
+                { label: "Schmahl & Bremner (2006), Neuroimaging in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/16490414/" },
+                { label: "Ruocco et al. (2013), Neural correlates of emotion dysregulation", href: "https://pubmed.ncbi.nlm.nih.gov/23260332/" },
+              ]}
+            />
 
             {/* Was ist Borderline */}
             <ContentSection

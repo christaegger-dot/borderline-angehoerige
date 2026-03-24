@@ -559,7 +559,8 @@ export default function Materialien() {
                         {!item.isHtml ? (
                           <a
                             href={item.downloadUrl}
-                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label={`PDF herunterladen: ${item.title}`}
                             className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
                           >
@@ -571,7 +572,8 @@ export default function Materialien() {
                             {/* Mobile: PDF-Download als voller Button, Öffnen als Link */}
                             <a
                               href={(item as any).pdfUrl}
-                              download="Notfallkarte-Zuerich-Psychische-Krise.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
                               aria-label="Notfallkarte als PDF herunterladen"
                               className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors flex-1 sm:flex-none"
                             >

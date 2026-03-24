@@ -6,11 +6,12 @@ import { motion } from "framer-motion";
 import { Download, Printer, ExternalLink, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MATERIALIEN-SEITE – ÜBERARBEITUNG IN PROGRESS
-// Stand: 10.03.2026
+// Stand: 24.03.2026
 // ═══════════════════════════════════════════════════════════════════════════
 
 // Kategorie 1: Verstehen (6 Infografiken)
@@ -398,6 +399,7 @@ export default function Materialien() {
                 </span>
               </div>
             )}
+            <LastVerifiedBadge date="24.03.2026" />
           </motion.div>
         </div>
       </section>

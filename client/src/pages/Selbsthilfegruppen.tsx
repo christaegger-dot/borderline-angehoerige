@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Building2, ArrowRight, Calendar, Clock } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktById, emailById, urlById } from "@/data/kontakte";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 
 const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
 const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
@@ -47,6 +48,9 @@ export default function Selbsthilfegruppen() {
               Sie müssen das nicht allein tragen. Hier finden Sie professionelle Beratung, 
               Selbsthilfegruppen und Netzwerke für Angehörige in der Schweiz.
             </p>
+            <div className="mt-5">
+              <LastVerifiedBadge date="24.03.2026" />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -233,6 +237,7 @@ export default function Selbsthilfegruppen() {
 
                     <div className="bg-background/50 rounded-lg p-4">
                       <h4 className="font-semibold text-foreground text-sm mb-2">HelpLine-Zeiten:</h4>
+                      <LastVerifiedBadge date="24.03.2026" className="mb-3" />
                       <div className="grid grid-cols-2 gap-1 text-sm text-muted-foreground">
                         <span>Montag</span><span>09:30 – 19:00 Uhr</span>
                         <span>Dienstag</span><span>10:00 – 18:00 Uhr</span>
@@ -259,6 +264,7 @@ export default function Selbsthilfegruppen() {
                           <Calendar className="w-4 h-4 text-sage-mid" />
                           <h4 className="font-semibold text-foreground text-sm">Beratungs-Treffpunkt Zürich</h4>
                         </div>
+                        <LastVerifiedBadge date="24.03.2026" className="mb-2" />
                         <p className="text-muted-foreground text-sm">
                           Offener Treffpunkt für alle Angehörigen und Freunde
                         </p>
@@ -274,6 +280,7 @@ export default function Selbsthilfegruppen() {
                           <Calendar className="w-4 h-4 text-sage-mid" />
                           <h4 className="font-semibold text-foreground text-sm">Beratungs-Treffpunkt Winterthur</h4>
                         </div>
+                        <LastVerifiedBadge date="24.03.2026" className="mb-2" />
                         <p className="text-muted-foreground text-sm">
                           Offener Treffpunkt für alle Angehörigen und Freunde
                         </p>

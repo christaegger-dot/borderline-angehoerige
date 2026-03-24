@@ -270,7 +270,7 @@ export default function Notfall() {
               {/* Merksatz */}
               <div className="px-5 py-3 sm:px-6 bg-sos-rot/20 border-t border-white/10">
                 <p className="text-white text-xs sm:text-sm leading-snug">
-                  <strong>Merke:</strong> Bei akuter Lebensgefahr immer zuerst <strong>144 / 117 / 112</strong> – auch gegen den Willen der Person.
+                  <strong>Merke:</strong> Bei akuter Selbst- oder Fremdgefährdung zuerst <strong>144 / 117 / 112</strong> wählen – auch wenn die betroffene Person nicht einverstanden ist. Im Zweifel sofort medizinische oder psychiatrische Fachstellen einbeziehen.
                 </p>
               </div>
             </motion.div>
@@ -545,6 +545,12 @@ export default function Notfall() {
                 </Link>
               </div>
             </motion.div>
+
+            <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Diese Informationen ersetzen keine medizinische oder rechtliche Beratung. In akuten Gefahrensituationen zählt das sofortige Einbeziehen von Notruf und Fachpersonen.
+              </p>
+            </div>
 
           </div>
         </div>

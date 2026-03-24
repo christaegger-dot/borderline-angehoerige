@@ -44,14 +44,14 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Remission",
     category: "therapie",
-    definition: "In der Borderline-Forschung bedeutet Remission, dass eine Person nicht mehr genügend Kriterien für die Diagnose erfüllt. Studien zeigen, dass 85-93% der Betroffenen innerhalb von 10 Jahren eine Remission erreichen.",
+    definition: "In der Borderline-Forschung bedeutet Remission, dass eine Person nicht mehr genügend Kriterien für die Diagnose erfüllt. Studien zeigen, dass 85-93% der Betroffenen innerhalb von 10 Jahren eine Remission erreichen (u.a. Zanarini et al., 2010).",
     relatedPage: "/genesung",
     relatedPageTitle: "Genesung ist möglich"
   },
   {
     term: "Recovery",
     category: "therapie",
-    definition: "Recovery geht über Remission hinaus und umfasst auch gutes soziales und berufliches Funktionieren sowie eine stabile Beziehung. Etwa 50% der Betroffenen erreichen nach 10 Jahren eine vollständige Recovery.",
+    definition: "Recovery geht über Remission hinaus und umfasst auch gutes soziales und berufliches Funktionieren sowie eine stabile Beziehung. Etwa 50% der Betroffenen erreichen nach 10 Jahren eine vollständige Recovery (Zanarini et al., 2012).",
     relatedPage: "/genesung",
     relatedPageTitle: "Genesung ist möglich"
   },

@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Link } from "wouter";
+import EvidenceNote from "@/components/EvidenceNote";
 
 interface FAQItem {
   question: string;
@@ -277,6 +278,18 @@ export default function FAQ() {
                 </Accordion>
               </motion.div>
             ))}
+
+            <EvidenceNote
+              title="Quellen zu Prognose- und Therapieaussagen"
+              definition="Kurzdefinition: Remission = Diagnosekriterien werden über längere Zeit nicht mehr erfüllt; Recovery = Remission plus stabiles soziales/berufliches Funktionsniveau."
+              className="mt-8"
+              sources={[
+                { label: "Zanarini et al. (2010), The 10-year course of BPD", href: "https://pubmed.ncbi.nlm.nih.gov/20334540/" },
+                { label: "Zanarini et al. (2012), Recovery in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/22737693/" },
+                { label: "Gunderson et al. (2011), CLPS outcomes in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/21668726/" },
+                { label: "Stoffers-Winterling et al. (2022), Psychological therapies for BPD (Cochrane)", href: "https://pubmed.ncbi.nlm.nih.gov/35049048/" },
+              ]}
+            />
 
             {/* Weitere Fragen */}
             <motion.div

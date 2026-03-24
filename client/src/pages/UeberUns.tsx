@@ -55,11 +55,11 @@ export default function UeberUns() {
                 </p>
                 
                 <p className="leading-relaxed mb-4">
-                  Der Begriff «Eiertanz» aus dem Standardwerk von Paul T. Mason und Randi Kreger beschreibt dieses Gefühl treffend: das ständige Auf-der-Hut-Sein, die Angst vor dem nächsten Ausbruch, das Gefühl, auf Eierschalen zu laufen.
+                  Der Begriff «Eiertanz» aus dem Standardwerk von Paul T. Mason und Randi Kreger wird hier als Angehörigenmetapher verwendet: Er beschreibt das ständige Auf-der-Hut-Sein und die Angst vor dem nächsten Konflikt. Gleichzeitig ist wichtig: Solche Dynamiken sind nicht bei allen Betroffenen gleich und stehen häufig mit innerer Not in Zusammenhang.
                 </p>
                 
                 <p className="leading-relaxed">
-                  Diese Website möchte Angehörigen evidenzbasierte Werkzeuge an die Hand geben – nicht um die Erkrankung zu «heilen», sondern um den Alltag besser zu bewältigen, die Beziehung zu stärken und dabei auf sich selbst zu achten.
+                  Diese Website möchte Angehörigen evidenzbasierte Werkzeuge an die Hand geben – nicht um die Erkrankung zu «heilen», sondern um den Alltag besser zu bewältigen, die Beziehung zu stärken und dabei auf sich selbst zu achten. Viele belastende Muster sind behandelbar und können sich mit der Zeit verändern.
                 </p>
               </div>
             </ContentSection>
@@ -135,7 +135,7 @@ export default function UeberUns() {
                   {
                     title: "Stop Walking on Eggshells",
                     author: "Paul T. Mason & Randi Kreger",
-                    description: "Das Standardwerk für Angehörige, Grundlage für den Namen dieser Website."
+                    description: "Ein bekanntes Angehörigenbuch, das die Perspektive von Familien in belastenden Situationen beschreibt."
                   },
                   {
                     title: "Ich hasse dich – verlass mich nicht",

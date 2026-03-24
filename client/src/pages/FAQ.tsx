@@ -60,7 +60,7 @@ export default function FAQ() {
         },
         {
           question: "Warum verhält sich mein Angehöriger bei anderen «normal»?",
-          answer: "Dieses Phänomen ist typisch und kein Zeichen von Manipulation. Menschen mit Borderline haben oft die grössten Schwierigkeiten in engen Beziehungen, weil dort die Verlassensangst am stärksten aktiviert wird. Bei Fremden oder in oberflächlichen Kontakten ist diese Angst geringer, daher können sie sich besser regulieren. Es ist paradox: Je wichtiger Sie Ihrem Angehörigen sind, desto intensiver können die Symptome sein. Das ist keine bewusste Entscheidung, sondern ein Muster, das in der Therapie bearbeitet wird."
+          answer: "Dieses Phänomen ist häufig und nicht automatisch ein Zeichen von Manipulation. Menschen mit Borderline haben oft die grössten Schwierigkeiten in engen Beziehungen, weil dort die Verlassensangst am stärksten aktiviert wird. Bei Fremden oder in oberflächlichen Kontakten ist diese Angst geringer, daher können sie sich besser regulieren. Es ist paradox: Je wichtiger Sie Ihrem Angehörigen sind, desto intensiver können die Symptome sein. Das ist keine bewusste Entscheidung, sondern ein Muster, das in der Therapie bearbeitet wird."
         }
       ]
     },
@@ -81,7 +81,7 @@ export default function FAQ() {
         },
         {
           question: "Wie gehe ich mit dem Schwarz-Weiss-Denken um?",
-          answer: "Das «Splitting» (Idealisierung und Abwertung) ist ein Kernmerkmal von Borderline. In einem Moment sind Sie der beste Mensch der Welt, im nächsten der schlimmste. Wichtig: Nehmen Sie weder die Idealisierung noch die Abwertung persönlich. Beide sind Verzerrungen. Bleiben Sie konsistent in Ihrem Verhalten, auch wenn die Bewertung schwankt. Sagen Sie zum Beispiel: «Ich bin derselbe Mensch wie gestern. Ich liebe dich, auch wenn du gerade wütend auf mich bist.» Mit der Zeit und Therapie lernen Betroffene, Grautöne zu sehen."
+          answer: "Das «Splitting» (Idealisierung und Abwertung) ist ein häufiges Merkmal bei Borderline, aber nicht bei allen Betroffenen gleich ausgeprägt. In einem Moment sind Sie der beste Mensch der Welt, im nächsten der schlimmste. Wichtig: Nehmen Sie weder die Idealisierung noch die Abwertung persönlich. Beides kann Ausdruck von innerer Anspannung und Beziehungssorge sein. Bleiben Sie konsistent in Ihrem Verhalten, auch wenn die Bewertung schwankt. Sagen Sie zum Beispiel: «Ich bin derselbe Mensch wie gestern. Ich liebe dich, auch wenn du gerade wütend auf mich bist.» Mit der Zeit und Therapie lernen Betroffene, Grautöne zu sehen."
         },
         {
           question: "Soll ich lügen, um Konflikte zu vermeiden?",
@@ -127,7 +127,7 @@ export default function FAQ() {
         },
         {
           question: "Welche Therapie ist am besten?",
-          answer: "Für Borderline gibt es mehrere evidenzbasierte Therapien: DBT (Dialektisch-Behaviorale Therapie) ist am besten erforscht und besonders wirksam bei Selbstverletzung und Suizidalität. MBT (Mentalisierungsbasierte Therapie) fokussiert auf das Verstehen eigener und fremder Gedanken/Gefühle. Schematherapie arbeitet an frühen Prägungen und Beziehungsmustern. TFP (Übertragungsfokussierte Therapie) nutzt die therapeutische Beziehung zur Veränderung. Alle sind wirksam – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
+          answer: "Für Borderline gibt es mehrere evidenzbasierte Therapien: DBT (Dialektisch-Behaviorale Therapie) ist sehr gut erforscht und häufig besonders wirksam bei Selbstverletzung und Suizidalität. MBT (Mentalisierungsbasierte Therapie) fokussiert auf das Verstehen eigener und fremder Gedanken/Gefühle. Schematherapie arbeitet an frühen Prägungen und Beziehungsmustern. TFP (Übertragungsfokussierte Therapie) nutzt die therapeutische Beziehung zur Veränderung. Alle können wirksam sein – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
           links: [{ text: "Therapieformen erklärt", url: "/unterstuetzen/therapie" }]
         },
         {
@@ -151,7 +151,7 @@ export default function FAQ() {
         },
         {
           question: "Wie gehe ich mit Eifersucht und Kontrolle um?",
-          answer: "Eifersucht bei Borderline wurzelt oft in Verlassensangst, nicht in Misstrauen. Verstehen Sie das, ohne es zu akzeptieren. Setzen Sie klare Grenzen: «Ich werde mein Handy nicht zeigen. Ich habe nichts zu verbergen, aber ich brauche Privatsphäre.» Geben Sie nicht nach, um Ruhe zu haben – das verstärkt das Muster. Gleichzeitig: Seien Sie transparent, wo es Ihnen möglich ist, ohne sich zu verbiegen. Ermutigen Sie Ihren Angehörigen, die Eifersucht in der Therapie zu bearbeiten."
+          answer: "Eifersucht bei Borderline wurzelt aus Angehörigensicht häufig in Verlassensangst, nicht nur in Misstrauen. Verstehen Sie das, ohne es zu akzeptieren. Setzen Sie klare Grenzen: «Ich werde mein Handy nicht zeigen. Ich habe nichts zu verbergen, aber ich brauche Privatsphäre.» Geben Sie nicht nach, um Ruhe zu haben – das verstärkt das Muster. Gleichzeitig: Seien Sie transparent, wo es Ihnen möglich ist, ohne sich zu verbiegen. Ermutigen Sie Ihren Angehörigen, die Eifersucht in der Therapie zu bearbeiten."
         },
         {
           question: "Kann ich noch ein normales Leben führen?",
@@ -160,7 +160,7 @@ export default function FAQ() {
         },
         {
           question: "Wann wird es besser?",
-          answer: "Das ist für viele Angehörige die schwierigste Frage. Die ehrliche Antwort lautet: Der Verlauf bleibt begrenzt vorhersehbar. Manche Betroffene zeigen nach Monaten deutliche Fortschritte, bei anderen dauert es deutlich länger. Was Sie beeinflussen können, sind Ihr eigenes Verhalten, Ihre Grenzen und Ihre Selbstfürsorge. Was Sie nicht steuern können, ist der Zeitpunkt oder das Tempo der Veränderung Ihres Angehörigen. Hilfreich ist meist, auf Entwicklungen über längere Zeit zu achten statt auf einzelne Tage oder Krisen."
+          answer: "Das ist für viele Angehörige die schwierigste Frage. Die ehrliche Antwort lautet: Der Verlauf bleibt begrenzt vorhersehbar. Manche Betroffene zeigen nach Monaten deutliche Fortschritte, bei anderen dauert es deutlich länger – und nicht alle Verläufe sind gleich. Was Sie beeinflussen können, sind Ihr eigenes Verhalten, Ihre Grenzen und Ihre Selbstfürsorge. Was Sie nicht steuern können, ist der Zeitpunkt oder das Tempo der Veränderung Ihres Angehörigen. Hilfreich ist meist, auf Entwicklungen über längere Zeit zu achten statt auf einzelne Tage oder Krisen."
         }
       ]
     }

@@ -105,7 +105,7 @@ export default function Verstehen() {
               preview="Für eine Diagnose müssen mindestens 5 von 9 Kriterien erfüllt sein."
             >
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Für eine Diagnose müssen mindestens <strong>5 von 9 Kriterien</strong> erfüllt sein. Die Liste kann helfen, typische Muster besser zu verstehen, ersetzt aber keine fachliche Abklärung. Entscheidend ist immer das Gesamtbild über längere Zeit und in verschiedenen Lebensbereichen.
+                Für eine Diagnose müssen mindestens <strong>5 von 9 Kriterien</strong> erfüllt sein. Die Liste kann helfen, häufige Muster besser zu verstehen, ersetzt aber keine fachliche Abklärung. Entscheidend ist immer das Gesamtbild über längere Zeit und in verschiedenen Lebensbereichen.
               </p>
               
               <div className="space-y-3">
@@ -300,7 +300,7 @@ export default function Verstehen() {
                       Amygdala – Das Alarmzentrum
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                      Die Amygdala ist bei Borderline <strong>überaktiv</strong>. Sie reagiert stärker und schneller auf emotionale Reize – besonders auf Gesichtsausdrücke, die als bedrohlich interpretiert werden könnten.
+                      Die Amygdala kann bei Borderline <strong>überaktiv</strong> sein. Sie reagiert stärker und schneller auf emotionale Reize – besonders auf Gesichtsausdrücke, die als bedrohlich interpretiert werden könnten.
                     </p>
                     <div className="bg-terracotta-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
@@ -317,7 +317,7 @@ export default function Verstehen() {
                       Hippocampus – Das Gedächtniszentrum
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                      Der Hippocampus ist bei vielen Betroffenen <strong>verkleinert</strong>. Er ist zuständig für Gedächtnis und das Einordnen von Erfahrungen in einen Kontext.
+                      Der Hippocampus kann bei manchen Betroffenen <strong>verkleinert</strong> sein. Er ist zuständig für Gedächtnis und das Einordnen von Erfahrungen in einen Kontext.
                     </p>
                     <div className="bg-sage-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
@@ -334,7 +334,7 @@ export default function Verstehen() {
                       Präfrontaler Kortex – Die Kontrollinstanz
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                      Der präfrontale Kortex ist für rationales Denken, Impulskontrolle und <Link to="/glossar?q=Emotionale+Dysregulation" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Emotionsregulation</Link> zuständig. Bei Borderline ist die <strong>Verbindung zur Amygdala geschwächt</strong>.
+                      Der präfrontale Kortex ist für rationales Denken, Impulskontrolle und <Link to="/glossar?q=Emotionale+Dysregulation" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">Emotionsregulation</Link> zuständig. Bei Borderline kann die <strong>Verbindung zur Amygdala geschwächt</strong> sein.
                     </p>
                     <div className="bg-slate-wash rounded-lg p-3">
                       <p className="text-xs text-foreground">
@@ -427,7 +427,7 @@ export default function Verstehen() {
             >
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Viele Angehörige berichten von einem wiederkehrenden Muster. Dieses Muster zu kennen, hilft Ihnen, nicht jede Phase persönlich zu nehmen – und sich auf die nächste vorzubereiten.
+                  Viele Angehörige berichten von einem wiederkehrenden Muster. Aus Angehörigenperspektive kann es hilfreich sein, dieses Muster zu kennen, um nicht jede Phase persönlich zu nehmen – und sich auf die nächste vorzubereiten.
                 </p>
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -453,7 +453,7 @@ export default function Verstehen() {
                 <Card className="mt-6 border-l-4 border-l-sage-mid bg-sage-wash/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Wichtig:</strong> Dieser Zyklus ist kein Schicksal. Mit Therapie und Unterstützung können die Phasen weniger intensiv werden und die stabilen Zeiten länger dauern.
+                      <strong>Wichtig:</strong> Dieser Zyklus ist kein Schicksal und zeigt sich nicht bei allen Betroffenen gleich. Mit Therapie und Unterstützung können die Phasen häufig weniger intensiv werden und die stabilen Zeiten länger dauern.
                     </p>
                   </CardContent>
                 </Card>
@@ -473,7 +473,7 @@ export default function Verstehen() {
             >
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Wenn Sie verstehen, dass das Verhalten Ihres Angehörigen nicht gegen Sie gerichtet ist, sondern Ausdruck einer Erkrankung, können Sie anders reagieren. Sie können:
+                  Wenn Sie verstehen, dass das Verhalten Ihres Angehörigen aus Angehörigensicht oft nicht gegen Sie gerichtet wirkt, sondern häufig Ausdruck innerer Not und einer Erkrankung ist, können Sie anders reagieren. Sie können:
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-4">

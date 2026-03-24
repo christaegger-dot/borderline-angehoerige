@@ -33,7 +33,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
-      <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="container">
         <div className="flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20">
           <Link href="/" className="flex items-center gap-2 group shrink-0">
             <img

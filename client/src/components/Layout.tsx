@@ -40,7 +40,7 @@ export default function Layout({ children }: LayoutProps) {
       <HeaderNav onSearchOpen={() => setSearchOpen(true)} />
 
       <div className="border-b border-border/40 bg-sage-wash/40">
-        <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 py-1.5 text-xs text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-1">
+        <div className="container py-1.5 text-xs text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-1">
           <span className="font-medium text-foreground">Notfallkontakte: Schweiz (Kanton Zürich)</span>
           <span className="hidden sm:inline">•</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>

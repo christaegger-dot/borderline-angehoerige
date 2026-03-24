@@ -484,7 +484,10 @@ export default function Materialien() {
                       className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
                       onClick={() => {
                         if (item.isHtml) {
-                          window.open(item.url, '_blank');
+                          const newWindow = window.open(item.url, '_blank', 'noopener,noreferrer');
+                          if (newWindow) {
+                            newWindow.opener = null;
+                          }
                         } else {
                           setPreviewImage(item.url); setPreviewTitle(item.title);
                         }

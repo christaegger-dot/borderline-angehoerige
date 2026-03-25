@@ -30,7 +30,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Skills",
     category: "therapie",
-    definition: "Skills sind konkrete Fertigkeiten und Techniken, die in der DBT erlernt werden. Sie helfen Betroffenen, mit intensiven Emotionen, Krisen und zwischenmenschlichen Herausforderungen umzugehen, ohne auf selbstschädigende Verhaltensweisen zurückzugreifen.",
+    definition: "Skills sind konkrete Fertigkeiten, die in der DBT erlernt werden. Sie sollen helfen, mit intensiven Emotionen, Krisen und zwischenmenschlichen Spannungen anders umzugehen, ohne sofort auf selbstschädigende oder eskalierende Muster zurückzugreifen.",
     example: "Ein Skill bei starker Anspannung kann sein, die Hände in eiskaltes Wasser zu tauchen – der intensive Reiz lenkt vom emotionalen Schmerz ab.",
     relatedPage: "/unterstuetzen/alltag",
     relatedPageTitle: "Im Alltag unterstützen"
@@ -60,7 +60,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Validierung",
     category: "kommunikation",
-    definition: "Validierung bedeutet, die Gefühle und Erfahrungen einer Person als verständlich und nachvollziehbar anzuerkennen – auch wenn man das Verhalten nicht gutheisst. Es ist das Gegenteil von Invalidierung ('Stell dich nicht so an'). Validierung ist eine der wichtigsten Kommunikationstechniken für Angehörige.",
+    definition: "Validierung bedeutet, die Gefühle und Erfahrungen einer Person als verständlich und nachvollziehbar anzuerkennen, auch wenn man das Verhalten nicht gutheisst. Für Angehörige ist sie oft ein hilfreicher Ausgangspunkt, weil sie Druck aus Gesprächen nehmen kann, ohne alles zu bestätigen.",
     example: "'Ich verstehe, dass du dich verletzt fühlst, wenn ich später nach Hause komme als angekündigt. Das macht Sinn, weil du dir Sorgen machst.'",
     relatedPage: "/kommunizieren",
     relatedPageTitle: "Kommunizieren"
@@ -68,7 +68,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "SET-Kommunikation",
     category: "kommunikation",
-    definition: "SET steht für Support (Unterstützung), Empathy (Empathie) und Truth (Wahrheit/Realität). Es ist eine Kommunikationstechnik aus dem Buch 'Schluss mit dem Eiertanz', die hilft, in schwierigen Gesprächen alle drei Elemente zu balancieren.",
+    definition: "SET steht für Support (Unterstützung), Empathy (Empathie) und Truth (Wahrheit/Realität). Gemeint ist ein Gesprächsrahmen aus der Angehörigenliteratur, der helfen soll, Zugewandtheit, Mitgefühl und Klarheit zusammenzuhalten.",
     example: "Support: 'Ich bin für dich da.' Empathy: 'Ich sehe, wie sehr dich das belastet.' Truth: 'Gleichzeitig können wir nicht jede Nacht bis 3 Uhr diskutieren.'",
     relatedPage: "/kommunizieren",
     relatedPageTitle: "Kommunizieren"
@@ -76,7 +76,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "DEARMAN",
     category: "kommunikation",
-    definition: "Eine DBT-Technik für effektive Kommunikation: Describe (beschreiben), Express (ausdrücken), Assert (behaupten), Reinforce (verstärken), Mindful (achtsam), Appear confident (selbstsicher auftreten), Negotiate (verhandeln).",
+    definition: "DEARMAN ist eine DBT-Struktur für klare Bitten und Grenzen: Describe (beschreiben), Express (ausdrücken), Assert (klar benennen), Reinforce (verstärken), Mindful (achtsam bleiben), Appear confident (klar auftreten), Negotiate (verhandeln).",
     example: "Statt 'Du hörst mir nie zu!' → 'Wenn ich spreche und du aufs Handy schaust (D), fühle ich mich unwichtig (E). Ich wünsche mir, dass du das Handy weglegst (A).'",
     relatedPage: "/kommunizieren",
     relatedPageTitle: "Kommunizieren"
@@ -148,7 +148,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Co-Abhängigkeit",
     category: "selbsthilfe",
-    definition: "Ein Muster, bei dem das eigene Wohlbefinden vollständig vom Zustand des anderen abhängt. Angehörige vernachlässigen eigene Bedürfnisse und versuchen, den anderen zu 'retten' – oft mit gegenteiligem Effekt.",
+    definition: "Ein Beziehungsmuster, bei dem das eigene Wohlbefinden übermässig vom Zustand des anderen abhängt. Angehörige vernachlässigen dabei oft eigene Bedürfnisse und versuchen, die Lage des anderen ständig mitzutragen oder zu kontrollieren.",
     example: "Warnsignale: 'Ich kann nur glücklich sein, wenn es ihr gut geht', 'Ich habe keine eigenen Freunde mehr', 'Ich sage nie Nein'.",
     relatedPage: "/selbstfuersorge",
     relatedPageTitle: "Selbstfürsorge"
@@ -156,7 +156,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: "Enabling",
     category: "selbsthilfe",
-    definition: "Verhaltensweisen von Angehörigen, die unbeabsichtigt problematisches Verhalten ermöglichen oder verstärken – oft aus dem Wunsch zu helfen. Das Gegenteil von Enabling ist nicht Härte, sondern natürliche Konsequenzen zuzulassen.",
+    definition: "Verhaltensweisen von Angehörigen, die problematische Muster unbeabsichtigt mittragen oder verstärken, oft aus dem Wunsch zu helfen. Das Gegenstück ist nicht Härte, sondern klarere Grenzen und das Zulassen natürlicher Konsequenzen.",
     example: "Immer wieder Geld leihen, obwohl es nie zurückkommt; Ausreden für verpasste Termine erfinden; alle Konflikte vermeiden.",
     relatedPage: "/grenzen",
     relatedPageTitle: "Grenzen setzen"
@@ -274,9 +274,10 @@ export default function Glossar() {
                   onClick={() => setSelectedCategory(selectedCategory === key ? null : key)}
                   aria-label={info.label}
                   aria-pressed={selectedCategory === key}
+                  style={selectedCategory === key ? { backgroundColor: info.color } : undefined}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
                     selectedCategory === key
-                      ? `bg-[${info.color}] text-white`
+                      ? "text-white"
                       : 'bg-muted/50 text-muted-foreground hover:bg-muted'
                   }`}
                 >

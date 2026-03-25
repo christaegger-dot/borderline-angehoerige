@@ -275,6 +275,8 @@ function MaterialCard({
   const previewSrc = item.isHtml ? item.previewUrl ?? item.url : item.url;
   const openHref = item.downloadUrl ?? item.url;
   const downloadHref = item.pdfUrl ?? item.downloadUrl;
+  const isCrossOriginDownload =
+    !!downloadHref && /^https?:\/\//i.test(downloadHref) && !downloadHref.startsWith(window.location.origin);
 
   return (
     <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
@@ -319,7 +321,7 @@ function MaterialCard({
           {downloadHref ? (
             <a
               href={downloadHref}
-              download
+              download={isCrossOriginDownload ? undefined : ""}
               className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
             >
               <Download className="w-4 h-4" />
@@ -352,6 +354,12 @@ export default function Materialien() {
           ),
     [activeCategory],
   );
+
+  const scrollToResults = () => {
+    setTimeout(() => {
+      gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  };
 
   return (
     <Layout>
@@ -401,9 +409,7 @@ export default function Materialien() {
                   type="button"
                   onClick={() => {
                     setActiveCategory(item.id);
-                    setTimeout(() => {
-                      gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }, 50);
+                    scrollToResults();
                   }}
                   className="text-left rounded-xl border p-5 transition-all hover:shadow-md"
                   style={{ borderColor: item.color, backgroundColor: item.bg }}
@@ -531,13 +537,34 @@ export default function Materialien() {
                   dominiert oder wenn Grenzen und Distanz zum Thema werden.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Button variant="outline" size="sm" onClick={() => setActiveCategory("verstehen")}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      setActiveCategory("verstehen");
+                      scrollToResults();
+                    }}
+                  >
                     Kinder & Familie
                   </Button>
-                  <Button variant="outline" size="sm" onClick={() => setActiveCategory("selbstfuersorge")}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      setActiveCategory("selbstfuersorge");
+                      scrollToResults();
+                    }}
+                  >
                     Schuld & Erschöpfung
                   </Button>
-                  <Button variant="outline" size="sm" onClick={() => setActiveCategory("grenzen")}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      setActiveCategory("grenzen");
+                      scrollToResults();
+                    }}
+                  >
                     Grenzen & Selbstschutz
                   </Button>
                 </div>

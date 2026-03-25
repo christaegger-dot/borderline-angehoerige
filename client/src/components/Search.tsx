@@ -13,7 +13,7 @@ const searchableContent = [
   // Verstehen
   {
     title: "Was ist Borderline?",
-    description: "Borderline-Persönlichkeitsstörung verstehen – Symptome, Ursachen und Auswirkungen",
+    description: "Borderline aus Sicht von Angehörigen verstehen: Beziehungsmuster, Überflutung und Belastungsdynamik",
     keywords: ["borderline", "bps", "persönlichkeitsstörung", "diagnose", "symptome", "emotionale instabilität", "verlassensangst", "impulsivität", "selbstbild"],
     href: "/verstehen",
     section: "Verstehen"
@@ -43,21 +43,21 @@ const searchableContent = [
   // Unterstützen
   {
     title: "Wie kann ich helfen?",
-    description: "Die Grundlagen: Ihre Rolle verstehen und die Balance zwischen Unterstützen und Selbstschutz finden",
+    description: "Die eigene Rolle klären und Unterstützung tragfähig mit Selbstschutz verbinden",
     keywords: ["helfen", "unterstützen", "rolle", "balance", "begleiten"],
-    href: "/unterstuetzen/alltag",
+    href: "/unterstuetzen/uebersicht",
     section: "Unterstützen"
   },
   {
     title: "Im Alltag unterstützen",
-    description: "Stabilität bieten, emotionale Verfügbarkeit zeigen und gemeinsame Aktivitäten gestalten",
+    description: "Im Alltag Orientierung, Verlässlichkeit und begrenzte Verfügbarkeit gestalten",
     keywords: ["alltag", "stabilität", "routine", "aktivitäten", "präsenz", "verfügbarkeit"],
     href: "/unterstuetzen/alltag",
     section: "Unterstützen"
   },
   {
     title: "Therapie begleiten",
-    description: "DBT-Skills verstehen, Fortschritte würdigen und mit Rückschlägen umgehen",
+    description: "Therapie realistisch begleiten und mit Rückschlägen oder Überforderung umgehen",
     keywords: ["therapie", "dbt", "dialektisch-behaviorale therapie", "skills", "fortschritte", "rückschläge", "behandlung"],
     href: "/unterstuetzen/therapie",
     section: "Unterstützen"
@@ -73,21 +73,21 @@ const searchableContent = [
   // Kommunizieren
   {
     title: "Validierung",
-    description: "Die wichtigste Kommunikationstechnik – Gefühle anerkennen ohne zuzustimmen",
+    description: "Gefühle und Erleben ernst nehmen, ohne jedem Vorwurf oder Verhalten zuzustimmen",
     keywords: ["validierung", "validieren", "anerkennen", "gefühle", "zuhören", "verstehen"],
     href: "/kommunizieren",
     section: "Kommunizieren"
   },
   {
     title: "Die 6 Stufen der Validierung",
-    description: "Von aufmerksam sein bis auf Augenhöhe bleiben – konkrete Techniken nach Linehan",
+    description: "Von aufmerksamem Zuhören bis zu echter Augenhöhe: eine hilfreiche Orientierung für Gespräche",
     keywords: ["stufen", "validierung", "aufmerksam", "spiegeln", "augenhöhe", "linehan"],
     href: "/kommunizieren",
     section: "Kommunizieren"
   },
   {
     title: "SET-Kommunikation",
-    description: "Support, Empathy, Truth – ein Rahmen für schwierige Gespräche",
+    description: "Ein bekannter Gesprächsrahmen aus der Angehörigenliteratur für schwierige Situationen",
     keywords: ["set", "support", "empathy", "truth", "kommunikation", "gespräch", "technik"],
     href: "/kommunizieren",
     section: "Kommunizieren"
@@ -117,7 +117,7 @@ const searchableContent = [
   },
   {
     title: "Grenzen kommunizieren",
-    description: "Wie Sie Grenzen liebevoll aber klar formulieren",
+    description: "Wie Sie Grenzen klar, ruhig und ohne unnötige Eskalation formulieren",
     keywords: ["kommunizieren", "formulieren", "aussprechen", "grenzen", "klar"],
     href: "/grenzen",
     section: "Grenzen setzen"
@@ -237,28 +237,28 @@ const searchableContent = [
   },
   {
     title: "U.M.W.E.G.© – Das Gesamtsystem",
-    description: "Infografik: Meta-Ebene (E.G.) + Akut-Ebene (U.M.W.) – das vollständige System",
+    description: "Ältere Infografik zur Gesprächsorientierung in akuten Krisensituationen",
     keywords: ["umweg", "krise", "kommunikation", "empathie", "geduld", "system", "infografik"],
     href: "/materialien",
     section: "Materialien"
   },
   {
     title: "Die U.M.W.-Formel: So sprechen Sie in der Krise",
-    description: "Infografik: Schritt-für-Schritt mit Gehirn-Mapping (Amygdala, Hippocampus, Präfrontaler Cortex)",
+    description: "Ältere Infografik mit Schritt-für-Schritt-Orientierung für akute Krisengespräche",
     keywords: ["umweg", "formel", "amygdala", "hippocampus", "cortex", "gehirn", "infografik"],
     href: "/materialien",
     section: "Materialien"
   },
   {
     title: "U.M.W.E.G.© Praxis + Exit-Strategie",
-    description: "Infografik: Beispiel-Dialog und ein klarer Umgang mit Grenzen und Konsequenzen",
+    description: "Ältere Infografik mit Gesprächsbeispiel sowie Orientierung zu Grenzen und Konsequenzen",
     keywords: ["umweg", "praxis", "exit", "lmk", "konsequenzen", "dialog", "infografik"],
     href: "/materialien",
     section: "Materialien"
   },
   {
     title: "Die U.M.W.-Formel in der Praxis",
-    description: "Infografik: Beispielhafte Formulierungen für akute Krisensituationen",
+    description: "Ältere Infografik mit möglichen Formulierungen für akute Krisensituationen",
     keywords: ["umweg", "formel", "praxis", "krise", "team", "dein", "dir", "wir", "infografik"],
     href: "/materialien",
     section: "Materialien"
@@ -343,7 +343,7 @@ const searchableContent = [
   // Glossar
   {
     title: "Glossar – Fachbegriffe erklärt",
-    description: "DBT, Validierung, SET-Kommunikation und weitere Begriffe verständlich erklärt",
+    description: "Fachbegriffe rund um Borderline für Angehörige verständlich und knapp erklärt",
     keywords: ["glossar", "fachbegriffe", "lexikon", "erklärung", "definition", "begriffe"],
     href: "/glossar",
     section: "Glossar"
@@ -385,7 +385,7 @@ const searchableContent = [
   },
   {
     title: "DEARMAN",
-    description: "DBT-Technik für effektive Kommunikation",
+    description: "DBT-Struktur für klare Bitten und Grenzen in schwierigen Gesprächen",
     keywords: ["dearman", "kommunikation", "dbt", "technik", "glossar"],
     href: "/glossar",
     section: "Glossar"
@@ -461,7 +461,7 @@ const searchableContent = [
   // FAQ
   {
     title: "Häufig gestellte Fragen (FAQ)",
-    description: "20 Fragen, die Angehörige am häufigsten stellen – mit Antworten",
+    description: "Häufige Fragen von Angehörigen mit ruhigen und differenzierten Antworten",
     keywords: ["faq", "fragen", "antworten", "häufig", "gestellt"],
     href: "/faq",
     section: "FAQ"
@@ -528,8 +528,8 @@ const searchableContent = [
     title: "DEAR-Formulierungen",
     description: "Orientierung für klare und respektvolle Formulierungen in schwierigen Gesprächen",
     keywords: ["dear", "dearman", "satzbaukasten", "kommunikation", "formulierung", "übung"],
-    href: "/kommunizieren",
-    section: "Kommunizieren"
+    href: "/grenzen",
+    section: "Grenzen setzen"
   },
   {
     title: "Mythen und Einordnungen",

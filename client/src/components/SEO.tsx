@@ -37,8 +37,10 @@ export default function SEO({ title, description, path = "/", type = "website" }
     updateMeta("og:type", type, true);
     updateMeta("og:url", `https://borderline-angehoerige.netlify.app${path}`, true);
     updateMeta("og:image", OG_IMAGE, true);
+    updateMeta("twitter:card", "summary_large_image");
     updateMeta("twitter:title", fullTitle);
     updateMeta("twitter:description", metaDescription);
+    updateMeta("twitter:image", OG_IMAGE);
 
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;

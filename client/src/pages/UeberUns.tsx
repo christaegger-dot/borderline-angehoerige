@@ -55,11 +55,13 @@ export default function UeberUns() {
                 </p>
                 
                 <p className="leading-relaxed mb-4">
-                  Der Begriff «Eiertanz» aus dem Standardwerk von Paul T. Mason und Randi Kreger wird hier als Angehörigenmetapher verwendet: Er beschreibt das ständige Auf-der-Hut-Sein und die Angst vor dem nächsten Konflikt. Gleichzeitig ist wichtig: Solche Dynamiken sind nicht bei allen Betroffenen gleich und stehen häufig mit innerer Not in Zusammenhang.
+                  Der Begriff «Eiertanz» aus dem Standardwerk von Paul T. Mason und Randi Kreger beschreibt dieses Gefühl treffend: das ständige Auf-der-Hut-Sein, die Angst vor dem nächsten Ausbruch, das Gefühl, auf Eierschalen zu laufen.
                 </p>
                 
                 <p className="leading-relaxed">
-                  Diese Website möchte Angehörigen evidenzbasierte Werkzeuge an die Hand geben – nicht um die Erkrankung zu «heilen», sondern um den Alltag besser zu bewältigen, die Beziehung zu stärken und dabei auf sich selbst zu achten. Viele belastende Muster sind behandelbar und können sich mit der Zeit verändern.
+                  Diese Website möchte Angehörigen fachlich fundierte Orientierung geben – nicht
+                  um eine Erkrankung von aussen zu «lösen», sondern um Dynamiken besser
+                  einzuordnen, tragfähiger zu reagieren und sich selbst nicht zu verlieren.
                 </p>
               </div>
             </ContentSection>
@@ -76,7 +78,7 @@ export default function UeberUns() {
                   {
                     icon: BookOpen,
                     title: "Evidenzbasiert",
-                    description: "Alle Inhalte basieren auf wissenschaftlicher Forschung und bewährten Therapieansätzen wie DBT (Dialektisch-Behaviorale Therapie). Auf Seiten mit Kennzahlen verlinken wir die zentralen Quellen direkt."
+                    description: "Alle Inhalte basieren auf wissenschaftlicher Forschung und bewährten Therapieansätzen wie DBT (Dialektisch-Behaviorale Therapie). Wir nennen unsere Quellen."
                   },
                   {
                     icon: Heart,
@@ -91,7 +93,7 @@ export default function UeberUns() {
                   {
                     icon: Users,
                     title: "Praxisnah",
-                    description: "Theorie allein hilft nicht. Wir bieten konkrete Techniken, Beispieldialoge und Handouts, die im Alltag direkt anwendbar sind."
+                    description: "Theorie allein hilft selten. Deshalb verbinden wir Hintergrundwissen mit Orientierung für reale Gesprächs-, Krisen- und Belastungssituationen."
                   }
                 ].map((item, index) => {
                   const Icon = item.icon;
@@ -135,7 +137,7 @@ export default function UeberUns() {
                   {
                     title: "Stop Walking on Eggshells",
                     author: "Paul T. Mason & Randi Kreger",
-                    description: "Ein bekanntes Angehörigenbuch, das die Perspektive von Familien in belastenden Situationen beschreibt."
+                    description: "Das Standardwerk für Angehörige, Grundlage für den Namen dieser Website."
                   },
                   {
                     title: "Ich hasse dich – verlass mich nicht",
@@ -201,10 +203,12 @@ export default function UeberUns() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">Einordnung</h3>
                   <p className="text-sm text-foreground leading-relaxed mb-2">
-                    Erstellt von Ch. Egger, Fachstelle Angehörigenarbeit (PUK Zürich). Inhaltliche Verantwortung: Fachstelle Angehörigenarbeit. Gestaltung folgt einem eigenständigen Informationsdesign (nicht PUK-CI).
+                    Erstellt von Ch. Egger innerhalb der Fachstelle Angehörigenarbeit. Die
+                    inhaltliche Verantwortung liegt bei der Fachstelle Angehörigenarbeit.
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Unabhängiges Informationsangebot der Fachstelle Angehörigenarbeit. Nicht offizieller Kommunikationskanal der PUK Zürich.
+                    Eigenständig gestaltetes Informationsangebot der Fachstelle Angehörigenarbeit.
+                    Kein offizieller Kommunikationskanal der PUK Zürich.
                   </p>
                 </CardContent>
               </Card>

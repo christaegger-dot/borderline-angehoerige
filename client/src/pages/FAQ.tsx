@@ -3,7 +3,7 @@ import { FAQSchema } from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { HelpCircle, MessageCircle, Shield, Heart, Users, Clock, AlertTriangle, Lightbulb, ChevronRight } from "lucide-react";
+import { HelpCircle, MessageCircle, Shield, Heart, Users, Lightbulb, ChevronRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -51,7 +51,7 @@ export default function FAQ() {
         },
         {
           question: "Ist Borderline heilbar?",
-          answer: "Ja, die Prognose ist deutlich besser als früher angenommen. Langzeitstudien zeigen, dass 85–93% der Betroffenen nach 10 Jahren eine symptomatische Remission erreichen – das heisst, sie erfüllen nicht mehr die diagnostischen Kriterien. Etwa 50% erreichen eine vollständige Genesung (Remission plus gute soziale und berufliche Funktionsfähigkeit). Die Symptome werden mit zunehmendem Alter oft milder, besonders die Impulsivität. Therapie beschleunigt diesen Prozess erheblich.",
+          answer: "Die Prognose ist deutlich besser, als lange angenommen wurde. Langzeitstudien zeigen, dass 85–93% der Betroffenen nach 10 Jahren eine symptomatische Remission erreichen – das heisst, sie erfüllen die diagnostischen Kriterien nicht mehr. Etwa 50% erreichen eine weitergehende Genesung mit stabilerer sozialer und beruflicher Funktionsfähigkeit. Gleichzeitig verläuft Entwicklung selten geradlinig: Fortschritte, Rückschläge und belastende Phasen können sich abwechseln. Therapie kann diesen Prozess deutlich unterstützen, aber nicht vollständig planbar machen.",
           links: [{ text: "Zur Genesung-Seite", url: "/genesung" }]
         },
         {
@@ -110,7 +110,7 @@ export default function FAQ() {
         },
         {
           question: "Bin ich co-abhängig?",
-          answer: "Co-Abhängigkeit bedeutet, dass Ihr eigenes Wohlbefinden übermässig vom Zustand des anderen abhängt und Sie Ihre eigenen Bedürfnisse vernachlässigen, um den anderen zu «retten». Warnsignale: Sie entschuldigen ständig das Verhalten Ihres Angehörigen, Sie haben Ihr soziales Leben aufgegeben, Sie fühlen sich verantwortlich für seine Gefühle, Sie können nicht «Nein» sagen ohne Schuldgefühle. Wenn Sie sich wiedererkennen: Das ist kein Charakterfehler, sondern ein erlerntes Muster. Eigene Therapie oder eine Gruppe für Angehörige kann helfen, gesündere Grenzen zu entwickeln.",
+          answer: "Der Begriff «Co-Abhängigkeit» wird unterschiedlich verwendet und kann schnell moralisierend klingen. Gemeint ist meist, dass sich Ihr eigenes Leben immer stärker um den Zustand des anderen dreht und Ihre eigenen Grenzen, Bedürfnisse und Beziehungen zurücktreten. Warnsignale können sein: Sie entschuldigen laufend destruktives Verhalten, geben Ihr soziales Leben auf, fühlen sich für die Gefühle des anderen zuständig oder können kaum «Nein» sagen, ohne massive Schuld zu erleben. Wenn Sie sich darin wiedererkennen, spricht das nicht gegen Ihren Charakter, sondern für ein belastendes Beziehungsmuster. Beratung, eigene Therapie oder eine Angehörigengruppe können helfen, wieder klarer zu werden.",
           links: [{ text: "Selbstfürsorge", url: "/selbstfuersorge" }, { text: "Glossar: Co-Abhängigkeit", url: "/glossar" }]
         }
       ]
@@ -190,7 +190,7 @@ export default function FAQ() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Antworten auf die Fragen, die Angehörige am häufigsten stellen – ehrlich, praktisch und evidenzbasiert.
+              Antworten auf häufige Fragen von Angehörigen. Die FAQ sollen Orientierung geben, ohne schwierige Situationen zu stark zu vereinfachen oder eine individuelle Einschätzung zu ersetzen.
             </p>
           </motion.div>
         </div>
@@ -200,6 +200,16 @@ export default function FAQ() {
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            <Card className="mb-8 border-border/60 bg-muted/20">
+              <CardContent className="p-5">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Manche Fragen lassen sich nicht allgemein beantworten, weil Sicherheit, Kinder,
+                  Gewalt, Trennung oder akute Suizidalität eine eigene Einschätzung brauchen. Nutzen
+                  Sie diese Seite als Orientierung und holen Sie bei Bedarf zusätzliche Beratung dazu.
+                </p>
+              </CardContent>
+            </Card>
+
             <nav
               aria-label="Sprungnavigation zu den FAQ-Kategorien"
               className="mb-8 rounded-xl border border-border/60 bg-muted/20 p-4"
@@ -308,7 +318,7 @@ export default function FAQ() {
                     Nutzen Sie die Suchfunktion oder kontaktieren Sie die Fachstelle Angehörigenarbeit der PUK Zürich für individuelle Beratung.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Link href="/impressum">
+                    <Link href="/fachstelle">
                       <span className="inline-flex items-center gap-2 text-sm font-medium text-sage-mid hover:underline">
                         Zur Beratung
                         <ChevronRight className="w-4 h-4" />

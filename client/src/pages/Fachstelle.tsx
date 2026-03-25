@@ -4,13 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Building2, Mail, MapPin, Users, BookOpen, Phone, ArrowRight, Info, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { kontaktById, emailById, urlById, adresseById } from "@/data/kontakte";
+import { kontaktById, emailById, urlById } from "@/data/kontakte";
 
 const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
 const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
 const pukUrl = urlById("URL_PUK")!;
-const pukAdresse = adresseById("ADRESSE_PUK")!;
 
 export default function Fachstelle() {
   return (
@@ -41,7 +39,9 @@ export default function Fachstelle() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Ein Angebot der Psychiatrischen Universitätsklinik Zürich (PUK) für Angehörige von Menschen mit psychischen Erkrankungen.
+              Ein Angebot der Psychiatrischen Universitätsklinik Zürich für Angehörige von Menschen
+              mit psychischen Erkrankungen. Die Fachstelle bietet Orientierung, Entlastung und
+              Beratung für Situationen, die im Alltag oft schwer alleine zu tragen sind.
             </p>
           </motion.div>
         </div>
@@ -64,27 +64,33 @@ export default function Fachstelle() {
                 Unser Angebot
               </h2>
 
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Die Fachstelle ist kein Krisendienst und keine Therapie. Sie ist eine Anlaufstelle
+                für Angehörige, die ihre Rolle klären, Belastung einordnen und passende nächste
+                Schritte finden möchten.
+              </p>
+
               <div className="grid gap-4">
                 {[
                   {
                     icon: Users,
                     title: "Beratung für Angehörige",
-                    description: "Individuelle Beratungsgespräche für Angehörige von psychisch erkrankten Menschen – vertraulich und kostenlos. Terminvereinbarung telefonisch oder per E-Mail."
+                    description: "Vertrauliche und kostenlose Gespräche für Angehörige, die Orientierung, Entlastung oder Klärung in einer belastenden Situation suchen."
                   },
                   {
                     icon: BookOpen,
                     title: "Psychoedukation & Materialien",
-                    description: "Evidenzbasierte Informationsmaterialien, Handouts und Infografiken zu Borderline und anderen Erkrankungen."
+                    description: "Fachlich fundierte Informationen, Handouts und Materialien, die helfen können, Dynamiken besser einzuordnen und Gespräche vorzubereiten."
                   },
                   {
                     icon: Phone,
                     title: "Orientierung & Vermittlung",
-                    description: "Unterstützung bei der Suche nach passenden Anlaufstellen, Therapieangeboten und Selbsthilfegruppen."
+                    description: "Unterstützung bei der Suche nach passenden Hilfen, Selbsthilfeangeboten und weiteren Anlaufstellen."
                   },
                   {
                     icon: Building2,
                     title: "Schulungen & Weiterbildung",
-                    description: "Fachliche Weiterbildungen für Mitarbeitende im Gesundheitswesen zum Thema Angehörigenarbeit."
+                    description: "Fachliche Weiterbildung und Sensibilisierung zum Thema Angehörigenarbeit im psychosozialen Kontext."
                   }
                 ].map((item, index) => {
                   const Icon = item.icon;
@@ -214,10 +220,13 @@ export default function Fachstelle() {
                     </div>
                     <div>
                       <p className="text-foreground leading-relaxed mb-3">
-                        Erstellt von Ch. Egger, Fachstelle Angehörigenarbeit (PUK Zürich). Inhaltliche Verantwortung: Fachstelle Angehörigenarbeit. Gestaltung folgt einem eigenständigen Informationsdesign (nicht PUK-CI).
+                        Diese Website wurde von Ch. Egger innerhalb der Fachstelle Angehörigenarbeit
+                        aufgebaut. Die inhaltliche Verantwortung liegt bei der Fachstelle
+                        Angehörigenarbeit.
                       </p>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Unabhängiges Informationsangebot der Fachstelle Angehörigenarbeit. Nicht offizieller Kommunikationskanal der PUK Zürich.
+                        Es handelt sich um ein eigenständig gestaltetes Informationsangebot der
+                        Fachstelle und nicht um einen offiziellen Kommunikationskanal der PUK Zürich.
                       </p>
                     </div>
                   </div>

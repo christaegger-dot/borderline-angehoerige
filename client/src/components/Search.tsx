@@ -320,7 +320,7 @@ const searchableContent = [
   // Spezifische Begriffe
   {
     title: "DBT (Dialektisch-Behaviorale Therapie)",
-    description: "Die wichtigste evidenzbasierte Therapie für Borderline",
+    description: "Ein zentraler und gut erforschter Therapieansatz bei Borderline",
     keywords: ["dbt", "dialektisch", "behavioral", "therapie", "linehan", "skills"],
     href: "/unterstuetzen/therapie",
     section: "Unterstützen"

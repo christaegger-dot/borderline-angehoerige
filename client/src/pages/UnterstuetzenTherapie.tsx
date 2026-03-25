@@ -4,9 +4,27 @@ import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Stethoscope, ArrowRight, CheckCircle2, Brain, Heart, RefreshCw, Lightbulb, Download, MapPin, ExternalLink, Home, Calendar, Building2, Baby, User, Phone, Mail } from "lucide-react";
+import {
+  ArrowRight,
+  Brain,
+  Building2,
+  Calendar,
+  CheckCircle2,
+  Download,
+  ExternalLink,
+  Heart,
+  Home,
+  Lightbulb,
+  Mail,
+  MapPin,
+  Phone,
+  RefreshCw,
+  Stethoscope,
+  User,
+  Users,
+} from "lucide-react";
 import { Link } from "wouter";
-import { kontaktById, emailById, urlById, GELB } from "@/data/kontakte";
+import { GELB, kontaktById, emailById, urlById } from "@/data/kontakte";
 
 const hype = kontaktById("INFO_PUK_KJPP_HYPE")!;
 const emailKjpp = emailById("EMAIL_KJPP")!;
@@ -18,8 +36,12 @@ const dbtDachUrl = urlById("URL_DBT_DACH")!;
 export default function UnterstuetzenTherapie() {
   return (
     <Layout>
-      <SEO title="Therapie unterstützen" description="Wie Sie die Therapie eines Menschen mit Borderline sinnvoll begleiten können." path="/unterstuetzen/therapie" />
-      {/* Hero */}
+      <SEO
+        title="Therapie unterstützen"
+        description="Wie Angehörige Behandlung unterstützen können, ohne mitzubehandeln oder die Verantwortung zu übernehmen."
+        path="/unterstuetzen/therapie"
+      />
+
       <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background wave-divider">
         <div className="container">
           <motion.div
@@ -28,297 +50,187 @@ export default function UnterstuetzenTherapie() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <Link href="/unterstuetzen/uebersicht" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
+            <Link
+              href="/unterstuetzen/uebersicht"
+              className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
+            >
               ← Zurück zur Übersicht
             </Link>
-            
+
             <div className="flex items-center gap-3 mb-6 mt-4">
               <div className="w-12 h-12 rounded-xl bg-slate-light flex items-center justify-center">
                 <Stethoscope className="w-6 h-6 text-slate-blue" />
               </div>
               <span className="text-sm font-medium text-slate-blue">Lesezeit: 10 Minuten</span>
             </div>
-            
+
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Therapie begleiten
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Professionelle Therapie ist der wichtigste Baustein der Genesung. Sie können diesen Prozess unterstützen – ohne selbst zum Therapeuten zu werden.
+              Professionelle Therapie ist ein zentraler Baustein im Genesungsprozess. Angehörige
+              können diesen Weg unterstützen, aber nicht für den anderen übernehmen. Genau diese
+              Grenze macht Therapiebegleitung oft so anspruchsvoll.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Content */}
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-
-            {/* Wirksame Therapien */}
             <ContentSection
-              title="Wirksame Therapieformen"
+              title="Was Angehörige in der Therapie wirklich tun können"
+              icon={<Users className="w-7 h-7 text-slate-blue" />}
+              id="rolle"
+              defaultOpen={true}
+              preview="Hilfreiche Therapiebegleitung bedeutet meist: ermutigen, strukturieren, entlasten und realistisch bleiben, ohne selbst mitzubehandeln."
+            >
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Angehörige können ermutigen, Termine unterstützen, Veränderungen wahrnehmen und
+                  Rückschläge einordnen helfen. Sie können aber keine Therapie ersetzen, keine
+                  Motivation erzwingen und nicht stellvertretend regulieren, was in Behandlung
+                  bearbeitet werden muss.
+                </p>
+                <Card className="bg-slate-wash border-slate-mid/20">
+                  <CardContent className="p-5">
+                    <p className="text-foreground leading-relaxed">
+                      Eine hilfreiche innere Frage lautet oft nicht: Wie bringe ich die Therapie zum
+                      Funktionieren? Sondern: Wie kann ich den Rahmen mittragen, ohne selbst zur
+                      Behandlung zu werden?
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </ContentSection>
+
+            <ContentSection
+              title="Therapieformen knapp eingeordnet"
               icon={<Brain className="w-7 h-7 text-slate-blue" />}
               id="therapieformen"
-              defaultOpen={true}
-              preview="DBT, MBT und Schematherapie – die drei evidenzbasierten Therapien für Borderline im Überblick."
+              preview="DBT, MBT und Schematherapie sind wichtige evidenzbasierte Ansätze. Für Angehörige ist oft weniger die Theorie als die Passung im Alltag entscheidend."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Es gibt mehrere evidenzbasierte Therapien für Borderline. Die bekannteste und am besten erforschte ist die <Link to="/glossar?q=DBT" className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors">DBT (Dialektisch-Behaviorale Therapie)</Link>.
-              </p>
-              
               <div className="space-y-4">
                 {[
                   {
-                    name: "DBT (Dialektisch-Behaviorale Therapie)",
-                    description: "Kombiniert Verhaltenstherapie mit Achtsamkeit. Vermittelt konkrete Skills zur Emotionsregulation.",
-                    highlight: "Goldstandard"
+                    name: "DBT",
+                    description:
+                      "Stark strukturiert, mit Fokus auf Emotionsregulation, Stresstoleranz, Achtsamkeit und zwischenmenschliche Skills.",
                   },
                   {
-                    name: "MBT (Mentalisierungsbasierte Therapie)",
-                    description: "Fokussiert auf das Verstehen eigener und fremder Gedanken und Gefühle.",
-                    highlight: "Evidenzbasiert"
+                    name: "MBT",
+                    description:
+                      "Konzentriert sich auf das Verstehen eigener und fremder innerer Zustände und auf Beziehungsgeschehen.",
                   },
                   {
                     name: "Schematherapie",
-                    description: "Arbeitet mit frühen Prägungen und Beziehungsmustern.",
-                    highlight: "Evidenzbasiert"
-                  }
-                ].map((therapy, index) => (
-                  <Card key={index} className="border-border/50">
+                    description:
+                      "Arbeitet mit frühen Prägungen, Beziehungsmustern und inneren Zuständen, die unter Stress reaktiv werden.",
+                  },
+                ].map((item) => (
+                  <Card key={item.name} className="border-border/50">
                     <CardContent className="p-5">
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <h3 className="font-semibold text-foreground mb-2">{therapy.name}</h3>
-                          <p className="text-muted-foreground text-sm">{therapy.description}</p>
-                        </div>
-                        <span className="text-xs bg-sage-light text-sage-darker px-2 py-1 rounded-full whitespace-nowrap">
-                          {therapy.highlight}
-                        </span>
-                      </div>
+                      <h3 className="font-semibold text-foreground mb-2">{item.name}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                     </CardContent>
                   </Card>
                 ))}
+                <Card className="bg-sage-wash/50 border-sage-mid/30">
+                  <CardContent className="p-5">
+                    <p className="text-foreground leading-relaxed">
+                      Für Angehörige ist meist wichtiger als das perfekte Therapielabel, ob Behandlung
+                      tragfähig beginnt, ob Krisen professionell eingebettet werden und ob der Prozess
+                      über Zeit gehalten werden kann.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
-              
-              <Card className="mt-6 bg-sage-lighter border-sage-light">
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-sage-light flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-sage-dark" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground mb-1">
-                        Therapieangebote im Kanton Zürich
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        Weiter unten finden Sie eine Übersicht über spezialisierte DBT-Stationen und Behandlungsangebote der PUK Zürich – für Kinder, Jugendliche, Erwachsene und Erwachsene ab 65.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="mt-4 border-border/50">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-foreground mb-4">Kurze Orientierung zu Versorgungswegen</h3>
-                  <div className="space-y-4">
-                    {[
-                      {
-                        title: "Ambulant",
-                        meaning: "Regelmässige Termine, Alltag bleibt weitgehend wie gewohnt.",
-                        useful: "Kann sinnvoll sein, wenn Stabilität da ist und Therapie im Alltag geübt werden soll.",
-                        family: "Für Angehörige heisst das oft: mittragen, erinnern, zwischen Terminen präsent bleiben."
-                      },
-                      {
-                        title: "Teilstationär",
-                        meaning: "Tagsüber Therapieprogramm, abends und nachts zu Hause.",
-                        useful: "Kann sinnvoll sein, wenn mehr Struktur nötig ist, aber ein Leben zu Hause möglich bleibt.",
-                        family: "Für Angehörige heisst das oft: Tagesbelastung sinkt etwas, Begleitung am Abend bleibt wichtig."
-                      },
-                      {
-                        title: "Stationär",
-                        meaning: "Zeitlich begrenzte Behandlung mit Aufenthalt in der Klinik.",
-                        useful: "Kann sinnvoll sein bei starker Krise, hoher Belastung oder wenn ambulant nicht reicht.",
-                        family: "Für Angehörige heisst das oft: entlastet sein dürfen und trotzdem über Gespräche eingebunden bleiben."
-                      }
-                    ].map((setting, index) => (
-                      <div key={index} className="border-l-2 border-slate-light pl-4">
-                        <h4 className="font-medium text-foreground text-sm mb-1">{setting.title}</h4>
-                        <p className="text-muted-foreground text-sm"><span className="font-medium text-foreground">Was bedeutet das?</span> {setting.meaning}</p>
-                        <p className="text-muted-foreground text-sm"><span className="font-medium text-foreground">Wann sinnvoll?</span> {setting.useful}</p>
-                        <p className="text-muted-foreground text-sm"><span className="font-medium text-foreground">Für Angehörige:</span> {setting.family}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="mt-4 bg-slate-light/30 border-slate-light">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-foreground mb-2">Komorbidität kurz erklärt</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Borderline kommt häufig nicht allein vor. Oft spielen parallel weitere Belastungen mit – zum Beispiel Depression, Angst oder Substanzkonsum. Deshalb werden in der Behandlung häufig mehrere Themen gleichzeitig angeschaut. Das ist normal und nicht für alle gleich.
-                  </p>
-                </CardContent>
-              </Card>
             </ContentSection>
 
-            {/* DBT-Skills für Angehörige */}
             <ContentSection
-              title="DBT-Skills verstehen"
+              title="Wie Sie den Therapieprozess unterstützen können"
               icon={<Lightbulb className="w-7 h-7 text-terracotta" />}
-              id="dbt-skills"
-              preview="Achtsamkeit, Stresstoleranz, Emotionsregulation, Zwischenmenschliche Skills – die vier Säulen der DBT."
+              id="unterstuetzen"
+              preview="Hilfreich ist meist sanfte Unterstützung ohne Druck: Orientierung geben, Veränderungen wahrnehmen, eigene Erwartungen regulieren."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Die DBT vermittelt vier Gruppen von Skills. Wenn Sie diese kennen, können Sie Ihren Angehörigen besser unterstützen – und einige Skills auch selbst nutzen.
-              </p>
-              
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  {
-                    title: "Achtsamkeit",
-                    description: "Im Moment sein, ohne zu urteilen. Wahrnehmen, was ist.",
-                    color: "var(--color-sage)"
-                  },
-                  {
-                    title: "Stresstoleranz",
-                    description: "Krisen überstehen, ohne sie schlimmer zu machen.",
-                    color: "var(--color-terracotta-mid)"
-                  },
-                  {
-                    title: "Emotionsregulation",
-                    description: "Gefühle verstehen und beeinflussen lernen.",
-                    color: "var(--color-terracotta)"
-                  },
-                  {
-                    title: "Zwischenmenschliche Skills",
-                    description: "Beziehungen pflegen, Grenzen setzen, Konflikte lösen.",
-                    color: "var(--color-slate-blue)"
-                  }
-                ].map((skill, index) => (
-                  <Card key={index} style={{ borderColor: skill.color }} className={`border-2 ${index === 0 ? "sm:col-span-2" : ""}`}>
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">{skill.title}</h3>
-                      <p className="text-muted-foreground text-sm">{skill.description}</p>
+                  "Therapie als Möglichkeit ansprechen, nicht als Drohkulisse",
+                  "bei Organisation helfen, wenn das erwünscht ist",
+                  "Skills und neue Schritte bemerken, ohne zu kontrollieren",
+                  "Fortschritte konkret benennen statt pauschal zu loben",
+                  "Rückschläge einordnen, ohne sie zu dramatisieren",
+                  "eigene Unterstützung unabhängig von der Therapiebereitschaft suchen",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30">
+                    <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </ContentSection>
+
+            <ContentSection
+              title="Rückschläge und Unterbrüche"
+              icon={<RefreshCw className="w-7 h-7 text-terracotta-mid" />}
+              id="rueckschlaege"
+              preview="Therapie verläuft selten gradlinig. Abbrüche, Krisen oder Phasen von Widerstand bedeuten nicht automatisch, dass alles umsonst war."
+            >
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Viele Angehörige erleben Therapiebegleitung als Achterbahn: Hoffnung, erster
+                  Fortschritt, erneute Krise, Rückzug, vielleicht ein Therapieabbruch und später ein
+                  neuer Anlauf. Solche Unterbrüche sind belastend, aber nicht ungewöhnlich.
+                </p>
+                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
+                  <CardContent className="p-5">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Hilfreich ist dann meist weder Druck noch Resignation, sondern ein nüchterner
+                      Blick: Was hat geholfen? Wo wurde es zu viel? Was wäre der nächste tragfähige
+                      Schritt?
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </ContentSection>
+
+            <ContentSection
+              title="Was Ihre Rolle ausdrücklich nicht ist"
+              icon={<Heart className="w-7 h-7 text-terracotta" />}
+              id="nicht-ihre-rolle"
+              preview="Gerade engagierte Angehörige geraten leicht in eine Nebenrolle als Coach, Therapeut oder Krisenmanager. Das ist verständlich, aber selten tragfähig."
+            >
+              <div className="space-y-3">
+                {[
+                  "Sie müssen nicht Therapiesprache permanent in den Alltag übersetzen.",
+                  "Sie müssen nicht jedes Verhalten analysieren oder mit Fachbegriffen einordnen.",
+                  "Sie sind nicht dafür zuständig, Motivation dauerhaft aufrechtzuerhalten.",
+                  "Sie müssen Behandlungsfortschritt nicht kontrollieren oder überwachen.",
+                ].map((item) => (
+                  <Card key={item} className="border-border/50">
+                    <CardContent className="p-4">
+                      <p className="text-sm text-muted-foreground">{item}</p>
                     </CardContent>
                   </Card>
                 ))}
               </div>
-              
-              <Card className="mt-6 bg-terracotta-light/10 border-terracotta">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Lightbulb className="w-5 h-5 text-terracotta" />
-                    So können Sie unterstützen
-                  </h3>
-                  <ul className="space-y-2">
-                    {[
-                      "Fragen Sie, welche Skills gerade geübt werden",
-                      "Bieten Sie an, gemeinsam zu üben (z.B. Achtsamkeitsübungen)",
-                      "Erinnern Sie sanft an Skills in angespannten Momenten",
-                      "Loben Sie, wenn Skills angewendet werden"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
             </ContentSection>
 
-            {/* Fortschritte würdigen */}
-            <ContentSection
-              title="Fortschritte würdigen"
-              icon={<Heart className="w-7 h-7 text-terracotta" />}
-              id="fortschritte"
-              preview="Genesung ist kein linearer Prozess. Kleine Fortschritte zu erkennen und zu würdigen ist wichtig."
-            >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Genesung ist kein linearer Prozess. Kleine Fortschritte zu erkennen und zu würdigen ist wichtig – für Sie beide.
-              </p>
-              
-              <Card className="border-border/50">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-4">Beispiele für Fortschritte</h3>
-                  <ul className="space-y-3">
-                    {[
-                      "Eine Krise wurde ohne Selbstverletzung überstanden",
-                      "Ein Konflikt wurde ohne Eskalation gelöst",
-                      "Ein Skill wurde in einer schwierigen Situation angewendet",
-                      "Ein Termin wurde trotz Angst wahrgenommen",
-                      "Ein Gefühl wurde benannt statt ausagiert"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-sage-mid mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </ContentSection>
-
-            {/* Mit Rückschlägen umgehen */}
-            <ContentSection
-              title="Mit Rückschlägen umgehen"
-              icon={<RefreshCw className="w-7 h-7 text-terracotta-mid" />}
-              id="rueckschlaege"
-              preview="Rückschläge gehören zur Genesung. Sie sind keine Zeichen des Scheiterns, sondern Teil des Prozesses."
-            >
-              <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Rückschläge gehören zur Genesung. Sie sind keine Zeichen des Scheiterns, sondern Teil des Prozesses. Wenn ein Rückschlag passiert:
-                  </p>
-                  <ul className="space-y-2">
-                    {[
-                      "Vermeiden Sie Vorwürfe – weder an sich noch an Ihren Angehörigen",
-                      "Erinnern Sie an bisherige Fortschritte",
-                      "Fokussieren Sie auf den nächsten kleinen Schritt",
-                      "Ermutigen Sie zur Rückkehr in die Therapie"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-terracotta-mid">→</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </ContentSection>
-
-            {/* Therapieangebote Kanton Zürich */}
             <ContentSection
               title="Therapieangebote im Kanton Zürich"
               icon={<MapPin className="w-7 h-7 text-sage-dark" />}
               id="therapieangebote"
-              preview="PUK Zürich: Spezialisierte DBT-Stationen für Jugendliche (HYPE ZÜRI), Erwachsene und Ältere."
+              preview="Ausgewählte spezialisierte Angebote und Suchwege für Jugendliche, Erwachsene und weiterführende Behandlung."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Die Psychiatrische Universitätsklinik Zürich (PUK) bietet spezialisierte Behandlungsangebote für verschiedene Altersgruppen – ambulant, teilstationär und stationär.
-              </p>
-
-              <Card className="mb-6 bg-sage-lighter border-sage-light">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-foreground mb-2">Einordnung CH-/ZH-Kontext</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Viele wissenschaftliche Grundlagen stammen aus internationaler Forschung. Die konkreten Versorgungshinweise auf dieser Website beziehen sich, wenn nicht anders markiert, auf die Schweiz und besonders auf den Kanton Zürich.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              {/* Settings-Übersicht */}
               <div className="flex flex-wrap gap-3 mb-6">
                 {[
                   { icon: Home, label: "Ambulant", desc: "Regelmässige Termine, Leben zu Hause" },
                   { icon: Calendar, label: "Teilstationär", desc: "Tagesklinik, abends zu Hause" },
-                  { icon: Building2, label: "Stationär", desc: "Aufenthalt in der Klinik" }
-                ].map((setting, i) => (
-                  <div key={i} className="flex items-center gap-2 px-3 py-2 bg-muted/30 rounded-lg">
+                  { icon: Building2, label: "Stationär", desc: "Aufenthalt in der Klinik" },
+                ].map((setting) => (
+                  <div key={setting.label} className="flex items-center gap-2 px-3 py-2 bg-muted/30 rounded-lg">
                     <setting.icon className="w-4 h-4 text-muted-foreground" />
                     <div>
                       <span className="font-medium text-foreground text-sm">{setting.label}</span>
@@ -327,23 +239,15 @@ export default function UnterstuetzenTherapie() {
                   </div>
                 ))}
               </div>
-              
-              {/* Kinder und Jugendliche */}
+
               <Card className="border-2 border-slate-light mb-4">
                 <CardContent className="p-5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-slate-lighter flex items-center justify-center">
-                      <Baby className="w-5 h-5 text-slate-mid" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">HYPE ZÜRI</h3>
-                      <p className="text-xs text-muted-foreground">Helping Young People Early – Jugendliche ab 13 Jahren</p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Frühinterventionsprogramm für Jugendliche mit Verdacht, erhöhtem Risiko oder bereits diagnostizierter Borderline-Störung. Max. 16 Sitzungen über 6-9 Monate.
+                  <h3 className="font-semibold text-foreground mb-2">HYPE ZÜRI</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Frühinterventionsangebot für Jugendliche ab 13 Jahren mit Verdacht, Risiko oder
+                    bereits diagnostizierter Borderline-Störung.
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     <a href={`tel:${hype.tel}`} className="text-sm text-slate-mid hover:underline flex items-center gap-1">
                       <Phone className="w-3 h-3" /> {hype.nummer}
                     </a>
@@ -353,23 +257,14 @@ export default function UnterstuetzenTherapie() {
                   </div>
                 </CardContent>
               </Card>
-              
-              {/* Erwachsene */}
+
               <Card className="border-2 border-sage-light mb-4">
                 <CardContent className="p-5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-sage-light flex items-center justify-center">
-                      <User className="w-5 h-5 text-sage-dark" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">DBT-Station für Erwachsene</h3>
-                      <p className="text-xs text-muted-foreground">Station B2 – Erwachsene 18-65 Jahre</p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Spezialisierte DBT-Station mit strukturiertem Therapieprogramm: Einzeltherapie, Skillstraining, Achtsamkeit und Körpertherapie.
+                  <h3 className="font-semibold text-foreground mb-2">PUK Zürich – Erwachsene</h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Spezialisierte DBT-orientierte Behandlungsangebote für Erwachsene.
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     <a href={`tel:${pukZentrale.tel}`} className="text-sm text-sage-dark hover:underline flex items-center gap-1">
                       <Phone className="w-3 h-3" /> {pukZentrale.nummer}
                     </a>
@@ -379,14 +274,13 @@ export default function UnterstuetzenTherapie() {
                   </div>
                 </CardContent>
               </Card>
-              
-              {/* Weitere Angebote */}
+
               <div className="grid sm:grid-cols-2 gap-4">
                 <Card className="border-border/50">
                   <CardContent className="p-4">
-                    <h4 className="font-semibold text-foreground text-sm mb-1">Clienia Schlössli – Station A2</h4>
+                    <h4 className="font-semibold text-foreground text-sm mb-1">Clienia Schlössli</h4>
                     <p className="text-xs text-muted-foreground mb-2">
-                      Stationäres Integratives Therapieprogramm für Emotionsregulation (SITE)
+                      Weiterführendes stationäres Emotionsregulationsprogramm.
                     </p>
                     <a href={clieniaUrl.url} target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark hover:underline flex items-center gap-1">
                       Website besuchen <ExternalLink className="w-3 h-3" />
@@ -395,9 +289,9 @@ export default function UnterstuetzenTherapie() {
                 </Card>
                 <Card className="border-border/50">
                   <CardContent className="p-4">
-                    <h4 className="font-semibold text-foreground text-sm mb-1">DBT-Therapeuten finden</h4>
+                    <h4 className="font-semibold text-foreground text-sm mb-1">DBT-Therapeutensuche</h4>
                     <p className="text-xs text-muted-foreground mb-2">
-                      Therapeutenlandkarte mit zertifizierten DBT-Therapeuten in der Schweiz
+                      Suchweg für zertifizierte DBT-Therapeutinnen und -Therapeuten.
                     </p>
                     <a href={dbtDachUrl.url} target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark hover:underline flex items-center gap-1">
                       Therapeutensuche <ExternalLink className="w-3 h-3" />
@@ -405,8 +299,7 @@ export default function UnterstuetzenTherapie() {
                   </CardContent>
                 </Card>
               </div>
-              
-              {/* Notfall-Nummern */}
+
               <Card className="mt-4 bg-terracotta-wash border-sand-border">
                 <CardContent className="p-4">
                   <h4 className="font-semibold text-foreground text-sm mb-3 flex items-center gap-2">
@@ -414,65 +307,46 @@ export default function UnterstuetzenTherapie() {
                     Notfall-Nummern PUK Zürich (24/7)
                   </h4>
                   <div className="grid grid-cols-3 gap-3 text-center">
-                    {GELB.filter(k => k.id !== "GELB_KIZ").map((k) => (
+                    {GELB.filter((k) => k.id !== "GELB_KIZ").map((k) => (
                       <div key={k.id}>
                         <p className="text-xs text-muted-foreground">{k.fuerWen || k.label}</p>
-                        <a href={`tel:${k.tel}`} className="text-sm font-semibold text-foreground hover:underline">{k.nummer}</a>
+                        <a href={`tel:${k.tel}`} className="text-sm font-semibold text-foreground hover:underline">
+                          {k.nummer}
+                        </a>
                       </div>
                     ))}
                   </div>
                 </CardContent>
               </Card>
-
-              <Card className="mt-4 border-border/50">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-foreground mb-3">Wo Angehörige im Versorgungssystem vorkommen</h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p><span className="font-medium text-foreground">Angehörigenberatung:</span> hilft, Situationen einzuordnen und konkrete nächste Schritte zu planen.</p>
-                    <p><span className="font-medium text-foreground">Psychoedukation:</span> vermittelt verständlich, was im Alltag oft hilft und was Krisen verschärfen kann.</p>
-                    <p><span className="font-medium text-foreground">Familien- und Angehörigengespräche:</span> schaffen gemeinsame Absprachen mit Behandlungsteam und Betroffenen.</p>
-                    <p><span className="font-medium text-foreground">Selbsthilfe und Fachstellen:</span> bieten Austausch, Entlastung und Orientierung – auch dann, wenn Sie selbst gerade am Limit sind.</p>
-                  </div>
-                </CardContent>
-              </Card>
             </ContentSection>
 
-            {/* Materialien zum Download */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12 wave-divider-top"
-              style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
+              style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-slate-blue" />
                 Materialien zum Thema
               </h2>
-              
+
               <Card className="bg-sand-muted border-sand-border">
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-sage-lighter flex items-center justify-center flex-shrink-0">
-                      <Download className="w-5 h-5 text-sage-mid" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-foreground mb-2">Alle Materialien als PDF verfügbar</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Infografiken und Handouts zum Thema Therapiebegleitung finden Sie auf der Materialien-Seite.
-                      </p>
-                      <Link href="/materialien">
-                        <Button variant="outline" size="sm">
-                          Zur Materialien-Seite
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Infografiken und Handouts zur Therapiebegleitung finden Sie gesammelt auf der
+                    Materialien-Seite.
+                  </p>
+                  <Link href="/materialien">
+                    <Button variant="outline" size="sm">
+                      Zur Materialien-Seite
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>
 
-            {/* Navigation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -480,9 +354,7 @@ export default function UnterstuetzenTherapie() {
               className="flex justify-between items-center pt-8 border-t border-border"
             >
               <Link href="/unterstuetzen/alltag">
-                <Button variant="ghost">
-                  ← Im Alltag unterstützen
-                </Button>
+                <Button variant="ghost">← Im Alltag unterstützen</Button>
               </Link>
               <Link href="/unterstuetzen/krise">
                 <Button className="bg-terracotta hover:bg-terracotta-mid text-white">

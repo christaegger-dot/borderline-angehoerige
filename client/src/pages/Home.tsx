@@ -1,146 +1,99 @@
 import Layout from "@/components/Layout";
-import Erfahrungsberichte from "@/components/Erfahrungsberichte";
-import SEO, { WebsiteSchema, MedicalPageSchema } from "@/components/SEO";
+import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { 
-  BookOpen, 
-  Heart, 
-  MessageCircle, 
-  Shield, 
-  Sparkles, 
-  Phone,
-  ArrowRight,
-  Clock,
-  CheckCircle2,
+import {
   AlertTriangle,
+  ArrowRight,
+  BookOpen,
   Compass,
-  TrendingUp,
-
-  Sprout,
   Download,
-  FileText
+  Heart,
+  MessageCircle,
+  Phone,
+  Shield,
+  Sparkles,
+  Users,
 } from "lucide-react";
-import AnimatedStat from "@/components/AnimatedStat";
-import Schnelleinstieg from "@/components/interactive/Schnelleinstieg";
-import EvidenceNote from "@/components/EvidenceNote";
 
 const heroImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XkvykpgJHYsCUUQW.webp";
 const heroImage1280 = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/smWfBdfAvQptVoCP.webp";
 const heroImage768 = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VEYeFPLYdBHjfcQo.webp";
 const heroImageMobile = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fYVyThTdLUpjIoVU.webp";
 
-const supportImage = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QOtPbYSrYvKYybbO.webp";
+const situationPaths = [
+  {
+    href: "/verstehen",
+    icon: BookOpen,
+    title: "Ich versuche zu verstehen, was passiert",
+    text: "Wenn Nähe, Eskalation, Rückzug oder Widersprüche schwer einzuordnen sind.",
+    color: "var(--color-sage-mid)",
+    bg: "var(--color-sage-wash)",
+  },
+  {
+    href: "/unterstuetzen/krise",
+    icon: AlertTriangle,
+    title: "Es kippt gerade oder eskaliert",
+    text: "Wenn starke Anspannung, Konflikte oder Krisensignale im Vordergrund stehen.",
+    color: "var(--color-alert)",
+    bg: "var(--color-alert-wash)",
+  },
+  {
+    href: "/kommunizieren",
+    icon: MessageCircle,
+    title: "Gespräche werden schwierig",
+    text: "Wenn Worte verletzen, Vorwürfe dominieren oder alles sofort hochgeht.",
+    color: "var(--color-slate-blue)",
+    bg: "var(--color-slate-wash)",
+  },
+  {
+    href: "/selbstfuersorge",
+    icon: Sparkles,
+    title: "Ich bin selbst erschöpft",
+    text: "Wenn Anspannung, Schuld, Rückzug oder innere Überforderung zu gross werden.",
+    color: "var(--color-terracotta-mid)",
+    bg: "var(--color-terracotta-wash)",
+  },
+];
 
-const topics = [
+const mainPaths = [
   {
     href: "/verstehen",
     icon: BookOpen,
     title: "Verstehen",
-    description: "Was ist Borderline? Symptome, Ursachen und wie die Störung das Erleben beeinflusst.",
-    color: "var(--color-sage)", // Sage
-    bgColor: "var(--color-sage-light)",
-    time: "15 Min"
+    description: "Borderline aus Sicht von Angehörigen: Beziehungsmuster, Scham, Überflutung und Nähe-Distanz.",
   },
   {
-    href: "/unterstuetzen",
+    href: "/unterstuetzen/uebersicht",
     icon: Heart,
     title: "Unterstützen",
-    description: "Wie Sie Ihren Angehörigen im Alltag, in der Therapie und in Krisen begleiten können.",
-    color: "var(--color-terracotta)", // Terracotta
-    bgColor: "var(--color-terracotta-light)",
-    time: "20 Min"
+    description: "Wie Unterstützung tragfähig bleiben kann, ohne dass Sie alles allein tragen.",
   },
   {
     href: "/kommunizieren",
     icon: MessageCircle,
     title: "Kommunizieren",
-    description: "Validierung, SET-Kommunikation und wie Sie auch in schwierigen Momenten im Gespräch bleiben.",
-    color: "var(--color-slate-blue)", // Slate Blue
-    bgColor: "var(--color-slate-light)",
-    time: "15 Min"
+    description: "Hilfreiche Sprache in angespannten, verletzlichen oder eskalierenden Momenten.",
   },
   {
     href: "/grenzen",
     icon: Shield,
-    title: "Grenzen setzen",
-    description: "Warum Grenzen wichtig sind und wie Sie sie liebevoll, aber klar kommunizieren.",
-    color: "var(--color-terracotta-mid)", // Warm Orange
-    bgColor: "var(--color-terracotta-lighter)",
-    time: "12 Min"
+    title: "Grenzen",
+    description: "Klarheit, Selbstschutz und begrenzte Verfügbarkeit ohne unnötige Eskalation.",
   },
   {
     href: "/selbstfuersorge",
     icon: Sparkles,
     title: "Selbstfürsorge",
-    description: "Wie Sie auf sich selbst achten, Burnout vermeiden und Ihre eigenen Ressourcen stärken.",
-    color: "var(--color-sage-mid)", // Soft Purple
-    bgColor: "var(--color-sage-lighter)",
-    time: "10 Min"
+    description: "Warnsignale der Überlastung, Entlastung und Umgang mit eigener Erschöpfung.",
   },
   {
-    href: "/genesung",
-    icon: Sprout,
-    title: "Genesung",
-    description: "Warum Genesung möglich ist, was Langzeitstudien zeigen und wie Sie Hoffnung bewahren können.",
-    color: "var(--color-sage-mid)", // Teal
-    bgColor: "var(--color-sage-light)",
-    time: "8 Min"
-  },
-];
-
-const crisisMatrix = [
-  {
-    level: "akut",
-    title: "Akute Krise",
-    description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
-    action: "Sofort handeln",
-    href: "/soforthilfe",
-    color: "var(--color-alert)",
-    bgColor: "var(--color-alert-wash)",
-    icon: AlertTriangle
-  },
-  {
-    level: "hoch",
-    title: "Hohe Anspannung",
-    description: "Starke Emotionen, drohende Eskalation",
-    action: "Deeskalieren",
-    href: "/unterstuetzen/krise",
-    color: "var(--color-sand-mid)",
-    bgColor: "var(--color-terracotta-wash)",
-    icon: Clock
-  },
-  {
-    level: "mittel",
-    title: "Angespannte Situation",
-    description: "Konflikte, Missverständnisse, Rückzug",
-    action: "Kommunizieren",
-    href: "/kommunizieren",
-    color: "var(--color-sand-warm)",
-    bgColor: "var(--color-sand-muted)",
-    icon: MessageCircle
-  },
-  {
-    level: "stabil",
-    title: "Stabile Phase",
-    description: "Ruhige Zeit, Gelegenheit zum Lernen",
-    action: "Vertiefen",
-    href: "/verstehen",
-    color: "var(--color-sage-mid)",
-    bgColor: "var(--color-sage-wash)",
-    icon: CheckCircle2
-  },
-  {
-    level: "erschoepft",
-    title: "Ich bin am Limit",
-    description: "Erschöpfung, Überforderung, eigene Grenzen erreicht",
-    action: "Für mich sorgen",
-    href: "/selbstfuersorge",
-    color: "var(--color-slate-dark)",
-    bgColor: "var(--color-slate-wash)",
-    icon: Sparkles
+    href: "/beratung",
+    icon: Users,
+    title: "Beratung",
+    description: "Fachstelle, Netzwerke und konkrete Anlaufstellen für Angehörige in der Schweiz.",
   },
 ];
 
@@ -149,25 +102,25 @@ export default function Home() {
     <Layout>
       <SEO
         title="Startseite"
-        description="Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung. Verstehen, unterstützen, kommunizieren – ohne sich selbst zu verlieren."
+        description="Orientierung für Angehörige von Menschen mit Borderline: differenziert, fachlich fundiert und entlastend."
         path="/"
       />
       <WebsiteSchema />
       <MedicalPageSchema
-        title="Borderline: Hilfe für Angehörige – Evidenzbasierte Unterstützung"
-        description="Evidenzbasierte Strategien für den Alltag mit einem Menschen mit Borderline-Persönlichkeitsstörung."
+        title="Borderline: Orientierung für Angehörige"
+        description="Psychoedukative Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung."
         path="/"
       />
-      {/* Hero Section */}
+
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <picture>
             <source media="(max-width: 640px)" srcSet={heroImageMobile} />
             <source media="(max-width: 768px)" srcSet={heroImage768} />
             <source media="(max-width: 1280px)" srcSet={heroImage1280} />
-            <img 
-              src={heroImage} 
-              alt="Warme Landschaft als Hintergrundbild" 
+            <img
+              src={heroImage}
+              alt="Warme Landschaft als Hintergrundbild"
               className="w-full h-full object-cover opacity-50"
               srcSet={`${heroImage768} 768w, ${heroImage1280} 1280w, ${heroImage} 1920w`}
               sizes="100vw"
@@ -179,7 +132,7 @@ export default function Home() {
           </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         </div>
-        
+
         <div className="container relative z-10 py-16 md:py-24 lg:py-32">
           <div className="max-w-3xl">
             <motion.div
@@ -190,32 +143,38 @@ export default function Home() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-sage-light text-sage-darker text-sm font-medium mb-6">
                 Für Angehörige von Menschen mit Borderline
               </span>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
-                Sie können{" "}
-                <span className="text-terracotta">helfen</span>
+                Orientierung in belasteten Beziehungen
               </h1>
-              
+
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
-                Orientierung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung: fachlich fundiert, psychologisch differenziert und alltagsnah. Damit Sie besser einordnen können, was geschieht, und tragfähige Wege im Umgang damit finden.
+                Wenn Beziehungen von starker Anspannung, Eskalation, Rückzug, Schuld oder Erschöpfung
+                geprägt sind, hilft nicht noch mehr Druck, sondern bessere Einordnung. Diese Website
+                unterstützt Angehörige dabei, Dynamiken zu verstehen, hilfreicher zu reagieren und
+                sich selbst nicht zu verlieren.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/unterstuetzen/uebersicht">
+                <Link href="/verstehen">
                   <Button size="lg" className="bg-terracotta hover:bg-terracotta-mid text-white w-full sm:w-auto">
-                    <Heart className="w-5 h-5 mr-2" />
-                    Wie kann ich helfen?
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Borderline besser verstehen
                   </Button>
                 </Link>
-                <Link href="/verstehen">
+                <Link href="/unterstuetzen/uebersicht">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    <BookOpen className="w-5 h-5 mr-2" />
-                    Borderline verstehen
+                    <Heart className="w-5 h-5 mr-2" />
+                    Was hilft in meiner Lage?
                   </Button>
                 </Link>
               </div>
+
               <div className="mt-4">
-                <Link href="/soforthilfe" className="inline-flex items-center gap-2 text-alert hover:text-alert-dark font-medium transition-colors group">
+                <Link
+                  href="/soforthilfe"
+                  className="inline-flex items-center gap-2 text-alert hover:text-alert-dark font-medium transition-colors group"
+                >
                   <Phone className="w-4 h-4" />
                   <span>Akute Krise? Soforthilfe</span>
                   <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
@@ -226,7 +185,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust-Block: Absender-Einordnung */}
       <section className="py-4 md:py-5 bg-sage-wash/50 border-b border-sage-mid/10">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
@@ -239,9 +197,12 @@ export default function Home() {
               </p>
             </div>
             <p className="text-muted-foreground text-sm flex-1">
-              Beratung, Orientierung und Materialien für Angehörige.
+              Fachlich fundierte Orientierung, Beratung und Materialien für Angehörige.
             </p>
-            <Link href="/fachstelle" className="text-sage-darker hover:text-slate-dark text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage-darker">
+            <Link
+              href="/fachstelle"
+              className="text-sage-darker hover:text-slate-dark text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0"
+            >
               Angebot & Kontakt
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -249,340 +210,180 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Schnelleinstieg */}
-      <Schnelleinstieg />
-
-      {/* Crisis Matrix */}
-      <section className="py-12 md:py-16 bg-cream wave-divider-top" style={{ '--wave-color': 'var(--color-cream)' } as React.CSSProperties}>
+      <section className="py-10 md:py-14 bg-background">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
-              Wo stehen Sie gerade?
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-4">
-              Wählen Sie die Situation, die am besten zu Ihrer aktuellen Lage passt.
-            </p>
-            <Link href="/selbsttest">
-              <Button variant="outline" size="sm" className="gap-2">
-                <Compass className="w-4 h-4" />
-                Oder machen Sie unseren kurzen Selbsttest
-              </Button>
-            </Link>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {crisisMatrix.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.level}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                >
-                  <Link href={item.href}>
-                    <Card 
-                      className="group h-full border-2 border-dashed transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:border-solid hover:scale-[1.02] cursor-pointer"
-                      style={{ 
-                        borderColor: item.color,
-                        backgroundColor: item.bgColor 
-                      }}
-                    >
-                      <CardContent className="p-5">
-                        <div 
-                          className="w-10 h-10 rounded-full flex items-center justify-center mb-3 transition-transform duration-500 group-hover:scale-110"
-                          style={{ backgroundColor: item.color }}
-                        >
-                          <Icon className="w-5 h-5 text-white" />
-                        </div>
-                        <h3 className="font-semibold text-foreground mb-1">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          {item.description}
-                        </p>
-                        <span 
-                          className="text-sm font-medium flex items-center gap-1 transition-all duration-500 group-hover:gap-2"
-                          style={{ color: item.color }}
-                        >
-                          {item.action}
-                          <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Topics Grid */}
-      <section className="py-16 md:py-24 wave-divider-top" style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Themen erkunden
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Wählen Sie ein Thema, das Sie interessiert. Alle Inhalte sind evidenzbasiert und praxisorientiert.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {topics.map((topic, index) => {
-              const Icon = topic.icon;
-              const isFeatured = index === 0;
-              return (
-                <motion.div
-                  key={topic.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                  className={isFeatured ? 'md:col-span-2 lg:col-span-2' : ''}
-                >
-                  <Link href={topic.href}>
-                    <Card className={`h-full group cursor-pointer transition-all duration-500 hover:shadow-xl hover:-translate-y-2 border-transparent hover:border-border ${
-                      isFeatured ? 'bg-sage-lighter/40 border-sage-light/50' : ''
-                    }`}>
-                      <CardContent className={isFeatured ? 'p-8 md:flex md:items-center md:gap-8' : 'p-6'}>
-                        <div 
-                          className={`rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${
-                            isFeatured ? 'w-16 h-16 md:w-20 md:h-20 mb-5 md:mb-0 flex-shrink-0' : 'w-14 h-14 mb-5'
-                          }`}
-                          style={{ backgroundColor: topic.bgColor }}
-                        >
-                          <Icon 
-                            className={isFeatured ? 'w-8 h-8 md:w-10 md:h-10' : 'w-7 h-7'}
-                            style={{ color: topic.color }}
-                          />
-                        </div>
-                        
-                        <div className={isFeatured ? 'flex-1' : ''}>
-                          <div className="flex items-center gap-2 mb-3">
-                            <h3 className={`font-semibold text-foreground ${isFeatured ? 'text-2xl' : 'text-xl'}`}>
-                              {topic.title}
-                            </h3>
-                            <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-                              {topic.time}
-                            </span>
-                          </div>
-                          
-                          <p className="text-muted-foreground leading-relaxed mb-4">
-                            {topic.description}
-                          </p>
-                          
-                          <span 
-                            className="text-sm font-medium flex items-center gap-1 transition-colors"
-                            style={{ color: topic.color }}
-                          >
-                            Mehr erfahren
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                          </span>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Support Section */}
-      <section className="py-16 md:py-24 bg-sand-muted wave-divider-top" style={{ '--wave-color': 'var(--color-sand-muted)' } as React.CSSProperties}>
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-w-0">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <img 
-                src={supportImage} 
-                alt="Unterstützung symbolisiert durch zwei Hände" 
-                className="rounded-2xl shadow-lg w-full max-w-md mx-auto"
-                width={800}
-                height={446}
-                loading="lazy"
-                decoding="async"
-              />
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-terracotta-light text-terracotta-dark text-sm font-medium mb-4">
-                Neue Perspektive
-              </span>
-              
-              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6">
-                Sie sind nicht allein – und Sie können helfen
-              </h2>
-              
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Als Angehöriger fühlen Sie sich vielleicht hilflos, frustriert oder erschöpft. Das ist verständlich. Aber Sie können einen wichtigen Beitrag zur Genesung leisten – nicht als Therapeut, sondern als verlässlicher, verständnisvoller Begleiter.
-              </p>
-              
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Genesung ist möglich – Langzeitstudien zeigen hohe Remissionsraten",
-                  "Ihre Unterstützung macht einen Unterschied",
-                  "Sie müssen nicht perfekt sein, nur präsent"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-sage-mid mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Link href="/unterstuetzen/uebersicht">
-                <Button size="lg" className="bg-terracotta hover:bg-terracotta-mid text-white">
-                  Unterstützungsstrategien entdecken
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Genesung ist möglich */}
-      <section className="py-16 md:py-24 wave-divider-top" style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}>
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="text-center mb-10"
+              className="mb-8"
             >
-              <div className="w-16 h-16 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-8 h-8 text-sage-mid" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-                Genesung ist möglich
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
+                Was ist gerade Ihre Lage?
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-                Entgegen früherer Annahmen zeigt die Langzeitforschung: Die meisten Menschen mit Borderline 
-                erleben eine deutliche Besserung ihrer Symptome.
+              <p className="text-muted-foreground max-w-2xl">
+                Beginnen Sie dort, wo der Druck im Moment am grössten ist. Die Website ist nicht nur
+                zum Lesen gedacht, sondern als Orientierung in belasteten Beziehungssituationen.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              <AnimatedStat
-                end={93}
-                prefix="85–"
-                suffix="%"
-                label="erreichen symptomatische Remission"
-                duration={2200}
-                delay={0}
-              />
-              <AnimatedStat
-                end={50}
-                suffix="%"
-                label="erreichen vollständige Genesung"
-                duration={1800}
-                delay={0.1}
-              />
-              <AnimatedStat
-                end={10}
-                suffix=" J."
-                label="Follow-up der Langzeitstudien"
-                duration={1500}
-                delay={0.2}
-              />
+            <div className="grid md:grid-cols-2 gap-4">
+              {situationPaths.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link key={item.href} href={item.href}>
+                    <Card
+                      className="h-full cursor-pointer border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                      style={{ borderColor: item.color, backgroundColor: item.bg }}
+                    >
+                      <CardContent className="p-5">
+                        <div
+                          className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                          style={{ backgroundColor: item.color }}
+                        >
+                          <Icon className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground mb-3">{item.text}</p>
+                        <span className="text-sm font-medium inline-flex items-center gap-1" style={{ color: item.color }}>
+                          Zum passenden Bereich
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
             </div>
 
-            <div className="text-center">
-              <Link href="/genesung">
-                <Button variant="outline" size="lg" className="gap-2">
-                  Mehr über Genesung erfahren
-                  <ArrowRight className="w-4 h-4" />
+            <div className="mt-6">
+              <Link href="/selbsttest">
+                <Button variant="outline" size="sm" className="gap-2">
+                  <Compass className="w-4 h-4" />
+                  Oder den kurzen Selbsttest nutzen
                 </Button>
               </Link>
-              <EvidenceNote
-                className="mt-4 text-left"
-                title="Quellen zur Prognose"
-                sources={[
-                  { label: "Zanarini et al. (2010) – 10-Jahres-Verlauf", href: "https://pubmed.ncbi.nlm.nih.gov/20334540/" },
-                  { label: "Zanarini et al. (2012) – Recovery in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/22737693/" },
-                  { label: "Gunderson et al. (2011) – CLPS", href: "https://pubmed.ncbi.nlm.nih.gov/21668726/" },
-                ]}
-              />
-              <p className="text-xs text-muted-foreground mt-1">
-                Orientierungswerte aus Langzeitstudien; individuelle Verläufe können abweichen.
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Remission = diagnostische Kriterien über eine definierte Zeit nicht mehr erfüllt. Genesung = zusätzlich alltags- und funktionsbezogene Stabilität.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Materialien CTA */}
-      <section className="py-12 md:py-16 bg-cream">
+      <section className="py-12 md:py-16 bg-cream wave-divider-top" style={{ "--wave-color": "var(--color-cream)" } as React.CSSProperties}>
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <Card className="border-2 border-dashed border-sand-border bg-white">
-              <CardContent className="p-8 md:p-10">
-                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-8 h-8 md:w-10 md:h-10 text-terracotta-mid" />
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mb-8"
+            >
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
+                Was diese Website besonders abdeckt
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  "Borderline differenziert aus Sicht von Angehörigen verstehen",
+                  "Beziehungsmuster, Eskalation und Rückzug besser einordnen",
+                  "Grenzen, Selbstschutz und Unterstützung zusammendenken",
+                  "Fachliche Hilfe, Materialien und Beratungswege schnell finden",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border/40">
+                    <span className="text-sage-mid mt-0.5">✓</span>
+                    <span className="text-sm text-muted-foreground">{item}</span>
                   </div>
-                  <div className="text-center md:text-left flex-1">
-                    <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
-                      Materialien herunterladen
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      31 Materialien als A4-PDF – Infografiken, Spickzettel &amp; Notfallkarte
-                    </p>
-                    <Link href="/materialien">
-                      <Button className="bg-terracotta hover:bg-terracotta-mid text-white gap-2">
-                        <Download className="w-4 h-4" />
-                        31 Materialien durchsuchen
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Erfahrungsberichte */}
-      <Erfahrungsberichte maxBerichte={4} variant="compact" />
+      <section className="py-16 md:py-20 wave-divider-top" style={{ "--wave-color": "var(--background)" } as React.CSSProperties}>
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mb-10"
+            >
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+                Die wichtigsten Wege durch die Website
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl">
+                Die Hauptbereiche bauen aufeinander auf. Sie können trotzdem direkt dort einsteigen,
+                wo Ihre aktuelle Lage es braucht.
+              </p>
+            </motion.div>
 
-      {/* Emergency CTA */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {mainPaths.map((path) => {
+                const Icon = path.icon;
+                return (
+                  <Link key={path.href} href={path.href}>
+                    <Card className="h-full group cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-transparent hover:border-border">
+                      <CardContent className="p-6">
+                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-sage-light mb-5">
+                          <Icon className="w-7 h-7 text-sage-darker" />
+                        </div>
+                        <h3 className="font-semibold text-foreground text-xl mb-3">{path.title}</h3>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{path.description}</p>
+                        <span className="text-sm font-medium text-sage-darker flex items-center gap-1">
+                          Mehr dazu
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-16 bg-sand-muted wave-divider-top" style={{ "--wave-color": "var(--color-sand-muted)" } as React.CSSProperties}>
+        <div className="container">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+            <Card className="border-border/50 bg-white">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-terracotta-lighter flex items-center justify-center mb-4">
+                  <Download className="w-6 h-6 text-terracotta-mid" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Materialien</h3>
+                <p className="text-muted-foreground mb-4">
+                  Kuratierte Handouts, Notfallhilfen und Infografiken für akute, belastete oder
+                  unklare Situationen.
+                </p>
+                <Link href="/materialien">
+                  <Button variant="outline">Zu den Materialien</Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-white">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-sage-darker" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Beratung & Netzwerke</h3>
+                <p className="text-muted-foreground mb-4">
+                  Fachstelle, Selbsthilfe und weitere Anlaufstellen für Angehörige, die nicht alles
+                  allein tragen möchten.
+                </p>
+                <Link href="/beratung">
+                  <Button variant="outline">Zu Beratung & Netzwerken</Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <section className="py-12 md:py-16 bg-alert">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">

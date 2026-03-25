@@ -1,373 +1,366 @@
+import { useMemo, useRef, useState } from "react";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, Printer, ExternalLink, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
-import { useState, useRef } from "react";
+import {
+  AlertTriangle,
+  BookOpen,
+  Download,
+  ExternalLink,
+  Eye,
+  Filter,
+  Heart,
+  Image as ImageIcon,
+  MessageCircle,
+  Shield,
+  Sparkles,
+  TrendingUp,
+} from "lucide-react";
 import { Link } from "wouter";
-import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MATERIALIEN-SEITE – ÜBERARBEITUNG IN PROGRESS
-// Stand: 24.03.2026
-// ═══════════════════════════════════════════════════════════════════════════
-
-// Kategorie 1: Verstehen (6 Infografiken)
-const infografiken: Array<{
+type Material = {
   id: string;
   title: string;
   description: string;
-  category: string;
-  type: string;
+  category:
+    | "verstehen"
+    | "unterstuetzen"
+    | "kommunizieren"
+    | "grenzen"
+    | "selbstfuersorge"
+    | "genesung"
+    | "soforthilfe";
+  kind: "Infografik" | "Spickzettel" | "Checkliste" | "Notfallkarte" | "Notfallplan";
   url: string;
   downloadUrl?: string;
-  isHtml?: boolean;
-  previewUrl?: string;
   pdfUrl?: string;
-}> = [
-  // ═══════════════════════════════════════════════════════════════════════════
-  // KATEGORIE 1: VERSTEHEN
-  // ═══════════════════════════════════════════════════════════════════════════
-  {
-    id: "1-1-leuchtturm",
-    title: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
-    description: "Zustandsdiagramm: Stabil bleiben trotz Sturm. Sie können das Schiff nicht steuern – aber Orientierung geben.",
-    category: "verstehen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GbFCyQhEWIKomzXw.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
-  },
-  {
-    id: "1-2-eisberg",
-    title: "Der Eisberg – Wut ist oft die Spitze",
-    description: "Stock-&-Flow-Diagramm: Was Sie sehen (Wut) ist oft nur die Spitze – darunter liegen Schmerz, Angst, Scham.",
-    category: "verstehen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MLLwefeyaKvtThbK.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RNKtfQQMvhlSyiIp.pdf",
-  },
-  {
-    id: "1-3-spaltung",
-    title: "Spaltung – das Pendel zwischen Extremen",
-    description: "Zustandsdiagramm: Unter Stress kippt die Bewertung leicht ins Extreme – die Grauzone wird schwer erreichbar.",
-    category: "verstehen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WRORriPmZftmvKTL.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RtdVgflJuCNAhEKk.pdf",
-  },
-  {
-    id: "1-4-alarm-denk-modus",
-    title: "Alarm-Modus vs. Denk-Modus",
-    description: "Zustandsdiagramm: Im Alarm-Modus ist Logik oft nicht erreichbar – erst beruhigen, dann klären.",
-    category: "verstehen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sSUJoOUTiuWgrkiZ.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tlKAOpYHdCNAtovE.pdf",
-  },
-  {
-    id: "1-5-vier-phasen-zyklus",
-    title: "Der 4-Phasen-Zyklus – das vorhersehbare Muster",
-    description: "Kausal-Loop: Krisen wirken chaotisch – folgen aber oft einem wiederkehrenden Ablauf.",
-    category: "verstehen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BYDbBJaIhetrjHRq.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PBYpNxZamAxjOHYd.pdf",
-  },
-  {
-    id: "1-6-kinder-erklaerung",
-    title: "Wenn Mama oder Papa grosse Gefühle hat",
-    description: "Borderline altersgerecht erklären (4–7, 8–12, 13+ Jahre) – und Kinder schützen. Mit 3 Schutzfaktoren und Geschwister-Abschnitt.",
-    category: "verstehen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PrnKdbomSunLKPVv.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/birikKPATMlHGPWf.pdf",
-  },
+  previewUrl?: string;
+  isHtml?: boolean;
+  priority?: "core" | "secondary";
+};
 
-  // ═══════════════════════════════════════════════════════════════════════════
-  // KATEGORIE 2: KOMMUNIZIEREN
-  // ═══════════════════════════════════════════════════════════════════════════
-  {
-    id: "spickzettel-krisenkommunikation",
-    title: "Spickzettel Krisenkommunikation (A4)",
-    description: "Laminierbarer 1-Seiter mit allen Standardsätzen für die Krise – zum Ablesen in akuten Situationen.",
-    category: "kommunizieren",
-    type: "Spickzettel",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tgVHTaXVryVEuEss.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YvXkEbRmwIcCFtsj.pdf",
-  },
-  {
-    id: "checkliste-validieren-60sek",
-    title: "Validieren in 60 Sekunden – Checkliste (A4)",
-    description: "Die 6 Stufen nach Linehan mit Beispielsätzen, Mini-Leitfaden für Eskalation und 3 Universalsätzen – zum Ausdrucken und Üben.",
-    category: "kommunizieren",
-    type: "Checkliste",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mORKPLGTfHhGEMau.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/skHsKXRHdjFPuonb.pdf",
-  },
-  {
-    id: "2-6-beispiel-dialog",
-    title: "Beispiel-Dialog: kurz bleiben, ruhig bleiben",
-    description: "Chat-Sequenzdiagramm: Kurz + ruhig + wiederholbar wirkt in Krisen stärker als Argumente.",
-    category: "kommunizieren",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
-  },
-  {
-    id: "wenn-worte-treffen",
-    title: "Wenn Worte treffen – 5 häufige Schuldzuweisungen",
-    description: "Was hinter Sätzen wie ‹Du bist schuld› oder ‹Ohne dich wäre alles besser› steckt – und wie Sie ruhig und klar reagieren können. Mit 5 konkreten Antwortbeispielen.",
-    category: "kommunizieren",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/azZbLPyPkSupQskI.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hEXKCmWYeiyUnwXr.pdf",
-  },
-  // ═══════════════════════════════════════════════════════════════════════════
-  // KATEGORIE 3: UNTERSTÜTZEN
-  // ═══════════════════════════════════════════════════════════════════════════
-
-  {
-    id: "k3-2-rolle-klaeren",
-    title: "Ihre Rolle klären – Was Sie sein können (und was nicht)",
-    description: "2-Spalten-Vergleich: Sie sind Angehörige/r – nicht Therapeut/in. Diese Klarheit entlastet beide Seiten.",
-    category: "unterstuetzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WUiQpUWjKIjpSRDC.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JMOjSacqrnDcAkoB.pdf",
-  },
-
-  {
-    id: "k3-4-konsistenz",
-    title: "Konsistenz-Prinzip – als Team wird es leichter",
-    description: "Kausal-Loop: Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener.",
-    category: "unterstuetzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MCMaGcrhifsekEqb.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vfDYZzjEwJsEhzch.pdf",
-  },
-  {
-    id: "k3-5-leitlinien",
-    title: "6 Leitlinien für Angehörige – So können Sie unterstützen",
-    description: "Evidenzbasierte Empfehlungen nach Gunderson: 6 konkrete Leitlinien zum Abhaken und Umsetzen.",
-    category: "unterstuetzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OfOPUMQpHXrpSPgw.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IIcvvdvSlDcXqwbL.pdf",
-  },
-  {
-    id: "k3-6-achtsamkeit",
-    title: "Beziehungs-Achtsamkeit – 4 Schritte im Alltag",
-    description: "Timeline: Innehalten → Wahrnehmen → Nicht bewerten → Bewusst handeln – weniger Autopilot, mehr Klarheit.",
-    category: "unterstuetzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toOMoXhzHiaZUlBg.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oPRapPNKMLHWEior.pdf",
-  },
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // KATEGORIE 4: GRENZEN
-  // ═══════════════════════════════════════════════════════════════════════════
-  {
-    id: "k4-1-dear-technik",
-    title: "Die DEAR-Technik – Grenzen setzen ohne Vorwürfe",
-    description: "4-Stufen-Treppe: Beschreiben → Äussern → Behaupten → Verstärken. Die DBT-Methode für respektvolle Grenzsetzung.",
-    category: "grenzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yBSkvBJGSeNvxINq.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DDkqUiaNJwizEtPv.pdf",
-  },
-  {
-    id: "k4-2-spiegeln-aufsaugen",
-    title: "Spiegeln statt Aufsaugen – Mitfühlen ohne Übernehmen",
-    description: "Split-Screen-Vergleich: Schwamm vs. Spiegel. Sie können Gefühle anerkennen, ohne sie zu Ihren eigenen zu machen.",
-    category: "grenzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rbDvjxTUWJMXQCPj.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jJFieYXEiIxbrazO.pdf",
-  },
-  {
-    id: "k4-3-vier-arten-grenzen",
-    title: "Die 4 Arten von Grenzen – Wissen, was Sie schützen",
-    description: "4-Quadranten: Physische, emotionale, zeitliche und materielle Grenzen – mit konkreten Beispielsätzen.",
-    category: "grenzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/otBFiwevLwWQsinR.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KiiZJfLHYOlNVTsn.pdf",
-  },
-  {
-    id: "k4-4-grenzen-erkennen",
-    title: "Grenzen erkennen – 5 Warnsignale Ihres Körpers",
-    description: "Körper-Silhouette mit 5 Signalen: Bauch, Brust, Nacken, Erschöpfung, Fluchtimpuls. Lernen Sie, auf Ihren Körper zu hören.",
-    category: "grenzen",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pPRcjWVKERfSWUPL.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FftUeWuOzmxjrUEi.pdf",
-  },
-
-
-
-  {
-    id: "k4-8-spickzettel-grenzen",
-    title: "Spickzettel Grenzen – Die wichtigsten Sätze",
-    description: "A4-Spickzettel zum Laminieren: DEAR-Technik, L.M.K.-Formel, Spiegeln statt Aufsaugen – alle wichtigen Sätze auf einen Blick.",
-    category: "grenzen",
-    type: "Spickzettel",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/avGqFKFuKFfFYANu.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/obwIZiRPiVPphIUX.pdf",
-  },
-  // ═══════════════════════════════════════════════════════════════════════════
-  // KATEGORIE 5: SELBSTFÜRSORGE
-  // ═══════════════════════════════════════════════════════════════════════════
-  {
-    id: "k5-1-warnsignale",
-    title: "Warnsignale der Überlastung",
-    description: "Ampel-Stufenmodell: Erkennen Sie rechtzeitig, wann es zu viel wird – von Grün (noch im Rahmen) über Gelb (Achtung) bis Rot (Hilfe suchen).",
-    category: "selbstfuersorge",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OEUNVdTyojBBYTic.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VdAxPxngFzgNImxg.pdf",
-  },
-
-  {
-    id: "k5-3-radikale-akzeptanz",
-    title: "Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln",
-    description: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung zum sofortigen Anwenden.",
-    category: "selbstfuersorge",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OmxdguWaaXAkElDp.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SkBpjnDHfNmPbmnd.pdf",
-  },
-  {
-    id: "k5-4-stopp-technik",
-    title: "Die STOPP-Technik – 5 Schritte aus der Stressspirale",
-    description: "Stufen-Modell: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden anwendbar bei akuter Belastung.",
-    category: "selbstfuersorge",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qvJDZrQvvOlErFQu.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VnQKfkkQbPunhDed.pdf",
-  },
-
-  {
-    id: "k5-6-erlaubnis-karte",
-    title: "Erlaubnis-Karte – Was Sie sich erlauben dürfen",
-    description: "Checkliste: 9 Erlaubnisse, die sich Angehörige oft nicht geben – gültig ab sofort, unbefristet, ausgestellt von Ihnen selbst.",
-    category: "selbstfuersorge",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OMXnbczdvCPBRNTA.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DSOVugQyCvvOACIO.pdf",
-  },
-  {
-    id: "k5-7-schuld-verantwortung",
-    title: "Schuld, Verantwortung und was dazwischen liegt",
-    description: "Warum Schuldgefühle bei Angehörigen so häufig sind: Was die Forschung zu den Ursachen von BPD zeigt, Schuld vs. Verantwortung im Vergleich, und 5 innere Schuld-Sätze – was wirklich stimmt.",
-    category: "selbstfuersorge",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TgzrtmiUbRscTBlg.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jPuhxPHHtFSjOTly.pdf",
-  },
-  {
-    id: "k5-8-raus-aus-dem-schuldspiel",
-    title: "Raus aus dem Schuld-Spiel – nach Fruzzetti",
-    description: "Warum Schuldzuweisungen in Familien niemanden weiterbringen: Die 4-Sackgassen-Matrix, der No-Blame-Ausweg (Beschreiben statt Beschuldigen) und 4 Grundannahmen für den Alltag.",
-    category: "selbstfuersorge",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pcOEhDaZzFxmXWZB.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DUSGEGpxuOpweDVP.pdf",
-  },
-  // === K6 GENESUNG ===
-  {
-    id: "k6-1-genesung-in-zahlen",
-    title: "Genesung in Zahlen – Was die Forschung zeigt",
-    description: "Orientierungs-Tracker: 85–93 % erreichen symptomatische Remission, 50 % vollständige Genesung – belegt durch Langzeitstudien (Zanarini et al.).",
-    category: "genesung",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tyFTHNjsUagqrXiS.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MunlHDCNqnsOhBFn.pdf",
-  },
-  {
-    id: "k6-2-fortschritt-paradox",
-    title: "Das Fortschritt-Paradox – Warum Rückfälle zum Weg gehören",
-    description: "Aufwärts-Spirale: Genesung verläuft nicht linear. Rückfälle bedeuten nicht Scheitern – sie sind Teil des Weges nach oben.",
-    category: "genesung",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DPkqytVYFcreeBlC.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UFLdEEGIDxKdRUZO.pdf",
-  },
-
-  {
-    id: "k6-4-fuenf-faktoren-genesung",
-    title: "5 Faktoren, die Genesung fördern",
-    description: "Säulen-Modell: Spezialisierte Therapie, stabile Beziehungen, strukturierter Alltag, Begleiterkrankungen behandeln und eigene Motivation – auf dem Fundament von Zeit und Geduld.",
-    category: "genesung",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mFhtxtPMBkCEVPII.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qgrRYtMKOvwWmuah.pdf",
-  },
-  {
-    id: "k6-5-ihre-rolle-genesungsprozess",
-    title: "Ihre Rolle im Genesungsprozess",
-    description: "Waage-Modell: Was Sie tun können (Konsistenz, realistische Hoffnung, eigene Grenzen, Fortschritte benennen, professionelle Hilfe unterstützen) vs. was nicht Ihre Aufgabe ist.",
-    category: "genesung",
-    type: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GhgPDkJhqlqJkYzE.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CZdiDaadpIWNOBFb.pdf",
-  },
-  // ═══════════════════════════════════════════════════════════════════════════
-  // SOFORTHILFE
-  // ═══════════════════════════════════════════════════════════════════════════
+const materials: Material[] = [
   {
     id: "notfallkarte-zuerich",
     title: "Notfallkarte Zürich – Psychische Krise",
-    description: "4-Block-Ampel (ROT / ORANGE / GRÜN / LILA): Alle wichtigen Nummern für Angehörige auf einer A4-Seite. Inkl. 144 Sanität, 0800 33 66 55 AERZTEFON und PUK 24/7. v07 · 2026-03-10",
+    description:
+      "Alle wichtigen Nummern für Angehörige auf einer A4-Seite. Für akute Orientierung, wenn rasches Handeln nötig ist.",
     category: "soforthilfe",
-    type: "Notfallkarte",
+    kind: "Notfallkarte",
     url: "/notfallkarte.html",
     previewUrl: "/notfallkarte-preview.webp",
     downloadUrl: "/notfallkarte.html",
     pdfUrl: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
     isHtml: true,
+    priority: "core",
   },
   {
     id: "notfallplan-krise",
     title: "Notfallplan Krise – Suizidgedanken & Selbstverletzung",
-    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit korrekten Notfallnummern (144 / 0800 33 66 55 / PUK 058 384 20 00). v03 · März 2026.",
+    description:
+      "Knappe 4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung.",
     category: "soforthilfe",
-    type: "Notfallplan",
+    kind: "Notfallplan",
     url: "/notfallplan-krise-v03-preview.webp",
     downloadUrl: "/notfallplan-krise-v03.pdf",
+    priority: "core",
+  },
+  {
+    id: "leuchtturm",
+    title: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
+    description:
+      "Orientierung zur Angehörigenrolle: stabil bleiben, ohne das Schiff steuern zu wollen.",
+    category: "verstehen",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GbFCyQhEWIKomzXw.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
+    priority: "core",
+  },
+  {
+    id: "eisberg",
+    title: "Der Eisberg – Wut ist oft die Spitze",
+    description:
+      "Wut, Schmerz, Angst und Scham als Beziehungsgeschehen verständlicher einordnen.",
+    category: "verstehen",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MLLwefeyaKvtThbK.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RNKtfQQMvhlSyiIp.pdf",
+    priority: "core",
+  },
+  {
+    id: "rolle-klaeren",
+    title: "Ihre Rolle klären – Was Sie sein können (und was nicht)",
+    description:
+      "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
+    category: "unterstuetzen",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WUiQpUWjKIjpSRDC.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JMOjSacqrnDcAkoB.pdf",
+    priority: "core",
+  },
+  {
+    id: "krisenkommunikation",
+    title: "Spickzettel Krisenkommunikation (A4)",
+    description:
+      "Kurze Formulierungen für akute Spannungszustände, wenn klare Sprache mehr hilft als lange Erklärungen.",
+    category: "kommunizieren",
+    kind: "Spickzettel",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tgVHTaXVryVEuEss.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YvXkEbRmwIcCFtsj.pdf",
+    priority: "core",
+  },
+  {
+    id: "grenzen-spickzettel",
+    title: "Spickzettel Grenzen – Die wichtigsten Sätze",
+    description:
+      "Knappe Formulierungen für klare, respektvolle Grenzsetzung im Alltag und in belasteten Gesprächen.",
+    category: "grenzen",
+    kind: "Spickzettel",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/avGqFKFuKFfFYANu.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/obwIZiRPiVPphIUX.pdf",
+    priority: "core",
+  },
+  {
+    id: "warnsignale",
+    title: "Warnsignale der Überlastung",
+    description:
+      "Orientierung für Angehörige, wenn Erschöpfung, Alarmbereitschaft oder Rückzug zu viel Raum einnehmen.",
+    category: "selbstfuersorge",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OEUNVdTyojBBYTic.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VdAxPxngFzgNImxg.pdf",
+    priority: "core",
+  },
+  {
+    id: "schuld-verantwortung",
+    title: "Schuld, Verantwortung und was dazwischen liegt",
+    description:
+      "Hilft, Schuldgefühle bei Angehörigen zu entlasten und Verantwortung differenzierter zu sehen.",
+    category: "selbstfuersorge",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TgzrtmiUbRscTBlg.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jPuhxPHHtFSjOTly.pdf",
+    priority: "secondary",
+  },
+  {
+    id: "spaltung",
+    title: "Spaltung – das Pendel zwischen Extremen",
+    description:
+      "Einordnung von Idealisierung, Entwertung und dem erschwerten Zugang zu Grautönen unter Stress.",
+    category: "verstehen",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WRORriPmZftmvKTL.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RtdVgflJuCNAhEKk.pdf",
+    priority: "secondary",
+  },
+  {
+    id: "alarm-modus",
+    title: "Alarm-Modus vs. Denk-Modus",
+    description:
+      "Warum logische Klärung unter starker Anspannung oft nicht erreichbar ist und zuerst Beruhigung hilft.",
+    category: "verstehen",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sSUJoOUTiuWgrkiZ.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tlKAOpYHdCNAtovE.pdf",
+    priority: "secondary",
+  },
+  {
+    id: "wenn-worte-treffen",
+    title: "Wenn Worte treffen – 5 häufige Schuldzuweisungen",
+    description:
+      "Typische anklagende Sätze einordnen und eigene Reaktionen ruhiger und klarer gestalten.",
+    category: "kommunizieren",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/azZbLPyPkSupQskI.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hEXKCmWYeiyUnwXr.pdf",
+    priority: "secondary",
+  },
+  {
+    id: "dear",
+    title: "Die DEAR-Technik – Grenzen setzen ohne Vorwürfe",
+    description:
+      "DBT-orientierte Struktur für klare Bitten und Grenzsetzungen ohne unnötige Eskalation.",
+    category: "grenzen",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yBSkvBJGSeNvxINq.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DDkqUiaNJwizEtPv.pdf",
+    priority: "secondary",
+  },
+  {
+    id: "radikale-akzeptanz",
+    title: "Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln",
+    description:
+      "Hilft Angehörigen, Realität anzuerkennen, ohne aufzugeben oder alles gutzuheissen.",
+    category: "selbstfuersorge",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OmxdguWaaXAkElDp.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SkBpjnDHfNmPbmnd.pdf",
+    priority: "secondary",
+  },
+  {
+    id: "genesung-zahlen",
+    title: "Genesung in Zahlen – Was die Forschung zeigt",
+    description:
+      "Langfristige Hoffnung mit realistischen Daten: Besserung ist möglich, aber selten linear.",
+    category: "genesung",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tyFTHNjsUagqrXiS.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MunlHDCNqnsOhBFn.pdf",
+    priority: "secondary",
+  },
+  {
+    id: "kinder",
+    title: "Wenn Mama oder Papa grosse Gefühle hat",
+    description:
+      "Altersgerechte Erklärung für Kinder und Hinweise zum Schutz von Kindern im belasteten Familiensystem.",
+    category: "verstehen",
+    kind: "Infografik",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PrnKdbomSunLKPVv.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/birikKPATMlHGPWf.pdf",
+    priority: "secondary",
   },
 ];
 
-const categories = [
-  { id: "alle", label: "Alle Materialien", icon: Filter },
+const categoryMeta = [
+  { id: "alle", label: "Alle", icon: Filter },
+  { id: "soforthilfe", label: "Soforthilfe", icon: AlertTriangle },
   { id: "verstehen", label: "Verstehen", icon: BookOpen },
   { id: "unterstuetzen", label: "Unterstützen", icon: Heart },
   { id: "kommunizieren", label: "Kommunizieren", icon: MessageCircle },
   { id: "grenzen", label: "Grenzen", icon: Shield },
-  { id: "selbstfuersorge", label: "Selbstfürsorge", icon: AlertTriangle },
+  { id: "selbstfuersorge", label: "Selbstfürsorge", icon: Sparkles },
   { id: "genesung", label: "Genesung", icon: TrendingUp },
-  { id: "soforthilfe", label: "Soforthilfe", icon: AlertTriangle },
 ];
+
+const quickStarts = [
+  {
+    id: "soforthilfe",
+    title: "Akute Krise",
+    text: "Wenn rasche Orientierung und Notfallnummern nötig sind.",
+    color: "var(--color-alert)",
+    bg: "var(--color-alert-wash)",
+  },
+  {
+    id: "verstehen",
+    title: "Ich brauche Orientierung",
+    text: "Wenn Sie Dynamiken besser einordnen möchten.",
+    color: "var(--color-sage-mid)",
+    bg: "var(--color-sage-wash)",
+  },
+  {
+    id: "kommunizieren",
+    title: "Schwierige Gespräche",
+    text: "Wenn Worte schnell kippen oder verletzen.",
+    color: "var(--color-slate-blue)",
+    bg: "var(--color-slate-wash)",
+  },
+  {
+    id: "selbstfuersorge",
+    title: "Ich bin selbst am Limit",
+    text: "Wenn Erschöpfung, Schuld oder Daueranspannung dominieren.",
+    color: "var(--color-terracotta-mid)",
+    bg: "var(--color-terracotta-wash)",
+  },
+];
+
+function MaterialCard({
+  item,
+  onPreview,
+}: {
+  item: Material;
+  onPreview: (image: string, title: string) => void;
+}) {
+  const previewSrc = item.isHtml ? item.previewUrl ?? item.url : item.url;
+  const openHref = item.downloadUrl ?? item.url;
+  const downloadHref = item.pdfUrl ?? item.downloadUrl;
+
+  return (
+    <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
+      <button
+        type="button"
+        className="relative aspect-[4/3] bg-muted overflow-hidden group w-full"
+        onClick={() => {
+          if (item.isHtml) {
+            window.open(openHref, "_blank");
+          } else {
+            onPreview(item.url, item.title);
+          }
+        }}
+        aria-label={`${item.title} öffnen`}
+      >
+        <img
+          src={previewSrc}
+          alt={item.title}
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          width={400}
+          height={300}
+          decoding="async"
+        />
+        <div className="absolute top-2 left-2 bg-background/85 backdrop-blur-sm px-2 py-0.5 rounded text-xs font-medium text-muted-foreground">
+          {item.kind}
+        </div>
+      </button>
+      <CardContent className="p-5">
+        <h3 className="font-semibold text-foreground mb-2 text-lg">{item.title}</h3>
+        <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
+        <div className="flex gap-2 flex-wrap">
+          <a
+            href={openHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
+          >
+            <ExternalLink className="w-4 h-4" />
+            Öffnen
+          </a>
+          {downloadHref ? (
+            <a
+              href={downloadHref}
+              download
+              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Herunterladen
+            </a>
+          ) : null}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function Materialien() {
   const [activeCategory, setActiveCategory] = useState("alle");
   const [previewImage, setPreviewImage] = useState<string | null>(null);
-  const [previewTitle, setPreviewTitle] = useState<string>("Vorschau");
+  const [previewTitle, setPreviewTitle] = useState("Vorschau");
   const gridRef = useRef<HTMLElement>(null);
-  
-  const filteredInfografiken = activeCategory === "alle" 
-    ? infografiken 
-    : infografiken.filter(i => i.category === activeCategory);
 
-  // Zähler für Statistik
-  const pngCount = infografiken.length;
+  const coreMaterials = useMemo(
+    () => materials.filter((item) => item.priority === "core"),
+    [],
+  );
+
+  const secondaryMaterials = useMemo(
+    () =>
+      activeCategory === "alle"
+        ? materials.filter((item) => item.priority !== "core")
+        : materials.filter(
+            (item) => item.priority !== "core" && item.category === activeCategory,
+          ),
+    [activeCategory],
+  );
 
   return (
     <Layout>
-      <SEO title="Materialien" description="Herunterladbare Materialien, Infografiken und Arbeitsblätter für Angehörige." path="/materialien" />
-      {/* Hero */}
+      <SEO
+        title="Materialien"
+        description="Ausgewählte Materialien, Infografiken und Notfallhilfen für Angehörige von Menschen mit Borderline."
+        path="/materialien"
+      />
+
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
         <div className="container">
           <motion.div
@@ -381,75 +374,117 @@ export default function Materialien() {
                 <Download className="w-6 h-6 text-sage-darker" />
               </div>
             </div>
-            
+
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
-              Materialien & Infografiken
+              Materialien für Angehörige
             </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Alle Infografiken und Handouts zum Herunterladen, Ausdrucken und Teilen. 
-              Ideal für Beratungsgespräche, Selbsthilfegruppen oder zur persönlichen Vertiefung.
+
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Hier finden Sie ausgewählte Handouts, Infografiken und Orientierungshilfen für
+              belastende, unklare oder akute Situationen. Die Sammlung ist bewusst kuratiert: lieber
+              wenige, wirklich hilfreiche Ressourcen als ein unübersichtliches Archiv.
             </p>
-            
-            {pngCount > 0 && (
-              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                <span className="flex items-center gap-1">
-                  <ImageIcon className="w-4 h-4" />
-                  {pngCount} Materialien
-                </span>
-              </div>
-            )}
-            <LastVerifiedBadge date="24.03.2026" />
           </motion.div>
         </div>
       </section>
 
-      {/* Überarbeitungs-Hinweis */}
-      <section className="py-8 wave-divider-top">
+      <section className="py-10 wave-divider-top">
         <div className="container">
-          <Card className="bg-sage-wash border-sage-light">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-6 h-6 text-sage-dark" />
-                </div>
-                <div>
-                  <h2 className="font-semibold text-foreground mb-2 text-lg">
-                    Alle 31 Materialien verfügbar
-                  </h2>
-                  <p className="text-muted-foreground">
-                    Sämtliche Materialien stehen zum Herunterladen bereit – sortiert nach 7 Kategorien: Verstehen · Unterstützen · Kommunizieren · Grenzen · Selbstfürsorge · Genesung · Soforthilfe
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              Was hilft gerade jetzt?
+            </h2>
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+              {quickStarts.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => {
+                    setActiveCategory(item.id);
+                    setTimeout(() => {
+                      gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 50);
+                  }}
+                  className="text-left rounded-xl border p-5 transition-all hover:shadow-md"
+                  style={{ borderColor: item.color, backgroundColor: item.bg }}
+                >
+                  <p className="font-semibold text-foreground mb-2">{item.title}</p>
+                  <p className="text-sm text-muted-foreground">{item.text}</p>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Filter – Sticky mit horizontalem Scroll auf Mobile */}
-      {infografiken.length > 0 && (
-        <section className="py-4 md:py-6 border-b border-border/60 sticky top-16 md:top-20 bg-background/95 backdrop-blur-md z-20 shadow-[0_4px_12px_-4px_rgba(0,0,0,0.08)] transition-shadow">
-          <div className="container">
-            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible">
-              {categories.map((cat) => {
+      <section className="py-12">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <Card className="bg-sage-wash border-sage-light mb-8">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center flex-shrink-0">
+                    <ImageIcon className="w-6 h-6 text-sage-dark" />
+                  </div>
+                  <div>
+                    <h2 className="font-semibold text-foreground mb-2 text-lg">
+                      Empfohlene Kernmaterialien
+                    </h2>
+                    <p className="text-muted-foreground">
+                      Wenn Sie gerade nicht lange suchen möchten, beginnen Sie mit diesen
+                      Materialien. Sie decken Krise, Orientierung, Kommunikation, Grenzen und
+                      Selbstfürsorge ab.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {coreMaterials.map((item) => (
+                <MaterialCard
+                  key={item.id}
+                  item={item}
+                  onPreview={(image, title) => {
+                    setPreviewImage(image);
+                    setPreviewTitle(title);
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section ref={gridRef} className="py-12 md:py-16 border-t border-border/60">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-6 p-3 rounded-lg bg-sand border border-sand-subtle flex items-center gap-2">
+              <Eye className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Vorschau = Web-Bild.</strong> «Öffnen» öffnet
+                die Druckversion im neuen Tab. Die Notfallkarte öffnet als HTML-Seite.
+              </p>
+            </div>
+
+            <div className="flex gap-2 overflow-x-auto pb-3 mb-8 scrollbar-none -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible">
+              {categoryMeta.map((cat) => {
                 const Icon = cat.icon;
-                const count = cat.id === "alle" 
-                  ? infografiken.length 
-                  : infografiken.filter(i => i.category === cat.id).length;
+                const count =
+                  cat.id === "alle"
+                    ? materials.filter((item) => item.priority !== "core").length
+                    : materials.filter(
+                        (item) => item.priority !== "core" && item.category === cat.id,
+                      ).length;
                 return (
                   <Button
                     key={cat.id}
                     variant={activeCategory === cat.id ? "default" : "outline"}
                     size="sm"
-                    onClick={() => {
-                      setActiveCategory(cat.id);
-                      // Sanft zum Anfang der Karten scrollen
-                      setTimeout(() => {
-                        gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }, 50);
-                    }}
-                    className={`whitespace-nowrap shrink-0 ${activeCategory === cat.id ? "bg-sage-dark hover:bg-sage-dark text-white" : ""}`}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={`whitespace-nowrap shrink-0 ${
+                      activeCategory === cat.id ? "bg-sage-dark hover:bg-sage-dark text-white" : ""
+                    }`}
                   >
                     <Icon className="w-4 h-4 mr-1.5" />
                     {cat.label}
@@ -458,208 +493,94 @@ export default function Materialien() {
                 );
               })}
             </div>
-          </div>
-        </section>
-      )}
 
-      {/* Grid oder Platzhalter */}
-      <section ref={gridRef} className="py-12 md:py-16">
-        <div className="container">
-          {/* Erwartungsmanagement */}
-          <div className="mb-6 p-3 rounded-lg bg-sand border border-sand-subtle flex items-center gap-2">
-            <Eye className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-            <p className="text-sm text-muted-foreground">
-              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab. Die Notfallkarte öffnet als interaktive HTML-Seite.
-            </p>
+            {secondaryMaterials.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {secondaryMaterials.map((item) => (
+                  <MaterialCard
+                    key={item.id}
+                    item={item}
+                    onPreview={(image, title) => {
+                      setPreviewImage(image);
+                      setPreviewTitle(title);
+                    }}
+                  />
+                ))}
+              </div>
+            ) : (
+              <Card className="border-border/50">
+                <CardContent className="p-8 text-center">
+                  <p className="text-muted-foreground">
+                    In dieser Kategorie sind aktuell keine weiteren Materialien sichtbar.
+                  </p>
+                </CardContent>
+              </Card>
+            )}
           </div>
-          {filteredInfografiken.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredInfografiken.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-                >
-                  <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
-                    {/* Vorschaubild mit Hover-Overlay */}
-                    <div
-                      className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
-                      onClick={() => {
-                        if (item.isHtml) {
-                          window.open(item.url, '_blank');
-                        } else {
-                          setPreviewImage(item.url); setPreviewTitle(item.title);
-                        }
-                      }}
-                    >
-                      {item.isHtml ? (
-                        <div className="w-full h-full relative overflow-hidden bg-white">
-                          {item.previewUrl ? (
-                            <img
-                              src={item.previewUrl}
-                              alt={item.title}
-                              className="w-full h-full object-cover object-top"
-                              loading="lazy"
-                              width={597}
-                              height={826}
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                              <span className="text-xs text-gray-400">Vorschau</span>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <img
-                          src={item.url}
-                          alt={item.title}
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                          loading={index < 4 ? "eager" : "lazy"}
-                          width={400}
-                          height={300}
-                          decoding={index < 4 ? "sync" : "async"}
-                        />
-                      )}
-                      {/* Hover-Overlay */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                          <ZoomIn className="w-4 h-4 text-foreground" />
-                          <span className="text-sm font-medium text-foreground">{item.isHtml ? 'Öffnen' : 'Vergrössern'}</span>
-                        </div>
-                      </div>
-                      {/* Typ-Badge */}
-                      <div className="absolute top-2 left-2 bg-background/85 backdrop-blur-sm px-2 py-0.5 rounded text-xs font-medium text-muted-foreground">
-                        {item.type}
-                      </div>
-                    </div>
-                    
-                    <CardContent className="p-5">
-                      <h2 className="font-semibold text-foreground mb-2 text-lg">
-                        {item.title}
-                      </h2>
-                      
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                        {item.description}
-                      </p>
-                      
-                      <div className="flex items-center gap-2 justify-end flex-wrap">
-                        {/* Öffnen-Button: immer sichtbar */}
-                        <a
-                          href={item.downloadUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${item.isHtml ? 'Notfallkarte' : 'PDF'} öffnen: ${item.title} (neuer Tab)`}
-                          className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          {item.isHtml ? 'Notfallkarte öffnen' : 'Öffnen'}
-                        </a>
-                        {/* Download-Button: für PDFs direkt, für HTML via pdfUrl */}
-                        {!item.isHtml ? (
-                          <a
-                            href={item.downloadUrl}
-                            download
-                            aria-label={`PDF herunterladen: ${item.title}`}
-                            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
-                          >
-                            <Download className="w-4 h-4" />
-                            Herunterladen
-                          </a>
-                        ) : item.pdfUrl ? (
-                          <>
-                            {/* Mobile: PDF-Download als voller Button, Öffnen als Link */}
-                            <a
-                              href={item.pdfUrl}
-                              download="Notfallkarte-Zuerich-Psychische-Krise.pdf"
-                              aria-label="Notfallkarte als PDF herunterladen"
-                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors flex-1 sm:flex-none"
-                            >
-                              <Download className="w-4 h-4" />
-                              PDF herunterladen
-                            </a>
-                            <a
-                              href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label="Notfallkarte in neuem Tab öffnen"
-                              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
-                            >
-                              <Printer className="w-4 h-4" />
-                              Drucken
-                            </a>
-                          </>
-                        ) : null}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <div className="w-16 h-16 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
-                <ImageIcon className="w-8 h-8 text-muted-foreground" />
-              </div>
-              <p className="text-muted-foreground mb-4">
-                Die neuen Infografiken werden gerade erstellt.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                In der Zwischenzeit finden Sie hilfreiche Informationen auf unseren Themenseiten:
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 mt-4">
-                <Link href="/verstehen">
-                  <Button variant="outline" size="sm">
-                    <BookOpen className="w-4 h-4 mr-2" />
-                    Verstehen
-                  </Button>
-                </Link>
-                <Link href="/kommunizieren">
-                  <Button variant="outline" size="sm">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Kommunizieren
-                  </Button>
-                </Link>
-                <Link href="/grenzen">
-                  <Button variant="outline" size="sm">
-                    <Shield className="w-4 h-4 mr-2" />
-                    Grenzen
-                  </Button>
-                </Link>
-                <Link href="/selbstfuersorge">
-                  <Button variant="outline" size="sm">
-                    <AlertTriangle className="w-4 h-4 mr-2" />
-                    Selbstfürsorge
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Nutzungshinweis */}
       <section className="py-12 bg-muted/30 wave-divider-top">
         <div className="container">
-          <Card className="bg-sand-muted border-sand-mid">
-            <CardContent className="p-6">
-              <h2 className="font-semibold text-foreground mb-2 text-lg">
-                Nutzungshinweis
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Alle Materialien dürfen für private und nicht-kommerzielle Zwecke frei verwendet werden. 
-                Bei Weitergabe bitte die Quelle angeben: <strong>borderline-angehoerige.manus.space</strong> – 
-                erstellt von Christa Egger, Angehörigenarbeit PUK Zürich.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+            <Card className="bg-sand-muted border-sand-mid">
+              <CardContent className="p-6">
+                <h2 className="font-semibold text-foreground mb-2 text-lg">Besondere Konstellationen</h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Manche Materialien helfen besonders, wenn Kinder mitbetroffen sind, wenn Schuld
+                  dominiert oder wenn Grenzen und Distanz zum Thema werden.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Button variant="outline" size="sm" onClick={() => setActiveCategory("verstehen")}>
+                    Kinder & Familie
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={() => setActiveCategory("selbstfuersorge")}>
+                    Schuld & Erschöpfung
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={() => setActiveCategory("grenzen")}>
+                    Grenzen & Selbstschutz
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-sage-wash border-sage-light">
+              <CardContent className="p-6">
+                <h2 className="font-semibold text-foreground mb-2 text-lg">Von hier aus weiter</h2>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Wenn Sie gerade eher Orientierung als Downloads brauchen, sind die Hauptseiten oft
+                  der bessere Einstieg.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Link href="/verstehen">
+                    <Button variant="outline" size="sm">
+                      Verstehen
+                    </Button>
+                  </Link>
+                  <Link href="/kommunizieren">
+                    <Button variant="outline" size="sm">
+                      Kommunizieren
+                    </Button>
+                  </Link>
+                  <Link href="/grenzen">
+                    <Button variant="outline" size="sm">
+                      Grenzen
+                    </Button>
+                  </Link>
+                  <Link href="/selbstfuersorge">
+                    <Button variant="outline" size="sm">
+                      Selbstfürsorge
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* Lightbox für Bildvorschau */}
       {previewImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-pointer"
           onClick={() => setPreviewImage(null)}
         >
@@ -668,10 +589,14 @@ export default function Materialien() {
             animate={{ opacity: 1, scale: 1 }}
             className="max-w-4xl max-h-[90vh] overflow-auto"
           >
-            <img 
-              src={previewImage} 
-              alt={`Vorschau: ${previewTitle}`} 
-              className="w-full h-auto rounded-lg shadow-2xl" width={1600} height={892} loading="lazy" decoding="async"
+            <img
+              src={previewImage}
+              alt={`Vorschau: ${previewTitle}`}
+              className="w-full h-auto rounded-lg shadow-2xl"
+              width={1600}
+              height={892}
+              loading="lazy"
+              decoding="async"
             />
             <p className="text-center text-white mt-4 text-sm">
               Klicken Sie irgendwo, um zu schliessen

@@ -45,8 +45,9 @@ export default function Selbsthilfegruppen() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Sie müssen das nicht allein tragen. Hier finden Sie professionelle Beratung, 
-              Selbsthilfegruppen und Netzwerke für Angehörige in der Schweiz.
+              Wenn Belastung, Unsicherheit oder Erschöpfung zu gross werden, kann es entlastend sein,
+              nicht nur im eigenen System nach Lösungen zu suchen. Hier finden Sie Beratung,
+              Selbsthilfe und weitere Anlaufstellen für Angehörige in der Schweiz.
             </p>
             <div className="mt-5">
               <LastVerifiedBadge date="24.03.2026" />
@@ -66,7 +67,7 @@ export default function Selbsthilfegruppen() {
               icon={<Building2 className="w-7 h-7 text-sage-darker" />}
               id="professionelle-beratung"
               defaultOpen={true}
-              preview="Kostenlose Beratungsangebote für Angehörige von psychisch erkrankten Menschen."
+              preview="Anlaufstellen, die Angehörige fachlich begleiten, entlasten und bei der Einordnung unterstützen."
             >
               <div className="space-y-4">
                 {/* Fachstelle Angehörigenarbeit PUK */}
@@ -191,7 +192,7 @@ export default function Selbsthilfegruppen() {
               title="Angehörigen-Netzwerke"
               icon={<Heart className="w-7 h-7 text-sage-mid" />}
               id="angehoerigen-netzwerke"
-              preview="Organisationen, die sich speziell für Angehörige von psychisch erkrankten Menschen einsetzen."
+              preview="Organisationen und Netzwerke, die Austausch, Orientierung und Entlastung für Angehörige ermöglichen."
             >
               <div className="space-y-4">
                 {/* Stand by You Schweiz */}
@@ -335,7 +336,7 @@ export default function Selbsthilfegruppen() {
               title="Selbsthilfegruppen finden"
               icon={<MapPin className="w-7 h-7 text-terracotta-mid" />}
               id="selbsthilfegruppen"
-              preview="Selbsthilfe Schweiz ist die zentrale Anlaufstelle für Selbsthilfegruppen in der ganzen Schweiz."
+              preview="Wenn Sie mit anderen Angehörigen in Austausch kommen möchten, ist Selbsthilfe Schweiz die wichtigste Vermittlungsstelle."
             >
               <Card className="border-sage-darker/20 bg-sage-wash/40 overflow-hidden">
                 <CardContent className="p-6 md:p-8">
@@ -372,28 +373,28 @@ export default function Selbsthilfegruppen() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">Nächste Schritte</h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Egal wo Sie gerade stehen – der erste Schritt ist oft der schwierigste. 
-                    Hier sind drei Möglichkeiten, wie Sie heute beginnen können:
+                    Nicht jede Unterstützung passt in jeder Lage. Diese drei Wege sind oft ein
+                    sinnvoller nächster Schritt, wenn Sie gerade Orientierung oder Entlastung suchen:
                   </p>
                   <div className="space-y-3">
                     <Link href="/fachstelle">
                       <span className="flex items-center gap-3 p-3 rounded-lg bg-background/60 hover:bg-background transition-colors cursor-pointer">
                         <Building2 className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <span className="text-sm text-foreground">Kontaktieren Sie die Fachstelle Angehörigenarbeit für ein erstes Gespräch</span>
+                        <span className="text-sm text-foreground">Ein erstes Beratungsgespräch bei der Fachstelle anfragen</span>
                         <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto flex-shrink-0" />
                       </span>
                     </Link>
                     <Link href="/selbstfuersorge">
                       <span className="flex items-center gap-3 p-3 rounded-lg bg-background/60 hover:bg-background transition-colors cursor-pointer">
                         <Heart className="w-5 h-5 text-terracotta-mid flex-shrink-0" />
-                        <span className="text-sm text-foreground">Lernen Sie Strategien zur Selbstfürsorge kennen</span>
+                        <span className="text-sm text-foreground">Eigene Überlastung und Selbstfürsorge in den Blick nehmen</span>
                         <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto flex-shrink-0" />
                       </span>
                     </Link>
                     <Link href="/kommunizieren">
                       <span className="flex items-center gap-3 p-3 rounded-lg bg-background/60 hover:bg-background transition-colors cursor-pointer">
                         <Users className="w-5 h-5 text-slate-blue flex-shrink-0" />
-                        <span className="text-sm text-foreground">Entdecken Sie Kommunikationsstrategien für den Alltag</span>
+                        <span className="text-sm text-foreground">Kommunikation in belasteten Situationen gezielter einordnen</span>
                         <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto flex-shrink-0" />
                       </span>
                     </Link>

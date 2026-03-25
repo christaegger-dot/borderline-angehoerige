@@ -4,14 +4,27 @@ import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Calendar, ArrowRight, CheckCircle2, Heart, Clock, Users, Lightbulb, AlertTriangle } from "lucide-react";
+import {
+  Calendar,
+  ArrowRight,
+  CheckCircle2,
+  Heart,
+  Clock,
+  Users,
+  Lightbulb,
+  AlertTriangle,
+} from "lucide-react";
 import { Link } from "wouter";
 
 export default function UnterstuetzenAlltag() {
   return (
     <Layout>
-      <SEO title="Unterstützen im Alltag" description="Praktische Strategien für den Alltag mit einem Menschen mit Borderline-Persönlichkeitsstörung." path="/unterstuetzen/alltag" />
-      {/* Hero */}
+      <SEO
+        title="Unterstützen im Alltag"
+        description="Wie Angehörige im Alltag hilfreich bleiben können: verlässlich, klar und ohne sich selbst zu verlieren."
+        path="/unterstuetzen/alltag"
+      />
+
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
         <div className="container">
           <motion.div
@@ -20,64 +33,106 @@ export default function UnterstuetzenAlltag() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <Link href="/unterstuetzen/uebersicht" className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1">
+            <Link
+              href="/unterstuetzen/uebersicht"
+              className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
+            >
               ← Zurück zur Übersicht
             </Link>
-            
+
             <div className="flex items-center gap-3 mb-6 mt-4">
               <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
                 <Calendar className="w-6 h-6 text-sage-dark" />
               </div>
               <span className="text-sm font-medium text-sage-dark">Lesezeit: 8 Minuten</span>
             </div>
-            
+
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Im Alltag unterstützen
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Der Alltag bietet viele Gelegenheiten, Ihren Angehörigen zu unterstützen – ohne grosse Gesten, sondern durch beständige, kleine Handlungen.
+              Belastete Beziehungen bestehen nicht nur aus Krisen. Meist prägen sie den Alltag:
+              Anspannung in der Luft, vorsichtiges Abtasten, Rückzug nach Konflikten, Schuldgefühle,
+              Erreichbarkeitsdruck und die Frage, wie viel Nähe gerade hilfreich ist. Diese Seite
+              geht darum, was im Alltag trägt und was eher erschöpft.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Content */}
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-
-            {/* Stabilität bieten */}
             <ContentSection
-              title="Stabilität und Struktur bieten"
+              title="Der Alltag ist oft nicht ruhig, sondern vorspannt"
               icon={<Clock className="w-7 h-7 text-sage" />}
-              id="stabilitaet"
+              id="alltagsspannung"
               defaultOpen={true}
-              preview="Menschen mit Borderline erleben oft inneres Chaos. Äussere Struktur kann helfen, dieses Chaos zu regulieren."
+              preview="Viele Angehörige leben nicht in dauernder Krise, sondern in dauernder Vorahnung von Krise. Gerade das kann zermürbend sein."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Menschen mit Borderline erleben oft inneres Chaos. Äussere Struktur kann helfen, dieses Chaos zu regulieren. Sie können Stabilität bieten durch:
-              </p>
-              
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Viele Angehörige kennen weniger den permanenten Ausnahmezustand als einen Alltag,
+                  der unterschwellig unter Spannung steht: Man beobachtet Stimmungen, wägt Worte ab,
+                  rechnet mit plötzlichem Rückzug oder Ärger und versucht gleichzeitig, Normalität
+                  aufrechtzuerhalten.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Diese dauernde innere Wachsamkeit ist anstrengend. Sie kostet Energie, auch wenn
+                  äusserlich gerade "nichts passiert". Hilfreiche Alltagsunterstützung beginnt oft
+                  damit, diese Belastung ernst zu nehmen und nicht nur auf sichtbare Eskalationen zu
+                  reagieren.
+                </p>
+                <Card className="bg-sage-wash/50 border-sage-mid/30">
+                  <CardContent className="p-5">
+                    <p className="text-foreground leading-relaxed">
+                      Alltagshilfe bedeutet deshalb nicht, immer mehr zu tun. Oft bedeutet sie,
+                      Beziehungen etwas vorhersehbarer, klarer und weniger reaktiv zu machen.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </ContentSection>
+
+            <ContentSection
+              title="Was im Alltag oft wirklich hilft"
+              icon={<Heart className="w-7 h-7 text-terracotta" />}
+              id="was-hilft"
+              preview="Nicht grosse Gesten, sondern Klarheit, Verlässlichkeit, ruhige Präsenz und begrenzte Verfügbarkeit tragen häufig am meisten."
+            >
               <div className="grid gap-4">
                 {[
                   {
-                    title: "Verlässliche Routinen",
-                    description: "Regelmässige Essenszeiten, feste Termine für gemeinsame Aktivitäten, vorhersehbare Abläufe.",
-                    example: "\"Jeden Sonntag frühstücken wir zusammen – das ist unser Ritual.\""
+                    title: "Verlässliche Absprachen",
+                    description:
+                      "Regelmässigkeit und angekündigte Änderungen entlasten oft stärker als spontane intensive Zuwendung.",
+                    example:
+                      "\"Ich rufe dich heute Abend nach dem Essen an. Wenn ich mich verspäte, sage ich Bescheid.\"",
                   },
                   {
-                    title: "Klare Kommunikation",
-                    description: "Sagen Sie, was Sie meinen. Vermeiden Sie Doppeldeutigkeiten und unausgesprochene Erwartungen.",
-                    example: "\"Ich komme um 18 Uhr nach Hause\" statt \"Ich komme später\"."
+                    title: "Klar sagen, was Sie meinen",
+                    description:
+                      "Doppeldeutigkeiten, Beschwichtigungen oder halbe Zusagen schaffen im Alltag oft mehr Unruhe als ehrliche Klarheit.",
+                    example:
+                      "\"Ich brauche heute Abend Ruhe und bin morgen wieder ansprechbar.\"",
                   },
                   {
-                    title: "Berechenbarkeit",
-                    description: "Halten Sie Versprechen. Kündigen Sie Änderungen frühzeitig an. Seien Sie zuverlässig.",
-                    example: "Wenn Sie absagen müssen, tun Sie es rechtzeitig und mit Erklärung."
-                  }
-                ].map((item, index) => (
-                  <Card key={index} className="border-border/50">
+                    title: "Ruhige Präsenz statt hektisches Reparieren",
+                    description:
+                      "Nicht jede Stimmung muss sofort gelöst werden. Oft hilft es mehr, ansprechbar und klar zu bleiben, ohne alles zu optimieren.",
+                    example:
+                      "\"Ich merke, dass heute viel Anspannung da ist. Ich bin da, aber wir müssen das nicht sofort lösen.\"",
+                  },
+                  {
+                    title: "Begrenzte Verfügbarkeit",
+                    description:
+                      "Alltag wird tragfähiger, wenn Nähe nicht mit permanenter Erreichbarkeit verwechselt wird.",
+                    example:
+                      "\"Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu.\"",
+                  },
+                ].map((item) => (
+                  <Card key={item.title} className="border-border/50">
                     <CardContent className="p-5">
                       <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
                       <p className="text-muted-foreground text-sm mb-3">{item.description}</p>
@@ -90,79 +145,85 @@ export default function UnterstuetzenAlltag() {
               </div>
             </ContentSection>
 
-            {/* Emotionale Verfügbarkeit */}
             <ContentSection
-              title="Emotionale Verfügbarkeit zeigen"
-              icon={<Heart className="w-7 h-7 text-terracotta" />}
-              id="emotionale-verfuegbarkeit"
-              preview="Emotionale Verfügbarkeit bedeutet nicht, immer verfügbar zu sein. Es bedeutet, in den Momenten, in denen Sie da sind, wirklich präsent zu sein."
+              title="Nach Konflikten und Rückzug"
+              icon={<Users className="w-7 h-7 text-sage-mid" />}
+              id="rueckzug"
+              preview="Viele Beziehungen leiden weniger nur an Streit als an dem, was danach folgt: Schweigen, Unsicherheit, Funkstille oder ein vorsichtiger Neustart."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Emotionale Verfügbarkeit bedeutet nicht, immer verfügbar zu sein. Es bedeutet, in den Momenten, in denen Sie da sind, wirklich präsent zu sein.
-              </p>
-              
-              <Card className="bg-terracotta-light/10 border-terracotta">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-4">Praktische Tipps</h3>
-                  <ul className="space-y-3">
-                    {[
-                      "Legen Sie das Handy weg, wenn Sie miteinander sprechen",
-                      "Halten Sie Blickkontakt und nicken Sie, um zu zeigen, dass Sie zuhören",
-                      "Fragen Sie nach: \"Wie geht es dir wirklich?\"",
-                      "Akzeptieren Sie auch Schweigen – manchmal ist Ihre Anwesenheit genug",
-                      "Zeigen Sie Interesse an den Dingen, die Ihrem Angehörigen wichtig sind"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-sage-mid mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Nach Konflikten entsteht oft ein belastender Zwischenraum. Angehörige wissen nicht,
+                  ob sie nachgehen oder Abstand lassen sollen, ob Schweigen beruhigt oder eskaliert,
+                  ob ein Gespräch hilfreich wäre oder zu früh käme.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <Card className="border-border/50">
+                    <CardContent className="p-5">
+                      <h3 className="font-semibold text-foreground mb-2">Hilfreich kann sein</h3>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li>ein kurzes, klares Kontaktangebot</li>
+                        <li>nicht drängen, aber auch nicht strafen</li>
+                        <li>später aufgreifen, was passiert ist</li>
+                        <li>zwischen Raum geben und Beziehungsabbruch unterscheiden</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-border/50">
+                    <CardContent className="p-5">
+                      <h3 className="font-semibold text-foreground mb-2">Weniger hilfreich ist oft</h3>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li>mehrfach nachfassen aus Panik</li>
+                        <li>Gegenrückzug aus Verletzung</li>
+                        <li>so tun, als wäre nichts gewesen</li>
+                        <li>mitten im Alarm sofort alles klären wollen</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+                <Card className="bg-terracotta-light/10 border-terracotta">
+                  <CardContent className="p-5">
+                    <p className="text-foreground leading-relaxed">
+                      Im Alltag ist nach einem Bruch oft nicht Perfektion gefragt, sondern ein
+                      ruhiger, begrenzter Wiedereinstieg in Kontakt.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </ContentSection>
 
-            {/* Beziehungs-Achtsamkeit */}
             <ContentSection
-              title="Beziehungs-Achtsamkeit"
-              icon={<Users className="w-7 h-7 text-sage-mid" />}
+              title="Beziehungs-Achtsamkeit im echten Alltag"
+              icon={<Users className="w-7 h-7 text-slate-blue" />}
               id="beziehungs-achtsamkeit"
-              preview="Bewusst und nicht-wertend wahrnehmen, was in der Interaktion gerade passiert – bei Ihnen und bei Ihrem Gegenüber."
+              preview="Bewusst wahrnehmen, was gerade passiert, hilft vor allem dann, wenn Sie sonst in Alarm, Rechtfertigung oder Überanpassung kippen würden."
             >
-              <Card className="bg-sage-wash/50 border-sage-mid/30 mb-6">
-                <CardContent className="p-6">
-                  <p className="text-foreground leading-relaxed">
-                    <strong>Beziehungs-Achtsamkeit</strong> bedeutet, bewusst und nicht-wertend wahrzunehmen, was in der Interaktion gerade passiert – bei Ihnen und bei Ihrem Gegenüber.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Dieses Konzept aus dem Family Connections Programm hilft Ihnen, automatische Reaktionsmuster zu unterbrechen und bewusster zu handeln.
-              </p>
-              
               <div className="space-y-3">
                 {[
                   {
                     step: "1",
-                    title: "Innehalten",
-                    description: "Bevor Sie reagieren, halten Sie kurz inne. Atmen Sie einmal tief durch."
+                    title: "kurz innehalten",
+                    description:
+                      "Nicht sofort reagieren, wenn Sie merken, dass Sie innerlich in Alarm gehen.",
                   },
                   {
                     step: "2",
-                    title: "Wahrnehmen",
-                    description: "Was passiert gerade? Was fühlen Sie? Was fühlt Ihr Gegenüber vermutlich?"
+                    title: "die Lage genauer lesen",
+                    description:
+                      "Was ist gerade wirklich los: Angst, Kränkung, Rückzug, Überforderung, alte Dynamik?",
                   },
                   {
                     step: "3",
-                    title: "Nicht bewerten",
-                    description: "Beobachten Sie ohne zu urteilen. «Es ist, wie es ist.»"
+                    title: "auch sich selbst wahrnehmen",
+                    description:
+                      "Sind Sie gerade hilfsbereit, erschöpft, gereizt, schuldig oder im Rettungsmodus?",
                   },
                   {
                     step: "4",
-                    title: "Bewusst handeln",
-                    description: "Wählen Sie Ihre Reaktion bewusst, statt automatisch zu reagieren."
-                  }
+                    title: "bewusst und begrenzt handeln",
+                    description:
+                      "Nicht alles tun, was Beziehung sofort beruhigt, sondern das, was längerfristig tragfähig ist.",
+                  },
                 ].map((item) => (
                   <Card key={item.step} className="border-border/50">
                     <CardContent className="p-4">
@@ -179,178 +240,145 @@ export default function UnterstuetzenAlltag() {
                   </Card>
                 ))}
               </div>
-              
-              <p className="text-xs text-muted-foreground mt-4">
-                Quelle: Family Connections Program (NEA-BPD)
-              </p>
             </ContentSection>
 
-            {/* Gemeinsame Aktivitäten */}
             <ContentSection
-              title="Gemeinsame Aktivitäten gestalten"
-              icon={<Users className="w-7 h-7 text-slate-blue" />}
-              id="gemeinsame-aktivitaeten"
-              preview="Positive gemeinsame Erlebnisse stärken die Beziehung und schaffen Ressourcen für schwierige Zeiten."
+              title="Kleine positive Inseln schaffen"
+              icon={<Lightbulb className="w-7 h-7 text-sand-mid" />}
+              id="positive-inseln"
+              preview="Beziehung darf nicht nur aus Klärung, Kontrolle, Sorge und Krisenmanagement bestehen. Kleine unbelastete Momente sind kein Luxus."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Positive gemeinsame Erlebnisse stärken die Beziehung und schaffen Ressourcen für schwierige Zeiten. Wichtig ist: Die Aktivität sollte beiden Freude machen.
-              </p>
-              
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  { title: "Bewegung", examples: "Spaziergang, Yoga, Schwimmen" },
-                  { title: "Kreativität", examples: "Kochen, Malen, Musik hören" },
-                  { title: "Natur", examples: "Garten, Park, Ausflüge" },
-                  { title: "Entspannung", examples: "Film schauen, Lesen, Kaffee trinken" }
-                ].map((item, index) => (
-                  <Card key={index} className={`border-border/50 ${index === 0 ? "md:col-span-2" : ""}`}>
-                    <CardContent className="p-4">
-                      <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm">{item.examples}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Wenn eine Beziehung fast nur noch um Symptome, Anspannung und Konflikt kreist,
+                  verliert sie ihre tragenden Anteile. Alltagshilfe heisst deshalb auch, kleine
+                  gemeinsame Momente zu schützen, die nicht sofort funktional sein müssen.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    { title: "kurzer Spaziergang", examples: "ohne sofortiges Problemgespräch" },
+                    { title: "gemeinsames Essen", examples: "mit klarer zeitlicher Begrenzung" },
+                    { title: "etwas Vertrautes wiederholen", examples: "ein kleines Ritual, das nicht überfordert" },
+                    { title: "15 ruhige Minuten", examples: "ohne Lösungssuche, ohne Handy, ohne Druck" },
+                  ].map((item) => (
+                    <Card key={item.title} className="border-border/50">
+                      <CardContent className="p-4">
+                        <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm">{item.examples}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                <Card className="mt-2 bg-sand-muted border-sand-mid">
+                  <CardContent className="p-5">
+                    <p className="text-muted-foreground text-sm">
+                      <strong className="text-foreground">Wichtig:</strong> Positive Momente sind
+                      keine Gegenbeweise gegen Belastung. Sie sind eher kleine Ressourceninseln, die
+                      Beziehungen etwas atmungsfähiger machen können.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
-              
-              <Card className="mt-6 bg-sand-muted border-sand-mid">
-                <CardContent className="p-5">
-                  <p className="text-muted-foreground text-sm">
-                    <strong className="text-foreground">Tipp:</strong> Planen Sie regelmässige «Positiv-Termine» ein – auch wenn es nur 15 Minuten sind. Qualität zählt mehr als Quantität.
-                  </p>
-                </CardContent>
-              </Card>
             </ContentSection>
 
-            {/* Konkrete Tipps */}
             <ContentSection
               title="Was Sie konkret tun können"
-              icon={<Lightbulb className="w-7 h-7 text-sand-mid" />}
-              id="konkrete-tipps"
-              preview="Praktische Handlungen, die im Alltag einen Unterschied machen."
+              icon={<CheckCircle2 className="w-7 h-7 text-sage-mid" />}
+              id="konkrete-schritte"
+              preview="Praktische Alltagshilfen sind oft einfach, aber nicht leicht: klar bleiben, Rückmeldungen dosieren, Fortschritte benennen und nicht alles übernehmen."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Hier sind praktische Handlungen, die im Alltag einen Unterschied machen:
-              </p>
-              
               <div className="space-y-4">
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Übungspartner für Skills sein</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Fortschritte benennen</h3>
                     <p className="text-muted-foreground text-sm mb-3">
-                      Wenn Ihr Angehöriger in Therapie ist, können Sie beim Üben neuer Fähigkeiten helfen:
-                    </p>
-                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                        <span>Gemeinsam Atemübungen machen (auch wenn keine Krise ist)</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                        <span>Bei Achtsamkeitsübungen mitmachen</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                        <span>Sanft an Skills erinnern: «Möchtest du die Übung ausprobieren, die dir letztens geholfen hat?»</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-border/50">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Fortschritte anerkennen</h3>
-                    <p className="text-muted-foreground text-sm mb-3">
-                      Kleine Erfolge zu bemerken und zu benennen stärkt die Motivation:
+                      Nicht überloben, aber wahrnehmen, wenn etwas weniger zerstörerisch, etwas
+                      bewusster oder etwas klarer gelungen ist.
                     </p>
                     <div className="bg-sage-lighter/50 rounded-lg p-3">
                       <p className="text-sm text-foreground italic">
-                        «Ich habe bemerkt, dass du heute ruhig geblieben bist, obwohl die Situation schwierig war. Das war stark.»
+                        "Ich habe gemerkt, dass du dich heute zurückgezogen hast, ohne dass es ganz
+                        eskaliert ist. Das war nicht leicht."
                       </p>
                     </div>
-                    <p className="text-xs text-muted-foreground mt-3">
-                      <strong>Wichtig:</strong> Anerkennen Sie den Fortschritt, aber betonen Sie auch, dass Sie wissen, wie schwer es ist. Das verhindert Überforderung.
-                    </p>
                   </CardContent>
                 </Card>
-                
+
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Vorhersehbar sein</h3>
+                    <h3 className="font-semibold text-foreground mb-3">Fragen statt übernehmen</h3>
                     <p className="text-muted-foreground text-sm mb-3">
-                      Menschen mit Borderline reagieren stark auf Unsicherheit. Sie können helfen durch:
-                    </p>
-                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                        <span>Änderungen frühzeitig ankündigen</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                        <span>Versprechen halten oder erklären, warum nicht</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                        <span>Klare Zeiten für Erreichbarkeit kommunizieren</span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-border/50">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Gemeinsam Probleme lösen</h3>
-                    <p className="text-muted-foreground text-sm mb-3">
-                      Statt Lösungen vorzugeben, fragen Sie:
+                      Alltagshilfe wird tragfähiger, wenn Sie nicht alles lösen, sondern Beteiligung
+                      und Eigenanteil offenlassen.
                     </p>
                     <div className="space-y-2">
-                      <div className="bg-sage-lighter/50 rounded-lg p-3">
-                        <p className="text-sm text-foreground italic">«Was wäre dein Vorschlag?»</p>
-                      </div>
-                      <div className="bg-sage-lighter/50 rounded-lg p-3">
-                        <p className="text-sm text-foreground italic">«Wie kann ich dir dabei helfen?»</p>
-                      </div>
-                      <div className="bg-sage-lighter/50 rounded-lg p-3">
-                        <p className="text-sm text-foreground italic">«Was brauchst du gerade von mir?»</p>
-                      </div>
+                      {[
+                        "Was wäre dein Vorschlag?",
+                        "Was brauchst du gerade von mir, und was eher nicht?",
+                        "Soll ich einfach da sein oder mit dir mitdenken?",
+                      ].map((item) => (
+                        <div key={item} className="bg-sage-lighter/50 rounded-lg p-3">
+                          <p className="text-sm text-foreground italic">"{item}"</p>
+                        </div>
+                      ))}
                     </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-border/50">
+                  <CardContent className="p-5">
+                    <h3 className="font-semibold text-foreground mb-3">Vorhersehbar bleiben</h3>
+                    <ul className="space-y-2 text-sm">
+                      {[
+                        "Änderungen möglichst früh ankündigen",
+                        "Versprechen halten oder offen revidieren",
+                        "Erreichbarkeit klar benennen",
+                        "nicht jedes Mal völlig anders reagieren",
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </div>
             </ContentSection>
 
-            {/* Grenzen der Alltagsunterstützung */}
             <ContentSection
               title="Grenzen der Alltagsunterstützung"
               icon={<AlertTriangle className="w-7 h-7 text-terracotta-mid" />}
               id="grenzen"
-              preview="Auch im Alltag gibt es Grenzen. Sie müssen nicht perfekt sein – nur beständig und wohlwollend."
+              preview="Auch im Alltag gibt es Grenzen. Sie müssen nicht perfekt sein, aber Sie sollten Ihre Erschöpfung und Ihre roten Linien ernst nehmen."
             >
               <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Auch im Alltag gibt es Grenzen. Sie können nicht:
+                    Auch im Alltag können Sie nicht alles halten. Sie können nicht:
                   </p>
                   <ul className="space-y-2">
                     {[
-                      "Die Emotionen Ihres Angehörigen kontrollieren",
-                      "Alle Trigger vermeiden",
-                      "Immer die richtige Reaktion haben",
-                      "Die Therapie ersetzen"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                      "die Emotionen Ihres Angehörigen dauerhaft regulieren",
+                      "alle Trigger vermeiden",
+                      "jede Eskalation verhindern",
+                      "Therapie oder Krisenhilfe ersetzen",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-muted-foreground">
                         <span className="text-terracotta-mid">•</span>
                         {item}
                       </li>
                     ))}
                   </ul>
                   <p className="text-muted-foreground leading-relaxed mt-4">
-                    <strong className="text-foreground">Das ist in Ordnung.</strong> Sie müssen nicht perfekt sein – nur beständig und wohlwollend.
+                    <strong className="text-foreground">Das ist keine Niederlage.</strong> Alltag
+                    wird nicht durch Perfektion tragfähig, sondern durch Klarheit, Wiederholbarkeit
+                    und die Bereitschaft, auch Ihre eigene Grenze ernst zu nehmen.
                   </p>
                 </CardContent>
               </Card>
             </ContentSection>
 
-            {/* Navigation */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -358,9 +386,7 @@ export default function UnterstuetzenAlltag() {
               className="flex justify-between items-center pt-8 border-t border-border"
             >
               <Link href="/unterstuetzen/uebersicht">
-                <Button variant="ghost">
-                  ← Wie kann ich helfen?
-                </Button>
+                <Button variant="ghost">← Wie kann ich helfen?</Button>
               </Link>
               <Link href="/unterstuetzen/therapie">
                 <Button className="bg-terracotta hover:bg-terracotta-mid text-white">

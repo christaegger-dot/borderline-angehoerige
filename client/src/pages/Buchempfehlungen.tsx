@@ -38,7 +38,7 @@ const bookCategories: BookCategory[] = [
         author: "Paul T. Mason & Randi Kreger",
         publisher: "Psychiatrie-Verlag",
         year: "2010",
-        description: "DER Klassiker für Angehörige. Praxisorientiert mit konkreten Kommunikationsstrategien (SET-Kommunikation). Erklärt verständlich, warum Betroffene so reagieren und wie Sie sich schützen können, ohne die Beziehung aufzugeben.",
+        description: "Ein langjähriger Standardtitel für Angehörige. Beschreibt typische Beziehungsmuster, Kommunikationsideen und Fragen des Selbstschutzes in engeren Beziehungen.",
         forWhom: "Partner, Familienmitglieder, enge Freunde",
         highlight: true,
         amazonLink: "https://www.amazon.de/Eiertanz-Ratgeber-Angeh%C3%B6rige-Menschen-Borderline/dp/3884143379"
@@ -181,7 +181,7 @@ const bookCategories: BookCategory[] = [
         author: "Andreas Knuf (Hrsg.)",
         publisher: "Psychiatrie-Verlag",
         year: "2002",
-        description: "Zwanzig Menschen mit Borderline-Erfahrung – Betroffene UND Angehörige – schreiben über ihr Erleben, ihre Gefühle, ihren Alltag. Authentisch und berührend.",
+        description: "Texte von Betroffenen und Angehörigen über ihr Erleben, ihre Gefühle und den Alltag mit Borderline. Hilfreich, wenn Sie unterschiedliche Innen- und Beziehungsperspektiven besser verstehen möchten.",
         forWhom: "Alle, die verstehen wollen",
         highlight: true,
         amazonLink: "https://www.amazon.de/Leben-auf-Grenze-Erfahrungen-Borderline/dp/3867390037"
@@ -236,9 +236,9 @@ export default function Buchempfehlungen() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Kuratierte deutschsprachige Bücher für Angehörige – von praktischen Ratgebern 
-              bis zu berührenden Erfahrungsberichten. Alle Empfehlungen sind praxisorientiert 
-              und von Fachpersonen oder Betroffenen geschrieben.
+              Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl verbindet
+              Grundwissen, Beziehungsperspektiven, Selbstfürsorge und Erfahrungsnähe, ohne
+              Anspruch auf Vollständigkeit.
             </p>
           </motion.div>
         </div>

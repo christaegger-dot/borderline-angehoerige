@@ -76,7 +76,7 @@
 
 /// <reference types="@types/google.maps" />
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePersistFn } from "@/hooks/usePersistFn";
 import { cn } from "@/lib/utils";
 
@@ -92,21 +92,29 @@ const FORGE_BASE_URL =
   "https://forge.butterfly-effect.dev";
 const MAPS_PROXY_URL = `${FORGE_BASE_URL}/v1/maps/proxy`;
 
-function loadMapScript() {
-  return new Promise(resolve => {
+let mapScriptPromise: Promise<void> | null = null;
+
+function loadMapScript(): Promise<void> {
+  if (mapScriptPromise) return mapScriptPromise;
+  if (window.google?.maps) return Promise.resolve();
+
+  mapScriptPromise = new Promise<void>((resolve, reject) => {
     const script = document.createElement("script");
     script.src = `${MAPS_PROXY_URL}/maps/api/js?key=${API_KEY}&v=weekly&libraries=marker,places,geocoding,geometry`;
     script.async = true;
     script.crossOrigin = "anonymous";
     script.onload = () => {
-      resolve(null);
-      script.remove(); // Clean up immediately
+      resolve();
+      script.remove();
     };
     script.onerror = () => {
-      console.error("Failed to load Google Maps script");
+      mapScriptPromise = null;
+      reject(new Error("Google Maps script konnte nicht geladen werden."));
     };
     document.head.appendChild(script);
   });
+
+  return mapScriptPromise;
 }
 
 interface MapViewProps {
@@ -124,11 +132,17 @@ export function MapView({
 }: MapViewProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<google.maps.Map | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const init = usePersistFn(async () => {
-    await loadMapScript();
-    if (!mapContainer.current) {
-      console.error("Map container not found");
+    try {
+      await loadMapScript();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Karte konnte nicht geladen werden.");
+      return;
+    }
+    if (!mapContainer.current || !window.google?.maps) {
+      setError("Karte konnte nicht initialisiert werden.");
       return;
     }
     map.current = new window.google.maps.Map(mapContainer.current, {
@@ -148,6 +162,14 @@ export function MapView({
   useEffect(() => {
     init();
   }, [init]);
+
+  if (error) {
+    return (
+      <div className={cn("w-full h-[350px] sm:h-[400px] lg:h-[500px] flex items-center justify-center bg-muted/30 rounded-lg border border-border/50", className)} role="region" aria-label="Karte mit Therapieangeboten">
+        <p className="text-sm text-muted-foreground text-center px-4">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div ref={mapContainer} className={cn("w-full h-[350px] sm:h-[400px] lg:h-[500px]", className)} role="region" aria-label="Karte mit Therapieangeboten" />

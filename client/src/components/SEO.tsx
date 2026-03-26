@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 interface SEOProps {
   title?: string;
@@ -87,25 +87,25 @@ export default function SEO({
 
 // Schema.org structured data for the website
 export function WebsiteSchema() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE_NAME,
-    alternateName: "Borderline Angehörige",
-    url: SITE_URL,
-    description: BASE_DESCRIPTION,
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/og-image.jpg`,
-      },
-    },
-    inLanguage: "de-CH",
-  };
-
   useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: SITE_NAME,
+      alternateName: "Borderline Angehörige",
+      url: SITE_URL,
+      description: BASE_DESCRIPTION,
+      publisher: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/og-image.jpg`,
+        },
+      },
+      inLanguage: "de-CH",
+    };
+
     let el = document.querySelector('script[data-schema="website"]');
     if (!el) {
       el = document.createElement("script");
@@ -132,7 +132,7 @@ export function MedicalPageSchema({
   description: string;
   path: string;
 }) {
-  const siteUrl = getSiteUrl();
+  const siteUrl = useMemo(() => getSiteUrl(), []);
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",

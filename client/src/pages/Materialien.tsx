@@ -13,7 +13,6 @@ import {
   Eye,
   Filter,
   Heart,
-  Image as ImageIcon,
   MessageCircle,
   Shield,
   Sparkles,
@@ -80,18 +79,11 @@ export default function Materialien() {
   const [previewTitle, setPreviewTitle] = useState("Vorschau");
   const gridRef = useRef<HTMLElement>(null);
 
-  const coreMaterials = useMemo(
-    () => materials.filter(item => item.priority === "core"),
-    []
-  );
-
-  const secondaryMaterials = useMemo(
+  const filteredMaterials = useMemo(
     () =>
       activeCategory === "alle"
-        ? materials.filter(item => item.priority !== "core")
-        : materials.filter(
-            item => item.priority !== "core" && item.category === activeCategory
-          ),
+        ? materials
+        : materials.filter(item => item.category === activeCategory),
     [activeCategory]
   );
 
@@ -140,45 +132,6 @@ export default function Materialien() {
         </div>
       </section>
 
-      <section className="py-12">
-        <div className="container">
-          <div className="max-w-5xl mx-auto">
-            <Card className="bg-sage-wash border-sage-light mb-8">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center flex-shrink-0">
-                    <ImageIcon className="w-6 h-6 text-sage-dark" />
-                  </div>
-                  <div>
-                    <h2 className="font-semibold text-foreground mb-2 text-lg">
-                      Empfohlene Kernmaterialien
-                    </h2>
-                    <p className="text-muted-foreground">
-                      Wenn Sie gerade nicht lange suchen möchten, beginnen Sie
-                      mit diesen Materialien. Sie decken Krise, Orientierung,
-                      Kommunikation, Grenzen und Selbstfürsorge ab.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {coreMaterials.map(item => (
-                <MaterialCard
-                  key={item.id}
-                  item={item}
-                  onPreview={(image, title) => {
-                    setPreviewImage(image);
-                    setPreviewTitle(title);
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section
         ref={gridRef}
         className="py-12 md:py-16 border-t border-border/60"
@@ -201,11 +154,8 @@ export default function Materialien() {
                 const Icon = cat.icon;
                 const count =
                   cat.id === "alle"
-                    ? materials.filter(item => item.priority !== "core").length
-                    : materials.filter(
-                        item =>
-                          item.priority !== "core" && item.category === cat.id
-                      ).length;
+                    ? materials.length
+                    : materials.filter(item => item.category === cat.id).length;
                 return (
                   <Button
                     key={cat.id}
@@ -226,9 +176,9 @@ export default function Materialien() {
               })}
             </div>
 
-            {secondaryMaterials.length > 0 ? (
+            {filteredMaterials.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {secondaryMaterials.map(item => (
+                {filteredMaterials.map(item => (
                   <MaterialCard
                     key={item.id}
                     item={item}

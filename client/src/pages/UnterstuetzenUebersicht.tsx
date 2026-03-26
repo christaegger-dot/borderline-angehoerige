@@ -48,7 +48,7 @@ export default function UnterstuetzenUebersicht() {
 
       <UnterstuetzenHeroSection />
 
-      <section className="py-12 md:py-16 wave-divider-top">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <ContentSection

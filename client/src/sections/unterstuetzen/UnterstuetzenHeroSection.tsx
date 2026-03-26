@@ -3,7 +3,7 @@ import { Compass } from "lucide-react";
 
 export default function UnterstuetzenHeroSection() {
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-light/30 to-background wave-divider">
+    <section className="py-10 md:py-14 bg-gradient-to-b from-terracotta-light/30 to-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}

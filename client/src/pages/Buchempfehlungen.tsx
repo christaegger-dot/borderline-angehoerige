@@ -217,7 +217,7 @@ export default function Buchempfehlungen() {
     <Layout>
       <SEO title="Buchempfehlungen" description="Empfohlene Bücher für Angehörige von Menschen mit Borderline." path="/buchempfehlungen" />
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sand/50 to-background wave-divider">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -283,7 +283,7 @@ export default function Buchempfehlungen() {
       </section>
 
       {/* Book Categories */}
-      <section className="py-12 md:py-16">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="space-y-16">
             {filteredCategories.map((category, catIndex) => (
@@ -382,7 +382,7 @@ export default function Buchempfehlungen() {
       </section>
 
       {/* Hinweis */}
-      <section className="py-12 bg-slate-pale wave-divider-top">
+      <section className="py-12 bg-slate-pale">
         <div className="container">
           <Card className="bg-white border-slate-light">
             <CardContent className="p-6 md:p-8">

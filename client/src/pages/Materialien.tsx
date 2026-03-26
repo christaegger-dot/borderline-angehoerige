@@ -103,7 +103,7 @@ export default function Materialien() {
 
       <MaterialienHeroSection />
 
-      <section className="py-10 wave-divider-top">
+      <section className="py-10">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
@@ -134,7 +134,7 @@ export default function Materialien() {
 
       <section
         ref={gridRef}
-        className="py-12 md:py-16 border-t border-border/60"
+        className="py-8 md:py-12 border-t border-border/60"
       >
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -203,7 +203,7 @@ export default function Materialien() {
         </div>
       </section>
 
-      <section className="py-12 bg-muted/30 wave-divider-top">
+      <section className="py-12 bg-muted/30">
         <div className="container">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
             <Card className="bg-sand-muted border-sand-mid">

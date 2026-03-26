@@ -146,7 +146,7 @@ export default function Genesung() {
       />
       <TableOfContents />
 
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background relative overflow-hidden wave-divider">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-light/40 to-background relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-terracotta blur-3xl" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-sage blur-3xl" />
@@ -179,7 +179,7 @@ export default function Genesung() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 wave-divider-top">
+      <section className="py-8 md:py-12">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -447,7 +447,7 @@ export default function Genesung() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-sand-muted wave-divider-top">
+      <section className="py-8 md:py-12 bg-sand-muted">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div

@@ -3,7 +3,7 @@ import { Download } from "lucide-react";
 
 export default function MaterialienHeroSection() {
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
+    <section className="py-10 md:py-14 bg-gradient-to-b from-sage-light/30 to-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}

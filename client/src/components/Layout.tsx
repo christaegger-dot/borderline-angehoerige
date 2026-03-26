@@ -61,7 +61,7 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Footer */}
       <footer className="bg-sand-muted border-t border-border/50 mt-auto">
-        <div className="container py-12 md:py-16">
+        <div className="container py-8 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand + Absender */}
             <div className="lg:col-span-1">

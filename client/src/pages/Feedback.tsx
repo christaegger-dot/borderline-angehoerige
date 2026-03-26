@@ -12,7 +12,7 @@ export default function Feedback() {
     <Layout>
       <SEO title="Feedback" description="Rückmeldungen zur Website nehmen wir per E-Mail entgegen." path="/feedback" />
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-light/30 to-background wave-divider">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-slate-light/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -40,7 +40,7 @@ export default function Feedback() {
       </section>
 
       {/* Kontakt per E-Mail */}
-      <section className="py-12 md:py-16 wave-divider-top">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-2xl mx-auto space-y-8">
             

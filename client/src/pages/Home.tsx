@@ -67,7 +67,7 @@ export default function Home() {
       />
 
       <section className="relative overflow-hidden bg-gradient-to-b from-terracotta-lighter/30 via-sand/20 to-background">
-        <div className="container py-16 md:py-24 lg:py-32">
+        <div className="container py-12 md:py-16 lg:py-20">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0 }}
@@ -227,7 +227,7 @@ export default function Home() {
       </section>
 
       <section
-        className="py-12 md:py-16 bg-cream wave-divider-top"
+        className="py-8 md:py-12 bg-cream"
         style={{ "--wave-color": "var(--color-cream)" } as React.CSSProperties}
       >
         <div className="container">
@@ -266,7 +266,7 @@ export default function Home() {
       </section>
 
       <section
-        className="py-10 md:py-12 wave-divider-top"
+        className="py-8 md:py-10"
         style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
       >
         <div className="container">
@@ -331,7 +331,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-alert">
+      <section className="py-8 md:py-12 bg-alert">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">

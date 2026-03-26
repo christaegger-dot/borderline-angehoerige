@@ -169,7 +169,7 @@ export default function Selbstfuersorge() {
       {/* Inhaltsverzeichnis */}
       <TableOfContents />
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-lighter/30 to-background wave-divider">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-lighter/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -204,7 +204,7 @@ export default function Selbstfuersorge() {
       </section>
 
       {/* Aufklappbare Abschnitte */}
-      <section className="py-8 md:py-12 wave-divider-top">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
 
@@ -710,7 +710,7 @@ export default function Selbstfuersorge() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-12 wave-divider-top"
+                className="mb-12"
                 style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
               >
                 <Card className="bg-gradient-to-br from-sage-lighter/30 to-sage-light/30 border-transparent">

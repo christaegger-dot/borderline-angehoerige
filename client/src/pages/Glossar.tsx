@@ -208,7 +208,7 @@ export default function Glossar() {
     <Layout>
       <SEO title="Glossar" description="Fachbegriffe rund um Borderline einfach erklärt." path="/glossar" />
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-slate-lighter/30 to-background wave-divider">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-slate-lighter/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -291,7 +291,7 @@ export default function Glossar() {
       </section>
 
       {/* Glossary Terms */}
-      <section className="py-12 md:py-16">
+      <section className="py-8 md:py-12">
         <div className="container">
           {sortedTerms.length === 0 ? (
             <div className="text-center py-12">
@@ -377,7 +377,7 @@ export default function Glossar() {
       </section>
 
       {/* Hinweis */}
-      <section className="py-12 bg-sand wave-divider-top">
+      <section className="py-12 bg-sand">
         <div className="container">
           <Card className="bg-white border-sand-subtle">
             <CardContent className="p-6 md:p-8">

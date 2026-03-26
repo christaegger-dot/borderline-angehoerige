@@ -307,9 +307,13 @@ export default function Home() {
                       href={href}
                       className="text-sm px-3 py-1.5 rounded-full bg-muted text-foreground hover:bg-muted/70 transition-colors"
                     >
-                      {href === "/unterstuetzen/uebersicht"
-                        ? "Unterstützen"
-                        : href.slice(1).charAt(0).toUpperCase() + href.slice(2)}
+                      {{
+                        "/verstehen": "Verstehen",
+                        "/unterstuetzen/uebersicht": "Unterstützen",
+                        "/kommunizieren": "Kommunizieren",
+                        "/grenzen": "Grenzen",
+                        "/selbstfuersorge": "Selbstfürsorge",
+                      }[href] ?? href}
                     </Link>
                   ))}
                 </div>

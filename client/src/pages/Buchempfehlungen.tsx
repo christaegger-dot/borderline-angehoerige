@@ -245,7 +245,7 @@ export default function Buchempfehlungen() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-6 border-b border-border/50 sticky top-16 bg-background/95 backdrop-blur-sm z-30">
+      <section className="py-6 border-b border-border/50 sticky top-16 md:top-20 bg-background/95 backdrop-blur-sm z-30">
         <div className="container">
           <div className="flex flex-wrap gap-2">
             <button

@@ -90,7 +90,7 @@ export default function ContentSection({
         aria-expanded={isOpen}
         aria-label={`Abschnitt ${title} ${isOpen ? 'zuklappen' : 'aufklappen'}`}
       >
-        <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-cream hover:bg-sand-muted border border-border/40 transition-colors">
+        <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-cream hover:bg-sand-muted active:bg-sand-muted border border-border/40 transition-colors">
           <div className="flex items-center gap-3 min-w-0">
             {icon}
             <h2 className="text-xl md:text-2xl font-semibold text-foreground">

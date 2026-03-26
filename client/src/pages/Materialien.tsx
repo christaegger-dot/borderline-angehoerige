@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -33,6 +33,46 @@ const categoryMeta = [
   { id: "selbstfuersorge", label: "Selbstfürsorge", icon: Sparkles },
   { id: "genesung", label: "Genesung", icon: TrendingUp },
 ];
+
+function LightboxOverlay({ src, title, onClose }: { src: string; title: string; onClose: () => void }) {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-pointer"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Vorschau: ${title}`}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="max-w-4xl max-h-[90vh] overflow-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={src}
+          alt={`Vorschau: ${title}`}
+          className="w-full h-auto rounded-lg shadow-2xl"
+          width={1600}
+          height={892}
+          loading="lazy"
+          decoding="async"
+        />
+        <p className="text-center text-white mt-4 text-sm">
+          Klicken Sie irgendwo oder drücken Sie Escape, um zu schliessen
+        </p>
+      </motion.div>
+    </div>
+  );
+}
 
 export default function Materialien() {
   const [activeCategory, setActiveCategory] = useState("alle");
@@ -299,29 +339,11 @@ export default function Materialien() {
       </section>
 
       {previewImage && (
-        <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setPreviewImage(null)}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="max-w-4xl max-h-[90vh] overflow-auto"
-          >
-            <img
-              src={previewImage}
-              alt={`Vorschau: ${previewTitle}`}
-              className="w-full h-auto rounded-lg shadow-2xl"
-              width={1600}
-              height={892}
-              loading="lazy"
-              decoding="async"
-            />
-            <p className="text-center text-white mt-4 text-sm">
-              Klicken Sie irgendwo, um zu schliessen
-            </p>
-          </motion.div>
-        </div>
+        <LightboxOverlay
+          src={previewImage}
+          title={previewTitle}
+          onClose={() => setPreviewImage(null)}
+        />
       )}
     </Layout>
   );

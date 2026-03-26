@@ -49,7 +49,7 @@ function StickyAmpelLeiste() {
 
   return (
     <div
-      className={`sticky top-0 z-40 transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}
+      className={`sticky top-16 md:top-20 z-40 transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}
       style={{ marginBottom: 0 }}
     >
       <div className="bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
@@ -232,7 +232,7 @@ export default function Notfall() {
             {/* ─── BLOCK 1: LEBENSGEFAHR (ROT) ─── */}
             <motion.div
               id="block-rot"
-              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-lg"
+              className="scroll-mt-36 rounded-2xl overflow-hidden shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -281,7 +281,7 @@ export default function Notfall() {
             {/* ─── BLOCK 2: PSYCHIATRISCHE KRISE (ORANGE) ─── */}
             <motion.div
               id="block-orange"
-              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-md border border-sos-orange-border"
+              className="scroll-mt-36 rounded-2xl overflow-hidden shadow-md border border-sos-orange-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -339,7 +339,7 @@ export default function Notfall() {
             {/* ─── BLOCK 3: JEMAND ZUM REDEN (GRÜN) ─── */}
             <motion.div
               id="block-gruen"
-              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-md border border-sos-gruen-border"
+              className="scroll-mt-36 rounded-2xl overflow-hidden shadow-md border border-sos-gruen-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -393,7 +393,7 @@ export default function Notfall() {
             {/* ─── BLOCK 4: SPEZIALFALL VERGIFTUNG ─── */}
             <motion.div
               id="block-spezial"
-              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-sm border border-sos-lila-border"
+              className="scroll-mt-36 rounded-2xl overflow-hidden shadow-sm border border-sos-lila-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -433,7 +433,7 @@ export default function Notfall() {
             {/* ─── BLOCK 5: WEITERE KONTAKTE (NACHRANGIG) ─── */}
             <motion.div
               id="block-weitere"
-              className="scroll-mt-24 rounded-2xl overflow-hidden shadow-sm border border-border/50"
+              className="scroll-mt-36 rounded-2xl overflow-hidden shadow-sm border border-border/50"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

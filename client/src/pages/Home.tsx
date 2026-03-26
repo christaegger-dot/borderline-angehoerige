@@ -16,8 +16,6 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const heroImage = "/og-image.jpg";
-
 const situationPaths = [
   {
     href: "/verstehen",
@@ -68,21 +66,8 @@ export default function Home() {
         path="/"
       />
 
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Ruhige Landschaft als Hintergrundbild"
-            className="w-full h-full object-cover opacity-35"
-            width={1200}
-            height={630}
-            fetchPriority="high"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
-        </div>
-
-        <div className="container relative z-10 py-16 md:py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-terracotta-lighter/30 via-sand/20 to-background">
+        <div className="container py-16 md:py-24 lg:py-32">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0 }}

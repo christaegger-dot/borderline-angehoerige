@@ -26,6 +26,14 @@ function Dialog({
   const justEndedRef = React.useRef(false);
   const endTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  React.useEffect(() => {
+    return () => {
+      if (endTimerRef.current) {
+        clearTimeout(endTimerRef.current);
+      }
+    };
+  }, []);
+
   const contextValue = React.useMemo(
     () => ({
       isComposing: () => composingRef.current,
@@ -206,4 +214,3 @@ export {
   DialogTitle,
   DialogTrigger
 };
-

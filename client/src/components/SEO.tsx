@@ -5,17 +5,31 @@ interface SEOProps {
   description?: string;
   path?: string;
   type?: "website" | "article";
+  canonicalPath?: string;
 }
 
 const SITE_NAME = "Borderline · Hilfe für Angehörige";
 const BASE_DESCRIPTION = "Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung.";
-const OG_IMAGE = "https://borderline-angehoerige.netlify.app/og-image.jpg";
+const DEFAULT_SITE_URL = "https://borderline-angehoerige.netlify.app";
+const SITE_URL = (import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "");
+const MEDICAL_LAST_REVIEWED = import.meta.env.VITE_MEDICAL_LAST_REVIEWED || new Date().toISOString().slice(0, 10);
 
-export default function SEO({ title, description, path = "/", type = "website" }: SEOProps) {
+const getSiteUrl = () => {
+  if (typeof window !== "undefined" && window.location?.origin) {
+    return window.location.origin.replace(/\/+$/, "");
+  }
+  return SITE_URL;
+};
+
+export default function SEO({ title, description, path = "/", type = "website", canonicalPath }: SEOProps) {
   const fullTitle = title ? `${title} – ${SITE_NAME}` : `${SITE_NAME} – Evidenzbasierte Unterstützung`;
   const metaDescription = description || BASE_DESCRIPTION;
 
   useEffect(() => {
+    const siteUrl = getSiteUrl();
+    const canonicalOrPath = canonicalPath || path;
+    const ogImage = `${siteUrl}/og-image.jpg`;
+
     // Update document title
     document.title = fullTitle;
 
@@ -35,12 +49,12 @@ export default function SEO({ title, description, path = "/", type = "website" }
     updateMeta("og:title", fullTitle, true);
     updateMeta("og:description", metaDescription, true);
     updateMeta("og:type", type, true);
-    updateMeta("og:url", `https://borderline-angehoerige.netlify.app${path}`, true);
-    updateMeta("og:image", OG_IMAGE, true);
+    updateMeta("og:url", `${siteUrl}${canonicalOrPath}`, true);
+    updateMeta("og:image", ogImage, true);
     updateMeta("twitter:card", "summary_large_image");
     updateMeta("twitter:title", fullTitle);
     updateMeta("twitter:description", metaDescription);
-    updateMeta("twitter:image", OG_IMAGE);
+    updateMeta("twitter:image", ogImage);
 
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
@@ -49,8 +63,8 @@ export default function SEO({ title, description, path = "/", type = "website" }
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = `https://borderline-angehoerige.netlify.app${path}`;
-  }, [fullTitle, metaDescription, path, type]);
+    canonical.href = `${siteUrl}${canonicalOrPath}`;
+  }, [canonicalPath, fullTitle, metaDescription, path, type]);
 
   return null;
 }
@@ -62,14 +76,14 @@ export function WebsiteSchema() {
     "@type": "WebSite",
     "name": SITE_NAME,
     "alternateName": "Borderline Angehörige",
-    "url": "https://borderline-angehoerige.netlify.app",
+    "url": SITE_URL,
     "description": BASE_DESCRIPTION,
     "publisher": {
       "@type": "Organization",
       "name": SITE_NAME,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://borderline-angehoerige.netlify.app/og-image.jpg"
+        "url": `${SITE_URL}/og-image.jpg`
       }
     },
     "inLanguage": "de-CH"
@@ -92,12 +106,13 @@ export function WebsiteSchema() {
 
 // Schema.org MedicalWebPage for health-related pages
 export function MedicalPageSchema({ title, description, path }: { title: string; description: string; path: string }) {
+  const siteUrl = getSiteUrl();
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     "name": title,
     "description": description,
-    "url": `https://borderline-angehoerige.netlify.app${path}`,
+    "url": `${siteUrl}${path}`,
     "inLanguage": "de",
     "about": {
       "@type": "MedicalCondition",
@@ -113,7 +128,7 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
       "@type": "PeopleAudience",
       "audienceType": "Angehörige von Menschen mit Borderline-Persönlichkeitsstörung"
     },
-    "lastReviewed": "2026-03-09",
+    "lastReviewed": MEDICAL_LAST_REVIEWED,
     "medicalAudience": {
       "@type": "MedicalAudience",
       "audienceType": "Caregiver"
@@ -130,7 +145,7 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
     }
     el.textContent = JSON.stringify(schema);
     return () => { el?.remove(); };
-  }, [path]);
+  }, [description, path, siteUrl, title]);
 
   return null;
 }

@@ -16,6 +16,19 @@ interface ThemeProviderProps {
   switchable?: boolean;
 }
 
+function isValidTheme(value: unknown): value is Theme {
+  return value === "light" || value === "dark";
+}
+
+function readStoredTheme(fallback: Theme): Theme {
+  try {
+    const stored = localStorage.getItem("theme");
+    return isValidTheme(stored) ? stored : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 export function ThemeProvider({
   children,
   defaultTheme = "light",
@@ -23,8 +36,7 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (switchable) {
-      const stored = localStorage.getItem("theme");
-      return (stored as Theme) || defaultTheme;
+      return readStoredTheme(defaultTheme);
     }
     return defaultTheme;
   });
@@ -38,7 +50,11 @@ export function ThemeProvider({
     }
 
     if (switchable) {
-      localStorage.setItem("theme", theme);
+      try {
+        localStorage.setItem("theme", theme);
+      } catch {
+        // localStorage nicht verfügbar (Inkognito, Quota etc.)
+      }
     }
   }, [theme, switchable]);
 

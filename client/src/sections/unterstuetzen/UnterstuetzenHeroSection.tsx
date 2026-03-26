@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Compass } from "lucide-react";
-import { Link } from "wouter";
 
 export default function UnterstuetzenHeroSection() {
   return (
@@ -12,14 +11,7 @@ export default function UnterstuetzenHeroSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-3xl"
         >
-          <Link
-            href="/verstehen"
-            className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
-          >
-            ← Zurück zu Verstehen
-          </Link>
-
-          <div className="flex items-center gap-3 mb-6 mt-4">
+          <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 rounded-xl bg-terracotta-light flex items-center justify-center">
               <Compass className="w-6 h-6 text-terracotta-dark" />
             </div>

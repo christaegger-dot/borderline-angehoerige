@@ -4,8 +4,8 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { 
-  Sparkles, ArrowRight, CheckCircle2, Heart, AlertTriangle, Users, 
+import {
+  Sparkles, ArrowRight, CheckCircle2, Heart, AlertTriangle, Users,
   Clock, Brain, Wind, Lightbulb, Shield, BookOpen, Phone, Download,
   ChevronDown, ChevronUp, UserCircle
 } from "lucide-react";
@@ -14,11 +14,10 @@ import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfogr
 import { kontaktById } from "@/data/kontakte";
 import GroundingTimer from "@/components/interactive/GroundingTimer";
 import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
-
-
-const proMente = kontaktById("INFO_PROMENTE")!;
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
+
+const proMente = kontaktById("INFO_PROMENTE")!;
 
 // Atemübung: Phasen-Sequenz als Konstante
 const ATEM_PHASEN: { phase: 'einatmen' | 'halten' | 'ausatmen'; dauer: number }[] = [

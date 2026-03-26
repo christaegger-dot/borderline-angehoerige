@@ -6,7 +6,7 @@ export type SearchEntry = {
   section: string;
 };
 
-export const searchableContent = [
+export const searchableContent: SearchEntry[] = [
   // Verstehen
   {
     title: "Was ist Borderline?",

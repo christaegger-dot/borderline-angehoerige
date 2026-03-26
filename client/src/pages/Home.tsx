@@ -22,7 +22,8 @@ const situationPaths = [
     icon: BookOpen,
     title: "Ich versuche zu verstehen, was passiert",
     text: "Wenn Nähe, Eskalation, Rückzug oder Widersprüche schwer einzuordnen sind.",
-    color: "var(--color-sage-mid)",
+    color: "var(--color-sage-dark)",
+    iconBg: "var(--color-sage-wash)",
   },
   {
     href: "/unterstuetzen/krise",
@@ -30,6 +31,7 @@ const situationPaths = [
     title: "Es kippt gerade oder eskaliert",
     text: "Wenn starke Anspannung, Konflikte oder Krisensignale im Vordergrund stehen.",
     color: "var(--color-alert)",
+    iconBg: "var(--color-alert-wash)",
   },
   {
     href: "/kommunizieren",
@@ -37,6 +39,7 @@ const situationPaths = [
     title: "Gespräche werden schwierig",
     text: "Wenn Worte verletzen, Vorwürfe dominieren oder alles sofort hochgeht.",
     color: "var(--color-slate-blue)",
+    iconBg: "var(--color-slate-wash)",
   },
   {
     href: "/selbstfuersorge",
@@ -44,6 +47,7 @@ const situationPaths = [
     title: "Ich bin selbst erschöpft",
     text: "Wenn Anspannung, Schuld, Rückzug oder innere Überforderung zu gross werden.",
     color: "var(--color-terracotta-mid)",
+    iconBg: "var(--color-terracotta-wash)",
   },
 ];
 
@@ -184,34 +188,31 @@ export default function Home() {
                 return (
                   <Link key={item.href} href={item.href}>
                     <Card
-                      className="h-full cursor-pointer bg-white border-l-4 border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
-                      style={{
-                        borderLeftColor: item.color,
-                        borderTopColor: 'var(--border)',
-                        borderRightColor: 'var(--border)',
-                        borderBottomColor: 'var(--border)',
-                      }}
+                      className="h-full cursor-pointer bg-white border border-border rounded-[10px] border-l-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                      style={{ borderLeftColor: item.color }}
                     >
-                      <CardContent className="p-5">
+                      <CardContent className="p-5 flex gap-4 items-start">
                         <div
-                          className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                          style={{ backgroundColor: item.color }}
+                          className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: item.iconBg }}
                         >
-                          <Icon className="w-5 h-5 text-white" />
+                          <Icon className="w-[18px] h-[18px]" style={{ color: item.color }} />
                         </div>
-                        <h3 className="font-semibold text-foreground mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          {item.text}
-                        </p>
-                        <span
-                          className="text-sm font-medium inline-flex items-center gap-1"
-                          style={{ color: item.color }}
-                        >
-                          Zum passenden Bereich
-                          <ArrowRight className="w-4 h-4" />
-                        </span>
+                        <div>
+                          <h3 className="font-semibold text-foreground text-sm mb-1">
+                            {item.title}
+                          </h3>
+                          <p className="text-[13.5px] text-muted-foreground mb-2">
+                            {item.text}
+                          </p>
+                          <span
+                            className="text-xs font-semibold inline-flex items-center gap-1"
+                            style={{ color: item.color }}
+                          >
+                            Zum passenden Bereich
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </span>
+                        </div>
                       </CardContent>
                     </Card>
                   </Link>

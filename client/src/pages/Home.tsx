@@ -23,7 +23,6 @@ const situationPaths = [
     title: "Ich versuche zu verstehen, was passiert",
     text: "Wenn Nähe, Eskalation, Rückzug oder Widersprüche schwer einzuordnen sind.",
     color: "var(--color-sage-mid)",
-    bg: "var(--color-sage-wash)",
   },
   {
     href: "/unterstuetzen/krise",
@@ -31,7 +30,6 @@ const situationPaths = [
     title: "Es kippt gerade oder eskaliert",
     text: "Wenn starke Anspannung, Konflikte oder Krisensignale im Vordergrund stehen.",
     color: "var(--color-alert)",
-    bg: "var(--color-alert-wash)",
   },
   {
     href: "/kommunizieren",
@@ -39,7 +37,6 @@ const situationPaths = [
     title: "Gespräche werden schwierig",
     text: "Wenn Worte verletzen, Vorwürfe dominieren oder alles sofort hochgeht.",
     color: "var(--color-slate-blue)",
-    bg: "var(--color-slate-wash)",
   },
   {
     href: "/selbstfuersorge",
@@ -47,7 +44,6 @@ const situationPaths = [
     title: "Ich bin selbst erschöpft",
     text: "Wenn Anspannung, Schuld, Rückzug oder innere Überforderung zu gross werden.",
     color: "var(--color-terracotta-mid)",
-    bg: "var(--color-terracotta-wash)",
   },
 ];
 
@@ -181,10 +177,12 @@ export default function Home() {
                 return (
                   <Link key={item.href} href={item.href}>
                     <Card
-                      className="h-full cursor-pointer border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                      className="h-full cursor-pointer bg-white border-l-4 border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
                       style={{
-                        borderColor: item.color,
-                        backgroundColor: item.bg,
+                        borderLeftColor: item.color,
+                        borderTopColor: 'var(--border)',
+                        borderRightColor: 'var(--border)',
+                        borderBottomColor: 'var(--border)',
                       }}
                     >
                       <CardContent className="p-5">

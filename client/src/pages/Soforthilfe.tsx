@@ -61,7 +61,7 @@ function StickyAmpelLeiste() {
                 type="button"
                 onClick={() => scrollTo(item.id)}
                 aria-label={`Zu Abschnitt: ${item.label}`}
-                className="flex-1 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 px-2 py-2 sm:py-2.5 rounded-lg text-white font-medium text-xs sm:text-sm transition-all hover:brightness-90 active:scale-[0.97] shadow-sm"
+                className="flex-1 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 px-1.5 sm:px-3 py-2 sm:py-2.5 rounded-lg text-white font-medium text-[10px] sm:text-sm transition-all hover:brightness-90 active:scale-[0.97] shadow-sm min-h-[44px]"
                 style={{ backgroundColor: item.bg }}
               >
                 <span className="font-semibold leading-tight text-center">{item.label}</span>

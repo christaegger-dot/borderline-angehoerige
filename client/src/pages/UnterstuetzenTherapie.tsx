@@ -64,7 +64,7 @@ export default function UnterstuetzenTherapie() {
               <span className="text-sm font-medium text-slate-blue">Lesezeit: 10 Minuten</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Therapie begleiten
             </h1>
 
@@ -327,7 +327,7 @@ export default function UnterstuetzenTherapie() {
               className="mb-12 wave-divider-top"
               style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-slate-blue" />
                 Materialien zum Thema
               </h2>

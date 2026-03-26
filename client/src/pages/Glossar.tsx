@@ -223,7 +223,7 @@ export default function Glossar() {
               <span className="text-sm font-medium text-slate-dark">{glossaryTerms.length} Begriffe</span>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Glossar
             </h1>
             
@@ -323,7 +323,7 @@ export default function Glossar() {
                             {/* Header */}
                             <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                               <div>
-                                <h2 className="text-xl font-semibold text-foreground">
+                                <h2 className="text-xl font-normal text-foreground">
                                   {term.term}
                                   {term.abbreviation && (
                                     <span className="ml-2 text-base font-normal text-muted-foreground">
@@ -386,7 +386,7 @@ export default function Glossar() {
                   <Users className="w-6 h-6 text-slate-mid" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold text-foreground mb-2">
+                  <h2 className="text-lg font-normal text-foreground mb-2">
                     Begriffe im Kontext verstehen
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">

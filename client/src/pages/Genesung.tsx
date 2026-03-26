@@ -164,7 +164,7 @@ export default function Genesung() {
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Genesung ist möglich
             </h1>
 
@@ -194,7 +194,7 @@ export default function Genesung() {
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-semibold text-foreground mb-2">
+                    <h2 className="text-2xl font-normal text-foreground mb-2">
                       Was die Forschung zeigt
                     </h2>
                     <p className="text-muted-foreground">
@@ -455,7 +455,7 @@ export default function Genesung() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-4">
                 Wie können Sie tragfähig begleiten?
               </h2>
               <p className="text-muted-foreground mb-8">

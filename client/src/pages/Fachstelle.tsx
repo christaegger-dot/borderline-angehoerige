@@ -34,7 +34,7 @@ export default function Fachstelle() {
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Fachstelle Angehörigenarbeit
             </h1>
 
@@ -60,7 +60,7 @@ export default function Fachstelle() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
                 Unser Angebot
               </h2>
 
@@ -121,7 +121,7 @@ export default function Fachstelle() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
                 Kontakt
               </h2>
 
@@ -208,7 +208,7 @@ export default function Fachstelle() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
                 Einordnung
               </h2>
 
@@ -241,7 +241,7 @@ export default function Fachstelle() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
                 Weiterführend
               </h2>
 

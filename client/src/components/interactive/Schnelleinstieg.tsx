@@ -52,7 +52,7 @@ export default function Schnelleinstieg() {
     <section className="py-10 md:py-14 bg-background">
       <div className="container">
         <div className="text-center mb-8">
-          <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
+          <h2 className="text-xl md:text-2xl font-normal text-foreground mb-2">
             Ich brauche gerade…
           </h2>
           <p className="text-sm text-muted-foreground max-w-md mx-auto">

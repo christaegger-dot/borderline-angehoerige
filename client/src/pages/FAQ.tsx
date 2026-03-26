@@ -185,7 +185,7 @@ export default function FAQ() {
               </div>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Häufig gestellte Fragen
             </h1>
             
@@ -245,7 +245,7 @@ export default function FAQ() {
                   >
                     {category.icon}
                   </div>
-                  <h2 className="text-xl md:text-2xl font-semibold text-foreground">
+                  <h2 className="text-xl md:text-2xl font-normal text-foreground">
                     {category.title}
                   </h2>
                 </div>

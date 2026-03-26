@@ -23,7 +23,7 @@ export default function NotFound() {
 
           <h1 className="text-4xl font-bold text-foreground mb-2">404</h1>
 
-          <h2 className="text-xl font-semibold text-foreground mb-4">
+          <h2 className="text-xl font-normal text-foreground mb-4">
             Seite nicht gefunden
           </h2>
 

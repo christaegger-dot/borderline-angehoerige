@@ -434,7 +434,7 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-terracotta-dark" />
                 Materialien zum Thema
               </h2>

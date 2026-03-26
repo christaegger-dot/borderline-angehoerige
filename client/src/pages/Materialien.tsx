@@ -106,7 +106,7 @@ export default function Materialien() {
       <section className="py-10 wave-divider-top">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
               Was hilft gerade jetzt?
             </h2>
             <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -208,7 +208,7 @@ export default function Materialien() {
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
             <Card className="bg-sand-muted border-sand-mid">
               <CardContent className="p-6">
-                <h2 className="font-semibold text-foreground mb-2 text-lg">
+                <h2 className="font-normal text-foreground mb-2 text-lg">
                   Besondere Konstellationen
                 </h2>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -253,7 +253,7 @@ export default function Materialien() {
 
             <Card className="bg-sage-wash border-sage-light">
               <CardContent className="p-6">
-                <h2 className="font-semibold text-foreground mb-2 text-lg">
+                <h2 className="font-normal text-foreground mb-2 text-lg">
                   Von hier aus weiter
                 </h2>
                 <p className="text-sm text-muted-foreground mb-4">

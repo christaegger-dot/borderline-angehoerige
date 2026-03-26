@@ -27,7 +27,7 @@ export default function Feedback() {
               <span className="text-sm font-medium text-slate-dark">Ihre Meinung zählt</span>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Rückmeldung geben
             </h1>
             
@@ -55,7 +55,7 @@ export default function Feedback() {
                   <div className="w-16 h-16 rounded-full bg-sage-light flex items-center justify-center mx-auto mb-6">
                     <Mail className="w-8 h-8 text-sage-dark" />
                   </div>
-                  <h2 className="text-2xl font-semibold text-foreground mb-4">
+                  <h2 className="text-2xl font-normal text-foreground mb-4">
                     Schreiben Sie uns
                   </h2>
                   <p className="text-muted-foreground mb-6 leading-relaxed max-w-md mx-auto">

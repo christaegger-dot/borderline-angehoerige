@@ -231,7 +231,7 @@ export default function Buchempfehlungen() {
               </div>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Buchempfehlungen
             </h1>
             
@@ -303,7 +303,7 @@ export default function Buchempfehlungen() {
                     <category.icon className="w-7 h-7" />
                   </div>
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+                    <h2 className="text-2xl md:text-3xl font-normal text-foreground">
                       {category.title}
                     </h2>
                     <p className="text-muted-foreground mt-1">{category.subtitle}</p>

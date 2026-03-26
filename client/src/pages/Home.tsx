@@ -78,7 +78,7 @@ export default function Home() {
                 Für Angehörige von Menschen mit Borderline
               </span>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-foreground leading-tight mb-4">
                 Orientierung in belasteten Beziehungen
               </h1>
 
@@ -165,7 +165,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-8"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was ist gerade Ihre Lage?
               </h2>
               <p className="text-muted-foreground max-w-2xl">
@@ -239,7 +239,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-8"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was diese Website besonders abdeckt
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
@@ -273,7 +273,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4">
             <Card className="border-border/50">
               <CardContent className="p-5">
-                <h2 className="text-xl font-semibold text-foreground mb-2">
+                <h2 className="text-xl font-normal text-foreground mb-2">
                   Kernwege
                 </h2>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -307,7 +307,7 @@ export default function Home() {
 
             <Card className="border-border/50 bg-sand-muted/40">
               <CardContent className="p-5">
-                <h2 className="text-xl font-semibold text-foreground mb-2">
+                <h2 className="text-xl font-normal text-foreground mb-2">
                   Materialien und Beratung
                 </h2>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -335,7 +335,7 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">
+              <h2 className="text-2xl md:text-3xl font-normal text-white mb-2">
                 In einer akuten Krise?
               </h2>
               <p className="text-white">

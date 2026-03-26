@@ -441,7 +441,7 @@ export default function Notfall() {
               <div className="px-5 py-3 sm:px-6 sm:py-4 bg-muted/40 border-b border-border/50">
                 <div className="flex items-center gap-2">
                   <Info className="w-5 h-5 text-muted-foreground" />
-                  <h2 className="text-sm sm:text-base font-semibold text-muted-foreground">Weitere Kontakte</h2>
+                  <h2 className="text-sm sm:text-base font-normal text-muted-foreground">Weitere Kontakte</h2>
                 </div>
                 <p className="text-xs text-muted-foreground mt-0.5 ml-7">Allgemeine Beratung und Auskunft – nicht für akute Notfälle</p>
               </div>

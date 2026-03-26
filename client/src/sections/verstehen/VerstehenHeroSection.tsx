@@ -3,7 +3,7 @@ import { BookOpen } from "lucide-react";
 
 export default function VerstehenHeroSection() {
   return (
-    <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
+    <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}
@@ -12,10 +12,10 @@ export default function VerstehenHeroSection() {
           className="max-w-3xl"
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
+            <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
               <BookOpen className="w-6 h-6 text-foreground/60" />
             </div>
-            <span className="text-sm font-medium text-muted-foreground">
+            <span className="text-sm font-medium text-sage-dark">
               Lesezeit: 15 Minuten
             </span>
           </div>

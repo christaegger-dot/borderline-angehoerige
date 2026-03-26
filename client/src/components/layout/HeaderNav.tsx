@@ -59,7 +59,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
                   href={item.href}
                   className={`px-2.5 lg:px-3 xl:px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-500 whitespace-nowrap ${
                     isActive
-                      ? "bg-terracotta-light text-terracotta-darker"
+                      ? "bg-sage-wash text-sage-darker"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
                 >

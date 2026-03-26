@@ -17,7 +17,7 @@ export default function Impressum() {
     <Layout>
       <SEO title="Impressum" description="Impressum und rechtliche Informationen." path="/impressum" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sand-muted/50 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -26,7 +26,7 @@ export default function Impressum() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
                 <FileText className="w-6 h-6 text-sage-darker" />
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function Impressum() {
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <span className="text-foreground/60">•</span>
+                      <span className="text-sage-dark">•</span>
                       Evidenzbasierte Informationen zum Verständnis der Störung
                     </li>
                     <li className="flex items-start gap-2">

@@ -573,7 +573,7 @@ export default function UnterstuetzenUebersicht() {
                 <Button variant="ghost">← Verstehen</Button>
               </Link>
               <Link href="/unterstuetzen/alltag">
-                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
+                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
                   Weiter: Im Alltag unterstützen
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

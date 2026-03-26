@@ -42,7 +42,7 @@ export default function Kommunizieren() {
       />
       <TableOfContents />
 
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -51,10 +51,10 @@ export default function Kommunizieren() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
                 <MessageCircle className="w-6 h-6 text-slate-blue" />
               </div>
-              <span className="text-sm font-medium text-foreground/60">
+              <span className="text-sm font-medium text-sage-dark">
                 Lesezeit: 14 Minuten
               </span>
             </div>
@@ -462,7 +462,7 @@ export default function Kommunizieren() {
                 <Button variant="ghost">← Unterstützen</Button>
               </Link>
               <Link href="/grenzen">
-                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
+                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
                   Weiter: Grenzen setzen
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

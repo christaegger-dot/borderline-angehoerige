@@ -217,7 +217,7 @@ export default function Buchempfehlungen() {
     <Layout>
       <SEO title="Buchempfehlungen" description="Empfohlene Bücher für Angehörige von Menschen mit Borderline." path="/buchempfehlungen" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -226,7 +226,7 @@ export default function Buchempfehlungen() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
                 <BookOpen className="w-6 h-6 text-sand-warm" />
               </div>
             </div>

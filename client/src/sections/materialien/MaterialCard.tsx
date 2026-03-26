@@ -39,7 +39,7 @@ export default function MaterialCard({ item, onPreview }: MaterialCardProps) {
           height={300}
           decoding="async"
         />
-        <div className="absolute top-2 left-2 bg-background/85 backdrop-blur-sm px-2 py-0.5 rounded text-xs font-medium text-muted-foreground">
+        <div className="absolute top-2 left-2 bg-background/85 backdrop-blur-sm px-2 py-0.5 rounded text-xs font-medium text-sage-dark">
           {item.kind}
         </div>
       </button>

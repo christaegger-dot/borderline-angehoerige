@@ -10,7 +10,7 @@ export default function SelbsttestPage() {
     <Layout>
       <SEO title="Selbsttest" description="Selbsttest für Angehörige: Wie belastet sind Sie? Anonyme Einschätzung." path="/selbsttest" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}

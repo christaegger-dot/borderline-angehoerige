@@ -42,7 +42,7 @@ export default function UnterstuetzenTherapie() {
         path="/unterstuetzen/therapie"
       />
 
-      <section className="py-10 md:py-14 bg-gradient-to-b from-slate-light/30 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -58,10 +58,10 @@ export default function UnterstuetzenTherapie() {
             </Link>
 
             <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-slate-light flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
                 <Stethoscope className="w-6 h-6 text-slate-blue" />
               </div>
-              <span className="text-sm font-medium text-slate-blue">Lesezeit: 10 Minuten</span>
+              <span className="text-sm font-medium text-foreground/60">Lesezeit: 10 Minuten</span>
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
@@ -325,7 +325,6 @@ export default function UnterstuetzenTherapie() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
-              style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
             >
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-slate-blue" />

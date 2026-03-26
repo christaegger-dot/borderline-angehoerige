@@ -3,7 +3,7 @@ import { Compass } from "lucide-react";
 
 export default function UnterstuetzenHeroSection() {
   return (
-    <section className="py-10 md:py-14 bg-gradient-to-b from-terracotta-light/30 to-background">
+    <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}
@@ -12,10 +12,10 @@ export default function UnterstuetzenHeroSection() {
           className="max-w-3xl"
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 rounded-xl bg-terracotta-light flex items-center justify-center">
-              <Compass className="w-6 h-6 text-terracotta-dark" />
+            <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
+              <Compass className="w-6 h-6 text-foreground/60" />
             </div>
-            <span className="text-sm font-medium text-terracotta-dark">
+            <span className="text-sm font-medium text-muted-foreground">
               Lesezeit: 8 Minuten
             </span>
           </div>

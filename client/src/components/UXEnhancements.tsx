@@ -45,7 +45,7 @@ export function ScrollToTopButton() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           onClick={scrollToTop}
-          className={`fixed right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
+          className={`fixed right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-navy hover:bg-navy-light text-white shadow-lg items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
           style={{ bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))" }}
           aria-label="Nach oben scrollen"
         >

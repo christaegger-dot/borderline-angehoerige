@@ -34,7 +34,7 @@ export default function Selbsthilfegruppen() {
         canonicalPath={canonicalPath}
       />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-lighter/50 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -95,7 +95,7 @@ export default function Selbsthilfegruppen() {
                       <h4 className="font-semibold text-foreground text-sm mb-2">Was bietet die Fachstelle?</h4>
                       <ul className="space-y-1 text-muted-foreground text-sm">
                         <li className="flex items-start gap-2">
-                          <span className="text-sage-mid">•</span>
+                          <span className="text-foreground/60">•</span>
                           Vertrauliche Beratung und Entlastungsgespräche (ca. 60 Min.)
                         </li>
                         <li className="flex items-start gap-2">

@@ -39,7 +39,7 @@ export default function Grenzen() {
         path="/grenzen"
       />
 
-      <section className="py-10 md:py-14 bg-gradient-to-b from-terracotta-lighter/30 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -48,10 +48,10 @@ export default function Grenzen() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-terracotta-lighter flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sand-muteder flex items-center justify-center">
                 <Shield className="w-6 h-6 text-terracotta-mid" />
               </div>
-              <span className="text-sm font-medium text-terracotta-mid">
+              <span className="text-sm font-medium text-muted-foreground">
                 Lesezeit: 12 Minuten
               </span>
             </div>
@@ -353,9 +353,6 @@ export default function Grenzen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
-              style={
-                { "--wave-color": "var(--background)" } as React.CSSProperties
-              }
             >
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-terracotta-mid" />
@@ -466,9 +463,6 @@ export default function Grenzen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
-              style={
-                { "--wave-color": "var(--background)" } as React.CSSProperties
-              }
             >
               <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6">
@@ -485,7 +479,6 @@ export default function Grenzen() {
                 </CardContent>
               </Card>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

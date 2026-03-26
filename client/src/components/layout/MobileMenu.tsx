@@ -57,7 +57,7 @@ export function MobileMenu({
                   onClick={closeMenu}
                   className={`flex items-center gap-3 px-4 py-3.5 rounded-lg text-base font-medium transition-all ${
                     isActive
-                      ? "bg-terracotta-light text-terracotta-darker"
+                      ? "bg-sage-wash text-sage-darker"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
                 >
@@ -75,7 +75,7 @@ export function MobileMenu({
                 aria-controls="mobile-ressourcen-menu"
                 className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all ${
                   isRessourcenActive
-                    ? "bg-terracotta-light text-terracotta-darker"
+                    ? "bg-sage-wash text-sage-darker"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 }`}
               >
@@ -122,7 +122,7 @@ export function MobileMenu({
                               isSoforthilfe
                                 ? "text-alert font-semibold"
                                 : isActive
-                                  ? "bg-terracotta-light/50 text-terracotta-darker"
+                                  ? "bg-sage-wash/50 text-sage-darker"
                                   : "text-muted-foreground hover:text-foreground hover:bg-muted"
                             }`}
                           >

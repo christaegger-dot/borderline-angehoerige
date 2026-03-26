@@ -489,7 +489,7 @@ export default function Grenzen() {
                 <Button variant="ghost">← Kommunizieren</Button>
               </Link>
               <Link href="/selbstfuersorge">
-                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
+                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
                   Weiter: Selbstfürsorge
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

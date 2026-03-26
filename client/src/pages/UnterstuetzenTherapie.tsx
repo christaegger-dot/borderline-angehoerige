@@ -356,7 +356,7 @@ export default function UnterstuetzenTherapie() {
                 <Button variant="ghost">← Im Alltag unterstützen</Button>
               </Link>
               <Link href="/unterstuetzen/krise">
-                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
+                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
                   Weiter: In der Krise unterstützen
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

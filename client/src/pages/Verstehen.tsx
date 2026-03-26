@@ -656,7 +656,7 @@ export default function Verstehen() {
               <Link href="/unterstuetzen/uebersicht">
                 <Button
                   size="lg"
-                  className="bg-terracotta hover:bg-terracotta-mid text-white"
+                  className="bg-sage-dark hover:bg-sage-mid text-white"
                 >
                   Weiter zu: Unterstützen
                   <ArrowRight className="w-5 h-5 ml-2" />

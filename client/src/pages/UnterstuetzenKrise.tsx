@@ -355,7 +355,7 @@ export default function UnterstuetzenKrise() {
                 </Button>
               </Link>
               <Link href="/kommunizieren">
-                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
+                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
                   Weiter: Kommunizieren
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

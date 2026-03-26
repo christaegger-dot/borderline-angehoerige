@@ -313,7 +313,7 @@ export function TableOfContents() {
 
   // Aktiver Eintrag Styling
   const activeClass =
-    "bg-terracotta-lighter text-terracotta-darker font-semibold border-l-2 border-l-terracotta-mid";
+    "bg-sage-wash text-sage-darker font-semibold border-l-2 border-l-sage-dark";
   const inactiveClass =
     "text-muted-foreground hover:text-foreground hover:bg-muted/60";
 

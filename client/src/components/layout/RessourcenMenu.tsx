@@ -40,7 +40,7 @@ export function RessourcenMenu({ location, isOpen, setIsOpen }: RessourcenMenuPr
         }}
         className={`flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-500 whitespace-nowrap ${
           isRessourcenActive || isOpen
-            ? "bg-terracotta-light text-terracotta-darker"
+            ? "bg-sage-wash text-sage-darker"
             : "text-muted-foreground hover:text-foreground hover:bg-muted"
         }`}
         {...menuA11y.triggerA11yProps}
@@ -86,7 +86,7 @@ export function RessourcenMenu({ location, isOpen, setIsOpen }: RessourcenMenuPr
                         isSoforthilfe
                           ? "text-alert font-medium hover:bg-alert/8 focus:bg-alert/8"
                           : isActive
-                            ? "bg-terracotta-light/50 text-terracotta-darker font-medium"
+                            ? "bg-sage-wash/50 text-sage-darker font-medium"
                             : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
                       }`}
                     >

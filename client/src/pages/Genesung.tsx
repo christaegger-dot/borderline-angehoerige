@@ -465,7 +465,7 @@ export default function Genesung() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/unterstuetzen/uebersicht">
-                  <Button className="bg-terracotta hover:bg-terracotta-mid">
+                  <Button className="bg-sage-dark hover:bg-sage-mid text-white">
                     Unterstützen lernen
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>

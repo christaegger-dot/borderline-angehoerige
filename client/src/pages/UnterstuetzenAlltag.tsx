@@ -389,7 +389,7 @@ export default function UnterstuetzenAlltag() {
                 <Button variant="ghost">← Wie kann ich helfen?</Button>
               </Link>
               <Link href="/unterstuetzen/therapie">
-                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
+                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
                   Weiter: Therapie begleiten
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

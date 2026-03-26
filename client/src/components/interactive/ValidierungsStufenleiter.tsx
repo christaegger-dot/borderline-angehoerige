@@ -149,7 +149,7 @@ export default function ValidierungsStufenleiter() {
                   <ul className="space-y-2">
                     {stufe.soGehts.map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-sage-mid flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-sage-mid flex-shrink-0 mt-0.5" aria-hidden="true" />
                         {item}
                       </li>
                     ))}
@@ -160,7 +160,7 @@ export default function ValidierungsStufenleiter() {
                   <p className="text-xs font-medium text-muted-foreground mb-2">Typischer Stolperstein</p>
                   <div className="rounded-lg border border-terracotta-mid/20 bg-terracotta-wash/30 p-3">
                     <p className="text-sm text-foreground leading-relaxed flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 text-terracotta-mid flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="w-4 h-4 text-terracotta-mid flex-shrink-0 mt-0.5" aria-hidden="true" />
                       {stufe.typischerFehler}
                     </p>
                   </div>

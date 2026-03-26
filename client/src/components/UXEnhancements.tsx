@@ -134,7 +134,7 @@ export function Breadcrumbs() {
             </li>
             {parent && (
               <li className="flex items-center gap-2">
-                <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+                <ChevronRight className="w-4 h-4 text-muted-foreground/50" aria-hidden="true" />
                 <Link
                   href={parent.href}
                   className="hover:text-foreground transition-colors"
@@ -144,7 +144,7 @@ export function Breadcrumbs() {
               </li>
             )}
             <li className="flex items-center gap-2">
-              <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+              <ChevronRight className="w-4 h-4 text-muted-foreground/50" aria-hidden="true" />
               <span className="text-foreground font-medium">{pageName}</span>
             </li>
           </ol>
@@ -389,7 +389,7 @@ export function TableOfContents() {
                       type="button"
                       onClick={() => scrollToHeading(id)}
                       aria-label={`Zum Abschnitt: ${text}`}
-                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors focus-visible:ring-2 focus-visible:ring-terracotta/40 focus-visible:ring-offset-1 ${
                         level === 3 ? "pl-7" : ""
                       } ${activeId === id ? activeClass : inactiveClass}`}
                     >
@@ -424,7 +424,7 @@ export function TableOfContents() {
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
                     aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 ${
+                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 focus-visible:ring-2 focus-visible:ring-terracotta/40 focus-visible:ring-offset-1 ${
                       level === 3 ? "pl-5" : ""
                     } ${activeId === id ? activeClass : inactiveClass}`}
                   >

@@ -485,7 +485,7 @@ export default function Selbsttest() {
                   onClick={() => handleAnswer(option)}
                   disabled={isTransitioning}
                   aria-pressed={selectedOption === option.value}
-                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 ${
+                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 focus-visible:ring-2 focus-visible:ring-terracotta/40 focus-visible:ring-offset-2 ${
                     selectedOption === option.value
                       ? "border-terracotta bg-terracotta-wash"
                       : "border-border/50 hover:border-terracotta/50 hover:bg-muted/50"

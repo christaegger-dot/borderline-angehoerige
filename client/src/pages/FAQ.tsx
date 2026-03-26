@@ -294,10 +294,10 @@ export default function FAQ() {
               definition="Kurzdefinition: Remission = Diagnosekriterien werden über längere Zeit nicht mehr erfüllt; Recovery = Remission plus stabiles soziales/berufliches Funktionsniveau."
               className="mt-8"
               sources={[
-                { label: "Zanarini et al. (2010), The 10-year course of BPD", href: "https://pubmed.ncbi.nlm.nih.gov/20334540/" },
-                { label: "Zanarini et al. (2012), Recovery in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/22737693/" },
-                { label: "Gunderson et al. (2011), CLPS outcomes in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/21668726/" },
-                { label: "Stoffers-Winterling et al. (2022), Psychological therapies for BPD (Cochrane)", href: "https://pubmed.ncbi.nlm.nih.gov/35049048/" },
+                { label: "Zanarini et al. (2010), Time to attainment of recovery from BPD", href: "https://pubmed.ncbi.nlm.nih.gov/20395399/" },
+                { label: "Zanarini et al. (2012), Sustained remission and recovery in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/22737693/" },
+                { label: "Gunderson et al. (2011), Ten-year course of BPD (CLPS)", href: "https://pubmed.ncbi.nlm.nih.gov/21464343/" },
+                { label: "Storebø, Stoffers-Winterling et al. (2020), Psychological therapies for BPD (Cochrane)", href: "https://pubmed.ncbi.nlm.nih.gov/32368793/" },
               ]}
             />
 

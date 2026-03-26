@@ -294,6 +294,24 @@ export const INFO: Kontakt[] = [
     hinweis: "Beratungstelefon für Angehörige von psychisch Kranken",
     sourceRef: "Selbsthilfegruppen.tsx:286",
   },
+  {
+    id: "INFO_PUK_DBT",
+    kategorie: "info",
+    nummer: "058 384 94 91",
+    tel: "+41583849491",
+    label: "DBT-Station 62B PUK Zürich",
+    hinweis: "Stationäre DBT-Behandlung (zertifiziert)",
+    sourceRef: "UnterstuetzenTherapie.tsx:336",
+  },
+  {
+    id: "INFO_IPW",
+    kategorie: "info",
+    nummer: "052 264 34 00",
+    tel: "+41522643400",
+    label: "IPW Psychotherapiestation junge Erwachsene",
+    hinweis: "Integrierte Psychiatrie Winterthur, Wieshofstrasse 102, 8408 Winterthur",
+    sourceRef: "UnterstuetzenTherapie.tsx",
+  },
 ];
 
 // ─── E-Mail-Adressen ─────────────────────────────────────

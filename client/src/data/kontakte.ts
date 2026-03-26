@@ -270,9 +270,9 @@ export const INFO: Kontakt[] = [
   {
     id: "INFO_SELBSTHILFE_CH",
     kategorie: "info",
-    nummer: "0848 800 858",
-    tel: "+41848800858",
-    label: "Selbsthilfe Schweiz",
+    nummer: "043 288 88 88",
+    tel: "+41432888888",
+    label: "Selbsthilfe Zürich",
     hinweis: "Vermittlung von Selbsthilfegruppen",
     sourceRef: "Selbsthilfegruppen.tsx:75",
   },

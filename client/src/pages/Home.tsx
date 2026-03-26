@@ -251,7 +251,7 @@ export default function Home() {
                     key={item}
                     className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border/40"
                   >
-                    <span className="text-sage-mid mt-0.5">✓</span>
+                    <span className="text-foreground/40 mt-0.5">✓</span>
                     <span className="text-sm text-muted-foreground">
                       {item}
                     </span>

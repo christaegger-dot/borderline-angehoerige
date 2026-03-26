@@ -22,6 +22,7 @@ import {
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
 import { TableOfContents } from "@/components/UXEnhancements";
+import { genesungItems as genesungMaterialItems } from "@/content/genesung";
 
 const genesungCategories = [
   { id: "alle", label: "Alle", icon: Filter },
@@ -29,43 +30,7 @@ const genesungCategories = [
   { id: "handeln", label: "Handeln", icon: HandHeart },
 ];
 
-const genesungItems = [
-  {
-    title: "Genesung in Zahlen",
-    desc: "Langzeitdaten und Orientierungswerte",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tyFTHNjsUagqrXiS.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MunlHDCNqnsOhBFn.pdf",
-    category: "verstehen",
-  },
-  {
-    title: "Das Fortschritt-Paradox",
-    desc: "Warum Rückschritte den Weg nicht entwerten",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DPkqytVYFcreeBlC.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UFLdEEGIDxKdRUZO.pdf",
-    category: "verstehen",
-  },
-  {
-    title: "Remission vs. Heilung",
-    desc: "Was Besserung im Alltag wirklich bedeuten kann",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HPRsNmCUFirjnraj.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KMjqRDjDjWVZpjhJ.pdf",
-    category: "verstehen",
-  },
-  {
-    title: "5 Faktoren, die Genesung fördern",
-    desc: "Welche Bedingungen Entwicklung eher begünstigen",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mFhtxtPMBkCEVPII.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/qgrRYtMKOvwWmuah.pdf",
-    category: "handeln",
-  },
-  {
-    title: "Ihre Rolle im Genesungsprozess",
-    desc: "Was Angehörige beitragen können und was nicht",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GhgPDkJhqlqJkYzE.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CZdiDaadpIWNOBFb.pdf",
-    category: "handeln",
-  },
-];
+const genesungItems = genesungMaterialItems;
 
 function GenesungInfografiken() {
   const [activeFilter, setActiveFilter] = useState("alle");
@@ -74,7 +39,7 @@ function GenesungInfografiken() {
   const filteredItems =
     activeFilter === "alle"
       ? genesungItems
-      : genesungItems.filter((i) => i.category === activeFilter);
+      : genesungItems.filter(i => i.category === activeFilter);
 
   return (
     <ContentSection
@@ -84,15 +49,16 @@ function GenesungInfografiken() {
       preview="Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der Rolle von Angehörigen."
     >
       <p className="text-muted-foreground mb-6">
-        Vorschau = Web-Bild. «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
+        Vorschau = Web-Bild. «PDF öffnen» öffnet die A4-Druckversion im neuen
+        Tab.
       </p>
 
       <div className="flex flex-wrap gap-2 mb-6">
-        {genesungCategories.map((cat) => {
+        {genesungCategories.map(cat => {
           const count =
             cat.id === "alle"
               ? genesungItems.length
-              : genesungItems.filter((i) => i.category === cat.id).length;
+              : genesungItems.filter(i => i.category === cat.id).length;
           return (
             <Button
               key={cat.id}
@@ -101,11 +67,16 @@ function GenesungInfografiken() {
               onClick={() => {
                 setActiveFilter(cat.id);
                 setTimeout(() => {
-                  gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  gridRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
                 }, 100);
               }}
               className={`whitespace-nowrap shrink-0 ${
-                activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""
+                activeFilter === cat.id
+                  ? "bg-terracotta-mid hover:bg-terracotta-dark text-white"
+                  : ""
               }`}
             >
               <cat.icon className="w-4 h-4 mr-1.5" />
@@ -135,7 +106,9 @@ function GenesungInfografiken() {
               />
             </div>
             <CardContent className="p-4">
-              <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+              <h3 className="font-semibold text-foreground mb-1">
+                {item.title}
+              </h3>
               <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
               <a
                 href={item.pdf}
@@ -196,9 +169,11 @@ export default function Genesung() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Hoffnung ist bei Borderline berechtigt. Gleichzeitig verläuft Entwicklung selten glatt,
-              schnell oder vorhersehbar. Für Angehörige ist deshalb beides wichtig: Zuversicht und
-              eine realistische Sicht auf Zeit, Rückschritte und Grenzen des eigenen Einflusses.
+              Hoffnung ist bei Borderline berechtigt. Gleichzeitig verläuft
+              Entwicklung selten glatt, schnell oder vorhersehbar. Für
+              Angehörige ist deshalb beides wichtig: Zuversicht und eine
+              realistische Sicht auf Zeit, Rückschritte und Grenzen des eigenen
+              Einflusses.
             </p>
           </motion.div>
         </div>
@@ -223,38 +198,48 @@ export default function Genesung() {
                       Was die Forschung zeigt
                     </h2>
                     <p className="text-muted-foreground">
-                      Langzeitstudien sprechen klar gegen das alte Bild einer hoffnungslosen
-                      Entwicklung. Viele Menschen mit Borderline erleben über Jahre deutliche
-                      Besserungen.
+                      Langzeitstudien sprechen klar gegen das alte Bild einer
+                      hoffnungslosen Entwicklung. Viele Menschen mit Borderline
+                      erleben über Jahre deutliche Besserungen.
                     </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 [&>*:first-child]:md:col-span-2">
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">85–93%</div>
+                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
+                      85–93%
+                    </div>
                     <p className="text-sm text-muted-foreground">
-                      erreichen eine symptomatische Remission innerhalb von etwa 10 Jahren
+                      erreichen eine symptomatische Remission innerhalb von etwa
+                      10 Jahren
                     </p>
                   </div>
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">50%</div>
+                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
+                      50%
+                    </div>
                     <p className="text-sm text-muted-foreground">
-                      erreichen eine umfassendere Genesung mit funktioneller Stabilität
+                      erreichen eine umfassendere Genesung mit funktioneller
+                      Stabilität
                     </p>
                   </div>
                   <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">Jahre</div>
+                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
+                      Jahre
+                    </div>
                     <p className="text-sm text-muted-foreground">
-                      nicht Wochen: Entwicklung braucht meist viel Zeit und mehrere Anläufe
+                      nicht Wochen: Entwicklung braucht meist viel Zeit und
+                      mehrere Anläufe
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-border/30">
                   <p className="text-xs text-muted-foreground">
-                    Quellen: McLean Study of Adult Development (Zanarini et al.); Collaborative
-                    Longitudinal Personality Disorders Study (Gunderson et al.)
+                    Quellen: McLean Study of Adult Development (Zanarini et
+                    al.); Collaborative Longitudinal Personality Disorders Study
+                    (Gunderson et al.)
                   </p>
                 </div>
               </CardContent>
@@ -276,20 +261,26 @@ export default function Genesung() {
               <div className="grid grid-cols-1 md:grid-cols-[7fr_5fr] gap-6">
                 <Card className="h-full border-border/50">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">Symptomatische Remission</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                      Symptomatische Remission
+                    </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      Die diagnostischen Kriterien werden über längere Zeit nicht mehr erfüllt oder
-                      deutlich schwächer. Das bedeutet häufig weniger Impulsdurchbrüche, weniger
-                      Instabilität und mehr inneren Spielraum.
+                      Die diagnostischen Kriterien werden über längere Zeit
+                      nicht mehr erfüllt oder deutlich schwächer. Das bedeutet
+                      häufig weniger Impulsdurchbrüche, weniger Instabilität und
+                      mehr inneren Spielraum.
                     </p>
                   </CardContent>
                 </Card>
                 <Card className="h-full border-border/50">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">Umfassendere Genesung</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-3">
+                      Umfassendere Genesung
+                    </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      Zusätzlich zur Symptomverbesserung kommen alltagsbezogene Stabilität,
-                      Beziehungen, Arbeit oder Ausbildung und mehr Lebensqualität in den Blick.
+                      Zusätzlich zur Symptomverbesserung kommen alltagsbezogene
+                      Stabilität, Beziehungen, Arbeit oder Ausbildung und mehr
+                      Lebensqualität in den Blick.
                     </p>
                   </CardContent>
                 </Card>
@@ -297,8 +288,8 @@ export default function Genesung() {
               <Card className="mt-6 bg-sage-wash/50 border-sage-mid/30">
                 <CardContent className="p-5">
                   <p className="text-foreground leading-relaxed">
-                    Für Angehörige ist entscheidend: Besserung ist oft real, auch wenn nicht alles
-                    konfliktfrei, leicht oder linear wird.
+                    Für Angehörige ist entscheidend: Besserung ist oft real,
+                    auch wenn nicht alles konfliktfrei, leicht oder linear wird.
                   </p>
                 </CardContent>
               </Card>
@@ -312,16 +303,18 @@ export default function Genesung() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Viele Angehörige erleben ein irritierendes Muster: Nach einer ruhigeren Phase kommt
-                  wieder ein Einbruch. Dann fühlt es sich schnell an, als wäre alles umsonst
-                  gewesen. Meist ist das nicht die treffendste Deutung.
+                  Viele Angehörige erleben ein irritierendes Muster: Nach einer
+                  ruhigeren Phase kommt wieder ein Einbruch. Dann fühlt es sich
+                  schnell an, als wäre alles umsonst gewesen. Meist ist das
+                  nicht die treffendste Deutung.
                 </p>
                 <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Entwicklung bedeutet bei Borderline häufig nicht: Schritt für Schritt nur
-                      vorwärts. Eher: Es gibt Bewegungen, Unterbrüche, Wiederaufnahmen und Phasen, in
-                      denen neue Stabilität erst gelernt werden muss.
+                      Entwicklung bedeutet bei Borderline häufig nicht: Schritt
+                      für Schritt nur vorwärts. Eher: Es gibt Bewegungen,
+                      Unterbrüche, Wiederaufnahmen und Phasen, in denen neue
+                      Stabilität erst gelernt werden muss.
                     </p>
                   </CardContent>
                 </Card>
@@ -331,7 +324,7 @@ export default function Genesung() {
                     "Fortschritte konkret benennen, statt nur global zu hoffen",
                     "Tempo nicht übersteuern, wenn es besser läuft",
                     "für schwierige Phasen einen kleinen Plan bereithalten",
-                  ].map((item) => (
+                  ].map(item => (
                     <Card key={item} className="border-border/50">
                       <CardContent className="p-4">
                         <p className="text-sm text-muted-foreground">{item}</p>
@@ -350,13 +343,16 @@ export default function Genesung() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Angehörige brauchen oft Hoffnung, um nicht zu resignieren. Gleichzeitig kann ein zu
-                  glattes Fortschrittsbild zusätzlichen Druck erzeugen: auf die betroffene Person,
-                  auf die Beziehung und auf Sie selbst.
+                  Angehörige brauchen oft Hoffnung, um nicht zu resignieren.
+                  Gleichzeitig kann ein zu glattes Fortschrittsbild zusätzlichen
+                  Druck erzeugen: auf die betroffene Person, auf die Beziehung
+                  und auf Sie selbst.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
-                    <span className="text-lg font-medium text-foreground block mb-2">❌ Weniger hilfreich</span>
+                    <span className="text-lg font-medium text-foreground block mb-2">
+                      ❌ Weniger hilfreich
+                    </span>
                     <ul className="text-sm text-muted-foreground space-y-1.5">
                       <li>Jetzt muss es doch endlich besser werden</li>
                       <li>Ein Rückschritt entwertet alles</li>
@@ -364,10 +360,14 @@ export default function Genesung() {
                     </ul>
                   </div>
                   <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
-                    <span className="text-lg font-medium text-foreground block mb-2">✓ Tragfähiger</span>
+                    <span className="text-lg font-medium text-foreground block mb-2">
+                      ✓ Tragfähiger
+                    </span>
                     <ul className="text-sm text-muted-foreground space-y-1.5">
                       <li>Besserung ist möglich und oft wahrscheinlich</li>
-                      <li>Rückschritte kommen vor und müssen nicht alles kippen</li>
+                      <li>
+                        Rückschritte kommen vor und müssen nicht alles kippen
+                      </li>
                       <li>Tempo und Zeitpunkt bleiben begrenzt steuerbar</li>
                     </ul>
                   </div>
@@ -383,15 +383,31 @@ export default function Genesung() {
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { title: "Konsistenz", desc: "berechenbar bleiben, statt in Alarm mitzukippen" },
-                  { title: "realistische Hoffnung", desc: "Zuversicht ohne Druck vermitteln" },
-                  { title: "eigene Grenzen", desc: "die eigene Stabilität nicht opfern" },
-                  { title: "professionelle Hilfe", desc: "Behandlung unterstützen, aber nicht ersetzen" },
-                ].map((item) => (
+                  {
+                    title: "Konsistenz",
+                    desc: "berechenbar bleiben, statt in Alarm mitzukippen",
+                  },
+                  {
+                    title: "realistische Hoffnung",
+                    desc: "Zuversicht ohne Druck vermitteln",
+                  },
+                  {
+                    title: "eigene Grenzen",
+                    desc: "die eigene Stabilität nicht opfern",
+                  },
+                  {
+                    title: "professionelle Hilfe",
+                    desc: "Behandlung unterstützen, aber nicht ersetzen",
+                  },
+                ].map(item => (
                   <Card key={item.title} className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {item.desc}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
@@ -443,8 +459,9 @@ export default function Genesung() {
                 Wie können Sie tragfähig begleiten?
               </h2>
               <p className="text-muted-foreground mb-8">
-                Unterstützung heisst nicht, Entwicklung herzustellen. Es heisst oft, Beziehung,
-                Klarheit und Selbstschutz über längere Zeit auszubalancieren.
+                Unterstützung heisst nicht, Entwicklung herzustellen. Es heisst
+                oft, Beziehung, Klarheit und Selbstschutz über längere Zeit
+                auszubalancieren.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/unterstuetzen/uebersicht">

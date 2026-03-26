@@ -37,7 +37,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
         <div className="flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20">
           <Link href="/" className="flex items-center gap-2 group shrink-0">
             <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NqViLFGTREhdSTsm.webp"
+              src="/favicon-192.png"
               alt="Startseite"
               className="w-8 h-8 md:w-10 md:h-10 rounded-full"
               width={40}
@@ -51,7 +51,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 shrink-0">
-            {navItems.map((item) => {
+            {navItems.map(item => {
               const isActive = location.startsWith(item.href);
               return (
                 <Link
@@ -95,7 +95,10 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               <SearchIcon className="w-5 h-5" />
             </button>
 
-            <Link href="/soforthilfe" aria-label="Soforthilfe – Notfallnummern und Krisenberatung">
+            <Link
+              href="/soforthilfe"
+              aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
+            >
               <Button
                 variant="default"
                 size="sm"
@@ -113,7 +116,11 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               className="lg:hidden p-2.5 -m-0.5 rounded-lg hover:bg-muted transition-colors"
               aria-label={mobileMenuOpen ? "Menü schliessen" : "Menü öffnen"}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollToTopButton, Breadcrumbs } from "@/components/UXEnhancements";
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
+import { getMobileFloatingMode } from "@/domain/floating-ui";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
+  const floatingMode = getMobileFloatingMode(location);
 
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
@@ -41,7 +43,9 @@ export default function Layout({ children }: LayoutProps) {
 
       <div className="border-b border-border/40 bg-sage-wash/40">
         <div className="container py-1.5 text-xs text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span className="font-medium text-foreground">Notfallkontakte: Schweiz (Kanton Zürich)</span>
+          <span className="font-medium text-foreground">
+            Notfallkontakte: Schweiz (Kanton Zürich)
+          </span>
           <span className="hidden sm:inline">•</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
         </div>
@@ -63,7 +67,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NqViLFGTREhdSTsm.webp"
+                  src="/favicon-192.png"
                   alt="Startseite"
                   className="w-10 h-10 rounded-full"
                   width={40}
@@ -76,15 +80,18 @@ export default function Layout({ children }: LayoutProps) {
                 </span>
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung.
+                Psychoedukatives Informationsangebot für Angehörige von Menschen
+                mit Borderline-Muster.
               </p>
             </div>
 
             {/* Navigation */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4 text-base">Themen</h3>
+              <h3 className="font-semibold text-foreground mb-4 text-base">
+                Themen
+              </h3>
               <ul className="space-y-1">
-                {navItems.map((item) => (
+                {navItems.map(item => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
@@ -99,9 +106,11 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Resources */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4 text-base">Ressourcen</h3>
+              <h3 className="font-semibold text-foreground mb-4 text-base">
+                Ressourcen
+              </h3>
               <ul className="space-y-1">
-                {ressourcenItems.map((item) => (
+                {ressourcenItems.map(item => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
@@ -116,9 +125,13 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Hinweis */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4 text-base">Hinweis</h3>
+              <h3 className="font-semibold text-foreground mb-4 text-base">
+                Hinweis
+              </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Diese Website ersetzt keine professionelle Beratung oder Therapie. Bei akuten Krisen wenden Sie sich bitte an die Notfallnummern.
+                Diese Website ersetzt keine professionelle Beratung oder
+                Therapie. Bei akuten Krisen wenden Sie sich bitte an die
+                Notfallnummern.
               </p>
             </div>
           </div>
@@ -126,31 +139,49 @@ export default function Layout({ children }: LayoutProps) {
           {/* Absender-Einordnung */}
           <div className="border-t border-border/50 mt-8 pt-8">
             <p className="text-sm text-foreground leading-relaxed">
-              Für Angehörige – Fachstelle Angehörigenarbeit, Psychiatrische Universitätsklinik Zürich (PUK) – Ch. Egger
+              Herausgegeben von der Fachstelle Angehörigenarbeit der
+              Psychiatrischen Universitätsklinik Zürich (PUK).
             </p>
             <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-              Unabhängiges Informationsangebot der Fachstelle Angehörigenarbeit. Nicht offizieller Kommunikationskanal der PUK Zürich.
+              Redaktionell eigenständiges Informationsangebot der Fachstelle
+              Angehörigenarbeit innerhalb der PUK Zürich.
             </p>
           </div>
 
           <div className="border-t border-border/50 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
+              © 2026 Borderline · Hilfe für Angehörige. Alle Rechte
+              vorbehalten.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
-              <Link href="/fachstelle" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
+              <Link
+                href="/fachstelle"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+              >
                 Fachstelle
               </Link>
-              <Link href="/ueber-uns" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
+              <Link
+                href="/ueber-uns"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+              >
                 Über uns
               </Link>
-              <Link href="/impressum" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
+              <Link
+                href="/impressum"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+              >
                 Impressum
               </Link>
-              <Link href="/datenschutz" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
+              <Link
+                href="/datenschutz"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+              >
                 Datenschutz
               </Link>
-              <Link href="/feedback" className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]">
+              <Link
+                href="/feedback"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+              >
                 Feedback
               </Link>
             </div>
@@ -161,15 +192,23 @@ export default function Layout({ children }: LayoutProps) {
       {/* Fixed Emergency Button (Mobile) – Pill mit Label */}
       {/* Position: bottom-20 damit der ScrollToTop-Button (bottom-4) nicht überlappt */}
       {/* Auf /soforthilfe selbst wird der Button ausgeblendet */}
-      {location !== "/soforthilfe" && (
-        <Link href="/soforthilfe" className="sm:hidden fixed z-50" style={{ bottom: 'calc(4.5rem + env(safe-area-inset-bottom, 0px))', right: '1rem' }} aria-label="Soforthilfe – Notfallnummern und Krisenberatung">
+      {floatingMode === "crisis" && location !== "/soforthilfe" && (
+        <Link
+          href="/soforthilfe"
+          className="sm:hidden fixed z-50"
+          style={{
+            bottom: "calc(4.5rem + env(safe-area-inset-bottom, 0px))",
+            right: "1rem",
+          }}
+          aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
+        >
           <Button
             variant="default"
             className="h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg gap-2 text-sm font-semibold"
             tabIndex={-1}
           >
             <Phone className="w-4 h-4" />
-            Hilfe
+            Soforthilfe
           </Button>
         </Link>
       )}
@@ -180,7 +219,7 @@ export default function Layout({ children }: LayoutProps) {
           <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
-      
+
       {/* Zurück nach oben Button */}
       <ScrollToTopButton />
     </div>

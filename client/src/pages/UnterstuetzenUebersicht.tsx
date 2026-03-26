@@ -22,58 +22,12 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Link } from "wouter";
+import UnterstuetzenHeroSection from "@/sections/unterstuetzen/UnterstuetzenHeroSection";
 
-const unterstuetzenSubcategories = [
-  { id: "alle", label: "Alle", icon: Filter },
-  { id: "grundlagen", label: "Grundlagen", icon: Compass },
-  { id: "haltung", label: "Haltung", icon: Heart },
-  { id: "alltag", label: "Alltag", icon: Users },
-];
-
-const unterstuetzenItems = [
-  {
-    title: "Im Krisenmodus – Orientierung geben",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FOZYnweFmVcMXYyr.pdf",
-    category: "grundlagen",
-  },
-  {
-    title: "Ihre Rolle klären",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WUiQpUWjKIjpSRDC.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JMOjSacqrnDcAkoB.pdf",
-    category: "grundlagen",
-  },
-  {
-    title: "Drei Säulen hilfreicher Unterstützung",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WuCBUdnlHakpSnbY.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AalrNrybgxuMcRcX.pdf",
-    category: "grundlagen",
-  },
-  {
-    title: "Konsistenz-Prinzip",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MCMaGcrhifsekEqb.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vfDYZzjEwJsEhzch.pdf",
-    category: "haltung",
-  },
-  {
-    title: "Beziehungs-Achtsamkeit",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toOMoXhzHiaZUlBg.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oPRapPNKMLHWEior.pdf",
-    category: "haltung",
-  },
-  {
-    title: "6 Leitlinien für Angehörige",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OfOPUMQpHXrpSPgw.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IIcvvdvSlDcXqwbL.pdf",
-    category: "alltag",
-  },
-  {
-    title: "4 Alltags-Tipps",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cwhMoIHSUeEWpyWo.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ipyRcgPjVrRKYqyd.pdf",
-    category: "alltag",
-  },
-];
+import {
+  unterstuetzenItems,
+  unterstuetzenSubcategories,
+} from "@/content/unterstuetzen";
 
 export default function UnterstuetzenUebersicht() {
   const [activeFilter, setActiveFilter] = useState("alle");
@@ -82,7 +36,7 @@ export default function UnterstuetzenUebersicht() {
   const filteredItems =
     activeFilter === "alle"
       ? unterstuetzenItems
-      : unterstuetzenItems.filter((i) => i.category === activeFilter);
+      : unterstuetzenItems.filter(i => i.category === activeFilter);
 
   return (
     <Layout>
@@ -92,41 +46,7 @@ export default function UnterstuetzenUebersicht() {
         path="/unterstuetzen/uebersicht"
       />
 
-      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-light/30 to-background wave-divider">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            <Link
-              href="/verstehen"
-              className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
-            >
-              ← Zurück zu Verstehen
-            </Link>
-
-            <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-terracotta-light flex items-center justify-center">
-                <Compass className="w-6 h-6 text-terracotta-dark" />
-              </div>
-              <span className="text-sm font-medium text-terracotta-dark">Lesezeit: 8 Minuten</span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
-              Wie Angehörige hilfreich bleiben können
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Angehörige möchten oft gleichzeitig beruhigen, schützen, verstehen, Grenzen wahren und
-              die Beziehung nicht verlieren. Genau diese Gleichzeitigkeit macht die Rolle so
-              anspruchsvoll. Diese Seite hilft Ihnen, Unterstützung realistischer und tragfähiger zu
-              denken.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <UnterstuetzenHeroSection />
 
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
@@ -140,20 +60,23 @@ export default function UnterstuetzenUebersicht() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Angehörige können in belasteten Beziehungen eine wichtige Rolle spielen. Sie können
-                  beruhigen, orientieren, Struktur geben, emotionale Anerkennung vermitteln und
-                  mithelfen, dass Situationen weniger zerstörerisch verlaufen.
+                  Angehörige können in belasteten Beziehungen eine wichtige
+                  Rolle spielen. Sie können beruhigen, orientieren, Struktur
+                  geben, emotionale Anerkennung vermitteln und mithelfen, dass
+                  Situationen weniger zerstörerisch verlaufen.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Gleichzeitig ist Unterstützung nie allmächtig. Sie können nicht jede Krise
-                  verhindern, keine Entwicklung erzwingen und nicht dauerhaft die innere Regulation
-                  eines anderen Menschen übernehmen. Gerade diese Grenze ist oft schwer auszuhalten.
+                  Gleichzeitig ist Unterstützung nie allmächtig. Sie können
+                  nicht jede Krise verhindern, keine Entwicklung erzwingen und
+                  nicht dauerhaft die innere Regulation eines anderen Menschen
+                  übernehmen. Gerade diese Grenze ist oft schwer auszuhalten.
                 </p>
                 <Card className="bg-terracotta-light/20 border-terracotta">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Hilfreiche Unterstützung ist deshalb nicht totale Verfügbarkeit, sondern eine
-                      Form von tragfähiger Beziehung: zugewandt, klar, begrenzt und längerfristig
+                      Hilfreiche Unterstützung ist deshalb nicht totale
+                      Verfügbarkeit, sondern eine Form von tragfähiger
+                      Beziehung: zugewandt, klar, begrenzt und längerfristig
                       durchhaltbar.
                     </p>
                   </CardContent>
@@ -181,8 +104,11 @@ export default function UnterstuetzenUebersicht() {
                         "ein Mensch, der Orientierung gibt",
                         "ein Gegenüber mit realistischer Hoffnung",
                         "jemand, der Grenzen klar benennt und hält",
-                      ].map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                      ].map(item => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2 text-muted-foreground"
+                        >
                           <span className="text-sage-mid">✓</span>
                           {item}
                         </li>
@@ -204,8 +130,11 @@ export default function UnterstuetzenUebersicht() {
                         "alles Schwierige stellvertretend zu regulieren",
                         "Verhalten permanent zu kontrollieren",
                         "für den Verlauf der Genesung verantwortlich zu sein",
-                      ].map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                      ].map(item => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2 text-muted-foreground"
+                        >
                           <span className="text-terracotta-mid">✗</span>
                           {item}
                         </li>
@@ -224,10 +153,11 @@ export default function UnterstuetzenUebersicht() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Viele Angehörige erleben nicht nur die Belastung der betroffenen Person, sondern
-                  auch die eigene Ambivalenz: helfen wollen und gleichzeitig wegwollen, verstehen
-                  wollen und gleichzeitig innerlich hart werden, Grenzen setzen wollen und dann aus
-                  Schuld doch wieder nachgeben.
+                  Viele Angehörige erleben nicht nur die Belastung der
+                  betroffenen Person, sondern auch die eigene Ambivalenz: helfen
+                  wollen und gleichzeitig wegwollen, verstehen wollen und
+                  gleichzeitig innerlich hart werden, Grenzen setzen wollen und
+                  dann aus Schuld doch wieder nachgeben.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
@@ -235,10 +165,12 @@ export default function UnterstuetzenUebersicht() {
                     "aus Schuld zu viel übernehmen",
                     "aus Erschöpfung kalt oder kurz angebunden werden",
                     "zwischen Mitgefühl, Wut, Loyalität und Rückzug schwanken",
-                  ].map((item) => (
+                  ].map(item => (
                     <Card key={item} className="border-border/50">
                       <CardContent className="p-5">
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item}
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
@@ -246,9 +178,10 @@ export default function UnterstuetzenUebersicht() {
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Diese Ambivalenz ist kein Zeichen fehlender Haltung. Sie ist oft Ausdruck einer
-                      langandauernden Belastung, in der Beziehung, Verantwortung und Selbstschutz
-                      gleichzeitig Platz brauchen.
+                      Diese Ambivalenz ist kein Zeichen fehlender Haltung. Sie
+                      ist oft Ausdruck einer langandauernden Belastung, in der
+                      Beziehung, Verantwortung und Selbstschutz gleichzeitig
+                      Platz brauchen.
                     </p>
                   </CardContent>
                 </Card>
@@ -265,9 +198,10 @@ export default function UnterstuetzenUebersicht() {
                 <Card className="bg-terracotta-wash/30 border-terracotta/50">
                   <CardContent className="p-5 sm:p-6">
                     <p className="text-foreground leading-relaxed">
-                      Wenn Angst, Scham, Wut oder Verlassenheitsgefühl alles verengen, bringt es
-                      meist wenig, sofort Inhalte zu klären oder Schuldfragen zu diskutieren.
-                      Hilfreicher ist zuerst eine Reaktion, die den Zustand etwas beruhigt.
+                      Wenn Angst, Scham, Wut oder Verlassenheitsgefühl alles
+                      verengen, bringt es meist wenig, sofort Inhalte zu klären
+                      oder Schuldfragen zu diskutieren. Hilfreicher ist zuerst
+                      eine Reaktion, die den Zustand etwas beruhigt.
                     </p>
                   </CardContent>
                 </Card>
@@ -278,10 +212,12 @@ export default function UnterstuetzenUebersicht() {
                       <Anchor className="w-4 h-4 text-sage-mid" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-sm sm:text-base">Sicherheit und Ruhe</p>
+                      <p className="font-semibold text-foreground text-sm sm:text-base">
+                        Sicherheit und Ruhe
+                      </p>
                       <p className="text-muted-foreground text-sm mt-0.5">
-                        Ihre eigene Ruhe ist kein Allheilmittel, aber oft ein wichtiger Gegenpol zur
-                        Eskalation.
+                        Ihre eigene Ruhe ist kein Allheilmittel, aber oft ein
+                        wichtiger Gegenpol zur Eskalation.
                       </p>
                     </div>
                   </div>
@@ -291,10 +227,12 @@ export default function UnterstuetzenUebersicht() {
                       <Heart className="w-4 h-4 text-slate-dark" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-sm sm:text-base">Validierung</p>
+                      <p className="font-semibold text-foreground text-sm sm:text-base">
+                        Validierung
+                      </p>
                       <p className="text-muted-foreground text-sm mt-0.5">
-                        Den Schmerz anerkennen, ohne alles zu bestätigen. Verstehen heisst nicht
-                        nachgeben.
+                        Den Schmerz anerkennen, ohne alles zu bestätigen.
+                        Verstehen heisst nicht nachgeben.
                       </p>
                     </div>
                   </div>
@@ -304,9 +242,12 @@ export default function UnterstuetzenUebersicht() {
                       <HandHeart className="w-4 h-4 text-sand-mid" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-sm sm:text-base">Kurze Orientierung und Begrenzung</p>
+                      <p className="font-semibold text-foreground text-sm sm:text-base">
+                        Kurze Orientierung und Begrenzung
+                      </p>
                       <p className="text-muted-foreground text-sm mt-0.5">
-                        Kurz bleiben, nicht diskutieren, aber auch nicht alles offenlassen.
+                        Kurz bleiben, nicht diskutieren, aber auch nicht alles
+                        offenlassen.
                       </p>
                     </div>
                   </div>
@@ -314,9 +255,10 @@ export default function UnterstuetzenUebersicht() {
 
                 <blockquote className="border-l-4 border-sage-mid bg-sage-lighter/50 rounded-r-lg px-4 py-3 sm:px-5 sm:py-4">
                   <p className="text-sm text-foreground leading-relaxed">
-                    <strong>Wichtig:</strong> Unterstützung in der Krise bedeutet nicht, alles zu
-                    tragen. Wenn Sicherheit unklar ist oder Suizidalität im Raum steht, braucht es
-                    rasch zusätzliche Hilfe.
+                    <strong>Wichtig:</strong> Unterstützung in der Krise
+                    bedeutet nicht, alles zu tragen. Wenn Sicherheit unklar ist
+                    oder Suizidalität im Raum steht, braucht es rasch
+                    zusätzliche Hilfe.
                   </p>
                 </blockquote>
               </div>
@@ -346,11 +288,15 @@ export default function UnterstuetzenUebersicht() {
                     title: "Alltag nicht nur um Krise bauen",
                     text: "Wenn sich alles nur noch um Anspannung und Eskalation dreht, geht Beziehungssubstanz verloren. Auch normale Anteile brauchen Platz.",
                   },
-                ].map((item) => (
+                ].map(item => (
                   <Card key={item.title} className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.text}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
@@ -365,15 +311,17 @@ export default function UnterstuetzenUebersicht() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Unterstützung wird auf Dauer nur tragfähig, wenn sie begrenzt bleibt. Wer aus Angst
-                  oder Schuld jede Grenze aufweicht, beruhigt eine Situation kurzfristig vielleicht,
-                  macht sie langfristig aber oft unklarer und krisenanfälliger.
+                  Unterstützung wird auf Dauer nur tragfähig, wenn sie begrenzt
+                  bleibt. Wer aus Angst oder Schuld jede Grenze aufweicht,
+                  beruhigt eine Situation kurzfristig vielleicht, macht sie
+                  langfristig aber oft unklarer und krisenanfälliger.
                 </p>
                 <Card className="bg-cream border-border/50">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Grenzen sind kein Liebesentzug. Sie schaffen Berechenbarkeit, schützen Ihre
-                      Integrität und entlasten Beziehungen von der Erwartung, dass ein Mensch alles
+                      Grenzen sind kein Liebesentzug. Sie schaffen
+                      Berechenbarkeit, schützen Ihre Integrität und entlasten
+                      Beziehungen von der Erwartung, dass ein Mensch alles
                       halten müsse.
                     </p>
                   </CardContent>
@@ -389,15 +337,18 @@ export default function UnterstuetzenUebersicht() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Wenn mehrere Angehörige beteiligt sind, entstehen oft Spannungen: Eine Person
-                  grenzt ab, eine andere rettet, eine dritte will Ruhe um jeden Preis. Solche
-                  Unterschiede sind normal. Schwierig wird es, wenn Betroffene und Angehörige in
+                  Wenn mehrere Angehörige beteiligt sind, entstehen oft
+                  Spannungen: Eine Person grenzt ab, eine andere rettet, eine
+                  dritte will Ruhe um jeden Preis. Solche Unterschiede sind
+                  normal. Schwierig wird es, wenn Betroffene und Angehörige in
                   widersprüchliche Bündnisse geraten.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Card className="border-l-4 border-l-sage-mid">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Hilfreich</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Hilfreich
+                      </h3>
                       <ul className="text-sm text-muted-foreground space-y-1">
                         <li>gemeinsame Grundlinien klären</li>
                         <li>Absprachen ausserhalb akuter Krisen treffen</li>
@@ -408,7 +359,9 @@ export default function UnterstuetzenUebersicht() {
                   </Card>
                   <Card className="border-l-4 border-l-terracotta-mid">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Belastend</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Belastend
+                      </h3>
                       <ul className="text-sm text-muted-foreground space-y-1">
                         <li>widersprüchliche Botschaften</li>
                         <li>heimliche Sonderabsprachen</li>
@@ -435,10 +388,15 @@ export default function UnterstuetzenUebersicht() {
                   "weniger Schuld und Gegenschuld",
                   "mehr Bereitschaft, Hilfe von aussen einzubeziehen",
                   "mehr Selbstschutz ohne vollständigen Beziehungsabbruch",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30">
+                ].map(item => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30"
+                  >
                     <span className="text-sage-mid mt-0.5">✓</span>
-                    <span className="text-sm text-muted-foreground">{item}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -452,16 +410,18 @@ export default function UnterstuetzenUebersicht() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Es gibt Konstellationen, in denen Angehörige nicht mehr nur unterstützen, sondern
-                  vor allem schützen müssen: bei eigener Erschöpfung, bei Gewalt oder massiver
-                  Grenzverletzung, wenn Kinder mitbetroffen sind oder wenn sich das ganze Leben nur
+                  Es gibt Konstellationen, in denen Angehörige nicht mehr nur
+                  unterstützen, sondern vor allem schützen müssen: bei eigener
+                  Erschöpfung, bei Gewalt oder massiver Grenzverletzung, wenn
+                  Kinder mitbetroffen sind oder wenn sich das ganze Leben nur
                   noch um Krisen dreht.
                 </p>
                 <Card className="bg-sand-muted border-sand-mid">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Spätestens dann braucht es zusätzliche Hilfe, klarere Grenzen oder auch mehr
-                      Distanz. Das ist kein Versagen, sondern oft Ausdruck verantwortlichen Handelns.
+                      Spätestens dann braucht es zusätzliche Hilfe, klarere
+                      Grenzen oder auch mehr Distanz. Das ist kein Versagen,
+                      sondern oft Ausdruck verantwortlichen Handelns.
                     </p>
                   </CardContent>
                 </Card>
@@ -481,18 +441,21 @@ export default function UnterstuetzenUebersicht() {
               <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
                 <Eye className="w-4 h-4 flex-shrink-0" />
                 <span>
-                  <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen»
-                  öffnet die A4-Druckversion im neuen Tab.
+                  <strong className="text-foreground">
+                    Vorschau = Web-Bild.
+                  </strong>{" "}
+                  «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
                 </span>
               </p>
 
               <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-1 px-1">
-                {unterstuetzenSubcategories.map((cat) => {
+                {unterstuetzenSubcategories.map(cat => {
                   const Icon = cat.icon;
                   const count =
                     cat.id === "alle"
                       ? unterstuetzenItems.length
-                      : unterstuetzenItems.filter((i) => i.category === cat.id).length;
+                      : unterstuetzenItems.filter(i => i.category === cat.id)
+                          .length;
                   return (
                     <Button
                       key={cat.id}
@@ -501,7 +464,10 @@ export default function UnterstuetzenUebersicht() {
                       onClick={() => {
                         setActiveFilter(cat.id);
                         setTimeout(() => {
-                          gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          gridRef.current?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
                         }, 50);
                       }}
                       className={`whitespace-nowrap shrink-0 ${
@@ -512,18 +478,25 @@ export default function UnterstuetzenUebersicht() {
                     >
                       <Icon className="w-4 h-4 mr-1.5" />
                       {cat.label}
-                      <span className="ml-1.5 text-xs opacity-90">({count})</span>
+                      <span className="ml-1.5 text-xs opacity-90">
+                        ({count})
+                      </span>
                     </Button>
                   );
                 })}
               </div>
 
-              <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div
+                ref={gridRef}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              >
                 {filteredItems.map((item, index) => (
                   <Card
                     key={item.title}
                     className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                      filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""
+                      filteredItems.length > 1 && index === 0
+                        ? "sm:col-span-2"
+                        : ""
                     }`}
                   >
                     <div className="aspect-[4/3] bg-muted overflow-hidden">
@@ -538,7 +511,9 @@ export default function UnterstuetzenUebersicht() {
                       />
                     </div>
                     <CardContent className="p-4">
-                      <h3 className="font-medium text-sm text-foreground mb-2">{item.title}</h3>
+                      <h3 className="font-medium text-sm text-foreground mb-2">
+                        {item.title}
+                      </h3>
                       <a
                         href={item.pdfUrl}
                         target="_blank"
@@ -574,10 +549,13 @@ export default function UnterstuetzenUebersicht() {
                   <div className="flex items-start gap-4">
                     <Lightbulb className="w-6 h-6 text-sand-mid flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">Denken Sie daran</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Denken Sie daran
+                      </h3>
                       <p className="text-muted-foreground">
-                        Unterstützen heisst nicht, sich selbst aufzugeben. Sie können nur dann
-                        tragfähig unterstützen, wenn Ihr eigenes Fundament geschützt bleibt.
+                        Unterstützen heisst nicht, sich selbst aufzugeben. Sie
+                        können nur dann tragfähig unterstützen, wenn Ihr eigenes
+                        Fundament geschützt bleibt.
                       </p>
                     </div>
                   </div>

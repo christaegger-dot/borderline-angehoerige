@@ -18,81 +18,32 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "wouter";
+import VerstehenHeroSection from "@/sections/verstehen/VerstehenHeroSection";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
-
-const verstehenInfografiken = [
-  {
-    id: "leuchtturm",
-    title: "Der Leuchtturm",
-    description: "Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.",
-    category: "grundlagen",
-    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GbFCyQhEWIKomzXw.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
-    alt: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
-    featured: true,
-  },
-  {
-    id: "eisberg",
-    title: "Der Eisberg",
-    description: "Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.",
-    category: "grundlagen",
-    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MLLwefeyaKvtThbK.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RNKtfQQMvhlSyiIp.pdf",
-    alt: "Der Eisberg – Wut ist oft die Spitze",
-  },
-  {
-    id: "spaltung",
-    title: "Spaltung",
-    description: "Das Pendel zwischen Extremen – die Grauzone stärken.",
-    category: "grundlagen",
-    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WRORriPmZftmvKTL.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RtdVgflJuCNAhEKk.pdf",
-    alt: "Spaltung – das Pendel zwischen Extremen",
-  },
-  {
-    id: "alarm-modus",
-    title: "Alarm-Modus vs. Denk-Modus",
-    description: "Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.",
-    category: "neurobiologie",
-    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sSUJoOUTiuWgrkiZ.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tlKAOpYHdCNAtovE.pdf",
-    alt: "Alarm-Modus vs. Denk-Modus",
-  },
-  {
-    id: "4-phasen",
-    title: "Der 4-Phasen-Zyklus",
-    description: "Ein häufiges Muster in belasteten Beziehungen, nicht ein fixes Schicksal.",
-    category: "neurobiologie",
-    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BYDbBJaIhetrjHRq.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PBYpNxZamAxjOHYd.pdf",
-    alt: "Der 4-Phasen-Zyklus",
-  },
-  {
-    id: "gehirn",
-    title: "Das Gehirn verstehen",
-    description: "Neurobiologie einfach erklärt – warum Stress Denken blockiert.",
-    category: "neurobiologie",
-    webpUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ImASzOTHYdFpxOUI.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NViSBQtRBvGWOHPE.pdf",
-    alt: "Das Gehirn verstehen",
-  },
-];
+import { verstehenInfografiken } from "@/content/verstehen";
 
 const verstehenCategories = [
-  { id: "alle", label: "Alle", icon: Filter, count: verstehenInfografiken.length },
+  {
+    id: "alle",
+    label: "Alle",
+    icon: Filter,
+    count: verstehenInfografiken.length,
+  },
   {
     id: "grundlagen",
     label: "Grundlagen",
     icon: BookOpen,
-    count: verstehenInfografiken.filter((i) => i.category === "grundlagen").length,
+    count: verstehenInfografiken.filter(i => i.category === "grundlagen")
+      .length,
   },
   {
     id: "neurobiologie",
     label: "Stress & Gehirn",
     icon: Brain,
-    count: verstehenInfografiken.filter((i) => i.category === "neurobiologie").length,
+    count: verstehenInfografiken.filter(i => i.category === "neurobiologie")
+      .length,
   },
 ];
 
@@ -117,7 +68,7 @@ export default function Verstehen() {
   const filteredItems =
     activeFilter === "alle"
       ? verstehenInfografiken
-      : verstehenInfografiken.filter((i) => i.category === activeFilter);
+      : verstehenInfografiken.filter(i => i.category === activeFilter);
 
   return (
     <Layout>
@@ -128,35 +79,7 @@ export default function Verstehen() {
       />
       <TableOfContents />
 
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-sage-dark" />
-              </div>
-              <span className="text-sm font-medium text-sage-dark">Lesezeit: 15 Minuten</span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
-              Borderline verstehen
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Für Angehörige ist Borderline oft nicht nur schwer zu begreifen, sondern schwer
-              auszuhalten. Situationen können rasch kippen, Reaktionen widersprüchlich wirken und
-              die eigene Rolle unklar werden. Diese Seite hilft Ihnen, typische innere und
-              zwischenmenschliche Dynamiken besser einzuordnen, ohne Verhalten zu beschönigen oder
-              zu verurteilen.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <VerstehenHeroSection />
 
       <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
@@ -170,11 +93,14 @@ export default function Verstehen() {
               <Card className="border-l-4 border-l-sage bg-sage-light/20">
                 <CardContent className="p-6">
                   <p className="text-foreground leading-relaxed italic">
-                    "Verstehen hat mir nicht alles leichter gemacht. Aber ich habe aufgehört, jede
-                    Eskalation nur als Bosheit, jede Distanz nur als Ablehnung und jede Krise nur
-                    als mein persönliches Versagen zu lesen."
+                    "Verstehen hat mir nicht alles leichter gemacht. Aber ich
+                    habe aufgehört, jede Eskalation nur als Bosheit, jede
+                    Distanz nur als Ablehnung und jede Krise nur als mein
+                    persönliches Versagen zu lesen."
                   </p>
-                  <p className="text-muted-foreground text-sm mt-3">— Eine Angehörige</p>
+                  <p className="text-muted-foreground text-sm mt-3">
+                    — Eine Angehörige
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -188,22 +114,24 @@ export default function Verstehen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Für Angehörige wirkt Borderline oft widersprüchlich: Nähe kann sehr intensiv
-                  werden und kurz darauf in Angriff, Rückzug oder Funkstille kippen. Eine Beziehung
-                  kann sich gleichzeitig bedeutsam, erschöpfend, zart und bedrohlich anfühlen.
+                  Für Angehörige wirkt Borderline oft widersprüchlich: Nähe kann
+                  sehr intensiv werden und kurz darauf in Angriff, Rückzug oder
+                  Funkstille kippen. Eine Beziehung kann sich gleichzeitig
+                  bedeutsam, erschöpfend, zart und bedrohlich anfühlen.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Viele Angehörige schwanken deshalb nicht nur zwischen Mitgefühl und Hilfsbereitschaft,
-                  sondern auch zwischen Angst, Wut, Selbstzweifel, Loyalität und dem Wunsch nach
-                  Abstand. Diese Ambivalenz ist nicht Ausdruck mangelnder Liebe, sondern oft Teil der
-                  Belastungsrealität.
+                  Viele Angehörige schwanken deshalb nicht nur zwischen
+                  Mitgefühl und Hilfsbereitschaft, sondern auch zwischen Angst,
+                  Wut, Selbstzweifel, Loyalität und dem Wunsch nach Abstand.
+                  Diese Ambivalenz ist nicht Ausdruck mangelnder Liebe, sondern
+                  oft Teil der Belastungsrealität.
                 </p>
                 <Card className="bg-cream border-border/50">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Wichtig:</strong> Verstehen kann entlasten, weil es Muster einordnen
-                      hilft. Es ersetzt aber weder Grenzsetzung noch Selbstschutz noch professionelle
-                      Hilfe.
+                      <strong>Wichtig:</strong> Verstehen kann entlasten, weil
+                      es Muster einordnen hilft. Es ersetzt aber weder
+                      Grenzsetzung noch Selbstschutz noch professionelle Hilfe.
                     </p>
                   </CardContent>
                 </Card>
@@ -218,21 +146,25 @@ export default function Verstehen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Die Borderline-Persönlichkeitsstörung ist ein komplexes Störungsbild. Typisch sind
-                  starke emotionale Reagibilität, Schwierigkeiten mit innerer Stabilität und ein
-                  Beziehungserleben, das unter Bindungsstress schnell ins Wanken geraten kann.
+                  Die Borderline-Persönlichkeitsstörung ist ein komplexes
+                  Störungsbild. Typisch sind starke emotionale Reagibilität,
+                  Schwierigkeiten mit innerer Stabilität und ein
+                  Beziehungserleben, das unter Bindungsstress schnell ins Wanken
+                  geraten kann.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Nicht alle Menschen mit Borderline zeigen dieselben Muster. Manche wirken vor allem
-                  impulsiv und explosiv, andere eher verzweifelt, zurückgezogen, leer oder
-                  selbstabwertend. Ausprägung, Verlauf und Belastung unterscheiden sich deutlich.
+                  Nicht alle Menschen mit Borderline zeigen dieselben Muster.
+                  Manche wirken vor allem impulsiv und explosiv, andere eher
+                  verzweifelt, zurückgezogen, leer oder selbstabwertend.
+                  Ausprägung, Verlauf und Belastung unterscheiden sich deutlich.
                 </p>
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Für Angehörige ist vor allem wichtig: Hinter heftigen Reaktionen liegen oft
-                      Überflutung, Angst, Scham oder Verlassenheitsstress. Das macht Verhalten nicht
-                      folgenlos, hilft aber, es genauer einzuordnen.
+                      Für Angehörige ist vor allem wichtig: Hinter heftigen
+                      Reaktionen liegen oft Überflutung, Angst, Scham oder
+                      Verlassenheitsstress. Das macht Verhalten nicht folgenlos,
+                      hilft aber, es genauer einzuordnen.
                     </p>
                   </CardContent>
                 </Card>
@@ -247,17 +179,22 @@ export default function Verstehen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Viele Menschen mit Borderline haben ihre grössten Schwierigkeiten nicht in
-                  oberflächlichen Kontakten, sondern in engen Beziehungen. Gerade dort, wo viel
-                  Bindung, Hoffnung und Verletzbarkeit im Spiel sind, werden Unsicherheit,
-                  Unklarheit oder Distanz besonders schmerzhaft erlebt.
+                  Viele Menschen mit Borderline haben ihre grössten
+                  Schwierigkeiten nicht in oberflächlichen Kontakten, sondern in
+                  engen Beziehungen. Gerade dort, wo viel Bindung, Hoffnung und
+                  Verletzbarkeit im Spiel sind, werden Unsicherheit, Unklarheit
+                  oder Distanz besonders schmerzhaft erlebt.
                 </p>
                 <div className="grid gap-4">
-                  {relationshipPatterns.map((item) => (
+                  {relationshipPatterns.map(item => (
                     <Card key={item.title} className="border-border/50">
                       <CardContent className="p-5">
-                        <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                        <h3 className="font-semibold text-foreground mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.text}
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
@@ -265,9 +202,9 @@ export default function Verstehen() {
                 <Card className="bg-terracotta-wash border-terracotta-mid/20">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Gerade deshalb erleben Angehörige oft etwas Paradoxes: Je wichtiger sie der
-                      betroffenen Person sind, desto stärker können Konflikte, Vorwürfe oder
-                      Grenztests ausfallen.
+                      Gerade deshalb erleben Angehörige oft etwas Paradoxes: Je
+                      wichtiger sie der betroffenen Person sind, desto stärker
+                      können Konflikte, Vorwürfe oder Grenztests ausfallen.
                     </p>
                   </CardContent>
                 </Card>
@@ -282,20 +219,24 @@ export default function Verstehen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Angehörige erleben Wut oft als das dominierende Thema. Sie ist laut, verletzend und
-                  schwer zu übersehen. Gleichzeitig ist Wut bei Borderline häufig nicht der ganze
-                  Kern, sondern eher eine Reaktion auf tiefer liegende Zustände wie Scham,
+                  Angehörige erleben Wut oft als das dominierende Thema. Sie ist
+                  laut, verletzend und schwer zu übersehen. Gleichzeitig ist Wut
+                  bei Borderline häufig nicht der ganze Kern, sondern eher eine
+                  Reaktion auf tiefer liegende Zustände wie Scham,
                   Verlassenheitsangst, Ohnmacht oder innere Leere.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Scham spielt dabei eine besonders grosse Rolle. Wer sich tief beschämt, blossgestellt
-                  oder innerlich wertlos fühlt, reagiert leichter mit Angriff, Rückzug,
-                  Selbstentwertung oder abruptem Kontaktabbruch. Für Angehörige wirkt das oft hart
-                  und kalt, innerlich ist es nicht selten hochverletzlich.
+                  Scham spielt dabei eine besonders grosse Rolle. Wer sich tief
+                  beschämt, blossgestellt oder innerlich wertlos fühlt, reagiert
+                  leichter mit Angriff, Rückzug, Selbstentwertung oder abruptem
+                  Kontaktabbruch. Für Angehörige wirkt das oft hart und kalt,
+                  innerlich ist es nicht selten hochverletzlich.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
-                    <h3 className="font-semibold text-foreground mb-2">Was sichtbar werden kann</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Was sichtbar werden kann
+                    </h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>Wutausbruch oder Vorwurf</li>
                       <li>Rückzug oder Schweigen</li>
@@ -304,7 +245,9 @@ export default function Verstehen() {
                     </ul>
                   </div>
                   <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
-                    <h3 className="font-semibold text-foreground mb-2">Was darunter liegen kann</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Was darunter liegen kann
+                    </h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>Scham und Kränkung</li>
                       <li>Angst vor Verlust oder Abwertung</li>
@@ -324,38 +267,47 @@ export default function Verstehen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Unter hoher emotionaler Überflutung verengt sich das Erleben häufig stark auf den
-                  aktuellen Schmerz, die aktuelle Angst oder den aktuellen Konflikt. Dann verlieren
-                  Menschen leichter den Zugang zu Grautönen, Beziehungsgeschichte und nüchterner
+                  Unter hoher emotionaler Überflutung verengt sich das Erleben
+                  häufig stark auf den aktuellen Schmerz, die aktuelle Angst
+                  oder den aktuellen Konflikt. Dann verlieren Menschen leichter
+                  den Zugang zu Grautönen, Beziehungsgeschichte und nüchterner
                   Einordnung.
                 </p>
                 <div className="grid gap-4">
                   <Card className="border-l-4 border-l-alert">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Alarmmodus</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Alarmmodus
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Das innere Alarmsystem reagiert rasch und heftig. Neutrale Signale können
-                        leichter als Distanz, Kritik oder Bedrohung gelesen werden.
+                        Das innere Alarmsystem reagiert rasch und heftig.
+                        Neutrale Signale können leichter als Distanz, Kritik
+                        oder Bedrohung gelesen werden.
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-l-4 border-l-slate-dark">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Tunnelblick</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Tunnelblick
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        In diesem Zustand kommen Argumente, Erklärungen und Korrekturen oft kaum an.
-                        Hilfreicher ist meist zuerst Beruhigung, Orientierung und emotionale
-                        Anerkennung.
+                        In diesem Zustand kommen Argumente, Erklärungen und
+                        Korrekturen oft kaum an. Hilfreicher ist meist zuerst
+                        Beruhigung, Orientierung und emotionale Anerkennung.
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-l-4 border-l-sage-mid">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Dissoziation und Entfremdung</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Dissoziation und Entfremdung
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Unter starkem Stress können auch Unwirklichkeitsgefühle, innere Abspaltung
-                        oder das Gefühl auftreten, nicht mehr richtig präsent zu sein. Das ist für
-                        Betroffene wie Angehörige oft verstörend.
+                        Unter starkem Stress können auch Unwirklichkeitsgefühle,
+                        innere Abspaltung oder das Gefühl auftreten, nicht mehr
+                        richtig präsent zu sein. Das ist für Betroffene wie
+                        Angehörige oft verstörend.
                       </p>
                     </CardContent>
                   </Card>
@@ -363,9 +315,10 @@ export default function Verstehen() {
                 <Card className="bg-slate-wash border-slate-mid/20">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Für Angehörige heisst das:</strong> Nicht zuerst überzeugen, sondern
-                      zuerst stabilisieren. Erst wenn die Anspannung sinkt, wird gemeinsames Denken
-                      eher wieder möglich.
+                      <strong>Für Angehörige heisst das:</strong> Nicht zuerst
+                      überzeugen, sondern zuerst stabilisieren. Erst wenn die
+                      Anspannung sinkt, wird gemeinsames Denken eher wieder
+                      möglich.
                     </p>
                   </CardContent>
                 </Card>
@@ -380,47 +333,61 @@ export default function Verstehen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Manche Beziehungen folgen über längere Zeit wiederkehrenden Schleifen: Eskalation,
-                  Rückzug, Wiederannäherung, Hoffnung, neue Spannung. Das ist kein starres Gesetz,
-                  aber ein Muster, das Angehörigen helfen kann, Entwicklungen nüchterner zu lesen.
+                  Manche Beziehungen folgen über längere Zeit wiederkehrenden
+                  Schleifen: Eskalation, Rückzug, Wiederannäherung, Hoffnung,
+                  neue Spannung. Das ist kein starres Gesetz, aber ein Muster,
+                  das Angehörigen helfen kann, Entwicklungen nüchterner zu
+                  lesen.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Idealisierung und Entwertung</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Idealisierung und Entwertung
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Eine Person kann zeitweise als einzig sicher und verstehend erlebt werden,
-                        kurz darauf aber als kalt, ungerecht oder gefährlich. Für Angehörige ist das
-                        oft tief verunsichernd.
+                        Eine Person kann zeitweise als einzig sicher und
+                        verstehend erlebt werden, kurz darauf aber als kalt,
+                        ungerecht oder gefährlich. Für Angehörige ist das oft
+                        tief verunsichernd.
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Rückzug und Funkstille</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Rückzug und Funkstille
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Nach Konflikten kann Schweigen, Abbruch oder Distanzierung folgen. Das ist
-                        nicht zwingend Gleichgültigkeit, für Angehörige aber oft besonders schwer
-                        auszuhalten.
+                        Nach Konflikten kann Schweigen, Abbruch oder
+                        Distanzierung folgen. Das ist nicht zwingend
+                        Gleichgültigkeit, für Angehörige aber oft besonders
+                        schwer auszuhalten.
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Schuldspiralen</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Schuldspiralen
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Angehörige geben aus Angst oder Schuld nach, fühlen sich danach ausgenutzt,
-                        reagieren irgendwann härter und empfinden dann erneut Schuld. So entsteht ein
-                        Kreislauf, der beide Seiten belastet.
+                        Angehörige geben aus Angst oder Schuld nach, fühlen sich
+                        danach ausgenutzt, reagieren irgendwann härter und
+                        empfinden dann erneut Schuld. So entsteht ein Kreislauf,
+                        der beide Seiten belastet.
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Nähe und Selbstschutz zugleich</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Nähe und Selbstschutz zugleich
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Viele Angehörige möchten bleiben und gleichzeitig Abstand. Gerade diese
-                        Ambivalenz verdient Ernstnahme statt moralische Bewertung.
+                        Viele Angehörige möchten bleiben und gleichzeitig
+                        Abstand. Gerade diese Ambivalenz verdient Ernstnahme
+                        statt moralische Bewertung.
                       </p>
                     </CardContent>
                   </Card>
@@ -452,12 +419,19 @@ export default function Verstehen() {
                     text: "Sie müssen nicht alles allein tragen",
                     sub: "Verstehen ist wertvoll, ersetzt aber kein Hilfesystem",
                   },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30">
+                ].map(item => (
+                  <div
+                    key={item.text}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30"
+                  >
                     <span className="text-2xl flex-shrink-0">•</span>
                     <div>
-                      <span className="font-medium text-foreground block">{item.text}</span>
-                      <span className="text-sm text-muted-foreground">{item.sub}</span>
+                      <span className="font-medium text-foreground block">
+                        {item.text}
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {item.sub}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -472,20 +446,23 @@ export default function Verstehen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Verstehen bedeutet nicht, alles auszuhalten. Es bedeutet auch nicht, dass Sie jede
-                  Eskalation auffangen, jedes Verhalten korrekt einordnen oder jede Krise mit der
-                  richtigen Reaktion entschärfen könnten.
+                  Verstehen bedeutet nicht, alles auszuhalten. Es bedeutet auch
+                  nicht, dass Sie jede Eskalation auffangen, jedes Verhalten
+                  korrekt einordnen oder jede Krise mit der richtigen Reaktion
+                  entschärfen könnten.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Mitgefühl und Selbstschutz widersprechen sich nicht. Gerade in belasteten
-                  Beziehungen kann es verantwortungsvoll sein, Grenzen zu setzen, Distanz zu schaffen
-                  oder Hilfe von aussen einzubeziehen.
+                  Mitgefühl und Selbstschutz widersprechen sich nicht. Gerade in
+                  belasteten Beziehungen kann es verantwortungsvoll sein,
+                  Grenzen zu setzen, Distanz zu schaffen oder Hilfe von aussen
+                  einzubeziehen.
                 </p>
                 <Card className="bg-terracotta-lighter/30 border-terracotta/50">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Merksatz für Angehörige:</strong> Verstehen hilft, ruhiger und klarer
-                      zu handeln. Es verpflichtet Sie nicht dazu, sich selbst zu verlieren.
+                      <strong>Merksatz für Angehörige:</strong> Verstehen hilft,
+                      ruhiger und klarer zu handeln. Es verpflichtet Sie nicht
+                      dazu, sich selbst zu verlieren.
                     </p>
                   </CardContent>
                 </Card>
@@ -500,9 +477,10 @@ export default function Verstehen() {
             >
               <div className="space-y-5">
                 <p className="text-muted-foreground leading-relaxed">
-                  Für eine Diagnose müssen Fachpersonen mehrere Merkmale über längere Zeit und in
-                  verschiedenen Lebensbereichen beurteilen. Entscheidend ist nicht ein einzelnes
-                  Verhalten, sondern das Gesamtbild.
+                  Für eine Diagnose müssen Fachpersonen mehrere Merkmale über
+                  längere Zeit und in verschiedenen Lebensbereichen beurteilen.
+                  Entscheidend ist nicht ein einzelnes Verhalten, sondern das
+                  Gesamtbild.
                 </p>
 
                 <div className="grid gap-3">
@@ -512,7 +490,7 @@ export default function Verstehen() {
                     "ein schwankendes oder unsicheres Selbstbild",
                     "Impulsivität oder selbstschädigendes Verhalten",
                     "affektive Instabilität, Leere, Wut oder dissoziative Symptome",
-                  ].map((item) => (
+                  ].map(item => (
                     <Card key={item} className="border-border/50">
                       <CardContent className="p-4">
                         <p className="text-sm text-muted-foreground">{item}</p>
@@ -523,12 +501,15 @@ export default function Verstehen() {
 
                 <Card className="border-t-4 border-t-sage-mid">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Ursachen sind nie monokausal</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Ursachen sind nie monokausal
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Borderline entsteht nicht durch eine einzige Ursache, sondern im Zusammenspiel
-                      biologischer Empfindlichkeit, Bindungs- und Entwicklungserfahrungen sowie
-                      Belastungsfaktoren. Schuldzuweisungen an Betroffene oder Angehörige greifen zu
-                      kurz und helfen niemandem.
+                      Borderline entsteht nicht durch eine einzige Ursache,
+                      sondern im Zusammenspiel biologischer Empfindlichkeit,
+                      Bindungs- und Entwicklungserfahrungen sowie
+                      Belastungsfaktoren. Schuldzuweisungen an Betroffene oder
+                      Angehörige greifen zu kurz und helfen niemandem.
                     </p>
                   </CardContent>
                 </Card>
@@ -541,7 +522,9 @@ export default function Verstehen() {
               viewport={{ once: true }}
               className="mb-12 wave-divider-top"
               id="materialien"
-              style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
+              style={
+                { "--wave-color": "var(--background)" } as React.CSSProperties
+              }
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-sage-dark" />
@@ -549,12 +532,13 @@ export default function Verstehen() {
               </h2>
 
               <p className="text-muted-foreground mb-6">
-                Diese Materialien ergänzen die Seite, ersetzen sie aber nicht. Beginnen Sie mit den
-                Grundlagen, wenn Sie gerade Orientierung brauchen.
+                Diese Materialien ergänzen die Seite, ersetzen sie aber nicht.
+                Beginnen Sie mit den Grundlagen, wenn Sie gerade Orientierung
+                brauchen.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-6">
-                {verstehenCategories.map((cat) => (
+                {verstehenCategories.map(cat => (
                   <Button
                     key={cat.id}
                     variant={activeFilter === cat.id ? "default" : "outline"}
@@ -562,11 +546,16 @@ export default function Verstehen() {
                     onClick={() => {
                       setActiveFilter(cat.id);
                       setTimeout(() => {
-                        gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                        gridRef.current?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
                       }, 50);
                     }}
                     className={`whitespace-nowrap shrink-0 ${
-                      activeFilter === cat.id ? "bg-sage-dark hover:bg-sage-mid text-white" : ""
+                      activeFilter === cat.id
+                        ? "bg-sage-dark hover:bg-sage-mid text-white"
+                        : ""
                     }`}
                   >
                     <cat.icon className="w-4 h-4 mr-1.5" />
@@ -575,8 +564,11 @@ export default function Verstehen() {
                 ))}
               </div>
 
-              <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {filteredItems.map((item) => (
+              <div
+                ref={gridRef}
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              >
+                {filteredItems.map(item => (
                   <Card
                     key={item.id}
                     className={`${item.featured && activeFilter === "alle" ? "md:col-span-2" : ""} overflow-hidden hover:shadow-lg transition-shadow`}
@@ -598,8 +590,12 @@ export default function Verstehen() {
                       />
                     </button>
                     <CardContent className="p-4">
-                      <h3 className="font-medium text-foreground mb-1">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{item.description}</p>
+                      <h3 className="font-medium text-foreground mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        {item.description}
+                      </p>
                       <a
                         href={item.pdfUrl}
                         target="_blank"
@@ -627,7 +623,9 @@ export default function Verstehen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12 wave-divider-top"
-              style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
+              style={
+                { "--wave-color": "var(--background)" } as React.CSSProperties
+              }
             >
               <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6 md:p-8">
@@ -638,9 +636,9 @@ export default function Verstehen() {
                         Verstehen ist nur der erste Schritt
                       </h3>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        Wenn Sie Dynamiken besser einordnen können, wird oft klarer, wie Sie
-                        hilfreicher reagieren, Grenzen besser halten und die eigene Belastung ernster
-                        nehmen können.
+                        Wenn Sie Dynamiken besser einordnen können, wird oft
+                        klarer, wie Sie hilfreicher reagieren, Grenzen besser
+                        halten und die eigene Belastung ernster nehmen können.
                       </p>
                       <Link href="/unterstuetzen/uebersicht">
                         <Button variant="outline" size="sm" className="gap-2">
@@ -661,11 +659,14 @@ export default function Verstehen() {
               className="text-center"
             >
               <p className="text-muted-foreground mb-6">
-                Als Nächstes geht es darum, wie Unterstützung tragfähig bleiben kann, ohne dass Sie
-                sich selbst verlieren.
+                Als Nächstes geht es darum, wie Unterstützung tragfähig bleiben
+                kann, ohne dass Sie sich selbst verlieren.
               </p>
               <Link href="/unterstuetzen/uebersicht">
-                <Button size="lg" className="bg-terracotta hover:bg-terracotta-mid text-white">
+                <Button
+                  size="lg"
+                  className="bg-terracotta hover:bg-terracotta-mid text-white"
+                >
                   Weiter zu: Unterstützen
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>

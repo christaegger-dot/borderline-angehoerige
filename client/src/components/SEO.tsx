@@ -9,10 +9,16 @@ interface SEOProps {
 }
 
 const SITE_NAME = "Borderline · Hilfe für Angehörige";
-const BASE_DESCRIPTION = "Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung.";
+const BASE_DESCRIPTION =
+  "Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Muster (Borderline-Persönlichkeitsstörung).";
 const DEFAULT_SITE_URL = "https://borderline-angehoerige.netlify.app";
-const SITE_URL = (import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "");
-const MEDICAL_LAST_REVIEWED = import.meta.env.VITE_MEDICAL_LAST_REVIEWED || new Date().toISOString().slice(0, 10);
+const SITE_URL = (import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(
+  /\/+$/,
+  ""
+);
+const MEDICAL_LAST_REVIEWED =
+  import.meta.env.VITE_MEDICAL_LAST_REVIEWED ||
+  new Date().toISOString().slice(0, 10);
 
 const getSiteUrl = () => {
   if (typeof window !== "undefined" && window.location?.origin) {
@@ -21,8 +27,16 @@ const getSiteUrl = () => {
   return SITE_URL;
 };
 
-export default function SEO({ title, description, path = "/", type = "website", canonicalPath }: SEOProps) {
-  const fullTitle = title ? `${title} – ${SITE_NAME}` : `${SITE_NAME} – Evidenzbasierte Unterstützung`;
+export default function SEO({
+  title,
+  description,
+  path = "/",
+  type = "website",
+  canonicalPath,
+}: SEOProps) {
+  const fullTitle = title
+    ? `${title} – ${SITE_NAME}`
+    : `${SITE_NAME} – Evidenzbasierte Unterstützung`;
   const metaDescription = description || BASE_DESCRIPTION;
 
   useEffect(() => {
@@ -57,7 +71,9 @@ export default function SEO({ title, description, path = "/", type = "website", 
     updateMeta("twitter:image", ogImage);
 
     // Update canonical link
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    let canonical = document.querySelector(
+      'link[rel="canonical"]'
+    ) as HTMLLinkElement;
     if (!canonical) {
       canonical = document.createElement("link");
       canonical.rel = "canonical";
@@ -74,19 +90,19 @@ export function WebsiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": SITE_NAME,
-    "alternateName": "Borderline Angehörige",
-    "url": SITE_URL,
-    "description": BASE_DESCRIPTION,
-    "publisher": {
+    name: SITE_NAME,
+    alternateName: "Borderline Angehörige",
+    url: SITE_URL,
+    description: BASE_DESCRIPTION,
+    publisher: {
       "@type": "Organization",
-      "name": SITE_NAME,
-      "logo": {
+      name: SITE_NAME,
+      logo: {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/og-image.jpg`
-      }
+        url: `${SITE_URL}/og-image.jpg`,
+      },
     },
-    "inLanguage": "de-CH"
+    inLanguage: "de-CH",
   };
 
   useEffect(() => {
@@ -98,41 +114,51 @@ export function WebsiteSchema() {
       document.head.appendChild(el);
     }
     el.textContent = JSON.stringify(schema);
-    return () => { el?.remove(); };
+    return () => {
+      el?.remove();
+    };
   }, []);
 
   return null;
 }
 
 // Schema.org MedicalWebPage for health-related pages
-export function MedicalPageSchema({ title, description, path }: { title: string; description: string; path: string }) {
+export function MedicalPageSchema({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}) {
   const siteUrl = getSiteUrl();
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    "name": title,
-    "description": description,
-    "url": `${siteUrl}${path}`,
-    "inLanguage": "de",
-    "about": {
+    name: title,
+    description: description,
+    url: `${siteUrl}${path}`,
+    inLanguage: "de",
+    about: {
       "@type": "MedicalCondition",
-      "name": "Persönlichkeitsstörung mit Borderline-Muster",
-      "alternateName": ["Borderline-Muster", "Borderline pattern"],
-      "code": {
+      name: "Persönlichkeitsstörung mit Borderline-Muster",
+      alternateName: ["Borderline-Muster", "Borderline pattern"],
+      code: {
         "@type": "MedicalCode",
-        "code": "6D11",
-        "codingSystem": "ICD-11"
-      }
+        code: "6D11",
+        codingSystem: "ICD-11",
+      },
     },
-    "audience": {
+    audience: {
       "@type": "PeopleAudience",
-      "audienceType": "Angehörige von Menschen mit Borderline-Persönlichkeitsstörung"
+      audienceType: "Angehörige von Menschen mit Borderline-Muster",
     },
-    "lastReviewed": MEDICAL_LAST_REVIEWED,
-    "medicalAudience": {
+    lastReviewed: MEDICAL_LAST_REVIEWED,
+    medicalAudience: {
       "@type": "MedicalAudience",
-      "audienceType": "Caregiver"
-    }
+      audienceType: "Caregiver",
+    },
   };
 
   useEffect(() => {
@@ -144,23 +170,29 @@ export function MedicalPageSchema({ title, description, path }: { title: string;
       document.head.appendChild(el);
     }
     el.textContent = JSON.stringify(schema);
-    return () => { el?.remove(); };
+    return () => {
+      el?.remove();
+    };
   }, [description, path, siteUrl, title]);
 
   return null;
 }
 
 // BreadcrumbList schema
-export function BreadcrumbSchema({ items }: { items: { name: string; url: string }[] }) {
+export function BreadcrumbSchema({
+  items,
+}: {
+  items: { name: string; url: string }[];
+}) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": items.map((item, i) => ({
+    itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
-      "position": i + 1,
-      "name": item.name,
-      "item": item.url
-    }))
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
   };
 
   useEffect(() => {
@@ -173,25 +205,31 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
       document.head.appendChild(el);
     }
     el.textContent = JSON.stringify(schema);
-    return () => { el?.remove(); };
+    return () => {
+      el?.remove();
+    };
   }, [items]);
 
   return null;
 }
 
 // FAQ schema for FAQ page
-export function FAQSchema({ questions }: { questions: { question: string; answer: string }[] }) {
+export function FAQSchema({
+  questions,
+}: {
+  questions: { question: string; answer: string }[];
+}) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": questions.map(q => ({
+    mainEntity: questions.map(q => ({
       "@type": "Question",
-      "name": q.question,
-      "acceptedAnswer": {
+      name: q.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": q.answer
-      }
-    }))
+        text: q.answer,
+      },
+    })),
   };
 
   useEffect(() => {
@@ -203,7 +241,9 @@ export function FAQSchema({ questions }: { questions: { question: string; answer
       document.head.appendChild(el);
     }
     el.textContent = JSON.stringify(schema);
-    return () => { el?.remove(); };
+    return () => {
+      el?.remove();
+    };
   }, [questions]);
 
   return null;

@@ -10,8 +10,6 @@ import {
   Shield,
   Sparkles,
   Stethoscope,
-  TrendingUp,
-  Users,
 } from "lucide-react";
 import type { NavigationItem } from "@/domain/content-types";
 
@@ -21,17 +19,19 @@ export const primaryNavigationItems: NavigationItem[] = [
   { href: "/kommunizieren", label: "Kommunizieren", icon: MessageCircle },
   { href: "/grenzen", label: "Grenzen", icon: Shield },
   { href: "/selbstfuersorge", label: "Selbstfürsorge", icon: Sparkles },
-  { href: "/genesung", label: "Genesung", icon: TrendingUp },
-  { href: "/beratung", label: "Beratung", icon: Users },
 ];
 
 export const resourceNavigationItems: NavigationItem[] = [
-  { href: "/soforthilfe", label: "Soforthilfe", icon: Phone },
   { href: "/materialien", label: "Materialien & Handouts", icon: Download },
-  { href: "/beratung", label: "Beratung & Netzwerke", icon: Users },
+  { href: "/beratung", label: "Beratung & Netzwerke", icon: Heart },
   { href: "/fachstelle", label: "Fachstelle & Kontakt", icon: Building2 },
   { href: "/faq", label: "Häufige Fragen (FAQ)", icon: HelpCircle },
   { href: "/glossar", label: "Glossar", icon: BookMarked },
   { href: "/buchempfehlungen", label: "Buchempfehlungen", icon: BookOpen },
-  { href: "/unterstuetzen/therapie#therapieangebote", label: "Therapieangebote Zürich", icon: Stethoscope },
+  {
+    href: "/unterstuetzen/therapie#therapieangebote",
+    label: "Therapieangebote Zürich",
+    icon: Stethoscope,
+  },
+  { href: "/soforthilfe", label: "Soforthilfe", icon: Phone },
 ];

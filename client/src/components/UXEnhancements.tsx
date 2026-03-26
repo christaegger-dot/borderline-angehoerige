@@ -1,11 +1,28 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ChevronUp, ChevronRight, ChevronLeft, Home, List, X, ArrowLeft } from "lucide-react";
+import {
+  ChevronUp,
+  ChevronRight,
+  ChevronLeft,
+  Home,
+  List,
+  X,
+  ArrowLeft,
+} from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Zurück-nach-oben-Button
 export function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
+  const [location] = useLocation();
+  const hideOnMobileRoutes = [
+    "/verstehen",
+    "/selbstfuersorge",
+    "/unterstuetzen/",
+  ];
+  const hideOnMobile = hideOnMobileRoutes.some(route =>
+    location.startsWith(route)
+  );
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -19,7 +36,7 @@ export function ScrollToTopButton() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -32,8 +49,8 @@ export function ScrollToTopButton() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           onClick={scrollToTop}
-          className="fixed left-4 sm:left-auto sm:right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))' }}
+          className={`fixed right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-sage-mid hover:bg-sage-dark text-white shadow-lg items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
+          style={{ bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))" }}
           aria-label="Nach oben scrollen"
         >
           <ChevronUp className="w-6 h-6" />
@@ -67,11 +84,13 @@ const pageNames: Record<string, string> = {
   "/faq": "Häufige Fragen",
   "/glossar": "Glossar",
   "/buchempfehlungen": "Buchempfehlungen",
-  "/feedback": "Feedback"
+  "/feedback": "Feedback",
 };
 
 // Kontextbezogene Elternseite bestimmen
-function getParentInfo(location: string): { href: string; label: string } | null {
+function getParentInfo(
+  location: string
+): { href: string; label: string } | null {
   // Unterstützen-Unterseiten → Elternseite ist Unterstützen
   if (location.startsWith("/unterstuetzen/")) {
     return { href: "/unterstuetzen/uebersicht", label: "Unterstützen" };
@@ -81,11 +100,12 @@ function getParentInfo(location: string): { href: string; label: string } | null
 
 export function Breadcrumbs() {
   const [location] = useLocation();
-  
+
   // Nicht auf der Startseite anzeigen
   if (location === "/") return null;
 
-  const pageName = pageNames[location] || location.split("/").pop()?.replace(/-/g, " ") || "";
+  const pageName =
+    pageNames[location] || location.split("/").pop()?.replace(/-/g, " ") || "";
   const parent = getParentInfo(location);
 
   // Zurück-Ziel bestimmen: Elternseite oder Startseite
@@ -108,7 +128,10 @@ export function Breadcrumbs() {
           {/* Desktop Breadcrumb-Pfad */}
           <ol className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
             <li>
-              <Link href="/" className="flex items-center gap-1 hover:text-foreground transition-colors">
+              <Link
+                href="/"
+                className="flex items-center gap-1 hover:text-foreground transition-colors"
+              >
                 <Home className="w-4 h-4" />
                 <span>Startseite</span>
               </Link>
@@ -116,7 +139,10 @@ export function Breadcrumbs() {
             {parent && (
               <li className="flex items-center gap-2">
                 <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
-                <Link href={parent.href} className="hover:text-foreground transition-colors">
+                <Link
+                  href={parent.href}
+                  className="hover:text-foreground transition-colors"
+                >
                   {parent.label}
                 </Link>
               </li>
@@ -143,6 +169,7 @@ export function TableOfContents() {
   const [headings, setHeadings] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
   const [isOpen, setIsOpen] = useState(false);
+  const [showFloatingButton, setShowFloatingButton] = useState(false);
   // Scroll-basierte aktive Markierung (kein IntersectionObserver nötig)
   const activeNavRef = useRef<HTMLButtonElement | null>(null);
 
@@ -152,30 +179,35 @@ export function TableOfContents() {
     const timer = setTimeout(() => {
       const elements = document.querySelectorAll("h2, h3");
       const items: TOCItem[] = [];
-      
+
       elements.forEach((el, index) => {
         // Prüfen ob das Heading innerhalb einer ContentSection liegt
-        const contentSectionWrapper = el.closest('[id]:not(h2):not(h3)');
-        const isInsideContentSection = contentSectionWrapper?.querySelector('[aria-expanded]') !== null;
-        
+        const contentSectionWrapper = el.closest("[id]:not(h2):not(h3)");
+        const isInsideContentSection =
+          contentSectionWrapper?.querySelector("[aria-expanded]") !== null;
+
         let id: string;
-        if (isInsideContentSection && contentSectionWrapper?.id && !contentSectionWrapper.id.startsWith('heading-')) {
+        if (
+          isInsideContentSection &&
+          contentSectionWrapper?.id &&
+          !contentSectionWrapper.id.startsWith("heading-")
+        ) {
           id = contentSectionWrapper.id;
         } else {
           id = el.id || `heading-${index}`;
           if (!el.id) el.id = id;
         }
-        
+
         // Duplikate vermeiden
         if (!items.some(item => item.id === id)) {
           items.push({
             id,
             text: el.textContent || "",
-            level: el.tagName === "H2" ? 2 : 3
+            level: el.tagName === "H2" ? 2 : 3,
           });
         }
       });
-      
+
       setHeadings(items);
       // Ersten Eintrag als aktiv setzen
       if (items.length > 0) {
@@ -199,10 +231,10 @@ export function TableOfContents() {
       headings.forEach(({ id }) => {
         const el = document.getElementById(id);
         if (!el) return;
-        
+
         const rect = el.getBoundingClientRect();
         const distance = rect.top - headerHeight;
-        
+
         // Wähle den letzten Abschnitt, der den Header-Bereich passiert hat (distance <= 100)
         // oder noch knapp darunter ist
         if (distance <= 100 && distance > bestDistance) {
@@ -217,7 +249,10 @@ export function TableOfContents() {
       }
 
       // Wenn wir ganz unten sind, den letzten Eintrag aktivieren
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 100
+      ) {
         bestId = headings[headings.length - 1]?.id || bestId;
       }
 
@@ -237,47 +272,57 @@ export function TableOfContents() {
   // Aktiven Eintrag in der Desktop-Sidebar in den sichtbaren Bereich scrollen
   useEffect(() => {
     if (activeNavRef.current) {
-      activeNavRef.current.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      activeNavRef.current.scrollIntoView({
+        block: "nearest",
+        behavior: "smooth",
+      });
     }
   }, [activeId]);
+
+  useEffect(() => {
+    const onScroll = () => setShowFloatingButton(window.scrollY > 280);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Body-Scroll-Lock für Mobile-Drawer
   useEffect(() => {
     if (isOpen) {
       const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
+      document.body.style.position = "fixed";
       document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
     } else {
       const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
       if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+        window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
       }
     }
     return () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
   const scrollToHeading = useCallback((id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const isContentSection = el.querySelector('[aria-expanded]') !== null;
+      const isContentSection = el.querySelector("[aria-expanded]") !== null;
 
       if (isContentSection) {
         window.dispatchEvent(
           new CustomEvent("open-section", { detail: { sectionId: id } })
         );
       } else {
-        const header = document.querySelector('header');
+        const header = document.querySelector("header");
         const headerHeight = header?.getBoundingClientRect().height || 80;
         const offset = headerHeight + 20;
         const top = el.getBoundingClientRect().top + window.scrollY - offset;
@@ -292,21 +337,25 @@ export function TableOfContents() {
   if (headings.length < 3) return null;
 
   // Aktiver Eintrag Styling
-  const activeClass = "bg-terracotta-lighter text-terracotta-darker font-semibold border-l-2 border-l-terracotta-mid";
-  const inactiveClass = "text-muted-foreground hover:text-foreground hover:bg-muted/60";
+  const activeClass =
+    "bg-terracotta-lighter text-terracotta-darker font-semibold border-l-2 border-l-terracotta-mid";
+  const inactiveClass =
+    "text-muted-foreground hover:text-foreground hover:bg-muted/60";
 
   return (
     <>
       {/* ─── Mobile: Floating TOC Button ─── */}
-      <motion.button
-        onClick={() => setIsOpen(true)}
-        className="min-[1400px]:hidden fixed left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
-        style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))' }}
-        aria-label="Inhaltsverzeichnis öffnen"
-      >
-        <List className="w-4 h-4" />
-        <span>Inhalt</span>
-      </motion.button>
+      {showFloatingButton && (
+        <motion.button
+          onClick={() => setIsOpen(true)}
+          className="min-[1400px]:hidden fixed right-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+          style={{ bottom: "calc(7.5rem + env(safe-area-inset-bottom, 0px))" }}
+          aria-label="Inhaltsverzeichnis öffnen"
+        >
+          <List className="w-4 h-4" />
+          <span>Inhalt</span>
+        </motion.button>
+      )}
 
       {/* ─── Mobile: Overlay ─── */}
       <AnimatePresence>
@@ -330,7 +379,7 @@ export function TableOfContents() {
             exit={{ y: "100%" }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="min-[1400px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
-            style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+            style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
           >
             {/* Drawer Handle */}
             <div className="flex justify-center pt-3 pb-1">
@@ -339,9 +388,15 @@ export function TableOfContents() {
 
             {/* Drawer Header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-border">
-              <span className="font-semibold text-foreground text-base" role="heading" aria-level={2}>Inhaltsverzeichnis</span>
+              <span
+                className="font-semibold text-foreground text-base"
+                role="heading"
+                aria-level={2}
+              >
+                Inhaltsverzeichnis
+              </span>
               <button
-                type="button" 
+                type="button"
                 onClick={() => setIsOpen(false)}
                 className="w-8 h-8 rounded-full hover:bg-muted flex items-center justify-center"
                 aria-label="Schliessen"
@@ -359,11 +414,9 @@ export function TableOfContents() {
                       type="button"
                       onClick={() => scrollToHeading(id)}
                       aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                      level === 3 ? "pl-7" : ""
-                    } ${
-                        activeId === id ? activeClass : inactiveClass
-                      }`}
+                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                        level === 3 ? "pl-7" : ""
+                      } ${activeId === id ? activeClass : inactiveClass}`}
                     >
                       {text}
                     </button>
@@ -379,7 +432,13 @@ export function TableOfContents() {
       <div className="hidden min-[1400px]:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
         <div className="bg-background/90 backdrop-blur-md rounded-xl border border-border/50 shadow-sm overflow-hidden flex flex-col max-h-[70vh]">
           <div className="px-4 pt-4 pb-2">
-            <span className="font-semibold text-foreground text-sm" role="heading" aria-level={2}>Auf dieser Seite</span>
+            <span
+              className="font-semibold text-foreground text-sm"
+              role="heading"
+              aria-level={2}
+            >
+              Auf dieser Seite
+            </span>
           </div>
           <nav className="overflow-y-auto overscroll-contain px-2 pb-3 flex-1">
             <ul className="space-y-0.5">
@@ -392,9 +451,7 @@ export function TableOfContents() {
                     aria-label={`Zum Abschnitt: ${text}`}
                     className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 ${
                       level === 3 ? "pl-5" : ""
-                    } ${
-                      activeId === id ? activeClass : inactiveClass
-                    }`}
+                    } ${activeId === id ? activeClass : inactiveClass}`}
                   >
                     {text}
                   </button>

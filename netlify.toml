@@ -3,18 +3,6 @@
   publish = "dist/public"
 
 [[redirects]]
-  from = "/*.pdf"
-  to = "/:splat.pdf"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/*.html"
-  to = "/:splat.html"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

@@ -6,20 +6,20 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Building2, ArrowRight, Calendar, Clock } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import { kontaktById, emailById, urlById } from "@/data/kontakte";
+import { kontaktByIdStrict, emailByIdStrict, urlByIdStrict } from "@/data/kontakte";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 
-const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
-const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
-const pukUrl = urlById("URL_PUK")!;
-const proMente = kontaktById("INFO_PROMENTE")!;
-const standByYouTel = kontaktById("INFO_STANDBYYOU")!;
-const vaskZhTel = kontaktById("INFO_VASK_ZH")!;
-const vaskZhEmail = emailById("EMAIL_VASK_ZH")!;
-const vaskZhUrl = urlById("URL_VASK_ZH")!;
-const proMenteUrl = urlById("URL_PROMENTE")!;
-const standByYouUrl = urlById("URL_STANDBYYOU")!;
-const selbsthilfeChUrl = urlById("URL_SELBSTHILFE_CH")!;
+const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
+const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
+const pukUrl = urlByIdStrict("URL_PUK");
+const proMente = kontaktByIdStrict("INFO_PROMENTE");
+const standByYouTel = kontaktByIdStrict("INFO_STANDBYYOU");
+const vaskZhTel = kontaktByIdStrict("INFO_VASK_ZH");
+const vaskZhEmail = emailByIdStrict("EMAIL_VASK_ZH");
+const vaskZhUrl = urlByIdStrict("URL_VASK_ZH");
+const proMenteUrl = urlByIdStrict("URL_PROMENTE");
+const standByYouUrl = urlByIdStrict("URL_STANDBYYOU");
+const selbsthilfeChUrl = urlByIdStrict("URL_SELBSTHILFE_CH");
 
 export default function Selbsthilfegruppen() {
   const [currentPath] = useLocation();

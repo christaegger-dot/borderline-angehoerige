@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -261,6 +261,13 @@ export default function Selbsttest() {
   const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (transitionTimer.current) clearTimeout(transitionTimer.current);
+    };
+  }, []);
 
   const handleAnswer = (option: Question["options"][0]) => {
     if (isTransitioning) return;
@@ -278,7 +285,7 @@ export default function Selbsttest() {
     setAnswers({ ...answers, [questions[currentQuestion].id]: option.value });
 
     // Move to next question or show result
-    setTimeout(() => {
+    transitionTimer.current = setTimeout(() => {
       if (currentQuestion < questions.length - 1) {
         setCurrentQuestion(currentQuestion + 1);
         setSelectedOption(null);

@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { AlertTriangle, ArrowRight, Phone, Shield, Clock, Download, MessageCircle, XCircle } from "lucide-react";
 import { Link } from "wouter";
-import { kontaktById } from "@/data/kontakte";
+import { kontaktByIdStrict } from "@/data/kontakte";
 
-const rot144 = kontaktById("ROT_144")!;
-const gruen143 = kontaktById("GRUEN_143")!;
+const rot144 = kontaktByIdStrict("ROT_144");
+const gruen143 = kontaktByIdStrict("GRUEN_143");
 
 export default function UnterstuetzenKrise() {
   return (

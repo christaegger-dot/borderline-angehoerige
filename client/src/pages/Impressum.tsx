@@ -4,13 +4,13 @@ import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { FileText, BookOpen, Phone, Mail, Shield, Target, Scale, Copyright } from "lucide-react";
-import { kontaktById, emailById } from "@/data/kontakte";
+import { kontaktByIdStrict, emailByIdStrict } from "@/data/kontakte";
 
-const fachstelle = kontaktById("INFO_FACHSTELLE")!;
-const emailAngehoerigen = emailById("EMAIL_ANGEHOERIGEN")!;
-const rot144 = kontaktById("ROT_144")!;
-const rot117 = kontaktById("ROT_117")!;
-const gruen143 = kontaktById("GRUEN_143")!;
+const fachstelle = kontaktByIdStrict("INFO_FACHSTELLE");
+const emailAngehoerigen = emailByIdStrict("EMAIL_ANGEHOERIGEN");
+const rot144 = kontaktByIdStrict("ROT_144");
+const rot117 = kontaktByIdStrict("ROT_117");
+const gruen143 = kontaktByIdStrict("GRUEN_143");
 
 export default function Impressum() {
   return (

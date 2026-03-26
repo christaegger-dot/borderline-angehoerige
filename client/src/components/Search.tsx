@@ -138,9 +138,10 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                   onChange={e => setQuery(e.target.value)}
                   onKeyDown={handleInputKeyDown}
                   placeholder="Suchen Sie nach Themen, z.B. 'Validierung', 'Grenzen setzen', 'Notfall'..."
-                  className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none text-base"
+                  className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:ring-0 text-base"
                   role="combobox"
                   aria-label="Website durchsuchen"
+                  aria-autocomplete="list"
                   aria-expanded={results.length > 0}
                   aria-controls="search-results"
                   aria-activedescendant={

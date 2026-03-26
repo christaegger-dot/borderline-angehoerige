@@ -70,7 +70,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-sage-light text-sage-darker text-sm font-medium mb-6">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-sand-muted text-foreground/70 text-sm font-medium mb-6 border border-border/50">
                 Für Angehörige von Menschen mit Borderline
               </span>
 

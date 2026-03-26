@@ -323,7 +323,7 @@ export function TableOfContents() {
       {floatingMode === "content" && showFloatingButton && (
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="min-[1400px]:hidden fixed right-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+          className="min-[1800px]:hidden fixed right-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
           style={{ bottom: "calc(7.5rem + env(safe-area-inset-bottom, 0px))" }}
           aria-label="Inhaltsverzeichnis öffnen"
         >
@@ -339,7 +339,7 @@ export function TableOfContents() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="min-[1400px]:hidden fixed inset-0 bg-black/30 z-40"
+            className="min-[1800px]:hidden fixed inset-0 bg-black/30 z-40"
             onClick={() => setIsOpen(false)}
           />
         )}
@@ -353,7 +353,7 @@ export function TableOfContents() {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="min-[1400px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
+            className="min-[1800px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
             style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
           >
             {/* Drawer Handle */}
@@ -404,7 +404,7 @@ export function TableOfContents() {
       </AnimatePresence>
 
       {/* ─── Desktop: Sticky Sidebar ─── */}
-      <div className="hidden min-[1400px]:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
+      <div className="hidden min-[1800px]:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
         <div className="bg-background/90 backdrop-blur-md rounded-xl border border-border/50 shadow-sm overflow-hidden flex flex-col max-h-[70vh]">
           <div className="px-4 pt-4 pb-2">
             <span

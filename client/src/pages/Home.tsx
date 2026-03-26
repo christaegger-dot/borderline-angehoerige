@@ -129,24 +129,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-4 md:py-5 bg-sage-wash/50 border-b border-sage-mid/10">
+      <section className="py-4 md:py-5 bg-navy text-white border-b border-navy-light/20">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
             <div className="flex items-center gap-3 flex-shrink-0">
-              <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center">
-                <Shield className="w-5 h-5 text-sage-mid" />
+              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white/80" />
               </div>
-              <p className="font-semibold text-foreground text-sm sm:text-base">
+              <p className="font-semibold text-white text-sm sm:text-base">
                 Ein Angebot der Fachstelle Angehörigenarbeit (PUK Zürich)
               </p>
             </div>
-            <p className="text-muted-foreground text-sm flex-1">
+            <p className="text-white/70 text-sm flex-1">
               Fachlich fundierte Orientierung, Beratung und Materialien für
               Angehörige.
             </p>
             <Link
               href="/fachstelle"
-              className="text-sage-darker hover:text-slate-dark text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0"
+              className="text-white/80 hover:text-white text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0"
             >
               Angebot & Kontakt
               <ArrowRight className="w-4 h-4" />

@@ -60,7 +60,7 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-sand-muted border-t border-border/50 mt-auto">
+      <footer className="bg-navy text-white border-t border-navy-light/20 mt-auto">
         <div className="container py-8 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand + Absender */}
@@ -75,11 +75,11 @@ export default function Layout({ children }: LayoutProps) {
                   loading="lazy"
                   decoding="async"
                 />
-                <span className="font-medium text-base text-foreground">
+                <span className="font-medium text-base text-white">
                   Borderline · Hilfe für Angehörige
                 </span>
               </Link>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-white/70 text-sm leading-relaxed">
                 Psychoedukatives Informationsangebot für Angehörige von Menschen
                 mit Borderline-Muster.
               </p>
@@ -87,7 +87,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Navigation */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4 text-base">
+              <h3 className="font-semibold text-white mb-4 text-base">
                 Themen
               </h3>
               <ul className="space-y-1">
@@ -95,7 +95,7 @@ export default function Layout({ children }: LayoutProps) {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center py-1.5"
+                      className="text-white/70 hover:text-white text-sm transition-colors inline-flex items-center py-1.5"
                     >
                       {item.label}
                     </Link>
@@ -106,7 +106,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Resources */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4 text-base">
+              <h3 className="font-semibold text-white mb-4 text-base">
                 Ressourcen
               </h3>
               <ul className="space-y-1">
@@ -114,7 +114,7 @@ export default function Layout({ children }: LayoutProps) {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center py-1.5"
+                      className="text-white/70 hover:text-white text-sm transition-colors inline-flex items-center py-1.5"
                     >
                       {item.label}
                     </Link>
@@ -125,10 +125,10 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Hinweis */}
             <div>
-              <h3 className="font-semibold text-foreground mb-4 text-base">
+              <h3 className="font-semibold text-white mb-4 text-base">
                 Hinweis
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-white/70 text-sm leading-relaxed">
                 Diese Website ersetzt keine professionelle Beratung oder
                 Therapie. Bei akuten Krisen wenden Sie sich bitte an die
                 Notfallnummern.
@@ -137,50 +137,50 @@ export default function Layout({ children }: LayoutProps) {
           </div>
 
           {/* Absender-Einordnung */}
-          <div className="border-t border-border/50 mt-8 pt-8">
-            <p className="text-sm text-foreground leading-relaxed">
+          <div className="border-t border-white/10 mt-8 pt-8">
+            <p className="text-sm text-white leading-relaxed">
               Herausgegeben von der Fachstelle Angehörigenarbeit der
               Psychiatrischen Universitätsklinik Zürich (PUK).
             </p>
-            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+            <p className="text-xs text-white/70 mt-1 leading-relaxed">
               Redaktionell eigenständiges Informationsangebot der Fachstelle
               Angehörigenarbeit innerhalb der PUK Zürich.
             </p>
           </div>
 
-          <div className="border-t border-border/50 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
+          <div className="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-white/70 text-sm">
               © 2026 Borderline · Hilfe für Angehörige. Alle Rechte
               vorbehalten.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <Link
                 href="/fachstelle"
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="text-white/70 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Fachstelle
               </Link>
               <Link
                 href="/ueber-uns"
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="text-white/70 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Über uns
               </Link>
               <Link
                 href="/impressum"
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="text-white/70 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Impressum
               </Link>
               <Link
                 href="/datenschutz"
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="text-white/70 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Datenschutz
               </Link>
               <Link
                 href="/feedback"
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="text-white/70 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Feedback
               </Link>

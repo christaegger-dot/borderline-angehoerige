@@ -62,7 +62,7 @@ export default function Erfahrungsberichte({
       viewport={{ once: true }}
       className="text-center mb-10"
     >
-      <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+      <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-4">
         Typische Erfahrungen von Angehörigen
       </h2>
       <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -76,7 +76,7 @@ export default function Erfahrungsberichte({
   const gridClasses = variant === "full" ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2";
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-8 md:py-12">
       <div className="container">
         {heading}
         <div className={`grid gap-6 ${gridClasses}`}>

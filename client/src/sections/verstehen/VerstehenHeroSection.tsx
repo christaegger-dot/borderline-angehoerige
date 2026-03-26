@@ -3,7 +3,7 @@ import { BookOpen } from "lucide-react";
 
 export default function VerstehenHeroSection() {
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
+    <section className="py-10 md:py-14 bg-gradient-to-b from-sage-light/30 to-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}
@@ -20,7 +20,7 @@ export default function VerstehenHeroSection() {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
             Borderline verstehen
           </h1>
 

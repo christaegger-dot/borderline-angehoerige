@@ -39,7 +39,7 @@ export default function Grenzen() {
         path="/grenzen"
       />
 
-      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/30 to-background wave-divider">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-terracotta-lighter/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ export default function Grenzen() {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Grenzen setzen
             </h1>
 
@@ -71,7 +71,7 @@ export default function Grenzen() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 wave-divider-top">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <ContentSection
@@ -352,12 +352,12 @@ export default function Grenzen() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
+              className="mb-12"
               style={
                 { "--wave-color": "var(--background)" } as React.CSSProperties
               }
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-terracotta-mid" />
                 Materialien zum Thema Grenzen
               </h2>
@@ -465,7 +465,7 @@ export default function Grenzen() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
+              className="mb-12"
               style={
                 { "--wave-color": "var(--background)" } as React.CSSProperties
               }

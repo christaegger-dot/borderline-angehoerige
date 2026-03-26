@@ -16,7 +16,7 @@ export default function UnterstuetzenKrise() {
     <Layout>
       <SEO title="Krisenbegleitung" description="Wie Sie in akuten Krisen richtig reagieren und Hilfe leisten können." path="/unterstuetzen/krise" />
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-terracotta-lighter/30 to-background wave-divider">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-terracotta-lighter/30 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ export default function UnterstuetzenKrise() {
               <span className="text-sm font-medium text-terracotta-mid">Lesezeit: 6 Minuten</span>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               In der Krise unterstützen
             </h1>
             
@@ -54,7 +54,7 @@ export default function UnterstuetzenKrise() {
       </section>
 
       {/* Emergency Banner */}
-      <section className="py-4 bg-alert wave-divider-top">
+      <section className="py-4 bg-alert">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-white text-center sm:text-left">
@@ -74,7 +74,7 @@ export default function UnterstuetzenKrise() {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
 
@@ -313,10 +313,10 @@ export default function UnterstuetzenKrise() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
+              className="mb-12"
               style={{ '--wave-color': 'var(--background)' } as React.CSSProperties}
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-terracotta-mid" />
                 Materialien zum Thema
               </h2>

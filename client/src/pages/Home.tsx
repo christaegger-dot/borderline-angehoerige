@@ -67,7 +67,7 @@ export default function Home() {
       />
 
       <section className="relative overflow-hidden bg-gradient-to-b from-terracotta-lighter/30 via-sand/20 to-background">
-        <div className="container py-16 md:py-24 lg:py-32">
+        <div className="container py-12 md:py-16 lg:py-20">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0 }}
@@ -78,7 +78,7 @@ export default function Home() {
                 Für Angehörige von Menschen mit Borderline
               </span>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-foreground leading-tight mb-4">
                 Orientierung in belasteten Beziehungen
               </h1>
 
@@ -129,24 +129,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-4 md:py-5 bg-sage-wash/50 border-b border-sage-mid/10">
+      <section className="py-4 md:py-5 bg-navy text-white border-b border-navy-light/20">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
             <div className="flex items-center gap-3 flex-shrink-0">
-              <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center">
-                <Shield className="w-5 h-5 text-sage-mid" />
+              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white/80" />
               </div>
-              <p className="font-semibold text-foreground text-sm sm:text-base">
+              <p className="font-semibold text-white text-sm sm:text-base">
                 Ein Angebot der Fachstelle Angehörigenarbeit (PUK Zürich)
               </p>
             </div>
-            <p className="text-muted-foreground text-sm flex-1">
+            <p className="text-white/70 text-sm flex-1">
               Fachlich fundierte Orientierung, Beratung und Materialien für
               Angehörige.
             </p>
             <Link
               href="/fachstelle"
-              className="text-sage-darker hover:text-slate-dark text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0"
+              className="text-white/80 hover:text-white text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0"
             >
               Angebot & Kontakt
               <ArrowRight className="w-4 h-4" />
@@ -165,7 +165,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-8"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was ist gerade Ihre Lage?
               </h2>
               <p className="text-muted-foreground max-w-2xl">
@@ -227,7 +227,7 @@ export default function Home() {
       </section>
 
       <section
-        className="py-12 md:py-16 bg-cream wave-divider-top"
+        className="py-8 md:py-12 bg-cream"
         style={{ "--wave-color": "var(--color-cream)" } as React.CSSProperties}
       >
         <div className="container">
@@ -239,7 +239,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-8"
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was diese Website besonders abdeckt
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
@@ -266,14 +266,14 @@ export default function Home() {
       </section>
 
       <section
-        className="py-10 md:py-12 wave-divider-top"
+        className="py-8 md:py-10"
         style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
       >
         <div className="container">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4">
             <Card className="border-border/50">
               <CardContent className="p-5">
-                <h2 className="text-xl font-semibold text-foreground mb-2">
+                <h2 className="text-xl font-normal text-foreground mb-2">
                   Kernwege
                 </h2>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -307,7 +307,7 @@ export default function Home() {
 
             <Card className="border-border/50 bg-sand-muted/40">
               <CardContent className="p-5">
-                <h2 className="text-xl font-semibold text-foreground mb-2">
+                <h2 className="text-xl font-normal text-foreground mb-2">
                   Materialien und Beratung
                 </h2>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -331,11 +331,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-alert">
+      <section className="py-8 md:py-12 bg-alert">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">
+              <h2 className="text-2xl md:text-3xl font-normal text-white mb-2">
                 In einer akuten Krise?
               </h2>
               <p className="text-white">

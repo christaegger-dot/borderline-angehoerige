@@ -11,7 +11,7 @@ export default function UeberUns() {
     <Layout>
       <SEO title="Über uns" description="Über das Projekt Borderline · Hilfe für Angehörige." path="/ueber-uns" />
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background wave-divider">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-light/40 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -25,7 +25,7 @@ export default function UeberUns() {
               </div>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
               Über diese Website
             </h1>
             
@@ -37,7 +37,7 @@ export default function UeberUns() {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16 wave-divider-top">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
 
@@ -220,7 +220,7 @@ export default function UeberUns() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
                 Feedback & Kontakt
               </h2>
               

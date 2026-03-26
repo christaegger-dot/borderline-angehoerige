@@ -81,7 +81,7 @@ export default function Verstehen() {
 
       <VerstehenHeroSection />
 
-      <section className="py-12 md:py-16 wave-divider-top">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -520,13 +520,13 @@ export default function Verstehen() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
+              className="mb-12"
               id="materialien"
               style={
                 { "--wave-color": "var(--background)" } as React.CSSProperties
               }
             >
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-sage-dark" />
                 Materialien zum Vertiefen
               </h2>
@@ -622,7 +622,7 @@ export default function Verstehen() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
+              className="mb-12"
               style={
                 { "--wave-color": "var(--background)" } as React.CSSProperties
               }

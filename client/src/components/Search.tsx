@@ -92,10 +92,18 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     if (results.length === 0) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setActiveIndex(prev => (prev < results.length - 1 ? prev + 1 : 0));
+      setActiveIndex(prev => {
+        const next = prev < results.length - 1 ? prev + 1 : 0;
+        resultsRef.current?.querySelectorAll("a")[next]?.scrollIntoView({ block: "nearest" });
+        return next;
+      });
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setActiveIndex(prev => (prev > 0 ? prev - 1 : results.length - 1));
+      setActiveIndex(prev => {
+        const next = prev > 0 ? prev - 1 : results.length - 1;
+        resultsRef.current?.querySelectorAll("a")[next]?.scrollIntoView({ block: "nearest" });
+        return next;
+      });
     } else if (e.key === "Enter" && activeIndex >= 0) {
       e.preventDefault();
       const link = resultsRef.current?.querySelectorAll("a")[activeIndex] as
@@ -163,7 +171,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
               </div>
 
               {/* Results */}
-              <div className="max-h-[60vh] overflow-y-auto">
+              <div className="max-h-[60vh] overflow-y-auto" aria-live="polite">
                 {query.length < 2 ? (
                   <div className="px-4 py-8 text-center">
                     <p className="text-muted-foreground text-sm">

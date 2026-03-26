@@ -270,8 +270,8 @@ export const INFO: Kontakt[] = [
   {
     id: "INFO_SELBSTHILFE_CH",
     kategorie: "info",
-    nummer: "0800 840 400",
-    tel: "0800840400",
+    nummer: "0848 800 858",
+    tel: "+41848800858",
     label: "Selbsthilfe Schweiz",
     hinweis: "Vermittlung von Selbsthilfegruppen",
     sourceRef: "Selbsthilfegruppen.tsx:75",

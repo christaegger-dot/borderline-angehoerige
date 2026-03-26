@@ -189,8 +189,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </footer>
 
-      {/* Fixed Emergency Button (Mobile) – Pill mit Label */}
-      {/* Position: bottom-20 damit der ScrollToTop-Button (bottom-4) nicht überlappt */}
+      {/* Mobile Soforthilfe-FAB: zentral über floatingMode priorisiert (crisis) */}
       {/* Auf /soforthilfe selbst wird der Button ausgeblendet */}
       {floatingMode === "crisis" && location !== "/soforthilfe" && (
         <Link

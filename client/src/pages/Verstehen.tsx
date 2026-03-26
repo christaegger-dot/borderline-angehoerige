@@ -522,21 +522,16 @@ export default function Verstehen() {
               viewport={{ once: true }}
               className="mb-12"
               id="materialien"
-              style={
-                { "--wave-color": "var(--background)" } as React.CSSProperties
-              }
             >
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-sage-dark" />
                 Materialien zum Vertiefen
               </h2>
-
               <p className="text-muted-foreground mb-6">
                 Diese Materialien ergänzen die Seite, ersetzen sie aber nicht.
                 Beginnen Sie mit den Grundlagen, wenn Sie gerade Orientierung
                 brauchen.
               </p>
-
               <div className="flex flex-wrap gap-2 mb-6">
                 {verstehenCategories.map(cat => (
                   <Button
@@ -623,9 +618,6 @@ export default function Verstehen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12"
-              style={
-                { "--wave-color": "var(--background)" } as React.CSSProperties
-              }
             >
               <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6 md:p-8">
@@ -651,7 +643,6 @@ export default function Verstehen() {
                 </CardContent>
               </Card>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -226,7 +226,6 @@ export default function Home() {
 
       <section
         className="py-8 md:py-12 bg-cream"
-        style={{ "--wave-color": "var(--color-cream)" } as React.CSSProperties}
       >
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -265,7 +264,6 @@ export default function Home() {
 
       <section
         className="py-8 md:py-10"
-        style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
       >
         <div className="container">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4">

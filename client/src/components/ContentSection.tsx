@@ -119,7 +119,7 @@ export default function ContentSection({
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-6 px-1">{children}</div>
+            <div className="pt-5 px-1 text-[14.5px] leading-relaxed">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>

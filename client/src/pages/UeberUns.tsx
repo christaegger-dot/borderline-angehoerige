@@ -25,7 +25,7 @@ export default function UeberUns() {
               </div>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
               Über diese Website
             </h1>
             

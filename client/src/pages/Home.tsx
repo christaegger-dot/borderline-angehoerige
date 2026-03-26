@@ -145,7 +145,7 @@ export default function Home() {
             </p>
             <Link
               href="/fachstelle"
-              className="text-white/80 hover:text-white text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0"
+              className="text-sage-light hover:text-white text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0"
             >
               Angebot & Kontakt
               <ArrowRight className="w-4 h-4" />

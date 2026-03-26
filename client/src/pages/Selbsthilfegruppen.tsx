@@ -342,7 +342,7 @@ export default function Selbsthilfegruppen() {
             {/* ═══ Selbsthilfegruppen finden ═══ */}
             <ContentSection
               title="Selbsthilfegruppen finden"
-              icon={<MapPin className="w-7 h-7 text-terracotta-mid" />}
+              icon={<MapPin className="w-7 h-7 text-sage-mid" />}
               id="selbsthilfegruppen"
               preview="Wenn Sie mit anderen Angehörigen in Austausch kommen möchten, ist Selbsthilfe Schweiz die wichtigste Vermittlungsstelle."
             >
@@ -394,7 +394,7 @@ export default function Selbsthilfegruppen() {
                     </Link>
                     <Link href="/selbstfuersorge">
                       <span className="flex items-center gap-3 p-3 rounded-lg bg-background/60 hover:bg-background transition-colors cursor-pointer">
-                        <Heart className="w-5 h-5 text-terracotta-mid flex-shrink-0" />
+                        <Heart className="w-5 h-5 text-sage-mid flex-shrink-0" />
                         <span className="text-sm text-foreground">Eigene Überlastung und Selbstfürsorge in den Blick nehmen</span>
                         <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto flex-shrink-0" />
                       </span>

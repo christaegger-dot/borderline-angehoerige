@@ -44,7 +44,7 @@ export default function UeberUns() {
             {/* Motivation – immer offen */}
             <ContentSection
               title="Warum diese Website?"
-              icon={<Target className="w-7 h-7 text-terracotta" />}
+              icon={<Target className="w-7 h-7 text-sage-dark" />}
               id="motivation"
               defaultOpen={true}
               preview="Angehörige stehen oft vor einer doppelten Herausforderung: helfen wollen und sich hilflos fühlen."
@@ -160,7 +160,7 @@ export default function UeberUns() {
               
               <p className="text-sm text-muted-foreground mt-6">
                 Eine vollständige Liste unserer Buchempfehlungen finden Sie auf der{" "}
-                <Link href="/buchempfehlungen" className="text-terracotta-mid hover:underline">
+                <Link href="/buchempfehlungen" className="text-sage-mid hover:underline">
                   Buchempfehlungen-Seite
                 </Link>.
               </p>
@@ -173,7 +173,7 @@ export default function UeberUns() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="border-terracotta-mid/30 bg-cream">
+              <Card className="border-sage-mid/30 bg-cream">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -181,10 +181,10 @@ export default function UeberUns() {
                     <Link href="/soforthilfe" className="text-alert hover:underline font-medium">
                       Notfallnummern
                     </Link>. Für eine individuelle Beratung empfehlen wir den Kontakt zu{" "}
-                    <Link href="/beratung" className="text-terracotta-mid hover:underline font-medium">
+                    <Link href="/beratung" className="text-sage-mid hover:underline font-medium">
                       Beratungsstellen
                     </Link>{" "}oder{" "}
-                    <Link href="/unterstuetzen/therapie#therapieangebote" className="text-terracotta-mid hover:underline font-medium">
+                    <Link href="/unterstuetzen/therapie#therapieangebote" className="text-sage-mid hover:underline font-medium">
                       spezialisierten Therapeuten
                     </Link>.
                   </p>

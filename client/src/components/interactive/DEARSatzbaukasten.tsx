@@ -32,8 +32,8 @@ const fields: DEARField[] = [
     letter: "E",
     label: "Express (Ausdrücken)",
     placeholder: "…fühle ich mich unter Druck gesetzt.",
-    color: "var(--color-terracotta-mid)",
-    bgColor: "var(--color-terracotta-wash)",
+    color: "var(--color-sage-mid)",
+    bgColor: "var(--color-sage-wash)",
     hint: "Drücken Sie Ihre Gefühle mit Ich-Botschaften aus.",
   },
   {

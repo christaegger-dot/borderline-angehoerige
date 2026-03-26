@@ -211,7 +211,7 @@ export default function Selbstfuersorge() {
               {/* ═══ 1. Warum Selbstfürsorge wichtig ist ═══ */}
               <ContentSection
                 title="Warum Selbstfürsorge so wichtig ist"
-                icon={<Heart className="w-6 h-6 text-terracotta-mid" />}
+                icon={<Heart className="w-6 h-6 text-sage-mid" />}
                 id="selbstfuersorge-warum-wichtig"
                 defaultOpen={true}
                 preview="Angehörige tragen eine besondere Last. Selbstfürsorge ist keine Selbstsucht, sondern Selbsterhaltung."
@@ -229,7 +229,7 @@ export default function Selbstfuersorge() {
                       "Körperliche Beschwerden"
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-2 text-muted-foreground">
-                        <div className="w-2 h-2 rounded-full bg-terracotta-mid" />
+                        <div className="w-2 h-2 rounded-full bg-sage-mid" />
                         {item}
                       </div>
                     ))}
@@ -244,7 +244,7 @@ export default function Selbstfuersorge() {
               {/* ═══ 2. Warnsignale für Überlastung ═══ */}
               <ContentSection
                 title="Warnsignale für Überlastung"
-                icon={<AlertTriangle className="w-6 h-6 text-terracotta-mid" />}
+                icon={<AlertTriangle className="w-6 h-6 text-sage-mid" />}
                 id="warnsignale"
                 preview="Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr Selbstfürsorge brauchen."
               >
@@ -272,10 +272,10 @@ export default function Selbstfuersorge() {
                     </CardContent>
                   </Card>
                   
-                  <Card className="border-t-4 border-t-terracotta-mid bg-terracotta-wash">
+                  <Card className="border-t-4 border-t-sage-mid bg-sage-wash">
                     <CardContent className="p-5">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-terracotta-mid flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-full bg-sage-mid flex items-center justify-center">
                           <Heart className="w-5 h-5 text-white" />
                         </div>
                         <h3 className="font-semibold text-foreground">Körperlich</h3>
@@ -283,7 +283,7 @@ export default function Selbstfuersorge() {
                       <ul className="space-y-2">
                         {["Erschöpfung", "Schlafprobleme", "Appetitveränderung", "Kopfschmerzen", "Infektanfälligkeit"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2 text-sm">
-                            <AlertTriangle className="w-4 h-4 text-terracotta-mid flex-shrink-0 mt-0.5" />
+                            <AlertTriangle className="w-4 h-4 text-sage-mid flex-shrink-0 mt-0.5" />
                             <span className="text-foreground">{item}</span>
                           </li>
                         ))}
@@ -311,7 +311,7 @@ export default function Selbstfuersorge() {
                   </Card>
                 </div>
                 
-                <Card className="mt-6 bg-terracotta-mid/10 border-terracotta-mid">
+                <Card className="mt-6 bg-sage-mid/10 border-sage-mid">
                   <CardContent className="p-5">
                     <p className="text-foreground font-medium">
                       Wenn Sie mehrere dieser Warnsignale bei sich bemerken, ist es Zeit zu handeln. Sprechen Sie mit Ihrem Hausarzt oder suchen Sie professionelle Unterstützung.
@@ -358,7 +358,7 @@ export default function Selbstfuersorge() {
                         { letter: "P", text: "Praktizieren – Einen Schritt tun" }
                       ].map((item, i) => (
                         <div key={i} className="flex items-center gap-3">
-                          <span className="w-8 h-8 rounded-lg bg-terracotta/20 flex items-center justify-center font-bold text-terracotta-mid">
+                          <span className="w-8 h-8 rounded-lg bg-sage-dark/20 flex items-center justify-center font-bold text-sage-mid">
                             {item.letter}
                           </span>
                           <span className="text-sm text-muted-foreground">{item.text}</span>
@@ -372,7 +372,7 @@ export default function Selbstfuersorge() {
               {/* ═══ 4. Langfristige Strategien ═══ */}
               <ContentSection
                 title="Langfristige Selbstfürsorge-Strategien"
-                icon={<Heart className="w-6 h-6 text-terracotta" />}
+                icon={<Heart className="w-6 h-6 text-sage-dark" />}
                 id="langfristige-strategien"
                 preview="Tägliche Mini-Auszeiten, Bewegung, soziale Kontakte und professionelle Unterstützung."
               >
@@ -416,7 +416,7 @@ export default function Selbstfuersorge() {
                   <UebungAkkordeon 
                     title="Bewegung und Körper" 
                     icon={Heart}
-                    color="bg-terracotta"
+                    color="bg-sage-dark"
                   >
                     <div className="space-y-4 pt-4">
                       <p className="text-muted-foreground text-sm">
@@ -425,12 +425,12 @@ export default function Selbstfuersorge() {
                       <div className="grid sm:grid-cols-2 gap-2">
                         {["Spaziergang in der Natur", "Yoga oder Stretching", "Schwimmen", "Tanzen (auch alleine zuhause)", "Gartenarbeit", "Radfahren"].map((item, i) => (
                           <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <CheckCircle2 className="w-4 h-4 text-terracotta" />
+                            <CheckCircle2 className="w-4 h-4 text-sage-dark" />
                             {item}
                           </div>
                         ))}
                       </div>
-                      <Card className="bg-terracotta-wash/50 border-transparent">
+                      <Card className="bg-sage-wash/50 border-transparent">
                         <CardContent className="p-4">
                           <p className="text-sm text-foreground">
                             <strong>Evidenz:</strong> Studien zeigen, dass regelmässige Bewegung bei der Prävention und Behandlung von Depressionen ähnlich wirksam sein kann wie Antidepressiva.
@@ -551,7 +551,7 @@ export default function Selbstfuersorge() {
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
+                  <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">❌ Was radikale Akzeptanz NICHT ist:</span>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• Aufgeben</li>
@@ -591,11 +591,11 @@ export default function Selbstfuersorge() {
               {/* ═══ 7. Erlaubnis geben ═══ */}
               <ContentSection
                 title="Geben Sie sich die Erlaubnis"
-                icon={<CheckCircle2 className="w-6 h-6 text-terracotta" />}
+                icon={<CheckCircle2 className="w-6 h-6 text-sage-dark" />}
                 id="erlaubnis"
                 preview="Als Angehöriger dürfen Sie auch mal wütend sein, Nein sagen und Ihre eigenen Bedürfnisse ernst nehmen."
               >
-                <Card className="bg-terracotta-light/20 border-terracotta">
+                <Card className="bg-sage-light/20 border-sage">
                   <CardContent className="p-6">
                     <p className="text-muted-foreground leading-relaxed mb-4">
                       Als Angehöriger dürfen Sie:
@@ -613,7 +613,7 @@ export default function Selbstfuersorge() {
                         "Manchmal nicht wissen, was richtig ist"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-terracotta mt-0.5 flex-shrink-0" />
+                          <CheckCircle2 className="w-5 h-5 text-sage-dark mt-0.5 flex-shrink-0" />
                           <span className="text-foreground">{item}</span>
                         </li>
                       ))}
@@ -633,11 +633,11 @@ export default function Selbstfuersorge() {
                 preview="Spezifische Hinweise für Partner/innen, Elternteile und erwachsene Kinder."
               >
                 <div className="space-y-4">
-                  <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
+                  <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-terracotta-lighter flex items-center justify-center flex-shrink-0">
-                          <Heart className="w-5 h-5 text-terracotta-mid" />
+                        <div className="w-10 h-10 rounded-lg bg-sage-lighter flex items-center justify-center flex-shrink-0">
+                          <Heart className="w-5 h-5 text-sage-mid" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-2">Als Partner/in</h3>

@@ -86,9 +86,9 @@ const categories = [
     label: "Empathy",
     subtitle: "Empathie",
     icon: MessageSquare,
-    bgClass: "bg-terracotta-wash",
-    borderClass: "border-terracotta-mid/40",
-    textClass: "text-terracotta-dark",
+    bgClass: "bg-sage-wash",
+    borderClass: "border-sage-mid/40",
+    textClass: "text-sage-dark",
     intro: "Empathy zeigt: Ich versuche nachzuvollziehen, was innerlich gerade passiert.",
   },
   {

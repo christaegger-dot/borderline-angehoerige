@@ -45,11 +45,11 @@ export default function MythosFlipCards() {
         {myths.map((card, index) => (
           <Card key={index} className="border-border/50">
             <CardContent className="p-5">
-              <div className="rounded-lg border border-terracotta-mid/20 bg-terracotta-wash/30 p-4 mb-3">
+              <div className="rounded-lg border border-sand-border/40 bg-sand/50 p-4 mb-3">
                 <div className="flex items-start gap-3">
-                  <XCircle className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
+                  <XCircle className="w-5 h-5 text-sand-warm flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-xs font-medium text-terracotta-dark mb-1">Mythos</p>
+                    <p className="text-xs font-medium text-sand-warm mb-1">Mythos</p>
                     <p className="text-sm font-semibold text-foreground leading-snug">{card.myth}</p>
                   </div>
                 </div>

@@ -85,11 +85,11 @@ export default function Erfahrungsberichte({
             const animated = variant !== "carousel";
 
             const card = (
-              <Card className="h-full border-border/50 hover:border-terracotta transition-colors">
+              <Card className="h-full border-border/50 hover:border-sage transition-colors">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-terracotta-lighter flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-terracotta-mid" />
+                    <div className="w-10 h-10 rounded-full bg-sage-lighter flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-sage-mid" />
                     </div>
                     <p className="font-medium text-foreground">{bericht.title}</p>
                   </div>
@@ -99,7 +99,7 @@ export default function Erfahrungsberichte({
                   </p>
 
                   {bericht.highlight && (
-                    <div className="bg-terracotta-wash rounded-lg p-3 border-l-2 border-terracotta">
+                    <div className="bg-sage-wash rounded-lg p-3 border-l-2 border-sage">
                       <p className="text-sm font-medium text-foreground italic">
                         {bericht.highlight}
                       </p>

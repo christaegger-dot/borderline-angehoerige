@@ -32,9 +32,9 @@ const needs = [
     sublabel: "Ich brauche Abstand",
     href: "/grenzen",
     icon: Shield,
-    color: "var(--color-terracotta-darker)",
-    bgColor: "var(--color-terracotta-wash)",
-    borderColor: "var(--color-terracotta-mid)",
+    color: "var(--color-sage-darker)",
+    bgColor: "var(--color-sage-wash)",
+    borderColor: "var(--color-sage-mid)",
   },
   {
     label: "Akute Hilfe",

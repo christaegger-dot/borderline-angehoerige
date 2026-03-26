@@ -97,7 +97,7 @@ export default function UnterstuetzenAlltag() {
 
             <ContentSection
               title="Was im Alltag oft wirklich hilft"
-              icon={<Heart className="w-7 h-7 text-terracotta" />}
+              icon={<Heart className="w-7 h-7 text-sage-dark" />}
               id="was-hilft"
               preview="Nicht grosse Gesten, sondern Klarheit, Verlässlichkeit, ruhige Präsenz und begrenzte Verfügbarkeit tragen häufig am meisten."
             >
@@ -181,7 +181,7 @@ export default function UnterstuetzenAlltag() {
                     </CardContent>
                   </Card>
                 </div>
-                <Card className="bg-terracotta-light/10 border-terracotta">
+                <Card className="bg-sage-light/10 border-sage">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       Im Alltag ist nach einem Bruch oft nicht Perfektion gefragt, sondern ein
@@ -348,11 +348,11 @@ export default function UnterstuetzenAlltag() {
 
             <ContentSection
               title="Grenzen der Alltagsunterstützung"
-              icon={<AlertTriangle className="w-7 h-7 text-terracotta-mid" />}
+              icon={<AlertTriangle className="w-7 h-7 text-sage-mid" />}
               id="grenzen"
               preview="Auch im Alltag gibt es Grenzen. Sie müssen nicht perfekt sein, aber Sie sollten Ihre Erschöpfung und Ihre roten Linien ernst nehmen."
             >
-              <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
+              <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Auch im Alltag können Sie nicht alles halten. Sie können nicht:
@@ -365,7 +365,7 @@ export default function UnterstuetzenAlltag() {
                       "Therapie oder Krisenhilfe ersetzen",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-terracotta-mid">•</span>
+                        <span className="text-sage-mid">•</span>
                         {item}
                       </li>
                     ))}

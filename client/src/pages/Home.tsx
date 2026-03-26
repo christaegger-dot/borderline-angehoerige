@@ -46,8 +46,8 @@ const situationPaths = [
     icon: Sparkles,
     title: "Ich bin selbst erschöpft",
     text: "Wenn Anspannung, Schuld, Rückzug oder innere Überforderung zu gross werden.",
-    color: "var(--color-terracotta-mid)",
-    iconBg: "var(--color-terracotta-wash)",
+    color: "var(--color-sage-mid)",
+    iconBg: "var(--color-sage-wash)",
   },
 ];
 

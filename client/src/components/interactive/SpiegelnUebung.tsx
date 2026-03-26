@@ -53,7 +53,7 @@ export default function SpiegelnUebung() {
         <Card key={index} className="border-border/50">
           <CardContent className="p-5">
             <div className="flex items-start gap-3 mb-4">
-              <MessageSquare className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
+              <MessageSquare className="w-5 h-5 text-sage-mid flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-xs font-medium text-slate-dark mb-1">{szenario.kategorie}</p>
                 <p className="text-sm font-medium text-foreground leading-relaxed">{szenario.situation}</p>
@@ -61,8 +61,8 @@ export default function SpiegelnUebung() {
             </div>
 
             <div className="grid gap-3 md:grid-cols-2 mb-3">
-              <div className="rounded-lg border border-terracotta-mid/20 bg-terracotta-wash/30 p-4">
-                <p className="text-xs font-medium text-terracotta-dark mb-2">Weniger hilfreich</p>
+              <div className="rounded-lg border border-sand-border/40 bg-sand/50 p-4">
+                <p className="text-xs font-medium text-sand-warm mb-2">Weniger hilfreich</p>
                 <p className="text-sm text-foreground leading-relaxed">{szenario.falsch}</p>
               </div>
 

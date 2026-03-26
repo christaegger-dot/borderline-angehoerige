@@ -31,7 +31,7 @@ const bookCategories: BookCategory[] = [
     title: "Für Partner & Ehepartner",
     subtitle: "Wenn Ihr Partner oder Ihre Partnerin betroffen ist",
     icon: Heart,
-    color: "var(--color-terracotta)",
+    color: "var(--color-sage-dark)",
     books: [
       {
         title: "Schluss mit dem Eiertanz",
@@ -174,7 +174,7 @@ const bookCategories: BookCategory[] = [
     title: "Erfahrungsberichte",
     subtitle: "Persönliche Geschichten von Betroffenen und Angehörigen",
     icon: Sparkles,
-    color: "var(--color-terracotta)",
+    color: "var(--color-sage-dark)",
     books: [
       {
         title: "Leben auf der Grenze",
@@ -255,7 +255,7 @@ export default function Buchempfehlungen() {
               aria-pressed={activeCategory === null}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === null
-                  ? 'bg-terracotta-dark text-white'
+                  ? 'bg-sage-dark text-white'
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted'
               }`}
             >
@@ -270,7 +270,7 @@ export default function Buchempfehlungen() {
                 aria-pressed={activeCategory === category.id}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
                   activeCategory === category.id
-                    ? 'bg-terracotta-dark text-white'
+                    ? 'bg-sage-dark text-white'
                     : 'bg-muted/50 text-muted-foreground hover:bg-muted'
                 }`}
               >
@@ -328,7 +328,7 @@ export default function Buchempfehlungen() {
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-1">
                                 {book.highlight && (
-                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-terracotta-lighter text-terracotta-dark text-xs font-medium">
+                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sage-lighter text-sage-dark text-xs font-medium">
                                     <Star className="w-3 h-3" />
                                     Empfehlung
                                   </span>

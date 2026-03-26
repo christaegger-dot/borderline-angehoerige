@@ -92,7 +92,7 @@ export default function FAQ() {
     {
       title: "Grenzen & Selbstschutz",
       icon: <Shield className="w-5 h-5" />,
-      color: "var(--color-terracotta-mid)",
+      color: "var(--color-sage-mid)",
       questions: [
         {
           question: "Wann ist eine Einweisung nötig?",
@@ -143,7 +143,7 @@ export default function FAQ() {
     {
       title: "Alltag & Beziehung",
       icon: <Users className="w-5 h-5" />,
-      color: "var(--color-terracotta-mid)",
+      color: "var(--color-sage-mid)",
       questions: [
         {
           question: "Wie erkläre ich die Situation Freunden/Familie?",
@@ -308,9 +308,9 @@ export default function FAQ() {
               viewport={{ once: true }}
               className="mt-12"
             >
-              <Card className="bg-terracotta-wash border-terracotta">
+              <Card className="bg-sage-wash border-sage">
                 <CardContent className="p-6 text-center">
-                  <Lightbulb className="w-8 h-8 text-terracotta-mid mx-auto mb-3" />
+                  <Lightbulb className="w-8 h-8 text-sage-mid mx-auto mb-3" />
                   <h3 className="font-semibold text-foreground mb-2">
                     Ihre Frage ist nicht dabei?
                   </h3>

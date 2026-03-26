@@ -105,12 +105,12 @@ export default function Kommunizieren() {
 
             <ContentSection
               title="Validierung: der wichtigste Ausgangspunkt"
-              icon={<Heart className="w-7 h-7 text-terracotta" />}
+              icon={<Heart className="w-7 h-7 text-sage-dark" />}
               id="validierung"
               preview="Validierung heisst nicht zustimmen. Sie signalisiert: Ich nehme dein Erleben ernst, auch wenn ich nicht jede Sichtweise teile."
             >
               <div className="space-y-4">
-                <Card className="bg-terracotta-light/10 border-terracotta">
+                <Card className="bg-sage-light/10 border-sage">
                   <CardContent className="p-6">
                     <p className="text-foreground leading-relaxed text-lg mb-3">
                       <strong>Validierung</strong> bedeutet, dass Sie das
@@ -180,7 +180,7 @@ export default function Kommunizieren() {
 
             <ContentSection
               title="Wenn Gespräche kippen"
-              icon={<ShieldAlert className="w-7 h-7 text-terracotta-mid" />}
+              icon={<ShieldAlert className="w-7 h-7 text-sage-mid" />}
               id="eskalation"
               preview="In eskalierenden Momenten hilft oft nicht mehr Inhalt, sondern weniger: weniger Worte, weniger Verteidigung, weniger Tempo."
             >
@@ -216,7 +216,7 @@ export default function Kommunizieren() {
                     </Card>
                   ))}
                 </div>
-                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/30">
+                <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
                   <CardContent className="p-5">
                     <h4 className="font-semibold text-foreground mb-3">
                       Ein möglicher Ablauf
@@ -301,7 +301,7 @@ export default function Kommunizieren() {
               preview="Partner, Eltern und erwachsene Kinder sprechen aus unterschiedlichen Beziehungsgeschichten. Das verändert auch den Ton und die Belastung."
             >
               <div className="space-y-4">
-                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
+                <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-2">
                       Als Partner/in
@@ -388,7 +388,7 @@ export default function Kommunizieren() {
                       }}
                       className={`whitespace-nowrap shrink-0 ${
                         activeFilter === cat.id
-                          ? "bg-terracotta-mid hover:bg-terracotta-dark text-white"
+                          ? "bg-sage-mid hover:bg-sage-dark text-white"
                           : ""
                       }`}
                     >

@@ -166,7 +166,7 @@ const results: Result[] = [
     ],
     icon: AlertTriangle,
     color: "var(--color-alert)",
-    bgColor: "var(--color-terracotta-wash)"
+    bgColor: "var(--color-sage-wash)"
   },
   {
     id: "krise",
@@ -180,7 +180,7 @@ const results: Result[] = [
     ],
     icon: Clock,
     color: "var(--color-sand-mid)",
-    bgColor: "var(--color-terracotta-wash)"
+    bgColor: "var(--color-sage-wash)"
   },
   {
     id: "kommunizieren",
@@ -221,8 +221,8 @@ const results: Result[] = [
       { href: "/unterstuetzen/therapie", text: "Therapie unterstützen" }
     ],
     icon: Heart,
-    color: "var(--color-terracotta)",
-    bgColor: "var(--color-terracotta-light)"
+    color: "var(--color-sage-dark)",
+    bgColor: "var(--color-sage-light)"
   },
   {
     id: "grenzen",
@@ -235,8 +235,8 @@ const results: Result[] = [
       { href: "/kommunizieren", text: "Kommunikationstechniken" }
     ],
     icon: Shield,
-    color: "var(--color-terracotta-mid)",
-    bgColor: "var(--color-terracotta-lighter)"
+    color: "var(--color-sage-mid)",
+    bgColor: "var(--color-sage-lighter)"
   },
   {
     id: "selbstfuersorge",
@@ -429,7 +429,7 @@ export default function Selbsttest() {
       {/* Progress bar */}
       <div className="h-1.5 bg-muted" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label={`Fortschritt: Frage ${currentQuestion + 1} von ${questions.length}`}>
         <motion.div 
-          className="h-full bg-terracotta"
+          className="h-full bg-sage-dark"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -485,16 +485,16 @@ export default function Selbsttest() {
                   onClick={() => handleAnswer(option)}
                   disabled={isTransitioning}
                   aria-pressed={selectedOption === option.value}
-                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 focus-visible:ring-2 focus-visible:ring-terracotta/40 focus-visible:ring-offset-2 ${
+                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-offset-2 ${
                     selectedOption === option.value
-                      ? "border-terracotta bg-terracotta-wash"
-                      : "border-border/50 hover:border-terracotta/50 hover:bg-muted/50"
+                      ? "border-sage bg-sage-wash"
+                      : "border-border/50 hover:border-sage/50 hover:bg-muted/50"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
                       selectedOption === option.value
-                        ? "border-terracotta bg-terracotta"
+                        ? "border-sage bg-sage-dark"
                         : "border-muted-foreground/30"
                     }`}>
                       {selectedOption === option.value && (

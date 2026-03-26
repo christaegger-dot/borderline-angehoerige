@@ -75,7 +75,7 @@ function GenesungInfografiken() {
               }}
               className={`whitespace-nowrap shrink-0 ${
                 activeFilter === cat.id
-                  ? "bg-terracotta-mid hover:bg-terracotta-dark text-white"
+                  ? "bg-sage-mid hover:bg-sage-dark text-white"
                   : ""
               }`}
             >
@@ -148,7 +148,7 @@ export default function Genesung() {
 
       <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-terracotta blur-3xl" />
+          <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-sage-dark blur-3xl" />
           <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-sage blur-3xl" />
         </div>
         <div className="container relative">
@@ -253,7 +253,7 @@ export default function Genesung() {
           <div className="max-w-3xl mx-auto">
             <ContentSection
               title="Was Remission und Genesung bedeuten"
-              icon={<BookOpen className="w-6 h-6 text-terracotta-dark" />}
+              icon={<BookOpen className="w-6 h-6 text-sage-dark" />}
               id="remission"
               defaultOpen={true}
               preview="Besserung heisst nicht zwingend völlige Symptomfreiheit. Für Angehörige ist wichtig, die Begriffe realistischer zu lesen."
@@ -297,7 +297,7 @@ export default function Genesung() {
 
             <ContentSection
               title="Das Fortschritt-Paradox"
-              icon={<RefreshCw className="w-6 h-6 text-terracotta-mid" />}
+              icon={<RefreshCw className="w-6 h-6 text-sage-mid" />}
               id="fortschritt-paradox"
               preview="Gerade wenn es besser läuft, können Rückschritte besonders verunsichern. Das entwertet den Weg aber nicht automatisch."
             >
@@ -308,7 +308,7 @@ export default function Genesung() {
                   schnell an, als wäre alles umsonst gewesen. Meist ist das
                   nicht die treffendste Deutung.
                 </p>
-                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/30">
+                <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       Entwicklung bedeutet bei Borderline häufig nicht: Schritt
@@ -349,7 +349,7 @@ export default function Genesung() {
                   und auf Sie selbst.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
+                  <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
                     <span className="text-lg font-medium text-foreground block mb-2">
                       ❌ Weniger hilfreich
                     </span>

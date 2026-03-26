@@ -30,7 +30,7 @@ export default function UnterstuetzenKrise() {
             
             <div className="flex items-center gap-3 mb-6 mt-4">
               <div className="w-12 h-12 rounded-xl bg-sand-muteder flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-terracotta-mid" />
+                <AlertTriangle className="w-6 h-6 text-sage-mid" />
               </div>
               <span className="text-sm font-medium text-sage-dark">Lesezeit: 6 Minuten</span>
             </div>
@@ -81,7 +81,7 @@ export default function UnterstuetzenKrise() {
             {/* Ampel-System */}
             <ContentSection
               title="Das Ampel-System: Krisen erkennen"
-              icon={<AlertTriangle className="w-7 h-7 text-terracotta-mid" />}
+              icon={<AlertTriangle className="w-7 h-7 text-sage-mid" />}
               id="ampel-system"
               defaultOpen={true}
               preview="Nicht jede schwierige Situation ist eine Krise. Das Ampel-System hilft Ihnen, die Intensität einzuschätzen."
@@ -110,15 +110,15 @@ export default function UnterstuetzenKrise() {
                     level: "Orange – Eskalierend",
                     description: "Starke Emotionen, verbale Aggression, Kontrollverlust",
                     action: "Deeskalieren, Sicherheit prüfen, Grenzen setzen",
-                    color: "var(--color-terracotta-mid)",
-                    bgColor: "var(--color-terracotta-wash)"
+                    color: "var(--color-sage-mid)",
+                    bgColor: "var(--color-sage-wash)"
                   },
                   {
                     level: "Rot – Akute Krise",
                     description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
                     action: "Professionelle Hilfe holen, Notruf wenn nötig",
                     color: "var(--color-alert)",
-                    bgColor: "var(--color-terracotta-wash)"
+                    bgColor: "var(--color-sage-wash)"
                   }
                 ].map((item, index) => (
                   <Card key={index} style={{ borderColor: item.color, backgroundColor: item.bgColor }} className="border-l-4">
@@ -138,7 +138,7 @@ export default function UnterstuetzenKrise() {
             {/* 4 Schritte der Deeskalation */}
             <ContentSection
               title="4 Schritte der Deeskalation"
-              icon={<Shield className="w-7 h-7 text-terracotta-mid" />}
+              icon={<Shield className="w-7 h-7 text-sage-mid" />}
               id="deeskalation"
               preview="Sicherheit prüfen, Ruhe bewahren, Validieren, Skills anbieten – ein bewährtes Vorgehen."
             >
@@ -172,7 +172,7 @@ export default function UnterstuetzenKrise() {
                   <Card key={index} className="border-border/50">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-terracotta-mid text-white flex items-center justify-center font-semibold flex-shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-sage-mid text-white flex items-center justify-center font-semibold flex-shrink-0">
                           {item.step}
                         </div>
                         <div>
@@ -257,7 +257,7 @@ export default function UnterstuetzenKrise() {
               id="vermeiden"
               preview="Drohen, Vorwürfe machen oder Gefühle herunterspielen – diese Reaktionen können die Krise verschärfen."
             >
-              <Card className="border-l-4 border-l-alert bg-terracotta-wash">
+              <Card className="border-l-4 border-l-alert bg-sage-wash">
                 <CardContent className="p-6">
                   <ul className="space-y-3">
                     {[
@@ -316,7 +316,7 @@ export default function UnterstuetzenKrise() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-terracotta-mid" />
+                <Download className="w-8 h-8 text-sage-mid" />
                 Materialien zum Thema
               </h2>
               

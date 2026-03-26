@@ -82,7 +82,7 @@ export function RessourcenMenu({ location, isOpen, setIsOpen }: RessourcenMenuPr
                         menuA11y.onMenuItemFocus(index);
                       }}
                       onClick={menuA11y.closeDropdown}
-                      className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all outline-none focus-visible:ring-2 focus-visible:ring-terracotta/40 focus-visible:ring-inset ${
+                      className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
                         isSoforthilfe
                           ? "text-alert font-medium hover:bg-alert/8 focus:bg-alert/8"
                           : isActive

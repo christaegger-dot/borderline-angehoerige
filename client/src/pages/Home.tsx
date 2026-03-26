@@ -22,7 +22,8 @@ const situationPaths = [
     icon: BookOpen,
     title: "Ich versuche zu verstehen, was passiert",
     text: "Wenn Nähe, Eskalation, Rückzug oder Widersprüche schwer einzuordnen sind.",
-    color: "var(--color-sage-mid)",
+    color: "var(--color-sage-dark)",
+    iconBg: "var(--color-sage-wash)",
   },
   {
     href: "/unterstuetzen/krise",
@@ -30,6 +31,7 @@ const situationPaths = [
     title: "Es kippt gerade oder eskaliert",
     text: "Wenn starke Anspannung, Konflikte oder Krisensignale im Vordergrund stehen.",
     color: "var(--color-alert)",
+    iconBg: "var(--color-alert-wash)",
   },
   {
     href: "/kommunizieren",
@@ -37,6 +39,7 @@ const situationPaths = [
     title: "Gespräche werden schwierig",
     text: "Wenn Worte verletzen, Vorwürfe dominieren oder alles sofort hochgeht.",
     color: "var(--color-slate-blue)",
+    iconBg: "var(--color-slate-wash)",
   },
   {
     href: "/selbstfuersorge",
@@ -44,6 +47,7 @@ const situationPaths = [
     title: "Ich bin selbst erschöpft",
     text: "Wenn Anspannung, Schuld, Rückzug oder innere Überforderung zu gross werden.",
     color: "var(--color-terracotta-mid)",
+    iconBg: "var(--color-terracotta-wash)",
   },
 ];
 
@@ -64,26 +68,32 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-navy text-white">
         {/* Geometrische Kreise (SA-Pattern) */}
-        <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-white/5" />
-        <div className="absolute -bottom-10 left-[30%] w-48 h-48 rounded-full bg-sage-dark/15" />
+        <div
+          className="absolute rounded-full"
+          style={{ top: '-60px', right: '-60px', width: '300px', height: '300px', background: 'rgba(82, 150, 160, 0.12)' }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{ bottom: '-40px', left: '30%', width: '200px', height: '200px', background: 'rgba(180, 83, 9, 0.08)' }}
+        />
 
-        <div className="container relative z-10 py-12 md:py-16 lg:py-20">
+        <div className="container relative z-10 py-12 md:py-14 lg:py-16">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-sage-dark text-white text-xs font-semibold tracking-wider uppercase mb-5">
+              <span className="inline-block px-3 py-1 rounded-full bg-sage-dark text-white text-[11px] font-semibold tracking-[0.12em] uppercase mb-4">
                 Für Angehörige von Menschen mit Borderline
               </span>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-3">
+              <h1 className="text-3xl md:text-4xl lg:text-[42px] font-normal leading-[1.15] tracking-tight mb-2">
                 Orientierung in belasteten{" "}
                 <span className="text-sage-light">Beziehungen</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-2xl font-light">
+              <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8 max-w-2xl font-light">
                 Wenn Beziehungen von starker Anspannung, Eskalation, Rückzug,
                 Schuld oder Erschöpfung geprägt sind, hilft nicht noch mehr
                 Druck, sondern bessere Einordnung. Diese Website unterstützt
@@ -91,7 +101,7 @@ export default function Home() {
                 reagieren und sich selbst nicht zu verlieren.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-4">
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <Link href="/verstehen">
                   <Button
                     size="lg"
@@ -105,7 +115,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto"
+                    className="border-white/25 text-white hover:bg-white/10 w-full sm:w-auto"
                   >
                     <Heart className="w-5 h-5 mr-2" />
                     Was hilft in meiner Lage?
@@ -115,13 +125,11 @@ export default function Home() {
 
               <Link
                 href="/soforthilfe"
-                className="inline-flex items-center gap-2 text-white/60 hover:text-white font-medium transition-colors group text-sm"
+                className="inline-flex items-center gap-2 text-white/50 hover:text-white font-medium transition-colors group text-sm"
               >
                 <Phone className="w-4 h-4" />
                 <span>Akute Krise? Soforthilfe</span>
-                <span className="group-hover:translate-x-1 transition-transform">
-                  &rarr;
-                </span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </motion.div>
           </div>
@@ -180,34 +188,31 @@ export default function Home() {
                 return (
                   <Link key={item.href} href={item.href}>
                     <Card
-                      className="h-full cursor-pointer bg-white border-l-4 border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
-                      style={{
-                        borderLeftColor: item.color,
-                        borderTopColor: 'var(--border)',
-                        borderRightColor: 'var(--border)',
-                        borderBottomColor: 'var(--border)',
-                      }}
+                      className="h-full cursor-pointer bg-white border border-border rounded-[10px] border-l-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                      style={{ borderLeftColor: item.color }}
                     >
-                      <CardContent className="p-5">
+                      <CardContent className="p-5 flex gap-4 items-start">
                         <div
-                          className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                          style={{ backgroundColor: item.color }}
+                          className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: item.iconBg }}
                         >
-                          <Icon className="w-5 h-5 text-white" />
+                          <Icon className="w-[18px] h-[18px]" style={{ color: item.color }} />
                         </div>
-                        <h3 className="font-semibold text-foreground mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          {item.text}
-                        </p>
-                        <span
-                          className="text-sm font-medium inline-flex items-center gap-1"
-                          style={{ color: item.color }}
-                        >
-                          Zum passenden Bereich
-                          <ArrowRight className="w-4 h-4" />
-                        </span>
+                        <div>
+                          <h3 className="font-semibold text-foreground text-sm mb-1">
+                            {item.title}
+                          </h3>
+                          <p className="text-[13.5px] text-muted-foreground mb-2">
+                            {item.text}
+                          </p>
+                          <span
+                            className="text-xs font-semibold inline-flex items-center gap-1"
+                            style={{ color: item.color }}
+                          >
+                            Zum passenden Bereich
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </span>
+                        </div>
                       </CardContent>
                     </Card>
                   </Link>

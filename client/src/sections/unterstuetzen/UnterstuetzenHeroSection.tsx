@@ -3,7 +3,7 @@ import { Compass } from "lucide-react";
 
 export default function UnterstuetzenHeroSection() {
   return (
-    <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
+    <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}
@@ -20,7 +20,7 @@ export default function UnterstuetzenHeroSection() {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
             Wie Angehörige hilfreich bleiben können
           </h1>
 

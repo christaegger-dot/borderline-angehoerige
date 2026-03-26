@@ -90,7 +90,7 @@ export default function ContentSection({
         aria-expanded={isOpen}
         aria-label={`Abschnitt ${title} ${isOpen ? 'zuklappen' : 'aufklappen'}`}
       >
-        <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-white hover:bg-sage-wash active:bg-sage-wash border border-border/60 border-l-4 border-l-sage-dark transition-colors">
+        <div className="flex items-center justify-between gap-3 p-4 rounded-[10px] bg-white hover:bg-sage-wash/50 active:bg-sage-wash/50 border border-border border-l-4 border-l-sage-dark transition-colors">
           <div className="flex items-center gap-3 min-w-0">
             {icon}
             <h2 className="text-xl md:text-2xl font-normal text-foreground">
@@ -119,7 +119,7 @@ export default function ContentSection({
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-6 px-1">{children}</div>
+            <div className="pt-5 px-1 text-[14.5px] leading-relaxed">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -3,9 +3,9 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { MessageSquare, Mail, Heart, ExternalLink } from "lucide-react";
-import { emailById } from "@/data/kontakte";
+import { emailByIdStrict } from "@/data/kontakte";
 
-const emailAngehoerigen = emailById("EMAIL_ANGEHOERIGEN")!;
+const emailAngehoerigen = emailByIdStrict("EMAIL_ANGEHOERIGEN");
 
 export default function Feedback() {
   return (

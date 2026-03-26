@@ -11,13 +11,13 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
-import { kontaktById } from "@/data/kontakte";
+import { kontaktByIdStrict } from "@/data/kontakte";
 import GroundingTimer from "@/components/interactive/GroundingTimer";
 import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 
-const proMente = kontaktById("INFO_PROMENTE")!;
+const proMente = kontaktByIdStrict("INFO_PROMENTE");
 
 // Atemübung: Phasen-Sequenz als Konstante
 const ATEM_PHASEN: { phase: 'einatmen' | 'halten' | 'ausatmen'; dauer: number }[] = [

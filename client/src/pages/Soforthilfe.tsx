@@ -22,7 +22,7 @@ import { Phone, AlertTriangle, Clock, Baby, User, Users, Shield, Heart, Pill, In
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
-  kontaktById,
+  kontaktByIdStrict,
 } from "@/data/kontakte";
 
 // ─── Sticky Ampel-Leiste ──────────────────────────────────
@@ -159,20 +159,20 @@ function EntlastungKarte({ nummer, label, hinweis, tel, badge }: { nummer: strin
 // ─── Soforthilfe-Seite ────────────────────────────────────
 
 export default function Notfall() {
-  const rot144 = kontaktById("ROT_144")!;
-  const rot117 = kontaktById("ROT_117")!;
-  const rot112 = kontaktById("ROT_112")!;
-  const pukKjp = kontaktById("GELB_PUK_KJP")!;
-  const pukErw = kontaktById("GELB_PUK_ERW")!;
-  const puk65  = kontaktById("GELB_PUK_65")!;
-  const gruen143   = kontaktById("GRUEN_143")!;
-  const gruenEltern = kontaktById("GRUEN_ELTERN")!;
-  const gruen147   = kontaktById("GRUEN_147")!;
-  const rot145         = kontaktById("ROT_145")!;
-  const infoAerztefon  = kontaktById("INFO_AERZTEFON")!;
-  const infoPukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
-  const infoFachstelle = kontaktById("INFO_FACHSTELLE")!;
-  const infoKiz        = kontaktById("INFO_KIZ")!;
+  const rot144 = kontaktByIdStrict("ROT_144");
+  const rot117 = kontaktByIdStrict("ROT_117");
+  const rot112 = kontaktByIdStrict("ROT_112");
+  const pukKjp = kontaktByIdStrict("GELB_PUK_KJP");
+  const pukErw = kontaktByIdStrict("GELB_PUK_ERW");
+  const puk65  = kontaktByIdStrict("GELB_PUK_65");
+  const gruen143   = kontaktByIdStrict("GRUEN_143");
+  const gruenEltern = kontaktByIdStrict("GRUEN_ELTERN");
+  const gruen147   = kontaktByIdStrict("GRUEN_147");
+  const rot145         = kontaktByIdStrict("ROT_145");
+  const infoAerztefon  = kontaktByIdStrict("INFO_AERZTEFON");
+  const infoPukZentrale = kontaktByIdStrict("INFO_PUK_ZENTRALE");
+  const infoFachstelle = kontaktByIdStrict("INFO_FACHSTELLE");
+  const infoKiz        = kontaktByIdStrict("INFO_KIZ");
 
   return (
     <Layout>

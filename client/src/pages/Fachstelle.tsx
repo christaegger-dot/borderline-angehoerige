@@ -4,11 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Building2, Mail, MapPin, Users, BookOpen, Phone, ArrowRight, Info, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
-import { kontaktById, emailById, urlById } from "@/data/kontakte";
+import { kontaktByIdStrict, emailByIdStrict, urlByIdStrict } from "@/data/kontakte";
 
-const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
-const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
-const pukUrl = urlById("URL_PUK")!;
+const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
+const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
+const pukUrl = urlByIdStrict("URL_PUK");
 
 export default function Fachstelle() {
   return (

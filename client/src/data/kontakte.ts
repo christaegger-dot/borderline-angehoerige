@@ -443,14 +443,35 @@ export function kontaktById(id: string): Kontakt | undefined {
   return ALLE_KONTAKTE.find((k) => k.id === id);
 }
 
+/** Kontakt nach ID finden – wirft einen klaren Fehler wenn nicht gefunden */
+export function kontaktByIdStrict(id: string): Kontakt {
+  const k = kontaktById(id);
+  if (!k) throw new Error(`Kontakt nicht gefunden: "${id}". Wurde die ID in kontakte.ts umbenannt oder entfernt?`);
+  return k;
+}
+
 /** E-Mail nach ID finden */
 export function emailById(id: string): EmailKontakt | undefined {
   return EMAILS.find((e) => e.id === id);
 }
 
+/** E-Mail nach ID – wirft Fehler wenn nicht gefunden */
+export function emailByIdStrict(id: string): EmailKontakt {
+  const e = emailById(id);
+  if (!e) throw new Error(`E-Mail nicht gefunden: "${id}"`);
+  return e;
+}
+
 /** URL nach ID finden */
 export function urlById(id: string): UrlKontakt | undefined {
   return URLS.find((u) => u.id === id);
+}
+
+/** URL nach ID – wirft Fehler wenn nicht gefunden */
+export function urlByIdStrict(id: string): UrlKontakt {
+  const u = urlById(id);
+  if (!u) throw new Error(`URL nicht gefunden: "${id}"`);
+  return u;
 }
 
 /** Adresse nach ID finden */

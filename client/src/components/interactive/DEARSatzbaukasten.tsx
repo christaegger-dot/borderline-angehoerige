@@ -4,7 +4,7 @@
  * Einfügepunkt: /grenzen → DEAR-Technik-Sektion
  * Design: Tokens only, Inter only, mobile-first (375px safe)
  */
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Pencil, Copy, Check, RotateCcw } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -62,6 +62,13 @@ export default function DEARSatzbaukasten() {
     R: "",
   });
   const [copied, setCopied] = useState(false);
+  const copiedTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (copiedTimer.current) clearTimeout(copiedTimer.current);
+    };
+  }, []);
 
   const preview = useMemo(() => {
     const parts = fields.map((f) => values[f.letter]?.trim() || f.placeholder);
@@ -79,7 +86,8 @@ export default function DEARSatzbaukasten() {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      if (copiedTimer.current) clearTimeout(copiedTimer.current);
+      copiedTimer.current = setTimeout(() => setCopied(false), 2000);
     } catch {
       // Fallback: do nothing
     }

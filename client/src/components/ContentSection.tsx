@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -34,6 +34,11 @@ export default function ContentSection({
   const sectionRef = useRef<HTMLDivElement>(null);
   const pendingScrollRef = useRef(false);
 
+  // Ref für isOpen, damit der Event-Listener nicht bei jedem Toggle
+  // entfernt und neu registriert wird (kein Event-Verlust möglich)
+  const isOpenRef = useRef(isOpen);
+  isOpenRef.current = isOpen;
+
   // Auf Custom Event "open-section" lauschen
   useEffect(() => {
     if (!id) return;
@@ -41,11 +46,10 @@ export default function ContentSection({
     const handleOpenSection = (e: Event) => {
       const detail = (e as CustomEvent<{ sectionId: string }>).detail;
       if (detail.sectionId === id) {
-        if (!isOpen) {
+        if (!isOpenRef.current) {
           pendingScrollRef.current = true;
           setIsOpen(true);
         } else {
-          // Bereits offen → direkt scrollen
           scrollToSection();
         }
       }
@@ -53,7 +57,7 @@ export default function ContentSection({
 
     window.addEventListener("open-section", handleOpenSection);
     return () => window.removeEventListener("open-section", handleOpenSection);
-  }, [id, isOpen]);
+  }, [id]);
 
   // Nach dem Öffnen (State-Wechsel) sanft scrollen
   useEffect(() => {

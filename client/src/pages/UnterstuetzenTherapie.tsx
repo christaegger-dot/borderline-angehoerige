@@ -24,14 +24,14 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "wouter";
-import { GELB, kontaktById, emailById, urlById } from "@/data/kontakte";
+import { GELB, kontaktByIdStrict, emailByIdStrict, urlByIdStrict } from "@/data/kontakte";
 
-const hype = kontaktById("INFO_PUK_KJPP_HYPE")!;
-const emailKjpp = emailById("EMAIL_KJPP")!;
-const pukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
-const emailHard = emailById("EMAIL_HARD")!;
-const clieniaUrl = urlById("URL_CLIENIA")!;
-const dbtDachUrl = urlById("URL_DBT_DACH")!;
+const hype = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
+const emailKjpp = emailByIdStrict("EMAIL_KJPP");
+const pukZentrale = kontaktByIdStrict("INFO_PUK_ZENTRALE");
+const emailHard = emailByIdStrict("EMAIL_HARD");
+const clieniaUrl = urlByIdStrict("URL_CLIENIA");
+const dbtDachUrl = urlByIdStrict("URL_DBT_DACH");
 
 export default function UnterstuetzenTherapie() {
   return (

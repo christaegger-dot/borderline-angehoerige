@@ -281,8 +281,8 @@ export const INFO: Kontakt[] = [
     kategorie: "info",
     nummer: "0848 33 99 00",
     tel: "+41848339900",
-    label: "Selbsthilfe Infoline",
-    hinweis: "Telefonische Beratung zu Selbsthilfe",
+    label: "Selbsthilfe Bern",
+    hinweis: "Telefonische Beratung zu Selbsthilfe (Kanton Bern)",
     sourceRef: "Selbsthilfegruppen.tsx:247",
   },
   {
@@ -325,8 +325,8 @@ export const EMAILS: EmailKontakt[] = [
   {
     id: "EMAIL_HARD",
     adresse: "klinik.hard@pukzh.ch",
-    label: "DBT-Station B2 Hard",
-    hinweis: "Stationäre DBT-Behandlung",
+    label: "Zentrum für Integrative Psychiatrie (ZIP) Rheinau",
+    hinweis: "Stationäre DBT-Behandlung (Station 62B, zertifiziert)",
     sourceRef: "UnterstuetzenTherapie.tsx:336",
   },
   {

@@ -171,7 +171,7 @@ export default function FAQ() {
       <SEO title="Häufige Fragen" description="Antworten auf die häufigsten Fragen von Angehörigen zu Borderline." path="/faq" />
       <FAQSchema questions={faqCategories.flatMap(c => c.questions.map(q => ({ question: q.question, answer: q.answer })))} />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}

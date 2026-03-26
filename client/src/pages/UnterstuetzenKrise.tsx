@@ -16,7 +16,7 @@ export default function UnterstuetzenKrise() {
     <Layout>
       <SEO title="Krisenbegleitung" description="Wie Sie in akuten Krisen richtig reagieren und Hilfe leisten können." path="/unterstuetzen/krise" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ export default function UnterstuetzenKrise() {
               <div className="w-12 h-12 rounded-xl bg-sand-muteder flex items-center justify-center">
                 <AlertTriangle className="w-6 h-6 text-terracotta-mid" />
               </div>
-              <span className="text-sm font-medium text-muted-foreground">Lesezeit: 6 Minuten</span>
+              <span className="text-sm font-medium text-sage-dark">Lesezeit: 6 Minuten</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">

@@ -62,7 +62,7 @@ export default function Home() {
         path="/"
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-terracotta-lighter/30 via-sand/20 to-background">
+      <section className="relative overflow-hidden bg-gradient-to-b from-sand/50 to-background">
         <div className="container py-12 md:py-16 lg:py-20">
           <div className="max-w-3xl">
             <motion.div

@@ -26,7 +26,7 @@ export default function Impressum() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
                 <FileText className="w-6 h-6 text-sage-darker" />
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function Impressum() {
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <span className="text-sage-mid">•</span>
+                      <span className="text-foreground/60">•</span>
                       Evidenzbasierte Informationen zum Verständnis der Störung
                     </li>
                     <li className="flex items-start gap-2">

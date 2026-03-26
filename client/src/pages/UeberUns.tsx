@@ -11,7 +11,7 @@ export default function UeberUns() {
     <Layout>
       <SEO title="Über uns" description="Über das Projekt Borderline · Hilfe für Angehörige." path="/ueber-uns" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-light/40 to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sand/50 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -20,7 +20,7 @@ export default function UeberUns() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
                 <Heart className="w-6 h-6 text-sage-mid" />
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function UeberUns() {
                 ].map((source, index) => (
                   <div key={index} className="p-4 rounded-lg bg-cream border border-border/30">
                     <p className="font-medium text-foreground">{source.title}</p>
-                    <p className="text-sm text-sage-mid">{source.author}</p>
+                    <p className="text-sm text-foreground/60">{source.author}</p>
                     <p className="text-sm text-muted-foreground mt-1">{source.description}</p>
                   </div>
                 ))}

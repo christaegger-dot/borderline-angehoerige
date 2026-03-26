@@ -1,5 +1,5 @@
 import SEO from "@/components/SEO";
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -20,55 +20,63 @@ const proMente = kontaktById("INFO_PROMENTE")!;
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 
+// Atemübung: Phasen-Sequenz als Konstante
+const ATEM_PHASEN: { phase: 'einatmen' | 'halten' | 'ausatmen'; dauer: number }[] = [
+  { phase: 'einatmen', dauer: 4 },
+  { phase: 'halten', dauer: 4 },
+  { phase: 'ausatmen', dauer: 6 },
+];
+
 // Atemübung Komponente
 function AtemuebungCard() {
   const [isActive, setIsActive] = useState(false);
   const [phase, setPhase] = useState<'einatmen' | 'halten' | 'ausatmen' | 'pause'>('einatmen');
   const [count, setCount] = useState(4);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const phaseIndexRef = useRef(0);
+  const countRef = useRef(4);
 
-  const startUebung = () => {
+  const clearCurrentInterval = useCallback(() => {
+    if (intervalRef.current !== null) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
+
+  // Cleanup bei Unmount
+  useEffect(() => {
+    return () => clearCurrentInterval();
+  }, [clearCurrentInterval]);
+
+  const startPhase = useCallback((phaseIdx: number) => {
+    if (phaseIdx >= ATEM_PHASEN.length) {
+      setIsActive(false);
+      clearCurrentInterval();
+      return;
+    }
+
+    const { phase: phaseName, dauer } = ATEM_PHASEN[phaseIdx];
+    phaseIndexRef.current = phaseIdx;
+    countRef.current = dauer;
+    setPhase(phaseName);
+    setCount(dauer);
+
+    intervalRef.current = setInterval(() => {
+      countRef.current--;
+      setCount(countRef.current);
+      if (countRef.current === 0) {
+        clearCurrentInterval();
+        startPhase(phaseIdx + 1);
+      }
+    }, 1000);
+  }, [clearCurrentInterval]);
+
+  const startUebung = useCallback(() => {
+    if (isActive) return; // Guard gegen Doppelklick
+    clearCurrentInterval();
     setIsActive(true);
-    setPhase('einatmen');
-    setCount(4);
-    
-    const cycle = () => {
-      // Einatmen 4s
-      setPhase('einatmen');
-      let c = 4;
-      const einatmenInterval = setInterval(() => {
-        c--;
-        setCount(c);
-        if (c === 0) {
-          clearInterval(einatmenInterval);
-          // Halten 4s
-          setPhase('halten');
-          c = 4;
-          setCount(c);
-          const haltenInterval = setInterval(() => {
-            c--;
-            setCount(c);
-            if (c === 0) {
-              clearInterval(haltenInterval);
-              // Ausatmen 6s
-              setPhase('ausatmen');
-              c = 6;
-              setCount(c);
-              const ausatmenInterval = setInterval(() => {
-                c--;
-                setCount(c);
-                if (c === 0) {
-                  clearInterval(ausatmenInterval);
-                  setIsActive(false);
-                }
-              }, 1000);
-            }
-          }, 1000);
-        }
-      }, 1000);
-    };
-    
-    cycle();
-  };
+    startPhase(0);
+  }, [isActive, clearCurrentInterval, startPhase]);
 
   return (
     <Card className="bg-gradient-to-br from-sage-lighter/30 to-sage-wash/20 border-sage-mid">

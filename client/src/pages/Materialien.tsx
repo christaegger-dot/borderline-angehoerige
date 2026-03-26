@@ -3,14 +3,14 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, Printer, ExternalLink, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
+import { Download, ExternalLink, Filter, BookOpen, Heart, MessageCircle, Shield, AlertTriangle, CheckCircle2, Image as ImageIcon, TrendingUp, ZoomIn, Eye } from "lucide-react";
 import { useState, useRef } from "react";
 import { Link } from "wouter";
 
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MATERIALIEN-SEITE – ÜBERARBEITUNG IN PROGRESS
-// Stand: 10.03.2026
+// Stand: 06.02.2026
 // ═══════════════════════════════════════════════════════════════════════════
 
 // Kategorie 1: Verstehen (6 Infografiken)
@@ -22,7 +22,6 @@ const infografiken: Array<{
   type: string;
   url: string;
   downloadUrl?: string;
-  isHtml?: boolean;
 }> = [
   // ═══════════════════════════════════════════════════════════════════════════
   // KATEGORIE 1: VERSTEHEN
@@ -320,20 +319,17 @@ const infografiken: Array<{
     description: "4-Block-Ampel (ROT / ORANGE / GRÜN / LILA): Alle wichtigen Nummern für Angehörige auf einer A4-Seite. Inkl. 144 Sanität, 0800 33 66 55 AERZTEFON und PUK 24/7. v07 · 2026-03-10",
     category: "soforthilfe",
     type: "Notfallkarte",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/notfallkarte-zuerich-psychische-krise.html",
-    previewUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/notfallkarte-zuerich-psychische-krise-preview.webp",
-    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/notfallkarte-zuerich-psychische-krise.pdf",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/notfallkarte-zuerich-psychische-krise.pdf",
-    isHtml: true,
+    url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663031008193/8YuwaCAyupr6X8wELZoKnq/notfallkarte_zuerich_v04_preview_b01d4df3.webp",
+    downloadUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310419663031008193/8YuwaCAyupr6X8wELZoKnq/notfallkarte_zuerich_v04_b7630148.pdf",
   },
   {
     id: "notfallplan-krise",
     title: "Notfallplan Krise – Suizidgedanken & Selbstverletzung",
-    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit korrekten Notfallnummern (144 / 0800 33 66 55 / PUK 058 384 20 00). v03 · März 2026.",
+    description: "4-Schritte-Anleitung für Angehörige bei Suizidgedanken oder Selbstverletzung: Ruhe bewahren, ernst nehmen, zuhören, Hilfe holen. Mit Notfallnummern und Do's & Don'ts.",
     category: "soforthilfe",
     type: "Notfallplan",
-    url: "/notfallplan-krise-v03-preview.webp",
-    downloadUrl: "/notfallplan-krise-v03.pdf",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ABTIHsyOeyMuCAIZ.webp",
+    downloadUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tabbTidhzMGGKDDp.pdf",
   },
 ];
 
@@ -465,7 +461,7 @@ export default function Materialien() {
           <div className="mb-6 p-3 rounded-lg bg-sand border border-sand-subtle flex items-center gap-2">
             <Eye className="w-4 h-4 text-muted-foreground flex-shrink-0" />
             <p className="text-sm text-muted-foreground">
-              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «Öffnen» öffnet die A4-PDF-Version im neuen Tab. Die Notfallkarte öffnet als interaktive HTML-Seite.
+              <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
             </p>
           </div>
           {filteredInfografiken.length > 0 ? (
@@ -480,52 +476,24 @@ export default function Materialien() {
                 >
                   <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
                     {/* Vorschaubild mit Hover-Overlay */}
-                    <div
+                    <div 
                       className="relative aspect-[4/3] bg-muted cursor-pointer group overflow-hidden"
-                      onClick={() => {
-                        if (item.isHtml) {
-                          const newWindow = window.open(item.url, '_blank', 'noopener,noreferrer');
-                          if (newWindow) {
-                            newWindow.opener = null;
-                          }
-                        } else {
-                          setPreviewImage(item.url); setPreviewTitle(item.title);
-                        }
-                      }}
+                      onClick={() => { setPreviewImage(item.url); setPreviewTitle(item.title); }}
                     >
-                      {item.isHtml ? (
-                        <div className="w-full h-full relative overflow-hidden bg-white">
-                          {(item as any).previewUrl ? (
-                            <img
-                              src={(item as any).previewUrl}
-                              alt={item.title}
-                              className="w-full h-full object-cover object-top"
-                              loading="lazy"
-                              width={597}
-                              height={826}
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                              <span className="text-xs text-gray-400">Vorschau</span>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <img
-                          src={item.url}
-                          alt={item.title}
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                          loading={index < 4 ? "eager" : "lazy"}
-                          width={400}
-                          height={300}
-                          decoding={index < 4 ? "sync" : "async"}
-                        />
-                      )}
+                      <img 
+                        src={item.url} 
+                        alt={item.title}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        loading={index < 4 ? "eager" : "lazy"}
+                        width={400}
+                        height={300}
+                        decoding={index < 4 ? "sync" : "async"}
+                      />
                       {/* Hover-Overlay */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                           <ZoomIn className="w-4 h-4 text-foreground" />
-                          <span className="text-sm font-medium text-foreground">{item.isHtml ? 'Öffnen' : 'Vergrössern'}</span>
+                          <span className="text-sm font-medium text-foreground">Vergrössern</span>
                         </div>
                       </div>
                       {/* Typ-Badge */}
@@ -543,55 +511,17 @@ export default function Materialien() {
                         {item.description}
                       </p>
                       
-                      <div className="flex items-center gap-2 justify-end flex-wrap">
-                        {/* Öffnen-Button: immer sichtbar */}
+                      <div className="flex items-center justify-end">
                         <a
                           href={item.downloadUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`${item.isHtml ? 'Notfallkarte' : 'PDF'} öffnen: ${item.title} (neuer Tab)`}
+                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
                           className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          {item.isHtml ? 'Notfallkarte öffnen' : 'Öffnen'}
+                          PDF öffnen
                         </a>
-                        {/* Download-Button: für PDFs direkt, für HTML via pdfUrl */}
-                        {!item.isHtml ? (
-                          <a
-                            href={item.downloadUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`PDF herunterladen: ${item.title}`}
-                            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
-                          >
-                            <Download className="w-4 h-4" />
-                            Herunterladen
-                          </a>
-                        ) : (item as any).pdfUrl ? (
-                          <>
-                            {/* Mobile: PDF-Download als voller Button, Öffnen als Link */}
-                            <a
-                              href={(item as any).pdfUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label="Notfallkarte als PDF herunterladen"
-                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors flex-1 sm:flex-none"
-                            >
-                              <Download className="w-4 h-4" />
-                              PDF herunterladen
-                            </a>
-                            <a
-                              href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label="Notfallkarte in neuem Tab öffnen"
-                              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
-                            >
-                              <Printer className="w-4 h-4" />
-                              Drucken
-                            </a>
-                          </>
-                        ) : null}
                       </div>
                     </CardContent>
                   </Card>

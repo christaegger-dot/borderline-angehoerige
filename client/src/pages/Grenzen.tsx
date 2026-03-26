@@ -49,7 +49,7 @@ export default function Grenzen() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-sand-muteder flex items-center justify-center">
-                <Shield className="w-6 h-6 text-terracotta-mid" />
+                <Shield className="w-6 h-6 text-sage-mid" />
               </div>
               <span className="text-sm font-medium text-sage-dark">
                 Lesezeit: 12 Minuten
@@ -76,7 +76,7 @@ export default function Grenzen() {
           <div className="max-w-3xl mx-auto">
             <ContentSection
               title="Warum Grenzen so wichtig sind"
-              icon={<Shield className="w-7 h-7 text-terracotta-mid" />}
+              icon={<Shield className="w-7 h-7 text-sage-mid" />}
               id="warum-grenzen"
               defaultOpen={true}
               preview="Grenzen helfen nicht deshalb, weil danach sofort Ruhe einkehrt, sondern weil Beziehungen ohne Klarheit oft instabiler und erschöpfender werden."
@@ -189,12 +189,12 @@ export default function Grenzen() {
 
             <ContentSection
               title="Wie Grenzen eher gut kommuniziert werden"
-              icon={<Heart className="w-7 h-7 text-terracotta" />}
+              icon={<Heart className="w-7 h-7 text-sage-dark" />}
               id="kommunizieren"
               preview="Hilfreiche Grenzen sind meist konkret, ruhig und wiederholbar. Sie erklären sich nicht endlos und werden nicht als moralischer Angriff formuliert."
             >
               <div className="space-y-4">
-                <Card className="bg-terracotta-light/10 border-terracotta">
+                <Card className="bg-sage-light/10 border-sage">
                   <CardContent className="p-5">
                     <p className="text-muted-foreground leading-relaxed">
                       Grenzen tragen eher, wenn sie
@@ -261,7 +261,7 @@ export default function Grenzen() {
 
             <ContentSection
               title="Häufige Fehler beim Grenzen setzen"
-              icon={<AlertTriangle className="w-7 h-7 text-terracotta-mid" />}
+              icon={<AlertTriangle className="w-7 h-7 text-sage-mid" />}
               id="fehler"
               preview="Grenzen werden oft im Affekt, zu gross, zu unklar oder aus Kränkung formuliert. Dann tragen sie selten lange."
             >
@@ -308,7 +308,7 @@ export default function Grenzen() {
               preview="Partner, Eltern und erwachsene Kinder geraten auf unterschiedliche Weise in Loyalitätsdruck. Das verändert auch, wie schwer Grenzen sich anfühlen."
             >
               <div className="space-y-4">
-                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
+                <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-2">
                       Als Partner/in
@@ -355,7 +355,7 @@ export default function Grenzen() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-terracotta-mid" />
+                <Download className="w-8 h-8 text-sage-mid" />
                 Materialien zum Thema Grenzen
               </h2>
               <p className="text-sm text-muted-foreground mb-6 flex items-center gap-2">
@@ -391,7 +391,7 @@ export default function Grenzen() {
                       }}
                       className={`whitespace-nowrap ${
                         activeFilter === cat.id
-                          ? "bg-terracotta-mid hover:bg-terracotta-dark text-white"
+                          ? "bg-sage-mid hover:bg-sage-dark text-white"
                           : ""
                       }`}
                     >

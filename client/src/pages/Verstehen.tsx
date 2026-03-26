@@ -173,7 +173,7 @@ export default function Verstehen() {
 
             <ContentSection
               title="Warum gerade nahe Beziehungen so schnell kippen können"
-              icon={<Users className="w-7 h-7 text-terracotta" />}
+              icon={<Users className="w-7 h-7 text-sage-dark" />}
               id="beziehungsdynamik"
               preview="Was für Aussenstehende klein wirkt, kann in engen Beziehungen als Zurückweisung, Kontrollverlust oder drohender Verlust erlebt werden."
             >
@@ -199,7 +199,7 @@ export default function Verstehen() {
                     </Card>
                   ))}
                 </div>
-                <Card className="bg-terracotta-wash border-terracotta-mid/20">
+                <Card className="bg-sage-wash border-sage-mid/20">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       Gerade deshalb erleben Angehörige oft etwas Paradoxes: Je
@@ -213,7 +213,7 @@ export default function Verstehen() {
 
             <ContentSection
               title="Scham, Wut und innere Überflutung"
-              icon={<Layers className="w-7 h-7 text-terracotta-mid" />}
+              icon={<Layers className="w-7 h-7 text-sage-mid" />}
               id="scham-wut"
               preview="Wut ist oft sichtbar. Darunter liegen nicht selten Scham, Angst, Kränkung, Leere oder der Versuch, unerträgliche Spannung loszuwerden."
             >
@@ -233,7 +233,7 @@ export default function Verstehen() {
                   innerlich ist es nicht selten hochverletzlich.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
+                  <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
                     <h3 className="font-semibold text-foreground mb-2">
                       Was sichtbar werden kann
                     </h3>
@@ -440,7 +440,7 @@ export default function Verstehen() {
 
             <ContentSection
               title="Verstehen hat Grenzen"
-              icon={<AlertCircle className="w-7 h-7 text-terracotta-mid" />}
+              icon={<AlertCircle className="w-7 h-7 text-sage-mid" />}
               id="grenzen-des-verstehens"
               preview="Verstehen ist wichtig. Es ersetzt aber weder Selbstschutz noch Grenzsetzung noch professionelle Hilfe."
             >
@@ -457,7 +457,7 @@ export default function Verstehen() {
                   Grenzen zu setzen, Distanz zu schaffen oder Hilfe von aussen
                   einzubeziehen.
                 </p>
-                <Card className="bg-terracotta-lighter/30 border-terracotta/50">
+                <Card className="bg-sage-lighter/30 border-sage/50">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       <strong>Merksatz für Angehörige:</strong> Verstehen hilft,

@@ -127,7 +127,7 @@ export default function Datenschutz() {
             {/* Cookies */}
             <ContentSection
               title="Cookies"
-              icon={<Cookie className="w-7 h-7 text-terracotta" />}
+              icon={<Cookie className="w-7 h-7 text-sage-dark" />}
               id="cookies"
               preview="Nur technisch notwendige Cookies – keine Tracking-Cookies, keine Werbung."
             >
@@ -183,7 +183,7 @@ export default function Datenschutz() {
             {/* Externe Links */}
             <ContentSection
               title="Externe Links"
-              icon={<ExternalLink className="w-7 h-7 text-terracotta-mid" />}
+              icon={<ExternalLink className="w-7 h-7 text-sage-mid" />}
               id="externe-links"
               preview="Für verlinkte externe Websites gelten deren eigene Datenschutzerklärungen."
             >
@@ -261,7 +261,7 @@ export default function Datenschutz() {
             {/* Änderungen */}
             <ContentSection
               title="Änderungen dieser Datenschutzerklärung"
-              icon={<FileText className="w-7 h-7 text-terracotta" />}
+              icon={<FileText className="w-7 h-7 text-sage-dark" />}
               id="aenderungen"
               preview="Anpassungen bei geänderten rechtlichen Anforderungen."
             >

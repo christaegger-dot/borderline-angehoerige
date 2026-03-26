@@ -120,7 +120,7 @@ export default function Feedback() {
             >
               <Card className="bg-sand border-sand-subtle">
                 <CardContent className="p-6 text-center">
-                  <Heart className="w-8 h-8 text-terracotta mx-auto mb-3" />
+                  <Heart className="w-8 h-8 text-sage-dark mx-auto mb-3" />
                   <p className="text-foreground leading-relaxed">
                     Denken Sie daran: Sie sind nicht allein. Viele Angehörige gehen einen ähnlichen Weg – 
                     und Ihr Engagement zeigt, dass Ihnen die Beziehung wichtig ist.

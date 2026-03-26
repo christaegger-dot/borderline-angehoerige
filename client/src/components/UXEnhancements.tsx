@@ -389,7 +389,7 @@ export function TableOfContents() {
                       type="button"
                       onClick={() => scrollToHeading(id)}
                       aria-label={`Zum Abschnitt: ${text}`}
-                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors focus-visible:ring-2 focus-visible:ring-terracotta/40 focus-visible:ring-offset-1 ${
+                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-offset-1 ${
                         level === 3 ? "pl-7" : ""
                       } ${activeId === id ? activeClass : inactiveClass}`}
                     >
@@ -424,7 +424,7 @@ export function TableOfContents() {
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
                     aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 focus-visible:ring-2 focus-visible:ring-terracotta/40 focus-visible:ring-offset-1 ${
+                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-offset-1 ${
                       level === 3 ? "pl-5" : ""
                     } ${activeId === id ? activeClass : inactiveClass}`}
                   >

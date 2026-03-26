@@ -38,7 +38,7 @@ const stufen: Stufe[] = [
     title: "Spiegeln",
     subtitle: "«Ich habe verstanden, was du meinst.»",
     icon: MessageSquare,
-    color: "var(--color-terracotta)",
+    color: "var(--color-sage-dark)",
     ziel: "Missverständnisse reduzieren, Tempo rausnehmen.",
     soGehts: ["In eigenen Worten zusammenfassen", "Ohne Bewertung, ohne Ironie"],
     beispielsaetze: ["«Du fühlst dich gerade sehr verletzt.»", "«Wenn ich dich richtig verstehe, hast du Angst, verlassen zu werden.»"],
@@ -68,7 +68,7 @@ const stufen: Stufe[] = [
     title: "Nachvollziehen",
     subtitle: "«Es macht Sinn, dass dich das trifft.»",
     icon: History,
-    color: "var(--color-terracotta-mid)",
+    color: "var(--color-sage-mid)",
     ziel: "Bedeutung geben, ohne zu bewerten.",
     soGehts: ["Stress, Vorgeschichte oder Überforderung mitdenken", "Sinn machen statt recht haben"],
     beispielsaetze: ["«Bei dem Stress heute ist nachvollziehbar, dass deine Nerven dünn sind.»", "«Wenn du dich schnell verlassen fühlst, kann Warten sehr belastend sein.»"],
@@ -83,7 +83,7 @@ const stufen: Stufe[] = [
     title: "Das Gültige anerkennen",
     subtitle: "«Diesen Teil kann ich gut nachvollziehen.»",
     icon: Users,
-    color: "var(--color-terracotta-dark)",
+    color: "var(--color-sage-dark)",
     ziel: "Den verständlichen Kern benennen, ohne alles zu billigen.",
     soGehts: ["Gefühl oder Bedürfnis anerkennen", "Verhalten und Grenze bei Bedarf getrennt ansprechen"],
     beispielsaetze: ["«Dass du dir Nähe wünschst, ist verständlich.»", "«Ich sehe deine Angst und bleibe trotzdem bei meinem Nein.»"],
@@ -98,7 +98,7 @@ const stufen: Stufe[] = [
     title: "Auf Augenhöhe bleiben",
     subtitle: "«Wir sind zwei gleichwertige Menschen.»",
     icon: Star,
-    color: "var(--color-terracotta-dark)",
+    color: "var(--color-sage-dark)",
     ziel: "Respektvoll bleiben, ohne zu belehren oder zu psychologisieren.",
     soGehts: ["Klar, ruhig und respektvoll sprechen", "Nicht analysieren oder herabsetzen"],
     beispielsaetze: ["«Ich nehme dich ernst. Und ich sage dir auch ehrlich, wie es bei mir ankommt.»", "«Wir suchen einen Weg, der für uns beide passt.»"],
@@ -158,9 +158,9 @@ export default function ValidierungsStufenleiter() {
 
                 <div>
                   <p className="text-xs font-medium text-muted-foreground mb-2">Typischer Stolperstein</p>
-                  <div className="rounded-lg border border-terracotta-mid/20 bg-terracotta-wash/30 p-3">
+                  <div className="rounded-lg border border-sand-border/40 bg-sand/50 p-3">
                     <p className="text-sm text-foreground leading-relaxed flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 text-terracotta-mid flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <AlertTriangle className="w-4 h-4 text-sand-warm flex-shrink-0 mt-0.5" aria-hidden="true" />
                       {stufe.typischerFehler}
                     </p>
                   </div>
@@ -181,7 +181,7 @@ export default function ValidierungsStufenleiter() {
               <div className="rounded-lg bg-muted/30 p-4 space-y-3">
                 <p className="text-xs font-medium text-muted-foreground">Kurzer Beispiel-Dialog</p>
                 <div className="flex items-start gap-2">
-                  <span className="text-xs font-medium text-terracotta-mid bg-terracotta-wash px-2 py-0.5 rounded flex-shrink-0">B</span>
+                  <span className="text-xs font-medium text-sand-warm bg-sand/50 px-2 py-0.5 rounded flex-shrink-0">B</span>
                   <p className="text-sm text-foreground italic">{stufe.dialog.betroffener}</p>
                 </div>
                 <div className="flex items-start gap-2">

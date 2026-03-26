@@ -173,8 +173,8 @@ const glossaryTerms: GlossaryTerm[] = [
 
 const categoryInfo = {
   therapie: { label: "Therapie & Behandlung", icon: Brain, color: "var(--color-slate-mid)" },
-  kommunikation: { label: "Kommunikation", icon: MessageCircle, color: "var(--color-terracotta)" },
-  symptome: { label: "Symptome & Muster", icon: AlertTriangle, color: "var(--color-terracotta)" },
+  kommunikation: { label: "Kommunikation", icon: MessageCircle, color: "var(--color-sage-dark)" },
+  symptome: { label: "Symptome & Muster", icon: AlertTriangle, color: "var(--color-sage-dark)" },
   selbsthilfe: { label: "Selbsthilfe & Angehörige", icon: Heart, color: "var(--color-sage-mid)" }
 };
 

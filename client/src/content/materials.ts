@@ -246,7 +246,7 @@ export const quickStarts = [
     id: "selbstfuersorge",
     title: "Ich bin selbst am Limit",
     text: "Wenn Erschöpfung, Schuld oder Daueranspannung dominieren.",
-    color: "var(--color-terracotta-mid)",
-    bg: "var(--color-terracotta-wash)",
+    color: "var(--color-sage-mid)",
+    bg: "var(--color-sage-wash)",
   },
 ];

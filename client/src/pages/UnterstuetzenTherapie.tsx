@@ -151,7 +151,7 @@ export default function UnterstuetzenTherapie() {
 
             <ContentSection
               title="Wie Sie den Therapieprozess unterstützen können"
-              icon={<Lightbulb className="w-7 h-7 text-terracotta" />}
+              icon={<Lightbulb className="w-7 h-7 text-sage-dark" />}
               id="unterstuetzen"
               preview="Hilfreich ist meist sanfte Unterstützung ohne Druck: Orientierung geben, Veränderungen wahrnehmen, eigene Erwartungen regulieren."
             >
@@ -174,7 +174,7 @@ export default function UnterstuetzenTherapie() {
 
             <ContentSection
               title="Rückschläge und Unterbrüche"
-              icon={<RefreshCw className="w-7 h-7 text-terracotta-mid" />}
+              icon={<RefreshCw className="w-7 h-7 text-sage-mid" />}
               id="rueckschlaege"
               preview="Therapie verläuft selten gradlinig. Abbrüche, Krisen oder Phasen von Widerstand bedeuten nicht automatisch, dass alles umsonst war."
             >
@@ -184,7 +184,7 @@ export default function UnterstuetzenTherapie() {
                   Fortschritt, erneute Krise, Rückzug, vielleicht ein Therapieabbruch und später ein
                   neuer Anlauf. Solche Unterbrüche sind belastend, aber nicht ungewöhnlich.
                 </p>
-                <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
+                <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
                   <CardContent className="p-5">
                     <p className="text-muted-foreground leading-relaxed">
                       Hilfreich ist dann meist weder Druck noch Resignation, sondern ein nüchterner
@@ -198,7 +198,7 @@ export default function UnterstuetzenTherapie() {
 
             <ContentSection
               title="Was Ihre Rolle ausdrücklich nicht ist"
-              icon={<Heart className="w-7 h-7 text-terracotta" />}
+              icon={<Heart className="w-7 h-7 text-sage-dark" />}
               id="nicht-ihre-rolle"
               preview="Gerade engagierte Angehörige geraten leicht in eine Nebenrolle als Coach, Therapeut oder Krisenmanager. Das ist verständlich, aber selten tragfähig."
             >
@@ -300,10 +300,10 @@ export default function UnterstuetzenTherapie() {
                 </Card>
               </div>
 
-              <Card className="mt-4 bg-terracotta-wash border-sand-border">
+              <Card className="mt-4 bg-sage-wash border-sand-border">
                 <CardContent className="p-4">
                   <h4 className="font-semibold text-foreground text-sm mb-3 flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-terracotta-mid" />
+                    <Phone className="w-4 h-4 text-sage-mid" />
                     Notfall-Nummern PUK Zürich (24/7)
                   </h4>
                   <div className="grid grid-cols-3 gap-3 text-center">

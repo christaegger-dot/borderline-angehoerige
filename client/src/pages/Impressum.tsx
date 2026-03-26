@@ -112,11 +112,11 @@ export default function Impressum() {
             {/* Hinweis + Zweck */}
             <ContentSection
               title="Zweck der Website"
-              icon={<Target className="w-7 h-7 text-terracotta" />}
+              icon={<Target className="w-7 h-7 text-sage-dark" />}
               id="zweck"
               preview="Evidenzbasierte Informationen, praktische Strategien und Ressourcen zur Selbstfürsorge."
             >
-              <Card className="border-terracotta/30 bg-terracotta-wash/30 mb-4">
+              <Card className="border-sage/30 bg-sage-wash/30 mb-4">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">Wichtiger Hinweis</h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -223,7 +223,7 @@ export default function Impressum() {
             {/* Urheberrecht */}
             <ContentSection
               title="Urheberrecht"
-              icon={<Copyright className="w-7 h-7 text-terracotta-mid" />}
+              icon={<Copyright className="w-7 h-7 text-sage-mid" />}
               id="urheberrecht"
               preview="Schweizerisches Urheberrecht – Materialien für persönlichen Gebrauch und Angehörigenberatung."
             >

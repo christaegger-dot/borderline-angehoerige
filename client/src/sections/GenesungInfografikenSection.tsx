@@ -47,7 +47,7 @@ export default function GenesungInfografikenSection() {
                   gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }, 100);
               }}
-              className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""}`}
+              className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-sage-mid hover:bg-sage-dark text-white" : ""}`}
             >
               <Icon className="w-4 h-4 mr-1.5" />
               {cat.label} ({count})

@@ -230,7 +230,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                               {result.section}
                             </span>
                           </div>
-                          <h4 className="font-medium text-foreground mt-1 group-hover:text-terracotta-mid transition-colors">
+                          <h4 className="font-medium text-foreground mt-1 group-hover:text-sage-mid transition-colors">
                             {result.title}
                           </h4>
                           <p className="text-sm text-muted-foreground line-clamp-1 mt-0.5">

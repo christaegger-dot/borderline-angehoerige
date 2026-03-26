@@ -53,7 +53,7 @@ export default function UnterstuetzenUebersicht() {
           <div className="max-w-3xl mx-auto">
             <ContentSection
               title="Unterstützung ist wichtig, aber nicht allmächtig"
-              icon={<Compass className="w-7 h-7 text-terracotta" />}
+              icon={<Compass className="w-7 h-7 text-sage-dark" />}
               id="unterstuetzung-ist-begrenzt"
               defaultOpen={true}
               preview="Sie können viel beitragen. Sie können aber weder Krisen vollständig verhindern noch Entwicklung für einen anderen Menschen herstellen."
@@ -71,7 +71,7 @@ export default function UnterstuetzenUebersicht() {
                   nicht dauerhaft die innere Regulation eines anderen Menschen
                   übernehmen. Gerade diese Grenze ist oft schwer auszuhalten.
                 </p>
-                <Card className="bg-terracotta-light/20 border-terracotta">
+                <Card className="bg-sage-light/20 border-sage">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       Hilfreiche Unterstützung ist deshalb nicht totale
@@ -117,10 +117,10 @@ export default function UnterstuetzenUebersicht() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-terracotta-mid">
+                <Card className="border-sage-mid">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <XCircle className="w-5 h-5 text-terracotta-mid" />
+                      <XCircle className="w-5 h-5 text-sage-mid" />
                       Was nicht Ihre Aufgabe ist
                     </h3>
                     <ul className="space-y-3">
@@ -135,7 +135,7 @@ export default function UnterstuetzenUebersicht() {
                           key={item}
                           className="flex items-start gap-2 text-muted-foreground"
                         >
-                          <span className="text-terracotta-mid">✗</span>
+                          <span className="text-sage-mid">✗</span>
                           {item}
                         </li>
                       ))}
@@ -147,7 +147,7 @@ export default function UnterstuetzenUebersicht() {
 
             <ContentSection
               title="Was Unterstützung so schwierig macht"
-              icon={<Heart className="w-7 h-7 text-terracotta-mid" />}
+              icon={<Heart className="w-7 h-7 text-sage-mid" />}
               id="ambivalenz"
               preview="Unterstützung scheitert nicht nur an fehlendem Wissen, sondern oft an Erschöpfung, Angst, Wut, Schuld und widersprüchlichen Erwartungen."
             >
@@ -190,12 +190,12 @@ export default function UnterstuetzenUebersicht() {
 
             <ContentSection
               title="Was in akuten Spannungszuständen zuerst zählt"
-              icon={<Lightbulb className="w-7 h-7 text-terracotta-mid" />}
+              icon={<Lightbulb className="w-7 h-7 text-sage-mid" />}
               id="alarm"
               preview="In angespannten Momenten helfen meist nicht Erklärungen oder Korrekturen zuerst, sondern Beruhigung, Orientierung, Validierung und klare Begrenzung."
             >
               <div className="space-y-4">
-                <Card className="bg-terracotta-wash/30 border-terracotta/50">
+                <Card className="bg-sage-wash/30 border-sage/50">
                   <CardContent className="p-5 sm:p-6">
                     <p className="text-foreground leading-relaxed">
                       Wenn Angst, Scham, Wut oder Verlassenheitsgefühl alles
@@ -357,7 +357,7 @@ export default function UnterstuetzenUebersicht() {
                       </ul>
                     </CardContent>
                   </Card>
-                  <Card className="border-l-4 border-l-terracotta-mid">
+                  <Card className="border-l-4 border-l-sage-mid">
                     <CardContent className="p-5">
                       <h3 className="font-semibold text-foreground mb-2">
                         Belastend
@@ -435,7 +435,7 @@ export default function UnterstuetzenUebersicht() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-terracotta-dark" />
+                <Download className="w-8 h-8 text-sage-dark" />
                 Materialien zum Thema
               </h2>
               <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
@@ -472,7 +472,7 @@ export default function UnterstuetzenUebersicht() {
                       }}
                       className={`whitespace-nowrap shrink-0 ${
                         activeFilter === cat.id
-                          ? "bg-terracotta-mid hover:bg-terracotta-dark text-white"
+                          ? "bg-sage-mid hover:bg-sage-dark text-white"
                           : ""
                       }`}
                     >

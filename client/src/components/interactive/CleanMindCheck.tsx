@@ -45,8 +45,8 @@ export default function CleanMindCheck() {
               <p className="text-sm font-semibold text-foreground mb-3">{paar.situation}</p>
 
               <div className="grid gap-3 md:grid-cols-2">
-                <div className="rounded-lg border border-terracotta-mid/20 bg-terracotta-wash/40 p-4">
-                  <p className="text-xs font-medium text-terracotta-dark mb-2">Weniger hilfreich</p>
+                <div className="rounded-lg border border-sand-border/40 bg-sand/50 p-4">
+                  <p className="text-xs font-medium text-sand-warm mb-2">Weniger hilfreich</p>
                   <p className="text-sm text-foreground leading-relaxed">{paar.wenigerHilfreich}</p>
                 </div>
 

@@ -62,23 +62,28 @@ export default function Home() {
         path="/"
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-sand/50 to-background">
-        <div className="container py-12 md:py-16 lg:py-20">
+      <section className="relative overflow-hidden bg-navy text-white">
+        {/* Geometrische Kreise (SA-Pattern) */}
+        <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-white/5" />
+        <div className="absolute -bottom-10 left-[30%] w-48 h-48 rounded-full bg-sage-dark/15" />
+
+        <div className="container relative z-10 py-12 md:py-16 lg:py-20">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-sand-muted text-foreground/70 text-sm font-medium mb-6 border border-border/50">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-sage-dark text-white text-xs font-semibold tracking-wider uppercase mb-5">
                 Für Angehörige von Menschen mit Borderline
               </span>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-foreground leading-tight mb-4">
-                Orientierung in belasteten Beziehungen
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-3">
+                Orientierung in belasteten{" "}
+                <span className="text-sage-light">Beziehungen</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
+              <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-2xl font-light">
                 Wenn Beziehungen von starker Anspannung, Eskalation, Rückzug,
                 Schuld oder Erschöpfung geprägt sind, hilft nicht noch mehr
                 Druck, sondern bessere Einordnung. Diese Website unterstützt
@@ -86,11 +91,11 @@ export default function Home() {
                 reagieren und sich selbst nicht zu verlieren.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <Link href="/verstehen">
                   <Button
                     size="lg"
-                    className="bg-terracotta hover:bg-terracotta-mid text-white w-full sm:w-auto"
+                    className="bg-sage-dark hover:bg-sage-mid text-white w-full sm:w-auto"
                   >
                     <BookOpen className="w-5 h-5 mr-2" />
                     Borderline besser verstehen
@@ -100,7 +105,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="w-full sm:w-auto"
+                    className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto"
                   >
                     <Heart className="w-5 h-5 mr-2" />
                     Was hilft in meiner Lage?
@@ -108,18 +113,16 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="mt-4">
-                <Link
-                  href="/soforthilfe"
-                  className="inline-flex items-center gap-2 text-alert hover:text-alert-dark font-medium transition-colors group"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>Akute Krise? Soforthilfe</span>
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    &rarr;
-                  </span>
-                </Link>
-              </div>
+              <Link
+                href="/soforthilfe"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-white font-medium transition-colors group text-sm"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Akute Krise? Soforthilfe</span>
+                <span className="group-hover:translate-x-1 transition-transform">
+                  &rarr;
+                </span>
+              </Link>
             </motion.div>
           </div>
         </div>

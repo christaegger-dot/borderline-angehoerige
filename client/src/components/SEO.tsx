@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 
 interface SEOProps {
   title?: string;
@@ -132,7 +132,7 @@ export function MedicalPageSchema({
   description: string;
   path: string;
 }) {
-  const siteUrl = useMemo(() => getSiteUrl(), []);
+  const siteUrl = getSiteUrl();
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",

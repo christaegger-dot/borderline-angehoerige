@@ -20,57 +20,7 @@ import {
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
 
-const grenzenSubcategories = [
-  { id: "alle", label: "Alle", icon: Filter },
-  { id: "erkennen", label: "Erkennen", icon: AlertTriangle },
-  { id: "kommunizieren", label: "Kommunizieren", icon: Heart },
-  { id: "handeln", label: "Handeln", icon: Shield },
-];
-
-const grenzenItems = [
-  {
-    title: "Die DEAR-Technik",
-    description: "4 Schritte für respektvolle Grenzsetzung",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yBSkvBJGSeNvxINq.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DDkqUiaNJwizEtPv.pdf",
-    category: "kommunizieren",
-  },
-  {
-    title: "Spiegeln statt Aufsaugen",
-    description: "Mitfühlen ohne Übernehmen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rbDvjxTUWJMXQCPj.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jJFieYXEiIxbrazO.pdf",
-    category: "kommunizieren",
-  },
-  {
-    title: "Die 4 Arten von Grenzen",
-    description: "Physisch, emotional, zeitlich, materiell",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/otBFiwevLwWQsinR.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/KiiZJfLHYOlNVTsn.pdf",
-    category: "erkennen",
-  },
-  {
-    title: "Grenzen erkennen",
-    description: "5 Warnsignale Ihres Körpers",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pPRcjWVKERfSWUPL.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FftUeWuOzmxjrUEi.pdf",
-    category: "erkennen",
-  },
-  {
-    title: "L.M.K. (Lebe Mit Konsequenzen)",
-    description: "Wenn Grenzen nicht respektiert werden",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izBLuzTFtMDeQYoc.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eyhngTnxXoekiWwJ.pdf",
-    category: "handeln",
-  },
-  {
-    title: "Spickzettel Grenzen",
-    description: "A4 mit den wichtigsten Sätzen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/avGqFKFuKFfFYANu.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/obwIZiRPiVPphIUX.pdf",
-    category: "handeln",
-  },
-];
+import { grenzenSubcategories, grenzenItems } from "@/content/grenzen";
 
 export default function Grenzen() {
   const [activeFilter, setActiveFilter] = useState("alle");
@@ -79,7 +29,7 @@ export default function Grenzen() {
   const filteredItems =
     activeFilter === "alle"
       ? grenzenItems
-      : grenzenItems.filter((i) => i.category === activeFilter);
+      : grenzenItems.filter(i => i.category === activeFilter);
 
   return (
     <Layout>
@@ -101,7 +51,9 @@ export default function Grenzen() {
               <div className="w-12 h-12 rounded-xl bg-terracotta-lighter flex items-center justify-center">
                 <Shield className="w-6 h-6 text-terracotta-mid" />
               </div>
-              <span className="text-sm font-medium text-terracotta-mid">Lesezeit: 12 Minuten</span>
+              <span className="text-sm font-medium text-terracotta-mid">
+                Lesezeit: 12 Minuten
+              </span>
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
@@ -109,10 +61,11 @@ export default function Grenzen() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine Voraussetzung. Sie schützen
-              Ihre Integrität, machen Beziehungen berechenbarer und verhindern, dass Unterstützung in
-              Selbstaufgabe kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau deshalb
-              brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
+              Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine
+              Voraussetzung. Sie schützen Ihre Integrität, machen Beziehungen
+              berechenbarer und verhindern, dass Unterstützung in Selbstaufgabe
+              kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau
+              deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
             </p>
           </motion.div>
         </div>
@@ -130,26 +83,32 @@ export default function Grenzen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  In belasteten Beziehungen entsteht leicht der Eindruck, Grenzen würden die Lage
-                  verschärfen. Kurzfristig kann das sogar so wirken. Langfristig machen fehlende
-                  Grenzen Beziehungen aber oft chaotischer, unklarer und krisenanfälliger.
+                  In belasteten Beziehungen entsteht leicht der Eindruck,
+                  Grenzen würden die Lage verschärfen. Kurzfristig kann das
+                  sogar so wirken. Langfristig machen fehlende Grenzen
+                  Beziehungen aber oft chaotischer, unklarer und
+                  krisenanfälliger.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Für Sie</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Für Sie
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Grenzen schützen vor Überlastung, Dauererreichbarkeit, Schuldspiralen und dem
-                        Verlust der eigenen Orientierung.
+                        Grenzen schützen vor Überlastung, Dauererreichbarkeit,
+                        Schuldspiralen und dem Verlust der eigenen Orientierung.
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Für die Beziehung</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Für die Beziehung
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Grenzen schaffen Berechenbarkeit. Sie signalisieren, was Kontakt trägt und was
-                        ihn beschädigt.
+                        Grenzen schaffen Berechenbarkeit. Sie signalisieren, was
+                        Kontakt trägt und was ihn beschädigt.
                       </p>
                     </CardContent>
                   </Card>
@@ -169,10 +128,12 @@ export default function Grenzen() {
                   "Sie fühlen sich dauernd zuständig, beobachtend oder auf Abruf.",
                   "Sie werden gereizt, hart oder ziehen sich innerlich zurück.",
                   "Sie merken, dass Hilfe nur noch aus Schuld oder Panik geschieht.",
-                ].map((item) => (
+                ].map(item => (
                   <Card key={item} className="border-border/50">
                     <CardContent className="p-5">
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
@@ -180,8 +141,8 @@ export default function Grenzen() {
               <Card className="mt-4 bg-sand-muted border-sand-mid">
                 <CardContent className="p-5">
                   <p className="text-foreground leading-relaxed">
-                    Grenzen beginnen oft nicht mit dem Satz an den anderen, sondern mit dem ernsten
-                    Wahrnehmen Ihrer eigenen Belastung.
+                    Grenzen beginnen oft nicht mit dem Satz an den anderen,
+                    sondern mit dem ernsten Wahrnehmen Ihrer eigenen Belastung.
                   </p>
                 </CardContent>
               </Card>
@@ -211,11 +172,15 @@ export default function Grenzen() {
                     title: "Materielle Grenzen",
                     text: "Wie weit gehen finanzielle Hilfe, Ausleihen oder praktische Übernahmen?",
                   },
-                ].map((item) => (
+                ].map(item => (
                   <Card key={item.title} className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.text}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
@@ -238,22 +203,29 @@ export default function Grenzen() {
                       <li>konkret statt abstrakt sind,</li>
                       <li>auf Ihr Handeln bezogen bleiben,</li>
                       <li>nicht mit Vorwürfen überladen werden,</li>
-                      <li>nicht bei jedem Gespräch neu verhandelt werden müssen.</li>
+                      <li>
+                        nicht bei jedem Gespräch neu verhandelt werden müssen.
+                      </li>
                     </ul>
                   </CardContent>
                 </Card>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Eher hilfreich</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Eher hilfreich
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        "Ich spreche weiter mit dir, aber nicht, wenn du mich anschreist."
+                        "Ich spreche weiter mit dir, aber nicht, wenn du mich
+                        anschreist."
                       </p>
                     </CardContent>
                   </Card>
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Eher problematisch</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Eher problematisch
+                      </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         "Du bist unmöglich. So rede ich nie wieder mit dir."
                       </p>
@@ -271,15 +243,16 @@ export default function Grenzen() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Grenzen wirken selten, wenn sie nur angekündigt, aber nicht umgesetzt werden.
-                  Genau hier geraten viele Angehörige in Loyalitätskonflikte: Sie wollen klar sein,
-                  fürchten aber Eskalation, Ablehnung oder Schuld.
+                  Grenzen wirken selten, wenn sie nur angekündigt, aber nicht
+                  umgesetzt werden. Genau hier geraten viele Angehörige in
+                  Loyalitätskonflikte: Sie wollen klar sein, fürchten aber
+                  Eskalation, Ablehnung oder Schuld.
                 </p>
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Konsequenz heisst nicht Härte. Es heisst, dass Ihr Handeln zu dem passt, was
-                      Sie angekündigt haben.
+                      Konsequenz heisst nicht Härte. Es heisst, dass Ihr Handeln
+                      zu dem passt, was Sie angekündigt haben.
                     </p>
                   </CardContent>
                 </Card>
@@ -294,12 +267,27 @@ export default function Grenzen() {
             >
               <div className="space-y-3">
                 {[
-                  { wrong: "Grenzen im Affekt setzen", right: "besser in ruhigen Momenten vorbereiten" },
-                  { wrong: "zu viele Grenzen auf einmal", right: "wenige zentrale Grenzen priorisieren" },
-                  { wrong: "Grenzen als Strafe formulieren", right: "Grenzen als Selbstschutz erklären" },
-                  { wrong: "Grenzen nicht durchhalten", right: "nur ankündigen, was Sie tragen können" },
-                  { wrong: "bei Schuld sofort zurückrudern", right: "Schuldgefühl nicht automatisch als Fehler lesen" },
-                ].map((item) => (
+                  {
+                    wrong: "Grenzen im Affekt setzen",
+                    right: "besser in ruhigen Momenten vorbereiten",
+                  },
+                  {
+                    wrong: "zu viele Grenzen auf einmal",
+                    right: "wenige zentrale Grenzen priorisieren",
+                  },
+                  {
+                    wrong: "Grenzen als Strafe formulieren",
+                    right: "Grenzen als Selbstschutz erklären",
+                  },
+                  {
+                    wrong: "Grenzen nicht durchhalten",
+                    right: "nur ankündigen, was Sie tragen können",
+                  },
+                  {
+                    wrong: "bei Schuld sofort zurückrudern",
+                    right: "Schuldgefühl nicht automatisch als Fehler lesen",
+                  },
+                ].map(item => (
                   <Card key={item.wrong} className="border-border/50">
                     <CardContent className="p-4">
                       <p className="text-sm text-muted-foreground">
@@ -322,31 +310,38 @@ export default function Grenzen() {
               <div className="space-y-4">
                 <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Als Partner/in</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Als Partner/in
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      In Partnerschaften fühlen sich Grenzen oft schnell wie Beziehungsgefahr an.
-                      Gerade deshalb sind sie wichtig: Sie unterscheiden zwischen Nähe und
-                      Verschmelzung, Mitgefühl und Selbstaufgabe.
+                      In Partnerschaften fühlen sich Grenzen oft schnell wie
+                      Beziehungsgefahr an. Gerade deshalb sind sie wichtig: Sie
+                      unterscheiden zwischen Nähe und Verschmelzung, Mitgefühl
+                      und Selbstaufgabe.
                     </p>
                   </CardContent>
                 </Card>
                 <Card className="border-l-4 border-l-slate-mid bg-slate-pale">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Als Elternteil</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Als Elternteil
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Eltern erleben Grenzen oft als Widerspruch zu Fürsorge. Bei erwachsenen Kindern
-                      ist Begrenzung aber häufig Teil verantwortlicher Elternschaft, nicht ihr
-                      Gegenstück.
+                      Eltern erleben Grenzen oft als Widerspruch zu Fürsorge.
+                      Bei erwachsenen Kindern ist Begrenzung aber häufig Teil
+                      verantwortlicher Elternschaft, nicht ihr Gegenstück.
                     </p>
                   </CardContent>
                 </Card>
                 <Card className="border-l-4 border-l-sage-mid bg-sage-pale">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Als erwachsenes Kind
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Wer seinem Elternteil Grenzen setzt, erlebt oft besonders starke Schuld. Ihre
-                      emotionale Gesundheit ist dennoch nicht nachrangig. Sie dürfen Ihr eigenes Leben
-                      schützen.
+                      Wer seinem Elternteil Grenzen setzt, erlebt oft besonders
+                      starke Schuld. Ihre emotionale Gesundheit ist dennoch
+                      nicht nachrangig. Sie dürfen Ihr eigenes Leben schützen.
                     </p>
                   </CardContent>
                 </Card>
@@ -358,7 +353,9 @@ export default function Grenzen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12 wave-divider-top"
-              style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
+              style={
+                { "--wave-color": "var(--background)" } as React.CSSProperties
+              }
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-terracotta-mid" />
@@ -367,18 +364,20 @@ export default function Grenzen() {
               <p className="text-sm text-muted-foreground mb-6 flex items-center gap-2">
                 <Eye className="w-4 h-4 flex-shrink-0" />
                 <span>
-                  <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen»
-                  öffnet die A4-Druckversion im neuen Tab.
+                  <strong className="text-foreground">
+                    Vorschau = Web-Bild.
+                  </strong>{" "}
+                  «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
                 </span>
               </p>
 
               <div className="flex flex-wrap gap-2 pb-3 mb-6 -mx-1 px-1">
-                {grenzenSubcategories.map((cat) => {
+                {grenzenSubcategories.map(cat => {
                   const Icon = cat.icon;
                   const count =
                     cat.id === "alle"
                       ? grenzenItems.length
-                      : grenzenItems.filter((i) => i.category === cat.id).length;
+                      : grenzenItems.filter(i => i.category === cat.id).length;
                   return (
                     <Button
                       key={cat.id}
@@ -387,27 +386,39 @@ export default function Grenzen() {
                       onClick={() => {
                         setActiveFilter(cat.id);
                         setTimeout(() => {
-                          gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          gridRef.current?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
                         }, 50);
                       }}
                       className={`whitespace-nowrap ${
-                        activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""
+                        activeFilter === cat.id
+                          ? "bg-terracotta-mid hover:bg-terracotta-dark text-white"
+                          : ""
                       }`}
                     >
                       <Icon className="w-4 h-4 mr-1.5" />
                       {cat.label}
-                      <span className="ml-1.5 text-xs opacity-90">({count})</span>
+                      <span className="ml-1.5 text-xs opacity-90">
+                        ({count})
+                      </span>
                     </Button>
                   );
                 })}
               </div>
 
-              <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div
+                ref={gridRef}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              >
                 {filteredItems.map((item, index) => (
                   <Card
                     key={item.title}
                     className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                      filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""
+                      filteredItems.length > 1 && index === 0
+                        ? "sm:col-span-2"
+                        : ""
                     }`}
                   >
                     <div className="relative aspect-[3/4] bg-muted overflow-hidden">
@@ -422,7 +433,9 @@ export default function Grenzen() {
                       />
                     </div>
                     <CardContent className="p-3">
-                      <h3 className="font-medium text-sm text-foreground mb-2">{item.title}</h3>
+                      <h3 className="font-medium text-sm text-foreground mb-2">
+                        {item.title}
+                      </h3>
                       <a
                         href={item.pdfUrl}
                         target="_blank"
@@ -453,15 +466,20 @@ export default function Grenzen() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12 wave-divider-top"
-              style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
+              style={
+                { "--wave-color": "var(--background)" } as React.CSSProperties
+              }
             >
               <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-3">Denken Sie daran</h3>
+                  <h3 className="font-semibold text-foreground mb-3">
+                    Denken Sie daran
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Grenzen fühlen sich anfangs oft unangenehm an. Das bedeutet nicht automatisch,
-                    dass sie falsch sind. In belasteten Beziehungen braucht gute Begrenzung meist
-                    Wiederholung, innere Festigkeit und die Erlaubnis, auch Schuldgefühle zu
+                    Grenzen fühlen sich anfangs oft unangenehm an. Das bedeutet
+                    nicht automatisch, dass sie falsch sind. In belasteten
+                    Beziehungen braucht gute Begrenzung meist Wiederholung,
+                    innere Festigkeit und die Erlaubnis, auch Schuldgefühle zu
                     überstehen.
                   </p>
                 </CardContent>

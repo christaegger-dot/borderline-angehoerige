@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollToTopButton, Breadcrumbs } from "@/components/UXEnhancements";
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
+import { getMobileFloatingMode } from "@/domain/floating-ui";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
+  const floatingMode = getMobileFloatingMode(location);
 
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
@@ -187,10 +189,9 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </footer>
 
-      {/* Fixed Emergency Button (Mobile) – Pill mit Label */}
-      {/* Position: bottom-20 damit der ScrollToTop-Button (bottom-4) nicht überlappt */}
+      {/* Mobile Soforthilfe-FAB: zentral über floatingMode priorisiert (crisis) */}
       {/* Auf /soforthilfe selbst wird der Button ausgeblendet */}
-      {location !== "/soforthilfe" && (
+      {floatingMode === "crisis" && location !== "/soforthilfe" && (
         <Link
           href="/soforthilfe"
           className="sm:hidden fixed z-50"

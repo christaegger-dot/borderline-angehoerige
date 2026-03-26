@@ -22,51 +22,7 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
 
-const kommSubcategories = [
-  { id: "alle", label: "Alle", icon: Filter },
-  { id: "techniken", label: "Techniken", icon: Heart },
-  { id: "konflikte", label: "Konflikte", icon: ShieldAlert },
-  { id: "praxis", label: "Praxis", icon: MessageCircle },
-];
-
-const kommItems = [
-  {
-    title: "Wenn Gespräche kippen: 3 Schritte",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kWTjVSZAwAXAymgw.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eEpcTcWSbYQpNzJv.pdf",
-    category: "techniken",
-  },
-  {
-    title: "Grenzen setzen, ohne zu eskalieren",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QrgVLpdeorAWgKvg.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YyBYayMoMIGwTZtM.pdf",
-    category: "konflikte",
-  },
-  {
-    title: "Pause statt Streit",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VCooXJsQnRmSZGul.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fGgpuKMuDfzJYgrc.pdf",
-    category: "konflikte",
-  },
-  {
-    title: "Zuhören ohne Zustimmen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eeZIHGmfprWnoPPf.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toeDsBefZFNbxXYc.pdf",
-    category: "techniken",
-  },
-  {
-    title: "Beispiel-Dialog",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
-    category: "praxis",
-  },
-  {
-    title: "Spickzettel Krisenkommunikation (A4)",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tgVHTaXVryVEuEss.webp",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YvXkEbRmwIcCFtsj.pdf",
-    category: "praxis",
-  },
-];
+import { kommSubcategories, kommItems } from "@/content/kommunizieren";
 
 export default function Kommunizieren() {
   const [activeFilter, setActiveFilter] = useState("alle");
@@ -75,7 +31,7 @@ export default function Kommunizieren() {
   const filteredItems =
     activeFilter === "alle"
       ? kommItems
-      : kommItems.filter((i) => i.category === activeFilter);
+      : kommItems.filter(i => i.category === activeFilter);
 
   return (
     <Layout>
@@ -98,7 +54,9 @@ export default function Kommunizieren() {
               <div className="w-12 h-12 rounded-xl bg-slate-light flex items-center justify-center">
                 <MessageCircle className="w-6 h-6 text-slate-blue" />
               </div>
-              <span className="text-sm font-medium text-slate-blue">Lesezeit: 14 Minuten</span>
+              <span className="text-sm font-medium text-slate-blue">
+                Lesezeit: 14 Minuten
+              </span>
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
@@ -106,10 +64,11 @@ export default function Kommunizieren() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Kommunikation löst keine Grunddynamik. Sie kann aber Eskalation bremsen,
-              Missverständnisse begrenzen und Ihre eigene Position klarer machen. Gerade in
-              belasteten Beziehungen ist deshalb nicht nur wichtig, was Sie sagen, sondern wann, in
-              welchem Ton und mit welcher inneren Haltung.
+              Kommunikation löst keine Grunddynamik. Sie kann aber Eskalation
+              bremsen, Missverständnisse begrenzen und Ihre eigene Position
+              klarer machen. Gerade in belasteten Beziehungen ist deshalb nicht
+              nur wichtig, was Sie sagen, sondern wann, in welchem Ton und mit
+              welcher inneren Haltung.
             </p>
           </motion.div>
         </div>
@@ -127,15 +86,17 @@ export default function Kommunizieren() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  In belasteten Beziehungen kippt Kommunikation oft schnell in Verteidigung,
-                  Beschuldigung, Rückzug oder Übererklärung. Dann ist die Frage nicht nur, welcher
-                  Satz "richtig" wäre, sondern ob überhaupt schon ein Moment für Gespräch da ist.
+                  In belasteten Beziehungen kippt Kommunikation oft schnell in
+                  Verteidigung, Beschuldigung, Rückzug oder Übererklärung. Dann
+                  ist die Frage nicht nur, welcher Satz "richtig" wäre, sondern
+                  ob überhaupt schon ein Moment für Gespräch da ist.
                 </p>
                 <Card className="bg-slate-wash border-slate-mid/20">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Hilfreiche Kommunikation ist meist kürzer, langsamer und klarer. Sie versucht
-                      nicht sofort zu überzeugen, sondern zuerst Beziehungsspannung etwas zu senken.
+                      Hilfreiche Kommunikation ist meist kürzer, langsamer und
+                      klarer. Sie versucht nicht sofort zu überzeugen, sondern
+                      zuerst Beziehungsspannung etwas zu senken.
                     </p>
                   </CardContent>
                 </Card>
@@ -152,14 +113,17 @@ export default function Kommunizieren() {
                 <Card className="bg-terracotta-light/10 border-terracotta">
                   <CardContent className="p-6">
                     <p className="text-foreground leading-relaxed text-lg mb-3">
-                      <strong>Validierung</strong> bedeutet, dass Sie das Erleben Ihres Gegenübers
-                      als nachvollziehbar behandeln, ohne jeden Vorwurf, jede Interpretation oder
-                      jedes Verhalten zu bestätigen.
+                      <strong>Validierung</strong> bedeutet, dass Sie das
+                      Erleben Ihres Gegenübers als nachvollziehbar behandeln,
+                      ohne jeden Vorwurf, jede Interpretation oder jedes
+                      Verhalten zu bestätigen.
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
-                      In Beziehungen mit Borderline ist das oft deshalb so wichtig, weil Nichtgesehenwerden,
-                      Kränkung oder Unklarheit rasch zusätzlichen Druck erzeugen. Validierung kann
-                      diesen Druck etwas senken und den Boden für spätere Klärung bereiten.
+                      In Beziehungen mit Borderline ist das oft deshalb so
+                      wichtig, weil Nichtgesehenwerden, Kränkung oder Unklarheit
+                      rasch zusätzlichen Druck erzeugen. Validierung kann diesen
+                      Druck etwas senken und den Boden für spätere Klärung
+                      bereiten.
                     </p>
                   </CardContent>
                 </Card>
@@ -169,8 +133,9 @@ export default function Kommunizieren() {
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-5">
                     <p className="text-foreground font-medium text-sm">
-                      Ein hilfreicher innerer Satz für Angehörige: Ich muss nicht recht bekommen, um
-                      zuerst zu zeigen, dass ich den Schmerz wahrnehme.
+                      Ein hilfreicher innerer Satz für Angehörige: Ich muss
+                      nicht recht bekommen, um zuerst zu zeigen, dass ich den
+                      Schmerz wahrnehme.
                     </p>
                   </CardContent>
                 </Card>
@@ -186,7 +151,9 @@ export default function Kommunizieren() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Eher jetzt</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Eher jetzt
+                    </h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>kurz spiegeln, was Sie wahrnehmen</li>
                       <li>Ton und Tempo beruhigen</li>
@@ -197,7 +164,9 @@ export default function Kommunizieren() {
                 </Card>
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Eher später</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Eher später
+                    </h3>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>Fakten prüfen und Missverständnisse sortieren</li>
                       <li>Konsequenzen besprechen</li>
@@ -234,22 +203,33 @@ export default function Kommunizieren() {
                       title: "Grenze und Pause kombinieren",
                       text: "Sie können Kontakt halten und gleichzeitig sagen, dass Beschimpfungen oder Druck nicht gehen.",
                     },
-                  ].map((item) => (
+                  ].map(item => (
                     <Card key={item.title} className="border-border/50">
                       <CardContent className="p-5">
-                        <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                        <h3 className="font-semibold text-foreground mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.text}
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
                 </div>
                 <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash/30">
                   <CardContent className="p-5">
-                    <h4 className="font-semibold text-foreground mb-3">Ein möglicher Ablauf</h4>
+                    <h4 className="font-semibold text-foreground mb-3">
+                      Ein möglicher Ablauf
+                    </h4>
                     <ol className="space-y-2 text-sm text-foreground">
                       <li>1. "Ich sehe, dass es gerade sehr viel ist."</li>
-                      <li>2. "Ich möchte zuhören, aber nicht in diesem Ton."</li>
-                      <li>3. "Lass uns 10 Minuten Pause machen und dann weitersehen."</li>
+                      <li>
+                        2. "Ich möchte zuhören, aber nicht in diesem Ton."
+                      </li>
+                      <li>
+                        3. "Lass uns 10 Minuten Pause machen und dann
+                        weitersehen."
+                      </li>
                     </ol>
                   </CardContent>
                 </Card>
@@ -265,37 +245,49 @@ export default function Kommunizieren() {
               <div className="space-y-4">
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Vorwürfe</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Vorwürfe
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Reagieren Sie eher auf das Gefühl dahinter als auf die ganze Anklage. Sie
-                      müssen nicht jede Verzerrung korrigieren, bevor Sie Beziehung herstellen.
+                      Reagieren Sie eher auf das Gefühl dahinter als auf die
+                      ganze Anklage. Sie müssen nicht jede Verzerrung
+                      korrigieren, bevor Sie Beziehung herstellen.
                     </p>
                   </CardContent>
                 </Card>
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Rückzug und Schweigen</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Rückzug und Schweigen
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Raum geben kann hilfreich sein. Raum geben ist aber etwas anderes als
-                      strafendes Schweigen oder völliges Verschwinden aus Kontakt.
+                      Raum geben kann hilfreich sein. Raum geben ist aber etwas
+                      anderes als strafendes Schweigen oder völliges
+                      Verschwinden aus Kontakt.
                     </p>
                   </CardContent>
                 </Card>
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Schwarz-Weiss-Sätze</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Schwarz-Weiss-Sätze
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Es hilft oft, Gefühle anzuerkennen und gleichzeitig bei Ihrer komplexeren
-                      Wirklichkeit zu bleiben: Beziehung und Konflikt können gleichzeitig wahr sein.
+                      Es hilft oft, Gefühle anzuerkennen und gleichzeitig bei
+                      Ihrer komplexeren Wirklichkeit zu bleiben: Beziehung und
+                      Konflikt können gleichzeitig wahr sein.
                     </p>
                   </CardContent>
                 </Card>
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Nach einem Streit</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Nach einem Streit
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Ein Wiedereinstieg gelingt meist besser über Ruhe, begrenzte Offenheit und
-                      Verantwortung für den eigenen Anteil als über Sieger- oder Schuldsuche.
+                      Ein Wiedereinstieg gelingt meist besser über Ruhe,
+                      begrenzte Offenheit und Verantwortung für den eigenen
+                      Anteil als über Sieger- oder Schuldsuche.
                     </p>
                   </CardContent>
                 </Card>
@@ -311,33 +303,42 @@ export default function Kommunizieren() {
               <div className="space-y-4">
                 <Card className="border-l-4 border-l-terracotta-mid bg-terracotta-wash">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Als Partner/in</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Als Partner/in
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      In Partnerschaften ist die Intensität oft am höchsten. Nähe, Eifersucht,
-                      Angst vor Verlust und wechselseitige Kränkung mischen sich schnell. Gerade
-                      deshalb brauchen Gespräche oft mehr Klarheit und weniger Verschmelzung.
+                      In Partnerschaften ist die Intensität oft am höchsten.
+                      Nähe, Eifersucht, Angst vor Verlust und wechselseitige
+                      Kränkung mischen sich schnell. Gerade deshalb brauchen
+                      Gespräche oft mehr Klarheit und weniger Verschmelzung.
                     </p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-l-4 border-l-slate-mid bg-slate-pale">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Als Elternteil</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Als Elternteil
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Alte Eltern-Kind-Muster färben viele Gespräche mit. Es kann helfen, das
-                      erwachsene Gegenüber nicht nur als Kind von früher zu adressieren, sondern als
-                      eigenständige Person mit eigener Verantwortung.
+                      Alte Eltern-Kind-Muster färben viele Gespräche mit. Es
+                      kann helfen, das erwachsene Gegenüber nicht nur als Kind
+                      von früher zu adressieren, sondern als eigenständige
+                      Person mit eigener Verantwortung.
                     </p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-l-4 border-l-sage-mid bg-sage-pale">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">Als erwachsenes Kind</h3>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      Als erwachsenes Kind
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Wer als erwachsenes Kind kommuniziert, gerät oft schnell in Loyalitätsdruck.
-                      Gerade dann ist wichtig: Ihre eigene Wahrnehmung und Ihre Begrenzung sind nicht
-                      weniger legitim als die Not Ihres Elternteils.
+                      Wer als erwachsenes Kind kommuniziert, gerät oft schnell
+                      in Loyalitätsdruck. Gerade dann ist wichtig: Ihre eigene
+                      Wahrnehmung und Ihre Begrenzung sind nicht weniger legitim
+                      als die Not Ihres Elternteils.
                     </p>
                   </CardContent>
                 </Card>
@@ -349,7 +350,9 @@ export default function Kommunizieren() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-12 wave-divider-top"
-              style={{ "--wave-color": "var(--background)" } as React.CSSProperties}
+              style={
+                { "--wave-color": "var(--background)" } as React.CSSProperties
+              }
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
                 <Download className="w-8 h-8 text-slate-blue" />
@@ -358,18 +361,20 @@ export default function Kommunizieren() {
               <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
                 <Eye className="w-4 h-4 flex-shrink-0" />
                 <span>
-                  <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen»
-                  öffnet die A4-Druckversion im neuen Tab.
+                  <strong className="text-foreground">
+                    Vorschau = Web-Bild.
+                  </strong>{" "}
+                  «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
                 </span>
               </p>
 
               <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-1 px-1">
-                {kommSubcategories.map((cat) => {
+                {kommSubcategories.map(cat => {
                   const Icon = cat.icon;
                   const count =
                     cat.id === "alle"
                       ? kommItems.length
-                      : kommItems.filter((i) => i.category === cat.id).length;
+                      : kommItems.filter(i => i.category === cat.id).length;
                   return (
                     <Button
                       key={cat.id}
@@ -378,27 +383,39 @@ export default function Kommunizieren() {
                       onClick={() => {
                         setActiveFilter(cat.id);
                         setTimeout(() => {
-                          gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                          gridRef.current?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
                         }, 50);
                       }}
                       className={`whitespace-nowrap shrink-0 ${
-                        activeFilter === cat.id ? "bg-terracotta-mid hover:bg-terracotta-dark text-white" : ""
+                        activeFilter === cat.id
+                          ? "bg-terracotta-mid hover:bg-terracotta-dark text-white"
+                          : ""
                       }`}
                     >
                       <Icon className="w-4 h-4 mr-1.5" />
                       {cat.label}
-                      <span className="ml-1.5 text-xs opacity-90">({count})</span>
+                      <span className="ml-1.5 text-xs opacity-90">
+                        ({count})
+                      </span>
                     </Button>
                   );
                 })}
               </div>
 
-              <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div
+                ref={gridRef}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
+              >
                 {filteredItems.map((item, index) => (
                   <Card
                     key={item.title}
                     className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                      filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""
+                      filteredItems.length > 1 && index === 0
+                        ? "sm:col-span-2"
+                        : ""
                     }`}
                   >
                     <div className="aspect-[4/3] bg-muted">
@@ -413,7 +430,9 @@ export default function Kommunizieren() {
                       />
                     </div>
                     <CardContent className="p-4">
-                      <h3 className="font-medium text-foreground text-sm mb-2">{item.title}</h3>
+                      <h3 className="font-medium text-foreground text-sm mb-2">
+                        {item.title}
+                      </h3>
                       <a
                         href={item.pdfUrl}
                         target="_blank"

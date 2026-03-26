@@ -64,7 +64,7 @@ export default function Home() {
       <WebsiteSchema />
       <MedicalPageSchema
         title="Borderline: Orientierung für Angehörige"
-        description="Psychoedukative Unterstützung für Angehörige von Menschen mit Borderline-Persönlichkeitsstörung."
+        description="Psychoedukative Unterstützung für Angehörige von Menschen mit Borderline-Muster."
         path="/"
       />
 

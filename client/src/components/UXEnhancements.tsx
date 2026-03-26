@@ -10,19 +10,14 @@ import {
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
+import { getMobileFloatingMode } from "@/domain/floating-ui";
 
 // Zurück-nach-oben-Button
 export function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
   const [location] = useLocation();
-  const hideOnMobileRoutes = [
-    "/verstehen",
-    "/selbstfuersorge",
-    "/unterstuetzen/",
-  ];
-  const hideOnMobile = hideOnMobileRoutes.some(route =>
-    location.startsWith(route)
-  );
+  const floatingMode = getMobileFloatingMode(location);
+  const hideOnMobile = floatingMode !== "default";
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -170,6 +165,8 @@ export function TableOfContents() {
   const [activeId, setActiveId] = useState<string>("");
   const [isOpen, setIsOpen] = useState(false);
   const [showFloatingButton, setShowFloatingButton] = useState(false);
+  const [location] = useLocation();
+  const floatingMode = getMobileFloatingMode(location);
   // Scroll-basierte aktive Markierung (kein IntersectionObserver nötig)
   const activeNavRef = useRef<HTMLButtonElement | null>(null);
 
@@ -345,7 +342,7 @@ export function TableOfContents() {
   return (
     <>
       {/* ─── Mobile: Floating TOC Button ─── */}
-      {showFloatingButton && (
+      {floatingMode === "content" && showFloatingButton && (
         <motion.button
           onClick={() => setIsOpen(true)}
           className="min-[1400px]:hidden fixed right-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"

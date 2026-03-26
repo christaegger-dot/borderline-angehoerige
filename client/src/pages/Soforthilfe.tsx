@@ -205,6 +205,9 @@ export default function Notfall() {
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-5">
               Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz – wenn sofortiges Handeln erforderlich ist.
             </p>
+            <p className="text-sm text-muted-foreground mb-5">
+              Regionaler Geltungsbereich: Schweiz (mit Schwerpunkt Kanton Zürich).
+            </p>
 
             <div className="p-4 rounded-xl bg-sos-amber-wash border border-sos-amber-border">
               <p className="text-sm text-sos-amber-dark leading-snug">
@@ -270,7 +273,7 @@ export default function Notfall() {
               {/* Merksatz */}
               <div className="px-5 py-3 sm:px-6 bg-sos-rot/20 border-t border-white/10">
                 <p className="text-white text-xs sm:text-sm leading-snug">
-                  <strong>Merke:</strong> Bei akuter Selbst- oder Fremdgefährdung zuerst <strong>144 / 117 / 112</strong> wählen – auch wenn die betroffene Person nicht einverstanden ist. Im Zweifel sofort medizinische oder psychiatrische Fachstellen einbeziehen.
+                  <strong>Merke:</strong> Bei akuter Selbst- oder Fremdgefährdung zuerst <strong>144 / 117 / 112</strong> wählen. Wenn Sie unsicher sind, lassen Sie sich dort oder durch eine psychiatrische Fachstelle sofort zum weiteren Vorgehen anleiten.
                 </p>
               </div>
             </motion.div>

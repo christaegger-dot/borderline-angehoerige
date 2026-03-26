@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Users, ExternalLink, Phone, Mail, MapPin, Heart, Globe, Building2, ArrowRight, Calendar, Clock } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { kontaktById, emailById, urlById } from "@/data/kontakte";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 
@@ -13,7 +13,7 @@ const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
 const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
 const pukUrl = urlById("URL_PUK")!;
 const proMente = kontaktById("INFO_PROMENTE")!;
-const standByYouTel = kontaktById("INFO_SELBSTHILFE_CH")!;
+const standByYouTel = kontaktById("INFO_STANDBYYOU")!;
 const vaskZhTel = kontaktById("INFO_VASK_ZH")!;
 const vaskZhEmail = emailById("EMAIL_VASK_ZH")!;
 const vaskZhUrl = urlById("URL_VASK_ZH")!;
@@ -22,9 +22,17 @@ const standByYouUrl = urlById("URL_STANDBYYOU")!;
 const selbsthilfeChUrl = urlById("URL_SELBSTHILFE_CH")!;
 
 export default function Selbsthilfegruppen() {
+  const [currentPath] = useLocation();
+  const canonicalPath = currentPath === "/selbsthilfegruppen" ? "/beratung" : currentPath;
+
   return (
     <Layout>
-      <SEO title="Beratung & Netzwerke" description="Professionelle Beratung, Selbsthilfegruppen und Netzwerke für Angehörige von Menschen mit Borderline in der Schweiz." path="/beratung" />
+      <SEO
+        title="Beratung & Netzwerke"
+        description="Professionelle Beratung, Selbsthilfegruppen und Netzwerke für Angehörige von Menschen mit Borderline in der Schweiz."
+        path={currentPath}
+        canonicalPath={canonicalPath}
+      />
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-sage-lighter/50 to-background wave-divider">
         <div className="container">

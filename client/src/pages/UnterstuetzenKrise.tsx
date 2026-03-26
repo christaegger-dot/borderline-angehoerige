@@ -16,7 +16,7 @@ export default function UnterstuetzenKrise() {
     <Layout>
       <SEO title="Krisenbegleitung" description="Wie Sie in akuten Krisen richtig reagieren und Hilfe leisten können." path="/unterstuetzen/krise" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}

@@ -17,7 +17,7 @@ export default function Impressum() {
     <Layout>
       <SEO title="Impressum" description="Impressum und rechtliche Informationen." path="/impressum" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}

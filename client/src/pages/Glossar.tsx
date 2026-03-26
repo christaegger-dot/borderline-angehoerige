@@ -208,7 +208,7 @@ export default function Glossar() {
     <Layout>
       <SEO title="Glossar" description="Fachbegriffe rund um Borderline einfach erklärt." path="/glossar" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}

@@ -11,7 +11,7 @@ export default function UeberUns() {
     <Layout>
       <SEO title="Über uns" description="Über das Projekt Borderline · Hilfe für Angehörige." path="/ueber-uns" />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash to-background">
+      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}

@@ -37,7 +37,19 @@ export default function ContentSection({
   // Ref für isOpen, damit der Event-Listener nicht bei jedem Toggle
   // entfernt und neu registriert wird (kein Event-Verlust möglich)
   const isOpenRef = useRef(isOpen);
-  isOpenRef.current = isOpen;
+  useEffect(() => {
+    isOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  const scrollToSection = () => {
+    if (!sectionRef.current) return;
+    const header = document.querySelector("header");
+    const headerHeight = header?.getBoundingClientRect().height || 80;
+    const offset = headerHeight + 20;
+    const top =
+      sectionRef.current.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
 
   // Auf Custom Event "open-section" lauschen
   useEffect(() => {
@@ -71,16 +83,6 @@ export default function ContentSection({
     }
   }, [isOpen]);
 
-  const scrollToSection = () => {
-    if (!sectionRef.current) return;
-    const header = document.querySelector("header");
-    const headerHeight = header?.getBoundingClientRect().height || 80;
-    const offset = headerHeight + 20;
-    const top =
-      sectionRef.current.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: "smooth" });
-  };
-
   return (
     <div ref={sectionRef} className="mb-6" id={id}>
       <button
@@ -88,7 +90,7 @@ export default function ContentSection({
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 rounded-xl"
         aria-expanded={isOpen}
-        aria-label={`Abschnitt ${title} ${isOpen ? 'zuklappen' : 'aufklappen'}`}
+        aria-label={`Abschnitt ${title} ${isOpen ? "zuklappen" : "aufklappen"}`}
       >
         <div className="flex items-center justify-between gap-3 p-4 rounded-[10px] bg-white hover:bg-sage-wash/50 active:bg-sage-wash/50 border border-border border-l-4 border-l-sage-dark transition-colors">
           <div className="flex items-center gap-3 min-w-0">
@@ -119,7 +121,9 @@ export default function ContentSection({
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-5 px-1 text-[14.5px] leading-relaxed">{children}</div>
+            <div className="pt-5 px-1 text-[14.5px] leading-relaxed">
+              {children}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -308,6 +308,35 @@ export default function UnterstuetzenKrise() {
               </Card>
             </ContentSection>
 
+            {/* Situations-Wegweiser */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <Card className="bg-sage-wash/40 border-sage">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0">
+                      <ArrowRight className="w-5 h-5 text-sage-mid" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-foreground mb-2">Situations-Wegweiser: «Was tun wenn…»</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        In der akuten Situation ist klares Denken schwer. Unser interaktiver Wegweiser führt Sie Schritt für Schritt durch verschiedene Krisenszenarien.
+                      </p>
+                      <Link href="/wegweiser">
+                        <Button size="sm" className="bg-sage-dark hover:bg-sage-mid text-white">
+                          Zum Wegweiser
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
             {/* Materialien zum Download */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

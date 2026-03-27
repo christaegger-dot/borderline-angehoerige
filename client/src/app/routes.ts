@@ -1,8 +1,9 @@
 import { lazy } from "react";
+import type { RouteComponentProps } from "wouter";
 
 export interface AppRoute {
   path: string;
-  component?: React.ComponentType<any>;
+  component?: React.ComponentType<RouteComponentProps>;
   redirectTo?: string;
 }
 

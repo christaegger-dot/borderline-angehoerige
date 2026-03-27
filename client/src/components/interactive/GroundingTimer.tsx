@@ -65,9 +65,9 @@ export default function GroundingTimer() {
       <CardContent className="p-6">
         <div className="flex items-center gap-3 mb-4">
           <Hand className="w-6 h-6 text-slate-dark" />
-          <span className="font-semibold text-foreground text-base block" role="heading" aria-level={2}>
+          <h2 className="font-semibold text-foreground text-base">
             5-4-3-2-1 Grounding
-          </span>
+          </h2>
         </div>
 
         <p className="text-sm text-muted-foreground leading-relaxed mb-5">

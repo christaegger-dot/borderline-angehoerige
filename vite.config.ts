@@ -159,6 +159,10 @@ export default defineConfig(({ command }) => {
   }
 
   return {
+    define: {
+      // Inject build date so MEDICAL_LAST_REVIEWED stays current per build
+      'import.meta.env.VITE_BUILD_DATE': JSON.stringify(new Date().toISOString().slice(0, 10)),
+    },
     plugins,
     resolve: {
       alias: {

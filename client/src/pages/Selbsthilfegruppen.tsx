@@ -23,7 +23,8 @@ const selbsthilfeChUrl = urlByIdStrict("URL_SELBSTHILFE_CH");
 
 export default function Selbsthilfegruppen() {
   const [currentPath] = useLocation();
-  const canonicalPath = currentPath === "/selbsthilfegruppen" ? "/beratung" : currentPath;
+  // Both /beratung and /selbsthilfegruppen render this page; use one canonical
+  const canonicalPath = "/beratung";
 
   return (
     <Layout>

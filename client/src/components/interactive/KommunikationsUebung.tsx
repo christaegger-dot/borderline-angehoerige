@@ -5,12 +5,8 @@ import { Button } from "@/components/ui/button";
 import {
   CheckCircle2,
   XCircle,
-  ArrowRight,
   RotateCcw,
-  MessageCircle,
   Lightbulb,
-  ChevronRight,
-  Trophy,
   Heart,
   Shield,
   Scale,

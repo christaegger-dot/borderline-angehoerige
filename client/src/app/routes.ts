@@ -31,6 +31,7 @@ const UeberUns = lazy(() => import("@/pages/UeberUns"));
 const Fachstelle = lazy(() => import("@/pages/Fachstelle"));
 const Notfallkarte = lazy(() => import("@/pages/Notfallkarte"));
 const Wegweiser = lazy(() => import("@/pages/Wegweiser"));
+const Uebungsszenarien = lazy(() => import("@/pages/Uebungsszenarien"));
 
 export const routes: AppRoute[] = [
   { path: "/", component: Home },
@@ -61,4 +62,5 @@ export const routes: AppRoute[] = [
   { path: "/fachstelle", component: Fachstelle },
   { path: "/notfallkarte", component: Notfallkarte },
   { path: "/wegweiser", component: Wegweiser },
+  { path: "/uebungen", component: Uebungsszenarien },
 ];

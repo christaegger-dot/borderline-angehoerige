@@ -345,6 +345,36 @@ export default function Kommunizieren() {
               </div>
             </ContentSection>
 
+            {/* CTA: Übungsszenarien */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <Card className="bg-sage-wash/40 border-sage overflow-hidden">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0">
+                      <MessageCircle className="w-5 h-5 text-sage-mid" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-foreground mb-2">Kommunikation üben – interaktive Szenarien</h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Testen Sie SET, DEAR MAN und Validierung in realistischen Situationen. Multiple-Choice mit sofortigem Feedback.
+                      </p>
+                      <Link href="/uebungen">
+                        <Button size="sm" className="bg-sage-dark hover:bg-sage-mid text-white gap-1.5">
+                          Zu den Übungen
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

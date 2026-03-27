@@ -8,8 +8,6 @@ import { motion } from "framer-motion";
 import {
   AlertTriangle,
   BookOpen,
-  Download,
-  ExternalLink,
   Eye,
   Filter,
   Heart,
@@ -19,7 +17,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Link } from "wouter";
-import { materials, quickStarts, type Material } from "@/content/materials";
+import { materials, quickStarts } from "@/content/materials";
 import MaterialienHeroSection from "@/sections/materialien/MaterialienHeroSection";
 
 const categoryMeta = [
@@ -33,7 +31,15 @@ const categoryMeta = [
   { id: "genesung", label: "Genesung", icon: TrendingUp },
 ];
 
-function LightboxOverlay({ src, title, onClose }: { src: string; title: string; onClose: () => void }) {
+function LightboxOverlay({
+  src,
+  title,
+  onClose,
+}: {
+  src: string;
+  title: string;
+  onClose: () => void;
+}) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -54,7 +60,7 @@ function LightboxOverlay({ src, title, onClose }: { src: string; title: string; 
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         className="max-w-4xl max-h-[90vh] overflow-auto"
-        onClick={(e) => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
       >
         <img
           src={src}

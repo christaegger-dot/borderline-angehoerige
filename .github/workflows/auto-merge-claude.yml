@@ -9,6 +9,7 @@ permissions:
 jobs:
   create-and-merge:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -55,9 +56,25 @@ jobs:
             echo "Bestehende PR gefunden: $PR_URL"
           fi
 
-          # 5. Warten auf GitHub Merge-Status-Berechnung
-          echo "Warte 60s..."
-          sleep 60
+          # 5. Auf CI-Checks warten (max 10 Min)
+          echo "Warte auf CI-Checks..."
+          for i in $(seq 1 20); do
+            sleep 30
+            STATUS=$(gh pr checks "$PR_URL" --json state -q '.[].state' 2>/dev/null || echo "PENDING")
+            echo "  Versuch $i: $STATUS"
+            if echo "$STATUS" | grep -q "FAILURE"; then
+              echo "CI fehlgeschlagen - PR bleibt offen fuer manuelle Bearbeitung"
+              exit 0
+            fi
+            if ! echo "$STATUS" | grep -qE "PENDING|QUEUED|IN_PROGRESS"; then
+              echo "Alle Checks bestanden."
+              break
+            fi
+            if [ "$i" -eq 20 ]; then
+              echo "Timeout - Checks laufen noch. PR bleibt offen."
+              exit 0
+            fi
+          done
 
           # 6. Merge versuchen
           if gh pr merge --merge "$PR_URL" 2>&1; then

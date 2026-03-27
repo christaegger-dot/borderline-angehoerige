@@ -112,7 +112,7 @@ function DialogContent({
     (e: KeyboardEvent) => {
       // Check both the native isComposing property and our context state
       // This handles Safari's timing issues with composition events
-      const isCurrentlyComposing = (e as any).isComposing || isComposing();
+      const isCurrentlyComposing = (e as KeyboardEvent).isComposing || isComposing();
 
       // If IME is composing, prevent dialog from closing
       if (isCurrentlyComposing) {
@@ -145,7 +145,7 @@ function DialogContent({
             className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
           >
             <XIcon />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">Schliessen</span>
           </DialogPrimitive.Close>
         )}
       </DialogPrimitive.Content>

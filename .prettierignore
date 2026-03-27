@@ -1,5 +1,6 @@
-dist
-node_modules
-.git
+dist/
+build/
+node_modules/
+pnpm-lock.yaml
 *.min.js
 *.min.css

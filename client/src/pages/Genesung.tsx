@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   BookOpen,
-  Download,
   ExternalLink,
   Filter,
   HandHeart,

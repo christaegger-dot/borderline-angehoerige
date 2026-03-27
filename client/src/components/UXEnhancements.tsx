@@ -3,7 +3,6 @@ import { useScrollLock } from "@/hooks/useScrollLock";
 import {
   ChevronUp,
   ChevronRight,
-  ChevronLeft,
   Home,
   List,
   X,
@@ -134,7 +133,10 @@ export function Breadcrumbs() {
             </li>
             {parent && (
               <li className="flex items-center gap-2">
-                <ChevronRight className="w-4 h-4 text-muted-foreground/50" aria-hidden="true" />
+                <ChevronRight
+                  className="w-4 h-4 text-muted-foreground/50"
+                  aria-hidden="true"
+                />
                 <Link
                   href={parent.href}
                   className="hover:text-foreground transition-colors"
@@ -144,7 +146,10 @@ export function Breadcrumbs() {
               </li>
             )}
             <li className="flex items-center gap-2">
-              <ChevronRight className="w-4 h-4 text-muted-foreground/50" aria-hidden="true" />
+              <ChevronRight
+                className="w-4 h-4 text-muted-foreground/50"
+                aria-hidden="true"
+              />
               <span className="text-foreground font-medium">{pageName}</span>
             </li>
           </ol>

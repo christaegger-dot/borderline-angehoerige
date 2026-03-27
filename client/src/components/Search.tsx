@@ -133,6 +133,9 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Suche"
             className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 px-4"
           >
             <div className="bg-background rounded-2xl shadow-2xl border border-border overflow-hidden">
@@ -200,7 +203,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                 ) : results.length === 0 ? (
                   <div className="px-4 py-8 text-center">
                     <p className="text-muted-foreground">
-                      Keine Ergebnisse für "{query}"
+                      Keine Ergebnisse für \"{query}\"
                     </p>
                     <p className="text-sm text-muted-foreground mt-2">
                       Versuchen Sie andere Suchbegriffe oder schauen Sie in der
@@ -249,7 +252,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                 <span className="flex items-center gap-2">
                   <span>
                     <kbd className="px-1.5 py-0.5 bg-background border border-border rounded text-[10px]">
-                      ↑↓
+                      \u2191\u2193
                     </kbd>{" "}
                     navigieren
                   </span>

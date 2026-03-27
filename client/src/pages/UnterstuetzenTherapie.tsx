@@ -20,11 +20,15 @@ import {
   Phone,
   RefreshCw,
   Stethoscope,
-  User,
   Users,
 } from "lucide-react";
 import { Link } from "wouter";
-import { GELB, kontaktByIdStrict, emailByIdStrict, urlByIdStrict } from "@/data/kontakte";
+import {
+  GELB,
+  kontaktByIdStrict,
+  emailByIdStrict,
+  urlByIdStrict,
+} from "@/data/kontakte";
 
 const hype = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
 const emailKjpp = emailByIdStrict("EMAIL_KJPP");
@@ -61,7 +65,9 @@ export default function UnterstuetzenTherapie() {
               <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
                 <Stethoscope className="w-6 h-6 text-slate-blue" />
               </div>
-              <span className="text-sm font-medium text-sage-dark">Lesezeit: 10 Minuten</span>
+              <span className="text-sm font-medium text-sage-dark">
+                Lesezeit: 10 Minuten
+              </span>
             </div>
 
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
@@ -69,9 +75,10 @@ export default function UnterstuetzenTherapie() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Professionelle Therapie ist ein zentraler Baustein im Genesungsprozess. Angehörige
-              können diesen Weg unterstützen, aber nicht für den anderen übernehmen. Genau diese
-              Grenze macht Therapiebegleitung oft so anspruchsvoll.
+              Professionelle Therapie ist ein zentraler Baustein im
+              Genesungsprozess. Angehörige können diesen Weg unterstützen, aber
+              nicht für den anderen übernehmen. Genau diese Grenze macht
+              Therapiebegleitung oft so anspruchsvoll.
             </p>
           </motion.div>
         </div>
@@ -89,17 +96,19 @@ export default function UnterstuetzenTherapie() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Angehörige können ermutigen, Termine unterstützen, Veränderungen wahrnehmen und
-                  Rückschläge einordnen helfen. Sie können aber keine Therapie ersetzen, keine
-                  Motivation erzwingen und nicht stellvertretend regulieren, was in Behandlung
-                  bearbeitet werden muss.
+                  Angehörige können ermutigen, Termine unterstützen,
+                  Veränderungen wahrnehmen und Rückschläge einordnen helfen. Sie
+                  können aber keine Therapie ersetzen, keine Motivation
+                  erzwingen und nicht stellvertretend regulieren, was in
+                  Behandlung bearbeitet werden muss.
                 </p>
                 <Card className="bg-slate-wash border-slate-mid/20">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Eine hilfreiche innere Frage lautet oft nicht: Wie bringe ich die Therapie zum
-                      Funktionieren? Sondern: Wie kann ich den Rahmen mittragen, ohne selbst zur
-                      Behandlung zu werden?
+                      Eine hilfreiche innere Frage lautet oft nicht: Wie bringe
+                      ich die Therapie zum Funktionieren? Sondern: Wie kann ich
+                      den Rahmen mittragen, ohne selbst zur Behandlung zu
+                      werden?
                     </p>
                   </CardContent>
                 </Card>
@@ -129,20 +138,25 @@ export default function UnterstuetzenTherapie() {
                     description:
                       "Arbeitet mit frühen Prägungen, Beziehungsmustern und inneren Zuständen, die unter Stress reaktiv werden.",
                   },
-                ].map((item) => (
+                ].map(item => (
                   <Card key={item.name} className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">{item.name}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        {item.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
                     </CardContent>
                   </Card>
                 ))}
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Für Angehörige ist meist wichtiger als das perfekte Therapielabel, ob Behandlung
-                      tragfähig beginnt, ob Krisen professionell eingebettet werden und ob der Prozess
-                      über Zeit gehalten werden kann.
+                      Für Angehörige ist meist wichtiger als das perfekte
+                      Therapielabel, ob Behandlung tragfähig beginnt, ob Krisen
+                      professionell eingebettet werden und ob der Prozess über
+                      Zeit gehalten werden kann.
                     </p>
                   </CardContent>
                 </Card>
@@ -163,10 +177,15 @@ export default function UnterstuetzenTherapie() {
                   "Fortschritte konkret benennen statt pauschal zu loben",
                   "Rückschläge einordnen, ohne sie zu dramatisieren",
                   "eigene Unterstützung unabhängig von der Therapiebereitschaft suchen",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30">
+                ].map(item => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{item}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -180,16 +199,17 @@ export default function UnterstuetzenTherapie() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Viele Angehörige erleben Therapiebegleitung als Achterbahn: Hoffnung, erster
-                  Fortschritt, erneute Krise, Rückzug, vielleicht ein Therapieabbruch und später ein
-                  neuer Anlauf. Solche Unterbrüche sind belastend, aber nicht ungewöhnlich.
+                  Viele Angehörige erleben Therapiebegleitung als Achterbahn:
+                  Hoffnung, erster Fortschritt, erneute Krise, Rückzug,
+                  vielleicht ein Therapieabbruch und später ein neuer Anlauf.
+                  Solche Unterbrüche sind belastend, aber nicht ungewöhnlich.
                 </p>
                 <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
                   <CardContent className="p-5">
                     <p className="text-muted-foreground leading-relaxed">
-                      Hilfreich ist dann meist weder Druck noch Resignation, sondern ein nüchterner
-                      Blick: Was hat geholfen? Wo wurde es zu viel? Was wäre der nächste tragfähige
-                      Schritt?
+                      Hilfreich ist dann meist weder Druck noch Resignation,
+                      sondern ein nüchterner Blick: Was hat geholfen? Wo wurde
+                      es zu viel? Was wäre der nächste tragfähige Schritt?
                     </p>
                   </CardContent>
                 </Card>
@@ -208,7 +228,7 @@ export default function UnterstuetzenTherapie() {
                   "Sie müssen nicht jedes Verhalten analysieren oder mit Fachbegriffen einordnen.",
                   "Sie sind nicht dafür zuständig, Motivation dauerhaft aufrechtzuerhalten.",
                   "Sie müssen Behandlungsfortschritt nicht kontrollieren oder überwachen.",
-                ].map((item) => (
+                ].map(item => (
                   <Card key={item} className="border-border/50">
                     <CardContent className="p-4">
                       <p className="text-sm text-muted-foreground">{item}</p>
@@ -226,15 +246,34 @@ export default function UnterstuetzenTherapie() {
             >
               <div className="flex flex-wrap gap-3 mb-6">
                 {[
-                  { icon: Home, label: "Ambulant", desc: "Regelmässige Termine, Leben zu Hause" },
-                  { icon: Calendar, label: "Teilstationär", desc: "Tagesklinik, abends zu Hause" },
-                  { icon: Building2, label: "Stationär", desc: "Aufenthalt in der Klinik" },
-                ].map((setting) => (
-                  <div key={setting.label} className="flex items-center gap-2 px-3 py-2 bg-muted/30 rounded-lg">
+                  {
+                    icon: Home,
+                    label: "Ambulant",
+                    desc: "Regelmässige Termine, Leben zu Hause",
+                  },
+                  {
+                    icon: Calendar,
+                    label: "Teilstationär",
+                    desc: "Tagesklinik, abends zu Hause",
+                  },
+                  {
+                    icon: Building2,
+                    label: "Stationär",
+                    desc: "Aufenthalt in der Klinik",
+                  },
+                ].map(setting => (
+                  <div
+                    key={setting.label}
+                    className="flex items-center gap-2 px-3 py-2 bg-muted/30 rounded-lg"
+                  >
                     <setting.icon className="w-4 h-4 text-muted-foreground" />
                     <div>
-                      <span className="font-medium text-foreground text-sm">{setting.label}</span>
-                      <p className="text-xs text-muted-foreground">{setting.desc}</p>
+                      <span className="font-medium text-foreground text-sm">
+                        {setting.label}
+                      </span>
+                      <p className="text-xs text-muted-foreground">
+                        {setting.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -242,16 +281,25 @@ export default function UnterstuetzenTherapie() {
 
               <Card className="border-2 border-slate-light mb-4">
                 <CardContent className="p-5">
-                  <h3 className="font-semibold text-foreground mb-2">HYPE ZÜRI</h3>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    HYPE ZÜRI
+                  </h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Frühinterventionsangebot für Jugendliche ab 13 Jahren mit Verdacht, Risiko oder
-                    bereits diagnostizierter Borderline-Störung.
+                    Frühinterventionsangebot für Jugendliche ab 13 Jahren mit
+                    Verdacht, Risiko oder bereits diagnostizierter
+                    Borderline-Störung.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <a href={`tel:${hype.tel}`} className="text-sm text-slate-mid hover:underline flex items-center gap-1">
+                    <a
+                      href={`tel:${hype.tel}`}
+                      className="text-sm text-slate-mid hover:underline flex items-center gap-1"
+                    >
                       <Phone className="w-3 h-3" /> {hype.nummer}
                     </a>
-                    <a href={`mailto:${emailKjpp.adresse}`} className="text-sm text-slate-mid hover:underline flex items-center gap-1">
+                    <a
+                      href={`mailto:${emailKjpp.adresse}`}
+                      className="text-sm text-slate-mid hover:underline flex items-center gap-1"
+                    >
                       <Mail className="w-3 h-3" /> {emailKjpp.adresse}
                     </a>
                   </div>
@@ -260,15 +308,24 @@ export default function UnterstuetzenTherapie() {
 
               <Card className="border-2 border-sage-light mb-4">
                 <CardContent className="p-5">
-                  <h3 className="font-semibold text-foreground mb-2">PUK Zürich – Erwachsene</h3>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    PUK Zürich – Erwachsene
+                  </h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Spezialisierte DBT-orientierte Behandlungsangebote für Erwachsene.
+                    Spezialisierte DBT-orientierte Behandlungsangebote für
+                    Erwachsene.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <a href={`tel:${pukZentrale.tel}`} className="text-sm text-sage-dark hover:underline flex items-center gap-1">
+                    <a
+                      href={`tel:${pukZentrale.tel}`}
+                      className="text-sm text-sage-dark hover:underline flex items-center gap-1"
+                    >
                       <Phone className="w-3 h-3" /> {pukZentrale.nummer}
                     </a>
-                    <a href={`mailto:${emailHard.adresse}`} className="text-sm text-sage-dark hover:underline flex items-center gap-1">
+                    <a
+                      href={`mailto:${emailHard.adresse}`}
+                      className="text-sm text-sage-dark hover:underline flex items-center gap-1"
+                    >
                       <Mail className="w-3 h-3" /> {emailHard.adresse}
                     </a>
                   </div>
@@ -278,22 +335,37 @@ export default function UnterstuetzenTherapie() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <Card className="border-border/50">
                   <CardContent className="p-4">
-                    <h4 className="font-semibold text-foreground text-sm mb-1">Clienia Schlössli</h4>
+                    <h4 className="font-semibold text-foreground text-sm mb-1">
+                      Clienia Schlössli
+                    </h4>
                     <p className="text-xs text-muted-foreground mb-2">
                       Weiterführendes stationäres Emotionsregulationsprogramm.
                     </p>
-                    <a href={clieniaUrl.url} target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark hover:underline flex items-center gap-1">
+                    <a
+                      href={clieniaUrl.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-sage-dark hover:underline flex items-center gap-1"
+                    >
                       Website besuchen <ExternalLink className="w-3 h-3" />
                     </a>
                   </CardContent>
                 </Card>
                 <Card className="border-border/50">
                   <CardContent className="p-4">
-                    <h4 className="font-semibold text-foreground text-sm mb-1">DBT-Therapeutensuche</h4>
+                    <h4 className="font-semibold text-foreground text-sm mb-1">
+                      DBT-Therapeutensuche
+                    </h4>
                     <p className="text-xs text-muted-foreground mb-2">
-                      Suchweg für zertifizierte DBT-Therapeutinnen und -Therapeuten.
+                      Suchweg für zertifizierte DBT-Therapeutinnen und
+                      -Therapeuten.
                     </p>
-                    <a href={dbtDachUrl.url} target="_blank" rel="noopener noreferrer" className="text-xs text-sage-dark hover:underline flex items-center gap-1">
+                    <a
+                      href={dbtDachUrl.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-sage-dark hover:underline flex items-center gap-1"
+                    >
                       Therapeutensuche <ExternalLink className="w-3 h-3" />
                     </a>
                   </CardContent>
@@ -307,10 +379,15 @@ export default function UnterstuetzenTherapie() {
                     Notfall-Nummern PUK Zürich (24/7)
                   </h4>
                   <div className="grid grid-cols-3 gap-3 text-center">
-                    {GELB.filter((k) => k.id !== "GELB_KIZ").map((k) => (
+                    {GELB.filter(k => k.id !== "GELB_KIZ").map(k => (
                       <div key={k.id}>
-                        <p className="text-xs text-muted-foreground">{k.fuerWen || k.label}</p>
-                        <a href={`tel:${k.tel}`} className="text-sm font-semibold text-foreground hover:underline">
+                        <p className="text-xs text-muted-foreground">
+                          {k.fuerWen || k.label}
+                        </p>
+                        <a
+                          href={`tel:${k.tel}`}
+                          className="text-sm font-semibold text-foreground hover:underline"
+                        >
                           {k.nummer}
                         </a>
                       </div>
@@ -334,8 +411,8 @@ export default function UnterstuetzenTherapie() {
               <Card className="bg-sand-muted border-sand-border">
                 <CardContent className="p-6">
                   <p className="text-sm text-muted-foreground mb-3">
-                    Infografiken und Handouts zur Therapiebegleitung finden Sie gesammelt auf der
-                    Materialien-Seite.
+                    Infografiken und Handouts zur Therapiebegleitung finden Sie
+                    gesammelt auf der Materialien-Seite.
                   </p>
                   <Link href="/materialien">
                     <Button variant="outline" size="sm">

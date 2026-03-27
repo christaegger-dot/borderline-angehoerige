@@ -46,7 +46,7 @@ export default function Layout({ children }: LayoutProps) {
           <span className="font-medium text-foreground">
             Notfallkontakte: Schweiz (Kanton Zürich)
           </span>
-          <span className="hidden sm:inline">•</span>
+          <span className="hidden sm:inline">\u2022</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function Layout({ children }: LayoutProps) {
                   decoding="async"
                 />
                 <span className="font-medium text-base text-white">
-                  Borderline · Hilfe für Angehörige
+                  Borderline \u00b7 Hilfe für Angehörige
                 </span>
               </Link>
               <p className="text-white/70 text-sm leading-relaxed">
@@ -150,7 +150,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <div className="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-white/70 text-sm">
-              © 2026 Borderline · Hilfe für Angehörige. Alle Rechte
+              \u00a9 2026 Borderline \u00b7 Hilfe für Angehörige. Alle Rechte
               vorbehalten.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
@@ -199,12 +199,13 @@ export default function Layout({ children }: LayoutProps) {
             bottom: "calc(4.5rem + env(safe-area-inset-bottom, 0px))",
             right: "1rem",
           }}
-          aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
+          aria-label="Soforthilfe \u2013 Notfallnummern und Krisenberatung"
         >
           <Button
             variant="default"
             className="h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg gap-2 text-sm font-semibold"
             tabIndex={-1}
+            aria-hidden="true"
           >
             <Phone className="w-4 h-4" />
             Soforthilfe

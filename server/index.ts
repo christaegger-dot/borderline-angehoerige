@@ -27,7 +27,7 @@ async function startServer() {
   app.use(express.static(staticPath));
 
   // Handle client-side routing - serve index.html for all non-file routes
-  app.get("*", (_req, res) => {
+  app.get("/{*splat}", (_req, res) => {
     // express.static already handles existing files (notfallkarte.html etc.)
     // This catch-all is only for SPA client-side routes
     res.sendFile(path.join(staticPath, "index.html"));

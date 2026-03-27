@@ -526,6 +526,13 @@ export default function Notfall() {
               </h3>
               <div className="space-y-2">
                 <Link
+                  href="/notfallkarte"
+                  className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-[var(--color-sos-rot)]/30 hover:border-[var(--color-sos-rot)]/50 hover:shadow-sm transition-all group"
+                >
+                  <span className="text-sm text-foreground font-medium">Persönliche Notfallkarte erstellen</span>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-[var(--color-sos-rot)] transition-colors" />
+                </Link>
+                <Link
                   href="/unterstuetzen/krise"
                   className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
                 >

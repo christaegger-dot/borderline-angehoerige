@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 interface SEOProps {
   title?: string;
@@ -38,8 +38,8 @@ export default function SEO({
   canonicalPath,
 }: SEOProps) {
   const fullTitle = title
-    ? `${title} – ${SITE_NAME}`
-    : `${SITE_NAME} – Evidenzbasierte Unterstützung`;
+    ? `${title} \u2013 ${SITE_NAME}`
+    : `${SITE_NAME} \u2013 Evidenzbasierte Unterst\u00fctzung`;
   const metaDescription = description || BASE_DESCRIPTION;
 
   useEffect(() => {
@@ -96,7 +96,7 @@ export function WebsiteSchema() {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: SITE_NAME,
-      alternateName: "Borderline Angehörige",
+      alternateName: "Borderline Angeh\u00f6rige",
       url: siteUrl,
       description: BASE_DESCRIPTION,
       publisher: {
@@ -137,33 +137,36 @@ export function MedicalPageSchema({
   path: string;
 }) {
   const siteUrl = getSiteUrl();
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    name: title,
-    description: description,
-    url: `${siteUrl}${path}`,
-    inLanguage: "de",
-    about: {
-      "@type": "MedicalCondition",
-      name: "Persönlichkeitsstörung mit Borderline-Muster",
-      alternateName: ["Borderline-Muster", "Borderline pattern"],
-      code: {
-        "@type": "MedicalCode",
-        code: "6D11",
-        codingSystem: "ICD-11",
+  const schema = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      name: title,
+      description: description,
+      url: `${siteUrl}${path}`,
+      inLanguage: "de",
+      about: {
+        "@type": "MedicalCondition",
+        name: "Pers\u00f6nlichkeitsst\u00f6rung mit Borderline-Muster",
+        alternateName: ["Borderline-Muster", "Borderline pattern"],
+        code: {
+          "@type": "MedicalCode",
+          code: "6D11",
+          codingSystem: "ICD-11",
+        },
       },
-    },
-    audience: {
-      "@type": "PeopleAudience",
-      audienceType: "Angehörige von Menschen mit Borderline-Muster",
-    },
-    lastReviewed: MEDICAL_LAST_REVIEWED,
-    medicalAudience: {
-      "@type": "MedicalAudience",
-      audienceType: "Caregiver",
-    },
-  };
+      audience: {
+        "@type": "PeopleAudience",
+        audienceType: "Angeh\u00f6rige von Menschen mit Borderline-Muster",
+      },
+      lastReviewed: MEDICAL_LAST_REVIEWED,
+      medicalAudience: {
+        "@type": "MedicalAudience",
+        audienceType: "Caregiver",
+      },
+    }),
+    [description, path, siteUrl, title]
+  );
 
   useEffect(() => {
     let el = document.querySelector(`script[data-schema="medical-${path}"]`);
@@ -177,7 +180,7 @@ export function MedicalPageSchema({
     return () => {
       el?.remove();
     };
-  }, [description, path, siteUrl, title]);
+  }, [schema, path]);
 
   return null;
 }
@@ -188,16 +191,19 @@ export function BreadcrumbSchema({
 }: {
   items: { name: string; url: string }[];
 }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
+  const schema = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    }),
+    [items]
+  );
 
   useEffect(() => {
     const key = items.map(i => i.url).join("-");
@@ -212,7 +218,7 @@ export function BreadcrumbSchema({
     return () => {
       el?.remove();
     };
-  }, [items]);
+  }, [schema, items]);
 
   return null;
 }
@@ -223,18 +229,21 @@ export function FAQSchema({
 }: {
   questions: { question: string; answer: string }[];
 }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: questions.map(q => ({
-      "@type": "Question",
-      name: q.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: q.answer,
-      },
-    })),
-  };
+  const schema = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: questions.map(q => ({
+        "@type": "Question",
+        name: q.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: q.answer,
+        },
+      })),
+    }),
+    [questions]
+  );
 
   useEffect(() => {
     let el = document.querySelector('script[data-schema="faq"]');
@@ -248,7 +257,7 @@ export function FAQSchema({
     return () => {
       el?.remove();
     };
-  }, [questions]);
+  }, [schema, questions]);
 
   return null;
 }

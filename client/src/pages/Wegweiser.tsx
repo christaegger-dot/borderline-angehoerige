@@ -1,7 +1,7 @@
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Compass, Phone, ArrowRight } from "lucide-react";
+import { Compass, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktByIdStrict } from "@/data/kontakte";
 import SituationsWegweiser from "@/components/interactive/SituationsWegweiser";
@@ -108,7 +108,7 @@ export default function Wegweiser() {
                     label: "Kommunizieren",
                     sub: "SET, DEAR MAN und mehr",
                   },
-                ].map((item) => (
+                ].map(item => (
                   <Link
                     key={item.href}
                     href={item.href}

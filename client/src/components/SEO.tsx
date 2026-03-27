@@ -16,8 +16,11 @@ const SITE_URL = (import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(
   /\/+$/,
   ""
 );
+// Build-time date: set VITE_MEDICAL_LAST_REVIEWED in CI or .env to pin.
+// Fallback: the date of the build (Vite inlines import.meta.env at build).
 const MEDICAL_LAST_REVIEWED =
   import.meta.env.VITE_MEDICAL_LAST_REVIEWED ||
+  import.meta.env.VITE_BUILD_DATE ||
   new Date().toISOString().slice(0, 10);
 
 const getSiteUrl = () => {
@@ -88,19 +91,20 @@ export default function SEO({
 // Schema.org structured data for the website
 export function WebsiteSchema() {
   useEffect(() => {
+    const siteUrl = getSiteUrl();
     const schema = {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: SITE_NAME,
       alternateName: "Borderline Angehörige",
-      url: SITE_URL,
+      url: siteUrl,
       description: BASE_DESCRIPTION,
       publisher: {
         "@type": "Organization",
         name: SITE_NAME,
         logo: {
           "@type": "ImageObject",
-          url: `${SITE_URL}/og-image.jpg`,
+          url: `${siteUrl}/og-image.jpg`,
         },
       },
       inLanguage: "de-CH",

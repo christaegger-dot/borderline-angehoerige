@@ -238,7 +238,7 @@ export const INFO: Kontakt[] = [
     tel: "+41583842111",
     label: "PUK Zentrale",
     hinweis: "Allgemeine Auskunft PUK",
-    sourceRef: "Soforthilfe.tsx:294, UnterstuetzenTherapie.tsx:333",
+    sourceRef: "Soforthilfe.tsx:294, UnterstuetzenTherapie.tsx:268",
   },
   {
     id: "INFO_PUK_KJPP_HYPE",
@@ -247,7 +247,7 @@ export const INFO: Kontakt[] = [
     tel: "+41583846600",
     label: "KJPP HYPE-Programm",
     hinweis: "Spezialisiertes Programm für Jugendliche",
-    sourceRef: "UnterstuetzenTherapie.tsx:307",
+    sourceRef: "UnterstuetzenTherapie.tsx:251",
   },
   {
     id: "INFO_FACHSTELLE",
@@ -256,7 +256,7 @@ export const INFO: Kontakt[] = [
     tel: "+41583843800",
     label: "Fachstelle Angehörigenarbeit PUK",
     hinweis: "Beratung und Begleitung für Angehörige",
-    sourceRef: "Selbsthilfegruppen.tsx:348, Impressum.tsx:81",
+    sourceRef: "Selbsthilfegruppen.tsx:348, Impressum.tsx:85",
   },
   {
     id: "INFO_STANDBYYOU",
@@ -301,7 +301,7 @@ export const INFO: Kontakt[] = [
     tel: "+41583849491",
     label: "DBT-Station 62B PUK Zürich",
     hinweis: "Stationäre DBT-Behandlung (zertifiziert)",
-    sourceRef: "UnterstuetzenTherapie.tsx:336",
+    sourceRef: "UnterstuetzenTherapie.tsx:271",
   },
   {
     id: "INFO_IPW",
@@ -310,7 +310,7 @@ export const INFO: Kontakt[] = [
     tel: "+41522643400",
     label: "IPW Psychotherapiestation junge Erwachsene",
     hinweis: "Integrierte Psychiatrie Winterthur, Wieshofstrasse 102, 8408 Winterthur",
-    sourceRef: "UnterstuetzenTherapie.tsx",
+    sourceRef: "UnterstuetzenTherapie.tsx:29",
   },
 ];
 
@@ -322,21 +322,21 @@ export const EMAILS: EmailKontakt[] = [
     adresse: "angehoerigenarbeit@pukzh.ch",
     label: "Fachstelle Angehörigenarbeit PUK",
     hinweis: "Beratung und Begleitung für Angehörige",
-    sourceRef: "Impressum.tsx:92, Feedback.tsx:74, Selbsthilfegruppen.tsx:352",
+    sourceRef: "Impressum.tsx:96, Feedback.tsx:74, Selbsthilfegruppen.tsx:352",
   },
   {
     id: "EMAIL_KJPP",
     adresse: "kjpp.ambizh@pukzh.ch",
     label: "KJPP Ambulanz Zürich",
     hinweis: "Ambulante Kinder- und Jugendpsychiatrie",
-    sourceRef: "UnterstuetzenTherapie.tsx:310",
+    sourceRef: "UnterstuetzenTherapie.tsx:254",
   },
   {
     id: "EMAIL_HARD",
     adresse: "station62b@pukzh.ch",
     label: "DBT-Station 62B PUK Zürich",
     hinweis: "Stationäre DBT-Behandlung (zertifiziert)",
-    sourceRef: "UnterstuetzenTherapie.tsx:336",
+    sourceRef: "UnterstuetzenTherapie.tsx:272",
   },
   {
     id: "EMAIL_VASK_ZH",
@@ -390,13 +390,13 @@ export const URLS: UrlKontakt[] = [
     id: "URL_CLIENIA",
     url: "https://www.clienia.ch/de/standorte/clienia-schloessli/stationen/a2/",
     label: "Clienia Schlössli DBT",
-    sourceRef: "UnterstuetzenTherapie.tsx:351",
+    sourceRef: "UnterstuetzenTherapie.tsx:285",
   },
   {
     id: "URL_DBT_DACH",
     url: "https://www.dachverband-dbt.de/dbt-therapieangebote",
     label: "DBT-Dachverband",
-    sourceRef: "UnterstuetzenTherapie.tsx:362",
+    sourceRef: "UnterstuetzenTherapie.tsx:296",
   },
   {
     id: "URL_PUK",

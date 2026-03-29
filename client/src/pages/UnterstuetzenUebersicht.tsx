@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import SEO from "@/components/SEO";
+import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -46,6 +47,8 @@ export default function UnterstuetzenUebersicht() {
       />
 
       <UnterstuetzenHeroSection />
+
+      <UnterstuetzenSubNav />
 
       <section className="py-8 md:py-12">
         <div className="container">

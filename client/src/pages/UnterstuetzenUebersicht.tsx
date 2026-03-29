@@ -7,13 +7,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
-  Anchor,
   ArrowRight,
   Compass,
   Download,
   ExternalLink,
   Eye,
-  HandHeart,
   Heart,
   Lightbulb,
   Shield,
@@ -190,120 +188,47 @@ export default function UnterstuetzenUebersicht() {
               </div>
             </ContentSection>
 
-            <ContentSection
-              title="Was in akuten Spannungszuständen zuerst zählt"
-              icon={<Lightbulb className="w-7 h-7 text-sage-mid" />}
-              id="alarm"
-              preview="In angespannten Momenten helfen meist nicht Erklärungen oder Korrekturen zuerst, sondern Beruhigung, Orientierung, Validierung und klare Begrenzung."
-            >
-              <div className="space-y-4">
-                <Card className="bg-sage-wash/30 border-sage/50">
-                  <CardContent className="p-5 sm:p-6">
-                    <p className="text-foreground leading-relaxed">
-                      Wenn Angst, Scham, Wut oder Verlassenheitsgefühl alles
-                      verengen, bringt es meist wenig, sofort Inhalte zu klären
-                      oder Schuldfragen zu diskutieren. Hilfreicher ist zuerst
-                      eine Reaktion, die den Zustand etwas beruhigt.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <div className="grid gap-3">
-                  <div className="flex items-start gap-3 bg-sage-wash/40 rounded-lg p-4 border border-sage-mid/20">
-                    <div className="w-8 h-8 rounded-full bg-sage-mid/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Anchor className="w-4 h-4 text-sage-mid" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground text-sm sm:text-base">
-                        Sicherheit und Ruhe
-                      </p>
-                      <p className="text-muted-foreground text-sm mt-0.5">
-                        Ihre eigene Ruhe ist kein Allheilmittel, aber oft ein
-                        wichtiger Gegenpol zur Eskalation.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 bg-slate-wash/40 rounded-lg p-4 border border-border/50">
-                    <div className="w-8 h-8 rounded-full bg-slate-dark/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Heart className="w-4 h-4 text-slate-dark" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground text-sm sm:text-base">
-                        Validierung
-                      </p>
-                      <p className="text-muted-foreground text-sm mt-0.5">
-                        Den Schmerz anerkennen, ohne alles zu bestätigen.
-                        Verstehen heisst nicht nachgeben.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 bg-sand-muted/40 rounded-lg p-4 border border-sand-mid/20">
-                    <div className="w-8 h-8 rounded-full bg-sand-mid/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <HandHeart className="w-4 h-4 text-sand-mid" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground text-sm sm:text-base">
-                        Kurze Orientierung und Begrenzung
-                      </p>
-                      <p className="text-muted-foreground text-sm mt-0.5">
-                        Kurz bleiben, nicht diskutieren, aber auch nicht alles
-                        offenlassen.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <blockquote className="border-l-4 border-sage-mid bg-sage-lighter/50 rounded-r-lg px-4 py-3 sm:px-5 sm:py-4">
-                  <p className="text-sm text-foreground leading-relaxed">
-                    <strong>Wichtig:</strong> Unterstützung in der Krise
-                    bedeutet nicht, alles zu tragen. Wenn Sicherheit unklar ist
-                    oder Suizidalität im Raum steht, braucht es rasch
-                    zusätzliche Hilfe.
-                  </p>
-                </blockquote>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Hilfreiche Unterstützung im Alltag"
-              icon={<Heart className="w-7 h-7 text-sage-mid" />}
-              id="alltag"
-              preview="Hilfreiche Unterstützung besteht oft weniger aus grossen Lösungen als aus Verlässlichkeit, Berechenbarkeit und emotionaler Klarheit."
-            >
-              <div className="grid sm:grid-cols-2 gap-4">
+            {/* Modul-Navigation: Alltag / Krise / Therapie */}
+            <div className="space-y-3">
+              <h2 className="text-lg font-semibold text-foreground">
+                Was möchten Sie vertiefen?
+              </h2>
+              <div className="grid sm:grid-cols-3 gap-4">
                 {[
                   {
-                    title: "Klarheit",
-                    text: "Klare Absprachen und eindeutige Kommunikation sind oft hilfreicher als beschwichtigende Unklarheit.",
+                    href: "/unterstuetzen/alltag",
+                    title: "Im Alltag unterstützen",
+                    text: "Verlässlichkeit, Klarheit, Konflikt-Repair und kleine stabile Kontaktangebote.",
                   },
                   {
-                    title: "Verlässlichkeit",
-                    text: "Wiedererkennbare Reaktionen, Routinen und angekündigte Änderungen helfen mehr als spontane Stimmungswechsel.",
+                    href: "/unterstuetzen/krise",
+                    title: "Krisen begleiten",
+                    text: "Ampel-System, Deeskalation, Was sagen / Was vermeiden, Nach der Krise.",
                   },
                   {
-                    title: "kleine stabile Kontaktangebote",
-                    text: "Nicht jede Geste muss gross sein. Oft tragen regelmässige, überschaubare Formen von Kontakt mehr als intensive Rettungsaktionen.",
-                  },
-                  {
-                    title: "Alltag nicht nur um Krise bauen",
-                    text: "Wenn sich alles nur noch um Anspannung und Eskalation dreht, geht Beziehungssubstanz verloren. Auch normale Anteile brauchen Platz.",
+                    href: "/unterstuetzen/therapie",
+                    title: "Therapie unterstützen",
+                    text: "Wie Sie den therapeutischen Prozess sinnvoll begleiten — ohne zu übernehmen.",
                   },
                 ].map(item => (
-                  <Card key={item.title} className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {item.text}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <Link key={item.href} href={item.href}>
+                    <Card className="border-border/50 hover:border-sage-mid/60 hover:bg-sage-wash/20 transition-colors cursor-pointer h-full">
+                      <CardContent className="p-5">
+                        <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">
+                          {item.title}
+                        </p>
+                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                          {item.text}
+                        </p>
+                        <p className="mt-3 text-sage-dark text-sm font-medium flex items-center gap-1">
+                          Lesen <ArrowRight className="w-3 h-3" />
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 ))}
               </div>
-            </ContentSection>
+            </div>
 
             <ContentSection
               title="Unterstützung braucht Grenzen"

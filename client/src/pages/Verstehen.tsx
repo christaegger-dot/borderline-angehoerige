@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import EvidenceNote from "@/components/EvidenceNote";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -643,6 +644,34 @@ export default function Verstehen() {
                 </CardContent>
               </Card>
             </motion.div>
+
+            <EvidenceNote
+              className="mb-8"
+              title="Quellen zu Entstehung und Verlauf von Borderline"
+              definition="Die Inhalte dieser Seite stützen sich auf empirisch gut belegte Modelle und klinische Übersichtsarbeiten."
+              sources={[
+                {
+                  label:
+                    "Lieb et al. (2004) – Borderline personality disorder (Lancet)",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/15488216/",
+                },
+                {
+                  label:
+                    "Leichsenring et al. (2011) – Borderline personality disorder (Lancet)",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/21232218/",
+                },
+                {
+                  label:
+                    "Linehan (1993) – Kognitive Verhaltenstherapie der Borderline-Persönlichkeitsstörung (Biosoziales Modell)",
+                },
+                {
+                  label:
+                    "Storebø et al. (2020) – Psychological therapies for BPD (Cochrane)",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/32368793/",
+                },
+              ]}
+            />
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

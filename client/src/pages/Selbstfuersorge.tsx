@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import EvidenceNote from "@/components/EvidenceNote";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,7 +16,6 @@ import {
   Brain,
   Wind,
   Shield,
-  BookOpen,
   ChevronDown,
   ChevronUp,
   UserCircle,
@@ -878,28 +878,24 @@ export default function Selbstfuersorge() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="bg-muted/30 border-border/50">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-muted-foreground" />
-                    Worauf stützt sich das?
-                  </h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>
-                      • Studien zeigen erhöhte Belastung bei Angehörigen von
-                      Menschen mit BPS (Hoffman et al., 2005)
-                    </li>
-                    <li>
-                      • Atemübungen aktivieren den Parasympathikus und
-                      reduzieren Cortisol (Zaccaro et al., 2018)
-                    </li>
-                    <li>
-                      • Soziale Unterstützung ist ein wichtiger Schutzfaktor
-                      gegen Burnout (Maslach & Leiter, 2016)
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <EvidenceNote
+                title="Worauf stützt sich das?"
+                sources={[
+                  {
+                    label: "Hoffman et al. (2005) – Caregiver burden in BPD",
+                    href: "https://pubmed.ncbi.nlm.nih.gov/16138007/",
+                  },
+                  {
+                    label:
+                      "Zaccaro et al. (2018) – Slow breathing techniques, autonomic activity and psychophysiology",
+                    href: "https://pubmed.ncbi.nlm.nih.gov/30275827/",
+                  },
+                  {
+                    label:
+                      "Maslach & Leiter (2016) – Burnout, soziale Unterstützung als Schutzfaktor",
+                  },
+                ]}
+              />
             </motion.div>
 
             {/* Abschluss */}

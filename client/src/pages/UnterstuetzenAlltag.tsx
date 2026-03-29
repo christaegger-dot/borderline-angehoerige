@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
@@ -44,7 +45,9 @@ export default function UnterstuetzenAlltag() {
               <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
                 <Calendar className="w-6 h-6 text-sage-dark" />
               </div>
-              <span className="text-sm font-medium text-sage-dark">Lesezeit: 8 Minuten</span>
+              <span className="text-sm font-medium text-sage-dark">
+                Lesezeit: 8 Minuten
+              </span>
             </div>
 
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
@@ -52,14 +55,17 @@ export default function UnterstuetzenAlltag() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Belastete Beziehungen bestehen nicht nur aus Krisen. Meist prägen sie den Alltag:
-              Anspannung in der Luft, vorsichtiges Abtasten, Rückzug nach Konflikten, Schuldgefühle,
-              Erreichbarkeitsdruck und die Frage, wie viel Nähe gerade hilfreich ist. Diese Seite
-              geht darum, was im Alltag trägt und was eher erschöpft.
+              Belastete Beziehungen bestehen nicht nur aus Krisen. Meist prägen
+              sie den Alltag: Anspannung in der Luft, vorsichtiges Abtasten,
+              Rückzug nach Konflikten, Schuldgefühle, Erreichbarkeitsdruck und
+              die Frage, wie viel Nähe gerade hilfreich ist. Diese Seite geht
+              darum, was im Alltag trägt und was eher erschöpft.
             </p>
           </motion.div>
         </div>
       </section>
+
+      <UnterstuetzenSubNav />
 
       <section className="py-8 md:py-12">
         <div className="container">
@@ -73,22 +79,25 @@ export default function UnterstuetzenAlltag() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Viele Angehörige kennen weniger den permanenten Ausnahmezustand als einen Alltag,
-                  der unterschwellig unter Spannung steht: Man beobachtet Stimmungen, wägt Worte ab,
-                  rechnet mit plötzlichem Rückzug oder Ärger und versucht gleichzeitig, Normalität
-                  aufrechtzuerhalten.
+                  Viele Angehörige kennen weniger den permanenten
+                  Ausnahmezustand als einen Alltag, der unterschwellig unter
+                  Spannung steht: Man beobachtet Stimmungen, wägt Worte ab,
+                  rechnet mit plötzlichem Rückzug oder Ärger und versucht
+                  gleichzeitig, Normalität aufrechtzuerhalten.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Diese dauernde innere Wachsamkeit ist anstrengend. Sie kostet Energie, auch wenn
-                  äusserlich gerade "nichts passiert". Hilfreiche Alltagsunterstützung beginnt oft
-                  damit, diese Belastung ernst zu nehmen und nicht nur auf sichtbare Eskalationen zu
-                  reagieren.
+                  Diese dauernde innere Wachsamkeit ist anstrengend. Sie kostet
+                  Energie, auch wenn äusserlich gerade "nichts passiert".
+                  Hilfreiche Alltagsunterstützung beginnt oft damit, diese
+                  Belastung ernst zu nehmen und nicht nur auf sichtbare
+                  Eskalationen zu reagieren.
                 </p>
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Alltagshilfe bedeutet deshalb nicht, immer mehr zu tun. Oft bedeutet sie,
-                      Beziehungen etwas vorhersehbarer, klarer und weniger reaktiv zu machen.
+                      Alltagshilfe bedeutet deshalb nicht, immer mehr zu tun.
+                      Oft bedeutet sie, Beziehungen etwas vorhersehbarer, klarer
+                      und weniger reaktiv zu machen.
                     </p>
                   </CardContent>
                 </Card>
@@ -108,36 +117,42 @@ export default function UnterstuetzenAlltag() {
                     description:
                       "Regelmässigkeit und angekündigte Änderungen entlasten oft stärker als spontane intensive Zuwendung.",
                     example:
-                      "\"Ich rufe dich heute Abend nach dem Essen an. Wenn ich mich verspäte, sage ich Bescheid.\"",
+                      '"Ich rufe dich heute Abend nach dem Essen an. Wenn ich mich verspäte, sage ich Bescheid."',
                   },
                   {
                     title: "Klar sagen, was Sie meinen",
                     description:
                       "Doppeldeutigkeiten, Beschwichtigungen oder halbe Zusagen schaffen im Alltag oft mehr Unruhe als ehrliche Klarheit.",
                     example:
-                      "\"Ich brauche heute Abend Ruhe und bin morgen wieder ansprechbar.\"",
+                      '"Ich brauche heute Abend Ruhe und bin morgen wieder ansprechbar."',
                   },
                   {
                     title: "Ruhige Präsenz statt hektisches Reparieren",
                     description:
                       "Nicht jede Stimmung muss sofort gelöst werden. Oft hilft es mehr, ansprechbar und klar zu bleiben, ohne alles zu optimieren.",
                     example:
-                      "\"Ich merke, dass heute viel Anspannung da ist. Ich bin da, aber wir müssen das nicht sofort lösen.\"",
+                      '"Ich merke, dass heute viel Anspannung da ist. Ich bin da, aber wir müssen das nicht sofort lösen."',
                   },
                   {
                     title: "Begrenzte Verfügbarkeit",
                     description:
                       "Alltag wird tragfähiger, wenn Nähe nicht mit permanenter Erreichbarkeit verwechselt wird.",
                     example:
-                      "\"Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu.\"",
+                      '"Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu."',
                   },
-                ].map((item) => (
+                ].map(item => (
                   <Card key={item.title} className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm mb-3">{item.description}</p>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm mb-3">
+                        {item.description}
+                      </p>
                       <div className="bg-sage-light/30 rounded-lg p-3">
-                        <p className="text-sm text-foreground italic">{item.example}</p>
+                        <p className="text-sm text-foreground italic">
+                          {item.example}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
@@ -153,25 +168,33 @@ export default function UnterstuetzenAlltag() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Nach Konflikten entsteht oft ein belastender Zwischenraum. Angehörige wissen nicht,
-                  ob sie nachgehen oder Abstand lassen sollen, ob Schweigen beruhigt oder eskaliert,
-                  ob ein Gespräch hilfreich wäre oder zu früh käme.
+                  Nach Konflikten entsteht oft ein belastender Zwischenraum.
+                  Angehörige wissen nicht, ob sie nachgehen oder Abstand lassen
+                  sollen, ob Schweigen beruhigt oder eskaliert, ob ein Gespräch
+                  hilfreich wäre oder zu früh käme.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Hilfreich kann sein</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Hilfreich kann sein
+                      </h3>
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li>ein kurzes, klares Kontaktangebot</li>
                         <li>nicht drängen, aber auch nicht strafen</li>
                         <li>später aufgreifen, was passiert ist</li>
-                        <li>zwischen Raum geben und Beziehungsabbruch unterscheiden</li>
+                        <li>
+                          zwischen Raum geben und Beziehungsabbruch
+                          unterscheiden
+                        </li>
                       </ul>
                     </CardContent>
                   </Card>
                   <Card className="border-border/50">
                     <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">Weniger hilfreich ist oft</h3>
+                      <h3 className="font-semibold text-foreground mb-2">
+                        Weniger hilfreich ist oft
+                      </h3>
                       <ul className="space-y-2 text-sm text-muted-foreground">
                         <li>mehrfach nachfassen aus Panik</li>
                         <li>Gegenrückzug aus Verletzung</li>
@@ -184,8 +207,9 @@ export default function UnterstuetzenAlltag() {
                 <Card className="bg-sage-light/10 border-sage">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      Im Alltag ist nach einem Bruch oft nicht Perfektion gefragt, sondern ein
-                      ruhiger, begrenzter Wiedereinstieg in Kontakt.
+                      Im Alltag ist nach einem Bruch oft nicht Perfektion
+                      gefragt, sondern ein ruhiger, begrenzter Wiedereinstieg in
+                      Kontakt.
                     </p>
                   </CardContent>
                 </Card>
@@ -224,7 +248,7 @@ export default function UnterstuetzenAlltag() {
                     description:
                       "Nicht alles tun, was Beziehung sofort beruhigt, sondern das, was längerfristig tragfähig ist.",
                   },
-                ].map((item) => (
+                ].map(item => (
                   <Card key={item.step} className="border-border/50">
                     <CardContent className="p-4">
                       <div className="flex items-start gap-3">
@@ -232,8 +256,12 @@ export default function UnterstuetzenAlltag() {
                           {item.step}
                         </span>
                         <div>
-                          <h4 className="font-semibold text-foreground">{item.title}</h4>
-                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                          <h4 className="font-semibold text-foreground">
+                            {item.title}
+                          </h4>
+                          <p className="text-sm text-muted-foreground">
+                            {item.description}
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -250,21 +278,38 @@ export default function UnterstuetzenAlltag() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Wenn eine Beziehung fast nur noch um Symptome, Anspannung und Konflikt kreist,
-                  verliert sie ihre tragenden Anteile. Alltagshilfe heisst deshalb auch, kleine
-                  gemeinsame Momente zu schützen, die nicht sofort funktional sein müssen.
+                  Wenn eine Beziehung fast nur noch um Symptome, Anspannung und
+                  Konflikt kreist, verliert sie ihre tragenden Anteile.
+                  Alltagshilfe heisst deshalb auch, kleine gemeinsame Momente zu
+                  schützen, die nicht sofort funktional sein müssen.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { title: "kurzer Spaziergang", examples: "ohne sofortiges Problemgespräch" },
-                    { title: "gemeinsames Essen", examples: "mit klarer zeitlicher Begrenzung" },
-                    { title: "etwas Vertrautes wiederholen", examples: "ein kleines Ritual, das nicht überfordert" },
-                    { title: "15 ruhige Minuten", examples: "ohne Lösungssuche, ohne Handy, ohne Druck" },
-                  ].map((item) => (
+                    {
+                      title: "kurzer Spaziergang",
+                      examples: "ohne sofortiges Problemgespräch",
+                    },
+                    {
+                      title: "gemeinsames Essen",
+                      examples: "mit klarer zeitlicher Begrenzung",
+                    },
+                    {
+                      title: "etwas Vertrautes wiederholen",
+                      examples: "ein kleines Ritual, das nicht überfordert",
+                    },
+                    {
+                      title: "15 ruhige Minuten",
+                      examples: "ohne Lösungssuche, ohne Handy, ohne Druck",
+                    },
+                  ].map(item => (
                     <Card key={item.title} className="border-border/50">
                       <CardContent className="p-4">
-                        <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm">{item.examples}</p>
+                        <h3 className="font-semibold text-foreground mb-1">
+                          {item.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm">
+                          {item.examples}
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
@@ -272,9 +317,10 @@ export default function UnterstuetzenAlltag() {
                 <Card className="mt-2 bg-sand-muted border-sand-mid">
                   <CardContent className="p-5">
                     <p className="text-muted-foreground text-sm">
-                      <strong className="text-foreground">Wichtig:</strong> Positive Momente sind
-                      keine Gegenbeweise gegen Belastung. Sie sind eher kleine Ressourceninseln, die
-                      Beziehungen etwas atmungsfähiger machen können.
+                      <strong className="text-foreground">Wichtig:</strong>{" "}
+                      Positive Momente sind keine Gegenbeweise gegen Belastung.
+                      Sie sind eher kleine Ressourceninseln, die Beziehungen
+                      etwas atmungsfähiger machen können.
                     </p>
                   </CardContent>
                 </Card>
@@ -290,15 +336,19 @@ export default function UnterstuetzenAlltag() {
               <div className="space-y-4">
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Fortschritte benennen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">
+                      Fortschritte benennen
+                    </h3>
                     <p className="text-muted-foreground text-sm mb-3">
-                      Nicht überloben, aber wahrnehmen, wenn etwas weniger zerstörerisch, etwas
-                      bewusster oder etwas klarer gelungen ist.
+                      Nicht überloben, aber wahrnehmen, wenn etwas weniger
+                      zerstörerisch, etwas bewusster oder etwas klarer gelungen
+                      ist.
                     </p>
                     <div className="bg-sage-lighter/50 rounded-lg p-3">
                       <p className="text-sm text-foreground italic">
-                        "Ich habe gemerkt, dass du dich heute zurückgezogen hast, ohne dass es ganz
-                        eskaliert ist. Das war nicht leicht."
+                        "Ich habe gemerkt, dass du dich heute zurückgezogen
+                        hast, ohne dass es ganz eskaliert ist. Das war nicht
+                        leicht."
                       </p>
                     </div>
                   </CardContent>
@@ -306,19 +356,26 @@ export default function UnterstuetzenAlltag() {
 
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Fragen statt übernehmen</h3>
+                    <h3 className="font-semibold text-foreground mb-3">
+                      Fragen statt übernehmen
+                    </h3>
                     <p className="text-muted-foreground text-sm mb-3">
-                      Alltagshilfe wird tragfähiger, wenn Sie nicht alles lösen, sondern Beteiligung
-                      und Eigenanteil offenlassen.
+                      Alltagshilfe wird tragfähiger, wenn Sie nicht alles lösen,
+                      sondern Beteiligung und Eigenanteil offenlassen.
                     </p>
                     <div className="space-y-2">
                       {[
                         "Was wäre dein Vorschlag?",
                         "Was brauchst du gerade von mir, und was eher nicht?",
                         "Soll ich einfach da sein oder mit dir mitdenken?",
-                      ].map((item) => (
-                        <div key={item} className="bg-sage-lighter/50 rounded-lg p-3">
-                          <p className="text-sm text-foreground italic">"{item}"</p>
+                      ].map(item => (
+                        <div
+                          key={item}
+                          className="bg-sage-lighter/50 rounded-lg p-3"
+                        >
+                          <p className="text-sm text-foreground italic">
+                            "{item}"
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -327,15 +384,20 @@ export default function UnterstuetzenAlltag() {
 
                 <Card className="border-border/50">
                   <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">Vorhersehbar bleiben</h3>
+                    <h3 className="font-semibold text-foreground mb-3">
+                      Vorhersehbar bleiben
+                    </h3>
                     <ul className="space-y-2 text-sm">
                       {[
                         "Änderungen möglichst früh ankündigen",
                         "Versprechen halten oder offen revidieren",
                         "Erreichbarkeit klar benennen",
                         "nicht jedes Mal völlig anders reagieren",
-                      ].map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                      ].map(item => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2 text-muted-foreground"
+                        >
                           <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
                           <span>{item}</span>
                         </li>
@@ -355,7 +417,8 @@ export default function UnterstuetzenAlltag() {
               <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Auch im Alltag können Sie nicht alles halten. Sie können nicht:
+                    Auch im Alltag können Sie nicht alles halten. Sie können
+                    nicht:
                   </p>
                   <ul className="space-y-2">
                     {[
@@ -363,17 +426,23 @@ export default function UnterstuetzenAlltag() {
                       "alle Trigger vermeiden",
                       "jede Eskalation verhindern",
                       "Therapie oder Krisenhilfe ersetzen",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                    ].map(item => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2 text-muted-foreground"
+                      >
                         <span className="text-sage-mid">•</span>
                         {item}
                       </li>
                     ))}
                   </ul>
                   <p className="text-muted-foreground leading-relaxed mt-4">
-                    <strong className="text-foreground">Das ist keine Niederlage.</strong> Alltag
-                    wird nicht durch Perfektion tragfähig, sondern durch Klarheit, Wiederholbarkeit
-                    und die Bereitschaft, auch Ihre eigene Grenze ernst zu nehmen.
+                    <strong className="text-foreground">
+                      Das ist keine Niederlage.
+                    </strong>{" "}
+                    Alltag wird nicht durch Perfektion tragfähig, sondern durch
+                    Klarheit, Wiederholbarkeit und die Bereitschaft, auch Ihre
+                    eigene Grenze ernst zu nehmen.
                   </p>
                 </CardContent>
               </Card>

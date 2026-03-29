@@ -241,6 +241,15 @@ export default function Kommunizieren() {
                     </ol>
                   </CardContent>
                 </Card>
+                <p className="text-sm text-muted-foreground">
+                  Wird aus dem Gespräch eine akute Krise?{" "}
+                  <Link
+                    href="/unterstuetzen/krise"
+                    className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                  >
+                    Krisenbegleitung →
+                  </Link>
+                </p>
               </div>
             </ContentSection>
 

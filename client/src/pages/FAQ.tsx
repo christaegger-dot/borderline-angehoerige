@@ -64,8 +64,8 @@ export default function FAQ() {
         {
           question: "Ist Borderline heilbar?",
           answer:
-            "Die Prognose ist deutlich besser, als lange angenommen wurde. Langzeitstudien zeigen, dass 85–93% der Betroffenen nach 10 Jahren eine symptomatische Remission erreichen – das heisst, sie erfüllen die diagnostischen Kriterien nicht mehr. Etwa 50% erreichen eine weitergehende Genesung mit stabilerer sozialer und beruflicher Funktionsfähigkeit. Gleichzeitig verläuft Entwicklung selten geradlinig: Fortschritte, Rückschläge und belastende Phasen können sich abwechseln. Therapie kann diesen Prozess deutlich unterstützen, aber nicht vollständig planbar machen.",
-          links: [{ text: "Zur Genesung-Seite", url: "/genesung" }],
+            "Die Prognose ist deutlich besser, als lange angenommen wurde – die meisten Betroffenen erreichen im Verlauf eine Remission. Entwicklung verläuft selten geradlinig, Rückschläge gehören dazu. Therapie unterstützt den Prozess, macht ihn aber nicht vollständig planbar.",
+          links: [{ text: "Verlauf & Prognose im Detail", url: "/genesung" }],
         },
         {
           question: "Ist Borderline erblich? Bin ich schuld?",
@@ -125,7 +125,7 @@ export default function FAQ() {
         {
           question: "Wann ist eine Einweisung nötig?",
           answer:
-            "Eine psychiatrische Einweisung (freiwillig oder unfreiwillig) ist angezeigt bei: akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung, die medizinische Versorgung erfordert, Fremdgefährdung, oder wenn die Person so dekompensiert ist, dass sie sich nicht mehr selbst versorgen kann. In der Schweiz kann eine fürsorgerische Unterbringung (FU) durch einen Arzt angeordnet werden, wenn eine ernsthafte Selbst- oder Fremdgefährdung vorliegt. Rufen Sie im Zweifelsfall den psychiatrischen Notdienst an – die können die Situation einschätzen.",
+            "Bei akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung mit Versorgungsbedarf, Fremdgefährdung oder völliger Dekompensation. In der Schweiz kann eine fürsorgerische Unterbringung (FU) durch einen Arzt angeordnet werden. Im Zweifelsfall: psychiatrischen Notdienst anrufen – die können die Situation einschätzen.",
           links: [{ text: "Notfallnummern", url: "/soforthilfe" }],
         },
         {
@@ -173,7 +173,7 @@ export default function FAQ() {
         {
           question: "Welche Therapie ist am besten?",
           answer:
-            "Für Borderline gibt es mehrere evidenzbasierte Therapien: DBT (Dialektisch-Behaviorale Therapie) ist sehr gut erforscht und häufig besonders wirksam bei Selbstverletzung und Suizidalität. MBT (Mentalisierungsbasierte Therapie) fokussiert auf das Verstehen eigener und fremder Gedanken/Gefühle. Schematherapie arbeitet an frühen Prägungen und Beziehungsmustern. TFP (Übertragungsfokussierte Therapie) nutzt die therapeutische Beziehung zur Veränderung. Alle können wirksam sein – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
+            "Es gibt mehrere gut erforschte Methoden (DBT, MBT, Schematherapie, TFP). Alle können wirksam sein – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
           links: [
             { text: "Therapieformen erklärt", url: "/unterstuetzen/therapie" },
           ],

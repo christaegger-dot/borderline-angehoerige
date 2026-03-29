@@ -14,7 +14,6 @@ import {
   Eye,
   Heart,
   Lightbulb,
-  Shield,
   Users,
   XCircle,
   CheckCircle2,
@@ -230,31 +229,21 @@ export default function UnterstuetzenUebersicht() {
               </div>
             </div>
 
-            <ContentSection
-              title="Unterstützung braucht Grenzen"
-              icon={<Shield className="w-7 h-7 text-sage-mid" />}
-              id="grenzen"
-              preview="Ohne Grenzen wird Unterstützung oft unklar, erschöpfend oder inkonsistent. Grenzen sind nicht das Gegenteil von Mitgefühl, sondern oft seine Voraussetzung."
-            >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Unterstützung wird auf Dauer nur tragfähig, wenn sie begrenzt
-                  bleibt. Wer aus Angst oder Schuld jede Grenze aufweicht,
-                  beruhigt eine Situation kurzfristig vielleicht, macht sie
-                  langfristig aber oft unklarer und krisenanfälliger.
+            <Card className="border-sage-mid/40 bg-sage-wash/20">
+              <CardContent className="p-5 flex items-start gap-3">
+                <span className="text-sage-mid mt-0.5">→</span>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Ohne Grenzen wird Unterstützung oft unklar, erschöpfend oder
+                  inkonsistent. Wie Sie klare Grenzen setzen und halten:{" "}
+                  <Link
+                    href="/grenzen"
+                    className="text-sage-dark underline underline-offset-2 hover:text-sage-mid font-medium"
+                  >
+                    Grenzen setzen →
+                  </Link>
                 </p>
-                <Card className="bg-cream border-border/50">
-                  <CardContent className="p-5">
-                    <p className="text-foreground leading-relaxed">
-                      Grenzen sind kein Liebesentzug. Sie schaffen
-                      Berechenbarkeit, schützen Ihre Integrität und entlasten
-                      Beziehungen von der Erwartung, dass ein Mensch alles
-                      halten müsse.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
+              </CardContent>
+            </Card>
 
             <ContentSection
               title="Wenn mehrere Angehörige beteiligt sind"

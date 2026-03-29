@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  AlertTriangle,
   Brain,
   Building2,
   Calendar,
@@ -18,8 +19,10 @@ import {
   Lightbulb,
   Mail,
   MapPin,
+  MessageCircle,
   Phone,
   RefreshCw,
+  Shield,
   Stethoscope,
   Users,
 } from "lucide-react";
@@ -398,6 +401,149 @@ export default function UnterstuetzenTherapie() {
                   </div>
                 </CardContent>
               </Card>
+            </ContentSection>
+
+            <ContentSection
+              title="Als Angehörige/r mit dem Behandlungssystem zusammenarbeiten"
+              icon={<MessageCircle className="w-7 h-7 text-slate-blue" />}
+              id="zusammenarbeit"
+              preview="Sie sind nicht Teil der Therapie – und das ist oft richtig so. Aber es gibt konstruktive Wege, mit dem klinischen Team in Kontakt zu treten."
+            >
+              <div className="space-y-5">
+                <Card className="border-l-4 border-l-slate-blue/40 bg-slate-50/40">
+                  <CardContent className="p-5">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Dass Sie nicht in jede Sitzung eingeladen werden, ist
+                      meistens{" "}
+                      <strong className="text-foreground">
+                        therapeutisch beabsichtigt
+                      </strong>{" "}
+                      – nicht Ablehnung. Die Therapie braucht einen geschützten
+                      Raum. Trotzdem gibt es Situationen, in denen Kontakt
+                      sinnvoll und berechtigt ist.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* 6 Szenarien */}
+                {[
+                  {
+                    icon: Users,
+                    titel: "Der Therapeut lädt mich nicht zur Sitzung ein",
+                    inhalt: [
+                      "Das ist oft korrekt – Vertrauen zwischen Therapeut und Patient braucht Schutz",
+                      "Was Sie trotzdem tun können: um einen einzelnen Angehörigentermin bitten (1–2× pro Jahr)",
+                      "Kurzer Brief: «Ich möchte verstehen, wie ich unterstützen kann, ohne zu schaden» – Therapeutin kann orientieren, ohne vertrauliche Inhalte zu teilen",
+                      "Nicht hilfreich: ständiges Drängen auf Informationen oder «bessere Einbindung»",
+                    ],
+                  },
+                  {
+                    icon: Heart,
+                    titel: "Ich möchte über meine eigene Belastung sprechen",
+                    inhalt: [
+                      "Das ist berechtigt – Sie dürfen Orientierung für Ihre eigene Rolle suchen",
+                      "Bitten Sie um eine «Beratungssitzung nur für Angehörige» (ohne die betroffene Person)",
+                      "Ziel: Sie bekommen Orientierung – keine Mitbehandlung, keine Diagnose",
+                      "Gute Fragen: «Wie reagiere ich auf X? Wann ist etwas Sorge, wann überreagiere ich?»",
+                    ],
+                  },
+                  {
+                    icon: RefreshCw,
+                    titel: "Die Therapie scheint zu stagnieren",
+                    inhalt: [
+                      "Bedenken Sie: Sie sehen nicht, was in der Therapie passiert – Vertrauensaufbau dauert oft Monate",
+                      "Wenn Sie wirklich besorgt sind: konkrete Beobachtungen formulieren, nicht Urteile",
+                      "Formulierungsbeispiel: «Mir ist aufgefallen, dass sich die Selbstverletzungen nicht bessern. Ist das ein normaler Teil des Prozesses?»",
+                      "Therapeut wird erklären oder reagieren – Zweitmeinung ist nach einem Jahr ohne Fortschritt berechtigt",
+                    ],
+                  },
+                  {
+                    icon: AlertTriangle,
+                    titel: "Ich vermute, dass mein Angehöriger nicht mitmacht",
+                    inhalt: [
+                      "Direkt ansprechen (in stabiler Phase): «Mir scheint, dass die Therapie für dich gerade schwierig ist. Was macht sie dir schwierig?»",
+                      "Sie können Motivation nicht erzwingen – aber Sie können Interesse zeigen",
+                      "Nur bei Sicherheitsgefährdung: eigenständig Kontakt mit Therapeutin aufnehmen",
+                      "Therapieverweigerung ist oft Teil des Krankheitsbildes – nicht persönlich nehmen",
+                    ],
+                  },
+                  {
+                    icon: Lightbulb,
+                    titel: "Was sollte ich dem Behandlungsteam berichten?",
+                    inhalt: [
+                      "Relevant: Sicherheitsrisiken (Suizidgedanken, Selbstverletzung, Gewalt), grösste Beziehungsherausforderungen, was funktioniert",
+                      "Nicht nötig: tägliche Detailberichte – das überfordert und schadet der Therapiebeziehung",
+                      "Kurze, konkrete Nachrichten (1–2× pro Monat reicht meist)",
+                      "Fragen statt Diagnosen: «Mir fällt auf, dass … – Ist das Teil des Prozesses?»",
+                    ],
+                  },
+                  {
+                    icon: Shield,
+                    titel: "Nach einer Krise: Nachsorge koordinieren",
+                    inhalt: [
+                      "Fragen Sie aktiv: «Gibt es einen Nachsorgeplan für die nächsten 2 Wochen? Wie kann ich unterstützen?»",
+                      "Klare Absprache: Wer macht was? Therapeutin, Angehöriger, betroffene Person",
+                      "Notfallkontakt klären: «Wenn es wieder kritisch wird, rufe ich … an?»",
+                      "Kurze Zusammenfassung nach Klinikaufenthalt einfordern – Sie müssen nicht blind weiterarbeiten",
+                    ],
+                  },
+                ].map(szenario => (
+                  <Card key={szenario.titel} className="border-border/50">
+                    <CardContent className="p-5">
+                      <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <szenario.icon className="w-4 h-4 text-slate-blue shrink-0" />
+                        {szenario.titel}
+                      </h3>
+                      <ul className="space-y-1.5">
+                        {szenario.inhalt.map(punkt => (
+                          <li
+                            key={punkt}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
+                            <span className="text-sage-mid mt-0.5 shrink-0">
+                              →
+                            </span>
+                            {punkt}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+
+                {/* Warnsignale problematische Therapie */}
+                <Card className="border-l-4 border-l-amber-400 bg-amber-50/40">
+                  <CardContent className="p-5">
+                    <h3 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4 text-amber-600" />
+                      Warnsignale für eine problematische Therapiesituation
+                    </h3>
+                    <ul className="space-y-1.5">
+                      {[
+                        "Therapeut kritisiert Angehörige offen vor Patient («Sie sind das Problem»)",
+                        "Kein Kontakt möglich, auch nicht bei konkreten Sicherheitsbedenken",
+                        "Patient wird von Familie isoliert («Vertrau nur mir, nicht deinem Partner»)",
+                        "Jahre Therapie ohne jede erkennbare Veränderung oder Reflexion darüber",
+                      ].map((item, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                        >
+                          <span className="text-amber-500 mt-0.5 shrink-0">
+                            !
+                          </span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-sm text-muted-foreground mt-3 pt-3 border-t border-amber-200">
+                      <strong className="text-foreground">Dann:</strong>{" "}
+                      Zweitmeinung einholen oder Therapeutenwechsel ansprechen –
+                      das ist legitim und manchmal notwendig.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </ContentSection>
 
             <motion.div

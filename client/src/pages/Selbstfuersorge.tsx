@@ -243,6 +243,22 @@ export default function Selbstfuersorge() {
               Sie handlungsfähig und innerlich beweglich bleiben.
             </p>
 
+            <Card className="bg-slate-50 border-border/40 mb-5">
+              <CardContent className="p-4 text-sm text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Diese Seite:</strong> Was
+                Sie für sich tun — Erholung, Stabilisierung, innere
+                Regeneration.{" "}
+                <Link
+                  href="/grenzen"
+                  className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                >
+                  Grenzen setzen →
+                </Link>{" "}
+                zeigt, wie Sie Klarheit gegenüber anderen kommunizieren und
+                einhalten.
+              </CardContent>
+            </Card>
+
             <Card className="bg-sage-lighter/20 border-sage-mid">
               <CardContent className="p-5">
                 <p className="text-foreground leading-relaxed italic">
@@ -400,10 +416,21 @@ export default function Selbstfuersorge() {
 
               <Card className="mt-6 bg-sage-mid/10 border-sage-mid">
                 <CardContent className="p-5">
-                  <p className="text-foreground font-medium">
+                  <p className="text-foreground font-medium mb-2">
                     Wenn Sie mehrere dieser Warnsignale bei sich bemerken, ist
                     es Zeit zu handeln. Sprechen Sie mit Ihrem Hausarzt oder
                     suchen Sie professionelle Unterstützung.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Merken Sie ausserdem, dass Sie Andere nicht mehr klar auf
+                    Distanz halten können?{" "}
+                    <Link
+                      href="/grenzen"
+                      className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                    >
+                      Grenzen setzen →
+                    </Link>{" "}
+                    zeigt, wie Sie das konkret kommunizieren.
                   </p>
                 </CardContent>
               </Card>

@@ -59,13 +59,28 @@ export default function Grenzen() {
               Grenzen setzen
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-5">
               Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine
               Voraussetzung. Sie schützen Ihre Integrität, machen Beziehungen
               berechenbarer und verhindern, dass Unterstützung in Selbstaufgabe
               kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau
               deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
             </p>
+
+            <Card className="bg-slate-50 border-border/40">
+              <CardContent className="p-4 text-sm text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Diese Seite:</strong> Was
+                Sie gegenüber anderen kommunizieren und einhalten — Klarheit
+                nach aussen.{" "}
+                <Link
+                  href="/selbstfuersorge"
+                  className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                >
+                  Selbstfürsorge →
+                </Link>{" "}
+                zeigt, wie Sie sich selbst stabilisieren und regenerieren.
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </section>
@@ -141,7 +156,15 @@ export default function Grenzen() {
                 <CardContent className="p-5">
                   <p className="text-foreground leading-relaxed">
                     Grenzen beginnen oft nicht mit dem Satz an den anderen,
-                    sondern mit dem ernsten Wahrnehmen Ihrer eigenen Belastung.
+                    sondern mit dem ernsten Wahrnehmen Ihrer eigenen Belastung.{" "}
+                    <Link
+                      href="/selbstfuersorge"
+                      className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                    >
+                      Selbstfürsorge →
+                    </Link>{" "}
+                    zeigt, was Sie tun können, wenn Sie merken, dass Sie sich
+                    selbst vernachlässigt haben.
                   </p>
                 </CardContent>
               </Card>

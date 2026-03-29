@@ -353,9 +353,9 @@ export default function Kommunizieren() {
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Wer als erwachsenes Kind kommuniziert, gerät oft schnell
-                      in Loyalitätsdruck. Gerade dann ist wichtig: Ihre eigene
-                      Wahrnehmung und Ihre Begrenzung sind nicht weniger legitim
-                      als die Not Ihres Elternteils.
+                      in Loyalitätsdruck. Gerade dann hilft eine ruhige, direkte
+                      Sprache mehr als Rechtfertigung – Sie müssen Ihre
+                      Wahrnehmung nicht beweisen, um sie sagen zu dürfen.
                     </p>
                   </CardContent>
                 </Card>

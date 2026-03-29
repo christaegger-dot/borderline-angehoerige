@@ -18,12 +18,22 @@ import SEO from "@/components/SEO";
  */
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Phone, AlertTriangle, Clock, Baby, User, Users, Shield, Heart, Pill, Info, ChevronRight } from "lucide-react";
+import {
+  Phone,
+  AlertTriangle,
+  Clock,
+  Baby,
+  User,
+  Users,
+  Shield,
+  Heart,
+  Pill,
+  Info,
+  ChevronRight,
+} from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import {
-  kontaktByIdStrict,
-} from "@/data/kontakte";
+import { kontaktByIdStrict } from "@/data/kontakte";
 
 // ─── Sticky Ampel-Leiste ──────────────────────────────────
 
@@ -42,9 +52,24 @@ function StickyAmpelLeiste() {
   };
 
   const items = [
-    { id: "block-rot",    label: "Lebensgefahr",         sub: "144 · 117 · 112",  bg: "var(--color-sos-rot)" },
-    { id: "block-orange", label: "Psychiatr. Krise",      sub: "PUK 24/7",         bg: "var(--color-sos-orange-text)" },
-    { id: "block-gruen",  label: "Jemand zum Reden",      sub: "143",              bg: "var(--color-sos-gruen-text)" },
+    {
+      id: "block-rot",
+      label: "Lebensgefahr",
+      sub: "144 · 117 · 112",
+      bg: "var(--color-sos-rot)",
+    },
+    {
+      id: "block-orange",
+      label: "Psychiatr. Krise",
+      sub: "PUK 24/7",
+      bg: "var(--color-sos-orange-text)",
+    },
+    {
+      id: "block-gruen",
+      label: "Jemand zum Reden",
+      sub: "143",
+      bg: "var(--color-sos-gruen-text)",
+    },
   ] as const;
 
   return (
@@ -55,7 +80,7 @@ function StickyAmpelLeiste() {
       <div className="bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
         <div className="container">
           <div className="flex gap-1.5 py-2">
-            {items.map((item) => (
+            {items.map(item => (
               <button
                 key={item.id}
                 type="button"
@@ -64,8 +89,12 @@ function StickyAmpelLeiste() {
                 className="flex-1 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 px-1.5 sm:px-3 py-2 sm:py-2.5 rounded-lg text-white font-medium text-[10px] sm:text-sm transition-all hover:brightness-90 active:scale-[0.97] shadow-sm min-h-[44px]"
                 style={{ backgroundColor: item.bg }}
               >
-                <span className="font-semibold leading-tight text-center">{item.label}</span>
-                <span className="text-white/80 text-[10px] sm:text-xs leading-tight">{item.sub}</span>
+                <span className="font-semibold leading-tight text-center">
+                  {item.label}
+                </span>
+                <span className="text-white/80 text-[10px] sm:text-xs leading-tight">
+                  {item.sub}
+                </span>
               </button>
             ))}
           </div>
@@ -77,7 +106,17 @@ function StickyAmpelLeiste() {
 
 // ─── Grosse Notruf-Karte (ROT) ───────────────────────────
 
-function NotfallKarte({ nummer, label, hinweis, tel }: { nummer: string; label: string; hinweis: string; tel: string }) {
+function NotfallKarte({
+  nummer,
+  label,
+  hinweis,
+  tel,
+}: {
+  nummer: string;
+  label: string;
+  hinweis: string;
+  tel: string;
+}) {
   return (
     <a
       href={`tel:${tel}`}
@@ -89,7 +128,9 @@ function NotfallKarte({ nummer, label, hinweis, tel }: { nummer: string; label: 
           <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </div>
         <div className="min-w-0">
-          <p className="font-bold text-white text-xl sm:text-2xl leading-none mb-0.5">{nummer}</p>
+          <p className="font-bold text-white text-xl sm:text-2xl leading-none mb-0.5">
+            {nummer}
+          </p>
           <p className="text-white/90 font-semibold text-sm">{label}</p>
           <p className="text-white/70 text-xs leading-snug mt-0.5">{hinweis}</p>
         </div>
@@ -103,7 +144,19 @@ function NotfallKarte({ nummer, label, hinweis, tel }: { nummer: string; label: 
 
 // ─── PUK-Karte (ORANGE) ──────────────────────────────────
 
-function PukKarte({ nummer, label, fuerWen, tel, icon }: { nummer: string; label: string; fuerWen: string; tel: string; icon: React.ReactNode }) {
+function PukKarte({
+  nummer,
+  label,
+  fuerWen,
+  tel,
+  icon,
+}: {
+  nummer: string;
+  label: string;
+  fuerWen: string;
+  tel: string;
+  icon: React.ReactNode;
+}) {
   return (
     <a
       href={`tel:${tel}`}
@@ -115,9 +168,15 @@ function PukKarte({ nummer, label, fuerWen, tel, icon }: { nummer: string; label
           {icon}
         </div>
         <div className="min-w-0">
-          <p className="text-xs font-medium text-sos-orange-text mb-0.5">{fuerWen}</p>
-          <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">{nummer}</p>
-          <p className="text-muted-foreground text-xs sm:text-sm leading-snug">{label}</p>
+          <p className="text-xs font-medium text-sos-orange-text mb-0.5">
+            {fuerWen}
+          </p>
+          <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">
+            {nummer}
+          </p>
+          <p className="text-muted-foreground text-xs sm:text-sm leading-snug">
+            {label}
+          </p>
         </div>
       </div>
       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-orange-light flex items-center justify-center group-hover:bg-sos-orange-border transition-all">
@@ -129,7 +188,19 @@ function PukKarte({ nummer, label, fuerWen, tel, icon }: { nummer: string; label
 
 // ─── Grüne Karte (Entlastung) ─────────────────────────────
 
-function EntlastungKarte({ nummer, label, hinweis, tel, badge }: { nummer: string; label: string; hinweis: string; tel: string; badge?: string }) {
+function EntlastungKarte({
+  nummer,
+  label,
+  hinweis,
+  tel,
+  badge,
+}: {
+  nummer: string;
+  label: string;
+  hinweis: string;
+  tel: string;
+  badge?: string;
+}) {
   return (
     <a
       href={`tel:${tel}`}
@@ -142,11 +213,19 @@ function EntlastungKarte({ nummer, label, hinweis, tel, badge }: { nummer: strin
         </div>
         <div className="min-w-0">
           {badge && (
-            <span className="inline-block text-[10px] font-semibold text-sos-gruen-text bg-sos-gruen-light rounded px-1.5 py-0.5 mb-0.5">{badge}</span>
+            <span className="inline-block text-[10px] font-semibold text-sos-gruen-text bg-sos-gruen-light rounded px-1.5 py-0.5 mb-0.5">
+              {badge}
+            </span>
           )}
-          <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">{nummer}</p>
-          <p className="text-muted-foreground text-xs sm:text-sm font-medium">{label}</p>
-          <p className="text-muted-foreground text-xs leading-snug mt-0.5">{hinweis}</p>
+          <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">
+            {nummer}
+          </p>
+          <p className="text-muted-foreground text-xs sm:text-sm font-medium">
+            {label}
+          </p>
+          <p className="text-muted-foreground text-xs leading-snug mt-0.5">
+            {hinweis}
+          </p>
         </div>
       </div>
       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-gruen-light flex items-center justify-center group-hover:bg-sos-gruen-border transition-all">
@@ -164,15 +243,15 @@ export default function Notfall() {
   const rot112 = kontaktByIdStrict("ROT_112");
   const pukKjp = kontaktByIdStrict("GELB_PUK_KJP");
   const pukErw = kontaktByIdStrict("GELB_PUK_ERW");
-  const puk65  = kontaktByIdStrict("GELB_PUK_65");
-  const gruen143   = kontaktByIdStrict("GRUEN_143");
+  const puk65 = kontaktByIdStrict("GELB_PUK_65");
+  const gruen143 = kontaktByIdStrict("GRUEN_143");
   const gruenEltern = kontaktByIdStrict("GRUEN_ELTERN");
-  const gruen147   = kontaktByIdStrict("GRUEN_147");
-  const rot145         = kontaktByIdStrict("ROT_145");
-  const infoAerztefon  = kontaktByIdStrict("INFO_AERZTEFON");
+  const gruen147 = kontaktByIdStrict("GRUEN_147");
+  const rot145 = kontaktByIdStrict("ROT_145");
+  const infoAerztefon = kontaktByIdStrict("INFO_AERZTEFON");
   const infoPukZentrale = kontaktByIdStrict("INFO_PUK_ZENTRALE");
   const infoFachstelle = kontaktByIdStrict("INFO_FACHSTELLE");
-  const infoKiz        = kontaktByIdStrict("INFO_KIZ");
+  const infoKiz = kontaktByIdStrict("INFO_KIZ");
 
   return (
     <Layout>
@@ -195,7 +274,9 @@ export default function Notfall() {
               <div className="w-11 h-11 rounded-xl bg-sos-rot flex items-center justify-center">
                 <AlertTriangle className="w-6 h-6 text-white" />
               </div>
-              <span className="text-sm font-semibold text-sos-rot uppercase tracking-wide">Soforthilfe</span>
+              <span className="text-sm font-semibold text-sos-rot uppercase tracking-wide">
+                Soforthilfe
+              </span>
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
@@ -203,16 +284,26 @@ export default function Notfall() {
             </h1>
 
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-5">
-              Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz – wenn sofortiges Handeln erforderlich ist.
+              Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz –
+              wenn sofortiges Handeln erforderlich ist.
             </p>
-            <p className="text-sm text-muted-foreground mb-5">
-              Regionaler Geltungsbereich: Schweiz (mit Schwerpunkt Kanton Zürich).
+            <p className="inline-flex items-center gap-1.5 text-sm text-muted-foreground mb-5 bg-muted/40 px-3 py-1.5 rounded-full border border-border/50">
+              <Info className="w-3.5 h-3.5 shrink-0" />
+              Gilt für die <strong className="text-foreground">
+                Schweiz
+              </strong>{" "}
+              (Schwerpunkt Kanton Zürich) — nicht für Deutschland oder
+              Österreich.
             </p>
 
             <div className="p-4 rounded-xl bg-sos-amber-wash border border-sos-amber-border">
               <p className="text-sm text-sos-amber-dark leading-snug">
-                <strong>Diese Seite ist für akute Gefahrensituationen.</strong> Für emotionale Krisen ohne akute Gefahr besuchen Sie die Seite{" "}
-                <Link href="/unterstuetzen/krise" className="text-terracotta-mid hover:underline font-semibold">
+                <strong>Diese Seite ist für akute Gefahrensituationen.</strong>{" "}
+                Für emotionale Krisen ohne akute Gefahr besuchen Sie die Seite{" "}
+                <Link
+                  href="/unterstuetzen/krise"
+                  className="text-terracotta-mid hover:underline font-semibold"
+                >
                   «In der Krise unterstützen» →
                 </Link>
               </p>
@@ -228,7 +319,6 @@ export default function Notfall() {
       <section className="py-6 md:py-12 pb-32 sm:pb-12">
         <div className="container">
           <div className="max-w-2xl mx-auto space-y-8">
-
             {/* ─── BLOCK 1: LEBENSGEFAHR (ROT) ─── */}
             <motion.div
               id="block-rot"
@@ -241,10 +331,13 @@ export default function Notfall() {
               <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-rot">
                 <div className="flex items-center gap-3 mb-1">
                   <AlertTriangle className="w-6 h-6 text-white flex-shrink-0" />
-                  <h2 className="text-lg sm:text-xl font-bold text-white">Lebensgefahr – sofort handeln</h2>
+                  <h2 className="text-lg sm:text-xl font-bold text-white">
+                    Lebensgefahr – sofort handeln
+                  </h2>
                 </div>
                 <p className="text-white/85 text-sm leading-snug ml-9">
-                  Bei akuter Suizidgefahr, schwerer Selbstverletzung, Gewalt oder unmittelbarer Bedrohung.
+                  Bei akuter Suizidgefahr, schwerer Selbstverletzung, Gewalt
+                  oder unmittelbarer Bedrohung.
                 </p>
               </div>
 
@@ -273,7 +366,11 @@ export default function Notfall() {
               {/* Merksatz */}
               <div className="px-5 py-3 sm:px-6 bg-sos-rot/20 border-t border-white/10">
                 <p className="text-white text-xs sm:text-sm leading-snug">
-                  <strong>Merke:</strong> Bei akuter Selbst- oder Fremdgefährdung zuerst <strong>144 / 117 / 112</strong> wählen. Wenn Sie unsicher sind, lassen Sie sich dort oder durch eine psychiatrische Fachstelle sofort zum weiteren Vorgehen anleiten.
+                  <strong>Merke:</strong> Bei akuter Selbst- oder
+                  Fremdgefährdung zuerst <strong>144 / 117 / 112</strong>{" "}
+                  wählen. Wenn Sie unsicher sind, lassen Sie sich dort oder
+                  durch eine psychiatrische Fachstelle sofort zum weiteren
+                  Vorgehen anleiten.
                 </p>
               </div>
             </motion.div>
@@ -292,10 +389,14 @@ export default function Notfall() {
                   <div className="w-8 h-8 rounded-lg bg-sos-orange flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-lg sm:text-xl font-bold text-sos-orange-dark">Akute psychiatrische Krise</h2>
+                  <h2 className="text-lg sm:text-xl font-bold text-sos-orange-dark">
+                    Akute psychiatrische Krise
+                  </h2>
                 </div>
                 <p className="text-sos-orange-mid text-sm leading-snug ml-11">
-                  Schwere psychische Krise, starke Eskalation oder massiver Kontrollverlust – aber <strong>keine unmittelbare Lebensgefahr</strong>.
+                  Schwere psychische Krise, starke Eskalation oder massiver
+                  Kontrollverlust – aber{" "}
+                  <strong>keine unmittelbare Lebensgefahr</strong>.
                 </p>
               </div>
 
@@ -310,28 +411,35 @@ export default function Notfall() {
                   label="PUK Erwachsene (24/7)"
                   fuerWen="Erwachsene 18–64 Jahre"
                   tel={pukErw.tel}
-                  icon={<User className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />}
+                  icon={
+                    <User className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />
+                  }
                 />
                 <PukKarte
                   nummer={pukKjp.nummer}
                   label="PUK Kinder & Jugendliche (24/7)"
                   fuerWen="Kinder & Jugendliche bis 18 Jahre"
                   tel={pukKjp.tel}
-                  icon={<Baby className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />}
+                  icon={
+                    <Baby className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />
+                  }
                 />
                 <PukKarte
                   nummer={puk65.nummer}
                   label="PUK Erwachsene ab 65 (24/7)"
                   fuerWen="Erwachsene ab 65 Jahren"
                   tel={puk65.tel}
-                  icon={<Users className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />}
+                  icon={
+                    <Users className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />
+                  }
                 />
               </div>
 
               {/* Hinweis */}
               <div className="px-5 py-3 sm:px-6 bg-sos-orange-wash border-t border-sos-orange-light">
                 <p className="text-sos-orange-mid text-xs sm:text-sm leading-snug">
-                  Am Telefon erfolgt eine kurze Einschätzung, was jetzt am besten hilft.
+                  Am Telefon erfolgt eine kurze Einschätzung, was jetzt am
+                  besten hilft.
                 </p>
               </div>
             </motion.div>
@@ -350,10 +458,14 @@ export default function Notfall() {
                   <div className="w-8 h-8 rounded-lg bg-sos-gruen flex items-center justify-center flex-shrink-0">
                     <Heart className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-lg sm:text-xl font-bold text-sos-gruen-dark">Jemand zum Reden / Entlastung</h2>
+                  <h2 className="text-lg sm:text-xl font-bold text-sos-gruen-dark">
+                    Jemand zum Reden / Entlastung
+                  </h2>
                 </div>
                 <p className="text-sos-gruen-mid text-sm leading-snug ml-11">
-                  Für Gespräch, Entlastung und Orientierung – <strong>kein Einsatz vor Ort</strong>, keine unmittelbare Gefahr.
+                  Für Gespräch, Entlastung und Orientierung –{" "}
+                  <strong>kein Einsatz vor Ort</strong>, keine unmittelbare
+                  Gefahr.
                 </p>
               </div>
 
@@ -385,7 +497,8 @@ export default function Notfall() {
               {/* Hinweis */}
               <div className="px-5 py-3 sm:px-6 bg-sos-gruen-wash border-t border-sos-gruen-light">
                 <p className="text-sos-gruen-mid text-xs sm:text-sm leading-snug">
-                  <strong>Bei akuter Gefahr:</strong> Immer zuerst <strong>144 / 117 / 112</strong> rufen.
+                  <strong>Bei akuter Gefahr:</strong> Immer zuerst{" "}
+                  <strong>144 / 117 / 112</strong> rufen.
                 </p>
               </div>
             </motion.div>
@@ -403,7 +516,9 @@ export default function Notfall() {
                   <div className="w-8 h-8 rounded-lg bg-sos-lila flex items-center justify-center flex-shrink-0">
                     <Pill className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-base sm:text-lg font-bold text-sos-lila-dark">Spezialfall: Vergiftung</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-sos-lila-dark">
+                    Spezialfall: Vergiftung
+                  </h2>
                 </div>
               </div>
 
@@ -418,9 +533,15 @@ export default function Notfall() {
                       <Pill className="w-5 h-5 text-sos-lila-text" />
                     </div>
                     <div>
-                      <p className="font-bold text-foreground text-xl leading-none mb-0.5">{rot145.nummer}</p>
-                      <p className="text-muted-foreground text-sm font-medium">{rot145.label}</p>
-                      <p className="text-muted-foreground text-xs mt-0.5">{rot145.hinweis}</p>
+                      <p className="font-bold text-foreground text-xl leading-none mb-0.5">
+                        {rot145.nummer}
+                      </p>
+                      <p className="text-muted-foreground text-sm font-medium">
+                        {rot145.label}
+                      </p>
+                      <p className="text-muted-foreground text-xs mt-0.5">
+                        {rot145.hinweis}
+                      </p>
                     </div>
                   </div>
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-lila-light flex items-center justify-center group-hover:bg-sos-lila-border transition-all">
@@ -441,9 +562,13 @@ export default function Notfall() {
               <div className="px-5 py-3 sm:px-6 sm:py-4 bg-muted/40 border-b border-border/50">
                 <div className="flex items-center gap-2">
                   <Info className="w-5 h-5 text-muted-foreground" />
-                  <h2 className="text-sm sm:text-base font-normal text-muted-foreground">Weitere Kontakte</h2>
+                  <h2 className="text-sm sm:text-base font-normal text-muted-foreground">
+                    Weitere Kontakte
+                  </h2>
                 </div>
-                <p className="text-xs text-muted-foreground mt-0.5 ml-7">Allgemeine Beratung und Auskunft – nicht für akute Notfälle</p>
+                <p className="text-xs text-muted-foreground mt-0.5 ml-7">
+                  Allgemeine Beratung und Auskunft – nicht für akute Notfälle
+                </p>
               </div>
 
               <div className="px-4 py-4 sm:px-5 space-y-3 bg-background">
@@ -454,9 +579,15 @@ export default function Notfall() {
                   aria-label={`${infoAerztefon.label} anrufen: ${infoAerztefon.nummer}`}
                 >
                   <div className="min-w-0">
-                    <p className="font-semibold text-foreground text-sm">{infoAerztefon.nummer}</p>
-                    <p className="text-muted-foreground text-xs">{infoAerztefon.label}</p>
-                    <p className="text-muted-foreground text-xs">{infoAerztefon.hinweis}</p>
+                    <p className="font-semibold text-foreground text-sm">
+                      {infoAerztefon.nummer}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {infoAerztefon.label}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {infoAerztefon.hinweis}
+                    </p>
                   </div>
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
                     <Phone className="w-4 h-4 text-muted-foreground" />
@@ -470,9 +601,15 @@ export default function Notfall() {
                   aria-label={`${infoPukZentrale.label} anrufen: ${infoPukZentrale.nummer}`}
                 >
                   <div className="min-w-0">
-                    <p className="font-semibold text-foreground text-sm">{infoPukZentrale.nummer}</p>
-                    <p className="text-muted-foreground text-xs">{infoPukZentrale.label}</p>
-                    <p className="text-muted-foreground text-xs">Allgemeine Auskunft – kein Notfalldienst</p>
+                    <p className="font-semibold text-foreground text-sm">
+                      {infoPukZentrale.nummer}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {infoPukZentrale.label}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      Allgemeine Auskunft – kein Notfalldienst
+                    </p>
                   </div>
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
                     <Phone className="w-4 h-4 text-muted-foreground" />
@@ -486,9 +623,15 @@ export default function Notfall() {
                   aria-label={`${infoFachstelle.label} anrufen: ${infoFachstelle.nummer}`}
                 >
                   <div className="min-w-0">
-                    <p className="font-semibold text-foreground text-sm">{infoFachstelle.nummer}</p>
-                    <p className="text-muted-foreground text-xs">{infoFachstelle.label}</p>
-                    <p className="text-muted-foreground text-xs">{infoFachstelle.hinweis}</p>
+                    <p className="font-semibold text-foreground text-sm">
+                      {infoFachstelle.nummer}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {infoFachstelle.label}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {infoFachstelle.hinweis}
+                    </p>
                   </div>
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
                     <Phone className="w-4 h-4 text-muted-foreground" />
@@ -502,9 +645,15 @@ export default function Notfall() {
                   aria-label={`${infoKiz.label} anrufen: ${infoKiz.nummer}`}
                 >
                   <div className="min-w-0">
-                    <p className="font-semibold text-foreground text-sm">{infoKiz.nummer}</p>
-                    <p className="text-muted-foreground text-xs">{infoKiz.label}</p>
-                    <p className="text-muted-foreground text-xs">{infoKiz.hinweis}</p>
+                    <p className="font-semibold text-foreground text-sm">
+                      {infoKiz.nummer}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {infoKiz.label}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {infoKiz.hinweis}
+                    </p>
                   </div>
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
                     <Phone className="w-4 h-4 text-muted-foreground" />
@@ -529,35 +678,45 @@ export default function Notfall() {
                   href="/wegweiser"
                   className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-[var(--color-sage-dark)]/30 hover:border-[var(--color-sage-dark)]/50 hover:shadow-sm transition-all group"
                 >
-                  <span className="text-sm text-foreground font-medium">Situations-Wegweiser: «Was tun wenn…»</span>
+                  <span className="text-sm text-foreground font-medium">
+                    Situations-Wegweiser: «Was tun wenn…»
+                  </span>
                   <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-[var(--color-sage-dark)] transition-colors" />
                 </Link>
                 <Link
                   href="/notfallkarte"
                   className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-[var(--color-sos-rot)]/30 hover:border-[var(--color-sos-rot)]/50 hover:shadow-sm transition-all group"
                 >
-                  <span className="text-sm text-foreground font-medium">Persönliche Notfallkarte erstellen</span>
+                  <span className="text-sm text-foreground font-medium">
+                    Persönliche Notfallkarte erstellen
+                  </span>
                   <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-[var(--color-sos-rot)] transition-colors" />
                 </Link>
                 <Link
                   href="/unterstuetzen/krise"
                   className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
                 >
-                  <span className="text-sm text-foreground">Deeskalation und Krisenbegleitung</span>
+                  <span className="text-sm text-foreground">
+                    Deeskalation und Krisenbegleitung
+                  </span>
                   <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
                 </Link>
                 <Link
                   href="/selbstfuersorge"
                   className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
                 >
-                  <span className="text-sm text-foreground">Selbstfürsorge für Angehörige</span>
+                  <span className="text-sm text-foreground">
+                    Selbstfürsorge für Angehörige
+                  </span>
                   <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
                 </Link>
                 <Link
                   href="/beratung"
                   className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
                 >
-                  <span className="text-sm text-foreground">Beratung und Selbsthilfegruppen</span>
+                  <span className="text-sm text-foreground">
+                    Beratung und Selbsthilfegruppen
+                  </span>
                   <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
                 </Link>
               </div>
@@ -565,10 +724,11 @@ export default function Notfall() {
 
             <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Diese Informationen ersetzen keine medizinische oder rechtliche Beratung. In akuten Gefahrensituationen zählt das sofortige Einbeziehen von Notruf und Fachpersonen.
+                Diese Informationen ersetzen keine medizinische oder rechtliche
+                Beratung. In akuten Gefahrensituationen zählt das sofortige
+                Einbeziehen von Notruf und Fachpersonen.
               </p>
             </div>
-
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import {
   BookOpen,
   Building2,
   Download,
+  FileText,
   Heart,
   HelpCircle,
   MessageCircle,
@@ -10,6 +11,7 @@ import {
   Shield,
   Sparkles,
   Stethoscope,
+  TrendingUp,
 } from "lucide-react";
 import type { NavigationItem } from "@/domain/content-types";
 
@@ -23,6 +25,8 @@ export const primaryNavigationItems: NavigationItem[] = [
 
 export const resourceNavigationItems: NavigationItem[] = [
   { href: "/materialien", label: "Materialien & Handouts", icon: Download },
+  { href: "/genesung", label: "Genesung & Hoffnung", icon: TrendingUp },
+  { href: "/notfallkarte", label: "Notfallkarte", icon: FileText },
   { href: "/beratung", label: "Beratung & Netzwerke", icon: Heart },
   { href: "/fachstelle", label: "Fachstelle & Kontakt", icon: Building2 },
   { href: "/faq", label: "Häufige Fragen (FAQ)", icon: HelpCircle },

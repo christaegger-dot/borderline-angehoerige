@@ -10,10 +10,14 @@ import {
   ArrowRight,
   Phone,
   Shield,
-  Clock,
   Download,
   MessageCircle,
   XCircle,
+  RefreshCw,
+  Heart,
+  CheckCircle2,
+  Users,
+  Lightbulb,
 } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktByIdStrict } from "@/data/kontakte";
@@ -394,36 +398,252 @@ export default function UnterstuetzenKrise() {
 
             {/* Nach der Krise */}
             <ContentSection
-              title="Nach der Krise"
-              icon={<Clock className="w-7 h-7 text-sage" />}
+              title="Nach der Krise: Verarbeitung und Neubeginn"
+              icon={<RefreshCw className="w-7 h-7 text-sage" />}
               id="nach-der-krise"
-              preview="Wenn die akute Krise vorbei ist, ist es wichtig, das Erlebte zu verarbeiten – für Sie beide."
+              preview="Die akute Krise ist vorbei – aber die innere Landschaft braucht Zeit. Was jetzt hilft: für die betroffene Person, für Sie, und gemeinsam."
             >
-              <Card className="bg-sage-light/20 border-sage">
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Wenn die akute Krise vorbei ist, ist es wichtig, das Erlebte
-                    zu verarbeiten – für Sie beide:
-                  </p>
-                  <ul className="space-y-2">
-                    {[
-                      "Sprechen Sie später in Ruhe über das Geschehene",
-                      "Fragen Sie, was geholfen hat und was nicht",
-                      "Aktualisieren Sie gemeinsam den Krisenplan",
-                      "Achten Sie auch auf Ihre eigenen Gefühle",
-                      "Holen Sie sich bei Bedarf selbst Unterstützung",
-                    ].map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-muted-foreground"
-                      >
-                        <span className="text-sage-mid">→</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="space-y-6">
+                {/* Für die betroffene Person */}
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Heart className="w-5 h-5 text-sage-mid" />
+                    Für die betroffene Person
+                  </h3>
+                  <Card className="border-border/50">
+                    <CardContent className="p-5 space-y-3">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Nach einer schweren Krise folgt oft eine Phase massiver{" "}
+                        <strong className="text-foreground">
+                          Scham und Reue
+                        </strong>
+                        . Manche ziehen sich zurück, andere entschuldigen sich
+                        übermässig. Beides braucht eine ruhige, nicht-wertende
+                        Antwort – weder Verharmlosen noch Aufbauschen.
+                      </p>
+                      <ul className="space-y-2">
+                        {[
+                          "Scham anerkennen, ohne sie zu bestätigen: «Ich sehe, dass es dir schlecht damit geht. Mir auch. Lass uns das besprechen, wenn du dich bereit fühlst.»",
+                          "Nicht sofort eine Aufarbeitung fordern – Wartezeit einplanen (1–2 Tage)",
+                          "Therapeutin informieren, damit die Krise dort aufgearbeitet werden kann",
+                          "Krisenursachen gemeinsam benennen: Was war der Auslöser? Was hätte früher geholfen?",
+                        ].map((item, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
+                            <span className="text-sage-mid mt-0.5">→</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Für Sie als Angehörige/r */}
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Shield className="w-5 h-5 text-sage-mid" />
+                    Für Sie als Angehörige/r
+                  </h3>
+                  <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
+                    <CardContent className="p-5 space-y-3">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Schwere Krisen hinterlassen auch bei Angehörigen Spuren.
+                        Hypervigilanz, Schreckhaftigkeit, Angst vor der nächsten
+                        Eskalation oder Taubheit sind normale Reaktionen – kein
+                        Zeichen von Schwäche.
+                      </p>
+                      <ul className="space-y-2">
+                        {[
+                          "Eigene Erschütterung ernst nehmen – Sie dürfen erschöpft, wütend oder traurig sein",
+                          "Gespräch suchen: Fachstelle, Selbsthilfegruppe oder eigene Therapie",
+                          "Hypervigilanz beobachten: Dauernde Alarmbereitschaft erschöpft – versuchen Sie, bewusst zu regulieren",
+                          "Keine Aufarbeitung leisten, solange Sie selbst noch in Aufruhr sind",
+                        ].map((item, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
+                            <span className="text-sage-mid mt-0.5">→</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Gemeinsame Krisenanalyse */}
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-sage-mid" />
+                    Gemeinsame Krisenanalyse (wenn beide bereit sind)
+                  </h3>
+                  <Card className="border-border/50">
+                    <CardContent className="p-5">
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                        Nicht direkt nach der Krise – aber in den nächsten
+                        Tagen, in einem ruhigen Moment, kann ein kurzes Gespräch
+                        helfen. Nicht als Vorwurf, sondern als gemeinsames
+                        Lernen.
+                      </p>
+                      <div className="grid sm:grid-cols-3 gap-3">
+                        {[
+                          {
+                            frage: "Was hat die Krise ausgelöst?",
+                            beispiel:
+                              "«Dir ist aufgefallen, dass ich distanzierter war ab Montag»",
+                          },
+                          {
+                            frage: "Was hätte früher geholfen?",
+                            beispiel:
+                              "«Ein kurzes Gespräch, bevor es eskalierte»",
+                          },
+                          {
+                            frage: "Was machen wir nächstes Mal anders?",
+                            beispiel:
+                              "«Du sagst mir, wenn du merkst, dass es kommt»",
+                          },
+                        ].map(item => (
+                          <div
+                            key={item.frage}
+                            className="p-3 rounded-lg bg-muted/30 border border-border/40"
+                          >
+                            <p className="text-xs font-semibold text-foreground mb-1">
+                              {item.frage}
+                            </p>
+                            <p className="text-xs text-muted-foreground italic">
+                              {item.beispiel}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Vertrauenswiederaufbau */}
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-sage-mid" />
+                    Vertrauenswiederaufbau – realistisch
+                  </h3>
+                  <Card className="bg-sage-light/20 border-sage">
+                    <CardContent className="p-5 space-y-3">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Vertrauen baut sich nicht durch ein Gespräch wieder auf
+                        – sondern durch{" "}
+                        <strong className="text-foreground">
+                          viele kleine Momente der Verlässlichkeit
+                        </strong>{" "}
+                        über Zeit. Erwarten Sie keine sofortige Rückkehr zur
+                        Normalität.
+                      </p>
+                      <ul className="space-y-2">
+                        {[
+                          "Kleine Zusagen, kleine Erfüllungen – nicht grosse Versprechen",
+                          "Transparenz über eigene Gefühle: «Mir ist noch beklemmend zumute. Ich bin trotzdem hier.»",
+                          "Keine impliziten Kontoschuld-Bilanzen führen («Du hast mir das angetan»)",
+                          "Realistischer Zeitrahmen: 2–4 Wochen bis spürbar mehr Stabilität",
+                        ].map((item, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
+                            <span className="text-sage-mid mt-0.5">→</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Früherkennung für nächste Krise */}
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Lightbulb className="w-5 h-5 text-sage-mid" />
+                    Früherkennung trainieren
+                  </h3>
+                  <Card className="border-border/50">
+                    <CardContent className="p-5 space-y-3">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Jede überstandene Krise ist eine Lernchance für die
+                        nächste. Nicht um sie zu erzwingen, sondern um früher zu
+                        erkennen, wann Unterstützung nötig ist.
+                      </p>
+                      <div className="grid sm:grid-cols-2 gap-3">
+                        {[
+                          {
+                            label: "Persönliche Warnsignale benennen",
+                            sub: "Was hat die betroffene Person beobachtet? Was haben Sie bemerkt?",
+                          },
+                          {
+                            label: "Miniplan vereinbaren",
+                            sub: "«Wenn du merkst, dass es kommt, sagst du mir das Stichwort X»",
+                          },
+                          {
+                            label: "Notfallkarte aktualisieren",
+                            sub: "Neue Erkenntnisse eintragen, Kontakte überprüfen",
+                          },
+                          {
+                            label: "Professionelle Unterstützung intensivieren",
+                            sub: "Falls Krisen häufiger werden: Therapiedichte erhöhen",
+                          },
+                        ].map(item => (
+                          <div
+                            key={item.label}
+                            className="flex items-start gap-2 p-3 rounded-lg bg-muted/30 border border-border/40"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 shrink-0" />
+                            <div>
+                              <p className="text-sm font-medium text-foreground">
+                                {item.label}
+                              </p>
+                              <p className="text-xs text-muted-foreground">
+                                {item.sub}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Warnsignale für Stagnation */}
+                <Card className="border-l-4 border-l-amber-400 bg-amber-50/40">
+                  <CardContent className="p-5">
+                    <h3 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4 text-amber-600" />
+                      Warnsignale: wenn die Nachphase nicht besser wird
+                    </h3>
+                    <ul className="space-y-1.5">
+                      {[
+                        "Die betroffene Person zieht sich weiter zurück oder eskaliert erneut",
+                        "Sie selbst werden zynisch, gleichgültig oder dauerhaft hypervigilant",
+                        "Keine Änderung der Muster, die zur Krise geführt haben",
+                        "Krisen häufen sich ohne erkennbaren Fortschritt",
+                      ].map((item, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                        >
+                          <span className="text-amber-500 mt-0.5">!</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-sm text-muted-foreground mt-3 pt-3 border-t border-amber-200">
+                      <strong className="text-foreground">Dann:</strong>{" "}
+                      Professionelle Unterstützung intensivieren – für die
+                      betroffene Person, für Sie, oder für beide gemeinsam.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </ContentSection>
 
             {/* Situations-Wegweiser */}

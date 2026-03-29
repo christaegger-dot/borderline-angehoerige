@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import {
   Phone,
   Printer,
@@ -299,6 +300,23 @@ export default function Notfallkarte() {
               {saved ? "Gespeichert!" : "Speichern"}
             </Button>
           </div>
+
+          <p className="text-sm text-muted-foreground mt-5 print:hidden">
+            Sofort Hilfe brauchen?{" "}
+            <Link
+              href="/soforthilfe"
+              className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+            >
+              Soforthilfe-Nummern →
+            </Link>{" "}
+            · Situation einschätzen?{" "}
+            <Link
+              href="/wegweiser"
+              className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+            >
+              Situations-Wegweiser →
+            </Link>
+          </p>
         </div>
       </section>
 

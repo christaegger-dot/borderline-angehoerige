@@ -71,11 +71,13 @@ export default function FAQ() {
           question: "Ist Borderline erblich? Bin ich schuld?",
           answer:
             "Borderline entsteht durch ein Zusammenspiel von genetischer Veranlagung (ca. 40–60% Erblichkeit) und Umweltfaktoren. Genetisch wird eine erhöhte emotionale Sensibilität vererbt – nicht die Störung selbst. Umweltfaktoren wie Traumata, Vernachlässigung oder invalidierendes Umfeld spielen eine Rolle, aber: Viele Menschen mit schwierigen Kindheiten entwickeln keine Borderline, und manche Betroffene hatten keine offensichtlichen Traumata. Sie sind nicht «schuld» an der Erkrankung Ihres Angehörigen. Schuldgefühle sind verständlich, aber nicht hilfreich – weder für Sie noch für Ihren Angehörigen.",
+          links: [{ text: "Borderline verstehen", url: "/verstehen" }],
         },
         {
           question: "Warum verhält sich mein Angehöriger bei anderen «normal»?",
           answer:
             "Dieses Phänomen ist häufig und nicht automatisch ein Zeichen von Manipulation. Menschen mit Borderline haben oft die grössten Schwierigkeiten in engen Beziehungen, weil dort die Verlassensangst am stärksten aktiviert wird. Bei Fremden oder in oberflächlichen Kontakten ist diese Angst geringer, daher können sie sich besser regulieren. Es ist paradox: Je wichtiger Sie Ihrem Angehörigen sind, desto intensiver können die Symptome sein. Das ist keine bewusste Entscheidung, sondern ein Muster, das in der Therapie bearbeitet wird.",
+          links: [{ text: "Beziehungsmuster verstehen", url: "/verstehen" }],
         },
       ],
     },
@@ -103,11 +105,15 @@ export default function FAQ() {
           question: "Wie gehe ich mit dem Schwarz-Weiss-Denken um?",
           answer:
             "Das «Splitting» (Idealisierung und Abwertung) ist ein häufiges Merkmal bei Borderline, aber nicht bei allen Betroffenen gleich ausgeprägt. In einem Moment sind Sie der beste Mensch der Welt, im nächsten der schlimmste. Wichtig: Nehmen Sie weder die Idealisierung noch die Abwertung persönlich. Beides kann Ausdruck von innerer Anspannung und Beziehungssorge sein. Bleiben Sie konsistent in Ihrem Verhalten, auch wenn die Bewertung schwankt. Sagen Sie zum Beispiel: «Ich bin derselbe Mensch wie gestern. Ich liebe dich, auch wenn du gerade wütend auf mich bist.» Mit der Zeit und Therapie lernen Betroffene, Grautöne zu sehen.",
+          links: [{ text: "Borderline verstehen", url: "/verstehen" }],
         },
         {
           question: "Soll ich lügen, um Konflikte zu vermeiden?",
           answer:
             "Nein. Kurzfristig mag eine Lüge Frieden bringen, aber langfristig zerstört sie Vertrauen – und Vertrauen ist für Menschen mit Borderline ohnehin schwierig. Stattdessen: Seien Sie ehrlich, aber taktvoll. Nutzen Sie «Ich»-Aussagen statt Vorwürfe. Wenn die Wahrheit schmerzhaft ist, validieren Sie zuerst das Gefühl: «Ich weiss, das ist nicht das, was du hören wolltest, und ich verstehe, dass dich das verletzt.» Ehrlichkeit mit Mitgefühl ist der Mittelweg zwischen brutaler Offenheit und Vermeidung.",
+          links: [
+            { text: "Kommunikation & Validierung", url: "/kommunizieren" },
+          ],
         },
       ],
     },
@@ -132,6 +138,10 @@ export default function FAQ() {
           question: "Wie schütze ich meine Kinder?",
           answer:
             "Kinder brauchen Stabilität und Vorhersehbarkeit. Erklären Sie altersgerecht, dass Mama/Papa manchmal sehr starke Gefühle hat und das nicht die Schuld des Kindes ist. Schützen Sie Kinder vor eskalierenden Situationen – verlassen Sie mit ihnen den Raum, wenn nötig. Sorgen Sie für «Normalität»: Routinen, Freunde, Hobbys. Achten Sie auf Warnsignale beim Kind (Rückzug, Angst, Verhaltensänderungen) und holen Sie bei Bedarf professionelle Hilfe. Und: Kümmern Sie sich um sich selbst – ein stabiler Elternteil ist der beste Schutz für das Kind.",
+          links: [
+            { text: "Grenzen setzen", url: "/grenzen" },
+            { text: "Selbstfürsorge als Elternteil", url: "/selbstfuersorge" },
+          ],
         },
         {
           question: "Bin ich co-abhängig?",
@@ -172,11 +182,15 @@ export default function FAQ() {
           question: "Soll ich an der Therapie teilnehmen?",
           answer:
             "Wenn Sie eingeladen werden: Ja, das kann sehr hilfreich sein. Familientherapie oder Angehörigensitzungen verbessern nachweislich die Behandlungsergebnisse. Sie lernen, wie Sie unterstützen können, ohne zu schaden, und der Therapeut kann Kommunikationsmuster beobachten. Wichtig: Gehen Sie nicht hin, um sich zu beschweren oder Recht zu bekommen. Ziel ist gemeinsames Lernen. Wenn Sie nicht eingeladen werden: Respektieren Sie das. Ihr Angehöriger braucht einen geschützten Raum. Sie können trotzdem eigene Beratung suchen.",
+          links: [
+            { text: "Therapie unterstützen", url: "/unterstuetzen/therapie" },
+          ],
         },
         {
           question: "Wie lange dauert die Behandlung?",
           answer:
             "Borderline-Therapie ist keine Kurzzeitbehandlung. Rechnen Sie mit mindestens 1–3 Jahren regelmässiger Therapie für deutliche Verbesserungen. Stationäre Aufenthalte (z.B. auf einer DBT-Station) dauern typischerweise 8–12 Wochen und sind oft der Einstieg in eine längere ambulante Behandlung. Fortschritte sind nicht linear – es gibt Rückschläge, besonders bei Stress. Das ist normal und kein Zeichen von Versagen. Die gute Nachricht: Die meisten Betroffenen zeigen mit der Zeit deutliche Verbesserungen.",
+          links: [{ text: "Genesung & Prognose", url: "/genesung" }],
         },
       ],
     },
@@ -194,6 +208,7 @@ export default function FAQ() {
           question: "Wie gehe ich mit Eifersucht und Kontrolle um?",
           answer:
             "Eifersucht bei Borderline wurzelt aus Angehörigensicht häufig in Verlassensangst, nicht nur in Misstrauen. Verstehen Sie das, ohne es zu akzeptieren. Setzen Sie klare Grenzen: «Ich werde mein Handy nicht zeigen. Ich habe nichts zu verbergen, aber ich brauche Privatsphäre.» Geben Sie nicht nach, um Ruhe zu haben – das verstärkt das Muster. Gleichzeitig: Seien Sie transparent, wo es Ihnen möglich ist, ohne sich zu verbiegen. Ermutigen Sie Ihren Angehörigen, die Eifersucht in der Therapie zu bearbeiten.",
+          links: [{ text: "Grenzen setzen", url: "/grenzen" }],
         },
         {
           question: "Kann ich noch ein normales Leben führen?",
@@ -208,6 +223,7 @@ export default function FAQ() {
           question: "Wann wird es besser?",
           answer:
             "Das ist für viele Angehörige die schwierigste Frage. Die ehrliche Antwort lautet: Der Verlauf bleibt begrenzt vorhersehbar. Manche Betroffene zeigen nach Monaten deutliche Fortschritte, bei anderen dauert es deutlich länger – und nicht alle Verläufe sind gleich. Was Sie beeinflussen können, sind Ihr eigenes Verhalten, Ihre Grenzen und Ihre Selbstfürsorge. Was Sie nicht steuern können, ist der Zeitpunkt oder das Tempo der Veränderung Ihres Angehörigen. Hilfreich ist meist, auf Entwicklungen über längere Zeit zu achten statt auf einzelne Tage oder Krisen.",
+          links: [{ text: "Genesung & Prognose", url: "/genesung" }],
         },
       ],
     },

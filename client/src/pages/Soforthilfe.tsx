@@ -308,6 +308,23 @@ export default function Notfall() {
                 </Link>
               </p>
             </div>
+
+            <p className="text-sm text-muted-foreground mt-4 print:hidden">
+              Nummern im Voraus notieren?{" "}
+              <Link
+                href="/notfallkarte"
+                className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+              >
+                Persönliche Notfallkarte →
+              </Link>{" "}
+              · Situation einschätzen?{" "}
+              <Link
+                href="/wegweiser"
+                className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+              >
+                Situations-Wegweiser →
+              </Link>
+            </p>
           </motion.div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import EvidenceNote from "@/components/EvidenceNote";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -235,13 +236,27 @@ export default function Genesung() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-border/30">
-                  <p className="text-xs text-muted-foreground">
-                    Quellen: McLean Study of Adult Development (Zanarini et
-                    al.); Collaborative Longitudinal Personality Disorders Study
-                    (Gunderson et al.)
-                  </p>
-                </div>
+                <EvidenceNote
+                  className="mt-6"
+                  title="Quellen zu Prognose- und Remissionsaussagen"
+                  sources={[
+                    {
+                      label:
+                        "Zanarini et al. (2010) – McLean Study of Adult Development",
+                      href: "https://pubmed.ncbi.nlm.nih.gov/20395399/",
+                    },
+                    {
+                      label:
+                        "Zanarini et al. (2012) – Sustained remission and recovery in BPD",
+                      href: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
+                    },
+                    {
+                      label:
+                        "Gunderson et al. (2011) – Ten-year course of BPD (CLPS)",
+                      href: "https://pubmed.ncbi.nlm.nih.gov/21464343/",
+                    },
+                  ]}
+                />
               </CardContent>
             </Card>
           </motion.div>

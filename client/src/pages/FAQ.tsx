@@ -3,7 +3,15 @@ import { FAQSchema } from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { HelpCircle, MessageCircle, Shield, Heart, Users, Lightbulb, ChevronRight } from "lucide-react";
+import {
+  HelpCircle,
+  MessageCircle,
+  Shield,
+  Heart,
+  Users,
+  Lightbulb,
+  ChevronRight,
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -46,23 +54,30 @@ export default function FAQ() {
       questions: [
         {
           question: "Soll ich die Diagnose ansprechen?",
-          answer: "Das hängt von der Situation ab. Wenn Ihr Angehöriger die Diagnose bereits kennt und akzeptiert, kann ein offenes Gespräch hilfreich sein – es zeigt, dass Sie sich informieren und verstehen wollen. Vermeiden Sie jedoch, die Diagnose als «Waffe» zu benutzen («Du verhältst dich wieder so borderline-mässig»). Wenn die Diagnose noch nicht gestellt oder nicht akzeptiert wurde, konzentrieren Sie sich besser auf konkrete Verhaltensweisen und Gefühle statt auf Labels. Sagen Sie zum Beispiel: «Ich merke, dass du gerade sehr aufgewühlt bist» statt «Das ist deine Borderline».",
-          links: [{ text: "Mehr zur Kommunikation", url: "/kommunizieren" }]
+          answer:
+            "Das hängt von der Situation ab. Wenn Ihr Angehöriger die Diagnose bereits kennt und akzeptiert, kann ein offenes Gespräch hilfreich sein – es zeigt, dass Sie sich informieren und verstehen wollen. Vermeiden Sie jedoch, die Diagnose als «Waffe» zu benutzen («Du verhältst dich wieder so borderline-mässig»). Wenn die Diagnose noch nicht gestellt oder nicht akzeptiert wurde, konzentrieren Sie sich besser auf konkrete Verhaltensweisen und Gefühle statt auf Labels. Sagen Sie zum Beispiel: «Ich merke, dass du gerade sehr aufgewühlt bist» statt «Das ist deine Borderline».",
+          links: [
+            { text: "Mehr zur Kommunikation", url: "/kommunizieren" },
+            { text: "Kommunikation üben", url: "/uebungen" },
+          ],
         },
         {
           question: "Ist Borderline heilbar?",
-          answer: "Die Prognose ist deutlich besser, als lange angenommen wurde. Langzeitstudien zeigen, dass 85–93% der Betroffenen nach 10 Jahren eine symptomatische Remission erreichen – das heisst, sie erfüllen die diagnostischen Kriterien nicht mehr. Etwa 50% erreichen eine weitergehende Genesung mit stabilerer sozialer und beruflicher Funktionsfähigkeit. Gleichzeitig verläuft Entwicklung selten geradlinig: Fortschritte, Rückschläge und belastende Phasen können sich abwechseln. Therapie kann diesen Prozess deutlich unterstützen, aber nicht vollständig planbar machen.",
-          links: [{ text: "Zur Genesung-Seite", url: "/genesung" }]
+          answer:
+            "Die Prognose ist deutlich besser, als lange angenommen wurde. Langzeitstudien zeigen, dass 85–93% der Betroffenen nach 10 Jahren eine symptomatische Remission erreichen – das heisst, sie erfüllen die diagnostischen Kriterien nicht mehr. Etwa 50% erreichen eine weitergehende Genesung mit stabilerer sozialer und beruflicher Funktionsfähigkeit. Gleichzeitig verläuft Entwicklung selten geradlinig: Fortschritte, Rückschläge und belastende Phasen können sich abwechseln. Therapie kann diesen Prozess deutlich unterstützen, aber nicht vollständig planbar machen.",
+          links: [{ text: "Zur Genesung-Seite", url: "/genesung" }],
         },
         {
           question: "Ist Borderline erblich? Bin ich schuld?",
-          answer: "Borderline entsteht durch ein Zusammenspiel von genetischer Veranlagung (ca. 40–60% Erblichkeit) und Umweltfaktoren. Genetisch wird eine erhöhte emotionale Sensibilität vererbt – nicht die Störung selbst. Umweltfaktoren wie Traumata, Vernachlässigung oder invalidierendes Umfeld spielen eine Rolle, aber: Viele Menschen mit schwierigen Kindheiten entwickeln keine Borderline, und manche Betroffene hatten keine offensichtlichen Traumata. Sie sind nicht «schuld» an der Erkrankung Ihres Angehörigen. Schuldgefühle sind verständlich, aber nicht hilfreich – weder für Sie noch für Ihren Angehörigen."
+          answer:
+            "Borderline entsteht durch ein Zusammenspiel von genetischer Veranlagung (ca. 40–60% Erblichkeit) und Umweltfaktoren. Genetisch wird eine erhöhte emotionale Sensibilität vererbt – nicht die Störung selbst. Umweltfaktoren wie Traumata, Vernachlässigung oder invalidierendes Umfeld spielen eine Rolle, aber: Viele Menschen mit schwierigen Kindheiten entwickeln keine Borderline, und manche Betroffene hatten keine offensichtlichen Traumata. Sie sind nicht «schuld» an der Erkrankung Ihres Angehörigen. Schuldgefühle sind verständlich, aber nicht hilfreich – weder für Sie noch für Ihren Angehörigen.",
         },
         {
           question: "Warum verhält sich mein Angehöriger bei anderen «normal»?",
-          answer: "Dieses Phänomen ist häufig und nicht automatisch ein Zeichen von Manipulation. Menschen mit Borderline haben oft die grössten Schwierigkeiten in engen Beziehungen, weil dort die Verlassensangst am stärksten aktiviert wird. Bei Fremden oder in oberflächlichen Kontakten ist diese Angst geringer, daher können sie sich besser regulieren. Es ist paradox: Je wichtiger Sie Ihrem Angehörigen sind, desto intensiver können die Symptome sein. Das ist keine bewusste Entscheidung, sondern ein Muster, das in der Therapie bearbeitet wird."
-        }
-      ]
+          answer:
+            "Dieses Phänomen ist häufig und nicht automatisch ein Zeichen von Manipulation. Menschen mit Borderline haben oft die grössten Schwierigkeiten in engen Beziehungen, weil dort die Verlassensangst am stärksten aktiviert wird. Bei Fremden oder in oberflächlichen Kontakten ist diese Angst geringer, daher können sie sich besser regulieren. Es ist paradox: Je wichtiger Sie Ihrem Angehörigen sind, desto intensiver können die Symptome sein. Das ist keine bewusste Entscheidung, sondern ein Muster, das in der Therapie bearbeitet wird.",
+        },
+      ],
     },
     {
       title: "Kommunikation & Konflikte",
@@ -71,23 +86,30 @@ export default function FAQ() {
       questions: [
         {
           question: "Wie reagiere ich auf Drohungen?",
-          answer: "Unterscheiden Sie zwischen Äusserungen von Suizidalität und anderen Drohungen. Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben. Sagen Sie zum Beispiel: «Ich höre, dass du gerade sehr leidest. Wenn du sagst, du willst dir etwas antun, hole ich Hilfe dazu.» Handeln Sie dann auch entsprechend. Bei anderen Drohungen (z.B. «Dann verlasse ich dich») hilft meist: ruhig bleiben, das Gefühl hinter der Aussage ansprechen und gleichzeitig nicht aus Angst nachgeben. Solche Aussagen entstehen oft aus Überforderung, Angst oder dem Wunsch, Kontrolle zurückzugewinnen.",
-          links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }]
+          answer:
+            "Unterscheiden Sie zwischen Äusserungen von Suizidalität und anderen Drohungen. Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben. Sagen Sie zum Beispiel: «Ich höre, dass du gerade sehr leidest. Wenn du sagst, du willst dir etwas antun, hole ich Hilfe dazu.» Handeln Sie dann auch entsprechend. Bei anderen Drohungen (z.B. «Dann verlasse ich dich») hilft meist: ruhig bleiben, das Gefühl hinter der Aussage ansprechen und gleichzeitig nicht aus Angst nachgeben. Solche Aussagen entstehen oft aus Überforderung, Angst oder dem Wunsch, Kontrolle zurückzugewinnen.",
+          links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }],
         },
         {
           question: "Was sage ich, wenn mein Angehöriger mich beschuldigt?",
-          answer: "Vermeiden Sie Rechtfertigungen oder Gegenangriffe – das eskaliert die Situation. Nutzen Sie stattdessen Validierung: «Ich verstehe, dass du dich gerade verletzt fühlst» (validiert das Gefühl, nicht die Beschuldigung). Dann setzen Sie eine Grenze: «Ich möchte mit dir darüber sprechen, aber nicht, wenn du mich anschreist.» Wenn möglich, bieten Sie eine Pause an: «Lass uns in 20 Minuten weitersprechen, wenn wir beide ruhiger sind.» Wichtig: Sie müssen sich nicht für Dinge entschuldigen, die Sie nicht getan haben.",
-          links: [{ text: "SET-Kommunikation lernen", url: "/kommunizieren" }]
+          answer:
+            "Vermeiden Sie Rechtfertigungen oder Gegenangriffe – das eskaliert die Situation. Nutzen Sie stattdessen Validierung: «Ich verstehe, dass du dich gerade verletzt fühlst» (validiert das Gefühl, nicht die Beschuldigung). Dann setzen Sie eine Grenze: «Ich möchte mit dir darüber sprechen, aber nicht, wenn du mich anschreist.» Wenn möglich, bieten Sie eine Pause an: «Lass uns in 20 Minuten weitersprechen, wenn wir beide ruhiger sind.» Wichtig: Sie müssen sich nicht für Dinge entschuldigen, die Sie nicht getan haben.",
+          links: [
+            { text: "SET-Kommunikation lernen", url: "/kommunizieren" },
+            { text: "SET üben →", url: "/uebungen" },
+          ],
         },
         {
           question: "Wie gehe ich mit dem Schwarz-Weiss-Denken um?",
-          answer: "Das «Splitting» (Idealisierung und Abwertung) ist ein häufiges Merkmal bei Borderline, aber nicht bei allen Betroffenen gleich ausgeprägt. In einem Moment sind Sie der beste Mensch der Welt, im nächsten der schlimmste. Wichtig: Nehmen Sie weder die Idealisierung noch die Abwertung persönlich. Beides kann Ausdruck von innerer Anspannung und Beziehungssorge sein. Bleiben Sie konsistent in Ihrem Verhalten, auch wenn die Bewertung schwankt. Sagen Sie zum Beispiel: «Ich bin derselbe Mensch wie gestern. Ich liebe dich, auch wenn du gerade wütend auf mich bist.» Mit der Zeit und Therapie lernen Betroffene, Grautöne zu sehen."
+          answer:
+            "Das «Splitting» (Idealisierung und Abwertung) ist ein häufiges Merkmal bei Borderline, aber nicht bei allen Betroffenen gleich ausgeprägt. In einem Moment sind Sie der beste Mensch der Welt, im nächsten der schlimmste. Wichtig: Nehmen Sie weder die Idealisierung noch die Abwertung persönlich. Beides kann Ausdruck von innerer Anspannung und Beziehungssorge sein. Bleiben Sie konsistent in Ihrem Verhalten, auch wenn die Bewertung schwankt. Sagen Sie zum Beispiel: «Ich bin derselbe Mensch wie gestern. Ich liebe dich, auch wenn du gerade wütend auf mich bist.» Mit der Zeit und Therapie lernen Betroffene, Grautöne zu sehen.",
         },
         {
           question: "Soll ich lügen, um Konflikte zu vermeiden?",
-          answer: "Nein. Kurzfristig mag eine Lüge Frieden bringen, aber langfristig zerstört sie Vertrauen – und Vertrauen ist für Menschen mit Borderline ohnehin schwierig. Stattdessen: Seien Sie ehrlich, aber taktvoll. Nutzen Sie «Ich»-Aussagen statt Vorwürfe. Wenn die Wahrheit schmerzhaft ist, validieren Sie zuerst das Gefühl: «Ich weiss, das ist nicht das, was du hören wolltest, und ich verstehe, dass dich das verletzt.» Ehrlichkeit mit Mitgefühl ist der Mittelweg zwischen brutaler Offenheit und Vermeidung."
-        }
-      ]
+          answer:
+            "Nein. Kurzfristig mag eine Lüge Frieden bringen, aber langfristig zerstört sie Vertrauen – und Vertrauen ist für Menschen mit Borderline ohnehin schwierig. Stattdessen: Seien Sie ehrlich, aber taktvoll. Nutzen Sie «Ich»-Aussagen statt Vorwürfe. Wenn die Wahrheit schmerzhaft ist, validieren Sie zuerst das Gefühl: «Ich weiss, das ist nicht das, was du hören wolltest, und ich verstehe, dass dich das verletzt.» Ehrlichkeit mit Mitgefühl ist der Mittelweg zwischen brutaler Offenheit und Vermeidung.",
+        },
+      ],
     },
     {
       title: "Grenzen & Selbstschutz",
@@ -96,24 +118,31 @@ export default function FAQ() {
       questions: [
         {
           question: "Wann ist eine Einweisung nötig?",
-          answer: "Eine psychiatrische Einweisung (freiwillig oder unfreiwillig) ist angezeigt bei: akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung, die medizinische Versorgung erfordert, Fremdgefährdung, oder wenn die Person so dekompensiert ist, dass sie sich nicht mehr selbst versorgen kann. In der Schweiz kann eine fürsorgerische Unterbringung (FU) durch einen Arzt angeordnet werden, wenn eine ernsthafte Selbst- oder Fremdgefährdung vorliegt. Rufen Sie im Zweifelsfall den psychiatrischen Notdienst an – die können die Situation einschätzen.",
-          links: [{ text: "Notfallnummern", url: "/soforthilfe" }]
+          answer:
+            "Eine psychiatrische Einweisung (freiwillig oder unfreiwillig) ist angezeigt bei: akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung, die medizinische Versorgung erfordert, Fremdgefährdung, oder wenn die Person so dekompensiert ist, dass sie sich nicht mehr selbst versorgen kann. In der Schweiz kann eine fürsorgerische Unterbringung (FU) durch einen Arzt angeordnet werden, wenn eine ernsthafte Selbst- oder Fremdgefährdung vorliegt. Rufen Sie im Zweifelsfall den psychiatrischen Notdienst an – die können die Situation einschätzen.",
+          links: [{ text: "Notfallnummern", url: "/soforthilfe" }],
         },
         {
           question: "Darf ich meinen Angehörigen verlassen?",
-          answer: "Ja. Eine Beziehung zu beenden kann eine legitime und verantwortbare Entscheidung sein – auch wenn Ihr Angehöriger psychisch krank ist. Wenn die Beziehung Ihre psychische oder körperliche Gesundheit ernsthaft belastet oder gefährdet, braucht dieser Umstand ein grosses Gewicht. Wichtig ist, eine Trennung nach Möglichkeit nicht mitten in einer akuten Krise impulsiv zu vollziehen, sondern vorbereitet und mit Blick auf Sicherheit. Wenn es eine Behandlung gibt, kann es sinnvoll sein, Fachpersonen zu informieren. Und: Sie können eine Grenze ziehen oder gehen und trotzdem Mitgefühl behalten.",
-          links: [{ text: "Grenzen setzen", url: "/grenzen" }]
+          answer:
+            "Ja. Eine Beziehung zu beenden kann eine legitime und verantwortbare Entscheidung sein – auch wenn Ihr Angehöriger psychisch krank ist. Wenn die Beziehung Ihre psychische oder körperliche Gesundheit ernsthaft belastet oder gefährdet, braucht dieser Umstand ein grosses Gewicht. Wichtig ist, eine Trennung nach Möglichkeit nicht mitten in einer akuten Krise impulsiv zu vollziehen, sondern vorbereitet und mit Blick auf Sicherheit. Wenn es eine Behandlung gibt, kann es sinnvoll sein, Fachpersonen zu informieren. Und: Sie können eine Grenze ziehen oder gehen und trotzdem Mitgefühl behalten.",
+          links: [{ text: "Grenzen setzen", url: "/grenzen" }],
         },
         {
           question: "Wie schütze ich meine Kinder?",
-          answer: "Kinder brauchen Stabilität und Vorhersehbarkeit. Erklären Sie altersgerecht, dass Mama/Papa manchmal sehr starke Gefühle hat und das nicht die Schuld des Kindes ist. Schützen Sie Kinder vor eskalierenden Situationen – verlassen Sie mit ihnen den Raum, wenn nötig. Sorgen Sie für «Normalität»: Routinen, Freunde, Hobbys. Achten Sie auf Warnsignale beim Kind (Rückzug, Angst, Verhaltensänderungen) und holen Sie bei Bedarf professionelle Hilfe. Und: Kümmern Sie sich um sich selbst – ein stabiler Elternteil ist der beste Schutz für das Kind."
+          answer:
+            "Kinder brauchen Stabilität und Vorhersehbarkeit. Erklären Sie altersgerecht, dass Mama/Papa manchmal sehr starke Gefühle hat und das nicht die Schuld des Kindes ist. Schützen Sie Kinder vor eskalierenden Situationen – verlassen Sie mit ihnen den Raum, wenn nötig. Sorgen Sie für «Normalität»: Routinen, Freunde, Hobbys. Achten Sie auf Warnsignale beim Kind (Rückzug, Angst, Verhaltensänderungen) und holen Sie bei Bedarf professionelle Hilfe. Und: Kümmern Sie sich um sich selbst – ein stabiler Elternteil ist der beste Schutz für das Kind.",
         },
         {
           question: "Bin ich co-abhängig?",
-          answer: "Der Begriff «Co-Abhängigkeit» wird unterschiedlich verwendet und kann schnell moralisierend klingen. Gemeint ist meist, dass sich Ihr eigenes Leben immer stärker um den Zustand des anderen dreht und Ihre eigenen Grenzen, Bedürfnisse und Beziehungen zurücktreten. Warnsignale können sein: Sie entschuldigen laufend destruktives Verhalten, geben Ihr soziales Leben auf, fühlen sich für die Gefühle des anderen zuständig oder können kaum «Nein» sagen, ohne massive Schuld zu erleben. Wenn Sie sich darin wiedererkennen, spricht das nicht gegen Ihren Charakter, sondern für ein belastendes Beziehungsmuster. Beratung, eigene Therapie oder eine Angehörigengruppe können helfen, wieder klarer zu werden.",
-          links: [{ text: "Selbstfürsorge", url: "/selbstfuersorge" }, { text: "Glossar: Co-Abhängigkeit", url: "/glossar" }]
-        }
-      ]
+          answer:
+            "Der Begriff «Co-Abhängigkeit» wird unterschiedlich verwendet und kann schnell moralisierend klingen. Gemeint ist meist, dass sich Ihr eigenes Leben immer stärker um den Zustand des anderen dreht und Ihre eigenen Grenzen, Bedürfnisse und Beziehungen zurücktreten. Warnsignale können sein: Sie entschuldigen laufend destruktives Verhalten, geben Ihr soziales Leben auf, fühlen sich für die Gefühle des anderen zuständig oder können kaum «Nein» sagen, ohne massive Schuld zu erleben. Wenn Sie sich darin wiedererkennen, spricht das nicht gegen Ihren Charakter, sondern für ein belastendes Beziehungsmuster. Beratung, eigene Therapie oder eine Angehörigengruppe können helfen, wieder klarer zu werden.",
+          links: [
+            { text: "Selbstfürsorge", url: "/selbstfuersorge" },
+            { text: "Glossar: Co-Abhängigkeit", url: "/glossar" },
+          ],
+        },
+      ],
     },
     {
       title: "Therapie & Behandlung",
@@ -122,23 +151,34 @@ export default function FAQ() {
       questions: [
         {
           question: "Mein Angehöriger will keine Therapie – was tun?",
-          answer: "Sie können niemanden zur Therapie zwingen (ausser bei akuter Gefährdung). Was Sie tun können: Informieren Sie sich selbst über Borderline und ändern Sie Ihr eigenes Verhalten – das kann indirekt helfen. Sprechen Sie Therapie als Möglichkeit an, ohne zu drängen. Nutzen Sie «Ich»-Aussagen: «Ich mache mir Sorgen und wünsche mir, dass du Unterstützung bekommst.» Setzen Sie Grenzen für inakzeptables Verhalten – manchmal motiviert das zur Veränderung. Und: Holen Sie sich selbst Unterstützung, unabhängig davon, ob Ihr Angehöriger Therapie macht.",
-          links: [{ text: "Therapieangebote Zürich", url: "/unterstuetzen/therapie#therapieangebote" }]
+          answer:
+            "Sie können niemanden zur Therapie zwingen (ausser bei akuter Gefährdung). Was Sie tun können: Informieren Sie sich selbst über Borderline und ändern Sie Ihr eigenes Verhalten – das kann indirekt helfen. Sprechen Sie Therapie als Möglichkeit an, ohne zu drängen. Nutzen Sie «Ich»-Aussagen: «Ich mache mir Sorgen und wünsche mir, dass du Unterstützung bekommst.» Setzen Sie Grenzen für inakzeptables Verhalten – manchmal motiviert das zur Veränderung. Und: Holen Sie sich selbst Unterstützung, unabhängig davon, ob Ihr Angehöriger Therapie macht.",
+          links: [
+            {
+              text: "Therapieangebote Zürich",
+              url: "/unterstuetzen/therapie#therapieangebote",
+            },
+          ],
         },
         {
           question: "Welche Therapie ist am besten?",
-          answer: "Für Borderline gibt es mehrere evidenzbasierte Therapien: DBT (Dialektisch-Behaviorale Therapie) ist sehr gut erforscht und häufig besonders wirksam bei Selbstverletzung und Suizidalität. MBT (Mentalisierungsbasierte Therapie) fokussiert auf das Verstehen eigener und fremder Gedanken/Gefühle. Schematherapie arbeitet an frühen Prägungen und Beziehungsmustern. TFP (Übertragungsfokussierte Therapie) nutzt die therapeutische Beziehung zur Veränderung. Alle können wirksam sein – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
-          links: [{ text: "Therapieformen erklärt", url: "/unterstuetzen/therapie" }]
+          answer:
+            "Für Borderline gibt es mehrere evidenzbasierte Therapien: DBT (Dialektisch-Behaviorale Therapie) ist sehr gut erforscht und häufig besonders wirksam bei Selbstverletzung und Suizidalität. MBT (Mentalisierungsbasierte Therapie) fokussiert auf das Verstehen eigener und fremder Gedanken/Gefühle. Schematherapie arbeitet an frühen Prägungen und Beziehungsmustern. TFP (Übertragungsfokussierte Therapie) nutzt die therapeutische Beziehung zur Veränderung. Alle können wirksam sein – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
+          links: [
+            { text: "Therapieformen erklärt", url: "/unterstuetzen/therapie" },
+          ],
         },
         {
           question: "Soll ich an der Therapie teilnehmen?",
-          answer: "Wenn Sie eingeladen werden: Ja, das kann sehr hilfreich sein. Familientherapie oder Angehörigensitzungen verbessern nachweislich die Behandlungsergebnisse. Sie lernen, wie Sie unterstützen können, ohne zu schaden, und der Therapeut kann Kommunikationsmuster beobachten. Wichtig: Gehen Sie nicht hin, um sich zu beschweren oder Recht zu bekommen. Ziel ist gemeinsames Lernen. Wenn Sie nicht eingeladen werden: Respektieren Sie das. Ihr Angehöriger braucht einen geschützten Raum. Sie können trotzdem eigene Beratung suchen."
+          answer:
+            "Wenn Sie eingeladen werden: Ja, das kann sehr hilfreich sein. Familientherapie oder Angehörigensitzungen verbessern nachweislich die Behandlungsergebnisse. Sie lernen, wie Sie unterstützen können, ohne zu schaden, und der Therapeut kann Kommunikationsmuster beobachten. Wichtig: Gehen Sie nicht hin, um sich zu beschweren oder Recht zu bekommen. Ziel ist gemeinsames Lernen. Wenn Sie nicht eingeladen werden: Respektieren Sie das. Ihr Angehöriger braucht einen geschützten Raum. Sie können trotzdem eigene Beratung suchen.",
         },
         {
           question: "Wie lange dauert die Behandlung?",
-          answer: "Borderline-Therapie ist keine Kurzzeitbehandlung. Rechnen Sie mit mindestens 1–3 Jahren regelmässiger Therapie für deutliche Verbesserungen. Stationäre Aufenthalte (z.B. auf einer DBT-Station) dauern typischerweise 8–12 Wochen und sind oft der Einstieg in eine längere ambulante Behandlung. Fortschritte sind nicht linear – es gibt Rückschläge, besonders bei Stress. Das ist normal und kein Zeichen von Versagen. Die gute Nachricht: Die meisten Betroffenen zeigen mit der Zeit deutliche Verbesserungen."
-        }
-      ]
+          answer:
+            "Borderline-Therapie ist keine Kurzzeitbehandlung. Rechnen Sie mit mindestens 1–3 Jahren regelmässiger Therapie für deutliche Verbesserungen. Stationäre Aufenthalte (z.B. auf einer DBT-Station) dauern typischerweise 8–12 Wochen und sind oft der Einstieg in eine längere ambulante Behandlung. Fortschritte sind nicht linear – es gibt Rückschläge, besonders bei Stress. Das ist normal und kein Zeichen von Versagen. Die gute Nachricht: Die meisten Betroffenen zeigen mit der Zeit deutliche Verbesserungen.",
+        },
+      ],
     },
     {
       title: "Alltag & Beziehung",
@@ -147,29 +187,44 @@ export default function FAQ() {
       questions: [
         {
           question: "Wie erkläre ich die Situation Freunden/Familie?",
-          answer: "Sie müssen nicht alles erklären. Sagen Sie so viel, wie Sie möchten: «Er/sie hat eine psychische Erkrankung, die starke Stimmungsschwankungen verursacht. Wir arbeiten daran.» Sie können auch Grenzen setzen: «Ich möchte nicht ins Detail gehen, aber ich schätze eure Unterstützung.» Wählen Sie sorgfältig aus, wem Sie was erzählen – nicht jeder muss alles wissen. Und: Bitten Sie um konkrete Hilfe statt allgemeinem Mitleid («Könntest du nächste Woche auf die Kinder aufpassen?»)."
+          answer:
+            "Sie müssen nicht alles erklären. Sagen Sie so viel, wie Sie möchten: «Er/sie hat eine psychische Erkrankung, die starke Stimmungsschwankungen verursacht. Wir arbeiten daran.» Sie können auch Grenzen setzen: «Ich möchte nicht ins Detail gehen, aber ich schätze eure Unterstützung.» Wählen Sie sorgfältig aus, wem Sie was erzählen – nicht jeder muss alles wissen. Und: Bitten Sie um konkrete Hilfe statt allgemeinem Mitleid («Könntest du nächste Woche auf die Kinder aufpassen?»).",
         },
         {
           question: "Wie gehe ich mit Eifersucht und Kontrolle um?",
-          answer: "Eifersucht bei Borderline wurzelt aus Angehörigensicht häufig in Verlassensangst, nicht nur in Misstrauen. Verstehen Sie das, ohne es zu akzeptieren. Setzen Sie klare Grenzen: «Ich werde mein Handy nicht zeigen. Ich habe nichts zu verbergen, aber ich brauche Privatsphäre.» Geben Sie nicht nach, um Ruhe zu haben – das verstärkt das Muster. Gleichzeitig: Seien Sie transparent, wo es Ihnen möglich ist, ohne sich zu verbiegen. Ermutigen Sie Ihren Angehörigen, die Eifersucht in der Therapie zu bearbeiten."
+          answer:
+            "Eifersucht bei Borderline wurzelt aus Angehörigensicht häufig in Verlassensangst, nicht nur in Misstrauen. Verstehen Sie das, ohne es zu akzeptieren. Setzen Sie klare Grenzen: «Ich werde mein Handy nicht zeigen. Ich habe nichts zu verbergen, aber ich brauche Privatsphäre.» Geben Sie nicht nach, um Ruhe zu haben – das verstärkt das Muster. Gleichzeitig: Seien Sie transparent, wo es Ihnen möglich ist, ohne sich zu verbiegen. Ermutigen Sie Ihren Angehörigen, die Eifersucht in der Therapie zu bearbeiten.",
         },
         {
           question: "Kann ich noch ein normales Leben führen?",
-          answer: "Ja, ein eigenes Leben ist weiterhin möglich, aber oft nicht ohne bewusste Gegenbewegung zur Belastung. Eigene Freundschaften, Interessen und Erholungszeiten sind kein Verrat, sondern wichtig für Ihre Stabilität. Gleichzeitig ist es realistisch, dass Ihr Alltag zeitweise stärker von Unsicherheit geprägt ist als der anderer Menschen. Ziel ist deshalb nicht ein «perfekt normales» Leben, sondern ein tragfähiger Alltag, in dem Beziehung, Selbstschutz und eigene Lebensbereiche nebeneinander Platz haben.",
-          links: [{ text: "Selbstfürsorge-Strategien", url: "/selbstfuersorge" }, { text: "Beratung & Netzwerke", url: "/beratung" }]
+          answer:
+            "Ja, ein eigenes Leben ist weiterhin möglich, aber oft nicht ohne bewusste Gegenbewegung zur Belastung. Eigene Freundschaften, Interessen und Erholungszeiten sind kein Verrat, sondern wichtig für Ihre Stabilität. Gleichzeitig ist es realistisch, dass Ihr Alltag zeitweise stärker von Unsicherheit geprägt ist als der anderer Menschen. Ziel ist deshalb nicht ein «perfekt normales» Leben, sondern ein tragfähiger Alltag, in dem Beziehung, Selbstschutz und eigene Lebensbereiche nebeneinander Platz haben.",
+          links: [
+            { text: "Selbstfürsorge-Strategien", url: "/selbstfuersorge" },
+            { text: "Beratung & Netzwerke", url: "/beratung" },
+          ],
         },
         {
           question: "Wann wird es besser?",
-          answer: "Das ist für viele Angehörige die schwierigste Frage. Die ehrliche Antwort lautet: Der Verlauf bleibt begrenzt vorhersehbar. Manche Betroffene zeigen nach Monaten deutliche Fortschritte, bei anderen dauert es deutlich länger – und nicht alle Verläufe sind gleich. Was Sie beeinflussen können, sind Ihr eigenes Verhalten, Ihre Grenzen und Ihre Selbstfürsorge. Was Sie nicht steuern können, ist der Zeitpunkt oder das Tempo der Veränderung Ihres Angehörigen. Hilfreich ist meist, auf Entwicklungen über längere Zeit zu achten statt auf einzelne Tage oder Krisen."
-        }
-      ]
-    }
+          answer:
+            "Das ist für viele Angehörige die schwierigste Frage. Die ehrliche Antwort lautet: Der Verlauf bleibt begrenzt vorhersehbar. Manche Betroffene zeigen nach Monaten deutliche Fortschritte, bei anderen dauert es deutlich länger – und nicht alle Verläufe sind gleich. Was Sie beeinflussen können, sind Ihr eigenes Verhalten, Ihre Grenzen und Ihre Selbstfürsorge. Was Sie nicht steuern können, ist der Zeitpunkt oder das Tempo der Veränderung Ihres Angehörigen. Hilfreich ist meist, auf Entwicklungen über längere Zeit zu achten statt auf einzelne Tage oder Krisen.",
+        },
+      ],
+    },
   ];
 
   return (
     <Layout>
-      <SEO title="Häufige Fragen" description="Antworten auf die häufigsten Fragen von Angehörigen zu Borderline." path="/faq" />
-      <FAQSchema questions={faqCategories.flatMap(c => c.questions.map(q => ({ question: q.question, answer: q.answer })))} />
+      <SEO
+        title="Häufige Fragen"
+        description="Antworten auf die häufigsten Fragen von Angehörigen zu Borderline."
+        path="/faq"
+      />
+      <FAQSchema
+        questions={faqCategories.flatMap(c =>
+          c.questions.map(q => ({ question: q.question, answer: q.answer }))
+        )}
+      />
       {/* Hero */}
       <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
@@ -184,13 +239,15 @@ export default function FAQ() {
                 <HelpCircle className="w-6 h-6 text-white" />
               </div>
             </div>
-            
+
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
               Häufig gestellte Fragen
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Antworten auf häufige Fragen von Angehörigen. Die FAQ sollen Orientierung geben, ohne schwierige Situationen zu stark zu vereinfachen oder eine individuelle Einschätzung zu ersetzen.
+              Antworten auf häufige Fragen von Angehörigen. Die FAQ sollen
+              Orientierung geben, ohne schwierige Situationen zu stark zu
+              vereinfachen oder eine individuelle Einschätzung zu ersetzen.
             </p>
           </motion.div>
         </div>
@@ -203,9 +260,11 @@ export default function FAQ() {
             <Card className="mb-8 border-border/60 bg-muted/20">
               <CardContent className="p-5">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Manche Fragen lassen sich nicht allgemein beantworten, weil Sicherheit, Kinder,
-                  Gewalt, Trennung oder akute Suizidalität eine eigene Einschätzung brauchen. Nutzen
-                  Sie diese Seite als Orientierung und holen Sie bei Bedarf zusätzliche Beratung dazu.
+                  Manche Fragen lassen sich nicht allgemein beantworten, weil
+                  Sicherheit, Kinder, Gewalt, Trennung oder akute Suizidalität
+                  eine eigene Einschätzung brauchen. Nutzen Sie diese Seite als
+                  Orientierung und holen Sie bei Bedarf zusätzliche Beratung
+                  dazu.
                 </p>
               </CardContent>
             </Card>
@@ -214,9 +273,11 @@ export default function FAQ() {
               aria-label="Sprungnavigation zu den FAQ-Kategorien"
               className="mb-8 rounded-xl border border-border/60 bg-muted/20 p-4"
             >
-              <p className="text-sm font-medium text-foreground mb-3">Direkt zum passenden Themenbereich:</p>
+              <p className="text-sm font-medium text-foreground mb-3">
+                Direkt zum passenden Themenbereich:
+              </p>
               <div className="flex flex-wrap gap-2">
-                {faqCategories.map((category) => (
+                {faqCategories.map(category => (
                   <a
                     key={category.title}
                     href={`#${slugifyCategory(category.title)}`}
@@ -239,7 +300,7 @@ export default function FAQ() {
                 className="mb-8 scroll-mt-28"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div 
+                  <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center text-white"
                     style={{ backgroundColor: category.color }}
                   >
@@ -252,13 +313,15 @@ export default function FAQ() {
 
                 <Accordion type="single" collapsible className="space-y-3">
                   {category.questions.map((faq, faqIndex) => (
-                    <AccordionItem 
-                      key={faqIndex} 
+                    <AccordionItem
+                      key={faqIndex}
                       value={`${categoryIndex}-${faqIndex}`}
                       className="border rounded-lg bg-card hover:bg-accent/5 transition-colors"
                     >
                       <AccordionTrigger className="px-5 py-4 hover:no-underline text-left">
-                        <span className="font-medium text-foreground pr-4">{faq.question}</span>
+                        <span className="font-medium text-foreground pr-4">
+                          {faq.question}
+                        </span>
                       </AccordionTrigger>
                       <AccordionContent className="px-5 pb-5">
                         <p className="text-muted-foreground leading-relaxed mb-4">
@@ -268,11 +331,11 @@ export default function FAQ() {
                           <div className="flex flex-wrap gap-2">
                             {faq.links.map((link, linkIndex) => (
                               <Link key={linkIndex} href={link.url}>
-                                <span 
+                                <span
                                   className="inline-flex items-center gap-1 text-sm font-medium px-3 py-1.5 rounded-full transition-colors"
-                                  style={{ 
+                                  style={{
                                     backgroundColor: `${category.color}15`,
-                                    color: category.color
+                                    color: category.color,
                                   }}
                                 >
                                   {link.text}
@@ -294,10 +357,26 @@ export default function FAQ() {
               definition="Kurzdefinition: Remission = Diagnosekriterien werden über längere Zeit nicht mehr erfüllt; Recovery = Remission plus stabiles soziales/berufliches Funktionsniveau."
               className="mt-8"
               sources={[
-                { label: "Zanarini et al. (2010), Time to attainment of recovery from BPD", href: "https://pubmed.ncbi.nlm.nih.gov/20395399/" },
-                { label: "Zanarini et al. (2012), Sustained remission and recovery in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/22737693/" },
-                { label: "Gunderson et al. (2011), Ten-year course of BPD (CLPS)", href: "https://pubmed.ncbi.nlm.nih.gov/21464343/" },
-                { label: "Storebø, Stoffers-Winterling et al. (2020), Psychological therapies for BPD (Cochrane)", href: "https://pubmed.ncbi.nlm.nih.gov/32368793/" },
+                {
+                  label:
+                    "Zanarini et al. (2010), Time to attainment of recovery from BPD",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/20395399/",
+                },
+                {
+                  label:
+                    "Zanarini et al. (2012), Sustained remission and recovery in BPD",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
+                },
+                {
+                  label:
+                    "Gunderson et al. (2011), Ten-year course of BPD (CLPS)",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/21464343/",
+                },
+                {
+                  label:
+                    "Storebø, Stoffers-Winterling et al. (2020), Psychological therapies for BPD (Cochrane)",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/32368793/",
+                },
               ]}
             />
 
@@ -315,7 +394,9 @@ export default function FAQ() {
                     Ihre Frage ist nicht dabei?
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Nutzen Sie die Suchfunktion oder kontaktieren Sie die Fachstelle Angehörigenarbeit der PUK Zürich für individuelle Beratung.
+                    Nutzen Sie die Suchfunktion oder kontaktieren Sie die
+                    Fachstelle Angehörigenarbeit der PUK Zürich für individuelle
+                    Beratung.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link href="/fachstelle">

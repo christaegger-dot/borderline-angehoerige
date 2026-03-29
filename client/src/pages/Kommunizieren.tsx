@@ -136,6 +136,15 @@ export default function Kommunizieren() {
                       nicht recht bekommen, um zuerst zu zeigen, dass ich den
                       Schmerz wahrnehme.
                     </p>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Validierung in realen Situationen ausprobieren?{" "}
+                      <Link
+                        href="/uebungen"
+                        className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                      >
+                        Interaktive Übungen →
+                      </Link>
+                    </p>
                   </CardContent>
                 </Card>
               </div>

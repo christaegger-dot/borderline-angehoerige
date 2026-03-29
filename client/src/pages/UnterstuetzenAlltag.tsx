@@ -14,6 +14,7 @@ import {
   Users,
   Lightbulb,
   AlertTriangle,
+  Zap,
 } from "lucide-react";
 import { Link } from "wouter";
 
@@ -403,6 +404,220 @@ export default function UnterstuetzenAlltag() {
                         </li>
                       ))}
                     </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </ContentSection>
+
+            <ContentSection
+              title="Wenn Impulsivität ausbricht"
+              icon={<Zap className="w-7 h-7 text-amber-600" />}
+              id="impulsivitaet"
+              preview="Plötzliche Entscheidungen, Ausgaben, Risikoverhalten – dieser Alltag ist anders als Depression. Wie Sie reagieren, ohne zu moralisieren, und Ihre Grenzen dennoch halten."
+            >
+              <div className="space-y-6">
+                <Card className="border-l-4 border-l-amber-400 bg-amber-50/40">
+                  <CardContent className="p-5">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Borderline zeigt sich nicht nur als Rückzug und
+                      Erschöpfung. Manche Phasen sind geprägt von{" "}
+                      <strong className="text-foreground">Impulsivität</strong>:
+                      plötzliche Grossausgaben, Kündigung ohne Plan, riskante
+                      Beziehungsentscheidungen, Substanzkonsum, Fahrtabenteuer
+                      oder abrupte Ortsveränderungen. Für Angehörige kann das
+                      überraschender und belastender sein als depressive Phasen
+                      – weil es Konsequenzen hat, die beide betreffen.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-sage-mid" />
+                    Zeichen einer impulsiven Phase erkennen
+                  </h3>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {[
+                      {
+                        label: "Getriebensein",
+                        sub: "Ruhelosigkeit, Drang zu handeln, kann nicht warten",
+                      },
+                      {
+                        label: "Konsequenzblindheit",
+                        sub: "Folgen werden ausgeblendet oder kleingredet",
+                      },
+                      {
+                        label: "Grossausgaben",
+                        sub: "Spontankäufe, Schulden, finanzielle Risiken",
+                      },
+                      {
+                        label: "Abrupte Entscheidungen",
+                        sub: "Job kündigen, Beziehung beenden, umziehen",
+                      },
+                      {
+                        label: "Substanzkonsum",
+                        sub: "Alkohol, Cannabis oder andere Mittel als Ventil",
+                      },
+                      {
+                        label: "Risikoverhaltens",
+                        sub: "Fahren unter Einfluss, ungeschützter Sex, Gewalt",
+                      },
+                    ].map(item => (
+                      <div
+                        key={item.label}
+                        className="flex items-start gap-2 p-3 rounded-lg bg-muted/30 border border-border/40"
+                      >
+                        <div className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
+                        <div>
+                          <p className="text-sm font-medium text-foreground">
+                            {item.label}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            {item.sub}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Heart className="w-5 h-5 text-sage-mid" />
+                    Wichtige Unterscheidung
+                  </h3>
+                  <Card className="bg-sage-wash/50 border-sage/30">
+                    <CardContent className="p-5">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Impulsive Handlungen entstehen oft aus{" "}
+                        <strong className="text-foreground">
+                          intensivem emotionalen Druck
+                        </strong>
+                        , nicht aus Rücksichtslosigkeit oder bösem Willen. Das
+                        bedeutet nicht, dass Sie die Konsequenzen tragen müssen
+                        – aber es hilft, nicht mit «Das ist unverantwortlich»
+                        oder «Wie konntest du nur» zu antworten. Moralische
+                        Vorwürfe in der Phase selbst verändern nichts und
+                        verstärken meist Scham und Eskalation.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <Lightbulb className="w-5 h-5 text-sage-mid" />
+                    Drei Szenarien – was hilft, was nicht
+                  </h3>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        titel: "Grossausgaben / finanzielle Risiken",
+                        hilft: [
+                          "Finanzielle Grenzen klar benennen: «Ich werde diese Ausgabe nicht mittragen.»",
+                          "Gemeinsame Konten getrennt halten, wenn das Muster bekannt ist",
+                          "In ruhiger Phase ansprechen: «Mir ist aufgefallen, dass du in letzter Zeit viel ausgibst. Das macht mir Sorge.»",
+                        ],
+                        nichtHilft: [
+                          "Ausgaben heimlich rückgängig machen",
+                          "Moralisieren («Du bist so unverantwortlich»)",
+                          "Einfach zahlen, um Streit zu vermeiden",
+                        ],
+                      },
+                      {
+                        titel:
+                          "Abrupte Entscheidungen (Kündigung, Umzug, Trennung)",
+                        hilft: [
+                          "Nicht sofort mitentscheiden – Reaktionszeit einfordern: «Lass uns das in drei Tagen nochmal besprechen.»",
+                          "Bedenken ruhig formulieren: «Ich mache mir Sorgen, weil... Hast du das bedacht?»",
+                          "Akzeptieren, dass Sie die Entscheidung nicht verhindern können",
+                        ],
+                        nichtHilft: [
+                          "Sofort in Panik verfallen oder Ultimaten stellen",
+                          "Die Entscheidung als Angriff auf Sie interpretieren",
+                          "Verantwortung für die Folgen übernehmen",
+                        ],
+                      },
+                      {
+                        titel: "Substanzkonsum / Risikoverhalten",
+                        hilft: [
+                          "Eigene Sicherheit priorisieren: Fahren mit unter Einfluss stehender Person ablehnen",
+                          "Konkret und ohne Urteil benennen: «Ich mache mir Sorgen, wie viel du trinkst.»",
+                          "Therapeutin oder Fachstelle einbeziehen, wenn das Muster anhält",
+                        ],
+                        nichtHilft: [
+                          "Konsum verstecken oder normalisieren",
+                          "Kontrolle übernehmen («Ich verstecke die Flaschen»)",
+                          "Drohen und nicht handeln",
+                        ],
+                      },
+                    ].map(szenario => (
+                      <Card key={szenario.titel} className="border-border/50">
+                        <CardContent className="p-5">
+                          <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                            <Zap className="w-4 h-4 text-amber-500 shrink-0" />
+                            {szenario.titel}
+                          </h4>
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            <div>
+                              <p className="text-xs font-medium text-sage-dark mb-2 uppercase tracking-wide">
+                                Hilft eher
+                              </p>
+                              <ul className="space-y-1.5">
+                                {szenario.hilft.map(p => (
+                                  <li
+                                    key={p}
+                                    className="flex items-start gap-1.5 text-xs text-muted-foreground"
+                                  >
+                                    <span className="text-sage-mid mt-0.5">
+                                      ✓
+                                    </span>
+                                    {p}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
+                                Hilft weniger
+                              </p>
+                              <ul className="space-y-1.5">
+                                {szenario.nichtHilft.map(p => (
+                                  <li
+                                    key={p}
+                                    className="flex items-start gap-1.5 text-xs text-muted-foreground"
+                                  >
+                                    <span className="text-muted-foreground/60 mt-0.5">
+                                      ✗
+                                    </span>
+                                    {p}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+
+                <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
+                  <CardContent className="p-5">
+                    <h3 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <Users className="w-4 h-4 text-sage-mid" />
+                      Nach der impulsiven Phase: Scham und Reue
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Nach impulsiven Phasen folgt oft massive{" "}
+                      <strong className="text-foreground">Scham</strong> –
+                      manchmal Rückzug, manchmal übermässige Entschuldigungen.
+                      Beides braucht eine ruhige Antwort: Anerkennen, was
+                      passiert ist, ohne es kleinzureden oder aufzubauschen.
+                      Erst wenn die Emotionen sich gelegt haben, ist der Moment
+                      für ein echtes Gespräch über Konsequenzen und nächste
+                      Schritte.
+                    </p>
                   </CardContent>
                 </Card>
               </div>

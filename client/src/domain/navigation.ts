@@ -2,6 +2,7 @@ import {
   BookMarked,
   BookOpen,
   Building2,
+  Compass,
   Download,
   FileText,
   Heart,
@@ -26,6 +27,7 @@ export const primaryNavigationItems: NavigationItem[] = [
 export const resourceNavigationItems: NavigationItem[] = [
   { href: "/materialien", label: "Materialien & Handouts", icon: Download },
   { href: "/genesung", label: "Genesung & Hoffnung", icon: TrendingUp },
+  { href: "/wegweiser", label: "Situations-Wegweiser", icon: Compass },
   { href: "/notfallkarte", label: "Notfallkarte", icon: FileText },
   { href: "/beratung", label: "Beratung & Netzwerke", icon: Heart },
   { href: "/fachstelle", label: "Fachstelle & Kontakt", icon: Building2 },

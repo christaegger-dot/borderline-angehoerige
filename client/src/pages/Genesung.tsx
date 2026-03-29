@@ -15,6 +15,7 @@ import {
   RefreshCw,
   Search,
   Sparkles,
+  Stethoscope,
   TrendingUp,
   Users,
 } from "lucide-react";
@@ -467,6 +468,12 @@ export default function Genesung() {
                   <Button className="bg-sage-dark hover:bg-sage-mid text-white">
                     Unterstützen lernen
                     <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+                <Link href="/unterstuetzen/therapie">
+                  <Button variant="outline" className="gap-2">
+                    <Stethoscope className="w-4 h-4" />
+                    Therapie begleiten
                   </Button>
                 </Link>
                 <Link href="/selbstfuersorge">

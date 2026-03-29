@@ -51,9 +51,9 @@ function createId() {
 // ─── Emergency contacts for print card ────────────────────
 
 /** Contacts shown on the printed card (including nurPdf entries) */
-const CARD_ROT = ROT.filter((k) => k.id !== "ROT_118");
+const CARD_ROT = ROT.filter(k => k.id !== "ROT_118");
 const CARD_GELB = GELB;
-const CARD_GRUEN = GRUEN.filter((k) => k.id === "GRUEN_143");
+const CARD_GRUEN = GRUEN.filter(k => k.id === "GRUEN_143");
 
 // ─── Persistence ──────────────────────────────────────────
 
@@ -71,11 +71,23 @@ function loadData(): NotfallkarteData {
   };
 }
 
-function saveData(data: NotfallkarteData) {
+function isStorageAvailable(): boolean {
+  try {
+    const test = "__storage_test__";
+    localStorage.setItem(test, test);
+    localStorage.removeItem(test);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function saveData(data: NotfallkarteData): boolean {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    return true;
   } catch {
-    /* storage full – silently fail */
+    return false;
   }
 }
 
@@ -120,21 +132,21 @@ function PersonalContactRow({
         <input
           type="text"
           value={contact.name}
-          onChange={(e) => onUpdate({ ...contact, name: e.target.value })}
+          onChange={e => onUpdate({ ...contact, name: e.target.value })}
           placeholder="Name"
           className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
         />
         <input
           type="tel"
           value={contact.phone}
-          onChange={(e) => onUpdate({ ...contact, phone: e.target.value })}
+          onChange={e => onUpdate({ ...contact, phone: e.target.value })}
           placeholder="Telefonnummer"
           className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
         />
         <input
           type="text"
           value={contact.relation}
-          onChange={(e) => onUpdate({ ...contact, relation: e.target.value })}
+          onChange={e => onUpdate({ ...contact, relation: e.target.value })}
           placeholder="Beziehung (z.B. Therapeut:in)"
           className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
         />
@@ -156,11 +168,17 @@ function PersonalContactRow({
 export default function Notfallkarte() {
   const [data, setData] = useState<NotfallkarteData>(loadData);
   const [saved, setSaved] = useState(false);
+  const [storageError, setStorageError] = useState(false);
   const savedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Detect storage availability once on mount
+  useEffect(() => {
+    if (!isStorageAvailable()) setStorageError(true);
+  }, []);
 
   // Auto-save on changes
   useEffect(() => {
-    saveData(data);
+    if (!saveData(data)) setStorageError(true);
   }, [data]);
 
   useEffect(() => {
@@ -181,7 +199,7 @@ export default function Notfallkarte() {
   }, []);
 
   const addContact = useCallback(() => {
-    setData((prev) => ({
+    setData(prev => ({
       ...prev,
       personalContacts: [
         ...prev.personalContacts,
@@ -191,23 +209,23 @@ export default function Notfallkarte() {
   }, []);
 
   const updateContact = useCallback((updated: PersonalContact) => {
-    setData((prev) => ({
+    setData(prev => ({
       ...prev,
-      personalContacts: prev.personalContacts.map((c) =>
-        c.id === updated.id ? updated : c,
+      personalContacts: prev.personalContacts.map(c =>
+        c.id === updated.id ? updated : c
       ),
     }));
   }, []);
 
   const removeContact = useCallback((id: string) => {
-    setData((prev) => ({
+    setData(prev => ({
       ...prev,
-      personalContacts: prev.personalContacts.filter((c) => c.id !== id),
+      personalContacts: prev.personalContacts.filter(c => c.id !== id),
     }));
   }, []);
 
   const addStrategy = useCallback(() => {
-    setData((prev) => ({
+    setData(prev => ({
       ...prev,
       calmingStrategies: [
         ...prev.calmingStrategies,
@@ -217,18 +235,18 @@ export default function Notfallkarte() {
   }, []);
 
   const updateStrategy = useCallback((id: string, text: string) => {
-    setData((prev) => ({
+    setData(prev => ({
       ...prev,
-      calmingStrategies: prev.calmingStrategies.map((s) =>
-        s.id === id ? { ...s, text } : s,
+      calmingStrategies: prev.calmingStrategies.map(s =>
+        s.id === id ? { ...s, text } : s
       ),
     }));
   }, []);
 
   const removeStrategy = useCallback((id: string) => {
-    setData((prev) => ({
+    setData(prev => ({
       ...prev,
-      calmingStrategies: prev.calmingStrategies.filter((s) => s.id !== id),
+      calmingStrategies: prev.calmingStrategies.filter(s => s.id !== id),
     }));
   }, []);
 
@@ -243,6 +261,20 @@ export default function Notfallkarte() {
       {/* ─── Hero ─────────────────────────────────────────── */}
       <section className="bg-gradient-to-b from-[var(--color-sand)] to-background pt-12 pb-8 print:pt-2 print:pb-2 print:bg-none">
         <div className="container max-w-3xl text-center">
+          {storageError && (
+            <div
+              className="flex items-start gap-3 mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-left print:hidden"
+              role="alert"
+            >
+              <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+              <p className="text-sm text-amber-800">
+                <strong>Speichern nicht möglich:</strong> Ihr Browser blockiert
+                den lokalen Speicher (z.B. im privaten Modus). Ihre Eingaben
+                werden nicht gespeichert. Bitte drucken Sie die Karte aus, bevor
+                Sie die Seite verlassen.
+              </p>
+            </div>
+          )}
           <div className="inline-flex items-center gap-2 bg-[var(--color-sos-rot)]/10 text-[var(--color-sos-rot)] px-4 py-1.5 rounded-full text-sm font-medium mb-4 print:hidden">
             <Shield className="w-4 h-4" />
             Soforthilfe-Werkzeug
@@ -251,9 +283,9 @@ export default function Notfallkarte() {
             Persönliche Notfallkarte
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto print:text-sm print:max-w-none">
-            Die wichtigsten Nummern und Ihre persönlichen Strategien –
-            alles auf einen Blick. Zum Ausdrucken, als PDF speichern oder
-            jederzeit hier abrufen.
+            Die wichtigsten Nummern und Ihre persönlichen Strategien – alles auf
+            einen Blick. Zum Ausdrucken, als PDF speichern oder jederzeit hier
+            abrufen.
           </p>
 
           {/* Action buttons – hidden when printing */}
@@ -282,7 +314,7 @@ export default function Notfallkarte() {
               </h2>
             </div>
             <div className="divide-y divide-border/50">
-              {CARD_ROT.map((k) => (
+              {CARD_ROT.map(k => (
                 <EmergencyRow key={k.id} kontakt={k} />
               ))}
             </div>
@@ -299,7 +331,7 @@ export default function Notfallkarte() {
               </h2>
             </div>
             <div className="divide-y divide-border/50">
-              {CARD_GELB.map((k) => (
+              {CARD_GELB.map(k => (
                 <EmergencyRow key={k.id} kontakt={k} />
               ))}
             </div>
@@ -316,7 +348,7 @@ export default function Notfallkarte() {
               </h2>
             </div>
             <div className="divide-y divide-border/50">
-              {CARD_GRUEN.map((k) => (
+              {CARD_GRUEN.map(k => (
                 <EmergencyRow key={k.id} kontakt={k} />
               ))}
             </div>
@@ -346,12 +378,12 @@ export default function Notfallkarte() {
 
             {data.personalContacts.length === 0 ? (
               <p className="text-sm text-muted-foreground py-3 print:hidden">
-                Fügen Sie hier Ihre persönlichen Kontaktpersonen hinzu –
-                z.B. Therapeut:in, Vertrauensperson, Nachbar:in.
+                Fügen Sie hier Ihre persönlichen Kontaktpersonen hinzu – z.B.
+                Therapeut:in, Vertrauensperson, Nachbar:in.
               </p>
             ) : (
               <div className="space-y-0.5">
-                {data.personalContacts.map((c) => (
+                {data.personalContacts.map(c => (
                   <PersonalContactRow
                     key={c.id}
                     contact={c}
@@ -365,7 +397,7 @@ export default function Notfallkarte() {
             {/* Print-only: empty lines if no contacts */}
             {data.personalContacts.length === 0 && (
               <div className="hidden print:block space-y-3 mt-2">
-                {[1, 2, 3].map((i) => (
+                {[1, 2, 3].map(i => (
                   <div key={i} className="grid grid-cols-3 gap-4">
                     <div className="border-b border-gray-400 py-2 text-xs text-gray-500">
                       Name
@@ -412,7 +444,7 @@ export default function Notfallkarte() {
                   <input
                     type="text"
                     value={s.text}
-                    onChange={(e) => updateStrategy(s.id, e.target.value)}
+                    onChange={e => updateStrategy(s.id, e.target.value)}
                     placeholder="Strategie eingeben…"
                     className="flex-1 rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
                   />
@@ -441,8 +473,8 @@ export default function Notfallkarte() {
             </div>
             <textarea
               value={data.notes}
-              onChange={(e) =>
-                setData((prev) => ({ ...prev, notes: e.target.value }))
+              onChange={e =>
+                setData(prev => ({ ...prev, notes: e.target.value }))
               }
               placeholder="z.B. Medikamente, Allergien, wichtige Hinweise für Helfer:innen…"
               rows={3}

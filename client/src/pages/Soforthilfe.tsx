@@ -92,7 +92,7 @@ function StickyAmpelLeiste() {
                 <span className="font-semibold leading-tight text-center">
                   {item.label}
                 </span>
-                <span className="text-white/80 text-[10px] sm:text-xs leading-tight">
+                <span className="text-white text-[10px] sm:text-xs leading-tight">
                   {item.sub}
                 </span>
               </button>
@@ -442,7 +442,7 @@ export default function Notfall() {
                     Lebensgefahr – sofort handeln
                   </h2>
                 </div>
-                <p className="text-white/85 text-sm leading-snug ml-9">
+                <p className="text-white text-sm leading-snug ml-9">
                   Bei akuter Suizidgefahr, schwerer Selbstverletzung, Gewalt
                   oder unmittelbarer Bedrohung.
                 </p>
@@ -515,7 +515,7 @@ export default function Notfall() {
                       <span className="flex-shrink-0 w-5 h-5 rounded-full bg-white/20 text-white text-xs font-bold flex items-center justify-center">
                         {item.nr}
                       </span>
-                      <p className="text-white/90 text-sm leading-snug">
+                      <p className="text-white text-sm leading-snug">
                         {item.text}
                       </p>
                     </div>

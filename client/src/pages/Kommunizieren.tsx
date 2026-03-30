@@ -120,6 +120,69 @@ export default function Kommunizieren() {
 
                 <ValidierungsStufenleiter />
 
+                {/* Validierungs-Situationsmatrix */}
+                <div className="rounded-lg border border-sage-mid/30 bg-sage-light/5 p-4">
+                  <p className="text-sm font-semibold text-foreground mb-3">
+                    Wann welche Stufe passt
+                  </p>
+                  <div className="space-y-3">
+                    {(
+                      [
+                        {
+                          situation: "Alltag, kleine Frustration",
+                          fit: [true, true, false, false, false, false],
+                          note: "Stufe 1–2",
+                        },
+                        {
+                          situation: "Streit, Vorwürfe, Anspannung",
+                          fit: [false, true, true, true, false, false],
+                          note: "Stufe 2–4",
+                        },
+                        {
+                          situation: "Starke Emotion, Kontrollverlust",
+                          fit: [false, false, true, true, true, false],
+                          note: "Stufe 3–5",
+                        },
+                        {
+                          situation: "Krise, Suizidgedanken",
+                          fit: [false, false, false, false, true, true],
+                          note: "Stufe 5–6 + Hilfe",
+                        },
+                      ] as { situation: string; fit: boolean[]; note: string }[]
+                    ).map(row => (
+                      <div
+                        key={row.situation}
+                        className="flex flex-col sm:flex-row sm:items-center gap-2"
+                      >
+                        <p className="text-sm text-foreground sm:min-w-[220px]">
+                          {row.situation}
+                        </p>
+                        <div className="flex items-center gap-1">
+                          {row.fit.map((active, i) => (
+                            <div
+                              key={i}
+                              className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold border ${
+                                active
+                                  ? "bg-sage-lighter text-sage-dark border-sage-mid/50"
+                                  : "bg-background text-muted-foreground border-border/30"
+                              }`}
+                            >
+                              {i + 1}
+                            </div>
+                          ))}
+                          <span className="text-xs text-muted-foreground ml-2">
+                            {row.note}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-[11px] text-muted-foreground mt-3">
+                    Stufen sind keine Hierarchie — sie sind Werkzeuge. Kein
+                    Ansatz passt in jeder Situation gleich gut.
+                  </p>
+                </div>
+
                 <Card className="bg-sage-wash/50 border-sage-mid/30">
                   <CardContent className="p-5">
                     <p className="text-foreground font-medium text-sm">

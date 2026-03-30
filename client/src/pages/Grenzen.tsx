@@ -158,6 +158,78 @@ export default function Grenzen() {
               </div>
             </ContentSection>
 
+            {/* Grenzen-Priorisierungsmatrix */}
+            <ContentSection
+              title="Welche Grenzen zuerst?"
+              icon={<CheckCircle2 className="w-7 h-7 text-sage-dark" />}
+              id="priorisierung"
+              preview="Nicht alle Grenzen lassen sich gleichzeitig setzen. Diese Orientierung hilft, die wichtigsten zuerst anzugehen."
+            >
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Wer versucht, alle Grenzen auf einmal zu setzen, scheitert meist
+                an sich selbst. Sinnvoller ist es, nach Dringlichkeit und
+                emotionaler Last zu priorisieren.
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="rounded-lg bg-alert/10 border border-alert/30 p-4">
+                  <p className="text-[10px] font-bold text-alert uppercase tracking-wide mb-1">
+                    Dringend · Emotional hoch
+                  </p>
+                  <p className="text-sm font-semibold text-foreground mb-2">
+                    Sofort setzen
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Körperliche Sicherheit</li>
+                    <li>• Bedrohungen / Übergriffe</li>
+                    <li>• Eigene Gesundheit</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg bg-sand-muted border border-sand-mid/30 p-4">
+                  <p className="text-[10px] font-bold text-sand-mid uppercase tracking-wide mb-1">
+                    Dringend · Emotional niedriger
+                  </p>
+                  <p className="text-sm font-semibold text-foreground mb-2">
+                    Klar kommunizieren
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Erreichbarkeitszeiten</li>
+                    <li>• Gesprächsregeln</li>
+                    <li>• Alltägliche Abläufe</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg bg-sage-lighter/50 border border-sage-mid/20 p-4">
+                  <p className="text-[10px] font-bold text-sage-dark uppercase tracking-wide mb-1">
+                    Langfristig · Emotional hoch
+                  </p>
+                  <p className="text-sm font-semibold text-foreground mb-2">
+                    Sorgfältig vorbereiten
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Finanzielle Regelungen</li>
+                    <li>• Wohnsituation</li>
+                    <li>• Langfristige Rollen</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg bg-slate-wash border border-border/30 p-4">
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wide mb-1">
+                    Langfristig · Emotional niedrig
+                  </p>
+                  <p className="text-sm font-semibold text-foreground mb-2">
+                    Im Blick behalten
+                  </p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Kleine Gewohnheitsfragen</li>
+                    <li>• Alltagsabsprachen</li>
+                    <li>• Schrittweise Anpassungen</li>
+                  </ul>
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4">
+                Wenige zentrale Grenzen, klar gehalten, tragen mehr als viele
+                gleichzeitig.
+              </p>
+            </ContentSection>
+
             <ContentSection
               title="Wie Grenzen eher gut kommuniziert werden"
               icon={<Heart className="w-7 h-7 text-sage-dark" />}

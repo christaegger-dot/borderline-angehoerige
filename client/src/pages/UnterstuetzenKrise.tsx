@@ -202,6 +202,72 @@ export default function UnterstuetzenKrise() {
                   </Card>
                 ))}
               </div>
+
+              {/* De-Eskalations-Pfad */}
+              <div className="mt-4 rounded-lg bg-slate-wash/20 p-4 border border-border/30">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-3">
+                  Was konkret hilft – je nach Stufe
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-start gap-3 rounded-md bg-alert/10 p-3">
+                    <span className="text-xs font-bold min-w-[52px] text-alert pt-0.5">
+                      Rot
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {[
+                        "Professionelle Hilfe holen",
+                        "Eigene Sicherheit sichern",
+                        "Nicht allein lassen",
+                      ].map(s => (
+                        <span
+                          key={s}
+                          className="text-xs bg-background/70 rounded px-2 py-0.5 text-foreground border border-border/30"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-md bg-sand-muted p-3">
+                    <span className="text-xs font-bold min-w-[52px] text-sand-mid pt-0.5">
+                      Orange
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {[
+                        "Nicht diskutieren",
+                        "Körperabstand anbieten",
+                        "Kurze, ruhige Sätze",
+                      ].map(s => (
+                        <span
+                          key={s}
+                          className="text-xs bg-background/70 rounded px-2 py-0.5 text-foreground border border-border/30"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-md bg-sage-lighter/50 p-3">
+                    <span className="text-xs font-bold min-w-[52px] text-sage-dark pt-0.5">
+                      Gelb
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {[
+                        "Validieren",
+                        "Raum geben",
+                        "Skills gemeinsam erinnern",
+                      ].map(s => (
+                        <span
+                          key={s}
+                          className="text-xs bg-background/70 rounded px-2 py-0.5 text-foreground border border-border/30"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </ContentSection>
 
             {/* 4 Schritte der Deeskalation */}

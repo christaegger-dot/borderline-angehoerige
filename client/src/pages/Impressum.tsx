@@ -12,6 +12,7 @@ import {
   Target,
   Copyright,
 } from "lucide-react";
+import { Link } from "wouter";
 import { kontaktByIdStrict, emailByIdStrict } from "@/data/kontakte";
 
 const fachstelle = kontaktByIdStrict("INFO_FACHSTELLE");
@@ -234,6 +235,14 @@ export default function Impressum() {
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     Die Inhalte dieser Website basieren auf anerkannter
                     Fachliteratur und evidenzbasierten Methoden, insbesondere:
+                  </p>
+                  <p className="text-sm text-sage-dark mb-4">
+                    <Link
+                      href="/quellen"
+                      className="underline hover:no-underline"
+                    >
+                      → Vollständige Literaturliste mit PubMed-Links
+                    </Link>
                   </p>
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="border-l-2 border-sage pl-4">

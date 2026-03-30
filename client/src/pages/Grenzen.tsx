@@ -13,6 +13,7 @@ import {
   Eye,
   Heart,
   MessageSquare,
+  Phone,
   Shield,
   Users,
 } from "lucide-react";
@@ -591,6 +592,81 @@ export default function Grenzen() {
                 </CardContent>
               </Card>
             </motion.div>
+            <ContentSection
+              title="Wenn der Angehörige körperlich übergriffig wird"
+              icon={<Phone className="w-7 h-7 text-sos-rot" />}
+              id="gewalt"
+              preview="Körperliche Übergriffe sind keine Grenzverletzung – sie sind eine Gefährdung. Das erfordert eine andere Reaktion als verbale Eskalation."
+            >
+              <div className="space-y-4">
+                <Card className="border-l-4 border-l-red-500 bg-red-50/30">
+                  <CardContent className="p-5">
+                    <p className="text-sm font-semibold text-foreground mb-2">
+                      Körperliche Gewalt ist kein Beziehungsproblem — es ist
+                      eine Sicherheitsfrage.
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Borderline erklärt Übergriffe nicht und entschuldigt sie
+                      nicht. Wenn Sie körperlich bedroht oder verletzt werden,
+                      ist Ihre Sicherheit die einzige Priorität.
+                    </p>
+                  </CardContent>
+                </Card>
+                <div className="space-y-3">
+                  {[
+                    {
+                      schritt: "Verlassen Sie die Situation",
+                      detail:
+                        "Gehen Sie in ein anderes Zimmer, aus dem Haus oder zu Nachbarn. Sicherheit hat Vorrang vor Deeskalationsversuchen.",
+                    },
+                    {
+                      schritt: "Rufen Sie 117 (Polizei) oder 144",
+                      detail:
+                        "Bei akuter Gefahr sofort. Sie müssen sich nicht sicher sein, ob es «schlimm genug» ist — die Polizei entscheidet das.",
+                    },
+                    {
+                      schritt: "Sprechen Sie danach mit einer Fachstelle",
+                      detail:
+                        "Opferhilfe Zürich (0800 040 080, kostenlos), Frauenhaus oder Beratungsstelle. Es gibt Unterstützung auch für Männer.",
+                    },
+                    {
+                      schritt: "Halten Sie Vorfälle fest",
+                      detail:
+                        "Datum, Beschreibung, allfällige Zeugen. Das ist wichtig, wenn Sie später rechtliche Schritte prüfen möchten.",
+                    },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30"
+                    >
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-700 text-xs font-bold flex items-center justify-center">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">
+                          {item.schritt}
+                        </p>
+                        <p className="text-sm text-muted-foreground mt-0.5">
+                          {item.detail}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Card className="border-sage bg-sage-wash/30">
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Viele Angehörige zögern, weil sie fürchten, die Person zu
+                      «verraten» oder die Situation zu eskalieren.
+                      Professionelle Hilfe zu holen ist kein Verrat — es ist oft
+                      der einzige Weg, eine Beziehung langfristig überhaupt zu
+                      stabilisieren.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </ContentSection>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -127,6 +127,12 @@ export default function UnterstuetzenKrise() {
       <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            {/* Disclaimer */}
+            <p className="text-xs text-muted-foreground text-center mb-6">
+              Diese Inhalte ersetzen keine professionelle Krisenberatung. Bei
+              akuter Gefahr direkt{" "}
+              <strong className="text-foreground">144 / 117</strong> anrufen.
+            </p>
             {/* Ampel-System */}
             <ContentSection
               title="Das Ampel-System: Krisen erkennen"

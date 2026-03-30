@@ -85,11 +85,12 @@ export function RessourcenMenu({
                 const isActive =
                   location === normalizedHref ||
                   location.startsWith(`${normalizedHref}/`);
-                const isSoforthilfe = item.href === "/soforthilfe";
+                const prevItem = ressourcenItems[index - 1];
+                const isNewGroup = index > 0 && item.group !== prevItem?.group;
 
                 return (
                   <div key={item.href}>
-                    {index === 1 && (
+                    {isNewGroup && (
                       <div className="mx-3 my-1 border-t border-border/40" />
                     )}
                     <Link
@@ -104,16 +105,12 @@ export function RessourcenMenu({
                       }}
                       onClick={closeDropdown}
                       className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
-                        isSoforthilfe
-                          ? "text-alert font-medium hover:bg-alert/8 focus:bg-alert/8"
-                          : isActive
-                            ? "bg-sage-wash/50 text-sage-darker font-medium"
-                            : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
+                        isActive
+                          ? "bg-sage-wash/50 text-sage-darker font-medium"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
                       }`}
                     >
-                      <Icon
-                        className={`w-4 h-4 shrink-0 ${isSoforthilfe ? "text-alert" : ""}`}
-                      />
+                      <Icon className="w-4 h-4 shrink-0" />
                       {item.label}
                     </Link>
                   </div>

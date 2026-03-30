@@ -9,7 +9,6 @@ import {
   Heart,
   HelpCircle,
   MessageCircle,
-  Phone,
   Shield,
   Sparkles,
   Stethoscope,
@@ -26,20 +25,73 @@ export const primaryNavigationItems: NavigationItem[] = [
 ];
 
 export const resourceNavigationItems: NavigationItem[] = [
-  { href: "/selbsttest", label: "Selbsttest", icon: ClipboardCheck },
-  { href: "/materialien", label: "Materialien & Handouts", icon: Download },
-  { href: "/genesung", label: "Genesung & Hoffnung", icon: TrendingUp },
-  { href: "/wegweiser", label: "Situations-Wegweiser", icon: Compass },
-  { href: "/notfallkarte", label: "Notfallkarte", icon: FileText },
-  { href: "/beratung", label: "Beratung & Netzwerke", icon: Heart },
-  { href: "/fachstelle", label: "Fachstelle & Kontakt", icon: Building2 },
-  { href: "/faq", label: "Häufige Fragen (FAQ)", icon: HelpCircle },
-  { href: "/glossar", label: "Glossar", icon: BookMarked },
-  { href: "/buchempfehlungen", label: "Buchempfehlungen", icon: BookOpen },
+  // Gruppe: Sofortige Hilfe
+  {
+    href: "/notfallkarte",
+    label: "Notfallkarte",
+    icon: FileText,
+    group: "Sofortige Hilfe",
+  },
+  {
+    href: "/wegweiser",
+    label: "Situations-Wegweiser",
+    icon: Compass,
+    group: "Sofortige Hilfe",
+  },
+  {
+    href: "/selbsttest",
+    label: "Selbsttest",
+    icon: ClipboardCheck,
+    group: "Sofortige Hilfe",
+  },
+  // Gruppe: Wissen & Materialien
+  {
+    href: "/materialien",
+    label: "Materialien & Handouts",
+    icon: Download,
+    group: "Wissen & Materialien",
+  },
+  {
+    href: "/genesung",
+    label: "Genesung & Hoffnung",
+    icon: TrendingUp,
+    group: "Wissen & Materialien",
+  },
+  {
+    href: "/faq",
+    label: "Häufige Fragen (FAQ)",
+    icon: HelpCircle,
+    group: "Wissen & Materialien",
+  },
+  {
+    href: "/glossar",
+    label: "Glossar",
+    icon: BookMarked,
+    group: "Wissen & Materialien",
+  },
+  {
+    href: "/buchempfehlungen",
+    label: "Buchempfehlungen",
+    icon: BookOpen,
+    group: "Wissen & Materialien",
+  },
+  // Gruppe: Beratung & Netzwerke
+  {
+    href: "/beratung",
+    label: "Beratung & Netzwerke",
+    icon: Heart,
+    group: "Beratung & Netzwerke",
+  },
+  {
+    href: "/fachstelle",
+    label: "Fachstelle & Kontakt",
+    icon: Building2,
+    group: "Beratung & Netzwerke",
+  },
   {
     href: "/unterstuetzen/therapie#therapieangebote",
     label: "Therapieangebote Zürich",
     icon: Stethoscope,
+    group: "Beratung & Netzwerke",
   },
-  { href: "/soforthilfe", label: "Soforthilfe", icon: Phone },
 ];

@@ -106,130 +106,160 @@ function StickyAmpelLeiste() {
 
 // ─── Grosse Notruf-Karte (ROT) ───────────────────────────
 
-function NotfallKarte({
-  nummer,
-  label,
-  hinweis,
-  tel,
-}: {
+// ─── Unified KontaktKarte (danger / orange / green / lila) ───
+
+type KarteVariant = "danger" | "orange" | "green" | "lila";
+
+interface KontaktKarteProps {
+  variant: KarteVariant;
   nummer: string;
   label: string;
-  hinweis: string;
   tel: string;
-}) {
-  return (
-    <a
-      href={`tel:${tel}`}
-      className="flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl bg-white/15 hover:bg-white/25 active:bg-white/30 transition-all border border-white/20 group"
-      aria-label={`${label} anrufen: ${nummer}`}
-    >
-      <div className="flex items-center gap-3 min-w-0">
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-          <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-        </div>
-        <div className="min-w-0">
-          <p className="font-bold text-white text-xl sm:text-2xl leading-none mb-0.5">
-            {nummer}
-          </p>
-          <p className="text-white/90 font-semibold text-sm">{label}</p>
-          <p className="text-white/70 text-xs leading-snug mt-0.5">{hinweis}</p>
-        </div>
-      </div>
-      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all">
-        <Phone className="w-5 h-5 text-white" />
-      </div>
-    </a>
-  );
+  hinweis?: string;
+  subLabel?: string;
+  icon?: React.ReactNode;
 }
 
-// ─── PUK-Karte (ORANGE) ──────────────────────────────────
+const KARTE_STYLES: Record<
+  KarteVariant,
+  {
+    container: string;
+    iconBox: string;
+    numberCls: string;
+    subLabelCls: string;
+    labelCls: string;
+    hinweisCls: string;
+    arrowBox: string;
+    arrowIconCls: string;
+  }
+> = {
+  danger: {
+    container:
+      "bg-white/15 hover:bg-white/25 active:bg-white/30 border-white/20",
+    iconBox: "rounded-full bg-white/20",
+    numberCls: "text-white text-xl sm:text-2xl",
+    subLabelCls: "text-white/80 text-xs font-semibold",
+    labelCls: "text-white/90 font-semibold text-sm",
+    hinweisCls: "text-white/70 text-xs leading-snug mt-0.5",
+    arrowBox: "bg-white/20 group-hover:bg-white/30",
+    arrowIconCls: "text-white",
+  },
+  orange: {
+    container:
+      "bg-white border-sos-orange-border hover:border-sos-orange-border-h hover:shadow-md active:scale-[0.98]",
+    iconBox: "rounded-xl bg-sos-orange-light",
+    numberCls: "text-foreground text-lg sm:text-xl",
+    subLabelCls: "text-xs font-medium text-sos-orange-text",
+    labelCls: "text-muted-foreground text-xs sm:text-sm leading-snug",
+    hinweisCls: "text-muted-foreground text-xs leading-snug mt-0.5",
+    arrowBox: "bg-sos-orange-light group-hover:bg-sos-orange-border",
+    arrowIconCls: "text-sos-orange-text",
+  },
+  green: {
+    container:
+      "bg-white border-sos-gruen-border hover:border-sos-gruen-border-h hover:shadow-md active:scale-[0.98]",
+    iconBox: "rounded-xl bg-sos-gruen-light",
+    numberCls: "text-foreground text-lg sm:text-xl",
+    subLabelCls:
+      "text-[10px] font-semibold text-sos-gruen-text bg-sos-gruen-light rounded px-1.5 py-0.5",
+    labelCls: "text-muted-foreground text-xs sm:text-sm font-medium",
+    hinweisCls: "text-muted-foreground text-xs leading-snug mt-0.5",
+    arrowBox: "bg-sos-gruen-light group-hover:bg-sos-gruen-border",
+    arrowIconCls: "text-sos-gruen-text",
+  },
+  lila: {
+    container:
+      "bg-sos-lila-wash border-sos-lila-border hover:border-sos-lila-border-h hover:shadow-md active:scale-[0.98]",
+    iconBox: "rounded-xl bg-sos-lila-light",
+    numberCls: "text-foreground text-lg sm:text-xl",
+    subLabelCls: "text-xs font-medium text-sos-lila-text",
+    labelCls: "text-muted-foreground text-sm font-medium",
+    hinweisCls: "text-muted-foreground text-xs mt-0.5",
+    arrowBox: "bg-sos-lila-light group-hover:bg-sos-lila-border",
+    arrowIconCls: "text-sos-lila-text",
+  },
+};
 
-function PukKarte({
+function KontaktKarte({
+  variant,
   nummer,
   label,
-  fuerWen,
   tel,
+  hinweis,
+  subLabel,
   icon,
-}: {
-  nummer: string;
-  label: string;
-  fuerWen: string;
-  tel: string;
-  icon: React.ReactNode;
-}) {
+}: KontaktKarteProps) {
+  const s = KARTE_STYLES[variant];
+  const defaultIcon =
+    variant === "danger" ? (
+      <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    ) : variant === "orange" ? (
+      <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />
+    ) : variant === "lila" ? (
+      <Pill className="w-5 h-5 sm:w-6 sm:h-6 text-sos-lila-text" />
+    ) : (
+      <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-sos-gruen-text" />
+    );
   return (
     <a
       href={`tel:${tel}`}
-      className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-white border border-sos-orange-border hover:border-sos-orange-border-h hover:shadow-md active:scale-[0.98] transition-all group"
+      className={`flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl border transition-all group ${s.container}`}
       aria-label={`${label} anrufen: ${nummer}`}
     >
       <div className="flex items-center gap-3 min-w-0">
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-sos-orange-light flex items-center justify-center flex-shrink-0">
-          {icon}
+        <div
+          className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 ${s.iconBox}`}
+        >
+          {icon ?? defaultIcon}
         </div>
         <div className="min-w-0">
-          <p className="text-xs font-medium text-sos-orange-text mb-0.5">
-            {fuerWen}
-          </p>
-          <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">
-            {nummer}
-          </p>
-          <p className="text-muted-foreground text-xs sm:text-sm leading-snug">
-            {label}
-          </p>
-        </div>
-      </div>
-      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-orange-light flex items-center justify-center group-hover:bg-sos-orange-border transition-all">
-        <Phone className="w-5 h-5 text-sos-orange-text" />
-      </div>
-    </a>
-  );
-}
-
-// ─── Grüne Karte (Entlastung) ─────────────────────────────
-
-function EntlastungKarte({
-  nummer,
-  label,
-  hinweis,
-  tel,
-  badge,
-}: {
-  nummer: string;
-  label: string;
-  hinweis: string;
-  tel: string;
-  badge?: string;
-}) {
-  return (
-    <a
-      href={`tel:${tel}`}
-      className="flex items-center justify-between gap-3 p-4 sm:p-5 rounded-xl bg-white border border-sos-gruen-border hover:border-sos-gruen-border-h hover:shadow-md active:scale-[0.98] transition-all group"
-      aria-label={`${label} anrufen: ${nummer}`}
-    >
-      <div className="flex items-center gap-3 min-w-0">
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-sos-gruen-light flex items-center justify-center flex-shrink-0">
-          <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-sos-gruen-text" />
-        </div>
-        <div className="min-w-0">
-          {badge && (
-            <span className="inline-block text-[10px] font-semibold text-sos-gruen-text bg-sos-gruen-light rounded px-1.5 py-0.5 mb-0.5">
-              {badge}
+          {subLabel && (
+            <span className={`inline-block mb-0.5 ${s.subLabelCls}`}>
+              {subLabel}
             </span>
           )}
-          <p className="font-bold text-foreground text-lg sm:text-xl leading-none mb-0.5">
+          <p className={`font-bold leading-none mb-0.5 ${s.numberCls}`}>
             {nummer}
           </p>
-          <p className="text-muted-foreground text-xs sm:text-sm font-medium">
-            {label}
-          </p>
-          <p className="text-muted-foreground text-xs leading-snug mt-0.5">
-            {hinweis}
-          </p>
+          <p className={s.labelCls}>{label}</p>
+          {hinweis && <p className={s.hinweisCls}>{hinweis}</p>}
         </div>
       </div>
-      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-gruen-light flex items-center justify-center group-hover:bg-sos-gruen-border transition-all">
-        <Phone className="w-5 h-5 text-sos-gruen-text" />
+      <div
+        className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all ${s.arrowBox}`}
+      >
+        <Phone className={`w-5 h-5 ${s.arrowIconCls}`} />
+      </div>
+    </a>
+  );
+}
+
+// ─── InfoKarte (nachrangige Kontakte, grau) ───────────────
+
+function InfoKarte({
+  nummer,
+  label,
+  hinweis,
+  tel,
+}: {
+  nummer: string;
+  label: string;
+  hinweis: string;
+  tel: string;
+}) {
+  return (
+    <a
+      href={`tel:${tel}`}
+      className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
+      aria-label={`${label} anrufen: ${nummer}`}
+    >
+      <div className="min-w-0">
+        <p className="font-semibold text-foreground text-sm">{nummer}</p>
+        <p className="text-muted-foreground text-xs">{label}</p>
+        <p className="text-muted-foreground text-xs">{hinweis}</p>
+      </div>
+      <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
+        <Phone className="w-4 h-4 text-muted-foreground" />
       </div>
     </a>
   );
@@ -360,19 +390,22 @@ export default function Notfall() {
 
               {/* Nummern */}
               <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3 bg-sos-rot-body">
-                <NotfallKarte
+                <KontaktKarte
+                  variant="danger"
                   nummer={rot144.nummer}
                   label={rot144.label}
                   hinweis={rot144.hinweis}
                   tel={rot144.tel}
                 />
-                <NotfallKarte
+                <KontaktKarte
+                  variant="danger"
                   nummer={rot117.nummer}
                   label={rot117.label}
                   hinweis={rot117.hinweis}
                   tel={rot117.tel}
                 />
-                <NotfallKarte
+                <KontaktKarte
+                  variant="danger"
                   nummer={rot112.nummer}
                   label={rot112.label}
                   hinweis={rot112.hinweis}
@@ -423,28 +456,31 @@ export default function Notfall() {
                   Kontaktieren Sie die PUK Zürich – rund um die Uhr, 24/7:
                 </p>
 
-                <PukKarte
+                <KontaktKarte
+                  variant="orange"
                   nummer={pukErw.nummer}
                   label="PUK Erwachsene (24/7)"
-                  fuerWen="Erwachsene 18–64 Jahre"
+                  subLabel="Erwachsene 18–64 Jahre"
                   tel={pukErw.tel}
                   icon={
                     <User className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />
                   }
                 />
-                <PukKarte
+                <KontaktKarte
+                  variant="orange"
                   nummer={pukKjp.nummer}
                   label="PUK Kinder & Jugendliche (24/7)"
-                  fuerWen="Kinder & Jugendliche bis 18 Jahre"
+                  subLabel="Kinder & Jugendliche bis 18 Jahre"
                   tel={pukKjp.tel}
                   icon={
                     <Baby className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />
                   }
                 />
-                <PukKarte
+                <KontaktKarte
+                  variant="orange"
                   nummer={puk65.nummer}
                   label="PUK Erwachsene ab 65 (24/7)"
-                  fuerWen="Erwachsene ab 65 Jahren"
+                  subLabel="Erwachsene ab 65 Jahren"
                   tel={puk65.tel}
                   icon={
                     <Users className="w-5 h-5 sm:w-6 sm:h-6 text-sos-orange-text" />
@@ -488,26 +524,29 @@ export default function Notfall() {
 
               {/* Karten */}
               <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3 bg-white">
-                <EntlastungKarte
+                <KontaktKarte
+                  variant="green"
                   nummer={gruen143.nummer}
                   label="Dargebotene Hand"
                   hinweis="Anonym, vertraulich – Gesprächs- und Krisenangebot"
                   tel={gruen143.tel}
-                  badge="24/7"
+                  subLabel="24/7"
                 />
-                <EntlastungKarte
+                <KontaktKarte
+                  variant="green"
                   nummer={gruenEltern.nummer}
                   label="Elternnotruf"
                   hinweis="Beratung für Eltern – anonym, vertraulich"
                   tel={gruenEltern.tel}
-                  badge="24/7 · Für Eltern"
+                  subLabel="24/7 · Für Eltern"
                 />
-                <EntlastungKarte
+                <KontaktKarte
+                  variant="green"
                   nummer={gruen147.nummer}
                   label="Pro Juventute"
                   hinweis="Beratung für Kinder und Jugendliche – vertraulich"
                   tel={gruen147.tel}
-                  badge="24/7 · Für Kinder & Jugendliche"
+                  subLabel="24/7 · Für Kinder & Jugendliche"
                 />
               </div>
 
@@ -540,31 +579,13 @@ export default function Notfall() {
               </div>
 
               <div className="px-4 py-4 sm:px-5 bg-white">
-                <a
-                  href={`tel:${rot145.tel}`}
-                  className="flex items-center justify-between gap-3 p-4 rounded-xl bg-sos-lila-wash border border-sos-lila-border hover:border-sos-lila-border-h hover:shadow-md active:scale-[0.98] transition-all group"
-                  aria-label={`${rot145.label} anrufen: ${rot145.nummer}`}
-                >
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-10 h-10 rounded-xl bg-sos-lila-light flex items-center justify-center flex-shrink-0">
-                      <Pill className="w-5 h-5 text-sos-lila-text" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-foreground text-xl leading-none mb-0.5">
-                        {rot145.nummer}
-                      </p>
-                      <p className="text-muted-foreground text-sm font-medium">
-                        {rot145.label}
-                      </p>
-                      <p className="text-muted-foreground text-xs mt-0.5">
-                        {rot145.hinweis}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sos-lila-light flex items-center justify-center group-hover:bg-sos-lila-border transition-all">
-                    <Phone className="w-5 h-5 text-sos-lila-text" />
-                  </div>
-                </a>
+                <KontaktKarte
+                  variant="lila"
+                  nummer={rot145.nummer}
+                  label={rot145.label}
+                  hinweis={rot145.hinweis}
+                  tel={rot145.tel}
+                />
               </div>
             </motion.div>
 
@@ -589,93 +610,30 @@ export default function Notfall() {
               </div>
 
               <div className="px-4 py-4 sm:px-5 space-y-3 bg-background">
-                {/* Ärztefon */}
-                <a
-                  href={`tel:${infoAerztefon.tel}`}
-                  className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
-                  aria-label={`${infoAerztefon.label} anrufen: ${infoAerztefon.nummer}`}
-                >
-                  <div className="min-w-0">
-                    <p className="font-semibold text-foreground text-sm">
-                      {infoAerztefon.nummer}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      {infoAerztefon.label}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      {infoAerztefon.hinweis}
-                    </p>
-                  </div>
-                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
-                    <Phone className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                </a>
-
-                {/* PUK Zentrale – explizit als Auskunft, nicht Notfall */}
-                <a
-                  href={`tel:${infoPukZentrale.tel}`}
-                  className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
-                  aria-label={`${infoPukZentrale.label} anrufen: ${infoPukZentrale.nummer}`}
-                >
-                  <div className="min-w-0">
-                    <p className="font-semibold text-foreground text-sm">
-                      {infoPukZentrale.nummer}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      {infoPukZentrale.label}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      Allgemeine Auskunft – kein Notfalldienst
-                    </p>
-                  </div>
-                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
-                    <Phone className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                </a>
-
-                {/* Fachstelle Angehörigenarbeit */}
-                <a
-                  href={`tel:${infoFachstelle.tel}`}
-                  className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
-                  aria-label={`${infoFachstelle.label} anrufen: ${infoFachstelle.nummer}`}
-                >
-                  <div className="min-w-0">
-                    <p className="font-semibold text-foreground text-sm">
-                      {infoFachstelle.nummer}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      {infoFachstelle.label}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      {infoFachstelle.hinweis}
-                    </p>
-                  </div>
-                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
-                    <Phone className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                </a>
-
-                {/* KIZ – Kriseninterventionszentrum */}
-                <a
-                  href={`tel:${infoKiz.tel}`}
-                  className="flex items-center justify-between gap-3 p-3.5 rounded-xl border border-border/60 hover:border-border hover:shadow-sm active:scale-[0.98] transition-all group"
-                  aria-label={`${infoKiz.label} anrufen: ${infoKiz.nummer}`}
-                >
-                  <div className="min-w-0">
-                    <p className="font-semibold text-foreground text-sm">
-                      {infoKiz.nummer}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      {infoKiz.label}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      {infoKiz.hinweis}
-                    </p>
-                  </div>
-                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-muted flex items-center justify-center group-hover:bg-muted/80 transition-all">
-                    <Phone className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                </a>
+                <InfoKarte
+                  nummer={infoAerztefon.nummer}
+                  label={infoAerztefon.label}
+                  hinweis={infoAerztefon.hinweis}
+                  tel={infoAerztefon.tel}
+                />
+                <InfoKarte
+                  nummer={infoPukZentrale.nummer}
+                  label={infoPukZentrale.label}
+                  hinweis="Allgemeine Auskunft – kein Notfalldienst"
+                  tel={infoPukZentrale.tel}
+                />
+                <InfoKarte
+                  nummer={infoFachstelle.nummer}
+                  label={infoFachstelle.label}
+                  hinweis={infoFachstelle.hinweis}
+                  tel={infoFachstelle.tel}
+                />
+                <InfoKarte
+                  nummer={infoKiz.nummer}
+                  label={infoKiz.label}
+                  hinweis={infoKiz.hinweis}
+                  tel={infoKiz.tel}
+                />
               </div>
             </motion.div>
 

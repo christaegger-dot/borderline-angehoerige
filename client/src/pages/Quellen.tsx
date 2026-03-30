@@ -155,7 +155,7 @@ export default function Quellen() {
   return (
     <Layout>
       <SEO
-        title="Quellen & Literatur – Borderline Angehörige Zürich"
+        title="Quellen & Literatur"
         description="Wissenschaftliche Grundlagen und Fachliteratur dieser Website: klinische Studien, DBT-Literatur, Angehörigenbücher und Diagnoseklassifikationen."
         canonicalPath="/quellen"
       />

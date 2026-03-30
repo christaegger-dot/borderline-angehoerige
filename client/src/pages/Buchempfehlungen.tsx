@@ -242,7 +242,7 @@ export default function Buchempfehlungen() {
     <Layout>
       <SEO
         title="Buchempfehlungen"
-        description="Empfohlene Bücher für Angehörige von Menschen mit Borderline."
+        description="Buchempfehlungen für Angehörige von Menschen mit Borderline: Ratgeber, Fachliteratur und DBT-Bücher – mit kurzen Einschätzungen zum Inhalt."
         path="/buchempfehlungen"
       />
       {/* Hero */}

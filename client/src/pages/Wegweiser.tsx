@@ -12,7 +12,7 @@ export default function Wegweiser() {
   return (
     <Layout>
       <SEO
-        title="Situations-Wegweiser | Schluss mit dem Eiertanz"
+        title="Situations-Wegweiser"
         description="Was tun, wenn Ihr Angehöriger in einer Krise ist? Unser interaktiver Wegweiser führt Sie Schritt für Schritt durch verschiedene Situationen."
         path="/wegweiser"
       />

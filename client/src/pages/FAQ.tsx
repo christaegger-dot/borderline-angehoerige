@@ -234,7 +234,7 @@ export default function FAQ() {
     <Layout>
       <SEO
         title="Häufige Fragen"
-        description="Antworten auf die häufigsten Fragen von Angehörigen zu Borderline."
+        description="Häufige Fragen von Angehörigen zu Borderline: Verhalten in Krisen, Grenzen setzen, Kommunikation und Selbstschutz – klar und ohne Umschweife beantwortet."
         path="/faq"
       />
       <FAQSchema

@@ -276,7 +276,7 @@ export default function Glossar() {
     <Layout>
       <SEO
         title="Glossar"
-        description="Fachbegriffe rund um Borderline einfach erklärt."
+        description="Fachbegriffe rund um Borderline verständlich erklärt: von BPS über DBT bis Dysregulation – für Angehörige ohne Vorkenntnisse."
         path="/glossar"
       />
       {/* Hero */}

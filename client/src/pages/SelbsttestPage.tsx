@@ -10,7 +10,7 @@ export default function SelbsttestPage() {
     <Layout>
       <SEO
         title="Selbsttest"
-        description="Selbsttest für Angehörige: Wie belastet sind Sie? Anonyme Einschätzung."
+        description="Selbsttest für Angehörige: Wie stark sind Sie gerade belastet? Anonyme Einschätzung in wenigen Minuten – mit Hinweisen auf passende Hilfsangebote."
         path="/selbsttest"
       />
       {/* Hero */}

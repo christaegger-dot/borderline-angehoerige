@@ -299,6 +299,12 @@ export default function FAQ() {
                     href={`#${slugifyCategory(category.title)}`}
                     className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground hover:border-foreground/20"
                   >
+                    <span
+                      className="flex-shrink-0"
+                      style={{ color: category.color }}
+                    >
+                      {category.icon}
+                    </span>
                     {category.title}
                   </a>
                 ))}

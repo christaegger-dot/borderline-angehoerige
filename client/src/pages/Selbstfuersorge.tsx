@@ -371,10 +371,48 @@ export default function Selbstfuersorge() {
               id="langfristige-strategien"
               preview="Tägliche Mini-Auszeiten, Bewegung, soziale Kontakte und professionelle Unterstützung."
             >
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 Neben den Sofort-Übungen brauchen Sie auch langfristige
                 Strategien, um Ihre Gesundheit zu erhalten:
               </p>
+
+              {/* 4-Quadranten-Modell */}
+              <div className="grid grid-cols-2 gap-2 mb-6">
+                <div className="rounded-lg bg-sage-lighter/50 border border-sage-mid/20 p-4 text-center">
+                  <Heart className="w-5 h-5 text-sage-dark mx-auto mb-1.5" />
+                  <p className="text-sm font-semibold text-foreground">
+                    Körper
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Bewegung, Schlaf, Ernährung
+                  </p>
+                </div>
+                <div className="rounded-lg bg-sand-muted border border-sand-mid/20 p-4 text-center">
+                  <Brain className="w-5 h-5 text-sand-mid mx-auto mb-1.5" />
+                  <p className="text-sm font-semibold text-foreground">Geist</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Reflexion, Grenzen, Akzeptanz
+                  </p>
+                </div>
+                <div className="rounded-lg bg-slate-wash border border-border/30 p-4 text-center">
+                  <Users className="w-5 h-5 text-slate-dark mx-auto mb-1.5" />
+                  <p className="text-sm font-semibold text-foreground">
+                    Beziehungen
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Freunde, Familie, Beratung
+                  </p>
+                </div>
+                <div className="rounded-lg bg-amber-50 border border-amber-100 p-4 text-center">
+                  <Clock className="w-5 h-5 text-amber-600 mx-auto mb-1.5" />
+                  <p className="text-sm font-semibold text-foreground">
+                    Struktur
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    Routinen, Auszeiten, Planung
+                  </p>
+                </div>
+              </div>
 
               <div className="space-y-3">
                 <UebungAkkordeon

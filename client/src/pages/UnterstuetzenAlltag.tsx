@@ -102,6 +102,115 @@ export default function UnterstuetzenAlltag() {
                     </p>
                   </CardContent>
                 </Card>
+
+                {/* Alltags-Spannungsdiagramm */}
+                <div className="rounded-lg border border-border/40 bg-slate-wash/10 p-4">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2 text-center">
+                    Spannungsverlauf im Alltag
+                  </p>
+                  <svg
+                    viewBox="0 0 300 72"
+                    className="w-full h-16"
+                    aria-hidden="true"
+                  >
+                    {/* Ruhepuls-Linie (Vergleich) */}
+                    <path
+                      d="M 15,48 C 60,48 80,38 120,42 S 180,48 240,44 S 270,42 285,42"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeDasharray="4,3"
+                      opacity="0.25"
+                    />
+                    {/* Erhöhte Grundspannung mit Spitzen */}
+                    <path
+                      d="M 15,35 C 40,33 55,32 70,33 S 85,30 90,18 S 95,32 110,32 S 140,30 155,32 S 165,28 170,14 S 175,32 195,31 S 220,30 235,31 S 250,28 255,20 S 260,32 285,30"
+                      fill="none"
+                      stroke="var(--color-sage-dark)"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    {/* Labels */}
+                    <text
+                      x="15"
+                      y="68"
+                      fontSize="7.5"
+                      fill="currentColor"
+                      opacity="0.45"
+                    >
+                      Mo
+                    </text>
+                    <text
+                      x="82"
+                      y="68"
+                      fontSize="7.5"
+                      fill="currentColor"
+                      opacity="0.45"
+                    >
+                      Di
+                    </text>
+                    <text
+                      x="160"
+                      y="68"
+                      fontSize="7.5"
+                      fill="currentColor"
+                      opacity="0.45"
+                    >
+                      Mi
+                    </text>
+                    <text
+                      x="244"
+                      y="68"
+                      fontSize="7.5"
+                      fill="currentColor"
+                      opacity="0.45"
+                    >
+                      Do
+                    </text>
+                    {/* Legend */}
+                    <line
+                      x1="15"
+                      y1="8"
+                      x2="32"
+                      y2="8"
+                      stroke="var(--color-sage-dark)"
+                      strokeWidth="2"
+                    />
+                    <text
+                      x="35"
+                      y="11"
+                      fontSize="7.5"
+                      fill="currentColor"
+                      opacity="0.6"
+                    >
+                      Mit Angehörigem
+                    </text>
+                    <line
+                      x1="140"
+                      y1="8"
+                      x2="157"
+                      y2="8"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeDasharray="3,2"
+                      opacity="0.4"
+                    />
+                    <text
+                      x="160"
+                      y="11"
+                      fontSize="7.5"
+                      fill="currentColor"
+                      opacity="0.6"
+                    >
+                      Ohne Belastung
+                    </text>
+                  </svg>
+                  <p className="text-[11px] text-muted-foreground text-center mt-1">
+                    Erhöhte Grundspannung kostet Energie — auch wenn äusserlich
+                    "nichts passiert"
+                  </p>
+                </div>
               </div>
             </ContentSection>
 

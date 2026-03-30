@@ -4,6 +4,7 @@ export interface NavigationItem {
   href: string;
   label: string;
   icon: LucideIcon;
+  group?: string;
 }
 
 export interface SelectableCategory<TId extends string = string> {

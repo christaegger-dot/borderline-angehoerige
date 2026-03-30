@@ -1,6 +1,11 @@
 import { Link } from "wouter";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, FolderOpen, Phone, Search as SearchIcon } from "lucide-react";
+import {
+  ChevronDown,
+  FolderOpen,
+  Phone,
+  Search as SearchIcon,
+} from "lucide-react";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
 
 interface MobileMenuProps {
@@ -12,6 +17,17 @@ interface MobileMenuProps {
   onSearchOpen: () => void;
 }
 
+// Ressourcen-Items nach Gruppe sortieren
+function groupRessourcenItems(items: typeof ressourcenItems) {
+  const groups: Record<string, typeof ressourcenItems> = {};
+  for (const item of items) {
+    const key = item.group ?? "Weitere";
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(item);
+  }
+  return groups;
+}
+
 export function MobileMenu({
   isOpen,
   location,
@@ -20,9 +36,11 @@ export function MobileMenu({
   closeMenu,
   onSearchOpen,
 }: MobileMenuProps) {
-  const isRessourcenActive = ressourcenItems.some((item) =>
-    location.startsWith(item.href.split("#")[0]),
+  const isRessourcenActive = ressourcenItems.some(item =>
+    location.startsWith(item.href.split("#")[0])
   );
+
+  const groupedRessourcen = groupRessourcenItems(ressourcenItems);
 
   return (
     <AnimatePresence>
@@ -37,7 +55,7 @@ export function MobileMenu({
             maxHeight: "calc(100dvh - 5rem)",
             WebkitOverflowScrolling: "touch",
           }}
-          onKeyDown={(e) => {
+          onKeyDown={e => {
             if (e.key === "Escape") {
               closeMenu();
             }
@@ -45,9 +63,12 @@ export function MobileMenu({
         >
           <nav
             className="container py-4 flex flex-col gap-2"
-            style={{ paddingBottom: "calc(16px + env(safe-area-inset-bottom, 0px) + 88px)" }}
+            style={{
+              paddingBottom:
+                "calc(16px + env(safe-area-inset-bottom, 0px) + 88px)",
+            }}
           >
-            {navItems.map((item) => {
+            {navItems.map(item => {
               const Icon = item.icon;
               const isActive = location.startsWith(item.href);
               return (
@@ -101,36 +122,45 @@ export function MobileMenu({
                       id="mobile-ressourcen-menu"
                       role="menu"
                       aria-label="Ressourcen-Navigation"
-                      className="pl-4 mt-1 flex flex-col gap-1"
+                      className="pl-4 mt-1 flex flex-col gap-0"
                     >
-                      {ressourcenItems.map((item) => {
-                        const Icon = item.icon;
-                        const normalizedHref = item.href.split("#")[0];
-                        const isActive = location === normalizedHref;
-                        const isSoforthilfe = item.href === "/soforthilfe";
-
-                        return (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            role="menuitem"
-                            onClick={() => {
-                              closeMenu();
-                              setMobileRessourcenOpen(false);
-                            }}
-                            className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
-                              isSoforthilfe
-                                ? "text-alert font-semibold"
-                                : isActive
-                                  ? "bg-sage-wash/50 text-sage-darker"
-                                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                            }`}
+                      {Object.entries(groupedRessourcen).map(
+                        ([groupName, items], groupIndex) => (
+                          <div
+                            key={groupName}
+                            className={groupIndex > 0 ? "mt-2" : ""}
                           >
-                            <Icon className={`w-4 h-4 ${isSoforthilfe ? "text-alert" : ""}`} />
-                            {item.label}
-                          </Link>
-                        );
-                      })}
+                            <p className="px-4 pt-2 pb-1 text-xs font-semibold text-muted-foreground/60 uppercase tracking-wider">
+                              {groupName}
+                            </p>
+                            {items.map(item => {
+                              const Icon = item.icon;
+                              const normalizedHref = item.href.split("#")[0];
+                              const isActive = location === normalizedHref;
+
+                              return (
+                                <Link
+                                  key={item.href}
+                                  href={item.href}
+                                  role="menuitem"
+                                  onClick={() => {
+                                    closeMenu();
+                                    setMobileRessourcenOpen(false);
+                                  }}
+                                  className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                                    isActive
+                                      ? "bg-sage-wash/50 text-sage-darker"
+                                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                                  }`}
+                                >
+                                  <Icon className="w-4 h-4" />
+                                  {item.label}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        )
+                      )}
                     </div>
                   </motion.div>
                 )}

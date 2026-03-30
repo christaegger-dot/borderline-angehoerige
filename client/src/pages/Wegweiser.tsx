@@ -104,9 +104,9 @@ export default function Wegweiser() {
                     sub: "Persönliche Karte erstellen",
                   },
                   {
-                    href: "/kommunizieren",
-                    label: "Kommunizieren",
-                    sub: "SET, DEAR MAN und mehr",
+                    href: "/selbstfuersorge",
+                    label: "Selbstfürsorge",
+                    sub: "Strategien für die Zeit danach",
                   },
                 ].map(item => (
                   <Link

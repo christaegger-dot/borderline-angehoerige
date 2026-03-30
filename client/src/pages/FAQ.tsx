@@ -74,7 +74,8 @@ export default function FAQ() {
           links: [{ text: "Borderline verstehen", url: "/verstehen" }],
         },
         {
-          question: "Warum verhält sich mein Angehöriger bei anderen «normal»?",
+          question:
+            "Warum verhält sich mein Angehöriger bei anderen regulierter und stabiler?",
           answer:
             "Dieses Phänomen ist häufig und nicht automatisch ein Zeichen von Manipulation. Menschen mit Borderline haben oft die grössten Schwierigkeiten in engen Beziehungen, weil dort die Verlassensangst am stärksten aktiviert wird. Bei Fremden oder in oberflächlichen Kontakten ist diese Angst geringer, daher können sie sich besser regulieren. Es ist paradox: Je wichtiger Sie Ihrem Angehörigen sind, desto intensiver können die Symptome sein. Das ist keine bewusste Entscheidung, sondern ein Muster, das in der Therapie bearbeitet wird.",
           links: [{ text: "Beziehungsmuster verstehen", url: "/verstehen" }],

@@ -168,7 +168,7 @@ export default function Selbstfuersorge() {
               icon={<Heart className="w-6 h-6 text-sage-mid" />}
               id="selbstfuersorge-warum-wichtig"
               defaultOpen={true}
-              preview="Angehörige tragen eine besondere Last. Selbstfürsorge ist keine Selbstsucht, sondern Selbsterhaltung."
+              preview="Angehörige tragen eine besondere Last – durch emotionale Intensität, dauernde Wachsamkeit und Unvorhersehbarkeit. Selbstfürsorge ist keine Selbstsucht, sondern Selbsterhaltung."
             >
               <div className="prose prose-slate max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-4">

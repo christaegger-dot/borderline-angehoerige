@@ -20,7 +20,7 @@ export default function Datenschutz() {
     <Layout>
       <SEO
         title="Datenschutz"
-        description="Datenschutzerklärung der Website."
+        description="Datenschutzerklärung: Wie diese Website mit Daten umgeht, welche Cookies gesetzt werden und welche Rechte Sie haben."
         path="/datenschutz"
       />
       {/* Hero */}

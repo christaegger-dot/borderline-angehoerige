@@ -92,9 +92,9 @@ export default function Home() {
               <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8 max-w-2xl font-light">
                 Wenn Beziehungen von starker Anspannung, Eskalation, Rückzug,
                 Schuld oder Erschöpfung geprägt sind, hilft nicht noch mehr
-                Druck, sondern bessere Einordnung. Diese Website unterstützt
-                Angehörige dabei, Dynamiken zu verstehen, hilfreicher zu
-                reagieren und sich selbst nicht zu verlieren.
+                Druck, sondern ein klarer nächster Schritt. Diese Website
+                unterstützt Angehörige dabei, Dynamiken zu verstehen,
+                hilfreicher zu reagieren und sich selbst nicht zu verlieren.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-4">

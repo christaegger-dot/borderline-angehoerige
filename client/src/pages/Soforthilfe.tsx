@@ -420,6 +420,12 @@ export default function Notfall() {
       <section className="py-6 md:py-12 pb-32 sm:pb-12">
         <div className="container">
           <div className="max-w-2xl mx-auto space-y-8">
+            {/* Disclaimer */}
+            <p className="text-xs text-muted-foreground text-center">
+              Diese Seite ersetzt keine professionelle Notfallberatung. Im
+              Zweifel direkt{" "}
+              <strong className="text-foreground">144 / 117</strong> anrufen.
+            </p>
             {/* ─── BLOCK 1: LEBENSGEFAHR (ROT) ─── */}
             <motion.div
               id="block-rot"

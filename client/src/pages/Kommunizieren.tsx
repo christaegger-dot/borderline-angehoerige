@@ -139,6 +139,38 @@ export default function Kommunizieren() {
 
                 <ValidierungsStufenleiter />
 
+                {/* Validierung ≠ Zustimmung */}
+                <div className="rounded-lg border border-amber-200/60 bg-amber-50/30 p-4">
+                  <p className="text-sm font-semibold text-foreground mb-3">
+                    Validierung ≠ Zustimmung — ein Beispiel
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="p-3 rounded-lg bg-red-50/50 border border-red-200/50">
+                      <p className="text-xs font-semibold text-red-700 mb-1">
+                        ✗ Ohne Validierung
+                      </p>
+                      <p className="text-sm text-muted-foreground italic">
+                        «Das stimmt nicht. Ich habe das nie so gesagt.»
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        → Gefühl ignoriert, Eskalation wahrscheinlich
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-lg bg-sage-wash/60 border border-sage/40">
+                      <p className="text-xs font-semibold text-sage-dark mb-1">
+                        ✓ Validierend + klar
+                      </p>
+                      <p className="text-sm text-muted-foreground italic">
+                        «Ich sehe, dass dich das verletzt hat. Ich habe das
+                        nicht so gemeint.»
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        → Emotion anerkannt, eigene Aussage klar
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Validierungs-Situationsmatrix */}
                 <div className="rounded-lg border border-sage-mid/30 bg-sage-light/5 p-4">
                   <p className="text-sm font-semibold text-foreground mb-3">

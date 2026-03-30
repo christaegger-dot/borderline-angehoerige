@@ -70,7 +70,7 @@ export default function FAQ() {
         {
           question: "Ist Borderline erblich? Bin ich schuld?",
           answer:
-            "Borderline entsteht durch ein Zusammenspiel von genetischer Veranlagung (ca. 40–60% Erblichkeit) und Umweltfaktoren wie Traumata oder invalidierendes Umfeld. Genetisch wird eine erhöhte emotionale Sensibilität vererbt – nicht die Störung selbst. Sie sind nicht schuld: Viele Menschen mit schwierigen Kindheiten entwickeln keine Borderline, und manche Betroffene hatten keine offensichtlichen Traumata.",
+            "Borderline entsteht durch ein Zusammenspiel von genetischer Veranlagung (ca. 40–60% Erblichkeit) und Umweltfaktoren – insbesondere Traumata und invalidierendes Umfeld. Genetisch wird eine erhöhte emotionale Sensibilität vererbt, nicht die Störung selbst. Traumatische Erfahrungen erhöhen das Risiko, führen aber nicht automatisch zu Borderline. Viele Menschen mit schwierigen Kindheiten entwickeln keine BPS, und manche Betroffene hatten keine offensichtlichen Traumata. Die Ursachen sind komplex – Sie tragen keine Schuld.",
           links: [{ text: "Borderline verstehen", url: "/verstehen" }],
         },
         {

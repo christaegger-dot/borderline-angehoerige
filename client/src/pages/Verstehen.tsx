@@ -117,8 +117,8 @@ export default function Verstehen() {
                 <Card className="bg-cream border-border/50">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Wichtig:</strong> Verstehen kann entlasten, weil
-                      es Muster einordnen hilft. Es ersetzt aber weder
+                      <strong>Wichtig:</strong> Verstehen entlastet, weil Sie
+                      Reaktionen besser einordnen können. Es ersetzt aber weder
                       Grenzsetzung noch Selbstschutz noch professionelle Hilfe.
                     </p>
                   </CardContent>

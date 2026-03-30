@@ -45,8 +45,9 @@ export default function Uebungsszenarien() {
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
               Realistische Situationen, verschiedene Antwortmöglichkeiten,
-              sofortiges Feedback. Probieren Sie aus, wie SET, DEAR MAN und
-              Validierung in der Praxis klingen.
+              sofortiges Feedback. Probieren Sie aus, wie SET
+              (Support–Empathie–Wahrheit), DEAR MAN und Validierung in der
+              Praxis klingen.
             </p>
 
             <div className="p-4 rounded-xl bg-sand border border-sand-subtle">

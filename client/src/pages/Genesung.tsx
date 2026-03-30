@@ -74,12 +74,15 @@ function GenesungInfografiken() {
           </Card>
         ))}
       </div>
-      <div className="text-center mt-8">
+      <div className="flex flex-wrap gap-3 justify-center mt-8">
         <Link href="/materialien">
           <Button variant="outline">
             Alle Materialien ansehen
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
+        </Link>
+        <Link href="/glossar">
+          <Button variant="outline">Fachbegriffe im Glossar →</Button>
         </Link>
       </div>
     </ContentSection>

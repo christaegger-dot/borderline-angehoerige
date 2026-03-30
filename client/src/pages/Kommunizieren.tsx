@@ -448,9 +448,12 @@ export default function Kommunizieren() {
                 ))}
               </div>
 
-              <div className="text-center">
+              <div className="flex flex-wrap gap-3 justify-center">
                 <Link href="/materialien">
                   <Button variant="outline">Alle Materialien ansehen</Button>
+                </Link>
+                <Link href="/glossar">
+                  <Button variant="outline">Fachbegriffe im Glossar →</Button>
                 </Link>
               </div>
             </motion.div>

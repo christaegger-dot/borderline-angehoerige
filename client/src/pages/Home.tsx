@@ -26,7 +26,7 @@ const situationPaths = [
     iconBg: "var(--color-sage-wash)",
   },
   {
-    href: "/unterstuetzen/krise",
+    href: "/soforthilfe",
     icon: AlertTriangle,
     title: "Es kippt gerade oder eskaliert",
     text: "Wenn starke Anspannung, Konflikte oder Krisensignale im Vordergrund stehen.",

@@ -62,10 +62,12 @@ export default function MaterialCard({ item, onPreview }: MaterialCardProps) {
             <a
               href={downloadHref}
               download={isCrossOriginDownload ? undefined : ""}
+              target={isCrossOriginDownload ? "_blank" : undefined}
+              rel={isCrossOriginDownload ? "noopener noreferrer" : undefined}
               className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
             >
               <Download className="w-4 h-4" />
-              Herunterladen
+              {isCrossOriginDownload ? "PDF ansehen" : "Herunterladen"}
             </a>
           ) : null}
         </div>

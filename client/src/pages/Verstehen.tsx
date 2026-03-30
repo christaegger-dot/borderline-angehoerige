@@ -600,6 +600,11 @@ export default function Verstehen() {
                       Belastungsfaktoren. Schuldzuweisungen an Betroffene oder
                       Angehörige greifen zu kurz und helfen niemandem.
                     </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+                      Borderline tritt häufig zusammen mit Depressionen,
+                      Angststörungen oder Traumafolgen auf. Das macht das Bild
+                      komplexer – hilft aber auch, Symptome richtig einzuordnen.
+                    </p>
                   </CardContent>
                 </Card>
               </div>

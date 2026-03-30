@@ -562,12 +562,12 @@ export default function Grenzen() {
               </div>
 
               <div className="mt-6 text-center">
-                <Link href="/materialien">
-                  <Button variant="outline">
+                <Button variant="outline" asChild>
+                  <Link href="/materialien">
                     Alle Materialien ansehen
                     <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </motion.div>
 
@@ -673,15 +673,18 @@ export default function Grenzen() {
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/kommunizieren">
-                <Button variant="ghost">← Kommunizieren</Button>
-              </Link>
-              <Link href="/selbstfuersorge">
-                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
+              <Button variant="ghost" asChild>
+                <Link href="/kommunizieren">← Kommunizieren</Link>
+              </Button>
+              <Button
+                className="bg-sage-dark hover:bg-sage-mid text-white"
+                asChild
+              >
+                <Link href="/selbstfuersorge">
                   Weiter: Selbstfürsorge
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

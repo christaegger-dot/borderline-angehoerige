@@ -554,15 +554,16 @@ export default function Kommunizieren() {
                         realistischen Situationen. Multiple-Choice mit
                         sofortigem Feedback.
                       </p>
-                      <Link href="/uebungen">
-                        <Button
-                          size="sm"
-                          className="bg-sage-dark hover:bg-sage-mid text-white gap-1.5"
-                        >
+                      <Button
+                        size="sm"
+                        className="bg-sage-dark hover:bg-sage-mid text-white gap-1.5"
+                        asChild
+                      >
+                        <Link href="/uebungen">
                           Zu den Übungen
                           <ArrowRight className="w-3.5 h-3.5" />
-                        </Button>
-                      </Link>
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -628,12 +629,12 @@ export default function Kommunizieren() {
               </div>
 
               <div className="flex flex-wrap gap-3 justify-center">
-                <Link href="/materialien">
-                  <Button variant="outline">Alle Materialien ansehen</Button>
-                </Link>
-                <Link href="/glossar">
-                  <Button variant="outline">Fachbegriffe im Glossar →</Button>
-                </Link>
+                <Button variant="outline" asChild>
+                  <Link href="/materialien">Alle Materialien ansehen</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/glossar">Fachbegriffe im Glossar →</Link>
+                </Button>
               </div>
             </motion.div>
 
@@ -643,15 +644,18 @@ export default function Kommunizieren() {
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/unterstuetzen/uebersicht">
-                <Button variant="ghost">← Unterstützen</Button>
-              </Link>
-              <Link href="/grenzen">
-                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
+              <Button variant="ghost" asChild>
+                <Link href="/unterstuetzen/uebersicht">← Unterstützen</Link>
+              </Button>
+              <Button
+                className="bg-sage-dark hover:bg-sage-mid text-white"
+                asChild
+              >
+                <Link href="/grenzen">
                   Weiter: Grenzen setzen
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

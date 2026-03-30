@@ -75,18 +75,18 @@ function GenesungInfografiken() {
         ))}
       </div>
       <div className="flex flex-wrap gap-3 justify-center mt-8">
-        <Link href="/materialien">
-          <Button variant="outline">
+        <Button variant="outline" asChild>
+          <Link href="/materialien">
             Alle Materialien ansehen
             <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
-        </Link>
-        <Link href="/glossar">
-          <Button variant="outline">Fachbegriffe im Glossar →</Button>
-        </Link>
-        <Link href="/buchempfehlungen">
-          <Button variant="outline">Buchempfehlungen →</Button>
-        </Link>
+          </Link>
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/glossar">Fachbegriffe im Glossar →</Link>
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/buchempfehlungen">Buchempfehlungen →</Link>
+        </Button>
       </div>
     </ContentSection>
   );
@@ -554,21 +554,24 @@ export default function Genesung() {
                 auszubalancieren.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/unterstuetzen/uebersicht">
-                  <Button className="bg-sage-dark hover:bg-sage-mid text-white">
+                <Button
+                  className="bg-sage-dark hover:bg-sage-mid text-white"
+                  asChild
+                >
+                  <Link href="/unterstuetzen/uebersicht">
                     Unterstützen lernen
                     <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
-                <Link href="/unterstuetzen/therapie">
-                  <Button variant="outline" className="gap-2">
+                  </Link>
+                </Button>
+                <Button variant="outline" className="gap-2" asChild>
+                  <Link href="/unterstuetzen/therapie">
                     <Stethoscope className="w-4 h-4" />
                     Therapie begleiten
-                  </Button>
-                </Link>
-                <Link href="/selbstfuersorge">
-                  <Button variant="outline">Selbstfürsorge</Button>
-                </Link>
+                  </Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/selbstfuersorge">Selbstfürsorge</Link>
+                </Button>
               </div>
             </motion.div>
           </div>

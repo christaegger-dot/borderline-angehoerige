@@ -671,15 +671,15 @@ export default function Verstehen() {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3 justify-center">
-                <Link href="/materialien">
-                  <Button variant="outline">Alle Materialien anzeigen</Button>
-                </Link>
-                <Link href="/glossar">
-                  <Button variant="outline">Fachbegriffe im Glossar →</Button>
-                </Link>
-                <Link href="/buchempfehlungen">
-                  <Button variant="outline">Buchempfehlungen →</Button>
-                </Link>
+                <Button variant="outline" asChild>
+                  <Link href="/materialien">Alle Materialien anzeigen</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/glossar">Fachbegriffe im Glossar →</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/buchempfehlungen">Buchempfehlungen →</Link>
+                </Button>
               </div>
             </motion.div>
 
@@ -702,12 +702,17 @@ export default function Verstehen() {
                         klarer, wie Sie hilfreicher reagieren, Grenzen besser
                         halten und die eigene Belastung ernster nehmen können.
                       </p>
-                      <Link href="/unterstuetzen/uebersicht">
-                        <Button variant="outline" size="sm" className="gap-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="gap-2"
+                        asChild
+                      >
+                        <Link href="/unterstuetzen/uebersicht">
                           <ArrowRight className="w-4 h-4" />
                           Weiter zu: Unterstützen
-                        </Button>
-                      </Link>
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -751,15 +756,16 @@ export default function Verstehen() {
                 Als Nächstes geht es darum, wie Unterstützung tragfähig bleiben
                 kann, ohne dass Sie sich selbst verlieren.
               </p>
-              <Link href="/unterstuetzen/uebersicht">
-                <Button
-                  size="lg"
-                  className="bg-sage-dark hover:bg-sage-mid text-white"
-                >
+              <Button
+                size="lg"
+                className="bg-sage-dark hover:bg-sage-mid text-white"
+                asChild
+              >
+                <Link href="/unterstuetzen/uebersicht">
                   Weiter zu: Unterstützen
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

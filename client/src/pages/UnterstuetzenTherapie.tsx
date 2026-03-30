@@ -613,11 +613,9 @@ Mit freundlichen Grüssen,
                     Infografiken und Handouts zur Therapiebegleitung finden Sie
                     gesammelt auf der Materialien-Seite.
                   </p>
-                  <Link href="/materialien">
-                    <Button variant="outline" size="sm">
-                      Zur Materialien-Seite
-                    </Button>
-                  </Link>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/materialien">Zur Materialien-Seite</Link>
+                  </Button>
                 </CardContent>
               </Card>
             </motion.div>
@@ -628,15 +626,20 @@ Mit freundlichen Grüssen,
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/unterstuetzen/alltag">
-                <Button variant="ghost">← Im Alltag unterstützen</Button>
-              </Link>
-              <Link href="/unterstuetzen/krise">
-                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
+              <Button variant="ghost" asChild>
+                <Link href="/unterstuetzen/alltag">
+                  ← Im Alltag unterstützen
+                </Link>
+              </Button>
+              <Button
+                className="bg-sage-dark hover:bg-sage-mid text-white"
+                asChild
+              >
+                <Link href="/unterstuetzen/krise">
                   Weiter: In der Krise unterstützen
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

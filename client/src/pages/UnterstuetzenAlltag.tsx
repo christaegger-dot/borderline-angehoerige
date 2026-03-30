@@ -884,15 +884,20 @@ export default function UnterstuetzenAlltag() {
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/unterstuetzen/uebersicht">
-                <Button variant="ghost">← Wie kann ich helfen?</Button>
-              </Link>
-              <Link href="/unterstuetzen/krise">
-                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
+              <Button variant="ghost" asChild>
+                <Link href="/unterstuetzen/uebersicht">
+                  ← Wie kann ich helfen?
+                </Link>
+              </Button>
+              <Button
+                className="bg-sage-dark hover:bg-sage-mid text-white"
+                asChild
+              >
+                <Link href="/unterstuetzen/krise">
                   Weiter: Krisen begleiten
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

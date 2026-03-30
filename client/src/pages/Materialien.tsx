@@ -267,31 +267,21 @@ export default function Materialien() {
                   die Hauptseiten oft der bessere Einstieg.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Link href="/verstehen">
-                    <Button variant="outline" size="sm">
-                      Verstehen
-                    </Button>
-                  </Link>
-                  <Link href="/kommunizieren">
-                    <Button variant="outline" size="sm">
-                      Kommunizieren
-                    </Button>
-                  </Link>
-                  <Link href="/grenzen">
-                    <Button variant="outline" size="sm">
-                      Grenzen
-                    </Button>
-                  </Link>
-                  <Link href="/selbstfuersorge">
-                    <Button variant="outline" size="sm">
-                      Selbstfürsorge
-                    </Button>
-                  </Link>
-                  <Link href="/buchempfehlungen">
-                    <Button variant="outline" size="sm">
-                      Buchempfehlungen
-                    </Button>
-                  </Link>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/verstehen">Verstehen</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/kommunizieren">Kommunizieren</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/grenzen">Grenzen</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/selbstfuersorge">Selbstfürsorge</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/buchempfehlungen">Buchempfehlungen</Link>
+                  </Button>
                 </div>
               </CardContent>
             </Card>

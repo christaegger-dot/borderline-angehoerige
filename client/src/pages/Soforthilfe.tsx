@@ -339,22 +339,21 @@ export default function Notfall() {
               </p>
             </div>
 
-            <p className="text-sm text-muted-foreground mt-4 print:hidden">
-              Nummern im Voraus notieren?{" "}
+            <div className="flex flex-wrap gap-3 mt-4 print:hidden">
               <Link
                 href="/notfallkarte"
-                className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sage-wash border border-sage-mid/30 text-sm font-semibold text-sage-dark hover:bg-sage-wash/80 transition-colors"
               >
-                Persönliche Notfallkarte →
-              </Link>{" "}
-              · Situation einschätzen?{" "}
+                <Shield className="w-4 h-4 shrink-0" />
+                Persönliche Notfallkarte erstellen
+              </Link>
               <Link
                 href="/wegweiser"
-                className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/60 border border-border/50 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors"
               >
-                Situations-Wegweiser →
+                Situation einschätzen →
               </Link>
-            </p>
+            </div>
           </motion.div>
         </div>
       </section>

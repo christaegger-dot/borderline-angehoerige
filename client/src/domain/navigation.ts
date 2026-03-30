@@ -2,6 +2,7 @@ import {
   BookMarked,
   BookOpen,
   Building2,
+  ClipboardCheck,
   Compass,
   Download,
   FileText,
@@ -25,6 +26,7 @@ export const primaryNavigationItems: NavigationItem[] = [
 ];
 
 export const resourceNavigationItems: NavigationItem[] = [
+  { href: "/selbsttest", label: "Selbsttest", icon: ClipboardCheck },
   { href: "/materialien", label: "Materialien & Handouts", icon: Download },
   { href: "/genesung", label: "Genesung & Hoffnung", icon: TrendingUp },
   { href: "/wegweiser", label: "Situations-Wegweiser", icon: Compass },

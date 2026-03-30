@@ -18,6 +18,7 @@ import {
   ChevronDown,
   ChevronUp,
   UserCircle,
+  CalendarDays,
 } from "lucide-react";
 import { Link } from "wouter";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
@@ -877,6 +878,85 @@ export default function Selbstfuersorge() {
                   </p>
                 </CardContent>
               </Card>
+            </motion.div>
+
+            {/* Navigation */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-2xl border border-sage-mid/30 bg-sage-wash/30 p-6"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <CalendarDays className="w-5 h-5 text-sage-dark" />
+                <h3 className="font-semibold text-foreground">
+                  Diese Woche konkret
+                </h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-5">
+                Selbstfürsorge braucht konkrete Zeiten — sonst bleibt sie ein
+                Vorsatz. Wählen Sie aus jeder Gruppe mindestens eine Sache für
+                diese Woche.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {[
+                  {
+                    frequenz: "Täglich (10–20 Min)",
+                    farbe: "border-sage-mid/40 bg-sage-light/20",
+                    items: [
+                      "Spaziergang allein, ohne Podcast",
+                      "5 Min bewusst atmen oder dehnen",
+                      "Kurz notieren: was war heute gut?",
+                      "Handy weglegen vor dem Schlafen",
+                    ],
+                  },
+                  {
+                    frequenz: "Wöchentlich (1–2×)",
+                    farbe: "border-amber/30 bg-amber/5",
+                    items: [
+                      "Jemanden anrufen, der Sie kennt",
+                      "Etwas tun, das Ihnen früher Freude machte",
+                      "Eine Stunde ohne Erreichbarkeit",
+                      "Körperliche Bewegung (Sport, Yoga, …)",
+                    ],
+                  },
+                  {
+                    frequenz: "Monatlich (1×)",
+                    farbe: "border-slate-blue/20 bg-slate-wash/20",
+                    items: [
+                      "Bilanz: Wie geht es mir wirklich?",
+                      "Fachperson konsultieren (Hausarzt, Beratung)",
+                      "Freundschaft oder Familie pflegen",
+                      "Etwas planen, auf das Sie sich freuen",
+                    ],
+                  },
+                ].map(gruppe => (
+                  <div
+                    key={gruppe.frequenz}
+                    className={`rounded-xl border p-4 ${gruppe.farbe}`}
+                  >
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+                      {gruppe.frequenz}
+                    </p>
+                    <ul className="space-y-2">
+                      {gruppe.items.map(item => (
+                        <li
+                          key={item}
+                          className="flex gap-2 text-sm text-foreground"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-sage-dark shrink-0 mt-0.5" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground mt-4 border-t border-border/40 pt-4">
+                Tipp: Tragen Sie eine Sache davon heute noch in Ihren Kalender
+                ein — mit konkreter Uhrzeit. Vorsätze ohne Termin bleiben
+                Vorsätze.
+              </p>
             </motion.div>
 
             {/* Navigation */}

@@ -314,6 +314,71 @@ export default function Kommunizieren() {
                     </ol>
                   </CardContent>
                 </Card>
+                <div className="rounded-xl border border-border/50 overflow-hidden">
+                  <div className="bg-muted/40 px-5 py-3 border-b border-border/40">
+                    <h4 className="font-semibold text-foreground text-sm">
+                      Was den Unterschied macht — konkret
+                    </h4>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      Gleiche Situation, unterschiedliche Reaktion
+                    </p>
+                  </div>
+                  <div className="p-5 space-y-5">
+                    {[
+                      {
+                        ausloeser:
+                          "«Du hörst mir nie zu! Dir ist das alles egal!»",
+                        eskalierend: {
+                          label: "Eskaliert weiter",
+                          satz: "«Das stimmt nicht. Ich bin doch die ganze Zeit da für dich. Du übertreibst.»",
+                        },
+                        deeskalierend: {
+                          label: "Deeskaliert",
+                          satz: "«Ich höre, dass du dich allein gelassen fühlst. Das tut mir leid. Ich bin jetzt hier.»",
+                        },
+                      },
+                      {
+                        ausloeser:
+                          "«Wenn du jetzt gehst, ist alles aus zwischen uns!»",
+                        eskalierend: {
+                          label: "Eskaliert weiter",
+                          satz: "«Du kannst mich nicht erpressen. Ich gehe trotzdem.»",
+                        },
+                        deeskalierend: {
+                          label: "Deeskaliert",
+                          satz: "«Ich merke, dass du gerade sehr verzweifelt bist. Ich gehe kurz in den Nebenraum — und ich komme wieder.»",
+                        },
+                      },
+                    ].map(beispiel => (
+                      <div key={beispiel.ausloeser} className="space-y-2">
+                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                          Auslöser
+                        </p>
+                        <p className="text-sm text-foreground bg-muted/30 rounded-lg px-3 py-2 italic">
+                          «{beispiel.ausloeser.replace(/«|»/g, "")}»
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-2 mt-2">
+                          <div className="rounded-lg border border-alert/20 bg-alert/5 px-3 py-2.5">
+                            <p className="text-xs font-semibold text-alert mb-1.5">
+                              ✗ {beispiel.eskalierend.label}
+                            </p>
+                            <p className="text-sm text-foreground italic">
+                              {beispiel.eskalierend.satz}
+                            </p>
+                          </div>
+                          <div className="rounded-lg border border-sage-mid/30 bg-sage-wash/50 px-3 py-2.5">
+                            <p className="text-xs font-semibold text-sage-dark mb-1.5">
+                              ✓ {beispiel.deeskalierend.label}
+                            </p>
+                            <p className="text-sm text-foreground italic">
+                              {beispiel.deeskalierend.satz}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 <p className="text-sm text-muted-foreground">
                   Wird aus dem Gespräch eine akute Krise?{" "}
                   <Link

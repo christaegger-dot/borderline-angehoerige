@@ -6,6 +6,7 @@ import {
   Compass,
   Download,
   FileText,
+  FlaskConical,
   Heart,
   HelpCircle,
   MessageCircle,
@@ -73,6 +74,12 @@ export const resourceNavigationItems: NavigationItem[] = [
     href: "/buchempfehlungen",
     label: "Buchempfehlungen",
     icon: BookOpen,
+    group: "Wissen & Materialien",
+  },
+  {
+    href: "/quellen",
+    label: "Quellen & Literatur",
+    icon: FlaskConical,
     group: "Wissen & Materialien",
   },
   // Gruppe: Beratung & Netzwerke

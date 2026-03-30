@@ -80,6 +80,11 @@ const pageNames: Record<string, string> = {
   "/glossar": "Glossar",
   "/buchempfehlungen": "Buchempfehlungen",
   "/feedback": "Feedback",
+  "/wegweiser": "Situations-Wegweiser",
+  "/notfallkarte": "Persönliche Notfallkarte",
+  "/uebungen": "Kommunikations-Übungen",
+  "/quellen": "Quellen & Literatur",
+  "/fachstelle": "Fachstelle Angehörigenarbeit",
 };
 
 // Kontextbezogene Elternseite bestimmen

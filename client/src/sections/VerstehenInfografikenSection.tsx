@@ -55,8 +55,8 @@ export default function VerstehenInfografikenSection() {
       </h2>
 
       <p className="text-muted-foreground mb-6">
-        Vorschau = Web-Bild. \u00abPDF \u00f6ffnen\u00bb \u00f6ffnet die A4-Druckversion im neuen
-        Tab \u2013 Download im PDF-Viewer oben rechts.
+        Vorschau = Web-Bild. «PDF öffnen» öffnet die A4-Druckversion im neuen
+        Tab – Download im PDF-Viewer oben rechts.
       </p>
 
       <div className="flex flex-wrap gap-2 mb-6">
@@ -92,7 +92,7 @@ export default function VerstehenInfografikenSection() {
               type="button"
               className="aspect-[3/4] bg-muted cursor-pointer w-full"
               onClick={() => window.open(item.webpUrl, "_blank")}
-              aria-label={`${item.alt} \u2013 Vorschau \u00f6ffnen`}
+              aria-label={`${item.alt} – Vorschau öffnen`}
             >
               <img
                 src={item.webpUrl}
@@ -113,11 +113,11 @@ export default function VerstehenInfografikenSection() {
                 href={item.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`PDF \u00f6ffnen: ${item.title} (neuer Tab)`}
+                aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
                 className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
-                PDF \u00f6ffnen
+                PDF öffnen
               </a>
             </CardContent>
           </Card>

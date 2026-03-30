@@ -287,6 +287,11 @@ export default function Materialien() {
                       Selbstfürsorge
                     </Button>
                   </Link>
+                  <Link href="/buchempfehlungen">
+                    <Button variant="outline" size="sm">
+                      Buchempfehlungen
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

@@ -9,7 +9,7 @@ export default function Uebungsszenarien() {
   return (
     <Layout>
       <SEO
-        title="Kommunikations-Übungen | Schluss mit dem Eiertanz"
+        title="Kommunikations-Übungen"
         description="Üben Sie SET, DEAR MAN und Validierung anhand realistischer Szenarien – interaktiv, mit Feedback und Erklärungen."
         path="/uebungen"
       />

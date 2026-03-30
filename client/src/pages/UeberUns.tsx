@@ -20,7 +20,7 @@ export default function UeberUns() {
     <Layout>
       <SEO
         title="Über uns"
-        description="Über das Projekt Borderline · Hilfe für Angehörige."
+        description="Über das Projekt: psychoedukative Website für Angehörige von Menschen mit Borderline – fachlich fundiert, evidenzbasiert und angehörigorientiert."
         path="/ueber-uns"
       />
       {/* Hero */}

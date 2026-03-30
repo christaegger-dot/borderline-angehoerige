@@ -31,7 +31,7 @@ export default function UnterstuetzenKrise() {
     <Layout>
       <SEO
         title="Krisenbegleitung"
-        description="Wie Sie in akuten Krisen richtig reagieren und Hilfe leisten können."
+        description="Krisenbegleitung bei Borderline: Wie Sie in akuten Situationen deeskalieren, Grenzen wahren und professionelle Hilfe richtig einbeziehen."
         path="/unterstuetzen/krise"
       />
       {/* Hero */}

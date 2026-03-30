@@ -255,7 +255,7 @@ export default function Notfallkarte() {
   return (
     <Layout>
       <SEO
-        title="Persönliche Notfallkarte | Schluss mit dem Eiertanz"
+        title="Persönliche Notfallkarte"
         description="Erstellen Sie Ihre persönliche Notfallkarte mit den wichtigsten Nummern, Kontaktpersonen und Beruhigungsstrategien – zum Ausdrucken oder Speichern."
         path="/notfallkarte"
       />

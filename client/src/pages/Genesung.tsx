@@ -207,8 +207,8 @@ export default function Genesung() {
                       Jahre
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      nicht Wochen: Entwicklung braucht meist viel Zeit und
-                      mehrere Anläufe
+                      nicht Wochen oder Monate – eher mindestens ein bis mehrere
+                      Jahre, oft mit mehreren Anläufen
                     </p>
                   </div>
                 </div>

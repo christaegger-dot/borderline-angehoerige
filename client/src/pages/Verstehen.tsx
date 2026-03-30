@@ -372,11 +372,37 @@ export default function Verstehen() {
                       <h3 className="font-semibold text-foreground mb-2">
                         Idealisierung und Entwertung
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                         Eine Person kann zeitweise als einzig sicher und
                         verstehend erlebt werden, kurz darauf aber als kalt,
                         ungerecht oder gefährlich. Für Angehörige ist das oft
                         tief verunsichernd.
+                      </p>
+                      {/* Spaltungs-Skala */}
+                      <div className="flex items-stretch gap-1.5">
+                        <div className="flex-1 rounded bg-sage-lighter/60 px-2 py-1.5 text-center">
+                          <p className="text-[10px] font-semibold text-sage-dark">
+                            Idealisierung
+                          </p>
+                          <p className="text-[9px] text-muted-foreground leading-tight mt-0.5">
+                            «Du allein verstehst mich»
+                          </p>
+                        </div>
+                        <div className="flex items-center text-sm text-muted-foreground px-0.5">
+                          ↔
+                        </div>
+                        <div className="flex-1 rounded bg-alert/10 px-2 py-1.5 text-center">
+                          <p className="text-[10px] font-semibold text-alert">
+                            Entwertung
+                          </p>
+                          <p className="text-[9px] text-muted-foreground leading-tight mt-0.5">
+                            «Du lässt mich im Stich»
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-[10px] text-muted-foreground text-center mt-1.5">
+                        Beide Extreme sind echte Wahrnehmungen — keine
+                        Manipulation
                       </p>
                     </CardContent>
                   </Card>

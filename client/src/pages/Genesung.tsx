@@ -288,6 +288,96 @@ export default function Genesung() {
                     </p>
                   </CardContent>
                 </Card>
+
+                {/* Genesungsverlauf – Wellenlinie */}
+                <div className="rounded-lg border border-border/40 bg-slate-wash/10 p-4">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2 text-center">
+                    Genesungsverlauf: nicht linear
+                  </p>
+                  <svg
+                    viewBox="0 0 300 70"
+                    className="w-full h-14"
+                    aria-hidden="true"
+                  >
+                    <line
+                      x1="15"
+                      y1="58"
+                      x2="285"
+                      y2="12"
+                      stroke="var(--color-sage-mid)"
+                      strokeWidth="1"
+                      strokeDasharray="5,4"
+                      opacity="0.35"
+                    />
+                    <path
+                      d="M 15,56 C 40,56 48,22 65,28 S 95,60 115,50 S 155,16 182,22 S 215,48 245,36 S 272,14 285,10"
+                      fill="none"
+                      stroke="var(--color-sage-dark)"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <text
+                      x="15"
+                      y="68"
+                      fontSize="8"
+                      fill="currentColor"
+                      opacity="0.45"
+                    >
+                      Beginn
+                    </text>
+                    <text
+                      x="255"
+                      y="9"
+                      fontSize="8"
+                      fill="currentColor"
+                      opacity="0.45"
+                    >
+                      Ziel
+                    </text>
+                    <text
+                      x="88"
+                      y="68"
+                      fontSize="7.5"
+                      fill="currentColor"
+                      opacity="0.5"
+                    >
+                      Rückschritt
+                    </text>
+                    <line
+                      x1="115"
+                      y1="65"
+                      x2="115"
+                      y2="52"
+                      stroke="currentColor"
+                      strokeWidth="0.8"
+                      opacity="0.35"
+                    />
+                    <text
+                      x="187"
+                      y="68"
+                      fontSize="7.5"
+                      fill="currentColor"
+                      opacity="0.5"
+                    >
+                      Rückschritt
+                    </text>
+                    <line
+                      x1="215"
+                      y1="65"
+                      x2="215"
+                      y2="49"
+                      stroke="currentColor"
+                      strokeWidth="0.8"
+                      opacity="0.35"
+                    />
+                  </svg>
+                  <p className="text-[11px] text-muted-foreground text-center mt-1">
+                    Rückschritte gehören zum Weg — die gestrichelte Linie zeigt
+                    den Gesamttrend
+                  </p>
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
                     "Rückschritte einordnen, statt sofort zu katastrophisieren",

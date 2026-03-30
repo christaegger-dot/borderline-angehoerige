@@ -50,7 +50,10 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 shrink-0">
+          <nav
+            className="hidden lg:flex items-center gap-0.5 xl:gap-1 shrink-0"
+            aria-label="Hauptnavigation"
+          >
             {navItems.map(item => {
               const isActive =
                 location === item.href || location.startsWith(item.href + "/");

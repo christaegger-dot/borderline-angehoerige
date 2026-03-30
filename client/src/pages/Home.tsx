@@ -121,7 +121,7 @@ export default function Home() {
 
               <Link
                 href="/soforthilfe"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white font-medium transition-colors group text-sm"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-white font-medium transition-colors group text-sm"
               >
                 <Phone className="w-4 h-4" />
                 <span>Akute Krise? Soforthilfe</span>

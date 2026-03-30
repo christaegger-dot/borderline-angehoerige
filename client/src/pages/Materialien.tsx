@@ -109,7 +109,7 @@ export default function Materialien() {
 
       <MaterialienHeroSection />
 
-      <section className="py-10">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
@@ -209,7 +209,7 @@ export default function Materialien() {
         </div>
       </section>
 
-      <section className="py-12 bg-muted/30">
+      <section className="py-8 md:py-12 bg-muted/30">
         <div className="container">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
             <Card className="bg-sand-muted border-sand-mid">

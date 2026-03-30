@@ -234,6 +234,14 @@ export default function Genesung() {
                     },
                   ]}
                 />
+
+                <p className="text-xs text-muted-foreground mt-4 px-1 leading-relaxed">
+                  <strong>Hinweis:</strong> Diese Zahlen stammen aus
+                  Spezialzentren unter optimalen Bedingungen. Der reale Weg ist
+                  für viele Menschen nicht-linear und braucht länger. Genesung
+                  bleibt das realistische Ziel — aber Rückschritte und lange
+                  Phasen gehören dazu.
+                </p>
               </CardContent>
             </Card>
           </motion.div>

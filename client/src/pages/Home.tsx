@@ -70,11 +70,23 @@ export default function Home() {
         {/* Geometrische Kreise (SA-Pattern) */}
         <div
           className="absolute rounded-full"
-          style={{ top: '-60px', right: '-60px', width: '300px', height: '300px', background: 'rgba(82, 150, 160, 0.12)' }}
+          style={{
+            top: "-60px",
+            right: "-60px",
+            width: "300px",
+            height: "300px",
+            background: "rgba(82, 150, 160, 0.12)",
+          }}
         />
         <div
           className="absolute rounded-full"
-          style={{ bottom: '-40px', left: '30%', width: '200px', height: '200px', background: 'rgba(180, 83, 9, 0.08)' }}
+          style={{
+            bottom: "-40px",
+            left: "30%",
+            width: "200px",
+            height: "200px",
+            background: "rgba(180, 83, 9, 0.08)",
+          }}
         />
 
         <div className="container relative z-10 py-12 md:py-14 lg:py-16">
@@ -129,7 +141,9 @@ export default function Home() {
               >
                 <Phone className="w-4 h-4" />
                 <span>Akute Krise? Soforthilfe</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                <span className="group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
               </Link>
             </motion.div>
           </div>
@@ -196,7 +210,10 @@ export default function Home() {
                           className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                           style={{ backgroundColor: item.iconBg }}
                         >
-                          <Icon className="w-[18px] h-[18px]" style={{ color: item.color }} />
+                          <Icon
+                            className="w-[18px] h-[18px]"
+                            style={{ color: item.color }}
+                          />
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground text-sm mb-1">
@@ -232,9 +249,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className="py-8 md:py-12 bg-cream"
-      >
+      <section className="py-8 md:py-12 bg-cream">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -270,45 +285,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className="py-8 md:py-10"
-      >
+      <section className="py-8 md:py-10">
         <div className="container">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4">
-            <Card className="border-border/50">
-              <CardContent className="p-5">
-                <h2 className="text-xl font-normal text-foreground mb-2">
-                  Kernwege
-                </h2>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Wenn Sie nicht über die Lage-Karten einsteigen möchten:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    "/verstehen",
-                    "/unterstuetzen/uebersicht",
-                    "/kommunizieren",
-                    "/grenzen",
-                    "/selbstfuersorge",
-                  ].map(href => (
-                    <Link
-                      key={href}
-                      href={href}
-                      className="text-sm px-3 py-1.5 rounded-full bg-muted text-foreground hover:bg-muted/70 transition-colors"
-                    >
-                      {{
-                        "/verstehen": "Verstehen",
-                        "/unterstuetzen/uebersicht": "Unterstützen",
-                        "/kommunizieren": "Kommunizieren",
-                        "/grenzen": "Grenzen",
-                        "/selbstfuersorge": "Selbstfürsorge",
-                      }[href] ?? href}
-                    </Link>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
+          <div className="max-w-2xl mx-auto">
             <Card className="border-border/50 bg-sand-muted/40">
               <CardContent className="p-5">
                 <h2 className="text-xl font-normal text-foreground mb-2">

@@ -474,7 +474,8 @@ export default function Verstehen() {
               title="Diagnostischer Überblick"
               icon={<BookOpen className="w-7 h-7 text-sage-dark" />}
               id="diagnostischer-ueberblick"
-              preview="Die diagnostische Perspektive kann hilfreich sein, sollte aber die Beziehungsperspektive nicht dominieren."
+              defaultOpen={false}
+              preview="Für alle, die auch die klinische Perspektive kennen möchten: DSM-Merkmale und Entstehungshintergründe im Überblick."
             >
               <div className="space-y-5">
                 <p className="text-muted-foreground leading-relaxed">

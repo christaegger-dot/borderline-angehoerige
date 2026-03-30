@@ -44,7 +44,7 @@ function GenesungInfografiken() {
 
   return (
     <ContentSection
-      title="Genesung auf einen Blick"
+      title="Materialien & Infografiken"
       icon={<ImageIcon className="w-6 h-6 text-sage-dark" />}
       id="infografiken"
       preview="Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der Rolle von Angehörigen."

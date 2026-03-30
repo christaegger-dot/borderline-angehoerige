@@ -546,9 +546,12 @@ export default function Verstehen() {
                 ))}
               </div>
 
-              <div className="mt-6 text-center">
+              <div className="mt-6 flex flex-wrap gap-3 justify-center">
                 <Link href="/materialien">
                   <Button variant="outline">Alle Materialien anzeigen</Button>
+                </Link>
+                <Link href="/glossar">
+                  <Button variant="outline">Fachbegriffe im Glossar →</Button>
                 </Link>
               </div>
             </motion.div>

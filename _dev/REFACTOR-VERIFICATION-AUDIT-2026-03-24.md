@@ -9,6 +9,7 @@
 Der technische Refactor-Stand ist **weitgehend stabil**: Produktions-Build läuft durch, TypeScript-Check läuft (über vorhandenes `check`-Script), die zentrale Routing-Struktur ist für die geforderten Pfade vollständig, und die Layout-Aufteilung in Header/MobileMenu/RessourcenMenu/Hooks ist konsistent.
 
 Es bestehen jedoch **prozessuale und strukturelle Restpunkte**:
+
 - `npm install` schlägt wegen `workspace:*`-Dependency fehl (Repo ist faktisch auf pnpm ausgerichtet).
 - Die geforderten npm-Scripts `lint`, `typecheck`, `test` fehlen.
 - Es gibt mehrere wahrscheinlich verwaiste UI-/Domain-Module (ohne Importpfad vom Entry-Graph).
@@ -20,26 +21,26 @@ Es bestehen jedoch **prozessuale und strukturelle Restpunkte**:
 
 ## 3) PASS / FAIL pro Bereich
 
-| Bereich | Status | Kurzbegründung |
-|---|---|---|
-| Build | PASS | `npm run build` erfolgreich; nur Warnung zu nicht gesetzten Vite-Env-Variablen in `index.html`. |
-| Typecheck | FAIL | Gefordertes Script `npm run typecheck` fehlt; alternativ vorhandenes `npm run check` läuft erfolgreich. |
-| Lint | FAIL | Script `npm run lint` fehlt. |
-| Tests | FAIL | Script `npm test` fehlt. |
-| Routing | PASS | Alle geforderten Audit-Pfade sind in Route-Registry/Router abgedeckt (inkl. `/404`, Redirects). |
-| Layout | PASS (mit P2-Hinweis) | Desktop-/Mobile-Navigation, Ressourcen-Dropdown, Search-Lazy-Loading und A11y-Keyhandling vorhanden. |
-| Tote Module / Architektur-Drift | FAIL (P1) | Mehrere Module mutmaßlich ohne aktiven Importpfad (technische Drift/Altbestand). |
-| Regressionen | PASS (mit P2-Hinweis) | Keine Build-/Routing-Regressionsindikatoren; visuelle Inkonsistenzrisiken aus Width-/Container-Mix. |
+| Bereich                         | Status                | Kurzbegründung                                                                                          |
+| ------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------- |
+| Build                           | PASS                  | `npm run build` erfolgreich; nur Warnung zu nicht gesetzten Vite-Env-Variablen in `index.html`.         |
+| Typecheck                       | FAIL                  | Gefordertes Script `npm run typecheck` fehlt; alternativ vorhandenes `npm run check` läuft erfolgreich. |
+| Lint                            | FAIL                  | Script `npm run lint` fehlt.                                                                            |
+| Tests                           | FAIL                  | Script `npm test` fehlt.                                                                                |
+| Routing                         | PASS                  | Alle geforderten Audit-Pfade sind in Route-Registry/Router abgedeckt (inkl. `/404`, Redirects).         |
+| Layout                          | PASS (mit P2-Hinweis) | Desktop-/Mobile-Navigation, Ressourcen-Dropdown, Search-Lazy-Loading und A11y-Keyhandling vorhanden.    |
+| Tote Module / Architektur-Drift | FAIL (P1)             | Mehrere Module mutmaßlich ohne aktiven Importpfad (technische Drift/Altbestand).                        |
+| Regressionen                    | PASS (mit P2-Hinweis) | Keine Build-/Routing-Regressionsindikatoren; visuelle Inkonsistenzrisiken aus Width-/Container-Mix.     |
 
 ## 4) Befundtabelle
 
-| Prio | Datei/Bereich | Problem | Auswirkung | Empfohlene Maßnahme |
-|---|---|---|---|---|
-| P1 | Tooling / package manager | `npm install` bricht mit `EUNSUPPORTEDPROTOCOL` (`workspace:*`) ab. | Standard-Setup via npm nicht lauffähig; Onboarding/CI kann scheitern. | Offiziell pnpm als Pflicht dokumentieren **oder** npm-kompatible Dependency-Definitionen herstellen. |
-| P1 | `package.json` Scripts | `lint`, `typecheck`, `test` fehlen als explizite Scripts. | Audit-/CI-Erwartungen nicht direkt erfüllbar; Qualitätsgates uneinheitlich. | Scripts ergänzen (z. B. `typecheck` alias auf `check`, lint/test definieren). |
-| P1 | Modulgraph (`client/src/components/ui/*`, `client/src/domain/resources.ts`, `client/src/components/Map.tsx`, `client/src/components/interactive/ProgressBar.tsx`) | Mutmaßlich verwaiste Module ohne Importpfad vom Entry-Graph. | Erhöhte Wartungslast, Verwirrung über aktive Architektur nach Refactor. | Verwendungsprüfung und Entfernen/Archivieren oder klar dokumentieren (warum bewusst behalten). |
-| P2 | Layout-Container-Strategie (`Layout.tsx`, `MobileMenu.tsx`) | Gemischter Einsatz von `container` und `max-w-screen-2xl`. | Potenziell sichtbare Breiten-/Ausrichtungs-Inkonsistenzen zwischen Header, Content und Mobile-Menü. | Einheitliche Container-Strategie festlegen (Audit-Befund, kein automatischer Umbau). |
-| P2 | Build-Warnungen (`index.html` / env) | `%VITE_ANALYTICS_ENDPOINT%` und `%VITE_ANALYTICS_WEBSITE_ID%` nicht gesetzt. | Keine Build-Blocker, aber potenziell fehlende Analytics-Funktionalität. | Env-Dokumentation ergänzen oder Fallback-Werte definieren. |
+| Prio | Datei/Bereich                                                                                                                                                     | Problem                                                                      | Auswirkung                                                                                          | Empfohlene Maßnahme                                                                                  |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| P1   | Tooling / package manager                                                                                                                                         | `npm install` bricht mit `EUNSUPPORTEDPROTOCOL` (`workspace:*`) ab.          | Standard-Setup via npm nicht lauffähig; Onboarding/CI kann scheitern.                               | Offiziell pnpm als Pflicht dokumentieren **oder** npm-kompatible Dependency-Definitionen herstellen. |
+| P1   | `package.json` Scripts                                                                                                                                            | `lint`, `typecheck`, `test` fehlen als explizite Scripts.                    | Audit-/CI-Erwartungen nicht direkt erfüllbar; Qualitätsgates uneinheitlich.                         | Scripts ergänzen (z. B. `typecheck` alias auf `check`, lint/test definieren).                        |
+| P1   | Modulgraph (`client/src/components/ui/*`, `client/src/domain/resources.ts`, `client/src/components/Map.tsx`, `client/src/components/interactive/ProgressBar.tsx`) | Mutmaßlich verwaiste Module ohne Importpfad vom Entry-Graph.                 | Erhöhte Wartungslast, Verwirrung über aktive Architektur nach Refactor.                             | Verwendungsprüfung und Entfernen/Archivieren oder klar dokumentieren (warum bewusst behalten).       |
+| P2   | Layout-Container-Strategie (`Layout.tsx`, `MobileMenu.tsx`)                                                                                                       | Gemischter Einsatz von `container` und `max-w-screen-2xl`.                   | Potenziell sichtbare Breiten-/Ausrichtungs-Inkonsistenzen zwischen Header, Content und Mobile-Menü. | Einheitliche Container-Strategie festlegen (Audit-Befund, kein automatischer Umbau).                 |
+| P2   | Build-Warnungen (`index.html` / env)                                                                                                                              | `%VITE_ANALYTICS_ENDPOINT%` und `%VITE_ANALYTICS_WEBSITE_ID%` nicht gesetzt. | Keine Build-Blocker, aber potenziell fehlende Analytics-Funktionalität.                             | Env-Dokumentation ergänzen oder Fallback-Werte definieren.                                           |
 
 ## 5) Liste aller tatsächlich ausgeführten Befehle
 

@@ -1,4 +1,7 @@
-import type { ResourceFilter, SelectableCategory } from "@/domain/content-types";
+import type {
+  ResourceFilter,
+  SelectableCategory,
+} from "@/domain/content-types";
 
 export type MainResourceCategoryId =
   | "alle"
@@ -10,18 +13,24 @@ export type MainResourceCategoryId =
   | "genesung"
   | "soforthilfe";
 
-export const mainResourceCategories: SelectableCategory<MainResourceCategoryId>[] = [
-  { id: "alle", label: "Alle" },
-  { id: "verstehen", label: "Verstehen" },
-  { id: "kommunizieren", label: "Kommunizieren" },
-  { id: "unterstuetzen", label: "Unterstützen" },
-  { id: "grenzen", label: "Grenzen" },
-  { id: "selbstfuersorge", label: "Selbstfürsorge" },
-  { id: "genesung", label: "Genesung" },
-  { id: "soforthilfe", label: "Soforthilfe" },
-];
+export const mainResourceCategories: SelectableCategory<MainResourceCategoryId>[] =
+  [
+    { id: "alle", label: "Alle" },
+    { id: "verstehen", label: "Verstehen" },
+    { id: "kommunizieren", label: "Kommunizieren" },
+    { id: "unterstuetzen", label: "Unterstützen" },
+    { id: "grenzen", label: "Grenzen" },
+    { id: "selbstfuersorge", label: "Selbstfürsorge" },
+    { id: "genesung", label: "Genesung" },
+    { id: "soforthilfe", label: "Soforthilfe" },
+  ];
 
-export type ResourceTypeId = "alle" | "infografik" | "checkliste" | "arbeitsblatt" | "notfallhilfe";
+export type ResourceTypeId =
+  | "alle"
+  | "infografik"
+  | "checkliste"
+  | "arbeitsblatt"
+  | "notfallhilfe";
 
 export const resourceTypeFilters: ResourceFilter<ResourceTypeId>[] = [
   { value: "alle", label: "Alle Typen" },

@@ -3,11 +3,11 @@ import { useLocation } from "wouter";
 
 /**
  * ScrollToTop-Komponente
- * 
+ *
  * Behebt das "Scroll-Restore"-Problem auf iOS/Safari:
  * Beim Navigieren merkt sich der Browser die Scroll-Position und setzt
  * den Nutzer auf der neuen Seite an eine ähnliche Stelle – statt ganz oben.
- * 
+ *
  * Diese Komponente:
  * 1. Deaktiviert die automatische Scroll-Restoration des Browsers
  * 2. Scrollt bei jedem Route-Wechsel nach oben (0, 0)

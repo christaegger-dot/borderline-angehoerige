@@ -85,7 +85,8 @@ export const ROT: Kontakt[] = [
     nummer: "144",
     tel: "144",
     label: "Rettungsdienst",
-    hinweis: "Bei akuter Lebensgefahr, Selbstverletzung oder akuter Suizidgefahr",
+    hinweis:
+      "Bei akuter Lebensgefahr, Selbstverletzung oder akuter Suizidgefahr",
     sourceRef: "Soforthilfe.tsx:94, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
@@ -141,8 +142,10 @@ export const GELB: Kontakt[] = [
     nummer: "058 384 66 66",
     tel: "+41583846666",
     label: "PUK Kinder & Jugendliche (24/7)",
-    hinweis: "Für Kinder und Jugendliche bis 18 Jahre – wenn es psychisch akut ist.",
-    sourceRef: "Soforthilfe.tsx:183, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
+    hinweis:
+      "Für Kinder und Jugendliche bis 18 Jahre – wenn es psychisch akut ist.",
+    sourceRef:
+      "Soforthilfe.tsx:183, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "bis 18 Jahre",
   },
@@ -153,7 +156,8 @@ export const GELB: Kontakt[] = [
     tel: "+41583842000",
     label: "PUK Erwachsene (24/7)",
     hinweis: "Für Erwachsene ab 18 – akute psychische Krise.",
-    sourceRef: "Soforthilfe.tsx:207, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
+    sourceRef:
+      "Soforthilfe.tsx:207, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "18–64 Jahre",
   },
@@ -164,7 +168,8 @@ export const GELB: Kontakt[] = [
     tel: "+41583844682",
     label: "PUK Erwachsene (ab 65) (24/7)",
     hinweis: "Für Menschen ab 65 – akute psychische Krise.",
-    sourceRef: "Soforthilfe.tsx:231, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
+    sourceRef:
+      "Soforthilfe.tsx:231, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "ab 65 Jahre",
   },
@@ -179,7 +184,8 @@ export const GRUEN: Kontakt[] = [
     nummer: "143",
     tel: "143",
     label: "Dargebotene Hand (24/7)",
-    hinweis: "Anonymes Gesprächs- und Krisenangebot, vertraulich. Es kommt niemand vorbei.",
+    hinweis:
+      "Anonymes Gesprächs- und Krisenangebot, vertraulich. Es kommt niemand vorbei.",
     sourceRef: "Soforthilfe.tsx:324, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
@@ -309,7 +315,8 @@ export const INFO: Kontakt[] = [
     nummer: "052 264 34 00",
     tel: "+41522643400",
     label: "IPW Psychotherapiestation junge Erwachsene",
-    hinweis: "Integrierte Psychiatrie Winterthur, Wieshofstrasse 102, 8408 Winterthur",
+    hinweis:
+      "Integrierte Psychiatrie Winterthur, Wieshofstrasse 102, 8408 Winterthur",
     sourceRef: "UnterstuetzenTherapie.tsx:29",
   },
 ];
@@ -428,31 +435,37 @@ export const TEXTE = {
 // ─── Hilfsfunktionen ─────────────────────────────────────
 
 /** Alle Website-Kontakte (ohne nurPdf), flach über alle Kategorien */
-export const WEBSITE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO].filter(
-  (k) => !k.nurPdf,
-);
+export const WEBSITE_KONTAKTE: Kontakt[] = [
+  ...ROT,
+  ...GELB,
+  ...GRUEN,
+  ...INFO,
+].filter(k => !k.nurPdf);
 
 /** Website-ROT: Haupt-Notfallnummern (ohne 118 nur PDF, ohne 145 Spezialnummer) */
-export const WEBSITE_ROT = ROT.filter((k) => !k.nurPdf && k.id !== "ROT_145");
+export const WEBSITE_ROT = ROT.filter(k => !k.nurPdf && k.id !== "ROT_145");
 
 /** Alle Kontakte flach (inkl. nurPdf) */
 export const ALLE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO];
 
 /** Kontakt nach ID finden */
 export function kontaktById(id: string): Kontakt | undefined {
-  return ALLE_KONTAKTE.find((k) => k.id === id);
+  return ALLE_KONTAKTE.find(k => k.id === id);
 }
 
 /** Kontakt nach ID finden – wirft einen klaren Fehler wenn nicht gefunden */
 export function kontaktByIdStrict(id: string): Kontakt {
   const k = kontaktById(id);
-  if (!k) throw new Error(`Kontakt nicht gefunden: "${id}". Wurde die ID in kontakte.ts umbenannt oder entfernt?`);
+  if (!k)
+    throw new Error(
+      `Kontakt nicht gefunden: "${id}". Wurde die ID in kontakte.ts umbenannt oder entfernt?`
+    );
   return k;
 }
 
 /** E-Mail nach ID finden */
 export function emailById(id: string): EmailKontakt | undefined {
-  return EMAILS.find((e) => e.id === id);
+  return EMAILS.find(e => e.id === id);
 }
 
 /** E-Mail nach ID – wirft Fehler wenn nicht gefunden */
@@ -464,7 +477,7 @@ export function emailByIdStrict(id: string): EmailKontakt {
 
 /** URL nach ID finden */
 export function urlById(id: string): UrlKontakt | undefined {
-  return URLS.find((u) => u.id === id);
+  return URLS.find(u => u.id === id);
 }
 
 /** URL nach ID – wirft Fehler wenn nicht gefunden */
@@ -476,7 +489,7 @@ export function urlByIdStrict(id: string): UrlKontakt {
 
 /** Adresse nach ID finden */
 export function adresseById(id: string): AdresseKontakt | undefined {
-  return ADRESSEN.find((a) => a.id === id);
+  return ADRESSEN.find(a => a.id === id);
 }
 
 // ─── QA-Guardrail: Validierung ───────────────────────────

@@ -2,7 +2,7 @@ name: Auto-PR and merge for Claude Code
 on:
   push:
     branches:
-      - 'claude/**'
+      - "claude/**"
 permissions:
   contents: write
   pull-requests: write

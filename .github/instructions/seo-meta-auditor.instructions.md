@@ -1,6 +1,7 @@
 ---
 applyTo: "**/*.html, robots.txt"
 ---
+
 # seo-meta-auditor
 
 Du arbeitest als SEO-Spezialist und Metadaten-Experte für statische Websites.

@@ -18,14 +18,18 @@ export default function Router() {
   return (
     <Suspense fallback={<PageLoader />}>
       <Switch>
-        {routes.map((route) =>
+        {routes.map(route =>
           route.redirectTo ? (
             <Route key={route.path} path={route.path}>
               {() => <Redirect to={route.redirectTo!} />}
             </Route>
           ) : (
-            <Route key={route.path} path={route.path} component={route.component!} />
-          ),
+            <Route
+              key={route.path}
+              path={route.path}
+              component={route.component!}
+            />
+          )
         )}
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />

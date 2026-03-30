@@ -133,13 +133,18 @@ export function MapView({
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<google.maps.Map | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const containerClass = cn("w-full h-[350px] sm:h-[400px] lg:h-[500px]", className);
+  const containerClass = cn(
+    "w-full h-[350px] sm:h-[400px] lg:h-[500px]",
+    className
+  );
 
   const init = usePersistFn(async () => {
     try {
       await loadMapScript();
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Karte konnte nicht geladen werden.");
+      setError(
+        e instanceof Error ? e.message : "Karte konnte nicht geladen werden."
+      );
       return;
     }
     if (!mapContainer.current || !window.google?.maps) {
@@ -166,13 +171,24 @@ export function MapView({
 
   if (error) {
     return (
-      <div className={`${containerClass} flex items-center justify-center bg-muted/30 rounded-lg border border-border/50`} role="region" aria-label="Karte mit Therapieangeboten">
-        <p className="text-sm text-muted-foreground text-center px-4">{error}</p>
+      <div
+        className={`${containerClass} flex items-center justify-center bg-muted/30 rounded-lg border border-border/50`}
+        role="region"
+        aria-label="Karte mit Therapieangeboten"
+      >
+        <p className="text-sm text-muted-foreground text-center px-4">
+          {error}
+        </p>
       </div>
     );
   }
 
   return (
-    <div ref={mapContainer} className={containerClass} role="region" aria-label="Karte mit Therapieangeboten" />
+    <div
+      ref={mapContainer}
+      className={containerClass}
+      role="region"
+      aria-label="Karte mit Therapieangeboten"
+    />
   );
 }

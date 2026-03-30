@@ -56,7 +56,7 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
   const logPath = path.join(LOG_DIR, `${source}.log`);
 
   // Format entries with timestamps
-  const lines = entries.map((entry) => {
+  const lines = entries.map(entry => {
     const ts = new Date().toISOString();
     return `[${ts}] ${JSON.stringify(entry)}`;
   });
@@ -132,7 +132,7 @@ function vitePluginManusDebugCollector(): Plugin {
         }
 
         let body = "";
-        req.on("data", (chunk) => {
+        req.on("data", chunk => {
           body += chunk.toString();
         });
 
@@ -161,7 +161,9 @@ export default defineConfig(({ command }) => {
   return {
     define: {
       // Inject build date so MEDICAL_LAST_REVIEWED stays current per build
-      'import.meta.env.VITE_BUILD_DATE': JSON.stringify(new Date().toISOString().slice(0, 10)),
+      "import.meta.env.VITE_BUILD_DATE": JSON.stringify(
+        new Date().toISOString().slice(0, 10)
+      ),
     },
     plugins,
     resolve: {
@@ -180,39 +182,39 @@ export default defineConfig(({ command }) => {
         output: {
           manualChunks: {
             // React core – cached long-term
-            'vendor-react': ['react', 'react-dom'],
+            "vendor-react": ["react", "react-dom"],
             // Animation library – used on many pages but heavy
-            'vendor-motion': ['framer-motion'],
+            "vendor-motion": ["framer-motion"],
             // Radix UI primitives – shared across components
-            'vendor-radix': [
-              '@radix-ui/react-accordion',
-              '@radix-ui/react-dialog',
-              '@radix-ui/react-dropdown-menu',
-              '@radix-ui/react-popover',
-              '@radix-ui/react-tabs',
-              '@radix-ui/react-tooltip',
-              '@radix-ui/react-select',
-              '@radix-ui/react-scroll-area',
-              '@radix-ui/react-separator',
-              '@radix-ui/react-slot',
-              '@radix-ui/react-toggle',
-              '@radix-ui/react-toggle-group',
-              '@radix-ui/react-collapsible',
-              '@radix-ui/react-label',
-              '@radix-ui/react-progress',
-              '@radix-ui/react-checkbox',
+            "vendor-radix": [
+              "@radix-ui/react-accordion",
+              "@radix-ui/react-dialog",
+              "@radix-ui/react-dropdown-menu",
+              "@radix-ui/react-popover",
+              "@radix-ui/react-tabs",
+              "@radix-ui/react-tooltip",
+              "@radix-ui/react-select",
+              "@radix-ui/react-scroll-area",
+              "@radix-ui/react-separator",
+              "@radix-ui/react-slot",
+              "@radix-ui/react-toggle",
+              "@radix-ui/react-toggle-group",
+              "@radix-ui/react-collapsible",
+              "@radix-ui/react-label",
+              "@radix-ui/react-progress",
+              "@radix-ui/react-checkbox",
             ],
             // Utility libraries
-            'vendor-utils': [
-              'clsx',
-              'tailwind-merge',
-              'class-variance-authority',
-              'wouter',
-              'sonner',
-              'zod',
+            "vendor-utils": [
+              "clsx",
+              "tailwind-merge",
+              "class-variance-authority",
+              "wouter",
+              "sonner",
+              "zod",
             ],
             // Icons – large but tree-shakeable
-            'vendor-icons': ['lucide-react'],
+            "vendor-icons": ["lucide-react"],
           },
         },
       },

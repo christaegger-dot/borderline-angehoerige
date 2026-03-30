@@ -1,4 +1,7 @@
-import { primaryNavigationItems, resourceNavigationItems } from "@/domain/navigation";
+import {
+  primaryNavigationItems,
+  resourceNavigationItems,
+} from "@/domain/navigation";
 
 export { type NavigationItem as NavItem } from "@/domain/content-types";
 

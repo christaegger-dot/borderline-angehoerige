@@ -3,12 +3,26 @@ import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Shield, Cookie, Server, Eye, Lock, ExternalLink, Download, Scale, FileText } from "lucide-react";
+import {
+  Shield,
+  Cookie,
+  Server,
+  Eye,
+  Lock,
+  ExternalLink,
+  Download,
+  Scale,
+  FileText,
+} from "lucide-react";
 
 export default function Datenschutz() {
   return (
     <Layout>
-      <SEO title="Datenschutz" description="Datenschutzerklärung der Website." path="/datenschutz" />
+      <SEO
+        title="Datenschutz"
+        description="Datenschutzerklärung der Website."
+        path="/datenschutz"
+      />
       {/* Hero */}
       <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
@@ -23,14 +37,15 @@ export default function Datenschutz() {
                 <Shield className="w-6 h-6 text-sage-darker" />
               </div>
             </div>
-            
+
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
               Datenschutzerklärung
             </h1>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Der Schutz Ihrer Privatsphäre ist uns wichtig. Diese Datenschutzerklärung informiert Sie über 
-              die Verarbeitung personenbezogener Daten auf dieser Website.
+              Der Schutz Ihrer Privatsphäre ist uns wichtig. Diese
+              Datenschutzerklärung informiert Sie über die Verarbeitung
+              personenbezogener Daten auf dieser Website.
             </p>
           </motion.div>
         </div>
@@ -40,7 +55,6 @@ export default function Datenschutz() {
       <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-
             {/* Grundsatz – immer offen */}
             <ContentSection
               title="Unser Grundsatz"
@@ -52,9 +66,10 @@ export default function Datenschutz() {
               <Card className="border-sage/30 bg-sage-light/20">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    Diese Website wurde mit dem Ziel entwickelt, möglichst wenige personenbezogene Daten 
-                    zu erheben. Wir verzichten bewusst auf Tracking-Tools, Werbung und Social-Media-Plugins. 
-                    Ihre Privatsphäre hat Priorität.
+                    Diese Website wurde mit dem Ziel entwickelt, möglichst
+                    wenige personenbezogene Daten zu erheben. Wir verzichten
+                    bewusst auf Tracking-Tools, Werbung und
+                    Social-Media-Plugins. Ihre Privatsphäre hat Priorität.
                   </p>
                 </CardContent>
               </Card>
@@ -68,7 +83,8 @@ export default function Datenschutz() {
                     <p className="font-medium text-foreground">Christa Egger</p>
                     <p>Angehörigenberaterin</p>
                     <p className="mt-4 text-sm">
-                      Bei Fragen zum Datenschutz können Sie sich an die oben genannte Person wenden.
+                      Bei Fragen zum Datenschutz können Sie sich an die oben
+                      genannte Person wenden.
                     </p>
                   </div>
                 </CardContent>
@@ -84,10 +100,13 @@ export default function Datenschutz() {
             >
               <Card className="border-border/50">
                 <CardContent className="p-6">
-                  <h3 className="font-medium text-foreground mb-3">Server-Logfiles</h3>
+                  <h3 className="font-medium text-foreground mb-3">
+                    Server-Logfiles
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed mb-3">
-                    Bei jedem Zugriff auf diese Website werden automatisch Informationen in sogenannten 
-                    Server-Logfiles gespeichert, die Ihr Browser automatisch übermittelt. Dies sind:
+                    Bei jedem Zugriff auf diese Website werden automatisch
+                    Informationen in sogenannten Server-Logfiles gespeichert,
+                    die Ihr Browser automatisch übermittelt. Dies sind:
                   </p>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
@@ -116,9 +135,10 @@ export default function Datenschutz() {
                     </li>
                   </ul>
                   <p className="mt-3 text-sm text-muted-foreground">
-                    Diese Daten werden ausschliesslich zur Gewährleistung eines störungsfreien Betriebs 
-                    der Website und zur Verbesserung unseres Angebots ausgewertet. Eine Zusammenführung 
-                    dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+                    Diese Daten werden ausschliesslich zur Gewährleistung eines
+                    störungsfreien Betriebs der Website und zur Verbesserung
+                    unseres Angebots ausgewertet. Eine Zusammenführung dieser
+                    Daten mit anderen Datenquellen wird nicht vorgenommen.
                   </p>
                 </CardContent>
               </Card>
@@ -135,21 +155,28 @@ export default function Datenschutz() {
                 <CardContent className="p-6">
                   <div className="text-muted-foreground leading-relaxed space-y-4">
                     <p>
-                      Diese Website verwendet ausschliesslich technisch notwendige Cookies, die für den 
-                      Betrieb der Website erforderlich sind. Es werden <strong>keine Tracking-Cookies</strong> oder 
-                      Cookies zu Werbezwecken eingesetzt.
+                      Diese Website verwendet ausschliesslich technisch
+                      notwendige Cookies, die für den Betrieb der Website
+                      erforderlich sind. Es werden{" "}
+                      <strong>keine Tracking-Cookies</strong> oder Cookies zu
+                      Werbezwecken eingesetzt.
                     </p>
                     <div className="bg-muted/30 rounded-lg p-4">
-                      <h3 className="font-medium text-foreground mb-2">Technisch notwendige Cookies</h3>
+                      <h3 className="font-medium text-foreground mb-2">
+                        Technisch notwendige Cookies
+                      </h3>
                       <p className="text-sm">
-                        Diese Cookies sind für die Grundfunktionen der Website erforderlich und können 
-                        nicht deaktiviert werden. Sie speichern keine persönlich identifizierbaren Informationen.
+                        Diese Cookies sind für die Grundfunktionen der Website
+                        erforderlich und können nicht deaktiviert werden. Sie
+                        speichern keine persönlich identifizierbaren
+                        Informationen.
                       </p>
                     </div>
                     <p className="text-sm">
-                      Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert 
-                      werden und Cookies nur im Einzelfall erlauben. Bei der Deaktivierung von Cookies kann 
-                      die Funktionalität dieser Website eingeschränkt sein.
+                      Sie können Ihren Browser so einstellen, dass Sie über das
+                      Setzen von Cookies informiert werden und Cookies nur im
+                      Einzelfall erlauben. Bei der Deaktivierung von Cookies
+                      kann die Funktionalität dieser Website eingeschränkt sein.
                     </p>
                   </div>
                 </CardContent>
@@ -167,13 +194,16 @@ export default function Datenschutz() {
                 <CardContent className="p-6">
                   <div className="text-muted-foreground leading-relaxed space-y-4">
                     <p>
-                      Diese Website verwendet <strong>keine Analyse- oder Tracking-Tools</strong> wie Google Analytics, 
-                      Facebook Pixel oder ähnliche Dienste. Wir erfassen keine Nutzungsprofile und geben 
-                      keine Daten an Dritte weiter.
+                      Diese Website verwendet{" "}
+                      <strong>keine Analyse- oder Tracking-Tools</strong> wie
+                      Google Analytics, Facebook Pixel oder ähnliche Dienste.
+                      Wir erfassen keine Nutzungsprofile und geben keine Daten
+                      an Dritte weiter.
                     </p>
                     <p>
-                      Es werden auch <strong>keine Social-Media-Plugins</strong> eingebunden, die Daten an 
-                      soziale Netzwerke übertragen könnten.
+                      Es werden auch <strong>keine Social-Media-Plugins</strong>{" "}
+                      eingebunden, die Daten an soziale Netzwerke übertragen
+                      könnten.
                     </p>
                   </div>
                 </CardContent>
@@ -190,10 +220,12 @@ export default function Datenschutz() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    Diese Website enthält Links zu externen Websites Dritter (z.B. Notfallressourcen, 
-                    Selbsthilfegruppen). Auf deren Inhalte haben wir keinen Einfluss. Für die Inhalte 
-                    der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. 
-                    Bitte beachten Sie die Datenschutzerklärungen der jeweiligen externen Websites.
+                    Diese Website enthält Links zu externen Websites Dritter
+                    (z.B. Notfallressourcen, Selbsthilfegruppen). Auf deren
+                    Inhalte haben wir keinen Einfluss. Für die Inhalte der
+                    verlinkten Seiten ist stets der jeweilige Anbieter oder
+                    Betreiber verantwortlich. Bitte beachten Sie die
+                    Datenschutzerklärungen der jeweiligen externen Websites.
                   </p>
                 </CardContent>
               </Card>
@@ -209,9 +241,11 @@ export default function Datenschutz() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    Die auf dieser Website angebotenen Infografiken und Handouts können heruntergeladen 
-                    werden. Beim Download werden keine personenbezogenen Daten erfasst oder gespeichert. 
-                    Die Materialien werden über einen Content Delivery Network (CDN) bereitgestellt.
+                    Die auf dieser Website angebotenen Infografiken und Handouts
+                    können heruntergeladen werden. Beim Download werden keine
+                    personenbezogenen Daten erfasst oder gespeichert. Die
+                    Materialien werden über einen Content Delivery Network (CDN)
+                    bereitgestellt.
                   </p>
                 </CardContent>
               </Card>
@@ -228,30 +262,45 @@ export default function Datenschutz() {
                 <CardContent className="p-6">
                   <div className="text-muted-foreground leading-relaxed space-y-4">
                     <p>
-                      Gemäss dem schweizerischen Datenschutzgesetz (DSG) und der EU-Datenschutz-Grundverordnung 
-                      (DSGVO) haben Sie folgende Rechte:
+                      Gemäss dem schweizerischen Datenschutzgesetz (DSG) und der
+                      EU-Datenschutz-Grundverordnung (DSGVO) haben Sie folgende
+                      Rechte:
                     </p>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
                         <span className="text-sage-mid">•</span>
-                        <span><strong>Auskunftsrecht:</strong> Sie können Auskunft über Ihre gespeicherten personenbezogenen Daten verlangen.</span>
+                        <span>
+                          <strong>Auskunftsrecht:</strong> Sie können Auskunft
+                          über Ihre gespeicherten personenbezogenen Daten
+                          verlangen.
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-sage-mid">•</span>
-                        <span><strong>Berichtigungsrecht:</strong> Sie können die Berichtigung unrichtiger Daten verlangen.</span>
+                        <span>
+                          <strong>Berichtigungsrecht:</strong> Sie können die
+                          Berichtigung unrichtiger Daten verlangen.
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-sage-mid">•</span>
-                        <span><strong>Löschungsrecht:</strong> Sie können die Löschung Ihrer Daten verlangen.</span>
+                        <span>
+                          <strong>Löschungsrecht:</strong> Sie können die
+                          Löschung Ihrer Daten verlangen.
+                        </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-sage-mid">•</span>
-                        <span><strong>Widerspruchsrecht:</strong> Sie können der Verarbeitung Ihrer Daten widersprechen.</span>
+                        <span>
+                          <strong>Widerspruchsrecht:</strong> Sie können der
+                          Verarbeitung Ihrer Daten widersprechen.
+                        </span>
                       </li>
                     </ul>
                     <p className="text-sm">
-                      Da wir jedoch keine personenbezogenen Daten speichern (ausser den anonymisierten 
-                      Server-Logfiles), sind diese Rechte in der Praxis selten relevant.
+                      Da wir jedoch keine personenbezogenen Daten speichern
+                      (ausser den anonymisierten Server-Logfiles), sind diese
+                      Rechte in der Praxis selten relevant.
                     </p>
                   </div>
                 </CardContent>
@@ -268,10 +317,11 @@ export default function Datenschutz() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den 
-                    aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen 
-                    in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die 
-                    neue Datenschutzerklärung.
+                    Wir behalten uns vor, diese Datenschutzerklärung anzupassen,
+                    damit sie stets den aktuellen rechtlichen Anforderungen
+                    entspricht oder um Änderungen unserer Leistungen in der
+                    Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch
+                    gilt dann die neue Datenschutzerklärung.
                   </p>
                 </CardContent>
               </Card>

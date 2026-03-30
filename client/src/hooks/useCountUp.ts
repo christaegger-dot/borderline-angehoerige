@@ -62,8 +62,8 @@ export function useCountUp({
     if (!element || hasAnimated) return;
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
             // Kurz den Startwert setzen, dann hochzählen

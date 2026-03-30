@@ -1,4 +1,8 @@
-export type SelbstfuersorgeKategorie = "alle" | "erkennen" | "techniken" | "ressourcen";
+export type SelbstfuersorgeKategorie =
+  | "alle"
+  | "erkennen"
+  | "techniken"
+  | "ressourcen";
 
 export type SelbstfuersorgeInfografik = {
   id: string;

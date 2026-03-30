@@ -4,7 +4,8 @@ import "./index.css";
 
 const root = document.getElementById("root");
 if (!root) {
-  document.body.textContent = "Anwendung konnte nicht gestartet werden. Bitte Seite neu laden.";
+  document.body.textContent =
+    "Anwendung konnte nicht gestartet werden. Bitte Seite neu laden.";
   throw new Error("#root element not found");
 }
 createRoot(root).render(<App />);

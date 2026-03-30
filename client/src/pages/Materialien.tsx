@@ -15,6 +15,7 @@ import {
   Shield,
   Sparkles,
   TrendingUp,
+  X,
 } from "lucide-react";
 import { Link } from "wouter";
 import { materials, quickStarts } from "@/content/materials";
@@ -40,11 +41,15 @@ function LightboxOverlay({
   title: string;
   onClose: () => void;
 }) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
     document.addEventListener("keydown", handleKeyDown);
+    // Focus close button on mount for keyboard accessibility
+    closeButtonRef.current?.focus();
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
@@ -59,9 +64,18 @@ function LightboxOverlay({
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-4xl max-h-[90vh] overflow-auto"
+        className="relative max-w-4xl max-h-[90vh] overflow-auto"
         onClick={e => e.stopPropagation()}
       >
+        <button
+          ref={closeButtonRef}
+          type="button"
+          onClick={onClose}
+          className="absolute top-2 right-2 z-10 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+          aria-label="Vorschau schliessen"
+        >
+          <X className="w-5 h-5" />
+        </button>
         <img
           src={src}
           alt={`Vorschau: ${title}`}

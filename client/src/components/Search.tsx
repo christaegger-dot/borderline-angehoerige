@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,6 +18,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
   const [activeIndex, setActiveIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useFocusTrap(isOpen);
 
   // Focus input when opened
   useEffect(() => {
@@ -133,6 +135,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
 
           {/* Search Modal */}
           <motion.div
+            ref={dialogRef}
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
@@ -175,6 +178,14 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                     <X className="w-4 h-4 text-muted-foreground" />
                   </button>
                 )}
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="p-1 hover:bg-muted rounded-md transition-colors ml-1 flex-shrink-0"
+                  aria-label="Suche schliessen"
+                >
+                  <X className="w-5 h-5 text-foreground" />
+                </button>
               </div>
 
               {/* Results */}

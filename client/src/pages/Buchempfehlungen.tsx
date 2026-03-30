@@ -2,7 +2,15 @@ import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { BookOpen, Heart, Users, Baby, Sparkles, ExternalLink, Star } from "lucide-react";
+import {
+  BookOpen,
+  Heart,
+  Users,
+  Baby,
+  Sparkles,
+  ExternalLink,
+  Star,
+} from "lucide-react";
 import { useState } from "react";
 
 interface Book {
@@ -38,47 +46,55 @@ const bookCategories: BookCategory[] = [
         author: "Paul T. Mason & Randi Kreger",
         publisher: "Psychiatrie-Verlag",
         year: "2010",
-        description: "Ein langjähriger Standardtitel für Angehörige. Beschreibt typische Beziehungsmuster, Kommunikationsideen und Fragen des Selbstschutzes in engeren Beziehungen.",
+        description:
+          "Ein langjähriger Standardtitel für Angehörige. Beschreibt typische Beziehungsmuster, Kommunikationsideen und Fragen des Selbstschutzes in engeren Beziehungen.",
         forWhom: "Partner, Familienmitglieder, enge Freunde",
         highlight: true,
-        amazonLink: "https://www.amazon.de/Eiertanz-Ratgeber-Angeh%C3%B6rige-Menschen-Borderline/dp/3884143379"
+        amazonLink:
+          "https://www.amazon.de/Eiertanz-Ratgeber-Angeh%C3%B6rige-Menschen-Borderline/dp/3884143379",
       },
       {
         title: "Ich hasse dich – verlass mich nicht",
         author: "Jerold J. Kreisman & Hal Straus",
         publisher: "Kösel",
         year: "2012",
-        description: "Erklärt die Schwarz-Weiss-Welt der Borderline-Persönlichkeit aus beiden Perspektiven. Hilft zu verstehen, warum Betroffene zwischen Idealisierung und Entwertung schwanken – und wie man damit umgehen kann.",
+        description:
+          "Erklärt die Schwarz-Weiss-Welt der Borderline-Persönlichkeit aus beiden Perspektiven. Hilft zu verstehen, warum Betroffene zwischen Idealisierung und Entwertung schwanken – und wie man damit umgehen kann.",
         forWhom: "Alle Angehörigen, auch Betroffene selbst",
         highlight: true,
-        amazonLink: "https://www.amazon.de/Ich-hasse-dich-Borderline-Pers%C3%B6nlichkeit-aktualisierte/dp/3466309476"
+        amazonLink:
+          "https://www.amazon.de/Ich-hasse-dich-Borderline-Pers%C3%B6nlichkeit-aktualisierte/dp/3466309476",
       },
       {
         title: "Borderline – Das Selbsthilfe-Buch für Angehörige",
         author: "Christa Windmüller",
         publisher: "Thieme",
         year: "2024",
-        description: "Aktueller Ratgeber mit Fokus auf Selbstfürsorge. Zeigt, wie Sie Stabilität im Alltag finden und ein positives Miteinander gestalten können – ohne sich selbst zu verlieren.",
+        description:
+          "Aktueller Ratgeber mit Fokus auf Selbstfürsorge. Zeigt, wie Sie Stabilität im Alltag finden und ein positives Miteinander gestalten können – ohne sich selbst zu verlieren.",
         forWhom: "Partner, Familienmitglieder",
-        amazonLink: "https://www.amazon.de/Borderline-Selbsthilfe-Buch-Angeh%C3%B6rige-Selbstf%C3%BCrsorge-Miteinander/dp/3432120753"
+        amazonLink:
+          "https://www.amazon.de/Borderline-Selbsthilfe-Buch-Angeh%C3%B6rige-Selbstf%C3%BCrsorge-Miteinander/dp/3432120753",
       },
       {
         title: "L(i)eben mit Borderline",
         author: "Udo Rauchfleisch",
         publisher: "Patmos",
         year: "2015",
-        description: "Einfühlsam geschrieben von einem erfahrenen Psychotherapeuten. Verbindet fachliches Wissen mit praktischen Tipps für den Beziehungsalltag.",
-        forWhom: "Partner, Angehörige"
+        description:
+          "Einfühlsam geschrieben von einem erfahrenen Psychotherapeuten. Verbindet fachliches Wissen mit praktischen Tipps für den Beziehungsalltag.",
+        forWhom: "Partner, Angehörige",
       },
       {
         title: "Wenn lieben weh tut",
         author: "Manuela Rösel",
         publisher: "Starks-Sture",
         year: "2006",
-        description: "Kommunikationsratgeber speziell für Partner in einer Borderline-Beziehung. Konkrete Gesprächsstrategien für schwierige Situationen.",
-        forWhom: "Partner in Paarbeziehungen"
-      }
-    ]
+        description:
+          "Kommunikationsratgeber speziell für Partner in einer Borderline-Beziehung. Konkrete Gesprächsstrategien für schwierige Situationen.",
+        forWhom: "Partner in Paarbeziehungen",
+      },
+    ],
   },
   {
     id: "eltern",
@@ -92,35 +108,40 @@ const bookCategories: BookCategory[] = [
         author: "Claudia Trasselli",
         publisher: "Hogrefe",
         year: "2022",
-        description: "Stellt erstmals im deutschen Sprachraum die von Alan Fruzzetti und Perry Hoffman entwickelten Familienskills vor. Praktische Fertigkeiten für den Familienalltag, basierend auf der Dialektisch-Behavioralen Therapie.",
+        description:
+          "Stellt erstmals im deutschen Sprachraum die von Alan Fruzzetti und Perry Hoffman entwickelten Familienskills vor. Praktische Fertigkeiten für den Familienalltag, basierend auf der Dialektisch-Behavioralen Therapie.",
         forWhom: "Eltern, Familien, auch für Fachpersonen",
         highlight: true,
-        amazonLink: "https://www.amazon.de/DBT-Familienskills-Ein-Praxisleitfaden-Claudia-Trasselli-ebook/dp/B0BJH95LH6"
+        amazonLink:
+          "https://www.amazon.de/DBT-Familienskills-Ein-Praxisleitfaden-Claudia-Trasselli-ebook/dp/B0BJH95LH6",
       },
       {
         title: "Ratgeber Borderline-Persönlichkeitsstörung",
         author: "Martin Bohus & Martina Wolf-Arehult",
         publisher: "Hogrefe",
         year: "2018",
-        description: "Informiert über Erscheinungsform, Ursachen und Behandlungsmöglichkeiten. Zeigt Eltern und Bezugspersonen, wie sie unterstützen können.",
-        forWhom: "Eltern, Bezugspersonen"
+        description:
+          "Informiert über Erscheinungsform, Ursachen und Behandlungsmöglichkeiten. Zeigt Eltern und Bezugspersonen, wie sie unterstützen können.",
+        forWhom: "Eltern, Bezugspersonen",
       },
       {
         title: "Borderline – Ein Ratgeber für Betroffene und Angehörige",
         author: "Ewald Rahn",
         publisher: "Psychiatrie-Verlag",
         year: "2001",
-        description: "Ein Klassiker, verständlich geschrieben. Bietet einen guten Überblick über die Störung und praktische Hinweise für den Umgang.",
-        forWhom: "Alle Angehörigen"
+        description:
+          "Ein Klassiker, verständlich geschrieben. Bietet einen guten Überblick über die Störung und praktische Hinweise für den Umgang.",
+        forWhom: "Alle Angehörigen",
       },
       {
         title: "Borderline verstehen und bewältigen",
         author: "Psychiatrie-Verlag",
         publisher: "Psychiatrie-Verlag",
-        description: "Mit passendem Begleitbuch. Liefert Tipps und Anleitungen, um die Erkrankung zu erkennen und Mut zu fassen für den gemeinsamen Weg.",
-        forWhom: "Eltern, Familien"
-      }
-    ]
+        description:
+          "Mit passendem Begleitbuch. Liefert Tipps und Anleitungen, um die Erkrankung zu erkennen und Mut zu fassen für den gemeinsamen Weg.",
+        forWhom: "Eltern, Familien",
+      },
+    ],
   },
   {
     id: "kinder",
@@ -133,41 +154,47 @@ const bookCategories: BookCategory[] = [
         title: "Mama, Mia und das Schleuderprogramm",
         author: "Psychiatrie-Verlag (Kids in BALANCE)",
         publisher: "Psychiatrie-Verlag",
-        description: "Das einzige deutschsprachige Kinderbuch speziell zum Thema Borderline. Erklärt kindgerecht das 'Schleuderprogramm der Gefühle' und zeigt Kindern, dass sie geliebt werden – auch wenn Mama oder Papa es manchmal nicht zeigen können.",
+        description:
+          "Das einzige deutschsprachige Kinderbuch speziell zum Thema Borderline. Erklärt kindgerecht das 'Schleuderprogramm der Gefühle' und zeigt Kindern, dass sie geliebt werden – auch wenn Mama oder Papa es manchmal nicht zeigen können.",
         forWhom: "Kinder ab 6 Jahren",
         highlight: true,
-        amazonLink: "https://www.amazon.de/Mama-Mia-das-Schleuderprogramm-Borderline/dp/3867390754"
+        amazonLink:
+          "https://www.amazon.de/Mama-Mia-das-Schleuderprogramm-Borderline/dp/3867390754",
       },
       {
         title: "Mamas Monster",
         author: "Erdmute von Mosch",
         publisher: "Psychiatrie-Verlag",
         year: "2024",
-        description: "Einfühlsames Bilderbuch über Depression, aber gut übertragbar auf andere psychische Erkrankungen. Zeigt, dass das 'Monster' nicht die Schuld des Kindes ist.",
-        forWhom: "Kinder ab 4 Jahren"
+        description:
+          "Einfühlsames Bilderbuch über Depression, aber gut übertragbar auf andere psychische Erkrankungen. Zeigt, dass das 'Monster' nicht die Schuld des Kindes ist.",
+        forWhom: "Kinder ab 4 Jahren",
       },
       {
         title: "Was ist bloss mit Mama los?",
         author: "Karen Glistrup",
         publisher: "Kösel",
-        description: "Hilft Kindern zu verstehen, wenn Eltern in seelische Krisen geraten. Mit Tipps, wie man mit Kindern über Angst, Depression, Stress und Trauma sprechen kann.",
-        forWhom: "Kinder ab 5 Jahren, auch für Eltern"
+        description:
+          "Hilft Kindern zu verstehen, wenn Eltern in seelische Krisen geraten. Mit Tipps, wie man mit Kindern über Angst, Depression, Stress und Trauma sprechen kann.",
+        forWhom: "Kinder ab 5 Jahren, auch für Eltern",
       },
       {
         title: "Sonnige Traurigtage",
         author: "Schirin Homeier",
         publisher: "Mabuse-Verlag",
-        description: "Ein Bilderbuch für Kinder psychisch kranker Eltern. Zeigt, dass Kinder nicht schuld sind und dass es Hilfe gibt.",
-        forWhom: "Jüngere Kinder ab 4 Jahren"
+        description:
+          "Ein Bilderbuch für Kinder psychisch kranker Eltern. Zeigt, dass Kinder nicht schuld sind und dass es Hilfe gibt.",
+        forWhom: "Jüngere Kinder ab 4 Jahren",
       },
       {
         title: "Papas Seele hat Schnupfen",
         author: "Claudia Gliemann & Nadia Faichney",
         publisher: "Monterosa",
-        description: "Ein erzählendes Kindersachbuch über die Welt der Psychiatrie. Nimmt Kindern die Angst vor dem Unbekannten.",
-        forWhom: "Kinder ab 6 Jahren"
-      }
-    ]
+        description:
+          "Ein erzählendes Kindersachbuch über die Welt der Psychiatrie. Nimmt Kindern die Angst vor dem Unbekannten.",
+        forWhom: "Kinder ab 6 Jahren",
+      },
+    ],
   },
   {
     id: "erfahrungsberichte",
@@ -181,41 +208,49 @@ const bookCategories: BookCategory[] = [
         author: "Andreas Knuf (Hrsg.)",
         publisher: "Psychiatrie-Verlag",
         year: "2002",
-        description: "Texte von Betroffenen und Angehörigen über ihr Erleben, ihre Gefühle und den Alltag mit Borderline. Hilfreich, wenn Sie unterschiedliche Innen- und Beziehungsperspektiven besser verstehen möchten.",
+        description:
+          "Texte von Betroffenen und Angehörigen über ihr Erleben, ihre Gefühle und den Alltag mit Borderline. Hilfreich, wenn Sie unterschiedliche Innen- und Beziehungsperspektiven besser verstehen möchten.",
         forWhom: "Alle, die verstehen wollen",
         highlight: true,
-        amazonLink: "https://www.amazon.de/Leben-auf-Grenze-Erfahrungen-Borderline/dp/3867390037"
+        amazonLink:
+          "https://www.amazon.de/Leben-auf-Grenze-Erfahrungen-Borderline/dp/3867390037",
       },
       {
         title: "Borderline-Mütter und ihre Kinder",
         author: "Christine Ann Lawson",
         publisher: "Psychosozial-Verlag",
         year: "2006",
-        description: "Für erwachsene Kinder, die ihre Kindheit mit einer Borderline-Mutter verstehen und verarbeiten möchten. Beschreibt verschiedene Mutter-Typen und Wege zur Bewältigung.",
-        forWhom: "Erwachsene Kinder von Betroffenen"
+        description:
+          "Für erwachsene Kinder, die ihre Kindheit mit einer Borderline-Mutter verstehen und verarbeiten möchten. Beschreibt verschiedene Mutter-Typen und Wege zur Bewältigung.",
+        forWhom: "Erwachsene Kinder von Betroffenen",
       },
       {
         title: "Borderline-Störung: Wie mir die DBT geholfen hat",
         author: "Kröger & Unckel (Hrsg.)",
         publisher: "Hogrefe",
         year: "2006",
-        description: "Betroffene berichten, wie ihnen die Dialektisch-Behaviorale Therapie geholfen hat. Gibt Hoffnung und zeigt, dass Veränderung möglich ist.",
-        forWhom: "Angehörige, die Therapie verstehen wollen"
-      }
-    ]
-  }
+        description:
+          "Betroffene berichten, wie ihnen die Dialektisch-Behaviorale Therapie geholfen hat. Gibt Hoffnung und zeigt, dass Veränderung möglich ist.",
+        forWhom: "Angehörige, die Therapie verstehen wollen",
+      },
+    ],
+  },
 ];
 
 export default function Buchempfehlungen() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const filteredCategories = activeCategory 
+  const filteredCategories = activeCategory
     ? bookCategories.filter(cat => cat.id === activeCategory)
     : bookCategories;
 
   return (
     <Layout>
-      <SEO title="Buchempfehlungen" description="Empfohlene Bücher für Angehörige von Menschen mit Borderline." path="/buchempfehlungen" />
+      <SEO
+        title="Buchempfehlungen"
+        description="Empfohlene Bücher für Angehörige von Menschen mit Borderline."
+        path="/buchempfehlungen"
+      />
       {/* Hero */}
       <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
@@ -230,15 +265,15 @@ export default function Buchempfehlungen() {
                 <BookOpen className="w-6 h-6 text-sand-warm" />
               </div>
             </div>
-            
+
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
               Buchempfehlungen
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl verbindet
-              Grundwissen, Beziehungsperspektiven, Selbstfürsorge und Erfahrungsnähe, ohne
-              Anspruch auf Vollständigkeit.
+              Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl
+              verbindet Grundwissen, Beziehungsperspektiven, Selbstfürsorge und
+              Erfahrungsnähe, ohne Anspruch auf Vollständigkeit.
             </p>
           </motion.div>
         </div>
@@ -255,27 +290,33 @@ export default function Buchempfehlungen() {
               aria-pressed={activeCategory === null}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === null
-                  ? 'bg-sage-dark text-white'
-                  : 'bg-muted/50 text-muted-foreground hover:bg-muted'
+                  ? "bg-sage-dark text-white"
+                  : "bg-muted/50 text-muted-foreground hover:bg-muted"
               }`}
             >
               Alle Kategorien
             </button>
-            {bookCategories.map((category) => (
+            {bookCategories.map(category => (
               <button
                 type="button"
                 key={category.id}
-                onClick={() => setActiveCategory(activeCategory === category.id ? null : category.id)}
+                onClick={() =>
+                  setActiveCategory(
+                    activeCategory === category.id ? null : category.id
+                  )
+                }
                 aria-label={category.title}
                 aria-pressed={activeCategory === category.id}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
                   activeCategory === category.id
-                    ? 'bg-sage-dark text-white'
-                    : 'bg-muted/50 text-muted-foreground hover:bg-muted'
+                    ? "bg-sage-dark text-white"
+                    : "bg-muted/50 text-muted-foreground hover:bg-muted"
                 }`}
               >
                 <category.icon className="w-4 h-4" />
-                <span className="hidden sm:inline">{category.title.replace("Für ", "")}</span>
+                <span className="hidden sm:inline">
+                  {category.title.replace("Für ", "")}
+                </span>
               </button>
             ))}
           </div>
@@ -296,9 +337,12 @@ export default function Buchempfehlungen() {
               >
                 {/* Category Header */}
                 <div className="flex items-start gap-4 mb-8">
-                  <div 
+                  <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `${category.color}20`, color: category.color }}
+                    style={{
+                      backgroundColor: `${category.color}20`,
+                      color: category.color,
+                    }}
                   >
                     <category.icon className="w-7 h-7" />
                   </div>
@@ -306,7 +350,9 @@ export default function Buchempfehlungen() {
                     <h2 className="text-2xl md:text-3xl font-normal text-foreground">
                       {category.title}
                     </h2>
-                    <p className="text-muted-foreground mt-1">{category.subtitle}</p>
+                    <p className="text-muted-foreground mt-1">
+                      {category.subtitle}
+                    </p>
                   </div>
                 </div>
 
@@ -321,7 +367,9 @@ export default function Buchempfehlungen() {
                       transition={{ delay: bookIndex * 0.05, ease: "easeOut" }}
                       className={bookIndex === 0 ? "md:col-span-2" : ""}
                     >
-                      <Card className={`h-full transition-all hover:shadow-md ${book.highlight ? 'ring-2 ring-sand-border' : ''}`}>
+                      <Card
+                        className={`h-full transition-all hover:shadow-md ${book.highlight ? "ring-2 ring-sand-border" : ""}`}
+                      >
                         <CardContent className="p-6">
                           {/* Book Header */}
                           <div className="flex items-start justify-between gap-3 mb-3">
@@ -345,7 +393,8 @@ export default function Buchempfehlungen() {
 
                           {/* Publisher & Year */}
                           <p className="text-xs text-muted-foreground mb-3">
-                            {book.publisher}{book.year && `, ${book.year}`}
+                            {book.publisher}
+                            {book.year && `, ${book.year}`}
                           </p>
 
                           {/* Description */}
@@ -382,7 +431,7 @@ export default function Buchempfehlungen() {
       </section>
 
       {/* Hinweis */}
-      <section className="py-12 bg-slate-pale">
+      <section className="py-8 md:py-12 bg-slate-pale">
         <div className="container">
           <Card className="bg-white border-slate-light">
             <CardContent className="p-6 md:p-8">
@@ -395,12 +444,15 @@ export default function Buchempfehlungen() {
                     Hinweis zu den Empfehlungen
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Diese Liste ist eine persönliche Auswahl und erhebt keinen Anspruch auf Vollständigkeit. 
-                    Die Bücher wurden nach Praxisrelevanz, Verständlichkeit und Aktualität ausgewählt. 
-                    Einige ältere Titel sind Klassiker, die nach wie vor wertvoll sind.
+                    Diese Liste ist eine persönliche Auswahl und erhebt keinen
+                    Anspruch auf Vollständigkeit. Die Bücher wurden nach
+                    Praxisrelevanz, Verständlichkeit und Aktualität ausgewählt.
+                    Einige ältere Titel sind Klassiker, die nach wie vor
+                    wertvoll sind.
                   </p>
                   <p className="text-sm text-muted-foreground/80">
-                    Viele Bücher sind auch in Bibliotheken verfügbar oder können über die Fernleihe bestellt werden.
+                    Viele Bücher sind auch in Bibliotheken verfügbar oder können
+                    über die Fernleihe bestellt werden.
                   </p>
                 </div>
               </div>

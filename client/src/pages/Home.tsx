@@ -285,7 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 md:py-10">
+      <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-2xl mx-auto">
             <Card className="border-border/50 bg-sand-muted/40">

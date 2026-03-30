@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import "./notfallkarte-print.css";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";

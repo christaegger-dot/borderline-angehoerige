@@ -67,27 +67,11 @@ export default function Home() {
       />
 
       <section className="relative overflow-hidden bg-navy text-white">
-        {/* Geometrische Kreise (SA-Pattern) */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            top: "-60px",
-            right: "-60px",
-            width: "300px",
-            height: "300px",
-            background: "rgba(82, 150, 160, 0.12)",
-          }}
-        />
-        <div
-          className="absolute rounded-full"
-          style={{
-            bottom: "-40px",
-            left: "30%",
-            width: "200px",
-            height: "200px",
-            background: "rgba(180, 83, 9, 0.08)",
-          }}
-        />
+        {/* Dekorative Kreise */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-sage-mid blur-3xl" />
+          <div className="absolute -bottom-10 left-1/3 w-48 h-48 rounded-full bg-amber blur-3xl" />
+        </div>
 
         <div className="container relative z-10 py-12 md:py-14 lg:py-16">
           <div className="max-w-3xl">

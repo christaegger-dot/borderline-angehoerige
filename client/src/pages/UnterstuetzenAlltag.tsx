@@ -228,6 +228,24 @@ export default function UnterstuetzenAlltag() {
                       "Regelmässigkeit und angekündigte Änderungen entlasten oft stärker als spontane intensive Zuwendung.",
                     example:
                       '"Ich rufe dich heute Abend nach dem Essen an. Wenn ich mich verspäte, sage ich Bescheid."',
+                    dialog: [
+                      {
+                        sprecher: "Betroffene Person",
+                        text: "Du hast dich gestern gar nicht gemeldet.",
+                      },
+                      {
+                        sprecher: "Sie",
+                        text: "Du hast recht — ich hätte Bescheid geben sollen. Das war nicht gut. Heute Abend um 20 Uhr rufe ich an.",
+                      },
+                      {
+                        sprecher: "Betroffene Person",
+                        text: "Und wenn wieder nichts kommt?",
+                      },
+                      {
+                        sprecher: "Sie",
+                        text: "Dann schreibe ich kurz. Aber ich halte das ein.",
+                      },
+                    ],
                   },
                   {
                     title: "Klar sagen, was Sie meinen",
@@ -235,6 +253,24 @@ export default function UnterstuetzenAlltag() {
                       "Doppeldeutigkeiten, Beschwichtigungen oder halbe Zusagen schaffen im Alltag oft mehr Unruhe als ehrliche Klarheit.",
                     example:
                       '"Ich brauche heute Abend Ruhe und bin morgen wieder ansprechbar."',
+                    dialog: [
+                      {
+                        sprecher: "Betroffene Person",
+                        text: "Kannst du heute noch vorbeikommen?",
+                      },
+                      {
+                        sprecher: "Sie",
+                        text: "Nein, heute nicht. Ich brauche den Abend für mich.",
+                      },
+                      {
+                        sprecher: "Betroffene Person",
+                        text: "Du willst also nicht.",
+                      },
+                      {
+                        sprecher: "Sie",
+                        text: "Ich will — und ich brauche heute Abstand. Morgen Nachmittag bin ich gerne da.",
+                      },
+                    ],
                   },
                   {
                     title: "Ruhige Präsenz statt hektisches Reparieren",
@@ -242,6 +278,21 @@ export default function UnterstuetzenAlltag() {
                       "Nicht jede Stimmung muss sofort gelöst werden. Oft hilft es mehr, ansprechbar und klar zu bleiben, ohne alles zu optimieren.",
                     example:
                       '"Ich merke, dass heute viel Anspannung da ist. Ich bin da, aber wir müssen das nicht sofort lösen."',
+                    dialog: [
+                      {
+                        sprecher: "Betroffene Person",
+                        text: "Alles ist sinnlos. Es hat keinen Zweck mehr.",
+                      },
+                      {
+                        sprecher: "Sie",
+                        text: "Das klingt gerade sehr schwer. Ich bin da.",
+                      },
+                      { sprecher: "Betroffene Person", text: "[Schweigen]" },
+                      {
+                        sprecher: "Sie",
+                        text: "Wir müssen das nicht sofort klären. Ich bleibe noch ein bisschen.",
+                      },
+                    ],
                   },
                   {
                     title: "Begrenzte Verfügbarkeit",
@@ -249,6 +300,24 @@ export default function UnterstuetzenAlltag() {
                       "Alltag wird tragfähiger, wenn Nähe nicht mit permanenter Erreichbarkeit verwechselt wird.",
                     example:
                       '"Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu."',
+                    dialog: [
+                      {
+                        sprecher: "Betroffene Person",
+                        text: "Es ist 23 Uhr und ich kann nicht schlafen. Du gehst nicht ran.",
+                      },
+                      {
+                        sprecher: "Sie",
+                        text: "Ich sehe deine Nachricht erst morgen früh. Nach 22 Uhr bin ich offline.",
+                      },
+                      {
+                        sprecher: "Betroffene Person",
+                        text: "Was soll ich denn jetzt tun?",
+                      },
+                      {
+                        sprecher: "Sie",
+                        text: "Für Notfälle gibt es die 143. Die ist immer da. Morgen früh melden wir uns.",
+                      },
+                    ],
                   },
                 ].map(item => (
                   <Card key={item.title} className="border-border/50">
@@ -259,10 +328,32 @@ export default function UnterstuetzenAlltag() {
                       <p className="text-muted-foreground text-sm mb-3">
                         {item.description}
                       </p>
-                      <div className="bg-sage-light/30 rounded-lg p-3">
+                      <div className="bg-sage-light/30 rounded-lg p-3 mb-3">
                         <p className="text-sm text-foreground italic">
                           {item.example}
                         </p>
+                      </div>
+                      <div className="space-y-1.5 border-t border-border/40 pt-3">
+                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                          Wie das klingen kann
+                        </p>
+                        {item.dialog.map((zeile, i) => (
+                          <div
+                            key={i}
+                            className={`flex gap-2 text-sm ${zeile.sprecher === "Sie" ? "flex-row-reverse" : ""}`}
+                          >
+                            <span
+                              className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-full h-fit mt-0.5 ${zeile.sprecher === "Sie" ? "bg-sage-wash text-sage-dark" : "bg-muted text-muted-foreground"}`}
+                            >
+                              {zeile.sprecher === "Sie" ? "Sie" : "BP"}
+                            </span>
+                            <p
+                              className={`text-sm leading-snug ${zeile.sprecher === "[Schweigen]" ? "italic text-muted-foreground" : "text-foreground"}`}
+                            >
+                              {zeile.text}
+                            </p>
+                          </div>
+                        ))}
                       </div>
                     </CardContent>
                   </Card>

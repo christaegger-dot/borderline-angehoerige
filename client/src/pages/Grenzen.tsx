@@ -12,6 +12,7 @@ import {
   ExternalLink,
   Eye,
   Heart,
+  MessageSquare,
   Shield,
   Users,
 } from "lucide-react";
@@ -294,6 +295,95 @@ export default function Grenzen() {
                     </CardContent>
                   </Card>
                 </div>
+              </div>
+            </ContentSection>
+
+            <ContentSection
+              title="Konkrete Grenzsätze für typische Situationen"
+              icon={<MessageSquare className="w-7 h-7 text-sage-dark" />}
+              id="grenzsaetze"
+              preview="Grenzen werden tragfähiger, wenn sie konkret, ruhig und auf Ihr eigenes Handeln bezogen sind — nicht als Vorwurf, sondern als klare Aussage."
+            >
+              <div className="space-y-4">
+                {[
+                  {
+                    thema: "Zeitliche Grenzen",
+                    situation: "Häufige Anrufe spät abends oder an Wochenenden",
+                    falsch:
+                      "«Du rufst immer zur falschen Zeit an. Das nervt mich.»",
+                    richtig:
+                      "«Ich bin unter der Woche bis 21 Uhr erreichbar. Danach bin ich offline. Bei echten Notfällen gibt es die Krisentelefone.»",
+                    hinweis:
+                      "Zeitgrenzen wirken am besten, wenn Sie sie in einer ruhigen Situation ankündigen — nicht mitten in einem Konflikt.",
+                  },
+                  {
+                    thema: "Finanzielle Grenzen",
+                    situation:
+                      "Bitte um Geld, Schuldenübernahme oder finanzielle Rettung",
+                    falsch:
+                      "«Du gibst immer zu viel aus. Ich mache das nicht mehr mit.»",
+                    richtig:
+                      "«Ich kann dir kein Geld leihen. Das hat nichts damit zu tun, wie wichtig du mir bist — aber das wäre für mich keine tragfähige Lösung.»",
+                    hinweis:
+                      "Finanzielle Grenzen sind besonders schwer, weil sie sich anfühlen wie «ich lasse dich fallen». Sie sind es nicht.",
+                  },
+                  {
+                    thema: "Emotionale Grenzen",
+                    situation:
+                      "Beschimpfungen, Vorwürfe oder persönliche Angriffe im Gespräch",
+                    falsch: "«Du bist unmöglich. So rede ich nicht mit dir.»",
+                    richtig:
+                      "«Wenn du mich so ansprichst, beende ich dieses Gespräch. Wir können es später weiterführen, wenn beide ruhiger sind.»",
+                    hinweis:
+                      "Sagen Sie es ruhig und gehen Sie dann tatsächlich. Die Grenze trägt nur, wenn Sie sie auch einhalten.",
+                  },
+                  {
+                    thema: "Grenzen bei Rollenübernahme",
+                    situation:
+                      "Erwartung, immer da zu sein oder alle Probleme zu lösen",
+                    falsch:
+                      "«Ich kann nicht immer für dich da sein. Du musst das selbst in den Griff kriegen.»",
+                    richtig:
+                      "«Ich bin gerne für dich da — und ich kann nicht dein ganzes Netz sein. Dafür brauchen wir gemeinsam andere Unterstützung.»",
+                    hinweis:
+                      "Diese Grenze kombiniert Fürsorge mit Klarheit: Sie sagen, was Sie können, und benennen, was nicht.",
+                  },
+                ].map(item => (
+                  <Card
+                    key={item.thema}
+                    className="border-border/50 overflow-hidden"
+                  >
+                    <div className="bg-muted/30 px-5 py-3 border-b border-border/40">
+                      <h3 className="font-semibold text-foreground text-sm">
+                        {item.thema}
+                      </h3>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        {item.situation}
+                      </p>
+                    </div>
+                    <CardContent className="p-5 space-y-3">
+                      <div className="flex gap-3">
+                        <span className="text-alert font-bold text-sm shrink-0 mt-0.5">
+                          ✗
+                        </span>
+                        <p className="text-sm text-muted-foreground italic">
+                          {item.falsch}
+                        </p>
+                      </div>
+                      <div className="flex gap-3 bg-sage-wash/50 rounded-lg p-3">
+                        <span className="text-sage-dark font-bold text-sm shrink-0 mt-0.5">
+                          ✓
+                        </span>
+                        <p className="text-sm text-foreground italic">
+                          {item.richtig}
+                        </p>
+                      </div>
+                      <p className="text-xs text-muted-foreground border-l-2 border-sage-mid/30 pl-3">
+                        {item.hinweis}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </ContentSection>
 

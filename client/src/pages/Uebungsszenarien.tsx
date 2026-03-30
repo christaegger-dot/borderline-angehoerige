@@ -27,7 +27,7 @@ export default function Uebungsszenarien() {
               href="/kommunizieren"
               className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
             >
-              ← Zurück zu Kommunizieren
+              ← Zur Kommunikations-Seite
             </Link>
 
             <div className="flex items-center gap-3 mb-6 mt-4">
@@ -101,7 +101,7 @@ export default function Uebungsszenarien() {
                     label: "Krisenbegleitung",
                     sub: "Deeskalation und Ampel-System",
                   },
-                ].map((item) => (
+                ].map(item => (
                   <Link
                     key={item.href}
                     href={item.href}

@@ -189,6 +189,9 @@ export default function Genesung() {
                       erreichen eine symptomatische Remission innerhalb von etwa
                       10 Jahren
                     </p>
+                    <p className="text-xs text-muted-foreground/70 mt-1">
+                      (Daten aus Spezialzentren)
+                    </p>
                   </div>
                   <div className="text-center p-6 bg-white/60 rounded-xl">
                     <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">

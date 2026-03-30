@@ -21,7 +21,7 @@ interface Book {
   description: string;
   forWhom: string;
   highlight?: boolean;
-  amazonLink?: string;
+  shopLink?: string;
 }
 
 interface BookCategory {
@@ -50,8 +50,7 @@ const bookCategories: BookCategory[] = [
           "Ein langjähriger Standardtitel für Angehörige. Beschreibt typische Beziehungsmuster, Kommunikationsideen und Fragen des Selbstschutzes in engeren Beziehungen.",
         forWhom: "Partner, Familienmitglieder, enge Freunde",
         highlight: true,
-        amazonLink:
-          "https://www.amazon.de/Eiertanz-Ratgeber-Angeh%C3%B6rige-Menschen-Borderline/dp/3884143379",
+        shopLink: "https://www.psychiatrie-verlag.de",
       },
       {
         title: "Ich hasse dich – verlass mich nicht",
@@ -62,8 +61,7 @@ const bookCategories: BookCategory[] = [
           "Erklärt die Schwarz-Weiss-Welt der Borderline-Persönlichkeit aus beiden Perspektiven. Hilft zu verstehen, warum Betroffene zwischen Idealisierung und Entwertung schwanken – und wie man damit umgehen kann.",
         forWhom: "Alle Angehörigen, auch Betroffene selbst",
         highlight: true,
-        amazonLink:
-          "https://www.amazon.de/Ich-hasse-dich-Borderline-Pers%C3%B6nlichkeit-aktualisierte/dp/3466309476",
+        shopLink: "https://www.koesel.de",
       },
       {
         title: "Borderline – Das Selbsthilfe-Buch für Angehörige",
@@ -73,8 +71,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Aktueller Ratgeber mit Fokus auf Selbstfürsorge. Zeigt, wie Sie Stabilität im Alltag finden und ein positives Miteinander gestalten können – ohne sich selbst zu verlieren.",
         forWhom: "Partner, Familienmitglieder",
-        amazonLink:
-          "https://www.amazon.de/Borderline-Selbsthilfe-Buch-Angeh%C3%B6rige-Selbstf%C3%BCrsorge-Miteinander/dp/3432120753",
+        shopLink: "https://www.thieme.de",
       },
       {
         title: "L(i)eben mit Borderline",
@@ -112,8 +109,7 @@ const bookCategories: BookCategory[] = [
           "Stellt erstmals im deutschen Sprachraum die von Alan Fruzzetti und Perry Hoffman entwickelten Familienskills vor. Praktische Fertigkeiten für den Familienalltag, basierend auf der Dialektisch-Behavioralen Therapie.",
         forWhom: "Eltern, Familien, auch für Fachpersonen",
         highlight: true,
-        amazonLink:
-          "https://www.amazon.de/DBT-Familienskills-Ein-Praxisleitfaden-Claudia-Trasselli-ebook/dp/B0BJH95LH6",
+        shopLink: "https://www.hogrefe.com/de",
       },
       {
         title: "Ratgeber Borderline-Persönlichkeitsstörung",
@@ -158,8 +154,7 @@ const bookCategories: BookCategory[] = [
           "Das einzige deutschsprachige Kinderbuch speziell zum Thema Borderline. Erklärt kindgerecht das 'Schleuderprogramm der Gefühle' und zeigt Kindern, dass sie geliebt werden – auch wenn Mama oder Papa es manchmal nicht zeigen können.",
         forWhom: "Kinder ab 6 Jahren",
         highlight: true,
-        amazonLink:
-          "https://www.amazon.de/Mama-Mia-das-Schleuderprogramm-Borderline/dp/3867390754",
+        shopLink: "https://www.psychiatrie-verlag.de",
       },
       {
         title: "Mamas Monster",
@@ -212,8 +207,7 @@ const bookCategories: BookCategory[] = [
           "Texte von Betroffenen und Angehörigen über ihr Erleben, ihre Gefühle und den Alltag mit Borderline. Hilfreich, wenn Sie unterschiedliche Innen- und Beziehungsperspektiven besser verstehen möchten.",
         forWhom: "Alle, die verstehen wollen",
         highlight: true,
-        amazonLink:
-          "https://www.amazon.de/Leben-auf-Grenze-Erfahrungen-Borderline/dp/3867390037",
+        shopLink: "https://www.psychiatrie-verlag.de",
       },
       {
         title: "Borderline-Mütter und ihre Kinder",
@@ -407,14 +401,14 @@ export default function Buchempfehlungen() {
                             <span className="text-xs text-muted-foreground">
                               {book.forWhom}
                             </span>
-                            {book.amazonLink && (
+                            {book.shopLink && (
                               <a
-                                href={book.amazonLink}
+                                href={book.shopLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-1 text-xs text-slate-mid hover:text-slate-dark transition-colors"
                               >
-                                Ansehen
+                                Beim Verlag
                                 <ExternalLink className="w-3 h-3" />
                               </a>
                             )}

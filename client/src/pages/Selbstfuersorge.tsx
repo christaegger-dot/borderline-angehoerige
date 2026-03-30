@@ -302,9 +302,9 @@ export default function Selbstfuersorge() {
               <Card className="mt-6 bg-sage-mid/10 border-sage-mid">
                 <CardContent className="p-5">
                   <p className="text-foreground font-medium mb-2">
-                    Wenn Sie mehrere dieser Warnsignale bei sich bemerken, ist
-                    es Zeit zu handeln. Sprechen Sie mit Ihrem Hausarzt oder
-                    suchen Sie professionelle Unterstützung.
+                    Wenn Sie mehrere dieser Warnsignale bei sich bemerken, kann
+                    es sinnvoll sein zu handeln. Sprechen Sie mit Ihrem Hausarzt
+                    oder suchen Sie professionelle Unterstützung.
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Merken Sie ausserdem, dass Sie Andere nicht mehr klar auf

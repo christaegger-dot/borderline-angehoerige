@@ -87,9 +87,9 @@ export default function FAQ() {
       color: "var(--color-sage-mid)",
       questions: [
         {
-          question: "Wie reagiere ich auf Drohungen?",
+          question: "Wie reagiere ich auf bedrohlich wirkende Aussagen?",
           answer:
-            "Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben – sagen Sie klar: «Wenn du sagst, du willst dir etwas antun, hole ich Hilfe.» Bei anderen Drohungen (z.B. «Dann verlasse ich dich») ruhig bleiben, das Gefühl dahinter ansprechen und nicht aus Angst nachgeben. Solche Aussagen entstehen meist aus Überforderung oder Angst.",
+            "Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben – sagen Sie klar: «Wenn du sagst, du willst dir etwas antun, hole ich Hilfe.» Bei anderen Aussagen aus Verzweiflung (z.B. «Dann verlasse ich dich») ruhig bleiben, das Gefühl dahinter ansprechen und nicht aus Angst nachgeben. Solche Aussagen entstehen meist aus grosser Verlassensangst, nicht aus rationaler Absicht – sie signalisieren innere Not, keine Strategie.",
           links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }],
         },
         {

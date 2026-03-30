@@ -297,7 +297,7 @@ export default function UnterstuetzenAlltag() {
                   {
                     title: "Begrenzte Verfügbarkeit",
                     description:
-                      "Alltag wird tragfähiger, wenn Nähe nicht mit permanenter Erreichbarkeit verwechselt wird.",
+                      "Viele Angehörige fühlen sich verpflichtet, rund um die Uhr erreichbar zu sein – dieses Gefühl ist verständlich, aber auf Dauer nicht tragfähig. Grenzen bei der Erreichbarkeit sind keine Ablehnung, sondern ein Weg, langfristig präsent bleiben zu können.",
                     example:
                       '"Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu."',
                     dialog: [

@@ -341,6 +341,56 @@ export default function UnterstuetzenTherapie() {
             </ContentSection>
 
             <ContentSection
+              title="Erstkontakt mit dem Therapeuten – Musterbrief"
+              icon={<Mail className="w-7 h-7 text-sage-mid" />}
+              id="musterbrief"
+              preview="Eine kurze, klare E-Mail kann den Einstieg erleichtern. Hier ein Muster, das Sie anpassen können."
+            >
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Wenn Sie als Angehörige/r Kontakt mit dem Therapeuten
+                  aufnehmen möchten – z. B. um sich zu informieren oder Ihre
+                  Perspektive einzubringen – kann eine kurze schriftliche
+                  Nachricht helfen. Das Muster unten dient als Ausgangspunkt.
+                </p>
+                <Card className="border-border/50 bg-cream">
+                  <CardContent className="p-5">
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+                      Muster-E-Mail
+                    </p>
+                    <div className="font-mono text-sm text-foreground leading-relaxed space-y-3 whitespace-pre-line">
+                      <p>
+                        {`Betreff: Kurze Anfrage als Angehörige/r von [Vorname]
+
+Sehr geehrte/r Frau/Herr [Name],
+
+ich bin [Ihre Beziehung zur Person, z. B. Mutter / Partner] von [Vorname], der/die bei Ihnen in Behandlung ist.
+
+Ich möchte Sie nicht in die Behandlung einbeziehen oder Informationen über meinen Angehörigen einholen – das liegt allein bei ihm/ihr.
+
+Mir wäre es wichtig zu wissen, ob es für Angehörige die Möglichkeit gibt, einmal kurz mit Ihnen zu sprechen – nicht über die Therapie, sondern über meine eigene Rolle und Unterstützungsmöglichkeiten.
+
+Mit freundlichen Grüssen,
+[Ihr Name]
+[Optional: Telefonnummer für Rückruf]`}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-sage-wash/40 border border-sage/30">
+                  <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-muted-foreground">
+                    <strong className="text-foreground">Wichtig:</strong> Der
+                    Therapeut ist an die Schweigepflicht gebunden und darf ohne
+                    Einwilligung Ihres Angehörigen keine Inhalte der Behandlung
+                    besprechen. Das ist kein Ablehnen – sondern professionelles
+                    Handeln.
+                  </p>
+                </div>
+              </div>
+            </ContentSection>
+
+            <ContentSection
               title="Rückschläge und Unterbrüche"
               icon={<RefreshCw className="w-7 h-7 text-sage-mid" />}
               id="rueckschlaege"

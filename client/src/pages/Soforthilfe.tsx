@@ -422,6 +422,45 @@ export default function Notfall() {
                   Vorgehen anleiten.
                 </p>
               </div>
+
+              {/* Telefon-Leitfaden */}
+              <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-rot-body border-t border-white/10">
+                <p className="text-white/90 text-xs font-semibold uppercase tracking-wide mb-3">
+                  Die ersten 30 Sekunden am Telefon
+                </p>
+                <div className="space-y-2">
+                  {[
+                    {
+                      nr: "1",
+                      text: "Name nennen + Beziehung: «Ich bin [Name], ich rufe für meine Tochter/meinen Partner/…»",
+                    },
+                    {
+                      nr: "2",
+                      text: "Art der Situation: «Es geht um eine Suizidgefahr / Selbstverletzung / unkontrolliertes Verhalten»",
+                    },
+                    {
+                      nr: "3",
+                      text: "Was passiert gerade: «Sie sitzt in ihrem Zimmer und sagt, sie will nicht mehr leben»",
+                    },
+                    {
+                      nr: "4",
+                      text: "Sicherheit klären: «Ich bin bei ihr / sie ist alleine / wir sind in Sicherheit»",
+                    },
+                  ].map(item => (
+                    <div
+                      key={item.nr}
+                      className="flex items-start gap-3 p-3 rounded-lg bg-white/10"
+                    >
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-white/20 text-white text-xs font-bold flex items-center justify-center">
+                        {item.nr}
+                      </span>
+                      <p className="text-white/90 text-sm leading-snug">
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
 
             {/* ─── BLOCK 2: PSYCHIATRISCHE KRISE (ORANGE) ─── */}

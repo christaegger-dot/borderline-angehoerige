@@ -18,6 +18,7 @@ import {
   CheckCircle2,
   Users,
   Lightbulb,
+  CalendarDays,
 } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktByIdStrict } from "@/data/kontakte";
@@ -679,6 +680,75 @@ export default function UnterstuetzenKrise() {
                       </ul>
                     </CardContent>
                   </Card>
+                </div>
+
+                {/* Tag-für-Tag: Erste Woche nach der Krise */}
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <CalendarDays className="w-5 h-5 text-sage-mid" />
+                    Erste Woche nach der Krise – Tag für Tag
+                  </h3>
+                  <div className="space-y-3">
+                    {[
+                      {
+                        tage: "Tag 1–2",
+                        titel: "Ruhe und Sicherheit",
+                        farbe: "bg-sage-wash/40 border-sage/40",
+                        punkte: [
+                          "Keine Aufarbeitung, keine Erklärungen, kein Warum",
+                          "Sagen Sie: «Ich bin froh, dass du da bist. Wir müssen jetzt nichts besprechen.»",
+                          "Grundbedürfnisse sichern: Schlafen, Essen, körperliche Anwesenheit",
+                        ],
+                      },
+                      {
+                        tage: "Tag 3–4",
+                        titel: "Kurze Check-ins",
+                        farbe: "bg-cream border-border/40",
+                        punkte: [
+                          "Kurzes, konkretes Nachfragen erlaubt: «Wie geht es dir gerade – in diesem Moment?»",
+                          "Keine Bewertungen, keine Rückblicke auf die Krise",
+                          "Therapeut oder Krisentelefon kontaktieren, falls nötig",
+                        ],
+                      },
+                      {
+                        tage: "Tag 5–7",
+                        titel: "Aufarbeitung vorbereiten",
+                        farbe: "bg-muted/30 border-border/40",
+                        punkte: [
+                          "Erst wenn beide bereit sind: Was hat geholfen? Was hat die Krise ausgelöst?",
+                          "Kein Vorwurf, kein Schuldaufbau – gemeinsames Lernen",
+                          "Nächsten Termin beim Therapeuten koordinieren",
+                        ],
+                      },
+                    ].map(phase => (
+                      <Card
+                        key={phase.tage}
+                        className={`border ${phase.farbe}`}
+                      >
+                        <CardContent className="p-4">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-xs font-semibold text-sage-dark bg-sage-wash px-2 py-0.5 rounded-full">
+                              {phase.tage}
+                            </span>
+                            <span className="text-sm font-semibold text-foreground">
+                              {phase.titel}
+                            </span>
+                          </div>
+                          <ul className="space-y-1.5">
+                            {phase.punkte.map((p, i) => (
+                              <li
+                                key={i}
+                                className="flex items-start gap-2 text-sm text-muted-foreground"
+                              >
+                                <span className="text-sage-mid mt-0.5">→</span>
+                                {p}
+                              </li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Früherkennung für nächste Krise */}

@@ -90,6 +90,7 @@ export default function ContentSection({
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 rounded-xl"
         aria-expanded={isOpen}
+        aria-controls={id ? `section-content-${id}` : undefined}
         aria-label={`Abschnitt ${title} ${isOpen ? "zuklappen" : "aufklappen"}`}
       >
         <div className="flex items-center justify-between gap-3 p-4 rounded-[10px] bg-white hover:bg-sage-wash/50 active:bg-sage-wash/50 border border-border border-l-4 border-l-sage-dark transition-colors">
@@ -121,7 +122,10 @@ export default function ContentSection({
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-5 px-1 text-[14.5px] leading-relaxed">
+            <div
+              id={id ? `section-content-${id}` : undefined}
+              className="pt-5 px-1 text-[14.5px] leading-relaxed"
+            >
               {children}
             </div>
           </motion.div>

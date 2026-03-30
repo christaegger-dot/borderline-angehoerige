@@ -10,9 +10,13 @@ export interface AppRoute {
 // lazily load pages
 const Home = lazy(() => import("@/pages/Home"));
 const Verstehen = lazy(() => import("@/pages/Verstehen"));
-const UnterstuetzenUebersicht = lazy(() => import("@/pages/UnterstuetzenUebersicht"));
+const UnterstuetzenUebersicht = lazy(
+  () => import("@/pages/UnterstuetzenUebersicht")
+);
 const UnterstuetzenAlltag = lazy(() => import("@/pages/UnterstuetzenAlltag"));
-const UnterstuetzenTherapie = lazy(() => import("@/pages/UnterstuetzenTherapie"));
+const UnterstuetzenTherapie = lazy(
+  () => import("@/pages/UnterstuetzenTherapie")
+);
 const UnterstuetzenKrise = lazy(() => import("@/pages/UnterstuetzenKrise"));
 const Kommunizieren = lazy(() => import("@/pages/Kommunizieren"));
 const Grenzen = lazy(() => import("@/pages/Grenzen"));
@@ -53,11 +57,14 @@ export const routes: AppRoute[] = [
   { path: "/datenschutz", component: Datenschutz },
   { path: "/genesung", component: Genesung },
   { path: "/beratung", component: Selbsthilfegruppen },
-  { path: "/selbsthilfegruppen", component: Selbsthilfegruppen },
+  { path: "/selbsthilfegruppen", redirectTo: "/beratung" },
   { path: "/feedback", component: Feedback },
   { path: "/glossar", component: Glossar },
   { path: "/buchempfehlungen", component: Buchempfehlungen },
-  { path: "/therapieangebote", redirectTo: "/unterstuetzen/therapie#therapieangebote" },
+  {
+    path: "/therapieangebote",
+    redirectTo: "/unterstuetzen/therapie#therapieangebote",
+  },
   { path: "/faq", component: FAQ },
   { path: "/ueber-uns", component: UeberUns },
   { path: "/fachstelle", component: Fachstelle },

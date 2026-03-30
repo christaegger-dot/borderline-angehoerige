@@ -494,6 +494,16 @@ export default function Selbstfuersorge() {
                   </div>
                 </CardContent>
               </Card>
+              <p className="text-sm text-muted-foreground">
+                Eigene Beruhigungsstrategien persönlich anpassen und für
+                Krisensituationen aufschreiben?{" "}
+                <Link
+                  href="/notfallkarte"
+                  className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                >
+                  Notfallkarte erstellen →
+                </Link>
+              </p>
             </ContentSection>
 
             {/* ═══ 4. Langfristige Strategien ═══ */}

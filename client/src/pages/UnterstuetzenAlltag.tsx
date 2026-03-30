@@ -416,6 +416,21 @@ export default function UnterstuetzenAlltag() {
               preview="Plötzliche Entscheidungen, Ausgaben, Risikoverhalten – dieser Alltag ist anders als Depression. Wie Sie reagieren, ohne zu moralisieren, und Ihre Grenzen dennoch halten."
             >
               <div className="space-y-6">
+                <Card className="border-l-4 border-l-slate-200 bg-slate-50/40">
+                  <CardContent className="p-4 flex items-start gap-3">
+                    <span className="text-sage-mid mt-0.5 shrink-0">→</span>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Wird die Situation akut – Selbst- oder Fremdgefährdung,
+                      unkontrollierbare Eskalation?{" "}
+                      <Link
+                        href="/unterstuetzen/krise"
+                        className="text-sage-dark underline underline-offset-2 hover:text-sage-mid font-medium"
+                      >
+                        Krisenbegleitung →
+                      </Link>
+                    </p>
+                  </CardContent>
+                </Card>
                 <Card className="border-l-4 border-l-amber-400 bg-amber-50/40">
                   <CardContent className="p-5">
                     <p className="text-muted-foreground leading-relaxed">

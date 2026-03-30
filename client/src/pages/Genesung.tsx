@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import EvidenceNote from "@/components/EvidenceNote";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
@@ -9,12 +8,9 @@ import {
   ArrowRight,
   BookOpen,
   ExternalLink,
-  Filter,
-  HandHeart,
   Heart,
   Image as ImageIcon,
   RefreshCw,
-  Search,
   Sparkles,
   Stethoscope,
   TrendingUp,
@@ -25,23 +21,7 @@ import ContentSection from "@/components/ContentSection";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { genesungItems as genesungMaterialItems } from "@/content/genesung";
 
-const genesungCategories = [
-  { id: "alle", label: "Alle", icon: Filter },
-  { id: "verstehen", label: "Verstehen", icon: Search },
-  { id: "handeln", label: "Handeln", icon: HandHeart },
-];
-
-const genesungItems = genesungMaterialItems;
-
 function GenesungInfografiken() {
-  const [activeFilter, setActiveFilter] = useState("alle");
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  const filteredItems =
-    activeFilter === "alle"
-      ? genesungItems
-      : genesungItems.filter(i => i.category === activeFilter);
-
   return (
     <ContentSection
       title="Materialien & Infografiken"
@@ -54,45 +34,14 @@ function GenesungInfografiken() {
         Tab.
       </p>
 
-      <div className="flex flex-wrap gap-2 mb-6">
-        {genesungCategories.map(cat => {
-          const count =
-            cat.id === "alle"
-              ? genesungItems.length
-              : genesungItems.filter(i => i.category === cat.id).length;
-          return (
-            <Button
-              key={cat.id}
-              variant={activeFilter === cat.id ? "default" : "outline"}
-              size="sm"
-              onClick={() => {
-                setActiveFilter(cat.id);
-                setTimeout(() => {
-                  gridRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }, 100);
-              }}
-              className={`whitespace-nowrap shrink-0 ${
-                activeFilter === cat.id
-                  ? "bg-sage-mid hover:bg-sage-dark text-white"
-                  : ""
-              }`}
-            >
-              <cat.icon className="w-4 h-4 mr-1.5" />
-              {cat.label} ({count})
-            </Button>
-          );
-        })}
-      </div>
-
-      <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {filteredItems.map((item, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {genesungMaterialItems.map((item, index) => (
           <Card
             key={item.title}
             className={`overflow-hidden border-border/50 hover:shadow-lg transition-all duration-500 group ${
-              filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""
+              genesungMaterialItems.length > 1 && index === 0
+                ? "sm:col-span-2"
+                : ""
             }`}
           >
             <div className="aspect-[3/4] overflow-hidden bg-muted">

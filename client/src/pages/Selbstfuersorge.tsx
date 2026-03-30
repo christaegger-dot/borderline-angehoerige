@@ -1,6 +1,6 @@
 import SEO from "@/components/SEO";
 import EvidenceNote from "@/components/EvidenceNote";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,6 @@ import {
   Users,
   Clock,
   Brain,
-  Wind,
   Shield,
   ChevronDown,
   ChevronUp,
@@ -22,143 +21,9 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
-import GroundingTimer from "@/components/interactive/GroundingTimer";
 import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
-
-// Atemübung: Phasen-Sequenz als Konstante
-const ATEM_PHASEN: {
-  phase: "einatmen" | "halten" | "ausatmen";
-  dauer: number;
-}[] = [
-  { phase: "einatmen", dauer: 4 },
-  { phase: "halten", dauer: 4 },
-  { phase: "ausatmen", dauer: 6 },
-];
-
-// Atemübung Komponente
-function AtemuebungCard() {
-  const [isActive, setIsActive] = useState(false);
-  const [phase, setPhase] = useState<
-    "einatmen" | "halten" | "ausatmen" | "pause"
-  >("einatmen");
-  const [count, setCount] = useState(4);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const phaseIndexRef = useRef(0);
-  const countRef = useRef(4);
-  const startPhaseRef = useRef<(idx: number) => void>(() => {});
-
-  const clearCurrentInterval = useCallback(() => {
-    if (intervalRef.current !== null) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  }, []);
-
-  // Cleanup bei Unmount
-  useEffect(() => {
-    return () => clearCurrentInterval();
-  }, [clearCurrentInterval]);
-
-  const startPhase = useCallback(
-    (phaseIdx: number) => {
-      if (phaseIdx >= ATEM_PHASEN.length) {
-        setIsActive(false);
-        clearCurrentInterval();
-        return;
-      }
-
-      const { phase: phaseName, dauer } = ATEM_PHASEN[phaseIdx];
-      phaseIndexRef.current = phaseIdx;
-      countRef.current = dauer;
-      setPhase(phaseName);
-      setCount(dauer);
-
-      intervalRef.current = setInterval(() => {
-        countRef.current--;
-        setCount(countRef.current);
-        if (countRef.current === 0) {
-          clearCurrentInterval();
-          startPhaseRef.current(phaseIdx + 1);
-        }
-      }, 1000);
-    },
-    [clearCurrentInterval]
-  );
-  useEffect(() => {
-    startPhaseRef.current = startPhase;
-  }, [startPhase]);
-
-  const startUebung = useCallback(() => {
-    if (isActive) return; // Guard gegen Doppelklick
-    clearCurrentInterval();
-    setIsActive(true);
-    startPhase(0);
-  }, [isActive, clearCurrentInterval, startPhase]);
-
-  return (
-    <Card className="bg-gradient-to-br from-sage-lighter/30 to-sage-wash/20 border-sage-mid">
-      <CardContent className="p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <Wind className="w-6 h-6 text-sage-mid" />
-          <span
-            className="font-semibold text-foreground text-base block"
-            role="heading"
-            aria-level={2}
-          >
-            4-4-6 Atemübung
-          </span>
-        </div>
-
-        <p className="text-muted-foreground text-sm mb-4">
-          Diese Atemtechnik aktiviert Ihren Parasympathikus und hilft, aus dem
-          Stressmodus herauszukommen.
-        </p>
-
-        {isActive ? (
-          <div className="text-center py-6">
-            <div className="w-24 h-24 mx-auto rounded-full bg-sage-mid/20 flex items-center justify-center mb-4">
-              <span className="text-4xl font-bold text-sage-dark">{count}</span>
-            </div>
-            <p className="text-lg font-medium text-sage-dark">
-              {phase === "einatmen" && "Einatmen..."}
-              {phase === "halten" && "Halten..."}
-              {phase === "ausatmen" && "Langsam ausatmen..."}
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="w-6 h-6 rounded-full bg-sage-mid/20 flex items-center justify-center text-xs font-medium">
-                1
-              </span>
-              4 Sekunden einatmen
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="w-6 h-6 rounded-full bg-sage-mid/20 flex items-center justify-center text-xs font-medium">
-                2
-              </span>
-              4 Sekunden halten
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="w-6 h-6 rounded-full bg-sage-mid/20 flex items-center justify-center text-xs font-medium">
-                3
-              </span>
-              6 Sekunden ausatmen
-            </div>
-            <Button
-              onClick={startUebung}
-              className="w-full mt-4 bg-sage-mid hover:bg-sage-dark text-white"
-            >
-              Übung starten
-            </Button>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  );
-}
 
 // Akkordeon für Übungen (innerhalb der ContentSections)
 function UebungAkkordeon({
@@ -453,12 +318,6 @@ export default function Selbstfuersorge() {
                 dass der Stress überhand nimmt:
               </p>
 
-              <div className="grid md:grid-cols-[7fr_5fr] gap-4 mb-6">
-                <AtemuebungCard />
-
-                <GroundingTimer />
-              </div>
-
               <Card className="border-border/50">
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-foreground mb-3">
@@ -494,14 +353,14 @@ export default function Selbstfuersorge() {
                   </div>
                 </CardContent>
               </Card>
-              <p className="text-sm text-muted-foreground">
-                Eigene Beruhigungsstrategien persönlich anpassen und für
-                Krisensituationen aufschreiben?{" "}
+              <p className="text-sm text-muted-foreground mt-4">
+                Weitere interaktive Übungen (Atemübung, Grounding-Timer) finden
+                Sie auf der{" "}
                 <Link
-                  href="/notfallkarte"
+                  href="/soforthilfe#tools"
                   className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
                 >
-                  Notfallkarte erstellen →
+                  Soforthilfe-Seite →
                 </Link>
               </p>
             </ContentSection>
@@ -898,8 +757,13 @@ export default function Selbstfuersorge() {
                           Sie mussten früh erwachsen werden und Verantwortung
                           übernehmen, die nicht Ihre war. Selbstfürsorge kann
                           sich fremd anfühlen – üben Sie sie trotzdem. Sie haben
-                          ein Recht auf ein eigenes Leben, ohne ständig
-                          verfügbar zu sein.
+                          ein Recht auf ein eigenes Leben.{" "}
+                          <Link
+                            href="/grenzen"
+                            className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
+                          >
+                            Wie Sie das nach aussen kommunizieren →
+                          </Link>
                         </p>
                       </div>
                     </div>

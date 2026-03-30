@@ -19,14 +19,19 @@ export default function EvidenceNote({
   className = "",
 }: EvidenceNoteProps) {
   return (
-    <aside className={`rounded-lg border border-border/60 bg-muted/20 p-4 ${className}`.trim()} aria-label={title}>
+    <aside
+      className={`rounded-lg border border-border/60 bg-muted/20 p-4 ${className}`.trim()}
+      aria-label={title}
+    >
       <div className="flex items-start gap-2">
         <FileText className="mt-0.5 h-4 w-4 text-muted-foreground" />
         <div className="min-w-0">
           <p className="text-sm font-semibold text-foreground">{title}</p>
-          {definition && <p className="mt-1 text-xs text-muted-foreground">{definition}</p>}
+          {definition && (
+            <p className="mt-1 text-xs text-muted-foreground">{definition}</p>
+          )}
           <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
-            {sources.map((source) => (
+            {sources.map(source => (
               <li key={source.label}>
                 {source.href ? (
                   <a

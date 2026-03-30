@@ -5,7 +5,11 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { MotionConfig } from "framer-motion";
 
-export default function AppProviders({ children }: { children: React.ReactNode }) {
+export default function AppProviders({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ErrorBoundary>
       <MotionConfig reducedMotion="user">

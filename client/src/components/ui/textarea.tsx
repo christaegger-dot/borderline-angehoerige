@@ -12,7 +12,9 @@ function Textarea({
 }: React.ComponentProps<"textarea">) {
   // Get dialog composition context if available (will be no-op if not inside Dialog)
   const dialogComposition = useDialogComposition();
-  const composingTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const composingTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
 
   React.useEffect(() => {
     return () => {
@@ -26,10 +28,11 @@ function Textarea({
     onCompositionEnd: handleCompositionEnd,
     onKeyDown: handleKeyDown,
   } = useComposition<HTMLTextAreaElement>({
-    onKeyDown: (e) => {
+    onKeyDown: e => {
       // Check if this is an Enter key that should be blocked
       const isComposing =
-        (e.nativeEvent as KeyboardEvent).isComposing || dialogComposition.justEndedComposing();
+        (e.nativeEvent as KeyboardEvent).isComposing ||
+        dialogComposition.justEndedComposing();
 
       // If Enter key is pressed while composing or just after composition ended,
       // don't call the user's onKeyDown (this blocks the business logic)

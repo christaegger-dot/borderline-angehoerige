@@ -152,18 +152,18 @@ client/src/
 
 ### Kurzfristig (1–2 Sprints)
 
-1. Route-Registry einführen (ohne Seiteninhalte umzubauen).  
-2. `Layout.tsx` in 2–3 Teilmodule extrahieren.  
+1. Route-Registry einführen (ohne Seiteninhalte umzubauen).
+2. `Layout.tsx` in 2–3 Teilmodule extrahieren.
 3. Ungenutzte Module bereinigen oder markieren.
 
 ### Mittelfristig (2–4 Sprints)
 
-4. 2 größte Seiten (`Selbstfuersorge`, `Verstehen`) modularisieren (Sections + Content-Dateien).  
+4. 2 größte Seiten (`Selbstfuersorge`, `Verstehen`) modularisieren (Sections + Content-Dateien).
 5. Gemeinsame Domain-Typen für Karten/Abschnitte/Navigation einführen.
 
 ### Langfristig
 
-6. Einheitliches Content-Modell für alle redaktionellen Seiten.  
+6. Einheitliches Content-Modell für alle redaktionellen Seiten.
 7. Optional: Lint-Regeln für maximale Dateigröße/Komplexität (z. B. Soft-Limits ab 300–400 LOC pro React-Datei).
 
 ---
@@ -180,9 +180,10 @@ client/src/
 
 ## 8) Audit-Urteil
 
-**Gesamtbewertung:** 7/10  
-- **Logik:** gut, aber an einzelnen Knoten überladen  
-- **Stringenz:** mittel bis gut, mit klaren Drift-Signalen  
+**Gesamtbewertung:** 7/10
+
+- **Logik:** gut, aber an einzelnen Knoten überladen
+- **Stringenz:** mittel bis gut, mit klaren Drift-Signalen
 - **Skalierbarkeit:** aktuell ausreichend, mittelfristig refaktorierungsbedürftig
 
 Mit den oben genannten Maßnahmen kann die Struktur ohne Big-Bang-Refactoring in eine deutlich robustere, teamfreundlichere Architektur überführt werden.

@@ -14,32 +14,33 @@ const berichte: Erfahrungsbericht[] = [
     title: "Wenn Helfen nur noch mehr Druck erzeugt",
     text: "Viele Angehörige erleben, dass jeder gut gemeinte Versuch zu helfen die Lage scheinbar weiter verschärft. Entlastung beginnt oft dort, wo Verantwortung klarer getrennt wird: Sie sind nicht für die Gefühle des anderen zuständig, aber für Ihre eigene Reaktion und Ihre Grenzen.",
     icon: "partner",
-    highlight: "Sie sind nicht für die Gefühle des anderen zuständig, aber für Ihre eigene Reaktion."
+    highlight:
+      "Sie sind nicht für die Gefühle des anderen zuständig, aber für Ihre eigene Reaktion.",
   },
   {
     title: "Wenn Fürsorge in Selbstverlust kippt",
     text: "Gerade Eltern geraten leicht in die Dynamik, immer mehr zu tragen, zu regulieren und aufzufangen. Ein Wendepunkt ist oft die Einsicht, dass Zugewandtheit und Grenzsetzung kein Widerspruch sind. Beziehung wird damit nicht härter, sondern häufig klarer.",
     icon: "eltern",
-    highlight: "Sie können zugewandt bleiben, ohne alles zu tragen."
+    highlight: "Sie können zugewandt bleiben, ohne alles zu tragen.",
   },
   {
     title: "Wenn Rückschläge alles wieder infrage stellen",
     text: "Krisen, Kontaktabbrüche und neue Annäherungen können sich über Jahre abwechseln. Vielen Angehörigen hilft es, Entwicklung nicht nur an einzelnen Eskalationen zu messen. Austausch mit anderen Angehörigen oder eine Beratung kann helfen, diese Langstreckenbelastung besser zu tragen.",
     icon: "geschwister",
-    highlight: "Entwicklung verläuft selten geradlinig."
+    highlight: "Entwicklung verläuft selten geradlinig.",
   },
   {
     title: "Wenn Wut, Trauer und Mitgefühl nebeneinander stehen",
     text: "Angehörige erleben oft nicht nur Sorge, sondern auch Wut, Trauer, Erschöpfung und zeitweise Rückzug. Diese Ambivalenz ist kein Zeichen fehlender Liebe, sondern Teil einer hoch belasteten Beziehungssituation. Entlastend wird es meist, wenn diese Widersprüche benannt werden dürfen.",
     icon: "partner",
-    highlight: "Ambivalenz ist in belasteten Beziehungen normal."
-  }
+    highlight: "Ambivalenz ist in belasteten Beziehungen normal.",
+  },
 ];
 
 const iconMap = {
   partner: Heart,
   eltern: Users,
-  geschwister: User
+  geschwister: User,
 };
 
 interface ErfahrungsberichteProps {
@@ -51,7 +52,7 @@ interface ErfahrungsberichteProps {
 export default function Erfahrungsberichte({
   maxBerichte = 4,
   showTitle = true,
-  variant = "carousel"
+  variant = "carousel",
 }: ErfahrungsberichteProps) {
   const displayBerichte = berichte.slice(0, maxBerichte);
 
@@ -66,14 +67,15 @@ export default function Erfahrungsberichte({
         Typische Erfahrungen von Angehörigen
       </h2>
       <p className="text-muted-foreground max-w-2xl mx-auto">
-        Diese kurzen Verdichtungen fassen Erfahrungen zusammen, die in der Angehörigenarbeit
-        häufig geschildert werden. Sie sollen Wiedererkennung ermöglichen, nicht einzelne
-        echte Biografien nachstellen.
+        Diese kurzen Verdichtungen fassen Erfahrungen zusammen, die in der
+        Angehörigenarbeit häufig geschildert werden. Sie sollen Wiedererkennung
+        ermöglichen, nicht einzelne echte Biografien nachstellen.
       </p>
     </motion.div>
   ) : null;
 
-  const gridClasses = variant === "full" ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2";
+  const gridClasses =
+    variant === "full" ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2";
 
   return (
     <section className="py-8 md:py-12">
@@ -91,7 +93,9 @@ export default function Erfahrungsberichte({
                     <div className="w-10 h-10 rounded-full bg-sage-lighter flex items-center justify-center">
                       <Icon className="w-5 h-5 text-sage-mid" />
                     </div>
-                    <p className="font-medium text-foreground">{bericht.title}</p>
+                    <p className="font-medium text-foreground">
+                      {bericht.title}
+                    </p>
                   </div>
 
                   <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
@@ -133,7 +137,8 @@ export default function Erfahrungsberichte({
           viewport={{ once: true }}
           className="text-center text-sm text-muted-foreground mt-6"
         >
-          Die Texte sind redaktionell verdichtete Erfahrungsmuster aus der Angehörigenarbeit.
+          Die Texte sind redaktionell verdichtete Erfahrungsmuster aus der
+          Angehörigenarbeit.
         </motion.p>
       </div>
     </section>

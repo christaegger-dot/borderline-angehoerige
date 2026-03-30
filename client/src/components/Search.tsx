@@ -94,14 +94,18 @@ export default function Search({ isOpen, onClose }: SearchProps) {
       e.preventDefault();
       setActiveIndex(prev => {
         const next = prev < results.length - 1 ? prev + 1 : 0;
-        resultsRef.current?.querySelectorAll("a")[next]?.scrollIntoView({ block: "nearest" });
+        resultsRef.current
+          ?.querySelectorAll("a")
+          [next]?.scrollIntoView({ block: "nearest" });
         return next;
       });
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setActiveIndex(prev => {
         const next = prev > 0 ? prev - 1 : results.length - 1;
-        resultsRef.current?.querySelectorAll("a")[next]?.scrollIntoView({ block: "nearest" });
+        resultsRef.current
+          ?.querySelectorAll("a")
+          [next]?.scrollIntoView({ block: "nearest" });
         return next;
       });
     } else if (e.key === "Enter" && activeIndex >= 0) {

@@ -1,25 +1,62 @@
 import { useRef, useState } from "react";
 import { Link } from "wouter";
-import { ExternalLink, Download, Filter, Activity, Zap, Heart } from "lucide-react";
+import {
+  ExternalLink,
+  Download,
+  Filter,
+  Activity,
+  Zap,
+  Heart,
+} from "lucide-react";
 import ContentSection from "@/components/ContentSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { selbstfuersorgeInfografiken, type SelbstfuersorgeKategorie } from "@/content/selbstfuersorge";
+import {
+  selbstfuersorgeInfografiken,
+  type SelbstfuersorgeKategorie,
+} from "@/content/selbstfuersorge";
 
 const selbstfuersorgeCategories = [
-  { id: "alle", label: "Alle", icon: Filter, count: selbstfuersorgeInfografiken.length },
-  { id: "erkennen", label: "Erkennen", icon: Activity, count: selbstfuersorgeInfografiken.filter((i) => i.category === "erkennen").length },
-  { id: "techniken", label: "Techniken", icon: Zap, count: selbstfuersorgeInfografiken.filter((i) => i.category === "techniken").length },
-  { id: "ressourcen", label: "Ressourcen", icon: Heart, count: selbstfuersorgeInfografiken.filter((i) => i.category === "ressourcen").length },
+  {
+    id: "alle",
+    label: "Alle",
+    icon: Filter,
+    count: selbstfuersorgeInfografiken.length,
+  },
+  {
+    id: "erkennen",
+    label: "Erkennen",
+    icon: Activity,
+    count: selbstfuersorgeInfografiken.filter(i => i.category === "erkennen")
+      .length,
+  },
+  {
+    id: "techniken",
+    label: "Techniken",
+    icon: Zap,
+    count: selbstfuersorgeInfografiken.filter(i => i.category === "techniken")
+      .length,
+  },
+  {
+    id: "ressourcen",
+    label: "Ressourcen",
+    icon: Heart,
+    count: selbstfuersorgeInfografiken.filter(i => i.category === "ressourcen")
+      .length,
+  },
 ] as const;
 
 export default function SelbstfuersorgeInfografikenSection() {
-  const [activeFilter, setActiveFilter] = useState<SelbstfuersorgeKategorie>("alle");
+  const [activeFilter, setActiveFilter] =
+    useState<SelbstfuersorgeKategorie>("alle");
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const filteredItems = activeFilter === "alle"
-    ? selbstfuersorgeInfografiken
-    : selbstfuersorgeInfografiken.filter((item) => item.category === activeFilter);
+  const filteredItems =
+    activeFilter === "alle"
+      ? selbstfuersorgeInfografiken
+      : selbstfuersorgeInfografiken.filter(
+          item => item.category === activeFilter
+        );
 
   return (
     <ContentSection
@@ -29,11 +66,13 @@ export default function SelbstfuersorgeInfografikenSection() {
       preview="Infografiken als hochauflösende PDFs zum Herunterladen und Ausdrucken."
     >
       <p className="text-sm text-muted-foreground mb-4">
-        <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer oben rechts.
+        <strong className="text-foreground">Vorschau = Web-Bild.</strong> «PDF
+        öffnen» öffnet die A4-Druckversion im neuen Tab – Download im PDF-Viewer
+        oben rechts.
       </p>
 
       <div className="flex flex-wrap gap-2 mb-6">
-        {selbstfuersorgeCategories.map((cat) => (
+        {selbstfuersorgeCategories.map(cat => (
           <Button
             key={cat.id}
             variant={activeFilter === cat.id ? "default" : "outline"}
@@ -41,7 +80,10 @@ export default function SelbstfuersorgeInfografikenSection() {
             onClick={() => {
               setActiveFilter(cat.id);
               setTimeout(() => {
-                gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+                gridRef.current?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
               }, 50);
             }}
             className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-sage-dark hover:bg-sage-mid text-white" : ""}`}
@@ -53,13 +95,26 @@ export default function SelbstfuersorgeInfografikenSection() {
       </div>
 
       <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredItems.map((item) => (
-          <Card key={item.id} className={`overflow-hidden border-border/50 hover:shadow-md transition-shadow ${item.featured && activeFilter === "alle" ? "md:col-span-2" : ""}`}>
+        {filteredItems.map(item => (
+          <Card
+            key={item.id}
+            className={`overflow-hidden border-border/50 hover:shadow-md transition-shadow ${item.featured && activeFilter === "alle" ? "md:col-span-2" : ""}`}
+          >
             <div className="aspect-[3/4] overflow-hidden bg-muted">
-              <img src={item.webp} alt={item.title} className="w-full h-full object-cover object-top" loading="lazy" width={400} height={223} decoding="async" />
+              <img
+                src={item.webp}
+                alt={item.title}
+                className="w-full h-full object-cover object-top"
+                loading="lazy"
+                width={400}
+                height={223}
+                decoding="async"
+              />
             </div>
             <CardContent className="p-4">
-              <h3 className="font-medium text-foreground mb-1 text-sm">{item.title}</h3>
+              <h3 className="font-medium text-foreground mb-1 text-sm">
+                {item.title}
+              </h3>
               <p className="text-xs text-muted-foreground mb-3">{item.desc}</p>
               <a
                 href={item.pdf}

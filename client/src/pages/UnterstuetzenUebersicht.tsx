@@ -446,11 +446,9 @@ export default function UnterstuetzenUebersicht() {
               </div>
 
               <div className="mt-4 text-center">
-                <Link href="/materialien">
-                  <Button variant="outline" size="sm">
-                    Alle Materialien anzeigen
-                  </Button>
-                </Link>
+                <Button variant="outline" size="sm" asChild>
+                  <Link href="/materialien">Alle Materialien anzeigen</Link>
+                </Button>
               </div>
             </motion.div>
 
@@ -485,15 +483,18 @@ export default function UnterstuetzenUebersicht() {
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/verstehen">
-                <Button variant="ghost">← Verstehen</Button>
-              </Link>
-              <Link href="/unterstuetzen/alltag">
-                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
+              <Button variant="ghost" asChild>
+                <Link href="/verstehen">← Verstehen</Link>
+              </Button>
+              <Button
+                className="bg-sage-dark hover:bg-sage-mid text-white"
+                asChild
+              >
+                <Link href="/unterstuetzen/alltag">
                   Weiter: Im Alltag unterstützen
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

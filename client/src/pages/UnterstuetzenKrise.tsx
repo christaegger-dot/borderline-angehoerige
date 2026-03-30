@@ -109,16 +109,17 @@ export default function UnterstuetzenKrise() {
                 {gruen143.label} ({gruen143.nummer})
               </a>
             </p>
-            <Link href="/soforthilfe">
-              <Button
-                variant="secondary"
-                size="sm"
-                className="bg-white text-alert"
-              >
+            <Button
+              variant="secondary"
+              size="sm"
+              className="bg-white text-alert"
+              asChild
+            >
+              <Link href="/soforthilfe">
                 <Phone className="w-4 h-4 mr-2" />
                 Alle Notfallnummern
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -864,14 +865,13 @@ export default function UnterstuetzenKrise() {
                         interaktiver Wegweiser führt Sie Schritt für Schritt
                         durch verschiedene Krisenszenarien.
                       </p>
-                      <Link href="/wegweiser">
-                        <Button
-                          size="sm"
-                          className="bg-sage-dark hover:bg-sage-mid text-white"
-                        >
-                          Zum Wegweiser
-                        </Button>
-                      </Link>
+                      <Button
+                        size="sm"
+                        className="bg-sage-dark hover:bg-sage-mid text-white"
+                        asChild
+                      >
+                        <Link href="/wegweiser">Zum Wegweiser</Link>
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -904,11 +904,9 @@ export default function UnterstuetzenKrise() {
                         Infografiken und Handouts zum Thema Krisenbegleitung
                         finden Sie auf der Materialien-Seite.
                       </p>
-                      <Link href="/materialien">
-                        <Button variant="outline" size="sm">
-                          Zur Materialien-Seite
-                        </Button>
-                      </Link>
+                      <Button variant="outline" size="sm" asChild>
+                        <Link href="/materialien">Zur Materialien-Seite</Link>
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -922,15 +920,18 @@ export default function UnterstuetzenKrise() {
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/unterstuetzen/therapie">
-                <Button variant="ghost">← Therapie begleiten</Button>
-              </Link>
-              <Link href="/kommunizieren">
-                <Button className="bg-sage-dark hover:bg-sage-mid text-white">
+              <Button variant="ghost" asChild>
+                <Link href="/unterstuetzen/therapie">← Therapie begleiten</Link>
+              </Button>
+              <Button
+                className="bg-sage-dark hover:bg-sage-mid text-white"
+                asChild
+              >
+                <Link href="/kommunizieren">
                   Weiter: Kommunizieren
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

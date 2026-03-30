@@ -131,11 +131,9 @@ export default function SelbstfuersorgeInfografikenSection() {
       </div>
 
       <div className="mt-4 text-center">
-        <Link href="/materialien">
-          <Button variant="outline" size="sm">
-            Alle Materialien anzeigen
-          </Button>
-        </Link>
+        <Button variant="outline" size="sm" asChild>
+          <Link href="/materialien">Alle Materialien anzeigen</Link>
+        </Button>
       </div>
     </ContentSection>
   );

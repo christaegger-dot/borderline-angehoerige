@@ -125,9 +125,9 @@ export default function VerstehenInfografikenSection() {
       </div>
 
       <div className="mt-6 text-center">
-        <Link href="/materialien">
-          <Button variant="outline">Alle Materialien anzeigen</Button>
-        </Link>
+        <Button variant="outline" asChild>
+          <Link href="/materialien">Alle Materialien anzeigen</Link>
+        </Button>
       </div>
     </motion.div>
   );

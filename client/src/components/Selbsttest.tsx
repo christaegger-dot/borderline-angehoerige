@@ -392,16 +392,17 @@ export default function Selbsttest() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <Link href={result.primaryLink}>
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto text-white"
-                  style={{ backgroundColor: result.color }}
-                >
+              <Button
+                size="lg"
+                className="w-full sm:w-auto text-white"
+                style={{ backgroundColor: result.color }}
+                asChild
+              >
+                <Link href={result.primaryLink}>
                   {result.primaryText}
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
 
             <div className="border-t border-border/30 pt-4">

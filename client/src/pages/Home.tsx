@@ -98,25 +98,27 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                <Link href="/verstehen">
-                  <Button
-                    size="lg"
-                    className="bg-sage-dark hover:bg-sage-mid text-white w-full sm:w-auto"
-                  >
+                <Button
+                  size="lg"
+                  className="bg-sage-dark hover:bg-sage-mid text-white w-full sm:w-auto"
+                  asChild
+                >
+                  <Link href="/verstehen">
                     <BookOpen className="w-5 h-5 mr-2" />
                     Borderline besser verstehen
-                  </Button>
-                </Link>
-                <Link href="/unterstuetzen/uebersicht">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white/25 text-white hover:bg-white/10 w-full sm:w-auto"
-                  >
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/25 text-white hover:bg-white/10 w-full sm:w-auto"
+                  asChild
+                >
+                  <Link href="/unterstuetzen/uebersicht">
                     <Heart className="w-5 h-5 mr-2" />
                     Was hilft in meiner Lage?
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
 
               <Link
@@ -222,12 +224,12 @@ export default function Home() {
             </div>
 
             <div className="mt-6">
-              <Link href="/selbsttest">
-                <Button variant="outline" size="sm" className="gap-2">
+              <Button variant="outline" size="sm" className="gap-2" asChild>
+                <Link href="/selbsttest">
                   <Compass className="w-4 h-4" />
                   Oder den kurzen Selbsttest nutzen
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -281,16 +283,12 @@ export default function Home() {
                   Sekundäre Wege für Vertiefung und konkrete Unterstützung.
                 </p>
                 <div className="flex gap-3">
-                  <Link href="/materialien">
-                    <Button variant="outline" size="sm">
-                      Materialien
-                    </Button>
-                  </Link>
-                  <Link href="/beratung">
-                    <Button variant="outline" size="sm">
-                      Beratung
-                    </Button>
-                  </Link>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/materialien">Materialien</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link href="/beratung">Beratung</Link>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -309,16 +307,17 @@ export default function Home() {
                 Hier finden Sie sofortige Hilfe und Notfallnummern.
               </p>
             </div>
-            <Link href="/soforthilfe">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="bg-white text-alert hover:bg-white/90"
-              >
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-white text-alert hover:bg-white/90"
+              asChild
+            >
+              <Link href="/soforthilfe">
                 <Phone className="w-5 h-5 mr-2" />
                 Soforthilfe öffnen
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

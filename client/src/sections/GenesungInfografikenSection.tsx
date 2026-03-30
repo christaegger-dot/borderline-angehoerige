@@ -114,12 +114,12 @@ export default function GenesungInfografikenSection() {
         ))}
       </div>
       <div className="text-center mt-8">
-        <Link href="/materialien">
-          <Button variant="outline">
+        <Button variant="outline" asChild>
+          <Link href="/materialien">
             Alle Materialien ansehen
             <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </div>
     </ContentSection>
   );

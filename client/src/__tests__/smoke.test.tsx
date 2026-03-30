@@ -23,7 +23,7 @@ vi.mock("framer-motion", () => ({
         }: React.HTMLAttributes<HTMLElement> & {
           children?: React.ReactNode;
         }) => {
-          const Tag = tag as keyof JSX.IntrinsicElements;
+          const Tag = tag as React.ElementType;
           return <Tag {...(props as object)}>{children}</Tag>;
         },
     }

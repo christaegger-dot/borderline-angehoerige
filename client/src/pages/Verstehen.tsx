@@ -553,6 +553,9 @@ export default function Verstehen() {
                 <Link href="/glossar">
                   <Button variant="outline">Fachbegriffe im Glossar →</Button>
                 </Link>
+                <Link href="/buchempfehlungen">
+                  <Button variant="outline">Buchempfehlungen →</Button>
+                </Link>
               </div>
             </motion.div>
 

@@ -1076,4 +1076,101 @@ export const searchableContent: SearchEntry[] = [
     href: "/soforthilfe",
     section: "Krisenressourcen",
   },
+
+  // Wegweiser
+  {
+    title: "Situations-Wegweiser",
+    description:
+      "Was tun in konkreten Situationen? Interaktiver Wegweiser durch Krise, Eskalation und Alltagssituationen",
+    keywords: [
+      "wegweiser",
+      "situation",
+      "was tun",
+      "krise",
+      "eskalation",
+      "schritt für schritt",
+      "anleitung",
+      "konkret",
+      "hilfe",
+    ],
+    href: "/wegweiser",
+    section: "Tools",
+  },
+
+  // Übungsszenarien
+  {
+    title: "Kommunikations-Übungen",
+    description:
+      "SET, DEAR MAN und Validierung interaktiv üben – mit realistischen Szenarien und Feedback",
+    keywords: [
+      "üben",
+      "szenarien",
+      "kommunikation",
+      "set",
+      "dear man",
+      "validierung",
+      "feedback",
+      "training",
+      "rollenspiel",
+      "interaktiv",
+    ],
+    href: "/uebungen",
+    section: "Tools",
+  },
+
+  // Notfallkarte
+  {
+    title: "Notfallkarte erstellen",
+    description:
+      "Persönliche Notfallkarte für Krisenmomente: Notfallkontakte, Warnsignale und Deeskalationsschritte festhalten",
+    keywords: [
+      "notfallkarte",
+      "notfall",
+      "karte",
+      "krisenplan",
+      "kontakte",
+      "warnsignale",
+      "deeskalation",
+      "vorbereitung",
+    ],
+    href: "/notfallkarte",
+    section: "Tools",
+  },
+
+  // Fachstelle
+  {
+    title: "Fachstelle Angehörigenarbeit PUK Zürich",
+    description:
+      "Beratung, Orientierung und Materialien für Angehörige – Fachstelle der Psychiatrischen Universitätsklinik Zürich",
+    keywords: [
+      "fachstelle",
+      "puk",
+      "zürich",
+      "beratung",
+      "psychiatrie",
+      "angehörigenarbeit",
+      "professionnelle hilfe",
+      "universitätsklinik",
+    ],
+    href: "/fachstelle",
+    section: "Ressourcen",
+  },
+
+  // Quellen
+  {
+    title: "Quellenangaben & Literatur",
+    description:
+      "Wissenschaftliche Grundlagen und Studien, auf denen diese Website basiert",
+    keywords: [
+      "quellen",
+      "literatur",
+      "studien",
+      "evidenz",
+      "zanarini",
+      "forschung",
+      "bibliographie",
+    ],
+    href: "/quellen",
+    section: "Ressourcen",
+  },
 ];

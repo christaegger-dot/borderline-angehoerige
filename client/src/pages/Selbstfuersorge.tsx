@@ -354,13 +354,12 @@ export default function Selbstfuersorge() {
                 </CardContent>
               </Card>
               <p className="text-sm text-muted-foreground mt-4">
-                Weitere interaktive Übungen (Atemübung, Grounding-Timer) finden
-                Sie auf der{" "}
+                Eigene Beruhigungsstrategien festhalten?{" "}
                 <Link
-                  href="/soforthilfe#tools"
+                  href="/notfallkarte"
                   className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
                 >
-                  Soforthilfe-Seite →
+                  Notfallkarte erstellen →
                 </Link>
               </p>
             </ContentSection>

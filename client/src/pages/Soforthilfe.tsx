@@ -317,7 +317,7 @@ export default function Notfall() {
               Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz –
               wenn sofortiges Handeln erforderlich ist.
             </p>
-            <p className="inline-flex items-center gap-1.5 text-sm text-muted-foreground mb-5 bg-muted/40 px-3 py-1.5 rounded-full border border-border/50">
+            <p className="inline-flex items-center gap-1.5 text-sm text-muted-foreground mb-5 bg-muted/60 px-3 py-1.5 rounded-full border border-border/50">
               <Info className="w-3.5 h-3.5 shrink-0" />
               Gilt für die <strong className="text-foreground">
                 Schweiz
@@ -359,7 +359,7 @@ export default function Notfall() {
       </section>
 
       {/* ═══ TRIAGE ═══ */}
-      <section className="bg-muted/30 border-y border-border/40 py-4 print:hidden">
+      <section className="bg-muted/50 border-y border-border/40 py-4 print:hidden">
         <div className="container">
           <div className="max-w-2xl mx-auto">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">
@@ -510,7 +510,7 @@ export default function Notfall() {
                   ].map(item => (
                     <div
                       key={item.nr}
-                      className="flex items-start gap-3 p-3 rounded-lg bg-white/10"
+                      className="flex items-start gap-3 p-3 rounded-lg bg-white/20"
                     >
                       <span className="flex-shrink-0 w-5 h-5 rounded-full bg-white/20 text-white text-xs font-bold flex items-center justify-center">
                         {item.nr}

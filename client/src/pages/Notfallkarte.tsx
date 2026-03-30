@@ -457,7 +457,7 @@ export default function Notfallkarte() {
             <div className="space-y-2">
               {data.calmingStrategies.map((s, i) => (
                 <div key={s.id} className="flex items-center gap-2">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--color-sage-wash)] text-[var(--color-sage-dark)] text-xs font-medium flex items-center justify-center print:bg-gray-100">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--color-sage-wash)] text-[var(--color-sage-darker,var(--color-sage-dark))] text-xs font-bold flex items-center justify-center print:bg-gray-100">
                     {i + 1}
                   </span>
                   <input
@@ -503,7 +503,7 @@ export default function Notfallkarte() {
         </Card>
 
         {/* Info box */}
-        <div className="bg-[var(--color-sage-wash)] rounded-xl p-5 text-sm text-muted-foreground leading-relaxed print:hidden">
+        <div className="bg-[var(--color-sage-wash)] rounded-xl p-5 text-sm text-foreground/75 leading-relaxed print:hidden">
           <p className="font-medium text-foreground mb-1">
             Ihre Daten bleiben bei Ihnen
           </p>

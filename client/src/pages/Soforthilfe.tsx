@@ -686,28 +686,66 @@ export default function Notfall() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+              <h3 className="font-semibold text-foreground mb-1 flex items-center gap-2">
                 <Shield className="w-5 h-5 text-muted-foreground" />
-                Für die Zeit nach der Krise
+                Krisenbegleitung – was kommt wann?
               </h3>
+              <p className="text-xs text-muted-foreground mb-4">
+                Diese Seite ist für den akuten Moment. Danach gibt es drei
+                unterschiedliche nächste Schritte:
+              </p>
               <div className="space-y-2">
                 <Link
-                  href="/wegweiser"
-                  className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-[var(--color-sage-dark)]/30 hover:border-[var(--color-sage-dark)]/50 hover:shadow-sm transition-all group"
+                  href="/notfallkarte"
+                  className="flex items-start justify-between gap-3 p-3 rounded-lg bg-background border border-[var(--color-sos-rot)]/20 hover:border-[var(--color-sos-rot)]/40 hover:shadow-sm transition-all group"
                 >
-                  <span className="text-sm text-foreground font-medium">
-                    Situations-Wegweiser: «Was tun wenn…»
-                  </span>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-[var(--color-sage-dark)] transition-colors" />
+                  <div>
+                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-0.5">
+                      Vorbereitung
+                    </p>
+                    <span className="text-sm text-foreground font-medium">
+                      Persönliche Notfallkarte erstellen
+                    </span>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      Nummern, Strategien und Kontakte für den nächsten Notfall
+                      vorbereiten
+                    </p>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1 group-hover:text-[var(--color-sos-rot)] transition-colors" />
+                </Link>
+                <Link
+                  href="/wegweiser"
+                  className="flex items-start justify-between gap-3 p-3 rounded-lg bg-background border border-[var(--color-sage-dark)]/30 hover:border-[var(--color-sage-dark)]/50 hover:shadow-sm transition-all group"
+                >
+                  <div>
+                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-0.5">
+                      Unmittelbar danach
+                    </p>
+                    <span className="text-sm text-foreground font-medium">
+                      Situations-Wegweiser
+                    </span>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      Was war das gerade? Was ist jetzt sinnvoll?
+                    </p>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1 group-hover:text-[var(--color-sage-dark)] transition-colors" />
                 </Link>
                 <Link
                   href="/unterstuetzen/krise"
-                  className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
+                  className="flex items-start justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
                 >
-                  <span className="text-sm text-foreground">
-                    Deeskalation und Krisenbegleitung
-                  </span>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
+                  <div>
+                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-0.5">
+                      Verstehen & üben
+                    </p>
+                    <span className="text-sm text-foreground">
+                      Deeskalation und Krisenbegleitung
+                    </span>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      Hintergründe, Ampel-System, deeskalierende Techniken
+                    </p>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1 group-hover:text-terracotta-mid transition-colors" />
                 </Link>
                 <Link
                   href="/selbstfuersorge"
@@ -715,15 +753,6 @@ export default function Notfall() {
                 >
                   <span className="text-sm text-foreground">
                     Selbstfürsorge für Angehörige
-                  </span>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
-                </Link>
-                <Link
-                  href="/beratung"
-                  className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
-                >
-                  <span className="text-sm text-foreground">
-                    Beratung und Selbsthilfegruppen
                   </span>
                   <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
                 </Link>

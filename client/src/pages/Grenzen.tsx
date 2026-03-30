@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,17 +18,9 @@ import {
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
 
-import { grenzenSubcategories, grenzenItems } from "@/content/grenzen";
+import { grenzenItems } from "@/content/grenzen";
 
 export default function Grenzen() {
-  const [activeFilter, setActiveFilter] = useState("alle");
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  const filteredItems =
-    activeFilter === "alle"
-      ? grenzenItems
-      : grenzenItems.filter(i => i.category === activeFilter);
-
   return (
     <Layout>
       <SEO
@@ -88,48 +79,6 @@ export default function Grenzen() {
       <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <ContentSection
-              title="Warum Grenzen so wichtig sind"
-              icon={<Shield className="w-7 h-7 text-sage-mid" />}
-              id="warum-grenzen"
-              defaultOpen={true}
-              preview="Grenzen helfen nicht deshalb, weil danach sofort Ruhe einkehrt, sondern weil Beziehungen ohne Klarheit oft instabiler und erschöpfender werden."
-            >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  In belasteten Beziehungen entsteht leicht der Eindruck,
-                  Grenzen würden die Lage verschärfen. Kurzfristig kann das
-                  sogar so wirken. Langfristig machen fehlende Grenzen
-                  Beziehungen aber oft chaotischer, unklarer und
-                  krisenanfälliger.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Card className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        Für Sie
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Grenzen schützen vor Überlastung, Dauererreichbarkeit,
-                        Schuldspiralen und dem Verlust der eigenen Orientierung.
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <Card className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        Für die Beziehung
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Grenzen schaffen Berechenbarkeit. Sie signalisieren, was
-                        Kontakt trägt und was ihn beschädigt.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </ContentSection>
-
             <ContentSection
               title="Woran Sie merken, dass eine Grenze nötig ist"
               icon={<AlertTriangle className="w-7 h-7 text-sand-mid" />}
@@ -390,52 +339,12 @@ export default function Grenzen() {
                 </span>
               </p>
 
-              <div className="flex flex-wrap gap-2 pb-3 mb-6 -mx-1 px-1">
-                {grenzenSubcategories.map(cat => {
-                  const Icon = cat.icon;
-                  const count =
-                    cat.id === "alle"
-                      ? grenzenItems.length
-                      : grenzenItems.filter(i => i.category === cat.id).length;
-                  return (
-                    <Button
-                      key={cat.id}
-                      variant={activeFilter === cat.id ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => {
-                        setActiveFilter(cat.id);
-                        setTimeout(() => {
-                          gridRef.current?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                          });
-                        }, 50);
-                      }}
-                      className={`whitespace-nowrap ${
-                        activeFilter === cat.id
-                          ? "bg-sage-mid hover:bg-sage-dark text-white"
-                          : ""
-                      }`}
-                    >
-                      <Icon className="w-4 h-4 mr-1.5" />
-                      {cat.label}
-                      <span className="ml-1.5 text-xs opacity-90">
-                        ({count})
-                      </span>
-                    </Button>
-                  );
-                })}
-              </div>
-
-              <div
-                ref={gridRef}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-              >
-                {filteredItems.map((item, index) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {grenzenItems.map((item, index) => (
                   <Card
                     key={item.title}
                     className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                      filteredItems.length > 1 && index === 0
+                      grenzenItems.length > 1 && index === 0
                         ? "sm:col-span-2"
                         : ""
                     }`}

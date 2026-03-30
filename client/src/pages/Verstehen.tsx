@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import EvidenceNote from "@/components/EvidenceNote";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
@@ -12,7 +11,6 @@ import {
   Brain,
   Download,
   ExternalLink,
-  Filter,
   Heart,
   Layers,
   RefreshCw,
@@ -24,29 +22,6 @@ import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 import { verstehenInfografiken } from "@/content/verstehen";
-
-const verstehenCategories = [
-  {
-    id: "alle",
-    label: "Alle",
-    icon: Filter,
-    count: verstehenInfografiken.length,
-  },
-  {
-    id: "grundlagen",
-    label: "Grundlagen",
-    icon: BookOpen,
-    count: verstehenInfografiken.filter(i => i.category === "grundlagen")
-      .length,
-  },
-  {
-    id: "neurobiologie",
-    label: "Stress & Gehirn",
-    icon: Brain,
-    count: verstehenInfografiken.filter(i => i.category === "neurobiologie")
-      .length,
-  },
-];
 
 const relationshipPatterns = [
   {
@@ -64,13 +39,6 @@ const relationshipPatterns = [
 ];
 
 export default function Verstehen() {
-  const [activeFilter, setActiveFilter] = useState("alle");
-  const gridRef = useRef<HTMLDivElement>(null);
-  const filteredItems =
-    activeFilter === "alle"
-      ? verstehenInfografiken
-      : verstehenInfografiken.filter(i => i.category === activeFilter);
-
   return (
     <Layout>
       <SEO
@@ -534,41 +502,11 @@ export default function Verstehen() {
                 Beginnen Sie mit den Grundlagen, wenn Sie gerade Orientierung
                 brauchen.
               </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {verstehenCategories.map(cat => (
-                  <Button
-                    key={cat.id}
-                    variant={activeFilter === cat.id ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => {
-                      setActiveFilter(cat.id);
-                      setTimeout(() => {
-                        gridRef.current?.scrollIntoView({
-                          behavior: "smooth",
-                          block: "start",
-                        });
-                      }, 50);
-                    }}
-                    className={`whitespace-nowrap shrink-0 ${
-                      activeFilter === cat.id
-                        ? "bg-sage-dark hover:bg-sage-mid text-white"
-                        : ""
-                    }`}
-                  >
-                    <cat.icon className="w-4 h-4 mr-1.5" />
-                    {cat.label} ({cat.count})
-                  </Button>
-                ))}
-              </div>
-
-              <div
-                ref={gridRef}
-                className="grid grid-cols-1 md:grid-cols-2 gap-6"
-              >
-                {filteredItems.map(item => (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {verstehenInfografiken.map(item => (
                   <Card
                     key={item.id}
-                    className={`${item.featured && activeFilter === "alle" ? "md:col-span-2" : ""} overflow-hidden hover:shadow-lg transition-shadow`}
+                    className={`${item.featured ? "md:col-span-2" : ""} overflow-hidden hover:shadow-lg transition-shadow`}
                   >
                     <button
                       type="button"

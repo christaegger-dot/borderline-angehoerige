@@ -70,7 +70,7 @@ export default function FAQ() {
         {
           question: "Ist Borderline erblich? Bin ich schuld?",
           answer:
-            "Borderline entsteht durch ein Zusammenspiel von genetischer Veranlagung (ca. 40–60% Erblichkeit) und Umweltfaktoren. Genetisch wird eine erhöhte emotionale Sensibilität vererbt – nicht die Störung selbst. Umweltfaktoren wie Traumata, Vernachlässigung oder invalidierendes Umfeld spielen eine Rolle, aber: Viele Menschen mit schwierigen Kindheiten entwickeln keine Borderline, und manche Betroffene hatten keine offensichtlichen Traumata. Sie sind nicht «schuld» an der Erkrankung Ihres Angehörigen. Schuldgefühle sind verständlich, aber nicht hilfreich – weder für Sie noch für Ihren Angehörigen.",
+            "Borderline entsteht durch ein Zusammenspiel von genetischer Veranlagung (ca. 40–60% Erblichkeit) und Umweltfaktoren wie Traumata oder invalidierendes Umfeld. Genetisch wird eine erhöhte emotionale Sensibilität vererbt – nicht die Störung selbst. Sie sind nicht schuld: Viele Menschen mit schwierigen Kindheiten entwickeln keine Borderline, und manche Betroffene hatten keine offensichtlichen Traumata.",
           links: [{ text: "Borderline verstehen", url: "/verstehen" }],
         },
         {
@@ -89,7 +89,7 @@ export default function FAQ() {
         {
           question: "Wie reagiere ich auf Drohungen?",
           answer:
-            "Unterscheiden Sie zwischen Äusserungen von Suizidalität und anderen Drohungen. Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben. Sagen Sie zum Beispiel: «Ich höre, dass du gerade sehr leidest. Wenn du sagst, du willst dir etwas antun, hole ich Hilfe dazu.» Handeln Sie dann auch entsprechend. Bei anderen Drohungen (z.B. «Dann verlasse ich dich») hilft meist: ruhig bleiben, das Gefühl hinter der Aussage ansprechen und gleichzeitig nicht aus Angst nachgeben. Solche Aussagen entstehen oft aus Überforderung, Angst oder dem Wunsch, Kontrolle zurückzugewinnen.",
+            "Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben – sagen Sie klar: «Wenn du sagst, du willst dir etwas antun, hole ich Hilfe.» Bei anderen Drohungen (z.B. «Dann verlasse ich dich») ruhig bleiben, das Gefühl dahinter ansprechen und nicht aus Angst nachgeben. Solche Aussagen entstehen meist aus Überforderung oder Angst.",
           links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }],
         },
         {
@@ -146,7 +146,7 @@ export default function FAQ() {
         {
           question: "Bin ich co-abhängig?",
           answer:
-            "Der Begriff «Co-Abhängigkeit» wird unterschiedlich verwendet und kann schnell moralisierend klingen. Gemeint ist meist, dass sich Ihr eigenes Leben immer stärker um den Zustand des anderen dreht und Ihre eigenen Grenzen, Bedürfnisse und Beziehungen zurücktreten. Warnsignale können sein: Sie entschuldigen laufend destruktives Verhalten, geben Ihr soziales Leben auf, fühlen sich für die Gefühle des anderen zuständig oder können kaum «Nein» sagen, ohne massive Schuld zu erleben. Wenn Sie sich darin wiedererkennen, spricht das nicht gegen Ihren Charakter, sondern für ein belastendes Beziehungsmuster. Beratung, eigene Therapie oder eine Angehörigengruppe können helfen, wieder klarer zu werden.",
+            "«Co-Abhängigkeit» meint, dass sich Ihr eigenes Leben immer stärker um den Zustand des anderen dreht: Sie entschuldigen destruktives Verhalten, geben Ihr soziales Leben auf oder fühlen sich für die Gefühle des anderen verantwortlich. Das spricht nicht gegen Ihren Charakter, sondern zeigt ein belastendes Beziehungsmuster. Beratung, eigene Therapie oder eine Angehörigengruppe können helfen, wieder klarer zu werden.",
           links: [
             { text: "Selbstfürsorge", url: "/selbstfuersorge" },
             { text: "Glossar: Co-Abhängigkeit", url: "/glossar" },
@@ -189,7 +189,7 @@ export default function FAQ() {
         {
           question: "Wie lange dauert die Behandlung?",
           answer:
-            "Borderline-Therapie ist keine Kurzzeitbehandlung. Rechnen Sie mit mindestens 1–3 Jahren regelmässiger Therapie für deutliche Verbesserungen. Stationäre Aufenthalte (z.B. auf einer DBT-Station) dauern typischerweise 8–12 Wochen und sind oft der Einstieg in eine längere ambulante Behandlung. Fortschritte sind nicht linear – es gibt Rückschläge, besonders bei Stress. Das ist normal und kein Zeichen von Versagen. Die gute Nachricht: Die meisten Betroffenen zeigen mit der Zeit deutliche Verbesserungen.",
+            "Borderline-Therapie ist keine Kurzzeitbehandlung: Rechnen Sie mit mindestens 1–3 Jahren für deutliche Verbesserungen. Stationäre Aufenthalte (z.B. DBT-Station) dauern typischerweise 8–12 Wochen und sind oft der Einstieg in eine längere ambulante Behandlung. Fortschritte sind nicht linear – Rückschläge sind normal und kein Zeichen von Versagen.",
           links: [{ text: "Genesung & Prognose", url: "/genesung" }],
         },
       ],

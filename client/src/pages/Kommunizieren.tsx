@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,17 +20,9 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
 
-import { kommSubcategories, kommItems } from "@/content/kommunizieren";
+import { kommItems } from "@/content/kommunizieren";
 
 export default function Kommunizieren() {
-  const [activeFilter, setActiveFilter] = useState("alle");
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  const filteredItems =
-    activeFilter === "alle"
-      ? kommItems
-      : kommItems.filter(i => i.category === activeFilter);
-
   return (
     <Layout>
       <SEO
@@ -419,54 +410,12 @@ export default function Kommunizieren() {
                 </span>
               </p>
 
-              <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-1 px-1">
-                {kommSubcategories.map(cat => {
-                  const Icon = cat.icon;
-                  const count =
-                    cat.id === "alle"
-                      ? kommItems.length
-                      : kommItems.filter(i => i.category === cat.id).length;
-                  return (
-                    <Button
-                      key={cat.id}
-                      variant={activeFilter === cat.id ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => {
-                        setActiveFilter(cat.id);
-                        setTimeout(() => {
-                          gridRef.current?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                          });
-                        }, 50);
-                      }}
-                      className={`whitespace-nowrap shrink-0 ${
-                        activeFilter === cat.id
-                          ? "bg-sage-mid hover:bg-sage-dark text-white"
-                          : ""
-                      }`}
-                    >
-                      <Icon className="w-4 h-4 mr-1.5" />
-                      {cat.label}
-                      <span className="ml-1.5 text-xs opacity-90">
-                        ({count})
-                      </span>
-                    </Button>
-                  );
-                })}
-              </div>
-
-              <div
-                ref={gridRef}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
-              >
-                {filteredItems.map((item, index) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {kommItems.map((item, index) => (
                   <Card
                     key={item.title}
                     className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                      filteredItems.length > 1 && index === 0
-                        ? "sm:col-span-2"
-                        : ""
+                      kommItems.length > 1 && index === 0 ? "sm:col-span-2" : ""
                     }`}
                   >
                     <div className="aspect-[4/3] bg-muted">

@@ -470,6 +470,60 @@ export default function UnterstuetzenKrise() {
               preview="Die akute Krise ist vorbei – aber die innere Landschaft braucht Zeit. Was jetzt hilft: für die betroffene Person, für Sie, und gemeinsam."
             >
               <div className="space-y-6">
+                {/* Krisenphase-Timeline */}
+                <div className="rounded-lg border border-border/40 bg-slate-wash/20 p-4">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-3 text-center">
+                    Typischer Krisenverlauf
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center gap-1.5">
+                    <div className="bg-sand-muted rounded-md px-3 py-2 text-center flex-1 w-full">
+                      <p className="text-xs font-semibold text-sand-mid">
+                        Anspannung
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Minuten–Stunden
+                      </p>
+                    </div>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground rotate-90 sm:rotate-0 flex-shrink-0" />
+                    <div className="bg-amber-100 rounded-md px-3 py-2 text-center flex-1 w-full">
+                      <p className="text-xs font-semibold text-amber-700">
+                        Eskalation
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        15–90 Min
+                      </p>
+                    </div>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground rotate-90 sm:rotate-0 flex-shrink-0" />
+                    <div className="bg-alert/15 rounded-md px-3 py-2 text-center flex-1 w-full">
+                      <p className="text-xs font-semibold text-alert">Peak</p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Spitze
+                      </p>
+                    </div>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground rotate-90 sm:rotate-0 flex-shrink-0" />
+                    <div className="bg-amber-50 rounded-md px-3 py-2 text-center flex-1 w-full">
+                      <p className="text-xs font-semibold text-amber-600">
+                        Abklingen
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        1–4 Std
+                      </p>
+                    </div>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground rotate-90 sm:rotate-0 flex-shrink-0" />
+                    <div className="bg-sage-lighter/60 rounded-md px-3 py-2 text-center flex-1 w-full">
+                      <p className="text-xs font-semibold text-sage-dark">
+                        Erschöpfung
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Stunden–Tage
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-muted-foreground mt-3 text-center">
+                    Zeitangaben sind Richtwerte — jede Krise verläuft anders
+                  </p>
+                </div>
+
                 {/* Für die betroffene Person */}
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">

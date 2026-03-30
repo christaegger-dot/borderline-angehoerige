@@ -127,7 +127,8 @@ const SCENARIOS: Scenario[] = [
     technique: "DEAR",
     context:
       "Ihr Angehöriger hat zum dritten Mal einen gemeinsamen Termin kurzfristig abgesagt. Sie möchten das Thema mit DEAR MAN ansprechen: Describe, Express, Assert, Reinforce.",
-    statement: "Sie bereiten ein ruhiges Gespräch vor. Welche Formulierung nutzen Sie?",
+    statement:
+      "Sie bereiten ein ruhiges Gespräch vor. Welche Formulierung nutzen Sie?",
     options: [
       {
         id: "a",
@@ -297,8 +298,30 @@ const TECHNIQUE_META: Record<
   },
 };
 
-function groupByTechnique(scenarios: Scenario[]): Record<Technique, Scenario[]> {
-  const grouped: Record<Technique, Scenario[]> = { SET: [], DEAR: [], Validierung: [] };
+const TECHNIQUE_STEPS: Partial<
+  Record<Technique, { letter: string; label: string; desc: string }[]>
+> = {
+  SET: [
+    { letter: "S", label: "Support", desc: "Unterstützung zeigen" },
+    { letter: "E", label: "Empathie", desc: "Gefühle anerkennen" },
+    { letter: "T", label: "Truth", desc: "Sachliche Klarheit" },
+  ],
+  DEAR: [
+    { letter: "D", label: "Describe", desc: "Situation beschreiben" },
+    { letter: "E", label: "Express", desc: "Gefühl ausdrücken" },
+    { letter: "A", label: "Assert", desc: "Wunsch benennen" },
+    { letter: "R", label: "Reinforce", desc: "Positive Folge" },
+  ],
+};
+
+function groupByTechnique(
+  scenarios: Scenario[]
+): Record<Technique, Scenario[]> {
+  const grouped: Record<Technique, Scenario[]> = {
+    SET: [],
+    DEAR: [],
+    Validierung: [],
+  };
   for (const s of scenarios) grouped[s.technique].push(s);
   return grouped;
 }
@@ -316,7 +339,7 @@ function ScenarioCard({
   const [revealed, setRevealed] = useState(false);
   const meta = TECHNIQUE_META[scenario.technique];
 
-  const selectedOption = scenario.options.find((o) => o.id === selectedId);
+  const selectedOption = scenario.options.find(o => o.id === selectedId);
 
   const handleSelect = useCallback(
     (optionId: string) => {
@@ -324,7 +347,7 @@ function ScenarioCard({
       setSelectedId(optionId);
       setRevealed(true);
     },
-    [revealed],
+    [revealed]
   );
 
   const handleReset = useCallback(() => {
@@ -342,7 +365,10 @@ function ScenarioCard({
         <div className="flex items-center gap-2 mb-2">
           <span
             className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
-            style={{ color: meta.color, backgroundColor: "rgba(255,255,255,0.7)" }}
+            style={{
+              color: meta.color,
+              backgroundColor: "rgba(255,255,255,0.7)",
+            }}
           >
             {meta.icon}
             {meta.label}
@@ -374,11 +400,12 @@ function ScenarioCard({
           <p className="text-sm font-medium text-foreground">
             Wie reagieren Sie?
           </p>
-          {scenario.options.map((option) => {
+          {scenario.options.map(option => {
             const isSelected = selectedId === option.id;
             const showResult = revealed;
 
-            let borderClass = "border-border/60 hover:border-[var(--color-sage-dark)]/40";
+            let borderClass =
+              "border-border/60 hover:border-[var(--color-sage-dark)]/40";
             let bgClass = "bg-background hover:bg-muted/30";
 
             if (showResult && isSelected && option.correct) {
@@ -399,7 +426,9 @@ function ScenarioCard({
                 onClick={() => handleSelect(option.id)}
                 disabled={revealed}
                 className={`w-full text-left p-4 rounded-xl border ${borderClass} ${bgClass} transition-all ${
-                  !revealed ? "cursor-pointer active:scale-[0.99]" : "cursor-default"
+                  !revealed
+                    ? "cursor-pointer active:scale-[0.99]"
+                    : "cursor-default"
                 }`}
               >
                 <div className="flex items-start gap-3">
@@ -464,7 +493,7 @@ function ScenarioCard({
                   Bessere Antwort:
                 </p>
                 <p className="text-sm text-green-700 leading-relaxed">
-                  {scenario.options.find((o) => o.correct)?.feedback}
+                  {scenario.options.find(o => o.correct)?.feedback}
                 </p>
               </div>
             </motion.div>
@@ -488,7 +517,10 @@ function ScenarioCard({
                 }}
               >
                 <p className="text-sm font-medium text-foreground mb-1 flex items-center gap-1.5">
-                  <Lightbulb className="w-4 h-4" style={{ color: meta.color }} />
+                  <Lightbulb
+                    className="w-4 h-4"
+                    style={{ color: meta.color }}
+                  />
                   Merke
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -539,12 +571,54 @@ function TechniqueSection({
           {meta.icon}
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-foreground">{meta.label}</h2>
+          <h2 className="text-xl font-semibold text-foreground">
+            {meta.label}
+          </h2>
           <p className="text-xs text-muted-foreground">
-            {scenarios.length} {scenarios.length === 1 ? "Szenario" : "Szenarien"}
+            {scenarios.length}{" "}
+            {scenarios.length === 1 ? "Szenario" : "Szenarien"}
           </p>
         </div>
       </div>
+
+      {/* Technique component breakdown */}
+      {TECHNIQUE_STEPS[technique] && (
+        <div
+          className="rounded-lg p-3 mb-5 border border-border/30"
+          style={{ backgroundColor: meta.bgColor }}
+        >
+          <p
+            className="text-xs font-medium mb-2.5"
+            style={{ color: meta.color }}
+          >
+            Aufbau der Technik
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {TECHNIQUE_STEPS[technique]!.map(comp => (
+              <div
+                key={comp.letter}
+                className="flex items-center gap-1.5 bg-background/60 rounded px-2.5 py-1.5"
+              >
+                <span
+                  className="text-sm font-bold"
+                  style={{ color: meta.color }}
+                >
+                  {comp.letter}
+                </span>
+                <div>
+                  <p className="text-xs font-semibold text-foreground leading-none">
+                    {comp.label}
+                  </p>
+                  <p className="text-[10px] text-muted-foreground leading-none mt-0.5">
+                    {comp.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="space-y-5">
         {scenarios.map((s, i) => (
           <ScenarioCard key={s.id} scenario={s} index={i} />
@@ -562,14 +636,14 @@ export default function KommunikationsUebung() {
   return (
     <div className="space-y-10">
       {(["SET", "DEAR", "Validierung"] as Technique[]).map(
-        (tech) =>
+        tech =>
           grouped[tech].length > 0 && (
             <TechniqueSection
               key={tech}
               technique={tech}
               scenarios={grouped[tech]}
             />
-          ),
+          )
       )}
     </div>
   );

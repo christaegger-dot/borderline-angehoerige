@@ -575,6 +575,22 @@ export default function Verstehen() {
                 <Card className="border-t-4 border-t-sage-mid">
                   <CardContent className="p-5">
                     <h3 className="font-semibold text-foreground mb-2">
+                      Häufige Begleiterkrankungen
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Borderline tritt selten allein auf. Häufig bestehen
+                      gleichzeitig Depressionen, Angststörungen oder eine
+                      Posttraumatische Belastungsstörung (PTBS). Das kann die
+                      Symptome verstärken und die Behandlung komplexer machen.
+                      Fachpersonen berücksichtigen diese Zusammenhänge bei der
+                      Diagnostik und Therapieplanung.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-t-4 border-t-sage-mid">
+                  <CardContent className="p-5">
+                    <h3 className="font-semibold text-foreground mb-2">
                       Ursachen sind nie monokausal
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">

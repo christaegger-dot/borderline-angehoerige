@@ -308,6 +308,64 @@ export default function Verstehen() {
                   das Angehörigen helfen kann, Entwicklungen nüchterner zu
                   lesen.
                 </p>
+
+                {/* Eskalations-Prozessdiagramm */}
+                <div className="rounded-lg border border-border/40 bg-slate-wash/20 p-4">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-3 text-center">
+                    Typischer Eskalationsverlauf
+                  </p>
+                  <div className="flex flex-wrap items-center justify-center gap-1.5">
+                    <div className="rounded-md bg-slate-wash px-3 py-2 text-center min-w-[72px]">
+                      <p className="text-xs font-semibold text-slate-dark">
+                        Trigger
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Auslöser
+                      </p>
+                    </div>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
+                    <div className="rounded-md bg-sand-muted px-3 py-2 text-center min-w-[72px]">
+                      <p className="text-xs font-semibold text-sand-mid">
+                        Überflutung
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Emotion steigt
+                      </p>
+                    </div>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
+                    <div className="rounded-md bg-amber-100 px-3 py-2 text-center min-w-[72px]">
+                      <p className="text-xs font-semibold text-amber-700">
+                        Reaktion
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Impuls, Worte
+                      </p>
+                    </div>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
+                    <div className="rounded-md bg-alert/10 px-3 py-2 text-center min-w-[72px]">
+                      <p className="text-xs font-semibold text-alert">
+                        Eskalation
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Spitze
+                      </p>
+                    </div>
+                    <ArrowRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
+                    <div className="rounded-md bg-sage-lighter/60 px-3 py-2 text-center min-w-[72px]">
+                      <p className="text-xs font-semibold text-sage-dark">
+                        Rückzug
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        Stille, Abstand
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-muted-foreground mt-3 text-center">
+                    Kein starres Schema — aber ein häufig wiedererkennbarer
+                    Verlauf in belasteten Beziehungen
+                  </p>
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Card className="border-border/50">
                     <CardContent className="p-5">

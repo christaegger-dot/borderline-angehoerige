@@ -120,7 +120,6 @@ export function MobileMenu({
                   >
                     <div
                       id="mobile-ressourcen-menu"
-                      role="menu"
                       aria-label="Ressourcen-Navigation"
                       className="pl-4 mt-1 flex flex-col gap-0"
                     >
@@ -142,7 +141,6 @@ export function MobileMenu({
                                 <Link
                                   key={item.href}
                                   href={item.href}
-                                  role="menuitem"
                                   onClick={() => {
                                     closeMenu();
                                     setMobileRessourcenOpen(false);

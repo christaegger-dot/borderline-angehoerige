@@ -277,40 +277,85 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 md:py-12 bg-cream">
+      <section className="py-10 md:py-14 bg-cream">
         <div className="container">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mb-8"
             >
-              <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/70 mb-3">
-                <span className="w-6 h-px bg-sage-dark/30" />
-                Unser Ansatz
-              </span>
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
-                Was diese Website besonders abdeckt
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  "Borderline differenziert aus Sicht von Angehörigen verstehen",
-                  "Beziehungsmuster, Eskalation und Rückzug besser einordnen",
-                  "Grenzen, Selbstschutz und Unterstützung zusammendenken",
-                  "Fachliche Hilfe, Materialien und Beratungswege schnell finden",
-                ].map(item => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border/40"
-                  >
-                    <span className="text-foreground/40 mt-0.5">✓</span>
-                    <span className="text-sm text-muted-foreground">
-                      {item}
-                    </span>
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+                {/* Linke Spalte: Text + Checkmarks */}
+                <div>
+                  <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/70 mb-3">
+                    <span className="w-6 h-px bg-sage-dark/30" />
+                    Unser Ansatz
+                  </span>
+                  <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
+                    Was diese Website besonders abdeckt
+                  </h2>
+                  <div className="flex flex-col gap-3">
+                    {[
+                      "Borderline differenziert aus Sicht von Angehörigen verstehen",
+                      "Beziehungsmuster, Eskalation und Rückzug besser einordnen",
+                      "Grenzen, Selbstschutz und Unterstützung zusammendenken",
+                      "Fachliche Hilfe, Materialien und Beratungswege schnell finden",
+                    ].map(item => (
+                      <div
+                        key={item}
+                        className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border/40"
+                      >
+                        <span className="text-sage-dark mt-0.5">✓</span>
+                        <span className="text-sm text-muted-foreground">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                {/* Rechte Spalte: Abstrakte Illustration */}
+                <div className="hidden lg:flex items-center justify-center">
+                  <div className="relative w-full max-w-sm aspect-square">
+                    {/* Hintergrund-Kreis */}
+                    <div className="absolute inset-0 rounded-full bg-sage-wash/60" />
+
+                    {/* Dekorative Ringe */}
+                    <div className="absolute inset-4 rounded-full border-2 border-dashed border-sage-mid/20" />
+                    <div className="absolute inset-12 rounded-full border border-sage-mid/15" />
+
+                    {/* Zentrale Ikone */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-2xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
+                        <Heart className="w-9 h-9 text-sage-dark" />
+                      </div>
+                    </div>
+
+                    {/* Orbitale Icons */}
+                    <div className="absolute top-6 left-1/2 -translate-x-1/2">
+                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
+                        <BookOpen className="w-5 h-5 text-sage-mid" />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
+                        <Shield className="w-5 h-5 text-sage-mid" />
+                      </div>
+                    </div>
+                    <div className="absolute left-6 top-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
+                        <MessageCircle className="w-5 h-5 text-sage-mid" />
+                      </div>
+                    </div>
+                    <div className="absolute right-6 top-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
+                        <Sparkles className="w-5 h-5 text-sage-mid" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

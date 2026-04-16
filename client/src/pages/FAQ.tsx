@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import { FAQSchema } from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -266,6 +267,8 @@ export default function FAQ() {
               Orientierung geben, ohne schwierige Situationen zu stark zu
               vereinfachen oder eine individuelle Einschätzung zu ersetzen.
             </p>
+
+            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
           </motion.div>
         </div>
       </section>

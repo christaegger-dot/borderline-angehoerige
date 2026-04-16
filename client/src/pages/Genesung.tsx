@@ -1,4 +1,5 @@
 import EvidenceNote from "@/components/EvidenceNote";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -131,6 +132,8 @@ export default function Genesung() {
               realistische Sicht auf Zeit, Rückschritte und Grenzen des eigenen
               Einflusses.
             </p>
+
+            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
           </motion.div>
         </div>
       </section>

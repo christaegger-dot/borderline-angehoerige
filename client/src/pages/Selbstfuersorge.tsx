@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import EvidenceNote from "@/components/EvidenceNote";
 import { useState } from "react";
 import Layout from "@/components/Layout";
@@ -135,6 +136,8 @@ export default function Selbstfuersorge() {
                 </p>
               </CardContent>
             </Card>
+
+            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
           </motion.div>
         </div>
       </section>

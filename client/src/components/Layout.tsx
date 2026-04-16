@@ -179,6 +179,12 @@ export default function Layout({ children }: LayoutProps) {
                 Datenschutz
               </Link>
               <Link
+                href="/barrierefreiheit"
+                className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
+              >
+                Barrierefreiheit
+              </Link>
+              <Link
                 href="/feedback"
                 className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >

@@ -1,4 +1,5 @@
 import EvidenceNote from "@/components/EvidenceNote";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -49,6 +50,12 @@ export default function Verstehen() {
       <TableOfContents />
 
       <VerstehenHeroSection />
+
+      <div className="container">
+        <div className="max-w-3xl mx-auto">
+          <LastVerifiedBadge date="16.04.2026" className="mt-4" />
+        </div>
+      </div>
 
       {/* PDF-Hinweis */}
       <div className="container">

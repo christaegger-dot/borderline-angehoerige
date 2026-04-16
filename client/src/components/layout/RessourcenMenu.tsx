@@ -3,11 +3,42 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { ressourcenItems } from "@/components/layout/navigationData";
 import { useRessourcenMenuA11y } from "@/components/layout/useRessourcenMenuA11y";
+import type { NavigationItem } from "@/domain/content-types";
 
 interface RessourcenMenuProps {
   location: string;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
+}
+
+/** Group ressourcen items by their `group` field, preserving insertion order. */
+function groupItems(
+  items: NavigationItem[]
+): { name: string; items: NavigationItem[] }[] {
+  const map = new Map<string, NavigationItem[]>();
+  for (const item of items) {
+    const key = item.group ?? "Weitere";
+    const group = map.get(key);
+    if (group) {
+      group.push(item);
+    } else {
+      map.set(key, [item]);
+    }
+  }
+  return Array.from(map, ([name, groupItems]) => ({ name, items: groupItems }));
+}
+
+/** Return the flat index of an item across all groups. */
+function flatIndex(
+  groups: { items: NavigationItem[] }[],
+  groupIdx: number,
+  itemIdx: number
+): number {
+  let idx = 0;
+  for (let g = 0; g < groupIdx; g++) {
+    idx += groups[g].items.length;
+  }
+  return idx + itemIdx;
 }
 
 export function RessourcenMenu({
@@ -18,6 +49,8 @@ export function RessourcenMenu({
   const isRessourcenActive = ressourcenItems.some(item =>
     location.startsWith(item.href.split("#")[0])
   );
+
+  const groups = groupItems(ressourcenItems);
 
   const {
     menuContainerRef,
@@ -75,47 +108,64 @@ export function RessourcenMenu({
             exit={{ opacity: 0, y: -4, scale: 0.98 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
             onKeyDown={handleMenuKeyDown}
-            className="absolute right-0 top-full mt-1 w-64 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/8 overflow-hidden z-50"
+            className="absolute right-0 top-full mt-1 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/8 z-50"
+            style={{ width: "min(680px, calc(100vw - 2rem))" }}
             {...menuA11yProps}
           >
-            <div className="py-2">
-              {ressourcenItems.map((item, index) => {
-                const Icon = item.icon;
-                const normalizedHref = item.href.split("#")[0];
-                const isActive =
-                  location === normalizedHref ||
-                  location.startsWith(`${normalizedHref}/`);
-                const prevItem = ressourcenItems[index - 1];
-                const isNewGroup = index > 0 && item.group !== prevItem?.group;
-
-                return (
-                  <div key={item.href}>
-                    {isNewGroup && (
-                      <div className="mx-3 my-1 border-t border-border/40" />
-                    )}
-                    <Link
-                      href={item.href}
-                      role="menuitem"
-                      tabIndex={-1}
-                      ref={(el: HTMLAnchorElement | null) => {
-                        setMenuItemRef(index, el);
-                      }}
-                      onFocus={() => {
-                        onMenuItemFocus(index);
-                      }}
-                      onClick={closeDropdown}
-                      className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
-                        isActive
-                          ? "bg-sage-wash/50 text-sage-darker font-medium"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
-                      }`}
-                    >
-                      <Icon className="w-4 h-4 shrink-0" />
-                      {item.label}
-                    </Link>
+            <div className="grid grid-cols-3 gap-0 p-2">
+              {groups.map((group, groupIdx) => (
+                <div
+                  key={group.name}
+                  className={
+                    groupIdx > 0
+                      ? "border-l border-border/40 pl-2"
+                      : undefined
+                  }
+                >
+                  {/* Group header inspired by Seconds' "—— LABEL" pattern */}
+                  <div className="flex items-center gap-2.5 px-3 pt-2 pb-2">
+                    <span className="w-5 h-px bg-sage-dark/30" />
+                    <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-sage-dark/70 whitespace-nowrap">
+                      {group.name}
+                    </span>
                   </div>
-                );
-              })}
+
+                  <div className="flex flex-col">
+                    {group.items.map((item, itemIdx) => {
+                      const Icon = item.icon;
+                      const normalizedHref = item.href.split("#")[0];
+                      const isActive =
+                        location === normalizedHref ||
+                        location.startsWith(`${normalizedHref}/`);
+                      const idx = flatIndex(groups, groupIdx, itemIdx);
+
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          role="menuitem"
+                          tabIndex={-1}
+                          ref={(el: HTMLAnchorElement | null) => {
+                            setMenuItemRef(idx, el);
+                          }}
+                          onFocus={() => {
+                            onMenuItemFocus(idx);
+                          }}
+                          onClick={closeDropdown}
+                          className={`flex items-center gap-2.5 px-3 py-2 text-[13px] rounded-lg transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
+                            isActive
+                              ? "bg-sage-wash/50 text-sage-darker font-medium"
+                              : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
+                          }`}
+                        >
+                          <Icon className="w-4 h-4 shrink-0" />
+                          <span className="leading-tight">{item.label}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
         )}

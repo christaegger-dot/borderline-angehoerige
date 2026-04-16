@@ -103,15 +103,14 @@ export default function Home() {
         path="/"
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-navy to-navy-light/80 text-white">
-        {/* Dekorative Kreise */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-sage-mid blur-3xl" />
-          <div className="absolute -bottom-10 left-1/3 w-48 h-48 rounded-full bg-amber blur-3xl" />
-          <div className="absolute top-1/2 -left-20 w-56 h-56 rounded-full bg-sage-dark blur-3xl" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[oklch(0.28_0.05_220)] to-navy-light/80 text-white">
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <div className="absolute -top-16 -right-16 w-80 h-80 rounded-full bg-sage-mid blur-3xl" />
+          <div className="absolute -bottom-10 left-1/3 w-56 h-56 rounded-full bg-amber blur-3xl" />
+          <div className="absolute top-1/2 -left-20 w-64 h-64 rounded-full bg-sage-dark blur-3xl" />
         </div>
 
-        <div className="container relative z-10 py-14 md:py-18 lg:py-22">
+        <div className="container relative z-10 py-16 md:py-20 lg:py-26">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0 }}
@@ -174,7 +173,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-4 md:py-5 bg-navy text-white border-b border-navy-light/20">
+      <section className="py-4 md:py-5 bg-gradient-to-r from-navy via-navy to-navy-light/30 text-white border-b border-navy-light/20">
         <div className="container">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
             <div className="flex items-center gap-3 flex-shrink-0">
@@ -200,7 +199,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-sage-mid/20 to-transparent" />
+      <div className="h-6" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)" }} />
 
       <section className="py-8 md:py-10 bg-background">
         <div className="container">
@@ -279,7 +278,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-sage-mid/20 to-transparent" />
+      <div className="h-6" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)" }} />
 
       <section className="py-10 md:py-14 bg-cream">
         <div className="container">
@@ -333,8 +332,10 @@ export default function Home() {
                 {/* Rechte Spalte: Abstrakte Illustration */}
                 <div className="hidden lg:flex items-center justify-center">
                   <div className="relative w-full max-w-sm aspect-square">
-                    {/* Hintergrund-Kreis */}
-                    <div className="absolute inset-0 rounded-full bg-sage-wash/60" />
+                    <div
+                      className="absolute inset-0 rounded-full"
+                      style={{ background: "radial-gradient(circle, oklch(0.95 0.02 190 / 0.7), oklch(0.88 0.04 190 / 0.25))" }}
+                    />
 
                     {/* Dekorative Ringe */}
                     <div className="absolute inset-4 rounded-full border-2 border-dashed border-sage-mid/20" />
@@ -376,7 +377,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-sage-mid/20 to-transparent" />
+      <div className="h-6" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)" }} />
 
       <section className="py-10 md:py-14 bg-sage-wash/40">
         <div className="container">
@@ -435,7 +436,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 md:py-12 bg-alert">
+      <section className="py-8 md:py-12 bg-gradient-to-r from-alert-dark via-alert to-alert-dark">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">

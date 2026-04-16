@@ -87,10 +87,10 @@ export function RessourcenMenu({
             openAndFocusFirst();
           }
         }}
-        className={`flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-500 whitespace-nowrap ${
+        className={`flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
           isRessourcenActive || isOpen
-            ? "bg-sage-wash text-sage-darker"
-            : "text-muted-foreground hover:text-foreground hover:bg-muted"
+            ? "bg-sage-dark text-white shadow-sm"
+            : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
         }`}
         {...triggerA11yProps}
       >

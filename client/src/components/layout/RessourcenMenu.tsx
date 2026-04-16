@@ -125,7 +125,7 @@ export function RessourcenMenu({
                   {/* Group header inspired by Seconds' "—— LABEL" pattern */}
                   <div className="flex items-center gap-2.5 px-3 pt-2 pb-2">
                     <span className="w-5 h-px bg-sage-dark/30" />
-                    <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-sage-dark/70 whitespace-nowrap">
+                    <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-sage-dark/85 whitespace-nowrap">
                       {group.name}
                     </span>
                   </div>

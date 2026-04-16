@@ -802,7 +802,7 @@ export default function UnterstuetzenAlltag() {
                                     key={p}
                                     className="flex items-start gap-1.5 text-xs text-muted-foreground"
                                   >
-                                    <span className="text-muted-foreground/60 mt-0.5">
+                                    <span className="text-muted-foreground/80 mt-0.5">
                                       ✗
                                     </span>
                                     {p}

@@ -126,7 +126,7 @@ export default function Home() {
                 <span className="text-sage-light">Beziehungen</span>
               </h1>
 
-              <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8 max-w-2xl font-light">
+              <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 max-w-2xl font-light">
                 Wenn Beziehungen von starker Anspannung, Eskalation, Rückzug,
                 Schuld oder Erschöpfung geprägt sind, hilft nicht noch mehr
                 Druck, sondern ein klarer nächster Schritt. Diese Website
@@ -160,7 +160,7 @@ export default function Home() {
 
               <Link
                 href="/soforthilfe"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white font-medium transition-colors group text-sm"
+                className="inline-flex items-center gap-2 text-white/90 hover:text-white font-medium transition-colors group text-sm"
               >
                 <Phone className="w-4 h-4" />
                 <span>Akute Krise? Soforthilfe</span>
@@ -178,13 +178,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
             <div className="flex items-center gap-3 flex-shrink-0">
               <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                <Shield className="w-5 h-5 text-white/80" />
+                <Shield className="w-5 h-5 text-white/90" />
               </div>
               <p className="font-semibold text-white text-sm sm:text-base">
                 Ein Angebot der Fachstelle Angehörigenarbeit (PUK Zürich)
               </p>
             </div>
-            <p className="text-white/70 text-sm flex-1">
+            <p className="text-white/90 text-sm flex-1">
               Fachlich fundierte Orientierung, Beratung und Materialien für
               Angehörige.
             </p>
@@ -211,7 +211,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-8"
             >
-              <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/70 mb-3">
+              <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
                 <span className="w-6 h-px bg-sage-dark/30" />
                 Orientierung
               </span>
@@ -292,7 +292,7 @@ export default function Home() {
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
                 {/* Linke Spalte: Text + Checkmarks */}
                 <div>
-                  <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/70 mb-3">
+                  <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
                     <span className="w-6 h-px bg-sage-dark/30" />
                     Unser Ansatz
                   </span>
@@ -389,7 +389,7 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <div className="text-center mb-8">
-                <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/70 mb-3">
+                <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
                   <span className="w-6 h-px bg-sage-dark/30" />
                   Werkzeuge
                   <span className="w-6 h-px bg-sage-dark/30" />

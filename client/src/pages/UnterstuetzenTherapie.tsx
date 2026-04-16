@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
@@ -84,6 +85,8 @@ export default function UnterstuetzenTherapie() {
               nicht für den anderen übernehmen. Genau diese Grenze macht
               Therapiebegleitung oft so anspruchsvoll.
             </p>
+
+            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
           </motion.div>
         </div>
       </section>

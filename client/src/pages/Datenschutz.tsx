@@ -55,6 +55,72 @@ export default function Datenschutz() {
       <section className="py-8 md:py-12">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            {/* Rechtsgrundlage */}
+            <ContentSection
+              title="Rechtsgrundlage"
+              icon={<Scale className="w-7 h-7 text-sage-dark" />}
+              id="rechtsgrundlage"
+              defaultOpen={true}
+              preview="Diese Website unterliegt dem Schweizer Datenschutzgesetz (DSG) und der EU-Datenschutz-Grundverordnung (DSGVO)."
+            >
+              <Card className="border-border/50">
+                <CardContent className="p-6">
+                  <div className="text-muted-foreground leading-relaxed space-y-4">
+                    <p>
+                      Diese Website unterliegt dem{" "}
+                      <strong>
+                        Bundesgesetz über den Datenschutz (DSG, SR 235.1)
+                      </strong>{" "}
+                      der Schweiz in der revidierten Fassung vom 1. September
+                      2023. Soweit die Website auch von Personen aus dem
+                      Europäischen Wirtschaftsraum (EWR) genutzt wird, gilt
+                      ergänzend die{" "}
+                      <strong>
+                        EU-Datenschutz-Grundverordnung (DSGVO/GDPR, Verordnung
+                        (EU) 2016/679)
+                      </strong>
+                      .
+                    </p>
+                    <p>
+                      Die Verarbeitung von Daten erfolgt auf Grundlage
+                      berechtigter Interessen (Art. 31 Abs. 1 DSG bzw. Art. 6
+                      Abs. 1 lit. f DSGVO) zur Bereitstellung und Sicherung
+                      dieser Website.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </ContentSection>
+
+            {/* Drittanbieter und Hosting */}
+            <ContentSection
+              title="Hosting und Drittanbieter"
+              icon={<Server className="w-7 h-7 text-sage-mid" />}
+              id="hosting"
+              preview="Hosting über Netlify (USA) – Datenverarbeitung gemäss Standardvertragsklauseln."
+            >
+              <Card className="border-border/50">
+                <CardContent className="p-6">
+                  <div className="text-muted-foreground leading-relaxed space-y-4">
+                    <p>
+                      Diese Website wird über <strong>Netlify, Inc.</strong>{" "}
+                      (San Francisco, USA) gehostet. Beim Aufruf der Website
+                      werden technisch notwendige Daten (siehe Server-Logfiles)
+                      an Server von Netlify übertragen. Die Datenverarbeitung
+                      erfolgt auf Grundlage von EU-Standardvertragsklauseln
+                      (SCC).
+                    </p>
+                    <p>
+                      Darüber hinaus werden{" "}
+                      <strong>keine weiteren Drittanbieter-Dienste</strong>{" "}
+                      eingesetzt — kein Analytics, kein CDN für externe
+                      Schriften, keine eingebetteten Inhalte von Drittseiten.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </ContentSection>
+
             {/* Grundsatz – immer offen */}
             <ContentSection
               title="Unser Grundsatz"

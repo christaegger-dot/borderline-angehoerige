@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
@@ -62,6 +63,8 @@ export default function UnterstuetzenAlltag() {
               die Frage, wie viel Nähe gerade hilfreich ist. Diese Seite geht
               darum, was im Alltag trägt und was eher erschöpft.
             </p>
+
+            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
           </motion.div>
         </div>
       </section>

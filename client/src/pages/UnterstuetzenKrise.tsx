@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
@@ -88,6 +89,8 @@ export default function UnterstuetzenKrise() {
                 </Link>
               </p>
             </div>
+
+            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
           </motion.div>
         </div>
       </section>

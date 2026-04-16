@@ -8,13 +8,50 @@ import {
   AlertTriangle,
   ArrowRight,
   BookOpen,
+  ClipboardCheck,
   Compass,
+  Download,
+  FileText,
   Heart,
   MessageCircle,
+  MessageSquare,
   Phone,
   Shield,
   Sparkles,
 } from "lucide-react";
+
+const interactiveTools = [
+  {
+    href: "/selbsttest",
+    icon: ClipboardCheck,
+    label: "Selbsttest",
+    text: "Belastung einschätzen",
+  },
+  {
+    href: "/wegweiser",
+    icon: Compass,
+    label: "Wegweiser",
+    text: "Passende Hilfe finden",
+  },
+  {
+    href: "/notfallkarte",
+    icon: FileText,
+    label: "Notfallkarte",
+    text: "Persönlicher Krisenplan",
+  },
+  {
+    href: "/uebungen",
+    icon: MessageSquare,
+    label: "Übungen",
+    text: "Gesprächstechniken üben",
+  },
+  {
+    href: "/materialien",
+    icon: Download,
+    label: "Materialien",
+    text: "Handouts & PDFs",
+  },
+];
 
 const situationPaths = [
   {
@@ -66,25 +103,26 @@ export default function Home() {
         path="/"
       />
 
-      <section className="relative overflow-hidden bg-navy text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-navy to-navy-light/80 text-white">
         {/* Dekorative Kreise */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-sage-mid blur-3xl" />
           <div className="absolute -bottom-10 left-1/3 w-48 h-48 rounded-full bg-amber blur-3xl" />
+          <div className="absolute top-1/2 -left-20 w-56 h-56 rounded-full bg-sage-dark blur-3xl" />
         </div>
 
-        <div className="container relative z-10 py-12 md:py-14 lg:py-16">
+        <div className="container relative z-10 py-14 md:py-18 lg:py-22">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="inline-block px-3 py-1 rounded-full bg-sage-dark text-white text-[11px] font-semibold tracking-[0.12em] uppercase mb-4">
+              <span className="inline-block px-3 py-1 rounded-full bg-sage-dark text-white text-[11px] font-semibold tracking-[0.12em] uppercase mb-5">
                 Für Angehörige von Menschen mit Borderline
               </span>
 
-              <h1 className="text-3xl md:text-4xl lg:text-[42px] font-normal leading-[1.15] tracking-tight mb-2">
+              <h1 className="text-4xl md:text-5xl lg:text-[52px] font-normal leading-[1.12] tracking-tight mb-4">
                 Orientierung in belasteten{" "}
                 <span className="text-sage-light">Beziehungen</span>
               </h1>
@@ -172,6 +210,10 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-8"
             >
+              <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/70 mb-3">
+                <span className="w-6 h-px bg-sage-dark/30" />
+                Orientierung
+              </span>
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was ist gerade Ihre Lage?
               </h2>
@@ -245,6 +287,10 @@ export default function Home() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-8"
             >
+              <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/70 mb-3">
+                <span className="w-6 h-px bg-sage-dark/30" />
+                Unser Ansatz
+              </span>
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was diese Website besonders abdeckt
               </h2>
@@ -271,27 +317,47 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 md:py-12">
+      <section className="py-10 md:py-14 bg-sage-wash/40">
         <div className="container">
-          <div className="max-w-2xl mx-auto">
-            <Card className="border-border/50 bg-sand-muted/40">
-              <CardContent className="p-5">
-                <h2 className="text-xl font-normal text-foreground mb-2">
-                  Materialien und Beratung
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <div className="text-center mb-8">
+                <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/70 mb-3">
+                  <span className="w-6 h-px bg-sage-dark/30" />
+                  Werkzeuge
+                  <span className="w-6 h-px bg-sage-dark/30" />
+                </span>
+                <h2 className="text-2xl md:text-3xl font-normal text-foreground">
+                  Praktische Hilfen für Ihren Alltag
                 </h2>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Sekundäre Wege für Vertiefung und konkrete Unterstützung.
-                </p>
-                <div className="flex gap-3">
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="/materialien">Materialien</Link>
-                  </Button>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="/beratung">Beratung</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                {interactiveTools.map(tool => {
+                  const Icon = tool.icon;
+                  return (
+                    <Link key={tool.href} href={tool.href}>
+                      <div className="group flex flex-col items-center text-center p-4 md:p-5 rounded-xl bg-white border border-border/40 hover:border-sage-mid/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-sage-wash flex items-center justify-center mb-3 group-hover:bg-sage-light/50 transition-colors">
+                          <Icon className="w-6 h-6 md:w-7 md:h-7 text-sage-dark" />
+                        </div>
+                        <span className="text-sm font-semibold text-foreground mb-0.5">
+                          {tool.label}
+                        </span>
+                        <span className="text-xs text-muted-foreground leading-snug">
+                          {tool.text}
+                        </span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

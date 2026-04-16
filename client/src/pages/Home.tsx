@@ -200,6 +200,8 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="h-px bg-gradient-to-r from-transparent via-sage-mid/20 to-transparent" />
+
       <section className="py-8 md:py-10 bg-background">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -277,6 +279,8 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="h-px bg-gradient-to-r from-transparent via-sage-mid/20 to-transparent" />
+
       <section className="py-10 md:py-14 bg-cream">
         <div className="container">
           <div className="max-w-6xl mx-auto">
@@ -314,6 +318,16 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
+
+                  <Link
+                    href="/verstehen"
+                    className="inline-flex items-center gap-2.5 text-sage-dark hover:text-sage-darker font-medium text-sm group transition-colors mt-5"
+                  >
+                    Mehr über Borderline erfahren
+                    <span className="w-7 h-7 rounded-full bg-sage-wash group-hover:bg-sage-light/50 flex items-center justify-center transition-colors">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </Link>
                 </div>
 
                 {/* Rechte Spalte: Abstrakte Illustration */}
@@ -362,6 +376,8 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="h-px bg-gradient-to-r from-transparent via-sage-mid/20 to-transparent" />
+
       <section className="py-10 md:py-14 bg-sage-wash/40">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -401,6 +417,18 @@ export default function Home() {
                     </Link>
                   );
                 })}
+              </div>
+
+              <div className="text-center mt-6">
+                <Link
+                  href="/materialien"
+                  className="inline-flex items-center gap-2.5 text-sage-dark hover:text-sage-darker font-medium text-sm group transition-colors"
+                >
+                  Alle Materialien entdecken
+                  <span className="w-7 h-7 rounded-full bg-white group-hover:bg-sage-light/30 flex items-center justify-center transition-colors shadow-sm">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
               </div>
             </motion.div>
           </div>

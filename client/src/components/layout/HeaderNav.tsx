@@ -51,7 +51,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
           </Link>
 
           <nav
-            className="hidden lg:flex items-center gap-0.5 xl:gap-1 shrink-0"
+            className="hidden lg:flex items-center bg-muted/50 rounded-full px-1.5 py-1 gap-0.5 shrink-0"
             aria-label="Hauptnavigation"
           >
             {navItems.map(item => {
@@ -61,10 +61,10 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-2.5 lg:px-3 xl:px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-500 whitespace-nowrap ${
+                  className={`px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                     isActive
-                      ? "bg-sage-wash text-sage-darker"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      ? "bg-sage-dark text-white shadow-sm"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
                   }`}
                 >
                   {item.label}

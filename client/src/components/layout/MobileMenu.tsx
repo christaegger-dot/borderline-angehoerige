@@ -129,7 +129,7 @@ export function MobileMenu({
                             key={groupName}
                             className={groupIndex > 0 ? "mt-2" : ""}
                           >
-                            <p className="px-4 pt-2 pb-1 text-xs font-semibold text-muted-foreground/60 uppercase tracking-wider">
+                            <p className="px-4 pt-2 pb-1 text-xs font-semibold text-muted-foreground/80 uppercase tracking-wider">
                               {groupName}
                             </p>
                             {items.map(item => {

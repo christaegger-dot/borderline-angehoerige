@@ -55,6 +55,7 @@ export function useCountUp({
 
   // 4. useRef
   const ref = useRef<HTMLDivElement>(null);
+  const rafIdRef = useRef<number | null>(null);
 
   // 5. useEffect – IntersectionObserver
   useEffect(() => {
@@ -78,11 +79,11 @@ export function useCountUp({
               const currentValue = easedProgress * end;
               setDisplayValue(formatValue(currentValue));
               if (progress < 1) {
-                requestAnimationFrame(step);
+                rafIdRef.current = requestAnimationFrame(step);
               }
             };
 
-            requestAnimationFrame(step);
+            rafIdRef.current = requestAnimationFrame(step);
           }
         });
       },
@@ -90,7 +91,13 @@ export function useCountUp({
     );
 
     observer.observe(element);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+      }
+    };
   }, [hasAnimated, formatValue, duration, end]);
 
   return { ref, displayValue };

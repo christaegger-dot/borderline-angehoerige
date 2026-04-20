@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";
@@ -19,12 +19,39 @@ export default function Search({ isOpen, onClose }: SearchProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const dialogRef = useFocusTrap(isOpen);
+  const focusTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const debounceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const normalizedSearchIndex = useMemo(
+    () =>
+      searchableContent.map(item => ({
+        item,
+        searchText: [
+          item.title,
+          item.description,
+          ...item.keywords,
+          item.section,
+        ]
+          .join(" ")
+          .toLowerCase(),
+      })),
+    []
+  );
 
   // Focus input when opened
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      setTimeout(() => inputRef.current?.focus(), 100);
+      focusTimeoutRef.current = setTimeout(
+        () => inputRef.current?.focus(),
+        100
+      );
     }
+    return () => {
+      if (focusTimeoutRef.current) {
+        clearTimeout(focusTimeoutRef.current);
+        focusTimeoutRef.current = null;
+      }
+    };
   }, [isOpen]);
 
   // Close on Escape
@@ -45,44 +72,49 @@ export default function Search({ isOpen, onClose }: SearchProps) {
 
   // Search logic
   useEffect(() => {
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+      debounceTimeoutRef.current = null;
+    }
+
     if (query.length < 2) {
       setResults([]);
       return;
     }
 
-    const searchTerms = query
-      .toLowerCase()
-      .split(" ")
-      .filter(t => t.length > 1);
-
-    const matches = searchableContent.filter(item => {
-      const searchText = [
-        item.title,
-        item.description,
-        ...item.keywords,
-        item.section,
-      ]
-        .join(" ")
-        .toLowerCase();
-
-      return searchTerms.every(term => searchText.includes(term));
-    });
-
-    // Sort by relevance (title matches first)
-    matches.sort((a, b) => {
-      const aTitle = a.title.toLowerCase();
-      const bTitle = b.title.toLowerCase();
+    debounceTimeoutRef.current = setTimeout(() => {
       const queryLower = query.toLowerCase();
+      const searchTerms = queryLower.split(" ").filter(t => t.length > 1);
 
-      if (aTitle.includes(queryLower) && !bTitle.includes(queryLower))
-        return -1;
-      if (!aTitle.includes(queryLower) && bTitle.includes(queryLower)) return 1;
-      return 0;
-    });
+      const matches = normalizedSearchIndex
+        .filter(({ searchText }) =>
+          searchTerms.every(term => searchText.includes(term))
+        )
+        .map(({ item }) => item);
 
-    setResults(matches.slice(0, 8));
-    setActiveIndex(-1);
-  }, [query]);
+      // Sort by relevance (title matches first)
+      matches.sort((a, b) => {
+        const aTitle = a.title.toLowerCase();
+        const bTitle = b.title.toLowerCase();
+
+        if (aTitle.includes(queryLower) && !bTitle.includes(queryLower))
+          return -1;
+        if (!aTitle.includes(queryLower) && bTitle.includes(queryLower))
+          return 1;
+        return 0;
+      });
+
+      setResults(matches.slice(0, 8));
+      setActiveIndex(-1);
+    }, 150);
+
+    return () => {
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+        debounceTimeoutRef.current = null;
+      }
+    };
+  }, [normalizedSearchIndex, query]);
 
   const handleResultClick = () => {
     setQuery("");

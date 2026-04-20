@@ -180,6 +180,7 @@ export function TableOfContents() {
   const floatingMode = getMobileFloatingMode(location);
   // Scroll-basierte aktive Markierung (kein IntersectionObserver nötig)
   const activeNavRef = useRef<HTMLButtonElement | null>(null);
+  const scrollRafRef = useRef<number | null>(null);
 
   // Headings scannen
   useEffect(() => {
@@ -228,10 +229,12 @@ export function TableOfContents() {
 
   // Scroll-basierte aktive Markierung
   useEffect(() => {
-    if (headings.length === 0) return;
+    const updateOnScroll = () => {
+      setShowFloatingButton(window.scrollY > 280);
 
-    // Scroll-basierte Erkennung: Welcher Abschnitt ist am nächsten am oberen Viewport-Rand?
-    const handleScroll = () => {
+      if (headings.length === 0) return;
+
+      // Scroll-basierte Erkennung: Welcher Abschnitt ist am nächsten am oberen Viewport-Rand?
       const headerHeight = 80;
       let bestId = headings[0]?.id || "";
       let bestDistance = -Infinity;
@@ -269,11 +272,23 @@ export function TableOfContents() {
       }
     };
 
+    const handleScroll = () => {
+      if (scrollRafRef.current !== null) return;
+      scrollRafRef.current = requestAnimationFrame(() => {
+        scrollRafRef.current = null;
+        updateOnScroll();
+      });
+    };
+
+    updateOnScroll(); // Initial ausführen
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial ausführen
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (scrollRafRef.current !== null) {
+        cancelAnimationFrame(scrollRafRef.current);
+        scrollRafRef.current = null;
+      }
     };
   }, [headings]);
 
@@ -286,13 +301,6 @@ export function TableOfContents() {
       });
     }
   }, [activeId]);
-
-  useEffect(() => {
-    const onScroll = () => setShowFloatingButton(window.scrollY > 280);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Body-Scroll-Lock für Mobile-Drawer
   useScrollLock(isOpen);

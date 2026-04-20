@@ -14,6 +14,7 @@ import {
   FileText,
 } from "lucide-react";
 import { Link } from "wouter";
+import EvidenceNote from "@/components/EvidenceNote";
 
 export default function UeberUns() {
   return (
@@ -143,6 +144,31 @@ export default function UeberUns() {
                   );
                 })}
               </div>
+              <EvidenceNote
+                title="Wie wir Quellen meinen"
+                definition="Mit «Wir nennen unsere Quellen» meinen wir zweierlei: wissenschaftliche Evidenz für medizinische oder therapeutische Aussagen und konkrete Versorgungsquellen für Hilfen in der Schweiz, vor allem im Raum Zürich."
+                reviewDate="24.03.2026"
+                sources={[
+                  {
+                    label:
+                      "APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024)",
+                    href: "https://psychiatryonline.org/doi/book/10.1176/appi.books.9780890424896",
+                    type: "wissenschaft",
+                  },
+                  {
+                    label: "NEA-BPD / Family Connections",
+                    href: "https://www.borderlinepersonalitydisorder.org/family-connections/",
+                    type: "versorgung",
+                  },
+                  {
+                    label:
+                      "PUK Zürich – Angehörigenarbeit und Versorgungsangebote",
+                    href: "https://www.pukzh.ch",
+                    type: "versorgung",
+                  },
+                ]}
+                className="mt-5"
+              />
             </ContentSection>
 
             {/* Quellen */}
@@ -198,6 +224,33 @@ export default function UeberUns() {
                   </div>
                 ))}
               </div>
+              <EvidenceNote
+                title="Auswahl der Grundlagen"
+                definition="Die Website stützt sich auf klinische Standardwerke, evidenzbasierte Therapieansätze und Angehörigenprogramme. Die Auswahl ist kuratiert, nicht vollständig bibliografisch."
+                reviewDate="24.03.2026"
+                sources={[
+                  {
+                    label:
+                      "Linehan, Cognitive-Behavioral Treatment of Borderline Personality Disorder",
+                    type: "wissenschaft",
+                  },
+                  {
+                    label: "Mason & Kreger, Stop Walking on Eggshells",
+                    type: "wissenschaft",
+                  },
+                  {
+                    label:
+                      "Kreisman & Straus, Ich hasse dich – verlass mich nicht",
+                    type: "wissenschaft",
+                  },
+                  {
+                    label: "Family Connections (NEA-BPD / Alan Fruzzetti)",
+                    href: "https://www.borderlinepersonalitydisorder.org/family-connections/",
+                    type: "versorgung",
+                  },
+                ]}
+                className="mt-6"
+              />
 
               <p className="text-sm text-muted-foreground mt-6">
                 Eine vollständige Liste unserer Buchempfehlungen finden Sie auf

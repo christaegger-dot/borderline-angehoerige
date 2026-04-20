@@ -37,7 +37,8 @@ import {
 
 const hype = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
 const emailKjpp = emailByIdStrict("EMAIL_KJPP");
-const pukZentrale = kontaktByIdStrict("INFO_PUK_ZENTRALE");
+const pukDbt = kontaktByIdStrict("INFO_PUK_DBT");
+const ipw = kontaktByIdStrict("INFO_IPW");
 const emailHard = emailByIdStrict("EMAIL_HARD");
 const clieniaUrl = urlByIdStrict("URL_CLIENIA");
 const dbtDachUrl = urlByIdStrict("URL_DBT_DACH");
@@ -519,10 +520,10 @@ Mit freundlichen Grüssen,
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <a
-                      href={`tel:${pukZentrale.tel}`}
+                      href={`tel:${pukDbt.tel}`}
                       className="text-sm text-sage-dark hover:underline flex items-center gap-1"
                     >
-                      <Phone className="w-3 h-3" /> {pukZentrale.nummer}
+                      <Phone className="w-3 h-3" /> {pukDbt.nummer}
                     </a>
                     <a
                       href={`mailto:${emailHard.adresse}`}
@@ -535,6 +536,24 @@ Mit freundlichen Grüssen,
               </Card>
 
               <div className="grid sm:grid-cols-2 gap-4">
+                <Card className="border-border/50">
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground text-sm mb-1">
+                      IPW Winterthur
+                    </h4>
+                    <p className="text-xs text-muted-foreground mb-2">
+                      Erwachsenenpsychiatrisches Angebot in Winterthur mit
+                      regionaler Anbindung.
+                    </p>
+                    <a
+                      href={`tel:${ipw.tel}`}
+                      className="text-xs text-sage-dark hover:underline flex items-center gap-1"
+                    >
+                      <Phone className="w-3 h-3" />
+                      {ipw.nummer}
+                    </a>
+                  </CardContent>
+                </Card>
                 <Card className="border-border/50">
                   <CardContent className="p-4">
                     <h4 className="font-semibold text-foreground text-sm mb-1">

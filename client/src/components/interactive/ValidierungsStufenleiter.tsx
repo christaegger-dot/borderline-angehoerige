@@ -184,7 +184,11 @@ export default function ValidierungsStufenleiter() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <Icon className="w-4 h-4" style={{ color: stufe.color }} />
+                    <Icon
+                      className="w-4 h-4"
+                      style={{ color: stufe.color }}
+                      aria-hidden="true"
+                    />
                     <h4 className="font-semibold text-foreground">
                       {stufe.title}
                     </h4>

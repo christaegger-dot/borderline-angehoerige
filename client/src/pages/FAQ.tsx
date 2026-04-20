@@ -400,7 +400,7 @@ export default function FAQ() {
                 },
                 {
                   label:
-                    "Storebø, Stoffers-Winterling et al. (2020), Psychological therapies for BPD (Cochrane)",
+                    "Storebø et al. (2020), Psychological therapies for BPD (Cochrane)",
                   href: "https://pubmed.ncbi.nlm.nih.gov/32368793/",
                 },
               ]}

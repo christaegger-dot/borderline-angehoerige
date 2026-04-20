@@ -33,10 +33,8 @@ export default function ContentSection({
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const sectionRef = useRef<HTMLDivElement>(null);
   const pendingScrollRef = useRef(false);
-
-  // Ref für isOpen, damit der Event-Listener nicht bei jedem Toggle
-  // entfernt und neu registriert wird (kein Event-Verlust möglich)
   const isOpenRef = useRef(isOpen);
+
   useEffect(() => {
     isOpenRef.current = isOpen;
   }, [isOpen]);
@@ -87,8 +85,8 @@ export default function ContentSection({
     <div ref={sectionRef} className="mb-6" id={id}>
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 rounded-xl"
+        onClick={() => setIsOpen(open => !open)}
+        className="w-full text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 rounded-xl active:bg-sand-muted"
         aria-expanded={isOpen}
         aria-controls={id ? `section-content-${id}` : undefined}
         aria-label={`Abschnitt ${title} ${isOpen ? "zuklappen" : "aufklappen"}`}

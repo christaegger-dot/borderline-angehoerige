@@ -199,7 +199,13 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-6" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)" }} />
+      <div
+        className="h-6"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)",
+        }}
+      />
 
       <section className="py-8 md:py-10 bg-background">
         <div className="container">
@@ -278,7 +284,13 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-6" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)" }} />
+      <div
+        className="h-6"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)",
+        }}
+      />
 
       <section className="py-10 md:py-14 bg-cream">
         <div className="container">
@@ -334,7 +346,10 @@ export default function Home() {
                   <div className="relative w-full max-w-sm aspect-square">
                     <div
                       className="absolute inset-0 rounded-full"
-                      style={{ background: "radial-gradient(circle, oklch(0.95 0.02 190 / 0.7), oklch(0.88 0.04 190 / 0.25))" }}
+                      style={{
+                        background:
+                          "radial-gradient(circle, oklch(0.95 0.02 190 / 0.7), oklch(0.88 0.04 190 / 0.25))",
+                      }}
                     />
 
                     {/* Dekorative Ringe */}
@@ -377,7 +392,13 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-6" style={{ background: "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)" }} />
+      <div
+        className="h-6"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)",
+        }}
+      />
 
       <section className="py-10 md:py-14 bg-sage-wash/40">
         <div className="container">

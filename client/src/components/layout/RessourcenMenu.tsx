@@ -117,9 +117,7 @@ export function RessourcenMenu({
                 <div
                   key={group.name}
                   className={
-                    groupIdx > 0
-                      ? "border-l border-border/40 pl-2"
-                      : undefined
+                    groupIdx > 0 ? "border-l border-border/40 pl-2" : undefined
                   }
                 >
                   {/* Group header inspired by Seconds' "—— LABEL" pattern */}

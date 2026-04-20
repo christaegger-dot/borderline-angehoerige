@@ -11,6 +11,12 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+export function isSearchShortcut(
+  event: Pick<KeyboardEvent, "metaKey" | "ctrlKey" | "key">
+) {
+  return (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k";
+}
+
 export default function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
@@ -20,7 +26,7 @@ export default function Layout({ children }: LayoutProps) {
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      if (isSearchShortcut(e)) {
         e.preventDefault();
         setSearchOpen(true);
       }

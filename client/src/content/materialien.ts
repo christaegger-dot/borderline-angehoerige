@@ -1,15 +1,18 @@
-export type Material = {
+export type MaterialCategory =
+  | "alle"
+  | "verstehen"
+  | "unterstuetzen"
+  | "kommunizieren"
+  | "grenzen"
+  | "selbstfuersorge"
+  | "genesung"
+  | "soforthilfe";
+
+export interface MaterialItem {
   id: string;
   title: string;
   description: string;
-  category:
-    | "verstehen"
-    | "unterstuetzen"
-    | "kommunizieren"
-    | "grenzen"
-    | "selbstfuersorge"
-    | "genesung"
-    | "soforthilfe";
+  category: Exclude<MaterialCategory, "alle">;
   kind:
     | "Infografik"
     | "Spickzettel"
@@ -22,9 +25,9 @@ export type Material = {
   previewUrl?: string;
   isHtml?: boolean;
   priority?: "core" | "secondary";
-};
+}
 
-export const materials: Material[] = [
+export const materials: MaterialItem[] = [
   {
     id: "notfallkarte-zuerich",
     title: "Notfallkarte Zürich – Psychische Krise",
@@ -220,6 +223,17 @@ export const materials: Material[] = [
   },
 ];
 
+export const categoryMeta = [
+  { id: "alle", label: "Alle", icon: "filter" },
+  { id: "soforthilfe", label: "Soforthilfe", icon: "alert-triangle" },
+  { id: "verstehen", label: "Verstehen", icon: "book-open" },
+  { id: "unterstuetzen", label: "Unterstützen", icon: "heart" },
+  { id: "kommunizieren", label: "Kommunizieren", icon: "message-circle" },
+  { id: "grenzen", label: "Grenzen", icon: "shield" },
+  { id: "selbstfuersorge", label: "Selbstfürsorge", icon: "sparkles" },
+  { id: "genesung", label: "Genesung", icon: "trending-up" },
+] as const;
+
 export const quickStarts = [
   {
     id: "soforthilfe",
@@ -246,7 +260,7 @@ export const quickStarts = [
     id: "selbstfuersorge",
     title: "Ich bin selbst am Limit",
     text: "Wenn Erschöpfung, Schuld oder Daueranspannung dominieren.",
-    color: "var(--color-sage-mid)",
-    bg: "var(--color-sage-wash)",
+    color: "var(--color-terracotta-mid)",
+    bg: "var(--color-terracotta-wash)",
   },
-];
+] as const;

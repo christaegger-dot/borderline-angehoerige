@@ -34,10 +34,8 @@ export interface ResourceCard {
 }
 
 export interface EvidenceSource {
-  title: string;
-  authors?: string;
-  year?: number;
-  source: string;
-  url?: string;
+  label: string;
+  href?: string;
+  type?: "wissenschaft" | "versorgung";
   note?: string;
 }

@@ -33,6 +33,11 @@ export default function ContentSection({
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const sectionRef = useRef<HTMLDivElement>(null);
   const pendingScrollRef = useRef(false);
+  const isOpenRef = useRef(isOpen);
+
+  useEffect(() => {
+    isOpenRef.current = isOpen;
+  }, [isOpen]);
 
   // Auf Custom Event "open-section" lauschen
   useEffect(() => {
@@ -41,7 +46,7 @@ export default function ContentSection({
     const handleOpenSection = (e: Event) => {
       const detail = (e as CustomEvent<{ sectionId: string }>).detail;
       if (detail.sectionId === id) {
-        if (!isOpen) {
+        if (!isOpenRef.current) {
           pendingScrollRef.current = true;
           setIsOpen(true);
         } else {
@@ -81,8 +86,8 @@ export default function ContentSection({
     <div ref={sectionRef} className="mb-6" id={id}>
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 rounded-xl"
+        onClick={() => setIsOpen((open) => !open)}
+        className="w-full text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 rounded-xl active:bg-sand-muted"
         aria-expanded={isOpen}
         aria-label={`Abschnitt ${title} ${isOpen ? 'zuklappen' : 'aufklappen'}`}
       >

@@ -17,12 +17,13 @@ import SEO from "@/components/SEO";
  *   - Floating-Button und Scroll-Button überdecken keine Nummern mehr
  */
 import Layout from "@/components/Layout";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import { motion } from "framer-motion";
 import { Phone, AlertTriangle, Clock, Baby, User, Users, Shield, Heart, Pill, Info, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
-  kontaktById,
+  kontaktByIdStrict,
 } from "@/data/kontakte";
 
 // ─── Sticky Ampel-Leiste ──────────────────────────────────
@@ -61,7 +62,7 @@ function StickyAmpelLeiste() {
                 type="button"
                 onClick={() => scrollTo(item.id)}
                 aria-label={`Zu Abschnitt: ${item.label}`}
-                className="flex-1 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 px-2 py-2 sm:py-2.5 rounded-lg text-white font-medium text-xs sm:text-sm transition-all hover:brightness-90 active:scale-[0.97] shadow-sm"
+                className="flex-1 min-h-[44px] flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 px-2 py-2 sm:py-2.5 rounded-lg text-white font-medium text-xs sm:text-sm transition-all hover:brightness-90 active:scale-[0.97] shadow-sm"
                 style={{ backgroundColor: item.bg }}
               >
                 <span className="font-semibold leading-tight text-center">{item.label}</span>
@@ -159,20 +160,21 @@ function EntlastungKarte({ nummer, label, hinweis, tel, badge }: { nummer: strin
 // ─── Soforthilfe-Seite ────────────────────────────────────
 
 export default function Notfall() {
-  const rot144 = kontaktById("ROT_144")!;
-  const rot117 = kontaktById("ROT_117")!;
-  const rot112 = kontaktById("ROT_112")!;
-  const pukKjp = kontaktById("GELB_PUK_KJP")!;
-  const pukErw = kontaktById("GELB_PUK_ERW")!;
-  const puk65  = kontaktById("GELB_PUK_65")!;
-  const gruen143   = kontaktById("GRUEN_143")!;
-  const gruenEltern = kontaktById("GRUEN_ELTERN")!;
-  const gruen147   = kontaktById("GRUEN_147")!;
-  const rot145         = kontaktById("ROT_145")!;
-  const infoAerztefon  = kontaktById("INFO_AERZTEFON")!;
-  const infoPukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
-  const infoFachstelle = kontaktById("INFO_FACHSTELLE")!;
-  const infoKiz        = kontaktById("INFO_KIZ")!;
+  const rot144 = kontaktByIdStrict("ROT_144");
+  const rot117 = kontaktByIdStrict("ROT_117");
+  const rot112 = kontaktByIdStrict("ROT_112");
+  const pukKjp = kontaktByIdStrict("GELB_PUK_KJP");
+  const pukErw = kontaktByIdStrict("GELB_PUK_ERW");
+  const puk65 = kontaktByIdStrict("GELB_PUK_65");
+  const gruen143 = kontaktByIdStrict("GRUEN_143");
+  const gruenEltern = kontaktByIdStrict("GRUEN_ELTERN");
+  const gruen147 = kontaktByIdStrict("GRUEN_147");
+  const rot145 = kontaktByIdStrict("ROT_145");
+  const infoAerztefon = kontaktByIdStrict("INFO_AERZTEFON");
+  const infoPukZentrale = kontaktByIdStrict("INFO_PUK_ZENTRALE");
+  const infoFachstelle = kontaktByIdStrict("INFO_FACHSTELLE");
+  const infoKiz = kontaktByIdStrict("INFO_KIZ");
+  const kontaktStand = rot144.lastVerified ?? "24.03.2026";
 
   return (
     <Layout>
@@ -212,6 +214,13 @@ export default function Notfall() {
                 <Link href="/unterstuetzen/krise" className="text-terracotta-mid hover:underline font-semibold">
                   «In der Krise unterstützen» →
                 </Link>
+              </p>
+            </div>
+
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <LastVerifiedBadge date={kontaktStand} />
+              <p className="text-sm text-muted-foreground">
+                Notfall- und Krisenkontakte auf dieser Seite gelten für die Schweiz, vor allem für den Kanton Zürich.
               </p>
             </div>
           </motion.div>
@@ -270,7 +279,7 @@ export default function Notfall() {
               {/* Merksatz */}
               <div className="px-5 py-3 sm:px-6 bg-sos-rot/20 border-t border-white/10">
                 <p className="text-white text-xs sm:text-sm leading-snug">
-                  <strong>Merke:</strong> Bei akuter Selbst- oder Fremdgefährdung zuerst <strong>144 / 117 / 112</strong> wählen – auch wenn die betroffene Person nicht einverstanden ist. Im Zweifel sofort medizinische oder psychiatrische Fachstellen einbeziehen.
+                  <strong>Merke:</strong> Bei akuter Selbst- oder Fremdgefährdung sollten Sie rasch <strong>144 / 117 / 112</strong> einbeziehen, auch wenn die betroffene Person das im Moment ablehnt. Wenn Sie unsicher sind, ziehen Sie zusätzlich medizinische oder psychiatrische Fachpersonen bei.
                 </p>
               </div>
             </motion.div>
@@ -382,7 +391,7 @@ export default function Notfall() {
               {/* Hinweis */}
               <div className="px-5 py-3 sm:px-6 bg-sos-gruen-wash border-t border-sos-gruen-light">
                 <p className="text-sos-gruen-mid text-xs sm:text-sm leading-snug">
-                  <strong>Bei akuter Gefahr:</strong> Immer zuerst <strong>144 / 117 / 112</strong> rufen.
+                  <strong>Bei akuter Gefahr:</strong> Zuerst <strong>144 / 117 / 112</strong> einbeziehen.
                 </p>
               </div>
             </motion.div>

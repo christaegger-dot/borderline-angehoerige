@@ -71,7 +71,7 @@ export default function FAQ() {
       questions: [
         {
           question: "Wie reagiere ich auf Drohungen?",
-          answer: "Unterscheiden Sie zwischen Äusserungen von Suizidalität und anderen Drohungen. Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben. Sagen Sie zum Beispiel: «Ich höre, dass du gerade sehr leidest. Wenn du sagst, du willst dir etwas antun, hole ich Hilfe dazu.» Handeln Sie dann auch entsprechend. Bei anderen Drohungen (z.B. «Dann verlasse ich dich») hilft meist: ruhig bleiben, das Gefühl hinter der Aussage ansprechen und gleichzeitig nicht aus Angst nachgeben. Solche Aussagen entstehen oft aus Überforderung, Angst oder dem Wunsch, Kontrolle zurückzugewinnen.",
+          answer: "Unterscheiden Sie zwischen Äusserungen von Suizidalität und anderen Drohungen. Bei Suizidäusserungen sollten Sie die Aussage ernst nehmen und die Verantwortung nicht allein tragen. Sagen Sie zum Beispiel: «Ich höre, dass du gerade sehr leidest. Wenn du sagst, du willst dir etwas antun, hole ich Hilfe dazu.» Ziehen Sie dann Fachpersonen oder Notrufstellen bei, wenn eine akute Gefährdung im Raum steht. Bei anderen Drohungen (z.B. «Dann verlasse ich dich») hilft meist: ruhig bleiben, das Gefühl hinter der Aussage ansprechen und gleichzeitig nicht aus Angst nachgeben. Solche Aussagen entstehen oft aus Überforderung, Angst oder dem Wunsch, Kontrolle zurückzugewinnen.",
           links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }]
         },
         {
@@ -96,7 +96,7 @@ export default function FAQ() {
       questions: [
         {
           question: "Wann ist eine Einweisung nötig?",
-          answer: "Eine psychiatrische Einweisung (freiwillig oder unfreiwillig) ist angezeigt bei: akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung, die medizinische Versorgung erfordert, Fremdgefährdung, oder wenn die Person so dekompensiert ist, dass sie sich nicht mehr selbst versorgen kann. In der Schweiz kann eine fürsorgerische Unterbringung (FU) durch einen Arzt angeordnet werden, wenn eine ernsthafte Selbst- oder Fremdgefährdung vorliegt. Rufen Sie im Zweifelsfall den psychiatrischen Notdienst an – die können die Situation einschätzen.",
+          answer: "Eine psychiatrische Einweisung oder Krisenintervention kann nötig werden bei akuter Suizidalität mit konkreten Plänen oder verfügbaren Mitteln, schwerer Selbstverletzung mit medizinischem Bedarf, deutlicher Fremdgefährdung oder wenn die Person sich vorübergehend nicht mehr ausreichend selbst versorgen kann. In der Schweiz kann unter bestimmten rechtlichen Voraussetzungen auch eine fürsorgerische Unterbringung (FU) angeordnet werden. Ob das im Einzelfall angezeigt ist, muss aber medizinisch und rechtlich eingeschätzt werden. Wenn Sie unsicher sind, kontaktieren Sie den psychiatrischen Notdienst oder den Notruf, statt die Situation allein beurteilen zu müssen.",
           links: [{ text: "Notfallnummern", url: "/soforthilfe" }]
         },
         {
@@ -294,10 +294,10 @@ export default function FAQ() {
               definition="Kurzdefinition: Remission = Diagnosekriterien werden über längere Zeit nicht mehr erfüllt; Recovery = Remission plus stabiles soziales/berufliches Funktionsniveau."
               className="mt-8"
               sources={[
-                { label: "Zanarini et al. (2010), The 10-year course of BPD", href: "https://pubmed.ncbi.nlm.nih.gov/20334540/" },
+                { label: "Zanarini et al. (2010), The 10-year course of BPD", href: "https://pubmed.ncbi.nlm.nih.gov/20395399/" },
                 { label: "Zanarini et al. (2012), Recovery in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/22737693/" },
-                { label: "Gunderson et al. (2011), CLPS outcomes in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/21668726/" },
-                { label: "Stoffers-Winterling et al. (2022), Psychological therapies for BPD (Cochrane)", href: "https://pubmed.ncbi.nlm.nih.gov/35049048/" },
+                { label: "Gunderson et al. (2011), CLPS outcomes in BPD", href: "https://pubmed.ncbi.nlm.nih.gov/21464343/" },
+                { label: "Storebø et al. (2020), Psychological therapies for BPD (Cochrane)", href: "https://pubmed.ncbi.nlm.nih.gov/32368793/" },
               ]}
             />
 

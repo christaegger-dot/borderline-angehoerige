@@ -1,14 +1,16 @@
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Building2, Mail, MapPin, Users, BookOpen, Phone, ArrowRight, Info, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
-import { kontaktById, emailById, urlById } from "@/data/kontakte";
+import { kontaktByIdStrict, emailByIdStrict, urlByIdStrict } from "@/data/kontakte";
 
-const fachstelleTel = kontaktById("INFO_FACHSTELLE")!;
-const fachstelleEmail = emailById("EMAIL_ANGEHOERIGEN")!;
-const pukUrl = urlById("URL_PUK")!;
+const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
+const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
+const pukUrl = urlByIdStrict("URL_PUK");
+const fachstelleStand = fachstelleTel.lastVerified ?? fachstelleEmail.lastVerified ?? pukUrl.lastVerified ?? "24.03.2026";
 
 export default function Fachstelle() {
   return (
@@ -43,6 +45,12 @@ export default function Fachstelle() {
               mit psychischen Erkrankungen. Die Fachstelle bietet Orientierung, Entlastung und
               Beratung für Situationen, die im Alltag oft schwer alleine zu tragen sind.
             </p>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <LastVerifiedBadge date={fachstelleStand} />
+              <p className="text-sm text-muted-foreground">
+                Die Kontaktangaben auf dieser Seite beziehen sich auf die Fachstelle Angehörigenarbeit der PUK Zürich.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -127,6 +135,7 @@ export default function Fachstelle() {
 
               <Card className="border-sage-mid/20 bg-sage-wash/30">
                 <CardContent className="p-6 md:p-8">
+                  <LastVerifiedBadge date={fachstelleStand} className="mb-5" />
                   <div className="space-y-5">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-sage-light flex items-center justify-center flex-shrink-0">

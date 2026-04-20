@@ -52,7 +52,8 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
 
           <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 shrink-0">
             {navItems.map((item) => {
-              const isActive = location.startsWith(item.href);
+              const isActive =
+                location === item.href || location.startsWith(item.href + "/");
               return (
                 <Link
                   key={item.href}

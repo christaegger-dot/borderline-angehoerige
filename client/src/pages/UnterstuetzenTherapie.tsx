@@ -24,14 +24,15 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "wouter";
-import { GELB, kontaktById, emailById, urlById } from "@/data/kontakte";
+import { GELB, kontaktByIdStrict, emailByIdStrict, urlByIdStrict } from "@/data/kontakte";
 
-const hype = kontaktById("INFO_PUK_KJPP_HYPE")!;
-const emailKjpp = emailById("EMAIL_KJPP")!;
-const pukZentrale = kontaktById("INFO_PUK_ZENTRALE")!;
-const emailHard = emailById("EMAIL_HARD")!;
-const clieniaUrl = urlById("URL_CLIENIA")!;
-const dbtDachUrl = urlById("URL_DBT_DACH")!;
+const hype = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
+const pukDbt = kontaktByIdStrict("INFO_PUK_DBT");
+const ipw = kontaktByIdStrict("INFO_IPW");
+const emailKjpp = emailByIdStrict("EMAIL_KJPP");
+const emailHard = emailByIdStrict("EMAIL_HARD");
+const clieniaUrl = urlByIdStrict("URL_CLIENIA");
+const dbtDachUrl = urlByIdStrict("URL_DBT_DACH");
 
 export default function UnterstuetzenTherapie() {
   return (
@@ -265,8 +266,8 @@ export default function UnterstuetzenTherapie() {
                     Spezialisierte DBT-orientierte Behandlungsangebote für Erwachsene.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <a href={`tel:${pukZentrale.tel}`} className="text-sm text-sage-dark hover:underline flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> {pukZentrale.nummer}
+                    <a href={`tel:${pukDbt.tel}`} className="text-sm text-sage-dark hover:underline flex items-center gap-1">
+                      <Phone className="w-3 h-3" /> {pukDbt.nummer}
                     </a>
                     <a href={`mailto:${emailHard.adresse}`} className="text-sm text-sage-dark hover:underline flex items-center gap-1">
                       <Mail className="w-3 h-3" /> {emailHard.adresse}
@@ -275,7 +276,19 @@ export default function UnterstuetzenTherapie() {
                 </CardContent>
               </Card>
 
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-3 gap-4">
+                <Card className="border-border/50">
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground text-sm mb-1">IPW Winterthur</h4>
+                    <p className="text-xs text-muted-foreground mb-2">
+                      Erwachsenenpsychiatrisches Angebot in Winterthur mit regionaler Anbindung.
+                    </p>
+                    <a href={`tel:${ipw.tel}`} className="text-xs text-sage-dark hover:underline flex items-center gap-1">
+                      <Phone className="w-3 h-3" />
+                      {ipw.nummer}
+                    </a>
+                  </CardContent>
+                </Card>
                 <Card className="border-border/50">
                   <CardContent className="p-4">
                     <h4 className="font-semibold text-foreground text-sm mb-1">Clienia Schlössli</h4>

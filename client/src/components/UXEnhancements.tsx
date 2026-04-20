@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronUp, ChevronRight, ChevronLeft, Home, List, X, ArrowLeft } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 // Zurück-nach-oben-Button
 export function ScrollToTopButton() {
@@ -115,14 +116,14 @@ export function Breadcrumbs() {
             </li>
             {parent && (
               <li className="flex items-center gap-2">
-                <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+                <ChevronRight className="w-4 h-4 text-muted-foreground/50" aria-hidden="true" />
                 <Link href={parent.href} className="hover:text-foreground transition-colors">
                   {parent.label}
                 </Link>
               </li>
             )}
             <li className="flex items-center gap-2">
-              <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
+              <ChevronRight className="w-4 h-4 text-muted-foreground/50" aria-hidden="true" />
               <span className="text-foreground font-medium">{pageName}</span>
             </li>
           </ol>
@@ -145,6 +146,8 @@ export function TableOfContents() {
   const [isOpen, setIsOpen] = useState(false);
   // Scroll-basierte aktive Markierung (kein IntersectionObserver nötig)
   const activeNavRef = useRef<HTMLButtonElement | null>(null);
+
+  useScrollLock(isOpen);
 
   // Headings scannen
   useEffect(() => {
@@ -241,32 +244,6 @@ export function TableOfContents() {
     }
   }, [activeId]);
 
-  // Body-Scroll-Lock für Mobile-Drawer
-  useEffect(() => {
-    if (isOpen) {
-      const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
-    } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-      }
-    }
-    return () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
   const scrollToHeading = useCallback((id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -300,7 +277,7 @@ export function TableOfContents() {
       {/* ─── Mobile: Floating TOC Button ─── */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="min-[1400px]:hidden fixed left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+        className="min-[1400px]:hidden fixed left-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))' }}
         aria-label="Inhaltsverzeichnis öffnen"
       >
@@ -343,7 +320,7 @@ export function TableOfContents() {
               <button
                 type="button" 
                 onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full hover:bg-muted flex items-center justify-center"
+                className="w-8 h-8 rounded-full hover:bg-muted flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 aria-label="Schliessen"
               >
                 <X className="w-4 h-4 text-muted-foreground" />
@@ -359,9 +336,9 @@ export function TableOfContents() {
                       type="button"
                       onClick={() => scrollToHeading(id)}
                       aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                      level === 3 ? "pl-7" : ""
-                    } ${
+                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                        level === 3 ? "pl-7" : ""
+                      } ${
                         activeId === id ? activeClass : inactiveClass
                       }`}
                     >
@@ -390,7 +367,7 @@ export function TableOfContents() {
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
                     aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 ${
+                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                       level === 3 ? "pl-5" : ""
                     } ${
                       activeId === id ? activeClass : inactiveClass

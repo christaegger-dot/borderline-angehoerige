@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -261,6 +261,15 @@ export default function Selbsttest() {
   const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const transitionTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleAnswer = (option: Question["options"][0]) => {
     if (isTransitioning) return;
@@ -278,7 +287,7 @@ export default function Selbsttest() {
     setAnswers({ ...answers, [questions[currentQuestion].id]: option.value });
 
     // Move to next question or show result
-    setTimeout(() => {
+    transitionTimeoutRef.current = setTimeout(() => {
       if (currentQuestion < questions.length - 1) {
         setCurrentQuestion(currentQuestion + 1);
         setSelectedOption(null);
@@ -286,6 +295,7 @@ export default function Selbsttest() {
         setShowResult(true);
       }
       setIsTransitioning(false);
+      transitionTimeoutRef.current = null;
     }, 300);
   };
 
@@ -477,8 +487,9 @@ export default function Selbsttest() {
                   transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
                   onClick={() => handleAnswer(option)}
                   disabled={isTransitioning}
+                  type="button"
                   aria-pressed={selectedOption === option.value}
-                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 ${
+                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                     selectedOption === option.value
                       ? "border-terracotta bg-terracotta-wash"
                       : "border-border/50 hover:border-terracotta/50 hover:bg-muted/50"

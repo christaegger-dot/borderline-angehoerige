@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
+import EvidenceNote from "@/components/EvidenceNote";
 import { TableOfContents } from "@/components/UXEnhancements";
 
 const genesungCategories = [
@@ -252,10 +253,29 @@ export default function Genesung() {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-border/30">
-                  <p className="text-xs text-muted-foreground">
-                    Quellen: McLean Study of Adult Development (Zanarini et al.); Collaborative
-                    Longitudinal Personality Disorders Study (Gunderson et al.)
-                  </p>
+                  <EvidenceNote
+                    title="Quellen zu Verlaufs- und Prognosedaten"
+                    definition="Kurzdefinition: Symptomatische Remission bedeutet, dass die Diagnosekriterien über längere Zeit nicht mehr erfüllt sind. Umfassendere Genesung meint zusätzlich mehr Stabilität im Alltag, in Beziehungen oder Arbeit/Ausbildung."
+                    reviewDate="24.03.2026"
+                    sources={[
+                      {
+                        label: "Zanarini et al. (2010), The 10-year course of borderline personality disorder",
+                        href: "https://pubmed.ncbi.nlm.nih.gov/20395399/",
+                        type: "wissenschaft",
+                      },
+                      {
+                        label: "Zanarini et al. (2012), Recovery in borderline personality disorder",
+                        href: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
+                        type: "wissenschaft",
+                      },
+                      {
+                        label: "Gunderson et al. (2011), New episodes and new onsets of major depression in borderline and other personality disorders",
+                        href: "https://pubmed.ncbi.nlm.nih.gov/21464343/",
+                        type: "wissenschaft",
+                        note: "CLPS-Verlaufsdaten werden im Projekt als ergänzende Langzeitperspektive genutzt",
+                      },
+                    ]}
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -300,8 +320,26 @@ export default function Genesung() {
                     Für Angehörige ist entscheidend: Besserung ist oft real, auch wenn nicht alles
                     konfliktfrei, leicht oder linear wird.
                   </p>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+                <EvidenceNote
+                  title="Einordnung der Begriffe"
+                  definition="Die Begriffe Remission, Recovery und funktionelle Stabilität werden in Studien nicht immer identisch definiert. Auf dieser Website werden sie bewusst knapp und alltagsnah erklärt."
+                  reviewDate="24.03.2026"
+                  sources={[
+                    {
+                      label: "Zanarini et al. (2012), Recovery in borderline personality disorder",
+                      href: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
+                      type: "wissenschaft",
+                    },
+                    {
+                      label: "Storebø et al. (2020), Cochrane Review zu psychologischen Therapien bei BPS",
+                      href: "https://pubmed.ncbi.nlm.nih.gov/32368793/",
+                      type: "wissenschaft",
+                    },
+                  ]}
+                  className="mt-4"
+                />
             </ContentSection>
 
             <ContentSection

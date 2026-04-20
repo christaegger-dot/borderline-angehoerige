@@ -51,6 +51,8 @@ export interface Kontakt {
   fuerWen?: string;
   /** Nur auf Notfallkarte (PDF), nicht auf Website */
   nurPdf?: boolean;
+  /** Sichtbares Prüfdatum für volatile Kontakte */
+  lastVerified?: string;
 }
 
 export interface EmailKontakt {
@@ -59,6 +61,7 @@ export interface EmailKontakt {
   label: string;
   hinweis: string;
   sourceRef: string;
+  lastVerified?: string;
 }
 
 export interface AdresseKontakt {
@@ -74,6 +77,7 @@ export interface UrlKontakt {
   label: string;
   hinweis?: string;
   sourceRef: string;
+  lastVerified?: string;
 }
 
 // ─── ROT – Notruf (Einsatzdienst kommt) ─────────────────
@@ -88,6 +92,7 @@ export const ROT: Kontakt[] = [
     hinweis: "Bei akuter Lebensgefahr, Selbstverletzung oder akuter Suizidgefahr",
     sourceRef: "Soforthilfe.tsx:94, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
+    lastVerified: "24.03.2026",
   },
   {
     id: "ROT_117",
@@ -98,6 +103,7 @@ export const ROT: Kontakt[] = [
     hinweis: "Bei Gewalt oder wenn Sie sich bedroht fühlen",
     sourceRef: "Soforthilfe.tsx:100, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
+    lastVerified: "24.03.2026",
   },
   {
     id: "ROT_112",
@@ -108,6 +114,7 @@ export const ROT: Kontakt[] = [
     hinweis: "Wenn Sie unsicher sind, welche Nummer – funktioniert immer.",
     sourceRef: "Soforthilfe.tsx:106, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
+    lastVerified: "24.03.2026",
   },
   {
     id: "ROT_145",
@@ -118,6 +125,7 @@ export const ROT: Kontakt[] = [
     hinweis: "Bei Vergiftungsverdacht oder Medikamentenüberdosierung",
     sourceRef: "Notfallkarte v05 (HTML), Soforthilfe.tsx Block 4",
     verfuegbarkeit: "24/7",
+    lastVerified: "24.03.2026",
   },
   {
     id: "ROT_118",
@@ -145,6 +153,7 @@ export const GELB: Kontakt[] = [
     sourceRef: "Soforthilfe.tsx:183, UnterstuetzenTherapie.tsx:379, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "bis 18 Jahre",
+    lastVerified: "24.03.2026",
   },
   {
     id: "GELB_PUK_ERW",
@@ -156,6 +165,7 @@ export const GELB: Kontakt[] = [
     sourceRef: "Soforthilfe.tsx:207, UnterstuetzenTherapie.tsx:383, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "18–64 Jahre",
+    lastVerified: "24.03.2026",
   },
   {
     id: "GELB_PUK_65",
@@ -167,6 +177,7 @@ export const GELB: Kontakt[] = [
     sourceRef: "Soforthilfe.tsx:231, UnterstuetzenTherapie.tsx:386, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "ab 65 Jahre",
+    lastVerified: "24.03.2026",
   },
 ];
 
@@ -182,6 +193,7 @@ export const GRUEN: Kontakt[] = [
     hinweis: "Anonymes Gesprächs- und Krisenangebot, vertraulich. Es kommt niemand vorbei.",
     sourceRef: "Soforthilfe.tsx:324, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
+    lastVerified: "24.03.2026",
   },
   {
     id: "GRUEN_147",
@@ -193,6 +205,7 @@ export const GRUEN: Kontakt[] = [
     sourceRef: "Soforthilfe.tsx:367, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "Kinder & Jugendliche",
+    lastVerified: "24.03.2026",
   },
   {
     id: "GRUEN_ELTERN",
@@ -204,6 +217,7 @@ export const GRUEN: Kontakt[] = [
     sourceRef: "Soforthilfe.tsx:347, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "Eltern",
+    lastVerified: "24.03.2026",
   },
 ];
 
@@ -221,6 +235,7 @@ export const INFO: Kontakt[] = [
     hinweis: "Ambulante Krisenintervention für Erwachsene",
     sourceRef: "Soforthilfe.tsx Block 5, Notfallkarte v05 (HTML)",
     fuerWen: "Erwachsene",
+    lastVerified: "24.03.2026",
   },
   {
     id: "INFO_AERZTEFON",
@@ -230,6 +245,7 @@ export const INFO: Kontakt[] = [
     label: "Ärztefon Zürich",
     hinweis: "Ärztliche Beratung und Weitervermittlung, ggf. Hausbesuch",
     sourceRef: "Soforthilfe.tsx:281",
+    lastVerified: "24.03.2026",
   },
   {
     id: "INFO_PUK_ZENTRALE",
@@ -239,6 +255,7 @@ export const INFO: Kontakt[] = [
     label: "PUK Zentrale",
     hinweis: "Allgemeine Auskunft PUK",
     sourceRef: "Soforthilfe.tsx:294, UnterstuetzenTherapie.tsx:333",
+    lastVerified: "24.03.2026",
   },
   {
     id: "INFO_PUK_KJPP_HYPE",
@@ -257,24 +274,27 @@ export const INFO: Kontakt[] = [
     label: "Fachstelle Angehörigenarbeit PUK",
     hinweis: "Beratung und Begleitung für Angehörige",
     sourceRef: "Selbsthilfegruppen.tsx:348, Impressum.tsx:81",
+    lastVerified: "24.03.2026",
   },
   {
     id: "INFO_SELBSTHILFE_CH",
     kategorie: "info",
-    nummer: "0800 840 400",
-    tel: "0800840400",
-    label: "Selbsthilfe Schweiz",
+    nummer: "043 288 88 88",
+    tel: "+41432888888",
+    label: "Selbsthilfe Zürich",
     hinweis: "Vermittlung von Selbsthilfegruppen",
     sourceRef: "Selbsthilfegruppen.tsx:75",
+    lastVerified: "24.03.2026",
   },
   {
-    id: "INFO_SELBSTHILFE_INFO",
+    id: "INFO_STANDBYYOU",
     kategorie: "info",
-    nummer: "0848 33 99 00",
-    tel: "+41848339900",
-    label: "Selbsthilfe Infoline",
-    hinweis: "Telefonische Beratung zu Selbsthilfe",
-    sourceRef: "Selbsthilfegruppen.tsx:247",
+    nummer: "0800 840 400",
+    tel: "0800840400",
+    label: "Stand by You",
+    hinweis: "HelpLine für Angehörige von Menschen mit psychischen Erkrankungen",
+    sourceRef: "Selbsthilfegruppen.tsx:221",
+    lastVerified: "24.03.2026",
   },
   {
     id: "INFO_PROMENTE",
@@ -284,6 +304,7 @@ export const INFO: Kontakt[] = [
     label: "Pro Mente Sana",
     hinweis: "Beratung zu psychischer Gesundheit",
     sourceRef: "Selbsthilfegruppen.tsx:277, Selbstfuersorge.tsx:601",
+    lastVerified: "24.03.2026",
   },
   {
     id: "INFO_VASK_ZH",
@@ -293,6 +314,27 @@ export const INFO: Kontakt[] = [
     label: "VASK Zürich",
     hinweis: "Beratungstelefon für Angehörige von psychisch Kranken",
     sourceRef: "Selbsthilfegruppen.tsx:286",
+    lastVerified: "24.03.2026",
+  },
+  {
+    id: "INFO_PUK_DBT",
+    kategorie: "info",
+    nummer: "058 384 94 91",
+    tel: "+41583849491",
+    label: "DBT-Station 62B PUK Zürich",
+    hinweis: "Stationäre DBT-Behandlung",
+    sourceRef: "UnterstuetzenTherapie.tsx:336",
+    lastVerified: "24.03.2026",
+  },
+  {
+    id: "INFO_IPW",
+    kategorie: "info",
+    nummer: "052 264 34 00",
+    tel: "+41522643400",
+    label: "IPW Winterthur",
+    hinweis: "Wieshofstrasse 102, 8408 Winterthur",
+    sourceRef: "UnterstuetzenTherapie.tsx:351",
+    lastVerified: "24.03.2026",
   },
 ];
 
@@ -305,6 +347,7 @@ export const EMAILS: EmailKontakt[] = [
     label: "Fachstelle Angehörigenarbeit PUK",
     hinweis: "Beratung und Begleitung für Angehörige",
     sourceRef: "Impressum.tsx:92, Feedback.tsx:275, Selbsthilfegruppen.tsx:352",
+    lastVerified: "24.03.2026",
   },
   {
     id: "EMAIL_KJPP",
@@ -315,10 +358,11 @@ export const EMAILS: EmailKontakt[] = [
   },
   {
     id: "EMAIL_HARD",
-    adresse: "klinik.hard@pukzh.ch",
-    label: "DBT-Station B2 Hard",
+    adresse: "station62b@pukzh.ch",
+    label: "DBT-Station 62B PUK Zürich",
     hinweis: "Stationäre DBT-Behandlung",
     sourceRef: "UnterstuetzenTherapie.tsx:336",
+    lastVerified: "24.03.2026",
   },
   {
     id: "EMAIL_VASK_ZH",
@@ -326,6 +370,7 @@ export const EMAILS: EmailKontakt[] = [
     label: "VASK Zürich",
     hinweis: "Kantonale Vereinigung der Angehörigen von psychisch Kranken",
     sourceRef: "Selbsthilfegruppen.tsx:301",
+    lastVerified: "24.03.2026",
   },
 ];
 
@@ -349,18 +394,21 @@ export const URLS: UrlKontakt[] = [
     label: "Stand By You",
     hinweis: "Angehörigen-Netzwerk",
     sourceRef: "Selbsthilfegruppen.tsx:86, Selbstfuersorge.tsx:597",
+    lastVerified: "24.03.2026",
   },
   {
     id: "URL_SELBSTHILFE_CH",
     url: "https://www.selbsthilfeschweiz.ch",
     label: "Selbsthilfe Schweiz",
     sourceRef: "Selbsthilfegruppen.tsx:167",
+    lastVerified: "24.03.2026",
   },
   {
     id: "URL_PROMENTE",
     url: "https://www.promentesana.ch",
     label: "Pro Mente Sana",
     sourceRef: "Selbsthilfegruppen.tsx:281",
+    lastVerified: "24.03.2026",
   },
   {
     id: "URL_DEPRESS",
@@ -385,12 +433,14 @@ export const URLS: UrlKontakt[] = [
     url: "https://www.pukzh.ch",
     label: "PUK Zürich – Website",
     sourceRef: "Fachstelle.tsx:181, Selbsthilfegruppen.tsx:104",
+    lastVerified: "24.03.2026",
   },
   {
     id: "URL_VASK_ZH",
     url: "https://www.vaskzuerich.ch",
     label: "VASK Zürich",
     sourceRef: "Selbsthilfegruppen.tsx:306",
+    lastVerified: "24.03.2026",
   },
 ];
 
@@ -402,7 +452,7 @@ export const TEXTE = {
   pukTriage:
     "Am Telefon wird kurz eingeschätzt (Triage), was jetzt am besten hilft – z.\u00A0B. Beratung, weiteres Vorgehen oder Notfallaufnahme.",
   gruenGefahrenhinweis:
-    "Bei akuter Gefahr für sich oder andere: Immer zuerst 144 / 117 / 112 rufen. Die Nummern oben sind Sorgentelefone – es kommt niemand vorbei.",
+    "Bei akuter Gefahr für sich oder andere sollten Sie rasch 144 / 117 / 112 einbeziehen. Die Nummern oben sind Sorgentelefone – es kommt niemand vorbei.",
   pukLabel:
     "PUK Zürich (24/7) – psychiatrische Krise, wenn keine unmittelbare Lebensgefahr besteht.",
 } as const;
@@ -425,14 +475,38 @@ export function kontaktById(id: string): Kontakt | undefined {
   return ALLE_KONTAKTE.find((k) => k.id === id);
 }
 
+export function kontaktByIdStrict(id: string): Kontakt {
+  const kontakt = kontaktById(id);
+  if (!kontakt) {
+    throw new Error(`Kontakt mit ID "${id}" wurde nicht gefunden.`);
+  }
+  return kontakt;
+}
+
 /** E-Mail nach ID finden */
 export function emailById(id: string): EmailKontakt | undefined {
   return EMAILS.find((e) => e.id === id);
 }
 
+export function emailByIdStrict(id: string): EmailKontakt {
+  const email = emailById(id);
+  if (!email) {
+    throw new Error(`E-Mail-Kontakt mit ID "${id}" wurde nicht gefunden.`);
+  }
+  return email;
+}
+
 /** URL nach ID finden */
 export function urlById(id: string): UrlKontakt | undefined {
   return URLS.find((u) => u.id === id);
+}
+
+export function urlByIdStrict(id: string): UrlKontakt {
+  const url = urlById(id);
+  if (!url) {
+    throw new Error(`URL-Kontakt mit ID "${id}" wurde nicht gefunden.`);
+  }
+  return url;
 }
 
 /** Adresse nach ID finden */

@@ -132,7 +132,7 @@ export default function ValidierungsStufenleiter() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <Icon className="w-4 h-4" style={{ color: stufe.color }} />
+                    <Icon className="w-4 h-4" style={{ color: stufe.color }} aria-hidden="true" />
                     <h4 className="font-semibold text-foreground">{stufe.title}</h4>
                   </div>
                   <p className="text-sm italic text-muted-foreground">{stufe.subtitle}</p>
@@ -149,7 +149,7 @@ export default function ValidierungsStufenleiter() {
                   <ul className="space-y-2">
                     {stufe.soGehts.map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-sage-mid flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-sage-mid flex-shrink-0 mt-0.5" aria-hidden="true" />
                         {item}
                       </li>
                     ))}
@@ -160,7 +160,7 @@ export default function ValidierungsStufenleiter() {
                   <p className="text-xs font-medium text-muted-foreground mb-2">Typischer Stolperstein</p>
                   <div className="rounded-lg border border-terracotta-mid/20 bg-terracotta-wash/30 p-3">
                     <p className="text-sm text-foreground leading-relaxed flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 text-terracotta-mid flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="w-4 h-4 text-terracotta-mid flex-shrink-0 mt-0.5" aria-hidden="true" />
                       {stufe.typischerFehler}
                     </p>
                   </div>

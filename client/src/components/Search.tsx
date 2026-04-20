@@ -2,14 +2,24 @@ import { useState, useEffect, useRef } from "react";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { kontaktById } from "@/data/kontakte";
+import { kontaktByIdStrict } from "@/data/kontakte";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
-const rot144 = kontaktById("ROT_144")!;
-const gruen143 = kontaktById("GRUEN_143")!;
-const rot117 = kontaktById("ROT_117")!;
+const rot144 = kontaktByIdStrict("ROT_144");
+const gruen143 = kontaktByIdStrict("GRUEN_143");
+const rot117 = kontaktByIdStrict("ROT_117");
+
+type SearchEntry = {
+  title: string;
+  description: string;
+  keywords: string[];
+  href: string;
+  section: string;
+};
 
 // Suchbare Inhalte der Website
-const searchableContent = [
+const searchableContent: SearchEntry[] = [
   // Verstehen
   {
     title: "Was ist Borderline?",
@@ -621,16 +631,27 @@ interface SearchProps {
 
 export default function Search({ isOpen, onClose }: SearchProps) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<typeof searchableContent>([]);
+  const [results, setResults] = useState<SearchEntry[]>([]);
   const [activeIndex, setActiveIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useFocusTrap(isOpen);
+  const focusTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useScrollLock(isOpen);
 
   // Focus input when opened
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      setTimeout(() => inputRef.current?.focus(), 100);
+      focusTimeoutRef.current = setTimeout(() => inputRef.current?.focus(), 100);
     }
+
+    return () => {
+      if (focusTimeoutRef.current) {
+        clearTimeout(focusTimeoutRef.current);
+        focusTimeoutRef.current = null;
+      }
+    };
   }, [isOpen]);
 
   // Close on Escape
@@ -645,32 +666,6 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     }
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
-
-  // Body-Scroll-Lock: Verhindert Hintergrund-Scrollen auf iOS/Safari
-  useEffect(() => {
-    if (isOpen) {
-      const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
-    } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-      }
-    }
-    return () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
 
   // Search logic
   useEffect(() => {
@@ -706,6 +701,16 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     setResults(matches.slice(0, 8));
     setActiveIndex(-1);
   }, [query]);
+
+  useEffect(() => {
+    if (activeIndex < 0) {
+      return;
+    }
+
+    const activeLink =
+      resultsRef.current?.querySelectorAll<HTMLAnchorElement>("a")[activeIndex];
+    activeLink?.scrollIntoView({ block: "nearest" });
+  }, [activeIndex]);
 
   const handleResultClick = () => {
     setQuery("");
@@ -750,7 +755,10 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 px-4"
           >
-            <div className="bg-background rounded-2xl shadow-2xl border border-border overflow-hidden">
+            <div
+              ref={dialogRef}
+              className="bg-background rounded-2xl shadow-2xl border border-border overflow-hidden"
+            >
               {/* Search Input */}
               <div className="flex items-center gap-3 px-4 py-4 border-b border-border">
                 <SearchIcon className="w-5 h-5 text-muted-foreground flex-shrink-0" />
@@ -764,6 +772,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                   className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none text-base"
                   role="combobox"
                   aria-label="Website durchsuchen"
+                  aria-autocomplete="list"
                   aria-expanded={results.length > 0}
                   aria-controls="search-results"
                   aria-activedescendant={activeIndex >= 0 ? `search-result-${activeIndex}` : undefined}
@@ -811,7 +820,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                     </p>
                   </div>
                 ) : (
-                  <div className="py-2" ref={resultsRef} role="listbox" id="search-results">
+                  <div className="py-2" ref={resultsRef} role="listbox" id="search-results" aria-live="polite">
                     {results.map((result, index) => (
                       <Link
                         key={`${result.href}-${index}`}

@@ -93,7 +93,7 @@ export default function UeberUns() {
               title="Unsere Prinzipien"
               icon={<Shield className="w-7 h-7 text-sage-mid" />}
               id="prinzipien"
-              preview="Evidenzbasiert, entstigmatisierend, selbstfürsorge-orientiert und praxisnah."
+              preview="Fachlich fundiert, entstigmatisierend, selbstfürsorge-orientiert und praxisnah."
             >
               <div className="grid gap-4">
                 {[
@@ -101,7 +101,7 @@ export default function UeberUns() {
                     icon: BookOpen,
                     title: "Evidenzbasiert",
                     description:
-                      "Alle Inhalte basieren auf wissenschaftlicher Forschung und bewährten Therapieansätzen wie DBT (Dialektisch-Behaviorale Therapie). Wir nennen unsere Quellen.",
+                      "Medizinische und therapeutische Aussagen stützen wir auf wissenschaftliche Quellen und bewährte Therapieansätze wie DBT (Dialektisch-Behaviorale Therapie). Orientierungstexte ergänzen wir mit klinischer Erfahrung aus der Angehörigenarbeit.",
                   },
                   {
                     icon: Heart,

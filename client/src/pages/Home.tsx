@@ -92,7 +92,7 @@ export default function Home() {
     <Layout>
       <SEO
         title="Startseite"
-        description="Orientierung für Angehörige von Menschen mit Borderline: differenziert, fachlich fundiert und entlastend."
+        description="Orientierung für Angehörige von Menschen mit Borderline: differenziert, fachlich fundiert und transparent eingeordnet."
         path="/"
       />
       <WebsiteSchema />

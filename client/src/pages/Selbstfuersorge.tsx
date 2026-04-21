@@ -290,18 +290,26 @@ export default function Selbstfuersorge() {
                     <BookOpen className="w-5 h-5 text-muted-foreground" />
                     Worauf stützt sich das?
                   </h3>
+                  <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+                    Die Hinweise auf dieser Seite verbinden Forschung zu
+                    Belastung und Regeneration mit klinischer Erfahrung aus der
+                    Angehörigenarbeit.
+                  </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>
-                      • Studien zeigen erhöhte Belastung bei Angehörigen von
-                      Menschen mit BPS (Hoffman et al., 2005)
+                      • Angehörige von Menschen mit BPS berichten in Studien
+                      häufig von erhöhter Belastung und Erschöpfung (u. a.
+                      Hoffman et al., 2005)
                     </li>
                     <li>
-                      • Atemübungen aktivieren den Parasympathikus und
-                      reduzieren Cortisol (Zaccaro et al., 2018)
+                      • Atemübungen und andere kurze Regulationsübungen können
+                      helfen, akute Anspannung im Körper zu senken (u. a.
+                      Zaccaro et al., 2018)
                     </li>
                     <li>
-                      • Soziale Unterstützung ist ein wichtiger Schutzfaktor
-                      gegen Burnout (Maslach & Leiter, 2016)
+                      • Soziale Unterstützung gilt als wichtiger Schutzfaktor
+                      gegen Überlastung und Erschöpfung (u. a. Maslach & Leiter,
+                      2016)
                     </li>
                   </ul>
                 </CardContent>

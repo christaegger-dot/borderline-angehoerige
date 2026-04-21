@@ -71,7 +71,7 @@ export default function FAQ() {
         {
           question: "Ist Borderline erblich? Bin ich schuld?",
           answer:
-            "Borderline entsteht durch ein Zusammenspiel von genetischer Veranlagung (ca. 40–60% Erblichkeit) und Umweltfaktoren – insbesondere Traumata und invalidierendes Umfeld. Genetisch wird eine erhöhte emotionale Sensibilität vererbt, nicht die Störung selbst. Traumatische Erfahrungen erhöhen das Risiko, führen aber nicht automatisch zu Borderline. Viele Menschen mit schwierigen Kindheiten entwickeln keine BPS, und manche Betroffene hatten keine offensichtlichen Traumata. Die Ursachen sind komplex – Sie tragen keine Schuld.",
+            "Die Forschung spricht für ein Zusammenspiel aus biologischer Empfindlichkeit und belastenden Entwicklungs- oder Beziehungserfahrungen. Eine erhöhte emotionale Sensibilität kann teilweise mitvererbt werden, nicht aber die Störung eins zu eins. Belastende Erfahrungen können das Risiko erhöhen, erklären Borderline aber nie allein. Die Ursachen sind komplex – Sie tragen keine Schuld.",
           links: [{ text: "Borderline verstehen", url: "/verstehen" }],
         },
         {
@@ -127,7 +127,7 @@ export default function FAQ() {
         {
           question: "Wann ist eine Einweisung nötig?",
           answer:
-            "Bei akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung mit Versorgungsbedarf, Fremdgefährdung oder völliger Dekompensation. In der Schweiz kann eine fürsorgerische Unterbringung (FU) durch einen Arzt angeordnet werden. Im Zweifelsfall: psychiatrischen Notdienst anrufen – die können die Situation einschätzen.",
+            "Bei akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung mit Versorgungsbedarf, Fremdgefährdung oder völliger Dekompensation. In der Schweiz kann in solchen Situationen durch einen Arzt oder eine Ärztin eine fürsorgerische Unterbringung angeordnet werden – vereinfacht gesagt eine vorübergehende psychiatrische Einweisung zum Schutz der betroffenen Person. Im Zweifelsfall: psychiatrischen Notdienst anrufen – die können die Situation einschätzen.",
           links: [{ text: "Notfallnummern", url: "/soforthilfe" }],
         },
         {
@@ -183,7 +183,7 @@ export default function FAQ() {
         {
           question: "Soll ich an der Therapie teilnehmen?",
           answer:
-            "Wenn Sie eingeladen werden: Ja, das kann sehr hilfreich sein. Familientherapie oder Angehörigensitzungen verbessern nachweislich die Behandlungsergebnisse. Sie lernen, wie Sie unterstützen können, ohne zu schaden, und der Therapeut kann Kommunikationsmuster beobachten. Wichtig: Gehen Sie nicht hin, um sich zu beschweren oder Recht zu bekommen. Ziel ist gemeinsames Lernen. Wenn Sie nicht eingeladen werden: Respektieren Sie das. Ihr Angehöriger braucht einen geschützten Raum. Sie können trotzdem eigene Beratung suchen.",
+            "Wenn Sie eingeladen werden: Ja, das kann sehr hilfreich sein. Angehörigensitzungen oder Familiengespräche können Verständnis, Zusammenarbeit und Alltagstransfer verbessern. Sie lernen, wie Sie unterstützen können, ohne zu schaden, und der Therapeut kann Kommunikationsmuster beobachten. Wichtig: Gehen Sie nicht hin, um sich zu beschweren oder Recht zu bekommen. Ziel ist gemeinsames Lernen. Wenn Sie nicht eingeladen werden: Respektieren Sie das. Ihr Angehöriger braucht einen geschützten Raum. Sie können trotzdem eigene Beratung suchen.",
           links: [
             { text: "Therapie unterstützen", url: "/unterstuetzen/therapie" },
           ],

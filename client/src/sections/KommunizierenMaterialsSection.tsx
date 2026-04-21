@@ -17,6 +17,7 @@ import {
   kommSubcategories,
   type KommunikationsKategorie,
 } from "@/content/kommunizieren";
+import { getHandoutOpenHref } from "@/content/handouts";
 
 function CategoryIcon({
   icon,
@@ -120,7 +121,7 @@ export default function KommunizierenMaterialsSection() {
                 {item.title}
               </h3>
               <a
-                href={item.pdfUrl}
+                href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}

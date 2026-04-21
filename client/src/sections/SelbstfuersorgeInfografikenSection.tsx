@@ -15,6 +15,7 @@ import {
   selbstfuersorgeInfografiken,
   type SelbstfuersorgeKategorie,
 } from "@/content/selbstfuersorge";
+import { getHandoutOpenHref } from "@/content/handouts";
 
 const selbstfuersorgeCategories = [
   {
@@ -117,7 +118,7 @@ export default function SelbstfuersorgeInfografikenSection() {
               </h3>
               <p className="text-xs text-muted-foreground mb-3">{item.desc}</p>
               <a
-                href={item.pdf}
+                href={getHandoutOpenHref(item.pdf) ?? item.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}

@@ -1,7 +1,13 @@
-import { resolveMaterialDownload } from "../client/src/content/materialien";
+import {
+  resolveHandoutAsset,
+  type HandoutDisposition,
+} from "../client/src/content/handouts";
 
-export async function createMaterialDownloadResponse(id: string) {
-  const download = resolveMaterialDownload(id);
+export async function createMaterialDownloadResponse(
+  id: string,
+  disposition: HandoutDisposition = "attachment"
+) {
+  const download = resolveHandoutAsset(id);
   if (!download) {
     return new Response("Material nicht gefunden.", { status: 404 });
   }
@@ -28,7 +34,7 @@ export async function createMaterialDownloadResponse(id: string) {
     );
     headers.set(
       "Content-Disposition",
-      attachmentDisposition(download.fileName)
+      contentDisposition(download.fileName, disposition)
     );
     headers.set("X-Content-Type-Options", "nosniff");
 
@@ -46,7 +52,7 @@ export async function createMaterialDownloadResponse(id: string) {
   }
 }
 
-function attachmentDisposition(fileName: string) {
+function contentDisposition(fileName: string, disposition: HandoutDisposition) {
   const encodedName = encodeURIComponent(fileName);
-  return `attachment; filename="${fileName}"; filename*=UTF-8''${encodedName}`;
+  return `${disposition}; filename="${fileName}"; filename*=UTF-8''${encodedName}`;
 }

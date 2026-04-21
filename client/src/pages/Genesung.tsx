@@ -21,6 +21,7 @@ import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { genesungItems as genesungMaterialItems } from "@/content/genesung";
+import { getHandoutOpenHref } from "@/content/handouts";
 
 function GenesungInfografiken() {
   return (
@@ -62,7 +63,7 @@ function GenesungInfografiken() {
               </h3>
               <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
               <a
-                href={item.pdf}
+                href={getHandoutOpenHref(item.pdf) ?? item.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}

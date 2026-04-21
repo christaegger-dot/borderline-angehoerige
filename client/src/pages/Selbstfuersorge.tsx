@@ -340,15 +340,18 @@ export default function Selbstfuersorge() {
               viewport={{ once: true }}
               className="flex justify-between items-center pt-8 border-t border-border"
             >
-              <Link href="/grenzen">
-                <Button variant="ghost">← Grenzen setzen</Button>
-              </Link>
-              <Link href="/materialien">
-                <Button className="bg-terracotta hover:bg-terracotta-mid text-white">
+              <Button asChild variant="ghost">
+                <Link href="/grenzen">← Grenzen setzen</Link>
+              </Button>
+              <Button
+                asChild
+                className="bg-terracotta hover:bg-terracotta-mid text-white"
+              >
+                <Link href="/materialien">
                   Alle Materialien
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

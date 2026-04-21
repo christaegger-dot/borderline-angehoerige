@@ -99,20 +99,20 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               <SearchIcon className="w-5 h-5" />
             </button>
 
-            <Link
-              href="/soforthilfe"
-              aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
+            <Button
+              asChild
+              variant="default"
+              size="sm"
+              className="bg-alert hover:bg-alert/85 text-white hidden sm:flex"
             >
-              <Button
-                variant="default"
-                size="sm"
-                className="bg-alert hover:bg-alert/85 text-white hidden sm:flex"
-                tabIndex={-1}
+              <Link
+                href="/soforthilfe"
+                aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
               >
                 <Phone className="w-4 h-4 lg:mr-0 xl:mr-2" />
                 <span className="hidden xl:inline">Soforthilfe</span>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
 
             <button
               type="button"

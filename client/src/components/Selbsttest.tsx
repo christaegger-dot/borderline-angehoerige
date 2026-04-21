@@ -411,11 +411,15 @@ export default function Selbsttest() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {result.secondaryLinks.map((link, i) => (
-                  <Link key={i} href={link.href}>
-                    <Button variant="outline" size="sm" className="bg-white/50">
-                      {link.text}
-                    </Button>
-                  </Link>
+                  <Button
+                    key={i}
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="bg-white/50"
+                  >
+                    <Link href={link.href}>{link.text}</Link>
+                  </Button>
                 ))}
               </div>
             </div>

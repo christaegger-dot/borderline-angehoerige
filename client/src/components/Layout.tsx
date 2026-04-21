@@ -203,25 +203,23 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Mobile Soforthilfe-FAB: auf allen Seiten ausser /soforthilfe selbst */}
       {location !== "/soforthilfe" && (
-        <Link
-          href="/soforthilfe"
-          className="sm:hidden fixed z-50"
+        <Button
+          asChild
+          variant="default"
+          className="sm:hidden fixed z-50 h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg gap-2 text-sm font-semibold"
           style={{
             bottom: "calc(4.5rem + env(safe-area-inset-bottom, 0px))",
             right: "1rem",
           }}
-          aria-label="Soforthilfe \u2013 Notfallnummern und Krisenberatung"
         >
-          <Button
-            variant="default"
-            className="h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg gap-2 text-sm font-semibold"
-            tabIndex={-1}
-            aria-hidden="true"
+          <Link
+            href="/soforthilfe"
+            aria-label="Soforthilfe \u2013 Notfallnummern und Krisenberatung"
           >
             <Phone className="w-4 h-4" />
             Soforthilfe
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       )}
 
       {/* Search Modal */}

@@ -428,12 +428,17 @@ export default function Verstehen() {
                         klarer, wie Sie hilfreicher reagieren, Grenzen besser
                         halten und die eigene Belastung ernster nehmen können.
                       </p>
-                      <Link href="/unterstuetzen/uebersicht">
-                        <Button variant="outline" size="sm" className="gap-2">
+                      <Button
+                        asChild
+                        variant="outline"
+                        size="sm"
+                        className="gap-2"
+                      >
+                        <Link href="/unterstuetzen/uebersicht">
                           <ArrowRight className="w-4 h-4" />
                           Weiter zu: Unterstützen
-                        </Button>
-                      </Link>
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -450,15 +455,16 @@ export default function Verstehen() {
                 Als Nächstes geht es darum, wie Unterstützung tragfähig bleiben
                 kann, ohne dass Sie sich selbst verlieren.
               </p>
-              <Link href="/unterstuetzen/uebersicht">
-                <Button
-                  size="lg"
-                  className="bg-terracotta hover:bg-terracotta-mid text-white"
-                >
+              <Button
+                asChild
+                size="lg"
+                className="bg-terracotta hover:bg-terracotta-mid text-white"
+              >
+                <Link href="/unterstuetzen/uebersicht">
                   Weiter zu: Unterstützen
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </motion.div>
           </div>
         </div>

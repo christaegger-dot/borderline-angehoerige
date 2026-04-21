@@ -2,6 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
+import { createMaterialDownloadResponse } from "./material-download";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,6 +32,11 @@ async function startServer() {
     next();
   });
 
+  app.get("/api/material-download/:id", async (req, res) => {
+    const response = await createMaterialDownloadResponse(req.params.id);
+    await sendResponse(res, response);
+  });
+
   // Serve static files from dist/public in production
   const staticPath =
     process.env.NODE_ENV === "production"
@@ -54,3 +60,13 @@ async function startServer() {
 }
 
 startServer().catch(console.error);
+
+async function sendResponse(res: express.Response, response: Response) {
+  res.status(response.status);
+  response.headers.forEach((value, key) => {
+    res.setHeader(key, value);
+  });
+
+  const body = Buffer.from(await response.arrayBuffer());
+  res.end(body);
+}

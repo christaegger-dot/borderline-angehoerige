@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+import { createMaterialDownloadResponse } from "./server/material-download";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -98,6 +99,30 @@ function vitePluginManusDebugCollector(): Plugin {
     },
 
     configureServer(server: ViteDevServer) {
+      server.middlewares.use(
+        "/api/material-download",
+        async (req, res, next) => {
+          if (req.method !== "GET") {
+            return next();
+          }
+
+          const requestUrl = new URL(req.url ?? "/", "http://localhost");
+          const id = decodeURIComponent(
+            requestUrl.pathname.replace(/^\/+/, "")
+          );
+          if (!id) {
+            return next();
+          }
+
+          const response = await createMaterialDownloadResponse(id);
+          const headers = Object.fromEntries(response.headers.entries());
+          const body = Buffer.from(await response.arrayBuffer());
+
+          res.writeHead(response.status, headers);
+          res.end(body);
+        }
+      );
+
       // POST /__manus__/logs: Browser sends logs (written directly to files)
       server.middlewares.use("/__manus__/logs", (req, res, next) => {
         if (req.method !== "POST") {

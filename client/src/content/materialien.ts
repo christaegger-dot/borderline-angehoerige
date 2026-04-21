@@ -27,6 +27,13 @@ export interface MaterialItem {
   priority?: "core" | "secondary";
 }
 
+export interface ResolvedMaterialDownload {
+  id: string;
+  title: string;
+  fileName: string;
+  sourceUrl: string;
+}
+
 export const materials: MaterialItem[] = [
   {
     id: "notfallkarte-zuerich",
@@ -222,6 +229,45 @@ export const materials: MaterialItem[] = [
     priority: "secondary",
   },
 ];
+
+const MATERIAL_DOWNLOAD_PATH_PREFIX = "/api/material-download";
+const REMOTE_ASSET_RE = /^https?:\/\//i;
+
+export function buildMaterialDownloadPath(id: string) {
+  return `${MATERIAL_DOWNLOAD_PATH_PREFIX}/${encodeURIComponent(id)}`;
+}
+
+export function getMaterialDownloadHref(item: MaterialItem) {
+  const sourceUrl = item.pdfUrl ?? item.downloadUrl;
+  if (!sourceUrl) {
+    return null;
+  }
+
+  return REMOTE_ASSET_RE.test(sourceUrl)
+    ? buildMaterialDownloadPath(item.id)
+    : sourceUrl;
+}
+
+export function resolveMaterialDownload(
+  id: string
+): ResolvedMaterialDownload | null {
+  const item = materials.find(entry => entry.id === id);
+  if (!item) {
+    return null;
+  }
+
+  const sourceUrl = item.pdfUrl ?? item.downloadUrl;
+  if (!sourceUrl || !REMOTE_ASSET_RE.test(sourceUrl)) {
+    return null;
+  }
+
+  return {
+    id: item.id,
+    title: item.title,
+    fileName: `${item.id}.pdf`,
+    sourceUrl,
+  };
+}
 
 export const categoryMeta = [
   { id: "alle", label: "Alle", icon: "filter" },

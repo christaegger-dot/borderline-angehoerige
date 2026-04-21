@@ -13,6 +13,17 @@ interface SearchProps {
   onClose: () => void;
 }
 
+export function normalizeSearchQuery(query: string) {
+  return query.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+export function getSearchTerms(query: string) {
+  const normalizedQuery = normalizeSearchQuery(query);
+  return normalizedQuery
+    ? normalizedQuery.split(" ").filter(term => term.length > 1)
+    : [];
+}
+
 export default function Search({ isOpen, onClose }: SearchProps) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchEntry[]>([]);
@@ -38,6 +49,9 @@ export default function Search({ isOpen, onClose }: SearchProps) {
       })),
     []
   );
+  const normalizedQuery = useMemo(() => normalizeSearchQuery(query), [query]);
+  const searchTerms = useMemo(() => getSearchTerms(query), [query]);
+  const hasSearchTerms = searchTerms.length > 0;
 
   // Focus input when opened
   useEffect(() => {
@@ -78,15 +92,13 @@ export default function Search({ isOpen, onClose }: SearchProps) {
       debounceTimeoutRef.current = null;
     }
 
-    if (query.length < 2) {
+    if (!hasSearchTerms) {
       setResults([]);
+      setActiveIndex(-1);
       return;
     }
 
     debounceTimeoutRef.current = setTimeout(() => {
-      const queryLower = query.toLowerCase();
-      const searchTerms = queryLower.split(" ").filter(t => t.length > 1);
-
       const matches = normalizedSearchIndex
         .filter(({ searchText }) =>
           searchTerms.every(term => searchText.includes(term))
@@ -98,9 +110,15 @@ export default function Search({ isOpen, onClose }: SearchProps) {
         const aTitle = a.title.toLowerCase();
         const bTitle = b.title.toLowerCase();
 
-        if (aTitle.includes(queryLower) && !bTitle.includes(queryLower))
+        if (
+          aTitle.includes(normalizedQuery) &&
+          !bTitle.includes(normalizedQuery)
+        )
           return -1;
-        if (!aTitle.includes(queryLower) && bTitle.includes(queryLower))
+        if (
+          !aTitle.includes(normalizedQuery) &&
+          bTitle.includes(normalizedQuery)
+        )
           return 1;
         return 0;
       });
@@ -115,7 +133,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
         debounceTimeoutRef.current = null;
       }
     };
-  }, [normalizedSearchIndex, query]);
+  }, [hasSearchTerms, normalizedQuery, normalizedSearchIndex, searchTerms]);
 
   const handleResultClick = () => {
     setQuery("");
@@ -196,7 +214,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                   aria-expanded={results.length > 0}
                   aria-controls="search-results"
                   aria-activedescendant={
-                    activeIndex >= 0
+                    results.length > 0 && activeIndex >= 0
                       ? `search-result-${activeIndex}`
                       : undefined
                   }
@@ -223,10 +241,11 @@ export default function Search({ isOpen, onClose }: SearchProps) {
 
               {/* Results */}
               <div className="max-h-[60vh] overflow-y-auto" aria-live="polite">
-                {query.length < 2 ? (
+                {!hasSearchTerms ? (
                   <div className="px-4 py-8 text-center">
                     <p className="text-muted-foreground text-sm">
-                      Geben Sie mindestens 2 Zeichen ein, um zu suchen
+                      Geben Sie mindestens einen Suchbegriff mit 2 Zeichen ein,
+                      um zu suchen
                     </p>
                     <div className="mt-4 flex flex-wrap justify-center gap-2">
                       {[

@@ -136,6 +136,7 @@ function PersonalContactRow({
           value={contact.name}
           onChange={e => onUpdate({ ...contact, name: e.target.value })}
           placeholder="Name"
+          aria-label="Name der Kontaktperson"
           className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
         />
         <input
@@ -143,6 +144,7 @@ function PersonalContactRow({
           value={contact.phone}
           onChange={e => onUpdate({ ...contact, phone: e.target.value })}
           placeholder="Telefonnummer"
+          aria-label="Telefonnummer der Kontaktperson"
           className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
         />
         <input
@@ -150,6 +152,7 @@ function PersonalContactRow({
           value={contact.relation}
           onChange={e => onUpdate({ ...contact, relation: e.target.value })}
           placeholder="Beziehung (z.B. Therapeut:in)"
+          aria-label="Beziehung oder Rolle der Kontaktperson"
           className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
         />
       </div>
@@ -465,6 +468,7 @@ export default function Notfallkarte() {
                     value={s.text}
                     onChange={e => updateStrategy(s.id, e.target.value)}
                     placeholder="Strategie eingeben…"
+                    aria-label={`Beruhigungsstrategie ${i + 1}`}
                     className="flex-1 rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
                   />
                   <button
@@ -496,6 +500,7 @@ export default function Notfallkarte() {
                 setData(prev => ({ ...prev, notes: e.target.value }))
               }
               placeholder="z.B. Medikamente, Allergien, wichtige Hinweise für Helfer:innen…"
+              aria-label="Persönliche Notizen"
               rows={3}
               className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-y print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:resize-none"
             />

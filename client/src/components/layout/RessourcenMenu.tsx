@@ -1,9 +1,8 @@
 import { Link } from "wouter";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { ressourcenItems } from "@/components/layout/navigationData";
 import { useRessourcenMenuA11y } from "@/components/layout/useRessourcenMenuA11y";
 import type { NavigationItem } from "@/domain/content-types";
+import { ChevronDown } from "@/icons/root-icons";
 
 interface RessourcenMenuProps {
   location: string;
@@ -100,74 +99,67 @@ export function RessourcenMenu({
         />
       </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -4, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -4, scale: 0.98 }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
-            onKeyDown={handleMenuKeyDown}
-            className="absolute right-0 top-full mt-1 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/8 z-50"
-            style={{ width: "min(680px, calc(100vw - 2rem))" }}
-            {...menuA11yProps}
-          >
-            <div className="grid grid-cols-3 gap-0 p-2">
-              {groups.map((group, groupIdx) => (
-                <div
-                  key={group.name}
-                  className={
-                    groupIdx > 0 ? "border-l border-border/40 pl-2" : undefined
-                  }
-                >
-                  {/* Group header inspired by Seconds' "—— LABEL" pattern */}
-                  <div className="flex items-center gap-2.5 px-3 pt-2 pb-2">
-                    <span className="w-5 h-px bg-sage-dark/30" />
-                    <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-sage-dark/85 whitespace-nowrap">
-                      {group.name}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col">
-                    {group.items.map((item, itemIdx) => {
-                      const Icon = item.icon;
-                      const normalizedHref = item.href.split("#")[0];
-                      const isActive =
-                        location === normalizedHref ||
-                        location.startsWith(`${normalizedHref}/`);
-                      const idx = flatIndex(groups, groupIdx, itemIdx);
-
-                      return (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          role="menuitem"
-                          tabIndex={-1}
-                          ref={(el: HTMLAnchorElement | null) => {
-                            setMenuItemRef(idx, el);
-                          }}
-                          onFocus={() => {
-                            onMenuItemFocus(idx);
-                          }}
-                          onClick={closeDropdown}
-                          className={`flex items-center gap-2.5 px-3 py-2 text-[13px] rounded-lg transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
-                            isActive
-                              ? "bg-sage-wash/50 text-sage-darker font-medium"
-                              : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
-                          }`}
-                        >
-                          <Icon className="w-4 h-4 shrink-0" />
-                          <span className="leading-tight">{item.label}</span>
-                        </Link>
-                      );
-                    })}
-                  </div>
+      {isOpen && (
+        <div
+          onKeyDown={handleMenuKeyDown}
+          className="absolute right-0 top-full mt-1 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/8 z-50"
+          style={{ width: "min(680px, calc(100vw - 2rem))" }}
+          {...menuA11yProps}
+        >
+          <div className="grid grid-cols-3 gap-0 p-2">
+            {groups.map((group, groupIdx) => (
+              <div
+                key={group.name}
+                className={
+                  groupIdx > 0 ? "border-l border-border/40 pl-2" : undefined
+                }
+              >
+                <div className="flex items-center gap-2.5 px-3 pt-2 pb-2">
+                  <span className="w-5 h-px bg-sage-dark/30" />
+                  <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-sage-dark/85 whitespace-nowrap">
+                    {group.name}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+                <div className="flex flex-col">
+                  {group.items.map((item, itemIdx) => {
+                    const Icon = item.icon;
+                    const normalizedHref = item.href.split("#")[0];
+                    const isActive =
+                      location === normalizedHref ||
+                      location.startsWith(`${normalizedHref}/`);
+                    const idx = flatIndex(groups, groupIdx, itemIdx);
+
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        role="menuitem"
+                        tabIndex={-1}
+                        ref={(el: HTMLAnchorElement | null) => {
+                          setMenuItemRef(idx, el);
+                        }}
+                        onFocus={() => {
+                          onMenuItemFocus(idx);
+                        }}
+                        onClick={closeDropdown}
+                        className={`flex items-center gap-2.5 px-3 py-2 text-[13px] rounded-lg transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
+                          isActive
+                            ? "bg-sage-wash/50 text-sage-darker font-medium"
+                            : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
+                        }`}
+                      >
+                        <Icon className="w-4 h-4 shrink-0" />
+                        <span className="leading-tight">{item.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

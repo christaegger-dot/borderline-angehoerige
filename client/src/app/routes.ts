@@ -5,6 +5,7 @@ export interface AppRoute {
   path: string;
   component?: React.ComponentType<RouteComponentProps>;
   redirectTo?: string;
+  requiresMotion?: boolean;
 }
 
 // lazily load pages
@@ -42,37 +43,65 @@ const Barrierefreiheit = lazy(() => import("@/pages/Barrierefreiheit"));
 
 export const routes: AppRoute[] = [
   { path: "/", component: Home },
-  { path: "/verstehen", component: Verstehen },
+  { path: "/verstehen", component: Verstehen, requiresMotion: true },
   { path: "/unterstuetzen", redirectTo: "/unterstuetzen/uebersicht" },
-  { path: "/unterstuetzen/uebersicht", component: UnterstuetzenUebersicht },
-  { path: "/unterstuetzen/alltag", component: UnterstuetzenAlltag },
-  { path: "/unterstuetzen/therapie", component: UnterstuetzenTherapie },
-  { path: "/unterstuetzen/krise", component: UnterstuetzenKrise },
-  { path: "/kommunizieren", component: Kommunizieren },
-  { path: "/grenzen", component: Grenzen },
-  { path: "/selbstfuersorge", component: Selbstfuersorge },
-  { path: "/soforthilfe", component: Soforthilfe },
+  {
+    path: "/unterstuetzen/uebersicht",
+    component: UnterstuetzenUebersicht,
+    requiresMotion: true,
+  },
+  {
+    path: "/unterstuetzen/alltag",
+    component: UnterstuetzenAlltag,
+    requiresMotion: true,
+  },
+  {
+    path: "/unterstuetzen/therapie",
+    component: UnterstuetzenTherapie,
+    requiresMotion: true,
+  },
+  {
+    path: "/unterstuetzen/krise",
+    component: UnterstuetzenKrise,
+    requiresMotion: true,
+  },
+  { path: "/kommunizieren", component: Kommunizieren, requiresMotion: true },
+  { path: "/grenzen", component: Grenzen, requiresMotion: true },
+  {
+    path: "/selbstfuersorge",
+    component: Selbstfuersorge,
+    requiresMotion: true,
+  },
+  { path: "/soforthilfe", component: Soforthilfe, requiresMotion: true },
   { path: "/notfall", redirectTo: "/soforthilfe" },
-  { path: "/materialien", component: Materialien },
-  { path: "/selbsttest", component: SelbsttestPage },
-  { path: "/impressum", component: Impressum },
-  { path: "/datenschutz", component: Datenschutz },
-  { path: "/genesung", component: Genesung },
-  { path: "/beratung", component: Selbsthilfegruppen },
+  { path: "/materialien", component: Materialien, requiresMotion: true },
+  { path: "/selbsttest", component: SelbsttestPage, requiresMotion: true },
+  { path: "/impressum", component: Impressum, requiresMotion: true },
+  { path: "/datenschutz", component: Datenschutz, requiresMotion: true },
+  { path: "/genesung", component: Genesung, requiresMotion: true },
+  { path: "/beratung", component: Selbsthilfegruppen, requiresMotion: true },
   { path: "/selbsthilfegruppen", redirectTo: "/beratung" },
-  { path: "/feedback", component: Feedback },
-  { path: "/glossar", component: Glossar },
-  { path: "/buchempfehlungen", component: Buchempfehlungen },
+  { path: "/feedback", component: Feedback, requiresMotion: true },
+  { path: "/glossar", component: Glossar, requiresMotion: true },
+  {
+    path: "/buchempfehlungen",
+    component: Buchempfehlungen,
+    requiresMotion: true,
+  },
   {
     path: "/therapieangebote",
     redirectTo: "/unterstuetzen/therapie#therapieangebote",
   },
-  { path: "/faq", component: FAQ },
-  { path: "/ueber-uns", component: UeberUns },
-  { path: "/fachstelle", component: Fachstelle },
+  { path: "/faq", component: FAQ, requiresMotion: true },
+  { path: "/ueber-uns", component: UeberUns, requiresMotion: true },
+  { path: "/fachstelle", component: Fachstelle, requiresMotion: true },
   { path: "/notfallkarte", component: Notfallkarte },
-  { path: "/wegweiser", component: Wegweiser },
-  { path: "/uebungen", component: Uebungsszenarien },
-  { path: "/quellen", component: Quellen },
-  { path: "/barrierefreiheit", component: Barrierefreiheit },
+  { path: "/wegweiser", component: Wegweiser, requiresMotion: true },
+  { path: "/uebungen", component: Uebungsszenarien, requiresMotion: true },
+  { path: "/quellen", component: Quellen, requiresMotion: true },
+  {
+    path: "/barrierefreiheit",
+    component: Barrierefreiheit,
+    requiresMotion: true,
+  },
 ];

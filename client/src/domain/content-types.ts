@@ -1,9 +1,14 @@
-import type { LucideIcon } from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
+
+export interface IconProps extends SVGProps<SVGSVGElement> {
+  size?: number | string;
+  absoluteStrokeWidth?: boolean;
+}
 
 export interface NavigationItem {
   href: string;
   label: string;
-  icon: LucideIcon;
+  icon: ComponentType<IconProps>;
   group?: string;
 }
 

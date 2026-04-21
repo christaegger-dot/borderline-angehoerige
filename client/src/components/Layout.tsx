@@ -1,12 +1,13 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect, lazy, Suspense } from "react";
-import { Phone } from "lucide-react";
 const Search = lazy(() => import("@/components/Search"));
 import { Button } from "@/components/ui/button";
-import { ScrollToTopButton, Breadcrumbs } from "@/components/UXEnhancements";
 import { HeaderNav } from "@/components/layout/HeaderNav";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
+import { ScrollToTopButton } from "@/components/layout/ScrollToTopButton";
 import { getMobileFloatingMode as _getMobileFloatingMode } from "@/domain/floating-ui";
+import { Phone } from "@/icons/root-icons";
 interface LayoutProps {
   children: React.ReactNode;
 }

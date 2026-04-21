@@ -1,0 +1,7 @@
+@layer theme, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "../styles/tailwind-theme.css";
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+
+@source "./Search.tsx";

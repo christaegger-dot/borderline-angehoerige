@@ -1,9 +1,14 @@
-import { Suspense } from "react";
-import { Route, Switch, Redirect } from "wouter";
+import { Suspense, lazy } from "react";
+import { Route, Switch, Redirect, useLocation } from "wouter";
 import { routes } from "@/app/routes";
 import NotFound from "@/pages/NotFound";
 
-function PageLoader() {
+const DeferredRouteStyles = lazy(() => import("@/app/DeferredRouteStyles"));
+const MotionProviders = lazy(() => import("@/app/MotionProviders"));
+
+function PageLoader({ location }: { location: string }) {
+  if (location === "/") return null;
+
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
       <div className="flex flex-col items-center gap-3">
@@ -15,25 +20,43 @@ function PageLoader() {
 }
 
 export default function Router() {
-  return (
-    <Suspense fallback={<PageLoader />}>
-      <Switch>
-        {routes.map(route =>
-          route.redirectTo ? (
-            <Route key={route.path} path={route.path}>
-              {() => <Redirect to={route.redirectTo!} />}
-            </Route>
-          ) : (
-            <Route
-              key={route.path}
-              path={route.path}
-              component={route.component!}
-            />
-          )
+  const [location] = useLocation();
+  const currentRoute = routes.find(route => route.path === location);
+  const routeContent = (
+    <Switch>
+      {routes.map(route =>
+        route.redirectTo ? (
+          <Route key={route.path} path={route.path}>
+            {() => <Redirect to={route.redirectTo!} />}
+          </Route>
+        ) : (
+          <Route
+            key={route.path}
+            path={route.path}
+            component={route.component!}
+          />
+        )
+      )}
+      <Route path="/404" component={NotFound} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+  const styledRouteContent =
+    location === "/" ? (
+      routeContent
+    ) : (
+      <DeferredRouteStyles>
+        {currentRoute?.requiresMotion ? (
+          <MotionProviders>{routeContent}</MotionProviders>
+        ) : (
+          routeContent
         )}
-        <Route path="/404" component={NotFound} />
-        <Route component={NotFound} />
-      </Switch>
+      </DeferredRouteStyles>
+    );
+
+  return (
+    <Suspense fallback={<PageLoader location={location} />}>
+      {styledRouteContent}
     </Suspense>
   );
 }

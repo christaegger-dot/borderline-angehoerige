@@ -1,0 +1,18 @@
+@layer theme, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "./tailwind-theme.css";
+@import "tw-animate-css";
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+
+@source "../pages";
+@source "../components";
+@source not "../pages/Home.tsx";
+@source not "../components/Layout.tsx";
+@source not "../components/ErrorBoundary.tsx";
+@source not "../components/Search.tsx";
+@source not "../components/ScrollToTop.tsx";
+@source not "../components/layout";
+@source not "../components/ui/button.tsx";
+@source not "../components/ui/card.tsx";
+@source not "../components/ui/sonner.tsx";

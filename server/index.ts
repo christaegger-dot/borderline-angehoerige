@@ -1,5 +1,6 @@
 import express from "express";
 import { createServer } from "http";
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { createMaterialDownloadResponse } from "./material-download";
@@ -42,6 +43,25 @@ async function startServer() {
     process.env.NODE_ENV === "production"
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
+
+  // Serve intentional static direct-access pages without the default / -> / redirect.
+  app.get("/{*splat}", (req, res, next) => {
+    if (req.path === "/" || req.path.endsWith("/") || path.extname(req.path)) {
+      return next();
+    }
+
+    const directPagePath = path.join(
+      staticPath,
+      req.path.replace(/^\/+/, ""),
+      "index.html"
+    );
+
+    if (!fs.existsSync(directPagePath)) {
+      return next();
+    }
+
+    res.sendFile(directPagePath);
+  });
 
   app.use(express.static(staticPath));
 

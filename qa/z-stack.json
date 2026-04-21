@@ -1,0 +1,475 @@
+{
+  "generatedAt": "2026-04-21T09:58:31.155Z",
+  "entries": [
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "items": [
+        {
+          "index": 50,
+          "tag": "header",
+          "id": null,
+          "className": "sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50",
+          "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst",
+          "position": "sticky",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 394,
+          "tag": "a",
+          "id": null,
+          "className": "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-ev",
+          "text": "Soforthilfe",
+          "position": "fixed",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 96,
+          "tag": "div",
+          "id": null,
+          "className": "container relative z-10 py-16 md:py-20 lg:py-26",
+          "text": "Für Angehörige von Menschen mit BorderlineOrientierung in belasteten Beziehungen",
+          "position": "relative",
+          "zIndex": "10",
+          "numericZIndex": 10,
+          "anomaly": null
+        },
+        {
+          "index": 49,
+          "tag": "a",
+          "id": null,
+          "className": "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus",
+          "text": "Zum Inhalt springen",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 92,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-0 opacity-30 pointer-events-none",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 93,
+          "tag": "div",
+          "id": null,
+          "className": "absolute -top-16 -right-16 w-80 h-80 rounded-full bg-sage-mid blur-3xl",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 94,
+          "tag": "div",
+          "id": null,
+          "className": "absolute -bottom-10 left-1/3 w-56 h-56 rounded-full bg-amber blur-3xl",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 95,
+          "tag": "div",
+          "id": null,
+          "className": "absolute top-1/2 -left-20 w-64 h-64 rounded-full bg-sage-dark blur-3xl",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 233,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-0 rounded-full",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 234,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-4 rounded-full border-2 border-dashed border-sage-mid/20",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 235,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-12 rounded-full border border-sage-mid/15",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 236,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-0 flex items-center justify-center",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 240,
+          "tag": "div",
+          "id": null,
+          "className": "absolute top-6 left-1/2 -translate-x-1/2",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 245,
+          "tag": "div",
+          "id": null,
+          "className": "absolute bottom-6 left-1/2 -translate-x-1/2",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 249,
+          "tag": "div",
+          "id": null,
+          "className": "absolute left-6 top-1/2 -translate-y-1/2",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 253,
+          "tag": "div",
+          "id": null,
+          "className": "absolute right-6 top-1/2 -translate-y-1/2",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        }
+      ],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "items": [
+        {
+          "index": 50,
+          "tag": "header",
+          "id": null,
+          "className": "sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50",
+          "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst",
+          "position": "sticky",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 394,
+          "tag": "a",
+          "id": null,
+          "className": "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-ev",
+          "text": "Soforthilfe",
+          "position": "fixed",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 96,
+          "tag": "div",
+          "id": null,
+          "className": "container relative z-10 py-16 md:py-20 lg:py-26",
+          "text": "Für Angehörige von Menschen mit BorderlineOrientierung in belasteten Beziehungen",
+          "position": "relative",
+          "zIndex": "10",
+          "numericZIndex": 10,
+          "anomaly": null
+        },
+        {
+          "index": 49,
+          "tag": "a",
+          "id": null,
+          "className": "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus",
+          "text": "Zum Inhalt springen",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 92,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-0 opacity-30 pointer-events-none",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 93,
+          "tag": "div",
+          "id": null,
+          "className": "absolute -top-16 -right-16 w-80 h-80 rounded-full bg-sage-mid blur-3xl",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 94,
+          "tag": "div",
+          "id": null,
+          "className": "absolute -bottom-10 left-1/3 w-56 h-56 rounded-full bg-amber blur-3xl",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 95,
+          "tag": "div",
+          "id": null,
+          "className": "absolute top-1/2 -left-20 w-64 h-64 rounded-full bg-sage-dark blur-3xl",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 233,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-0 rounded-full",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 234,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-4 rounded-full border-2 border-dashed border-sage-mid/20",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 235,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-12 rounded-full border border-sage-mid/15",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 236,
+          "tag": "div",
+          "id": null,
+          "className": "absolute inset-0 flex items-center justify-center",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 240,
+          "tag": "div",
+          "id": null,
+          "className": "absolute top-6 left-1/2 -translate-x-1/2",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 245,
+          "tag": "div",
+          "id": null,
+          "className": "absolute bottom-6 left-1/2 -translate-x-1/2",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 249,
+          "tag": "div",
+          "id": null,
+          "className": "absolute left-6 top-1/2 -translate-y-1/2",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        },
+        {
+          "index": 253,
+          "tag": "div",
+          "id": null,
+          "className": "absolute right-6 top-1/2 -translate-y-1/2",
+          "text": "",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        }
+      ],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/soforthilfe",
+      "viewport": "mobile",
+      "items": [],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/soforthilfe",
+      "viewport": "desktop",
+      "items": [],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "items": [],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "items": [],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/notfallkarte",
+      "viewport": "mobile",
+      "items": [
+        {
+          "index": 50,
+          "tag": "header",
+          "id": null,
+          "className": "sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50",
+          "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst",
+          "position": "sticky",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 367,
+          "tag": "a",
+          "id": null,
+          "className": "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-ev",
+          "text": "Soforthilfe",
+          "position": "fixed",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 49,
+          "tag": "a",
+          "id": null,
+          "className": "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus",
+          "text": "Zum Inhalt springen",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        }
+      ],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/notfallkarte",
+      "viewport": "desktop",
+      "items": [
+        {
+          "index": 50,
+          "tag": "header",
+          "id": null,
+          "className": "sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50",
+          "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst",
+          "position": "sticky",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 367,
+          "tag": "a",
+          "id": null,
+          "className": "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-ev",
+          "text": "Soforthilfe",
+          "position": "fixed",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 49,
+          "tag": "a",
+          "id": null,
+          "className": "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus",
+          "text": "Zum Inhalt springen",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        }
+      ],
+      "anomalyCount": 0
+    }
+  ]
+}

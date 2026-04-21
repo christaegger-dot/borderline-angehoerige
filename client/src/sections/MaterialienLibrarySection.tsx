@@ -69,7 +69,7 @@ function MaterialCard({
         className="relative aspect-[4/3] bg-muted overflow-hidden group w-full"
         onClick={() => {
           if (item.isHtml) {
-            window.open(openHref, "_blank");
+            window.open(openHref, "_blank", "noopener,noreferrer");
           } else {
             onPreview(item.url, item.title);
           }

@@ -36,6 +36,14 @@ describe("MaterialienLibrarySection", () => {
     );
     expect(localDownloadLink).toHaveAttribute("download", "");
 
+    const textVersionLink = screen.getByRole("link", {
+      name: /Textversion lesen: Der Leuchtturm – Ihre Rolle als Angehörige\/r/i,
+    });
+    expect(textVersionLink).toHaveAttribute(
+      "href",
+      "/materialien/text/leuchtturm"
+    );
+
     fireEvent.click(screen.getByRole("button", { name: /Genesung\s*\(1\)/ }));
 
     expect(

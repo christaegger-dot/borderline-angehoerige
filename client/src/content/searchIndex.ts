@@ -409,6 +409,23 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Der Leuchtturm",
+    description:
+      "Lesbare Web-Version des Handouts zur Angehörigenrolle mit Kernaussage, Bildidee und 3 Schritten",
+    keywords: [
+      "textversion",
+      "leuchtturm",
+      "rolle",
+      "angehörige",
+      "stabilität",
+      "orientierung",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/leuchtturm",
+    section: "Materialien",
+  },
+  {
     title: "Der Eisberg: Was hinter Wut liegen kann",
     description:
       "Infografik: Hinter sichtbarer Wut liegen oft Schmerz, Angst oder Scham",
@@ -519,6 +536,23 @@ export const searchableContent: SearchEntry[] = [
       "infografik",
     ],
     href: "/materialien",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Spickzettel Krisenkommunikation",
+    description:
+      "Lesbare Web-Version mit 3 Schritten, Standardsatz, Exit-Sätzen und Notfallnummern",
+    keywords: [
+      "textversion",
+      "krisenkommunikation",
+      "spickzettel",
+      "standardsatz",
+      "exit-sätze",
+      "grenze",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/krisenkommunikation",
     section: "Materialien",
   },
 

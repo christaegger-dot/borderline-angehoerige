@@ -23,7 +23,7 @@ const conformanceItems = [
 ];
 
 const knownLimitations = [
-  "PDF-Downloads sind derzeit nicht vollständig barrierefrei aufbereitet",
+  "Viele ältere PDF-Handouts sind noch nicht vollständig barrierefrei aufbereitet; für erste Kernmaterialien stehen bereits lesbare Textversionen zur Verfügung",
   "Einzelne interaktive Übungen (Übungsszenarien) können mit Screenreadern eingeschränkt nutzbar sein",
 ];
 

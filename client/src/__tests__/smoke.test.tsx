@@ -112,6 +112,23 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(screen.getAllByText(/Notfallkarte/i)[0]).toBeInTheDocument();
   });
 
+  it("HandoutTextPage: rendert Leuchtturm-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "leuchtturm" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Der Leuchtturm – Ihre Rolle als Angehörige\/r/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Sie können das Schiff nicht steuern/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zur Materialsammlung/i })
+    ).toHaveAttribute("href", "/materialien");
+  });
+
   it("NotFound: rendert 404-Seite", async () => {
     const { default: NotFound } = await import("@/pages/NotFound");
     withRouter(<NotFound />);

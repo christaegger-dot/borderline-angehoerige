@@ -413,7 +413,7 @@ Vorschlag:
 
 - Analytics-Bootstrap in modulare Client-Datei verschieben
 - Font-Stylesheet nicht mehr ueber Inline-`onload` schalten
-- dadurch `script-src 'unsafe-inline'` in CSP entfernbAR machen
+- dadurch `script-src 'unsafe-inline'` in CSP entfernbar machen
 
 Begruendung:
 

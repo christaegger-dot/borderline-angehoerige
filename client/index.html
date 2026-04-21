@@ -50,24 +50,12 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
+    <script>
+      document.documentElement.dataset.routePrerender =
+        window.location.pathname === "/" ? "home" : "none";
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://files.manuscdn.com" />
-    <link rel="preconnect" href="https://files.manuscdn.com" crossorigin />
-    <link
-      rel="preload"
-      as="image"
-      type="image/webp"
-      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/XkvykpgJHYsCUUQW.webp"
-      media="(min-width: 769px)"
-    />
-    <link
-      rel="preload"
-      as="image"
-      type="image/webp"
-      href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fYVyThTdLUpjIoVU.webp"
-      media="(max-width: 768px)"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -84,8 +72,12 @@
         display: none;
       }
 
-      html[data-route-prerender="home"] #root:empty + #route-prerender {
+      html[data-route-prerender="home"] #route-prerender {
         display: block;
+      }
+
+      body[data-app-ready="true"] #route-prerender {
+        display: none;
       }
 
       .route-prerender-shell {
@@ -313,10 +305,6 @@
   </head>
 
   <body>
-    <script>
-      document.documentElement.dataset.routePrerender =
-        window.location.pathname === "/" ? "home" : "none";
-    </script>
     <div id="root"></div>
     <section id="route-prerender">
       <div class="route-prerender-shell">

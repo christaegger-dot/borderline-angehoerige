@@ -1,7 +1,9 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Route, Switch, Redirect, useLocation } from "wouter";
 import { routes } from "@/app/routes";
 import NotFound from "@/pages/NotFound";
+
+const MotionProviders = lazy(() => import("@/app/MotionProviders"));
 
 function PageLoader({ location }: { location: string }) {
   if (location === "/") return null;
@@ -18,26 +20,34 @@ function PageLoader({ location }: { location: string }) {
 
 export default function Router() {
   const [location] = useLocation();
+  const currentRoute = routes.find(route => route.path === location);
+  const routeContent = (
+    <Switch>
+      {routes.map(route =>
+        route.redirectTo ? (
+          <Route key={route.path} path={route.path}>
+            {() => <Redirect to={route.redirectTo!} />}
+          </Route>
+        ) : (
+          <Route
+            key={route.path}
+            path={route.path}
+            component={route.component!}
+          />
+        )
+      )}
+      <Route path="/404" component={NotFound} />
+      <Route component={NotFound} />
+    </Switch>
+  );
 
   return (
     <Suspense fallback={<PageLoader location={location} />}>
-      <Switch>
-        {routes.map(route =>
-          route.redirectTo ? (
-            <Route key={route.path} path={route.path}>
-              {() => <Redirect to={route.redirectTo!} />}
-            </Route>
-          ) : (
-            <Route
-              key={route.path}
-              path={route.path}
-              component={route.component!}
-            />
-          )
-        )}
-        <Route path="/404" component={NotFound} />
-        <Route component={NotFound} />
-      </Switch>
+      {currentRoute?.requiresMotion ? (
+        <MotionProviders>{routeContent}</MotionProviders>
+      ) : (
+        routeContent
+      )}
     </Suspense>
   );
 }

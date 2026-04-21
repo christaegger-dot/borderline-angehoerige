@@ -32,6 +32,12 @@ describe("handout text versions", () => {
     const warnsignalePdf = materials.find(
       item => item.id === "warnsignale"
     )?.downloadUrl;
+    const schuldVerantwortungPdf = materials.find(
+      item => item.id === "schuld-verantwortung"
+    )?.downloadUrl;
+    const radikaleAkzeptanzPdf = materials.find(
+      item => item.id === "radikale-akzeptanz"
+    )?.downloadUrl;
 
     expect(getHandoutTextVersion("leuchtturm")?.path).toBe(
       "/materialien/text/leuchtturm"
@@ -57,6 +63,12 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersion("warnsignale")?.path).toBe(
       "/materialien/text/warnsignale"
     );
+    expect(getHandoutTextVersion("schuld-verantwortung")?.path).toBe(
+      "/materialien/text/schuld-verantwortung"
+    );
+    expect(getHandoutTextVersion("radikale-akzeptanz")?.path).toBe(
+      "/materialien/text/radikale-akzeptanz"
+    );
     expect(getHandoutTextVersionHrefBySource(leuchtturmPdf)).toBe(
       "/materialien/text/leuchtturm"
     );
@@ -80,6 +92,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(warnsignalePdf)).toBe(
       "/materialien/text/warnsignale"
+    );
+    expect(getHandoutTextVersionHrefBySource(schuldVerantwortungPdf)).toBe(
+      "/materialien/text/schuld-verantwortung"
+    );
+    expect(getHandoutTextVersionHrefBySource(radikaleAkzeptanzPdf)).toBe(
+      "/materialien/text/radikale-akzeptanz"
     );
     expect(getHandoutTextVersionBySource("/notfallplan-krise-v03.pdf")).toBe(
       null

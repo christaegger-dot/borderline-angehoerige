@@ -73,6 +73,16 @@ describe("MaterialienLibrarySection", () => {
         name: /Textversion lesen: Warnsignale der Überlastung/i,
       })
     ).toHaveAttribute("href", "/materialien/text/warnsignale");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Schuld, Verantwortung und was dazwischen liegt/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/schuld-verantwortung");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
 
     fireEvent.click(screen.getByRole("button", { name: /Genesung\s*\(1\)/ }));
 

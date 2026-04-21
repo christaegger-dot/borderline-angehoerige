@@ -705,6 +705,204 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("schuld-verantwortung", {
+    kicker: "Textversion",
+    summary:
+      "Schuldgefühle sind bei Angehörigen häufig und verständlich. Hilfreicher als der Blick zurück ist die Frage, was Sie heute beeinflussen können, ohne sich die ganze Verantwortung aufzuladen.",
+    intro: [
+      "Diese Seite überträgt das Handout «Schuld, Verantwortung und was dazwischen liegt» in eine lesbare Web-Version. Sie richtet sich an Angehörige, die sich zwischen Selbstvorwurf, Fürsorge und Verantwortung verlieren.",
+      "Die Struktur des Originals bleibt erhalten: zuerst die Einordnung von Schuldgefühlen, dann der Blick auf Forschung, der Vergleich zwischen Schuld und Verantwortung und schliesslich typische Selbstvorwürfe mit einer realistischeren Gegenperspektive.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentrale Entlastung",
+        calloutText:
+          "Schuldgefühle gehören zu den häufigsten Belastungen von Angehörigen. Diese Gedanken sind verständlich, aber sie helfen weder Ihnen noch der betroffenen Person. BPD hat keine einzelne Ursache, und kein einzelner Mensch ist dafür verantwortlich.",
+      },
+      {
+        title: "Was die Forschung zeigt",
+        intro:
+          "Das Handout fasst die Entlastung bewusst sachlich zusammen: Borderline entsteht nicht durch einen einzelnen Auslöser und nicht durch eine einzelne Person.",
+        cards: [
+          {
+            title: "Genetik & Temperament",
+            text: "Vererbt werden Temperamentszüge – diese allein führen noch nicht zur Erkrankung.",
+          },
+          {
+            title: "Zusammenspiel vieler Faktoren",
+            text: "Es gibt keine einzelne Ursache – und keinen einzelnen Schuldigen.",
+          },
+          {
+            title: "Wechselseitige Beziehung",
+            text: "Ein empfindsames Kind stellt andere Anforderungen – das macht niemanden schuldig.",
+          },
+        ],
+      },
+      {
+        title: "Schuld vs. Verantwortung",
+        intro:
+          "Das Handout stellt beide Haltungen bewusst gegenüber. Schuld fixiert auf das Vergangene, Verantwortung öffnet wieder Handlungsspielraum im Hier und Jetzt.",
+        cards: [
+          {
+            title: "Blickrichtung",
+            text: "Schuld fragt rückwärts: «Was habe ich falsch gemacht?» Verantwortung fragt vorwärts: «Was kann ich jetzt tun?»",
+          },
+          {
+            title: "Wirkung",
+            text: "Schuld lähmt und macht hilflos. Verantwortung macht handlungsfähiger und klarer.",
+          },
+          {
+            title: "Fokus",
+            text: "Schuld fixiert Fehler und Versagen. Verantwortung richtet den Blick auf Möglichkeiten und Einfluss.",
+          },
+          {
+            title: "Ergebnis",
+            text: "Schuld begünstigt Rückzug oder Überanpassung. Verantwortung erleichtert klare Entscheidungen und gesunde Grenzen.",
+          },
+        ],
+      },
+      {
+        title:
+          "5 Sätze, die Angehörige sich oft sagen – und was wirklich stimmt",
+        cards: [
+          {
+            title: "«Ich hätte es früher merken müssen.»",
+            text: "Sie sind kein Diagnostik-Team. BPD wird selbst von Fachpersonen oft erst spät erkannt.",
+          },
+          {
+            title:
+              "«Wenn ich ein besserer Elternteil gewesen wäre, wäre das nicht passiert.»",
+            text: "BPD entsteht nie durch eine einzelne Person. Dass Sie jetzt da sind, zeigt Ihre Fürsorge.",
+          },
+          {
+            title: "«Ich tue nicht genug.»",
+            text: "Sie tun bereits viel. Genug ist, was Sie leisten können, ohne sich selbst zu verlieren.",
+          },
+          {
+            title:
+              "«Vielleicht bin ich der Grund, warum es nicht besser wird.»",
+            text: "Genesung hängt von vielen Faktoren ab. Sie sind ein wichtiger – aber nicht der einzige.",
+          },
+          {
+            title: "«Andere Familien haben dieses Problem nicht.»",
+            text: "BPD kommt in allen Familien vor – unabhängig von Bildung, Einkommen oder Erziehungsstil.",
+          },
+        ],
+      },
+      {
+        title: "Vertiefung",
+        calloutTitle: "Weiterdenken statt im Schuld-Spiel stecken bleiben",
+        calloutText:
+          "Wie Sie aus dem Schuld-Spiel aussteigen, zeigt die Infografik «Raus aus dem Schuld-Spiel» (nach Fruzzetti).",
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Was Sie sich merken dürfen",
+        calloutText:
+          "Sie haben die Erkrankung nicht verursacht. Sie können sie nicht heilen. Aber Sie können einen Unterschied machen – wenn Sie sich selbst dabei nicht verlieren. (Angelehnt an die «3 C's» der Angehörigenarbeit.)",
+      },
+    ],
+    sourceLine:
+      "Quellen: [1] Gunderson & Berkowitz, BPD Family Guidelines (NEABPD). [2] Fruzzetti, Hoffman & Buteau, Family Connections (NEABPD, 2005). [3] Gunderson et al., Nature Reviews Disease Primers (2018).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
+  }),
+  createHandoutTextVersion("radikale-akzeptanz", {
+    kicker: "Textversion",
+    summary:
+      "Radikale Akzeptanz bedeutet nicht Aufgeben, sondern die Realität anzuerkennen und Energie für das Beeinflussbare zurückzugewinnen.",
+    intro: [
+      "Diese Seite überträgt das Handout «Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln» in eine lesbare Web-Version. Sie richtet sich an Angehörige, die sich im inneren Kampf gegen belastende Realität erschöpfen.",
+      "Das Original arbeitet mit einem klaren Gegensatz: Was radikale Akzeptanz nicht ist, was sie ist, wie Sie sie in vier Schritten üben und worauf Sie Ihre Energie stattdessen richten können.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Es ist, wie es ist – und trotzdem können Sie handeln. Radikale Akzeptanz gibt Ihnen Ihre Energie zurück.",
+      },
+      {
+        title: "Was Radikale Akzeptanz nicht ist",
+        intro:
+          "Die linke Spalte des Originals grenzt bewusst Missverständnisse ab. Akzeptanz bedeutet nicht, Belastendes schönzureden oder sich selbst aufzugeben.",
+        cards: [
+          {
+            title: "Nicht Aufgeben",
+            text: "Radikale Akzeptanz ist kein Rückzug aus dem Leben.",
+          },
+          {
+            title: "Nicht Gutheissen",
+            text: "Sie müssen schwierige Realität nicht gut finden, um sie anzuerkennen.",
+          },
+          {
+            title: "Nicht Passivität",
+            text: "Akzeptanz ersetzt Handeln nicht, sondern macht gezielteres Handeln wieder möglich.",
+          },
+          {
+            title: "Nicht Resignation",
+            text: "Es geht nicht darum, hoffnungslos zu werden, sondern inneren Widerstand zu lösen.",
+          },
+        ],
+      },
+      {
+        title: "Was Radikale Akzeptanz ist",
+        intro:
+          "Die rechte Spalte fasst zusammen, worauf die Haltung zielt: Realität anerkennen, Kräfte bündeln und das Beeinflussbare wieder sehen.",
+        cards: [
+          {
+            title: "Anerkennen, was nicht änderbar ist",
+            text: "Sie benennen die Realität, statt gegen sie anzukämpfen.",
+          },
+          {
+            title: "Energie sparen für Beeinflussbares",
+            text: "Ihre Kraft bleibt nicht im inneren Widerstand stecken.",
+          },
+          {
+            title: "Inneren Frieden finden",
+            text: "Akzeptanz kann Anspannung senken und wieder mehr Boden unter die Füsse bringen.",
+          },
+          {
+            title: "Loslassen von «Es sollte anders sein»",
+            text: "Sie müssen nicht ständig gegen das kämpfen, was gerade faktisch da ist.",
+          },
+        ],
+      },
+      {
+        title: "4-Schritte-Übung",
+        cards: [
+          {
+            title: "1. Benennen",
+            text: "Was ist die Realität?",
+          },
+          {
+            title: "2. Spüren",
+            text: "Was löst das in mir aus?",
+          },
+          {
+            title: "3. Loslassen",
+            text: "Ich höre auf zu kämpfen.",
+          },
+          {
+            title: "4. Fokus",
+            text: "Was kann ich beeinflussen?",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Üben Sie die 4 Schritte regelmässig in Ihrem Alltag. Starten Sie mit kleinen Situationen.",
+          "Wiederholen Sie das Mantra «Es ist, wie es ist», wenn Sie sich gestresst fühlen.",
+          "Richten Sie Ihre Energie bewusst auf Aufgaben, die Sie kontrollieren können, und lassen Sie den Rest los.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Linehan (1993), DBT Skills Training.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
   createHandoutTextVersion("grenzen-spickzettel", {
     kicker: "Textversion",
     summary:

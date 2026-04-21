@@ -210,6 +210,8 @@ export default defineConfig(({ command }) => {
             "vendor-react": ["react", "react-dom"],
             // Animation library – used on many pages but heavy
             "vendor-motion": ["framer-motion"],
+            // Root path only needs Radix Slot via Button asChild
+            "vendor-radix-slot": ["@radix-ui/react-slot"],
             // Radix UI primitives – shared across components
             "vendor-radix": [
               "@radix-ui/react-accordion",
@@ -221,7 +223,6 @@ export default defineConfig(({ command }) => {
               "@radix-ui/react-select",
               "@radix-ui/react-scroll-area",
               "@radix-ui/react-separator",
-              "@radix-ui/react-slot",
               "@radix-ui/react-toggle",
               "@radix-ui/react-toggle-group",
               "@radix-ui/react-collapsible",

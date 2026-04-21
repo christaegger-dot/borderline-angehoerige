@@ -38,7 +38,8 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   display: none;
 }
 
-a {
+.fallback-page a,
+.fallback-noscript a {
   color: var(--accent-strong);
 }
 

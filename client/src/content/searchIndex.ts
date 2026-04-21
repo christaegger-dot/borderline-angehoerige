@@ -426,6 +426,23 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Ihre Rolle klären",
+    description:
+      "Lesbare Web-Version zur Angehörigenrolle mit Abgrenzung zwischen eigenem Beitrag, professioneller Hilfe und klaren Grenzen",
+    keywords: [
+      "textversion",
+      "rolle klären",
+      "unterstützen",
+      "angehörigenrolle",
+      "grenzen",
+      "professionelle hilfe",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/rolle-klaeren",
+    section: "Materialien",
+  },
+  {
     title: "Der Eisberg: Was hinter Wut liegen kann",
     description:
       "Infografik: Hinter sichtbarer Wut liegen oft Schmerz, Angst oder Scham",
@@ -553,6 +570,23 @@ export const searchableContent: SearchEntry[] = [
       "pdf",
     ],
     href: "/materialien/text/krisenkommunikation",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Warnsignale der Überlastung",
+    description:
+      "Lesbare Web-Version des Ampel-Handouts zu Überlastung, Frühwarnzeichen und nächsten Schritten",
+    keywords: [
+      "textversion",
+      "warnsignale",
+      "überlastung",
+      "selbstfürsorge",
+      "ampel",
+      "burnout",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/warnsignale",
     section: "Materialien",
   },
 

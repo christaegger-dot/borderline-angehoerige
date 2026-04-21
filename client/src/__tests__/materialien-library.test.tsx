@@ -43,6 +43,16 @@ describe("MaterialienLibrarySection", () => {
       "href",
       "/materialien/text/leuchtturm"
     );
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Ihre Rolle klären – Was Sie sein können/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/rolle-klaeren");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Warnsignale der Überlastung/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/warnsignale");
 
     fireEvent.click(screen.getByRole("button", { name: /Genesung\s*\(1\)/ }));
 

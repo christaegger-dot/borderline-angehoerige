@@ -129,6 +129,23 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien");
   });
 
+  it("HandoutTextPage: rendert Warnsignale-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "warnsignale" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Warnsignale der Überlastung/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Überlastung kommt nicht plötzlich/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
+    ).toHaveAttribute("href", "/selbstfuersorge");
+  });
+
   it("NotFound: rendert 404-Seite", async () => {
     const { default: NotFound } = await import("@/pages/NotFound");
     withRouter(<NotFound />);

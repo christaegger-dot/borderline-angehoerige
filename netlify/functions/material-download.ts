@@ -12,7 +12,11 @@ export default async (_req: Request, context: MaterialDownloadContext) => {
     return new Response("Material nicht gefunden.", { status: 404 });
   }
 
-  return createMaterialDownloadResponse(id);
+  const url = new URL(_req.url);
+  const disposition =
+    url.searchParams.get("disposition") === "inline" ? "inline" : "attachment";
+
+  return createMaterialDownloadResponse(id, disposition);
 };
 
 export const config = {

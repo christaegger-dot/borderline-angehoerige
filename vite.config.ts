@@ -114,7 +114,14 @@ function vitePluginManusDebugCollector(): Plugin {
             return next();
           }
 
-          const response = await createMaterialDownloadResponse(id);
+          const disposition =
+            requestUrl.searchParams.get("disposition") === "inline"
+              ? "inline"
+              : "attachment";
+          const response = await createMaterialDownloadResponse(
+            id,
+            disposition
+          );
           const headers = Object.fromEntries(response.headers.entries());
           const body = Buffer.from(await response.arrayBuffer());
 

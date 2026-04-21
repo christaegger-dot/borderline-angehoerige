@@ -18,13 +18,13 @@ import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  getMaterialDownloadHref,
   categoryMeta,
   materials,
   quickStarts,
   type MaterialCategory,
   type MaterialItem,
 } from "@/content/materialien";
+import { getHandoutDownloadHref, getHandoutOpenHref } from "@/content/handouts";
 
 function CategoryIcon({
   icon,
@@ -59,8 +59,11 @@ function MaterialCard({
   onPreview: (image: string, title: string) => void;
 }) {
   const previewSrc = item.isHtml ? (item.previewUrl ?? item.url) : item.url;
-  const openHref = item.downloadUrl ?? item.url;
-  const downloadHref = getMaterialDownloadHref(item);
+  const pdfSource = item.pdfUrl ?? item.downloadUrl;
+  const openHref = item.isHtml
+    ? (item.downloadUrl ?? item.url)
+    : (getHandoutOpenHref(pdfSource) ?? item.url);
+  const downloadHref = getHandoutDownloadHref(pdfSource);
 
   return (
     <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">

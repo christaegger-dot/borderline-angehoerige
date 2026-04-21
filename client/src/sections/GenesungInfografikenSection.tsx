@@ -16,6 +16,7 @@ import {
   genesungItems,
   type GenesungKategorie,
 } from "@/content/genesung";
+import { getHandoutOpenHref } from "@/content/handouts";
 
 const genesungIcons = {
   alle: Filter,
@@ -100,7 +101,7 @@ export default function GenesungInfografikenSection() {
               </h3>
               <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
               <a
-                href={item.pdf}
+                href={getHandoutOpenHref(item.pdf) ?? item.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}

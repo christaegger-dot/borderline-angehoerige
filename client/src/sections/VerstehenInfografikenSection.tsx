@@ -8,6 +8,7 @@ import {
   verstehenInfografiken,
   type VerstehenMaterialCategory,
 } from "@/content/verstehen";
+import { getHandoutOpenHref } from "@/content/handouts";
 
 const verstehenCategories = [
   {
@@ -114,7 +115,7 @@ export default function VerstehenInfografikenSection() {
                 {item.description}
               </p>
               <a
-                href={item.pdfUrl}
+                href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}

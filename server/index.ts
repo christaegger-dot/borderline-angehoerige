@@ -34,7 +34,12 @@ async function startServer() {
   });
 
   app.get("/api/material-download/:id", async (req, res) => {
-    const response = await createMaterialDownloadResponse(req.params.id);
+    const disposition =
+      req.query.disposition === "inline" ? "inline" : "attachment";
+    const response = await createMaterialDownloadResponse(
+      req.params.id,
+      disposition
+    );
     await sendResponse(res, response);
   });
 

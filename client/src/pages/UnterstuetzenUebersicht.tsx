@@ -25,6 +25,7 @@ import {
   unterstuetzenItems,
   unterstuetzenSubcategories,
 } from "@/content/unterstuetzen";
+import { getHandoutOpenHref } from "@/content/handouts";
 
 export default function UnterstuetzenUebersicht() {
   const [activeFilter, setActiveFilter] = useState("alle");
@@ -431,7 +432,7 @@ export default function UnterstuetzenUebersicht() {
                         {item.title}
                       </h3>
                       <a
-                        href={item.pdfUrl}
+                        href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}

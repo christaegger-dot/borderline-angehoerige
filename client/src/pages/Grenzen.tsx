@@ -22,6 +22,7 @@ import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
 
 import { grenzenItems } from "@/content/grenzen";
+import { getHandoutOpenHref } from "@/content/handouts";
 
 export default function Grenzen() {
   return (
@@ -550,7 +551,7 @@ export default function Grenzen() {
                         {item.title}
                       </h3>
                       <a
-                        href={item.pdfUrl}
+                        href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}

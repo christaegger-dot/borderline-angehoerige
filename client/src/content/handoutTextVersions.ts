@@ -280,6 +280,117 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("eisberg", {
+    kicker: "Textversion",
+    summary:
+      "Was sichtbar wie Wut, Vorwürfe oder Lautwerden wirkt, hat oft eine verdeckte Unterseite aus Angst, Scham, Trauer, Einsamkeit und Stress.",
+    intro: [
+      "Diese Seite überträgt das Handout «Der Eisberg» in eine lesbare Web-Version. Die zentrale Bildidee bleibt erhalten: sichtbares Verhalten ist nur die Spitze, darunter liegen oft andere Gefühle und Bedürfnisse.",
+      "Für Angehörige ist die Grafik als Einordnungshilfe gedacht. Sie soll Wut nicht verharmlosen, aber helfen, Verhalten differenzierter zu lesen und die eigene Reaktion bewusster zu wählen.",
+    ],
+    sections: [
+      {
+        title: "Sichtbar",
+        intro:
+          "Die obere Spitze des Eisbergs steht für das, was im Alltag direkt auffällt und oft schnell eskaliert.",
+        cards: [
+          {
+            title: "Wut",
+            text: "Starke Gereiztheit oder explosive Reaktionen, die sofort als Problem sichtbar werden.",
+          },
+          {
+            title: "Vorwürfe",
+            text: "Anklagen, Schuldzuweisungen oder harte Botschaften, die bei Angehörigen schnell Abwehr auslösen.",
+          },
+          {
+            title: "Laut werden",
+            text: "Erhöhte Lautstärke oder scharfer Ton als sichtbares Verhalten an der Oberfläche.",
+          },
+        ],
+      },
+      {
+        title: "Darunter",
+        intro:
+          "Unter der Wasserlinie zeigt die Grafik die verborgenen Gefühle und Bedürfnisse, die an der Oberfläche nicht sofort erkennbar sind.",
+        cards: [
+          {
+            title: "Angst",
+            text: "Unsicherheit, Bedrohungsgefühl oder Verlassensangst können sich hinter Wut verbergen.",
+          },
+          {
+            title: "Scham",
+            text: "Starke innere Beschämung wird oft nicht direkt gezeigt, sondern über Abwehr oder Angriff nach aussen geleitet.",
+          },
+          {
+            title: "Trauer",
+            text: "Verlust, Schmerz oder Enttäuschung können verdeckt bleiben und trotzdem das Verhalten prägen.",
+          },
+          {
+            title: "Einsamkeit",
+            text: "Das Gefühl, nicht erreicht oder verstanden zu werden, kann unterm sichtbaren Konflikt liegen.",
+          },
+          {
+            title: "Stress",
+            text: "Überforderung und Anspannung verstärken sichtbare Reaktionen und engen den Handlungsspielraum ein.",
+          },
+        ],
+      },
+      {
+        title: "Anspannung und Ventile",
+        intro:
+          "Die Grafik ergänzt den Eisberg um zwei Regler: mehr Trigger und Überforderung erhöhen den Druck, mehr Sicherheit, Skills und Erholung entlasten.",
+        cards: [
+          {
+            title: "Anspannung",
+            text: "Die Anzeige visualisiert, wie hoch die innere Aktivierung gerade ist.",
+          },
+          {
+            title: "Mehr Trigger",
+            text: "Stress, Überforderung und belastende Reize erhöhen den inneren Druck.",
+          },
+          {
+            title: "Mehr Ventile",
+            text: "Sicherheit, Skills und Erholung senken die Anspannung und schaffen wieder Spielraum.",
+          },
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es beim Eisberg geht",
+        calloutText:
+          "Was Sie sehen (Wut) ist oft nur die Spitze – darunter liegen Schmerz, Angst, Scham und Überforderung.",
+      },
+      {
+        title: "3 Schritte",
+        cards: [
+          {
+            title: "1. Erkennen",
+            text: "Was sehe ich? Was könnte darunter liegen?",
+          },
+          {
+            title: "2. Verstehen",
+            text: "Welches Gefühl oder Bedürfnis steckt dahinter?",
+          },
+          {
+            title: "3. Handeln",
+            text: "Wie kann ich darauf eingehen, ohne mich selbst zu verlieren?",
+          },
+        ],
+      },
+      {
+        title: "Legende der Grafik",
+        bullets: [
+          "Spitze = sichtbares Verhalten",
+          "Unter Wasser = verborgene Gefühle",
+          "Ventile = Stresszufuhr oder Entlastung",
+        ],
+      },
+    ],
+    sourceLine:
+      "Quelle: Psychoedukation, Emotionsmodell nach DBT (Linehan, 1993).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
   createHandoutTextVersion("krisenkommunikation", {
     kicker: "Textversion",
     summary:
@@ -445,6 +556,80 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     ],
     sourceLine:
       "Quelle: Maslach/Leiter (2016), Burnout-Prävention; Mason/Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("grenzen-spickzettel", {
+    kicker: "Textversion",
+    summary:
+      "Der Spickzettel bündelt konkrete Satzbausteine für klare Grenzen, Spiegeln ohne Aufsaugen und eine Exit-Strategie mit Liebe, Grenze und Konsequenz.",
+    intro: [
+      "Diese Seite überträgt den «Spickzettel Grenzen» in eine lesbare und kopierbare Web-Version. Er ist dafür gedacht, vor schwierigen Gesprächen kurz die wichtigsten Satzmuster durchzugehen.",
+      "Die Struktur folgt den vier Bereichen des Originals: DEAR-Technik, Beispielsätze bei Grenzüberschreitungen, Spiegeln statt Aufsaugen und die L.M.K.-Exit-Strategie.",
+    ],
+    sections: [
+      {
+        title: "Wann anwenden?",
+        calloutTitle: "Einsatz des Spickzettels",
+        calloutText:
+          "Wenn Sie eine Grenze setzen möchten, ohne die Beziehung zu gefährden. Ideal zum Üben vor schwierigen Gesprächen.",
+      },
+      {
+        title: "Bereich 1: DEAR-Technik",
+        cards: [
+          {
+            title: "D – Beschreiben",
+            text: "Was ist passiert? Fakten. Ich beschreibe, was passiert ist...",
+          },
+          {
+            title: "E – Äussern",
+            text: "Was fühle ich? Ich-Aussage. Ich fühle mich dabei...",
+          },
+          {
+            title: "A – Behaupten",
+            text: "Was brauche ich? Klar sagen. Ich wünsche mir...",
+          },
+          {
+            title: "R – Verstärken",
+            text: "Was ist der Gewinn? Positiv. Das würde mir helfen, weil...",
+          },
+        ],
+      },
+      {
+        title: "Bereich 2: Bei Grenzüberschreitungen",
+        bullets: [
+          "Ich verstehe, dass du aufgebracht bist. Ich bin trotzdem nicht bereit, mich anschreien zu lassen.",
+          "Wenn das so weitergeht, werde ich den Raum verlassen.",
+          "Ich liebe dich UND ich brauche jetzt eine Pause.",
+        ],
+      },
+      {
+        title: "Bereich 3: Spiegeln statt Aufsaugen",
+        bullets: [
+          "Ich sehe, dass du leidest.",
+          "Das klingt wirklich schwer für dich.",
+          "Ich bin für dich da – aber ich kann das Problem nicht für dich lösen.",
+        ],
+      },
+      {
+        title: "Bereich 4: L.M.K. (Lebe Mit Konsequenzen) – Exit-Strategie",
+        cards: [
+          {
+            title: "L = Liebe zeigen",
+            text: "Du bist mir wichtig...",
+          },
+          {
+            title: "M = Meine Grenze",
+            text: "Ich brauche...",
+          },
+          {
+            title: "K = Konsequenz",
+            text: "Wenn nicht, dann...",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014); Linehan (1993), DBT.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

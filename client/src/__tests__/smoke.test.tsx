@@ -146,6 +146,33 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/selbstfuersorge");
   });
 
+  it("HandoutTextPage: rendert Eisberg-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "eisberg" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Der Eisberg – Wut ist oft die Spitze/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Was Sie sehen \(Wut\) ist oft nur die Spitze/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
+    ).toHaveAttribute("href", "/verstehen");
+  });
+
+  it("Grenzen: zeigt Textversion für Spickzettel Grenzen", async () => {
+    const { default: Grenzen } = await import("@/pages/Grenzen");
+    withRouter(<Grenzen />);
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Spickzettel Grenzen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/grenzen-spickzettel");
+  });
+
   it("NotFound: rendert 404-Seite", async () => {
     const { default: NotFound } = await import("@/pages/NotFound");
     withRouter(<NotFound />);

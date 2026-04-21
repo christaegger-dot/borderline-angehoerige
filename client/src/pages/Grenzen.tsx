@@ -12,6 +12,7 @@ import {
   Download,
   ExternalLink,
   Eye,
+  FileText,
   Heart,
   MessageSquare,
   Phone,
@@ -23,6 +24,7 @@ import ContentSection from "@/components/ContentSection";
 
 import { grenzenItems } from "@/content/grenzen";
 import { getHandoutOpenHref } from "@/content/handouts";
+import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 
 export default function Grenzen() {
   return (
@@ -521,48 +523,69 @@ export default function Grenzen() {
                   <strong className="text-foreground">
                     Vorschau = Web-Bild.
                   </strong>{" "}
+                  Wenn verfügbar, führt «Textversion» zur lesbaren Web-Version.
                   «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
                 </span>
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {grenzenItems.map((item, index) => (
-                  <Card
-                    key={item.title}
-                    className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                      grenzenItems.length > 1 && index === 0
-                        ? "sm:col-span-2"
-                        : ""
-                    }`}
-                  >
-                    <div className="relative aspect-[3/4] bg-muted overflow-hidden">
-                      <img
-                        src={item.url}
-                        alt={item.title}
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                        width={400}
-                        height={223}
-                        decoding="async"
-                      />
-                    </div>
-                    <CardContent className="p-3">
-                      <h3 className="font-medium text-sm text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <a
-                        href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        PDF öffnen
-                      </a>
-                    </CardContent>
-                  </Card>
-                ))}
+                {grenzenItems.map((item, index) => {
+                  const textVersionHref = getHandoutTextVersionHrefBySource(
+                    item.pdfUrl
+                  );
+
+                  return (
+                    <Card
+                      key={item.title}
+                      className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
+                        grenzenItems.length > 1 && index === 0
+                          ? "sm:col-span-2"
+                          : ""
+                      }`}
+                    >
+                      <div className="relative aspect-[3/4] bg-muted overflow-hidden">
+                        <img
+                          src={item.url}
+                          alt={item.title}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                          width={400}
+                          height={223}
+                          decoding="async"
+                        />
+                      </div>
+                      <CardContent className="p-3">
+                        <h3 className="font-medium text-sm text-foreground mb-2">
+                          {item.title}
+                        </h3>
+                        <div className="grid gap-2">
+                          {textVersionHref ? (
+                            <Link
+                              href={textVersionHref}
+                              aria-label={`Textversion lesen: ${item.title}`}
+                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full bg-sage-dark hover:bg-sage-mid text-white transition-colors"
+                            >
+                              <FileText className="w-4 h-4" />
+                              Textversion
+                            </Link>
+                          ) : null}
+                          <a
+                            href={
+                              getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            PDF öffnen
+                          </a>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
 
               <div className="mt-6 text-center">

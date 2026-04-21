@@ -3,6 +3,7 @@ import { Route, Switch, Redirect, useLocation } from "wouter";
 import { routes } from "@/app/routes";
 import NotFound from "@/pages/NotFound";
 
+const DeferredRouteStyles = lazy(() => import("@/app/DeferredRouteStyles"));
 const MotionProviders = lazy(() => import("@/app/MotionProviders"));
 
 function PageLoader({ location }: { location: string }) {
@@ -40,14 +41,22 @@ export default function Router() {
       <Route component={NotFound} />
     </Switch>
   );
+  const styledRouteContent =
+    location === "/" ? (
+      routeContent
+    ) : (
+      <DeferredRouteStyles>
+        {currentRoute?.requiresMotion ? (
+          <MotionProviders>{routeContent}</MotionProviders>
+        ) : (
+          routeContent
+        )}
+      </DeferredRouteStyles>
+    );
 
   return (
     <Suspense fallback={<PageLoader location={location} />}>
-      {currentRoute?.requiresMotion ? (
-        <MotionProviders>{routeContent}</MotionProviders>
-      ) : (
-        routeContent
-      )}
+      {styledRouteContent}
     </Suspense>
   );
 }

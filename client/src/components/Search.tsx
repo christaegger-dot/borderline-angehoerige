@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
+import "./search.css";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";

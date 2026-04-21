@@ -38,9 +38,35 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   display: none;
 }
 
+/* Font metric overrides to reduce CLS during webfont loading */
+@font-face {
+  font-family: "Inter fallback";
+  src: local("Arial");
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+  size-adjust: 107.06%;
+}
+
+@font-face {
+  font-family: "DM Serif Display fallback";
+  src: local("Georgia");
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  size-adjust: 105%;
+}
+
 .fallback-page a,
 .fallback-noscript a {
   color: var(--accent-strong);
+}
+
+.fallback-noscript {
+  padding: 2rem;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  color: #333;
 }
 
 .fallback-page {

@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "./App";
+import { initAnalytics } from "./bootstrap/analytics";
 import "./index.css";
 
 const root = document.getElementById("root");
@@ -9,6 +10,7 @@ if (!root) {
   throw new Error("#root element not found");
 }
 createRoot(root).render(<App />);
+initAnalytics();
 
 document.body.setAttribute("data-app-ready", "true");
 document.body.removeAttribute("data-startup-fallback-visible");

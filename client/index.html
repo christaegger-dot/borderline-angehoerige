@@ -51,23 +51,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="/print.css" media="print" />
-    <script>
-      document.documentElement.dataset.routePrerender =
-        window.location.pathname === "/" ? "home" : "none";
-    </script>
+    <script src="/route-prerender.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-      media="print"
-      onload="this.media = 'all'"
     />
-    <noscript
-      ><link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    /></noscript>
+    <link rel="stylesheet" href="/fallback.css" />
     <style>
       #route-prerender {
         display: none;
@@ -212,24 +203,6 @@
         }
       }
 
-      /* Font metric override to prevent CLS from font loading */
-      @font-face {
-        font-family: "Inter fallback";
-        src: local("Arial");
-        ascent-override: 90.49%;
-        descent-override: 22.56%;
-        line-gap-override: 0%;
-        size-adjust: 107.06%;
-      }
-      @font-face {
-        font-family: "DM Serif Display fallback";
-        src: local("Georgia");
-        ascent-override: 95%;
-        descent-override: 25%;
-        line-gap-override: 0%;
-        size-adjust: 105%;
-      }
-
       #startup-fallback {
         display: none;
         padding: 1rem;
@@ -365,14 +338,7 @@
       </div>
     </main>
     <noscript>
-      <div
-        style="
-          padding: 2rem;
-          text-align: center;
-          font-family: system-ui, sans-serif;
-          color: #333;
-        "
-      >
+      <div class="fallback-noscript">
         <h1>Interaktive Version eingeschränkt</h1>
         <p>
           Die wichtigsten Inhalte und Notfallkontakte sind oben direkt
@@ -381,45 +347,7 @@
         </p>
       </div>
     </noscript>
-    <script>
-      (function () {
-        const hasHomePrerender =
-          document.documentElement?.dataset.routePrerender === "home";
-
-        const revealFallback = () => {
-          if (hasHomePrerender) return;
-          if (document.body?.dataset.appReady === "true") return;
-          document.body?.setAttribute("data-startup-fallback-visible", "true");
-        };
-
-        const startupTimer = window.setTimeout(revealFallback, 2500);
-
-        window.addEventListener("error", revealFallback, { once: true });
-        window.addEventListener("unhandledrejection", revealFallback, {
-          once: true,
-        });
-        window.addEventListener(
-          "app-ready",
-          () => {
-            window.clearTimeout(startupTimer);
-          },
-          { once: true }
-        );
-      })();
-    </script>
+    <script src="/startup-fallback.js"></script>
     <script type="module" src="/src/main.tsx"></script>
-    <script type="module">
-      // Umami Analytics – nur laden wenn optionale Env-Variablen gesetzt sind
-      const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT?.trim();
-      const websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID?.trim();
-
-      if (endpoint && websiteId) {
-        const s = document.createElement("script");
-        s.defer = true;
-        s.src = `${endpoint}/umami`;
-        s.setAttribute("data-website-id", websiteId);
-        document.head.appendChild(s);
-      }
-    </script>
   </body>
 </html>

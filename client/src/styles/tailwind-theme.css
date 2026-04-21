@@ -132,6 +132,13 @@
   --color-sos-amber-border: oklch(0.85 0.06 85); /* ~amber-200 – Warn-Border */
   --color-sos-amber-dark: oklch(0.35 0.06 85); /* ~amber-900 – Warn-Text */
 
+  /* --- Home decorative surfaces --- */
+  --color-home-hero-mid: oklch(0.28 0.05 220);
+  --color-home-hero-end: oklch(0.35 0.03 250 / 0.8);
+  --color-home-divider: oklch(0.93 0.02 190 / 0.3);
+  --color-home-orbit-inner: oklch(0.95 0.02 190 / 0.7);
+  --color-home-orbit-outer: oklch(0.88 0.04 190 / 0.25);
+
   /* Typography – Design-Lock: Inter exklusiv */
   --font-display: "Inter", "Inter fallback", sans-serif;
   --font-body: "Inter", "Inter fallback", sans-serif;

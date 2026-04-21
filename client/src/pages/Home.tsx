@@ -58,32 +58,36 @@ const situationPaths = [
     icon: BookOpen,
     title: "Ich versuche zu verstehen, was passiert",
     text: "Wenn Nähe, Eskalation, Rückzug oder Widersprüche schwer einzuordnen sind.",
-    color: "var(--color-sage-dark)",
-    iconBg: "var(--color-sage-wash)",
+    accentBorderClass: "border-l-sage-dark",
+    accentTextClass: "text-sage-dark",
+    iconBgClass: "bg-sage-wash",
   },
   {
     href: "/soforthilfe",
     icon: AlertTriangle,
     title: "Es kippt gerade oder eskaliert",
     text: "Wenn starke Anspannung, Konflikte oder Krisensignale im Vordergrund stehen.",
-    color: "var(--color-alert)",
-    iconBg: "var(--color-alert-wash)",
+    accentBorderClass: "border-l-alert",
+    accentTextClass: "text-alert",
+    iconBgClass: "bg-alert-wash",
   },
   {
     href: "/kommunizieren",
     icon: MessageCircle,
     title: "Gespräche werden schwierig",
     text: "Wenn Worte verletzen, Vorwürfe dominieren oder alles sofort hochgeht.",
-    color: "var(--color-slate-blue)",
-    iconBg: "var(--color-slate-wash)",
+    accentBorderClass: "border-l-slate-blue",
+    accentTextClass: "text-slate-blue",
+    iconBgClass: "bg-slate-wash",
   },
   {
     href: "/selbstfuersorge",
     icon: Sparkles,
     title: "Ich bin selbst erschöpft",
     text: "Wenn Anspannung, Schuld, Rückzug oder innere Überforderung zu gross werden.",
-    color: "var(--color-sage-mid)",
-    iconBg: "var(--color-sage-wash)",
+    accentBorderClass: "border-l-sage-mid",
+    accentTextClass: "text-sage-mid",
+    iconBgClass: "bg-sage-wash",
   },
 ];
 
@@ -102,7 +106,7 @@ export default function Home() {
         path="/"
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy via-[oklch(0.28_0.05_220)] to-navy-light/80 text-white">
+      <section className="home-hero-surface relative overflow-hidden text-white">
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div className="absolute -top-16 -right-16 w-80 h-80 rounded-full bg-sage-mid blur-3xl" />
           <div className="absolute -bottom-10 left-1/3 w-56 h-56 rounded-full bg-amber blur-3xl" />
@@ -194,13 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div
-        className="h-6"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)",
-        }}
-      />
+      <div className="home-section-divider h-6" />
 
       <section className="py-8 md:py-10 bg-background">
         <div className="container">
@@ -226,29 +224,25 @@ export default function Home() {
                 return (
                   <Link key={item.href} href={item.href}>
                     <Card
-                      className="h-full cursor-pointer bg-white border border-border rounded-[10px] border-l-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
-                      style={{ borderLeftColor: item.color }}
+                      className={`h-full cursor-pointer bg-white border border-border rounded-md border-l-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 ${item.accentBorderClass}`}
                     >
                       <CardContent className="p-5 flex gap-4 items-start">
                         <div
-                          className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                          style={{ backgroundColor: item.iconBg }}
+                          className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${item.iconBgClass}`}
                         >
                           <Icon
-                            className="w-[18px] h-[18px]"
-                            style={{ color: item.color }}
+                            className={`w-[18px] h-[18px] ${item.accentTextClass}`}
                           />
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground text-sm mb-1">
                             {item.title}
                           </h3>
-                          <p className="text-[13.5px] text-muted-foreground mb-2">
+                          <p className="text-sm text-muted-foreground mb-2">
                             {item.text}
                           </p>
                           <span
-                            className="text-xs font-semibold inline-flex items-center gap-1"
-                            style={{ color: item.color }}
+                            className={`text-xs font-semibold inline-flex items-center gap-1 ${item.accentTextClass}`}
                           >
                             Zum passenden Bereich
                             <ArrowRight className="w-3.5 h-3.5" />
@@ -273,13 +267,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div
-        className="h-6"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)",
-        }}
-      />
+      <div className="home-section-divider h-6" />
 
       <section className="py-10 md:py-14 bg-cream">
         <div className="container">
@@ -328,13 +316,7 @@ export default function Home() {
                 {/* Rechte Spalte: Abstrakte Illustration */}
                 <div className="hidden lg:flex items-center justify-center">
                   <div className="relative w-full max-w-sm aspect-square">
-                    <div
-                      className="absolute inset-0 rounded-full"
-                      style={{
-                        background:
-                          "radial-gradient(circle, oklch(0.95 0.02 190 / 0.7), oklch(0.88 0.04 190 / 0.25))",
-                      }}
-                    />
+                    <div className="home-orbit-glow absolute inset-0 rounded-full" />
 
                     {/* Dekorative Ringe */}
                     <div className="absolute inset-4 rounded-full border-2 border-dashed border-sage-mid/20" />
@@ -376,13 +358,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div
-        className="h-6"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent, oklch(0.93 0.02 190 / 0.3), transparent)",
-        }}
-      />
+      <div className="home-section-divider h-6" />
 
       <section className="py-10 md:py-14 bg-sage-wash/40">
         <div className="container">

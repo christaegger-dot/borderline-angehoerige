@@ -23,12 +23,120 @@ const MEDICAL_LAST_REVIEWED =
   import.meta.env.VITE_BUILD_DATE ||
   new Date().toISOString().slice(0, 10);
 
+const buildOgImageUrl = (siteUrl = SITE_URL) => `${siteUrl}/og-image.jpg`;
+
 const getSiteUrl = () => {
   if (typeof window !== "undefined" && window.location?.origin) {
     return window.location.origin.replace(/\/+$/, "");
   }
   return SITE_URL;
 };
+
+export function buildFullTitle(title?: string) {
+  return title
+    ? `${title} – ${SITE_NAME}`
+    : `${SITE_NAME} – Evidenzbasierte Unterstützung`;
+}
+
+export function buildMetaDescription(description?: string) {
+  return description || BASE_DESCRIPTION;
+}
+
+export function buildCanonicalUrl(path = "/", siteUrl = SITE_URL) {
+  return `${siteUrl}${path}`;
+}
+
+export function buildWebsiteSchemaData(siteUrl = SITE_URL) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    alternateName: "Borderline Angehörige",
+    url: siteUrl,
+    description: BASE_DESCRIPTION,
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: buildOgImageUrl(siteUrl),
+      },
+    },
+    inLanguage: "de-CH",
+  };
+}
+
+export function buildMedicalPageSchemaData({
+  title,
+  description,
+  path,
+  siteUrl = SITE_URL,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  siteUrl?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    name: title,
+    description,
+    url: buildCanonicalUrl(path, siteUrl),
+    inLanguage: "de",
+    about: {
+      "@type": "MedicalCondition",
+      name: "Persönlichkeitsstörung mit Borderline-Muster",
+      alternateName: ["Borderline-Muster", "Borderline pattern"],
+      code: {
+        "@type": "MedicalCode",
+        code: "6D11",
+        codingSystem: "ICD-11",
+      },
+    },
+    audience: {
+      "@type": "PeopleAudience",
+      audienceType: "Angehörige von Menschen mit Borderline-Muster",
+    },
+    lastReviewed: MEDICAL_LAST_REVIEWED,
+    medicalAudience: {
+      "@type": "MedicalAudience",
+      audienceType: "Caregiver",
+    },
+  };
+}
+
+export function buildBreadcrumbSchemaData(
+  items: { name: string; url: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function buildFAQSchemaData(
+  questions: { question: string; answer: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map(question => ({
+      "@type": "Question",
+      name: question.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: question.answer,
+      },
+    })),
+  };
+}
 
 export default function SEO({
   title,
@@ -37,15 +145,14 @@ export default function SEO({
   type = "website",
   canonicalPath,
 }: SEOProps) {
-  const fullTitle = title
-    ? `${title} \u2013 ${SITE_NAME}`
-    : `${SITE_NAME} \u2013 Evidenzbasierte Unterst\u00fctzung`;
-  const metaDescription = description || BASE_DESCRIPTION;
+  const fullTitle = buildFullTitle(title);
+  const metaDescription = buildMetaDescription(description);
 
   useEffect(() => {
     const siteUrl = getSiteUrl();
     const canonicalOrPath = canonicalPath || path;
-    const ogImage = `${siteUrl}/og-image.jpg`;
+    const canonicalUrl = buildCanonicalUrl(canonicalOrPath, siteUrl);
+    const ogImage = buildOgImageUrl(siteUrl);
 
     // Update document title
     document.title = fullTitle;
@@ -66,7 +173,7 @@ export default function SEO({
     updateMeta("og:title", fullTitle, true);
     updateMeta("og:description", metaDescription, true);
     updateMeta("og:type", type, true);
-    updateMeta("og:url", `${siteUrl}${canonicalOrPath}`, true);
+    updateMeta("og:url", canonicalUrl, true);
     updateMeta("og:image", ogImage, true);
     updateMeta("twitter:card", "summary_large_image");
     updateMeta("twitter:title", fullTitle);
@@ -82,7 +189,7 @@ export default function SEO({
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = `${siteUrl}${canonicalOrPath}`;
+    canonical.href = canonicalUrl;
   }, [canonicalPath, fullTitle, metaDescription, path, type]);
 
   return null;
@@ -92,23 +199,7 @@ export default function SEO({
 export function WebsiteSchema() {
   useEffect(() => {
     const siteUrl = getSiteUrl();
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: SITE_NAME,
-      alternateName: "Borderline Angeh\u00f6rige",
-      url: siteUrl,
-      description: BASE_DESCRIPTION,
-      publisher: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        logo: {
-          "@type": "ImageObject",
-          url: `${siteUrl}/og-image.jpg`,
-        },
-      },
-      inLanguage: "de-CH",
-    };
+    const schema = buildWebsiteSchemaData(siteUrl);
 
     let el = document.querySelector('script[data-schema="website"]');
     if (!el) {
@@ -138,33 +229,7 @@ export function MedicalPageSchema({
 }) {
   const siteUrl = getSiteUrl();
   const schema = useMemo(
-    () => ({
-      "@context": "https://schema.org",
-      "@type": "MedicalWebPage",
-      name: title,
-      description: description,
-      url: `${siteUrl}${path}`,
-      inLanguage: "de",
-      about: {
-        "@type": "MedicalCondition",
-        name: "Pers\u00f6nlichkeitsst\u00f6rung mit Borderline-Muster",
-        alternateName: ["Borderline-Muster", "Borderline pattern"],
-        code: {
-          "@type": "MedicalCode",
-          code: "6D11",
-          codingSystem: "ICD-11",
-        },
-      },
-      audience: {
-        "@type": "PeopleAudience",
-        audienceType: "Angeh\u00f6rige von Menschen mit Borderline-Muster",
-      },
-      lastReviewed: MEDICAL_LAST_REVIEWED,
-      medicalAudience: {
-        "@type": "MedicalAudience",
-        audienceType: "Caregiver",
-      },
-    }),
+    () => buildMedicalPageSchemaData({ title, description, path, siteUrl }),
     [description, path, siteUrl, title]
   );
 
@@ -191,19 +256,7 @@ export function BreadcrumbSchema({
 }: {
   items: { name: string; url: string }[];
 }) {
-  const schema = useMemo(
-    () => ({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: items.map((item, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: item.name,
-        item: item.url,
-      })),
-    }),
-    [items]
-  );
+  const schema = useMemo(() => buildBreadcrumbSchemaData(items), [items]);
 
   useEffect(() => {
     const key = items.map(i => i.url).join("-");
@@ -229,21 +282,7 @@ export function FAQSchema({
 }: {
   questions: { question: string; answer: string }[];
 }) {
-  const schema = useMemo(
-    () => ({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: questions.map(q => ({
-        "@type": "Question",
-        name: q.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: q.answer,
-        },
-      })),
-    }),
-    [questions]
-  );
+  const schema = useMemo(() => buildFAQSchemaData(questions), [questions]);
 
   useEffect(() => {
     let el = document.querySelector('script[data-schema="faq"]');

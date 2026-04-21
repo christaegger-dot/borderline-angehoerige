@@ -14,6 +14,12 @@ describe("handout text versions", () => {
     const eisbergPdf = materials.find(
       item => item.id === "eisberg"
     )?.downloadUrl;
+    const spaltungPdf = materials.find(
+      item => item.id === "spaltung"
+    )?.downloadUrl;
+    const alarmModusPdf = materials.find(
+      item => item.id === "alarm-modus"
+    )?.downloadUrl;
     const rolleKlaerenPdf = materials.find(
       item => item.id === "rolle-klaeren"
     )?.downloadUrl;
@@ -33,6 +39,12 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersion("eisberg")?.path).toBe(
       "/materialien/text/eisberg"
     );
+    expect(getHandoutTextVersion("spaltung")?.path).toBe(
+      "/materialien/text/spaltung"
+    );
+    expect(getHandoutTextVersion("alarm-modus")?.path).toBe(
+      "/materialien/text/alarm-modus"
+    );
     expect(getHandoutTextVersion("rolle-klaeren")?.path).toBe(
       "/materialien/text/rolle-klaeren"
     );
@@ -50,6 +62,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(eisbergPdf)).toBe(
       "/materialien/text/eisberg"
+    );
+    expect(getHandoutTextVersionHrefBySource(spaltungPdf)).toBe(
+      "/materialien/text/spaltung"
+    );
+    expect(getHandoutTextVersionHrefBySource(alarmModusPdf)).toBe(
+      "/materialien/text/alarm-modus"
     );
     expect(getHandoutTextVersionHrefBySource(rolleKlaerenPdf)).toBe(
       "/materialien/text/rolle-klaeren"

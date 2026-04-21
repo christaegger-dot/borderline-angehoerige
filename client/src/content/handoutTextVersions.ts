@@ -391,6 +391,83 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("spaltung", {
+    kicker: "Textversion",
+    summary:
+      "Unter Stress kippt die Bewertung oft in Extreme. Angehörige werden dann vorübergehend idealisiert oder entwertet, während die Grauzone schwer erreichbar wird.",
+    intro: [
+      "Diese Seite überträgt das Handout «Spaltung – das Pendel zwischen Extremen» in eine lesbare Web-Version. Die zentrale Bildidee bleibt erhalten: Unter Belastung pendelt die Wahrnehmung zwischen Idealisierung und Entwertung, statt den ganzen Menschen zu sehen.",
+      "Für Angehörige ist die Grafik als Orientierung gedacht. Sie erklärt, warum das Kippen so schmerzhaft und verwirrend wirkt, und zeigt, wie stabilisierende Reaktionen helfen können, die Grauzone wieder erreichbar zu machen.",
+    ],
+    sections: [
+      {
+        title: "Die drei Zustände",
+        intro:
+          "Das Handout stellt zwei verzerrte Bewertungszustände und die schwer erreichbare Grauzone dazwischen gegenüber.",
+        cards: [
+          {
+            title: "Idealisierung",
+            text: "«Du bist der beste Mensch der Welt!» So erleben Sie es: Ihr Angehöriger überhäuft Sie mit Lob und Zuneigung. Sie fühlen sich gebraucht und wichtig – aber auch unter Druck, diesem Bild gerecht zu werden.",
+          },
+          {
+            title: "Grauzone",
+            text: "«Du bist ein Mensch – mit Stärken und Schwächen.» Das Ziel: Ihr Angehöriger kann Sie als ganzen Menschen sehen – nicht nur als Retter oder Feind. Dieses Sowohl-als-auch ist das, was Therapie langfristig fördert.",
+          },
+          {
+            title: "Entwertung",
+            text: "«Du bist das Schlimmste. Du bist gegen mich!» So erleben Sie es: Plötzlich sind Sie der Feind – obwohl sich nichts geändert hat. Alles Gute scheint vergessen. Das tut weh und ist verwirrend.",
+          },
+        ],
+      },
+      {
+        title: "Was das Pendel kippen kann",
+        intro:
+          "Die Grafik markiert kleine Auslöser, die von aussen oft banal wirken, unter Stress aber stark ins Gewicht fallen.",
+        bullets: ["Stress", "Kritik", "Abstand", "Missverständnis"],
+      },
+      {
+        title: "Wichtiger Hinweis",
+        calloutTitle: "Warum das Kippen so irritierend ist",
+        calloutText:
+          "Diese Trigger sind oft winzig – für Aussenstehende kaum erkennbar. Das Kippen ist kein böser Wille Ihres Angehörigen, sondern ein erlerntes Muster der Emotionsregulation.",
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es bei der Spaltung geht",
+        calloutText:
+          "Unter Stress kippt die Bewertung Ihres Angehörigen leicht ins Extreme – die Grauzone wird schwer erreichbar. Weder die Idealisierung noch die Entwertung sind ein realistisches Bild von Ihnen. Beides sind Verzerrungen. Sie sind derselbe Mensch – vor und nach dem Kippen.",
+      },
+      {
+        title: "Legende der Grafik",
+        bullets: [
+          "Zwei Bewertungszustände = beide verzerrt, beide vorübergehend",
+          "Trigger = kleine Enttäuschungen, die das Pendel kippen können",
+          "Grauzone = der realistische Bereich – hier können Sie stabilisierend wirken",
+        ],
+      },
+      {
+        title: "3 Schritte zur Stabilisierung",
+        cards: [
+          {
+            title: "1. Wahrnehmen",
+            text: "Erkennen Sie das Muster – bei Ihrem Angehörigen und bei sich selbst. «Werde ich gerade idealisiert oder entwertet? Bin ich wirklich so gut oder so schlecht – oder ist das Pendel gekippt?» Allein dieses Erkennen schafft inneren Abstand.",
+          },
+          {
+            title: "2. Pause",
+            text: "Nicht sofort reagieren. Zeit gewinnen und Distanz schaffen. «Ich brauche einen Moment, bevor ich antworte.» Lassen Sie die erste Welle vorbeiziehen. Weder Gegenangriff noch Unterwerfung helfen.",
+          },
+          {
+            title: "3. Integration",
+            text: "Bleiben Sie konsistent – auch wenn die Bewertung schwankt. «Ich bin derselbe Mensch wie gestern. Ich habe dich lieb, auch wenn du gerade wütend auf mich bist.» Ihre Beständigkeit ist der Anker, der die Grauzone erreichbar macht. Sowohl-als-auch statt Entweder-oder.",
+          },
+        ],
+      },
+    ],
+    sourceLine:
+      "Quelle: Nach Linehan (2015), DBT Skills Training, Handouts 10, 15, 16. Gunderson et al. (2011), Family Psychoeducation for BPD.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
+  }),
   createHandoutTextVersion("krisenkommunikation", {
     kicker: "Textversion",
     summary:
@@ -458,6 +535,75 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       },
     ],
     sourceLine: "Quelle: Mason/Kreger (2014); Linehan (1993).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("alarm-modus", {
+    kicker: "Textversion",
+    summary:
+      "Wenn der Alarm-Modus aktiv ist, ist Ihr Gegenüber vorübergehend schwer erreichbar. Erst beruhigen, dann klären: Die Brücke vom Alarm zum Denken braucht Sicherheit und weniger Druck.",
+    intro: [
+      "Diese Seite überträgt das Handout «Alarm-Modus vs. Denk-Modus» in eine lesbare Web-Version. Die Grundidee des Originals bleibt erhalten: Unter hoher Anspannung steht nicht dieselbe Denkfähigkeit zur Verfügung wie in ruhigeren Momenten.",
+      "Für Angehörige ist das eine Entlastung und eine Handlungsorientierung zugleich. Nicht jede Eskalation ist böser Wille oder bewusste Verweigerung – oft ist sie Ausdruck eines neurobiologisch eingeengten Zustands.",
+    ],
+    sections: [
+      {
+        title: "Trigger",
+        calloutTitle: "Was den Alarm auslösen kann",
+        calloutText: "Kritik, Zurückweisung, Überforderung.",
+      },
+      {
+        title: "Die zwei Modi",
+        intro:
+          "Das Handout stellt einen hoch aktivierten Alarm-Zustand einem wieder zugänglichen Denk-Zustand gegenüber.",
+        cards: [
+          {
+            title: "Alarm-Modus",
+            text: "Körper auf Kampf oder Flucht. Amygdala überaktiv. Denken eingeschränkt. Impulsivität hoch. Schuldgefühle kommen später.",
+          },
+          {
+            title: "Denk-Modus",
+            text: "Präfrontaler Kortex aktiv. Fähigkeiten verfügbar: Zuhören, Abwägen, Planen. Gespräch möglich. Lösungen finden.",
+          },
+          {
+            title: "Übergang",
+            text: "Erst beruhigen, dann klären. Die Brücke vom Alarm zum Denken entsteht nicht durch Druck, sondern durch Entlastung und Sicherheit.",
+          },
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es beim Alarm-Modus geht",
+        calloutText:
+          "Im Alarm-Modus ist Ihr Gegenüber vorübergehend nicht erreichbar. Das ist keine Lüge, kein böser Wille – es ist Neurobiologie.",
+      },
+      {
+        title: "Legende der Grafik",
+        bullets: [
+          "Terracotta = Alarm-Modus",
+          "Sage = Denk-Modus",
+          "Sand = Übergang",
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Erkennen und Stopp",
+            text: "Fragen Sie sich: Ist mein Gegenüber gerade im Alarm-Modus?",
+          },
+          {
+            title: "2. Aktiv beruhigen",
+            text: "Stimme senken, Tempo verlangsamen, Raum geben.",
+          },
+          {
+            title: "3. Klärendes Gespräch",
+            text: "Erst wenn der Denk-Modus zurück ist.",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Porges (2011), Polyvagal-Theorie; Linehan (1993).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

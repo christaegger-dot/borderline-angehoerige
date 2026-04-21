@@ -163,6 +163,36 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/verstehen");
   });
 
+  it("HandoutTextPage: rendert Spaltung-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "spaltung" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Spaltung – das Pendel zwischen Extremen/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Unter Stress kippt die Bewertung Ihres Angehörigen/i)
+    ).toBeInTheDocument();
+  });
+
+  it("HandoutTextPage: rendert Alarm-Modus-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "alarm-modus" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Alarm-Modus vs\. Denk-Modus/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Im Alarm-Modus ist Ihr Gegenüber vorübergehend nicht erreichbar/i
+      )
+    ).toBeInTheDocument();
+  });
+
   it("Grenzen: zeigt Textversion für Spickzettel Grenzen", async () => {
     const { default: Grenzen } = await import("@/pages/Grenzen");
     withRouter(<Grenzen />);

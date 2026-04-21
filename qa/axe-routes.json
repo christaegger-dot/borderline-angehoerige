@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-04-21T09:55:40.587Z",
+  "viewport": {
+    "name": "desktop",
+    "width": 1280,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+  },
+  "results": [
+    {
+      "route": "/",
+      "violations": [],
+      "passes": 36,
+      "incomplete": 2
+    },
+    {
+      "route": "/soforthilfe",
+      "violations": [],
+      "passes": 22,
+      "incomplete": 0
+    },
+    {
+      "route": "/materialien",
+      "violations": [],
+      "passes": 20,
+      "incomplete": 0
+    }
+  ]
+}

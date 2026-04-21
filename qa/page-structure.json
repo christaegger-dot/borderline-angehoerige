@@ -1,0 +1,282 @@
+{
+  "generatedAt": "2026-04-21T09:55:41.240Z",
+  "viewport": {
+    "name": "desktop",
+    "width": 1280,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+  },
+  "results": [
+    {
+      "route": "/",
+      "title": "Startseite – Borderline · Hilfe für Angehörige",
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Orientierung in belasteten Beziehungen"
+        },
+        {
+          "index": 1,
+          "tag": "h2",
+          "level": 2,
+          "text": "Was ist gerade Ihre Lage?"
+        },
+        {
+          "index": 2,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ich versuche zu verstehen, was passiert"
+        },
+        {
+          "index": 3,
+          "tag": "h3",
+          "level": 3,
+          "text": "Es kippt gerade oder eskaliert"
+        },
+        {
+          "index": 4,
+          "tag": "h3",
+          "level": 3,
+          "text": "Gespräche werden schwierig"
+        },
+        {
+          "index": 5,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ich bin selbst erschöpft"
+        },
+        {
+          "index": 6,
+          "tag": "h2",
+          "level": 2,
+          "text": "Was diese Website besonders abdeckt"
+        },
+        {
+          "index": 7,
+          "tag": "h2",
+          "level": 2,
+          "text": "Praktische Hilfen für Ihren Alltag"
+        },
+        {
+          "index": 8,
+          "tag": "h2",
+          "level": 2,
+          "text": "In einer akuten Krise?"
+        },
+        {
+          "index": 9,
+          "tag": "h3",
+          "level": 3,
+          "text": "Themen"
+        },
+        {
+          "index": 10,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ressourcen"
+        },
+        {
+          "index": 11,
+          "tag": "h3",
+          "level": 3,
+          "text": "Hinweis"
+        }
+      ],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 1,
+        "nav": 1,
+        "header": 1,
+        "footer": 1
+      },
+      "imageSummary": {
+        "total": 2,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    },
+    {
+      "route": "/soforthilfe",
+      "title": "Soforthilfe – Borderline · Hilfe für Angehörige",
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Soforthilfe bei akuter Gefahr"
+        },
+        {
+          "index": 1,
+          "tag": "h2",
+          "level": 2,
+          "text": "Lebensgefahr"
+        },
+        {
+          "index": 2,
+          "tag": "h2",
+          "level": 2,
+          "text": "Psychiatrische Krise"
+        },
+        {
+          "index": 3,
+          "tag": "h2",
+          "level": 2,
+          "text": "Entlastung und Gespräch"
+        },
+        {
+          "index": 4,
+          "tag": "h3",
+          "level": 3,
+          "text": "Weitere Hilfe"
+        },
+        {
+          "index": 5,
+          "tag": "h3",
+          "level": 3,
+          "text": "Materialien"
+        }
+      ],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 1,
+        "nav": 0,
+        "header": 1,
+        "footer": 1
+      },
+      "imageSummary": {
+        "total": 0,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    },
+    {
+      "route": "/materialien",
+      "title": "Materialien – Borderline · Hilfe für Angehörige",
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Materialien & Ressourcen"
+        },
+        {
+          "index": 1,
+          "tag": "h2",
+          "level": 2,
+          "text": "Was Sie hier finden"
+        },
+        {
+          "index": 2,
+          "tag": "h2",
+          "level": 2,
+          "text": "Passende Wege"
+        }
+      ],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 1,
+        "nav": 0,
+        "header": 1,
+        "footer": 0
+      },
+      "imageSummary": {
+        "total": 0,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    },
+    {
+      "route": "/notfallkarte",
+      "title": "Persönliche Notfallkarte – Borderline · Hilfe für Angehörige",
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Persönliche Notfallkarte"
+        },
+        {
+          "index": 1,
+          "tag": "h2",
+          "level": 2,
+          "text": "Notfallnummern"
+        },
+        {
+          "index": 2,
+          "tag": "h2",
+          "level": 2,
+          "text": "Psychiatrische Krise – PUK Zürich (24/7)"
+        },
+        {
+          "index": 3,
+          "tag": "h2",
+          "level": 2,
+          "text": "Jemand zum Reden"
+        },
+        {
+          "index": 4,
+          "tag": "h2",
+          "level": 2,
+          "text": "Meine Kontaktpersonen"
+        },
+        {
+          "index": 5,
+          "tag": "h2",
+          "level": 2,
+          "text": "Meine Beruhigungsstrategien"
+        },
+        {
+          "index": 6,
+          "tag": "h2",
+          "level": 2,
+          "text": "Persönliche Notizen"
+        },
+        {
+          "index": 7,
+          "tag": "h3",
+          "level": 3,
+          "text": "Themen"
+        },
+        {
+          "index": 8,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ressourcen"
+        },
+        {
+          "index": 9,
+          "tag": "h3",
+          "level": 3,
+          "text": "Hinweis"
+        }
+      ],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 1,
+        "nav": 2,
+        "header": 1,
+        "footer": 1
+      },
+      "imageSummary": {
+        "total": 2,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    }
+  ]
+}

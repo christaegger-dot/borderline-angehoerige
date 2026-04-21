@@ -46,7 +46,7 @@ export default function SelbstfuersorgeCheck() {
       <Card className="border-border/50 bg-muted/20">
         <CardContent className="p-5">
           <div className="flex items-start gap-3">
-            <Heart className="w-5 h-5 text-sage-mid flex-shrink-0 mt-0.5" />
+            <Heart className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
             <div>
               <h4 className="font-semibold text-foreground mb-1">
                 Orientierung zur eigenen Belastung
@@ -66,7 +66,7 @@ export default function SelbstfuersorgeCheck() {
         {orientierungspunkte.map((punkt, index) => (
           <Card key={index} className="border-border/50">
             <CardContent className="p-5">
-              <p className="text-xs font-medium text-sage-dark mb-2">
+              <p className="text-xs font-medium text-terracotta-dark mb-2">
                 {punkt.area}
               </p>
               <p className="text-sm font-medium text-foreground leading-relaxed mb-2">
@@ -92,7 +92,7 @@ export default function SelbstfuersorgeCheck() {
               </p>
             </div>
             <div className="flex items-start gap-3">
-              <AlertTriangle className="w-5 h-5 text-sage-mid flex-shrink-0 mt-0.5" />
+              <AlertTriangle className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
               <p className="text-sm text-foreground leading-relaxed">
                 Die Fachstelle Angehörigenarbeit (PUK Zürich) bietet Beratung:{" "}
                 {kontaktById("INFO_FACHSTELLE")?.nummer ?? "058 384 38 00"}.

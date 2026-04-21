@@ -11,6 +11,28 @@ import { Router } from "wouter";
 // ─── Mocks ───────────────────────────────────────────────────────────────────
 
 // framer-motion: Animationen nicht benötigt in Tests
+const MOTION_PROPS = new Set([
+  "animate",
+  "exit",
+  "initial",
+  "layout",
+  "layoutId",
+  "onAnimationComplete",
+  "onUpdate",
+  "transition",
+  "variants",
+  "viewport",
+  "whileHover",
+  "whileInView",
+  "whileTap",
+]);
+
+function stripMotionProps(props: Record<string, unknown>) {
+  return Object.fromEntries(
+    Object.entries(props).filter(([key]) => !MOTION_PROPS.has(key))
+  );
+}
+
 vi.mock("framer-motion", () => ({
   motion: new Proxy(
     {},
@@ -24,7 +46,11 @@ vi.mock("framer-motion", () => ({
           children?: React.ReactNode;
         }) => {
           const Tag = tag as React.ElementType;
-          return <Tag {...(props as object)}>{children}</Tag>;
+          return (
+            <Tag {...stripMotionProps(props as Record<string, unknown>)}>
+              {children}
+            </Tag>
+          );
         },
     }
   ),

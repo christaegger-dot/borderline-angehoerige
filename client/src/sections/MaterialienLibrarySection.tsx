@@ -352,26 +352,18 @@ export default function MaterialienLibrarySection() {
                   die Hauptseiten oft der bessere Einstieg.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Link href="/verstehen">
-                    <Button variant="outline" size="sm">
-                      Verstehen
-                    </Button>
-                  </Link>
-                  <Link href="/kommunizieren">
-                    <Button variant="outline" size="sm">
-                      Kommunizieren
-                    </Button>
-                  </Link>
-                  <Link href="/grenzen">
-                    <Button variant="outline" size="sm">
-                      Grenzen
-                    </Button>
-                  </Link>
-                  <Link href="/selbstfuersorge">
-                    <Button variant="outline" size="sm">
-                      Selbstfürsorge
-                    </Button>
-                  </Link>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/verstehen">Verstehen</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/kommunizieren">Kommunizieren</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/grenzen">Grenzen</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="/selbstfuersorge">Selbstfürsorge</Link>
+                  </Button>
                 </div>
               </CardContent>
             </Card>

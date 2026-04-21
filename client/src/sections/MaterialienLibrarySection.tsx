@@ -18,6 +18,7 @@ import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
+  getMaterialDownloadHref,
   categoryMeta,
   materials,
   quickStarts,
@@ -59,11 +60,7 @@ function MaterialCard({
 }) {
   const previewSrc = item.isHtml ? (item.previewUrl ?? item.url) : item.url;
   const openHref = item.downloadUrl ?? item.url;
-  const downloadHref = item.pdfUrl ?? item.downloadUrl;
-  const isCrossOriginDownload =
-    !!downloadHref &&
-    /^https?:\/\//i.test(downloadHref) &&
-    !downloadHref.startsWith(window.location.origin);
+  const downloadHref = getMaterialDownloadHref(item);
 
   return (
     <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
@@ -102,6 +99,7 @@ function MaterialCard({
             href={openHref}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${item.title} öffnen`}
             className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
           >
             <ExternalLink className="w-4 h-4" />
@@ -110,7 +108,8 @@ function MaterialCard({
           {downloadHref ? (
             <a
               href={downloadHref}
-              download={isCrossOriginDownload ? undefined : ""}
+              download=""
+              aria-label={`${item.title} herunterladen`}
               className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 border border-sage-dark text-sage-dark hover:bg-sage-light/40 transition-colors"
             >
               <Download className="w-4 h-4" />

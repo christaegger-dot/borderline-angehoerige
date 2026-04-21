@@ -1,9 +1,9 @@
-import { type CSSProperties, useRef, useState } from "react";
+import { useRef, useState, type CSSProperties } from "react";
+import { BookOpen, Brain, Download, ExternalLink, Filter } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { BookOpen, Brain, Download, ExternalLink, Filter } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   verstehenInfografiken,
   type VerstehenMaterialCategory,
@@ -25,14 +25,14 @@ const verstehenCategories = [
   },
   {
     id: "neurobiologie",
-    label: "Neurobiologie",
+    label: "Stress & Gehirn",
     icon: Brain,
     count: verstehenInfografiken.filter(i => i.category === "neurobiologie")
       .length,
   },
 ] as const;
 
-export default function VerstehenInfografikenSection() {
+export default function VerstehenMaterialsSection() {
   const [activeFilter, setActiveFilter] =
     useState<VerstehenMaterialCategory>("alle");
   const gridRef = useRef<HTMLDivElement>(null);
@@ -53,12 +53,12 @@ export default function VerstehenInfografikenSection() {
     >
       <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
         <Download className="w-8 h-8 text-sage-dark" />
-        Infografiken zum Thema
+        Materialien zum Vertiefen
       </h2>
 
       <p className="text-muted-foreground mb-6">
-        Vorschau = Web-Bild. «PDF öffnen» öffnet die A4-Druckversion im neuen
-        Tab – Download im PDF-Viewer oben rechts.
+        Diese Materialien ergänzen die Seite, ersetzen sie aber nicht. Beginnen
+        Sie mit den Grundlagen, wenn Sie gerade Orientierung brauchen.
       </p>
 
       <div className="flex flex-wrap gap-2 mb-6">
@@ -76,7 +76,11 @@ export default function VerstehenInfografikenSection() {
                 });
               }, 50);
             }}
-            className={`whitespace-nowrap shrink-0 ${activeFilter === cat.id ? "bg-sage-dark hover:bg-sage-mid text-white" : ""}`}
+            className={`whitespace-nowrap shrink-0 ${
+              activeFilter === cat.id
+                ? "bg-sage-dark hover:bg-sage-mid text-white"
+                : ""
+            }`}
           >
             <cat.icon className="w-4 h-4 mr-1.5" />
             {cat.label} ({cat.count})

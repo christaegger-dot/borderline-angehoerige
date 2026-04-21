@@ -1,5 +1,3 @@
-import EvidenceNote from "@/components/EvidenceNote";
-import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,34 +8,21 @@ import {
   ArrowRight,
   BookOpen,
   Brain,
-  Download,
-  ExternalLink,
   Heart,
   Layers,
   RefreshCw,
-  Users,
 } from "lucide-react";
 import { Link } from "wouter";
-import VerstehenHeroSection from "@/sections/verstehen/VerstehenHeroSection";
 import { Button } from "@/components/ui/button";
 import { TableOfContents } from "@/components/UXEnhancements";
 import ContentSection from "@/components/ContentSection";
-import { verstehenInfografiken } from "@/content/verstehen";
-
-const relationshipPatterns = [
-  {
-    title: "Verlassenheitsangst",
-    text: "Schon kleine Verzögerungen, Unklarheiten oder Distanzsignale können als drohender Verlust erlebt werden. Für Angehörige wirkt das oft unverhältnismässig, für die betroffene Person aber sehr real.",
-  },
-  {
-    title: "Nähe-Distanz-Pendeln",
-    text: "Es kann vorkommen, dass jemand sehr viel Nähe sucht und sich kurz darauf zurückzieht, abwertet oder abbricht. Das ist nicht einfach Widersprüchlichkeit, sondern oft Ausdruck von Bindungsstress.",
-  },
-  {
-    title: "Spaltung unter Stress",
-    text: "In Belastungssituationen wird es schwerer, gleichzeitig Gutes und Schwieriges an einer Person zu halten. Dann kippt das Erleben leichter in Idealisierung oder Entwertung.",
-  },
-];
+import EvidenceNote from "@/components/EvidenceNote";
+import VerstehenMaterialsSection from "@/sections/VerstehenMaterialsSection";
+import {
+  VerstehenDiagnosticSection,
+  VerstehenMeaningSection,
+  VerstehenRelationshipSection,
+} from "@/sections/VerstehenSupportSections";
 
 export default function Verstehen() {
   return (
@@ -49,34 +34,40 @@ export default function Verstehen() {
       />
       <TableOfContents />
 
-      <VerstehenHeroSection />
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-3xl"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
+                <BookOpen className="w-6 h-6 text-sage-dark" />
+              </div>
+              <span className="text-sm font-medium text-sage-dark">
+                Lesezeit: 15 Minuten
+              </span>
+            </div>
 
-      <div className="container">
-        <div className="max-w-3xl mx-auto">
-          <LastVerifiedBadge date="16.04.2026" className="mt-4" />
-        </div>
-      </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+              Borderline verstehen
+            </h1>
 
-      {/* PDF-Hinweis */}
-      <div className="container">
-        <div className="max-w-3xl mx-auto py-3">
-          <div className="flex items-center justify-between gap-3 rounded-lg bg-sage-wash/40 border border-sage-mid/20 px-4 py-2.5">
-            <p className="text-xs text-muted-foreground">
-              Alle Infografiken auch als druckbare PDFs verfügbar.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Für Angehörige ist Borderline oft nicht nur schwer zu begreifen,
+              sondern schwer auszuhalten. Situationen können rasch kippen,
+              Reaktionen widersprüchlich wirken und die eigene Rolle unklar
+              werden. Diese Seite hilft Ihnen, typische innere und
+              zwischenmenschliche Dynamiken besser einzuordnen, ohne Verhalten
+              zu beschönigen oder zu verurteilen.
             </p>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-7 text-xs text-sage-dark shrink-0"
-              asChild
-            >
-              <Link href="/materialien">Materialien →</Link>
-            </Button>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
 
-      <section className="py-8 md:py-12">
+      <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -124,8 +115,8 @@ export default function Verstehen() {
                 <Card className="bg-cream border-border/50">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Wichtig:</strong> Verstehen entlastet, weil Sie
-                      Reaktionen besser einordnen können. Es ersetzt aber weder
+                      <strong>Wichtig:</strong> Verstehen kann entlasten, weil
+                      es Muster einordnen hilft. Es ersetzt aber weder
                       Grenzsetzung noch Selbstschutz noch professionelle Hilfe.
                     </p>
                   </CardContent>
@@ -163,52 +154,40 @@ export default function Verstehen() {
                     </p>
                   </CardContent>
                 </Card>
+                <EvidenceNote
+                  title="Quellen zur diagnostischen und klinischen Einordnung"
+                  definition="Die Störung zeigt je nach Person unterschiedliche Ausprägungen. Für Angehörige ist vor allem relevant, dass Bindungsstress, Affektregulation und Scham-/Überflutungserleben klinisch gut beschrieben sind."
+                  reviewDate="24.03.2026"
+                  sources={[
+                    {
+                      label:
+                        "WHO ICD-11: Personality disorder with borderline pattern (6D11)",
+                      href: "https://icd.who.int/browse/2024-01/mms/en#691185432",
+                      type: "wissenschaft",
+                    },
+                    {
+                      label:
+                        "APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024)",
+                      href: "https://psychiatryonline.org/doi/book/10.1176/appi.books.9780890424896",
+                      type: "wissenschaft",
+                    },
+                    {
+                      label:
+                        "Linehan, Cognitive-Behavioral Treatment of Borderline Personality Disorder",
+                      type: "wissenschaft",
+                      note: "Grundlagenwerk zu Emotionsregulation und Bindungsstress",
+                    },
+                  ]}
+                  className="mt-4"
+                />
               </div>
             </ContentSection>
 
-            <ContentSection
-              title="Warum gerade nahe Beziehungen so schnell kippen können"
-              icon={<Users className="w-7 h-7 text-sage-dark" />}
-              id="beziehungsdynamik"
-              preview="Was für Aussenstehende klein wirkt, kann in engen Beziehungen als Zurückweisung, Kontrollverlust oder drohender Verlust erlebt werden."
-            >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Viele Menschen mit Borderline haben ihre grössten
-                  Schwierigkeiten nicht in oberflächlichen Kontakten, sondern in
-                  engen Beziehungen. Gerade dort, wo viel Bindung, Hoffnung und
-                  Verletzbarkeit im Spiel sind, werden Unsicherheit, Unklarheit
-                  oder Distanz besonders schmerzhaft erlebt.
-                </p>
-                <div className="grid gap-4">
-                  {relationshipPatterns.map(item => (
-                    <Card key={item.title} className="border-border/50">
-                      <CardContent className="p-5">
-                        <h3 className="font-semibold text-foreground mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {item.text}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-                <Card className="bg-sage-wash border-sage-mid/20">
-                  <CardContent className="p-5">
-                    <p className="text-foreground leading-relaxed">
-                      Gerade deshalb erleben Angehörige oft etwas Paradoxes: Je
-                      wichtiger sie der betroffenen Person sind, desto stärker
-                      können Konflikte, Vorwürfe oder Grenztests ausfallen.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
+            <VerstehenRelationshipSection />
 
             <ContentSection
               title="Scham, Wut und innere Überflutung"
-              icon={<Layers className="w-7 h-7 text-sage-mid" />}
+              icon={<Layers className="w-7 h-7 text-terracotta-mid" />}
               id="scham-wut"
               preview="Wut ist oft sichtbar. Darunter liegen nicht selten Scham, Angst, Kränkung, Leere oder der Versuch, unerträgliche Spannung loszuwerden."
             >
@@ -228,7 +207,7 @@ export default function Verstehen() {
                   innerlich ist es nicht selten hochverletzlich.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
+                  <div className="p-4 rounded-xl bg-terracotta-wash border border-terracotta-mid/20">
                     <h3 className="font-semibold text-foreground mb-2">
                       Was sichtbar werden kann
                     </h3>
@@ -334,101 +313,17 @@ export default function Verstehen() {
                   das Angehörigen helfen kann, Entwicklungen nüchterner zu
                   lesen.
                 </p>
-
-                {/* Eskalations-Prozessdiagramm */}
-                <div className="rounded-lg border border-border/40 bg-slate-wash/20 p-4">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-3 text-center">
-                    Typischer Eskalationsverlauf
-                  </p>
-                  <div className="flex flex-wrap items-center justify-center gap-1.5">
-                    <div className="rounded-md bg-slate-wash px-3 py-2 text-center min-w-[72px]">
-                      <p className="text-xs font-semibold text-slate-dark">
-                        Trigger
-                      </p>
-                      <p className="text-[10px] text-muted-foreground">
-                        Auslöser
-                      </p>
-                    </div>
-                    <ArrowRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
-                    <div className="rounded-md bg-sand-muted px-3 py-2 text-center min-w-[72px]">
-                      <p className="text-xs font-semibold text-sand-mid">
-                        Überflutung
-                      </p>
-                      <p className="text-[10px] text-muted-foreground">
-                        Emotion steigt
-                      </p>
-                    </div>
-                    <ArrowRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
-                    <div className="rounded-md bg-amber-100 px-3 py-2 text-center min-w-[72px]">
-                      <p className="text-xs font-semibold text-amber-700">
-                        Reaktion
-                      </p>
-                      <p className="text-[10px] text-muted-foreground">
-                        Impuls, Worte
-                      </p>
-                    </div>
-                    <ArrowRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
-                    <div className="rounded-md bg-alert/10 px-3 py-2 text-center min-w-[72px]">
-                      <p className="text-xs font-semibold text-alert">
-                        Eskalation
-                      </p>
-                      <p className="text-[10px] text-muted-foreground">
-                        Spitze
-                      </p>
-                    </div>
-                    <ArrowRight className="w-3 h-3 text-muted-foreground flex-shrink-0" />
-                    <div className="rounded-md bg-sage-lighter/60 px-3 py-2 text-center min-w-[72px]">
-                      <p className="text-xs font-semibold text-sage-dark">
-                        Rückzug
-                      </p>
-                      <p className="text-[10px] text-muted-foreground">
-                        Stille, Abstand
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-[11px] text-muted-foreground mt-3 text-center">
-                    Kein starres Schema — aber ein häufig wiedererkennbarer
-                    Verlauf in belasteten Beziehungen
-                  </p>
-                </div>
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Card className="border-border/50">
                     <CardContent className="p-5">
                       <h3 className="font-semibold text-foreground mb-2">
                         Idealisierung und Entwertung
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         Eine Person kann zeitweise als einzig sicher und
                         verstehend erlebt werden, kurz darauf aber als kalt,
                         ungerecht oder gefährlich. Für Angehörige ist das oft
                         tief verunsichernd.
-                      </p>
-                      {/* Spaltungs-Skala */}
-                      <div className="flex items-stretch gap-1.5">
-                        <div className="flex-1 rounded bg-sage-lighter/60 px-2 py-1.5 text-center">
-                          <p className="text-[10px] font-semibold text-sage-dark">
-                            Idealisierung
-                          </p>
-                          <p className="text-[9px] text-muted-foreground leading-tight mt-0.5">
-                            «Du allein verstehst mich»
-                          </p>
-                        </div>
-                        <div className="flex items-center text-sm text-muted-foreground px-0.5">
-                          ↔
-                        </div>
-                        <div className="flex-1 rounded bg-alert/10 px-2 py-1.5 text-center">
-                          <p className="text-[10px] font-semibold text-alert">
-                            Entwertung
-                          </p>
-                          <p className="text-[9px] text-muted-foreground leading-tight mt-0.5">
-                            «Du lässt mich im Stich»
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-[10px] text-muted-foreground text-center mt-1.5">
-                        Beide Extreme sind echte Wahrnehmungen — keine
-                        Manipulation
                       </p>
                     </CardContent>
                   </Card>
@@ -474,52 +369,11 @@ export default function Verstehen() {
               </div>
             </ContentSection>
 
-            <ContentSection
-              title="Was das für Angehörige bedeutet"
-              icon={<Users className="w-7 h-7 text-sand-mid" />}
-              id="bedeutung-fuer-angehoerige"
-              preview="Wenn Sie diese Dynamiken kennen, können Sie manches klarer einordnen. Das schützt nicht vor Schmerz, hilft aber oft gegen vorschnelle Selbstanklage."
-            >
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    text: "Sie können Verhalten genauer einordnen",
-                    sub: "ohne es automatisch zu entschuldigen oder zu dramatisieren",
-                  },
-                  {
-                    text: "Sie erkennen eigene Grenzen früher",
-                    sub: "weil Sie Belastung, Schuld und Überanpassung besser bemerken",
-                  },
-                  {
-                    text: "Sie können Mitgefühl und Klarheit verbinden",
-                    sub: "statt zwischen Härte und Aufopferung zu pendeln",
-                  },
-                  {
-                    text: "Sie müssen nicht alles allein tragen",
-                    sub: "Verstehen ist wertvoll, ersetzt aber kein Hilfesystem",
-                  },
-                ].map(item => (
-                  <div
-                    key={item.text}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30"
-                  >
-                    <span className="text-2xl flex-shrink-0">•</span>
-                    <div>
-                      <span className="font-medium text-foreground block">
-                        {item.text}
-                      </span>
-                      <span className="text-sm text-muted-foreground">
-                        {item.sub}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ContentSection>
+            <VerstehenMeaningSection />
 
             <ContentSection
               title="Verstehen hat Grenzen"
-              icon={<AlertCircle className="w-7 h-7 text-sage-mid" />}
+              icon={<AlertCircle className="w-7 h-7 text-terracotta-mid" />}
               id="grenzen-des-verstehens"
               preview="Verstehen ist wichtig. Es ersetzt aber weder Selbstschutz noch Grenzsetzung noch professionelle Hilfe."
             >
@@ -536,7 +390,7 @@ export default function Verstehen() {
                   Grenzen zu setzen, Distanz zu schaffen oder Hilfe von aussen
                   einzubeziehen.
                 </p>
-                <Card className="bg-sage-lighter/30 border-sage/50">
+                <Card className="bg-terracotta-lighter/30 border-terracotta/50">
                   <CardContent className="p-5">
                     <p className="text-foreground leading-relaxed">
                       <strong>Merksatz für Angehörige:</strong> Verstehen hilft,
@@ -548,153 +402,18 @@ export default function Verstehen() {
               </div>
             </ContentSection>
 
-            <ContentSection
-              title="Diagnostischer Überblick"
-              icon={<BookOpen className="w-7 h-7 text-sage-dark" />}
-              id="diagnostischer-ueberblick"
-              defaultOpen={false}
-              preview="Für alle, die auch die klinische Perspektive kennen möchten: DSM-Merkmale und Entstehungshintergründe im Überblick."
-            >
-              <div className="space-y-5">
-                <p className="text-muted-foreground leading-relaxed">
-                  Für eine Diagnose müssen Fachpersonen mehrere Merkmale über
-                  längere Zeit und in verschiedenen Lebensbereichen beurteilen.
-                  Entscheidend ist nicht ein einzelnes Verhalten, sondern das
-                  Gesamtbild.
-                </p>
+            <VerstehenDiagnosticSection />
 
-                <div className="grid gap-3">
-                  {[
-                    "starke Angst vor Verlassenwerden oder Bindungsverlust",
-                    "instabile, intensive Beziehungen",
-                    "ein schwankendes oder unsicheres Selbstbild",
-                    "Impulsivität oder selbstschädigendes Verhalten",
-                    "affektive Instabilität, Leere, Wut oder dissoziative Symptome",
-                  ].map(item => (
-                    <Card key={item} className="border-border/50">
-                      <CardContent className="p-4">
-                        <p className="text-sm text-muted-foreground">{item}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-
-                <Card className="border-t-4 border-t-sage-mid">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">
-                      Häufige Begleiterkrankungen
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Borderline tritt selten allein auf. Häufig bestehen
-                      gleichzeitig Depressionen, Angststörungen oder eine
-                      Posttraumatische Belastungsstörung (PTBS). Das kann die
-                      Symptome verstärken und die Behandlung komplexer machen.
-                      Fachpersonen berücksichtigen diese Zusammenhänge bei der
-                      Diagnostik und Therapieplanung.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-t-4 border-t-sage-mid">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">
-                      Ursachen sind nie monokausal
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Borderline entsteht nicht durch eine einzige Ursache,
-                      sondern im Zusammenspiel biologischer Empfindlichkeit,
-                      Bindungs- und Entwicklungserfahrungen sowie
-                      Belastungsfaktoren. Schuldzuweisungen an Betroffene oder
-                      Angehörige greifen zu kurz und helfen niemandem.
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed mt-2">
-                      Borderline tritt häufig zusammen mit Depressionen,
-                      Angststörungen oder Traumafolgen auf. Das macht das Bild
-                      komplexer – hilft aber auch, Symptome richtig einzuordnen.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
+            <VerstehenMaterialsSection />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
-              id="materialien"
-            >
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-sage-dark" />
-                Materialien zum Vertiefen
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Diese Materialien ergänzen die Seite, ersetzen sie aber nicht.
-                Beginnen Sie mit den Grundlagen, wenn Sie gerade Orientierung
-                brauchen.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {verstehenInfografiken.map(item => (
-                  <Card
-                    key={item.id}
-                    className={`${item.featured ? "md:col-span-2" : ""} overflow-hidden hover:shadow-lg transition-shadow`}
-                  >
-                    <button
-                      type="button"
-                      className="aspect-[3/4] bg-muted cursor-pointer w-full"
-                      onClick={() => window.open(item.webpUrl, "_blank")}
-                      aria-label={`${item.alt} – Vorschau öffnen`}
-                    >
-                      <img
-                        src={item.webpUrl}
-                        alt={item.alt}
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                        width={400}
-                        height={223}
-                        decoding="async"
-                      />
-                    </button>
-                    <CardContent className="p-4">
-                      <h3 className="font-medium text-foreground mb-1">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        {item.description}
-                      </p>
-                      <a
-                        href={item.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        PDF öffnen
-                      </a>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-3 justify-center">
-                <Button variant="outline" asChild>
-                  <Link href="/materialien">Alle Materialien anzeigen</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/glossar">Fachbegriffe im Glossar →</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/buchempfehlungen">Buchempfehlungen →</Link>
-                </Button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 wave-divider-top"
+              style={
+                { "--wave-color": "var(--background)" } as React.CSSProperties
+              }
             >
               <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6 md:p-8">
@@ -709,49 +428,17 @@ export default function Verstehen() {
                         klarer, wie Sie hilfreicher reagieren, Grenzen besser
                         halten und die eigene Belastung ernster nehmen können.
                       </p>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="gap-2"
-                        asChild
-                      >
-                        <Link href="/unterstuetzen/uebersicht">
+                      <Link href="/unterstuetzen/uebersicht">
+                        <Button variant="outline" size="sm" className="gap-2">
                           <ArrowRight className="w-4 h-4" />
                           Weiter zu: Unterstützen
-                        </Link>
-                      </Button>
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
-
-            <EvidenceNote
-              className="mb-8"
-              title="Quellen zu Entstehung und Verlauf von Borderline"
-              definition="Die Inhalte dieser Seite stützen sich auf empirisch gut belegte Modelle und klinische Übersichtsarbeiten."
-              sources={[
-                {
-                  label:
-                    "Lieb et al. (2004) – Borderline personality disorder (Lancet)",
-                  href: "https://pubmed.ncbi.nlm.nih.gov/15488216/",
-                },
-                {
-                  label:
-                    "Leichsenring et al. (2011) – Borderline personality disorder (Lancet)",
-                  href: "https://pubmed.ncbi.nlm.nih.gov/21232218/",
-                },
-                {
-                  label:
-                    "Linehan (1993) – Kognitive Verhaltenstherapie der Borderline-Persönlichkeitsstörung (Biosoziales Modell)",
-                },
-                {
-                  label:
-                    "Storebø et al. (2020) – Psychological therapies for BPD (Cochrane)",
-                  href: "https://pubmed.ncbi.nlm.nih.gov/32368793/",
-                },
-              ]}
-            />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -763,16 +450,15 @@ export default function Verstehen() {
                 Als Nächstes geht es darum, wie Unterstützung tragfähig bleiben
                 kann, ohne dass Sie sich selbst verlieren.
               </p>
-              <Button
-                size="lg"
-                className="bg-sage-dark hover:bg-sage-mid text-white"
-                asChild
-              >
-                <Link href="/unterstuetzen/uebersicht">
+              <Link href="/unterstuetzen/uebersicht">
+                <Button
+                  size="lg"
+                  className="bg-terracotta hover:bg-terracotta-mid text-white"
+                >
                   Weiter zu: Unterstützen
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

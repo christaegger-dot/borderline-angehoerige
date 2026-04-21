@@ -20,7 +20,7 @@ async function startServer() {
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
     res.setHeader(
       "Content-Security-Policy",
-      "default-src 'self'; script-src 'self' 'unsafe-inline' https://forge.butterfly-effect.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://files.manuscdn.com data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://forge.butterfly-effect.dev; media-src 'self' https://files.manuscdn.com; frame-ancestors 'none'"
+      "default-src 'self'; script-src 'self' https://forge.butterfly-effect.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://files.manuscdn.com data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://forge.butterfly-effect.dev; media-src 'self' https://files.manuscdn.com; frame-ancestors 'none'"
     );
     res.setHeader(
       "Strict-Transport-Security",

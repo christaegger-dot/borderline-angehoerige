@@ -390,7 +390,7 @@
             Für Angehörige · PUK Zürich · v06 · 2026-03-10
           </div>
           <div class="header-actions">
-            <button onclick="window.print()" class="header-btn">
+            <button type="button" id="print-notfallkarte" class="header-btn">
               🖨 Drucken / PDF
             </button>
             <a
@@ -631,19 +631,6 @@
     </div>
     <!-- .page-wrapper -->
 
-    <script>
-      function scaleToFit() {
-        const pw = document.getElementById("pw");
-        if (!pw) return;
-        const pageW = 210 * 3.7795; // mm to px at 96dpi
-        const available = window.innerWidth - 40;
-        const scale = available < pageW ? available / pageW : 1;
-        pw.style.transform = `scale(${scale})`;
-        pw.style.marginBottom =
-          scale < 1 ? `${297 * 3.7795 * scale - 297 * 3.7795}px` : "0";
-      }
-      scaleToFit();
-      window.addEventListener("resize", scaleToFit);
-    </script>
+    <script src="/notfallkarte.js"></script>
   </body>
 </html>

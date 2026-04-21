@@ -93,7 +93,9 @@ export default function VerstehenInfografikenSection() {
             <button
               type="button"
               className="aspect-[3/4] bg-muted cursor-pointer w-full"
-              onClick={() => window.open(item.webpUrl, "_blank")}
+              onClick={() =>
+                window.open(item.webpUrl, "_blank", "noopener,noreferrer")
+              }
               aria-label={`${item.alt} – Vorschau öffnen`}
             >
               <img

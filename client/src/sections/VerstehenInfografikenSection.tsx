@@ -1,7 +1,14 @@
 import { type CSSProperties, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { BookOpen, Brain, Download, ExternalLink, Filter } from "lucide-react";
+import {
+  BookOpen,
+  Brain,
+  Download,
+  ExternalLink,
+  FileText,
+  Filter,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,6 +16,7 @@ import {
   type VerstehenMaterialCategory,
 } from "@/content/verstehen";
 import { getHandoutOpenHref } from "@/content/handouts";
+import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 
 const verstehenCategories = [
   {
@@ -58,8 +66,9 @@ export default function VerstehenInfografikenSection() {
       </h2>
 
       <p className="text-muted-foreground mb-6">
-        Vorschau = Web-Bild. «PDF öffnen» öffnet die A4-Druckversion im neuen
-        Tab – Download im PDF-Viewer oben rechts.
+        Vorschau = Web-Bild. Wenn verfügbar, führt «Textversion» zur lesbaren
+        Web-Version. «PDF öffnen» öffnet die A4-Druckversion im neuen Tab –
+        Download im PDF-Viewer oben rechts.
       </p>
 
       <div className="flex flex-wrap gap-2 mb-6">
@@ -86,47 +95,69 @@ export default function VerstehenInfografikenSection() {
       </div>
 
       <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredItems.map(item => (
-          <Card
-            key={item.id}
-            className={`${item.featured && activeFilter === "alle" ? "md:col-span-2" : ""} overflow-hidden hover:shadow-lg transition-shadow`}
-          >
-            <button
-              type="button"
-              className="aspect-[3/4] bg-muted cursor-pointer w-full"
-              onClick={() =>
-                window.open(item.webpUrl, "_blank", "noopener,noreferrer")
-              }
-              aria-label={`${item.alt} – Vorschau öffnen`}
-            >
-              <img
-                src={item.webpUrl}
-                alt={item.alt}
-                className="w-full h-full object-cover object-top"
-                loading="lazy"
-                width={400}
-                height={223}
-                decoding="async"
-              />
-            </button>
-            <CardContent className="p-4">
-              <h3 className="font-medium text-foreground mb-1">{item.title}</h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                {item.description}
-              </p>
-              <a
-                href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+        {filteredItems.map(item =>
+          (() => {
+            const textVersionHref = getHandoutTextVersionHrefBySource(
+              item.pdfUrl
+            );
+
+            return (
+              <Card
+                key={item.id}
+                className={`${item.featured && activeFilter === "alle" ? "md:col-span-2" : ""} overflow-hidden hover:shadow-lg transition-shadow`}
               >
-                <ExternalLink className="w-4 h-4" />
-                PDF öffnen
-              </a>
-            </CardContent>
-          </Card>
-        ))}
+                <button
+                  type="button"
+                  className="aspect-[3/4] bg-muted cursor-pointer w-full"
+                  onClick={() =>
+                    window.open(item.webpUrl, "_blank", "noopener,noreferrer")
+                  }
+                  aria-label={`${item.alt} – Vorschau öffnen`}
+                >
+                  <img
+                    src={item.webpUrl}
+                    alt={item.alt}
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    width={400}
+                    height={223}
+                    decoding="async"
+                  />
+                </button>
+                <CardContent className="p-4">
+                  <h3 className="font-medium text-foreground mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    {item.description}
+                  </p>
+                  <div className="grid gap-2">
+                    {textVersionHref ? (
+                      <Link
+                        href={textVersionHref}
+                        aria-label={`Textversion lesen: ${item.title}`}
+                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full bg-sage-dark hover:bg-sage-mid text-white transition-colors"
+                      >
+                        <FileText className="w-4 h-4" />
+                        Textversion
+                      </Link>
+                    ) : null}
+                    <a
+                      href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                      className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      PDF öffnen
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })()
+        )}
       </div>
 
       <div className="mt-6 text-center">

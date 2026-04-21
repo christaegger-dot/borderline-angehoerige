@@ -5,6 +5,7 @@ import {
   Download,
   ExternalLink,
   Eye,
+  FileText,
   Filter,
   Heart,
   Image as ImageIcon,
@@ -25,6 +26,7 @@ import {
   type MaterialItem,
 } from "@/content/materialien";
 import { getHandoutDownloadHref, getHandoutOpenHref } from "@/content/handouts";
+import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 
 function CategoryIcon({
   icon,
@@ -64,6 +66,10 @@ function MaterialCard({
     ? (item.downloadUrl ?? item.url)
     : (getHandoutOpenHref(pdfSource) ?? item.url);
   const downloadHref = getHandoutDownloadHref(pdfSource);
+  const textVersionHref = item.isHtml
+    ? null
+    : getHandoutTextVersionHrefBySource(pdfSource);
+  const openLabel = item.isHtml ? "Öffnen" : "PDF öffnen";
 
   return (
     <Card className="h-full hover:shadow-lg transition-all hover:border-sage-mid/30 overflow-hidden">
@@ -98,15 +104,29 @@ function MaterialCard({
         </h3>
         <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
         <div className="flex gap-2 flex-wrap">
+          {textVersionHref ? (
+            <Link
+              href={textVersionHref}
+              aria-label={`Textversion lesen: ${item.title}`}
+              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
+            >
+              <FileText className="w-4 h-4" />
+              Textversion lesen
+            </Link>
+          ) : null}
           <a
             href={openHref}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${item.title} öffnen`}
-            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 bg-sage-dark hover:bg-sage-dark/90 text-white transition-colors"
+            className={`inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 transition-colors ${
+              textVersionHref
+                ? "border border-sage-dark text-sage-dark hover:bg-sage-light/40"
+                : "bg-sage-dark hover:bg-sage-dark/90 text-white"
+            }`}
           >
             <ExternalLink className="w-4 h-4" />
-            Öffnen
+            {openLabel}
           </a>
           {downloadHref ? (
             <a
@@ -235,8 +255,9 @@ export default function MaterialienLibrarySection() {
                 <strong className="text-foreground">
                   Vorschau = Web-Bild.
                 </strong>{" "}
-                «Öffnen» öffnet die Druckversion im neuen Tab. Die Notfallkarte
-                öffnet als HTML-Seite.
+                Wenn verfügbar, führt «Textversion lesen» zur lesbaren
+                Web-Version. «PDF öffnen» öffnet die Druckversion im neuen Tab.
+                Die Notfallkarte öffnet als HTML-Seite.
               </p>
             </div>
 

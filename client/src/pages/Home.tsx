@@ -17,7 +17,7 @@ import {
   Phone,
   Shield,
   Sparkles,
-} from "lucide-react";
+} from "@/icons/root-icons";
 
 const interactiveTools = [
   {

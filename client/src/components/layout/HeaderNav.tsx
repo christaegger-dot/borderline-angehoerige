@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, Phone, Search as SearchIcon, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { navItems } from "@/components/layout/navigationData";
 import { RessourcenMenu } from "@/components/layout/RessourcenMenu";
+import { Menu, Phone, Search as SearchIcon, X } from "@/icons/root-icons";
 
 interface HeaderNavProps {
   onSearchOpen: () => void;

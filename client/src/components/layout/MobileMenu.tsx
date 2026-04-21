@@ -4,7 +4,7 @@ import {
   FolderOpen,
   Phone,
   Search as SearchIcon,
-} from "lucide-react";
+} from "@/icons/root-icons";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
 
 interface MobileMenuProps {

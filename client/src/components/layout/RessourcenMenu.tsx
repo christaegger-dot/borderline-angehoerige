@@ -1,8 +1,8 @@
 import { Link } from "wouter";
-import { ChevronDown } from "lucide-react";
 import { ressourcenItems } from "@/components/layout/navigationData";
 import { useRessourcenMenuA11y } from "@/components/layout/useRessourcenMenuA11y";
 import type { NavigationItem } from "@/domain/content-types";
+import { ChevronDown } from "@/icons/root-icons";
 
 interface RessourcenMenuProps {
   location: string;

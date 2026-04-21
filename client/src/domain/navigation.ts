@@ -14,7 +14,7 @@ import {
   Sparkles,
   Stethoscope,
   TrendingUp,
-} from "lucide-react";
+} from "@/icons/root-icons";
 import type { NavigationItem } from "@/domain/content-types";
 
 export const primaryNavigationItems: NavigationItem[] = [

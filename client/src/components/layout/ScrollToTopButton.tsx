@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ChevronUp } from "lucide-react";
 import { useLocation } from "wouter";
 import { getMobileFloatingMode } from "@/domain/floating-ui";
+import { ChevronUp } from "@/icons/root-icons";
 
 export function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);

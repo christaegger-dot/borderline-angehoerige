@@ -1,5 +1,5 @@
-import { ArrowLeft, ChevronRight, Home } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
 
 const pageNames: Record<string, string> = {
   "/": "Startseite",

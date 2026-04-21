@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { AlertTriangle, RotateCcw } from "lucide-react";
 import { Component, ReactNode } from "react";
+import { AlertTriangle, RotateCcw } from "@/icons/root-icons";
 
 interface Props {
   children: ReactNode;

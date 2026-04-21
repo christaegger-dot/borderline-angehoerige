@@ -22,6 +22,7 @@ export default function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
   const floatingMode = _getMobileFloatingMode(location);
+  const hasMobileSoforthilfeFab = location !== "/soforthilfe";
   void floatingMode;
 
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
@@ -158,7 +159,11 @@ export default function Layout({ children }: LayoutProps) {
             </p>
           </div>
 
-          <div className="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div
+            className={`border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 ${
+              hasMobileSoforthilfeFab ? "pb-24 sm:pb-0" : ""
+            }`}
+          >
             <p className="text-white/90 text-sm">
               \u00a9 2026 Borderline \u00b7 Hilfe für Angehörige. Alle Rechte
               vorbehalten.
@@ -206,7 +211,7 @@ export default function Layout({ children }: LayoutProps) {
       </footer>
 
       {/* Mobile Soforthilfe-FAB: auf allen Seiten ausser /soforthilfe selbst */}
-      {location !== "/soforthilfe" && (
+      {hasMobileSoforthilfeFab && (
         <Button
           asChild
           variant="default"

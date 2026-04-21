@@ -48,7 +48,10 @@ export default function Layout({ children }: LayoutProps) {
 
       <HeaderNav onSearchOpen={() => setSearchOpen(true)} />
 
-      <div className="border-b border-border/40 bg-sage-wash/40">
+      <aside
+        aria-label="Notfallhinweis"
+        className="border-b border-border/40 bg-sage-wash/40"
+      >
         <div className="container py-1.5 text-sm md:text-xs text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-1">
           <span className="font-medium text-foreground">
             Notfallkontakte: Schweiz (Kanton Zürich)
@@ -56,7 +59,7 @@ export default function Layout({ children }: LayoutProps) {
           <span className="hidden sm:inline">\u2022</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
         </div>
-      </div>
+      </aside>
 
       {/* Breadcrumb Navigation */}
       <Breadcrumbs />

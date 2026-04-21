@@ -18,3 +18,8 @@ const startupFallback = document.getElementById("startup-fallback");
 if (startupFallback) {
   startupFallback.remove();
 }
+
+const routePrerender = document.getElementById("route-prerender");
+if (routePrerender) {
+  routePrerender.remove();
+}

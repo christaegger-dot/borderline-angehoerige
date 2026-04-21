@@ -3,7 +3,6 @@ import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
 import {
   AlertTriangle,
   ArrowRight,
@@ -112,11 +111,7 @@ export default function Home() {
 
         <div className="container relative z-10 py-16 md:py-20 lg:py-26">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
+            <div>
               <span className="inline-block px-3 py-1 rounded-full bg-sage-dark text-white text-[11px] font-semibold tracking-[0.12em] uppercase mb-5">
                 Für Angehörige von Menschen mit Borderline
               </span>
@@ -168,7 +163,7 @@ export default function Home() {
                   →
                 </span>
               </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -210,13 +205,7 @@ export default function Home() {
       <section className="py-8 md:py-10 bg-background">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mb-8"
-            >
+            <div className="mb-8">
               <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
                 <span className="w-6 h-px bg-sage-dark/30" />
                 Orientierung
@@ -229,7 +218,7 @@ export default function Home() {
                 Website ist nicht nur zum Lesen gedacht, sondern als
                 Orientierung in belasteten Beziehungssituationen.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-2 gap-4">
               {situationPaths.map(item => {
@@ -295,12 +284,7 @@ export default function Home() {
       <section className="py-10 md:py-14 bg-cream">
         <div className="container">
           <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
+            <div>
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
                 {/* Linke Spalte: Text + Checkmarks */}
                 <div>
@@ -387,7 +371,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -403,12 +387,7 @@ export default function Home() {
       <section className="py-10 md:py-14 bg-sage-wash/40">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
+            <div>
               <div className="text-center mb-8">
                 <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
                   <span className="w-6 h-px bg-sage-dark/30" />
@@ -452,7 +431,7 @@ export default function Home() {
                   </span>
                 </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

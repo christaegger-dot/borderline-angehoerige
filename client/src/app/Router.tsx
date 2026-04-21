@@ -1,9 +1,11 @@
 import { Suspense } from "react";
-import { Route, Switch, Redirect } from "wouter";
+import { Route, Switch, Redirect, useLocation } from "wouter";
 import { routes } from "@/app/routes";
 import NotFound from "@/pages/NotFound";
 
-function PageLoader() {
+function PageLoader({ location }: { location: string }) {
+  if (location === "/") return null;
+
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
       <div className="flex flex-col items-center gap-3">
@@ -15,8 +17,10 @@ function PageLoader() {
 }
 
 export default function Router() {
+  const [location] = useLocation();
+
   return (
-    <Suspense fallback={<PageLoader />}>
+    <Suspense fallback={<PageLoader location={location} />}>
       <Switch>
         {routes.map(route =>
           route.redirectTo ? (

@@ -80,6 +80,145 @@
         rel="stylesheet"
     /></noscript>
     <style>
+      #route-prerender {
+        display: none;
+      }
+
+      html[data-route-prerender="home"] #root:empty + #route-prerender {
+        display: block;
+      }
+
+      .route-prerender-shell {
+        min-height: 100vh;
+        color: #fff;
+        background:
+          radial-gradient(
+            circle at 85% 12%,
+            rgba(103, 155, 146, 0.28),
+            transparent 24rem
+          ),
+          radial-gradient(
+            circle at 18% 82%,
+            rgba(203, 159, 85, 0.22),
+            transparent 18rem
+          ),
+          linear-gradient(135deg, #1b2535, #233146 58%, rgba(45, 60, 84, 0.92));
+      }
+
+      .route-prerender-topbar {
+        padding: 1.1rem 1rem 0;
+      }
+
+      .route-prerender-brand {
+        max-width: 72rem;
+        margin: 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: rgba(255, 255, 255, 0.92);
+        text-decoration: none;
+      }
+
+      .route-prerender-brand img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 999px;
+      }
+
+      .route-prerender-body {
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 3.5rem 1rem 4.5rem;
+      }
+
+      .route-prerender-card {
+        max-width: 44rem;
+      }
+
+      .route-prerender-kicker {
+        display: inline-block;
+        margin: 0 0 1rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(73, 132, 124, 0.85);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .route-prerender-title {
+        margin: 0;
+        font-family:
+          "DM Serif Display", "DM Serif Display fallback", Georgia, serif;
+        font-size: clamp(2.35rem, 6vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+
+      .route-prerender-title span {
+        color: #d6ece7;
+      }
+
+      .route-prerender-copy {
+        max-width: 40rem;
+        margin: 1.15rem 0 0;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        line-height: 1.7;
+      }
+
+      .route-prerender-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.8rem;
+      }
+
+      .route-prerender-actions a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3rem;
+        padding: 0.85rem 1.15rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .route-prerender-actions a.route-prerender-primary {
+        border-color: #49847c;
+        background: #49847c;
+      }
+
+      .route-prerender-crisis {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-top: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .route-prerender-note {
+        margin: 1.75rem 0 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 768px) {
+        .route-prerender-body {
+          padding-top: 2.5rem;
+          padding-bottom: 3rem;
+        }
+      }
+
       /* Font metric override to prevent CLS from font loading */
       @font-face {
         font-family: "Inter fallback";
@@ -174,7 +313,51 @@
   </head>
 
   <body>
+    <script>
+      document.documentElement.dataset.routePrerender =
+        window.location.pathname === "/" ? "home" : "none";
+    </script>
     <div id="root"></div>
+    <section id="route-prerender">
+      <div class="route-prerender-shell">
+        <div class="route-prerender-topbar">
+          <a class="route-prerender-brand" href="/">
+            <img src="/favicon-192.png" alt="" width="40" height="40" />
+            <span>Borderline · Hilfe für Angehörige</span>
+          </a>
+        </div>
+        <div class="route-prerender-body">
+          <div class="route-prerender-card">
+            <p class="route-prerender-kicker">
+              Für Angehörige von Menschen mit Borderline
+            </p>
+            <h1 class="route-prerender-title">
+              Orientierung in belasteten <span>Beziehungen</span>
+            </h1>
+            <p class="route-prerender-copy">
+              Wenn Beziehungen von Anspannung, Eskalation, Rückzug, Schuld oder
+              Erschöpfung geprägt sind, hilft ein klarer nächster Schritt. Die
+              wichtigsten Wege bleiben sofort erreichbar, auch während die
+              interaktive Version startet.
+            </p>
+            <div class="route-prerender-actions">
+              <a class="route-prerender-primary" href="/verstehen">
+                Borderline besser verstehen
+              </a>
+              <a href="/unterstuetzen/uebersicht">
+                Was hilft in meiner Lage?
+              </a>
+            </div>
+            <a class="route-prerender-crisis" href="/soforthilfe">
+              Akute Krise? Soforthilfe
+            </a>
+            <p class="route-prerender-note">
+              Die vollständige Website lädt im Hintergrund.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <main id="startup-fallback" aria-live="polite" role="status">
       <div class="startup-shell">
         <p class="startup-kicker">
@@ -211,7 +394,11 @@
     </noscript>
     <script>
       (function () {
+        const hasHomePrerender =
+          document.documentElement?.dataset.routePrerender === "home";
+
         const revealFallback = () => {
+          if (hasHomePrerender) return;
           if (document.body?.dataset.appReady === "true") return;
           document.body?.setAttribute("data-startup-fallback-visible", "true");
         };

@@ -1,15 +1,20 @@
-export type VerstehenKategorie = "alle" | "grundlagen" | "neurobiologie";
+export type VerstehenMaterialCategory = "alle" | "grundlagen" | "neurobiologie";
 
-export type VerstehenInfografik = {
+export interface VerstehenInfografik {
   id: string;
   title: string;
   description: string;
-  category: Exclude<VerstehenKategorie, "alle">;
+  category: Exclude<VerstehenMaterialCategory, "alle">;
   webpUrl: string;
   pdfUrl: string;
   alt: string;
   featured?: boolean;
-};
+}
+
+export interface VerstehenTextCard {
+  title: string;
+  text: string;
+}
 
 export const verstehenInfografiken: VerstehenInfografik[] = [
   {
@@ -62,7 +67,8 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
   {
     id: "4-phasen",
     title: "Der 4-Phasen-Zyklus",
-    description: "Das vorhersehbare Muster – Krisen folgen oft einem Ablauf.",
+    description:
+      "Ein häufiges Muster in belasteten Beziehungen, nicht ein fixes Schicksal.",
     category: "neurobiologie",
     webpUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BYDbBJaIhetrjHRq.webp",
@@ -82,4 +88,46 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NViSBQtRBvGWOHPE.pdf",
     alt: "Das Gehirn verstehen",
   },
+];
+
+export const relationshipPatterns: VerstehenTextCard[] = [
+  {
+    title: "Verlassenheitsangst",
+    text: "Schon kleine Verzögerungen, Unklarheiten oder Distanzsignale können als drohender Verlust erlebt werden. Für Angehörige wirkt das oft unverhältnismässig, für die betroffene Person aber sehr real.",
+  },
+  {
+    title: "Nähe-Distanz-Pendeln",
+    text: "Es kann vorkommen, dass jemand sehr viel Nähe sucht und sich kurz darauf zurückzieht, abwertet oder abbricht. Das ist nicht einfach Widersprüchlichkeit, sondern oft Ausdruck von Bindungsstress.",
+  },
+  {
+    title: "Spaltung unter Stress",
+    text: "In Belastungssituationen wird es schwerer, gleichzeitig Gutes und Schwieriges an einer Person zu halten. Dann kippt das Erleben leichter in Idealisierung oder Entwertung.",
+  },
+];
+
+export const meaningForRelativesCards = [
+  {
+    text: "Sie können Verhalten genauer einordnen",
+    sub: "ohne es automatisch zu entschuldigen oder zu dramatisieren",
+  },
+  {
+    text: "Sie erkennen eigene Grenzen früher",
+    sub: "weil Sie Belastung, Schuld und Überanpassung besser bemerken",
+  },
+  {
+    text: "Sie können Mitgefühl und Klarheit verbinden",
+    sub: "statt zwischen Härte und Aufopferung zu pendeln",
+  },
+  {
+    text: "Sie müssen nicht alles allein tragen",
+    sub: "Verstehen ist wertvoll, ersetzt aber kein Hilfesystem",
+  },
+];
+
+export const diagnosticOverviewItems = [
+  "starke Angst vor Verlassenwerden oder Bindungsverlust",
+  "instabile, intensive Beziehungen",
+  "ein schwankendes oder unsicheres Selbstbild",
+  "Impulsivität oder selbstschädigendes Verhalten",
+  "affektive Instabilität, Leere, Wut oder dissoziative Symptome",
 ];

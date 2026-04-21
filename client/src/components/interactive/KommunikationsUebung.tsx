@@ -364,10 +364,9 @@ function ScenarioCard({
       >
         <div className="flex items-center gap-2 mb-2">
           <span
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-white/70"
             style={{
               color: meta.color,
-              backgroundColor: "rgba(255,255,255,0.7)",
             }}
           >
             {meta.icon}

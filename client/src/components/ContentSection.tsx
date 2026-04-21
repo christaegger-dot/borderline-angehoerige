@@ -91,7 +91,7 @@ export default function ContentSection({
         aria-controls={id ? `section-content-${id}` : undefined}
         aria-label={`Abschnitt ${title} ${isOpen ? "zuklappen" : "aufklappen"}`}
       >
-        <div className="flex items-center justify-between gap-3 p-4 rounded-[10px] bg-white hover:bg-sage-wash/50 active:bg-sage-wash/50 border border-border border-l-4 border-l-sage-dark transition-colors">
+        <div className="flex items-center justify-between gap-3 p-4 rounded-md bg-white hover:bg-sage-wash/50 active:bg-sage-wash/50 border border-border border-l-4 border-l-sage-dark transition-colors">
           <div className="flex items-center gap-3 min-w-0">
             {icon}
             <h2 className="text-xl md:text-2xl font-normal text-foreground">
@@ -122,7 +122,7 @@ export default function ContentSection({
           >
             <div
               id={id ? `section-content-${id}` : undefined}
-              className="pt-5 px-1 text-[14.5px] leading-relaxed"
+              className="pt-5 px-1 text-sm leading-relaxed"
             >
               {children}
             </div>

@@ -475,6 +475,23 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Spaltung",
+    description:
+      "Lesbare Web-Version zum Pendel zwischen Idealisierung, Entwertung und der schwer erreichbaren Grauzone",
+    keywords: [
+      "textversion",
+      "spaltung",
+      "idealisierung",
+      "entwertung",
+      "grauzone",
+      "pendel",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/spaltung",
+    section: "Materialien",
+  },
+  {
     title: "Die Spaltung verstehen",
     description:
       "Infografik: Wie starke Idealisierung und Entwertung in Krisen entstehen können",
@@ -587,6 +604,23 @@ export const searchableContent: SearchEntry[] = [
       "pdf",
     ],
     href: "/materialien/text/krisenkommunikation",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Alarm-Modus vs. Denk-Modus",
+    description:
+      "Lesbare Web-Version zur Unterscheidung zwischen Alarm-Zustand, Denk-Zustand und den passenden nächsten Schritten",
+    keywords: [
+      "textversion",
+      "alarm-modus",
+      "denk-modus",
+      "neurobiologie",
+      "trigger",
+      "beruhigen",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/alarm-modus",
     section: "Materialien",
   },
   {

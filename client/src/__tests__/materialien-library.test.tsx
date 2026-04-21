@@ -55,6 +55,16 @@ describe("MaterialienLibrarySection", () => {
     ).toHaveAttribute("href", "/materialien/text/eisberg");
     expect(
       screen.getByRole("link", {
+        name: /Textversion lesen: Spaltung – das Pendel zwischen Extremen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/spaltung");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Alarm-Modus vs\. Denk-Modus/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/alarm-modus");
+    expect(
+      screen.getByRole("link", {
         name: /Textversion lesen: Spickzettel Grenzen – Die wichtigsten Sätze/i,
       })
     ).toHaveAttribute("href", "/materialien/text/grenzen-spickzettel");

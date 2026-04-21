@@ -152,6 +152,32 @@
       max-width: 1280px;
     }
   }
+
+  .home-hero-surface {
+    background: linear-gradient(
+      to bottom right,
+      var(--color-navy),
+      var(--color-home-hero-mid),
+      var(--color-home-hero-end)
+    );
+  }
+
+  .home-section-divider {
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-home-divider),
+      transparent
+    );
+  }
+
+  .home-orbit-glow {
+    background: radial-gradient(
+      circle,
+      var(--color-home-orbit-inner),
+      var(--color-home-orbit-outer)
+    );
+  }
 }
 
 /* Scrollbar ausblenden für horizontale Tab-Leisten */

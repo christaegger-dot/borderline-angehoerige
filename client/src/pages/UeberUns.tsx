@@ -21,11 +21,11 @@ export default function UeberUns() {
     <Layout>
       <SEO
         title="Über uns"
-        description="Über das Projekt: psychoedukative Website für Angehörige von Menschen mit Borderline – fachlich fundiert, evidenzbasiert und angehörigorientiert."
+        description="Über das Projekt Borderline · Hilfe für Angehörige."
         path="/ueber-uns"
       />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/40 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -34,12 +34,12 @@ export default function UeberUns() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
                 <Heart className="w-6 h-6 text-sage-mid" />
               </div>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Über diese Website
             </h1>
 
@@ -51,13 +51,13 @@ export default function UeberUns() {
       </section>
 
       {/* Content */}
-      <section className="py-8 md:py-12">
+      <section className="py-12 md:py-16 wave-divider-top">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {/* Motivation – immer offen */}
             <ContentSection
               title="Warum diese Website?"
-              icon={<Target className="w-7 h-7 text-sage-dark" />}
+              icon={<Target className="w-7 h-7 text-terracotta" />}
               id="motivation"
               defaultOpen={true}
               preview="Angehörige stehen oft vor einer doppelten Herausforderung: helfen wollen und sich hilflos fühlen."
@@ -217,13 +217,14 @@ export default function UeberUns() {
                     <p className="font-medium text-foreground">
                       {source.title}
                     </p>
-                    <p className="text-sm text-sage-dark">{source.author}</p>
+                    <p className="text-sm text-sage-mid">{source.author}</p>
                     <p className="text-sm text-muted-foreground mt-1">
                       {source.description}
                     </p>
                   </div>
                 ))}
               </div>
+
               <EvidenceNote
                 title="Auswahl der Grundlagen"
                 definition="Die Website stützt sich auf klinische Standardwerke, evidenzbasierte Therapieansätze und Angehörigenprogramme. Die Auswahl ist kuratiert, nicht vollständig bibliografisch."
@@ -257,7 +258,7 @@ export default function UeberUns() {
                 der{" "}
                 <Link
                   href="/buchempfehlungen"
-                  className="text-sage-mid hover:underline"
+                  className="text-terracotta-mid hover:underline"
                 >
                   Buchempfehlungen-Seite
                 </Link>
@@ -272,7 +273,7 @@ export default function UeberUns() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <Card className="border-sage-mid/30 bg-cream">
+              <Card className="border-terracotta-mid/30 bg-cream">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">
                     Wichtiger Hinweis
@@ -292,14 +293,14 @@ export default function UeberUns() {
                     zu{" "}
                     <Link
                       href="/beratung"
-                      className="text-sage-mid hover:underline font-medium"
+                      className="text-terracotta-mid hover:underline font-medium"
                     >
                       Beratungsstellen
                     </Link>{" "}
                     oder{" "}
                     <Link
                       href="/unterstuetzen/therapie#therapieangebote"
-                      className="text-sage-mid hover:underline font-medium"
+                      className="text-terracotta-mid hover:underline font-medium"
                     >
                       spezialisierten Therapeuten
                     </Link>
@@ -341,7 +342,7 @@ export default function UeberUns() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
                 Feedback & Kontakt
               </h2>
 

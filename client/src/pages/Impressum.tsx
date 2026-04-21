@@ -233,8 +233,10 @@ export default function Impressum() {
               <Card className="border-border/50">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Die Inhalte dieser Website basieren auf anerkannter
-                    Fachliteratur und evidenzbasierten Methoden, insbesondere:
+                    Die Inhalte dieser Website stützen sich auf anerkannte
+                    Fachliteratur, wissenschaftliche Quellen für medizinische
+                    und therapeutische Aussagen sowie auf klinische Erfahrung in
+                    der Angehörigenarbeit, insbesondere:
                   </p>
                   <p className="text-sm text-sage-dark mb-4">
                     <Link

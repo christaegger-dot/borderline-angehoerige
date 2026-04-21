@@ -12,6 +12,7 @@ import {
   Download,
   ExternalLink,
   Eye,
+  FileText,
   Heart,
   Lightbulb,
   Users,
@@ -26,6 +27,7 @@ import {
   unterstuetzenSubcategories,
 } from "@/content/unterstuetzen";
 import { getHandoutOpenHref } from "@/content/handouts";
+import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 
 export default function UnterstuetzenUebersicht() {
   const [activeFilter, setActiveFilter] = useState("alle");
@@ -361,6 +363,7 @@ export default function UnterstuetzenUebersicht() {
                   <strong className="text-foreground">
                     Vorschau = Web-Bild.
                   </strong>{" "}
+                  Wenn verfügbar, führt «Textversion» zur lesbaren Web-Version.
                   «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
                 </span>
               </p>
@@ -407,43 +410,63 @@ export default function UnterstuetzenUebersicht() {
                 ref={gridRef}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-4"
               >
-                {filteredItems.map((item, index) => (
-                  <Card
-                    key={item.title}
-                    className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                      filteredItems.length > 1 && index === 0
-                        ? "sm:col-span-2"
-                        : ""
-                    }`}
-                  >
-                    <div className="aspect-[4/3] bg-muted overflow-hidden">
-                      <img
-                        src={item.url}
-                        alt={item.title}
-                        className="w-full h-full object-cover object-top"
-                        loading="lazy"
-                        width={400}
-                        height={223}
-                        decoding="async"
-                      />
-                    </div>
-                    <CardContent className="p-4">
-                      <h3 className="font-medium text-sm text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <a
-                        href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        PDF öffnen
-                      </a>
-                    </CardContent>
-                  </Card>
-                ))}
+                {filteredItems.map((item, index) => {
+                  const textVersionHref = getHandoutTextVersionHrefBySource(
+                    item.pdfUrl
+                  );
+
+                  return (
+                    <Card
+                      key={item.title}
+                      className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
+                        filteredItems.length > 1 && index === 0
+                          ? "sm:col-span-2"
+                          : ""
+                      }`}
+                    >
+                      <div className="aspect-[4/3] bg-muted overflow-hidden">
+                        <img
+                          src={item.url}
+                          alt={item.title}
+                          className="w-full h-full object-cover object-top"
+                          loading="lazy"
+                          width={400}
+                          height={223}
+                          decoding="async"
+                        />
+                      </div>
+                      <CardContent className="p-4">
+                        <h3 className="font-medium text-sm text-foreground mb-2">
+                          {item.title}
+                        </h3>
+                        <div className="grid gap-2">
+                          {textVersionHref ? (
+                            <Link
+                              href={textVersionHref}
+                              aria-label={`Textversion lesen: ${item.title}`}
+                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full bg-sage-dark hover:bg-sage-mid text-white transition-colors"
+                            >
+                              <FileText className="w-4 h-4" />
+                              Textversion
+                            </Link>
+                          ) : null}
+                          <a
+                            href={
+                              getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            PDF öffnen
+                          </a>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
 
               <div className="mt-4 text-center">

@@ -206,8 +206,6 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            // React core – cached long-term
-            "vendor-react": ["react", "react-dom"],
             // Animation library – used on many pages but heavy
             "vendor-motion": ["framer-motion"],
             // Root path only needs Radix Slot via Button asChild

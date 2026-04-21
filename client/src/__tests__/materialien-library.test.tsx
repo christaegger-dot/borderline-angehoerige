@@ -50,6 +50,16 @@ describe("MaterialienLibrarySection", () => {
     ).toHaveAttribute("href", "/materialien/text/rolle-klaeren");
     expect(
       screen.getByRole("link", {
+        name: /Textversion lesen: Der Eisberg – Wut ist oft die Spitze/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/eisberg");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Spickzettel Grenzen – Die wichtigsten Sätze/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/grenzen-spickzettel");
+    expect(
+      screen.getByRole("link", {
         name: /Textversion lesen: Warnsignale der Überlastung/i,
       })
     ).toHaveAttribute("href", "/materialien/text/warnsignale");

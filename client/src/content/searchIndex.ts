@@ -458,6 +458,23 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Der Eisberg",
+    description:
+      "Lesbare Web-Version des Eisberg-Handouts zu sichtbarer Wut, verborgenen Gefühlen und 3 Schritten zur Einordnung",
+    keywords: [
+      "textversion",
+      "eisberg",
+      "wut",
+      "angst",
+      "scham",
+      "gefühle",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/eisberg",
+    section: "Materialien",
+  },
+  {
     title: "Die Spaltung verstehen",
     description:
       "Infografik: Wie starke Idealisierung und Entwertung in Krisen entstehen können",
@@ -587,6 +604,23 @@ export const searchableContent: SearchEntry[] = [
       "pdf",
     ],
     href: "/materialien/text/warnsignale",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Spickzettel Grenzen",
+    description:
+      "Lesbare Web-Version mit DEAR-Technik, Beispielsätzen für Grenzen und L.M.K.-Exit-Strategie",
+    keywords: [
+      "textversion",
+      "spickzettel grenzen",
+      "dear",
+      "grenzen",
+      "satzbausteine",
+      "lmk",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/grenzen-spickzettel",
     section: "Materialien",
   },
 

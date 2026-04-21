@@ -21,6 +21,7 @@
 - Phase 2: abgeschlossen
 - Phase 3: abgeschlossen
 - Phase 4: abgeschlossen
+- Nachpflege auf aktuellem `origin/main`: teilweise durchgefuehrt
 
 ## Notizen
 
@@ -31,20 +32,25 @@
   `playwright`, `@axe-core/playwright`, `lighthouse`.
 - Die App lief fuer die Browser-Audits ueber den gebauten Express-Server auf
   Port `4173`.
+- Nach den spaeter gemergten Mini-PRs `#185` und `#186` wurden
+  `interaction-overlap.json` und `click-reachability.json` noch einmal gegen
+  einen frischen `origin/main`-Build auf Port `4174` neu erzeugt.
 
 ## Kurzfazit
 
-Release-Readiness nach Phase 4: **B**
+Release-Readiness nach Phase 4 plus Nachpflege: **B**
 
 Warum nicht A:
 
-1. Die groessten, klar repo-seitig loesbaren A11y-Funde wurden behoben.
-2. Es bleiben aber zwei Follow-up-Bloecke:
-   - sehr reduzierte Landmark-/Navigations-Struktur auf den statischen
-     Direktseiten, vor allem `/materialien`
-   - 25 heuristische Overlap-Funde an Scroll-Kanten auf `/` und
-     `/notfallkarte`, vor allem im Zusammenspiel von Sticky-Header und mobilem
-     Soforthilfe-FAB
+1. Die klar reproduzierbaren repo-seitigen A11y-Funde wurden behoben.
+2. Die waehrend des Audits noch offene Landmark-/Direktseiten-Abweichung wurde
+   nachgelagert in PR `#185` behoben.
+3. Der waehrend des Audits noch sichtbare mobile Footer/FAB-Konflikt wurde
+   nachgelagert in PR `#186` gezielt entschaerft.
+4. Es bleibt aber ein kleiner Restblock heuristischer Top-Edge-Overlap-Funde
+   rund um den Sticky-Header. Der aktuelle Re-Run zeigt dort keine
+   Click-Reachability-Failures mehr, produziert im Sweep aber weiterhin
+   Scrollkanten-Rauschen.
 
 ## Findings
 
@@ -132,9 +138,9 @@ Ergebnis nach Fix:
 ### 4. Statische Direktseiten haben reduzierte Landmark-/Navigations-Parität
 
 - Schwere: mittel
-- Status: **Follow-up**
+- Status: **nach Audit-Follow-up behoben**
 
-Befund:
+Befund waehrend des Audits:
 
 - `/soforthilfe` direkt:
   `main=1`, `nav=0`, `header=1`, `footer=1`
@@ -153,13 +159,18 @@ Bewertung:
 - Fuer Accessibility und Orientierung ist die Abweichung zur eigentlichen
   App-Huelle aber relevant, vor allem bei `/materialien`, wo direkte
   Rueckwege/Landmarks minimal sind.
+- Nachgelagerte Umsetzung:
+  - PR `#185` fuehrt auf beiden Direktseiten eine `Direktnavigation` als
+    `nav` ein.
+  - `/materialien` erhielt zusaetzlich einen Footer mit Rueckwegen.
+- Dieser Follow-up-Block ist repo-seitig damit abgearbeitet.
 
 ### 5. Scroll-Kanten-Overlap durch Sticky-Header und mobiles Soforthilfe-FAB
 
 - Schwere: niedrig bis mittel
-- Status: **Follow-up**
+- Status: **nach Audit-Follow-up reduziert, kleiner Rest offen**
 
-Automatischer Sweep:
+Automatischer Sweep waehrend des Audits:
 
 - `interaction-overlap.json` final:
   `25` Funde
@@ -187,12 +198,23 @@ Wichtige Einordnung:
   durch detached DOM im Trial-Click und kein stabil reproduzierter
   Nutzerfehler
 
+Nachpflege auf aktuellem `origin/main`:
+
+- Re-Run `interaction-overlap.json`:
+  `26` heuristische Funde
+- davon nur noch `1` Fund mit `blockedBy: "Soforthilfe"` statt zuvor `3`
+- Re-Run `click-reachability.json`:
+  `191` gepruefte Ziele, `0` Failures
+- PR `#186` entschaerft den echten mobilen Footer/FAB-Konflikt, ohne den
+  Sticky-Header selbst umzubauen
+
 Bewertung:
 
-- aktuell eher **Scroll-/Overlay-Risiko** als bestaetigter massiver
-  Klick-Defekt
-- sollte visuell/manual noch einmal bestaetigt werden, bevor hier ein groesserer
-  Layout-Fix in Produktcode geht
+- aktuell vor allem **Heuristik-/Scrollkanten-Risiko** am oberen Viewportrand
+  statt bestaetigter Klick-Defekt
+- der fruehere Footer/FAB-Konflikt ist repo-seitig reduziert
+- ein groesserer Header-Layout-Fix ist ohne manuellen Produktentscheid weiter
+  nicht gerechtfertigt
 
 ## Phase 1 - Inventur
 
@@ -247,6 +269,8 @@ Befund:
 
 - `25` heuristische Overlap-Funde
 - Schwerpunkt: Sticky-Header / mobiler Soforthilfe-FAB
+- spaeterer Re-Run auf aktuellem `main`:
+  `26` Funde, Schwerpunkt fast nur noch Sticky-Header
 
 ### 1.5 Klick-Erreichbarkeits-Test
 
@@ -261,6 +285,8 @@ Befund:
 - `2` Failures, beide `Situations-Wegweiser`-detached-DOM im Trial-Click
 - fuer `tel:`/`mailto:` ausdruecklich nur heuristische Reachability, kein
   echter Dialer-Nachweis
+- spaeterer Re-Run auf aktuellem `main`:
+  `191` Ziele geprueft, `0` Failures
 
 ### 1.6 Z-Index-Inventar
 
@@ -284,8 +310,11 @@ Befund:
 
 1. Direktseiten `/materialien` und `/soforthilfe` semantisch und navigativ
    angleichen
+   Status nach Audit: in PR `#185` umgesetzt
 2. Sticky-Header/FAB-Overlap manuell visuell bestaetigen und dann gezielt
-   entschärfen
+   entschaerfen
+   Status nach Audit: mobiler Footer/FAB-Konflikt in PR `#186` entschaerft,
+   verbleibender Rest weiter visuell zu bestaetigen
 
 ### Akzeptiert
 
@@ -310,6 +339,10 @@ Umgesetzt:
    [Notfallkarte.tsx](/tmp/borderline-a11y-interaktion.F2Sz3e/client/src/pages/Notfallkarte.tsx:463)
    und
    [Notfallkarte.tsx](/tmp/borderline-a11y-interaktion.F2Sz3e/client/src/pages/Notfallkarte.tsx:493)
+4. Nachgelagert in PR `#185`: Landmark-/Footer-Paritaet auf den statischen
+   Direktseiten erhoeht
+5. Nachgelagert in PR `#186`: Footer-Linkzeile auf Mobilgeraeten vom
+   schwebenden Soforthilfe-FAB freigehalten
 
 ## Phase 4 - Verifikation
 
@@ -332,13 +365,18 @@ Erfolgreich ausgefuehrt:
 - direkter Browser-Check:
   - Footer-Link auf `/` jetzt weisslich statt braun
   - Hero-CTA auf `/` jetzt weiss statt braun
+- Nachpflege-Re-Run auf aktuellem `main`:
+  - `interaction-overlap.json`: `26` heuristische Funde, davon nur noch `1`
+    mit `blockedBy: "Soforthilfe"` statt `3`
+  - `click-reachability.json`: `191` Ziele, `0` Failures
 
 ### Offene Restpunkte
 
-1. reduzierte Landmark-/Navigations-Paritaet der Direktseiten bleibt offen
-2. Overlap-Sweep bleibt auf `25` heuristischen Funden
-3. die zwei Click-Reachability-Failures bleiben instabile detached-DOM-
-   Artefakte und sind nicht als stabiler Nutzerfehler bestaetigt
+1. Overlap-Sweep produziert weiter heuristische Sticky-Header-Funde an
+   Scroll-Kanten
+2. ein einzelner Restfund mit `blockedBy: "Soforthilfe"` ist nach dem
+   Nachpflege-Re-Run kein mobiler Footer-Fall mehr, sondern ein
+   Top-Edge-/Header-Kontext auf Desktop
 
 ## Phase-4-Fazit
 
@@ -350,5 +388,8 @@ behoben:
 - unbeschriftete Felder auf `/notfallkarte`
 
 Der verbleibende Rest ist aktuell eher Follow-up als Release-Blocker.
-Darum lautet die Schlussbewertung fuer diesen Branch: **B / weitgehend
-release-tauglich, aber nicht komplett auspoliert**.
+Nach den spaeter gemergten Mini-PRs `#185` und `#186` ist der Rest nun im
+Wesentlichen heuristisches Sticky-Header-Rauschen ohne
+Click-Reachability-Failures.
+Darum lautet die Schlussbewertung fuer diesen Branch weiterhin konservativ:
+**B / release-tauglich mit kleinem Rest an Scrollkanten-Heuristik**.

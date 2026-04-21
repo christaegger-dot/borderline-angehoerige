@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-21T09:57:30.471Z",
+  "generatedAt": "2026-04-21T16:19:09.971Z",
   "findings": [
     {
       "route": "/",
@@ -96,13 +96,13 @@
     {
       "route": "/",
       "viewport": "mobile",
-      "key": "a::/faq::::Häufige Fragen (FAQ)::40",
-      "index": 40,
+      "key": "a::/buchempfehlungen::::Buchempfehlungen::42",
+      "index": 42,
       "element": {
         "tag": "a",
         "id": null,
         "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
-        "text": "Häufige Fragen (FAQ)"
+        "text": "Buchempfehlungen"
       },
       "blockedBy": {
         "tag": "div",
@@ -111,33 +111,33 @@
         "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
-        "x": 87.4,
-        "y": 34.7
+        "x": 80.4,
+        "y": 10.7
       },
-      "scrollY": 4423
+      "scrollY": 4519
     },
     {
       "route": "/",
       "viewport": "mobile",
-      "key": "a::/datenschutz::::Datenschutz::50",
-      "index": 50,
+      "key": "a::/quellen::::Quellen & Literatur::43",
+      "index": 43,
       "element": {
         "tag": "a",
         "id": null,
-        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]",
-        "text": "Datenschutz"
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Quellen & Literatur"
       },
       "blockedBy": {
-        "tag": "a",
+        "tag": "div",
         "id": null,
-        "className": "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-5",
-        "text": "Soforthilfe"
+        "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
+        "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
-        "x": 306,
-        "y": 710.2
+        "x": 77.2,
+        "y": 46.7
       },
-      "scrollY": 4423
+      "scrollY": 4519
     },
     {
       "route": "/",
@@ -255,6 +255,29 @@
       "scrollY": 2571
     },
     {
+      "route": "/",
+      "viewport": "wide",
+      "key": "a::/materialien::::Alle Materialien entdecken::27",
+      "index": 27,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "inline-flex items-center gap-2.5 text-sage-dark hover:text-sage-darker font-medium text-sm group transition-colors",
+        "text": "Alle Materialien entdecken"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
+        "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
+      },
+      "center": {
+        "x": 960,
+        "y": 77.2
+      },
+      "scrollY": 2391
+    },
+    {
       "route": "/notfallkarte",
       "viewport": "mobile",
       "key": "a::/kommunizieren::::Kommunizieren::39",
@@ -303,13 +326,13 @@
     {
       "route": "/notfallkarte",
       "viewport": "mobile",
-      "key": "a::/faq::::Häufige Fragen (FAQ)::47",
-      "index": 47,
+      "key": "a::/buchempfehlungen::::Buchempfehlungen::49",
+      "index": 49,
       "element": {
         "tag": "a",
         "id": null,
         "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
-        "text": "Häufige Fragen (FAQ)"
+        "text": "Buchempfehlungen"
       },
       "blockedBy": {
         "tag": "div",
@@ -318,33 +341,33 @@
         "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
-        "x": 87.4,
-        "y": 34.5
+        "x": 80.4,
+        "y": 10.5
       },
-      "scrollY": 3993
+      "scrollY": 4089
     },
     {
       "route": "/notfallkarte",
       "viewport": "mobile",
-      "key": "a::/datenschutz::::Datenschutz::57",
-      "index": 57,
+      "key": "a::/quellen::::Quellen & Literatur::50",
+      "index": 50,
       "element": {
         "tag": "a",
         "id": null,
-        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]",
-        "text": "Datenschutz"
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Quellen & Literatur"
       },
       "blockedBy": {
-        "tag": "a",
+        "tag": "div",
         "id": null,
-        "className": "inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-5",
-        "text": "Soforthilfe"
+        "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
+        "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
-        "x": 306,
-        "y": 710
+        "x": 77.2,
+        "y": 46.5
       },
-      "scrollY": 3993
+      "scrollY": 4089
     },
     {
       "route": "/notfallkarte",
@@ -365,7 +388,7 @@
       },
       "center": {
         "x": 384,
-        "y": 28
+        "y": 40
       },
       "scrollY": 768
     },
@@ -388,7 +411,7 @@
       },
       "center": {
         "x": 384,
-        "y": 2
+        "y": 14
       },
       "scrollY": 2304
     },
@@ -413,7 +436,7 @@
         "x": 196,
         "y": 32
       },
-      "scrollY": 2399
+      "scrollY": 2411
     },
     {
       "route": "/notfallkarte",
@@ -427,16 +450,16 @@
         "text": "Verstehen"
       },
       "blockedBy": {
-        "tag": "div",
+        "tag": "header",
         "id": null,
-        "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
+        "className": "sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50",
         "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
         "x": 433.5,
         "y": 64
       },
-      "scrollY": 2399
+      "scrollY": 2411
     },
     {
       "route": "/notfallkarte",
@@ -450,14 +473,14 @@
         "text": "PolizeiBei Gewalt oder wenn Sie sich bedroht fühlen117"
       },
       "blockedBy": {
-        "tag": "nav",
+        "tag": "div",
         "id": null,
-        "className": "hidden lg:flex items-center bg-muted/50 rounded-full px-1.5 py-1 gap-0.5 shrink-0",
-        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+        "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
+        "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
         "x": 640,
-        "y": 58.5
+        "y": 46.5
       },
       "scrollY": 675
     },
@@ -473,14 +496,14 @@
         "text": "Dargebotene Hand (24/7)Anonymes Gesprächs- und Krisenangebot, vertraulich. Es ko"
       },
       "blockedBy": {
-        "tag": "nav",
+        "tag": "div",
         "id": null,
-        "className": "hidden lg:flex items-center bg-muted/50 rounded-full px-1.5 py-1 gap-0.5 shrink-0",
-        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+        "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
+        "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
         "x": 640,
-        "y": 24
+        "y": 12
       },
       "scrollY": 1350
     },
@@ -496,27 +519,27 @@
         "text": ""
       },
       "blockedBy": {
-        "tag": "nav",
+        "tag": "div",
         "id": null,
-        "className": "hidden lg:flex items-center bg-muted/50 rounded-full px-1.5 py-1 gap-0.5 shrink-0",
-        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+        "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
+        "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
         "x": 640,
-        "y": 22.8
+        "y": 10.8
       },
       "scrollY": 2025
     },
     {
       "route": "/notfallkarte",
       "viewport": "desktop",
-      "key": "button::::::Notfallkarte drucken / als PDF speichern::35",
-      "index": 35,
+      "key": "a::/unterstuetzen/uebersicht::::Unterstützen::38",
+      "index": 38,
       "element": {
-        "tag": "button",
+        "tag": "a",
         "id": null,
-        "className": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-non",
-        "text": "Notfallkarte drucken / als PDF speichern"
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Unterstützen"
       },
       "blockedBy": {
         "tag": "div",
@@ -525,10 +548,33 @@
         "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
       },
       "center": {
-        "x": 640,
-        "y": 79
+        "x": 706.7,
+        "y": 8
       },
-      "scrollY": 2227
+      "scrollY": 2479
+    },
+    {
+      "route": "/notfallkarte",
+      "viewport": "desktop",
+      "key": "a::/kommunizieren::::Kommunizieren::39",
+      "index": 39,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Kommunizieren"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
+        "text": "Borderline · Hilfe für AngehörigeVerstehenUnterstützenKommunizierenGrenzenSelbst"
+      },
+      "center": {
+        "x": 715.2,
+        "y": 44
+      },
+      "scrollY": 2479
     },
     {
       "route": "/notfallkarte",
@@ -542,29 +588,6 @@
         "text": "Tox Info SuisseBei Vergiftungsverdacht oder Medikamentenüberdosierung145"
       },
       "blockedBy": {
-        "tag": "a",
-        "id": null,
-        "className": "px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap text-mute",
-        "text": "Kommunizieren"
-      },
-      "center": {
-        "x": 960,
-        "y": 48
-      },
-      "scrollY": 810
-    },
-    {
-      "route": "/notfallkarte",
-      "viewport": "wide",
-      "key": "textarea::::::::34",
-      "index": 34,
-      "element": {
-        "tag": "textarea",
-        "id": null,
-        "className": "w-full rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-n",
-        "text": ""
-      },
-      "blockedBy": {
         "tag": "div",
         "id": null,
         "className": "flex items-center justify-between gap-2 lg:gap-4 h-16 md:h-20",
@@ -572,12 +595,12 @@
       },
       "center": {
         "x": 960,
-        "y": 0.8
+        "y": 36
       },
-      "scrollY": 2047
+      "scrollY": 810
     }
   ],
   "summary": {
-    "totalFindings": 25
+    "totalFindings": 26
   }
 }

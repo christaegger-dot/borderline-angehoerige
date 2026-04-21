@@ -1,4 +1,4 @@
-import DeferredToaster from "@/app/DeferredToaster";
+import { Toaster } from "@/components/ui/sonner";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/contexts/ThemeContext";
@@ -11,7 +11,7 @@ export default function AppProviders({
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
-        <DeferredToaster />
+        <Toaster />
         <ScrollToTop />
         {children}
       </ThemeProvider>

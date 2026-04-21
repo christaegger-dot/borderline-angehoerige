@@ -203,13 +203,6 @@ export default defineConfig(({ command }) => {
     build: {
       outDir: path.resolve(import.meta.dirname, "dist/public"),
       emptyOutDir: true,
-      modulePreload: {
-        resolveDependencies(_filename, deps, context) {
-          if (context.hostType !== "html") return deps;
-
-          return deps.filter(dep => !dep.includes("vendor-sonner"));
-        },
-      },
       rollupOptions: {
         output: {
           manualChunks: {
@@ -237,13 +230,13 @@ export default defineConfig(({ command }) => {
               "@radix-ui/react-progress",
               "@radix-ui/react-checkbox",
             ],
-            "vendor-sonner": ["sonner"],
             // Utility libraries
             "vendor-utils": [
               "clsx",
               "tailwind-merge",
               "class-variance-authority",
               "wouter",
+              "sonner",
               "zod",
             ],
             // Icons – large but tree-shakeable

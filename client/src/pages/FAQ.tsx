@@ -31,9 +31,22 @@ interface FAQItem {
 interface FAQCategory {
   title: string;
   icon: React.ReactNode;
-  color: string;
+  tone: keyof typeof FAQ_CATEGORY_STYLES;
   questions: FAQItem[];
 }
+
+const FAQ_CATEGORY_STYLES = {
+  slate: {
+    navIconClass: "text-slate-mid",
+    iconTileClass: "bg-slate-mid text-white",
+    chipClass: "bg-slate-light text-slate-mid hover:bg-slate-lighter",
+  },
+  sage: {
+    navIconClass: "text-sage-mid",
+    iconTileClass: "bg-sage-mid text-white",
+    chipClass: "bg-sage-wash text-sage-mid hover:bg-sage-light",
+  },
+} as const;
 
 function slugifyCategory(title: string) {
   return title
@@ -51,7 +64,7 @@ export default function FAQ() {
     {
       title: "Diagnose & Krankheitsverständnis",
       icon: <HelpCircle className="w-5 h-5" />,
-      color: "var(--color-slate-mid)",
+      tone: "slate",
       questions: [
         {
           question: "Soll ich die Diagnose ansprechen?",
@@ -86,7 +99,7 @@ export default function FAQ() {
     {
       title: "Kommunikation & Konflikte",
       icon: <MessageCircle className="w-5 h-5" />,
-      color: "var(--color-sage-mid)",
+      tone: "sage",
       questions: [
         {
           question: "Wie reagiere ich auf bedrohlich wirkende Aussagen?",
@@ -122,7 +135,7 @@ export default function FAQ() {
     {
       title: "Grenzen & Selbstschutz",
       icon: <Shield className="w-5 h-5" />,
-      color: "var(--color-sage-mid)",
+      tone: "sage",
       questions: [
         {
           question: "Wann ist eine Einweisung nötig?",
@@ -159,7 +172,7 @@ export default function FAQ() {
     {
       title: "Therapie & Behandlung",
       icon: <Heart className="w-5 h-5" />,
-      color: "var(--color-slate-mid)",
+      tone: "slate",
       questions: [
         {
           question: "Mein Angehöriger will keine Therapie – was tun?",
@@ -199,7 +212,7 @@ export default function FAQ() {
     {
       title: "Alltag & Beziehung",
       icon: <Users className="w-5 h-5" />,
-      color: "var(--color-sage-mid)",
+      tone: "sage",
       questions: [
         {
           question: "Wie erkläre ich die Situation Freunden/Familie?",
@@ -297,86 +310,86 @@ export default function FAQ() {
                 Direkt zum passenden Themenbereich:
               </p>
               <div className="flex flex-wrap gap-2">
-                {faqCategories.map(category => (
-                  <a
-                    key={category.title}
-                    href={`#${slugifyCategory(category.title)}`}
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground hover:border-foreground/20"
-                  >
-                    <span
-                      className="flex-shrink-0"
-                      style={{ color: category.color }}
+                {faqCategories.map(category => {
+                  const tone = FAQ_CATEGORY_STYLES[category.tone];
+
+                  return (
+                    <a
+                      key={category.title}
+                      href={`#${slugifyCategory(category.title)}`}
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground hover:border-foreground/20"
                     >
-                      {category.icon}
-                    </span>
-                    {category.title}
-                  </a>
-                ))}
+                      <span className={`flex-shrink-0 ${tone.navIconClass}`}>
+                        {category.icon}
+                      </span>
+                      {category.title}
+                    </a>
+                  );
+                })}
               </div>
             </nav>
 
-            {faqCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={category.title}
-                id={slugifyCategory(category.title)}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: categoryIndex * 0.1, ease: "easeOut" }}
-                className="mb-8 scroll-mt-28"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center text-white"
-                    style={{ backgroundColor: category.color }}
-                  >
-                    {category.icon}
-                  </div>
-                  <h2 className="text-xl md:text-2xl font-normal text-foreground">
-                    {category.title}
-                  </h2>
-                </div>
+            {faqCategories.map((category, categoryIndex) => {
+              const tone = FAQ_CATEGORY_STYLES[category.tone];
 
-                <Accordion type="single" collapsible className="space-y-3">
-                  {category.questions.map((faq, faqIndex) => (
-                    <AccordionItem
-                      key={faqIndex}
-                      value={`${categoryIndex}-${faqIndex}`}
-                      className="border rounded-lg bg-card hover:bg-accent/5 transition-colors"
+              return (
+                <motion.div
+                  key={category.title}
+                  id={slugifyCategory(category.title)}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: categoryIndex * 0.1, ease: "easeOut" }}
+                  className="mb-8 scroll-mt-28"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center ${tone.iconTileClass}`}
                     >
-                      <AccordionTrigger className="px-5 py-4 hover:no-underline text-left">
-                        <span className="font-medium text-foreground pr-4">
-                          {faq.question}
-                        </span>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-5 pb-5">
-                        <p className="text-muted-foreground leading-relaxed mb-4">
-                          {faq.answer}
-                        </p>
-                        {faq.links && faq.links.length > 0 && (
-                          <div className="flex flex-wrap gap-2">
-                            {faq.links.map((link, linkIndex) => (
-                              <Link key={linkIndex} href={link.url}>
-                                <span
-                                  className="inline-flex items-center gap-1 text-sm font-medium px-3 py-1.5 rounded-full transition-colors"
-                                  style={{
-                                    backgroundColor: `${category.color}15`,
-                                    color: category.color,
-                                  }}
-                                >
-                                  {link.text}
-                                  <ChevronRight className="w-3 h-3" />
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </motion.div>
-            ))}
+                      {category.icon}
+                    </div>
+                    <h2 className="text-xl md:text-2xl font-normal text-foreground">
+                      {category.title}
+                    </h2>
+                  </div>
+
+                  <Accordion type="single" collapsible className="space-y-3">
+                    {category.questions.map((faq, faqIndex) => (
+                      <AccordionItem
+                        key={faqIndex}
+                        value={`${categoryIndex}-${faqIndex}`}
+                        className="border rounded-lg bg-card hover:bg-accent/5 transition-colors"
+                      >
+                        <AccordionTrigger className="px-5 py-4 hover:no-underline text-left">
+                          <span className="font-medium text-foreground pr-4">
+                            {faq.question}
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="px-5 pb-5">
+                          <p className="text-muted-foreground leading-relaxed mb-4">
+                            {faq.answer}
+                          </p>
+                          {faq.links && faq.links.length > 0 && (
+                            <div className="flex flex-wrap gap-2">
+                              {faq.links.map((link, linkIndex) => (
+                                <Link key={linkIndex} href={link.url}>
+                                  <span
+                                    className={`inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${tone.chipClass}`}
+                                  >
+                                    {link.text}
+                                    <ChevronRight className="w-3 h-3" />
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </motion.div>
+              );
+            })}
 
             <EvidenceNote
               title="Quellen zu Prognose- und Therapieaussagen"

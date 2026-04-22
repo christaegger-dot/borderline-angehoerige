@@ -222,24 +222,32 @@ const categoryInfo = {
   therapie: {
     label: "Therapie & Behandlung",
     icon: Brain,
-    color: "var(--color-slate-mid)",
+    activeClass: "bg-slate-mid text-white",
+    stripClass: "bg-slate-mid",
+    iconClass: "text-slate-mid",
   },
   kommunikation: {
     label: "Kommunikation",
     icon: MessageCircle,
-    color: "var(--color-sage-dark)",
+    activeClass: "bg-sage-dark text-white",
+    stripClass: "bg-sage-dark",
+    iconClass: "text-sage-dark",
   },
   symptome: {
     label: "Symptome & Muster",
     icon: AlertTriangle,
-    color: "var(--color-sage-dark)",
+    activeClass: "bg-sage-dark text-white",
+    stripClass: "bg-sage-dark",
+    iconClass: "text-sage-dark",
   },
   selbsthilfe: {
     label: "Selbsthilfe & Angehörige",
     icon: Heart,
-    color: "var(--color-sage-mid)",
+    activeClass: "bg-sage-mid text-white",
+    stripClass: "bg-sage-mid",
+    iconClass: "text-sage-mid",
   },
-};
+} as const;
 
 export default function Glossar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -350,14 +358,9 @@ export default function Glossar() {
                   }
                   aria-label={info.label}
                   aria-pressed={selectedCategory === key}
-                  style={
-                    selectedCategory === key
-                      ? { backgroundColor: info.color }
-                      : undefined
-                  }
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
                     selectedCategory === key
-                      ? "text-white"
+                      ? info.activeClass
                       : "bg-muted/50 text-muted-foreground hover:bg-muted"
                   }`}
                 >
@@ -397,8 +400,7 @@ export default function Glossar() {
                         <div className="flex flex-col md:flex-row">
                           {/* Category indicator */}
                           <div
-                            className="w-full md:w-2 h-2 md:h-auto"
-                            style={{ backgroundColor: category.color }}
+                            className={`h-2 w-full md:h-auto md:w-2 ${category.stripClass}`}
                           />
 
                           <div className="p-6 flex-1">
@@ -415,8 +417,7 @@ export default function Glossar() {
                                 </h2>
                                 <div className="flex items-center gap-2 mt-1">
                                   <category.icon
-                                    className="w-4 h-4"
-                                    style={{ color: category.color }}
+                                    className={`w-4 h-4 ${category.iconClass}`}
                                   />
                                   <span className="text-sm text-muted-foreground">
                                     {category.label}

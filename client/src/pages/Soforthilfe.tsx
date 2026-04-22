@@ -57,19 +57,19 @@ function StickyAmpelLeiste() {
       id: "block-rot",
       label: "Lebensgefahr",
       sub: "144 · 117 · 112",
-      bg: "var(--color-sos-rot)",
+      buttonClass: "bg-sos-rot",
     },
     {
       id: "block-orange",
       label: "Psychiatr. Krise",
       sub: "PUK 24/7",
-      bg: "var(--color-sos-orange-text)",
+      buttonClass: "bg-sos-orange-text",
     },
     {
       id: "block-gruen",
       label: "Jemand zum Reden",
       sub: "143",
-      bg: "var(--color-sos-gruen-text)",
+      buttonClass: "bg-sos-gruen-text",
     },
   ] as const;
 
@@ -86,8 +86,7 @@ function StickyAmpelLeiste() {
                 type="button"
                 onClick={() => scrollTo(item.id)}
                 aria-label={`Zu Abschnitt: ${item.label}`}
-                className="flex-1 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-2 px-1.5 sm:px-3 py-2 sm:py-2.5 rounded-lg text-white font-medium text-[10px] sm:text-sm transition-all hover:brightness-90 active:scale-[0.97] shadow-sm min-h-[44px]"
-                style={{ backgroundColor: item.bg }}
+                className={`flex-1 flex min-h-[44px] flex-col items-center justify-center gap-0.5 rounded-lg px-1.5 py-2 text-[10px] font-medium text-white shadow-sm transition-all hover:brightness-90 active:scale-[0.97] sm:flex-row sm:gap-2 sm:px-3 sm:py-2.5 sm:text-sm ${item.buttonClass}`}
               >
                 <span className="font-semibold leading-tight text-center">
                   {item.label}

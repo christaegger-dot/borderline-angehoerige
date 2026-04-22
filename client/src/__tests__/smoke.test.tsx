@@ -146,6 +146,44 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/selbstfuersorge");
   });
 
+  it("HandoutTextPage: rendert Schuld-und-Verantwortung-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "schuld-verantwortung" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Schuld, Verantwortung und was dazwischen liegt/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Schuldgefühle gehören zu den häufigsten Belastungen/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
+    ).toHaveAttribute("href", "/selbstfuersorge");
+  });
+
+  it("HandoutTextPage: rendert Radikale-Akzeptanz-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "radikale-akzeptanz" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Radikale Akzeptanz gibt Ihnen Ihre Energie zurück/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
+    ).toHaveAttribute("href", "/selbstfuersorge");
+  });
+
   it("HandoutTextPage: rendert Eisberg-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");

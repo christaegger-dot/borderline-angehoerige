@@ -641,6 +641,40 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Schuld, Verantwortung und was dazwischen liegt",
+    description:
+      "Lesbare Web-Version zu Schuldgefühlen, Verantwortung, Entlastung und typischen Selbstvorwürfen von Angehörigen",
+    keywords: [
+      "textversion",
+      "schuld",
+      "verantwortung",
+      "schuldgefühle",
+      "selbstvorwurf",
+      "entlastung",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/schuld-verantwortung",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Radikale Akzeptanz",
+    description:
+      "Lesbare Web-Version zu radikaler Akzeptanz, innerem Widerstand, 4 Schritten und dem Fokus auf das Beeinflussbare",
+    keywords: [
+      "textversion",
+      "radikale akzeptanz",
+      "akzeptanz",
+      "loslassen",
+      "dbt",
+      "selbstfürsorge",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/radikale-akzeptanz",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Spickzettel Grenzen",
     description:
       "Lesbare Web-Version mit DEAR-Technik, Beispielsätzen für Grenzen und L.M.K.-Exit-Strategie",

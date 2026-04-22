@@ -17,7 +17,7 @@ export const unterstuetzenItems = [
     category: "grundlagen",
   },
   {
-    id: "rolle-klaeren-unterstuetzen",
+    id: "rolle-klaeren",
     title: "Ihre Rolle klären",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WUiQpUWjKIjpSRDC.webp",
     pdfUrl:

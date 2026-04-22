@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  getHandoutTextVersion,
+  getHandoutTextVersionMeta,
   getHandoutTextVersionBySource,
   getHandoutTextVersionHrefBySource,
 } from "@/content/handoutTextVersions";
@@ -129,120 +129,124 @@ describe("handout text versions", () => {
       item => item.id === "gehirn"
     )?.pdfUrl;
 
-    expect(getHandoutTextVersion("notfallplan-krise")?.path).toBe(
+    expect(getHandoutTextVersionMeta("notfallplan-krise")?.path).toBe(
       "/materialien/text/notfallplan-krise"
     );
-    expect(getHandoutTextVersion("leuchtturm")?.path).toBe(
+    expect(getHandoutTextVersionMeta("leuchtturm")?.path).toBe(
       "/materialien/text/leuchtturm"
     );
-    expect(getHandoutTextVersion("eisberg")?.path).toBe(
+    expect(getHandoutTextVersionMeta("eisberg")?.path).toBe(
       "/materialien/text/eisberg"
     );
-    expect(getHandoutTextVersion("spaltung")?.path).toBe(
+    expect(getHandoutTextVersionMeta("spaltung")?.path).toBe(
       "/materialien/text/spaltung"
     );
-    expect(getHandoutTextVersion("alarm-modus")?.path).toBe(
+    expect(getHandoutTextVersionMeta("alarm-modus")?.path).toBe(
       "/materialien/text/alarm-modus"
     );
-    expect(getHandoutTextVersion("rolle-klaeren")?.path).toBe(
+    expect(getHandoutTextVersionMeta("rolle-klaeren")?.path).toBe(
       "/materialien/text/rolle-klaeren"
     );
-    expect(getHandoutTextVersion("im-krisenmodus")?.path).toBe(
+    expect(getHandoutTextVersionMeta("im-krisenmodus")?.path).toBe(
       "/materialien/text/im-krisenmodus"
     );
-    expect(getHandoutTextVersion("drei-saeulen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("drei-saeulen")?.path).toBe(
       "/materialien/text/drei-saeulen"
     );
-    expect(getHandoutTextVersion("konsistenz-prinzip")?.path).toBe(
+    expect(getHandoutTextVersionMeta("konsistenz-prinzip")?.path).toBe(
       "/materialien/text/konsistenz-prinzip"
     );
-    expect(getHandoutTextVersion("beziehungs-achtsamkeit")?.path).toBe(
+    expect(getHandoutTextVersionMeta("beziehungs-achtsamkeit")?.path).toBe(
       "/materialien/text/beziehungs-achtsamkeit"
     );
-    expect(getHandoutTextVersion("6-leitlinien")?.path).toBe(
+    expect(getHandoutTextVersionMeta("6-leitlinien")?.path).toBe(
       "/materialien/text/6-leitlinien"
     );
-    expect(getHandoutTextVersion("4-alltags-tipps")?.path).toBe(
+    expect(getHandoutTextVersionMeta("4-alltags-tipps")?.path).toBe(
       "/materialien/text/4-alltags-tipps"
     );
-    expect(getHandoutTextVersion("krisenkommunikation")?.path).toBe(
+    expect(getHandoutTextVersionMeta("krisenkommunikation")?.path).toBe(
       "/materialien/text/krisenkommunikation"
     );
-    expect(getHandoutTextVersion("grenzen-spickzettel")?.path).toBe(
+    expect(getHandoutTextVersionMeta("grenzen-spickzettel")?.path).toBe(
       "/materialien/text/grenzen-spickzettel"
     );
-    expect(getHandoutTextVersion("warnsignale")?.path).toBe(
+    expect(getHandoutTextVersionMeta("warnsignale")?.path).toBe(
       "/materialien/text/warnsignale"
     );
-    expect(getHandoutTextVersion("sauerstoffmaske")?.path).toBe(
+    expect(getHandoutTextVersionMeta("sauerstoffmaske")?.path).toBe(
       "/materialien/text/sauerstoffmaske"
     );
-    expect(getHandoutTextVersion("stopp-technik")?.path).toBe(
+    expect(getHandoutTextVersionMeta("stopp-technik")?.path).toBe(
       "/materialien/text/stopp-technik"
     );
-    expect(getHandoutTextVersion("energie-konto")?.path).toBe(
+    expect(getHandoutTextVersionMeta("energie-konto")?.path).toBe(
       "/materialien/text/energie-konto"
     );
-    expect(getHandoutTextVersion("erlaubnis-karte")?.path).toBe(
+    expect(getHandoutTextVersionMeta("erlaubnis-karte")?.path).toBe(
       "/materialien/text/erlaubnis-karte"
     );
-    expect(getHandoutTextVersion("schuld-verantwortung")?.path).toBe(
+    expect(getHandoutTextVersionMeta("schuld-verantwortung")?.path).toBe(
       "/materialien/text/schuld-verantwortung"
     );
-    expect(getHandoutTextVersion("radikale-akzeptanz")?.path).toBe(
+    expect(getHandoutTextVersionMeta("radikale-akzeptanz")?.path).toBe(
       "/materialien/text/radikale-akzeptanz"
     );
-    expect(getHandoutTextVersion("wenn-worte-treffen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("wenn-worte-treffen")?.path).toBe(
       "/materialien/text/wenn-worte-treffen"
     );
-    expect(getHandoutTextVersion("gespraeche-kippen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("gespraeche-kippen")?.path).toBe(
       "/materialien/text/gespraeche-kippen"
     );
-    expect(getHandoutTextVersion("grenzen-ohne-eskalation")?.path).toBe(
+    expect(getHandoutTextVersionMeta("grenzen-ohne-eskalation")?.path).toBe(
       "/materialien/text/grenzen-ohne-eskalation"
     );
-    expect(getHandoutTextVersion("pause-statt-streit")?.path).toBe(
+    expect(getHandoutTextVersionMeta("pause-statt-streit")?.path).toBe(
       "/materialien/text/pause-statt-streit"
     );
-    expect(getHandoutTextVersion("zuhoeren-ohne-zustimmen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("zuhoeren-ohne-zustimmen")?.path).toBe(
       "/materialien/text/zuhoeren-ohne-zustimmen"
     );
-    expect(getHandoutTextVersion("beispiel-dialog")?.path).toBe(
+    expect(getHandoutTextVersionMeta("beispiel-dialog")?.path).toBe(
       "/materialien/text/beispiel-dialog"
     );
-    expect(getHandoutTextVersion("dear")?.path).toBe("/materialien/text/dear");
-    expect(getHandoutTextVersion("spiegeln-statt-aufsaugen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("dear")?.path).toBe(
+      "/materialien/text/dear"
+    );
+    expect(getHandoutTextVersionMeta("spiegeln-statt-aufsaugen")?.path).toBe(
       "/materialien/text/spiegeln-statt-aufsaugen"
     );
-    expect(getHandoutTextVersion("4-arten-von-grenzen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("4-arten-von-grenzen")?.path).toBe(
       "/materialien/text/4-arten-von-grenzen"
     );
-    expect(getHandoutTextVersion("grenzen-erkennen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("grenzen-erkennen")?.path).toBe(
       "/materialien/text/grenzen-erkennen"
     );
-    expect(getHandoutTextVersion("lmk")?.path).toBe("/materialien/text/lmk");
-    expect(getHandoutTextVersion("genesung-zahlen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("lmk")?.path).toBe(
+      "/materialien/text/lmk"
+    );
+    expect(getHandoutTextVersionMeta("genesung-zahlen")?.path).toBe(
       "/materialien/text/genesung-zahlen"
     );
-    expect(getHandoutTextVersion("fortschritt-paradox")?.path).toBe(
+    expect(getHandoutTextVersionMeta("fortschritt-paradox")?.path).toBe(
       "/materialien/text/fortschritt-paradox"
     );
-    expect(getHandoutTextVersion("remission-heilung")?.path).toBe(
+    expect(getHandoutTextVersionMeta("remission-heilung")?.path).toBe(
       "/materialien/text/remission-heilung"
     );
-    expect(getHandoutTextVersion("5-faktoren-genesung")?.path).toBe(
+    expect(getHandoutTextVersionMeta("5-faktoren-genesung")?.path).toBe(
       "/materialien/text/5-faktoren-genesung"
     );
-    expect(getHandoutTextVersion("rolle-genesungsprozess")?.path).toBe(
+    expect(getHandoutTextVersionMeta("rolle-genesungsprozess")?.path).toBe(
       "/materialien/text/rolle-genesungsprozess"
     );
-    expect(getHandoutTextVersion("4-phasen")?.path).toBe(
+    expect(getHandoutTextVersionMeta("4-phasen")?.path).toBe(
       "/materialien/text/4-phasen"
     );
-    expect(getHandoutTextVersion("gehirn")?.path).toBe(
+    expect(getHandoutTextVersionMeta("gehirn")?.path).toBe(
       "/materialien/text/gehirn"
     );
-    expect(getHandoutTextVersion("kinder")?.path).toBe(
+    expect(getHandoutTextVersionMeta("kinder")?.path).toBe(
       "/materialien/text/kinder"
     );
     expect(getHandoutTextVersionHrefBySource(leuchtturmPdf)).toBe(

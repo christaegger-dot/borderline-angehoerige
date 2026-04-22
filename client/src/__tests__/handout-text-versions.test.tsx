@@ -4,6 +4,7 @@ import {
   getHandoutTextVersionBySource,
   getHandoutTextVersionHrefBySource,
 } from "@/content/handoutTextVersions";
+import { genesungItems } from "@/content/genesung";
 import { materials } from "@/content/materialien";
 import { selbstfuersorgeInfografiken } from "@/content/selbstfuersorge";
 import { unterstuetzenItems } from "@/content/unterstuetzen";
@@ -60,6 +61,18 @@ describe("handout text versions", () => {
     const genesungZahlenPdf = materials.find(
       item => item.id === "genesung-zahlen"
     )?.downloadUrl;
+    const fortschrittParadoxPdf = genesungItems.find(
+      item => item.id === "fortschritt-paradox"
+    )?.pdf;
+    const remissionHeilungPdf = genesungItems.find(
+      item => item.id === "remission-heilung"
+    )?.pdf;
+    const genesungFaktorenPdf = genesungItems.find(
+      item => item.id === "5-faktoren-genesung"
+    )?.pdf;
+    const rolleGenesungsprozessPdf = genesungItems.find(
+      item => item.id === "rolle-genesungsprozess"
+    )?.pdf;
     const kinderPdf = materials.find(item => item.id === "kinder")?.downloadUrl;
     const notfallplanPdf = materials.find(
       item => item.id === "notfallplan-krise"
@@ -159,6 +172,18 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersion("genesung-zahlen")?.path).toBe(
       "/materialien/text/genesung-zahlen"
     );
+    expect(getHandoutTextVersion("fortschritt-paradox")?.path).toBe(
+      "/materialien/text/fortschritt-paradox"
+    );
+    expect(getHandoutTextVersion("remission-heilung")?.path).toBe(
+      "/materialien/text/remission-heilung"
+    );
+    expect(getHandoutTextVersion("5-faktoren-genesung")?.path).toBe(
+      "/materialien/text/5-faktoren-genesung"
+    );
+    expect(getHandoutTextVersion("rolle-genesungsprozess")?.path).toBe(
+      "/materialien/text/rolle-genesungsprozess"
+    );
     expect(getHandoutTextVersion("4-phasen")?.path).toBe(
       "/materialien/text/4-phasen"
     );
@@ -236,6 +261,18 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(genesungZahlenPdf)).toBe(
       "/materialien/text/genesung-zahlen"
+    );
+    expect(getHandoutTextVersionHrefBySource(fortschrittParadoxPdf)).toBe(
+      "/materialien/text/fortschritt-paradox"
+    );
+    expect(getHandoutTextVersionHrefBySource(remissionHeilungPdf)).toBe(
+      "/materialien/text/remission-heilung"
+    );
+    expect(getHandoutTextVersionHrefBySource(genesungFaktorenPdf)).toBe(
+      "/materialien/text/5-faktoren-genesung"
+    );
+    expect(getHandoutTextVersionHrefBySource(rolleGenesungsprozessPdf)).toBe(
+      "/materialien/text/rolle-genesungsprozess"
     );
     expect(getHandoutTextVersionHrefBySource(vierPhasenPdf)).toBe(
       "/materialien/text/4-phasen"

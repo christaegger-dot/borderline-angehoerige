@@ -1,13 +1,23 @@
 export type GenesungKategorie = "alle" | "verstehen" | "handeln";
 
+export interface GenesungItem {
+  id: string;
+  title: string;
+  desc: string;
+  img: string;
+  pdf: string;
+  category: Exclude<GenesungKategorie, "alle">;
+}
+
 export const genesungCategories = [
   { id: "alle", label: "Alle" },
   { id: "verstehen", label: "Verstehen" },
   { id: "handeln", label: "Handeln" },
 ] as const;
 
-export const genesungItems = [
+export const genesungItems: GenesungItem[] = [
   {
+    id: "genesung-zahlen",
     title: "Genesung in Zahlen",
     desc: "Orientierungs-Tracker mit Langzeitdaten",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tyFTHNjsUagqrXiS.webp",
@@ -15,6 +25,7 @@ export const genesungItems = [
     category: "verstehen",
   },
   {
+    id: "fortschritt-paradox",
     title: "Das Fortschritt-Paradox",
     desc: "Warum Rückfälle zum Weg gehören",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DPkqytVYFcreeBlC.webp",
@@ -22,6 +33,7 @@ export const genesungItems = [
     category: "verstehen",
   },
   {
+    id: "remission-heilung",
     title: "Remission vs. Heilung",
     desc: "Was Besserung wirklich bedeutet",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/HPRsNmCUFirjnraj.webp",
@@ -29,6 +41,7 @@ export const genesungItems = [
     category: "verstehen",
   },
   {
+    id: "5-faktoren-genesung",
     title: "5 Faktoren, die Genesung fördern",
     desc: "Säulen-Modell: Was positiv beeinflusst",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/mFhtxtPMBkCEVPII.webp",
@@ -36,10 +49,11 @@ export const genesungItems = [
     category: "handeln",
   },
   {
+    id: "rolle-genesungsprozess",
     title: "Ihre Rolle im Genesungsprozess",
     desc: "Was Sie tun können (und was nicht)",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GhgPDkJhqlqJkYzE.webp",
     pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/CZdiDaadpIWNOBFb.pdf",
     category: "handeln",
   },
-] as const;
+];

@@ -958,6 +958,74 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Das Fortschritt-Paradox",
+    description:
+      "Lesbare Web-Version dazu, warum Rückschläge zum Genesungsweg gehören und Fortschritt nicht linear verläuft",
+    keywords: [
+      "textversion",
+      "fortschritt paradox",
+      "rückschläge",
+      "genesung",
+      "nicht linear",
+      "rückfälle",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/fortschritt-paradox",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Remission vs. Heilung",
+    description:
+      "Lesbare Web-Version zur Unterscheidung von Remission, Heilung, realistischer Besserung und alltagsbezogener Stabilität",
+    keywords: [
+      "textversion",
+      "remission",
+      "heilung",
+      "genesung",
+      "stabilität",
+      "realistische erwartungen",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/remission-heilung",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: 5 Faktoren, die Genesung fördern",
+    description:
+      "Lesbare Web-Version zu Therapie, Medikation, sozialem Netz, Lebensqualität und Zeit als günstige Faktoren der Genesung",
+    keywords: [
+      "textversion",
+      "5 faktoren",
+      "genesung fördern",
+      "therapie",
+      "medikation",
+      "soziales netz",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/5-faktoren-genesung",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Ihre Rolle im Genesungsprozess",
+    description:
+      "Lesbare Web-Version zu hilfreichen Angehörigenbeiträgen, klaren Nicht-Aufgaben und realistischer Rollenklarheit",
+    keywords: [
+      "textversion",
+      "rolle im genesungsprozess",
+      "angehörige",
+      "rollenklarheit",
+      "nicht retten",
+      "stabilität",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/rolle-genesungsprozess",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Wenn Mama oder Papa grosse Gefühle hat",
     description:
       "Lesbare Web-Version zu altersgerechter Erklärung von Borderline, Entlastung von Kindern und Schutzfaktoren im Familiensystem",

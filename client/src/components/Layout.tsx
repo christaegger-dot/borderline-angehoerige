@@ -4,6 +4,7 @@ const Search = lazy(() => import("@/components/Search"));
 import { Button } from "@/components/ui/button";
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { BrandMark } from "@/components/layout/BrandMark";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
 import { ScrollToTopButton } from "@/components/layout/ScrollToTopButton";
 import { getMobileFloatingMode as _getMobileFloatingMode } from "@/domain/floating-ui";
@@ -22,8 +23,11 @@ export default function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
   const floatingMode = _getMobileFloatingMode(location);
-  const hasMobileSoforthilfeFab = location !== "/soforthilfe";
-  void floatingMode;
+  const isSoforthilfePage = location === "/soforthilfe";
+  const hasMobileSoforthilfeFab =
+    !isSoforthilfePage && floatingMode === "default";
+  const showInlineSoforthilfeLink =
+    !isSoforthilfePage && !hasMobileSoforthilfeFab;
 
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
@@ -59,6 +63,14 @@ export default function Layout({ children }: LayoutProps) {
           </span>
           <span className="hidden sm:inline">\u2022</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
+          {showInlineSoforthilfeLink && (
+            <Link
+              href="/soforthilfe"
+              className="sm:hidden inline-flex min-h-9 items-center rounded-full border border-alert/25 bg-alert/10 px-3 py-1 text-sm font-medium text-alert transition-colors hover:bg-alert/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-alert/40 focus-visible:ring-offset-2"
+            >
+              Zur Soforthilfe
+            </Link>
+          )}
         </div>
       </aside>
 
@@ -77,15 +89,7 @@ export default function Layout({ children }: LayoutProps) {
             {/* Brand + Absender */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <img
-                  src="/favicon-192.png"
-                  alt="Startseite"
-                  className="w-10 h-10 rounded-full"
-                  width={40}
-                  height={40}
-                  loading="lazy"
-                  decoding="async"
-                />
+                <BrandMark variant="dark" />
                 <span className="font-medium text-base text-white">
                   Borderline \u00b7 Hilfe für Angehörige
                 </span>
@@ -210,7 +214,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </footer>
 
-      {/* Mobile Soforthilfe-FAB: auf allen Seiten ausser /soforthilfe selbst */}
+      {/* Mobile Soforthilfe-FAB: nur auf kurzen Standardseiten, damit lange Inhalte frei bedienbar bleiben */}
       {hasMobileSoforthilfeFab && (
         <Button
           asChild

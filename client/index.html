@@ -58,7 +58,6 @@
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/fallback.css" />
     <style>
       #route-prerender {
         display: none;
@@ -103,10 +102,22 @@
         text-decoration: none;
       }
 
-      .route-prerender-brand img {
+      .route-prerender-mark {
         width: 2.5rem;
         height: 2.5rem;
-        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 18px 32px -24px rgba(15, 23, 42, 0.85);
+      }
+
+      .route-prerender-mark svg {
+        width: 1.15rem;
+        height: 1.15rem;
+        color: rgba(255, 255, 255, 0.92);
       }
 
       .route-prerender-body {
@@ -275,6 +286,17 @@
         border-color: #b5412f;
         color: #fff;
       }
+
+      .fallback-noscript {
+        padding: 2rem;
+        text-align: center;
+        font-family: system-ui, sans-serif;
+        color: #333;
+      }
+
+      .fallback-noscript a {
+        color: #7f4434;
+      }
     </style>
   </head>
 
@@ -284,7 +306,21 @@
       <div class="route-prerender-shell">
         <div class="route-prerender-topbar">
           <a class="route-prerender-brand" href="/">
-            <img src="/favicon-192.png" alt="" width="40" height="40" />
+            <span class="route-prerender-mark" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"
+                />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+            </span>
             <span>Borderline · Hilfe für Angehörige</span>
           </a>
         </div>

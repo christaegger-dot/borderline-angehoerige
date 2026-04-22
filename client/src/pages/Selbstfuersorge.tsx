@@ -22,7 +22,60 @@ import { SelbstfuersorgeExercisesSection } from "@/sections/SelbstfuersorgeExerc
 import { SelbstfuersorgeSignalsSection } from "@/sections/SelbstfuersorgeSignalsSection";
 import { SelbstfuersorgeRoleNotesSection } from "@/sections/SelbstfuersorgeRoleNotesSection";
 
+const selbstfuersorgeIntroCards = [
+  {
+    icon: Heart,
+    title: "Belastung ernst nehmen",
+    text: "Selbstfürsorge beginnt oft nicht mit mehr Disziplin, sondern mit ehrlicher Wahrnehmung von Erschöpfung und Druck.",
+    iconClass: "text-terracotta-mid",
+    shellClass: "bg-terracotta-wash border-terracotta-light/80",
+  },
+  {
+    icon: Sparkles,
+    title: "Früher gegensteuern",
+    text: "Warnsignale, kurze Pausen und kleine Regulationsschritte helfen oft mehr als spätes Durchhalten bis zur Überlastung.",
+    iconClass: "text-sage-mid",
+    shellClass: "bg-sage-wash border-sage-light/80",
+  },
+  {
+    icon: Users,
+    title: "Nicht allein tragen",
+    text: "Entlastung entsteht leichter, wenn Sie Verantwortung, Beratung und Rückhalt mitdenken statt alles selbst zu halten.",
+    iconClass: "text-slate-blue",
+    shellClass: "bg-slate-wash border-slate-light/80",
+  },
+] as const;
+
+const selbstfuersorgeQuickLinks = [
+  {
+    id: "warnsignale",
+    title: "Warnsignale für Überlastung",
+    text: "Wenn Sie zuerst prüfen möchten, woran Sie eigene Grenzen früh erkennen können.",
+  },
+  {
+    id: "sofort-uebungen",
+    title: "Sofort-Übungen für akute Entlastung",
+    text: "Wenn Sie gerade etwas Praktisches brauchen, das Körper und Kopf rasch etwas beruhigt.",
+  },
+  {
+    id: "erlaubnis",
+    title: "Geben Sie sich die Erlaubnis",
+    text: "Wenn Sie mit Schuldgefühlen, Loyalitätsdruck oder einem schlechten Gewissen ringen.",
+  },
+  {
+    id: "beratung-netzwerke",
+    title: "Beratung & Netzwerke",
+    text: "Wenn Sie gezielt nach externer Entlastung und Orientierung suchen.",
+  },
+] as const;
+
 export default function Selbstfuersorge() {
+  const openSection = (sectionId: string) => {
+    window.dispatchEvent(
+      new CustomEvent("open-section", { detail: { sectionId } })
+    );
+  };
+
   return (
     <Layout>
       <SEO
@@ -75,8 +128,108 @@ export default function Selbstfuersorge() {
         </div>
       </section>
 
+      <section className="py-8 md:py-10 wave-divider-top">
+        <div className="container">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.04fr_0.96fr]">
+            <Card className="border-sage-light/70 bg-white/92 shadow-[0_28px_56px_-40px_rgba(94,120,99,0.32)]">
+              <CardContent className="p-6 md:p-7">
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-wash">
+                    <Heart className="h-6 w-6 text-terracotta-mid" />
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-dark/85">
+                      <span className="h-px w-6 bg-sage-dark/30" />
+                      Überblick
+                    </span>
+                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
+                      Was auf dieser Seite besonders trägt
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Diese Seite versteht Selbstfürsorge nicht als Extra für gute
+                  Tage, sondern als Schutzfaktor in einem dauerhaft fordernden
+                  Angehörigenalltag. Im Zentrum stehen Warnsignale, kurze
+                  Regulierung und die Erlaubnis, Ihre eigenen Grenzen ernst zu
+                  nehmen.
+                </p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {selbstfuersorgeIntroCards.map(item => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.title}
+                        className={`rounded-2xl border p-4 ${item.shellClass}`}
+                      >
+                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
+                        <h3 className="mb-2 text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.text}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.26)]">
+              <CardContent className="p-6 md:p-7">
+                <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
+                  <span className="h-px w-6 bg-slate-dark/30" />
+                  Direkt einsteigen
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
+                  direkt zu dem Baustein, der im Moment am meisten entlastet.
+                </p>
+
+                <div className="mt-5 space-y-3">
+                  {selbstfuersorgeQuickLinks.map(item => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => openSection(item.id)}
+                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sage-light hover:bg-sage-wash/45 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/35 focus-visible:ring-offset-2"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {item.text}
+                          </p>
+                        </div>
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-darker transition-transform group-hover:translate-x-0.5">
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-sage-light/60 bg-sage-wash/75 px-4 py-4">
+                  <p className="text-sm leading-relaxed text-sage-darker">
+                    Das Inhaltsverzeichnis bleibt die Langform-Navigation. Die
+                    schnellen Einstiege hier sind für Momente gedacht, in denen
+                    Sie sofort zu Warnsignalen, Übungen oder Entlastung springen
+                    möchten.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Aufklappbare Abschnitte */}
-      <section className="py-8 md:py-12 wave-divider-top">
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {/* ═══ 1. Warum Selbstfürsorge wichtig ist ═══ */}

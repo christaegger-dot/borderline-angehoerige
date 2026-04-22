@@ -1027,6 +1027,164 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("genesung-zahlen", {
+    kicker: "Textversion",
+    summary:
+      "Langzeitdaten machen Hoffnung: Genesung ist möglich, aber sie braucht Zeit, Rückschläge, Geduld und professionelle Unterstützung.",
+    intro: [
+      "Diese Seite überträgt das Handout «Genesung in Zahlen – Was die Forschung zeigt» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Hoffnung auf belastbare Daten stützen möchten, ohne den Weg zu romantisieren.",
+      "Die Struktur des Originals bleibt erhalten: drei zentrale Kennzahlen, eine grobe zeitliche Einordnung, die Kernaussage des Handouts und drei konkrete Hinweise für den Alltag von Angehörigen.",
+    ],
+    sections: [
+      {
+        title: "Was die Forschung zeigt",
+        cards: [
+          {
+            title: "85–93%",
+            text: "erreichen innerhalb von 10 Jahren eine symptomatische Remission.",
+          },
+          {
+            title: "50%",
+            text: "erreichen eine vollständige Genesung im Sinn von Recovery.",
+          },
+          {
+            title: "77%",
+            text: "zeigen über 16 Jahre eine anhaltende Remission.",
+          },
+        ],
+      },
+      {
+        title: "Zeitliche Orientierung",
+        intro:
+          "Die Zeitachse des Handouts ist keine feste Prognose, sondern eine grobe Orientierung dafür, wie Entwicklung über Jahre statt über Wochen gedacht werden sollte.",
+        cards: [
+          {
+            title: "Jahr 0",
+            text: "Diagnose",
+          },
+          {
+            title: "2–4 Jahre",
+            text: "Erste Remission möglich",
+          },
+          {
+            title: "4–6 Jahre",
+            text: "Stabilere Phasen",
+          },
+          {
+            title: "6–10 Jahre",
+            text: "Hohe Remissionsrate",
+          },
+          {
+            title: "10+ Jahre",
+            text: "Anhaltende Remission",
+          },
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Genesung ist möglich. Sie braucht Zeit, Geduld und professionelle Hilfe.",
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Remission",
+            text: "Die Grafik verwendet diesen Begriff für die symptomatische Remission.",
+          },
+          {
+            title: "Recovery",
+            text: "Die Grafik verwendet diesen Begriff für vollständige Genesung.",
+          },
+          {
+            title: "Anhaltende Remission",
+            text: "Die Grafik verwendet diesen Begriff für länger anhaltende Remission.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Teilen Sie diese Zahlen mit Ihrem Angehörigen, wenn der Moment passt.",
+          "Erinnern Sie sich: Rückfälle gehören zum Prozess.",
+          "Bleiben Sie geduldig – Genesung ist ein Marathon, kein Sprint.",
+        ],
+      },
+    ],
+    sourceLine:
+      "Quelle: Zanarini et al. (2012), McLean Study; Gunderson et al. (2011).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("kinder", {
+    kicker: "Textversion",
+    summary:
+      "Kinder merken meist, dass etwas anders ist. Eine altersgerechte Erklärung schafft Sicherheit, nimmt Schuld und stärkt das Vertrauen.",
+    intro: [
+      "Diese Seite überträgt das Handout «Wenn Mama oder Papa grosse Gefühle hat» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Borderline kindgerecht erklären und Kinder im Familiensystem besser schützen möchten.",
+      "Die Struktur des Originals bleibt erhalten: zuerst die entlastende Grundhaltung, dann altersbezogene Erklärungen, Hinweise für Geschwisterkinder, Schutzfaktoren und ein Merksatz, der Kinder konsequent von Verantwortung entlastet.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es im Handout geht",
+        calloutText:
+          "Kinder spüren, dass etwas anders ist – auch wenn niemand darüber spricht. Schweigen schützt sie nicht. Eine altersgerechte Erklärung gibt ihnen Sicherheit, nimmt ihnen die Schuld und stärkt das Vertrauen.",
+      },
+      {
+        title: "So können Sie es erklären – nach Alter",
+        cards: [
+          {
+            title: "4–7 Jahre: Bildsprache",
+            text: "«Mama/Papa hat manchmal ganz grosse Gefühle – wie ein Sturm im Kopf. Das ist nicht deine Schuld. Wir sind für dich da.» Vermeiden Sie das Wort krank und sprechen Sie von grossen Gefühlen.",
+          },
+          {
+            title: "8–12 Jahre: Einfache Erklärung",
+            text: "«Das Gehirn verarbeitet Gefühle anders. Es gibt Fachleute, die helfen. Es ist nicht deine Aufgabe, Mama/Papa besser zu machen.» Benennen Sie klar: Das Kind trägt keine Verantwortung.",
+          },
+          {
+            title: "13+ Jahre: Ehrliches Gespräch",
+            text: "«Mama/Papa hat eine Diagnose, die Borderline heisst. Gefühle werden extrem stark erlebt. Es ist behandelbar. Du darfst Fragen stellen – jederzeit.» Bieten Sie an, gemeinsam verlässliche Infos zu lesen.",
+          },
+        ],
+      },
+      {
+        title: "Wenn ein Geschwisterkind betroffen ist",
+        bullets: [
+          "Unter 12: Dein Bruder/deine Schwester braucht mehr Hilfe. Du bist genauso wichtig.",
+          "12+: Du musst nicht die Rolle der Erwachsenen übernehmen. Deine Gefühle sind erlaubt.",
+        ],
+      },
+      {
+        title: "3 Schutzfaktoren für Kinder",
+        cards: [
+          {
+            title: "Stabilität",
+            text: "Verlässliche Bezugsperson. Routinen beibehalten.",
+          },
+          {
+            title: "Offenheit",
+            text: "Erklären statt schweigen. Gefühle aktiv erfragen.",
+          },
+          {
+            title: "Entlastung",
+            text: "Du bist nicht schuld. Eigene Freiräume geben.",
+          },
+        ],
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Ein Satz, der immer wieder gesagt werden darf",
+        calloutText:
+          "«Du bist nicht schuld. Und du musst das nicht allein verstehen.» Dieser Satz darf in jeder Altersgruppe fallen – so oft wie nötig.",
+      },
+    ],
+    sourceLine:
+      "Quellen: [1] Lenz, A. (2014): Kinder psychisch kranker Eltern. Hogrefe. [2] Mattejat, F. & Lisofsky, B. (2008): Nicht von schlechten Eltern. Balance Verlag. [3] BApK: Geschwister psychisch erkrankter Menschen.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
+  }),
   createHandoutTextVersion("grenzen-spickzettel", {
     kicker: "Textversion",
     summary:

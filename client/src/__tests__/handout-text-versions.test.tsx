@@ -42,6 +42,10 @@ describe("handout text versions", () => {
       item => item.id === "wenn-worte-treffen"
     )?.downloadUrl;
     const dearPdf = materials.find(item => item.id === "dear")?.downloadUrl;
+    const genesungZahlenPdf = materials.find(
+      item => item.id === "genesung-zahlen"
+    )?.downloadUrl;
+    const kinderPdf = materials.find(item => item.id === "kinder")?.downloadUrl;
 
     expect(getHandoutTextVersion("leuchtturm")?.path).toBe(
       "/materialien/text/leuchtturm"
@@ -77,6 +81,12 @@ describe("handout text versions", () => {
       "/materialien/text/wenn-worte-treffen"
     );
     expect(getHandoutTextVersion("dear")?.path).toBe("/materialien/text/dear");
+    expect(getHandoutTextVersion("genesung-zahlen")?.path).toBe(
+      "/materialien/text/genesung-zahlen"
+    );
+    expect(getHandoutTextVersion("kinder")?.path).toBe(
+      "/materialien/text/kinder"
+    );
     expect(getHandoutTextVersionHrefBySource(leuchtturmPdf)).toBe(
       "/materialien/text/leuchtturm"
     );
@@ -112,6 +122,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(dearPdf)).toBe(
       "/materialien/text/dear"
+    );
+    expect(getHandoutTextVersionHrefBySource(genesungZahlenPdf)).toBe(
+      "/materialien/text/genesung-zahlen"
+    );
+    expect(getHandoutTextVersionHrefBySource(kinderPdf)).toBe(
+      "/materialien/text/kinder"
     );
     expect(getHandoutTextVersionBySource("/notfallplan-krise-v03.pdf")).toBe(
       null

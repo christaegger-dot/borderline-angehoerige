@@ -418,6 +418,107 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/kommunizieren");
   });
 
+  it("HandoutTextPage: rendert Gespräche-kippen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "gespraeche-kippen" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Wenn Gespräche kippen: 3 Schritte/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Kurz, ruhig und wiederholbar wirkt in Krisen stärker als Argumente\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
+    ).toHaveAttribute("href", "/kommunizieren");
+  });
+
+  it("HandoutTextPage: rendert Grenzen-ohne-Eskalation-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "grenzen-ohne-eskalation" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Grenzen setzen, ohne zu eskalieren/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Nicht rechtfertigen\. Nicht erklären\. Nicht streiten\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
+    ).toHaveAttribute("href", "/kommunizieren");
+  });
+
+  it("HandoutTextPage: rendert Pause-statt-Streit-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "pause-statt-streit" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Pause statt Streit/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Ich stoppe jetzt – nicht weil ich aufgebe, sondern weil mir diese Beziehung wichtig ist\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
+    ).toHaveAttribute("href", "/kommunizieren");
+  });
+
+  it("HandoutTextPage: rendert Zuhören-ohne-Zustimmen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "zuhoeren-ohne-zustimmen" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Zuhören ohne Zustimmen/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Sie können Gefühle anerkennen, ohne die Interpretation zu übernehmen\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
+    ).toHaveAttribute("href", "/kommunizieren");
+  });
+
+  it("HandoutTextPage: rendert Beispiel-Dialog-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "beispiel-dialog" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Beispiel-Dialog/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Kurz, ruhig, wiederholbar\. Nicht erklären, nicht rechtfertigen, nicht streiten\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
+    ).toHaveAttribute("href", "/kommunizieren");
+  });
+
   it("HandoutTextPage: rendert DEAR-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -741,7 +842,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/lmk");
   });
 
-  it("Kommunizieren: zeigt Textversion für Wenn Worte treffen", async () => {
+  it("Kommunizieren: zeigt Textversionen für Kommunizieren-Handouts", async () => {
     const { default: Kommunizieren } = await import("@/pages/Kommunizieren");
     withRouter(<Kommunizieren />);
     expect(
@@ -749,6 +850,36 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Wenn Worte treffen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/wenn-worte-treffen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Wenn Gespräche kippen: 3 Schritte/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/gespraeche-kippen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Grenzen setzen, ohne zu eskalieren/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/grenzen-ohne-eskalation");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Pause statt Streit/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/pause-statt-streit");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Zuhören ohne Zustimmen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/zuhoeren-ohne-zustimmen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Beispiel-Dialog/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/beispiel-dialog");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Spickzettel Krisenkommunikation \(A4\)/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/krisenkommunikation");
   });
 
   it("Genesung: zeigt Textversionen für Genesung-Handouts", async () => {

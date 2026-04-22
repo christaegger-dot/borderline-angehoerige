@@ -5,7 +5,9 @@ export type KommunikationsKategorie =
   | "praxis";
 
 export interface KommunikationsMaterial {
+  id: string;
   title: string;
+  description: string;
   url: string;
   pdfUrl: string;
   category: Exclude<KommunikationsKategorie, "alle">;
@@ -25,49 +27,63 @@ export const kommSubcategories = [
 
 export const kommItems: KommunikationsMaterial[] = [
   {
+    id: "gespraeche-kippen",
     title: "Wenn Gespräche kippen: 3 Schritte",
+    description: "Beruhigen, verbinden, begrenzen",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kWTjVSZAwAXAymgw.webp",
     pdfUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eEpcTcWSbYQpNzJv.pdf",
     category: "techniken",
   },
   {
+    id: "grenzen-ohne-eskalation",
     title: "Grenzen setzen, ohne zu eskalieren",
+    description: "Die 3-Teile-Formel für klare Ansagen",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QrgVLpdeorAWgKvg.webp",
     pdfUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YyBYayMoMIGwTZtM.pdf",
     category: "konflikte",
   },
   {
+    id: "pause-statt-streit",
     title: "Pause statt Streit",
+    description: "Warnstufen erkennen und rechtzeitig stoppen",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VCooXJsQnRmSZGul.webp",
     pdfUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fGgpuKMuDfzJYgrc.pdf",
     category: "konflikte",
   },
   {
+    id: "wenn-worte-treffen",
     title: "Wenn Worte treffen",
+    description: "Schuldzuweisungen ruhiger einordnen",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/azZbLPyPkSupQskI.webp",
     pdfUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hEXKCmWYeiyUnwXr.pdf",
     category: "konflikte",
   },
   {
+    id: "zuhoeren-ohne-zustimmen",
     title: "Zuhören ohne Zustimmen",
+    description: "Validieren ohne nachzugeben",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eeZIHGmfprWnoPPf.webp",
     pdfUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toeDsBefZFNbxXYc.pdf",
     category: "techniken",
   },
   {
+    id: "beispiel-dialog",
     title: "Beispiel-Dialog",
+    description: "Technik-Schritte in einem kurzen Gespräch",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
     pdfUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
     category: "praxis",
   },
   {
+    id: "krisenkommunikation",
     title: "Spickzettel Krisenkommunikation (A4)",
+    description: "A4-Spickzettel für akute Spannungszustände",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tgVHTaXVryVEuEss.webp",
     pdfUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YvXkEbRmwIcCFtsj.pdf",

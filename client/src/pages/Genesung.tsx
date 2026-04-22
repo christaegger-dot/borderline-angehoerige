@@ -25,6 +25,53 @@ import { genesungItems as genesungMaterialItems } from "@/content/genesung";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 
+const genesungIntroCards = [
+  {
+    icon: Sparkles,
+    title: "Hoffnung realistisch halten",
+    text: "Genesung ist oft möglich, aber selten glatt, schnell oder vollständig planbar.",
+    iconClass: "text-sage-mid",
+    shellClass: "bg-sage-wash border-sage-light/80",
+  },
+  {
+    icon: RefreshCw,
+    title: "Rückschritte einordnen",
+    text: "Ein Einbruch oder Stillstand entwertet bisherigen Fortschritt nicht automatisch.",
+    iconClass: "text-slate-blue",
+    shellClass: "bg-slate-wash border-slate-light/80",
+  },
+  {
+    icon: Users,
+    title: "Rolle begrenzt sehen",
+    text: "Angehörige können Entwicklung mittragen, aber nicht herstellen oder beschleunigen.",
+    iconClass: "text-terracotta-mid",
+    shellClass: "bg-terracotta-wash border-terracotta-light/80",
+  },
+] as const;
+
+const genesungQuickLinks = [
+  {
+    id: "remission",
+    title: "Was Remission und Genesung bedeuten",
+    text: "Wenn Sie zuerst die Begriffe und Erwartungen realistischer einordnen möchten.",
+  },
+  {
+    id: "fortschritt-paradox",
+    title: "Das Fortschritt-Paradox",
+    text: "Wenn Sie Rückschritte besser verstehen möchten, ohne den ganzen Weg abzuwerten.",
+  },
+  {
+    id: "hoffnung",
+    title: "Realistische Hoffnung",
+    text: "Wenn Sie ein tragfähigeres Hoffnungsbild ohne zusätzlichen Druck suchen.",
+  },
+  {
+    id: "beitragen",
+    title: "Was Angehörige beitragen können",
+    text: "Wenn Sie Ihre Rolle hilfreicher und begrenzter zugleich sehen möchten.",
+  },
+] as const;
+
 function GenesungInfografiken() {
   return (
     <ContentSection
@@ -116,6 +163,12 @@ function GenesungInfografiken() {
 }
 
 export default function Genesung() {
+  const openSection = (sectionId: string) => {
+    window.dispatchEvent(
+      new CustomEvent("open-section", { detail: { sectionId } })
+    );
+  };
+
   return (
     <Layout>
       <SEO
@@ -143,7 +196,7 @@ export default function Genesung() {
               </div>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Genesung ist möglich
             </h1>
 
@@ -179,7 +232,106 @@ export default function Genesung() {
         </div>
       </div>
 
-      <section className="py-8 md:py-12">
+      <section className="py-8 md:py-10">
+        <div className="container">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <Card className="border-sage-light/70 bg-white/92 shadow-[0_28px_56px_-40px_rgba(31,101,109,0.32)]">
+              <CardContent className="p-6 md:p-7">
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-wash">
+                    <Heart className="h-6 w-6 text-sage-dark" />
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-dark/85">
+                      <span className="h-px w-6 bg-sage-dark/30" />
+                      Überblick
+                    </span>
+                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
+                      Was auf dieser Seite besonders wichtig ist
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Diese Seite übersetzt Prognose und Langzeitverlauf in eine
+                  alltagsnahe Angehörigenperspektive. Entscheidend sind weniger
+                  glatte Erfolgsbilder als ein realistischer Blick auf Zeit,
+                  Rückschritte, Hoffnung und den begrenzten eigenen Einfluss.
+                </p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {genesungIntroCards.map(item => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.title}
+                        className={`rounded-2xl border p-4 ${item.shellClass}`}
+                      >
+                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
+                        <h3 className="mb-2 text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.text}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
+              <CardContent className="p-6 md:p-7">
+                <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
+                  <span className="h-px w-6 bg-slate-dark/30" />
+                  Direkt einsteigen
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
+                  direkt zum Teil, der Ihre aktuelle Frage am ehesten trifft.
+                </p>
+
+                <div className="mt-5 space-y-3">
+                  {genesungQuickLinks.map(item => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => openSection(item.id)}
+                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sage-light hover:bg-sage-wash/45 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/35 focus-visible:ring-offset-2"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {item.text}
+                          </p>
+                        </div>
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-darker transition-transform group-hover:translate-x-0.5">
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-sage-light/60 bg-sage-wash/75 px-4 py-4">
+                  <p className="text-sm leading-relaxed text-sage-darker">
+                    Die Forschungskarte darunter bleibt der sachliche
+                    Ausgangspunkt. Die schnellen Einstiege hier sind für Momente
+                    gedacht, in denen Sie direkt zu Begriffen, Rückschritten,
+                    Hoffnung oder Ihrer Angehörigenrolle springen möchten.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

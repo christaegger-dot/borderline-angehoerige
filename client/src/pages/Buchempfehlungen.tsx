@@ -29,7 +29,7 @@ interface BookCategory {
   title: string;
   subtitle: string;
   icon: React.ComponentType<{ className?: string }>;
-  color: string;
+  iconShellClass: string;
   books: Book[];
 }
 
@@ -39,7 +39,7 @@ const bookCategories: BookCategory[] = [
     title: "Für Partner & Ehepartner",
     subtitle: "Wenn Ihr Partner oder Ihre Partnerin betroffen ist",
     icon: Heart,
-    color: "var(--color-sage-dark)",
+    iconShellClass: "bg-sage-wash text-sage-dark",
     books: [
       {
         title: "Schluss mit dem Eiertanz",
@@ -98,7 +98,7 @@ const bookCategories: BookCategory[] = [
     title: "Für Eltern",
     subtitle: "Wenn Ihr Kind (Jugendliche oder Erwachsene) betroffen ist",
     icon: Users,
-    color: "var(--color-slate-mid)",
+    iconShellClass: "bg-slate-light text-slate-mid",
     books: [
       {
         title: "DBT-Familienskills: Ein Praxisleitfaden",
@@ -144,7 +144,7 @@ const bookCategories: BookCategory[] = [
     title: "Kinderbücher",
     subtitle: "Für Kinder, deren Elternteil betroffen ist",
     icon: Baby,
-    color: "var(--color-sage)",
+    iconShellClass: "bg-sage-light text-sage",
     books: [
       {
         title: "Mama, Mia und das Schleuderprogramm",
@@ -196,7 +196,7 @@ const bookCategories: BookCategory[] = [
     title: "Erfahrungsberichte",
     subtitle: "Persönliche Geschichten von Betroffenen und Angehörigen",
     icon: Sparkles,
-    color: "var(--color-sage-dark)",
+    iconShellClass: "bg-sage-wash text-sage-dark",
     books: [
       {
         title: "Leben auf der Grenze",
@@ -332,11 +332,7 @@ export default function Buchempfehlungen() {
                 {/* Category Header */}
                 <div className="flex items-start gap-4 mb-8">
                   <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{
-                      backgroundColor: `${category.color}20`,
-                      color: category.color,
-                    }}
+                    className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl ${category.iconShellClass}`}
                   >
                     <category.icon className="w-7 h-7" />
                   </div>

@@ -36,8 +36,10 @@ interface Result {
   primaryText: string;
   secondaryLinks: { href: string; text: string }[];
   icon: React.ElementType;
-  color: string;
-  bgColor: string;
+  cardClass: string;
+  surfaceClass: string;
+  accentBgClass: string;
+  buttonClass: string;
 }
 
 const questions: Question[] = [
@@ -166,8 +168,10 @@ const results: Result[] = [
       { href: "/unterstuetzen/krise", text: "Krisenbegleitung lernen" },
     ],
     icon: AlertTriangle,
-    color: "var(--color-alert)",
-    bgColor: "var(--color-sage-wash)",
+    cardClass: "border-alert",
+    surfaceClass: "bg-sage-wash",
+    accentBgClass: "bg-alert",
+    buttonClass: "bg-alert hover:bg-alert/90",
   },
   {
     id: "krise",
@@ -181,8 +185,10 @@ const results: Result[] = [
       { href: "/soforthilfe", text: "Soforthilfe" },
     ],
     icon: Clock,
-    color: "var(--color-sand-mid)",
-    bgColor: "var(--color-sage-wash)",
+    cardClass: "border-sand-mid",
+    surfaceClass: "bg-sage-wash",
+    accentBgClass: "bg-sand-mid",
+    buttonClass: "bg-sand-mid hover:bg-sand-warm",
   },
   {
     id: "kommunizieren",
@@ -196,8 +202,10 @@ const results: Result[] = [
       { href: "/verstehen", text: "Borderline verstehen" },
     ],
     icon: MessageCircle,
-    color: "var(--color-slate-blue)",
-    bgColor: "var(--color-slate-light)",
+    cardClass: "border-slate-blue",
+    surfaceClass: "bg-slate-light",
+    accentBgClass: "bg-slate-blue",
+    buttonClass: "bg-slate-blue hover:bg-slate-dark",
   },
   {
     id: "verstehen",
@@ -211,8 +219,10 @@ const results: Result[] = [
       { href: "/kommunizieren", text: "Kommunikation verbessern" },
     ],
     icon: BookOpen,
-    color: "var(--color-sage)",
-    bgColor: "var(--color-sage-light)",
+    cardClass: "border-sage",
+    surfaceClass: "bg-sage-light",
+    accentBgClass: "bg-sage",
+    buttonClass: "bg-sage hover:bg-sage-dark",
   },
   {
     id: "unterstuetzen",
@@ -226,8 +236,10 @@ const results: Result[] = [
       { href: "/unterstuetzen/therapie", text: "Therapie unterstützen" },
     ],
     icon: Heart,
-    color: "var(--color-sage-dark)",
-    bgColor: "var(--color-sage-light)",
+    cardClass: "border-sage-dark",
+    surfaceClass: "bg-sage-light",
+    accentBgClass: "bg-sage-dark",
+    buttonClass: "bg-sage-dark hover:bg-sage-mid",
   },
   {
     id: "grenzen",
@@ -241,8 +253,10 @@ const results: Result[] = [
       { href: "/kommunizieren", text: "Kommunikationstechniken" },
     ],
     icon: Shield,
-    color: "var(--color-sage-mid)",
-    bgColor: "var(--color-sage-lighter)",
+    cardClass: "border-sage-mid",
+    surfaceClass: "bg-sage-lighter",
+    accentBgClass: "bg-sage-mid",
+    buttonClass: "bg-sage-mid hover:bg-sage-dark",
   },
   {
     id: "selbstfuersorge",
@@ -256,8 +270,10 @@ const results: Result[] = [
       { href: "/materialien", text: "Materialien & Ressourcen" },
     ],
     icon: Sparkles,
-    color: "var(--color-sage-mid)",
-    bgColor: "var(--color-sage-lighter)",
+    cardClass: "border-sage-mid",
+    surfaceClass: "bg-sage-lighter",
+    accentBgClass: "bg-sage-mid",
+    buttonClass: "bg-sage-mid hover:bg-sage-dark",
   },
 ];
 
@@ -362,18 +378,11 @@ export default function Selbsttest() {
         aria-live="polite"
         role="status"
       >
-        <Card
-          className="border-2 overflow-hidden"
-          style={{ borderColor: result.color }}
-        >
-          <div
-            className="p-6 md:p-8"
-            style={{ backgroundColor: result.bgColor }}
-          >
+        <Card className={`overflow-hidden border-2 ${result.cardClass}`}>
+          <div className={`p-6 md:p-8 ${result.surfaceClass}`}>
             <div className="flex items-center gap-4 mb-4">
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                style={{ backgroundColor: result.color }}
+                className={`flex h-14 w-14 items-center justify-center rounded-2xl ${result.accentBgClass}`}
               >
                 <Icon className="w-7 h-7 text-white" />
               </div>
@@ -394,8 +403,7 @@ export default function Selbsttest() {
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <Button
                 size="lg"
-                className="w-full sm:w-auto text-white"
-                style={{ backgroundColor: result.color }}
+                className={`w-full text-white sm:w-auto ${result.buttonClass}`}
                 asChild
               >
                 <Link href={result.primaryLink}>

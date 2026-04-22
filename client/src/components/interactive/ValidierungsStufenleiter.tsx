@@ -15,7 +15,9 @@ interface Stufe {
   title: string;
   subtitle: string;
   icon: React.ElementType;
-  color: string;
+  badgeClass: string;
+  iconClass: string;
+  exampleClass: string;
   ziel: string;
   soGehts: string[];
   beispielsaetze: string[];
@@ -32,7 +34,10 @@ const stufen: Stufe[] = [
     title: "Aufmerksam sein",
     subtitle: "«Ich bin jetzt wirklich da.»",
     icon: Eye,
-    color: "var(--color-sand-border)",
+    badgeClass: "bg-sand-border text-white",
+    iconClass: "text-sand-border",
+    exampleClass:
+      "bg-[color-mix(in_oklch,var(--color-sand-border)_10%,white)] text-sand-border",
     ziel: "Sicherheit durch Präsenz.",
     soGehts: [
       "Kurz innehalten, Blick und Körper zuwenden",
@@ -54,7 +59,10 @@ const stufen: Stufe[] = [
     title: "Spiegeln",
     subtitle: "«Ich habe verstanden, was du meinst.»",
     icon: MessageSquare,
-    color: "var(--color-sage-dark)",
+    badgeClass: "bg-sage-dark text-white",
+    iconClass: "text-sage-dark",
+    exampleClass:
+      "bg-[color-mix(in_oklch,var(--color-sage-dark)_10%,white)] text-sage-dark",
     ziel: "Missverständnisse reduzieren, Tempo rausnehmen.",
     soGehts: [
       "In eigenen Worten zusammenfassen",
@@ -76,7 +84,10 @@ const stufen: Stufe[] = [
     title: "Zwischen den Zeilen verstehen",
     subtitle: "«Kann es sein, dass…?»",
     icon: Sparkles,
-    color: "var(--color-sand-mid)",
+    badgeClass: "bg-sand-mid text-white",
+    iconClass: "text-sand-mid",
+    exampleClass:
+      "bg-[color-mix(in_oklch,var(--color-sand-mid)_10%,white)] text-sand-mid",
     ziel: "Das Gefühl hinter der Reaktion erkennen.",
     soGehts: [
       "Vorsichtige Vermutung äussern",
@@ -98,7 +109,10 @@ const stufen: Stufe[] = [
     title: "Nachvollziehen",
     subtitle: "«Es macht Sinn, dass dich das trifft.»",
     icon: History,
-    color: "var(--color-sage-mid)",
+    badgeClass: "bg-sage-mid text-white",
+    iconClass: "text-sage-mid",
+    exampleClass:
+      "bg-[color-mix(in_oklch,var(--color-sage-mid)_10%,white)] text-sage-mid",
     ziel: "Bedeutung geben, ohne zu bewerten.",
     soGehts: [
       "Stress, Vorgeschichte oder Überforderung mitdenken",
@@ -120,7 +134,10 @@ const stufen: Stufe[] = [
     title: "Das Gültige anerkennen",
     subtitle: "«Diesen Teil kann ich gut nachvollziehen.»",
     icon: Users,
-    color: "var(--color-sage-dark)",
+    badgeClass: "bg-sage-dark text-white",
+    iconClass: "text-sage-dark",
+    exampleClass:
+      "bg-[color-mix(in_oklch,var(--color-sage-dark)_10%,white)] text-sage-dark",
     ziel: "Den verständlichen Kern benennen, ohne alles zu billigen.",
     soGehts: [
       "Gefühl oder Bedürfnis anerkennen",
@@ -142,7 +159,10 @@ const stufen: Stufe[] = [
     title: "Auf Augenhöhe bleiben",
     subtitle: "«Wir sind zwei gleichwertige Menschen.»",
     icon: Star,
-    color: "var(--color-sage-dark)",
+    badgeClass: "bg-sage-dark text-white",
+    iconClass: "text-sage-dark",
+    exampleClass:
+      "bg-[color-mix(in_oklch,var(--color-sage-dark)_10%,white)] text-sage-dark",
     ziel: "Respektvoll bleiben, ohne zu belehren oder zu psychologisieren.",
     soGehts: [
       "Klar, ruhig und respektvoll sprechen",
@@ -177,16 +197,14 @@ export default function ValidierungsStufenleiter() {
             <CardContent className="p-5">
               <div className="flex items-start gap-3 mb-4">
                 <div
-                  className="w-10 h-10 rounded-full text-white text-sm font-bold flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: stufe.color }}
+                  className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold ${stufe.badgeClass}`}
                 >
                   {stufe.level}
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <Icon
-                      className="w-4 h-4"
-                      style={{ color: stufe.color }}
+                      className={`h-4 w-4 ${stufe.iconClass}`}
                       aria-hidden="true"
                     />
                     <h4 className="font-semibold text-foreground">
@@ -248,11 +266,7 @@ export default function ValidierungsStufenleiter() {
                   {stufe.beispielsaetze.map((satz, i) => (
                     <div
                       key={i}
-                      className="rounded-md px-3 py-2 text-sm font-medium"
-                      style={{
-                        backgroundColor: `color-mix(in oklch, ${stufe.color} 10%, white)`,
-                        color: stufe.color,
-                      }}
+                      className={`rounded-md px-3 py-2 text-sm font-medium ${stufe.exampleClass}`}
                     >
                       {satz}
                     </div>

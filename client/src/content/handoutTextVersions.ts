@@ -3,6 +3,7 @@ import {
   type MaterialCategory,
   type MaterialItem,
 } from "./materialien";
+import { verstehenInfografiken } from "./verstehen";
 
 export interface HandoutTextCard {
   title: string;
@@ -52,20 +53,37 @@ const TOPIC_META: Record<
 
 function requireMaterial(id: string) {
   const material = materials.find(item => item.id === id);
-  if (!material) {
-    throw new Error(`Unknown material item: ${id}`);
+  if (material) {
+    const pdfSourceUrl = material.pdfUrl ?? material.downloadUrl;
+    if (!pdfSourceUrl) {
+      throw new Error(`Material item is missing a PDF source: ${id}`);
+    }
+
+    return {
+      title: material.title,
+      description: material.description,
+      category: material.category,
+      kind: material.kind,
+      previewImageUrl: material.url,
+      topic: TOPIC_META[material.category],
+      pdfSourceUrl,
+    };
   }
 
-  const pdfSourceUrl = material.pdfUrl ?? material.downloadUrl;
-  if (!pdfSourceUrl) {
-    throw new Error(`Material item is missing a PDF source: ${id}`);
+  const verstehenMaterial = verstehenInfografiken.find(item => item.id === id);
+  if (verstehenMaterial) {
+    return {
+      title: verstehenMaterial.title,
+      description: verstehenMaterial.description,
+      category: "verstehen" as const,
+      kind: "Infografik" as const,
+      previewImageUrl: verstehenMaterial.webpUrl,
+      topic: TOPIC_META.verstehen,
+      pdfSourceUrl: verstehenMaterial.pdfUrl,
+    };
   }
 
-  return {
-    material,
-    topic: TOPIC_META[material.category],
-    pdfSourceUrl,
-  };
+  throw new Error(`Unknown material item: ${id}`);
 }
 
 function createHandoutTextVersion(
@@ -84,18 +102,26 @@ function createHandoutTextVersion(
     | "pdfSourceUrl"
   >
 ): HandoutTextVersion {
-  const { material, topic, pdfSourceUrl } = requireMaterial(id);
+  const {
+    title,
+    description,
+    category,
+    kind,
+    previewImageUrl,
+    topic,
+    pdfSourceUrl,
+  } = requireMaterial(id);
 
   return {
     id,
     path: `/materialien/text/${id}`,
-    title: material.title,
-    description: material.description,
+    title,
+    description,
     topicLabel: topic.label,
     topicHref: topic.href,
-    category: material.category,
-    kind: material.kind,
-    previewImageUrl: material.url,
+    category,
+    kind,
+    previewImageUrl,
     pdfSourceUrl,
     ...config,
   };
@@ -763,6 +789,163 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       },
     ],
     sourceLine: "Quelle: Porges (2011), Polyvagal-Theorie; Linehan (1993).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("4-phasen", {
+    kicker: "Textversion",
+    summary:
+      "Freundlichkeit, Verschlechterung, Explosion und Schweigen können sich als wiederkehrender Zyklus verstärken. Entscheidend ist, das Muster früh zu erkennen und in Phase 2 anders zu reagieren.",
+    intro: [
+      "Diese Seite überträgt die Infografik «Der 4-Phasen-Zyklus» in eine lesbare Web-Version. Sie zeigt ein wiederkehrendes Muster, das in belasteten Beziehungen immer wieder auftreten kann.",
+      "Die Grafik versteht den Zyklus nicht als fixes Schicksal, sondern als Muster, das erkannt und unterbrochen werden kann. Genau dort liegt der entlastende Kern für Angehörige.",
+    ],
+    sections: [
+      {
+        title: "Die 4 Phasen",
+        intro:
+          "Die Infografik beschreibt vier Zustände, die sich gegenseitig verstärken und im Kreis wiederholen können.",
+        cards: [
+          {
+            title: "Phase 1: Freundlichkeit",
+            text: "Alles scheint gut. Nähe, Harmonie.",
+          },
+          {
+            title: "Phase 2: Verschlechterung",
+            text: "Spannung steigt. Reizbarkeit, Rückzug, Misstrauen.",
+          },
+          {
+            title: "Phase 3: Explosion",
+            text: "Krise. Vorwürfe, Drohungen, Kontrollverlust.",
+          },
+          {
+            title: "Phase 4: Schweigen",
+            text: "Rückzug. Schuldgefühle. Erschöpfung.",
+          },
+        ],
+      },
+      {
+        title: "Verstärkende Schleife",
+        calloutTitle: "Warum sich das Muster so fest anfühlen kann",
+        calloutText:
+          "Die Grafik zeigt den Zyklus als verstärkende Schleife: Jede Phase bereitet oft schon den Boden für die nächste, wenn niemand das Muster bewusst unterbricht.",
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es beim 4-Phasen-Zyklus geht",
+        calloutText:
+          "Der Zyklus wiederholt sich – bis jemand das Muster durchbricht. Das können Sie sein.",
+      },
+      {
+        title: "Legende der Grafik",
+        bullets: [
+          "Sage = Freundlichkeit",
+          "Sand = Verschlechterung",
+          "Terracotta = Explosion",
+          "Slate = Schweigen",
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "Erkennen",
+            text: "In welcher Phase sind wir gerade?",
+          },
+          {
+            title: "Verstehen",
+            text: "Der Zyklus ist ein Muster, kein Schicksal.",
+          },
+          {
+            title: "Verändern",
+            text: "Reagieren Sie in Phase 2 anders als früher.",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("gehirn", {
+    kicker: "Textversion",
+    summary:
+      "Bei emotionaler Überflutung übernimmt das Alarm-System. Das Denken kommt erst zurück, wenn der Körper wieder etwas ruhiger ist.",
+    intro: [
+      "Diese Seite überträgt die Infografik «Das Gehirn verstehen» in eine lesbare Web-Version. Sie erklärt in einfacher Form, was bei emotionaler Überflutung im Gehirn passiert.",
+      "Für Angehörige ist die Grafik vor allem als Einordnungshilfe gedacht: Überflutung ist keine Absicht, sondern eine neurobiologische Reaktion. Deshalb hilft zuerst Beruhigung und erst danach Klärung.",
+    ],
+    sections: [
+      {
+        title: "Die drei Bereiche der Grafik",
+        intro:
+          "Die Infografik stellt drei Hirn-Bereiche mit ihren Funktionen und ihrer Rolle unter Stress gegenüber.",
+        cards: [
+          {
+            title: "Amygdala – Alarm-Zentrale",
+            text: "Reagiert auf Bedrohung. Löst Kampf- oder Flucht aus. Bei BPS: überaktiv, reagiert stärker und schneller.",
+          },
+          {
+            title: "Hippocampus – Erinnerungsspeicher",
+            text: "Ordnet Erlebnisse zeitlich ein. Unterscheidet Vergangenheit von Gegenwart. Bei Stress: Funktion eingeschränkt.",
+          },
+          {
+            title: "Präfrontaler Kortex – Denk-Zentrale",
+            text: "Planung, Impulskontrolle, Reflexion. Bei Überflutung: vorübergehend offline.",
+          },
+        ],
+      },
+      {
+        title: "Was dann oft passiert",
+        cards: [
+          {
+            title: "Überflutet",
+            text: "Die Alarmreaktion übernimmt, und der innere Spielraum wird klein.",
+          },
+          {
+            title: "Beruhigung fehlt",
+            text: "Ohne Beruhigung bleibt das System in Alarm oder Übergang hängen.",
+          },
+          {
+            title: "Beruhigung → Denken kommt zurück",
+            text: "Wenn der Körper ruhiger wird, wird Denken wieder zugänglicher.",
+          },
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es bei der Überflutung geht",
+        calloutText:
+          "Emotionale Überflutung ist keine Absicht, sondern eine neurobiologische Reaktion. Das Gehirn braucht Zeit, um wieder klar zu denken.",
+      },
+      {
+        title: "Legende der Grafik",
+        bullets: [
+          "Terracotta = Alarm",
+          "Sand = Übergang",
+          "Sage = Beruhigung",
+          "Pfeile = Wirkungsrichtung",
+        ],
+      },
+      {
+        title: "3 Schritte zur Beruhigung",
+        cards: [
+          {
+            title: "1. Atmen und Wahrnehmen",
+            text: "4 Sekunden ein, 6 Sekunden aus. Benennen Sie, was Sie spüren.",
+          },
+          {
+            title: "2. Pausieren und Bewegen",
+            text: "Raum wechseln, kurz gehen, Wasser trinken.",
+          },
+          {
+            title: "3. Fokus und Einordnen",
+            text: "Erst wenn der Körper ruhig ist, kann das Gespräch weitergehen.",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Porges (2011); LeDoux (1996).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

@@ -271,6 +271,42 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/verstehen");
   });
 
+  it("HandoutTextPage: rendert 4-Phasen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "4-phasen" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Der 4-Phasen-Zyklus/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Freundlichkeit, Verschlechterung, Explosion und Schweigen/i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
+    ).toHaveAttribute("href", "/verstehen");
+  });
+
+  it("HandoutTextPage: rendert Gehirn-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "gehirn" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Das Gehirn verstehen/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Emotionale Überflutung ist keine Absicht/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
+    ).toHaveAttribute("href", "/verstehen");
+  });
+
   it("HandoutTextPage: rendert Eisberg-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -353,9 +389,19 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/genesung-zahlen");
   });
 
-  it("Verstehen: zeigt Textversion für Kinder-Handout", async () => {
+  it("Verstehen: zeigt Textversionen für Verstehen-Handouts", async () => {
     const { default: Verstehen } = await import("@/pages/Verstehen");
     withRouter(<Verstehen />);
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Der 4-Phasen-Zyklus/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/4-phasen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Das Gehirn verstehen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/gehirn");
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Wenn Mama oder Papa grosse Gefühle hat/i,

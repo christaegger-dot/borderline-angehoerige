@@ -642,6 +642,44 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Der 4-Phasen-Zyklus",
+    description:
+      "Lesbare Web-Version zum wiederkehrenden Beziehungszyklus mit 4 Phasen, Kernaussage und möglichen Ansatzpunkten für Angehörige",
+    keywords: [
+      "textversion",
+      "4-phasen-zyklus",
+      "zyklus",
+      "freundlichkeit",
+      "verschlechterung",
+      "explosion",
+      "schweigen",
+      "verstehen",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/4-phasen",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Das Gehirn verstehen",
+    description:
+      "Lesbare Web-Version zu Amygdala, Hippocampus, präfrontalem Kortex und 3 Schritten zur Beruhigung bei Überflutung",
+    keywords: [
+      "textversion",
+      "gehirn verstehen",
+      "amygdala",
+      "hippocampus",
+      "präfrontaler kortex",
+      "überflutung",
+      "beruhigung",
+      "neurobiologie",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/gehirn",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Warnsignale der Überlastung",
     description:
       "Lesbare Web-Version des Ampel-Handouts zu Überlastung, Frühwarnzeichen und nächsten Schritten",

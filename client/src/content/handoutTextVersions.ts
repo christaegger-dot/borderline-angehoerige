@@ -3,6 +3,7 @@ import {
   type MaterialCategory,
   type MaterialItem,
 } from "./materialien";
+import { selbstfuersorgeInfografiken } from "./selbstfuersorge";
 import { unterstuetzenItems } from "./unterstuetzen";
 import { verstehenInfografiken } from "./verstehen";
 
@@ -94,6 +95,21 @@ function requireMaterial(id: string) {
       previewImageUrl: unterstuetzenMaterial.url,
       topic: TOPIC_META.unterstuetzen,
       pdfSourceUrl: unterstuetzenMaterial.pdfUrl,
+    };
+  }
+
+  const selbstfuersorgeMaterial = selbstfuersorgeInfografiken.find(
+    item => item.id === id
+  );
+  if (selbstfuersorgeMaterial) {
+    return {
+      title: selbstfuersorgeMaterial.title,
+      description: selbstfuersorgeMaterial.desc,
+      category: "selbstfuersorge" as const,
+      kind: "Infografik" as const,
+      previewImageUrl: selbstfuersorgeMaterial.webp,
+      topic: TOPIC_META.selbstfuersorge,
+      pdfSourceUrl: selbstfuersorgeMaterial.pdf,
     };
   }
 
@@ -1448,6 +1464,327 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     ],
     sourceLine:
       "Quelle: Maslach/Leiter (2016), Burnout-Prävention; Mason/Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("sauerstoffmaske", {
+    kicker: "Textversion",
+    summary:
+      "Selbstfürsorge ist keine Selbstsucht. Wer zuerst die eigene Maske aufsetzt, hat mehr Energie, weniger Schuldgefühle und kann verlässlicher unterstützen.",
+    intro: [
+      "Diese Seite überträgt das Handout «Die Sauerstoffmaske – Warum Selbstfürsorge keine Selbstsucht ist» in eine lesbare Web-Version. Die Bildidee aus dem Flugzeug bleibt erhalten: erst die eigene Maske aufsetzen, dann anderen helfen.",
+      "Die Grafik stellt zwei Kreisläufe gegenüber. Links zeigt sie, wie Überforderung und Schuldgefühle entstehen, wenn Angehörige nur noch für andere da sind. Rechts zeigt sie den hilfreicheren Kreislauf, wenn Selbstfürsorge bewusst Platz bekommt.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es bei der Sauerstoffmaske geht",
+        calloutText:
+          "Im Flugzeug gilt: Erst die eigene Maske aufsetzen, dann anderen helfen. Für Angehörige gilt dasselbe.",
+      },
+      {
+        title: "Negativer Kreislauf",
+        intro:
+          "Die linke Seite der Grafik beschreibt einen Kreislauf, in dem Selbstfürsorge ausfällt und die Belastung zunimmt.",
+        cards: [
+          {
+            title: "Nur für andere da sein",
+            text: "Der ganze Fokus liegt auf dem Gegenüber, nicht mehr auch auf Ihnen selbst.",
+          },
+          {
+            title: "Eigene Bedürfnisse ignorieren",
+            text: "Pausen, Schlaf oder Unterstützung werden aufgeschoben oder weggedrückt.",
+          },
+          {
+            title: "Schuldgefühle",
+            text: "Es entsteht das Gefühl, nie genug zu tun und trotzdem nicht zu genügen.",
+          },
+          {
+            title: "Erschöpfung und Gereiztheit",
+            text: "Die Belastung steigt, die Kraft sinkt und hilfreiche Unterstützung wird schwerer.",
+          },
+        ],
+      },
+      {
+        title: "Hilfreicher Kreislauf",
+        intro:
+          "Die rechte Seite zeigt, was sich verändert, wenn Selbstfürsorge nicht als Egoismus, sondern als Voraussetzung verstanden wird.",
+        cards: [
+          {
+            title: "Eigene Maske zuerst aufsetzen",
+            text: "Sie nehmen Ihre Bedürfnisse ernst und sorgen bewusst für Stabilität.",
+          },
+          {
+            title: "Weniger Schuldgefühle",
+            text: "Selbstfürsorge entlastet innerlich und macht klarer, was realistisch möglich ist.",
+          },
+          {
+            title: "Energie und Klarheit",
+            text: "Mit mehr Kraft und Übersicht reagieren Sie ruhiger und gezielter.",
+          },
+          {
+            title: "Bessere Unterstützung möglich",
+            text: "Gerade weil Sie auf sich achten, können Sie verlässlicher für andere da sein.",
+          },
+        ],
+      },
+      {
+        title: "Legende",
+        bullets: [
+          "Rot = negativer Kreislauf",
+          "Grün = hilfreicher Kreislauf",
+          "Wendepunkt = Ihre Entscheidung",
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Etwas nur für sich planen",
+            text: "Planen Sie eine Aktivität nur für sich.",
+          },
+          {
+            title: "2. Den Bedarf aussprechen",
+            text: "Sagen Sie: Ich brauche das, damit ich für dich da sein kann.",
+          },
+          {
+            title: "3. Hilfe annehmen üben",
+            text: "Üben Sie, Hilfe anzunehmen.",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014), Angehörigen-Psychoedukation.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("stopp-technik", {
+    kicker: "Textversion",
+    summary:
+      "Die STOPP-Technik schafft in etwa 30 Sekunden Abstand zwischen Reiz und Reaktion. Das gibt Körper und Kopf wieder etwas mehr Handlungsspielraum.",
+    intro: [
+      "Diese Seite überträgt das Handout «Die STOPP-Technik – 5 Schritte aus der Stressspirale» in eine lesbare Web-Version. Das Original fasst die DBT-Technik so zusammen, dass sie im Alltag schnell nutzbar bleibt.",
+      "Die fünf Buchstaben bilden eine feste Reihenfolge: stoppen, atmen, orientieren, Perspektive wechseln und dann erst eine konkrete Handlung planen.",
+    ],
+    sections: [
+      {
+        title: "Zentraler Satz",
+        calloutTitle: "Worum es bei STOPP geht",
+        calloutText:
+          "Wenn die Emotionen überkochen: STOPP gibt Ihnen 30 Sekunden Abstand zwischen Reiz und Reaktion.",
+      },
+      {
+        title: "Die 5 STOPP-Schritte",
+        intro:
+          "Die Grafik zeigt die Technik als kurze Folge von fünf Schritten, die Sie in hoher Anspannung abrufen können.",
+        cards: [
+          {
+            title: "S = STOPP",
+            text: "Halten Sie inne. Tun Sie nichts.",
+          },
+          {
+            title: "T = TIEF ATMEN",
+            text: "Drei tiefe Atemzüge. 4–4–4.",
+          },
+          {
+            title: "O = ORIENTIEREN",
+            text: "Was passiert gerade wirklich?",
+          },
+          {
+            title: "P = PERSPEKTIVE",
+            text: "Wie sehe ich das in einer Woche?",
+          },
+          {
+            title: "P = PLAN",
+            text: "Wählen Sie EINE konkrete Handlung.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Mehrmals üben",
+            text: "Üben Sie STOPP dreimal diese Woche.",
+          },
+          {
+            title: "2. Anker-Satz bereitlegen",
+            text: "Anker-Satz: Ich habe 30 Sekunden.",
+          },
+          {
+            title: "3. Abends notieren",
+            text: "Notieren Sie abends: Wann hätte STOPP geholfen?",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Linehan (1993), DBT Skills Training.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("energie-konto", {
+    kicker: "Textversion",
+    summary:
+      "Ihre Energie ist begrenzt. Wenn Sie im Blick behalten, was auftankt und was Energie kostet, können Sie früher gegensteuern statt erst im Leerlauf zu reagieren.",
+    intro: [
+      "Diese Seite überträgt das Handout «Ihr Energie-Konto – Was füllt, was leert» in eine lesbare Web-Version. Die Grafik arbeitet mit einer Batterie-Metapher: Energie kann gefüllt, entleert und auch bis in den Burnout-Bereich erschöpft werden.",
+      "Die Grundidee ist bewusst praktisch. Statt nur über Belastung nachzudenken, hilft die Gegenüberstellung von Energiegebern und Energiefressern dabei, konkrete Veränderungen im Alltag zu planen.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es beim Energie-Konto geht",
+        calloutText:
+          "Ihre Energie ist begrenzt. Achten Sie darauf, dass Sie regelmässig auftanken – bevor das Konto leer ist.",
+      },
+      {
+        title: "Was füllt",
+        intro:
+          "Die linke Spalte nennt typische Energiegeber, die das Konto wieder auffüllen können.",
+        cards: [
+          {
+            title: "Bewegung und Sport",
+            text: "Körperliche Aktivität kann spürbar Energie zurückgeben.",
+          },
+          {
+            title: "Soziale Kontakte pflegen",
+            text: "Tragender Kontakt kann entlasten und verbinden.",
+          },
+          {
+            title: "Hobbys und Interessen",
+            text: "Eigene Interessen erinnern daran, dass Ihr Leben mehr umfasst als Belastung.",
+          },
+          {
+            title: "Natur und Ruhe",
+            text: "Rückzug, Stille und Natur können Nervensystem und Gedanken beruhigen.",
+          },
+          {
+            title: "Professionelle Unterstützung",
+            text: "Begleitung von aussen kann entlasten und strukturieren.",
+          },
+          {
+            title: "Schlaf und Erholung",
+            text: "Regeneration ist kein Luxus, sondern Grundversorgung.",
+          },
+        ],
+      },
+      {
+        title: "Was leert",
+        intro:
+          "Die rechte Spalte zeigt typische Belastungen, die das Energie-Konto nach unten ziehen.",
+        cards: [
+          {
+            title: "Krisen begleiten",
+            text: "Akute Belastung kostet Kraft, auch wenn Hilfe nötig und sinnvoll ist.",
+          },
+          {
+            title: "Ständige Erreichbarkeit",
+            text: "Dauerbereitschaft verhindert echte Erholung.",
+          },
+          {
+            title: "Schuldgefühle und Grübeln",
+            text: "Innere Kreise ohne Lösung verbrauchen viel Energie.",
+          },
+          {
+            title: "Konflikte und Vorwürfe",
+            text: "Wiederholte Auseinandersetzungen ziehen Kraft und Ruhe ab.",
+          },
+          {
+            title: "Isolation und Rückzug",
+            text: "Allein mit allem zu bleiben entlastet selten dauerhaft.",
+          },
+          {
+            title: "Eigene Bedürfnisse ignorieren",
+            text: "Wer sich selbst ständig übergeht, leert das Konto weiter.",
+          },
+        ],
+      },
+      {
+        title: "Legende",
+        bullets: [
+          "Grüne Pfeile = Energie geben",
+          "Rote Pfeile = Energie kosten",
+          "Batterie-Icon = aktueller Stand",
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Ehrlich prüfen",
+            text: "Prüfen Sie ehrlich: Wie voll ist Ihr Konto gerade?",
+          },
+          {
+            title: "2. Auftank-Aktivität planen",
+            text: "Planen Sie diese Woche eine konkrete Auftank-Aktivität.",
+          },
+          {
+            title: "3. Einen Energiefresser streichen",
+            text: "Streichen Sie eine energiefressende Gewohnheit – nur eine.",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Maslach und Leiter (2016), Burnout-Prävention.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("erlaubnis-karte", {
+    kicker: "Textversion",
+    summary:
+      "Die Erlaubnis-Karte bündelt neun Sätze, die Angehörigen oft guttun: eigene Bedürfnisse ernst nehmen, Grenzen setzen und ein eigenes Leben behalten.",
+    intro: [
+      "Diese Seite überträgt das Handout «Ihre Erlaubnis-Karte – Was Sie sich erlauben dürfen» in eine lesbare Web-Version. Das Original ist bewusst als persönliches Zertifikat aufgebaut: nicht als Pflichtliste, sondern als Erlaubnis zum Ankreuzen.",
+      "Der Fokus ist entlastend. Die Grafik erinnert daran, dass Selbstfürsorge, Grenzen und eigene Gefühle nicht gegen die Beziehung stehen, sondern zu gesunder Angehörigenarbeit dazugehören.",
+    ],
+    sections: [
+      {
+        title: "Erlaubnis",
+        intro:
+          "Die Karte nennt neun Dinge, die Sie sich ausdrücklich erlauben dürfen.",
+        bullets: [
+          "Nein sagen, ohne sich schuldig zu fühlen.",
+          "Eigene Bedürfnisse haben und äussern.",
+          "Pausen machen, wenn es zu viel wird.",
+          "Hilfe annehmen und um Hilfe bitten.",
+          "Wütend, traurig oder überfordert sein.",
+          "Grenzen setzen, auch wenn es Widerstand gibt.",
+          "Sich zurückziehen, ohne Erklärung.",
+          "Freude empfinden, auch wenn es dem Angehörigen schlecht geht.",
+          "Ihr eigenes Leben leben.",
+        ],
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Gültigkeit",
+        calloutText: "Gültig ab sofort. Unbefristet.",
+      },
+      {
+        title: "Legende",
+        bullets: [
+          "Checkbox = Erlaubnis zum Ankreuzen",
+          "Zertifikat = Ihre persönliche Genehmigung",
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Sichtbar machen",
+            text: "Drucken Sie diese Karte aus und hängen Sie sie sichtbar auf.",
+          },
+          {
+            title: "2. Heute ankreuzen",
+            text: "Kreuzen Sie an, was Ihnen heute besonders schwer fällt.",
+          },
+          {
+            title: "3. Täglich erinnern",
+            text: "Erinnern Sie sich täglich: Diese Erlaubnis gilt.",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Selbstfürsorge-Konzept, nach Mason/Kreger (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

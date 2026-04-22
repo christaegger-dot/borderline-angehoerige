@@ -805,6 +805,74 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Die Sauerstoffmaske",
+    description:
+      "Lesbare Web-Version zum negativen und hilfreichen Kreislauf der Selbstfürsorge mit drei konkreten Schritten",
+    keywords: [
+      "textversion",
+      "sauerstoffmaske",
+      "selbstfürsorge",
+      "schuldgefühle",
+      "erschöpfung",
+      "kreislauf",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/sauerstoffmaske",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Die STOPP-Technik",
+    description:
+      "Lesbare Web-Version zur 5-Schritte-Technik aus der Stressspirale mit Anker-Satz und Alltagsübung",
+    keywords: [
+      "textversion",
+      "stopp-technik",
+      "stopp",
+      "stressspirale",
+      "dbt",
+      "selbstfürsorge",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/stopp-technik",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Ihr Energie-Konto",
+    description:
+      "Lesbare Web-Version zu Energiegebern, Energiefressern, Batteriestand und drei Auftank-Schritten",
+    keywords: [
+      "textversion",
+      "energie-konto",
+      "energie",
+      "burnout",
+      "auftanken",
+      "selbstfürsorge",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/energie-konto",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Ihre Erlaubnis-Karte",
+    description:
+      "Lesbare Web-Version mit neun entlastenden Erlaubnissen, persönlicher Genehmigung und drei kleinen Alltagsschritten",
+    keywords: [
+      "textversion",
+      "erlaubnis-karte",
+      "erlaubnis",
+      "grenzen",
+      "eigene bedürfnisse",
+      "selbstfürsorge",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/erlaubnis-karte",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Schuld, Verantwortung und was dazwischen liegt",
     description:
       "Lesbare Web-Version zu Schuldgefühlen, Verantwortung, Entlastung und typischen Selbstvorwürfen von Angehörigen",

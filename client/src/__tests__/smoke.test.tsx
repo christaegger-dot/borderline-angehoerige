@@ -4,7 +4,7 @@
  * Ziel: Sicherstellen dass Kernseiten rendern ohne zu crashen
  * und wichtige Inhalte vorhanden sind.
  */
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeAll, afterEach } from "vitest";
 import { Router } from "wouter";
 
@@ -277,6 +277,84 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByText(/Überlastung kommt nicht plötzlich/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
+    ).toHaveAttribute("href", "/selbstfuersorge");
+  });
+
+  it("HandoutTextPage: rendert Sauerstoffmaske-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "sauerstoffmaske" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Die Sauerstoffmaske/i,
+        level: 1,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Im Flugzeug gilt: Erst die eigene Maske aufsetzen, dann anderen helfen\. Für Angehörige gilt dasselbe\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
+    ).toHaveAttribute("href", "/selbstfuersorge");
+  });
+
+  it("HandoutTextPage: rendert STOPP-Technik-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "stopp-technik" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Die STOPP-Technik/i,
+        level: 1,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /STOPP gibt Ihnen 30 Sekunden Abstand zwischen Reiz und Reaktion\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
+    ).toHaveAttribute("href", "/selbstfuersorge");
+  });
+
+  it("HandoutTextPage: rendert Energie-Konto-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "energie-konto" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Ihr Energie-Konto/i,
+        level: 1,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Ihre Energie ist begrenzt\. Achten Sie darauf, dass Sie regelmässig auftanken – bevor das Konto leer ist\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
+    ).toHaveAttribute("href", "/selbstfuersorge");
+  });
+
+  it("HandoutTextPage: rendert Erlaubnis-Karte-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "erlaubnis-karte" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Erlaubnis-Karte/i,
+        level: 1,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Gültig ab sofort\. Unbefristet\./i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -563,6 +641,37 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: 4 Alltags-Tipps/i,
       })
     ).toHaveAttribute("href", "/materialien/text/4-alltags-tipps");
+  });
+
+  it("Selbstfürsorge: zeigt Textversionen für Selbstfürsorge-Handouts", async () => {
+    const { default: Selbstfuersorge } =
+      await import("@/pages/Selbstfuersorge");
+    withRouter(<Selbstfuersorge />);
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /Abschnitt Materialien zum Download aufklappen/i,
+      })
+    );
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Die Sauerstoffmaske/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/sauerstoffmaske");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Die STOPP-Technik/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/stopp-technik");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Ihr Energie-Konto/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/energie-konto");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Erlaubnis-Karte/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/erlaubnis-karte");
   });
 
   it("NotFound: rendert 404-Seite", async () => {

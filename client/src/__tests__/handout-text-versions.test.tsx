@@ -5,6 +5,7 @@ import {
   getHandoutTextVersionHrefBySource,
 } from "@/content/handoutTextVersions";
 import { materials } from "@/content/materialien";
+import { selbstfuersorgeInfografiken } from "@/content/selbstfuersorge";
 import { unterstuetzenItems } from "@/content/unterstuetzen";
 import { verstehenInfografiken } from "@/content/verstehen";
 
@@ -34,6 +35,18 @@ describe("handout text versions", () => {
     const warnsignalePdf = materials.find(
       item => item.id === "warnsignale"
     )?.downloadUrl;
+    const sauerstoffmaskePdf = selbstfuersorgeInfografiken.find(
+      item => item.id === "sauerstoffmaske"
+    )?.pdf;
+    const stoppTechnikPdf = selbstfuersorgeInfografiken.find(
+      item => item.id === "stopp-technik"
+    )?.pdf;
+    const energieKontoPdf = selbstfuersorgeInfografiken.find(
+      item => item.id === "energie-konto"
+    )?.pdf;
+    const erlaubnisKartePdf = selbstfuersorgeInfografiken.find(
+      item => item.id === "erlaubnis-karte"
+    )?.pdf;
     const schuldVerantwortungPdf = materials.find(
       item => item.id === "schuld-verantwortung"
     )?.downloadUrl;
@@ -121,6 +134,18 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersion("warnsignale")?.path).toBe(
       "/materialien/text/warnsignale"
     );
+    expect(getHandoutTextVersion("sauerstoffmaske")?.path).toBe(
+      "/materialien/text/sauerstoffmaske"
+    );
+    expect(getHandoutTextVersion("stopp-technik")?.path).toBe(
+      "/materialien/text/stopp-technik"
+    );
+    expect(getHandoutTextVersion("energie-konto")?.path).toBe(
+      "/materialien/text/energie-konto"
+    );
+    expect(getHandoutTextVersion("erlaubnis-karte")?.path).toBe(
+      "/materialien/text/erlaubnis-karte"
+    );
     expect(getHandoutTextVersion("schuld-verantwortung")?.path).toBe(
       "/materialien/text/schuld-verantwortung"
     );
@@ -184,6 +209,18 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(warnsignalePdf)).toBe(
       "/materialien/text/warnsignale"
+    );
+    expect(getHandoutTextVersionHrefBySource(sauerstoffmaskePdf)).toBe(
+      "/materialien/text/sauerstoffmaske"
+    );
+    expect(getHandoutTextVersionHrefBySource(stoppTechnikPdf)).toBe(
+      "/materialien/text/stopp-technik"
+    );
+    expect(getHandoutTextVersionHrefBySource(energieKontoPdf)).toBe(
+      "/materialien/text/energie-konto"
+    );
+    expect(getHandoutTextVersionHrefBySource(erlaubnisKartePdf)).toBe(
+      "/materialien/text/erlaubnis-karte"
     );
     expect(getHandoutTextVersionHrefBySource(schuldVerantwortungPdf)).toBe(
       "/materialien/text/schuld-verantwortung"

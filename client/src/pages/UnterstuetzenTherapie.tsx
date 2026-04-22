@@ -3,6 +3,7 @@ import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
+import { TableOfContents } from "@/components/UXEnhancements";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -43,7 +44,60 @@ const emailHard = emailByIdStrict("EMAIL_HARD");
 const clieniaUrl = urlByIdStrict("URL_CLIENIA");
 const dbtDachUrl = urlByIdStrict("URL_DBT_DACH");
 
+const therapieIntroCards = [
+  {
+    icon: Stethoscope,
+    title: "Rolle begrenzt sehen",
+    text: "Angehörige können Behandlung mittragen, aber nicht selbst zu Therapie oder Motivation werden.",
+    iconClass: "text-slate-blue",
+    shellClass: "bg-slate-wash border-slate-light/80",
+  },
+  {
+    icon: MessageCircle,
+    title: "Mit dem System arbeiten",
+    text: "Klarer, dosierter Kontakt zum Behandlungsteam hilft oft mehr als ständiges Drängen auf Einblick.",
+    iconClass: "text-sage-dark",
+    shellClass: "bg-sage-wash border-sage-light/80",
+  },
+  {
+    icon: RefreshCw,
+    title: "Rückschläge einordnen",
+    text: "Stagnation oder Unterbrüche bedeuten nicht automatisch, dass Therapie wirkungslos oder sinnlos ist.",
+    iconClass: "text-sand-warm",
+    shellClass: "bg-sand-muted border-sand-border/80",
+  },
+] as const;
+
+const therapieQuickLinks = [
+  {
+    id: "rolle",
+    title: "Was Angehörige wirklich tun können",
+    text: "Wenn Sie Ihre hilfreiche Rolle klarer und begrenzter sehen möchten.",
+  },
+  {
+    id: "zusammenarbeit",
+    title: "Kontakt mit dem Behandlungsteam",
+    text: "Wenn Sie wissen möchten, wie Zusammenarbeit mit Therapeutinnen und Kliniken konstruktiv gelingt.",
+  },
+  {
+    id: "musterbrief",
+    title: "Musterbrief für Erstkontakt",
+    text: "Wenn Sie einen ruhigen Einstieg für die erste Kontaktaufnahme zum therapeutischen Team suchen.",
+  },
+  {
+    id: "therapieangebote",
+    title: "Therapieangebote im Kanton Zürich",
+    text: "Wenn Sie direkt zu regionalen Anlaufstellen und spezialisierten Angeboten springen möchten.",
+  },
+] as const;
+
 export default function UnterstuetzenTherapie() {
+  const openSection = (sectionId: string) => {
+    window.dispatchEvent(
+      new CustomEvent("open-section", { detail: { sectionId } })
+    );
+  };
+
   return (
     <Layout>
       <SEO
@@ -51,8 +105,9 @@ export default function UnterstuetzenTherapie() {
         description="Wie Angehörige Behandlung unterstützen können, ohne mitzubehandeln oder die Verantwortung zu übernehmen."
         path="/unterstuetzen/therapie"
       />
+      <TableOfContents />
 
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -76,7 +131,7 @@ export default function UnterstuetzenTherapie() {
               </span>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Therapie begleiten
             </h1>
 
@@ -87,14 +142,121 @@ export default function UnterstuetzenTherapie() {
               Therapiebegleitung oft so anspruchsvoll.
             </p>
 
-            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
+            <LastVerifiedBadge date="16.04.2026" className="mt-6" />
           </motion.div>
         </div>
       </section>
 
       <UnterstuetzenSubNav />
 
-      <section className="py-8 md:py-12">
+      <section className="py-8 md:py-10">
+        <div className="container">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <Card className="border-slate-light/70 bg-white/92 shadow-[0_28px_56px_-40px_rgba(60,99,140,0.25)]">
+              <CardContent className="p-6 md:p-7">
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-wash">
+                    <Stethoscope className="h-6 w-6 text-slate-blue" />
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
+                      <span className="h-px w-6 bg-slate-dark/30" />
+                      Überblick
+                    </span>
+                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
+                      Was diese Seite bei Therapie ordnet
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Diese Seite hilft Ihnen, Therapiebegleitung klarer von
+                  Mitbehandlung zu unterscheiden. Im Zentrum stehen Ihre Rolle,
+                  der Kontakt zum Behandlungssystem, realistische Erwartungen an
+                  Rückschläge und die Frage, wie Sie unterstützen können, ohne
+                  Verantwortung zu übernehmen, die nicht Ihnen gehört.
+                </p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {therapieIntroCards.map(item => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.title}
+                        className={`rounded-2xl border p-4 ${item.shellClass}`}
+                      >
+                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
+                        <h3 className="mb-2 text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.text}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
+              <CardContent className="p-6 md:p-7">
+                <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
+                  <span className="h-px w-6 bg-slate-dark/30" />
+                  Direkt einsteigen
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
+                  direkt zu dem Block, der Ihre aktuelle Therapiesituation am
+                  ehesten trifft.
+                </p>
+
+                <div className="mt-5 space-y-3">
+                  {therapieQuickLinks.map(item => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => openSection(item.id)}
+                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-slate-light hover:bg-slate-wash/35 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-blue/25 focus-visible:ring-offset-2"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {item.text}
+                          </p>
+                        </div>
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-wash text-slate-blue transition-transform group-hover:translate-x-0.5">
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-sage-light/60 bg-sage-wash/75 px-4 py-4">
+                  <p className="text-sm leading-relaxed text-sage-darker">
+                    Diese Seite hilft bei Rolle, Behandlungssystem und
+                    Therapierahmen. Wenn es gerade um akute Eskalation oder
+                    Sicherheit geht, ist{" "}
+                    <Link
+                      href="/unterstuetzen/krise"
+                      className="underline decoration-sage-mid/40 underline-offset-2 transition-colors hover:decoration-sage-mid"
+                    >
+                      Krisenbegleitung
+                    </Link>{" "}
+                    der passendere Einstieg.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <ContentSection

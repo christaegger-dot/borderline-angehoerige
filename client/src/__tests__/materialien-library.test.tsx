@@ -19,7 +19,7 @@ describe("MaterialienLibrarySection", () => {
       screen.getByText("Genesung in Zahlen – Was die Forschung zeigt")
     ).toBeInTheDocument();
     const remoteDownloadLink = screen.getByRole("link", {
-      name: /Der Leuchtturm – Ihre Rolle als Angehörige\/r herunterladen/i,
+      name: /Der Leuchtturm – Orientierung für Angehörige herunterladen/i,
     });
     expect(remoteDownloadLink).toHaveAttribute(
       "href",
@@ -42,7 +42,7 @@ describe("MaterialienLibrarySection", () => {
     ).toHaveAttribute("href", "/materialien/text/notfallplan-krise");
 
     const textVersionLink = screen.getByRole("link", {
-      name: /Textversion lesen: Der Leuchtturm – Ihre Rolle als Angehörige\/r/i,
+      name: /Textversion lesen: Der Leuchtturm – Orientierung für Angehörige/i,
     });
     expect(textVersionLink).toHaveAttribute(
       "href",

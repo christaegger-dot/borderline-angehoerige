@@ -5,6 +5,7 @@ import { MobileMenu } from "@/components/layout/MobileMenu";
 import { navItems } from "@/components/layout/navigationData";
 import { RessourcenMenu } from "@/components/layout/RessourcenMenu";
 import { getRouteAccent } from "@/components/layout/routeAccent";
+import { BrandMark } from "@/components/layout/BrandMark";
 import { Menu, Phone, Search as SearchIcon, X } from "@/icons/root-icons";
 
 interface HeaderNavProps {
@@ -38,17 +39,10 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
       <div className="container">
         <div className="flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3">
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-border/60 bg-white/90 shadow-sm shadow-black/5 ring-1 ring-white/70 md:h-11 md:w-11">
-              <img
-                src="/favicon-192.png"
-                alt="Startseite"
-                className="h-8 w-8 rounded-full md:h-9 md:w-9"
-                width={40}
-                height={40}
-                loading="eager"
-                decoding="async"
-              />
-            </span>
+            <BrandMark
+              className="md:h-11 md:w-11"
+              iconClassName="md:h-[22px] md:w-[22px]"
+            />
             <span className="hidden xl:flex flex-col leading-tight">
               <span className="text-sm font-medium text-foreground transition-colors group-hover:text-sage-darker whitespace-nowrap">
                 Borderline · Hilfe für Angehörige

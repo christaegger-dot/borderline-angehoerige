@@ -903,6 +903,130 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("wenn-worte-treffen", {
+    kicker: "Textversion",
+    summary:
+      "Schuldzuweisungen treffen oft hart, sagen aber meist mehr über Schmerz, Angst oder Hilflosigkeit als über Ihren Wert. Die Web-Version zeigt fünf häufige Sätze und ruhigere Antworten darauf.",
+    intro: [
+      "Diese Seite überträgt das Handout «Wenn Worte treffen – 5 häufige Schuldzuweisungen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die in belasteten Gesprächen mit harten Vorwürfen oder entwertenden Sätzen konfrontiert werden.",
+      "Die Struktur des Originals bleibt erhalten: eine entlastende Grundhaltung, fünf typische Schuldzuweisungen mit möglicher Einordnung und Antwort sowie ein abschliessender Merksatz, der Mitgefühl und Selbstschutz zusammenhält.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es im Handout geht",
+        calloutText:
+          "Schuldzuweisungen sind keine Tatsachen. Sie sind Ausdruck von Schmerz, der keinen anderen Weg findet. Das zu wissen schützt Sie – ohne den Schmerz des anderen zu entwerten.",
+      },
+      {
+        title: "5 häufige Schuldzuweisungen – und was dahintersteckt",
+        cards: [
+          {
+            title: "«Du bist schuld, dass es mir so schlecht geht.»",
+            text: "Dahinter stehen oft Überforderung und Hilflosigkeit. Mögliche Antwort: «Ich sehe, dass es dir schlecht geht. Ich bin nicht die Ursache – aber ich bin da.»",
+          },
+          {
+            title: "«Wenn du gehst, bringe ich mich um.»",
+            text: "Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich gehe nicht weg – und ich rufe jetzt Hilfe.» Das Handout markiert hier zusätzlich: Fachperson informieren.",
+          },
+          {
+            title: "«Du verstehst mich sowieso nicht.»",
+            text: "Dahinter stehen oft Einsamkeit und Enttäuschung. Mögliche Antwort: «Vielleicht verstehe ich nicht alles. Aber ich versuche es. Erzähl mir mehr.»",
+          },
+          {
+            title: "«Du bist genau wie alle anderen.»",
+            text: "Dahinter stehen oft Angst vor Ablehnung und Spaltung. Mögliche Antwort: «Das tut mir weh. Ich bin hier, weil du mir wichtig bist – auch wenn es gerade schwierig ist.»",
+          },
+          {
+            title: "«Ohne dich wäre alles besser.»",
+            text: "Dahinter stehen oft Scham und nach aussen gerichteter Selbsthass. Mögliche Antwort: «Das ist ein harter Satz. Ich bleibe trotzdem. Aber ich brauche auch Respekt.»",
+          },
+        ],
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Mitfühlen und sich gleichzeitig schützen",
+        calloutText:
+          "Der Satz sagt etwas über den Schmerz – nicht über Sie. Sie dürfen mitfühlen und sich gleichzeitig schützen.",
+      },
+    ],
+    sourceLine:
+      "Quellen: [1] Gunderson & Berkowitz, BPD Family Guidelines (NEABPD). [2] APA, DSM-5. [3] Linehan (1993).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
+  }),
+  createHandoutTextVersion("dear", {
+    kicker: "Textversion",
+    summary:
+      "DEAR hilft, Wünsche klar und ohne Vorwürfe zu formulieren. Die vier Schritte geben Gesprächen Struktur und senken das Eskalationsrisiko.",
+    intro: [
+      "Diese Seite überträgt das Handout «Die DEAR-Technik – Grenzen setzen ohne Vorwürfe» in eine lesbare Web-Version. Es richtet sich an Angehörige, die eigene Wünsche und Grenzen klarer ansprechen möchten.",
+      "Das Original verbindet die vier Schritte von DEAR mit kurzen Beispielen, einer Farblegende und drei alltagsnahen Übungshinweisen. Diese Struktur bleibt in der Web-Version erhalten.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "DEAR hilft Ihnen, Wünsche klar zu formulieren – ohne Vorwürfe, ohne Eskalation.",
+      },
+      {
+        title: "Die 4 Schritte",
+        intro:
+          "Für die Web-Version ist die Abfolge bewusst nach dem Akronym DEAR sortiert. Jeder Schritt kombiniert eine Funktion mit einem kurzen Beispielsatz.",
+        cards: [
+          {
+            title: "D = Describe (Beschreiben)",
+            text: "Beschreiben Sie die Situation objektiv, ohne Bewertung. Beispiel: «Mir ist aufgefallen, dass du in den letzten Tagen oft spät nach Hause kommst.»",
+          },
+          {
+            title: "E = Express (Äussern)",
+            text: "Drücken Sie Ihre Gefühle aus. Ich-Botschaft. Beispiel: «Das macht mir Sorgen, weil ich mich dann allein fühle.»",
+          },
+          {
+            title: "A = Assert (Behaupten)",
+            text: "Sagen Sie klar, was Sie sich wünschen. Beispiel: «Ich wünsche mir, dass wir abends öfter zusammen essen.»",
+          },
+          {
+            title: "R = Reinforce (Verstärken)",
+            text: "Zeigen Sie den positiven Effekt auf. Beispiel: «Das würde mir helfen, mich verbundener zu fühlen.»",
+          },
+        ],
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Sand",
+            text: "Beschreiben",
+          },
+          {
+            title: "Sage",
+            text: "Äussern",
+          },
+          {
+            title: "Terracotta",
+            text: "Behaupten",
+          },
+          {
+            title: "Slate",
+            text: "Verstärken",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Schreiben Sie einen DEAR-Satz für eine aktuelle Situation auf.",
+          "Üben Sie den Satz laut, bevor Sie ihn im Gespräch einsetzen.",
+          "Beginnen Sie mit kleinen Themen, bevor Sie grosse ansprechen.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Linehan (1993), DBT Skills Training, DEAR MAN.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
   createHandoutTextVersion("grenzen-spickzettel", {
     kicker: "Textversion",
     summary:

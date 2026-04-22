@@ -46,6 +46,13 @@ export const kommItems: KommunikationsMaterial[] = [
     category: "konflikte",
   },
   {
+    title: "Wenn Worte treffen",
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/azZbLPyPkSupQskI.webp",
+    pdfUrl:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hEXKCmWYeiyUnwXr.pdf",
+    category: "konflikte",
+  },
+  {
     title: "Zuhören ohne Zustimmen",
     url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eeZIHGmfprWnoPPf.webp",
     pdfUrl:

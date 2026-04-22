@@ -675,6 +675,40 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Wenn Worte treffen",
+    description:
+      "Lesbare Web-Version zu Schuldzuweisungen, typischen harten Sätzen und ruhigeren Antworten für Angehörige",
+    keywords: [
+      "textversion",
+      "wenn worte treffen",
+      "schuldzuweisungen",
+      "vorwürfe",
+      "anklage",
+      "kommunikation",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/wenn-worte-treffen",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Die DEAR-Technik",
+    description:
+      "Lesbare Web-Version zu DEAR mit Beschreiben, Äussern, Behaupten und Verstärken als klare Gesprächsstruktur",
+    keywords: [
+      "textversion",
+      "dear",
+      "dear man",
+      "grenzen",
+      "ich-botschaft",
+      "wünsche formulieren",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/dear",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Spickzettel Grenzen",
     description:
       "Lesbare Web-Version mit DEAR-Technik, Beispielsätzen für Grenzen und L.M.K.-Exit-Strategie",

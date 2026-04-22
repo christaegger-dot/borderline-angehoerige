@@ -435,6 +435,82 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/grenzen");
   });
 
+  it("HandoutTextPage: rendert Spiegeln-statt-Aufsaugen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "spiegeln-statt-aufsaugen" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Spiegeln statt Aufsaugen/i,
+      })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/Wem gehört dieses Gefühl\?/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
+    ).toHaveAttribute("href", "/grenzen");
+  });
+
+  it("HandoutTextPage: rendert 4-Arten-von-Grenzen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "4-arten-von-grenzen" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Die 4 Arten von Grenzen/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Grenzen sind keine Mauern, sondern Türen mit Schloss\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
+    ).toHaveAttribute("href", "/grenzen");
+  });
+
+  it("HandoutTextPage: rendert Grenzen-erkennen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "grenzen-erkennen" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Grenzen erkennen/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Ihr Körper weiss oft vor Ihrem Kopf, dass eine Grenze überschritten wurde\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
+    ).toHaveAttribute("href", "/grenzen");
+  });
+
+  it("HandoutTextPage: rendert LMK-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "lmk" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /L\.M\.K\. \(Lebe Mit Konsequenzen\)/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Sie können Grenzen setzen\. Sie können Konsequenzen umsetzen\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
+    ).toHaveAttribute("href", "/grenzen");
+  });
+
   it("HandoutTextPage: rendert Genesung-in-Zahlen-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -630,7 +706,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
   });
 
-  it("Grenzen: zeigt Textversion für Spickzettel Grenzen", async () => {
+  it("Grenzen: zeigt Textversionen für Grenzen-Handouts", async () => {
     const { default: Grenzen } = await import("@/pages/Grenzen");
     withRouter(<Grenzen />);
     expect(
@@ -643,6 +719,26 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Die DEAR-Technik/i,
       })
     ).toHaveAttribute("href", "/materialien/text/dear");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Spiegeln statt Aufsaugen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/spiegeln-statt-aufsaugen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Die 4 Arten von Grenzen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/4-arten-von-grenzen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Grenzen erkennen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/grenzen-erkennen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: L\.M\.K\. \(Lebe Mit Konsequenzen\)/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/lmk");
   });
 
   it("Kommunizieren: zeigt Textversion für Wenn Worte treffen", async () => {

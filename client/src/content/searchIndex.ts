@@ -941,6 +941,74 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Spiegeln statt Aufsaugen",
+    description:
+      "Lesbare Web-Version zu Mitfühlen ohne Übernehmen, Selbstschutz und Eigenverantwortung in belasteten Beziehungen",
+    keywords: [
+      "textversion",
+      "spiegeln statt aufsaugen",
+      "mitfühlen",
+      "übernehmen",
+      "selbstschutz",
+      "eigenverantwortung",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/spiegeln-statt-aufsaugen",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Die 4 Arten von Grenzen",
+    description:
+      "Lesbare Web-Version zu physischen, emotionalen, zeitlichen und materiellen Grenzen mit Beispielen und Warnsignalen",
+    keywords: [
+      "textversion",
+      "4 arten von grenzen",
+      "physische grenzen",
+      "emotionale grenzen",
+      "zeitliche grenzen",
+      "materielle grenzen",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/4-arten-von-grenzen",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Grenzen erkennen",
+    description:
+      "Lesbare Web-Version zu fünf Warnsignalen des Körpers bei Grenzverletzungen und Überlastung",
+    keywords: [
+      "textversion",
+      "grenzen erkennen",
+      "warnsignale",
+      "körper",
+      "überlastung",
+      "selbstwahrnehmung",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/grenzen-erkennen",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: L.M.K. (Lebe Mit Konsequenzen)",
+    description:
+      "Lesbare Web-Version zu logischen, machbaren Konsequenzen, wenn gesetzte Grenzen nicht respektiert werden",
+    keywords: [
+      "textversion",
+      "lmk",
+      "lebe mit konsequenzen",
+      "konsequenzen",
+      "grenzen",
+      "dichotomie der kontrolle",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/lmk",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Genesung in Zahlen",
     description:
       "Lesbare Web-Version zu Remission, Recovery, Langzeitdaten und realistisch hoffnungsvollen Prognosezahlen",

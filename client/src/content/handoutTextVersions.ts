@@ -4,6 +4,7 @@ import {
   type MaterialItem,
 } from "./materialien";
 import { genesungItems } from "./genesung";
+import { grenzenItems } from "./grenzen";
 import { selbstfuersorgeInfografiken } from "./selbstfuersorge";
 import { unterstuetzenItems } from "./unterstuetzen";
 import { verstehenInfografiken } from "./verstehen";
@@ -96,6 +97,19 @@ function requireMaterial(id: string) {
       previewImageUrl: unterstuetzenMaterial.url,
       topic: TOPIC_META.unterstuetzen,
       pdfSourceUrl: unterstuetzenMaterial.pdfUrl,
+    };
+  }
+
+  const grenzenMaterial = grenzenItems.find(item => item.id === id);
+  if (grenzenMaterial) {
+    return {
+      title: grenzenMaterial.title,
+      description: grenzenMaterial.description,
+      category: "grenzen" as const,
+      kind: "Infografik" as const,
+      previewImageUrl: grenzenMaterial.url,
+      topic: TOPIC_META.grenzen,
+      pdfSourceUrl: grenzenMaterial.pdfUrl,
     };
   }
 
@@ -2121,6 +2135,264 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       },
     ],
     sourceLine: "Quelle: Linehan (1993), DBT Skills Training, DEAR MAN.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("spiegeln-statt-aufsaugen", {
+    kicker: "Textversion",
+    summary:
+      "Mitgefühl heisst nicht Übernehmen. Sie können Leid anerkennen, ohne Schmerz, Wut oder Leere des anderen zu Ihren eigenen zu machen.",
+    intro: [
+      "Diese Seite überträgt das Handout «Spiegeln statt Aufsaugen – Mitfühlen ohne Übernehmen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die empathisch bleiben wollen, ohne sich dabei selbst zu verlieren.",
+      "Die Struktur des Originals bleibt erhalten: zuerst die Kernfrage, dann der Unterschied zwischen Aufsaugen und Spiegeln und zum Schluss drei kurze Hinweise für den Alltag.",
+    ],
+    sections: [
+      {
+        title: "Kernfrage",
+        calloutTitle: "Zentraler Prüfstein",
+        calloutText: "Wem gehört dieses Gefühl?",
+      },
+      {
+        title: "Aufsaugen",
+        cards: [
+          {
+            title: "Was passiert?",
+            text: "Sie übernehmen den Schmerz und die Wut des anderen.",
+          },
+          {
+            title: "Folge",
+            text: "Erschöpfung, Schuldgefühle.",
+          },
+          {
+            title: "Typischer Satz",
+            text: "Es ist meine Schuld, dass es dir schlecht geht.",
+          },
+          {
+            title: "Innere Dynamik",
+            text: "Ich muss das schwarze Loch füllen.",
+          },
+        ],
+      },
+      {
+        title: "Spiegeln",
+        cards: [
+          {
+            title: "Was passiert?",
+            text: "Sie reflektieren die Gefühle zurück zum Eigentümer.",
+          },
+          {
+            title: "Folge",
+            text: "Selbstschutz, Eigenverantwortung.",
+          },
+          {
+            title: "Typischer Satz",
+            text: "Ich sehe, dass du leidest. Ich bin für dich da, aber ich kann es nicht für dich fühlen.",
+          },
+          {
+            title: "Innere Haltung",
+            text: "Das sind deine Gefühle, nicht meine.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Fragen Sie sich: Ist das mein Gefühl oder seins/ihres?",
+          "Sagen Sie: Ich verstehe, dass du leidest (nicht: Ich leide mit dir).",
+          "Erinnern Sie sich: Nur der Betroffene kann seine Leere füllen.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("4-arten-von-grenzen", {
+    kicker: "Textversion",
+    summary:
+      "Grenzen sind nicht nur emotional. Auch Körper, Zeit und materielle Ressourcen dürfen geschützt werden.",
+    intro: [
+      "Diese Seite überträgt das Handout «Die 4 Arten von Grenzen – Wissen, was Sie schützen» in eine lesbare Web-Version. Es hilft Angehörigen, Grenzverletzungen genauer einzuordnen und den eigenen Schutzbedarf klarer zu benennen.",
+      "Das Original arbeitet mit vier Bereichen, kurzen Beispielen und je einem Warnsignal. Diese Struktur bleibt hier bewusst erhalten.",
+    ],
+    sections: [
+      {
+        title: "Kernbotschaft",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Grenzen sind keine Mauern, sondern Türen mit Schloss. Sie entscheiden, wann Sie öffnen.",
+      },
+      {
+        title: "Die vier Bereiche",
+        cards: [
+          {
+            title: "Physische Grenzen",
+            text: "Schutz Ihres Körpers und Ihrer körperlichen Unversehrtheit. Beispiele: «Ich möchte jetzt nicht umarmt werden.» und «Bitte klopfe an, bevor du mein Zimmer betrittst.» Warnsignal: Wenn jemand Ihren persönlichen Raum ohne Erlaubnis betritt.",
+          },
+          {
+            title: "Emotionale Grenzen",
+            text: "Trennung zwischen Ihren Gefühlen und denen anderer. Beispiele: «Ich kann deine Trauer verstehen, aber ich muss sie nicht übernehmen.» und «Deine Wut ist deine Wut, nicht meine Schuld.» Warnsignal: Wenn Sie sich für die Gefühle anderer verantwortlich fühlen.",
+          },
+          {
+            title: "Zeitliche Grenzen",
+            text: "Schutz Ihrer Zeit und Energie. Beispiele: «Ich bin heute Abend nicht verfügbar.» und «Ich kann maximal eine Stunde telefonieren.» Warnsignal: Wenn Ihre gesamte Freizeit von einer Person beansprucht wird.",
+          },
+          {
+            title: "Materielle Grenzen",
+            text: "Schutz Ihrer Ressourcen und Besitztümer. Beispiele: «Ich kann dir kein Geld leihen.» und «Bitte frage, bevor du meine Sachen benutzt.» Warnsignal: Wenn Sie sich finanziell ausgenutzt fühlen.",
+          },
+        ],
+      },
+      {
+        title: "Merke",
+        calloutTitle: "Abschlusssatz des Handouts",
+        calloutText:
+          "Alle vier Grenzen sind gleichwertig. Sie haben das Recht, jede davon zu schützen.",
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("grenzen-erkennen", {
+    kicker: "Textversion",
+    summary:
+      "Oft meldet sich eine Grenzverletzung zuerst im Körper. Wer die eigenen Warnsignale kennt, kann früher gegensteuern.",
+    intro: [
+      "Diese Seite überträgt das Handout «Grenzen erkennen – 5 Warnsignale Ihres Körpers und Ihrer Seele» in eine lesbare Web-Version. Es unterstützt Angehörige dabei, frühe Überlastungszeichen ernster zu nehmen.",
+      "Die Struktur folgt dem Original: eine Kernaussage, fünf typische Warnsignale und eine kurze Abschlussfrage zur Selbstbeobachtung.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Ihr Körper weiss oft vor Ihrem Kopf, dass eine Grenze überschritten wurde. Lernen Sie, auf ihn zu hören.",
+      },
+      {
+        title: "Die 5 Warnsignale",
+        cards: [
+          {
+            title: "Der Knoten im Bauch",
+            text: "Körperlich: Magenschmerzen, Übelkeit. Emotional: Irgendetwas stimmt hier nicht.",
+          },
+          {
+            title: "Die Enge in der Brust",
+            text: "Druck, flache Atmung, Herzrasen. Eingeengt. Mehr Raum nötig.",
+          },
+          {
+            title: "Die Anspannung im Nacken",
+            text: "Verspannte Schultern, Kopfschmerzen. Zu viel Last.",
+          },
+          {
+            title: "Die Erschöpfung ohne Grund",
+            text: "Ständige Müdigkeit. Ich bin leer.",
+          },
+          {
+            title: "Der Impuls zu fliehen",
+            text: "Unruhe, Zappeligkeit. Ich will hier weg.",
+          },
+        ],
+      },
+      {
+        title: "Abschluss",
+        calloutTitle: "Frage zur Selbstbeobachtung",
+        calloutText: "Welches Signal kennen Sie? Wann tritt es auf?",
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014), Angehörigen-Psychoedukation.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("lmk", {
+    kicker: "Textversion",
+    summary:
+      "Wenn Grenzen ignoriert werden, reicht eine Bitte oft nicht. L.M.K. verbindet klare Ansage, logische Konsequenz und ruhiges Handeln.",
+    intro: [
+      "Diese Seite überträgt das Handout «Wenn Grenzen nicht respektiert werden – Die LMK-Methode» in eine lesbare Web-Version. Es richtet sich an Angehörige, die nach wiederholten Grenzverletzungen konsequent und ohne Drohlogik handeln wollen.",
+      "Die Struktur des Originals bleibt erhalten: Stufe 1 Grenze setzen, die Dichotomie der Kontrolle, Stufe 2 logische Konsequenz, Stufe 3 handeln und drei kurze Hinweise für die Umsetzung.",
+    ],
+    sections: [
+      {
+        title: "Stufe 1: Grenze setzen",
+        cards: [
+          {
+            title: "Beispiel",
+            text: "Ich kann so nicht weiterreden. Pause 10 Minuten.",
+          },
+          {
+            title: "Wenn die Grenze respektiert wird",
+            text: "Gespräch wird fortgesetzt. Grenze hält.",
+          },
+          {
+            title: "Wenn die Grenze nicht respektiert wird",
+            text: "Grenze wird ignoriert oder übertreten.",
+          },
+        ],
+      },
+      {
+        title: "Dichotomie der Kontrolle",
+        cards: [
+          {
+            title: "Was ich kontrollieren kann",
+            text: "Meine Reaktion, meine Grenzen, mein Verhalten.",
+          },
+          {
+            title: "Was ich nicht kontrollieren kann",
+            text: "Das Verhalten meines Angehörigen.",
+          },
+        ],
+      },
+      {
+        title: "Stufe 2: L.M.K. – logische, machbare Konsequenz",
+        bullets: [
+          "Wenn du weiter schreist, gehe ich in mein Zimmer.",
+          "Wenn das nochmal passiert, schlafe ich heute woanders.",
+        ],
+      },
+      {
+        title: "Stufe 3: Handeln",
+        calloutTitle: "Umsetzung",
+        calloutText:
+          "Konsequenz umsetzen. Ruhig, ohne Vorwurf. Nicht drohen, sondern tun.",
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Sie können Grenzen setzen. Sie können Konsequenzen umsetzen. Sie können nicht das Verhalten des anderen ändern.",
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Grenze hält",
+            text: "Die gesetzte Grenze wird respektiert.",
+          },
+          {
+            title: "LMK",
+            text: "Logische, machbare Konsequenz.",
+          },
+          {
+            title: "Handeln",
+            text: "Die Konsequenz wird ruhig umgesetzt.",
+          },
+          {
+            title: "Grenze nicht respektiert",
+            text: "Die gesetzte Grenze wird ignoriert oder übertreten.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Definieren Sie vorab 2–3 logische, machbare Konsequenzen.",
+          "Besprechen Sie diese in einem ruhigen Moment.",
+          "Setzen Sie die Konsequenz um – ruhig und ohne Diskussion.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

@@ -3,6 +3,7 @@ import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
+import { TableOfContents } from "@/components/UXEnhancements";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -19,7 +20,60 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 
+const alltagIntroCards = [
+  {
+    icon: Clock,
+    title: "Daueranspannung ernst nehmen",
+    text: "Alltag kann erschöpfend sein, auch wenn äusserlich gerade nichts eskaliert oder zusammenbricht.",
+    iconClass: "text-sage-dark",
+    shellClass: "bg-sage-wash border-sage-light/80",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Vorhersehbarkeit schaffen",
+    text: "Klare Absprachen, ruhige Präsenz und begrenzte Verfügbarkeit tragen oft mehr als hektische Reparatur.",
+    iconClass: "text-slate-blue",
+    shellClass: "bg-slate-wash border-slate-light/80",
+  },
+  {
+    icon: Heart,
+    title: "Beziehung atmungsfähig halten",
+    text: "Kleine positive Inseln und klare Grenzen helfen, dass Unterstützung nicht in Überforderung kippt.",
+    iconClass: "text-sand-warm",
+    shellClass: "bg-sand-muted border-sand-border/80",
+  },
+] as const;
+
+const alltagQuickLinks = [
+  {
+    id: "alltagsspannung",
+    title: "Warum Alltag so anstrengend ist",
+    text: "Wenn Sie zuerst verstehen möchten, warum schon die Vorahnung von Krise so viel Energie kostet.",
+  },
+  {
+    id: "was-hilft",
+    title: "Was im Alltag wirklich hilft",
+    text: "Wenn Sie konkrete Muster für Verlässlichkeit, Klarheit und begrenzte Verfügbarkeit suchen.",
+  },
+  {
+    id: "impulsivitaet",
+    title: "Wenn Impulsivität ausbricht",
+    text: "Wenn plötzliche Entscheidungen, Ausgaben oder Risikoverhalten gerade das akute Thema sind.",
+  },
+  {
+    id: "grenzen",
+    title: "Wo Ihre Grenzen liegen",
+    text: "Wenn Sie klarer sehen möchten, was Sie im Alltag tragen können und was nicht.",
+  },
+] as const;
+
 export default function UnterstuetzenAlltag() {
+  const openSection = (sectionId: string) => {
+    window.dispatchEvent(
+      new CustomEvent("open-section", { detail: { sectionId } })
+    );
+  };
+
   return (
     <Layout>
       <SEO
@@ -27,8 +81,9 @@ export default function UnterstuetzenAlltag() {
         description="Wie Angehörige im Alltag hilfreich bleiben können: verlässlich, klar und ohne sich selbst zu verlieren."
         path="/unterstuetzen/alltag"
       />
+      <TableOfContents />
 
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -52,7 +107,7 @@ export default function UnterstuetzenAlltag() {
               </span>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Im Alltag unterstützen
             </h1>
 
@@ -64,14 +119,121 @@ export default function UnterstuetzenAlltag() {
               darum, was im Alltag trägt und was eher erschöpft.
             </p>
 
-            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
+            <LastVerifiedBadge date="16.04.2026" className="mt-6" />
           </motion.div>
         </div>
       </section>
 
       <UnterstuetzenSubNav />
 
-      <section className="py-8 md:py-12">
+      <section className="py-8 md:py-10">
+        <div className="container">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <Card className="border-sand-border/85 bg-white/92 shadow-[0_28px_56px_-40px_rgba(139,108,31,0.28)]">
+              <CardContent className="p-6 md:p-7">
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-wash">
+                    <Calendar className="h-6 w-6 text-sage-dark" />
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-dark/80">
+                      <span className="h-px w-6 bg-sage-dark/25" />
+                      Überblick
+                    </span>
+                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
+                      Was diese Seite im Alltag ordnet
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Diese Seite hilft Ihnen, Alltagsunterstützung nicht nur als
+                  Reaktion auf einzelne Krisen zu sehen. Im Zentrum stehen
+                  Daueranspannung, vorhersehbare Absprachen, kleine
+                  Entlastungsinseln und die Frage, wie Unterstützung tragfähig
+                  bleibt, ohne dass Sie sich selbst verlieren.
+                </p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {alltagIntroCards.map(item => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.title}
+                        className={`rounded-2xl border p-4 ${item.shellClass}`}
+                      >
+                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
+                        <h3 className="mb-2 text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.text}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
+              <CardContent className="p-6 md:p-7">
+                <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
+                  <span className="h-px w-6 bg-slate-dark/30" />
+                  Direkt einsteigen
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
+                  direkt zu dem Teil, der Ihre aktuelle Alltagslage am ehesten
+                  trifft.
+                </p>
+
+                <div className="mt-5 space-y-3">
+                  {alltagQuickLinks.map(item => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => openSection(item.id)}
+                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sage-light hover:bg-sage-wash/40 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-mid/35 focus-visible:ring-offset-2"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {item.text}
+                          </p>
+                        </div>
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-dark transition-transform group-hover:translate-x-0.5">
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-sand-border/65 bg-sand-muted/65 px-4 py-4">
+                  <p className="text-sm leading-relaxed text-sand-warm">
+                    Wenn die Lage in Richtung Selbst- oder Fremdgefährdung,
+                    massiver Eskalation oder Kontrollverlust kippt, geht es
+                    nicht mehr primär um Alltagsbegleitung, sondern um{" "}
+                    <Link
+                      href="/unterstuetzen/krise"
+                      className="underline decoration-sand-warm/40 underline-offset-2 transition-colors hover:decoration-sand-warm"
+                    >
+                      Krisenbegleitung
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <ContentSection

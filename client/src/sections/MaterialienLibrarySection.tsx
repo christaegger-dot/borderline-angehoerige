@@ -169,15 +169,15 @@ function MaterialCard({
         }}
         aria-label={`${item.title} öffnen`}
       >
-        <div
+        <img
           aria-hidden="true"
-          className="absolute inset-0 scale-105 blur-2xl opacity-30"
-          style={{
-            backgroundImage: `url("${previewSrc}")`,
-            backgroundPosition: "top center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
+          src={previewSrc}
+          alt=""
+          className="pointer-events-none absolute inset-0 h-full w-full scale-105 object-cover object-top opacity-30 blur-2xl"
+          loading="lazy"
+          width={400}
+          height={300}
+          decoding="async"
         />
         <div className="absolute inset-x-4 top-4 flex items-center justify-between gap-2">
           <span

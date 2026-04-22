@@ -122,7 +122,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Sie können das Schiff nicht steuern/i)
+      await screen.findByText(/Sie können das Schiff nicht steuern/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zur Materialsammlung/i })
@@ -139,7 +139,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Gefahr einschätzen, ruhig bleiben, direkt ansprechen/i)
+      await screen.findByText(
+        /Gefahr einschätzen, ruhig bleiben, direkt ansprechen/i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Soforthilfe/i })
@@ -156,7 +158,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /In der Krise hilft weniger Logik – mehr Ruhe, Präsenz und Orientierung\./i
       )
     ).toBeInTheDocument();
@@ -175,7 +177,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Präsenz, Stabilität und Grenze sind drei Säulen/i)
+      await screen.findByText(
+        /Präsenz, Stabilität und Grenze sind drei Säulen/i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
@@ -195,7 +199,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener\./i
       )
     ).toBeInTheDocument();
@@ -217,7 +221,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Innehalten – wahrnehmen – nicht bewerten – bewusst handeln\./i
       )
     ).toBeInTheDocument();
@@ -237,7 +241,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Nicht alles auf einmal: Wählen Sie eine Leitlinie pro Woche\./i
       )
     ).toBeInTheDocument();
@@ -257,7 +261,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Kleine Handlungen im Alltag machen den grössten Unterschied\./i
       )
     ).toBeInTheDocument();
@@ -276,7 +280,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Überlastung kommt nicht plötzlich/i)
+      await screen.findByText(/Überlastung kommt nicht plötzlich/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -294,7 +298,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Im Flugzeug gilt: Erst die eigene Maske aufsetzen, dann anderen helfen\. Für Angehörige gilt dasselbe\./i
       )
     ).toBeInTheDocument();
@@ -314,7 +318,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /STOPP gibt Ihnen 30 Sekunden Abstand zwischen Reiz und Reaktion\./i
       )
     ).toBeInTheDocument();
@@ -334,7 +338,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Ihre Energie ist begrenzt\. Achten Sie darauf, dass Sie regelmässig auftanken – bevor das Konto leer ist\./i
       )
     ).toBeInTheDocument();
@@ -354,7 +358,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Gültig ab sofort\. Unbefristet\./i)
+      await screen.findByText(/Gültig ab sofort\. Unbefristet\./i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -373,7 +377,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Schuldgefühle gehören zu den häufigsten Belastungen/i)
+      await screen.findByText(
+        /Schuldgefühle gehören zu den häufigsten Belastungen/i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -392,7 +398,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Radikale Akzeptanz gibt Ihnen Ihre Energie zurück/i)
+      await screen.findByText(
+        /Radikale Akzeptanz gibt Ihnen Ihre Energie zurück/i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -411,7 +419,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Schuldzuweisungen sind keine Tatsachen/i)
+      await screen.findByText(/Schuldzuweisungen sind keine Tatsachen/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
@@ -428,7 +436,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Kurz, ruhig und wiederholbar wirkt in Krisen stärker als Argumente\./i
       )
     ).toBeInTheDocument();
@@ -449,7 +457,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Nicht rechtfertigen\. Nicht erklären\. Nicht streiten\./i
       )
     ).toBeInTheDocument();
@@ -470,7 +478,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Ich stoppe jetzt – nicht weil ich aufgebe, sondern weil mir diese Beziehung wichtig ist\./i
       )
     ).toBeInTheDocument();
@@ -491,7 +499,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Sie können Gefühle anerkennen, ohne die Interpretation zu übernehmen\./i
       )
     ).toBeInTheDocument();
@@ -510,7 +518,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Kurz, ruhig, wiederholbar\. Nicht erklären, nicht rechtfertigen, nicht streiten\./i
       )
     ).toBeInTheDocument();
@@ -529,7 +537,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/DEAR hilft Ihnen, Wünsche klar zu formulieren/i)
+      await screen.findByText(/DEAR hilft Ihnen, Wünsche klar zu formulieren/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
@@ -547,7 +555,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Spiegeln statt Aufsaugen/i,
       })
     ).toBeInTheDocument();
-    expect(screen.getByText(/Wem gehört dieses Gefühl\?/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/Wem gehört dieses Gefühl\?/i)
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
     ).toHaveAttribute("href", "/grenzen");
@@ -565,7 +575,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Grenzen sind keine Mauern, sondern Türen mit Schloss\./i
       )
     ).toBeInTheDocument();
@@ -584,7 +594,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Ihr Körper weiss oft vor Ihrem Kopf, dass eine Grenze überschritten wurde\./i
       )
     ).toBeInTheDocument();
@@ -603,7 +613,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Sie können Grenzen setzen\. Sie können Konsequenzen umsetzen\./i
       )
     ).toBeInTheDocument();
@@ -622,7 +632,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Genesung ist möglich\. Sie braucht Zeit/i)
+      await screen.findByText(/Genesung ist möglich\. Sie braucht Zeit/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
@@ -641,7 +651,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Rückschritte sind Teil des Weges – nicht das Ende\./i)
+      await screen.findByText(
+        /Rückschritte sind Teil des Weges – nicht das Ende\./i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
@@ -658,7 +670,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Remission ist das realistische Ziel – und ein grosser Erfolg\./i
       )
     ).toBeInTheDocument();
@@ -679,7 +691,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Sie als Angehörige können bei den beeinflussbaren Faktoren unterstützen\./i
       )
     ).toBeInTheDocument();
@@ -700,7 +712,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Sie können unterstützen\. Sie müssen nicht retten\./i)
+      await screen.findByText(
+        /Sie können unterstützen\. Sie müssen nicht retten\./i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
@@ -717,7 +731,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Kinder spüren, dass etwas anders ist/i)
+      await screen.findByText(/Kinder spüren, dass etwas anders ist/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
@@ -734,7 +748,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Freundlichkeit, Verschlechterung, Explosion und Schweigen/i
       )
     ).toBeInTheDocument();
@@ -753,7 +767,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Emotionale Überflutung ist keine Absicht/i)
+      await screen.findByText(/Emotionale Überflutung ist keine Absicht/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
@@ -770,7 +784,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Was Sie sehen \(Wut\) ist oft nur die Spitze/i)
+      await screen.findByText(/Was Sie sehen \(Wut\) ist oft nur die Spitze/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
@@ -787,7 +801,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Unter Stress kippt die Bewertung Ihres Angehörigen/i)
+      await screen.findByText(
+        /Unter Stress kippt die Bewertung Ihres Angehörigen/i
+      )
     ).toBeInTheDocument();
   });
 
@@ -801,7 +817,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
+      await screen.findByText(
         /Im Alarm-Modus ist Ihr Gegenüber vorübergehend nicht erreichbar/i
       )
     ).toBeInTheDocument();

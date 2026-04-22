@@ -242,7 +242,6 @@ export default defineConfig(({ command }) => {
               "class-variance-authority",
               "wouter",
               "sonner",
-              "zod",
             ],
             // Icons – large but tree-shakeable
             "vendor-icons": ["lucide-react"],

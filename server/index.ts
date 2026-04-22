@@ -3,6 +3,7 @@ import { createServer } from "http";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { SECURITY_HEADERS } from "../shared/securityHeaders";
 import { createMaterialDownloadResponse } from "./material-download";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -15,21 +16,9 @@ async function startServer() {
   // Security headers (aligned with Netlify config)
   app.disable("x-powered-by");
   app.use((_req, res, next) => {
-    res.setHeader("X-Content-Type-Options", "nosniff");
-    res.setHeader("X-Frame-Options", "DENY");
-    res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
-    res.setHeader(
-      "Content-Security-Policy",
-      "default-src 'self'; script-src 'self' https://forge.butterfly-effect.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://files.manuscdn.com data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://forge.butterfly-effect.dev; media-src 'self' https://files.manuscdn.com; frame-ancestors 'none'"
-    );
-    res.setHeader(
-      "Strict-Transport-Security",
-      "max-age=31536000; includeSubDomains"
-    );
-    res.setHeader(
-      "Permissions-Policy",
-      "camera=(), microphone=(), geolocation=(self)"
-    );
+    for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
+      res.setHeader(header, value);
+    }
     next();
   });
 

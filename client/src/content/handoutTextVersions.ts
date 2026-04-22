@@ -599,6 +599,139 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("konsistenz-prinzip", {
+    kicker: "Textversion",
+    summary:
+      "Wenn Angehörige ähnlich reagieren und gemeinsame Grenzen einhalten, entstehen mehr Sicherheit, Vertrauen und weniger Eskalationen.",
+    intro: [
+      "Diese Seite überträgt die Infografik «Konsistenz-Prinzip – als Team wird es leichter» in eine lesbare Web-Version. Das Handout stellt einen hilfreichen und einen schwierigen Beziehungskreislauf gegenüber.",
+      "Die Grundidee ist einfach: Gleiche Grenzen führen zu mehr Sicherheit. Widersprüchliche Reaktionen machen es leichter, Grenzen gegeneinander auszuspielen, und erhöhen Konflikte.",
+    ],
+    sections: [
+      {
+        title: "Zwei Kreisläufe im Vergleich",
+        intro:
+          "Die Infografik zeigt links einen hilfreichen Kreislauf und rechts einen schwierigen Kreislauf.",
+        cards: [
+          {
+            title: "Konsistenz",
+            text: "Vertrauen, weniger Ausspielen und ein hilfreicher Beziehungskreislauf.",
+          },
+          {
+            title: "Gemeinsame Grenze",
+            text: "Gleiche Grenzen – weniger Streit über die Grenzen.",
+          },
+          {
+            title: "Inkonsistenz",
+            text: "Unsicherheit, mehr Konflikte, Misstrauen und ein schwieriger Beziehungskreislauf.",
+          },
+        ],
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Worum es beim Konsistenz-Prinzip geht",
+        calloutText:
+          "Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener.",
+      },
+      {
+        title: "Mini-Legende",
+        bullets: [
+          "Kreis = verstärkender Kreislauf",
+          "Grün = hilfreich / Rot = schwierig",
+          "Pfeile = was sich gegenseitig beeinflusst",
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Kurze Absprachen",
+            text: "Machen Sie kurze Absprachen: wer sagt was, wann Pause ist und welche Grenze gemeinsam gilt.",
+          },
+          {
+            title: "2. Gemeinsam dranbleiben",
+            text: "Halten Sie 1–2 gemeinsame Grenzen gleich ein.",
+          },
+          {
+            title: "3. Unterschiede privat besprechen",
+            text: "Besprechen Sie Unterschiede privat – nicht im Streitmoment.",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Familienleitlinien/Angehörigen-Psychoedukation.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("beziehungs-achtsamkeit", {
+    kicker: "Textversion",
+    summary:
+      "Innehalten, wahrnehmen, nicht bewerten und bewusst handeln helfen Angehörigen, aus dem Autopiloten auszusteigen und klarer zu reagieren.",
+    intro: [
+      "Diese Seite überträgt die Infografik «Beziehungs-Achtsamkeit – 4 Schritte im Alltag» in eine lesbare Web-Version. Das Handout übersetzt Achtsamkeit in vier konkrete Schritte für Beziehungssituationen.",
+      "Die Struktur ist bewusst alltagsnah: erst stoppen, dann wahrnehmen, nicht vorschnell bewerten und am Schluss bewusst einen nächsten Schritt wählen.",
+    ],
+    sections: [
+      {
+        title: "4 Schritte im Alltag",
+        intro:
+          "Die Grafik beschreibt eine Reihenfolge, die helfen soll, impulsive Reaktionen zu unterbrechen.",
+        cards: [
+          {
+            title: "Innehalten",
+            text: "Moment mal – Stopp.",
+          },
+          {
+            title: "Wahrnehmen",
+            text: "Was passiert gerade – in mir und im Gegenüber?",
+          },
+          {
+            title: "Nicht bewerten",
+            text: "Es ist, wie es ist (noch keine Lösung).",
+          },
+          {
+            title: "Bewusst handeln",
+            text: "Ich wähle: Satz / Grenze / Pause / Hilfe.",
+          },
+        ],
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Worum es bei Beziehungs-Achtsamkeit geht",
+        calloutText:
+          "Innehalten – wahrnehmen – nicht bewerten – bewusst handeln.",
+      },
+      {
+        title: "Mini-Legende",
+        bullets: [
+          "Pfeile = Reihenfolge",
+          "Jeder Schritt = bewusste Entscheidung",
+          "Ziel = weniger Autopilot, mehr Klarheit",
+        ],
+      },
+      {
+        title: "Action Box",
+        cards: [
+          {
+            title: "1. Täglich üben",
+            text: "Üben Sie Schritt 1–2 täglich in kleinen Situationen.",
+          },
+          {
+            title: "2. Als Anti-Streit-Regel nutzen",
+            text: "Nutzen Sie Schritt 3 als Anti-Streit-Regel: erst später bewerten.",
+          },
+          {
+            title: "3. Konkret entscheiden",
+            text: "Entscheiden Sie Schritt 4 konkret: ein Satz, eine Grenze, ein nächster Schritt.",
+          },
+        ],
+      },
+    ],
+    sourceLine:
+      "Quelle: Achtsamkeitsbasierte Angehörigenarbeit, nach DBT (Linehan, 1993).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
   createHandoutTextVersion("eisberg", {
     kicker: "Textversion",
     summary:

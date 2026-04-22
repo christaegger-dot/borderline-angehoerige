@@ -182,6 +182,50 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
   });
 
+  it("HandoutTextPage: rendert Konsistenz-Prinzip-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "konsistenz-prinzip" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Konsistenz-Prinzip/i,
+        level: 1,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
+    ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
+  });
+
+  it("HandoutTextPage: rendert Beziehungs-Achtsamkeit-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "beziehungs-achtsamkeit" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Beziehungs-Achtsamkeit/i,
+        level: 1,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Innehalten – wahrnehmen – nicht bewerten – bewusst handeln\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
+    ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
+  });
+
   it("HandoutTextPage: rendert Warnsignale-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -459,6 +503,16 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Drei Säulen hilfreicher Unterstützung/i,
       })
     ).toHaveAttribute("href", "/materialien/text/drei-saeulen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Konsistenz-Prinzip/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/konsistenz-prinzip");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Beziehungs-Achtsamkeit/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/beziehungs-achtsamkeit");
   });
 
   it("NotFound: rendert 404-Seite", async () => {

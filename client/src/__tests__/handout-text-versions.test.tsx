@@ -57,6 +57,12 @@ describe("handout text versions", () => {
     const dreiSaeulenPdf = unterstuetzenItems.find(
       item => item.id === "drei-saeulen"
     )?.pdfUrl;
+    const konsistenzPrinzipPdf = unterstuetzenItems.find(
+      item => item.id === "konsistenz-prinzip"
+    )?.pdfUrl;
+    const beziehungsAchtsamkeitPdf = unterstuetzenItems.find(
+      item => item.id === "beziehungs-achtsamkeit"
+    )?.pdfUrl;
     const vierPhasenPdf = verstehenInfografiken.find(
       item => item.id === "4-phasen"
     )?.pdfUrl;
@@ -87,6 +93,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersion("drei-saeulen")?.path).toBe(
       "/materialien/text/drei-saeulen"
+    );
+    expect(getHandoutTextVersion("konsistenz-prinzip")?.path).toBe(
+      "/materialien/text/konsistenz-prinzip"
+    );
+    expect(getHandoutTextVersion("beziehungs-achtsamkeit")?.path).toBe(
+      "/materialien/text/beziehungs-achtsamkeit"
     );
     expect(getHandoutTextVersion("krisenkommunikation")?.path).toBe(
       "/materialien/text/krisenkommunikation"
@@ -139,6 +151,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(dreiSaeulenPdf)).toBe(
       "/materialien/text/drei-saeulen"
+    );
+    expect(getHandoutTextVersionHrefBySource(konsistenzPrinzipPdf)).toBe(
+      "/materialien/text/konsistenz-prinzip"
+    );
+    expect(getHandoutTextVersionHrefBySource(beziehungsAchtsamkeitPdf)).toBe(
+      "/materialien/text/beziehungs-achtsamkeit"
     );
     expect(getHandoutTextVersionHrefBySource(krisenPdf)).toBe(
       "/materialien/text/krisenkommunikation"

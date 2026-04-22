@@ -497,6 +497,42 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Konsistenz-Prinzip",
+    description:
+      "Lesbare Web-Version zum hilfreichen und schwierigen Beziehungskreislauf mit Merksatz, Legende und 3 Absprachen für Angehörige",
+    keywords: [
+      "textversion",
+      "konsistenz-prinzip",
+      "konsistenz",
+      "grenzen",
+      "vertrauen",
+      "konflikte",
+      "unterstützen",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/konsistenz-prinzip",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Beziehungs-Achtsamkeit",
+    description:
+      "Lesbare Web-Version zu Innehalten, Wahrnehmen, nicht Bewerten und bewusstem Handeln im Alltag",
+    keywords: [
+      "textversion",
+      "beziehungs-achtsamkeit",
+      "achtsamkeit",
+      "innehalten",
+      "wahrnehmen",
+      "bewusst handeln",
+      "unterstützen",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/beziehungs-achtsamkeit",
+    section: "Materialien",
+  },
+  {
     title: "Der Eisberg: Was hinter Wut liegen kann",
     description:
       "Infografik: Hinter sichtbarer Wut liegen oft Schmerz, Angst oder Scham",

@@ -91,6 +91,29 @@ const situationPaths = [
   },
 ];
 
+const approachHighlights = [
+  {
+    icon: BookOpen,
+    title: "Verstehen statt rätseln",
+    text: "Borderline differenziert aus Sicht von Angehörigen einordnen.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Muster benennen",
+    text: "Eskalation, Rückzug und schwierige Gespräche besser lesen.",
+  },
+  {
+    icon: Shield,
+    title: "Grenzen schützen",
+    text: "Unterstützung und Selbstschutz gemeinsam denken.",
+  },
+  {
+    icon: Compass,
+    title: "Nächste Schritte finden",
+    text: "Materialien, Beratung und praktische Werkzeuge schnell öffnen.",
+  },
+];
+
 export default function Home() {
   return (
     <Layout>
@@ -113,7 +136,7 @@ export default function Home() {
           <div className="absolute top-1/2 -left-20 w-64 h-64 rounded-full bg-sage-dark blur-3xl" />
         </div>
 
-        <div className="container relative z-10 py-16 md:py-20 lg:py-26">
+        <div className="container relative z-10 py-20 md:py-24 lg:py-28">
           <div className="max-w-3xl">
             <div>
               <span className="inline-block px-3 py-1 rounded-full bg-sage-dark text-white text-[11px] font-semibold tracking-[0.12em] uppercase mb-5">
@@ -142,6 +165,7 @@ export default function Home() {
                   <Link href="/verstehen">
                     <BookOpen className="w-5 h-5 mr-2" />
                     Borderline besser verstehen
+                    <ArrowRight className="w-4 h-4 opacity-80" />
                   </Link>
                 </Button>
                 <Button
@@ -153,18 +177,21 @@ export default function Home() {
                   <Link href="/unterstuetzen/uebersicht">
                     <Heart className="w-5 h-5 mr-2" />
                     Was hilft in meiner Lage?
+                    <ArrowRight className="w-4 h-4 opacity-80" />
                   </Link>
                 </Button>
               </div>
 
               <Link
                 href="/soforthilfe"
-                className="inline-flex items-center gap-2 text-white/90 hover:text-white font-medium transition-colors group text-sm"
+                className="inline-flex items-center gap-3 text-white/90 hover:text-white font-medium transition-colors group text-sm"
               >
-                <Phone className="w-4 h-4" />
-                <span>Akute Krise? Soforthilfe</span>
-                <span className="group-hover:translate-x-1 transition-transform">
-                  →
+                <span className="inline-flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  <span>Akute Krise? Soforthilfe</span>
+                </span>
+                <span className="inline-flex w-7 h-7 items-center justify-center rounded-full border border-white/20 bg-white/8 transition-all group-hover:translate-x-0.5 group-hover:bg-white/14">
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </Link>
             </div>
@@ -189,10 +216,12 @@ export default function Home() {
             </p>
             <Link
               href="/fachstelle"
-              className="text-sage-light hover:text-white text-sm font-medium underline underline-offset-2 transition-colors flex items-center gap-1 flex-shrink-0"
+              className="inline-flex items-center gap-2.5 text-sage-light hover:text-white text-sm font-medium transition-colors group flex-shrink-0"
             >
-              Angebot & Kontakt
-              <ArrowRight className="w-4 h-4" />
+              <span>Angebot & Kontakt</span>
+              <span className="inline-flex w-7 h-7 items-center justify-center rounded-full border border-white/12 bg-white/8 transition-all group-hover:translate-x-0.5 group-hover:bg-white/14">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </span>
             </Link>
           </div>
         </div>
@@ -200,7 +229,7 @@ export default function Home() {
 
       <div className="home-section-divider h-6" />
 
-      <section className="py-8 md:py-10 bg-background">
+      <section className="py-10 md:py-12 bg-background">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="mb-8">
@@ -224,11 +253,11 @@ export default function Home() {
                 return (
                   <Link key={item.href} href={item.href}>
                     <Card
-                      className={`h-full cursor-pointer bg-white border border-border rounded-md border-l-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 ${item.accentBorderClass}`}
+                      className={`group h-full cursor-pointer bg-white border border-border rounded-xl border-l-4 transition-all duration-200 hover:shadow-lg hover:-translate-y-1 ${item.accentBorderClass}`}
                     >
                       <CardContent className="p-5 flex gap-4 items-start">
                         <div
-                          className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${item.iconBgClass}`}
+                          className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${item.iconBgClass}`}
                         >
                           <Icon
                             className={`w-[18px] h-[18px] ${item.accentTextClass}`}
@@ -242,10 +271,12 @@ export default function Home() {
                             {item.text}
                           </p>
                           <span
-                            className={`text-xs font-semibold inline-flex items-center gap-1 ${item.accentTextClass}`}
+                            className={`text-xs font-semibold inline-flex items-center gap-2 ${item.accentTextClass}`}
                           >
-                            Zum passenden Bereich
-                            <ArrowRight className="w-3.5 h-3.5" />
+                            <span>Zum passenden Bereich</span>
+                            <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-current/10 transition-all group-hover:translate-x-0.5">
+                              <ArrowRight className="w-3.5 h-3.5" />
+                            </span>
                           </span>
                         </div>
                       </CardContent>
@@ -269,87 +300,98 @@ export default function Home() {
 
       <div className="home-section-divider h-6" />
 
-      <section className="py-10 md:py-14 bg-cream">
+      <section className="relative overflow-hidden py-12 md:py-16 bg-cream">
         <div className="container">
-          <div className="max-w-6xl mx-auto">
-            <div>
-              <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-                {/* Linke Spalte: Text + Checkmarks */}
-                <div>
-                  <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
-                    <span className="w-6 h-px bg-sage-dark/30" />
+          <div className="max-w-6xl mx-auto lg:-mx-6 xl:-mx-10">
+            <div className="relative overflow-hidden rounded-[2rem] border border-navy-light/20 bg-navy text-white shadow-[0_35px_120px_-60px_rgba(16,33,51,0.9)]">
+              <div className="pointer-events-none absolute inset-0">
+                <div className="absolute -top-24 right-0 w-80 h-80 rounded-full bg-sage-mid/18 blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-amber/15 blur-3xl" />
+                <div className="absolute inset-y-0 left-[47%] w-px bg-white/8 hidden lg:block" />
+              </div>
+
+              <div className="relative grid lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="p-8 md:p-10 lg:p-12">
+                  <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-light/90 mb-4">
+                    <span className="w-6 h-px bg-sage-light/50" />
                     Unser Ansatz
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
+
+                  <h2 className="text-3xl md:text-4xl font-normal leading-tight mb-5">
                     Was diese Website besonders abdeckt
                   </h2>
-                  <div className="flex flex-col gap-3">
-                    {[
-                      "Borderline differenziert aus Sicht von Angehörigen verstehen",
-                      "Beziehungsmuster, Eskalation und Rückzug besser einordnen",
-                      "Grenzen, Selbstschutz und Unterstützung zusammendenken",
-                      "Fachliche Hilfe, Materialien und Beratungswege schnell finden",
-                    ].map(item => (
-                      <div
-                        key={item}
-                        className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border/40"
-                      >
-                        <span className="text-sage-dark mt-0.5">✓</span>
-                        <span className="text-sm text-muted-foreground">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
+
+                  <p className="text-white/82 leading-relaxed max-w-xl mb-8">
+                    Nicht nur Symptome, sondern Beziehungsgeschehen,
+                    Überforderung und alltagstaugliche nächste Schritte. Die
+                    Website ist für Situationen gebaut, in denen Angehörige
+                    Orientierung brauchen, bevor wieder Ruhe möglich wird.
+                  </p>
+
+                  <div className="grid sm:grid-cols-2 gap-3 mb-8 max-w-xl">
+                    <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 backdrop-blur-sm">
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-sage-light/80 mb-2">
+                        Fokus
+                      </p>
+                      <p className="text-sm text-white/88">
+                        Verstehen, kommunizieren, Grenzen, Selbstfürsorge und
+                        Soforthilfe in einer Linie gedacht.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 backdrop-blur-sm">
+                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-sage-light/80 mb-2">
+                        Einstieg
+                      </p>
+                      <p className="text-sm text-white/88">
+                        Sie starten dort, wo der Druck gerade am grössten ist,
+                        statt sich durch ein Archiv zu arbeiten.
+                      </p>
+                    </div>
                   </div>
 
                   <Link
                     href="/verstehen"
-                    className="inline-flex items-center gap-2.5 text-sage-dark hover:text-sage-darker font-medium text-sm group transition-colors mt-5"
+                    className="inline-flex items-center gap-3 text-white font-medium text-sm group transition-colors"
                   >
-                    Mehr über Borderline erfahren
-                    <span className="w-7 h-7 rounded-full bg-sage-wash group-hover:bg-sage-light/50 flex items-center justify-center transition-colors">
-                      <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Mehr über Borderline erfahren</span>
+                    <span className="inline-flex w-8 h-8 items-center justify-center rounded-full bg-white/10 border border-white/10 transition-all group-hover:translate-x-0.5 group-hover:bg-white/16">
+                      <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
                 </div>
 
-                {/* Rechte Spalte: Abstrakte Illustration */}
-                <div className="hidden lg:flex items-center justify-center">
-                  <div className="relative w-full max-w-sm aspect-square">
-                    <div className="home-orbit-glow absolute inset-0 rounded-full" />
+                <div className="bg-white/96 text-foreground p-6 md:p-8 lg:p-10 border-t border-white/10 lg:border-t-0">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {approachHighlights.map(item => {
+                      const Icon = item.icon;
+                      return (
+                        <div
+                          key={item.title}
+                          className="rounded-2xl border border-border/60 bg-white px-5 py-5 shadow-sm"
+                        >
+                          <div className="w-11 h-11 rounded-xl bg-sage-wash flex items-center justify-center mb-4">
+                            <Icon className="w-5 h-5 text-sage-dark" />
+                          </div>
+                          <h3 className="text-base font-semibold text-foreground mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm leading-relaxed text-muted-foreground">
+                            {item.text}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
 
-                    {/* Dekorative Ringe */}
-                    <div className="absolute inset-4 rounded-full border-2 border-dashed border-sage-mid/20" />
-                    <div className="absolute inset-12 rounded-full border border-sage-mid/15" />
-
-                    {/* Zentrale Ikone */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-20 h-20 rounded-2xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
-                        <Heart className="w-9 h-9 text-sage-dark" />
-                      </div>
-                    </div>
-
-                    {/* Orbitale Icons */}
-                    <div className="absolute top-6 left-1/2 -translate-x-1/2">
-                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
-                        <BookOpen className="w-5 h-5 text-sage-mid" />
-                      </div>
-                    </div>
-                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
-                        <Shield className="w-5 h-5 text-sage-mid" />
-                      </div>
-                    </div>
-                    <div className="absolute left-6 top-1/2 -translate-y-1/2">
-                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
-                        <MessageCircle className="w-5 h-5 text-sage-mid" />
-                      </div>
-                    </div>
-                    <div className="absolute right-6 top-1/2 -translate-y-1/2">
-                      <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-border/40 flex items-center justify-center">
-                        <Sparkles className="w-5 h-5 text-sage-mid" />
-                      </div>
-                    </div>
+                  <div className="mt-5 rounded-2xl border border-sage-light/70 bg-sage-wash/70 px-5 py-5">
+                    <p className="text-sm font-semibold text-foreground mb-2">
+                      Nicht alles auf einmal.
+                    </p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      Die Seite ist so gebaut, dass Sie von einer konkreten Lage
+                      aus weitergehen können: erst Orientierung, dann passende
+                      Materialien oder der nächste handhabbare Schritt.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -380,7 +422,7 @@ export default function Home() {
                   const Icon = tool.icon;
                   return (
                     <Link key={tool.href} href={tool.href}>
-                      <div className="group flex flex-col items-center text-center p-4 md:p-5 rounded-xl bg-white border border-border/40 hover:border-sage-mid/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                      <div className="group flex h-full flex-col items-center text-center p-4 md:p-5 rounded-xl bg-white border border-border/40 hover:border-sage-mid/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
                         <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-sage-wash flex items-center justify-center mb-3 group-hover:bg-sage-light/50 transition-colors">
                           <Icon className="w-6 h-6 md:w-7 md:h-7 text-sage-dark" />
                         </div>
@@ -389,6 +431,12 @@ export default function Home() {
                         </span>
                         <span className="text-xs text-muted-foreground leading-snug">
                           {tool.text}
+                        </span>
+                        <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-sage-dark">
+                          <span>Direkt öffnen</span>
+                          <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-sage-wash transition-all group-hover:translate-x-0.5 group-hover:bg-sage-light/50">
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </span>
                         </span>
                       </div>
                     </Link>

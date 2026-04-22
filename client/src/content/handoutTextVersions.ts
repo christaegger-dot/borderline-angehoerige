@@ -732,6 +732,143 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("6-leitlinien", {
+    kicker: "Textversion",
+    summary:
+      "Sechs alltagsnahe Leitlinien helfen Angehörigen, ruhig, klar und gemeinsam zu unterstützen, ohne vorschnelle Erwartungen oder unnötige Eskalationen.",
+    intro: [
+      "Diese Seite überträgt das Handout «6 Leitlinien für Angehörige – So können Sie unterstützen» in eine lesbare Web-Version. Die Vorlage bündelt evidenzbasierte Empfehlungen nach Gunderson in sechs konkrete Alltagshinweise.",
+      "Die Aussagen bleiben bewusst praktisch: Erwartungen realistisch halten, Sicherheit fördern, zuhören, Selbstverletzung ernst nehmen, als Familie gemeinsam handeln und Grenzen durchhaltbar setzen.",
+    ],
+    sections: [
+      {
+        title: "Die 6 Leitlinien",
+        intro:
+          "Die Grafik zeigt sechs konkrete Empfehlungen, die Angehörige im Alltag Schritt für Schritt umsetzen können.",
+        cards: [
+          {
+            title: "1. Veränderung braucht Zeit",
+            text: "Senken Sie Ihre Erwartungen an schnelle Fortschritte.",
+          },
+          {
+            title: "2. Ruhige Umgebung schaffen",
+            text: "Routinen und Vorhersehbarkeit geben Sicherheit.",
+          },
+          {
+            title: "3. Zuhören statt verteidigen",
+            text: "Hören Sie zu, ohne sich zu verteidigen – auch wenn Vorwürfe unfair erscheinen.",
+          },
+          {
+            title: "4. Selbstverletzung ernst nehmen",
+            text: "Nicht ignorieren, nicht dramatisieren, Hilfe anbieten.",
+          },
+          {
+            title: "5. Gemeinsam handeln",
+            text: "Handeln Sie als Familie gemeinsam – gleiche Regeln, weniger Konflikte.",
+          },
+          {
+            title: "6. Klare Grenzen setzen",
+            text: "Setzen Sie klare Grenzen – aber nur solche, die Sie auch durchhalten können.",
+          },
+        ],
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Worum es bei den Leitlinien geht",
+        calloutText:
+          "Nicht alles auf einmal: Wählen Sie eine Leitlinie pro Woche.",
+      },
+      {
+        title: "Mini-Legende",
+        bullets: [
+          "Jede Kachel = eine konkrete Empfehlung",
+          "Farben = Themenbereiche",
+          "Haken = zum Abhaken",
+        ],
+      },
+      {
+        title: "Action",
+        cards: [
+          {
+            title: "1. Leitlinie wählen",
+            text: "Wählen Sie eine Leitlinie für diese Woche.",
+          },
+          {
+            title: "2. Gemeinsam besprechen",
+            text: "Besprechen Sie sie mit Ihrer Familie oder Gruppe.",
+          },
+          {
+            title: "3. Reflektieren",
+            text: "Reflektieren Sie: Was hat sich verändert?",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Gunderson et al., Family Guidelines for BPD.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("4-alltags-tipps", {
+    kicker: "Textversion",
+    summary:
+      "Kleine, konkrete Handlungen im Alltag helfen oft mehr als grosse Reden: mitüben, Fortschritte würdigen, verlässlich bleiben und gemeinsam Lösungen entwickeln.",
+    intro: [
+      "Diese Seite überträgt das Handout «Was Sie konkret tun können – 4 Alltags-Tipps» in eine lesbare Web-Version. Die Vorlage fokussiert bewusst auf wenige, direkt umsetzbare Unterstützungsformen.",
+      "Das Handout bleibt praktisch: Sie müssen nicht alles übernehmen. Oft reicht es, verlässlich präsent zu sein, kleine Fortschritte sichtbar zu machen und hilfreiche Fragen zu stellen.",
+    ],
+    sections: [
+      {
+        title: "4 Alltags-Tipps",
+        intro:
+          "Die Grafik bündelt vier konkrete Handlungsfelder für den Alltag mit einer nahestehenden Person.",
+        cards: [
+          {
+            title: "Übungspartner sein",
+            text: "Helfen Sie beim Üben neuer Skills. Unterstützen Sie aktiv.",
+          },
+          {
+            title: "Fortschritte anerkennen",
+            text: "Auch kleine Schritte würdigen. Positives benennen.",
+          },
+          {
+            title: "Vorhersehbar sein",
+            text: "Klare Routinen und Absprachen. Verlässlichkeit zeigen.",
+          },
+          {
+            title: "Gemeinsam Probleme lösen",
+            text: "Fragen statt Lösungen vorgeben. Unterstützen statt übernehmen.",
+          },
+        ],
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Worum es im Alltag geht",
+        calloutText:
+          "Kleine Handlungen im Alltag machen den grössten Unterschied.",
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Einen Tipp wählen",
+            text: "Wählen Sie einen Tipp für diese Woche.",
+          },
+          {
+            title: "2. In Ruhe üben",
+            text: "Üben Sie in ruhigen Momenten.",
+          },
+          {
+            title: "3. Hilfreich fragen",
+            text: "Fragen Sie: Was wäre jetzt hilfreich?",
+          },
+        ],
+      },
+    ],
+    sourceLine:
+      "Quelle: DBT-handlungsbasiert; Fruzzetti (2006), Family Psychoeducation.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
   createHandoutTextVersion("eisberg", {
     kicker: "Textversion",
     summary:

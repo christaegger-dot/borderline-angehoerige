@@ -6,6 +6,7 @@ import {
   Search as SearchIcon,
 } from "@/icons/root-icons";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
+import { getRouteAccent } from "@/components/layout/routeAccent";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -38,6 +39,7 @@ export function MobileMenu({
   const isRessourcenActive = ressourcenItems.some(item =>
     location.startsWith(item.href.split("#")[0])
   );
+  const currentAccent = getRouteAccent(location);
 
   const groupedRessourcen = groupRessourcenItems(ressourcenItems);
 
@@ -45,7 +47,7 @@ export function MobileMenu({
 
   return (
     <div
-      className="lg:hidden border-t border-border/50 bg-background overflow-y-auto overscroll-contain"
+      className="lg:hidden border-t border-border/50 bg-[linear-gradient(180deg,rgba(250,250,247,0.96),rgba(247,249,248,1))] overflow-y-auto overscroll-contain"
       style={{
         maxHeight: "calc(100dvh - 5rem)",
         WebkitOverflowScrolling: "touch",
@@ -65,15 +67,16 @@ export function MobileMenu({
         {navItems.map(item => {
           const Icon = item.icon;
           const isActive = location.startsWith(item.href);
+          const accent = getRouteAccent(item.href);
           return (
             <Link
               key={item.href}
               href={item.href}
               onClick={closeMenu}
-              className={`flex items-center gap-3 px-4 py-3.5 rounded-lg text-base font-medium transition-all ${
+              className={`flex items-center gap-3 px-4 py-3.5 rounded-2xl border text-base font-medium transition-all ${
                 isActive
-                  ? "bg-sage-wash text-sage-darker"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  ? accent.surfaceActive
+                  : "border-transparent bg-white/70 text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
             >
               <Icon className="w-5 h-5" />
@@ -88,10 +91,10 @@ export function MobileMenu({
             onClick={() => setMobileRessourcenOpen(!mobileRessourcenOpen)}
             aria-expanded={mobileRessourcenOpen}
             aria-controls="mobile-ressourcen-menu"
-            className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium transition-all ${
+            className={`flex items-center justify-between w-full px-4 py-3 rounded-2xl border text-base font-medium transition-all ${
               isRessourcenActive
-                ? "bg-sage-wash text-sage-darker"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                ? currentAccent.surfaceActive
+                : "border-transparent bg-white/70 text-muted-foreground hover:text-foreground hover:bg-muted"
             }`}
           >
             <span className="flex items-center gap-3">
@@ -123,6 +126,7 @@ export function MobileMenu({
                         const Icon = item.icon;
                         const normalizedHref = item.href.split("#")[0];
                         const isActive = location === normalizedHref;
+                        const accent = getRouteAccent(item.href);
 
                         return (
                           <Link
@@ -132,10 +136,10 @@ export function MobileMenu({
                               closeMenu();
                               setMobileRessourcenOpen(false);
                             }}
-                            className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                            className={`flex items-center gap-3 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all ${
                               isActive
-                                ? "bg-sage-wash/50 text-sage-darker"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                                ? accent.surfaceActive
+                                : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted"
                             }`}
                           >
                             <Icon className="w-4 h-4" />
@@ -154,7 +158,7 @@ export function MobileMenu({
         <Link
           href="/soforthilfe"
           onClick={closeMenu}
-          className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium bg-alert text-white mt-2"
+          className="mt-2 flex items-center gap-3 rounded-2xl bg-alert px-4 py-3 text-base font-medium text-white shadow-[0_18px_32px_-22px_rgba(197,95,61,0.8)]"
         >
           <Phone className="w-5 h-5" />
           Soforthilfe
@@ -166,7 +170,7 @@ export function MobileMenu({
             closeMenu();
             onSearchOpen();
           }}
-          className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted mt-2 border border-border/50"
+          className="mt-2 flex items-center gap-3 rounded-2xl border border-border/60 bg-white/70 px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
           aria-label="Suche öffnen"
         >
           <SearchIcon className="w-5 h-5" />

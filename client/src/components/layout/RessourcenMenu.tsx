@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ressourcenItems } from "@/components/layout/navigationData";
+import { getRouteAccent } from "@/components/layout/routeAccent";
 import { useRessourcenMenuA11y } from "@/components/layout/useRessourcenMenuA11y";
 import type { NavigationItem } from "@/domain/content-types";
 import { ChevronDown } from "@/icons/root-icons";
@@ -48,6 +49,7 @@ export function RessourcenMenu({
   const isRessourcenActive = ressourcenItems.some(item =>
     location.startsWith(item.href.split("#")[0])
   );
+  const currentAccent = getRouteAccent(location);
 
   const groups = groupItems(ressourcenItems);
 
@@ -88,7 +90,7 @@ export function RessourcenMenu({
         }}
         className={`flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
           isRessourcenActive || isOpen
-            ? "bg-sage-dark text-white shadow-sm"
+            ? currentAccent.navActive
             : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
         }`}
         {...triggerA11yProps}
@@ -102,21 +104,23 @@ export function RessourcenMenu({
       {isOpen && (
         <div
           onKeyDown={handleMenuKeyDown}
-          className="absolute right-0 top-full mt-1 bg-background border border-border/60 rounded-xl shadow-lg shadow-black/8 z-50"
+          className="absolute right-0 top-full z-50 mt-2 rounded-[1.4rem] border border-border/65 bg-white/92 shadow-[0_34px_64px_-34px_rgba(15,23,42,0.55)] backdrop-blur-md"
           style={{ width: "min(680px, calc(100vw - 2rem))" }}
           {...menuA11yProps}
         >
-          <div className="grid grid-cols-3 gap-0 p-2">
+          <div className="grid grid-cols-3 gap-0 p-3">
             {groups.map((group, groupIdx) => (
               <div
                 key={group.name}
                 className={
-                  groupIdx > 0 ? "border-l border-border/40 pl-2" : undefined
+                  groupIdx > 0 ? "border-l border-border/40 pl-3" : undefined
                 }
               >
-                <div className="flex items-center gap-2.5 px-3 pt-2 pb-2">
-                  <span className="w-5 h-px bg-sage-dark/30" />
-                  <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-sage-dark/85 whitespace-nowrap">
+                <div className="flex items-center gap-2.5 px-3 pt-2 pb-2.5">
+                  <span className={`w-5 h-px ${currentAccent.dot}`} />
+                  <span
+                    className={`text-[11px] font-semibold tracking-[0.08em] uppercase whitespace-nowrap ${currentAccent.groupLabel}`}
+                  >
                     {group.name}
                   </span>
                 </div>
@@ -128,6 +132,7 @@ export function RessourcenMenu({
                     const isActive =
                       location === normalizedHref ||
                       location.startsWith(`${normalizedHref}/`);
+                    const accent = getRouteAccent(item.href);
                     const idx = flatIndex(groups, groupIdx, itemIdx);
 
                     return (
@@ -143,10 +148,10 @@ export function RessourcenMenu({
                           onMenuItemFocus(idx);
                         }}
                         onClick={closeDropdown}
-                        className={`flex items-center gap-2.5 px-3 py-2 text-[13px] rounded-lg transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
+                        className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-[13px] transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
                           isActive
-                            ? "bg-sage-wash/50 text-sage-darker font-medium"
-                            : "text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
+                            ? `${accent.surfaceActive} font-medium`
+                            : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
                         }`}
                       >
                         <Icon className="w-4 h-4 shrink-0" />

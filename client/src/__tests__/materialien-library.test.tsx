@@ -35,6 +35,11 @@ describe("MaterialienLibrarySection", () => {
       "/Notfallkarte-Zuerich-Psychische-Krise.pdf"
     );
     expect(localDownloadLink).toHaveAttribute("download", "");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Notfallplan Krise – Suizidgedanken & Selbstverletzung/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/notfallplan-krise");
 
     const textVersionLink = screen.getByRole("link", {
       name: /Textversion lesen: Der Leuchtturm – Ihre Rolle als Angehörige\/r/i,

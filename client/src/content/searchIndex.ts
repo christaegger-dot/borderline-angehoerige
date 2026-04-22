@@ -394,6 +394,24 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Notfallplan Krise",
+    description:
+      "Lesbare Web-Version des Akut-Handouts mit Sofortschritten bei Suizidgedanken, Selbstverletzung und psychischer Krise",
+    keywords: [
+      "textversion",
+      "notfallplan",
+      "suizidgedanken",
+      "selbstverletzung",
+      "psychische krise",
+      "soforthilfe",
+      "angehörige",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/notfallplan-krise",
+    section: "Materialien",
+  },
+  {
     title: "Der Leuchtturm: Ihre Rolle als Angehörige/r",
     description:
       "Infografik: Orientierung, Verlässlichkeit und Selbstschutz in der Angehörigenrolle",

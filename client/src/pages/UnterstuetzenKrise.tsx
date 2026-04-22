@@ -716,25 +716,25 @@ export default function UnterstuetzenKrise() {
                   </Card>
                 </div>
 
-                {/* Für Sie als Angehörige/r */}
+                {/* Für Sie persönlich */}
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
                     <Shield className="w-5 h-5 text-sage-mid" />
-                    Für Sie als Angehörige/r
+                    Für Sie persönlich
                   </h3>
                   <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
                     <CardContent className="p-5 space-y-3">
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         Schwere Krisen hinterlassen auch bei Angehörigen Spuren.
-                        Hypervigilanz, Schreckhaftigkeit, Angst vor der nächsten
-                        Eskalation oder Taubheit sind normale Reaktionen – kein
-                        Zeichen von Schwäche.
+                        Dauernde Alarmbereitschaft, Schreckhaftigkeit, Angst vor
+                        der nächsten Eskalation oder emotionale Taubheit sind
+                        normale Reaktionen – kein Zeichen von Schwäche.
                       </p>
                       <ul className="space-y-2">
                         {[
                           "Eigene Erschütterung ernst nehmen – Sie dürfen erschöpft, wütend oder traurig sein",
                           "Gespräch suchen: Fachstelle, Selbsthilfegruppe oder eigene Therapie",
-                          "Hypervigilanz beobachten: Dauernde Alarmbereitschaft erschöpft – versuchen Sie, bewusst zu regulieren",
+                          "Dauernde Alarmbereitschaft beobachten: Sie erschöpft schnell – versuchen Sie, bewusst zu regulieren",
                           "Keine Aufarbeitung leisten, solange Sie selbst noch in Aufruhr sind",
                         ].map((item, i) => (
                           <li

@@ -118,7 +118,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "leuchtturm" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Der Leuchtturm – Ihre Rolle als Angehörige\/r/i,
+        name: /Der Leuchtturm – Orientierung für Angehörige/i,
       })
     ).toBeInTheDocument();
     expect(

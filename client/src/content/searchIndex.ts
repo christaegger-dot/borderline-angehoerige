@@ -412,7 +412,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Der Leuchtturm: Ihre Rolle als Angehörige/r",
+    title: "Der Leuchtturm: Orientierung für Angehörige",
     description:
       "Infografik: Orientierung, Verlässlichkeit und Selbstschutz in der Angehörigenrolle",
     keywords: [

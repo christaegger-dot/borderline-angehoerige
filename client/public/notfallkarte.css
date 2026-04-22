@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Skaliert die A4-Seite auf den Bildschirm für die Vorschau */
+.page-wrapper {
+  transform-origin: top center;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── HEADER ───────────────────────────────── */
+.header {
+  background: #1a1a2e;
+  padding: 3.5mm 7mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 4mm;
+}
+.header-title {
+  color: white;
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header-meta {
+  color: #9e9e9e;
+  font-size: 6.5pt;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── BLÖCKE ALLGEMEIN ─────────────────────── */
+.block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-header {
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+  padding: 2.5mm 7mm;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.block-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 6pt;
+  font-weight: 700;
+  padding: 1mm 2.5mm;
+  border-radius: 1mm;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.block-title {
+  color: white;
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.block-body {
+  flex: 1;
+  padding: 3.5mm 7mm 3mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+
+.wann {
+  font-size: 7.5pt;
+  color: #757575;
+  line-height: 1.3;
+}
+.trigger {
+  font-size: 7.5pt;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.hinweis-small {
+  font-size: 6.5pt;
+  color: #757575;
+  margin: 1mm 0 1mm;
+  padding: 1.5mm 3mm;
+  line-height: 1.4;
+  background: rgba(198, 40, 40, 0.04);
+  border-left: 2px solid #c62828;
+  border-radius: 0 1.5mm 1.5mm 0;
+}
+.sos-link {
+  color: #c62828;
+  font-weight: 600;
+  text-decoration: none;
+}
+.hinweis {
+  font-size: 7pt;
+  color: #424242;
+  line-height: 1.4;
+}
+
+/* ── NUMMER-KARTEN ───────────────────────── */
+.pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5mm;
+  flex: 1;
+}
+
+.pill {
+  background: white;
+  border-radius: 2.5mm;
+  border-width: 1px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2mm 1mm;
+  gap: 1mm;
+}
+.pill-nr {
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+.pill-label {
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: #212121;
+  text-align: center;
+  line-height: 1.2;
+}
+.pill-sub {
+  font-size: 6.5pt;
+  color: #757575;
+  text-align: center;
+}
+.pill-desc {
+  font-size: 6pt;
+  color: #9e9e9e;
+  text-align: center;
+  line-height: 1.3;
+  padding: 0 1mm;
+}
+a.pill {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── BLOCK 1 — ROT ───────────────────────── */
+.b1 .block-header {
+  background: #c62828;
+}
+.b1 .block-body {
+  background: #fff5f5;
+}
+.b1 .trigger {
+  color: #c62828;
+}
+.b1 .pill {
+  border-color: #c62828;
+  padding: 1.5mm 0.5mm;
+}
+.b1 .pill-nr {
+  color: #c62828;
+  font-size: 22pt;
+}
+
+/* ── BLOCK 1 pills: 4 Spalten ────────────── */
+.b1 .pills {
+  grid-template-columns: repeat(4, 1fr);
+}
+.b1 .b1-aerzte {
+  border-style: dashed;
+  border-color: #c62828;
+  opacity: 0.85;
+}
+.b1 .b1-aerzte .pill-nr {
+  font-size: 11pt;
+  letter-spacing: -0.03em;
+}
+
+/* ── BLOCK 2 — ORANGE ────────────────────── */
+.b2 .block-header {
+  background: #e65100;
+}
+.b2 .block-body {
+  background: #fff8f0;
+}
+.b2 .trigger {
+  color: #e65100;
+}
+.b2 .pill {
+  border-color: #e65100;
+}
+.b2 .pill-nr {
+  color: #e65100;
+  font-size: 12pt;
+  letter-spacing: -0.04em;
+}
+
+/* ── BLOCK 3 — GRÜN ──────────────────────── */
+.b3 .block-header {
+  background: #2e7d32;
+}
+.b3 .block-body {
+  background: #f0fff0;
+}
+.b3 .trigger {
+  color: #2e7d32;
+}
+.b3 .pill {
+  border-color: #2e7d32;
+}
+.b3 .pill-nr {
+  color: #2e7d32;
+}
+
+.b3 .pill:nth-child(1) .pill-nr,
+.b3 .pill:nth-child(2) .pill-nr {
+  font-size: 24pt;
+}
+.b3 .pill:nth-child(3) .pill-nr {
+  font-size: 12.5pt;
+}
+
+/* ── BLOCK 4 — LILA (horizontal) ─────────── */
+.b4 {
+  flex: 0 0 auto;
+}
+.b4 .block-header {
+  background: #6a1b9a;
+}
+.b4 .block-body {
+  background: #faf0ff;
+  flex-direction: row;
+  align-items: center;
+  gap: 5mm;
+  padding: 3mm 7mm;
+}
+.b4-nr {
+  font-size: 28pt;
+  font-weight: 700;
+  color: #6a1b9a;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.b4-info {
+  flex: 1;
+}
+.b4-name {
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #212121;
+}
+.b4-desc {
+  font-size: 7.5pt;
+  color: #757575;
+  margin-top: 0.5mm;
+}
+.b4-wann {
+  font-size: 7pt;
+  color: #9e9e9e;
+  text-align: right;
+  flex-shrink: 0;
+  max-width: 60mm;
+}
+
+/* ── FOOTER ──────────────────────────────── */
+.footer {
+  background: #263238;
+  padding: 2.5mm 7mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8mm;
+}
+.footer-right {
+  text-align: right;
+}
+.f1 {
+  font-size: 6.5pt;
+  color: #b0bec5;
+  font-weight: 700;
+}
+.f2 {
+  font-size: 5.5pt;
+  color: #78909c;
+}
+
+/* ── PRINT ───────────────────────────────── */
+@media print {
+  body {
+    background: none;
+    padding: 0;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+  }
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  button,
+  a[download] {
+    display: none !important;
+  }
+}
+
+/* ── HEADER ACTIONS ─────────────────────── */
+.header-actions {
+  display: flex;
+  gap: 2mm;
+  flex-shrink: 0;
+}
+.header-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 2mm 3.5mm;
+  border-radius: 2mm;
+  font-size: 6.5pt;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+/* ── UTILITY ────────────────────────────── */
+.link-inherit {
+  color: inherit;
+  text-decoration: none;
+}

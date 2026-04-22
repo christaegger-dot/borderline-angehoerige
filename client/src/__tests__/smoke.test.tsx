@@ -226,6 +226,46 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
   });
 
+  it("HandoutTextPage: rendert 6-Leitlinien-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "6-leitlinien" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /6 Leitlinien für Angehörige/i,
+        level: 1,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Nicht alles auf einmal: Wählen Sie eine Leitlinie pro Woche\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
+    ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
+  });
+
+  it("HandoutTextPage: rendert 4-Alltags-Tipps-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "4-alltags-tipps" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /4 Alltags-Tipps/i,
+        level: 1,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Kleine Handlungen im Alltag machen den grössten Unterschied\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
+    ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
+  });
+
   it("HandoutTextPage: rendert Warnsignale-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -513,6 +553,16 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Beziehungs-Achtsamkeit/i,
       })
     ).toHaveAttribute("href", "/materialien/text/beziehungs-achtsamkeit");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: 6 Leitlinien für Angehörige/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/6-leitlinien");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: 4 Alltags-Tipps/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/4-alltags-tipps");
   });
 
   it("NotFound: rendert 404-Seite", async () => {

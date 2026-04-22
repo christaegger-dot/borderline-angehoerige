@@ -63,6 +63,12 @@ describe("handout text versions", () => {
     const beziehungsAchtsamkeitPdf = unterstuetzenItems.find(
       item => item.id === "beziehungs-achtsamkeit"
     )?.pdfUrl;
+    const sechsLeitlinienPdf = unterstuetzenItems.find(
+      item => item.id === "6-leitlinien"
+    )?.pdfUrl;
+    const vierAlltagsTippsPdf = unterstuetzenItems.find(
+      item => item.id === "4-alltags-tipps"
+    )?.pdfUrl;
     const vierPhasenPdf = verstehenInfografiken.find(
       item => item.id === "4-phasen"
     )?.pdfUrl;
@@ -99,6 +105,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersion("beziehungs-achtsamkeit")?.path).toBe(
       "/materialien/text/beziehungs-achtsamkeit"
+    );
+    expect(getHandoutTextVersion("6-leitlinien")?.path).toBe(
+      "/materialien/text/6-leitlinien"
+    );
+    expect(getHandoutTextVersion("4-alltags-tipps")?.path).toBe(
+      "/materialien/text/4-alltags-tipps"
     );
     expect(getHandoutTextVersion("krisenkommunikation")?.path).toBe(
       "/materialien/text/krisenkommunikation"
@@ -157,6 +169,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(beziehungsAchtsamkeitPdf)).toBe(
       "/materialien/text/beziehungs-achtsamkeit"
+    );
+    expect(getHandoutTextVersionHrefBySource(sechsLeitlinienPdf)).toBe(
+      "/materialien/text/6-leitlinien"
+    );
+    expect(getHandoutTextVersionHrefBySource(vierAlltagsTippsPdf)).toBe(
+      "/materialien/text/4-alltags-tipps"
     );
     expect(getHandoutTextVersionHrefBySource(krisenPdf)).toBe(
       "/materialien/text/krisenkommunikation"

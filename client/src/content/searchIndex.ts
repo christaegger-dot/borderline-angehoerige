@@ -533,6 +533,42 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: 6 Leitlinien für Angehörige",
+    description:
+      "Lesbare Web-Version mit sechs evidenzbasierten Empfehlungen, Merksatz und drei Reflexionsschritten für Angehörige",
+    keywords: [
+      "textversion",
+      "6 leitlinien",
+      "gunderson",
+      "family guidelines",
+      "unterstützen",
+      "grenzen",
+      "familie",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/6-leitlinien",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: 4 Alltags-Tipps",
+    description:
+      "Lesbare Web-Version zu Übungspartner sein, Fortschritte anerkennen, Vorhersehbarkeit und gemeinsamem Problemlösen",
+    keywords: [
+      "textversion",
+      "4 alltags-tipps",
+      "alltag",
+      "fortschritte anerkennen",
+      "vorhersehbar",
+      "unterstützen",
+      "skills",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/4-alltags-tipps",
+    section: "Materialien",
+  },
+  {
     title: "Der Eisberg: Was hinter Wut liegen kann",
     description:
       "Infografik: Hinter sichtbarer Wut liegen oft Schmerz, Angst oder Scham",

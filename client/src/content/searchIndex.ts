@@ -444,6 +444,24 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Im Krisenmodus – Orientierung geben",
+    description:
+      "Lesbare Web-Version zur Deeskalation mit Ruhe, Präsenz, Mini-Legende und 3 konkreten Schritten für Angehörige",
+    keywords: [
+      "textversion",
+      "krisenmodus",
+      "orientierung geben",
+      "präsenz",
+      "ruhe",
+      "deeskalation",
+      "unterstützen",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/im-krisenmodus",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Ihre Rolle klären",
     description:
       "Lesbare Web-Version zur Angehörigenrolle mit Abgrenzung zwischen eigenem Beitrag, professioneller Hilfe und klaren Grenzen",
@@ -458,6 +476,24 @@ export const searchableContent: SearchEntry[] = [
       "pdf",
     ],
     href: "/materialien/text/rolle-klaeren",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Drei Säulen hilfreicher Unterstützung",
+    description:
+      "Lesbare Web-Version zu Präsenz, Stabilität, Grenze und drei kleinen Übungsschritten für Angehörige",
+    keywords: [
+      "textversion",
+      "drei säulen",
+      "präsenz",
+      "stabilität",
+      "grenze",
+      "unterstützung",
+      "angehörigen-haltung",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/drei-saeulen",
     section: "Materialien",
   },
   {

@@ -5,6 +5,7 @@ import {
   getHandoutTextVersionHrefBySource,
 } from "@/content/handoutTextVersions";
 import { materials } from "@/content/materialien";
+import { unterstuetzenItems } from "@/content/unterstuetzen";
 import { verstehenInfografiken } from "@/content/verstehen";
 
 describe("handout text versions", () => {
@@ -50,6 +51,12 @@ describe("handout text versions", () => {
     const notfallplanPdf = materials.find(
       item => item.id === "notfallplan-krise"
     )?.downloadUrl;
+    const imKrisenmodusPdf = unterstuetzenItems.find(
+      item => item.id === "im-krisenmodus"
+    )?.pdfUrl;
+    const dreiSaeulenPdf = unterstuetzenItems.find(
+      item => item.id === "drei-saeulen"
+    )?.pdfUrl;
     const vierPhasenPdf = verstehenInfografiken.find(
       item => item.id === "4-phasen"
     )?.pdfUrl;
@@ -74,6 +81,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersion("rolle-klaeren")?.path).toBe(
       "/materialien/text/rolle-klaeren"
+    );
+    expect(getHandoutTextVersion("im-krisenmodus")?.path).toBe(
+      "/materialien/text/im-krisenmodus"
+    );
+    expect(getHandoutTextVersion("drei-saeulen")?.path).toBe(
+      "/materialien/text/drei-saeulen"
     );
     expect(getHandoutTextVersion("krisenkommunikation")?.path).toBe(
       "/materialien/text/krisenkommunikation"
@@ -120,6 +133,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(rolleKlaerenPdf)).toBe(
       "/materialien/text/rolle-klaeren"
+    );
+    expect(getHandoutTextVersionHrefBySource(imKrisenmodusPdf)).toBe(
+      "/materialien/text/im-krisenmodus"
+    );
+    expect(getHandoutTextVersionHrefBySource(dreiSaeulenPdf)).toBe(
+      "/materialien/text/drei-saeulen"
     );
     expect(getHandoutTextVersionHrefBySource(krisenPdf)).toBe(
       "/materialien/text/krisenkommunikation"

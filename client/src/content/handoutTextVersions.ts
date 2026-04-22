@@ -3,6 +3,7 @@ import {
   type MaterialCategory,
   type MaterialItem,
 } from "./materialien";
+import { unterstuetzenItems } from "./unterstuetzen";
 import { verstehenInfografiken } from "./verstehen";
 
 export interface HandoutTextCard {
@@ -80,6 +81,19 @@ function requireMaterial(id: string) {
       previewImageUrl: verstehenMaterial.webpUrl,
       topic: TOPIC_META.verstehen,
       pdfSourceUrl: verstehenMaterial.pdfUrl,
+    };
+  }
+
+  const unterstuetzenMaterial = unterstuetzenItems.find(item => item.id === id);
+  if (unterstuetzenMaterial) {
+    return {
+      title: unterstuetzenMaterial.title,
+      description: unterstuetzenMaterial.title,
+      category: "unterstuetzen" as const,
+      kind: "Infografik" as const,
+      previewImageUrl: unterstuetzenMaterial.url,
+      topic: TOPIC_META.unterstuetzen,
+      pdfSourceUrl: unterstuetzenMaterial.pdfUrl,
     };
   }
 
@@ -462,6 +476,126 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       },
     ],
     sourceLine: "Quelle: Gunderson et al., Family Guidelines; Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("im-krisenmodus", {
+    kicker: "Textversion",
+    summary:
+      "In der Krise hilft weniger Logik, dafür mehr Ruhe, Präsenz und Orientierung. Ihre ruhige Haltung kann helfen, von Überforderung zu mehr Sicherheit zurückzufinden.",
+    intro: [
+      "Diese Seite überträgt die Infografik «Im Krisenmodus – Orientierung geben» in eine lesbare Web-Version. Die Grafik ist bewusst knapp: Krise und beruhigter Zustand werden gegenübergestellt, verbunden durch Ihre Ruhe und Präsenz.",
+      "Für Angehörige ist die Kernaussage klar: In akuter Überforderung bringt langes Erklären oft wenig. Wichtiger sind ein ruhiger Ton, Präsenz und das Verschieben schwieriger Diskussionen.",
+    ],
+    sections: [
+      {
+        title: "Von Krise zu Beruhigung",
+        intro:
+          "Die Infografik stellt zwei Zustände gegenüber und markiert den Übergang dazwischen.",
+        cards: [
+          {
+            title: "Krise",
+            text: "überwältigt, verängstigt, impulsiv",
+          },
+          {
+            title: "Ihr Beitrag",
+            text: "Ihre Ruhe + Präsenz",
+          },
+          {
+            title: "Beruhigt",
+            text: "orientiert, verbunden, sicherer",
+          },
+        ],
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Worum es im Krisenmodus geht",
+        calloutText:
+          "In der Krise hilft weniger Logik – mehr Ruhe, Präsenz und Orientierung.",
+      },
+      {
+        title: "Mini-Legende",
+        bullets: [
+          "Symbol = emotionaler Zustand",
+          "Pfeil = Übergang durch Ihr Verhalten",
+          "Herz = beruhigter Zustand",
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Atmen Sie durch",
+            text: "Atmen Sie durch und sprechen Sie leise und langsam.",
+          },
+          {
+            title: "2. Präsenzsatz sagen",
+            text: "Sagen Sie einen Präsenzsatz: «Ich bin da. Wir schaffen das.»",
+          },
+          {
+            title: "3. Diskussion verschieben",
+            text: "Verschieben Sie Diskussionen: «Wir reden später – jetzt beruhigen wir uns.»",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Psychoedukation, Angehörigenarbeit (DBT-nah).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("drei-saeulen", {
+    kicker: "Textversion",
+    summary:
+      "Präsenz, Stabilität und Grenze sind drei Säulen, die Angehörigen Halt geben und die Beziehung stärken. Hilfreiche Unterstützung braucht alle drei zusammen.",
+    intro: [
+      "Diese Seite überträgt die Infografik «Drei Säulen hilfreicher Unterstützung» in eine lesbare Web-Version. Das Handout bündelt Angehörigen-Haltung in drei einfache Grundpfeiler.",
+      "Die Grafik ist als praktische Orientierung gedacht: zugewandt bleiben, innerlich ruhig bleiben und gleichzeitig den eigenen Schutz nicht verlieren.",
+    ],
+    sections: [
+      {
+        title: "Die drei Säulen",
+        intro:
+          "Die Infografik beschreibt drei Haltungen, die sich ergänzen und zusammen tragfähige Unterstützung ermöglichen.",
+        cards: [
+          {
+            title: "Präsenz – Ich bin da.",
+            text: "Gefühl zeigen. Zuverlässig sein.",
+          },
+          {
+            title: "Stabilität – Ich bleibe ruhig.",
+            text: "Klare Haltung. Nicht mitreissen lassen.",
+          },
+          {
+            title: "Grenze – Ich schütze mich.",
+            text: "Eigene Bedürfnisse. Nein sagen können.",
+          },
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Worum es bei den drei Säulen geht",
+        calloutText:
+          "Präsenz, Stabilität und Grenze – drei Säulen, die Angehörigen Halt geben und die Beziehung stärken.",
+      },
+      {
+        title: "Was können Sie tun?",
+        cards: [
+          {
+            title: "1. Wählen",
+            text: "Wählen Sie eine Säule für diese Woche.",
+          },
+          {
+            title: "2. Üben",
+            text: "Üben Sie in kleinen Situationen.",
+          },
+          {
+            title: "3. Reflektieren",
+            text: "Reflektieren Sie abends: Was hat geholfen?",
+          },
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014); Gunderson (2011).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

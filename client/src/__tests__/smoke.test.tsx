@@ -146,6 +146,42 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/soforthilfe");
   });
 
+  it("HandoutTextPage: rendert Krisenmodus-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "im-krisenmodus" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Im Krisenmodus – Orientierung geben/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /In der Krise hilft weniger Logik – mehr Ruhe, Präsenz und Orientierung\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
+    ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
+  });
+
+  it("HandoutTextPage: rendert Drei-Säulen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "drei-saeulen" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Drei Säulen hilfreicher Unterstützung/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Präsenz, Stabilität und Grenze sind drei Säulen/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
+    ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
+  });
+
   it("HandoutTextPage: rendert Warnsignale-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -407,6 +443,22 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Wenn Mama oder Papa grosse Gefühle hat/i,
       })
     ).toHaveAttribute("href", "/materialien/text/kinder");
+  });
+
+  it("Unterstützen: zeigt Textversionen für Unterstützen-Handouts", async () => {
+    const { default: UnterstuetzenUebersicht } =
+      await import("@/pages/UnterstuetzenUebersicht");
+    withRouter(<UnterstuetzenUebersicht />);
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Im Krisenmodus – Orientierung geben/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/im-krisenmodus");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Drei Säulen hilfreicher Unterstützung/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/drei-saeulen");
   });
 
   it("NotFound: rendert 404-Seite", async () => {

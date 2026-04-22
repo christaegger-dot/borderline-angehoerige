@@ -5,6 +5,7 @@ import {
   getHandoutTextVersionHrefBySource,
 } from "@/content/handoutTextVersions";
 import { genesungItems } from "@/content/genesung";
+import { grenzenItems } from "@/content/grenzen";
 import { materials } from "@/content/materialien";
 import { selbstfuersorgeInfografiken } from "@/content/selbstfuersorge";
 import { unterstuetzenItems } from "@/content/unterstuetzen";
@@ -58,6 +59,16 @@ describe("handout text versions", () => {
       item => item.id === "wenn-worte-treffen"
     )?.downloadUrl;
     const dearPdf = materials.find(item => item.id === "dear")?.downloadUrl;
+    const spiegelnPdf = grenzenItems.find(
+      item => item.id === "spiegeln-statt-aufsaugen"
+    )?.pdfUrl;
+    const vierArtenGrenzenPdf = grenzenItems.find(
+      item => item.id === "4-arten-von-grenzen"
+    )?.pdfUrl;
+    const grenzenErkennenPdf = grenzenItems.find(
+      item => item.id === "grenzen-erkennen"
+    )?.pdfUrl;
+    const lmkPdf = grenzenItems.find(item => item.id === "lmk")?.pdfUrl;
     const genesungZahlenPdf = materials.find(
       item => item.id === "genesung-zahlen"
     )?.downloadUrl;
@@ -169,6 +180,16 @@ describe("handout text versions", () => {
       "/materialien/text/wenn-worte-treffen"
     );
     expect(getHandoutTextVersion("dear")?.path).toBe("/materialien/text/dear");
+    expect(getHandoutTextVersion("spiegeln-statt-aufsaugen")?.path).toBe(
+      "/materialien/text/spiegeln-statt-aufsaugen"
+    );
+    expect(getHandoutTextVersion("4-arten-von-grenzen")?.path).toBe(
+      "/materialien/text/4-arten-von-grenzen"
+    );
+    expect(getHandoutTextVersion("grenzen-erkennen")?.path).toBe(
+      "/materialien/text/grenzen-erkennen"
+    );
+    expect(getHandoutTextVersion("lmk")?.path).toBe("/materialien/text/lmk");
     expect(getHandoutTextVersion("genesung-zahlen")?.path).toBe(
       "/materialien/text/genesung-zahlen"
     );
@@ -258,6 +279,18 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(dearPdf)).toBe(
       "/materialien/text/dear"
+    );
+    expect(getHandoutTextVersionHrefBySource(spiegelnPdf)).toBe(
+      "/materialien/text/spiegeln-statt-aufsaugen"
+    );
+    expect(getHandoutTextVersionHrefBySource(vierArtenGrenzenPdf)).toBe(
+      "/materialien/text/4-arten-von-grenzen"
+    );
+    expect(getHandoutTextVersionHrefBySource(grenzenErkennenPdf)).toBe(
+      "/materialien/text/grenzen-erkennen"
+    );
+    expect(getHandoutTextVersionHrefBySource(lmkPdf)).toBe(
+      "/materialien/text/lmk"
     );
     expect(getHandoutTextVersionHrefBySource(genesungZahlenPdf)).toBe(
       "/materialien/text/genesung-zahlen"

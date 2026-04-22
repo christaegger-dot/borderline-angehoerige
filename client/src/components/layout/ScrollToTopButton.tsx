@@ -29,8 +29,7 @@ export function ScrollToTopButton() {
           behavior: "smooth",
         })
       }
-      className={`fixed right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-navy hover:bg-navy-light text-white shadow-lg items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
-      style={{ bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))" }}
+      className={`fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-navy hover:bg-navy-light text-white shadow-lg items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
       aria-label="Nach oben scrollen"
     >
       <ChevronUp className="w-6 h-6" />

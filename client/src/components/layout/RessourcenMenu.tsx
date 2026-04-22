@@ -104,8 +104,7 @@ export function RessourcenMenu({
       {isOpen && (
         <div
           onKeyDown={handleMenuKeyDown}
-          className="absolute right-0 top-full z-50 mt-2 rounded-[1.4rem] border border-border/65 bg-white/92 shadow-[0_34px_64px_-34px_rgba(15,23,42,0.55)] backdrop-blur-md"
-          style={{ width: "min(680px, calc(100vw - 2rem))" }}
+          className="absolute right-0 top-full z-50 mt-2 w-[min(680px,calc(100vw-2rem))] rounded-[1.4rem] border border-border/65 bg-white/92 shadow-[0_34px_64px_-34px_rgba(15,23,42,0.55)] backdrop-blur-md"
           {...menuA11yProps}
         >
           <div className="grid grid-cols-3 gap-0 p-3">

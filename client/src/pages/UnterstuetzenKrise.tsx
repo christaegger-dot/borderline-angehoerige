@@ -3,6 +3,7 @@ import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
+import { TableOfContents } from "@/components/UXEnhancements";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -27,7 +28,60 @@ import { kontaktByIdStrict } from "@/data/kontakte";
 const rot144 = kontaktByIdStrict("ROT_144");
 const gruen143 = kontaktByIdStrict("GRUEN_143");
 
+const kriseIntroCards = [
+  {
+    icon: AlertTriangle,
+    title: "Krise genauer einordnen",
+    text: "Nicht jede belastende Situation ist gleich ein Notfall. Das Ampel-System hilft, die Intensität klarer zu lesen.",
+    iconClass: "text-sage-dark",
+    shellClass: "bg-sage-wash border-sage-light/80",
+  },
+  {
+    icon: Shield,
+    title: "Ruhig und sicher handeln",
+    text: "In akuten Momenten zählen Sicherheit, kurze Sätze, Validierung und ein begrenztes Vorgehen mehr als Diskussionen.",
+    iconClass: "text-slate-blue",
+    shellClass: "bg-slate-wash border-slate-light/80",
+  },
+  {
+    icon: RefreshCw,
+    title: "Auch das Danach mitdenken",
+    text: "Nach der Eskalation braucht es oft Scham, Erschöpfung und Aufarbeitung mit derselben Ruhe wie in der Krise selbst.",
+    iconClass: "text-sand-warm",
+    shellClass: "bg-sand-muted border-sand-border/80",
+  },
+] as const;
+
+const kriseQuickLinks = [
+  {
+    id: "ampel-system",
+    title: "Krise einschätzen",
+    text: "Wenn Sie zuerst klären möchten, ob Sie gerade in Gelb, Orange oder bereits Rot sind.",
+  },
+  {
+    id: "deeskalation",
+    title: "4 Schritte der Deeskalation",
+    text: "Wenn Sie ein klares Vorgehen für die akute Situation brauchen.",
+  },
+  {
+    id: "krise-formulierungen",
+    title: "Was Sie konkret sagen können",
+    text: "Wenn Sie nach kurzen, tragfähigen Sätzen für den Krisenmoment suchen.",
+  },
+  {
+    id: "nach-der-krise",
+    title: "Nach der Krise weitergehen",
+    text: "Wenn die akute Spitze vorbei ist und es jetzt um Verarbeitung, Scham und Neubeginn geht.",
+  },
+] as const;
+
 export default function UnterstuetzenKrise() {
+  const openSection = (sectionId: string) => {
+    window.dispatchEvent(
+      new CustomEvent("open-section", { detail: { sectionId } })
+    );
+  };
+
   return (
     <Layout>
       <SEO
@@ -35,8 +89,9 @@ export default function UnterstuetzenKrise() {
         description="Krisenbegleitung bei Borderline: Wie Sie in akuten Situationen deeskalieren, Grenzen wahren und professionelle Hilfe richtig einbeziehen."
         path="/unterstuetzen/krise"
       />
+      <TableOfContents />
       {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -52,7 +107,7 @@ export default function UnterstuetzenKrise() {
             </Link>
 
             <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-sand-muteder flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
                 <AlertTriangle className="w-6 h-6 text-sage-mid" />
               </div>
               <span className="text-sm font-medium text-sage-dark">
@@ -60,37 +115,18 @@ export default function UnterstuetzenKrise() {
               </span>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               In der Krise unterstützen
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Viele Angehörige erleben Phasen starker Anspannung, Eskalation
               oder Rückzug. Hier erfahren Sie, wie Sie Krisen besser einordnen,
               deeskalierend reagieren und Sicherheit im Blick behalten können,
               ohne Ihre eigene Grenze aus dem Blick zu verlieren.
             </p>
 
-            <div className="p-4 rounded-xl bg-sand border border-sand-subtle">
-              <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">
-                  Unterschied Krise vs. Notfall:
-                </strong>{" "}
-                Diese Seite ist für{" "}
-                <strong>emotionale Krisen und Eskalationen</strong> (starke
-                Emotionen, Konflikte, Rückzug). Bei{" "}
-                <strong>akuter Gefahr</strong> (Suizidgefahr, Selbstverletzung)
-                gehen Sie direkt zu{" "}
-                <Link
-                  href="/soforthilfe"
-                  className="text-alert hover:underline font-medium"
-                >
-                  Soforthilfe & Notfallnummern →
-                </Link>
-              </p>
-            </div>
-
-            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
+            <LastVerifiedBadge date="16.04.2026" className="mt-6" />
           </motion.div>
         </div>
       </section>
@@ -127,8 +163,116 @@ export default function UnterstuetzenKrise() {
         </div>
       </section>
 
+      <section className="py-8 md:py-10">
+        <div className="container">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <Card className="border-sand-border/85 bg-white/92 shadow-[0_28px_56px_-40px_rgba(139,108,31,0.28)]">
+              <CardContent className="p-6 md:p-7">
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-muted">
+                    <AlertTriangle className="h-6 w-6 text-sage-mid" />
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sand-warm/90">
+                      <span className="h-px w-6 bg-sand-warm/35" />
+                      Überblick
+                    </span>
+                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
+                      Was diese Seite in Krisen ordnet
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Diese Seite hilft Ihnen, Krisen nicht nur als Chaos, sondern
+                  als Folge unterschiedlicher Eskalationsstufen zu lesen. Im
+                  Zentrum stehen Einordnung, Deeskalation, sichere Sprache und
+                  die Frage, was nach der akuten Spitze für beide Seiten
+                  tragfähig weiterhilft.
+                </p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {kriseIntroCards.map(item => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.title}
+                        className={`rounded-2xl border p-4 ${item.shellClass}`}
+                      >
+                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
+                        <h3 className="mb-2 text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.text}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
+              <CardContent className="p-6 md:p-7">
+                <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
+                  <span className="h-px w-6 bg-slate-dark/30" />
+                  Direkt einsteigen
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
+                  direkt zu dem Block, der Ihrer aktuellen Krisenlage am ehesten
+                  entspricht.
+                </p>
+
+                <div className="mt-5 space-y-3">
+                  {kriseQuickLinks.map(item => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => openSection(item.id)}
+                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sand-border hover:bg-sand-muted/45 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-warm/35 focus-visible:ring-offset-2"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {item.text}
+                          </p>
+                        </div>
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sand-muted text-sand-warm transition-transform group-hover:translate-x-0.5">
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-alert/20 bg-alert/5 px-4 py-4">
+                  <p className="text-sm leading-relaxed text-foreground">
+                    <strong>Unterschied Krise vs. Notfall:</strong> Diese Seite
+                    ist für emotionale Eskalationen, starke Anspannung und
+                    Rückzug. Bei akuter Gefahr, Suizidgefahr oder
+                    Selbstverletzung gehen Sie direkt zu{" "}
+                    <Link
+                      href="/soforthilfe"
+                      className="font-medium text-alert underline decoration-alert/35 underline-offset-2 transition-colors hover:decoration-alert"
+                    >
+                      Soforthilfe & Notfallnummern
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Content */}
-      <section className="py-8 md:py-12">
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             {/* Disclaimer */}

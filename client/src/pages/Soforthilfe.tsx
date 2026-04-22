@@ -75,8 +75,7 @@ function StickyAmpelLeiste() {
 
   return (
     <div
-      className={`sticky top-16 md:top-20 z-40 transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}
-      style={{ marginBottom: 0 }}
+      className={`sticky top-16 md:top-20 z-40 mb-0 transition-all duration-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}
     >
       <div className="bg-background/95 backdrop-blur-md border-b border-border/50 shadow-sm">
         <div className="container">

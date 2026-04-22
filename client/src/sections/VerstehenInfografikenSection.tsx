@@ -1,4 +1,4 @@
-import { type CSSProperties, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
@@ -56,9 +56,8 @@ export default function VerstehenInfografikenSection() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="mb-12 wave-divider-top"
+      className="mb-12 wave-divider-top [--wave-color:var(--background)]"
       id="materialien"
-      style={{ "--wave-color": "var(--background)" } as CSSProperties}
     >
       <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
         <Download className="w-8 h-8 text-sage-dark" />

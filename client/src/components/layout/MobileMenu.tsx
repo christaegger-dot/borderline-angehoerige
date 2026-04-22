@@ -47,23 +47,14 @@ export function MobileMenu({
 
   return (
     <div
-      className="lg:hidden border-t border-border/50 bg-[linear-gradient(180deg,rgba(250,250,247,0.96),rgba(247,249,248,1))] overflow-y-auto overscroll-contain"
-      style={{
-        maxHeight: "calc(100dvh - 5rem)",
-        WebkitOverflowScrolling: "touch",
-      }}
+      className="lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-border/50 bg-[linear-gradient(180deg,rgba(250,250,247,0.96),rgba(247,249,248,1))] [-webkit-overflow-scrolling:touch]"
       onKeyDown={e => {
         if (e.key === "Escape") {
           closeMenu();
         }
       }}
     >
-      <nav
-        className="container py-4 flex flex-col gap-2"
-        style={{
-          paddingBottom: "calc(16px + env(safe-area-inset-bottom, 0px) + 88px)",
-        }}
-      >
+      <nav className="container flex flex-col gap-2 py-4 pb-[calc(16px+env(safe-area-inset-bottom,0px)+88px)]">
         {navItems.map(item => {
           const Icon = item.icon;
           const isActive = location.startsWith(item.href);

@@ -3,6 +3,7 @@ import {
   type MaterialCategory,
   type MaterialItem,
 } from "./materialien";
+import { genesungItems } from "./genesung";
 import { selbstfuersorgeInfografiken } from "./selbstfuersorge";
 import { unterstuetzenItems } from "./unterstuetzen";
 import { verstehenInfografiken } from "./verstehen";
@@ -110,6 +111,19 @@ function requireMaterial(id: string) {
       previewImageUrl: selbstfuersorgeMaterial.webp,
       topic: TOPIC_META.selbstfuersorge,
       pdfSourceUrl: selbstfuersorgeMaterial.pdf,
+    };
+  }
+
+  const genesungMaterial = genesungItems.find(item => item.id === id);
+  if (genesungMaterial) {
+    return {
+      title: genesungMaterial.title,
+      description: genesungMaterial.desc,
+      category: "genesung" as const,
+      kind: "Infografik" as const,
+      previewImageUrl: genesungMaterial.img,
+      topic: TOPIC_META.genesung,
+      pdfSourceUrl: genesungMaterial.pdf,
     };
   }
 
@@ -2197,6 +2211,252 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     ],
     sourceLine:
       "Quelle: Zanarini et al. (2012), McLean Study; Gunderson et al. (2011).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("fortschritt-paradox", {
+    kicker: "Textversion",
+    summary:
+      "Genesung verläuft nicht linear. Rückschläge gehören zum Weg und entwerten bereits Erreichtes nicht automatisch.",
+    intro: [
+      "Diese Seite überträgt das Handout «Das Fortschritt-Paradox – Warum Rückschritte zum Weg gehören» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Einbrüche realistischer einordnen möchten.",
+      "Die Struktur bleibt eng am Original: zuerst die Kernaussage, dann drei kurze Einordnungen und zum Schluss drei konkrete Hinweise für den Alltag.",
+    ],
+    sections: [
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Genesung verläuft nicht linear. Rückschritte sind Teil des Weges – nicht das Ende.",
+      },
+      {
+        title: "Wichtige Einordnungen",
+        cards: [
+          {
+            title: "Veränderung braucht Zeit",
+            text: "Veränderung braucht Zeit und Geduld.",
+          },
+          {
+            title: "Rückschläge entwerten nicht alles",
+            text: "Jeder Rückschlag ist kürzer als der vorherige.",
+          },
+          {
+            title: "Der Weg zurück",
+            text: "Der Weg zurück wird schneller.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Sehen Sie Rückfälle als Teil des Prozesses.",
+          "Vergleichen Sie mit früher, nicht mit gestern.",
+          "Feiern Sie kleine Fortschritte.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Zanarini et al. (2012); Mason/Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("remission-heilung", {
+    kicker: "Textversion",
+    summary:
+      "Remission ist oft das realistische Ziel: Symptome können deutlich abnehmen, Alltag und Beziehungen stabiler werden, auch wenn nicht alles vollständig verschwindet.",
+    intro: [
+      "Diese Seite überträgt das Handout «Remission vs. Heilung – Was realistisch ist» in eine lesbare Web-Version. Es hilft Angehörigen, Besserung differenzierter und weniger schwarz-weiss einzuordnen.",
+      "Das Original stellt Heilung und Remission bewusst gegenüber und ergänzt die Einordnung mit einer knappen Kernaussage und drei alltagsnahen Hinweisen.",
+    ],
+    sections: [
+      {
+        title: "Heilung",
+        bullets: [
+          "Alle Symptome gelöst.",
+          "Keine Therapie mehr nötig.",
+          "Persönlichkeit verändert.",
+          "Selten realistisch.",
+        ],
+      },
+      {
+        title: "Remission",
+        bullets: [
+          "Symptome deutlich reduziert.",
+          "Stabilität im Alltag.",
+          "Fähigkeit zu Beziehungen.",
+          "Realistisches Ziel.",
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Remission ist das realistische Ziel – und ein grosser Erfolg.",
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Setzen Sie realistische Erwartungen: Besserung ja, Perfektion nein.",
+          "Feiern Sie kleine Fortschritte, statt auf die komplette Heilung zu warten.",
+          "Akzeptieren Sie, dass manche Muster bleiben können – aber handhabbar werden.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Zanarini et al. (2012); Paris (2020).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("5-faktoren-genesung", {
+    kicker: "Textversion",
+    summary:
+      "Genesung wird eher gefördert, wenn Behandlung, Medikation, Beziehungen, Lebensqualität und Zeit zusammenspielen. Angehörige können vor allem das Beeinflussbare unterstützen.",
+    intro: [
+      "Diese Seite überträgt das Handout «5 Faktoren der Genesung – Was Forschung zeigt» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Hoffnung mit einem realistischen Blick auf wirksame Einflussfaktoren verbinden möchten.",
+      "Die Struktur folgt dem Original: fünf Faktoren, eine Kernaussage und drei Hinweise dazu, wie Angehörige den Prozess hilfreich begleiten können.",
+    ],
+    sections: [
+      {
+        title: "Die fünf Faktoren",
+        cards: [
+          {
+            title: "Therapie",
+            text: "Professionelle Behandlung als Säule.",
+          },
+          {
+            title: "Medikation",
+            text: "Unterstützend, nicht allein.",
+          },
+          {
+            title: "Soziales Netz",
+            text: "Verlässliche Beziehungen.",
+          },
+          {
+            title: "Lebensqualität",
+            text: "Sinnvolle Aktivitäten und Struktur.",
+          },
+          {
+            title: "Zeit",
+            text: "Genesung braucht Jahre, nicht Wochen.",
+          },
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Genesung ist möglich – und Sie als Angehörige können bei den beeinflussbaren Faktoren unterstützen.",
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Prüfen Sie: Welchen Faktor können Sie unterstützen?",
+          "Konzentrieren Sie sich auf das Beeinflussbare.",
+          "Geben Sie nicht auf – Veränderung braucht Zeit.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Zanarini et al. (2012); Paris (2020).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("rolle-genesungsprozess", {
+    kicker: "Textversion",
+    summary:
+      "Angehörige können Genesung unterstützen, aber nicht herstellen. Der wichtigste Beitrag ist oft die eigene Stabilität, nicht das Retten.",
+    intro: [
+      "Diese Seite überträgt das Handout «Ihre Rolle im Genesungsprozess – Was Sie tun können – und was nicht» in eine lesbare Web-Version. Es hilft Angehörigen, ihren Beitrag klarer von Überverantwortung zu unterscheiden.",
+      "Die Originalstruktur bleibt erhalten: hilfreiche Beiträge, klare Nicht-Aufgaben, die Kernaussage des Blatts, die Farblegende und drei kurze Selbstchecks für den Alltag.",
+    ],
+    sections: [
+      {
+        title: "Was Sie tun können",
+        cards: [
+          {
+            title: "Konsistenz",
+            text: "Berechenbar und verlässlich bleiben.",
+          },
+          {
+            title: "Realistische Hoffnung",
+            text: "Genesung ist möglich – vermitteln Sie das.",
+          },
+          {
+            title: "Eigene Grenzen",
+            text: "Klar und konsequent bleiben.",
+          },
+          {
+            title: "Fortschritte benennen",
+            text: "Kleine Erfolge sichtbar machen.",
+          },
+          {
+            title: "Professionelle Hilfe unterstützen",
+            text: "Therapie fördern, nicht ersetzen.",
+          },
+        ],
+      },
+      {
+        title: "Was nicht Ihre Aufgabe ist",
+        cards: [
+          {
+            title: "Therapie ersetzen",
+            text: "Das ist Aufgabe der Fachpersonen.",
+          },
+          {
+            title: "Veränderung erzwingen",
+            text: "Genesung braucht eigene Motivation.",
+          },
+          {
+            title: "Immer verfügbar sein",
+            text: "Sie brauchen auch Pausen.",
+          },
+          {
+            title: "Eigene Bedürfnisse zurückstellen",
+            text: "Ihre Gesundheit zählt.",
+          },
+          {
+            title: "Für Genesung verantwortlich sein",
+            text: "Das liegt nicht in Ihrer Hand.",
+          },
+        ],
+      },
+      {
+        title: "Merksätze",
+        cards: [
+          {
+            title: "Ihre Stabilität",
+            text: "Ihre Stabilität ist Teil der Genesung.",
+          },
+          {
+            title: "Kernaussage",
+            text: "Sie können unterstützen. Sie müssen nicht retten.",
+          },
+        ],
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Sage",
+            text: "Ihr Beitrag.",
+          },
+          {
+            title: "Terracotta",
+            text: "Nicht Ihre Aufgabe.",
+          },
+          {
+            title: "Slate",
+            text: "Kernbotschaft.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Prüfen Sie regelmässig: Bin ich in meiner Rolle oder rutsche ich ab?",
+          "Sprechen Sie mit Fachpersonen, wenn Sie unsicher sind.",
+          "Erinnern Sie sich: Ihre Stabilität ist Ihr wichtigster Beitrag.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Gunderson et al., Family Guidelines; Kreger (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

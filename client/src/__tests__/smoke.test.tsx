@@ -452,6 +452,84 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/genesung");
   });
 
+  it("HandoutTextPage: rendert Fortschritt-Paradox-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "fortschritt-paradox" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Das Fortschritt-Paradox/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Rückschritte sind Teil des Weges – nicht das Ende\./i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
+    ).toHaveAttribute("href", "/genesung");
+  });
+
+  it("HandoutTextPage: rendert Remission-Heilung-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "remission-heilung" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Remission vs\. Heilung/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Remission ist das realistische Ziel – und ein grosser Erfolg\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
+    ).toHaveAttribute("href", "/genesung");
+  });
+
+  it("HandoutTextPage: rendert 5-Faktoren-Genesung-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "5-faktoren-genesung" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /5 Faktoren, die Genesung fördern/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Sie als Angehörige können bei den beeinflussbaren Faktoren unterstützen\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
+    ).toHaveAttribute("href", "/genesung");
+  });
+
+  it("HandoutTextPage: rendert Rolle-im-Genesungsprozess-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "rolle-genesungsprozess" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Ihre Rolle im Genesungsprozess/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Sie können unterstützen\. Sie müssen nicht retten\./i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
+    ).toHaveAttribute("href", "/genesung");
+  });
+
   it("HandoutTextPage: rendert Kinder-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -577,7 +655,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/wenn-worte-treffen");
   });
 
-  it("Genesung: zeigt Textversion für Genesung in Zahlen", async () => {
+  it("Genesung: zeigt Textversionen für Genesung-Handouts", async () => {
     const { default: Genesung } = await import("@/pages/Genesung");
     withRouter(<Genesung />);
     expect(
@@ -585,6 +663,26 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Genesung in Zahlen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/genesung-zahlen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Das Fortschritt-Paradox/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/fortschritt-paradox");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Remission vs\. Heilung/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/remission-heilung");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: 5 Faktoren, die Genesung fördern/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/5-faktoren-genesung");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Ihre Rolle im Genesungsprozess/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/rolle-genesungsprozess");
   });
 
   it("Verstehen: zeigt Textversionen für Verstehen-Handouts", async () => {

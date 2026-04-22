@@ -347,7 +347,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "Übergang",
-            text: "Krisen kommen und Krisen gehen. Der Pfeil steht für diesen Wechsel zwischen Zuständen.",
+            text: "Krisen kommen und gehen. Der Übergang erinnert daran, dass belastende Zustände nicht statisch bleiben.",
           },
         ],
       },
@@ -362,34 +362,23 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "1. Stabilität wahren",
-            text: "Bewahren Sie innere Ruhe. Lassen Sie sich nicht mitreissen.",
+            text: "Bewahren Sie möglichst innere Ruhe, auch wenn es im Gegenüber stürmisch wird.",
           },
           {
             title: "2. Orientierung geben",
-            text: "Seien Sie ein verlässlicher Ankerpunkt.",
+            text: "Geben Sie mit wenigen klaren Sätzen Orientierung statt immer neuen Erklärungen.",
           },
           {
             title: "3. Verlässlich bleiben",
-            text: "Seien Sie beständig da, unabhängig vom Zustand.",
+            text: "Bleiben Sie möglichst berechenbar, auch wenn sich Zustände schnell ändern.",
           },
         ],
       },
       {
-        title: "Legende der Grafik",
-        cards: [
-          {
-            title: "Leuchtturm",
-            text: "Der Leuchtturm steht für Ihre Haltung: stabil, ruhig und klar.",
-          },
-          {
-            title: "Sturm und Ruhe",
-            text: "Die Zustände wechseln. Sie sind wichtig, aber sie definieren nicht alles.",
-          },
-          {
-            title: "Pfeile",
-            text: "Die Pfeile markieren den Übergang: Krisen sind nicht statisch, und auch Ruhe ist nicht für immer gesichert.",
-          },
-        ],
+        title: "Orientierung",
+        calloutTitle: "Was der Leuchtturm nicht bedeutet",
+        calloutText:
+          "Der Leuchtturm steht nicht für Kontrolle, sondern für Haltung: ruhig bleiben, Richtung geben und nicht in jeden Sturm hineingezogen werden.",
       },
     ],
     sourceLine: "Quelle: Nach Kreger (2014), Angehörigen-Psychoedukation.",
@@ -415,11 +404,11 @@ export const handoutTextVersions: HandoutTextVersion[] = [
             text: "Berechenbar und stabil bleiben.",
           },
           {
-            title: "Geduldige/r Zuhörer/in",
+            title: "Geduldige Begleitung",
             text: "Zuhören, ohne zu urteilen.",
           },
           {
-            title: "Übungspartner/in",
+            title: "Übungsbegleitung",
             text: "Neue Verhaltensweisen gemeinsam üben.",
           },
           {
@@ -438,15 +427,15 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Die rechte Spalte grenzt bewusst ab, welche Rollen zwar verständlich erscheinen, aber Angehörige überfordern oder in problematische Dynamiken bringen.",
         cards: [
           {
-            title: "Therapeut/in",
+            title: "Therapie übernehmen",
             text: "Die Therapie ersetzen oder kontrollieren.",
           },
           {
-            title: "Retter/in",
+            title: "Retterrolle",
             text: "Alle Probleme lösen wollen.",
           },
           {
-            title: "Kontrolleur/in",
+            title: "Kontrollinstanz",
             text: "Verhalten überwachen oder erzwingen.",
           },
           {
@@ -581,15 +570,15 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "Präsenz – Ich bin da.",
-            text: "Gefühl zeigen. Zuverlässig sein.",
+            text: "Zugewandt und ansprechbar bleiben, ohne alles lösen zu müssen.",
           },
           {
             title: "Stabilität – Ich bleibe ruhig.",
-            text: "Klare Haltung. Nicht mitreissen lassen.",
+            text: "Innerlich ruhiger und berechenbar bleiben, auch wenn es angespannt wird.",
           },
           {
             title: "Grenze – Ich schütze mich.",
-            text: "Eigene Bedürfnisse. Nein sagen können.",
+            text: "Eigene Bedürfnisse ernst nehmen und Nein sagen können, wenn es nötig ist.",
           },
         ],
       },
@@ -604,15 +593,15 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "1. Wählen",
-            text: "Wählen Sie eine Säule für diese Woche.",
+            text: "Wählen Sie eine Säule, auf die Sie diese Woche besonders achten wollen.",
           },
           {
             title: "2. Üben",
-            text: "Üben Sie in kleinen Situationen.",
+            text: "Üben Sie sie bewusst in kleinen, alltäglichen Situationen.",
           },
           {
             title: "3. Reflektieren",
-            text: "Reflektieren Sie abends: Was hat geholfen?",
+            text: "Fragen Sie sich am Abend: Welche Säule hat heute am meisten geholfen?",
           },
         ],
       },
@@ -641,11 +630,11 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "Gemeinsame Grenze",
-            text: "Gleiche Grenzen – weniger Streit über die Grenzen.",
+            text: "Wenn Grenzen ähnlich formuliert und eingehalten werden, gibt es weniger Streit über die Grenze selbst.",
           },
           {
             title: "Inkonsistenz",
-            text: "Unsicherheit, mehr Konflikte, Misstrauen und ein schwieriger Beziehungskreislauf.",
+            text: "Widersprüchliche Reaktionen fördern Unsicherheit, Misstrauen und mehr Konflikte.",
           },
         ],
       },
@@ -656,12 +645,10 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener.",
       },
       {
-        title: "Mini-Legende",
-        bullets: [
-          "Kreis = verstärkender Kreislauf",
-          "Grün = hilfreich / Rot = schwierig",
-          "Pfeile = was sich gegenseitig beeinflusst",
-        ],
+        title: "Merkhilfe",
+        calloutTitle: "Worum es bei Konsistenz wirklich geht",
+        calloutText:
+          "Nicht Härte macht den Unterschied, sondern Abstimmung: ähnliche Reaktionen, ähnliche Grenzen, weniger Ausspielen gegeneinander.",
       },
       {
         title: "Was können Sie tun?",
@@ -672,7 +659,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "2. Gemeinsam dranbleiben",
-            text: "Halten Sie 1–2 gemeinsame Grenzen gleich ein.",
+            text: "Wählen Sie ein oder zwei gemeinsame Grenzen und halten Sie sie möglichst gleich ein.",
           },
           {
             title: "3. Unterschiede privat besprechen",
@@ -681,7 +668,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
     ],
-    sourceLine: "Quelle: Familienleitlinien/Angehörigen-Psychoedukation.",
+    sourceLine: "Quelle: Familienleitlinien und Angehörigen-Psychoedukation.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -709,11 +696,11 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "Nicht bewerten",
-            text: "Es ist, wie es ist (noch keine Lösung).",
+            text: "Es ist, wie es ist. Eine Lösung muss nicht im selben Moment entstehen.",
           },
           {
             title: "Bewusst handeln",
-            text: "Ich wähle: Satz / Grenze / Pause / Hilfe.",
+            text: "Ich wähle bewusst: ein Satz, eine Grenze, eine Pause oder Hilfe.",
           },
         ],
       },
@@ -724,27 +711,25 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Innehalten – wahrnehmen – nicht bewerten – bewusst handeln.",
       },
       {
-        title: "Mini-Legende",
-        bullets: [
-          "Pfeile = Reihenfolge",
-          "Jeder Schritt = bewusste Entscheidung",
-          "Ziel = weniger Autopilot, mehr Klarheit",
-        ],
+        title: "Merkhilfe",
+        calloutTitle: "Achtsamkeit als Reihenfolge",
+        calloutText:
+          "Die vier Schritte helfen vor allem deshalb, weil sie Tempo aus dem Autopiloten nehmen: erst stoppen, dann wahrnehmen, dann einordnen, dann handeln.",
       },
       {
-        title: "Action Box",
+        title: "Was können Sie tun?",
         cards: [
           {
             title: "1. Täglich üben",
-            text: "Üben Sie Schritt 1–2 täglich in kleinen Situationen.",
+            text: "Üben Sie die ersten beiden Schritte täglich in kleinen Situationen.",
           },
           {
             title: "2. Als Anti-Streit-Regel nutzen",
-            text: "Nutzen Sie Schritt 3 als Anti-Streit-Regel: erst später bewerten.",
+            text: "Nutzen Sie Schritt 3 als Anti-Streit-Regel: nicht sofort bewerten und nicht sofort reagieren.",
           },
           {
             title: "3. Konkret entscheiden",
-            text: "Entscheiden Sie Schritt 4 konkret: ein Satz, eine Grenze, ein nächster Schritt.",
+            text: "Machen Sie Schritt 4 konkret: ein Satz, eine Grenze oder ein nächster Schritt.",
           },
         ],
       },
@@ -770,15 +755,15 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "1. Veränderung braucht Zeit",
-            text: "Senken Sie Ihre Erwartungen an schnelle Fortschritte.",
+            text: "Halten Sie Erwartungen an schnelle Fortschritte bewusst realistisch.",
           },
           {
             title: "2. Ruhige Umgebung schaffen",
-            text: "Routinen und Vorhersehbarkeit geben Sicherheit.",
+            text: "Routinen und Vorhersehbarkeit geben oft mehr Sicherheit als ständige neue Lösungen.",
           },
           {
             title: "3. Zuhören statt verteidigen",
-            text: "Hören Sie zu, ohne sich zu verteidigen – auch wenn Vorwürfe unfair erscheinen.",
+            text: "Hören Sie zuerst zu, ohne sich sofort zu verteidigen, auch wenn Vorwürfe unfair wirken.",
           },
           {
             title: "4. Selbstverletzung ernst nehmen",
@@ -801,12 +786,10 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Nicht alles auf einmal: Wählen Sie eine Leitlinie pro Woche.",
       },
       {
-        title: "Mini-Legende",
-        bullets: [
-          "Jede Kachel = eine konkrete Empfehlung",
-          "Farben = Themenbereiche",
-          "Haken = zum Abhaken",
-        ],
+        title: "Merkhilfe",
+        calloutTitle: "Lieber klein und verlässlich",
+        calloutText:
+          "Die Leitlinien wirken meist nicht als Gesamtprogramm, sondern dann, wenn Sie eine davon verlässlich in den Alltag bringen.",
       },
       {
         title: "Action",
@@ -817,7 +800,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "2. Gemeinsam besprechen",
-            text: "Besprechen Sie sie mit Ihrer Familie oder Gruppe.",
+            text: "Besprechen Sie sie, wenn möglich, mit Familie oder Mitbeteiligten.",
           },
           {
             title: "3. Reflektieren",
@@ -826,7 +809,8 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
     ],
-    sourceLine: "Quelle: Gunderson et al., Family Guidelines for BPD.",
+    sourceLine:
+      "Quelle: Gunderson et al., Family Guidelines for Borderline Personality Disorder.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -846,19 +830,19 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "Übungspartner sein",
-            text: "Helfen Sie beim Üben neuer Skills. Unterstützen Sie aktiv.",
+            text: "Unterstützen Sie beim Üben neuer Skills, ohne die Übung selbst zu übernehmen.",
           },
           {
             title: "Fortschritte anerkennen",
-            text: "Auch kleine Schritte würdigen. Positives benennen.",
+            text: "Würdigen Sie auch kleine Schritte und benennen Sie, was bereits gelingt.",
           },
           {
             title: "Vorhersehbar sein",
-            text: "Klare Routinen und Absprachen. Verlässlichkeit zeigen.",
+            text: "Klare Routinen, Absprachen und Verlässlichkeit entlasten oft mehr als spontane Rettungsversuche.",
           },
           {
             title: "Gemeinsam Probleme lösen",
-            text: "Fragen statt Lösungen vorgeben. Unterstützen statt übernehmen.",
+            text: "Fragen Sie mit, statt sofort Lösungen vorzugeben. Unterstützen statt übernehmen.",
           },
         ],
       },
@@ -873,11 +857,11 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "1. Einen Tipp wählen",
-            text: "Wählen Sie einen Tipp für diese Woche.",
+            text: "Wählen Sie einen Tipp, den Sie diese Woche bewusst ausprobieren wollen.",
           },
           {
             title: "2. In Ruhe üben",
-            text: "Üben Sie in ruhigen Momenten.",
+            text: "Probieren Sie ihn zuerst in ruhigen Momenten aus.",
           },
           {
             title: "3. Hilfreich fragen",
@@ -887,7 +871,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       },
     ],
     sourceLine:
-      "Quelle: DBT-handlungsbasiert; Fruzzetti (2006), Family Psychoeducation.",
+      "Quelle: DBT-orientierte Angehörigenarbeit; Fruzzetti (2006), Family Psychoeducation.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -989,12 +973,10 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
       {
-        title: "Legende der Grafik",
-        bullets: [
-          "Spitze = sichtbares Verhalten",
-          "Unter Wasser = verborgene Gefühle",
-          "Ventile = Stresszufuhr oder Entlastung",
-        ],
+        title: "Orientierung",
+        calloutTitle: "Wie der Eisberg gelesen werden kann",
+        calloutText:
+          "Oben zeigt die Grafik sichtbares Verhalten. Unter der Oberfläche liegen oft Gefühle und Bedürfnisse, die im Streit leicht aus dem Blick geraten.",
       },
     ],
     sourceLine:
@@ -1049,12 +1031,10 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Unter Stress kippt die Bewertung Ihres Angehörigen leicht ins Extreme – die Grauzone wird schwer erreichbar. Weder die Idealisierung noch die Entwertung sind ein realistisches Bild von Ihnen. Beides sind Verzerrungen. Sie sind derselbe Mensch – vor und nach dem Kippen.",
       },
       {
-        title: "Legende der Grafik",
-        bullets: [
-          "Zwei Bewertungszustände = beide verzerrt, beide vorübergehend",
-          "Trigger = kleine Enttäuschungen, die das Pendel kippen können",
-          "Grauzone = der realistische Bereich – hier können Sie stabilisierend wirken",
-        ],
+        title: "Orientierung",
+        calloutTitle: "Worum es bei der Grauzone geht",
+        calloutText:
+          "Idealisierung und Entwertung sind beide verzerrte Stresszustände. Die Grauzone ist der realistischere Bereich, in dem Beziehung wieder differenzierter erlebt werden kann.",
       },
       {
         title: "3 Schritte zur Stabilisierung",
@@ -1161,7 +1141,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       {
         title: "Trigger",
         calloutTitle: "Was den Alarm auslösen kann",
-        calloutText: "Kritik, Zurückweisung, Überforderung.",
+        calloutText: "Kritik, Zurückweisung oder starke Überforderung.",
       },
       {
         title: "Die zwei Modi",
@@ -1170,11 +1150,11 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "Alarm-Modus",
-            text: "Körper auf Kampf oder Flucht. Amygdala überaktiv. Denken eingeschränkt. Impulsivität hoch. Schuldgefühle kommen später.",
+            text: "Der Körper geht in Kampf oder Flucht. Die Amygdala ist überaktiv, Denken eingeschränkt und Impulse werden schwerer steuerbar. Schuldgefühle kommen oft erst später.",
           },
           {
             title: "Denk-Modus",
-            text: "Präfrontaler Kortex aktiv. Fähigkeiten verfügbar: Zuhören, Abwägen, Planen. Gespräch möglich. Lösungen finden.",
+            text: "Der präfrontale Kortex ist besser verfügbar. Zuhören, Abwägen und Planen werden wieder möglich, und erst dann trägt ein Gespräch eher.",
           },
           {
             title: "Übergang",
@@ -1186,15 +1166,13 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         title: "Kernaussage",
         calloutTitle: "Worum es beim Alarm-Modus geht",
         calloutText:
-          "Im Alarm-Modus ist Ihr Gegenüber vorübergehend nicht erreichbar. Das ist keine Lüge, kein böser Wille – es ist Neurobiologie.",
+          "Im Alarm-Modus ist Ihr Gegenüber vorübergehend nicht erreichbar. Das ist keine Lüge und kein böser Wille, sondern eine neurobiologische Alarmreaktion.",
       },
       {
-        title: "Legende der Grafik",
-        bullets: [
-          "Terracotta = Alarm-Modus",
-          "Sage = Denk-Modus",
-          "Sand = Übergang",
-        ],
+        title: "Orientierung",
+        calloutTitle: "Was in welchem Modus hilft",
+        calloutText:
+          "Im Alarm-Modus helfen Druck und Logik wenig. Zuerst braucht es Beruhigung, dann einen Übergang, erst danach wieder Klärung.",
       },
       {
         title: "Was können Sie tun?",
@@ -1260,16 +1238,13 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         title: "Kernaussage",
         calloutTitle: "Worum es beim 4-Phasen-Zyklus geht",
         calloutText:
-          "Der Zyklus wiederholt sich – bis jemand das Muster durchbricht. Das können Sie sein.",
+          "Der Zyklus wiederholt sich, bis das Muster früher erkannt und unterbrochen wird. Dazu können Sie beitragen.",
       },
       {
-        title: "Legende der Grafik",
-        bullets: [
-          "Sage = Freundlichkeit",
-          "Sand = Verschlechterung",
-          "Terracotta = Explosion",
-          "Slate = Schweigen",
-        ],
+        title: "Orientierung",
+        calloutTitle: "Wo Veränderung am ehesten möglich wird",
+        calloutText:
+          "Am meisten Spielraum entsteht meist schon in Phase 2, bevor aus Spannung wieder eine Explosion wird.",
       },
       {
         title: "Was können Sie tun?",
@@ -1309,7 +1284,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "Amygdala – Alarm-Zentrale",
-            text: "Reagiert auf Bedrohung. Löst Kampf- oder Flucht aus. Bei BPS: überaktiv, reagiert stärker und schneller.",
+            text: "Reagiert auf Bedrohung und löst Kampf oder Flucht aus. Bei einer Borderline-Persönlichkeitsstörung reagiert sie oft stärker und schneller.",
           },
           {
             title: "Hippocampus – Erinnerungsspeicher",
@@ -1345,13 +1320,10 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Emotionale Überflutung ist keine Absicht, sondern eine neurobiologische Reaktion. Das Gehirn braucht Zeit, um wieder klar zu denken.",
       },
       {
-        title: "Legende der Grafik",
-        bullets: [
-          "Terracotta = Alarm",
-          "Sand = Übergang",
-          "Sage = Beruhigung",
-          "Pfeile = Wirkungsrichtung",
-        ],
+        title: "Orientierung",
+        calloutTitle: "Was die Grafik verständlich machen will",
+        calloutText:
+          "Wenn Alarm übernimmt, wird Denken enger. Mit Beruhigung kommt Schritt für Schritt wieder mehr Zugang zu Reflexion und Gespräch zurück.",
       },
       {
         title: "3 Schritte zur Beruhigung",
@@ -1454,16 +1426,16 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Grün",
-            text: "Selbstfürsorge aktivieren.",
+            title: "1. Grün: früh gegensteuern",
+            text: "Planen Sie bewusst kleine Dinge ein, die Sie stabilisieren: Pause, Schlaf, Bewegung oder ein entlastendes Gespräch.",
           },
           {
-            title: "2. Gelb",
-            text: "Professionelle Beratung suchen.",
+            title: "2. Gelb: Unterstützung aktivieren",
+            text: "Holen Sie sich Beratung oder Begleitung, bevor Überlastung zum Dauerzustand wird.",
           },
           {
-            title: "3. Rot",
-            text: "Sofort Hilfe holen.",
+            title: "3. Rot: Hilfe dazuholen",
+            text: "Wenn Sie sich stark erschöpft, hoffnungslos oder nicht mehr sicher fühlen, holen Sie umgehend Hilfe von aussen.",
           },
         ],
       },
@@ -1535,27 +1507,25 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
       {
-        title: "Legende",
-        bullets: [
-          "Rot = negativer Kreislauf",
-          "Grün = hilfreicher Kreislauf",
-          "Wendepunkt = Ihre Entscheidung",
-        ],
+        title: "Wendepunkt",
+        calloutTitle: "Wo sich der Kreislauf verändert",
+        calloutText:
+          "Der entscheidende Wechsel passiert dort, wo Sie Selbstfürsorge nicht mehr verschieben, sondern als Voraussetzung für verlässliche Unterstützung behandeln.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Etwas nur für sich planen",
-            text: "Planen Sie eine Aktivität nur für sich.",
+            title: "1. Zeit nur für sich reservieren",
+            text: "Planen Sie diese Woche bewusst etwas ein, das nicht dem Krisenmanagement gehört.",
           },
           {
-            title: "2. Den Bedarf aussprechen",
-            text: "Sagen Sie: Ich brauche das, damit ich für dich da sein kann.",
+            title: "2. Den eigenen Bedarf aussprechen",
+            text: "Sagen Sie klar, was Sie brauchen, um zugewandt und verlässlich bleiben zu können.",
           },
           {
             title: "3. Hilfe annehmen üben",
-            text: "Üben Sie, Hilfe anzunehmen.",
+            text: "Entlastung wird oft erst möglich, wenn Sie Unterstützung nicht nur anbieten, sondern auch selbst zulassen.",
           },
         ],
       },
@@ -1570,7 +1540,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Die STOPP-Technik schafft in etwa 30 Sekunden Abstand zwischen Reiz und Reaktion. Das gibt Körper und Kopf wieder etwas mehr Handlungsspielraum.",
     intro: [
       "Diese Seite überträgt das Handout «Die STOPP-Technik – 5 Schritte aus der Stressspirale» in eine lesbare Web-Version. Das Original fasst die DBT-Technik so zusammen, dass sie im Alltag schnell nutzbar bleibt.",
-      "Die fünf Buchstaben bilden eine feste Reihenfolge: stoppen, atmen, orientieren, Perspektive wechseln und dann erst eine konkrete Handlung planen.",
+      "Die fünf Buchstaben geben eine feste Reihenfolge vor: stoppen, atmen, orientieren, Perspektive weiten und dann erst handeln.",
     ],
     sections: [
       {
@@ -1590,7 +1560,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "T = TIEF ATMEN",
-            text: "Drei tiefe Atemzüge. 4–4–4.",
+            text: "Drei tiefe Atemzüge. Nur atmen, noch nicht reagieren.",
           },
           {
             title: "O = ORIENTIEREN",
@@ -1602,7 +1572,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "P = PLAN",
-            text: "Wählen Sie EINE konkrete Handlung.",
+            text: "Wählen Sie eine konkrete nächste Handlung.",
           },
         ],
       },
@@ -1610,16 +1580,16 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Mehrmals üben",
-            text: "Üben Sie STOPP dreimal diese Woche.",
+            title: "1. Im ruhigen Moment üben",
+            text: "Üben Sie STOPP mehrmals in ruhigen Situationen, damit die Reihenfolge unter Stress verfügbarer wird.",
           },
           {
             title: "2. Anker-Satz bereitlegen",
-            text: "Anker-Satz: Ich habe 30 Sekunden.",
+            text: "Ein kurzer Satz wie «Ich habe einen Moment» hilft, nicht sofort zu reagieren.",
           },
           {
-            title: "3. Abends notieren",
-            text: "Notieren Sie abends: Wann hätte STOPP geholfen?",
+            title: "3. Abends kurz zurückblicken",
+            text: "Fragen Sie sich am Abend: Wo hätte mir STOPP heute gutgetan?",
           },
         ],
       },
@@ -1706,27 +1676,25 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
       {
-        title: "Legende",
-        bullets: [
-          "Grüne Pfeile = Energie geben",
-          "Rote Pfeile = Energie kosten",
-          "Batterie-Icon = aktueller Stand",
-        ],
+        title: "Orientierung",
+        calloutTitle: "Die einfache Prüffrage",
+        calloutText:
+          "Fragen Sie nicht nur, was Kraft kostet, sondern auch, was Ihr Energie-Konto verlässlich wieder auffüllt.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Ehrlich prüfen",
-            text: "Prüfen Sie ehrlich: Wie voll ist Ihr Konto gerade?",
+            title: "1. Stand ehrlich einschätzen",
+            text: "Fragen Sie sich ohne Beschönigung: Wie voll ist mein Energie-Konto gerade?",
           },
           {
-            title: "2. Auftank-Aktivität planen",
-            text: "Planen Sie diese Woche eine konkrete Auftank-Aktivität.",
+            title: "2. Einen Energiegeber terminieren",
+            text: "Planen Sie diese Woche eine konkrete Auftank-Aktivität fest ein.",
           },
           {
-            title: "3. Einen Energiefresser streichen",
-            text: "Streichen Sie eine energiefressende Gewohnheit – nur eine.",
+            title: "3. Einen Energiefresser begrenzen",
+            text: "Wählen Sie genau eine Belastung, die Sie diese Woche verkleinern oder unterbrechen.",
           },
         ],
       },
@@ -1766,31 +1734,31 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         calloutText: "Gültig ab sofort. Unbefristet.",
       },
       {
-        title: "Legende",
-        bullets: [
-          "Checkbox = Erlaubnis zum Ankreuzen",
-          "Zertifikat = Ihre persönliche Genehmigung",
-        ],
+        title: "Wie Sie die Karte lesen können",
+        calloutTitle: "Nicht Leistung, sondern Erlaubnis",
+        calloutText:
+          "Die Karte will nichts zusätzlich von Ihnen. Sie erinnert Sie daran, was auch unter Belastung erlaubt bleibt.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Sichtbar machen",
-            text: "Drucken Sie diese Karte aus und hängen Sie sie sichtbar auf.",
+            title: "1. Einen Satz auswählen",
+            text: "Wählen Sie heute genau die Erlaubnis aus, die Ihnen im Moment am schwersten fällt.",
           },
           {
-            title: "2. Heute ankreuzen",
-            text: "Kreuzen Sie an, was Ihnen heute besonders schwer fällt.",
+            title: "2. Sichtbar notieren",
+            text: "Schreiben Sie diesen Satz an einen Ort, den Sie im Alltag sehen.",
           },
           {
-            title: "3. Täglich erinnern",
-            text: "Erinnern Sie sich täglich: Diese Erlaubnis gilt.",
+            title: "3. Im Alltag wiederholen",
+            text: "Wenn Schuldgefühle auftauchen, erinnern Sie sich bewusst: Auch das ist erlaubt.",
           },
         ],
       },
     ],
-    sourceLine: "Quelle: Selbstfürsorge-Konzept, nach Mason/Kreger (2014).",
+    sourceLine:
+      "Quelle: Selbstfürsorge-orientierte Angehörigenarbeit, nach Mason/Kreger (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -1807,7 +1775,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         title: "Kernaussage",
         calloutTitle: "Zentrale Entlastung",
         calloutText:
-          "Schuldgefühle gehören zu den häufigsten Belastungen von Angehörigen. Diese Gedanken sind verständlich, aber sie helfen weder Ihnen noch der betroffenen Person. BPD hat keine einzelne Ursache, und kein einzelner Mensch ist dafür verantwortlich.",
+          "Schuldgefühle gehören zu den häufigsten Belastungen von Angehörigen. Diese Gedanken sind verständlich, aber sie helfen weder Ihnen noch der betroffenen Person. Eine Borderline-Persönlichkeitsstörung hat keine einzelne Ursache, und kein einzelner Mensch ist dafür verantwortlich.",
       },
       {
         title: "Was die Forschung zeigt",
@@ -1815,7 +1783,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Das Handout fasst die Entlastung bewusst sachlich zusammen: Borderline entsteht nicht durch einen einzelnen Auslöser und nicht durch eine einzelne Person.",
         cards: [
           {
-            title: "Genetik & Temperament",
+            title: "Genetik und Temperament",
             text: "Vererbt werden Temperamentszüge – diese allein führen noch nicht zur Erkrankung.",
           },
           {
@@ -1857,12 +1825,12 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "«Ich hätte es früher merken müssen.»",
-            text: "Sie sind kein Diagnostik-Team. BPD wird selbst von Fachpersonen oft erst spät erkannt.",
+            text: "Sie sind kein Diagnostik-Team. Eine Borderline-Persönlichkeitsstörung wird selbst von Fachpersonen oft erst spät erkannt.",
           },
           {
             title:
               "«Wenn ich ein besserer Elternteil gewesen wäre, wäre das nicht passiert.»",
-            text: "BPD entsteht nie durch eine einzelne Person. Dass Sie jetzt da sind, zeigt Ihre Fürsorge.",
+            text: "Eine Borderline-Persönlichkeitsstörung entsteht nie durch eine einzelne Person. Dass Sie jetzt da sind, zeigt Ihre Fürsorge.",
           },
           {
             title: "«Ich tue nicht genug.»",
@@ -1875,15 +1843,15 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "«Andere Familien haben dieses Problem nicht.»",
-            text: "BPD kommt in allen Familien vor – unabhängig von Bildung, Einkommen oder Erziehungsstil.",
+            text: "Eine Borderline-Persönlichkeitsstörung kommt in allen Familien vor – unabhängig von Bildung, Einkommen oder Erziehungsstil.",
           },
         ],
       },
       {
         title: "Vertiefung",
-        calloutTitle: "Weiterdenken statt im Schuld-Spiel stecken bleiben",
+        calloutTitle: "Wenn Schuldgedanken wieder auftauchen",
         calloutText:
-          "Wie Sie aus dem Schuld-Spiel aussteigen, zeigt die Infografik «Raus aus dem Schuld-Spiel» (nach Fruzzetti).",
+          "Fragen Sie sich nicht nur, was damals falsch lief, sondern auch, was heute schützt, entlastet und in Ihrer Verantwortung liegt.",
       },
       {
         title: "Merksatz",
@@ -2016,7 +1984,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "«Wenn du gehst, bringe ich mich um.»",
-            text: "Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich gehe nicht weg – und ich rufe jetzt Hilfe.» Das Handout markiert hier zusätzlich: Fachperson informieren.",
+            text: "Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich bleibe damit nicht allein und hole jetzt Hilfe dazu.» Solche Sätze immer ernst nehmen.",
           },
           {
             title: "«Du verstehst mich sowieso nicht.»",
@@ -2050,7 +2018,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Wenn Gespräche kippen, helfen oft nicht mehr Erklärungen, sondern drei kurze Schritte: beruhigen, verbinden, begrenzen.",
     intro: [
       "Diese Seite überträgt das Handout «Wenn Gespräche kippen – Was Sie tun können, bevor es eskaliert» in eine lesbare Web-Version. Es richtet sich an Angehörige, die in angespannten Momenten eine kurze, klare Gesprächsstruktur brauchen.",
-      "Die Struktur des Originals bleibt erhalten: drei Schritte, ein kurzer Pausenplan für Kipppunkte, die Kernaussage des Blatts, die Legende und drei alltagsnahe Hinweise.",
+      "Die Struktur des Originals bleibt erhalten: drei Schritte, ein kurzer Pausenplan für Kipppunkte, die Kernaussage des Blatts, eine kleine Merkhilfe und drei alltagsnahe Hinweise.",
     ],
     sections: [
       {
@@ -2071,11 +2039,11 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
       {
-        title: "Wenn es kippt",
+        title: "Wenn es kippt: Mini-Plan",
         bullets: [
-          "Pause 10–30 Minuten.",
-          "Ich gehe nicht weg, ich mache nur eine Pause.",
-          "Wir sprechen um [Uhrzeit] weiter.",
+          "Kündigen Sie eine begrenzte Pause von 10 bis 30 Minuten an.",
+          "Sagen Sie klar, dass Sie den Kontakt nicht abbrechen, sondern das Gespräch nur unterbrechen.",
+          "Nennen Sie nach Möglichkeit schon jetzt, wann Sie wieder ansprechbar sind.",
         ],
       },
       {
@@ -2085,32 +2053,17 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Kurz, ruhig und wiederholbar wirkt in Krisen stärker als Argumente.",
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Beruhigen",
-            text: "Tempo und Tonfall senken.",
-          },
-          {
-            title: "Verbinden",
-            text: "Gefühl benennen und Kontakt halten.",
-          },
-          {
-            title: "Begrenzen",
-            text: "Klare Grenze plus Plan.",
-          },
-          {
-            title: "Wenn es kippt",
-            text: "Pause mit Rückkehrangebot.",
-          },
-        ],
+        title: "Merkhilfe",
+        calloutTitle: "Die Reihenfolge zählt",
+        calloutText:
+          "Erst beruhigen, dann verbinden, dann begrenzen. In dieser Reihenfolge steigt die Chance, dass Ihr Satz überhaupt noch ankommt.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Üben Sie die 3 Schritte in ruhigen Momenten, damit sie in der Krise abrufbar sind.",
-          "Nutzen Sie kurze, klare Sätze. Vermeiden Sie Erklärungen und Rechtfertigungen.",
-          "Bieten Sie immer eine Rückkehr an: Wir sprechen um [Uhrzeit] weiter.",
+          "Üben Sie die drei Schritte in ruhigen Momenten, damit sie unter Anspannung verfügbarer sind.",
+          "Halten Sie Sätze so kurz, dass Sie sie im Stress wiederholen können.",
+          "Verbinden Sie jede Pause mit einer Rückkehr: «Wir sprechen um [Uhrzeit] weiter.»",
         ],
       },
     ],
@@ -2124,7 +2077,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Die 3-Teile-Formel hält Grenzsetzung knapp: Fakt, Ich-Grenze, nächster Schritt. So bleiben Sie klar, ohne in Rechtfertigungen zu geraten.",
     intro: [
       "Diese Seite überträgt das Handout «Grenzen setzen ohne Eskalation – Die 3-Teile-Formel» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Grenzen klar ansprechen wollen, ohne in Streitlogik hineingezogen zu werden.",
-      "Das Original kombiniert die Formel mit einem knappen Beispiel, einer Kernaussage, einer kleinen Farblegende und drei kurzen Umsetzungshinweisen.",
+      "Das Original kombiniert die Formel mit einem knappen Beispiel, einer Kernaussage, einer kurzen Merkhilfe und drei kurzen Umsetzungshinweisen.",
     ],
     sections: [
       {
@@ -2132,15 +2085,15 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "Fakt",
-            text: "Was passiert. Objektiv, ohne Bewertung. Beispiel: «Es ist jetzt das dritte Mal, dass du mich anschreist.»",
+            text: "Beschreiben Sie kurz, was passiert. Objektiv, ohne Bewertung. Beispiel: «Es ist jetzt das dritte Mal, dass du mich anschreist.»",
           },
           {
             title: "Ich-Grenze",
-            text: "Sagen Sie, was Sie brauchen. Ich-Aussage. Beispiel: «So kann ich nicht weiterreden.»",
+            text: "Sagen Sie in einem Satz, was für Sie nicht geht. Beispiel: «So kann ich nicht weiterreden.»",
           },
           {
             title: "Nächster Schritt",
-            text: "Bieten Sie einen Plan an. Konkret und machbar. Beispiel: «Pause 10 Minuten, dann sprechen wir weiter.»",
+            text: "Nennen Sie den nächsten Schritt konkret und machbar. Beispiel: «Pause 10 Minuten, dann sprechen wir weiter.»",
           },
         ],
       },
@@ -2157,28 +2110,17 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Nicht rechtfertigen. Nicht erklären. Nicht streiten. Einfach sagen, was ist.",
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Sand",
-            text: "Fakt.",
-          },
-          {
-            title: "Terracotta",
-            text: "Ich-Grenze.",
-          },
-          {
-            title: "Slate",
-            text: "Nächster Schritt.",
-          },
-        ],
+        title: "Merkhilfe",
+        calloutTitle: "Ein Satz pro Teil genügt",
+        calloutText:
+          "Je knapper Sie bleiben, desto eher bleibt Ihre Grenze hörbar: Fakt, Ich-Grenze, nächster Schritt.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Formulieren Sie Ihre 3 wichtigsten Grenzen vorab schriftlich.",
-          "Üben Sie die Formel in ruhigen Momenten laut.",
-          "Bleiben Sie bei Ihrer Aussage, auch wenn Gegenwind kommt.",
+          "Schreiben Sie zwei oder drei typische Grenzsätze vorab aus.",
+          "Üben Sie die Formel laut in Ihrer eigenen Sprache.",
+          "Bleiben Sie bei einem Satz pro Teil, auch wenn Gegenwind kommt.",
         ],
       },
     ],
@@ -2192,7 +2134,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Nicht jede Anspannung ist noch gesprächsfähig. Das Handout unterscheidet stabil, Warnstufe und Eskalation und zeigt, wann Sie stoppen sollten.",
     intro: [
       "Diese Seite überträgt das Handout «Pause statt Streit – Wann Sie stoppen sollten und wie» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Kipppunkte früher erkennen und rechtzeitig aus eskalierenden Gesprächen aussteigen möchten.",
-      "Die Struktur des Originals bleibt erhalten: drei Zustände, die Kernaussage, eine kurze Legende und drei praktische Hinweise für den Alltag.",
+      "Die Struktur des Originals bleibt erhalten: drei Zustände, die Kernaussage, eine kurze Orientierung und drei praktische Hinweise für den Alltag.",
     ],
     sections: [
       {
@@ -2211,7 +2153,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Stimme wird lauter.",
           "Vorwürfe beginnen.",
           "Körper spannt sich an.",
-          "Ankündigen: Ich merke, es wird schwierig. Pause 10 Minuten.",
+          "Kündigen Sie früh an: «Ich merke, es wird schwierig. Pause 10 Minuten.»",
         ],
       },
       {
@@ -2219,8 +2161,8 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         bullets: [
           "Schreien, Beschimpfungen.",
           "Kontrolle geht verloren.",
-          "Sofort stoppen.",
-          "Ich gehe jetzt. Wir sprechen um [Uhrzeit] weiter.",
+          "Jetzt stoppen und Abstand schaffen.",
+          "«Ich unterbreche das Gespräch jetzt. Wir sprechen um [Uhrzeit] weiter.»",
         ],
       },
       {
@@ -2235,28 +2177,17 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         calloutText: "Bei Gefahr: Notfallplan aktivieren.",
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Sage",
-            text: "Stabil.",
-          },
-          {
-            title: "Sand",
-            text: "Warnstufe.",
-          },
-          {
-            title: "Terracotta",
-            text: "Eskalation.",
-          },
-        ],
+        title: "Orientierung",
+        calloutTitle: "Was in welcher Stufe hilft",
+        calloutText:
+          "Stabil: im Gespräch bleiben. Warnstufe: Pause ankündigen. Eskalation: Gespräch stoppen und Rückkehr vereinbaren.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Definieren Sie Ihre persönliche Warnstufe: Woran merken Sie, dass es kippt?",
-          "Üben Sie den Stopp-Satz: Ich mache jetzt Pause.",
-          "Planen Sie die Rückkehr: Wir sprechen um [Uhrzeit] weiter.",
+          "Üben Sie einen Stopp-Satz, der für Sie natürlich klingt.",
+          "Planen Sie Rückkehrsätze vorab, damit Sie sie unter Stress nicht erst suchen müssen.",
         ],
       },
     ],
@@ -2271,7 +2202,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Validieren ist nicht nachgeben. Sie können Gefühle anerkennen, ohne Schuld zu übernehmen oder der Interpretation zustimmen zu müssen.",
     intro: [
       "Diese Seite überträgt das Handout «Zuhören ohne Zustimmen – Anerkennen ist nicht gleich Recht geben» in eine lesbare Web-Version. Es richtet sich an Angehörige, die empathisch bleiben wollen, ohne dabei ihre eigene Sicht aufzugeben.",
-      "Die Struktur folgt dem Original: anerkennen, nicht zustimmen, Grenze plus Plan, dazu Kernaussage, Legende und drei kurze Übungshinweise.",
+      "Die Struktur folgt dem Original: anerkennende Sätze, Sätze, die in Zustimmung kippen würden, Grenze plus Plan, die Kernaussage und drei kurze Übungshinweise.",
     ],
     sections: [
       {
@@ -2284,6 +2215,8 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       },
       {
         title: "Nicht zustimmen",
+        intro:
+          "Die folgenden Sätze wirken auf den ersten Blick beruhigend, kippen aber in Schuldübernahme oder Selbstaufgabe.",
         bullets: [
           "Du hast recht, ich bin schuld.",
           "Ja, ich hätte anders reagieren sollen.",
@@ -2294,7 +2227,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         title: "Grenze + Plan",
         calloutTitle: "Kombination aus Respekt und Selbstschutz",
         calloutText:
-          "Ich kann zuhören, aber ich muss nicht allem zustimmen. Wenn es zu viel wird: Pause.",
+          "Ich kann zuhören, ohne allem zuzustimmen. Wenn das Gespräch kippt, mache ich eine Pause und komme wieder.",
       },
       {
         title: "Kernaussage",
@@ -2303,26 +2236,15 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Sie können Gefühle anerkennen, ohne die Interpretation zu übernehmen. Das ist keine Lüge, sondern Respekt.",
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Sage",
-            text: "Anerkennen (validieren).",
-          },
-          {
-            title: "Grenze",
-            text: "Nicht zustimmen.",
-          },
-          {
-            title: "Slate",
-            text: "Grenze + Plan.",
-          },
-        ],
+        title: "Merkhilfe",
+        calloutTitle: "Gefühl anerkennen, Deutung nicht schlucken",
+        calloutText:
+          "Sie können sagen, dass der Schmerz real ist, ohne automatisch die ganze Erklärung oder Schuld zu übernehmen.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Üben Sie Sätze wie: Ich sehe, dass es dir nicht gut geht. Ohne Aber.",
+          "Üben Sie Sätze wie: «Ich sehe, dass es dir nicht gut geht.» und lassen Sie diesen Satz erst einmal stehen.",
           "Trennen Sie Gefühl und Inhalt: Das Gefühl ist echt, die Interpretation muss nicht stimmen.",
           "Bleiben Sie bei sich: Sie dürfen anderer Meinung sein, ohne das Gefühl abzuwerten.",
         ],
@@ -2338,7 +2260,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Ein kurzer Beispiel-Dialog zeigt, wie Verbinden, Kontakt, Grenze, Plan und Rückkehr in einem eskalierenden Gespräch zusammenspielen können.",
     intro: [
       "Diese Seite überträgt das Handout «Beispiel-Dialog – So könnte ein Gespräch aussehen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Technik-Schritte lieber an einem konkreten Ablauf als an reinen Regeln üben.",
-      "Das Original zeigt einen kurzen Dialogverlauf, die Kernaussage, eine Legende und drei Hinweise für das eigene Üben. Diese Struktur bleibt hier erhalten.",
+      "Das Original zeigt einen kurzen Dialogverlauf, die Kernaussage und drei Hinweise für das eigene Üben. Diese Struktur bleibt hier erhalten.",
     ],
     sections: [
       {
@@ -2362,7 +2284,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "Plan",
-            text: "«Pause 10 Minuten. Wir sprechen um 15 Uhr weiter.»",
+            text: "«Ich mache jetzt 10 Minuten Pause. Wir sprechen um 15 Uhr weiter.»",
           },
           {
             title: "Rückkehr",
@@ -2377,27 +2299,16 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Kurz, ruhig, wiederholbar. Nicht erklären, nicht rechtfertigen, nicht streiten.",
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Terracotta",
-            text: "Angehöriger.",
-          },
-          {
-            title: "Sage",
-            text: "Sie.",
-          },
-          {
-            title: "Labels",
-            text: "Technik-Schritte.",
-          },
-        ],
+        title: "Was der Dialog zeigt",
+        calloutTitle: "Nicht perfekt, sondern klar",
+        calloutText:
+          "Der Ablauf zeigt keine Zauberformel, sondern eine Richtung: erst wahrnehmen, dann Kontakt halten, dann Grenze und Rückkehr vereinbaren.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Lesen Sie den Dialog laut vor und üben Sie Ihre Antworten.",
-          "Passen Sie die Sätze an Ihre eigene Sprache an.",
+          "Lesen Sie den Dialog laut und markieren Sie die Sätze, die zu Ihrer Sprache passen.",
+          "Üben Sie besonders Grenze und Rückkehr, weil genau diese beiden Schritte in Stress oft wegbrechen.",
           "Erinnern Sie sich: Es geht nicht um Perfektion, sondern um Richtung.",
         ],
       },
@@ -2412,7 +2323,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "DEAR hilft, Wünsche klar und ohne Vorwürfe zu formulieren. Die vier Schritte geben Gesprächen Struktur und senken das Eskalationsrisiko.",
     intro: [
       "Diese Seite überträgt das Handout «Die DEAR-Technik – Grenzen setzen ohne Vorwürfe» in eine lesbare Web-Version. Es richtet sich an Angehörige, die eigene Wünsche und Grenzen klarer ansprechen möchten.",
-      "Das Original verbindet die vier Schritte von DEAR mit kurzen Beispielen, einer Farblegende und drei alltagsnahen Übungshinweisen. Diese Struktur bleibt in der Web-Version erhalten.",
+      "Das Original verbindet die vier Schritte von DEAR mit kurzen Beispielen, einer Merkhilfe und drei alltagsnahen Übungshinweisen. Diese Struktur bleibt in der Web-Version erhalten.",
     ],
     sections: [
       {
@@ -2445,31 +2356,16 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Sand",
-            text: "Beschreiben",
-          },
-          {
-            title: "Sage",
-            text: "Äussern",
-          },
-          {
-            title: "Terracotta",
-            text: "Behaupten",
-          },
-          {
-            title: "Slate",
-            text: "Verstärken",
-          },
-        ],
+        title: "Merkhilfe",
+        calloutTitle: "Vier Schritte, ein roter Faden",
+        calloutText:
+          "Erst beschreiben, dann Gefühl äussern, dann Wunsch klar sagen und zum Schluss den positiven Effekt benennen.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Schreiben Sie einen DEAR-Satz für eine aktuelle Situation auf.",
-          "Üben Sie den Satz laut, bevor Sie ihn im Gespräch einsetzen.",
+          "Schreiben Sie einen DEAR-Satz für eine aktuelle Situation in Ihrer eigenen Sprache auf.",
+          "Üben Sie ihn laut, bevor Sie ihn im Gespräch einsetzen.",
           "Beginnen Sie mit kleinen Themen, bevor Sie grosse ansprechen.",
         ],
       },
@@ -2497,11 +2393,11 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "Was passiert?",
-            text: "Sie übernehmen den Schmerz und die Wut des anderen.",
+            text: "Sie übernehmen Schmerz, Wut oder Leere der anderen Person fast wie Ihre eigenen Gefühle.",
           },
           {
             title: "Folge",
-            text: "Erschöpfung, Schuldgefühle.",
+            text: "Das führt oft zu Erschöpfung, Schuldgefühlen und innerer Verstrickung.",
           },
           {
             title: "Typischer Satz",
@@ -2509,7 +2405,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           },
           {
             title: "Innere Dynamik",
-            text: "Ich muss das schwarze Loch füllen.",
+            text: "Ich muss diese Leere für die andere Person ausgleichen.",
           },
         ],
       },
@@ -2518,11 +2414,11 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "Was passiert?",
-            text: "Sie reflektieren die Gefühle zurück zum Eigentümer.",
+            text: "Sie nehmen das Gefühl wahr, lassen es aber bei der anderen Person.",
           },
           {
             title: "Folge",
-            text: "Selbstschutz, Eigenverantwortung.",
+            text: "Das stärkt Selbstschutz und lässt Eigenverantwortung eher beim Gegenüber.",
           },
           {
             title: "Typischer Satz",
@@ -2537,9 +2433,9 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Fragen Sie sich: Ist das mein Gefühl oder seins/ihres?",
+          "Fragen Sie sich: Ist das mein Gefühl oder das der anderen Person?",
           "Sagen Sie: Ich verstehe, dass du leidest (nicht: Ich leide mit dir).",
-          "Erinnern Sie sich: Nur der Betroffene kann seine Leere füllen.",
+          "Erinnern Sie sich: Die innere Leere der anderen Person können Sie nicht stellvertretend ausfüllen.",
         ],
       },
     ],
@@ -2614,30 +2510,31 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         cards: [
           {
             title: "Der Knoten im Bauch",
-            text: "Körperlich: Magenschmerzen, Übelkeit. Emotional: Irgendetwas stimmt hier nicht.",
+            text: "Magenschmerzen oder Übelkeit. Oft begleitet von dem klaren inneren Signal: Irgendetwas stimmt hier nicht.",
           },
           {
             title: "Die Enge in der Brust",
-            text: "Druck, flache Atmung, Herzrasen. Eingeengt. Mehr Raum nötig.",
+            text: "Druck, flache Atmung oder Herzrasen. Häufig ein Zeichen dafür, dass Sie mehr Raum oder Abstand brauchen.",
           },
           {
             title: "Die Anspannung im Nacken",
-            text: "Verspannte Schultern, Kopfschmerzen. Zu viel Last.",
+            text: "Verspannte Schultern oder Kopfschmerzen. Der Körper meldet: Das ist gerade zu viel Last.",
           },
           {
             title: "Die Erschöpfung ohne Grund",
-            text: "Ständige Müdigkeit. Ich bin leer.",
+            text: "Ständige Müdigkeit oder plötzliche Leere. Oft ein Hinweis, dass Ihre Grenzen schon länger übergangen werden.",
           },
           {
             title: "Der Impuls zu fliehen",
-            text: "Unruhe, Zappeligkeit. Ich will hier weg.",
+            text: "Unruhe, Zappeligkeit oder der starke Impuls, sofort weg zu wollen. Auch das kann ein Warnsignal sein.",
           },
         ],
       },
       {
         title: "Abschluss",
         calloutTitle: "Frage zur Selbstbeobachtung",
-        calloutText: "Welches Signal kennen Sie? Wann tritt es auf?",
+        calloutText:
+          "Welches Signal kennen Sie am besten und in welchen Situationen taucht es immer wieder auf?",
       },
     ],
     sourceLine: "Quelle: Mason/Kreger (2014), Angehörigen-Psychoedukation.",
@@ -2650,7 +2547,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Wenn Grenzen ignoriert werden, reicht eine Bitte oft nicht. L.M.K. verbindet klare Ansage, logische Konsequenz und ruhiges Handeln.",
     intro: [
       "Diese Seite überträgt das Handout «Wenn Grenzen nicht respektiert werden – Die LMK-Methode» in eine lesbare Web-Version. Es richtet sich an Angehörige, die nach wiederholten Grenzverletzungen konsequent und ohne Drohlogik handeln wollen.",
-      "Die Struktur des Originals bleibt erhalten: Stufe 1 Grenze setzen, die Dichotomie der Kontrolle, Stufe 2 logische Konsequenz, Stufe 3 handeln und drei kurze Hinweise für die Umsetzung.",
+      "Die Struktur des Originals bleibt erhalten: Stufe 1 Grenze setzen, die Dichotomie der Kontrolle, Stufe 2 logische Konsequenz, Stufe 3 handeln, eine kurze Merkhilfe und drei Hinweise für die Umsetzung.",
     ],
     sections: [
       {
@@ -2686,15 +2583,15 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       {
         title: "Stufe 2: L.M.K. – logische, machbare Konsequenz",
         bullets: [
-          "Wenn du weiter schreist, gehe ich in mein Zimmer.",
-          "Wenn das nochmal passiert, schlafe ich heute woanders.",
+          "«Wenn du weiter schreist, gehe ich in mein Zimmer.»",
+          "«Wenn das nochmals passiert, schlafe ich heute woanders.»",
         ],
       },
       {
         title: "Stufe 3: Handeln",
         calloutTitle: "Umsetzung",
         calloutText:
-          "Konsequenz umsetzen. Ruhig, ohne Vorwurf. Nicht drohen, sondern tun.",
+          "Setzen Sie die Konsequenz ruhig und ohne Vorwurf um. Nicht drohen, sondern tun.",
       },
       {
         title: "Kernaussage",
@@ -2703,32 +2600,17 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Sie können Grenzen setzen. Sie können Konsequenzen umsetzen. Sie können nicht das Verhalten des anderen ändern.",
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Grenze hält",
-            text: "Die gesetzte Grenze wird respektiert.",
-          },
-          {
-            title: "LMK",
-            text: "Logische, machbare Konsequenz.",
-          },
-          {
-            title: "Handeln",
-            text: "Die Konsequenz wird ruhig umgesetzt.",
-          },
-          {
-            title: "Grenze nicht respektiert",
-            text: "Die gesetzte Grenze wird ignoriert oder übertreten.",
-          },
-        ],
+        title: "Merkhilfe",
+        calloutTitle: "Der Drehpunkt von LMK",
+        calloutText:
+          "Sie kontrollieren nicht das Verhalten der anderen Person, sondern nur Ihre Grenze und die Konsequenz, die Sie danach wirklich umsetzen.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Definieren Sie vorab 2–3 logische, machbare Konsequenzen.",
-          "Besprechen Sie diese in einem ruhigen Moment.",
-          "Setzen Sie die Konsequenz um – ruhig und ohne Diskussion.",
+          "Definieren Sie vorab zwei oder drei logische, machbare Konsequenzen.",
+          "Besprechen Sie diese möglichst in einem ruhigen Moment.",
+          "Setzen Sie die Konsequenz ruhig um, ohne danach in eine neue Diskussion einzusteigen.",
         ],
       },
     ],
@@ -2796,28 +2678,17 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Genesung ist möglich. Sie braucht Zeit, Geduld und professionelle Hilfe.",
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Remission",
-            text: "Die Grafik verwendet diesen Begriff für die symptomatische Remission.",
-          },
-          {
-            title: "Recovery",
-            text: "Die Grafik verwendet diesen Begriff für vollständige Genesung.",
-          },
-          {
-            title: "Anhaltende Remission",
-            text: "Die Grafik verwendet diesen Begriff für länger anhaltende Remission.",
-          },
-        ],
+        title: "Begriffe kurz eingeordnet",
+        calloutTitle: "Was die Grafik mit den Begriffen meint",
+        calloutText:
+          "Remission meint eine deutliche Abnahme der Symptome. Recovery beschreibt vollständige Genesung. Anhaltende Remission meint eine stabilere Besserung über längere Zeit.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Teilen Sie diese Zahlen mit Ihrem Angehörigen, wenn der Moment passt.",
-          "Erinnern Sie sich: Rückfälle gehören zum Prozess.",
-          "Bleiben Sie geduldig – Genesung ist ein Marathon, kein Sprint.",
+          "Erinnern Sie sich: Rückschläge gehören zum Prozess und entwerten Fortschritt nicht automatisch.",
+          "Bleiben Sie geduldig – Genesung ist eher ein Marathon als ein Sprint.",
         ],
       },
     ],
@@ -2976,7 +2847,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Angehörige können Genesung unterstützen, aber nicht herstellen. Der wichtigste Beitrag ist oft die eigene Stabilität, nicht das Retten.",
     intro: [
       "Diese Seite überträgt das Handout «Ihre Rolle im Genesungsprozess – Was Sie tun können – und was nicht» in eine lesbare Web-Version. Es hilft Angehörigen, ihren Beitrag klarer von Überverantwortung zu unterscheiden.",
-      "Die Originalstruktur bleibt erhalten: hilfreiche Beiträge, klare Nicht-Aufgaben, die Kernaussage des Blatts, die Farblegende und drei kurze Selbstchecks für den Alltag.",
+      "Die Originalstruktur bleibt erhalten: hilfreiche Beiträge, klare Nicht-Aufgaben, die Kernbotschaft des Blatts und drei kurze Selbstchecks für den Alltag.",
     ],
     sections: [
       {
@@ -3043,27 +2914,16 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
       {
-        title: "Legende",
-        cards: [
-          {
-            title: "Sage",
-            text: "Ihr Beitrag.",
-          },
-          {
-            title: "Terracotta",
-            text: "Nicht Ihre Aufgabe.",
-          },
-          {
-            title: "Slate",
-            text: "Kernbotschaft.",
-          },
-        ],
+        title: "Orientierung",
+        calloutTitle: "Worum es bei Ihrer Rolle geht",
+        calloutText:
+          "Hilfreich ist, was Stabilität, Hoffnung und professionelle Unterstützung stärkt. Nicht Ihre Aufgabe ist es, Therapie zu ersetzen oder Genesung zu erzwingen.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Prüfen Sie regelmässig: Bin ich in meiner Rolle oder rutsche ich ab?",
-          "Sprechen Sie mit Fachpersonen, wenn Sie unsicher sind.",
+          "Prüfen Sie regelmässig: Bin ich noch in meiner Rolle oder rutsche ich in Überverantwortung?",
+          "Sprechen Sie mit Fachpersonen, wenn Sie bei Zuständigkeiten oder Grenzen unsicher sind.",
           "Erinnern Sie sich: Ihre Stabilität ist Ihr wichtigster Beitrag.",
         ],
       },

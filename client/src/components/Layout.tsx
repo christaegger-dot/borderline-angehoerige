@@ -219,11 +219,7 @@ export default function Layout({ children }: LayoutProps) {
         <Button
           asChild
           variant="default"
-          className="sm:hidden fixed z-50 h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg gap-2 text-sm font-semibold"
-          style={{
-            bottom: "calc(4.5rem + env(safe-area-inset-bottom, 0px))",
-            right: "1rem",
-          }}
+          className="sm:hidden fixed right-4 z-50 h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg gap-2 text-sm font-semibold bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))]"
         >
           <Link
             href="/soforthilfe"

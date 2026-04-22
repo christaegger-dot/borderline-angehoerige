@@ -44,8 +44,7 @@ export function ScrollToTopButton() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           onClick={scrollToTop}
-          className={`fixed right-4 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-navy hover:bg-navy-light text-white shadow-lg items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
-          style={{ bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))" }}
+          className={`fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-navy hover:bg-navy-light text-white shadow-lg items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
           aria-label="Nach oben scrollen"
         >
           <ChevronUp className="w-6 h-6" />
@@ -341,8 +340,7 @@ export function TableOfContents() {
       {floatingMode === "content" && showFloatingButton && (
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="min-[1800px]:hidden fixed right-4 z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
-          style={{ bottom: "calc(7.5rem + env(safe-area-inset-bottom, 0px))" }}
+          className="min-[1800px]:hidden fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
           aria-label="Inhaltsverzeichnis öffnen"
         >
           <List className="w-4 h-4" />
@@ -371,8 +369,7 @@ export function TableOfContents() {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="min-[1800px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col"
-            style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+            className="min-[1800px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col pb-[env(safe-area-inset-bottom,0px)]"
           >
             {/* Drawer Handle */}
             <div className="flex justify-center pt-3 pb-1">
@@ -422,14 +419,7 @@ export function TableOfContents() {
       </AnimatePresence>
 
       {/* ─── Desktop: Sticky Sidebar in der linken Gutter-Zone ─── */}
-      <div
-        className="hidden min-[1800px]:block fixed z-30 w-60"
-        style={{
-          left: "max(0.75rem, calc((100vw - 1280px) / 2 - 15rem - 1.5rem))",
-          top: "calc(8rem + env(safe-area-inset-top, 0px))",
-          maxHeight: "calc(100vh - 9.5rem)",
-        }}
-      >
+      <div className="hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc(100vh-9.5rem)] w-60">
         <div className="flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] backdrop-blur-md">
           <div className="px-4 pt-4 pb-2">
             <div className="flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2">

@@ -175,7 +175,7 @@ export default function FAQ() {
         {
           question: "Welche Therapie ist am besten?",
           answer:
-            "Es gibt mehrere gut erforschte Methoden (DBT, MBT, Schematherapie, TFP). Alle können wirksam sein – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
+            "Es gibt mehrere gut erforschte Methoden, zum Beispiel DBT (Dialektisch-Behaviorale Therapie), MBT (Mentalisierungsbasierte Therapie), Schematherapie oder TFP (Übertragungsfokussierte Psychotherapie). Alle können wirksam sein – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
           links: [
             { text: "Therapieformen erklärt", url: "/unterstuetzen/therapie" },
           ],
@@ -204,7 +204,7 @@ export default function FAQ() {
         {
           question: "Wie erkläre ich die Situation Freunden/Familie?",
           answer:
-            "Sie müssen nicht alles erklären. Sagen Sie so viel, wie Sie möchten: «Er/sie hat eine psychische Erkrankung, die starke Stimmungsschwankungen verursacht. Wir arbeiten daran.» Sie können auch Grenzen setzen: «Ich möchte nicht ins Detail gehen, aber ich schätze eure Unterstützung.» Wählen Sie sorgfältig aus, wem Sie was erzählen – nicht jeder muss alles wissen. Und: Bitten Sie um konkrete Hilfe statt allgemeinem Mitleid («Könntest du nächste Woche auf die Kinder aufpassen?»).",
+            "Sie müssen nicht alles erklären. Sagen Sie so viel, wie Sie möchten: «Eine mir nahestehende Person hat eine psychische Erkrankung, die starke Stimmungsschwankungen auslösen kann. Wir arbeiten daran.» Sie können auch Grenzen setzen: «Ich möchte nicht ins Detail gehen, aber ich schätze eure Unterstützung.» Wählen Sie sorgfältig aus, wem Sie was erzählen – nicht jeder muss alles wissen. Und: Bitten Sie um konkrete Hilfe statt allgemeinem Mitleid («Könntest du nächste Woche auf die Kinder aufpassen?»).",
         },
         {
           question: "Wie gehe ich mit Eifersucht und Kontrolle um?",

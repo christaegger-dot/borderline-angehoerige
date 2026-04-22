@@ -201,7 +201,7 @@ const SCENARIOS: Scenario[] = [
     title: "«Niemand nimmt mich ernst!»",
     technique: "Validierung",
     context:
-      "Ihr Angehöriger kommt nach einem Arztbesuch nach Hause und ist aufgelöst. Er/sie fühlt sich vom Arzt nicht gehört. Sie möchten validieren – die Gefühle anerkennen, ohne sofort zu bewerten oder zu lösen.",
+      "Ihr Angehöriger kommt nach einem Arztbesuch nach Hause und ist aufgelöst. Die Person fühlt sich vom Arzt nicht gehört. Sie möchten validieren – die Gefühle anerkennen, ohne sofort zu bewerten oder zu lösen.",
     statement:
       "«Der Arzt hat mich überhaupt nicht ernst genommen! Ich habe versucht zu erklären, wie es mir geht, und er hat einfach auf seinen Computer gestarrt. Niemand hört mir zu!»",
     options: [

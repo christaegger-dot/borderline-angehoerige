@@ -62,7 +62,7 @@ export const materials: MaterialItem[] = [
   },
   {
     id: "leuchtturm",
-    title: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
+    title: "Der Leuchtturm – Orientierung für Angehörige",
     description:
       "Orientierung zur Angehörigenrolle: stabil bleiben, ohne das Schiff steuern zu wollen.",
     category: "verstehen",

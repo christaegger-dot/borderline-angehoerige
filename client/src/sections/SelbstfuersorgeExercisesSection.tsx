@@ -89,8 +89,8 @@ function AtemuebungCard() {
         </div>
 
         <p className="text-muted-foreground text-sm mb-4">
-          Diese Atemtechnik aktiviert Ihren Parasympathikus und hilft, aus dem
-          Stressmodus herauszukommen.
+          Diese Atemtechnik aktiviert den beruhigenden Teil Ihres Nervensystems
+          und hilft, aus dem Stressmodus herauszukommen.
         </p>
 
         {isActive ? (

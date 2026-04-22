@@ -20,13 +20,13 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
   {
     id: "leuchtturm",
     title: "Der Leuchtturm",
-    description: "Ihre Rolle als Angehörige/r: Stabil bleiben trotz Sturm.",
+    description: "Orientierung für Angehörige: stabil bleiben trotz Sturm.",
     category: "grundlagen",
     webpUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GbFCyQhEWIKomzXw.webp",
     pdfUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
-    alt: "Der Leuchtturm – Ihre Rolle als Angehörige/r",
+    alt: "Der Leuchtturm – Orientierung für Angehörige",
     featured: true,
   },
   {

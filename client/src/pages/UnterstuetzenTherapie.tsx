@@ -288,7 +288,7 @@ export default function UnterstuetzenTherapie() {
             </ContentSection>
 
             <ContentSection
-              title="Als Angehörige/r mit dem Behandlungssystem zusammenarbeiten"
+              title="Mit dem Behandlungssystem zusammenarbeiten"
               icon={<MessageCircle className="w-7 h-7 text-slate-blue" />}
               id="zusammenarbeit"
               preview="Sie sind nicht Teil der Therapie – und das ist oft richtig so. Aber es gibt konstruktive Wege, mit dem klinischen Team in Kontakt zu treten."
@@ -434,17 +434,17 @@ export default function UnterstuetzenTherapie() {
               title="Therapieformen knapp eingeordnet"
               icon={<Brain className="w-7 h-7 text-slate-blue" />}
               id="therapieformen"
-              preview="DBT, MBT und Schematherapie sind wichtige evidenzbasierte Ansätze. Für Angehörige ist oft weniger die Theorie als die Passung im Alltag entscheidend."
+              preview="DBT, MBT und Schematherapie sind gut erforschte Behandlungsansätze. Für Angehörige ist oft weniger das Label als die Passung im Alltag entscheidend."
             >
               <div className="space-y-4">
                 {[
                   {
-                    name: "DBT",
+                    name: "DBT · Dialektisch-Behaviorale Therapie",
                     description:
                       "Stark strukturiert, mit Fokus auf Emotionsregulation, Stresstoleranz, Achtsamkeit und zwischenmenschliche Skills.",
                   },
                   {
-                    name: "MBT",
+                    name: "MBT · Mentalisierungsbasierte Therapie",
                     description:
                       "Konzentriert sich auf das Verstehen eigener und fremder innerer Zustände und auf Beziehungsgeschehen.",
                   },
@@ -514,10 +514,11 @@ export default function UnterstuetzenTherapie() {
             >
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Wenn Sie als Angehörige/r Kontakt mit dem Therapeuten
-                  aufnehmen möchten – z. B. um sich zu informieren oder Ihre
-                  Perspektive einzubringen – kann eine kurze schriftliche
-                  Nachricht helfen. Das Muster unten dient als Ausgangspunkt.
+                  Wenn Sie als nahestehende Person Kontakt mit dem Therapeuten
+                  aufnehmen möchten, kann eine kurze schriftliche Nachricht
+                  helfen. Das Muster unten dient als Ausgangspunkt, wenn Sie
+                  Ihre Perspektive einbringen oder nach einem
+                  Angehörigengespräch fragen möchten.
                 </p>
                 <Card className="border-border/50 bg-cream">
                   <CardContent className="p-5">
@@ -526,15 +527,15 @@ export default function UnterstuetzenTherapie() {
                     </p>
                     <div className="font-mono text-sm text-foreground leading-relaxed space-y-3 whitespace-pre-line">
                       <p>
-                        {`Betreff: Kurze Anfrage als Angehörige/r von [Vorname]
+                        {`Betreff: Kurze Anfrage als Angehörige von [Vorname]
 
-Sehr geehrte/r Frau/Herr [Name],
+Guten Tag Frau/Herr [Name]
 
-ich bin [Ihre Beziehung zur Person, z. B. Mutter / Partner] von [Vorname], der/die bei Ihnen in Behandlung ist.
+ich bin [Beziehung zu Vorname, z. B. Mutter, Vater oder Partnerin] von [Vorname].
 
-Ich möchte Sie nicht in die Behandlung einbeziehen oder Informationen über meinen Angehörigen einholen – das liegt allein bei ihm/ihr.
+Mir ist bewusst, dass Sie wegen der Schweigepflicht keine Informationen aus der Behandlung weitergeben dürfen. Ich möchte Sie deshalb nicht um Inhalte bitten.
 
-Mir wäre es wichtig zu wissen, ob es für Angehörige die Möglichkeit gibt, einmal kurz mit Ihnen zu sprechen – nicht über die Therapie, sondern über meine eigene Rolle und Unterstützungsmöglichkeiten.
+Mich würde interessieren, ob es für Angehörige einmal die Möglichkeit für ein kurzes Gespräch gibt – nicht über die Therapie selbst, sondern über meine eigene Rolle und hilfreiche Unterstützungsmöglichkeiten.
 
 Mit freundlichen Grüssen,
 [Ihr Name]

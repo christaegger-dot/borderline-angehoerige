@@ -13,7 +13,7 @@ export default function Materialien() {
         path="/materialien"
       />
 
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
+      <section className="pt-12 pb-6 md:pt-16 md:pb-8 bg-gradient-to-b from-sage-light/30 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -27,7 +27,7 @@ export default function Materialien() {
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-5">
               Materialien für Angehörige
             </h1>
 

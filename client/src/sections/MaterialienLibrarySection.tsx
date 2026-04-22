@@ -319,10 +319,10 @@ export default function MaterialienLibrarySection() {
 
   return (
     <>
-      <section className="py-10 wave-divider-top">
+      <section className="pt-4 pb-10 md:pt-6 wave-divider-top">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-5">
               Was hilft gerade jetzt?
             </h2>
             <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">

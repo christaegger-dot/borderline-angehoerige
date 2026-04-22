@@ -924,6 +924,91 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Wenn Gespräche kippen",
+    description:
+      "Lesbare Web-Version zu drei Krisenschritten: beruhigen, verbinden, begrenzen und Pausen mit Rückkehrangebot",
+    keywords: [
+      "textversion",
+      "gespräche kippen",
+      "eskalation",
+      "beruhigen",
+      "verbinden",
+      "begrenzen",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/gespraeche-kippen",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Grenzen setzen, ohne zu eskalieren",
+    description:
+      "Lesbare Web-Version zur 3-Teile-Formel mit Fakt, Ich-Grenze und nächstem Schritt",
+    keywords: [
+      "textversion",
+      "grenzen setzen ohne eskalation",
+      "3 teile formel",
+      "ich grenze",
+      "nächster schritt",
+      "kommunizieren",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/grenzen-ohne-eskalation",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Pause statt Streit",
+    description:
+      "Lesbare Web-Version zu Stabil, Warnstufe und Eskalation mit klaren Stopp- und Rückkehrsätzen",
+    keywords: [
+      "textversion",
+      "pause statt streit",
+      "warnstufe",
+      "eskalation",
+      "deeskalation",
+      "stopp satz",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/pause-statt-streit",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Zuhören ohne Zustimmen",
+    description:
+      "Lesbare Web-Version zu Validierung ohne Nachgeben, Anerkennen ohne Schuldübernahme und Grenze plus Plan",
+    keywords: [
+      "textversion",
+      "zuhören ohne zustimmen",
+      "validierung",
+      "anerkennen",
+      "grenze",
+      "plan",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/zuhoeren-ohne-zustimmen",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Beispiel-Dialog",
+    description:
+      "Lesbare Web-Version eines Gesprächsbeispiels mit Verbinden, Kontakt, Grenze, Plan und Rückkehr",
+    keywords: [
+      "textversion",
+      "beispiel dialog",
+      "gesprächsbeispiel",
+      "kontakt",
+      "grenze",
+      "rückkehr",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/beispiel-dialog",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Die DEAR-Technik",
     description:
       "Lesbare Web-Version zu DEAR mit Beschreiben, Äussern, Behaupten und Verstärken als klare Gesprächsstruktur",

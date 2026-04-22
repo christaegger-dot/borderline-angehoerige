@@ -5,6 +5,7 @@ import {
 } from "./materialien";
 import { genesungItems } from "./genesung";
 import { grenzenItems } from "./grenzen";
+import { kommItems } from "./kommunizieren";
 import { selbstfuersorgeInfografiken } from "./selbstfuersorge";
 import { unterstuetzenItems } from "./unterstuetzen";
 import { verstehenInfografiken } from "./verstehen";
@@ -97,6 +98,19 @@ function requireMaterial(id: string) {
       previewImageUrl: unterstuetzenMaterial.url,
       topic: TOPIC_META.unterstuetzen,
       pdfSourceUrl: unterstuetzenMaterial.pdfUrl,
+    };
+  }
+
+  const kommunizierenMaterial = kommItems.find(item => item.id === id);
+  if (kommunizierenMaterial) {
+    return {
+      title: kommunizierenMaterial.title,
+      description: kommunizierenMaterial.description,
+      category: "kommunizieren" as const,
+      kind: "Infografik" as const,
+      previewImageUrl: kommunizierenMaterial.url,
+      topic: TOPIC_META.kommunizieren,
+      pdfSourceUrl: kommunizierenMaterial.pdfUrl,
     };
   }
 
@@ -2065,6 +2079,368 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Quellen: [1] Gunderson & Berkowitz, BPD Family Guidelines (NEABPD). [2] APA, DSM-5. [3] Linehan (1993).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
+  }),
+  createHandoutTextVersion("gespraeche-kippen", {
+    kicker: "Textversion",
+    summary:
+      "Wenn Gespräche kippen, helfen oft nicht mehr Erklärungen, sondern drei kurze Schritte: beruhigen, verbinden, begrenzen.",
+    intro: [
+      "Diese Seite überträgt das Handout «Wenn Gespräche kippen – Was Sie tun können, bevor es eskaliert» in eine lesbare Web-Version. Es richtet sich an Angehörige, die in angespannten Momenten eine kurze, klare Gesprächsstruktur brauchen.",
+      "Die Struktur des Originals bleibt erhalten: drei Schritte, ein kurzer Pausenplan für Kipppunkte, die Kernaussage des Blatts, die Legende und drei alltagsnahe Hinweise.",
+    ],
+    sections: [
+      {
+        title: "Die 3 Schritte",
+        cards: [
+          {
+            title: "Schritt 1: Beruhigen",
+            text: "Atmen Sie durch. Senken Sie Ihre Stimme. Verlangsamen Sie das Tempo.",
+          },
+          {
+            title: "Schritt 2: Verbinden",
+            text: "«Ich sehe, dass es dir gerade nicht gut geht. Ich bin da.» Benennen Sie das Gefühl, nicht das Verhalten.",
+          },
+          {
+            title: "Schritt 3: Begrenzen + Plan",
+            text: "«So kann ich nicht weiterreden. Pause 10 Minuten, dann sprechen wir weiter.»",
+          },
+        ],
+      },
+      {
+        title: "Wenn es kippt",
+        bullets: [
+          "Pause 10–30 Minuten.",
+          "Ich gehe nicht weg, ich mache nur eine Pause.",
+          "Wir sprechen um [Uhrzeit] weiter.",
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Kurz, ruhig und wiederholbar wirkt in Krisen stärker als Argumente.",
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Beruhigen",
+            text: "Tempo und Tonfall senken.",
+          },
+          {
+            title: "Verbinden",
+            text: "Gefühl benennen und Kontakt halten.",
+          },
+          {
+            title: "Begrenzen",
+            text: "Klare Grenze plus Plan.",
+          },
+          {
+            title: "Wenn es kippt",
+            text: "Pause mit Rückkehrangebot.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Üben Sie die 3 Schritte in ruhigen Momenten, damit sie in der Krise abrufbar sind.",
+          "Nutzen Sie kurze, klare Sätze. Vermeiden Sie Erklärungen und Rechtfertigungen.",
+          "Bieten Sie immer eine Rückkehr an: Wir sprechen um [Uhrzeit] weiter.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014); Linehan (1993).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("grenzen-ohne-eskalation", {
+    kicker: "Textversion",
+    summary:
+      "Die 3-Teile-Formel hält Grenzsetzung knapp: Fakt, Ich-Grenze, nächster Schritt. So bleiben Sie klar, ohne in Rechtfertigungen zu geraten.",
+    intro: [
+      "Diese Seite überträgt das Handout «Grenzen setzen ohne Eskalation – Die 3-Teile-Formel» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Grenzen klar ansprechen wollen, ohne in Streitlogik hineingezogen zu werden.",
+      "Das Original kombiniert die Formel mit einem knappen Beispiel, einer Kernaussage, einer kleinen Farblegende und drei kurzen Umsetzungshinweisen.",
+    ],
+    sections: [
+      {
+        title: "Die 3-Teile-Formel",
+        cards: [
+          {
+            title: "Fakt",
+            text: "Was passiert. Objektiv, ohne Bewertung. Beispiel: «Es ist jetzt das dritte Mal, dass du mich anschreist.»",
+          },
+          {
+            title: "Ich-Grenze",
+            text: "Sagen Sie, was Sie brauchen. Ich-Aussage. Beispiel: «So kann ich nicht weiterreden.»",
+          },
+          {
+            title: "Nächster Schritt",
+            text: "Bieten Sie einen Plan an. Konkret und machbar. Beispiel: «Pause 10 Minuten, dann sprechen wir weiter.»",
+          },
+        ],
+      },
+      {
+        title: "Beispielsatz",
+        calloutTitle: "Kurzform des Handouts",
+        calloutText:
+          "Es eskaliert gerade. Ich bleibe ansprechbar, aber nicht im Streit. Pause 10 Min, dann weiter.",
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Nicht rechtfertigen. Nicht erklären. Nicht streiten. Einfach sagen, was ist.",
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Sand",
+            text: "Fakt.",
+          },
+          {
+            title: "Terracotta",
+            text: "Ich-Grenze.",
+          },
+          {
+            title: "Slate",
+            text: "Nächster Schritt.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Formulieren Sie Ihre 3 wichtigsten Grenzen vorab schriftlich.",
+          "Üben Sie die Formel in ruhigen Momenten laut.",
+          "Bleiben Sie bei Ihrer Aussage, auch wenn Gegenwind kommt.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("pause-statt-streit", {
+    kicker: "Textversion",
+    summary:
+      "Nicht jede Anspannung ist noch gesprächsfähig. Das Handout unterscheidet stabil, Warnstufe und Eskalation und zeigt, wann Sie stoppen sollten.",
+    intro: [
+      "Diese Seite überträgt das Handout «Pause statt Streit – Wann Sie stoppen sollten und wie» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Kipppunkte früher erkennen und rechtzeitig aus eskalierenden Gesprächen aussteigen möchten.",
+      "Die Struktur des Originals bleibt erhalten: drei Zustände, die Kernaussage, eine kurze Legende und drei praktische Hinweise für den Alltag.",
+    ],
+    sections: [
+      {
+        title: "Stabil",
+        bullets: [
+          "Gespräch möglich.",
+          "Zuhören funktioniert.",
+          "Körper entspannt.",
+          "Bleiben Sie im Gespräch.",
+          "Nutzen Sie klare, kurze Sätze.",
+        ],
+      },
+      {
+        title: "Warnstufe",
+        bullets: [
+          "Stimme wird lauter.",
+          "Vorwürfe beginnen.",
+          "Körper spannt sich an.",
+          "Ankündigen: Ich merke, es wird schwierig. Pause 10 Minuten.",
+        ],
+      },
+      {
+        title: "Eskalation",
+        bullets: [
+          "Schreien, Beschimpfungen.",
+          "Kontrolle geht verloren.",
+          "Sofort stoppen.",
+          "Ich gehe jetzt. Wir sprechen um [Uhrzeit] weiter.",
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Ich stoppe jetzt – nicht weil ich aufgebe, sondern weil mir diese Beziehung wichtig ist.",
+      },
+      {
+        title: "Zusatzhinweis",
+        calloutTitle: "Bei Gefahr",
+        calloutText: "Bei Gefahr: Notfallplan aktivieren.",
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Sage",
+            text: "Stabil.",
+          },
+          {
+            title: "Sand",
+            text: "Warnstufe.",
+          },
+          {
+            title: "Terracotta",
+            text: "Eskalation.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Definieren Sie Ihre persönliche Warnstufe: Woran merken Sie, dass es kippt?",
+          "Üben Sie den Stopp-Satz: Ich mache jetzt Pause.",
+          "Planen Sie die Rückkehr: Wir sprechen um [Uhrzeit] weiter.",
+        ],
+      },
+    ],
+    sourceLine:
+      "Quelle: Deeskalation nach DBT, Linehan (1993); Mason/Kreger (2014).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("zuhoeren-ohne-zustimmen", {
+    kicker: "Textversion",
+    summary:
+      "Validieren ist nicht nachgeben. Sie können Gefühle anerkennen, ohne Schuld zu übernehmen oder der Interpretation zustimmen zu müssen.",
+    intro: [
+      "Diese Seite überträgt das Handout «Zuhören ohne Zustimmen – Anerkennen ist nicht gleich Recht geben» in eine lesbare Web-Version. Es richtet sich an Angehörige, die empathisch bleiben wollen, ohne dabei ihre eigene Sicht aufzugeben.",
+      "Die Struktur folgt dem Original: anerkennen, nicht zustimmen, Grenze plus Plan, dazu Kernaussage, Legende und drei kurze Übungshinweise.",
+    ],
+    sections: [
+      {
+        title: "Anerkennen",
+        bullets: [
+          "Ich sehe, dass du gerade sehr leidest.",
+          "Das klingt wirklich belastend für dich.",
+          "Ich verstehe, dass du das so empfindest.",
+        ],
+      },
+      {
+        title: "Nicht zustimmen",
+        bullets: [
+          "Du hast recht, ich bin schuld.",
+          "Ja, ich hätte anders reagieren sollen.",
+          "Okay, dann mache ich es so, wie du willst.",
+        ],
+      },
+      {
+        title: "Grenze + Plan",
+        calloutTitle: "Kombination aus Respekt und Selbstschutz",
+        calloutText:
+          "Ich kann zuhören, aber ich muss nicht allem zustimmen. Wenn es zu viel wird: Pause.",
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Sie können Gefühle anerkennen, ohne die Interpretation zu übernehmen. Das ist keine Lüge, sondern Respekt.",
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Sage",
+            text: "Anerkennen (validieren).",
+          },
+          {
+            title: "Grenze",
+            text: "Nicht zustimmen.",
+          },
+          {
+            title: "Slate",
+            text: "Grenze + Plan.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Üben Sie Sätze wie: Ich sehe, dass es dir nicht gut geht. Ohne Aber.",
+          "Trennen Sie Gefühl und Inhalt: Das Gefühl ist echt, die Interpretation muss nicht stimmen.",
+          "Bleiben Sie bei sich: Sie dürfen anderer Meinung sein, ohne das Gefühl abzuwerten.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014); Fruzzetti (2006).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+  }),
+  createHandoutTextVersion("beispiel-dialog", {
+    kicker: "Textversion",
+    summary:
+      "Ein kurzer Beispiel-Dialog zeigt, wie Verbinden, Kontakt, Grenze, Plan und Rückkehr in einem eskalierenden Gespräch zusammenspielen können.",
+    intro: [
+      "Diese Seite überträgt das Handout «Beispiel-Dialog – So könnte ein Gespräch aussehen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Technik-Schritte lieber an einem konkreten Ablauf als an reinen Regeln üben.",
+      "Das Original zeigt einen kurzen Dialogverlauf, die Kernaussage, eine Legende und drei Hinweise für das eigene Üben. Diese Struktur bleibt hier erhalten.",
+    ],
+    sections: [
+      {
+        title: "Dialogverlauf",
+        cards: [
+          {
+            title: "Vorwurf",
+            text: "«Du bist nie für mich da! Du denkst nur an dich!»",
+          },
+          {
+            title: "Verbinden",
+            text: "«Ich sehe, dass du gerade sehr aufgebracht bist.»",
+          },
+          {
+            title: "Kontakt",
+            text: "«Das klingt wirklich belastend. Ich bin hier.»",
+          },
+          {
+            title: "Grenze",
+            text: "«So kann ich nicht weiterreden.»",
+          },
+          {
+            title: "Plan",
+            text: "«Pause 10 Minuten. Wir sprechen um 15 Uhr weiter.»",
+          },
+          {
+            title: "Rückkehr",
+            text: "«Ich bin wieder da. Wie geht es dir jetzt?»",
+          },
+        ],
+      },
+      {
+        title: "Kernaussage",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Kurz, ruhig, wiederholbar. Nicht erklären, nicht rechtfertigen, nicht streiten.",
+      },
+      {
+        title: "Legende",
+        cards: [
+          {
+            title: "Terracotta",
+            text: "Angehöriger.",
+          },
+          {
+            title: "Sage",
+            text: "Sie.",
+          },
+          {
+            title: "Labels",
+            text: "Technik-Schritte.",
+          },
+        ],
+      },
+      {
+        title: "Was können Sie tun?",
+        bullets: [
+          "Lesen Sie den Dialog laut vor und üben Sie Ihre Antworten.",
+          "Passen Sie die Sätze an Ihre eigene Sprache an.",
+          "Erinnern Sie sich: Es geht nicht um Perfektion, sondern um Richtung.",
+        ],
+      },
+    ],
+    sourceLine: "Quelle: Mason/Kreger (2014); Fruzzetti (2006).",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
   createHandoutTextVersion("dear", {
     kicker: "Textversion",

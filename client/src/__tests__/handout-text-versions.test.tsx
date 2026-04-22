@@ -6,6 +6,7 @@ import {
 } from "@/content/handoutTextVersions";
 import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
+import { kommItems } from "@/content/kommunizieren";
 import { materials } from "@/content/materialien";
 import { selbstfuersorgeInfografiken } from "@/content/selbstfuersorge";
 import { unterstuetzenItems } from "@/content/unterstuetzen";
@@ -58,6 +59,21 @@ describe("handout text versions", () => {
     const wennWorteTreffenPdf = materials.find(
       item => item.id === "wenn-worte-treffen"
     )?.downloadUrl;
+    const gespraecheKippenPdf = kommItems.find(
+      item => item.id === "gespraeche-kippen"
+    )?.pdfUrl;
+    const grenzenOhneEskalationPdf = kommItems.find(
+      item => item.id === "grenzen-ohne-eskalation"
+    )?.pdfUrl;
+    const pauseStattStreitPdf = kommItems.find(
+      item => item.id === "pause-statt-streit"
+    )?.pdfUrl;
+    const zuhoerenOhneZustimmenPdf = kommItems.find(
+      item => item.id === "zuhoeren-ohne-zustimmen"
+    )?.pdfUrl;
+    const beispielDialogPdf = kommItems.find(
+      item => item.id === "beispiel-dialog"
+    )?.pdfUrl;
     const dearPdf = materials.find(item => item.id === "dear")?.downloadUrl;
     const spiegelnPdf = grenzenItems.find(
       item => item.id === "spiegeln-statt-aufsaugen"
@@ -179,6 +195,21 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersion("wenn-worte-treffen")?.path).toBe(
       "/materialien/text/wenn-worte-treffen"
     );
+    expect(getHandoutTextVersion("gespraeche-kippen")?.path).toBe(
+      "/materialien/text/gespraeche-kippen"
+    );
+    expect(getHandoutTextVersion("grenzen-ohne-eskalation")?.path).toBe(
+      "/materialien/text/grenzen-ohne-eskalation"
+    );
+    expect(getHandoutTextVersion("pause-statt-streit")?.path).toBe(
+      "/materialien/text/pause-statt-streit"
+    );
+    expect(getHandoutTextVersion("zuhoeren-ohne-zustimmen")?.path).toBe(
+      "/materialien/text/zuhoeren-ohne-zustimmen"
+    );
+    expect(getHandoutTextVersion("beispiel-dialog")?.path).toBe(
+      "/materialien/text/beispiel-dialog"
+    );
     expect(getHandoutTextVersion("dear")?.path).toBe("/materialien/text/dear");
     expect(getHandoutTextVersion("spiegeln-statt-aufsaugen")?.path).toBe(
       "/materialien/text/spiegeln-statt-aufsaugen"
@@ -276,6 +307,21 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(wennWorteTreffenPdf)).toBe(
       "/materialien/text/wenn-worte-treffen"
+    );
+    expect(getHandoutTextVersionHrefBySource(gespraecheKippenPdf)).toBe(
+      "/materialien/text/gespraeche-kippen"
+    );
+    expect(getHandoutTextVersionHrefBySource(grenzenOhneEskalationPdf)).toBe(
+      "/materialien/text/grenzen-ohne-eskalation"
+    );
+    expect(getHandoutTextVersionHrefBySource(pauseStattStreitPdf)).toBe(
+      "/materialien/text/pause-statt-streit"
+    );
+    expect(getHandoutTextVersionHrefBySource(zuhoerenOhneZustimmenPdf)).toBe(
+      "/materialien/text/zuhoeren-ohne-zustimmen"
+    );
+    expect(getHandoutTextVersionHrefBySource(beispielDialogPdf)).toBe(
+      "/materialien/text/beispiel-dialog"
     );
     expect(getHandoutTextVersionHrefBySource(dearPdf)).toBe(
       "/materialien/text/dear"

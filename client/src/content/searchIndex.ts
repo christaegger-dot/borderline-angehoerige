@@ -709,6 +709,40 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Genesung in Zahlen",
+    description:
+      "Lesbare Web-Version zu Remission, Recovery, Langzeitdaten und realistisch hoffnungsvollen Prognosezahlen",
+    keywords: [
+      "textversion",
+      "genesung in zahlen",
+      "remission",
+      "recovery",
+      "prognose",
+      "langzeitdaten",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/genesung-zahlen",
+    section: "Materialien",
+  },
+  {
+    title: "Textversion: Wenn Mama oder Papa grosse Gefühle hat",
+    description:
+      "Lesbare Web-Version zu altersgerechter Erklärung von Borderline, Entlastung von Kindern und Schutzfaktoren im Familiensystem",
+    keywords: [
+      "textversion",
+      "kinder",
+      "mama oder papa",
+      "borderline erklären",
+      "geschwister",
+      "schutzfaktoren",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/kinder",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Spickzettel Grenzen",
     description:
       "Lesbare Web-Version mit DEAR-Technik, Beispielsätzen für Grenzen und L.M.K.-Exit-Strategie",

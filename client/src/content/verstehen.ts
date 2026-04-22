@@ -65,6 +65,18 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     alt: "Alarm-Modus vs. Denk-Modus",
   },
   {
+    id: "kinder",
+    title: "Wenn Mama oder Papa grosse Gefühle hat",
+    description:
+      "Borderline altersgerecht erklären und Kinder mit Klarheit, Entlastung und Schutz begleiten.",
+    category: "grundlagen",
+    webpUrl:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PrnKdbomSunLKPVv.webp",
+    pdfUrl:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/birikKPATMlHGPWf.pdf",
+    alt: "Wenn Mama oder Papa grosse Gefühle hat",
+  },
+  {
     id: "4-phasen",
     title: "Der 4-Phasen-Zyklus",
     description:

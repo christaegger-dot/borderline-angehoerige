@@ -9,6 +9,7 @@ import {
   ArrowRight,
   BookOpen,
   ExternalLink,
+  FileText,
   Heart,
   Image as ImageIcon,
   RefreshCw,
@@ -22,6 +23,7 @@ import ContentSection from "@/components/ContentSection";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { genesungItems as genesungMaterialItems } from "@/content/genesung";
 import { getHandoutOpenHref } from "@/content/handouts";
+import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 
 function GenesungInfografiken() {
   return (
@@ -29,52 +31,71 @@ function GenesungInfografiken() {
       title="Materialien & Infografiken"
       icon={<ImageIcon className="w-6 h-6 text-sage-dark" />}
       id="infografiken"
+      defaultOpen={true}
       preview="Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der Rolle von Angehörigen."
     >
       <p className="text-muted-foreground mb-6">
-        Vorschau = Web-Bild. «PDF öffnen» öffnet die A4-Druckversion im neuen
-        Tab.
+        Vorschau = Web-Bild. Wenn verfügbar, führt «Textversion» zur lesbaren
+        Web-Version. «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {genesungMaterialItems.map((item, index) => (
-          <Card
-            key={item.title}
-            className={`overflow-hidden border-border/50 hover:shadow-lg transition-all duration-500 group ${
-              genesungMaterialItems.length > 1 && index === 0
-                ? "sm:col-span-2"
-                : ""
-            }`}
-          >
-            <div className="aspect-[3/4] overflow-hidden bg-muted">
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-                width={400}
-                height={223}
-                decoding="async"
-              />
-            </div>
-            <CardContent className="p-4">
-              <h3 className="font-semibold text-foreground mb-1">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
-              <a
-                href={getHandoutOpenHref(item.pdf) ?? item.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-              >
-                <ExternalLink className="w-4 h-4" />
-                PDF öffnen
-              </a>
-            </CardContent>
-          </Card>
-        ))}
+        {genesungMaterialItems.map((item, index) => {
+          const textVersionHref = getHandoutTextVersionHrefBySource(item.pdf);
+
+          return (
+            <Card
+              key={item.title}
+              className={`overflow-hidden border-border/50 hover:shadow-lg transition-all duration-500 group ${
+                genesungMaterialItems.length > 1 && index === 0
+                  ? "sm:col-span-2"
+                  : ""
+              }`}
+            >
+              <div className="aspect-[3/4] overflow-hidden bg-muted">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  width={400}
+                  height={223}
+                  decoding="async"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-foreground mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  {item.desc}
+                </p>
+                <div className="grid gap-2">
+                  {textVersionHref ? (
+                    <Link
+                      href={textVersionHref}
+                      aria-label={`Textversion lesen: ${item.title}`}
+                      className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full bg-sage-dark hover:bg-sage-mid text-white transition-colors"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Textversion
+                    </Link>
+                  ) : null}
+                  <a
+                    href={getHandoutOpenHref(item.pdf) ?? item.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                    className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    PDF öffnen
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
       <div className="flex flex-wrap gap-3 justify-center mt-8">
         <Button variant="outline" asChild>

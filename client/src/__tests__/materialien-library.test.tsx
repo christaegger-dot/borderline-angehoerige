@@ -93,6 +93,16 @@ describe("MaterialienLibrarySection", () => {
         name: /Textversion lesen: Die DEAR-Technik – Grenzen setzen ohne Vorwürfe/i,
       })
     ).toHaveAttribute("href", "/materialien/text/dear");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Genesung in Zahlen – Was die Forschung zeigt/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/genesung-zahlen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Wenn Mama oder Papa grosse Gefühle hat/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/kinder");
 
     fireEvent.click(screen.getByRole("button", { name: /Genesung\s*\(1\)/ }));
 

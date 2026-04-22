@@ -220,6 +220,40 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/grenzen");
   });
 
+  it("HandoutTextPage: rendert Genesung-in-Zahlen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "genesung-zahlen" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Genesung in Zahlen – Was die Forschung zeigt/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Genesung ist möglich\. Sie braucht Zeit/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
+    ).toHaveAttribute("href", "/genesung");
+  });
+
+  it("HandoutTextPage: rendert Kinder-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "kinder" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Wenn Mama oder Papa grosse Gefühle hat/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Kinder spüren, dass etwas anders ist/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
+    ).toHaveAttribute("href", "/verstehen");
+  });
+
   it("HandoutTextPage: rendert Eisberg-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -290,6 +324,26 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Wenn Worte treffen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/wenn-worte-treffen");
+  });
+
+  it("Genesung: zeigt Textversion für Genesung in Zahlen", async () => {
+    const { default: Genesung } = await import("@/pages/Genesung");
+    withRouter(<Genesung />);
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Genesung in Zahlen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/genesung-zahlen");
+  });
+
+  it("Verstehen: zeigt Textversion für Kinder-Handout", async () => {
+    const { default: Verstehen } = await import("@/pages/Verstehen");
+    withRouter(<Verstehen />);
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Wenn Mama oder Papa grosse Gefühle hat/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/kinder");
   });
 
   it("NotFound: rendert 404-Seite", async () => {

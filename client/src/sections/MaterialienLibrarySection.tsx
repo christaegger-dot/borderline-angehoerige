@@ -334,8 +334,7 @@ export default function MaterialienLibrarySection() {
                     setActiveCategory(item.id);
                     scrollToResults();
                   }}
-                  className="group relative text-left rounded-2xl border p-5 pr-14 transition-all hover:shadow-md hover:-translate-y-0.5"
-                  style={{ borderColor: item.color, backgroundColor: item.bg }}
+                  className={`group relative rounded-2xl border p-5 pr-14 text-left transition-all hover:-translate-y-0.5 hover:shadow-md ${item.cardClass}`}
                 >
                   <p className="font-semibold text-foreground mb-2">
                     {item.title}

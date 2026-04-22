@@ -276,24 +276,40 @@ const SCENARIOS: Scenario[] = [
 
 const TECHNIQUE_META: Record<
   Technique,
-  { label: string; color: string; bgColor: string; icon: React.ReactNode }
+  {
+    label: string;
+    accentTextClass: string;
+    surfaceClass: string;
+    badgeClass: string;
+    noteBorderClass: string;
+    icon: React.ReactNode;
+  }
 > = {
   SET: {
     label: "SET-Kommunikation",
-    color: "var(--color-sage-dark)",
-    bgColor: "var(--color-sage-wash)",
+    accentTextClass: "text-sage-dark",
+    surfaceClass: "bg-sage-wash",
+    badgeClass: "bg-white/70 text-sage-dark",
+    noteBorderClass:
+      "border-[color-mix(in_oklch,var(--color-sage-dark),transparent_70%)]",
     icon: <Heart className="w-4 h-4" />,
   },
   DEAR: {
     label: "DEAR MAN",
-    color: "var(--color-sand-mid)",
-    bgColor: "var(--color-sand-muted)",
+    accentTextClass: "text-sand-mid",
+    surfaceClass: "bg-sand-muted",
+    badgeClass: "bg-white/70 text-sand-mid",
+    noteBorderClass:
+      "border-[color-mix(in_oklch,var(--color-sand-mid),transparent_70%)]",
     icon: <Scale className="w-4 h-4" />,
   },
   Validierung: {
     label: "Validierung",
-    color: "var(--color-sage-mid)",
-    bgColor: "var(--color-sage-lighter)",
+    accentTextClass: "text-sage-mid",
+    surfaceClass: "bg-sage-lighter",
+    badgeClass: "bg-white/70 text-sage-mid",
+    noteBorderClass:
+      "border-[color-mix(in_oklch,var(--color-sage-mid),transparent_70%)]",
     icon: <Shield className="w-4 h-4" />,
   },
 };
@@ -359,15 +375,11 @@ function ScenarioCard({
     <Card className="overflow-hidden border-border/60">
       {/* Header */}
       <div
-        className="px-5 py-4 border-b border-border/40"
-        style={{ backgroundColor: meta.bgColor }}
+        className={`border-b border-border/40 px-5 py-4 ${meta.surfaceClass}`}
       >
         <div className="flex items-center gap-2 mb-2">
           <span
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-white/70"
-            style={{
-              color: meta.color,
-            }}
+            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${meta.badgeClass}`}
           >
             {meta.icon}
             {meta.label}
@@ -509,17 +521,10 @@ function ScenarioCard({
               className="overflow-hidden"
             >
               <div
-                className="rounded-xl p-4 border"
-                style={{
-                  backgroundColor: meta.bgColor,
-                  borderColor: `color-mix(in oklch, ${meta.color}, transparent 70%)`,
-                }}
+                className={`rounded-xl border p-4 ${meta.surfaceClass} ${meta.noteBorderClass}`}
               >
                 <p className="text-sm font-medium text-foreground mb-1 flex items-center gap-1.5">
-                  <Lightbulb
-                    className="w-4 h-4"
-                    style={{ color: meta.color }}
-                  />
+                  <Lightbulb className={`w-4 h-4 ${meta.accentTextClass}`} />
                   Merke
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -564,8 +569,7 @@ function TechniqueSection({
     <div>
       <div className="flex items-center gap-3 mb-4">
         <div
-          className="w-9 h-9 rounded-lg flex items-center justify-center"
-          style={{ backgroundColor: meta.bgColor, color: meta.color }}
+          className={`flex h-9 w-9 items-center justify-center rounded-lg ${meta.surfaceClass} ${meta.accentTextClass}`}
         >
           {meta.icon}
         </div>
@@ -583,13 +587,9 @@ function TechniqueSection({
       {/* Technique component breakdown */}
       {TECHNIQUE_STEPS[technique] && (
         <div
-          className="rounded-lg p-3 mb-5 border border-border/30"
-          style={{ backgroundColor: meta.bgColor }}
+          className={`mb-5 rounded-lg border border-border/30 p-3 ${meta.surfaceClass}`}
         >
-          <p
-            className="text-xs font-medium mb-2.5"
-            style={{ color: meta.color }}
-          >
+          <p className={`mb-2.5 text-xs font-medium ${meta.accentTextClass}`}>
             Aufbau der Technik
           </p>
           <div className="flex flex-wrap gap-2">
@@ -598,10 +598,7 @@ function TechniqueSection({
                 key={comp.letter}
                 className="flex items-center gap-1.5 bg-background/60 rounded px-2.5 py-1.5"
               >
-                <span
-                  className="text-sm font-bold"
-                  style={{ color: meta.color }}
-                >
+                <span className={`text-sm font-bold ${meta.accentTextClass}`}>
                   {comp.letter}
                 </span>
                 <div>

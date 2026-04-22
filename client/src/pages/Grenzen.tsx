@@ -21,12 +21,66 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
+import { TableOfContents } from "@/components/UXEnhancements";
 
 import { grenzenItems } from "@/content/grenzen";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 
+const grenzenIntroCards = [
+  {
+    icon: Shield,
+    title: "Selbstschutz ernst nehmen",
+    text: "Grenzen sind nicht gegen Nähe gerichtet, sondern schützen Ihre Integrität und machen Beziehungen berechenbarer.",
+    iconClass: "text-sage-dark",
+    shellClass: "bg-sage-wash border-sage-light/80",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Wenige zuerst klären",
+    text: "Tragfähige Grenzen entstehen meist aus Priorisierung, nicht aus zehn gleichzeitigen Ansagen.",
+    iconClass: "text-sand-warm",
+    shellClass: "bg-sand-muted border-sand-border/80",
+  },
+  {
+    icon: MessageSquare,
+    title: "Ruhig und konkret bleiben",
+    text: "Hilfreiche Grenzen bleiben auf Ihr Handeln bezogen, nicht moralisch aufgeladen und nicht endlos verhandelbar.",
+    iconClass: "text-slate-blue",
+    shellClass: "bg-slate-wash border-slate-light/80",
+  },
+] as const;
+
+const grenzenQuickLinks = [
+  {
+    id: "warnsignale",
+    title: "Woran Sie merken, dass eine Grenze nötig ist",
+    text: "Wenn Sie zuerst Ihre eigenen Warnsignale und Überlastung klarer lesen möchten.",
+  },
+  {
+    id: "priorisierung",
+    title: "Welche Grenzen zuerst?",
+    text: "Wenn Sie wenige zentrale Grenzen priorisieren wollen, statt alles gleichzeitig anzugehen.",
+  },
+  {
+    id: "grenzsaetze",
+    title: "Konkrete Grenzsätze",
+    text: "Wenn Sie alltagstaugliche Formulierungen für typische Situationen suchen.",
+  },
+  {
+    id: "gewalt",
+    title: "Bei körperlicher Übergriffigkeit",
+    text: "Wenn es um Sicherheit geht und nicht nur um schwierige Kommunikation.",
+  },
+] as const;
+
 export default function Grenzen() {
+  const openSection = (sectionId: string) => {
+    window.dispatchEvent(
+      new CustomEvent("open-section", { detail: { sectionId } })
+    );
+  };
+
   return (
     <Layout>
       <SEO
@@ -34,8 +88,9 @@ export default function Grenzen() {
         description="Grenzen für Angehörige: Selbstschutz, Klarheit, Konsequenz und begrenzte Verfügbarkeit."
         path="/grenzen"
       />
+      <TableOfContents />
 
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -52,11 +107,11 @@ export default function Grenzen() {
               </span>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-6">
               Grenzen setzen
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-5">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine
               Voraussetzung. Sie schützen Ihre Integrität, machen Beziehungen
               berechenbarer und verhindern, dass Unterstützung in Selbstaufgabe
@@ -64,23 +119,113 @@ export default function Grenzen() {
               deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
             </p>
 
-            <Card className="bg-slate-50 border-border/40">
-              <CardContent className="p-4 text-sm text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">Diese Seite:</strong> Was
-                Sie gegenüber anderen kommunizieren und einhalten — Klarheit
-                nach aussen.{" "}
-                <Link
-                  href="/selbstfuersorge"
-                  className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
-                >
-                  Selbstfürsorge →
-                </Link>{" "}
-                zeigt, wie Sie sich selbst stabilisieren und regenerieren.
+            <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-8 md:py-10">
+        <div className="container">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.06fr_0.94fr]">
+            <Card className="border-sand-border/85 bg-white/92 shadow-[0_28px_56px_-40px_rgba(139,108,31,0.28)]">
+              <CardContent className="p-6 md:p-7">
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-muted">
+                    <Shield className="h-6 w-6 text-sage-dark" />
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sand-warm/90">
+                      <span className="h-px w-6 bg-sand-warm/35" />
+                      Überblick
+                    </span>
+                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
+                      Was auf dieser Seite besonders wichtig ist
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Diese Seite hilft Ihnen, Grenzen nicht als Härte, sondern als
+                  tragfähigen Selbstschutz zu lesen. Entscheidend sind meist
+                  Warnsignale, Priorisierung, konkrete Sprache und die Frage, ob
+                  Sie eine Grenze nachher auch wirklich halten können.
+                </p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {grenzenIntroCards.map(item => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.title}
+                        className={`rounded-2xl border p-4 ${item.shellClass}`}
+                      >
+                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
+                        <h3 className="mb-2 text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.text}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
               </CardContent>
             </Card>
 
-            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
-          </motion.div>
+            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
+              <CardContent className="p-6 md:p-7">
+                <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
+                  <span className="h-px w-6 bg-slate-dark/30" />
+                  Direkt einsteigen
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
+                  direkt zu dem Block, der Ihre aktuelle Lage am ehesten trifft.
+                </p>
+
+                <div className="mt-5 space-y-3">
+                  {grenzenQuickLinks.map(item => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => openSection(item.id)}
+                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sand-border hover:bg-sand-muted/45 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-warm/35 focus-visible:ring-offset-2"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {item.text}
+                          </p>
+                        </div>
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sand-muted text-sand-warm transition-transform group-hover:translate-x-0.5">
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-sage-light/60 bg-sage-wash/75 px-4 py-4">
+                  <p className="text-sm leading-relaxed text-sage-darker">
+                    Grenzen regeln, was Sie nach aussen kommunizieren und
+                    einhalten.{" "}
+                    <Link
+                      href="/selbstfuersorge"
+                      className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors"
+                    >
+                      Selbstfürsorge
+                    </Link>{" "}
+                    ergänzt diese Seite dort, wo es um Ihre eigene Stabilität
+                    und Regeneration geht.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -103,7 +248,7 @@ export default function Grenzen() {
         </div>
       </div>
 
-      <section className="py-8 md:py-12">
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <ContentSection

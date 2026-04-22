@@ -24,7 +24,55 @@ import {
   VerstehenRelationshipSection,
 } from "@/sections/VerstehenSupportSections";
 
+const verstehenIntroCards = [
+  {
+    icon: Heart,
+    title: "Belastung einordnen",
+    text: "Ambivalenz, Alarm, Erschöpfung und Loyalitätsdruck als typische Angehörigenrealität lesen.",
+    iconClass: "text-sage-mid",
+    shellClass: "bg-sage-wash border-sage-light/70",
+  },
+  {
+    icon: Brain,
+    title: "Dynamiken verstehen",
+    text: "Überflutung, Bindungsstress und Denkverengung besser erkennen, statt nur auf sichtbare Reaktionen zu schauen.",
+    iconClass: "text-slate-mid",
+    shellClass: "bg-slate-wash border-slate-light/80",
+  },
+  {
+    icon: RefreshCw,
+    title: "Muster sehen",
+    text: "Wiederkehrende Schleifen aus Eskalation, Rückzug und Schuld nüchterner lesen und benennen.",
+    iconClass: "text-terracotta-mid",
+    shellClass: "bg-terracotta-wash border-terracotta-light/80",
+  },
+] as const;
+
+const verstehenQuickLinks = [
+  {
+    id: "angehoerige-erleben",
+    title: "Was Angehörige oft erleben",
+    text: "Wenn Sie zuerst Ihre eigene Belastungsrealität einordnen möchten.",
+  },
+  {
+    id: "was-ist-borderline",
+    title: "Was Borderline im Kern so belastend macht",
+    text: "Wenn Sie das klinische Grundmuster besser verstehen wollen.",
+  },
+  {
+    id: "muster",
+    title: "Typische Muster in belasteten Beziehungen",
+    text: "Wenn Sie wiederkehrende Schleifen in Ihrer Beziehung klarer sehen möchten.",
+  },
+] as const;
+
 export default function Verstehen() {
+  const openSection = (sectionId: string) => {
+    window.dispatchEvent(
+      new CustomEvent("open-section", { detail: { sectionId } })
+    );
+  };
+
   return (
     <Layout>
       <SEO
@@ -67,7 +115,105 @@ export default function Verstehen() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 wave-divider-top">
+      <section className="py-8 md:py-10 wave-divider-top">
+        <div className="container">
+          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+            <Card className="border-sage-light/70 bg-white/92 shadow-[0_28px_56px_-40px_rgba(31,101,109,0.35)]">
+              <CardContent className="p-6 md:p-7">
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-wash">
+                    <Brain className="h-6 w-6 text-sage-dark" />
+                  </div>
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-dark/85">
+                      <span className="h-px w-6 bg-sage-dark/30" />
+                      Überblick
+                    </span>
+                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
+                      Worum es hier vor allem geht
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Diese Seite erklärt Borderline nicht als Etikett, sondern als
+                  Belastungsdynamik in Beziehungen. Entscheidend ist meist nicht
+                  nur, was sichtbar passiert, sondern was darunter an
+                  Überflutung, Bindungsstress, Scham oder Alarm mitläuft.
+                </p>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {verstehenIntroCards.map(item => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.title}
+                        className={`rounded-2xl border p-4 ${item.shellClass}`}
+                      >
+                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
+                        <h3 className="mb-2 text-sm font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {item.text}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.3)]">
+              <CardContent className="p-6 md:p-7">
+                <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
+                  <span className="h-px w-6 bg-slate-dark/30" />
+                  Direkt einsteigen
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Wenn Sie nicht linear lesen möchten, springen Sie direkt zum
+                  Abschnitt, der Ihre Situation gerade am ehesten trifft.
+                </p>
+
+                <div className="mt-5 space-y-3">
+                  {verstehenQuickLinks.map(item => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => openSection(item.id)}
+                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sage-light hover:bg-sage-wash/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-offset-2"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                            {item.text}
+                          </p>
+                        </div>
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-darker transition-transform group-hover:translate-x-0.5">
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-sage-light/60 bg-sage-wash/80 px-4 py-4">
+                  <p className="text-sm leading-relaxed text-sage-darker">
+                    Das Inhaltsverzeichnis bleibt der rote Faden. Es hilft
+                    besonders dann, wenn Sie später gezielt zu einzelnen
+                    Themenblöcken zurückkehren möchten.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <motion.div

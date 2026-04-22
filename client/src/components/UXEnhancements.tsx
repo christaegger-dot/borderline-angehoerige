@@ -421,17 +421,27 @@ export function TableOfContents() {
         )}
       </AnimatePresence>
 
-      {/* ─── Desktop: Sticky Sidebar ─── */}
-      <div className="hidden min-[1800px]:block fixed left-4 top-1/2 -translate-y-1/2 w-56 z-30 max-h-[70vh]">
-        <div className="bg-background/90 backdrop-blur-md rounded-xl border border-border/50 shadow-sm overflow-hidden flex flex-col max-h-[70vh]">
+      {/* ─── Desktop: Sticky Sidebar in der linken Gutter-Zone ─── */}
+      <div
+        className="hidden min-[1800px]:block fixed z-30 w-60"
+        style={{
+          left: "max(0.75rem, calc((100vw - 1280px) / 2 - 15rem - 1.5rem))",
+          top: "calc(8rem + env(safe-area-inset-top, 0px))",
+          maxHeight: "calc(100vh - 9.5rem)",
+        }}
+      >
+        <div className="flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] backdrop-blur-md">
           <div className="px-4 pt-4 pb-2">
-            <span
-              className="font-semibold text-foreground text-sm"
-              role="heading"
-              aria-level={2}
-            >
-              Auf dieser Seite
-            </span>
+            <div className="flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2">
+              <span className="h-2 w-2 rounded-full bg-sage-dark" />
+              <span
+                className="text-sm font-semibold text-sage-darker"
+                role="heading"
+                aria-level={2}
+              >
+                Auf dieser Seite
+              </span>
+            </div>
           </div>
           <nav className="overflow-y-auto overscroll-contain px-2 pb-3 flex-1">
             <ul className="space-y-0.5">
@@ -442,7 +452,7 @@ export function TableOfContents() {
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
                     aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors line-clamp-2 focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-offset-1 ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs transition-colors line-clamp-2 focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-offset-1 ${
                       level === 3 ? "pl-5" : ""
                     } ${activeId === id ? activeClass : inactiveClass}`}
                   >

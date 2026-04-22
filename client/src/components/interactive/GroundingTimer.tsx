@@ -12,8 +12,8 @@ interface GroundingStep {
   count: number;
   sense: string;
   icon: React.ElementType;
-  color: string;
-  bgColor: string;
+  iconBoxClass: string;
+  containerClass: string;
   instruction: string;
   prompt: string;
 }
@@ -23,8 +23,8 @@ const steps: GroundingStep[] = [
     count: 5,
     sense: "Sehen",
     icon: Eye,
-    color: "var(--color-sage-mid)",
-    bgColor: "var(--color-sage-wash)",
+    iconBoxClass: "bg-sage-mid",
+    containerClass: "bg-sage-wash",
     instruction: "Benennen Sie 5 Dinge, die Sie sehen.",
     prompt: "Schauen Sie sich um. Was fällt Ihnen auf?",
   },
@@ -32,8 +32,8 @@ const steps: GroundingStep[] = [
     count: 4,
     sense: "Hören",
     icon: Ear,
-    color: "var(--color-slate-dark)",
-    bgColor: "var(--color-slate-wash)",
+    iconBoxClass: "bg-slate-dark",
+    containerClass: "bg-slate-wash",
     instruction: "Benennen Sie 4 Dinge, die Sie hören.",
     prompt: "Hören Sie bewusst hin. Welche Geräusche sind da?",
   },
@@ -41,8 +41,8 @@ const steps: GroundingStep[] = [
     count: 3,
     sense: "Fühlen",
     icon: Hand,
-    color: "var(--color-terracotta-mid)",
-    bgColor: "var(--color-terracotta-wash)",
+    iconBoxClass: "bg-terracotta-mid",
+    containerClass: "bg-terracotta-wash",
     instruction:
       "Benennen Sie 3 Dinge, die Sie berühren oder körperlich spüren.",
     prompt: "Achten Sie auf Kontaktflächen, Temperatur oder Druck.",
@@ -51,8 +51,8 @@ const steps: GroundingStep[] = [
     count: 2,
     sense: "Riechen",
     icon: Nose,
-    color: "var(--color-sand-mid)",
-    bgColor: "var(--color-sand-muted)",
+    iconBoxClass: "bg-sand-mid",
+    containerClass: "bg-sand-muted",
     instruction: "Benennen Sie 2 Dinge, die Sie riechen.",
     prompt: "Atmen Sie ruhig ein. Was ist wahrnehmbar?",
   },
@@ -60,8 +60,8 @@ const steps: GroundingStep[] = [
     count: 1,
     sense: "Schmecken",
     icon: Coffee,
-    color: "var(--color-terracotta-dark)",
-    bgColor: "var(--color-terracotta-wash)",
+    iconBoxClass: "bg-terracotta-dark",
+    containerClass: "bg-terracotta-wash",
     instruction: "Benennen Sie 1 Ding, das Sie schmecken.",
     prompt:
       "Vielleicht ist noch ein Geschmack im Mund oder von einem Getränk da.",
@@ -96,13 +96,11 @@ export default function GroundingTimer() {
             return (
               <div
                 key={step.sense}
-                className="rounded-xl border border-border/50 p-4"
-                style={{ backgroundColor: step.bgColor }}
+                className={`rounded-xl border border-border/50 p-4 ${step.containerClass}`}
               >
                 <div className="flex items-start gap-3">
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: step.color }}
+                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl ${step.iconBoxClass}`}
                   >
                     <Icon className="w-5 h-5 text-white" />
                   </div>

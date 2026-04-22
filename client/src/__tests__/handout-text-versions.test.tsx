@@ -5,6 +5,7 @@ import {
   getHandoutTextVersionHrefBySource,
 } from "@/content/handoutTextVersions";
 import { materials } from "@/content/materialien";
+import { verstehenInfografiken } from "@/content/verstehen";
 
 describe("handout text versions", () => {
   it("maps known remote handouts to text version routes", () => {
@@ -49,6 +50,12 @@ describe("handout text versions", () => {
     const notfallplanPdf = materials.find(
       item => item.id === "notfallplan-krise"
     )?.downloadUrl;
+    const vierPhasenPdf = verstehenInfografiken.find(
+      item => item.id === "4-phasen"
+    )?.pdfUrl;
+    const gehirnPdf = verstehenInfografiken.find(
+      item => item.id === "gehirn"
+    )?.pdfUrl;
 
     expect(getHandoutTextVersion("notfallplan-krise")?.path).toBe(
       "/materialien/text/notfallplan-krise"
@@ -89,6 +96,12 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersion("dear")?.path).toBe("/materialien/text/dear");
     expect(getHandoutTextVersion("genesung-zahlen")?.path).toBe(
       "/materialien/text/genesung-zahlen"
+    );
+    expect(getHandoutTextVersion("4-phasen")?.path).toBe(
+      "/materialien/text/4-phasen"
+    );
+    expect(getHandoutTextVersion("gehirn")?.path).toBe(
+      "/materialien/text/gehirn"
     );
     expect(getHandoutTextVersion("kinder")?.path).toBe(
       "/materialien/text/kinder"
@@ -131,6 +144,12 @@ describe("handout text versions", () => {
     );
     expect(getHandoutTextVersionHrefBySource(genesungZahlenPdf)).toBe(
       "/materialien/text/genesung-zahlen"
+    );
+    expect(getHandoutTextVersionHrefBySource(vierPhasenPdf)).toBe(
+      "/materialien/text/4-phasen"
+    );
+    expect(getHandoutTextVersionHrefBySource(gehirnPdf)).toBe(
+      "/materialien/text/gehirn"
     );
     expect(getHandoutTextVersionHrefBySource(kinderPdf)).toBe(
       "/materialien/text/kinder"

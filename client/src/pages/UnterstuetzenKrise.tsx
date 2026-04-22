@@ -302,42 +302,31 @@ export default function UnterstuetzenKrise() {
                     description:
                       "Alltägliche Stimmungsschwankungen, normale Belastungen",
                     action: "Präsent sein, zuhören, Routinen beibehalten",
-                    color: "var(--color-sage-mid)",
-                    bgColor: "var(--color-sage-lighter)",
+                    cardClass: "border-sage-mid bg-sage-lighter",
                   },
                   {
                     level: "Gelb – Angespannt",
                     description:
                       "Erhöhte Reizbarkeit, Rückzug, erkennbare Trigger",
                     action: "Validieren, Skills anbieten, Raum geben",
-                    color: "var(--color-sand-mid)",
-                    bgColor: "var(--color-sand-muted)",
+                    cardClass: "border-sand-mid bg-sand-muted",
                   },
                   {
                     level: "Orange – Eskalierend",
                     description:
                       "Starke Emotionen, verbale Aggression, Kontrollverlust",
                     action: "Deeskalieren, Sicherheit prüfen, Grenzen setzen",
-                    color: "var(--color-sage-mid)",
-                    bgColor: "var(--color-sage-wash)",
+                    cardClass: "border-sage-mid bg-sage-wash",
                   },
                   {
                     level: "Rot – Akute Krise",
                     description:
                       "Suizidgedanken, Selbstverletzung, akute Gefahr",
                     action: "Professionelle Hilfe holen, Notruf wenn nötig",
-                    color: "var(--color-alert)",
-                    bgColor: "var(--color-sage-wash)",
+                    cardClass: "border-alert bg-sage-wash",
                   },
                 ].map((item, index) => (
-                  <Card
-                    key={index}
-                    style={{
-                      borderColor: item.color,
-                      backgroundColor: item.bgColor,
-                    }}
-                    className="border-l-4"
-                  >
+                  <Card key={index} className={`border-l-4 ${item.cardClass}`}>
                     <CardContent className="p-5">
                       <h3 className="font-semibold text-foreground mb-2">
                         {item.level}

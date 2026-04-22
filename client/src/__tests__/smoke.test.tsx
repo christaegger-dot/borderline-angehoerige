@@ -184,6 +184,42 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/selbstfuersorge");
   });
 
+  it("HandoutTextPage: rendert Wenn-Worte-treffen-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "wenn-worte-treffen" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Wenn Worte treffen – 5 häufige Schuldzuweisungen/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Schuldzuweisungen sind keine Tatsachen/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
+    ).toHaveAttribute("href", "/kommunizieren");
+  });
+
+  it("HandoutTextPage: rendert DEAR-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "dear" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Die DEAR-Technik – Grenzen setzen ohne Vorwürfe/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/DEAR hilft Ihnen, Wünsche klar zu formulieren/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
+    ).toHaveAttribute("href", "/grenzen");
+  });
+
   it("HandoutTextPage: rendert Eisberg-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -239,6 +275,21 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Spickzettel Grenzen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/grenzen-spickzettel");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Die DEAR-Technik/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/dear");
+  });
+
+  it("Kommunizieren: zeigt Textversion für Wenn Worte treffen", async () => {
+    const { default: Kommunizieren } = await import("@/pages/Kommunizieren");
+    withRouter(<Kommunizieren />);
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Wenn Worte treffen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/wenn-worte-treffen");
   });
 
   it("NotFound: rendert 404-Seite", async () => {

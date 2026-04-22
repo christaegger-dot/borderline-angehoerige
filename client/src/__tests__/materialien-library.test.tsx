@@ -83,6 +83,16 @@ describe("MaterialienLibrarySection", () => {
         name: /Textversion lesen: Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln/i,
       })
     ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Wenn Worte treffen – 5 häufige Schuldzuweisungen/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/wenn-worte-treffen");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Die DEAR-Technik – Grenzen setzen ohne Vorwürfe/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/dear");
 
     fireEvent.click(screen.getByRole("button", { name: /Genesung\s*\(1\)/ }));
 

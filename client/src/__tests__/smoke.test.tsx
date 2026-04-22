@@ -129,6 +129,23 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien");
   });
 
+  it("HandoutTextPage: rendert Notfallplan-Textversion", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "notfallplan-krise" }} />);
+    expect(
+      screen.getByRole("heading", {
+        name: /Notfallplan Krise – Suizidgedanken & Selbstverletzung/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Gefahr einschätzen, ruhig bleiben, direkt ansprechen/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Zum Themenbereich Soforthilfe/i })
+    ).toHaveAttribute("href", "/soforthilfe");
+  });
+
   it("HandoutTextPage: rendert Warnsignale-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");

@@ -46,7 +46,13 @@ describe("handout text versions", () => {
       item => item.id === "genesung-zahlen"
     )?.downloadUrl;
     const kinderPdf = materials.find(item => item.id === "kinder")?.downloadUrl;
+    const notfallplanPdf = materials.find(
+      item => item.id === "notfallplan-krise"
+    )?.downloadUrl;
 
+    expect(getHandoutTextVersion("notfallplan-krise")?.path).toBe(
+      "/materialien/text/notfallplan-krise"
+    );
     expect(getHandoutTextVersion("leuchtturm")?.path).toBe(
       "/materialien/text/leuchtturm"
     );
@@ -129,8 +135,11 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersionHrefBySource(kinderPdf)).toBe(
       "/materialien/text/kinder"
     );
-    expect(getHandoutTextVersionBySource("/notfallplan-krise-v03.pdf")).toBe(
-      null
+    expect(getHandoutTextVersionHrefBySource(notfallplanPdf)).toBe(
+      "/materialien/text/notfallplan-krise"
     );
+    expect(
+      getHandoutTextVersionBySource("/notfallplan-krise-v03.pdf")?.path
+    ).toBe("/materialien/text/notfallplan-krise");
   });
 });

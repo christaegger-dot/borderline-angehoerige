@@ -1,4 +1,5 @@
 import { Link, useLocation } from "wouter";
+import { getRouteAccent } from "@/components/layout/routeAccent";
 import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
 
 const pageNames: Record<string, string> = {
@@ -44,6 +45,7 @@ function getParentInfo(
 
 export function Breadcrumbs() {
   const [location] = useLocation();
+  const accent = getRouteAccent(location);
 
   if (location === "/") return null;
 
@@ -54,22 +56,29 @@ export function Breadcrumbs() {
   const backLabel = parent?.label || "Startseite";
 
   return (
-    <div className="border-b border-border/40 bg-background/60">
-      <nav className="container py-3" aria-label="Breadcrumb">
-        <div className="flex items-center justify-between">
+    <div className="border-b border-border/40 bg-[linear-gradient(180deg,rgba(250,250,247,0.82),rgba(248,250,249,0.92))]">
+      <nav className="container py-3 md:py-4" aria-label="Breadcrumb">
+        <div className="flex items-center justify-between gap-3">
           <Link
             href={backHref}
-            className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group sm:hidden"
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium shadow-sm shadow-black/5 transition-colors group sm:hidden ${accent.breadcrumbBack}`}
           >
             <ArrowLeft className="w-4 h-4" />
             <span>{backLabel}</span>
           </Link>
 
-          <ol className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
+          <span
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium sm:hidden ${accent.breadcrumbChip}`}
+          >
+            <span className={`h-2 w-2 rounded-full ${accent.dot}`} />
+            {pageName}
+          </span>
+
+          <ol className="hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-white/88 px-3 py-2 text-sm text-muted-foreground shadow-sm shadow-black/5 backdrop-blur-sm">
             <li>
               <Link
                 href="/"
-                className="flex items-center gap-1 hover:text-foreground transition-colors"
+                className="flex items-center gap-1.5 rounded-full px-2 py-1 transition-colors hover:bg-muted/60 hover:text-foreground"
               >
                 <Home className="w-4 h-4" />
                 <span>Startseite</span>
@@ -83,7 +92,7 @@ export function Breadcrumbs() {
                 />
                 <Link
                   href={parent.href}
-                  className="hover:text-foreground transition-colors"
+                  className={`transition-colors ${accent.textAccent}`}
                 >
                   {parent.label}
                 </Link>
@@ -94,7 +103,12 @@ export function Breadcrumbs() {
                 className="w-4 h-4 text-muted-foreground/50"
                 aria-hidden="true"
               />
-              <span className="text-foreground font-medium">{pageName}</span>
+              <span
+                className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 font-medium ${accent.breadcrumbChip}`}
+              >
+                <span className={`h-2 w-2 rounded-full ${accent.dot}`} />
+                {pageName}
+              </span>
             </li>
           </ol>
         </div>

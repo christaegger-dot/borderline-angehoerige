@@ -314,7 +314,7 @@ export default function Verstehen() {
                     {
                       label:
                         "APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024)",
-                      href: "https://psychiatryonline.org/doi/book/10.1176/appi.books.9780890424896",
+                      href: "https://pubmed.ncbi.nlm.nih.gov/39482953/",
                       type: "wissenschaft",
                     },
                     {

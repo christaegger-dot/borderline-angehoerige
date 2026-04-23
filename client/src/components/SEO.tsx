@@ -90,7 +90,7 @@ export function buildMedicalPageSchemaData({
       alternateName: ["Borderline-Muster", "Borderline pattern"],
       code: {
         "@type": "MedicalCode",
-        code: "6D11",
+        code: "6D11.5",
         codingSystem: "ICD-11",
       },
     },

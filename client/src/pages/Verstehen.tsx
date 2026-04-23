@@ -307,8 +307,8 @@ export default function Verstehen() {
                   sources={[
                     {
                       label:
-                        "WHO ICD-11: Personality disorder with borderline pattern (6D11)",
-                      href: "https://icd.who.int/browse/2024-01/mms/en#691185432",
+                        "WHO ICD-11: Borderline pattern specifier (6D11.5)",
+                      href: "https://icd.who.int/browse/2025-01/mms/en#2006821354",
                       type: "wissenschaft",
                     },
                     {

@@ -11,13 +11,23 @@ const quellen = [
     eintraege: [
       {
         autoren: "Zanarini, M. C. et al.",
-        jahr: "2010 / 2012",
+        jahr: "2010",
+        titel:
+          "Time to attainment of recovery from borderline personality disorder and stability of recovery: A 10-year prospective follow-up study",
+        quelle: "American Journal of Psychiatry",
+        hinweis:
+          "Grundlage für die 10-Jahres-Daten zu symptomatischer Remission und Recovery im McLean Study of Adult Development. Spezialisierte Stichprobe, daher nicht direkt auf alle Betroffenen übertragbar.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/20395399/",
+      },
+      {
+        autoren: "Zanarini, M. C. et al.",
+        jahr: "2012",
         titel:
           "Attainment and stability of sustained symptomatic remission and recovery among borderline patients and Axis II comparison subjects",
         quelle: "American Journal of Psychiatry",
         hinweis:
-          "Grundlage für Remissions- und Recovery-Daten (85–93% Remission, ca. 50% Recovery nach 10 Jahren). Durchgeführt am McLean Hospital.",
-        link: "https://pubmed.ncbi.nlm.nih.gov/20595412/",
+          "Langzeit-Follow-up zur Stabilität von Remission und Recovery. Wichtige Grundlage für die Unterscheidung zwischen Symptombesserung und funktioneller Genesung.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
       },
       {
         autoren: "Linehan, M. M.",
@@ -135,7 +145,7 @@ const quellen = [
         titel: "Diagnostic and Statistical Manual of Mental Disorders (DSM-5)",
         quelle: "American Psychiatric Publishing",
         hinweis:
-          "Offizielle Diagnosekriterien für Borderline-Persönlichkeitsstörung (F60.31).",
+          "Diagnosekriterien für Borderline-Persönlichkeitsstörung im DSM-5.",
         link: null,
       },
       {
@@ -144,8 +154,8 @@ const quellen = [
         titel: "International Classification of Diseases (ICD-11)",
         quelle: "WHO",
         hinweis:
-          "Aktuelle internationale Klassifikation. BPS unter «6D11 Borderline pattern».",
-        link: "https://icd.who.int/browse11/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f1307872093",
+          "Aktuelle internationale Klassifikation mit Borderline pattern als Spezifier innerhalb der Persönlichkeitsstörungen.",
+        link: "https://icd.who.int/browse/2025-01/mms/en#2006821354",
       },
     ],
   },

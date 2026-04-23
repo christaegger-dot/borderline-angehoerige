@@ -154,7 +154,7 @@ const quellen = [
         titel: "International Classification of Diseases (ICD-11)",
         quelle: "WHO",
         hinweis:
-          "Aktuelle internationale Klassifikation mit Borderline pattern als Spezifier innerhalb der Persönlichkeitsstörungen.",
+          "Aktuelle internationale Klassifikation mit Borderline pattern (6D11.5) als Spezifier innerhalb der Persönlichkeitsstörungen.",
         link: "https://icd.who.int/browse/2025-01/mms/en#2006821354",
       },
     ],

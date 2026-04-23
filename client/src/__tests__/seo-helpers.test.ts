@@ -38,7 +38,7 @@ describe("SEO helpers", () => {
     expect(schema["@type"]).toBe("WebSite");
   });
 
-  it("builds medical schema with ICD-11 code 6D11", () => {
+  it("builds medical schema with ICD-11 borderline pattern code", () => {
     const schema = buildMedicalPageSchemaData({
       title: "Borderline verstehen",
       description: "Beschreibung",
@@ -46,7 +46,7 @@ describe("SEO helpers", () => {
     });
 
     expect(schema["@type"]).toBe("MedicalWebPage");
-    expect(schema.about.code.code).toBe("6D11");
+    expect(schema.about.code.code).toBe("6D11.5");
     expect(schema.url).toBe(
       "https://borderline-angehoerige.netlify.app/verstehen"
     );

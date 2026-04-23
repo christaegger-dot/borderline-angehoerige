@@ -34,6 +34,20 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
     return () => document.body.removeAttribute("data-mobile-menu");
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+        setMobileRessourcenOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileMenuOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/88 backdrop-blur-xl shadow-[0_10px_34px_-28px_rgba(15,23,42,0.45)]">
       <div className="container">

@@ -807,6 +807,20 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
   });
 
+  it("HandoutTextPage: gibt dichten Karten mehr Leseraum", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(<HandoutTextPage params={{ handoutId: "spaltung" }} />);
+
+    const denseCardText = await screen.findByText(
+      /Erkennen Sie das Muster – bei Ihrem Angehörigen und bei sich selbst/i
+    );
+    const cardGrid = denseCardText.closest(".grid");
+
+    expect(cardGrid).toHaveClass("md:grid-cols-2");
+    expect(cardGrid).not.toHaveClass("xl:grid-cols-3");
+  });
+
   it("HandoutTextPage: rendert Alarm-Modus-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");

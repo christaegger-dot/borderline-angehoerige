@@ -19,6 +19,91 @@ const TRIM_TARGET_BYTES = Math.floor(MAX_LOG_SIZE_BYTES * 0.6); // Trim to 60% t
 
 type LogSource = "browserConsole" | "networkRequests" | "sessionReplay";
 
+const DEBUG_COLLECTOR_SCRIPT = `(() => {
+  if (window.__manusDebugCollectorLoaded) return;
+  window.__manusDebugCollectorLoaded = true;
+
+  const queue = {
+    consoleLogs: [],
+    networkRequests: [],
+    sessionEvents: [],
+  };
+
+  const serialize = value => {
+    if (typeof value === "string") return value;
+    try {
+      return JSON.stringify(value);
+    } catch {
+      return String(value);
+    }
+  };
+
+  const flush = () => {
+    if (
+      queue.consoleLogs.length === 0 &&
+      queue.networkRequests.length === 0 &&
+      queue.sessionEvents.length === 0
+    ) {
+      return;
+    }
+
+    const payload = {
+      consoleLogs: queue.consoleLogs.splice(0),
+      networkRequests: queue.networkRequests.splice(0),
+      sessionEvents: queue.sessionEvents.splice(0),
+    };
+    const body = JSON.stringify(payload);
+
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(
+        "/__manus__/logs",
+        new Blob([body], { type: "application/json" })
+      );
+      return;
+    }
+
+    fetch("/__manus__/logs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body,
+      keepalive: true,
+    }).catch(() => {});
+  };
+
+  ["log", "warn", "error"].forEach(type => {
+    const original = console[type];
+    console[type] = (...args) => {
+      queue.consoleLogs.push({
+        type,
+        message: args.map(serialize).join(" "),
+        href: location.href,
+      });
+      flush();
+      return original.apply(console, args);
+    };
+  });
+
+  window.addEventListener("error", event => {
+    queue.consoleLogs.push({
+      type: "error",
+      message: String(event.message),
+      href: location.href,
+    });
+    flush();
+  });
+
+  window.addEventListener("unhandledrejection", event => {
+    queue.consoleLogs.push({
+      type: "error",
+      message: serialize(event.reason),
+      href: location.href,
+    });
+    flush();
+  });
+
+  window.addEventListener("pagehide", flush);
+})();`;
+
 function ensureLogDir() {
   if (!fs.existsSync(LOG_DIR)) {
     fs.mkdirSync(LOG_DIR, { recursive: true });
@@ -99,6 +184,17 @@ function vitePluginManusDebugCollector(): Plugin {
     },
 
     configureServer(server: ViteDevServer) {
+      server.middlewares.use("/__manus__/debug-collector.js", (req, res) => {
+        if (req.method !== "GET") {
+          res.writeHead(405, { "Content-Type": "text/plain" });
+          res.end("Method Not Allowed");
+          return;
+        }
+
+        res.writeHead(200, { "Content-Type": "application/javascript" });
+        res.end(DEBUG_COLLECTOR_SCRIPT);
+      });
+
       server.middlewares.use(
         "/api/material-download",
         async (req, res, next) => {

@@ -94,6 +94,29 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(container.firstChild).toBeTruthy();
   });
 
+  it("Quellen: verlinkt die korrekten Zanarini-Verlaufsstudien", async () => {
+    const { default: Quellen } = await import("@/pages/Quellen");
+    const { container } = withRouter(<Quellen />);
+
+    expect(
+      screen.getByRole("heading", { name: /Quellen & Literatur/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Time to attainment of recovery from borderline/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Attainment and stability of sustained symptomatic/i)
+    ).toBeInTheDocument();
+
+    const hrefs = Array.from(container.querySelectorAll("a")).map(link =>
+      link.getAttribute("href")
+    );
+
+    expect(hrefs).toContain("https://pubmed.ncbi.nlm.nih.gov/20395399/");
+    expect(hrefs).toContain("https://pubmed.ncbi.nlm.nih.gov/22737693/");
+    expect(hrefs).not.toContain("https://pubmed.ncbi.nlm.nih.gov/20595412/");
+  });
+
   it("Soforthilfe: rendert und enthält Notfallnummer 144", async () => {
     const { default: Soforthilfe } = await import("@/pages/Soforthilfe");
     withRouter(<Soforthilfe />);

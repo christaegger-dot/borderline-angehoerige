@@ -7,7 +7,10 @@ import {
   getHandoutTextVersionMeta,
   loadHandoutTextVersion,
 } from "@/content/handoutTextVersions";
-import type { HandoutTextVersion } from "@/content/handoutTextVersionTypes";
+import type {
+  HandoutTextCard,
+  HandoutTextVersion,
+} from "@/content/handoutTextVersionTypes";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
@@ -26,6 +29,24 @@ import {
 type HandoutTextPageParams = {
   handoutId?: string;
 };
+
+const LONG_CARD_TEXT_THRESHOLD = 210;
+
+function getCardGridClass(cards: HandoutTextCard[]) {
+  const hasDenseText = cards.some(
+    card => card.text.length >= LONG_CARD_TEXT_THRESHOLD
+  );
+
+  if (cards.length <= 1) {
+    return "grid gap-4";
+  }
+
+  if (cards.length === 2 || cards.length === 4 || hasDenseText) {
+    return "grid gap-4 md:grid-cols-2";
+  }
+
+  return "grid gap-4 md:grid-cols-2 xl:grid-cols-3";
+}
 
 export default function HandoutTextPage({
   params,
@@ -232,7 +253,7 @@ export default function HandoutTextPage({
                       ) : null}
 
                       {section.cards?.length ? (
-                        <div className="grid gap-4 md:grid-cols-3">
+                        <div className={getCardGridClass(section.cards)}>
                           {section.cards.map(card => (
                             <div
                               key={`${section.title}-${card.title}`}
@@ -241,7 +262,7 @@ export default function HandoutTextPage({
                               <h3 className="font-semibold text-foreground mb-2">
                                 {card.title}
                               </h3>
-                              <p className="text-sm leading-relaxed text-muted-foreground">
+                              <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
                                 {card.text}
                               </p>
                             </div>
@@ -254,7 +275,7 @@ export default function HandoutTextPage({
                           {section.bullets.map(item => (
                             <li
                               key={item}
-                              className="rounded-xl border border-border/60 bg-background px-4 py-3 text-sm text-muted-foreground"
+                              className="rounded-xl border border-border/60 bg-background px-4 py-3 text-sm md:text-base text-muted-foreground"
                             >
                               {item}
                             </li>

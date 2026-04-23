@@ -328,7 +328,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Sie können die Krise nicht steuern, aber Sie können als Angehörige oder Angehöriger Orientierung geben: ruhig, klar und verlässlich.",
     intro: [
-      "Diese Seite überträgt die Inhalte des Handouts «Der Leuchtturm» in eine lesbare Web-Version. Sie ist als barriereärmere Ergänzung zur gestalteten PDF-Fassung gedacht.",
+      "Der Leuchtturm verdichtet die wichtigste Haltung für Angehörige: Sie können Orientierung geben, ohne das Schiff steuern zu müssen. Die Bildidee macht die Kernaussage direkt zugänglich.",
       "Die Grafik stellt nicht die Gefühle der betroffenen Person in den Mittelpunkt, sondern Ihre Haltung als Angehörige oder Angehöriger: Zustände wechseln, Ihre Orientierung darf stabil bleiben.",
     ],
     sections: [
@@ -390,7 +390,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Sie können Orientierung, Hoffnung und klare Grenzen geben. Therapie ersetzen, Verhalten kontrollieren oder die Genesung tragen müssen Sie nicht.",
     intro: [
-      "Diese Seite überträgt die Infografik «Ihre Rolle klären» in eine lesbare Web-Version. Im Zentrum stehen drei Unterscheidungen: Ihr Beitrag, nicht Ihre Aufgabe und die Rolle professioneller Hilfe.",
+      "Rollenklarheit hilft, Unterstützung von Überverantwortung zu unterscheiden. Im Zentrum stehen drei Fragen: Was ist Ihr Beitrag, was ist nicht Ihre Aufgabe, und wann braucht es professionelle Hilfe?",
       "Das Handout hilft Angehörigen dabei, Unterstützung realistisch zu verstehen: zugewandt und stabil bleiben, ohne in Therapie, Kontrolle oder Selbstaufgabe abzurutschen.",
     ],
     sections: [
@@ -495,7 +495,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "In der Krise hilft weniger Logik, dafür mehr Ruhe, Präsenz und Orientierung. Ihre ruhige Haltung kann helfen, von Überforderung zu mehr Sicherheit zurückzufinden.",
     intro: [
-      "Diese Seite überträgt die Infografik «Im Krisenmodus – Orientierung geben» in eine lesbare Web-Version. Die Grafik ist bewusst knapp: Krise und beruhigter Zustand werden gegenübergestellt, verbunden durch Ihre Ruhe und Präsenz.",
+      "Im Krisenmodus zählt weniger Erklärung und mehr Orientierung. Die Gegenüberstellung von Krise und beruhigtem Zustand zeigt, wie Ruhe und Präsenz wieder Handlungsspielraum öffnen können.",
       "Für Angehörige ist die Kernaussage klar: In akuter Überforderung bringt langes Erklären oft wenig. Wichtiger sind ein ruhiger Ton, Präsenz und das Verschieben schwieriger Diskussionen.",
     ],
     sections: [
@@ -559,7 +559,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Präsenz, Stabilität und Grenze sind drei Säulen, die Angehörigen Halt geben und die Beziehung stärken. Hilfreiche Unterstützung braucht alle drei zusammen.",
     intro: [
-      "Diese Seite überträgt die Infografik «Drei Säulen hilfreicher Unterstützung» in eine lesbare Web-Version. Das Handout bündelt Angehörigen-Haltung in drei einfache Grundpfeiler.",
+      "Die drei Säulen beschreiben eine tragfähige Angehörigen-Haltung: Präsenz, Stabilität und Grenze. Sie geben Orientierung, wenn Unterstützung unübersichtlich wird.",
       "Die Grafik ist als praktische Orientierung gedacht: zugewandt bleiben, innerlich ruhig bleiben und gleichzeitig den eigenen Schutz nicht verlieren.",
     ],
     sections: [
@@ -615,7 +615,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Wenn Angehörige ähnlich reagieren und gemeinsame Grenzen einhalten, entstehen mehr Sicherheit, Vertrauen und weniger Eskalationen.",
     intro: [
-      "Diese Seite überträgt die Infografik «Konsistenz-Prinzip – als Team wird es leichter» in eine lesbare Web-Version. Das Handout stellt einen hilfreichen und einen schwierigen Beziehungskreislauf gegenüber.",
+      "Das Konsistenz-Prinzip zeigt, wie ähnliche Reaktionen im Umfeld Sicherheit schaffen können. Es stellt einen hilfreichen und einen schwierigen Beziehungskreislauf gegenüber.",
       "Die Grundidee ist einfach: Gleiche Grenzen führen zu mehr Sicherheit. Widersprüchliche Reaktionen machen es leichter, Grenzen gegeneinander auszuspielen, und erhöhen Konflikte.",
     ],
     sections: [
@@ -677,7 +677,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Innehalten, wahrnehmen, nicht bewerten und bewusst handeln helfen Angehörigen, aus dem Autopiloten auszusteigen und klarer zu reagieren.",
     intro: [
-      "Diese Seite überträgt die Infografik «Beziehungs-Achtsamkeit – 4 Schritte im Alltag» in eine lesbare Web-Version. Das Handout übersetzt Achtsamkeit in vier konkrete Schritte für Beziehungssituationen.",
+      "Beziehungs-Achtsamkeit übersetzt Achtsamkeit in vier konkrete Schritte für angespannte Beziehungssituationen: innehalten, wahrnehmen, nicht bewerten und bewusst handeln.",
       "Die Struktur ist bewusst alltagsnah: erst stoppen, dann wahrnehmen, nicht vorschnell bewerten und am Schluss bewusst einen nächsten Schritt wählen.",
     ],
     sections: [
@@ -744,7 +744,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Sechs alltagsnahe Leitlinien helfen Angehörigen, ruhig, klar und gemeinsam zu unterstützen, ohne vorschnelle Erwartungen oder unnötige Eskalationen.",
     intro: [
-      "Diese Seite überträgt das Handout «6 Leitlinien für Angehörige – So können Sie unterstützen» in eine lesbare Web-Version. Die Vorlage bündelt evidenzbasierte Empfehlungen nach Gunderson in sechs konkrete Alltagshinweise.",
+      "Die sechs Leitlinien bündeln evidenzbasierte Empfehlungen nach Gunderson in konkrete Alltagshinweise. Sie helfen, Unterstützung klar, verlässlich und begrenzt zugleich zu gestalten.",
       "Die Aussagen bleiben bewusst praktisch: Erwartungen realistisch halten, Sicherheit fördern, zuhören, Selbstverletzung ernst nehmen, als Familie gemeinsam handeln und Grenzen durchhaltbar setzen.",
     ],
     sections: [
@@ -819,7 +819,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Kleine, konkrete Handlungen im Alltag helfen oft mehr als grosse Reden: mitüben, Fortschritte würdigen, verlässlich bleiben und gemeinsam Lösungen entwickeln.",
     intro: [
-      "Diese Seite überträgt das Handout «Was Sie konkret tun können – 4 Alltags-Tipps» in eine lesbare Web-Version. Die Vorlage fokussiert bewusst auf wenige, direkt umsetzbare Unterstützungsformen.",
+      "Die vier Alltags-Tipps fokussieren auf wenige Unterstützungsformen, die Angehörige direkt ausprobieren können. Der Schwerpunkt liegt auf kleinen, tragfähigen Schritten statt auf perfekten Lösungen.",
       "Das Handout bleibt praktisch: Sie müssen nicht alles übernehmen. Oft reicht es, verlässlich präsent zu sein, kleine Fortschritte sichtbar zu machen und hilfreiche Fragen zu stellen.",
     ],
     sections: [
@@ -880,7 +880,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Was sichtbar wie Wut, Vorwürfe oder Lautwerden wirkt, hat oft eine verdeckte Unterseite aus Angst, Scham, Trauer, Einsamkeit und Stress.",
     intro: [
-      "Diese Seite überträgt das Handout «Der Eisberg» in eine lesbare Web-Version. Die zentrale Bildidee bleibt erhalten: sichtbares Verhalten ist nur die Spitze, darunter liegen oft andere Gefühle und Bedürfnisse.",
+      "Der Eisberg macht sichtbar, dass Verhalten oft nur die Oberfläche ist. Darunter liegen häufig Angst, Scham, Überforderung, Bedürfnisse oder Verletzlichkeit.",
       "Für Angehörige ist die Grafik als Einordnungshilfe gedacht. Sie soll Wut nicht verharmlosen, aber helfen, Verhalten differenzierter zu lesen und die eigene Reaktion bewusster zu wählen.",
     ],
     sections: [
@@ -989,7 +989,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Unter Stress kippt die Bewertung oft in Extreme. Angehörige werden dann vorübergehend idealisiert oder entwertet, während die Grauzone schwer erreichbar wird.",
     intro: [
-      "Diese Seite überträgt das Handout «Spaltung – das Pendel zwischen Extremen» in eine lesbare Web-Version. Die zentrale Bildidee bleibt erhalten: Unter Belastung pendelt die Wahrnehmung zwischen Idealisierung und Entwertung, statt den ganzen Menschen zu sehen.",
+      "Die Pendel-Metapher zeigt, wie Wahrnehmung unter Belastung zwischen Idealisierung und Entwertung kippen kann. Ziel ist, den ganzen Menschen wieder besser im Blick zu behalten.",
       "Für Angehörige ist die Grafik als Orientierung gedacht. Sie erklärt, warum das Kippen so schmerzhaft und verwirrend wirkt, und zeigt, wie stabilisierende Reaktionen helfen können, die Grauzone wieder erreichbar zu machen.",
     ],
     sections: [
@@ -1134,7 +1134,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Wenn der Alarm-Modus aktiv ist, ist Ihr Gegenüber vorübergehend schwer erreichbar. Erst beruhigen, dann klären: Die Brücke vom Alarm zum Denken braucht Sicherheit und weniger Druck.",
     intro: [
-      "Diese Seite überträgt das Handout «Alarm-Modus vs. Denk-Modus» in eine lesbare Web-Version. Die zentrale Idee: Unter hoher Anspannung steht nicht dieselbe Denkfähigkeit zur Verfügung wie in ruhigeren Momenten.",
+      "Alarm-Modus und Denk-Modus erklären, warum Gespräche unter hoher Anspannung so schnell eng werden. Unter Stress steht nicht dieselbe Denkfähigkeit zur Verfügung wie in ruhigeren Momenten.",
       "Für Angehörige ist das eine Entlastung und eine Handlungsorientierung zugleich. Nicht jede Eskalation ist böser Wille oder bewusste Verweigerung – oft ist sie Ausdruck eines neurobiologisch eingeengten Zustands.",
     ],
     sections: [
@@ -1201,7 +1201,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Freundlichkeit, Verschlechterung, Explosion und Schweigen können sich als wiederkehrender Zyklus verstärken. Entscheidend ist, das Muster früh zu erkennen und in Phase 2 anders zu reagieren.",
     intro: [
-      "Diese Seite überträgt die Infografik «Der 4-Phasen-Zyklus» in eine lesbare Web-Version. Sie zeigt ein wiederkehrendes Muster, das in belasteten Beziehungen immer wieder auftreten kann.",
+      "Der 4-Phasen-Zyklus beschreibt ein wiederkehrendes Muster, das in belasteten Beziehungen immer wieder auftreten kann. Er hilft, Eskalationen früher einzuordnen.",
       "Die Grafik versteht den Zyklus nicht als fixes Schicksal, sondern als Muster, das erkannt und unterbrochen werden kann. Genau dort liegt der entlastende Kern für Angehörige.",
     ],
     sections: [
@@ -1273,7 +1273,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Bei emotionaler Überflutung übernimmt das Alarm-System. Das Denken kommt erst zurück, wenn der Körper wieder etwas ruhiger ist.",
     intro: [
-      "Diese Seite überträgt die Infografik «Das Gehirn verstehen» in eine lesbare Web-Version. Sie erklärt in einfacher Form, was bei emotionaler Überflutung im Gehirn passiert.",
+      "Das Gehirn-Modell erklärt in einfacher Form, was bei emotionaler Überflutung passiert. Für Angehörige wird dadurch nachvollziehbarer, warum zuerst Beruhigung und erst danach Klärung hilft.",
       "Für Angehörige ist die Grafik vor allem als Einordnungshilfe gedacht: Überflutung ist keine Absicht, sondern eine neurobiologische Reaktion. Deshalb hilft zuerst Beruhigung und erst danach Klärung.",
     ],
     sections: [
@@ -1352,7 +1352,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Überlastung baut sich oft schrittweise auf. Wer erste Warnzeichen ernst nimmt, kann früher gegensteuern und rechtzeitig Hilfe holen.",
     intro: [
-      "Diese Seite überträgt das Handout «Warnsignale der Überlastung» in eine lesbare Web-Version. Die Ampellogik bleibt erhalten: Grün, Gelb und Rot markieren unterschiedliche Belastungsstufen.",
+      "Die Ampellogik hilft, eigene Überlastung früher wahrzunehmen. Grün, Gelb und Rot markieren unterschiedliche Belastungsstufen und zeigen, wann Gegensteuern nötig wird.",
       "Die Grafik ist als frühzeitige Orientierung gedacht, nicht als Selbstvorwurf. Entscheidend ist, Belastung ernst zu nehmen, bevor Erschöpfung oder Krisen eskalieren.",
     ],
     sections: [
@@ -1450,7 +1450,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Selbstfürsorge ist keine Selbstsucht. Wer zuerst die eigene Maske aufsetzt, hat mehr Energie, weniger Schuldgefühle und kann verlässlicher unterstützen.",
     intro: [
-      "Diese Seite überträgt das Handout «Die Sauerstoffmaske – Warum Selbstfürsorge keine Selbstsucht ist» in eine lesbare Web-Version. Die Bildidee aus dem Flugzeug bleibt erhalten: erst die eigene Maske aufsetzen, dann anderen helfen.",
+      "Die Sauerstoffmaske erinnert daran, dass Selbstfürsorge kein Rückzug aus Verantwortung ist. Erst die eigene Maske aufsetzen, dann anderen helfen: Dieses Bild entlastet und klärt Prioritäten.",
       "Die Grafik stellt zwei Kreisläufe gegenüber. Links zeigt sie, wie Überforderung und Schuldgefühle entstehen, wenn Angehörige nur noch für andere da sind. Rechts zeigt sie den hilfreicheren Kreislauf, wenn Selbstfürsorge bewusst Platz bekommt.",
     ],
     sections: [
@@ -1539,7 +1539,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Die STOPP-Technik schafft in etwa 30 Sekunden Abstand zwischen Reiz und Reaktion. Das gibt Körper und Kopf wieder etwas mehr Handlungsspielraum.",
     intro: [
-      "Diese Seite überträgt das Handout «Die STOPP-Technik – 5 Schritte aus der Stressspirale» in eine lesbare Web-Version. Die DBT-Technik ist so zusammengefasst, dass sie im Alltag schnell nutzbar bleibt.",
+      "Die STOPP-Technik schafft eine kurze Pause zwischen Reiz und Reaktion. Die fünf Schritte sind alltagsnah formuliert, damit sie in angespannten Momenten schnell nutzbar bleiben.",
       "Die fünf Buchstaben geben eine feste Reihenfolge vor: stoppen, atmen, orientieren, Perspektive weiten und dann erst handeln.",
     ],
     sections: [
@@ -1603,7 +1603,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Ihre Energie ist begrenzt. Wenn Sie im Blick behalten, was auftankt und was Energie kostet, können Sie früher gegensteuern statt erst im Leerlauf zu reagieren.",
     intro: [
-      "Diese Seite überträgt das Handout «Ihr Energie-Konto – Was füllt, was leert» in eine lesbare Web-Version. Die Grafik arbeitet mit einer Batterie-Metapher: Energie kann gefüllt, entleert und auch bis in den Burnout-Bereich erschöpft werden.",
+      "Das Energie-Konto macht sichtbar, was Kraft gibt und was Kraft kostet. Die Batterie-Metapher hilft, Belastung früher zu bemerken, bevor Erschöpfung zum Dauerzustand wird.",
       "Die Grundidee ist bewusst praktisch. Statt nur über Belastung nachzudenken, hilft die Gegenüberstellung von Energiegebern und Energiefressern dabei, konkrete Veränderungen im Alltag zu planen.",
     ],
     sections: [
@@ -1708,7 +1708,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Die Erlaubnis-Karte bündelt neun Sätze, die Angehörigen oft guttun: eigene Bedürfnisse ernst nehmen, Grenzen setzen und ein eigenes Leben behalten.",
     intro: [
-      "Diese Seite überträgt das Handout «Ihre Erlaubnis-Karte – Was Sie sich erlauben dürfen» in eine lesbare Web-Version. Die Erlaubnisse sind bewusst wie ein persönliches Zertifikat formuliert: nicht als Pflichtliste, sondern als Zusage zum Ankreuzen.",
+      "Die Erlaubnis-Karte sammelt Sätze, die Angehörige oft erst wieder lernen müssen. Sie ist nicht als Pflichtliste gemeint, sondern als entlastende Zusage zum Auswählen.",
       "Der Fokus ist entlastend. Die Grafik erinnert daran, dass Selbstfürsorge, Grenzen und eigene Gefühle nicht gegen die Beziehung stehen, sondern zu gesunder Angehörigenarbeit dazugehören.",
     ],
     sections: [
@@ -1767,7 +1767,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Schuldgefühle sind bei Angehörigen häufig und verständlich. Hilfreicher als der Blick zurück ist die Frage, was Sie heute beeinflussen können, ohne sich die ganze Verantwortung aufzuladen.",
     intro: [
-      "Diese Seite überträgt das Handout «Schuld, Verantwortung und was dazwischen liegt» in eine lesbare Web-Version. Sie richtet sich an Angehörige, die sich zwischen Selbstvorwurf, Fürsorge und Verantwortung verlieren.",
+      "Schuld und Verantwortung geraten bei Angehörigen leicht durcheinander. Diese Orientierung hilft, Selbstvorwürfe zu entlasten und den eigenen Einfluss realistischer zu sehen.",
       "Sie finden zuerst eine Einordnung von Schuldgefühlen, dann den Blick auf Forschung, den Unterschied zwischen Schuld und Verantwortung und typische Selbstvorwürfe mit einer realistischeren Gegenperspektive.",
     ],
     sections: [
@@ -1870,7 +1870,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Radikale Akzeptanz bedeutet nicht Aufgeben, sondern die Realität anzuerkennen und Energie für das Beeinflussbare zurückzugewinnen.",
     intro: [
-      "Diese Seite überträgt das Handout «Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln» in eine lesbare Web-Version. Sie richtet sich an Angehörige, die sich im inneren Kampf gegen belastende Realität erschöpfen.",
+      "Radikale Akzeptanz bedeutet nicht Aufgeben. Sie hilft, die Realität anzuerkennen und Kraft wieder auf das zu richten, was heute beeinflussbar ist.",
       "Die Gegenüberstellung zeigt, was radikale Akzeptanz nicht ist, was sie ist, wie Sie sie in vier Schritten üben und worauf Sie Ihre Energie stattdessen richten können.",
     ],
     sections: [
@@ -1965,7 +1965,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Schuldzuweisungen treffen oft hart, sagen aber meist mehr über Schmerz, Angst oder Hilflosigkeit als über Ihren Wert. Die Web-Version zeigt fünf häufige Sätze und ruhigere Antworten darauf.",
     intro: [
-      "Diese Seite überträgt das Handout «Wenn Worte treffen – 5 häufige Schuldzuweisungen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die in belasteten Gesprächen mit harten Vorwürfen oder entwertenden Sätzen konfrontiert werden.",
+      "Harte Vorwürfe können Angehörige stark verunsichern. Die fünf Schuldzuweisungen helfen, typische Sätze einzuordnen und innerlich etwas mehr Abstand zu behalten.",
       "Sie finden eine entlastende Grundhaltung, fünf typische Schuldzuweisungen mit möglicher Einordnung und Antwort sowie einen abschliessenden Merksatz, der Mitgefühl und Selbstschutz zusammenhält.",
     ],
     sections: [
@@ -2017,7 +2017,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Wenn Gespräche kippen, helfen oft nicht mehr Erklärungen, sondern drei kurze Schritte: beruhigen, verbinden, begrenzen.",
     intro: [
-      "Diese Seite überträgt das Handout «Wenn Gespräche kippen – Was Sie tun können, bevor es eskaliert» in eine lesbare Web-Version. Es richtet sich an Angehörige, die in angespannten Momenten eine kurze, klare Gesprächsstruktur brauchen.",
+      "Wenn Gespräche kippen, hilft eine kurze Struktur mehr als lange Erklärungen. Die Schritte unterstützen Angehörige dabei, früher zu verlangsamen und Eskalation zu vermeiden.",
       "Sie finden drei Schritte, einen kurzen Pausenplan für Kipppunkte, die Kernaussage des Blatts, eine kleine Merkhilfe und drei alltagsnahe Hinweise.",
     ],
     sections: [
@@ -2076,7 +2076,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Die 3-Teile-Formel hält Grenzsetzung knapp: Fakt, Ich-Grenze, nächster Schritt. So bleiben Sie klar, ohne in Rechtfertigungen zu geraten.",
     intro: [
-      "Diese Seite überträgt das Handout «Grenzen setzen ohne Eskalation – Die 3-Teile-Formel» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Grenzen klar ansprechen wollen, ohne in Streitlogik hineingezogen zu werden.",
+      "Die 3-Teile-Formel hilft, Grenzen klar anzusprechen, ohne in Streitlogik hineingezogen zu werden. Sie verbindet Anerkennung, Grenze und nächsten Schritt.",
       "Sie finden die Formel, ein knappes Beispiel, eine Kernaussage, eine kurze Merkhilfe und drei kurze Umsetzungshinweise.",
     ],
     sections: [
@@ -2133,7 +2133,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Nicht jede Anspannung ist noch gesprächsfähig. Das Handout unterscheidet stabil, Warnstufe und Eskalation und zeigt, wann Sie stoppen sollten.",
     intro: [
-      "Diese Seite überträgt das Handout «Pause statt Streit – Wann Sie stoppen sollten und wie» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Kipppunkte früher erkennen und rechtzeitig aus eskalierenden Gesprächen aussteigen möchten.",
+      "Pause statt Streit hilft, Kipppunkte früher zu erkennen. Der Schwerpunkt liegt darauf, rechtzeitig auszusteigen, bevor ein Gespräch beide Seiten weiter verletzt.",
       "Sie finden drei Zustände, die Kernaussage, eine kurze Orientierung und drei praktische Hinweise für den Alltag.",
     ],
     sections: [
@@ -2201,7 +2201,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Validieren ist nicht nachgeben. Sie können Gefühle anerkennen, ohne Schuld zu übernehmen oder der Interpretation zustimmen zu müssen.",
     intro: [
-      "Diese Seite überträgt das Handout «Zuhören ohne Zustimmen – Anerkennen ist nicht gleich Recht geben» in eine lesbare Web-Version. Es richtet sich an Angehörige, die empathisch bleiben wollen, ohne dabei ihre eigene Sicht aufzugeben.",
+      "Zuhören ohne Zustimmen zeigt, wie Anerkennung möglich ist, ohne die eigene Sicht aufzugeben. So kann Verbindung entstehen, ohne dass Grenzen verschwimmen.",
       "Sie finden anerkennende Sätze, Beispiele für ungünstige Zustimmung, eine Grenze mit Plan, die Kernaussage und drei kurze Übungshinweise.",
     ],
     sections: [
@@ -2259,7 +2259,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Ein kurzer Beispiel-Dialog zeigt, wie Verbinden, Kontakt, Grenze, Plan und Rückkehr in einem eskalierenden Gespräch zusammenspielen können.",
     intro: [
-      "Diese Seite überträgt das Handout «Beispiel-Dialog – So könnte ein Gespräch aussehen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Technik-Schritte lieber an einem konkreten Ablauf als an reinen Regeln üben.",
+      "Der Beispiel-Dialog zeigt einen möglichen Gesprächsablauf Schritt für Schritt. Er ist hilfreich, wenn sich konkrete Sätze greifbarer anfühlen als reine Regeln.",
       "Sie finden einen kurzen Dialogverlauf, die Kernaussage und drei Hinweise für das eigene Üben.",
     ],
     sections: [
@@ -2322,7 +2322,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "DEAR hilft, Wünsche klar und ohne Vorwürfe zu formulieren. Die vier Schritte geben Gesprächen Struktur und senken das Eskalationsrisiko.",
     intro: [
-      "Diese Seite überträgt das Handout «Die DEAR-Technik – Grenzen setzen ohne Vorwürfe» in eine lesbare Web-Version. Es richtet sich an Angehörige, die eigene Wünsche und Grenzen klarer ansprechen möchten.",
+      "Die DEAR-Technik unterstützt klare Wünsche und Grenzen ohne Vorwurfslogik. Sie hilft, beim eigenen Anliegen zu bleiben und trotzdem respektvoll zu formulieren.",
       "Die vier Schritte von DEAR werden mit kurzen Beispielen, einer Merkhilfe und drei alltagsnahen Übungshinweisen verbunden.",
     ],
     sections: [
@@ -2379,7 +2379,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Mitgefühl heisst nicht Übernehmen. Sie können Leid anerkennen, ohne Schmerz, Wut oder Leere des anderen zu Ihren eigenen zu machen.",
     intro: [
-      "Diese Seite überträgt das Handout «Spiegeln statt Aufsaugen – Mitfühlen ohne Übernehmen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die empathisch bleiben wollen, ohne sich dabei selbst zu verlieren.",
+      "Spiegeln statt Aufsaugen hilft, empathisch zu bleiben, ohne alles zu übernehmen. Der Unterschied schützt Verbindung und Selbstgrenze zugleich.",
       "Sie finden zuerst die Kernfrage, dann den Unterschied zwischen Aufsaugen und Spiegeln und zum Schluss drei kurze Hinweise für den Alltag.",
     ],
     sections: [
@@ -2448,7 +2448,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Grenzen sind nicht nur emotional. Auch Körper, Zeit und materielle Ressourcen dürfen geschützt werden.",
     intro: [
-      "Diese Seite überträgt das Handout «Die 4 Arten von Grenzen – Wissen, was Sie schützen» in eine lesbare Web-Version. Es hilft Angehörigen, Grenzverletzungen genauer einzuordnen und den eigenen Schutzbedarf klarer zu benennen.",
+      "Die vier Arten von Grenzen helfen, Schutzbedarf genauer zu benennen. So wird klarer, welche Grenze gerade verletzt ist und welche Reaktion dazu passt.",
       "Die vier Bereiche werden mit kurzen Beispielen und je einem Warnsignal verbunden.",
     ],
     sections: [
@@ -2495,7 +2495,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Oft meldet sich eine Grenzverletzung zuerst im Körper. Wer die eigenen Warnsignale kennt, kann früher gegensteuern.",
     intro: [
-      "Diese Seite überträgt das Handout «Grenzen erkennen – 5 Warnsignale Ihres Körpers und Ihrer Seele» in eine lesbare Web-Version. Es unterstützt Angehörige dabei, frühe Überlastungszeichen ernster zu nehmen.",
+      "Körper und Seele melden oft früh, wenn eine Grenze überschritten ist. Die fünf Warnsignale unterstützen Angehörige dabei, Überlastung ernster zu nehmen.",
       "Sie finden eine Kernaussage, fünf typische Warnsignale und eine kurze Abschlussfrage zur Selbstbeobachtung.",
     ],
     sections: [
@@ -2546,7 +2546,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Wenn Grenzen ignoriert werden, reicht eine Bitte oft nicht. L.M.K. verbindet klare Ansage, logische Konsequenz und ruhiges Handeln.",
     intro: [
-      "Diese Seite überträgt das Handout «Wenn Grenzen nicht respektiert werden – Die LMK-Methode» in eine lesbare Web-Version. Es richtet sich an Angehörige, die nach wiederholten Grenzverletzungen konsequent und ohne Drohlogik handeln wollen.",
+      "Die LMK-Methode hilft, nach wiederholten Grenzverletzungen konsequent zu bleiben, ohne in Drohlogik zu geraten. Sie verbindet Lage, Mitteilung und Konsequenz.",
       "Sie finden drei Stufen: Grenze setzen, die eigene Kontrolle klären, logische Konsequenz ankündigen und bei Bedarf handeln. Dazu kommen eine kurze Merkhilfe und drei Hinweise für die Umsetzung.",
     ],
     sections: [
@@ -2623,7 +2623,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Langzeitdaten machen Hoffnung: Genesung ist möglich, aber sie braucht Zeit, Rückschläge, Geduld und professionelle Unterstützung.",
     intro: [
-      "Diese Seite überträgt das Handout «Genesung in Zahlen – Was die Forschung zeigt» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Hoffnung auf belastbare Daten stützen möchten, ohne den Weg zu romantisieren.",
+      "Genesung in Zahlen stützt Hoffnung auf belastbare Verlaufsdaten, ohne den Weg zu romantisieren. Die Zahlen helfen, Fortschritt realistischer einzuordnen.",
       "Sie finden drei zentrale Kennzahlen, eine grobe zeitliche Einordnung, die Kernaussage des Handouts und drei konkrete Hinweise für den Alltag von Angehörigen.",
     ],
     sections: [
@@ -2702,7 +2702,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Genesung verläuft nicht linear. Rückschläge gehören zum Weg und entwerten bereits Erreichtes nicht automatisch.",
     intro: [
-      "Diese Seite überträgt das Handout «Das Fortschritt-Paradox – Warum Rückschritte zum Weg gehören» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Einbrüche realistischer einordnen möchten.",
+      "Das Fortschritt-Paradox erklärt, warum Rückschritte den bisherigen Weg nicht automatisch entwerten. Es hilft, Einbrüche realistischer einzuordnen.",
       "Zuerst steht die Kernaussage im Vordergrund, danach folgen drei kurze Einordnungen und konkrete Hinweise für den Alltag.",
     ],
     sections: [
@@ -2747,7 +2747,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Remission ist oft das realistische Ziel: Symptome können deutlich abnehmen, Alltag und Beziehungen stabiler werden, auch wenn nicht alles vollständig verschwindet.",
     intro: [
-      "Diese Seite überträgt das Handout «Remission vs. Heilung – Was realistisch ist» in eine lesbare Web-Version. Es hilft Angehörigen, Besserung differenzierter und weniger schwarz-weiss einzuordnen.",
+      "Remission und Heilung werden im Alltag oft vermischt. Diese Einordnung hilft, Besserung differenzierter und weniger schwarz-weiss zu verstehen.",
       "Heilung und Remission werden bewusst gegenübergestellt und mit einer knappen Kernaussage sowie drei alltagsnahen Hinweisen ergänzt.",
     ],
     sections: [
@@ -2793,7 +2793,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Genesung wird eher gefördert, wenn Behandlung, Medikation, Beziehungen, Lebensqualität und Zeit zusammenspielen. Angehörige können vor allem das Beeinflussbare unterstützen.",
     intro: [
-      "Diese Seite überträgt das Handout «5 Faktoren der Genesung – Was Forschung zeigt» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Hoffnung mit einem realistischen Blick auf wirksame Einflussfaktoren verbinden möchten.",
+      "Die fünf Faktoren verbinden Hoffnung mit einem realistischen Blick auf wirksame Einflussfaktoren. Sie zeigen, was Entwicklung begünstigen kann, ohne sie zu garantieren.",
       "Sie finden fünf Faktoren, eine Kernaussage und drei Hinweise dazu, wie Angehörige den Prozess hilfreich begleiten können.",
     ],
     sections: [
@@ -2846,7 +2846,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Angehörige können Genesung unterstützen, aber nicht herstellen. Der wichtigste Beitrag ist oft die eigene Stabilität, nicht das Retten.",
     intro: [
-      "Diese Seite überträgt das Handout «Ihre Rolle im Genesungsprozess – Was Sie tun können – und was nicht» in eine lesbare Web-Version. Es hilft Angehörigen, ihren Beitrag klarer von Überverantwortung zu unterscheiden.",
+      "Die Rolle von Angehörigen im Genesungsprozess ist wichtig, aber begrenzt. Diese Orientierung hilft, den eigenen Beitrag klarer von Überverantwortung zu unterscheiden.",
       "Sie finden hilfreiche Beiträge, klare Nicht-Aufgaben, die Kernbotschaft des Blatts und drei kurze Selbstchecks für den Alltag.",
     ],
     sections: [
@@ -2937,7 +2937,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Kinder merken meist, dass etwas anders ist. Eine altersgerechte Erklärung schafft Sicherheit, nimmt Schuld und stärkt das Vertrauen.",
     intro: [
-      "Diese Seite überträgt das Handout «Wenn Mama oder Papa grosse Gefühle hat» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Borderline kindgerecht erklären und Kinder im Familiensystem besser schützen möchten.",
+      "Wenn Kinder grosse Gefühle in der Familie miterleben, brauchen sie einfache Worte und verlässliche Entlastung. Diese Orientierung unterstützt Angehörige beim kindgerechten Erklären und Schützen.",
       "Sie finden zuerst die entlastende Grundhaltung, dann altersbezogene Erklärungen, Hinweise für Geschwisterkinder, Schutzfaktoren und einen Merksatz, der Kinder konsequent von Verantwortung entlastet.",
     ],
     sections: [
@@ -3005,7 +3005,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Der Spickzettel bündelt konkrete Satzbausteine für klare Grenzen, Spiegeln ohne Aufsaugen und eine Exit-Strategie mit Liebe, Grenze und Konsequenz.",
     intro: [
-      "Diese Seite überträgt den «Spickzettel Grenzen» in eine lesbare und kopierbare Web-Version. Er ist dafür gedacht, vor schwierigen Gesprächen kurz die wichtigsten Satzmuster durchzugehen.",
+      "Der Spickzettel Grenzen bündelt kurze Satzmuster für schwierige Gespräche. Er ist dafür gedacht, vor einem Gespräch schnell die wichtigsten Formulierungen durchzugehen.",
       "Die vier Bereiche sind direkt nutzbar aufgebaut: DEAR-Technik, Beispielsätze bei Grenzüberschreitungen, Spiegeln statt Aufsaugen und die L.M.K.-Exit-Strategie.",
     ],
     sections: [

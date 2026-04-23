@@ -40,14 +40,8 @@
   force = true
 
 [[redirects]]
-  from = "/selbsttest"
-  to = "/selbsttest/index.html"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/selbsttest/"
-  to = "/selbsttest/index.html"
+  from = "/soforthilfe"
+  to = "/soforthilfe/index.html"
   status = 200
   force = true
 

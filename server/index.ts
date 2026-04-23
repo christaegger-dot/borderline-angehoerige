@@ -8,6 +8,7 @@ import { createMaterialDownloadResponse } from "./material-download";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const STATIC_DIRECT_PAGE_ROUTES = new Set(["/soforthilfe"]);
 
 async function startServer() {
   const app = express();
@@ -44,17 +45,29 @@ async function startServer() {
       return next();
     }
 
-    const directPagePath = path.join(
+    const routeDirectoryPath = path.join(
       staticPath,
-      req.path.replace(/^\/+/, ""),
-      "index.html"
+      req.path.replace(/^\/+/, "")
     );
+    const directPagePath = path.join(routeDirectoryPath, "index.html");
 
-    if (!fs.existsSync(directPagePath)) {
-      return next();
+    if (STATIC_DIRECT_PAGE_ROUTES.has(req.path)) {
+      if (!fs.existsSync(directPagePath)) {
+        return next();
+      }
+
+      return res.sendFile(directPagePath);
     }
 
-    res.sendFile(directPagePath);
+    if (
+      fs.existsSync(routeDirectoryPath) &&
+      fs.statSync(routeDirectoryPath).isDirectory() &&
+      !fs.existsSync(directPagePath)
+    ) {
+      return res.sendFile(path.join(staticPath, "index.html"));
+    }
+
+    return next();
   });
 
   app.use(express.static(staticPath));

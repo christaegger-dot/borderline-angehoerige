@@ -125,6 +125,11 @@ describe("Smoke Tests – Kritische Seiten", () => {
       await screen.findByText(/Sie können das Schiff nicht steuern/i)
     ).toBeInTheDocument();
     expect(
+      screen.getByRole("heading", {
+        name: /Worum es in diesem Handout geht/i,
+      })
+    ).toBeInTheDocument();
+    expect(
       screen.getByRole("link", { name: /Zur Materialsammlung/i })
     ).toHaveAttribute("href", "/materialien");
   });

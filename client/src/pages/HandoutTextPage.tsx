@@ -200,7 +200,7 @@ export default function HandoutTextPage({
             <Card className="border-sage-light bg-sage-wash/70">
               <CardContent className="p-6">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  Lesbare Web-Version statt bildbasiertem PDF
+                  Worum es in diesem Handout geht
                 </h2>
                 {handout ? (
                   <div className="space-y-3 text-muted-foreground leading-relaxed">

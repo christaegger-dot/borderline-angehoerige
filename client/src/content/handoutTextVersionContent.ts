@@ -390,7 +390,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Sie können Orientierung, Hoffnung und klare Grenzen geben. Therapie ersetzen, Verhalten kontrollieren oder die Genesung tragen müssen Sie nicht.",
     intro: [
-      "Diese Seite überträgt die Infografik «Ihre Rolle klären» in eine lesbare Web-Version. Die Grundstruktur des Originals bleibt erhalten: Ihr Beitrag, nicht Ihre Aufgabe und die Rolle professioneller Hilfe.",
+      "Diese Seite überträgt die Infografik «Ihre Rolle klären» in eine lesbare Web-Version. Im Zentrum stehen drei Unterscheidungen: Ihr Beitrag, nicht Ihre Aufgabe und die Rolle professioneller Hilfe.",
       "Das Handout hilft Angehörigen dabei, Unterstützung realistisch zu verstehen: zugewandt und stabil bleiben, ohne in Therapie, Kontrolle oder Selbstaufgabe abzurutschen.",
     ],
     sections: [
@@ -1134,7 +1134,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Wenn der Alarm-Modus aktiv ist, ist Ihr Gegenüber vorübergehend schwer erreichbar. Erst beruhigen, dann klären: Die Brücke vom Alarm zum Denken braucht Sicherheit und weniger Druck.",
     intro: [
-      "Diese Seite überträgt das Handout «Alarm-Modus vs. Denk-Modus» in eine lesbare Web-Version. Die Grundidee des Originals bleibt erhalten: Unter hoher Anspannung steht nicht dieselbe Denkfähigkeit zur Verfügung wie in ruhigeren Momenten.",
+      "Diese Seite überträgt das Handout «Alarm-Modus vs. Denk-Modus» in eine lesbare Web-Version. Die zentrale Idee: Unter hoher Anspannung steht nicht dieselbe Denkfähigkeit zur Verfügung wie in ruhigeren Momenten.",
       "Für Angehörige ist das eine Entlastung und eine Handlungsorientierung zugleich. Nicht jede Eskalation ist böser Wille oder bewusste Verweigerung – oft ist sie Ausdruck eines neurobiologisch eingeengten Zustands.",
     ],
     sections: [
@@ -1352,7 +1352,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Überlastung baut sich oft schrittweise auf. Wer erste Warnzeichen ernst nimmt, kann früher gegensteuern und rechtzeitig Hilfe holen.",
     intro: [
-      "Diese Seite überträgt das Handout «Warnsignale der Überlastung» in eine lesbare Web-Version. Die Ampellogik des Originals bleibt inhaltlich erhalten: grün, gelb und rot markieren unterschiedliche Belastungsstufen.",
+      "Diese Seite überträgt das Handout «Warnsignale der Überlastung» in eine lesbare Web-Version. Die Ampellogik bleibt erhalten: Grün, Gelb und Rot markieren unterschiedliche Belastungsstufen.",
       "Die Grafik ist als frühzeitige Orientierung gedacht, nicht als Selbstvorwurf. Entscheidend ist, Belastung ernst zu nehmen, bevor Erschöpfung oder Krisen eskalieren.",
     ],
     sections: [
@@ -1768,7 +1768,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Schuldgefühle sind bei Angehörigen häufig und verständlich. Hilfreicher als der Blick zurück ist die Frage, was Sie heute beeinflussen können, ohne sich die ganze Verantwortung aufzuladen.",
     intro: [
       "Diese Seite überträgt das Handout «Schuld, Verantwortung und was dazwischen liegt» in eine lesbare Web-Version. Sie richtet sich an Angehörige, die sich zwischen Selbstvorwurf, Fürsorge und Verantwortung verlieren.",
-      "Die Struktur des Originals bleibt erhalten: zuerst die Einordnung von Schuldgefühlen, dann der Blick auf Forschung, der Vergleich zwischen Schuld und Verantwortung und schliesslich typische Selbstvorwürfe mit einer realistischeren Gegenperspektive.",
+      "Sie finden zuerst eine Einordnung von Schuldgefühlen, dann den Blick auf Forschung, den Unterschied zwischen Schuld und Verantwortung und typische Selbstvorwürfe mit einer realistischeren Gegenperspektive.",
     ],
     sections: [
       {
@@ -1883,7 +1883,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       {
         title: "Was Radikale Akzeptanz nicht ist",
         intro:
-          "Die linke Spalte des Originals grenzt bewusst Missverständnisse ab. Akzeptanz bedeutet nicht, Belastendes schönzureden oder sich selbst aufzugeben.",
+          "Die Gegenüberstellung grenzt bewusst Missverständnisse ab. Akzeptanz bedeutet nicht, Belastendes schönzureden oder sich selbst aufzugeben.",
         cards: [
           {
             title: "Nicht Aufgeben",
@@ -1966,7 +1966,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Schuldzuweisungen treffen oft hart, sagen aber meist mehr über Schmerz, Angst oder Hilflosigkeit als über Ihren Wert. Die Web-Version zeigt fünf häufige Sätze und ruhigere Antworten darauf.",
     intro: [
       "Diese Seite überträgt das Handout «Wenn Worte treffen – 5 häufige Schuldzuweisungen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die in belasteten Gesprächen mit harten Vorwürfen oder entwertenden Sätzen konfrontiert werden.",
-      "Die Struktur des Originals bleibt erhalten: eine entlastende Grundhaltung, fünf typische Schuldzuweisungen mit möglicher Einordnung und Antwort sowie ein abschliessender Merksatz, der Mitgefühl und Selbstschutz zusammenhält.",
+      "Sie finden eine entlastende Grundhaltung, fünf typische Schuldzuweisungen mit möglicher Einordnung und Antwort sowie einen abschliessenden Merksatz, der Mitgefühl und Selbstschutz zusammenhält.",
     ],
     sections: [
       {
@@ -2018,7 +2018,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Wenn Gespräche kippen, helfen oft nicht mehr Erklärungen, sondern drei kurze Schritte: beruhigen, verbinden, begrenzen.",
     intro: [
       "Diese Seite überträgt das Handout «Wenn Gespräche kippen – Was Sie tun können, bevor es eskaliert» in eine lesbare Web-Version. Es richtet sich an Angehörige, die in angespannten Momenten eine kurze, klare Gesprächsstruktur brauchen.",
-      "Die Struktur des Originals bleibt erhalten: drei Schritte, ein kurzer Pausenplan für Kipppunkte, die Kernaussage des Blatts, eine kleine Merkhilfe und drei alltagsnahe Hinweise.",
+      "Sie finden drei Schritte, einen kurzen Pausenplan für Kipppunkte, die Kernaussage des Blatts, eine kleine Merkhilfe und drei alltagsnahe Hinweise.",
     ],
     sections: [
       {
@@ -2134,7 +2134,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Nicht jede Anspannung ist noch gesprächsfähig. Das Handout unterscheidet stabil, Warnstufe und Eskalation und zeigt, wann Sie stoppen sollten.",
     intro: [
       "Diese Seite überträgt das Handout «Pause statt Streit – Wann Sie stoppen sollten und wie» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Kipppunkte früher erkennen und rechtzeitig aus eskalierenden Gesprächen aussteigen möchten.",
-      "Die Struktur des Originals bleibt erhalten: drei Zustände, die Kernaussage, eine kurze Orientierung und drei praktische Hinweise für den Alltag.",
+      "Sie finden drei Zustände, die Kernaussage, eine kurze Orientierung und drei praktische Hinweise für den Alltag.",
     ],
     sections: [
       {
@@ -2202,7 +2202,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Validieren ist nicht nachgeben. Sie können Gefühle anerkennen, ohne Schuld zu übernehmen oder der Interpretation zustimmen zu müssen.",
     intro: [
       "Diese Seite überträgt das Handout «Zuhören ohne Zustimmen – Anerkennen ist nicht gleich Recht geben» in eine lesbare Web-Version. Es richtet sich an Angehörige, die empathisch bleiben wollen, ohne dabei ihre eigene Sicht aufzugeben.",
-      "Die Struktur folgt dem Original: anerkennende Sätze, Sätze, die in Zustimmung kippen würden, Grenze plus Plan, die Kernaussage und drei kurze Übungshinweise.",
+      "Sie finden anerkennende Sätze, Beispiele für ungünstige Zustimmung, eine Grenze mit Plan, die Kernaussage und drei kurze Übungshinweise.",
     ],
     sections: [
       {
@@ -2323,7 +2323,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "DEAR hilft, Wünsche klar und ohne Vorwürfe zu formulieren. Die vier Schritte geben Gesprächen Struktur und senken das Eskalationsrisiko.",
     intro: [
       "Diese Seite überträgt das Handout «Die DEAR-Technik – Grenzen setzen ohne Vorwürfe» in eine lesbare Web-Version. Es richtet sich an Angehörige, die eigene Wünsche und Grenzen klarer ansprechen möchten.",
-      "Das Original verbindet die vier Schritte von DEAR mit kurzen Beispielen, einer Merkhilfe und drei alltagsnahen Übungshinweisen. Diese Struktur bleibt in der Web-Version erhalten.",
+      "Die vier Schritte von DEAR werden mit kurzen Beispielen, einer Merkhilfe und drei alltagsnahen Übungshinweisen verbunden.",
     ],
     sections: [
       {
@@ -2335,7 +2335,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       {
         title: "Die 4 Schritte",
         intro:
-          "Für die Web-Version ist die Abfolge bewusst nach dem Akronym DEAR sortiert. Jeder Schritt kombiniert eine Funktion mit einem kurzen Beispielsatz.",
+          "Die Abfolge ist bewusst nach dem Akronym DEAR sortiert. Jeder Schritt kombiniert eine Funktion mit einem kurzen Beispielsatz.",
         cards: [
           {
             title: "D = Describe (Beschreiben)",
@@ -2380,7 +2380,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Mitgefühl heisst nicht Übernehmen. Sie können Leid anerkennen, ohne Schmerz, Wut oder Leere des anderen zu Ihren eigenen zu machen.",
     intro: [
       "Diese Seite überträgt das Handout «Spiegeln statt Aufsaugen – Mitfühlen ohne Übernehmen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die empathisch bleiben wollen, ohne sich dabei selbst zu verlieren.",
-      "Die Struktur des Originals bleibt erhalten: zuerst die Kernfrage, dann der Unterschied zwischen Aufsaugen und Spiegeln und zum Schluss drei kurze Hinweise für den Alltag.",
+      "Sie finden zuerst die Kernfrage, dann den Unterschied zwischen Aufsaugen und Spiegeln und zum Schluss drei kurze Hinweise für den Alltag.",
     ],
     sections: [
       {
@@ -2496,7 +2496,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Oft meldet sich eine Grenzverletzung zuerst im Körper. Wer die eigenen Warnsignale kennt, kann früher gegensteuern.",
     intro: [
       "Diese Seite überträgt das Handout «Grenzen erkennen – 5 Warnsignale Ihres Körpers und Ihrer Seele» in eine lesbare Web-Version. Es unterstützt Angehörige dabei, frühe Überlastungszeichen ernster zu nehmen.",
-      "Die Struktur folgt dem Original: eine Kernaussage, fünf typische Warnsignale und eine kurze Abschlussfrage zur Selbstbeobachtung.",
+      "Sie finden eine Kernaussage, fünf typische Warnsignale und eine kurze Abschlussfrage zur Selbstbeobachtung.",
     ],
     sections: [
       {
@@ -2547,7 +2547,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Wenn Grenzen ignoriert werden, reicht eine Bitte oft nicht. L.M.K. verbindet klare Ansage, logische Konsequenz und ruhiges Handeln.",
     intro: [
       "Diese Seite überträgt das Handout «Wenn Grenzen nicht respektiert werden – Die LMK-Methode» in eine lesbare Web-Version. Es richtet sich an Angehörige, die nach wiederholten Grenzverletzungen konsequent und ohne Drohlogik handeln wollen.",
-      "Die Struktur des Originals bleibt erhalten: Stufe 1 Grenze setzen, die Dichotomie der Kontrolle, Stufe 2 logische Konsequenz, Stufe 3 handeln, eine kurze Merkhilfe und drei Hinweise für die Umsetzung.",
+      "Sie finden drei Stufen: Grenze setzen, die eigene Kontrolle klären, logische Konsequenz ankündigen und bei Bedarf handeln. Dazu kommen eine kurze Merkhilfe und drei Hinweise für die Umsetzung.",
     ],
     sections: [
       {
@@ -2624,7 +2624,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Langzeitdaten machen Hoffnung: Genesung ist möglich, aber sie braucht Zeit, Rückschläge, Geduld und professionelle Unterstützung.",
     intro: [
       "Diese Seite überträgt das Handout «Genesung in Zahlen – Was die Forschung zeigt» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Hoffnung auf belastbare Daten stützen möchten, ohne den Weg zu romantisieren.",
-      "Die Struktur des Originals bleibt erhalten: drei zentrale Kennzahlen, eine grobe zeitliche Einordnung, die Kernaussage des Handouts und drei konkrete Hinweise für den Alltag von Angehörigen.",
+      "Sie finden drei zentrale Kennzahlen, eine grobe zeitliche Einordnung, die Kernaussage des Handouts und drei konkrete Hinweise für den Alltag von Angehörigen.",
     ],
     sections: [
       {
@@ -2703,7 +2703,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Genesung verläuft nicht linear. Rückschläge gehören zum Weg und entwerten bereits Erreichtes nicht automatisch.",
     intro: [
       "Diese Seite überträgt das Handout «Das Fortschritt-Paradox – Warum Rückschritte zum Weg gehören» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Einbrüche realistischer einordnen möchten.",
-      "Die Struktur bleibt eng am Original: zuerst die Kernaussage, dann drei kurze Einordnungen und zum Schluss drei konkrete Hinweise für den Alltag.",
+      "Zuerst steht die Kernaussage im Vordergrund, danach folgen drei kurze Einordnungen und konkrete Hinweise für den Alltag.",
     ],
     sections: [
       {
@@ -2794,7 +2794,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Genesung wird eher gefördert, wenn Behandlung, Medikation, Beziehungen, Lebensqualität und Zeit zusammenspielen. Angehörige können vor allem das Beeinflussbare unterstützen.",
     intro: [
       "Diese Seite überträgt das Handout «5 Faktoren der Genesung – Was Forschung zeigt» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Hoffnung mit einem realistischen Blick auf wirksame Einflussfaktoren verbinden möchten.",
-      "Die Struktur folgt dem Original: fünf Faktoren, eine Kernaussage und drei Hinweise dazu, wie Angehörige den Prozess hilfreich begleiten können.",
+      "Sie finden fünf Faktoren, eine Kernaussage und drei Hinweise dazu, wie Angehörige den Prozess hilfreich begleiten können.",
     ],
     sections: [
       {
@@ -2938,7 +2938,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Kinder merken meist, dass etwas anders ist. Eine altersgerechte Erklärung schafft Sicherheit, nimmt Schuld und stärkt das Vertrauen.",
     intro: [
       "Diese Seite überträgt das Handout «Wenn Mama oder Papa grosse Gefühle hat» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Borderline kindgerecht erklären und Kinder im Familiensystem besser schützen möchten.",
-      "Die Struktur des Originals bleibt erhalten: zuerst die entlastende Grundhaltung, dann altersbezogene Erklärungen, Hinweise für Geschwisterkinder, Schutzfaktoren und ein Merksatz, der Kinder konsequent von Verantwortung entlastet.",
+      "Sie finden zuerst die entlastende Grundhaltung, dann altersbezogene Erklärungen, Hinweise für Geschwisterkinder, Schutzfaktoren und einen Merksatz, der Kinder konsequent von Verantwortung entlastet.",
     ],
     sections: [
       {
@@ -3006,7 +3006,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Der Spickzettel bündelt konkrete Satzbausteine für klare Grenzen, Spiegeln ohne Aufsaugen und eine Exit-Strategie mit Liebe, Grenze und Konsequenz.",
     intro: [
       "Diese Seite überträgt den «Spickzettel Grenzen» in eine lesbare und kopierbare Web-Version. Er ist dafür gedacht, vor schwierigen Gesprächen kurz die wichtigsten Satzmuster durchzugehen.",
-      "Die Struktur folgt den vier Bereichen des Originals: DEAR-Technik, Beispielsätze bei Grenzüberschreitungen, Spiegeln statt Aufsaugen und die L.M.K.-Exit-Strategie.",
+      "Die vier Bereiche sind direkt nutzbar aufgebaut: DEAR-Technik, Beispielsätze bei Grenzüberschreitungen, Spiegeln statt Aufsaugen und die L.M.K.-Exit-Strategie.",
     ],
     sections: [
       {

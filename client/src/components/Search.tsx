@@ -319,7 +319,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                 <span className="flex items-center gap-2">
                   <span>
                     <kbd className="px-1.5 py-0.5 bg-background border border-border rounded text-[10px]">
-                      \u2191\u2193
+                      ↑↓
                     </kbd>{" "}
                     navigieren
                   </span>

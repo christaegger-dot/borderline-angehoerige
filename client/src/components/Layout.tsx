@@ -61,7 +61,7 @@ export default function Layout({ children }: LayoutProps) {
           <span className="font-medium text-foreground">
             Notfallkontakte: Schweiz (Kanton Zürich)
           </span>
-          <span className="hidden sm:inline">\u2022</span>
+          <span className="hidden sm:inline">•</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
           {showInlineSoforthilfeLink && (
             <Link
@@ -91,7 +91,7 @@ export default function Layout({ children }: LayoutProps) {
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <BrandMark variant="dark" />
                 <span className="font-medium text-base text-white">
-                  Borderline \u00b7 Hilfe für Angehörige
+                  Borderline · Hilfe für Angehörige
                 </span>
               </Link>
               <p className="text-white/90 text-sm leading-relaxed">
@@ -169,8 +169,7 @@ export default function Layout({ children }: LayoutProps) {
             }`}
           >
             <p className="text-white/90 text-sm">
-              \u00a9 2026 Borderline \u00b7 Hilfe für Angehörige. Alle Rechte
-              vorbehalten.
+              © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <Link
@@ -223,7 +222,7 @@ export default function Layout({ children }: LayoutProps) {
         >
           <Link
             href="/soforthilfe"
-            aria-label="Soforthilfe \u2013 Notfallnummern und Krisenberatung"
+            aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
           >
             <Phone className="w-4 h-4" />
             Soforthilfe

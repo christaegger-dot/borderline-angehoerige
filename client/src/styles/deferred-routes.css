@@ -7,6 +7,9 @@
 
 @source "../pages";
 @source "../components";
+@source not "../components/ui";
+@source "../components/ui/accordion.tsx";
+@source "../components/ui/spinner.tsx";
 @source not "../pages/Home.tsx";
 @source not "../components/ErrorBoundary.tsx";
 @source not "../components/Search.tsx";

@@ -425,7 +425,7 @@ export const TEXTE = {
   pukEinleitung:
     "Die Psychiatrische Universitätsklinik Zürich (PUK) ist die kantonale Anlaufstelle für psychiatrische Krisen. Rufen Sie hier an, wenn eine akute psychische Krise vorliegt, aber keine unmittelbare Lebensgefahr besteht. Bei Lebensgefahr oder wenn sofort Hilfe vor Ort nötig ist: 144 / 117 / 112.",
   pukTriage:
-    "Am Telefon wird kurz eingeschätzt (Triage), was jetzt am besten hilft – z.\u00A0B. Beratung, weiteres Vorgehen oder Notfallaufnahme.",
+    "Am Telefon wird kurz eingeschätzt (Triage), was jetzt am besten hilft – z. B. Beratung, weiteres Vorgehen oder Notfallaufnahme.",
   gruenGefahrenhinweis:
     "Bei akuter Gefahr für sich oder andere: Immer zuerst 144 / 117 / 112 rufen. Die Nummern oben sind Sorgentelefone – es kommt niemand vorbei.",
   pukLabel:

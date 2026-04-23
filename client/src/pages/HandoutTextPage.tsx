@@ -87,7 +87,7 @@ export default function HandoutTextPage({
     handout?.description ??
     `${handoutMeta.description} Diese Seite bietet eine lesbare Textversion des Handouts.`;
   const pageSummary =
-    handout?.summary ?? "Die lesbare Web-Version dieses Handouts wird geladen.";
+    handout?.summary ?? "Die Textversion dieses Handouts wird geladen.";
   const pageTopicLabel = handout?.topicLabel ?? handoutMeta.topicLabel;
   const pageTopicHref = handout?.topicHref ?? handoutMeta.topicHref;
   const pageKind = handout?.kind ?? handoutMeta.kind;

@@ -169,7 +169,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Konkrete Orientierung für Angehörige bei Suizidgedanken, Selbstverletzung oder akuter seelischer Krise: Gefahr einschätzen, ruhig bleiben, direkt ansprechen und Hilfe einbeziehen.",
     intro: [
-      "Diese Seite überträgt den «Notfallplan bei psychischer Krise» in eine lesbare Web-Version. Sie hält die Struktur des PDFs bewusst eng bei, damit die Orientierung auch ohne Vorschau oder Download zugänglich bleibt.",
+      "Diese Seite macht den «Notfallplan bei psychischer Krise» direkt lesbar. Die Orientierung bleibt bewusst nah am Notfallplan, damit wichtige Hinweise auch ohne PDF-Ansicht schnell zugänglich sind.",
       "Der Notfallplan richtet sich an Angehörige, wenn Suizidgedanken, Selbstverletzung oder eine akute psychische Krise im Raum stehen. Er ersetzt keine professionelle Beurteilung, soll aber helfen, in einer belastenden Situation klarer zu handeln.",
     ],
     sections: [
@@ -1064,7 +1064,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Wenn Gespräche kippen, helfen Verbindung, kurze Orientierung und eine klare Grenze oft mehr als langes Argumentieren.",
     intro: [
-      "Diese Seite überträgt den «Spickzettel Krisenkommunikation» in eine such- und kopierbare Textfassung. Die Struktur bleibt nah am A4-Original, ist aber für das Lesen am Bildschirm aufbereitet.",
+      "Diese Seite macht den «Spickzettel Krisenkommunikation» such- und kopierbar. Die Struktur bleibt knapp und bildschirmfreundlich, damit Sie die Sätze in angespannten Momenten schnell finden.",
       "Die Grundidee ist bewusst knapp gehalten: zuerst Verbindung herstellen, dann Kontakt halten, dann Grenze und nächsten Schritt benennen.",
     ],
     sections: [
@@ -1539,7 +1539,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Die STOPP-Technik schafft in etwa 30 Sekunden Abstand zwischen Reiz und Reaktion. Das gibt Körper und Kopf wieder etwas mehr Handlungsspielraum.",
     intro: [
-      "Diese Seite überträgt das Handout «Die STOPP-Technik – 5 Schritte aus der Stressspirale» in eine lesbare Web-Version. Das Original fasst die DBT-Technik so zusammen, dass sie im Alltag schnell nutzbar bleibt.",
+      "Diese Seite überträgt das Handout «Die STOPP-Technik – 5 Schritte aus der Stressspirale» in eine lesbare Web-Version. Die DBT-Technik ist so zusammengefasst, dass sie im Alltag schnell nutzbar bleibt.",
       "Die fünf Buchstaben geben eine feste Reihenfolge vor: stoppen, atmen, orientieren, Perspektive weiten und dann erst handeln.",
     ],
     sections: [
@@ -1708,7 +1708,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
     summary:
       "Die Erlaubnis-Karte bündelt neun Sätze, die Angehörigen oft guttun: eigene Bedürfnisse ernst nehmen, Grenzen setzen und ein eigenes Leben behalten.",
     intro: [
-      "Diese Seite überträgt das Handout «Ihre Erlaubnis-Karte – Was Sie sich erlauben dürfen» in eine lesbare Web-Version. Das Original ist bewusst als persönliches Zertifikat aufgebaut: nicht als Pflichtliste, sondern als Erlaubnis zum Ankreuzen.",
+      "Diese Seite überträgt das Handout «Ihre Erlaubnis-Karte – Was Sie sich erlauben dürfen» in eine lesbare Web-Version. Die Erlaubnisse sind bewusst wie ein persönliches Zertifikat formuliert: nicht als Pflichtliste, sondern als Zusage zum Ankreuzen.",
       "Der Fokus ist entlastend. Die Grafik erinnert daran, dass Selbstfürsorge, Grenzen und eigene Gefühle nicht gegen die Beziehung stehen, sondern zu gesunder Angehörigenarbeit dazugehören.",
     ],
     sections: [
@@ -1871,7 +1871,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Radikale Akzeptanz bedeutet nicht Aufgeben, sondern die Realität anzuerkennen und Energie für das Beeinflussbare zurückzugewinnen.",
     intro: [
       "Diese Seite überträgt das Handout «Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln» in eine lesbare Web-Version. Sie richtet sich an Angehörige, die sich im inneren Kampf gegen belastende Realität erschöpfen.",
-      "Das Original arbeitet mit einem klaren Gegensatz: Was radikale Akzeptanz nicht ist, was sie ist, wie Sie sie in vier Schritten üben und worauf Sie Ihre Energie stattdessen richten können.",
+      "Die Gegenüberstellung zeigt, was radikale Akzeptanz nicht ist, was sie ist, wie Sie sie in vier Schritten üben und worauf Sie Ihre Energie stattdessen richten können.",
     ],
     sections: [
       {
@@ -2077,7 +2077,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Die 3-Teile-Formel hält Grenzsetzung knapp: Fakt, Ich-Grenze, nächster Schritt. So bleiben Sie klar, ohne in Rechtfertigungen zu geraten.",
     intro: [
       "Diese Seite überträgt das Handout «Grenzen setzen ohne Eskalation – Die 3-Teile-Formel» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Grenzen klar ansprechen wollen, ohne in Streitlogik hineingezogen zu werden.",
-      "Das Original kombiniert die Formel mit einem knappen Beispiel, einer Kernaussage, einer kurzen Merkhilfe und drei kurzen Umsetzungshinweisen.",
+      "Sie finden die Formel, ein knappes Beispiel, eine Kernaussage, eine kurze Merkhilfe und drei kurze Umsetzungshinweise.",
     ],
     sections: [
       {
@@ -2260,7 +2260,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Ein kurzer Beispiel-Dialog zeigt, wie Verbinden, Kontakt, Grenze, Plan und Rückkehr in einem eskalierenden Gespräch zusammenspielen können.",
     intro: [
       "Diese Seite überträgt das Handout «Beispiel-Dialog – So könnte ein Gespräch aussehen» in eine lesbare Web-Version. Es richtet sich an Angehörige, die Technik-Schritte lieber an einem konkreten Ablauf als an reinen Regeln üben.",
-      "Das Original zeigt einen kurzen Dialogverlauf, die Kernaussage und drei Hinweise für das eigene Üben. Diese Struktur bleibt hier erhalten.",
+      "Sie finden einen kurzen Dialogverlauf, die Kernaussage und drei Hinweise für das eigene Üben.",
     ],
     sections: [
       {
@@ -2449,7 +2449,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Grenzen sind nicht nur emotional. Auch Körper, Zeit und materielle Ressourcen dürfen geschützt werden.",
     intro: [
       "Diese Seite überträgt das Handout «Die 4 Arten von Grenzen – Wissen, was Sie schützen» in eine lesbare Web-Version. Es hilft Angehörigen, Grenzverletzungen genauer einzuordnen und den eigenen Schutzbedarf klarer zu benennen.",
-      "Das Original arbeitet mit vier Bereichen, kurzen Beispielen und je einem Warnsignal. Diese Struktur bleibt hier bewusst erhalten.",
+      "Die vier Bereiche werden mit kurzen Beispielen und je einem Warnsignal verbunden.",
     ],
     sections: [
       {
@@ -2748,7 +2748,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Remission ist oft das realistische Ziel: Symptome können deutlich abnehmen, Alltag und Beziehungen stabiler werden, auch wenn nicht alles vollständig verschwindet.",
     intro: [
       "Diese Seite überträgt das Handout «Remission vs. Heilung – Was realistisch ist» in eine lesbare Web-Version. Es hilft Angehörigen, Besserung differenzierter und weniger schwarz-weiss einzuordnen.",
-      "Das Original stellt Heilung und Remission bewusst gegenüber und ergänzt die Einordnung mit einer knappen Kernaussage und drei alltagsnahen Hinweisen.",
+      "Heilung und Remission werden bewusst gegenübergestellt und mit einer knappen Kernaussage sowie drei alltagsnahen Hinweisen ergänzt.",
     ],
     sections: [
       {
@@ -2847,7 +2847,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
       "Angehörige können Genesung unterstützen, aber nicht herstellen. Der wichtigste Beitrag ist oft die eigene Stabilität, nicht das Retten.",
     intro: [
       "Diese Seite überträgt das Handout «Ihre Rolle im Genesungsprozess – Was Sie tun können – und was nicht» in eine lesbare Web-Version. Es hilft Angehörigen, ihren Beitrag klarer von Überverantwortung zu unterscheiden.",
-      "Die Originalstruktur bleibt erhalten: hilfreiche Beiträge, klare Nicht-Aufgaben, die Kernbotschaft des Blatts und drei kurze Selbstchecks für den Alltag.",
+      "Sie finden hilfreiche Beiträge, klare Nicht-Aufgaben, die Kernbotschaft des Blatts und drei kurze Selbstchecks für den Alltag.",
     ],
     sections: [
       {

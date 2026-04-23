@@ -1,5 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { getRouteAccent } from "@/components/layout/routeAccent";
+import { getHandoutTextVersionMeta } from "@/content/handoutTextVersions";
 import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
 
 const pageNames: Record<string, string> = {
@@ -31,16 +32,44 @@ const pageNames: Record<string, string> = {
   "/uebungen": "Kommunikations-Übungen",
   "/quellen": "Quellen & Literatur",
   "/fachstelle": "Fachstelle Angehörigenarbeit",
+  "/barrierefreiheit": "Barrierefreiheit",
 };
 
-function getParentInfo(
+function normalizeLocation(location: string) {
+  return location.split("#")[0];
+}
+
+export function getParentInfo(
   location: string
 ): { href: string; label: string } | null {
-  if (location.startsWith("/unterstuetzen/")) {
+  const normalizedLocation = normalizeLocation(location);
+
+  if (normalizedLocation.startsWith("/materialien/text/")) {
+    return { href: "/materialien", label: "Materialien" };
+  }
+
+  if (normalizedLocation.startsWith("/unterstuetzen/")) {
     return { href: "/unterstuetzen/uebersicht", label: "Unterstützen" };
   }
 
   return null;
+}
+
+export function getPageName(location: string) {
+  const normalizedLocation = normalizeLocation(location);
+
+  if (normalizedLocation.startsWith("/materialien/text/")) {
+    const handoutId = decodeURIComponent(
+      normalizedLocation.replace("/materialien/text/", "")
+    );
+    return getHandoutTextVersionMeta(handoutId)?.title ?? "Textversion";
+  }
+
+  return (
+    pageNames[normalizedLocation] ||
+    normalizedLocation.split("/").pop()?.replace(/-/g, " ") ||
+    ""
+  );
 }
 
 export function Breadcrumbs() {
@@ -49,8 +78,7 @@ export function Breadcrumbs() {
 
   if (location === "/") return null;
 
-  const pageName =
-    pageNames[location] || location.split("/").pop()?.replace(/-/g, " ") || "";
+  const pageName = getPageName(location);
   const parent = getParentInfo(location);
   const backHref = parent?.href || "/";
   const backLabel = parent?.label || "Startseite";

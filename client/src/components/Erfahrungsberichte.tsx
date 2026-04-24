@@ -1,7 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Users, User, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Heart,
+  Users,
+  User,
+  ChevronLeft,
+  ChevronRight,
+  Pause,
+  Play,
+} from "lucide-react";
 
 interface Erfahrungsbericht {
   title: string;
@@ -86,9 +94,16 @@ export default function Erfahrungsberichte({
   const displayBerichte = berichte.slice(0, maxBerichte);
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const isPausedRef = useRef(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [direction, setDirection] = useState<1 | -1>(1);
+
+  const togglePause = () => {
+    const next = !isPausedRef.current;
+    isPausedRef.current = next;
+    setIsPaused(next);
+  };
 
   useEffect(() => {
     if (variant !== "carousel") return;
@@ -142,19 +157,29 @@ export default function Erfahrungsberichte({
 
   if (variant === "carousel") {
     return (
-      <section className="py-8 md:py-12">
+      <section
+        className="py-8 md:py-12"
+        aria-label="Erfahrungen von Angehörigen"
+        aria-roledescription="Karussell"
+      >
         <div className="container">
           {heading}
           <div
             className="relative max-w-2xl mx-auto"
             onMouseEnter={() => {
               isPausedRef.current = true;
+              setIsPaused(true);
             }}
             onMouseLeave={() => {
               isPausedRef.current = false;
+              setIsPaused(false);
             }}
           >
-            <div className="overflow-hidden rounded-xl">
+            <div
+              className="overflow-hidden rounded-xl"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={activeIndex}
@@ -190,20 +215,38 @@ export default function Erfahrungsberichte({
               <ChevronRight className="w-5 h-5 text-muted-foreground" />
             </button>
 
-            {/* Dots */}
-            <div className="flex justify-center gap-2 mt-5">
-              {displayBerichte.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goTo(i)}
-                  aria-label={`Bericht ${i + 1}`}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    i === activeIndex
-                      ? "bg-sage-dark w-5"
-                      : "bg-sage-light hover:bg-sage"
-                  }`}
-                />
-              ))}
+            {/* Dots + Pause-Button */}
+            <div className="flex justify-center items-center gap-3 mt-5">
+              <div className="flex gap-2">
+                {displayBerichte.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goTo(i)}
+                    aria-label={`Bericht ${i + 1} anzeigen`}
+                    aria-current={i === activeIndex ? "true" : undefined}
+                    className={`h-2 rounded-full transition-all ${
+                      i === activeIndex
+                        ? "bg-sage-dark w-5"
+                        : "bg-sage-light hover:bg-sage w-2"
+                    }`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={togglePause}
+                aria-label={
+                  isPaused
+                    ? "Automatisches Wechseln fortsetzen"
+                    : "Automatisches Wechseln pausieren"
+                }
+                className="w-7 h-7 rounded-full border border-border bg-white flex items-center justify-center hover:bg-sage-wash transition-colors"
+              >
+                {isPaused ? (
+                  <Play className="w-3.5 h-3.5 text-muted-foreground" />
+                ) : (
+                  <Pause className="w-3.5 h-3.5 text-muted-foreground" />
+                )}
+              </button>
             </div>
           </div>
 

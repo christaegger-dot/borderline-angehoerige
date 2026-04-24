@@ -249,6 +249,25 @@
   z-index: 1;
 }
 
+@media print {
+  header,
+  nav,
+  footer,
+  [data-print-hidden],
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body {
+    background: white !important;
+  }
+}
+
 @import "tailwindcss/utilities.css" layer(utilities) source(none);
 
 @source "./app/AppProviders.tsx";

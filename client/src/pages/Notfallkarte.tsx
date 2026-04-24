@@ -268,15 +268,21 @@ export default function Notfallkarte() {
         <div className="container max-w-3xl text-center">
           {storageError && (
             <div
-              className="flex items-start gap-3 mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-left print:hidden"
+              className="fixed top-0 left-0 right-0 z-50 flex items-center gap-3 px-4 py-3 bg-sand-accent border-b border-sand-border text-left print:hidden"
               role="alert"
             >
-              <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <p className="text-sm text-amber-800">
-                <strong>Speichern nicht möglich:</strong> Ihr Browser blockiert
-                den lokalen Speicher (z.B. im privaten Modus). Ihre Eingaben
-                werden nicht gespeichert. Bitte drucken Sie die Karte aus, bevor
-                Sie die Seite verlassen.
+              <AlertTriangle className="w-5 h-5 text-foreground shrink-0" />
+              <p className="text-sm text-foreground">
+                <strong>Speichern nicht möglich</strong> – privater Modus oder
+                gesperrter Speicher. Bitte{" "}
+                <button
+                  type="button"
+                  onClick={() => window.print()}
+                  className="underline font-semibold hover:no-underline"
+                >
+                  jetzt drucken
+                </button>{" "}
+                bevor Sie die Seite verlassen.
               </p>
             </div>
           )}

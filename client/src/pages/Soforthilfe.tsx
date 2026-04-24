@@ -291,7 +291,7 @@ export default function Notfall() {
       />
 
       {/* ═══ HERO ═══ */}
-      <section className="py-6 md:py-16 bg-gradient-to-b from-slate-wash/60 to-background">
+      <section className="py-3 md:py-10 bg-gradient-to-b from-slate-wash/60 to-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 16 }}

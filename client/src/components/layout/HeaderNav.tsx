@@ -111,7 +111,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <button
               type="button"
               onClick={onSearchOpen}
-              className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-white/82 text-muted-foreground shadow-sm shadow-black/5 transition-all hover:text-foreground hover:bg-muted"
+              className="sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-white/82 text-muted-foreground shadow-sm shadow-black/5 transition-all hover:text-foreground hover:bg-muted"
               aria-label="Suche öffnen"
             >
               <SearchIcon className="w-5 h-5" />
@@ -132,10 +132,18 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               </Link>
             </Button>
 
+            <Link
+              href="/soforthilfe"
+              aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
+              className="sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-alert text-white shadow-[0_8px_16px_-8px_rgba(197,95,61,0.6)]"
+            >
+              <Phone className="w-5 h-5" />
+            </Link>
+
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-white/82 shadow-sm shadow-black/5 transition-colors ${
+              className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-white/82 shadow-sm shadow-black/5 transition-colors ${
                 mobileMenuOpen ? currentAccent.surfaceActive : "hover:bg-muted"
               }`}
               aria-label={mobileMenuOpen ? "Menü schliessen" : "Menü öffnen"}

@@ -31,7 +31,7 @@ export default function Uebungsszenarien() {
             </Link>
 
             <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-sand-muteder flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
                 <MessageCircle className="w-6 h-6 text-sage-mid" />
               </div>
               <span className="text-sm font-medium text-sage-dark">

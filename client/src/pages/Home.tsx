@@ -3,6 +3,8 @@ import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import AnimatedStat from "@/components/AnimatedStat";
+import Erfahrungsberichte from "@/components/Erfahrungsberichte";
 import {
   AlertTriangle,
   ArrowRight,
@@ -459,6 +461,58 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="py-12 md:py-16 bg-sage-wash/50">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
+                <span className="w-6 h-px bg-sage-dark/30" />
+                Forschung & Praxis
+                <span className="w-6 h-px bg-sage-dark/30" />
+              </span>
+              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
+                Was Forschung und Praxis zeigen
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-sm">
+                Borderline-Verläufe sind heterogen – aber die Datenlage ist
+                deutlich hoffnungsvoller, als viele Angehörige erwarten.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <AnimatedStat
+                end={93}
+                suffix="%"
+                label="erreichen innerhalb von 10 Jahren eine symptomatische Remission"
+                delay={0}
+              />
+              <AnimatedStat
+                end={50}
+                suffix="%"
+                label="erreichen eine vollständige Genesung (Recovery)"
+                delay={0.15}
+              />
+              <AnimatedStat
+                end={10}
+                suffix=" J."
+                label="typischer Horizont für nachhaltige Verbesserung"
+                delay={0.3}
+              />
+            </div>
+            <p className="text-center text-xs text-muted-foreground mt-6">
+              Quellen: Zanarini et al. (2006, 2012), Paris & Zweig-Frank (2001).{" "}
+              <Link
+                href="/quellen"
+                className="underline hover:text-foreground transition-colors"
+              >
+                Alle Quellen ansehen
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Erfahrungsberichte />
 
       <section className="py-8 md:py-12 bg-gradient-to-r from-alert-dark via-alert to-alert-dark">
         <div className="container">

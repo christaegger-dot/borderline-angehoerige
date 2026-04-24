@@ -107,7 +107,7 @@ export default function UnterstuetzenTherapie() {
       />
       <TableOfContents />
 
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-wash/60 to-background">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-wash/60 to-background wave-divider">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -149,7 +149,7 @@ export default function UnterstuetzenTherapie() {
 
       <UnterstuetzenSubNav />
 
-      <section className="py-8 md:py-10">
+      <section className="py-8 md:py-10 wave-divider-top">
         <div className="container">
           <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
             <Card className="border-slate-light/70 bg-white/92 shadow-[0_28px_56px_-40px_rgba(60,99,140,0.25)]">

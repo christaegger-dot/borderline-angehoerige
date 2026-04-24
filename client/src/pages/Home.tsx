@@ -134,7 +134,7 @@ export default function Home() {
       <section className="home-hero-surface relative overflow-hidden text-white">
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div className="absolute -top-16 -right-16 w-80 h-80 rounded-full bg-sage-mid blur-3xl" />
-          <div className="absolute -bottom-10 left-1/3 w-56 h-56 rounded-full bg-amber blur-3xl" />
+          <div className="absolute -bottom-10 left-1/3 w-56 h-56 rounded-full bg-sand-accent blur-3xl" />
           <div className="absolute top-1/2 -left-20 w-64 h-64 rounded-full bg-sage-dark blur-3xl" />
         </div>
 
@@ -308,7 +308,7 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-[2rem] border border-navy-light/20 bg-navy text-white shadow-[0_35px_120px_-60px_rgba(16,33,51,0.9)]">
               <div className="pointer-events-none absolute inset-0">
                 <div className="absolute -top-24 right-0 w-80 h-80 rounded-full bg-sage-mid/18 blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-amber/15 blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-sand-accent/15 blur-3xl" />
                 <div className="absolute inset-y-0 left-[47%] w-px bg-white/8 hidden lg:block" />
               </div>
 
@@ -462,6 +462,8 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="home-section-divider h-6" />
+
       <section className="py-12 md:py-16 bg-sage-wash/50">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -512,7 +514,11 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="home-section-divider h-6" />
+
       <Erfahrungsberichte />
+
+      <div className="home-section-divider h-6" />
 
       <section className="py-8 md:py-12 bg-gradient-to-r from-alert-dark via-alert to-alert-dark">
         <div className="container">

@@ -308,7 +308,7 @@ export default function Notfall() {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-normal text-foreground mb-4 leading-tight">
               Soforthilfe bei akuter Gefahr
             </h1>
 

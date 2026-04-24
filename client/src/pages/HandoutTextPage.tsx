@@ -129,7 +129,7 @@ export default function HandoutTextPage({
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight mb-5">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground leading-tight mb-5">
                 {pageTitle}
               </h1>
 

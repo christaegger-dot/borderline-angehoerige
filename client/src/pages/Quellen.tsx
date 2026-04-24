@@ -181,7 +181,7 @@ export default function Quellen() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="w-8 h-8 text-sage-dark" />
-                <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+                <h1 className="text-3xl md:text-4xl font-normal text-foreground">
                   Quellen & Literatur
                 </h1>
               </div>

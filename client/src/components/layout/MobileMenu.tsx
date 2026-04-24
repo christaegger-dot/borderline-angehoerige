@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import {
   ChevronDown,
@@ -42,11 +43,22 @@ export function MobileMenu({
   const currentAccent = getRouteAccent(location);
 
   const groupedRessourcen = groupRessourcenItems(ressourcenItems);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      dialogRef.current?.querySelector<HTMLElement>("a, button")?.focus();
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
     <div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile Navigation"
       className="lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-border/50 bg-[linear-gradient(180deg,rgba(250,250,247,0.96),rgba(247,249,248,1))] [-webkit-overflow-scrolling:touch]"
       onKeyDown={e => {
         if (e.key === "Escape") {
@@ -54,7 +66,10 @@ export function MobileMenu({
         }
       }}
     >
-      <nav className="container flex flex-col gap-2 py-4 pb-[calc(16px+env(safe-area-inset-bottom,0px)+88px)]">
+      <nav
+        className="container flex flex-col gap-2 py-4 pb-[calc(16px+env(safe-area-inset-bottom,0px)+88px)]"
+        aria-label="Hauptnavigation"
+      >
         {navItems.map(item => {
           const Icon = item.icon;
           const isActive = location.startsWith(item.href);

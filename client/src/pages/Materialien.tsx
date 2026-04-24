@@ -27,7 +27,7 @@ export default function Materialien() {
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-5">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-5">
               Materialien für Angehörige
             </h1>
 

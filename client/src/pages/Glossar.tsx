@@ -467,7 +467,7 @@ export default function Glossar() {
       </section>
 
       {/* Hinweis */}
-      <section className="py-8 md:py-12 bg-sand">
+      <section className="py-8 md:py-12 bg-sand wave-divider-top [--wave-color:var(--background)]">
         <div className="container">
           <Card className="bg-white border-sand-subtle">
             <CardContent className="p-6 md:p-8">

@@ -714,7 +714,7 @@ export default function Genesung() {
         </div>
       </section>
 
-      <section className="py-8 md:py-12 bg-sand-muted">
+      <section className="py-8 md:py-12 bg-sand-muted wave-divider-top [--wave-color:var(--background)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div

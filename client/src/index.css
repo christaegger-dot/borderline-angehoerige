@@ -214,6 +214,41 @@
   }
 }
 
+/* ── Wellenübergänge zwischen Sektionen (Sanctuary Calm Design) ── */
+/* wave-divider: sanfter Bogen am unteren Rand einer Section */
+.wave-divider {
+  position: relative;
+}
+.wave-divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: var(--wave-color, var(--background));
+  clip-path: ellipse(52% 100% at 50% 100%);
+  pointer-events: none;
+}
+
+/* wave-divider-top: sanfter Bogen am oberen Rand einer Section */
+/* Verwendung: className="wave-divider-top [--wave-color:var(--background)]" */
+.wave-divider-top {
+  position: relative;
+}
+.wave-divider-top::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: var(--wave-color, var(--background));
+  clip-path: ellipse(52% 100% at 50% 0%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 @import "tailwindcss/utilities.css" layer(utilities) source(none);
 
 @source "./app/AppProviders.tsx";

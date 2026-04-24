@@ -27,7 +27,7 @@ export default function Wegweiser() {
             className="max-w-3xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sand-muteder flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
                 <Compass className="w-6 h-6 text-sage-mid" />
               </div>
               <span className="text-sm font-medium text-sage-dark">

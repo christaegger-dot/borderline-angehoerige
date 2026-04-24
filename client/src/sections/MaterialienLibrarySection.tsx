@@ -220,8 +220,8 @@ function MaterialCard({
                 <Eye className="h-3.5 w-3.5 text-muted-foreground" />
               </div>
               <div className="mt-2 space-y-1.5" aria-hidden="true">
-                <div className="h-1.5 w-4/5 rounded-full bg-slate-200/90" />
-                <div className="h-1.5 w-3/5 rounded-full bg-slate-200/70" />
+                <div className="h-1.5 w-4/5 rounded-full bg-slate-lighter/90" />
+                <div className="h-1.5 w-3/5 rounded-full bg-slate-lighter/70" />
               </div>
             </div>
           </div>

@@ -421,13 +421,13 @@ export default function Notfallkarte() {
               <div className="hidden print:block space-y-3 mt-2">
                 {[1, 2, 3].map(i => (
                   <div key={i} className="grid grid-cols-3 gap-4">
-                    <div className="border-b border-gray-400 py-2 text-xs text-gray-500">
+                    <div className="border-b border-slate-light py-2 text-xs text-slate-mid">
                       Name
                     </div>
-                    <div className="border-b border-gray-400 py-2 text-xs text-gray-500">
+                    <div className="border-b border-slate-light py-2 text-xs text-slate-mid">
                       Telefon
                     </div>
-                    <div className="border-b border-gray-400 py-2 text-xs text-gray-500">
+                    <div className="border-b border-slate-light py-2 text-xs text-slate-mid">
                       Beziehung
                     </div>
                   </div>

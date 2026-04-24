@@ -771,7 +771,7 @@ export default function Grenzen() {
               preview="Körperliche Übergriffe sind keine Grenzverletzung – sie sind eine Gefährdung. Das erfordert eine andere Reaktion als verbale Eskalation."
             >
               <div className="space-y-4">
-                <Card className="border-l-4 border-l-red-500 bg-red-50/30">
+                <Card className="border-l-4 border-l-alert bg-alert-wash">
                   <CardContent className="p-5">
                     <p className="text-sm font-semibold text-foreground mb-2">
                       Körperliche Gewalt ist kein Beziehungsproblem — es ist
@@ -811,7 +811,7 @@ export default function Grenzen() {
                       key={i}
                       className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30"
                     >
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-700 text-xs font-bold flex items-center justify-center">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-alert-light text-alert-dark text-xs font-bold flex items-center justify-center">
                         {i + 1}
                       </span>
                       <div>

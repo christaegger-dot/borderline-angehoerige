@@ -56,7 +56,20 @@ jobs:
             echo "Bestehende PR gefunden: $PR_URL"
           fi
 
-          # 5. Auf CI-Checks warten (max 10 Min)
+          # 5. Branch auf aktuelles main rebasen (verhindert Divergenz durch Squash-Merges)
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git fetch origin main
+          if git rebase origin/main; then
+            git push --force-with-lease origin "$BRANCH" || true
+            echo "Branch erfolgreich auf main rebased."
+          else
+            git rebase --abort
+            echo "Rebase fehlgeschlagen - PR bleibt offen fuer manuelle Bearbeitung"
+            exit 0
+          fi
+
+          # 6. Auf CI-Checks warten (max 10 Min)
           echo "Warte auf CI-Checks..."
           for i in $(seq 1 20); do
             sleep 30
@@ -76,7 +89,7 @@ jobs:
             fi
           done
 
-          # 6. Merge versuchen
+          # 7. Merge versuchen
           if gh pr merge --merge "$PR_URL" 2>&1; then
             echo "PR erfolgreich gemergt"
             git push origin --delete "$BRANCH" 2>/dev/null || true

@@ -20,6 +20,7 @@ export interface MaterialItem {
     | "Notfallkarte"
     | "Notfallplan";
   url: string;
+  thumbnailUrl?: string;
   downloadUrl?: string;
   pdfUrl?: string;
   previewUrl?: string;
@@ -80,6 +81,7 @@ export const materials: MaterialItem[] = [
     category: "verstehen",
     kind: "Infografik",
     url: "/infografiken/eisberg-der-eisberg-v6.png",
+    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png",
     downloadUrl: "/infografiken/eisberg-der-eisberg-v6.pdf",
     priority: "core",
   },
@@ -91,6 +93,8 @@ export const materials: MaterialItem[] = [
     category: "unterstuetzen",
     kind: "Infografik",
     url: "/infografiken/sphären-die-einfluss-sphären-v3.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
     downloadUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     priority: "core",
   },
@@ -102,6 +106,8 @@ export const materials: MaterialItem[] = [
     category: "kommunizieren",
     kind: "Spickzettel",
     url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
     downloadUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
     priority: "core",
   },
@@ -149,6 +155,8 @@ export const materials: MaterialItem[] = [
     category: "verstehen",
     kind: "Infografik",
     url: "/infografiken/pendel-das-bewertungs-pendel-v14.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png",
     downloadUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
     priority: "secondary",
   },
@@ -160,6 +168,8 @@ export const materials: MaterialItem[] = [
     category: "verstehen",
     kind: "Infografik",
     url: "/infografiken/alarm-der-alarm-modus-v3.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png",
     downloadUrl: "/infografiken/alarm-der-alarm-modus-v3.pdf",
     priority: "secondary",
   },

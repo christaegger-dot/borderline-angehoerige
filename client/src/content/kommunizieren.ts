@@ -9,6 +9,7 @@ export interface KommunikationsMaterial {
   title: string;
   description: string;
   url: string;
+  thumbnailUrl?: string;
   pdfUrl: string;
   category: Exclude<KommunikationsKategorie, "alle">;
 }
@@ -67,6 +68,8 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Zuhören ohne Zustimmen",
     description: "Validieren ohne nachzugeben",
     url: "/infografiken/validierung-die-validierungs-treppe-v5.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.png",
     pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
     category: "techniken",
   },
@@ -84,6 +87,8 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Spickzettel Krisenkommunikation (A4)",
     description: "A4-Spickzettel für akute Spannungszustände",
     url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
     pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
     category: "praxis",
   },

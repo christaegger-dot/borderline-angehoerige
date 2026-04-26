@@ -5,6 +5,7 @@ export interface GrenzenItem {
   title: string;
   description: string;
   url: string;
+  thumbnailUrl?: string;
   pdfUrl: string;
   category: "erkennen" | "kommunizieren" | "handeln";
 }
@@ -40,6 +41,8 @@ export const grenzenItems: GrenzenItem[] = [
     title: "Die 4 Arten von Grenzen",
     description: "Physisch, emotional, zeitlich, materiell",
     url: "/infografiken/grenzen-die-4-arten-von-grenzen-v4.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.png",
     pdfUrl: "/infografiken/grenzen-die-4-arten-von-grenzen-v4.pdf",
     category: "erkennen",
   },

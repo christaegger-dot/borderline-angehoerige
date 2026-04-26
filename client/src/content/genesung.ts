@@ -5,6 +5,7 @@ export interface GenesungItem {
   title: string;
   desc: string;
   img: string;
+  thumbnailUrl?: string;
   pdf: string;
   category: Exclude<GenesungKategorie, "alle">;
 }
@@ -29,6 +30,8 @@ export const genesungItems: GenesungItem[] = [
     title: "Das Fortschritt-Paradox",
     desc: "Warum Rückfälle zum Weg gehören",
     img: "/infografiken/fortschritt-das-fortschritt-paradox-v4.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.png",
     pdf: "/infografiken/fortschritt-das-fortschritt-paradox-v4.pdf",
     category: "verstehen",
   },

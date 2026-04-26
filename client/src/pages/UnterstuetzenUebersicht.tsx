@@ -426,12 +426,12 @@ export default function UnterstuetzenUebersicht() {
                     >
                       <div className="aspect-[4/3] bg-muted overflow-hidden">
                         <img
-                          src={item.url}
+                          src={item.thumbnailUrl ?? item.url}
                           alt={item.title}
                           className="w-full h-full object-cover object-top"
                           loading="lazy"
-                          width={400}
-                          height={223}
+                          width={600}
+                          height={848}
                           decoding="async"
                         />
                       </div>

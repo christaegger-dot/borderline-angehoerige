@@ -114,12 +114,12 @@ export default function VerstehenInfografikenSection() {
                   aria-label={`${item.alt} – Vorschau öffnen`}
                 >
                   <img
-                    src={item.webpUrl}
+                    src={item.thumbnailUrl ?? item.webpUrl}
                     alt={item.alt}
                     className="w-full h-full object-cover object-top"
                     loading="lazy"
-                    width={400}
-                    height={223}
+                    width={600}
+                    height={848}
                     decoding="async"
                   />
                 </button>

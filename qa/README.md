@@ -19,9 +19,14 @@ Dieses Verzeichnis hält die repo-spezifische Audit-Arbeitsweise für
 
 1. `sicherheit`
 2. `a11y-interaktion`
-3. `content-sprache`
-4. `css-hygiene`
-5. `performance`
+3. `performance`
+4. `content-sprache`
+5. `seo-ia`
+6. `modul-dramaturgie`
+7. `css-hygiene`
+8. `pdf-materialien`
+9. `test-qualitaet`
+10. `release-readiness`
 
 ## Content-Zielgruppe
 
@@ -32,7 +37,23 @@ Fuer den Content-Audit gilt explizit:
 ## Nutzung
 
 - Repo-spezifische Prompt-Sammlung: [codex-audit-prompts.md](./codex-audit-prompts.md)
+- Vollstaendiger Repo-Plan: [audit-plan.md](./audit-plan.md)
 - Audit-Worktree-Helfer: [`_dev/create-audit-worktree.sh`](../_dev/create-audit-worktree.sh)
+
+## Abgedeckte Audit-Spuren
+
+Bereits dokumentierte oder vorbereitete Audit-Spuren:
+
+- Sicherheit / Deployment
+- Accessibility / Interaktion
+- Performance / Bundle-Hygiene
+- Content / Sprache
+- SEO / IA
+- Modul- / Dramaturgie-Logik
+- CSS / Design-Token / UX-Konsistenz
+- PDF / Materialien
+- Test- / Qualitaetsnetz
+- Release-Readiness
 
 Beispiel:
 

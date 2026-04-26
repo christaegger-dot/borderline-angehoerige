@@ -242,10 +242,7 @@ export default function Genesung() {
                     <Heart className="h-6 w-6 text-sage-dark" />
                   </div>
                   <div>
-                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-dark/85">
-                      <span className="h-px w-6 bg-sage-dark/30" />
-                      Überblick
-                    </span>
+                    <span className="kicker text-sage-dark">Überblick</span>
                     <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
                       Was auf dieser Seite besonders wichtig ist
                     </h2>
@@ -283,8 +280,7 @@ export default function Genesung() {
 
             <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
               <CardContent className="p-6 md:p-7">
-                <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-dark/85">
-                  <span className="h-px w-6 bg-slate-dark/30" />
+                <span className="kicker text-slate-dark">
                   Direkt einsteigen
                 </span>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

@@ -11,7 +11,7 @@ import {
   ExternalLink,
   Star,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 interface Book {
   title: string;
@@ -234,9 +234,13 @@ const bookCategories: BookCategory[] = [
 export default function Buchempfehlungen() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const filteredCategories = activeCategory
-    ? bookCategories.filter(cat => cat.id === activeCategory)
-    : bookCategories;
+  const filteredCategories = useMemo(
+    () =>
+      activeCategory
+        ? bookCategories.filter(cat => cat.id === activeCategory)
+        : bookCategories,
+    [activeCategory]
+  );
 
   return (
     <Layout>

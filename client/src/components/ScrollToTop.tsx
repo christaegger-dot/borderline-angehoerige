@@ -24,6 +24,12 @@ export default function ScrollToTop() {
 
     // Scrolle nach oben bei Route-Wechsel
     window.scrollTo(0, 0);
+
+    // A11y: Focus auf <main> setzen, damit Screen-Reader-Nutzer
+    // die Navigation wahrnehmen. preventScroll, da wir oben bereits
+    // gescrollt haben. :focus-visible feuert nicht bei programmatic
+    // focus, daher kein sichtbarer Focus-Ring.
+    document.getElementById("main-content")?.focus({ preventScroll: true });
   }, [location]);
 
   useEffect(() => {

@@ -36,10 +36,10 @@ export function KommunizierenEscalationSection() {
               Ein möglicher Ablauf
             </h4>
             <ol className="space-y-2 text-sm text-foreground">
-              <li>1. "Ich sehe, dass es gerade sehr viel ist."</li>
-              <li>2. "Ich möchte zuhören, aber nicht in diesem Ton."</li>
+              <li>1. «Ich sehe, dass es gerade sehr viel ist.»</li>
+              <li>2. «Ich möchte zuhören, aber nicht in diesem Ton.»</li>
               <li>
-                3. "Lass uns 10 Minuten Pause machen und dann weitersehen."
+                3. «Lass uns 10 Minuten Pause machen und dann weitersehen.»
               </li>
             </ol>
           </CardContent>

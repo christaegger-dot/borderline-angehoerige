@@ -174,6 +174,7 @@ export default function Notfallkarte() {
   const [data, setData] = useState<NotfallkarteData>(loadData);
   const [saved, setSaved] = useState(false);
   const [storageError, setStorageError] = useState(false);
+  const [announcement, setAnnouncement] = useState("");
   const savedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Detect storage availability once on mount
@@ -211,6 +212,7 @@ export default function Notfallkarte() {
         { id: createId(), name: "", phone: "", relation: "" },
       ],
     }));
+    setAnnouncement("Kontakt hinzugefügt");
   }, []);
 
   const updateContact = useCallback((updated: PersonalContact) => {
@@ -227,6 +229,7 @@ export default function Notfallkarte() {
       ...prev,
       personalContacts: prev.personalContacts.filter(c => c.id !== id),
     }));
+    setAnnouncement("Kontakt entfernt");
   }, []);
 
   const addStrategy = useCallback(() => {
@@ -237,6 +240,7 @@ export default function Notfallkarte() {
         { id: createId(), text: "" },
       ],
     }));
+    setAnnouncement("Strategie hinzugefügt");
   }, []);
 
   const updateStrategy = useCallback((id: string, text: string) => {
@@ -253,6 +257,7 @@ export default function Notfallkarte() {
       ...prev,
       calmingStrategies: prev.calmingStrategies.filter(s => s.id !== id),
     }));
+    setAnnouncement("Strategie entfernt");
   }, []);
 
   return (
@@ -262,6 +267,11 @@ export default function Notfallkarte() {
         description="Erstellen Sie Ihre persönliche Notfallkarte mit den wichtigsten Nummern, Kontaktpersonen und Beruhigungsstrategien – zum Ausdrucken oder Speichern."
         path="/notfallkarte"
       />
+
+      {/* A11y: announce add/remove actions to screen readers */}
+      <div role="status" aria-live="polite" className="sr-only">
+        {announcement}
+      </div>
 
       {/* ─── Hero ─────────────────────────────────────────── */}
       <section className="bg-gradient-to-b from-[var(--color-sand)] to-background pt-12 pb-8 print:pt-2 print:pb-2 print:bg-none">

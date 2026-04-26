@@ -14,7 +14,7 @@ import {
   AlertTriangle,
   Sparkles,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation } from "wouter";
 
 interface GlossaryTerm {
@@ -261,23 +261,27 @@ export default function Glossar() {
     if (q) setSearchTerm(q);
   }, [location]);
 
-  const filteredTerms = glossaryTerms.filter(term => {
-    const matchesSearch =
-      searchTerm === "" ||
-      term.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      term.definition.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (term.abbreviation &&
-        term.abbreviation.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredTerms = useMemo(
+    () =>
+      glossaryTerms.filter(term => {
+        const q = searchTerm.toLowerCase();
+        const matchesSearch =
+          searchTerm === "" ||
+          term.term.toLowerCase().includes(q) ||
+          term.definition.toLowerCase().includes(q) ||
+          (term.abbreviation && term.abbreviation.toLowerCase().includes(q));
 
-    const matchesCategory =
-      selectedCategory === null || term.category === selectedCategory;
+        const matchesCategory =
+          selectedCategory === null || term.category === selectedCategory;
 
-    return matchesSearch && matchesCategory;
-  });
+        return matchesSearch && matchesCategory;
+      }),
+    [searchTerm, selectedCategory]
+  );
 
-  // Sort alphabetically
-  const sortedTerms = [...filteredTerms].sort((a, b) =>
-    a.term.localeCompare(b.term, "de")
+  const sortedTerms = useMemo(
+    () => [...filteredTerms].sort((a, b) => a.term.localeCompare(b.term, "de")),
+    [filteredTerms]
   );
 
   return (

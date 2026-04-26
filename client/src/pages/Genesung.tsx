@@ -1,3 +1,4 @@
+import InvitationSection from "@/components/InvitationSection";
 import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import SEO from "@/components/SEO";
@@ -748,6 +749,7 @@ export default function Genesung() {
           </div>
         </div>
       </section>
+      <InvitationSection />
     </Layout>
   );
 }

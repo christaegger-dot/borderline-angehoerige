@@ -31,6 +31,7 @@ import {
   Pill,
   Info,
   ChevronRight,
+  Printer,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
@@ -342,6 +343,15 @@ export default function Notfall() {
             </div>
 
             <div className="flex flex-wrap gap-3 mt-4 print:hidden">
+              <a
+                href="/soforthilfe-print.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--color-sos-rot-wash)] border border-[var(--color-sos-rot)]/30 text-sm font-semibold text-[var(--color-sos-rot)] hover:bg-[var(--color-sos-rot-wash)]/80 transition-colors"
+              >
+                <Printer className="w-4 h-4 shrink-0" />
+                Als PDF drucken
+              </a>
               <Link
                 href="/notfallkarte"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sage-wash border border-sage-mid/30 text-sm font-semibold text-sage-dark hover:bg-sage-wash/80 transition-colors"
@@ -429,12 +439,9 @@ export default function Notfall() {
               <strong className="text-foreground">144 / 117</strong> anrufen.
             </p>
             {/* ─── BLOCK 1: LEBENSGEFAHR (ROT) ─── */}
-            <motion.div
+            <div
               id="block-rot"
-              className="scroll-mt-40 rounded-2xl overflow-hidden shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              className="scroll-mt-40 rounded-2xl overflow-clip shadow-lg"
             >
               {/* Block-Header */}
               <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-rot">
@@ -524,15 +531,11 @@ export default function Notfall() {
                   ))}
                 </div>
               </div>
-            </motion.div>
-
+            </div>
             {/* ─── BLOCK 2: PSYCHIATRISCHE KRISE (ORANGE) ─── */}
-            <motion.div
+            <div
               id="block-orange"
-              className="scroll-mt-40 rounded-2xl overflow-hidden shadow-md border border-sos-orange-border"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              className="scroll-mt-40 rounded-2xl overflow-clip shadow-md border border-sos-orange-border"
             >
               {/* Block-Header */}
               <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-orange-wash border-b border-sos-orange-border">
@@ -596,15 +599,12 @@ export default function Notfall() {
                   besten hilft.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* ─── BLOCK 3: JEMAND ZUM REDEN (GRÜN) ─── */}
-            <motion.div
+            <div
               id="block-gruen"
-              className="scroll-mt-40 rounded-2xl overflow-hidden shadow-md border border-sos-gruen-border"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              className="scroll-mt-40 rounded-2xl overflow-clip shadow-md border border-sos-gruen-border"
             >
               {/* Block-Header */}
               <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-gruen-wash border-b border-sos-gruen-border">
@@ -658,15 +658,12 @@ export default function Notfall() {
                   <strong>144 / 117 / 112</strong> rufen.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* ─── BLOCK 4: SPEZIALFALL VERGIFTUNG ─── */}
-            <motion.div
+            <div
               id="block-spezial"
-              className="scroll-mt-40 rounded-2xl overflow-hidden shadow-sm border border-sos-lila-border"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              className="scroll-mt-40 rounded-2xl overflow-clip shadow-sm border border-sos-lila-border"
             >
               <div className="px-5 py-4 sm:px-6 sm:py-4 bg-sos-lila-wash border-b border-sos-lila-light">
                 <div className="flex items-center gap-3">
@@ -688,15 +685,12 @@ export default function Notfall() {
                   tel={rot145.tel}
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* ─── BLOCK 5: WEITERE KONTAKTE (NACHRANGIG) ─── */}
-            <motion.div
+            <div
               id="block-weitere"
-              className="scroll-mt-40 rounded-2xl overflow-hidden shadow-sm border border-border/50"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              className="scroll-mt-40 rounded-2xl overflow-clip shadow-sm border border-border/50"
             >
               <div className="px-5 py-3 sm:px-6 sm:py-4 bg-muted/40 border-b border-border/50">
                 <div className="flex items-center gap-2">
@@ -736,15 +730,10 @@ export default function Notfall() {
                   tel={infoKiz.tel}
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* ─── WEITERFÜHREND ─── */}
-            <motion.div
-              className="rounded-2xl border border-border/50 bg-muted/30 p-5 sm:p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div className="rounded-2xl border border-border/50 bg-muted/30 p-5 sm:p-6">
               <h3 className="font-semibold text-foreground mb-1 flex items-center gap-2">
                 <Shield className="w-5 h-5 text-muted-foreground" />
                 Krisenbegleitung – was kommt wann?
@@ -816,8 +805,7 @@ export default function Notfall() {
                   <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
                 </Link>
               </div>
-            </motion.div>
-
+            </div>
             <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
               <p className="text-xs text-muted-foreground leading-relaxed">
                 Diese Informationen ersetzen keine medizinische oder rechtliche

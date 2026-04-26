@@ -33,7 +33,7 @@ const kriseIntroCards = [
     icon: AlertTriangle,
     title: "Krise genauer einordnen",
     text: "Nicht jede belastende Situation ist gleich ein Notfall. Das Ampel-System hilft, die Intensität klarer zu lesen.",
-    iconClass: "text-sage-dark",
+    iconClass: "text-sage-mid-dark",
     shellClass: "bg-sage-wash border-sage-light/80",
   },
   {
@@ -108,9 +108,9 @@ export default function UnterstuetzenKrise() {
 
             <div className="flex items-center gap-3 mb-6 mt-4">
               <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-sage-mid" />
+                <AlertTriangle className="w-6 h-6 text-sage-mid-mid" />
               </div>
-              <span className="text-sm font-medium text-sage-dark">
+              <span className="text-sm font-medium text-sage-mid-dark">
                 Lesezeit: 6 Minuten
               </span>
             </div>
@@ -170,7 +170,7 @@ export default function UnterstuetzenKrise() {
               <CardContent className="p-6 md:p-7">
                 <div className="mb-5 flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-muted">
-                    <AlertTriangle className="h-6 w-6 text-sage-mid" />
+                    <AlertTriangle className="h-6 w-6 text-sage-mid-mid" />
                   </div>
                   <div>
                     <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sand-warm/90">
@@ -284,7 +284,7 @@ export default function UnterstuetzenKrise() {
             {/* Ampel-System */}
             <ContentSection
               title="Das Ampel-System: Krisen erkennen"
-              icon={<AlertTriangle className="w-7 h-7 text-sage-mid" />}
+              icon={<AlertTriangle className="w-7 h-7 text-sage-mid-mid" />}
               id="ampel-system"
               defaultOpen={true}
               preview="Nicht jede schwierige Situation ist eine Krise. Das Ampel-System hilft Ihnen, die Intensität einzuschätzen."
@@ -392,7 +392,7 @@ export default function UnterstuetzenKrise() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3 rounded-md bg-sage-lighter/50 p-3">
-                    <span className="text-xs font-bold min-w-[52px] text-sage-dark pt-0.5">
+                    <span className="text-xs font-bold min-w-[52px] text-sage-mid-dark pt-0.5">
                       Gelb
                     </span>
                     <div className="flex flex-wrap gap-1.5">
@@ -417,7 +417,7 @@ export default function UnterstuetzenKrise() {
             {/* 4 Schritte der Deeskalation */}
             <ContentSection
               title="4 Schritte der Deeskalation"
-              icon={<Shield className="w-7 h-7 text-sage-mid" />}
+              icon={<Shield className="w-7 h-7 text-sage-mid-mid" />}
               id="deeskalation"
               preview="Sicherheit prüfen, Ruhe bewahren, Validieren, Skills anbieten – ein bewährtes Vorgehen."
             >
@@ -484,7 +484,7 @@ export default function UnterstuetzenKrise() {
             {/* Was Sie in der Krise sagen können */}
             <ContentSection
               title="Was Sie in der Krise sagen können"
-              icon={<MessageCircle className="w-7 h-7 text-sage" />}
+              icon={<MessageCircle className="w-7 h-7 text-sage-mid" />}
               id="krise-formulierungen"
               preview="In einer Krise zählt jedes Wort. Diese Formulierungen haben sich bewährt."
             >
@@ -609,7 +609,7 @@ export default function UnterstuetzenKrise() {
             {/* Nach der Krise */}
             <ContentSection
               title="Nach der Krise: Verarbeitung und Neubeginn"
-              icon={<RefreshCw className="w-7 h-7 text-sage" />}
+              icon={<RefreshCw className="w-7 h-7 text-sage-mid" />}
               id="nach-der-krise"
               preview="Die akute Krise ist vorbei – aber die innere Landschaft braucht Zeit. Was jetzt hilft: für die betroffene Person, für Sie, und gemeinsam."
             >
@@ -655,7 +655,7 @@ export default function UnterstuetzenKrise() {
                     </div>
                     <ArrowRight className="w-3 h-3 text-muted-foreground rotate-90 sm:rotate-0 flex-shrink-0" />
                     <div className="bg-sage-lighter/60 rounded-md px-3 py-2 text-center flex-1 w-full">
-                      <p className="text-xs font-semibold text-sage-dark">
+                      <p className="text-xs font-semibold text-sage-mid-dark">
                         Erschöpfung
                       </p>
                       <p className="text-[10px] text-muted-foreground">
@@ -671,7 +671,7 @@ export default function UnterstuetzenKrise() {
                 {/* Für die betroffene Person */}
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-sage-mid" />
+                    <Heart className="w-5 h-5 text-sage-mid-mid" />
                     Für die betroffene Person
                   </h3>
                   <Card className="border-border/50">
@@ -696,7 +696,7 @@ export default function UnterstuetzenKrise() {
                             key={i}
                             className="flex items-start gap-2 text-sm text-muted-foreground"
                           >
-                            <span className="text-sage-mid mt-0.5">→</span>
+                            <span className="text-sage-mid-mid mt-0.5">→</span>
                             {item}
                           </li>
                         ))}
@@ -708,7 +708,7 @@ export default function UnterstuetzenKrise() {
                 {/* Für Sie persönlich */}
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Shield className="w-5 h-5 text-sage-mid" />
+                    <Shield className="w-5 h-5 text-sage-mid-mid" />
                     Für Sie persönlich
                   </h3>
                   <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
@@ -730,7 +730,7 @@ export default function UnterstuetzenKrise() {
                             key={i}
                             className="flex items-start gap-2 text-sm text-muted-foreground"
                           >
-                            <span className="text-sage-mid mt-0.5">→</span>
+                            <span className="text-sage-mid-mid mt-0.5">→</span>
                             {item}
                           </li>
                         ))}
@@ -742,7 +742,7 @@ export default function UnterstuetzenKrise() {
                 {/* Gemeinsame Krisenanalyse */}
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Users className="w-5 h-5 text-sage-mid" />
+                    <Users className="w-5 h-5 text-sage-mid-mid" />
                     Gemeinsame Krisenanalyse (wenn beide bereit sind)
                   </h3>
                   <Card className="border-border/50">
@@ -791,7 +791,7 @@ export default function UnterstuetzenKrise() {
                 {/* Vertrauenswiederaufbau */}
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-sage-mid" />
+                    <CheckCircle2 className="w-5 h-5 text-sage-mid-mid" />
                     Vertrauenswiederaufbau – realistisch
                   </h3>
                   <Card className="bg-sage-light/20 border-sage">
@@ -816,7 +816,7 @@ export default function UnterstuetzenKrise() {
                             key={i}
                             className="flex items-start gap-2 text-sm text-muted-foreground"
                           >
-                            <span className="text-sage-mid mt-0.5">→</span>
+                            <span className="text-sage-mid-mid mt-0.5">→</span>
                             {item}
                           </li>
                         ))}
@@ -828,7 +828,7 @@ export default function UnterstuetzenKrise() {
                 {/* Tag-für-Tag: Erste Woche nach der Krise */}
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <CalendarDays className="w-5 h-5 text-sage-mid" />
+                    <CalendarDays className="w-5 h-5 text-sage-mid-mid" />
                     Erste Woche nach der Krise – Tag für Tag
                   </h3>
                   <div className="space-y-3">
@@ -870,7 +870,7 @@ export default function UnterstuetzenKrise() {
                       >
                         <CardContent className="p-4">
                           <div className="flex items-center gap-2 mb-2">
-                            <span className="text-xs font-semibold text-sage-dark bg-sage-wash px-2 py-0.5 rounded-full">
+                            <span className="text-xs font-semibold text-sage-mid-dark bg-sage-wash px-2 py-0.5 rounded-full">
                               {phase.tage}
                             </span>
                             <span className="text-sm font-semibold text-foreground">
@@ -883,7 +883,9 @@ export default function UnterstuetzenKrise() {
                                 key={i}
                                 className="flex items-start gap-2 text-sm text-muted-foreground"
                               >
-                                <span className="text-sage-mid mt-0.5">→</span>
+                                <span className="text-sage-mid-mid mt-0.5">
+                                  →
+                                </span>
                                 {p}
                               </li>
                             ))}
@@ -897,7 +899,7 @@ export default function UnterstuetzenKrise() {
                 {/* Früherkennung für nächste Krise */}
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Lightbulb className="w-5 h-5 text-sage-mid" />
+                    <Lightbulb className="w-5 h-5 text-sage-mid-mid" />
                     Früherkennung trainieren
                   </h3>
                   <Card className="border-border/50">
@@ -930,7 +932,7 @@ export default function UnterstuetzenKrise() {
                             key={item.label}
                             className="flex items-start gap-2 p-3 rounded-lg bg-muted/30 border border-border/40"
                           >
-                            <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 shrink-0" />
+                            <CheckCircle2 className="w-4 h-4 text-sage-mid-mid mt-0.5 shrink-0" />
                             <div>
                               <p className="text-sm font-medium text-foreground">
                                 {item.label}
@@ -990,7 +992,7 @@ export default function UnterstuetzenKrise() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0">
-                      <ArrowRight className="w-5 h-5 text-sage-mid" />
+                      <ArrowRight className="w-5 h-5 text-sage-mid-mid" />
                     </div>
                     <div>
                       <h3 className="font-medium text-foreground mb-2">
@@ -1022,7 +1024,7 @@ export default function UnterstuetzenKrise() {
               className="mb-12"
             >
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-sage-mid" />
+                <Download className="w-8 h-8 text-sage-mid-mid" />
                 Materialien zum Thema
               </h2>
 
@@ -1030,7 +1032,7 @@ export default function UnterstuetzenKrise() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-sage-lighter flex items-center justify-center flex-shrink-0">
-                      <Download className="w-5 h-5 text-sage-mid" />
+                      <Download className="w-5 h-5 text-sage-mid-mid" />
                     </div>
                     <div>
                       <h3 className="font-medium text-foreground mb-2">

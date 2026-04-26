@@ -25,7 +25,7 @@ const alltagIntroCards = [
     icon: Clock,
     title: "Daueranspannung ernst nehmen",
     text: "Alltag kann erschöpfend sein, auch wenn äusserlich gerade nichts eskaliert oder zusammenbricht.",
-    iconClass: "text-sage-dark",
+    iconClass: "text-sage-mid-dark",
     shellClass: "bg-sage-wash border-sage-light/80",
   },
   {
@@ -100,9 +100,9 @@ export default function UnterstuetzenAlltag() {
 
             <div className="flex items-center gap-3 mb-6 mt-4">
               <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-sage-dark" />
+                <Calendar className="w-6 h-6 text-sage-mid-dark" />
               </div>
-              <span className="text-sm font-medium text-sage-dark">
+              <span className="text-sm font-medium text-sage-mid-dark">
                 Lesezeit: 8 Minuten
               </span>
             </div>
@@ -133,10 +133,10 @@ export default function UnterstuetzenAlltag() {
               <CardContent className="p-6 md:p-7">
                 <div className="mb-5 flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-wash">
-                    <Calendar className="h-6 w-6 text-sage-dark" />
+                    <Calendar className="h-6 w-6 text-sage-mid-dark" />
                   </div>
                   <div>
-                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-dark/80">
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-mid-dark/80">
                       <span className="h-px w-6 bg-sage-dark/25" />
                       Überblick
                     </span>
@@ -205,7 +205,7 @@ export default function UnterstuetzenAlltag() {
                             {item.text}
                           </p>
                         </div>
-                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-dark transition-transform group-hover:translate-x-0.5">
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-mid-dark transition-transform group-hover:translate-x-0.5">
                           <ArrowRight className="h-4 w-4" />
                         </span>
                       </div>
@@ -238,7 +238,7 @@ export default function UnterstuetzenAlltag() {
           <div className="max-w-3xl mx-auto">
             <ContentSection
               title="Der Alltag ist oft nicht ruhig, sondern vorspannt"
-              icon={<Clock className="w-7 h-7 text-sage" />}
+              icon={<Clock className="w-7 h-7 text-sage-mid" />}
               id="alltagsspannung"
               defaultOpen={true}
               preview="Viele Angehörige leben nicht in dauernder Krise, sondern in dauernder Vorahnung von Krise. Gerade das kann zermürbend sein."
@@ -381,7 +381,7 @@ export default function UnterstuetzenAlltag() {
 
             <ContentSection
               title="Was im Alltag oft wirklich hilft"
-              icon={<Heart className="w-7 h-7 text-sage-dark" />}
+              icon={<Heart className="w-7 h-7 text-sage-mid-dark" />}
               id="was-hilft"
               preview="Nicht grosse Gesten, sondern Klarheit, Verlässlichkeit, ruhige Präsenz und begrenzte Verfügbarkeit tragen häufig am meisten."
             >
@@ -508,7 +508,7 @@ export default function UnterstuetzenAlltag() {
                             className={`flex gap-2 text-sm ${zeile.sprecher === "Sie" ? "flex-row-reverse" : ""}`}
                           >
                             <span
-                              className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-full h-fit mt-0.5 ${zeile.sprecher === "Sie" ? "bg-sage-wash text-sage-dark" : "bg-muted text-muted-foreground"}`}
+                              className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-full h-fit mt-0.5 ${zeile.sprecher === "Sie" ? "bg-sage-wash text-sage-mid-dark" : "bg-muted text-muted-foreground"}`}
                             >
                               {zeile.sprecher === "Sie" ? "Sie" : "BP"}
                             </span>
@@ -528,7 +528,7 @@ export default function UnterstuetzenAlltag() {
 
             <ContentSection
               title="Nach Konflikten und Rückzug"
-              icon={<Users className="w-7 h-7 text-sage-mid" />}
+              icon={<Users className="w-7 h-7 text-sage-mid-mid" />}
               id="rueckzug"
               preview="Viele Beziehungen leiden weniger nur an Streit als an dem, was danach folgt: Schweigen, Unsicherheit, Funkstille oder ein vorsichtiger Neustart."
             >
@@ -695,7 +695,7 @@ export default function UnterstuetzenAlltag() {
 
             <ContentSection
               title="Was Sie konkret tun können"
-              icon={<CheckCircle2 className="w-7 h-7 text-sage-mid" />}
+              icon={<CheckCircle2 className="w-7 h-7 text-sage-mid-mid" />}
               id="konkrete-schritte"
               preview="Praktische Alltagshilfen sind oft einfach, aber nicht leicht: klar bleiben, Rückmeldungen dosieren, Fortschritte benennen und nicht alles übernehmen."
             >
@@ -764,7 +764,7 @@ export default function UnterstuetzenAlltag() {
                           key={item}
                           className="flex items-start gap-2 text-muted-foreground"
                         >
-                          <CheckCircle2 className="w-4 h-4 text-sage-mid mt-0.5 flex-shrink-0" />
+                          <CheckCircle2 className="w-4 h-4 text-sage-mid-mid mt-0.5 flex-shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -783,13 +783,13 @@ export default function UnterstuetzenAlltag() {
               <div className="space-y-6">
                 <Card className="border-l-4 border-l-slate-200 bg-slate-50/40">
                   <CardContent className="p-4 flex items-start gap-3">
-                    <span className="text-sage-mid mt-0.5 shrink-0">→</span>
+                    <span className="text-sage-mid-mid mt-0.5 shrink-0">→</span>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Wird die Situation akut – Selbst- oder Fremdgefährdung,
                       unkontrollierbare Eskalation?{" "}
                       <Link
                         href="/unterstuetzen/krise"
-                        className="text-sage-dark underline underline-offset-2 hover:text-sage-mid font-medium"
+                        className="text-sage-mid-dark underline underline-offset-2 hover:text-sage-mid-mid font-medium"
                       >
                         Krisenbegleitung →
                       </Link>
@@ -813,7 +813,7 @@ export default function UnterstuetzenAlltag() {
 
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-sage-mid" />
+                    <CheckCircle2 className="w-5 h-5 text-sage-mid-mid" />
                     Zeichen einer impulsiven Phase erkennen
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-3">
@@ -863,7 +863,7 @@ export default function UnterstuetzenAlltag() {
 
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-sage-mid" />
+                    <Heart className="w-5 h-5 text-sage-mid-mid" />
                     Wichtige Unterscheidung
                   </h3>
                   <Card className="bg-sage-wash/50 border-sage/30">
@@ -886,7 +886,7 @@ export default function UnterstuetzenAlltag() {
 
                 <div>
                   <h3 className="text-base font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <Lightbulb className="w-5 h-5 text-sage-mid" />
+                    <Lightbulb className="w-5 h-5 text-sage-mid-mid" />
                     Drei Szenarien – was hilft, was nicht
                   </h3>
                   <div className="space-y-4">
@@ -940,7 +940,7 @@ export default function UnterstuetzenAlltag() {
                           </h4>
                           <div className="grid sm:grid-cols-2 gap-4">
                             <div>
-                              <p className="text-xs font-medium text-sage-dark mb-2 uppercase tracking-wide">
+                              <p className="text-xs font-medium text-sage-mid-dark mb-2 uppercase tracking-wide">
                                 Hilft eher
                               </p>
                               <ul className="space-y-1.5">
@@ -949,7 +949,7 @@ export default function UnterstuetzenAlltag() {
                                     key={p}
                                     className="flex items-start gap-1.5 text-xs text-muted-foreground"
                                   >
-                                    <span className="text-sage-mid mt-0.5">
+                                    <span className="text-sage-mid-mid mt-0.5">
                                       ✓
                                     </span>
                                     {p}
@@ -985,7 +985,7 @@ export default function UnterstuetzenAlltag() {
                 <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
                   <CardContent className="p-5">
                     <h3 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <Users className="w-4 h-4 text-sage-mid" />
+                      <Users className="w-4 h-4 text-sage-mid-mid" />
                       Nach der impulsiven Phase: Scham und Reue
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1005,7 +1005,7 @@ export default function UnterstuetzenAlltag() {
 
             <ContentSection
               title="Grenzen der Alltagsunterstützung"
-              icon={<AlertTriangle className="w-7 h-7 text-sage-mid" />}
+              icon={<AlertTriangle className="w-7 h-7 text-sage-mid-mid" />}
               id="grenzen"
               preview="Auch im Alltag gibt es Grenzen. Sie müssen nicht perfekt sein, aber Sie sollten Ihre Erschöpfung und Ihre roten Linien ernst nehmen."
             >
@@ -1026,7 +1026,7 @@ export default function UnterstuetzenAlltag() {
                         key={item}
                         className="flex items-start gap-2 text-muted-foreground"
                       >
-                        <span className="text-sage-mid">•</span>
+                        <span className="text-sage-mid-mid">•</span>
                         {item}
                       </li>
                     ))}

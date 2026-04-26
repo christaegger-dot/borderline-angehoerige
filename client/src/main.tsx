@@ -1,3 +1,4 @@
+import "@fontsource-variable/source-serif-4";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { initAnalytics } from "./bootstrap/analytics";

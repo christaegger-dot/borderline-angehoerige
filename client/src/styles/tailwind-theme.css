@@ -53,7 +53,9 @@
   --color-terracotta-mid: oklch(
     0.55 0.15 55
   ); /* Starker Akzent-Text, Borders */
-  --color-terracotta: oklch(0.57 0.13 55); /* Primary – WCAG AA konform */
+  --color-terracotta: oklch(
+    0.55 0.15 55
+  ); /* Primary – WCAG AA konform (Phase 1: mit --primary synchronisiert) */
   --color-terracotta-light: oklch(0.85 0.08 55); /* Light Accent */
   --color-terracotta-lighter: oklch(0.92 0.05 55); /* Subtle Backgrounds */
   --color-terracotta-wash: oklch(0.95 0.02 55); /* Sehr helle Hintergründe */
@@ -142,6 +144,5 @@
   /* Typography – Design-Lock: Inter exklusiv */
   --font-display: "Inter", "Inter fallback", sans-serif;
   --font-body: "Inter", "Inter fallback", sans-serif;
-  --font-heading:
-    "DM Serif Display", "DM Serif Display fallback", Georgia, serif;
+  --font-heading: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
 }

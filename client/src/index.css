@@ -6,23 +6,27 @@
 
 :root {
   /* Sanctuary Calm - Warm, therapeutic palette */
-  --primary: oklch(0.65 0.12 55); /* Terracotta */
+  --primary: oklch(
+    0.55 0.15 55
+  ); /* Terracotta – WCAG AA: weiss auf primary ≥4.5:1 (Phase 1 fix, war 0.65 0.12 55) */
   --primary-foreground: oklch(0.98 0.01 85); /* Cream */
   --sidebar-primary: oklch(0.65 0.08 145); /* Sage */
   --sidebar-primary-foreground: oklch(0.98 0.01 85);
-  --chart-1: oklch(0.65 0.12 55); /* Terracotta */
+  --chart-1: oklch(0.55 0.15 55); /* Terracotta (angepasst mit primary) */
   --chart-2: oklch(0.65 0.08 145); /* Sage */
   --chart-3: oklch(0.45 0.05 250); /* Slate Blue */
   --chart-4: oklch(0.85 0.08 55); /* Light Terracotta */
   --chart-5: oklch(0.88 0.04 145); /* Light Sage */
-  --radius: 0.75rem;
-  /* Border-Radius Konvention:
-     rounded-sm  (4px)  = Tags, Badges, kleine Chips
-     rounded-md  (6px)  = Buttons, Inputs
-     rounded-lg  (12px) = Standard-Elemente, Listen-Items, kleine Cards
-     rounded-xl  (16px) = Karten, Content-Boxen, Hero-Icon-Boxen
-     rounded-2xl (20px) = Spezial-Blöcke (Soforthilfe Ampel-Blöcke) */
-  --background: oklch(0.985 0.003 200); /* Kühles Off-White ≈ SA #FAFAF7 */
+  --radius: 0.5rem;
+  /* Border-Radius Konvention (Phase 1 – kantiger, editorial):
+     rounded-sm  (2px)  = Tags, Badges, kleine Chips
+     rounded-md  (4px)  = Buttons, Inputs
+     rounded-lg  (8px)  = Standard-Elemente, Listen-Items, kleine Cards
+     rounded-xl  (12px) = Karten, Content-Boxen, Hero-Icon-Boxen
+     rounded-2xl (20px) = Spezial-Blöcke (Soforthilfe Ampel-Blöcke, hartcodiert) */
+  --background: oklch(
+    0.97 0.02 85
+  ); /* Warmer Cream – Editorial-Modus (ehemals kühles Off-White oklch(0.985 0.003 200)) */
   --foreground: oklch(0.25 0.02 250); /* Charcoal */
   --card: oklch(0.99 0.008 85); /* Cream */
   --card-foreground: oklch(0.25 0.02 250);
@@ -42,13 +46,13 @@
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0.02 85);
   --input: oklch(0.92 0.015 85);
-  --ring: oklch(0.65 0.12 55); /* Terracotta */
+  --ring: oklch(0.55 0.15 55); /* Terracotta (angepasst mit primary) */
   --sidebar: oklch(0.98 0.01 85);
   --sidebar-foreground: oklch(0.25 0.02 250);
   --sidebar-accent: oklch(0.94 0.02 85);
   --sidebar-accent-foreground: oklch(0.25 0.02 250);
   --sidebar-border: oklch(0.9 0.02 85);
-  --sidebar-ring: oklch(0.65 0.12 55);
+  --sidebar-ring: oklch(0.55 0.15 55); /* Terracotta (angepasst mit primary) */
 }
 
 .dark {
@@ -100,7 +104,15 @@
   h2 {
     font-family: var(--font-heading);
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+
+  h1 em,
+  h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: inherit;
   }
 
   h3,
@@ -164,6 +176,50 @@
       padding-right: 2rem;
       max-width: 1280px;
     }
+  }
+
+  /* ── Editorial Utilities (Phase 1) ── */
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    display: block;
+    margin-bottom: 0.875rem;
+  }
+
+  .lede {
+    font-size: 1.32rem;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+    font-style: italic;
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--color-border, oklch(0.9 0.02 85));
+    margin: 2rem 0;
+  }
+
+  .rule-narrow {
+    width: 4rem;
+  }
+
+  .rule-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .prose-editorial {
+    max-width: 60ch;
+  }
+
+  .prose-editorial-narrow {
+    max-width: 44ch;
   }
 
   .home-hero-surface {

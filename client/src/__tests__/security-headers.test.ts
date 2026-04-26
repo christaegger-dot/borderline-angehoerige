@@ -30,4 +30,10 @@ describe("security headers", () => {
     expect(CONTENT_SECURITY_POLICY).toContain("form-action 'self'");
     expect(CONTENT_SECURITY_POLICY).toContain("manifest-src 'self'");
   });
+
+  it("allows only self-hosted scripts and connections", () => {
+    expect(CONTENT_SECURITY_POLICY).toContain("script-src 'self'");
+    expect(CONTENT_SECURITY_POLICY).toContain("connect-src 'self'");
+    expect(CONTENT_SECURITY_POLICY).not.toContain("forge.butterfly-effect.dev");
+  });
 });

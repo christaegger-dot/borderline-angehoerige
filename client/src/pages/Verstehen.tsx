@@ -556,10 +556,7 @@ export default function Verstehen() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12 wave-divider-top"
-              style={
-                { "--wave-color": "var(--background)" } as React.CSSProperties
-              }
+              className="mb-12 wave-divider-top [--wave-color:var(--background)]"
             >
               <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6 md:p-8">

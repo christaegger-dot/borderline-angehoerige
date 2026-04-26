@@ -6,7 +6,7 @@
   "display": "standalone",
   "background_color": "#FAF8F5",
   "theme_color": "#C67A5C",
-  "lang": "de",
+  "lang": "de-CH",
   "orientation": "any",
   "categories": ["health", "education"],
   "icons": [

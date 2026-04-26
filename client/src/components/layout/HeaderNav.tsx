@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MobileMenu } from "@/components/layout/MobileMenu";
@@ -18,6 +18,8 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
   const [mobileRessourcenOpen, setMobileRessourcenOpen] = useState(false);
   const [ressourcenOpen, setRessourcenOpen] = useState(false);
   const currentAccent = getRouteAccent(location);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const wasMobileMenuOpen = useRef(false);
 
   useEffect(() => {
     setRessourcenOpen(false);
@@ -32,6 +34,13 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
     }
 
     return () => document.body.removeAttribute("data-mobile-menu");
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (wasMobileMenuOpen.current && !mobileMenuOpen) {
+      menuButtonRef.current?.focus();
+    }
+    wasMobileMenuOpen.current = mobileMenuOpen;
   }, [mobileMenuOpen]);
 
   useEffect(() => {
@@ -141,11 +150,14 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             </Link>
 
             <button
+              ref={menuButtonRef}
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-white/82 shadow-sm shadow-black/5 transition-colors ${
                 mobileMenuOpen ? currentAccent.surfaceActive : "hover:bg-muted"
               }`}
+              aria-controls="mobile-navigation-dialog"
+              aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? "Menü schliessen" : "Menü öffnen"}
             >
               {mobileMenuOpen ? (

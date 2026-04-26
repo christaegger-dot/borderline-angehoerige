@@ -22,7 +22,7 @@
      rounded-lg  (12px) = Standard-Elemente, Listen-Items, kleine Cards
      rounded-xl  (16px) = Karten, Content-Boxen, Hero-Icon-Boxen
      rounded-2xl (20px) = Spezial-Blöcke (Soforthilfe Ampel-Blöcke) */
-  --background: oklch(0.985 0.003 200); /* Kühles Off-White ≈ SA #FAFAF7 */
+  --background: oklch(0.97 0.02 85); /* Warmer Cream – Editorial-Modus (ehemals kühles Off-White oklch(0.985 0.003 200)) */
   --foreground: oklch(0.25 0.02 250); /* Charcoal */
   --card: oklch(0.99 0.008 85); /* Cream */
   --card-foreground: oklch(0.25 0.02 250);
@@ -100,7 +100,15 @@
   h2 {
     font-family: var(--font-heading);
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+
+  h1 em,
+  h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: inherit;
   }
 
   h3,
@@ -164,6 +172,50 @@
       padding-right: 2rem;
       max-width: 1280px;
     }
+  }
+
+  /* ── Editorial Utilities (Phase 1) ── */
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    display: block;
+    margin-bottom: 0.875rem;
+  }
+
+  .lede {
+    font-size: 1.32rem;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+    font-style: italic;
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--color-border, oklch(0.9 0.02 85));
+    margin: 2rem 0;
+  }
+
+  .rule-narrow {
+    width: 4rem;
+  }
+
+  .rule-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .prose-editorial {
+    max-width: 60ch;
+  }
+
+  .prose-editorial-narrow {
+    max-width: 44ch;
   }
 
   .home-hero-surface {

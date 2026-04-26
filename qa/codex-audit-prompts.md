@@ -9,6 +9,8 @@ zugeschnitten.
 - Arbeite fuer jedes Audit in einem frischen `origin/main`-basierten
   Temp-Worktree.
 - Nutze dafuer bevorzugt `_dev/create-audit-worktree.sh <slug>`.
+- Richte Scope, Reihenfolge und Zielartefakte zusaetzlich an
+  `qa/audit-plan.md` aus.
 - Phase 1 und Phase 2 bleiben read-only fuer `client/src`, `server`,
   `client/public`, `netlify.toml` und produktive Konfigurationsdateien.
 - Audit-Artefakte unter `qa/` und `qa/scripts/` sind in Phase 1 und 2 erlaubt.
@@ -293,4 +295,311 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Security-Headers in Code und Live-Site konsistent
 - `npm run build`
 - `npm run lint`
+```
+
+## Audit 6 - SEO, Metadaten und Informationsarchitektur
+
+```text
+# Audit: SEO, Metadaten und Informationsarchitektur (Codex / borderline-angehoerige)
+
+## Kontext
+Pruefe `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige`
+auf technische SEO, Metadaten und Informationsarchitektur. Fokus: statische
+Auffindbarkeit, URL-Logik und interne Orientierung fuer die Hauptpfade der App.
+
+## Constraints
+- Arbeite in frischem main-basiertem Temp-Worktree von `origin/main`
+- Branch: `audit/seo-ia`
+- Bericht: `qa/audit-seo-ia.md`
+- In Phase 1/2 keine Produktcode-Aenderungen
+- Audit-Artefakte unter `qa/` sind erlaubt
+
+## Phase 1 - Inventur
+- Pruefe:
+  - `client/src/components/SEO.tsx`
+  - `client/src/app/routes.ts`
+  - `client/public/robots.txt`
+  - `client/public/sitemap.xml`
+  - `client/public/_redirects`
+  - relevante Navigations- und Breadcrumb-Komponenten in
+    `client/src/components/layout/**`
+- Erfasse pro Hauptpfad mindestens:
+  - Route
+  - Seitentitel
+  - Description
+  - Canonical-/OG-Status
+  - interne Einstiege
+  - Redirect- oder Slash-Sonderfall
+- Pruefe speziell die Pfade:
+  - `/`
+  - `/verstehen`
+  - `/unterstuetzen/uebersicht`
+  - `/kommunizieren`
+  - `/grenzen`
+  - `/selbstfuersorge`
+  - `/soforthilfe`
+  - `/materialien`
+- Gleiche Routen, Redirects und Navigation gegeneinander ab:
+  - verwaiste Ziele
+  - doppelte Pfade
+  - Umleitungen ohne klaren Nutzen
+- Dokumentiere, ob wichtige Inhalte aus Navigation, Breadcrumbs, Materialkarten
+  oder Querverweisen ausreichend auffindbar sind.
+
+STOPP nach Phase 1. Warte auf Freigabe.
+
+## Phase 2 - Diagnose
+- Ordne Befunde in `P0`, `P1`, `P2`.
+- Trenne klar zwischen:
+  - technischem SEO-Problem
+  - IA-/Verlinkungsproblem
+  - akzeptiertem Produktentscheid
+- Formuliere pro Befund den kleinsten sinnvollen Fix.
+
+STOPP nach Phase 2. Warte auf Freigabe.
+
+## Phase 3 - Umsetzung
+- Pro Aenderung eigener Commit: `audit(seo): <was>`
+
+## Phase 4 - Verifikation
+- `npm test`
+- `npm run check`
+- `npm run build`
+- `npm run lint`
+- Sitemap-, Robots- und Route-Matrix erneut gegenpruefen
+```
+
+## Audit 7 - Modul- und Dramaturgie-Logik
+
+```text
+# Audit: Modul- und Dramaturgie-Logik (Codex / borderline-angehoerige)
+
+## Kontext
+Pruefe `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige`
+auf Stringenz der Hauptthemenfolge. Fokus: klare Seitenrollen, geringe
+Redundanz, sinnvolle Uebergaenge und nachvollziehbare Journey fuer
+Angehoerige.
+
+## Constraints
+- Arbeite in frischem main-basiertem Temp-Worktree von `origin/main`
+- Branch: `audit/modul-dramaturgie`
+- Bericht: `qa/audit-modul-dramaturgie.md`
+- In Phase 1/2 keine Produktcode-Aenderungen
+- Nur Struktur und Informationsarchitektur auditieren, keine visuellen Urteile
+
+## Phase 1 - Inventur
+- Analysiere mindestens diese Kernpfade:
+  - `client/src/pages/Verstehen.tsx`
+  - `client/src/pages/UnterstuetzenUebersicht.tsx`
+  - `client/src/pages/UnterstuetzenAlltag.tsx`
+  - `client/src/pages/UnterstuetzenTherapie.tsx`
+  - `client/src/pages/UnterstuetzenKrise.tsx`
+  - `client/src/pages/Kommunizieren.tsx`
+  - `client/src/pages/Grenzen.tsx`
+  - `client/src/pages/Selbstfuersorge.tsx`
+  - `client/src/pages/Soforthilfe.tsx`
+  - `client/src/pages/Materialien.tsx`
+- Dokumentiere pro Seite:
+  - Kernfunktion
+  - Abgrenzung zur Nachbarseite
+  - Redundanzen
+  - fehlende Bruecken / Querverweise
+- Beruecksichtige auch relevante Inhalte aus `client/src/content/**` und
+  `client/src/sections/**`.
+
+STOPP nach Phase 1. Warte auf Freigabe.
+
+## Phase 2 - Diagnose
+- Ordne Befunde in `P0`, `P1`, `P2`.
+- Leite daraus eine empfohlene Ziel-Dramaturgie ab:
+  - Verstehen
+  - Handeln
+  - Stabilisieren
+  - Vertiefen
+- Formuliere pro Befund den kleinsten strukturellen Fix.
+
+STOPP nach Phase 2. Warte auf Freigabe.
+
+## Phase 3 - Umsetzung
+- Pro Aenderung eigener Commit: `audit(flow): <was>`
+
+## Phase 4 - Verifikation
+- `npm test`
+- `npm run check`
+- `npm run build`
+- `npm run lint`
+- Strukturmatrix fuer Kernpfade erneut pruefen
+```
+
+## Audit 8 - PDF- und Materialien-Integritaet
+
+```text
+# Audit: PDF- und Materialien-Integritaet (Codex / borderline-angehoerige)
+
+## Kontext
+Pruefe `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige`
+auf Konsistenz und Zugaenglichkeit der Materialien. Fokus: Materialbibliothek,
+Textversionen, PDF-Rollen, Auffindbarkeit und Download-Pfade.
+
+## Constraints
+- Arbeite in frischem main-basiertem Temp-Worktree von `origin/main`
+- Branch: `audit/pdf-materialien`
+- Bericht: `qa/audit-pdf-handouts.md`
+- In Phase 1/2 keine Produktcode-Aenderungen
+- Audit-Artefakte unter `qa/` und `qa/scripts/` sind erlaubt
+
+## Phase 1 - Inventur
+- Pruefe:
+  - `client/src/pages/Materialien.tsx`
+  - `client/src/pages/HandoutTextPage.tsx`
+  - `client/src/content/handouts.ts`
+  - `client/src/content/handoutTextVersions.ts`
+  - `client/src/content/handoutTextVersionContent.ts`
+  - `server/material-download.ts`
+  - relevante lokale PDFs unter `client/public/**/*.pdf`
+- Erfasse pro Material mindestens:
+  - Kategorie
+  - PDF-Link
+  - Textversion vorhanden ja/nein
+  - CTA-Muster
+  - Suchbarkeit / Index-Relevanz
+  - Zugaenglichkeits-Risiko
+- Trenne lokale PDFs, Remote-PDFs und HTML-Textversionen sauber.
+- Bewerte, welche Materialien zwingend ein textbasiertes Pendant brauchen.
+
+STOPP nach Phase 1. Warte auf Freigabe.
+
+## Phase 2 - Diagnose
+- Priorisiere in `P0`, `P1`, `P2`.
+- Trenne:
+  - technisches Download-Problem
+  - Content-/Strukturproblem
+  - PDF-A11y-Problem
+- Formuliere pro Befund den kleinsten sinnvollen Fix.
+
+STOPP nach Phase 2. Warte auf Freigabe.
+
+## Phase 3 - Umsetzung
+- Pro Aenderung eigener Commit: `audit(pdf): <was>`
+
+## Phase 4 - Verifikation
+- `npm test`
+- `npm run check`
+- `npm run build`
+- `npm run lint`
+- Materialmatrix und CTA-Muster erneut pruefen
+```
+
+## Audit 9 - Test- und Qualitaetsnetz
+
+```text
+# Audit: Test- und Qualitaetsnetz (Codex / borderline-angehoerige)
+
+## Kontext
+Pruefe `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige`
+auf vorhandene und fehlende Produktabsicherung. Fokus: Kernfluesse, die fuer
+Routing, A11y, SEO, Materialien, Downloads und Security wichtig sind.
+
+## Constraints
+- Arbeite in frischem main-basiertem Temp-Worktree von `origin/main`
+- Branch: `audit/test-qualitaet`
+- Bericht: `qa/audit-test-qualitaet.md`
+- In Phase 1/2 keine Produktcode-Aenderungen
+- Nutze nur vorhandene Repo-Kommandos
+
+## Phase 1 - Inventur
+- Fuehre aus:
+  - `npm test`
+  - `npm run check`
+  - `npm run build`
+  - `npm run lint`
+- Clustere `client/src/__tests__/*` mindestens nach:
+  - Routing / Architektur
+  - Security Headers
+  - SEO / Meta
+  - Keyboard / Layout
+  - Materialien / Handouts
+  - Smoke / Kernseiten
+- Ordne den wichtigsten Produktpfaden zu, was bereits abgesichert ist und was
+  ungetestet bleibt.
+- Beruecksichtige dabei auch `server/**`, Redirects und statische Sonderpfade.
+
+STOPP nach Phase 1. Warte auf Freigabe.
+
+## Phase 2 - Diagnose
+- Erstelle eine Testluecken-Matrix:
+  - Pfad / Thema
+  - aktueller Schutz
+  - Rest-Risiko
+  - empfohlenes Testniveau
+- Trenne klar zwischen:
+  - echter Absicherungsluecke
+  - akzeptabler Nicht-Testung
+  - doppelter / wenig hilfreicher Testabdeckung
+
+STOPP nach Phase 2. Warte auf Freigabe.
+
+## Phase 3 - Umsetzung
+- Pro Aenderung eigener Commit: `audit(test): <was>`
+
+## Phase 4 - Verifikation
+- `npm test`
+- `npm run check`
+- `npm run build`
+- `npm run lint`
+- Matrix gegen tatsaechlich hinzugefuegte oder angepasste Absicherung abgleichen
+```
+
+## Audit 10 - Release-Readiness
+
+```text
+# Audit: Release-Readiness (Codex / borderline-angehoerige)
+
+## Kontext
+Fuehre die Ergebnisse aus Sicherheit, Accessibility, Performance, Content,
+SEO/IA, Modul-Logik, CSS-Hygiene, PDF-/Materialien und Testnetz in ein
+Release-Urteil fuer `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige`
+ueber.
+
+## Constraints
+- Arbeite in frischem main-basiertem Temp-Worktree von `origin/main`
+- Branch: `audit/release-readiness`
+- Bericht: `qa/audit-release-readiness.md`
+- In Phase 1/2 keine Produktcode-Aenderungen
+- Verwende reale Befunde aus den Einzel-Audits statt Annahmen
+
+## Phase 1 - Inventur
+- Lies die vorhandenen Audit-Berichte unter `qa/`.
+- Erstelle eine konsolidierte Befundliste:
+  - Release-Blocker
+  - wichtige Verbesserungen vor Launch
+  - vertretbare Nach-Release-Themen
+- Gleiche die Befunde gegen:
+  - Routing-Realitaet
+  - Testabdeckung
+  - Materialien-/Download-Flows
+  - statische Sonderpfade
+
+STOPP nach Phase 1. Warte auf Freigabe.
+
+## Phase 2 - Urteil
+- Entscheide klar:
+  - `bereit`
+  - `fast bereit`
+  - `nicht bereit`
+- Weise jedem Befund `P0`, `P1` oder `P2` zu.
+- Liefere Top-5 Quick Wins und eine empfohlene Umsetzungsreihenfolge.
+
+STOPP nach Phase 2. Warte auf Freigabe.
+
+## Phase 3 - Umsetzung
+- Nur nach Freigabe.
+- Pro Aenderung eigener Commit: `audit(release): <was>`
+
+## Phase 4 - Verifikation
+- `npm test`
+- `npm run check`
+- `npm run build`
+- `npm run lint`
+- abschliessendes Release-Urteil mit verbleibenden Restrisiken
 ```

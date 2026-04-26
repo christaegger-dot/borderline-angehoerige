@@ -12,6 +12,8 @@ export const unterstuetzenItems = [
     id: "im-krisenmodus",
     title: "Im Krisenmodus – Orientierung geben",
     url: "/infografiken/ampel-das-ampel-system-v3.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.png",
     pdfUrl: "/infografiken/ampel-das-ampel-system-v3.pdf",
     category: "grundlagen",
   },
@@ -19,6 +21,8 @@ export const unterstuetzenItems = [
     id: "rolle-klaeren",
     title: "Ihre Rolle klären",
     url: "/infografiken/sphären-die-einfluss-sphären-v3.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
     pdfUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     category: "grundlagen",
   },

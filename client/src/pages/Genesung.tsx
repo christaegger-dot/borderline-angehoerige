@@ -102,12 +102,12 @@ function GenesungInfografiken() {
             >
               <div className="aspect-[3/4] overflow-hidden bg-muted">
                 <img
-                  src={item.img}
+                  src={item.thumbnailUrl ?? item.img}
                   alt={item.title}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
-                  width={400}
-                  height={223}
+                  width={600}
+                  height={848}
                   decoding="async"
                 />
               </div>

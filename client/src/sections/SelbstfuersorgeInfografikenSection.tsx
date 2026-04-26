@@ -109,12 +109,12 @@ export default function SelbstfuersorgeInfografikenSection() {
             >
               <div className="aspect-[3/4] overflow-hidden bg-muted">
                 <img
-                  src={item.webp}
+                  src={item.thumbnailUrl ?? item.webp}
                   alt={item.title}
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
-                  width={400}
-                  height={223}
+                  width={600}
+                  height={848}
                   decoding="async"
                 />
               </div>

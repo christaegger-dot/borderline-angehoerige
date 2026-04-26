@@ -10,6 +10,7 @@ export type SelbstfuersorgeInfografik = {
   desc: string;
   category: Exclude<SelbstfuersorgeKategorie, "alle">;
   webp: string;
+  thumbnailUrl?: string;
   pdf: string;
   featured?: boolean;
 };
@@ -30,6 +31,8 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     desc: "Kreislauf-Diagramm: Teufelskreis vs. positiver Kreislauf – warum Selbstfürsorge keine Selbstsucht ist.",
     category: "erkennen",
     webp: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.png",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.png",
     pdf: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.pdf",
   },
   {

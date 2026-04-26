@@ -110,6 +110,25 @@
     font-weight: 400;
     letter-spacing: -0.018em;
     text-wrap: balance;
+    /* Source Serif 4: optical size axis für kleine Grössen aktivieren */
+    font-optical-sizing: auto;
+  }
+
+  /* ── Mobile Typografie: Source Serif 4 bei kleinen Grössen ── */
+  @media (max-width: 639px) {
+    h1 {
+      /* text-3xl (30px) → etwas kompakterer Zeilenabstand für Serifen auf Mobile */
+      line-height: 1.2;
+    }
+    h2 {
+      /* text-2xl (24px) → Serifen brauchen etwas mehr Luft als Sans-Serif */
+      line-height: 1.35;
+    }
+    .lede {
+      /* Lede auf Mobile etwas kleiner: 1.32rem → 1.15rem */
+      font-size: 1.15rem;
+      line-height: 1.5;
+    }
   }
 
   h1 em,

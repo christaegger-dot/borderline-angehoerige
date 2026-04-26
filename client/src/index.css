@@ -15,13 +15,13 @@
   --chart-3: oklch(0.45 0.05 250); /* Slate Blue */
   --chart-4: oklch(0.85 0.08 55); /* Light Terracotta */
   --chart-5: oklch(0.88 0.04 145); /* Light Sage */
-  --radius: 0.75rem;
-  /* Border-Radius Konvention:
-     rounded-sm  (4px)  = Tags, Badges, kleine Chips
-     rounded-md  (6px)  = Buttons, Inputs
-     rounded-lg  (12px) = Standard-Elemente, Listen-Items, kleine Cards
-     rounded-xl  (16px) = Karten, Content-Boxen, Hero-Icon-Boxen
-     rounded-2xl (20px) = Spezial-Blöcke (Soforthilfe Ampel-Blöcke) */
+  --radius: 0.5rem;
+  /* Border-Radius Konvention (Phase 1 – kantiger, editorial):
+     rounded-sm  (2px)  = Tags, Badges, kleine Chips
+     rounded-md  (4px)  = Buttons, Inputs
+     rounded-lg  (8px)  = Standard-Elemente, Listen-Items, kleine Cards
+     rounded-xl  (12px) = Karten, Content-Boxen, Hero-Icon-Boxen
+     rounded-2xl (20px) = Spezial-Blöcke (Soforthilfe Ampel-Blöcke, hartcodiert) */
   --background: oklch(0.97 0.02 85); /* Warmer Cream – Editorial-Modus (ehemals kühles Off-White oklch(0.985 0.003 200)) */
   --foreground: oklch(0.25 0.02 250); /* Charcoal */
   --card: oklch(0.99 0.008 85); /* Cream */

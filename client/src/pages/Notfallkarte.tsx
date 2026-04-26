@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import "./notfallkarte-print.css";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -201,7 +200,7 @@ export default function Notfallkarte() {
   }, [data]);
 
   const handlePrint = useCallback(() => {
-    window.print();
+    window.open("/notfallkarte-print.html", "_blank");
   }, []);
 
   const addContact = useCallback(() => {
@@ -287,7 +286,9 @@ export default function Notfallkarte() {
                 gesperrter Speicher. Bitte{" "}
                 <button
                   type="button"
-                  onClick={() => window.print()}
+                  onClick={() =>
+                    window.open("/notfallkarte-print.html", "_blank")
+                  }
                   className="underline font-semibold hover:no-underline"
                 >
                   jetzt drucken

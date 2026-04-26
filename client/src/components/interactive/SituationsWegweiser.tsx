@@ -601,9 +601,9 @@ export default function SituationsWegweiser() {
                   {node.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-foreground leading-tight">
+                  <h2 className="text-lg sm:text-xl font-semibold text-foreground leading-tight">
                     {node.question}
-                  </h3>
+                  </h2>
                   {node.subtitle && (
                     <p className="text-sm text-muted-foreground mt-1">
                       {node.subtitle}

@@ -207,9 +207,9 @@ export default function ValidierungsStufenleiter() {
                       className={`h-4 w-4 ${stufe.iconClass}`}
                       aria-hidden="true"
                     />
-                    <h4 className="font-semibold text-foreground">
+                    <h3 className="font-semibold text-foreground">
                       {stufe.title}
-                    </h4>
+                    </h3>
                   </div>
                   <p className="text-sm italic text-muted-foreground">
                     {stufe.subtitle}

@@ -48,9 +48,9 @@ export default function SelbstfuersorgeCheck() {
           <div className="flex items-start gap-3">
             <Heart className="w-5 h-5 text-terracotta-mid flex-shrink-0 mt-0.5" />
             <div>
-              <h4 className="font-semibold text-foreground mb-1">
+              <h3 className="font-semibold text-foreground mb-1">
                 Orientierung zur eigenen Belastung
-              </h4>
+              </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Statt eines Kurztests kann es hilfreicher sein, einige Bereiche
                 ruhig für sich durchzugehen. Nicht jede Frage muss mit Ja

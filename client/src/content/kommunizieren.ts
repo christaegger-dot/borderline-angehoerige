@@ -66,9 +66,8 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "zuhoeren-ohne-zustimmen",
     title: "Zuhören ohne Zustimmen",
     description: "Validieren ohne nachzugeben",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eeZIHGmfprWnoPPf.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toeDsBefZFNbxXYc.pdf",
+    url: "/infografiken/validierung-die-validierungs-treppe-v5.png",
+    pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
     category: "techniken",
   },
   {
@@ -84,9 +83,8 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "krisenkommunikation",
     title: "Spickzettel Krisenkommunikation (A4)",
     description: "A4-Spickzettel für akute Spannungszustände",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tgVHTaXVryVEuEss.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YvXkEbRmwIcCFtsj.pdf",
+    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
+    pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
     category: "praxis",
   },
 ];

@@ -29,8 +29,8 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     title: "Die Sauerstoffmaske",
     desc: "Kreislauf-Diagramm: Teufelskreis vs. positiver Kreislauf – warum Selbstfürsorge keine Selbstsucht ist.",
     category: "erkennen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IQwhlqUMporMKdmH.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yIWenSfOeiUHdMIc.pdf",
+    webp: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.png",
+    pdf: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.pdf",
   },
   {
     id: "radikale-akzeptanz",

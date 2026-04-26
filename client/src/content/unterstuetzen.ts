@@ -11,17 +11,15 @@ export const unterstuetzenItems = [
   {
     id: "im-krisenmodus",
     title: "Im Krisenmodus – Orientierung geben",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/gOumJSiPiJFGkSFy.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FOZYnweFmVcMXYyr.pdf",
+    url: "/infografiken/ampel-das-ampel-system-v3.png",
+    pdfUrl: "/infografiken/ampel-das-ampel-system-v3.pdf",
     category: "grundlagen",
   },
   {
     id: "rolle-klaeren",
     title: "Ihre Rolle klären",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WUiQpUWjKIjpSRDC.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JMOjSacqrnDcAkoB.pdf",
+    url: "/infografiken/sphären-die-einfluss-sphären-v3.png",
+    pdfUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     category: "grundlagen",
   },
   {

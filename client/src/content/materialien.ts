@@ -79,9 +79,8 @@ export const materials: MaterialItem[] = [
       "Wut, Schmerz, Angst und Scham als Beziehungsgeschehen verständlicher einordnen.",
     category: "verstehen",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MLLwefeyaKvtThbK.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RNKtfQQMvhlSyiIp.pdf",
+    url: "/infografiken/eisberg-der-eisberg-v6.png",
+    downloadUrl: "/infografiken/eisberg-der-eisberg-v6.pdf",
     priority: "core",
   },
   {
@@ -91,9 +90,8 @@ export const materials: MaterialItem[] = [
       "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
     category: "unterstuetzen",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WUiQpUWjKIjpSRDC.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/JMOjSacqrnDcAkoB.pdf",
+    url: "/infografiken/sphären-die-einfluss-sphären-v3.png",
+    downloadUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     priority: "core",
   },
   {
@@ -103,9 +101,8 @@ export const materials: MaterialItem[] = [
       "Kurze Formulierungen für akute Spannungszustände, wenn klare Sprache mehr hilft als lange Erklärungen.",
     category: "kommunizieren",
     kind: "Spickzettel",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tgVHTaXVryVEuEss.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YvXkEbRmwIcCFtsj.pdf",
+    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
+    downloadUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
     priority: "core",
   },
   {
@@ -151,9 +148,8 @@ export const materials: MaterialItem[] = [
       "Einordnung von Idealisierung, Entwertung und dem erschwerten Zugang zu Grautönen unter Stress.",
     category: "verstehen",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WRORriPmZftmvKTL.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/RtdVgflJuCNAhEKk.pdf",
+    url: "/infografiken/pendel-das-bewertungs-pendel-v14.png",
+    downloadUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
     priority: "secondary",
   },
   {
@@ -163,9 +159,8 @@ export const materials: MaterialItem[] = [
       "Warum logische Klärung unter starker Anspannung oft nicht erreichbar ist und zuerst Beruhigung hilft.",
     category: "verstehen",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/sSUJoOUTiuWgrkiZ.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tlKAOpYHdCNAtovE.pdf",
+    url: "/infografiken/alarm-der-alarm-modus-v3.png",
+    downloadUrl: "/infografiken/alarm-der-alarm-modus-v3.pdf",
     priority: "secondary",
   },
   {

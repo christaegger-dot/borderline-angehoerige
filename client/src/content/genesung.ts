@@ -28,8 +28,8 @@ export const genesungItems: GenesungItem[] = [
     id: "fortschritt-paradox",
     title: "Das Fortschritt-Paradox",
     desc: "Warum Rückfälle zum Weg gehören",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DPkqytVYFcreeBlC.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/UFLdEEGIDxKdRUZO.pdf",
+    img: "/infografiken/fortschritt-das-fortschritt-paradox-v4.png",
+    pdf: "/infografiken/fortschritt-das-fortschritt-paradox-v4.pdf",
     category: "verstehen",
   },
   {

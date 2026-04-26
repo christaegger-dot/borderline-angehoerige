@@ -236,10 +236,7 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="mb-8">
-              <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
-                <span className="w-6 h-px bg-sage-dark/30" />
-                Orientierung
-              </span>
+              <span className="kicker text-sage-dark">Orientierung</span>
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was ist gerade Ihre Lage?
               </h2>
@@ -315,8 +312,7 @@ export default function Home() {
 
               <div className="relative grid lg:grid-cols-[0.95fr_1.05fr]">
                 <div className="p-8 md:p-10 lg:p-12">
-                  <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-light/90 mb-4">
-                    <span className="w-6 h-px bg-sage-light/50" />
+                  <span className="kicker text-sage-light/90">
                     Unser Ansatz
                   </span>
 
@@ -333,18 +329,14 @@ export default function Home() {
 
                   <div className="grid sm:grid-cols-2 gap-3 mb-8 max-w-xl">
                     <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 backdrop-blur-sm">
-                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-sage-light/80 mb-2">
-                        Fokus
-                      </p>
+                      <p className="kicker text-sage-light/80">Fokus</p>
                       <p className="text-sm text-white/88">
                         Verstehen, kommunizieren, Grenzen, Selbstfürsorge und
                         Soforthilfe in einer Linie gedacht.
                       </p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 backdrop-blur-sm">
-                      <p className="text-xs font-semibold uppercase tracking-[0.08em] text-sage-light/80 mb-2">
-                        Einstieg
-                      </p>
+                      <p className="kicker text-sage-light/80">Einstieg</p>
                       <p className="text-sm text-white/88">
                         Sie starten dort, wo der Druck gerade am grössten ist,
                         statt sich durch ein Archiv zu arbeiten.
@@ -410,11 +402,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <div>
               <div className="text-center mb-8">
-                <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
-                  <span className="w-6 h-px bg-sage-dark/30" />
-                  Werkzeuge
-                  <span className="w-6 h-px bg-sage-dark/30" />
-                </span>
+                <span className="kicker text-sage-dark">Werkzeuge</span>
                 <h2 className="text-2xl md:text-3xl font-normal text-foreground">
                   Praktische Hilfen für Ihren Alltag
                 </h2>
@@ -469,11 +457,7 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <span className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase text-sage-dark/85 mb-3">
-                <span className="w-6 h-px bg-sage-dark/30" />
-                Forschung & Praxis
-                <span className="w-6 h-px bg-sage-dark/30" />
-              </span>
+              <span className="kicker text-sage-dark">Forschung & Praxis</span>
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was Forschung und Praxis zeigen
               </h2>
@@ -511,6 +495,44 @@ export default function Home() {
                 Alle Quellen ansehen
               </Link>
             </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="home-section-divider h-6" />
+
+      {/* Story-Sektion: anonymisierte Erfahrungsgeschichte als Fliesstext */}
+      <section className="py-14 md:py-20 bg-sage-pale/40">
+        <div className="container">
+          <div className="max-w-2xl mx-auto">
+            <span className="kicker">Eine Geschichte von vielen</span>
+            <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-4">
+              «Ich habe alles versucht –{" "}
+              <em>und trotzdem nicht gewusst, was ich falsch mache.</em>»
+            </h2>
+            <hr className="rule rule-narrow mb-6" />
+            <div className="prose-editorial text-muted-foreground leading-relaxed space-y-4">
+              <p>
+                Martina, Mutter eines erwachsenen Sohnes, beschreibt es so: Sie
+                habe jahrelang das Gefühl gehabt, auf Eierschalen zu laufen.
+                Jedes Gespräch konnte kippen. Jeder gut gemeinte Satz wurde
+                falsch verstanden. Sie habe sich zurückgezogen, dann wieder
+                angenähert – und immer das Gefühl gehabt, dass sie das Problem
+                sei.
+              </p>
+              <p>
+                Was ihr schliesslich geholfen hat: zu verstehen, dass die
+                Dynamik nicht an ihr lag. Dass Borderline bestimmte
+                Beziehungsmuster erzeugt, die für Angehörige fast unmöglich zu
+                durchschauen sind – solange man sie nicht kennt. Und dass
+                Grenzen setzen keine Kälte ist, sondern Schutz für beide Seiten.
+              </p>
+              <p className="text-sm italic text-muted-foreground/70">
+                Martina ist ein Kompositum aus Erfahrungen, die in der
+                Angehörigenarbeit häufig geschildert werden. Keine echte
+                Einzelperson.
+              </p>
+            </div>
           </div>
         </div>
       </section>

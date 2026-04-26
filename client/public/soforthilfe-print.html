@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Soforthilfe bei akuter Gefahr – Notfallnummern Schweiz (Kanton Zürich)
+    </title>
+    <style>
+      /* ── Fonts ── */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      /* ── Reset & Base ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 9.5pt;
+        line-height: 1.45;
+        color: #1a1a1a;
+        background: #fff;
+      }
+
+      /* ── Farben ── */
+      :root {
+        --rot: #8b1a1a; /* oklch(0.45 0.18 25) */
+        --rot-body: #a52525; /* oklch(0.50 0.16 25) */
+        --rot-wash: #fdf0ef;
+        --orange: #7a4010; /* oklch(0.35 0.08 55) */
+        --orange-mid: #8b4a18; /* oklch(0.40 0.10 55) */
+        --orange-bg: #fff7f0;
+        --orange-bdr: #f5d5b0;
+        --gruen: #1a5c35; /* oklch(0.35 0.08 145) */
+        --gruen-mid: #1e6b3e; /* oklch(0.40 0.10 145) */
+        --gruen-bg: #f0faf4;
+        --gruen-bdr: #b0dfc0;
+        --lila: #4a1a6b; /* oklch(0.35 0.08 305) */
+        --lila-bg: #f8f0ff;
+        --lila-bdr: #d5b0f0;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --bg-card: #ffffff;
+      }
+
+      /* ── Layout ── */
+      .page {
+        max-width: 170mm;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      /* ── Header ── */
+      .doc-header {
+        border-bottom: 2px solid var(--rot);
+        padding-bottom: 6pt;
+        margin-bottom: 10pt;
+      }
+
+      .doc-header .kicker {
+        font-size: 7pt;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--rot);
+        margin-bottom: 2pt;
+      }
+
+      .doc-header h1 {
+        font-size: 16pt;
+        font-weight: 700;
+        color: #111;
+        line-height: 1.15;
+        margin-bottom: 3pt;
+      }
+
+      .doc-header .subtitle {
+        font-size: 8.5pt;
+        color: var(--muted);
+        margin-bottom: 4pt;
+      }
+
+      .doc-header .meta {
+        font-size: 7.5pt;
+        color: var(--muted);
+        display: flex;
+        gap: 12pt;
+        flex-wrap: wrap;
+      }
+
+      .doc-header .meta span::before {
+        content: "• ";
+        color: var(--rot);
+      }
+
+      /* ── Disclaimer oben ── */
+      .disclaimer-top {
+        background: var(--rot-wash);
+        border: 1px solid #f5c6c0;
+        border-radius: 4pt;
+        padding: 5pt 7pt;
+        font-size: 8pt;
+        color: #5a1010;
+        margin-bottom: 8pt;
+      }
+
+      .disclaimer-top strong {
+        color: var(--rot);
+      }
+
+      /* ── Block-Wrapper ── */
+      .block {
+        margin-bottom: 7pt;
+        border-radius: 6pt;
+        overflow: hidden;
+        page-break-inside: avoid;
+      }
+
+      /* Block ROT – darf umbrechen, kein break-inside:avoid */
+      .block-rot {
+        margin-bottom: 7pt;
+        border-radius: 6pt;
+        overflow: visible;
+      }
+
+      .block-rot .block-header {
+        background: var(--rot);
+        border-radius: 6pt 6pt 0 0;
+      }
+
+      .block-rot .block-body {
+        background: var(--rot-body);
+      }
+
+      .block-rot .block-footer {
+        background: var(--rot-body);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      /* ── Block-Header ── */
+      .block-header {
+        padding: 6pt 8pt;
+        display: flex;
+        align-items: flex-start;
+        gap: 6pt;
+      }
+
+      .block-header .icon {
+        font-size: 11pt;
+        line-height: 1;
+        flex-shrink: 0;
+        margin-top: 1pt;
+      }
+
+      .block-header .title-wrap {
+      }
+
+      .block-header h2 {
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1pt;
+      }
+
+      .block-header .desc {
+        font-size: 8pt;
+        color: rgba(255, 255, 255, 0.88);
+        line-height: 1.3;
+      }
+
+      /* Orange/Grün/Lila Header */
+      .block-orange .block-header {
+        background: var(--orange-bg);
+        border: 1px solid var(--orange-bdr);
+        border-bottom: none;
+        border-radius: 6pt 6pt 0 0;
+      }
+      .block-orange .block-header h2 {
+        color: var(--orange);
+      }
+      .block-orange .block-header .desc {
+        color: var(--orange-mid);
+      }
+
+      .block-gruen .block-header {
+        background: var(--gruen-bg);
+        border: 1px solid var(--gruen-bdr);
+        border-bottom: none;
+        border-radius: 6pt 6pt 0 0;
+      }
+      .block-gruen .block-header h2 {
+        color: var(--gruen);
+      }
+      .block-gruen .block-header .desc {
+        color: var(--gruen-mid);
+      }
+
+      .block-lila .block-header {
+        background: var(--lila-bg);
+        border: 1px solid var(--lila-bdr);
+        border-bottom: none;
+        border-radius: 6pt 6pt 0 0;
+      }
+      .block-lila .block-header h2 {
+        color: var(--lila);
+      }
+      .block-lila .block-header .desc {
+        color: #5a2a80;
+      }
+
+      .block-weitere .block-header {
+        background: #f3f4f6;
+        border: 1px solid var(--border);
+        border-bottom: none;
+        border-radius: 6pt 6pt 0 0;
+      }
+      .block-weitere .block-header h2 {
+        color: #374151;
+      }
+      .block-weitere .block-header .desc {
+        color: var(--muted);
+      }
+
+      /* ── Block-Body ── */
+      .block-body {
+        padding: 5pt 7pt;
+      }
+
+      .block-orange .block-body,
+      .block-gruen .block-body,
+      .block-lila .block-body,
+      .block-weitere .block-body {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-top: none;
+        border-radius: 0 0 6pt 6pt;
+      }
+
+      .block-orange .block-body {
+        border-color: var(--orange-bdr);
+      }
+      .block-gruen .block-body {
+        border-color: var(--gruen-bdr);
+      }
+      .block-lila .block-body {
+        border-color: var(--lila-bdr);
+      }
+
+      /* ── Kontaktkarten ── */
+      .kontakt-liste {
+        display: flex;
+        flex-direction: column;
+        gap: 4pt;
+      }
+
+      .kontakt {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4pt 6pt;
+        border-radius: 4pt;
+        page-break-inside: avoid;
+      }
+
+      /* ROT-Karten */
+      .block-rot .kontakt {
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      /* Farbige Karten */
+      .block-orange .kontakt {
+        background: var(--orange-bg);
+        border: 1px solid var(--orange-bdr);
+      }
+      .block-gruen .kontakt {
+        background: var(--gruen-bg);
+        border: 1px solid var(--gruen-bdr);
+      }
+      .block-lila .kontakt {
+        background: var(--lila-bg);
+        border: 1px solid var(--lila-bdr);
+      }
+      .block-weitere .kontakt {
+        background: #f9fafb;
+        border: 1px solid var(--border);
+      }
+
+      .kontakt-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .kontakt-nummer {
+        font-size: 13pt;
+        font-weight: 700;
+        line-height: 1.1;
+        color: #fff;
+      }
+
+      .block-orange .kontakt-nummer {
+        color: var(--orange);
+      }
+      .block-gruen .kontakt-nummer {
+        color: var(--gruen);
+      }
+      .block-lila .kontakt-nummer {
+        color: var(--lila);
+      }
+      .block-weitere .kontakt-nummer {
+        color: #111;
+      }
+
+      .kontakt-label {
+        font-size: 8pt;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 0.5pt;
+      }
+
+      .block-orange .kontakt-label {
+        color: var(--orange-mid);
+      }
+      .block-gruen .kontakt-label {
+        color: var(--gruen-mid);
+      }
+      .block-lila .kontakt-label {
+        color: #5a2a80;
+      }
+      .block-weitere .kontakt-label {
+        color: #374151;
+      }
+
+      .kontakt-hinweis {
+        font-size: 7.5pt;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.3;
+        margin-top: 1pt;
+      }
+
+      .block-orange .kontakt-hinweis {
+        color: var(--muted);
+      }
+      .block-gruen .kontakt-hinweis {
+        color: var(--muted);
+      }
+      .block-lila .kontakt-hinweis {
+        color: var(--muted);
+      }
+      .block-weitere .kontakt-hinweis {
+        color: var(--muted);
+      }
+
+      .kontakt-tel {
+        font-size: 9pt;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        flex-shrink: 0;
+        margin-left: 6pt;
+      }
+
+      .block-orange .kontakt-tel {
+        color: var(--orange-mid);
+      }
+      .block-gruen .kontakt-tel {
+        color: var(--gruen-mid);
+      }
+      .block-lila .kontakt-tel {
+        color: #5a2a80;
+      }
+      .block-weitere .kontakt-tel {
+        color: var(--muted);
+      }
+
+      /* ── Merksatz ── */
+      .merksatz {
+        background: rgba(255, 255, 255, 0.12);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 5pt 7pt;
+        font-size: 8pt;
+        color: rgba(255, 255, 255, 0.92);
+        line-height: 1.4;
+      }
+
+      .merksatz strong {
+        color: #fff;
+      }
+
+      /* ── Telefon-Leitfaden ── */
+      .leitfaden {
+        background: var(--rot-body);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 5pt 7pt;
+        page-break-inside: avoid;
+      }
+
+      .leitfaden .leitfaden-title {
+        font-size: 7pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 4pt;
+      }
+
+      .leitfaden-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 3pt;
+      }
+
+      .leitfaden-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 5pt;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 3pt;
+        padding: 3pt 5pt;
+        page-break-inside: avoid;
+      }
+
+      .step-nr {
+        flex-shrink: 0;
+        width: 14pt;
+        height: 14pt;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        font-size: 7.5pt;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .step-text {
+        font-size: 8pt;
+        color: rgba(255, 255, 255, 0.92);
+        line-height: 1.35;
+      }
+
+      /* ── Kontext-Text (Orange-Block) ── */
+      .kontext-text {
+        font-size: 8pt;
+        color: var(--muted);
+        margin-bottom: 5pt;
+        line-height: 1.4;
+      }
+
+      /* ── Footer ── */
+      .doc-footer {
+        margin-top: 8pt;
+        padding-top: 5pt;
+        border-top: 1px solid var(--border);
+        font-size: 7pt;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 3pt;
+      }
+
+      /* ── Print-Optimierung ── */
+      @page {
+        size: A4 portrait;
+        margin: 12mm 14mm 10mm 14mm;
+      }
+
+      @media print {
+        body {
+          background: #fff !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+        a {
+          text-decoration: none !important;
+        }
+
+        /* Hintergrundfarben erzwingen */
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        /* Seitenumbruch-Kontrolle */
+        .block {
+          page-break-inside: avoid;
+        }
+        .block-rot {
+          page-break-inside: auto;
+        }
+        .leitfaden {
+          page-break-inside: avoid;
+        }
+        .kontakt {
+          page-break-inside: avoid;
+        }
+        .leitfaden-step {
+          page-break-inside: avoid;
+        }
+      }
+
+      /* ── Screen-only: Drucken-Button ── */
+      @media screen {
+        body {
+          background: #f3f4f6;
+          padding: 20px;
+        }
+        .page {
+          background: #fff;
+          padding: 20mm 18mm;
+          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12);
+        }
+        .print-btn-bar {
+          max-width: 170mm;
+          margin: 0 auto 16px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+        .print-btn {
+          background: #8b1a1a;
+          color: #fff;
+          border: none;
+          padding: 8px 18px;
+          border-radius: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          cursor: pointer;
+          font-family: inherit;
+        }
+        .print-btn:hover {
+          background: #a52525;
+        }
+        .back-link {
+          font-size: 13px;
+          color: #6b7280;
+          text-decoration: none;
+        }
+        .back-link:hover {
+          color: #111;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Screen-only: Navigation -->
+    <div class="print-btn-bar no-print">
+      <button class="print-btn" onclick="window.print()">
+        🖨 Drucken / Als PDF speichern
+      </button>
+      <a class="back-link" href="/soforthilfe"
+        >← Zurück zur Soforthilfe-Seite</a
+      >
+    </div>
+
+    <div class="page">
+      <!-- Header -->
+      <div class="doc-header">
+        <div class="kicker">Soforthilfe · Notfallnummern Schweiz</div>
+        <h1>Soforthilfe bei akuter Gefahr</h1>
+        <p class="subtitle">
+          Notfallnummern und Anlaufstellen für akute Krisen – Schwerpunkt Kanton
+          Zürich
+        </p>
+        <div class="meta">
+          <span>Zuletzt verifiziert: April 2026</span>
+          <span
+            >Gilt für die Schweiz (Kanton Zürich) – nicht für Deutschland oder
+            Österreich</span
+          >
+          <span>borderline-angehoerige.ch</span>
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer-top">
+        <strong>Diese Seite ist für akute Gefahrensituationen.</strong>
+        Für emotionale Krisen ohne akute Gefahr: Seite «In der Krise
+        unterstützen» besuchen. Diese Informationen ersetzen keine medizinische
+        Beratung. Im Zweifel direkt <strong>144 / 117</strong> anrufen.
+      </div>
+
+      <!-- BLOCK 1: LEBENSGEFAHR (ROT) -->
+      <div class="block-rot">
+        <div class="block-header">
+          <div class="icon">⚠</div>
+          <div class="title-wrap">
+            <h2>Lebensgefahr – sofort handeln</h2>
+            <p class="desc">
+              Bei akuter Suizidgefahr, schwerer Selbstverletzung, Gewalt oder
+              unmittelbarer Bedrohung.
+            </p>
+          </div>
+        </div>
+        <div
+          class="block-body"
+          style="background: var(--rot-body); border: none; border-radius: 0"
+        >
+          <div class="kontakt-liste">
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">144</div>
+                <div class="kontakt-label">Rettungsdienst</div>
+                <div class="kontakt-hinweis">
+                  Bei akuter Lebensgefahr, Selbstverletzung oder akuter
+                  Suizidgefahr
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:144">📞</a>
+            </div>
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">117</div>
+                <div class="kontakt-label">Polizei</div>
+                <div class="kontakt-hinweis">
+                  Bei Gewalt oder wenn Sie sich bedroht fühlen
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:117">📞</a>
+            </div>
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">112</div>
+                <div class="kontakt-label">Notruf (wenn unsicher)</div>
+                <div class="kontakt-hinweis">
+                  Wenn Sie unsicher sind, welche Nummer – funktioniert immer.
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:112">📞</a>
+            </div>
+          </div>
+        </div>
+        <div class="merksatz">
+          <strong>Merke:</strong> Bei akuter Selbst- oder Fremdgefährdung zuerst
+          <strong>144 / 117 / 112</strong> wählen. Wenn Sie unsicher sind,
+          lassen Sie sich dort oder durch eine psychiatrische Fachstelle sofort
+          zum weiteren Vorgehen anleiten.
+        </div>
+        <div class="leitfaden">
+          <div class="leitfaden-title">Die ersten 30 Sekunden am Telefon</div>
+          <div class="leitfaden-steps">
+            <div class="leitfaden-step">
+              <div class="step-nr">1</div>
+              <div class="step-text">
+                Name nennen + Beziehung: «Ich bin [Name], ich rufe für meine
+                Tochter / meinen Partner / …»
+              </div>
+            </div>
+            <div class="leitfaden-step">
+              <div class="step-nr">2</div>
+              <div class="step-text">
+                Art der Situation: «Es geht um eine Suizidgefahr /
+                Selbstverletzung / unkontrolliertes Verhalten»
+              </div>
+            </div>
+            <div class="leitfaden-step">
+              <div class="step-nr">3</div>
+              <div class="step-text">
+                Was passiert gerade: «Sie sitzt in ihrem Zimmer und sagt, sie
+                will nicht mehr leben»
+              </div>
+            </div>
+            <div class="leitfaden-step">
+              <div class="step-nr">4</div>
+              <div class="step-text">
+                Sicherheit klären: «Ich bin bei ihr / sie ist alleine / wir sind
+                in Sicherheit»
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 2: PSYCHIATRISCHE KRISE (ORANGE) -->
+      <div class="block block-orange">
+        <div class="block-header">
+          <div class="icon" style="color: var(--orange)">🟠</div>
+          <div class="title-wrap">
+            <h2>Akute psychiatrische Krise</h2>
+            <p class="desc">
+              Schwere psychische Krise, starke Eskalation oder massiver
+              Kontrollverlust – aber
+              <strong>keine unmittelbare Lebensgefahr</strong>.
+            </p>
+          </div>
+        </div>
+        <div class="block-body">
+          <p class="kontext-text">
+            Kontaktieren Sie die PUK Zürich – rund um die Uhr, 24/7:
+          </p>
+          <div class="kontakt-liste">
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">058 384 20 00</div>
+                <div class="kontakt-label">PUK Erwachsene (24/7)</div>
+                <div class="kontakt-hinweis">Erwachsene 18–64 Jahre</div>
+              </div>
+              <a class="kontakt-tel" href="tel:+41583842000">📞</a>
+            </div>
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">058 384 66 66</div>
+                <div class="kontakt-label">
+                  PUK Kinder &amp; Jugendliche (24/7)
+                </div>
+                <div class="kontakt-hinweis">
+                  Kinder &amp; Jugendliche bis 18 Jahre
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:+41583846666">📞</a>
+            </div>
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">058 384 46 82</div>
+                <div class="kontakt-label">PUK Erwachsene ab 65 (24/7)</div>
+                <div class="kontakt-hinweis">Erwachsene ab 65 Jahren</div>
+              </div>
+              <a class="kontakt-tel" href="tel:+41583844682">📞</a>
+            </div>
+          </div>
+          <p
+            style="
+              font-size: 7.5pt;
+              color: var(--muted);
+              margin-top: 5pt;
+              line-height: 1.4;
+            "
+          >
+            Am Telefon erfolgt eine kurze Einschätzung, was jetzt am besten
+            hilft.
+          </p>
+        </div>
+      </div>
+
+      <!-- BLOCK 3: JEMAND ZUM REDEN (GRÜN) -->
+      <div class="block block-gruen">
+        <div class="block-header">
+          <div class="icon" style="color: var(--gruen)">💚</div>
+          <div class="title-wrap">
+            <h2>Jemand zum Reden / Entlastung</h2>
+            <p class="desc">
+              Für Gespräch, Entlastung und Orientierung –
+              <strong>kein Einsatz vor Ort</strong>, keine unmittelbare Gefahr.
+            </p>
+          </div>
+        </div>
+        <div class="block-body">
+          <div class="kontakt-liste">
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">143</div>
+                <div class="kontakt-label">Dargebotene Hand (24/7)</div>
+                <div class="kontakt-hinweis">
+                  Anonym, vertraulich – Gesprächs- und Krisenangebot
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:143">📞</a>
+            </div>
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">0848 35 45 55</div>
+                <div class="kontakt-label">
+                  Elternnotruf (24/7) · Für Eltern
+                </div>
+                <div class="kontakt-hinweis">
+                  Beratung für Eltern – anonym, vertraulich
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:+41848354555">📞</a>
+            </div>
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">147</div>
+                <div class="kontakt-label">
+                  Pro Juventute (24/7) · Für Kinder &amp; Jugendliche
+                </div>
+                <div class="kontakt-hinweis">
+                  Beratung für Kinder und Jugendliche – vertraulich
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:147">📞</a>
+            </div>
+          </div>
+          <p
+            style="
+              font-size: 7.5pt;
+              color: var(--muted);
+              margin-top: 5pt;
+              line-height: 1.4;
+            "
+          >
+            <strong style="color: var(--gruen)">Bei akuter Gefahr:</strong>
+            Immer zuerst <strong>144 / 117 / 112</strong> rufen.
+          </p>
+        </div>
+      </div>
+
+      <!-- BLOCK 4: SPEZIALFALL VERGIFTUNG (LILA) -->
+      <div class="block block-lila">
+        <div class="block-header">
+          <div class="icon" style="color: var(--lila)">💊</div>
+          <div class="title-wrap">
+            <h2>Spezialfall: Vergiftung</h2>
+            <p class="desc">
+              Bei Vergiftungsverdacht oder Medikamentenüberdosierung.
+            </p>
+          </div>
+        </div>
+        <div class="block-body">
+          <div class="kontakt-liste">
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer">145</div>
+                <div class="kontakt-label">Tox Info Suisse</div>
+                <div class="kontakt-hinweis">
+                  Bei Vergiftungsverdacht oder Medikamentenüberdosierung
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:145">📞</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 5: WEITERE KONTAKTE -->
+      <div class="block block-weitere">
+        <div class="block-header">
+          <div class="icon" style="color: #374151">ℹ</div>
+          <div class="title-wrap">
+            <h2>Weitere Kontakte (Kanton Zürich)</h2>
+            <p class="desc">Fachstellen und Kriseninterventionszentrum.</p>
+          </div>
+        </div>
+        <div class="block-body">
+          <div class="kontakt-liste">
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer" style="font-size: 10pt">
+                  044 296 73 00
+                </div>
+                <div class="kontakt-label">
+                  Kriseninterventionszentrum (KIZ) Zürich
+                </div>
+                <div class="kontakt-hinweis">
+                  Psychiatrische Notfallambulanz – Mo–Fr 8–17 Uhr
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:+41442967300">📞</a>
+            </div>
+            <div class="kontakt">
+              <div class="kontakt-info">
+                <div class="kontakt-nummer" style="font-size: 10pt">
+                  058 384 27 00
+                </div>
+                <div class="kontakt-label">
+                  Fachstelle Angehörigenarbeit PUK
+                </div>
+                <div class="kontakt-hinweis">
+                  Beratung für Angehörige – Mo–Fr 9–12 Uhr
+                </div>
+              </div>
+              <a class="kontakt-tel" href="tel:+41583842700">📞</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="doc-footer">
+        <span
+          >Fachstelle Angehörigenarbeit · PUK Zürich ·
+          borderline-angehoerige.ch</span
+        >
+        <span>Zuletzt verifiziert: April 2026 · Gilt für Kanton Zürich</span>
+      </div>
+    </div>
+    <!-- /.page -->
+
+    <script>
+      // Automatisch Druckdialog öffnen wenn ?print=1 in der URL
+      if (new URLSearchParams(window.location.search).get("print") === "1") {
+        window.addEventListener("load", () =>
+          setTimeout(() => window.print(), 300)
+        );
+      }
+    </script>
+  </body>
+</html>

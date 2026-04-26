@@ -92,25 +92,21 @@ export default function Kommunizieren() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-slate-light flex items-center justify-center">
-                <MessageCircle className="w-6 h-6 text-slate-blue" />
-              </div>
-              <span className="text-sm font-medium text-slate-blue">
-                Lesezeit: 14 Minuten
-              </span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
+            <span className="kicker text-slate-blue">
               Kommunizieren
+              <span aria-hidden="true"> · </span>
+              Lesezeit: 14 Minuten
+            </span>
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-4">
+              Gespräche in <em>belasteten Beziehungen</em>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Kommunikation löst keine Grunddynamik. Sie kann aber Eskalation
-              bremsen, Missverständnisse begrenzen und Ihre eigene Position
-              klarer machen. Gerade in belasteten Beziehungen ist deshalb nicht
-              nur wichtig, was Sie sagen, sondern wann, in welchem Ton und mit
-              welcher inneren Haltung.
+            <hr className="rule rule-narrow mb-6" />
+
+            <p className="lede">
+              Kommunikation löst keine Grunddynamik – sie kann aber Eskalation
+              bremsen und Ihre eigene Position klärer machen.
             </p>
           </motion.div>
         </div>

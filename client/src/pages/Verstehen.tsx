@@ -6,7 +6,6 @@ import {
   Activity,
   AlertCircle,
   ArrowRight,
-  BookOpen,
   Brain,
   Heart,
   Layers,
@@ -90,26 +89,22 @@ export default function Verstehen() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-sage-mid-dark" />
-              </div>
-              <span className="text-sm font-medium text-sage-mid-dark">
-                Lesezeit: 15 Minuten
-              </span>
-            </div>
+            <span className="kicker text-sage-mid-dark">
+              Verstehen
+              <span aria-hidden="true"> · </span>
+              Lesezeit: 15 Minuten
+            </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
-              Borderline verstehen
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-4">
+              Borderline <em>verstehen</em>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <hr className="rule rule-narrow mb-6" />
+
+            <p className="lede">
               Für Angehörige ist Borderline oft nicht nur schwer zu begreifen,
-              sondern schwer auszuhalten. Situationen können rasch kippen,
-              Reaktionen widersprüchlich wirken und die eigene Rolle unklar
-              werden. Diese Seite hilft Ihnen, typische innere und
-              zwischenmenschliche Dynamiken besser einzuordnen, ohne Verhalten
-              zu beschönigen oder zu verurteilen.
+              sondern schwer auszuhalten – Situationen kippen, Reaktionen wirken
+              widersprüchlich, die eigene Rolle bleibt unklar.
             </p>
           </motion.div>
         </div>

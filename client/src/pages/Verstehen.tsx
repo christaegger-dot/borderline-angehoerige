@@ -213,19 +213,15 @@ export default function Verstehen() {
               viewport={{ once: true }}
               className="mb-8"
             >
-              <Card className="border-l-4 border-l-sage bg-sage-light/20">
-                <CardContent className="p-6">
-                  <p className="text-foreground leading-relaxed italic">
-                    "Verstehen hat mir nicht alles leichter gemacht. Aber ich
-                    habe aufgehört, jede Eskalation nur als Bosheit, jede
-                    Distanz nur als Ablehnung und jede Krise nur als mein
-                    persönliches Versagen zu lesen."
-                  </p>
-                  <p className="text-muted-foreground text-sm mt-3">
-                    — Eine Angehörige
-                  </p>
-                </CardContent>
-              </Card>
+              <blockquote className="pull-quote">
+                <p>
+                  «Verstehen hat mir nicht alles leichter gemacht. Aber ich habe
+                  aufgehört, jede Eskalation nur als Bosheit, jede Distanz nur
+                  als Ablehnung und jede Krise nur als mein persönliches
+                  Versagen zu lesen.»
+                </p>
+                <cite>— Eine Angehörige (Kompositum, keine reale Person)</cite>
+              </blockquote>
             </motion.div>
 
             <ContentSection

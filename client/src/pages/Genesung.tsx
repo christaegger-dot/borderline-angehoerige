@@ -481,16 +481,14 @@ export default function Genesung() {
                   schnell an, als wäre alles umsonst gewesen. Meist ist das
                   nicht die treffendste Deutung.
                 </p>
-                <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
-                  <CardContent className="p-5">
-                    <p className="text-foreground leading-relaxed">
-                      Entwicklung bedeutet bei Borderline häufig nicht: Schritt
-                      für Schritt nur vorwärts. Eher: Es gibt Bewegungen,
-                      Unterbrüche, Wiederaufnahmen und Phasen, in denen neue
-                      Stabilität erst gelernt werden muss.
-                    </p>
-                  </CardContent>
-                </Card>
+                <blockquote className="pull-quote">
+                  <p>
+                    Entwicklung bedeutet bei Borderline häufig nicht: Schritt
+                    für Schritt nur vorwärts. Eher: Es gibt Bewegungen,
+                    Unterbrüche, Wiederaufnahmen und Phasen, in denen neue
+                    Stabilität erst gelernt werden muss.
+                  </p>
+                </blockquote>
 
                 {/* Genesungsverlauf – Wellenlinie */}
                 <div className="rounded-lg border border-border/40 bg-slate-wash/10 p-4">

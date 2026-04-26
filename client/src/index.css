@@ -245,6 +245,30 @@
     max-width: 44ch;
   }
 
+  /* ── Pull-Quote (Phase 4) ── */
+  /* Zitat-Hervorhebung in Prosa-Abschnitten: linker Akzentbalken, italic, etwas grösser */
+  .pull-quote {
+    border-left: 3px solid var(--color-sage, oklch(0.72 0.08 150));
+    padding-left: 1.25rem;
+    margin: 1.75rem 0;
+  }
+
+  .pull-quote p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--foreground);
+  }
+
+  .pull-quote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-style: normal;
+    color: var(--muted-foreground);
+    letter-spacing: 0.02em;
+  }
+
   .home-hero-surface {
     background: linear-gradient(
       to bottom right,

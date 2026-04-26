@@ -305,16 +305,10 @@ export default function Selbstfuersorge() {
               id="radikale-akzeptanz"
               preview="«Es ist, wie es ist.» – Dieses DBT-Konzept kann auch für Angehörige befreiend sein."
             >
-              <Card className="bg-sage-wash/50 border-sage-mid/30 mb-6">
-                <CardContent className="p-6">
-                  <p className="text-foreground leading-relaxed text-lg italic text-center">
-                    «Es ist, wie es ist.»
-                  </p>
-                  <p className="text-muted-foreground text-sm text-center mt-2">
-                    – Dieser Satz kann befreiend sein.
-                  </p>
-                </CardContent>
-              </Card>
+              <blockquote className="pull-quote mb-6">
+                <p>«Es ist, wie es ist.»</p>
+                <cite>– Dieser Satz kann befreiend sein.</cite>
+              </blockquote>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Radikale Akzeptanz bedeutet nicht, dass Sie die Situation

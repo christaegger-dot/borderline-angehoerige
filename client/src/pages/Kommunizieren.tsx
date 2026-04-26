@@ -226,15 +226,13 @@ export default function Kommunizieren() {
                   ist die Frage nicht nur, welcher Satz "richtig" wäre, sondern
                   ob überhaupt schon ein Moment für Gespräch da ist.
                 </p>
-                <Card className="bg-slate-wash border-slate-mid/20">
-                  <CardContent className="p-5">
-                    <p className="text-foreground leading-relaxed">
-                      Hilfreiche Kommunikation ist meist kürzer, langsamer und
-                      klarer. Sie versucht nicht sofort zu überzeugen, sondern
-                      zuerst Beziehungsspannung etwas zu senken.
-                    </p>
-                  </CardContent>
-                </Card>
+                <blockquote className="pull-quote">
+                  <p>
+                    Hilfreiche Kommunikation ist meist kürzer, langsamer und
+                    klarer. Sie versucht nicht sofort zu überzeugen, sondern
+                    zuerst Beziehungsspannung etwas zu senken.
+                  </p>
+                </blockquote>
               </div>
             </ContentSection>
 

@@ -144,9 +144,11 @@ export default function Erfahrungsberichte({
       viewport={{ once: true }}
       className="text-center mb-10"
     >
+      <span className="kicker">Erfahrungen von Angehörigen</span>
       <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-4">
-        Typische Erfahrungen von Angehörigen
+        Was viele kennen – <em>und selten benennen können</em>
       </h2>
+      <hr className="rule rule-narrow rule-center mb-5" />
       <p className="text-muted-foreground max-w-2xl mx-auto">
         Diese kurzen Verdichtungen fassen Erfahrungen zusammen, die in der
         Angehörigenarbeit häufig geschildert werden. Sie sollen Wiedererkennung

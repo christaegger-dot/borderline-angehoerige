@@ -30,7 +30,9 @@
 
     document.documentElement.dataset.fontsReady = "true";
     appendLink("preconnect", "https://fonts.googleapis.com");
-    appendLink("preconnect", "https://fonts.gstatic.com", { crossorigin: true });
+    appendLink("preconnect", "https://fonts.gstatic.com", {
+      crossorigin: true,
+    });
     appendLink("stylesheet", fontStylesheetHref);
   };
 

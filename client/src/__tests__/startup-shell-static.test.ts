@@ -19,4 +19,20 @@ describe("startup shell static assets", () => {
     );
     expect(indexHtml).not.toContain("<style>");
   });
+
+  it("keeps startup fonts and fallback handling out of the critical HTML path", () => {
+    const indexHtml = fs.readFileSync(
+      path.join(repoRoot, "client/index.html"),
+      "utf8"
+    );
+    const prerenderScript = fs.readFileSync(
+      path.join(repoRoot, "client/public/route-prerender.js"),
+      "utf8"
+    );
+
+    expect(indexHtml).not.toContain("startup-fallback.js");
+    expect(indexHtml).not.toContain("fonts.googleapis.com/css2");
+    expect(prerenderScript).toContain("requestIdleCallback");
+    expect(prerenderScript).toContain("fonts.googleapis.com/css2");
+  });
 });

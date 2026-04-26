@@ -8,6 +8,7 @@ import {
 } from "@/icons/root-icons";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
 import { getRouteAccent } from "@/components/layout/routeAccent";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -43,22 +44,27 @@ export function MobileMenu({
   const currentAccent = getRouteAccent(location);
 
   const groupedRessourcen = groupRessourcenItems(ressourcenItems);
-  const dialogRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useFocusTrap(isOpen);
+  const descriptionId = useRef(
+    `mobile-navigation-description-${Math.random().toString(36).slice(2, 10)}`
+  );
 
   useEffect(() => {
     if (isOpen) {
       dialogRef.current?.querySelector<HTMLElement>("a, button")?.focus();
     }
-  }, [isOpen]);
+  }, [dialogRef, isOpen]);
 
   if (!isOpen) return null;
 
   return (
     <div
       ref={dialogRef}
+      id="mobile-navigation-dialog"
       role="dialog"
       aria-modal="true"
-      aria-label="Mobile Navigation"
+      aria-labelledby="mobile-navigation-title"
+      aria-describedby={descriptionId.current}
       className="lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-border/50 bg-[linear-gradient(180deg,rgba(250,250,247,0.96),rgba(247,249,248,1))] [-webkit-overflow-scrolling:touch]"
       onKeyDown={e => {
         if (e.key === "Escape") {
@@ -70,6 +76,12 @@ export function MobileMenu({
         className="container flex flex-col gap-2 py-4 pb-[calc(16px+env(safe-area-inset-bottom,0px)+88px)]"
         aria-label="Hauptnavigation"
       >
+        <div className="sr-only">
+          <h2 id="mobile-navigation-title">Mobile Navigation</h2>
+          <p id={descriptionId.current}>
+            Hauptnavigation, Ressourcen und Soforthilfe.
+          </p>
+        </div>
         {navItems.map(item => {
           const Icon = item.icon;
           const isActive = location.startsWith(item.href);

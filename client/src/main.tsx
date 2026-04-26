@@ -13,13 +13,7 @@ createRoot(root).render(<App />);
 initAnalytics();
 
 document.body.setAttribute("data-app-ready", "true");
-document.body.removeAttribute("data-startup-fallback-visible");
 window.dispatchEvent(new Event("app-ready"));
-
-const startupFallback = document.getElementById("startup-fallback");
-if (startupFallback) {
-  startupFallback.remove();
-}
 
 const routePrerender = document.getElementById("route-prerender");
 if (routePrerender) {

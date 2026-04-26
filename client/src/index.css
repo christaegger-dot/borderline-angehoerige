@@ -190,6 +190,12 @@
   display: none;
 }
 
+.toaster {
+  --normal-bg: var(--popover);
+  --normal-text: var(--popover-foreground);
+  --normal-border: var(--border);
+}
+
 /* ── Reduced Motion: Animationen für Nutzer deaktivieren ── */
 /* WCAG 2.3.3 — respektiert Betriebssystem-Einstellung */
 @media (prefers-reduced-motion: reduce) {

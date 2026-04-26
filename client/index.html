@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-CH">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,12 +53,6 @@
     <link rel="stylesheet" href="/print.css" media="print" />
     <link rel="stylesheet" href="/startup-shell.css" />
     <script src="/route-prerender.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
 
   <body>
@@ -117,23 +111,6 @@
         </div>
       </div>
     </section>
-    <main id="startup-fallback" aria-live="polite" role="status">
-      <div class="startup-shell">
-        <p class="startup-kicker">
-          Falls die interaktive Version laenger braucht
-        </p>
-        <h1 class="startup-title">Wichtige Hilfe bleibt sofort erreichbar.</h1>
-        <p class="startup-copy">
-          Die Seite startet gleich. Wenn das laenger dauert oder etwas haengt,
-          funktionieren diese Direktwege ohne Umweg weiter.
-        </p>
-        <div class="startup-links">
-          <a class="startup-alert" href="/soforthilfe">Soforthilfe</a>
-          <a href="/verstehen">Borderline verstehen</a>
-          <a href="/unterstuetzen/uebersicht">Unterstuetzung finden</a>
-        </div>
-      </div>
-    </main>
     <noscript>
       <div class="fallback-noscript">
         <h1>Interaktive Version eingeschränkt</h1>
@@ -144,7 +121,6 @@
         </p>
       </div>
     </noscript>
-    <script src="/startup-fallback.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

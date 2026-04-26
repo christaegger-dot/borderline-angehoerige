@@ -6,11 +6,11 @@ export const CONTENT_SECURITY_POLICY = [
   "frame-ancestors 'none'",
   "form-action 'self'",
   "manifest-src 'self'",
-  "script-src 'self' https://forge.butterfly-effect.dev",
+  "script-src 'self'",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' https://files.manuscdn.com data:",
   "font-src 'self' https://fonts.gstatic.com",
-  "connect-src 'self' https://forge.butterfly-effect.dev",
+  "connect-src 'self'",
   "media-src 'self' https://files.manuscdn.com",
 ].join("; ");
 

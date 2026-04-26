@@ -1,6 +1,6 @@
 (function () {
   const fontStylesheetHref =
-    "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap";
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
 
   document.documentElement.dataset.routePrerender =
     window.location.pathname === "/" ? "home" : "none";

@@ -91,6 +91,9 @@
     },
     "ignoredBuiltDependencies": [
       "puppeteer"
+    ],
+    "onlyBuiltDependencies": [
+      "esbuild"
     ]
   }
 }

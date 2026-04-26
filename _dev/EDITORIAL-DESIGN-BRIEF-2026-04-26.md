@@ -1,7 +1,7 @@
 # Editorial Design Brief – Borderline-Angehörige
 
 **Datum:** 26. April 2026
-**Scope:** Stufenweise Übernahme editorialer Design-Sprache aus dem Schwesterprojekt *PUK Bipolar Angehörige* in das bestehende Borderline-Site-Design.
+**Scope:** Stufenweise Übernahme editorialer Design-Sprache aus dem Schwesterprojekt _PUK Bipolar Angehörige_ in das bestehende Borderline-Site-Design.
 **Ziel:** «Editoriale Würde ohne Tool-UX-Bruch» – Borderline behält seine interaktive Struktur, übernimmt aber die Ruhe, Wärme und typografische Klarheit der Editorial-Quelle.
 
 ---
@@ -49,16 +49,16 @@ Datei: `client/src/styles/tailwind-theme.css` und `client/src/index.css`.
 
 ### 2.1 Background – moderat wärmer
 
-| Token | Aktuell | Neu | Begründung |
-|---|---|---|---|
+| Token          | Aktuell                                     | Neu                                  | Begründung                                                         |
+| -------------- | ------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------ |
 | `--background` | `oklch(0.985 0.003 200)` (kühles Off-White) | `oklch(0.97 0.02 85)` (warmer Cream) | Klinik-Weiss → Wohnzimmer-Cream. Reversibel über einen Token-Wert. |
 
 **Hinweis:** Der bestehende Token `--color-cream` (`oklch(0.98 0.01 85)`) bleibt unverändert. Cards behalten ihren cremig-weissen Ton (`--card`), wodurch die Tiefenhierarchie zum neuen Background-Wert weiterhin funktioniert.
 
 ### 2.2 Heading-Schrift – Source Serif 4 statt DM Serif Display
 
-| Token | Aktuell | Neu |
-|---|---|---|
+| Token            | Aktuell                                                           | Neu                                                           |
+| ---------------- | ----------------------------------------------------------------- | ------------------------------------------------------------- |
 | `--font-heading` | `"DM Serif Display", "DM Serif Display fallback", Georgia, serif` | `"Source Serif 4 Variable", "Source Serif 4", Georgia, serif` |
 
 **Begründung:** DM Serif Display hat dekorativen Magazin-Display-Charakter mit hohem Kontrast. Bei einem stigma-belasteten Thema wirkt das zu modisch. Source Serif 4 ist ruhiger, ernsthafter, würdevoller – und als Variable Font flexibler.
@@ -74,11 +74,11 @@ Datei: `client/src/styles/tailwind-theme.css` und `client/src/index.css`.
 
 PUK arbeitet mit `--radius-sm: 4px`, `--radius-md: 8px`. Borderline hat aktuell `--radius: 0.75rem` (12 px) als Basis. Editorial-Modus bevorzugt kantigere Formen.
 
-| Token | Aktuell | Neu | Wirkung auf |
-|---|---|---|---|
+| Token      | Aktuell           | Neu             | Wirkung auf                                                  |
+| ---------- | ----------------- | --------------- | ------------------------------------------------------------ |
 | `--radius` | `0.75rem` (12 px) | `0.5rem` (8 px) | Gesamte Radius-Skala (`-sm`/`-md`/`-lg`/`-xl`) wird kantiger |
 
-**Achtung:** Diese Änderung wirkt auf *alle* shadcn-Komponenten. Vor Commit visuell prüfen, ob Cards, Buttons, Tabs, Dialoge nicht zu hart wirken. Falls ja: nur `--radius-sm` und `--radius-md` reduzieren, `--radius-lg` und `--radius-xl` belassen.
+**Achtung:** Diese Änderung wirkt auf _alle_ shadcn-Komponenten. Vor Commit visuell prüfen, ob Cards, Buttons, Tabs, Dialoge nicht zu hart wirken. Falls ja: nur `--radius-sm` und `--radius-md` reduzieren, `--radius-lg` und `--radius-xl` belassen.
 
 ### 2.4 Rule-Linie als neue Utility
 
@@ -181,7 +181,7 @@ Italic, grosser Lead-Absatz direkt nach h1.
 **Neu:**
 
 - Meta-Zeile oben (Sans, klein): «Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich»
-- h1 mit Italic-Hervorhebung des Schlüsselbegriffs (z. B. *Borderline-Persönlichkeitsstörung*)
+- h1 mit Italic-Hervorhebung des Schlüsselbegriffs (z. B. _Borderline-Persönlichkeitsstörung_)
 - Lede-Absatz als Untertitel
 - Primärer CTA als gefüllter Button, sekundärer CTA als Inline-Link mit Pfeil
 
@@ -196,14 +196,21 @@ Italic, grosser Lead-Absatz direkt nach h1.
       Psychiatrische Universitätsklinik Zürich
     </p>
     <h1>
-      Wenn jemand, den Sie lieben, eine <em>Borderline-Persönlichkeitsstörung</em> hat – und Sie selbst dabei oft vergessen werden.
+      Wenn jemand, den Sie lieben, eine{" "}
+      <em>Borderline-Persönlichkeitsstörung</em> hat – und Sie selbst dabei oft
+      vergessen werden.
     </h1>
     <p className="lede">
-      Eine Begleitung für Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
+      Eine Begleitung für Partnerinnen, Eltern, Geschwister und erwachsene
+      Kinder.
     </p>
     <div className="hero-actions">
-      <Button asChild><Link href="/wegweiser">Wo soll ich anfangen? →</Link></Button>
-      <Link href="/verstehen" className="hero-cta-secondary">Direkt zu «Verstehen»</Link>
+      <Button asChild>
+        <Link href="/wegweiser">Wo soll ich anfangen? →</Link>
+      </Button>
+      <Link href="/verstehen" className="hero-cta-secondary">
+        Direkt zu «Verstehen»
+      </Link>
     </div>
   </div>
 </header>
@@ -215,7 +222,7 @@ Italic, grosser Lead-Absatz direkt nach h1.
 
 **Aktuell:** `Erfahrungsberichte.tsx` (Karussell mit mehreren Berichten).
 
-**Neu, additiv:** *Eine* zentrale Story-Sektion auf der Home-Seite – eine ruhige, einzelne, anonymisierte Erzählung mit grossem Pull-Quote. Bestehende Karussell-Komponente bleibt für andere Seiten verfügbar.
+**Neu, additiv:** _Eine_ zentrale Story-Sektion auf der Home-Seite – eine ruhige, einzelne, anonymisierte Erzählung mit grossem Pull-Quote. Bestehende Karussell-Komponente bleibt für andere Seiten verfügbar.
 
 **Pflicht:** Anonymisierungs-Hinweis sichtbar («S., 39, Partnerin seit 11 Jahren – anonymisiert, keine reale Person»).
 
@@ -227,7 +234,10 @@ Ruhige Schluss-Sektion auf Home, evtl. auch auf textlastigen Seiten.
 <section className="invitation">
   <span className="kicker">Sie dürfen anrufen</span>
   <h2>Sie müssen nicht wissen, was Sie sagen wollen.</h2>
-  <p>Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die erkrankte Person.</p>
+  <p>
+    Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die erkrankte
+    Person.
+  </p>
   <div className="invitation-contact">
     <a href="tel:+41583843800">058 384 38 00</a>
     <a href="mailto:angehoerigenarbeit@pukzh.ch">angehoerigenarbeit@pukzh.ch</a>
@@ -237,7 +247,7 @@ Ruhige Schluss-Sektion auf Home, evtl. auch auf textlastigen Seiten.
 
 ### 4.4 Editorial-Lesebreite auf Prosa-Seiten
 
-Auf den fünf editorial-modus-Seiten (siehe 1.3): Reine Textabschnitte (Fliesstext, Absätze ohne Cards) bekommen `max-width: 60ch` für den Lesefluss. *Nicht* Cards, *nicht* Tabellen, *nicht* Materialien-Listen.
+Auf den fünf editorial-modus-Seiten (siehe 1.3): Reine Textabschnitte (Fliesstext, Absätze ohne Cards) bekommen `max-width: 60ch` für den Lesefluss. _Nicht_ Cards, _nicht_ Tabellen, _nicht_ Materialien-Listen.
 
 ```css
 .prose-editorial {
@@ -259,7 +269,7 @@ Jede Stufe muss vor Merge folgendes erfüllen:
 2. **Mobile-Check** – iPhone Safari, kleines Android. Source Serif 4 muss bei 14–16 px gut lesbar sein.
 3. **Visual-Diff alt/neu** – Screenshots mindestens von Home, Verstehen, Genesung, Notfallkarte (App-Modus-Kontroll-Seite), Soforthilfe (App-Modus-Kontroll-Seite).
 4. **Test-Suite grün** – `pnpm test`, `pnpm typecheck`, `pnpm lint`, `pnpm build` müssen alle erfolgreich sein.
-5. **Konsistenz-Check** – Wirkt das Gesamtbild nun *kohärenter* als vorher, oder fragmentiert? Ein-Wort-Urteil.
+5. **Konsistenz-Check** – Wirkt das Gesamtbild nun _kohärenter_ als vorher, oder fragmentiert? Ein-Wort-Urteil.
 
 ---
 
@@ -272,9 +282,9 @@ Jede Stufe muss vor Merge folgendes erfüllen:
 
 ## 7. Phasen-Plan
 
-| Phase | Inhalt | Status |
-|---|---|---|
-| **0** | Inventar + Mapping-Bericht (kein Code-Change) | offen |
-| **1** | Token-Layer: Background, Heading-Schrift, Border-Radien, Kicker/Lede/Rule-Utilities | offen |
-| **2** | Komponenten-Patterns auf Home, Verstehen, Genesung, Kommunizieren, Selbstfürsorge | offen |
-| **3** | Verifikation und Release | offen |
+| Phase | Inhalt                                                                              | Status |
+| ----- | ----------------------------------------------------------------------------------- | ------ |
+| **0** | Inventar + Mapping-Bericht (kein Code-Change)                                       | offen  |
+| **1** | Token-Layer: Background, Heading-Schrift, Border-Radien, Kicker/Lede/Rule-Utilities | offen  |
+| **2** | Komponenten-Patterns auf Home, Verstehen, Genesung, Kommunizieren, Selbstfürsorge   | offen  |
+| **3** | Verifikation und Release                                                            | offen  |

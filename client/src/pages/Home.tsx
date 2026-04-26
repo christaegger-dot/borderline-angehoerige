@@ -240,7 +240,7 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was ist gerade Ihre Lage?
               </h2>
-              <p className="text-muted-foreground max-w-2xl">
+              <p className="text-muted-foreground prose-editorial">
                 Beginnen Sie dort, wo der Druck im Moment am grössten ist. Die
                 Website ist nicht nur zum Lesen gedacht, sondern als
                 Orientierung in belasteten Beziehungssituationen.
@@ -461,7 +461,7 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-3">
                 Was Forschung und Praxis zeigen
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-sm">
+              <p className="text-muted-foreground prose-editorial mx-auto text-sm">
                 Borderline-Verläufe sind heterogen – aber die Datenlage ist
                 deutlich hoffnungsvoller, als viele Angehörige erwarten.
               </p>
@@ -552,7 +552,7 @@ export default function Home() {
               Sie müssen nicht wissen, was Sie sagen wollen.
             </h2>
             <hr className="rule rule-narrow rule-center mb-6" />
-            <p className="text-muted-foreground leading-relaxed mb-8 max-w-prose mx-auto">
+            <p className="text-muted-foreground leading-relaxed prose-editorial mx-auto">
               Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die
               erkrankte Person. Orientierung, Gespräch und Materialien für
               Partnerinnen, Eltern, Geschwister und erwachsene Kinder.

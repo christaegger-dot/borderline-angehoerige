@@ -220,7 +220,7 @@ export default function Kommunizieren() {
               preview="Viele Gespräche scheitern nicht nur am Wortlaut, sondern daran, dass beide Seiten bereits im Alarmzustand, in Rechtfertigung oder in Kränkung sprechen."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   In belasteten Beziehungen kippt Kommunikation oft schnell in
                   Verteidigung, Beschuldigung, Rückzug oder Übererklärung. Dann
                   ist die Frage nicht nur, welcher Satz "richtig" wäre, sondern

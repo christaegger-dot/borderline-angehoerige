@@ -475,7 +475,7 @@ export default function Genesung() {
               preview="Gerade wenn es besser läuft, können Rückschritte besonders verunsichern. Das entwertet den Weg aber nicht automatisch."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Viele Angehörige erleben ein irritierendes Muster: Nach einer
                   ruhigeren Phase kommt wieder ein Einbruch. Dann fühlt es sich
                   schnell an, als wäre alles umsonst gewesen. Meist ist das
@@ -603,7 +603,7 @@ export default function Genesung() {
               preview="Hoffnung ist wichtig. Sie wird aber tragfähiger, wenn sie Raum lässt für Erschöpfung, Zweifel, lange Dauer und ungleichmässige Entwicklung."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Angehörige brauchen oft Hoffnung, um nicht zu resignieren.
                   Gleichzeitig kann ein zu glattes Fortschrittsbild zusätzlichen
                   Druck erzeugen: auf die betroffene Person, auf die Beziehung

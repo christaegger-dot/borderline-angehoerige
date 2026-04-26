@@ -254,7 +254,7 @@ export default function Selbstfuersorge() {
                   ))}
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Selbstfürsorge ist daher keine Selbstsucht, sondern{" "}
                   <strong className="text-foreground">Selbsterhaltung</strong>.
                   Sie erhöht die Chance, dass Sie auf Dauer präsent bleiben

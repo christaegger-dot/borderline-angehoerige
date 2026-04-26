@@ -232,13 +232,13 @@ export default function Verstehen() {
               preview="Viele Angehörige erleben nicht nur schwierige Gespräche, sondern ein ständiges Schwanken zwischen Nähe, Alarm, Hoffnung, Wut, Schuld und Erschöpfung."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Für Angehörige wirkt Borderline oft widersprüchlich: Nähe kann
                   sehr intensiv werden und kurz darauf in Angriff, Rückzug oder
                   Funkstille kippen. Eine Beziehung kann sich gleichzeitig
                   bedeutsam, erschöpfend, zart und bedrohlich anfühlen.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Viele Angehörige schwanken deshalb nicht nur zwischen
                   Mitgefühl und Hilfsbereitschaft, sondern auch zwischen Angst,
                   Wut, Selbstzweifel, Loyalität und dem Wunsch nach Abstand.
@@ -264,14 +264,14 @@ export default function Verstehen() {
               preview="Borderline ist kein einzelnes Verhalten, sondern ein Muster aus starker innerer Anspannung, erschwerter Emotionsregulation und instabilem Beziehungserleben."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Die Borderline-Persönlichkeitsstörung ist ein komplexes
                   Störungsbild. Typisch sind starke emotionale Reagibilität,
                   Schwierigkeiten mit innerer Stabilität und ein
                   Beziehungserleben, das unter Bindungsstress schnell ins Wanken
                   geraten kann.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Nicht alle Menschen mit Borderline zeigen dieselben Muster.
                   Manche wirken vor allem impulsiv und explosiv, andere eher
                   verzweifelt, zurückgezogen, leer oder selbstabwertend.
@@ -325,14 +325,14 @@ export default function Verstehen() {
               preview="Wut ist oft sichtbar. Darunter liegen nicht selten Scham, Angst, Kränkung, Leere oder der Versuch, unerträgliche Spannung loszuwerden."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Angehörige erleben Wut oft als das dominierende Thema. Sie ist
                   laut, verletzend und schwer zu übersehen. Gleichzeitig ist Wut
                   bei Borderline häufig nicht der ganze Kern, sondern eher eine
                   Reaktion auf tiefer liegende Zustände wie Scham,
                   Verlassenheitsangst, Ohnmacht oder innere Leere.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Scham spielt dabei eine besonders grosse Rolle. Wer sich tief
                   beschämt, blossgestellt oder innerlich wertlos fühlt, reagiert
                   leichter mit Angriff, Rückzug, Selbstentwertung oder abruptem
@@ -373,7 +373,7 @@ export default function Verstehen() {
               preview="Unter starker Anspannung werden Grautöne, Perspektivenwechsel und logische Einordnung oft schlechter erreichbar."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Unter hoher emotionaler Überflutung verengt sich das Erleben
                   häufig stark auf den aktuellen Schmerz, die aktuelle Angst
                   oder den aktuellen Konflikt. Dann verlieren Menschen leichter
@@ -439,7 +439,7 @@ export default function Verstehen() {
               preview="Viele Angehörige berichten von wiederkehrenden Mustern. Diese können ähnlich aussehen, verlaufen aber nie bei allen gleich."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Manche Beziehungen folgen über längere Zeit wiederkehrenden
                   Schleifen: Eskalation, Rückzug, Wiederannäherung, Hoffnung,
                   neue Spannung. Das ist kein starres Gesetz, aber ein Muster,
@@ -511,13 +511,13 @@ export default function Verstehen() {
               preview="Verstehen ist wichtig. Es ersetzt aber weder Selbstschutz noch Grenzsetzung noch professionelle Hilfe."
             >
               <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Verstehen bedeutet nicht, alles auszuhalten. Es bedeutet auch
                   nicht, dass Sie jede Eskalation auffangen, jedes Verhalten
                   korrekt einordnen oder jede Krise mit der richtigen Reaktion
                   entschärfen könnten.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed prose-editorial">
                   Mitgefühl und Selbstschutz widersprechen sich nicht. Gerade in
                   belasteten Beziehungen kann es verantwortungsvoll sein,
                   Grenzen zu setzen, Distanz zu schaffen oder Hilfe von aussen

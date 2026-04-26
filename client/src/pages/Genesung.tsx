@@ -190,25 +190,25 @@ export default function Genesung() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-sage-darker" />
-              </div>
-            </div>
+            <span className="kicker text-sage-dark">
+              Genesung
+              <span aria-hidden="true"> · </span>
+              Langzeitverlauf &amp; Hoffnung
+            </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
-              Genesung ist möglich
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-4">
+              Genesung ist <em>möglich</em>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Hoffnung ist bei Borderline berechtigt. Gleichzeitig verläuft
-              Entwicklung selten glatt, schnell oder vorhersehbar. Für
-              Angehörige ist deshalb beides wichtig: Zuversicht und eine
-              realistische Sicht auf Zeit, Rückschritte und Grenzen des eigenen
-              Einflusses.
+            <hr className="rule rule-narrow mb-6" />
+
+            <p className="lede">
+              Hoffnung ist bei Borderline berechtigt – und gleichzeitig verläuft
+              Entwicklung selten glatt oder vorhersehbar. Für Angehörige ist
+              beides wichtig: Zuversicht und eine realistische Sicht auf Zeit.
             </p>
 
-            <LastVerifiedBadge date="16.04.2026" className="mt-4" />
+            <LastVerifiedBadge date="16.04.2026" className="mt-6" />
           </motion.div>
         </div>
       </section>

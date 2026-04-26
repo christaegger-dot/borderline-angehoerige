@@ -93,36 +93,28 @@ export default function Selbstfuersorge() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-lighter flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-sage-mid" />
-              </div>
-              <span className="text-sm font-medium text-sage-mid">
-                Lesezeit: 12 Minuten
-              </span>
-            </div>
+            <span className="kicker text-sage-mid">
+              Selbstfürsorge
+              <span aria-hidden="true"> · </span>
+              Lesezeit: 12 Minuten
+            </span>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
-              Selbstfürsorge für Angehörige
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-4">
+              Selbstfürsorge für <em>Angehörige</em>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Wer dauerhaft mit Krisen, Unsicherheit und Loyalitätskonflikten
-              lebt, braucht eigene Regeneration. Selbstfürsorge ist nicht
-              Nebenbei-Pflege, sondern eine fachlich wichtige Grundlage, damit
-              Sie handlungsfähig und innerlich beweglich bleiben.
+            <hr className="rule rule-narrow mb-6" />
+
+            <p className="lede">
+              Wer dauerhaft mit Krisen und Loyalitätskonflikten lebt, braucht
+              eigene Regeneration – nicht als Luxus, sondern als Grundlage.
             </p>
 
-            <Card className="bg-sage-lighter/20 border-sage-mid">
-              <CardContent className="p-5">
-                <p className="text-foreground leading-relaxed italic">
-                  "Viele Angehörige merken erst spät, wie erschöpft sie geworden
-                  sind. Selbstfürsorge beginnt oft nicht mit grossen
-                  Veränderungen, sondern damit, die eigene Belastung überhaupt
-                  ernst zu nehmen."
-                </p>
-              </CardContent>
-            </Card>
+            <blockquote className="mt-6 border-l-2 border-sage-mid/40 pl-4 text-sm text-muted-foreground italic">
+              «Viele Angehörige merken erst spät, wie erschöpft sie geworden
+              sind. Selbstfürsorge beginnt damit, die eigene Belastung überhaupt
+              ernst zu nehmen.»
+            </blockquote>
           </motion.div>
         </div>
       </section>

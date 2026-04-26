@@ -71,7 +71,14 @@
   /* --- Teal Family (Hue 190, mapped from SA #1E656D) --- */
   --color-sage-darker: oklch(0.35 0.07 190);
   --color-sage-dark: oklch(0.44 0.07 190); /* ≈ SA --teal #1E656D */
+  --color-sage-mid-darker: oklch(
+    0.4 0.08 190
+  ); /* Between sage-darker and sage-mid */
+  --color-sage-mid-dark: oklch(
+    0.47 0.08 190
+  ); /* Between sage-dark and sage-mid */
   --color-sage-mid: oklch(0.52 0.09 190);
+  --color-sage-mid-mid: oklch(0.52 0.09 190); /* Alias for sage-mid */
   --color-sage: oklch(
     0.62 0.07 190
   ); /* 3.23:1 auf Cream – NUR für Icons/Dekor, NICHT als Textfarbe auf hellem BG */

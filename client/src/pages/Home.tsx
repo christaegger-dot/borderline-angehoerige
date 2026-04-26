@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedStat from "@/components/AnimatedStat";
 import Erfahrungsberichte from "@/components/Erfahrungsberichte";
+import { kontaktByIdStrict, emailByIdStrict } from "@/data/kontakte";
 import {
   AlertTriangle,
   ArrowRight,
@@ -13,7 +14,6 @@ import {
   Compass,
   Download,
   FileText,
-  Heart,
   MessageCircle,
   MessageSquare,
   Phone,
@@ -116,6 +116,9 @@ const approachHighlights = [
   },
 ];
 
+const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
+const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
+
 export default function Home() {
   return (
     <Layout>
@@ -140,63 +143,61 @@ export default function Home() {
 
         <div className="container relative z-10 py-20 md:py-24 lg:py-28">
           <div className="max-w-3xl">
-            <div>
-              <span className="inline-block px-3 py-1 rounded-full bg-sage-dark text-white text-[11px] font-semibold tracking-[0.12em] uppercase mb-5">
-                Für Angehörige von Menschen mit Borderline
-              </span>
+            <p className="text-[11px] font-medium tracking-[0.14em] uppercase text-white/60 mb-5">
+              Fachstelle Angehörigenarbeit
+              <span aria-hidden="true"> · </span>
+              Psychiatrische Universitätsklinik Zürich
+            </p>
 
-              <h1 className="text-4xl md:text-5xl lg:text-[52px] font-normal leading-[1.12] tracking-tight mb-4">
-                Orientierung in belasteten{" "}
-                <span className="text-sage-light">Beziehungen</span>
-              </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-[52px] font-normal leading-[1.12] tracking-tight mb-4">
+              Wenn jemand, den Sie lieben, eine{" "}
+              <em className="text-sage-light not-italic">
+                Borderline-Persönlichkeitsstörung
+              </em>{" "}
+              hat
+            </h1>
 
-              <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 max-w-2xl font-light">
-                Wenn Beziehungen von starker Anspannung, Eskalation, Rückzug,
-                Schuld oder Erschöpfung geprägt sind, hilft nicht noch mehr
-                Druck, sondern ein klarer nächster Schritt. Diese Website
-                unterstützt Angehörige dabei, Dynamiken zu verstehen,
-                hilfreicher zu reagieren und sich selbst nicht zu verlieren.
-              </p>
+            <p className="text-base md:text-lg text-white/85 leading-relaxed mb-8 max-w-2xl font-light italic">
+              Eine Begleitung für Partnerinnen, Eltern, Geschwister und
+              erwachsene Kinder – die dabei oft vergessen werden.
+            </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                <Button
-                  size="lg"
-                  className="bg-sage-dark hover:bg-sage-mid text-white w-full sm:w-auto"
-                  asChild
-                >
-                  <Link href="/verstehen">
-                    <BookOpen className="w-5 h-5 mr-2" />
-                    Borderline besser verstehen
-                    <ArrowRight className="w-4 h-4 opacity-80" />
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/25 text-white hover:bg-white/10 w-full sm:w-auto"
-                  asChild
-                >
-                  <Link href="/unterstuetzen/uebersicht">
-                    <Heart className="w-5 h-5 mr-2" />
-                    Was hilft in meiner Lage?
-                    <ArrowRight className="w-4 h-4 opacity-80" />
-                  </Link>
-                </Button>
-              </div>
-
-              <Link
-                href="/soforthilfe"
-                className="inline-flex items-center gap-3 text-white/90 hover:text-white font-medium transition-colors group text-sm"
+            <div className="flex flex-col sm:flex-row gap-3 mb-4">
+              <Button
+                size="lg"
+                className="bg-sage-dark hover:bg-sage-mid text-white w-full sm:w-auto"
+                asChild
               >
-                <span className="inline-flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  <span>Akute Krise? Soforthilfe</span>
-                </span>
-                <span className="inline-flex w-7 h-7 items-center justify-center rounded-full border border-white/20 bg-white/8 transition-all group-hover:translate-x-0.5 group-hover:bg-white/14">
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </Link>
+                <Link href="/wegweiser">
+                  Wo soll ich anfangen?
+                  <ArrowRight className="w-4 h-4 opacity-80" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/25 text-white hover:bg-white/10 w-full sm:w-auto"
+                asChild
+              >
+                <Link href="/verstehen">
+                  Direkt zu «Verstehen»
+                  <ArrowRight className="w-4 h-4 opacity-80" />
+                </Link>
+              </Button>
             </div>
+
+            <Link
+              href="/soforthilfe"
+              className="inline-flex items-center gap-3 text-white/90 hover:text-white font-medium transition-colors group text-sm"
+            >
+              <span className="inline-flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <span>Akute Krise? Soforthilfe</span>
+              </span>
+              <span className="inline-flex w-7 h-7 items-center justify-center rounded-full border border-white/20 bg-white/8 transition-all group-hover:translate-x-0.5 group-hover:bg-white/14">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
@@ -517,6 +518,41 @@ export default function Home() {
       <div className="home-section-divider h-6" />
 
       <Erfahrungsberichte />
+
+      <div className="home-section-divider h-6" />
+
+      {/* Invitation-Sektion */}
+      <section className="py-14 md:py-20 bg-background">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <span className="kicker">Sie dürfen anrufen</span>
+            <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-4">
+              Sie müssen nicht wissen, was Sie sagen wollen.
+            </h2>
+            <hr className="rule rule-narrow rule-center mb-6" />
+            <p className="text-muted-foreground leading-relaxed mb-8 max-w-prose mx-auto">
+              Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die
+              erkrankte Person. Orientierung, Gespräch und Materialien für
+              Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`tel:${fachstelleTel.tel}`}
+                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-sage-dark px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-sage-darker"
+              >
+                <Phone className="w-4 h-4" />
+                {fachstelleTel.nummer}
+              </a>
+              <a
+                href={`mailto:${fachstelleEmail.adresse}`}
+                className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              >
+                {fachstelleEmail.adresse}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="home-section-divider h-6" />
 

@@ -1,3 +1,4 @@
+import InvitationSection from "@/components/InvitationSection";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -497,6 +498,7 @@ export default function Selbstfuersorge() {
           </div>
         </div>
       </section>
+      <InvitationSection />
     </Layout>
   );
 }

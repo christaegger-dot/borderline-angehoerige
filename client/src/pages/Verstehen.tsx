@@ -1,5 +1,6 @@
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
+import InvitationSection from "@/components/InvitationSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
@@ -599,6 +600,7 @@ export default function Verstehen() {
           </div>
         </div>
       </section>
+      <InvitationSection />
     </Layout>
   );
 }

@@ -282,9 +282,50 @@ Jede Stufe muss vor Merge folgendes erfüllen:
 
 ## 7. Phasen-Plan
 
-| Phase | Inhalt                                                                              | Status |
-| ----- | ----------------------------------------------------------------------------------- | ------ |
-| **0** | Inventar + Mapping-Bericht (kein Code-Change)                                       | offen  |
-| **1** | Token-Layer: Background, Heading-Schrift, Border-Radien, Kicker/Lede/Rule-Utilities | offen  |
-| **2** | Komponenten-Patterns auf Home, Verstehen, Genesung, Kommunizieren, Selbstfürsorge   | offen  |
-| **3** | Verifikation und Release                                                            | offen  |
+| Phase | Inhalt                                                                              | Status                                     |
+| ----- | ----------------------------------------------------------------------------------- | ------------------------------------------ |
+| **0** | Inventar + Mapping-Bericht (kein Code-Change)                                       | ✅ abgeschlossen (PR #258)                 |
+| **1** | Token-Layer: Background, Heading-Schrift, Border-Radien, Kicker/Lede/Rule-Utilities | ✅ abgeschlossen (PRs #259–265)            |
+| **2** | Komponenten-Patterns auf Home, Verstehen, Genesung, Kommunizieren, Selbstfürsorge   | ✅ abgeschlossen (PRs #266–269)            |
+| **3** | Verifikation und Release                                                            | ✅ abgeschlossen (PR #270, 26. April 2026) |
+
+---
+
+## 8. Verifikations-Ergebnis (26. April 2026)
+
+### WCAG-AA-Kontrast-Audit (14 Kombinationen)
+
+| Kombination                             | Ratio | Schwelle | Status  |
+| --------------------------------------- | ----- | -------- | ------- |
+| Charcoal-Text auf Cream-BG              | 16.58 | 4.5      | ✅ PASS |
+| Charcoal-Text auf Card-BG               | 17.32 | 4.5      | ✅ PASS |
+| Muted-Text auf Cream-BG                 | 5.49  | 4.5      | ✅ PASS |
+| Muted-Text auf Card-BG                  | 5.73  | 4.5      | ✅ PASS |
+| Terracotta auf Cream-BG (Grosstext)     | 4.74  | 3.0      | ✅ PASS |
+| Terracotta auf Card-BG (Grosstext)      | 4.96  | 3.0      | ✅ PASS |
+| Terracotta-Mid auf Cream-BG (Grosstext) | 5.85  | 3.0      | ✅ PASS |
+| Sage-Dark auf Cream-BG (Grosstext)      | 7.48  | 3.0      | ✅ PASS |
+| Sage-Mid auf Cream-BG                   | 4.82  | 4.5      | ✅ PASS |
+| Weiss auf Sage-Dark (Invitation-Button) | 8.16  | 4.5      | ✅ PASS |
+| Weiss auf Terracotta (CTA-Button)       | 5.17  | 4.5      | ✅ PASS |
+| Weiss auf Alert-Rot (Krise-Sektion)     | 6.03  | 4.5      | ✅ PASS |
+| Charcoal auf Sage-Pale (Story-BG)       | 16.22 | 4.5      | ✅ PASS |
+| Muted auf Sage-Pale (Story-BG)          | 5.37  | 4.5      | ✅ PASS |
+
+**Gesamt: 14/14 PASS – vollständige WCAG-AA-Konformität bestätigt.**
+
+### Visual-Diffs (Screenshots)
+
+Full-Page-Screenshots aller 5 Editorial-Seiten + 2 App-Modus-Kontrollseiten erstellt und in `_dev/screenshots/` abgelegt:
+`home.png`, `verstehen.png`, `genesung.png`, `kommunizieren.png`, `selbstfuersorge.png`, `soforthilfe.png`, `notfallkarte.png`
+
+### Konsistenz-Urteil
+
+**Kohärenter.** Die fünf Editorial-Seiten teilen jetzt ein einheitliches Heading-Pattern (Kicker → h1/h2 mit `<em>` → Rule → Lede), einheitliche Pull-Quotes, einheitliche Invitation-Sektionen und einheitliche Prosa-Breiten. App-Modus-Seiten (Soforthilfe, Notfallkarte) bleiben funktional unverändert und profitieren nur vom wärmeren Cream-Background und der ruhigeren Heading-Schrift.
+
+### Test-Suite
+
+- `pnpm typecheck`: ✅ 0 Fehler
+- `pnpm lint`: ✅ 0 Fehler
+- `pnpm test`: ✅ 90/90 Tests grün
+- `pnpm build`: ✅ Erfolgreich

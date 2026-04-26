@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimatedStat from "@/components/AnimatedStat";
 import Erfahrungsberichte from "@/components/Erfahrungsberichte";
-import { kontaktByIdStrict, emailByIdStrict } from "@/data/kontakte";
+import InvitationSection from "@/components/InvitationSection";
 import {
   AlertTriangle,
   ArrowRight,
@@ -115,9 +115,6 @@ const approachHighlights = [
     text: "Materialien, Beratung und praktische Werkzeuge schnell öffnen.",
   },
 ];
-
-const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
-const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
 
 export default function Home() {
   return (
@@ -544,37 +541,7 @@ export default function Home() {
       <div className="home-section-divider h-6" />
 
       {/* Invitation-Sektion */}
-      <section className="py-14 md:py-20 bg-background">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <span className="kicker">Sie dürfen anrufen</span>
-            <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-4">
-              Sie müssen nicht wissen, was Sie sagen wollen.
-            </h2>
-            <hr className="rule rule-narrow rule-center mb-6" />
-            <p className="text-muted-foreground leading-relaxed prose-editorial mx-auto">
-              Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die
-              erkrankte Person. Orientierung, Gespräch und Materialien für
-              Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`tel:${fachstelleTel.tel}`}
-                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-sage-dark px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-sage-darker"
-              >
-                <Phone className="w-4 h-4" />
-                {fachstelleTel.nummer}
-              </a>
-              <a
-                href={`mailto:${fachstelleEmail.adresse}`}
-                className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-              >
-                {fachstelleEmail.adresse}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <InvitationSection />
 
       <div className="home-section-divider h-6" />
 

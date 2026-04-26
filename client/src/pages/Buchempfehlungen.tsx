@@ -144,7 +144,7 @@ const bookCategories: BookCategory[] = [
     title: "Kinderbücher",
     subtitle: "Für Kinder, deren Elternteil betroffen ist",
     icon: Baby,
-    iconShellClass: "bg-sage-light text-sage",
+    iconShellClass: "bg-sage-light text-sage-mid",
     books: [
       {
         title: "Mama, Mia und das Schleuderprogramm",

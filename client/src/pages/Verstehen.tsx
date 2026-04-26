@@ -29,7 +29,7 @@ const verstehenIntroCards = [
     icon: Heart,
     title: "Belastung einordnen",
     text: "Ambivalenz, Alarm, Erschöpfung und Loyalitätsdruck als typische Angehörigenrealität lesen.",
-    iconClass: "text-sage-mid",
+    iconClass: "text-sage-mid-mid",
     shellClass: "bg-sage-wash border-sage-light/70",
   },
   {
@@ -92,9 +92,9 @@ export default function Verstehen() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-sage-dark" />
+                <BookOpen className="w-6 h-6 text-sage-mid-dark" />
               </div>
-              <span className="text-sm font-medium text-sage-dark">
+              <span className="text-sm font-medium text-sage-mid-dark">
                 Lesezeit: 15 Minuten
               </span>
             </div>
@@ -122,10 +122,10 @@ export default function Verstehen() {
               <CardContent className="p-6 md:p-7">
                 <div className="mb-5 flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-wash">
-                    <Brain className="h-6 w-6 text-sage-dark" />
+                    <Brain className="h-6 w-6 text-sage-mid-dark" />
                   </div>
                   <div>
-                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-dark/85">
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-sage-mid-dark/85">
                       <span className="h-px w-6 bg-sage-dark/30" />
                       Überblick
                     </span>
@@ -192,7 +192,7 @@ export default function Verstehen() {
                             {item.text}
                           </p>
                         </div>
-                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-darker transition-transform group-hover:translate-x-0.5">
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-mid-darker transition-transform group-hover:translate-x-0.5">
                           <ArrowRight className="h-4 w-4" />
                         </span>
                       </div>
@@ -201,7 +201,7 @@ export default function Verstehen() {
                 </div>
 
                 <div className="mt-5 rounded-2xl border border-sage-light/60 bg-sage-wash/80 px-4 py-4">
-                  <p className="text-sm leading-relaxed text-sage-darker">
+                  <p className="text-sm leading-relaxed text-sage-mid-darker">
                     Das Inhaltsverzeichnis bleibt der rote Faden. Es hilft
                     besonders dann, wenn Sie später gezielt zu einzelnen
                     Themenblöcken zurückkehren möchten.
@@ -239,7 +239,7 @@ export default function Verstehen() {
 
             <ContentSection
               title="Was Angehörige oft erleben"
-              icon={<Heart className="w-7 h-7 text-sage-mid" />}
+              icon={<Heart className="w-7 h-7 text-sage-mid-mid" />}
               id="angehoerige-erleben"
               defaultOpen={true}
               preview="Viele Angehörige erleben nicht nur schwierige Gespräche, sondern ein ständiges Schwanken zwischen Nähe, Alarm, Hoffnung, Wut, Schuld und Erschöpfung."
@@ -272,7 +272,7 @@ export default function Verstehen() {
 
             <ContentSection
               title="Was Borderline im Kern so belastend macht"
-              icon={<Brain className="w-7 h-7 text-sage" />}
+              icon={<Brain className="w-7 h-7 text-sage-mid" />}
               id="was-ist-borderline"
               preview="Borderline ist kein einzelnes Verhalten, sondern ein Muster aus starker innerer Anspannung, erschwerter Emotionsregulation und instabilem Beziehungserleben."
             >
@@ -561,7 +561,7 @@ export default function Verstehen() {
               <Card className="bg-sage-light/30 border-sage">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4">
-                    <Heart className="w-8 h-8 text-sage flex-shrink-0" />
+                    <Heart className="w-8 h-8 text-sage-mid flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-semibold text-foreground mb-3">
                         Verstehen ist nur der erste Schritt

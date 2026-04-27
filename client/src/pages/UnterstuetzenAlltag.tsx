@@ -19,6 +19,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Link } from "wouter";
+import EnergieHaushaltVisualisierung from "@/components/visualizations/EnergieHaushaltVisualisierung";
 
 const alltagIntroCards = [
   {
@@ -232,6 +233,8 @@ export default function UnterstuetzenAlltag() {
       <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            {/* Energie-Haushalt-Visualisierung – visueller Überblick */}
+            <EnergieHaushaltVisualisierung />
             <ContentSection
               title="Der Alltag ist oft nicht ruhig, sondern vorspannt"
               icon={<Clock className="w-7 h-7 text-sage-mid" />}

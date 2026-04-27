@@ -321,13 +321,22 @@ export default function Notfallkarte() {
 
           {/* Action buttons – hidden when printing */}
           <div className="flex flex-wrap justify-center gap-3 mt-6 print:hidden">
-            <Button onClick={handlePrint} className="gap-2">
+            {/* Primärer CTA: Drucken / Als PDF – häufigster Use-Case */}
+            <Button
+              onClick={handlePrint}
+              className="gap-2 bg-[var(--color-sos-rot)] hover:bg-[var(--color-sos-rot-body)] text-white shadow-sm"
+            >
               <Printer className="w-4 h-4" />
               Drucken / Als PDF
             </Button>
-            <Button variant="outline" onClick={handleSave} className="gap-2">
+            {/* Sekundärer CTA: Im Browser speichern */}
+            <Button
+              variant="outline"
+              onClick={handleSave}
+              className="gap-2 text-muted-foreground border-muted-foreground/30"
+            >
               <Save className="w-4 h-4" />
-              {saved ? "Gespeichert!" : "Speichern"}
+              {saved ? "Gespeichert ✓" : "Im Browser speichern"}
             </Button>
           </div>
 

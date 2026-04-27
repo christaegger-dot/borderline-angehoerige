@@ -1,78 +1,268 @@
-import SEO from "@/components/SEO";
-import LastVerifiedBadge from "@/components/LastVerifiedBadge";
-import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
-import Layout from "@/components/Layout";
+/**
+ * Unterstützen — Alltag — Editorial-Redesign Phase 4 Welle 2 (Page 5/10)
+ *
+ * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge/Übersicht-
+ * Pattern. Inhalt unverändert ausser Hero-Lesezeit und prosaischen
+ * Verbindungssätzen.
+ *
+ * Out of scope: `EnergieHaushaltVisualisierung` (visuelle Sub-Komponente,
+ * eigenständige Migration in späterer Welle), `UnterstuetzenSubNav`
+ * (Cross-Page-Navigation), `LastVerifiedBadge` (page-level Meta-Info wie
+ * in Grenzen-Migration).
+ *
+ * Sicherheits-Hinweis in `impulsivitaet`: dezent erhalten als
+ * EditorialPullQuote-ähnliche Hervorhebung, weil der Verweis auf
+ * Krisenbegleitung sicherheitsrelevant ist (Selbst-/Fremdgefährdung).
+ */
+import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
-import { TableOfContents } from "@/components/UXEnhancements";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 import {
-  Calendar,
-  ArrowRight,
-  CheckCircle2,
-  Heart,
-  Clock,
-  Users,
-  Lightbulb,
-  AlertTriangle,
-  Zap,
-} from "lucide-react";
-import { Link } from "wouter";
+  EditorialLayout,
+  EditorialProse,
+  EditorialPullQuote,
+  EditorialSection,
+} from "@/components/editorial";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
+import Layout from "@/components/Layout";
+import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import SEO from "@/components/SEO";
+import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
+import { TableOfContents } from "@/components/UXEnhancements";
 import EnergieHaushaltVisualisierung from "@/components/visualizations/EnergieHaushaltVisualisierung";
+import { Link } from "wouter";
 
-const alltagIntroCards = [
+/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
+function openSection(sectionId: string) {
+  window.dispatchEvent(
+    new CustomEvent("open-section", { detail: { sectionId } })
+  );
+}
+
+const wasHilft = [
   {
-    icon: Clock,
-    title: "Daueranspannung ernst nehmen",
-    text: "Alltag kann erschöpfend sein, auch wenn äusserlich gerade nichts eskaliert oder zusammenbricht.",
-    iconClass: "text-sage-mid-dark",
-    shellClass: "bg-sage-wash border-sage-light/80",
+    title: "Verlässliche Absprachen",
+    description:
+      "Regelmässigkeit und angekündigte Änderungen entlasten oft stärker als spontane intensive Zuwendung.",
+    example:
+      "«Ich rufe dich heute Abend nach dem Essen an. Wenn ich mich verspäte, sage ich Bescheid.»",
+    dialog: [
+      {
+        sprecher: "Betroffene Person",
+        text: "Du hast dich gestern gar nicht gemeldet.",
+      },
+      {
+        sprecher: "Sie",
+        text: "Du hast recht — ich hätte Bescheid geben sollen. Das war nicht gut. Heute Abend um 20 Uhr rufe ich an.",
+      },
+      {
+        sprecher: "Betroffene Person",
+        text: "Und wenn wieder nichts kommt?",
+      },
+      {
+        sprecher: "Sie",
+        text: "Dann schreibe ich kurz. Aber ich halte das ein.",
+      },
+    ],
   },
   {
-    icon: CheckCircle2,
-    title: "Vorhersehbarkeit schaffen",
-    text: "Klare Absprachen, ruhige Präsenz und begrenzte Verfügbarkeit tragen oft mehr als hektische Reparatur.",
-    iconClass: "text-slate-blue",
-    shellClass: "bg-slate-wash border-slate-light/80",
+    title: "Klar sagen, was Sie meinen",
+    description:
+      "Doppeldeutigkeiten, Beschwichtigungen oder halbe Zusagen schaffen im Alltag oft mehr Unruhe als ehrliche Klarheit.",
+    example:
+      "«Ich brauche heute Abend Ruhe und bin morgen wieder ansprechbar.»",
+    dialog: [
+      {
+        sprecher: "Betroffene Person",
+        text: "Kannst du heute noch vorbeikommen?",
+      },
+      {
+        sprecher: "Sie",
+        text: "Nein, heute nicht. Ich brauche den Abend für mich.",
+      },
+      { sprecher: "Betroffene Person", text: "Du willst also nicht." },
+      {
+        sprecher: "Sie",
+        text: "Ich will — und ich brauche heute Abstand. Morgen Nachmittag bin ich gerne da.",
+      },
+    ],
   },
   {
-    icon: Heart,
-    title: "Beziehung atmungsfähig halten",
-    text: "Kleine positive Inseln und klare Grenzen helfen, dass Unterstützung nicht in Überforderung kippt.",
-    iconClass: "text-sand-warm",
-    shellClass: "bg-sand-muted border-sand-border/80",
+    title: "Ruhige Präsenz statt hektisches Reparieren",
+    description:
+      "Nicht jede Stimmung muss sofort gelöst werden. Oft hilft es mehr, ansprechbar und klar zu bleiben, ohne alles zu optimieren.",
+    example:
+      "«Ich merke, dass heute viel Anspannung da ist. Ich bin da, aber wir müssen das nicht sofort lösen.»",
+    dialog: [
+      {
+        sprecher: "Betroffene Person",
+        text: "Alles ist sinnlos. Es hat keinen Zweck mehr.",
+      },
+      { sprecher: "Sie", text: "Das klingt gerade sehr schwer. Ich bin da." },
+      { sprecher: "Betroffene Person", text: "[Schweigen]" },
+      {
+        sprecher: "Sie",
+        text: "Wir müssen das nicht sofort klären. Ich bleibe noch ein bisschen.",
+      },
+    ],
+  },
+  {
+    title: "Begrenzte Verfügbarkeit",
+    description:
+      "Viele Angehörige fühlen sich verpflichtet, rund um die Uhr erreichbar zu sein – dieses Gefühl ist verständlich, aber auf Dauer nicht tragfähig. Grenzen bei der Erreichbarkeit sind keine Ablehnung, sondern ein Weg, langfristig präsent bleiben zu können.",
+    example:
+      "«Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu.»",
+    dialog: [
+      {
+        sprecher: "Betroffene Person",
+        text: "Es ist 23 Uhr und ich kann nicht schlafen. Du gehst nicht ran.",
+      },
+      {
+        sprecher: "Sie",
+        text: "Ich sehe deine Nachricht erst morgen früh. Nach 22 Uhr bin ich offline.",
+      },
+      {
+        sprecher: "Betroffene Person",
+        text: "Was soll ich denn jetzt tun?",
+      },
+      {
+        sprecher: "Sie",
+        text: "Für Notfälle gibt es die 143. Die ist immer da. Morgen früh melden wir uns.",
+      },
+    ],
   },
 ] as const;
 
-const alltagQuickLinks = [
+const beziehungsAchtsamkeitSchritte = [
   {
-    id: "alltagsspannung",
-    title: "Warum Alltag so anstrengend ist",
-    text: "Wenn Sie zuerst verstehen möchten, warum schon die Vorahnung von Krise so viel Energie kostet.",
+    title: "kurz innehalten",
+    description:
+      "Nicht sofort reagieren, wenn Sie merken, dass Sie innerlich in Alarm gehen.",
   },
   {
-    id: "was-hilft",
-    title: "Was im Alltag wirklich hilft",
-    text: "Wenn Sie konkrete Muster für Verlässlichkeit, Klarheit und begrenzte Verfügbarkeit suchen.",
+    title: "die Lage genauer lesen",
+    description:
+      "Was ist gerade wirklich los: Angst, Kränkung, Rückzug, Überforderung, alte Dynamik?",
   },
   {
-    id: "impulsivitaet",
-    title: "Wenn Impulsivität ausbricht",
-    text: "Wenn plötzliche Entscheidungen, Ausgaben oder Risikoverhalten gerade das akute Thema sind.",
+    title: "auch sich selbst wahrnehmen",
+    description:
+      "Sind Sie gerade hilfsbereit, erschöpft, gereizt, schuldig oder im Rettungsmodus?",
   },
   {
-    id: "grenzen",
-    title: "Wo Ihre Grenzen liegen",
-    text: "Wenn Sie klarer sehen möchten, was Sie im Alltag tragen können und was nicht.",
+    title: "bewusst und begrenzt handeln",
+    description:
+      "Nicht alles tun, was Beziehung sofort beruhigt, sondern das, was längerfristig tragfähig ist.",
+  },
+] as const;
+
+const positiveInselnItems = [
+  { title: "kurzer Spaziergang", examples: "ohne sofortiges Problemgespräch" },
+  { title: "gemeinsames Essen", examples: "mit klarer zeitlicher Begrenzung" },
+  {
+    title: "etwas Vertrautes wiederholen",
+    examples: "ein kleines Ritual, das nicht überfordert",
+  },
+  {
+    title: "15 ruhige Minuten",
+    examples: "ohne Lösungssuche, ohne Handy, ohne Druck",
+  },
+] as const;
+
+const impulsivitaetZeichen = [
+  {
+    label: "Getriebensein",
+    sub: "Ruhelosigkeit, Drang zu handeln, kann nicht warten",
+  },
+  {
+    label: "Konsequenzblindheit",
+    sub: "Folgen werden ausgeblendet oder kleingredet",
+  },
+  {
+    label: "Grossausgaben",
+    sub: "Spontankäufe, Schulden, finanzielle Risiken",
+  },
+  {
+    label: "Abrupte Entscheidungen",
+    sub: "Job kündigen, Beziehung beenden, umziehen",
+  },
+  {
+    label: "Substanzkonsum",
+    sub: "Alkohol, Cannabis oder andere Mittel als Ventil",
+  },
+  {
+    label: "Risikoverhaltens",
+    sub: "Fahren unter Einfluss, ungeschützter Sex, Gewalt",
+  },
+] as const;
+
+const impulsivitaetSzenarien = [
+  {
+    titel: "Grossausgaben / finanzielle Risiken",
+    hilft: [
+      "Finanzielle Grenzen klar benennen: «Ich werde diese Ausgabe nicht mittragen.»",
+      "Gemeinsame Konten getrennt halten, wenn das Muster bekannt ist",
+      "In ruhiger Phase ansprechen: «Mir ist aufgefallen, dass du in letzter Zeit viel ausgibst. Das macht mir Sorge.»",
+    ],
+    nichtHilft: [
+      "Ausgaben heimlich rückgängig machen",
+      "Moralisieren («Du bist so unverantwortlich»)",
+      "Einfach zahlen, um Streit zu vermeiden",
+    ],
+  },
+  {
+    titel: "Abrupte Entscheidungen (Kündigung, Umzug, Trennung)",
+    hilft: [
+      "Nicht sofort mitentscheiden – Reaktionszeit einfordern: «Lass uns das in drei Tagen nochmal besprechen.»",
+      "Bedenken ruhig formulieren: «Ich mache mir Sorgen, weil... Hast du das bedacht?»",
+      "Akzeptieren, dass Sie die Entscheidung nicht verhindern können",
+    ],
+    nichtHilft: [
+      "Sofort in Panik verfallen oder Ultimaten stellen",
+      "Die Entscheidung als Angriff auf Sie interpretieren",
+      "Verantwortung für die Folgen übernehmen",
+    ],
+  },
+  {
+    titel: "Substanzkonsum / Risikoverhalten",
+    hilft: [
+      "Eigene Sicherheit priorisieren: Fahren mit unter Einfluss stehender Person ablehnen",
+      "Konkret und ohne Urteil benennen: «Ich mache mir Sorgen, wie viel du trinkst.»",
+      "Therapeutin oder Fachstelle einbeziehen, wenn das Muster anhält",
+    ],
+    nichtHilft: [
+      "Konsum verstecken oder normalisieren",
+      "Kontrolle übernehmen («Ich verstecke die Flaschen»)",
+      "Drohen und nicht handeln",
+    ],
   },
 ] as const;
 
 export default function UnterstuetzenAlltag() {
-  const openSection = (sectionId: string) => {
-    window.dispatchEvent(
-      new CustomEvent("open-section", { detail: { sectionId } })
-    );
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+      e.preventDefault();
+      openSection(sectionId);
+    },
+    []
+  );
+
+  const h4Style = {
+    fontSize: "var(--text-md)",
+    fontWeight: 600,
+    color: "var(--fg-primary)",
+  };
+
+  const bodyStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const exampleStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-primary)",
+    fontStyle: "italic" as const,
   };
 
   return (
@@ -84,988 +274,693 @@ export default function UnterstuetzenAlltag() {
       />
       <TableOfContents />
 
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-wash/60 to-background wave-divider">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            <Link
-              href="/unterstuetzen/uebersicht"
-              className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
-            >
-              ← Zurück zur Übersicht
-            </Link>
-
-            <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-sage-mid-dark" />
-              </div>
-              <span className="text-sm font-medium text-sage-mid-dark">
-                Lesezeit: 8 Minuten
-              </span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
-              Im Alltag unterstützen
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Belastete Beziehungen bestehen nicht nur aus Krisen. Meist prägen
-              sie den Alltag: Anspannung in der Luft, vorsichtiges Abtasten,
-              Rückzug nach Konflikten, Schuldgefühle, Erreichbarkeitsdruck und
-              die Frage, wie viel Nähe gerade hilfreich ist. Diese Seite geht
-              darum, was im Alltag trägt und was eher erschöpft.
-            </p>
-
-            <LastVerifiedBadge date="16.04.2026" className="mt-6" />
-          </motion.div>
-        </div>
-      </section>
-
       <UnterstuetzenSubNav />
 
-      <section className="py-8 md:py-10 wave-divider-top">
-        <div className="container">
-          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-            <Card className="border-sand-border/85 bg-white/92 shadow-[0_28px_56px_-40px_rgba(139,108,31,0.28)]">
-              <CardContent className="p-6 md:p-7">
-                <div className="mb-5 flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-wash">
-                    <Calendar className="h-6 w-6 text-sage-mid-dark" />
-                  </div>
-                  <div>
-                    <span className="kicker text-sage-mid-dark">Überblick</span>
-                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
-                      Was diese Seite im Alltag ordnet
-                    </h2>
-                  </div>
-                </div>
+      <EditorialLayout width="narrow">
+        {/* ── Hero ── */}
+        <header className="pb-20 pt-16 md:pb-28 md:pt-24">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
+          >
+            Unterstützen — Alltag
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            Im Alltag <em>unterstützen</em>
+          </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Belastete Beziehungen bestehen nicht nur aus Krisen. Meist prägen
+            sie den Alltag: Anspannung in der Luft, vorsichtiges Abtasten,
+            Rückzug nach Konflikten, Schuldgefühle, Erreichbarkeitsdruck und die
+            Frage, wie viel Nähe gerade hilfreich ist. Diese Seite geht darum,
+            was im Alltag trägt und was eher erschöpft.
+          </p>
+          <p
+            className="mt-4"
+            style={{
+              fontSize: "var(--text-sm)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            Vollständig ca. 8 Min · Auch abschnittweise lesbar.
+          </p>
+          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+        </header>
 
-                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-                  Diese Seite hilft Ihnen, Alltagsunterstützung nicht nur als
-                  Reaktion auf einzelne Krisen zu sehen. Im Zentrum stehen
-                  Daueranspannung, vorhersehbare Absprachen, kleine
-                  Entlastungsinseln und die Frage, wie Unterstützung tragfähig
-                  bleibt, ohne dass Sie sich selbst verlieren.
-                </p>
-
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {alltagIntroCards.map(item => {
-                    const Icon = item.icon;
-                    return (
-                      <div
-                        key={item.title}
-                        className={`rounded-2xl border p-4 ${item.shellClass}`}
-                      >
-                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
-                        <h3 className="mb-2 text-sm font-semibold text-foreground">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">
-                          {item.text}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
-              <CardContent className="p-6 md:p-7">
-                <span className="kicker text-slate-dark">
-                  Direkt einsteigen
-                </span>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
-                  direkt zu dem Teil, der Ihre aktuelle Alltagslage am ehesten
-                  trifft.
-                </p>
-
-                <div className="mt-5 space-y-3">
-                  {alltagQuickLinks.map(item => (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => openSection(item.id)}
-                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sage-light hover:bg-sage-wash/40 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-mid/35 focus-visible:ring-offset-2"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <h3 className="text-sm font-semibold text-foreground">
-                            {item.title}
-                          </h3>
-                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                            {item.text}
-                          </p>
-                        </div>
-                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-mid-dark transition-transform group-hover:translate-x-0.5">
-                          <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-
-                <div className="mt-5 rounded-2xl border border-sand-border/65 bg-sand-muted/65 px-4 py-4">
-                  <p className="text-sm leading-relaxed text-sand-warm">
-                    Wenn die Lage in Richtung Selbst- oder Fremdgefährdung,
-                    massiver Eskalation oder Kontrollverlust kippt, geht es
-                    nicht mehr primär um Alltagsbegleitung, sondern um{" "}
-                    <Link
-                      href="/unterstuetzen/krise"
-                      className="underline decoration-sand-warm/40 underline-offset-2 transition-colors hover:decoration-sand-warm"
-                    >
-                      Krisenbegleitung
-                    </Link>
-                    .
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            {/* Energie-Haushalt-Visualisierung – visueller Überblick */}
-            <EnergieHaushaltVisualisierung />
-            <ContentSection
-              title="Der Alltag ist oft nicht ruhig, sondern vorspannt"
-              icon={<Clock className="w-7 h-7 text-sage-mid" />}
-              id="alltagsspannung"
-              defaultOpen={true}
-              preview="Viele Angehörige leben nicht in dauernder Krise, sondern in dauernder Vorahnung von Krise. Gerade das kann zermürbend sein."
-            >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Viele Angehörige kennen weniger den permanenten
-                  Ausnahmezustand als einen Alltag, der unterschwellig unter
-                  Spannung steht: Man beobachtet Stimmungen, wägt Worte ab,
-                  rechnet mit plötzlichem Rückzug oder Ärger und versucht
-                  gleichzeitig, Normalität aufrechtzuerhalten.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Diese dauernde innere Wachsamkeit ist anstrengend. Sie kostet
-                  Energie, auch wenn äusserlich gerade "nichts passiert".
-                  Hilfreiche Alltagsunterstützung beginnt oft damit, diese
-                  Belastung ernst zu nehmen und nicht nur auf sichtbare
-                  Eskalationen zu reagieren.
-                </p>
-                <Card className="bg-sage-wash/50 border-sage-mid/30">
-                  <CardContent className="p-5">
-                    <p className="text-foreground leading-relaxed">
-                      Alltagshilfe bedeutet deshalb nicht, immer mehr zu tun.
-                      Oft bedeutet sie, Beziehungen etwas vorhersehbarer, klarer
-                      und weniger reaktiv zu machen.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                {/* Alltags-Spannungsdiagramm */}
-                <div className="rounded-lg border border-border/40 bg-slate-wash/10 p-4">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2 text-center">
-                    Spannungsverlauf im Alltag
-                  </p>
-                  <svg
-                    viewBox="0 0 300 72"
-                    className="w-full h-16"
-                    aria-hidden="true"
-                  >
-                    {/* Ruhepuls-Linie (Vergleich) */}
-                    <path
-                      d="M 15,48 C 60,48 80,38 120,42 S 180,48 240,44 S 270,42 285,42"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeDasharray="4,3"
-                      opacity="0.25"
-                    />
-                    {/* Erhöhte Grundspannung mit Spitzen */}
-                    <path
-                      d="M 15,35 C 40,33 55,32 70,33 S 85,30 90,18 S 95,32 110,32 S 140,30 155,32 S 165,28 170,14 S 175,32 195,31 S 220,30 235,31 S 250,28 255,20 S 260,32 285,30"
-                      fill="none"
-                      stroke="var(--color-sage-dark)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    {/* Labels */}
-                    <text
-                      x="15"
-                      y="68"
-                      fontSize="7.5"
-                      fill="currentColor"
-                      opacity="0.45"
-                    >
-                      Mo
-                    </text>
-                    <text
-                      x="82"
-                      y="68"
-                      fontSize="7.5"
-                      fill="currentColor"
-                      opacity="0.45"
-                    >
-                      Di
-                    </text>
-                    <text
-                      x="160"
-                      y="68"
-                      fontSize="7.5"
-                      fill="currentColor"
-                      opacity="0.45"
-                    >
-                      Mi
-                    </text>
-                    <text
-                      x="244"
-                      y="68"
-                      fontSize="7.5"
-                      fill="currentColor"
-                      opacity="0.45"
-                    >
-                      Do
-                    </text>
-                    {/* Legend */}
-                    <line
-                      x1="15"
-                      y1="8"
-                      x2="32"
-                      y2="8"
-                      stroke="var(--color-sage-dark)"
-                      strokeWidth="2"
-                    />
-                    <text
-                      x="35"
-                      y="11"
-                      fontSize="7.5"
-                      fill="currentColor"
-                      opacity="0.6"
-                    >
-                      Mit Angehörigem
-                    </text>
-                    <line
-                      x1="140"
-                      y1="8"
-                      x2="157"
-                      y2="8"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeDasharray="3,2"
-                      opacity="0.4"
-                    />
-                    <text
-                      x="160"
-                      y="11"
-                      fontSize="7.5"
-                      fill="currentColor"
-                      opacity="0.6"
-                    >
-                      Ohne Belastung
-                    </text>
-                  </svg>
-                  <p className="text-[11px] text-muted-foreground text-center mt-1">
-                    Erhöhte Grundspannung kostet Energie — auch wenn äusserlich
-                    "nichts passiert"
-                  </p>
-                </div>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Was im Alltag oft wirklich hilft"
-              icon={<Heart className="w-7 h-7 text-sage-mid-dark" />}
-              id="was-hilft"
-              preview="Nicht grosse Gesten, sondern Klarheit, Verlässlichkeit, ruhige Präsenz und begrenzte Verfügbarkeit tragen häufig am meisten."
-            >
-              <div className="grid gap-4">
-                {[
-                  {
-                    title: "Verlässliche Absprachen",
-                    description:
-                      "Regelmässigkeit und angekündigte Änderungen entlasten oft stärker als spontane intensive Zuwendung.",
-                    example:
-                      '"Ich rufe dich heute Abend nach dem Essen an. Wenn ich mich verspäte, sage ich Bescheid."',
-                    dialog: [
-                      {
-                        sprecher: "Betroffene Person",
-                        text: "Du hast dich gestern gar nicht gemeldet.",
-                      },
-                      {
-                        sprecher: "Sie",
-                        text: "Du hast recht — ich hätte Bescheid geben sollen. Das war nicht gut. Heute Abend um 20 Uhr rufe ich an.",
-                      },
-                      {
-                        sprecher: "Betroffene Person",
-                        text: "Und wenn wieder nichts kommt?",
-                      },
-                      {
-                        sprecher: "Sie",
-                        text: "Dann schreibe ich kurz. Aber ich halte das ein.",
-                      },
-                    ],
-                  },
-                  {
-                    title: "Klar sagen, was Sie meinen",
-                    description:
-                      "Doppeldeutigkeiten, Beschwichtigungen oder halbe Zusagen schaffen im Alltag oft mehr Unruhe als ehrliche Klarheit.",
-                    example:
-                      '"Ich brauche heute Abend Ruhe und bin morgen wieder ansprechbar."',
-                    dialog: [
-                      {
-                        sprecher: "Betroffene Person",
-                        text: "Kannst du heute noch vorbeikommen?",
-                      },
-                      {
-                        sprecher: "Sie",
-                        text: "Nein, heute nicht. Ich brauche den Abend für mich.",
-                      },
-                      {
-                        sprecher: "Betroffene Person",
-                        text: "Du willst also nicht.",
-                      },
-                      {
-                        sprecher: "Sie",
-                        text: "Ich will — und ich brauche heute Abstand. Morgen Nachmittag bin ich gerne da.",
-                      },
-                    ],
-                  },
-                  {
-                    title: "Ruhige Präsenz statt hektisches Reparieren",
-                    description:
-                      "Nicht jede Stimmung muss sofort gelöst werden. Oft hilft es mehr, ansprechbar und klar zu bleiben, ohne alles zu optimieren.",
-                    example:
-                      '"Ich merke, dass heute viel Anspannung da ist. Ich bin da, aber wir müssen das nicht sofort lösen."',
-                    dialog: [
-                      {
-                        sprecher: "Betroffene Person",
-                        text: "Alles ist sinnlos. Es hat keinen Zweck mehr.",
-                      },
-                      {
-                        sprecher: "Sie",
-                        text: "Das klingt gerade sehr schwer. Ich bin da.",
-                      },
-                      { sprecher: "Betroffene Person", text: "[Schweigen]" },
-                      {
-                        sprecher: "Sie",
-                        text: "Wir müssen das nicht sofort klären. Ich bleibe noch ein bisschen.",
-                      },
-                    ],
-                  },
-                  {
-                    title: "Begrenzte Verfügbarkeit",
-                    description:
-                      "Viele Angehörige fühlen sich verpflichtet, rund um die Uhr erreichbar zu sein – dieses Gefühl ist verständlich, aber auf Dauer nicht tragfähig. Grenzen bei der Erreichbarkeit sind keine Ablehnung, sondern ein Weg, langfristig präsent bleiben zu können.",
-                    example:
-                      '"Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu."',
-                    dialog: [
-                      {
-                        sprecher: "Betroffene Person",
-                        text: "Es ist 23 Uhr und ich kann nicht schlafen. Du gehst nicht ran.",
-                      },
-                      {
-                        sprecher: "Sie",
-                        text: "Ich sehe deine Nachricht erst morgen früh. Nach 22 Uhr bin ich offline.",
-                      },
-                      {
-                        sprecher: "Betroffene Person",
-                        text: "Was soll ich denn jetzt tun?",
-                      },
-                      {
-                        sprecher: "Sie",
-                        text: "Für Notfälle gibt es die 143. Die ist immer da. Morgen früh melden wir uns.",
-                      },
-                    ],
-                  },
-                ].map(item => (
-                  <Card key={item.title} className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm mb-3">
-                        {item.description}
-                      </p>
-                      <div className="bg-sage-light/30 rounded-lg p-3 mb-3">
-                        <p className="text-sm text-foreground italic">
-                          {item.example}
-                        </p>
-                      </div>
-                      <div className="space-y-1.5 border-t border-border/40 pt-3">
-                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-                          Wie das klingen kann
-                        </p>
-                        {item.dialog.map((zeile, i) => (
-                          <div
-                            key={i}
-                            className={`flex gap-2 text-sm ${zeile.sprecher === "Sie" ? "flex-row-reverse" : ""}`}
-                          >
-                            <span
-                              className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-full h-fit mt-0.5 ${zeile.sprecher === "Sie" ? "bg-sage-wash text-sage-mid-dark" : "bg-muted text-muted-foreground"}`}
-                            >
-                              {zeile.sprecher === "Sie" ? "Sie" : "BP"}
-                            </span>
-                            <p
-                              className={`text-sm leading-snug ${zeile.sprecher === "[Schweigen]" ? "italic text-muted-foreground" : "text-foreground"}`}
-                            >
-                              {zeile.text}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Nach Konflikten und Rückzug"
-              icon={<Users className="w-7 h-7 text-sage-mid-mid" />}
-              id="rueckzug"
-              preview="Viele Beziehungen leiden weniger nur an Streit als an dem, was danach folgt: Schweigen, Unsicherheit, Funkstille oder ein vorsichtiger Neustart."
-            >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Nach Konflikten entsteht oft ein belastender Zwischenraum.
-                  Angehörige wissen nicht, ob sie nachgehen oder Abstand lassen
-                  sollen, ob Schweigen beruhigt oder eskaliert, ob ein Gespräch
-                  hilfreich wäre oder zu früh käme.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Card className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        Hilfreich kann sein
-                      </h3>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li>ein kurzes, klares Kontaktangebot</li>
-                        <li>nicht drängen, aber auch nicht strafen</li>
-                        <li>später aufgreifen, was passiert ist</li>
-                        <li>
-                          zwischen Raum geben und Beziehungsabbruch
-                          unterscheiden
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                  <Card className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        Weniger hilfreich ist oft
-                      </h3>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li>mehrfach nachfassen aus Panik</li>
-                        <li>Gegenrückzug aus Verletzung</li>
-                        <li>so tun, als wäre nichts gewesen</li>
-                        <li>mitten im Alarm sofort alles klären wollen</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-                <Card className="bg-sage-light/10 border-sage">
-                  <CardContent className="p-5">
-                    <p className="text-foreground leading-relaxed">
-                      Im Alltag ist nach einem Bruch oft nicht Perfektion
-                      gefragt, sondern ein ruhiger, begrenzter Wiedereinstieg in
-                      Kontakt.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Beziehungs-Achtsamkeit im echten Alltag"
-              icon={<Users className="w-7 h-7 text-slate-blue" />}
-              id="beziehungs-achtsamkeit"
-              preview="Bewusst wahrnehmen, was gerade passiert, hilft vor allem dann, wenn Sie sonst in Alarm, Rechtfertigung oder Überanpassung kippen würden."
-            >
-              <div className="space-y-3">
-                {[
-                  {
-                    step: "1",
-                    title: "kurz innehalten",
-                    description:
-                      "Nicht sofort reagieren, wenn Sie merken, dass Sie innerlich in Alarm gehen.",
-                  },
-                  {
-                    step: "2",
-                    title: "die Lage genauer lesen",
-                    description:
-                      "Was ist gerade wirklich los: Angst, Kränkung, Rückzug, Überforderung, alte Dynamik?",
-                  },
-                  {
-                    step: "3",
-                    title: "auch sich selbst wahrnehmen",
-                    description:
-                      "Sind Sie gerade hilfsbereit, erschöpft, gereizt, schuldig oder im Rettungsmodus?",
-                  },
-                  {
-                    step: "4",
-                    title: "bewusst und begrenzt handeln",
-                    description:
-                      "Nicht alles tun, was Beziehung sofort beruhigt, sondern das, was längerfristig tragfähig ist.",
-                  },
-                ].map(item => (
-                  <Card key={item.step} className="border-border/50">
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-3">
-                        <span className="w-8 h-8 rounded-full bg-sage-mid text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
-                          {item.step}
-                        </span>
-                        <div>
-                          <h4 className="font-semibold text-foreground">
-                            {item.title}
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Kleine positive Inseln schaffen"
-              icon={<Lightbulb className="w-7 h-7 text-sand-mid" />}
-              id="positive-inseln"
-              preview="Beziehung darf nicht nur aus Klärung, Kontrolle, Sorge und Krisenmanagement bestehen. Kleine unbelastete Momente sind kein Luxus."
-            >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Wenn eine Beziehung fast nur noch um Symptome, Anspannung und
-                  Konflikt kreist, verliert sie ihre tragenden Anteile.
-                  Alltagshilfe heisst deshalb auch, kleine gemeinsame Momente zu
-                  schützen, die nicht sofort funktional sein müssen.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    {
-                      title: "kurzer Spaziergang",
-                      examples: "ohne sofortiges Problemgespräch",
-                    },
-                    {
-                      title: "gemeinsames Essen",
-                      examples: "mit klarer zeitlicher Begrenzung",
-                    },
-                    {
-                      title: "etwas Vertrautes wiederholen",
-                      examples: "ein kleines Ritual, das nicht überfordert",
-                    },
-                    {
-                      title: "15 ruhige Minuten",
-                      examples: "ohne Lösungssuche, ohne Handy, ohne Druck",
-                    },
-                  ].map(item => (
-                    <Card key={item.title} className="border-border/50">
-                      <CardContent className="p-4">
-                        <h3 className="font-semibold text-foreground mb-1">
-                          {item.title}
-                        </h3>
-                        <p className="text-muted-foreground text-sm">
-                          {item.examples}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-                <Card className="mt-2 bg-sand-muted border-sand-mid">
-                  <CardContent className="p-5">
-                    <p className="text-muted-foreground text-sm">
-                      <strong className="text-foreground">Wichtig:</strong>{" "}
-                      Positive Momente sind keine Gegenbeweise gegen Belastung.
-                      Sie sind eher kleine Ressourceninseln, die Beziehungen
-                      etwas atmungsfähiger machen können.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Was Sie konkret tun können"
-              icon={<CheckCircle2 className="w-7 h-7 text-sage-mid-mid" />}
-              id="konkrete-schritte"
-              preview="Praktische Alltagshilfen sind oft einfach, aber nicht leicht: klar bleiben, Rückmeldungen dosieren, Fortschritte benennen und nicht alles übernehmen."
-            >
-              <div className="space-y-4">
-                <Card className="border-border/50">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">
-                      Fortschritte benennen
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-3">
-                      Nicht überloben, aber wahrnehmen, wenn etwas weniger
-                      zerstörerisch, etwas bewusster oder etwas klarer gelungen
-                      ist.
-                    </p>
-                    <div className="bg-sage-lighter/50 rounded-lg p-3">
-                      <p className="text-sm text-foreground italic">
-                        "Ich habe gemerkt, dass du dich heute zurückgezogen
-                        hast, ohne dass es ganz eskaliert ist. Das war nicht
-                        leicht."
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-border/50">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">
-                      Fragen statt übernehmen
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-3">
-                      Alltagshilfe wird tragfähiger, wenn Sie nicht alles lösen,
-                      sondern Beteiligung und Eigenanteil offenlassen.
-                    </p>
-                    <div className="space-y-2">
-                      {[
-                        "Was wäre dein Vorschlag?",
-                        "Was brauchst du gerade von mir, und was eher nicht?",
-                        "Soll ich einfach da sein oder mit dir mitdenken?",
-                      ].map(item => (
-                        <div
-                          key={item}
-                          className="bg-sage-lighter/50 rounded-lg p-3"
-                        >
-                          <p className="text-sm text-foreground italic">
-                            "{item}"
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-border/50">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-3">
-                      Vorhersehbar bleiben
-                    </h3>
-                    <ul className="space-y-2 text-sm">
-                      {[
-                        "Änderungen möglichst früh ankündigen",
-                        "Versprechen halten oder offen revidieren",
-                        "Erreichbarkeit klar benennen",
-                        "nicht jedes Mal völlig anders reagieren",
-                      ].map(item => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-2 text-muted-foreground"
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-sage-mid-mid mt-0.5 flex-shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Wenn Impulsivität ausbricht"
-              icon={<Zap className="w-7 h-7 text-amber-600" />}
-              id="impulsivitaet"
-              preview="Plötzliche Entscheidungen, Ausgaben, Risikoverhalten – dieser Alltag ist anders als Depression. Wie Sie reagieren, ohne zu moralisieren, und Ihre Grenzen dennoch halten."
-            >
-              <div className="space-y-6">
-                <Card className="border-l-4 border-l-slate-200 bg-slate-50/40">
-                  <CardContent className="p-4 flex items-start gap-3">
-                    <span className="text-sage-mid-mid mt-0.5 shrink-0">→</span>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Wird die Situation akut – Selbst- oder Fremdgefährdung,
-                      unkontrollierbare Eskalation?{" "}
-                      <Link
-                        href="/unterstuetzen/krise"
-                        className="text-sage-mid-dark underline underline-offset-2 hover:text-sage-mid-mid font-medium"
-                      >
-                        Krisenbegleitung →
-                      </Link>
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-l-4 border-l-amber-400 bg-amber-50/40">
-                  <CardContent className="p-5">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Borderline zeigt sich nicht nur als Rückzug und
-                      Erschöpfung. Manche Phasen sind geprägt von{" "}
-                      <strong className="text-foreground">Impulsivität</strong>:
-                      plötzliche Grossausgaben, Kündigung ohne Plan, riskante
-                      Beziehungsentscheidungen, Substanzkonsum, Fahrtabenteuer
-                      oder abrupte Ortsveränderungen. Für Angehörige kann das
-                      überraschender und belastender sein als depressive Phasen
-                      – weil es Konsequenzen hat, die beide betreffen.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <div>
-                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-sage-mid-mid" />
-                    Zeichen einer impulsiven Phase erkennen
-                  </h3>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {[
-                      {
-                        label: "Getriebensein",
-                        sub: "Ruhelosigkeit, Drang zu handeln, kann nicht warten",
-                      },
-                      {
-                        label: "Konsequenzblindheit",
-                        sub: "Folgen werden ausgeblendet oder kleingredet",
-                      },
-                      {
-                        label: "Grossausgaben",
-                        sub: "Spontankäufe, Schulden, finanzielle Risiken",
-                      },
-                      {
-                        label: "Abrupte Entscheidungen",
-                        sub: "Job kündigen, Beziehung beenden, umziehen",
-                      },
-                      {
-                        label: "Substanzkonsum",
-                        sub: "Alkohol, Cannabis oder andere Mittel als Ventil",
-                      },
-                      {
-                        label: "Risikoverhaltens",
-                        sub: "Fahren unter Einfluss, ungeschützter Sex, Gewalt",
-                      },
-                    ].map(item => (
-                      <div
-                        key={item.label}
-                        className="flex items-start gap-2 p-3 rounded-lg bg-muted/30 border border-border/40"
-                      >
-                        <div className="w-2 h-2 rounded-full bg-amber-400 mt-1.5 shrink-0" />
-                        <div>
-                          <p className="text-sm font-medium text-foreground">
-                            {item.label}
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            {item.sub}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-sage-mid-mid" />
-                    Wichtige Unterscheidung
-                  </h3>
-                  <Card className="bg-sage-wash/50 border-sage/30">
-                    <CardContent className="p-5">
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        Impulsive Handlungen entstehen oft aus{" "}
-                        <strong className="text-foreground">
-                          intensivem emotionalen Druck
-                        </strong>
-                        , nicht aus Rücksichtslosigkeit oder bösem Willen. Das
-                        bedeutet nicht, dass Sie die Konsequenzen tragen müssen
-                        – aber es hilft, nicht mit «Das ist unverantwortlich»
-                        oder «Wie konntest du nur» zu antworten. Moralische
-                        Vorwürfe in der Phase selbst verändern nichts und
-                        verstärken meist Scham und Eskalation.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div>
-                  <h3 className="text-base font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <Lightbulb className="w-5 h-5 text-sage-mid-mid" />
-                    Drei Szenarien – was hilft, was nicht
-                  </h3>
-                  <div className="space-y-4">
-                    {[
-                      {
-                        titel: "Grossausgaben / finanzielle Risiken",
-                        hilft: [
-                          "Finanzielle Grenzen klar benennen: «Ich werde diese Ausgabe nicht mittragen.»",
-                          "Gemeinsame Konten getrennt halten, wenn das Muster bekannt ist",
-                          "In ruhiger Phase ansprechen: «Mir ist aufgefallen, dass du in letzter Zeit viel ausgibst. Das macht mir Sorge.»",
-                        ],
-                        nichtHilft: [
-                          "Ausgaben heimlich rückgängig machen",
-                          "Moralisieren («Du bist so unverantwortlich»)",
-                          "Einfach zahlen, um Streit zu vermeiden",
-                        ],
-                      },
-                      {
-                        titel:
-                          "Abrupte Entscheidungen (Kündigung, Umzug, Trennung)",
-                        hilft: [
-                          "Nicht sofort mitentscheiden – Reaktionszeit einfordern: «Lass uns das in drei Tagen nochmal besprechen.»",
-                          "Bedenken ruhig formulieren: «Ich mache mir Sorgen, weil... Hast du das bedacht?»",
-                          "Akzeptieren, dass Sie die Entscheidung nicht verhindern können",
-                        ],
-                        nichtHilft: [
-                          "Sofort in Panik verfallen oder Ultimaten stellen",
-                          "Die Entscheidung als Angriff auf Sie interpretieren",
-                          "Verantwortung für die Folgen übernehmen",
-                        ],
-                      },
-                      {
-                        titel: "Substanzkonsum / Risikoverhalten",
-                        hilft: [
-                          "Eigene Sicherheit priorisieren: Fahren mit unter Einfluss stehender Person ablehnen",
-                          "Konkret und ohne Urteil benennen: «Ich mache mir Sorgen, wie viel du trinkst.»",
-                          "Therapeutin oder Fachstelle einbeziehen, wenn das Muster anhält",
-                        ],
-                        nichtHilft: [
-                          "Konsum verstecken oder normalisieren",
-                          "Kontrolle übernehmen («Ich verstecke die Flaschen»)",
-                          "Drohen und nicht handeln",
-                        ],
-                      },
-                    ].map(szenario => (
-                      <Card key={szenario.titel} className="border-border/50">
-                        <CardContent className="p-5">
-                          <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                            <Zap className="w-4 h-4 text-amber-500 shrink-0" />
-                            {szenario.titel}
-                          </h4>
-                          <div className="grid sm:grid-cols-2 gap-4">
-                            <div>
-                              <p className="text-xs font-medium text-sage-mid-dark mb-2 uppercase tracking-wide">
-                                Hilft eher
-                              </p>
-                              <ul className="space-y-1.5">
-                                {szenario.hilft.map(p => (
-                                  <li
-                                    key={p}
-                                    className="flex items-start gap-1.5 text-xs text-muted-foreground"
-                                  >
-                                    <span className="text-sage-mid-mid mt-0.5">
-                                      ✓
-                                    </span>
-                                    {p}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div>
-                              <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">
-                                Hilft weniger
-                              </p>
-                              <ul className="space-y-1.5">
-                                {szenario.nichtHilft.map(p => (
-                                  <li
-                                    key={p}
-                                    className="flex items-start gap-1.5 text-xs text-muted-foreground"
-                                  >
-                                    <span className="text-muted-foreground/80 mt-0.5">
-                                      ✗
-                                    </span>
-                                    {p}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-
-                <Card className="border-l-4 border-l-sage-mid bg-sage-wash/30">
-                  <CardContent className="p-5">
-                    <h3 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <Users className="w-4 h-4 text-sage-mid-mid" />
-                      Nach der impulsiven Phase: Scham und Reue
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Nach impulsiven Phasen folgt oft massive{" "}
-                      <strong className="text-foreground">Scham</strong> –
-                      manchmal Rückzug, manchmal übermässige Entschuldigungen.
-                      Beides braucht eine ruhige Antwort: Anerkennen, was
-                      passiert ist, ohne es kleinzureden oder aufzubauschen.
-                      Erst wenn die Emotionen sich gelegt haben, ist der Moment
-                      für ein echtes Gespräch über Konsequenzen und nächste
-                      Schritte.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Grenzen der Alltagsunterstützung"
-              icon={<AlertTriangle className="w-7 h-7 text-sage-mid-mid" />}
-              id="grenzen"
-              preview="Auch im Alltag gibt es Grenzen. Sie müssen nicht perfekt sein, aber Sie sollten Ihre Erschöpfung und Ihre roten Linien ernst nehmen."
-            >
-              <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Auch im Alltag können Sie nicht alles halten. Sie können
-                    nicht:
-                  </p>
-                  <ul className="space-y-2">
-                    {[
-                      "die Emotionen Ihres Angehörigen dauerhaft regulieren",
-                      "alle Trigger vermeiden",
-                      "jede Eskalation verhindern",
-                      "Therapie oder Krisenhilfe ersetzen",
-                    ].map(item => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 text-muted-foreground"
-                      >
-                        <span className="text-sage-mid-mid">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-muted-foreground leading-relaxed mt-4">
-                    <strong className="text-foreground">
-                      Das ist keine Niederlage.
-                    </strong>{" "}
-                    Alltag wird nicht durch Perfektion tragfähig, sondern durch
-                    Klarheit, Wiederholbarkeit und die Bereitschaft, auch Ihre
-                    eigene Grenze ernst zu nehmen.
-                  </p>
-                </CardContent>
-              </Card>
-            </ContentSection>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex justify-between items-center pt-8 border-t border-border"
-            >
-              <Button variant="ghost" asChild>
-                <Link href="/unterstuetzen/uebersicht">
-                  ← Wie kann ich helfen?
-                </Link>
-              </Button>
-              <Button
-                className="bg-sage-dark hover:bg-sage-mid text-white"
-                asChild
+        {/* ── Intro: Was diese Seite im Alltag ordnet ── */}
+        <EditorialSection
+          label="Überblick"
+          title="Was diese Seite im Alltag ordnet"
+        >
+          <EditorialProse>
+            <p>
+              Diese Seite hilft Ihnen, Alltagsunterstützung nicht nur als
+              Reaktion auf einzelne Krisen zu sehen. Im Zentrum stehen
+              Daueranspannung, vorhersehbare Absprachen, kleine
+              Entlastungsinseln und die Frage, wie Unterstützung tragfähig
+              bleibt, ohne dass Sie sich selbst verlieren.
+            </p>
+            <p>
+              Drei Akzente ziehen sich durch die Seite: zuerst die
+              Daueranspannung ernst nehmen — Alltag kann erschöpfend sein, auch
+              wenn äusserlich gerade nichts eskaliert; dann Vorhersehbarkeit
+              schaffen — klare Absprachen, ruhige Präsenz und begrenzte
+              Verfügbarkeit tragen oft mehr als hektische Reparatur; und
+              schliesslich die Beziehung atmungsfähig halten — kleine positive
+              Inseln und klare Grenzen helfen, dass Unterstützung nicht in
+              Überforderung kippt.
+            </p>
+            <p>
+              Sie können auch direkt zu{" "}
+              <a
+                href="#alltagsspannung"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "alltagsspannung")}
               >
-                <Link href="/unterstuetzen/krise">
-                  Weiter: Krisen begleiten
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-            </motion.div>
+                Alltagsspannung
+              </a>
+              ,{" "}
+              <a
+                href="#was-hilft"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "was-hilft")}
+              >
+                was hilft
+              </a>
+              ,{" "}
+              <a
+                href="#impulsivitaet"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "impulsivitaet")}
+              >
+                Impulsivität
+              </a>{" "}
+              oder{" "}
+              <a
+                href="#grenzen"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "grenzen")}
+              >
+                Grenzen
+              </a>{" "}
+              springen.
+            </p>
+            <p>
+              Wenn die Lage in Richtung Selbst- oder Fremdgefährdung, massiver
+              Eskalation oder Kontrollverlust kippt, geht es nicht mehr primär
+              um Alltagsbegleitung, sondern um{" "}
+              <Link href="/unterstuetzen/krise" className="editorial-link">
+                Krisenbegleitung
+              </Link>
+              .
+            </p>
+          </EditorialProse>
+        </EditorialSection>
+
+        {/* ── Visualisierung (out-of-scope, eigenständige Komponente) ── */}
+        <EnergieHaushaltVisualisierung />
+
+        {/* ── ContentSection 1: alltagsspannung ── */}
+        <ContentSection
+          variant="editorial"
+          title="Der Alltag ist oft nicht ruhig, sondern vorspannt"
+          id="alltagsspannung"
+          defaultOpen={true}
+          preview="Viele Angehörige leben nicht in dauernder Krise, sondern in dauernder Vorahnung von Krise. Gerade das kann zermürbend sein."
+        >
+          <EditorialProse>
+            <p>
+              Viele Angehörige kennen weniger den permanenten Ausnahmezustand
+              als einen Alltag, der unterschwellig unter Spannung steht: Man
+              beobachtet Stimmungen, wägt Worte ab, rechnet mit plötzlichem
+              Rückzug oder Ärger und versucht gleichzeitig, Normalität
+              aufrechtzuerhalten.
+            </p>
+            <p>
+              Diese dauernde innere Wachsamkeit ist anstrengend. Sie kostet
+              Energie, auch wenn äusserlich gerade «nichts passiert». Hilfreiche
+              Alltagsunterstützung beginnt oft damit, diese Belastung ernst zu
+              nehmen und nicht nur auf sichtbare Eskalationen zu reagieren.
+            </p>
+          </EditorialProse>
+          <div className="mt-4">
+            <EditorialPullQuote>
+              Alltagshilfe bedeutet deshalb nicht, immer mehr zu tun. Oft
+              bedeutet sie, Beziehungen etwas vorhersehbarer, klarer und weniger
+              reaktiv zu machen.
+            </EditorialPullQuote>
           </div>
-        </div>
-      </section>
+          <figure
+            className="mt-8 border-t pt-6"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p
+              className="text-center uppercase"
+              style={{
+                fontSize: "var(--text-xs)",
+                letterSpacing: "var(--tracking-caps)",
+                color: "var(--fg-tertiary)",
+                fontWeight: 500,
+              }}
+            >
+              Spannungsverlauf im Alltag
+            </p>
+            <svg
+              viewBox="0 0 300 72"
+              className="mt-3 h-16 w-full"
+              aria-hidden="true"
+            >
+              <path
+                d="M 15,48 C 60,48 80,38 120,42 S 180,48 240,44 S 270,42 285,42"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeDasharray="4,3"
+                opacity="0.25"
+              />
+              <path
+                d="M 15,35 C 40,33 55,32 70,33 S 85,30 90,18 S 95,32 110,32 S 140,30 155,32 S 165,28 170,14 S 175,32 195,31 S 220,30 235,31 S 250,28 255,20 S 260,32 285,30"
+                fill="none"
+                stroke="var(--accent-primary)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <text
+                x="15"
+                y="68"
+                fontSize="7.5"
+                fill="currentColor"
+                opacity="0.45"
+              >
+                Mo
+              </text>
+              <text
+                x="82"
+                y="68"
+                fontSize="7.5"
+                fill="currentColor"
+                opacity="0.45"
+              >
+                Di
+              </text>
+              <text
+                x="160"
+                y="68"
+                fontSize="7.5"
+                fill="currentColor"
+                opacity="0.45"
+              >
+                Mi
+              </text>
+              <text
+                x="244"
+                y="68"
+                fontSize="7.5"
+                fill="currentColor"
+                opacity="0.45"
+              >
+                Do
+              </text>
+              <line
+                x1="15"
+                y1="8"
+                x2="32"
+                y2="8"
+                stroke="var(--accent-primary)"
+                strokeWidth="2"
+              />
+              <text
+                x="35"
+                y="11"
+                fontSize="7.5"
+                fill="currentColor"
+                opacity="0.6"
+              >
+                Mit Angehörigem
+              </text>
+              <line
+                x1="140"
+                y1="8"
+                x2="157"
+                y2="8"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeDasharray="3,2"
+                opacity="0.4"
+              />
+              <text
+                x="160"
+                y="11"
+                fontSize="7.5"
+                fill="currentColor"
+                opacity="0.6"
+              >
+                Ohne Belastung
+              </text>
+            </svg>
+            <figcaption
+              className="mt-2 text-center"
+              style={{
+                fontSize: "var(--text-xs)",
+                color: "var(--fg-tertiary)",
+              }}
+            >
+              Erhöhte Grundspannung kostet Energie — auch wenn äusserlich
+              «nichts passiert».
+            </figcaption>
+          </figure>
+        </ContentSection>
+
+        {/* ── ContentSection 2: was-hilft ── */}
+        <ContentSection
+          variant="editorial"
+          title="Was im Alltag oft wirklich hilft"
+          id="was-hilft"
+          preview="Nicht grosse Gesten, sondern Klarheit, Verlässlichkeit, ruhige Präsenz und begrenzte Verfügbarkeit tragen häufig am meisten."
+        >
+          <div className="mt-2 space-y-10">
+            {wasHilft.map(item => (
+              <article key={item.title} className="space-y-3">
+                <h4 style={h4Style}>{item.title}</h4>
+                <p style={bodyStyle}>{item.description}</p>
+                <p style={exampleStyle}>{item.example}</p>
+                <div
+                  className="border-t pt-3"
+                  style={{ borderColor: "var(--rule-color)" }}
+                >
+                  <p
+                    className="uppercase"
+                    style={{
+                      fontSize: "var(--text-xs)",
+                      letterSpacing: "var(--tracking-caps)",
+                      color: "var(--fg-tertiary)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Wie das klingen kann
+                  </p>
+                  <dl className="mt-2 space-y-1.5">
+                    {item.dialog.map((zeile, i) => (
+                      <div key={i} className="flex gap-3">
+                        <dt
+                          className="shrink-0"
+                          style={{
+                            fontSize: "var(--text-xs)",
+                            color: "var(--fg-tertiary)",
+                            fontWeight: 500,
+                            minWidth: "5rem",
+                          }}
+                        >
+                          {zeile.sprecher}
+                        </dt>
+                        <dd
+                          style={{
+                            fontSize: "var(--text-sm)",
+                            lineHeight: "var(--lh-snug)",
+                            color:
+                              zeile.text === "[Schweigen]"
+                                ? "var(--fg-tertiary)"
+                                : "var(--fg-primary)",
+                            fontStyle:
+                              zeile.text === "[Schweigen]"
+                                ? "italic"
+                                : "normal",
+                          }}
+                        >
+                          {zeile.text}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              </article>
+            ))}
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 3: rueckzug ── */}
+        <ContentSection
+          variant="editorial"
+          title="Nach Konflikten und Rückzug"
+          id="rueckzug"
+          preview="Viele Beziehungen leiden weniger nur an Streit als an dem, was danach folgt: Schweigen, Unsicherheit, Funkstille oder ein vorsichtiger Neustart."
+        >
+          <EditorialProse>
+            <p>
+              Nach Konflikten entsteht oft ein belastender Zwischenraum.
+              Angehörige wissen nicht, ob sie nachgehen oder Abstand lassen
+              sollen, ob Schweigen beruhigt oder eskaliert, ob ein Gespräch
+              hilfreich wäre oder zu früh käme.
+            </p>
+          </EditorialProse>
+          <div className="mt-6 grid gap-8 sm:grid-cols-2">
+            <div>
+              <h4 style={h4Style}>Hilfreich kann sein</h4>
+              <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
+                <li>ein kurzes, klares Kontaktangebot</li>
+                <li>nicht drängen, aber auch nicht strafen</li>
+                <li>später aufgreifen, was passiert ist</li>
+                <li>zwischen Raum geben und Beziehungsabbruch unterscheiden</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={h4Style}>Weniger hilfreich ist oft</h4>
+              <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
+                <li>mehrfach nachfassen aus Panik</li>
+                <li>Gegenrückzug aus Verletzung</li>
+                <li>so tun, als wäre nichts gewesen</li>
+                <li>mitten im Alarm sofort alles klären wollen</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-6">
+            <EditorialPullQuote>
+              Im Alltag ist nach einem Bruch oft nicht Perfektion gefragt,
+              sondern ein ruhiger, begrenzter Wiedereinstieg in Kontakt.
+            </EditorialPullQuote>
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 4: beziehungs-achtsamkeit ── */}
+        <ContentSection
+          variant="editorial"
+          title="Beziehungs-Achtsamkeit im echten Alltag"
+          id="beziehungs-achtsamkeit"
+          preview="Bewusst wahrnehmen, was gerade passiert, hilft vor allem dann, wenn Sie sonst in Alarm, Rechtfertigung oder Überanpassung kippen würden."
+        >
+          <ol className="mt-2 ml-5 list-decimal space-y-4">
+            {beziehungsAchtsamkeitSchritte.map(item => (
+              <li key={item.title}>
+                <h4 style={h4Style}>{item.title}</h4>
+                <p className="mt-1" style={bodyStyle}>
+                  {item.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </ContentSection>
+
+        {/* ── ContentSection 5: positive-inseln ── */}
+        <ContentSection
+          variant="editorial"
+          title="Kleine positive Inseln schaffen"
+          id="positive-inseln"
+          preview="Beziehung darf nicht nur aus Klärung, Kontrolle, Sorge und Krisenmanagement bestehen. Kleine unbelastete Momente sind kein Luxus."
+        >
+          <EditorialProse>
+            <p>
+              Wenn eine Beziehung fast nur noch um Symptome, Anspannung und
+              Konflikt kreist, verliert sie ihre tragenden Anteile. Alltagshilfe
+              heisst deshalb auch, kleine gemeinsame Momente zu schützen, die
+              nicht sofort funktional sein müssen.
+            </p>
+          </EditorialProse>
+          <ul className="mt-6 space-y-4">
+            {positiveInselnItems.map(item => (
+              <li key={item.title}>
+                <h4 style={h4Style}>{item.title}</h4>
+                <p className="mt-1" style={bodyStyle}>
+                  {item.examples}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6">
+            <EditorialPullQuote>
+              Positive Momente sind keine Gegenbeweise gegen Belastung. Sie sind
+              eher kleine Ressourceninseln, die Beziehungen etwas atmungsfähiger
+              machen können.
+            </EditorialPullQuote>
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 6: konkrete-schritte ── */}
+        <ContentSection
+          variant="editorial"
+          title="Was Sie konkret tun können"
+          id="konkrete-schritte"
+          preview="Praktische Alltagshilfen sind oft einfach, aber nicht leicht: klar bleiben, Rückmeldungen dosieren, Fortschritte benennen und nicht alles übernehmen."
+        >
+          <div className="mt-2 space-y-10">
+            <article className="space-y-3">
+              <h4 style={h4Style}>Fortschritte benennen</h4>
+              <p style={bodyStyle}>
+                Nicht überloben, aber wahrnehmen, wenn etwas weniger
+                zerstörerisch, etwas bewusster oder etwas klarer gelungen ist.
+              </p>
+              <p style={exampleStyle}>
+                «Ich habe gemerkt, dass du dich heute zurückgezogen hast, ohne
+                dass es ganz eskaliert ist. Das war nicht leicht.»
+              </p>
+            </article>
+
+            <article className="space-y-3">
+              <h4 style={h4Style}>Fragen statt übernehmen</h4>
+              <p style={bodyStyle}>
+                Alltagshilfe wird tragfähiger, wenn Sie nicht alles lösen,
+                sondern Beteiligung und Eigenanteil offenlassen.
+              </p>
+              <ul className="space-y-1.5" style={exampleStyle}>
+                <li>«Was wäre dein Vorschlag?»</li>
+                <li>«Was brauchst du gerade von mir, und was eher nicht?»</li>
+                <li>«Soll ich einfach da sein oder mit dir mitdenken?»</li>
+              </ul>
+            </article>
+
+            <article className="space-y-3">
+              <h4 style={h4Style}>Vorhersehbar bleiben</h4>
+              <ul className="ml-5 list-disc space-y-2" style={bodyStyle}>
+                <li>Änderungen möglichst früh ankündigen</li>
+                <li>Versprechen halten oder offen revidieren</li>
+                <li>Erreichbarkeit klar benennen</li>
+                <li>nicht jedes Mal völlig anders reagieren</li>
+              </ul>
+            </article>
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 7: impulsivitaet ── */}
+        <ContentSection
+          variant="editorial"
+          title="Wenn Impulsivität ausbricht"
+          id="impulsivitaet"
+          preview="Plötzliche Entscheidungen, Ausgaben, Risikoverhalten – dieser Alltag ist anders als Depression. Wie Sie reagieren, ohne zu moralisieren, und Ihre Grenzen dennoch halten."
+        >
+          <EditorialProse>
+            <p>
+              Wird die Situation akut – Selbst- oder Fremdgefährdung,
+              unkontrollierbare Eskalation? Dann geht es nicht mehr um
+              Alltagsbegleitung, sondern um{" "}
+              <Link href="/unterstuetzen/krise" className="editorial-link">
+                Krisenbegleitung
+              </Link>
+              .
+            </p>
+            <p>
+              Borderline zeigt sich nicht nur als Rückzug und Erschöpfung.
+              Manche Phasen sind geprägt von <strong>Impulsivität</strong>:
+              plötzliche Grossausgaben, Kündigung ohne Plan, riskante
+              Beziehungsentscheidungen, Substanzkonsum, Fahrtabenteuer oder
+              abrupte Ortsveränderungen. Für Angehörige kann das überraschender
+              und belastender sein als depressive Phasen – weil es Konsequenzen
+              hat, die beide betreffen.
+            </p>
+          </EditorialProse>
+
+          <div className="mt-8">
+            <h4 style={h4Style}>Zeichen einer impulsiven Phase erkennen</h4>
+            <ul className="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+              {impulsivitaetZeichen.map(item => (
+                <li key={item.label}>
+                  <p
+                    style={{
+                      ...bodyStyle,
+                      color: "var(--fg-primary)",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {item.label}
+                  </p>
+                  <p style={bodyStyle}>{item.sub}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-8">
+            <EditorialPullQuote>
+              Impulsive Handlungen entstehen oft aus intensivem emotionalen
+              Druck, nicht aus Rücksichtslosigkeit oder bösem Willen. Das
+              bedeutet nicht, dass Sie die Konsequenzen tragen müssen — aber
+              moralische Vorwürfe in der Phase selbst verändern nichts und
+              verstärken meist Scham und Eskalation.
+            </EditorialPullQuote>
+          </div>
+
+          <div className="mt-8">
+            <h4 style={h4Style}>Drei Szenarien — was hilft, was nicht</h4>
+            <div className="mt-4 space-y-10">
+              {impulsivitaetSzenarien.map(szenario => (
+                <article key={szenario.titel} className="space-y-4">
+                  <h5
+                    style={{
+                      ...h4Style,
+                      fontSize: "var(--text-sm)",
+                      color: "var(--fg-secondary)",
+                    }}
+                  >
+                    {szenario.titel}
+                  </h5>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <div>
+                      <p
+                        className="uppercase"
+                        style={{
+                          fontSize: "var(--text-xs)",
+                          letterSpacing: "var(--tracking-caps)",
+                          color: "var(--accent-label)",
+                          fontWeight: 500,
+                        }}
+                      >
+                        Hilft eher
+                      </p>
+                      <ul
+                        className="mt-2 ml-5 list-disc space-y-1.5"
+                        style={bodyStyle}
+                      >
+                        {szenario.hilft.map(p => (
+                          <li key={p}>{p}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p
+                        className="uppercase"
+                        style={{
+                          fontSize: "var(--text-xs)",
+                          letterSpacing: "var(--tracking-caps)",
+                          color: "var(--fg-tertiary)",
+                          fontWeight: 500,
+                        }}
+                      >
+                        Hilft weniger
+                      </p>
+                      <ul
+                        className="mt-2 ml-5 list-disc space-y-1.5"
+                        style={bodyStyle}
+                      >
+                        {szenario.nichtHilft.map(p => (
+                          <li key={p}>{p}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <h4 style={h4Style}>Nach der impulsiven Phase: Scham und Reue</h4>
+            <p className="mt-2" style={bodyStyle}>
+              Nach impulsiven Phasen folgt oft massive <strong>Scham</strong> –
+              manchmal Rückzug, manchmal übermässige Entschuldigungen. Beides
+              braucht eine ruhige Antwort: Anerkennen, was passiert ist, ohne es
+              kleinzureden oder aufzubauschen. Erst wenn die Emotionen sich
+              gelegt haben, ist der Moment für ein echtes Gespräch über
+              Konsequenzen und nächste Schritte.
+            </p>
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 8: grenzen ── */}
+        <ContentSection
+          variant="editorial"
+          title="Grenzen der Alltagsunterstützung"
+          id="grenzen"
+          preview="Auch im Alltag gibt es Grenzen. Sie müssen nicht perfekt sein, aber Sie sollten Ihre Erschöpfung und Ihre roten Linien ernst nehmen."
+        >
+          <EditorialProse>
+            <p>
+              Auch im Alltag können Sie nicht alles halten. Sie können nicht:
+            </p>
+            <ul className="ml-6 list-disc space-y-1">
+              <li>die Emotionen Ihres Angehörigen dauerhaft regulieren</li>
+              <li>alle Trigger vermeiden</li>
+              <li>jede Eskalation verhindern</li>
+              <li>Therapie oder Krisenhilfe ersetzen</li>
+            </ul>
+          </EditorialProse>
+          <div className="mt-6">
+            <EditorialPullQuote>
+              Das ist keine Niederlage. Alltag wird nicht durch Perfektion
+              tragfähig, sondern durch Klarheit, Wiederholbarkeit und die
+              Bereitschaft, auch Ihre eigene Grenze ernst zu nehmen.
+            </EditorialPullQuote>
+          </div>
+        </ContentSection>
+
+        {/* ── Schluss-Sektion: Übergang ── */}
+        <EditorialSection label="Weiter" rule>
+          <EditorialProse>
+            <p>
+              Wenn Spannung in akute Eskalation kippt, wird aus
+              Alltagsbegleitung Krisenbegleitung —{" "}
+              <Link href="/unterstuetzen/krise" className="editorial-link">
+                weiter: Krisen begleiten
+              </Link>
+              . Zurück geht es zur{" "}
+              <Link href="/unterstuetzen/uebersicht" className="editorial-link">
+                Übersicht
+              </Link>
+              .
+            </p>
+          </EditorialProse>
+        </EditorialSection>
+
+        <RelatedLinksEditorial
+          links={[
+            {
+              href: "/unterstuetzen/krise",
+              title: "Krisen begleiten",
+              description:
+                "Ampel-System, Deeskalation, Was sagen / Was vermeiden — wenn Alltag in Eskalation kippt.",
+            },
+            {
+              href: "/grenzen",
+              title: "Grenzen",
+              description:
+                "Wie Sie klare Grenzen setzen und halten — als Schutzraum für tragfähige Alltagsunterstützung.",
+            },
+            {
+              href: "/selbstfuersorge",
+              title: "Selbstfürsorge",
+              description:
+                "Eigene Belastung ernst nehmen, Warnsignale erkennen und Regeneration ermöglichen.",
+            },
+          ]}
+        />
+      </EditorialLayout>
     </Layout>
   );
 }

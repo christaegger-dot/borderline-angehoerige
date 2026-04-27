@@ -1,5 +1,7 @@
 # Phase 4 Welle 2 — Tier-1-Migration (10 Pages)
 
+> **Stand 27.04.2026 (nach Welle-2-Page-2):** Brief angepasst nach Welle-2-Erfahrung mit Kommunizieren (PR #287) und Grenzen (PR #288). Die Konvention bildet jetzt gelebte Praxis ab — Variante-B-Backup und Screenshot-URLs sind aus den Anforderungen gestrichen, beide wurden in der Praxis nie genutzt bzw. waren technisch nicht herstellbar. Siehe Schritt 3 und Verifikations-Block unten.
+
 ## Vorgeschichte
 
 `Verstehen.tsx` wurde in Phase 4 Welle 1 als Referenz-Implementation migriert (PR #286, Squash 7e65e10). Diese Welle 2 rollt dasselbe Pattern auf zehn weitere Pages aus. Das migrierte `Verstehen.tsx` ist die kanonische Vorlage für alle folgenden Migrationen — bei Unklarheiten gilt: «mach es so wie in Verstehen.tsx».
@@ -38,11 +40,7 @@ Identisch zur Verstehen-Migration (siehe `client/src/pages/Verstehen.tsx` als Re
    - Lesezeit-Hinweis in `--text-sm` / `--fg-tertiary`, Format: `"Vollständig ca. X Min · Auch abschnittweise lesbar."`
    - **Kein** CTA-Button, **kein** Icon, **kein** Gradient-Background
 
-3. **Intro-Card-Trio aufbrechen.** Die farbigen Intro-Karten (typischerweise als Konstante `<page>IntroCards` oder ähnlich) ersetzen. Liefere im PR-Body **zwei Varianten**:
-   - Variante A: ein Fliesstext-Absatz, der die Card-Inhalte prosaisch verbindet
-   - Variante B: ungeordnete Liste mit fettem H4-Lead-In pro Punkt, ohne Karten-Wrapper, ohne Icons
-
-   Implementiere Variante A im Code; Variante B als Kommentarblock direkt darüber. Christa entscheidet im Review.
+3. **Intro-Card-Trio aufbrechen.** Die farbigen Intro-Karten (typischerweise als Konstante `<page>IntroCards` oder ähnlich) durch einen Fliesstext-Absatz ersetzen, der die Card-Inhalte prosaisch verbindet. Falls die Card-Inhalte sich inhaltlich nicht prosaisch tragen lassen (z.B. weil drei klar getrennte Konzepte gleichgewichtig nebeneinander stehen müssen): im PR-Body als alternativen Vorschlag mit kurzer Begründung dokumentieren — ungeordnete Liste mit fettem H4-Lead-In pro Punkt, ohne Karten-Wrapper, ohne Icons. Christa entscheidet im Review.
 
 4. **Quick-Link-Karten ersetzen.** «Direkt einsteigen»-Block oder ähnliches: durch Inline-Link-Absatz ersetzen. Anchor-Klicks müssen `e.preventDefault()` plus `openSection()` aufrufen, damit das Akkordeon aufgeht (siehe Verstehen-Implementation als Referenz).
 
@@ -102,11 +100,11 @@ Vor PR-Erstellung:
 PR-Body soll enthalten:
 
 - Diff-Statistik (Zeilen entfernt / hinzugefügt)
-- Variante-B-Vorschlag aus Schritt 3 als Kommentar-Block
+- Falls aus Schritt 3 nötig: alternativer Listen-Vorschlag mit kurzer Begründung
 - Liste aller `motion.*`-Wrapper, die entfernt wurden
 - Liste aller Buttons, die zu Inline-Links wurden
 - Bei Genesung zusätzlich: Bestätigung, ob Statistiken bereits auf der Page waren (Punkt 1) oder neu integriert wurden (Punkt 2)
-- Mobile + Desktop Screenshot-URLs aus dem Netlify-Preview
+- Deploy-Preview-URL aus Netlify im PR-Body verlinken (`deploy-preview-NNN--borderline-angehoerige.netlify.app`)
 
 ## Mehrfach-Agent-Konvention
 

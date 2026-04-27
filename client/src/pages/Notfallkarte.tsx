@@ -237,14 +237,19 @@ export default function Notfallkarte() {
     setAnnouncement("Kontakt entfernt");
   }, []);
 
+  const MAX_STRATEGIES = 4;
+
   const addStrategy = useCallback(() => {
-    setData(prev => ({
-      ...prev,
-      calmingStrategies: [
-        ...prev.calmingStrategies,
-        { id: createId(), text: "" },
-      ],
-    }));
+    setData(prev => {
+      if (prev.calmingStrategies.length >= MAX_STRATEGIES) return prev;
+      return {
+        ...prev,
+        calmingStrategies: [
+          ...prev.calmingStrategies,
+          { id: createId(), text: "" },
+        ],
+      };
+    });
     setAnnouncement("Strategie hinzugefügt");
   }, []);
 
@@ -472,6 +477,12 @@ export default function Notfallkarte() {
                 variant="outline"
                 size="sm"
                 onClick={addStrategy}
+                disabled={data.calmingStrategies.length >= MAX_STRATEGIES}
+                title={
+                  data.calmingStrategies.length >= MAX_STRATEGIES
+                    ? "Maximal 4 Strategien – passend zur Druckseite"
+                    : undefined
+                }
                 className="gap-1.5 print:hidden"
               >
                 <Plus className="w-3.5 h-3.5" />

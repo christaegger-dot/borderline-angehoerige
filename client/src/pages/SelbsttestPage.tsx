@@ -1,8 +1,29 @@
-import SEO from "@/components/SEO";
+/**
+ * SelbsttestPage — Editorial-Redesign Phase 5 (Page 8/9, Tier 2).
+ *
+ * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
+ * «Page 8 — Selbsttest».
+ *
+ * Identitätsentscheidung (D, getroffen vor Migration):
+ *   Bezeichnung «Selbsttest» bleibt überall (Navigation, Home-
+ *   Verlinkung, SEO-Title, URL `/selbsttest`). Auf der Page selbst
+ *   wird der H1 von «Finden Sie Ihren Weg» zu
+ *   «Selbsttest: Wo soll ich anfangen?» angepasst, sodass der
+ *   Routing-Charakter im H1 selbst klar wird.
+ *   Begründung: Suchwort-Vertrauen erhalten ohne Inhalts-Neuprojekt.
+ *
+ * Page-Wrapper editorial. Eigentlicher `Selbsttest`-Component
+ * (Form mit Routing-Logik) ebenfalls editorialisiert — siehe
+ * components/Selbsttest.tsx.
+ */
+import {
+  EditorialLayout,
+  EditorialProse,
+  EditorialSection,
+} from "@/components/editorial";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import Selbsttest from "@/components/Selbsttest";
-import { motion } from "framer-motion";
-import { Compass } from "lucide-react";
 import { Link } from "wouter";
 
 export default function SelbsttestPage() {
@@ -13,62 +34,71 @@ export default function SelbsttestPage() {
         description="Selbsttest für Angehörige: Wie stark sind Sie gerade belastet? Anonyme Einschätzung in wenigen Minuten – mit Hinweisen auf passende Hilfsangebote."
         path="/selbsttest"
       />
-      {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl mx-auto text-center"
+
+      <EditorialLayout width="narrow">
+        {/* ── Hero ── */}
+        <header className="pb-12 pt-16 md:pb-16 md:pt-24">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
           >
-            <div className="w-16 h-16 rounded-2xl bg-sage-dark flex items-center justify-center mx-auto mb-6">
-              <Compass className="w-8 h-8 text-white" />
-            </div>
+            Selbsttest
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            Selbsttest: <em>Wo soll ich anfangen?</em>
+          </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Dieser kurze Test hilft Ihnen, die für Ihre aktuelle Situation
+            passenden Inhalte zu finden. Er dauert nur etwa 2 Minuten.
+          </p>
+        </header>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
-              Finden Sie Ihren Weg
-            </h1>
+        {/* ── Hairline-Trenner Editorial-Hero → funktionales Tool ── */}
+        <hr
+          className="border-0 border-t"
+          style={{ borderColor: "var(--rule-color)" }}
+        />
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              Dieser kurze Test hilft Ihnen, die für Ihre aktuelle Situation
-              passenden Inhalte zu finden. Er dauert nur etwa 2 Minuten.
+        {/* ── Form-Tool ── */}
+        <div className="mt-12 md:mt-16">
+          <Selbsttest />
+        </div>
+
+        {/* ── Hinweis ── */}
+        <EditorialSection rule>
+          <EditorialProse>
+            <p>
+              Dieser Test ersetzt keine professionelle Beratung. Er dient
+              lediglich als Orientierungshilfe, um Ihnen den Einstieg in unsere
+              Inhalte zu erleichtern. Bei akuten Krisen wenden Sie sich bitte an
+              die{" "}
+              <Link href="/soforthilfe" className="editorial-link">
+                Notfallressourcen
+              </Link>
+              .
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Test */}
-      <section className="py-8 md:py-12">
-        <div className="container">
-          <div className="max-w-2xl mx-auto">
-            <Selbsttest />
-          </div>
-        </div>
-      </section>
-
-      {/* Info */}
-      <section className="py-8 md:py-12">
-        <div className="container">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-muted/30 rounded-xl p-6 text-center">
-              <p className="text-sm text-muted-foreground">
-                Dieser Test ersetzt keine professionelle Beratung. Er dient
-                lediglich als Orientierungshilfe, um Ihnen den Einstieg in
-                unsere Inhalte zu erleichtern. Bei akuten Krisen wenden Sie sich
-                bitte an die{" "}
-                <Link
-                  href="/soforthilfe"
-                  className="text-alert underline hover:no-underline"
-                >
-                  Notfallressourcen
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          </EditorialProse>
+        </EditorialSection>
+      </EditorialLayout>
     </Layout>
   );
 }

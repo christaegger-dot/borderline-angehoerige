@@ -1,21 +1,56 @@
-import { useState, useRef, useEffect } from "react";
+/**
+ * Selbsttest — Editorial-Redesign Phase 5 (Page 8/9).
+ *
+ * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
+ * «Page 8 — Selbsttest».
+ *
+ * Form-Logik unverändert: 4 Fragen, gewichtetes Scoring, 7 Result-
+ * Typen, Auto-Advance auf Click (300ms), Back-Button, Restart, Result
+ * basiert auf höchstem Score, AnimatePresence-Slide-Animation
+ * zwischen Fragen.
+ *
+ * Visuelle Behandlung editorial:
+ *
+ *   ── Card-Wrapper raus ──
+ *   Vorher: Card mit border-border/50, Progress-Bar als Top-Stripe.
+ *   Editorial: kein Card, kein Border-Wrap, Progress-Bar als
+ *   schmaler Hairline + Fill in --accent-primary.
+ *
+ *   ── Option-Buttons ──
+ *   Vorher: rounded-xl mit border-2, sage-bg bei Selection,
+ *   radio-circle-mit-checkmark Ornament.
+ *   Editorial: full-width rounded-md mit border 1px in --rule-color,
+ *   Default bg --bg-elevated, Selected bg leicht-getintet
+ *   --bg-elevated + border --accent-primary, kein radio-circle-Ornament
+ *   (Selection durch Border-Color allein erkennbar). Pattern wie
+ *   Wegweiser-ChoiceButton.
+ *
+ *   ── Sicherheits-kritisches Result `notfall` ──
+ *   Bekommt border-l-4 + alert-wash bg analog Wegweiser-
+ *   safetyCritical. Andere 6 Results: neutrales Editorial-Treatment
+ *   ohne per-Result-Color-Identity (vorher 7×4 = 28 Tailwind-Class-
+ *   Bundles entfernt).
+ *
+ *   ── Result-Block ──
+ *   Title in Display-Serif, Description in Body, Primary-Action als
+ *   echter Button (Tier-1-Navigation) im editorial-pill-Style,
+ *   Secondary-Links als Inline-`editorial-link` in flex-wrap.
+ *   Result-Icon entfernt (visuelles Decorum, kein semantischer Wert).
+ *
+ *   ── Back / Restart ──
+ *   Editorial-Pill-Style (Border + bg-elevated, neutral) wie
+ *   Wegweiser-NavPillButton.
+ *
+ *   ── Animationen ──
+ *   AnimatePresence + motion.div für Question-Slides BLEIBT
+ *   (funktional). Progress-bar fill-Animation BLEIBT (funktional).
+ *   Options-Stagger-Fade-In ENTFERNT (rein dekorativ).
+ *   Result-Entry-Scale-Animation BLEIBT (Übergang von Form zu
+ *   Resultat ist funktional).
+ */
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowRight,
-  ArrowLeft,
-  AlertTriangle,
-  Clock,
-  MessageCircle,
-  Heart,
-  Sparkles,
-  BookOpen,
-  Shield,
-  CheckCircle2,
-  RotateCcw,
-} from "lucide-react";
 
 interface Question {
   id: number;
@@ -35,11 +70,8 @@ interface Result {
   primaryLink: string;
   primaryText: string;
   secondaryLinks: { href: string; text: string }[];
-  icon: React.ElementType;
-  cardClass: string;
-  surfaceClass: string;
-  accentBgClass: string;
-  buttonClass: string;
+  /** Sicherheits-kritisches Resultat: alert-border-l + alert-wash bg */
+  safetyCritical?: boolean;
 }
 
 const questions: Question[] = [
@@ -167,11 +199,7 @@ const results: Result[] = [
     secondaryLinks: [
       { href: "/unterstuetzen/krise", text: "Krisenbegleitung lernen" },
     ],
-    icon: AlertTriangle,
-    cardClass: "border-alert",
-    surfaceClass: "bg-sage-wash",
-    accentBgClass: "bg-alert",
-    buttonClass: "bg-alert hover:bg-alert/90",
+    safetyCritical: true,
   },
   {
     id: "krise",
@@ -184,11 +212,6 @@ const results: Result[] = [
       { href: "/kommunizieren", text: "Kommunikationsstrategien" },
       { href: "/soforthilfe", text: "Soforthilfe" },
     ],
-    icon: Clock,
-    cardClass: "border-sand-mid",
-    surfaceClass: "bg-sage-wash",
-    accentBgClass: "bg-sand-mid",
-    buttonClass: "bg-sand-mid hover:bg-sand-warm",
   },
   {
     id: "kommunizieren",
@@ -201,11 +224,6 @@ const results: Result[] = [
       { href: "/grenzen", text: "Grenzen setzen lernen" },
       { href: "/verstehen", text: "Borderline verstehen" },
     ],
-    icon: MessageCircle,
-    cardClass: "border-slate-blue",
-    surfaceClass: "bg-slate-light",
-    accentBgClass: "bg-slate-blue",
-    buttonClass: "bg-slate-blue hover:bg-slate-dark",
   },
   {
     id: "verstehen",
@@ -218,11 +236,6 @@ const results: Result[] = [
       { href: "/unterstuetzen/uebersicht", text: "Unterstützungsstrategien" },
       { href: "/kommunizieren", text: "Kommunikation verbessern" },
     ],
-    icon: BookOpen,
-    cardClass: "border-sage",
-    surfaceClass: "bg-sage-light",
-    accentBgClass: "bg-sage",
-    buttonClass: "bg-sage hover:bg-sage-dark",
   },
   {
     id: "unterstuetzen",
@@ -235,11 +248,6 @@ const results: Result[] = [
       { href: "/unterstuetzen/alltag", text: "Alltag gestalten" },
       { href: "/unterstuetzen/therapie", text: "Therapie unterstützen" },
     ],
-    icon: Heart,
-    cardClass: "border-sage-dark",
-    surfaceClass: "bg-sage-light",
-    accentBgClass: "bg-sage-dark",
-    buttonClass: "bg-sage-dark hover:bg-sage-mid",
   },
   {
     id: "grenzen",
@@ -252,11 +260,6 @@ const results: Result[] = [
       { href: "/selbstfuersorge", text: "Selbstfürsorge stärken" },
       { href: "/kommunizieren", text: "Kommunikationstechniken" },
     ],
-    icon: Shield,
-    cardClass: "border-sage-mid",
-    surfaceClass: "bg-sage-lighter",
-    accentBgClass: "bg-sage-mid",
-    buttonClass: "bg-sage-mid hover:bg-sage-dark",
   },
   {
     id: "selbstfuersorge",
@@ -269,13 +272,116 @@ const results: Result[] = [
       { href: "/grenzen", text: "Grenzen setzen" },
       { href: "/materialien", text: "Materialien & Ressourcen" },
     ],
-    icon: Sparkles,
-    cardClass: "border-sage-mid",
-    surfaceClass: "bg-sage-lighter",
-    accentBgClass: "bg-sage-mid",
-    buttonClass: "bg-sage-mid hover:bg-sage-dark",
   },
 ];
+
+// ─── Editorial-Style Konstanten ──────────────────────────
+
+const labelStyle = {
+  fontSize: "var(--text-xs)",
+  letterSpacing: "var(--tracking-caps)",
+  color: "var(--fg-tertiary)",
+  fontWeight: 500,
+} as const;
+
+const questionStyle = {
+  fontFamily: "var(--font-display)",
+  fontSize: "var(--text-2xl)",
+  fontWeight: "var(--weight-display)",
+  lineHeight: "var(--lh-snug)",
+  color: "var(--fg-primary)",
+  letterSpacing: "var(--tracking-tight)",
+};
+
+const subtextStyle = {
+  fontSize: "var(--text-md)",
+  lineHeight: "var(--lh-relaxed)",
+  color: "var(--fg-secondary)",
+};
+
+const bodyStyle = {
+  fontSize: "var(--text-md)",
+  lineHeight: "var(--lh-relaxed)",
+  color: "var(--fg-secondary)",
+};
+
+// ─── Sub-components ──────────────────────────────────────
+
+function NavPillButton({
+  onClick,
+  children,
+  ariaLabel,
+}: {
+  onClick: () => void;
+  children: React.ReactNode;
+  ariaLabel?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={ariaLabel}
+      className="rounded-full border px-4 py-1.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+      style={{
+        borderColor: "var(--rule-color)",
+        backgroundColor: "var(--bg-elevated)",
+        color: "var(--fg-secondary)",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = "var(--accent-primary)";
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = "var(--rule-color)";
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+
+function OptionButton({
+  label,
+  selected,
+  disabled,
+  onClick,
+}: {
+  label: string;
+  selected: boolean;
+  disabled: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      aria-pressed={selected}
+      className="block w-full rounded-md border px-5 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed"
+      style={{
+        borderColor: selected ? "var(--accent-primary)" : "var(--rule-color)",
+        backgroundColor: "var(--bg-elevated)",
+        color: "var(--fg-primary)",
+        fontSize: "var(--text-md)",
+        lineHeight: "var(--lh-snug)",
+        fontWeight: selected ? 500 : 400,
+      }}
+      onMouseEnter={e => {
+        if (!selected && !disabled) {
+          e.currentTarget.style.borderColor = "var(--accent-primary)";
+        }
+      }}
+      onMouseLeave={e => {
+        if (!selected && !disabled) {
+          e.currentTarget.style.borderColor = "var(--rule-color)";
+        }
+      }}
+    >
+      {label}
+    </button>
+  );
+}
+
+// ─── Main component ──────────────────────────────────────
 
 export default function Selbsttest() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -297,17 +403,14 @@ export default function Selbsttest() {
     setIsTransitioning(true);
     setSelectedOption(option.value);
 
-    // Update scores
     const newScores = { ...scores };
     Object.entries(option.weight).forEach(([key, value]) => {
       newScores[key] = (newScores[key] || 0) + value;
     });
     setScores(newScores);
 
-    // Save answer
     setAnswers({ ...answers, [questions[currentQuestion].id]: option.value });
 
-    // Move to next question or show result
     transitionTimer.current = setTimeout(() => {
       if (currentQuestion < questions.length - 1) {
         setCurrentQuestion(currentQuestion + 1);
@@ -321,7 +424,6 @@ export default function Selbsttest() {
 
   const goBack = () => {
     if (currentQuestion > 0) {
-      // Subtract scores of the previous answer before going back
       const prevQuestionId = questions[currentQuestion - 1].id;
       const prevAnswerValue = answers[prevQuestionId];
       if (prevAnswerValue) {
@@ -350,7 +452,6 @@ export default function Selbsttest() {
   };
 
   const getTopResult = (): Result => {
-    // Find the category with highest score
     let maxScore = 0;
     let topCategory = "verstehen";
 
@@ -361,195 +462,165 @@ export default function Selbsttest() {
       }
     });
 
-    return results.find(r => r.id === topCategory) || results[3]; // Default to "verstehen"
+    return results.find(r => r.id === topCategory) || results[3];
   };
 
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
+  // ── Resultat-Anzeige ──
   if (showResult) {
     const result = getTopResult();
-    const Icon = result.icon;
+    const isSafetyCritical = result.safetyCritical === true;
 
     return (
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         aria-live="polite"
         role="status"
       >
-        <Card className={`overflow-hidden border-2 ${result.cardClass}`}>
-          <div className={`p-6 md:p-8 ${result.surfaceClass}`}>
-            <div className="flex items-center gap-4 mb-4">
-              <div
-                className={`flex h-14 w-14 items-center justify-center rounded-2xl ${result.accentBgClass}`}
-              >
-                <Icon className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground mb-1">
-                  Unsere Empfehlung für Sie
-                </p>
-                <h2 className="text-2xl font-normal text-foreground">
-                  {result.title}
-                </h2>
-              </div>
-            </div>
+        <div
+          className={isSafetyCritical ? "border-l-4 pl-6 py-4" : ""}
+          style={
+            isSafetyCritical
+              ? {
+                  borderColor: "var(--color-alert)",
+                  backgroundColor:
+                    "var(--color-alert-wash, rgba(197,95,61,0.05))",
+                }
+              : undefined
+          }
+        >
+          <p className="uppercase" style={labelStyle}>
+            Unsere Empfehlung für Sie
+          </p>
+          <h2 className="mt-2" style={questionStyle}>
+            {result.title}
+          </h2>
+          <p className="mt-4" style={bodyStyle}>
+            {result.description}
+          </p>
 
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              {result.description}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <Button
-                size="lg"
-                className={`w-full text-white sm:w-auto ${result.buttonClass}`}
-                asChild
-              >
-                <Link href={result.primaryLink}>
-                  {result.primaryText}
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="border-t border-border/30 pt-4">
-              <p className="text-sm text-muted-foreground mb-3">
-                Weitere relevante Themen:
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {result.secondaryLinks.map((link, i) => (
-                  <Button
-                    key={i}
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="bg-white/50"
-                  >
-                    <Link href={link.href}>{link.text}</Link>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="p-4 bg-background border-t border-border/30 flex justify-center">
-            <Button
-              variant="ghost"
-              onClick={restart}
-              className="text-muted-foreground"
+          {/* Primary CTA — bleibt echter Button (Tier-1-Navigation) */}
+          <p
+            className="mt-8 flex flex-wrap gap-x-5 gap-y-1"
+            style={{ fontSize: "var(--text-md)" }}
+          >
+            <Link
+              href={result.primaryLink}
+              className="inline-block rounded-full border px-5 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              style={{
+                borderColor: "var(--accent-primary)",
+                backgroundColor: "var(--accent-primary)",
+                color: "var(--bg-primary)",
+                fontWeight: 500,
+              }}
             >
-              <RotateCcw className="w-4 h-4 mr-2" />
-              Test wiederholen
-            </Button>
-          </div>
-        </Card>
+              {result.primaryText}
+            </Link>
+          </p>
+
+          {/* Secondary Links */}
+          {result.secondaryLinks.length > 0 && (
+            <div
+              className="mt-8 border-t pt-6"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <p className="uppercase" style={labelStyle}>
+                Weitere relevante Themen
+              </p>
+              <p
+                className="mt-3 flex flex-wrap gap-x-5 gap-y-1"
+                style={{ fontSize: "var(--text-md)" }}
+              >
+                {result.secondaryLinks.map(link => (
+                  <Link
+                    key={link.href + link.text}
+                    href={link.href}
+                    className="editorial-link"
+                  >
+                    {link.text}
+                  </Link>
+                ))}
+              </p>
+            </div>
+          )}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <NavPillButton onClick={restart} ariaLabel="Test wiederholen">
+            ↻ Test wiederholen
+          </NavPillButton>
+        </div>
       </motion.div>
     );
   }
 
+  // ── Frage-Anzeige ──
   const question = questions[currentQuestion];
 
   return (
-    <Card
-      className="border-border/50 overflow-hidden"
-      role="form"
-      aria-label="Selbsttest"
-    >
-      {/* Progress bar */}
-      <div
-        className="h-1.5 bg-muted"
-        role="progressbar"
-        aria-valuenow={progress}
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-label={`Fortschritt: Frage ${currentQuestion + 1} von ${questions.length}`}
-      >
-        <motion.div
-          className="h-full bg-sage-dark"
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        />
-      </div>
-
-      <CardContent className="p-6 md:p-8">
-        {/* Question counter */}
-        <div className="flex items-center justify-between mb-6">
-          <span className="text-sm text-muted-foreground">
+    <div role="form" aria-label="Selbsttest" className="space-y-8">
+      {/* Progress-Bar */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <p className="uppercase" style={labelStyle}>
             Frage {currentQuestion + 1} von {questions.length}
-          </span>
+          </p>
           {currentQuestion > 0 && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={goBack}
-              className="text-muted-foreground"
-            >
-              <ArrowLeft className="w-4 h-4 mr-1" />
-              Zurück
-            </Button>
+            <NavPillButton onClick={goBack} ariaLabel="Eine Frage zurück">
+              ← Zurück
+            </NavPillButton>
           )}
         </div>
-
-        {/* Question */}
-        <AnimatePresence mode="wait">
+        <div
+          className="h-px overflow-hidden"
+          role="progressbar"
+          aria-valuenow={progress}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label={`Fortschritt: Frage ${currentQuestion + 1} von ${questions.length}`}
+          style={{ backgroundColor: "var(--rule-color)" }}
+        >
           <motion.div
-            key={question.id}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
+            className="h-full"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <h2 className="text-xl md:text-2xl font-normal text-foreground mb-2">
-              {question.text}
-            </h2>
-            {question.subtext && (
-              <p className="text-muted-foreground mb-6">{question.subtext}</p>
-            )}
+            style={{ backgroundColor: "var(--accent-primary)" }}
+          />
+        </div>
+      </div>
 
-            {/* Options */}
-            <fieldset className="space-y-3 mt-6 border-0 p-0 m-0">
-              <legend className="sr-only">{question.text}</legend>
-              {question.options.map((option, index) => (
-                <motion.button
-                  key={option.value}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.05,
-                    ease: "easeOut",
-                  }}
-                  onClick={() => handleAnswer(option)}
-                  disabled={isTransitioning}
-                  aria-pressed={selectedOption === option.value}
-                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-400 focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-offset-2 ${
-                    selectedOption === option.value
-                      ? "border-sage bg-sage-wash"
-                      : "border-border/50 hover:border-sage/50 hover:bg-muted/50"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                        selectedOption === option.value
-                          ? "border-sage bg-sage-dark"
-                          : "border-muted-foreground/30"
-                      }`}
-                    >
-                      {selectedOption === option.value && (
-                        <CheckCircle2 className="w-3 h-3 text-white" />
-                      )}
-                    </div>
-                    <span className="text-foreground">{option.text}</span>
-                  </div>
-                </motion.button>
-              ))}
-            </fieldset>
-          </motion.div>
-        </AnimatePresence>
-      </CardContent>
-    </Card>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={question.id}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="space-y-6"
+        >
+          <header className="space-y-2">
+            <h2 style={questionStyle}>{question.text}</h2>
+            {question.subtext && <p style={subtextStyle}>{question.subtext}</p>}
+          </header>
+
+          <fieldset className="m-0 space-y-3 border-0 p-0">
+            <legend className="sr-only">{question.text}</legend>
+            {question.options.map(option => (
+              <OptionButton
+                key={option.value}
+                label={option.text}
+                selected={selectedOption === option.value}
+                disabled={isTransitioning}
+                onClick={() => handleAnswer(option)}
+              />
+            ))}
+          </fieldset>
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }

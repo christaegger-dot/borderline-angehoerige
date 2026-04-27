@@ -236,6 +236,14 @@ function MaterialCard({
           <span>{categoryStyle.label}</span>
           <span aria-hidden="true">·</span>
           <span>{availabilityLabel}</span>
+          {item.verifiedAt ? (
+            <>
+              <span aria-hidden="true">·</span>
+              <span className="font-normal normal-case tracking-normal">
+                {item.verifiedAt}
+              </span>
+            </>
+          ) : null}
         </div>
         <h3 className="font-semibold text-foreground mb-2 text-lg">
           {item.title}

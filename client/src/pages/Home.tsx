@@ -173,25 +173,22 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/25 text-white hover:bg-white/10 w-full sm:w-auto"
+                className="border-white/20 text-white/80 hover:text-white hover:bg-white/10 w-full sm:w-auto text-base"
                 asChild
               >
-                <Link href="/verstehen">
-                  Direkt zu «Verstehen»
-                  <ArrowRight className="w-4 h-4 opacity-80" />
-                </Link>
+                <Link href="/verstehen">Direkt zu «Verstehen»</Link>
               </Button>
             </div>
 
             <Link
               href="/soforthilfe"
-              className="inline-flex items-center gap-3 text-white/90 hover:text-white font-medium transition-colors group text-sm"
+              className="inline-flex items-center gap-3 text-terracotta-light hover:text-white font-semibold transition-colors group text-sm"
             >
               <span className="inline-flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 <span>Akute Krise? Soforthilfe</span>
               </span>
-              <span className="inline-flex w-7 h-7 items-center justify-center rounded-full border border-white/20 bg-white/8 transition-all group-hover:translate-x-0.5 group-hover:bg-white/14">
+              <span className="inline-flex w-7 h-7 items-center justify-center rounded-full border border-alert/40 bg-alert/15 transition-all group-hover:translate-x-0.5 group-hover:bg-alert/25">
                 <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </Link>

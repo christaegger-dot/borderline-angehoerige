@@ -1,12 +1,14 @@
 import SEO from "@/components/SEO";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
+import RelatedLinks from "@/components/RelatedLinks";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
   AlertTriangle,
   ArrowRight,
+  BookOpen,
   CheckCircle2,
   Clock,
   Download,
@@ -14,9 +16,11 @@ import {
   Eye,
   FileText,
   Heart,
+  MessageCircle,
   MessageSquare,
   Phone,
   Shield,
+  Sparkles,
   Users,
 } from "lucide-react";
 import { Link } from "wouter";
@@ -865,6 +869,35 @@ export default function Grenzen() {
           </div>
         </div>
       </section>
+      <div className="container">
+        <div className="max-w-3xl mx-auto">
+          <RelatedLinks
+            links={[
+              {
+                href: "/selbstfuersorge",
+                title: "Selbstfürsorge",
+                description:
+                  "Warnsignale, Sofort-Übungen und die Erlaubnis, die eigene Belastung ernst zu nehmen.",
+                icon: Sparkles,
+              },
+              {
+                href: "/kommunizieren",
+                title: "Kommunizieren",
+                description:
+                  "Grenzen ruhig und klar formulieren: Validierung, DEAR-Technik und Deeskalation.",
+                icon: MessageCircle,
+              },
+              {
+                href: "/materialien",
+                title: "Materialien & Handouts",
+                description:
+                  "Spickzettel und Infografiken zu Grenzen und Konsequenzen – als PDF.",
+                icon: BookOpen,
+              },
+            ]}
+          />
+        </div>
+      </div>
     </Layout>
   );
 }

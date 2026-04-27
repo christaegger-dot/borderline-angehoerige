@@ -26,6 +26,8 @@ export interface MaterialItem {
   previewUrl?: string;
   isHtml?: boolean;
   priority?: "core" | "secondary";
+  /** Datum der letzten Prüfung/Erstellung im Format MMMM YYYY (z.B. 'April 2025') */
+  verifiedAt?: string;
 }
 
 export interface ResolvedMaterialDownload {
@@ -49,6 +51,7 @@ export const materials: MaterialItem[] = [
     pdfUrl: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
     isHtml: true,
     priority: "core",
+    verifiedAt: "April 2026",
   },
   {
     id: "notfallplan-krise",
@@ -60,6 +63,7 @@ export const materials: MaterialItem[] = [
     url: "/notfallplan-krise-v03-preview.webp",
     downloadUrl: "/notfallplan-krise-v03.pdf",
     priority: "core",
+    verifiedAt: "April 2026",
   },
   {
     id: "leuchtturm",
@@ -72,6 +76,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
     priority: "core",
+    verifiedAt: "März 2026",
   },
   {
     id: "eisberg",
@@ -84,6 +89,7 @@ export const materials: MaterialItem[] = [
     thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png",
     downloadUrl: "/infografiken/eisberg-der-eisberg-v6.pdf",
     priority: "core",
+    verifiedAt: "April 2026",
   },
   {
     id: "rolle-klaeren",
@@ -97,6 +103,7 @@ export const materials: MaterialItem[] = [
       "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
     downloadUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     priority: "core",
+    verifiedAt: "April 2026",
   },
   {
     id: "krisenkommunikation",
@@ -110,6 +117,7 @@ export const materials: MaterialItem[] = [
       "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
     downloadUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
     priority: "core",
+    verifiedAt: "April 2026",
   },
   {
     id: "grenzen-spickzettel",
@@ -122,6 +130,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/obwIZiRPiVPphIUX.pdf",
     priority: "core",
+    verifiedAt: "März 2026",
   },
   {
     id: "warnsignale",
@@ -134,6 +143,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VdAxPxngFzgNImxg.pdf",
     priority: "core",
+    verifiedAt: "März 2026",
   },
   {
     id: "schuld-verantwortung",
@@ -146,6 +156,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jPuhxPHHtFSjOTly.pdf",
     priority: "secondary",
+    verifiedAt: "März 2026",
   },
   {
     id: "spaltung",
@@ -159,6 +170,7 @@ export const materials: MaterialItem[] = [
       "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png",
     downloadUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
     priority: "secondary",
+    verifiedAt: "April 2026",
   },
   {
     id: "alarm-modus",
@@ -172,6 +184,7 @@ export const materials: MaterialItem[] = [
       "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png",
     downloadUrl: "/infografiken/alarm-der-alarm-modus-v3.pdf",
     priority: "secondary",
+    verifiedAt: "April 2026",
   },
   {
     id: "wenn-worte-treffen",
@@ -184,6 +197,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hEXKCmWYeiyUnwXr.pdf",
     priority: "secondary",
+    verifiedAt: "März 2026",
   },
   {
     id: "dear",
@@ -196,6 +210,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DDkqUiaNJwizEtPv.pdf",
     priority: "secondary",
+    verifiedAt: "März 2026",
   },
   {
     id: "radikale-akzeptanz",
@@ -208,6 +223,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SkBpjnDHfNmPbmnd.pdf",
     priority: "secondary",
+    verifiedAt: "März 2026",
   },
   {
     id: "genesung-zahlen",
@@ -220,6 +236,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MunlHDCNqnsOhBFn.pdf",
     priority: "secondary",
+    verifiedAt: "Februar 2026",
   },
   {
     id: "kinder",
@@ -232,6 +249,7 @@ export const materials: MaterialItem[] = [
     downloadUrl:
       "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/birikKPATMlHGPWf.pdf",
     priority: "secondary",
+    verifiedAt: "April 2026",
   },
 ];
 

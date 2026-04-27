@@ -10,6 +10,8 @@ export interface NavigationItem {
   label: string;
   icon: ComponentType<IconProps>;
   group?: string;
+  /** Sekundäre Items werden im Dropdown kleiner/gedimmter dargestellt */
+  secondary?: boolean;
 }
 
 export interface SelectableCategory<TId extends string = string> {

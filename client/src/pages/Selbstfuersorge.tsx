@@ -1,4 +1,5 @@
 import InvitationSection from "@/components/InvitationSection";
+import RelatedLinks from "@/components/RelatedLinks";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,10 +8,11 @@ import { motion } from "framer-motion";
 import {
   Sparkles,
   ArrowRight,
+  BookOpen,
   CheckCircle2,
   Heart,
+  Shield,
   Users,
-  BookOpen,
 } from "lucide-react";
 import { Link } from "wouter";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
@@ -509,6 +511,35 @@ export default function Selbstfuersorge() {
           </div>
         </div>
       </section>
+      <div className="container">
+        <div className="max-w-3xl mx-auto">
+          <RelatedLinks
+            links={[
+              {
+                href: "/materialien",
+                title: "Materialien & Handouts",
+                description:
+                  "Infografiken und Spickzettel zur Selbstfürsorge und Belastung – als PDF.",
+                icon: BookOpen,
+              },
+              {
+                href: "/beratung",
+                title: "Beratung & Netzwerke",
+                description:
+                  "Professionelle Unterstützung und Selbsthilfegruppen für Angehörige.",
+                icon: Heart,
+              },
+              {
+                href: "/grenzen",
+                title: "Grenzen setzen",
+                description:
+                  "Selbstfürsorge beginnt oft mit klaren Grenzen: Warnsignale, Priorisierung und Konsequenz.",
+                icon: Shield,
+              },
+            ]}
+          />
+        </div>
+      </div>
       <InvitationSection />
     </Layout>
   );

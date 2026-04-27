@@ -1,4 +1,5 @@
 import InvitationSection from "@/components/InvitationSection";
+import RelatedLinks from "@/components/RelatedLinks";
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,10 +7,13 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  BookOpen,
   Heart,
   Lightbulb,
   MessageCircle,
+  Shield,
   ShieldAlert,
+  Sparkles,
 } from "lucide-react";
 import { Link } from "wouter";
 import { TableOfContents } from "@/components/UXEnhancements";
@@ -342,6 +346,35 @@ export default function Kommunizieren() {
           </div>
         </div>
       </section>
+      <div className="container">
+        <div className="max-w-3xl mx-auto">
+          <RelatedLinks
+            links={[
+              {
+                href: "/grenzen",
+                title: "Grenzen setzen",
+                description:
+                  "Wie Sie klare, tragfähige Grenzen formulieren und auch einhalten können.",
+                icon: Shield,
+              },
+              {
+                href: "/materialien",
+                title: "Materialien & Handouts",
+                description:
+                  "Infografiken und Spickzettel zur Kommunikation – als PDF zum Mitnehmen.",
+                icon: BookOpen,
+              },
+              {
+                href: "/selbstfuersorge",
+                title: "Selbstfürsorge",
+                description:
+                  "Warnsignale, Sofort-Übungen und die Erlaubnis, die eigene Belastung ernst zu nehmen.",
+                icon: Sparkles,
+              },
+            ]}
+          />
+        </div>
+      </div>
       <InvitationSection />
     </Layout>
   );

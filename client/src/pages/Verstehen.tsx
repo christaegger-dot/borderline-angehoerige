@@ -1,6 +1,7 @@
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import InvitationSection from "@/components/InvitationSection";
+import RelatedLinks from "@/components/RelatedLinks";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
@@ -10,7 +11,9 @@ import {
   Brain,
   Heart,
   Layers,
+  MessageCircle,
   RefreshCw,
+  Sparkles,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -600,6 +603,35 @@ export default function Verstehen() {
           </div>
         </div>
       </section>
+      <div className="container">
+        <div className="max-w-3xl mx-auto">
+          <RelatedLinks
+            links={[
+              {
+                href: "/unterstuetzen/uebersicht",
+                title: "Unterstützen",
+                description:
+                  "Wie Sie konkret helfen können, ohne sich selbst zu verlieren – Alltag, Krise und Therapie.",
+                icon: Heart,
+              },
+              {
+                href: "/kommunizieren",
+                title: "Kommunizieren",
+                description:
+                  "Gesprächsführung in belasteten Situationen: Deeskalation, Grenzsätze und die DEAR-Technik.",
+                icon: MessageCircle,
+              },
+              {
+                href: "/selbsttest",
+                title: "Selbsttest: Wie belastet bin ich?",
+                description:
+                  "Kurze Einschätzung Ihrer eigenen Belastung – als erster Orientierungsschritt.",
+                icon: Sparkles,
+              },
+            ]}
+          />
+        </div>
+      </div>
       <InvitationSection />
     </Layout>
   );

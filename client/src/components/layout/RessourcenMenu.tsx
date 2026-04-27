@@ -147,13 +147,21 @@ export function RessourcenMenu({
                           onMenuItemFocus(idx);
                         }}
                         onClick={closeDropdown}
-                        className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-[13px] transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
+                        className={`flex items-center gap-2.5 rounded-xl border px-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
+                          item.secondary
+                            ? "py-1.5 text-[12px]"
+                            : "py-2.5 text-[13px]"
+                        } ${
                           isActive
                             ? `${accent.surfaceActive} font-medium`
-                            : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
+                            : item.secondary
+                              ? "border-transparent text-muted-foreground/70 hover:text-foreground hover:bg-muted/50 focus:text-foreground focus:bg-muted/50"
+                              : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/60 focus:text-foreground focus:bg-muted/60"
                         }`}
                       >
-                        <Icon className="w-4 h-4 shrink-0" />
+                        <Icon
+                          className={`shrink-0 ${item.secondary ? "w-3.5 h-3.5" : "w-4 h-4"}`}
+                        />
                         <span className="leading-tight">{item.label}</span>
                       </Link>
                     );

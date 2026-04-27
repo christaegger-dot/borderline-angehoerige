@@ -75,12 +75,14 @@ export const resourceNavigationItems: NavigationItem[] = [
     label: "Buchempfehlungen",
     icon: BookOpen,
     group: "Wissen & Materialien",
+    secondary: true,
   },
   {
     href: "/quellen",
     label: "Quellen & Literatur",
     icon: FlaskConical,
     group: "Wissen & Materialien",
+    secondary: true,
   },
   // Gruppe: Beratung & Netzwerke
   {

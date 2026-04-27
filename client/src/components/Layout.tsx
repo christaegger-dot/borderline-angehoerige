@@ -1,14 +1,11 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect, lazy, Suspense } from "react";
 const Search = lazy(() => import("@/components/Search"));
-import { Button } from "@/components/ui/button";
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { BrandMark } from "@/components/layout/BrandMark";
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
 import { ScrollToTopButton } from "@/components/layout/ScrollToTopButton";
-import { getMobileFloatingMode as _getMobileFloatingMode } from "@/domain/floating-ui";
-import { Phone } from "@/icons/root-icons";
 interface LayoutProps {
   children: React.ReactNode;
 }
@@ -22,12 +19,8 @@ export function isSearchShortcut(
 export default function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
-  const floatingMode = _getMobileFloatingMode(location);
   const isSoforthilfePage = location === "/soforthilfe";
-  const hasMobileSoforthilfeFab =
-    !isSoforthilfePage && floatingMode === "default";
-  const showInlineSoforthilfeLink =
-    !isSoforthilfePage && !hasMobileSoforthilfeFab;
+  const showInlineSoforthilfeLink = !isSoforthilfePage;
 
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
@@ -163,11 +156,7 @@ export default function Layout({ children }: LayoutProps) {
             </p>
           </div>
 
-          <div
-            className={`border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 ${
-              hasMobileSoforthilfeFab ? "pb-24 sm:pb-0" : ""
-            }`}
-          >
+          <div className="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-white/90 text-sm">
               © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
             </p>
@@ -212,23 +201,6 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
-
-      {/* Mobile Soforthilfe-FAB: nur auf kurzen Standardseiten, damit lange Inhalte frei bedienbar bleiben */}
-      {hasMobileSoforthilfeFab && (
-        <Button
-          asChild
-          variant="default"
-          className="sm:hidden fixed right-4 z-50 h-12 px-4 rounded-full bg-alert hover:bg-alert/85 text-white shadow-lg gap-2 text-sm font-semibold bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))]"
-        >
-          <Link
-            href="/soforthilfe"
-            aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-          >
-            <Phone className="w-4 h-4" />
-            Soforthilfe
-          </Link>
-        </Button>
-      )}
 
       {/* Search Modal */}
       {searchOpen && (

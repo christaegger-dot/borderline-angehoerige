@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
+import GrenzenCheck from "@/components/interactive/GrenzenCheck";
 import { TableOfContents } from "@/components/UXEnhancements";
 
 import { grenzenItems } from "@/content/grenzen";
@@ -60,6 +61,11 @@ const grenzenQuickLinks = [
     id: "warnsignale",
     title: "Woran Sie merken, dass eine Grenze nötig ist",
     text: "Wenn Sie zuerst Ihre eigenen Warnsignale und Überlastung klarer lesen möchten.",
+  },
+  {
+    id: "grenzen-check",
+    title: "Wo stehe ich beim Grenzen setzen?",
+    text: "Fünf Reflexionsfragen zu den häufigsten Schwierigkeiten – mit persönlicher Einordnung.",
   },
   {
     id: "priorisierung",
@@ -330,6 +336,15 @@ export default function Grenzen() {
               </div>
             </ContentSection>
 
+            {/* Grenzen-Check: Interaktive Reflexion */}
+            <ContentSection
+              title="Wo stehe ich beim Grenzen setzen?"
+              icon={<Shield className="w-7 h-7 text-sage-mid-dark" />}
+              id="grenzen-check"
+              preview="Fünf kurze Reflexionsfragen zu den häufigsten Schwierigkeiten beim Grenzen setzen – mit persönlicher Einordnung."
+            >
+              <GrenzenCheck />
+            </ContentSection>
             {/* Grenzen-Priorisierungsmatrix */}
             <ContentSection
               title="Welche Grenzen zuerst?"

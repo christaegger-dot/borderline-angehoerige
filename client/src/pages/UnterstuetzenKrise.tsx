@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { kontaktByIdStrict } from "@/data/kontakte";
+import KrisenampelVisualisierung from "@/components/visualizations/KrisenampelVisualisierung";
 
 const rot144 = kontaktByIdStrict("ROT_144");
 const gruen143 = kontaktByIdStrict("GRUEN_143");
@@ -277,6 +278,8 @@ export default function UnterstuetzenKrise() {
               akuter Gefahr direkt{" "}
               <strong className="text-foreground">144 / 117</strong> anrufen.
             </p>
+            {/* Krisenampel-Visualisierung – visueller Überblick */}
+            <KrisenampelVisualisierung />
             {/* Ampel-System */}
             <ContentSection
               title="Das Ampel-System: Krisen erkennen"

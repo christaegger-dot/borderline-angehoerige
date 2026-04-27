@@ -29,6 +29,7 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "wouter";
+import RollenOrbitVisualisierung from "@/components/visualizations/RollenOrbitVisualisierung";
 import {
   GELB,
   kontaktByIdStrict,
@@ -255,6 +256,8 @@ export default function UnterstuetzenTherapie() {
       <section className="pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            {/* Rollen-Orbit-Visualisierung – visueller Überblick */}
+            <RollenOrbitVisualisierung />
             <ContentSection
               title="Was Angehörige in der Therapie wirklich tun können"
               icon={<Users className="w-7 h-7 text-slate-blue" />}

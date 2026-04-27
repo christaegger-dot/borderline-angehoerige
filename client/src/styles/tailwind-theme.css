@@ -4,8 +4,8 @@
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: 0.75rem; /* Override: Cards/Modals bleiben weich, trotz --radius-Reduktion */
+  --radius-xl: 1rem; /* Override: grosse Container bleiben weich */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

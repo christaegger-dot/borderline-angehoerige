@@ -1,30 +1,74 @@
-import { useState, useCallback } from "react";
+/**
+ * SituationsWegweiser — Editorial-Redesign Phase 5 (Page 7/9).
+ *
+ * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
+ * «Page 7 — Wegweiser».
+ *
+ * Entscheidungsbaum-Logik unverändert. Visuelle Behandlung editorial:
+ *
+ *   ── Choice-Buttons ──
+ *   Vorher: full-width rounded-xl mit sage-wash hover, ArrowRight-Icon
+ *   Editorial: full-width Editorial-Pill mit `--bg-elevated`-Hintergrund,
+ *   `--rule-color`-Border 1px, generöses Padding (py-4 px-5). Hover:
+ *   Border auf `--accent-primary`. Focus: ring-2 in --accent-primary.
+ *   Kein Icon, Body-Text links-bündig.
+ *
+ *   Background-Wahl `--bg-elevated` statt `transparent` begründet:
+ *   Buttons brauchen klickbare Affordance auf der ansonsten neutralen
+ *   Page. Transparent würde sie zu unauffällig machen, gerade in einem
+ *   Tool, in dem schnelles Erfassen unter Stress wichtig ist. Der leichte
+ *   `--bg-elevated`-Tint sagt «hier kannst du klicken», ohne in den
+ *   Card-Look zurückzufallen.
+ *
+ *   ── Sicherheits-kritische Resultat-Blöcke ──
+ *   4 Leaves bekommen einen alert-border-l + alert-wash-Hintergrund
+ *   (analog Grenzen-`gewalt`-Sektion):
+ *     - suizid_akut
+ *     - suizid_gespraech
+ *     - selbstverletzung_schwer
+ *     - aggression_gefahr
+ *   Diese Hervorhebung ist Sicherheits-bedingt, nicht Editorial-
+ *   Inkonsistenz: schnelles Erfassen in Krisen ist wichtiger als visuelle
+ *   Reduktion. Per-Step `emergency: true` Flag bleibt zusätzlich aktiv
+ *   (innerhalb des Blocks zeigen einzelne Schritte zusätzlich Alert-
+ *   Akzent für den Notruf-Schritt).
+ *
+ *   ── Steps ──
+ *   Vorher: Card-grouping mit muted/30 oder sos-rot/5 bg, runder
+ *   Number-Badge, Title + Detail + KontaktPill + Link.
+ *   Editorial: hairline-getrennte article-Blöcke mit
+ *   --accent-primary-Number-Badge, Display-Serif h4 Title, Body Detail,
+ *   inline-editorial-link KontaktPill, Inline-Link für sub-page-link.
+ *
+ *   ── KontaktPill ──
+ *   Vorher: Sos-rot Pill mit Phone-Icon
+ *   Editorial: Inline-editorial-link-Stil mit Phone-Icon-Prefix.
+ *   Innerhalb sicherheits-kritischer Blöcke kommt die Hervorhebung vom
+ *   umgebenden Block, nicht vom Pill selbst.
+ *
+ *   ── Breadcrumb ──
+ *   Vorher: text-muted-foreground mit ChevronRight-Icons
+ *   Editorial: Caps-Label-Zeile mit editorial-link für klickbare Steps,
+ *   --fg-primary für aktuellen Step.
+ *
+ *   ── AnimatePresence + motion.div ──
+ *   BLEIBT — funktionale Slide-Animation zwischen Frage-Slides, kein
+ *   Fade-In-Removal-Kandidat.
+ *
+ *   ── Nav-Buttons (Zurück / Von vorne beginnen) ──
+ *   Echte Buttons (Funktion), aber visuell entschärft: editorial-pill-
+ *   Styling (border + bg-elevated, neutral) wie Materialien-Filter-
+ *   Pills.
+ */
+import { useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  AlertTriangle,
-  Phone,
-  ArrowLeft,
-  ArrowRight,
-  RotateCcw,
-  Heart,
-  Shield,
-  MessageCircle,
-  Clock,
-  ChevronRight,
-  CheckCircle2,
-} from "lucide-react";
 import { kontaktByIdStrict } from "@/data/kontakte";
-
-// ─── Types ────────────────────────────────────────────────
 
 interface Step {
   id: string;
   text: string;
   detail?: string;
-  icon?: React.ReactNode;
-  /** Indicates an emergency step – shows emergency numbers */
+  /** Indicates an emergency step – additional alert accent within block */
   emergency?: boolean;
   /** Phone contact IDs from kontakte.ts to display */
   kontakte?: string[];
@@ -41,21 +85,20 @@ interface TreeNode {
   id: string;
   question: string;
   subtitle?: string;
-  icon?: React.ReactNode;
+  /** Sicherheits-kritischer Result-Block: alert-border-l + alert-wash bg */
+  safetyCritical?: boolean;
   choices?: Choice[];
   /** If no choices, this is a leaf with steps */
   steps?: Step[];
 }
 
-// ─── Decision tree data ───────────────────────────────────
+// ─── Decision tree data (unverändert) ────────────────────
 
 const TREE: TreeNode[] = [
-  // ─── ROOT ───
   {
     id: "start",
     question: "Was passiert gerade?",
     subtitle: "Wählen Sie die Situation, die am ehesten zutrifft.",
-    icon: <AlertTriangle className="w-6 h-6" />,
     choices: [
       { label: "Suiziddrohung oder Suizidgedanken", nextId: "suizid" },
       { label: "Selbstverletzung", nextId: "selbstverletzung" },
@@ -72,7 +115,6 @@ const TREE: TreeNode[] = [
     question: "Besteht unmittelbare Gefahr?",
     subtitle:
       "Versuchen Sie einzuschätzen: Handelt Ihr Angehöriger gerade aktiv oder spricht er/sie davon?",
-    icon: <AlertTriangle className="w-6 h-6" />,
     choices: [
       {
         label: "Ja – akute Handlung oder konkreter Plan",
@@ -87,14 +129,13 @@ const TREE: TreeNode[] = [
   {
     id: "suizid_akut",
     question: "Akute Suizidgefahr",
-    icon: <Phone className="w-6 h-6" />,
+    safetyCritical: true,
     steps: [
       {
         id: "s1",
         text: "Rufen Sie sofort den Notruf an",
         detail:
           "Bleiben Sie am Telefon und folgen Sie den Anweisungen der Leitstelle.",
-        icon: <Phone className="w-5 h-5" />,
         emergency: true,
         kontakte: ["ROT_144", "ROT_117"],
       },
@@ -103,21 +144,18 @@ const TREE: TreeNode[] = [
         text: "Bleiben Sie bei der Person",
         detail:
           "Lassen Sie Ihren Angehörigen nicht allein, bis professionelle Hilfe eintrifft. Sprechen Sie ruhig und klar.",
-        icon: <Heart className="w-5 h-5" />,
       },
       {
         id: "s3",
         text: "Sichern Sie die Umgebung",
         detail:
           "Entfernen Sie – wenn möglich – Medikamente, scharfe Gegenstände oder andere gefährliche Mittel aus der Reichweite.",
-        icon: <Shield className="w-5 h-5" />,
       },
       {
         id: "s4",
         text: "Holen Sie sich danach Entlastung",
         detail:
           "Solche Situationen sind extrem belastend. Rufen Sie danach die Dargebotene Hand an oder sprechen Sie mit einer Vertrauensperson.",
-        icon: <Heart className="w-5 h-5" />,
         kontakte: ["GRUEN_143"],
       },
     ],
@@ -125,35 +163,31 @@ const TREE: TreeNode[] = [
   {
     id: "suizid_gespraech",
     question: "Suizidgedanken – Gespräch führen",
-    icon: <MessageCircle className="w-6 h-6" />,
+    safetyCritical: true,
     steps: [
       {
         id: "s1",
         text: "Nehmen Sie es ernst – fragen Sie direkt nach",
         detail:
-          '"Hast du gerade Gedanken, dir etwas anzutun?" Direktes Fragen erhöht das Risiko nicht, sondern zeigt, dass Sie die Situation ernst nehmen.',
-        icon: <MessageCircle className="w-5 h-5" />,
+          "«Hast du gerade Gedanken, dir etwas anzutun?» Direktes Fragen erhöht das Risiko nicht, sondern zeigt, dass Sie die Situation ernst nehmen.",
       },
       {
         id: "s2",
         text: "Hören Sie zu, ohne zu urteilen",
         detail:
-          'Vermeiden Sie Sätze wie "So schlimm ist es doch nicht" oder "Denk an deine Familie". Anerkennen Sie den Schmerz.',
-        icon: <Heart className="w-5 h-5" />,
+          "Vermeiden Sie Sätze wie «So schlimm ist es doch nicht» oder «Denk an deine Familie». Anerkennen Sie den Schmerz.",
       },
       {
         id: "s3",
         text: "Fragen Sie nach einem Plan",
         detail:
           "Gibt es einen konkreten Plan, ein Mittel, einen Zeitpunkt? Je konkreter, desto dringlicher ist professionelle Hilfe.",
-        icon: <AlertTriangle className="w-5 h-5" />,
       },
       {
         id: "s4",
         text: "Verbinden Sie mit professioneller Hilfe",
         detail:
           "Schlagen Sie vor, gemeinsam bei der PUK oder der Dargebotenen Hand anzurufen.",
-        icon: <Phone className="w-5 h-5" />,
         kontakte: ["GELB_PUK_ERW", "GRUEN_143"],
       },
       {
@@ -161,7 +195,6 @@ const TREE: TreeNode[] = [
         text: "Vergessen Sie sich selbst nicht",
         detail:
           "Solche Gespräche sind enorm belastend. Holen Sie sich selbst Unterstützung.",
-        icon: <Heart className="w-5 h-5" />,
         link: { href: "/selbstfuersorge", label: "Zur Selbstfürsorge" },
       },
     ],
@@ -172,7 +205,6 @@ const TREE: TreeNode[] = [
     id: "selbstverletzung",
     question: "Wie schwer ist die Verletzung?",
     subtitle: "Versuchen Sie die Situation einzuschätzen.",
-    icon: <AlertTriangle className="w-6 h-6" />,
     choices: [
       {
         label: "Schwere Verletzung – braucht medizinische Hilfe",
@@ -187,14 +219,13 @@ const TREE: TreeNode[] = [
   {
     id: "selbstverletzung_schwer",
     question: "Schwere Selbstverletzung",
-    icon: <Phone className="w-6 h-6" />,
+    safetyCritical: true,
     steps: [
       {
         id: "s1",
         text: "Rufen Sie den Rettungsdienst",
         detail:
           "Bei starker Blutung oder Vergiftungsverdacht: sofort 144 anrufen.",
-        icon: <Phone className="w-5 h-5" />,
         emergency: true,
         kontakte: ["ROT_144"],
       },
@@ -203,55 +234,47 @@ const TREE: TreeNode[] = [
         text: "Leisten Sie Erste Hilfe",
         detail:
           "Stillen Sie Blutungen mit sauberem Tuch, bringen Sie die Person in eine stabile Position.",
-        icon: <Shield className="w-5 h-5" />,
       },
       {
         id: "s3",
         text: "Bleiben Sie ruhig und präsent",
-        detail: '"Ich bin da. Hilfe kommt." Vermeiden Sie Vorwürfe.',
-        icon: <Heart className="w-5 h-5" />,
+        detail: "«Ich bin da. Hilfe kommt.» Vermeiden Sie Vorwürfe.",
       },
     ],
   },
   {
     id: "selbstverletzung_leicht",
     question: "Leichte Selbstverletzung",
-    icon: <Heart className="w-6 h-6" />,
     steps: [
       {
         id: "s1",
         text: "Bleiben Sie ruhig – keine Panik zeigen",
         detail:
           "Selbstverletzung ist oft ein Versuch, unerträgliche Spannung abzubauen. Ihre Ruhe hilft.",
-        icon: <Shield className="w-5 h-5" />,
       },
       {
         id: "s2",
         text: "Versorgen Sie die Verletzung sachlich",
         detail:
           "Bieten Sie Pflaster oder Verband an, ohne die Verletzung zu dramatisieren oder zu ignorieren.",
-        icon: <CheckCircle2 className="w-5 h-5" />,
       },
       {
         id: "s3",
         text: "Bieten Sie Alternativen an",
         detail:
-          '"Möchtest du stattdessen Eiswürfel halten, kalt duschen oder etwas anderes Intensives spüren?"',
-        icon: <MessageCircle className="w-5 h-5" />,
+          "«Möchtest du stattdessen Eiswürfel halten, kalt duschen oder etwas anderes Intensives spüren?»",
       },
       {
         id: "s4",
         text: "Sprechen Sie es später an",
         detail:
-          'Nicht in der akuten Situation, aber danach: "Ich habe gesehen, dass es dir schlecht ging. Können wir darüber reden?"',
-        icon: <Clock className="w-5 h-5" />,
+          "Nicht in der akuten Situation, aber danach: «Ich habe gesehen, dass es dir schlecht ging. Können wir darüber reden?»",
       },
       {
         id: "s5",
         text: "Professionelle Hilfe einbeziehen",
         detail:
           "Wenn Selbstverletzung wiederholt vorkommt, ist therapeutische Unterstützung wichtig.",
-        icon: <Phone className="w-5 h-5" />,
         kontakte: ["GELB_PUK_ERW"],
       },
     ],
@@ -262,7 +285,6 @@ const TREE: TreeNode[] = [
     id: "aggression",
     question: "Fühlen Sie sich körperlich bedroht?",
     subtitle: "Ihre Sicherheit geht vor.",
-    icon: <Shield className="w-6 h-6" />,
     choices: [
       {
         label: "Ja – ich fühle mich unsicher oder bedroht",
@@ -277,20 +299,18 @@ const TREE: TreeNode[] = [
   {
     id: "aggression_gefahr",
     question: "Sie fühlen sich bedroht",
-    icon: <Shield className="w-6 h-6" />,
+    safetyCritical: true,
     steps: [
       {
         id: "s1",
         text: "Bringen Sie sich in Sicherheit",
         detail:
           "Verlassen Sie den Raum oder die Wohnung. Ihre Sicherheit hat absolute Priorität.",
-        icon: <Shield className="w-5 h-5" />,
       },
       {
         id: "s2",
         text: "Rufen Sie bei Bedarf die Polizei",
         detail: "Wenn Sie sich bedroht fühlen oder Gewalt droht.",
-        icon: <Phone className="w-5 h-5" />,
         emergency: true,
         kontakte: ["ROT_117"],
       },
@@ -299,14 +319,12 @@ const TREE: TreeNode[] = [
         text: "Sie tragen keine Schuld",
         detail:
           "Gewalt ist nie akzeptabel, auch nicht in einer Krise. Sich zu schützen ist kein Verrat.",
-        icon: <Heart className="w-5 h-5" />,
       },
       {
         id: "s4",
         text: "Holen Sie sich Unterstützung",
         detail:
           "Sprechen Sie über das Erlebte – mit einer Vertrauensperson oder einer Beratungsstelle.",
-        icon: <Phone className="w-5 h-5" />,
         kontakte: ["GRUEN_143"],
       },
     ],
@@ -314,42 +332,36 @@ const TREE: TreeNode[] = [
   {
     id: "aggression_verbal",
     question: "Verbale Eskalation deeskalieren",
-    icon: <MessageCircle className="w-6 h-6" />,
     steps: [
       {
         id: "s1",
         text: "Sprechen Sie langsam und leise",
         detail:
           "Ihre ruhige Stimme kann ansteckend wirken. Senken Sie bewusst Lautstärke und Tempo.",
-        icon: <MessageCircle className="w-5 h-5" />,
       },
       {
         id: "s2",
         text: "Validieren Sie die Emotion",
         detail:
-          '"Ich sehe, dass du gerade extrem wütend bist. Das muss sich furchtbar anfühlen."',
-        icon: <Heart className="w-5 h-5" />,
+          "«Ich sehe, dass du gerade extrem wütend bist. Das muss sich furchtbar anfühlen.»",
       },
       {
         id: "s3",
         text: "Setzen Sie eine klare Grenze",
         detail:
-          '"Ich möchte für dich da sein, aber ich kann nicht bleiben, wenn du mich anschreist. Sollen wir 10 Minuten Pause machen?"',
-        icon: <Shield className="w-5 h-5" />,
+          "«Ich möchte für dich da sein, aber ich kann nicht bleiben, wenn du mich anschreist. Sollen wir 10 Minuten Pause machen?»",
       },
       {
         id: "s4",
         text: "Bieten Sie körperliche Entladung an",
         detail:
           "Kissen schlagen, Eiswürfel halten, kaltes Wasser – intensive Reize helfen, die Spannung abzubauen.",
-        icon: <CheckCircle2 className="w-5 h-5" />,
       },
       {
         id: "s5",
         text: "Gehen Sie, wenn es nötig ist",
         detail:
           "Wenn die Eskalation nicht nachlässt, dürfen Sie den Raum verlassen. Das ist kein Aufgeben, sondern Selbstschutz.",
-        icon: <Shield className="w-5 h-5" />,
         link: { href: "/grenzen", label: "Mehr zu Grenzen setzen" },
       },
     ],
@@ -359,42 +371,36 @@ const TREE: TreeNode[] = [
   {
     id: "kontaktabbruch",
     question: "Kontaktabbruch oder Rückzug",
-    icon: <Clock className="w-6 h-6" />,
     steps: [
       {
         id: "s1",
         text: "Atmen Sie durch – Rückzug ist nicht Ihr Versagen",
         detail:
           "Kontaktabbruch kann ein Schutzmechanismus sein. Er bedeutet nicht, dass Sie etwas falsch gemacht haben.",
-        icon: <Heart className="w-5 h-5" />,
       },
       {
         id: "s2",
         text: "Senden Sie eine kurze, wertungsfreie Nachricht",
         detail:
-          '"Ich bin da, wenn du bereit bist. Kein Druck." Einmal senden, dann Raum lassen.',
-        icon: <MessageCircle className="w-5 h-5" />,
+          "«Ich bin da, wenn du bereit bist. Kein Druck.» Einmal senden, dann Raum lassen.",
       },
       {
         id: "s3",
         text: "Setzen Sie sich eine innere Frist",
         detail:
           "Überlegen Sie sich: Wie lange warten Sie, bevor Sie sich erneut melden? Z.B. nach 3 Tagen eine weitere kurze Nachricht.",
-        icon: <Clock className="w-5 h-5" />,
       },
       {
         id: "s4",
         text: "Drängen Sie nicht",
         detail:
           "Wiederholtes Anrufen oder Vorbeikommen kann den Rückzug verstärken. Respektieren Sie die Grenze, auch wenn es schwerfällt.",
-        icon: <Shield className="w-5 h-5" />,
       },
       {
         id: "s5",
         text: "Sorgen Sie für sich selbst",
         detail:
           "Kontaktabbruch tut weh. Sprechen Sie mit jemandem darüber – einer Freundin, einem Therapeuten oder der Dargebotenen Hand.",
-        icon: <Heart className="w-5 h-5" />,
         kontakte: ["GRUEN_143"],
         link: { href: "/selbstfuersorge", label: "Zur Selbstfürsorge" },
       },
@@ -403,7 +409,6 @@ const TREE: TreeNode[] = [
         text: "Wenn Sie sich Sorgen machen",
         detail:
           "Wenn der Rückzug untypisch ist und Sie Suizidgefahr befürchten, vertrauen Sie Ihrem Gefühl und handeln Sie.",
-        icon: <AlertTriangle className="w-5 h-5" />,
         kontakte: ["GELB_PUK_ERW"],
       },
     ],
@@ -413,35 +418,30 @@ const TREE: TreeNode[] = [
   {
     id: "verzweiflung",
     question: "Starke Verzweiflung begleiten",
-    icon: <Heart className="w-6 h-6" />,
     steps: [
       {
         id: "s1",
         text: "Seien Sie einfach da",
         detail:
-          'Sie müssen nichts Kluges sagen. "Ich bin hier" reicht oft. Setzen Sie sich daneben, halten Sie aus.',
-        icon: <Heart className="w-5 h-5" />,
+          "Sie müssen nichts Kluges sagen. «Ich bin hier» reicht oft. Setzen Sie sich daneben, halten Sie aus.",
       },
       {
         id: "s2",
         text: "Validieren Sie den Schmerz",
         detail:
-          '"Das muss sich gerade furchtbar anfühlen. Es ist okay zu weinen." Keine Ratschläge, kein Relativieren.',
-        icon: <MessageCircle className="w-5 h-5" />,
+          "«Das muss sich gerade furchtbar anfühlen. Es ist okay zu weinen.» Keine Ratschläge, kein Relativieren.",
       },
       {
         id: "s3",
         text: "Bieten Sie Körperliches an",
         detail:
           "Ein Glas Wasser, eine Decke, ein warmes Getränk. Kleine, konkrete Gesten helfen mehr als grosse Worte.",
-        icon: <CheckCircle2 className="w-5 h-5" />,
       },
       {
         id: "s4",
         text: "Erden Sie sanft",
         detail:
-          'Wenn die Person bereit ist: "Spürst du deine Füsse auf dem Boden? Kannst du langsam ein- und ausatmen?"',
-        icon: <Shield className="w-5 h-5" />,
+          "Wenn die Person bereit ist: «Spürst du deine Füsse auf dem Boden? Kannst du langsam ein- und ausatmen?»",
         link: { href: "/selbstfuersorge#grounding", label: "Grounding-Übung" },
       },
       {
@@ -449,7 +449,6 @@ const TREE: TreeNode[] = [
         text: "Wissen Sie, wann es zu viel wird",
         detail:
           "Wenn die Verzweiflung Stunden anhält oder Sie Suizidgedanken vermuten, ziehen Sie Hilfe hinzu.",
-        icon: <Phone className="w-5 h-5" />,
         kontakte: ["GRUEN_143", "GELB_PUK_ERW"],
       },
     ],
@@ -459,35 +458,30 @@ const TREE: TreeNode[] = [
   {
     id: "manipulation",
     question: "Emotionale Erpressung / Manipulation",
-    icon: <Shield className="w-6 h-6" />,
     steps: [
       {
         id: "s1",
         text: "Erkennen Sie das Muster",
         detail:
-          '"Wenn du gehst, bringe ich mich um" oder "Ohne dich kann ich nicht leben" – das sind Zeichen extremer Not, aber auch Versuche, Kontrolle zu behalten.',
-        icon: <AlertTriangle className="w-5 h-5" />,
+          "«Wenn du gehst, bringe ich mich um» oder «Ohne dich kann ich nicht leben» – das sind Zeichen extremer Not, aber auch Versuche, Kontrolle zu behalten.",
       },
       {
         id: "s2",
         text: "Nehmen Sie die Not ernst, aber nicht die Verantwortung",
         detail:
           "Die Gefühle dahinter sind real. Aber Sie sind nicht dafür verantwortlich, was ein anderer Mensch mit seinem Leben tut.",
-        icon: <Heart className="w-5 h-5" />,
       },
       {
         id: "s3",
         text: "Bleiben Sie bei Ihrer Grenze",
         detail:
-          '"Ich nehme deine Verzweiflung ernst. Aber ich kann diese Entscheidung nicht für dich treffen. Lass uns gemeinsam Hilfe holen."',
-        icon: <Shield className="w-5 h-5" />,
+          "«Ich nehme deine Verzweiflung ernst. Aber ich kann diese Entscheidung nicht für dich treffen. Lass uns gemeinsam Hilfe holen.»",
       },
       {
         id: "s4",
         text: "Delegieren Sie an Profis",
         detail:
           "Wenn jemand mit Suizid droht, um Sie zu halten: Informieren Sie professionelle Hilfe. Das ist kein Verrat, sondern Fürsorge.",
-        icon: <Phone className="w-5 h-5" />,
         kontakte: ["GELB_PUK_ERW", "GRUEN_143"],
       },
       {
@@ -495,35 +489,134 @@ const TREE: TreeNode[] = [
         text: "Schützen Sie sich",
         detail:
           "Emotionale Erpressung ist eine Form von Gewalt. Sie brauchen eigene Unterstützung, um damit umzugehen.",
-        icon: <Heart className="w-5 h-5" />,
         link: { href: "/grenzen", label: "Mehr zu Grenzen setzen" },
       },
     ],
   },
 ];
 
-// ─── Lookup helper ────────────────────────────────────────
-
 function nodeById(id: string): TreeNode | undefined {
   return TREE.find(n => n.id === id);
 }
 
-// ─── Phone number display ─────────────────────────────────
+// ─── Editorial-Style Konstanten ──────────────────────────
 
-function KontaktPill({ kontaktId }: { kontaktId: string }) {
+const labelStyle = {
+  fontSize: "var(--text-xs)",
+  letterSpacing: "var(--tracking-caps)",
+  color: "var(--fg-tertiary)",
+  fontWeight: 500,
+} as const;
+
+const questionStyle = {
+  fontFamily: "var(--font-display)",
+  fontSize: "var(--text-2xl)",
+  fontWeight: "var(--weight-display)",
+  lineHeight: "var(--lh-snug)",
+  color: "var(--fg-primary)",
+  letterSpacing: "var(--tracking-tight)",
+};
+
+const subtitleStyle = {
+  fontSize: "var(--text-md)",
+  lineHeight: "var(--lh-relaxed)",
+  color: "var(--fg-secondary)",
+};
+
+const stepTitleStyle = {
+  fontFamily: "var(--font-display)",
+  fontSize: "var(--text-md)",
+  fontWeight: "var(--weight-display)",
+  lineHeight: "var(--lh-snug)",
+  color: "var(--fg-primary)",
+  letterSpacing: "var(--tracking-tight)",
+};
+
+const detailStyle = {
+  fontSize: "var(--text-sm)",
+  lineHeight: "var(--lh-relaxed)",
+  color: "var(--fg-secondary)",
+};
+
+// ─── Sub-components ──────────────────────────────────────
+
+function KontaktInline({ kontaktId }: { kontaktId: string }) {
   const k = kontaktByIdStrict(kontaktId);
   return (
     <a
       href={`tel:${k.tel}`}
-      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--color-sos-rot)]/10 text-[var(--color-sos-rot)] text-sm font-semibold hover:bg-[var(--color-sos-rot)]/20 transition-colors"
+      className="editorial-link"
+      style={{ fontSize: "var(--text-sm)" }}
     >
-      <Phone className="w-3.5 h-3.5" />
-      {k.nummer} – {k.label}
+      Telefon {k.nummer} – {k.label}
     </a>
   );
 }
 
-// ─── Main component ───────────────────────────────────────
+function ChoiceButton({
+  label,
+  onClick,
+}: {
+  label: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="block w-full rounded-md border px-5 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+      style={{
+        borderColor: "var(--rule-color)",
+        backgroundColor: "var(--bg-elevated)",
+        color: "var(--fg-primary)",
+        fontSize: "var(--text-md)",
+        lineHeight: "var(--lh-snug)",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = "var(--accent-primary)";
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = "var(--rule-color)";
+      }}
+    >
+      {label}
+    </button>
+  );
+}
+
+function NavPillButton({
+  onClick,
+  children,
+  ariaLabel,
+}: {
+  onClick: () => void;
+  children: React.ReactNode;
+  ariaLabel?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={ariaLabel}
+      className="rounded-full border px-4 py-1.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+      style={{
+        borderColor: "var(--rule-color)",
+        backgroundColor: "var(--bg-elevated)",
+        color: "var(--fg-secondary)",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = "var(--accent-primary)";
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = "var(--rule-color)";
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+
+// ─── Main component ──────────────────────────────────────
 
 export default function SituationsWegweiser() {
   const [history, setHistory] = useState<string[]>(["start"]);
@@ -545,35 +638,36 @@ export default function SituationsWegweiser() {
   if (!node) return null;
 
   const isStart = currentId === "start";
-  const _isLeaf = !!node.steps;
   const depth = history.length - 1;
+  const isSafetyCritical = node.safetyCritical === true;
 
   return (
-    <div className="space-y-6">
-      {/* Progress / breadcrumb */}
+    <div className="space-y-8">
+      {/* ── Breadcrumb ── */}
       {!isStart && (
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <button
-            type="button"
-            onClick={reset}
-            className="hover:text-foreground transition-colors"
-          >
+        <p
+          aria-label="Wegweiser-Pfad"
+          className="flex flex-wrap items-center gap-x-2 gap-y-1 uppercase"
+          style={labelStyle}
+        >
+          <button type="button" onClick={reset} className="editorial-link">
             Start
           </button>
           {history.slice(1).map((hId, i) => {
             const hNode = nodeById(hId);
+            const isLast = i === history.length - 2;
             return (
-              <span key={hId} className="flex items-center gap-2">
-                <ChevronRight className="w-3.5 h-3.5" />
-                {i === history.length - 2 ? (
-                  <span className="text-foreground font-medium">
+              <span key={hId} className="flex items-center gap-x-2">
+                <span aria-hidden="true">·</span>
+                {isLast ? (
+                  <span style={{ color: "var(--fg-primary)" }}>
                     {hNode?.question}
                   </span>
                 ) : (
                   <button
                     type="button"
                     onClick={() => setHistory(history.slice(0, i + 2))}
-                    className="hover:text-foreground transition-colors"
+                    className="editorial-link"
                   >
                     {hNode?.question}
                   </button>
@@ -581,10 +675,10 @@ export default function SituationsWegweiser() {
               </span>
             );
           })}
-        </div>
+        </p>
       )}
 
-      {/* Main card */}
+      {/* ── Frage / Resultat ── */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentId}
@@ -593,129 +687,110 @@ export default function SituationsWegweiser() {
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
         >
-          <Card className="border-border/60 overflow-hidden">
-            {/* Header */}
-            <div className="bg-[var(--color-sage-wash)] px-5 py-4 sm:px-6 sm:py-5 border-b border-border/40">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center flex-shrink-0 text-[var(--color-sage-dark)]">
-                  {node.icon}
-                </div>
-                <div>
-                  <h2 className="text-lg sm:text-xl font-semibold text-foreground leading-tight">
-                    {node.question}
-                  </h2>
-                  {node.subtitle && (
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {node.subtitle}
-                    </p>
-                  )}
-                </div>
+          {/*
+            Sicherheits-kritische Resultat-Blöcke (suizid_akut,
+            suizid_gespraech, selbstverletzung_schwer, aggression_gefahr)
+            bekommen alert-border-l + alert-wash bg. Per-Brief-Erlaubnis
+            analog Grenzen-`gewalt`-Sektion.
+          */}
+          <div
+            className={isSafetyCritical ? "border-l-4 pl-6 py-2" : ""}
+            style={
+              isSafetyCritical
+                ? {
+                    borderColor: "var(--color-alert)",
+                    backgroundColor:
+                      "var(--color-alert-wash, rgba(197,95,61,0.05))",
+                  }
+                : undefined
+            }
+          >
+            <header className="space-y-2">
+              <h2 style={questionStyle}>{node.question}</h2>
+              {node.subtitle && <p style={subtitleStyle}>{node.subtitle}</p>}
+            </header>
+
+            {/* Choice-Buttons */}
+            {node.choices && (
+              <div className="mt-8 space-y-3">
+                {node.choices.map(choice => (
+                  <ChoiceButton
+                    key={choice.nextId}
+                    label={choice.label}
+                    onClick={() => navigate(choice.nextId)}
+                  />
+                ))}
               </div>
-            </div>
+            )}
 
-            <CardContent className="p-5 sm:p-6">
-              {/* Choice buttons */}
-              {node.choices && (
-                <div className="space-y-2.5">
-                  {node.choices.map(choice => (
-                    <button
-                      key={choice.nextId}
-                      type="button"
-                      onClick={() => navigate(choice.nextId)}
-                      className="w-full text-left flex items-center justify-between gap-3 p-4 rounded-xl border border-border/60 bg-background hover:bg-[var(--color-sage-wash)]/50 hover:border-[var(--color-sage-dark)]/30 active:scale-[0.99] transition-all group"
-                    >
-                      <span className="text-sm sm:text-base text-foreground font-medium">
-                        {choice.label}
-                      </span>
-                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[var(--color-sage-dark)] transition-colors flex-shrink-0" />
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              {/* Steps (leaf) */}
-              {node.steps && (
-                <div className="space-y-4">
-                  {node.steps.map((step, i) => (
-                    <div
-                      key={step.id}
-                      className={`flex items-start gap-3.5 p-4 rounded-xl ${
-                        step.emergency
-                          ? "bg-[var(--color-sos-rot)]/5 border border-[var(--color-sos-rot)]/20"
-                          : "bg-muted/30"
-                      }`}
-                    >
-                      <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          step.emergency
-                            ? "bg-[var(--color-sos-rot)]/15 text-[var(--color-sos-rot)]"
-                            : "bg-[var(--color-sage-wash)] text-[var(--color-sage-dark)]"
-                        }`}
+            {/* Steps (Resultat) */}
+            {node.steps && (
+              <ol className="mt-8 space-y-8">
+                {node.steps.map((step, i) => (
+                  <li
+                    key={step.id}
+                    className="border-t pt-6"
+                    style={{ borderColor: "var(--rule-color)" }}
+                  >
+                    <div className="flex items-start gap-4">
+                      <span
+                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+                        style={{
+                          backgroundColor: step.emergency
+                            ? "var(--color-alert)"
+                            : "var(--accent-primary)",
+                          color: "var(--bg-primary)",
+                          fontSize: "var(--text-sm)",
+                          fontWeight: 600,
+                        }}
                       >
-                        {step.icon || (
-                          <span className="text-sm font-semibold">{i + 1}</span>
-                        )}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-foreground text-sm sm:text-base leading-tight">
-                          {step.text}
-                        </p>
+                        {i + 1}
+                      </span>
+                      <div className="flex-1 space-y-2">
+                        <h3 style={stepTitleStyle}>{step.text}</h3>
                         {step.detail && (
-                          <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                            {step.detail}
-                          </p>
+                          <p style={detailStyle}>{step.detail}</p>
                         )}
                         {step.kontakte && step.kontakte.length > 0 && (
-                          <div className="flex flex-wrap gap-2 mt-2.5">
+                          <p className="flex flex-wrap gap-x-5 gap-y-1 pt-1">
                             {step.kontakte.map(kId => (
-                              <KontaktPill key={kId} kontaktId={kId} />
+                              <KontaktInline key={kId} kontaktId={kId} />
                             ))}
-                          </div>
+                          </p>
                         )}
                         {step.link && (
-                          <a
-                            href={step.link.href}
-                            className="inline-flex items-center gap-1 text-sm text-[var(--color-sage-dark)] hover:underline mt-2"
+                          <p
+                            className="pt-1"
+                            style={{ fontSize: "var(--text-sm)" }}
                           >
-                            {step.link.label}
-                            <ArrowRight className="w-3.5 h-3.5" />
-                          </a>
+                            <a href={step.link.href} className="editorial-link">
+                              {step.link.label}
+                            </a>
+                          </p>
                         )}
                       </div>
                     </div>
-                  ))}
-                </div>
-              )}
-            </CardContent>
-          </Card>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation */}
-      <div className="flex items-center justify-between">
+      {/* ── Navigation ── */}
+      <div className="flex items-center justify-between gap-3">
         {!isStart ? (
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={goBack}
-            className="gap-1.5"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Zurück
-          </Button>
+          <NavPillButton onClick={goBack} ariaLabel="Eine Frage zurück">
+            ← Zurück
+          </NavPillButton>
         ) : (
           <div />
         )}
         {depth > 0 && (
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={reset}
-            className="gap-1.5"
-          >
-            <RotateCcw className="w-4 h-4" />
+          <NavPillButton onClick={reset} ariaLabel="Wegweiser neu starten">
             Von vorne beginnen
-          </Button>
+          </NavPillButton>
         )}
       </div>
     </div>

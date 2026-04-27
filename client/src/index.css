@@ -191,6 +191,43 @@
       var(--color-home-orbit-outer)
     );
   }
+
+  /* ── Editorial Utilities (Phase 1, Brief Abschnitte 2.4 / 3.2 / 3.3) ── */
+
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    display: block;
+    margin-bottom: 0.875rem;
+  }
+
+  .lede {
+    font-size: 1.32rem;
+    line-height: 1.55;
+    color: var(--muted-foreground);
+    font-style: italic;
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--color-border, oklch(0.9 0.02 85));
+    margin: 2rem 0;
+  }
+
+  .rule-narrow {
+    width: 4rem;
+  }
+
+  .rule-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Scrollbar ausblenden für horizontale Tab-Leisten */

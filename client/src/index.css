@@ -22,7 +22,7 @@
      rounded-lg  (12px) = Standard-Elemente, Listen-Items, kleine Cards
      rounded-xl  (16px) = Karten, Content-Boxen, Hero-Icon-Boxen
      rounded-2xl (20px) = Spezial-Blöcke (Soforthilfe Ampel-Blöcke) */
-  --background: oklch(0.985 0.003 200); /* Kühles Off-White ≈ SA #FAFAF7 */
+  --background: oklch(0.97 0.02 85); /* Warmer Cream — Editorial Phase 1 */
   --foreground: oklch(0.25 0.02 250); /* Charcoal */
   --card: oklch(0.99 0.008 85); /* Cream */
   --card-foreground: oklch(0.25 0.02 250);

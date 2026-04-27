@@ -835,6 +835,14 @@ export default function Grenzen() {
               </div>
             </ContentSection>
 
+            <div className="mt-8 mb-6 rounded-2xl border border-sage-light/60 bg-sage-wash/40 px-6 py-5">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Grenzen sind der Schutzraum – Selbstfürsorge ist das, was Sie
+                darin aufbauen. Wer weiss, wo er aufhört und der andere anfängt,
+                kann sich erholen, ohne sich schuldig zu fühlen.
+              </p>
+            </div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -100,7 +100,15 @@
   h2 {
     font-family: var(--font-heading);
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+
+  h1 em,
+  h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: inherit;
   }
 
   h3,

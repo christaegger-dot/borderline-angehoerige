@@ -17,6 +17,11 @@ interface UseCountUpOptions {
  * Die Animation läuft nur als visuelles Enhancement, wenn der Block
  * im Viewport sichtbar wird.
  *
+ * hasAnimatedRef ist ein Ref, kein State: das Tracking braucht keinen
+ * Re-Render, und useState in der Effect-Dep-Liste hatte eine Self-
+ * Cancelling-RAF-Race ausgelöst (Cleanup der alten Effect-Instanz
+ * canceled die soeben geschedulete RAF, displayValue blieb auf "0").
+ *
  * WICHTIG: Hook-Reihenfolge ist fix (useState → useCallback → useRef → useEffect).
  */
 export function useCountUp({
@@ -37,10 +42,7 @@ export function useCountUp({
     return `${prefix}${withSeparator}${suffix}`;
   });
 
-  // 2. useState
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  // 3. useCallback
+  // 2. useCallback
   const formatValue = useCallback(
     (value: number) => {
       const formatted =
@@ -53,20 +55,21 @@ export function useCountUp({
     [prefix, suffix, separator, decimals]
   );
 
-  // 4. useRef
+  // 3. useRef
+  const hasAnimatedRef = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
   const rafIdRef = useRef<number | null>(null);
 
-  // 5. useEffect – IntersectionObserver
+  // 4. useEffect – IntersectionObserver
   useEffect(() => {
     const element = ref.current;
-    if (!element || hasAnimated) return;
+    if (!element || hasAnimatedRef.current) return;
 
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
+          if (entry.isIntersecting && !hasAnimatedRef.current) {
+            hasAnimatedRef.current = true;
             // Kurz den Startwert setzen, dann hochzählen
             setDisplayValue(formatValue(0));
 
@@ -98,7 +101,7 @@ export function useCountUp({
         rafIdRef.current = null;
       }
     };
-  }, [hasAnimated, formatValue, duration, end]);
+  }, [formatValue, duration, end]);
 
   return { ref, displayValue };
 }

@@ -7,6 +7,12 @@ interface EvidenceNoteProps {
   sources: EvidenceSource[];
   reviewDate?: string;
   className?: string;
+  /**
+   * "card" (Default): bestehende Box mit muted-BG und FileText-Icon.
+   * "editorial": Phase-4-Editorial-Pattern — Hairline oben/unten, Fliesstext-
+   * Stil, kein Karten-Hintergrund, kein Icon, fg-tertiary für Quellen.
+   */
+  variant?: "card" | "editorial";
 }
 
 export default function EvidenceNote({
@@ -15,6 +21,7 @@ export default function EvidenceNote({
   sources,
   reviewDate,
   className = "",
+  variant = "card",
 }: EvidenceNoteProps) {
   const scientificSources = sources.filter(
     source => source.type !== "versorgung"
@@ -22,15 +29,31 @@ export default function EvidenceNote({
   const serviceSources = sources.filter(source => source.type === "versorgung");
 
   const renderSources = (items: EvidenceSource[]) => (
-    <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+    <ul
+      className="mt-2 space-y-1"
+      style={
+        variant === "editorial"
+          ? { fontSize: "var(--text-sm)", color: "var(--fg-tertiary)" }
+          : undefined
+      }
+    >
       {items.map(source => (
-        <li key={source.label}>
+        <li
+          key={source.label}
+          className={
+            variant === "editorial" ? "" : "text-xs text-muted-foreground"
+          }
+        >
           {source.href ? (
             <a
               href={source.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-dotted underline-offset-2 hover:text-foreground"
+              className={
+                variant === "editorial"
+                  ? "editorial-link"
+                  : "underline decoration-dotted underline-offset-2 hover:text-foreground"
+              }
             >
               {source.label}
             </a>
@@ -42,6 +65,68 @@ export default function EvidenceNote({
       ))}
     </ul>
   );
+
+  if (variant === "editorial") {
+    return (
+      <aside
+        className={`mt-8 border-t border-b py-5 ${className}`.trim()}
+        style={{ borderColor: "var(--rule-color)" }}
+        aria-label={title}
+      >
+        <p
+          className="uppercase"
+          style={{
+            fontSize: "var(--text-xs)",
+            letterSpacing: "var(--tracking-caps)",
+            color: "var(--accent-label)",
+            fontWeight: 500,
+          }}
+        >
+          {title}
+        </p>
+        {definition && (
+          <p
+            className="mt-2"
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            {definition}
+          </p>
+        )}
+        {scientificSources.length > 0 && renderSources(scientificSources)}
+        {serviceSources.length > 0 && (
+          <>
+            <p
+              className="mt-3 uppercase"
+              style={{
+                fontSize: "var(--text-xs)",
+                letterSpacing: "var(--tracking-caps)",
+                color: "var(--accent-label)",
+                fontWeight: 500,
+              }}
+            >
+              Versorgung / Hilfe
+            </p>
+            {renderSources(serviceSources)}
+          </>
+        )}
+        {reviewDate && (
+          <p
+            className="mt-3"
+            style={{
+              fontSize: "var(--text-xs)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            Zuletzt redaktionell geprüft: {reviewDate}
+          </p>
+        )}
+      </aside>
+    );
+  }
 
   return (
     <aside

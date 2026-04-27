@@ -43,17 +43,15 @@ export default function Fachstelle() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
-                <Building2 className="w-6 h-6 text-sage-mid" />
-              </div>
-            </div>
+            <p className="kicker mb-3">Fachstelle · PUK Zürich</p>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
-              Fachstelle Angehörigenarbeit
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-4">
+              Angehörigenarbeit – <em>professionell begleitet</em>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <hr className="rule-narrow mb-6" />
+
+            <p className="lede prose-editorial">
               Ein Angebot der Psychiatrischen Universitätsklinik Zürich für
               Angehörige von Menschen mit psychischen Erkrankungen. Die
               Fachstelle bietet Orientierung, Entlastung und Beratung für
@@ -76,9 +74,11 @@ export default function Fachstelle() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
-                Unser Angebot
+              <p className="kicker mb-2">Leistungen</p>
+              <h2 className="text-xl md:text-2xl font-normal text-foreground mb-3">
+                Unser <em>Angebot</em>
               </h2>
+              <hr className="rule-narrow mb-6" />
 
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Die Fachstelle ist kein Krisendienst und keine Therapie. Sie ist
@@ -146,9 +146,11 @@ export default function Fachstelle() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
-                Kontakt
+              <p className="kicker mb-2">Direkt erreichen</p>
+              <h2 className="text-xl md:text-2xl font-normal text-foreground mb-3">
+                <em>Kontakt</em> aufnehmen
               </h2>
+              <hr className="rule-narrow mb-6" />
 
               <Card className="border-sage-mid/20 bg-sage-wash/30">
                 <CardContent className="p-6 md:p-8">
@@ -243,9 +245,11 @@ export default function Fachstelle() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
-                Einordnung
+              <p className="kicker mb-2">Transparenz</p>
+              <h2 className="text-xl md:text-2xl font-normal text-foreground mb-3">
+                <em>Einordnung</em> dieser Website
               </h2>
+              <hr className="rule-narrow mb-6" />
 
               <Card className="border-border/50 bg-cream">
                 <CardContent className="p-6">
@@ -278,9 +282,11 @@ export default function Fachstelle() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6">
-                Weiterführend
+              <p className="kicker mb-2">Nächste Schritte</p>
+              <h2 className="text-xl md:text-2xl font-normal text-foreground mb-3">
+                Weiterführende <em>Angebote</em>
               </h2>
+              <hr className="rule-narrow mb-6" />
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <Link href="/ueber-uns">

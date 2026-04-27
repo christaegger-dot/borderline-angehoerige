@@ -1,29 +1,43 @@
-import SEO from "@/components/SEO";
+/**
+ * Beratung & Netzwerke (file: Selbsthilfegruppen.tsx, route: /beratung)
+ *
+ * Editorial-Redesign Phase 5 (Page 4/9, Tier 2). Folgt Phase-5-Master-
+ * Brief, Abschnitt «Page 4 — Beratung & Netzwerke».
+ *
+ * Pattern (Brief): Kontaktstellen mit Name, Beschreibung, Telefon, Mail,
+ * Webseite — analog Home-Sektion 6 «Beratungseinladung». H4 als
+ * Stellen-Name, kurzer Body-Absatz, Inline-Links für Tel/Mail/Web.
+ * Telefon- und Mail-Daten ausschliesslich aus `data/kontakte.ts` (im
+ * Original bereits so umgesetzt — kein Hardcoding-Bruch). Gruppierung
+ * nach Kategorie durch plain `<section>`-Wrapper mit Caps-Label und
+ * Display-Serif-H2 (analog Quellen-Pattern, lighter als
+ * EditorialSection — und erlaubt die existierenden Anker-IDs zu
+ * tragen).
+ *
+ * Anker-IDs erhalten: #professionelle-beratung, #angehoerigen-netzwerke,
+ * #selbsthilfegruppen.
+ *
+ * `LastVerifiedBadge` bleibt (Hero + 3 Sub-Block-Instanzen für Stand by
+ * You HelpLine-Zeiten und VASK Treffpunkte) — page-level Meta-Info.
+ *
+ * Sub-Blöcke wie HelpLine-Zeiten und VASK-Treffpunkt-Termine: zu
+ * Hairline-getrennten article-Blöcken mit Caps-Label statt
+ * `bg-background/60 rounded-lg p-4`-Boxen.
+ */
+import {
+  EditorialLayout,
+  EditorialProse,
+  EditorialSection,
+} from "@/components/editorial";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
-import ContentSection from "@/components/ContentSection";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import {
-  Users,
-  ExternalLink,
-  Phone,
-  Mail,
-  MapPin,
-  Heart,
-  Globe,
-  Building2,
-  ArrowRight,
-  Calendar,
-  Clock,
-} from "lucide-react";
-import { Link, useLocation } from "wouter";
-import {
-  kontaktByIdStrict,
   emailByIdStrict,
+  kontaktByIdStrict,
   urlByIdStrict,
 } from "@/data/kontakte";
-import LastVerifiedBadge from "@/components/LastVerifiedBadge";
+import { Link, useLocation } from "wouter";
 
 const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
 const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
@@ -37,10 +51,74 @@ const proMenteUrl = urlByIdStrict("URL_PROMENTE");
 const standByYouUrl = urlByIdStrict("URL_STANDBYYOU");
 const selbsthilfeChUrl = urlByIdStrict("URL_SELBSTHILFE_CH");
 
+const fachstelleLeistungen = [
+  "Vertrauliche Beratung und Entlastungsgespräche (ca. 60 Min.)",
+  "Unterstützung im Umgang mit der Erkrankung im Alltag",
+  "Orientierung zu Hilfs-, Gruppen- und Entlastungsangeboten",
+  "Klärung von Fragen rund um Rolle, Grenzen und Selbstfürsorge",
+  "Kostenlos – Daten werden nicht an die Krankenkasse weitergeleitet",
+] as const;
+
+const standByYouHelpLineZeiten = [
+  ["Montag", "09:30 – 19:00 Uhr"],
+  ["Dienstag", "10:00 – 18:00 Uhr"],
+  ["Mittwoch", "09:00 – 11:00 Uhr"],
+  ["Donnerstag", "10:00 – 12:00 / 16:00 – 18:00 Uhr"],
+] as const;
+
+const vaskZhTreffpunkte = [
+  {
+    titel: "Beratungs-Treffpunkt Zürich",
+    beschreibung: "Offener Treffpunkt für alle Angehörigen und Freunde",
+    termin: "Jeden letzten Dienstag des Monats, 19:00 – 21:00 Uhr",
+  },
+  {
+    titel: "Beratungs-Treffpunkt Winterthur",
+    beschreibung: "Offener Treffpunkt für alle Angehörigen und Freunde",
+    termin: "Jeden ersten Montag des Monats, 19:00 – 21:00 Uhr",
+  },
+] as const;
+
 export default function Selbsthilfegruppen() {
   const [currentPath] = useLocation();
-  // Both /beratung and /selbsthilfegruppen render this page; use one canonical
   const canonicalPath = "/beratung";
+
+  const stelleTitleStyle = {
+    fontFamily: "var(--font-display)",
+    fontSize: "var(--text-lg)",
+    fontWeight: "var(--weight-display)",
+    lineHeight: "var(--lh-snug)",
+    color: "var(--fg-primary)",
+    letterSpacing: "var(--tracking-tight)",
+  };
+
+  const bodyStyle = {
+    fontSize: "var(--text-md)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const labelStyle = {
+    fontSize: "var(--text-xs)",
+    letterSpacing: "var(--tracking-caps)",
+    color: "var(--fg-tertiary)",
+    fontWeight: 500,
+  } as const;
+
+  const categoryHeadingStyle = {
+    fontFamily: "var(--font-display)",
+    fontSize: "var(--text-2xl)",
+    fontWeight: "var(--weight-display)",
+    color: "var(--fg-primary)",
+    letterSpacing: "var(--tracking-tight)",
+    lineHeight: "var(--lh-snug)",
+  };
+
+  const subBlockTitleStyle = {
+    fontSize: "var(--text-md)",
+    fontWeight: 600,
+    color: "var(--fg-primary)",
+  };
 
   return (
     <Layout>
@@ -50,470 +128,441 @@ export default function Selbsthilfegruppen() {
         path={currentPath}
         canonicalPath={canonicalPath}
       />
-      {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
+
+      <EditorialLayout width="narrow">
+        {/* ── Hero ── */}
+        <header className="pb-16 pt-16 md:pb-24 md:pt-24">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-mid flex items-center justify-center">
-                <Users className="w-6 h-6 text-white" />
-              </div>
-            </div>
+            Beratung &amp; Netzwerke
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            Beratung &amp; <em>Netzwerke</em>
+          </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Wenn Belastung, Unsicherheit oder Erschöpfung zu gross werden, kann
+            es entlastend sein, nicht nur im eigenen System nach Lösungen zu
+            suchen. Hier finden Sie Beratung, Selbsthilfe und weitere
+            Anlaufstellen für Angehörige in der Schweiz.
+          </p>
+          <LastVerifiedBadge date="24.03.2026" className="mt-6" />
+        </header>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
-              Beratung & Netzwerke
-            </h1>
+        {/* ── Kategorie-Sprungleiste ── */}
+        <nav
+          aria-label="Kategorie-Sprungleiste"
+          className="border-t border-b py-4"
+          style={{ borderColor: "var(--rule-color)" }}
+        >
+          <p
+            className="flex flex-wrap gap-x-5 gap-y-2 uppercase"
+            style={labelStyle}
+          >
+            <a href="#professionelle-beratung" className="editorial-link">
+              Professionelle Beratung
+            </a>
+            <a href="#angehoerigen-netzwerke" className="editorial-link">
+              Angehörigen-Netzwerke
+            </a>
+            <a href="#selbsthilfegruppen" className="editorial-link">
+              Selbsthilfegruppen finden
+            </a>
+          </p>
+        </nav>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Wenn Belastung, Unsicherheit oder Erschöpfung zu gross werden,
-              kann es entlastend sein, nicht nur im eigenen System nach Lösungen
-              zu suchen. Hier finden Sie Beratung, Selbsthilfe und weitere
-              Anlaufstellen für Angehörige in der Schweiz.
+        {/* ── Professionelle Beratung ── */}
+        <section
+          id="professionelle-beratung"
+          className="mt-16 space-y-8 md:mt-[var(--space-8)]"
+        >
+          <div className="space-y-2">
+            <p className="uppercase" style={labelStyle}>
+              Kategorie
             </p>
-            <div className="mt-5">
-              <LastVerifiedBadge date="24.03.2026" />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Content */}
-      <section className="py-8 md:py-12">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            {/* ═══ Professionelle Beratung ═══ */}
-            <ContentSection
-              title="Professionelle Beratung"
-              icon={<Building2 className="w-7 h-7 text-sage-darker" />}
-              id="professionelle-beratung"
-              defaultOpen={true}
-              preview="Anlaufstellen, die Angehörige fachlich begleiten, entlasten und bei der Einordnung unterstützen."
-            >
-              <div className="space-y-4">
-                {/* Fachstelle Angehörigenarbeit PUK */}
-                <Card className="border-sage-darker/20 bg-sage-wash/40 overflow-hidden">
-                  <CardContent className="p-6 md:p-8">
-                    <h3 className="font-semibold text-foreground text-lg mb-2">
-                      Fachstelle Angehörigenarbeit (PUK Zürich)
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-5">
-                      Die Fachstelle an der Psychiatrischen Universitätsklinik
-                      Zürich bietet kostenlose, vertrauliche{" "}
-                      <strong>Einzelberatung und Entlastungsgespräche</strong>{" "}
-                      für Angehörige von psychisch erkrankten Menschen –
-                      unabhängig davon, ob die betroffene Person an der PUK
-                      behandelt wird.
-                    </p>
-
-                    <div className="bg-background/60 rounded-lg p-4 mb-5">
-                      <h4 className="font-semibold text-foreground text-sm mb-2">
-                        Was bietet die Fachstelle?
-                      </h4>
-                      <ul className="space-y-1 text-muted-foreground text-sm">
-                        <li className="flex items-start gap-2">
-                          <span className="text-sage-dark">•</span>
-                          Vertrauliche Beratung und Entlastungsgespräche (ca. 60
-                          Min.)
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-sage-mid">•</span>
-                          Unterstützung im Umgang mit der Erkrankung im Alltag
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-sage-mid">•</span>
-                          Orientierung zu Hilfs-, Gruppen- und
-                          Entlastungsangeboten
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-sage-mid">•</span>
-                          Klärung von Fragen rund um Rolle, Grenzen und
-                          Selbstfürsorge
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-sage-mid">•</span>
-                          Kostenlos – Daten werden nicht an die Krankenkasse
-                          weitergeleitet
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-4 mb-5">
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            Telefon
-                          </p>
-                          <a
-                            href={`tel:${fachstelleTel.tel}`}
-                            className="font-medium text-foreground hover:text-sage-mid"
-                          >
-                            {fachstelleTel.nummer}
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Mail className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            E-Mail
-                          </p>
-                          <a
-                            href={`mailto:${fachstelleEmail.adresse}`}
-                            className="font-medium text-foreground hover:text-sage-mid"
-                          >
-                            {fachstelleEmail.adresse}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-4 mb-5">
-                      <div className="flex items-center gap-3">
-                        <MapPin className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <div>
-                          <p className="text-foreground text-sm">
-                            Lenggstrasse 31, Postfach
-                          </p>
-                          <p className="text-foreground text-sm">8032 Zürich</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Globe className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            Website
-                          </p>
-                          <a
-                            href={pukUrl.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-medium text-foreground hover:text-sage-mid"
-                          >
-                            {pukUrl.url.replace("https://", "")}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <Link href="/fachstelle">
-                      <span className="inline-flex items-center gap-2 text-sm font-medium text-sage-mid hover:text-sage-dark transition-colors cursor-pointer">
-                        Mehr über die Fachstelle erfahren
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </Link>
-                  </CardContent>
-                </Card>
-
-                {/* Pro Mente Sana */}
-                <Card className="border-border/50">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-foreground text-lg mb-2">
-                      Pro Mente Sana
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      Die Schweizerische Stiftung Pro Mente Sana bietet
-                      psychosoziale und juristische Beratung für Betroffene und
-                      Angehörige. Kostenlose Telefonberatung zu Fragen rund um
-                      psychische Gesundheit.
-                    </p>
-                    <div className="flex flex-wrap items-center gap-4 text-sm">
-                      <a
-                        href={`tel:${proMente.tel}`}
-                        className="inline-flex items-center gap-2 text-sage-mid hover:underline font-medium"
-                      >
-                        <Phone className="w-4 h-4" />
-                        {proMente.nummer} (Normaltarif)
-                      </a>
-                      <a
-                        href={proMenteUrl.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
-                      >
-                        <Globe className="w-4 h-4" />
-                        {proMenteUrl.url.replace("https://www.", "www.")}
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            {/* ═══ Angehörigen-Netzwerke ═══ */}
-            <ContentSection
-              title="Angehörigen-Netzwerke"
-              icon={<Heart className="w-7 h-7 text-sage-mid" />}
-              id="angehoerigen-netzwerke"
-              preview="Organisationen und Netzwerke, die Austausch, Orientierung und Entlastung für Angehörige ermöglichen."
-            >
-              <div className="space-y-4">
-                {/* Stand by You Schweiz */}
-                <Card className="border-sage-mid/30 bg-sage-wash/30 overflow-hidden">
-                  <CardContent className="p-6 md:p-8">
-                    <h3 className="font-semibold text-foreground text-lg mb-1">
-                      Stand by You Schweiz
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Ehemals VASK Schweiz – Dachverband der Vereinigungen von
-                      Angehörigen psychisch Erkrankter. Seit Januar 2024 unter
-                      neuem Namen.
-                    </p>
-
-                    <p className="text-muted-foreground leading-relaxed mb-5">
-                      Stand by You macht Angehörige und Vertraute von Menschen
-                      mit psychischen Erkrankungen in der Schweiz sicht-, hör-
-                      und spürbar. Die Organisation bietet eine kostenlose
-                      HelpLine, die von Angehörigen für Angehörige betrieben
-                      wird.
-                    </p>
-
-                    <div className="grid sm:grid-cols-2 gap-4 mb-5">
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            HelpLine (kostenlos)
-                          </p>
-                          <a
-                            href={`tel:${standByYouTel.tel}`}
-                            className="font-medium text-foreground hover:text-sage-mid"
-                          >
-                            {standByYouTel.nummer}
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Globe className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            Website
-                          </p>
-                          <a
-                            href={standByYouUrl.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-medium text-foreground hover:text-sage-mid"
-                          >
-                            {standByYouUrl.url.replace("https://www.", "www.")}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="bg-background/50 rounded-lg p-4">
-                      <h4 className="font-semibold text-foreground text-sm mb-2">
-                        HelpLine-Zeiten:
-                      </h4>
-                      <LastVerifiedBadge date="24.03.2026" className="mb-3" />
-                      <div className="grid grid-cols-2 gap-1 text-sm text-muted-foreground">
-                        <span>Montag</span>
-                        <span>09:30 – 19:00 Uhr</span>
-                        <span>Dienstag</span>
-                        <span>10:00 – 18:00 Uhr</span>
-                        <span>Mittwoch</span>
-                        <span>09:00 – 11:00 Uhr</span>
-                        <span>Donnerstag</span>
-                        <span>10:00 – 12:00 / 16:00 – 18:00 Uhr</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* VASK Zürich */}
-                <Card className="border-border/50">
-                  <CardContent className="p-6 md:p-8">
-                    <h3 className="font-semibold text-foreground text-lg mb-1">
-                      VASK Zürich
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Kantonale Vereinigung der Angehörigen von psychisch
-                      Kranken – mit regelmässigen Beratungs-Treffpunkten in
-                      Zürich und Winterthur.
-                    </p>
-
-                    <div className="space-y-4 mb-5">
-                      {/* Treffpunkt Zürich */}
-                      <div className="bg-background/60 rounded-lg p-4">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Calendar className="w-4 h-4 text-sage-mid" />
-                          <h4 className="font-semibold text-foreground text-sm">
-                            Beratungs-Treffpunkt Zürich
-                          </h4>
-                        </div>
-                        <LastVerifiedBadge date="24.03.2026" className="mb-2" />
-                        <p className="text-muted-foreground text-sm">
-                          Offener Treffpunkt für alle Angehörigen und Freunde
-                        </p>
-                        <div className="flex items-center gap-2 mt-2 text-sm text-foreground">
-                          <Clock className="w-4 h-4 text-muted-foreground" />
-                          Jeden letzten Dienstag des Monats, 19:00 – 21:00 Uhr
-                        </div>
-                      </div>
-
-                      {/* Treffpunkt Winterthur */}
-                      <div className="bg-background/60 rounded-lg p-4">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Calendar className="w-4 h-4 text-sage-mid" />
-                          <h4 className="font-semibold text-foreground text-sm">
-                            Beratungs-Treffpunkt Winterthur
-                          </h4>
-                        </div>
-                        <LastVerifiedBadge date="24.03.2026" className="mb-2" />
-                        <p className="text-muted-foreground text-sm">
-                          Offener Treffpunkt für alle Angehörigen und Freunde
-                        </p>
-                        <div className="flex items-center gap-2 mt-2 text-sm text-foreground">
-                          <Clock className="w-4 h-4 text-muted-foreground" />
-                          Jeden ersten Montag des Monats, 19:00 – 21:00 Uhr
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                      <div className="flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            Beratungstelefon
-                          </p>
-                          <a
-                            href={`tel:${vaskZhTel.tel}`}
-                            className="font-medium text-foreground hover:text-sage-mid"
-                          >
-                            {vaskZhTel.nummer}
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <MapPin className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <div>
-                          <p className="text-foreground text-sm">
-                            Langstrasse 149
-                          </p>
-                          <p className="text-foreground text-sm">8004 Zürich</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-wrap items-center gap-4 text-sm">
-                      <a
-                        href={`mailto:${vaskZhEmail.adresse}`}
-                        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
-                      >
-                        <Mail className="w-4 h-4" />
-                        {vaskZhEmail.adresse}
-                      </a>
-                      <a
-                        href={vaskZhUrl.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
-                      >
-                        <Globe className="w-4 h-4" />
-                        {vaskZhUrl.url.replace("https://www.", "www.")}
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            {/* ═══ Selbsthilfegruppen finden ═══ */}
-            <ContentSection
-              title="Selbsthilfegruppen finden"
-              icon={<MapPin className="w-7 h-7 text-sage-mid" />}
-              id="selbsthilfegruppen"
-              preview="Wenn Sie mit anderen Angehörigen in Austausch kommen möchten, ist Selbsthilfe Schweiz die wichtigste Vermittlungsstelle."
-            >
-              <Card className="border-sage-darker/20 bg-sage-wash/40 overflow-hidden">
-                <CardContent className="p-6 md:p-8">
-                  <h3 className="font-semibold text-foreground text-lg mb-3">
-                    Selbsthilfe Schweiz
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-5">
-                    Selbsthilfegruppen für Angehörige von Menschen mit
-                    Borderline finden Sie über
-                    <strong> Selbsthilfe Schweiz</strong> – die zentrale
-                    Vermittlungsstelle für Selbsthilfegruppen in der ganzen
-                    Schweiz. Es gibt Gruppen in mehreren Kantonen, sowohl vor
-                    Ort als auch online.
-                  </p>
-
-                  <a
-                    href={selbsthilfeChUrl.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="outline" className="gap-2">
-                      <Globe className="w-4 h-4" />
-                      {selbsthilfeChUrl.url.replace("https://www.", "www.")}
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </Button>
-                  </a>
-                </CardContent>
-              </Card>
-            </ContentSection>
-
-            {/* ═══ Nächste Schritte (Abschluss-Card) ═══ */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <Card className="bg-sage-wash/60 border-sage-mid/30">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-3">
-                    Nächste Schritte
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Nicht jede Unterstützung passt in jeder Lage. Diese drei
-                    Wege sind oft ein sinnvoller nächster Schritt, wenn Sie
-                    gerade Orientierung oder Entlastung suchen:
-                  </p>
-                  <div className="space-y-3">
-                    <Link href="/fachstelle">
-                      <span className="flex items-center gap-3 p-3 rounded-lg bg-background/60 hover:bg-background transition-colors cursor-pointer">
-                        <Building2 className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <span className="text-sm text-foreground">
-                          Ein erstes Beratungsgespräch bei der Fachstelle
-                          anfragen
-                        </span>
-                        <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto flex-shrink-0" />
-                      </span>
-                    </Link>
-                    <Link href="/selbstfuersorge">
-                      <span className="flex items-center gap-3 p-3 rounded-lg bg-background/60 hover:bg-background transition-colors cursor-pointer">
-                        <Heart className="w-5 h-5 text-sage-mid flex-shrink-0" />
-                        <span className="text-sm text-foreground">
-                          Eigene Überlastung und Selbstfürsorge in den Blick
-                          nehmen
-                        </span>
-                        <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto flex-shrink-0" />
-                      </span>
-                    </Link>
-                    <Link href="/kommunizieren">
-                      <span className="flex items-center gap-3 p-3 rounded-lg bg-background/60 hover:bg-background transition-colors cursor-pointer">
-                        <Users className="w-5 h-5 text-slate-blue flex-shrink-0" />
-                        <span className="text-sm text-foreground">
-                          Kommunikation in belasteten Situationen gezielter
-                          einordnen
-                        </span>
-                        <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto flex-shrink-0" />
-                      </span>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+            <h2 style={categoryHeadingStyle}>Professionelle Beratung</h2>
+            <p style={bodyStyle}>
+              Anlaufstellen, die Angehörige fachlich begleiten, entlasten und
+              bei der Einordnung unterstützen.
+            </p>
           </div>
-        </div>
-      </section>
+
+          {/* Fachstelle Angehörigenarbeit PUK */}
+          <article
+            className="border-t pt-8 space-y-4"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <h3 style={stelleTitleStyle}>
+              Fachstelle Angehörigenarbeit (PUK Zürich)
+            </h3>
+            <p style={bodyStyle}>
+              Die Fachstelle an der Psychiatrischen Universitätsklinik Zürich
+              bietet kostenlose, vertrauliche{" "}
+              <strong>Einzelberatung und Entlastungsgespräche</strong> für
+              Angehörige von psychisch erkrankten Menschen – unabhängig davon,
+              ob die betroffene Person an der PUK behandelt wird.
+            </p>
+
+            <div className="space-y-2">
+              <p className="uppercase" style={labelStyle}>
+                Was bietet die Fachstelle?
+              </p>
+              <ul
+                className="ml-5 list-disc space-y-1"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-secondary)",
+                }}
+              >
+                {fachstelleLeistungen.map(item => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <dl className="grid gap-y-3 sm:grid-cols-[max-content_1fr] sm:gap-x-8">
+              <dt className="uppercase" style={labelStyle}>
+                Telefon
+              </dt>
+              <dd>
+                <a
+                  href={`tel:${fachstelleTel.tel}`}
+                  className="editorial-link"
+                  style={{ fontSize: "var(--text-md)" }}
+                >
+                  {fachstelleTel.nummer}
+                </a>
+              </dd>
+
+              <dt className="uppercase" style={labelStyle}>
+                E-Mail
+              </dt>
+              <dd>
+                <a
+                  href={`mailto:${fachstelleEmail.adresse}`}
+                  className="editorial-link"
+                  style={{ fontSize: "var(--text-md)" }}
+                >
+                  {fachstelleEmail.adresse}
+                </a>
+              </dd>
+
+              <dt className="uppercase" style={labelStyle}>
+                Adresse
+              </dt>
+              <dd style={bodyStyle}>
+                Lenggstrasse 31, Postfach
+                <br />
+                8032 Zürich
+              </dd>
+
+              <dt className="uppercase" style={labelStyle}>
+                Web
+              </dt>
+              <dd>
+                <a
+                  href={pukUrl.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="editorial-link"
+                  style={{ fontSize: "var(--text-md)" }}
+                >
+                  {pukUrl.url.replace("https://", "")}
+                </a>
+              </dd>
+            </dl>
+
+            <p style={{ fontSize: "var(--text-sm)" }}>
+              <Link href="/fachstelle" className="editorial-link">
+                Mehr über die Fachstelle erfahren
+              </Link>
+            </p>
+          </article>
+
+          {/* Pro Mente Sana */}
+          <article
+            className="border-t pt-8 space-y-4"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <h3 style={stelleTitleStyle}>Pro Mente Sana</h3>
+            <p style={bodyStyle}>
+              Die Schweizerische Stiftung Pro Mente Sana bietet psychosoziale
+              und juristische Beratung für Betroffene und Angehörige. Kostenlose
+              Telefonberatung zu Fragen rund um psychische Gesundheit.
+            </p>
+            <p
+              className="flex flex-wrap items-baseline gap-x-6 gap-y-1"
+              style={{ fontSize: "var(--text-md)" }}
+            >
+              <a href={`tel:${proMente.tel}`} className="editorial-link">
+                {proMente.nummer} (Normaltarif)
+              </a>
+              <a
+                href={proMenteUrl.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="editorial-link"
+              >
+                {proMenteUrl.url.replace("https://www.", "www.")}
+              </a>
+            </p>
+          </article>
+        </section>
+
+        {/* ── Angehörigen-Netzwerke ── */}
+        <section
+          id="angehoerigen-netzwerke"
+          className="mt-16 space-y-8 md:mt-[var(--space-8)]"
+        >
+          <div className="space-y-2">
+            <p className="uppercase" style={labelStyle}>
+              Kategorie
+            </p>
+            <h2 style={categoryHeadingStyle}>Angehörigen-Netzwerke</h2>
+            <p style={bodyStyle}>
+              Organisationen und Netzwerke, die Austausch, Orientierung und
+              Entlastung für Angehörige ermöglichen.
+            </p>
+          </div>
+
+          {/* Stand by You Schweiz */}
+          <article
+            className="border-t pt-8 space-y-4"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <h3 style={stelleTitleStyle}>Stand by You Schweiz</h3>
+            <p style={bodyStyle}>
+              Ehemals VASK Schweiz – Dachverband der Vereinigungen von
+              Angehörigen psychisch Erkrankter. Seit Januar 2024 unter neuem
+              Namen.
+            </p>
+            <p style={bodyStyle}>
+              Stand by You macht Angehörige und Vertraute von Menschen mit
+              psychischen Erkrankungen in der Schweiz sicht-, hör- und spürbar.
+              Die Organisation bietet eine kostenlose HelpLine, die von
+              Angehörigen für Angehörige betrieben wird.
+            </p>
+            <dl className="grid gap-y-3 sm:grid-cols-[max-content_1fr] sm:gap-x-8">
+              <dt className="uppercase" style={labelStyle}>
+                HelpLine (kostenlos)
+              </dt>
+              <dd>
+                <a
+                  href={`tel:${standByYouTel.tel}`}
+                  className="editorial-link"
+                  style={{ fontSize: "var(--text-md)" }}
+                >
+                  {standByYouTel.nummer}
+                </a>
+              </dd>
+
+              <dt className="uppercase" style={labelStyle}>
+                Web
+              </dt>
+              <dd>
+                <a
+                  href={standByYouUrl.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="editorial-link"
+                  style={{ fontSize: "var(--text-md)" }}
+                >
+                  {standByYouUrl.url.replace("https://www.", "www.")}
+                </a>
+              </dd>
+            </dl>
+            <div
+              className="border-t pt-4 space-y-3"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <p style={subBlockTitleStyle}>HelpLine-Zeiten</p>
+              <LastVerifiedBadge date="24.03.2026" />
+              <dl
+                className="grid grid-cols-[max-content_1fr] gap-x-6 gap-y-1"
+                style={bodyStyle}
+              >
+                {standByYouHelpLineZeiten.map(([tag, zeit]) => (
+                  <div key={tag} className="contents">
+                    <dt>{tag}</dt>
+                    <dd>{zeit}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </article>
+
+          {/* VASK Zürich */}
+          <article
+            className="border-t pt-8 space-y-4"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <h3 style={stelleTitleStyle}>VASK Zürich</h3>
+            <p style={bodyStyle}>
+              Kantonale Vereinigung der Angehörigen von psychisch Kranken – mit
+              regelmässigen Beratungs-Treffpunkten in Zürich und Winterthur.
+            </p>
+            <div
+              className="border-t pt-4 space-y-6"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              {vaskZhTreffpunkte.map(treff => (
+                <div key={treff.titel} className="space-y-1">
+                  <p style={subBlockTitleStyle}>{treff.titel}</p>
+                  <LastVerifiedBadge date="24.03.2026" />
+                  <p style={bodyStyle}>{treff.beschreibung}</p>
+                  <p style={bodyStyle}>
+                    <span className="uppercase" style={labelStyle}>
+                      Termin:
+                    </span>{" "}
+                    {treff.termin}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <dl className="grid gap-y-3 sm:grid-cols-[max-content_1fr] sm:gap-x-8">
+              <dt className="uppercase" style={labelStyle}>
+                Beratungstelefon
+              </dt>
+              <dd>
+                <a
+                  href={`tel:${vaskZhTel.tel}`}
+                  className="editorial-link"
+                  style={{ fontSize: "var(--text-md)" }}
+                >
+                  {vaskZhTel.nummer}
+                </a>
+              </dd>
+
+              <dt className="uppercase" style={labelStyle}>
+                E-Mail
+              </dt>
+              <dd>
+                <a
+                  href={`mailto:${vaskZhEmail.adresse}`}
+                  className="editorial-link"
+                  style={{ fontSize: "var(--text-md)" }}
+                >
+                  {vaskZhEmail.adresse}
+                </a>
+              </dd>
+
+              <dt className="uppercase" style={labelStyle}>
+                Adresse
+              </dt>
+              <dd style={bodyStyle}>
+                Langstrasse 149
+                <br />
+                8004 Zürich
+              </dd>
+
+              <dt className="uppercase" style={labelStyle}>
+                Web
+              </dt>
+              <dd>
+                <a
+                  href={vaskZhUrl.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="editorial-link"
+                  style={{ fontSize: "var(--text-md)" }}
+                >
+                  {vaskZhUrl.url.replace("https://www.", "www.")}
+                </a>
+              </dd>
+            </dl>
+          </article>
+        </section>
+
+        {/* ── Selbsthilfegruppen finden ── */}
+        <section
+          id="selbsthilfegruppen"
+          className="mt-16 space-y-8 md:mt-[var(--space-8)]"
+        >
+          <div className="space-y-2">
+            <p className="uppercase" style={labelStyle}>
+              Kategorie
+            </p>
+            <h2 style={categoryHeadingStyle}>Selbsthilfegruppen finden</h2>
+            <p style={bodyStyle}>
+              Wenn Sie mit anderen Angehörigen in Austausch kommen möchten, ist
+              Selbsthilfe Schweiz die wichtigste Vermittlungsstelle.
+            </p>
+          </div>
+
+          <article
+            className="border-t pt-8 space-y-4"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <h3 style={stelleTitleStyle}>Selbsthilfe Schweiz</h3>
+            <p style={bodyStyle}>
+              Selbsthilfegruppen für Angehörige von Menschen mit Borderline
+              finden Sie über <strong>Selbsthilfe Schweiz</strong> – die
+              zentrale Vermittlungsstelle für Selbsthilfegruppen in der ganzen
+              Schweiz. Es gibt Gruppen in mehreren Kantonen, sowohl vor Ort als
+              auch online.
+            </p>
+            <p style={{ fontSize: "var(--text-md)" }}>
+              <a
+                href={selbsthilfeChUrl.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="editorial-link"
+              >
+                {selbsthilfeChUrl.url.replace("https://www.", "www.")}
+              </a>
+            </p>
+          </article>
+        </section>
+
+        {/* ── Nächste Schritte ── */}
+        <EditorialSection label="Weiter" title="Nächste Schritte" rule>
+          <EditorialProse>
+            <p>
+              Nicht jede Unterstützung passt in jeder Lage. Diese drei Wege sind
+              oft ein sinnvoller nächster Schritt, wenn Sie gerade Orientierung
+              oder Entlastung suchen:
+            </p>
+            <ul className="ml-6 list-disc space-y-2">
+              <li>
+                <Link href="/fachstelle" className="editorial-link">
+                  Ein erstes Beratungsgespräch bei der Fachstelle anfragen
+                </Link>
+              </li>
+              <li>
+                <Link href="/selbstfuersorge" className="editorial-link">
+                  Eigene Überlastung und Selbstfürsorge in den Blick nehmen
+                </Link>
+              </li>
+              <li>
+                <Link href="/kommunizieren" className="editorial-link">
+                  Kommunikation in belasteten Situationen gezielter einordnen
+                </Link>
+              </li>
+            </ul>
+          </EditorialProse>
+        </EditorialSection>
+      </EditorialLayout>
     </Layout>
   );
 }

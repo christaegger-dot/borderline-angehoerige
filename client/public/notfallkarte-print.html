@@ -516,11 +516,17 @@
           <div class="field-grid">
             <div>
               <div class="field-label">Name</div>
-              <input class="field-line" type="text" placeholder="Name" />
+              <input
+                id="contact-0-name"
+                class="field-line"
+                type="text"
+                placeholder="Name"
+              />
             </div>
             <div>
               <div class="field-label">Telefon</div>
               <input
+                id="contact-0-phone"
                 class="field-line"
                 type="tel"
                 placeholder="Telefonnummer"
@@ -529,6 +535,7 @@
             <div>
               <div class="field-label">Beziehung</div>
               <input
+                id="contact-0-relation"
                 class="field-line"
                 type="text"
                 placeholder="z.B. Therapeut:in"
@@ -537,10 +544,16 @@
           </div>
           <div class="field-grid">
             <div>
-              <input class="field-line" type="text" placeholder="Name" />
+              <input
+                id="contact-1-name"
+                class="field-line"
+                type="text"
+                placeholder="Name"
+              />
             </div>
             <div>
               <input
+                id="contact-1-phone"
                 class="field-line"
                 type="tel"
                 placeholder="Telefonnummer"
@@ -548,6 +561,7 @@
             </div>
             <div>
               <input
+                id="contact-1-relation"
                 class="field-line"
                 type="text"
                 placeholder="z.B. Psychiater:in"
@@ -556,10 +570,16 @@
           </div>
           <div class="field-grid">
             <div>
-              <input class="field-line" type="text" placeholder="Name" />
+              <input
+                id="contact-2-name"
+                class="field-line"
+                type="text"
+                placeholder="Name"
+              />
             </div>
             <div>
               <input
+                id="contact-2-phone"
                 class="field-line"
                 type="tel"
                 placeholder="Telefonnummer"
@@ -567,6 +587,7 @@
             </div>
             <div>
               <input
+                id="contact-2-relation"
                 class="field-line"
                 type="text"
                 placeholder="z.B. Vertrauensperson"
@@ -600,6 +621,7 @@
           <div class="strategy-row">
             <div class="strategy-num">1</div>
             <input
+              id="strategy-0"
               class="strategy-text"
               type="text"
               value="Langsam ein- und ausatmen (4-7-8)"
@@ -608,6 +630,7 @@
           <div class="strategy-row">
             <div class="strategy-num">2</div>
             <input
+              id="strategy-1"
               class="strategy-text"
               type="text"
               value="Beide Füsse bewusst auf den Boden stellen"
@@ -616,6 +639,7 @@
           <div class="strategy-row">
             <div class="strategy-num">3</div>
             <input
+              id="strategy-2"
               class="strategy-text"
               type="text"
               value="Kaltes Wasser über die Handgelenke laufen lassen"
@@ -624,6 +648,7 @@
           <div class="strategy-row">
             <div class="strategy-num">4</div>
             <input
+              id="strategy-3"
               class="strategy-text"
               type="text"
               placeholder="Eigene Strategie eingeben…"
@@ -651,6 +676,7 @@
         </div>
         <div class="block-body">
           <textarea
+            id="notes"
             class="notes-area"
             placeholder="z.B. Medikamente, Allergien, wichtige Hinweise für Helfer:innen…"
             rows="3"
@@ -667,12 +693,73 @@
     <!-- /page -->
 
     <script>
-      // Automatisch drucken wenn ?print=1 in der URL
-      if (new URLSearchParams(window.location.search).get("print") === "1") {
-        window.addEventListener("load", () =>
-          setTimeout(() => window.print(), 300)
-        );
-      }
+      (function () {
+        // ── Benutzerdaten aus sessionStorage laden ──────────────────────────
+        // Die React-App schreibt die Daten unter "notfallkarte-print-data"
+        // in sessionStorage, bevor sie dieses Fenster öffnet.
+        try {
+          var raw = sessionStorage.getItem("notfallkarte-print-data");
+          if (raw) {
+            var d = JSON.parse(raw);
+
+            // Kontaktpersonen (bis zu 3 Zeilen)
+            var contacts = d.personalContacts || [];
+            for (var i = 0; i < 3; i++) {
+              var c = contacts[i];
+              var setField = function (id, val) {
+                var el = document.getElementById(id);
+                if (el && val) {
+                  el.value = val;
+                  el.removeAttribute("placeholder");
+                }
+              };
+              if (c) {
+                setField("contact-" + i + "-name", c.name);
+                setField("contact-" + i + "-phone", c.phone);
+                setField("contact-" + i + "-relation", c.relation);
+              }
+            }
+
+            // Beruhigungsstrategien (bis zu 4 Slots)
+            var strategies = d.calmingStrategies || [];
+            for (var j = 0; j < 4; j++) {
+              var s = strategies[j];
+              var sEl = document.getElementById("strategy-" + j);
+              if (sEl) {
+                if (s && s.text) {
+                  sEl.value = s.text;
+                  sEl.removeAttribute("placeholder");
+                } else if (j >= strategies.length) {
+                  // Slot ist leer – Standardwert entfernen
+                  sEl.value = "";
+                  sEl.placeholder = "Eigene Strategie eingeben\u2026";
+                }
+              }
+            }
+
+            // Persönliche Notizen
+            var notesEl = document.getElementById("notes");
+            if (notesEl && d.notes) {
+              notesEl.value = d.notes;
+              notesEl.removeAttribute("placeholder");
+            }
+
+            // sessionStorage-Eintrag nach Befüllung löschen
+            sessionStorage.removeItem("notfallkarte-print-data");
+          }
+        } catch (e) {
+          // Fehler ignorieren – Felder bleiben leer / mit Platzhaltern
+        }
+
+        // ── Automatisch drucken wenn ?print=1 in der URL ────────────────────
+        if (new URLSearchParams(window.location.search).get("print") === "1") {
+          window.addEventListener("load", function () {
+            setTimeout(function () {
+              window.print();
+            }, 300);
+          });
+        }
+      })();
     </script>
   </body>
 </html>

@@ -200,8 +200,14 @@ export default function Notfallkarte() {
   }, [data]);
 
   const handlePrint = useCallback(() => {
+    // Daten in sessionStorage schreiben, damit die Print-Seite sie lesen kann
+    try {
+      sessionStorage.setItem("notfallkarte-print-data", JSON.stringify(data));
+    } catch {
+      /* ignore – Print-Seite fällt auf leere Felder zurück */
+    }
     window.open("/notfallkarte-print.html", "_blank");
-  }, []);
+  }, [data]);
 
   const addContact = useCallback(() => {
     setData(prev => ({
@@ -286,9 +292,7 @@ export default function Notfallkarte() {
                 gesperrter Speicher. Bitte{" "}
                 <button
                   type="button"
-                  onClick={() =>
-                    window.open("/notfallkarte-print.html", "_blank")
-                  }
+                  onClick={handlePrint}
                   className="underline font-semibold hover:no-underline"
                 >
                   jetzt drucken

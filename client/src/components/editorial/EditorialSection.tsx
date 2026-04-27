@@ -17,7 +17,7 @@ export function EditorialSection({
   rule = false,
 }: EditorialSectionProps) {
   return (
-    <section className="mt-[var(--space-8)] space-y-[var(--space-4)] first:mt-0">
+    <section className="mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]">
       {rule && (
         <div
           aria-hidden="true"

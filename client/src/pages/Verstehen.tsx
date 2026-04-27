@@ -25,6 +25,7 @@
  * VerstehenDiagnosticSection / VerstehenMaterialsSection sind weiterhin
  * Card-basiert. Migration der Sub-Sektionen folgt im nächsten Schritt.
  */
+import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   EditorialLayout,
@@ -74,7 +75,22 @@ import { Link } from "wouter";
  * scannbarer für Eilige.
  */
 
+/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
+function openSection(sectionId: string) {
+  window.dispatchEvent(
+    new CustomEvent("open-section", { detail: { sectionId } })
+  );
+}
+
 export default function Verstehen() {
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+      e.preventDefault();
+      openSection(sectionId);
+    },
+    []
+  );
+
   return (
     <Layout>
       <SEO
@@ -155,15 +171,27 @@ export default function Verstehen() {
             </p>
             <p>
               Sie können auch direkt zu{" "}
-              <a href="#angehoerige-erleben" className="editorial-link">
+              <a
+                href="#angehoerige-erleben"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "angehoerige-erleben")}
+              >
                 Was Angehörige oft erleben
               </a>
               ,{" "}
-              <a href="#was-ist-borderline" className="editorial-link">
+              <a
+                href="#was-ist-borderline"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "was-ist-borderline")}
+              >
                 Was Borderline im Kern so belastend macht
               </a>{" "}
               oder{" "}
-              <a href="#muster" className="editorial-link">
+              <a
+                href="#muster"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "muster")}
+              >
                 Typische Muster
               </a>{" "}
               springen.

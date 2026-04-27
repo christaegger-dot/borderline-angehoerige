@@ -41,6 +41,8 @@ const Wegweiser = lazy(() => import("@/pages/Wegweiser"));
 const Uebungsszenarien = lazy(() => import("@/pages/Uebungsszenarien"));
 const Quellen = lazy(() => import("@/pages/Quellen"));
 const Barrierefreiheit = lazy(() => import("@/pages/Barrierefreiheit"));
+// Phase 2 Editorial-Primitive Showcase — wird in Phase 7 entfernt
+const EditorialTest = lazy(() => import("@/pages/EditorialTest"));
 
 export const routes: AppRoute[] = [
   { path: "/", component: Home },
@@ -106,4 +108,6 @@ export const routes: AppRoute[] = [
     component: Barrierefreiheit,
     requiresMotion: true,
   },
+  // Phase 2 Editorial-Primitive Showcase — wird in Phase 7 entfernt
+  { path: "/editorial-test", component: EditorialTest },
 ];

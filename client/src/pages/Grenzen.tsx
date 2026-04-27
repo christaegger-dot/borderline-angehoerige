@@ -1,94 +1,152 @@
-import SEO from "@/components/SEO";
+/**
+ * Grenzen — Editorial-Redesign Phase 4 Welle 2 (Page 2/10)
+ *
+ * Migriert nach Verstehen/Kommunizieren-Pattern (Welle 1+2). Inhalt
+ * unverändert ausser Hero-Lesezeit, Intro-Variante-A-Verbindungssatz
+ * und konsolidierte Schluss-Übergänge.
+ *
+ * Sicherheits-Hervorhebung (Brief 27.04.): Die Sektion «Wenn der
+ * Angehörige körperlich übergriffig wird» behält ihre farbige Alert-
+ * Hervorhebung und numerierte Schritt-Markierung — kein Risiko, dass
+ * jemand bei körperlicher Übergriffigkeit die Sicherheits-Information
+ * optisch übersieht.
+ *
+ * Out of scope (sichtbarer Bruch): GrenzenCheck (interaktive Komponente
+ * in der grenzen-check Sektion) ist weiterhin Card-basiert.
+ */
+import { useCallback } from "react";
+import ContentSection from "@/components/ContentSection";
+import {
+  EditorialLayout,
+  EditorialProse,
+  EditorialPullQuote,
+  EditorialSection,
+} from "@/components/editorial";
+import GrenzenCheck from "@/components/interactive/GrenzenCheck";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
-import RelatedLinks from "@/components/RelatedLinks";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import {
-  AlertTriangle,
-  ArrowRight,
-  BookOpen,
-  CheckCircle2,
-  Clock,
-  Download,
-  ExternalLink,
-  Eye,
-  FileText,
-  Heart,
-  MessageCircle,
-  MessageSquare,
-  Phone,
-  Shield,
-  Sparkles,
-  Users,
-} from "lucide-react";
-import { Link } from "wouter";
-import ContentSection from "@/components/ContentSection";
-import GrenzenCheck from "@/components/interactive/GrenzenCheck";
+import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import SEO from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
-
 import { grenzenItems } from "@/content/grenzen";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import { Link } from "wouter";
 
-const grenzenIntroCards = [
+/*
+ * INTRO-CARD-TRIO — VARIANTE B (zur Auswahl im Review)
+ *
+ * Statt prosaischem Fliesstext-Absatz (Variante A unten) eine
+ * ungeordnete Liste mit fettem H4-Lead-In pro Punkt:
+ *
+ *   <ul class="space-y-4">
+ *     <li>
+ *       <h4 class="font-semibold">Selbstschutz ernst nehmen.</h4>
+ *       <p>Grenzen sind nicht gegen Nähe gerichtet, sondern schützen
+ *          Ihre Integrität und machen Beziehungen berechenbarer.</p>
+ *     </li>
+ *     <li>
+ *       <h4 class="font-semibold">Wenige zuerst klären.</h4>
+ *       <p>Tragfähige Grenzen entstehen meist aus Priorisierung, nicht
+ *          aus zehn gleichzeitigen Ansagen.</p>
+ *     </li>
+ *     <li>
+ *       <h4 class="font-semibold">Ruhig und konkret bleiben.</h4>
+ *       <p>Hilfreiche Grenzen bleiben auf Ihr Handeln bezogen, nicht
+ *          moralisch aufgeladen und nicht endlos verhandelbar.</p>
+ *     </li>
+ *   </ul>
+ */
+
+/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
+function openSection(sectionId: string) {
+  window.dispatchEvent(
+    new CustomEvent("open-section", { detail: { sectionId } })
+  );
+}
+
+const grenzsaetzeBeispiele = [
   {
-    icon: Shield,
-    title: "Selbstschutz ernst nehmen",
-    text: "Grenzen sind nicht gegen Nähe gerichtet, sondern schützen Ihre Integrität und machen Beziehungen berechenbarer.",
-    iconClass: "text-sage-dark",
-    shellClass: "bg-sage-wash border-sage-light/80",
+    thema: "Zeitliche Grenzen",
+    situation: "Häufige Anrufe spät abends oder an Wochenenden",
+    falsch: "«Du rufst immer zur falschen Zeit an. Das nervt mich.»",
+    richtig:
+      "«Ich bin unter der Woche bis 21 Uhr erreichbar. Danach bin ich offline. Bei echten Notfällen gibt es die Krisentelefone.»",
+    hinweis:
+      "Zeitgrenzen wirken am besten, wenn Sie sie in einer ruhigen Situation ankündigen — nicht mitten in einem Konflikt.",
   },
   {
-    icon: CheckCircle2,
-    title: "Wenige zuerst klären",
-    text: "Tragfähige Grenzen entstehen meist aus Priorisierung, nicht aus zehn gleichzeitigen Ansagen.",
-    iconClass: "text-sand-warm",
-    shellClass: "bg-sand-muted border-sand-border/80",
+    thema: "Finanzielle Grenzen",
+    situation: "Bitte um Geld, Schuldenübernahme oder finanzielle Rettung",
+    falsch: "«Du gibst immer zu viel aus. Ich mache das nicht mehr mit.»",
+    richtig:
+      "«Ich kann dir kein Geld leihen. Das hat nichts damit zu tun, wie wichtig du mir bist — aber das wäre für mich keine tragfähige Lösung.»",
+    hinweis:
+      "Finanzielle Grenzen sind besonders schwer, weil sie sich anfühlen wie «ich lasse dich fallen». Sie sind es nicht.",
   },
   {
-    icon: MessageSquare,
-    title: "Ruhig und konkret bleiben",
-    text: "Hilfreiche Grenzen bleiben auf Ihr Handeln bezogen, nicht moralisch aufgeladen und nicht endlos verhandelbar.",
-    iconClass: "text-slate-blue",
-    shellClass: "bg-slate-wash border-slate-light/80",
+    thema: "Emotionale Grenzen",
+    situation: "Beschimpfungen, Vorwürfe oder persönliche Angriffe im Gespräch",
+    falsch: "«Du bist unmöglich. So rede ich nicht mit dir.»",
+    richtig:
+      "«Wenn du mich so ansprichst, beende ich dieses Gespräch. Wir können es später weiterführen, wenn beide ruhiger sind.»",
+    hinweis:
+      "Sagen Sie es ruhig und gehen Sie dann tatsächlich. Die Grenze trägt nur, wenn Sie sie auch einhalten.",
+  },
+  {
+    thema: "Grenzen bei Rollenübernahme",
+    situation: "Erwartung, immer da zu sein oder alle Probleme zu lösen",
+    falsch:
+      "«Ich kann nicht immer für dich da sein. Du musst das selbst in den Griff kriegen.»",
+    richtig:
+      "«Ich bin gerne für dich da — und ich kann nicht dein ganzes Netz sein. Dafür brauchen wir gemeinsam andere Unterstützung.»",
+    hinweis:
+      "Diese Grenze kombiniert Fürsorge mit Klarheit: Sie sagen, was Sie können, und benennen, was nicht.",
   },
 ] as const;
 
-const grenzenQuickLinks = [
+const gewaltSchritte = [
   {
-    id: "warnsignale",
-    title: "Woran Sie merken, dass eine Grenze nötig ist",
-    text: "Wenn Sie zuerst Ihre eigenen Warnsignale und Überlastung klarer lesen möchten.",
+    schritt: "Verlassen Sie die Situation",
+    detail:
+      "Gehen Sie in ein anderes Zimmer, aus dem Haus oder zu Nachbarn. Sicherheit hat Vorrang vor Deeskalationsversuchen.",
   },
   {
-    id: "grenzen-check",
-    title: "Wo stehe ich beim Grenzen setzen?",
-    text: "Fünf Reflexionsfragen zu den häufigsten Schwierigkeiten – mit persönlicher Einordnung.",
+    schritt: "Rufen Sie 117 (Polizei) oder 144",
+    detail:
+      "Bei akuter Gefahr sofort. Sie müssen sich nicht sicher sein, ob es «schlimm genug» ist — die Polizei entscheidet das.",
   },
   {
-    id: "priorisierung",
-    title: "Welche Grenzen zuerst?",
-    text: "Wenn Sie wenige zentrale Grenzen priorisieren wollen, statt alles gleichzeitig anzugehen.",
+    schritt: "Sprechen Sie danach mit einer Fachstelle",
+    detail:
+      "Opferhilfe Zürich (0800 040 080, kostenlos), Frauenhaus oder Beratungsstelle. Es gibt Unterstützung auch für Männer.",
   },
   {
-    id: "grenzsaetze",
-    title: "Konkrete Grenzsätze",
-    text: "Wenn Sie alltagstaugliche Formulierungen für typische Situationen suchen.",
-  },
-  {
-    id: "gewalt",
-    title: "Bei körperlicher Übergriffigkeit",
-    text: "Wenn es um Sicherheit geht und nicht nur um schwierige Kommunikation.",
+    schritt: "Halten Sie Vorfälle fest",
+    detail:
+      "Datum, Beschreibung, allfällige Zeugen. Das ist wichtig, wenn Sie später rechtliche Schritte prüfen möchten.",
   },
 ] as const;
 
 export default function Grenzen() {
-  const openSection = (sectionId: string) => {
-    window.dispatchEvent(
-      new CustomEvent("open-section", { detail: { sectionId } })
-    );
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+      e.preventDefault();
+      openSection(sectionId);
+    },
+    []
+  );
+
+  const h4Style = {
+    fontSize: "var(--text-md)",
+    fontWeight: 600,
+    color: "var(--fg-primary)",
+  };
+
+  const bodyStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
   };
 
   return (
@@ -100,819 +158,712 @@ export default function Grenzen() {
       />
       <TableOfContents />
 
-      <section className="py-12 md:py-20 bg-gradient-to-b from-sage-wash/60 to-background">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
+      <EditorialLayout width="narrow">
+        {/* ── Hero ── */}
+        <header className="pb-20 pt-16 md:pb-28 md:pt-24">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
-                <Shield className="w-6 h-6 text-sage-mid" />
-              </div>
-              <span className="text-sm font-medium text-sage-dark">
-                Lesezeit: 12 Minuten
-              </span>
-            </div>
+            Grenzen
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            Grenzen <em>setzen</em>
+          </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine
+            Voraussetzung. Sie schützen Ihre Integrität, machen Beziehungen
+            berechenbarer und verhindern, dass Unterstützung in Selbstaufgabe
+            kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau
+            deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
+          </p>
+          <p
+            className="mt-4"
+            style={{
+              fontSize: "var(--text-sm)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            Vollständig ca. 12 Min · Auch abschnittweise lesbar.
+          </p>
+          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+        </header>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-6">
-              Grenzen setzen
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine
-              Voraussetzung. Sie schützen Ihre Integrität, machen Beziehungen
-              berechenbarer und verhindern, dass Unterstützung in Selbstaufgabe
-              kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau
-              deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
+        {/* ── Intro: Was auf dieser Seite besonders wichtig ist (Variante A) ── */}
+        <EditorialSection
+          label="Überblick"
+          title="Was auf dieser Seite besonders wichtig ist"
+        >
+          <EditorialProse>
+            <p>
+              Diese Seite hilft Ihnen, Grenzen nicht als Härte, sondern als
+              tragfähigen Selbstschutz zu lesen. Entscheidend sind meist
+              Warnsignale, Priorisierung, konkrete Sprache und die Frage, ob Sie
+              eine Grenze nachher auch wirklich halten können.
             </p>
-
-            <LastVerifiedBadge date="16.04.2026" className="mt-6" />
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-8 md:py-10">
-        <div className="container">
-          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.06fr_0.94fr]">
-            <Card className="border-sand-border/85 bg-white/92 shadow-[0_28px_56px_-40px_rgba(139,108,31,0.28)]">
-              <CardContent className="p-6 md:p-7">
-                <div className="mb-5 flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sand-muted">
-                    <Shield className="h-6 w-6 text-sage-dark" />
-                  </div>
-                  <div>
-                    <span className="kicker text-sand-warm">Überblick</span>
-                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
-                      Was auf dieser Seite besonders wichtig ist
-                    </h2>
-                  </div>
-                </div>
-
-                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-                  Diese Seite hilft Ihnen, Grenzen nicht als Härte, sondern als
-                  tragfähigen Selbstschutz zu lesen. Entscheidend sind meist
-                  Warnsignale, Priorisierung, konkrete Sprache und die Frage, ob
-                  Sie eine Grenze nachher auch wirklich halten können.
-                </p>
-
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {grenzenIntroCards.map(item => {
-                    const Icon = item.icon;
-                    return (
-                      <div
-                        key={item.title}
-                        className={`rounded-2xl border p-4 ${item.shellClass}`}
-                      >
-                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
-                        <h3 className="mb-2 text-sm font-semibold text-foreground">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">
-                          {item.text}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
-              <CardContent className="p-6 md:p-7">
-                <span className="kicker text-slate-dark">
-                  Direkt einsteigen
-                </span>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
-                  direkt zu dem Block, der Ihre aktuelle Lage am ehesten trifft.
-                </p>
-
-                <div className="mt-5 space-y-3">
-                  {grenzenQuickLinks.map(item => (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => openSection(item.id)}
-                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sand-border hover:bg-sand-muted/45 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sand-warm/35 focus-visible:ring-offset-2"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <h3 className="text-sm font-semibold text-foreground">
-                            {item.title}
-                          </h3>
-                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                            {item.text}
-                          </p>
-                        </div>
-                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sand-muted text-sand-warm transition-transform group-hover:translate-x-0.5">
-                          <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-
-                <div className="mt-5 rounded-2xl border border-sage-light/60 bg-sage-wash/75 px-4 py-4">
-                  <p className="text-sm leading-relaxed text-sage-darker">
-                    Grenzen regeln, was Sie nach aussen kommunizieren und
-                    einhalten.{" "}
-                    <Link
-                      href="/selbstfuersorge"
-                      className="underline decoration-sage-mid/40 underline-offset-2 hover:decoration-sage-mid transition-colors"
-                    >
-                      Selbstfürsorge
-                    </Link>{" "}
-                    ergänzt diese Seite dort, wo es um Ihre eigene Stabilität
-                    und Regeneration geht.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* PDF-Hinweis */}
-      <div className="container">
-        <div className="max-w-3xl mx-auto py-3">
-          <div className="flex items-center justify-between gap-3 rounded-lg bg-sage-wash/40 border border-sage-mid/20 px-4 py-2.5">
-            <p className="text-xs text-muted-foreground">
-              Alle Infografiken auch als druckbare PDFs verfügbar.
+            <p>
+              Drei Akzente ziehen sich durch die Seite: zuerst der Selbstschutz
+              ernst nehmen — Grenzen sind nicht gegen Nähe gerichtet, sondern
+              schützen Ihre Integrität und machen Beziehungen berechenbarer;
+              dann wenige zuerst klären — tragfähige Grenzen entstehen meist aus
+              Priorisierung, nicht aus zehn gleichzeitigen Ansagen; und
+              schliesslich ruhig und konkret bleiben — hilfreiche Grenzen
+              bleiben auf Ihr Handeln bezogen, nicht moralisch aufgeladen und
+              nicht endlos verhandelbar.
             </p>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-7 text-xs text-sage-dark shrink-0"
-              asChild
-            >
-              <Link href="/materialien">Materialien →</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <ContentSection
-              title="Woran Sie merken, dass eine Grenze nötig ist"
-              icon={<AlertTriangle className="w-7 h-7 text-sand-mid" />}
-              id="warnsignale"
-              preview="Grenzen werden oft erst dann sichtbar, wenn Sie längst überschritten wurden: durch Erschöpfung, Druck, Angst, Groll oder innere Härte."
-            >
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  "Sie sagen aus Angst ja, obwohl innerlich längst nein da ist.",
-                  "Sie fühlen sich dauernd zuständig, beobachtend oder auf Abruf.",
-                  "Sie werden gereizt, hart oder ziehen sich innerlich zurück.",
-                  "Sie merken, dass Hilfe nur noch aus Schuld oder Panik geschieht.",
-                ].map(item => (
-                  <Card key={item} className="border-border/50">
-                    <CardContent className="p-5">
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {item}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              <Card className="mt-4 bg-sand-muted border-sand-mid">
-                <CardContent className="p-5">
-                  <p className="text-foreground leading-relaxed">
-                    Grenzen beginnen oft nicht mit dem Satz an den anderen,
-                    sondern mit dem ernsten Wahrnehmen Ihrer eigenen Belastung.{" "}
-                    <Link
-                      href="/selbstfuersorge"
-                      className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
-                    >
-                      Selbstfürsorge →
-                    </Link>{" "}
-                    zeigt, was Sie tun können, wenn Sie merken, dass Sie sich
-                    selbst vernachlässigt haben.
-                  </p>
-                </CardContent>
-              </Card>
-            </ContentSection>
-
-            <ContentSection
-              title="Welche Arten von Grenzen häufig relevant sind"
-              icon={<Clock className="w-7 h-7 text-slate-mid" />}
-              id="arten"
-              preview="Grenzen betreffen nicht nur Lautstärke oder Streit, sondern Zeit, Erreichbarkeit, Raum, Geld und emotionale Zumutbarkeit."
-            >
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "Zeitliche Grenzen",
-                    text: "Wann sind Sie erreichbar, wann nicht? Wann ist Pause nötig?",
-                  },
-                  {
-                    title: "Emotionale Grenzen",
-                    text: "Welcher Ton, welche Vorwürfe, welche Dynamiken überschreiten Ihre Grenze?",
-                  },
-                  {
-                    title: "Räumliche Grenzen",
-                    text: "Wo brauchen Sie Rückzug, Distanz oder Schutz des eigenen Raums?",
-                  },
-                  {
-                    title: "Materielle Grenzen",
-                    text: "Wie weit gehen finanzielle Hilfe, Ausleihen oder praktische Übernahmen?",
-                  },
-                ].map(item => (
-                  <Card key={item.title} className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {item.text}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </ContentSection>
-
-            {/* Grenzen-Check: Interaktive Reflexion */}
-            <ContentSection
-              title="Wo stehe ich beim Grenzen setzen?"
-              icon={<Shield className="w-7 h-7 text-sage-mid-dark" />}
-              id="grenzen-check"
-              preview="Fünf kurze Reflexionsfragen zu den häufigsten Schwierigkeiten beim Grenzen setzen – mit persönlicher Einordnung."
-            >
-              <GrenzenCheck />
-            </ContentSection>
-            {/* Grenzen-Priorisierungsmatrix */}
-            <ContentSection
-              title="Welche Grenzen zuerst?"
-              icon={<CheckCircle2 className="w-7 h-7 text-sage-dark" />}
-              id="priorisierung"
-              preview="Nicht alle Grenzen lassen sich gleichzeitig setzen. Diese Orientierung hilft, die wichtigsten zuerst anzugehen."
-            >
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Wer versucht, alle Grenzen auf einmal zu setzen, scheitert meist
-                an sich selbst. Sinnvoller ist es, nach Dringlichkeit und
-                emotionaler Last zu priorisieren.
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="rounded-lg bg-alert/10 border border-alert/30 p-4">
-                  <p className="text-[10px] font-bold text-alert uppercase tracking-wide mb-1">
-                    Dringend · Emotional hoch
-                  </p>
-                  <p className="text-sm font-semibold text-foreground mb-2">
-                    Sofort setzen
-                  </p>
-                  <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• Körperliche Sicherheit</li>
-                    <li>• Bedrohungen / Übergriffe</li>
-                    <li>• Eigene Gesundheit</li>
-                  </ul>
-                </div>
-                <div className="rounded-lg bg-sand-muted border border-sand-mid/30 p-4">
-                  <p className="text-[10px] font-bold text-sand-mid uppercase tracking-wide mb-1">
-                    Dringend · Emotional niedriger
-                  </p>
-                  <p className="text-sm font-semibold text-foreground mb-2">
-                    Klar kommunizieren
-                  </p>
-                  <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• Erreichbarkeitszeiten</li>
-                    <li>• Gesprächsregeln</li>
-                    <li>• Alltägliche Abläufe</li>
-                  </ul>
-                </div>
-                <div className="rounded-lg bg-sage-lighter/50 border border-sage-mid/20 p-4">
-                  <p className="text-[10px] font-bold text-sage-dark uppercase tracking-wide mb-1">
-                    Langfristig · Emotional hoch
-                  </p>
-                  <p className="text-sm font-semibold text-foreground mb-2">
-                    Sorgfältig vorbereiten
-                  </p>
-                  <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• Finanzielle Regelungen</li>
-                    <li>• Wohnsituation</li>
-                    <li>• Langfristige Rollen</li>
-                  </ul>
-                </div>
-                <div className="rounded-lg bg-slate-wash border border-border/30 p-4">
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wide mb-1">
-                    Langfristig · Emotional niedrig
-                  </p>
-                  <p className="text-sm font-semibold text-foreground mb-2">
-                    Im Blick behalten
-                  </p>
-                  <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• Kleine Gewohnheitsfragen</li>
-                    <li>• Alltagsabsprachen</li>
-                    <li>• Schrittweise Anpassungen</li>
-                  </ul>
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground mt-4">
-                Wenige zentrale Grenzen, klar gehalten, tragen mehr als viele
-                gleichzeitig.
-              </p>
-            </ContentSection>
-
-            <ContentSection
-              title="Wie Grenzen eher gut kommuniziert werden"
-              icon={<Heart className="w-7 h-7 text-sage-dark" />}
-              id="kommunizieren"
-              preview="Hilfreiche Grenzen sind meist konkret, ruhig und wiederholbar. Sie erklären sich nicht endlos und werden nicht als moralischer Angriff formuliert."
-            >
-              <div className="space-y-4">
-                <Card className="bg-sage-light/10 border-sage">
-                  <CardContent className="p-5">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Grenzen tragen eher, wenn sie
-                    </p>
-                    <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                      <li>konkret statt abstrakt sind,</li>
-                      <li>auf Ihr Handeln bezogen bleiben,</li>
-                      <li>nicht mit Vorwürfen überladen werden,</li>
-                      <li>
-                        nicht bei jedem Gespräch neu verhandelt werden müssen.
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Card className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        Eher hilfreich
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        "Ich spreche weiter mit dir, aber nicht, wenn du mich
-                        anschreist."
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <Card className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        Eher problematisch
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        "Du bist unmöglich. So rede ich nie wieder mit dir."
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Konkrete Grenzsätze für typische Situationen"
-              icon={<MessageSquare className="w-7 h-7 text-sage-dark" />}
-              id="grenzsaetze"
-              preview="Grenzen werden tragfähiger, wenn sie konkret, ruhig und auf Ihr eigenes Handeln bezogen sind — nicht als Vorwurf, sondern als klare Aussage."
-            >
-              <div className="space-y-4">
-                {[
-                  {
-                    thema: "Zeitliche Grenzen",
-                    situation: "Häufige Anrufe spät abends oder an Wochenenden",
-                    falsch:
-                      "«Du rufst immer zur falschen Zeit an. Das nervt mich.»",
-                    richtig:
-                      "«Ich bin unter der Woche bis 21 Uhr erreichbar. Danach bin ich offline. Bei echten Notfällen gibt es die Krisentelefone.»",
-                    hinweis:
-                      "Zeitgrenzen wirken am besten, wenn Sie sie in einer ruhigen Situation ankündigen — nicht mitten in einem Konflikt.",
-                  },
-                  {
-                    thema: "Finanzielle Grenzen",
-                    situation:
-                      "Bitte um Geld, Schuldenübernahme oder finanzielle Rettung",
-                    falsch:
-                      "«Du gibst immer zu viel aus. Ich mache das nicht mehr mit.»",
-                    richtig:
-                      "«Ich kann dir kein Geld leihen. Das hat nichts damit zu tun, wie wichtig du mir bist — aber das wäre für mich keine tragfähige Lösung.»",
-                    hinweis:
-                      "Finanzielle Grenzen sind besonders schwer, weil sie sich anfühlen wie «ich lasse dich fallen». Sie sind es nicht.",
-                  },
-                  {
-                    thema: "Emotionale Grenzen",
-                    situation:
-                      "Beschimpfungen, Vorwürfe oder persönliche Angriffe im Gespräch",
-                    falsch: "«Du bist unmöglich. So rede ich nicht mit dir.»",
-                    richtig:
-                      "«Wenn du mich so ansprichst, beende ich dieses Gespräch. Wir können es später weiterführen, wenn beide ruhiger sind.»",
-                    hinweis:
-                      "Sagen Sie es ruhig und gehen Sie dann tatsächlich. Die Grenze trägt nur, wenn Sie sie auch einhalten.",
-                  },
-                  {
-                    thema: "Grenzen bei Rollenübernahme",
-                    situation:
-                      "Erwartung, immer da zu sein oder alle Probleme zu lösen",
-                    falsch:
-                      "«Ich kann nicht immer für dich da sein. Du musst das selbst in den Griff kriegen.»",
-                    richtig:
-                      "«Ich bin gerne für dich da — und ich kann nicht dein ganzes Netz sein. Dafür brauchen wir gemeinsam andere Unterstützung.»",
-                    hinweis:
-                      "Diese Grenze kombiniert Fürsorge mit Klarheit: Sie sagen, was Sie können, und benennen, was nicht.",
-                  },
-                ].map(item => (
-                  <Card
-                    key={item.thema}
-                    className="border-border/50 overflow-hidden"
-                  >
-                    <div className="bg-muted/30 px-5 py-3 border-b border-border/40">
-                      <h3 className="font-semibold text-foreground text-sm">
-                        {item.thema}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mt-0.5">
-                        {item.situation}
-                      </p>
-                    </div>
-                    <CardContent className="p-5 space-y-3">
-                      <div className="flex gap-3">
-                        <span className="text-alert font-bold text-sm shrink-0 mt-0.5">
-                          ✗
-                        </span>
-                        <p className="text-sm text-muted-foreground italic">
-                          {item.falsch}
-                        </p>
-                      </div>
-                      <div className="flex gap-3 bg-sage-wash/50 rounded-lg p-3">
-                        <span className="text-sage-dark font-bold text-sm shrink-0 mt-0.5">
-                          ✓
-                        </span>
-                        <p className="text-sm text-foreground italic">
-                          {item.richtig}
-                        </p>
-                      </div>
-                      <p className="text-xs text-muted-foreground border-l-2 border-sage-mid/30 pl-3">
-                        {item.hinweis}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Konsequenz ist oft der schwierigste Teil"
-              icon={<CheckCircle2 className="w-7 h-7 text-sage-mid" />}
-              id="konsequenz"
-              preview="Viele Grenzen scheitern nicht an der Formulierung, sondern daran, dass Angst, Schuld oder Hoffnung sie sofort wieder aufweichen."
-            >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  Grenzen wirken selten, wenn sie nur angekündigt, aber nicht
-                  umgesetzt werden. Genau hier geraten viele Angehörige in
-                  Loyalitätskonflikte: Sie wollen klar sein, fürchten aber
-                  Eskalation, Ablehnung oder Schuld.
-                </p>
-                <Card className="bg-sage-wash/50 border-sage-mid/30">
-                  <CardContent className="p-5">
-                    <p className="text-foreground leading-relaxed">
-                      Konsequenz heisst nicht Härte. Es heisst, dass Ihr Handeln
-                      zu dem passt, was Sie angekündigt haben.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Häufige Fehler beim Grenzen setzen"
-              icon={<AlertTriangle className="w-7 h-7 text-sage-mid" />}
-              id="fehler"
-              preview="Grenzen werden oft im Affekt, zu gross, zu unklar oder aus Kränkung formuliert. Dann tragen sie selten lange."
-            >
-              <div className="space-y-3">
-                {[
-                  {
-                    wrong: "Grenzen im Affekt setzen",
-                    right: "besser in ruhigen Momenten vorbereiten",
-                  },
-                  {
-                    wrong: "zu viele Grenzen auf einmal",
-                    right: "wenige zentrale Grenzen priorisieren",
-                  },
-                  {
-                    wrong: "Grenzen als Strafe formulieren",
-                    right: "Grenzen als Selbstschutz erklären",
-                  },
-                  {
-                    wrong: "Grenzen nicht durchhalten",
-                    right: "nur ankündigen, was Sie tragen können",
-                  },
-                  {
-                    wrong: "bei Schuld sofort zurückrudern",
-                    right: "Schuldgefühl nicht automatisch als Fehler lesen",
-                  },
-                ].map(item => (
-                  <Card key={item.wrong} className="border-border/50">
-                    <CardContent className="p-4">
-                      <p className="text-sm text-muted-foreground">
-                        <span className="line-through">{item.wrong}</span>
-                        <span className="mx-2 text-sage-mid">→</span>
-                        <span className="text-foreground">{item.right}</span>
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Grenzen in verschiedenen Angehörigenrollen"
-              icon={<Users className="w-7 h-7 text-slate-mid" />}
-              id="rollen"
-              preview="Partner, Eltern und erwachsene Kinder geraten auf unterschiedliche Weise in Loyalitätsdruck. Das verändert auch, wie schwer Grenzen sich anfühlen."
-            >
-              <div className="space-y-4">
-                <Card className="border-l-4 border-l-sage-mid bg-sage-wash">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">
-                      Als Partner/in
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      In Partnerschaften fühlen sich Grenzen oft schnell wie
-                      Beziehungsgefahr an. Gerade deshalb sind sie wichtig: Sie
-                      unterscheiden zwischen Nähe und Verschmelzung, Mitgefühl
-                      und Selbstaufgabe.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-l-4 border-l-slate-mid bg-slate-pale">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">
-                      Als Elternteil
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Eltern erleben Grenzen oft als Widerspruch zu Fürsorge.
-                      Bei erwachsenen Kindern ist Begrenzung aber häufig Teil
-                      verantwortlicher Elternschaft, nicht ihr Gegenstück.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-l-4 border-l-sage-mid bg-sage-pale">
-                  <CardContent className="p-5">
-                    <h3 className="font-semibold text-foreground mb-2">
-                      Als erwachsenes Kind
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Wer seinem Elternteil Grenzen setzt, erlebt oft besonders
-                      starke Schuld. Ihre emotionale Gesundheit ist dennoch
-                      nicht nachrangig. Sie dürfen Ihr eigenes Leben schützen.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-6 flex items-center gap-3">
-                <Download className="w-8 h-8 text-sage-mid" />
-                Materialien zum Thema Grenzen
-              </h2>
-              <p className="text-sm text-muted-foreground mb-6 flex items-center gap-2">
-                <Eye className="w-4 h-4 flex-shrink-0" />
-                <span>
-                  <strong className="text-foreground">
-                    Vorschau = Web-Bild.
-                  </strong>{" "}
-                  Wenn verfügbar, führt «Textversion» zur lesbaren Web-Version.
-                  «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
-                </span>
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {grenzenItems.map((item, index) => {
-                  const textVersionHref = getHandoutTextVersionHrefBySource(
-                    item.pdfUrl
-                  );
-
-                  return (
-                    <Card
-                      key={item.title}
-                      className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                        grenzenItems.length > 1 && index === 0
-                          ? "sm:col-span-2"
-                          : ""
-                      }`}
-                    >
-                      <div className="relative aspect-[3/4] bg-muted overflow-hidden">
-                        <img
-                          src={item.thumbnailUrl ?? item.url}
-                          alt={item.title}
-                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                          loading="lazy"
-                          width={600}
-                          height={848}
-                          decoding="async"
-                        />
-                      </div>
-                      <CardContent className="p-3">
-                        <h3 className="font-medium text-sm text-foreground mb-2">
-                          {item.title}
-                        </h3>
-                        <div className="grid gap-2">
-                          {textVersionHref ? (
-                            <Link
-                              href={textVersionHref}
-                              aria-label={`Textversion lesen: ${item.title}`}
-                              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full bg-sage-dark hover:bg-sage-mid text-white transition-colors"
-                            >
-                              <FileText className="w-4 h-4" />
-                              Textversion
-                            </Link>
-                          ) : null}
-                          <a
-                            href={
-                              getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl
-                            }
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                            className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                            PDF öffnen
-                          </a>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-
-              <div className="mt-6 text-center">
-                <Button variant="outline" asChild>
-                  <Link href="/materialien">
-                    Alle Materialien ansehen
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <Card className="bg-sage-light/30 border-sage">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-3">
-                    Denken Sie daran
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Grenzen fühlen sich anfangs oft unangenehm an. Das bedeutet
-                    nicht automatisch, dass sie falsch sind. In belasteten
-                    Beziehungen braucht gute Begrenzung meist Wiederholung,
-                    innere Festigkeit und die Erlaubnis, auch Schuldgefühle zu
-                    überstehen.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-            <ContentSection
-              title="Wenn der Angehörige körperlich übergriffig wird"
-              icon={<Phone className="w-7 h-7 text-sos-rot" />}
-              id="gewalt"
-              preview="Körperliche Übergriffe sind keine Grenzverletzung – sie sind eine Gefährdung. Das erfordert eine andere Reaktion als verbale Eskalation."
-            >
-              <div className="space-y-4">
-                <Card className="border-l-4 border-l-alert bg-alert-wash">
-                  <CardContent className="p-5">
-                    <p className="text-sm font-semibold text-foreground mb-2">
-                      Körperliche Gewalt ist kein Beziehungsproblem — es ist
-                      eine Sicherheitsfrage.
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Borderline erklärt Übergriffe nicht und entschuldigt sie
-                      nicht. Wenn Sie körperlich bedroht oder verletzt werden,
-                      ist Ihre Sicherheit die einzige Priorität.
-                    </p>
-                  </CardContent>
-                </Card>
-                <div className="space-y-3">
-                  {[
-                    {
-                      schritt: "Verlassen Sie die Situation",
-                      detail:
-                        "Gehen Sie in ein anderes Zimmer, aus dem Haus oder zu Nachbarn. Sicherheit hat Vorrang vor Deeskalationsversuchen.",
-                    },
-                    {
-                      schritt: "Rufen Sie 117 (Polizei) oder 144",
-                      detail:
-                        "Bei akuter Gefahr sofort. Sie müssen sich nicht sicher sein, ob es «schlimm genug» ist — die Polizei entscheidet das.",
-                    },
-                    {
-                      schritt: "Sprechen Sie danach mit einer Fachstelle",
-                      detail:
-                        "Opferhilfe Zürich (0800 040 080, kostenlos), Frauenhaus oder Beratungsstelle. Es gibt Unterstützung auch für Männer.",
-                    },
-                    {
-                      schritt: "Halten Sie Vorfälle fest",
-                      detail:
-                        "Datum, Beschreibung, allfällige Zeugen. Das ist wichtig, wenn Sie später rechtliche Schritte prüfen möchten.",
-                    },
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-3 p-4 rounded-xl bg-cream border border-border/30"
-                    >
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-alert-light text-alert-dark text-xs font-bold flex items-center justify-center">
-                        {i + 1}
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold text-foreground">
-                          {item.schritt}
-                        </p>
-                        <p className="text-sm text-muted-foreground mt-0.5">
-                          {item.detail}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <Card className="border-sage bg-sage-wash/30">
-                  <CardContent className="p-4">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Viele Angehörige zögern, weil sie fürchten, die Person zu
-                      «verraten» oder die Situation zu eskalieren.
-                      Professionelle Hilfe zu holen ist kein Verrat — es ist oft
-                      der einzige Weg, eine Beziehung langfristig überhaupt zu
-                      stabilisieren.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </ContentSection>
-
-            <div className="mt-8 mb-6 rounded-2xl border border-sage-light/60 bg-sage-wash/40 px-6 py-5">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Grenzen sind der Schutzraum – Selbstfürsorge ist das, was Sie
-                darin aufbauen. Wer weiss, wo er aufhört und der andere anfängt,
-                kann sich erholen, ohne sich schuldig zu fühlen.
-              </p>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex justify-between items-center pt-8 border-t border-border"
-            >
-              <Button variant="ghost" asChild>
-                <Link href="/kommunizieren">← Kommunizieren</Link>
-              </Button>
-              <Button
-                className="bg-sage-dark hover:bg-sage-mid text-white"
-                asChild
+            <p>
+              Sie können auch direkt zu{" "}
+              <a
+                href="#warnsignale"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "warnsignale")}
               >
-                <Link href="/selbstfuersorge">
-                  Weiter: Selbstfürsorge
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-            </motion.div>
+                Warnsignalen
+              </a>
+              ,{" "}
+              <a
+                href="#grenzen-check"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "grenzen-check")}
+              >
+                Reflexionsfragen
+              </a>
+              ,{" "}
+              <a
+                href="#priorisierung"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "priorisierung")}
+              >
+                Priorisierung
+              </a>
+              ,{" "}
+              <a
+                href="#grenzsaetze"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "grenzsaetze")}
+              >
+                konkreten Grenzsätzen
+              </a>{" "}
+              oder zur Sicherheitssektion bei{" "}
+              <a
+                href="#gewalt"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "gewalt")}
+              >
+                körperlicher Übergriffigkeit
+              </a>{" "}
+              springen.
+            </p>
+            <p>
+              Grenzen regeln, was Sie nach aussen kommunizieren und einhalten.{" "}
+              <Link href="/selbstfuersorge" className="editorial-link">
+                Selbstfürsorge
+              </Link>{" "}
+              ergänzt diese Seite dort, wo es um Ihre eigene Stabilität und
+              Regeneration geht.
+            </p>
+          </EditorialProse>
+        </EditorialSection>
+
+        {/* ── ContentSection 1: warnsignale ── */}
+        <ContentSection
+          variant="editorial"
+          title="Woran Sie merken, dass eine Grenze nötig ist"
+          id="warnsignale"
+          preview="Grenzen werden oft erst dann sichtbar, wenn Sie längst überschritten wurden: durch Erschöpfung, Druck, Angst, Groll oder innere Härte."
+        >
+          <EditorialProse>
+            <ul className="ml-6 list-disc space-y-2">
+              <li>
+                Sie sagen aus Angst ja, obwohl innerlich längst nein da ist.
+              </li>
+              <li>
+                Sie fühlen sich dauernd zuständig, beobachtend oder auf Abruf.
+              </li>
+              <li>
+                Sie werden gereizt, hart oder ziehen sich innerlich zurück.
+              </li>
+              <li>
+                Sie merken, dass Hilfe nur noch aus Schuld oder Panik geschieht.
+              </li>
+            </ul>
+            <p>
+              Grenzen beginnen oft nicht mit dem Satz an den anderen, sondern
+              mit dem ernsten Wahrnehmen Ihrer eigenen Belastung.{" "}
+              <Link href="/selbstfuersorge" className="editorial-link">
+                Selbstfürsorge
+              </Link>{" "}
+              zeigt, was Sie tun können, wenn Sie merken, dass Sie sich selbst
+              vernachlässigt haben.
+            </p>
+          </EditorialProse>
+        </ContentSection>
+
+        {/* ── ContentSection 2: arten ── */}
+        <ContentSection
+          variant="editorial"
+          title="Welche Arten von Grenzen häufig relevant sind"
+          id="arten"
+          preview="Grenzen betreffen nicht nur Lautstärke oder Streit, sondern Zeit, Erreichbarkeit, Raum, Geld und emotionale Zumutbarkeit."
+        >
+          <div className="mt-2 grid gap-8 sm:grid-cols-2">
+            <div>
+              <h4 className="mb-2" style={h4Style}>
+                Zeitliche Grenzen
+              </h4>
+              <p style={bodyStyle}>
+                Wann sind Sie erreichbar, wann nicht? Wann ist Pause nötig?
+              </p>
+            </div>
+            <div>
+              <h4 className="mb-2" style={h4Style}>
+                Emotionale Grenzen
+              </h4>
+              <p style={bodyStyle}>
+                Welcher Ton, welche Vorwürfe, welche Dynamiken überschreiten
+                Ihre Grenze?
+              </p>
+            </div>
+            <div>
+              <h4 className="mb-2" style={h4Style}>
+                Räumliche Grenzen
+              </h4>
+              <p style={bodyStyle}>
+                Wo brauchen Sie Rückzug, Distanz oder Schutz des eigenen Raums?
+              </p>
+            </div>
+            <div>
+              <h4 className="mb-2" style={h4Style}>
+                Materielle Grenzen
+              </h4>
+              <p style={bodyStyle}>
+                Wie weit gehen finanzielle Hilfe, Ausleihen oder praktische
+                Übernahmen?
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-      <div className="container">
-        <div className="max-w-3xl mx-auto">
-          <RelatedLinks
-            links={[
-              {
-                href: "/selbstfuersorge",
-                title: "Selbstfürsorge",
-                description:
-                  "Warnsignale, Sofort-Übungen und die Erlaubnis, die eigene Belastung ernst zu nehmen.",
-                icon: Sparkles,
-              },
-              {
-                href: "/kommunizieren",
-                title: "Kommunizieren",
-                description:
-                  "Grenzen ruhig und klar formulieren: Validierung, DEAR-Technik und Deeskalation.",
-                icon: MessageCircle,
-              },
-              {
-                href: "/materialien",
-                title: "Materialien & Handouts",
-                description:
-                  "Spickzettel und Infografiken zu Grenzen und Konsequenzen – als PDF.",
-                icon: BookOpen,
-              },
-            ]}
-          />
-        </div>
-      </div>
+        </ContentSection>
+
+        {/* ── ContentSection 3: grenzen-check (interaktiv, out of scope) ── */}
+        <ContentSection
+          variant="editorial"
+          title="Wo stehe ich beim Grenzen setzen?"
+          id="grenzen-check"
+          preview="Fünf kurze Reflexionsfragen zu den häufigsten Schwierigkeiten beim Grenzen setzen – mit persönlicher Einordnung."
+        >
+          <GrenzenCheck />
+        </ContentSection>
+
+        {/* ── ContentSection 4: priorisierung ── */}
+        <ContentSection
+          variant="editorial"
+          title="Welche Grenzen zuerst?"
+          id="priorisierung"
+          preview="Nicht alle Grenzen lassen sich gleichzeitig setzen. Diese Orientierung hilft, die wichtigsten zuerst anzugehen."
+        >
+          <EditorialProse>
+            <p>
+              Wer versucht, alle Grenzen auf einmal zu setzen, scheitert meist
+              an sich selbst. Sinnvoller ist es, nach Dringlichkeit und
+              emotionaler Last zu priorisieren.
+            </p>
+          </EditorialProse>
+          <div className="mt-6 grid gap-8 sm:grid-cols-2">
+            <div>
+              <p
+                className="uppercase"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  letterSpacing: "var(--tracking-caps)",
+                  color: "var(--accent-label)",
+                  fontWeight: 500,
+                }}
+              >
+                Dringend · Emotional hoch
+              </p>
+              <h4 className="mt-2" style={h4Style}>
+                Sofort setzen
+              </h4>
+              <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
+                <li>Körperliche Sicherheit</li>
+                <li>Bedrohungen / Übergriffe</li>
+                <li>Eigene Gesundheit</li>
+              </ul>
+            </div>
+            <div>
+              <p
+                className="uppercase"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  letterSpacing: "var(--tracking-caps)",
+                  color: "var(--accent-label)",
+                  fontWeight: 500,
+                }}
+              >
+                Dringend · Emotional niedriger
+              </p>
+              <h4 className="mt-2" style={h4Style}>
+                Klar kommunizieren
+              </h4>
+              <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
+                <li>Erreichbarkeitszeiten</li>
+                <li>Gesprächsregeln</li>
+                <li>Alltägliche Abläufe</li>
+              </ul>
+            </div>
+            <div>
+              <p
+                className="uppercase"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  letterSpacing: "var(--tracking-caps)",
+                  color: "var(--accent-label)",
+                  fontWeight: 500,
+                }}
+              >
+                Langfristig · Emotional hoch
+              </p>
+              <h4 className="mt-2" style={h4Style}>
+                Sorgfältig vorbereiten
+              </h4>
+              <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
+                <li>Finanzielle Regelungen</li>
+                <li>Wohnsituation</li>
+                <li>Langfristige Rollen</li>
+              </ul>
+            </div>
+            <div>
+              <p
+                className="uppercase"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  letterSpacing: "var(--tracking-caps)",
+                  color: "var(--accent-label)",
+                  fontWeight: 500,
+                }}
+              >
+                Langfristig · Emotional niedrig
+              </p>
+              <h4 className="mt-2" style={h4Style}>
+                Im Blick behalten
+              </h4>
+              <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
+                <li>Kleine Gewohnheitsfragen</li>
+                <li>Alltagsabsprachen</li>
+                <li>Schrittweise Anpassungen</li>
+              </ul>
+            </div>
+          </div>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-sm)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            Wenige zentrale Grenzen, klar gehalten, tragen mehr als viele
+            gleichzeitig.
+          </p>
+        </ContentSection>
+
+        {/* ── ContentSection 5: kommunizieren ── */}
+        <ContentSection
+          variant="editorial"
+          title="Wie Grenzen eher gut kommuniziert werden"
+          id="kommunizieren"
+          preview="Hilfreiche Grenzen sind meist konkret, ruhig und wiederholbar. Sie erklären sich nicht endlos und werden nicht als moralischer Angriff formuliert."
+        >
+          <EditorialProse>
+            <p>Grenzen tragen eher, wenn sie</p>
+            <ul className="ml-6 list-disc space-y-1">
+              <li>konkret statt abstrakt sind,</li>
+              <li>auf Ihr Handeln bezogen bleiben,</li>
+              <li>nicht mit Vorwürfen überladen werden,</li>
+              <li>nicht bei jedem Gespräch neu verhandelt werden müssen.</li>
+            </ul>
+          </EditorialProse>
+          <div className="mt-6 grid gap-8 sm:grid-cols-2">
+            <div>
+              <h4 className="mb-2" style={h4Style}>
+                Eher hilfreich
+              </h4>
+              <p style={{ ...bodyStyle, fontStyle: "italic" }}>
+                «Ich spreche weiter mit dir, aber nicht, wenn du mich
+                anschreist.»
+              </p>
+            </div>
+            <div>
+              <h4 className="mb-2" style={h4Style}>
+                Eher problematisch
+              </h4>
+              <p style={{ ...bodyStyle, fontStyle: "italic" }}>
+                «Du bist unmöglich. So rede ich nie wieder mit dir.»
+              </p>
+            </div>
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 6: grenzsaetze ── */}
+        <ContentSection
+          variant="editorial"
+          title="Konkrete Grenzsätze für typische Situationen"
+          id="grenzsaetze"
+          preview="Grenzen werden tragfähiger, wenn sie konkret, ruhig und auf Ihr eigenes Handeln bezogen sind — nicht als Vorwurf, sondern als klare Aussage."
+        >
+          <div className="space-y-8">
+            {grenzsaetzeBeispiele.map((item, idx) => (
+              <div
+                key={item.thema}
+                className={idx > 0 ? "border-t pt-6" : ""}
+                style={
+                  idx > 0 ? { borderColor: "var(--rule-color)" } : undefined
+                }
+              >
+                <h4 style={h4Style}>{item.thema}</h4>
+                <p
+                  className="mt-1"
+                  style={{
+                    fontSize: "var(--text-sm)",
+                    color: "var(--fg-tertiary)",
+                  }}
+                >
+                  {item.situation}
+                </p>
+                <p className="mt-3" style={bodyStyle}>
+                  <strong style={{ color: "var(--accent-primary)" }}>
+                    Eher problematisch:
+                  </strong>{" "}
+                  <span style={{ fontStyle: "italic" }}>{item.falsch}</span>
+                </p>
+                <p className="mt-2" style={bodyStyle}>
+                  <strong style={{ color: "var(--accent-primary)" }}>
+                    Eher hilfreich:
+                  </strong>{" "}
+                  <span style={{ fontStyle: "italic" }}>{item.richtig}</span>
+                </p>
+                <p
+                  className="mt-3 border-l-2 pl-4"
+                  style={{
+                    borderColor: "var(--rule-color)",
+                    fontSize: "var(--text-sm)",
+                    color: "var(--fg-tertiary)",
+                  }}
+                >
+                  {item.hinweis}
+                </p>
+              </div>
+            ))}
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 7: konsequenz ── */}
+        <ContentSection
+          variant="editorial"
+          title="Konsequenz ist oft der schwierigste Teil"
+          id="konsequenz"
+          preview="Viele Grenzen scheitern nicht an der Formulierung, sondern daran, dass Angst, Schuld oder Hoffnung sie sofort wieder aufweichen."
+        >
+          <EditorialProse>
+            <p>
+              Grenzen wirken selten, wenn sie nur angekündigt, aber nicht
+              umgesetzt werden. Genau hier geraten viele Angehörige in
+              Loyalitätskonflikte: Sie wollen klar sein, fürchten aber
+              Eskalation, Ablehnung oder Schuld.
+            </p>
+            <p>
+              <strong>Konsequenz heisst nicht Härte.</strong> Es heisst, dass
+              Ihr Handeln zu dem passt, was Sie angekündigt haben.
+            </p>
+          </EditorialProse>
+        </ContentSection>
+
+        {/* ── ContentSection 8: fehler ── */}
+        <ContentSection
+          variant="editorial"
+          title="Häufige Fehler beim Grenzen setzen"
+          id="fehler"
+          preview="Grenzen werden oft im Affekt, zu gross, zu unklar oder aus Kränkung formuliert. Dann tragen sie selten lange."
+        >
+          <EditorialProse>
+            <ul className="ml-6 list-disc space-y-2">
+              <li>
+                <s>Grenzen im Affekt setzen</s> → besser in ruhigen Momenten
+                vorbereiten
+              </li>
+              <li>
+                <s>zu viele Grenzen auf einmal</s> → wenige zentrale Grenzen
+                priorisieren
+              </li>
+              <li>
+                <s>Grenzen als Strafe formulieren</s> → Grenzen als Selbstschutz
+                erklären
+              </li>
+              <li>
+                <s>Grenzen nicht durchhalten</s> → nur ankündigen, was Sie
+                tragen können
+              </li>
+              <li>
+                <s>bei Schuld sofort zurückrudern</s> → Schuldgefühl nicht
+                automatisch als Fehler lesen
+              </li>
+            </ul>
+          </EditorialProse>
+        </ContentSection>
+
+        {/* ── ContentSection 9: rollen ── */}
+        <ContentSection
+          variant="editorial"
+          title="Grenzen in verschiedenen Angehörigenrollen"
+          id="rollen"
+          preview="Partner, Eltern und erwachsene Kinder geraten auf unterschiedliche Weise in Loyalitätsdruck. Das verändert auch, wie schwer Grenzen sich anfühlen."
+        >
+          <EditorialProse>
+            <h4 className="mt-2" style={h4Style}>
+              Als Partner/in
+            </h4>
+            <p>
+              In Partnerschaften fühlen sich Grenzen oft schnell wie
+              Beziehungsgefahr an. Gerade deshalb sind sie wichtig: Sie
+              unterscheiden zwischen Nähe und Verschmelzung, Mitgefühl und
+              Selbstaufgabe.
+            </p>
+            <h4 className="mt-6" style={h4Style}>
+              Als Elternteil
+            </h4>
+            <p>
+              Eltern erleben Grenzen oft als Widerspruch zu Fürsorge. Bei
+              erwachsenen Kindern ist Begrenzung aber häufig Teil
+              verantwortlicher Elternschaft, nicht ihr Gegenstück.
+            </p>
+            <h4 className="mt-6" style={h4Style}>
+              Als erwachsenes Kind
+            </h4>
+            <p>
+              Wer seinem Elternteil Grenzen setzt, erlebt oft besonders starke
+              Schuld. Ihre emotionale Gesundheit ist dennoch nicht nachrangig.
+              Sie dürfen Ihr eigenes Leben schützen.
+            </p>
+          </EditorialProse>
+        </ContentSection>
+
+        {/* ── Pull-Quote: «Denken Sie daran» ── */}
+        <EditorialSection rule>
+          <EditorialPullQuote>
+            Grenzen fühlen sich anfangs oft unangenehm an. Das bedeutet nicht
+            automatisch, dass sie falsch sind. In belasteten Beziehungen braucht
+            gute Begrenzung meist Wiederholung, innere Festigkeit und die
+            Erlaubnis, auch Schuldgefühle zu überstehen.
+          </EditorialPullQuote>
+        </EditorialSection>
+
+        {/* ── ContentSection 10: gewalt — SICHERHEITS-HERVORHEBUNG BLEIBT (Brief 27.04.) ── */}
+        <ContentSection
+          variant="editorial"
+          title="Wenn der Angehörige körperlich übergriffig wird"
+          id="gewalt"
+          preview="Körperliche Übergriffe sind keine Grenzverletzung – sie sind eine Gefährdung. Das erfordert eine andere Reaktion als verbale Eskalation."
+        >
+          <div className="space-y-4">
+            {/* Alert-Block: farbig (Sicherheitsentscheid) */}
+            <div
+              className="rounded-md border-l-4 p-5"
+              style={{
+                borderColor: "var(--color-alert)",
+                backgroundColor: "var(--color-alert-wash)",
+              }}
+            >
+              <p
+                className="mb-2"
+                style={{
+                  fontSize: "var(--text-md)",
+                  fontWeight: 600,
+                  color: "var(--fg-primary)",
+                }}
+              >
+                Körperliche Gewalt ist kein Beziehungsproblem — es ist eine
+                Sicherheitsfrage.
+              </p>
+              <p style={bodyStyle}>
+                Borderline erklärt Übergriffe nicht und entschuldigt sie nicht.
+                Wenn Sie körperlich bedroht oder verletzt werden, ist Ihre
+                Sicherheit die einzige Priorität.
+              </p>
+            </div>
+            {/* Numerierte Schritte: alert-Badges bleiben farbig (Sicherheitsentscheid) */}
+            <ol className="space-y-3">
+              {gewaltSchritte.map((item, i) => (
+                <li
+                  key={item.schritt}
+                  className="flex items-start gap-3 rounded-md border p-4"
+                  style={{
+                    borderColor: "var(--rule-color)",
+                    backgroundColor: "var(--bg-elevated)",
+                  }}
+                >
+                  <span
+                    className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                    style={{
+                      backgroundColor: "var(--color-alert-light)",
+                      color: "var(--color-alert-dark)",
+                    }}
+                    aria-hidden="true"
+                  >
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p
+                      style={{
+                        fontSize: "var(--text-sm)",
+                        fontWeight: 600,
+                        color: "var(--fg-primary)",
+                      }}
+                    >
+                      {item.schritt}
+                    </p>
+                    <p className="mt-0.5" style={bodyStyle}>
+                      {item.detail}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            {/* Schluss-Hinweis: editorial entschärft (kein Sicherheitsblock mehr) */}
+            <EditorialProse>
+              <p>
+                Viele Angehörige zögern, weil sie fürchten, die Person zu
+                «verraten» oder die Situation zu eskalieren. Professionelle
+                Hilfe zu holen ist kein Verrat — es ist oft der einzige Weg,
+                eine Beziehung langfristig überhaupt zu stabilisieren.
+              </p>
+            </EditorialProse>
+          </div>
+        </ContentSection>
+
+        {/* ── Materialien — editorial entschärft, kein Card-Wrapper ── */}
+        <EditorialSection
+          label="Materialien"
+          title="Spickzettel und Infografiken zu Grenzen"
+        >
+          <EditorialProse>
+            <p>
+              Wenn verfügbar, führt «Textversion lesen» zur Web-Version. «PDF
+              öffnen» öffnet die A4-Druckversion im neuen Tab.
+            </p>
+          </EditorialProse>
+          <div className="mt-8 grid gap-8 sm:grid-cols-2">
+            {grenzenItems.map(item => {
+              const textVersionHref = getHandoutTextVersionHrefBySource(
+                item.pdfUrl
+              );
+              const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
+              return (
+                <article key={item.title} className="space-y-3">
+                  <img
+                    src={item.thumbnailUrl ?? item.url}
+                    alt={item.title}
+                    className="aspect-[3/4] w-full rounded-md object-cover object-top"
+                    style={{ backgroundColor: "var(--bg-elevated)" }}
+                    loading="lazy"
+                    width={600}
+                    height={848}
+                    decoding="async"
+                  />
+                  <h4 style={h4Style}>{item.title}</h4>
+                  <div
+                    className="flex flex-wrap gap-x-5 gap-y-1"
+                    style={{ fontSize: "var(--text-sm)" }}
+                  >
+                    {textVersionHref && (
+                      <Link
+                        href={textVersionHref}
+                        className="editorial-link"
+                        aria-label={`Textversion lesen: ${item.title}`}
+                      >
+                        Textversion lesen
+                      </Link>
+                    )}
+                    <a
+                      href={pdfHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="editorial-link"
+                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                    >
+                      PDF öffnen
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          <p className="mt-8" style={bodyStyle}>
+            <Link href="/materialien" className="editorial-link">
+              Alle Materialien ansehen
+            </Link>
+          </p>
+        </EditorialSection>
+
+        {/* ── Schluss-Sektion: Übergang zu Selbstfürsorge ── */}
+        <EditorialSection label="Weiter" rule>
+          <EditorialProse>
+            <p>
+              Grenzen sind der Schutzraum — Selbstfürsorge ist das, was Sie
+              darin aufbauen. Wer weiss, wo er aufhört und der andere anfängt,
+              kann sich erholen, ohne sich schuldig zu fühlen —{" "}
+              <Link href="/selbstfuersorge" className="editorial-link">
+                weiter zu Selbstfürsorge
+              </Link>
+              . Zurück geht es zu{" "}
+              <Link href="/kommunizieren" className="editorial-link">
+                Kommunizieren
+              </Link>
+              .
+            </p>
+          </EditorialProse>
+        </EditorialSection>
+
+        <RelatedLinksEditorial
+          links={[
+            {
+              href: "/selbstfuersorge",
+              title: "Selbstfürsorge",
+              description:
+                "Warnsignale, Sofort-Übungen und die Erlaubnis, die eigene Belastung ernst zu nehmen.",
+            },
+            {
+              href: "/kommunizieren",
+              title: "Kommunizieren",
+              description:
+                "Grenzen ruhig und klar formulieren: Validierung, DEAR-Technik und Deeskalation.",
+            },
+            {
+              href: "/materialien",
+              title: "Materialien & Handouts",
+              description:
+                "Spickzettel und Infografiken zu Grenzen und Konsequenzen – als PDF.",
+            },
+          ]}
+        />
+      </EditorialLayout>
     </Layout>
   );
 }

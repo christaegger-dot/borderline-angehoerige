@@ -150,8 +150,12 @@
   --color-home-orbit-inner: oklch(0.95 0.02 190 / 0.7);
   --color-home-orbit-outer: oklch(0.88 0.04 190 / 0.25);
 
-  /* Typography – Design-Lock: Inter exklusiv */
-  --font-display: "Inter", "Inter fallback", sans-serif;
+  /* Typography
+     --font-body: Inter (alle Body-/UI-Texte)
+     --font-heading: Source Serif 4 (existing, für h1/h2)
+     --font-display: alias zu Source Serif 4 — Editorial-Phase-1-Token für
+       Hero-/Display-Typografie. Kann später eigene Stack-Definition bekommen. */
   --font-body: "Inter", "Inter fallback", sans-serif;
   --font-heading: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  --font-display: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
 }

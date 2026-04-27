@@ -1,20 +1,31 @@
-import SEO from "@/components/SEO";
-import Layout from "@/components/Layout";
-import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
+/**
+ * Glossar — Editorial-Redesign Phase 5 (Page 1/9, Tier 2)
+ *
+ * Migriert auf Editorial-Pattern. Erste Page der Tier-2-Welle.
+ * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt «Page 1».
+ *
+ * Pattern: alphabetisches <dl> mit Buchstaben-Sub-Blöcken. Search-
+ * Eingabe und Kategorie-Filter entfallen — der Brief sagt explizit
+ * «keine Filter, keine Suche, keine Karten». An ihrer Stelle:
+ * Anker-Sprungleiste A–Z als Kapitälchen-Zeile.
+ *
+ * Cross-Page-Deeplink-Schutz: Selbstfürsorge.tsx:272 nutzt
+ * `/glossar?q=DBT`. Die ?q=-Logik bleibt erhalten — anstatt zu filtern,
+ * scrollt sie zum passenden Term-Anker (slug- oder abbreviation-
+ * basiert). Damit funktioniert der existierende Deeplink ohne
+ * Source-Änderung in Selbstfürsorge.
+ *
+ * Buchstaben ohne Einträge in der Sprungleiste: weggelassen (Default
+ * gemäss Brief).
+ */
+import { useCallback, useEffect, useMemo } from "react";
 import {
-  BookOpen,
-  Search,
-  ArrowRight,
-  Brain,
-  Heart,
-  MessageCircle,
-  Users,
-  Lightbulb,
-  AlertTriangle,
-  Sparkles,
-} from "lucide-react";
-import { useState, useEffect, useMemo } from "react";
+  EditorialLayout,
+  EditorialProse,
+  EditorialSection,
+} from "@/components/editorial";
+import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Link, useLocation } from "wouter";
 
 interface GlossaryTerm {
@@ -28,7 +39,6 @@ interface GlossaryTerm {
 }
 
 const glossaryTerms: GlossaryTerm[] = [
-  // Therapie & Behandlung
   {
     term: "Dialektisch-Behaviorale Therapie",
     abbreviation: "DBT",
@@ -74,8 +84,6 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPage: "/genesung",
     relatedPageTitle: "Genesung ist möglich",
   },
-
-  // Kommunikation
   {
     term: "Validierung",
     category: "kommunikation",
@@ -114,8 +122,6 @@ const glossaryTerms: GlossaryTerm[] = [
     example:
       "Invalidierende Aussagen: 'Das ist doch nicht so schlimm', 'Du übertreibst mal wieder', 'Andere haben es viel schwerer'.",
   },
-
-  // Symptome & Muster
   {
     term: "Emotionale Dysregulation",
     category: "symptome",
@@ -164,8 +170,6 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPage: "/verstehen",
     relatedPageTitle: "Borderline verstehen",
   },
-
-  // Selbsthilfe & Angehörige
   {
     term: "Selbstfürsorge",
     category: "selbsthilfe",
@@ -218,71 +222,122 @@ const glossaryTerms: GlossaryTerm[] = [
   },
 ];
 
-const categoryInfo = {
-  therapie: {
-    label: "Therapie & Behandlung",
-    icon: Brain,
-    activeClass: "bg-slate-mid text-white",
-    stripClass: "bg-slate-mid",
-    iconClass: "text-slate-mid",
-  },
-  kommunikation: {
-    label: "Kommunikation",
-    icon: MessageCircle,
-    activeClass: "bg-sage-dark text-white",
-    stripClass: "bg-sage-dark",
-    iconClass: "text-sage-dark",
-  },
-  symptome: {
-    label: "Symptome & Muster",
-    icon: AlertTriangle,
-    activeClass: "bg-sage-dark text-white",
-    stripClass: "bg-sage-dark",
-    iconClass: "text-sage-dark",
-  },
-  selbsthilfe: {
-    label: "Selbsthilfe & Angehörige",
-    icon: Heart,
-    activeClass: "bg-sage-mid text-white",
-    stripClass: "bg-sage-mid",
-    iconClass: "text-sage-mid",
-  },
-} as const;
+const categoryLabels: Record<GlossaryTerm["category"], string> = {
+  therapie: "Therapie & Behandlung",
+  kommunikation: "Kommunikation",
+  symptome: "Symptome & Muster",
+  selbsthilfe: "Selbsthilfe & Angehörige",
+};
+
+/** Slugifiziert einen Term zu URL-sicherer Anker-ID. */
+function slugifyTerm(term: string): string {
+  return term
+    .toLowerCase()
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/ß/g, "ss")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/** Liefert den ersten Buchstaben (uppercase) für Gruppierung. */
+function firstLetter(term: string): string {
+  return term.charAt(0).toUpperCase();
+}
+
+interface SortedGroup {
+  letter: string;
+  terms: GlossaryTerm[];
+}
 
 export default function Glossar() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [location] = useLocation();
 
-  // Bug-Fix: URL-Parameter ?q= auslesen und in Suchfeld setzen
+  const sortedGroups: SortedGroup[] = useMemo(() => {
+    const sorted = [...glossaryTerms].sort((a, b) =>
+      a.term.localeCompare(b.term, "de")
+    );
+    const groups = new Map<string, GlossaryTerm[]>();
+    for (const term of sorted) {
+      const letter = firstLetter(term.term);
+      const arr = groups.get(letter) ?? [];
+      arr.push(term);
+      groups.set(letter, arr);
+    }
+    return Array.from(groups.entries())
+      .sort(([a], [b]) => a.localeCompare(b, "de"))
+      .map(([letter, terms]) => ({ letter, terms }));
+  }, []);
+
+  // Cross-Page-Deeplink: /glossar?q=DBT scrollt zum passenden Term.
+  // Auch /glossar#term-xyz wird vom Browser nativ behandelt — diese
+  // useEffect ergänzt das nur für die ?q=-Variante.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const q = params.get("q");
-    if (q) setSearchTerm(q);
+    if (!q) return;
+    const needle = q.toLowerCase().trim();
+    const match = glossaryTerms.find(
+      t =>
+        t.term.toLowerCase() === needle ||
+        t.abbreviation?.toLowerCase() === needle ||
+        t.term.toLowerCase().includes(needle)
+    );
+    if (!match) return;
+    const id = `term-${slugifyTerm(match.term)}`;
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   }, [location]);
 
-  const filteredTerms = useMemo(
-    () =>
-      glossaryTerms.filter(term => {
-        const q = searchTerm.toLowerCase();
-        const matchesSearch =
-          searchTerm === "" ||
-          term.term.toLowerCase().includes(q) ||
-          term.definition.toLowerCase().includes(q) ||
-          (term.abbreviation && term.abbreviation.toLowerCase().includes(q));
-
-        const matchesCategory =
-          selectedCategory === null || term.category === selectedCategory;
-
-        return matchesSearch && matchesCategory;
-      }),
-    [searchTerm, selectedCategory]
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, anchorId: string) => {
+      e.preventDefault();
+      const el = document.getElementById(anchorId);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+    []
   );
 
-  const sortedTerms = useMemo(
-    () => [...filteredTerms].sort((a, b) => a.term.localeCompare(b.term, "de")),
-    [filteredTerms]
-  );
+  const dtStyle = {
+    fontFamily: "var(--font-display)",
+    fontSize: "var(--text-lg)",
+    fontWeight: "var(--weight-display)",
+    lineHeight: "var(--lh-snug)",
+    color: "var(--fg-primary)",
+    letterSpacing: "var(--tracking-tight)",
+  };
+
+  const ddStyle = {
+    fontSize: "var(--text-md)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const exampleStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-tertiary)",
+    fontStyle: "italic" as const,
+  };
+
+  const labelStyle = {
+    fontSize: "var(--text-xs)",
+    letterSpacing: "var(--tracking-caps)",
+    color: "var(--fg-tertiary)",
+    fontWeight: 500,
+  } as const;
+
+  const letterHeaderStyle = {
+    fontFamily: "var(--font-display)",
+    fontSize: "var(--text-2xl)",
+    fontWeight: "var(--weight-display)",
+    color: "var(--accent-primary)",
+    letterSpacing: "var(--tracking-tight)",
+    lineHeight: 1,
+  };
 
   return (
     <Layout>
@@ -291,211 +346,157 @@ export default function Glossar() {
         description="Fachbegriffe rund um Borderline verständlich erklärt: von BPS über DBT bis Dysregulation – für Angehörige ohne Vorkenntnisse."
         path="/glossar"
       />
-      {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
+
+      <EditorialLayout width="narrow">
+        {/* ── Hero ── */}
+        <header className="pb-16 pt-16 md:pb-24 md:pt-24">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-slate-dark" />
-              </div>
-              <span className="text-sm font-medium text-sage-dark">
-                {glossaryTerms.length} Begriffe
-              </span>
-            </div>
+            Glossar
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            Glossar
+          </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Fachbegriffe verständlich erklärt – für Angehörige, die sich neu
+            einlesen oder bestimmte Konzepte nachschlagen möchten.
+          </p>
+          <p className="mt-4 uppercase" style={labelStyle}>
+            {glossaryTerms.length} Begriffe
+          </p>
+        </header>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
-              Glossar
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Fachbegriffe verständlich erklärt – für Angehörige, die sich neu
-              einlesen oder bestimmte Konzepte nachschlagen möchten.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Search & Filter */}
-      <section className="py-8 border-b border-border/50 sticky top-16 md:top-20 bg-background/95 backdrop-blur-sm z-30">
-        <div className="container">
-          <div className="flex flex-col md:flex-row gap-4">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-              <input
-                type="text"
-                placeholder="Begriff suchen..."
-                value={searchTerm}
-                onChange={e => setSearchTerm(e.target.value)}
-                aria-label="Glossar durchsuchen"
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground/80 focus:outline-none focus:ring-2 focus:ring-slate-mid"
-              />
-            </div>
-
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => setSelectedCategory(null)}
-                aria-label="Alle Kategorien anzeigen"
-                aria-pressed={selectedCategory === null}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  selectedCategory === null
-                    ? "bg-slate-dark text-white"
-                    : "bg-muted/50 text-muted-foreground hover:bg-muted"
-                }`}
+        {/* ── Anker-Sprungleiste A–Z ── */}
+        <nav
+          aria-label="Buchstaben-Sprungleiste"
+          className="border-t border-b py-4"
+          style={{ borderColor: "var(--rule-color)" }}
+        >
+          <p
+            className="flex flex-wrap gap-x-4 gap-y-2 uppercase"
+            style={labelStyle}
+          >
+            {sortedGroups.map(group => (
+              <a
+                key={group.letter}
+                href={`#letter-${group.letter.toLowerCase()}`}
+                className="editorial-link"
+                onClick={e =>
+                  handleAnchorClick(e, `letter-${group.letter.toLowerCase()}`)
+                }
               >
-                Alle
-              </button>
-              {Object.entries(categoryInfo).map(([key, info]) => (
-                <button
-                  type="button"
-                  key={key}
-                  onClick={() =>
-                    setSelectedCategory(selectedCategory === key ? null : key)
-                  }
-                  aria-label={info.label}
-                  aria-pressed={selectedCategory === key}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
-                    selectedCategory === key
-                      ? info.activeClass
-                      : "bg-muted/50 text-muted-foreground hover:bg-muted"
-                  }`}
-                >
-                  <info.icon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{info.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                {group.letter}
+              </a>
+            ))}
+          </p>
+        </nav>
 
-      {/* Glossary Terms */}
-      <section className="py-8 md:py-12">
-        <div className="container">
-          {sortedTerms.length === 0 ? (
-            <div className="text-center py-12">
-              <Sparkles className="w-12 h-12 text-muted-foreground/40 mx-auto mb-4" />
-              <p className="text-muted-foreground">
-                Keine Begriffe gefunden für "{searchTerm}"
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-6">
-              {sortedTerms.map((term, index) => {
-                const category = categoryInfo[term.category];
+        {/* ── Glossar-Liste ── */}
+        <dl className="mt-12 space-y-12">
+          {sortedGroups.map(group => (
+            <section
+              key={group.letter}
+              id={`letter-${group.letter.toLowerCase()}`}
+              className="space-y-8"
+            >
+              <h2
+                className="border-b pb-3"
+                style={{
+                  ...letterHeaderStyle,
+                  borderColor: "var(--rule-color)",
+                }}
+                aria-label={`Begriffe mit ${group.letter}`}
+              >
+                {group.letter}
+              </h2>
+              {group.terms.map(t => {
+                const id = `term-${slugifyTerm(t.term)}`;
                 return (
-                  <motion.div
-                    key={term.term}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05, ease: "easeOut" }}
-                  >
-                    <Card className="overflow-hidden hover:shadow-md transition-shadow">
-                      <CardContent className="p-0">
-                        <div className="flex flex-col md:flex-row">
-                          {/* Category indicator */}
-                          <div
-                            className={`h-2 w-full md:h-auto md:w-2 ${category.stripClass}`}
-                          />
-
-                          <div className="p-6 flex-1">
-                            {/* Header */}
-                            <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-                              <div>
-                                <h2 className="text-xl font-normal text-foreground">
-                                  {term.term}
-                                  {term.abbreviation && (
-                                    <span className="ml-2 text-base font-normal text-muted-foreground">
-                                      ({term.abbreviation})
-                                    </span>
-                                  )}
-                                </h2>
-                                <div className="flex items-center gap-2 mt-1">
-                                  <category.icon
-                                    className={`w-4 h-4 ${category.iconClass}`}
-                                  />
-                                  <span className="text-sm text-muted-foreground">
-                                    {category.label}
-                                  </span>
-                                </div>
-                              </div>
-
-                              {term.relatedPage && (
-                                <Link href={term.relatedPage}>
-                                  <span className="inline-flex items-center gap-1 text-sm text-slate-mid hover:text-slate-dark transition-colors">
-                                    {term.relatedPageTitle}
-                                    <ArrowRight className="w-4 h-4" />
-                                  </span>
-                                </Link>
-                              )}
-                            </div>
-
-                            {/* Definition */}
-                            <p className="text-foreground leading-relaxed mb-4">
-                              {term.definition}
-                            </p>
-
-                            {/* Example */}
-                            {term.example && (
-                              <div className="bg-sand rounded-lg p-4 border-l-4 border-sand-border">
-                                <div className="flex items-start gap-3">
-                                  <Lightbulb className="w-5 h-5 text-sand-warm flex-shrink-0 mt-0.5" />
-                                  <p className="text-sm text-muted-foreground">
-                                    <span className="font-medium text-foreground">
-                                      Beispiel:{" "}
-                                    </span>
-                                    {term.example}
-                                  </p>
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
+                  <div key={t.term} id={id} className="space-y-3">
+                    <dt style={dtStyle}>
+                      {t.term}
+                      {t.abbreviation && (
+                        <span
+                          className="ml-2"
+                          style={{
+                            fontSize: "var(--text-md)",
+                            fontWeight: 400,
+                            color: "var(--fg-tertiary)",
+                          }}
+                        >
+                          ({t.abbreviation})
+                        </span>
+                      )}
+                    </dt>
+                    <p className="uppercase" style={labelStyle}>
+                      {categoryLabels[t.category]}
+                    </p>
+                    <dd style={ddStyle}>{t.definition}</dd>
+                    {t.example && (
+                      <dd style={exampleStyle}>
+                        <strong
+                          style={{
+                            color: "var(--fg-secondary)",
+                            fontStyle: "normal",
+                          }}
+                        >
+                          Beispiel:{" "}
+                        </strong>
+                        {t.example}
+                      </dd>
+                    )}
+                    {t.relatedPage && t.relatedPageTitle && (
+                      <dd style={{ fontSize: "var(--text-sm)" }}>
+                        Siehe auch:{" "}
+                        <Link href={t.relatedPage} className="editorial-link">
+                          {t.relatedPageTitle}
+                        </Link>
+                      </dd>
+                    )}
+                  </div>
                 );
               })}
-            </div>
-          )}
-        </div>
-      </section>
+            </section>
+          ))}
+        </dl>
 
-      {/* Hinweis */}
-      <section className="py-8 md:py-12 bg-sand wave-divider-top [--wave-color:var(--background)]">
-        <div className="container">
-          <Card className="bg-white border-sand-subtle">
-            <CardContent className="p-6 md:p-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-slate-lighter flex items-center justify-center flex-shrink-0">
-                  <Users className="w-6 h-6 text-slate-mid" />
-                </div>
-                <div>
-                  <h2 className="text-lg font-normal text-foreground mb-2">
-                    Begriffe im Kontext verstehen
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Dieses Glossar bietet vereinfachte Erklärungen für
-                    Angehörige. Die Begriffe werden in der Fachliteratur und
-                    klinischen Praxis oft differenzierter verwendet. Bei Fragen
-                    zur Diagnose oder Behandlung wenden Sie sich bitte an
-                    Fachpersonen.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+        {/* ── Hinweis: Begriffe im Kontext verstehen ── */}
+        <EditorialSection
+          label="Hinweis"
+          title="Begriffe im Kontext verstehen"
+          rule
+        >
+          <EditorialProse>
+            <p>
+              Dieses Glossar bietet vereinfachte Erklärungen für Angehörige. Die
+              Begriffe werden in der Fachliteratur und klinischen Praxis oft
+              differenzierter verwendet. Bei Fragen zur Diagnose oder Behandlung
+              wenden Sie sich bitte an Fachpersonen.
+            </p>
+          </EditorialProse>
+        </EditorialSection>
+      </EditorialLayout>
     </Layout>
   );
 }

@@ -1,17 +1,31 @@
-import SEO from "@/components/SEO";
-import Layout from "@/components/Layout";
-import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
+/**
+ * Buchempfehlungen — Editorial-Redesign Phase 5 (Page 3/9, Tier 2)
+ *
+ * Migriert auf Editorial-Pattern. Folgt Phase-5-Master-Brief, Abschnitt
+ * «Page 3 — Buchempfehlungen».
+ *
+ * Sonderfall: Der Brief beschreibt ein 2-Spalten-Layout pro Buch
+ * (Cover links, Text rechts), aber das Datenmodell `Book` hat **kein**
+ * `cover`-Feld — die Original-Page rendert ausschliesslich Text. Daher:
+ * einzeilige Buch-Einträge mit Hairline-Trenner. Falls später Cover
+ * ergänzt werden, kann der Layout-Block um eine 2-Spalten-Variante
+ * erweitert werden, ohne Inhalts-Änderung.
+ *
+ * Filter-UI (sticky 5-Button-Leiste) entfernt, analog Glossar — bei 17
+ * Büchern in 4 Kategorien ist scrollen + Anker-Sprungleiste leichter
+ * als Toggle-Filter. Anker-IDs pro Kategorie (`cat-partner` etc.) und
+ * pro Buch (`book-<slug>`) ergänzt für stabile Cross-Page-Verweise.
+ *
+ * «Beim Verlag»-Box-Link rechts pro Buch zu Inline-`editorial-link`.
+ */
+import { useCallback } from "react";
 import {
-  BookOpen,
-  Heart,
-  Users,
-  Baby,
-  Sparkles,
-  ExternalLink,
-  Star,
-} from "lucide-react";
-import { useState, useMemo } from "react";
+  EditorialLayout,
+  EditorialProse,
+  EditorialSection,
+} from "@/components/editorial";
+import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
 interface Book {
   title: string;
@@ -28,8 +42,6 @@ interface BookCategory {
   id: string;
   title: string;
   subtitle: string;
-  icon: React.ComponentType<{ className?: string }>;
-  iconShellClass: string;
   books: Book[];
 }
 
@@ -38,8 +50,6 @@ const bookCategories: BookCategory[] = [
     id: "partner",
     title: "Für Partner & Ehepartner",
     subtitle: "Wenn Ihr Partner oder Ihre Partnerin betroffen ist",
-    icon: Heart,
-    iconShellClass: "bg-sage-wash text-sage-dark",
     books: [
       {
         title: "Schluss mit dem Eiertanz",
@@ -97,8 +107,6 @@ const bookCategories: BookCategory[] = [
     id: "eltern",
     title: "Für Eltern",
     subtitle: "Wenn Ihr Kind (Jugendliche oder Erwachsene) betroffen ist",
-    icon: Users,
-    iconShellClass: "bg-slate-light text-slate-mid",
     books: [
       {
         title: "DBT-Familienskills: Ein Praxisleitfaden",
@@ -143,8 +151,6 @@ const bookCategories: BookCategory[] = [
     id: "kinder",
     title: "Kinderbücher",
     subtitle: "Für Kinder, deren Elternteil betroffen ist",
-    icon: Baby,
-    iconShellClass: "bg-sage-light text-sage-mid",
     books: [
       {
         title: "Mama, Mia und das Schleuderprogramm",
@@ -195,8 +201,6 @@ const bookCategories: BookCategory[] = [
     id: "erfahrungsberichte",
     title: "Erfahrungsberichte",
     subtitle: "Persönliche Geschichten von Betroffenen und Angehörigen",
-    icon: Sparkles,
-    iconShellClass: "bg-sage-wash text-sage-dark",
     books: [
       {
         title: "Leben auf der Grenze",
@@ -231,16 +235,64 @@ const bookCategories: BookCategory[] = [
   },
 ];
 
-export default function Buchempfehlungen() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+/** Slugifiziert Buchtitel für stabile Anker-IDs. */
+function slugifyTitle(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/ß/g, "ss")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
-  const filteredCategories = useMemo(
-    () =>
-      activeCategory
-        ? bookCategories.filter(cat => cat.id === activeCategory)
-        : bookCategories,
-    [activeCategory]
+export default function Buchempfehlungen() {
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, anchorId: string) => {
+      e.preventDefault();
+      const el = document.getElementById(anchorId);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+    []
   );
+
+  const titleStyle = {
+    fontFamily: "var(--font-display)",
+    fontSize: "var(--text-lg)",
+    fontWeight: "var(--weight-display)",
+    lineHeight: "var(--lh-snug)",
+    color: "var(--fg-primary)",
+    letterSpacing: "var(--tracking-tight)",
+  };
+
+  const authorStyle = {
+    fontSize: "var(--text-md)",
+    color: "var(--fg-secondary)",
+    fontStyle: "italic" as const,
+  };
+
+  const descStyle = {
+    fontSize: "var(--text-md)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const labelStyle = {
+    fontSize: "var(--text-xs)",
+    letterSpacing: "var(--tracking-caps)",
+    color: "var(--fg-tertiary)",
+    fontWeight: 500,
+  } as const;
+
+  const categoryHeadingStyle = {
+    fontFamily: "var(--font-display)",
+    fontSize: "var(--text-2xl)",
+    fontWeight: "var(--weight-display)",
+    color: "var(--fg-primary)",
+    letterSpacing: "var(--tracking-tight)",
+    lineHeight: "var(--lh-snug)",
+  };
 
   return (
     <Layout>
@@ -249,211 +301,147 @@ export default function Buchempfehlungen() {
         description="Buchempfehlungen für Angehörige von Menschen mit Borderline: Ratgeber, Fachliteratur und DBT-Bücher – mit kurzen Einschätzungen zum Inhalt."
         path="/buchempfehlungen"
       />
-      {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
+
+      <EditorialLayout width="wide">
+        {/* ── Hero ── */}
+        <header className="pb-16 pt-16 md:pb-24 md:pt-24">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-sage-wash flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-sand-warm" />
-              </div>
-            </div>
+            Buchempfehlungen
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            Bücher für <em>Angehörige</em>
+          </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl
+            verbindet Grundwissen, Beziehungsperspektiven, Selbstfürsorge und
+            Erfahrungsnähe, ohne Anspruch auf Vollständigkeit.
+          </p>
+        </header>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
-              Buchempfehlungen
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl
-              verbindet Grundwissen, Beziehungsperspektiven, Selbstfürsorge und
-              Erfahrungsnähe, ohne Anspruch auf Vollständigkeit.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Category Filter */}
-      <section className="py-6 border-b border-border/50 sticky top-16 md:top-20 bg-background/95 backdrop-blur-sm z-30">
-        <div className="container">
-          <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => setActiveCategory(null)}
-              aria-label="Alle Kategorien anzeigen"
-              aria-pressed={activeCategory === null}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                activeCategory === null
-                  ? "bg-sage-dark text-white"
-                  : "bg-muted/50 text-muted-foreground hover:bg-muted"
-              }`}
-            >
-              Alle Kategorien
-            </button>
+        {/* ── Kategorie-Sprungleiste ── */}
+        <nav
+          aria-label="Kategorie-Sprungleiste"
+          className="border-t border-b py-4"
+          style={{ borderColor: "var(--rule-color)" }}
+        >
+          <p
+            className="flex flex-wrap gap-x-5 gap-y-2 uppercase"
+            style={labelStyle}
+          >
             {bookCategories.map(category => (
-              <button
-                type="button"
+              <a
                 key={category.id}
-                onClick={() =>
-                  setActiveCategory(
-                    activeCategory === category.id ? null : category.id
-                  )
-                }
-                aria-label={category.title}
-                aria-pressed={activeCategory === category.id}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${
-                  activeCategory === category.id
-                    ? "bg-sage-dark text-white"
-                    : "bg-muted/50 text-muted-foreground hover:bg-muted"
-                }`}
+                href={`#cat-${category.id}`}
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, `cat-${category.id}`)}
               >
-                <category.icon className="w-4 h-4" />
-                <span className="hidden sm:inline">
-                  {category.title.replace("Für ", "")}
-                </span>
-              </button>
+                {category.title.replace(/^Für /, "")}
+              </a>
             ))}
-          </div>
-        </div>
-      </section>
+          </p>
+        </nav>
 
-      {/* Book Categories */}
-      <section className="py-8 md:py-12">
-        <div className="container">
-          <div className="space-y-16">
-            {filteredCategories.map((category, catIndex) => (
-              <motion.div
-                key={category.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: catIndex * 0.1, ease: "easeOut" }}
-              >
-                {/* Category Header */}
-                <div className="flex items-start gap-4 mb-8">
-                  <div
-                    className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl ${category.iconShellClass}`}
-                  >
-                    <category.icon className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-normal text-foreground">
-                      {category.title}
-                    </h2>
-                    <p className="text-muted-foreground mt-1">
-                      {category.subtitle}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Books Grid */}
-                <div className="grid gap-6 md:grid-cols-2">
-                  {category.books.map((book, bookIndex) => (
-                    <motion.div
-                      key={book.title}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: bookIndex * 0.05, ease: "easeOut" }}
-                      className={bookIndex === 0 ? "md:col-span-2" : ""}
-                    >
-                      <Card
-                        className={`h-full transition-all hover:shadow-md ${book.highlight ? "ring-2 ring-sand-border" : ""}`}
-                      >
-                        <CardContent className="p-6">
-                          {/* Book Header */}
-                          <div className="flex items-start justify-between gap-3 mb-3">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-1">
-                                {book.highlight && (
-                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sage-lighter text-sage-dark text-xs font-medium">
-                                    <Star className="w-3 h-3" />
-                                    Empfehlung
-                                  </span>
-                                )}
-                              </div>
-                              <h3 className="text-lg font-semibold text-foreground leading-tight">
-                                {book.title}
-                              </h3>
-                              <p className="text-sm text-muted-foreground mt-1">
-                                {book.author}
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* Publisher & Year */}
-                          <p className="text-xs text-muted-foreground mb-3">
-                            {book.publisher}
-                            {book.year && `, ${book.year}`}
-                          </p>
-
-                          {/* Description */}
-                          <p className="text-sm text-foreground/80 leading-relaxed mb-4">
-                            {book.description}
-                          </p>
-
-                          {/* Footer */}
-                          <div className="flex items-center justify-between pt-3 border-t border-border/50">
-                            <span className="text-xs text-muted-foreground">
-                              {book.forWhom}
-                            </span>
-                            {book.shopLink && (
-                              <a
-                                href={book.shopLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-xs text-slate-mid hover:text-slate-dark transition-colors"
-                              >
-                                Beim Verlag
-                                <ExternalLink className="w-3 h-3" />
-                              </a>
-                            )}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Hinweis */}
-      <section className="py-8 md:py-12 bg-slate-pale">
-        <div className="container">
-          <Card className="bg-white border-slate-light">
-            <CardContent className="p-6 md:p-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-slate-lighter flex items-center justify-center flex-shrink-0">
-                  <BookOpen className="w-6 h-6 text-slate-mid" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Hinweis zu den Empfehlungen
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Diese Liste ist eine persönliche Auswahl und erhebt keinen
-                    Anspruch auf Vollständigkeit. Die Bücher wurden nach
-                    Praxisrelevanz, Verständlichkeit und Aktualität ausgewählt.
-                    Einige ältere Titel sind Klassiker, die nach wie vor
-                    wertvoll sind.
-                  </p>
-                  <p className="text-sm text-muted-foreground/80">
-                    Viele Bücher sind auch in Bibliotheken verfügbar oder können
-                    über die Fernleihe bestellt werden.
-                  </p>
-                </div>
+        {/* ── Bücher gruppiert nach Kategorie ── */}
+        <div className="mt-16 space-y-20">
+          {bookCategories.map(category => (
+            <section
+              key={category.id}
+              id={`cat-${category.id}`}
+              className="space-y-8"
+            >
+              {/* Kategorie-Kopf */}
+              <div className="space-y-2">
+                <h2 style={categoryHeadingStyle}>{category.title}</h2>
+                <p style={descStyle}>{category.subtitle}</p>
               </div>
-            </CardContent>
-          </Card>
+
+              {/* Bücher-Liste */}
+              <ul className="space-y-12">
+                {category.books.map(book => {
+                  const bookId = `book-${slugifyTitle(book.title)}`;
+                  return (
+                    <li
+                      key={book.title}
+                      id={bookId}
+                      className="border-t pt-8 space-y-3"
+                      style={{ borderColor: "var(--rule-color)" }}
+                    >
+                      {book.highlight && (
+                        <p className="uppercase" style={labelStyle}>
+                          Empfehlung
+                        </p>
+                      )}
+                      <h3 style={titleStyle}>{book.title}</h3>
+                      <p style={authorStyle}>{book.author}</p>
+                      <p className="uppercase" style={labelStyle}>
+                        {book.publisher}
+                        {book.year && `, ${book.year}`}
+                      </p>
+                      <p style={descStyle}>{book.description}</p>
+                      <p
+                        className="flex flex-wrap items-baseline gap-x-5 gap-y-1 pt-1"
+                        style={{ fontSize: "var(--text-sm)" }}
+                      >
+                        <span style={labelStyle} className="uppercase">
+                          Für: {book.forWhom}
+                        </span>
+                        {book.shopLink && (
+                          <a
+                            href={book.shopLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="editorial-link"
+                          >
+                            Beim Verlag
+                          </a>
+                        )}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          ))}
         </div>
-      </section>
+
+        {/* ── Hinweis ── */}
+        <EditorialSection label="Hinweis" title="Zu den Empfehlungen" rule>
+          <EditorialProse>
+            <p>
+              Diese Liste ist eine persönliche Auswahl und erhebt keinen
+              Anspruch auf Vollständigkeit. Die Bücher wurden nach
+              Praxisrelevanz, Verständlichkeit und Aktualität ausgewählt. Einige
+              ältere Titel sind Klassiker, die nach wie vor wertvoll sind.
+            </p>
+            <p>
+              Viele Bücher sind auch in Bibliotheken verfügbar oder können über
+              die Fernleihe bestellt werden.
+            </p>
+          </EditorialProse>
+        </EditorialSection>
+      </EditorialLayout>
     </Layout>
   );
 }

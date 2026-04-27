@@ -378,6 +378,7 @@ export default function Notfall() {
               Was ist gerade los?
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              {/* ROT: Lebensgefahr – roter Wash-Hintergrund, farbige Typografie */}
               <button
                 type="button"
                 onClick={() =>
@@ -385,13 +386,14 @@ export default function Notfall() {
                     .getElementById("block-rot")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }
-                className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-background border border-[var(--color-sos-rot)]/40 hover:border-[var(--color-sos-rot)] hover:bg-[var(--color-sos-rot-wash)] transition-all text-left group"
+                className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[var(--color-sos-rot-wash)] border-2 border-[var(--color-sos-rot)]/50 hover:border-[var(--color-sos-rot)] hover:bg-[var(--color-sos-rot)]/10 transition-all text-left group"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-sos-rot)] shrink-0" />
-                <span className="text-sm font-medium text-foreground">
+                <span className="w-3 h-3 rounded-full bg-[var(--color-sos-rot)] shrink-0" />
+                <span className="text-sm font-semibold text-[var(--color-sos-rot)]">
                   Akute Lebensgefahr
                 </span>
               </button>
+              {/* ORANGE: Psychiatrische Krise – oranger Wash */}
               <button
                 type="button"
                 onClick={() =>
@@ -399,13 +401,14 @@ export default function Notfall() {
                     .getElementById("block-orange")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }
-                className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-background border border-[var(--color-sos-orange-text)]/30 hover:border-[var(--color-sos-orange-text)] hover:bg-[var(--color-sos-orange-wash)] transition-all text-left group"
+                className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[var(--color-sos-orange-wash)] border-2 border-[var(--color-sos-orange-text)]/40 hover:border-[var(--color-sos-orange-text)] hover:bg-[var(--color-sos-orange-light)] transition-all text-left group"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-sos-orange-text)] shrink-0" />
-                <span className="text-sm font-medium text-foreground">
+                <span className="w-3 h-3 rounded-full bg-[var(--color-sos-orange-text)] shrink-0" />
+                <span className="text-sm font-semibold text-[var(--color-sos-orange-dark)]">
                   Psychiatrische Krise
                 </span>
               </button>
+              {/* GRÜN: Jemand zum Reden – grüner Wash */}
               <button
                 type="button"
                 onClick={() =>
@@ -413,10 +416,10 @@ export default function Notfall() {
                     .getElementById("block-gruen")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }
-                className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-background border border-[var(--color-sos-gruen-text)]/30 hover:border-[var(--color-sos-gruen-text)] hover:bg-[var(--color-sos-gruen-wash)] transition-all text-left group"
+                className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[var(--color-sos-gruen-wash)] border-2 border-[var(--color-sos-gruen-text)]/40 hover:border-[var(--color-sos-gruen-text)] hover:bg-[var(--color-sos-gruen-light)] transition-all text-left group"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-sos-gruen-text)] shrink-0" />
-                <span className="text-sm font-medium text-foreground">
+                <span className="w-3 h-3 rounded-full bg-[var(--color-sos-gruen-text)] shrink-0" />
+                <span className="text-sm font-semibold text-[var(--color-sos-gruen-dark)]">
                   Jemand zum Reden
                 </span>
               </button>

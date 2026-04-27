@@ -51,7 +51,7 @@ export default function Fachstelle() {
 
             <hr className="rule-narrow mb-6" />
 
-            <p className="lede prose-editorial">
+            <p className="lede">
               Ein Angebot der Psychiatrischen Universitätsklinik Zürich für
               Angehörige von Menschen mit psychischen Erkrankungen. Die
               Fachstelle bietet Orientierung, Entlastung und Beratung für

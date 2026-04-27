@@ -1,174 +1,120 @@
-import InvitationSection from "@/components/InvitationSection";
+/**
+ * Genesung — Editorial-Redesign Phase 4 Welle 2 (Page 8/10)
+ *
+ * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge/Übersicht/
+ * Alltag/Therapie/Krise-Pattern. Inhalt unverändert ausser Hero-Lesezeit
+ * und prosaischen Verbindungssätzen.
+ *
+ * Brief-Sonderregel (Page 8): Die drei Statistiken (85–93% Remission,
+ * 50% Recovery, ~10 Jahre Horizont) sind bereits inhaltlich auf der
+ * Seite (im «Was die Forschung zeigt»-Block mit Quellen via
+ * EvidenceNote). Per Brief Punkt 1 daher: «nichts zusätzlich tun, nur
+ * das normale Editorial-Treatment». Werte werden literal genannt, mit
+ * hervorgehobenen Versalziffern (Display-Serif, var(--accent-primary)),
+ * NICHT als animierte Counter, NICHT als Karten-Trio. AnimatedStat-
+ * Komponente bleibt im Repo bis Phase 7 und wird hier nicht importiert.
+ *
+ * Out of scope: `LastVerifiedBadge`, `InvitationSection` entfernt
+ * (Selbstfürsorge-Pattern). Materialien-Block bleibt als ContentSection
+ * (`infografiken`-Anker, Smoke-Test-Erwartung «Textversion lesen:
+ * <Title>»).
+ */
+import { useCallback } from "react";
+import ContentSection from "@/components/ContentSection";
+import {
+  EditorialLayout,
+  EditorialProse,
+  EditorialPullQuote,
+  EditorialSection,
+} from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
-import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  BookOpen,
-  ExternalLink,
-  FileText,
-  Heart,
-  Image as ImageIcon,
-  RefreshCw,
-  Sparkles,
-  Stethoscope,
-  TrendingUp,
-  Users,
-} from "lucide-react";
-import { Link } from "wouter";
-import ContentSection from "@/components/ContentSection";
+import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import SEO from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { genesungItems as genesungMaterialItems } from "@/content/genesung";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import { Link } from "wouter";
 
-const genesungIntroCards = [
-  {
-    icon: Sparkles,
-    title: "Hoffnung realistisch halten",
-    text: "Genesung ist oft möglich, aber selten glatt, schnell oder vollständig planbar.",
-    iconClass: "text-sage-mid",
-    shellClass: "bg-sage-wash border-sage-light/80",
-  },
-  {
-    icon: RefreshCw,
-    title: "Rückschritte einordnen",
-    text: "Ein Einbruch oder Stillstand entwertet bisherigen Fortschritt nicht automatisch.",
-    iconClass: "text-slate-blue",
-    shellClass: "bg-slate-wash border-slate-light/80",
-  },
-  {
-    icon: Users,
-    title: "Rolle begrenzt sehen",
-    text: "Angehörige können Entwicklung mittragen, aber nicht herstellen oder beschleunigen.",
-    iconClass: "text-terracotta-mid",
-    shellClass: "bg-terracotta-wash border-terracotta-light/80",
-  },
-] as const;
-
-const genesungQuickLinks = [
-  {
-    id: "remission",
-    title: "Was Remission und Genesung bedeuten",
-    text: "Wenn Sie zuerst die Begriffe und Erwartungen realistischer einordnen möchten.",
-  },
-  {
-    id: "fortschritt-paradox",
-    title: "Das Fortschritt-Paradox",
-    text: "Wenn Sie Rückschritte besser verstehen möchten, ohne den ganzen Weg abzuwerten.",
-  },
-  {
-    id: "hoffnung",
-    title: "Realistische Hoffnung",
-    text: "Wenn Sie ein tragfähigeres Hoffnungsbild ohne zusätzlichen Druck suchen.",
-  },
-  {
-    id: "beitragen",
-    title: "Was Angehörige beitragen können",
-    text: "Wenn Sie Ihre Rolle hilfreicher und begrenzter zugleich sehen möchten.",
-  },
-] as const;
-
-function GenesungInfografiken() {
-  return (
-    <ContentSection
-      title="Materialien & Infografiken"
-      icon={<ImageIcon className="w-6 h-6 text-sage-dark" />}
-      id="infografiken"
-      defaultOpen={true}
-      preview="Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der Rolle von Angehörigen."
-    >
-      <p className="text-muted-foreground mb-6">
-        Vorschau = Web-Bild. Wenn verfügbar, führt «Textversion» zur lesbaren
-        Web-Version. «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {genesungMaterialItems.map((item, index) => {
-          const textVersionHref = getHandoutTextVersionHrefBySource(item.pdf);
-
-          return (
-            <Card
-              key={item.title}
-              className={`overflow-hidden border-border/50 hover:shadow-lg transition-all duration-500 group ${
-                genesungMaterialItems.length > 1 && index === 0
-                  ? "sm:col-span-2"
-                  : ""
-              }`}
-            >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
-                <img
-                  src={item.thumbnailUrl ?? item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                  width={600}
-                  height={848}
-                  decoding="async"
-                />
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-foreground mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  {item.desc}
-                </p>
-                <div className="grid gap-2">
-                  {textVersionHref ? (
-                    <Link
-                      href={textVersionHref}
-                      aria-label={`Textversion lesen: ${item.title}`}
-                      className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full bg-sage-dark hover:bg-sage-mid text-white transition-colors"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Textversion
-                    </Link>
-                  ) : null}
-                  <a
-                    href={getHandoutOpenHref(item.pdf) ?? item.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                    className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    PDF öffnen
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
-      </div>
-      <div className="flex flex-wrap gap-3 justify-center mt-8">
-        <Button variant="outline" asChild>
-          <Link href="/materialien">
-            Alle Materialien ansehen
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
-        </Button>
-        <Button variant="outline" asChild>
-          <Link href="/glossar">Fachbegriffe im Glossar →</Link>
-        </Button>
-        <Button variant="outline" asChild>
-          <Link href="/buchempfehlungen">Buchempfehlungen →</Link>
-        </Button>
-      </div>
-    </ContentSection>
+/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
+function openSection(sectionId: string) {
+  window.dispatchEvent(
+    new CustomEvent("open-section", { detail: { sectionId } })
   );
 }
 
+const fortschrittParadoxItems = [
+  "Rückschritte einordnen, statt sofort zu katastrophisieren",
+  "Fortschritte konkret benennen, statt nur global zu hoffen",
+  "Tempo nicht übersteuern, wenn es besser läuft",
+  "für schwierige Phasen einen kleinen Plan bereithalten",
+] as const;
+
+const beitragenItems = [
+  {
+    title: "Konsistenz",
+    desc: "berechenbar bleiben, statt in Alarm mitzukippen",
+  },
+  {
+    title: "realistische Hoffnung",
+    desc: "Zuversicht ohne Druck vermitteln",
+  },
+  {
+    title: "eigene Grenzen",
+    desc: "die eigene Stabilität nicht opfern",
+  },
+  {
+    title: "professionelle Hilfe",
+    desc: "Behandlung unterstützen, aber nicht ersetzen",
+  },
+] as const;
+
+const foerderfaktoren = [
+  "spezialisierte Psychotherapie",
+  "Zeit und Geduld",
+  "stabile, nicht verschlingende Beziehungen",
+  "alltagsbezogene Struktur",
+  "Behandlung von Begleiterkrankungen",
+] as const;
+
 export default function Genesung() {
-  const openSection = (sectionId: string) => {
-    window.dispatchEvent(
-      new CustomEvent("open-section", { detail: { sectionId } })
-    );
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+      e.preventDefault();
+      openSection(sectionId);
+    },
+    []
+  );
+
+  const h4Style = {
+    fontSize: "var(--text-md)",
+    fontWeight: 600,
+    color: "var(--fg-primary)",
   };
+
+  const bodyStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const labelStyle = {
+    fontSize: "var(--text-xs)",
+    letterSpacing: "var(--tracking-caps)",
+    color: "var(--fg-tertiary)",
+    fontWeight: 500,
+  } as const;
+
+  const versalStyle = {
+    fontFamily: "var(--font-display)",
+    fontSize: "var(--text-4xl)",
+    fontWeight: "var(--weight-display)",
+    color: "var(--accent-primary)",
+    lineHeight: 1,
+    letterSpacing: "var(--tracking-tight)",
+  } as const;
 
   return (
     <Layout>
@@ -179,577 +125,572 @@ export default function Genesung() {
       />
       <TableOfContents />
 
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-sage-dark blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-sage blur-3xl" />
-        </div>
-        <div className="container relative">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
+      <EditorialLayout width="narrow">
+        {/* ── Hero ── */}
+        <header className="pb-20 pt-16 md:pb-28 md:pt-24">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
           >
-            <span className="kicker text-sage-dark">
-              Genesung
-              <span aria-hidden="true"> · </span>
-              Langzeitverlauf &amp; Hoffnung
-            </span>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground mb-4">
-              Genesung ist <em>möglich</em>
-            </h1>
-
-            <hr className="rule rule-narrow mb-6" />
-
-            <p className="lede">
-              Hoffnung ist bei Borderline berechtigt – und gleichzeitig verläuft
-              Entwicklung selten glatt oder vorhersehbar. Für Angehörige ist
-              beides wichtig: Zuversicht und eine realistische Sicht auf Zeit.
-            </p>
-
-            <LastVerifiedBadge date="16.04.2026" className="mt-6" />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* PDF-Hinweis */}
-      <div className="container">
-        <div className="max-w-3xl mx-auto py-3">
-          <div className="flex items-center justify-between gap-3 rounded-lg bg-sage-wash/40 border border-sage-mid/20 px-4 py-2.5">
-            <p className="text-xs text-muted-foreground">
-              Alle Infografiken auch als druckbare PDFs verfügbar.
-            </p>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-7 text-xs text-sage-dark shrink-0"
-              asChild
-            >
-              <Link href="/materialien">Materialien →</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      <section className="py-8 md:py-10">
-        <div className="container">
-          <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-            <Card className="border-sage-light/70 bg-white/92 shadow-[0_28px_56px_-40px_rgba(31,101,109,0.32)]">
-              <CardContent className="p-6 md:p-7">
-                <div className="mb-5 flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-wash">
-                    <Heart className="h-6 w-6 text-sage-dark" />
-                  </div>
-                  <div>
-                    <span className="kicker text-sage-dark">Überblick</span>
-                    <h2 className="mt-2 text-2xl font-normal text-foreground md:text-3xl">
-                      Was auf dieser Seite besonders wichtig ist
-                    </h2>
-                  </div>
-                </div>
-
-                <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
-                  Diese Seite übersetzt Prognose und Langzeitverlauf in eine
-                  alltagsnahe Angehörigenperspektive. Entscheidend sind weniger
-                  glatte Erfolgsbilder als ein realistischer Blick auf Zeit,
-                  Rückschritte, Hoffnung und den begrenzten eigenen Einfluss.
-                </p>
-
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {genesungIntroCards.map(item => {
-                    const Icon = item.icon;
-                    return (
-                      <div
-                        key={item.title}
-                        className={`rounded-2xl border p-4 ${item.shellClass}`}
-                      >
-                        <Icon className={`mb-3 h-5 w-5 ${item.iconClass}`} />
-                        <h3 className="mb-2 text-sm font-semibold text-foreground">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">
-                          {item.text}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/60 bg-cream/95 shadow-[0_28px_56px_-40px_rgba(15,23,42,0.28)]">
-              <CardContent className="p-6 md:p-7">
-                <span className="kicker text-slate-dark">
-                  Direkt einsteigen
-                </span>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Wenn Sie nicht alles am Stück lesen möchten, springen Sie
-                  direkt zum Teil, der Ihre aktuelle Frage am ehesten trifft.
-                </p>
-
-                <div className="mt-5 space-y-3">
-                  {genesungQuickLinks.map(item => (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => openSection(item.id)}
-                      className="group w-full rounded-2xl border border-border/60 bg-white/90 px-4 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-sage-light hover:bg-sage-wash/45 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/35 focus-visible:ring-offset-2"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <h3 className="text-sm font-semibold text-foreground">
-                            {item.title}
-                          </h3>
-                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                            {item.text}
-                          </p>
-                        </div>
-                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage-wash text-sage-darker transition-transform group-hover:translate-x-0.5">
-                          <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-
-                <div className="mt-5 rounded-2xl border border-sage-light/60 bg-sage-wash/75 px-4 py-4">
-                  <p className="text-sm leading-relaxed text-sage-darker">
-                    Die Forschungskarte darunter bleibt der sachliche
-                    Ausgangspunkt. Die schnellen Einstiege hier sind für Momente
-                    gedacht, in denen Sie direkt zu Begriffen, Rückschritten,
-                    Hoffnung oder Ihrer Angehörigenrolle springen möchten.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            Genesung — Langzeitverlauf &amp; Hoffnung
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
           >
-            <Card className="border-sage/30 bg-gradient-to-br from-sage-wash to-cream">
-              <CardContent className="p-8 md:p-10">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-sage flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-normal text-foreground mb-2">
-                      Was die Forschung zeigt
-                    </h2>
-                    <p className="text-muted-foreground">
-                      Langzeitstudien sprechen klar gegen das alte Bild einer
-                      hoffnungslosen Entwicklung. Viele Menschen mit Borderline
-                      erleben über Jahre deutliche Besserungen.
-                    </p>
-                  </div>
-                </div>
+            Genesung ist <em>möglich</em>
+          </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Hoffnung ist bei Borderline berechtigt – und gleichzeitig verläuft
+            Entwicklung selten glatt oder vorhersehbar. Für Angehörige ist
+            beides wichtig: Zuversicht und eine realistische Sicht auf Zeit.
+          </p>
+          <p
+            className="mt-4"
+            style={{
+              fontSize: "var(--text-sm)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            Vollständig ca. 8 Min · Auch abschnittweise lesbar.
+          </p>
+          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+        </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 [&>*:first-child]:md:col-span-2">
-                  <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
-                      85–93%
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      erreichen eine symptomatische Remission innerhalb von etwa
-                      10 Jahren
-                    </p>
-                    <p className="text-xs text-muted-foreground/70 mt-1">
-                      (Daten aus Spezialzentren)
-                    </p>
-                  </div>
-                  <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
-                      50%
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      erreichen eine umfassendere Genesung mit funktioneller
-                      Stabilität
-                    </p>
-                  </div>
-                  <div className="text-center p-6 bg-white/60 rounded-xl">
-                    <div className="text-4xl md:text-5xl font-bold text-sage-mid mb-2">
-                      Jahre
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      nicht Wochen oder Monate – eher mindestens ein bis mehrere
-                      Jahre, oft mit mehreren Anläufen
-                    </p>
-                  </div>
-                </div>
+        {/* ── Intro: Was auf dieser Seite besonders wichtig ist ── */}
+        <EditorialSection
+          label="Überblick"
+          title="Was auf dieser Seite besonders wichtig ist"
+        >
+          <EditorialProse>
+            <p>
+              Diese Seite übersetzt Prognose und Langzeitverlauf in eine
+              alltagsnahe Angehörigenperspektive. Entscheidend sind weniger
+              glatte Erfolgsbilder als ein realistischer Blick auf Zeit,
+              Rückschritte, Hoffnung und den begrenzten eigenen Einfluss.
+            </p>
+            <p>
+              Drei Akzente ziehen sich durch die Seite: zuerst Hoffnung
+              realistisch halten — Genesung ist oft möglich, aber selten glatt,
+              schnell oder vollständig planbar; dann Rückschritte einordnen —
+              ein Einbruch oder Stillstand entwertet bisherigen Fortschritt
+              nicht automatisch; und schliesslich die eigene Rolle begrenzt
+              sehen — Angehörige können Entwicklung mittragen, aber nicht
+              herstellen oder beschleunigen.
+            </p>
+            <p>
+              Sie können auch direkt zu{" "}
+              <a
+                href="#remission"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "remission")}
+              >
+                Remission und Genesung
+              </a>
+              ,{" "}
+              <a
+                href="#fortschritt-paradox"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "fortschritt-paradox")}
+              >
+                Fortschritt-Paradox
+              </a>
+              ,{" "}
+              <a
+                href="#hoffnung"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "hoffnung")}
+              >
+                realistischer Hoffnung
+              </a>{" "}
+              oder{" "}
+              <a
+                href="#beitragen"
+                className="editorial-link"
+                onClick={e => handleAnchorClick(e, "beitragen")}
+              >
+                der Angehörigenrolle
+              </a>{" "}
+              springen.
+            </p>
+          </EditorialProse>
+        </EditorialSection>
 
-                <EvidenceNote
-                  className="mt-6"
-                  title="Quellen zu Prognose- und Remissionsaussagen"
-                  sources={[
-                    {
-                      label:
-                        "Zanarini et al. (2010) – McLean Study of Adult Development",
-                      href: "https://pubmed.ncbi.nlm.nih.gov/20395399/",
-                    },
-                    {
-                      label:
-                        "Zanarini et al. (2012) – Sustained remission and recovery in BPD",
-                      href: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
-                    },
-                    {
-                      label:
-                        "Gunderson et al. (2011) – Ten-year course of BPD (CLPS)",
-                      href: "https://pubmed.ncbi.nlm.nih.gov/21464343/",
-                    },
-                  ]}
-                />
+        {/* ── Was die Forschung zeigt — Statistik-Block (Brief-Sonderregel) ── */}
+        <EditorialSection
+          label="Forschung"
+          title="Was die Forschung zeigt"
+          rule
+        >
+          <EditorialProse>
+            <p>
+              Langzeitstudien sprechen klar gegen das alte Bild einer
+              hoffnungslosen Entwicklung. Viele Menschen mit Borderline erleben
+              über Jahre deutliche Besserungen.
+            </p>
+          </EditorialProse>
 
-                <p className="text-xs text-muted-foreground mt-4 px-1 leading-relaxed">
-                  <strong>Hinweis:</strong> Diese Zahlen stammen aus
-                  Spezialzentren unter optimalen Bedingungen. Der reale Weg ist
-                  für viele Menschen nicht-linear und braucht länger. Genesung
-                  bleibt das realistische Ziel — aber Rückschritte und lange
-                  Phasen gehören dazu.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-8 md:py-12">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <ContentSection
-              title="Was Remission und Genesung bedeuten"
-              icon={<BookOpen className="w-6 h-6 text-sage-dark" />}
-              id="remission"
-              defaultOpen={true}
-              preview="Besserung heisst nicht zwingend völlige Symptomfreiheit. Für Angehörige ist wichtig, die Begriffe realistischer zu lesen."
+          {/* Versalziffern als hairline-separierte Sub-Blöcke (kein Card-Trio) */}
+          <dl className="mt-10 grid gap-y-10 sm:grid-cols-3 sm:gap-x-10">
+            <div
+              className="border-t pt-6"
+              style={{ borderColor: "var(--rule-color)" }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-[7fr_5fr] gap-6">
-                <Card className="h-full border-border/50">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">
-                      Symptomatische Remission
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      Die diagnostischen Kriterien werden über längere Zeit
-                      nicht mehr erfüllt oder deutlich schwächer. Das bedeutet
-                      häufig weniger Impulsdurchbrüche, weniger Instabilität und
-                      mehr inneren Spielraum.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="h-full border-border/50">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">
-                      Umfassendere Genesung
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      Zusätzlich zur Symptomverbesserung kommen alltagsbezogene
-                      Stabilität, Beziehungen, Arbeit oder Ausbildung und mehr
-                      Lebensqualität in den Blick.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-              <Card className="mt-6 bg-sage-wash/50 border-sage-mid/30">
-                <CardContent className="p-5">
-                  <p className="text-foreground leading-relaxed">
-                    Für Angehörige ist entscheidend: Besserung ist oft real,
-                    auch wenn nicht alles konfliktfrei, leicht oder linear wird.
-                  </p>
-                </CardContent>
-              </Card>
-            </ContentSection>
-
-            <ContentSection
-              title="Das Fortschritt-Paradox"
-              icon={<RefreshCw className="w-6 h-6 text-sage-mid" />}
-              id="fortschritt-paradox"
-              preview="Gerade wenn es besser läuft, können Rückschritte besonders verunsichern. Das entwertet den Weg aber nicht automatisch."
+              <dt style={versalStyle}>85–93%</dt>
+              <dd className="mt-3" style={bodyStyle}>
+                erreichen eine symptomatische Remission innerhalb von etwa 10
+                Jahren.
+              </dd>
+              <dd
+                className="mt-1"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  color: "var(--fg-tertiary)",
+                }}
+              >
+                (Daten aus Spezialzentren)
+              </dd>
+            </div>
+            <div
+              className="border-t pt-6"
+              style={{ borderColor: "var(--rule-color)" }}
             >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed prose-editorial">
-                  Viele Angehörige erleben ein irritierendes Muster: Nach einer
-                  ruhigeren Phase kommt wieder ein Einbruch. Dann fühlt es sich
-                  schnell an, als wäre alles umsonst gewesen. Meist ist das
-                  nicht die treffendste Deutung.
-                </p>
-                <blockquote className="pull-quote">
-                  <p>
-                    Entwicklung bedeutet bei Borderline häufig nicht: Schritt
-                    für Schritt nur vorwärts. Eher: Es gibt Bewegungen,
-                    Unterbrüche, Wiederaufnahmen und Phasen, in denen neue
-                    Stabilität erst gelernt werden muss.
-                  </p>
-                </blockquote>
-
-                {/* Genesungsverlauf – Wellenlinie */}
-                <div className="rounded-lg border border-border/40 bg-slate-wash/10 p-4">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2 text-center">
-                    Genesungsverlauf: nicht linear
-                  </p>
-                  <svg
-                    viewBox="0 0 300 70"
-                    className="w-full h-14"
-                    aria-hidden="true"
-                  >
-                    <line
-                      x1="15"
-                      y1="58"
-                      x2="285"
-                      y2="12"
-                      stroke="var(--color-sage-mid)"
-                      strokeWidth="1"
-                      strokeDasharray="5,4"
-                      opacity="0.35"
-                    />
-                    <path
-                      d="M 15,56 C 40,56 48,22 65,28 S 95,60 115,50 S 155,16 182,22 S 215,48 245,36 S 272,14 285,10"
-                      fill="none"
-                      stroke="var(--color-sage-dark)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <text
-                      x="15"
-                      y="68"
-                      fontSize="8"
-                      fill="currentColor"
-                      opacity="0.45"
-                    >
-                      Beginn
-                    </text>
-                    <text
-                      x="255"
-                      y="9"
-                      fontSize="8"
-                      fill="currentColor"
-                      opacity="0.45"
-                    >
-                      Ziel
-                    </text>
-                    <text
-                      x="88"
-                      y="68"
-                      fontSize="7.5"
-                      fill="currentColor"
-                      opacity="0.5"
-                    >
-                      Rückschritt
-                    </text>
-                    <line
-                      x1="115"
-                      y1="65"
-                      x2="115"
-                      y2="52"
-                      stroke="currentColor"
-                      strokeWidth="0.8"
-                      opacity="0.35"
-                    />
-                    <text
-                      x="187"
-                      y="68"
-                      fontSize="7.5"
-                      fill="currentColor"
-                      opacity="0.5"
-                    >
-                      Rückschritt
-                    </text>
-                    <line
-                      x1="215"
-                      y1="65"
-                      x2="215"
-                      y2="49"
-                      stroke="currentColor"
-                      strokeWidth="0.8"
-                      opacity="0.35"
-                    />
-                  </svg>
-                  <p className="text-[11px] text-muted-foreground text-center mt-1">
-                    Rückschritte gehören zum Weg — die gestrichelte Linie zeigt
-                    den Gesamttrend
-                  </p>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    "Rückschritte einordnen, statt sofort zu katastrophisieren",
-                    "Fortschritte konkret benennen, statt nur global zu hoffen",
-                    "Tempo nicht übersteuern, wenn es besser läuft",
-                    "für schwierige Phasen einen kleinen Plan bereithalten",
-                  ].map(item => (
-                    <Card key={item} className="border-border/50">
-                      <CardContent className="p-4">
-                        <p className="text-sm text-muted-foreground">{item}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Realistische Hoffnung statt glatter Zuversicht"
-              icon={<Heart className="w-6 h-6 text-sage-mid" />}
-              id="hoffnung"
-              preview="Hoffnung ist wichtig. Sie wird aber tragfähiger, wenn sie Raum lässt für Erschöpfung, Zweifel, lange Dauer und ungleichmässige Entwicklung."
+              <dt style={versalStyle}>50%</dt>
+              <dd className="mt-3" style={bodyStyle}>
+                erreichen eine umfassendere Genesung mit funktioneller
+                Stabilität.
+              </dd>
+            </div>
+            <div
+              className="border-t pt-6"
+              style={{ borderColor: "var(--rule-color)" }}
             >
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed prose-editorial">
-                  Angehörige brauchen oft Hoffnung, um nicht zu resignieren.
-                  Gleichzeitig kann ein zu glattes Fortschrittsbild zusätzlichen
-                  Druck erzeugen: auf die betroffene Person, auf die Beziehung
-                  und auf Sie selbst.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
-                    <span className="text-lg font-medium text-foreground block mb-2">
-                      ❌ Weniger hilfreich
-                    </span>
-                    <ul className="text-sm text-muted-foreground space-y-1.5">
-                      <li>Jetzt muss es doch endlich besser werden</li>
-                      <li>Ein Rückschritt entwertet alles</li>
-                      <li>Wenn genug Wille da ist, geht es schnell</li>
-                    </ul>
-                  </div>
-                  <div className="p-4 rounded-xl bg-sage-wash border border-sage-mid/20">
-                    <span className="text-lg font-medium text-foreground block mb-2">
-                      ✓ Tragfähiger
-                    </span>
-                    <ul className="text-sm text-muted-foreground space-y-1.5">
-                      <li>Besserung ist möglich und oft wahrscheinlich</li>
-                      <li>
-                        Rückschritte kommen vor und müssen nicht alles kippen
-                      </li>
-                      <li>Tempo und Zeitpunkt bleiben begrenzt steuerbar</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </ContentSection>
+              <dt style={versalStyle}>Jahre</dt>
+              <dd className="mt-3" style={bodyStyle}>
+                nicht Wochen oder Monate – eher mindestens ein bis mehrere
+                Jahre, oft mit mehreren Anläufen.
+              </dd>
+            </div>
+          </dl>
 
-            <ContentSection
-              title="Was Angehörige zur Genesung beitragen können"
-              icon={<Users className="w-6 h-6 text-sage-mid" />}
-              id="beitragen"
-              preview="Ihre Rolle ist wertvoll, aber begrenzt. Sie können Bedingungen mittragen, nicht Entwicklung herstellen."
-            >
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "Konsistenz",
-                    desc: "berechenbar bleiben, statt in Alarm mitzukippen",
-                  },
-                  {
-                    title: "realistische Hoffnung",
-                    desc: "Zuversicht ohne Druck vermitteln",
-                  },
-                  {
-                    title: "eigene Grenzen",
-                    desc: "die eigene Stabilität nicht opfern",
-                  },
-                  {
-                    title: "professionelle Hilfe",
-                    desc: "Behandlung unterstützen, aber nicht ersetzen",
-                  },
-                ].map(item => (
-                  <Card key={item.title} className="border-border/50">
-                    <CardContent className="p-5">
-                      <h3 className="font-semibold text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {item.desc}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </ContentSection>
-
-            <ContentSection
-              title="Was Entwicklung eher fördert"
-              icon={<TrendingUp className="w-6 h-6 text-sage-mid" />}
-              id="faktoren"
-              preview="Die Forschung beschreibt mehrere günstige Bedingungen. Keine davon ist eine Garantie, aber viele sind beeinflussbar."
-            >
-              <div className="space-y-4">
-                {[
-                  "spezialisierte Psychotherapie",
-                  "Zeit und Geduld",
-                  "stabile, nicht verschlingende Beziehungen",
-                  "alltagsbezogene Struktur",
-                  "Behandlung von Begleiterkrankungen",
-                ].map((item, index) => (
-                  <Card key={item} className="border-border/50">
-                    <CardContent className="p-5">
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-sage flex items-center justify-center flex-shrink-0 text-white font-semibold text-sm">
-                          {index + 1}
-                        </div>
-                        <p className="text-sm text-muted-foreground">{item}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </ContentSection>
-
-            <GenesungInfografiken />
+          <div className="mt-10">
+            <EvidenceNote
+              variant="editorial"
+              title="Quellen zu Prognose- und Remissionsaussagen"
+              sources={[
+                {
+                  label:
+                    "Zanarini et al. (2010) – McLean Study of Adult Development",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/20395399/",
+                },
+                {
+                  label:
+                    "Zanarini et al. (2012) – Sustained remission and recovery in BPD",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
+                },
+                {
+                  label:
+                    "Gunderson et al. (2011) – Ten-year course of BPD (CLPS)",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/21464343/",
+                },
+              ]}
+            />
           </div>
-        </div>
-      </section>
 
-      <section className="py-8 md:py-12 bg-sand-muted wave-divider-top [--wave-color:var(--background)]">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-2xl md:text-3xl font-normal text-foreground mb-4">
-                Wie können Sie tragfähig begleiten?
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                Unterstützung heisst nicht, Entwicklung herzustellen. Es heisst
-                oft, Beziehung, Klarheit und Selbstschutz über längere Zeit
-                auszubalancieren.
+          <p className="mt-6" style={bodyStyle}>
+            <strong style={{ color: "var(--fg-primary)" }}>Hinweis:</strong>{" "}
+            Diese Zahlen stammen aus Spezialzentren unter optimalen Bedingungen.
+            Der reale Weg ist für viele Menschen nicht-linear und braucht
+            länger. Genesung bleibt das realistische Ziel — aber Rückschritte
+            und lange Phasen gehören dazu.
+          </p>
+        </EditorialSection>
+
+        {/* ── ContentSection 1: remission ── */}
+        <ContentSection
+          variant="editorial"
+          title="Was Remission und Genesung bedeuten"
+          id="remission"
+          defaultOpen={true}
+          preview="Besserung heisst nicht zwingend völlige Symptomfreiheit. Für Angehörige ist wichtig, die Begriffe realistischer zu lesen."
+        >
+          <div className="mt-2 grid gap-8 sm:grid-cols-2">
+            <article className="space-y-2">
+              <h4 style={h4Style}>Symptomatische Remission</h4>
+              <p style={bodyStyle}>
+                Die diagnostischen Kriterien werden über längere Zeit nicht mehr
+                erfüllt oder deutlich schwächer. Das bedeutet häufig weniger
+                Impulsdurchbrüche, weniger Instabilität und mehr inneren
+                Spielraum.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  className="bg-sage-dark hover:bg-sage-mid text-white"
-                  asChild
-                >
-                  <Link href="/unterstuetzen/uebersicht">
-                    Unterstützen lernen
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-                <Button variant="outline" className="gap-2" asChild>
-                  <Link href="/unterstuetzen/therapie">
-                    <Stethoscope className="w-4 h-4" />
-                    Therapie begleiten
-                  </Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/selbstfuersorge">Selbstfürsorge</Link>
-                </Button>
-              </div>
-            </motion.div>
+            </article>
+            <article className="space-y-2">
+              <h4 style={h4Style}>Umfassendere Genesung</h4>
+              <p style={bodyStyle}>
+                Zusätzlich zur Symptomverbesserung kommen alltagsbezogene
+                Stabilität, Beziehungen, Arbeit oder Ausbildung und mehr
+                Lebensqualität in den Blick.
+              </p>
+            </article>
           </div>
-        </div>
-      </section>
-      <InvitationSection />
+          <div className="mt-6">
+            <EditorialPullQuote>
+              Für Angehörige ist entscheidend: Besserung ist oft real, auch wenn
+              nicht alles konfliktfrei, leicht oder linear wird.
+            </EditorialPullQuote>
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 2: fortschritt-paradox ── */}
+        <ContentSection
+          variant="editorial"
+          title="Das Fortschritt-Paradox"
+          id="fortschritt-paradox"
+          preview="Gerade wenn es besser läuft, können Rückschritte besonders verunsichern. Das entwertet den Weg aber nicht automatisch."
+        >
+          <EditorialProse>
+            <p>
+              Viele Angehörige erleben ein irritierendes Muster: Nach einer
+              ruhigeren Phase kommt wieder ein Einbruch. Dann fühlt es sich
+              schnell an, als wäre alles umsonst gewesen. Meist ist das nicht
+              die treffendste Deutung.
+            </p>
+          </EditorialProse>
+          <div className="mt-4">
+            <EditorialPullQuote>
+              Entwicklung bedeutet bei Borderline häufig nicht: Schritt für
+              Schritt nur vorwärts. Eher: Es gibt Bewegungen, Unterbrüche,
+              Wiederaufnahmen und Phasen, in denen neue Stabilität erst gelernt
+              werden muss.
+            </EditorialPullQuote>
+          </div>
+
+          <figure
+            className="mt-8 border-t pt-6"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <figcaption className="text-center uppercase" style={labelStyle}>
+              Genesungsverlauf: nicht linear
+            </figcaption>
+            <svg
+              viewBox="0 0 300 70"
+              className="mt-3 h-14 w-full"
+              aria-hidden="true"
+            >
+              <line
+                x1="15"
+                y1="58"
+                x2="285"
+                y2="12"
+                stroke="var(--accent-primary)"
+                strokeWidth="1"
+                strokeDasharray="5,4"
+                opacity="0.35"
+              />
+              <path
+                d="M 15,56 C 40,56 48,22 65,28 S 95,60 115,50 S 155,16 182,22 S 215,48 245,36 S 272,14 285,10"
+                fill="none"
+                stroke="var(--accent-primary)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <text
+                x="15"
+                y="68"
+                fontSize="8"
+                fill="currentColor"
+                opacity="0.45"
+              >
+                Beginn
+              </text>
+              <text
+                x="255"
+                y="9"
+                fontSize="8"
+                fill="currentColor"
+                opacity="0.45"
+              >
+                Ziel
+              </text>
+              <text
+                x="88"
+                y="68"
+                fontSize="7.5"
+                fill="currentColor"
+                opacity="0.5"
+              >
+                Rückschritt
+              </text>
+              <line
+                x1="115"
+                y1="65"
+                x2="115"
+                y2="52"
+                stroke="currentColor"
+                strokeWidth="0.8"
+                opacity="0.35"
+              />
+              <text
+                x="187"
+                y="68"
+                fontSize="7.5"
+                fill="currentColor"
+                opacity="0.5"
+              >
+                Rückschritt
+              </text>
+              <line
+                x1="215"
+                y1="65"
+                x2="215"
+                y2="49"
+                stroke="currentColor"
+                strokeWidth="0.8"
+                opacity="0.35"
+              />
+            </svg>
+            <p
+              className="mt-2 text-center"
+              style={{
+                fontSize: "var(--text-xs)",
+                color: "var(--fg-tertiary)",
+              }}
+            >
+              Rückschritte gehören zum Weg — die gestrichelte Linie zeigt den
+              Gesamttrend.
+            </p>
+          </figure>
+
+          <EditorialProse>
+            <ul className="mt-8 ml-6 list-disc space-y-1">
+              {fortschrittParadoxItems.map(item => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </EditorialProse>
+        </ContentSection>
+
+        {/* ── ContentSection 3: hoffnung ── */}
+        <ContentSection
+          variant="editorial"
+          title="Realistische Hoffnung statt glatter Zuversicht"
+          id="hoffnung"
+          preview="Hoffnung ist wichtig. Sie wird aber tragfähiger, wenn sie Raum lässt für Erschöpfung, Zweifel, lange Dauer und ungleichmässige Entwicklung."
+        >
+          <EditorialProse>
+            <p>
+              Angehörige brauchen oft Hoffnung, um nicht zu resignieren.
+              Gleichzeitig kann ein zu glattes Fortschrittsbild zusätzlichen
+              Druck erzeugen: auf die betroffene Person, auf die Beziehung und
+              auf Sie selbst.
+            </p>
+          </EditorialProse>
+          <div className="mt-6 grid gap-8 sm:grid-cols-2">
+            <div>
+              <h4 style={h4Style}>Weniger hilfreich</h4>
+              <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
+                <li>«Jetzt muss es doch endlich besser werden»</li>
+                <li>«Ein Rückschritt entwertet alles»</li>
+                <li>«Wenn genug Wille da ist, geht es schnell»</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={h4Style}>Tragfähiger</h4>
+              <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
+                <li>Besserung ist möglich und oft wahrscheinlich</li>
+                <li>Rückschritte kommen vor und müssen nicht alles kippen</li>
+                <li>Tempo und Zeitpunkt bleiben begrenzt steuerbar</li>
+              </ul>
+            </div>
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 4: beitragen ── */}
+        <ContentSection
+          variant="editorial"
+          title="Was Angehörige zur Genesung beitragen können"
+          id="beitragen"
+          preview="Ihre Rolle ist wertvoll, aber begrenzt. Sie können Bedingungen mittragen, nicht Entwicklung herstellen."
+        >
+          <div className="mt-2 grid gap-8 sm:grid-cols-2">
+            {beitragenItems.map(item => (
+              <article key={item.title} className="space-y-2">
+                <h4 style={h4Style}>{item.title}</h4>
+                <p style={bodyStyle}>{item.desc}</p>
+              </article>
+            ))}
+          </div>
+        </ContentSection>
+
+        {/* ── ContentSection 5: faktoren ── */}
+        <ContentSection
+          variant="editorial"
+          title="Was Entwicklung eher fördert"
+          id="faktoren"
+          preview="Die Forschung beschreibt mehrere günstige Bedingungen. Keine davon ist eine Garantie, aber viele sind beeinflussbar."
+        >
+          <ol className="mt-2 space-y-4">
+            {foerderfaktoren.map((item, index) => (
+              <li key={item} className="flex items-start gap-4">
+                <span
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+                  style={{
+                    backgroundColor: "var(--accent-primary)",
+                    color: "var(--bg-primary)",
+                    fontSize: "var(--text-sm)",
+                    fontWeight: 600,
+                  }}
+                >
+                  {index + 1}
+                </span>
+                <p className="pt-1.5" style={bodyStyle}>
+                  {item}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </ContentSection>
+
+        {/* ── ContentSection 6: infografiken (Materialien-Block) ── */}
+        <ContentSection
+          variant="editorial"
+          title="Materialien & Infografiken"
+          id="infografiken"
+          defaultOpen={true}
+          preview="Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der Rolle von Angehörigen."
+        >
+          <EditorialProse>
+            <p>
+              Wenn verfügbar, führt «Textversion lesen» zur Web-Version. «PDF
+              öffnen» öffnet die A4-Druckversion im neuen Tab.
+            </p>
+          </EditorialProse>
+          <div className="mt-8 grid gap-8 sm:grid-cols-2">
+            {genesungMaterialItems.map(item => {
+              const textVersionHref = getHandoutTextVersionHrefBySource(
+                item.pdf
+              );
+              const pdfHref = getHandoutOpenHref(item.pdf) ?? item.pdf;
+              return (
+                <article key={item.title} className="space-y-3">
+                  <img
+                    src={item.thumbnailUrl ?? item.img}
+                    alt={item.title}
+                    className="aspect-[3/4] w-full rounded-md object-cover object-top"
+                    style={{ backgroundColor: "var(--bg-elevated)" }}
+                    loading="lazy"
+                    width={600}
+                    height={848}
+                    decoding="async"
+                  />
+                  <h4 style={h4Style}>{item.title}</h4>
+                  <p style={bodyStyle}>{item.desc}</p>
+                  <p
+                    className="flex flex-wrap gap-x-5 gap-y-1"
+                    style={{ fontSize: "var(--text-sm)" }}
+                  >
+                    {textVersionHref && (
+                      <Link
+                        href={textVersionHref}
+                        className="editorial-link"
+                        aria-label={`Textversion lesen: ${item.title}`}
+                      >
+                        Textversion lesen
+                      </Link>
+                    )}
+                    <a
+                      href={pdfHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="editorial-link"
+                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                    >
+                      PDF öffnen
+                    </a>
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+          <p
+            className="mt-8 flex flex-wrap gap-x-5 gap-y-1"
+            style={{ fontSize: "var(--text-sm)" }}
+          >
+            <Link href="/materialien" className="editorial-link">
+              Alle Materialien ansehen
+            </Link>
+            <Link href="/glossar" className="editorial-link">
+              Fachbegriffe im Glossar
+            </Link>
+            <Link href="/buchempfehlungen" className="editorial-link">
+              Buchempfehlungen
+            </Link>
+          </p>
+        </ContentSection>
+
+        {/* ── Schluss-Sektion: Übergang ── */}
+        <EditorialSection label="Weiter" rule>
+          <EditorialProse>
+            <p>
+              Unterstützung heisst nicht, Entwicklung herzustellen. Es heisst
+              oft, Beziehung, Klarheit und Selbstschutz über längere Zeit
+              auszubalancieren —{" "}
+              <Link href="/unterstuetzen/uebersicht" className="editorial-link">
+                Unterstützen lernen
+              </Link>
+              ,{" "}
+              <Link href="/unterstuetzen/therapie" className="editorial-link">
+                Therapie begleiten
+              </Link>{" "}
+              oder{" "}
+              <Link href="/selbstfuersorge" className="editorial-link">
+                Selbstfürsorge
+              </Link>{" "}
+              vertiefen.
+            </p>
+          </EditorialProse>
+        </EditorialSection>
+
+        <RelatedLinksEditorial
+          links={[
+            {
+              href: "/unterstuetzen/uebersicht",
+              title: "Unterstützen — Übersicht",
+              description:
+                "Wie Angehörige hilfreich bleiben können: Rolle, Krisenlogik und tragfähige Unterstützung.",
+            },
+            {
+              href: "/unterstuetzen/therapie",
+              title: "Therapie begleiten",
+              description:
+                "Behandlung mittragen, ohne mitzubehandeln — Rolle, Behandlungssystem und Rückschläge.",
+            },
+            {
+              href: "/selbstfuersorge",
+              title: "Selbstfürsorge",
+              description:
+                "Eigene Belastung ernst nehmen — Voraussetzung, um langfristig präsent bleiben zu können.",
+            },
+          ]}
+        />
+      </EditorialLayout>
     </Layout>
   );
 }

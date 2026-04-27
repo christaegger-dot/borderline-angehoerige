@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface UseCountUpOptions {
   end: number;
@@ -9,20 +9,32 @@ interface UseCountUpOptions {
   decimals?: number;
 }
 
+function formatCountValue(
+  value: number,
+  prefix: string,
+  suffix: string,
+  separator: string,
+  decimals: number
+): string {
+  const formatted =
+    decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString();
+  const withSeparator = separator
+    ? formatted.replace(/\B(?=(\d{3})+(?!\d))/g, separator)
+    : formatted;
+  return `${prefix}${withSeparator}${suffix}`;
+}
+
 /**
  * Hook für animierte Zähler, die beim Sichtbarwerden hochzählen.
  * Verwendet IntersectionObserver und requestAnimationFrame.
  *
- * Fix: Zeigt den Endwert sofort als Fallback an (kein "0%" sichtbar).
- * Die Animation läuft nur als visuelles Enhancement, wenn der Block
- * im Viewport sichtbar wird.
+ * Initial-State ist der Endwert (kein "0%"-Flicker, falls der Observer
+ * nie feuert). Beim ersten Intersect wird auf 0 zurückgesetzt und hochgezählt.
  *
- * hasAnimatedRef ist ein Ref, kein State: das Tracking braucht keinen
- * Re-Render, und useState in der Effect-Dep-Liste hatte eine Self-
- * Cancelling-RAF-Race ausgelöst (Cleanup der alten Effect-Instanz
- * canceled die soeben geschedulete RAF, displayValue blieb auf "0").
- *
- * WICHTIG: Hook-Reihenfolge ist fix (useState → useCallback → useRef → useEffect).
+ * `end` wird als nach dem ersten Animations-Lauf fixiert behandelt — ändert
+ * sich `end` mid-Animation, friert displayValue ein, da hasAnimatedRef
+ * den Restart blockiert. Aktuell unkritisch, da AnimatedStat-Konsumer
+ * statische Literale übergeben.
  */
 export function useCountUp({
   end,
@@ -32,35 +44,18 @@ export function useCountUp({
   separator = "",
   decimals = 0,
 }: UseCountUpOptions) {
-  // 1. useState – Endwert als Initialwert (nie "0%" sichtbar)
-  const [displayValue, setDisplayValue] = useState(() => {
-    const formatted =
-      decimals > 0 ? end.toFixed(decimals) : Math.round(end).toString();
-    const withSeparator = separator
-      ? formatted.replace(/\B(?=(\d{3})+(?!\d))/g, separator)
-      : formatted;
-    return `${prefix}${withSeparator}${suffix}`;
-  });
-
-  // 2. useCallback
-  const formatValue = useCallback(
-    (value: number) => {
-      const formatted =
-        decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString();
-      const withSeparator = separator
-        ? formatted.replace(/\B(?=(\d{3})+(?!\d))/g, separator)
-        : formatted;
-      return `${prefix}${withSeparator}${suffix}`;
-    },
-    [prefix, suffix, separator, decimals]
+  const [displayValue, setDisplayValue] = useState(() =>
+    formatCountValue(end, prefix, suffix, separator, decimals)
   );
 
-  // 3. useRef
+  // hasAnimatedRef als Ref, nicht State: kein Re-Render-Trigger nötig.
+  // Vorher als useState in Effect-Deps löste Re-Run aus, dessen Cleanup
+  // die soeben geschedulete RAF cancelte (Self-Cancelling-Race).
   const hasAnimatedRef = useRef(false);
+  const lastFormattedRef = useRef(displayValue);
   const ref = useRef<HTMLDivElement>(null);
   const rafIdRef = useRef<number | null>(null);
 
-  // 4. useEffect – IntersectionObserver
   useEffect(() => {
     const element = ref.current;
     if (!element || hasAnimatedRef.current) return;
@@ -70,17 +65,36 @@ export function useCountUp({
         entries.forEach(entry => {
           if (entry.isIntersecting && !hasAnimatedRef.current) {
             hasAnimatedRef.current = true;
-            // Kurz den Startwert setzen, dann hochzählen
-            setDisplayValue(formatValue(0));
+
+            const initial = formatCountValue(
+              0,
+              prefix,
+              suffix,
+              separator,
+              decimals
+            );
+            lastFormattedRef.current = initial;
+            setDisplayValue(initial);
 
             const startTime = performance.now();
             const step = (currentTime: number) => {
               const elapsed = currentTime - startTime;
               const progress = Math.min(elapsed / duration, 1);
-              // Easing: easeOutCubic für natürliches Abbremsen
+              // easeOutCubic
               const easedProgress = 1 - Math.pow(1 - progress, 3);
-              const currentValue = easedProgress * end;
-              setDisplayValue(formatValue(currentValue));
+              const next = formatCountValue(
+                easedProgress * end,
+                prefix,
+                suffix,
+                separator,
+                decimals
+              );
+              // Skip Render wenn formatierter Wert unverändert
+              // (bei kleinen end-Werten produzieren viele Frames identische Integers)
+              if (next !== lastFormattedRef.current) {
+                lastFormattedRef.current = next;
+                setDisplayValue(next);
+              }
               if (progress < 1) {
                 rafIdRef.current = requestAnimationFrame(step);
               }
@@ -101,7 +115,7 @@ export function useCountUp({
         rafIdRef.current = null;
       }
     };
-  }, [formatValue, duration, end]);
+  }, [duration, end, prefix, suffix, separator, decimals]);
 
   return { ref, displayValue };
 }

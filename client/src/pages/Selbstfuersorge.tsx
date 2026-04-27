@@ -21,6 +21,7 @@ import { permissionList } from "@/content/selbstfuersorge-page";
 import { SelbstfuersorgeExercisesSection } from "@/sections/SelbstfuersorgeExercisesSection";
 import { SelbstfuersorgeSignalsSection } from "@/sections/SelbstfuersorgeSignalsSection";
 import { SelbstfuersorgeRoleNotesSection } from "@/sections/SelbstfuersorgeRoleNotesSection";
+import EvidenceNote from "@/components/EvidenceNote";
 
 const selbstfuersorgeIntroCards = [
   {
@@ -377,9 +378,19 @@ export default function Selbstfuersorge() {
                 </CardContent>
               </Card>
 
-              <p className="text-xs text-muted-foreground mt-4">
-                Quelle: Marsha M. Linehan, DBT Skills Training Manual (2015)
-              </p>
+              <EvidenceNote
+                title="Quelle zur Radikalen Akzeptanz"
+                definition="Das Konzept der Radikalen Akzeptanz ist ein zentrales Element der Dialektisch-Behavioralen Therapie (DBT). Es beschreibt eine Haltung, keine Kapitulation."
+                reviewDate="26.04.2026"
+                sources={[
+                  {
+                    label:
+                      "Linehan, DBT Skills Training Manual, 2. Aufl. (2015)",
+                    type: "wissenschaft",
+                  },
+                ]}
+                className="mt-4"
+              />
             </ContentSection>
 
             {/* ═══ 7. Erlaubnis geben ═══ */}

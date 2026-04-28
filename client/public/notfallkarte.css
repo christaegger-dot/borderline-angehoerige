@@ -1,3 +1,35 @@
+/* =====================================================
+   NOTFALLKARTE – Design-Token-basiertes Stylesheet
+   Farben: CSS-Variablen (oklch, konsistent mit tailwind-theme.css)
+   Typografie: Inter (Body)
+   ===================================================== */
+
+/* ── DESIGN TOKENS (lokal, da static HTML) ─────────── */
+:root {
+  /* Ampel-Farben (Rot / Orange / Grün / Lila) */
+  --nk-rot: oklch(0.45 0.18 25); /* ~#C0392B – Block Lebensgefahr */
+  --nk-rot-wash: oklch(0.97 0.015 25); /* ~red-50 – Block-Body-BG */
+  --nk-orange: oklch(0.5 0.16 55); /* ~orange-700 – Block Krisen */
+  --nk-orange-wash: oklch(0.97 0.02 55); /* ~orange-50 – Block-Body-BG */
+  --nk-gruen: oklch(0.42 0.12 145); /* ~green-700 – Block Stabilisierung */
+  --nk-gruen-wash: oklch(0.97 0.02 145); /* ~green-50 – Block-Body-BG */
+  --nk-lila: oklch(0.38 0.14 305); /* ~purple-700 – Block Begleitung */
+  --nk-lila-wash: oklch(0.97 0.02 305); /* ~purple-50 – Block-Body-BG */
+
+  /* Neutrale Farben */
+  --nk-header-bg: oklch(0.22 0.04 250); /* ~#1a1a2e – Dunkelblau */
+  --nk-footer-bg: oklch(0.28 0.03 220); /* ~#263238 – Blaugrau */
+  --nk-page-bg: oklch(0.9 0 0); /* ~#e0e0e0 – Vorschau-BG */
+  --nk-text-primary: oklch(0.2 0 0); /* ~#212121 – Haupttext */
+  --nk-text-muted: oklch(0.55 0 0); /* ~#757575 – Nebentext */
+  --nk-text-faint: oklch(0.7 0 0); /* ~#9e9e9e – Sehr schwach */
+  --nk-footer-text: oklch(0.75 0.02 220); /* ~#b0bec5 – Footer-Haupttext */
+  --nk-footer-sub: oklch(0.6 0.02 220); /* ~#78909c – Footer-Subtext */
+
+  /* Typografie */
+  --nk-font: "Inter", "Inter fallback", system-ui, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +37,12 @@
 }
 
 body {
-  background: #e0e0e0;
+  background: var(--nk-page-bg);
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--nk-font);
 }
 
 /* Skaliert die A4-Seite auf den Bildschirm für die Vorschau */
@@ -29,7 +61,7 @@ body {
 
 /* ── HEADER ───────────────────────────────── */
 .header {
-  background: #1a1a2e;
+  background: var(--nk-header-bg);
   padding: 3.5mm 7mm;
   display: flex;
   justify-content: space-between;
@@ -46,7 +78,7 @@ body {
   flex-shrink: 0;
 }
 .header-meta {
-  color: #9e9e9e;
+  color: var(--nk-text-faint);
   font-size: 6.5pt;
   text-align: right;
   white-space: nowrap;
@@ -95,7 +127,7 @@ body {
 
 .wann {
   font-size: 7.5pt;
-  color: #757575;
+  color: var(--nk-text-muted);
   line-height: 1.3;
 }
 .trigger {
@@ -105,22 +137,22 @@ body {
 }
 .hinweis-small {
   font-size: 6.5pt;
-  color: #757575;
+  color: var(--nk-text-muted);
   margin: 1mm 0 1mm;
   padding: 1.5mm 3mm;
   line-height: 1.4;
-  background: rgba(198, 40, 40, 0.04);
-  border-left: 2px solid #c62828;
+  background: oklch(0.97 0.015 25 / 0.6);
+  border-left: 2px solid var(--nk-rot);
   border-radius: 0 1.5mm 1.5mm 0;
 }
 .sos-link {
-  color: #c62828;
+  color: var(--nk-rot);
   font-weight: 600;
   text-decoration: none;
 }
 .hinweis {
   font-size: 7pt;
-  color: #424242;
+  color: oklch(0.35 0 0);
   line-height: 1.4;
 }
 
@@ -153,18 +185,18 @@ body {
 .pill-label {
   font-size: 7.5pt;
   font-weight: 700;
-  color: #212121;
+  color: var(--nk-text-primary);
   text-align: center;
   line-height: 1.2;
 }
 .pill-sub {
   font-size: 6.5pt;
-  color: #757575;
+  color: var(--nk-text-muted);
   text-align: center;
 }
 .pill-desc {
   font-size: 6pt;
-  color: #9e9e9e;
+  color: var(--nk-text-faint);
   text-align: center;
   line-height: 1.3;
   padding: 0 1mm;
@@ -176,20 +208,20 @@ a.pill {
 
 /* ── BLOCK 1 — ROT ───────────────────────── */
 .b1 .block-header {
-  background: #c62828;
+  background: var(--nk-rot);
 }
 .b1 .block-body {
-  background: #fff5f5;
+  background: var(--nk-rot-wash);
 }
 .b1 .trigger {
-  color: #c62828;
+  color: var(--nk-rot);
 }
 .b1 .pill {
-  border-color: #c62828;
+  border-color: var(--nk-rot);
   padding: 1.5mm 0.5mm;
 }
 .b1 .pill-nr {
-  color: #c62828;
+  color: var(--nk-rot);
   font-size: 22pt;
 }
 
@@ -199,7 +231,7 @@ a.pill {
 }
 .b1 .b1-aerzte {
   border-style: dashed;
-  border-color: #c62828;
+  border-color: var(--nk-rot);
   opacity: 0.85;
 }
 .b1 .b1-aerzte .pill-nr {
@@ -209,38 +241,38 @@ a.pill {
 
 /* ── BLOCK 2 — ORANGE ────────────────────── */
 .b2 .block-header {
-  background: #e65100;
+  background: var(--nk-orange);
 }
 .b2 .block-body {
-  background: #fff8f0;
+  background: var(--nk-orange-wash);
 }
 .b2 .trigger {
-  color: #e65100;
+  color: var(--nk-orange);
 }
 .b2 .pill {
-  border-color: #e65100;
+  border-color: var(--nk-orange);
 }
 .b2 .pill-nr {
-  color: #e65100;
+  color: var(--nk-orange);
   font-size: 12pt;
   letter-spacing: -0.04em;
 }
 
 /* ── BLOCK 3 — GRÜN ──────────────────────── */
 .b3 .block-header {
-  background: #2e7d32;
+  background: var(--nk-gruen);
 }
 .b3 .block-body {
-  background: #f0fff0;
+  background: var(--nk-gruen-wash);
 }
 .b3 .trigger {
-  color: #2e7d32;
+  color: var(--nk-gruen);
 }
 .b3 .pill {
-  border-color: #2e7d32;
+  border-color: var(--nk-gruen);
 }
 .b3 .pill-nr {
-  color: #2e7d32;
+  color: var(--nk-gruen);
 }
 
 .b3 .pill:nth-child(1) .pill-nr,
@@ -256,10 +288,10 @@ a.pill {
   flex: 0 0 auto;
 }
 .b4 .block-header {
-  background: #6a1b9a;
+  background: var(--nk-lila);
 }
 .b4 .block-body {
-  background: #faf0ff;
+  background: var(--nk-lila-wash);
   flex-direction: row;
   align-items: center;
   gap: 5mm;
@@ -268,7 +300,7 @@ a.pill {
 .b4-nr {
   font-size: 28pt;
   font-weight: 700;
-  color: #6a1b9a;
+  color: var(--nk-lila);
   line-height: 1;
   flex-shrink: 0;
 }
@@ -278,16 +310,16 @@ a.pill {
 .b4-name {
   font-size: 9.5pt;
   font-weight: 700;
-  color: #212121;
+  color: var(--nk-text-primary);
 }
 .b4-desc {
   font-size: 7.5pt;
-  color: #757575;
+  color: var(--nk-text-muted);
   margin-top: 0.5mm;
 }
 .b4-wann {
   font-size: 7pt;
-  color: #9e9e9e;
+  color: var(--nk-text-faint);
   text-align: right;
   flex-shrink: 0;
   max-width: 60mm;
@@ -295,7 +327,7 @@ a.pill {
 
 /* ── FOOTER ──────────────────────────────── */
 .footer {
-  background: #263238;
+  background: var(--nk-footer-bg);
   padding: 2.5mm 7mm;
   display: flex;
   justify-content: space-between;
@@ -313,12 +345,12 @@ a.pill {
 }
 .f1 {
   font-size: 6.5pt;
-  color: #b0bec5;
+  color: var(--nk-footer-text);
   font-weight: 700;
 }
 .f2 {
   font-size: 5.5pt;
-  color: #78909c;
+  color: var(--nk-footer-sub);
 }
 
 /* ── PRINT ───────────────────────────────── */

@@ -72,6 +72,7 @@ export const routes: AppRoute[] = [
     component: Selbstfuersorge,
     requiresMotion: true,
   },
+  { path: "/soforthilfe", redirectTo: "/soforthilfe" },
   { path: "/notfall", redirectTo: "/soforthilfe" },
   { path: "/materialien/text/:handoutId", component: HandoutTextPage },
   { path: "/materialien", component: Materialien, requiresMotion: true },

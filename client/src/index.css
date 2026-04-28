@@ -397,10 +397,11 @@
   .editorial-prose-dropcap > p:first-child::first-letter {
     font-family: var(--font-display);
     float: left;
-    font-size: 4.5rem;
-    line-height: 0.9;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
+    font-size: 4.2rem; /* Minimal kleiner – wirkt weniger wuchtig */
+    line-height: 0.85;
+    padding-right: 0.6rem; /* Mehr Luft zum Fliesstext */
+    padding-top: 0.4rem;
+    margin-bottom: -0.15rem; /* Verhindert, dass Initiale Zeilenhöhe der Folgezeilen stört */
     color: var(--accent-primary);
     font-weight: var(--weight-display);
   }
@@ -408,7 +409,7 @@
   /* Brief Anhang C: Mobile-Sicherung gegen Layout-Bruch bei sehr schmalen Viewports */
   @media (max-width: 380px) {
     .editorial-prose-dropcap > p:first-child::first-letter {
-      font-size: 3.5rem;
+      font-size: 3.2rem; /* Proportional reduziert */
     }
   }
 

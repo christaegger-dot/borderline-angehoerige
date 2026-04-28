@@ -65,3 +65,34 @@ _dev/create-audit-worktree.sh a11y-interaktion
 Der Helper kopiert `qa/README.md` und `qa/codex-audit-prompts.md` in jeden
 neu angelegten Audit-Worktree, damit jeder Audit-Lauf fuer sich
 selbstbeschreibend bleibt.
+
+## A11y-Skripte (`qa/scripts/*.mjs`)
+
+Voraussetzungen: `pnpm install` (zieht `playwright` + `@axe-core/playwright`)
+und ein laufender Vite-Preview-Server:
+
+```sh
+pnpm build && pnpm preview --host 127.0.0.1 --port 4173 &
+node qa/scripts/axe-routes.mjs
+node qa/scripts/click-reachability.mjs
+node qa/scripts/interaction-overlap.mjs
+node qa/scripts/page-structure.mjs
+node qa/scripts/z-stack.mjs
+```
+
+Override mit `AUDIT_BASE_URL` fuer Audits gegen Live-Site oder anderen
+Server. Auf macOS nutzen die Skripte System-Chrome
+(`/Applications/Google Chrome.app/...`); auf Linux/CI:
+`PLAYWRIGHT_EXECUTABLE_PATH` oder `playwright install chromium`.
+
+**`/soforthilfe`-Sonderfall:** Die Page ist Static-HTML, nicht React-SPA.
+Vite Preview emuliert die Netlify-`_redirects` nicht. Fuer ehrliche
+a11y-Audits dieser Page immer gegen Production testen:
+
+```sh
+AUDIT_BASE_URL=https://borderline-angehoerige.netlify.app \
+  node qa/scripts/axe-routes.mjs
+```
+
+Details siehe [audit-a11y-interaktion.md](./audit-a11y-interaktion.md)
+Abschnitt «Reaktivierung 2026-04-28».

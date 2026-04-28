@@ -1,0 +1,304 @@
+{
+  "generatedAt": "2026-04-28T17:50:05.951Z",
+  "viewport": {
+    "name": "desktop",
+    "width": 1280,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+  },
+  "results": [
+    {
+      "route": "/",
+      "title": "Startseite – Borderline · Hilfe für Angehörige",
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Wenn jemand, den Sie lieben, eine Borderline-Persönlichkeitsstörung hat"
+        },
+        {
+          "index": 1,
+          "tag": "h2",
+          "level": 2,
+          "text": "Mitgefühl und Selbstschutz sind kein Widerspruch."
+        },
+        {
+          "index": 2,
+          "tag": "h2",
+          "level": 2,
+          "text": "Sie müssen nicht wissen, was Sie sagen wollen."
+        },
+        {
+          "index": 3,
+          "tag": "h3",
+          "level": 3,
+          "text": "Themen"
+        },
+        {
+          "index": 4,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ressourcen"
+        },
+        {
+          "index": 5,
+          "tag": "h3",
+          "level": 3,
+          "text": "Hinweis"
+        }
+      ],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 1,
+        "nav": 1,
+        "header": 2,
+        "footer": 1
+      },
+      "imageSummary": {
+        "total": 0,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    },
+    {
+      "route": "/soforthilfe",
+      "title": "Borderline: Hilfe für Angehörige – Evidenzbasierte Unterstützung",
+      "h1Count": 0,
+      "headings": [],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 0,
+        "nav": 0,
+        "header": 0,
+        "footer": 0
+      },
+      "imageSummary": {
+        "total": 0,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    },
+    {
+      "route": "/materialien",
+      "title": "Materialien – Borderline · Hilfe für Angehörige",
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Materialien für Angehörige"
+        },
+        {
+          "index": 1,
+          "tag": "h2",
+          "level": 2,
+          "text": "Was hilft gerade jetzt?"
+        },
+        {
+          "index": 2,
+          "tag": "h3",
+          "level": 3,
+          "text": "Akute Krise"
+        },
+        {
+          "index": 3,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ich brauche Orientierung"
+        },
+        {
+          "index": 4,
+          "tag": "h3",
+          "level": 3,
+          "text": "Schwierige Gespräche"
+        },
+        {
+          "index": 5,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ich bin selbst am Limit"
+        },
+        {
+          "index": 6,
+          "tag": "h2",
+          "level": 2,
+          "text": "Empfohlene Kernmaterialien"
+        },
+        {
+          "index": 7,
+          "tag": "h3",
+          "level": 3,
+          "text": "Notfallkarte Zürich – Psychische Krise"
+        },
+        {
+          "index": 8,
+          "tag": "h3",
+          "level": 3,
+          "text": "Notfallplan Krise – Suizidgedanken & Selbstverletzung"
+        },
+        {
+          "index": 9,
+          "tag": "h3",
+          "level": 3,
+          "text": "Der Leuchtturm – Orientierung für Angehörige"
+        },
+        {
+          "index": 10,
+          "tag": "h3",
+          "level": 3,
+          "text": "Der Eisberg – Wut ist oft die Spitze"
+        },
+        {
+          "index": 11,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ihre Rolle klären – Was Sie sein können (und was nicht)"
+        },
+        {
+          "index": 12,
+          "tag": "h3",
+          "level": 3,
+          "text": "Spickzettel Krisenkommunikation (A4)"
+        },
+        {
+          "index": 13,
+          "tag": "h3",
+          "level": 3,
+          "text": "Spickzettel Grenzen – Die wichtigsten Sätze"
+        },
+        {
+          "index": 14,
+          "tag": "h3",
+          "level": 3,
+          "text": "Warnsignale der Überlastung"
+        },
+        {
+          "index": 15,
+          "tag": "h2",
+          "level": 2,
+          "text": "Weitere Materialien nach Kategorie"
+        },
+        {
+          "index": 16,
+          "tag": "h3",
+          "level": 3,
+          "text": "Schuld, Verantwortung und was dazwischen liegt"
+        },
+        {
+          "index": 17,
+          "tag": "h3",
+          "level": 3,
+          "text": "Spaltung – das Pendel zwischen Extremen"
+        },
+        {
+          "index": 18,
+          "tag": "h3",
+          "level": 3,
+          "text": "Alarm-Modus vs. Denk-Modus"
+        },
+        {
+          "index": 19,
+          "tag": "h3",
+          "level": 3,
+          "text": "Wenn Worte treffen – 5 häufige Schuldzuweisungen"
+        },
+        {
+          "index": 20,
+          "tag": "h3",
+          "level": 3,
+          "text": "Die DEAR-Technik – Grenzen setzen ohne Vorwürfe"
+        },
+        {
+          "index": 21,
+          "tag": "h3",
+          "level": 3,
+          "text": "Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln"
+        },
+        {
+          "index": 22,
+          "tag": "h3",
+          "level": 3,
+          "text": "Genesung in Zahlen – Was die Forschung zeigt"
+        },
+        {
+          "index": 23,
+          "tag": "h3",
+          "level": 3,
+          "text": "Wenn Mama oder Papa grosse Gefühle hat"
+        },
+        {
+          "index": 24,
+          "tag": "h2",
+          "level": 2,
+          "text": "Besondere Konstellationen"
+        },
+        {
+          "index": 25,
+          "tag": "h2",
+          "level": 2,
+          "text": "Von hier aus weiter"
+        },
+        {
+          "index": 26,
+          "tag": "h3",
+          "level": 3,
+          "text": "Themen"
+        },
+        {
+          "index": 27,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ressourcen"
+        },
+        {
+          "index": 28,
+          "tag": "h3",
+          "level": 3,
+          "text": "Hinweis"
+        }
+      ],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 1,
+        "nav": 2,
+        "header": 2,
+        "footer": 1
+      },
+      "imageSummary": {
+        "total": 16,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    },
+    {
+      "route": "/notfallkarte",
+      "title": "Notfallkarte Zürich – Psychische Krise v06",
+      "h1Count": 0,
+      "headings": [],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 0,
+        "nav": 0,
+        "header": 0,
+        "footer": 0
+      },
+      "imageSummary": {
+        "total": 0,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    }
+  ]
+}

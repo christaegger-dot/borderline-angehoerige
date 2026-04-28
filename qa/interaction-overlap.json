@@ -1,0 +1,1112 @@
+{
+  "generatedAt": "2026-04-28T17:53:40.325Z",
+  "findings": [
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "key": "a::/verstehen::::Verstehen::23",
+      "index": 23,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Verstehen"
+      },
+      "blockedBy": {
+        "tag": "span",
+        "id": null,
+        "className": "inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-border/60 bg-white/90 text-sage-darker shado",
+        "text": ""
+      },
+      "center": {
+        "x": 49.5,
+        "y": 37.3
+      },
+      "scrollY": 4263
+    },
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "key": "a::/faq::::Häufige Fragen (FAQ)::33",
+      "index": 33,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Häufige Fragen (FAQ)"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 87.4,
+        "y": 34.3
+      },
+      "scrollY": 4694
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "key": "a::/::::Borderline · Hilfe für Angehörige::22",
+      "index": 22,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "flex items-center gap-2 mb-4",
+        "text": "Borderline · Hilfe für Angehörige"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 196,
+        "y": 27.9
+      },
+      "scrollY": 3181
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "key": "a::/verstehen::::Verstehen::23",
+      "index": 23,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Verstehen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 433.5,
+        "y": 63.9
+      },
+      "scrollY": 3181
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "key": "a::/soforthilfe::::Soforthilfe::18",
+      "index": 18,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "",
+        "text": "Soforthilfe"
+      },
+      "blockedBy": {
+        "tag": "a",
+        "id": null,
+        "className": "px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap text-mute",
+        "text": "Unterstützen"
+      },
+      "center": {
+        "x": 535.9,
+        "y": 23.7
+      },
+      "scrollY": 2025
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "key": "a::/soforthilfe::::Notfallnummern öffnen::21",
+      "index": 21,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Notfallnummern öffnen"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 428.7,
+        "y": 20
+      },
+      "scrollY": 3009
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "button::::::::40",
+      "index": 40,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "block w-full overflow-hidden rounded-sm",
+        "text": ""
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 187.5,
+        "y": 38
+      },
+      "scrollY": 5481
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "button::::::::60",
+      "index": 60,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "block w-full overflow-hidden rounded-sm",
+        "text": ""
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 187.5,
+        "y": 41.9
+      },
+      "scrollY": 7917
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "a::/materialien/text/dear::::Textversion lesen::77",
+      "index": 77,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Textversion lesen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 82.2,
+        "y": 19.2
+      },
+      "scrollY": 10962
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "a::/api/material-download/dear?disposition=inline::::PDF öffnen::78",
+      "index": 78,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "PDF öffnen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 197.4,
+        "y": 19.2
+      },
+      "scrollY": 10962
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "a::/api/material-download/dear::::Herunterladen::79",
+      "index": 79,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Herunterladen"
+      },
+      "blockedBy": {
+        "tag": "a",
+        "id": null,
+        "className": "sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-alert text-white shadow-[0_8px_16px_-8px_rgb",
+        "text": ""
+      },
+      "center": {
+        "x": 301.9,
+        "y": 19.2
+      },
+      "scrollY": 10962
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "a::/materialien/text/radikale-akzeptanz::::Textversion lesen::81",
+      "index": 81,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Textversion lesen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 82.2,
+        "y": 55.7
+      },
+      "scrollY": 11571
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "a::/api/material-download/radikale-akzeptanz?disposition=inline::::PDF öffnen::82",
+      "index": 82,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "PDF öffnen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 197.4,
+        "y": 55.7
+      },
+      "scrollY": 11571
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "a::/api/material-download/radikale-akzeptanz::::Herunterladen::83",
+      "index": 83,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Herunterladen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 301.9,
+        "y": 55.7
+      },
+      "scrollY": 11571
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "a::/verstehen::::Verstehen::100",
+      "index": 100,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Verstehen"
+      },
+      "blockedBy": {
+        "tag": "span",
+        "id": null,
+        "className": "inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-border/60 bg-white/90 text-sage-darker shado",
+        "text": ""
+      },
+      "center": {
+        "x": 49.5,
+        "y": 31.3
+      },
+      "scrollY": 14007
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "key": "a::/faq::::Häufige Fragen (FAQ)::110",
+      "index": 110,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Häufige Fragen (FAQ)"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 87.4,
+        "y": 34.3
+      },
+      "scrollY": 14432
+    },
+    {
+      "route": "/materialien",
+      "viewport": "tablet",
+      "key": "a::/materialien/text/eisberg::::Textversion lesen::33",
+      "index": 33,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Textversion lesen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 458.2,
+        "y": 77.7
+      },
+      "scrollY": 3072
+    },
+    {
+      "route": "/materialien",
+      "viewport": "tablet",
+      "key": "a::/infografiken/eisberg-der-eisberg-v6.pdf::::PDF öffnen::34",
+      "index": 34,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "PDF öffnen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 573.4,
+        "y": 77.7
+      },
+      "scrollY": 3072
+    },
+    {
+      "route": "/materialien",
+      "viewport": "tablet",
+      "key": "a::/infografiken/eisberg-der-eisberg-v6.pdf::::Herunterladen::35",
+      "index": 35,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Herunterladen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 677.9,
+        "y": 77.7
+      },
+      "scrollY": 3072
+    },
+    {
+      "route": "/materialien",
+      "viewport": "tablet",
+      "key": "a::/materialien/text/rolle-klaeren::::Textversion lesen::37",
+      "index": 37,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Textversion lesen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 98.2,
+        "y": 3.2
+      },
+      "scrollY": 3840
+    },
+    {
+      "route": "/materialien",
+      "viewport": "tablet",
+      "key": "a::/infografiken/sphären-die-einfluss-sphären-v3.pdf::::PDF öffnen::38",
+      "index": 38,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "PDF öffnen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 213.4,
+        "y": 3.2
+      },
+      "scrollY": 3840
+    },
+    {
+      "route": "/materialien",
+      "viewport": "tablet",
+      "key": "a::/infografiken/sphären-die-einfluss-sphären-v3.pdf::::Herunterladen::39",
+      "index": 39,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Herunterladen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 317.9,
+        "y": 3.2
+      },
+      "scrollY": 3840
+    },
+    {
+      "route": "/materialien",
+      "viewport": "tablet",
+      "key": "a::/::::Borderline · Hilfe für Angehörige::99",
+      "index": 99,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "flex items-center gap-2 mb-4",
+        "text": "Borderline · Hilfe für Angehörige"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 196,
+        "y": 28
+      },
+      "scrollY": 8406
+    },
+    {
+      "route": "/materialien",
+      "viewport": "tablet",
+      "key": "a::/verstehen::::Verstehen::100",
+      "index": 100,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5",
+        "text": "Verstehen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 433.5,
+        "y": 64
+      },
+      "scrollY": 8406
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "key": "button::::::Materialien dieser Kategorie ansehen::18",
+      "index": 18,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Materialien dieser Kategorie ansehen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 395,
+        "y": 8.3
+      },
+      "scrollY": 1350
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "key": "button::::::Kinder & Familie::92",
+      "index": 92,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Kinder & Familie"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 325.3,
+        "y": 12.7
+      },
+      "scrollY": 8100
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "key": "button::::::Schuld & Erschöpfung::93",
+      "index": 93,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Schuld & Erschöpfung"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 472.1,
+        "y": 12.7
+      },
+      "scrollY": 8100
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "key": "button::::::Grenzen & Selbstschutz::94",
+      "index": 94,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Grenzen & Selbstschutz"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 644.6,
+        "y": 12.7
+      },
+      "scrollY": 8100
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "key": "a::/verstehen::::Verstehen::95",
+      "index": 95,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Verstehen"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 471.7,
+        "y": 19.6
+      },
+      "scrollY": 8420
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "key": "a::/kommunizieren::::Kommunizieren::96",
+      "index": 96,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Kommunizieren"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 584.3,
+        "y": 19.6
+      },
+      "scrollY": 8420
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "key": "a::/grenzen::::Grenzen::97",
+      "index": 97,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Grenzen"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 690.1,
+        "y": 19.6
+      },
+      "scrollY": 8420
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "key": "a::/selbstfuersorge::::Selbstfürsorge::98",
+      "index": 98,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Selbstfürsorge"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 829.5,
+        "y": 19.6
+      },
+      "scrollY": 8420
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::Alle(8)::52",
+      "index": 52,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 whitespace-nowrap shrink-0",
+        "text": "Alle(8)"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 645.8,
+        "y": 59.9
+      },
+      "scrollY": 4860
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::Soforthilfe(0)::53",
+      "index": 53,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 whitespace-nowrap shrink-0",
+        "text": "Soforthilfe(0)"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 751.1,
+        "y": 59.9
+      },
+      "scrollY": 4860
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::Verstehen(3)::54",
+      "index": 54,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 whitespace-nowrap shrink-0",
+        "text": "Verstehen(3)"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 877.3,
+        "y": 59.9
+      },
+      "scrollY": 4860
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::Unterstützen(0)::55",
+      "index": 55,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 whitespace-nowrap shrink-0",
+        "text": "Unterstützen(0)"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 1011.8,
+        "y": 59.9
+      },
+      "scrollY": 4860
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::Kommunizieren(1)::56",
+      "index": 56,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 whitespace-nowrap shrink-0",
+        "text": "Kommunizieren(1)"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 1162.7,
+        "y": 59.9
+      },
+      "scrollY": 4860
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "a::/materialien/text/schuld-verantwortung::::Textversion lesen::61",
+      "index": 61,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Textversion lesen"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 650.2,
+        "y": 29.2
+      },
+      "scrollY": 5670
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "a::/api/material-download/schuld-verantwortung?disposition=inline::::PDF öffnen::62",
+      "index": 62,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "PDF öffnen"
+      },
+      "blockedBy": {
+        "tag": "a",
+        "id": null,
+        "className": "px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap text-mute",
+        "text": "Unterstützen"
+      },
+      "center": {
+        "x": 765.4,
+        "y": 29.2
+      },
+      "scrollY": 5670
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "a::/api/material-download/schuld-verantwortung::::Herunterladen::63",
+      "index": 63,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Herunterladen"
+      },
+      "blockedBy": {
+        "tag": "nav",
+        "id": null,
+        "className": "hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px",
+        "text": "VerstehenUnterstützenKommunizierenGrenzenSelbstfürsorgeRessourcen"
+      },
+      "center": {
+        "x": 869.9,
+        "y": 29.2
+      },
+      "scrollY": 5670
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "a::/materialien/text/spaltung::::Textversion lesen::65",
+      "index": 65,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Textversion lesen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 1034.2,
+        "y": 6.2
+      },
+      "scrollY": 5670
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "a::/infografiken/pendel-das-bewertungs-pendel-v14.pdf::::PDF öffnen::66",
+      "index": 66,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "PDF öffnen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 1149.4,
+        "y": 6.2
+      },
+      "scrollY": 5670
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "a::/infografiken/pendel-das-bewertungs-pendel-v14.pdf::::Herunterladen::67",
+      "index": 67,
+      "element": {
+        "tag": "a",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Herunterladen"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 1253.9,
+        "y": 6.2
+      },
+      "scrollY": 5670
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::::84",
+      "index": 84,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "block w-full overflow-hidden rounded-sm",
+        "text": ""
+      },
+      "blockedBy": {
+        "tag": "a",
+        "id": null,
+        "className": "px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap text-mute",
+        "text": "Unterstützen"
+      },
+      "center": {
+        "x": 768,
+        "y": 36.9
+      },
+      "scrollY": 7290
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::::88",
+      "index": 88,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "block w-full overflow-hidden rounded-sm",
+        "text": ""
+      },
+      "blockedBy": {
+        "tag": "a",
+        "id": null,
+        "className": "px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap text-mute",
+        "text": "Selbstfürsorge"
+      },
+      "center": {
+        "x": 1152,
+        "y": 36.9
+      },
+      "scrollY": 7290
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::Kinder & Familie::92",
+      "index": 92,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Kinder & Familie"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 645.3,
+        "y": 12.7
+      },
+      "scrollY": 8100
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::Schuld & Erschöpfung::93",
+      "index": 93,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Schuld & Erschöpfung"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 792.1,
+        "y": 12.7
+      },
+      "scrollY": 8100
+    },
+    {
+      "route": "/materialien",
+      "viewport": "wide",
+      "key": "button::::::Grenzen & Selbstschutz::94",
+      "index": 94,
+      "element": {
+        "tag": "button",
+        "id": null,
+        "className": "editorial-link",
+        "text": "Grenzen & Selbstschutz"
+      },
+      "blockedBy": {
+        "tag": "div",
+        "id": null,
+        "className": "flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3",
+        "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione"
+      },
+      "center": {
+        "x": 964.6,
+        "y": 12.7
+      },
+      "scrollY": 8100
+    }
+  ],
+  "summary": {
+    "totalFindings": 48
+  }
+}

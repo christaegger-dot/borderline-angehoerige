@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-04-28T17:51:15.530Z",
+  "entries": [
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "items": [
+        {
+          "index": 48,
+          "tag": "header",
+          "id": null,
+          "className": "sticky top-0 z-50 border-b border-border/60 bg-background/88 backdrop-blur-xl shadow-[0_10px_34px_-28px_rgba(15,23,42,0.45)]",
+          "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione",
+          "position": "sticky",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 47,
+          "tag": "a",
+          "id": null,
+          "className": "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus",
+          "text": "Zum Inhalt springen",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        }
+      ],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "items": [
+        {
+          "index": 48,
+          "tag": "header",
+          "id": null,
+          "className": "sticky top-0 z-50 border-b border-border/60 bg-background/88 backdrop-blur-xl shadow-[0_10px_34px_-28px_rgba(15,23,42,0.45)]",
+          "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione",
+          "position": "sticky",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 47,
+          "tag": "a",
+          "id": null,
+          "className": "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus",
+          "text": "Zum Inhalt springen",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        }
+      ],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/soforthilfe",
+      "viewport": "mobile",
+      "items": [],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/soforthilfe",
+      "viewport": "desktop",
+      "items": [],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/materialien",
+      "viewport": "mobile",
+      "items": [
+        {
+          "index": 50,
+          "tag": "header",
+          "id": null,
+          "className": "sticky top-0 z-50 border-b border-border/60 bg-background/88 backdrop-blur-xl shadow-[0_10px_34px_-28px_rgba(15,23,42,0.45)]",
+          "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione",
+          "position": "sticky",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 49,
+          "tag": "a",
+          "id": null,
+          "className": "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus",
+          "text": "Zum Inhalt springen",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        }
+      ],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/materialien",
+      "viewport": "desktop",
+      "items": [
+        {
+          "index": 50,
+          "tag": "header",
+          "id": null,
+          "className": "sticky top-0 z-50 border-b border-border/60 bg-background/88 backdrop-blur-xl shadow-[0_10px_34px_-28px_rgba(15,23,42,0.45)]",
+          "text": "Borderline · Hilfe für AngehörigeOrientierung für belastete Beziehungssituatione",
+          "position": "sticky",
+          "zIndex": "50",
+          "numericZIndex": 50,
+          "anomaly": null
+        },
+        {
+          "index": 49,
+          "tag": "a",
+          "id": null,
+          "className": "sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus",
+          "text": "Zum Inhalt springen",
+          "position": "absolute",
+          "zIndex": "auto",
+          "numericZIndex": null,
+          "anomaly": null
+        }
+      ],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/notfallkarte",
+      "viewport": "mobile",
+      "items": [],
+      "anomalyCount": 0
+    },
+    {
+      "route": "/notfallkarte",
+      "viewport": "desktop",
+      "items": [],
+      "anomalyCount": 0
+    }
+  ]
+}

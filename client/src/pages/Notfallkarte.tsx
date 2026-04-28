@@ -1,23 +1,58 @@
-import { useState, useEffect, useCallback, useRef } from "react";
-import SEO from "@/components/SEO";
-import Layout from "@/components/Layout";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+/**
+ * Notfallkarte — Editorial-Redesign Phase 5 (Page 9/9, Tier 2 — letzte
+ * Page der Welle).
+ *
+ * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
+ * «Page 9 — Notfallkarte».
+ *
+ * Form-Editor mit localStorage-Persistenz. Funktional-Logik komplett
+ * unverändert: 6 Content-Blöcke (Notfallnummern / PUK-Krise / Jemand
+ * zum Reden / Persönliche Kontakte / Beruhigungsstrategien /
+ * Persönliche Notizen), Auto-Save bei jeder Änderung, Save-Button mit
+ * Toast-Bestätigung, Print über window.open auf separate
+ * `/notfallkarte-print.html` (Brief: separate Standalone-Datei wird
+ * NICHT angefasst).
+ *
+ *   ── localStorage-Fallback-Warnung ──
+ *   Vorher: fixed top-0 banner mit `bg-sand-accent` (volle Hintergrund-
+ *   fläche).
+ *   Editorial: border-l-4 mit --color-alert + dezenter
+ *   --color-alert-wash bg, analog Wegweiser-safetyCritical. Position
+ *   bleibt fixed top-0 (sicherheits-funktional: muss bei jedem Scroll
+ *   sichtbar sein, sonst verliert User seine Eingaben unbemerkt).
+ *   Begründung: dezent + sichtbar — Standardfall ist localStorage
+ *   funktioniert (Banner soll dann nicht erscheinen), aber im Fallback
+ *   muss er prominent genug sein, um Datenverlust zu verhindern.
+ *
+ *   ── Print-CSS-Pfad ──
+ *   Alle `print:`-Tailwind-Klassen erhalten:
+ *     - `print:hidden` für interaktive UI (Trash-Buttons, Hinzufügen,
+ *       Action-Buttons, Banner-Warnung, Hero-Buttons)
+ *     - `print:break-inside-avoid` für die 6 Content-Blöcke
+ *     - `print:bg-none print:py-2 print:pb-2` für Hero (kein Gradient
+ *       beim Druck)
+ *     - `print:border-b print:border-t-0 print:border-l-0
+ *       print:border-r-0 print:rounded-none print:px-0 print:py-0.5`
+ *       für Form-Inputs (klassische Linien-Inputs beim Druck)
+ *     - `print:text-base / print:text-2xl / print:text-sm` für
+ *       responsive H-Sizes
+ *     - `hidden print:block` für leere Kontakt-Linien beim Druck
+ *     - `notfallkarte-print` Wrapper-Klasse
+ *   Beim direkten Browser-Druck (Ctrl+P) erscheint die Karte ohne
+ *   Editor-UI. (Standardfall: User klickt «Drucken» → öffnet
+ *   `notfallkarte-print.html` in neuem Tab.)
+ */
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
-  Phone,
-  Printer,
-  Save,
-  Plus,
-  Trash2,
-  Heart,
-  Shield,
-  AlertTriangle,
-  Info,
-} from "lucide-react";
+  EditorialLayout,
+  EditorialProse,
+  EditorialSection,
+} from "@/components/editorial";
+import Layout from "@/components/Layout";
+import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import SEO from "@/components/SEO";
 import { ROT, GELB, GRUEN, type Kontakt } from "@/data/kontakte";
-
-// ─── Types ────────────────────────────────────────────────
+import { Link } from "wouter";
 
 interface PersonalContact {
   id: string;
@@ -49,14 +84,9 @@ function createId() {
   return Math.random().toString(36).slice(2, 9);
 }
 
-// ─── Emergency contacts for print card ────────────────────
-
-/** Contacts shown on the printed card (including nurPdf entries) */
 const CARD_ROT = ROT.filter(k => k.id !== "ROT_118");
 const CARD_GELB = GELB;
 const CARD_GRUEN = GRUEN.filter(k => k.id === "GRUEN_143");
-
-// ─── Persistence ──────────────────────────────────────────
 
 function loadData(): NotfallkarteData {
   try {
@@ -92,29 +122,119 @@ function saveData(data: NotfallkarteData): boolean {
   }
 }
 
-// ─── Sub-components ───────────────────────────────────────
+// ─── Editorial-Style Konstanten ──────────────────────────
+
+const labelStyle = {
+  fontSize: "var(--text-xs)",
+  letterSpacing: "var(--tracking-caps)",
+  color: "var(--fg-tertiary)",
+  fontWeight: 500,
+} as const;
+
+const inputClass =
+  "w-full rounded-md border px-3 py-2 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5";
+
+const inputStyle = {
+  borderColor: "var(--rule-color)",
+  backgroundColor: "var(--bg-elevated)",
+  color: "var(--fg-primary)",
+} as const;
+
+// ─── Sub-components ──────────────────────────────────────
 
 function EmergencyRow({ kontakt }: { kontakt: Kontakt }) {
   return (
     <a
       href={`tel:${kontakt.tel}`}
-      className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-muted/50 transition-colors group"
+      className="flex items-center justify-between gap-4 border-t py-3 transition-colors hover:bg-[var(--bg-elevated)] print:py-2"
+      style={{ borderColor: "var(--rule-color)" }}
     >
-      <span className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--color-sos-rot)]/10 flex items-center justify-center">
-        <Phone className="w-4 h-4 text-[var(--color-sos-rot)]" />
-      </span>
-      <span className="flex-1 min-w-0">
-        <span className="font-semibold text-foreground block text-sm leading-tight">
+      <span className="min-w-0 flex-1">
+        <span
+          className="block text-sm leading-tight"
+          style={{ color: "var(--fg-primary)", fontWeight: 600 }}
+        >
           {kontakt.label}
         </span>
-        <span className="text-xs text-muted-foreground leading-tight">
-          {kontakt.hinweis}
-        </span>
+        {kontakt.hinweis && (
+          <span
+            className="block text-xs leading-tight"
+            style={{ color: "var(--fg-tertiary)" }}
+          >
+            {kontakt.hinweis}
+          </span>
+        )}
       </span>
-      <span className="flex-shrink-0 font-bold text-lg tabular-nums tracking-wide text-foreground">
+      <span
+        className="shrink-0 text-lg tabular-nums tracking-wide"
+        style={{ color: "var(--fg-primary)", fontWeight: 600 }}
+      >
         {kontakt.nummer}
       </span>
     </a>
+  );
+}
+
+function PrimaryButton({
+  onClick,
+  children,
+}: {
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="rounded-full border px-5 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 print:hidden"
+      style={{
+        borderColor: "var(--accent-primary)",
+        backgroundColor: "var(--accent-primary)",
+        color: "var(--bg-primary)",
+        fontWeight: 500,
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+
+function SecondaryButton({
+  onClick,
+  children,
+  disabled,
+  ariaLabel,
+  title,
+}: {
+  onClick: () => void;
+  children: React.ReactNode;
+  disabled?: boolean;
+  ariaLabel?: string;
+  title?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={ariaLabel}
+      title={title}
+      className="rounded-full border px-4 py-1.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 print:hidden"
+      style={{
+        borderColor: "var(--rule-color)",
+        backgroundColor: "var(--bg-elevated)",
+        color: "var(--fg-secondary)",
+      }}
+      onMouseEnter={e => {
+        if (!disabled)
+          e.currentTarget.style.borderColor = "var(--accent-primary)";
+      }}
+      onMouseLeave={e => {
+        if (!disabled) e.currentTarget.style.borderColor = "var(--rule-color)";
+      }}
+    >
+      {children}
+    </button>
   );
 }
 
@@ -129,14 +249,15 @@ function PersonalContactRow({
 }) {
   return (
     <div className="flex items-start gap-2 py-2 print:py-1">
-      <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-2 print:grid-cols-3">
+      <div className="grid flex-1 grid-cols-1 gap-2 sm:grid-cols-3 print:grid-cols-3">
         <input
           type="text"
           value={contact.name}
           onChange={e => onUpdate({ ...contact, name: e.target.value })}
           placeholder="Name"
           aria-label="Name der Kontaktperson"
-          className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
+          className={inputClass}
+          style={inputStyle}
         />
         <input
           type="tel"
@@ -144,7 +265,8 @@ function PersonalContactRow({
           onChange={e => onUpdate({ ...contact, phone: e.target.value })}
           placeholder="Telefonnummer"
           aria-label="Telefonnummer der Kontaktperson"
-          className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
+          className={inputClass}
+          style={inputStyle}
         />
         <input
           type="text"
@@ -152,22 +274,24 @@ function PersonalContactRow({
           onChange={e => onUpdate({ ...contact, relation: e.target.value })}
           placeholder="Beziehung (z.B. Therapeut:in)"
           aria-label="Beziehung oder Rolle der Kontaktperson"
-          className="rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
+          className={inputClass}
+          style={inputStyle}
         />
       </div>
       <button
         type="button"
         onClick={onRemove}
-        className="mt-1.5 p-1.5 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors print:hidden"
+        className="mt-1.5 px-2 py-1 text-xs transition-colors print:hidden"
+        style={{ color: "var(--fg-tertiary)" }}
         aria-label={`${contact.name || "Kontakt"} entfernen`}
       >
-        <Trash2 className="w-4 h-4" />
+        entfernen
       </button>
     </div>
   );
 }
 
-// ─── Main page ────────────────────────────────────────────
+// ─── Main page ───────────────────────────────────────────
 
 export default function Notfallkarte() {
   const [data, setData] = useState<NotfallkarteData>(loadData);
@@ -176,12 +300,10 @@ export default function Notfallkarte() {
   const [announcement, setAnnouncement] = useState("");
   const savedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Detect storage availability once on mount
   useEffect(() => {
     if (!isStorageAvailable()) setStorageError(true);
   }, []);
 
-  // Auto-save on changes
   useEffect(() => {
     if (!saveData(data)) setStorageError(true);
   }, [data]);
@@ -200,7 +322,6 @@ export default function Notfallkarte() {
   }, [data]);
 
   const handlePrint = useCallback(() => {
-    // Daten in sessionStorage schreiben, damit die Print-Seite sie lesen kann
     try {
       sessionStorage.setItem("notfallkarte-print-data", JSON.stringify(data));
     } catch {
@@ -283,158 +404,211 @@ export default function Notfallkarte() {
         {announcement}
       </div>
 
-      {/* ─── Hero ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-b from-[var(--color-sand)] to-background pt-12 pb-8 print:pt-2 print:pb-2 print:bg-none">
-        <div className="container max-w-3xl text-center">
-          {storageError && (
-            <div
-              className="fixed top-0 left-0 right-0 z-50 flex items-center gap-3 px-4 py-3 bg-sand-accent border-b border-sand-border text-left print:hidden"
-              role="alert"
+      {/*
+        localStorage-Fallback-Warnung: dezent (border-l-4 + alert-wash),
+        aber sicherheits-funktional fixed top-0 (User darf Eingaben nicht
+        unbemerkt verlieren). Im Standardfall (storage funktioniert)
+        erscheint dieser Banner gar nicht.
+      */}
+      {storageError && (
+        <div
+          role="alert"
+          className="fixed top-0 left-0 right-0 z-50 border-b border-l-4 px-4 py-3 print:hidden"
+          style={{
+            borderLeftColor: "var(--color-alert)",
+            borderBottomColor: "var(--rule-color)",
+            backgroundColor: "var(--color-alert-wash, rgba(197,95,61,0.05))",
+          }}
+        >
+          <p
+            className="text-sm"
+            style={{
+              color: "var(--fg-primary)",
+              lineHeight: "var(--lh-relaxed)",
+            }}
+          >
+            <strong>Speichern nicht möglich</strong> – privater Modus oder
+            gesperrter Speicher. Bitte{" "}
+            <button
+              type="button"
+              onClick={handlePrint}
+              className="editorial-link"
             >
-              <AlertTriangle className="w-5 h-5 text-foreground shrink-0" />
-              <p className="text-sm text-foreground">
-                <strong>Speichern nicht möglich</strong> – privater Modus oder
-                gesperrter Speicher. Bitte{" "}
-                <button
-                  type="button"
-                  onClick={handlePrint}
-                  className="underline font-semibold hover:no-underline"
-                >
-                  jetzt drucken
-                </button>{" "}
-                bevor Sie die Seite verlassen.
-              </p>
-            </div>
-          )}
-          <div className="inline-flex items-center gap-2 bg-[var(--color-sos-rot)]/10 text-[var(--color-sos-rot)] px-4 py-1.5 rounded-full text-sm font-medium mb-4 print:hidden">
-            <Shield className="w-4 h-4" />
-            Soforthilfe-Werkzeug
-          </div>
-          <h1 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-3 print:text-2xl print:mb-1">
-            Persönliche Notfallkarte
+              jetzt drucken
+            </button>{" "}
+            bevor Sie die Seite verlassen.
+          </p>
+        </div>
+      )}
+
+      <EditorialLayout width="narrow">
+        {/* ── Hero ── */}
+        <header className="pb-12 pt-16 md:pb-16 md:pt-24 print:hidden">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
+          >
+            Notfallkarte
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            Persönliche <em>Notfallkarte</em>
           </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto print:text-sm print:max-w-none">
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
             Die wichtigsten Nummern und Ihre persönlichen Strategien – alles auf
             einen Blick. Zum Ausdrucken, als PDF speichern oder jederzeit hier
             abrufen.
           </p>
-
-          {/* Action buttons – hidden when printing */}
-          <div className="flex flex-wrap justify-center gap-3 mt-6 print:hidden">
-            {/* Primärer CTA: Drucken / Als PDF – häufigster Use-Case */}
-            <Button
-              onClick={handlePrint}
-              className="gap-2 bg-[var(--color-sos-rot)] hover:bg-[var(--color-sos-rot-body)] text-white shadow-sm"
-            >
-              <Printer className="w-4 h-4" />
-              Drucken / Als PDF
-            </Button>
-            {/* Sekundärer CTA: Im Browser speichern */}
-            <Button
-              variant="outline"
-              onClick={handleSave}
-              className="gap-2 text-muted-foreground border-muted-foreground/30"
-            >
-              <Save className="w-4 h-4" />
-              {saved ? "Gespeichert ✓" : "Im Browser speichern"}
-            </Button>
-          </div>
-
-          <p className="text-sm text-muted-foreground mt-5 print:hidden">
+          <p
+            className="mt-4"
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
             Sofort Hilfe brauchen?{" "}
-            <Link
-              href="/soforthilfe"
-              className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
-            >
-              Soforthilfe-Nummern →
+            <Link href="/soforthilfe" className="editorial-link">
+              Soforthilfe-Nummern
             </Link>{" "}
             · Situation einschätzen?{" "}
-            <Link
-              href="/wegweiser"
-              className="text-sage-dark underline underline-offset-2 hover:text-sage-mid"
-            >
-              Situations-Wegweiser →
+            <Link href="/wegweiser" className="editorial-link">
+              Situations-Wegweiser
             </Link>
           </p>
-        </div>
-      </section>
+        </header>
 
-      {/* ─── Printable card area ──────────────────────────── */}
-      <section className="container max-w-3xl py-8 space-y-6 print:py-2 print:space-y-3 notfallkarte-print">
-        {/* BLOCK 1: Emergency numbers */}
-        <Card className="border-[var(--color-sos-rot)]/30 print:break-inside-avoid">
-          <CardContent className="pt-5">
-            <div className="flex items-center gap-2 mb-3">
-              <AlertTriangle className="w-5 h-5 text-[var(--color-sos-rot)]" />
-              <h2 className="text-lg font-semibold text-foreground font-serif print:text-base print:!border-none print:!mt-0 print:!mb-0 print:!pb-0">
-                Notfallnummern
-              </h2>
-            </div>
-            <div className="divide-y divide-border/50">
+        {/* ── Hairline-Trenner Editorial-Hero → funktionales Tool ── */}
+        <hr
+          className="border-0 border-t print:hidden"
+          style={{ borderColor: "var(--rule-color)" }}
+        />
+
+        {/* ── Karten-Inhalt (printable) ── */}
+        <div className="notfallkarte-print mt-12 space-y-12 print:mt-0 print:space-y-3">
+          {/* BLOCK 1: Notfallnummern */}
+          <section className="space-y-3 print:break-inside-avoid">
+            <p className="uppercase" style={labelStyle}>
+              Notfallnummern
+            </p>
+            <h2
+              className="font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+              style={{
+                fontSize: "var(--text-lg)",
+                fontWeight: "var(--weight-display)",
+                color: "var(--fg-primary)",
+                letterSpacing: "var(--tracking-tight)",
+              }}
+            >
+              Notruf &amp; Polizei
+            </h2>
+            <div>
               {CARD_ROT.map(k => (
                 <EmergencyRow key={k.id} kontakt={k} />
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </section>
 
-        {/* BLOCK 2: Psychiatric emergency */}
-        <Card className="border-[var(--color-sos-orange-text)]/30 print:break-inside-avoid">
-          <CardContent className="pt-5">
-            <div className="flex items-center gap-2 mb-3">
-              <Phone className="w-5 h-5 text-[var(--color-sos-orange-text)]" />
-              <h2 className="text-lg font-semibold text-foreground font-serif print:text-base print:!border-none print:!mt-0 print:!mb-0 print:!pb-0">
-                Psychiatrische Krise – PUK Zürich (24/7)
-              </h2>
-            </div>
-            <div className="divide-y divide-border/50">
+          {/* BLOCK 2: Psychiatrische Krise */}
+          <section className="space-y-3 print:break-inside-avoid">
+            <p className="uppercase" style={labelStyle}>
+              Psychiatrische Krise
+            </p>
+            <h2
+              className="font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+              style={{
+                fontSize: "var(--text-lg)",
+                fontWeight: "var(--weight-display)",
+                color: "var(--fg-primary)",
+                letterSpacing: "var(--tracking-tight)",
+              }}
+            >
+              PUK Zürich (24/7)
+            </h2>
+            <div>
               {CARD_GELB.map(k => (
                 <EmergencyRow key={k.id} kontakt={k} />
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </section>
 
-        {/* BLOCK 3: Someone to talk to */}
-        <Card className="border-[var(--color-sos-gruen-text)]/30 print:break-inside-avoid">
-          <CardContent className="pt-5">
-            <div className="flex items-center gap-2 mb-3">
-              <Heart className="w-5 h-5 text-[var(--color-sos-gruen-text)]" />
-              <h2 className="text-lg font-semibold text-foreground font-serif print:text-base print:!border-none print:!mt-0 print:!mb-0 print:!pb-0">
-                Jemand zum Reden
-              </h2>
-            </div>
-            <div className="divide-y divide-border/50">
+          {/* BLOCK 3: Jemand zum Reden */}
+          <section className="space-y-3 print:break-inside-avoid">
+            <p className="uppercase" style={labelStyle}>
+              Beratung
+            </p>
+            <h2
+              className="font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+              style={{
+                fontSize: "var(--text-lg)",
+                fontWeight: "var(--weight-display)",
+                color: "var(--fg-primary)",
+                letterSpacing: "var(--tracking-tight)",
+              }}
+            >
+              Jemand zum Reden
+            </h2>
+            <div>
               {CARD_GRUEN.map(k => (
                 <EmergencyRow key={k.id} kontakt={k} />
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </section>
 
-        {/* BLOCK 4: Personal contacts */}
-        <Card className="print:break-inside-avoid">
-          <CardContent className="pt-5">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <Phone className="w-5 h-5 text-[var(--color-sage-dark)]" />
-                <h2 className="text-lg font-semibold text-foreground font-serif print:text-base print:!border-none print:!mt-0 print:!mb-0 print:!pb-0">
+          {/* BLOCK 4: Persönliche Kontakte */}
+          <section className="space-y-3 print:break-inside-avoid">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="uppercase" style={labelStyle}>
+                  Eigene Einträge
+                </p>
+                <h2
+                  className="mt-1 font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+                  style={{
+                    fontSize: "var(--text-lg)",
+                    fontWeight: "var(--weight-display)",
+                    color: "var(--fg-primary)",
+                    letterSpacing: "var(--tracking-tight)",
+                  }}
+                >
                   Meine Kontaktpersonen
                 </h2>
               </div>
-              <Button
-                variant="outline"
-                size="sm"
+              <SecondaryButton
                 onClick={addContact}
-                className="gap-1.5 print:hidden"
+                ariaLabel="Kontakt hinzufügen"
               >
-                <Plus className="w-3.5 h-3.5" />
-                Hinzufügen
-              </Button>
+                + Hinzufügen
+              </SecondaryButton>
             </div>
 
             {data.personalContacts.length === 0 ? (
-              <p className="text-sm text-muted-foreground py-3 print:hidden">
+              <p
+                className="print:hidden"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-secondary)",
+                }}
+              >
                 Fügen Sie hier Ihre persönlichen Kontaktpersonen hinzu – z.B.
                 Therapeut:in, Vertrauensperson, Nachbar:in.
               </p>
@@ -453,55 +627,86 @@ export default function Notfallkarte() {
 
             {/* Print-only: empty lines if no contacts */}
             {data.personalContacts.length === 0 && (
-              <div className="hidden print:block space-y-3 mt-2">
+              <div className="mt-2 hidden space-y-3 print:block">
                 {[1, 2, 3].map(i => (
                   <div key={i} className="grid grid-cols-3 gap-4">
-                    <div className="border-b border-slate-light py-2 text-xs text-slate-mid">
+                    <div
+                      className="border-b py-2 text-xs"
+                      style={{
+                        borderColor: "var(--rule-color)",
+                        color: "var(--fg-tertiary)",
+                      }}
+                    >
                       Name
                     </div>
-                    <div className="border-b border-slate-light py-2 text-xs text-slate-mid">
+                    <div
+                      className="border-b py-2 text-xs"
+                      style={{
+                        borderColor: "var(--rule-color)",
+                        color: "var(--fg-tertiary)",
+                      }}
+                    >
                       Telefon
                     </div>
-                    <div className="border-b border-slate-light py-2 text-xs text-slate-mid">
+                    <div
+                      className="border-b py-2 text-xs"
+                      style={{
+                        borderColor: "var(--rule-color)",
+                        color: "var(--fg-tertiary)",
+                      }}
+                    >
                       Beziehung
                     </div>
                   </div>
                 ))}
               </div>
             )}
-          </CardContent>
-        </Card>
+          </section>
 
-        {/* BLOCK 5: Calming strategies */}
-        <Card className="print:break-inside-avoid">
-          <CardContent className="pt-5">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-[var(--color-sage-dark)]" />
-                <h2 className="text-lg font-semibold text-foreground font-serif print:text-base print:!border-none print:!mt-0 print:!mb-0 print:!pb-0">
+          {/* BLOCK 5: Beruhigungsstrategien */}
+          <section className="space-y-3 print:break-inside-avoid">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="uppercase" style={labelStyle}>
+                  Eigene Einträge
+                </p>
+                <h2
+                  className="mt-1 font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+                  style={{
+                    fontSize: "var(--text-lg)",
+                    fontWeight: "var(--weight-display)",
+                    color: "var(--fg-primary)",
+                    letterSpacing: "var(--tracking-tight)",
+                  }}
+                >
                   Meine Beruhigungsstrategien
                 </h2>
               </div>
-              <Button
-                variant="outline"
-                size="sm"
+              <SecondaryButton
                 onClick={addStrategy}
                 disabled={data.calmingStrategies.length >= MAX_STRATEGIES}
+                ariaLabel="Strategie hinzufügen"
                 title={
                   data.calmingStrategies.length >= MAX_STRATEGIES
                     ? "Maximal 4 Strategien – passend zur Druckseite"
                     : undefined
                 }
-                className="gap-1.5 print:hidden"
               >
-                <Plus className="w-3.5 h-3.5" />
-                Hinzufügen
-              </Button>
+                + Hinzufügen
+              </SecondaryButton>
             </div>
-            <div className="space-y-2">
+            <ol className="space-y-2">
               {data.calmingStrategies.map((s, i) => (
-                <div key={s.id} className="flex items-center gap-2">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--color-sage-wash)] text-[var(--color-sage-darker,var(--color-sage-dark))] text-xs font-bold flex items-center justify-center print:bg-gray-100">
+                <li key={s.id} className="flex items-center gap-3">
+                  <span
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
+                    style={{
+                      backgroundColor: "var(--accent-primary)",
+                      color: "var(--bg-primary)",
+                      fontSize: "var(--text-xs)",
+                      fontWeight: 600,
+                    }}
+                  >
                     {i + 1}
                   </span>
                   <input
@@ -510,31 +715,39 @@ export default function Notfallkarte() {
                     onChange={e => updateStrategy(s.id, e.target.value)}
                     placeholder="Strategie eingeben…"
                     aria-label={`Beruhigungsstrategie ${i + 1}`}
-                    className="flex-1 rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5"
+                    className={`flex-1 ${inputClass}`}
+                    style={inputStyle}
                   />
                   <button
                     type="button"
                     onClick={() => removeStrategy(s.id)}
-                    className="p-1.5 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors print:hidden"
+                    className="px-2 py-1 text-xs transition-colors print:hidden"
+                    style={{ color: "var(--fg-tertiary)" }}
                     aria-label="Strategie entfernen"
                   >
-                    <Trash2 className="w-4 h-4" />
+                    entfernen
                   </button>
-                </div>
+                </li>
               ))}
-            </div>
-          </CardContent>
-        </Card>
+            </ol>
+          </section>
 
-        {/* BLOCK 6: Personal notes */}
-        <Card className="print:break-inside-avoid">
-          <CardContent className="pt-5">
-            <div className="flex items-center gap-2 mb-3">
-              <Info className="w-5 h-5 text-[var(--color-sage-dark)]" />
-              <h2 className="text-lg font-semibold text-foreground font-serif print:text-base print:!border-none print:!mt-0 print:!mb-0 print:!pb-0">
-                Persönliche Notizen
-              </h2>
-            </div>
+          {/* BLOCK 6: Persönliche Notizen */}
+          <section className="space-y-3 print:break-inside-avoid">
+            <p className="uppercase" style={labelStyle}>
+              Eigene Einträge
+            </p>
+            <h2
+              className="font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+              style={{
+                fontSize: "var(--text-lg)",
+                fontWeight: "var(--weight-display)",
+                color: "var(--fg-primary)",
+                letterSpacing: "var(--tracking-tight)",
+              }}
+            >
+              Persönliche Notizen
+            </h2>
             <textarea
               value={data.notes}
               onChange={e =>
@@ -543,31 +756,57 @@ export default function Notfallkarte() {
               placeholder="z.B. Medikamente, Allergien, wichtige Hinweise für Helfer:innen…"
               aria-label="Persönliche Notizen"
               rows={3}
-              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-y print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:resize-none"
+              className={`resize-y ${inputClass} print:resize-none`}
+              style={inputStyle}
             />
-          </CardContent>
-        </Card>
-
-        {/* Info box */}
-        <div className="bg-[var(--color-sage-wash)] rounded-xl p-5 text-sm text-foreground/75 leading-relaxed print:hidden">
-          <p className="font-medium text-foreground mb-1">
-            Ihre Daten bleiben bei Ihnen
-          </p>
-          <p>
-            Alle Angaben werden nur lokal in Ihrem Browser gespeichert – sie
-            verlassen nie Ihr Gerät. Beim Drucken oder PDF-Export werden Ihre
-            persönlichen Einträge mit ausgegeben.
-          </p>
+          </section>
         </div>
 
-        {/* Bottom print button */}
-        <div className="flex justify-center pt-2 print:hidden">
-          <Button onClick={handlePrint} size="lg" className="gap-2">
-            <Printer className="w-4 h-4" />
-            Notfallkarte drucken / als PDF speichern
-          </Button>
+        {/* ── Aktions-Buttons (Save + Print) ── */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-3 print:hidden">
+          <PrimaryButton onClick={handlePrint}>Drucken / Als PDF</PrimaryButton>
+          <SecondaryButton
+            onClick={handleSave}
+            ariaLabel="Im Browser speichern"
+          >
+            {saved ? "Gespeichert ✓" : "Im Browser speichern"}
+          </SecondaryButton>
         </div>
-      </section>
+
+        {/* ── Datenschutz-Hinweis ── */}
+        <EditorialSection rule>
+          <EditorialProse>
+            <p>
+              <strong>Ihre Daten bleiben bei Ihnen.</strong> Alle Angaben werden
+              nur lokal in Ihrem Browser gespeichert – sie verlassen nie Ihr
+              Gerät. Beim Drucken oder PDF-Export werden Ihre persönlichen
+              Einträge mit ausgegeben.
+            </p>
+          </EditorialProse>
+        </EditorialSection>
+
+        <RelatedLinksEditorial
+          links={[
+            {
+              href: "/soforthilfe",
+              title: "Soforthilfe",
+              description: "Alle Notfallnummern auf einen Blick.",
+            },
+            {
+              href: "/wegweiser",
+              title: "Situations-Wegweiser",
+              description:
+                "Schritt-für-Schritt-Hilfe für konkrete Krisensituationen.",
+            },
+            {
+              href: "/unterstuetzen/krise",
+              title: "Krisenbegleitung",
+              description:
+                "Deeskalation, Ampel-System, was sagen / was vermeiden.",
+            },
+          ]}
+        />
+      </EditorialLayout>
     </Layout>
   );
 }

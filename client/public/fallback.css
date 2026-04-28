@@ -1,18 +1,18 @@
 :root {
   color-scheme: light;
-  --bg: #f6f1e8;
-  --surface: #fffdf9;
-  --surface-strong: #fff7ef;
-  --text: #2d2926;
-  --muted: #645e59;
-  --line: #ddd2c4;
-  --accent: #9f5c46;
-  --accent-strong: #7f4434;
-  --alert: #b5412f;
-  --alert-soft: #fff0ec;
-  --ok: #2f6b57;
-  --ok-soft: #edf7f2;
-  --shadow: 0 12px 32px rgba(67, 45, 32, 0.08);
+  /* Editorial-Tokens — exakt aus client/src/index.css Z. 71-79 */
+  --bg-primary: #faf7f2; /* einzige Hintergrundfarbe der Site */
+  --bg-elevated: #ffffff; /* Hervorhebungen */
+  --fg-primary: #1f2a37; /* Body-Text, dunkles Slate */
+  --fg-secondary: #4b5563; /* Lead, Bildunterschriften, Meta */
+  --fg-tertiary: #6b7280; /* Labels, Fussnoten */
+  --rule-color: rgba(31, 42, 55, 0.08); /* Hairline */
+  --accent-primary: #5b3a4e; /* Aubergine */
+  --accent-label: #4f6b5e; /* gedämpftes Sage für Sektionslabels */
+  --color-alert: oklch(0.55 0.2 25);
+  --color-alert-wash: oklch(0.96 0.02 25);
+  --color-ok: #2f6b57;
+  --color-ok-wash: #edf7f2;
 }
 
 * {
@@ -23,10 +23,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg-primary);
+  color: var(--fg-primary);
   font-family:
     Inter,
+    "Inter fallback",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -59,7 +60,7 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-page a,
 .fallback-noscript a {
-  color: var(--accent-strong);
+  color: var(--accent-primary);
 }
 
 .fallback-noscript {
@@ -74,69 +75,77 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   padding: 2rem 1rem 4rem;
 }
 
+/* === Container === */
 .fallback-wrap {
-  max-width: 74rem;
+  max-width: 56rem;
   margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
+/* === Hero-Header === */
 .fallback-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  display: block;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule-color);
 }
 
+/* === Brand-Kicker (Caps-Treatment) === */
 .fallback-brand {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-tertiary);
+  margin: 0 0 0.75rem;
 }
 
+/* === Titel (Source Serif 4, weight 400) === */
 .fallback-title {
+  font-family: "Source Serif 4", "Source Serif 4 fallback", Georgia, serif;
+  font-weight: 400;
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.08;
+  letter-spacing: -0.01em;
   margin: 0;
+  color: var(--fg-primary);
 }
 
 .fallback-lead {
   max-width: 46rem;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: var(--muted);
+  color: var(--fg-secondary);
   margin: 1rem 0 0;
 }
 
-.fallback-note {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 0.9rem;
-  border-radius: 999px;
-  background: var(--surface-strong);
-  border: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
+/* === Grid === */
 .fallback-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 0;
+  margin: 0;
 }
 
+/* === Cards (Hairline-Treatment, kein Schatten, kein Radius) === */
 .fallback-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 1.25rem;
-  padding: 1.25rem;
-  box-shadow: var(--shadow);
+  background: var(--bg-primary);
+  border-top: 1px solid var(--rule-color);
+  border-radius: 0;
+  padding: 1.5rem 0;
+  box-shadow: none;
 }
 
 .fallback-card h2,
 .fallback-card h3 {
+  font-family: "Source Serif 4", "Source Serif 4 fallback", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.2;
   margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--fg-primary);
 }
 
 .fallback-card p:last-child,
@@ -144,20 +153,26 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   margin-bottom: 0;
 }
 
+/* === Alert-Card: Border-Left-Akzent === */
 .fallback-card.alert {
-  background: var(--alert-soft);
-  border-color: #efc9c1;
+  background: var(--color-alert-wash);
+  border-top: 1px solid var(--color-alert);
+  border-left: 4px solid var(--color-alert);
+  padding-left: 1.5rem;
 }
 
-.fallback-card.ok {
-  background: var(--ok-soft);
-  border-color: #cfe1d8;
-}
+/* .fallback-card.ok entfernt — Entlastungs-Card erscheint wie Standard */
 
 .fallback-list {
   padding-left: 1.1rem;
   margin: 0.85rem 0 0;
   line-height: 1.7;
+}
+
+/* Telefonnummern-Links: prominent, Aubergine, weight-500 */
+.fallback-list a {
+  color: var(--accent-primary);
+  font-weight: 500;
 }
 
 .fallback-actions {
@@ -167,37 +182,49 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   margin: 1.5rem 0 0;
 }
 
+/* === Buttons: Editorial-Pill === */
 .fallback-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.9rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--text);
+  padding: 0.625rem 1.25rem;
+  border: 1px solid var(--rule-color);
+  background: var(--bg-elevated);
+  color: var(--fg-primary);
+  border-radius: 9999px;
   text-decoration: none;
-  font-weight: 600;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease;
+}
+
+.fallback-button:hover {
+  border-color: var(--accent-primary);
 }
 
 .fallback-button.primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.fallback-button.primary:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
 }
 
 .fallback-button.alert {
-  background: var(--alert);
-  border-color: var(--alert);
+  background: var(--color-alert);
+  border-color: var(--color-alert);
   color: #fff;
 }
 
+/* === Footer === */
 .fallback-meta {
   margin-top: 2rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  border-top: 1px solid var(--rule-color);
+  color: var(--fg-secondary);
   font-size: 0.95rem;
 }
 
@@ -222,7 +249,7 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-small {
   font-size: 0.92rem;
-  color: var(--muted);
+  color: var(--fg-secondary);
 }
 
 @media (max-width: 720px) {

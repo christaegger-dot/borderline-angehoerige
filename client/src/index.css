@@ -360,9 +360,18 @@
      eine eigenständige Inline-Anchor-Utility. */
 
   .editorial-prose {
-    font-size: var(--text-md);
-    line-height: var(--lh-relaxed);
+    font-size: var(
+      --text-base
+    ); /* 16px auf Mobile – kompakter, weniger "löchrig" */
+    line-height: 1.6; /* Etwas enger auf Mobile */
     color: var(--fg-primary);
+  }
+
+  @media (min-width: 768px) {
+    .editorial-prose {
+      font-size: var(--text-md); /* 17px auf Desktop – mehr Luft */
+      line-height: var(--lh-relaxed); /* 1.7 */
+    }
   }
 
   .editorial-prose > * + * {

@@ -355,7 +355,7 @@ export default function UnterstuetzenKrise() {
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
-        <header className="pb-20 pt-16 md:pb-28 md:pt-24">
+        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
           <p
             className="text-xs uppercase"
             style={{

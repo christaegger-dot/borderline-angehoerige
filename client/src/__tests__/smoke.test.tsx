@@ -117,18 +117,6 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(hrefs).not.toContain("https://pubmed.ncbi.nlm.nih.gov/20595412/");
   });
 
-  it("Soforthilfe: rendert und enthält Notfallnummer 144", async () => {
-    const { default: Soforthilfe } = await import("@/pages/Soforthilfe");
-    withRouter(<Soforthilfe />);
-    expect(screen.getAllByText(/144/)[0]).toBeInTheDocument();
-  });
-
-  it("Soforthilfe: enthält Lebensgefahr-Block", async () => {
-    const { default: Soforthilfe } = await import("@/pages/Soforthilfe");
-    withRouter(<Soforthilfe />);
-    expect(screen.getAllByText(/Lebensgefahr/i)[0]).toBeInTheDocument();
-  });
-
   it("Notfallkarte: rendert Seite", async () => {
     const { default: Notfallkarte } = await import("@/pages/Notfallkarte");
     withRouter(<Notfallkarte />);

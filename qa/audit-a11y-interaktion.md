@@ -393,3 +393,58 @@ Wesentlichen heuristisches Sticky-Header-Rauschen ohne
 Click-Reachability-Failures.
 Darum lautet die Schlussbewertung fuer diesen Branch weiterhin konservativ:
 **B / release-tauglich mit kleinem Rest an Scrollkanten-Heuristik**.
+
+## Reaktivierung 2026-04-28
+
+Audit-Infrastruktur wiederbelebt. Smoke-Test gegen aktuelles `main`
+(76db735, nach Editorial-Migration + Phase-7-Cleanup + Phase-8/9-Polish):
+5 von 6 `.mjs`-Skripten laufen ohne Anpassung. `playwright` und
+`@axe-core/playwright` jetzt als devDeps in `package.json` (vorher nur
+im Temp-Worktree).
+
+### Vorgehen fuer kuenftige Audit-Laeufe
+
+```bash
+pnpm install                # zieht playwright + @axe-core/playwright
+pnpm build && pnpm preview --host 127.0.0.1 --port 4173 &
+node qa/scripts/axe-routes.mjs
+```
+
+Auf macOS nutzen die Skripte automatisch System-Chrome
+(`/Applications/Google Chrome.app/...`). Auf Linux/CI:
+`PLAYWRIGHT_EXECUTABLE_PATH` setzen oder `playwright install chromium`.
+
+### Wichtig: `/soforthilfe` ist Sonderfall (Static-HTML)
+
+Die Page wird seit PR `#314`/`#315` als statische HTML-Direktseite
+ausgeliefert (`client/public/soforthilfe/index.html`), nicht ueber die
+React-SPA. Die Aufloesung der URL haengt an drei Stellen:
+
+1. `client/public/_redirects` (Netlify):
+   `/soforthilfe    /soforthilfe/index.html   200!`
+2. `server/index.ts` (Production-Express): `STATIC_DIRECT_PAGE_ROUTES`
+3. `client/src/app/routes.ts` (React-Router): self-referential redirect,
+   damit die SPA den Pfad nicht intercepted
+
+In **Production** funktioniert das. `axe` gegen die Live-Site:
+
+```bash
+AUDIT_BASE_URL=https://borderline-angehoerige.netlify.app \
+  node qa/scripts/axe-routes.mjs
+# /: 0 violations
+# /soforthilfe: 0 violations
+# /materialien: 0 violations
+```
+
+In **Vite-Preview lokal** gibt es zwei axe-Findings auf `/soforthilfe`
+(`landmark-one-main`, `page-has-heading-one`). Das sind **False
+Positives**: Vite Preview emuliert die Netlify-Redirects nicht und ist
+nicht der Express-Server, also serviert es fuer `/soforthilfe` (ohne
+trailing slash) die SPA-Shell statt die Static-HTML. Mit trailing slash
+(`/soforthilfe/`) liefert Vite die Static-HTML korrekt aus.
+
+Die in `qa/axe-routes.json` festgehaltene Baseline enthaelt diese zwei
+False Positives bewusst, damit die Local-Reproduzierbarkeit klar bleibt
+(`pnpm preview` reicht). Fuer einen ehrlichen a11y-Befund auf
+`/soforthilfe` immer mit `AUDIT_BASE_URL=https://...` gegen die
+Live-Site oder mit `pnpm start` (Express) testen.

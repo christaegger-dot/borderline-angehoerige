@@ -56,6 +56,7 @@ import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { EditorialSection, EditorialProse } from "@/components/editorial";
+import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   categoryMeta,
   materials,
@@ -313,22 +314,12 @@ export default function MaterialienLibrarySection() {
                   ).length;
             const isActive = activeCategory === cat.id;
             return (
-              <button
+              <EditorialPillButton
                 key={cat.id}
-                type="button"
+                variant="filter"
+                selected={isActive}
                 onClick={() => setActiveCategory(cat.id)}
                 aria-pressed={isActive}
-                className="whitespace-nowrap shrink-0 rounded-full border px-4 py-1.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                style={{
-                  borderColor: isActive
-                    ? "var(--accent-primary)"
-                    : "var(--rule-color)",
-                  backgroundColor: isActive
-                    ? "var(--bg-elevated)"
-                    : "transparent",
-                  color: isActive ? "var(--fg-primary)" : "var(--fg-secondary)",
-                  fontWeight: isActive ? 500 : 400,
-                }}
               >
                 {cat.label}
                 <span
@@ -340,7 +331,7 @@ export default function MaterialienLibrarySection() {
                 >
                   ({count})
                 </span>
-              </button>
+              </EditorialPillButton>
             );
           })}
         </div>

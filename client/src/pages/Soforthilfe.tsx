@@ -429,10 +429,13 @@ export default function Notfall() {
       </section>
 
       {/* ═══ TRIAGE (UNVERÄNDERT — Sicherheits-Pills) ═══ */}
-      <section className="bg-muted/50 border-y border-border/40 py-4 print:hidden">
+      <section className="bg-[var(--bg-elevated)] border-y border-[var(--rule-color)] py-4 print:hidden">
         <div className="container">
           <div className="max-w-2xl mx-auto">
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+            <p
+              className="text-xs font-semibold uppercase tracking-wide mb-3"
+              style={{ color: "var(--fg-tertiary)" }}
+            >
               Was ist gerade los?
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">

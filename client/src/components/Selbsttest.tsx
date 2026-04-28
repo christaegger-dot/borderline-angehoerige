@@ -51,6 +51,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
+import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 
 interface Question {
   id: number;
@@ -317,25 +318,13 @@ function NavPillButton({
   ariaLabel?: string;
 }) {
   return (
-    <button
-      type="button"
+    <EditorialPillButton
+      variant="secondary"
       onClick={onClick}
       aria-label={ariaLabel}
-      className="rounded-full border px-4 py-1.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-      style={{
-        borderColor: "var(--rule-color)",
-        backgroundColor: "var(--bg-elevated)",
-        color: "var(--fg-secondary)",
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.borderColor = "var(--accent-primary)";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.borderColor = "var(--rule-color)";
-      }}
     >
       {children}
-    </button>
+    </EditorialPillButton>
   );
 }
 
@@ -351,33 +340,15 @@ function OptionButton({
   onClick: () => void;
 }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
+    <EditorialPillButton
+      variant="choice"
+      selected={selected}
       disabled={disabled}
       aria-pressed={selected}
-      className="block w-full rounded-md border px-5 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed"
-      style={{
-        borderColor: selected ? "var(--accent-primary)" : "var(--rule-color)",
-        backgroundColor: "var(--bg-elevated)",
-        color: "var(--fg-primary)",
-        fontSize: "var(--text-md)",
-        lineHeight: "var(--lh-snug)",
-        fontWeight: selected ? 500 : 400,
-      }}
-      onMouseEnter={e => {
-        if (!selected && !disabled) {
-          e.currentTarget.style.borderColor = "var(--accent-primary)";
-        }
-      }}
-      onMouseLeave={e => {
-        if (!selected && !disabled) {
-          e.currentTarget.style.borderColor = "var(--rule-color)";
-        }
-      }}
+      onClick={onClick}
     >
       {label}
-    </button>
+    </EditorialPillButton>
   );
 }
 

@@ -347,15 +347,6 @@
     );
   }
 
-  .home-section-divider {
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      var(--color-home-divider),
-      transparent
-    );
-  }
-
   .home-orbit-glow {
     background: radial-gradient(
       circle,

@@ -84,6 +84,8 @@ export function EditorialPillButton({
   ...props
 }: EditorialPillButtonProps) {
   const needsHover = variant === "secondary" || variant === "choice";
+  const restingStyle = getStyle(variant, selected);
+  const restingBorder = restingStyle.borderColor as string;
 
   const handleMouseEnter = needsHover
     ? (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -97,7 +99,7 @@ export function EditorialPillButton({
   const handleMouseLeave = needsHover
     ? (e: React.MouseEvent<HTMLButtonElement>) => {
         if (!selected && !disabled) {
-          e.currentTarget.style.borderColor = "var(--rule-color)";
+          e.currentTarget.style.borderColor = restingBorder;
         }
         onMouseLeave?.(e);
       }
@@ -108,7 +110,7 @@ export function EditorialPillButton({
       type="button"
       disabled={disabled}
       className={cn(BASE, VARIANT_CLASS[variant], className)}
-      style={{ ...getStyle(variant, selected), ...style }}
+      style={{ ...restingStyle, ...style }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}

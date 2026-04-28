@@ -1,0 +1,580 @@
+{
+  "home-desktop": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1280px",
+      "left": "0px",
+      "right": "1280px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1280px",
+      "left": "0px",
+      "right": "1280px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "mx-auto",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "608px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "608px",
+      "left": "0px",
+      "right": "608px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [1280×2294 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [1280×2294 @ left:0]\n    <div class=\"mx-auto\"> [608×2294 @ left:0]\n      <header class=\"pb-20 pt-16 md:pb-28 md:pt-24\"> [608×368 @ left:0]\n        <p class=\"text-xs uppercase\"> [608×32 @ left:0]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [608×18 @ left:0]\n        <p class=\"mt-6\"> [608×54 @ left:0]\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [608×229 @ left:0]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:0]\n        <div> [608×213 @ left:0]\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [608×864 @ left:0]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:0]\n        <h2> [608×81 @ left:0]\n        <div> [608×767 @ left:0]\n      ... (4 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=1280px left=0px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - ASIDE class=\"border-b border-border/40 bg-sage-wash/40\"",
+      "Inhalt zentriert: center-offset=0px"
+    ],
+    "viewportWidth": 1280,
+    "pageHeight": 3174,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/home-desktop.png"
+  },
+  "verstehen-desktop": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1280px",
+      "left": "0px",
+      "right": "1280px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [1280×7251 @ left:0]\n  <div class=\"hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc\"> [0×0 @ left:0]\n    <div class=\"flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back\"> [0×0 @ left:0] bg:oklab(0.97 0.00174312 0.0199239 / 0.92) shadow:YES br:22.4px\n      <div class=\"px-4 pt-4 pb-2\"> [0×0 @ left:0]\n        <div class=\"flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2\"> [0×0 @ left:0] bg:rgba(224, 243, 241, 0.8) br:3.35544e+07px\n      <nav class=\"overflow-y-auto overscroll-contain px-2 pb-3 flex-1\"> [0×0 @ left:0]\n        <ul class=\"space-y-0.5\"> [0×0 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [1280×7251 @ left:0] bg:rgb(250, 247, 242)\n    <div class=\"mx-auto\"> [608×7059 @ left:336]\n      <header class=\"pb-20 pt-16 md:pb-28 md:pt-24\"> [608×443 @ left:336]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:336]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [608×18 @ left:336]\n        <p class=\"mt-6\"> [608×108 @ left:336]\n        ... (1 more children)\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [608×520 @ left:336]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:336]\n        <h2> [608×41 @ left:336]\n        <div> [608×416 @ left:336]\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [608×220 @ left:336]\n        <div class=\"border-t\"> [608×1 @ left:336]\n        <div> [608×195 @ left:336]\n      ... (12 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=1280px left=0px",
+      "Card-Wrapper mit Hintergrund/Schatten/BorderRadius:\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - A class=\"px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all \"",
+      "Inhalt NICHT zentriert: center-offset=640px (firstChild left=0px)"
+    ],
+    "viewportWidth": 1280,
+    "pageHeight": 8211,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/verstehen-desktop.png"
+  },
+  "kommunizieren-desktop": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1280px",
+      "left": "0px",
+      "right": "1280px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [1280×6168 @ left:0]\n  <div class=\"hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc\"> [0×0 @ left:0]\n    <div class=\"flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back\"> [0×0 @ left:0] bg:oklab(0.97 0.00174312 0.0199239 / 0.92) shadow:YES br:22.4px\n      <div class=\"px-4 pt-4 pb-2\"> [0×0 @ left:0]\n        <div class=\"flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2\"> [0×0 @ left:0] bg:rgba(224, 243, 241, 0.8) br:3.35544e+07px\n      <nav class=\"overflow-y-auto overscroll-contain px-2 pb-3 flex-1\"> [0×0 @ left:0]\n        <ul class=\"space-y-0.5\"> [0×0 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [1280×6168 @ left:0] bg:rgb(250, 247, 242)\n    <div class=\"mx-auto\"> [608×5976 @ left:336]\n      <header class=\"pb-20 pt-16 md:pb-28 md:pt-24\"> [608×389 @ left:336]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:336]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [608×18 @ left:336]\n        <p class=\"mt-6\"> [608×54 @ left:336]\n        ... (1 more children)\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [608×549 @ left:336]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:336]\n        <h2> [608×41 @ left:336]\n        <div> [608×444 @ left:336]\n      <div class=\"border-t\"> [608×363 @ left:336]\n        <button class=\"group flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80 focus-visible:rounded-sm focus-visible:outline\"> [608×72 @ left:336]\n        <div class=\"overflow-hidden\"> [608×289 @ left:336]\n      ... (8 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=1280px left=0px",
+      "Card-Wrapper mit Hintergrund/Schatten/BorderRadius:\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - ASIDE class=\"border-b border-border/40 bg-sage-wash/40\"",
+      "Inhalt NICHT zentriert: center-offset=640px (firstChild left=0px)"
+    ],
+    "viewportWidth": 1280,
+    "pageHeight": 7128,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/kommunizieren-desktop.png"
+  },
+  "grenzen-desktop": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1280px",
+      "left": "0px",
+      "right": "1280px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [1280×5669 @ left:0]\n  <div class=\"hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc\"> [0×0 @ left:0]\n    <div class=\"flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back\"> [0×0 @ left:0] bg:oklab(0.97 0.00174312 0.0199239 / 0.92) shadow:YES br:22.4px\n      <div class=\"px-4 pt-4 pb-2\"> [0×0 @ left:0]\n        <div class=\"flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2\"> [0×0 @ left:0] bg:rgba(224, 243, 241, 0.8) br:3.35544e+07px\n      <nav class=\"overflow-y-auto overscroll-contain px-2 pb-3 flex-1\"> [0×0 @ left:0]\n        <ul class=\"space-y-0.5\"> [0×0 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [1280×5669 @ left:0] bg:rgb(250, 247, 242)\n    <div class=\"mx-auto\"> [608×5477 @ left:336]\n      <header class=\"pb-20 pt-16 md:pb-28 md:pt-24\"> [608×547 @ left:336]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:336]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [608×18 @ left:336]\n        <p class=\"mt-6\"> [608×162 @ left:336]\n        ... (2 more children)\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [608×656 @ left:336]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:336]\n        <h2> [608×41 @ left:336]\n        <div> [608×551 @ left:336]\n      <div class=\"border-t\"> [608×113 @ left:336]\n        <button class=\"group flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80 focus-visible:rounded-sm focus-visible:outline\"> [608×72 @ left:336]\n        <p class=\"-mt-2 mb-5 line-clamp-2\"> [608×48 @ left:336]\n      ... (13 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=1280px left=0px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - ASIDE class=\"border-b border-border/40 bg-sage-wash/40\"",
+      "Inhalt NICHT zentriert: center-offset=640px (firstChild left=0px)"
+    ],
+    "viewportWidth": 1280,
+    "pageHeight": 6629,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/grenzen-desktop.png"
+  },
+  "wegweiser-desktop": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1280px",
+      "left": "0px",
+      "right": "1280px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]",
+      "paddingLeft": "40px",
+      "paddingRight": "40px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1280px",
+      "left": "0px",
+      "right": "1280px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "mx-auto",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "608px",
+      "marginLeft": "296px",
+      "marginRight": "296px",
+      "width": "608px",
+      "left": "336px",
+      "right": "944px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [1280×1812 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [1280×1812 @ left:0] bg:rgb(250, 247, 242)\n    <div class=\"mx-auto\"> [608×1620 @ left:336]\n      <header class=\"pb-12 pt-16 md:pb-16 md:pt-24\"> [608×395 @ left:336]\n        <p class=\"text-xs uppercase\"> [608×16 @ left:336]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [608×18 @ left:336]\n        <p class=\"mt-6\"> [608×81 @ left:336]\n        ... (1 more children)\n      <hr class=\"border-0 border-t\"> [608×1 @ left:336]\n      <div class=\"mt-12 md:mt-16\"> [608×543 @ left:336]\n        <div class=\"space-y-8\"> [608×543 @ left:336]\n      ... (1 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=1280px left=0px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - BUTTON class=\"flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm fon\"",
+      "Inhalt zentriert: center-offset=0px"
+    ],
+    "viewportWidth": 1280,
+    "pageHeight": 2772,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/wegweiser-desktop.png"
+  },
+  "soforthilfe-desktop": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "fallback-page",
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1280px",
+      "left": "0px",
+      "right": "1280px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "fallback-wrap",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "1184px",
+      "marginLeft": "32px",
+      "marginRight": "32px",
+      "width": "1184px",
+      "left": "48px",
+      "right": "1232px"
+    },
+    "secondChildStyles": {
+      "tagName": "HEADER",
+      "className": "fallback-header",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1184px",
+      "left": "48px",
+      "right": "1232px"
+    },
+    "domTree": "<main class=\"fallback-page\"> [1280×823 @ left:0]\n  <div class=\"fallback-wrap\"> [1184×727 @ left:48]\n    <header class=\"fallback-header\"> [1184×165 @ left:48]\n      <div> [736×165 @ left:48]\n        <p class=\"fallback-brand\"> [736×24 @ left:48]\n        <h1 class=\"fallback-title\"> [736×60 @ left:48]\n        <p class=\"fallback-lead\"> [736×56 @ left:48]\n      <p class=\"fallback-note\"> [213×46 @ left:1019] bg:rgb(255, 247, 239) br:999px\n    <section class=\"fallback-grid\"> [1184×270 @ left:48]\n      <article class=\"fallback-card alert\"> [384×270 @ left:48] bg:rgb(255, 240, 236) shadow:YES br:20px\n        <h2> [342×39 @ left:69]\n        <ul class=\"fallback-list\"> [342×82 @ left:69]\n        <p class=\"fallback-small\"> [342×46 @ left:69]\n      <article class=\"fallback-card\"> [384×270 @ left:448] bg:rgb(255, 253, 249) shadow:YES br:20px\n        <h2> [342×39 @ left:469]\n        <ul class=\"fallback-list\"> [342×109 @ left:469]\n        <p class=\"fallback-small\"> [342×46 @ left:469]\n      <article class=\"fallback-card ok\"> [384×270 @ left:848] bg:rgb(237, 247, 242) shadow:YES br:20px\n        <h2> [342×39 @ left:869]\n        <ul class=\"fallback-list\"> [342×82 @ left:869]\n        <p class=\"fallback-small\"> [342×46 @ left:869]\n    <section class=\"fallback-grid\"> [1184×171 @ left:48]\n      <article class=\"fallback-card\"> [584×171 @ left:48] bg:rgb(255, 253, 249) shadow:YES br:20px\n        <h3> [542×29 @ left:69]\n        <ul class=\"fallback-list\"> [542×82 @ left:69]\n      <article class=\"fallback-card\"> [584×171 @ left:648] bg:rgb(255, 253, 249) shadow:YES br:20px\n        <h3> [542×29 @ left:669]\n        <div class=\"fallback-actions\"> [542×56 @ left:669]\n    ... (1 more children)\n",
+    "anomalies": [
+      "Card-Wrapper mit Hintergrund/Schatten/BorderRadius:\n  - ARTICLE class=\"fallback-card alert\" bg=rgb(255, 240, 236) shadow=true br=20px\n  - ARTICLE class=\"fallback-card\" bg=rgb(255, 253, 249) shadow=true br=20px\n  - ARTICLE class=\"fallback-card ok\" bg=rgb(237, 247, 242) shadow=true br=20px\n  - ARTICLE class=\"fallback-card\" bg=rgb(255, 253, 249) shadow=true br=20px\n  - ARTICLE class=\"fallback-card\" bg=rgb(255, 253, 249) shadow=true br=20px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Inhalt zentriert: center-offset=0px"
+    ],
+    "viewportWidth": 1280,
+    "pageHeight": 823,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/soforthilfe-desktop.png"
+  },
+  "home-mobile": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "mx-auto",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "608px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [375×3180 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [375×3180 @ left:0]\n    <div class=\"mx-auto\"> [375×3180 @ left:0]\n      <header class=\"pb-20 pt-16 md:pb-28 md:pt-24\"> [375×350 @ left:0]\n        <p class=\"text-xs uppercase\"> [375×32 @ left:0]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [375×37 @ left:0]\n        <p class=\"mt-6\"> [375×81 @ left:0]\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [375×316 @ left:0]\n        <p class=\"text-xs uppercase\"> [375×16 @ left:0]\n        <div> [375×300 @ left:0]\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [375×1299 @ left:0]\n        <p class=\"text-xs uppercase\"> [375×16 @ left:0]\n        <h2> [375×122 @ left:0]\n        <div> [375×1162 @ left:0]\n      ... (4 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=375px left=0px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - ASIDE class=\"border-b border-border/40 bg-sage-wash/40\"",
+      "Inhalt zentriert: center-offset=0px"
+    ],
+    "viewportWidth": 375,
+    "pageHeight": 4790,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/home-mobile.png"
+  },
+  "verstehen-mobile": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [375×10787 @ left:0]\n  <div class=\"hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc\"> [0×0 @ left:0]\n    <div class=\"flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back\"> [0×0 @ left:0] bg:oklab(0.97 0.00174312 0.0199239 / 0.92) shadow:YES br:22.4px\n      <div class=\"px-4 pt-4 pb-2\"> [0×0 @ left:0]\n        <div class=\"flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2\"> [0×0 @ left:0] bg:rgba(224, 243, 241, 0.8) br:3.35544e+07px\n      <nav class=\"overflow-y-auto overscroll-contain px-2 pb-3 flex-1\"> [0×0 @ left:0]\n        <ul class=\"space-y-0.5\"> [0×0 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [375×10787 @ left:0] bg:rgb(250, 247, 242)\n    <div class=\"mx-auto\"> [327×10643 @ left:24]\n      <header class=\"pb-20 pt-16 md:pb-28 md:pt-24\"> [327×454 @ left:24]\n        <p class=\"text-xs uppercase\"> [327×16 @ left:24]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [327×18 @ left:24]\n        <p class=\"mt-6\"> [327×162 @ left:24]\n        ... (1 more children)\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [327×907 @ left:24]\n        <p class=\"text-xs uppercase\"> [327×16 @ left:24]\n        <h2> [327×81 @ left:24]\n        <div> [327×762 @ left:24]\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [327×371 @ left:24]\n        <div class=\"border-t\"> [327×1 @ left:24]\n        <div> [327×346 @ left:24]\n      ... (12 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=375px left=0px",
+      "Card-Wrapper mit Hintergrund/Schatten/BorderRadius:\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - A class=\"px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all \"",
+      "Inhalt NICHT zentriert: center-offset=188px (firstChild left=0px)"
+    ],
+    "viewportWidth": 375,
+    "pageHeight": 12460,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/verstehen-mobile.png"
+  },
+  "kommunizieren-mobile": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [375×9136 @ left:0]\n  <div class=\"hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc\"> [0×0 @ left:0]\n    <div class=\"flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back\"> [0×0 @ left:0] bg:oklab(0.97 0.00174312 0.0199239 / 0.92) shadow:YES br:22.4px\n      <div class=\"px-4 pt-4 pb-2\"> [0×0 @ left:0]\n        <div class=\"flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2\"> [0×0 @ left:0] bg:rgba(224, 243, 241, 0.8) br:3.35544e+07px\n      <nav class=\"overflow-y-auto overscroll-contain px-2 pb-3 flex-1\"> [0×0 @ left:0]\n        <ul class=\"space-y-0.5\"> [0×0 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [375×9136 @ left:0] bg:rgb(250, 247, 242)\n    <div class=\"mx-auto\"> [327×8992 @ left:24]\n      <header class=\"pb-20 pt-16 md:pb-28 md:pt-24\"> [327×400 @ left:24]\n        <p class=\"text-xs uppercase\"> [327×16 @ left:24]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [327×18 @ left:24]\n        <p class=\"mt-6\"> [327×108 @ left:24]\n        ... (1 more children)\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [327×849 @ left:24]\n        <p class=\"text-xs uppercase\"> [327×16 @ left:24]\n        <h2> [327×81 @ left:24]\n        <div> [327×704 @ left:24]\n      <div class=\"border-t\"> [327×611 @ left:24]\n        <button class=\"group flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80 focus-visible:rounded-sm focus-visible:outline\"> [327×105 @ left:24]\n        <div class=\"overflow-hidden\"> [327×505 @ left:24]\n      ... (8 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=375px left=0px",
+      "Card-Wrapper mit Hintergrund/Schatten/BorderRadius:\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px\n  - DIV class=\"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-s\" bg=oklch(0.99 0.008 85) shadow=true br=12px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - ASIDE class=\"border-b border-border/40 bg-sage-wash/40\"",
+      "Inhalt NICHT zentriert: center-offset=188px (firstChild left=0px)"
+    ],
+    "viewportWidth": 375,
+    "pageHeight": 10809,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/kommunizieren-mobile.png"
+  },
+  "grenzen-mobile": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "0px",
+      "left": "0px",
+      "right": "0px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [375×8623 @ left:0]\n  <div class=\"hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc\"> [0×0 @ left:0]\n    <div class=\"flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] back\"> [0×0 @ left:0] bg:oklab(0.97 0.00174312 0.0199239 / 0.92) shadow:YES br:22.4px\n      <div class=\"px-4 pt-4 pb-2\"> [0×0 @ left:0]\n        <div class=\"flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2\"> [0×0 @ left:0] bg:rgba(224, 243, 241, 0.8) br:3.35544e+07px\n      <nav class=\"overflow-y-auto overscroll-contain px-2 pb-3 flex-1\"> [0×0 @ left:0]\n        <ul class=\"space-y-0.5\"> [0×0 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [375×8623 @ left:0] bg:rgb(250, 247, 242)\n    <div class=\"mx-auto\"> [327×8479 @ left:24]\n      <header class=\"pb-20 pt-16 md:pb-28 md:pt-24\"> [327×666 @ left:24]\n        <p class=\"text-xs uppercase\"> [327×16 @ left:24]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [327×18 @ left:24]\n        <p class=\"mt-6\"> [327×324 @ left:24]\n        ... (2 more children)\n      <section class=\"mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]\"> [327×1072 @ left:24]\n        <p class=\"text-xs uppercase\"> [327×16 @ left:24]\n        <h2> [327×81 @ left:24]\n        <div> [327×927 @ left:24]\n      <div class=\"border-t\"> [327×145 @ left:24]\n        <button class=\"group flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80 focus-visible:rounded-sm focus-visible:outline\"> [327×105 @ left:24]\n        <p class=\"-mt-2 mb-5 line-clamp-2\"> [327×48 @ left:24]\n      ... (13 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=375px left=0px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - ASIDE class=\"border-b border-border/40 bg-sage-wash/40\"",
+      "Inhalt NICHT zentriert: center-offset=188px (firstChild left=0px)"
+    ],
+    "viewportWidth": 375,
+    "pageHeight": 10296,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/grenzen-mobile.png"
+  },
+  "wegweiser-mobile": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "flex-1 outline-none",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]",
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "secondChildStyles": {
+      "tagName": "DIV",
+      "className": "mx-auto",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "608px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "327px",
+      "left": "24px",
+      "right": "351px"
+    },
+    "domTree": "<main class=\"flex-1 outline-none\"> [375×1884 @ left:0]\n  <div class=\"bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--space-7)] md:px-[var(--container-pad-md)] md:py-[var(--space-8)]\"> [375×1884 @ left:0] bg:rgb(250, 247, 242)\n    <div class=\"mx-auto\"> [327×1740 @ left:24]\n      <header class=\"pb-12 pt-16 md:pb-16 md:pt-24\"> [327×425 @ left:24]\n        <p class=\"text-xs uppercase\"> [327×16 @ left:24]\n        <h1 class=\"mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]\"> [327×18 @ left:24]\n        <p class=\"mt-6\"> [327×135 @ left:24]\n        ... (1 more children)\n      <hr class=\"border-0 border-t\"> [327×1 @ left:24]\n      <div class=\"mt-12 md:mt-16\"> [327×641 @ left:24]\n        <div class=\"space-y-8\"> [327×641 @ left:24]\n      ... (1 more children)\n",
+    "anomalies": [
+      "TOC/Sidebar: ASIDE class=\"border-b border-border/40 bg-sage-wash/40\" w=375px left=0px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Sage/Teal-Token-Reste (5):\n  - A class=\"sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] foc\"\n  - SPAN class=\"inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-bord\"\n  - svg class=\"lucide h-5 w-5 text-sage-darker md:h-[22px] md:w-[22px]\"\n  - SPAN class=\"text-sm font-medium text-foreground transition-colors group-hover:text-sage-dark\"\n  - BUTTON class=\"flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm fon\"",
+      "Inhalt zentriert: center-offset=0px"
+    ],
+    "viewportWidth": 375,
+    "pageHeight": 3557,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/wegweiser-mobile.png"
+  },
+  "soforthilfe-mobile": {
+    "mainStyles": {
+      "tagName": "MAIN",
+      "className": "fallback-page",
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "left": "0px",
+      "right": "375px"
+    },
+    "firstChildStyles": {
+      "tagName": "DIV",
+      "className": "fallback-wrap",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "1184px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "343px",
+      "left": "16px",
+      "right": "359px"
+    },
+    "secondChildStyles": {
+      "tagName": "HEADER",
+      "className": "fallback-header",
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "maxWidth": "none",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "343px",
+      "left": "16px",
+      "right": "359px"
+    },
+    "domTree": "<main class=\"fallback-page\"> [375×1865 @ left:0]\n  <div class=\"fallback-wrap\"> [343×1781 @ left:16]\n    <header class=\"fallback-header\"> [343×320 @ left:16]\n      <div> [343×229 @ left:16]\n        <p class=\"fallback-brand\"> [343×24 @ left:16]\n        <h1 class=\"fallback-title\"> [343×69 @ left:16]\n        <p class=\"fallback-lead\"> [343×112 @ left:16]\n      <p class=\"fallback-note\"> [213×46 @ left:16] bg:rgb(255, 247, 239) br:999px\n    <section class=\"fallback-grid\"> [343×812 @ left:16]\n      <article class=\"fallback-card alert\"> [343×266 @ left:16] bg:rgb(255, 240, 236) shadow:YES br:20px\n        <h2> [301×39 @ left:37]\n        <ul class=\"fallback-list\"> [301×82 @ left:37]\n        <p class=\"fallback-small\"> [301×69 @ left:37]\n      <article class=\"fallback-card\"> [343×270 @ left:16] bg:rgb(255, 253, 249) shadow:YES br:20px\n        <h2> [301×39 @ left:37]\n        <ul class=\"fallback-list\"> [301×109 @ left:37]\n        <p class=\"fallback-small\"> [301×46 @ left:37]\n      <article class=\"fallback-card ok\"> [343×243 @ left:16] bg:rgb(237, 247, 242) shadow:YES br:20px\n        <h2> [301×39 @ left:37]\n        <ul class=\"fallback-list\"> [301×82 @ left:37]\n        <p class=\"fallback-small\"> [301×46 @ left:37]\n    <section class=\"fallback-grid\"> [343×528 @ left:16]\n      <article class=\"fallback-card\"> [343×226 @ left:16] bg:rgb(255, 253, 249) shadow:YES br:20px\n        <h3> [301×29 @ left:37]\n        <ul class=\"fallback-list\"> [301×136 @ left:37]\n      <article class=\"fallback-card\"> [343×286 @ left:16] bg:rgb(255, 253, 249) shadow:YES br:20px\n        <h3> [301×29 @ left:37]\n        <div class=\"fallback-actions\"> [301×191 @ left:37]\n    ... (1 more children)\n",
+    "anomalies": [
+      "Card-Wrapper mit Hintergrund/Schatten/BorderRadius:\n  - ARTICLE class=\"fallback-card alert\" bg=rgb(255, 240, 236) shadow=true br=20px\n  - ARTICLE class=\"fallback-card\" bg=rgb(255, 253, 249) shadow=true br=20px\n  - ARTICLE class=\"fallback-card ok\" bg=rgb(237, 247, 242) shadow=true br=20px\n  - ARTICLE class=\"fallback-card\" bg=rgb(255, 253, 249) shadow=true br=20px\n  - ARTICLE class=\"fallback-card\" bg=rgb(255, 253, 249) shadow=true br=20px",
+      "Layout OK: left=0px right=0px (diff=0px)",
+      "Inhalt zentriert: center-offset=0px"
+    ],
+    "viewportWidth": 375,
+    "pageHeight": 1865,
+    "screenshotPath": "/home/ubuntu/borderline-angehoerige/outputs/phase-8-diagnose/soforthilfe-mobile.png"
+  }
+}

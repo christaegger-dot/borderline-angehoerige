@@ -22,7 +22,6 @@ const UnterstuetzenKrise = lazy(() => import("@/pages/UnterstuetzenKrise"));
 const Kommunizieren = lazy(() => import("@/pages/Kommunizieren"));
 const Grenzen = lazy(() => import("@/pages/Grenzen"));
 const Selbstfuersorge = lazy(() => import("@/pages/Selbstfuersorge"));
-const Soforthilfe = lazy(() => import("@/pages/Soforthilfe"));
 const Materialien = lazy(() => import("@/pages/Materialien"));
 const HandoutTextPage = lazy(() => import("@/pages/HandoutTextPage"));
 const SelbsttestPage = lazy(() => import("@/pages/SelbsttestPage"));
@@ -73,7 +72,7 @@ export const routes: AppRoute[] = [
     component: Selbstfuersorge,
     requiresMotion: true,
   },
-  { path: "/soforthilfe", component: Soforthilfe, requiresMotion: true },
+  { path: "/soforthilfe", redirectTo: "/soforthilfe" },
   { path: "/notfall", redirectTo: "/soforthilfe" },
   { path: "/materialien/text/:handoutId", component: HandoutTextPage },
   { path: "/materialien", component: Materialien, requiresMotion: true },

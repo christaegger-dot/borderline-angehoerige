@@ -6,7 +6,10 @@ interface EditorialSectionProps {
   /** Optional: H2-Titel der Sektion */
   title?: string;
   children: ReactNode;
-  /** Trennt Sektion durch obere Hairline statt nur Whitespace */
+  /** Trennt Sektion durch obere Hairline statt nur Whitespace.
+   *  Wenn true: Margin + Padding symmetrisch verteilt (je --space-6),
+   *  sodass die Hairline optisch mittig zwischen den Sektionen sitzt.
+   *  Wenn false: nur Margin (--space-8 Desktop, 4rem Mobile). */
   rule?: boolean;
 }
 
@@ -16,8 +19,12 @@ export function EditorialSection({
   children,
   rule = false,
 }: EditorialSectionProps) {
+  const sectionClass = rule
+    ? "mt-[var(--space-6)] pt-[var(--space-6)] space-y-[var(--space-4)] first:mt-0 first:pt-0 md:mt-[var(--space-7)] md:pt-[var(--space-7)]"
+    : "mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]";
+
   return (
-    <section className="mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]">
+    <section className={sectionClass}>
       {rule && (
         <div
           aria-hidden="true"

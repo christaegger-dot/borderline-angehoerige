@@ -43,6 +43,7 @@
  *   `notfallkarte-print.html` in neuem Tab.)
  */
 import { useCallback, useEffect, useRef, useState } from "react";
+import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   EditorialLayout,
   EditorialProse,
@@ -183,19 +184,13 @@ function PrimaryButton({
   children: React.ReactNode;
 }) {
   return (
-    <button
-      type="button"
+    <EditorialPillButton
+      variant="primary"
       onClick={onClick}
-      className="rounded-full border px-5 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 print:hidden"
-      style={{
-        borderColor: "var(--accent-primary)",
-        backgroundColor: "var(--accent-primary)",
-        color: "var(--bg-primary)",
-        fontWeight: 500,
-      }}
+      className="print:hidden"
     >
       {children}
-    </button>
+    </EditorialPillButton>
   );
 }
 
@@ -213,28 +208,16 @@ function SecondaryButton({
   title?: string;
 }) {
   return (
-    <button
-      type="button"
+    <EditorialPillButton
+      variant="secondary"
       onClick={onClick}
       disabled={disabled}
       aria-label={ariaLabel}
       title={title}
-      className="rounded-full border px-4 py-1.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 print:hidden"
-      style={{
-        borderColor: "var(--rule-color)",
-        backgroundColor: "var(--bg-elevated)",
-        color: "var(--fg-secondary)",
-      }}
-      onMouseEnter={e => {
-        if (!disabled)
-          e.currentTarget.style.borderColor = "var(--accent-primary)";
-      }}
-      onMouseLeave={e => {
-        if (!disabled) e.currentTarget.style.borderColor = "var(--rule-color)";
-      }}
+      className="disabled:opacity-60 print:hidden"
     >
       {children}
-    </button>
+    </EditorialPillButton>
   );
 }
 

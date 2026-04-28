@@ -63,6 +63,7 @@
 import { useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { kontaktByIdStrict } from "@/data/kontakte";
+import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 
 interface Step {
   id: string;
@@ -561,26 +562,9 @@ function ChoiceButton({
   onClick: () => void;
 }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="block w-full rounded-md border px-5 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-      style={{
-        borderColor: "var(--rule-color)",
-        backgroundColor: "var(--bg-elevated)",
-        color: "var(--fg-primary)",
-        fontSize: "var(--text-md)",
-        lineHeight: "var(--lh-snug)",
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.borderColor = "var(--accent-primary)";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.borderColor = "var(--rule-color)";
-      }}
-    >
+    <EditorialPillButton variant="choice" onClick={onClick}>
       {label}
-    </button>
+    </EditorialPillButton>
   );
 }
 
@@ -594,25 +578,13 @@ function NavPillButton({
   ariaLabel?: string;
 }) {
   return (
-    <button
-      type="button"
+    <EditorialPillButton
+      variant="secondary"
       onClick={onClick}
       aria-label={ariaLabel}
-      className="rounded-full border px-4 py-1.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-      style={{
-        borderColor: "var(--rule-color)",
-        backgroundColor: "var(--bg-elevated)",
-        color: "var(--fg-secondary)",
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.borderColor = "var(--accent-primary)";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.borderColor = "var(--rule-color)";
-      }}
     >
       {children}
-    </button>
+    </EditorialPillButton>
   );
 }
 

@@ -41,7 +41,7 @@ export default function Home() {
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── eigener <header>, KEIN EditorialSection (sonst <h2>) */}
-        <header className="pb-20 pt-16 md:pb-28 md:pt-24">
+        <header className="pb-12 pt-10 md:pb-16 md:pt-12">
           <p
             className="text-xs uppercase"
             style={{

@@ -76,13 +76,12 @@
   --accent-primary: #5b3a4e; /* Aubergine — Inline-Links, Drop-Cap (~8.6:1 auf bg-primary, AAA) */
   --accent-primary-h: #4a2f40; /* Aubergine hover */
   --accent-label: #4f6b5e; /* gedämpftes Sage für Sektionslabels in Caps */
-  --rule-color: rgba(31, 42, 55, 0.08); /* Hairline */
-  --rule-color-strong: rgba(
-    31,
-    42,
-    55,
-    0.2
-  ); /* Hairline für Pull-Quote-Border */
+  --rule-color: oklch(
+    0.91 0.008 85
+  ); /* Hairline – warm, sehr hell (≈ rgba(31,42,55,0.08) auf Cream) */
+  --rule-color-strong: oklch(
+    0.8 0.012 85
+  ); /* Hairline stark – für Pull-Quote-Border (≈ rgba(31,42,55,0.20) auf Cream) */
 
   /* — Spacing-Skala (Vertikal-Rhythmus) — */
   --space-1: 0.5rem; /* 8px */

@@ -1,43 +1,81 @@
-import SEO from "@/components/SEO";
-import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 /**
- * Soforthilfe-Seite – überarbeitet gemäss Auftrag 2026-03-09
+ * Soforthilfe — Editorial-Redesign Phase 6 (Sonderfall, letzte
+ * inhaltliche Migration der Welle).
  *
- * Struktur:
- *   BLOCK 1 (ROT)    – Lebensgefahr: 144 / 117 / 112
- *   BLOCK 2 (ORANGE) – Akute psychiatrische Krise: PUK 24/7 (altersdifferenziert)
- *   BLOCK 3 (GRÜN)   – Jemand zum Reden / Entlastung: 143, Elternnotruf, 147
- *   BLOCK 4 (SPEZIAL)– Vergiftung: 145 Tox Info Suisse
- *   BLOCK 5 (GRAU)   – Weitere Kontakte (nachrangig): Ärztefon, PUK Zentrale
+ * Brief: Editorial-Redesign Master-Brief, Phase 6 «Soforthilfe-
+ * Spezialfall».
  *
- * Korrekturen:
- *   - 143 NICHT als "kostenlos" bezeichnet → "anonym, vertraulich"
- *   - KIZ (058 384 65 00) nur nachrangig, NICHT als Haupt-CTA
- *   - PUK Zentrale (058 384 21 11) nur in "Weitere Kontakte"
- *   - 145 Tox Info Suisse als eigener Block sichtbar
- *   - Floating-Button und Scroll-Button überdecken keine Nummern mehr
+ * Sonderfall-Disziplin: Sicherheit über Editorial-Reduktion. Triage-
+ * Logik, Sticky-Ampelleiste und 5 Notruf-Blöcke sind klinisch
+ * sorgfältig komponiert und panik-tauglich — strukturell unverändert.
+ * Was sich ändert: Hero, Action-Buttons-Position, einzelne
+ * typografische Akzente, Token-Migration. Die Ampel bleibt Ampel.
+ *
+ *   ── Hero ──
+ *   Bewusst zurückhaltender als Tier-1-Pages: knapper Hero-Padding
+ *   (`pt-12 pb-8 md:pt-16 md:pb-10` statt `pt-16 pb-12 md:pt-24
+ *   md:pb-16`), damit Triage schneller sichtbar wird ohne Scroll.
+ *   Caps-Kicker + Source-Serif-H1 mit Italic-Akzent auf «Gefahr».
+ *   Lead einzeilig, knapp.
+ *
+ *   ── Meta-Zeile ──
+ *   Konsolidiert LastVerifiedBadge + Geltungsbereich-Pill +
+ *   Disclaimer-Box zu einer einzelnen `--text-sm`/`--fg-tertiary`-
+ *   Zeile direkt unter Hero. Vollständiges LastVerifiedBadge
+ *   zusätzlich am Seitenende (Trust-Signal für Wiederbesucher).
+ *
+ *   ── Disclaimer «Für emotionale Krisen ohne akute Gefahr → krise» ──
+ *   Vorher amber-Wash-Card → editorial-entschärft als border-l mit
+ *   --color-alert + dezenter alert-wash bg, analog Wegweiser-
+ *   safetyCritical. Wortlaut unverändert.
+ *
+ *   ── 5 Notruf-Blöcke ──
+ *   Strukturell komplett unverändert. Typografische Akzente:
+ *   - H2-Header in Display-Serif (statt font-bold sans)
+ *   - Outer-Border auf --rule-color statt farbig (ausser Block 1 ROT,
+ *     der --color-alert-Kontext darf voll farbig bleiben — sicherheits-
+ *     akut)
+ *   - Shadows entfernt (entschärft per Brief)
+ *   - Header-Wash + Content-white + Hinweis-Wash bleibt erhalten
+ *   - Telefonnummern bleiben prominent (KontaktKarte und InfoKarte
+ *     unverändert), NICHT zu editorial-link degradiert
+ *
+ *   ── Vorbereitungs-Sektion (NEU) ──
+ *   Drei Aktionen («PDF drucken», «Notfallkarte erstellen»,
+ *   «Situations-Wegweiser nutzen») aus dem Hero entfernt und in eine
+ *   eigene Sektion am Seitenende verschoben — NACH dem letzten
+ *   Notruf-Block, VOR dem rechtlichen Disclaimer. Begründung: in
+ *   akuter Krise braucht User die Notfallnummern, nicht das PDF zum
+ *   Druck. Die Vorbereitungs-Aktionen sind für ruhige Momente.
+ *   `print:hidden` — beim Druck der Soforthilfe-Karte erscheint diese
+ *   Sektion nicht.
+ *
+ *   ── Sticky-Ampelleiste ──
+ *   Vollständig unverändert (Schwellwert 280, Items, Animation).
+ *
+ *   ── Telefon-Leitfaden «Erste 30 Sekunden am Telefon» ──
+ *   Strukturell unverändert (in Block 1).
  */
-import Layout from "@/components/Layout";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
-  Phone,
   AlertTriangle,
-  Clock,
   Baby,
+  Clock,
+  Heart,
+  Info,
+  Phone,
+  Pill,
+  Shield,
   User,
   Users,
-  Shield,
-  Heart,
-  Pill,
-  Info,
-  ChevronRight,
-  Printer,
 } from "lucide-react";
-import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import LastVerifiedBadge from "@/components/LastVerifiedBadge";
+import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { kontaktByIdStrict } from "@/data/kontakte";
 
-// ─── Sticky Ampel-Leiste ──────────────────────────────────
+// ─── Sticky Ampel-Leiste (UNVERÄNDERT — sicherheits-kritisch) ───
 
 function StickyAmpelLeiste() {
   const [visible, setVisible] = useState(false);
@@ -104,9 +142,7 @@ function StickyAmpelLeiste() {
   );
 }
 
-// ─── Grosse Notruf-Karte (ROT) ───────────────────────────
-
-// ─── Unified KontaktKarte (danger / orange / green / lila) ───
+// ─── Unified KontaktKarte (UNVERÄNDERT — Phone numbers prominent) ───
 
 type KarteVariant = "danger" | "orange" | "green" | "lila";
 
@@ -234,7 +270,7 @@ function KontaktKarte({
   );
 }
 
-// ─── InfoKarte (nachrangige Kontakte, grau) ───────────────
+// ─── InfoKarte (UNVERÄNDERT — nachrangige Kontakte) ───
 
 function InfoKarte({
   nummer,
@@ -265,7 +301,26 @@ function InfoKarte({
   );
 }
 
-// ─── Soforthilfe-Seite ────────────────────────────────────
+// ─── Editorial-Style Konstanten (für Hero und Vorbereitungs-Sektion) ──
+
+const labelStyle = {
+  fontSize: "var(--text-xs)",
+  letterSpacing: "var(--tracking-caps)",
+  color: "var(--fg-tertiary)",
+  fontWeight: 500,
+} as const;
+
+// Block-H2 Display-Serif (auf farbigem Block-Header)
+const blockHeadingClass = "font-display text-lg sm:text-xl";
+const blockHeadingStyle = {
+  fontWeight: "var(--weight-display)",
+  letterSpacing: "var(--tracking-tight)",
+  lineHeight: "var(--lh-snug)",
+} as const;
+
+// ─── Soforthilfe-Seite ───────────────────────────────────
+
+const VERIFIED_DATE = "16.04.2026";
 
 export default function Notfall() {
   const rot144 = kontaktByIdStrict("ROT_144");
@@ -291,86 +346,89 @@ export default function Notfall() {
         path="/soforthilfe"
       />
 
-      {/* ═══ HERO ═══ */}
-      <section className="py-3 md:py-10 bg-gradient-to-b from-slate-wash/60 to-background">
+      {/* ═══ HERO (entschärft, knapperer Padding) ═══ */}
+      <section className="pt-12 pb-8 md:pt-16 md:pb-10 print:py-2">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-2xl"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 rounded-xl bg-sos-rot flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-sm font-semibold text-sos-rot uppercase tracking-wide">
-                Soforthilfe
-              </span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl font-normal text-foreground mb-4 leading-tight">
-              Soforthilfe bei akuter Gefahr
+          <div className="max-w-2xl mx-auto">
+            <p
+              className="text-xs uppercase"
+              style={{
+                color: "var(--accent-label)",
+                letterSpacing: "var(--tracking-caps)",
+                fontWeight: 500,
+              }}
+            >
+              Soforthilfe
+            </p>
+            <h1
+              className="mt-4 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+              style={{
+                lineHeight: "var(--lh-tight)",
+                letterSpacing: "var(--tracking-tight)",
+                color: "var(--fg-primary)",
+                fontWeight: "var(--weight-display)",
+              }}
+            >
+              Soforthilfe bei akuter <em>Gefahr</em>
             </h1>
-
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-5">
+            <p
+              className="mt-4"
+              style={{
+                fontSize: "var(--text-lg)",
+                lineHeight: "var(--lh-snug)",
+                color: "var(--fg-secondary)",
+              }}
+            >
               Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz –
               wenn sofortiges Handeln erforderlich ist.
             </p>
 
-            <LastVerifiedBadge date="16.04.2026" className="mt-4 mb-5" />
-
-            <p className="inline-flex items-center gap-1.5 text-sm text-muted-foreground mb-5 bg-muted/60 px-3 py-1.5 rounded-full border border-border/50">
-              <Info className="w-3.5 h-3.5 shrink-0" />
-              Gilt für die <strong className="text-foreground">
-                Schweiz
-              </strong>{" "}
-              (Schwerpunkt Kanton Zürich) — nicht für Deutschland oder
-              Österreich.
+            {/* Meta-Zeile (konsolidiert: Geltungsbereich · zuletzt geprüft) */}
+            <p
+              className="mt-3"
+              style={{
+                fontSize: "var(--text-sm)",
+                color: "var(--fg-tertiary)",
+                lineHeight: "var(--lh-relaxed)",
+              }}
+            >
+              Schweiz · Schwerpunkt Kanton Zürich · zuletzt geprüft{" "}
+              {VERIFIED_DATE}
             </p>
 
-            <div className="p-4 rounded-xl bg-sos-amber-wash border border-sos-amber-border">
-              <p className="text-sm text-sos-amber-dark leading-snug">
+            {/*
+              Disclaimer «Für emotionale Krisen ohne akute Gefahr»:
+              dezent als border-l mit --color-alert + alert-wash bg,
+              analog Wegweiser-safetyCritical. Wortlaut unverändert.
+            */}
+            <div
+              className="mt-5 border-l-4 py-3 px-4"
+              style={{
+                borderColor: "var(--color-alert)",
+                backgroundColor:
+                  "var(--color-alert-wash, rgba(197,95,61,0.05))",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-primary)",
+                }}
+              >
                 <strong>Diese Seite ist für akute Gefahrensituationen.</strong>{" "}
                 Für emotionale Krisen ohne akute Gefahr besuchen Sie die Seite{" "}
-                <Link
-                  href="/unterstuetzen/krise"
-                  className="text-terracotta-mid hover:underline font-semibold"
-                >
-                  «In der Krise unterstützen» →
+                <Link href="/unterstuetzen/krise" className="editorial-link">
+                  «In der Krise unterstützen»
                 </Link>
+                .
               </p>
             </div>
-
-            <div className="flex flex-wrap gap-3 mt-4 print:hidden">
-              <a
-                href="/soforthilfe-print.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--color-sos-rot-wash)] border border-[var(--color-sos-rot)]/30 text-sm font-semibold text-[var(--color-sos-rot)] hover:bg-[var(--color-sos-rot-wash)]/80 transition-colors"
-              >
-                <Printer className="w-4 h-4 shrink-0" />
-                Als PDF drucken
-              </a>
-              <Link
-                href="/notfallkarte"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sage-wash border border-sage-mid/30 text-sm font-semibold text-sage-dark hover:bg-sage-wash/80 transition-colors"
-              >
-                <Shield className="w-4 h-4 shrink-0" />
-                Persönliche Notfallkarte erstellen
-              </Link>
-              <Link
-                href="/wegweiser"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/60 border border-border/50 text-sm font-medium text-muted-foreground hover:bg-muted transition-colors"
-              >
-                Situation einschätzen →
-              </Link>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ═══ TRIAGE ═══ */}
+      {/* ═══ TRIAGE (UNVERÄNDERT — Sicherheits-Pills) ═══ */}
       <section className="bg-muted/50 border-y border-border/40 py-4 print:hidden">
         <div className="container">
           <div className="max-w-2xl mx-auto">
@@ -378,7 +436,6 @@ export default function Notfall() {
               Was ist gerade los?
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              {/* ROT: Lebensgefahr – roter Wash-Hintergrund, farbige Typografie */}
               <button
                 type="button"
                 onClick={() =>
@@ -393,7 +450,6 @@ export default function Notfall() {
                   Akute Lebensgefahr
                 </span>
               </button>
-              {/* ORANGE: Psychiatrische Krise – oranger Wash */}
               <button
                 type="button"
                 onClick={() =>
@@ -408,7 +464,6 @@ export default function Notfall() {
                   Psychiatrische Krise
                 </span>
               </button>
-              {/* GRÜN: Jemand zum Reden – grüner Wash */}
               <button
                 type="button"
                 onClick={() =>
@@ -428,10 +483,10 @@ export default function Notfall() {
         </div>
       </section>
 
-      {/* ═══ STICKY AMPEL ═══ */}
+      {/* ═══ STICKY AMPEL (UNVERÄNDERT — Schwellwert 280) ═══ */}
       <StickyAmpelLeiste />
 
-      {/* ═══ INHALT ═══ */}
+      {/* ═══ INHALT (5 Notruf-Blöcke + Vorbereitung + Disclaimer) ═══ */}
       <section className="py-6 md:py-12 pb-32 sm:pb-12">
         <div className="container">
           <div className="max-w-2xl mx-auto space-y-8">
@@ -441,16 +496,19 @@ export default function Notfall() {
               Zweifel direkt{" "}
               <strong className="text-foreground">144 / 117</strong> anrufen.
             </p>
-            {/* ─── BLOCK 1: LEBENSGEFAHR (ROT) ─── */}
+
+            {/* ─── BLOCK 1: LEBENSGEFAHR (ROT — voll farbig per Brief) ─── */}
             <div
               id="block-rot"
-              className="scroll-mt-40 rounded-2xl overflow-clip shadow-lg"
+              className="scroll-mt-40 rounded-2xl overflow-clip"
             >
-              {/* Block-Header */}
               <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-rot">
                 <div className="flex items-center gap-3 mb-1">
                   <AlertTriangle className="w-6 h-6 text-white flex-shrink-0" />
-                  <h2 className="text-lg sm:text-xl font-bold text-white">
+                  <h2
+                    className={`${blockHeadingClass} text-white`}
+                    style={blockHeadingStyle}
+                  >
                     Lebensgefahr – sofort handeln
                   </h2>
                 </div>
@@ -460,7 +518,6 @@ export default function Notfall() {
                 </p>
               </div>
 
-              {/* Nummern */}
               <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3 bg-sos-rot-body">
                 <KontaktKarte
                   variant="danger"
@@ -485,7 +542,6 @@ export default function Notfall() {
                 />
               </div>
 
-              {/* Merksatz */}
               <div className="px-5 py-3 sm:px-6 bg-sos-rot/20 border-t border-white/10">
                 <p className="text-white text-xs sm:text-sm leading-snug">
                   <strong>Merke:</strong> Bei akuter Selbst- oder
@@ -496,7 +552,7 @@ export default function Notfall() {
                 </p>
               </div>
 
-              {/* Telefon-Leitfaden */}
+              {/* Telefon-Leitfaden — UNVERÄNDERT */}
               <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-rot-body border-t border-white/10">
                 <p className="text-white/90 text-xs font-semibold uppercase tracking-wide mb-3">
                   Die ersten 30 Sekunden am Telefon
@@ -535,18 +591,22 @@ export default function Notfall() {
                 </div>
               </div>
             </div>
-            {/* ─── BLOCK 2: PSYCHIATRISCHE KRISE (ORANGE) ─── */}
+
+            {/* ─── BLOCK 2: PSYCHIATRISCHE KRISE (ORANGE — Border auf --rule-color) ─── */}
             <div
               id="block-orange"
-              className="scroll-mt-40 rounded-2xl overflow-clip shadow-md border border-sos-orange-border"
+              className="scroll-mt-40 rounded-2xl overflow-clip border"
+              style={{ borderColor: "var(--rule-color)" }}
             >
-              {/* Block-Header */}
               <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-orange-wash border-b border-sos-orange-border">
                 <div className="flex items-center gap-3 mb-1">
                   <div className="w-8 h-8 rounded-lg bg-sos-orange flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-lg sm:text-xl font-bold text-sos-orange-dark">
+                  <h2
+                    className={`${blockHeadingClass} text-sos-orange-dark`}
+                    style={blockHeadingStyle}
+                  >
                     Akute psychiatrische Krise
                   </h2>
                 </div>
@@ -557,12 +617,10 @@ export default function Notfall() {
                 </p>
               </div>
 
-              {/* PUK-Karten */}
               <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3 bg-white">
                 <p className="text-sm text-muted-foreground mb-1">
                   Kontaktieren Sie die PUK Zürich – rund um die Uhr, 24/7:
                 </p>
-
                 <KontaktKarte
                   variant="orange"
                   nummer={pukErw.nummer}
@@ -595,7 +653,6 @@ export default function Notfall() {
                 />
               </div>
 
-              {/* Hinweis */}
               <div className="px-5 py-3 sm:px-6 bg-sos-orange-wash border-t border-sos-orange-light">
                 <p className="text-sos-orange-mid text-xs sm:text-sm leading-snug">
                   Am Telefon erfolgt eine kurze Einschätzung, was jetzt am
@@ -604,18 +661,21 @@ export default function Notfall() {
               </div>
             </div>
 
-            {/* ─── BLOCK 3: JEMAND ZUM REDEN (GRÜN) ─── */}
+            {/* ─── BLOCK 3: JEMAND ZUM REDEN (GRÜN — Border auf --rule-color) ─── */}
             <div
               id="block-gruen"
-              className="scroll-mt-40 rounded-2xl overflow-clip shadow-md border border-sos-gruen-border"
+              className="scroll-mt-40 rounded-2xl overflow-clip border"
+              style={{ borderColor: "var(--rule-color)" }}
             >
-              {/* Block-Header */}
               <div className="px-5 py-4 sm:px-6 sm:py-5 bg-sos-gruen-wash border-b border-sos-gruen-border">
                 <div className="flex items-center gap-3 mb-1">
                   <div className="w-8 h-8 rounded-lg bg-sos-gruen flex items-center justify-center flex-shrink-0">
                     <Heart className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-lg sm:text-xl font-bold text-sos-gruen-dark">
+                  <h2
+                    className={`${blockHeadingClass} text-sos-gruen-dark`}
+                    style={blockHeadingStyle}
+                  >
                     Jemand zum Reden / Entlastung
                   </h2>
                 </div>
@@ -626,7 +686,6 @@ export default function Notfall() {
                 </p>
               </div>
 
-              {/* Karten */}
               <div className="px-4 py-4 sm:px-5 sm:py-5 space-y-3 bg-white">
                 <KontaktKarte
                   variant="green"
@@ -654,7 +713,6 @@ export default function Notfall() {
                 />
               </div>
 
-              {/* Hinweis */}
               <div className="px-5 py-3 sm:px-6 bg-sos-gruen-wash border-t border-sos-gruen-light">
                 <p className="text-sos-gruen-mid text-xs sm:text-sm leading-snug">
                   <strong>Bei akuter Gefahr:</strong> Immer zuerst{" "}
@@ -663,17 +721,21 @@ export default function Notfall() {
               </div>
             </div>
 
-            {/* ─── BLOCK 4: SPEZIALFALL VERGIFTUNG ─── */}
+            {/* ─── BLOCK 4: SPEZIALFALL VERGIFTUNG (LILA — Border auf --rule-color) ─── */}
             <div
               id="block-spezial"
-              className="scroll-mt-40 rounded-2xl overflow-clip shadow-sm border border-sos-lila-border"
+              className="scroll-mt-40 rounded-2xl overflow-clip border"
+              style={{ borderColor: "var(--rule-color)" }}
             >
               <div className="px-5 py-4 sm:px-6 sm:py-4 bg-sos-lila-wash border-b border-sos-lila-light">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-sos-lila flex items-center justify-center flex-shrink-0">
                     <Pill className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-base sm:text-lg font-bold text-sos-lila-dark">
+                  <h2
+                    className={`${blockHeadingClass} text-sos-lila-dark`}
+                    style={blockHeadingStyle}
+                  >
                     Spezialfall: Vergiftung
                   </h2>
                 </div>
@@ -690,15 +752,22 @@ export default function Notfall() {
               </div>
             </div>
 
-            {/* ─── BLOCK 5: WEITERE KONTAKTE (NACHRANGIG) ─── */}
+            {/* ─── BLOCK 5: WEITERE KONTAKTE (NACHRANGIG — Border auf --rule-color) ─── */}
             <div
               id="block-weitere"
-              className="scroll-mt-40 rounded-2xl overflow-clip shadow-sm border border-border/50"
+              className="scroll-mt-40 rounded-2xl overflow-clip border"
+              style={{ borderColor: "var(--rule-color)" }}
             >
               <div className="px-5 py-3 sm:px-6 sm:py-4 bg-muted/40 border-b border-border/50">
                 <div className="flex items-center gap-2">
                   <Info className="w-5 h-5 text-muted-foreground" />
-                  <h2 className="text-sm sm:text-base font-normal text-muted-foreground">
+                  <h2
+                    className={`${blockHeadingClass} text-muted-foreground`}
+                    style={{
+                      ...blockHeadingStyle,
+                      fontSize: "var(--text-md)",
+                    }}
+                  >
                     Weitere Kontakte
                   </h2>
                 </div>
@@ -735,85 +804,217 @@ export default function Notfall() {
               </div>
             </div>
 
-            {/* ─── WEITERFÜHREND ─── */}
-            <div className="rounded-2xl border border-border/50 bg-muted/30 p-5 sm:p-6">
-              <h3 className="font-semibold text-foreground mb-1 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-muted-foreground" />
-                Krisenbegleitung – was kommt wann?
-              </h3>
-              <p className="text-xs text-muted-foreground mb-4">
-                Diese Seite ist für den akuten Moment. Danach gibt es drei
-                unterschiedliche nächste Schritte:
+            {/* ─── VORBEREITUNG FÜR LATER (NEU — print:hidden) ─── */}
+            <section
+              className="mt-12 border-t pt-8 print:hidden"
+              style={{ borderColor: "var(--rule-color)" }}
+              aria-labelledby="vorbereitung-heading"
+            >
+              <p className="uppercase" style={labelStyle}>
+                Vorbereitung
               </p>
-              <div className="space-y-2">
-                <Link
-                  href="/notfallkarte"
-                  className="flex items-start justify-between gap-3 p-3 rounded-lg bg-background border border-[var(--color-sos-rot)]/20 hover:border-[var(--color-sos-rot)]/40 hover:shadow-sm transition-all group"
-                >
-                  <div>
-                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-0.5">
-                      Vorbereitung
-                    </p>
-                    <span className="text-sm text-foreground font-medium">
+              <h2
+                id="vorbereitung-heading"
+                className="mt-2 font-display"
+                style={{
+                  fontSize: "var(--text-2xl)",
+                  fontWeight: "var(--weight-display)",
+                  color: "var(--fg-primary)",
+                  letterSpacing: "var(--tracking-tight)",
+                  lineHeight: "var(--lh-snug)",
+                }}
+              >
+                Für nicht-akute Momente
+              </h2>
+              <p
+                className="mt-3"
+                style={{
+                  fontSize: "var(--text-md)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-secondary)",
+                }}
+              >
+                Diese Werkzeuge sind für ruhige Momente, in denen Sie sich
+                vorbereiten oder aufarbeiten möchten — nicht für die akute Krise
+                selbst.
+              </p>
+
+              <ul className="mt-6 space-y-6">
+                <li>
+                  <h3
+                    className="font-display"
+                    style={{
+                      fontSize: "var(--text-md)",
+                      fontWeight: 600,
+                      color: "var(--fg-primary)",
+                    }}
+                  >
+                    <a
+                      href="/soforthilfe-print.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="editorial-link"
+                    >
+                      Soforthilfe-Karte als PDF drucken
+                    </a>
+                  </h3>
+                  <p
+                    className="mt-1"
+                    style={{
+                      fontSize: "var(--text-sm)",
+                      lineHeight: "var(--lh-relaxed)",
+                      color: "var(--fg-secondary)",
+                    }}
+                  >
+                    Alle Notfallnummern auf einer A4-Seite — zum Aufhängen am
+                    Kühlschrank, neben dem Telefon, in der Tasche.
+                  </p>
+                </li>
+                <li>
+                  <h3
+                    className="font-display"
+                    style={{
+                      fontSize: "var(--text-md)",
+                      fontWeight: 600,
+                      color: "var(--fg-primary)",
+                    }}
+                  >
+                    <Link href="/notfallkarte" className="editorial-link">
                       Persönliche Notfallkarte erstellen
-                    </span>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      Nummern, Strategien und Kontakte für den nächsten Notfall
-                      vorbereiten
-                    </p>
-                  </div>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1 group-hover:text-[var(--color-sos-rot)] transition-colors" />
-                </Link>
-                <Link
-                  href="/wegweiser"
-                  className="flex items-start justify-between gap-3 p-3 rounded-lg bg-background border border-[var(--color-sage-dark)]/30 hover:border-[var(--color-sage-dark)]/50 hover:shadow-sm transition-all group"
-                >
-                  <div>
-                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-0.5">
-                      Unmittelbar danach
-                    </p>
-                    <span className="text-sm text-foreground font-medium">
-                      Situations-Wegweiser
-                    </span>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      Was war das gerade? Was ist jetzt sinnvoll?
-                    </p>
-                  </div>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1 group-hover:text-[var(--color-sage-dark)] transition-colors" />
-                </Link>
-                <Link
-                  href="/unterstuetzen/krise"
-                  className="flex items-start justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
-                >
-                  <div>
-                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-0.5">
-                      Verstehen & üben
-                    </p>
-                    <span className="text-sm text-foreground">
-                      Deeskalation und Krisenbegleitung
-                    </span>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      Hintergründe, Ampel-System, deeskalierende Techniken
-                    </p>
-                  </div>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-1 group-hover:text-terracotta-mid transition-colors" />
-                </Link>
-                <Link
-                  href="/selbstfuersorge"
-                  className="flex items-center justify-between gap-3 p-3 rounded-lg bg-background border border-border/50 hover:border-terracotta/40 hover:shadow-sm transition-all group"
-                >
-                  <span className="text-sm text-foreground">
-                    Selbstfürsorge für Angehörige
-                  </span>
-                  <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-terracotta-mid transition-colors" />
-                </Link>
-              </div>
-            </div>
-            <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
-              <p className="text-xs text-muted-foreground leading-relaxed">
+                    </Link>
+                  </h3>
+                  <p
+                    className="mt-1"
+                    style={{
+                      fontSize: "var(--text-sm)",
+                      lineHeight: "var(--lh-relaxed)",
+                      color: "var(--fg-secondary)",
+                    }}
+                  >
+                    Mit eigenen Kontaktpersonen, Strategien und Notizen ergänzen
+                    — wird lokal im Browser gespeichert.
+                  </p>
+                </li>
+                <li>
+                  <h3
+                    className="font-display"
+                    style={{
+                      fontSize: "var(--text-md)",
+                      fontWeight: 600,
+                      color: "var(--fg-primary)",
+                    }}
+                  >
+                    <Link href="/wegweiser" className="editorial-link">
+                      Situations-Wegweiser nutzen
+                    </Link>
+                  </h3>
+                  <p
+                    className="mt-1"
+                    style={{
+                      fontSize: "var(--text-sm)",
+                      lineHeight: "var(--lh-relaxed)",
+                      color: "var(--fg-secondary)",
+                    }}
+                  >
+                    Schritt-für-Schritt-Hilfe für konkrete Krisen- Szenarien —
+                    was war das gerade, was ist jetzt sinnvoll.
+                  </p>
+                </li>
+                <li>
+                  <h3
+                    className="font-display"
+                    style={{
+                      fontSize: "var(--text-md)",
+                      fontWeight: 600,
+                      color: "var(--fg-primary)",
+                    }}
+                  >
+                    <Link
+                      href="/unterstuetzen/krise"
+                      className="editorial-link"
+                    >
+                      Deeskalation und Krisenbegleitung lernen
+                    </Link>
+                  </h3>
+                  <p
+                    className="mt-1"
+                    style={{
+                      fontSize: "var(--text-sm)",
+                      lineHeight: "var(--lh-relaxed)",
+                      color: "var(--fg-secondary)",
+                    }}
+                  >
+                    Hintergründe, Ampel-System, deeskalierende Techniken.
+                  </p>
+                </li>
+                <li>
+                  <h3
+                    className="font-display"
+                    style={{
+                      fontSize: "var(--text-md)",
+                      fontWeight: 600,
+                      color: "var(--fg-primary)",
+                    }}
+                  >
+                    <Link href="/selbstfuersorge" className="editorial-link">
+                      Selbstfürsorge für Angehörige
+                    </Link>
+                  </h3>
+                  <p
+                    className="mt-1"
+                    style={{
+                      fontSize: "var(--text-sm)",
+                      lineHeight: "var(--lh-relaxed)",
+                      color: "var(--fg-secondary)",
+                    }}
+                  >
+                    Eigene Belastung ernst nehmen, Warnsignale erkennen,
+                    Regeneration ermöglichen.
+                  </p>
+                </li>
+              </ul>
+            </section>
+
+            {/* ─── Rechtlicher Disclaimer ─── */}
+            <div
+              className="mt-12 border-t pt-6"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <p
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-tertiary)",
+                }}
+              >
                 Diese Informationen ersetzen keine medizinische oder rechtliche
                 Beratung. In akuten Gefahrensituationen zählt das sofortige
                 Einbeziehen von Notruf und Fachpersonen.
+              </p>
+
+              {/* LastVerifiedBadge erhalten am Seitenende — Trust-Signal */}
+              <div className="mt-4 print:hidden">
+                <LastVerifiedBadge date={VERIFIED_DATE} />
+              </div>
+
+              {/* Hidden link für Tier-1-Cross-References mit Shield-Icon */}
+              <p
+                className="mt-3 print:hidden"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-tertiary)",
+                }}
+              >
+                <Shield
+                  className="inline-block w-4 h-4 mr-1 align-text-bottom"
+                  aria-hidden="true"
+                />
+                Krisenbegleitung danach:{" "}
+                <Link href="/unterstuetzen/krise" className="editorial-link">
+                  Deeskalation und Ampel-System
+                </Link>
+                .
               </p>
             </div>
           </div>

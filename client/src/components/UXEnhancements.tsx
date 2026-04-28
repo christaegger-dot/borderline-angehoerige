@@ -419,7 +419,8 @@ export function TableOfContents() {
       </AnimatePresence>
 
       {/* ─── Desktop: Sticky Sidebar in der linken Gutter-Zone ─── */}
-      <div className="hidden min-[1800px]:block fixed left-[max(0.75rem,calc((100vw-1280px)/2-15rem-1.5rem))] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc(100vh-9.5rem)] w-60">
+      {/* left = 50vw - halbe Content-Breite (304px) - Abstand (2rem) - Sidebar-Breite (15rem) */}
+      <div className="hidden min-[1800px]:block fixed left-[calc(50vw-304px-17rem)] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc(100vh-9.5rem)] w-60">
         <div className="flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] backdrop-blur-md">
           <div className="px-4 pt-4 pb-2">
             <div className="flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2">

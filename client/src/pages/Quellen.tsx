@@ -268,6 +268,22 @@ const quellen: QuelleKategorie[] = [
       },
     ],
   },
+  {
+    kategorie: "Versorgungs-Materialien & Praxis-Manuale",
+    eintraege: [
+      {
+        autoren: "Project Air Strategy",
+        jahr: "laufend",
+        titel:
+          "Understanding Self-Harm & Suicidal Thinking for Families & Carers",
+        quelle: "University of Wollongong, Australien",
+        hinweis:
+          "Versorgungs-Material des Project Air Strategy-Programms (australisches Forschungs- und Versorgungsangebot zu Persönlichkeitsstörungen). Online frei verfügbar. In Handout-Materialien zu Selbstverletzung und Suizidgedanken referenziert.",
+        link: "https://www.projectairstrategy.org/",
+        linkLabel: "projectairstrategy.org",
+      },
+    ],
+  },
 ];
 
 /** Slugifiziert Autor-Feld für stabile id-Anker. */

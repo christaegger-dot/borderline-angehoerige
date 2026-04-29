@@ -41,7 +41,6 @@ Hinweis: Inhalte für akute Notlagen, fachliche Stellen-Recherche manuell, nicht
 
 - Komorbidität mit Depression (~80%) thematisieren
 - Diagnostik-Prozess (wer stellt wie eine Diagnose?)
-- Geografische Erweiterung (Online-Beratung, ausser-Stadt-Zürich-Optionen)
 - ~~BPS-Begriff im Glossar~~ ✅ erledigt in Cluster 1 / Sitzung 1 (PR #325)
 
 Jeder Punkt = eigenes kleines Brief-Mapping-Projekt.

@@ -56,7 +56,7 @@ const haeufigeKomorbiditaeten = [
 const depressionsZeichen = [
   "anhaltender Rückzug über Wochen, nicht nur einzelne schwierige Tage",
   "deutlich verminderter Antrieb, oft auch bei Aktivitäten, die früher Freude machten",
-  "Hoffnungslosigkeit, die nicht durch einzelne Gespräche aufzulösen ist",
+  "anhaltende Hoffnungslosigkeit, die sich nicht durch äussere Anlässe verändert",
   "körperliche Symptome wie Schlafstörungen oder Appetitveränderungen",
   "erhöhtes Suizidrisiko (siehe nächste Sektion)",
 ] as const;
@@ -261,8 +261,8 @@ export default function Begleiterkrankungen() {
               <strong>
                 Eine Differenzierung zwischen Borderline-typischen
                 Stimmungsschwankungen und einer eigenständigen depressiven
-                Episode ist klinische Aufgabe — Sie als Angehörige müssen das
-                nicht selbst leisten.
+                Episode ist Aufgabe der behandelnden Fachperson — Sie als
+                Angehörige müssen das nicht selbst leisten.
               </strong>{" "}
               Zur Orientierung: Borderline-typische Schwankungen sind oft kürzer
               (Stunden bis Tage und können schnell kippen), eine depressive
@@ -316,7 +316,7 @@ export default function Begleiterkrankungen() {
           variant="editorial"
           title="Erhöhtes Suizidrisiko bei depressiver Komorbidität"
           id="suizidrisiko"
-          preview="Eine schwere depressive Episode zusätzlich zur Borderline-Erkrankung erhöht das Suizidrisiko. Darum geht es bei dieser Sektion."
+          preview="Eine schwere depressive Episode zusätzlich zur Borderline-Erkrankung erhöht das Suizidrisiko. Bei Hinweisen auf konkrete Suizidalität gilt: nicht abwarten, sondern Soforthilfe nutzen."
         >
           <EditorialProse>
             <p>

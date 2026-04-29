@@ -281,11 +281,12 @@ const quellen: QuelleKategorie[] = [
     eintraege: [
       {
         autoren: "American Psychiatric Association",
-        jahr: "2013",
-        titel: "Diagnostic and Statistical Manual of Mental Disorders (DSM-5)",
-        quelle: "American Psychiatric Publishing",
+        jahr: "2022",
+        titel:
+          "Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR)",
+        quelle: "American Psychiatric Association Publishing",
         hinweis:
-          "Diagnosekriterien für Borderline-Persönlichkeitsstörung im DSM-5.",
+          "Aktuelle US-amerikanische Klassifikation. Borderline-Kriterien sind gegenüber DSM-5 (2013) inhaltlich unverändert; die Text Revision aktualisiert vor allem epidemiologische und kontextuelle Beschreibungen.",
       },
       {
         autoren: "World Health Organization",
@@ -296,6 +297,25 @@ const quellen: QuelleKategorie[] = [
           "Aktuelle internationale Klassifikation mit Borderline pattern (6D11.5) als Spezifier innerhalb der Persönlichkeitsstörungen.",
         link: "https://icd.who.int/browse/2025-01/mms/en#2006821354",
         linkLabel: "WHO ICD-11",
+      },
+      {
+        autoren:
+          "First, M. B., Williams, J. B. W., Benjamin, L. S. & Spitzer, R. L.",
+        jahr: "2017",
+        titel:
+          "Structured Clinical Interview for DSM-5 Personality Disorders (SCID-5-PD)",
+        quelle: "American Psychiatric Association Publishing, Arlington, VA",
+        hinweis:
+          "Standard-Interviewverfahren zur strukturierten Erfassung von Persönlichkeitsstörungen nach DSM-5. Wird in der klinischen Diagnostik bei Verdacht auf Borderline-Persönlichkeitsstörung eingesetzt.",
+      },
+      {
+        autoren: "Loranger, A. W.",
+        jahr: "1999",
+        titel:
+          "International Personality Disorder Examination (IPDE), DSM-IV and ICD-10 Modules",
+        quelle: "World Health Organization / Cambridge University Press",
+        hinweis:
+          "International etabliertes Interviewverfahren zur Diagnose von Persönlichkeitsstörungen, mit Modulen für DSM-IV und ICD-10. Deutsche Version verfügbar.",
       },
     ],
   },

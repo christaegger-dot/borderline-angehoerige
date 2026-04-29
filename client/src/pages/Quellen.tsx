@@ -112,6 +112,17 @@ const quellen: QuelleKategorie[] = [
         link: "https://pubmed.ncbi.nlm.nih.gov/10872917/",
         linkLabel: "PubMed",
       },
+      {
+        autoren: "Maslach, C. & Leiter, M. P.",
+        jahr: "2016",
+        titel:
+          "Understanding the burnout experience: recent research and its implications for psychiatry",
+        quelle: "World Psychiatry 15(2), 103–111",
+        hinweis:
+          "Burnout-Forschung (nicht BPS-spezifisch). Im Body als Beleg für soziale Unterstützung als Schutzfaktor gegen Überlastung und Erschöpfung referenziert (Selbstfürsorge).",
+        link: "https://pubmed.ncbi.nlm.nih.gov/27265691/",
+        linkLabel: "PubMed",
+      },
     ],
   },
   {

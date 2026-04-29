@@ -566,6 +566,18 @@ export default function Genesung() {
               </li>
             ))}
           </ol>
+          <EditorialProse>
+            <p className="mt-6">
+              Zum Punkt «Behandlung von Begleiterkrankungen»: Bei Borderline
+              tritt selten nur eine Diagnose auf — Depression und andere
+              Komorbiditäten beeinflussen den Verlauf wesentlich. Mehr dazu auf
+              der Seite{" "}
+              <Link href="/begleiterkrankungen" className="editorial-link">
+                Begleiterkrankungen
+              </Link>
+              .
+            </p>
+          </EditorialProse>
         </ContentSection>
 
         {/* ── ContentSection 6: infografiken (Materialien-Block) ── */}

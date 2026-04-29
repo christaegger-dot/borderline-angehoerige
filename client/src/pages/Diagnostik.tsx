@@ -371,6 +371,17 @@ export default function Diagnostik() {
               Störungen. Das ist normaler Teil sorgfältiger Diagnostik und keine
               Verzögerungstaktik.
             </p>
+            <p>
+              Differenzialdiagnostik (was IST Borderline und was nicht) und
+              Komorbidität (was MIT Borderline parallel auftreten kann) sind
+              unterschiedliche Fragen — manche Erkrankungen wie PTBS werden im
+              Diagnostik-Prozess geprüft und können auch parallel bestehen. Mehr
+              dazu auf der Seite{" "}
+              <Link href="/begleiterkrankungen" className="editorial-link">
+                Begleiterkrankungen
+              </Link>
+              .
+            </p>
           </EditorialProse>
         </ContentSection>
 

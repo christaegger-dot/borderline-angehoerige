@@ -65,6 +65,12 @@ export const resourceNavigationItems: NavigationItem[] = [
     group: "Wissen & Materialien",
   },
   {
+    href: "/begleiterkrankungen",
+    label: "Begleiterkrankungen",
+    icon: BookOpen,
+    group: "Wissen & Materialien",
+  },
+  {
     href: "/faq",
     label: "Häufige Fragen (FAQ)",
     icon: HelpCircle,

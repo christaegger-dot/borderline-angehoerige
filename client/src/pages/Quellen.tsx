@@ -218,11 +218,12 @@ const quellen: QuelleKategorie[] = [
     eintraege: [
       {
         autoren: "Mason, P. T. & Kreger, R.",
-        jahr: "2010",
-        titel: "Schluss mit dem Eiertanz",
-        quelle: "Balance Buch + Medien Verlag",
+        jahr: "2010 / 2014",
+        titel: "Stop Walking on Eggshells / Schluss mit dem Eiertanz",
+        quelle:
+          "Balance Buch + Medien Verlag (deutsche Ausgabe 2010); New Harbinger Publications (englische 3. Auflage 2014)",
         hinweis:
-          "Praxisnahe Anleitung für Angehörige. Grundlage für Konzepte wie «walking on eggshells», Kommunikationsstrategien und Grenzen.",
+          "Praxisnahe Anleitung für Angehörige. Grundlage für Konzepte wie «walking on eggshells», Kommunikationsstrategien und Grenzen. Originalausgabe 1998. Inline-Verweise in der Site nutzen je nach Kontext «(2010)» für die deutsche Ausgabe (z. B. Über uns) oder «(2014)» für die englische 3. Auflage (Handouts).",
       },
       {
         autoren: "Kreisman, J. J. & Straus, H.",

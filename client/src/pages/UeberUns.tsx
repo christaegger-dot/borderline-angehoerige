@@ -67,7 +67,7 @@ const grundlagen = [
     title: "Stop Walking on Eggshells",
     author: "Paul T. Mason & Randi Kreger",
     description:
-      "Das Standardwerk für Angehörige, Grundlage für den Namen dieser Website.",
+      "Das Standardwerk für Angehörige, Grundlage für den Namen dieser Website. Auf Deutsch erschienen 2010 als «Schluss mit dem Eiertanz» (Balance Buch + Medien Verlag).",
   },
   {
     title: "Ich hasse dich – verlass mich nicht",
@@ -217,9 +217,9 @@ export default function UeberUns() {
             </p>
             <p>
               Der Begriff «Eiertanz» aus dem Standardwerk von Paul T. Mason und
-              Randi Kreger beschreibt dieses Gefühl treffend: das ständige
-              Auf-der-Hut-Sein, die Angst vor dem nächsten Ausbruch, das Gefühl,
-              auf Eierschalen zu laufen.
+              Randi Kreger (deutsche Ausgabe 2010) beschreibt dieses Gefühl
+              treffend: das ständige Auf-der-Hut-Sein, die Angst vor dem
+              nächsten Ausbruch, das Gefühl, auf Eierschalen zu laufen.
             </p>
             <p>
               Diese Website möchte Angehörigen fachlich fundierte Orientierung
@@ -322,7 +322,8 @@ export default function UeberUns() {
                   type: "wissenschaft",
                 },
                 {
-                  label: "Mason & Kreger, Stop Walking on Eggshells",
+                  label:
+                    "Mason & Kreger, Stop Walking on Eggshells / Schluss mit dem Eiertanz (deutsche Ausgabe 2010)",
                   type: "wissenschaft",
                 },
                 {

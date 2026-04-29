@@ -96,6 +96,37 @@ const faqCategories: FAQCategory[] = [
           "Dieses Phänomen ist häufig und nicht automatisch ein Zeichen von Manipulation. Menschen mit Borderline haben oft die grössten Schwierigkeiten in engen Beziehungen, weil dort die Verlassensangst am stärksten aktiviert wird. Bei Fremden oder in oberflächlichen Kontakten ist diese Angst geringer, daher können sie sich besser regulieren. Es ist paradox: Je wichtiger Sie Ihrem Angehörigen sind, desto intensiver können die Symptome sein. Das ist keine bewusste Entscheidung, sondern ein Muster, das in der Therapie bearbeitet wird.",
         links: [{ text: "Beziehungsmuster verstehen", url: "/verstehen" }],
       },
+      {
+        question: "Wer kann eine Borderline-Diagnose stellen?",
+        answer:
+          "Eine formelle Borderline-Diagnose stellen vor allem Psychiater:innen mit FMH-Anerkennung Psychiatrie und Psychotherapie sowie psychologische Psychotherapeut:innen mit Berufsausübungsbewilligung und entsprechender klinischer Qualifikation. Hausärzt:innen können einen Verdacht äussern und überweisen, stellen die Diagnose aber in der Regel nicht selbst. Die Abklärung findet ambulant oder stationär statt; sie umfasst meist mehrere Termine über Wochen oder Monate, nicht ein einzelnes Gespräch.",
+        links: [
+          { text: "Diagnostik-Seite — Wer & Wie", url: "/diagnostik#wer" },
+        ],
+      },
+      {
+        question: "Was, wenn die betroffene Person die Diagnose ablehnt?",
+        answer:
+          "Diagnose-Ablehnung ist eine häufige Reaktion und kein Versagen — Stigma, Scham oder Misstrauen gegenüber Psychiatrie sind verständliche Gründe. Drängen, Beweisen oder die Diagnose in Konflikten als Argument einzusetzen verschärft die Lage meist. Was möglich ist: die Diagnose für sich selbst als Orientierung nutzen, Beratung der Fachstelle in Anspruch nehmen, geduldig bleiben, konkrete Verhaltensweisen statt das Label ansprechen. Bei akuter Gefahr ist die Diagnose-Frage ohnehin nachrangig — dann zählt die Soforthilfe.",
+        links: [
+          {
+            text: "Diagnostik-Seite — Diagnose-Ablehnung",
+            url: "/diagnostik#ablehnung",
+          },
+          { text: "Soforthilfe", url: "/soforthilfe" },
+        ],
+      },
+      {
+        question: "Wie lange dauert es, bis eine Diagnose feststeht?",
+        answer:
+          "Eine Borderline-Diagnose entsteht meist nicht in einem Termin. Anamnese, strukturierte Interviews und Verlaufsbeobachtung greifen ineinander; in der Regel sind dafür mehrere Sitzungen über Wochen oder Monate nötig. Diese Sorgfalt ist kein Warten ohne Ergebnis, sondern Teil der Diagnostik selbst — die Diagnose soll über die Zeit Bestand haben und nicht aus einem Momenteindruck stammen.",
+        links: [
+          {
+            text: "Diagnostik-Seite — Wie läuft eine Diagnostik ab",
+            url: "/diagnostik#wie",
+          },
+        ],
+      },
     ],
   },
   {

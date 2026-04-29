@@ -1,4 +1,5 @@
 import { BookOpen, Users } from "lucide-react";
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -138,6 +139,15 @@ export function VerstehenDiagnosticSection() {
             </p>
           </CardContent>
         </Card>
+
+        <p className="text-sm text-muted-foreground">
+          Mehr zum Diagnostik-Prozess (wer stellt wie eine Diagnose, was sie für
+          Angehörige bedeutet, wo sie im Kanton Zürich gestellt werden kann):{" "}
+          <Link href="/diagnostik" className="underline">
+            Diagnostik
+          </Link>
+          .
+        </p>
       </div>
     </ContentSection>
   );

@@ -41,6 +41,17 @@ const quellen: QuelleKategorie[] = [
     kategorie: "Klinische Studien & Forschung",
     eintraege: [
       {
+        autoren: "Storebø, O. J. et al.",
+        jahr: "2020",
+        titel:
+          "Psychological therapies for people with borderline personality disorder",
+        quelle: "Cochrane Database of Systematic Reviews 5(5), CD012955",
+        hinweis:
+          "Cochrane-Übersichtsarbeit zu 75 randomisierten Studien (4'507 Teilnehmer:innen). DBT und MBT sind die am häufigsten untersuchten Verfahren. Insgesamt belegt der Review klinisch relevante Verbesserungen der Borderline-Symptomatik durch BPS-spezifische Psychotherapie gegenüber Standardbehandlung.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/32368793/",
+        linkLabel: "PubMed",
+      },
+      {
         autoren: "Zanarini, M. C. et al.",
         jahr: "2010",
         titel:
@@ -60,6 +71,17 @@ const quellen: QuelleKategorie[] = [
         hinweis:
           "Langzeit-Follow-up zur Stabilität von Remission und Recovery. Wichtige Grundlage für die Unterscheidung zwischen Symptombesserung und funktioneller Genesung.",
         link: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
+        linkLabel: "PubMed",
+      },
+      {
+        autoren: "Gunderson, J. G. et al.",
+        jahr: "2011",
+        titel:
+          "Ten-year course of borderline personality disorder: Psychopathology and function from the Collaborative Longitudinal Personality Disorders study",
+        quelle: "Archives of General Psychiatry 68(8), 827–837",
+        hinweis:
+          "Komplementär zur Zanarini-McLean-Studie: 85% Remission, 12% Rückfallrate über zehn Jahre. Belegt zudem persistierende Beeinträchtigungen im sozialen Funktionieren — Remission ist nicht gleichbedeutend mit voller funktioneller Genesung.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/21464343/",
         linkLabel: "PubMed",
       },
       {

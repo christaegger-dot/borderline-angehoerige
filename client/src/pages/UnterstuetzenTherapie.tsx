@@ -128,6 +128,11 @@ const therapieformen = [
     description:
       "Arbeitet mit frühen Prägungen, Beziehungsmustern und inneren Zuständen, die unter Stress reaktiv werden.",
   },
+  {
+    name: "TFP · Übertragungsfokussierte Psychotherapie",
+    description:
+      "Arbeitet mit dem Beziehungserleben in der therapeutischen Beziehung selbst: innere Konflikte werden im «Hier und Jetzt» zwischen Therapeut:in und Patient:in sichtbar und bearbeitbar. In der Schweizer Versorgungsrealität weniger verbreitet als DBT, aber als evidenzbasierte Therapie etabliert.",
+  },
 ] as const;
 
 const musterMail = `Betreff: Kurze Anfrage als Angehörige von [Vorname]
@@ -395,7 +400,7 @@ export default function UnterstuetzenTherapie() {
           variant="editorial"
           title="Therapieformen knapp eingeordnet"
           id="therapieformen"
-          preview="DBT, MBT und Schematherapie sind gut erforschte Behandlungsansätze. Für Angehörige ist oft weniger das Label als die Passung im Alltag entscheidend."
+          preview="DBT, MBT, Schematherapie und TFP sind gut erforschte Behandlungsansätze. Für Angehörige ist oft weniger das Label als die Passung im Alltag entscheidend."
         >
           <div className="mt-2 space-y-6">
             {therapieformen.map(item => (

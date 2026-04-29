@@ -381,7 +381,8 @@ export const handoutTextVersions: HandoutTextVersion[] = [
           "Der Leuchtturm steht nicht für Kontrolle, sondern für Haltung: ruhig bleiben, Richtung geben und nicht in jeden Sturm hineingezogen werden.",
       },
     ],
-    sourceLine: "Quelle: Nach Kreger (2014), Angehörigen-Psychoedukation.",
+    sourceLine:
+      "Quelle: Nach Mason & Kreger (2014), Angehörigen-Psychoedukation.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -486,7 +487,8 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
     ],
-    sourceLine: "Quelle: Gunderson et al., Family Guidelines; Kreger (2014).",
+    sourceLine:
+      "Quelle: Gunderson et al., Family Guidelines; Mason & Kreger (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -2784,7 +2786,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
     ],
-    sourceLine: "Quelle: Zanarini et al. (2012); Paris (2020).",
+    sourceLine: "Quelle: Zanarini et al. (2012); in Anlehnung an Paris (2020).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -2837,7 +2839,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
     ],
-    sourceLine: "Quelle: Zanarini et al. (2012); Paris (2020).",
+    sourceLine: "Quelle: Zanarini et al. (2012); in Anlehnung an Paris (2020).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -2928,7 +2930,8 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
     ],
-    sourceLine: "Quelle: Gunderson et al., Family Guidelines; Kreger (2014).",
+    sourceLine:
+      "Quelle: Gunderson et al., Family Guidelines; Mason & Kreger (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

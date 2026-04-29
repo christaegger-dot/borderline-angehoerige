@@ -234,6 +234,7 @@ const results: Result[] = [
     primaryLink: "/verstehen",
     primaryText: "Borderline verstehen",
     secondaryLinks: [
+      { href: "/diagnostik", text: "Wie wird eine Diagnose gestellt?" },
       { href: "/unterstuetzen/uebersicht", text: "Unterstützungsstrategien" },
       { href: "/kommunizieren", text: "Kommunikation verbessern" },
     ],

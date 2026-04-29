@@ -40,6 +40,17 @@ interface GlossaryTerm {
 
 const glossaryTerms: GlossaryTerm[] = [
   {
+    term: "Borderline-Persönlichkeitsstörung",
+    abbreviation: "BPS",
+    category: "symptome",
+    definition:
+      "Ein komplexes Störungsbild mit starker emotionaler Reagibilität, Schwierigkeiten mit innerer Stabilität und einem Beziehungserleben, das unter Bindungsstress schnell ins Wanken geraten kann. Klassifiziert im DSM-5 als eigenständige Persönlichkeitsstörung und im ICD-11 als «Borderline-Muster» (Code 6D11.5). Die englische Bezeichnung lautet Borderline Personality Disorder (BPD).",
+    example:
+      "Ausprägung und Verlauf unterscheiden sich deutlich: Manche Menschen wirken vor allem impulsiv und explosiv, andere eher verzweifelt, zurückgezogen, leer oder selbstabwertend.",
+    relatedPage: "/verstehen",
+    relatedPageTitle: "Borderline verstehen",
+  },
+  {
     term: "Dialektisch-Behaviorale Therapie",
     abbreviation: "DBT",
     category: "therapie",

@@ -127,6 +127,29 @@ const faqCategories: FAQCategory[] = [
           },
         ],
       },
+      {
+        question:
+          "Was bedeutet es, wenn mehrere Diagnosen gleichzeitig genannt werden?",
+        answer:
+          "Bei Borderline tritt selten nur eine Diagnose auf. Häufig kommen Depression, Angststörungen, PTBS oder weitere Erkrankungen hinzu — Fachpersonen sprechen dann von Komorbidität oder Begleiterkrankungen. Das bedeutet nicht «doppelt schlimm», sondern beschreibt eine Kombination, die in der Behandlung mitberücksichtigt wird. Komorbide Erkrankungen werden meistens integriert mitbehandelt; bei akut bedrohlichen Phasen (z. B. schwere Depression, Substanzgebrauchskrise) wird das vorrangig stabilisiert.",
+        links: [
+          { text: "Begleiterkrankungen", url: "/begleiterkrankungen" },
+          { text: "Glossar — Komorbidität", url: "/glossar" },
+        ],
+      },
+      {
+        question:
+          "Mein Angehöriger hat zusätzlich zur Borderline auch eine Depression — was bedeutet das?",
+        answer:
+          "Depression ist die häufigste Komorbidität bei Borderline. Borderline-typische Stimmungsschwankungen sind oft kürzer (Stunden bis Tage) und können schnell kippen, eine depressive Episode hält länger an (Wochen bis Monate). Die Differenzierung ist Aufgabe der behandelnden Fachperson — Sie als Angehörige müssen das nicht selbst leisten. Wichtig: Eine schwere depressive Episode erhöht das Suizidrisiko. Wenn Sie Anzeichen wie anhaltende Hoffnungslosigkeit oder konkrete Aussagen mit suizidalem Inhalt wahrnehmen, gehen Sie nicht davon aus, dass das «nur Borderline» ist. Nutzen Sie die Soforthilfe.",
+        links: [
+          {
+            text: "Begleiterkrankungen — Depression",
+            url: "/begleiterkrankungen#depression",
+          },
+          { text: "Soforthilfe", url: "/soforthilfe" },
+        ],
+      },
     ],
   },
   {

@@ -106,6 +106,29 @@ const quellen: QuelleKategorie[] = [
         linkLabel: "PubMed",
       },
       {
+        autoren:
+          "Zanarini, M. C., Frankenburg, F. R., Dubo, E. D., Sickel, A. E., Trikha, A., Levin, A. & Reynolds, V.",
+        jahr: "1998",
+        titel: "Axis I comorbidity of borderline personality disorder",
+        quelle: "American Journal of Psychiatry 155(12), 1733–1739",
+        hinweis:
+          "Klassische Studie zur lebenszeitigen Achse-I-Komorbidität bei Borderline-Persönlichkeitsstörung. Belegt sehr hohe Komorbiditätsraten zu Major Depression, Angststörungen und PTBS.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/9842784/",
+        linkLabel: "PubMed",
+      },
+      {
+        autoren:
+          "Zanarini, M. C., Frankenburg, F. R., Hennen, J., Reich, D. B. & Silk, K. R.",
+        jahr: "2004",
+        titel:
+          "Axis I comorbidity in patients with borderline personality disorder: 6-year follow-up and prediction of time to remission",
+        quelle: "American Journal of Psychiatry 161(11), 2108–2114",
+        hinweis:
+          "6-Jahres-Verlaufsstudie zur Komorbidität bei BPS. Zeigt, dass Komorbiditätsraten im Verlauf abnehmen, was die Recovery-Perspektive bestätigt.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/15514413/",
+        linkLabel: "PubMed",
+      },
+      {
         autoren: "Bateman, A. & Fonagy, P.",
         jahr: "2009",
         titel:

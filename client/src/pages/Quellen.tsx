@@ -130,6 +130,14 @@ const quellen: QuelleKategorie[] = [
       },
       {
         autoren: "Linehan, M. M.",
+        jahr: "2015",
+        titel: "DBT Skills Training Manual",
+        quelle: "Guilford Press, 2. Auflage",
+        hinweis:
+          "Aktualisiertes Standard-Manual zu den DBT-Skills (Achtsamkeit, Stresstoleranz, Emotionsregulation, zwischenmenschliche Effektivität). Im Body als Quelle für das Konzept der Radikalen Akzeptanz referenziert (Selbstfürsorge).",
+      },
+      {
+        autoren: "Linehan, M. M.",
         jahr: "1996",
         titel:
           "Dialektisch-Behaviorale Therapie der Borderline-Persönlichkeitsstörung",

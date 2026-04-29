@@ -11,6 +11,7 @@ export interface AppRoute {
 // lazily load pages
 const Home = lazy(() => import("@/pages/Home"));
 const Verstehen = lazy(() => import("@/pages/Verstehen"));
+const Diagnostik = lazy(() => import("@/pages/Diagnostik"));
 const UnterstuetzenUebersicht = lazy(
   () => import("@/pages/UnterstuetzenUebersicht")
 );
@@ -44,6 +45,7 @@ const Barrierefreiheit = lazy(() => import("@/pages/Barrierefreiheit"));
 export const routes: AppRoute[] = [
   { path: "/", component: Home },
   { path: "/verstehen", component: Verstehen, requiresMotion: true },
+  { path: "/diagnostik", component: Diagnostik, requiresMotion: true },
   { path: "/unterstuetzen", redirectTo: "/unterstuetzen/uebersicht" },
   {
     path: "/unterstuetzen/uebersicht",

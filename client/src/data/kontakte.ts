@@ -417,6 +417,19 @@ export const URLS: UrlKontakt[] = [
     label: "VASK Zürich",
     sourceRef: "Selbsthilfegruppen.tsx:306",
   },
+  {
+    id: "URL_IPW",
+    url: "https://www.ipw.ch",
+    label: "Integrierte Psychiatrie Winterthur (ipw)",
+    sourceRef: "Diagnostik.tsx (Anbieter-Box)",
+  },
+  {
+    id: "URL_SANATORIUM_KILCHBERG",
+    url: "https://www.sanatorium-kilchberg.ch",
+    label: "Sanatorium Kilchberg",
+    hinweis: "Privatklinik für Psychiatrie und Psychotherapie",
+    sourceRef: "Diagnostik.tsx (Anbieter-Box)",
+  },
 ];
 
 // ─── Verbindliche Texte ──────────────────────────────────

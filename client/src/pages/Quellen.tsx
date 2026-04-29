@@ -202,6 +202,15 @@ const quellen: QuelleKategorie[] = [
         quelle: "American Psychiatric Publishing",
         hinweis: "Verbindet klinische und Angehörigenperspektive.",
       },
+      {
+        autoren: "Porges, S. W.",
+        jahr: "2011",
+        titel:
+          "The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-Regulation",
+        quelle: "W. W. Norton, New York",
+        hinweis:
+          "In der klinischen Praxis – insbesondere in Trauma- und Körpertherapien – breit verwendet. Die zugrundeliegenden neurobiologischen Mechanismen sind in peer-reviewed Forschung umstritten. Im Body in Handout-Materialien zur Atemregulation referenziert.",
+      },
     ],
   },
   {

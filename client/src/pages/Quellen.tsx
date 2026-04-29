@@ -96,6 +96,17 @@ const quellen: QuelleKategorie[] = [
     kategorie: "Fachliteratur Therapie & Behandlung",
     eintraege: [
       {
+        autoren: "American Psychiatric Association (Keepers, G. A. et al.)",
+        jahr: "2024",
+        titel:
+          "The American Psychiatric Association Practice Guideline for the Treatment of Patients With Borderline Personality Disorder",
+        quelle: "American Journal of Psychiatry 181(11), 1024–1028",
+        hinweis:
+          "Aktuelle US-amerikanische Behandlungsleitlinie für Borderline-Persönlichkeitsstörung. Im Body als Quelle für klinische und diagnostische Einordnung referenziert (Verstehen, Home, Über uns).",
+        link: "https://pubmed.ncbi.nlm.nih.gov/39482953/",
+        linkLabel: "PubMed",
+      },
+      {
         autoren: "Linehan, M. M.",
         jahr: "1996",
         titel:
@@ -110,7 +121,7 @@ const quellen: QuelleKategorie[] = [
           "Psychotherapy for Borderline Personality Disorder: Mentalization-Based Treatment",
         quelle: "Oxford University Press",
         hinweis:
-          "Grundlage für mentalisierungsbasierte Therapie (MBT) als evidenzbasiertes Verfahren.",
+          "Grundlage für mentalisierungsbasierte Therapie (MBT) als evidenzbasiertes Verfahren. Aktualisierte Wirksamkeitsdaten siehe Bateman & Fonagy (2009) im Block «Klinische Studien & Forschung».",
       },
       {
         autoren: "Fruzzetti, A. E.",

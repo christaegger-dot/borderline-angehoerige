@@ -39,11 +39,25 @@ Hinweis: Inhalte für akute Notlagen, fachliche Stellen-Recherche manuell, nicht
 
 ### Cluster 3 – Inhaltliche Erweiterung (Reichweite)
 
-- Komorbidität mit Depression (~80%) thematisieren
-- Diagnostik-Prozess (wer stellt wie eine Diagnose?)
-- ~~BPS-Begriff im Glossar~~ ✅ erledigt in Cluster 1 / Sitzung 1 (PR #325)
+Brief: `_dev/CLUSTER-3-DIAGNOSTIK-BRIEF-2026-04-30.md` · Mapping: `_dev/CLUSTER-3-DIAGNOSTIK-MAPPING-2026-04-30.md`
 
-Jeder Punkt = eigenes kleines Brief-Mapping-Projekt.
+**Diagnostik-Sitzung 1** (PR #327, gemerged 2026-04-29):
+
+- ✅ Diagnostik-Prozess (Audit P1-7) — neue Seite `/diagnostik` mit 10 ContentSections (Wer / Wie / Differenzialdiagnostik kurz / Bedeutung für Angehörige / Diagnose-Ablehnung / Selbstreflexion / Vermutung ohne Diagnose / Jugendliche / Anbieter-Box / Elterngruppe). Editorial-Pattern analog zu /genesung.
+- ✅ Quellen-Update: DSM-5 → DSM-5-TR (2022); SCID-5-PD First/Williams 2017; IPDE Loranger 1999.
+- ✅ Anbieter-Box mit konsolidiertem PUK-Eintrag (Erwachsene 18+ via Zentrale 058 384 21 11; Jugendliche ab 13 via HYPE 058 384 66 00) plus ipw, Sanatorium Kilchberg (Tel 044 716 42 42 + URL), Clienia. Notfall-Linien bewusst ausgenommen.
+- ✅ FAQ-Erweiterung um drei Q&A in Kategorie «Diagnose & Krankheitsverständnis»: «Wer kann eine Borderline-Diagnose stellen?», «Was, wenn die betroffene Person die Diagnose ablehnt?», «Wie lange dauert es, bis eine Diagnose feststeht?» — mit Cross-Links auf passende /diagnostik-Anker.
+- ✅ Cross-Links: Verstehen → Diagnostik (in VerstehenDiagnosticSection), Selbsttest «verstehen»-Result-Bucket → Diagnostik.
+- ✅ Sub-Navigation: Diagnostik in Ressourcen-Menü Gruppe «Wissen & Materialien», nach «Genesung & Hoffnung».
+- ✅ PUK-Elterngruppe spezifisch verlinkt (KJPP-Behandlungsschwerpunkte-Seite, neuer URL-Eintrag in kontakte.ts).
+
+Verbleibend in Cluster 3 (separate Briefs / Sitzungen):
+
+- Komorbidität mit Depression (~80%) thematisieren
+- ~~BPS-Begriff im Glossar~~ ✅ erledigt in Cluster 1 / Sitzung 1 (PR #325)
+- ~~Diagnostik-Prozess~~ ✅ erledigt in Cluster 3 / Sitzung 1 (PR #327)
+
+Jeder noch offene Punkt = eigenes kleines Brief-Mapping-Projekt.
 
 ### Cluster 4 – Feinschliff (niedrige Priorität)
 

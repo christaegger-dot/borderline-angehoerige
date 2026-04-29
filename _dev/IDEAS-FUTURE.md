@@ -37,9 +37,9 @@ Brief: `_dev/CLUSTER-1-BRIEF-2026-04-30.md` · Mapping: `_dev/CLUSTER-1-MAPPING-
 
 Hinweis: Inhalte für akute Notlagen, fachliche Stellen-Recherche manuell, nicht agentisch.
 
-### Cluster 3 – Inhaltliche Erweiterung (Reichweite)
+### Cluster 3 – Inhaltliche Erweiterung (Reichweite) ✅ abgeschlossen
 
-Brief: `_dev/CLUSTER-3-DIAGNOSTIK-BRIEF-2026-04-30.md` · Mapping: `_dev/CLUSTER-3-DIAGNOSTIK-MAPPING-2026-04-30.md`
+**Diagnostik** — Brief: `_dev/CLUSTER-3-DIAGNOSTIK-BRIEF-2026-04-30.md` · Mapping: `_dev/CLUSTER-3-DIAGNOSTIK-MAPPING-2026-04-30.md`
 
 **Diagnostik-Sitzung 1** (PR #327, gemerged 2026-04-29):
 
@@ -51,13 +51,26 @@ Brief: `_dev/CLUSTER-3-DIAGNOSTIK-BRIEF-2026-04-30.md` · Mapping: `_dev/CLUSTER
 - ✅ Sub-Navigation: Diagnostik in Ressourcen-Menü Gruppe «Wissen & Materialien», nach «Genesung & Hoffnung».
 - ✅ PUK-Elterngruppe spezifisch verlinkt (KJPP-Behandlungsschwerpunkte-Seite, neuer URL-Eintrag in kontakte.ts).
 
-Verbleibend in Cluster 3 (separate Briefs / Sitzungen):
+**Komorbidität** — Brief: `_dev/CLUSTER-3-KOMORBIDITAET-BRIEF-2026-04-30.md` · Mapping: `_dev/CLUSTER-3-KOMORBIDITAET-MAPPING-2026-04-30.md`
 
-- Komorbidität mit Depression (~80%) thematisieren
+**Komorbidität-Sitzung 1** (PR #328, gemerged 2026-04-29):
+
+- ✅ Komorbidität (Audit P1-6) — neue Seite `/begleiterkrankungen` mit 7 ContentSections (Was Komorbidität bedeutet / Depression als häufigste Komorbidität / Erhöhtes Suizidrisiko / Was Sie als Angehörige wissen sollten / Andere Komorbiditäten knapp / Behandlung / Auch bei Ihnen). Editorial-Pattern analog zu /diagnostik.
+- ✅ Quellen-Update: Zanarini et al. (1998) Axis I Comorbidity (PMID 9842784) und Zanarini et al. (2004) 6-Year Follow-up (PMID 15514413) als zwei neue Einträge in «Klinische Studien & Forschung».
+- ✅ Konservative Inline-Quellenangabe ohne spezifische %-Zahl im Body — beide Studien als EvidenceNote.
+- ✅ Stimmungsschwankungs-Differenzierung mit Caveat-VOR-Differenzierung («Aufgabe der behandelnden Fachperson» statt «klinische Aufgabe»). Listenpunkt zu Hoffnungslosigkeit präzisiert auf reine Beobachtung statt Interventions-Erwartung.
+- ✅ Suizidrisiko als eigene Sektion explizit, mit Cross-Links auf /soforthilfe und /unterstuetzen/krise. Preview-Text trägt Kernaussage + Handlungsempfehlung.
+- ✅ Glossar-Eintrag «Komorbidität» (Kategorie «symptome», analog DBT-Kürze) mit relatedPage auf /begleiterkrankungen.
+- ✅ FAQ-Erweiterung um zwei Q&A: «Was bedeutet es, wenn mehrere Diagnosen gleichzeitig genannt werden?», «Mein Angehöriger hat zusätzlich zur Borderline auch eine Depression — was bedeutet das?» — mit Cross-Links auf /begleiterkrankungen, /glossar, /soforthilfe.
+- ✅ Cross-Links: Diagnostik-Seite (Differenzialdiagnostik-Section mit PTBS-Disambiguation), Genesung-Seite (Förderfaktor «Behandlung von Begleiterkrankungen»).
+- ✅ Sub-Navigation: Begleiterkrankungen in Ressourcen-Menü Gruppe «Wissen & Materialien», direkt nach Diagnostik. Narrative Reihenfolge: Verstehen → Diagnostik → Begleiterkrankungen → Genesung.
+
+**Cluster-3-Bilanz:**
+
 - ~~BPS-Begriff im Glossar~~ ✅ erledigt in Cluster 1 / Sitzung 1 (PR #325)
-- ~~Diagnostik-Prozess~~ ✅ erledigt in Cluster 3 / Sitzung 1 (PR #327)
-
-Jeder noch offene Punkt = eigenes kleines Brief-Mapping-Projekt.
+- ~~Diagnostik-Prozess~~ ✅ erledigt in Cluster 3 / Diagnostik-Sitzung 1 (PR #327)
+- ~~Komorbidität mit Depression~~ ✅ erledigt in Cluster 3 / Komorbidität-Sitzung 1 (PR #328)
+- ~~Geografische Erweiterung~~ ⊘ aus Backlog gestrichen (Christa-Decision 2026-04-29)
 
 ### Cluster 4 – Feinschliff (niedrige Priorität)
 

@@ -2786,7 +2786,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
     ],
-    sourceLine: "Quelle: Zanarini et al. (2012); Paris (2020).",
+    sourceLine: "Quelle: Zanarini et al. (2012); in Anlehnung an Paris (2020).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -2839,7 +2839,7 @@ export const handoutTextVersions: HandoutTextVersion[] = [
         ],
       },
     ],
-    sourceLine: "Quelle: Zanarini et al. (2012); Paris (2020).",
+    sourceLine: "Quelle: Zanarini et al. (2012); in Anlehnung an Paris (2020).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

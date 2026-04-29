@@ -183,6 +183,15 @@ const quellen: QuelleKategorie[] = [
         linkLabel: "PubMed",
       },
       {
+        autoren: "Paris, J.",
+        jahr: "2020",
+        titel:
+          "Treatment of Borderline Personality Disorder: A Guide to Evidence-Based Practice",
+        quelle: "Guilford Press, 2nd Edition",
+        hinweis:
+          "Standardwerk zu Verlauf, Recovery und multifaktoriellen Modellen bei BPS. In Handouts als didaktische Inspirationsquelle für Verlaufs- und Genesungsmodelle referenziert (Inline-Verweise jeweils «in Anlehnung an Paris 2020», nicht als wortgenaues Zitat).",
+      },
+      {
         autoren: "Linehan, M. M.",
         jahr: "2015",
         titel: "DBT Skills Training Manual",

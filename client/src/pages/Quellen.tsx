@@ -85,6 +85,17 @@ const quellen: QuelleKategorie[] = [
         linkLabel: "PubMed",
       },
       {
+        autoren:
+          "Gunderson, J. G., Herpertz, S. C., Skodol, A. E., Torgersen, S. & Zanarini, M. C.",
+        jahr: "2018",
+        titel: "Borderline personality disorder",
+        quelle: "Nature Reviews Disease Primers 4, 18029",
+        hinweis:
+          "Übersichtsarbeit zu Diagnose, Verlauf, Behandlung und Versorgung von BPS. In Handout-Materialien als Standard-Übersicht zitiert.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/29795363/",
+        linkLabel: "PubMed",
+      },
+      {
         autoren: "Linehan, M. M.",
         jahr: "1993",
         titel:

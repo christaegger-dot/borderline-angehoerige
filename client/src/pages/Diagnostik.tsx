@@ -1,5 +1,5 @@
 /**
- * Diagnostik — Cluster 3 Sitzung 1 (PR im Review).
+ * Diagnostik — Cluster 3 Sitzung 1.
  *
  * Eigene Seite zum Diagnostik-Prozess bei Borderline-Persönlichkeitsstörung,
  * adressiert die im Audit (P1-7) identifizierte Lücke «wer stellt wie eine
@@ -9,12 +9,13 @@
  * Sicherheits-Hinweis: Kein direkter Notfall-Inhalt. Cross-Link auf
  * /soforthilfe für akute Gefahr (Suizidalität, Selbstverletzung).
  *
- * Anbieter-Box: PUK Erwachsene-Anmeldung verwendet aktuell die im
- * kontakte.ts unter `GELB_PUK_65` geführte Nummer 058 384 46 82 (laut
- * kontakte.ts-Label «(ab 65) (24/7)»). Christas Brief und Phase-1-Prompt
- * geben dieselbe Nummer für die Erwachsenen-Anmeldung an. Diskrepanz
- * zur kontakte.ts-Beschriftung ist im PR-Body als Review-Punkt
- * markiert.
+ * Anbieter-Box-PUK-Logik (korrigiert nach Christas Review): Die PUK hat
+ * keine spezielle Nicht-Notfall-Diagnostik-Nummer für 18-65. Die Anmeldung
+ * läuft über PUK Zentrale (058 384 21 11) oder das elektronische
+ * Anmeldeformular auf pukzh.ch. Die 24/7-Notfall-Linien (Erwachsene
+ * 20 00, ab 65 46 82, Kinder 66 66) gehören NICHT in die Diagnostik-Box —
+ * sie sind für akute Krisen reserviert. Jugendliche-Diagnostik läuft über
+ * das HYPE-Programm (058 384 66 00).
  */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
@@ -39,17 +40,16 @@ import { Link } from "wouter";
 // Single-source-of-truth für Kontaktdaten (keine Hardcoding im Markup).
 const fachstelleTel = kontaktByIdStrict("INFO_FACHSTELLE");
 const fachstelleEmail = emailByIdStrict("EMAIL_ANGEHOERIGEN");
-// Christas Vorgabe «PUK Erwachsene: +41 58 384 46 82» entspricht der Nummer
-// im kontakte.ts-Eintrag GELB_PUK_65. Label im sichtbaren Text bewusst auf
-// «PUK Zürich – Erwachsene» gesetzt (nicht «ab 65»), weil Christas Brief
-// die Nummer als allgemeine Erwachsenen-Anmeldung ausweist.
-const pukErwachsene = kontaktByIdStrict("GELB_PUK_65");
+// PUK-Diagnostik-Anmeldung: Zentrale (058 384 21 11), nicht 24/7-Notfall.
+const pukZentrale = kontaktByIdStrict("INFO_PUK_ZENTRALE");
 const hypeZueri = kontaktByIdStrict("INFO_PUK_KJPP_HYPE");
 const ipw = kontaktByIdStrict("INFO_IPW");
+const sanatorium = kontaktByIdStrict("INFO_SANATORIUM_KILCHBERG");
 const pukUrl = urlByIdStrict("URL_PUK");
 const ipwUrl = urlByIdStrict("URL_IPW");
 const sanatoriumUrl = urlByIdStrict("URL_SANATORIUM_KILCHBERG");
 const clieniaUrl = urlByIdStrict("URL_CLIENIA");
+const pukKjpUrl = urlByIdStrict("URL_PUK_KJP_PERSOENLICHKEITSSTOERUNGEN");
 
 /** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
 function openSection(sectionId: string) {
@@ -584,42 +584,24 @@ export default function Diagnostik() {
           <div className="mt-8 space-y-8">
             <article className="space-y-2">
               <h4 style={h4Style}>
-                Psychiatrische Universitätsklinik Zürich (PUK) — Erwachsene
+                Psychiatrische Universitätsklinik Zürich (PUK)
               </h4>
               <p style={bodyStyle}>
-                Anmeldung für Erwachsene über das elektronische Anmeldeformular
-                auf pukzh.ch oder telefonisch.
+                <strong>Erwachsene (18+):</strong> Anmeldung über das
+                elektronische Anmeldeformular auf pukzh.ch oder die Zentrale.
+                <br />
+                <strong>Jugendliche ab 13 Jahren:</strong> über das HYPE
+                ZÜRI-Programm an der Kinder- und Jugendpsychiatrie.
               </p>
               <p
                 className="flex flex-wrap gap-x-6 gap-y-1"
                 style={{ fontSize: "var(--text-md)" }}
               >
-                <a href={`tel:${pukErwachsene.tel}`} className="editorial-link">
-                  Telefon {pukErwachsene.nummer}
+                <a href={`tel:${pukZentrale.tel}`} className="editorial-link">
+                  Zentrale {pukZentrale.nummer}
                 </a>
-                <a
-                  href={pukUrl.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="editorial-link"
-                >
-                  pukzh.ch
-                </a>
-              </p>
-            </article>
-
-            <article className="space-y-2">
-              <h4 style={h4Style}>HYPE Züri — Jugendliche ab 13</h4>
-              <p style={bodyStyle}>
-                Frühinterventions-Programm an der Kinder- und Jugendpsychiatrie
-                der PUK.
-              </p>
-              <p
-                className="flex flex-wrap gap-x-6 gap-y-1"
-                style={{ fontSize: "var(--text-md)" }}
-              >
                 <a href={`tel:${hypeZueri.tel}`} className="editorial-link">
-                  Telefon {hypeZueri.nummer}
+                  HYPE ZÜRI {hypeZueri.nummer}
                 </a>
                 <a
                   href={pukUrl.url}
@@ -665,6 +647,9 @@ export default function Diagnostik() {
                 className="flex flex-wrap gap-x-6 gap-y-1"
                 style={{ fontSize: "var(--text-md)" }}
               >
+                <a href={`tel:${sanatorium.tel}`} className="editorial-link">
+                  Telefon {sanatorium.nummer}
+                </a>
                 <a
                   href={sanatoriumUrl.url}
                   target="_blank"
@@ -727,7 +712,7 @@ export default function Diagnostik() {
               style={{ fontSize: "var(--text-md)" }}
             >
               <a
-                href={pukUrl.url}
+                href={pukKjpUrl.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="editorial-link"

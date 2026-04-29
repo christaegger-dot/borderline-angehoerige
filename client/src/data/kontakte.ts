@@ -319,6 +319,15 @@ export const INFO: Kontakt[] = [
       "Integrierte Psychiatrie Winterthur, Wieshofstrasse 102, 8408 Winterthur",
     sourceRef: "UnterstuetzenTherapie.tsx:29",
   },
+  {
+    id: "INFO_SANATORIUM_KILCHBERG",
+    kategorie: "info",
+    nummer: "044 716 42 42",
+    tel: "+41447164242",
+    label: "Sanatorium Kilchberg",
+    hinweis: "Privatklinik für Psychiatrie und Psychotherapie",
+    sourceRef: "Diagnostik.tsx (Anbieter-Box)",
+  },
 ];
 
 // ─── E-Mail-Adressen ─────────────────────────────────────
@@ -429,6 +438,14 @@ export const URLS: UrlKontakt[] = [
     label: "Sanatorium Kilchberg",
     hinweis: "Privatklinik für Psychiatrie und Psychotherapie",
     sourceRef: "Diagnostik.tsx (Anbieter-Box)",
+  },
+  {
+    id: "URL_PUK_KJP_PERSOENLICHKEITSSTOERUNGEN",
+    url: "https://www.pukzh.ch/unsere-angebote/kinder-und-jugendpsychiatrie/behandlungsschwerpunkte/persoenlichkeitsstoerungen/",
+    label: "PUK KJPP – Persönlichkeitsstörungen / Elterngruppe",
+    hinweis:
+      "Behandlungsschwerpunkt der Kinder- und Jugendpsychiatrie der PUK; hier verortet ist die Eltern-Gruppe für Eltern jugendlicher Betroffener.",
+    sourceRef: "Diagnostik.tsx (Elterngruppen-Hinweis)",
   },
 ];
 

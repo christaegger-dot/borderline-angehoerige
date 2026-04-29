@@ -134,6 +134,17 @@ const quellen: QuelleKategorie[] = [
         link: "https://pubmed.ncbi.nlm.nih.gov/27265691/",
         linkLabel: "PubMed",
       },
+      {
+        autoren: "Zaccaro, A., Piarulli, A., Laurino, M. et al.",
+        jahr: "2018",
+        titel:
+          "How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing",
+        quelle: "Frontiers in Human Neuroscience 12, 353",
+        hinweis:
+          "Systematischer Review zur psychophysiologischen Wirkung langsamer Atmung. Im Body als Beleg dafür referenziert, dass kurze Regulationsübungen akute Anspannung im Körper senken können (Selbstfürsorge).",
+        link: "https://pubmed.ncbi.nlm.nih.gov/30245619/",
+        linkLabel: "PubMed",
+      },
     ],
   },
   {

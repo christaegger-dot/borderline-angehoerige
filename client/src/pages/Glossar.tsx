@@ -72,6 +72,14 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Im Alltag unterstützen",
   },
   {
+    term: "Komorbidität",
+    category: "symptome",
+    definition:
+      "Mehrere Erkrankungen, die gleichzeitig oder nacheinander auftreten. Bei Borderline besonders häufig: Depression, Angststörungen, PTBS, Essstörungen, Substanzgebrauchsstörungen. Der Begriff bedeutet nicht «doppelt schlimm», sondern beschreibt eine Kombination, die behandelt werden kann.",
+    relatedPage: "/begleiterkrankungen",
+    relatedPageTitle: "Begleiterkrankungen",
+  },
+  {
     term: "Mentalisierung",
     category: "therapie",
     definition:

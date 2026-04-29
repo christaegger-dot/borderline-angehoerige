@@ -12,6 +12,7 @@ export interface AppRoute {
 const Home = lazy(() => import("@/pages/Home"));
 const Verstehen = lazy(() => import("@/pages/Verstehen"));
 const Diagnostik = lazy(() => import("@/pages/Diagnostik"));
+const Begleiterkrankungen = lazy(() => import("@/pages/Begleiterkrankungen"));
 const UnterstuetzenUebersicht = lazy(
   () => import("@/pages/UnterstuetzenUebersicht")
 );
@@ -46,6 +47,11 @@ export const routes: AppRoute[] = [
   { path: "/", component: Home },
   { path: "/verstehen", component: Verstehen, requiresMotion: true },
   { path: "/diagnostik", component: Diagnostik, requiresMotion: true },
+  {
+    path: "/begleiterkrankungen",
+    component: Begleiterkrankungen,
+    requiresMotion: true,
+  },
   { path: "/unterstuetzen", redirectTo: "/unterstuetzen/uebersicht" },
   {
     path: "/unterstuetzen/uebersicht",

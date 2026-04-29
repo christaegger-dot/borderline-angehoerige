@@ -96,6 +96,17 @@ const quellen: QuelleKategorie[] = [
         linkLabel: "PubMed",
       },
       {
+        autoren: "Bateman, A. & Fonagy, P.",
+        jahr: "2009",
+        titel:
+          "Randomized controlled trial of outpatient mentalization-based treatment versus structured clinical management for borderline personality disorder",
+        quelle: "American Journal of Psychiatry 166(12), 1355–1364",
+        hinweis:
+          "Zentrale RCT-Wirksamkeitsstudie für ambulante Mentalisierungs-basierte Therapie (MBT). 134 Teilnehmer:innen, 18 Monate. Beide Verglichenen Bedingungen verbessern sich; MBT-Gruppe zeigt steileren Rückgang von Suizidversuchen, Selbstverletzung, Hospitalisierungen und selbstberichteten Symptomen. Aktualisierungs-Quelle zum älteren Bateman/Fonagy-2004-Eintrag in der Therapie-Kategorie.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/19833787/",
+        linkLabel: "PubMed",
+      },
+      {
         autoren: "Linehan, M. M.",
         jahr: "1993",
         titel:

@@ -96,6 +96,16 @@ const quellen: QuelleKategorie[] = [
         linkLabel: "PubMed",
       },
       {
+        autoren: "Gunderson, J. G., Berkowitz, C. & Ruiz-Sancho, A.",
+        jahr: "1997",
+        titel: "Families of borderline patients: a psychoeducational approach",
+        quelle: "Bulletin of the Menninger Clinic 61(4), 446–457",
+        hinweis:
+          "Peer-reviewed Studie zur psychoedukativen Familienarbeit bei BPS. Wissenschaftliche Grundlage des später entwickelten NEABPD-Manuals «Family Guidelines» (siehe Eintrag in «Versorgungs-Materialien & Praxis-Manuale»).",
+        link: "https://pubmed.ncbi.nlm.nih.gov/9401149/",
+        linkLabel: "PubMed",
+      },
+      {
         autoren: "Bateman, A. & Fonagy, P.",
         jahr: "2009",
         titel:
@@ -293,6 +303,17 @@ const quellen: QuelleKategorie[] = [
           "Versorgungs-Material des Project Air Strategy-Programms (australisches Forschungs- und Versorgungsangebot zu Persönlichkeitsstörungen). Online frei verfügbar. In Handout-Materialien zu Selbstverletzung und Suizidgedanken referenziert.",
         link: "https://www.projectairstrategy.org/",
         linkLabel: "projectairstrategy.org",
+      },
+      {
+        autoren: "Berkowitz, C. & Gunderson, J. G.",
+        jahr: "laufend (URL-Snapshot 2011)",
+        titel: "Family Guidelines for Borderline Personality Disorder",
+        quelle:
+          "National Education Alliance for Borderline Personality Disorder (NEABPD; Manual frei online)",
+        hinweis:
+          "Praxis-Manual für Angehörige, basiert auf der psychoedukativen Forschungsarbeit der Autor:innen (siehe Gunderson, Berkowitz & Ruiz-Sancho, 1997). NEABPD ist seit 2024 in BPD Alliance umbenannt; die ursprüngliche Manualversion ist weiterhin auf der alten Domain verfügbar.",
+        link: "https://www.borderlinepersonalitydisorder.org/wp-content/uploads/2011/08/Family-Guidelines-standard.pdf",
+        linkLabel: "PDF auf NEABPD-Archiv",
       },
     ],
   },

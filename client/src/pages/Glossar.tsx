@@ -80,6 +80,17 @@ const glossaryTerms: GlossaryTerm[] = [
       "Wenn jemand mentalisiert, denkt er: 'Sie ist vielleicht gereizt, weil sie einen stressigen Tag hatte' – statt: 'Sie hasst mich'.",
   },
   {
+    term: "Übertragungsfokussierte Psychotherapie",
+    abbreviation: "TFP",
+    category: "therapie",
+    definition:
+      "Eine evidenzbasierte Psychotherapie für Borderline, entwickelt von Otto Kernberg und Mitarbeitenden. TFP arbeitet mit dem Beziehungserleben in der therapeutischen Beziehung selbst: innere Konflikte werden im «Hier und Jetzt» zwischen Therapeut:in und Patient:in sichtbar und können dort bearbeitet werden. In der Schweizer Versorgungsrealität weniger verbreitet als DBT, aber als evidenzbasierte Therapie etabliert.",
+    example:
+      "Wenn eine Patientin in der Therapie wechselnd Idealisierung und Entwertung der Therapeutin erlebt, wird genau diese Schwankung zum Bearbeitungs-Material — als gelebte Form innerer Spaltung.",
+    relatedPage: "/unterstuetzen/therapie",
+    relatedPageTitle: "Therapie unterstützen",
+  },
+  {
     term: "Remission",
     category: "therapie",
     definition:

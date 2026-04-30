@@ -3,12 +3,15 @@
 ## Rollen
 
 Fachverantwortung
+
 - prüft medizinische Inhalte
 
 Redaktion
+
 - sorgt für Verständlichkeit
 
 Technik
+
 - Deployment und Sicherheit
 
 ## Minimalregel

@@ -45,6 +45,12 @@ const DEFAULT_STRATEGIES: CalmingStrategy[] = [
   { id: "s3", text: "Kaltes Wasser über die Handgelenke laufen lassen" },
 ];
 
+const EMPTY_DATA: NotfallkarteData = {
+  personalContacts: [],
+  calmingStrategies: DEFAULT_STRATEGIES,
+  notes: "",
+};
+
 function createId() {
   return Math.random().toString(36).slice(2, 9);
 }
@@ -60,11 +66,7 @@ function loadData(): NotfallkarteData {
   } catch {
     /* ignore corrupt data */
   }
-  return {
-    personalContacts: [],
-    calmingStrategies: DEFAULT_STRATEGIES,
-    notes: "",
-  };
+  return EMPTY_DATA;
 }
 
 function isStorageAvailable(): boolean {
@@ -81,6 +83,16 @@ function isStorageAvailable(): boolean {
 function saveData(data: NotfallkarteData): boolean {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function deleteStoredData(): boolean {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+    sessionStorage.removeItem("notfallkarte-print-data");
     return true;
   } catch {
     return false;
@@ -260,6 +272,24 @@ export default function Notfallkarte() {
     if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
     savedTimerRef.current = setTimeout(() => setSaved(false), 2000);
   }, [data]);
+
+  const handleDeleteData = useCallback(() => {
+    const confirmed = window.confirm(
+      "Lokale Notfallkarten-Daten auf diesem Gerät löschen?"
+    );
+
+    if (!confirmed) return;
+
+    if (deleteStoredData()) {
+      if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
+      setData(EMPTY_DATA);
+      setAnnouncement("Lokale Notfallkarten-Daten wurden gelöscht.");
+      setSaved(false);
+    } else {
+      setStorageError(true);
+      setAnnouncement("Daten konnten nicht gelöscht werden.");
+    }
+  }, []);
 
   const handlePrint = useCallback(() => {
     try {
@@ -640,14 +670,22 @@ export default function Notfallkarte() {
           >
             {saved ? "Gespeichert ✓" : "Im Browser speichern"}
           </SecondaryButton>
+          <SecondaryButton
+            onClick={handleDeleteData}
+            ariaLabel="Lokale Notfallkarten-Daten löschen"
+          >
+            Daten löschen
+          </SecondaryButton>
         </div>
         <EditorialSection rule>
           <EditorialProse>
             <p>
-              <strong>Ihre Daten bleiben bei Ihnen.</strong> Alle Angaben werden
-              nur lokal in Ihrem Browser gespeichert – sie verlassen nie Ihr
-              Gerät. Beim Drucken oder PDF-Export werden Ihre persönlichen
-              Einträge mit ausgegeben.
+              <strong>Ihre Daten bleiben auf diesem Gerät.</strong> Alle Angaben
+              werden nur lokal in Ihrem Browser gespeichert und verlassen Ihr
+              Gerät nicht. Auf gemeinsam genutzten Geräten können andere
+              Personen diese Einträge sehen. Nutzen Sie «Daten löschen», wenn
+              die Notfallkarte nicht auf diesem Gerät bleiben soll. Beim Drucken
+              oder PDF-Export werden Ihre persönlichen Einträge mit ausgegeben.
             </p>
           </EditorialProse>
         </EditorialSection>

@@ -16,12 +16,10 @@ const SITE_URL = (import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(
   /\/+$/,
   ""
 );
-// Build-time date: set VITE_MEDICAL_LAST_REVIEWED in CI or .env to pin.
-// Fallback: the date of the build (Vite inlines import.meta.env at build).
+
+// Medical content must define review dates explicitly.
 const MEDICAL_LAST_REVIEWED =
-  import.meta.env.VITE_MEDICAL_LAST_REVIEWED ||
-  import.meta.env.VITE_BUILD_DATE ||
-  new Date().toISOString().slice(0, 10);
+  import.meta.env.VITE_MEDICAL_LAST_REVIEWED || null;
 
 const buildOgImageUrl = (siteUrl = SITE_URL) => `${siteUrl}/og-image.jpg`;
 
@@ -98,7 +96,7 @@ export function buildMedicalPageSchemaData({
       "@type": "PeopleAudience",
       audienceType: "Angehörige von Menschen mit Borderline-Muster",
     },
-    lastReviewed: MEDICAL_LAST_REVIEWED,
+    ...(MEDICAL_LAST_REVIEWED && { lastReviewed: MEDICAL_LAST_REVIEWED }),
     medicalAudience: {
       "@type": "MedicalAudience",
       audienceType: "Caregiver",

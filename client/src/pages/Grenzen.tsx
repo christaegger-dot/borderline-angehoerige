@@ -26,6 +26,7 @@ import GrenzenCheck from "@/components/interactive/GrenzenCheck";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { grenzenItems } from "@/content/grenzen";
@@ -206,6 +207,7 @@ export default function Grenzen() {
             Vollständig ca. 12 Min · Auch abschnittweise lesbar.
           </p>
           <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+          <ReviewBadge path="/grenzen" />
         </header>
 
         {/* ── Intro: Was auf dieser Seite besonders wichtig ist (Variante A) ── */}

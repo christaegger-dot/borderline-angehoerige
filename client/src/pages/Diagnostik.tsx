@@ -28,6 +28,7 @@ import {
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import {
@@ -186,6 +187,7 @@ export default function Diagnostik() {
           >
             Vollständig ca. 10 Min · Auch abschnittweise lesbar.
           </p>
+          <ReviewBadge path="/diagnostik" />
         </header>
 
         {/* ── Intro / Überblick ── */}

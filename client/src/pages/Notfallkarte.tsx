@@ -4,43 +4,6 @@
  *
  * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
  * «Page 9 — Notfallkarte».
- *
- * Form-Editor mit localStorage-Persistenz. Funktional-Logik komplett
- * unverändert: 6 Content-Blöcke (Notfallnummern / PUK-Krise / Jemand
- * zum Reden / Persönliche Kontakte / Beruhigungsstrategien /
- * Persönliche Notizen), Auto-Save bei jeder Änderung, Save-Button mit
- * Toast-Bestätigung, Print über window.open auf separate
- * `/notfallkarte-print.html` (Brief: separate Standalone-Datei wird
- * NICHT angefasst).
- *
- *   ── localStorage-Fallback-Warnung ──
- *   Vorher: fixed top-0 banner mit `bg-sand-accent` (volle Hintergrund-
- *   fläche).
- *   Editorial: border-l-4 mit --color-alert + dezenter
- *   --color-alert-wash bg, analog Wegweiser-safetyCritical. Position
- *   bleibt fixed top-0 (sicherheits-funktional: muss bei jedem Scroll
- *   sichtbar sein, sonst verliert User seine Eingaben unbemerkt).
- *   Begründung: dezent + sichtbar — Standardfall ist localStorage
- *   funktioniert (Banner soll dann nicht erscheinen), aber im Fallback
- *   muss er prominent genug sein, um Datenverlust zu verhindern.
- *
- *   ── Print-CSS-Pfad ──
- *   Alle `print:`-Tailwind-Klassen erhalten:
- *     - `print:hidden` für interaktive UI (Trash-Buttons, Hinzufügen,
- *       Action-Buttons, Banner-Warnung, Hero-Buttons)
- *     - `print:break-inside-avoid` für die 6 Content-Blöcke
- *     - `print:bg-none print:py-2 print:pb-2` für Hero (kein Gradient
- *       beim Druck)
- *     - `print:border-b print:border-t-0 print:border-l-0
- *       print:border-r-0 print:rounded-none print:px-0 print:py-0.5`
- *       für Form-Inputs (klassische Linien-Inputs beim Druck)
- *     - `print:text-base / print:text-2xl / print:text-sm` für
- *       responsive H-Sizes
- *     - `hidden print:block` für leere Kontakt-Linien beim Druck
- *     - `notfallkarte-print` Wrapper-Klasse
- *   Beim direkten Browser-Druck (Ctrl+P) erscheint die Karte ohne
- *   Editor-UI. (Standardfall: User klickt «Drucken» → öffnet
- *   `notfallkarte-print.html` in neuem Tab.)
  */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
@@ -51,6 +14,7 @@ import {
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import { ROT, GELB, GRUEN, type Kontakt } from "@/data/kontakte";
 import { Link } from "wouter";
@@ -123,8 +87,6 @@ function saveData(data: NotfallkarteData): boolean {
   }
 }
 
-// ─── Editorial-Style Konstanten ──────────────────────────
-
 const labelStyle = {
   fontSize: "var(--text-xs)",
   letterSpacing: "var(--tracking-caps)",
@@ -140,8 +102,6 @@ const inputStyle = {
   backgroundColor: "var(--bg-elevated)",
   color: "var(--fg-primary)",
 } as const;
-
-// ─── Sub-components ──────────────────────────────────────
 
 function EmergencyRow({ kontakt }: { kontakt: Kontakt }) {
   return (
@@ -274,8 +234,6 @@ function PersonalContactRow({
   );
 }
 
-// ─── Main page ───────────────────────────────────────────
-
 export default function Notfallkarte() {
   const [data, setData] = useState<NotfallkarteData>(loadData);
   const [saved, setSaved] = useState(false);
@@ -286,16 +244,15 @@ export default function Notfallkarte() {
   useEffect(() => {
     if (!isStorageAvailable()) setStorageError(true);
   }, []);
-
   useEffect(() => {
     if (!saveData(data)) setStorageError(true);
   }, [data]);
-
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
-    };
-  }, []);
+    },
+    []
+  );
 
   const handleSave = useCallback(() => {
     saveData(data);
@@ -308,7 +265,7 @@ export default function Notfallkarte() {
     try {
       sessionStorage.setItem("notfallkarte-print-data", JSON.stringify(data));
     } catch {
-      /* ignore – Print-Seite fällt auf leere Felder zurück */
+      /* ignore */
     }
     window.open("/notfallkarte-print.html", "_blank");
   }, [data]);
@@ -323,16 +280,16 @@ export default function Notfallkarte() {
     }));
     setAnnouncement("Kontakt hinzugefügt");
   }, []);
-
-  const updateContact = useCallback((updated: PersonalContact) => {
-    setData(prev => ({
-      ...prev,
-      personalContacts: prev.personalContacts.map(c =>
-        c.id === updated.id ? updated : c
-      ),
-    }));
-  }, []);
-
+  const updateContact = useCallback(
+    (updated: PersonalContact) =>
+      setData(prev => ({
+        ...prev,
+        personalContacts: prev.personalContacts.map(c =>
+          c.id === updated.id ? updated : c
+        ),
+      })),
+    []
+  );
   const removeContact = useCallback((id: string) => {
     setData(prev => ({
       ...prev,
@@ -340,32 +297,31 @@ export default function Notfallkarte() {
     }));
     setAnnouncement("Kontakt entfernt");
   }, []);
-
   const MAX_STRATEGIES = 4;
-
   const addStrategy = useCallback(() => {
-    setData(prev => {
-      if (prev.calmingStrategies.length >= MAX_STRATEGIES) return prev;
-      return {
-        ...prev,
-        calmingStrategies: [
-          ...prev.calmingStrategies,
-          { id: createId(), text: "" },
-        ],
-      };
-    });
+    setData(prev =>
+      prev.calmingStrategies.length >= MAX_STRATEGIES
+        ? prev
+        : {
+            ...prev,
+            calmingStrategies: [
+              ...prev.calmingStrategies,
+              { id: createId(), text: "" },
+            ],
+          }
+    );
     setAnnouncement("Strategie hinzugefügt");
   }, []);
-
-  const updateStrategy = useCallback((id: string, text: string) => {
-    setData(prev => ({
-      ...prev,
-      calmingStrategies: prev.calmingStrategies.map(s =>
-        s.id === id ? { ...s, text } : s
-      ),
-    }));
-  }, []);
-
+  const updateStrategy = useCallback(
+    (id: string, text: string) =>
+      setData(prev => ({
+        ...prev,
+        calmingStrategies: prev.calmingStrategies.map(s =>
+          s.id === id ? { ...s, text } : s
+        ),
+      })),
+    []
+  );
   const removeStrategy = useCallback((id: string) => {
     setData(prev => ({
       ...prev,
@@ -381,18 +337,9 @@ export default function Notfallkarte() {
         description="Erstellen Sie Ihre persönliche Notfallkarte mit den wichtigsten Nummern, Kontaktpersonen und Beruhigungsstrategien – zum Ausdrucken oder Speichern."
         path="/notfallkarte"
       />
-
-      {/* A11y: announce add/remove actions to screen readers */}
       <div role="status" aria-live="polite" className="sr-only">
         {announcement}
       </div>
-
-      {/*
-        localStorage-Fallback-Warnung: dezent (border-l-4 + alert-wash),
-        aber sicherheits-funktional fixed top-0 (User darf Eingaben nicht
-        unbemerkt verlieren). Im Standardfall (storage funktioniert)
-        erscheint dieser Banner gar nicht.
-      */}
       {storageError && (
         <div
           role="alert"
@@ -423,9 +370,7 @@ export default function Notfallkarte() {
           </p>
         </div>
       )}
-
       <EditorialLayout width="narrow">
-        {/* ── Hero ── */}
         <header className="pb-12 pt-16 md:pb-16 md:pt-24 print:hidden">
           <p
             className="text-xs uppercase"
@@ -477,23 +422,19 @@ export default function Notfallkarte() {
               Situations-Wegweiser
             </Link>
           </p>
+          <ReviewBadge path="/notfallkarte" />
         </header>
-
-        {/* ── Hairline-Trenner Editorial-Hero → funktionales Tool ── */}
         <hr
           className="border-0 border-t print:hidden"
           style={{ borderColor: "var(--rule-color)" }}
         />
-
-        {/* ── Karten-Inhalt (printable) ── */}
         <div className="notfallkarte-print mt-12 space-y-12 print:mt-0 print:space-y-3">
-          {/* BLOCK 1: Notfallnummern */}
           <section className="space-y-3 print:break-inside-avoid">
             <p className="uppercase" style={labelStyle}>
               Notfallnummern
             </p>
             <h2
-              className="font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+              className="font-display print:text-base"
               style={{
                 fontSize: "var(--text-lg)",
                 fontWeight: "var(--weight-display)",
@@ -509,14 +450,12 @@ export default function Notfallkarte() {
               ))}
             </div>
           </section>
-
-          {/* BLOCK 2: Psychiatrische Krise */}
           <section className="space-y-3 print:break-inside-avoid">
             <p className="uppercase" style={labelStyle}>
               Psychiatrische Krise
             </p>
             <h2
-              className="font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+              className="font-display print:text-base"
               style={{
                 fontSize: "var(--text-lg)",
                 fontWeight: "var(--weight-display)",
@@ -532,14 +471,12 @@ export default function Notfallkarte() {
               ))}
             </div>
           </section>
-
-          {/* BLOCK 3: Jemand zum Reden */}
           <section className="space-y-3 print:break-inside-avoid">
             <p className="uppercase" style={labelStyle}>
               Beratung
             </p>
             <h2
-              className="font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+              className="font-display print:text-base"
               style={{
                 fontSize: "var(--text-lg)",
                 fontWeight: "var(--weight-display)",
@@ -555,8 +492,6 @@ export default function Notfallkarte() {
               ))}
             </div>
           </section>
-
-          {/* BLOCK 4: Persönliche Kontakte */}
           <section className="space-y-3 print:break-inside-avoid">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -564,7 +499,7 @@ export default function Notfallkarte() {
                   Eigene Einträge
                 </p>
                 <h2
-                  className="mt-1 font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+                  className="mt-1 font-display print:text-base"
                   style={{
                     fontSize: "var(--text-lg)",
                     fontWeight: "var(--weight-display)",
@@ -582,7 +517,6 @@ export default function Notfallkarte() {
                 + Hinzufügen
               </SecondaryButton>
             </div>
-
             {data.personalContacts.length === 0 ? (
               <p
                 className="print:hidden"
@@ -607,46 +541,7 @@ export default function Notfallkarte() {
                 ))}
               </div>
             )}
-
-            {/* Print-only: empty lines if no contacts */}
-            {data.personalContacts.length === 0 && (
-              <div className="mt-2 hidden space-y-3 print:block">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="grid grid-cols-3 gap-4">
-                    <div
-                      className="border-b py-2 text-xs"
-                      style={{
-                        borderColor: "var(--rule-color)",
-                        color: "var(--fg-tertiary)",
-                      }}
-                    >
-                      Name
-                    </div>
-                    <div
-                      className="border-b py-2 text-xs"
-                      style={{
-                        borderColor: "var(--rule-color)",
-                        color: "var(--fg-tertiary)",
-                      }}
-                    >
-                      Telefon
-                    </div>
-                    <div
-                      className="border-b py-2 text-xs"
-                      style={{
-                        borderColor: "var(--rule-color)",
-                        color: "var(--fg-tertiary)",
-                      }}
-                    >
-                      Beziehung
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
           </section>
-
-          {/* BLOCK 5: Beruhigungsstrategien */}
           <section className="space-y-3 print:break-inside-avoid">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -654,7 +549,7 @@ export default function Notfallkarte() {
                   Eigene Einträge
                 </p>
                 <h2
-                  className="mt-1 font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+                  className="mt-1 font-display print:text-base"
                   style={{
                     fontSize: "var(--text-lg)",
                     fontWeight: "var(--weight-display)",
@@ -669,11 +564,6 @@ export default function Notfallkarte() {
                 onClick={addStrategy}
                 disabled={data.calmingStrategies.length >= MAX_STRATEGIES}
                 ariaLabel="Strategie hinzufügen"
-                title={
-                  data.calmingStrategies.length >= MAX_STRATEGIES
-                    ? "Maximal 4 Strategien – passend zur Druckseite"
-                    : undefined
-                }
               >
                 + Hinzufügen
               </SecondaryButton>
@@ -714,14 +604,12 @@ export default function Notfallkarte() {
               ))}
             </ol>
           </section>
-
-          {/* BLOCK 6: Persönliche Notizen */}
           <section className="space-y-3 print:break-inside-avoid">
             <p className="uppercase" style={labelStyle}>
               Eigene Einträge
             </p>
             <h2
-              className="font-display print:text-base print:!mt-0 print:!mb-0 print:!pb-0 print:!border-none"
+              className="font-display print:text-base"
               style={{
                 fontSize: "var(--text-lg)",
                 fontWeight: "var(--weight-display)",
@@ -744,8 +632,6 @@ export default function Notfallkarte() {
             />
           </section>
         </div>
-
-        {/* ── Aktions-Buttons (Save + Print) ── */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3 print:hidden">
           <PrimaryButton onClick={handlePrint}>Drucken / Als PDF</PrimaryButton>
           <SecondaryButton
@@ -755,8 +641,6 @@ export default function Notfallkarte() {
             {saved ? "Gespeichert ✓" : "Im Browser speichern"}
           </SecondaryButton>
         </div>
-
-        {/* ── Datenschutz-Hinweis ── */}
         <EditorialSection rule>
           <EditorialProse>
             <p>
@@ -767,7 +651,6 @@ export default function Notfallkarte() {
             </p>
           </EditorialProse>
         </EditorialSection>
-
         <RelatedLinksEditorial
           links={[
             {

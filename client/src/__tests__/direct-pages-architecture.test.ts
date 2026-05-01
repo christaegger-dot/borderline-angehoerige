@@ -42,6 +42,7 @@ describe("direct pages architecture", () => {
       "utf8"
     );
 
+    expect(redirects).toContain("/notfallkarte.html    /notfallkarte   301!");
     expect(redirects).toContain(
       "/soforthilfe    /soforthilfe/index.html   200!"
     );
@@ -58,6 +59,7 @@ describe("direct pages architecture", () => {
       "utf8"
     );
 
+    expect(serverIndex).toContain("STATIC_ROUTE_REDIRECTS");
     expect(serverIndex).toContain("getStaticHtmlCandidates");
     expect(serverIndex).toContain('path.join(staticPath, "404.html")');
   });

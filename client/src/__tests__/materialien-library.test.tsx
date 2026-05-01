@@ -37,6 +37,11 @@ describe("MaterialienLibrarySection", () => {
     expect(localDownloadLink).toHaveAttribute("download", "");
     expect(
       screen.getByRole("link", {
+        name: /Notfallkarte Zürich – Psychische Krise öffnen/i,
+      })
+    ).toHaveAttribute("href", "/notfallkarte");
+    expect(
+      screen.getByRole("link", {
         name: /Textversion lesen: Notfallplan Krise – Suizidgedanken & Selbstverletzung/i,
       })
     ).toHaveAttribute("href", "/materialien/text/notfallplan-krise");

@@ -2,6 +2,7 @@ import {
   resolveHandoutAsset,
   type HandoutDisposition,
 } from "../client/src/content/handouts";
+import { SECURITY_HEADERS } from "../shared/securityHeaders";
 
 export async function createMaterialDownloadResponse(
   id: string,
@@ -9,7 +10,7 @@ export async function createMaterialDownloadResponse(
 ) {
   const download = resolveHandoutAsset(id);
   if (!download) {
-    return new Response("Material nicht gefunden.", { status: 404 });
+    return createTextResponse("Material nicht gefunden.", 404);
   }
 
   try {
@@ -20,10 +21,10 @@ export async function createMaterialDownloadResponse(
     });
 
     if (!upstream.ok || !upstream.body) {
-      return new Response("Download derzeit nicht verfügbar.", { status: 502 });
+      return createTextResponse("Download derzeit nicht verfügbar.", 502);
     }
 
-    const headers = new Headers();
+    const headers = createSecurityHeaders();
     headers.set(
       "Content-Type",
       upstream.headers.get("content-type") ?? "application/pdf"
@@ -48,11 +49,28 @@ export async function createMaterialDownloadResponse(
       headers,
     });
   } catch {
-    return new Response("Download derzeit nicht verfügbar.", { status: 502 });
+    return createTextResponse("Download derzeit nicht verfügbar.", 502);
   }
 }
 
 function contentDisposition(fileName: string, disposition: HandoutDisposition) {
   const encodedName = encodeURIComponent(fileName);
   return `${disposition}; filename="${fileName}"; filename*=UTF-8''${encodedName}`;
+}
+
+function createSecurityHeaders() {
+  const headers = new Headers();
+
+  for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
+    headers.set(header, value);
+  }
+
+  return headers;
+}
+
+function createTextResponse(body: string, status: number) {
+  const headers = createSecurityHeaders();
+  headers.set("Content-Type", "text/plain; charset=utf-8");
+
+  return new Response(body, { status, headers });
 }

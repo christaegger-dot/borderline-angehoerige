@@ -23,6 +23,7 @@ export interface StaticRouteHeadMetadata {
 }
 
 export const STATIC_ROUTE_REDIRECTS = [
+  { from: "/notfallkarte.html", to: "/notfallkarte", status: 301 },
   { from: "/notfall", to: "/soforthilfe", status: 301 },
   { from: "/unterstuetzen", to: "/unterstuetzen/uebersicht", status: 301 },
   { from: "/selbsthilfegruppen", to: "/beratung", status: 301 },

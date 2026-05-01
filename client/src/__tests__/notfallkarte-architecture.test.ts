@@ -69,4 +69,21 @@ describe("notfallkarte architecture", () => {
     expect(soforthilfePrint).not.toContain("044 296 73 00");
     expect(soforthilfePrint).not.toContain("058 384 27 00");
   });
+
+  it("keeps the static browser card responsive without scaled mobile hitboxes", () => {
+    const browserCardStyles = fs.readFileSync(
+      path.join(repoRoot, "client/public/notfallkarte.css"),
+      "utf8"
+    );
+    const browserCardScript = fs.readFileSync(
+      path.join(repoRoot, "client/public/notfallkarte.js"),
+      "utf8"
+    );
+
+    expect(browserCardStyles).toContain("@media (max-width: 860px)");
+    expect(browserCardStyles).toContain("transform: none !important;");
+    expect(browserCardStyles).toContain("grid-template-columns: 1fr;");
+    expect(browserCardScript).toContain("RESPONSIVE_BREAKPOINT = 860");
+    expect(browserCardScript).toContain('pageWrapper.style.transform = "";');
+  });
 });

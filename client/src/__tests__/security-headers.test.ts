@@ -1,7 +1,8 @@
+import { createMaterialDownloadResponse } from "../../../server/material-download";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   CONTENT_SECURITY_POLICY,
   SECURITY_HEADERS,
@@ -12,6 +13,11 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "../../..");
 
 describe("security headers", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+    vi.unstubAllGlobals();
+  });
+
   it("keeps Netlify headers aligned with the shared server header set", () => {
     const netlifyConfig = fs.readFileSync(
       path.join(repoRoot, "netlify.toml"),
@@ -35,5 +41,34 @@ describe("security headers", () => {
     expect(CONTENT_SECURITY_POLICY).toContain("script-src 'self'");
     expect(CONTENT_SECURITY_POLICY).toContain("connect-src 'self'");
     expect(CONTENT_SECURITY_POLICY).not.toContain("forge.butterfly-effect.dev");
+  });
+
+  it("applies the shared security headers to material download responses", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue(
+        new Response("pdf", {
+          status: 200,
+          headers: {
+            "content-type": "application/pdf",
+            "cache-control": "public, max-age=600",
+            "content-length": "3",
+          },
+        })
+      )
+    );
+
+    const response = await createMaterialDownloadResponse(
+      "leuchtturm",
+      "inline"
+    );
+
+    expect(response.status).toBe(200);
+    for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
+      expect(response.headers.get(header)).toBe(value);
+    }
+    expect(response.headers.get("Content-Type")).toBe("application/pdf");
+    expect(response.headers.get("Cache-Control")).toBe("public, max-age=600");
+    expect(response.headers.get("Content-Disposition")).toContain("inline;");
   });
 });

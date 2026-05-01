@@ -29,8 +29,8 @@
 
 [[redirects]]
   from = "/notfallkarte.html"
-  to = "/notfallkarte.html"
-  status = 200
+  to = "/notfallkarte"
+  status = 301
   force = true
 
 [[redirects]]

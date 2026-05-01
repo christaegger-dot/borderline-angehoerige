@@ -1,7 +1,15 @@
 (function () {
+  const RESPONSIVE_BREAKPOINT = 860;
+
   function scaleToFit() {
     const pageWrapper = document.getElementById("pw");
     if (!pageWrapper) return;
+
+    if (window.matchMedia(`(max-width: ${RESPONSIVE_BREAKPOINT}px)`).matches) {
+      pageWrapper.style.transform = "";
+      pageWrapper.style.marginBottom = "0";
+      return;
+    }
 
     const pageWidth = 210 * 3.7795; // mm to px at 96dpi
     const availableWidth = window.innerWidth - 40;

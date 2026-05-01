@@ -106,6 +106,8 @@ describe("handout text versions", () => {
     );
 
     expect(notfallkarte?.isHtml).toBe(true);
+    expect(notfallkarte?.url).toBe("/notfallkarte");
+    expect(notfallkarte?.downloadUrl).toBe("/notfallkarte");
     expect(getHandoutTextVersionHrefBySource(notfallkarte?.pdfUrl)).toBeNull();
   });
 });

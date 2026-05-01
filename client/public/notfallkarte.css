@@ -396,3 +396,99 @@ a.pill {
   color: inherit;
   text-decoration: none;
 }
+
+/* ── RESPONSIVE DIRECT-VIEW ─────────────── */
+@media (max-width: 860px) {
+  body {
+    padding: 12px;
+    display: block;
+  }
+
+  .page-wrapper {
+    width: 100%;
+    transform: none !important;
+    margin-bottom: 0 !important;
+  }
+
+  .page {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .header,
+  .footer,
+  .b4 .block-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header,
+  .block-header,
+  .block-body,
+  .footer,
+  .b4 .block-body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header-title,
+  .header-meta,
+  .block-header,
+  .block-title {
+    white-space: normal;
+  }
+
+  .header-meta,
+  .footer-right,
+  .b4-wann {
+    text-align: left;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .header-btn {
+    min-height: 44px;
+    flex: 1 1 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .block {
+    flex: 0 0 auto;
+  }
+
+  .block-header {
+    gap: 10px;
+  }
+
+  .block-body {
+    gap: 12px;
+  }
+
+  .pills,
+  .b1 .pills {
+    grid-template-columns: 1fr;
+  }
+
+  .pill {
+    min-height: 96px;
+    padding: 12px 10px;
+  }
+
+  .b4-wann {
+    max-width: none;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+}

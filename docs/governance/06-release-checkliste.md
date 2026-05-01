@@ -77,7 +77,7 @@ Vor Release systematisch prüfen:
 Besonderes Augenmerk:
 
 - SPA-Routen
-- statische Sonderseiten wie `/soforthilfe` und `/notfallkarte.html`
+- statische Sonderseiten wie `/soforthilfe` und `/notfallkarte`
 - Material-Download-Proxy `/api/material-download/:id`
 
 ### PDF- und Download-Audit
@@ -144,7 +144,7 @@ Vor Release bewusst testen:
 - Reload
 - Löschen
 - Druckansicht
-- `sessionStorage`-Übergabe ans Print-Template
+- `localStorage`-Übergabe ans Print-Template
 - Zurück / Vorwärts
 - Fokus nach Dialog oder Menü
 - Such-Overlay

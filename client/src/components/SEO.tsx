@@ -36,6 +36,34 @@ export {
   buildWebsiteSchemaData,
 };
 
+function findSchemaScripts(schemaKey: string) {
+  return Array.from(
+    document.querySelectorAll(
+      `script[data-schema="${schemaKey}"], script[data-static-schema="${schemaKey}"]`
+    )
+  ) as HTMLScriptElement[];
+}
+
+function upsertSchemaScript(schemaKey: string, schema: unknown) {
+  const scripts = findSchemaScripts(schemaKey);
+  const primary = scripts[0] ?? document.createElement("script");
+
+  if (!scripts[0]) {
+    primary.setAttribute("type", "application/ld+json");
+    document.head.appendChild(primary);
+  }
+
+  primary.setAttribute("data-schema", schemaKey);
+  primary.removeAttribute("data-static-schema");
+  primary.textContent = JSON.stringify(schema);
+
+  for (const duplicate of scripts.slice(1)) {
+    duplicate.remove();
+  }
+
+  return primary;
+}
+
 export default function SEO({
   title,
   description,
@@ -109,14 +137,7 @@ export function WebsiteSchema() {
     const siteUrl = getSiteUrl();
     const schema = buildWebsiteSchemaData(siteUrl);
 
-    let el = document.querySelector('script[data-schema="website"]');
-    if (!el) {
-      el = document.createElement("script");
-      el.setAttribute("type", "application/ld+json");
-      el.setAttribute("data-schema", "website");
-      document.head.appendChild(el);
-    }
-    el.textContent = JSON.stringify(schema);
+    const el = upsertSchemaScript("website", schema);
     return () => {
       el?.remove();
     };
@@ -151,14 +172,7 @@ export function MedicalPageSchema({
   );
 
   useEffect(() => {
-    let el = document.querySelector(`script[data-schema="medical-${path}"]`);
-    if (!el) {
-      el = document.createElement("script");
-      el.setAttribute("type", "application/ld+json");
-      el.setAttribute("data-schema", `medical-${path}`);
-      document.head.appendChild(el);
-    }
-    el.textContent = JSON.stringify(schema);
+    const el = upsertSchemaScript(`medical-${path}`, schema);
     return () => {
       el?.remove();
     };
@@ -177,14 +191,7 @@ export function BreadcrumbSchema({
 
   useEffect(() => {
     const key = items.map(i => i.url).join("-");
-    let el = document.querySelector(`script[data-schema="breadcrumb-${key}"]`);
-    if (!el) {
-      el = document.createElement("script");
-      el.setAttribute("type", "application/ld+json");
-      el.setAttribute("data-schema", `breadcrumb-${key}`);
-      document.head.appendChild(el);
-    }
-    el.textContent = JSON.stringify(schema);
+    const el = upsertSchemaScript(`breadcrumb-${key}`, schema);
     return () => {
       el?.remove();
     };
@@ -202,14 +209,7 @@ export function FAQSchema({
   const schema = useMemo(() => buildFAQSchemaData(questions), [questions]);
 
   useEffect(() => {
-    let el = document.querySelector('script[data-schema="faq"]');
-    if (!el) {
-      el = document.createElement("script");
-      el.setAttribute("type", "application/ld+json");
-      el.setAttribute("data-schema", "faq");
-      document.head.appendChild(el);
-    }
-    el.textContent = JSON.stringify(schema);
+    const el = upsertSchemaScript("faq", schema);
     return () => {
       el?.remove();
     };

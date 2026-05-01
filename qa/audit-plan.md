@@ -52,10 +52,10 @@ Jeder Audit-Worktree startet mit derselben Baseline:
 1. frischer `origin/main`-basierter Temp-Worktree
 2. read-only fuer Produktcode in Phase 1 und 2
 3. Standard-Verifikation:
-   - `npm test`
-   - `npm run check`
-   - `npm run build`
-   - `npm run lint`
+   - `pnpm test`
+   - `pnpm check`
+   - `pnpm build`
+   - `pnpm lint`
 
 Die Verifikation wurde im Haupt-Repo erfolgreich nachvollzogen und bleibt die
 verbindliche Ausgangsbasis fuer alle Audit-Spuren.

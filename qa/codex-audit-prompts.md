@@ -31,7 +31,7 @@ Pruefe das Projekt `/Users/christaegger/Documents/Webprojekte/borderline-angehoe
 - Audit-Artefakte unter `qa/` und `qa/scripts/` sind in Phase 1/2 erlaubt.
 - Keine Aenderungen an `client/src`, `server`, `client/public`, `netlify.toml` in Phase 1/2.
 - Falls noetig, installiere audit-only Tools im Temp-Worktree: `playwright`, `@playwright/test`, `lighthouse`, `pa11y`, `axe-core`, `@axe-core/playwright`.
-- Nutze `npm run build` + `npm run preview` fuer lokale Browser-Pruefungen.
+- Nutze `pnpm build` + `pnpm preview` fuer lokale Browser-Pruefungen.
 
 ## Phase 1 - Inventur
 - Pruefe mindestens diese Routen: `/`, `/soforthilfe`, `/materialien`, `/verstehen`.
@@ -62,10 +62,10 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Pro Fix eigener Commit: `audit(a11y): fix <was>`
 
 ## Phase 4 - Verifikation
-- `npm test`
-- `npm run check`
-- `npm run build`
-- `npm run lint`
+- `pnpm test`
+- `pnpm check`
+- `pnpm build`
+- `pnpm lint`
 - Lighthouse-Re-Run
 - Alle drei `qa/scripts/*` erneut ausfuehren
 - Finale Release-Readiness-Aussage
@@ -83,16 +83,16 @@ Pruefe `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige` auf Pe
 - Branch: `audit/performance`
 - Bericht: `qa/audit-performance.md`
 - Audit-Artefakte unter `qa/` sind erlaubt, keine funktionalen Aenderungen in Phase 1/2.
-- Verwende die echten Repo-Kommandos: `npm run build`, `npm test`, `npm run check`, `npm run lint`.
+- Verwende die echten Repo-Kommandos: `pnpm build`, `pnpm test`, `pnpm check`, `pnpm lint`.
 - Falls noetig, installiere audit-only Tools wie Lighthouse oder einen Vite-Bundle-Analyzer nur im Temp-Worktree.
 
 ## Phase 1 - Inventur
 - Pruefe mindestens diese Routen auf Desktop und Mobile: `/`, `/materialien`, `/soforthilfe`.
 - Ermittle pro Route Lighthouse Performance, LCP, CLS, TBT/INP, FCP und Speed Index.
-- Dokumentiere die Build-Ausgabe von `npm run build` und schluessel die erzeugten Chunks nach Dateiname, raw size, gzip size und vermuteter Funktion auf.
+- Dokumentiere die Build-Ausgabe von `pnpm build` und schluessel die erzeugten Chunks nach Dateiname, raw size, gzip size und vermuteter Funktion auf.
 - Identifiziere die Top-5 groessten JS-Chunks und die groessten CSS-/Asset-Treiber.
 - Lies `package.json` und pruefe Dependencies auf tatsaechliche Importe, doppelte Funktionalitaet und offensichtliche Altlasten.
-- Fuehre `npm audit` aus und dokumentiere Findings getrennt von reiner Performance.
+- Fuehre `pnpm audit` aus und dokumentiere Findings getrennt von reiner Performance.
 - Inventarisiere Bilder in `client/public/` und externe Bildnutzung in den Pages/Sections.
 - Pruefe speziell:
   - Hero-Bilder und `srcSet`/`sizes`
@@ -119,10 +119,10 @@ STOPP nach Phase 2. Warte auf Freigabe.
 ## Phase 4 - Verifikation
 - Lighthouse-Vergleich vorher/nachher
 - Vergleich der Build-/Chunk-Groessen
-- `npm test`
-- `npm run check`
-- `npm run build`
-- `npm run lint`
+- `pnpm test`
+- `pnpm check`
+- `pnpm build`
+- `pnpm lint`
 ```
 
 ## Audit 3 - Content-Qualitaet und Sprache
@@ -231,8 +231,8 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Pro Massnahme eigener Commit: `audit(css): <was>`
 
 ## Phase 4 - Verifikation
-- `npm run build`
-- `npm run lint`
+- `pnpm build`
+- `pnpm lint`
 - visueller Vergleich auf mindestens `/`, `/soforthilfe`, `/materialien`
 - Token-Coverage vorher/nachher dokumentieren
 ```
@@ -263,7 +263,7 @@ Pruefe `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige` auf Si
   - `server/index.ts`
   - falls relevant `client/public/_headers` oder aehnliche Dateien
 - Pruefe CSP-Qualitaet und erklaere konkret, wofuer aktuelle Ausnahmen wie `'unsafe-inline'` noetig sind oder nicht.
-- Fuehre `npm audit` aus und gruppiere nach Schweregrad.
+- Fuehre `pnpm audit` aus und gruppiere nach Schweregrad.
 - Suche inline Scripts, inline Event-Handler und andere CSP-Hindernisse in `client/public/` und im generierten App-Pattern.
 - Pruefe Formulare und User-Input:
   - Validierung
@@ -290,11 +290,11 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Pro Fix eigener Commit: `audit(sec): <was>`
 
 ## Phase 4 - Verifikation
-- `npm audit` ohne critical/high
+- `pnpm audit` ohne critical/high
 - keine Secrets im Code oder in der History
 - Security-Headers in Code und Live-Site konsistent
-- `npm run build`
-- `npm run lint`
+- `pnpm build`
+- `pnpm lint`
 ```
 
 ## Audit 6 - SEO, Metadaten und Informationsarchitektur
@@ -362,10 +362,10 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Pro Aenderung eigener Commit: `audit(seo): <was>`
 
 ## Phase 4 - Verifikation
-- `npm test`
-- `npm run check`
-- `npm run build`
-- `npm run lint`
+- `pnpm test`
+- `pnpm check`
+- `pnpm build`
+- `pnpm lint`
 - Sitemap-, Robots- und Route-Matrix erneut gegenpruefen
 ```
 
@@ -424,10 +424,10 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Pro Aenderung eigener Commit: `audit(flow): <was>`
 
 ## Phase 4 - Verifikation
-- `npm test`
-- `npm run check`
-- `npm run build`
-- `npm run lint`
+- `pnpm test`
+- `pnpm check`
+- `pnpm build`
+- `pnpm lint`
 - Strukturmatrix fuer Kernpfade erneut pruefen
 ```
 
@@ -483,10 +483,10 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Pro Aenderung eigener Commit: `audit(pdf): <was>`
 
 ## Phase 4 - Verifikation
-- `npm test`
-- `npm run check`
-- `npm run build`
-- `npm run lint`
+- `pnpm test`
+- `pnpm check`
+- `pnpm build`
+- `pnpm lint`
 - Materialmatrix und CTA-Muster erneut pruefen
 ```
 
@@ -509,10 +509,10 @@ Routing, A11y, SEO, Materialien, Downloads und Security wichtig sind.
 
 ## Phase 1 - Inventur
 - Fuehre aus:
-  - `npm test`
-  - `npm run check`
-  - `npm run build`
-  - `npm run lint`
+  - `pnpm test`
+  - `pnpm check`
+  - `pnpm build`
+  - `pnpm lint`
 - Clustere `client/src/__tests__/*` mindestens nach:
   - Routing / Architektur
   - Security Headers
@@ -543,10 +543,10 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Pro Aenderung eigener Commit: `audit(test): <was>`
 
 ## Phase 4 - Verifikation
-- `npm test`
-- `npm run check`
-- `npm run build`
-- `npm run lint`
+- `pnpm test`
+- `pnpm check`
+- `pnpm build`
+- `pnpm lint`
 - Matrix gegen tatsaechlich hinzugefuegte oder angepasste Absicherung abgleichen
 ```
 
@@ -597,9 +597,9 @@ STOPP nach Phase 2. Warte auf Freigabe.
 - Pro Aenderung eigener Commit: `audit(release): <was>`
 
 ## Phase 4 - Verifikation
-- `npm test`
-- `npm run check`
-- `npm run build`
-- `npm run lint`
+- `pnpm test`
+- `pnpm check`
+- `pnpm build`
+- `pnpm lint`
 - abschliessendes Release-Urteil mit verbleibenden Restrisiken
 ```

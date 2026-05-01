@@ -28,7 +28,7 @@ import EvidenceNote from "@/components/EvidenceNote";
 import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { permissionList } from "@/content/selbstfuersorge-page";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
@@ -68,6 +68,11 @@ export default function Selbstfuersorge() {
   return (
     <Layout>
       <SEO
+        title="Selbstfürsorge"
+        description="Selbstfürsorge für Angehörige: Burnout vermeiden und eigene Bedürfnisse wahrnehmen."
+        path="/selbstfuersorge"
+      />
+      <MedicalPageSchema
         title="Selbstfürsorge"
         description="Selbstfürsorge für Angehörige: Burnout vermeiden und eigene Bedürfnisse wahrnehmen."
         path="/selbstfuersorge"

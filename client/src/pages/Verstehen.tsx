@@ -36,7 +36,7 @@ import {
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import VerstehenMaterialsSection from "@/sections/VerstehenMaterialsSection";
 import {
@@ -94,6 +94,11 @@ export default function Verstehen() {
   return (
     <Layout>
       <SEO
+        title="Borderline verstehen"
+        description="Borderline aus Sicht von Angehörigen verstehen: Beziehungsdynamik, Überflutung, Nähe-Distanz und hilfreiche Einordnung."
+        path="/verstehen"
+      />
+      <MedicalPageSchema
         title="Borderline verstehen"
         description="Borderline aus Sicht von Angehörigen verstehen: Beziehungsdynamik, Überflutung, Nähe-Distanz und hilfreiche Einordnung."
         path="/verstehen"

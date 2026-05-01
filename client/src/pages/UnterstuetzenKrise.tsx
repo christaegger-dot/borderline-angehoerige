@@ -31,7 +31,7 @@ import {
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import KrisenampelVisualisierung from "@/components/visualizations/KrisenampelVisualisierung";
@@ -321,6 +321,11 @@ export default function UnterstuetzenKrise() {
   return (
     <Layout>
       <SEO
+        title="Krisenbegleitung"
+        description="Krisenbegleitung bei Borderline: Wie Sie in akuten Situationen deeskalieren, Grenzen wahren und professionelle Hilfe richtig einbeziehen."
+        path="/unterstuetzen/krise"
+      />
+      <MedicalPageSchema
         title="Krisenbegleitung"
         description="Krisenbegleitung bei Borderline: Wie Sie in akuten Situationen deeskalieren, Grenzen wahren und professionelle Hilfe richtig einbeziehen."
         path="/unterstuetzen/krise"

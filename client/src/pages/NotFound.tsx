@@ -18,6 +18,7 @@ export default function NotFound() {
         title="Seite nicht gefunden"
         description="Die gesuchte Seite existiert leider nicht."
         path="/404"
+        robots="noindex, nofollow"
       />
       <div className="min-h-[70vh] w-full flex items-center justify-center">
         <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">

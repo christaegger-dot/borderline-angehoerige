@@ -16,7 +16,7 @@ import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { ROT, GELB, GRUEN, type Kontakt } from "@/data/kontakte";
 import {
   NOTFALLKARTE_PRINT_STORAGE_KEY,
@@ -371,6 +371,11 @@ export default function Notfallkarte() {
   return (
     <Layout>
       <SEO
+        title="Persönliche Notfallkarte"
+        description="Erstellen Sie Ihre persönliche Notfallkarte mit den wichtigsten Nummern, Kontaktpersonen und Beruhigungsstrategien – zum Ausdrucken oder Speichern."
+        path={PERSONAL_NOTFALLKARTE_PATH}
+      />
+      <MedicalPageSchema
         title="Persönliche Notfallkarte"
         description="Erstellen Sie Ihre persönliche Notfallkarte mit den wichtigsten Nummern, Kontaktpersonen und Beruhigungsstrategien – zum Ausdrucken oder Speichern."
         path={PERSONAL_NOTFALLKARTE_PATH}

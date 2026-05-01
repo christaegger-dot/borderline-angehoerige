@@ -32,7 +32,7 @@ import {
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import ReviewBadge from "@/components/ReviewBadge";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import {
   emailByIdStrict,
   kontaktByIdStrict,
@@ -128,6 +128,11 @@ export default function Selbsthilfegruppen() {
         description="Professionelle Beratung, Selbsthilfegruppen und Netzwerke für Angehörige von Menschen mit Borderline in der Schweiz."
         path={currentPath}
         canonicalPath={canonicalPath}
+      />
+      <MedicalPageSchema
+        title="Beratung & Netzwerke"
+        description="Professionelle Beratung, Selbsthilfegruppen und Netzwerke für Angehörige von Menschen mit Borderline in der Schweiz."
+        path={canonicalPath}
       />
 
       <EditorialLayout width="narrow">

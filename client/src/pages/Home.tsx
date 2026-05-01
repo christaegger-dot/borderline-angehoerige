@@ -38,6 +38,7 @@ export default function Home() {
         title="Borderline: Orientierung für Angehörige"
         description="Psychoedukative Unterstützung für Angehörige von Menschen mit Borderline-Muster."
         path="/"
+        lastReviewed="2026-04-30"
       />
 
       <EditorialLayout width="narrow">

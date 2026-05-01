@@ -31,7 +31,7 @@ import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { genesungItems as genesungMaterialItems } from "@/content/genesung";
 import { getHandoutOpenHref } from "@/content/handouts";
@@ -119,6 +119,11 @@ export default function Genesung() {
   return (
     <Layout>
       <SEO
+        title="Genesung"
+        description="Genesung bei Borderline: realistische Hoffnung, Langzeitverlauf und was das für Angehörige bedeutet."
+        path="/genesung"
+      />
+      <MedicalPageSchema
         title="Genesung"
         description="Genesung bei Borderline: realistische Hoffnung, Langzeitverlauf und was das für Angehörige bedeutet."
         path="/genesung"

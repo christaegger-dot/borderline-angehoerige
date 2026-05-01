@@ -20,7 +20,7 @@ import {
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import ReviewBadge from "@/components/ReviewBadge";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 
 interface QuelleEintrag {
   autoren: string;
@@ -418,6 +418,11 @@ export default function Quellen() {
         title="Quellen & Literatur"
         description="Wissenschaftliche Grundlagen und Fachliteratur dieser Website: klinische Studien, DBT-Literatur, Angehörigenbücher und Diagnoseklassifikationen."
         canonicalPath="/quellen"
+      />
+      <MedicalPageSchema
+        title="Quellen & Literatur"
+        description="Wissenschaftliche Grundlagen und Fachliteratur dieser Website: klinische Studien, DBT-Literatur, Angehörigenbücher und Diagnoseklassifikationen."
+        path="/quellen"
       />
 
       <EditorialLayout width="narrow">

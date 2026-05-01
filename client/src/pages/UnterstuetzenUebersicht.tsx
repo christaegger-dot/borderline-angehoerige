@@ -25,7 +25,7 @@ import {
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { getHandoutOpenHref } from "@/content/handouts";
@@ -64,6 +64,11 @@ export default function UnterstuetzenUebersicht() {
   return (
     <Layout>
       <SEO
+        title="Unterstützen – Übersicht"
+        description="Wie Angehörige hilfreich bleiben können: Rolle, Krisenlogik, Grenzen und tragfähige Unterstützung."
+        path="/unterstuetzen/uebersicht"
+      />
+      <MedicalPageSchema
         title="Unterstützen – Übersicht"
         description="Wie Angehörige hilfreich bleiben können: Rolle, Krisenlogik, Grenzen und tragfähige Unterstützung."
         path="/unterstuetzen/uebersicht"

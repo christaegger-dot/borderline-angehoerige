@@ -7,16 +7,23 @@ import { unterstuetzenItems } from "./unterstuetzen";
 import { verstehenInfografiken } from "./verstehen";
 
 export type HandoutDisposition = "attachment" | "inline";
+export type HandoutSourceKind = "local" | "remote";
+export type HandoutTextLayer = "present" | "missing";
+export type HandoutPreferredReadingFormat = "pdf" | "textversion";
 
 export interface HandoutAsset {
   id: string;
   title: string;
   sourceUrl: string;
   fileName: string;
+  sourceKind: HandoutSourceKind;
+  textLayer: HandoutTextLayer;
+  preferredReadingFormat: HandoutPreferredReadingFormat;
 }
 
 const HANDOUT_ASSET_PATH_PREFIX = "/api/material-download";
 const REMOTE_ASSET_RE = /^https?:\/\//i;
+const LOCAL_PDF_RE = /^\/.+\.pdf(?:[?#].*)?$/i;
 
 function slugifySegment(value: string) {
   return value
@@ -36,17 +43,43 @@ function buildFileName(id: string) {
   return `${id}.pdf`;
 }
 
+function getSourceKind(sourceUrl: string): HandoutSourceKind | null {
+  if (REMOTE_ASSET_RE.test(sourceUrl)) {
+    return "remote";
+  }
+
+  if (LOCAL_PDF_RE.test(sourceUrl)) {
+    return "local";
+  }
+
+  return null;
+}
+
+function getFileName(sourceUrl: string, id: string) {
+  const kind = getSourceKind(sourceUrl);
+  if (kind !== "local") {
+    return buildFileName(id);
+  }
+
+  const withoutQuery = sourceUrl.split(/[?#]/, 1)[0] ?? sourceUrl;
+  const lastSegment = withoutQuery.split("/").pop();
+  return lastSegment && lastSegment.length > 0
+    ? lastSegment
+    : buildFileName(id);
+}
+
 function registerAsset(
   registry: Map<string, HandoutAsset>,
   sourceUrl: string | undefined,
   id: string,
   title: string
 ) {
-  if (
-    !sourceUrl ||
-    !REMOTE_ASSET_RE.test(sourceUrl) ||
-    registry.has(sourceUrl)
-  ) {
+  if (!sourceUrl || registry.has(sourceUrl)) {
+    return;
+  }
+
+  const sourceKind = getSourceKind(sourceUrl);
+  if (!sourceKind) {
     return;
   }
 
@@ -54,7 +87,10 @@ function registerAsset(
     id,
     title,
     sourceUrl,
-    fileName: buildFileName(id),
+    fileName: getFileName(sourceUrl, id),
+    sourceKind,
+    textLayer: sourceKind === "local" ? "present" : "missing",
+    preferredReadingFormat: sourceKind === "local" ? "pdf" : "textversion",
   });
 }
 
@@ -149,10 +185,6 @@ export function getHandoutOpenHref(sourceUrl: string | undefined) {
     return null;
   }
 
-  if (!REMOTE_ASSET_RE.test(sourceUrl)) {
-    return sourceUrl;
-  }
-
   const asset = getHandoutAssetBySource(sourceUrl);
   return asset ? buildHandoutAssetPath(asset.id, "inline") : sourceUrl;
 }
@@ -162,10 +194,12 @@ export function getHandoutDownloadHref(sourceUrl: string | undefined) {
     return null;
   }
 
-  if (!REMOTE_ASSET_RE.test(sourceUrl)) {
-    return sourceUrl;
-  }
-
   const asset = getHandoutAssetBySource(sourceUrl);
   return asset ? buildHandoutAssetPath(asset.id, "attachment") : sourceUrl;
+}
+
+export function prefersHandoutTextVersion(sourceUrl: string | undefined) {
+  return (
+    getHandoutAssetBySource(sourceUrl)?.preferredReadingFormat === "textversion"
+  );
 }

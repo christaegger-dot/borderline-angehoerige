@@ -2,122 +2,270 @@
 
 ## Meta
 
-- Repo: `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige`
-- Branch: `codex/audit-pdf-handouts`
-- Fokus: PDF-Handouts inhaltlich, layoutbezogen und funktional einordnen
+- Repo: `/Users/christaegger/Downloads/borderline-angehoerige`
+- Stand: `1. Mai 2026`
+- Fokus: PDF- und Download-Audit fuer Materialien, Handouts und Textversionen
 - Methode:
-  - technische Textlayer-Prüfung mit `pypdf`
-  - visuelle Stichprobe über die 6 priorisierten Core-Handouts
-  - Vergleich mit den 2 lokalen Notfall-PDFs
-- Reproduzierbar über: [`qa/scripts/scan-pdf-handouts.py`](./scripts/scan-pdf-handouts.py)
-  - für den Lauf ist eine Python-Umgebung mit `pypdf` nötig
+  - technische Textlayer-Pruefung mit `pypdf`
+  - Inventarabgleich gegen `materialien.ts`, `handouts.ts`,
+    `handoutTextMetas.ts` und `handoutTextVersions.ts`
+  - Live-Checks gegen Production fuer Proxy- und Direkt-PDFs
+  - Format- und Metadaten-Spotcheck ueber die reale Materialbibliothek
+- Reproduzierbar ueber:
+  - [`qa/scripts/scan-pdf-handouts.py`](./scripts/scan-pdf-handouts.py)
+  - gebuendelte Python-Runtime mit `pypdf`
 
 ## Kurzfazit
 
-- Die beiden lokalen Notfall-PDFs sind technisch in deutlich besserem Zustand:
-  - `Notfallkarte-Zuerich-Psychische-Krise.pdf`: 1 Seite, `2633` extrahierbare Zeichen
-  - `notfallplan-krise-v03.pdf`: 2 Seiten, `4577` extrahierbare Zeichen
-- Die eigentliche Handout-Bibliothek hat dagegen ein systemisches A11y-Problem:
-  - `39` von `39` Remote-PDFs von `files.manuscdn.com` liefern `0` extrahierbare Zeichen
-  - damit sind sie für Screenreader, Copy/Paste, Browser-Suche und Suchindex praktisch blind
-- Der bereits gemergte Proxy-Fix löst die Zustellung sauber, aber nicht die Zugänglichkeit des Inhalts.
+- Die Download-Pfade sind technisch weitgehend sauber:
+  - Proxy-IDs loesen korrekt auf
+  - gepruefte Live-URLs liefern `200`
+  - Remote-PDFs unterscheiden korrekt zwischen `inline` und `attachment`
+- Die Textversions-Abdeckung ist stark:
+  - `15/16` Materialeintraege haben eine Textversion
+  - die einzige Ausnahme ist `notfallkarte-zuerich`, die bewusst HTML-first ist
+    und deren PDF selbst textdurchsuchbar ist
+- Das eigentliche PDF-Qualitaetsgate ist aber noch nicht gruen:
+  - `39/40` textversionsgestuetzte Handout-PDFs haben keinen extrahierbaren
+    Text
+  - `5/15` Material-PDFs sind nicht A4-nah
+  - `14/15` Material-PDFs haben kein PDF-`Title`-Metadatum
 
-## Inventar
+## Audit-Urteil
 
-| Bereich                            | Anzahl | Textlayer-Status       | Bemerkung                        |
-| ---------------------------------- | -----: | ---------------------- | -------------------------------- |
-| Lokale PDFs im Repo                |      2 | vorhanden              | Notfall-PDFs bereits textbasiert |
-| Remote-PDFs (`files.manuscdn.com`) |     39 | `39/39` ohne Textlayer | systemisches Problem             |
-| Priorisierte Core-Remote-Handouts  |      6 | `6/6` ohne Textlayer   | höchste Umsetzungspriorität      |
+Das Audit ist **noch offen**.
 
-## Priorisierte Core-Handouts
+Der offene Teil betrifft nicht kaputte Downloads oder fehlende Dateien,
+sondern drei systemische Qualitaetsluecken:
 
-| ID                    | Titel                                                   | Kategorie      | Seiten | Grösse | Text extrahierbar | Einordnung                                      |
-| --------------------- | ------------------------------------------------------- | -------------- | -----: | -----: | ----------------: | ----------------------------------------------- |
-| `leuchtturm`          | Der Leuchtturm – Ihre Rolle als Angehörige/r            | verstehen      |      1 | 1.0 MB |                 0 | Core-Psychoedukation, zentrale Angehörigenrolle |
-| `eisberg`             | Der Eisberg – Wut ist oft die Spitze                    | verstehen      |      1 | 5.0 MB |                 0 | zentrale Emotions- und Konflikteinordnung       |
-| `rolle-klaeren`       | Ihre Rolle klären – Was Sie sein können (und was nicht) | unterstützen   |      1 | 6.0 MB |                 0 | wichtig für Grenz- und Rollenklärung            |
-| `krisenkommunikation` | Spickzettel Krisenkommunikation (A4)                    | kommunizieren  |      1 | 5.6 MB |                 0 | akute Formulierungshilfe, hoch praxisrelevant   |
-| `grenzen-spickzettel` | Spickzettel Grenzen – Die wichtigsten Sätze             | grenzen        |      1 | 5.2 MB |                 0 | konkrete Satzbausteine, hoher Copy/Paste-Bedarf |
-| `warnsignale`         | Warnsignale der Überlastung                             | selbstfürsorge |      1 | 5.2 MB |                 0 | stark alltagsbezogen, wichtig für Selbstschutz  |
+1. PDF-A11y und Textlayer
+2. uneinheitliche Print-/A4-Formate
+3. duenne oder fehlende PDF-Metadaten
 
-## Inhaltliche und visuelle Beobachtungen
+## Scope und Inventar
 
-Die 6 Core-Handouts wirken gestalterisch konsistent und sorgfältig aufgebaut:
+### Textversionsgestuetzte Handouts
 
-- einheitliches A4-Hochformat mit klarer Titelzone, Farbcodierung und Footer
-- starke visuelle Metaphern wie Leuchtturm, Eisberg oder Warnsignale
-- strukturierte Infoboxen, Legenden und 3- bis 5-Schritte-Logik
-- hohe Praxisnähe: Formulierungshilfen, Einordnungshilfen, Krisen- und Rollenklärung
+Aus [`handoutTextMetas.ts`](../client/src/content/handoutTextMetas.ts) wurden
+alle `40` PDF-Quellen der textbasierten Handout-Pendants geprueft.
 
-Gerade diese Stärken verschärfen aber das A11y-Problem:
+| Bereich                                  | Anzahl | Mit Textlayer | Ohne Textlayer |
+| ---------------------------------------- | -----: | ------------: | -------------: |
+| Remote-PDFs (`files.manuscdn.com`)       |     29 |             0 |             29 |
+| Lokale PDFs innerhalb der 40 Handout-IDs |     11 |             1 |             10 |
+| Gesamt                                   |     40 |             1 |             39 |
 
-- der fachliche Nutzen steckt sichtbar in Textblöcken, Kästen und Schrittlisten
-- Nutzerinnen und Nutzer können diese Inhalte weder zuverlässig vorlesen lassen noch markieren, durchsuchen oder übernehmen
-- besonders die beiden Spickzettel sind funktional darauf angelegt, einzelne Sätze nachzuschlagen oder zu kopieren, was im aktuellen PDF-Format technisch nicht gelingt
+Einziger positive Ausreisser:
 
-## Funktionale Auswirkungen
+- `notfallplan-krise-v03.pdf`: `4577` extrahierbare Zeichen
 
-### Für Nutzerinnen und Nutzer
+### Materialbibliothek
 
-- Screenreader erhalten bei den Remote-Handouts keinen verwertbaren Inhalt.
-- Browser-Suche innerhalb des PDFs funktioniert nicht.
-- Copy/Paste einzelner Formulierungen funktioniert nicht.
-- Mobile Nutzung bleibt mühsam, weil kleine Textflächen nur als Bild gezoomt werden können.
+Aus [`materialien.ts`](../client/src/content/materialien.ts) ergeben sich:
 
-### Für die Website
+| Bereich                            | Anzahl | Bemerkung                                    |
+| ---------------------------------- | -----: | -------------------------------------------- |
+| Materialeintraege gesamt           |     16 | Bibliothek inklusive HTML-first Notfallkarte |
+| PDF-basierte Materialeintraege     |     15 | fuer Format- und Metadaten-Check ausgewertet |
+| Materialeintraege mit Textversion  |     15 | starke Abdeckung                             |
+| Materialeintraege ohne Textversion |      1 | `notfallkarte-zuerich`, bewusst HTML-first   |
 
-- Die Suche kann den eigentlichen PDF-Inhalt nicht indexieren.
-- Der Inhalt der Handouts ist im aktuellen Webauftritt nur über Titel und Kurzbeschreibung auffindbar.
-- Der PDF-Proxy macht das Öffnen und Herunterladen konsistent, aber nicht barrierefrei.
+## Wichtigste Befunde
 
-## Vergleich zu den lokalen Notfall-PDFs
+### 1. Textlayer bleibt das groesste Problem
 
-Die beiden lokalen Notfall-Dokumente sind der richtige technische Referenzpunkt:
+Die Textversionen kompensieren aktuell ein breites PDF-A11y-Defizit, nicht nur
+bei Remote-Handouts, sondern auch bei vielen lokalen Infografik-PDFs.
 
-- sie enthalten extrahierbaren Text
-- sie sind damit deutlich besser für Screenreader, Suche und Weiterverarbeitung geeignet
-- das Hauptproblem liegt also nicht bei PDF als Format an sich, sondern bei der Art, wie die 39 Remote-Handouts erzeugt wurden
+Beispiele mit `0` extrahierbaren Zeichen:
+
+- Remote:
+  - `leuchtturm`
+  - `grenzen-spickzettel`
+  - `warnsignale`
+  - `dear`
+  - `genesung-zahlen`
+  - `kinder`
+- Lokal:
+  - `eisberg`
+  - `rolle-klaeren`
+  - `krisenkommunikation`
+  - `spaltung`
+  - `alarm-modus`
+  - `sauerstoffmaske`
+  - `zuhoeren-ohne-zustimmen`
+
+Das bedeutet praktisch:
+
+- Screenreader erhalten in den meisten PDFs keinen nutzbaren Inhalt
+- Copy/Paste und PDF-Suche funktionieren nicht
+- Browser-Suche innerhalb der Dateien greift nicht
+- die PDFs taugen als Layout-Asset, aber nicht als barrierearme Textquelle
+
+### 2. A4-/Print-Konsistenz ist nur teilweise gegeben
+
+Von `15` geprueften Material-PDFs sind `10` A4-nah und `5` klar ausserhalb des
+erwarteten A4-Rahmens.
+
+Nicht A4-nah:
+
+| ID                    | Format erster Seite |
+| --------------------- | ------------------: |
+| `eisberg`             |  `457.2 x 651.9 mm` |
+| `rolle-klaeren`       |  `244.5 x 345.8 mm` |
+| `krisenkommunikation` |  `656.2 x 928.2 mm` |
+| `spaltung`            |  `656.2 x 928.2 mm` |
+| `alarm-modus`         |  `656.2 x 928.2 mm` |
+
+Wenn die Materialbibliothek mit `PDF oeffnen` und `PDF herunterladen` als
+drucktaugliche Hilfen auftritt, ist diese Inkonsistenz ein echter
+Qualitaetsbefund.
+
+### 3. PDF-Metadaten sind fast nirgends gepflegt
+
+Bei `14/15` Material-PDFs fehlt ein `Title`-Metadatum.
+
+Positiv auffaellig:
+
+- `Notfallkarte-Zuerich-Psychische-Krise.pdf`
+- `notfallplan-krise-v03.pdf`
+
+Das erschwert saubere Anzeige in PDF-Readern und ist fuer langlebige Downloads
+eine unnötige Qualitaetsluecke.
+
+### 4. Download-Semantik ist technisch gemischt
+
+Remote-PDFs laufen ueber den Proxy aus
+[`server/material-download.ts`](../server/material-download.ts) und liefern
+korrekt:
+
+- `Content-Type: application/pdf`
+- `Content-Disposition: inline`
+- `Content-Disposition: attachment`
+
+Lokale PDFs liefern live ebenfalls `200` und `application/pdf`, aber kein
+eigenes `Content-Disposition`. Dort haengt die Unterscheidung zwischen
+`Oeffnen` und `Herunterladen` am Frontend-`download`-Attribut statt an der
+HTTP-Response.
+
+Das ist nicht zwingend falsch, aber uneinheitlich.
+
+## Was bereits gut ist
+
+### Textversionen als Sicherheitsnetz
+
+Die Web-Textversionen sind inzwischen ein echter repo-weiten Vorteil:
+
+- `15/16` Materialien haben ein Text-Pendant
+- das reduziert das Risiko fuer Suche, Mobilnutzung und A11y deutlich
+- die einzige Ausnahme ist fachlich vertretbar, weil `notfallkarte-zuerich`
+  bereits HTML-first ist
+
+### Krisen-PDFs als Referenzstandard
+
+Die beiden lokalen Krisen-PDFs zeigen, wie ein tragfaehiger Standard aussehen
+kann:
+
+| Datei                                       | Seiten | Format             | Titel-Metadatum | Text extrahierbar |
+| ------------------------------------------- | -----: | ------------------ | --------------- | ----------------: |
+| `Notfallkarte-Zuerich-Psychische-Krise.pdf` |      1 | `209.9 x 297.0 mm` | ja              |              2633 |
+| `notfallplan-krise-v03.pdf`                 |      2 | `209.9 x 297.0 mm` | ja              |              4577 |
+
+Diese beiden Dateien sind der beste technische Referenzpunkt fuer kuenftige
+lokale PDF-Erzeugung.
+
+### Download-Infrastruktur
+
+Die technische Verdrahtung der Bibliothek ist stabil:
+
+- Proxy-IDs aus [`handouts.ts`](../client/src/content/handouts.ts) loesen
+  korrekt auf
+- lokale PDF-Pfade existieren
+- gepruefte Production-URLs waren erreichbar
+- `inline` vs. `attachment` funktioniert fuer Remote-Dateien sauber
 
 ## Priorisierung
 
-### P1 – zuerst umsetzen
+### P1 - Gate fuer kuenftige Materialien festziehen
 
-Für die 6 Core-Remote-Handouts sollte je ein zugängliches Text-Pendant entstehen.
+- Bildbasierte PDFs duerfen nur zusammen mit gepflegter Textversion
+  ausgerollt werden.
+- Diese Regel sollte fuer neue Handouts als harter Release-Gate gelten.
+- Die Materialkarten sollten Textversionen weiter sichtbar und gleichwertig
+  anbieten.
 
-Empfohlene Form:
+### P2 - Lokale PDFs technisch aufraeumen
 
-1. eigene HTML-/Textversion pro Handout
-2. PDF bleibt zusätzlich als Druck- und Downloadformat bestehen
-3. von Materialkarten und Themen-Sections aus sowohl auf `PDF öffnen` als auch auf `Textversion` verlinken
+Fuer lokal kontrollierte PDFs:
 
-### P2 – danach
+- A4-Export vereinheitlichen
+- `Title`-Metadaten durchgaengig setzen
+- wenn moeglich textbasierte Exporte statt reiner Bild-PDFs erzeugen
 
-- die restlichen `33` Remote-Handouts nach derselben Logik nachziehen
-- erst die fachlich wichtigsten Übersichts- und Spickzettel, dann sekundäre Vertiefungsblätter
+Prioritaet innerhalb der Materialbibliothek:
 
-## Umsetzungsempfehlung
+1. `eisberg`
+2. `rolle-klaeren`
+3. `krisenkommunikation`
+4. `spaltung`
+5. `alarm-modus`
 
-Die sinnvollste Reihenfolge ist:
+### P3 - Remote-PDF-Strategie entscheiden
 
-1. die 6 Core-Handouts als HTML-/Textversionen nachbauen
-2. dafür nicht OCR-Rohtext ungeprüft ausliefern, sondern redaktionell saubere Pendants erzeugen
-3. PDFs weiterhin für Druck und Original-Layout behalten
-4. Suchindex und Materialkarten später um die Textversionen erweitern
+Fuer die `files.manuscdn.com`-Dateien braucht es eine bewusste Produktentscheidung:
 
-## Nächster konkreter Schritt
+1. entweder bei image-only PDFs dauerhaft auf HTML-/Textversion als Primaerpfad
+   setzen
+2. oder die PDFs mittelfristig durch lokal kontrollierte, textbasierte Exporte
+   ersetzen
 
-Ein kleines, sauberes Folgepaket wäre:
+Solange diese Entscheidung nicht explizit getroffen ist, bleibt das Audit
+inhaltlich gelb bis rot.
 
-1. Inhaltsstruktur für die 6 Core-Handouts als textbasierte Datenmodelle erfassen
-2. erste 1 bis 2 Handouts als Referenz-HTML umsetzen
-3. CTA-Muster festlegen:
-   - `Textversion lesen`
-   - `PDF öffnen`
-   - `PDF herunterladen`
+### P4 - Download-Verhalten optional vereinheitlichen
+
+Falls gewuenscht, kann die Bibliothek noch technischer vereinheitlicht werden:
+
+- auch lokale PDFs ueber einen kontrollierten Pfad mit explizitem
+  `Content-Disposition` ausliefern
+- oder die heutige Mischung bewusst dokumentieren und akzeptieren
+
+Das ist kein Blocker gegenueber Textlayer und Format, aber ein sauberer
+Hygiene-Fix.
+
+## Konkrete Fixliste
+
+1. PDF-Policy dokumentieren:
+   `image-only PDF nur mit sichtbarer Textversion und gepflegtem Review-Stand`
+2. Fuer die 5 nicht-A4-Materialien neue drucktaugliche Exporte erzeugen.
+3. Fuer lokal kontrollierte PDFs `Title`-Metadaten nachziehen.
+4. Fuer kuenftige lokale Exporte textbasierte PDF-Erzeugung bevorzugen.
+5. Fuer Remote-Manus-PDFs entscheiden:
+   behalten plus Textversion,
+   oder ersetzen durch lokale kanonische PDFs.
+
+## Release-Einordnung
+
+Der Audit-Block `PDF- und Download-Audit` ist nach diesem Lauf noch **nicht
+abgeschlossen**.
+
+Gruen:
+
+- Dateierreichbarkeit
+- Proxy-Verdrahtung
+- Textversions-Abdeckung in der Materialbibliothek
+- Krisen-PDFs
+
+Offen:
+
+- Textlayer fuer den grossen Restbestand
+- A4-Konsistenz der Material-PDFs
+- PDF-Metadaten
 
 ## Grenze dieses Audits
 
-- Die visuelle Inhaltsprüfung basiert auf den Vorschauen der 6 Core-Handouts.
-- Es wurde bewusst keine automatisierte OCR als Quelltext-Ersatz in Produktcode übernommen.
-- Für die eigentliche Umsetzung braucht es deshalb eine redaktionell saubere Übertragung der Inhalte in HTML oder strukturierte Daten.
+- Es wurde bewusst keine OCR als Produktionsinhalt uebernommen.
+- Die A11y-Bewertung bezieht sich auf extrahierbaren Text und
+  Downloadeigenschaften, nicht auf eine vollstaendige PDF/UA-Pruefung.
+- Das Audit bewertet technische und strukturelle PDF-Qualitaet, nicht die
+  fachliche Richtigkeit der Inhalte.

@@ -2,7 +2,18 @@ import {
   resolveHandoutAsset,
   type HandoutDisposition,
 } from "../client/src/content/handouts";
+import fs from "node:fs";
+import path from "node:path";
+import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import { SECURITY_HEADERS } from "../shared/securityHeaders";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const LOCAL_PUBLIC_ROOTS = [
+  path.resolve(__dirname, "public"),
+  path.resolve(__dirname, "..", "client", "public"),
+];
 
 export async function createMaterialDownloadResponse(
   id: string,
@@ -11,6 +22,14 @@ export async function createMaterialDownloadResponse(
   const download = resolveHandoutAsset(id);
   if (!download) {
     return createTextResponse("Material nicht gefunden.", 404);
+  }
+
+  if (download.sourceKind === "local") {
+    return createLocalMaterialDownloadResponse(
+      download.sourceUrl,
+      download.fileName,
+      disposition
+    );
   }
 
   try {
@@ -53,6 +72,37 @@ export async function createMaterialDownloadResponse(
   }
 }
 
+async function createLocalMaterialDownloadResponse(
+  sourceUrl: string,
+  fileName: string,
+  disposition: HandoutDisposition
+) {
+  const absolutePath = resolveLocalPdfPath(sourceUrl);
+  if (!absolutePath) {
+    return createTextResponse("Material nicht gefunden.", 404);
+  }
+
+  try {
+    const body = await readFile(absolutePath);
+    const headers = createSecurityHeaders();
+    headers.set("Content-Type", "application/pdf");
+    headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+    headers.set(
+      "Content-Disposition",
+      contentDisposition(fileName, disposition)
+    );
+    headers.set("Content-Length", String(body.byteLength));
+    headers.set("X-Content-Type-Options", "nosniff");
+
+    return new Response(body, {
+      status: 200,
+      headers,
+    });
+  } catch {
+    return createTextResponse("Download derzeit nicht verfügbar.", 502);
+  }
+}
+
 function contentDisposition(fileName: string, disposition: HandoutDisposition) {
   const encodedName = encodeURIComponent(fileName);
   return `${disposition}; filename="${fileName}"; filename*=UTF-8''${encodedName}`;
@@ -73,4 +123,21 @@ function createTextResponse(body: string, status: number) {
   headers.set("Content-Type", "text/plain; charset=utf-8");
 
   return new Response(body, { status, headers });
+}
+
+function resolveLocalPdfPath(sourceUrl: string) {
+  const relativePath = sourceUrl.replace(/^\/+/, "");
+
+  for (const publicRoot of LOCAL_PUBLIC_ROOTS) {
+    const absolutePath = path.resolve(publicRoot, relativePath);
+    if (!absolutePath.startsWith(publicRoot)) {
+      continue;
+    }
+
+    if (fs.existsSync(absolutePath)) {
+      return absolutePath;
+    }
+  }
+
+  return null;
 }

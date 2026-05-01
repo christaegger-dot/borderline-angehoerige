@@ -9,7 +9,7 @@ import { kommItems } from "@/content/kommunizieren";
 import { verstehenInfografiken } from "@/content/verstehen";
 
 describe("handout delivery helpers", () => {
-  it("maps known remote materials to proxied open and download URLs", () => {
+  it("maps known materials to proxied open and download URLs", () => {
     const sourceUrl = verstehenInfografiken[0].pdfUrl;
 
     expect(getHandoutOpenHref(sourceUrl)).toBe(
@@ -50,14 +50,14 @@ describe("handout delivery helpers", () => {
     });
   });
 
-  it("marks remote manus pdfs as text-version-first image-only assets", () => {
+  it("marks localized material pdfs as text-layer-present local assets", () => {
     expect(
       getHandoutAssetBySource(verstehenInfografiken[0].pdfUrl)
     ).toMatchObject({
       id: "leuchtturm",
-      sourceKind: "remote",
-      textLayer: "missing",
-      preferredReadingFormat: "textversion",
+      sourceKind: "local",
+      textLayer: "present",
+      preferredReadingFormat: "pdf",
     });
   });
 });

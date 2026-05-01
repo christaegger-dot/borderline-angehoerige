@@ -21,8 +21,8 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     title: "Warnsignale der Überlastung",
     desc: "Ampel-Stufenmodell: Grün → Gelb → Rot – erkennen Sie rechtzeitig, wann es zu viel wird.",
     category: "erkennen",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OEUNVdTyojBBYTic.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VdAxPxngFzgNImxg.pdf",
+    webp: "/infografiken/manus-warnsignale-v1.webp",
+    pdf: "/infografiken/manus-warnsignale-v1.pdf",
     featured: true,
   },
   {
@@ -40,8 +40,8 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     title: "Radikale Akzeptanz",
     desc: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung.",
     category: "techniken",
-    webp: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OmxdguWaaXAkElDp.webp",
-    pdf: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SkBpjnDHfNmPbmnd.pdf",
+    webp: "/infografiken/manus-radikale-akzeptanz-v1.webp",
+    pdf: "/infografiken/manus-radikale-akzeptanz-v1.pdf",
   },
   {
     id: "stopp-technik",

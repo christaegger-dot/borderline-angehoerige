@@ -31,6 +31,7 @@ import {
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
+import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import {
   emailByIdStrict,
@@ -167,6 +168,7 @@ export default function Selbsthilfegruppen() {
             Anlaufstellen für Angehörige in der Schweiz.
           </p>
           <LastVerifiedBadge date="24.03.2026" className="mt-6" />
+          <ReviewBadge path={canonicalPath} />
         </header>
 
         {/* ── Kategorie-Sprungleiste ── */}

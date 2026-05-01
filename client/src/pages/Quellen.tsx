@@ -19,6 +19,7 @@ import {
   EditorialSection,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
+import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 
 interface QuelleEintrag {
@@ -455,6 +456,7 @@ export default function Quellen() {
             evidenzbasierten Methoden. Hier finden Sie alle Quellen, geordnet
             nach Bereich.
           </p>
+          <ReviewBadge path="/quellen" />
           <p
             className="mt-4"
             style={{

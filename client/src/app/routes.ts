@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import type { RouteComponentProps } from "wouter";
 
 export interface AppRoute {
@@ -102,7 +103,7 @@ export const routes: AppRoute[] = [
   { path: "/faq", component: FAQ, requiresMotion: true },
   { path: "/ueber-uns", component: UeberUns, requiresMotion: true },
   { path: "/fachstelle", component: Fachstelle, requiresMotion: true },
-  { path: "/notfallkarte", component: Notfallkarte },
+  { path: PERSONAL_NOTFALLKARTE_PATH, component: Notfallkarte },
   { path: "/wegweiser", component: Wegweiser, requiresMotion: true },
   { path: "/uebungen", component: Uebungsszenarien, requiresMotion: true },
   { path: "/quellen", component: Quellen, requiresMotion: true },

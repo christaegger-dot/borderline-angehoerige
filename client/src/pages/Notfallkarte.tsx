@@ -18,6 +18,11 @@ import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import { ROT, GELB, GRUEN, type Kontakt } from "@/data/kontakte";
+import {
+  NOTFALLKARTE_PRINT_STORAGE_KEY,
+  NOTFALLKARTE_STORAGE_KEY,
+  PERSONAL_NOTFALLKARTE_PATH,
+} from "@/domain/notfallkarte";
 import { Link } from "wouter";
 
 interface PersonalContact {
@@ -37,8 +42,6 @@ interface NotfallkarteData {
   calmingStrategies: CalmingStrategy[];
   notes: string;
 }
-
-const STORAGE_KEY = "notfallkarte-data";
 
 const DEFAULT_STRATEGIES: CalmingStrategy[] = [
   { id: "s1", text: "Langsam ein- und ausatmen (4-7-8)" },
@@ -62,7 +65,7 @@ const CARD_GRUEN = GRUEN.filter(k => k.id === "GRUEN_143");
 
 function loadData(): NotfallkarteData {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(NOTFALLKARTE_STORAGE_KEY);
     if (raw) return JSON.parse(raw);
   } catch {
     /* ignore corrupt data */
@@ -83,7 +86,7 @@ function isStorageAvailable(): boolean {
 
 function saveData(data: NotfallkarteData): boolean {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(NOTFALLKARTE_STORAGE_KEY, JSON.stringify(data));
     return true;
   } catch {
     return false;
@@ -92,8 +95,9 @@ function saveData(data: NotfallkarteData): boolean {
 
 function deleteStoredData(): boolean {
   try {
-    localStorage.removeItem(STORAGE_KEY);
-    sessionStorage.removeItem("notfallkarte-print-data");
+    localStorage.removeItem(NOTFALLKARTE_STORAGE_KEY);
+    localStorage.removeItem(NOTFALLKARTE_PRINT_STORAGE_KEY);
+    sessionStorage.removeItem(NOTFALLKARTE_PRINT_STORAGE_KEY);
     return true;
   } catch {
     return false;
@@ -294,7 +298,10 @@ export default function Notfallkarte() {
 
   const handlePrint = useCallback(() => {
     try {
-      sessionStorage.setItem("notfallkarte-print-data", JSON.stringify(data));
+      localStorage.setItem(
+        NOTFALLKARTE_PRINT_STORAGE_KEY,
+        JSON.stringify(data)
+      );
     } catch {
       /* ignore */
     }
@@ -366,7 +373,7 @@ export default function Notfallkarte() {
       <SEO
         title="Persönliche Notfallkarte"
         description="Erstellen Sie Ihre persönliche Notfallkarte mit den wichtigsten Nummern, Kontaktpersonen und Beruhigungsstrategien – zum Ausdrucken oder Speichern."
-        path="/notfallkarte"
+        path={PERSONAL_NOTFALLKARTE_PATH}
       />
       <div role="status" aria-live="polite" className="sr-only">
         {announcement}
@@ -453,7 +460,7 @@ export default function Notfallkarte() {
               Situations-Wegweiser
             </Link>
           </p>
-          <ReviewBadge path="/notfallkarte" />
+          <ReviewBadge path={PERSONAL_NOTFALLKARTE_PATH} />
         </header>
         <hr
           className="border-0 border-t print:hidden"

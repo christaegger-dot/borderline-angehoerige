@@ -23,6 +23,7 @@ import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO from "@/components/SEO";
 import SituationsWegweiser from "@/components/interactive/SituationsWegweiser";
 import { kontaktByIdStrict } from "@/data/kontakte";
+import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 
 const rot144 = kontaktByIdStrict("ROT_144");
 
@@ -119,7 +120,7 @@ export default function Wegweiser() {
               description: "Alle Notfallnummern.",
             },
             {
-              href: "/notfallkarte",
+              href: PERSONAL_NOTFALLKARTE_PATH,
               title: "Notfallkarte",
               description: "Persönliche Karte erstellen.",
             },

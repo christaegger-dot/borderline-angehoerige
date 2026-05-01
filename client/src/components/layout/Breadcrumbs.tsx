@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { getRouteAccent } from "@/components/layout/routeAccent";
 import { getHandoutTextVersionMeta } from "@/content/handoutTextVersions";
+import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
 
 const pageNames: Record<string, string> = {
@@ -28,7 +29,7 @@ const pageNames: Record<string, string> = {
   "/buchempfehlungen": "Buchempfehlungen",
   "/feedback": "Feedback",
   "/wegweiser": "Situations-Wegweiser",
-  "/notfallkarte": "Persönliche Notfallkarte",
+  [PERSONAL_NOTFALLKARTE_PATH]: "Persönliche Notfallkarte",
   "/uebungen": "Kommunikations-Übungen",
   "/quellen": "Quellen & Literatur",
   "/fachstelle": "Fachstelle Angehörigenarbeit",

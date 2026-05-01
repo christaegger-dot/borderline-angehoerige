@@ -1,6 +1,7 @@
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
 import ContentSection from "@/components/ContentSection";
+import ReviewBadge from "@/components/ReviewBadge";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
@@ -47,6 +48,7 @@ export default function Datenschutz() {
               Datenschutzerklärung informiert Sie über die Verarbeitung
               personenbezogener Daten auf dieser Website.
             </p>
+            <ReviewBadge path="/datenschutz" />
           </motion.div>
         </div>
       </section>

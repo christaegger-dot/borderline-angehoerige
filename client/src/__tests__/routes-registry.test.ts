@@ -18,6 +18,10 @@ describe("route registry", () => {
     expect(routes.some(route => route.path === "/selbsttest")).toBe(true);
     expect(routes.some(route => route.path === "/faq")).toBe(true);
     expect(routes.some(route => route.path === "/materialien")).toBe(true);
+    expect(routes.some(route => route.path === "/notfallkarte/erstellen")).toBe(
+      true
+    );
+    expect(routes.some(route => route.path === "/notfallkarte")).toBe(false);
   });
 
   it("keeps known redirects configured", () => {

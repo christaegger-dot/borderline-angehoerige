@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import {
   ChevronUp,
@@ -80,7 +81,7 @@ const pageNames: Record<string, string> = {
   "/buchempfehlungen": "Buchempfehlungen",
   "/feedback": "Feedback",
   "/wegweiser": "Situations-Wegweiser",
-  "/notfallkarte": "Persönliche Notfallkarte",
+  [PERSONAL_NOTFALLKARTE_PATH]: "Persönliche Notfallkarte",
   "/uebungen": "Kommunikations-Übungen",
   "/quellen": "Quellen & Literatur",
   "/fachstelle": "Fachstelle Angehörigenarbeit",

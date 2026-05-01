@@ -78,13 +78,19 @@ async function createLocalMaterialDownloadResponse(
     }
   }
 
-  if (!publicOrigin) {
+  const resolvedPublicOrigin =
+    publicOrigin ??
+    process.env.URL ??
+    process.env.DEPLOY_PRIME_URL ??
+    process.env.SITE_URL;
+
+  if (!resolvedPublicOrigin) {
     return createTextResponse("Material nicht gefunden.", 404);
   }
 
   try {
     const upstream = await fetchPdf(
-      new URL(sourceUrl, publicOrigin).toString()
+      new URL(sourceUrl, resolvedPublicOrigin).toString()
     );
     return createPdfProxyResponse(
       upstream,

@@ -28,9 +28,11 @@ async function startServer() {
   app.get("/api/material-download/:id", async (req, res) => {
     const disposition =
       req.query.disposition === "inline" ? "inline" : "attachment";
+    const publicOrigin = getPublicOrigin(req);
     const response = await createMaterialDownloadResponse(
       req.params.id,
-      disposition
+      disposition,
+      publicOrigin
     );
     await sendResponse(res, response);
   });
@@ -106,4 +108,13 @@ async function sendResponse(res: express.Response, response: Response) {
 
   const body = Buffer.from(await response.arrayBuffer());
   res.end(body);
+}
+
+function getPublicOrigin(req: express.Request) {
+  const forwardedProto = req.get("x-forwarded-proto")?.split(",")[0]?.trim();
+  const forwardedHost = req.get("x-forwarded-host")?.split(",")[0]?.trim();
+  const host = forwardedHost || req.get("host");
+  const protocol = forwardedProto || req.protocol;
+
+  return host ? `${protocol}://${host}` : undefined;
 }

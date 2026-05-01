@@ -19,7 +19,8 @@ const LOCAL_PUBLIC_ROOTS = [
 
 export async function createMaterialDownloadResponse(
   id: string,
-  disposition: HandoutDisposition = "attachment"
+  disposition: HandoutDisposition = "attachment",
+  publicOrigin?: string
 ) {
   const download = resolveHandoutAsset(id);
   if (!download) {
@@ -30,45 +31,19 @@ export async function createMaterialDownloadResponse(
     return createLocalMaterialDownloadResponse(
       download.sourceUrl,
       download.fileName,
-      disposition
+      disposition,
+      publicOrigin
     );
   }
 
   try {
-    const upstream = await fetch(download.sourceUrl, {
-      headers: {
-        Accept: "application/pdf,application/octet-stream;q=0.9,*/*;q=0.1",
-      },
-    });
-
-    if (!upstream.ok || !upstream.body) {
-      return createTextResponse("Download derzeit nicht verfügbar.", 502);
-    }
-
-    const headers = createSecurityHeaders();
-    headers.set(
-      "Content-Type",
-      upstream.headers.get("content-type") ?? "application/pdf"
+    const upstream = await fetchPdf(download.sourceUrl);
+    return createPdfProxyResponse(
+      upstream,
+      download.fileName,
+      disposition,
+      "public, max-age=31536000"
     );
-    headers.set(
-      "Cache-Control",
-      upstream.headers.get("cache-control") ?? "public, max-age=31536000"
-    );
-    headers.set(
-      "Content-Disposition",
-      contentDisposition(download.fileName, disposition)
-    );
-    headers.set("X-Content-Type-Options", "nosniff");
-
-    const contentLength = upstream.headers.get("content-length");
-    if (contentLength) {
-      headers.set("Content-Length", contentLength);
-    }
-
-    return new Response(upstream.body, {
-      status: 200,
-      headers,
-    });
   } catch {
     return createTextResponse("Download derzeit nicht verfügbar.", 502);
   }
@@ -77,32 +52,90 @@ export async function createMaterialDownloadResponse(
 async function createLocalMaterialDownloadResponse(
   sourceUrl: string,
   fileName: string,
-  disposition: HandoutDisposition
+  disposition: HandoutDisposition,
+  publicOrigin?: string
 ) {
   const absolutePath = resolveLocalPdfPath(sourceUrl);
-  if (!absolutePath) {
+  if (absolutePath) {
+    try {
+      const body = await readFile(absolutePath);
+      const headers = createSecurityHeaders();
+      headers.set("Content-Type", "application/pdf");
+      headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+      headers.set(
+        "Content-Disposition",
+        contentDisposition(fileName, disposition)
+      );
+      headers.set("Content-Length", String(body.byteLength));
+      headers.set("X-Content-Type-Options", "nosniff");
+
+      return new Response(body, {
+        status: 200,
+        headers,
+      });
+    } catch {
+      return createTextResponse("Download derzeit nicht verfügbar.", 502);
+    }
+  }
+
+  if (!publicOrigin) {
     return createTextResponse("Material nicht gefunden.", 404);
   }
 
   try {
-    const body = await readFile(absolutePath);
-    const headers = createSecurityHeaders();
-    headers.set("Content-Type", "application/pdf");
-    headers.set("Cache-Control", "public, max-age=0, must-revalidate");
-    headers.set(
-      "Content-Disposition",
-      contentDisposition(fileName, disposition)
+    const upstream = await fetchPdf(
+      new URL(sourceUrl, publicOrigin).toString()
     );
-    headers.set("Content-Length", String(body.byteLength));
-    headers.set("X-Content-Type-Options", "nosniff");
-
-    return new Response(body, {
-      status: 200,
-      headers,
-    });
+    return createPdfProxyResponse(
+      upstream,
+      fileName,
+      disposition,
+      "public, max-age=0, must-revalidate"
+    );
   } catch {
     return createTextResponse("Download derzeit nicht verfügbar.", 502);
   }
+}
+
+async function fetchPdf(sourceUrl: string) {
+  return fetch(sourceUrl, {
+    headers: {
+      Accept: "application/pdf,application/octet-stream;q=0.9,*/*;q=0.1",
+    },
+  });
+}
+
+function createPdfProxyResponse(
+  upstream: Response,
+  fileName: string,
+  disposition: HandoutDisposition,
+  fallbackCacheControl: string
+) {
+  if (!upstream.ok || !upstream.body) {
+    return createTextResponse("Download derzeit nicht verfügbar.", 502);
+  }
+
+  const headers = createSecurityHeaders();
+  headers.set(
+    "Content-Type",
+    upstream.headers.get("content-type") ?? "application/pdf"
+  );
+  headers.set(
+    "Cache-Control",
+    upstream.headers.get("cache-control") ?? fallbackCacheControl
+  );
+  headers.set("Content-Disposition", contentDisposition(fileName, disposition));
+  headers.set("X-Content-Type-Options", "nosniff");
+
+  const contentLength = upstream.headers.get("content-length");
+  if (contentLength) {
+    headers.set("Content-Length", contentLength);
+  }
+
+  return new Response(upstream.body, {
+    status: 200,
+    headers,
+  });
 }
 
 function contentDisposition(fileName: string, disposition: HandoutDisposition) {

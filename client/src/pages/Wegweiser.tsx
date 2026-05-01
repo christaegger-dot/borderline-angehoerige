@@ -17,12 +17,12 @@
  * /soforthilfe.
  */
 import { EditorialLayout } from "@/components/editorial";
+import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO from "@/components/SEO";
 import SituationsWegweiser from "@/components/interactive/SituationsWegweiser";
 import { kontaktByIdStrict } from "@/data/kontakte";
-import { Link } from "wouter";
 
 const rot144 = kontaktByIdStrict("ROT_144");
 
@@ -87,9 +87,9 @@ export default function Wegweiser() {
               {rot144.nummer}
             </a>{" "}
             an. Dieser Wegweiser ersetzt keinen Notruf —{" "}
-            <Link href="/soforthilfe" className="editorial-link">
+            <AppLink href="/soforthilfe" className="editorial-link">
               alle Notfallnummern
-            </Link>
+            </AppLink>
             .
           </p>
         </header>

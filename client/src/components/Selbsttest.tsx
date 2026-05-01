@@ -49,7 +49,7 @@
  *   Resultat ist funktional).
  */
 import { useEffect, useRef, useState } from "react";
-import { Link } from "wouter";
+import AppLink from "@/components/AppLink";
 import { motion, AnimatePresence } from "framer-motion";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 
@@ -479,7 +479,7 @@ export default function Selbsttest() {
             className="mt-8 flex flex-wrap gap-x-5 gap-y-1"
             style={{ fontSize: "var(--text-md)" }}
           >
-            <Link
+            <AppLink
               href={result.primaryLink}
               className="inline-block rounded-full border px-5 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{
@@ -490,7 +490,7 @@ export default function Selbsttest() {
               }}
             >
               {result.primaryText}
-            </Link>
+            </AppLink>
           </p>
 
           {/* Secondary Links */}
@@ -507,13 +507,13 @@ export default function Selbsttest() {
                 style={{ fontSize: "var(--text-md)" }}
               >
                 {result.secondaryLinks.map(link => (
-                  <Link
+                  <AppLink
                     key={link.href + link.text}
                     href={link.href}
                     className="editorial-link"
                   >
                     {link.text}
-                  </Link>
+                  </AppLink>
                 ))}
               </p>
             </div>

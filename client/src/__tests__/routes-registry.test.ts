@@ -15,18 +15,26 @@ describe("route registry", () => {
 
   it("keeps the critical public routes available", () => {
     expect(routes.some(route => route.path === "/")).toBe(true);
-    expect(routes.some(route => route.path === "/soforthilfe")).toBe(true);
     expect(routes.some(route => route.path === "/selbsttest")).toBe(true);
     expect(routes.some(route => route.path === "/faq")).toBe(true);
+    expect(routes.some(route => route.path === "/materialien")).toBe(true);
   });
 
   it("keeps known redirects configured", () => {
-    const notfallRoute = routes.find(route => route.path === "/notfall");
     const unterstuetzenRoute = routes.find(
       route => route.path === "/unterstuetzen"
     );
+    const selbsthilfegruppenRoute = routes.find(
+      route => route.path === "/selbsthilfegruppen"
+    );
+    const therapieangeboteRoute = routes.find(
+      route => route.path === "/therapieangebote"
+    );
 
-    expect(notfallRoute?.redirectTo).toBe("/soforthilfe");
     expect(unterstuetzenRoute?.redirectTo).toBe("/unterstuetzen/uebersicht");
+    expect(selbsthilfegruppenRoute?.redirectTo).toBe("/beratung");
+    expect(therapieangeboteRoute?.redirectTo).toBe(
+      "/unterstuetzen/therapie#therapieangebote"
+    );
   });
 });

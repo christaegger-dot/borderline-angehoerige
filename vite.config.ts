@@ -154,6 +154,58 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
   trimLogFile(logPath, MAX_LOG_SIZE_BYTES);
 }
 
+const STATIC_DIRECT_PAGE_FILES = new Map([
+  ["/soforthilfe", "soforthilfe/index.html"],
+]);
+
+function normalizeRequestPath(reqUrl?: string) {
+  const pathname = new URL(reqUrl ?? "/", "http://localhost").pathname;
+  return pathname !== "/" ? pathname.replace(/\/+$/, "") : pathname;
+}
+
+function createStaticDirectPageMiddleware(rootDir: string) {
+  return (
+    req: Parameters<ViteDevServer["middlewares"]["use"]>[1],
+    res: any,
+    next: () => void
+  ) => {
+    if (req.method !== "GET" && req.method !== "HEAD") {
+      return next();
+    }
+
+    const pathname = normalizeRequestPath(req.url);
+
+    if (pathname === "/notfall") {
+      res.writeHead(302, { Location: "/soforthilfe" });
+      res.end();
+      return;
+    }
+
+    const relativeFilePath = STATIC_DIRECT_PAGE_FILES.get(pathname);
+    if (!relativeFilePath) {
+      return next();
+    }
+
+    const absoluteFilePath = path.join(rootDir, relativeFilePath);
+    if (!fs.existsSync(absoluteFilePath)) {
+      return next();
+    }
+
+    const html = fs.readFileSync(absoluteFilePath);
+    res.writeHead(200, {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-cache",
+    });
+
+    if (req.method === "HEAD") {
+      res.end();
+      return;
+    }
+
+    res.end(html);
+  };
+}
+
 /**
  * Vite plugin to collect browser debug logs
  * - POST /__manus__/logs: Browser sends logs, written directly to files
@@ -278,9 +330,36 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
+function vitePluginStaticDirectPages(): Plugin {
+  return {
+    name: "static-direct-pages",
+
+    configureServer(server) {
+      server.middlewares.use(
+        createStaticDirectPageMiddleware(
+          path.join(PROJECT_ROOT, "client", "public")
+        )
+      );
+    },
+
+    configurePreviewServer(server) {
+      server.middlewares.use(
+        createStaticDirectPageMiddleware(
+          path.join(PROJECT_ROOT, "dist", "public")
+        )
+      );
+    },
+  };
+}
+
 export default defineConfig(({ command }) => {
   const isServe = command === "serve";
-  const plugins = [react(), tailwindcss(), jsxLocPlugin()];
+  const plugins = [
+    react(),
+    tailwindcss(),
+    jsxLocPlugin(),
+    vitePluginStaticDirectPages(),
+  ];
 
   if (isServe) {
     plugins.push(vitePluginManusRuntime(), vitePluginManusDebugCollector());

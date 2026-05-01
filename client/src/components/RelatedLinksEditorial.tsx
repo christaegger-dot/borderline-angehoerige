@@ -7,7 +7,7 @@
  * border-t in --rule-color. Das Original RelatedLinks.tsx bleibt
  * unangetastet (andere Pages nutzen es noch).
  */
-import { Link } from "wouter";
+import AppLink from "@/components/AppLink";
 
 export interface RelatedLink {
   href: string;
@@ -63,7 +63,7 @@ export default function RelatedLinksEditorial({
             className="border-t py-5"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <Link href={link.href} className="block">
+            <AppLink href={link.href} className="block">
               <p
                 className="editorial-link"
                 style={{
@@ -84,7 +84,7 @@ export default function RelatedLinksEditorial({
               >
                 {link.description}
               </p>
-            </Link>
+            </AppLink>
           </li>
         ))}
       </ul>

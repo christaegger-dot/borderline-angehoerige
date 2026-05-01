@@ -86,8 +86,9 @@ Server. Auf macOS nutzen die Skripte System-Chrome
 `PLAYWRIGHT_EXECUTABLE_PATH` oder `playwright install chromium`.
 
 **`/soforthilfe`-Sonderfall:** Die Page ist Static-HTML, nicht React-SPA.
-Vite Preview emuliert die Netlify-`_redirects` nicht. Fuer ehrliche
-a11y-Audits dieser Page immer gegen Production testen:
+Der lokale Vite-Dev-/Preview-Server emuliert repo-intern den Direktzugriff
+auf `/soforthilfe` fuer Smoke- und Navigationschecks. Fuer ehrliche
+a11y-Audits dieser Page trotzdem immer gegen Production testen:
 
 ```sh
 AUDIT_BASE_URL=https://borderline-angehoerige.netlify.app \

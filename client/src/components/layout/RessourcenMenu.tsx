@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import AppLink from "@/components/AppLink";
 import { ressourcenItems } from "@/components/layout/navigationData";
 import { getRouteAccent } from "@/components/layout/routeAccent";
 import { useRessourcenMenuA11y } from "@/components/layout/useRessourcenMenuA11y";
@@ -135,7 +135,7 @@ export function RessourcenMenu({
                     const idx = flatIndex(groups, groupIdx, itemIdx);
 
                     return (
-                      <Link
+                      <AppLink
                         key={item.href}
                         href={item.href}
                         role="menuitem"
@@ -163,7 +163,7 @@ export function RessourcenMenu({
                           className={`shrink-0 ${item.secondary ? "w-3.5 h-3.5" : "w-4 h-4"}`}
                         />
                         <span className="leading-tight">{item.label}</span>
-                      </Link>
+                      </AppLink>
                     );
                   })}
                 </div>

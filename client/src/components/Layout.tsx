@@ -1,5 +1,6 @@
-import { Link, useLocation } from "wouter";
 import { useState, useEffect, lazy, Suspense } from "react";
+import AppLink from "@/components/AppLink";
+import { useLocation } from "wouter";
 const Search = lazy(() => import("@/components/Search"));
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -57,12 +58,12 @@ export default function Layout({ children }: LayoutProps) {
           <span className="hidden sm:inline">•</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
           {showInlineSoforthilfeLink && (
-            <Link
+            <AppLink
               href="/soforthilfe"
               className="sm:hidden inline-flex min-h-9 items-center rounded-full border border-alert/25 bg-alert/10 px-3 py-1 text-sm font-medium text-alert transition-colors hover:bg-alert/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-alert/40 focus-visible:ring-offset-2"
             >
               Zur Soforthilfe
-            </Link>
+            </AppLink>
           )}
         </div>
       </aside>
@@ -81,12 +82,12 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand + Absender */}
             <div className="lg:col-span-1">
-              <Link href="/" className="flex items-center gap-2 mb-4">
+              <AppLink href="/" className="flex items-center gap-2 mb-4">
                 <BrandMark variant="dark" />
                 <span className="font-medium text-base text-white">
                   Borderline · Hilfe für Angehörige
                 </span>
-              </Link>
+              </AppLink>
               <p className="text-white/90 text-sm leading-relaxed">
                 Psychoedukatives Informationsangebot für Angehörige von Menschen
                 mit Borderline-Muster.
@@ -101,12 +102,12 @@ export default function Layout({ children }: LayoutProps) {
               <ul className="space-y-1">
                 {navItems.map(item => (
                   <li key={item.href}>
-                    <Link
+                    <AppLink
                       href={item.href}
                       className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5"
                     >
                       {item.label}
-                    </Link>
+                    </AppLink>
                   </li>
                 ))}
               </ul>
@@ -120,12 +121,12 @@ export default function Layout({ children }: LayoutProps) {
               <ul className="space-y-1">
                 {ressourcenItems.map(item => (
                   <li key={item.href}>
-                    <Link
+                    <AppLink
                       href={item.href}
                       className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5"
                     >
                       {item.label}
-                    </Link>
+                    </AppLink>
                   </li>
                 ))}
               </ul>
@@ -161,42 +162,42 @@ export default function Layout({ children }: LayoutProps) {
               © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
-              <Link
+              <AppLink
                 href="/fachstelle"
                 className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Fachstelle
-              </Link>
-              <Link
+              </AppLink>
+              <AppLink
                 href="/ueber-uns"
                 className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Über uns
-              </Link>
-              <Link
+              </AppLink>
+              <AppLink
                 href="/impressum"
                 className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Impressum
-              </Link>
-              <Link
+              </AppLink>
+              <AppLink
                 href="/datenschutz"
                 className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Datenschutz
-              </Link>
-              <Link
+              </AppLink>
+              <AppLink
                 href="/barrierefreiheit"
                 className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Barrierefreiheit
-              </Link>
-              <Link
+              </AppLink>
+              <AppLink
                 href="/feedback"
                 className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
               >
                 Feedback
-              </Link>
+              </AppLink>
             </div>
           </div>
         </div>

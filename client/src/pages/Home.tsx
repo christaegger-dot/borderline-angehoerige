@@ -15,6 +15,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
 } from "@/components/editorial";
+import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
 import { EMAILS, INFO } from "@/data/kontakte";
@@ -168,8 +169,8 @@ export default function Home() {
               unter <Link href="/kommunizieren">Kommunizieren</Link>,{" "}
               <Link href="/grenzen">Grenzen</Link> und{" "}
               <Link href="/selbstfuersorge">Selbstfürsorge</Link>. Bei akuten
-              Krisen führt <Link href="/soforthilfe">Soforthilfe</Link> zu den
-              Schweizer Notfallnummern.
+              Krisen führt <AppLink href="/soforthilfe">Soforthilfe</AppLink> zu
+              den Schweizer Notfallnummern.
             </p>
           </EditorialProse>
           <p
@@ -236,9 +237,9 @@ export default function Home() {
             }}
           >
             In einer akuten Krise zählt der schnellste funktionierende Weg.{" "}
-            <Link href="/soforthilfe" className="editorial-link">
+            <AppLink href="/soforthilfe" className="editorial-link">
               Notfallnummern öffnen
-            </Link>
+            </AppLink>
             .
           </p>
         </section>

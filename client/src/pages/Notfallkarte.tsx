@@ -12,6 +12,7 @@ import {
   EditorialProse,
   EditorialSection,
 } from "@/components/editorial";
+import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
@@ -444,9 +445,9 @@ export default function Notfallkarte() {
             }}
           >
             Sofort Hilfe brauchen?{" "}
-            <Link href="/soforthilfe" className="editorial-link">
+            <AppLink href="/soforthilfe" className="editorial-link">
               Soforthilfe-Nummern
-            </Link>{" "}
+            </AppLink>{" "}
             · Situation einschätzen?{" "}
             <Link href="/wegweiser" className="editorial-link">
               Situations-Wegweiser

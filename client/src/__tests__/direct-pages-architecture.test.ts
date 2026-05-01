@@ -63,4 +63,14 @@ describe("direct pages architecture", () => {
       'const STATIC_DIRECT_PAGE_ROUTES = new Set(["/soforthilfe"])'
     );
   });
+
+  it("keeps static direct pages out of the SPA route registry", () => {
+    const routesIndex = fs.readFileSync(
+      path.join(repoRoot, "client/src/app/routes.ts"),
+      "utf8"
+    );
+
+    expect(routesIndex).not.toContain('path: "/soforthilfe"');
+    expect(routesIndex).not.toContain('path: "/notfall"');
+  });
 });

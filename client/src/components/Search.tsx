@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef, useMemo } from "react";
+import AppLink from "@/components/AppLink";
 import "./search.css";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";
-import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { searchableContent, type SearchEntry } from "@/content/searchIndex";
 
@@ -285,7 +285,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                     id="search-results"
                   >
                     {results.map((result, index) => (
-                      <Link
+                      <AppLink
                         key={`${result.href}-${index}`}
                         href={result.href}
                         onClick={handleResultClick}
@@ -308,7 +308,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                           </p>
                         </div>
                         <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0 mt-6" />
-                      </Link>
+                      </AppLink>
                     ))}
                   </div>
                 )}

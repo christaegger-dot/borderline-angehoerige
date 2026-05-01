@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { getHandoutDownloadHref, getHandoutOpenHref } from "@/content/handouts";
@@ -16,7 +17,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import NotFound from "@/pages/NotFound";
 import type { RouteComponentProps } from "wouter";
-import { Link } from "wouter";
 import {
   ArrowLeft,
   BookOpen,
@@ -154,28 +154,28 @@ export default function HandoutTextPage({
                   </a>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link href="/materialien">
+                  <AppLink href="/materialien">
                     <ArrowLeft className="w-4 h-4" />
                     Zur Materialsammlung
-                  </Link>
+                  </AppLink>
                 </Button>
               </div>
 
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                <Link
+                <AppLink
                   href={pageTopicHref}
                   className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
                 >
                   <BookOpen className="w-4 h-4 text-sage-dark" />
                   Zum Themenbereich {pageTopicLabel}
-                </Link>
-                <Link
+                </AppLink>
+                <AppLink
                   href="/barrierefreiheit"
                   className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
                 >
                   <FileText className="w-4 h-4 text-sage-dark" />
                   Warum diese Textversion hilfreich ist
-                </Link>
+                </AppLink>
               </div>
             </div>
 

@@ -35,6 +35,7 @@ import SEO from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import KrisenampelVisualisierung from "@/components/visualizations/KrisenampelVisualisierung";
+import AppLink from "@/components/AppLink";
 import { kontaktByIdStrict } from "@/data/kontakte";
 import { Link } from "wouter";
 
@@ -343,12 +344,12 @@ export default function UnterstuetzenKrise() {
                 {gruen143.label} ({gruen143.nummer})
               </a>
             </p>
-            <Link
+            <AppLink
               href="/soforthilfe"
               className="rounded bg-white px-3 py-2 text-sm font-medium text-alert hover:bg-white/90"
             >
               Alle Notfallnummern
-            </Link>
+            </AppLink>
           </div>
         </div>
       </section>
@@ -481,9 +482,9 @@ export default function UnterstuetzenKrise() {
               für emotionale Eskalationen, starke Anspannung und Rückzug. Bei
               akuter Gefahr, Suizidgefahr oder Selbstverletzung gehen Sie direkt
               zu{" "}
-              <Link href="/soforthilfe" className="editorial-link">
+              <AppLink href="/soforthilfe" className="editorial-link">
                 Soforthilfe &amp; Notfallnummern
-              </Link>
+              </AppLink>
               .
             </p>
           </EditorialProse>

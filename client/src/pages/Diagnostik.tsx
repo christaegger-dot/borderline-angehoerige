@@ -31,6 +31,7 @@ import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
+import AppLink from "@/components/AppLink";
 import {
   emailByIdStrict,
   kontaktByIdStrict,
@@ -458,9 +459,9 @@ export default function Diagnostik() {
               <strong>Klare Grenze:</strong> Bei akuter Gefahr — Suizidalität,
               schwerer Selbstverletzung oder Fremdgefährdung — ist die
               Diagnose-Frage nachrangig. Dann zählt die{" "}
-              <Link href="/soforthilfe" className="editorial-link">
+              <AppLink href="/soforthilfe" className="editorial-link">
                 Soforthilfe
-              </Link>
+              </AppLink>
               .
             </p>
           </EditorialProse>

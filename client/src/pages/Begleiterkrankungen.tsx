@@ -32,6 +32,7 @@ import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
+import AppLink from "@/components/AppLink";
 import { emailByIdStrict, kontaktByIdStrict } from "@/data/kontakte";
 import { Link } from "wouter";
 
@@ -334,9 +335,9 @@ export default function Begleiterkrankungen() {
             </p>
             <ul className="ml-6 list-disc space-y-1">
               <li>
-                <Link href="/soforthilfe" className="editorial-link">
+                <AppLink href="/soforthilfe" className="editorial-link">
                   Soforthilfe
-                </Link>{" "}
+                </AppLink>{" "}
                 — Notfallnummern und Anlaufstellen für die akute Situation.
               </li>
               <li>
@@ -376,9 +377,9 @@ export default function Begleiterkrankungen() {
               </li>
               <li>
                 Bei Hinweisen auf Suizidalität → siehe{" "}
-                <Link href="/soforthilfe" className="editorial-link">
+                <AppLink href="/soforthilfe" className="editorial-link">
                   Soforthilfe
-                </Link>
+                </AppLink>
                 .
               </li>
             </ul>

@@ -21,10 +21,10 @@ import {
   EditorialProse,
   EditorialSection,
 } from "@/components/editorial";
+import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import Selbsttest from "@/components/Selbsttest";
-import { Link } from "wouter";
 
 export default function SelbsttestPage() {
   return (
@@ -91,9 +91,9 @@ export default function SelbsttestPage() {
               lediglich als Orientierungshilfe, um Ihnen den Einstieg in unsere
               Inhalte zu erleichtern. Bei akuten Krisen wenden Sie sich bitte an
               die{" "}
-              <Link href="/soforthilfe" className="editorial-link">
+              <AppLink href="/soforthilfe" className="editorial-link">
                 Notfallressourcen
-              </Link>
+              </AppLink>
               .
             </p>
           </EditorialProse>

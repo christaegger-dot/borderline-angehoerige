@@ -20,6 +20,7 @@ import {
   EditorialProse,
   EditorialSection,
 } from "@/components/editorial";
+import AppLink from "@/components/AppLink";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -355,9 +356,9 @@ export default function UeberUns() {
               Diese Website ersetzt keine professionelle Beratung, Therapie oder
               medizinische Behandlung. Die Inhalte dienen der Information und
               Orientierung. Bei akuten Krisen wenden Sie sich bitte an die{" "}
-              <Link href="/soforthilfe" className="editorial-link">
+              <AppLink href="/soforthilfe" className="editorial-link">
                 Notfallnummern
-              </Link>
+              </AppLink>
               . Für eine individuelle Beratung empfehlen wir den Kontakt zu{" "}
               <Link href="/beratung" className="editorial-link">
                 Beratungsstellen

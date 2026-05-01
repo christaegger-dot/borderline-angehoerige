@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link } from "wouter";
+import AppLink from "@/components/AppLink";
 import {
   ChevronDown,
   FolderOpen,
@@ -87,7 +87,7 @@ export function MobileMenu({
           const isActive = location.startsWith(item.href);
           const accent = getRouteAccent(item.href);
           return (
-            <Link
+            <AppLink
               key={item.href}
               href={item.href}
               onClick={closeMenu}
@@ -99,7 +99,7 @@ export function MobileMenu({
             >
               <Icon className="w-5 h-5" />
               {item.label}
-            </Link>
+            </AppLink>
           );
         })}
 
@@ -147,7 +147,7 @@ export function MobileMenu({
                         const accent = getRouteAccent(item.href);
 
                         return (
-                          <Link
+                          <AppLink
                             key={item.href}
                             href={item.href}
                             onClick={() => {
@@ -172,7 +172,7 @@ export function MobileMenu({
                               }
                             />
                             {item.label}
-                          </Link>
+                          </AppLink>
                         );
                       })}
                     </div>
@@ -183,14 +183,14 @@ export function MobileMenu({
           )}
         </div>
 
-        <Link
+        <AppLink
           href="/soforthilfe"
           onClick={closeMenu}
           className="mt-2 flex items-center gap-3 rounded-2xl bg-alert px-4 py-3 text-base font-medium text-white shadow-[0_18px_32px_-22px_rgba(197,95,61,0.8)]"
         >
           <Phone className="w-5 h-5" />
           Soforthilfe
-        </Link>
+        </AppLink>
 
         <button
           type="button"

@@ -21,7 +21,7 @@ describe("handout delivery helpers", () => {
     expect(resolveHandoutAsset("leuchtturm")?.sourceUrl).toBe(sourceUrl);
   });
 
-  it("allowlists non-library handouts through generated ids", () => {
+  it("allowlists non-library handouts through generated local ids", () => {
     const sourceUrl = kommItems[0].pdfUrl;
 
     expect(getHandoutOpenHref(sourceUrl)).toBe(
@@ -31,6 +31,11 @@ describe("handout delivery helpers", () => {
       resolveHandoutAsset("kommunizieren-wenn-gespraeche-kippen-3-schritte")
         ?.sourceUrl
     ).toBe(sourceUrl);
+    expect(getHandoutAssetBySource(sourceUrl)).toMatchObject({
+      sourceKind: "local",
+      textLayer: "present",
+      preferredReadingFormat: "pdf",
+    });
   });
 
   it("routes local pdf paths through the controlled download endpoint", () => {

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -10,7 +11,7 @@ from pypdf import PdfReader
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_INFOGRAFIKEN_DIR = REPO_ROOT / "client" / "public" / "infografiken"
-TARGET_IDS = (
+DEFAULT_TARGET_IDS = (
     "leuchtturm",
     "grenzen-spickzettel",
     "warnsignale",
@@ -27,6 +28,29 @@ SIZE_TOLERANCE_MM = 3.0
 
 def build_pdf_path(item_id: str) -> Path:
     return PUBLIC_INFOGRAFIKEN_DIR / f"manus-{item_id}-v1.pdf"
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Audit local canonical WebP/PDF replacements for handout ids."
+    )
+    parser.add_argument(
+        "ids",
+        nargs="*",
+        help="Handout ids to audit. Defaults to the original remote-material set.",
+    )
+    return parser.parse_args()
+
+
+def resolve_target_ids(cli_ids: list[str]) -> tuple[str, ...]:
+    if not cli_ids:
+        return DEFAULT_TARGET_IDS
+
+    ordered_unique: list[str] = []
+    for item_id in cli_ids:
+        if item_id not in ordered_unique:
+            ordered_unique.append(item_id)
+    return tuple(ordered_unique)
 
 
 def points_to_mm(points: float) -> float:
@@ -69,14 +93,16 @@ def analyze_pdf(path: Path) -> dict[str, object]:
 
 
 def main() -> None:
+    args = parse_args()
+    target_ids = resolve_target_ids(args.ids)
     report: dict[str, object] = {
-        "scope": list(TARGET_IDS),
+        "scope": list(target_ids),
         "files": [],
         "summary": {},
     }
 
     files: list[dict[str, object]] = []
-    for item_id in TARGET_IDS:
+    for item_id in target_ids:
         path = build_pdf_path(item_id)
         if not path.exists():
             raise FileNotFoundError(f"Missing canonical PDF: {path}")

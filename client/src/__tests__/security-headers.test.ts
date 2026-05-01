@@ -43,24 +43,11 @@ describe("security headers", () => {
   it("allows only self-hosted scripts and connections", () => {
     expect(CONTENT_SECURITY_POLICY).toContain("script-src 'self'");
     expect(CONTENT_SECURITY_POLICY).toContain("connect-src 'self'");
+    expect(CONTENT_SECURITY_POLICY).not.toContain("files.manuscdn.com");
     expect(CONTENT_SECURITY_POLICY).not.toContain("forge.butterfly-effect.dev");
   });
 
-  it("applies the shared security headers to remote material download responses", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue(
-        new Response("pdf", {
-          status: 200,
-          headers: {
-            "content-type": "application/pdf",
-            "cache-control": "public, max-age=600",
-            "content-length": "3",
-          },
-        })
-      )
-    );
-
+  it("applies the shared security headers to generated local handout download responses", async () => {
     const response = await createMaterialDownloadResponse(
       "kommunizieren-wenn-gespraeche-kippen-3-schritte",
       "inline"
@@ -71,8 +58,15 @@ describe("security headers", () => {
       expect(response.headers.get(header)).toBe(value);
     }
     expect(response.headers.get("Content-Type")).toBe("application/pdf");
-    expect(response.headers.get("Cache-Control")).toBe("public, max-age=600");
-    expect(response.headers.get("Content-Disposition")).toContain("inline;");
+    expect(response.headers.get("Cache-Control")).toBe(
+      "public, max-age=0, must-revalidate"
+    );
+    expect(response.headers.get("Content-Disposition")).toContain(
+      'inline; filename="manus-gespraeche-kippen-v1.pdf"'
+    );
+    expect(Number(response.headers.get("Content-Length"))).toBeGreaterThan(
+      1000
+    );
   });
 
   it("applies the shared security headers to local material download responses", async () => {

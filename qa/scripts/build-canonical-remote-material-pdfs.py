@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-import io
+import argparse
 import json
 import shutil
 import subprocess
-import textwrap
 import urllib.request
 from pathlib import Path
 
@@ -16,7 +15,6 @@ from reportlab.lib.enums import TA_CENTER
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
-from reportlab.lib.utils import ImageReader
 from reportlab.platypus import (
     Image,
     ListFlowable,
@@ -30,7 +28,7 @@ from reportlab.platypus import (
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_INFOGRAFIKEN_DIR = REPO_ROOT / "client" / "public" / "infografiken"
-TARGET_IDS = (
+DEFAULT_TARGET_IDS = (
     "leuchtturm",
     "grenzen-spickzettel",
     "warnsignale",
@@ -74,8 +72,31 @@ def build_pdf_path(item_id: str) -> Path:
     return PUBLIC_INFOGRAFIKEN_DIR / f"manus-{item_id}-v1.pdf"
 
 
-def load_target_items() -> list[dict[str, object]]:
-    script = TEXT_EXPORT_SCRIPT.replace("%TARGET_IDS%", json.dumps(list(TARGET_IDS)))
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Build local canonical WebP/PDF asset pairs for handout ids."
+    )
+    parser.add_argument(
+        "ids",
+        nargs="*",
+        help="Handout ids to build. Defaults to the original remote-material set.",
+    )
+    return parser.parse_args()
+
+
+def resolve_target_ids(cli_ids: list[str]) -> tuple[str, ...]:
+    if not cli_ids:
+        return DEFAULT_TARGET_IDS
+
+    ordered_unique: list[str] = []
+    for item_id in cli_ids:
+        if item_id not in ordered_unique:
+            ordered_unique.append(item_id)
+    return tuple(ordered_unique)
+
+
+def load_target_items(target_ids: tuple[str, ...]) -> list[dict[str, object]]:
+    script = TEXT_EXPORT_SCRIPT.replace("%TARGET_IDS%", json.dumps(list(target_ids)))
     result = subprocess.run(
         ["pnpm", "tsx", "-e", script],
         cwd=REPO_ROOT,
@@ -361,14 +382,16 @@ def build_pdf(item: dict[str, object], preview_path: Path, pdf_path: Path) -> No
 
 
 def main() -> None:
-    items = load_target_items()
+    args = parse_args()
+    target_ids = resolve_target_ids(args.ids)
+    items = load_target_items(target_ids)
     by_id = {str(item["id"]): item for item in items}
 
-    missing_ids = [item_id for item_id in TARGET_IDS if item_id not in by_id]
+    missing_ids = [item_id for item_id in target_ids if item_id not in by_id]
     if missing_ids:
         raise RuntimeError(f"Missing handout text versions for ids: {missing_ids}")
 
-    for item_id in TARGET_IDS:
+    for item_id in target_ids:
         item = by_id[item_id]
         preview_path = build_preview_path(item_id)
         pdf_path = build_pdf_path(item_id)

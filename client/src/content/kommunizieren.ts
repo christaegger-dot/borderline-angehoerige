@@ -31,27 +31,24 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "gespraeche-kippen",
     title: "Wenn Gespräche kippen: 3 Schritte",
     description: "Beruhigen, verbinden, begrenzen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/kWTjVSZAwAXAymgw.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eEpcTcWSbYQpNzJv.pdf",
+    url: "/infografiken/manus-gespraeche-kippen-v1.webp",
+    pdfUrl: "/infografiken/manus-gespraeche-kippen-v1.pdf",
     category: "techniken",
   },
   {
     id: "grenzen-ohne-eskalation",
     title: "Grenzen setzen, ohne zu eskalieren",
     description: "Die 3-Teile-Formel für klare Ansagen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/QrgVLpdeorAWgKvg.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YyBYayMoMIGwTZtM.pdf",
+    url: "/infografiken/manus-grenzen-ohne-eskalation-v1.webp",
+    pdfUrl: "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
     category: "konflikte",
   },
   {
     id: "pause-statt-streit",
     title: "Pause statt Streit",
     description: "Warnstufen erkennen und rechtzeitig stoppen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VCooXJsQnRmSZGul.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/fGgpuKMuDfzJYgrc.pdf",
+    url: "/infografiken/manus-pause-statt-streit-v1.webp",
+    pdfUrl: "/infografiken/manus-pause-statt-streit-v1.pdf",
     category: "konflikte",
   },
   {
@@ -76,9 +73,8 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "beispiel-dialog",
     title: "Beispiel-Dialog",
     description: "Technik-Schritte in einem kurzen Gespräch",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/YZGoCcmXszaQGVtV.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WZdsgoAKaJwvMCjp.pdf",
+    url: "/infografiken/manus-beispiel-dialog-v1.webp",
+    pdfUrl: "/infografiken/manus-beispiel-dialog-v1.pdf",
     category: "praxis",
   },
   {

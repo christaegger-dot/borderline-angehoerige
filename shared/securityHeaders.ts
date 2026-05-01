@@ -8,10 +8,10 @@ export const CONTENT_SECURITY_POLICY = [
   "manifest-src 'self'",
   "script-src 'self'",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "img-src 'self' https://files.manuscdn.com data:",
+  "img-src 'self' data:",
   "font-src 'self' https://fonts.gstatic.com",
   "connect-src 'self'",
-  "media-src 'self' https://files.manuscdn.com",
+  "media-src 'self'",
 ].join("; ");
 
 export const SECURITY_HEADERS = {

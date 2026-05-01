@@ -4,245 +4,194 @@
 
 - Repo: `/Users/christaegger/Downloads/borderline-angehoerige`
 - Stand: `1. Mai 2026`
-- Fokus: PDF- und Download-Audit fuer Materialien, Handouts und Textversionen
+- Fokus: Rest-Audit fuer die verbliebenen `9` Remote-Manus-PDFs
 - Methode:
-  - technische Textlayer-Pruefung mit `pypdf`
-  - Inventarabgleich gegen `materialien.ts`, `handouts.ts`,
-    `handoutTextMetas.ts` und `handoutTextVersions.ts`
-  - Live-Checks gegen Production fuer Proxy- und Direkt-PDFs
-  - Format- und Metadaten-Spotcheck ueber die reale Materialbibliothek
+  - Inventarabgleich gegen
+    [`materialien.ts`](../client/src/content/materialien.ts)
+  - technische PDF-Pruefung mit `pypdf`
+  - Live-Checks gegen Production fuer Proxy `inline` und `attachment`
+  - Preview- und Direktdatei-Checks gegen die realen Manus-URLs
 - Reproduzierbar ueber:
   - [`qa/scripts/scan-pdf-handouts.py`](./scripts/scan-pdf-handouts.py)
   - gebuendelte Python-Runtime mit `pypdf`
 
 ## Kurzfazit
 
-- Die Download-Pfade sind technisch weitgehend sauber:
-  - Proxy-IDs loesen korrekt auf
-  - gepruefte Live-URLs liefern `200`
-  - Remote-PDFs unterscheiden korrekt zwischen `inline` und `attachment`
-- Die Textversions-Abdeckung ist stark:
-  - `15/16` Materialeintraege haben eine Textversion
-  - die einzige Ausnahme ist `notfallkarte-zuerich`, die bewusst HTML-first ist
-    und deren PDF selbst textdurchsuchbar ist
-- Das eigentliche PDF-Qualitaetsgate ist aber noch nicht gruen:
-  - `39/40` textversionsgestuetzte Handout-PDFs haben keinen extrahierbaren
-    Text
-  - `5/15` Material-PDFs sind nicht A4-nah
-  - `14/15` Material-PDFs haben kein PDF-`Title`-Metadatum
+- Der fruehere lokale PDF-Befund ist technisch weitgehend geschlossen.
+- Offen ist jetzt nur noch der Remote-Restbestand:
+  - `9/9` Remote-Manus-PDFs haben keinen Textlayer
+  - `9/9` Remote-Manus-PDFs haben kein PDF-`Title`-Metadatum
+- Technisch gruen sind diese neun Dateien bei:
+  - Dateierreichbarkeit
+  - Preview-WebP
+  - Proxy-Auslieferung ueber Production
+  - `inline` vs. `attachment`
+  - A4-Format
+  - sichtbarer Textversion
 
 ## Audit-Urteil
 
-Das Audit ist **noch offen**.
+Das Audit ist **noch offen**, aber der offene Teil ist jetzt klar eingegrenzt.
 
-Der offene Teil betrifft nicht kaputte Downloads oder fehlende Dateien,
-sondern drei systemische Qualitaetsluecken:
+Es geht nicht mehr um kaputte Downloads, fehlende Dateien oder uneinheitliche
+Formate, sondern nur noch um die eigentliche PDF-Qualitaet der `9`
+Remote-Manus-Artefakte:
 
-1. PDF-A11y und Textlayer
-2. uneinheitliche Print-/A4-Formate
-3. duenne oder fehlende PDF-Metadaten
+1. kein Textlayer
+2. kein `Title`-Metadatum
 
 ## Scope und Inventar
 
-### Textversionsgestuetzte Handouts
+Aus [`materialien.ts`](../client/src/content/materialien.ts) bleiben noch diese
+`9` Remote-PDFs auf `files.manuscdn.com` als Restbestand:
 
-Aus [`handoutTextMetas.ts`](../client/src/content/handoutTextMetas.ts) wurden
-alle `40` PDF-Quellen der textbasierten Handout-Pendants geprueft.
+1. `leuchtturm`
+2. `grenzen-spickzettel`
+3. `warnsignale`
+4. `schuld-verantwortung`
+5. `wenn-worte-treffen`
+6. `dear`
+7. `radikale-akzeptanz`
+8. `genesung-zahlen`
+9. `kinder`
 
-| Bereich                                  | Anzahl | Mit Textlayer | Ohne Textlayer |
-| ---------------------------------------- | -----: | ------------: | -------------: |
-| Remote-PDFs (`files.manuscdn.com`)       |     29 |             0 |             29 |
-| Lokale PDFs innerhalb der 40 Handout-IDs |     11 |             1 |             10 |
-| Gesamt                                   |     40 |             1 |             39 |
+Alle neun Eintraege haben:
 
-Einziger positive Ausreisser:
-
-- `notfallplan-krise-v03.pdf`: `4577` extrahierbare Zeichen
-
-### Materialbibliothek
-
-Aus [`materialien.ts`](../client/src/content/materialien.ts) ergeben sich:
-
-| Bereich                            | Anzahl | Bemerkung                                    |
-| ---------------------------------- | -----: | -------------------------------------------- |
-| Materialeintraege gesamt           |     16 | Bibliothek inklusive HTML-first Notfallkarte |
-| PDF-basierte Materialeintraege     |     15 | fuer Format- und Metadaten-Check ausgewertet |
-| Materialeintraege mit Textversion  |     15 | starke Abdeckung                             |
-| Materialeintraege ohne Textversion |      1 | `notfallkarte-zuerich`, bewusst HTML-first   |
+- eine sichtbare Textversion in der Website
+- eine Manus-PDF-Quelle
+- eine WebP-Preview
+- einen funktionierenden Production-Proxy ueber
+  `/api/material-download/:id`
 
 ## Wichtigste Befunde
 
-### 1. Textlayer bleibt das groesste Problem
+### 1. Textlayer fehlt weiterhin bei allen 9 Remote-PDFs
 
-Die Textversionen kompensieren aktuell ein breites PDF-A11y-Defizit, nicht nur
-bei Remote-Handouts, sondern auch bei vielen lokalen Infografik-PDFs.
-
-Beispiele mit `0` extrahierbaren Zeichen:
-
-- Remote:
-  - `leuchtturm`
-  - `grenzen-spickzettel`
-  - `warnsignale`
-  - `dear`
-  - `genesung-zahlen`
-  - `kinder`
-- Lokal:
-  - `eisberg`
-  - `rolle-klaeren`
-  - `krisenkommunikation`
-  - `spaltung`
-  - `alarm-modus`
-  - `sauerstoffmaske`
-  - `zuhoeren-ohne-zustimmen`
+Bei allen `9/9` Remote-Manus-PDFs wurden `0` extrahierbare Textzeichen
+gefunden.
 
 Das bedeutet praktisch:
 
-- Screenreader erhalten in den meisten PDFs keinen nutzbaren Inhalt
+- Screenreader erhalten in den PDF-Dateien selbst keinen nutzbaren Inhalt
 - Copy/Paste und PDF-Suche funktionieren nicht
-- Browser-Suche innerhalb der Dateien greift nicht
-- die PDFs taugen als Layout-Asset, aber nicht als barrierearme Textquelle
+- Browser-Suche innerhalb der PDFs greift nicht
+- die PDF-Datei bleibt ein Layout-Asset, nicht eine barrierearme Textquelle
 
-### 2. A4-/Print-Konsistenz ist nur teilweise gegeben
+Wichtig ist aber auch:
 
-Von `15` geprueften Material-PDFs sind `10` A4-nah und `5` klar ausserhalb des
-erwarteten A4-Rahmens.
+- fuer alle neun Dateien existiert bereits eine Web-Textversion
+- das Rest-Risiko liegt damit primaer auf dem PDF-Artefakt selbst, nicht auf
+  dem Informationszugang insgesamt
 
-Nicht A4-nah:
+### 2. PDF-Metadaten fehlen weiterhin bei allen 9 Remote-PDFs
 
-| ID                    | Format erster Seite |
-| --------------------- | ------------------: |
-| `eisberg`             |  `457.2 x 651.9 mm` |
-| `rolle-klaeren`       |  `244.5 x 345.8 mm` |
-| `krisenkommunikation` |  `656.2 x 928.2 mm` |
-| `spaltung`            |  `656.2 x 928.2 mm` |
-| `alarm-modus`         |  `656.2 x 928.2 mm` |
+Bei allen `9/9` Dateien fehlt ein PDF-`Title`-Metadatum.
 
-Wenn die Materialbibliothek mit `PDF oeffnen` und `PDF herunterladen` als
-drucktaugliche Hilfen auftritt, ist diese Inkonsistenz ein echter
-Qualitaetsbefund.
+Das ist kein akuter Nutzungsblocker, aber ein klarer Qualitaetsmangel fuer:
 
-### 3. PDF-Metadaten sind fast nirgends gepflegt
+- PDF-Reader-Anzeige
+- langlebige Download-Artefakte
+- saubere Archiv- und Dokumenteigenschaften
 
-Bei `14/15` Material-PDFs fehlt ein `Title`-Metadatum.
+### 3. Delivery-Pfade sind jetzt technisch sauber
 
-Positiv auffaellig:
+Alle `9/9` Remote-Dateien liefern:
 
-- `Notfallkarte-Zuerich-Psychische-Krise.pdf`
-- `notfallplan-krise-v03.pdf`
+- direkte Manus-PDF-URL mit `200`
+- Preview-WebP mit `200`
+- Production-Proxy mit `200` fuer `inline`
+- Production-Proxy mit `200` fuer `attachment`
 
-Das erschwert saubere Anzeige in PDF-Readern und ist fuer langlebige Downloads
-eine unnötige Qualitaetsluecke.
+Damit ist der fruehere Infrastruktur-Teil dieses Audits fuer den
+Remote-Restbestand gruen.
 
-### 4. Download-Semantik ist technisch gemischt
+### 4. Format ist bei allen 9 Remote-Dateien A4-nah
 
-Remote-PDFs laufen ueber den Proxy aus
-[`server/material-download.ts`](../server/material-download.ts) und liefern
-korrekt:
+Alle `9/9` Remote-Manus-PDFs wurden als A4-nah bewertet.
 
-- `Content-Type: application/pdf`
-- `Content-Disposition: inline`
-- `Content-Disposition: attachment`
+Es gibt in diesem Restbestand also keinen offenen Format- oder Print-Befund
+mehr.
 
-Lokale PDFs liefern live ebenfalls `200` und `application/pdf`, aber kein
-eigenes `Content-Disposition`. Dort haengt die Unterscheidung zwischen
-`Oeffnen` und `Herunterladen` am Frontend-`download`-Attribut statt an der
-HTTP-Response.
+## Zusammenfassung als Matrix
 
-Das ist nicht zwingend falsch, aber uneinheitlich.
+| Kriterium                | Ergebnis |
+| ------------------------ | -------- |
+| Remote-Manus-PDFs gesamt | `9`      |
+| Mit Textversion          | `9/9`    |
+| Preview `200`            | `9/9`    |
+| Proxy `inline` `200`     | `9/9`    |
+| Proxy `attachment` `200` | `9/9`    |
+| A4-nah                   | `9/9`    |
+| Mit Textlayer            | `0/9`    |
+| Ohne Textlayer           | `9/9`    |
+| Mit `Title`-Metadatum    | `0/9`    |
+| Ohne `Title`-Metadatum   | `9/9`    |
 
 ## Was bereits gut ist
 
-### Textversionen als Sicherheitsnetz
+### Textversionen als tragfaehiger Primaerpfad
 
-Die Web-Textversionen sind inzwischen ein echter repo-weiten Vorteil:
+Die Website hat fuer alle `9` Remote-Manus-Dateien bereits sichtbare
+Textversionen. Das ist der zentrale Grund, warum dieser Restbefund heute eher
+ein Qualitaets- als ein Verfuegbarkeitsproblem ist.
 
-- `15/16` Materialien haben ein Text-Pendant
-- das reduziert das Risiko fuer Suche, Mobilnutzung und A11y deutlich
-- die einzige Ausnahme ist fachlich vertretbar, weil `notfallkarte-zuerich`
-  bereits HTML-first ist
+### Proxy- und Download-Verhalten
 
-### Krisen-PDFs als Referenzstandard
+Der Production-Proxy fuer `/api/material-download/:id` arbeitet fuer diese
+Dateien inzwischen sauber:
 
-Die beiden lokalen Krisen-PDFs zeigen, wie ein tragfaehiger Standard aussehen
-kann:
+- `inline` funktioniert
+- `attachment` funktioniert
+- die Dateiauslieferung ist konsistent
 
-| Datei                                       | Seiten | Format             | Titel-Metadatum | Text extrahierbar |
-| ------------------------------------------- | -----: | ------------------ | --------------- | ----------------: |
-| `Notfallkarte-Zuerich-Psychische-Krise.pdf` |      1 | `209.9 x 297.0 mm` | ja              |              2633 |
-| `notfallplan-krise-v03.pdf`                 |      2 | `209.9 x 297.0 mm` | ja              |              4577 |
+### Kein offener A4-Befund mehr
 
-Diese beiden Dateien sind der beste technische Referenzpunkt fuer kuenftige
-lokale PDF-Erzeugung.
-
-### Download-Infrastruktur
-
-Die technische Verdrahtung der Bibliothek ist stabil:
-
-- Proxy-IDs aus [`handouts.ts`](../client/src/content/handouts.ts) loesen
-  korrekt auf
-- lokale PDF-Pfade existieren
-- gepruefte Production-URLs waren erreichbar
-- `inline` vs. `attachment` funktioniert fuer Remote-Dateien sauber
+Im verbliebenen Remote-Bestand ist die fruehere Format-Sorge nicht mehr
+relevant. Alle neun Manus-PDFs sind A4-nah.
 
 ## Priorisierung
 
-### P1 - Gate fuer kuenftige Materialien festziehen
+### P1 - Remote-PDF-Strategie explizit entscheiden
 
-- Bildbasierte PDFs duerfen nur zusammen mit gepflegter Textversion
-  ausgerollt werden.
-- Diese Regel sollte fuer neue Handouts als harter Release-Gate gelten.
-- Die Materialkarten sollten Textversionen weiter sichtbar und gleichwertig
-  anbieten.
+Fuer die `9` `files.manuscdn.com`-Dateien braucht es jetzt eine bewusste
+Produktentscheidung:
 
-### P2 - Lokale PDFs technisch aufraeumen
-
-Fuer lokal kontrollierte PDFs:
-
-- A4-Export vereinheitlichen
-- `Title`-Metadaten durchgaengig setzen
-- wenn moeglich textbasierte Exporte statt reiner Bild-PDFs erzeugen
-
-Prioritaet innerhalb der Materialbibliothek:
-
-1. `eisberg`
-2. `rolle-klaeren`
-3. `krisenkommunikation`
-4. `spaltung`
-5. `alarm-modus`
-
-### P3 - Remote-PDF-Strategie entscheiden
-
-Fuer die `files.manuscdn.com`-Dateien braucht es eine bewusste Produktentscheidung:
-
-1. entweder bei image-only PDFs dauerhaft auf HTML-/Textversion als Primaerpfad
-   setzen
-2. oder die PDFs mittelfristig durch lokal kontrollierte, textbasierte Exporte
-   ersetzen
+1. entweder image-only PDFs dauerhaft akzeptieren und die Textversion als
+   Primaerpfad fuehren
+2. oder die Dateien mittelfristig durch lokal kontrollierte, textbasierte
+   kanonische PDFs ersetzen
 
 Solange diese Entscheidung nicht explizit getroffen ist, bleibt das Audit
-inhaltlich gelb bis rot.
+inhaltlich offen.
 
-### P4 - Download-Verhalten optional vereinheitlichen
+### P2 - Textversion als gleichwertigen Primaerpfad beibehalten
 
-Falls gewuenscht, kann die Bibliothek noch technischer vereinheitlicht werden:
+Falls die Remote-PDFs vorerst bleiben:
 
-- auch lokale PDFs ueber einen kontrollierten Pfad mit explizitem
-  `Content-Disposition` ausliefern
-- oder die heutige Mischung bewusst dokumentieren und akzeptieren
+- Textversionen sichtbar und gleichwertig anbieten
+- nicht suggerieren, dass die PDF die bessere Lesefassung ist
+- Review-Stand der Textversionen weiter pflegen
 
-Das ist kein Blocker gegenueber Textlayer und Format, aber ein sauberer
-Hygiene-Fix.
+### P3 - Ersatz durch lokale kanonische PDFs vorbereiten
+
+Falls die Remote-Dateien abgeloest werden sollen, sollte der Ersatzstandard
+klar sein:
+
+- A4-Export
+- `Title`-Metadaten
+- extrahierbarer Textlayer
+- gleiche fachliche Inhalte wie in der Textversion
 
 ## Konkrete Fixliste
 
-1. PDF-Policy dokumentieren:
-   `image-only PDF nur mit sichtbarer Textversion und gepflegtem Review-Stand`
-2. Fuer die 5 nicht-A4-Materialien neue drucktaugliche Exporte erzeugen.
-3. Fuer lokal kontrollierte PDFs `Title`-Metadaten nachziehen.
-4. Fuer kuenftige lokale Exporte textbasierte PDF-Erzeugung bevorzugen.
-5. Fuer Remote-Manus-PDFs entscheiden:
-   behalten plus Textversion,
-   oder ersetzen durch lokale kanonische PDFs.
+1. Produktentscheidung dokumentieren:
+   `Remote-Manus-PDFs akzeptieren` oder `durch lokale kanonische PDFs ersetzen`
+2. Falls akzeptiert:
+   Textversion als sichtbaren Primaerpfad beibehalten und diesen Status bewusst
+   in Release-Audits dokumentieren.
+3. Falls ersetzt:
+   fuer die `9` Remote-Dateien lokale textbasierte PDFs mit Metadaten und
+   Textlayer erzeugen.
 
 ## Release-Einordnung
 
@@ -252,15 +201,18 @@ abgeschlossen**.
 Gruen:
 
 - Dateierreichbarkeit
+- Preview-WebPs
 - Proxy-Verdrahtung
-- Textversions-Abdeckung in der Materialbibliothek
-- Krisen-PDFs
+- `inline` vs. `attachment`
+- Textversions-Abdeckung fuer alle `9` Remote-Dateien
+- A4-Konsistenz des Remote-Restbestands
 
 Offen:
 
-- Textlayer fuer den grossen Restbestand
-- A4-Konsistenz der Material-PDFs
-- PDF-Metadaten
+- Textlayer fuer alle `9` Remote-Manus-PDFs
+- PDF-`Title`-Metadaten fuer alle `9` Remote-Manus-PDFs
+- die explizite Produktentscheidung fuer den langfristigen Umgang mit diesen
+  Artefakten
 
 ## Grenze dieses Audits
 

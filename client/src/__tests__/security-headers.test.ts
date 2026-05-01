@@ -16,6 +16,9 @@ describe("security headers", () => {
   afterEach(() => {
     vi.restoreAllMocks();
     vi.unstubAllGlobals();
+    delete process.env.URL;
+    delete process.env.DEPLOY_PRIME_URL;
+    delete process.env.SITE_URL;
   });
 
   it("keeps Netlify headers aligned with the shared server header set", () => {
@@ -130,5 +133,32 @@ describe("security headers", () => {
     expect(response.headers.get("Cache-Control")).toBe(
       "public, max-age=0, must-revalidate"
     );
+  });
+
+  it("uses the Netlify site url when no request origin is available", async () => {
+    vi.spyOn(fs, "existsSync").mockReturnValue(false);
+    process.env.URL = "https://borderline-angehoerige.netlify.app";
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue(
+        new Response("pdf", {
+          status: 200,
+          headers: {
+            "content-type": "application/pdf",
+          },
+        })
+      )
+    );
+
+    const response = await createMaterialDownloadResponse(
+      "notfallplan-krise",
+      "inline"
+    );
+
+    expect(fetch).toHaveBeenCalledWith(
+      "https://borderline-angehoerige.netlify.app/notfallplan-krise-v03.pdf",
+      expect.any(Object)
+    );
+    expect(response.status).toBe(200);
   });
 });

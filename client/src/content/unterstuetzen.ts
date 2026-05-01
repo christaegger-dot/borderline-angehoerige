@@ -29,41 +29,36 @@ export const unterstuetzenItems = [
   {
     id: "drei-saeulen",
     title: "Drei Säulen hilfreicher Unterstützung",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/WuCBUdnlHakpSnbY.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/AalrNrybgxuMcRcX.pdf",
+    url: "/infografiken/manus-drei-saeulen-v1.webp",
+    pdfUrl: "/infografiken/manus-drei-saeulen-v1.pdf",
     category: "grundlagen",
   },
   {
     id: "konsistenz-prinzip",
     title: "Konsistenz-Prinzip",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MCMaGcrhifsekEqb.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/vfDYZzjEwJsEhzch.pdf",
+    url: "/infografiken/manus-konsistenz-prinzip-v1.webp",
+    pdfUrl: "/infografiken/manus-konsistenz-prinzip-v1.pdf",
     category: "haltung",
   },
   {
     id: "beziehungs-achtsamkeit",
     title: "Beziehungs-Achtsamkeit",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/toOMoXhzHiaZUlBg.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/oPRapPNKMLHWEior.pdf",
+    url: "/infografiken/manus-beziehungs-achtsamkeit-v1.webp",
+    pdfUrl: "/infografiken/manus-beziehungs-achtsamkeit-v1.pdf",
     category: "haltung",
   },
   {
     id: "6-leitlinien",
     title: "6 Leitlinien für Angehörige",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OfOPUMQpHXrpSPgw.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/IIcvvdvSlDcXqwbL.pdf",
+    url: "/infografiken/manus-6-leitlinien-v1.webp",
+    pdfUrl: "/infografiken/manus-6-leitlinien-v1.pdf",
     category: "alltag",
   },
   {
     id: "4-alltags-tipps",
     title: "4 Alltags-Tipps",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/cwhMoIHSUeEWpyWo.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ipyRcgPjVrRKYqyd.pdf",
+    url: "/infografiken/manus-4-alltags-tipps-v1.webp",
+    pdfUrl: "/infografiken/manus-4-alltags-tipps-v1.pdf",
     category: "alltag",
   },
 ];

@@ -30,9 +30,8 @@ export const grenzenItems: GrenzenItem[] = [
     id: "spiegeln-statt-aufsaugen",
     title: "Spiegeln statt Aufsaugen",
     description: "Mitfühlen ohne Übernehmen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/rbDvjxTUWJMXQCPj.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jJFieYXEiIxbrazO.pdf",
+    url: "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp",
+    pdfUrl: "/infografiken/manus-spiegeln-statt-aufsaugen-v1.pdf",
     category: "kommunizieren",
   },
   {
@@ -49,18 +48,16 @@ export const grenzenItems: GrenzenItem[] = [
     id: "grenzen-erkennen",
     title: "Grenzen erkennen",
     description: "5 Warnsignale Ihres Körpers",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/pPRcjWVKERfSWUPL.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/FftUeWuOzmxjrUEi.pdf",
+    url: "/infografiken/manus-grenzen-erkennen-v1.webp",
+    pdfUrl: "/infografiken/manus-grenzen-erkennen-v1.pdf",
     category: "erkennen",
   },
   {
     id: "lmk",
     title: "L.M.K. (Lebe Mit Konsequenzen)",
     description: "Wenn Grenzen nicht respektiert werden",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/izBLuzTFtMDeQYoc.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/eyhngTnxXoekiWwJ.pdf",
+    url: "/infografiken/manus-lmk-v1.webp",
+    pdfUrl: "/infografiken/manus-lmk-v1.pdf",
     category: "handeln",
   },
   {

@@ -134,12 +134,21 @@ describe("handout text versions", () => {
   it("keeps locally controlled handout pdfs on the text-layer-present path", () => {
     for (const item of expectedHandoutSources) {
       const asset = getHandoutAssetBySource(item.sourceUrl);
-      if (!asset || asset.sourceKind !== "local") {
-        continue;
+      expect(asset).toBeTruthy();
+      if (!asset) {
+        throw new Error(`Missing handout asset for ${item.id}`);
       }
-
+      expect(asset.sourceKind).toBe("local");
       expect(asset.textLayer).toBe("present");
       expect(asset.preferredReadingFormat).toBe("pdf");
     }
+  });
+
+  it("leaves no remaining remote handout pdf sources in the registry", () => {
+    const remoteAssets = expectedHandoutSources
+      .map(item => getHandoutAssetBySource(item.sourceUrl))
+      .filter(asset => asset?.sourceKind === "remote");
+
+    expect(remoteAssets).toEqual([]);
   });
 });

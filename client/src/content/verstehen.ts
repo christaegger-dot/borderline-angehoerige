@@ -78,10 +78,8 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     description:
       "Ein häufiges Muster in belasteten Beziehungen, nicht ein fixes Schicksal.",
     category: "neurobiologie",
-    webpUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/BYDbBJaIhetrjHRq.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PBYpNxZamAxjOHYd.pdf",
+    webpUrl: "/infografiken/manus-4-phasen-v1.webp",
+    pdfUrl: "/infografiken/manus-4-phasen-v1.pdf",
     alt: "Der 4-Phasen-Zyklus",
   },
   {
@@ -90,10 +88,8 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     description:
       "Neurobiologie einfach erklärt – warum Stress Denken blockiert.",
     category: "neurobiologie",
-    webpUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/ImASzOTHYdFpxOUI.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/NViSBQtRBvGWOHPE.pdf",
+    webpUrl: "/infografiken/manus-gehirn-v1.webp",
+    pdfUrl: "/infografiken/manus-gehirn-v1.pdf",
     alt: "Das Gehirn verstehen",
   },
 ];

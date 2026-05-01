@@ -10,10 +10,10 @@ Dieses Verzeichnis hält die repo-spezifische Audit-Arbeitsweise für
 - Phase 1 und Phase 2 bleiben read-only fuer Produktcode.
 - Audit-Artefakte duerfen in `qa/` und `qa/scripts/` entstehen.
 - Die Standard-Verifikation fuer dieses Repo ist:
-  - `npm test`
-  - `npm run check`
-  - `npm run build`
-  - `npm run lint`
+  - `pnpm test`
+  - `pnpm check`
+  - `pnpm build`
+  - `pnpm lint`
 
 ## Empfohlene Reihenfolge
 

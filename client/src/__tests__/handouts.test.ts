@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  getHandoutAssetBySource,
   getHandoutDownloadHref,
   getHandoutOpenHref,
   resolveHandoutAsset,
@@ -32,12 +33,31 @@ describe("handout delivery helpers", () => {
     ).toBe(sourceUrl);
   });
 
-  it("keeps local pdf paths untouched", () => {
+  it("routes local pdf paths through the controlled download endpoint", () => {
     expect(getHandoutOpenHref("/notfallplan-krise-v03.pdf")).toBe(
-      "/notfallplan-krise-v03.pdf"
+      "/api/material-download/notfallplan-krise?disposition=inline"
     );
     expect(
       getHandoutDownloadHref("/Notfallkarte-Zuerich-Psychische-Krise.pdf")
-    ).toBe("/Notfallkarte-Zuerich-Psychische-Krise.pdf");
+    ).toBe("/api/material-download/notfallkarte-zuerich");
+    expect(
+      getHandoutAssetBySource("/infografiken/eisberg-der-eisberg-v6.pdf")
+    ).toMatchObject({
+      id: "eisberg",
+      sourceKind: "local",
+      textLayer: "present",
+      preferredReadingFormat: "pdf",
+    });
+  });
+
+  it("marks remote manus pdfs as text-version-first image-only assets", () => {
+    expect(
+      getHandoutAssetBySource(verstehenInfografiken[0].pdfUrl)
+    ).toMatchObject({
+      id: "leuchtturm",
+      sourceKind: "remote",
+      textLayer: "missing",
+      preferredReadingFormat: "textversion",
+    });
   });
 });

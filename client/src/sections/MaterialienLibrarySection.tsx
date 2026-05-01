@@ -64,7 +64,11 @@ import {
   type MaterialCategory,
   type MaterialItem,
 } from "@/content/materialien";
-import { getHandoutDownloadHref, getHandoutOpenHref } from "@/content/handouts";
+import {
+  getHandoutDownloadHref,
+  getHandoutOpenHref,
+  prefersHandoutTextVersion,
+} from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 
 const categoryLabel: Record<Exclude<MaterialCategory, "alle">, string> = {
@@ -115,6 +119,7 @@ function MaterialEntry({
   const textVersionHref = item.isHtml
     ? null
     : getHandoutTextVersionHrefBySource(pdfSource);
+  const textVersionPreferred = prefersHandoutTextVersion(pdfSource);
   const openLabel = item.isHtml ? "Öffnen" : "PDF öffnen";
 
   return (
@@ -162,6 +167,17 @@ function MaterialEntry({
 
       <h3 style={titleStyle}>{item.title}</h3>
       <p style={bodyStyle}>{item.description}</p>
+      {textVersionPreferred && textVersionHref ? (
+        <p
+          style={{
+            fontSize: "var(--text-xs)",
+            lineHeight: "var(--lh-relaxed)",
+            color: "var(--fg-tertiary)",
+          }}
+        >
+          Für bildbasierte PDFs ist die Textversion die empfohlene Lesefassung.
+        </p>
+      ) : null}
 
       <p
         className="flex flex-wrap gap-x-5 gap-y-1 pt-1"

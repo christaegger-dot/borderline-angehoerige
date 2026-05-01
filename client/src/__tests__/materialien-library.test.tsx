@@ -32,7 +32,7 @@ describe("MaterialienLibrarySection", () => {
     });
     expect(localDownloadLink).toHaveAttribute(
       "href",
-      "/Notfallkarte-Zuerich-Psychische-Krise.pdf"
+      "/api/material-download/notfallkarte-zuerich"
     );
     expect(localDownloadLink).toHaveAttribute("download", "");
     expect(
@@ -113,6 +113,11 @@ describe("MaterialienLibrarySection", () => {
         name: /Textversion lesen: Wenn Mama oder Papa grosse Gefühle hat/i,
       })
     ).toHaveAttribute("href", "/materialien/text/kinder");
+    expect(
+      screen.getAllByText(
+        /Für bildbasierte PDFs ist die Textversion die empfohlene Lesefassung\./i
+      ).length
+    ).toBeGreaterThan(0);
 
     fireEvent.click(screen.getByRole("button", { name: /Genesung\s*\(1\)/ }));
 

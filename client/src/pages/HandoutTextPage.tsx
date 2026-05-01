@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
-import { getHandoutDownloadHref, getHandoutOpenHref } from "@/content/handouts";
+import {
+  getHandoutDownloadHref,
+  getHandoutOpenHref,
+  prefersHandoutTextVersion,
+} from "@/content/handouts";
 import {
   getHandoutTextVersion,
   getHandoutTextVersionMeta,
@@ -97,6 +101,7 @@ export default function HandoutTextPage({
 
   const openHref = getHandoutOpenHref(pdfSourceUrl) ?? pdfSourceUrl;
   const downloadHref = getHandoutDownloadHref(pdfSourceUrl) ?? pdfSourceUrl;
+  const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
 
   return (
     <Layout>
@@ -160,6 +165,13 @@ export default function HandoutTextPage({
                   </AppLink>
                 </Button>
               </div>
+
+              {textVersionPreferred ? (
+                <p className="mb-5 text-sm text-muted-foreground leading-relaxed max-w-3xl">
+                  Diese Textversion ist die empfohlene Lesefassung. Das PDF
+                  bleibt als Druck- und Layoutversion verfügbar.
+                </p>
+              ) : null}
 
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
                 <AppLink

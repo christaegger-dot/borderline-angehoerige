@@ -254,7 +254,7 @@ export const materials: MaterialItem[] = [
 ];
 
 const MATERIAL_DOWNLOAD_PATH_PREFIX = "/api/material-download";
-const REMOTE_ASSET_RE = /^https?:\/\//i;
+const LOCAL_FILE_RE = /^\/.+$/;
 
 export function buildMaterialDownloadPath(id: string) {
   return `${MATERIAL_DOWNLOAD_PATH_PREFIX}/${encodeURIComponent(id)}`;
@@ -266,9 +266,9 @@ export function getMaterialDownloadHref(item: MaterialItem) {
     return null;
   }
 
-  return REMOTE_ASSET_RE.test(sourceUrl)
-    ? buildMaterialDownloadPath(item.id)
-    : sourceUrl;
+  return item.isHtml && !item.pdfUrl
+    ? sourceUrl
+    : buildMaterialDownloadPath(item.id);
 }
 
 export function resolveMaterialDownload(
@@ -280,14 +280,19 @@ export function resolveMaterialDownload(
   }
 
   const sourceUrl = item.pdfUrl ?? item.downloadUrl;
-  if (!sourceUrl || !REMOTE_ASSET_RE.test(sourceUrl)) {
+  if (!sourceUrl || (item.isHtml && !item.pdfUrl)) {
     return null;
   }
+
+  const withoutQuery = sourceUrl.split(/[?#]/, 1)[0] ?? sourceUrl;
+  const fileName = LOCAL_FILE_RE.test(sourceUrl)
+    ? (withoutQuery.split("/").pop() ?? `${item.id}.pdf`)
+    : `${item.id}.pdf`;
 
   return {
     id: item.id,
     title: item.title,
-    fileName: `${item.id}.pdf`,
+    fileName,
     sourceUrl,
   };
 }

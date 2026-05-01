@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
+import { getHandoutAssetBySource } from "@/content/handouts";
 import {
   getHandoutTextVersionBySource,
   getHandoutTextVersionHrefBySource,
@@ -109,5 +110,38 @@ describe("handout text versions", () => {
     expect(notfallkarte?.url).toBe("/notfallkarte");
     expect(notfallkarte?.downloadUrl).toBe("/notfallkarte");
     expect(getHandoutTextVersionHrefBySource(notfallkarte?.pdfUrl)).toBeNull();
+  });
+
+  it("treats remote image-only materials as text-version-first and reviewed", () => {
+    for (const item of materials) {
+      if (item.isHtml) {
+        continue;
+      }
+
+      const sourceUrl = item.pdfUrl ?? item.downloadUrl;
+      const asset = getHandoutAssetBySource(sourceUrl);
+      if (!asset || asset.sourceKind !== "remote") {
+        continue;
+      }
+
+      expect(asset.textLayer).toBe("missing");
+      expect(asset.preferredReadingFormat).toBe("textversion");
+      expect(getHandoutTextVersionHrefBySource(sourceUrl)).toBe(
+        `/materialien/text/${item.id}`
+      );
+      expect(item.verifiedAt).toBeTruthy();
+    }
+  });
+
+  it("keeps locally controlled handout pdfs on the text-layer-present path", () => {
+    for (const item of expectedHandoutSources) {
+      const asset = getHandoutAssetBySource(item.sourceUrl);
+      if (!asset || asset.sourceKind !== "local") {
+        continue;
+      }
+
+      expect(asset.textLayer).toBe("present");
+      expect(asset.preferredReadingFormat).toBe("pdf");
+    }
   });
 });

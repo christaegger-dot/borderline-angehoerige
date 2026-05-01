@@ -23,7 +23,7 @@ const conformanceItems = [
 ];
 
 const knownLimitations = [
-  "Viele ältere PDF-Handouts sind noch nicht vollständig barrierefrei aufbereitet; für erste Kernmaterialien stehen bereits lesbare Textversionen zur Verfügung",
+  "Einzelne externe oder ältere PDF-Handouts sind weiterhin bildbasiert; wo nötig steht eine lesbare Textversion als empfohlene Lesefassung bereit",
   "Einzelne interaktive Übungen (Übungsszenarien) können mit Screenreadern eingeschränkt nutzbar sein",
 ];
 

@@ -73,8 +73,9 @@ export default function Materialien() {
           <EditorialProse>
             <p>
               Vorschau = Web-Bild. Wenn verfügbar, führt «Textversion lesen» zur
-              lesbaren Web-Version. «PDF öffnen» öffnet die Druckversion im
-              neuen Tab. Die Notfallkarte öffnet als HTML-Seite.
+              lesbaren Web-Version. Bei bildbasierten PDFs ist die Textversion
+              die empfohlene Lesefassung; «PDF öffnen» bleibt die Druckversion
+              im neuen Tab. Die Notfallkarte öffnet als HTML-Seite.
             </p>
           </EditorialProse>
         </EditorialSection>

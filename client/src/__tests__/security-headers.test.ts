@@ -71,4 +71,26 @@ describe("security headers", () => {
     expect(response.headers.get("Cache-Control")).toBe("public, max-age=600");
     expect(response.headers.get("Content-Disposition")).toContain("inline;");
   });
+
+  it("applies the shared security headers to local material download responses", async () => {
+    const response = await createMaterialDownloadResponse(
+      "notfallplan-krise",
+      "attachment"
+    );
+
+    expect(response.status).toBe(200);
+    for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
+      expect(response.headers.get(header)).toBe(value);
+    }
+    expect(response.headers.get("Content-Type")).toBe("application/pdf");
+    expect(response.headers.get("Cache-Control")).toBe(
+      "public, max-age=0, must-revalidate"
+    );
+    expect(response.headers.get("Content-Disposition")).toContain(
+      'attachment; filename="notfallplan-krise-v03.pdf"'
+    );
+    expect(Number(response.headers.get("Content-Length"))).toBeGreaterThan(
+      1000
+    );
+  });
 });

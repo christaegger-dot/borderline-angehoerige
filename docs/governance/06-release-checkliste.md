@@ -106,6 +106,8 @@ Relevante Quellen:
 Zusätzlich prüfen:
 
 - gibt es für priorisierte Materialien eine zugängliche Textversion
+- image-only PDFs nur zusammen mit sichtbarer Textversion und aktuellem
+  `verifiedAt`
 - entspricht der PDF-Textlayer bzw. die Suchbarkeit dem erwarteten
   Qualitätsniveau
 

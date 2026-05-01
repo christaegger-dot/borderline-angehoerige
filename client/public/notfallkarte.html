@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="/notfallkarte.css" />
   </head>
   <body>
-    <div class="page-wrapper" id="pw">
+    <main class="page-wrapper" id="pw">
       <div class="page">
         <!-- HEADER -->
 
-        <div class="header">
-          <div class="header-title">Notfallkarte Zürich – Psychische Krise</div>
+        <header class="header">
+          <h1 class="header-title">Notfallkarte Zürich – Psychische Krise</h1>
           <div class="header-meta">
             Für Angehörige · PUK Zürich · v06 · 2026-03-10
           </div>
@@ -26,6 +26,9 @@
             <button type="button" id="print-notfallkarte" class="header-btn">
               🖨 Drucken / PDF
             </button>
+            <a href="/notfallkarte/erstellen" class="header-btn">
+              ✍ Persönlich ausfüllen
+            </a>
             <a
               href="/Notfallkarte-Zuerich-Psychische-Krise.pdf"
               download="Notfallkarte-Zuerich-Psychische-Krise.pdf"
@@ -34,7 +37,7 @@
               ⬇ Herunterladen
             </a>
           </div>
-        </div>
+        </header>
 
         <!-- BLOCK 1: LEBENSGEFAHR -->
 
@@ -85,9 +88,9 @@
               </a>
             </div>
             <div class="hinweis-small">
-              Ärztlicher Hausbesuch?
-              <a href="tel:0443604444" class="sos-link"
-                >SOS Ärzte · 044 360 44 44</a
+              Ärztliche Triage oder Hausbesuch?
+              <a href="tel:0800336655" class="sos-link"
+                >Ärztefon Zürich · 0800 33 66 55</a
               >
             </div>
             <div class="hinweis">
@@ -229,7 +232,7 @@
 
         <!-- FOOTER -->
 
-        <div class="footer">
+        <footer class="footer">
           <div class="footer-left">
             <span class="f1"
               >Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik
@@ -258,10 +261,10 @@
               ></span
             >
           </div>
-        </div>
+        </footer>
       </div>
       <!-- .page -->
-    </div>
+    </main>
     <!-- .page-wrapper -->
 
     <script src="/notfallkarte.js"></script>

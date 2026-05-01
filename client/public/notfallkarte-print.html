@@ -694,11 +694,11 @@
 
     <script>
       (function () {
-        // ── Benutzerdaten aus sessionStorage laden ──────────────────────────
+        // ── Benutzerdaten aus localStorage laden ────────────────────────────
         // Die React-App schreibt die Daten unter "notfallkarte-print-data"
-        // in sessionStorage, bevor sie dieses Fenster öffnet.
+        // in localStorage, bevor sie dieses Fenster öffnet.
         try {
-          var raw = sessionStorage.getItem("notfallkarte-print-data");
+          var raw = localStorage.getItem("notfallkarte-print-data");
           if (raw) {
             var d = JSON.parse(raw);
 
@@ -744,8 +744,8 @@
               notesEl.removeAttribute("placeholder");
             }
 
-            // sessionStorage-Eintrag nach Befüllung löschen
-            sessionStorage.removeItem("notfallkarte-print-data");
+            // Temporären localStorage-Eintrag nach Befüllung löschen
+            localStorage.removeItem("notfallkarte-print-data");
           }
         } catch (e) {
           // Fehler ignorieren – Felder bleiben leer / mit Platzhaltern

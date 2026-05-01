@@ -22,6 +22,12 @@ export const pageGovernance: Record<string, PageGovernance> = {
     nextReviewDue: "2026-07-31",
     owner: DEFAULT_OWNER,
   },
+  "/notfallkarte/erstellen": {
+    riskLevel: "high",
+    lastReviewed: "2026-04-30",
+    nextReviewDue: "2026-07-31",
+    owner: DEFAULT_OWNER,
+  },
   "/unterstuetzen/krise": {
     riskLevel: "high",
     lastReviewed: "2026-04-30",
@@ -41,6 +47,24 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/grenzen": {
+    riskLevel: "high",
+    lastReviewed: "2026-04-30",
+    nextReviewDue: "2026-10-31",
+    owner: DEFAULT_OWNER,
+  },
+  "/beratung": {
+    riskLevel: "high",
+    lastReviewed: "2026-04-30",
+    nextReviewDue: "2026-10-31",
+    owner: DEFAULT_OWNER,
+  },
+  "/datenschutz": {
+    riskLevel: "high",
+    lastReviewed: "2026-04-30",
+    nextReviewDue: "2026-10-31",
+    owner: DEFAULT_OWNER,
+  },
+  "/quellen": {
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",

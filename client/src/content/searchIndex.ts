@@ -1,3 +1,5 @@
+import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
+
 export type SearchEntry = {
   title: string;
   description: string;
@@ -1824,7 +1826,7 @@ export const searchableContent: SearchEntry[] = [
       "deeskalation",
       "vorbereitung",
     ],
-    href: "/notfallkarte",
+    href: PERSONAL_NOTFALLKARTE_PATH,
     section: "Tools",
   },
 

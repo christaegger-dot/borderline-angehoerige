@@ -16,6 +16,7 @@ import {
   TrendingUp,
 } from "@/icons/root-icons";
 import type { NavigationItem } from "@/domain/content-types";
+import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 
 export const primaryNavigationItems: NavigationItem[] = [
   { href: "/verstehen", label: "Verstehen", icon: BookOpen },
@@ -28,7 +29,7 @@ export const primaryNavigationItems: NavigationItem[] = [
 export const resourceNavigationItems: NavigationItem[] = [
   // Gruppe: Sofortige Hilfe
   {
-    href: "/notfallkarte",
+    href: PERSONAL_NOTFALLKARTE_PATH,
     label: "Notfallkarte",
     icon: FileText,
     group: "Sofortige Hilfe",

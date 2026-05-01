@@ -48,6 +48,7 @@ Pflicht-Scope:
 
 - `/soforthilfe`
 - `/notfallkarte`
+- `/notfallkarte/erstellen`
 - `/unterstuetzen/krise`
 - `/diagnostik`
 - `/begleiterkrankungen`

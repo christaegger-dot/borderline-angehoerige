@@ -9,7 +9,13 @@ const __dirname = path.dirname(__filename);
 export const QA_DIR = path.resolve(__dirname, "..");
 export const BASE_URL = process.env.AUDIT_BASE_URL ?? "http://127.0.0.1:4173";
 
-export const ROUTES = ["/", "/soforthilfe", "/materialien", "/notfallkarte"];
+export const ROUTES = [
+  "/",
+  "/soforthilfe",
+  "/materialien",
+  "/notfallkarte",
+  "/notfallkarte/erstellen",
+];
 export const LIGHTHOUSE_ROUTES = ["/", "/soforthilfe", "/materialien"];
 
 export const VIEWPORTS = [

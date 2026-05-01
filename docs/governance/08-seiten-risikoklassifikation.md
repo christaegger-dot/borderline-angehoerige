@@ -8,6 +8,7 @@ Diese Seiten brauchen fachliche Prüfung und regelmässige Aktualisierung:
 
 - `/soforthilfe`
 - `/notfallkarte`
+- `/notfallkarte/erstellen`
 - `/unterstuetzen/krise`
 - `/diagnostik`
 - `/begleiterkrankungen`

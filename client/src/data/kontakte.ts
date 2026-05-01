@@ -1,8 +1,9 @@
 /**
  * KONTAKTE – Single Source of Truth
  *
- * Alle Telefonnummern, E-Mail-Adressen, Adressen und URLs auf der Website
- * kommen ausschliesslich aus dieser Datei. Keine Nummern im Fliesstext.
+ * Diese Datei ist das kanonische Kontaktregister der Website.
+ * Statische Sonderseiten und Druckvorlagen muessen mit diesen Werten
+ * synchron bleiben; Regressionstests pruefen die Spiegelungen.
  *
  * Inventar: 20 Telefonnummern, 4 E-Mail-Adressen, 1 Adresse, 8 URLs.
  *

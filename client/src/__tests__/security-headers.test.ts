@@ -93,4 +93,42 @@ describe("security headers", () => {
       1000
     );
   });
+
+  it("falls back to the public asset url when a local pdf is not on disk", async () => {
+    const existsSpy = vi.spyOn(fs, "existsSync").mockReturnValue(false);
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue(
+        new Response("pdf", {
+          status: 200,
+          headers: {
+            "content-type": "application/pdf",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "content-length": "3",
+          },
+        })
+      )
+    );
+
+    const response = await createMaterialDownloadResponse(
+      "notfallplan-krise",
+      "inline",
+      "https://borderline-angehoerige.netlify.app"
+    );
+
+    expect(existsSpy).toHaveBeenCalled();
+    expect(fetch).toHaveBeenCalledWith(
+      "https://borderline-angehoerige.netlify.app/notfallplan-krise-v03.pdf",
+      expect.objectContaining({
+        headers: expect.objectContaining({
+          Accept: expect.stringContaining("application/pdf"),
+        }),
+      })
+    );
+    expect(response.status).toBe(200);
+    expect(response.headers.get("Content-Disposition")).toContain("inline;");
+    expect(response.headers.get("Cache-Control")).toBe(
+      "public, max-age=0, must-revalidate"
+    );
+  });
 });

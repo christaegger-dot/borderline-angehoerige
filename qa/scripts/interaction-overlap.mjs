@@ -89,8 +89,7 @@ async function run() {
                 return false;
               }
 
-              const touchesTop =
-                overlayRect.top <= 0 && overlayRect.bottom > 0;
+              const touchesTop = overlayRect.top <= 0 && overlayRect.bottom > 0;
               if (touchesTop && elementRect.top < overlayRect.bottom) {
                 return true;
               }

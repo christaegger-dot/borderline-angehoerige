@@ -33,8 +33,8 @@ describe("notfallkarte architecture", () => {
       "utf8"
     );
 
-    expect(pageSource).toContain(
-      "localStorage.setItem(NOTFALLKARTE_PRINT_STORAGE_KEY, JSON.stringify(data))"
+    expect(pageSource).toMatch(
+      /localStorage\.setItem\(\s*NOTFALLKARTE_PRINT_STORAGE_KEY,\s*JSON\.stringify\(data\)\s*\)/
     );
     expect(printTemplate).toContain(
       'localStorage.getItem("notfallkarte-print-data")'

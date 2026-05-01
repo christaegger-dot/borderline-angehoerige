@@ -10,8 +10,8 @@ import {
 } from "../shared/staticRouteShells";
 import { createMaterialDownloadResponse } from "./material-download";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const SERVER_MODULE_FILENAME = fileURLToPath(import.meta.url);
+const SERVER_MODULE_DIRNAME = path.dirname(SERVER_MODULE_FILENAME);
 async function startServer() {
   const app = express();
   const server = createServer(app);
@@ -38,8 +38,8 @@ async function startServer() {
   // Serve static files from dist/public in production
   const staticPath =
     process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+      ? path.resolve(SERVER_MODULE_DIRNAME, "public")
+      : path.resolve(SERVER_MODULE_DIRNAME, "..", "dist", "public");
 
   const resolveStaticHtmlFile = (pathname: string) => {
     for (const candidate of getStaticHtmlCandidates(pathname)) {

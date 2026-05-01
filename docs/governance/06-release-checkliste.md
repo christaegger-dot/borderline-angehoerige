@@ -61,6 +61,10 @@ Pflicht-Scope:
 Dieses Gate soll vor Release von einer fachlich verantwortlichen Person
 gegengelesen und ausdrücklich freigegeben werden.
 
+Dokumentation:
+
+- `docs/governance/10-fachliche-freigabe-vorlage.md`
+
 ### Produktions-Crawl- und Link-Audit
 
 Vor Release systematisch prüfen:
@@ -171,6 +175,10 @@ Verbindliche Release-Matrix:
 Das ist hier release-relevant wegen langer Lesestrecken, sticky
 Navigation, Fokus-Management, Druckpfaden, lokaler Speicherung und den
 Soforthilfe- und Notfallpfaden.
+
+Dokumentation:
+
+- `qa/release-browser-matrix.md`
 
 ## Zusätzliche Audits mit hohem Nutzen
 

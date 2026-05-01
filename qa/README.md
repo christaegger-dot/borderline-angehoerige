@@ -38,6 +38,8 @@ Fuer den Content-Audit gilt explizit:
 
 - Repo-spezifische Prompt-Sammlung: [codex-audit-prompts.md](./codex-audit-prompts.md)
 - Vollstaendiger Repo-Plan: [audit-plan.md](./audit-plan.md)
+- Release-Matrix fuer echte Geraete-/Browser-Tests:
+  [release-browser-matrix.md](./release-browser-matrix.md)
 - Audit-Worktree-Helfer: [`_dev/create-audit-worktree.sh`](../_dev/create-audit-worktree.sh)
 
 ## Abgedeckte Audit-Spuren

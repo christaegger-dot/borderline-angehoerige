@@ -336,7 +336,7 @@ export default function MaterialienLibrarySection() {
           })}
         </div>
 
-        <div ref={gridRef}>
+        <div ref={gridRef} className="scroll-mt-24 md:scroll-mt-28">
           {secondaryMaterials.length > 0 ? (
             <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {secondaryMaterials.map(item => (

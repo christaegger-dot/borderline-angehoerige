@@ -53,6 +53,71 @@ async function run() {
                 "",
             });
 
+            const persistentEdgeOverlayRect = node => {
+              let current = node instanceof Element ? node : null;
+
+              while (current) {
+                const style = getComputedStyle(current);
+                const rect = current.getBoundingClientRect();
+
+                if (
+                  (style.position === "fixed" || style.position === "sticky") &&
+                  rect.width > 0 &&
+                  rect.height > 0
+                ) {
+                  return rect;
+                }
+
+                current = current.parentElement;
+              }
+
+              return null;
+            };
+
+            const isEdgeChromeOcclusion = (elementRect, blocker) => {
+              const overlayRect = persistentEdgeOverlayRect(blocker);
+              if (!overlayRect) return false;
+
+              const overlapsHorizontally =
+                elementRect.right > overlayRect.left &&
+                elementRect.left < overlayRect.right;
+              const overlapsVertically =
+                elementRect.bottom > overlayRect.top &&
+                elementRect.top < overlayRect.bottom;
+
+              if (!overlapsHorizontally || !overlapsVertically) {
+                return false;
+              }
+
+              const touchesTop =
+                overlayRect.top <= 0 && overlayRect.bottom > 0;
+              if (touchesTop && elementRect.top < overlayRect.bottom) {
+                return true;
+              }
+
+              const touchesBottom =
+                overlayRect.bottom >= window.innerHeight &&
+                overlayRect.top < window.innerHeight;
+              if (touchesBottom && elementRect.bottom > overlayRect.top) {
+                return true;
+              }
+
+              const touchesLeft =
+                overlayRect.left <= 0 && overlayRect.right > 0;
+              if (touchesLeft && elementRect.left < overlayRect.right) {
+                return true;
+              }
+
+              const touchesRight =
+                overlayRect.right >= window.innerWidth &&
+                overlayRect.left < window.innerWidth;
+              if (touchesRight && elementRect.right > overlayRect.left) {
+                return true;
+              }
+
+              return false;
+            };
+
             return candidates
               .map((element, index) => {
                 const rect = element.getBoundingClientRect();
@@ -86,6 +151,12 @@ async function run() {
                   topElement.contains(element) ||
                   element.contains(topElement)
                 ) {
+                  return null;
+                }
+
+                // Ignore elements that are only clipped by persistent
+                // top/bottom/side chrome at the viewport edge.
+                if (isEdgeChromeOcclusion(rect, topElement)) {
                   return null;
                 }
 

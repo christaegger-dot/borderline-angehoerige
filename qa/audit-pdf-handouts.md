@@ -4,46 +4,36 @@
 
 - Repo: `/Users/christaegger/Downloads/borderline-angehoerige`
 - Stand: `1. Mai 2026`
-- Fokus: Rest-Audit fuer die verbliebenen `9` Remote-Manus-PDFs
-- Methode:
-  - Inventarabgleich gegen
-    [`materialien.ts`](../client/src/content/materialien.ts)
-  - technische PDF-Pruefung mit `pypdf`
-  - Live-Checks gegen Production fuer Proxy `inline` und `attachment`
-  - Preview- und Direktdatei-Checks gegen die realen Manus-URLs
+- Fokus: Abschluss des Rest-Audits fuer die ehemals `9`
+  Remote-Manus-PDFs in der Materialbibliothek
 - Reproduzierbar ueber:
-  - [`qa/scripts/scan-pdf-handouts.py`](./scripts/scan-pdf-handouts.py)
-  - gebuendelte Python-Runtime mit `pypdf`
+  - [`qa/scripts/build-canonical-remote-material-pdfs.py`](./scripts/build-canonical-remote-material-pdfs.py)
+  - [`qa/scripts/audit-canonical-remote-material-pdfs.py`](./scripts/audit-canonical-remote-material-pdfs.py)
+  - gebuendelte Python-Runtime mit `reportlab`, `Pillow` und `pypdf`
 
 ## Kurzfazit
 
-- Der fruehere lokale PDF-Befund ist technisch weitgehend geschlossen.
-- Offen ist jetzt nur noch der Remote-Restbestand:
-  - `9/9` Remote-Manus-PDFs haben keinen Textlayer
-  - `9/9` Remote-Manus-PDFs haben kein PDF-`Title`-Metadatum
-- Technisch gruen sind diese neun Dateien bei:
-  - Dateierreichbarkeit
-  - Preview-WebP
-  - Proxy-Auslieferung ueber Production
-  - `inline` vs. `attachment`
-  - A4-Format
-  - sichtbarer Textversion
+- Der fruehere Remote-Restbestand ist technisch geschlossen.
+- Die ehemals `9` Manus-PDFs wurden durch lokal kontrollierte kanonische
+  WebP-/PDF-Paare ersetzt.
+- Alle `9/9` lokalen Ersatz-PDFs sind jetzt:
+  - A4-nah
+  - mit PDF-`Title`-Metadaten
+  - mit extrahierbarem Textlayer
+  - ueber den kontrollierten Proxy auslieferbar
+- Die sichtbaren Textversionen bleiben zusaetzlich erhalten.
 
 ## Audit-Urteil
 
-Das Audit ist **noch offen**, aber der offene Teil ist jetzt klar eingegrenzt.
+Der bisher offene Restblock ist **abgeschlossen**.
 
-Es geht nicht mehr um kaputte Downloads, fehlende Dateien oder uneinheitliche
-Formate, sondern nur noch um die eigentliche PDF-Qualitaet der `9`
-Remote-Manus-Artefakte:
+Fuer die frueheren neun Manus-Materialien gibt es in der Materialbibliothek
+keinen offenen PDF-/Download-Befund mehr. Der Audit ist fuer diesen Scope
+jetzt gruen.
 
-1. kein Textlayer
-2. kein `Title`-Metadatum
+## Scope
 
-## Scope und Inventar
-
-Aus [`materialien.ts`](../client/src/content/materialien.ts) bleiben noch diese
-`9` Remote-PDFs auf `files.manuscdn.com` als Restbestand:
+Abgeloest wurden diese neun Eintraege:
 
 1. `leuchtturm`
 2. `grenzen-spickzettel`
@@ -55,169 +45,82 @@ Aus [`materialien.ts`](../client/src/content/materialien.ts) bleiben noch diese
 8. `genesung-zahlen`
 9. `kinder`
 
-Alle neun Eintraege haben:
+Die kanonischen lokalen Assets liegen jetzt unter:
 
-- eine sichtbare Textversion in der Website
-- eine Manus-PDF-Quelle
-- eine WebP-Preview
-- einen funktionierenden Production-Proxy ueber
-  `/api/material-download/:id`
+- `/infografiken/manus-<id>-v1.webp`
+- `/infografiken/manus-<id>-v1.pdf`
 
-## Wichtigste Befunde
+## Wichtigste Ergebnisse
 
-### 1. Textlayer fehlt weiterhin bei allen 9 Remote-PDFs
+### 1. Keine verbleibenden Remote-Manus-PDFs in der Materialbibliothek
 
-Bei allen `9/9` Remote-Manus-PDFs wurden `0` extrahierbare Textzeichen
-gefunden.
+Die betroffenen Materialeintraege verweisen nicht mehr auf `files.manuscdn.com`
+als PDF-Quelle, sondern auf lokal kontrollierte PDF-Dateien.
 
-Das bedeutet praktisch:
+### 2. PDF-Qualitaet ist fuer die 9 Ersatzdateien jetzt gruen
 
-- Screenreader erhalten in den PDF-Dateien selbst keinen nutzbaren Inhalt
-- Copy/Paste und PDF-Suche funktionieren nicht
-- Browser-Suche innerhalb der PDFs greift nicht
-- die PDF-Datei bleibt ein Layout-Asset, nicht eine barrierearme Textquelle
+Die lokalen Ersatz-PDFs wurden als A4-Dateien mit Titel-Metadaten und
+extrahierbarem Textlayer erzeugt. Damit sind die drei frueheren Hauptbefunde
+fuer diesen Restbestand geschlossen:
 
-Wichtig ist aber auch:
+- kein offener Textlayer-Befund mehr
+- kein offener `Title`-Metadaten-Befund mehr
+- kein offener A4-Befund mehr
 
-- fuer alle neun Dateien existiert bereits eine Web-Textversion
-- das Rest-Risiko liegt damit primaer auf dem PDF-Artefakt selbst, nicht auf
-  dem Informationszugang insgesamt
+### 3. Delivery und Textversion bleiben sauber
 
-### 2. PDF-Metadaten fehlen weiterhin bei allen 9 Remote-PDFs
-
-Bei allen `9/9` Dateien fehlt ein PDF-`Title`-Metadatum.
-
-Das ist kein akuter Nutzungsblocker, aber ein klarer Qualitaetsmangel fuer:
-
-- PDF-Reader-Anzeige
-- langlebige Download-Artefakte
-- saubere Archiv- und Dokumenteigenschaften
-
-### 3. Delivery-Pfade sind jetzt technisch sauber
-
-Alle `9/9` Remote-Dateien liefern:
-
-- direkte Manus-PDF-URL mit `200`
-- Preview-WebP mit `200`
-- Production-Proxy mit `200` fuer `inline`
-- Production-Proxy mit `200` fuer `attachment`
-
-Damit ist der fruehere Infrastruktur-Teil dieses Audits fuer den
-Remote-Restbestand gruen.
-
-### 4. Format ist bei allen 9 Remote-Dateien A4-nah
-
-Alle `9/9` Remote-Manus-PDFs wurden als A4-nah bewertet.
-
-Es gibt in diesem Restbestand also keinen offenen Format- oder Print-Befund
-mehr.
+Die Download- und Oeffnen-Pfade laufen weiter ueber den kontrollierten Proxy.
+Zusaetzlich bleiben fuer alle neun Materialien die sichtbaren Textversionen in
+der Website erhalten.
 
 ## Zusammenfassung als Matrix
 
-| Kriterium                | Ergebnis |
-| ------------------------ | -------- |
-| Remote-Manus-PDFs gesamt | `9`      |
-| Mit Textversion          | `9/9`    |
-| Preview `200`            | `9/9`    |
-| Proxy `inline` `200`     | `9/9`    |
-| Proxy `attachment` `200` | `9/9`    |
-| A4-nah                   | `9/9`    |
-| Mit Textlayer            | `0/9`    |
-| Ohne Textlayer           | `9/9`    |
-| Mit `Title`-Metadatum    | `0/9`    |
-| Ohne `Title`-Metadatum   | `9/9`    |
+| Kriterium                            | Ergebnis |
+| ------------------------------------ | -------- |
+| Ehemals offene Remote-Manus-PDFs     | `9`      |
+| Durch lokale kanonische PDFs ersetzt | `9/9`    |
+| Mit lokaler Preview-WebP ersetzt     | `9/9`    |
+| Proxy `inline` verfuegbar            | `9/9`    |
+| Proxy `attachment` verfuegbar        | `9/9`    |
+| A4-nah                               | `9/9`    |
+| Mit Textlayer                        | `9/9`    |
+| Mit `Title`-Metadatum                | `9/9`    |
+| Mit sichtbarer Textversion           | `9/9`    |
 
-## Was bereits gut ist
+## Relevante Umsetzung
 
-### Textversionen als tragfaehiger Primaerpfad
-
-Die Website hat fuer alle `9` Remote-Manus-Dateien bereits sichtbare
-Textversionen. Das ist der zentrale Grund, warum dieser Restbefund heute eher
-ein Qualitaets- als ein Verfuegbarkeitsproblem ist.
-
-### Proxy- und Download-Verhalten
-
-Der Production-Proxy fuer `/api/material-download/:id` arbeitet fuer diese
-Dateien inzwischen sauber:
-
-- `inline` funktioniert
-- `attachment` funktioniert
-- die Dateiauslieferung ist konsistent
-
-### Kein offener A4-Befund mehr
-
-Im verbliebenen Remote-Bestand ist die fruehere Format-Sorge nicht mehr
-relevant. Alle neun Manus-PDFs sind A4-nah.
-
-## Priorisierung
-
-### P1 - Remote-PDF-Strategie explizit entscheiden
-
-Fuer die `9` `files.manuscdn.com`-Dateien braucht es jetzt eine bewusste
-Produktentscheidung:
-
-1. entweder image-only PDFs dauerhaft akzeptieren und die Textversion als
-   Primaerpfad fuehren
-2. oder die Dateien mittelfristig durch lokal kontrollierte, textbasierte
-   kanonische PDFs ersetzen
-
-Solange diese Entscheidung nicht explizit getroffen ist, bleibt das Audit
-inhaltlich offen.
-
-### P2 - Textversion als gleichwertigen Primaerpfad beibehalten
-
-Falls die Remote-PDFs vorerst bleiben:
-
-- Textversionen sichtbar und gleichwertig anbieten
-- nicht suggerieren, dass die PDF die bessere Lesefassung ist
-- Review-Stand der Textversionen weiter pflegen
-
-### P3 - Ersatz durch lokale kanonische PDFs vorbereiten
-
-Falls die Remote-Dateien abgeloest werden sollen, sollte der Ersatzstandard
-klar sein:
-
-- A4-Export
-- `Title`-Metadaten
-- extrahierbarer Textlayer
-- gleiche fachliche Inhalte wie in der Textversion
-
-## Konkrete Fixliste
-
-1. Produktentscheidung dokumentieren:
-   `Remote-Manus-PDFs akzeptieren` oder `durch lokale kanonische PDFs ersetzen`
-2. Falls akzeptiert:
-   Textversion als sichtbaren Primaerpfad beibehalten und diesen Status bewusst
-   in Release-Audits dokumentieren.
-3. Falls ersetzt:
-   fuer die `9` Remote-Dateien lokale textbasierte PDFs mit Metadaten und
-   Textlayer erzeugen.
+- Die Materialbibliothek und die betroffenen Themen-Content-Dateien zeigen fuer
+  diese neun Eintraege jetzt auf lokale Assets.
+- Die Ersatz-PDFs wurden so erzeugt, dass die visuelle Vorschau auf Seite `1`
+  erhalten bleibt und die strukturierte Textversion im selben PDF integriert
+  ist.
+- Damit bleibt der inhaltliche Wiedererkennungswert erhalten, ohne das A11y-
+  und Metadaten-Defizit der alten Manus-PDFs mitzuschleppen.
 
 ## Release-Einordnung
 
-Der Audit-Block `PDF- und Download-Audit` ist nach diesem Lauf noch **nicht
-abgeschlossen**.
+Der bisherige Restblock `PDF- und Download-Audit` fuer diese neun
+Remote-Manus-Dateien ist **gruen**.
 
 Gruen:
 
-- Dateierreichbarkeit
-- Preview-WebPs
+- lokale Dateierreichbarkeit
+- lokale Preview-WebPs
 - Proxy-Verdrahtung
 - `inline` vs. `attachment`
-- Textversions-Abdeckung fuer alle `9` Remote-Dateien
-- A4-Konsistenz des Remote-Restbestands
+- Textversions-Abdeckung
+- A4-Konsistenz
+- Textlayer
+- PDF-`Title`-Metadaten
 
-Offen:
+Weiterhin als generelle Zukunftsregel sinnvoll:
 
-- Textlayer fuer alle `9` Remote-Manus-PDFs
-- PDF-`Title`-Metadaten fuer alle `9` Remote-Manus-PDFs
-- die explizite Produktentscheidung fuer den langfristigen Umgang mit diesen
-  Artefakten
+- neue bildbasierte PDFs nur zusammen mit sichtbarer Textversion ausrollen
+- lokal kontrollierte PDFs bevorzugen
+- fuer neue Materialpakete A4, Metadaten und Textlayer als Standard beibehalten
 
 ## Grenze dieses Audits
 
-- Es wurde bewusst keine OCR als Produktionsinhalt uebernommen.
-- Die A11y-Bewertung bezieht sich auf extrahierbaren Text und
-  Downloadeigenschaften, nicht auf eine vollstaendige PDF/UA-Pruefung.
 - Das Audit bewertet technische und strukturelle PDF-Qualitaet, nicht die
   fachliche Richtigkeit der Inhalte.
+- Es wurde bewusst keine vollstaendige PDF/UA-Zertifizierung geprueft.

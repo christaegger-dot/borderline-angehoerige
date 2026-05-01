@@ -18,14 +18,14 @@ describe("MaterialienLibrarySection", () => {
     expect(
       screen.getByText("Genesung in Zahlen – Was die Forschung zeigt")
     ).toBeInTheDocument();
-    const remoteDownloadLink = screen.getByRole("link", {
+    const localizedDownloadLink = screen.getByRole("link", {
       name: /Der Leuchtturm – Orientierung für Angehörige herunterladen/i,
     });
-    expect(remoteDownloadLink).toHaveAttribute(
+    expect(localizedDownloadLink).toHaveAttribute(
       "href",
       "/api/material-download/leuchtturm"
     );
-    expect(remoteDownloadLink).toHaveAttribute("download", "");
+    expect(localizedDownloadLink).toHaveAttribute("download", "");
 
     const localDownloadLink = screen.getByRole("link", {
       name: /Notfallkarte Zürich – Psychische Krise herunterladen/i,
@@ -114,10 +114,10 @@ describe("MaterialienLibrarySection", () => {
       })
     ).toHaveAttribute("href", "/materialien/text/kinder");
     expect(
-      screen.getAllByText(
+      screen.queryByText(
         /Für bildbasierte PDFs ist die Textversion die empfohlene Lesefassung\./i
-      ).length
-    ).toBeGreaterThan(0);
+      )
+    ).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /Genesung\s*\(1\)/ }));
 

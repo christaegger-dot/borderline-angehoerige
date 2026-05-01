@@ -72,11 +72,10 @@ export const materials: MaterialItem[] = [
       "Orientierung zur Angehörigenrolle: stabil bleiben, ohne das Schiff steuern zu wollen.",
     category: "verstehen",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GbFCyQhEWIKomzXw.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
+    url: "/infografiken/manus-leuchtturm-v1.webp",
+    downloadUrl: "/infografiken/manus-leuchtturm-v1.pdf",
     priority: "core",
-    verifiedAt: "März 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "eisberg",
@@ -126,11 +125,10 @@ export const materials: MaterialItem[] = [
       "Knappe Formulierungen für klare, respektvolle Grenzsetzung im Alltag und in belasteten Gesprächen.",
     category: "grenzen",
     kind: "Spickzettel",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/avGqFKFuKFfFYANu.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/obwIZiRPiVPphIUX.pdf",
+    url: "/infografiken/manus-grenzen-spickzettel-v1.webp",
+    downloadUrl: "/infografiken/manus-grenzen-spickzettel-v1.pdf",
     priority: "core",
-    verifiedAt: "März 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "warnsignale",
@@ -139,11 +137,10 @@ export const materials: MaterialItem[] = [
       "Orientierung für Angehörige, wenn Erschöpfung, Alarmbereitschaft oder Rückzug zu viel Raum einnehmen.",
     category: "selbstfuersorge",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OEUNVdTyojBBYTic.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/VdAxPxngFzgNImxg.pdf",
+    url: "/infografiken/manus-warnsignale-v1.webp",
+    downloadUrl: "/infografiken/manus-warnsignale-v1.pdf",
     priority: "core",
-    verifiedAt: "März 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "schuld-verantwortung",
@@ -152,11 +149,10 @@ export const materials: MaterialItem[] = [
       "Hilft, Schuldgefühle bei Angehörigen zu entlasten und Verantwortung differenzierter zu sehen.",
     category: "selbstfuersorge",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/TgzrtmiUbRscTBlg.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/jPuhxPHHtFSjOTly.pdf",
+    url: "/infografiken/manus-schuld-verantwortung-v1.webp",
+    downloadUrl: "/infografiken/manus-schuld-verantwortung-v1.pdf",
     priority: "secondary",
-    verifiedAt: "März 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "spaltung",
@@ -193,11 +189,10 @@ export const materials: MaterialItem[] = [
       "Typische anklagende Sätze einordnen und eigene Reaktionen ruhiger und klarer gestalten.",
     category: "kommunizieren",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/azZbLPyPkSupQskI.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hEXKCmWYeiyUnwXr.pdf",
+    url: "/infografiken/manus-wenn-worte-treffen-v1.webp",
+    downloadUrl: "/infografiken/manus-wenn-worte-treffen-v1.pdf",
     priority: "secondary",
-    verifiedAt: "März 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "dear",
@@ -206,11 +201,10 @@ export const materials: MaterialItem[] = [
       "DBT-orientierte Struktur für klare Bitten und Grenzsetzungen ohne unnötige Eskalation.",
     category: "grenzen",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yBSkvBJGSeNvxINq.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DDkqUiaNJwizEtPv.pdf",
+    url: "/infografiken/manus-dear-v1.webp",
+    downloadUrl: "/infografiken/manus-dear-v1.pdf",
     priority: "secondary",
-    verifiedAt: "März 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "radikale-akzeptanz",
@@ -219,11 +213,10 @@ export const materials: MaterialItem[] = [
       "Hilft Angehörigen, Realität anzuerkennen, ohne aufzugeben oder alles gutzuheissen.",
     category: "selbstfuersorge",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/OmxdguWaaXAkElDp.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/SkBpjnDHfNmPbmnd.pdf",
+    url: "/infografiken/manus-radikale-akzeptanz-v1.webp",
+    downloadUrl: "/infografiken/manus-radikale-akzeptanz-v1.pdf",
     priority: "secondary",
-    verifiedAt: "März 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "genesung-zahlen",
@@ -232,11 +225,10 @@ export const materials: MaterialItem[] = [
       "Langfristige Hoffnung mit realistischen Daten: Besserung ist möglich, aber selten linear.",
     category: "genesung",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/tyFTHNjsUagqrXiS.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/MunlHDCNqnsOhBFn.pdf",
+    url: "/infografiken/manus-genesung-zahlen-v1.webp",
+    downloadUrl: "/infografiken/manus-genesung-zahlen-v1.pdf",
     priority: "secondary",
-    verifiedAt: "Februar 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "kinder",
@@ -245,11 +237,10 @@ export const materials: MaterialItem[] = [
       "Altersgerechte Erklärung für Kinder und Hinweise zum Schutz von Kindern im belasteten Familiensystem.",
     category: "verstehen",
     kind: "Infografik",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PrnKdbomSunLKPVv.webp",
-    downloadUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/birikKPATMlHGPWf.pdf",
+    url: "/infografiken/manus-kinder-v1.webp",
+    downloadUrl: "/infografiken/manus-kinder-v1.pdf",
     priority: "secondary",
-    verifiedAt: "April 2026",
+    verifiedAt: "Mai 2026",
   },
 ];
 

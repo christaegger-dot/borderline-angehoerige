@@ -46,7 +46,7 @@ describe("security headers", () => {
     expect(CONTENT_SECURITY_POLICY).not.toContain("forge.butterfly-effect.dev");
   });
 
-  it("applies the shared security headers to material download responses", async () => {
+  it("applies the shared security headers to remote material download responses", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue(
@@ -62,7 +62,7 @@ describe("security headers", () => {
     );
 
     const response = await createMaterialDownloadResponse(
-      "leuchtturm",
+      "kommunizieren-wenn-gespraeche-kippen-3-schritte",
       "inline"
     );
 

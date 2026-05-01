@@ -112,7 +112,7 @@ describe("handout text versions", () => {
     expect(getHandoutTextVersionHrefBySource(notfallkarte?.pdfUrl)).toBeNull();
   });
 
-  it("treats remote image-only materials as text-version-first and reviewed", () => {
+  it("keeps the material library on locally controlled pdf assets", () => {
     for (const item of materials) {
       if (item.isHtml) {
         continue;
@@ -120,12 +120,10 @@ describe("handout text versions", () => {
 
       const sourceUrl = item.pdfUrl ?? item.downloadUrl;
       const asset = getHandoutAssetBySource(sourceUrl);
-      if (!asset || asset.sourceKind !== "remote") {
-        continue;
-      }
-
-      expect(asset.textLayer).toBe("missing");
-      expect(asset.preferredReadingFormat).toBe("textversion");
+      expect(asset).toBeTruthy();
+      expect(asset?.sourceKind).toBe("local");
+      expect(asset?.textLayer).toBe("present");
+      expect(asset?.preferredReadingFormat).toBe("pdf");
       expect(getHandoutTextVersionHrefBySource(sourceUrl)).toBe(
         `/materialien/text/${item.id}`
       );

@@ -58,9 +58,8 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "wenn-worte-treffen",
     title: "Wenn Worte treffen",
     description: "Schuldzuweisungen ruhiger einordnen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/azZbLPyPkSupQskI.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/hEXKCmWYeiyUnwXr.pdf",
+    url: "/infografiken/manus-wenn-worte-treffen-v1.webp",
+    pdfUrl: "/infografiken/manus-wenn-worte-treffen-v1.pdf",
     category: "konflikte",
   },
   {

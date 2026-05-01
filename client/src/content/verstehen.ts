@@ -23,10 +23,8 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     title: "Der Leuchtturm",
     description: "Orientierung für Angehörige: stabil bleiben trotz Sturm.",
     category: "grundlagen",
-    webpUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/GbFCyQhEWIKomzXw.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DNGijMOYFghXAsLm.pdf",
+    webpUrl: "/infografiken/manus-leuchtturm-v1.webp",
+    pdfUrl: "/infografiken/manus-leuchtturm-v1.pdf",
     alt: "Der Leuchtturm – Orientierung für Angehörige",
     featured: true,
   },
@@ -70,10 +68,8 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     description:
       "Borderline altersgerecht erklären und Kinder mit Klarheit, Entlastung und Schutz begleiten.",
     category: "grundlagen",
-    webpUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/PrnKdbomSunLKPVv.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/birikKPATMlHGPWf.pdf",
+    webpUrl: "/infografiken/manus-kinder-v1.webp",
+    pdfUrl: "/infografiken/manus-kinder-v1.pdf",
     alt: "Wenn Mama oder Papa grosse Gefühle hat",
   },
   {

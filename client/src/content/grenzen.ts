@@ -22,9 +22,8 @@ export const grenzenItems: GrenzenItem[] = [
     id: "dear",
     title: "Die DEAR-Technik",
     description: "4 Schritte für respektvolle Grenzsetzung",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/yBSkvBJGSeNvxINq.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/DDkqUiaNJwizEtPv.pdf",
+    url: "/infografiken/manus-dear-v1.webp",
+    pdfUrl: "/infografiken/manus-dear-v1.pdf",
     category: "kommunizieren",
   },
   {
@@ -68,9 +67,8 @@ export const grenzenItems: GrenzenItem[] = [
     id: "grenzen-spickzettel",
     title: "Spickzettel Grenzen",
     description: "A4 mit den wichtigsten Sätzen",
-    url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/avGqFKFuKFfFYANu.webp",
-    pdfUrl:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031008193/obwIZiRPiVPphIUX.pdf",
+    url: "/infografiken/manus-grenzen-spickzettel-v1.webp",
+    pdfUrl: "/infografiken/manus-grenzen-spickzettel-v1.pdf",
     category: "handeln",
   },
 ];

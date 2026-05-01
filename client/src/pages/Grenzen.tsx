@@ -27,7 +27,7 @@ import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { grenzenItems } from "@/content/grenzen";
 import { getHandoutOpenHref } from "@/content/handouts";
@@ -153,6 +153,11 @@ export default function Grenzen() {
   return (
     <Layout>
       <SEO
+        title="Grenzen setzen"
+        description="Grenzen für Angehörige: Selbstschutz, Klarheit, Konsequenz und begrenzte Verfügbarkeit."
+        path="/grenzen"
+      />
+      <MedicalPageSchema
         title="Grenzen setzen"
         description="Grenzen für Angehörige: Selbstschutz, Klarheit, Konsequenz und begrenzte Verfügbarkeit."
         path="/grenzen"

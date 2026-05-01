@@ -21,7 +21,7 @@ import {
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import KommunizierenMaterialsSection from "@/sections/KommunizierenMaterialsSection";
 import {
@@ -75,6 +75,11 @@ export default function Kommunizieren() {
   return (
     <Layout>
       <SEO
+        title="Kommunizieren"
+        description="Kommunikation für Angehörige: Validierung, Timing, Deeskalation und klare Sprache in belasteten Gesprächen."
+        path="/kommunizieren"
+      />
+      <MedicalPageSchema
         title="Kommunizieren"
         description="Kommunikation für Angehörige: Validierung, Timing, Deeskalation und klare Sprache in belasteten Gesprächen."
         path="/kommunizieren"

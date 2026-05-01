@@ -20,7 +20,7 @@ import { EditorialLayout } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import SituationsWegweiser from "@/components/interactive/SituationsWegweiser";
 import { kontaktByIdStrict } from "@/data/kontakte";
 import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
@@ -31,6 +31,11 @@ export default function Wegweiser() {
   return (
     <Layout>
       <SEO
+        title="Situations-Wegweiser"
+        description="Was tun, wenn Ihr Angehöriger in einer Krise ist? Unser interaktiver Wegweiser führt Sie Schritt für Schritt durch verschiedene Situationen."
+        path="/wegweiser"
+      />
+      <MedicalPageSchema
         title="Situations-Wegweiser"
         description="Was tun, wenn Ihr Angehöriger in einer Krise ist? Unser interaktiver Wegweiser führt Sie Schritt für Schritt durch verschiedene Situationen."
         path="/wegweiser"

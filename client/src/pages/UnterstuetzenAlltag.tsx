@@ -25,7 +25,7 @@ import {
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import EnergieHaushaltVisualisierung from "@/components/visualizations/EnergieHaushaltVisualisierung";
@@ -268,6 +268,11 @@ export default function UnterstuetzenAlltag() {
   return (
     <Layout>
       <SEO
+        title="Unterstützen im Alltag"
+        description="Wie Angehörige im Alltag hilfreich bleiben können: verlässlich, klar und ohne sich selbst zu verlieren."
+        path="/unterstuetzen/alltag"
+      />
+      <MedicalPageSchema
         title="Unterstützen im Alltag"
         description="Wie Angehörige im Alltag hilfreich bleiben können: verlässlich, klar und ohne sich selbst zu verlieren."
         path="/unterstuetzen/alltag"

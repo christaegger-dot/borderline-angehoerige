@@ -36,7 +36,7 @@ describe("direct pages architecture", () => {
     expect(staticDirectPages).toEqual(["client/public/soforthilfe/index.html"]);
   });
 
-  it("keeps redirects focused on soforthilfe instead of overriding SPA routes", () => {
+  it("keeps redirects focused on real redirects instead of a SPA catch-all", () => {
     const redirects = fs.readFileSync(
       path.join(repoRoot, "client/public/_redirects"),
       "utf8"
@@ -45,23 +45,21 @@ describe("direct pages architecture", () => {
     expect(redirects).toContain(
       "/soforthilfe    /soforthilfe/index.html   200!"
     );
-    expect(redirects).not.toContain(
-      "/materialien    /materialien/index.html   200!"
+    expect(redirects).toContain(
+      "/unterstuetzen    /unterstuetzen/uebersicht   301!"
     );
-    expect(redirects).not.toContain(
-      "/selbsttest    /selbsttest/index.html   200!"
-    );
+    expect(redirects).toContain("/404    /404.html   404!");
+    expect(redirects).not.toContain("/*    /index.html   200");
   });
 
-  it("hardens the production server to explicit static direct-page routes", () => {
+  it("hardens the production server to explicit html shells plus a dedicated 404", () => {
     const serverIndex = fs.readFileSync(
       path.join(repoRoot, "server/index.ts"),
       "utf8"
     );
 
-    expect(serverIndex).toContain(
-      'const STATIC_DIRECT_PAGE_ROUTES = new Set(["/soforthilfe"])'
-    );
+    expect(serverIndex).toContain("getStaticHtmlCandidates");
+    expect(serverIndex).toContain('path.join(staticPath, "404.html")');
   });
 
   it("keeps static direct pages out of the SPA route registry", () => {

@@ -6,6 +6,14 @@ import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 import { createMaterialDownloadResponse } from "./server/material-download";
+import {
+  getGeneratedStaticHtmlOutputPath,
+  getGeneratedStaticRouteHeadMetadata,
+  getStaticHtmlCandidates,
+  getStaticRouteHeadMetadata,
+  renderStaticRouteHtml,
+  STATIC_ROUTE_REDIRECTS,
+} from "./shared/staticRouteShells";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -154,20 +162,52 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
   trimLogFile(logPath, MAX_LOG_SIZE_BYTES);
 }
 
-const STATIC_DIRECT_PAGE_FILES = new Map([
-  ["/soforthilfe", "soforthilfe/index.html"],
-]);
-
 function normalizeRequestPath(reqUrl?: string) {
   const pathname = new URL(reqUrl ?? "/", "http://localhost").pathname;
   return pathname !== "/" ? pathname.replace(/\/+$/, "") : pathname;
 }
 
-function createStaticDirectPageMiddleware(rootDir: string) {
-  return (
+function resolveStaticHtmlFile(rootDir: string, pathname: string) {
+  for (const candidate of getStaticHtmlCandidates(pathname)) {
+    const absoluteFilePath = path.join(rootDir, candidate);
+    if (fs.existsSync(absoluteFilePath)) {
+      return absoluteFilePath;
+    }
+  }
+
+  return null;
+}
+
+function sendHtml(
+  req: { method?: string },
+  res: any,
+  html: Buffer | string,
+  status = 200
+) {
+  res.writeHead(status, {
+    "Content-Type": "text/html; charset=utf-8",
+    "Cache-Control": "no-cache",
+  });
+
+  if (req.method === "HEAD") {
+    res.end();
+    return;
+  }
+
+  res.end(html);
+}
+
+function createStaticHtmlRouteMiddleware(
+  rootDir: string,
+  options: {
+    dynamicShellRootDir?: string;
+    transformIndexHtml?: (url: string, html: string) => Promise<string>;
+  } = {}
+) {
+  return async (
     req: Parameters<ViteDevServer["middlewares"]["use"]>[1],
     res: any,
-    next: () => void
+    next: (error?: unknown) => void
   ) => {
     if (req.method !== "GET" && req.method !== "HEAD") {
       return next();
@@ -175,34 +215,66 @@ function createStaticDirectPageMiddleware(rootDir: string) {
 
     const pathname = normalizeRequestPath(req.url);
 
-    if (pathname === "/notfall") {
-      res.writeHead(302, { Location: "/soforthilfe" });
+    const redirect = STATIC_ROUTE_REDIRECTS.find(
+      route => route.from === pathname
+    );
+    if (redirect) {
+      res.writeHead(redirect.status, { Location: redirect.to });
       res.end();
       return;
     }
 
-    const relativeFilePath = STATIC_DIRECT_PAGE_FILES.get(pathname);
-    if (!relativeFilePath) {
-      return next();
+    if (!path.extname(pathname)) {
+      const absoluteStaticHtmlFile = resolveStaticHtmlFile(rootDir, pathname);
+      if (absoluteStaticHtmlFile) {
+        return sendHtml(
+          req,
+          res,
+          fs.readFileSync(absoluteStaticHtmlFile),
+          pathname === "/404" ? 404 : 200
+        );
+      }
     }
 
-    const absoluteFilePath = path.join(rootDir, relativeFilePath);
-    if (!fs.existsSync(absoluteFilePath)) {
-      return next();
+    if (!path.extname(pathname) && options.dynamicShellRootDir) {
+      const routeMeta = getStaticRouteHeadMetadata(pathname);
+      if (routeMeta) {
+        try {
+          const sourceIndexHtml = fs.readFileSync(
+            path.join(options.dynamicShellRootDir, "index.html"),
+            "utf8"
+          );
+          const prerenderedHtml = renderStaticRouteHtml(
+            sourceIndexHtml,
+            routeMeta
+          );
+          const transformedHtml = options.transformIndexHtml
+            ? await options.transformIndexHtml(
+                req.url ?? pathname,
+                prerenderedHtml
+              )
+            : prerenderedHtml;
+
+          return sendHtml(
+            req,
+            res,
+            transformedHtml,
+            pathname === "/404" ? 404 : 200
+          );
+        } catch (error) {
+          return next(error);
+        }
+      }
     }
 
-    const html = fs.readFileSync(absoluteFilePath);
-    res.writeHead(200, {
-      "Content-Type": "text/html; charset=utf-8",
-      "Cache-Control": "no-cache",
-    });
-
-    if (req.method === "HEAD") {
-      res.end();
-      return;
+    if (!path.extname(pathname)) {
+      const notFoundHtml = resolveStaticHtmlFile(rootDir, "/404");
+      if (notFoundHtml) {
+        return sendHtml(req, res, fs.readFileSync(notFoundHtml), 404);
+      }
     }
 
-    res.end(html);
+    return next();
   };
 }
 
@@ -336,18 +408,51 @@ function vitePluginStaticDirectPages(): Plugin {
 
     configureServer(server) {
       server.middlewares.use(
-        createStaticDirectPageMiddleware(
-          path.join(PROJECT_ROOT, "client", "public")
+        createStaticHtmlRouteMiddleware(
+          path.join(PROJECT_ROOT, "client", "public"),
+          {
+            dynamicShellRootDir: path.join(PROJECT_ROOT, "client"),
+            transformIndexHtml: (url, html) =>
+              server.transformIndexHtml(url, html),
+          }
         )
       );
     },
 
     configurePreviewServer(server) {
       server.middlewares.use(
-        createStaticDirectPageMiddleware(
+        createStaticHtmlRouteMiddleware(
           path.join(PROJECT_ROOT, "dist", "public")
         )
       );
+    },
+  };
+}
+
+function vitePluginStaticRouteShells(): Plugin {
+  return {
+    name: "static-route-shells",
+
+    closeBundle() {
+      const outputDir = path.join(PROJECT_ROOT, "dist", "public");
+      const baseHtmlPath = path.join(outputDir, "index.html");
+
+      if (!fs.existsSync(baseHtmlPath)) {
+        return;
+      }
+
+      const baseHtml = fs.readFileSync(baseHtmlPath, "utf8");
+
+      for (const routeMeta of getGeneratedStaticRouteHeadMetadata()) {
+        const renderedHtml = renderStaticRouteHtml(baseHtml, routeMeta);
+        const outputPath = path.join(
+          outputDir,
+          getGeneratedStaticHtmlOutputPath(routeMeta.path)
+        );
+
+        fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+        fs.writeFileSync(outputPath, renderedHtml, "utf8");
+      }
     },
   };
 }
@@ -359,6 +464,7 @@ export default defineConfig(({ command }) => {
     tailwindcss(),
     jsxLocPlugin(),
     vitePluginStaticDirectPages(),
+    vitePluginStaticRouteShells(),
   ];
 
   if (isServe) {

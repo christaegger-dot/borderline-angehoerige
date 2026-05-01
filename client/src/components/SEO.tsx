@@ -1,4 +1,15 @@
 import { useEffect, useMemo } from "react";
+import {
+  buildBreadcrumbSchemaData,
+  buildCanonicalUrl,
+  buildFAQSchemaData,
+  buildFullTitle,
+  buildMedicalPageSchemaData,
+  buildMetaDescription,
+  buildOgImageUrl,
+  buildWebsiteSchemaData,
+  SITE_URL,
+} from "@/lib/seoMetadata";
 
 interface SEOProps {
   title?: string;
@@ -6,22 +17,8 @@ interface SEOProps {
   path?: string;
   type?: "website" | "article";
   canonicalPath?: string;
+  robots?: string;
 }
-
-const SITE_NAME = "Borderline · Hilfe für Angehörige";
-const BASE_DESCRIPTION =
-  "Evidenzbasierte Unterstützung für Angehörige von Menschen mit Borderline-Muster (Borderline-Persönlichkeitsstörung).";
-const DEFAULT_SITE_URL = "https://borderline-angehoerige.netlify.app";
-const SITE_URL = (import.meta.env.VITE_SITE_URL || DEFAULT_SITE_URL).replace(
-  /\/+$/,
-  ""
-);
-
-// Medical content must define review dates explicitly.
-const MEDICAL_LAST_REVIEWED =
-  import.meta.env.VITE_MEDICAL_LAST_REVIEWED || null;
-
-const buildOgImageUrl = (siteUrl = SITE_URL) => `${siteUrl}/og-image.jpg`;
 
 const getSiteUrl = () => {
   if (typeof window !== "undefined" && window.location?.origin) {
@@ -29,112 +26,15 @@ const getSiteUrl = () => {
   }
   return SITE_URL;
 };
-
-export function buildFullTitle(title?: string) {
-  return title
-    ? `${title} – ${SITE_NAME}`
-    : `${SITE_NAME} – Evidenzbasierte Unterstützung`;
-}
-
-export function buildMetaDescription(description?: string) {
-  return description || BASE_DESCRIPTION;
-}
-
-export function buildCanonicalUrl(path = "/", siteUrl = SITE_URL) {
-  return `${siteUrl}${path}`;
-}
-
-export function buildWebsiteSchemaData(siteUrl = SITE_URL) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE_NAME,
-    alternateName: "Borderline Angehörige",
-    url: siteUrl,
-    description: BASE_DESCRIPTION,
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: buildOgImageUrl(siteUrl),
-      },
-    },
-    inLanguage: "de-CH",
-  };
-}
-
-export function buildMedicalPageSchemaData({
-  title,
-  description,
-  path,
-  siteUrl = SITE_URL,
-}: {
-  title: string;
-  description: string;
-  path: string;
-  siteUrl?: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    name: title,
-    description,
-    url: buildCanonicalUrl(path, siteUrl),
-    inLanguage: "de",
-    about: {
-      "@type": "MedicalCondition",
-      name: "Persönlichkeitsstörung mit Borderline-Muster",
-      alternateName: ["Borderline-Muster", "Borderline pattern"],
-      code: {
-        "@type": "MedicalCode",
-        code: "6D11.5",
-        codingSystem: "ICD-11",
-      },
-    },
-    audience: {
-      "@type": "PeopleAudience",
-      audienceType: "Angehörige von Menschen mit Borderline-Muster",
-    },
-    ...(MEDICAL_LAST_REVIEWED && { lastReviewed: MEDICAL_LAST_REVIEWED }),
-    medicalAudience: {
-      "@type": "MedicalAudience",
-      audienceType: "Caregiver",
-    },
-  };
-}
-
-export function buildBreadcrumbSchemaData(
-  items: { name: string; url: string }[]
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
-}
-
-export function buildFAQSchemaData(
-  questions: { question: string; answer: string }[]
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: questions.map(question => ({
-      "@type": "Question",
-      name: question.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: question.answer,
-      },
-    })),
-  };
-}
+export {
+  buildBreadcrumbSchemaData,
+  buildCanonicalUrl,
+  buildFAQSchemaData,
+  buildFullTitle,
+  buildMedicalPageSchemaData,
+  buildMetaDescription,
+  buildWebsiteSchemaData,
+};
 
 export default function SEO({
   title,
@@ -142,6 +42,7 @@ export default function SEO({
   path = "/",
   type = "website",
   canonicalPath,
+  robots,
 }: SEOProps) {
   const fullTitle = buildFullTitle(title);
   const metaDescription = buildMetaDescription(description);
@@ -166,6 +67,10 @@ export default function SEO({
       }
       el.setAttribute("content", content);
     };
+    const removeMeta = (name: string, isProperty = false) => {
+      const attr = isProperty ? "property" : "name";
+      document.querySelector(`meta[${attr}="${name}"]`)?.remove();
+    };
 
     updateMeta("description", metaDescription);
     updateMeta("og:title", fullTitle, true);
@@ -177,6 +82,11 @@ export default function SEO({
     updateMeta("twitter:title", fullTitle);
     updateMeta("twitter:description", metaDescription);
     updateMeta("twitter:image", ogImage);
+    if (robots) {
+      updateMeta("robots", robots);
+    } else {
+      removeMeta("robots");
+    }
 
     // Update canonical link
     let canonical = document.querySelector(
@@ -188,7 +98,7 @@ export default function SEO({
       document.head.appendChild(canonical);
     }
     canonical.href = canonicalUrl;
-  }, [canonicalPath, fullTitle, metaDescription, path, type]);
+  }, [canonicalPath, fullTitle, metaDescription, path, robots, type]);
 
   return null;
 }
@@ -220,15 +130,24 @@ export function MedicalPageSchema({
   title,
   description,
   path,
+  lastReviewed,
 }: {
   title: string;
   description: string;
   path: string;
+  lastReviewed?: string | null;
 }) {
   const siteUrl = getSiteUrl();
   const schema = useMemo(
-    () => buildMedicalPageSchemaData({ title, description, path, siteUrl }),
-    [description, path, siteUrl, title]
+    () =>
+      buildMedicalPageSchemaData({
+        title,
+        description,
+        path,
+        siteUrl,
+        lastReviewed,
+      }),
+    [description, lastReviewed, path, siteUrl, title]
   );
 
   useEffect(() => {

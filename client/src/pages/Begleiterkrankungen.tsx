@@ -30,7 +30,7 @@ import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import AppLink from "@/components/AppLink";
 import { emailByIdStrict, kontaktByIdStrict } from "@/data/kontakte";
@@ -106,6 +106,11 @@ export default function Begleiterkrankungen() {
   return (
     <Layout>
       <SEO
+        title="Begleiterkrankungen"
+        description="Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert."
+        path="/begleiterkrankungen"
+      />
+      <MedicalPageSchema
         title="Begleiterkrankungen"
         description="Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert."
         path="/begleiterkrankungen"

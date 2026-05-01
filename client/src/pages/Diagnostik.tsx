@@ -29,7 +29,7 @@ import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import AppLink from "@/components/AppLink";
 import {
@@ -136,6 +136,11 @@ export default function Diagnostik() {
   return (
     <Layout>
       <SEO
+        title="Diagnostik"
+        description="Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
+        path="/diagnostik"
+      />
+      <MedicalPageSchema
         title="Diagnostik"
         description="Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
         path="/diagnostik"

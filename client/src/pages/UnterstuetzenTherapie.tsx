@@ -28,7 +28,7 @@ import {
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
-import SEO from "@/components/SEO";
+import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import RollenOrbitVisualisierung from "@/components/visualizations/RollenOrbitVisualisierung";
@@ -180,6 +180,11 @@ export default function UnterstuetzenTherapie() {
   return (
     <Layout>
       <SEO
+        title="Therapie unterstützen"
+        description="Wie Angehörige Behandlung unterstützen können, ohne mitzubehandeln oder die Verantwortung zu übernehmen."
+        path="/unterstuetzen/therapie"
+      />
+      <MedicalPageSchema
         title="Therapie unterstützen"
         description="Wie Angehörige Behandlung unterstützen können, ohne mitzubehandeln oder die Verantwortung zu übernehmen."
         path="/unterstuetzen/therapie"

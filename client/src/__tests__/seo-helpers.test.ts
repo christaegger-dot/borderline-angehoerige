@@ -52,6 +52,16 @@ describe("SEO helpers", () => {
     );
   });
 
+  it("uses page governance review dates for medical schema when available", () => {
+    const schema = buildMedicalPageSchemaData({
+      title: "Diagnostik",
+      description: "Beschreibung",
+      path: "/diagnostik",
+    });
+
+    expect(schema.lastReviewed).toBe("2026-04-30");
+  });
+
   it("builds breadcrumb schema with correct positions", () => {
     const schema = buildBreadcrumbSchemaData([
       { name: "Home", url: "https://example.com/" },

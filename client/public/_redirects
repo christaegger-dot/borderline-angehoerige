@@ -1,3 +1,6 @@
+/unterstuetzen    /unterstuetzen/uebersicht   301!
+/selbsthilfegruppen    /beratung   301!
+/therapieangebote    /unterstuetzen/therapie#therapieangebote   301!
 /notfall    /soforthilfe   301!
 /soforthilfe    /soforthilfe/index.html   200!
-/*    /index.html   200
+/404    /404.html   404!

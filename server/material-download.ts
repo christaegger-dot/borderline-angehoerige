@@ -8,11 +8,13 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { SECURITY_HEADERS } from "../shared/securityHeaders";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const MATERIAL_DOWNLOAD_MODULE_FILENAME = fileURLToPath(import.meta.url);
+const MATERIAL_DOWNLOAD_MODULE_DIRNAME = path.dirname(
+  MATERIAL_DOWNLOAD_MODULE_FILENAME
+);
 const LOCAL_PUBLIC_ROOTS = [
-  path.resolve(__dirname, "public"),
-  path.resolve(__dirname, "..", "client", "public"),
+  path.resolve(MATERIAL_DOWNLOAD_MODULE_DIRNAME, "public"),
+  path.resolve(MATERIAL_DOWNLOAD_MODULE_DIRNAME, "..", "client", "public"),
 ];
 
 export async function createMaterialDownloadResponse(

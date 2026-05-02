@@ -41,7 +41,7 @@ export const handoutTextVersions = [
         title: "Wichtiger Soforthinweis",
         calloutTitle: "Sicherheit vor Diskussion",
         calloutText:
-          "Person möglichst nicht allein lassen. Gefährliche Gegenstände, Medikamente, Alkohol oder andere Mittel wenn möglich entfernen. Bei Unsicherheit lieber einmal zu viel Hilfe holen als einmal zu wenig.",
+          "Die Person nach Möglichkeit nicht ohne Hilfe, Notfallplan oder professionelle Einschätzung allein lassen – sofern Sie selbst sicher bleiben können. Gefährliche Gegenstände, Medikamente, Alkohol oder andere Mittel wenn möglich entfernen. Bei Unsicherheit lieber einmal zu viel Hilfe holen als einmal zu wenig.",
       },
       {
         title:
@@ -84,7 +84,7 @@ export const handoutTextVersions = [
           "lange Diskussionen, warum das Leben doch schön sei",
           "argumentieren oder überzeugen wollen",
           "drohen oder bestrafen",
-          "die Person trotz akuter Gefahr allein lassen",
+          "die Person trotz akuter Gefahr ohne Hilfe oder Sicherheitsplan allein lassen",
           "Suizidgedanken als Geheimnis für sich behalten",
         ],
       },

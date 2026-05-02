@@ -1,6 +1,8 @@
 export const quellenLinks = {
   apa2022: "/quellen#src-american-psychiatric-association-2022",
   apa2024: "/quellen#src-american-psychiatric-association-keepers-2024",
+  awmf2022:
+    "/quellen#src-arbeitsgemeinschaft-der-wissenschaftlichen-medizinischen-fachgesellschaften-awmf-2022",
   batemanFonagy2009: "/quellen#src-bateman-fonagy-2009",
   first2017: "/quellen#src-first-williamsw-benjamin-spitzer-2017",
   fruzzetti2006: "/quellen#src-fruzzetti-2006",
@@ -9,6 +11,7 @@ export const quellenLinks = {
   hoffman2005: "/quellen#src-hoffman-2005",
   icd11: "/quellen#src-world-health-organization-2019",
   ipde1999: "/quellen#src-loranger-1999",
+  lamberti2023: "/quellen#src-lamberti-2023",
   linehan1993: "/quellen#src-linehan-1993",
   linehan2015: "/quellen#src-linehan-2015",
   projectAir: "/quellen#src-project-air-strategy-laufend",

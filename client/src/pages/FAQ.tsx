@@ -9,11 +9,13 @@ import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import SEO, { FAQSchema } from "@/components/SEO";
+import { kontaktByIdStrict } from "@/data/kontakte";
 import { Link } from "wouter";
 
 interface FAQItem {
   question: string;
   answer: string;
+  bullets?: string[];
   links?: { text: string; url: string }[];
 }
 
@@ -41,6 +43,9 @@ function openSection(sectionId: string) {
     new CustomEvent("open-section", { detail: { sectionId } })
   );
 }
+
+const elternnotruf = kontaktByIdStrict("GRUEN_ELTERN");
+const proJuventute147 = kontaktByIdStrict("GRUEN_147");
 
 const faqCategories: FAQCategory[] = [
   {
@@ -174,16 +179,25 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Darf ich meinen Angehörigen verlassen?",
         answer:
-          "Ja. Eine Beziehung zu beenden kann eine legitime und verantwortbare Entscheidung sein – auch wenn Ihr Angehöriger psychisch krank ist. Wenn die Beziehung Ihre psychische oder körperliche Gesundheit ernsthaft belastet oder gefährdet, braucht dieser Umstand ein grosses Gewicht. Wichtig ist, eine Trennung nach Möglichkeit nicht mitten in einer akuten Krise impulsiv zu vollziehen, sondern vorbereitet und mit Blick auf Sicherheit. Wenn es eine Behandlung gibt, kann es sinnvoll sein, Fachpersonen zu informieren. Und: Sie können eine Grenze ziehen oder gehen und trotzdem Mitgefühl behalten.",
+          "Ja. Eine Beziehung zu beenden kann eine legitime und verantwortbare Entscheidung sein – auch wenn Ihr Angehöriger psychisch krank ist. Wenn die Beziehung Ihre psychische oder körperliche Gesundheit ernsthaft belastet oder gefährdet, braucht dieser Umstand ein grosses Gewicht. Wichtig ist, eine Trennung nach Möglichkeit nicht mitten in einer akuten Krise impulsiv zu vollziehen, sondern vorbereitet, mit Blick auf Sicherheit und – wenn nötig – mit fachlicher Begleitung. Wenn Drohungen, Gewalt, Kinder oder Suizidankündigungen im Raum stehen, braucht es oft zuerst Schutzplanung und zusätzliche Beratung. Und: Sie können eine Grenze ziehen oder gehen und trotzdem Mitgefühl behalten.",
         links: [{ text: "Grenzen setzen", url: "/grenzen" }],
       },
       {
         question: "Wie schütze ich meine Kinder?",
         answer:
-          "Kinder brauchen Stabilität und Vorhersehbarkeit. Erklären Sie altersgerecht, dass Mama/Papa manchmal sehr starke Gefühle hat und das nicht die Schuld des Kindes ist. Schützen Sie Kinder vor eskalierenden Situationen – verlassen Sie mit ihnen den Raum, wenn nötig. Sorgen Sie für «Normalität»: Routinen, Freunde, Hobbys. Achten Sie auf Warnsignale beim Kind (Rückzug, Angst, Verhaltensänderungen) und holen Sie bei Bedarf professionelle Hilfe. Und: Kümmern Sie sich um sich selbst – ein stabiler Elternteil ist der beste Schutz für das Kind.",
+          "Wichtig ist, alltägliche Belastung, wiederholte Eskalation, Kindeswohlgefährdung und akute Gefahr auseinanderzuhalten. Nicht jede überforderte Familie braucht sofort eine Meldung – aber Kinder brauchen Schutz vor Gewalt, massiver Alarmstimmung und unberechenbaren Krisen. Erklären Sie altersgerecht, dass starke Gefühle nicht die Schuld des Kindes sind, und schützen Sie Kinder aktiv vor Eskalationen.",
+        bullets: [
+          "Im Alltag helfen Routinen, verlässliche Bezugspersonen, Schlaf, Schule, Freunde und eine einfache Sprache: «Bei uns ist es gerade schwer. Du hast daran keine Schuld.»",
+          `Bei wiederholten Eskalationen holen Sie früh Beratung dazu, zum Beispiel den ${elternnotruf.label} (${elternnotruf.nummer}). Zusätzlich kann eine Elternberatung wie die Pro Juventute Elternberatung 24/7 helfen.`,
+          `Wenn ein Kind selbst stark belastet ist, nennen Sie konkrete Anlaufstellen: ${proJuventute147.nummer} für Kinder und Jugendliche, der schulpsychologische Dienst, die Kinder- und Jugendpsychiatrie oder die örtliche Mütter-/Väterberatung.`,
+          "Bei ernsthafter Kindeswohlgefährdung – etwa bei Gewalt, massiver Vernachlässigung, Angst vor zuhause oder wenn ein Kind wiederholt Schutzräume braucht – ist eine Gefährdungsmeldung an die KESB oder eine lokale Kindesschutzstelle angemessen.",
+          "Bei akuter Gefahr gehen Sie mit dem Kind aus der Situation und holen Sie Hilfe über 117 oder 144.",
+        ],
         links: [
           { text: "Grenzen setzen", url: "/grenzen" },
           { text: "Selbstfürsorge als Elternteil", url: "/selbstfuersorge" },
+          { text: "Jugendliche & Diagnostik", url: "/diagnostik#jugendliche" },
+          { text: "Soforthilfe", url: "/soforthilfe" },
         ],
       },
       {
@@ -220,6 +234,15 @@ const faqCategories: FAQCategory[] = [
         ],
       },
       {
+        question: "Helfen Medikamente bei Borderline?",
+        answer:
+          "Medikamente «heilen» Borderline nicht. Sie können aber sinnvoll sein, wenn zusätzlich Depression, Angst, Schlafprobleme, starke innere Anspannung oder andere Begleiterkrankungen behandelt werden sollen. Wichtig ist: Einnahme, Umstellung oder Absetzen gehören in ärztliche Begleitung. Angehörige müssen nicht zum Medikamenten-Management werden – hilfreicher ist meist, Beobachtungen ruhig weiterzugeben und die Verantwortung bei der behandelnden Fachperson zu lassen.",
+        links: [
+          { text: "Begleiterkrankungen", url: "/begleiterkrankungen" },
+          { text: "Therapie begleiten", url: "/unterstuetzen/therapie" },
+        ],
+      },
+      {
         question: "Soll ich an der Therapie teilnehmen?",
         answer:
           "Wenn Sie eingeladen werden: Ja, das kann sehr hilfreich sein. Angehörigensitzungen oder Familiengespräche können Verständnis, Zusammenarbeit und Alltagstransfer verbessern. Sie lernen, wie Sie unterstützen können, ohne zu schaden, und der Therapeut kann Kommunikationsmuster beobachten. Wichtig: Gehen Sie nicht hin, um sich zu beschweren oder Recht zu bekommen. Ziel ist gemeinsames Lernen. Wenn Sie nicht eingeladen werden: Respektieren Sie das. Ihr Angehöriger braucht einen geschützten Raum. Sie können trotzdem eigene Beratung suchen.",
@@ -230,7 +253,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Wie lange dauert die Behandlung?",
         answer:
-          "Borderline-Therapie ist keine Kurzzeitbehandlung: Rechnen Sie mit mindestens 1–3 Jahren für deutliche Verbesserungen. Stationäre Aufenthalte (z.B. DBT-Station) dauern typischerweise 8–12 Wochen und sind oft der Einstieg in eine längere ambulante Behandlung. Fortschritte sind nicht linear – Rückschläge sind normal und kein Zeichen von Versagen.",
+          "Borderline-Behandlung ist häufig längerfristig angelegt. Je nach Belastung, Komorbidität, Setting und Krisenverlauf können Monate bis mehrere Jahre relevant sein. Stationäre Aufenthalte (z.B. DBT-Station) dauern oft einige Wochen und sind eher ein Baustein als «die ganze Lösung». Fortschritte sind nicht linear – Rückschläge sind normal und kein Zeichen von Versagen.",
         links: [{ text: "Genesung & Prognose", url: "/genesung" }],
       },
     ],
@@ -408,6 +431,20 @@ export default function FAQ() {
                       >
                         <EditorialProse>
                           <p>{faq.answer}</p>
+                          {faq.bullets && faq.bullets.length > 0 && (
+                            <ul
+                              className="mt-4 space-y-2"
+                              style={{
+                                fontSize: "var(--text-md)",
+                                lineHeight: "var(--lh-relaxed)",
+                                color: "var(--fg-secondary)",
+                              }}
+                            >
+                              {faq.bullets.map(bullet => (
+                                <li key={bullet}>{bullet}</li>
+                              ))}
+                            </ul>
+                          )}
                           {faq.links && faq.links.length > 0 && (
                             <p className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
                               {faq.links.map(link => (

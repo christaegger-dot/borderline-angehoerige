@@ -38,6 +38,17 @@ const quellen: QuelleKategorie[] = [
         linkLabel: "PubMed",
       },
       {
+        autoren: "Lamberti, J.",
+        jahr: "2023",
+        titel:
+          "Sex differences in borderline personality disorder: A scoping review",
+        quelle: "Comprehensive Psychiatry 124, 152420",
+        hinweis:
+          "Scoping Review zu Geschlechtsunterschieden bei Borderline-Persönlichkeitsstörung. Hilfreich für die Einordnung, dass Borderline Menschen aller Geschlechter betreffen kann und klinische Darstellung oder Diagnosepfade unterschiedlich gelesen werden können.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/36813014/",
+        linkLabel: "PubMed",
+      },
+      {
         autoren: "Zanarini, M. C. et al.",
         jahr: "2010",
         titel:
@@ -306,6 +317,17 @@ const quellen: QuelleKategorie[] = [
           "Aktuelle internationale Klassifikation mit Borderline pattern (6D11.5) als Spezifier innerhalb der Persönlichkeitsstörungen.",
         link: "https://icd.who.int/browse/2025-01/mms/en#2006821354",
         linkLabel: "WHO ICD-11",
+      },
+      {
+        autoren:
+          "Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)",
+        jahr: "2022",
+        titel: "S3-Leitlinie Persönlichkeitsstörungen",
+        quelle: "AWMF-Registernummer 038-015",
+        hinweis:
+          "Deutschsprachige Leitlinie zur Diagnostik und Behandlung von Persönlichkeitsstörungen. Ergänzt die internationale Quellenbasis um einen DACH-Bezug.",
+        link: "https://register.awmf.org/assets/guidelines/038-015l_S3_Persoenlichkeitsstoerungen_2022-10.pdf",
+        linkLabel: "AWMF PDF",
       },
       {
         autoren:

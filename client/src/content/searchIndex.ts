@@ -1330,6 +1330,24 @@ export const searchableContent: SearchEntry[] = [
     section: "Krisenressourcen",
   },
   {
+    title: "Gewalt, Bedrohung oder Übergriff",
+    description:
+      "Soforthilfe bei häuslicher, körperlicher oder sexueller Gewalt: Polizei, Opferhilfe und Spurensicherung",
+    keywords: [
+      "gewalt",
+      "bedrohung",
+      "übergriff",
+      "opferhilfe",
+      "polizei",
+      "117",
+      "forensic nurses",
+      "spurensicherung",
+      "häusliche gewalt",
+    ],
+    href: "/soforthilfe",
+    section: "Krisenressourcen",
+  },
+  {
     title: "McLean-Studie & CLPS-Studie",
     description: "Langzeitstudien zur Remission bei Borderline",
     keywords: [
@@ -1581,7 +1599,34 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Wie schütze ich meine Kinder?",
     description: "FAQ: Kinder vor den Auswirkungen schützen",
-    keywords: ["kinder", "schützen", "schutz", "familie", "faq"],
+    keywords: [
+      "kinder",
+      "schützen",
+      "schutz",
+      "familie",
+      "kindeswohl",
+      "kesb",
+      "kjpd",
+      "schulpsychologischer dienst",
+      "elternnotruf",
+      "147",
+      "faq",
+    ],
+    href: "/faq",
+    section: "FAQ",
+  },
+  {
+    title: "Helfen Medikamente bei Borderline?",
+    description:
+      "FAQ: Was Medikamente leisten können und was sie nicht ersetzen",
+    keywords: [
+      "medikamente",
+      "borderline",
+      "tabletten",
+      "antidepressiva",
+      "symptome",
+      "faq",
+    ],
     href: "/faq",
     section: "FAQ",
   },
@@ -1622,8 +1667,19 @@ export const searchableContent: SearchEntry[] = [
     title: "Mythen und Einordnungen",
     description:
       "Häufige Missverständnisse über Borderline ruhig und differenziert eingeordnet",
-    keywords: ["mythos", "fakt", "vorurteil", "aufklärung", "einordnung"],
-    href: "/verstehen",
+    keywords: [
+      "mythos",
+      "fakt",
+      "vorurteil",
+      "aufklärung",
+      "einordnung",
+      "manipulation",
+      "frauen",
+      "männer",
+      "suizid ansprechen",
+      "schuld",
+    ],
+    href: "/verstehen#mythen-realitaet",
     section: "Verstehen",
   },
   {

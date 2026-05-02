@@ -1,4 +1,4 @@
-/* Interactive self-check with weighted routing and unchanged result logic. */
+/* Interactive self-check with weighted routing for Angehörigen-Orientierung. */
 import { useEffect, useRef, useState } from "react";
 import AppLink from "@/components/AppLink";
 import { motion, AnimatePresence } from "framer-motion";
@@ -91,7 +91,7 @@ const questions: Question[] = [
     subtext: "Dies hilft uns, passende Ressourcen zu empfehlen.",
     options: [
       {
-        text: "Die Diagnose ist neu (unter 6 Monate)",
+        text: "Seit kurzem (unter 6 Monate)",
         value: "neu",
         weight: { verstehen: 6, unterstuetzen: 4 },
       },
@@ -105,15 +105,43 @@ const questions: Question[] = [
         value: "lang",
         weight: { selbstfuersorge: 5, grenzen: 3, kommunizieren: 2 },
       },
-      {
-        text: "Keine offizielle Diagnose, aber ich vermute Borderline",
-        value: "vermutung",
-        weight: { verstehen: 7, unterstuetzen: 3 },
-      },
     ],
   },
   {
     id: 4,
+    text: "Wie ist der Diagnose-Status?",
+    subtext:
+      "Der Test dient der Orientierung für Angehörige, nicht der Selbstdiagnose.",
+    options: [
+      {
+        text: "Offizielle Diagnose liegt vor",
+        value: "diagnose",
+        weight: { unterstuetzen: 3, kommunizieren: 2, grenzen: 2 },
+      },
+      {
+        text: "Verdachtsdiagnose / Abklärung läuft",
+        value: "abklaerung",
+        weight: { diagnostik: 8, verstehen: 4 },
+      },
+      {
+        text: "Keine Diagnose, aber ich vermute Borderline",
+        value: "vermutung",
+        weight: { diagnostik: 8, verstehen: 5 },
+      },
+      {
+        text: "Die Diagnose wird abgelehnt",
+        value: "abgelehnt",
+        weight: { diagnostik: 7, kommunizieren: 3, grenzen: 3 },
+      },
+      {
+        text: "Ich weiss es nicht",
+        value: "unklar",
+        weight: { diagnostik: 7, verstehen: 5 },
+      },
+    ],
+  },
+  {
+    id: 5,
     text: "Wie geht es Ihnen selbst gerade?",
     options: [
       {
@@ -152,6 +180,18 @@ const results: Result[] = [
       { href: "/unterstuetzen/krise", text: "Krisenbegleitung lernen" },
     ],
     safetyCritical: true,
+  },
+  {
+    id: "diagnostik",
+    title: "Diagnostik einordnen",
+    description:
+      "Wenn Diagnose, Verdacht oder Ablehnung noch unklar sind, hilft eine ruhige Orientierung: Was spricht wofür, wer klärt ab und wie sprechen Sie darüber, ohne zu drängen?",
+    primaryLink: "/diagnostik",
+    primaryText: "Diagnostik verstehen",
+    secondaryLinks: [
+      { href: "/verstehen", text: "Borderline verstehen" },
+      { href: "/kommunizieren", text: "Über Diagnose sprechen" },
+    ],
   },
   {
     id: "krise",
@@ -257,6 +297,13 @@ const bodyStyle = {
   lineHeight: "var(--lh-relaxed)",
   color: "var(--fg-secondary)",
 };
+
+const diagnosisNeedsGuidance = new Set([
+  "abklaerung",
+  "vermutung",
+  "abgelehnt",
+  "unklar",
+]);
 
 // ─── Sub-components ──────────────────────────────────────
 
@@ -375,6 +422,10 @@ export default function Selbsttest() {
   };
 
   const getTopResult = (): Result => {
+    if (answers[1] === "akut") {
+      return results.find(r => r.id === "notfall") || results[0];
+    }
+
     let maxScore = 0;
     let topCategory = "verstehen";
 
@@ -385,7 +436,7 @@ export default function Selbsttest() {
       }
     });
 
-    return results.find(r => r.id === topCategory) || results[3];
+    return results.find(r => r.id === topCategory) || results[4];
   };
 
   const progress = ((currentQuestion + 1) / questions.length) * 100;
@@ -394,6 +445,17 @@ export default function Selbsttest() {
   if (showResult) {
     const result = getTopResult();
     const isSafetyCritical = result.safetyCritical === true;
+    const diagnosisStatus = answers[4];
+    const secondaryLinks =
+      diagnosisStatus && diagnosisNeedsGuidance.has(diagnosisStatus)
+        ? [
+            ...result.secondaryLinks,
+            ...(result.primaryLink === "/diagnostik" ||
+            result.secondaryLinks.some(link => link.href === "/diagnostik")
+              ? []
+              : [{ href: "/diagnostik", text: "Diagnostik einordnen" }]),
+          ]
+        : result.secondaryLinks;
 
     return (
       <motion.div
@@ -445,7 +507,7 @@ export default function Selbsttest() {
           </p>
 
           {/* Secondary Links */}
-          {result.secondaryLinks.length > 0 && (
+          {secondaryLinks.length > 0 && (
             <div
               className="mt-8 border-t pt-6"
               style={{ borderColor: "var(--rule-color)" }}
@@ -457,7 +519,7 @@ export default function Selbsttest() {
                 className="mt-3 flex flex-wrap gap-x-5 gap-y-1"
                 style={{ fontSize: "var(--text-md)" }}
               >
-                {result.secondaryLinks.map(link => (
+                {secondaryLinks.map(link => (
                   <AppLink
                     key={link.href + link.text}
                     href={link.href}

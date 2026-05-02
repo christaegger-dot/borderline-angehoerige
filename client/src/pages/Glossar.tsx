@@ -35,7 +35,7 @@ const glossaryTerms: GlossaryTerm[] = [
     abbreviation: "DBT",
     category: "therapie",
     definition:
-      "Die DBT ist die am besten erforschte Therapieform für Borderline. Sie wurde von Marsha Linehan entwickelt und kombiniert Verhaltenstherapie mit Achtsamkeitspraktiken. Der Begriff 'dialektisch' bezieht sich auf die Balance zwischen Akzeptanz (so wie es ist) und Veränderung (was besser werden kann).",
+      "Die DBT ist eine der am besten untersuchten und am breitesten etablierten Therapieformen für Borderline. Sie wurde von Marsha Linehan entwickelt und kombiniert Verhaltenstherapie mit Achtsamkeitspraktiken. Der Begriff 'dialektisch' bezieht sich auf die Balance zwischen Akzeptanz (so wie es ist) und Veränderung (was besser werden kann).",
     example:
       "In der DBT lernen Betroffene konkrete Fertigkeiten (Skills) zur Emotionsregulation, Stresstoleranz, zwischenmenschlichen Effektivität und Achtsamkeit.",
     relatedPage: "/unterstuetzen/therapie",
@@ -90,7 +90,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Recovery",
     category: "therapie",
     definition:
-      "Recovery geht über Remission hinaus und umfasst auch gutes soziales und berufliches Funktionieren sowie eine stabile Beziehung. Etwa 50% der Betroffenen erreichen nach 10 Jahren eine vollständige Recovery (Zanarini et al., 2012).",
+      "Recovery geht über Remission hinaus und meint eine umfassendere alltagsbezogene Genesung, also mehr funktionelle Stabilität in Beziehungen, Arbeit oder Ausbildung und im eigenen Leben. Etwa 50% der Betroffenen erreichen nach 10 Jahren eine solche umfassendere Genesung (Zanarini et al., 2012).",
     relatedPage: "/genesung",
     relatedPageTitle: "Genesung ist möglich",
   },

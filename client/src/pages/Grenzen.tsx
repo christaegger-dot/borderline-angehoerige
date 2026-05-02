@@ -32,6 +32,7 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import { grenzenItems } from "@/content/grenzen";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import { kontaktByIdStrict } from "@/data/kontakte";
 import { Link } from "wouter";
 
 /*
@@ -106,6 +107,11 @@ const grenzsaetzeBeispiele = [
   },
 ] as const;
 
+const OPFERHILFE = kontaktByIdStrict("INFO_OPFERHILFE_142");
+const OPFERHILFE_ZH_24_7 = kontaktByIdStrict("INFO_OPFERHILFE_ZH_24_7");
+const FORENSIC_NURSES = kontaktByIdStrict("INFO_FORENSIC_NURSES");
+const OPFERBERATUNG_ZH = kontaktByIdStrict("INFO_OPFERBERATUNG_ZH");
+
 const gewaltSchritte = [
   {
     schritt: "Verlassen Sie die Situation",
@@ -118,9 +124,12 @@ const gewaltSchritte = [
       "Bei akuter Gefahr sofort. Sie müssen sich nicht sicher sein, ob es «schlimm genug» ist — die Polizei entscheidet das.",
   },
   {
-    schritt: "Sprechen Sie danach mit einer Fachstelle",
-    detail:
-      "Opferhilfe Zürich (0800 040 080, kostenlos), Frauenhaus oder Beratungsstelle. Es gibt Unterstützung auch für Männer.",
+    schritt: "Nach sexueller oder häuslicher Gewalt: Spurensicherung mitdenken",
+    detail: `${FORENSIC_NURSES.label} (${FORENSIC_NURSES.nummer}, kostenlos, 24/7) helfen bei medizinischer Versorgung, Dokumentation und Spurensicherung — auch ohne sofortige Strafanzeige.`,
+  },
+  {
+    schritt: "Opferhilfe und Beratung dazunehmen",
+    detail: `${OPFERHILFE.label} (${OPFERHILFE.nummer}) und die ${OPFERHILFE_ZH_24_7.label} (${OPFERHILFE_ZH_24_7.nummer}) sind rund um die Uhr erreichbar. Zu Bürozeiten unterstützt die ${OPFERBERATUNG_ZH.label} (${OPFERBERATUNG_ZH.nummer}) vertraulich, kostenlos und auf Wunsch anonym. Es gibt Unterstützung auch für Männer, Angehörige und Vertrauenspersonen.`,
   },
   {
     schritt: "Halten Sie Vorfälle fest",

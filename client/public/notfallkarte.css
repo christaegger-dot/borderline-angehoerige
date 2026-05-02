@@ -160,6 +160,30 @@ body {
   line-height: 1.4;
 }
 
+.triage-note {
+  font-size: 6.5pt;
+  color: var(--nk-text-muted);
+  line-height: 1.45;
+  padding: 1.5mm 3mm;
+  background: oklch(0.98 0.02 55 / 0.9);
+  border-left: 2px solid var(--nk-orange);
+  border-radius: 0 1.5mm 1.5mm 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5mm;
+}
+
+.triage-note strong {
+  color: var(--nk-text-primary);
+  font-size: 6.5pt;
+}
+
+.triage-link {
+  color: var(--nk-orange);
+  font-weight: 700;
+  text-decoration: none;
+}
+
 /* ── NUMMER-KARTEN ───────────────────────── */
 .pills {
   display: grid;
@@ -227,20 +251,6 @@ a.pill {
 .b1 .pill-nr {
   color: var(--nk-rot);
   font-size: 22pt;
-}
-
-/* ── BLOCK 1 pills: 4 Spalten ────────────── */
-.b1 .pills {
-  grid-template-columns: repeat(4, 1fr);
-}
-.b1 .b1-aerzte {
-  border-style: dashed;
-  border-color: var(--nk-rot);
-  opacity: 0.85;
-}
-.b1 .b1-aerzte .pill-nr {
-  font-size: 11pt;
-  letter-spacing: -0.03em;
 }
 
 /* ── BLOCK 2 — ORANGE ────────────────────── */
@@ -371,6 +381,7 @@ a.pill {
     size: A4;
     margin: 0;
   }
+  .header-actions,
   button,
   a[download] {
     display: none !important;

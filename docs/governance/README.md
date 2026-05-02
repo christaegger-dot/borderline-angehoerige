@@ -15,6 +15,7 @@ Die Dokumente sind bewusst nicht als juristische Formalität geschrieben, sonder
 7. `07-rollen-und-verantwortlichkeiten.md` — Rollenmodell für dauerhafte Pflege.
 8. `08-seiten-risikoklassifikation.md` — Risikoeinstufung der zentralen Seiten.
 9. `09-umsetzungsplan-90-tage.md` — erste Umsetzungsetappen.
+10. `10-fachliche-freigabe-vorlage.md` — Vorlage für fachliches Sign-off vor Release.
 
 ## Grundsatz
 

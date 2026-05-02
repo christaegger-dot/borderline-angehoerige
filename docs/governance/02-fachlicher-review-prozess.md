@@ -39,3 +39,6 @@ Bei jedem Review prüfen:
 Jede Hochrisiko-Seite soll sichtbar enthalten:
 
 - fachlich geprüft am: Datum
+
+Für das formale Release-Sign-off kann zusätzlich die Vorlage
+`docs/governance/10-fachliche-freigabe-vorlage.md` verwendet werden.

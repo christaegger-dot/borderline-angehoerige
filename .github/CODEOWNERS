@@ -1,0 +1,21 @@
+# Fachlich sensible Governance- und Review-Dokumente
+/docs/governance/ @christaegger-dot
+
+# Zentrale Kontakt- und Governance-Register
+/client/src/data/kontakte.ts @christaegger-dot
+/client/src/data/pageGovernance.ts @christaegger-dot
+
+# Krisen- und Notfallseiten (statisch)
+/client/public/soforthilfe/ @christaegger-dot
+/client/public/soforthilfe-print.html @christaegger-dot
+/client/public/notfallkarte.html @christaegger-dot
+/client/public/notfallkarte.css @christaegger-dot
+/client/public/notfallkarte.js @christaegger-dot
+/client/public/notfallkarte-print.html @christaegger-dot
+/client/public/notfallkarte-print.js @christaegger-dot
+/client/public/Notfallkarte-Zuerich-Psychische-Krise.pdf @christaegger-dot
+/client/public/notfallkarte-preview.webp @christaegger-dot
+/client/public/notfallplan-krise-v03.pdf @christaegger-dot
+
+# Seitenebene: fachlicher Review fuer inhaltliche Aenderungen
+/client/src/pages/ @christaegger-dot

@@ -13,10 +13,10 @@ export default function UnterstuetzenSubNav() {
   return (
     <nav
       aria-label="Unterstützen – Unterseiten"
-      className="border-b border-border/45 bg-background/92"
+      className="border-b border-border/45 bg-background/94"
     >
       <div className="container">
-        <div className="scrollbar-none flex overflow-x-auto -mb-px gap-1">
+        <div className="scrollbar-none -mb-px flex gap-0.5 overflow-x-auto">
           {tabs.map(({ href, label }) => {
             const isActive = location === href;
             return (
@@ -24,7 +24,7 @@ export default function UnterstuetzenSubNav() {
                 key={href}
                 href={href}
                 className={[
-                  "flex items-center px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors",
+                  "flex items-center border-b-2 px-3 py-2.5 text-[13px] font-medium whitespace-nowrap leading-none transition-colors sm:px-4 sm:py-3 sm:text-sm",
                   isActive
                     ? "border-[color:var(--accent-primary)] text-foreground"
                     : "border-transparent text-muted-foreground hover:text-foreground hover:border-border/70",

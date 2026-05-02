@@ -318,10 +318,10 @@ export default function UnterstuetzenKrise() {
       <UnterstuetzenSubNav />
 
       {/* ── Sicherheits-Banner: bleibt prominent (sicherheitskritisch) ── */}
-      <section className="bg-alert py-4">
+      <section className="bg-alert py-3 sm:py-4">
         <div className="container">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-center text-white sm:text-left">
+          <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <p className="text-sm leading-relaxed text-white sm:text-left sm:text-base">
               <strong>Bei akuter Suizidgefahr:</strong> Rufen Sie sofort den
               Notruf{" "}
               <a href={`tel:${rot144.tel}`} className="font-bold underline">
@@ -334,7 +334,7 @@ export default function UnterstuetzenKrise() {
             </p>
             <AppLink
               href="/soforthilfe"
-              className="rounded bg-white px-3 py-2 text-sm font-medium text-alert hover:bg-white/90"
+              className="rounded bg-white px-3 py-2 text-sm font-medium text-alert transition-colors hover:bg-white/90"
             >
               Alle Notfallnummern
             </AppLink>
@@ -344,7 +344,7 @@ export default function UnterstuetzenKrise() {
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+        <header className="pb-10 pt-8 md:pb-16 md:pt-16">
           <p
             className="text-xs uppercase"
             style={{
@@ -356,7 +356,7 @@ export default function UnterstuetzenKrise() {
             Unterstützen — Krise
           </p>
           <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            className="mt-6 font-display text-[var(--text-3xl)] md:mt-8 md:text-[var(--text-4xl)]"
             style={{
               lineHeight: "var(--lh-tight)",
               letterSpacing: "var(--tracking-tight)",
@@ -367,7 +367,7 @@ export default function UnterstuetzenKrise() {
             In der Krise <em>unterstützen</em>
           </h1>
           <p
-            className="mt-6"
+            className="mt-5 md:mt-6"
             style={{
               fontSize: "var(--text-lg)",
               lineHeight: "var(--lh-snug)",
@@ -380,7 +380,7 @@ export default function UnterstuetzenKrise() {
             ohne Ihre eigene Grenze aus dem Blick zu verlieren.
           </p>
           <p
-            className="mt-4"
+            className="mt-3 md:mt-4"
             style={{
               fontSize: "var(--text-sm)",
               color: "var(--fg-tertiary)",
@@ -388,8 +388,7 @@ export default function UnterstuetzenKrise() {
           >
             Vollständig ca. 6 Min · Auch abschnittweise lesbar.
           </p>
-          <LastVerifiedBadge path="/unterstuetzen/krise" className="mt-6" />
-          <ReviewBadge path="/unterstuetzen/krise" />
+          <LastVerifiedBadge path="/unterstuetzen/krise" className="mt-5" />
         </header>
 
         {/* ── Disclaimer ── */}
@@ -408,6 +407,8 @@ export default function UnterstuetzenKrise() {
 
         {/* ── Visualisierung (out-of-scope) ── */}
         <KrisenampelVisualisierung />
+
+        <ReviewBadge path="/unterstuetzen/krise" />
 
         {/* ── Intro: Was diese Seite in Krisen ordnet ── */}
         <EditorialSection

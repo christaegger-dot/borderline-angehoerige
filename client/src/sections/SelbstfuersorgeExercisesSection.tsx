@@ -75,7 +75,7 @@ function AtemuebungCard() {
   };
 
   return (
-    <Card className="bg-gradient-to-br from-sage-lighter/30 to-sage-wash/20 border-sage-mid">
+    <Card className="border-border/60 bg-background shadow-none">
       <CardContent className="p-6">
         <div className="flex items-center gap-3 mb-4">
           <Wind className="w-6 h-6 text-sage-mid" />
@@ -137,43 +137,42 @@ function AtemuebungCard() {
 
 function StrategyIcon({
   icon,
+  className,
 }: {
   icon: "clock" | "heart" | "users" | "shield";
+  className?: string;
 }) {
-  if (icon === "clock") return <Clock className="w-5 h-5 text-white" />;
-  if (icon === "heart") return <Heart className="w-5 h-5 text-white" />;
-  if (icon === "users") return <Users className="w-5 h-5 text-white" />;
-  return <Shield className="w-5 h-5 text-white" />;
+  if (icon === "clock") return <Clock className={className} />;
+  if (icon === "heart") return <Heart className={className} />;
+  if (icon === "users") return <Users className={className} />;
+  return <Shield className={className} />;
 }
 
 function UebungAkkordeon({
   title,
   icon,
-  color,
   children,
 }: {
   title: string;
   icon: "clock" | "heart" | "users" | "shield";
-  color: string;
   children: React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Card className="border-border/50 overflow-hidden">
+    <div className="border-t" style={{ borderColor: "var(--rule-color)" }}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-5 flex items-center justify-between text-left hover:bg-muted/30 transition-colors"
+        className="flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80"
         aria-expanded={isOpen}
         aria-label={`${title} ${isOpen ? "zuklappen" : "aufklappen"}`}
       >
         <div className="flex items-center gap-3">
-          <div
-            className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center`}
-          >
-            <StrategyIcon icon={icon} />
-          </div>
+          <StrategyIcon
+            icon={icon}
+            className="h-4 w-4 text-[color:var(--accent-label)]"
+          />
           <span className="font-semibold text-foreground">{title}</span>
         </div>
         {isOpen ? (
@@ -182,128 +181,134 @@ function UebungAkkordeon({
           <ChevronDown className="w-5 h-5 text-muted-foreground" />
         )}
       </button>
-      {isOpen && (
-        <CardContent className="pt-0 pb-5 px-5">{children}</CardContent>
-      )}
-    </Card>
+      {isOpen && <div className="pb-5">{children}</div>}
+    </div>
   );
 }
 
 export function SelbstfuersorgeExercisesSection() {
+  const bodyStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const titleStyle = {
+    fontSize: "var(--text-md)",
+    fontWeight: 600,
+    color: "var(--fg-primary)",
+  };
+
   return (
     <>
       <ContentSection
+        variant="editorial"
         title="Sofort-Übungen für akute Belastung"
-        icon={<Clock className="w-6 h-6 text-sage-mid" />}
         id="sofort-uebungen"
         preview="Atemübung, 5-4-3-2-1 Grounding und STOPP-Technik – jederzeit anwendbar."
       >
-        <p className="text-muted-foreground leading-relaxed mb-6">
+        <p className="mb-6" style={bodyStyle}>
           Diese Übungen können Sie jederzeit anwenden, wenn Sie merken, dass der
           Stress überhand nimmt:
         </p>
 
-        <div className="grid md:grid-cols-[7fr_5fr] gap-4 mb-6">
+        <div className="grid gap-6 md:grid-cols-[7fr_5fr]">
           <AtemuebungCard />
           <GroundingTimer />
         </div>
 
-        <Card className="border-border/50">
-          <CardContent className="p-5">
-            <h3 className="font-semibold text-foreground mb-3">
-              STOPP-Technik
-            </h3>
-            <p className="text-muted-foreground text-sm mb-4">
-              Wenn Sie merken, dass Sie in einen Strudel aus Sorgen oder Ärger
-              geraten:
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {[
-                { letter: "S", text: "Stopp – Innehalten" },
-                { letter: "T", text: "Tief durchatmen" },
-                { letter: "O", text: "Orientieren – Was passiert gerade?" },
-                { letter: "P", text: "Planen – Was ist jetzt hilfreich?" },
-                { letter: "P", text: "Praktizieren – Einen Schritt tun" },
-              ].map(item => (
-                <div
-                  key={`${item.letter}-${item.text}`}
-                  className="flex items-center gap-3"
-                >
-                  <span className="w-8 h-8 rounded-lg bg-terracotta/20 flex items-center justify-center font-bold text-terracotta-mid">
-                    {item.letter}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    {item.text}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <div
+          className="mt-8 border-t pt-5"
+          style={{ borderColor: "var(--rule-color)" }}
+        >
+          <h3 style={titleStyle}>STOPP-Technik</h3>
+          <p className="mt-3" style={bodyStyle}>
+            Wenn Sie merken, dass Sie in einen Strudel aus Sorgen oder Ärger
+            geraten:
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {[
+              { letter: "S", text: "Stopp – Innehalten" },
+              { letter: "T", text: "Tief durchatmen" },
+              { letter: "O", text: "Orientieren – Was passiert gerade?" },
+              { letter: "P", text: "Planen – Was ist jetzt hilfreich?" },
+              { letter: "P", text: "Praktizieren – Einen Schritt tun" },
+            ].map(item => (
+              <div
+                key={`${item.letter}-${item.text}`}
+                className="flex items-start gap-3 border-t pt-3"
+                style={{ borderColor: "var(--rule-color)" }}
+              >
+                <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-border/60 text-xs font-semibold text-foreground">
+                  {item.letter}
+                </span>
+                <span style={bodyStyle}>{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </ContentSection>
 
       <ContentSection
+        variant="editorial"
         title="Langfristige Selbstfürsorge-Strategien"
-        icon={<Heart className="w-6 h-6 text-terracotta" />}
         id="langfristige-strategien"
         preview="Tägliche Mini-Auszeiten, Bewegung, soziale Kontakte und professionelle Unterstützung."
       >
-        <p className="text-muted-foreground leading-relaxed mb-6">
+        <p className="mb-6" style={bodyStyle}>
           Neben den Sofort-Übungen brauchen Sie auch langfristige Strategien, um
           Ihre Gesundheit zu erhalten:
         </p>
 
-        <div className="space-y-3">
+        <div>
           {longTermStrategies.map(strategy => (
             <UebungAkkordeon
               key={strategy.title}
               title={strategy.title}
               icon={strategy.icon}
-              color={strategy.colorClass}
             >
               <div className="space-y-4 pt-4">
-                <p className="text-muted-foreground text-sm">
-                  {strategy.intro}
-                </p>
+                <p style={bodyStyle}>{strategy.intro}</p>
 
                 {strategy.checklist && (
-                  <div className="grid sm:grid-cols-2 gap-2">
+                  <div className="grid gap-3 sm:grid-cols-2">
                     {strategy.checklist.map(item => (
-                      <div
-                        key={item}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
-                      >
-                        <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        {item}
+                      <div key={item} className="flex items-start gap-2">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[color:var(--accent-label)]" />
+                        <span style={bodyStyle}>{item}</span>
                       </div>
                     ))}
                   </div>
                 )}
 
                 {strategy.noteTitle && strategy.noteText && (
-                  <Card className="bg-muted/30 border-transparent">
-                    <CardContent className="p-4">
-                      <p className="text-sm text-foreground">
-                        <strong>{strategy.noteTitle}</strong>{" "}
-                        {strategy.noteText}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <p
+                    className="border-l pl-4"
+                    style={{
+                      ...bodyStyle,
+                      borderColor: "var(--accent-label)",
+                    }}
+                  >
+                    <strong style={{ color: "var(--fg-primary)" }}>
+                      {strategy.noteTitle}
+                    </strong>{" "}
+                    {strategy.noteText}
+                  </p>
                 )}
 
                 {strategy.cards && (
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {strategy.cards.map(card => (
-                      <Card key={card.title} className="border-border/30">
-                        <CardContent className="p-4">
-                          <h4 className="font-medium text-foreground mb-2">
-                            {card.title}
-                          </h4>
-                          <p className="text-sm text-muted-foreground">
-                            {card.text}
-                          </p>
-                        </CardContent>
-                      </Card>
+                      <article
+                        key={card.title}
+                        className="border-t pt-4"
+                        style={{ borderColor: "var(--rule-color)" }}
+                      >
+                        <h4 style={titleStyle}>{card.title}</h4>
+                        <p className="mt-2" style={bodyStyle}>
+                          {card.text}
+                        </p>
+                      </article>
                     ))}
                   </div>
                 )}

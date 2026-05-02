@@ -1,5 +1,4 @@
 import { Heart, UserCircle, Users } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import ContentSection from "@/components/ContentSection";
 import { roleNotes } from "@/content/selbstfuersorge-page";
 
@@ -16,57 +15,46 @@ function RoleNoteIcon({
 }
 
 export function SelbstfuersorgeRoleNotesSection() {
+  const bodyStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const titleStyle = {
+    fontSize: "var(--text-md)",
+    fontWeight: 600,
+    color: "var(--fg-primary)",
+  };
+
   return (
     <ContentSection
+      variant="editorial"
       title="Hinweise für Ihre Situation"
-      icon={<UserCircle className="w-6 h-6 text-slate-mid" />}
       id="ihre-situation"
       preview="Spezifische Hinweise für Partner/innen, Elternteile und erwachsene Kinder."
     >
-      <div className="space-y-4">
+      <div>
         {roleNotes.map(note => {
-          const cardClass =
-            note.tone === "terracotta"
-              ? "border-l-4 border-l-terracotta-mid bg-terracotta-wash"
-              : note.tone === "slate"
-                ? "border-l-4 border-l-slate-mid bg-slate-pale"
-                : "border-l-4 border-l-sage-mid bg-sage-pale";
-          const iconWrapperClass =
-            note.tone === "terracotta"
-              ? "bg-terracotta-lighter"
-              : note.tone === "slate"
-                ? "bg-slate-lighter"
-                : "bg-sage-lighter";
-          const iconClass =
-            note.tone === "terracotta"
-              ? "text-terracotta-mid"
-              : note.tone === "slate"
-                ? "text-slate-mid"
-                : "text-sage-mid";
-
           return (
-            <Card key={note.title} className={cardClass}>
-              <CardContent className="p-5">
-                <div className="flex items-start gap-3">
-                  <div
-                    className={`w-10 h-10 rounded-lg ${iconWrapperClass} flex items-center justify-center flex-shrink-0`}
-                  >
-                    <RoleNoteIcon
-                      icon={note.icon}
-                      className={`w-5 h-5 ${iconClass}`}
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">
-                      {note.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {note.text}
-                    </p>
-                  </div>
+            <article
+              key={note.title}
+              className="border-t pt-4"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <div className="flex items-start gap-3">
+                <RoleNoteIcon
+                  icon={note.icon}
+                  className="mt-0.5 h-5 w-5 flex-shrink-0 text-[color:var(--accent-label)]"
+                />
+                <div>
+                  <h3 style={titleStyle}>{note.title}</h3>
+                  <p className="mt-2" style={bodyStyle}>
+                    {note.text}
+                  </p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </article>
           );
         })}
       </div>

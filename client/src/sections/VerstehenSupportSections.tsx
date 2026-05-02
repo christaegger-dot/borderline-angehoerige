@@ -56,6 +56,7 @@ export function VerstehenRelationshipSection() {
         </EditorialPullQuote>
       </div>
       <EvidenceNote
+        variant="editorial"
         title="Quellen zu Beziehungsmustern und Validierung"
         definition="Die beschriebenen Muster sind klinisch gut belegt, treten aber individuell unterschiedlich stark auf und erklären Verhalten nicht vollständig."
         reviewDate="24.03.2026"

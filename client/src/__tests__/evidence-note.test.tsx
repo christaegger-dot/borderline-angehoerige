@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import EvidenceNote from "@/components/EvidenceNote";
 
 describe("EvidenceNote", () => {
-  it("groups scientific and service sources and renders the review date", () => {
+  it("renders the editorial evidence note by default", () => {
     render(
       <EvidenceNote
         title="Quellenhinweis"
@@ -24,7 +24,8 @@ describe("EvidenceNote", () => {
       />
     );
 
-    expect(screen.getByText("Wissenschaftliche Evidenz")).toBeInTheDocument();
+    expect(screen.getByText("Quellenhinweis")).toBeInTheDocument();
+    expect(screen.getByText("APA Practice Guideline")).toBeInTheDocument();
     expect(screen.getByText("Versorgung / Hilfe")).toBeInTheDocument();
     expect(
       screen.getByText(/Zuletzt redaktionell geprüft: 24\.03\.2026/)

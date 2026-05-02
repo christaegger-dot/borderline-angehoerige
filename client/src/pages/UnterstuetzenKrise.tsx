@@ -32,32 +32,32 @@ const ampelStufen = [
     level: "Grün – Stabil",
     description: "Alltägliche Stimmungsschwankungen, normale Belastungen",
     action: "Präsent sein, zuhören, Routinen beibehalten",
-    cardClass: "border-l-sage-mid bg-sage-lighter/40",
+    cardClass: "border-l-sage-mid bg-background",
   },
   {
     level: "Gelb – Angespannt",
     description: "Erhöhte Reizbarkeit, Rückzug, erkennbare Trigger",
     action: "Validieren, Skills anbieten, Raum geben",
-    cardClass: "border-l-sand-mid bg-sand-muted/60",
+    cardClass: "border-l-sand-mid bg-background",
   },
   {
     level: "Orange – Eskalierend",
     description: "Starke Emotionen, verbale Aggression, Kontrollverlust",
     action: "Deeskalieren, Sicherheit prüfen, Grenzen setzen",
-    cardClass: "border-l-sage-mid bg-sage-wash/60",
+    cardClass: "border-l-amber-500 bg-background",
   },
   {
     level: "Rot – Akute Krise",
     description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
     action: "Professionelle Hilfe holen, Notruf wenn nötig",
-    cardClass: "border-l-alert bg-sage-wash/50",
+    cardClass: "border-l-alert bg-alert/10",
   },
 ] as const;
 
 const ampelHandlungen = [
   {
     label: "Rot",
-    bg: "bg-alert/10",
+    tone: "border-alert/25 bg-alert/8",
     fg: "text-alert",
     items: [
       "Professionelle Hilfe holen",
@@ -67,7 +67,7 @@ const ampelHandlungen = [
   },
   {
     label: "Orange",
-    bg: "bg-sand-muted",
+    tone: "border-amber-300/60 bg-background",
     fg: "text-sand-mid",
     items: [
       "Nicht diskutieren",
@@ -77,7 +77,7 @@ const ampelHandlungen = [
   },
   {
     label: "Gelb",
-    bg: "bg-sage-lighter/50",
+    tone: "border-sage-light/60 bg-background",
     fg: "text-sage-mid-dark",
     items: ["Validieren", "Raum geben", "Skills gemeinsam erinnern"],
   },
@@ -149,26 +149,31 @@ const krisenphasen = [
   {
     titel: "Anspannung",
     dauer: "Minuten–Stunden",
-    bg: "bg-sand-muted",
+    tone: "border-sand-border/60 bg-background",
     fg: "text-sand-mid",
   },
   {
     titel: "Eskalation",
     dauer: "15–90 Min",
-    bg: "bg-amber-100",
+    tone: "border-amber-300/60 bg-background",
     fg: "text-amber-700",
   },
-  { titel: "Peak", dauer: "Spitze", bg: "bg-alert/15", fg: "text-alert" },
+  {
+    titel: "Peak",
+    dauer: "Spitze",
+    tone: "border-alert/25 bg-alert/8",
+    fg: "text-alert",
+  },
   {
     titel: "Abklingen",
     dauer: "1–4 Std",
-    bg: "bg-amber-50",
+    tone: "border-amber-200/60 bg-background",
     fg: "text-amber-600",
   },
   {
     titel: "Erschöpfung",
     dauer: "Stunden–Tage",
-    bg: "bg-sage-lighter/60",
+    tone: "border-border/50 bg-muted/30",
     fg: "text-sage-mid-dark",
   },
 ] as const;
@@ -213,7 +218,7 @@ const tagFuerTag = [
   {
     tage: "Tag 1–2",
     titel: "Ruhe und Sicherheit",
-    farbe: "border-sage/40 bg-sage-wash/40",
+    farbe: "border-border/50 bg-background",
     punkte: [
       "Keine Aufarbeitung, keine Erklärungen, kein Warum",
       "Sagen Sie: «Ich bin froh, dass du da bist. Wir müssen jetzt nichts besprechen.»",
@@ -223,7 +228,7 @@ const tagFuerTag = [
   {
     tage: "Tag 3–4",
     titel: "Kurze Check-ins",
-    farbe: "border-border/40 bg-cream",
+    farbe: "border-border/50 bg-muted/20",
     punkte: [
       "Kurzes, konkretes Nachfragen erlaubt: «Wie geht es dir gerade – in diesem Moment?»",
       "Keine Bewertungen, keine Rückblicke auf die Krise",
@@ -233,7 +238,7 @@ const tagFuerTag = [
   {
     tage: "Tag 5–7",
     titel: "Aufarbeitung vorbereiten",
-    farbe: "border-border/40 bg-muted/30",
+    farbe: "border-border/50 bg-muted/30",
     punkte: [
       "Erst wenn beide bereit sind: Was hat geholfen? Was hat die Krise ausgelöst?",
       "Kein Vorwurf, kein Schuldaufbau – gemeinsames Lernen",
@@ -493,7 +498,7 @@ export default function UnterstuetzenKrise() {
             {ampelStufen.map(item => (
               <article
                 key={item.level}
-                className={`border-l-4 p-5 ${item.cardClass}`}
+                className={`border border-border/50 border-l-4 p-5 ${item.cardClass}`}
               >
                 <h4 style={h4Style}>{item.level}</h4>
                 <p className="mt-2" style={bodyStyle}>
@@ -520,7 +525,7 @@ export default function UnterstuetzenKrise() {
               {ampelHandlungen.map(stufe => (
                 <div
                   key={stufe.label}
-                  className={`flex items-start gap-3 rounded-md p-3 ${stufe.bg}`}
+                  className={`flex items-start gap-3 rounded-md border p-3 ${stufe.tone}`}
                 >
                   <span
                     className={`min-w-[52px] pt-0.5 text-xs font-bold ${stufe.fg}`}
@@ -605,7 +610,7 @@ export default function UnterstuetzenKrise() {
           id="vermeiden"
           preview="Drohen, Vorwürfe machen oder Gefühle herunterspielen – diese Reaktionen können die Krise verschärfen."
         >
-          <aside className="mt-2 border-l-4 border-l-alert bg-sage-wash/40 p-6">
+          <aside className="mt-2 border border-alert/20 border-l-4 border-l-alert bg-alert/6 p-6">
             <ul className="space-y-2.5" style={bodyStyle}>
               <li className="flex items-start gap-2">
                 <span className="text-alert" aria-hidden="true">
@@ -655,7 +660,7 @@ export default function UnterstuetzenKrise() {
           preview="Die akute Krise ist vorbei – aber die innere Landschaft braucht Zeit. Was jetzt hilft: für die betroffene Person, für Sie, und gemeinsam."
         >
           {/* Krisenphase-Timeline (sicherheitskritische Klassifikation, Farben bleiben) */}
-          <figure className="mt-2 rounded-lg border border-border/40 bg-slate-wash/20 p-4">
+          <figure className="mt-2 rounded-lg border border-border/40 bg-background p-4">
             <figcaption
               className="mb-3 text-center uppercase"
               style={labelStyle}
@@ -669,7 +674,7 @@ export default function UnterstuetzenKrise() {
                   className="flex w-full flex-1 items-center gap-1.5"
                 >
                   <div
-                    className={`flex-1 rounded-md ${phase.bg} px-3 py-2 text-center`}
+                    className={`flex-1 rounded-md border px-3 py-2 text-center ${phase.tone}`}
                   >
                     <p className={`text-xs font-semibold ${phase.fg}`}>
                       {phase.titel}
@@ -792,7 +797,7 @@ export default function UnterstuetzenKrise() {
                 >
                   <div className="mb-2 flex items-center gap-2">
                     <span
-                      className="rounded-full bg-sage-wash px-2 py-0.5 text-xs font-semibold"
+                      className="rounded-full border border-border/60 bg-background px-2 py-0.5 text-xs font-semibold"
                       style={{ color: "var(--accent-primary)" }}
                     >
                       {phase.tage}
@@ -841,7 +846,7 @@ export default function UnterstuetzenKrise() {
 
           {/* Warnsignale Stagnation (sicherheitskritisch — amber-Akzent bleibt) */}
           <aside
-            className="mt-10 border-l-4 pl-5"
+            className="mt-10 border border-amber-300/60 border-l-4 bg-amber-50/40 p-5"
             style={{ borderColor: "#d97706" }}
           >
             <h4 style={{ ...h4Style, color: "#92400e" }}>

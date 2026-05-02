@@ -9,9 +9,8 @@
  * Optional Hinweis-Paragraph + PubMed/WHO-Link als editorial-link.
  *
  * Stabile id-Anker pro Eintrag (Schema `src-<author-slug>-<year>`),
- * damit Tier-1-Pages später per `EditorialFootnotes` mit href auf
- * konkrete Quellen verlinken können. Aktuell keine Cross-Page-Refs zu
- * /quellen#-Ankern im Repo.
+ * damit Inhaltsseiten gezielt auf einzelne Quellen unter `/quellen#...`
+ * verlinken können.
  */
 import {
   EditorialLayout,

@@ -38,6 +38,7 @@ import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
+import { quellenLinks } from "@/content/quellenLinks";
 import VerstehenMaterialsSection from "@/sections/VerstehenMaterialsSection";
 import {
   VerstehenDiagnosticSection,
@@ -278,18 +279,19 @@ export default function Verstehen() {
             sources={[
               {
                 label: "WHO ICD-11: Borderline pattern specifier (6D11.5)",
-                href: "https://icd.who.int/browse/2025-01/mms/en#2006821354",
+                href: quellenLinks.icd11,
                 type: "wissenschaft",
               },
               {
                 label:
                   "APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024)",
-                href: "https://pubmed.ncbi.nlm.nih.gov/39482953/",
+                href: quellenLinks.apa2024,
                 type: "wissenschaft",
               },
               {
                 label:
                   "Linehan, Cognitive-Behavioral Treatment of Borderline Personality Disorder",
+                href: quellenLinks.linehan1993,
                 type: "wissenschaft",
                 note: "Grundlagenwerk zu Emotionsregulation und Bindungsstress",
               },

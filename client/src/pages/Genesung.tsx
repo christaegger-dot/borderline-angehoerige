@@ -36,6 +36,7 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import { genesungItems as genesungMaterialItems } from "@/content/genesung";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import { quellenLinks } from "@/content/quellenLinks";
 import { Link } from "wouter";
 
 /** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
@@ -302,17 +303,17 @@ export default function Genesung() {
                 {
                   label:
                     "Zanarini et al. (2010) – McLean Study of Adult Development",
-                  href: "https://pubmed.ncbi.nlm.nih.gov/20395399/",
+                  href: quellenLinks.zanarini2010,
                 },
                 {
                   label:
                     "Zanarini et al. (2012) – Sustained remission and recovery in BPD",
-                  href: "https://pubmed.ncbi.nlm.nih.gov/22737693/",
+                  href: quellenLinks.zanarini2012,
                 },
                 {
                   label:
                     "Gunderson et al. (2011) – Ten-year course of BPD (CLPS)",
-                  href: "https://pubmed.ncbi.nlm.nih.gov/21464343/",
+                  href: quellenLinks.gunderson2011,
                 },
               ]}
             />

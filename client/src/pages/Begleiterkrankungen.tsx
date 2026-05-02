@@ -33,6 +33,7 @@ import ReviewBadge from "@/components/ReviewBadge";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import AppLink from "@/components/AppLink";
+import { quellenLinks } from "@/content/quellenLinks";
 import { emailByIdStrict, kontaktByIdStrict } from "@/data/kontakte";
 import { Link } from "wouter";
 
@@ -306,13 +307,13 @@ export default function Begleiterkrankungen() {
               {
                 label:
                   "Zanarini et al. (1998), Axis I comorbidity of borderline personality disorder",
-                href: "https://pubmed.ncbi.nlm.nih.gov/9842784/",
+                href: quellenLinks.zanarini1998,
                 type: "wissenschaft",
               },
               {
                 label:
                   "Zanarini et al. (2004), Axis I comorbidity in patients with BPD: 6-year follow-up",
-                href: "https://pubmed.ncbi.nlm.nih.gov/15514413/",
+                href: quellenLinks.zanarini2004,
                 type: "wissenschaft",
               },
             ]}
@@ -354,6 +355,24 @@ export default function Begleiterkrankungen() {
               </li>
             </ul>
           </EditorialProse>
+          <EvidenceNote
+            variant="editorial"
+            title="Quellen zu Krisenhinweisen und Angehörigen-Einordnung"
+            sources={[
+              {
+                label:
+                  "APA Practice Guideline (2024) zur klinischen Einordnung von Borderline und Krisenbehandlung",
+                href: quellenLinks.apa2024,
+                type: "wissenschaft",
+              },
+              {
+                label:
+                  "Project Air Strategy: Understanding Self-Harm & Suicidal Thinking for Families & Carers",
+                href: quellenLinks.projectAir,
+                type: "versorgung",
+              },
+            ]}
+          />
         </ContentSection>
 
         {/* ── 4: Was Sie als Angehörige wissen sollten ── */}

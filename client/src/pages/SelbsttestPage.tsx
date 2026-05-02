@@ -1,21 +1,3 @@
-/**
- * SelbsttestPage — Editorial-Redesign Phase 5 (Page 8/9, Tier 2).
- *
- * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
- * «Page 8 — Selbsttest».
- *
- * Identitätsentscheidung (D, getroffen vor Migration):
- *   Bezeichnung «Selbsttest» bleibt überall (Navigation, Home-
- *   Verlinkung, SEO-Title, URL `/selbsttest`). Auf der Page selbst
- *   wird der H1 von «Finden Sie Ihren Weg» zu
- *   «Selbsttest: Wo soll ich anfangen?» angepasst, sodass der
- *   Routing-Charakter im H1 selbst klar wird.
- *   Begründung: Suchwort-Vertrauen erhalten ohne Inhalts-Neuprojekt.
- *
- * Page-Wrapper editorial. Eigentlicher `Selbsttest`-Component
- * (Form mit Routing-Logik) ebenfalls editorialisiert — siehe
- * components/Selbsttest.tsx.
- */
 import {
   EditorialLayout,
   EditorialProse,

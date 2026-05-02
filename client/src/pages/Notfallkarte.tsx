@@ -1,10 +1,3 @@
-/**
- * Notfallkarte — Editorial-Redesign Phase 5 (Page 9/9, Tier 2 — letzte
- * Page der Welle).
- *
- * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
- * «Page 9 — Notfallkarte».
- */
 import { useCallback, useEffect, useState } from "react";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {

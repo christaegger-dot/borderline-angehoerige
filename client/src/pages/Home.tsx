@@ -1,13 +1,3 @@
-/**
- * Home — Editorial-Redesign Phase 3 (Brief 27.04.2026)
- *
- * Vollständige Neufassung. Inhalt aus Brief Anhang A. Strukturell:
- * Hero (eigener <header>, KEIN EditorialSection — sonst doppeltes <h1>),
- * gefolgt von sechs Editorial-Sektionen plus einer Soforthilfe-Schluss-
- * Zeile. Alle früheren Home-Bausteine entfernt: AnimatedStat, Erfahrungs-
- * berichte-Karussell, Tool-Grid, Situationskarten, Approach-Highlights,
- * Roter Soforthilfe-CTA-Streifen, home-hero-surface Navy-Gradient.
- */
 import {
   EditorialFootnotes,
   EditorialLayout,
@@ -138,7 +128,6 @@ export default function Home() {
               oft so anfühlen.
             </p>
           </EditorialProse>
-          {/* Quellenangabe bewusst knapp; präzisere Referenz nach Christas Review */}
           <EditorialFootnotes
             notes={[
               {

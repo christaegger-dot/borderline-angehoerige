@@ -1,25 +1,3 @@
-/**
- * FAQ — Editorial-Redesign Phase 5 (Page 5/9, Tier 2)
- *
- * Migriert auf Editorial-Pattern. Folgt Phase-5-Master-Brief, Abschnitt
- * «Page 5 — FAQ».
- *
- * Pattern (Brief): «Akkordeon mit ContentSection (selbe Komponente wie
- * Tier 1, gleiches Editorial-Treatment). Gruppierung nach Themenfeld
- * durch EditorialSection-Labels.» Daher:
- *   - 5 EditorialSection-Blöcke pro Kategorie
- *   - Innerhalb jeder Kategorie: 4 ContentSection variant="editorial",
- *     je 1 pro Frage
- *   - Frage = ContentSection-Title, Antwort + Links = Children
- *   - Anker-Klicks öffnen das Akkordeon via openSection()-Custom-Event
- *
- * Anker-IDs:
- *   - Pro Kategorie: #cat-<slug> (Sprungleiste)
- *   - Pro Frage: id auf ContentSection (#faq-<slug-of-question>)
- * Aktuell keine /faq#-Cross-Page-Refs im Repo (grep).
- *
- * FAQSchema (JSON-LD) bleibt erhalten — wichtig für SEO.
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

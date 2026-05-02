@@ -1,20 +1,3 @@
-/**
- * Unterstützen — Übersicht — Editorial-Redesign Phase 4 Welle 2 (Page 4/10)
- *
- * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge-Pattern.
- * Inhalt unverändert ausser Hero-Lesezeit und prosaischen
- * Verbindungssätzen. Sub-Nav `UnterstuetzenSubNav` bleibt erhalten — sie
- * ist seitenübergreifende Navigation, kein editorialer Inhalt — und sitzt
- * zwischen Layout-Chrome und EditorialLayout, damit die Tab-Leiste in
- * voller Breite oberhalb der schmalen Lesespalte stehen bleibt.
- *
- * Materialien-Block: editorial entschärft wie in Grenzen (Article-Tile
- * statt Card-Wrapper, Inline-Action-Links). Filter-Buttons mit
- * Scroll-Interaktion entfallen — der Block zeigt jetzt alle
- * `unterstuetzenItems` einmal als Leseliste. Smoke-Test «zeigt
- * Textversionen für Unterstützen-Handouts» bleibt grün, weil
- * `aria-label` und `Textversion lesen`-Linktext erhalten bleiben.
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

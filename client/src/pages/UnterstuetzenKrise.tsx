@@ -1,26 +1,3 @@
-/**
- * Unterstützen — Krise — Editorial-Redesign Phase 4 Welle 2 (Page 7/10)
- *
- * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge/Übersicht/
- * Alltag/Therapie-Pattern. Inhalt unverändert ausser Hero-Lesezeit und
- * prosaischen Verbindungssätzen.
- *
- * Sicherheitskritisch: Diese Seite behält bewusst ihre farblichen
- * Sicherheits-Akzente — analog zur gewalt-Sektion in Grenzen (PR #288):
- *   - Emergency-Banner (full-width, alert-bg) bleibt prominent oben
- *   - 4 Ampel-Stufen (Grün/Gelb/Orange/Rot) behalten ihre border-l + tint
- *   - Vermeiden-Block behält alert-border-l und ✗-Akzente
- *   - Krisenphase-Timeline behält Phasen-Farbtints
- *   - amber-Warnsignale-Block bleibt mit border-l-4
- *   - Vertrauenswiederaufbau und Tag-für-Tag-Karten behalten dezente Tints
- * Begründung: Visuelle Klassifikation hilft im akuten Moment beim
- * schnellen Erfassen; Editorial-Entschärfung erfolgt nur dort, wo es die
- * Sicherheit nicht beeinträchtigt.
- *
- * Out of scope: KrisenampelVisualisierung (visuelle Sub-Komponente),
- * LastVerifiedBadge, UnterstuetzenSubNav. Notruf-Nummern weiterhin aus
- * `data/kontakte.ts`.
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

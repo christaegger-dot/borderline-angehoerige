@@ -1,19 +1,3 @@
-/**
- * Grenzen — Editorial-Redesign Phase 4 Welle 2 (Page 2/10)
- *
- * Migriert nach Verstehen/Kommunizieren-Pattern (Welle 1+2). Inhalt
- * unverändert ausser Hero-Lesezeit, Intro-Variante-A-Verbindungssatz
- * und konsolidierte Schluss-Übergänge.
- *
- * Sicherheits-Hervorhebung (Brief 27.04.): Die Sektion «Wenn der
- * Angehörige körperlich übergriffig wird» behält ihre farbige Alert-
- * Hervorhebung und numerierte Schritt-Markierung — kein Risiko, dass
- * jemand bei körperlicher Übergriffigkeit die Sicherheits-Information
- * optisch übersieht.
- *
- * Out of scope (sichtbarer Bruch): GrenzenCheck (interaktive Komponente
- * in der grenzen-check Sektion) ist weiterhin Card-basiert.
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -34,31 +18,6 @@ import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 import { kontaktByIdStrict } from "@/data/kontakte";
 import { Link } from "wouter";
-
-/*
- * INTRO-CARD-TRIO — VARIANTE B (zur Auswahl im Review)
- *
- * Statt prosaischem Fliesstext-Absatz (Variante A unten) eine
- * ungeordnete Liste mit fettem H4-Lead-In pro Punkt:
- *
- *   <ul class="space-y-4">
- *     <li>
- *       <h4 class="font-semibold">Selbstschutz ernst nehmen.</h4>
- *       <p>Grenzen sind nicht gegen Nähe gerichtet, sondern schützen
- *          Ihre Integrität und machen Beziehungen berechenbarer.</p>
- *     </li>
- *     <li>
- *       <h4 class="font-semibold">Wenige zuerst klären.</h4>
- *       <p>Tragfähige Grenzen entstehen meist aus Priorisierung, nicht
- *          aus zehn gleichzeitigen Ansagen.</p>
- *     </li>
- *     <li>
- *       <h4 class="font-semibold">Ruhig und konkret bleiben.</h4>
- *       <p>Hilfreiche Grenzen bleiben auf Ihr Handeln bezogen, nicht
- *          moralisch aufgeladen und nicht endlos verhandelbar.</p>
- *     </li>
- *   </ul>
- */
 
 /** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
 function openSection(sectionId: string) {
@@ -691,7 +650,7 @@ export default function Grenzen() {
           </EditorialPullQuote>
         </EditorialSection>
 
-        {/* ── ContentSection 10: gewalt — SICHERHEITS-HERVORHEBUNG BLEIBT (Brief 27.04.) ── */}
+        {/* ── ContentSection 10: gewalt ── */}
         <ContentSection
           variant="editorial"
           title="Wenn der Angehörige körperlich übergriffig wird"

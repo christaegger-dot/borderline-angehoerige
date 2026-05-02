@@ -1,30 +1,3 @@
-/**
- * Verstehen — Editorial-Redesign Phase 4 (Brief 27.04.2026)
- *
- * Referenz-Implementation für Tier-1-Migration. Inhalt unverändert
- * gegenüber alter Version (ausser Hero-Lesezeitformulierung und Quick-
- * Link-Verbindungssatz — siehe PR-Body). Strukturelle Wechsel:
- * - Layout: EditorialLayout width="narrow" innerhalb des bestehenden
- *   <Layout>-Chrome-Wrappers
- * - Hero: editorial header (Caps-Kicker + H1 + Lead + Lesezeit-Zeile),
- *   kein Gradient, kein Icon, kein CTA
- * - Intro-Card-Trio: Variante A (prosaischer Fliesstext-Absatz)
- *   implementiert; Variante B (Liste mit H4-Lead-In) als Kommentarblock
- * - Quick-Link-Karten: Inline-Link-Absatz mit Anchor-IDs
- * - ContentSection: variant="editorial" (kein Icon, hairline-Trenner)
- * - Inline-Karten-Pattern: zu Spalten-Fliesstext mit H4-Titeln
- * - Pull-Quote: EditorialPullQuote
- * - EvidenceNote: variant="editorial"
- * - Buttons im Lesefluss: Inline-Links mit .editorial-link
- * - motion-Wrapper (nur Fade-In/Slide-In): entfernt
- * - RelatedLinks → RelatedLinksEditorial (keine Icons, hairline-Liste)
- * - InvitationSection: entfernt (Beratungseinladung lebt auf Home)
- *
- * Out of scope dieser PR (sichtbarer Bruch): die importierten Sub-
- * Komponenten VerstehenRelationshipSection / VerstehenMeaningSection /
- * VerstehenDiagnosticSection / VerstehenMaterialsSection sind weiterhin
- * Card-basiert. Migration der Sub-Sektionen folgt im nächsten Schritt.
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -46,35 +19,6 @@ import {
   VerstehenRelationshipSection,
 } from "@/sections/VerstehenSupportSections";
 import { Link } from "wouter";
-
-/*
- * INTRO-CARD-TRIO — VARIANTE B (zur Auswahl im Review)
- *
- * Statt prosaischem Fliesstext-Absatz (Variante A unten) eine
- * ungeordnete Liste mit fettem H4-Lead-In pro Punkt:
- *
- *   <ul class="space-y-4">
- *     <li>
- *       <h4 class="font-semibold">Belastung einordnen.</h4>
- *       <p>Ambivalenz, Alarm, Erschöpfung und Loyalitätsdruck als
- *          typische Angehörigenrealität lesen.</p>
- *     </li>
- *     <li>
- *       <h4 class="font-semibold">Dynamiken verstehen.</h4>
- *       <p>Überflutung, Bindungsstress und Denkverengung besser
- *          erkennen, statt nur auf sichtbare Reaktionen zu schauen.</p>
- *     </li>
- *     <li>
- *       <h4 class="font-semibold">Muster sehen.</h4>
- *       <p>Wiederkehrende Schleifen aus Eskalation, Rückzug und Schuld
- *          nüchterner lesen und benennen.</p>
- *     </li>
- *   </ul>
- *
- * Christa entscheidet pro Page (Brief 27.04. Punkt 2 zur Klärung):
- * Variante A wirkt prosaischer und integriert besser; Variante B ist
- * scannbarer für Eilige.
- */
 
 /** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
 function openSection(sectionId: string) {

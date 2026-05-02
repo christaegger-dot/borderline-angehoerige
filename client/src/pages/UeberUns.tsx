@@ -1,18 +1,3 @@
-/**
- * Über uns — Editorial-Redesign Phase 4 Welle 2 (Page 10/10) — letzte Page
- *
- * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge/Übersicht/
- * Alltag/Therapie/Krise/Genesung/Fachstelle-Pattern. Inhalt unverändert
- * ausser Hero-Lesezeit und prosaischen Verbindungssätzen.
- *
- * Brief-Sonderregel (Page 10): Falls Team-Vorstellungen oder Bilder —
- * Bilder dürfen bleiben (Editorial verträgt Bild), Captions in
- * `--fg-tertiary` falls bisher keine vorhanden. **Hier nicht
- * anwendbar:** die Page enthält keine Bilder oder Team-Fotos, nur Text.
- *
- * Cross-Page-Anker `#therapieangebote` in `unterstuetzen/therapie`
- * bleibt erhalten (wird im Hinweis-Block dieser Seite verlinkt).
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

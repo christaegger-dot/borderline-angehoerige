@@ -9,7 +9,6 @@ import {
   Users,
   Wind,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ContentSection from "@/components/ContentSection";
 import GroundingTimer from "@/components/interactive/GroundingTimer";
@@ -75,63 +74,99 @@ function AtemuebungCard() {
   };
 
   return (
-    <Card className="border-border/60 bg-background shadow-none">
-      <CardContent className="p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <Wind className="w-6 h-6 text-sage-mid" />
+    <article className="border-t border-[color:var(--rule-color)] pt-5">
+      <div className="mb-4 flex items-center gap-3">
+        <Wind className="h-6 w-6 text-[color:var(--accent-primary)]" />
+        <div>
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
+            Übung
+          </p>
           <span
-            className="font-semibold text-foreground text-base block"
+            className="block text-base font-semibold text-foreground"
             role="heading"
             aria-level={2}
           >
             4-4-6 Atemübung
           </span>
         </div>
+      </div>
 
-        <p className="text-muted-foreground text-sm mb-4">
-          Diese Atemtechnik aktiviert den beruhigenden Teil Ihres Nervensystems
-          und hilft, aus dem Stressmodus herauszukommen.
-        </p>
+      <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
+        Diese Atemtechnik aktiviert den beruhigenden Teil Ihres Nervensystems
+        und hilft, aus dem Stressmodus herauszukommen.
+      </p>
 
-        {isActive ? (
-          <div className="text-center py-6">
-            <div className="w-24 h-24 mx-auto rounded-full bg-sage-mid/20 flex items-center justify-center mb-4">
-              <span className="text-4xl font-bold text-sage-dark">{count}</span>
-            </div>
-            <p className="text-lg font-medium text-sage-dark">
-              {phase === "einatmen" && "Einatmen..."}
-              {phase === "halten" && "Halten..."}
-              {phase === "ausatmen" && "Langsam ausatmen..."}
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-3">
-            {[
-              "4 Sekunden einatmen",
-              "4 Sekunden halten",
-              "6 Sekunden ausatmen",
-            ].map((item, index) => (
-              <div
-                key={item}
-                className="flex items-center gap-2 text-sm text-muted-foreground"
-              >
-                <span className="w-6 h-6 rounded-full bg-sage-mid/20 flex items-center justify-center text-xs font-medium">
-                  {index + 1}
-                </span>
-                {item}
-              </div>
-            ))}
-            <Button
-              onClick={startUebung}
-              className="w-full mt-4 bg-sage-mid hover:bg-sage-dark text-white"
-              disabled={isActive}
+      {isActive ? (
+        <div
+          className="rounded-[1rem] border px-4 py-6 text-center"
+          style={{
+            borderColor: "var(--rule-color)",
+            backgroundColor:
+              "color-mix(in oklch, var(--bg-primary) 72%, white)",
+          }}
+        >
+          <div
+            className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border"
+            style={{
+              borderColor:
+                "color-mix(in oklch, var(--accent-primary) 22%, transparent)",
+              backgroundColor:
+                "color-mix(in oklch, var(--accent-primary) 8%, white)",
+            }}
+          >
+            <span
+              className="text-4xl font-bold"
+              style={{ color: "var(--accent-primary)" }}
             >
-              Übung starten
-            </Button>
+              {count}
+            </span>
           </div>
-        )}
-      </CardContent>
-    </Card>
+          <p
+            className="text-lg font-medium"
+            style={{ color: "var(--fg-primary)" }}
+          >
+            {phase === "einatmen" && "Einatmen..."}
+            {phase === "halten" && "Halten..."}
+            {phase === "ausatmen" && "Langsam ausatmen..."}
+          </p>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          {[
+            "4 Sekunden einatmen",
+            "4 Sekunden halten",
+            "6 Sekunden ausatmen",
+          ].map((item, index) => (
+            <div
+              key={item}
+              className="flex items-center gap-3 border-t pt-3 text-sm text-muted-foreground"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <span
+                className="flex h-7 w-7 items-center justify-center rounded-full border text-xs font-medium"
+                style={{
+                  borderColor: "var(--rule-color)",
+                  color: "var(--accent-primary)",
+                  backgroundColor:
+                    "color-mix(in oklch, var(--accent-primary) 6%, white)",
+                }}
+              >
+                {index + 1}
+              </span>
+              {item}
+            </div>
+          ))}
+          <Button
+            variant="outline"
+            onClick={startUebung}
+            className="mt-4 w-full gap-2 border-border/70 bg-background text-[color:var(--accent-primary)] shadow-none hover:bg-muted/20 hover:text-foreground"
+            disabled={isActive}
+          >
+            Übung starten
+          </Button>
+        </div>
+      )}
+    </article>
   );
 }
 

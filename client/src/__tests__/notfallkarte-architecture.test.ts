@@ -42,16 +42,23 @@ describe("notfallkarte architecture", () => {
       path.join(repoRoot, "client/public/notfallkarte-print.html"),
       "utf8"
     );
+    const printScript = fs.readFileSync(
+      path.join(repoRoot, "client/public/notfallkarte-print.js"),
+      "utf8"
+    );
 
     expect(pageSource).toMatch(/savePrintData\(data\)/);
     expect(pageSource).toMatch(
       /printWindow\.postMessage\(\s*payload,\s*window\.location\.origin\s*\)/
     );
     expect(printTemplate).toContain(
+      '<script src="/notfallkarte-print.js"></script>'
+    );
+    expect(printScript).toContain(
       'localStorage.getItem("notfallkarte-print-data")'
     );
-    expect(printTemplate).toContain('window.addEventListener("message"');
-    expect(printTemplate).toContain(
+    expect(printScript).toContain('window.addEventListener("message"');
+    expect(printScript).toContain(
       'localStorage.removeItem("notfallkarte-print-data")'
     );
   });

@@ -304,24 +304,20 @@ export const quickStarts = [
     id: "soforthilfe",
     title: "Akute Krise",
     text: "Wenn rasche Orientierung und Notfallnummern nötig sind.",
-    cardClass: "border-alert bg-alert-wash",
   },
   {
     id: "verstehen",
     title: "Ich brauche Orientierung",
     text: "Wenn Sie Dynamiken besser einordnen möchten.",
-    cardClass: "border-sage-mid bg-sage-wash",
   },
   {
     id: "kommunizieren",
     title: "Schwierige Gespräche",
     text: "Wenn Worte schnell kippen oder verletzen.",
-    cardClass: "border-slate-blue bg-slate-wash",
   },
   {
     id: "selbstfuersorge",
     title: "Ich bin selbst am Limit",
     text: "Wenn Erschöpfung, Schuld oder Daueranspannung dominieren.",
-    cardClass: "border-terracotta-mid bg-terracotta-wash",
   },
 ] as const;

@@ -5,34 +5,25 @@
 @import "tailwindcss/preflight.css" layer(base);
 
 :root {
-  /* Legacy Sanctuary Calm bridge.
-     Editorial tokens below are the primary design source.
-     Legacy tokens remain for migration and functional crisis UI. */
-  --primary: oklch(
-    0.55 0.15 55
-  ); /* Terracotta – WCAG AA: weiss auf primary ≥4.5:1 (Phase 1 fix, war 0.65 0.12 55) */
+  /* Shared theme bridge. Editorial tokens below are the primary source;
+     older tokens remain for functional crisis UI and a few legacy consumers. */
+  --primary: oklch(0.55 0.15 55); /* Terracotta */
   --primary-foreground: oklch(0.98 0.01 85); /* Cream */
-  --sidebar-primary: oklch(
-    0.52 0.09 190
-  ); /* Sage-mid – WCAG AA: 4.82:1 auf Cream (war 0.65 0.08 145 = 2.87:1 FAIL) */
+  --sidebar-primary: oklch(0.52 0.09 190); /* Sage-mid */
   --sidebar-primary-foreground: oklch(0.98 0.01 85);
-  --chart-1: oklch(0.55 0.15 55); /* Terracotta (angepasst mit primary) */
-  --chart-2: oklch(
-    0.52 0.09 190
-  ); /* Sage-mid (angepasst mit sidebar-primary) */
+  --chart-1: oklch(0.55 0.15 55); /* Terracotta */
+  --chart-2: oklch(0.52 0.09 190); /* Sage-mid */
   --chart-3: oklch(0.45 0.05 250); /* Slate Blue */
   --chart-4: oklch(0.85 0.08 55); /* Light Terracotta */
   --chart-5: oklch(0.88 0.04 145); /* Light Sage */
   --radius: 0.5rem;
-  /* Border-Radius Konvention (Phase 1 – kantiger, editorial):
+  /* Border-radius convention:
      rounded-sm  (2px)  = Tags, Badges, kleine Chips
      rounded-md  (4px)  = Buttons, Inputs
      rounded-lg  (8px)  = Standard-Elemente, Listen-Items, kleine Cards
      rounded-xl  (12px) = Karten, Content-Boxen, Hero-Icon-Boxen
      rounded-2xl (20px) = Spezial-Blöcke (Soforthilfe Ampel-Blöcke, hartcodiert) */
-  --background: oklch(
-    0.97 0.02 85
-  ); /* Warmer Cream – Editorial-Modus (ehemals kühles Off-White oklch(0.985 0.003 200)) */
+  --background: oklch(0.97 0.02 85); /* Warmer Cream */
   --foreground: oklch(0.25 0.02 250); /* Charcoal */
   --card: oklch(0.99 0.008 85); /* Cream */
   --card-foreground: oklch(0.25 0.02 250);
@@ -41,9 +32,7 @@
   --secondary: oklch(0.88 0.04 145); /* Light Sage */
   --secondary-foreground: oklch(0.3 0.04 145);
   --muted: oklch(0.94 0.01 85);
-  --muted-foreground: oklch(
-    0.45 0.02 250
-  ); /* Darkened for WCAG AA 4.5:1 contrast */
+  --muted-foreground: oklch(0.45 0.02 250);
   --accent: oklch(0.85 0.08 55); /* Light Terracotta */
   --accent-foreground: oklch(0.3 0.08 55);
   --destructive: oklch(
@@ -52,20 +41,16 @@
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0.02 85);
   --input: oklch(0.92 0.015 85);
-  --ring: oklch(0.55 0.15 55); /* Terracotta (angepasst mit primary) */
+  --ring: oklch(0.55 0.15 55); /* Terracotta */
   --sidebar: oklch(0.98 0.01 85);
   --sidebar-foreground: oklch(0.25 0.02 250);
   --sidebar-accent: oklch(0.94 0.02 85);
   --sidebar-accent-foreground: oklch(0.25 0.02 250);
   --sidebar-border: oklch(0.9 0.02 85);
-  --sidebar-ring: oklch(0.55 0.15 55); /* Terracotta (angepasst mit primary) */
+  --sidebar-ring: oklch(0.55 0.15 55); /* Terracotta */
 
-  /* ════════════════════════════════════════════════════════════════════════
-     Editorial tokens — primäre Designquelle
-     Neue Layout- und Inhaltsseiten sollen bevorzugt diese Tokens nutzen.
-     Funktionale Krisenfarben (--color-sos-* / --color-alert*) bleiben
-     davon ausgenommen.
-     ════════════════════════════════════════════════════════════════════════ */
+  /* Editorial tokens — primary design source for layout and content pages.
+     Functional crisis colors remain separate. */
 
   /* — Farben — */
   --bg-primary: #faf7f2; /* einzige Hintergrundfarbe der Site */
@@ -113,9 +98,7 @@
   --tracking-caps: 0.14em; /* Sektionslabels */
   --tracking-tight: -0.01em; /* H1 */
 
-  /* — Font-Weights — Editorial-Disziplin —
-     H1/H2 explizit auf 400 (nicht 600/700). Source Serif 4 wirkt bei 400
-     bereits stark genug; Bold lässt das Heading wie Werbung aussehen. */
+  /* — Font-Weights — */
   --weight-display: 400; /* H1, H2 */
   --weight-body: 400; /* Fliesstext */
   --weight-strong: 600; /* sparsame Hervorhebung */
@@ -269,7 +252,7 @@
     }
   }
 
-  /* ── Editorial Utilities (Phase 1) ── */
+  /* Editorial utilities */
   .kicker {
     font-family: var(--font-body);
     font-size: 0.72rem;
@@ -313,7 +296,7 @@
     max-width: 44ch;
   }
 
-  /* Pull-Quote — sparsame Zitat-Hervorhebung fuer Lesestrecken */
+  /* Pull quote */
   .pull-quote {
     border-left: 3px solid var(--color-sage, oklch(0.72 0.08 150));
     padding-left: 1.25rem;
@@ -336,20 +319,18 @@
     letter-spacing: 0.02em;
   }
 
-  /* Editorial primitives fuer React-Komponenten und Inline-Links */
+  /* Editorial primitives for React components and inline links */
 
   .editorial-prose {
-    font-size: var(
-      --text-base
-    ); /* 16px auf Mobile – kompakter, weniger "löchrig" */
-    line-height: 1.6; /* Etwas enger auf Mobile */
+    font-size: var(--text-base);
+    line-height: 1.6;
     color: var(--fg-primary);
   }
 
   @media (min-width: 768px) {
     .editorial-prose {
-      font-size: var(--text-md); /* 17px auf Desktop – mehr Luft */
-      line-height: var(--lh-relaxed); /* 1.7 */
+      font-size: var(--text-md);
+      line-height: var(--lh-relaxed);
     }
   }
 
@@ -373,21 +354,21 @@
     font-style: italic;
   }
 
-  /* <strong> bleibt bewusst ruhig statt fett und werblich */
+  /* Keep <strong> calm instead of heavy and ad-like */
   .editorial-prose strong {
     color: var(--accent-primary);
     font-weight: var(--weight-body);
   }
 
-  /* Drop-Cap auf dem ersten Buchstaben des ersten Absatzes */
+  /* Drop cap on the first paragraph */
   .editorial-prose-dropcap > p:first-child::first-letter {
     font-family: var(--font-display);
     float: left;
-    font-size: 4.2rem; /* Minimal kleiner – wirkt weniger wuchtig */
+    font-size: 4.2rem;
     line-height: 0.85;
-    padding-right: 0.6rem; /* Mehr Luft zum Fliesstext */
+    padding-right: 0.6rem;
     padding-top: 0.4rem;
-    margin-bottom: -0.15rem; /* Verhindert, dass Initiale Zeilenhöhe der Folgezeilen stört */
+    margin-bottom: -0.15rem;
     color: var(--accent-primary);
     font-weight: var(--weight-display);
   }
@@ -398,7 +379,7 @@
     }
   }
 
-  /* Eigenstaendige Inline-Link-Utility */
+  /* Standalone inline-link utility */
   .editorial-link {
     color: var(--accent-primary);
     text-decoration: underline;

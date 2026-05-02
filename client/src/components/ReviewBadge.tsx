@@ -23,10 +23,11 @@ export default function ReviewBadge({ path }: { path: string }) {
 
   return (
     <aside
-      className="mt-4 rounded-xl border border-border/60 bg-white/70 px-4 py-3 text-sm text-muted-foreground shadow-sm"
+      className="mt-6 border-t pt-4 text-sm text-muted-foreground"
       aria-label="Review-Informationen"
+      style={{ borderColor: "var(--rule-color)" }}
     >
-      <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/90">
+      <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
         Review & Governance
       </p>
 

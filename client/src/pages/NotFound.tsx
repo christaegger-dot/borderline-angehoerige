@@ -1,17 +1,9 @@
 import SEO from "@/components/SEO";
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { useLocation } from "wouter";
+import AppLink from "@/components/AppLink";
 import { AlertCircle, Home } from "@/icons/root-icons";
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
-
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
   return (
     <Layout>
       <SEO
@@ -20,39 +12,49 @@ export default function NotFound() {
         path="/404"
         robots="noindex, nofollow"
       />
-      <div className="min-h-[70vh] w-full flex items-center justify-center">
-        <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-          <CardContent className="pt-8 pb-8 text-center">
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <div className="absolute inset-0 bg-sage-lighter rounded-full animate-pulse" />
-                <AlertCircle className="relative h-16 w-16 text-sage-mid" />
-              </div>
+      <div className="container flex min-h-[70vh] items-center justify-center py-16">
+        <section
+          className="w-full max-w-[38rem] border-t pt-8"
+          style={{ borderColor: "var(--rule-color)" }}
+        >
+          <div className="flex justify-center sm:justify-start">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-border/60 bg-background">
+              <AlertCircle className="h-8 w-8 text-[color:var(--accent-primary)]" />
             </div>
+          </div>
 
-            <h1 className="text-4xl font-bold text-foreground mb-2">404</h1>
+          <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
+            404
+          </p>
 
-            <h2 className="text-xl font-normal text-foreground mb-4">
-              Seite nicht gefunden
-            </h2>
+          <h1
+            className="mt-3 font-display text-4xl text-foreground sm:text-5xl"
+            style={{ fontWeight: "var(--weight-display)" }}
+          >
+            Seite nicht gefunden
+          </h1>
 
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              Die gesuchte Seite existiert leider nicht.
-              <br />
-              Sie wurde möglicherweise verschoben oder gelöscht.
-            </p>
+          <p className="mt-4 max-w-[32rem] text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Die gesuchte Seite existiert leider nicht. Sie wurde möglicherweise
+            verschoben oder gelöscht.
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button
-                onClick={handleGoHome}
-                className="bg-sage-mid hover:bg-sage-dark text-white px-6 py-2.5 rounded-lg transition-all duration-400 shadow-md hover:shadow-lg"
-              >
-                <Home className="w-4 h-4 mr-2" />
-                Zur Startseite
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <AppLink
+              href="/"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)]/30 focus-visible:ring-offset-2"
+            >
+              <Home className="h-4 w-4" />
+              Zur Startseite
+            </AppLink>
+            <AppLink
+              href="/wegweiser"
+              className="editorial-link inline-flex min-h-11 items-center justify-center"
+            >
+              Zum Wegweiser
+            </AppLink>
+          </div>
+        </section>
       </div>
     </Layout>
   );

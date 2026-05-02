@@ -331,7 +331,7 @@ export function TableOfContents() {
 
   // Aktiver Eintrag Styling
   const activeClass =
-    "bg-sage-wash text-sage-darker font-semibold border-l-2 border-l-sage-dark";
+    "border-l border-[color:var(--rule-color-strong)] bg-background text-foreground font-semibold";
   const inactiveClass =
     "text-muted-foreground hover:text-foreground hover:bg-muted/60";
 
@@ -341,7 +341,7 @@ export function TableOfContents() {
       {floatingMode === "content" && showFloatingButton && (
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="min-[1800px]:hidden fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 h-11 px-4 rounded-full bg-background border border-border shadow-lg flex items-center gap-2 text-sm font-medium text-foreground"
+          className="min-[1800px]:hidden fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 items-center gap-2 rounded-full border border-border/70 bg-background/95 px-4 text-sm font-medium text-foreground shadow-[0_18px_40px_-34px_rgba(15,23,42,0.55)] backdrop-blur-sm"
           aria-label="Inhaltsverzeichnis öffnen"
         >
           <List className="w-4 h-4" />
@@ -356,7 +356,7 @@ export function TableOfContents() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="min-[1800px]:hidden fixed inset-0 bg-black/30 z-40"
+            className="min-[1800px]:hidden fixed inset-0 z-40 bg-black/20"
             onClick={() => setIsOpen(false)}
           />
         )}
@@ -370,7 +370,7 @@ export function TableOfContents() {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="min-[1800px]:hidden fixed left-0 right-0 bottom-0 max-h-[70vh] bg-background z-50 rounded-t-2xl shadow-2xl overflow-hidden flex flex-col pb-[env(safe-area-inset-bottom,0px)]"
+            className="min-[1800px]:hidden fixed bottom-0 left-0 right-0 z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-t-[1.75rem] border-t border-border/60 bg-background shadow-[0_-24px_48px_-36px_rgba(15,23,42,0.45)] pb-[env(safe-area-inset-bottom,0px)]"
           >
             {/* Drawer Handle */}
             <div className="flex justify-center pt-3 pb-1">
@@ -378,9 +378,9 @@ export function TableOfContents() {
             </div>
 
             {/* Drawer Header */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-border">
+            <div className="flex items-center justify-between border-b border-border/60 px-5 py-3">
               <span
-                className="font-semibold text-foreground text-base"
+                className="text-base font-semibold text-foreground"
                 role="heading"
                 aria-level={2}
               >
@@ -422,18 +422,15 @@ export function TableOfContents() {
       {/* ─── Desktop: Sticky Sidebar in der linken Gutter-Zone ─── */}
       {/* left = 50vw - halbe Content-Breite (304px) - Abstand (2rem) - Sidebar-Breite (15rem) */}
       <div className="hidden min-[1800px]:block fixed left-[calc(50vw-304px-17rem)] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc(100vh-9.5rem)] w-60">
-        <div className="flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-36px_rgba(15,23,42,0.45)] backdrop-blur-md">
-          <div className="px-4 pt-4 pb-2">
-            <div className="flex items-center gap-2.5 rounded-full border border-sage-light/60 bg-sage-wash/80 px-3 py-2">
-              <span className="h-2 w-2 rounded-full bg-sage-dark" />
-              <span
-                className="text-sm font-semibold text-sage-darker"
-                role="heading"
-                aria-level={2}
-              >
-                Auf dieser Seite
-              </span>
-            </div>
+        <div className="flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-40px_rgba(15,23,42,0.28)] backdrop-blur-md">
+          <div className="border-b border-border/60 px-4 pt-4 pb-3">
+            <span
+              className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]"
+              role="heading"
+              aria-level={2}
+            >
+              Auf dieser Seite
+            </span>
           </div>
           <nav className="overflow-y-auto overscroll-contain px-2 pb-3 flex-1">
             <ul className="space-y-0.5">
@@ -444,7 +441,7 @@ export function TableOfContents() {
                     ref={activeId === id ? activeNavRef : null}
                     onClick={() => scrollToHeading(id)}
                     aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs transition-colors line-clamp-2 focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-offset-1 ${
+                    className={`w-full line-clamp-2 rounded-lg px-3 py-2 text-left text-xs transition-colors focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)]/30 focus-visible:ring-offset-1 ${
                       level === 3 ? "pl-5" : ""
                     } ${activeId === id ? activeClass : inactiveClass}`}
                   >

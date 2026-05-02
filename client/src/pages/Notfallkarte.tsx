@@ -5,7 +5,7 @@
  * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
  * «Page 9 — Notfallkarte».
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   EditorialLayout,
@@ -263,36 +263,14 @@ function PersonalContactRow({
 
 export default function Notfallkarte() {
   const [data, setData] = useState<NotfallkarteData>(loadData);
-  const [saved, setSaved] = useState(false);
   const [storageError, setStorageError] = useState(false);
   const [announcement, setAnnouncement] = useState("");
-  const savedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (!isStorageAvailable()) setStorageError(true);
   }, []);
   useEffect(() => {
     if (!saveData(data)) setStorageError(true);
-  }, [data]);
-  useEffect(
-    () => () => {
-      if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
-    },
-    []
-  );
-
-  const handleSave = useCallback(() => {
-    if (!saveData(data)) {
-      setStorageError(true);
-      setSaved(false);
-      setAnnouncement("Speichern nicht möglich");
-      return;
-    }
-
-    setSaved(true);
-    setAnnouncement("Im Browser gespeichert");
-    if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
-    savedTimerRef.current = setTimeout(() => setSaved(false), 2000);
   }, [data]);
 
   const handleDeleteData = useCallback(() => {
@@ -303,10 +281,8 @@ export default function Notfallkarte() {
     if (!confirmed) return;
 
     if (deleteStoredData()) {
-      if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
       setData(EMPTY_DATA);
       setAnnouncement("Lokale Notfallkarten-Daten wurden gelöscht.");
-      setSaved(false);
     } else {
       setStorageError(true);
       setAnnouncement("Daten konnten nicht gelöscht werden.");
@@ -450,7 +426,8 @@ export default function Notfallkarte() {
             }}
           >
             <strong>Speichern nicht möglich</strong> – privater Modus oder
-            gesperrter Speicher. Bitte{" "}
+            gesperrter Speicher. Ihre Eingaben bleiben dann möglicherweise nicht
+            auf diesem Gerät erhalten. Bitte{" "}
             <button
               type="button"
               onClick={handlePrint}
@@ -727,12 +704,6 @@ export default function Notfallkarte() {
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3 print:hidden">
           <PrimaryButton onClick={handlePrint}>Drucken / Als PDF</PrimaryButton>
           <SecondaryButton
-            onClick={handleSave}
-            ariaLabel="Im Browser speichern"
-          >
-            {saved ? "Gespeichert ✓" : "Im Browser speichern"}
-          </SecondaryButton>
-          <SecondaryButton
             onClick={handleDeleteData}
             ariaLabel="Lokale Notfallkarten-Daten löschen"
           >
@@ -742,9 +713,10 @@ export default function Notfallkarte() {
         <EditorialSection rule>
           <EditorialProse>
             <p>
-              <strong>Ihre Daten bleiben auf diesem Gerät.</strong> Alle Angaben
-              werden nur lokal in Ihrem Browser gespeichert und verlassen Ihr
-              Gerät nicht. Auf gemeinsam genutzten Geräten können andere
+              <strong>Änderungen werden automatisch lokal gespeichert.</strong>{" "}
+              Die Notfallkarte nutzt dafür den Speicher Ihres Browsers auf
+              diesem Gerät. Die Angaben werden nicht an einen Server dieser
+              Website übertragen. Auf gemeinsam genutzten Geräten können andere
               Personen diese Einträge sehen. Nutzen Sie «Daten löschen», wenn
               die Notfallkarte nicht auf diesem Gerät bleiben soll. Beim Drucken
               oder PDF-Export werden Ihre persönlichen Einträge mit ausgegeben.

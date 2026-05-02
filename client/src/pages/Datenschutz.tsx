@@ -212,6 +212,47 @@ export default function Datenschutz() {
               </Card>
             </ContentSection>
 
+            <ContentSection
+              title="Persönliche Notfallkarte und lokale Speicherung"
+              icon={<Lock className="w-7 h-7 text-sage-dark" />}
+              id="notfallkarte-lokal"
+              preview="Persönliche Einträge der Notfallkarte bleiben lokal im Browser und werden nicht an den Server dieser Website übertragen."
+            >
+              <Card className="border-border/50">
+                <CardContent className="p-6">
+                  <div className="text-muted-foreground leading-relaxed space-y-4">
+                    <p>
+                      Die persönliche Notfallkarte kann{" "}
+                      <strong>personenbezogene Angaben</strong> enthalten, zum
+                      Beispiel Namen, Telefonnummern, Beziehungen,
+                      Beruhigungsstrategien oder freie Notizen.
+                    </p>
+                    <p>
+                      Diese Angaben werden{" "}
+                      <strong>lokal im Browser auf Ihrem Gerät</strong>{" "}
+                      gespeichert, damit die Notfallkarte zwischen Ihren
+                      Besuchen erhalten bleibt. Die Daten werden dabei{" "}
+                      <strong>nicht an einen Server dieser Website</strong>{" "}
+                      übertragen.
+                    </p>
+                    <p>
+                      Wichtig: Auf <strong>gemeinsam genutzten Geräten</strong>{" "}
+                      können andere Personen diese Einträge sehen, wenn sie
+                      denselben Browser verwenden. Wenn die Angaben nicht auf
+                      dem Gerät bleiben sollen, können Sie sie in der
+                      Notfallkarte über <strong>«Daten löschen»</strong>{" "}
+                      entfernen.
+                    </p>
+                    <p className="text-sm">
+                      Für die Druckansicht wird zusätzlich kurzfristig ein
+                      lokaler Zwischenspeicher im Browser verwendet. Auch diese
+                      Daten werden nicht an unsere Server übertragen.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </ContentSection>
+
             {/* Cookies */}
             <ContentSection
               title="Cookies"
@@ -240,6 +281,12 @@ export default function Datenschutz() {
                         Informationen.
                       </p>
                     </div>
+                    <p className="text-sm">
+                      Die persönliche Notfallkarte verwendet für ihre eigenen
+                      Einträge <strong>kein Cookie</strong>, sondern den lokalen
+                      Browser-Speicher (`localStorage`). Dieser unterscheidet
+                      sich von Cookies und wird nur auf Ihrem Gerät abgelegt.
+                    </p>
                     <p className="text-sm">
                       Sie können Ihren Browser so einstellen, dass Sie über das
                       Setzen von Cookies informiert werden und Cookies nur im
@@ -312,8 +359,8 @@ export default function Datenschutz() {
                     Die auf dieser Website angebotenen Infografiken und Handouts
                     können heruntergeladen werden. Beim Download werden keine
                     personenbezogenen Daten erfasst oder gespeichert. Die
-                    Materialien werden über einen Content Delivery Network (CDN)
-                    bereitgestellt.
+                    Materialien werden über die Website und ihren
+                    Hosting-Anbieter bereitgestellt.
                   </p>
                 </CardContent>
               </Card>
@@ -366,9 +413,12 @@ export default function Datenschutz() {
                       </li>
                     </ul>
                     <p className="text-sm">
-                      Da wir jedoch keine personenbezogenen Daten speichern
-                      (ausser den anonymisierten Server-Logfiles), sind diese
-                      Rechte in der Praxis selten relevant.
+                      Auf unseren Servern speichern wir grundsätzlich keine
+                      persönlichen Inhalte aus der Notfallkarte. Wenn Sie die
+                      persönliche Notfallkarte verwenden, können solche Angaben
+                      jedoch lokal in Ihrem Browser gespeichert sein. In diesem
+                      Fall können Sie die Einträge direkt auf Ihrem Gerät über
+                      «Daten löschen» entfernen.
                     </p>
                   </div>
                 </CardContent>

@@ -1,8 +1,8 @@
 {
   "label": "Production Browser Matrix 2026-05-02",
-  "createdAt": "2026-05-02T15:58:44.570Z",
+  "createdAt": "2026-05-02T16:56:16.034Z",
   "baseUrl": "https://borderline-angehoerige.netlify.app",
-  "gitHead": "eb4e07e",
+  "gitHead": "03acade",
   "profiles": [
     {
       "device": "iPhone",
@@ -18,371 +18,362 @@
     {
       "device": "iPhone",
       "browser": "Chrome",
-      "status": "nicht bestanden",
+      "status": "bestanden mit Hinweis",
       "testedAt": "2026-05-02",
       "testedBy": "Codex",
       "notes": "mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün",
-      "findings": [
-        "Notfallkarte Druckansicht: persönliche Daten fehlen in der Druckansicht"
-      ],
+      "findings": [],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:01.569Z",
-          "finishedAt": "2026-05-02T15:58:02.778Z"
+          "startedAt": "2026-05-02T16:55:23.125Z",
+          "finishedAt": "2026-05-02T16:55:24.577Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:02.778Z",
-          "finishedAt": "2026-05-02T15:58:03.637Z"
+          "startedAt": "2026-05-02T16:55:24.577Z",
+          "finishedAt": "2026-05-02T16:55:25.484Z"
         },
         {
           "name": "Mobiles Menü öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:03.637Z",
-          "finishedAt": "2026-05-02T15:58:03.702Z"
+          "startedAt": "2026-05-02T16:55:25.484Z",
+          "finishedAt": "2026-05-02T16:55:25.550Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:03.702Z",
-          "finishedAt": "2026-05-02T15:58:03.704Z"
+          "startedAt": "2026-05-02T16:55:25.550Z",
+          "finishedAt": "2026-05-02T16:55:25.552Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:03.704Z",
-          "finishedAt": "2026-05-02T15:58:04.247Z"
+          "startedAt": "2026-05-02T16:55:25.552Z",
+          "finishedAt": "2026-05-02T16:55:26.530Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:04.247Z",
-          "finishedAt": "2026-05-02T15:58:04.810Z"
+          "startedAt": "2026-05-02T16:55:26.530Z",
+          "finishedAt": "2026-05-02T16:55:27.706Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:04.810Z",
-          "finishedAt": "2026-05-02T15:58:05.479Z"
+          "startedAt": "2026-05-02T16:55:27.706Z",
+          "finishedAt": "2026-05-02T16:55:28.873Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:05.479Z",
-          "finishedAt": "2026-05-02T15:58:08.284Z"
+          "startedAt": "2026-05-02T16:55:28.873Z",
+          "finishedAt": "2026-05-02T16:55:31.648Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
-          "status": "failed",
-          "startedAt": "2026-05-02T15:58:08.284Z",
-          "finishedAt": "2026-05-02T15:58:09.765Z",
-          "message": "persönliche Daten fehlen in der Druckansicht"
+          "status": "passed",
+          "startedAt": "2026-05-02T16:55:31.648Z",
+          "finishedAt": "2026-05-02T16:55:33.576Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:09.765Z",
-          "finishedAt": "2026-05-02T15:58:09.808Z"
+          "startedAt": "2026-05-02T16:55:33.576Z",
+          "finishedAt": "2026-05-02T16:55:33.645Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:09.808Z",
-          "finishedAt": "2026-05-02T15:58:10.725Z"
+          "startedAt": "2026-05-02T16:55:33.645Z",
+          "finishedAt": "2026-05-02T16:55:34.774Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:10.725Z",
-          "finishedAt": "2026-05-02T15:58:11.568Z"
+          "startedAt": "2026-05-02T16:55:34.774Z",
+          "finishedAt": "2026-05-02T16:55:35.629Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:11.568Z",
-          "finishedAt": "2026-05-02T15:58:11.943Z"
+          "startedAt": "2026-05-02T16:55:35.629Z",
+          "finishedAt": "2026-05-02T16:55:37.372Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:11.943Z",
-          "finishedAt": "2026-05-02T15:58:12.411Z"
+          "startedAt": "2026-05-02T16:55:37.372Z",
+          "finishedAt": "2026-05-02T16:55:38.168Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:12.411Z",
-          "finishedAt": "2026-05-02T15:58:12.996Z"
+          "startedAt": "2026-05-02T16:55:38.168Z",
+          "finishedAt": "2026-05-02T16:55:39.239Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:12.996Z",
-          "finishedAt": "2026-05-02T15:58:13.592Z"
+          "startedAt": "2026-05-02T16:55:39.239Z",
+          "finishedAt": "2026-05-02T16:55:40.311Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:13.592Z",
-          "finishedAt": "2026-05-02T15:58:14.460Z"
+          "startedAt": "2026-05-02T16:55:40.311Z",
+          "finishedAt": "2026-05-02T16:55:41.207Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:14.460Z",
-          "finishedAt": "2026-05-02T15:58:15.047Z"
+          "startedAt": "2026-05-02T16:55:41.207Z",
+          "finishedAt": "2026-05-02T16:55:42.219Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-02T15:58:01.371Z",
-      "finishedAt": "2026-05-02T15:58:15.047Z"
+      "startedAt": "2026-05-02T16:55:22.819Z",
+      "finishedAt": "2026-05-02T16:55:42.219Z"
     },
     {
       "device": "Android",
       "browser": "Chrome",
-      "status": "nicht bestanden",
+      "status": "bestanden mit Hinweis",
       "testedAt": "2026-05-02",
       "testedBy": "Codex",
       "notes": "mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün",
-      "findings": [
-        "Notfallkarte Druckansicht: persönliche Daten fehlen in der Druckansicht"
-      ],
+      "findings": [],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:15.193Z",
-          "finishedAt": "2026-05-02T15:58:16.222Z"
+          "startedAt": "2026-05-02T16:55:42.352Z",
+          "finishedAt": "2026-05-02T16:55:43.728Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:16.222Z",
-          "finishedAt": "2026-05-02T15:58:17.089Z"
+          "startedAt": "2026-05-02T16:55:43.728Z",
+          "finishedAt": "2026-05-02T16:55:44.622Z"
         },
         {
           "name": "Mobiles Menü öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:17.089Z",
-          "finishedAt": "2026-05-02T15:58:17.154Z"
+          "startedAt": "2026-05-02T16:55:44.622Z",
+          "finishedAt": "2026-05-02T16:55:44.684Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:17.154Z",
-          "finishedAt": "2026-05-02T15:58:17.156Z"
+          "startedAt": "2026-05-02T16:55:44.684Z",
+          "finishedAt": "2026-05-02T16:55:44.686Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:17.156Z",
-          "finishedAt": "2026-05-02T15:58:17.702Z"
+          "startedAt": "2026-05-02T16:55:44.686Z",
+          "finishedAt": "2026-05-02T16:55:45.547Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:17.702Z",
-          "finishedAt": "2026-05-02T15:58:18.264Z"
+          "startedAt": "2026-05-02T16:55:45.547Z",
+          "finishedAt": "2026-05-02T16:55:46.546Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:18.264Z",
-          "finishedAt": "2026-05-02T15:58:18.882Z"
+          "startedAt": "2026-05-02T16:55:46.546Z",
+          "finishedAt": "2026-05-02T16:55:47.521Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:18.882Z",
-          "finishedAt": "2026-05-02T15:58:21.666Z"
+          "startedAt": "2026-05-02T16:55:47.522Z",
+          "finishedAt": "2026-05-02T16:55:50.297Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
-          "status": "failed",
-          "startedAt": "2026-05-02T15:58:21.666Z",
-          "finishedAt": "2026-05-02T15:58:23.152Z",
-          "message": "persönliche Daten fehlen in der Druckansicht"
+          "status": "passed",
+          "startedAt": "2026-05-02T16:55:50.297Z",
+          "finishedAt": "2026-05-02T16:55:52.022Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:23.152Z",
-          "finishedAt": "2026-05-02T15:58:23.191Z"
+          "startedAt": "2026-05-02T16:55:52.022Z",
+          "finishedAt": "2026-05-02T16:55:52.089Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:23.191Z",
-          "finishedAt": "2026-05-02T15:58:24.275Z"
+          "startedAt": "2026-05-02T16:55:52.089Z",
+          "finishedAt": "2026-05-02T16:55:53.684Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:24.275Z",
-          "finishedAt": "2026-05-02T15:58:25.093Z"
+          "startedAt": "2026-05-02T16:55:53.684Z",
+          "finishedAt": "2026-05-02T16:55:54.525Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:25.093Z",
-          "finishedAt": "2026-05-02T15:58:25.546Z"
+          "startedAt": "2026-05-02T16:55:54.525Z",
+          "finishedAt": "2026-05-02T16:55:54.967Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:25.546Z",
-          "finishedAt": "2026-05-02T15:58:26.036Z"
+          "startedAt": "2026-05-02T16:55:54.967Z",
+          "finishedAt": "2026-05-02T16:55:55.621Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:26.036Z",
-          "finishedAt": "2026-05-02T15:58:26.861Z"
+          "startedAt": "2026-05-02T16:55:55.621Z",
+          "finishedAt": "2026-05-02T16:55:56.548Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:26.861Z",
-          "finishedAt": "2026-05-02T15:58:27.782Z"
+          "startedAt": "2026-05-02T16:55:56.549Z",
+          "finishedAt": "2026-05-02T16:55:57.523Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:27.782Z",
-          "finishedAt": "2026-05-02T15:58:28.886Z"
+          "startedAt": "2026-05-02T16:55:57.523Z",
+          "finishedAt": "2026-05-02T16:55:58.470Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:28.886Z",
-          "finishedAt": "2026-05-02T15:58:29.795Z"
+          "startedAt": "2026-05-02T16:55:58.470Z",
+          "finishedAt": "2026-05-02T16:55:59.364Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-02T15:58:15.058Z",
-      "finishedAt": "2026-05-02T15:58:29.795Z"
+      "startedAt": "2026-05-02T16:55:42.228Z",
+      "finishedAt": "2026-05-02T16:55:59.364Z"
     },
     {
       "device": "Desktop",
       "browser": "Chrome",
-      "status": "nicht bestanden",
+      "status": "bestanden",
       "testedAt": "2026-05-02",
       "testedBy": "Codex",
       "notes": "Playwright-Lauf gegen Production mit System-Chrome/Chromium",
-      "findings": [
-        "Notfallkarte Druckansicht: persönliche Daten fehlen in der Druckansicht"
-      ],
+      "findings": [],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:29.939Z",
-          "finishedAt": "2026-05-02T15:58:31.602Z"
+          "startedAt": "2026-05-02T16:55:59.508Z",
+          "finishedAt": "2026-05-02T16:56:00.778Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:31.602Z",
-          "finishedAt": "2026-05-02T15:58:32.489Z"
+          "startedAt": "2026-05-02T16:56:00.778Z",
+          "finishedAt": "2026-05-02T16:56:01.651Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:32.489Z",
-          "finishedAt": "2026-05-02T15:58:32.492Z"
+          "startedAt": "2026-05-02T16:56:01.651Z",
+          "finishedAt": "2026-05-02T16:56:01.652Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:32.492Z",
-          "finishedAt": "2026-05-02T15:58:33.048Z"
+          "startedAt": "2026-05-02T16:56:01.652Z",
+          "finishedAt": "2026-05-02T16:56:02.427Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:33.048Z",
-          "finishedAt": "2026-05-02T15:58:33.625Z"
+          "startedAt": "2026-05-02T16:56:02.428Z",
+          "finishedAt": "2026-05-02T16:56:03.236Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:33.625Z",
-          "finishedAt": "2026-05-02T15:58:34.237Z"
+          "startedAt": "2026-05-02T16:56:03.236Z",
+          "finishedAt": "2026-05-02T16:56:04.604Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:34.237Z",
-          "finishedAt": "2026-05-02T15:58:37.000Z"
+          "startedAt": "2026-05-02T16:56:04.604Z",
+          "finishedAt": "2026-05-02T16:56:07.400Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
-          "status": "failed",
-          "startedAt": "2026-05-02T15:58:37.000Z",
-          "finishedAt": "2026-05-02T15:58:38.514Z",
-          "message": "persönliche Daten fehlen in der Druckansicht"
+          "status": "passed",
+          "startedAt": "2026-05-02T16:56:07.400Z",
+          "finishedAt": "2026-05-02T16:56:09.231Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:38.514Z",
-          "finishedAt": "2026-05-02T15:58:38.559Z"
+          "startedAt": "2026-05-02T16:56:09.231Z",
+          "finishedAt": "2026-05-02T16:56:09.282Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:38.559Z",
-          "finishedAt": "2026-05-02T15:58:39.557Z"
+          "startedAt": "2026-05-02T16:56:09.282Z",
+          "finishedAt": "2026-05-02T16:56:10.723Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:39.557Z",
-          "finishedAt": "2026-05-02T15:58:40.382Z"
+          "startedAt": "2026-05-02T16:56:10.723Z",
+          "finishedAt": "2026-05-02T16:56:11.070Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:40.382Z",
-          "finishedAt": "2026-05-02T15:58:41.617Z"
+          "startedAt": "2026-05-02T16:56:11.070Z",
+          "finishedAt": "2026-05-02T16:56:11.427Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:41.617Z",
-          "finishedAt": "2026-05-02T15:58:42.201Z"
+          "startedAt": "2026-05-02T16:56:11.427Z",
+          "finishedAt": "2026-05-02T16:56:12.154Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:42.201Z",
-          "finishedAt": "2026-05-02T15:58:42.788Z"
+          "startedAt": "2026-05-02T16:56:12.154Z",
+          "finishedAt": "2026-05-02T16:56:13.234Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:42.788Z",
-          "finishedAt": "2026-05-02T15:58:43.392Z"
+          "startedAt": "2026-05-02T16:56:13.234Z",
+          "finishedAt": "2026-05-02T16:56:14.315Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:43.392Z",
-          "finishedAt": "2026-05-02T15:58:43.979Z"
+          "startedAt": "2026-05-02T16:56:14.315Z",
+          "finishedAt": "2026-05-02T16:56:15.215Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-02T15:58:43.979Z",
-          "finishedAt": "2026-05-02T15:58:44.559Z"
+          "startedAt": "2026-05-02T16:56:15.215Z",
+          "finishedAt": "2026-05-02T16:56:16.023Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-02T15:58:29.807Z",
-      "finishedAt": "2026-05-02T15:58:44.559Z"
+      "startedAt": "2026-05-02T16:55:59.372Z",
+      "finishedAt": "2026-05-02T16:56:16.023Z"
     },
     {
       "device": "Desktop",

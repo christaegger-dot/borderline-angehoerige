@@ -1,11 +1,22 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import {
+  startTransition,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import AppLink from "@/components/AppLink";
 import "./search.css";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { searchableContent, type SearchEntry } from "@/content/searchIndex";
+import {
+  loadNormalizedSearchIndex,
+  type NormalizedSearchEntry,
+} from "@/content/searchIndexLoader";
+import type { SearchEntry } from "@/content/searchIndex";
 
 // Suchbare Inhalte der Website
 interface SearchProps {
@@ -28,30 +39,51 @@ export default function Search({ isOpen, onClose }: SearchProps) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchEntry[]>([]);
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [searchIndex, setSearchIndex] = useState<
+    NormalizedSearchEntry[] | null
+  >(null);
+  const [searchIndexState, setSearchIndexState] = useState<
+    "idle" | "loading" | "ready" | "error"
+  >("idle");
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const dialogRef = useFocusTrap(isOpen);
   const focusTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const debounceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const normalizedSearchIndex = useMemo(
-    () =>
-      searchableContent.map(item => ({
-        item,
-        searchText: [
-          item.title,
-          item.description,
-          ...item.keywords,
-          item.section,
-        ]
-          .join(" ")
-          .toLowerCase(),
-      })),
-    []
+  const deferredQuery = useDeferredValue(query);
+  const normalizedQuery = useMemo(
+    () => normalizeSearchQuery(deferredQuery),
+    [deferredQuery]
   );
-  const normalizedQuery = useMemo(() => normalizeSearchQuery(query), [query]);
-  const searchTerms = useMemo(() => getSearchTerms(query), [query]);
+  const searchTerms = useMemo(
+    () => getSearchTerms(deferredQuery),
+    [deferredQuery]
+  );
   const hasSearchTerms = searchTerms.length > 0;
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    let cancelled = false;
+    setSearchIndexState(current => (current === "ready" ? current : "loading"));
+
+    void loadNormalizedSearchIndex()
+      .then(loadedIndex => {
+        if (cancelled) return;
+
+        setSearchIndex(loadedIndex);
+        setSearchIndexState("ready");
+      })
+      .catch(() => {
+        if (cancelled) return;
+
+        setSearchIndexState("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isOpen]);
 
   // Focus input when opened
   useEffect(() => {
@@ -92,14 +124,14 @@ export default function Search({ isOpen, onClose }: SearchProps) {
       debounceTimeoutRef.current = null;
     }
 
-    if (!hasSearchTerms) {
+    if (!hasSearchTerms || !searchIndex) {
       setResults([]);
       setActiveIndex(-1);
       return;
     }
 
     debounceTimeoutRef.current = setTimeout(() => {
-      const matches = normalizedSearchIndex
+      const matches = searchIndex
         .filter(({ searchText }) =>
           searchTerms.every(term => searchText.includes(term))
         )
@@ -123,8 +155,10 @@ export default function Search({ isOpen, onClose }: SearchProps) {
         return 0;
       });
 
-      setResults(matches.slice(0, 8));
-      setActiveIndex(-1);
+      startTransition(() => {
+        setResults(matches.slice(0, 8));
+        setActiveIndex(-1);
+      });
     }, 150);
 
     return () => {
@@ -133,7 +167,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
         debounceTimeoutRef.current = null;
       }
     };
-  }, [hasSearchTerms, normalizedQuery, normalizedSearchIndex, searchTerms]);
+  }, [hasSearchTerms, normalizedQuery, searchIndex, searchTerms]);
 
   const handleResultClick = () => {
     setQuery("");
@@ -266,6 +300,21 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                         </button>
                       ))}
                     </div>
+                  </div>
+                ) : searchIndexState === "loading" ? (
+                  <div className="px-4 py-8 text-center">
+                    <p className="text-muted-foreground">
+                      Suchindex wird geladen…
+                    </p>
+                  </div>
+                ) : searchIndexState === "error" ? (
+                  <div className="px-4 py-8 text-center">
+                    <p className="text-muted-foreground">
+                      Die Suche konnte gerade nicht geladen werden.
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Bitte versuchen Sie es in einem Moment erneut.
+                    </p>
                   </div>
                 ) : results.length === 0 ? (
                   <div className="px-4 py-8 text-center">

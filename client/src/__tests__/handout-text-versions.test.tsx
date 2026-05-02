@@ -1,12 +1,15 @@
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
 import { getHandoutAssetBySource } from "@/content/handouts";
 import {
+  getHandoutTextVersion,
   getHandoutTextVersionBySource,
   getHandoutTextVersionHrefBySource,
   getHandoutTextVersionMeta,
   handoutTextVersionMetas,
+  loadHandoutTextVersion,
+  resetHandoutTextVersionCacheForTests,
 } from "@/content/handoutTextVersions";
 import { kommItems } from "@/content/kommunizieren";
 import { materials } from "@/content/materialien";
@@ -72,6 +75,10 @@ const expectedTextVersionHrefs = expectedTextVersionIds.map(
 );
 
 describe("handout text versions", () => {
+  beforeEach(() => {
+    resetHandoutTextVersionCacheForTests();
+  });
+
   it("covers every pdf-backed handout with a text version", () => {
     const actualIds = handoutTextVersionMetas
       .map(version => version.id)
@@ -159,5 +166,25 @@ describe("handout text versions", () => {
       .filter(asset => asset?.sourceKind === "remote");
 
     expect(remoteAssets).toEqual([]);
+  });
+
+  it("loads every full text version from a topic chunk", async () => {
+    for (const meta of handoutTextVersionMetas) {
+      const version = await loadHandoutTextVersion(meta.id);
+
+      expect(version?.id).toBe(meta.id);
+      expect(version?.path).toBe(meta.path);
+      expect(version?.sections.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("caches sibling text versions after their topic chunk is loaded", async () => {
+    expect(getHandoutTextVersion("grenzen-spickzettel")).toBeNull();
+
+    await loadHandoutTextVersion("dear");
+
+    expect(getHandoutTextVersion("grenzen-spickzettel")?.id).toBe(
+      "grenzen-spickzettel"
+    );
   });
 });

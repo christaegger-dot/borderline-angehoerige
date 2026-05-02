@@ -4,27 +4,55 @@ import {
   getHandoutTextVersionMeta,
   handoutTextVersionMetas,
 } from "./handoutTextMetas";
-import type { HandoutTextVersion } from "./handoutTextVersionTypes";
+import type {
+  HandoutTextVersion,
+  HandoutTextVersionMeta,
+} from "./handoutTextVersionTypes";
 
 type HandoutTextVersionContentModule = {
-  getFullHandoutTextVersion: (
-    id: string | undefined
-  ) => HandoutTextVersion | null;
+  handoutTextVersions: HandoutTextVersion[];
 };
 
-const lazyContentModules = import.meta.glob("./handoutTextVersionContent.ts");
+type HandoutTextVersionCategory = HandoutTextVersionMeta["category"];
+
+const lazyContentModules = import.meta.glob(
+  "./handoutTextVersionContent/*.content.ts"
+);
 
 const loadedHandoutTextVersionsById = new Map<string, HandoutTextVersion>();
+const loadedContentModulesByCategory = new Map<
+  HandoutTextVersionCategory,
+  Promise<HandoutTextVersionContentModule | null>
+>();
 
 export { getHandoutTextVersionMeta, handoutTextVersionMetas };
 
-async function loadContentModule() {
-  const loader = lazyContentModules["./handoutTextVersionContent.ts"];
-  if (!loader) {
-    return null;
+function cacheContentModule(contentModule: HandoutTextVersionContentModule) {
+  for (const version of contentModule.handoutTextVersions) {
+    loadedHandoutTextVersionsById.set(version.id, version);
+  }
+}
+
+async function loadContentModule(category: HandoutTextVersionCategory) {
+  const cachedLoader = loadedContentModulesByCategory.get(category);
+  if (cachedLoader) {
+    return cachedLoader;
   }
 
-  return (await loader()) as HandoutTextVersionContentModule;
+  const loader =
+    lazyContentModules[`./handoutTextVersionContent/${category}.content.ts`];
+  const promise = !loader
+    ? Promise.resolve(null)
+    : loader().then(module => module as HandoutTextVersionContentModule);
+
+  loadedContentModulesByCategory.set(category, promise);
+
+  const contentModule = await promise;
+  if (contentModule) {
+    cacheContentModule(contentModule);
+  }
+
+  return contentModule;
 }
 
 export function getHandoutTextVersion(id: string | undefined) {
@@ -45,13 +73,14 @@ export async function loadHandoutTextVersion(id: string | undefined) {
     return null;
   }
 
-  const contentModule = await loadContentModule();
-  const version = contentModule?.getFullHandoutTextVersion(id) ?? null;
-  if (version) {
-    loadedHandoutTextVersionsById.set(id, version);
+  const handoutMeta = getHandoutTextVersionMeta(id);
+  if (!handoutMeta) {
+    return null;
   }
 
-  return version;
+  await loadContentModule(handoutMeta.category);
+
+  return getHandoutTextVersion(id);
 }
 
 export function getHandoutTextVersionBySource(sourceUrl: string | undefined) {
@@ -62,4 +91,9 @@ export function getHandoutTextVersionHrefBySource(
   sourceUrl: string | undefined
 ) {
   return getHandoutTextMetaHrefBySource(sourceUrl);
+}
+
+export function resetHandoutTextVersionCacheForTests() {
+  loadedHandoutTextVersionsById.clear();
+  loadedContentModulesByCategory.clear();
 }

@@ -292,7 +292,7 @@ export function TableOfContents() {
       {floatingMode === "content" && showFloatingButton && (
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="min-[1800px]:hidden fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 items-center gap-2 rounded-full border border-border/70 bg-background/95 px-4 text-sm font-medium text-foreground shadow-[0_18px_40px_-34px_rgba(15,23,42,0.55)] backdrop-blur-sm"
+          className="min-[1800px]:hidden fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 items-center gap-2 rounded-full border border-border/70 bg-background px-4 text-sm font-medium text-foreground shadow-[0_14px_32px_-30px_rgba(15,23,42,0.42)]"
           aria-label="Inhaltsverzeichnis öffnen"
         >
           <List className="w-4 h-4" />
@@ -321,7 +321,7 @@ export function TableOfContents() {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="min-[1800px]:hidden fixed bottom-0 left-0 right-0 z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-t-[1.75rem] border-t border-border/60 bg-background shadow-[0_-24px_48px_-36px_rgba(15,23,42,0.45)] pb-[env(safe-area-inset-bottom,0px)]"
+            className="min-[1800px]:hidden fixed bottom-0 left-0 right-0 z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-t-[1.75rem] border-t border-border/60 bg-background shadow-[0_-18px_38px_-32px_rgba(15,23,42,0.32)] pb-[env(safe-area-inset-bottom,0px)]"
           >
             {/* Drawer Handle */}
             <div className="flex justify-center pt-3 pb-1">
@@ -373,7 +373,7 @@ export function TableOfContents() {
       {/* ─── Desktop: Sticky Sidebar in der linken Gutter-Zone ─── */}
       {/* left = 50vw - halbe Content-Breite (304px) - Abstand (2rem) - Sidebar-Breite (15rem) */}
       <div className="hidden min-[1800px]:block fixed left-[calc(50vw-304px-17rem)] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc(100vh-9.5rem)] w-60">
-        <div className="flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/92 shadow-[0_28px_52px_-40px_rgba(15,23,42,0.28)] backdrop-blur-md">
+        <div className="flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/96 shadow-[0_22px_42px_-36px_rgba(15,23,42,0.22)] backdrop-blur-sm">
           <div className="border-b border-border/60 px-4 pt-4 pb-3">
             <span
               className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]"

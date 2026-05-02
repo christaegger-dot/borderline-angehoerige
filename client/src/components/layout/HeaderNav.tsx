@@ -59,7 +59,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/55 bg-background/94 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/55 bg-background/96 backdrop-blur-sm">
       <div className="container">
         <div className="flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3">
           <AppLink href="/" className="flex items-center gap-3 group shrink-0">

@@ -107,18 +107,18 @@ Dabei prüfen:
 ## Browser-Matrix
 
 - Release / PR: main
-- Commit / Deploy-Stand: 03acade
+- Commit / Deploy-Stand: 3225022
 - Datum: 2026-05-02
 - Basis-URL: https://borderline-angehoerige.netlify.app
 
-| Gerät          | Browser | Status                | Notizen                                                                                                                 |
-| -------------- | ------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| iPhone         | Safari  | offen                 | offen – kein echter iOS/WebKit-Lauf auf diesem Rechner ohne zusätzliche Browser-Binaries oder Hardware                  |
-| iPhone         | Chrome  | bestanden mit Hinweis | mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün                   |
-| Android        | Chrome  | bestanden mit Hinweis | mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün                                              |
-| Desktop        | Chrome  | bestanden             | Playwright-Lauf gegen Production mit System-Chrome/Chromium                                                             |
-| Desktop        | Firefox | offen                 | offen – Firefox ist auf diesem Rechner nicht installiert; Installation wurde in diesem Lauf bewusst nicht vorausgesetzt |
-| optional macOS | Safari  | optional              | optional – in diesem Lauf nicht automatisiert abgedeckt                                                                 |
+| Gerät          | Browser | Status                | Notizen                                                                                               |
+| -------------- | ------- | --------------------- | ----------------------------------------------------------------------------------------------------- |
+| iPhone         | Safari  | bestanden mit Hinweis | Playwright WebKit mit iPhone-13-Emulation; starke WebKit-Abdeckung, aber kein physisches iOS-Gerät    |
+| optional macOS | Safari  | bestanden mit Hinweis | Playwright WebKit-Desktoplauf als Safari-Näherung; optionaler Zusatzcheck                             |
+| iPhone         | Chrome  | bestanden mit Hinweis | mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün |
+| Android        | Chrome  | bestanden mit Hinweis | mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün                            |
+| Desktop        | Chrome  | bestanden             | Playwright-Lauf gegen Production mit System-Chrome/Chromium                                           |
+| Desktop        | Firefox | bestanden             | Playwright-Firefox-Lauf gegen Production                                                              |
 
 ### Kritische Befunde
 
@@ -127,12 +127,12 @@ Dabei prüfen:
 ### Freigabeentscheidung
 
 - [ ] Matrix vollständig grün
-- [ ] grün mit dokumentierten Resthinweisen
-- [x] nicht freigabefähig
+- [x] grün mit dokumentierten Resthinweisen
+- [ ] nicht freigabefähig
 
 ### Methodik
 
-- Desktop Chrome wurde automatisiert über Playwright gegen Production geprüft.
-- iPhone Chrome und Android Chrome wurden als mobile Chrome-Profile in Chromium emuliert; ohne den gemeinsamen Druck-Befund wären sie als `bestanden mit Hinweis` einzuordnen.
-- iPhone Safari und Desktop Firefox bleiben offen, weil auf diesem Rechner weder ein echter iOS/WebKit-Lauf noch Firefox-Automation ohne zusätzliche Softwareinstallation verfügbar war.
-- Optionales macOS Safari wurde in diesem Lauf nicht automatisiert erfasst und bleibt separat optional.
+- Desktop Chrome und Desktop Firefox wurden automatisiert über Playwright gegen Production geprüft, sofern die jeweiligen Browser-Binaries auf diesem Rechner verfügbar waren.
+- iPhone Safari wurde als Playwright-WebKit-Profil mit iPhone-13-Emulation geprüft; das ist eine starke WebKit-Abdeckung, aber kein physischer iOS-Hardwarelauf.
+- iPhone Chrome und Android Chrome wurden als mobile Chrome-Profile in Chromium emuliert und als technische Cross-Checks mitgeführt.
+- Optionales macOS Safari wird als zusätzlicher WebKit-Desktoplauf geführt, wenn WebKit lokal verfügbar ist; es bleibt ein Zusatzcheck außerhalb der Pflichtmatrix.

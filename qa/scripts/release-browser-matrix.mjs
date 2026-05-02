@@ -1,13 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { devices } from "playwright";
-import {
-  BASE_URL,
-  launchBrowser,
-  qaPath,
-  routeUrl,
-  writeJson,
-} from "./a11y-shared.mjs";
+import { chromium, devices, firefox, webkit } from "playwright";
+import { BASE_URL, qaPath, routeUrl, writeJson } from "./a11y-shared.mjs";
 
 const TODAY = "2026-05-02";
 const REPORT_NAME = "release-browser-matrix.json";
@@ -36,7 +30,34 @@ function chromeContextOptions() {
   };
 }
 
+function desktopFirefoxContextOptions() {
+  return {
+    viewport: { width: 1440, height: 960 },
+    locale: "de-CH",
+    ignoreHTTPSErrors: true,
+    acceptDownloads: true,
+  };
+}
+
+function desktopSafariContextOptions() {
+  return {
+    viewport: { width: 1440, height: 960 },
+    locale: "de-CH",
+    ignoreHTTPSErrors: true,
+    acceptDownloads: true,
+  };
+}
+
 function iPhoneChromeEmulation() {
+  return {
+    ...devices["iPhone 13"],
+    locale: "de-CH",
+    acceptDownloads: true,
+    ignoreHTTPSErrors: true,
+  };
+}
+
+function iPhoneSafariEmulation() {
   return {
     ...devices["iPhone 13"],
     locale: "de-CH",
@@ -52,6 +73,27 @@ function androidChromeEmulation() {
     acceptDownloads: true,
     ignoreHTTPSErrors: true,
   };
+}
+
+async function launchBrowserForEngine(engine) {
+  if (engine === "chromium") {
+    return chromium.launch({
+      headless: true,
+      executablePath:
+        process.env.PLAYWRIGHT_EXECUTABLE_PATH ??
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    });
+  }
+
+  if (engine === "firefox") {
+    return firefox.launch({ headless: true });
+  }
+
+  if (engine === "webkit") {
+    return webkit.launch({ headless: true });
+  }
+
+  throw new Error(`Unbekannte Browser-Engine: ${engine}`);
 }
 
 async function openPage(browser, contextOptions) {
@@ -284,12 +326,30 @@ async function runFlow(page, profile) {
     }
 
     const inlinePage = await page.context().newPage();
-    await inlinePage.goto(new URL(inlineHref, BASE_URL).toString(), {
-      waitUntil: "domcontentloaded",
-    });
-    if (!inlinePage.url().includes("/api/material-download/")) {
-      throw new Error(`unerwartete Inline-PDF-URL: ${inlinePage.url()}`);
+    const inlineUrl = new URL(inlineHref, BASE_URL).toString();
+
+    try {
+      await inlinePage.goto(inlineUrl, {
+        waitUntil: "domcontentloaded",
+      });
+      if (!inlinePage.url().includes("/api/material-download/")) {
+        throw new Error(`unerwartete Inline-PDF-URL: ${inlinePage.url()}`);
+      }
+    } catch (error) {
+      const message = normalizeError(error);
+      if (!message.includes("Download is starting")) {
+        throw error;
+      }
     }
+
+    const response = await fetch(inlineUrl, { redirect: "follow" });
+    const contentType = response.headers.get("content-type") ?? "";
+    if (!response.ok || !contentType.includes("application/pdf")) {
+      throw new Error(
+        `Inline-PDF-Response unerwartet: ${response.status} ${contentType}`
+      );
+    }
+
     await inlinePage.close();
   });
 
@@ -327,6 +387,7 @@ function unavailableProfile({ device, browser, optional = false, notes }) {
   return {
     device,
     browser,
+    optional,
     status: optional ? "optional" : "offen",
     testedAt: TODAY,
     testedBy: "Codex",
@@ -349,6 +410,7 @@ async function runProfile(browser, profile) {
     return {
       device: profile.device,
       browser: profile.browser,
+      optional: Boolean(profile.optional),
       status: hasFailures ? "nicht bestanden" : profile.passStatus,
       testedAt: TODAY,
       testedBy: "Codex",
@@ -362,6 +424,35 @@ async function runProfile(browser, profile) {
   } finally {
     console.error(`[browser-matrix] finish profile ${profile.slug}`);
     await context.close();
+  }
+}
+
+async function runProfileBatch({ engine, profiles, unavailableNotes }) {
+  let browser;
+
+  try {
+    browser = await launchBrowserForEngine(engine);
+  } catch (error) {
+    return profiles.map(profile =>
+      unavailableProfile({
+        device: profile.device,
+        browser: profile.browser,
+        optional: profile.optional,
+        notes: unavailableNotes(profile, error),
+      })
+    );
+  }
+
+  try {
+    const results = [];
+
+    for (const profile of profiles) {
+      results.push(await runProfile(browser, profile));
+    }
+
+    return results;
+  } finally {
+    await browser.close();
   }
 }
 
@@ -417,16 +508,16 @@ function markdownReport(report) {
 
   lines.push("", "### Methodik", "");
   lines.push(
-    "- Desktop Chrome wurde automatisiert über Playwright gegen Production geprüft."
+    "- Desktop Chrome und Desktop Firefox wurden automatisiert über Playwright gegen Production geprüft, sofern die jeweiligen Browser-Binaries auf diesem Rechner verfügbar waren."
   );
   lines.push(
-    "- iPhone Chrome und Android Chrome wurden als mobile Chrome-Profile in Chromium emuliert; ohne den gemeinsamen Druck-Befund wären sie als `bestanden mit Hinweis` einzuordnen."
+    "- iPhone Safari wurde als Playwright-WebKit-Profil mit iPhone-13-Emulation geprüft; das ist eine starke WebKit-Abdeckung, aber kein physischer iOS-Hardwarelauf."
   );
   lines.push(
-    "- iPhone Safari und Desktop Firefox bleiben offen, weil auf diesem Rechner weder ein echter iOS/WebKit-Lauf noch Firefox-Automation ohne zusätzliche Softwareinstallation verfügbar war."
+    "- iPhone Chrome und Android Chrome wurden als mobile Chrome-Profile in Chromium emuliert und als technische Cross-Checks mitgeführt."
   );
   lines.push(
-    "- Optionales macOS Safari wurde in diesem Lauf nicht automatisiert erfasst und bleibt separat optional."
+    "- Optionales macOS Safari wird als zusätzlicher WebKit-Desktoplauf geführt, wenn WebKit lokal verfügbar ist; es bleibt ein Zusatzcheck außerhalb der Pflichtmatrix."
   );
 
   return `${lines.join("\n")}\n`;
@@ -450,115 +541,136 @@ async function gitHead() {
 
 async function main() {
   const write = process.argv.includes("--write");
-  const browser = await launchBrowser();
+  const profiles = [];
 
-  try {
-    const profiles = [];
+  profiles.push(
+    ...(await runProfileBatch({
+      engine: "webkit",
+      profiles: [
+        {
+          slug: "iphone-safari",
+          device: "iPhone",
+          browser: "Safari",
+          kind: "mobile",
+          contextOptions: iPhoneSafariEmulation(),
+          passStatus: "bestanden mit Hinweis",
+          notes:
+            "Playwright WebKit mit iPhone-13-Emulation; starke WebKit-Abdeckung, aber kein physisches iOS-Gerät",
+        },
+        {
+          slug: "desktop-safari",
+          device: "optional macOS",
+          browser: "Safari",
+          kind: "desktop",
+          optional: true,
+          contextOptions: desktopSafariContextOptions(),
+          passStatus: "bestanden mit Hinweis",
+          notes:
+            "Playwright WebKit-Desktoplauf als Safari-Näherung; optionaler Zusatzcheck",
+        },
+      ],
+      unavailableNotes: (profile, error) =>
+        profile.optional
+          ? `optional – WebKit nicht verfügbar: ${normalizeError(error)}`
+          : `offen – WebKit nicht verfügbar: ${normalizeError(error)}`,
+    }))
+  );
 
-    profiles.push(
-      unavailableProfile({
-        device: "iPhone",
-        browser: "Safari",
-        notes:
-          "offen – kein echter iOS/WebKit-Lauf auf diesem Rechner ohne zusätzliche Browser-Binaries oder Hardware",
-      })
+  profiles.push(
+    ...(await runProfileBatch({
+      engine: "chromium",
+      profiles: [
+        {
+          slug: "iphone-chrome",
+          device: "iPhone",
+          browser: "Chrome",
+          kind: "mobile",
+          contextOptions: iPhoneChromeEmulation(),
+          passStatus: "bestanden mit Hinweis",
+          notes:
+            "mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün",
+        },
+        {
+          slug: "android-chrome",
+          device: "Android",
+          browser: "Chrome",
+          kind: "mobile",
+          contextOptions: androidChromeEmulation(),
+          passStatus: "bestanden mit Hinweis",
+          notes:
+            "mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün",
+        },
+        {
+          slug: "desktop-chrome",
+          device: "Desktop",
+          browser: "Chrome",
+          kind: "desktop",
+          contextOptions: chromeContextOptions(),
+          passStatus: "bestanden",
+          notes: "Playwright-Lauf gegen Production mit System-Chrome/Chromium",
+        },
+      ],
+      unavailableNotes: (_profile, error) =>
+        `offen – Chromium/Chrome nicht verfügbar: ${normalizeError(error)}`,
+    }))
+  );
+
+  profiles.push(
+    ...(await runProfileBatch({
+      engine: "firefox",
+      profiles: [
+        {
+          slug: "desktop-firefox",
+          device: "Desktop",
+          browser: "Firefox",
+          kind: "desktop",
+          contextOptions: desktopFirefoxContextOptions(),
+          passStatus: "bestanden",
+          notes: "Playwright-Firefox-Lauf gegen Production",
+        },
+      ],
+      unavailableNotes: (_profile, error) =>
+        `offen – Firefox nicht verfügbar: ${normalizeError(error)}`,
+    }))
+  );
+
+  const hasHardFailure = profiles.some(
+    profile => profile.status === "nicht bestanden" && !profile.optional
+  );
+  const hasMandatoryOpen =
+    profiles.some(profile => !profile.optional && profile.status === "offen") ||
+    profiles.some(
+      profile =>
+        profile.device === "iPhone" &&
+        profile.browser === "Safari" &&
+        profile.status === "offen"
     );
 
-    for (const profile of [
-      {
-        slug: "iphone-chrome",
-        device: "iPhone",
-        browser: "Chrome",
-        kind: "mobile",
-        contextOptions: iPhoneChromeEmulation(),
-        passStatus: "bestanden mit Hinweis",
-        notes:
-          "mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün",
-      },
-      {
-        slug: "android-chrome",
-        device: "Android",
-        browser: "Chrome",
-        kind: "mobile",
-        contextOptions: androidChromeEmulation(),
-        passStatus: "bestanden mit Hinweis",
-        notes:
-          "mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün",
-      },
-      {
-        slug: "desktop-chrome",
-        device: "Desktop",
-        browser: "Chrome",
-        kind: "desktop",
-        contextOptions: chromeContextOptions(),
-        passStatus: "bestanden",
-        notes: "Playwright-Lauf gegen Production mit System-Chrome/Chromium",
-      },
-    ]) {
-      profiles.push(await runProfile(browser, profile));
-    }
+  const report = {
+    label: runLabel(),
+    createdAt: nowIso(),
+    baseUrl: BASE_URL,
+    gitHead: await gitHead(),
+    profiles,
+    releaseDecision:
+      hasHardFailure || hasMandatoryOpen ? "blocked" : "green-with-notes",
+  };
 
-    profiles.push(
-      unavailableProfile({
-        device: "Desktop",
-        browser: "Firefox",
-        notes:
-          "offen – Firefox ist auf diesem Rechner nicht installiert; Installation wurde in diesem Lauf bewusst nicht vorausgesetzt",
-      })
-    );
+  const markdown = markdownReport(report);
 
-    profiles.push(
-      unavailableProfile({
-        device: "optional macOS",
-        browser: "Safari",
-        optional: true,
-        notes: "optional – in diesem Lauf nicht automatisiert abgedeckt",
-      })
-    );
+  if (write) {
+    await writeJson(REPORT_NAME, report);
 
-    const hasHardFailure = profiles.some(
-      profile => profile.status === "nicht bestanden"
-    );
-    const hasMandatoryOpen =
-      profiles.some(
-        profile =>
-          !profile.browser.startsWith("Safari") && profile.status === "offen"
-      ) ||
-      profiles.some(
-        profile =>
-          profile.device === "iPhone" &&
-          profile.browser === "Safari" &&
-          profile.status === "offen"
-      );
-
-    const report = {
-      label: runLabel(),
-      createdAt: nowIso(),
-      baseUrl: BASE_URL,
-      gitHead: await gitHead(),
-      profiles,
-      releaseDecision:
-        hasHardFailure || hasMandatoryOpen ? "blocked" : "green-with-notes",
-    };
-
-    const markdown = markdownReport(report);
-
-    if (write) {
-      await writeJson(REPORT_NAME, report);
-
-      const matrixPath = path.resolve(qaPath("release-browser-matrix.md"));
-      const original = await fs.readFile(matrixPath, "utf8");
-      const marker = "\n## Letzter Lauf\n";
-      const nextContent = original.includes(marker)
-        ? `${original.split(marker)[0]}${marker}\n${markdown}`
-        : `${original.trimEnd()}\n\n## Letzter Lauf\n\n${markdown}`;
-      await fs.writeFile(matrixPath, `${nextContent.trimEnd()}\n`);
-    }
-
-    process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
-  } finally {
-    await browser.close();
+    const matrixPath = path.resolve(qaPath("release-browser-matrix.md"));
+    const original = await fs.readFile(matrixPath, "utf8");
+    const marker = "\n## Letzter Lauf\n";
+    const nextContent = original.includes(marker)
+      ? `${original.split(marker)[0]}${marker}\n${markdown}`
+      : `${original.trimEnd()}\n\n## Letzter Lauf\n\n${markdown}`;
+    await fs.writeFile(matrixPath, `${nextContent.trimEnd()}\n`);
   }
+
+  process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
 }
 
 await main();

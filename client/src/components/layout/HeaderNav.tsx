@@ -61,8 +61,11 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-border/55 bg-background/96 backdrop-blur-sm">
       <div className="container">
-        <div className="flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3">
-          <AppLink href="/" className="flex items-center gap-3 group shrink-0">
+        <div className="flex min-h-14 items-center justify-between gap-2 py-1.5 md:min-h-20 md:gap-4 md:py-3">
+          <AppLink
+            href="/"
+            className="flex items-center gap-2.5 group shrink-0"
+          >
             <BrandMark
               className="md:h-11 md:w-11"
               iconClassName="md:h-[22px] md:w-[22px]"
@@ -107,7 +110,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             />
           </nav>
 
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-1.5 shrink-0 sm:gap-2">
             <button
               type="button"
               onClick={onSearchOpen}
@@ -121,10 +124,10 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <button
               type="button"
               onClick={onSearchOpen}
-              className="sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/60 bg-white/78 text-muted-foreground transition-all hover:text-foreground hover:bg-muted"
+              className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/78 text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
               aria-label="Suche öffnen"
             >
-              <SearchIcon className="w-5 h-5" />
+              <SearchIcon className="h-[18px] w-[18px]" />
             </button>
 
             <Button
@@ -145,16 +148,16 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <AppLink
               href="/soforthilfe"
               aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-              className="sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full bg-alert text-white shadow-[0_8px_16px_-8px_rgba(197,95,61,0.6)]"
+              className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-alert text-white shadow-[0_8px_16px_-10px_rgba(197,95,61,0.58)]"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="h-[18px] w-[18px]" />
             </AppLink>
 
             <button
               ref={menuButtonRef}
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/60 bg-white/78 transition-colors ${
+              className={`lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/78 transition-colors ${
                 mobileMenuOpen ? currentAccent.surfaceActive : "hover:bg-muted"
               }`}
               aria-controls="mobile-navigation-dialog"
@@ -162,9 +165,9 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               aria-label={mobileMenuOpen ? "Menü schliessen" : "Menü öffnen"}
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="h-5 w-5" />
               )}
             </button>
           </div>

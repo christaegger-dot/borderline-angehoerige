@@ -99,7 +99,7 @@ function requireMaterial(id: string) {
   if (unterstuetzenMaterial) {
     return {
       title: unterstuetzenMaterial.title,
-      description: unterstuetzenMaterial.title,
+      description: unterstuetzenMaterial.description,
       category: "unterstuetzen" as const,
       kind: "Infografik" as const,
       previewImageUrl: unterstuetzenMaterial.url,

@@ -101,6 +101,15 @@ describe("handout text versions", () => {
     expect(searchHrefs).toEqual(expectedTextVersionHrefs);
   });
 
+  it("keeps dedicated descriptions for unterstuetzen text versions", () => {
+    for (const item of unterstuetzenItems) {
+      const meta = getHandoutTextVersionMeta(item.id);
+
+      expect(meta?.description).toBe(item.description);
+      expect(meta?.description).not.toBe(item.title);
+    }
+  });
+
   it("keeps the html notfallkarte outside the text-version route set", () => {
     const notfallkarte = materials.find(
       item => item.id === "notfallkarte-zuerich"

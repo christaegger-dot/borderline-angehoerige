@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { INFO } from "@/data/kontakte";
+import { pageGovernance } from "@/data/pageGovernance";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,6 +12,15 @@ const repoRoot = path.resolve(__dirname, "../../..");
 const KIZ = INFO.find(kontakt => kontakt.id === "INFO_KIZ");
 const FACHSTELLE = INFO.find(kontakt => kontakt.id === "INFO_FACHSTELLE");
 const AERZTEFON = INFO.find(kontakt => kontakt.id === "INFO_AERZTEFON");
+
+function formatDate(date?: string) {
+  if (!date) return null;
+
+  const [year, month, day] = date.split("-");
+  if (!year || !month || !day) return date;
+
+  return `${day}.${month}.${year}`;
+}
 
 describe("notfallkarte architecture", () => {
   it("keeps the personal tool off the static /notfallkarte URL", () => {
@@ -23,7 +33,7 @@ describe("notfallkarte architecture", () => {
     expect(routesIndex).toContain("PERSONAL_NOTFALLKARTE_PATH");
   });
 
-  it("uses localStorage for the print handoff that must survive window.open", () => {
+  it("keeps both persisted and direct print handoff paths available", () => {
     const pageSource = fs.readFileSync(
       path.join(repoRoot, "client/src/pages/Notfallkarte.tsx"),
       "utf8"
@@ -33,17 +43,16 @@ describe("notfallkarte architecture", () => {
       "utf8"
     );
 
+    expect(pageSource).toMatch(/savePrintData\(data\)/);
     expect(pageSource).toMatch(
-      /localStorage\.setItem\(\s*NOTFALLKARTE_PRINT_STORAGE_KEY,\s*JSON\.stringify\(data\)\s*\)/
+      /printWindow\.postMessage\(\s*payload,\s*window\.location\.origin\s*\)/
     );
     expect(printTemplate).toContain(
       'localStorage.getItem("notfallkarte-print-data")'
     );
+    expect(printTemplate).toContain('window.addEventListener("message"');
     expect(printTemplate).toContain(
       'localStorage.removeItem("notfallkarte-print-data")'
-    );
-    expect(printTemplate).not.toContain(
-      'sessionStorage.getItem("notfallkarte-print-data")'
     );
   });
 
@@ -85,5 +94,22 @@ describe("notfallkarte architecture", () => {
     expect(browserCardStyles).toContain("grid-template-columns: 1fr;");
     expect(browserCardScript).toContain("RESPONSIVE_BREAKPOINT = 860");
     expect(browserCardScript).toContain('pageWrapper.style.transform = "";');
+  });
+
+  it("shows the same review metadata on the static browser card as in governance", () => {
+    const browserCard = fs.readFileSync(
+      path.join(repoRoot, "client/public/notfallkarte.html"),
+      "utf8"
+    );
+    const governance = pageGovernance["/notfallkarte"];
+
+    expect(governance).toBeDefined();
+    expect(browserCard).toContain(
+      `Fachlich geprüft am: ${formatDate(governance?.lastReviewed)}`
+    );
+    expect(browserCard).toContain(
+      `Nächste Prüfung: ${formatDate(governance?.nextReviewDue)}`
+    );
+    expect(browserCard).toContain(`Verantwortlich: ${governance?.owner ?? ""}`);
   });
 });

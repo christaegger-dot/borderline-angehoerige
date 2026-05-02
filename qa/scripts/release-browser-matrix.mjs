@@ -1,12 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { chromium, devices, firefox, webkit } from "playwright";
-import {
-  BASE_URL,
-  qaPath,
-  routeUrl,
-  writeJson,
-} from "./a11y-shared.mjs";
+import { BASE_URL, qaPath, routeUrl, writeJson } from "./a11y-shared.mjs";
 
 const TODAY = "2026-05-02";
 const REPORT_NAME = "release-browser-matrix.json";
@@ -642,17 +637,14 @@ async function main() {
   const hasHardFailure = profiles.some(
     profile => profile.status === "nicht bestanden" && !profile.optional
   );
-    const hasMandatoryOpen =
-      profiles.some(
-        profile =>
-          !profile.optional && profile.status === "offen"
-      ) ||
-      profiles.some(
-        profile =>
-          profile.device === "iPhone" &&
-          profile.browser === "Safari" &&
-          profile.status === "offen"
-      );
+  const hasMandatoryOpen =
+    profiles.some(profile => !profile.optional && profile.status === "offen") ||
+    profiles.some(
+      profile =>
+        profile.device === "iPhone" &&
+        profile.browser === "Safari" &&
+        profile.status === "offen"
+    );
 
   const report = {
     label: runLabel(),

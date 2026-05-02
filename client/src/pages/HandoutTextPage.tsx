@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import AppLink from "@/components/AppLink";
+import {
+  EditorialLayout,
+  EditorialProse,
+  EditorialSection,
+} from "@/components/editorial";
 import Layout from "@/components/Layout";
+import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import {
   getHandoutDownloadHref,
@@ -17,18 +23,10 @@ import type {
   HandoutTextVersion,
 } from "@/content/handoutTextVersionTypes";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import NotFound from "@/pages/NotFound";
 import type { RouteComponentProps } from "wouter";
-import {
-  ArrowLeft,
-  BookOpen,
-  Download,
-  ExternalLink,
-  FileText,
-  Library,
-} from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 
 type HandoutTextPageParams = {
   handoutId?: string;
@@ -102,6 +100,30 @@ export default function HandoutTextPage({
   const openHref = getHandoutOpenHref(pdfSourceUrl) ?? pdfSourceUrl;
   const downloadHref = getHandoutDownloadHref(pdfSourceUrl) ?? pdfSourceUrl;
   const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
+  const pageKicker = handout?.kicker ?? "Textversion";
+
+  const leadStyle = {
+    fontSize: "var(--text-lg)",
+    lineHeight: "var(--lh-snug)",
+    color: "var(--fg-secondary)",
+  };
+
+  const bodyStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const metaStyle = {
+    fontSize: "var(--text-sm)",
+    color: "var(--fg-tertiary)",
+  };
+
+  const sectionCardTitleStyle = {
+    fontSize: "var(--text-md)",
+    fontWeight: 600,
+    color: "var(--fg-primary)",
+  };
 
   return (
     <Layout>
@@ -116,210 +138,213 @@ export default function HandoutTextPage({
         path={handoutMeta.path}
       />
 
-      <section className="py-12 md:py-16 bg-gradient-to-b from-sage-wash/50 via-background to-background">
-        <div className="container">
-          <div className="max-w-6xl mx-auto grid gap-8 lg:grid-cols-[1.25fr_0.95fr] items-start">
-            <div>
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="inline-flex items-center rounded-full bg-sage-dark px-4 py-1.5 text-sm font-medium text-white">
-                  {handout?.kicker ?? "Textversion"}
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/90 px-4 py-1.5 text-sm text-muted-foreground">
-                  <Library className="w-4 h-4 text-sage-dark" />
-                  {pageTopicLabel}
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/90 px-4 py-1.5 text-sm text-muted-foreground">
-                  <FileText className="w-4 h-4 text-sage-dark" />
-                  {pageKind}
-                </span>
-              </div>
+      <EditorialLayout width="wide">
+        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
+          >
+            {pageKicker}
+          </p>
+          <p className="mt-4" style={metaStyle}>
+            {pageTopicLabel} · {pageKind}
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            {pageTitle}
+          </h1>
+          <p className="mt-6" style={leadStyle}>
+            {pageSummary}
+          </p>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-foreground leading-tight mb-5">
-                {pageTitle}
-              </h1>
-
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 max-w-3xl">
-                {pageSummary}
-              </p>
-
-              <div className="flex flex-wrap gap-3 mb-5">
-                <Button
-                  asChild
-                  className="bg-sage-dark hover:bg-sage-mid text-white"
-                >
-                  <a href={openHref} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-4 h-4" />
-                    PDF öffnen
-                  </a>
-                </Button>
-                <Button asChild variant="outline">
-                  <a href={downloadHref} download="">
-                    <Download className="w-4 h-4" />
-                    PDF herunterladen
-                  </a>
-                </Button>
-                <Button asChild variant="outline">
-                  <AppLink href="/materialien">
-                    <ArrowLeft className="w-4 h-4" />
-                    Zur Materialsammlung
-                  </AppLink>
-                </Button>
-              </div>
-
-              {textVersionPreferred ? (
-                <p className="mb-5 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                  Diese Textversion ist die empfohlene Lesefassung. Das PDF
-                  bleibt als Druck- und Layoutversion verfügbar.
-                </p>
-              ) : null}
-
-              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                <AppLink
-                  href={pageTopicHref}
-                  className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
-                >
-                  <BookOpen className="w-4 h-4 text-sage-dark" />
-                  Zum Themenbereich {pageTopicLabel}
-                </AppLink>
-                <AppLink
-                  href="/barrierefreiheit"
-                  className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
-                >
-                  <FileText className="w-4 h-4 text-sage-dark" />
-                  Warum diese Textversion hilfreich ist
-                </AppLink>
-              </div>
-            </div>
-
-            <Card className="overflow-hidden border-border/60 bg-white/90 shadow-sm">
-              <img
-                src={pagePreviewImageUrl}
-                alt={`Vorschau des Handouts ${pageTitle}`}
-                className="w-full h-auto object-cover object-top"
-                loading="eager"
-                width={720}
-                height={900}
-                decoding="async"
-              />
-            </Card>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button
+              asChild
+              className="bg-sage-dark hover:bg-sage-mid text-white"
+            >
+              <a href={openHref} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="w-4 h-4" />
+                PDF öffnen
+              </a>
+            </Button>
+            <Button asChild variant="outline">
+              <a href={downloadHref} download="">
+                <Download className="w-4 h-4" />
+                PDF herunterladen
+              </a>
+            </Button>
           </div>
-        </div>
-      </section>
 
-      <section className="py-8">
-        <div className="container">
-          <div className="max-w-6xl mx-auto">
-            <Card className="border-sage-light bg-sage-wash/70">
-              <CardContent className="p-6">
-                <h2 className="text-lg font-semibold text-foreground mb-3">
-                  Worum es in diesem Handout geht
-                </h2>
-                {handout ? (
-                  <div className="space-y-3 text-muted-foreground leading-relaxed">
-                    {handout.intro.map(text => (
-                      <p key={text}>{text}</p>
+          <div
+            className="mt-5 flex flex-wrap gap-x-5 gap-y-2"
+            style={bodyStyle}
+          >
+            <AppLink href={pageTopicHref} className="editorial-link">
+              Zum Themenbereich {pageTopicLabel}
+            </AppLink>
+            <AppLink href="/materialien" className="editorial-link">
+              Zur Materialsammlung
+            </AppLink>
+            <AppLink href="/barrierefreiheit" className="editorial-link">
+              Warum diese Textversion hilfreich ist
+            </AppLink>
+          </div>
+
+          {textVersionPreferred ? (
+            <p
+              className="mt-8 border-t pt-4"
+              style={{
+                ...bodyStyle,
+                borderColor: "var(--rule-color)",
+              }}
+            >
+              Diese Textversion ist die empfohlene Lesefassung. Das PDF bleibt
+              als Druck- und Layoutversion verfügbar.
+            </p>
+          ) : null}
+
+          <figure
+            className="mt-10 border-t pt-5"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <img
+              src={pagePreviewImageUrl}
+              alt={`Vorschau des Handouts ${pageTitle}`}
+              className="w-full h-auto border object-cover object-top"
+              style={{ borderColor: "var(--rule-color)" }}
+              loading="eager"
+              width={720}
+              height={900}
+              decoding="async"
+            />
+            <figcaption className="mt-3" style={metaStyle}>
+              Vorschau der Druckversion. Für ruhiges Lesen ist diese Textfassung
+              gedacht.
+            </figcaption>
+          </figure>
+        </header>
+
+        <EditorialSection
+          label="Überblick"
+          title="Worum es in diesem Handout geht"
+        >
+          {handout ? (
+            <EditorialProse>
+              {handout.intro.map(text => (
+                <p key={text}>{text}</p>
+              ))}
+            </EditorialProse>
+          ) : (
+            <div className="flex items-center gap-3" style={bodyStyle}>
+              <Spinner className="size-5 text-sage-dark" />
+              <p>Die ausführliche Textversion wird geladen.</p>
+            </div>
+          )}
+        </EditorialSection>
+
+        {handout ? (
+          <>
+            {handout.sections.map(section => (
+              <EditorialSection key={section.title} title={section.title} rule>
+                {section.intro ? (
+                  <EditorialProse>
+                    <p>{section.intro}</p>
+                  </EditorialProse>
+                ) : null}
+
+                {section.calloutTitle && section.calloutText ? (
+                  <div
+                    className="mt-6 border-l pl-4"
+                    style={{ borderColor: "var(--accent-label)" }}
+                  >
+                    <h3 style={sectionCardTitleStyle}>
+                      {section.calloutTitle}
+                    </h3>
+                    <p className="mt-2" style={bodyStyle}>
+                      {section.calloutText}
+                    </p>
+                  </div>
+                ) : null}
+
+                {section.cards?.length ? (
+                  <div className={`mt-6 ${getCardGridClass(section.cards)}`}>
+                    {section.cards.map(card => (
+                      <article
+                        key={`${section.title}-${card.title}`}
+                        className="border-t pt-4"
+                        style={{ borderColor: "var(--rule-color)" }}
+                      >
+                        <h3 style={sectionCardTitleStyle}>{card.title}</h3>
+                        <p className="mt-2" style={bodyStyle}>
+                          {card.text}
+                        </p>
+                      </article>
                     ))}
                   </div>
-                ) : (
-                  <div className="flex items-center gap-3 text-muted-foreground">
-                    <Spinner className="size-5 text-sage-dark" />
-                    <p>Die ausführliche Textversion wird geladen.</p>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+                ) : null}
 
-      <section className="pb-14 md:pb-16">
-        <div className="container">
-          <div className="max-w-6xl mx-auto grid gap-6">
-            {handout ? (
-              <>
-                {handout.sections.map(section => (
-                  <Card
-                    key={section.title}
-                    className="border-border/60 shadow-sm"
-                  >
-                    <CardContent className="p-6 md:p-7">
-                      <h2 className="text-2xl font-semibold text-foreground mb-3">
-                        {section.title}
-                      </h2>
+                {section.bullets?.length ? (
+                  <ul className="mt-6 space-y-3 pl-5 list-disc marker:text-[color:var(--accent-label)]">
+                    {section.bullets.map(item => (
+                      <li key={item} style={bodyStyle}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </EditorialSection>
+            ))}
 
-                      {section.intro ? (
-                        <p className="text-muted-foreground leading-relaxed mb-5">
-                          {section.intro}
-                        </p>
-                      ) : null}
+            <EditorialSection label="Quelle & Stand" rule>
+              <p style={bodyStyle}>{handout.sourceLine}</p>
+              <p className="mt-2" style={bodyStyle}>
+                {handout.standLine}
+              </p>
+            </EditorialSection>
+          </>
+        ) : (
+          <EditorialSection title="Textversion lädt" rule>
+            <div className="flex items-center gap-3" style={bodyStyle}>
+              <Spinner className="size-5 text-sage-dark" />
+              <p>Die Abschnitte dieser Textversion werden geladen.</p>
+            </div>
+          </EditorialSection>
+        )}
 
-                      {section.calloutTitle && section.calloutText ? (
-                        <div className="rounded-xl border border-sage-light/80 bg-sage-wash/50 p-5 mb-5">
-                          <h3 className="font-semibold text-foreground mb-2">
-                            {section.calloutTitle}
-                          </h3>
-                          <p className="text-base leading-relaxed text-foreground">
-                            {section.calloutText}
-                          </p>
-                        </div>
-                      ) : null}
-
-                      {section.cards?.length ? (
-                        <div className={getCardGridClass(section.cards)}>
-                          {section.cards.map(card => (
-                            <div
-                              key={`${section.title}-${card.title}`}
-                              className="rounded-xl border border-border/60 bg-background p-5"
-                            >
-                              <h3 className="font-semibold text-foreground mb-2">
-                                {card.title}
-                              </h3>
-                              <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
-                                {card.text}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                      ) : null}
-
-                      {section.bullets?.length ? (
-                        <ul className="grid gap-3">
-                          {section.bullets.map(item => (
-                            <li
-                              key={item}
-                              className="rounded-xl border border-border/60 bg-background px-4 py-3 text-sm md:text-base text-muted-foreground"
-                            >
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      ) : null}
-                    </CardContent>
-                  </Card>
-                ))}
-
-                <Card className="border-border/60 bg-muted/20">
-                  <CardContent className="p-6">
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {handout.sourceLine}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {handout.standLine}
-                    </p>
-                  </CardContent>
-                </Card>
-              </>
-            ) : (
-              <Card className="border-border/60 bg-muted/20">
-                <CardContent className="p-6 flex items-center gap-3 text-muted-foreground">
-                  <Spinner className="size-5 text-sage-dark" />
-                  <p>Die Abschnitte dieser Textversion werden geladen.</p>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-        </div>
-      </section>
+        <RelatedLinksEditorial
+          links={[
+            {
+              href: pageTopicHref,
+              title: `${pageTopicLabel} vertiefen`,
+              description:
+                "Zur vertiefenden Themenseite mit Kontext, Einordnung und weiterführenden Hinweisen.",
+            },
+            {
+              href: "/materialien",
+              title: "Weitere Materialien",
+              description:
+                "Weitere Handouts, PDFs und lesbare Textversionen nach Themenbereich durchsuchen.",
+            },
+            {
+              href: "/barrierefreiheit",
+              title: "Barrierefreiheit & Lesbarkeit",
+              description:
+                "Einordnung zur Lesbarkeit, Nutzung mit Assistenztechnologien und Grenzen bildbasierter PDFs.",
+            },
+          ]}
+        />
+      </EditorialLayout>
     </Layout>
   );
 }

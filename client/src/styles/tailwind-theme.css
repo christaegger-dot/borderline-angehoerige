@@ -1,8 +1,8 @@
 @custom-variant dark (&:is(.dark *));
 
-/* Legacy Sanctuary Calm token bridge.
-   Editorial tokens in :root are the primary design source for current pages.
-   These legacy families stay available for migration and functional crisis UI. */
+/* Shared token bridge for Tailwind theme access.
+   Editorial tokens in :root are primary; older families remain for functional
+   crisis UI and a few legacy consumers. */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -41,12 +41,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* =============================================
-     LEGACY TOKEN FAMILIES
-     Fuer migrierte Editorial-Seiten moeglichst keine
-     neuen Abhaengigkeiten mehr aufbauen. Beibehalten
-     fuer funktionale Krisenfaelle und Restmigration.
-     ============================================= */
+  /* Legacy token families kept for crisis UI and remaining shared consumers. */
 
   /* --- Warm Family (Hue 55/85) --- */
   --color-terracotta-darker: oklch(
@@ -56,9 +51,7 @@
   --color-terracotta-mid: oklch(
     0.55 0.15 55
   ); /* Starker Akzent-Text, Borders */
-  --color-terracotta: oklch(
-    0.55 0.15 55
-  ); /* Primary – WCAG AA konform (Phase 1: mit --primary synchronisiert) */
+  --color-terracotta: oklch(0.55 0.15 55); /* Primary alias */
   --color-terracotta-light: oklch(0.85 0.08 55); /* Light Accent */
   --color-terracotta-lighter: oklch(0.92 0.05 55); /* Subtle Backgrounds */
   --color-terracotta-wash: oklch(0.95 0.02 55); /* Sehr helle Hintergründe */
@@ -146,11 +139,7 @@
   --color-sos-amber-border: oklch(0.85 0.06 85); /* ~amber-200 – Warn-Border */
   --color-sos-amber-dark: oklch(0.35 0.06 85); /* ~amber-900 – Warn-Text */
 
-  /* Typography
-     --font-body: Inter (alle Body-/UI-Texte)
-     --font-heading: Source Serif 4 (existing, für h1/h2)
-     --font-display: alias zu Source Serif 4 — Editorial-Phase-1-Token für
-       Hero-/Display-Typografie. Kann später eigene Stack-Definition bekommen. */
+  /* Typography aliases shared across layout and editorial components. */
   --font-body: "Inter", "Inter fallback", sans-serif;
   --font-heading: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
   --font-display: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;

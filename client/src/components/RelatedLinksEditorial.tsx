@@ -1,12 +1,4 @@
-/**
- * RelatedLinksEditorial — Phase-4-Editorial-Variante von RelatedLinks.
- *
- * Visuelle Entschärfung gegenüber der Karten-Variante: keine Icons,
- * keine Karten-Optik, keine Akzent-Borders. Stattdessen eine Liste mit
- * Inline-Titel und kurzer Beschreibung pro Eintrag, getrennt durch
- * border-t in --rule-color. Das Original RelatedLinks.tsx bleibt
- * unangetastet (andere Pages nutzen es noch).
- */
+/* Editorial variant of related links: plain list, no card framing. */
 import AppLink from "@/components/AppLink";
 
 export interface RelatedLink {

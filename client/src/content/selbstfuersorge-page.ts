@@ -1,6 +1,5 @@
 export interface WarningSignalGroup {
   title: string;
-  tone: string;
   icon: "brain" | "heart" | "users";
   items: string[];
 }
@@ -8,7 +7,6 @@ export interface WarningSignalGroup {
 export interface LongTermStrategy {
   title: string;
   icon: "clock" | "heart" | "users" | "shield";
-  colorClass: string;
   intro: string;
   checklist?: string[];
   noteTitle?: string;
@@ -19,14 +17,12 @@ export interface LongTermStrategy {
 export interface RoleNote {
   title: string;
   icon: "heart" | "users" | "user-circle";
-  tone: string;
   text: string;
 }
 
 export const warningSignalGroups: WarningSignalGroup[] = [
   {
     title: "Emotional",
-    tone: "sand",
     icon: "brain",
     items: [
       "Gereiztheit",
@@ -38,7 +34,6 @@ export const warningSignalGroups: WarningSignalGroup[] = [
   },
   {
     title: "Körperlich",
-    tone: "terracotta",
     icon: "heart",
     items: [
       "Erschöpfung",
@@ -50,7 +45,6 @@ export const warningSignalGroups: WarningSignalGroup[] = [
   },
   {
     title: "Sozial",
-    tone: "slate",
     icon: "users",
     items: [
       "Rückzug",
@@ -66,7 +60,6 @@ export const longTermStrategies: LongTermStrategy[] = [
   {
     title: "Tägliche Mini-Auszeiten",
     icon: "clock",
-    colorClass: "bg-sage-mid",
     intro:
       "Versuchen Sie, im Alltag regelmässig kurze Zeiten nur für sich zu reservieren. An manchen Tagen sind 15 bis 30 Minuten realistisch, an anderen vielleicht nur 5. Entscheidend ist die Verlässlichkeit, nicht Perfektion.",
     checklist: [
@@ -82,7 +75,6 @@ export const longTermStrategies: LongTermStrategy[] = [
   {
     title: "Bewegung und Körper",
     icon: "heart",
-    colorClass: "bg-terracotta",
     intro:
       "Körperliche Aktivität baut Stresshormone ab und setzt Endorphine frei. Schon 20 Minuten machen einen Unterschied.",
     checklist: [
@@ -100,7 +92,6 @@ export const longTermStrategies: LongTermStrategy[] = [
   {
     title: "Soziale Kontakte pflegen",
     icon: "users",
-    colorClass: "bg-slate-dark",
     intro:
       "Isolation ist einer der grössten Risikofaktoren für Angehörige. Halten Sie aktiv Kontakt zu Menschen ausserhalb der Betreuungssituation.",
     checklist: [
@@ -113,7 +104,6 @@ export const longTermStrategies: LongTermStrategy[] = [
   {
     title: "Professionelle Unterstützung",
     icon: "shield",
-    colorClass: "bg-sage-mid",
     intro:
       "Auch Sie dürfen sich Hilfe holen – das ist kein Zeichen von Schwäche, sondern von Stärke und Selbstfürsorge.",
     cards: [
@@ -149,19 +139,16 @@ export const roleNotes: RoleNote[] = [
   {
     title: "Als Partner/in",
     icon: "heart",
-    tone: "terracotta",
     text: "Ihre Beziehung ist nicht Ihre einzige Identität. Pflegen Sie Freundschaften und Hobbys ausserhalb der Partnerschaft. Es ist kein Verrat, Zeit für sich zu beanspruchen – es ist Überlebensstrategie.",
   },
   {
     title: "Als Elternteil",
     icon: "users",
-    tone: "slate",
     text: "Elterliche Schuldgefühle sind normal, aber oft unbegründet. Borderline hat komplexe Ursachen – Sie haben nicht «versagt». Erlauben Sie sich, auch stolz auf das zu sein, was Sie richtig gemacht haben. Und: Sie dürfen auch mal wütend sein.",
   },
   {
     title: "Als erwachsenes Kind",
     icon: "user-circle",
-    tone: "sage",
     text: "Sie mussten früh erwachsen werden und Verantwortung übernehmen, die nicht Ihre war. Selbstfürsorge kann sich fremd anfühlen – üben Sie sie trotzdem. Sie haben ein Recht auf ein eigenes Leben, ohne ständig verfügbar zu sein.",
   },
 ];

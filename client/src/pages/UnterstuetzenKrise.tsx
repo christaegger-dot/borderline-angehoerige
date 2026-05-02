@@ -32,25 +32,25 @@ const ampelStufen = [
     level: "Grün – Stabil",
     description: "Alltägliche Stimmungsschwankungen, normale Belastungen",
     action: "Präsent sein, zuhören, Routinen beibehalten",
-    cardClass: "border-l-sage-mid bg-background",
+    panelClass: "border-l-sage-mid bg-background",
   },
   {
     level: "Gelb – Angespannt",
     description: "Erhöhte Reizbarkeit, Rückzug, erkennbare Trigger",
     action: "Validieren, Skills anbieten, Raum geben",
-    cardClass: "border-l-sand-mid bg-background",
+    panelClass: "border-l-sand-mid bg-background",
   },
   {
     level: "Orange – Eskalierend",
     description: "Starke Emotionen, verbale Aggression, Kontrollverlust",
     action: "Deeskalieren, Sicherheit prüfen, Grenzen setzen",
-    cardClass: "border-l-amber-500 bg-background",
+    panelClass: "border-l-amber-500 bg-background",
   },
   {
     level: "Rot – Akute Krise",
     description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
     action: "Professionelle Hilfe holen, Notruf wenn nötig",
-    cardClass: "border-l-alert bg-alert/10",
+    panelClass: "border-l-alert bg-alert/10",
   },
 ] as const;
 
@@ -498,7 +498,7 @@ export default function UnterstuetzenKrise() {
             {ampelStufen.map(item => (
               <article
                 key={item.level}
-                className={`border border-border/50 border-l-4 p-5 ${item.cardClass}`}
+                className={`border border-border/50 border-l-4 p-5 ${item.panelClass}`}
               >
                 <h4 style={h4Style}>{item.level}</h4>
                 <p className="mt-2" style={bodyStyle}>

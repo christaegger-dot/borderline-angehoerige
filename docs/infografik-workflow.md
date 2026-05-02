@@ -17,11 +17,11 @@ ueber `pnpm audit:infografiken` erzeugt.
 
 Stand `2026-05-02`:
 
-- `167` Dateien insgesamt (`287.85 MB`)
+- `93` Dateien insgesamt (`172.45 MB`)
 - `88` aktiv referenzierte Produktdateien (`131.18 MB`)
 - `5` Support-Dateien ausserhalb des Produktpfads (`41.26 MB`)
-- `74` unreferenzierte Kandidaten (`115.40 MB`)
-- `10` Versionsfamilien mit aktiven Dateien plus alten Geschwistern
+- `0` unreferenzierte Kandidaten (`0 MB`)
+- `0` Versionsfamilien mit aktiven Dateien plus alten Geschwistern
 
 ## Source of Truth
 
@@ -56,8 +56,11 @@ Nicht direkt im Produkt referenziert, aber bewusst im Repo behalten:
 ### 3. Legacy-Kandidaten
 
 Alte Versionsdateien, die im Produkt nicht mehr verwendet werden, aber noch im
-Ordner liegen, zum Beispiel fruehere `-v1` bis `-v13` Varianten einer aktuell
-nur noch mit `-v14` referenzierten Infografik.
+Ordner liegen koennen, zum Beispiel fruehere `-v1` bis `-v13` Varianten einer
+aktuell nur noch mit `-v14` referenzierten Infografik.
+
+Aktueller Stand: Im produktiven Ordner gibt es nach dem Cleanup vom
+`2026-05-02` keine solchen Legacy-Kandidaten mehr.
 
 ## Arbeitsregeln
 
@@ -94,9 +97,9 @@ pnpm audit:infografiken
   wirklich umgestellt wurde
 - nach Umstellung mit `pnpm audit:infografiken` pruefen, welche alten
   Geschwister unreferenziert geworden sind
-- alte Versionen nicht automatisch loeschen; zuerst in Audit/Doku entscheiden,
-  ob sie fuer Historie, Druckarchiv oder externe Weitergabe noch gebraucht
-  werden
+- unreferenzierte Altversionen bewusst und zeitnah entfernen, sobald geklaert
+  ist, dass sie fuer Historie, Druckarchiv oder externe Weitergabe nicht mehr
+  im Produktordner gebraucht werden
 
 ## Benennung
 
@@ -117,13 +120,12 @@ pnpm audit:infografiken
 - Es entscheidet nicht selbst, ob Legacy-Dateien archiviert oder entfernt
   werden.
 
-## Empfohlener naechster Hygiene-Schritt
+## Aktueller Hygiene-Status
 
-Die groessten Altlasten liegen derzeit in den alten PNG/PDF-Versionsreihen der
-nicht-Manus-Infografiken. Wenn der Bestand weiter bereinigt werden soll, ist der
-naechste sinnvolle Schritt:
+Der fruehere Legacy-Bestand im produktiven Infografik-Ordner wurde am
+`2026-05-02` entfernt. Der laufende Pflegezustand ist damit:
 
-1. Legacy-Kandidaten aus `qa/infografik-inventory.json` familyweise pruefen
-2. nur noch historisch relevante Reihen behalten
-3. den Rest aus dem produktiven Ordner in ein bewusstes Archiv ausserhalb des
-   Laufzeitpfads verschieben
+1. `pnpm audit:infografiken` nach jeder Asset-Aenderung ausfuehren
+2. neue unreferenzierte Kandidaten nicht ansammeln lassen
+3. Support-Dateien (`zip`, `README`, `uebersichtsbogen`) bewusst getrennt von
+   Produkt-Assets halten

@@ -80,7 +80,7 @@ function renderPage() {
 }
 
 describe("Notfallkarte storage fallbacks", () => {
-  it("does not report a successful save when browser storage is blocked", () => {
+  it("shows a clear alert when browser storage is blocked", () => {
     vi.spyOn(Storage.prototype, "getItem").mockReturnValue(null);
     vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
       throw new DOMException("Storage blocked", "QuotaExceededError");
@@ -89,15 +89,11 @@ describe("Notfallkarte storage fallbacks", () => {
 
     renderPage();
 
-    const saveButton = screen.getByRole("button", {
-      name: /im browser speichern/i,
-    });
-    fireEvent.click(saveButton);
-
-    expect(saveButton).toHaveTextContent("Im Browser speichern");
-    expect(screen.queryByText(/gespeichert ✓/i)).not.toBeInTheDocument();
     expect(screen.getByRole("alert")).toHaveTextContent(
       /speichern nicht möglich/i
+    );
+    expect(screen.getByRole("alert")).toHaveTextContent(
+      /eingaben bleiben dann möglicherweise nicht auf diesem gerät erhalten/i
     );
   });
 
@@ -123,5 +119,23 @@ describe("Notfallkarte storage fallbacks", () => {
       expect.objectContaining({ type: "notfallkarte-print-data" }),
       window.location.origin
     );
+  });
+
+  it("tells people that entries are saved automatically in the browser", () => {
+    renderPage();
+
+    expect(
+      screen.getByText(/Änderungen werden automatisch lokal gespeichert\./i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /werden nicht an einen Server dieser Website übertragen/i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
+        name: /lokale notfallkarten-daten löschen/i,
+      })
+    ).toBeInTheDocument();
   });
 });

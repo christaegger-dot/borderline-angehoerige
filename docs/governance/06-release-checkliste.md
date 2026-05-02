@@ -114,6 +114,8 @@ Zusätzlich prüfen:
   `verifiedAt`
 - entspricht der PDF-Textlayer bzw. die Suchbarkeit dem erwarteten
   Qualitätsniveau
+- eine formale PDF/UA-Prüfung ist derzeit kein Pflicht-Gate; falls sie
+  gewünscht ist, muss sie als eigener Zusatzcheck dokumentiert werden
 
 ### Indexierungs-, SEO- und Metadaten-Audit auf Produktion
 

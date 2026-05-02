@@ -1,5 +1,12 @@
 # audit/content-sprache
 
+> Historischer Audit-Stand:
+> Dieser Bericht beschreibt den Repo- und Produktzustand zum damaligen
+> Audit-Zeitpunkt. Einzelne Befunde zu `files.manuscdn.com` sind
+> zwischenzeitlich technisch ueberholt und nicht als aktueller
+> Produktionsbefund zu lesen. Fuer den aktuellen Stand siehe
+> `docs/manus-cdn-audit.md` und `qa/audit-pdf-handouts.md`.
+
 ## Meta
 
 - Repo: `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige`

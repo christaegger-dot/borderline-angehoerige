@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import {
-  Download,
   ExternalLink,
-  Eye,
   FileText,
   Filter,
   Heart,
@@ -10,9 +8,8 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { EditorialProse, EditorialSection } from "@/components/editorial";
+import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   kommItems,
   kommSubcategories,
@@ -26,13 +23,41 @@ function CategoryIcon({
 }: {
   icon: "filter" | "heart" | "shield-alert" | "message-circle";
 }) {
-  if (icon === "heart") return <Heart className="w-4 h-4 mr-1.5" />;
-  if (icon === "shield-alert")
-    return <ShieldAlert className="w-4 h-4 mr-1.5" />;
-  if (icon === "message-circle")
-    return <MessageCircle className="w-4 h-4 mr-1.5" />;
-  return <Filter className="w-4 h-4 mr-1.5" />;
+  if (icon === "heart") {
+    return <Heart className="h-4 w-4 text-[color:var(--accent-label)]" />;
+  }
+  if (icon === "shield-alert") {
+    return <ShieldAlert className="h-4 w-4 text-[color:var(--accent-label)]" />;
+  }
+  if (icon === "message-circle") {
+    return (
+      <MessageCircle className="h-4 w-4 text-[color:var(--accent-label)]" />
+    );
+  }
+  return <Filter className="h-4 w-4 text-[color:var(--accent-label)]" />;
 }
+
+const labelStyle = {
+  fontSize: "var(--text-xs)",
+  letterSpacing: "var(--tracking-caps)",
+  color: "var(--fg-tertiary)",
+  fontWeight: 500,
+} as const;
+
+const entryTitleStyle = {
+  fontFamily: "var(--font-display)",
+  fontSize: "var(--text-md)",
+  fontWeight: "var(--weight-display)",
+  lineHeight: "var(--lh-snug)",
+  color: "var(--fg-primary)",
+  letterSpacing: "var(--tracking-tight)",
+};
+
+const bodyStyle = {
+  fontSize: "var(--text-sm)",
+  lineHeight: "var(--lh-relaxed)",
+  color: "var(--fg-secondary)",
+};
 
 export default function KommunizierenMaterialsSection() {
   const [activeFilter, setActiveFilter] =
@@ -44,27 +69,32 @@ export default function KommunizierenMaterialsSection() {
       ? kommItems
       : kommItems.filter(item => item.category === activeFilter);
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="mb-12 wave-divider-top [--wave-color:var(--background)]"
-    >
-      <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 flex items-center gap-3">
-        <Download className="w-8 h-8 text-slate-blue" />
-        Materialien zum Thema
-      </h2>
-      <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
-        <Eye className="w-4 h-4 flex-shrink-0" />
-        <span>
-          <strong className="text-foreground">Vorschau = Web-Bild.</strong> Wenn
-          verfügbar, führt «Textversion» zur lesbaren Web-Version. «PDF öffnen»
-          öffnet die A4-Druckversion im neuen Tab.
-        </span>
-      </p>
+  const scrollToResults = () => {
+    setTimeout(() => {
+      gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  };
 
-      <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none -mx-1 px-1">
+  return (
+    <EditorialSection
+      label="Materialien"
+      title="Spickzettel & Infografiken"
+      rule
+    >
+      <EditorialProse>
+        <p>
+          Diese Materialien verdichten Gesprächstechniken, Deeskalation und
+          konkrete Formulierungen. Wenn verfügbar, führt «Textversion lesen» zur
+          lesbaren Web-Version. «PDF öffnen» öffnet die A4-Druckversion im neuen
+          Tab.
+        </p>
+      </EditorialProse>
+
+      <div
+        className="mt-6 flex flex-wrap gap-2 overflow-x-auto pb-3 -mx-4 px-4 md:mx-0 md:px-0"
+        role="group"
+        aria-label="Filter Kommunikations-Materialien"
+      >
         {kommSubcategories.map(category => {
           const count =
             category.id === "alle"
@@ -72,96 +102,113 @@ export default function KommunizierenMaterialsSection() {
               : kommItems.filter(item => item.category === category.id).length;
 
           return (
-            <Button
+            <EditorialPillButton
               key={category.id}
-              variant={activeFilter === category.id ? "default" : "outline"}
-              size="sm"
+              variant="filter"
+              selected={activeFilter === category.id}
               onClick={() => {
                 setActiveFilter(category.id);
-                setTimeout(() => {
-                  gridRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }, 50);
+                scrollToResults();
               }}
-              className={`whitespace-nowrap shrink-0 ${
-                activeFilter === category.id
-                  ? "bg-terracotta-mid hover:bg-terracotta-dark text-white"
-                  : ""
-              }`}
+              className="inline-flex items-center gap-1.5"
             >
               <CategoryIcon icon={category.icon} />
-              {category.label}
-              <span className="ml-1.5 text-xs opacity-90">({count})</span>
-            </Button>
+              <span>{category.label}</span>
+              <span style={{ fontSize: "var(--text-xs)" }}>({count})</span>
+            </EditorialPillButton>
           );
         })}
       </div>
 
-      <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-        {filteredItems.map((item, index) =>
-          (() => {
-            const textVersionHref = getHandoutTextVersionHrefBySource(
-              item.pdfUrl
-            );
+      <div
+        ref={gridRef}
+        className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2"
+      >
+        {filteredItems.map(item => {
+          const textVersionHref = getHandoutTextVersionHrefBySource(
+            item.pdfUrl
+          );
+          const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
 
-            return (
-              <Card
-                key={item.title}
-                className={`overflow-hidden hover:shadow-lg transition-all duration-500 group ${
-                  filteredItems.length > 1 && index === 0 ? "sm:col-span-2" : ""
-                }`}
+          return (
+            <article
+              key={item.title}
+              className={`${filteredItems.length > 1 && filteredItems[0]?.title === item.title ? "sm:col-span-2" : ""} space-y-3 border-t pt-6`}
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${item.title} – Vorschau öffnen`}
+                className="block overflow-hidden rounded-sm"
+                style={{ backgroundColor: "var(--bg-elevated)" }}
               >
-                <div className="aspect-[4/3] bg-muted">
-                  <img
-                    src={item.thumbnailUrl ?? item.url}
-                    alt={item.title}
-                    className="w-full h-full object-cover object-top"
-                    loading="lazy"
-                    width={600}
-                    height={848}
-                    decoding="async"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-medium text-foreground text-sm mb-2">
-                    {item.title}
-                  </h3>
-                  <div className="grid gap-2">
-                    {textVersionHref ? (
-                      <Link
-                        href={textVersionHref}
-                        aria-label={`Textversion lesen: ${item.title}`}
-                        className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full bg-terracotta-mid hover:bg-terracotta-dark text-white transition-colors"
-                      >
-                        <FileText className="w-4 h-4" />
-                        Textversion
-                      </Link>
-                    ) : null}
-                    <a
-                      href={getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                      className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium h-9 px-3 w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      PDF öffnen
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })()
-        )}
+                <img
+                  src={item.thumbnailUrl ?? item.url}
+                  alt={item.title}
+                  className="aspect-[4/3] w-full object-cover object-top"
+                  loading="lazy"
+                  width={600}
+                  height={848}
+                  decoding="async"
+                />
+              </a>
+
+              <p className="uppercase" style={labelStyle}>
+                {categoryLabel(item.category)}
+              </p>
+              <h3 style={entryTitleStyle}>{item.title}</h3>
+              <p style={bodyStyle}>{item.description}</p>
+
+              <p
+                className="flex flex-wrap gap-x-5 gap-y-1 pt-1"
+                style={{ fontSize: "var(--text-sm)" }}
+              >
+                {textVersionHref ? (
+                  <Link
+                    href={textVersionHref}
+                    aria-label={`Textversion lesen: ${item.title}`}
+                    className="editorial-link"
+                  >
+                    <span className="inline-flex items-center gap-1.5">
+                      <FileText className="h-4 w-4" />
+                      Textversion lesen
+                    </span>
+                  </Link>
+                ) : null}
+                <a
+                  href={pdfHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                  className="editorial-link"
+                >
+                  <span className="inline-flex items-center gap-1.5">
+                    <ExternalLink className="h-4 w-4" />
+                    PDF öffnen
+                  </span>
+                </a>
+              </p>
+            </article>
+          );
+        })}
       </div>
 
-      <div className="text-center">
-        <Button asChild variant="outline">
-          <Link href="/materialien">Alle Materialien ansehen</Link>
-        </Button>
-      </div>
-    </motion.div>
+      <p
+        className="mt-8 flex flex-wrap gap-x-5 gap-y-1"
+        style={{ fontSize: "var(--text-sm)" }}
+      >
+        <Link href="/materialien" className="editorial-link">
+          Alle Materialien ansehen
+        </Link>
+      </p>
+    </EditorialSection>
   );
+}
+
+function categoryLabel(category: Exclude<KommunikationsKategorie, "alle">) {
+  if (category === "techniken") return "Techniken";
+  if (category === "konflikte") return "Konflikte";
+  return "Praxis";
 }

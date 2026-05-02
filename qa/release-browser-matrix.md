@@ -107,24 +107,22 @@ Dabei prüfen:
 ## Browser-Matrix
 
 - Release / PR: main
-- Commit / Deploy-Stand: eb4e07e
+- Commit / Deploy-Stand: 03acade
 - Datum: 2026-05-02
 - Basis-URL: https://borderline-angehoerige.netlify.app
 
-| Gerät          | Browser | Status          | Notizen                                                                                                                 |
-| -------------- | ------- | --------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| iPhone         | Safari  | offen           | offen – kein echter iOS/WebKit-Lauf auf diesem Rechner ohne zusätzliche Browser-Binaries oder Hardware                  |
-| iPhone         | Chrome  | nicht bestanden | mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün                   |
-| Android        | Chrome  | nicht bestanden | mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün                                              |
-| Desktop        | Chrome  | nicht bestanden | Playwright-Lauf gegen Production mit System-Chrome/Chromium                                                             |
-| Desktop        | Firefox | offen           | offen – Firefox ist auf diesem Rechner nicht installiert; Installation wurde in diesem Lauf bewusst nicht vorausgesetzt |
-| optional macOS | Safari  | optional        | optional – in diesem Lauf nicht automatisiert abgedeckt                                                                 |
+| Gerät          | Browser | Status                | Notizen                                                                                                                 |
+| -------------- | ------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| iPhone         | Safari  | offen                 | offen – kein echter iOS/WebKit-Lauf auf diesem Rechner ohne zusätzliche Browser-Binaries oder Hardware                  |
+| iPhone         | Chrome  | bestanden mit Hinweis | mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün                   |
+| Android        | Chrome  | bestanden mit Hinweis | mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün                                              |
+| Desktop        | Chrome  | bestanden             | Playwright-Lauf gegen Production mit System-Chrome/Chromium                                                             |
+| Desktop        | Firefox | offen                 | offen – Firefox ist auf diesem Rechner nicht installiert; Installation wurde in diesem Lauf bewusst nicht vorausgesetzt |
+| optional macOS | Safari  | optional              | optional – in diesem Lauf nicht automatisiert abgedeckt                                                                 |
 
 ### Kritische Befunde
 
-- iPhone Chrome: Notfallkarte Druckansicht: persönliche Daten fehlen in der Druckansicht
-- Android Chrome: Notfallkarte Druckansicht: persönliche Daten fehlen in der Druckansicht
-- Desktop Chrome: Notfallkarte Druckansicht: persönliche Daten fehlen in der Druckansicht
+- keine technischen Blocker im durchgeführten Scope
 
 ### Freigabeentscheidung
 

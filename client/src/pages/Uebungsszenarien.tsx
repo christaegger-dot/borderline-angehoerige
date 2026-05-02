@@ -1,9 +1,13 @@
-import SEO from "@/components/SEO";
-import Layout from "@/components/Layout";
-import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, Info } from "lucide-react";
-import { Link } from "wouter";
+import {
+  EditorialLayout,
+  EditorialProse,
+  EditorialSection,
+} from "@/components/editorial";
 import KommunikationsUebung from "@/components/interactive/KommunikationsUebung";
+import Layout from "@/components/Layout";
+import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import SEO from "@/components/SEO";
+import { Link } from "wouter";
 
 export default function Uebungsszenarien() {
   return (
@@ -14,116 +18,103 @@ export default function Uebungsszenarien() {
         path="/uebungen"
       />
 
-      {/* Hero */}
-      <section className="py-10 md:py-14 bg-gradient-to-b from-sage-wash/60 to-background">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl"
+      <EditorialLayout width="wide">
+        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+          <Link
+            href="/kommunizieren"
+            className="editorial-link text-sm"
+            style={{ color: "var(--fg-secondary)" }}
           >
-            <Link
-              href="/kommunizieren"
-              className="text-sm text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1"
-            >
-              ← Zur Kommunikations-Seite
-            </Link>
+            ← Zur Kommunikations-Seite
+          </Link>
 
-            <div className="flex items-center gap-3 mb-6 mt-4">
-              <div className="w-12 h-12 rounded-xl bg-sand-muted flex items-center justify-center">
-                <MessageCircle className="w-6 h-6 text-sage-mid" />
-              </div>
-              <span className="text-sm font-medium text-sage-dark">
-                Interaktive Übungen
-              </span>
-            </div>
+          <p
+            className="mt-8 text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
+          >
+            Interaktive Übungen
+          </p>
+          <h1
+            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            style={{
+              lineHeight: "var(--lh-tight)",
+              letterSpacing: "var(--tracking-tight)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
+            Kommunikation <em>üben</em>
+          </h1>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground mb-6">
-              Kommunikation üben
-            </h1>
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-lg)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Realistische Situationen, verschiedene Antwortmöglichkeiten und
+            sofortiges Feedback. Probieren Sie aus, wie SET, DEAR MAN und
+            Validierung in der Praxis klingen.
+          </p>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Realistische Situationen, verschiedene Antwortmöglichkeiten,
-              sofortiges Feedback. Probieren Sie aus, wie SET
-              (Support–Empathie–Wahrheit), DEAR MAN und Validierung in der
-              Praxis klingen.
+          <p
+            className="mt-6"
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            Es gibt kein starres «richtig» im echten Leben, aber oft
+            hilfreichere und weniger hilfreiche Reaktionen. Diese Übungen zeigen
+            bewährte Muster, die Sie für Ihre eigene Situation anpassen können.
+          </p>
+        </header>
+
+        <EditorialSection label="Praxis" title="Interaktive Szenarien">
+          <KommunikationsUebung />
+        </EditorialSection>
+
+        <EditorialSection label="Vertiefen" title="Theorie nachlesen" rule>
+          <EditorialProse>
+            <p>
+              Wenn Sie die Muster hinter den Übungen vertiefen möchten, finden
+              Sie hier die passenden Seiten.
             </p>
+          </EditorialProse>
+        </EditorialSection>
 
-            <div className="p-4 rounded-xl bg-sand border border-sand-subtle">
-              <p className="text-sm text-muted-foreground flex items-start gap-2">
-                <Info className="w-4 h-4 flex-shrink-0 mt-0.5 text-sage-mid" />
-                <span>
-                  Es gibt kein «falsch» im echten Leben – nur ungünstigere
-                  Reaktionen. Diese Übungen zeigen bewährte Muster, die Sie
-                  anpassen können.
-                </span>
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Scenarios */}
-      <section className="py-8 md:py-12">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <KommunikationsUebung />
-
-            {/* Related links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-12 pt-8 border-t border-border"
-            >
-              <h2 className="text-lg font-semibold text-foreground mb-4">
-                Theorie nachlesen
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {[
-                  {
-                    href: "/kommunizieren",
-                    label: "Kommunizieren",
-                    sub: "SET, Validierung, Timing",
-                  },
-                  {
-                    href: "/grenzen",
-                    label: "Grenzen setzen",
-                    sub: "Klare Grenzen formulieren",
-                  },
-                  {
-                    href: "/wegweiser",
-                    label: "Situations-Wegweiser",
-                    sub: "«Was tun wenn…»",
-                  },
-                  {
-                    href: "/unterstuetzen/krise",
-                    label: "Krisenbegleitung",
-                    sub: "Deeskalation und Ampel-System",
-                  },
-                ].map(item => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="flex items-center justify-between gap-3 p-4 rounded-xl border border-border/50 hover:border-sage-mid/40 hover:shadow-sm transition-all group"
-                  >
-                    <div>
-                      <p className="text-sm font-medium text-foreground">
-                        {item.label}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        {item.sub}
-                      </p>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-sage-mid transition-colors flex-shrink-0" />
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+        <RelatedLinksEditorial
+          links={[
+            {
+              href: "/kommunizieren",
+              title: "Kommunizieren",
+              description: "SET, Validierung, Timing und Deeskalation.",
+            },
+            {
+              href: "/grenzen",
+              title: "Grenzen setzen",
+              description: "Klare Grenzen formulieren und halten.",
+            },
+            {
+              href: "/wegweiser",
+              title: "Situations-Wegweiser",
+              description: "Orientierung für konkrete Belastungssituationen.",
+            },
+            {
+              href: "/unterstuetzen/krise",
+              title: "Krisenbegleitung",
+              description: "Ampel-System, Deeskalation und Akutlogik.",
+            },
+          ]}
+        />
+      </EditorialLayout>
     </Layout>
   );
 }

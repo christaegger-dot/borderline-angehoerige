@@ -86,6 +86,22 @@ Der Lauf:
 - aktualisiert [infografik-inventory.json](./infografik-inventory.json)
 - trennt aktive Produktdateien, Support-Dateien und unreferenzierte Kandidaten
 
+## Browser-Matrix (`qa/scripts/release-browser-matrix.mjs`)
+
+Der aktuelle Release-Lauf gegen Production wird so geschrieben:
+
+```sh
+pnpm audit:browser-matrix
+```
+
+Der Lauf:
+
+- aktualisiert [release-browser-matrix.json](./release-browser-matrix.json)
+- schreibt den letzten dokumentierten Matrix-Stand nach
+  [release-browser-matrix.md](./release-browser-matrix.md)
+- markiert ehrlich, welche Browser hier technisch geprueft wurden und welche
+  ohne zusaetzliche Software oder echte Geraete offen bleiben
+
 ## A11y-Skripte (`qa/scripts/*.mjs`)
 
 Voraussetzungen: `pnpm install` (zieht `playwright` + `@axe-core/playwright`)

@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run --config vitest.config.ts",
     "check": "tsc --noEmit",
+    "audit:browser-matrix": "AUDIT_BASE_URL=https://borderline-angehoerige.netlify.app node qa/scripts/release-browser-matrix.mjs --write",
     "audit:infografiken": "pnpm exec tsx qa/scripts/audit-infografik-inventory.ts --write",
     "format": "prettier --write .",
     "prepare": "husky"

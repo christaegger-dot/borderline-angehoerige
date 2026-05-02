@@ -38,6 +38,8 @@ Fuer den Content-Audit gilt explizit:
 
 - Repo-spezifische Prompt-Sammlung: [codex-audit-prompts.md](./codex-audit-prompts.md)
 - Vollstaendiger Repo-Plan: [audit-plan.md](./audit-plan.md)
+- Infografik-Inventar und Asset-Workflow:
+  [../docs/infografik-workflow.md](../docs/infografik-workflow.md)
 - Release-Matrix fuer echte Geraete-/Browser-Tests:
   [release-browser-matrix.md](./release-browser-matrix.md)
 - Audit-Worktree-Helfer: [`_dev/create-audit-worktree.sh`](../_dev/create-audit-worktree.sh)
@@ -67,6 +69,22 @@ _dev/create-audit-worktree.sh a11y-interaktion
 Der Helper kopiert `qa/README.md` und `qa/codex-audit-prompts.md` in jeden
 neu angelegten Audit-Worktree, damit jeder Audit-Lauf fuer sich
 selbstbeschreibend bleibt.
+
+## Asset-Inventar (`qa/scripts/audit-infografik-inventory.ts`)
+
+Das Repo fuehrt den produktiven Infografik-Bestand ueber die echten Content-
+Referenzen in `client/src/content/**`. Der Snapshot wird so aktualisiert:
+
+```sh
+pnpm audit:infografiken
+```
+
+Der Lauf:
+
+- prueft, dass jede referenzierte Datei unter `client/public/infografiken`
+  wirklich existiert
+- aktualisiert [infografik-inventory.json](./infografik-inventory.json)
+- trennt aktive Produktdateien, Support-Dateien und unreferenzierte Kandidaten
 
 ## A11y-Skripte (`qa/scripts/*.mjs`)
 

@@ -6,7 +6,6 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 type Antwort = "ja" | "manchmal" | "nein" | null;
@@ -97,16 +96,16 @@ const antwortLabels: Record<Exclude<Antwort, null>, string> = {
 };
 
 const antwortFarben: Record<Exclude<Antwort, null>, string> = {
-  ja: "border-sand-border bg-sand-muted/60 text-sand-warm",
-  manchmal: "border-sage-light bg-sage-wash/60 text-sage-mid-dark",
-  nein: "border-slate-light bg-slate-wash/60 text-slate-blue",
+  ja: "border-border/70 bg-background text-foreground",
+  manchmal: "border-border/70 bg-background text-foreground",
+  nein: "border-border/70 bg-background text-foreground",
 };
 
 const antwortAktivFarben: Record<Exclude<Antwort, null>, string> = {
-  ja: "border-sand-warm bg-sand-muted ring-2 ring-sand-warm/30 text-sand-warm font-semibold",
+  ja: "border-sand-warm/70 bg-sand-muted/35 ring-2 ring-sand-warm/20 text-sand-warm font-semibold",
   manchmal:
-    "border-sage-mid bg-sage-wash ring-2 ring-sage-mid/30 text-sage-mid-dark font-semibold",
-  nein: "border-slate-blue bg-slate-wash ring-2 ring-slate-blue/30 text-slate-blue font-semibold",
+    "border-sage-mid/70 bg-sage-wash/35 ring-2 ring-sage-mid/20 text-sage-mid-dark font-semibold",
+  nein: "border-slate-blue/70 bg-slate-wash/30 ring-2 ring-slate-blue/20 text-slate-blue font-semibold",
 };
 
 export default function GrenzenCheck() {
@@ -116,7 +115,6 @@ export default function GrenzenCheck() {
 
   const setzeAntwort = (id: string, antwort: Antwort) => {
     setAntworten(prev => ({ ...prev, [id]: antwort }));
-    // Einordnung automatisch öffnen
     setOffenePunkte(prev => ({ ...prev, [id]: true }));
   };
 
@@ -152,23 +150,24 @@ export default function GrenzenCheck() {
 
   return (
     <div className="mt-6 space-y-5">
-      <Card className="border-border/50 bg-muted/20">
-        <CardContent className="p-5">
-          <div className="flex items-start gap-3">
-            <Shield className="w-5 h-5 text-sage-mid-dark flex-shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-semibold text-foreground mb-1">
-                Orientierung zu Grenzen im Alltag
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Dieser Check hilft Ihnen, fünf häufige Schwierigkeiten beim
-                Grenzen setzen ruhig zu reflektieren. Es gibt keine richtigen
-                oder falschen Antworten – nur ehrliche.
-              </p>
-            </div>
+      <section className="border-t border-[color:var(--rule-color)] pt-5">
+        <div className="flex items-start gap-3">
+          <Shield className="mt-0.5 h-5 w-5 flex-shrink-0 text-[color:var(--accent-primary)]" />
+          <div>
+            <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
+              Reflexion
+            </p>
+            <h3 className="mb-1 font-semibold text-foreground">
+              Orientierung zu Grenzen im Alltag
+            </h3>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Dieser Check hilft Ihnen, fünf häufige Schwierigkeiten beim
+              Grenzen setzen ruhig zu reflektieren. Es gibt keine richtigen oder
+              falschen Antworten – nur ehrliche.
+            </p>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </section>
 
       <div className="space-y-4">
         {checkPunkte.map((punkt, index) => {
@@ -176,76 +175,74 @@ export default function GrenzenCheck() {
           const istOffen = offenePunkte[punkt.id] ?? false;
 
           return (
-            <Card
+            <section
               key={punkt.id}
-              className={`border-border/50 transition-all ${antwort ? "border-border/70" : ""}`}
+              className={`border-t border-[color:var(--rule-color)] pt-5 transition-colors ${antwort ? "border-[color:var(--rule-color-strong)]" : ""}`}
             >
-              <CardContent className="p-5">
-                <div className="flex items-start gap-3 mb-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-sage-wash text-sage-mid-dark text-xs font-bold flex items-center justify-center mt-0.5">
-                    {index + 1}
-                  </span>
-                  <div className="flex-1">
-                    <p className="text-xs font-medium text-sage-mid-dark mb-1">
-                      {punkt.bereich}
-                    </p>
-                    <p className="text-sm font-medium text-foreground leading-relaxed">
-                      {punkt.frage}
-                    </p>
-                  </div>
+              <div className="mb-3 flex items-start gap-3">
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-border/60 bg-background text-xs font-bold text-[color:var(--accent-primary)]">
+                  {index + 1}
+                </span>
+                <div className="flex-1">
+                  <p className="mb-1 text-xs font-medium text-[color:var(--accent-label)]">
+                    {punkt.bereich}
+                  </p>
+                  <p className="text-sm font-medium leading-relaxed text-foreground">
+                    {punkt.frage}
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex gap-2 ml-9 flex-wrap">
-                  {(["ja", "manchmal", "nein"] as const).map(option => (
-                    <button
-                      key={option}
-                      type="button"
-                      onClick={() => setzeAntwort(punkt.id, option)}
-                      className={`px-3 py-1.5 rounded-xl border text-sm transition-all ${
-                        antwort === option
-                          ? antwortAktivFarben[option]
-                          : antwortFarben[option] + " hover:opacity-80"
-                      }`}
-                    >
-                      {antwortLabels[option]}
-                    </button>
-                  ))}
-                </div>
+              <div className="ml-9 flex flex-wrap gap-2">
+                {(["ja", "manchmal", "nein"] as const).map(option => (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => setzeAntwort(punkt.id, option)}
+                    className={`rounded-full border px-3 py-1.5 text-sm transition-all ${
+                      antwort === option
+                        ? antwortAktivFarben[option]
+                        : `${antwortFarben[option]} hover:bg-muted/35`
+                    }`}
+                  >
+                    {antwortLabels[option]}
+                  </button>
+                ))}
+              </div>
 
-                {antwort && (
-                  <div className="ml-9 mt-3">
-                    <button
-                      type="button"
-                      onClick={() => togglePunkt(punkt.id)}
-                      className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {istOffen ? (
-                        <>
-                          <ChevronUp className="w-3 h-3" />
-                          Einordnung ausblenden
-                        </>
-                      ) : (
-                        <>
-                          <ChevronDown className="w-3 h-3" />
-                          Einordnung anzeigen
-                        </>
-                      )}
-                    </button>
-
-                    {istOffen && (
-                      <div className="mt-2 space-y-2">
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {punkt.einordnung[antwort]}
-                        </p>
-                        <p className="text-xs text-muted-foreground/70 italic">
-                          {punkt.hinweis}
-                        </p>
-                      </div>
+              {antwort && (
+                <div className="ml-9 mt-3">
+                  <button
+                    type="button"
+                    onClick={() => togglePunkt(punkt.id)}
+                    className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {istOffen ? (
+                      <>
+                        <ChevronUp className="h-3 w-3" />
+                        Einordnung ausblenden
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown className="h-3 w-3" />
+                        Einordnung anzeigen
+                      </>
                     )}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+                  </button>
+
+                  {istOffen && (
+                    <div className="mt-3 space-y-2 border-l border-[color:var(--rule-color-strong)] pl-4">
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {punkt.einordnung[antwort]}
+                      </p>
+                      <p className="text-xs italic text-muted-foreground/70">
+                        {punkt.hinweis}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </section>
           );
         })}
       </div>
@@ -254,10 +251,10 @@ export default function GrenzenCheck() {
         <div className="flex justify-center">
           <Button
             variant="outline"
-            className="border-sage-mid text-sage-mid-dark hover:bg-sage-wash"
+            className="border-border/70 text-[color:var(--accent-primary)] hover:bg-muted/35"
             onClick={() => setAbgeschlossen(true)}
           >
-            <CheckCircle2 className="w-4 h-4 mr-2" />
+            <CheckCircle2 className="mr-2 h-4 w-4" />
             Gesamteinordnung anzeigen
           </Button>
         </div>
@@ -268,43 +265,50 @@ export default function GrenzenCheck() {
           const einordnung = getGesamtEinordnung();
           const istAlert = einordnung.ton === "alert";
           const istSand = einordnung.ton === "sand";
+
           return (
-            <Card
-              className={`${
+            <section
+              className={`border-t pt-5 ${
                 istAlert
-                  ? "border-alert/20 bg-alert/5"
-                  : istSand
-                    ? "border-sand-border/60 bg-sand-muted/40"
-                    : "border-sage-mid/20 bg-sage-wash/30"
+                  ? "border-alert/30"
+                  : "border-[color:var(--rule-color-strong)]"
               }`}
             >
-              <CardContent className="p-5">
+              <div
+                className={`border p-5 ${
+                  istAlert
+                    ? "border-alert/20 bg-alert/5"
+                    : istSand
+                      ? "border-sand-border/40 bg-sand-muted/20"
+                      : "border-border/60 bg-muted/20"
+                }`}
+              >
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     {istAlert ? (
-                      <AlertTriangle className="w-5 h-5 text-alert flex-shrink-0 mt-0.5" />
+                      <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-alert" />
                     ) : (
                       <Shield
-                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${istSand ? "text-sand-warm" : "text-sage-dark"}`}
+                        className={`mt-0.5 h-5 w-5 flex-shrink-0 ${istSand ? "text-sand-warm" : "text-[color:var(--accent-primary)]"}`}
                       />
                     )}
-                    <p className="text-sm text-foreground leading-relaxed">
+                    <p className="text-sm leading-relaxed text-foreground">
                       {einordnung.text}
                     </p>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed ml-8">
+                  <p className="ml-8 text-xs leading-relaxed text-muted-foreground">
                     Die Fachstelle Angehörigenarbeit (PUK Zürich) bietet
                     Beratung: 058 384 38 00. Grenzen setzen lässt sich üben –
                     manchmal hilft ein Gespräch mehr als jeder Ratgeber.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </section>
           );
         })()}
 
       {!alleBeantwortet && anzahlBeantwortet > 0 && (
-        <p className="text-xs text-center text-muted-foreground">
+        <p className="text-center text-xs text-muted-foreground">
           {checkPunkte.length - anzahlBeantwortet} von {checkPunkte.length}{" "}
           Fragen noch offen
         </p>

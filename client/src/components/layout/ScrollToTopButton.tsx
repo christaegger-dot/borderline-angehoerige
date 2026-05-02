@@ -29,7 +29,7 @@ export function ScrollToTopButton() {
           behavior: "smooth",
         })
       }
-      className={`fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-background/95 text-[color:var(--accent-primary)] shadow-[0_18px_40px_-34px_rgba(15,23,42,0.55)] backdrop-blur-sm transition-colors hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)]/30 focus-visible:ring-offset-2 sm:h-12 sm:w-12 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
+      className={`fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-background text-[color:var(--accent-primary)] shadow-[0_14px_32px_-30px_rgba(15,23,42,0.42)] transition-colors hover:bg-white hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)]/30 focus-visible:ring-offset-2 sm:h-12 sm:w-12 ${hideOnMobile ? "hidden sm:flex" : "flex"}`}
       aria-label="Nach oben scrollen"
     >
       <ChevronUp className="w-6 h-6" />

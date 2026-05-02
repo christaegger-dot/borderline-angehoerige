@@ -171,7 +171,8 @@ export default function HandoutTextPage({
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
               asChild
-              className="bg-sage-dark hover:bg-sage-mid text-white"
+              variant="outline"
+              className="border-[color:var(--accent-primary)] bg-[color:var(--accent-primary)] text-[color:var(--bg-primary)] shadow-none hover:border-[color:var(--accent-primary-h)] hover:bg-[color:var(--accent-primary-h)] hover:text-[color:var(--bg-primary)]"
             >
               <a href={openHref} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4" />
@@ -247,7 +248,7 @@ export default function HandoutTextPage({
             </EditorialProse>
           ) : (
             <div className="flex items-center gap-3" style={bodyStyle}>
-              <Spinner className="size-5 text-sage-dark" />
+              <Spinner className="size-5 text-[color:var(--accent-primary)]" />
               <p>Die ausführliche Textversion wird geladen.</p>
             </div>
           )}
@@ -316,7 +317,7 @@ export default function HandoutTextPage({
         ) : (
           <EditorialSection title="Textversion lädt" rule>
             <div className="flex items-center gap-3" style={bodyStyle}>
-              <Spinner className="size-5 text-sage-dark" />
+              <Spinner className="size-5 text-[color:var(--accent-primary)]" />
               <p>Die Abschnitte dieser Textversion werden geladen.</p>
             </div>
           </EditorialSection>

@@ -81,7 +81,11 @@ body {
   color: var(--nk-text-faint);
   font-size: 6.5pt;
   text-align: right;
-  white-space: nowrap;
+  line-height: 1.35;
+}
+
+.header-review {
+  color: white;
 }
 
 /* ── BLÖCKE ALLGEMEIN ─────────────────────── */

@@ -175,7 +175,7 @@ export default function Genesung() {
           >
             Vollständig ca. 8 Min · Auch abschnittweise lesbar.
           </p>
-          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+          <LastVerifiedBadge path="/genesung" className="mt-6" />
         </header>
 
         {/* ── Intro: Was auf dieser Seite besonders wichtig ist ── */}

@@ -172,7 +172,7 @@ export default function Selbsthilfegruppen() {
             suchen. Hier finden Sie Beratung, Selbsthilfe und weitere
             Anlaufstellen für Angehörige in der Schweiz.
           </p>
-          <LastVerifiedBadge date="24.03.2026" className="mt-6" />
+          <LastVerifiedBadge path={canonicalPath} className="mt-6" />
           <ReviewBadge path={canonicalPath} />
         </header>
 

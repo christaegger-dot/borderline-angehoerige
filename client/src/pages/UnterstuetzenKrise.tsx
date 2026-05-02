@@ -31,6 +31,7 @@ import {
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import ReviewBadge from "@/components/ReviewBadge";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
@@ -405,7 +406,8 @@ export default function UnterstuetzenKrise() {
           >
             Vollständig ca. 6 Min · Auch abschnittweise lesbar.
           </p>
-          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+          <LastVerifiedBadge path="/unterstuetzen/krise" className="mt-6" />
+          <ReviewBadge path="/unterstuetzen/krise" />
         </header>
 
         {/* ── Disclaimer ── */}

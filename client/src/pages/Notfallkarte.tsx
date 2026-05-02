@@ -54,6 +54,7 @@ const EMPTY_DATA: NotfallkarteData = {
   calmingStrategies: DEFAULT_STRATEGIES,
   notes: "",
 };
+const NOTFALLKARTE_PRINT_MESSAGE_TYPE = "notfallkarte-print-data";
 
 function createId() {
   return Math.random().toString(36).slice(2, 9);
@@ -87,6 +88,15 @@ function isStorageAvailable(): boolean {
 function saveData(data: NotfallkarteData): boolean {
   try {
     localStorage.setItem(NOTFALLKARTE_STORAGE_KEY, JSON.stringify(data));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function savePrintData(data: NotfallkarteData): boolean {
+  try {
+    localStorage.setItem(NOTFALLKARTE_PRINT_STORAGE_KEY, JSON.stringify(data));
     return true;
   } catch {
     return false;
@@ -272,8 +282,15 @@ export default function Notfallkarte() {
   );
 
   const handleSave = useCallback(() => {
-    saveData(data);
+    if (!saveData(data)) {
+      setStorageError(true);
+      setSaved(false);
+      setAnnouncement("Speichern nicht möglich");
+      return;
+    }
+
     setSaved(true);
+    setAnnouncement("Im Browser gespeichert");
     if (savedTimerRef.current) clearTimeout(savedTimerRef.current);
     savedTimerRef.current = setTimeout(() => setSaved(false), 2000);
   }, [data]);
@@ -297,15 +314,47 @@ export default function Notfallkarte() {
   }, []);
 
   const handlePrint = useCallback(() => {
-    try {
-      localStorage.setItem(
-        NOTFALLKARTE_PRINT_STORAGE_KEY,
-        JSON.stringify(data)
-      );
-    } catch {
-      /* ignore */
+    const printWindow = window.open("/notfallkarte-print.html", "_blank");
+
+    if (!printWindow) {
+      setAnnouncement("Druckansicht konnte nicht geöffnet werden");
+      return;
     }
-    window.open("/notfallkarte-print.html", "_blank");
+
+    if (!savePrintData(data)) {
+      setStorageError(true);
+    }
+
+    const payload = {
+      type: NOTFALLKARTE_PRINT_MESSAGE_TYPE,
+      data,
+    };
+    let attempts = 0;
+    let intervalId: number | null = null;
+
+    const stopSending = () => {
+      if (intervalId !== null) {
+        window.clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    const sendPayload = () => {
+      try {
+        printWindow.postMessage(payload, window.location.origin);
+      } catch {
+        /* ignore cross-window delivery failures */
+      }
+
+      attempts += 1;
+      if (attempts >= 10 || printWindow.closed) {
+        stopSending();
+      }
+    };
+
+    sendPayload();
+    intervalId = window.setInterval(sendPayload, 150);
+    window.setTimeout(stopSending, 1800);
   }, [data]);
 
   const addContact = useCallback(() => {

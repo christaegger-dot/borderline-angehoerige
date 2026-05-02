@@ -211,7 +211,7 @@ export default function Grenzen() {
           >
             Vollständig ca. 12 Min · Auch abschnittweise lesbar.
           </p>
-          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+          <LastVerifiedBadge path="/grenzen" className="mt-6" />
           <ReviewBadge path="/grenzen" />
         </header>
 

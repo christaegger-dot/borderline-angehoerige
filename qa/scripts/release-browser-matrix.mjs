@@ -1,7 +1,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { devices } from "playwright";
-import { BASE_URL, launchBrowser, qaPath, routeUrl, writeJson } from "./a11y-shared.mjs";
+import {
+  BASE_URL,
+  launchBrowser,
+  qaPath,
+  routeUrl,
+  writeJson,
+} from "./a11y-shared.mjs";
 
 const TODAY = "2026-05-02";
 const REPORT_NAME = "release-browser-matrix.json";
@@ -88,7 +94,9 @@ async function runFlow(page, profile) {
   const searchOpenButton = isMobile
     ? page.locator('button[aria-label="Suche öffnen"]').first()
     : page.locator('button[aria-label="Suchen"]').first();
-  const mobileMenuButton = page.locator('button[aria-label="Menü öffnen"]').first();
+  const mobileMenuButton = page
+    .locator('button[aria-label="Menü öffnen"]')
+    .first();
   const searchInput = page.locator(
     'input[role="combobox"][aria-label="Website durchsuchen"]'
   );
@@ -124,7 +132,9 @@ async function runFlow(page, profile) {
   }
 
   await step("Sticky Header über Scrollstrecke sichtbar", async () => {
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.65));
+    await page.evaluate(() =>
+      window.scrollTo(0, document.body.scrollHeight * 0.65)
+    );
     const control = isMobile ? mobileMenuButton : searchOpenButton;
     await control.waitFor();
   });
@@ -145,27 +155,44 @@ async function runFlow(page, profile) {
 
   await step("/notfallkarte/erstellen direkt öffnen", async () => {
     await visit(page, "/notfallkarte/erstellen");
-    await page.getByRole("heading", { level: 1, name: /Persönliche Notfallkarte/i }).waitFor();
+    await page
+      .getByRole("heading", { level: 1, name: /Persönliche Notfallkarte/i })
+      .waitFor();
   });
 
   await step("Notfallkarte Eingaben + Reload + Zurück/Vorwärts", async () => {
     await page.getByRole("button", { name: "Kontakt hinzufügen" }).click();
     await page.getByLabel("Name der Kontaktperson").fill("Testkontakt");
-    await page.getByLabel("Telefonnummer der Kontaktperson").fill("079 123 45 67");
-    await page.getByLabel("Beziehung oder Rolle der Kontaktperson").fill("Vertrauensperson");
-    await page.getByLabel("Persönliche Notizen").fill(`Browser-Matrix ${profile.slug}`);
+    await page
+      .getByLabel("Telefonnummer der Kontaktperson")
+      .fill("079 123 45 67");
+    await page
+      .getByLabel("Beziehung oder Rolle der Kontaktperson")
+      .fill("Vertrauensperson");
+    await page
+      .getByLabel("Persönliche Notizen")
+      .fill(`Browser-Matrix ${profile.slug}`);
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForLoadState("networkidle");
     await page.getByLabel("Name der Kontaktperson").waitFor();
-    const nameValue = await page.getByLabel("Name der Kontaktperson").inputValue();
-    const notesValue = await page.getByLabel("Persönliche Notizen").inputValue();
-    if (nameValue !== "Testkontakt" || notesValue !== `Browser-Matrix ${profile.slug}`) {
+    const nameValue = await page
+      .getByLabel("Name der Kontaktperson")
+      .inputValue();
+    const notesValue = await page
+      .getByLabel("Persönliche Notizen")
+      .inputValue();
+    if (
+      nameValue !== "Testkontakt" ||
+      notesValue !== `Browser-Matrix ${profile.slug}`
+    ) {
       throw new Error("Notfallkarten-Daten über Reload nicht stabil");
     }
     await visit(page, "/soforthilfe");
     await page.goBack({ waitUntil: "domcontentloaded" });
     await page.waitForLoadState("networkidle");
-    const notesAfterBack = await page.getByLabel("Persönliche Notizen").inputValue();
+    const notesAfterBack = await page
+      .getByLabel("Persönliche Notizen")
+      .inputValue();
     if (notesAfterBack !== `Browser-Matrix ${profile.slug}`) {
       throw new Error("Daten nach Zurück-Navigation verloren");
     }
@@ -199,20 +226,30 @@ async function runFlow(page, profile) {
 
   await step("Notfallkarte löschen", async () => {
     page.once("dialog", dialog => dialog.accept());
-    await page.getByRole("button", { name: "Lokale Notfallkarten-Daten löschen" }).click();
+    await page
+      .getByRole("button", { name: "Lokale Notfallkarten-Daten löschen" })
+      .click();
     await page.getByLabel("Persönliche Notizen").waitFor();
-    const notesValue = await page.getByLabel("Persönliche Notizen").inputValue();
-    const contactCount = await page.getByLabel("Name der Kontaktperson").count();
+    const notesValue = await page
+      .getByLabel("Persönliche Notizen")
+      .inputValue();
+    const contactCount = await page
+      .getByLabel("Name der Kontaktperson")
+      .count();
     if (notesValue !== "" || contactCount !== 0) {
-      throw new Error("lokale Notfallkarten-Daten wurden nicht vollständig gelöscht");
+      throw new Error(
+        "lokale Notfallkarten-Daten wurden nicht vollständig gelöscht"
+      );
     }
   });
 
   await step("/materialien + Filter", async () => {
     await visit(page, "/materialien");
-    await page.getByRole("heading", { level: 1, name: /Materialien/i }).waitFor();
     await page
-      .locator('button[aria-pressed]')
+      .getByRole("heading", { level: 1, name: /Materialien/i })
+      .waitFor();
+    await page
+      .locator("button[aria-pressed]")
       .filter({ hasText: "Verstehen" })
       .first()
       .click();
@@ -350,7 +387,9 @@ function markdownReport(report) {
   lines.push("", "### Kritische Befunde", "");
 
   const failures = report.profiles.flatMap(profile =>
-    profile.findings.map(finding => `- ${profile.device} ${profile.browser}: ${finding}`)
+    profile.findings.map(
+      finding => `- ${profile.device} ${profile.browser}: ${finding}`
+    )
   );
 
   if (failures.length === 0) {
@@ -453,8 +492,7 @@ async function main() {
         kind: "desktop",
         contextOptions: chromeContextOptions(),
         passStatus: "bestanden",
-        notes:
-          "Playwright-Lauf gegen Production mit System-Chrome/Chromium",
+        notes: "Playwright-Lauf gegen Production mit System-Chrome/Chromium",
       },
     ]) {
       profiles.push(await runProfile(browser, profile));
@@ -474,22 +512,24 @@ async function main() {
         device: "optional macOS",
         browser: "Safari",
         optional: true,
-        notes:
-          "optional – in diesem Lauf nicht automatisiert abgedeckt",
+        notes: "optional – in diesem Lauf nicht automatisiert abgedeckt",
       })
     );
 
-    const hasHardFailure = profiles.some(profile => profile.status === "nicht bestanden");
-    const hasMandatoryOpen = profiles.some(
-      profile =>
-        !profile.browser.startsWith("Safari") &&
-        profile.status === "offen"
-    ) || profiles.some(
-      profile =>
-        profile.device === "iPhone" &&
-        profile.browser === "Safari" &&
-        profile.status === "offen"
+    const hasHardFailure = profiles.some(
+      profile => profile.status === "nicht bestanden"
     );
+    const hasMandatoryOpen =
+      profiles.some(
+        profile =>
+          !profile.browser.startsWith("Safari") && profile.status === "offen"
+      ) ||
+      profiles.some(
+        profile =>
+          profile.device === "iPhone" &&
+          profile.browser === "Safari" &&
+          profile.status === "offen"
+      );
 
     const report = {
       label: runLabel(),
@@ -497,7 +537,8 @@ async function main() {
       baseUrl: BASE_URL,
       gitHead: await gitHead(),
       profiles,
-      releaseDecision: hasHardFailure || hasMandatoryOpen ? "blocked" : "green-with-notes",
+      releaseDecision:
+        hasHardFailure || hasMandatoryOpen ? "blocked" : "green-with-notes",
     };
 
     const markdown = markdownReport(report);
@@ -508,10 +549,9 @@ async function main() {
       const matrixPath = path.resolve(qaPath("release-browser-matrix.md"));
       const original = await fs.readFile(matrixPath, "utf8");
       const marker = "\n## Letzter Lauf\n";
-      const nextContent =
-        original.includes(marker)
-          ? `${original.split(marker)[0]}${marker}\n${markdown}`
-          : `${original.trimEnd()}\n\n## Letzter Lauf\n\n${markdown}`;
+      const nextContent = original.includes(marker)
+        ? `${original.split(marker)[0]}${marker}\n${markdown}`
+        : `${original.trimEnd()}\n\n## Letzter Lauf\n\n${markdown}`;
       await fs.writeFile(matrixPath, `${nextContent.trimEnd()}\n`);
     }
 

@@ -125,3 +125,17 @@ Weiterhin als generelle Zukunftsregel sinnvoll:
 - Das Audit bewertet technische und strukturelle PDF-Qualitaet, nicht die
   fachliche Richtigkeit der Inhalte.
 - Es wurde bewusst keine vollstaendige PDF/UA-Zertifizierung geprueft.
+
+## PDF/UA-Einordnung
+
+- Der aktuelle gruene Befund bezieht sich auf:
+  - Dateierreichbarkeit
+  - Proxy-Verhalten
+  - A4-Konsistenz
+  - `Title`-Metadaten
+  - extrahierbaren Textlayer
+- Eine formale PDF/UA-Pruefung oder Zertifizierung ist damit ausdruecklich
+  nicht ersetzt.
+- Falls kuenftig ein hoeherer Accessibility-Standard fuer PDFs verlangt wird,
+  sollte PDF/UA als eigener Zusatzcheck mit separater Dokumentation behandelt
+  werden.

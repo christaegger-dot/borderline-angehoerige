@@ -1,5 +1,12 @@
 # audit/performance
 
+> Historischer Audit-Stand:
+> Dieser Bericht beschreibt den damaligen Mess- und Architekturstand.
+> Einzelne Hinweise zu entfernten `files.manuscdn.com`-Assets sind
+> inzwischen technisch ueberholt und nicht als aktueller
+> Produktionsbefund zu lesen. Fuer den aktuellen Stand siehe
+> `docs/manus-cdn-audit.md` und `qa/audit-pdf-handouts.md`.
+
 ## Meta
 
 - Repo: `/Users/christaegger/Documents/Webprojekte/borderline-angehoerige`

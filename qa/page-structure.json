@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-28T17:50:05.951Z",
+  "generatedAt": "2026-05-02T12:24:14.880Z",
   "viewport": {
     "name": "desktop",
     "width": 1280,
@@ -67,15 +67,52 @@
     },
     {
       "route": "/soforthilfe",
-      "title": "Borderline: Hilfe für Angehörige – Evidenzbasierte Unterstützung",
-      "h1Count": 0,
-      "headings": [],
+      "title": "Soforthilfe – Borderline · Hilfe für Angehörige",
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Soforthilfe bei akuter Gefahr"
+        },
+        {
+          "index": 1,
+          "tag": "h2",
+          "level": 2,
+          "text": "Lebensgefahr"
+        },
+        {
+          "index": 2,
+          "tag": "h2",
+          "level": 2,
+          "text": "Psychiatrische Krise"
+        },
+        {
+          "index": 3,
+          "tag": "h2",
+          "level": 2,
+          "text": "Entlastung und Gespräch"
+        },
+        {
+          "index": 4,
+          "tag": "h3",
+          "level": 3,
+          "text": "Weitere Hilfe"
+        },
+        {
+          "index": 5,
+          "tag": "h3",
+          "level": 3,
+          "text": "Materialien"
+        }
+      ],
       "headingJumps": [],
       "landmarks": {
-        "main": 0,
-        "nav": 0,
-        "header": 0,
-        "footer": 0
+        "main": 1,
+        "nav": 1,
+        "header": 1,
+        "footer": 1
       },
       "imageSummary": {
         "total": 0,
@@ -283,14 +320,108 @@
     {
       "route": "/notfallkarte",
       "title": "Notfallkarte Zürich – Psychische Krise v06",
-      "h1Count": 0,
-      "headings": [],
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Notfallkarte Zürich – Psychische Krise"
+        }
+      ],
       "headingJumps": [],
       "landmarks": {
-        "main": 0,
+        "main": 1,
         "nav": 0,
-        "header": 0,
-        "footer": 0
+        "header": 1,
+        "footer": 1
+      },
+      "imageSummary": {
+        "total": 0,
+        "missingAlt": 0,
+        "emptyAlt": 0
+      },
+      "unlabeledControls": [],
+      "inputsWithoutLabels": []
+    },
+    {
+      "route": "/notfallkarte/erstellen",
+      "title": "Persönliche Notfallkarte – Borderline · Hilfe für Angehörige",
+      "h1Count": 1,
+      "headings": [
+        {
+          "index": 0,
+          "tag": "h1",
+          "level": 1,
+          "text": "Persönliche Notfallkarte"
+        },
+        {
+          "index": 1,
+          "tag": "h2",
+          "level": 2,
+          "text": "Notruf & Polizei"
+        },
+        {
+          "index": 2,
+          "tag": "h2",
+          "level": 2,
+          "text": "PUK Zürich (24/7)"
+        },
+        {
+          "index": 3,
+          "tag": "h2",
+          "level": 2,
+          "text": "Jemand zum Reden"
+        },
+        {
+          "index": 4,
+          "tag": "h2",
+          "level": 2,
+          "text": "Meine Kontaktpersonen"
+        },
+        {
+          "index": 5,
+          "tag": "h2",
+          "level": 2,
+          "text": "Meine Beruhigungsstrategien"
+        },
+        {
+          "index": 6,
+          "tag": "h2",
+          "level": 2,
+          "text": "Persönliche Notizen"
+        },
+        {
+          "index": 7,
+          "tag": "h2",
+          "level": 2,
+          "text": "Das könnte Sie auch interessieren"
+        },
+        {
+          "index": 8,
+          "tag": "h3",
+          "level": 3,
+          "text": "Themen"
+        },
+        {
+          "index": 9,
+          "tag": "h3",
+          "level": 3,
+          "text": "Ressourcen"
+        },
+        {
+          "index": 10,
+          "tag": "h3",
+          "level": 3,
+          "text": "Hinweis"
+        }
+      ],
+      "headingJumps": [],
+      "landmarks": {
+        "main": 1,
+        "nav": 2,
+        "header": 2,
+        "footer": 1
       },
       "imageSummary": {
         "total": 0,

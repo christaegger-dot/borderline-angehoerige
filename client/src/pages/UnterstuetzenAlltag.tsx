@@ -1,19 +1,3 @@
-/**
- * Unterstützen — Alltag — Editorial-Redesign Phase 4 Welle 2 (Page 5/10)
- *
- * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge/Übersicht-
- * Pattern. Inhalt unverändert ausser Hero-Lesezeit und prosaischen
- * Verbindungssätzen.
- *
- * Out of scope: `EnergieHaushaltVisualisierung` (visuelle Sub-Komponente,
- * eigenständige Migration in späterer Welle), `UnterstuetzenSubNav`
- * (Cross-Page-Navigation), `LastVerifiedBadge` (page-level Meta-Info wie
- * in Grenzen-Migration).
- *
- * Sicherheits-Hinweis in `impulsivitaet`: dezent erhalten als
- * EditorialPullQuote-ähnliche Hervorhebung, weil der Verweis auf
- * Krisenbegleitung sicherheitsrelevant ist (Selbst-/Fremdgefährdung).
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

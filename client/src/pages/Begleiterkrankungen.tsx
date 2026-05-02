@@ -1,23 +1,3 @@
-/**
- * Begleiterkrankungen — Cluster 3 Komorbidität-Sitzung 1.
- *
- * Eigene Seite zu Komorbidität bei Borderline-Persönlichkeitsstörung,
- * adressiert die im Audit (P1-6) identifizierte Lücke. Architektur-Wahl:
- * Option C (eigene Seite) gemäss Christa-Decision aus Phase 0.
- * Editorial-Pattern analog zu /diagnostik und /genesung.
- *
- * URL-Slug bewusst auf «begleiterkrankungen» gesetzt (nicht
- * «komorbiditaet») — niedrigschwellige deutsche Slug-Konvention der
- * Site, das Fachwort «Komorbidität» wird im Body eingeführt und im
- * Glossar mit-erklärt.
- *
- * Sicherheits-Hinweis: Suizidrisiko bei depressiver Komorbidität wird
- * in eigener Sektion explizit benannt mit Cross-Link auf /soforthilfe.
- *
- * Anti-Diagnostik-Drängen-Linie (Brief §1.4): Stimmungsschwankungs-
- * Differenzierung wird MIT Caveat-vor-Differenzierung präsentiert
- * (Christa-Decision §6).
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

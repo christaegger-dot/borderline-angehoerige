@@ -1,29 +1,3 @@
-/**
- * Beratung & Netzwerke (file: Selbsthilfegruppen.tsx, route: /beratung)
- *
- * Editorial-Redesign Phase 5 (Page 4/9, Tier 2). Folgt Phase-5-Master-
- * Brief, Abschnitt «Page 4 — Beratung & Netzwerke».
- *
- * Pattern (Brief): Kontaktstellen mit Name, Beschreibung, Telefon, Mail,
- * Webseite — analog Home-Sektion 6 «Beratungseinladung». H4 als
- * Stellen-Name, kurzer Body-Absatz, Inline-Links für Tel/Mail/Web.
- * Telefon- und Mail-Daten ausschliesslich aus `data/kontakte.ts` (im
- * Original bereits so umgesetzt — kein Hardcoding-Bruch). Gruppierung
- * nach Kategorie durch plain `<section>`-Wrapper mit Caps-Label und
- * Display-Serif-H2 (analog Quellen-Pattern, lighter als
- * EditorialSection — und erlaubt die existierenden Anker-IDs zu
- * tragen).
- *
- * Anker-IDs erhalten: #professionelle-beratung, #angehoerigen-netzwerke,
- * #selbsthilfegruppen.
- *
- * `LastVerifiedBadge` bleibt (Hero + 3 Sub-Block-Instanzen für Stand by
- * You HelpLine-Zeiten und VASK Treffpunkte) — page-level Meta-Info.
- *
- * Sub-Blöcke wie HelpLine-Zeiten und VASK-Treffpunkt-Termine: zu
- * Hairline-getrennten article-Blöcken mit Caps-Label statt
- * `bg-background/60 rounded-lg p-4`-Boxen.
- */
 import {
   EditorialLayout,
   EditorialProse,

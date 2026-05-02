@@ -1,17 +1,3 @@
-/**
- * Quellen & Literatur — Editorial-Redesign Phase 5 (Page 2/9, Tier 2)
- *
- * Migriert auf Editorial-Pattern. Folgt Phase-5-Master-Brief, Abschnitt
- * «Page 2 — Quellen».
- *
- * Pattern: Literatur-Liste gruppiert nach 4 Kategorien als <ul> mit
- * hängender Einrückung. Pro Eintrag: Autor (Jahr). *Titel*. Quelle.
- * Optional Hinweis-Paragraph + PubMed/WHO-Link als editorial-link.
- *
- * Stabile id-Anker pro Eintrag (Schema `src-<author-slug>-<year>`),
- * damit Inhaltsseiten gezielt auf einzelne Quellen unter `/quellen#...`
- * verlinken können.
- */
 import {
   EditorialLayout,
   EditorialProse,

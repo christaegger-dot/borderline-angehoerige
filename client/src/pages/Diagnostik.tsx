@@ -1,22 +1,3 @@
-/**
- * Diagnostik — Cluster 3 Sitzung 1.
- *
- * Eigene Seite zum Diagnostik-Prozess bei Borderline-Persönlichkeitsstörung,
- * adressiert die im Audit (P1-7) identifizierte Lücke «wer stellt wie eine
- * Diagnose». Architektur-Wahl: Option A (eigene Seite) gemäss Christa-
- * Decision aus Phase 0. Editorial-Pattern analog zu /genesung.
- *
- * Sicherheits-Hinweis: Kein direkter Notfall-Inhalt. Cross-Link auf
- * /soforthilfe für akute Gefahr (Suizidalität, Selbstverletzung).
- *
- * Anbieter-Box-PUK-Logik (korrigiert nach Christas Review): Die PUK hat
- * keine spezielle Nicht-Notfall-Diagnostik-Nummer für 18-65. Die Anmeldung
- * läuft über PUK Zentrale (058 384 21 11) oder das elektronische
- * Anmeldeformular auf pukzh.ch. Die 24/7-Notfall-Linien (Erwachsene
- * 20 00, ab 65 46 82, Kinder 66 66) gehören NICHT in die Diagnostik-Box —
- * sie sind für akute Krisen reserviert. Jugendliche-Diagnostik läuft über
- * das HYPE-Programm (058 384 66 00).
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

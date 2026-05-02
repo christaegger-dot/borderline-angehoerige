@@ -1,16 +1,3 @@
-/**
- * Materialien — Editorial-Redesign Phase 5 (Page 6/9, Tier 2 — Abschluss
- * Gruppe A).
- *
- * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
- * «Page 6 — Materialien».
- *
- * Heftigster Fall der Tier-2-Welle (Phase-0-Inventur: 29 distinct
- * Background-Farben in MaterialienLibrarySection). Diese Page ist
- * editorialisiert in zwei Dateien:
- *   - Materialien.tsx (diese Datei): Editorial-Hero + Layout-Wrapper
- *   - MaterialienLibrarySection.tsx: Filter-Leiste + Item-Grid
- */
 import {
   EditorialLayout,
   EditorialProse,

@@ -1,22 +1,3 @@
-/**
- * Unterstützen — Therapie — Editorial-Redesign Phase 4 Welle 2 (Page 6/10)
- *
- * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge/Übersicht/
- * Alltag-Pattern. Inhalt unverändert ausser Hero-Lesezeit und prosaischen
- * Verbindungssätzen.
- *
- * Anchor-ID-Hinweis: `#therapieangebote` wird aus `Über uns.tsx`
- * verlinkt — die ID muss zwingend erhalten bleiben.
- *
- * Sicherheitsrelevant in `zusammenarbeit`: «Warnsignale für eine
- * problematische Therapiesituation» bleiben mit dezentem amber-Akzent
- * (border-l), weil sie auf Therapeutenfehlverhalten hinweisen, das
- * angehörigenseitig erkannt werden muss.
- *
- * Out of scope: `RollenOrbitVisualisierung` (visuelle Sub-Komponente),
- * `LastVerifiedBadge`, `UnterstuetzenSubNav`. Kontaktdaten weiterhin
- * aus `data/kontakte.ts` bezogen (kein Hardcoding).
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

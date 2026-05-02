@@ -1,15 +1,3 @@
-/**
- * Kommunizieren — Editorial-Redesign Phase 4 Welle 2 (Page 1/10)
- *
- * Migriert nach dem Verstehen-Pattern (Welle 1, PR #286 / 7e65e10).
- * Inhalt unverändert ausser Hero-Lesezeitformulierung, Intro-Variante-A-
- * Verbindungssätze und konsolidierter Schluss-Übergang.
- *
- * Out of scope dieser PR (sichtbarer Bruch): die importierten Sub-
- * Komponenten KommunizierenEscalationSection / KommunizierenSituations-
- * Section / KommunizierenRolesSection / KommunizierenMaterialsSection
- * sowie ValidierungsStufenleiter sind weiterhin Card-basiert.
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -30,31 +18,6 @@ import {
   KommunizierenSituationsSection,
 } from "@/sections/KommunizierenPatternSections";
 import { Link } from "wouter";
-
-/*
- * INTRO-CARD-TRIO — VARIANTE B (zur Auswahl im Review)
- *
- * Statt prosaischem Fliesstext-Absatz (Variante A unten) eine
- * ungeordnete Liste mit fettem H4-Lead-In pro Punkt:
- *
- *   <ul class="space-y-4">
- *     <li>
- *       <h4 class="font-semibold">Haltung vor Technik.</h4>
- *       <p>Hilfreiche Kommunikation beginnt meist mit Tempo, Präsenz
- *          und innerer Klarheit, nicht mit dem perfekten Satz.</p>
- *     </li>
- *     <li>
- *       <h4 class="font-semibold">Validierung zuerst.</h4>
- *       <p>Erleben ernst nehmen, ohne automatisch zuzustimmen. Genau
- *          das senkt oft den Druck für spätere Klärung.</p>
- *     </li>
- *     <li>
- *       <h4 class="font-semibold">Bei Eskalation vereinfachen.</h4>
- *       <p>Weniger Inhalt, weniger Verteidigung, klarere Grenzen: so
- *          bleibt Gespräch eher regulierbar.</p>
- *     </li>
- *   </ul>
- */
 
 /** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
 function openSection(sectionId: string) {

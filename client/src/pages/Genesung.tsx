@@ -1,24 +1,3 @@
-/**
- * Genesung — Editorial-Redesign Phase 4 Welle 2 (Page 8/10)
- *
- * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge/Übersicht/
- * Alltag/Therapie/Krise-Pattern. Inhalt unverändert ausser Hero-Lesezeit
- * und prosaischen Verbindungssätzen.
- *
- * Brief-Sonderregel (Page 8): Die drei Statistiken (85–93% Remission,
- * 50% Recovery, ~10 Jahre Horizont) sind bereits inhaltlich auf der
- * Seite (im «Was die Forschung zeigt»-Block mit Quellen via
- * EvidenceNote). Per Brief Punkt 1 daher: «nichts zusätzlich tun, nur
- * das normale Editorial-Treatment». Werte werden literal genannt, mit
- * hervorgehobenen Versalziffern (Display-Serif, var(--accent-primary)),
- * NICHT als animierte Counter, NICHT als Karten-Trio. AnimatedStat-
- * Komponente bleibt im Repo bis Phase 7 und wird hier nicht importiert.
- *
- * Out of scope: `LastVerifiedBadge`, `InvitationSection` entfernt
- * (Selbstfürsorge-Pattern). Materialien-Block bleibt als ContentSection
- * (`infografiken`-Anker, Smoke-Test-Erwartung «Textversion lesen:
- * <Title>»).
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -238,7 +217,7 @@ export default function Genesung() {
           </EditorialProse>
         </EditorialSection>
 
-        {/* ── Was die Forschung zeigt — Statistik-Block (Brief-Sonderregel) ── */}
+        {/* ── Was die Forschung zeigt ── */}
         <EditorialSection
           label="Forschung"
           title="Was die Forschung zeigt"

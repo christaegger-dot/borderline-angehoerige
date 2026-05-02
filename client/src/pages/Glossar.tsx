@@ -1,23 +1,3 @@
-/**
- * Glossar — Editorial-Redesign Phase 5 (Page 1/9, Tier 2)
- *
- * Migriert auf Editorial-Pattern. Erste Page der Tier-2-Welle.
- * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt «Page 1».
- *
- * Pattern: alphabetisches <dl> mit Buchstaben-Sub-Blöcken. Search-
- * Eingabe und Kategorie-Filter entfallen — der Brief sagt explizit
- * «keine Filter, keine Suche, keine Karten». An ihrer Stelle:
- * Anker-Sprungleiste A–Z als Kapitälchen-Zeile.
- *
- * Cross-Page-Deeplink-Schutz: Selbstfürsorge.tsx:272 nutzt
- * `/glossar?q=DBT`. Die ?q=-Logik bleibt erhalten — anstatt zu filtern,
- * scrollt sie zum passenden Term-Anker (slug- oder abbreviation-
- * basiert). Damit funktioniert der existierende Deeplink ohne
- * Source-Änderung in Selbstfürsorge.
- *
- * Buchstaben ohne Einträge in der Sprungleiste: weggelassen (Default
- * gemäss Brief).
- */
 import { useCallback, useEffect, useMemo } from "react";
 import {
   EditorialLayout,

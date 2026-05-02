@@ -1,21 +1,3 @@
-/**
- * Selbstfürsorge — Editorial-Redesign Phase 4 Welle 2 (Page 3/10)
- *
- * Migriert nach Verstehen/Kommunizieren/Grenzen-Pattern. Inhalt unverändert
- * ausser Hero-Lesezeit, Intro-Verbindungssatz und konsolidierter Schluss-
- * Übergang. Master-Brief-Konvention seit 27.04.: Variante A direkt umsetzen,
- * keine Variante-B-Kommentarblöcke mehr.
- *
- * Out of scope (sichtbarer Bruch): die importierten Sub-Komponenten
- * SelbstfuersorgeSignalsSection / SelbstfuersorgeExercisesSection /
- * SelbstfuersorgeInfografikenSection / SelbstfuersorgeRoleNotesSection
- * sowie SelbstfuersorgeCheck sind weiterhin Card-basiert. Migration der
- * Sub-Sektionen folgt separat. Smoke-Test «zeigt Textversionen für
- * Selbstfürsorge-Handouts» bleibt grün, weil SelbstfuersorgeInfografiken-
- * Section unverändert importiert wird.
- *
- * Kein Sicherheits-kritischer Block — komplettes Editorial-Treatment.
- */
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {

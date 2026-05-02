@@ -1,21 +1,3 @@
-/**
- * Wegweiser — Editorial-Redesign Phase 5 (Page 7/9, Tier 2 — Beginn
- * Gruppe B, interaktive Tools).
- *
- * Brief: docs/redesign/phase-5-tier2-master-brief.md, Abschnitt
- * «Page 7 — Wegweiser».
- *
- * Wegweiser ist ein Entscheidungsbaum, kein Lesetool. Page-Wrapper
- * editorialisiert, der eigentliche `SituationsWegweiser` (interaktives
- * Tool) ebenfalls — siehe components/interactive/SituationsWegweiser.tsx
- * für die Choice-Button- und Result-Block-Behandlung.
- *
- * Sand-bordered «Bei akuter Lebensgefahr»-Hinweis aus dem Hero
- * entfernt (Brief: keine Triage-Pillen oder farbigen Quick-Access-
- * Buttons im Hero — Wegweiser ist nicht Soforthilfe). Stattdessen:
- * eine Inline-Prose-Zeile mit Notruf-144-Inline-Link und Verweis auf
- * /soforthilfe.
- */
 import { EditorialLayout } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";

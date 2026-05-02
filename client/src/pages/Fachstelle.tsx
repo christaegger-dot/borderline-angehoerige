@@ -1,21 +1,3 @@
-/**
- * Fachstelle — Editorial-Redesign Phase 4 Welle 2 (Page 9/10)
- *
- * Migriert nach Verstehen/Kommunizieren/Grenzen/Selbstfürsorge/Übersicht/
- * Alltag/Therapie/Krise/Genesung-Pattern. Inhalt unverändert ausser
- * Hero-Lesezeit.
- *
- * Brief-Sonderregel (Page 9): Telefon- und E-Mail-Daten ausschliesslich
- * aus `data/kontakte.ts` (`INFO_FACHSTELLE`, `EMAIL_ANGEHOERIGEN`).
- * Pattern wie in der Home-Sektion 6 «Beratungseinladung» — kein
- * Hardcoding. Adresse bleibt (nicht von der Sonderregel erfasst, ADRESSE_PUK
- * im Repo ohne Postfach-Zeile).
- *
- * Out of scope: `LastVerifiedBadge` bleibt.
- *
- * Page hat keine ContentSection-Akkordeons — flache Info-Seite. Daher
- * EditorialSection-Pattern für Strukturierung.
- */
 import {
   EditorialLayout,
   EditorialProse,

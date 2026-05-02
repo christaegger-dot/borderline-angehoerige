@@ -1,23 +1,3 @@
-/**
- * Buchempfehlungen — Editorial-Redesign Phase 5 (Page 3/9, Tier 2)
- *
- * Migriert auf Editorial-Pattern. Folgt Phase-5-Master-Brief, Abschnitt
- * «Page 3 — Buchempfehlungen».
- *
- * Sonderfall: Der Brief beschreibt ein 2-Spalten-Layout pro Buch
- * (Cover links, Text rechts), aber das Datenmodell `Book` hat **kein**
- * `cover`-Feld — die Original-Page rendert ausschliesslich Text. Daher:
- * einzeilige Buch-Einträge mit Hairline-Trenner. Falls später Cover
- * ergänzt werden, kann der Layout-Block um eine 2-Spalten-Variante
- * erweitert werden, ohne Inhalts-Änderung.
- *
- * Filter-UI (sticky 5-Button-Leiste) entfernt, analog Glossar — bei 17
- * Büchern in 4 Kategorien ist scrollen + Anker-Sprungleiste leichter
- * als Toggle-Filter. Anker-IDs pro Kategorie (`cat-partner` etc.) und
- * pro Buch (`book-<slug>`) ergänzt für stabile Cross-Page-Verweise.
- *
- * «Beim Verlag»-Box-Link rechts pro Buch zu Inline-`editorial-link`.
- */
 import { useCallback } from "react";
 import {
   EditorialLayout,

@@ -80,31 +80,41 @@ function EnergieBalken({
 }) {
   const [hover, setHover] = useState(false);
   const isKostet = richtung === "kostet";
-  const farbe = isKostet
-    ? "bg-[var(--color-sos-orange-text)]"
-    : "bg-[var(--color-sage-mid)]";
-  const farbeBg = isKostet
-    ? "bg-[var(--color-sos-orange-wash)]"
-    : "bg-sage-wash";
-  const borderFarbe = isKostet
-    ? "border-[var(--color-sos-orange-border)]"
-    : "border-sage-light/70";
+  const tintVar = isKostet ? "--color-sos-orange-text" : "--color-sage-mid";
 
   return (
     <div
-      className={`relative rounded-xl border p-3 transition-all duration-200 cursor-default ${farbeBg} ${borderFarbe} ${hover ? "shadow-sm" : ""}`}
+      className={`relative cursor-default rounded-[1rem] border p-3 transition-colors duration-200 ${
+        hover ? "bg-background" : ""
+      }`}
+      style={{
+        borderColor: "var(--rule-color)",
+        backgroundColor: hover
+          ? "var(--bg-elevated)"
+          : "color-mix(in oklch, var(--bg-primary) 72%, white)",
+      }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       <div className="flex items-center gap-3">
         {/* Icon */}
         <div
-          className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center ${isKostet ? "bg-[var(--color-sos-orange-light)]" : "bg-sage-lighter"}`}
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border"
+          style={{
+            borderColor: `color-mix(in oklch, var(${tintVar}) 24%, transparent)`,
+            backgroundColor: `color-mix(in oklch, var(${tintVar}) 8%, white)`,
+          }}
         >
           {isKostet ? (
-            <Minus className="w-3.5 h-3.5 text-[var(--color-sos-orange-text)]" />
+            <Minus
+              className="h-3.5 w-3.5"
+              style={{ color: `var(${tintVar})` }}
+            />
           ) : (
-            <Plus className="w-3.5 h-3.5 text-sage-mid" />
+            <Plus
+              className="h-3.5 w-3.5"
+              style={{ color: `var(${tintVar})` }}
+            />
           )}
         </div>
 
@@ -115,7 +125,8 @@ function EnergieBalken({
           </p>
           <div className="h-1.5 rounded-full bg-border/30 overflow-hidden">
             <motion.div
-              className={`h-full rounded-full ${farbe}`}
+              className="h-full rounded-full"
+              style={{ backgroundColor: `var(${tintVar})` }}
               initial={{ width: 0 }}
               whileInView={{ width: `${(item.wert / 5) * 100}%` }}
               viewport={{ once: true }}
@@ -129,7 +140,11 @@ function EnergieBalken({
           {Array.from({ length: 5 }).map((_, i) => (
             <span
               key={i}
-              className={`w-1.5 h-1.5 rounded-full ${i < item.wert ? farbe : "bg-border/40"}`}
+              className="h-1.5 w-1.5 rounded-full"
+              style={{
+                backgroundColor:
+                  i < item.wert ? `var(${tintVar})` : "rgb(203 213 225 / 0.7)",
+              }}
             />
           ))}
         </div>
@@ -151,9 +166,15 @@ function EnergieBalken({
 
 export default function EnergieHaushaltVisualisierung() {
   return (
-    <div className="my-6 rounded-2xl border border-border/50 bg-background/60 p-5 md:p-6 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.1)]">
+    <section
+      className="my-6 border-t border-b py-5"
+      style={{ borderColor: "var(--rule-color)" }}
+    >
       {/* Header */}
       <div className="mb-5">
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
+          Visualisierung
+        </p>
         <p className="text-sm font-semibold text-foreground mb-1">
           Energie-Haushalt im Angehörigenalltag
         </p>
@@ -184,7 +205,7 @@ export default function EnergieHaushaltVisualisierung() {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-sage-mid)]" />
-            <p className="text-xs font-bold uppercase tracking-wide text-sage-dark">
+            <p className="text-xs font-bold uppercase tracking-wide text-[var(--color-sage-dark)]">
               Gibt Energie zurück
             </p>
           </div>
@@ -197,10 +218,10 @@ export default function EnergieHaushaltVisualisierung() {
       </div>
 
       {/* Footer */}
-      <p className="mt-4 text-xs text-muted-foreground text-center border-t border-border/30 pt-3">
+      <p className="mt-4 border-t border-border/30 pt-3 text-center text-xs text-muted-foreground">
         Selbstfürsorge beginnt mit ehrlicher Wahrnehmung der eigenen
         Energiebilanz.
       </p>
-    </div>
+    </section>
   );
 }

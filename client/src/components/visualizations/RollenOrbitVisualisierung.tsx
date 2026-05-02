@@ -14,13 +14,10 @@ interface OrbitRolle {
   id: string;
   label: string;
   kurz: string;
-  icon: React.ReactNode;
-  farbe: string;
-  farbeBg: string;
-  farbeBorder: string;
+  icon: React.ElementType;
+  tintVar: string;
   aufgaben: string[];
   nichtAufgaben: string[];
-  position: { top: string; left: string };
 }
 
 const rollen: OrbitRolle[] = [
@@ -28,10 +25,8 @@ const rollen: OrbitRolle[] = [
     id: "angehoerige",
     label: "Sie als Angehörige/r",
     kurz: "Ihre Rolle",
-    icon: <Heart className="w-5 h-5" />,
-    farbe: "text-terracotta-mid",
-    farbeBg: "bg-terracotta-wash",
-    farbeBorder: "border-terracotta-light",
+    icon: Heart,
+    tintVar: "--color-terracotta-mid",
     aufgaben: [
       "Stabile Präsenz zeigen",
       "Eigene Grenzen kommunizieren",
@@ -45,16 +40,13 @@ const rollen: OrbitRolle[] = [
       "Therapeut ersetzen",
       "Motivation übernehmen",
     ],
-    position: { top: "10%", left: "10%" },
   },
   {
     id: "therapeut",
     label: "Therapeut/in",
     kurz: "Therapie",
-    icon: <Stethoscope className="w-5 h-5" />,
-    farbe: "text-slate-blue",
-    farbeBg: "bg-slate-wash",
-    farbeBorder: "border-slate-light",
+    icon: Stethoscope,
+    tintVar: "--color-slate-blue",
     aufgaben: [
       "Behandlung planen und leiten",
       "Skills vermitteln (z.B. DBT)",
@@ -67,16 +59,13 @@ const rollen: OrbitRolle[] = [
       "Familienprobleme lösen",
       "Rund-um-die-Uhr erreichbar sein",
     ],
-    position: { top: "10%", left: "60%" },
   },
   {
     id: "betroffene",
     label: "Betroffene Person",
     kurz: "Betroffene/r",
-    icon: <User className="w-5 h-5" />,
-    farbe: "text-sage-mid",
-    farbeBg: "bg-sage-wash",
-    farbeBorder: "border-sage-light",
+    icon: User,
+    tintVar: "--color-sage-mid",
     aufgaben: [
       "Eigene Therapiemotivation entwickeln",
       "Skills im Alltag üben",
@@ -87,18 +76,24 @@ const rollen: OrbitRolle[] = [
       "Angehörige therapieren",
       "Allein für Beziehungsqualität sorgen",
     ],
-    position: { top: "55%", left: "35%" },
   },
 ];
 
 export default function RollenOrbitVisualisierung() {
   const [aktiv, setAktiv] = useState<string | null>(null);
   const aktivRolle = rollen.find(r => r.id === aktiv);
+  const AktivIcon = aktivRolle?.icon;
 
   return (
-    <div className="my-6 rounded-2xl border border-border/50 bg-background/60 p-5 md:p-6 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.1)]">
+    <section
+      className="my-6 border-t border-b py-5"
+      style={{ borderColor: "var(--rule-color)" }}
+    >
       {/* Header */}
       <div className="mb-5">
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
+          Visualisierung
+        </p>
         <p className="text-sm font-semibold text-foreground mb-1">
           Rollen im Therapiesystem
         </p>
@@ -119,7 +114,7 @@ export default function RollenOrbitVisualisierung() {
 
             {/* Zentrum */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-cream border border-border/50 flex items-center justify-center shadow-sm">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-border/50 bg-background">
                 <p className="text-[10px] font-semibold text-muted-foreground text-center leading-tight px-1">
                   Therapie-
                   <br />
@@ -136,6 +131,17 @@ export default function RollenOrbitVisualisierung() {
               const x = 50 + radius * Math.cos(winkel);
               const y = 50 + radius * Math.sin(winkel);
               const isAktiv = aktiv === rolle.id;
+              const Icon = rolle.icon;
+              const tintStyle = { color: `var(${rolle.tintVar})` };
+              const chipStyle = isAktiv
+                ? {
+                    borderColor: `color-mix(in oklch, var(${rolle.tintVar}) 26%, transparent)`,
+                    backgroundColor: `color-mix(in oklch, var(${rolle.tintVar}) 8%, white)`,
+                  }
+                : {
+                    borderColor: "var(--rule-color)",
+                    backgroundColor: "var(--bg-elevated)",
+                  };
 
               return (
                 <button
@@ -146,17 +152,22 @@ export default function RollenOrbitVisualisierung() {
                     left: `${x}%`,
                     top: `${y}%`,
                     transform: "translate(-50%, -50%)",
+                    ...chipStyle,
                   }}
                   className={`
-                    absolute w-16 h-16 rounded-full border-2 flex flex-col items-center justify-center gap-0.5
-                    transition-all duration-200 hover:scale-105 hover:shadow-md
+                    absolute flex h-16 w-16 flex-col items-center justify-center gap-0.5 rounded-full border
+                    transition-all duration-200 hover:scale-105
                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
-                    ${isAktiv ? `${rolle.farbeBg} ${rolle.farbeBorder} shadow-md scale-105` : `bg-background ${rolle.farbeBorder}`}
+                    ${isAktiv ? "scale-105" : ""}
                   `}
                   aria-label={rolle.label}
                   aria-pressed={isAktiv}
                 >
-                  <span className={rolle.farbe}>{rolle.icon}</span>
+                  <Icon
+                    className="h-5 w-5"
+                    style={tintStyle}
+                    aria-hidden="true"
+                  />
                   <span className="text-[9px] font-semibold text-foreground leading-tight text-center px-0.5">
                     {rolle.kurz}
                   </span>
@@ -175,7 +186,11 @@ export default function RollenOrbitVisualisierung() {
                 className={`flex items-center gap-1.5 text-xs font-medium transition-opacity ${aktiv && aktiv !== rolle.id ? "opacity-40" : "opacity-100"}`}
               >
                 <span
-                  className={`w-2 h-2 rounded-full ${rolle.farbeBg} border ${rolle.farbeBorder}`}
+                  className="h-2 w-2 rounded-full border"
+                  style={{
+                    borderColor: `color-mix(in oklch, var(${rolle.tintVar}) 26%, transparent)`,
+                    backgroundColor: `color-mix(in oklch, var(${rolle.tintVar}) 14%, white)`,
+                  }}
                 />
                 <span className="text-muted-foreground">{rolle.label}</span>
               </button>
@@ -193,11 +208,21 @@ export default function RollenOrbitVisualisierung() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -12 }}
                 transition={{ duration: 0.2 }}
-                className={`rounded-xl border p-4 ${aktivRolle.farbeBg} ${aktivRolle.farbeBorder}`}
+                className="rounded-[1rem] border p-4"
+                style={{
+                  borderColor: `color-mix(in oklch, var(${aktivRolle.tintVar}) 22%, transparent)`,
+                  backgroundColor: `color-mix(in oklch, var(${aktivRolle.tintVar}) 5%, var(--bg-primary))`,
+                }}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <span className={aktivRolle.farbe}>{aktivRolle.icon}</span>
+                    {AktivIcon && (
+                      <AktivIcon
+                        className="h-5 w-5"
+                        style={{ color: `var(${aktivRolle.tintVar})` }}
+                        aria-hidden="true"
+                      />
+                    )}
                     <p className="text-sm font-semibold text-foreground">
                       {aktivRolle.label}
                     </p>
@@ -205,7 +230,7 @@ export default function RollenOrbitVisualisierung() {
                   <button
                     type="button"
                     onClick={() => setAktiv(null)}
-                    className="w-6 h-6 rounded-full bg-background/70 flex items-center justify-center hover:bg-background transition-colors"
+                    className="flex h-6 w-6 items-center justify-center rounded-full border border-border/60 bg-background/70 transition-colors hover:bg-background"
                     aria-label="Schliessen"
                   >
                     <X className="w-3.5 h-3.5 text-muted-foreground" />
@@ -224,8 +249,10 @@ export default function RollenOrbitVisualisierung() {
                           className="flex items-start gap-2 text-sm text-foreground"
                         >
                           <span
-                            className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${aktivRolle.farbeBg} border ${aktivRolle.farbeBorder}`}
-                            style={{ backgroundColor: "currentColor" }}
+                            className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
+                            style={{
+                              backgroundColor: `var(${aktivRolle.tintVar})`,
+                            }}
                           />
                           {a}
                         </li>
@@ -267,6 +294,6 @@ export default function RollenOrbitVisualisierung() {
           </AnimatePresence>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

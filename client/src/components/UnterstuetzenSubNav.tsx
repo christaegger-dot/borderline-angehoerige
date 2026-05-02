@@ -1,11 +1,10 @@
 import { Link, useLocation } from "wouter";
-import { LayoutGrid, Calendar, AlertTriangle, Brain } from "lucide-react";
 
 const tabs = [
-  { href: "/unterstuetzen/uebersicht", label: "Übersicht", icon: LayoutGrid },
-  { href: "/unterstuetzen/alltag", label: "Im Alltag", icon: Calendar },
-  { href: "/unterstuetzen/krise", label: "In der Krise", icon: AlertTriangle },
-  { href: "/unterstuetzen/therapie", label: "Therapie", icon: Brain },
+  { href: "/unterstuetzen/uebersicht", label: "Übersicht" },
+  { href: "/unterstuetzen/alltag", label: "Im Alltag" },
+  { href: "/unterstuetzen/krise", label: "In der Krise" },
+  { href: "/unterstuetzen/therapie", label: "Therapie" },
 ];
 
 export default function UnterstuetzenSubNav() {
@@ -14,25 +13,24 @@ export default function UnterstuetzenSubNav() {
   return (
     <nav
       aria-label="Unterstützen – Unterseiten"
-      className="border-b border-border/50 bg-background"
+      className="border-b border-border/45 bg-background/92"
     >
       <div className="container">
-        <div className="flex overflow-x-auto -mb-px">
-          {tabs.map(({ href, label, icon: Icon }) => {
+        <div className="scrollbar-none flex overflow-x-auto -mb-px gap-1">
+          {tabs.map(({ href, label }) => {
             const isActive = location === href;
             return (
               <Link
                 key={href}
                 href={href}
                 className={[
-                  "flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors",
+                  "flex items-center px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors",
                   isActive
-                    ? "border-sage-dark text-sage-dark"
-                    : "border-transparent text-muted-foreground hover:text-foreground hover:border-border",
+                    ? "border-[color:var(--accent-primary)] text-foreground"
+                    : "border-transparent text-muted-foreground hover:text-foreground hover:border-border/70",
                 ].join(" ")}
                 aria-current={isActive ? "page" : undefined}
               >
-                <Icon className="w-4 h-4 shrink-0" />
                 {label}
               </Link>
             );

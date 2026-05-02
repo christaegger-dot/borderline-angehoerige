@@ -59,7 +59,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/88 backdrop-blur-xl shadow-[0_10px_34px_-28px_rgba(15,23,42,0.45)]">
+    <header className="sticky top-0 z-50 border-b border-border/55 bg-background/94 backdrop-blur-md">
       <div className="container">
         <div className="flex min-h-16 items-center justify-between gap-2 py-2 md:min-h-20 md:gap-4 md:py-3">
           <AppLink href="/" className="flex items-center gap-3 group shrink-0">
@@ -68,7 +68,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               iconClassName="md:h-[22px] md:w-[22px]"
             />
             <span className="hidden xl:flex flex-col leading-tight">
-              <span className="text-sm font-medium text-foreground transition-colors group-hover:text-sage-darker whitespace-nowrap">
+              <span className="text-sm font-medium text-foreground transition-colors group-hover:text-[color:var(--accent-primary)] whitespace-nowrap">
                 Borderline · Hilfe für Angehörige
               </span>
               <span className="text-[11px] text-muted-foreground whitespace-nowrap">
@@ -78,7 +78,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
           </AppLink>
 
           <nav
-            className="hidden lg:flex items-center gap-0.5 rounded-full border border-border/70 bg-white/82 px-2 py-1 shadow-[0_18px_34px_-30px_rgba(15,23,42,0.55)] backdrop-blur-sm shrink-0"
+            className="hidden lg:flex items-center gap-0.5 rounded-full border border-border/60 bg-white/78 px-2 py-1 shrink-0"
             aria-label="Hauptnavigation"
           >
             {navItems.map(item => {
@@ -111,7 +111,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <button
               type="button"
               onClick={onSearchOpen}
-              className="hidden sm:flex h-10 items-center gap-2 rounded-full border border-border/70 bg-white/82 px-4 text-sm text-muted-foreground shadow-sm shadow-black/5 transition-colors hover:border-border hover:text-foreground"
+              className="hidden sm:flex h-10 items-center gap-2 rounded-full border border-border/60 bg-white/78 px-4 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
               aria-label="Suchen"
             >
               <SearchIcon className="w-4 h-4" />
@@ -121,7 +121,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <button
               type="button"
               onClick={onSearchOpen}
-              className="sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-white/82 text-muted-foreground shadow-sm shadow-black/5 transition-all hover:text-foreground hover:bg-muted"
+              className="sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/60 bg-white/78 text-muted-foreground transition-all hover:text-foreground hover:bg-muted"
               aria-label="Suche öffnen"
             >
               <SearchIcon className="w-5 h-5" />
@@ -154,7 +154,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               ref={menuButtonRef}
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-white/82 shadow-sm shadow-black/5 transition-colors ${
+              className={`lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/60 bg-white/78 transition-colors ${
                 mobileMenuOpen ? currentAccent.surfaceActive : "hover:bg-muted"
               }`}
               aria-controls="mobile-navigation-dialog"

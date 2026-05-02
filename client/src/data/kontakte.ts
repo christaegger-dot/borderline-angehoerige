@@ -5,7 +5,7 @@
  * Statische Sonderseiten und Druckvorlagen muessen mit diesen Werten
  * synchron bleiben; Regressionstests pruefen die Spiegelungen.
  *
- * Inventar: 20 Telefonnummern, 4 E-Mail-Adressen, 1 Adresse, 8 URLs.
+ * Inventar: 27 Telefonnummern, 4 E-Mail-Adressen, 1 Adresse, 11 URLs.
  *
  * Regeln:
  * - NO-MIX: PUK ≠ USZ ≠ UZH
@@ -237,6 +237,48 @@ export const INFO: Kontakt[] = [
     label: "Ärztefon Zürich",
     hinweis: "Ärztliche Beratung und Weitervermittlung, ggf. Hausbesuch",
     sourceRef: "Soforthilfe.tsx:281",
+  },
+  {
+    id: "INFO_OPFERHILFE_142",
+    kategorie: "info",
+    nummer: "142",
+    tel: "142",
+    label: "Opferhilfe 142",
+    hinweis:
+      "Nationale Opferhilfe-Hotline für körperliche, psychische oder sexuelle Gewalt",
+    sourceRef: "Grenzen.tsx Gewalt-Sektion",
+    verfuegbarkeit: "24/7",
+  },
+  {
+    id: "INFO_OPFERHILFE_ZH_24_7",
+    kategorie: "info",
+    nummer: "044 455 21 42",
+    tel: "+41444552142",
+    label: "Opferhilfe Zürich (24/7)",
+    hinweis:
+      "Dringende Opferhilfe und Weitervermittlung im Kanton Zürich rund um die Uhr",
+    sourceRef: "Grenzen.tsx Gewalt-Sektion",
+    verfuegbarkeit: "24/7",
+  },
+  {
+    id: "INFO_FORENSIC_NURSES",
+    kategorie: "info",
+    nummer: "0800 09 09 09",
+    tel: "0800090909",
+    label: "Forensic Nurses Zürich",
+    hinweis:
+      "Medizinische Hilfe, Beratung und Spurensicherung nach sexueller oder häuslicher Gewalt",
+    sourceRef: "Grenzen.tsx Gewalt-Sektion",
+    verfuegbarkeit: "24/7",
+  },
+  {
+    id: "INFO_OPFERBERATUNG_ZH",
+    kategorie: "info",
+    nummer: "044 299 40 50",
+    tel: "+41442994050",
+    label: "Opferberatung Zürich",
+    hinweis: "Vertrauliche, kostenlose Beratung zu Bürozeiten",
+    sourceRef: "Grenzen.tsx Gewalt-Sektion",
   },
   {
     id: "INFO_PUK_ZENTRALE",

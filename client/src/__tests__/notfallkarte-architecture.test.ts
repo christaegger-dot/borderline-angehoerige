@@ -79,6 +79,16 @@ describe("notfallkarte architecture", () => {
 
     expect(browserCard).toContain(AERZTEFON!.nummer);
     expect(browserCard).not.toContain("044 360 44 44");
+    expect(browserCard).toMatch(
+      /Nicht lebensbedrohlicher medizinischer oder psychiatrischer\s+Notfall\?/
+    );
+
+    const lifeThreatSection = browserCard.split(
+      "<!-- BLOCK 2: PSYCHIATRISCHE KRISE -->"
+    )[0];
+
+    expect(lifeThreatSection).not.toContain(AERZTEFON!.nummer);
+    expect(lifeThreatSection).not.toContain("Ärztedienst Zürich");
 
     expect(soforthilfePrint).toContain(KIZ!.nummer);
     expect(soforthilfePrint).toContain(FACHSTELLE!.nummer);

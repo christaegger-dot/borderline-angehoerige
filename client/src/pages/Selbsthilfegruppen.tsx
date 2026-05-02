@@ -65,6 +65,7 @@ const standByYouHelpLineZeiten = [
   ["Dienstag", "10:00 – 18:00 Uhr"],
   ["Mittwoch", "09:00 – 11:00 Uhr"],
   ["Donnerstag", "10:00 – 12:00 / 16:00 – 18:00 Uhr"],
+  ["Freitag", "08:30 – 14:00 Uhr"],
 ] as const;
 
 const vaskZhTreffpunkte = [

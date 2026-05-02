@@ -62,7 +62,7 @@ const ampelHandlungen = [
     items: [
       "Professionelle Hilfe holen",
       "Eigene Sicherheit sichern",
-      "Nicht allein lassen",
+      "Nicht ohne Hilfe oder Notfallplan allein lassen",
     ],
   },
   {
@@ -641,7 +641,9 @@ export default function UnterstuetzenKrise() {
                 <span className="text-alert" aria-hidden="true">
                   ✗
                 </span>
-                Die Person alleine lassen, wenn Suizidgefahr besteht
+                Die Person ohne Hilfe, Notfallplan oder professionelle
+                Einschätzung allein lassen – sofern Sie selbst sicher bleiben
+                können
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-alert" aria-hidden="true">

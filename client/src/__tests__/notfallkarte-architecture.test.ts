@@ -12,6 +12,16 @@ const repoRoot = path.resolve(__dirname, "../../..");
 const KIZ = INFO.find(kontakt => kontakt.id === "INFO_KIZ");
 const FACHSTELLE = INFO.find(kontakt => kontakt.id === "INFO_FACHSTELLE");
 const AERZTEFON = INFO.find(kontakt => kontakt.id === "INFO_AERZTEFON");
+const OPFERHILFE = INFO.find(kontakt => kontakt.id === "INFO_OPFERHILFE_142");
+const OPFERHILFE_ZH = INFO.find(
+  kontakt => kontakt.id === "INFO_OPFERHILFE_ZH_24_7"
+);
+const FORENSIC_NURSES = INFO.find(
+  kontakt => kontakt.id === "INFO_FORENSIC_NURSES"
+);
+const OPFERBERATUNG_ZH = INFO.find(
+  kontakt => kontakt.id === "INFO_OPFERBERATUNG_ZH"
+);
 
 function formatDate(date?: string) {
   if (!date) return null;
@@ -72,10 +82,18 @@ describe("notfallkarte architecture", () => {
       path.join(repoRoot, "client/public/soforthilfe-print.html"),
       "utf8"
     );
+    const soforthilfeDirect = fs.readFileSync(
+      path.join(repoRoot, "client/public/soforthilfe/index.html"),
+      "utf8"
+    );
 
     expect(AERZTEFON).toBeDefined();
     expect(KIZ).toBeDefined();
     expect(FACHSTELLE).toBeDefined();
+    expect(OPFERHILFE).toBeDefined();
+    expect(OPFERHILFE_ZH).toBeDefined();
+    expect(FORENSIC_NURSES).toBeDefined();
+    expect(OPFERBERATUNG_ZH).toBeDefined();
 
     expect(browserCard).toContain(AERZTEFON!.nummer);
     expect(browserCard).not.toContain("044 360 44 44");
@@ -94,6 +112,12 @@ describe("notfallkarte architecture", () => {
     expect(soforthilfePrint).toContain(FACHSTELLE!.nummer);
     expect(soforthilfePrint).not.toContain("044 296 73 00");
     expect(soforthilfePrint).not.toContain("058 384 27 00");
+
+    expect(soforthilfeDirect).toContain(OPFERHILFE!.nummer);
+    expect(soforthilfeDirect).toContain(OPFERHILFE_ZH!.nummer);
+    expect(soforthilfeDirect).toContain(FORENSIC_NURSES!.nummer);
+    expect(soforthilfeDirect).toContain(OPFERBERATUNG_ZH!.nummer);
+    expect(soforthilfeDirect).toMatch(/Gewalt, Bedrohung oder Übergriff/);
   });
 
   it("keeps the static browser card responsive without scaled mobile hitboxes", () => {

@@ -72,7 +72,7 @@ const zusammenarbeitSzenarien = [
       "Direkt ansprechen (in stabiler Phase): «Mir scheint, dass die Therapie für dich gerade schwierig ist. Was macht sie dir schwierig?»",
       "Sie können Motivation nicht erzwingen – aber Sie können Interesse zeigen",
       "Nur bei Sicherheitsgefährdung: eigenständig Kontakt mit Therapeutin aufnehmen",
-      "Therapieverweigerung ist oft Teil des Krankheitsbildes – nicht persönlich nehmen",
+      "Therapieambivalenz kann viele Gründe haben – Scham, Angst, Überforderung, schlechte Erfahrungen oder Misstrauen. Nehmen Sie das nicht vorschnell persönlich.",
     ],
   },
   {

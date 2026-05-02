@@ -526,6 +526,175 @@ export default function Verstehen() {
           </EditorialProse>
         </ContentSection>
 
+        <ContentSection
+          variant="editorial"
+          title="Häufige Mythen — und was realistischer ist"
+          id="mythen-realitaet"
+          preview="Viele Sätze über Borderline klingen eindeutig, greifen aber zu kurz. Eine realistischere Einordnung hilft Angehörigen, Betroffenen und Fachpersonen."
+        >
+          <EditorialProse>
+            <h4
+              style={{
+                fontSize: "var(--text-md)",
+                fontWeight: 600,
+                color: "var(--fg-primary)",
+              }}
+            >
+              «Borderline ist nicht behandelbar.»
+            </h4>
+            <p>
+              Realistischer ist: Borderline ist belastend, aber behandelbar.
+              Viele Menschen erleben über Jahre deutliche Besserungen, Remission
+              oder umfassendere Genesung — oft nicht geradlinig, aber gut
+              dokumentiert. Mehr dazu auf{" "}
+              <Link href="/genesung" className="editorial-link">
+                Genesung
+              </Link>
+              .
+            </p>
+
+            <h4
+              className="mt-6"
+              style={{
+                fontSize: "var(--text-md)",
+                fontWeight: 600,
+                color: "var(--fg-primary)",
+              }}
+            >
+              «Menschen mit Borderline manipulieren bewusst.»
+            </h4>
+            <p>
+              Manche Verhaltensweisen können auf Angehörige manipulativ wirken.
+              Hilfreicher ist aber oft die Frage, welche innere Not, Angst,
+              Scham oder Überflutung darunter mitläuft. Das entschuldigt
+              destruktives Verhalten nicht, macht es aber genauer lesbar. Mehr
+              dazu auf{" "}
+              <Link href="/kommunizieren" className="editorial-link">
+                Kommunizieren
+              </Link>{" "}
+              und{" "}
+              <Link href="/grenzen" className="editorial-link">
+                Grenzen
+              </Link>
+              .
+            </p>
+
+            <h4
+              className="mt-6"
+              style={{
+                fontSize: "var(--text-md)",
+                fontWeight: 600,
+                color: "var(--fg-primary)",
+              }}
+            >
+              «Angehörige sind schuld.»
+            </h4>
+            <p>
+              Borderline entsteht nicht durch eine einzelne Person und nicht
+              durch «falsche Liebe». Angehörige können Beziehungsmuster
+              entlasten oder belasten, sie verursachen die Störung aber nicht.
+              Schuld hilft weder Verständnis noch Veränderung.
+            </p>
+
+            <h4
+              className="mt-6"
+              style={{
+                fontSize: "var(--text-md)",
+                fontWeight: 600,
+                color: "var(--fg-primary)",
+              }}
+            >
+              «Grenzen setzen ist lieblos.»
+            </h4>
+            <p>
+              Grenzen sind kein Verrat, sondern oft die Voraussetzung dafür,
+              dass Beziehung tragfähig bleibt. Sie schützen Sie selbst und
+              schaffen mehr Orientierung als wechselnde Nachgiebigkeit.
+            </p>
+
+            <h4
+              className="mt-6"
+              style={{
+                fontSize: "var(--text-md)",
+                fontWeight: 600,
+                color: "var(--fg-primary)",
+              }}
+            >
+              «Suizid direkt anzusprechen macht es schlimmer.»
+            </h4>
+            <p>
+              Bei konkreter Sorge ist das Gegenteil hilfreicher: ruhig, klar und
+              direkt fragen. Offenes Ansprechen erhöht das Risiko nicht, sondern
+              zeigt, dass Sie die Lage ernst nehmen und Hilfe einbeziehen. Mehr
+              dazu auf{" "}
+              <Link href="/soforthilfe" className="editorial-link">
+                Soforthilfe
+              </Link>
+              .
+            </p>
+
+            <h4
+              className="mt-6"
+              style={{
+                fontSize: "var(--text-md)",
+                fontWeight: 600,
+                color: "var(--fg-primary)",
+              }}
+            >
+              «Wenn jemand bei anderen stabiler wirkt, spielt er oder sie nur.»
+            </h4>
+            <p>
+              Enge Beziehungen aktivieren oft genau die Muster, die bei Fremden
+              weniger sichtbar sind. Mehr Stabilität in anderen Kontexten ist
+              deshalb nicht automatisch Täuschung, sondern kann Ausdruck
+              unterschiedlicher Bindungsbelastung sein.
+            </p>
+
+            <h4
+              className="mt-6"
+              style={{
+                fontSize: "var(--text-md)",
+                fontWeight: 600,
+                color: "var(--fg-primary)",
+              }}
+            >
+              «Borderline betrifft nur Frauen.»
+            </h4>
+            <p>
+              Borderline kann Menschen aller Geschlechter betreffen. Männer
+              suchen teilweise später Hilfe oder werden mit anderen
+              Problembildern gelesen, etwa Substanzkonsum, Wut oder Rückzug.
+              Angehörige männlicher Betroffener sind hier ausdrücklich mit
+              gemeint.
+            </p>
+          </EditorialProse>
+          <EvidenceNote
+            variant="editorial"
+            title="Quellen zu Mythen, Verlauf und Geschlecht"
+            definition="Die Einordnungen stützen sich auf Behandlungsforschung, Verlaufsstudien und eine Übersichtsarbeit zu Geschlechtsunterschieden."
+            sources={[
+              {
+                label:
+                  "Storebø et al. (2020) – Psychotherapien bei Borderline (Cochrane Review)",
+                href: quellenLinks.storebo2020,
+                type: "wissenschaft",
+              },
+              {
+                label:
+                  "Zanarini et al. (2012) – Remission und Recovery im Langzeitverlauf",
+                href: quellenLinks.zanarini2012,
+                type: "wissenschaft",
+              },
+              {
+                label:
+                  "Lamberti (2023) – Geschlechtsunterschiede bei Borderline (Scoping Review)",
+                href: quellenLinks.lamberti2023,
+                type: "wissenschaft",
+              },
+            ]}
+          />
+        </ContentSection>
+
         <VerstehenDiagnosticSection />
 
         <VerstehenMaterialsSection />

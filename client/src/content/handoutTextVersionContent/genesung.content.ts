@@ -19,7 +19,7 @@ export const handoutTextVersions = [
           },
           {
             title: "50%",
-            text: "erreichen eine vollständige Genesung im Sinn von Recovery.",
+            text: "erreichen eine umfassendere Genesung im Sinn von Recovery.",
           },
           {
             title: "77%",
@@ -64,7 +64,7 @@ export const handoutTextVersions = [
         title: "Begriffe kurz eingeordnet",
         calloutTitle: "Was die Grafik mit den Begriffen meint",
         calloutText:
-          "Remission meint eine deutliche Abnahme der Symptome. Recovery beschreibt vollständige Genesung. Anhaltende Remission meint eine stabilere Besserung über längere Zeit.",
+          "Remission meint eine deutliche Abnahme der Symptome. Recovery beschreibt eine umfassendere alltagsbezogene Genesung. Anhaltende Remission meint eine stabilere Besserung über längere Zeit.",
       },
       {
         title: "Was können Sie tun?",

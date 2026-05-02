@@ -74,7 +74,7 @@ describe("Datenschutz", () => {
     });
     fireEvent.click(cookiesToggle);
     expect(document.body).toHaveTextContent(
-      /verwendet für ihre eigenen Einträge kein Cookie/i
+      /verwendet für ihre Einträge kein Cookie/i
     );
   });
 });

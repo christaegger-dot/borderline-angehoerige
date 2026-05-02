@@ -49,18 +49,20 @@ export default function Layout({ children }: LayoutProps) {
 
       <aside
         aria-label="Notfallhinweis"
-        className="border-b border-border/40 bg-sage-wash/40"
+        className="border-b border-border/50 bg-background"
       >
-        <div className="container py-1.5 text-sm md:text-xs text-muted-foreground flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span className="font-medium text-foreground">
-            Notfallkontakte: Schweiz (Kanton Zürich)
+        <div className="container flex flex-wrap items-center gap-x-3 gap-y-1 py-2 text-[13px] text-muted-foreground">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
+            Notfallkontakte
           </span>
           <span className="hidden sm:inline">•</span>
+          <span className="text-foreground/90">Schweiz · Kanton Zürich</span>
+          <span className="hidden md:inline">•</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
           {showInlineSoforthilfeLink && (
             <AppLink
               href="/soforthilfe"
-              className="sm:hidden inline-flex min-h-9 items-center rounded-full border border-alert/25 bg-alert/10 px-3 py-1 text-sm font-medium text-alert transition-colors hover:bg-alert/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-alert/40 focus-visible:ring-offset-2"
+              className="sm:hidden inline-flex min-h-9 items-center rounded-full border border-border/70 bg-background px-3 py-1 text-sm font-medium text-[color:var(--accent-primary)] transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)]/30 focus-visible:ring-offset-2"
             >
               Zur Soforthilfe
             </AppLink>
@@ -77,18 +79,21 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-navy text-white border-t border-navy-light/20 mt-auto">
+      <footer
+        className="mt-auto border-t bg-background"
+        style={{ borderColor: "var(--rule-color)" }}
+      >
         <div className="container py-8 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand + Absender */}
             <div className="lg:col-span-1">
               <AppLink href="/" className="flex items-center gap-2 mb-4">
-                <BrandMark variant="dark" />
-                <span className="font-medium text-base text-white">
+                <BrandMark variant="light" />
+                <span className="font-medium text-base text-foreground">
                   Borderline · Hilfe für Angehörige
                 </span>
               </AppLink>
-              <p className="text-white/90 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Psychoedukatives Informationsangebot für Angehörige von Menschen
                 mit Borderline-Muster.
               </p>
@@ -96,15 +101,15 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Navigation */}
             <div>
-              <h3 className="font-semibold text-white mb-4 text-base">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
                 Themen
-              </h3>
+              </p>
               <ul className="space-y-1">
                 {navItems.map(item => (
                   <li key={item.href}>
                     <AppLink
                       href={item.href}
-                      className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5"
+                      className="inline-flex items-center py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
                     </AppLink>
@@ -115,15 +120,15 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Resources */}
             <div>
-              <h3 className="font-semibold text-white mb-4 text-base">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
                 Ressourcen
-              </h3>
+              </p>
               <ul className="space-y-1">
                 {ressourcenItems.map(item => (
                   <li key={item.href}>
                     <AppLink
                       href={item.href}
-                      className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center py-1.5"
+                      className="inline-flex items-center py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
                     </AppLink>
@@ -134,10 +139,10 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Hinweis */}
             <div>
-              <h3 className="font-semibold text-white mb-4 text-base">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
                 Hinweis
-              </h3>
-              <p className="text-white/90 text-sm leading-relaxed">
+              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 Diese Website ersetzt keine professionelle Beratung oder
                 Therapie. Bei akuten Krisen wenden Sie sich bitte an die
                 Notfallnummern.
@@ -146,55 +151,61 @@ export default function Layout({ children }: LayoutProps) {
           </div>
 
           {/* Absender-Einordnung */}
-          <div className="border-t border-white/10 mt-8 pt-8">
-            <p className="text-sm text-white leading-relaxed">
+          <div
+            className="mt-8 border-t pt-8"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p className="text-sm leading-relaxed text-foreground">
               Herausgegeben von der Fachstelle Angehörigenarbeit der
               Psychiatrischen Universitätsklinik Zürich (PUK).
             </p>
-            <p className="text-xs text-white/90 mt-1 leading-relaxed">
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
               Redaktionell eigenständiges Informationsangebot der Fachstelle
               Angehörigenarbeit innerhalb der PUK Zürich.
             </p>
           </div>
 
-          <div className="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-white/90 text-sm">
+          <div
+            className="mt-6 flex flex-col items-start justify-between gap-4 border-t pt-6 sm:flex-row sm:items-center"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p className="text-sm text-muted-foreground">
               © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <AppLink
                 href="/fachstelle"
-                className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Fachstelle
               </AppLink>
               <AppLink
                 href="/ueber-uns"
-                className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Über uns
               </AppLink>
               <AppLink
                 href="/impressum"
-                className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Impressum
               </AppLink>
               <AppLink
                 href="/datenschutz"
-                className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Datenschutz
               </AppLink>
               <AppLink
                 href="/barrierefreiheit"
-                className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Barrierefreiheit
               </AppLink>
               <AppLink
                 href="/feedback"
-                className="text-white/90 hover:text-white text-sm transition-colors inline-flex items-center min-h-[44px]"
+                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Feedback
               </AppLink>

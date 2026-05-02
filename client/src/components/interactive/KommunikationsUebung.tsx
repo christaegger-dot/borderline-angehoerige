@@ -1,6 +1,5 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   CheckCircle2,
@@ -278,39 +277,24 @@ const TECHNIQUE_META: Record<
   Technique,
   {
     label: string;
-    accentTextClass: string;
-    surfaceClass: string;
-    badgeClass: string;
-    noteBorderClass: string;
-    icon: React.ReactNode;
+    tintVar: string;
+    icon: React.ElementType;
   }
 > = {
   SET: {
     label: "SET-Kommunikation",
-    accentTextClass: "text-sage-dark",
-    surfaceClass: "bg-sage-wash",
-    badgeClass: "bg-white/70 text-sage-dark",
-    noteBorderClass:
-      "border-[color-mix(in_oklch,var(--color-sage-dark),transparent_70%)]",
-    icon: <Heart className="w-4 h-4" />,
+    tintVar: "--color-sage-dark",
+    icon: Heart,
   },
   DEAR: {
     label: "DEAR MAN",
-    accentTextClass: "text-sand-mid",
-    surfaceClass: "bg-sand-muted",
-    badgeClass: "bg-white/70 text-sand-mid",
-    noteBorderClass:
-      "border-[color-mix(in_oklch,var(--color-sand-mid),transparent_70%)]",
-    icon: <Scale className="w-4 h-4" />,
+    tintVar: "--color-sand-mid",
+    icon: Scale,
   },
   Validierung: {
     label: "Validierung",
-    accentTextClass: "text-sage-mid",
-    surfaceClass: "bg-sage-lighter",
-    badgeClass: "bg-white/70 text-sage-mid",
-    noteBorderClass:
-      "border-[color-mix(in_oklch,var(--color-sage-mid),transparent_70%)]",
-    icon: <Shield className="w-4 h-4" />,
+    tintVar: "--color-sage-mid",
+    icon: Shield,
   },
 };
 
@@ -354,6 +338,19 @@ function ScenarioCard({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
   const meta = TECHNIQUE_META[scenario.technique];
+  const TechniqueIcon = meta.icon;
+  const tintStyle = {
+    color: `var(${meta.tintVar})`,
+  };
+  const tintBadgeStyle = {
+    color: `var(${meta.tintVar})`,
+    borderColor: `color-mix(in oklch, var(${meta.tintVar}) 28%, transparent)`,
+    backgroundColor: `color-mix(in oklch, var(${meta.tintVar}) 8%, white)`,
+  };
+  const tintPanelStyle = {
+    borderColor: `color-mix(in oklch, var(${meta.tintVar}) 22%, transparent)`,
+    backgroundColor: `color-mix(in oklch, var(${meta.tintVar}) 5%, var(--bg-primary))`,
+  };
 
   const selectedOption = scenario.options.find(o => o.id === selectedId);
 
@@ -372,36 +369,77 @@ function ScenarioCard({
   }, []);
 
   return (
-    <Card className="overflow-hidden border-border/60">
+    <article
+      className="overflow-hidden rounded-[1.35rem] border"
+      style={{
+        borderColor: "var(--rule-color)",
+        backgroundColor: "var(--bg-elevated)",
+      }}
+    >
       {/* Header */}
       <div
-        className={`border-b border-border/40 px-5 py-4 ${meta.surfaceClass}`}
+        className="border-b px-5 py-4"
+        style={{
+          borderColor: "var(--rule-color)",
+          backgroundColor: "color-mix(in oklch, var(--bg-primary) 78%, white)",
+        }}
       >
         <div className="flex items-center gap-2 mb-2">
           <span
-            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${meta.badgeClass}`}
+            className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold"
+            style={tintBadgeStyle}
           >
-            {meta.icon}
+            <TechniqueIcon className="w-4 h-4" aria-hidden="true" />
             {meta.label}
           </span>
-          <span className="text-xs text-muted-foreground">
+          <span
+            style={{ fontSize: "var(--text-xs)", color: "var(--fg-tertiary)" }}
+          >
             Szenario {index + 1}
           </span>
         </div>
-        <h3 className="text-lg font-semibold text-foreground leading-tight">
+        <h3
+          className="leading-tight"
+          style={{
+            fontSize: "var(--text-lg)",
+            color: "var(--fg-primary)",
+            fontWeight: 600,
+          }}
+        >
           {scenario.title}
         </h3>
       </div>
 
-      <CardContent className="p-5 space-y-4">
+      <div className="p-5 space-y-4">
         {/* Context */}
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p
+          style={{
+            fontSize: "var(--text-sm)",
+            lineHeight: "var(--lh-relaxed)",
+            color: "var(--fg-secondary)",
+          }}
+        >
           {scenario.context}
         </p>
 
         {/* Statement (what the person says) */}
-        <div className="bg-muted/40 rounded-xl p-4 border-l-4 border-l-[var(--color-sage-mid)]">
-          <p className="text-sm font-medium text-foreground italic leading-relaxed">
+        <div
+          className="rounded-[1rem] border-l-2 px-4 py-4"
+          style={{
+            borderColor: `var(${meta.tintVar})`,
+            backgroundColor:
+              "color-mix(in oklch, var(--bg-primary) 72%, white)",
+          }}
+        >
+          <p
+            className="italic"
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-primary)",
+              fontWeight: 500,
+            }}
+          >
             {scenario.statement}
           </p>
         </div>
@@ -416,17 +454,17 @@ function ScenarioCard({
             const showResult = revealed;
 
             let borderClass =
-              "border-border/60 hover:border-[var(--color-sage-dark)]/40";
-            let bgClass = "bg-background hover:bg-muted/30";
+              "border-border/60 hover:border-[color:var(--rule-color-strong)]";
+            let bgClass = "bg-background hover:bg-muted/20";
 
             if (showResult && isSelected && option.correct) {
-              borderClass = "border-green-500/50";
+              borderClass = "border-green-500/60";
               bgClass = "bg-green-50";
             } else if (showResult && isSelected && !option.correct) {
-              borderClass = "border-red-400/50";
+              borderClass = "border-red-400/60";
               bgClass = "bg-red-50";
             } else if (showResult && option.correct) {
-              borderClass = "border-green-400/30";
+              borderClass = "border-green-400/40";
               bgClass = "bg-green-50/50";
             }
 
@@ -498,7 +536,7 @@ function ScenarioCard({
               transition={{ duration: 0.25, delay: 0.1 }}
               className="overflow-hidden"
             >
-              <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+              <div className="rounded-[1rem] border border-green-200 bg-green-50/70 p-4">
                 <p className="text-sm font-medium text-green-800 mb-1 flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4" />
                   Bessere Antwort:
@@ -520,11 +558,9 @@ function ScenarioCard({
               transition={{ duration: 0.25, delay: 0.15 }}
               className="overflow-hidden"
             >
-              <div
-                className={`rounded-xl border p-4 ${meta.surfaceClass} ${meta.noteBorderClass}`}
-              >
+              <div className="rounded-[1rem] border p-4" style={tintPanelStyle}>
                 <p className="text-sm font-medium text-foreground mb-1 flex items-center gap-1.5">
-                  <Lightbulb className={`w-4 h-4 ${meta.accentTextClass}`} />
+                  <Lightbulb className="w-4 h-4" style={tintStyle} />
                   Merke
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -549,8 +585,8 @@ function ScenarioCard({
             </Button>
           </div>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </article>
   );
 }
 
@@ -564,20 +600,40 @@ function TechniqueSection({
   scenarios: Scenario[];
 }) {
   const meta = TECHNIQUE_META[technique];
+  const TechniqueIcon = meta.icon;
+  const tintStyle = {
+    color: `var(${meta.tintVar})`,
+  };
+  const tintBadgeStyle = {
+    color: `var(${meta.tintVar})`,
+    borderColor: `color-mix(in oklch, var(${meta.tintVar}) 24%, transparent)`,
+    backgroundColor: `color-mix(in oklch, var(${meta.tintVar}) 6%, var(--bg-primary))`,
+  };
 
   return (
     <div>
       <div className="flex items-center gap-3 mb-4">
         <div
-          className={`flex h-9 w-9 items-center justify-center rounded-lg ${meta.surfaceClass} ${meta.accentTextClass}`}
+          className="flex h-9 w-9 items-center justify-center rounded-[0.9rem] border"
+          style={tintBadgeStyle}
         >
-          {meta.icon}
+          <TechniqueIcon className="w-4 h-4" aria-hidden="true" />
         </div>
         <div>
-          <h2 className="text-xl font-semibold text-foreground">
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+            }}
+          >
             {meta.label}
           </h2>
-          <p className="text-xs text-muted-foreground">
+          <p
+            style={{ fontSize: "var(--text-xs)", color: "var(--fg-tertiary)" }}
+          >
             {scenarios.length}{" "}
             {scenarios.length === 1 ? "Szenario" : "Szenarien"}
           </p>
@@ -586,19 +642,21 @@ function TechniqueSection({
 
       {/* Technique component breakdown */}
       {TECHNIQUE_STEPS[technique] && (
-        <div
-          className={`mb-5 rounded-lg border border-border/30 p-3 ${meta.surfaceClass}`}
-        >
-          <p className={`mb-2.5 text-xs font-medium ${meta.accentTextClass}`}>
+        <div className="mb-5 rounded-[1rem] border p-3" style={tintBadgeStyle}>
+          <p className="mb-2.5 text-xs font-medium" style={tintStyle}>
             Aufbau der Technik
           </p>
           <div className="flex flex-wrap gap-2">
             {TECHNIQUE_STEPS[technique]!.map(comp => (
               <div
                 key={comp.letter}
-                className="flex items-center gap-1.5 bg-background/60 rounded px-2.5 py-1.5"
+                className="flex items-center gap-1.5 rounded-[0.8rem] border px-2.5 py-1.5"
+                style={{
+                  borderColor: "var(--rule-color)",
+                  backgroundColor: "var(--bg-elevated)",
+                }}
               >
-                <span className={`text-sm font-bold ${meta.accentTextClass}`}>
+                <span className="text-sm font-bold" style={tintStyle}>
                   {comp.letter}
                 </span>
                 <div>

@@ -8,16 +8,13 @@ import {
   CheckCircle2,
   AlertTriangle,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface Stufe {
   level: number;
   title: string;
   subtitle: string;
   icon: React.ElementType;
-  badgeClass: string;
-  iconClass: string;
-  exampleClass: string;
+  tintVar: string;
   ziel: string;
   soGehts: string[];
   beispielsaetze: string[];
@@ -34,10 +31,7 @@ const stufen: Stufe[] = [
     title: "Aufmerksam sein",
     subtitle: "«Ich bin jetzt wirklich da.»",
     icon: Eye,
-    badgeClass: "bg-sand-border text-white",
-    iconClass: "text-sand-border",
-    exampleClass:
-      "bg-[color-mix(in_oklch,var(--color-sand-border)_10%,white)] text-sand-border",
+    tintVar: "--color-sand-border",
     ziel: "Sicherheit durch Präsenz.",
     soGehts: [
       "Kurz innehalten, Blick und Körper zuwenden",
@@ -59,10 +53,7 @@ const stufen: Stufe[] = [
     title: "Spiegeln",
     subtitle: "«Ich habe verstanden, was du meinst.»",
     icon: MessageSquare,
-    badgeClass: "bg-sage-dark text-white",
-    iconClass: "text-sage-dark",
-    exampleClass:
-      "bg-[color-mix(in_oklch,var(--color-sage-dark)_10%,white)] text-sage-dark",
+    tintVar: "--color-sage-dark",
     ziel: "Missverständnisse reduzieren, Tempo rausnehmen.",
     soGehts: [
       "In eigenen Worten zusammenfassen",
@@ -84,10 +75,7 @@ const stufen: Stufe[] = [
     title: "Zwischen den Zeilen verstehen",
     subtitle: "«Kann es sein, dass…?»",
     icon: Sparkles,
-    badgeClass: "bg-sand-mid text-white",
-    iconClass: "text-sand-mid",
-    exampleClass:
-      "bg-[color-mix(in_oklch,var(--color-sand-mid)_10%,white)] text-sand-mid",
+    tintVar: "--color-sand-mid",
     ziel: "Das Gefühl hinter der Reaktion erkennen.",
     soGehts: [
       "Vorsichtige Vermutung äussern",
@@ -109,10 +97,7 @@ const stufen: Stufe[] = [
     title: "Nachvollziehen",
     subtitle: "«Es macht Sinn, dass dich das trifft.»",
     icon: History,
-    badgeClass: "bg-sage-mid text-white",
-    iconClass: "text-sage-mid",
-    exampleClass:
-      "bg-[color-mix(in_oklch,var(--color-sage-mid)_10%,white)] text-sage-mid",
+    tintVar: "--color-sage-mid",
     ziel: "Bedeutung geben, ohne zu bewerten.",
     soGehts: [
       "Stress, Vorgeschichte oder Überforderung mitdenken",
@@ -134,10 +119,7 @@ const stufen: Stufe[] = [
     title: "Das Gültige anerkennen",
     subtitle: "«Diesen Teil kann ich gut nachvollziehen.»",
     icon: Users,
-    badgeClass: "bg-sage-dark text-white",
-    iconClass: "text-sage-dark",
-    exampleClass:
-      "bg-[color-mix(in_oklch,var(--color-sage-dark)_10%,white)] text-sage-dark",
+    tintVar: "--color-sage-dark",
     ziel: "Den verständlichen Kern benennen, ohne alles zu billigen.",
     soGehts: [
       "Gefühl oder Bedürfnis anerkennen",
@@ -159,10 +141,7 @@ const stufen: Stufe[] = [
     title: "Auf Augenhöhe bleiben",
     subtitle: "«Wir sind zwei gleichwertige Menschen.»",
     icon: Star,
-    badgeClass: "bg-sage-dark text-white",
-    iconClass: "text-sage-dark",
-    exampleClass:
-      "bg-[color-mix(in_oklch,var(--color-sage-dark)_10%,white)] text-sage-dark",
+    tintVar: "--color-sage-dark",
     ziel: "Respektvoll bleiben, ohne zu belehren oder zu psychologisieren.",
     soGehts: [
       "Klar, ruhig und respektvoll sprechen",
@@ -183,7 +162,7 @@ const stufen: Stufe[] = [
 
 export default function ValidierungsStufenleiter() {
   return (
-    <div className="mt-6 space-y-4">
+    <div className="mt-6 space-y-6">
       <p className="text-sm text-muted-foreground">
         Die sechs Stufen sind kein Schema, das immer vollständig abgearbeitet
         werden muss. Sie helfen eher dabei, den eigenen Ton zu klären: zuerst
@@ -192,111 +171,140 @@ export default function ValidierungsStufenleiter() {
 
       {stufen.map(stufe => {
         const Icon = stufe.icon;
+        const tintStyle = {
+          color: `var(${stufe.tintVar})`,
+        };
+        const tintBadgeStyle = {
+          color: `var(${stufe.tintVar})`,
+          borderColor: `color-mix(in oklch, var(${stufe.tintVar}) 28%, transparent)`,
+          backgroundColor: `color-mix(in oklch, var(${stufe.tintVar}) 8%, white)`,
+        };
+        const exampleStyle = {
+          borderColor: `color-mix(in oklch, var(${stufe.tintVar}) 22%, transparent)`,
+          backgroundColor: "var(--bg-elevated)",
+        };
+
         return (
-          <Card key={stufe.level} className="border-border/50">
-            <CardContent className="p-5">
-              <div className="flex items-start gap-3 mb-4">
-                <div
-                  className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold ${stufe.badgeClass}`}
-                >
-                  {stufe.level}
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Icon
-                      className={`h-4 w-4 ${stufe.iconClass}`}
-                      aria-hidden="true"
-                    />
-                    <h3 className="font-semibold text-foreground">
-                      {stufe.title}
-                    </h3>
-                  </div>
-                  <p className="text-sm italic text-muted-foreground">
-                    {stufe.subtitle}
-                  </p>
-                </div>
+          <article
+            key={stufe.level}
+            className="border-t pt-6"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <div className="flex items-start gap-3 mb-4">
+              <div
+                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border text-sm font-bold"
+                style={tintBadgeStyle}
+              >
+                {stufe.level}
               </div>
-
-              <p className="text-sm text-foreground mb-4">
-                <strong>Ziel:</strong> {stufe.ziel}
-              </p>
-
-              <div className="grid gap-4 md:grid-cols-2 mb-4">
-                <div>
-                  <p className="text-xs font-medium text-muted-foreground mb-2">
-                    So kann es aussehen
-                  </p>
-                  <ul className="space-y-2">
-                    {stufe.soGehts.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-foreground"
-                      >
-                        <CheckCircle2
-                          className="w-3.5 h-3.5 text-sage-mid flex-shrink-0 mt-0.5"
-                          aria-hidden="true"
-                        />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <Icon
+                    className="h-4 w-4"
+                    style={tintStyle}
+                    aria-hidden="true"
+                  />
+                  <h3 className="font-semibold text-foreground">
+                    {stufe.title}
+                  </h3>
                 </div>
+                <p className="text-sm italic text-muted-foreground">
+                  {stufe.subtitle}
+                </p>
+              </div>
+            </div>
 
-                <div>
-                  <p className="text-xs font-medium text-muted-foreground mb-2">
-                    Typischer Stolperstein
-                  </p>
-                  <div className="rounded-lg border border-sand-border/40 bg-sand/50 p-3">
-                    <p className="text-sm text-foreground leading-relaxed flex items-start gap-2">
-                      <AlertTriangle
-                        className="w-4 h-4 text-sand-warm flex-shrink-0 mt-0.5"
+            <p className="text-sm text-foreground mb-4">
+              <strong>Ziel:</strong> {stufe.ziel}
+            </p>
+
+            <div className="grid gap-4 md:grid-cols-2 mb-4">
+              <div>
+                <p className="text-xs font-medium text-muted-foreground mb-2">
+                  So kann es aussehen
+                </p>
+                <ul className="space-y-2">
+                  {stufe.soGehts.map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-sm text-foreground"
+                    >
+                      <CheckCircle2
+                        className="w-3.5 h-3.5 flex-shrink-0 mt-0.5"
+                        style={tintStyle}
                         aria-hidden="true"
                       />
-                      {stufe.typischerFehler}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <p className="text-xs font-medium text-muted-foreground mb-2">
-                  Beispielsätze
-                </p>
-                <div className="space-y-2">
-                  {stufe.beispielsaetze.map((satz, i) => (
-                    <div
-                      key={i}
-                      className={`rounded-md px-3 py-2 text-sm font-medium ${stufe.exampleClass}`}
-                    >
-                      {satz}
-                    </div>
+                      {item}
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
 
-              <div className="rounded-lg bg-muted/30 p-4 space-y-3">
-                <p className="text-xs font-medium text-muted-foreground">
-                  Kurzer Beispiel-Dialog
+              <div>
+                <p className="text-xs font-medium text-muted-foreground mb-2">
+                  Typischer Stolperstein
                 </p>
-                <div className="flex items-start gap-2">
-                  <span className="text-xs font-medium text-sand-warm bg-sand/50 px-2 py-0.5 rounded flex-shrink-0">
-                    B
-                  </span>
-                  <p className="text-sm text-foreground italic">
-                    {stufe.dialog.betroffener}
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-xs font-medium text-sage-dark bg-sage-wash px-2 py-0.5 rounded flex-shrink-0">
-                    A
-                  </span>
-                  <p className="text-sm text-foreground font-medium">
-                    {stufe.dialog.angehoeriger}
+                <div className="rounded-[0.95rem] border border-sand-border/40 bg-sand/50 p-3">
+                  <p className="text-sm text-foreground leading-relaxed flex items-start gap-2">
+                    <AlertTriangle
+                      className="w-4 h-4 text-sand-warm flex-shrink-0 mt-0.5"
+                      aria-hidden="true"
+                    />
+                    {stufe.typischerFehler}
                   </p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            <div className="mb-4">
+              <p className="text-xs font-medium text-muted-foreground mb-2">
+                Beispielsätze
+              </p>
+              <div className="space-y-2">
+                {stufe.beispielsaetze.map((satz, i) => (
+                  <div
+                    key={i}
+                    className="rounded-[0.95rem] border px-3 py-2 text-sm font-medium text-foreground"
+                    style={exampleStyle}
+                  >
+                    {satz}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div
+              className="space-y-3 rounded-[1rem] border p-4"
+              style={{
+                borderColor: "var(--rule-color)",
+                backgroundColor:
+                  "color-mix(in oklch, var(--bg-primary) 70%, white)",
+              }}
+            >
+              <p className="text-xs font-medium text-muted-foreground">
+                Kurzer Beispiel-Dialog
+              </p>
+              <div className="flex items-start gap-2">
+                <span className="flex-shrink-0 rounded-full border border-sand-border/40 bg-sand/40 px-2 py-0.5 text-xs font-medium text-sand-warm">
+                  B
+                </span>
+                <p className="text-sm text-foreground italic">
+                  {stufe.dialog.betroffener}
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <span
+                  className="flex-shrink-0 rounded-full border px-2 py-0.5 text-xs font-medium"
+                  style={tintBadgeStyle}
+                >
+                  A
+                </span>
+                <p className="text-sm text-foreground font-medium">
+                  {stufe.dialog.angehoeriger}
+                </p>
+              </div>
+            </div>
+          </article>
         );
       })}
     </div>

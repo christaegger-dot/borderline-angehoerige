@@ -85,29 +85,26 @@ export function Breadcrumbs() {
   const backLabel = parent?.label || "Startseite";
 
   return (
-    <div className="border-b border-border/40 bg-[linear-gradient(180deg,rgba(250,250,247,0.82),rgba(248,250,249,0.92))]">
-      <nav className="container py-3 md:py-4" aria-label="Breadcrumb">
-        <div className="flex items-center justify-between gap-3">
+    <div className="border-b border-border/40 bg-background/92">
+      <nav className="container py-3 md:py-3.5" aria-label="Breadcrumb">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href={backHref}
-            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium shadow-sm shadow-black/5 transition-colors group sm:hidden ${accent.breadcrumbBack}`}
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium transition-colors group sm:hidden ${accent.breadcrumbBack}`}
           >
             <ArrowLeft className="w-4 h-4" />
             <span>{backLabel}</span>
           </Link>
 
-          <span
-            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium sm:hidden ${accent.breadcrumbChip}`}
-          >
-            <span className={`h-2 w-2 rounded-full ${accent.dot}`} />
+          <p className={`text-sm font-medium sm:hidden ${accent.textAccent}`}>
             {pageName}
-          </span>
+          </p>
 
-          <ol className="hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-white/88 px-3 py-2 text-sm text-muted-foreground shadow-sm shadow-black/5 backdrop-blur-sm">
+          <ol className="hidden sm:flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
             <li>
               <Link
                 href="/"
-                className="flex items-center gap-1.5 rounded-full px-2 py-1 transition-colors hover:bg-muted/60 hover:text-foreground"
+                className="flex items-center gap-1.5 transition-colors hover:text-foreground"
               >
                 <Home className="w-4 h-4" />
                 <span>Startseite</span>
@@ -132,10 +129,7 @@ export function Breadcrumbs() {
                 className="w-4 h-4 text-muted-foreground/50"
                 aria-hidden="true"
               />
-              <span
-                className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 font-medium ${accent.breadcrumbChip}`}
-              >
-                <span className={`h-2 w-2 rounded-full ${accent.dot}`} />
+              <span className={`font-medium ${accent.textAccent}`}>
                 {pageName}
               </span>
             </li>

@@ -104,7 +104,7 @@ export function RessourcenMenu({
       {isOpen && (
         <div
           onKeyDown={handleMenuKeyDown}
-          className="absolute right-0 top-full z-50 mt-2 w-[min(680px,calc(100vw-2rem))] rounded-[1.4rem] border border-border/65 bg-white/92 shadow-[0_34px_64px_-34px_rgba(15,23,42,0.55)] backdrop-blur-md"
+          className="absolute right-0 top-full z-50 mt-2 w-[min(680px,calc(100vw-2rem))] rounded-[1.25rem] border border-border/65 bg-white/96 shadow-[0_24px_48px_-36px_rgba(15,23,42,0.38)]"
           {...menuA11yProps}
         >
           <div className="grid grid-cols-3 gap-0 p-3">
@@ -115,8 +115,7 @@ export function RessourcenMenu({
                   groupIdx > 0 ? "border-l border-border/40 pl-3" : undefined
                 }
               >
-                <div className="flex items-center gap-2.5 px-3 pt-2 pb-2.5">
-                  <span className={`w-5 h-px ${currentAccent.dot}`} />
+                <div className="px-3 pt-2 pb-2.5">
                   <span
                     className={`text-[11px] font-semibold tracking-[0.08em] uppercase whitespace-nowrap ${currentAccent.groupLabel}`}
                   >

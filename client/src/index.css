@@ -5,7 +5,9 @@
 @import "tailwindcss/preflight.css" layer(base);
 
 :root {
-  /* Sanctuary Calm - Warm, therapeutic palette */
+  /* Legacy Sanctuary Calm bridge.
+     Editorial tokens below are the primary design source.
+     Legacy tokens remain for migration and functional crisis UI. */
   --primary: oklch(
     0.55 0.15 55
   ); /* Terracotta – WCAG AA: weiss auf primary ≥4.5:1 (Phase 1 fix, war 0.65 0.12 55) */
@@ -59,12 +61,10 @@
   --sidebar-ring: oklch(0.55 0.15 55); /* Terracotta (angepasst mit primary) */
 
   /* ════════════════════════════════════════════════════════════════════════
-     Editorial Redesign — Phase 1 Tokens (Brief 27.04.2026)
-     Parallel zu bestehenden Sanctuary-Calm-Tokens. Phase-2-Primitive
-     referenzieren ausschliesslich diese neuen Tokens. Bestehende Tokens
-     werden in Phase 7 entfernt.
-     Nicht in der neuen Palette: Soforthilfe-Tokens (--color-sos-*) und
-     Alert-Tokens (--color-alert*) bleiben funktional unverändert.
+     Editorial tokens — primäre Designquelle
+     Neue Layout- und Inhaltsseiten sollen bevorzugt diese Tokens nutzen.
+     Funktionale Krisenfarben (--color-sos-* / --color-alert*) bleiben
+     davon ausgenommen.
      ════════════════════════════════════════════════════════════════════════ */
 
   /* — Farben — */
@@ -313,8 +313,7 @@
     max-width: 44ch;
   }
 
-  /* ── Pull-Quote (Phase 4) ── */
-  /* Zitat-Hervorhebung in Prosa-Abschnitten: linker Akzentbalken, italic, etwas grösser */
+  /* Pull-Quote — sparsame Zitat-Hervorhebung fuer Lesestrecken */
   .pull-quote {
     border-left: 3px solid var(--color-sage, oklch(0.72 0.08 150));
     padding-left: 1.25rem;
@@ -337,27 +336,7 @@
     letter-spacing: 0.02em;
   }
 
-  .home-hero-surface {
-    background: linear-gradient(
-      to bottom right,
-      var(--color-navy),
-      var(--color-home-hero-mid),
-      var(--color-home-hero-end)
-    );
-  }
-
-  .home-orbit-glow {
-    background: radial-gradient(
-      circle,
-      var(--color-home-orbit-inner),
-      var(--color-home-orbit-outer)
-    );
-  }
-
-  /* ── Editorial Redesign — Phase 2 Primitives (Brief 27.04.2026) ──
-     CSS-Pendant zu den React-Primitiven in client/src/components/editorial/.
-     Diese Klassen werden von EditorialProse genutzt; .editorial-link ist
-     eine eigenständige Inline-Anchor-Utility. */
+  /* Editorial primitives fuer React-Komponenten und Inline-Links */
 
   .editorial-prose {
     font-size: var(
@@ -394,15 +373,13 @@
     font-style: italic;
   }
 
-  /* Brief 2.3: <strong> NICHT bold sondern in Aubergine, normal weight —
-     subtile Hervorhebung statt visueller Lärm */
+  /* <strong> bleibt bewusst ruhig statt fett und werblich */
   .editorial-prose strong {
     color: var(--accent-primary);
     font-weight: var(--weight-body);
   }
 
-  /* Drop-Cap auf erstem Buchstaben des ersten Absatzes
-     (nur wenn .editorial-prose-dropcap als Modifier-Klasse gesetzt) */
+  /* Drop-Cap auf dem ersten Buchstaben des ersten Absatzes */
   .editorial-prose-dropcap > p:first-child::first-letter {
     font-family: var(--font-display);
     float: left;
@@ -415,14 +392,13 @@
     font-weight: var(--weight-display);
   }
 
-  /* Brief Anhang C: Mobile-Sicherung gegen Layout-Bruch bei sehr schmalen Viewports */
   @media (max-width: 380px) {
     .editorial-prose-dropcap > p:first-child::first-letter {
-      font-size: 3.2rem; /* Proportional reduziert */
+      font-size: 3.2rem;
     }
   }
 
-  /* .editorial-link — eigenständige Inline-Anchor-Utility (Brief 2.6) */
+  /* Eigenstaendige Inline-Link-Utility */
   .editorial-link {
     color: var(--accent-primary);
     text-decoration: underline;

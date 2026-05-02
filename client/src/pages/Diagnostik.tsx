@@ -32,6 +32,7 @@ import ReviewBadge from "@/components/ReviewBadge";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import AppLink from "@/components/AppLink";
+import { quellenLinks } from "@/content/quellenLinks";
 import {
   emailByIdStrict,
   kontaktByIdStrict,
@@ -342,22 +343,25 @@ export default function Diagnostik() {
             sources={[
               {
                 label: "WHO ICD-11: Borderline pattern specifier (6D11.5)",
-                href: "https://icd.who.int/browse/2025-01/mms/en#2006821354",
+                href: quellenLinks.icd11,
                 type: "wissenschaft",
               },
               {
                 label:
                   "American Psychiatric Association (2022). DSM-5-TR — Diagnostic and Statistical Manual of Mental Disorders, Text Revision.",
+                href: quellenLinks.apa2022,
                 type: "wissenschaft",
               },
               {
                 label:
                   "First, Williams, Benjamin & Spitzer (2017). SCID-5-PD: Structured Clinical Interview for DSM-5 Personality Disorders. APA Publishing.",
+                href: quellenLinks.first2017,
                 type: "wissenschaft",
               },
               {
                 label:
                   "Loranger (1999). IPDE — International Personality Disorder Examination. WHO / Cambridge University Press.",
+                href: quellenLinks.ipde1999,
                 type: "wissenschaft",
               },
             ]}

@@ -25,6 +25,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
 } from "@/components/editorial";
+import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -32,6 +33,7 @@ import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import RollenOrbitVisualisierung from "@/components/visualizations/RollenOrbitVisualisierung";
+import { quellenLinks } from "@/content/quellenLinks";
 import {
   GELB,
   emailByIdStrict,
@@ -423,6 +425,35 @@ export default function UnterstuetzenTherapie() {
               kann.
             </EditorialPullQuote>
           </div>
+          <EvidenceNote
+            variant="editorial"
+            title="Quellen zu Therapieverfahren und Angehörigenprogrammen"
+            definition="DBT, MBT und andere BPS-spezifische Psychotherapien sind die am besten untersuchten Verfahren. Für Angehörige sind zusätzlich psychoedukative Programme wie Family Connections relevant."
+            sources={[
+              {
+                label:
+                  "Storebø et al. (2020) – Cochrane-Review zu psychologischen Therapien bei BPS",
+                href: quellenLinks.storebo2020,
+                type: "wissenschaft",
+              },
+              {
+                label:
+                  "Bateman & Fonagy (2009) – RCT zu mentalisierungsbasierter Therapie",
+                href: quellenLinks.batemanFonagy2009,
+                type: "wissenschaft",
+              },
+              {
+                label: "Linehan (2015) – DBT Skills Training Manual",
+                href: quellenLinks.linehan2015,
+                type: "wissenschaft",
+              },
+              {
+                label: "Hoffman et al. (2005) – Family Connections",
+                href: quellenLinks.hoffman2005,
+                type: "wissenschaft",
+              },
+            ]}
+          />
         </ContentSection>
 
         {/* ── ContentSection 4: unterstuetzen ── */}

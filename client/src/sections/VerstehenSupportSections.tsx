@@ -7,6 +7,7 @@ import {
   meaningForRelativesCards,
   relationshipPatterns,
 } from "@/content/verstehen";
+import { quellenLinks } from "@/content/quellenLinks";
 import EvidenceNote from "@/components/EvidenceNote";
 
 export function VerstehenRelationshipSection() {
@@ -54,15 +55,20 @@ export function VerstehenRelationshipSection() {
           reviewDate="24.03.2026"
           sources={[
             {
-              label:
-                "Fruzzetti, The High-Conflict Couple / DBT-informed family work",
+              label: "Fruzzetti (2006) zur DBT-informierten Angehörigenarbeit",
+              href: quellenLinks.fruzzetti2006,
               type: "wissenschaft",
             },
             {
-              label: "NEA-BPD / Family Connections",
-              href: "https://www.borderlinepersonalitydisorder.org/family-connections/",
-              type: "versorgung",
-              note: "Angehörigenprogramm mit DBT-bezogener Vermittlung",
+              label: "Hoffman et al. (2005) zu Family Connections",
+              href: quellenLinks.hoffman2005,
+              type: "wissenschaft",
+            },
+            {
+              label:
+                "Gunderson, Berkowitz & Ruiz-Sancho (1997) zur psychoedukativen Familienarbeit",
+              href: quellenLinks.gunderson1997,
+              type: "wissenschaft",
             },
           ]}
           className="mt-4"

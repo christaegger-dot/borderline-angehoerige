@@ -1,0 +1,1827 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Borderline-Angehörige · Mockup-Vergleich</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ============================================================
+         CHRISTAS DESIGN-TOKENS (1:1 aus index.css)
+         ============================================================ */
+      :root {
+        --bg-primary: #faf7f2;
+        --bg-elevated: #ffffff;
+        --bg-aubergine: #5b3a4e;
+        --bg-sage-wash: #eef0ea;
+        --bg-cream-deep: #f3eee3;
+
+        --fg-primary: #1f2a37;
+        --fg-secondary: #4b5563;
+        --fg-tertiary: #6b7280;
+        --fg-on-aubergine: #f5ece6;
+        --fg-on-aubergine-secondary: #d8c8c2;
+
+        --accent-primary: #5b3a4e;
+        --accent-primary-h: #4a2f40;
+        --accent-label: #4f6b5e;
+
+        --rule-color: rgba(31, 42, 55, 0.08);
+        --rule-color-strong: rgba(31, 42, 55, 0.2);
+        --rule-on-aubergine: rgba(245, 236, 230, 0.18);
+
+        --font-display:
+          "Source Serif 4", "Iowan Old Style", "Palatino", Georgia, serif;
+        --font-body:
+          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+        --measure: 38rem;
+        --measure-wide: 46rem;
+        --container-pad: 1.5rem;
+        --container-pad-md: 2.5rem;
+
+        --tracking-caps: 0.14em;
+        --tracking-tight: -0.015em;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg-primary);
+        color: var(--fg-primary);
+        font-family: var(--font-body);
+        font-size: 17px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ============================================================
+         TOGGLE BAR — sticky control to switch variants
+         ============================================================ */
+      .toggle-bar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #1f2a37;
+        color: #f5ece6;
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        font-family: var(--font-body);
+        font-size: 13px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+      }
+      .toggle-bar h1 {
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: rgba(245, 236, 230, 0.7);
+      }
+      .toggle-buttons {
+        display: flex;
+        gap: 4px;
+        background: rgba(245, 236, 230, 0.1);
+        padding: 3px;
+        border-radius: 999px;
+      }
+      .toggle-buttons button {
+        all: unset;
+        cursor: pointer;
+        padding: 8px 18px;
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(245, 236, 230, 0.65);
+        border-radius: 999px;
+        transition: all 0.18s ease;
+      }
+      .toggle-buttons button:hover {
+        color: #f5ece6;
+      }
+      .toggle-buttons button.active {
+        background: var(--accent-primary);
+        color: #fff;
+      }
+
+      /* ============================================================
+         SHARED STRUCTURE — Header / Notfall-Bar / Container
+         ============================================================ */
+      .site-header {
+        background: var(--bg-primary);
+        border-bottom: 1px solid var(--rule-color);
+      }
+      .header-inner {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 22px var(--container-pad-md);
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+        color: var(--fg-primary);
+        flex-shrink: 0;
+      }
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--accent-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px -2px rgba(91, 58, 78, 0.35);
+      }
+      .brand-wordmark {
+        font-family: var(--font-display);
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
+      .brand-sub {
+        display: block;
+        font-family: var(--font-body);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent-label);
+        font-weight: 500;
+        margin-top: 4px;
+      }
+      .brand-divider {
+        width: 1px;
+        height: 32px;
+        background: var(--rule-color-strong);
+        flex-shrink: 0;
+      }
+      .nav {
+        display: flex;
+        gap: 26px;
+        flex: 1;
+      }
+      .nav a {
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--fg-secondary);
+        text-decoration: none;
+        padding: 8px 0;
+        border-bottom: 1.5px solid transparent;
+        transition: all 0.15s;
+      }
+      .nav a:hover {
+        color: var(--fg-primary);
+        border-bottom-color: var(--accent-primary);
+      }
+      .nav a[aria-current="page"] {
+        color: var(--fg-primary);
+        font-weight: 500;
+      }
+      .header-tools {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .btn-search {
+        all: unset;
+        cursor: pointer;
+        font-family: var(--font-body);
+        font-size: 13px;
+        padding: 8px 16px;
+        border: 1px solid var(--rule-color-strong);
+        border-radius: 999px;
+        color: var(--fg-secondary);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .btn-search:hover {
+        border-color: var(--fg-tertiary);
+        color: var(--fg-primary);
+      }
+      .btn-emergency {
+        all: unset;
+        cursor: pointer;
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 20px;
+        background: #b91c1c;
+        color: #fff;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 1px 2px rgba(185, 28, 28, 0.18);
+      }
+      .btn-emergency::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0.85;
+      }
+
+      .notfall-bar {
+        background: var(--bg-cream-deep);
+        border-bottom: 1px solid var(--rule-color);
+        padding: 11px var(--container-pad-md);
+      }
+      .notfall-inner {
+        max-width: 1240px;
+        margin: 0 auto;
+        font-size: 13px;
+        color: var(--fg-secondary);
+      }
+      .notfall-inner b {
+        font-weight: 600;
+        letter-spacing: var(--tracking-caps);
+        font-size: 11px;
+        text-transform: uppercase;
+        color: var(--fg-primary);
+        margin-right: 16px;
+      }
+      .notfall-inner .sep {
+        color: var(--fg-tertiary);
+        margin: 0 12px;
+      }
+
+      /* ============================================================
+         GENERIC CONTAINERS
+         ============================================================ */
+      .section-wide {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding-left: var(--container-pad-md);
+        padding-right: var(--container-pad-md);
+      }
+      .section-narrow {
+        max-width: var(--measure);
+        margin: 0 auto;
+        padding-left: var(--container-pad-md);
+        padding-right: var(--container-pad-md);
+      }
+
+      .eyebrow {
+        font-family: var(--font-body);
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-caps);
+        color: var(--accent-label);
+      }
+      .eyebrow.on-aubergine {
+        color: rgba(245, 236, 230, 0.7);
+      }
+
+      h1.display,
+      h2.display {
+        font-family: var(--font-display);
+        font-weight: 400;
+        letter-spacing: var(--tracking-tight);
+        line-height: 1.05;
+        color: var(--fg-primary);
+      }
+      h1.display em,
+      h2.display em {
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .lede {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 1.4;
+        color: var(--fg-secondary);
+      }
+
+      .prose p {
+        font-size: 17px;
+        line-height: 1.75;
+        color: var(--fg-primary);
+        margin-bottom: 1.1em;
+      }
+      .prose p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ============================================================
+         VARIANT A — PHOTOGRAPHIC BILDSPRACHE
+         ============================================================ */
+      .variant-a .hero {
+        padding: 96px 0 64px;
+      }
+      .variant-a .hero-grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 var(--container-pad-md);
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .variant-a .hero-text .eyebrow {
+        margin-bottom: 28px;
+        display: block;
+      }
+      .variant-a .hero-text h1 {
+        font-size: clamp(40px, 5.5vw, 68px);
+        margin-bottom: 28px;
+      }
+      .variant-a .hero-text .lede {
+        font-size: 22px;
+        max-width: 30em;
+      }
+      .variant-a .hero-meta {
+        display: flex;
+        gap: 24px;
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--rule-color);
+        font-size: 13px;
+        color: var(--fg-tertiary);
+      }
+      .variant-a .hero-meta b {
+        color: var(--fg-primary);
+        font-weight: 500;
+      }
+
+      /* Photographic placeholder — looks like a real warm photo */
+      .photo-anchor {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+        background:
+          radial-gradient(ellipse at 25% 20%, #f4d8a8 0%, transparent 55%),
+          radial-gradient(ellipse at 80% 70%, #c89a7a 0%, transparent 60%),
+          radial-gradient(ellipse at 45% 85%, #8b6f5b 0%, transparent 50%),
+          linear-gradient(135deg, #d4a78a 0%, #8a5e4a 50%, #5b3a2e 100%);
+        box-shadow:
+          0 12px 32px -8px rgba(91, 58, 78, 0.18),
+          0 2px 6px rgba(31, 42, 55, 0.06);
+      }
+      .photo-anchor::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0.13 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+        opacity: 0.7;
+      }
+      .photo-anchor::after {
+        content: "";
+        position: absolute;
+        left: 22%;
+        top: 35%;
+        width: 56%;
+        height: 38%;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(244, 218, 168, 0.55) 0%,
+          rgba(244, 218, 168, 0) 60%
+        );
+        filter: blur(20px);
+      }
+      .photo-caption {
+        position: absolute;
+        left: 14px;
+        bottom: 14px;
+        background: rgba(31, 42, 55, 0.78);
+        color: #f5ece6;
+        font-size: 11px;
+        padding: 6px 10px;
+        border-radius: 3px;
+        letter-spacing: 0.02em;
+        backdrop-filter: blur(4px);
+      }
+
+      .variant-a .anerkennung {
+        padding: 80px 0 96px;
+      }
+      .variant-a .anerkennung .eyebrow {
+        margin-bottom: 28px;
+        display: block;
+      }
+      .variant-a .anerkennung .anerk-list p {
+        font-size: 19px;
+        line-height: 1.55;
+        color: var(--fg-primary);
+        margin-bottom: 28px;
+        font-family: var(--font-display);
+        max-width: 32em;
+      }
+
+      /* Aubergine color block (shared visual rhythm) */
+      .grundgedanke {
+        background: var(--bg-aubergine);
+        color: var(--fg-on-aubergine);
+        padding: 120px 0;
+        position: relative;
+      }
+      .grundgedanke .eyebrow {
+        color: rgba(245, 236, 230, 0.78);
+        margin-bottom: 32px;
+        display: block;
+      }
+      .grundgedanke h2 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.15;
+        letter-spacing: -0.012em;
+        max-width: 18em;
+        margin-bottom: 40px;
+        color: #f5ece6; /* explizit, nicht erben — sonst kommt fg-primary durch */
+      }
+      .grundgedanke .lede-large {
+        font-family: var(--font-display);
+        font-size: 21px;
+        line-height: 1.5;
+        color: #f0e5db; /* hell genug für 7:1 Kontrast auf Aubergine */
+        max-width: 32em;
+        margin-bottom: 22px;
+      }
+      .grundgedanke .lede-large:first-letter {
+        font-size: 4em;
+        line-height: 0.85;
+        float: left;
+        padding: 8px 12px 0 0;
+        font-weight: 400;
+        color: #f5ece6;
+      }
+      .grundgedanke .lede-secondary {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #e2d4cb; /* etwas gedämpfter, aber immer noch ~5.5:1 */
+        max-width: 32em;
+      }
+
+      /* Visual Orientation Grid — shared between variants */
+      .visual-grid-section {
+        padding: 96px 0 80px;
+      }
+      .visual-grid-header {
+        max-width: 1240px;
+        margin: 0 auto 56px;
+        padding: 0 var(--container-pad-md);
+      }
+      .visual-grid-header .eyebrow {
+        display: block;
+        margin-bottom: 16px;
+      }
+      .visual-grid-header h2 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(28px, 3.4vw, 42px);
+        line-height: 1.15;
+        letter-spacing: -0.012em;
+        max-width: 16em;
+        margin-bottom: 16px;
+      }
+      .visual-grid-header p {
+        font-size: 17px;
+        color: var(--fg-secondary);
+        max-width: 32em;
+        line-height: 1.65;
+      }
+      .visual-grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 var(--container-pad-md);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+      }
+      .vis-tile {
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .vis-tile:hover {
+        transform: translateY(-4px);
+      }
+      .vis-tile .vis-thumb {
+        aspect-ratio: 600/848;
+        background: var(--bg-elevated);
+        border: 1px solid var(--rule-color);
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px rgba(31, 42, 55, 0.04);
+        transition: box-shadow 0.22s;
+      }
+      .vis-tile:hover .vis-thumb {
+        box-shadow:
+          0 8px 24px -6px rgba(91, 58, 78, 0.18),
+          0 2px 4px rgba(31, 42, 55, 0.06);
+      }
+      .vis-tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: var(--bg-elevated);
+      }
+      .vis-tile h3 {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: -0.005em;
+        color: var(--fg-primary);
+      }
+      .vis-tile p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--fg-secondary);
+      }
+      .vis-tile .vis-cat {
+        font-family: var(--font-body);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-caps);
+        color: var(--accent-label);
+        font-weight: 500;
+        margin-bottom: -8px;
+      }
+
+      /* "Aus der Beratungsarbeit" — Variant A: with photo */
+      .variant-a .testimonial {
+        padding: 96px 0 120px;
+        background: var(--bg-sage-wash);
+      }
+      .variant-a .testimonial-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 var(--container-pad-md);
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .variant-a .testimonial-photo {
+        aspect-ratio: 5 / 6;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse at 30% 30%, #cfdac9 0%, transparent 55%),
+          radial-gradient(ellipse at 75% 75%, #7e927f 0%, transparent 60%),
+          linear-gradient(160deg, #b1bea7 0%, #5e6e57 70%, #3f4a3a 100%);
+        box-shadow:
+          0 16px 40px -10px rgba(31, 42, 55, 0.22),
+          0 2px 6px rgba(31, 42, 55, 0.06);
+      }
+      .variant-a .testimonial-photo::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n2)'/%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+        opacity: 0.65;
+      }
+      .variant-a .testimonial-text .eyebrow {
+        display: block;
+        margin-bottom: 24px;
+      }
+      .variant-a .testimonial-quote {
+        font-family: var(--font-display);
+        font-size: clamp(22px, 2.4vw, 30px);
+        line-height: 1.4;
+        color: var(--fg-primary);
+        font-weight: 400;
+        margin-bottom: 24px;
+        letter-spacing: -0.005em;
+      }
+      .variant-a .testimonial-quote::before {
+        content: "«";
+        color: var(--accent-primary);
+        margin-right: 0.1em;
+      }
+      .variant-a .testimonial-quote::after {
+        content: "»";
+        color: var(--accent-primary);
+        margin-left: 0.1em;
+      }
+      .variant-a .testimonial-attribution {
+        font-size: 13px;
+        color: var(--fg-tertiary);
+        font-style: italic;
+      }
+
+      /* ============================================================
+         VARIANT B — ILLUSTRATED / ORGANIC (no photos)
+         ============================================================ */
+      .variant-b .hero {
+        position: relative;
+        padding: 96px 0 88px;
+        overflow: hidden;
+      }
+      .variant-b .hero-organic {
+        position: absolute;
+        right: -8%;
+        top: -10%;
+        width: 62%;
+        height: 130%;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .variant-b .hero-grid {
+        position: relative;
+        z-index: 1;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 var(--container-pad-md);
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .variant-b .hero-text .eyebrow {
+        margin-bottom: 28px;
+        display: block;
+      }
+      .variant-b .hero-text h1 {
+        font-size: clamp(40px, 5.5vw, 72px);
+        margin-bottom: 28px;
+      }
+      .variant-b .hero-text .lede {
+        font-size: 22px;
+        max-width: 30em;
+      }
+      .variant-b .hero-meta {
+        display: flex;
+        gap: 24px;
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--rule-color);
+        font-size: 13px;
+        color: var(--fg-tertiary);
+      }
+      .variant-b .hero-meta b {
+        color: var(--fg-primary);
+        font-weight: 500;
+      }
+      .variant-b .hero-illustration {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        max-width: 520px;
+        margin-left: auto;
+      }
+      .variant-b .hero-illustration svg {
+        filter: drop-shadow(0 8px 24px rgba(91, 58, 78, 0.12));
+      }
+
+      /* Decorative ornament (used in section openers) */
+      .ornament {
+        display: block;
+        margin: 0 auto 28px;
+        opacity: 0.85;
+      }
+
+      .variant-b .anerkennung {
+        padding: 96px 0 96px;
+        position: relative;
+      }
+      .variant-b .anerkennung-inner {
+        max-width: var(--measure);
+        margin: 0 auto;
+        padding: 0 var(--container-pad-md);
+      }
+      .variant-b .anerkennung .eyebrow {
+        margin-bottom: 28px;
+        display: block;
+      }
+      .variant-b .anerk-list p {
+        font-size: 19px;
+        line-height: 1.55;
+        color: var(--fg-primary);
+        margin-bottom: 28px;
+        font-family: var(--font-display);
+        max-width: 32em;
+      }
+
+      /* "Aus der Beratungsarbeit" — Variant B: illustrated marker, no photo */
+      .variant-b .testimonial {
+        padding: 96px 0 120px;
+        background: var(--bg-sage-wash);
+        position: relative;
+      }
+      .variant-b .testimonial-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 var(--container-pad-md);
+        text-align: center;
+      }
+      .variant-b .testimonial-mark {
+        margin: 0 auto 32px;
+      }
+      .variant-b .testimonial-quote {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 2.8vw, 34px);
+        line-height: 1.42;
+        color: var(--fg-primary);
+        font-weight: 400;
+        margin-bottom: 28px;
+        letter-spacing: -0.005em;
+      }
+      .variant-b .testimonial-quote::before {
+        content: "«";
+        color: var(--accent-primary);
+        margin-right: 0.1em;
+      }
+      .variant-b .testimonial-quote::after {
+        content: "»";
+        color: var(--accent-primary);
+        margin-left: 0.1em;
+      }
+      .variant-b .testimonial-attribution {
+        font-size: 13px;
+        color: var(--fg-tertiary);
+        font-style: italic;
+      }
+
+      /* ============================================================
+         FOOTER (shared)
+         ============================================================ */
+      .fachstelle-cta {
+        padding: 80px 0;
+        text-align: center;
+        background: var(--bg-primary);
+      }
+      .fachstelle-cta .eyebrow {
+        margin-bottom: 20px;
+        display: block;
+      }
+      .fachstelle-cta h2 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 1.2;
+        letter-spacing: -0.012em;
+        margin-bottom: 20px;
+        color: var(--fg-primary);
+      }
+      .fachstelle-cta p {
+        max-width: 32em;
+        margin: 0 auto 28px;
+        color: var(--fg-secondary);
+        font-size: 17px;
+      }
+      .fachstelle-cta .contact-row {
+        display: inline-flex;
+        gap: 32px;
+        align-items: center;
+        font-size: 16px;
+      }
+      .fachstelle-cta .contact-row a {
+        color: var(--accent-primary);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      .site-footer {
+        background: #1f2a37;
+        color: rgba(245, 236, 230, 0.72);
+        padding: 72px 0 32px;
+        font-size: 14px;
+      }
+      .footer-grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 var(--container-pad-md);
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+        gap: 48px;
+      }
+      .footer-grid h4 {
+        font-family: var(--font-body);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-caps);
+        color: rgba(245, 236, 230, 0.92);
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .footer-grid ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .footer-grid a {
+        color: rgba(245, 236, 230, 0.65);
+        text-decoration: none;
+      }
+      .footer-grid a:hover {
+        color: rgba(245, 236, 230, 0.95);
+      }
+      .footer-brand .logo-mark {
+        background: rgba(245, 236, 230, 0.12);
+        border: 1px solid rgba(245, 236, 230, 0.18);
+      }
+      .footer-brand p {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .footer-bottom {
+        max-width: 1240px;
+        margin: 56px auto 0;
+        padding: 24px var(--container-pad-md) 0;
+        border-top: 1px solid rgba(245, 236, 230, 0.12);
+        font-size: 12px;
+        color: rgba(245, 236, 230, 0.5);
+      }
+
+      /* ============================================================
+         RESPONSIVE
+         ============================================================ */
+      @media (max-width: 1100px) {
+        .visual-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 900px) {
+        .nav {
+          display: none;
+        }
+        .variant-a .hero-grid,
+        .variant-b .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .variant-b .hero-organic {
+          opacity: 0.45;
+          right: -30%;
+          top: -5%;
+        }
+        .variant-a .testimonial-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .visual-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 560px) {
+        .header-tools .btn-search {
+          display: none;
+        }
+        .visual-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .annotation {
+        background: #fff8d8;
+        border: 1px dashed #b8a55c;
+        padding: 12px 16px;
+        font-size: 12px;
+        color: #5d4f1f;
+        max-width: 1100px;
+        margin: 0 auto;
+        font-family: var(--font-body);
+        border-radius: 3px;
+        line-height: 1.55;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===========================================================
+         TOGGLE BAR
+    =========================================================== -->
+    <nav class="toggle-bar">
+      <h1>Mockup-Vergleich · Borderline-Angehörige · Home</h1>
+      <div class="toggle-buttons" role="tablist">
+        <button id="btn-a" class="active" role="tab">
+          Variante A — Photographisch
+        </button>
+        <button id="btn-b" role="tab">
+          Variante B — Illustriert / Organisch
+        </button>
+      </div>
+    </nav>
+
+    <!-- ===========================================================
+         VARIANT A — PHOTOGRAPHIC
+    =========================================================== -->
+    <main id="variant-a" class="variant-a">
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="#" class="brand">
+            <span class="brand-mark">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f5ece6"
+                stroke-width="1.6"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7l3 5-3 5-3-5z" fill="#f5ece6" />
+              </svg>
+            </span>
+            <span>
+              <span class="brand-wordmark">Borderline · Angehörige</span>
+              <span class="brand-sub">Fachstelle · PUK Zürich</span>
+            </span>
+          </a>
+          <span class="brand-divider" aria-hidden="true"></span>
+          <nav class="nav" aria-label="Hauptnavigation">
+            <a href="#">Verstehen</a>
+            <a href="#">Unterstützen</a>
+            <a href="#">Kommunizieren</a>
+            <a href="#">Grenzen</a>
+            <a href="#">Selbstfürsorge</a>
+            <a href="#">Ressourcen</a>
+          </nav>
+          <div class="header-tools">
+            <button class="btn-search" aria-label="Suchen">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <circle cx="7" cy="7" r="5" />
+                <path d="M11 11l3 3" /></svg
+              >Suchen
+            </button>
+            <button class="btn-emergency">Soforthilfe</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="notfall-bar">
+        <div class="notfall-inner">
+          <b>Notfallkontakte</b>
+          Schweiz · Kanton Zürich
+          <span class="sep">·</span>
+          Für andere Regionen bitte lokale Notrufnummern nutzen.
+        </div>
+      </div>
+
+      <!-- HERO with photographic anchor -->
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <span class="eyebrow"
+              >Fachstelle Angehörigenarbeit · PUK Zürich</span
+            >
+            <h1 class="display">
+              Wenn jemand, den Sie lieben, eine
+              <em>Borderline-Persönlichkeitsstörung</em> hat
+            </h1>
+            <p class="lede">
+              Eine Begleitung für Partnerinnen, Eltern, Geschwister und
+              erwachsene Kinder.
+            </p>
+            <div class="hero-meta">
+              <span><b>Fachlich geprüft</b> · Zuletzt 30.04.2026</span>
+              <span><b>Schweizer Kontext</b> · Kanton Zürich</span>
+            </div>
+          </div>
+          <div class="hero-photo-wrap">
+            <div class="photo-anchor">
+              <span class="photo-caption"
+                >Beispielbild · warmes Detail aus Beratungspraxis</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANERKENNUNG -->
+      <section class="anerkennung">
+        <div class="section-narrow">
+          <span class="eyebrow">Anerkennung</span>
+          <div class="anerk-list">
+            <p>
+              Sie fragen sich seit Jahren, ob das, was Sie erleben, Krankheit
+              ist, Charakter oder Ihre eigene Schuld.
+            </p>
+            <p>
+              Sie haben gelernt, auf Eierschalen zu laufen — und schämen sich
+              gleichzeitig dafür, müde zu sein.
+            </p>
+            <p>
+              Sie schwanken zwischen «ich bleibe um jeden Preis» und «ich halte
+              das nicht mehr aus» — manchmal innerhalb derselben Stunde.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUBERGINE BLOCK -->
+      <section class="grundgedanke">
+        <div class="section-narrow">
+          <span class="eyebrow">Grundgedanke</span>
+          <h2 class="display">
+            Mitgefühl und Selbstschutz sind kein Widerspruch.
+          </h2>
+          <p class="lede-large">
+            Viele Angehörige tragen eine leise Überzeugung mit sich: dass ihr
+            Wunsch nach Abstand der Beweis sei, nicht genug zu lieben. Dass
+            Grenzen kalt seien. Dass eine Pause Verrat ist.
+          </p>
+          <p class="lede-secondary">
+            Diese Überzeugung ist verständlich, aber sie hält Beziehungen nicht
+            zusammen — sie zermürbt sie. Selbstschutz ist deshalb keine
+            Gegenkraft zur Beziehung, sondern ihre Voraussetzung.
+          </p>
+        </div>
+      </section>
+
+      <!-- VISUAL ORIENTATION GRID -->
+      <section class="visual-grid-section">
+        <div class="visual-grid-header">
+          <span class="eyebrow">Visuelle Orientierung</span>
+          <h2 class="display">Acht Bilder, die viel erklären können.</h2>
+          <p>
+            Wenn Lesen gerade nicht möglich ist, geben diese Infografiken
+            Orientierung. Jede führt direkt in den passenden Bereich.
+          </p>
+        </div>
+        <div class="visual-grid">
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Verstehen</span>
+            <div class="vis-thumb">
+              <img src="img/eisberg-der-eisberg-v6.png" alt="Der Eisberg" />
+            </div>
+            <h3>Der Eisberg</h3>
+            <p>
+              Wut ist oft nur die Spitze — darunter liegen Schmerz und Angst.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Verstehen</span>
+            <div class="vis-thumb">
+              <img src="img/alarm-der-alarm-modus-v3.png" alt="Alarm-Modus" />
+            </div>
+            <h3>Alarm-Modus vs. Denk-Modus</h3>
+            <p>
+              Erst beruhigen, dann klären — warum Logik manchmal nicht ankommt.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Krise begleiten</span>
+            <div class="vis-thumb">
+              <img src="img/ampel-das-ampel-system-v3.png" alt="Ampel-System" />
+            </div>
+            <h3>Das Ampel-System</h3>
+            <p>Wann was hilft — eine Triage für akute Belastungssituationen.</p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Krise begleiten</span>
+            <div class="vis-thumb">
+              <img
+                src="img/deeskalation-der-deeskalations-pfad-v9.png"
+                alt="Deeskalations-Pfad"
+              />
+            </div>
+            <h3>Deeskalations-Pfad</h3>
+            <p>Vier Schritte, wenn die Situation kippt — mit Beispielsätzen.</p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Kommunizieren</span>
+            <div class="vis-thumb">
+              <img
+                src="img/validierung-die-validierungs-treppe-v5.png"
+                alt="Validierungs-Treppe"
+              />
+            </div>
+            <h3>Validierungs-Treppe</h3>
+            <p>
+              Verstehen ohne zustimmen — fünf Stufen einer haltenden Antwort.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Beziehungsdynamik</span>
+            <div class="vis-thumb">
+              <img
+                src="img/pendel-das-bewertungs-pendel-v14.png"
+                alt="Bewertungs-Pendel"
+              />
+            </div>
+            <h3>Das Bewertungs-Pendel</h3>
+            <p>
+              Warum dieselbe Person abwechselnd überhöht und abgewertet wird.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Grenzen</span>
+            <div class="vis-thumb">
+              <img
+                src="img/grenzen-die-4-arten-von-grenzen-v4.png"
+                alt="4 Arten von Grenzen"
+              />
+            </div>
+            <h3>Vier Arten von Grenzen</h3>
+            <p>
+              Was Grenzen wirklich sind — und was nicht. Mit klaren Beispielen.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Selbstfürsorge</span>
+            <div class="vis-thumb">
+              <img
+                src="img/sauerstoff-die-sauerstoffmaske-v4.png"
+                alt="Sauerstoffmaske"
+              />
+            </div>
+            <h3>Die Sauerstoffmaske</h3>
+            <p>Warum Selbstschutz keine Egoismus ist, sondern die Bedingung.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- TESTIMONIAL with photographic backing -->
+      <section class="testimonial">
+        <div class="testimonial-grid">
+          <div class="testimonial-photo">
+            <span class="photo-caption"
+              >Beispielbild · ruhiger Innenraum, Sonnenlicht</span
+            >
+          </div>
+          <div class="testimonial-text">
+            <span class="eyebrow">Aus der Beratungsarbeit</span>
+            <p class="testimonial-quote">
+              Ich habe alles versucht — und trotzdem nicht gewusst, was ich
+              falsch mache. Was mir schliesslich geholfen hat, war zu verstehen,
+              dass die Dynamik nicht an mir lag. Und dass Grenzen setzen keine
+              Kälte ist, sondern Schutz für beide Seiten.
+            </p>
+            <p class="testimonial-attribution">
+              Eine redaktionell verdichtete Erfahrung aus der Angehörigenarbeit.
+              Keine Einzelperson.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FACHSTELLE CTA -->
+      <section class="fachstelle-cta">
+        <div class="section-narrow">
+          <span class="eyebrow">Fachstelle</span>
+          <h2 class="display">
+            Sie müssen nicht wissen, was Sie sagen wollen.
+          </h2>
+          <p>
+            Die Fachstelle Angehörigenarbeit berät auch Sie — nicht nur die
+            erkrankte Person. Orientierung, Gespräch und Materialien für
+            Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
+          </p>
+          <div class="contact-row">
+            <a href="tel:+41583843800">058 384 38 00</a>
+            <a href="mailto:angehoerigenarbeit@pukzh.ch"
+              >angehoerigenarbeit@pukzh.ch</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="logo-mark"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f5ece6"
+                stroke-width="1.6"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7l3 5-3 5-3-5z" fill="#f5ece6" /></svg
+            ></span>
+            <p>
+              Borderline · Hilfe für Angehörige.<br />Psychoedukatives
+              Informationsangebot der Fachstelle Angehörigenarbeit, PUK Zürich.
+            </p>
+          </div>
+          <div>
+            <h4>Themen</h4>
+            <ul>
+              <li><a href="#">Verstehen</a></li>
+              <li><a href="#">Unterstützen</a></li>
+              <li><a href="#">Kommunizieren</a></li>
+              <li><a href="#">Grenzen</a></li>
+              <li><a href="#">Selbstfürsorge</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Ressourcen</h4>
+            <ul>
+              <li><a href="#">Notfallkarte</a></li>
+              <li><a href="#">Materialien & Handouts</a></li>
+              <li><a href="#">Quellen & Literatur</a></li>
+              <li><a href="#">Glossar</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Hinweis</h4>
+            <ul>
+              <li>
+                Diese Website ersetzt keine professionelle Beratung oder
+                Therapie. Bei akuten Krisen wenden Sie sich bitte an die
+                Notfallnummern.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
+        </div>
+      </footer>
+    </main>
+
+    <!-- ===========================================================
+         VARIANT B — ILLUSTRATED / ORGANIC
+    =========================================================== -->
+    <main id="variant-b" class="variant-b" style="display: none">
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="#" class="brand">
+            <span class="brand-mark">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f5ece6"
+                stroke-width="1.6"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7l3 5-3 5-3-5z" fill="#f5ece6" />
+              </svg>
+            </span>
+            <span>
+              <span class="brand-wordmark">Borderline · Angehörige</span>
+              <span class="brand-sub">Fachstelle · PUK Zürich</span>
+            </span>
+          </a>
+          <span class="brand-divider" aria-hidden="true"></span>
+          <nav class="nav" aria-label="Hauptnavigation">
+            <a href="#">Verstehen</a>
+            <a href="#">Unterstützen</a>
+            <a href="#">Kommunizieren</a>
+            <a href="#">Grenzen</a>
+            <a href="#">Selbstfürsorge</a>
+            <a href="#">Ressourcen</a>
+          </nav>
+          <div class="header-tools">
+            <button class="btn-search" aria-label="Suchen">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <circle cx="7" cy="7" r="5" />
+                <path d="M11 11l3 3" /></svg
+              >Suchen
+            </button>
+            <button class="btn-emergency">Soforthilfe</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="notfall-bar">
+        <div class="notfall-inner">
+          <b>Notfallkontakte</b>
+          Schweiz · Kanton Zürich
+          <span class="sep">·</span>
+          Für andere Regionen bitte lokale Notrufnummern nutzen.
+        </div>
+      </div>
+
+      <!-- HERO with organic SVG background + central illustration -->
+      <section class="hero">
+        <!-- Organic atmosphere shape behind hero -->
+        <svg
+          class="hero-organic"
+          viewBox="0 0 800 900"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <defs>
+            <radialGradient id="bgGrad1" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="#dde1d4" stop-opacity="0.85" />
+              <stop offset="60%" stop-color="#c8b9c0" stop-opacity="0.4" />
+              <stop offset="100%" stop-color="#5b3a4e" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="bgGrad2" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#e8d4cb" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#5b3a4e" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <!-- Big organic blob -->
+          <path
+            d="M600,100 C720,150 760,290 720,420 C690,520 740,620 680,720 C620,810 480,820 360,780 C240,740 180,640 200,520 C220,400 280,300 380,220 C460,160 520,80 600,100 Z"
+            fill="url(#bgGrad1)"
+          />
+          <!-- Smaller warm blob behind -->
+          <ellipse cx="450" cy="500" rx="220" ry="180" fill="url(#bgGrad2)" />
+        </svg>
+
+        <div class="hero-grid">
+          <div class="hero-text">
+            <span class="eyebrow"
+              >Fachstelle Angehörigenarbeit · PUK Zürich</span
+            >
+            <h1 class="display">
+              Wenn jemand, den Sie lieben, eine
+              <em>Borderline-Persönlichkeitsstörung</em> hat
+            </h1>
+            <p class="lede">
+              Eine Begleitung für Partnerinnen, Eltern, Geschwister und
+              erwachsene Kinder.
+            </p>
+            <div class="hero-meta">
+              <span><b>Fachlich geprüft</b> · Zuletzt 30.04.2026</span>
+              <span><b>Schweizer Kontext</b> · Kanton Zürich</span>
+            </div>
+          </div>
+          <!-- Hand-illustrated hero mark: Leuchtturm — connects to her existing infografik motif -->
+          <div class="hero-illustration">
+            <svg
+              viewBox="0 0 480 480"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <defs>
+                <radialGradient id="haloGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#f5e6d8" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#e9d6c8" stop-opacity="0.45" />
+                  <stop offset="100%" stop-color="#e9d6c8" stop-opacity="0" />
+                </radialGradient>
+                <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#6b4658" />
+                  <stop offset="100%" stop-color="#3f2935" />
+                </linearGradient>
+                <linearGradient id="beamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#f4d8a8" stop-opacity="0" />
+                  <stop offset="40%" stop-color="#f4d8a8" stop-opacity="0.55" />
+                  <stop
+                    offset="100%"
+                    stop-color="#f4d8a8"
+                    stop-opacity="0.85"
+                  />
+                </linearGradient>
+              </defs>
+
+              <!-- Warm halo / light atmosphere -->
+              <circle cx="240" cy="180" r="160" fill="url(#haloGrad)" />
+
+              <!-- Three soft sage hills/horizon at base — suggests grounding -->
+              <path
+                d="M0,400 Q100,360 200,380 Q320,400 420,370 Q480,358 480,400 L480,480 L0,480 Z"
+                fill="#dde1d4"
+                opacity="0.55"
+              />
+              <path
+                d="M0,420 Q140,400 280,415 Q380,420 480,408 L480,480 L0,480 Z"
+                fill="#c4cebd"
+                opacity="0.45"
+              />
+
+              <!-- Light beam emerging from lighthouse top -->
+              <path d="M240,160 L300,40 L180,40 Z" fill="url(#beamGrad)" />
+
+              <!-- Lighthouse body (soft tapered shape, hand-drawn feel) -->
+              <path
+                d="M218,400 Q215,300 220,180 Q224,170 240,170 Q256,170 260,180 Q265,300 262,400 Z"
+                fill="url(#bodyGrad)"
+              />
+
+              <!-- Top cap/lantern -->
+              <ellipse cx="240" cy="170" rx="30" ry="10" fill="#3f2935" />
+              <rect
+                x="221"
+                y="142"
+                width="38"
+                height="22"
+                rx="2"
+                fill="#5b3a4e"
+              />
+              <circle cx="240" cy="153" r="5" fill="#f4d8a8" />
+              <!-- pointed top -->
+              <path d="M232,142 L240,128 L248,142 Z" fill="#3f2935" />
+
+              <!-- horizontal bands on body (subtle) -->
+              <path
+                d="M222,260 Q240,258 258,260"
+                stroke="#f5ece6"
+                stroke-width="1.5"
+                fill="none"
+                opacity="0.5"
+              />
+              <path
+                d="M223,330 Q240,328 257,330"
+                stroke="#f5ece6"
+                stroke-width="1.5"
+                fill="none"
+                opacity="0.4"
+              />
+
+              <!-- Gentle stars/dots in halo -->
+              <circle cx="120" cy="120" r="1.8" fill="#5b3a4e" opacity="0.55" />
+              <circle cx="360" cy="100" r="2" fill="#5b3a4e" opacity="0.55" />
+              <circle cx="380" cy="170" r="1.5" fill="#4f6b5e" opacity="0.5" />
+              <circle cx="100" cy="220" r="1.5" fill="#4f6b5e" opacity="0.5" />
+              <circle cx="395" cy="240" r="2" fill="#5b3a4e" opacity="0.45" />
+              <circle cx="85" cy="280" r="1.6" fill="#5b3a4e" opacity="0.45" />
+
+              <!-- Hand-drawn ground line / horizon -->
+              <path
+                d="M40,420 Q240,410 440,420"
+                stroke="#5b3a4e"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                opacity="0.35"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANERKENNUNG with ornament -->
+      <section class="anerkennung">
+        <div class="anerkennung-inner">
+          <!-- Hand-drawn ornament: three small marks -->
+          <svg
+            class="ornament"
+            width="64"
+            height="14"
+            viewBox="0 0 64 14"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <circle cx="8" cy="7" r="3" fill="#4f6b5e" opacity="0.65" />
+            <path
+              d="M22,7 Q32,2 42,7"
+              stroke="#4f6b5e"
+              stroke-width="1.6"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0.7"
+            />
+            <circle cx="56" cy="7" r="3" fill="#4f6b5e" opacity="0.65" />
+          </svg>
+          <span class="eyebrow">Anerkennung</span>
+          <div class="anerk-list">
+            <p>
+              Sie fragen sich seit Jahren, ob das, was Sie erleben, Krankheit
+              ist, Charakter oder Ihre eigene Schuld.
+            </p>
+            <p>
+              Sie haben gelernt, auf Eierschalen zu laufen — und schämen sich
+              gleichzeitig dafür, müde zu sein.
+            </p>
+            <p>
+              Sie schwanken zwischen «ich bleibe um jeden Preis» und «ich halte
+              das nicht mehr aus» — manchmal innerhalb derselben Stunde.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUBERGINE BLOCK (same as Variant A) -->
+      <section class="grundgedanke">
+        <div class="section-narrow">
+          <span class="eyebrow">Grundgedanke</span>
+          <h2 class="display">
+            Mitgefühl und Selbstschutz sind kein Widerspruch.
+          </h2>
+          <p class="lede-large">
+            Viele Angehörige tragen eine leise Überzeugung mit sich: dass ihr
+            Wunsch nach Abstand der Beweis sei, nicht genug zu lieben. Dass
+            Grenzen kalt seien. Dass eine Pause Verrat ist.
+          </p>
+          <p class="lede-secondary">
+            Diese Überzeugung ist verständlich, aber sie hält Beziehungen nicht
+            zusammen — sie zermürbt sie. Selbstschutz ist deshalb keine
+            Gegenkraft zur Beziehung, sondern ihre Voraussetzung.
+          </p>
+        </div>
+      </section>
+
+      <!-- VISUAL ORIENTATION GRID (identical content) -->
+      <section class="visual-grid-section">
+        <div class="visual-grid-header">
+          <span class="eyebrow">Visuelle Orientierung</span>
+          <h2 class="display">Acht Bilder, die viel erklären können.</h2>
+          <p>
+            Wenn Lesen gerade nicht möglich ist, geben diese Infografiken
+            Orientierung. Jede führt direkt in den passenden Bereich.
+          </p>
+        </div>
+        <div class="visual-grid">
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Verstehen</span>
+            <div class="vis-thumb">
+              <img src="img/eisberg-der-eisberg-v6.png" alt="Der Eisberg" />
+            </div>
+            <h3>Der Eisberg</h3>
+            <p>
+              Wut ist oft nur die Spitze — darunter liegen Schmerz und Angst.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Verstehen</span>
+            <div class="vis-thumb">
+              <img src="img/alarm-der-alarm-modus-v3.png" alt="Alarm-Modus" />
+            </div>
+            <h3>Alarm-Modus vs. Denk-Modus</h3>
+            <p>
+              Erst beruhigen, dann klären — warum Logik manchmal nicht ankommt.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Krise begleiten</span>
+            <div class="vis-thumb">
+              <img src="img/ampel-das-ampel-system-v3.png" alt="Ampel-System" />
+            </div>
+            <h3>Das Ampel-System</h3>
+            <p>Wann was hilft — eine Triage für akute Belastungssituationen.</p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Krise begleiten</span>
+            <div class="vis-thumb">
+              <img
+                src="img/deeskalation-der-deeskalations-pfad-v9.png"
+                alt="Deeskalations-Pfad"
+              />
+            </div>
+            <h3>Deeskalations-Pfad</h3>
+            <p>Vier Schritte, wenn die Situation kippt — mit Beispielsätzen.</p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Kommunizieren</span>
+            <div class="vis-thumb">
+              <img
+                src="img/validierung-die-validierungs-treppe-v5.png"
+                alt="Validierungs-Treppe"
+              />
+            </div>
+            <h3>Validierungs-Treppe</h3>
+            <p>
+              Verstehen ohne zustimmen — fünf Stufen einer haltenden Antwort.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Beziehungsdynamik</span>
+            <div class="vis-thumb">
+              <img
+                src="img/pendel-das-bewertungs-pendel-v14.png"
+                alt="Bewertungs-Pendel"
+              />
+            </div>
+            <h3>Das Bewertungs-Pendel</h3>
+            <p>
+              Warum dieselbe Person abwechselnd überhöht und abgewertet wird.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Grenzen</span>
+            <div class="vis-thumb">
+              <img
+                src="img/grenzen-die-4-arten-von-grenzen-v4.png"
+                alt="4 Arten von Grenzen"
+              />
+            </div>
+            <h3>Vier Arten von Grenzen</h3>
+            <p>
+              Was Grenzen wirklich sind — und was nicht. Mit klaren Beispielen.
+            </p>
+          </a>
+          <a href="#" class="vis-tile">
+            <span class="vis-cat">Selbstfürsorge</span>
+            <div class="vis-thumb">
+              <img
+                src="img/sauerstoff-die-sauerstoffmaske-v4.png"
+                alt="Sauerstoffmaske"
+              />
+            </div>
+            <h3>Die Sauerstoffmaske</h3>
+            <p>Warum Selbstschutz keine Egoismus ist, sondern die Bedingung.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- TESTIMONIAL with illustrated marker, no photo -->
+      <section class="testimonial">
+        <div class="testimonial-inner">
+          <!-- Illustrated quote-mark / open-hand drawing -->
+          <svg
+            class="testimonial-mark"
+            width="96"
+            height="96"
+            viewBox="0 0 96 96"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <!-- Sage atmosphere -->
+            <circle cx="48" cy="48" r="40" fill="#dde1d4" opacity="0.5" />
+            <!-- Open-hand-like lines -->
+            <g
+              stroke="#5b3a4e"
+              stroke-width="1.8"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              opacity="0.85"
+            >
+              <path d="M48,72 Q40,60 38,46 Q36,32 42,24" />
+              <path d="M48,72 Q44,58 46,42 Q48,30 54,24" />
+              <path d="M48,72 Q52,58 54,44 Q56,32 60,26" />
+              <path d="M48,72 Q56,60 62,50 Q68,40 70,32" />
+              <path d="M48,72 Q42,76 36,76" />
+              <path d="M48,72 Q54,76 60,76" />
+            </g>
+          </svg>
+          <span class="eyebrow">Aus der Beratungsarbeit</span>
+          <p class="testimonial-quote" style="margin-top: 24px">
+            Was mir schliesslich geholfen hat, war zu verstehen, dass die
+            Dynamik nicht an mir lag. Und dass Grenzen setzen keine Kälte ist,
+            sondern Schutz für beide Seiten.
+          </p>
+          <p class="testimonial-attribution">
+            Eine redaktionell verdichtete Erfahrung aus der Angehörigenarbeit.
+            Keine Einzelperson.
+          </p>
+        </div>
+      </section>
+
+      <!-- FACHSTELLE CTA -->
+      <section class="fachstelle-cta">
+        <div class="section-narrow">
+          <!-- small ornament -->
+          <svg
+            class="ornament"
+            width="40"
+            height="12"
+            viewBox="0 0 40 12"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M2,6 Q20,2 38,6"
+              stroke="#4f6b5e"
+              stroke-width="1.4"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0.65"
+            />
+          </svg>
+          <span class="eyebrow">Fachstelle</span>
+          <h2 class="display">
+            Sie müssen nicht wissen, was Sie sagen wollen.
+          </h2>
+          <p>
+            Die Fachstelle Angehörigenarbeit berät auch Sie — nicht nur die
+            erkrankte Person. Orientierung, Gespräch und Materialien für
+            Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
+          </p>
+          <div class="contact-row">
+            <a href="tel:+41583843800">058 384 38 00</a>
+            <a href="mailto:angehoerigenarbeit@pukzh.ch"
+              >angehoerigenarbeit@pukzh.ch</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="logo-mark"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#f5ece6"
+                stroke-width="1.6"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7l3 5-3 5-3-5z" fill="#f5ece6" /></svg
+            ></span>
+            <p>
+              Borderline · Hilfe für Angehörige.<br />Psychoedukatives
+              Informationsangebot der Fachstelle Angehörigenarbeit, PUK Zürich.
+            </p>
+          </div>
+          <div>
+            <h4>Themen</h4>
+            <ul>
+              <li><a href="#">Verstehen</a></li>
+              <li><a href="#">Unterstützen</a></li>
+              <li><a href="#">Kommunizieren</a></li>
+              <li><a href="#">Grenzen</a></li>
+              <li><a href="#">Selbstfürsorge</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Ressourcen</h4>
+            <ul>
+              <li><a href="#">Notfallkarte</a></li>
+              <li><a href="#">Materialien & Handouts</a></li>
+              <li><a href="#">Quellen & Literatur</a></li>
+              <li><a href="#">Glossar</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Hinweis</h4>
+            <ul>
+              <li>
+                Diese Website ersetzt keine professionelle Beratung oder
+                Therapie. Bei akuten Krisen wenden Sie sich bitte an die
+                Notfallnummern.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const btnA = document.getElementById("btn-a");
+      const btnB = document.getElementById("btn-b");
+      const variantA = document.getElementById("variant-a");
+      const variantB = document.getElementById("variant-b");
+
+      function show(which) {
+        if (which === "a") {
+          variantA.style.display = "block";
+          variantB.style.display = "none";
+          btnA.classList.add("active");
+          btnB.classList.remove("active");
+        } else {
+          variantA.style.display = "none";
+          variantB.style.display = "block";
+          btnB.classList.add("active");
+          btnA.classList.remove("active");
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      btnA.addEventListener("click", () => show("a"));
+      btnB.addEventListener("click", () => show("b"));
+    </script>
+  </body>
+</html>

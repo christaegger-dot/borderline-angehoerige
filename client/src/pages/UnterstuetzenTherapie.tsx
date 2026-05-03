@@ -222,7 +222,7 @@ export default function UnterstuetzenTherapie() {
           >
             Vollständig ca. 10 Min · Auch abschnittweise lesbar.
           </p>
-          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+          <LastVerifiedBadge path="/unterstuetzen/therapie" className="mt-6" />
         </header>
 
         {/* ── Intro: Was diese Seite bei Therapie ordnet ── */}

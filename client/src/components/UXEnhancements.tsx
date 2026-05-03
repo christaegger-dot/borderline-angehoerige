@@ -137,12 +137,29 @@ export function TableOfContents() {
   useEffect(() => {
     // Kurz warten, damit ContentSections gerendert sind
     const timer = setTimeout(() => {
-      const elements = document.querySelectorAll("h2, h3");
+      const mainContent = document.getElementById("main-content");
+      if (!mainContent) {
+        setHeadings([]);
+        setActiveId("");
+        return;
+      }
+
+      const elements = mainContent.querySelectorAll("h2, h3");
       const items: TOCItem[] = [];
 
       elements.forEach((el, index) => {
+        if (
+          el.closest(
+            "nav, aside, footer, [role='dialog'], [aria-labelledby='related-links-editorial-heading']"
+          )
+        ) {
+          return;
+        }
+
         // Prüfen ob das Heading innerhalb einer ContentSection liegt
-        const contentSectionWrapper = el.closest("[id]:not(h2):not(h3)");
+        const contentSectionWrapper = el.closest(
+          "[data-content-section], [id]:not(h2):not(h3)"
+        );
         const isInsideContentSection =
           contentSectionWrapper?.querySelector("[aria-expanded]") !== null;
 
@@ -176,7 +193,7 @@ export function TableOfContents() {
     }, 200);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [location]);
 
   // Scroll-basierte aktive Markierung
   useEffect(() => {

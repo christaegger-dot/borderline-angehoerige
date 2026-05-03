@@ -1,7 +1,11 @@
 import { forwardRef } from "react";
 import { Link } from "wouter";
 
-const HARD_NAVIGATION_PATHS = new Set(["/notfall", "/soforthilfe"]);
+const HARD_NAVIGATION_PATHS = new Set([
+  "/notfall",
+  "/notfallkarte",
+  "/soforthilfe",
+]);
 const HARD_NAVIGATION_EXTENSION = /\.(?:html|pdf|webp|png|jpe?g|svg)$/i;
 const EXTERNAL_HREF_PATTERN = /^(?:[a-z][a-z\d+\-.]*:|\/\/)/i;
 

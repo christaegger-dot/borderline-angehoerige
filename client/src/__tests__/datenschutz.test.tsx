@@ -1,6 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import type { ElementType, HTMLAttributes, ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
+import { pageGovernance } from "@/data/pageGovernance";
+import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import Datenschutz from "@/pages/Datenschutz";
 
 const MOTION_PROPS = new Set([
@@ -76,5 +78,19 @@ describe("Datenschutz", () => {
     expect(document.body).toHaveTextContent(
       /verwendet für ihre Einträge kein Cookie/i
     );
+  });
+
+  it("links the related card to the personal notfallkarte and keeps the stand in sync", () => {
+    render(<Datenschutz />);
+
+    const lastReviewed = pageGovernance["/datenschutz"]?.lastReviewed;
+    const expectedDate = lastReviewed?.split("-").reverse().join(".");
+
+    expect(
+      screen.getByRole("link", { name: /persönliche notfallkarte/i })
+    ).toHaveAttribute("href", PERSONAL_NOTFALLKARTE_PATH);
+    expect(
+      screen.getByText(new RegExp(`Stand der Erklärung: ${expectedDate}`))
+    ).toBeInTheDocument();
   });
 });

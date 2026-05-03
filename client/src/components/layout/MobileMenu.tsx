@@ -9,6 +9,7 @@ import {
 import { navItems, ressourcenItems } from "@/components/layout/navigationData";
 import { getRouteAccent } from "@/components/layout/routeAccent";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -49,6 +50,8 @@ export function MobileMenu({
     `mobile-navigation-description-${Math.random().toString(36).slice(2, 10)}`
   );
 
+  useScrollLock(isOpen);
+
   useEffect(() => {
     if (isOpen) {
       dialogRef.current?.querySelector<HTMLElement>("a, button")?.focus();
@@ -61,10 +64,6 @@ export function MobileMenu({
     <div
       ref={dialogRef}
       id="mobile-navigation-dialog"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="mobile-navigation-title"
-      aria-describedby={descriptionId.current}
       className="lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-border/50 bg-background [-webkit-overflow-scrolling:touch]"
       onKeyDown={e => {
         if (e.key === "Escape") {
@@ -74,7 +73,8 @@ export function MobileMenu({
     >
       <nav
         className="container flex flex-col gap-2 py-4 pb-[calc(16px+env(safe-area-inset-bottom,0px)+88px)]"
-        aria-label="Hauptnavigation"
+        aria-labelledby="mobile-navigation-title"
+        aria-describedby={descriptionId.current}
       >
         <div className="sr-only">
           <h2 id="mobile-navigation-title">Mobile Navigation</h2>

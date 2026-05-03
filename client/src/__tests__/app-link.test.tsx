@@ -13,6 +13,7 @@ describe("AppLink", () => {
   it("classifies static crisis routes and assets as hard navigation", () => {
     expect(isHardNavigationHref("/soforthilfe")).toBe(true);
     expect(isHardNavigationHref("/notfall")).toBe(true);
+    expect(isHardNavigationHref("/notfallkarte")).toBe(true);
     expect(isHardNavigationHref("/notfallplan-krise-v03.pdf")).toBe(true);
     expect(isHardNavigationHref("/verstehen")).toBe(false);
   });

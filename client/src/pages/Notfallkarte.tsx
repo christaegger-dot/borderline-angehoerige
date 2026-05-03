@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   EditorialLayout,
@@ -42,12 +42,33 @@ const DEFAULT_STRATEGIES: CalmingStrategy[] = [
   { id: "s3", text: "Kaltes Wasser über die Handgelenke laufen lassen" },
 ];
 
-const EMPTY_DATA: NotfallkarteData = {
-  personalContacts: [],
-  calmingStrategies: DEFAULT_STRATEGIES,
-  notes: "",
-};
+const MAX_CONTACTS = 3;
+const MAX_STRATEGIES = 4;
+
 const NOTFALLKARTE_PRINT_MESSAGE_TYPE = "notfallkarte-print-data";
+
+function createEmptyData(): NotfallkarteData {
+  return {
+    personalContacts: [],
+    calmingStrategies: DEFAULT_STRATEGIES.map(strategy => ({ ...strategy })),
+    notes: "",
+  };
+}
+
+function normalizeData(raw: Partial<NotfallkarteData> | null | undefined) {
+  const fallback = createEmptyData();
+
+  return {
+    personalContacts: Array.isArray(raw?.personalContacts)
+      ? raw.personalContacts.slice(0, MAX_CONTACTS)
+      : fallback.personalContacts,
+    calmingStrategies:
+      Array.isArray(raw?.calmingStrategies) && raw.calmingStrategies.length > 0
+        ? raw.calmingStrategies.slice(0, MAX_STRATEGIES)
+        : fallback.calmingStrategies,
+    notes: typeof raw?.notes === "string" ? raw.notes : fallback.notes,
+  };
+}
 
 function createId() {
   return Math.random().toString(36).slice(2, 9);
@@ -60,11 +81,11 @@ const CARD_GRUEN = GRUEN.filter(k => k.id === "GRUEN_143");
 function loadData(): NotfallkarteData {
   try {
     const raw = localStorage.getItem(NOTFALLKARTE_STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) return normalizeData(JSON.parse(raw) as Partial<NotfallkarteData>);
   } catch {
     /* ignore corrupt data */
   }
-  return EMPTY_DATA;
+  return createEmptyData();
 }
 
 function isStorageAvailable(): boolean {
@@ -258,11 +279,17 @@ export default function Notfallkarte() {
   const [data, setData] = useState<NotfallkarteData>(loadData);
   const [storageError, setStorageError] = useState(false);
   const [announcement, setAnnouncement] = useState("");
+  const skipNextSaveRef = useRef(false);
 
   useEffect(() => {
     if (!isStorageAvailable()) setStorageError(true);
   }, []);
   useEffect(() => {
+    if (skipNextSaveRef.current) {
+      skipNextSaveRef.current = false;
+      return;
+    }
+
     if (!saveData(data)) setStorageError(true);
   }, [data]);
 
@@ -274,7 +301,8 @@ export default function Notfallkarte() {
     if (!confirmed) return;
 
     if (deleteStoredData()) {
-      setData(EMPTY_DATA);
+      skipNextSaveRef.current = true;
+      setData(createEmptyData());
       setAnnouncement("Lokale Notfallkarten-Daten wurden gelöscht.");
     } else {
       setStorageError(true);
@@ -283,7 +311,10 @@ export default function Notfallkarte() {
   }, []);
 
   const handlePrint = useCallback(() => {
-    const printWindow = window.open("/notfallkarte-print.html", "_blank");
+    const printWindow = window.open(
+      "/notfallkarte-print.html?print=1",
+      "_blank"
+    );
 
     if (!printWindow) {
       setAnnouncement("Druckansicht konnte nicht geöffnet werden");
@@ -327,14 +358,26 @@ export default function Notfallkarte() {
   }, [data]);
 
   const addContact = useCallback(() => {
-    setData(prev => ({
-      ...prev,
-      personalContacts: [
-        ...prev.personalContacts,
-        { id: createId(), name: "", phone: "", relation: "" },
-      ],
-    }));
-    setAnnouncement("Kontakt hinzugefügt");
+    let added = false;
+
+    setData(prev => {
+      if (prev.personalContacts.length >= MAX_CONTACTS) {
+        return prev;
+      }
+
+      added = true;
+      return {
+        ...prev,
+        personalContacts: [
+          ...prev.personalContacts,
+          { id: createId(), name: "", phone: "", relation: "" },
+        ],
+      };
+    });
+
+    setAnnouncement(
+      added ? "Kontakt hinzugefügt" : "Maximal drei Kontakte sind möglich."
+    );
   }, []);
   const updateContact = useCallback(
     (updated: PersonalContact) =>
@@ -353,7 +396,6 @@ export default function Notfallkarte() {
     }));
     setAnnouncement("Kontakt entfernt");
   }, []);
-  const MAX_STRATEGIES = 4;
   const addStrategy = useCallback(() => {
     setData(prev =>
       prev.calmingStrategies.length >= MAX_STRATEGIES
@@ -574,7 +616,13 @@ export default function Notfallkarte() {
               </div>
               <SecondaryButton
                 onClick={addContact}
+                disabled={data.personalContacts.length >= MAX_CONTACTS}
                 ariaLabel="Kontakt hinzufügen"
+                title={
+                  data.personalContacts.length >= MAX_CONTACTS
+                    ? "Maximal drei Kontaktpersonen für die Druckversion"
+                    : undefined
+                }
               >
                 + Hinzufügen
               </SecondaryButton>
@@ -589,7 +637,8 @@ export default function Notfallkarte() {
                 }}
               >
                 Fügen Sie hier Ihre persönlichen Kontaktpersonen hinzu – z.B.
-                Therapeut:in, Vertrauensperson, Nachbar:in.
+                Therapeut:in, Vertrauensperson, Nachbar:in. Die Druckversion
+                unterstützt bis zu drei Kontakte.
               </p>
             ) : (
               <div className="space-y-0.5">

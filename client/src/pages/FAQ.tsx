@@ -267,6 +267,22 @@ const faqCategories: FAQCategory[] = [
           "Sie müssen nicht alles erklären. Sagen Sie so viel, wie Sie möchten: «Eine mir nahestehende Person hat eine psychische Erkrankung, die starke Stimmungsschwankungen auslösen kann. Wir arbeiten daran.» Sie können auch Grenzen setzen: «Ich möchte nicht ins Detail gehen, aber ich schätze eure Unterstützung.» Wählen Sie sorgfältig aus, wem Sie was erzählen – nicht jeder muss alles wissen. Und: Bitten Sie um konkrete Hilfe statt allgemeinem Mitleid («Könntest du nächste Woche auf die Kinder aufpassen?»).",
       },
       {
+        question:
+          "Was, wenn Deutsch nicht die Hauptsprache ist oder psychische Erkrankung in unserer Familie tabuisiert ist?",
+        answer:
+          "Das ist häufiger, als viele denken. Hilfe kann auch dann sinnvoll sein, wenn das Wort «Borderline» in der Familie noch gar nicht fällt. Oft ist es leichter, zuerst über das Beobachtbare zu sprechen: Schlaf, Alarmzustand, Rückzug, Wutausbrüche, Selbstverletzung, Angst, Schule, Arbeit oder Sicherheit.",
+        bullets: [
+          "Verwenden Sie kurze, konkrete Sätze statt Fachsprache. Nicht jede Familie muss zuerst die Diagnose akzeptieren, bevor Unterstützung beginnen darf.",
+          "Fragen Sie in Praxis, Klinik oder Beratungsstelle ausdrücklich nach professioneller Dolmetschung, wenn Deutsch nicht für alle sicher genug ist. Gerade bei Diagnose-, Krisen- oder Gewaltgesprächen sollten Kinder diese Rolle nicht übernehmen müssen.",
+          "Wenn Scham, Angst vor Stigmatisierung oder Unsicherheit gegenüber Behörden gross sind, benennen Sie zuerst das Ziel: Schutz, Entlastung, weniger Eskalation, mehr Schlaf oder Sicherheit für die Kinder.",
+          "Bei akuter Gefahr gilt trotzdem: Sicherheit geht vor. Dann lieber früh Hilfe holen, auch wenn noch nicht alle Begriffe, Hintergründe oder Familienkonflikte geklärt sind.",
+        ],
+        links: [
+          { text: "Therapie begleiten", url: "/unterstuetzen/therapie" },
+          { text: "Soforthilfe", url: "/soforthilfe" },
+        ],
+      },
+      {
         question: "Wie gehe ich mit Eifersucht und Kontrolle um?",
         answer:
           "Eifersucht bei Borderline wurzelt aus Angehörigensicht häufig in Verlassensangst, nicht nur in Misstrauen. Verstehen Sie das, ohne es zu akzeptieren. Setzen Sie klare Grenzen: «Ich werde mein Handy nicht zeigen. Ich habe nichts zu verbergen, aber ich brauche Privatsphäre.» Geben Sie nicht nach, um Ruhe zu haben – das verstärkt das Muster. Gleichzeitig: Seien Sie transparent, wo es Ihnen möglich ist, ohne sich zu verbiegen. Ermutigen Sie Ihren Angehörigen, die Eifersucht in der Therapie zu bearbeiten.",

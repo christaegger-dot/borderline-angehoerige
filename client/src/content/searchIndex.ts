@@ -1616,6 +1616,25 @@ export const searchableContent: SearchEntry[] = [
     section: "FAQ",
   },
   {
+    title:
+      "Was, wenn Deutsch nicht die Hauptsprache ist oder psychische Erkrankung tabuisiert ist?",
+    description:
+      "FAQ: Hilfe suchen, wenn Sprache, Scham oder Migration Gespräche erschweren",
+    keywords: [
+      "sprache",
+      "dolmetschung",
+      "migration",
+      "kulturell",
+      "scham",
+      "tabu",
+      "familie",
+      "übersetzen",
+      "faq",
+    ],
+    href: "/faq",
+    section: "FAQ",
+  },
+  {
     title: "Helfen Medikamente bei Borderline?",
     description:
       "FAQ: Was Medikamente leisten können und was sie nicht ersetzen",

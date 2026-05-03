@@ -33,20 +33,21 @@ export default function ContentSection({
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const sectionRef = useRef<HTMLDivElement>(null);
   const pendingScrollRef = useRef(false);
+  const pendingScrollBehaviorRef = useRef<ScrollBehavior>("smooth");
   const isOpenRef = useRef(isOpen);
 
   useEffect(() => {
     isOpenRef.current = isOpen;
   }, [isOpen]);
 
-  const scrollToSection = useCallback(() => {
+  const scrollToSection = useCallback((behavior: ScrollBehavior = "smooth") => {
     if (!sectionRef.current) return;
     const header = document.querySelector("header");
     const headerHeight = header?.getBoundingClientRect().height || 80;
     const offset = headerHeight + 20;
     const top =
       sectionRef.current.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: "smooth" });
+    window.scrollTo({ top, behavior });
   }, []);
 
   const openFromHash = useCallback(() => {
@@ -59,11 +60,12 @@ export default function ContentSection({
 
     if (!isOpenRef.current) {
       pendingScrollRef.current = true;
+      pendingScrollBehaviorRef.current = "auto";
       setIsOpen(true);
       return;
     }
 
-    scrollToSection();
+    scrollToSection("auto");
   }, [id, scrollToSection]);
 
   // Auf Custom Event "open-section" lauschen
@@ -75,9 +77,10 @@ export default function ContentSection({
       if (detail.sectionId === id) {
         if (!isOpenRef.current) {
           pendingScrollRef.current = true;
+          pendingScrollBehaviorRef.current = "smooth";
           setIsOpen(true);
         } else {
-          scrollToSection();
+          scrollToSection("smooth");
         }
       }
     };
@@ -101,11 +104,29 @@ export default function ContentSection({
   useEffect(() => {
     if (isOpen && pendingScrollRef.current) {
       pendingScrollRef.current = false;
-      // Kurz warten bis die Animation begonnen hat
-      const timer = setTimeout(() => {
-        scrollToSection();
-      }, 100);
-      return () => clearTimeout(timer);
+      const behavior = pendingScrollBehaviorRef.current;
+      pendingScrollBehaviorRef.current = "smooth";
+
+      // Nach dem DOM-Update in den nächsten Frame warten, damit geöffnete
+      // Inhalte ihre Höhe bereits beisteuern. Für Hash-Navigation springen wir
+      // direkt, für user-getriggerte Öffnungen bleibt smooth scrolling aktiv.
+      let cancelled = false;
+      const rafA = requestAnimationFrame(() => {
+        const rafB = requestAnimationFrame(() => {
+          if (!cancelled) {
+            scrollToSection(behavior);
+          }
+        });
+
+        if (cancelled) {
+          cancelAnimationFrame(rafB);
+        }
+      });
+
+      return () => {
+        cancelled = true;
+        cancelAnimationFrame(rafA);
+      };
     }
   }, [isOpen, scrollToSection]);
 

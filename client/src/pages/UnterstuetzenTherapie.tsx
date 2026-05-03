@@ -409,7 +409,7 @@ export default function UnterstuetzenTherapie() {
           <EvidenceNote
             variant="editorial"
             title="Quellen zu Therapieverfahren und Angehörigenprogrammen"
-            definition="DBT, MBT und andere BPS-spezifische Psychotherapien sind die am besten untersuchten Verfahren. Für Angehörige sind zusätzlich psychoedukative Programme wie Family Connections relevant."
+            definition="DBT, MBT und andere BPS-spezifische Psychotherapien sind die am besten untersuchten Verfahren. Für Angehörige sind psychoedukative Programme wie Family Connections nicht nur entlastend, sondern ebenfalls wissenschaftlich beschrieben."
             sources={[
               {
                 label:
@@ -431,6 +431,12 @@ export default function UnterstuetzenTherapie() {
               {
                 label: "Hoffman et al. (2005) – Family Connections",
                 href: quellenLinks.hoffman2005,
+                type: "wissenschaft",
+              },
+              {
+                label:
+                  "Gunderson, Berkowitz & Ruiz-Sancho (1997) – psychoedukative Familienarbeit",
+                href: quellenLinks.gunderson1997,
                 type: "wissenschaft",
               },
             ]}
@@ -459,6 +465,30 @@ export default function UnterstuetzenTherapie() {
                 suchen
               </li>
             </ul>
+            <p>
+              Wenn Sprache, Scham oder Migrationserfahrungen Gespräche
+              erschweren, ist das kein Ausschlusskriterium für Behandlung.
+              Hilfreich ist oft, zunächst über das Beobachtbare zu sprechen:
+              Schlaf, Alarmzustand, Rückzug, Selbstverletzung, Wut oder
+              Sicherheit. Fragen Sie in Praxis, Klinik oder Beratung aktiv nach
+              professioneller Dolmetschung, wenn Deutsch nicht für alle sicher
+              genug ist. Kinder sollten Diagnose-, Krisen- oder Gewaltgespräche
+              nicht dolmetschen müssen.
+            </p>
+            <p>
+              Und: Sie müssen nicht warten, bis die betroffene Person sofort
+              mitzieht. Psychoedukative Angehörigenprogramme wie Family
+              Connections sind nicht nur entlastende Zusatzangebote, sondern
+              fachlich beschrieben. Mehr dazu finden Sie auf der{" "}
+              <Link href="/quellen" className="editorial-link">
+                Quellen-Seite
+              </Link>{" "}
+              und unter{" "}
+              <Link href="/selbsthilfegruppen" className="editorial-link">
+                Selbsthilfegruppen & Netzwerke
+              </Link>
+              .
+            </p>
           </EditorialProse>
         </ContentSection>
 

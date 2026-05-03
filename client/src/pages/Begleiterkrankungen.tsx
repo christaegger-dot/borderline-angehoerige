@@ -470,6 +470,36 @@ export default function Begleiterkrankungen() {
               davon ab, was gerade am dringendsten Stabilität braucht.
             </EditorialPullQuote>
           </div>
+          <EvidenceNote
+            variant="editorial"
+            title="Quellen zu Komorbidität und Medikation"
+            definition="Hohe Komorbiditätsraten bei Borderline sind gut belegt. Leitlinien empfehlen zugleich, Borderline selbst nicht primär medikamentös zu behandeln, Medikation aber bei Begleiterkrankungen gezielt einzusetzen."
+            sources={[
+              {
+                label:
+                  "APA Practice Guideline (2024) – Behandlung von Borderline-Persönlichkeitsstörung",
+                href: quellenLinks.apa2024,
+                type: "wissenschaft",
+              },
+              {
+                label: "AWMF S3-Leitlinie Persönlichkeitsstörungen (2022)",
+                href: quellenLinks.awmf2022,
+                type: "wissenschaft",
+              },
+              {
+                label:
+                  "Zanarini et al. (1998) – Achse-I-Komorbidität bei Borderline",
+                href: quellenLinks.zanarini1998,
+                type: "wissenschaft",
+              },
+              {
+                label:
+                  "Zanarini et al. (2004) – Verlauf häufiger Komorbiditäten",
+                href: quellenLinks.zanarini2004,
+                type: "wissenschaft",
+              },
+            ]}
+          />
         </ContentSection>
 
         {/* ── 7: Auch bei Ihnen (Mini-Sektion) ── */}

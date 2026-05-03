@@ -59,43 +59,52 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/55 bg-background/98">
+    <header
+      className="sticky top-0 z-50 border-b bg-background/98"
+      style={{ borderColor: "var(--rule-color)" }}
+    >
       <div className="container">
-        <div className="flex min-h-14 items-center justify-between gap-2 py-1.5 md:min-h-20 md:gap-4 md:py-3">
+        <div className="flex min-h-14 items-center justify-between gap-3 py-1.5 md:min-h-20 md:gap-6 md:py-3">
           <AppLink
             href="/"
-            className="flex items-center gap-2.5 group shrink-0"
+            className="flex items-center gap-3.5 group shrink-0"
           >
-            <BrandMark
-              className="md:h-11 md:w-11"
-              iconClassName="md:h-[22px] md:w-[22px]"
-            />
+            <BrandMark variant="primary" />
             <span className="hidden xl:flex flex-col leading-tight">
-              <span className="text-sm font-medium text-foreground transition-colors group-hover:text-[color:var(--accent-primary)] whitespace-nowrap">
-                Borderline · Hilfe für Angehörige
+              <span className="font-display text-[19px] font-medium leading-[1.1] tracking-[-0.01em] text-foreground transition-colors group-hover:text-[color:var(--accent-primary)] whitespace-nowrap">
+                Borderline · Angehörige
               </span>
-              <span className="text-[11px] text-muted-foreground whitespace-nowrap">
-                Orientierung für belastete Beziehungssituationen
+              <span
+                className="mt-1 text-[11px] font-medium uppercase tracking-[0.08em] whitespace-nowrap"
+                style={{ color: "var(--accent-label)" }}
+              >
+                Fachstelle · PUK Zürich
               </span>
             </span>
           </AppLink>
 
+          <span
+            aria-hidden="true"
+            className="hidden xl:block h-8 w-px shrink-0"
+            style={{ background: "var(--rule-color-strong)" }}
+          />
+
           <nav
-            className="hidden lg:flex items-center gap-0.5 rounded-full border border-border/60 bg-white/74 px-2 py-1 shrink-0"
+            className="hidden lg:flex items-center gap-6 shrink-0"
             aria-label="Hauptnavigation"
           >
             {navItems.map(item => {
               const isActive =
                 location === item.href || location.startsWith(item.href + "/");
-              const accent = getRouteAccent(item.href);
               return (
                 <AppLink
                   key={item.href}
                   href={item.href}
-                  className={`px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+                  aria-current={isActive ? "page" : undefined}
+                  className={`text-sm whitespace-nowrap py-2 border-b-[1.5px] transition-colors duration-200 ${
                     isActive
-                      ? accent.navActive
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                      ? "font-medium text-[color:var(--fg-primary)] border-[color:var(--accent-primary)]"
+                      : "font-normal text-[color:var(--fg-secondary)] border-transparent hover:text-[color:var(--fg-primary)] hover:border-[color:var(--accent-primary)]"
                   }`}
                 >
                   {item.label}
@@ -110,11 +119,15 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             />
           </nav>
 
-          <div className="flex items-center gap-1.5 shrink-0 sm:gap-2">
+          <div className="flex items-center gap-2 shrink-0 lg:ml-auto">
             <button
               type="button"
               onClick={onSearchOpen}
-              className="hidden sm:flex h-10 items-center gap-2 rounded-full border border-border/60 bg-white/74 px-4 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
+              className="hidden sm:inline-flex h-9 items-center gap-1.5 rounded-full border px-4 text-[13px] transition-colors"
+              style={{
+                borderColor: "var(--rule-color-strong)",
+                color: "var(--fg-secondary)",
+              }}
               aria-label="Suchen"
             >
               <SearchIcon className="w-4 h-4" />
@@ -134,14 +147,17 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               asChild
               variant="default"
               size="sm"
-              className="hidden sm:flex h-10 rounded-full bg-alert px-4 text-white shadow-[0_12px_24px_-20px_rgba(197,95,61,0.6)] hover:bg-alert/85"
+              className="hidden sm:inline-flex h-10 rounded-full bg-alert px-5 text-sm font-semibold text-white shadow-[0_1px_2px_rgba(185,28,28,0.18)] hover:bg-alert/90"
             >
               <AppLink
                 href="/soforthilfe"
                 aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
               >
-                <Phone className="w-4 h-4 lg:mr-0 xl:mr-2" />
-                <span className="hidden xl:inline">Soforthilfe</span>
+                <span
+                  aria-hidden="true"
+                  className="mr-2 inline-block h-2 w-2 rounded-full bg-white/85"
+                />
+                <span>Soforthilfe</span>
               </AppLink>
             </Button>
 

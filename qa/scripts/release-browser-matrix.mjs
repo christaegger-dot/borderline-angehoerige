@@ -3,7 +3,7 @@ import path from "node:path";
 import { chromium, devices, firefox, webkit } from "playwright";
 import { BASE_URL, qaPath, routeUrl, writeJson } from "./a11y-shared.mjs";
 
-const TODAY = "2026-05-02";
+const TODAY = process.env.AUDIT_DATE ?? new Date().toISOString().slice(0, 10);
 const REPORT_NAME = "release-browser-matrix.json";
 
 function nowIso() {
@@ -77,11 +77,23 @@ function androidChromeEmulation() {
 
 async function launchBrowserForEngine(engine) {
   if (engine === "chromium") {
+    let executablePath = process.env.PLAYWRIGHT_EXECUTABLE_PATH;
+
+    if (!executablePath && process.platform === "darwin") {
+      const macOsChromePath =
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
+      try {
+        await fs.access(macOsChromePath);
+        executablePath = macOsChromePath;
+      } catch {
+        executablePath = undefined;
+      }
+    }
+
     return chromium.launch({
       headless: true,
-      executablePath:
-        process.env.PLAYWRIGHT_EXECUTABLE_PATH ??
-        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      ...(executablePath ? { executablePath } : {}),
     });
   }
 

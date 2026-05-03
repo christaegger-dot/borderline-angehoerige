@@ -7,9 +7,9 @@ export const CONTENT_SECURITY_POLICY = [
   "form-action 'self'",
   "manifest-src 'self'",
   "script-src 'self'",
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
-  "font-src 'self' https://fonts.gstatic.com",
+  "font-src 'self'",
   "connect-src 'self'",
   "media-src 'self'",
 ].join("; ");

@@ -32,7 +32,7 @@ describe("startup shell static assets", () => {
 
     expect(indexHtml).not.toContain("startup-fallback.js");
     expect(indexHtml).not.toContain("fonts.googleapis.com/css2");
-    expect(prerenderScript).toContain("requestIdleCallback");
-    expect(prerenderScript).toContain("fonts.googleapis.com/css2");
+    expect(prerenderScript).not.toContain("fonts.googleapis.com");
+    expect(prerenderScript).not.toContain("fonts.gstatic.com");
   });
 });

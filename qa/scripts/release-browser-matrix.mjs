@@ -22,6 +22,37 @@ function normalizeError(error) {
   return String(error);
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fetchWithRetry(url, { attempts = 3, delayMs = 400 } = {}) {
+  let lastError;
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const response = await fetch(url, { redirect: "follow" });
+
+      if (response.status < 500 || attempt === attempts) {
+        return response;
+      }
+
+      lastError = new Error(
+        `temporärer ${response.status}-Fehler für ${url} (Versuch ${attempt}/${attempts})`
+      );
+    } catch (error) {
+      lastError = error;
+      if (attempt === attempts) {
+        throw error;
+      }
+    }
+
+    await sleep(delayMs * attempt);
+  }
+
+  throw lastError ?? new Error(`Fetch fehlgeschlagen für ${url}`);
+}
+
 function chromeContextOptions() {
   return {
     viewport: { width: 1440, height: 960 },
@@ -398,7 +429,7 @@ async function runFlow(page, profile) {
       }
     }
 
-    const response = await fetch(inlineUrl, { redirect: "follow" });
+    const response = await fetchWithRetry(inlineUrl);
     const contentType = response.headers.get("content-type") ?? "";
     if (!response.ok || !contentType.includes("application/pdf")) {
       throw new Error(
@@ -418,9 +449,9 @@ async function runFlow(page, profile) {
       throw new Error("kein Download-Link gefunden");
     }
 
-    const response = await fetch(new URL(downloadHref, BASE_URL).toString(), {
-      redirect: "follow",
-    });
+    const response = await fetchWithRetry(
+      new URL(downloadHref, BASE_URL).toString()
+    );
     const contentType = response.headers.get("content-type") ?? "";
     if (!response.ok || !contentType.includes("application/pdf")) {
       throw new Error(

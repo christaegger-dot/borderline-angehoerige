@@ -214,7 +214,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed inset-0 bg-black/35 z-50"
+            className="fixed inset-0 bg-black/24 z-50"
             onClick={onClose}
           />
 
@@ -230,7 +230,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             aria-label="Suche"
             className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 px-4"
           >
-            <div className="bg-background rounded-2xl shadow-2xl border border-border overflow-hidden">
+            <div className="rounded-2xl border border-border/70 bg-[color:var(--bg-elevated)] shadow-[0_22px_48px_-34px_rgba(15,23,42,0.28)] overflow-hidden">
               {/* Search Input */}
               <div className="flex items-center gap-3 px-4 py-4 border-b border-border">
                 <SearchIcon className="w-5 h-5 text-muted-foreground flex-shrink-0" />
@@ -293,7 +293,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                           type="button"
                           key={term}
                           onClick={() => setQuery(term)}
-                          className="px-3 py-1.5 bg-muted hover:bg-muted/80 rounded-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+                          className="px-3 py-1.5 rounded-full border border-border/60 bg-background text-sm text-muted-foreground transition-colors hover:bg-muted/35 hover:text-foreground"
                           aria-label={`Nach ${term} suchen`}
                         >
                           {term}
@@ -364,7 +364,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
               </div>
 
               {/* Footer */}
-              <div className="px-4 py-3 border-t border-border bg-muted/30 flex items-center justify-between text-xs text-muted-foreground">
+              <div className="px-4 py-3 border-t border-border bg-background/70 flex items-center justify-between text-xs text-muted-foreground">
                 <span className="flex items-center gap-2">
                   <span>
                     <kbd className="px-1.5 py-0.5 bg-background border border-border rounded text-[10px]">

@@ -65,7 +65,7 @@ export function MobileMenu({
       aria-modal="true"
       aria-labelledby="mobile-navigation-title"
       aria-describedby={descriptionId.current}
-      className="lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-border/50 bg-[linear-gradient(180deg,rgba(250,250,247,0.96),rgba(247,249,248,1))] [-webkit-overflow-scrolling:touch]"
+      className="lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-border/50 bg-background [-webkit-overflow-scrolling:touch]"
       onKeyDown={e => {
         if (e.key === "Escape") {
           closeMenu();
@@ -94,7 +94,7 @@ export function MobileMenu({
               className={`flex items-center gap-3 px-4 py-3.5 rounded-2xl border text-base font-medium transition-all ${
                 isActive
                   ? accent.surfaceActive
-                  : "border-transparent bg-white/70 text-muted-foreground hover:text-foreground hover:bg-muted"
+                  : "border-transparent bg-background text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
             >
               <Icon className="w-5 h-5" />
@@ -112,7 +112,7 @@ export function MobileMenu({
             className={`flex items-center justify-between w-full px-4 py-3 rounded-2xl border text-base font-medium transition-all ${
               isRessourcenActive
                 ? currentAccent.surfaceActive
-                : "border-transparent bg-white/70 text-muted-foreground hover:text-foreground hover:bg-muted"
+                : "border-transparent bg-background text-muted-foreground hover:text-foreground hover:bg-muted"
             }`}
           >
             <span className="flex items-center gap-3">
@@ -163,7 +163,7 @@ export function MobileMenu({
                                 ? accent.surfaceActive
                                 : item.secondary
                                   ? "border-transparent text-muted-foreground/70 hover:text-foreground hover:bg-muted/60"
-                                  : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted"
+                                  : "border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/40"
                             }`}
                           >
                             <Icon
@@ -186,7 +186,7 @@ export function MobileMenu({
         <AppLink
           href="/soforthilfe"
           onClick={closeMenu}
-          className="mt-2 flex items-center gap-3 rounded-2xl bg-alert px-4 py-3 text-base font-medium text-white shadow-[0_18px_32px_-22px_rgba(197,95,61,0.8)]"
+          className="mt-2 flex items-center gap-3 rounded-2xl bg-alert px-4 py-3 text-base font-medium text-white shadow-[0_10px_22px_-18px_rgba(197,95,61,0.58)]"
         >
           <Phone className="w-5 h-5" />
           Soforthilfe
@@ -198,7 +198,7 @@ export function MobileMenu({
             closeMenu();
             onSearchOpen();
           }}
-          className="mt-2 flex items-center gap-3 rounded-2xl border border-border/60 bg-white/70 px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
+          className="mt-2 flex items-center gap-3 rounded-2xl border border-border/60 bg-background px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40"
           aria-label="Suche öffnen"
         >
           <SearchIcon className="w-5 h-5" />

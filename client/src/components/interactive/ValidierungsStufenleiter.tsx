@@ -31,7 +31,7 @@ const stufen: Stufe[] = [
     title: "Aufmerksam sein",
     subtitle: "«Ich bin jetzt wirklich da.»",
     icon: Eye,
-    tintVar: "--color-sand-border",
+    tintVar: "--accent-primary",
     ziel: "Sicherheit durch Präsenz.",
     soGehts: [
       "Kurz innehalten, Blick und Körper zuwenden",
@@ -53,7 +53,7 @@ const stufen: Stufe[] = [
     title: "Spiegeln",
     subtitle: "«Ich habe verstanden, was du meinst.»",
     icon: MessageSquare,
-    tintVar: "--color-sage-dark",
+    tintVar: "--accent-label",
     ziel: "Missverständnisse reduzieren, Tempo rausnehmen.",
     soGehts: [
       "In eigenen Worten zusammenfassen",
@@ -75,7 +75,7 @@ const stufen: Stufe[] = [
     title: "Zwischen den Zeilen verstehen",
     subtitle: "«Kann es sein, dass…?»",
     icon: Sparkles,
-    tintVar: "--color-sand-mid",
+    tintVar: "--fg-secondary",
     ziel: "Das Gefühl hinter der Reaktion erkennen.",
     soGehts: [
       "Vorsichtige Vermutung äussern",
@@ -97,7 +97,7 @@ const stufen: Stufe[] = [
     title: "Nachvollziehen",
     subtitle: "«Es macht Sinn, dass dich das trifft.»",
     icon: History,
-    tintVar: "--color-sage-mid",
+    tintVar: "--accent-primary",
     ziel: "Bedeutung geben, ohne zu bewerten.",
     soGehts: [
       "Stress, Vorgeschichte oder Überforderung mitdenken",
@@ -119,7 +119,7 @@ const stufen: Stufe[] = [
     title: "Das Gültige anerkennen",
     subtitle: "«Diesen Teil kann ich gut nachvollziehen.»",
     icon: Users,
-    tintVar: "--color-sage-dark",
+    tintVar: "--accent-label",
     ziel: "Den verständlichen Kern benennen, ohne alles zu billigen.",
     soGehts: [
       "Gefühl oder Bedürfnis anerkennen",
@@ -141,7 +141,7 @@ const stufen: Stufe[] = [
     title: "Auf Augenhöhe bleiben",
     subtitle: "«Wir sind zwei gleichwertige Menschen.»",
     icon: Star,
-    tintVar: "--color-sage-dark",
+    tintVar: "--fg-secondary",
     ziel: "Respektvoll bleiben, ohne zu belehren oder zu psychologisieren.",
     soGehts: [
       "Klar, ruhig und respektvoll sprechen",
@@ -182,6 +182,16 @@ export default function ValidierungsStufenleiter() {
         const exampleStyle = {
           borderColor: `color-mix(in oklch, var(${stufe.tintVar}) 22%, transparent)`,
           backgroundColor: "var(--bg-elevated)",
+        };
+        const hintPanelStyle = {
+          borderColor: "var(--rule-color)",
+          backgroundColor: "color-mix(in oklch, var(--bg-primary) 78%, white)",
+        };
+        const listenerBadgeStyle = {
+          color: "var(--fg-secondary)",
+          borderColor:
+            "color-mix(in oklch, var(--fg-secondary) 18%, transparent)",
+          backgroundColor: "color-mix(in oklch, var(--bg-primary) 82%, white)",
         };
 
         return (
@@ -244,10 +254,14 @@ export default function ValidierungsStufenleiter() {
                 <p className="text-xs font-medium text-muted-foreground mb-2">
                   Typischer Stolperstein
                 </p>
-                <div className="rounded-[0.95rem] border border-sand-border/40 bg-sand/50 p-3">
+                <div
+                  className="rounded-[0.95rem] border p-3"
+                  style={hintPanelStyle}
+                >
                   <p className="text-sm text-foreground leading-relaxed flex items-start gap-2">
                     <AlertTriangle
-                      className="w-4 h-4 text-sand-warm flex-shrink-0 mt-0.5"
+                      className="w-4 h-4 flex-shrink-0 mt-0.5"
+                      style={tintStyle}
                       aria-hidden="true"
                     />
                     {stufe.typischerFehler}
@@ -285,7 +299,10 @@ export default function ValidierungsStufenleiter() {
                 Kurzer Beispiel-Dialog
               </p>
               <div className="flex items-start gap-2">
-                <span className="flex-shrink-0 rounded-full border border-sand-border/40 bg-sand/40 px-2 py-0.5 text-xs font-medium text-sand-warm">
+                <span
+                  className="flex-shrink-0 rounded-full border px-2 py-0.5 text-xs font-medium"
+                  style={listenerBadgeStyle}
+                >
                   B
                 </span>
                 <p className="text-sm text-foreground italic">

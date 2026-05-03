@@ -113,10 +113,10 @@ export default function KrisenampelVisualisierung() {
   };
 
   return (
-    <div className="my-6 rounded-2xl border border-border/50 bg-background/60 p-5 md:p-6 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.1)]">
+    <div className="my-6 rounded-2xl border border-border/55 bg-background p-5 md:p-6">
       {/* Header */}
       <div className="flex items-center gap-2.5 mb-5">
-        <AlertTriangle className="w-5 h-5 text-sand-warm shrink-0" />
+        <AlertTriangle className="w-5 h-5 text-[color:var(--accent-primary)] shrink-0" />
         <p className="text-sm font-semibold text-foreground">
           Krisenampel – auf einen Blick
         </p>
@@ -154,7 +154,6 @@ export default function KrisenampelVisualisierung() {
                   className={`
                     w-full sm:w-auto flex sm:flex-col items-center gap-3 sm:gap-2
                     rounded-xl border p-3 sm:p-4 transition-all duration-200
-                    hover:-translate-y-0.5 hover:shadow-md
                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
                     ${isAktiv ? `${t.bgActive} ${t.borderActive}` : `${t.bg} ${t.border}`}
                   `}

@@ -50,6 +50,7 @@ export function RessourcenMenu({
     location.startsWith(item.href.split("#")[0])
   );
   const currentAccent = getRouteAccent(location);
+  const isTriggerActive = isRessourcenActive || isOpen;
 
   const groups = groupItems(ressourcenItems);
 
@@ -88,10 +89,10 @@ export function RessourcenMenu({
             openAndFocusFirst();
           }
         }}
-        className={`flex items-center gap-1 px-2.5 lg:px-3 xl:px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
-          isRessourcenActive || isOpen
-            ? currentAccent.navActive
-            : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+        className={`flex items-center gap-1 text-sm whitespace-nowrap py-2 border-b-[1.5px] transition-colors duration-200 ${
+          isTriggerActive
+            ? "font-medium text-[color:var(--fg-primary)] border-[color:var(--accent-primary)]"
+            : "font-normal text-[color:var(--fg-secondary)] border-transparent hover:text-[color:var(--fg-primary)] hover:border-[color:var(--accent-primary)]"
         }`}
         {...triggerA11yProps}
       >

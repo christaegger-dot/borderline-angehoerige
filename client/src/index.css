@@ -56,6 +56,8 @@
   /* — Farben — */
   --bg-primary: #faf7f2; /* einzige Hintergrundfarbe der Site */
   --bg-elevated: #ffffff; /* Hervorhebungen, z.B. Pull-Quote-Card */
+  --bg-cream-deep: #f3eee3; /* tieferer Cream — für ruhige Sub-Bars (Phase-1-Token) */
+  --bg-sage-wash: #eef0ea; /* heller Sage-Wash — für Reflexions-Sektionen (Phase-1-Token) */
   --fg-primary: #1f2a37; /* Body-Text, dunkles Slate */
   --fg-secondary: #4b5563; /* Lead, Bildunterschriften, Meta */
   --fg-tertiary: #6b7280; /* Labels, Fussnoten */
@@ -89,6 +91,11 @@
   --text-2xl: 1.875rem; /* 30px — H2 */
   --text-3xl: 2.625rem; /* 42px — H1 mobile */
   --text-4xl: 3.5rem; /* 56px — H1 desktop */
+  --text-hero: clamp(
+    40px,
+    5.5vw,
+    72px
+  ); /* Home-Hero — eigene Skalierung (Phase-1-Token) */
 
   /* — Line-Heights — */
   --lh-tight: 1.15; /* H1, H2 */

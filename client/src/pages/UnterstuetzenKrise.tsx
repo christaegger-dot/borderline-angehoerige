@@ -32,13 +32,13 @@ const ampelStufen = [
     level: "Grün – Stabil",
     description: "Alltägliche Stimmungsschwankungen, normale Belastungen",
     action: "Präsent sein, zuhören, Routinen beibehalten",
-    panelClass: "border-l-sage-mid bg-background",
+    panelClass: "border-l-emerald-500 bg-background",
   },
   {
     level: "Gelb – Angespannt",
     description: "Erhöhte Reizbarkeit, Rückzug, erkennbare Trigger",
     action: "Validieren, Skills anbieten, Raum geben",
-    panelClass: "border-l-sand-mid bg-background",
+    panelClass: "border-l-amber-400 bg-background",
   },
   {
     level: "Orange – Eskalierend",
@@ -68,7 +68,7 @@ const ampelHandlungen = [
   {
     label: "Orange",
     tone: "border-amber-300/60 bg-background",
-    fg: "text-sand-mid",
+    fg: "text-amber-700",
     items: [
       "Nicht diskutieren",
       "Körperabstand anbieten",
@@ -77,8 +77,8 @@ const ampelHandlungen = [
   },
   {
     label: "Gelb",
-    tone: "border-sage-light/60 bg-background",
-    fg: "text-sage-mid-dark",
+    tone: "border-[color:var(--rule-color-strong)] bg-background",
+    fg: "text-[color:var(--accent-label)]",
     items: ["Validieren", "Raum geben", "Skills gemeinsam erinnern"],
   },
 ] as const;
@@ -149,8 +149,8 @@ const krisenphasen = [
   {
     titel: "Anspannung",
     dauer: "Minuten–Stunden",
-    tone: "border-sand-border/60 bg-background",
-    fg: "text-sand-mid",
+    tone: "border-[color:var(--rule-color-strong)] bg-background",
+    fg: "text-[color:var(--fg-secondary)]",
   },
   {
     titel: "Eskalation",
@@ -174,7 +174,7 @@ const krisenphasen = [
     titel: "Erschöpfung",
     dauer: "Stunden–Tage",
     tone: "border-border/50 bg-muted/30",
-    fg: "text-sage-mid-dark",
+    fg: "text-[color:var(--accent-label)]",
   },
 ] as const;
 

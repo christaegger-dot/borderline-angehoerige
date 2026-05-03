@@ -102,10 +102,10 @@ const antwortFarben: Record<Exclude<Antwort, null>, string> = {
 };
 
 const antwortAktivFarben: Record<Exclude<Antwort, null>, string> = {
-  ja: "border-sand-warm/70 bg-sand-muted/35 ring-2 ring-sand-warm/20 text-sand-warm font-semibold",
+  ja: "border-[color:var(--rule-color-strong)] bg-background ring-2 ring-[color:var(--accent-primary)]/10 text-[color:var(--accent-primary)] font-semibold",
   manchmal:
-    "border-sage-mid/70 bg-sage-wash/35 ring-2 ring-sage-mid/20 text-sage-mid-dark font-semibold",
-  nein: "border-slate-blue/70 bg-slate-wash/30 ring-2 ring-slate-blue/20 text-slate-blue font-semibold",
+    "border-[color:var(--rule-color-strong)] bg-background ring-2 ring-[color:var(--accent-label)]/12 text-[color:var(--accent-label)] font-semibold",
+  nein: "border-border/80 bg-background ring-2 ring-border/35 text-[color:var(--fg-secondary)] font-semibold",
 };
 
 export default function GrenzenCheck() {
@@ -138,12 +138,12 @@ export default function GrenzenCheck() {
     }
     if (anzahlJa >= 2 || anzahlManchmal >= 3) {
       return {
-        ton: "sand",
+        ton: "mid",
         text: "Sie kennen die Herausforderungen beim Grenzen setzen gut. In einigen Bereichen haben Sie bereits Ressourcen, in anderen lohnt sich gezieltes Üben oder Unterstützung.",
       };
     }
     return {
-      ton: "sage",
+      ton: "stable",
       text: "Sie haben in vielen Bereichen bereits ein gutes Fundament. Grenzen setzen ist trotzdem ein fortlaufender Prozess – kein einmaliger Entscheid.",
     };
   };
@@ -264,7 +264,7 @@ export default function GrenzenCheck() {
         (() => {
           const einordnung = getGesamtEinordnung();
           const istAlert = einordnung.ton === "alert";
-          const istSand = einordnung.ton === "sand";
+          const istMid = einordnung.ton === "mid";
 
           return (
             <section
@@ -278,8 +278,8 @@ export default function GrenzenCheck() {
                 className={`border p-5 ${
                   istAlert
                     ? "border-alert/20 bg-alert/5"
-                    : istSand
-                      ? "border-sand-border/40 bg-sand-muted/20"
+                    : istMid
+                      ? "border-border/60 bg-background"
                       : "border-border/60 bg-muted/20"
                 }`}
               >
@@ -289,7 +289,7 @@ export default function GrenzenCheck() {
                       <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-alert" />
                     ) : (
                       <Shield
-                        className={`mt-0.5 h-5 w-5 flex-shrink-0 ${istSand ? "text-sand-warm" : "text-[color:var(--accent-primary)]"}`}
+                        className={`mt-0.5 h-5 w-5 flex-shrink-0 ${istMid ? "text-[color:var(--accent-label)]" : "text-[color:var(--accent-primary)]"}`}
                       />
                     )}
                     <p className="text-sm leading-relaxed text-foreground">

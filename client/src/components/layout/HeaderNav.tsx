@@ -59,7 +59,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/55 bg-background/96 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-border/55 bg-background/98">
       <div className="container">
         <div className="flex min-h-14 items-center justify-between gap-2 py-1.5 md:min-h-20 md:gap-4 md:py-3">
           <AppLink
@@ -81,7 +81,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
           </AppLink>
 
           <nav
-            className="hidden lg:flex items-center gap-0.5 rounded-full border border-border/60 bg-white/78 px-2 py-1 shrink-0"
+            className="hidden lg:flex items-center gap-0.5 rounded-full border border-border/60 bg-white/74 px-2 py-1 shrink-0"
             aria-label="Hauptnavigation"
           >
             {navItems.map(item => {
@@ -114,7 +114,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <button
               type="button"
               onClick={onSearchOpen}
-              className="hidden sm:flex h-10 items-center gap-2 rounded-full border border-border/60 bg-white/78 px-4 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
+              className="hidden sm:flex h-10 items-center gap-2 rounded-full border border-border/60 bg-white/74 px-4 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
               aria-label="Suchen"
             >
               <SearchIcon className="w-4 h-4" />
@@ -124,7 +124,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <button
               type="button"
               onClick={onSearchOpen}
-              className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/78 text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
+              className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/74 text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
               aria-label="Suche öffnen"
             >
               <SearchIcon className="h-[18px] w-[18px]" />
@@ -134,7 +134,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               asChild
               variant="default"
               size="sm"
-              className="hidden sm:flex h-10 rounded-full bg-alert px-4 text-white shadow-[0_18px_34px_-22px_rgba(197,95,61,0.75)] hover:bg-alert/85"
+              className="hidden sm:flex h-10 rounded-full bg-alert px-4 text-white shadow-[0_12px_24px_-20px_rgba(197,95,61,0.6)] hover:bg-alert/85"
             >
               <AppLink
                 href="/soforthilfe"
@@ -148,7 +148,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <AppLink
               href="/soforthilfe"
               aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-              className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-alert text-white shadow-[0_8px_16px_-10px_rgba(197,95,61,0.58)]"
+              className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-alert text-white shadow-[0_8px_14px_-12px_rgba(197,95,61,0.52)]"
             >
               <Phone className="h-[18px] w-[18px]" />
             </AppLink>
@@ -157,7 +157,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               ref={menuButtonRef}
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/78 transition-colors ${
+              className={`lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/74 transition-colors ${
                 mobileMenuOpen ? currentAccent.surfaceActive : "hover:bg-muted"
               }`}
               aria-controls="mobile-navigation-dialog"

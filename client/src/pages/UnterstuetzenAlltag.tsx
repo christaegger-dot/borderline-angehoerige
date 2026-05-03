@@ -312,7 +312,7 @@ export default function UnterstuetzenAlltag() {
           >
             Vollständig ca. 8 Min · Auch abschnittweise lesbar.
           </p>
-          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+          <LastVerifiedBadge path="/unterstuetzen/alltag" className="mt-6" />
         </header>
 
         {/* ── Intro: Was diese Seite im Alltag ordnet ── */}

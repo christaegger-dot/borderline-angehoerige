@@ -388,7 +388,7 @@ export default function FAQ() {
             Vollständig ca. 18 Min · Springen Sie zu einer Frage über das
             Inhaltsverzeichnis.
           </p>
-          <LastVerifiedBadge date="16.04.2026" className="mt-6" />
+          <LastVerifiedBadge path="/faq" className="mt-6" />
         </header>
 
         {/* ── Hinweis (vorher Card) ── */}

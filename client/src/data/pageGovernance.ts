@@ -70,7 +70,31 @@ export const pageGovernance: Record<string, PageGovernance> = {
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
+  "/faq": {
+    riskLevel: "high",
+    lastReviewed: "2026-04-16",
+    nextReviewDue: "2026-10-16",
+    owner: DEFAULT_OWNER,
+  },
+  "/unterstuetzen/therapie": {
+    riskLevel: "high",
+    lastReviewed: "2026-04-16",
+    nextReviewDue: "2026-10-16",
+    owner: DEFAULT_OWNER,
+  },
+  "/fachstelle": {
+    riskLevel: "high",
+    lastReviewed: "2026-03-24",
+    nextReviewDue: "2026-09-24",
+    owner: DEFAULT_OWNER,
+  },
   "/verstehen": {
+    riskLevel: "medium",
+    lastReviewed: "2026-04-30",
+    nextReviewDue: "2027-04-30",
+    owner: DEFAULT_OWNER,
+  },
+  "/genesung": {
     riskLevel: "medium",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2027-04-30",
@@ -86,6 +110,12 @@ export const pageGovernance: Record<string, PageGovernance> = {
     riskLevel: "medium",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2027-04-30",
+    owner: DEFAULT_OWNER,
+  },
+  "/unterstuetzen/alltag": {
+    riskLevel: "medium",
+    lastReviewed: "2026-04-16",
+    nextReviewDue: "2027-04-16",
     owner: DEFAULT_OWNER,
   },
 };

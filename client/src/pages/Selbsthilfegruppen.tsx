@@ -379,7 +379,7 @@ export default function Selbsthilfegruppen() {
               style={{ borderColor: "var(--rule-color)" }}
             >
               <p style={subBlockTitleStyle}>HelpLine-Zeiten</p>
-              <LastVerifiedBadge date="24.03.2026" />
+              <LastVerifiedBadge path={canonicalPath} />
               <dl
                 className="grid grid-cols-[max-content_1fr] gap-x-6 gap-y-1"
                 style={bodyStyle}
@@ -411,7 +411,7 @@ export default function Selbsthilfegruppen() {
               {vaskZhTreffpunkte.map(treff => (
                 <div key={treff.titel} className="space-y-1">
                   <p style={subBlockTitleStyle}>{treff.titel}</p>
-                  <LastVerifiedBadge date="24.03.2026" />
+                  <LastVerifiedBadge path={canonicalPath} />
                   <p style={bodyStyle}>{treff.beschreibung}</p>
                   <p style={bodyStyle}>
                     <span className="uppercase" style={labelStyle}>

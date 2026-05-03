@@ -2,6 +2,22 @@ import { describe, expect, it } from "vitest";
 import { pageGovernance } from "@/data/pageGovernance";
 
 const isoDatePattern = /^\d{4}-\d{2}-\d{2}$/;
+const governanceBackedBadgePaths = [
+  "/beratung",
+  "/begleiterkrankungen",
+  "/datenschutz",
+  "/diagnostik",
+  "/fachstelle",
+  "/faq",
+  "/genesung",
+  "/grenzen",
+  "/notfallkarte",
+  "/notfallkarte/erstellen",
+  "/quellen",
+  "/unterstuetzen/alltag",
+  "/unterstuetzen/krise",
+  "/unterstuetzen/therapie",
+] as const;
 
 describe("pageGovernance", () => {
   it("sets review metadata for every high-risk page", () => {
@@ -30,6 +46,19 @@ describe("pageGovernance", () => {
         meta.nextReviewDue > meta.lastReviewed,
         `${path} nextReviewDue must be after lastReviewed`
       ).toBe(true);
+    }
+  });
+
+  it("covers every path-backed review or verification badge", () => {
+    for (const path of governanceBackedBadgePaths) {
+      expect(
+        pageGovernance[path],
+        `${path} needs governance metadata for badge rendering`
+      ).toBeDefined();
+      expect(
+        pageGovernance[path]?.lastReviewed,
+        `${path} needs lastReviewed for LastVerifiedBadge`
+      ).toMatch(isoDatePattern);
     }
   });
 });

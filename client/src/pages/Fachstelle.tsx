@@ -114,7 +114,7 @@ export default function Fachstelle() {
           >
             Vollständig ca. 4 Min · Auch abschnittweise lesbar.
           </p>
-          <LastVerifiedBadge date="24.03.2026" className="mt-6" />
+          <LastVerifiedBadge path="/fachstelle" className="mt-6" />
         </header>
 
         {/* ── Unser Angebot ── */}

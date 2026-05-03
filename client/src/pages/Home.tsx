@@ -1,9 +1,11 @@
 import {
   EditorialFootnotes,
+  EditorialHero,
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  HeroLeuchtturmIllustration,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
@@ -31,45 +33,19 @@ export default function Home() {
         lastReviewed="2026-04-30"
       />
 
-      <EditorialLayout width="narrow">
-        {/* ── Hero ── eigener <header>, KEIN EditorialSection (sonst <h2>) */}
-        <header className="pb-12 pt-10 md:pb-16 md:pt-12">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik
-            Zürich
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+      <EditorialHero
+        eyebrow="Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich"
+        title={
+          <>
             Wenn jemand, den Sie lieben, eine{" "}
             <em>Borderline-Persönlichkeitsstörung</em> hat
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
-            Eine Begleitung für Partnerinnen, Eltern, Geschwister und erwachsene
-            Kinder.
-          </p>
-        </header>
+          </>
+        }
+        lede="Eine Begleitung für Partnerinnen, Eltern, Geschwister und erwachsene Kinder."
+        illustrationSlot={<HeroLeuchtturmIllustration />}
+      />
 
+      <EditorialLayout width="narrow">
         {/* ── 2 Anerkennung ── */}
         <EditorialSection label="Anerkennung">
           <EditorialProse>

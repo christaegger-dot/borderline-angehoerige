@@ -109,6 +109,17 @@ async function visit(page, route) {
   await page.waitForLoadState("networkidle");
 }
 
+async function expectHashSectionOpen(page, route, buttonName, contentText) {
+  await visit(page, route);
+  const toggle = page.getByRole("button", { name: buttonName });
+  await toggle.waitFor();
+  await page.waitForFunction(
+    element => element?.getAttribute("aria-expanded") === "true",
+    await toggle.elementHandle()
+  );
+  await page.getByText(contentText).waitFor();
+}
+
 async function runFlow(page, profile) {
   const steps = [];
   const findings = [];
@@ -139,6 +150,7 @@ async function runFlow(page, profile) {
   const mobileMenuButton = page
     .locator('button[aria-label="Menü öffnen"]')
     .first();
+  const mobileMenuPanel = page.locator("#mobile-navigation-dialog");
   const searchInput = page.locator(
     'input[role="combobox"][aria-label="Website durchsuchen"]'
   );
@@ -167,9 +179,9 @@ async function runFlow(page, profile) {
     await step("Mobiles Menü öffnen und schließen", async () => {
       await mobileMenuButton.waitFor();
       await mobileMenuButton.click();
-      await page.getByRole("dialog").waitFor();
+      await mobileMenuPanel.waitFor();
       await page.getByRole("button", { name: "Menü schliessen" }).click();
-      await page.getByRole("dialog").waitFor({ state: "hidden" });
+      await mobileMenuPanel.waitFor({ state: "hidden" });
     });
   }
 
@@ -244,6 +256,22 @@ async function runFlow(page, profile) {
     await page.waitForLoadState("networkidle");
   });
 
+  await step("Notfallkarte Kontaktlimit bis 3", async () => {
+    const addButton = page.getByRole("button", { name: "Kontakt hinzufügen" });
+    await addButton.click();
+    await addButton.click();
+    const contactCount = await page
+      .getByLabel("Name der Kontaktperson")
+      .count();
+    if (contactCount !== 3) {
+      throw new Error(`erwartet 3 Kontaktfelder, gefunden ${contactCount}`);
+    }
+    const isDisabled = await addButton.isDisabled();
+    if (!isDisabled) {
+      throw new Error("Kontaktlimit wurde nicht erreicht");
+    }
+  });
+
   await step("Notfallkarte Druckansicht", async () => {
     const popupPromise = page.waitForEvent("popup", { timeout: 15_000 });
     await page.getByRole("button", { name: "Drucken / Als PDF" }).click();
@@ -254,7 +282,7 @@ async function runFlow(page, profile) {
     const fieldValues = await popup
       .locator("input, textarea")
       .evaluateAll(nodes => nodes.map(node => node.value));
-    if (!popup.url().includes("/notfallkarte-print.html")) {
+    if (!popup.url().includes("/notfallkarte-print.html?print=1")) {
       throw new Error(`unerwartete Druck-URL: ${popup.url()}`);
     }
     if (
@@ -281,6 +309,22 @@ async function runFlow(page, profile) {
     if (notesValue !== "" || contactCount !== 0) {
       throw new Error(
         "lokale Notfallkarten-Daten wurden nicht vollständig gelöscht"
+      );
+    }
+
+    await page.reload({ waitUntil: "domcontentloaded" });
+    await page.waitForLoadState("networkidle");
+
+    const notesAfterReload = await page
+      .getByLabel("Persönliche Notizen")
+      .inputValue();
+    const contactCountAfterReload = await page
+      .getByLabel("Name der Kontaktperson")
+      .count();
+
+    if (notesAfterReload !== "" || contactCountAfterReload !== 0) {
+      throw new Error(
+        "gelöschte Notfallkarten-Daten tauchen nach Reload wieder auf"
       );
     }
   });
@@ -372,6 +416,59 @@ async function runFlow(page, profile) {
       );
     }
   });
+
+  await step("Release-PDF-Routen direkt prüfen", async () => {
+    const pdfRoutes = [
+      "/api/material-download/notfallplan-krise?disposition=inline",
+      "/api/material-download/leuchtturm",
+      "/api/material-download/grenzen-spickzettel",
+    ];
+
+    for (const route of pdfRoutes) {
+      const response = await fetch(routeUrl(route), { redirect: "follow" });
+      const contentType = response.headers.get("content-type") ?? "";
+      if (!response.ok || !contentType.includes("application/pdf")) {
+        throw new Error(
+          `${route} liefert ${response.status} mit ${contentType || "ohne content-type"}`
+        );
+      }
+    }
+  });
+
+  const hashCases = [
+    {
+      route: "/unterstuetzen/therapie#therapieangebote",
+      buttonName: "Abschnitt Therapieangebote im Kanton Zürich",
+      contentText: "HYPE Züri",
+    },
+    {
+      route: "/diagnostik#anbieter",
+      buttonName:
+        "Abschnitt Wo eine Diagnose im Kanton Zürich gestellt werden kann",
+      contentText: "Psychiatrische Universitätsklinik Zürich (PUK)",
+    },
+    {
+      route: "/begleiterkrankungen#depression",
+      buttonName: "Abschnitt Depression bei Borderline",
+      contentText: "Forschung zeigt, dass im Lebenszeitverlauf",
+    },
+    {
+      route: "/grenzen#gewalt",
+      buttonName: "Abschnitt Wenn der Angehörige körperlich übergriffig wird",
+      contentText: "Körperliche Gewalt ist kein Beziehungsproblem",
+    },
+  ];
+
+  for (const hashCase of hashCases) {
+    await step(`${hashCase.route} öffnet Zielabschnitt`, async () => {
+      await expectHashSectionOpen(
+        page,
+        hashCase.route,
+        hashCase.buttonName,
+        hashCase.contentText
+      );
+    });
+  }
 
   for (const route of ["/diagnostik", "/grenzen", "/beratung", "/quellen"]) {
     await step(`${route} direkt öffnen`, async () => {

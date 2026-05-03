@@ -1,7 +1,19 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import type { ElementType, HTMLAttributes, ReactNode } from "react";
-import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
+import {
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from "vitest";
 import { Router } from "wouter";
+import {
+  NOTFALLKARTE_PRINT_STORAGE_KEY,
+  NOTFALLKARTE_STORAGE_KEY,
+} from "@/domain/notfallkarte";
 import Notfallkarte from "@/pages/Notfallkarte";
 
 const MOTION_PROPS = new Set([
@@ -50,6 +62,27 @@ vi.mock("framer-motion", () => ({
   AnimatePresence: ({ children }: { children: ReactNode }) => <>{children}</>,
 }));
 
+function createStorageMock(): Storage {
+  const store = new Map<string, string>();
+
+  return {
+    get length() {
+      return store.size;
+    },
+    clear: vi.fn(() => {
+      store.clear();
+    }),
+    getItem: vi.fn((key: string) => store.get(key) ?? null),
+    key: vi.fn((index: number) => Array.from(store.keys())[index] ?? null),
+    removeItem: vi.fn((key: string) => {
+      store.delete(key);
+    }),
+    setItem: vi.fn((key: string, value: string) => {
+      store.set(key, String(value));
+    }),
+  } as Storage;
+}
+
 beforeAll(() => {
   Object.defineProperty(window, "matchMedia", {
     writable: true,
@@ -66,9 +99,34 @@ beforeAll(() => {
   });
 });
 
+beforeEach(() => {
+  const localStorageMock = createStorageMock();
+  const sessionStorageMock = createStorageMock();
+
+  Object.defineProperty(window, "localStorage", {
+    configurable: true,
+    value: localStorageMock,
+  });
+  Object.defineProperty(globalThis, "localStorage", {
+    configurable: true,
+    value: localStorageMock,
+  });
+  Object.defineProperty(window, "sessionStorage", {
+    configurable: true,
+    value: sessionStorageMock,
+  });
+  Object.defineProperty(globalThis, "sessionStorage", {
+    configurable: true,
+    value: sessionStorageMock,
+  });
+});
+
 afterEach(() => {
   cleanup();
   vi.restoreAllMocks();
+  window.localStorage.removeItem(NOTFALLKARTE_STORAGE_KEY);
+  window.localStorage.removeItem(NOTFALLKARTE_PRINT_STORAGE_KEY);
+  window.sessionStorage.removeItem(NOTFALLKARTE_PRINT_STORAGE_KEY);
 });
 
 function renderPage() {
@@ -81,11 +139,11 @@ function renderPage() {
 
 describe("Notfallkarte storage fallbacks", () => {
   it("shows a clear alert when browser storage is blocked", () => {
-    vi.spyOn(Storage.prototype, "getItem").mockReturnValue(null);
-    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
+    vi.spyOn(window.localStorage, "getItem").mockReturnValue(null);
+    vi.spyOn(window.localStorage, "setItem").mockImplementation(() => {
       throw new DOMException("Storage blocked", "QuotaExceededError");
     });
-    vi.spyOn(Storage.prototype, "removeItem").mockImplementation(() => {});
+    vi.spyOn(window.localStorage, "removeItem").mockImplementation(() => {});
 
     renderPage();
 
@@ -98,11 +156,11 @@ describe("Notfallkarte storage fallbacks", () => {
   });
 
   it("falls back to direct window messaging for printing when localStorage is unavailable", () => {
-    vi.spyOn(Storage.prototype, "getItem").mockReturnValue(null);
-    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
+    vi.spyOn(window.localStorage, "getItem").mockReturnValue(null);
+    vi.spyOn(window.localStorage, "setItem").mockImplementation(() => {
       throw new DOMException("Storage blocked", "QuotaExceededError");
     });
-    vi.spyOn(Storage.prototype, "removeItem").mockImplementation(() => {});
+    vi.spyOn(window.localStorage, "removeItem").mockImplementation(() => {});
 
     const postMessage = vi.fn();
     const openSpy = vi.spyOn(window, "open").mockReturnValue({
@@ -161,5 +219,45 @@ describe("Notfallkarte storage fallbacks", () => {
         name: /lokale notfallkarten-daten löschen/i,
       })
     ).toBeInTheDocument();
+  });
+
+  it("clears stored data persistently across delete and reload", () => {
+    vi.spyOn(window, "confirm").mockReturnValue(true);
+
+    renderPage();
+
+    fireEvent.change(screen.getByLabelText(/persönliche notizen/i), {
+      target: { value: "Nur lokal speichern" },
+    });
+    fireEvent.click(
+      screen.getByRole("button", { name: /kontakt hinzufügen/i })
+    );
+    fireEvent.change(screen.getByLabelText(/name der kontaktperson/i), {
+      target: { value: "Testkontakt" },
+    });
+
+    expect(window.localStorage.getItem(NOTFALLKARTE_STORAGE_KEY)).toContain(
+      "Nur lokal speichern"
+    );
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /lokale notfallkarten-daten löschen/i,
+      })
+    );
+
+    expect(window.localStorage.getItem(NOTFALLKARTE_STORAGE_KEY)).toBeNull();
+    expect(screen.getByLabelText(/persönliche notizen/i)).toHaveValue("");
+    expect(
+      screen.queryByRole("textbox", { name: /name der kontaktperson/i })
+    ).not.toBeInTheDocument();
+
+    cleanup();
+    renderPage();
+
+    expect(screen.getByLabelText(/persönliche notizen/i)).toHaveValue("");
+    expect(
+      screen.queryByRole("textbox", { name: /name der kontaktperson/i })
+    ).not.toBeInTheDocument();
   });
 });

@@ -1,4 +1,5 @@
 import {
+  EditorialColorBlock,
   EditorialFootnotes,
   EditorialHero,
   EditorialLayout,
@@ -63,67 +64,70 @@ export default function Home() {
             </p>
           </EditorialProse>
         </EditorialSection>
+      </EditorialLayout>
 
-        {/* ── 3 Kerngedanke ── */}
-        <EditorialSection
-          label="Grundgedanke"
-          title="Mitgefühl und Selbstschutz sind kein Widerspruch."
-        >
-          <EditorialProse dropCap>
-            <p>
-              Viele Angehörige, die zu uns kommen, tragen eine leise Überzeugung
-              mit sich: dass ihr Wunsch nach Abstand der Beweis sei, nicht genug
-              zu lieben. Dass Grenzen kalt seien. Dass eine Pause Verrat ist.
-            </p>
-            <p>
-              Diese Überzeugung ist verständlich, aber sie hält Beziehungen
-              nicht zusammen – sie zermürbt sie. Wer dauerhaft in Anspannung
-              lebt, verliert irgendwann die Fähigkeit, präsent zu sein, auch
-              dort, wo Präsenz wirklich gebraucht wird. Erschöpfte Angehörige
-              helfen weniger, nicht mehr. Sie reagieren härter, schweigen
-              länger, ziehen sich tiefer zurück.
-            </p>
-            <p>
-              Selbstschutz ist deshalb keine Gegenkraft zur Beziehung, sondern
-              ihre Voraussetzung. Eine ruhig gesetzte Grenze, eine geschützte
-              Pause, ein klarer Satz darüber, was Sie nicht mehr aushalten – das
-              ist nicht Egoismus. Es ist die Bedingung dafür, dass Sie morgen
-              noch da sein können.
-            </p>
-            <p>
-              Das gilt auch dann, wenn Ihr Angehöriger es nicht so erlebt.
-              Menschen in akuter Belastung empfinden Grenzen oft als Ablehnung,
-              manchmal als Bedrohung.¹ Diese Reaktion ist Teil der Erkrankung –
-              sie ist kein Beweis dafür, dass Sie etwas falsch tun.
-            </p>
-            <p>
-              Die Inhalte dieser Seite gehen von dieser Grundannahme aus. Sie
-              können verstehen <em>und</em> schützen. Sie können bleiben{" "}
-              <em>und</em> Distanz wahren. Sie können lieben <em>und</em> müde
-              sein. Diese Sätze schliessen sich nicht aus, auch wenn sie sich
-              oft so anfühlen.
-            </p>
-          </EditorialProse>
-          <EditorialFootnotes
-            notes={[
-              {
-                id: "1",
-                content: (
-                  <>
-                    Zur Bindungssensibilität und Verlassenheits-Reaktivität bei
-                    BPS: Linehan,{" "}
-                    <em>
-                      Cognitive-Behavioral Treatment of Borderline Personality
-                      Disorder
-                    </em>
-                    ; APA Practice Guideline (2024).
-                  </>
-                ),
-              },
-            ]}
-          />
-        </EditorialSection>
+      {/* ── 3 Kerngedanke ── vollflächige Aubergine-Sektion */}
+      <EditorialColorBlock
+        variant="aubergine"
+        label="Grundgedanke"
+        title="Mitgefühl und Selbstschutz sind kein Widerspruch."
+      >
+        <EditorialProse dropCap>
+          <p>
+            Viele Angehörige, die zu uns kommen, tragen eine leise Überzeugung
+            mit sich: dass ihr Wunsch nach Abstand der Beweis sei, nicht genug
+            zu lieben. Dass Grenzen kalt seien. Dass eine Pause Verrat ist.
+          </p>
+          <p>
+            Diese Überzeugung ist verständlich, aber sie hält Beziehungen nicht
+            zusammen – sie zermürbt sie. Wer dauerhaft in Anspannung lebt,
+            verliert irgendwann die Fähigkeit, präsent zu sein, auch dort, wo
+            Präsenz wirklich gebraucht wird. Erschöpfte Angehörige helfen
+            weniger, nicht mehr. Sie reagieren härter, schweigen länger, ziehen
+            sich tiefer zurück.
+          </p>
+          <p>
+            Selbstschutz ist deshalb keine Gegenkraft zur Beziehung, sondern
+            ihre Voraussetzung. Eine ruhig gesetzte Grenze, eine geschützte
+            Pause, ein klarer Satz darüber, was Sie nicht mehr aushalten – das
+            ist nicht Egoismus. Es ist die Bedingung dafür, dass Sie morgen noch
+            da sein können.
+          </p>
+          <p>
+            Das gilt auch dann, wenn Ihr Angehöriger es nicht so erlebt.
+            Menschen in akuter Belastung empfinden Grenzen oft als Ablehnung,
+            manchmal als Bedrohung.¹ Diese Reaktion ist Teil der Erkrankung –
+            sie ist kein Beweis dafür, dass Sie etwas falsch tun.
+          </p>
+          <p>
+            Die Inhalte dieser Seite gehen von dieser Grundannahme aus. Sie
+            können verstehen <em>und</em> schützen. Sie können bleiben{" "}
+            <em>und</em> Distanz wahren. Sie können lieben <em>und</em> müde
+            sein. Diese Sätze schliessen sich nicht aus, auch wenn sie sich oft
+            so anfühlen.
+          </p>
+        </EditorialProse>
+        <EditorialFootnotes
+          notes={[
+            {
+              id: "1",
+              content: (
+                <>
+                  Zur Bindungssensibilität und Verlassenheits-Reaktivität bei
+                  BPS: Linehan,{" "}
+                  <em>
+                    Cognitive-Behavioral Treatment of Borderline Personality
+                    Disorder
+                  </em>
+                  ; APA Practice Guideline (2024).
+                </>
+              ),
+            },
+          ]}
+        />
+      </EditorialColorBlock>
 
+      <EditorialLayout width="narrow">
         {/* ── 4 Orientierung ── */}
         <EditorialSection label="Orientierung">
           <EditorialProse>

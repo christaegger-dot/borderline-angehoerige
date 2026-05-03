@@ -1,0 +1,62 @@
+{
+  "createdAt": "2026-05-03T16:26:54.534Z",
+  "baseUrl": "https://borderline-angehoerige.netlify.app",
+  "results": [
+    {
+      "route": "/api/material-download/notfallplan-krise?disposition=inline",
+      "url": "https://borderline-angehoerige.netlify.app/api/material-download/notfallplan-krise?disposition=inline",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "expectedContentType": "application/pdf",
+      "startedAt": "2026-05-03T16:26:50.215Z",
+      "finishedAt": "2026-05-03T16:26:52.421Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/notfallplan-krise?disposition=inline"
+    },
+    {
+      "route": "/api/material-download/leuchtturm",
+      "url": "https://borderline-angehoerige.netlify.app/api/material-download/leuchtturm",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "expectedContentType": "application/pdf",
+      "startedAt": "2026-05-03T16:26:52.421Z",
+      "finishedAt": "2026-05-03T16:26:53.113Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/leuchtturm"
+    },
+    {
+      "route": "/api/material-download/grenzen-spickzettel",
+      "url": "https://borderline-angehoerige.netlify.app/api/material-download/grenzen-spickzettel",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "expectedContentType": "application/pdf",
+      "startedAt": "2026-05-03T16:26:53.113Z",
+      "finishedAt": "2026-05-03T16:26:53.855Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/grenzen-spickzettel"
+    },
+    {
+      "route": "/notfallkarte",
+      "url": "https://borderline-angehoerige.netlify.app/notfallkarte",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "expectedContentType": "text/html",
+      "startedAt": "2026-05-03T16:26:53.855Z",
+      "finishedAt": "2026-05-03T16:26:54.119Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/notfallkarte"
+    },
+    {
+      "route": "/notfallkarte/erstellen",
+      "url": "https://borderline-angehoerige.netlify.app/notfallkarte/erstellen",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "expectedContentType": "text/html",
+      "startedAt": "2026-05-03T16:26:54.119Z",
+      "finishedAt": "2026-05-03T16:26:54.534Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/notfallkarte/erstellen"
+    }
+  ],
+  "status": "passed"
+}

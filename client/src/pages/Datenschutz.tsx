@@ -8,13 +8,21 @@ import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
+import { pageGovernance } from "@/data/pageGovernance";
+import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 
 export default function Datenschutz() {
+  const lastReviewed = pageGovernance["/datenschutz"]?.lastReviewed;
+
   const bodyStyle = {
     fontSize: "var(--text-sm)",
     lineHeight: "var(--lh-relaxed)",
     color: "var(--fg-secondary)",
   };
+
+  const formattedReviewDate = lastReviewed
+    ? lastReviewed.split("-").reverse().join(".")
+    : null;
 
   return (
     <Layout>
@@ -348,7 +356,9 @@ export default function Datenschutz() {
         </ContentSection>
 
         <EditorialSection label="Stand" title="Aktualität" rule>
-          <p style={bodyStyle}>Stand: Februar 2026</p>
+          <p style={bodyStyle}>
+            Stand der Erklärung: {formattedReviewDate ?? "nicht angegeben"}
+          </p>
         </EditorialSection>
 
         <RelatedLinksEditorial
@@ -364,7 +374,7 @@ export default function Datenschutz() {
               description: "Wie die Website zugänglich gestaltet wird.",
             },
             {
-              href: "/notfallkarte",
+              href: PERSONAL_NOTFALLKARTE_PATH,
               title: "Persönliche Notfallkarte",
               description:
                 "Wie lokale Speicherung und Löschfunktion praktisch funktionieren.",

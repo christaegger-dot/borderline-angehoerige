@@ -17,19 +17,26 @@ export default function ScrollToTop() {
   const [location] = useLocation();
 
   useEffect(() => {
+    const hasHashTarget = window.location.hash.length > 1;
+
     // Deaktiviere Browser's automatische Scroll-Restoration
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
 
-    // Scrolle nach oben bei Route-Wechsel
-    window.scrollTo(0, 0);
+    // Scrolle nur dann nach oben, wenn keine Hash-Navigation
+    // auf einen konkreten Abschnitt zeigt.
+    if (!hasHashTarget) {
+      window.scrollTo(0, 0);
+    }
 
     // A11y: Focus auf <main> setzen, damit Screen-Reader-Nutzer
     // die Navigation wahrnehmen. preventScroll, da wir oben bereits
     // gescrollt haben. :focus-visible feuert nicht bei programmatic
     // focus, daher kein sichtbarer Focus-Ring.
-    document.getElementById("main-content")?.focus({ preventScroll: true });
+    if (!hasHashTarget) {
+      document.getElementById("main-content")?.focus({ preventScroll: true });
+    }
   }, [location]);
 
   useEffect(() => {

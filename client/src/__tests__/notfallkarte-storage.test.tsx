@@ -114,10 +114,34 @@ describe("Notfallkarte storage fallbacks", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /jetzt drucken/i }));
 
-    expect(openSpy).toHaveBeenCalledWith("/notfallkarte-print.html", "_blank");
+    expect(openSpy).toHaveBeenCalledWith(
+      "/notfallkarte-print.html?print=1",
+      "_blank"
+    );
     expect(postMessage).toHaveBeenCalledWith(
       expect.objectContaining({ type: "notfallkarte-print-data" }),
       window.location.origin
+    );
+  });
+
+  it("limits personal contacts to the three slots available in the print view", () => {
+    renderPage();
+
+    const addButton = screen.getByRole("button", {
+      name: /kontakt hinzufügen/i,
+    });
+
+    fireEvent.click(addButton);
+    fireEvent.click(addButton);
+    fireEvent.click(addButton);
+
+    expect(
+      screen.getAllByRole("textbox", { name: /name der kontaktperson/i })
+    ).toHaveLength(3);
+    expect(addButton).toBeDisabled();
+    expect(addButton).toHaveAttribute(
+      "title",
+      "Maximal drei Kontaktpersonen für die Druckversion"
     );
   });
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -39,7 +39,7 @@ export default function ContentSection({
     isOpenRef.current = isOpen;
   }, [isOpen]);
 
-  const scrollToSection = () => {
+  const scrollToSection = useCallback(() => {
     if (!sectionRef.current) return;
     const header = document.querySelector("header");
     const headerHeight = header?.getBoundingClientRect().height || 80;
@@ -47,7 +47,24 @@ export default function ContentSection({
     const top =
       sectionRef.current.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: "smooth" });
-  };
+  }, []);
+
+  const openFromHash = useCallback(() => {
+    if (!id) return;
+
+    const hashTarget = decodeURIComponent(
+      window.location.hash.replace(/^#/, "")
+    );
+    if (hashTarget !== id) return;
+
+    if (!isOpenRef.current) {
+      pendingScrollRef.current = true;
+      setIsOpen(true);
+      return;
+    }
+
+    scrollToSection();
+  }, [id, scrollToSection]);
 
   // Auf Custom Event "open-section" lauschen
   useEffect(() => {
@@ -67,7 +84,18 @@ export default function ContentSection({
 
     window.addEventListener("open-section", handleOpenSection);
     return () => window.removeEventListener("open-section", handleOpenSection);
-  }, [id]);
+  }, [id, scrollToSection]);
+
+  useEffect(() => {
+    if (!id) return;
+
+    const handleHashChange = () => openFromHash();
+
+    openFromHash();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, [id, openFromHash]);
 
   // Nach dem Öffnen (State-Wechsel) sanft scrollen
   useEffect(() => {
@@ -79,42 +107,43 @@ export default function ContentSection({
       }, 100);
       return () => clearTimeout(timer);
     }
-  }, [isOpen]);
+  }, [isOpen, scrollToSection]);
 
   return (
     <div
       ref={sectionRef}
       id={id}
+      data-content-section=""
       className="border-t"
       style={{ borderColor: "var(--rule-color)" }}
     >
-      <button
-        type="button"
-        onClick={() => setIsOpen(open => !open)}
-        className="group flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent-primary)]"
-        aria-expanded={isOpen}
-        aria-controls={id ? `section-content-${id}` : undefined}
-        aria-label={`Abschnitt ${title} ${isOpen ? "zuklappen" : "aufklappen"}`}
+      <h2
+        className="font-display"
+        style={{
+          fontSize: "var(--text-xl)",
+          lineHeight: "var(--lh-snug)",
+          color: "var(--fg-primary)",
+          fontWeight: "var(--weight-display)",
+        }}
       >
-        <h2
-          className="font-display"
-          style={{
-            fontSize: "var(--text-xl)",
-            lineHeight: "var(--lh-snug)",
-            color: "var(--fg-primary)",
-            fontWeight: "var(--weight-display)",
-          }}
+        <button
+          type="button"
+          onClick={() => setIsOpen(open => !open)}
+          className="group flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent-primary)]"
+          aria-expanded={isOpen}
+          aria-controls={id ? `section-content-${id}` : undefined}
+          aria-label={`Abschnitt ${title} ${isOpen ? "zuklappen" : "aufklappen"}`}
         >
-          {title}
-        </h2>
-        <ChevronDown
-          className={`h-5 w-5 flex-shrink-0 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          style={{ color: "var(--fg-tertiary)" }}
-          aria-hidden="true"
-        />
-      </button>
+          <span>{title}</span>
+          <ChevronDown
+            className={`h-5 w-5 flex-shrink-0 transition-transform duration-200 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+            style={{ color: "var(--fg-tertiary)" }}
+            aria-hidden="true"
+          />
+        </button>
+      </h2>
       {!isOpen && preview && (
         <p
           className="-mt-2 mb-5 line-clamp-2"

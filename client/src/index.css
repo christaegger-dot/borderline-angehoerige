@@ -449,6 +449,7 @@
      Desktop (≥1024): drei Spalten 200px / minmax(0, 608px) / 1fr. */
   .editorial-section-grid {
     display: grid;
+    align-items: start;
     column-gap: var(--space-5);
     row-gap: var(--space-5);
     grid-template-columns: 1fr;

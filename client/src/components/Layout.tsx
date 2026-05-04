@@ -52,9 +52,12 @@ export default function Layout({ children }: LayoutProps) {
         className="border-b border-border/50 bg-background"
       >
         <div className="container flex flex-wrap items-center gap-x-3 gap-y-1 py-2 text-[13px] text-muted-foreground">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
+          <AppLink
+            href="/notfallkarte"
+            className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)] transition-colors hover:text-[color:var(--accent-primary)] hover:underline hover:decoration-1 hover:underline-offset-4 focus-visible:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)] focus-visible:ring-offset-2"
+          >
             Notfallkontakte
-          </span>
+          </AppLink>
           <span className="hidden sm:inline">•</span>
           <span className="text-foreground/90">Schweiz · Kanton Zürich</span>
           <span className="hidden md:inline">•</span>

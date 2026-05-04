@@ -10,19 +10,31 @@ export interface RelatedLink {
 interface RelatedLinksEditorialProps {
   links: RelatedLink[];
   className?: string;
+  /**
+   * Wenn `true`, werden die äusseren Abstände (`mt-16 md:mt-[var(--space-8)]`,
+   * `pt-12 border-t`) unterdrückt. Setzen, wenn die Komponente als kompletter
+   * Body einer `EditorialSection` läuft — die Section gibt das Padding bereits,
+   * sonst entsteht eine sichtbare Lücke zwischen MarginNote und Body-Eyebrow.
+   */
+  flush?: boolean;
 }
 
 export default function RelatedLinksEditorial({
   links,
   className = "",
+  flush = false,
 }: RelatedLinksEditorialProps) {
   if (links.length === 0) return null;
+
+  const wrapperSpacing = flush
+    ? ""
+    : "mt-16 border-t pt-12 md:mt-[var(--space-8)]";
 
   return (
     <section
       aria-labelledby="related-links-editorial-heading"
-      className={`mt-16 border-t pt-12 md:mt-[var(--space-8)] ${className}`.trim()}
-      style={{ borderColor: "var(--rule-color)" }}
+      className={`${wrapperSpacing} ${className}`.trim()}
+      style={flush ? undefined : { borderColor: "var(--rule-color)" }}
     >
       <p
         className="uppercase"

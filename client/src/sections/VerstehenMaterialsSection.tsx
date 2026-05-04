@@ -150,7 +150,10 @@ export default function VerstehenMaterialsSection() {
                 }}
               >
                 <span>{cat.label}</span>
-                <span className="ml-1.5 opacity-70">{cat.count}</span>
+                <span aria-hidden="true" className="mx-1.5 opacity-50">
+                  ·
+                </span>
+                <span className="opacity-70">{cat.count}</span>
               </EditorialPillButton>
             ))}
           </div>

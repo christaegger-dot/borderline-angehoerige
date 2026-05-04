@@ -118,7 +118,7 @@ export default function Home() {
               lineHeight: 1.4,
             }}
           >
-            Linehan 1993 · Lebowitz 2020
+            Linehan 1993
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
@@ -212,7 +212,7 @@ export default function Home() {
             <span
               aria-hidden="true"
               style={{
-                color: "rgba(79, 107, 94, 0.6)",
+                color: "rgba(245, 236, 230, 0.32)",
                 marginRight: "0.05em",
               }}
             >
@@ -223,7 +223,7 @@ export default function Home() {
             <span
               aria-hidden="true"
               style={{
-                color: "rgba(79, 107, 94, 0.6)",
+                color: "rgba(245, 236, 230, 0.32)",
                 marginLeft: "0.05em",
               }}
             >

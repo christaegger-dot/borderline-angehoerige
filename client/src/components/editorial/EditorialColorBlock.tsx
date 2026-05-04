@@ -26,6 +26,13 @@ interface EditorialColorBlockProps {
  *
  * Für Children-Text-Elemente (Prose, Drop-Cap, Links) hängen passende
  * scoped CSS-Regeln in `index.css` (Suffix `editorial-color-block-content--*`).
+ *
+ * TODO (Phase 1.5 / Schritt 6 Konsolidierung): Variant `aubergine` wird
+ * nicht mehr genutzt — die Aubergine-Sektion auf der Home läuft jetzt
+ * über `EditorialSection variant="aubergine"`. Variant aus dem Union-Type
+ * entfernen + zugehörige scoped CSS in index.css aufräumen, sobald
+ * auch `sage-wash`/`cream-deep` migriert sind oder explizit als Legacy
+ * akzeptiert werden.
  */
 export function EditorialColorBlock({
   variant,

@@ -91,14 +91,14 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     alt: "Die Sauerstoffmaske – Selbstfürsorge zuerst",
   },
   {
-    id: "bewertungs-pendel",
-    title: "Das Bewertungs-Pendel",
-    description: "Idealisierung und Entwertung — die Grauzone stärken.",
-    categoryLabel: "Verstehen",
-    href: "/verstehen",
+    id: "fortschritt-paradox",
+    title: "Das Fortschritt-Paradox",
+    description: "Warum Rückfälle zum Weg gehören.",
+    categoryLabel: "Genesung",
+    href: "/genesung",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png",
-    alt: "Das Bewertungs-Pendel zwischen Extremen",
+      "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.png",
+    alt: "Das Fortschritt-Paradox – Rückfälle als Teil des Wegs",
   },
   {
     id: "deeskalations-pfad",

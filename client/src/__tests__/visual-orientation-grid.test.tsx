@@ -25,7 +25,7 @@ describe("VisualOrientationGrid", () => {
       "Die Validierungs-Treppe",
       "Die 4 Arten von Grenzen",
       "Die Sauerstoffmaske",
-      "Das Bewertungs-Pendel",
+      "Das Fortschritt-Paradox",
       "Der Deeskalations-Pfad",
     ];
 
@@ -54,6 +54,7 @@ describe("VisualOrientationGrid", () => {
       "/kommunizieren",
       "/grenzen",
       "/selbstfuersorge",
+      "/genesung",
     ]);
 
     homeFeaturedInfografiken.forEach(tile => {

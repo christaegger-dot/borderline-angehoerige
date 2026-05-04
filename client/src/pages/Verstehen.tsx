@@ -4,9 +4,11 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
+  EditorialSection,
   EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
+import { EisbergIllustration } from "@/components/illustrations";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
@@ -50,34 +52,49 @@ export default function Verstehen() {
       />
       <TableOfContents />
 
-      <EditorialLayout width="narrow">
-        {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+      {/* ── 1 Hero ── EditorialSection mit EisbergIllustration als Aside */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.4,
+            }}
+          >
+            Borderline-Persönlichkeitsstörung
+          </span>
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <p
             className="text-xs uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
               fontWeight: 500,
+              marginBottom: "var(--space-5)",
             }}
           >
             Verstehen
           </p>
           <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            className="font-display"
             style={{
+              fontSize: "var(--text-hero)",
               lineHeight: "var(--lh-tight)",
               letterSpacing: "var(--tracking-tight)",
               color: "var(--fg-primary)",
               fontWeight: "var(--weight-display)",
+              marginBottom: "var(--space-5)",
             }}
           >
-            Borderline <em>verstehen</em>
+            Borderline verstehen, ohne die Distanz zu verlieren.
           </h1>
           <p
-            className="mt-6"
+            className="max-w-[30em]"
             style={{
-              fontSize: "var(--text-lg)",
+              fontSize: "1.375rem",
               lineHeight: "var(--lh-snug)",
               color: "var(--fg-secondary)",
             }}
@@ -87,16 +104,34 @@ export default function Verstehen() {
             widersprüchlich, die eigene Rolle bleibt unklar.
           </p>
           <p
-            className="mt-4"
+            className="mt-10 border-t pt-6 text-xs uppercase"
             style={{
-              fontSize: "var(--text-sm)",
+              borderColor: "var(--rule-color)",
               color: "var(--fg-tertiary)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
             }}
           >
-            Vollständig ca. 15 Min · Auch abschnittweise lesbar.
+            Vollständig ca. 15 Min · Auch abschnittweise lesbar
           </p>
-        </header>
+        </EditorialSection.Body>
+        <EditorialSection.Aside>
+          <div
+            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+            style={{
+              aspectRatio: "1 / 1",
+              filter: "drop-shadow(0 8px 24px rgba(91, 58, 78, 0.12))",
+            }}
+          >
+            <EisbergIllustration
+              className="block h-full w-full"
+              ariaLabel="Eine Eisberg-Spitze über der Wasserlinie. Darunter eine grosse verborgene Form, die viel mehr ausmacht als die sichtbare Spitze."
+            />
+          </div>
+        </EditorialSection.Aside>
+      </EditorialSection>
 
+      <EditorialLayout width="narrow">
         {/* ── Intro: Worum es hier vor allem geht (Variante A) ── */}
         <EditorialSectionBlock
           label="Überblick"

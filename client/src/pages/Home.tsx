@@ -7,7 +7,6 @@ import {
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
-  EditorialSectionBlock,
   HeroLeuchtturmIllustration,
   TestimonialMark,
 } from "@/components/editorial";
@@ -15,12 +14,13 @@ import { VisualOrientationGrid } from "@/components/visualizations/VisualOrienta
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
-import { EMAILS, INFO } from "@/data/kontakte";
+import { ADRESSEN, EMAILS, INFO } from "@/data/kontakte";
 import { Link } from "wouter";
 
-// Single-source-of-truth: keine Telefon-/E-Mail-Hardcoding im Markup
+// Single-source-of-truth: keine Telefon-/E-Mail-/Adress-Hardcoding im Markup
 const FACHSTELLE = INFO.find(k => k.id === "INFO_FACHSTELLE");
 const EMAIL_ANGEHOERIGEN = EMAILS.find(e => e.id === "EMAIL_ANGEHOERIGEN");
+const ADRESSE_PUK = ADRESSEN.find(a => a.id === "ADRESSE_PUK");
 
 export default function Home() {
   return (
@@ -241,9 +241,37 @@ export default function Home() {
       {/* ── 4 Visuelle Orientierung ── 8 Infografik-Tiles als narrativer Lese-Pfad */}
       <VisualOrientationGrid />
 
-      <EditorialLayout width="narrow">
-        {/* ── 5 Orientierung ── */}
-        <EditorialSectionBlock label="Orientierung">
+      {/* ── 5 Orientierung ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Wegweiser
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Orientierung
+          </p>
           <EditorialProse>
             <p>
               Wenn Sie verstehen möchten, was passiert – die Beziehungsdynamik,
@@ -266,8 +294,8 @@ export default function Home() {
           >
             Eine vollständige Themenübersicht finden Sie über das Menü.
           </p>
-        </EditorialSectionBlock>
-      </EditorialLayout>
+        </EditorialSection.Body>
+      </EditorialSection>
 
       {/* ── 6 Stimme ── vollflächige Sage-Wash-Sektion mit Testimonial-Mark */}
       <EditorialColorBlock variant="sage-wash" maxWidth="45rem">
@@ -297,12 +325,39 @@ export default function Home() {
         </div>
       </EditorialColorBlock>
 
-      <EditorialLayout width="narrow">
-        {/* ── 7 Beratungseinladung ── */}
-        <EditorialSectionBlock
-          label="Fachstelle"
-          title="Sie müssen nicht wissen, was Sie sagen wollen."
-        >
+      {/* ── 7 Beratungseinladung ── Fachstelle-CTA mit Kontakt-Karte */}
+      <EditorialSection variant="cream-deep">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Fachstelle
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Sie müssen nicht wissen, was Sie sagen wollen.
+          </h2>
           <EditorialProse>
             <p>
               Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die
@@ -310,27 +365,79 @@ export default function Home() {
               Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
             </p>
           </EditorialProse>
-          {FACHSTELLE && EMAIL_ANGEHOERIGEN && (
+        </EditorialSection.Body>
+        {FACHSTELLE && EMAIL_ANGEHOERIGEN && ADRESSE_PUK && (
+          <EditorialSection.Aside>
             <div
-              className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-6"
-              style={{ fontSize: "var(--text-md)" }}
+              className="border p-6"
+              style={{
+                borderColor: "var(--rule-color-strong)",
+                borderRadius: "0.25rem",
+                background: "var(--bg-primary)",
+              }}
             >
-              <a href={`tel:${FACHSTELLE.tel}`} className="editorial-link">
-                {FACHSTELLE.nummer}
-              </a>
-              <a
-                href={`mailto:${EMAIL_ANGEHOERIGEN.adresse}`}
-                className="editorial-link"
+              <p
+                className="text-[11px] font-medium uppercase"
+                style={{
+                  color: "var(--accent-label)",
+                  letterSpacing: "var(--tracking-caps)",
+                  marginBottom: "var(--space-3)",
+                }}
               >
-                {EMAIL_ANGEHOERIGEN.adresse}
-              </a>
+                Kontakt
+              </p>
+              <p
+                className="font-display"
+                style={{
+                  fontSize: "var(--text-md)",
+                  color: "var(--fg-primary)",
+                  fontWeight: 500,
+                  lineHeight: 1.4,
+                }}
+              >
+                {FACHSTELLE.label}
+              </p>
+              <p
+                className="mt-1"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  color: "var(--fg-secondary)",
+                  lineHeight: 1.5,
+                }}
+              >
+                {ADRESSE_PUK.adresse}
+              </p>
+              <ul
+                className="mt-4 space-y-2"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  color: "var(--fg-secondary)",
+                }}
+              >
+                <li>
+                  <a href={`tel:${FACHSTELLE.tel}`} className="editorial-link">
+                    {FACHSTELLE.nummer}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${EMAIL_ANGEHOERIGEN.adresse}`}
+                    className="editorial-link break-all"
+                  >
+                    {EMAIL_ANGEHOERIGEN.adresse}
+                  </a>
+                </li>
+              </ul>
+              {/* TODO: Öffnungszeiten ergänzen, sobald verfügbar; Foto optional. */}
             </div>
-          )}
-        </EditorialSectionBlock>
+          </EditorialSection.Aside>
+        )}
+      </EditorialSection>
 
-        {/* ── 8 Soforthilfe-Zeile ── nur Hairline + ein Satz */}
+      {/* ── 8 Soforthilfe-Zeile ── nur Hairline + ein Satz */}
+      <EditorialLayout width="narrow">
         <section
-          className="mt-24 border-t pt-12"
+          className="border-t pt-12"
           style={{ borderColor: "var(--rule-color)" }}
         >
           <p

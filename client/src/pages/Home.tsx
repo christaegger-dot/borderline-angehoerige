@@ -7,9 +7,9 @@ import {
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
-  HeroLeuchtturmIllustration,
   TestimonialMark,
 } from "@/components/editorial";
+import { HeroLeuchtturmIllustration } from "@/components/illustrations";
 import { VisualOrientationGrid } from "@/components/visualizations/VisualOrientationGrid";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";

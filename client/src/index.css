@@ -494,7 +494,7 @@
   }
   @media (min-width: 1024px) {
     .editorial-section-grid {
-      grid-template-columns: 200px minmax(0, var(--measure)) 1fr;
+      grid-template-columns: 160px minmax(0, var(--measure)) 1fr;
       grid-template-areas: "margin body aside";
     }
   }

@@ -4,9 +4,11 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
+  EditorialSection,
   EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
+import { SchaleIllustration } from "@/components/illustrations";
 import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -61,32 +63,48 @@ export default function Selbstfuersorge() {
       />
       <TableOfContents />
 
-      <EditorialLayout width="narrow">
-        {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+      {/* ── 1 Hero ── EditorialSection mit SchaleIllustration als Aside */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.4,
+            }}
+          >
+            Belastung und Schutz
+          </span>
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <p
             className="text-xs uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
               fontWeight: 500,
+              marginBottom: "var(--space-5)",
             }}
           >
             Selbstfürsorge
           </p>
           <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            className="font-display"
             style={{
+              fontSize: "var(--text-hero)",
               lineHeight: "var(--lh-tight)",
               letterSpacing: "var(--tracking-tight)",
               color: "var(--fg-primary)",
               fontWeight: "var(--weight-display)",
+              marginBottom: "var(--space-5)",
             }}
           >
-            Selbstfürsorge für <em>Angehörige</em>
+            Selbstfürsorge für <em>Angehörige</em> — was trägt, wenn die
+            Belastung bleibt.
           </h1>
           <p
-            className="mt-6"
+            className="max-w-[30em]"
             style={{
               fontSize: "var(--text-lg)",
               lineHeight: "var(--lh-snug)",
@@ -96,31 +114,85 @@ export default function Selbstfuersorge() {
             Wer dauerhaft mit Krisen und Loyalitätskonflikten lebt, braucht
             eigene Regeneration – nicht als Luxus, sondern als Grundlage.
           </p>
-          <p
-            className="mt-4"
-            style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
-            }}
+          <div
+            className="mt-8 border-t pt-3"
+            style={{ borderColor: "var(--rule-color)" }}
           >
-            Vollständig ca. 12 Min · Auch abschnittweise lesbar.
-          </p>
-        </header>
+            <p
+              className="text-xs uppercase"
+              style={{
+                color: "var(--accent-label)",
+                letterSpacing: "var(--tracking-caps)",
+                fontWeight: 500,
+              }}
+            >
+              Vollständig ca. 12 Min · Auch abschnittweise lesbar
+            </p>
+          </div>
+        </EditorialSection.Body>
+        <EditorialSection.Aside>
+          <SchaleIllustration
+            ariaLabel="Eine offene Schale, die etwas hält ohne zu greifen — selbst tragend, selbst geformt."
+            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+          />
+        </EditorialSection.Aside>
+      </EditorialSection>
 
-        {/* ── Pull-Quote (war im Hero, jetzt eigenständig) ── */}
-        <EditorialSectionBlock rule>
+      {/* ── 2 Pull-Quote (dominant, eigene Sektion) ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.Body>
           <EditorialPullQuote>
             «Viele Angehörige merken erst spät, wie erschöpft sie geworden sind.
             Selbstfürsorge beginnt damit, die eigene Belastung überhaupt ernst
             zu nehmen.»
           </EditorialPullQuote>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── Intro: Was auf dieser Seite besonders trägt ── */}
-        <EditorialSectionBlock
-          label="Überblick"
-          title="Was auf dieser Seite besonders trägt"
-        >
+      {/* ── 3 Intro: Was auf dieser Seite besonders trägt ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Kernfrage
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Überblick
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Was auf dieser Seite besonders trägt
+          </h2>
           <EditorialProse>
             <p>
               Diese Seite versteht Selbstfürsorge nicht als Extra für gute Tage,
@@ -175,8 +247,10 @@ export default function Selbstfuersorge() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
+      <EditorialLayout width="narrow">
         {/* ── ContentSection 1: warum-wichtig ── */}
         <ContentSection
           variant="editorial"

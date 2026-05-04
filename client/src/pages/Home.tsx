@@ -8,6 +8,7 @@ import {
   EditorialSection,
   HeroLeuchtturmIllustration,
 } from "@/components/editorial";
+import { VisualOrientationGrid } from "@/components/visualizations/VisualOrientationGrid";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
@@ -127,8 +128,11 @@ export default function Home() {
         />
       </EditorialColorBlock>
 
+      {/* ── 4 Visuelle Orientierung ── 8 Infografik-Tiles als narrativer Lese-Pfad */}
+      <VisualOrientationGrid />
+
       <EditorialLayout width="narrow">
-        {/* ── 4 Orientierung ── */}
+        {/* ── 5 Orientierung ── */}
         <EditorialSection label="Orientierung">
           <EditorialProse>
             <p>

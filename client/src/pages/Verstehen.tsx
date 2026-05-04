@@ -88,7 +88,7 @@ export default function Verstehen() {
               marginBottom: "var(--space-5)",
             }}
           >
-            Borderline verstehen, ohne die Distanz zu verlieren.
+            <em>Borderline</em> verstehen, ohne die Distanz zu verlieren.
           </h1>
           <p
             className="max-w-[30em]"

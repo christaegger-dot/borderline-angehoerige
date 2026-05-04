@@ -837,9 +837,9 @@ export default function Verstehen() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      <EditorialLayout width="narrow">
-        <VerstehenMaterialsSection />
+      <VerstehenMaterialsSection />
 
+      <EditorialLayout width="narrow">
         {/* ── Schluss-Sektion: Übergang zu Unterstützen ── */}
         <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>

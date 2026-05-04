@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import { BookOpen, Brain, FileText, Filter, ExternalLink } from "lucide-react";
+import { ExternalLink, FileText } from "lucide-react";
 import { Link } from "wouter";
-import { EditorialProse, EditorialSectionBlock } from "@/components/editorial";
+import { EditorialSection } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   verstehenInfografiken,
@@ -14,20 +14,17 @@ const verstehenCategories = [
   {
     id: "alle",
     label: "Alle",
-    icon: Filter,
     count: verstehenInfografiken.length,
   },
   {
     id: "grundlagen",
     label: "Grundlagen",
-    icon: BookOpen,
     count: verstehenInfografiken.filter(i => i.category === "grundlagen")
       .length,
   },
   {
     id: "neurobiologie",
     label: "Stress & Gehirn",
-    icon: Brain,
     count: verstehenInfografiken.filter(i => i.category === "neurobiologie")
       .length,
   },
@@ -72,131 +69,182 @@ export default function VerstehenMaterialsSection() {
   };
 
   return (
-    <EditorialSectionBlock
-      label="Materialien"
-      title="Materialien zum Vertiefen"
-      rule
-    >
-      <EditorialProse>
-        <p>
-          Diese Materialien ergänzen die Seite, ersetzen sie aber nicht. Wenn
-          verfügbar, führt «Textversion lesen» zur lesbaren Web-Version.
-          Beginnen Sie mit den Grundlagen, wenn Sie gerade Orientierung
-          brauchen.
-        </p>
-      </EditorialProse>
-
-      <div
-        className="mt-6 flex flex-wrap gap-2 overflow-x-auto pb-3 -mx-4 px-4 md:mx-0 md:px-0"
-        role="group"
-        aria-label="Filter Verstehen-Materialien"
-      >
-        {verstehenCategories.map(cat => (
-          <EditorialPillButton
-            key={cat.id}
-            variant="filter"
-            selected={activeFilter === cat.id}
-            onClick={() => {
-              setActiveFilter(cat.id);
-              scrollToResults();
+    <>
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
             }}
-            className="inline-flex items-center gap-1.5"
           >
-            <cat.icon className="h-4 w-4 text-[color:var(--accent-label)]" />
-            <span>{cat.label}</span>
-            <span style={{ fontSize: "var(--text-xs)" }}>({cat.count})</span>
-          </EditorialPillButton>
-        ))}
-      </div>
+            Materialien zum Vertiefen
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Materialien
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Materialien zum Vertiefen
+          </h2>
+          <p
+            className="max-w-[36em]"
+            style={{
+              fontSize: "var(--text-md)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Diese Materialien ergänzen die Seite, ersetzen sie aber nicht. Wenn
+            verfügbar, führt «Textversion lesen» zur lesbaren Web-Version.
+            Beginnen Sie mit den Grundlagen, wenn Sie gerade Orientierung
+            brauchen.
+          </p>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-      <div
-        ref={gridRef}
-        className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2"
+      <section
+        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
+        aria-label="Materialien zum Vertiefen — Filter und Tile-Liste"
       >
-        {filteredItems.map(item => {
-          const textVersionHref = getHandoutTextVersionHrefBySource(
-            item.pdfUrl
-          );
-          const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
-
-          return (
-            <article
-              key={item.id}
-              className={`${item.featured && activeFilter === "alle" ? "sm:col-span-2" : ""} space-y-3 border-t pt-6`}
-              style={{ borderColor: "var(--rule-color)" }}
-            >
-              <a
-                href={item.webpUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${item.alt} – Vorschau öffnen`}
-                className="block overflow-hidden rounded-sm"
-                style={{ backgroundColor: "var(--bg-elevated)" }}
+        <div className="mx-auto max-w-[1240px]">
+          <div
+            className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
+            role="tablist"
+            aria-label="Filter Verstehen-Materialien"
+          >
+            {verstehenCategories.map(cat => (
+              <EditorialPillButton
+                key={cat.id}
+                variant="filter"
+                selected={activeFilter === cat.id}
+                onClick={() => {
+                  setActiveFilter(cat.id);
+                  scrollToResults();
+                }}
               >
-                <img
-                  src={item.thumbnailUrl ?? item.webpUrl}
-                  alt={item.alt}
-                  className="aspect-[3/4] w-full object-cover object-top"
-                  loading="lazy"
-                  width={600}
-                  height={848}
-                  decoding="async"
-                />
-              </a>
+                <span>{cat.label}</span>
+                <span className="ml-1.5 opacity-70">{cat.count}</span>
+              </EditorialPillButton>
+            ))}
+          </div>
 
-              <p className="uppercase" style={labelStyle}>
-                {item.category === "grundlagen"
-                  ? "Grundlagen"
-                  : "Stress & Gehirn"}
-              </p>
-              <h3 style={entryTitleStyle}>{item.title}</h3>
-              <p style={bodyStyle}>{item.description}</p>
+          <div
+            ref={gridRef}
+            className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {filteredItems.map(item => {
+              const textVersionHref = getHandoutTextVersionHrefBySource(
+                item.pdfUrl
+              );
+              const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
 
-              <p
-                className="flex flex-wrap gap-x-5 gap-y-1 pt-1"
-                style={{ fontSize: "var(--text-sm)" }}
-              >
-                {textVersionHref ? (
-                  <Link
-                    href={textVersionHref}
-                    aria-label={`Textversion lesen: ${item.title}`}
-                    className="editorial-link"
-                  >
-                    <span className="inline-flex items-center gap-1.5">
-                      <FileText className="h-4 w-4" />
-                      Textversion lesen
-                    </span>
-                  </Link>
-                ) : null}
-                <a
-                  href={pdfHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                  className="editorial-link"
+              return (
+                <article
+                  key={item.id}
+                  className="space-y-3 border-t pt-6"
+                  style={{ borderColor: "var(--rule-color)" }}
                 >
-                  <span className="inline-flex items-center gap-1.5">
-                    <ExternalLink className="h-4 w-4" />
-                    PDF öffnen
-                  </span>
-                </a>
-              </p>
-            </article>
-          );
-        })}
-      </div>
+                  <a
+                    href={item.webpUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${item.alt} – Vorschau öffnen`}
+                    className="block overflow-hidden rounded-sm"
+                    style={{ backgroundColor: "var(--bg-elevated)" }}
+                  >
+                    <img
+                      src={item.thumbnailUrl ?? item.webpUrl}
+                      alt={item.alt}
+                      className="aspect-[3/4] w-full object-cover object-top"
+                      loading="lazy"
+                      width={600}
+                      height={848}
+                      decoding="async"
+                    />
+                  </a>
 
-      <p
-        className="mt-8 flex flex-wrap gap-x-5 gap-y-1"
-        style={{ fontSize: "var(--text-sm)" }}
-      >
-        <Link href="/materialien" className="editorial-link">
-          Alle Materialien anzeigen
-        </Link>
-        <Link href="/barrierefreiheit" className="editorial-link">
-          Warum Textversionen hilfreich sind
-        </Link>
-      </p>
-    </EditorialSectionBlock>
+                  <p className="uppercase" style={labelStyle}>
+                    {item.category === "grundlagen"
+                      ? "Grundlagen"
+                      : "Stress & Gehirn"}
+                  </p>
+                  <h3 style={entryTitleStyle}>{item.title}</h3>
+                  <p style={bodyStyle}>{item.description}</p>
+
+                  <p
+                    className="flex flex-wrap gap-x-5 gap-y-1 pt-1"
+                    style={{ fontSize: "var(--text-sm)" }}
+                  >
+                    {textVersionHref ? (
+                      <Link
+                        href={textVersionHref}
+                        aria-label={`Textversion lesen: ${item.title}`}
+                        className="editorial-link"
+                      >
+                        <span className="inline-flex items-center gap-1.5">
+                          <FileText className="h-4 w-4" />
+                          Textversion lesen
+                        </span>
+                      </Link>
+                    ) : null}
+                    <a
+                      href={pdfHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                      className="editorial-link"
+                    >
+                      <span className="inline-flex items-center gap-1.5">
+                        <ExternalLink className="h-4 w-4" />
+                        PDF öffnen
+                      </span>
+                    </a>
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+
+          <p
+            className="mt-8 flex flex-wrap gap-x-5 gap-y-1"
+            style={{ fontSize: "var(--text-sm)" }}
+          >
+            <Link href="/materialien" className="editorial-link">
+              Alle Materialien anzeigen
+            </Link>
+            <Link href="/barrierefreiheit" className="editorial-link">
+              Warum Textversionen hilfreich sind
+            </Link>
+          </p>
+        </div>
+      </section>
+    </>
   );
 }

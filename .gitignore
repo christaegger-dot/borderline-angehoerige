@@ -24,6 +24,9 @@ build/
 # Claude Code local config
 .claude/
 
+# QA-Audit-Output (Lighthouse-Reports etc., werden ad-hoc generiert)
+qa/output/
+
 # OS generated files
 .DS_Store
 .DS_Store?

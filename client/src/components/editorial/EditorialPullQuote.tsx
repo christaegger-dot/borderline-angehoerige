@@ -39,7 +39,7 @@ export function EditorialPullQuote({
             className="mt-7"
             style={{
               fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
+              color: "var(--fg-secondary)",
               fontStyle: "italic",
             }}
           >

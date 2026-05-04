@@ -67,6 +67,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
         <div className="flex min-h-14 items-center justify-between gap-3 py-1.5 md:min-h-20 md:gap-6 md:py-3">
           <AppLink
             href="/"
+            aria-label="Borderline · Hilfe für Angehörige – Startseite"
             className="flex items-center gap-3.5 group shrink-0"
           >
             <BrandMark variant="primary" />

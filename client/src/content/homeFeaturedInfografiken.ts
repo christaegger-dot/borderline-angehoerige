@@ -23,6 +23,8 @@ export interface HomeFeaturedInfografik {
   href: string;
   /** Thumbnail aus /public/infografiken/extras/thumbnails/ — 600 px breit */
   thumbnailUrl: string;
+  /** Native Pixel-Höhe der Thumbnail-Datei (Breite ist immer 600) — verhindert image-aspect-ratio-Mismatch und Layout-Shift. */
+  thumbnailHeight: number;
   /** Alt-Text für Screen-Reader */
   alt: string;
 }
@@ -35,6 +37,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     categoryLabel: "Verstehen",
     href: "/verstehen",
     thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png",
+    thumbnailHeight: 855,
     alt: "Der Eisberg – Wut ist oft die Spitze",
   },
   {
@@ -46,6 +49,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     href: "/verstehen",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png",
+    thumbnailHeight: 848,
     alt: "Alarm-Modus vs. Denk-Modus",
   },
   {
@@ -56,6 +60,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     href: "/unterstuetzen/krise",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.png",
+    thumbnailHeight: 803,
     alt: "Ampel-System für Krisenphasen",
   },
   {
@@ -66,6 +71,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     href: "/kommunizieren",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.png",
+    thumbnailHeight: 848,
     alt: "Die Validierungs-Treppe",
   },
   {
@@ -77,6 +83,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     href: "/grenzen",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.png",
+    thumbnailHeight: 803,
     alt: "Die 4 Arten von Grenzen",
   },
   {
@@ -88,6 +95,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     href: "/selbstfuersorge",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.png",
+    thumbnailHeight: 803,
     alt: "Die Sauerstoffmaske – Selbstfürsorge zuerst",
   },
   {
@@ -98,6 +106,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     href: "/genesung",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.png",
+    thumbnailHeight: 848,
     alt: "Das Fortschritt-Paradox – Rückfälle als Teil des Wegs",
   },
   {
@@ -108,6 +117,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     href: "/unterstuetzen/krise",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
+    thumbnailHeight: 848,
     alt: "Der Deeskalations-Pfad für Krisenkommunikation",
   },
 ];

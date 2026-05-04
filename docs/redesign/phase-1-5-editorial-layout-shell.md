@@ -236,6 +236,12 @@ Neu:
 
 ### Sektion 6 — Testimonial («Aus der Angehörigenarbeit»)
 
+**STATUS:** Sage-Wash-Hintergrund + TestimonialMark + Pull-Quote
+bereits umgesetzt in PR #393. Phase 1.5 wickelt nur die bestehende
+Logik in die neue EditorialSection-Hülle und ergänzt MarginNote
+
+- Aside (kursive Schlüsselzeile).
+
 Aktueller Stand: zentrierte Sektion auf Cream (Sage-Wash kommt erst in
 Schritt 5 von Phase 1). Phase 1.5 baut den Wrapper, Phase-1-Schritt-5
 nutzt ihn dann.
@@ -378,8 +384,8 @@ Sichtprüfung.
 ```
 Phase 1, Schritte 1-3 (Header, Hero, Aubergine)     ✓ gemerged
 Phase 1, Schritt 4 (Visual-Grid)                    ✓ gemerged
+Phase 1, Schritt 5 (Sage-Wash-Testimonial)          ✓ gemerged
 Phase 1.5 (diese Datei)                             ← jetzt
-Phase 1, Schritt 5 (Sage-Wash-Testimonial)
 Phase 1, Schritt 6 (Konsolidierung + Tests + Lighthouse)
 Phase 2 (Tier-1-Pages mit Tier-A-Illustrationen)
 ```

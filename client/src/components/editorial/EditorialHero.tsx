@@ -7,13 +7,13 @@ export interface EditorialHeroMetaItem {
 }
 
 interface EditorialHeroProps {
-  /** Sage-Eyebrow-Caps oberhalb der H1 */
+  /** Sage-Caps-Anker (sitzt in der MarginNote-Spalte links, nicht im Body) */
   eyebrow?: ReactNode;
   /** Hauptüberschrift — H1 in Source Serif, Skalierung über --text-hero */
   title: ReactNode;
   /** Lede-Absatz unterhalb der H1 */
   lede?: ReactNode;
-  /** Optionale Meta-Zeilen mit Hairline-Trenner — z.B. «Fachlich geprüft · 30.04.2026» */
+  /** Optionale Meta-Zeilen mit Hairline-Trenner */
   meta?: EditorialHeroMetaItem[];
   /** Visueller Anker rechts (Aside-Spalte), z.B. <HeroLeuchtturmIllustration /> */
   illustrationSlot?: ReactNode;
@@ -22,13 +22,15 @@ interface EditorialHeroProps {
 /**
  * Editorial Hero auf Basis der EditorialSection-Hülle (Phase 1.5).
  *
- * Body trägt eyebrow / H1 / lede / optionale Meta-Zeile. Wenn ein
- * illustrationSlot gesetzt ist, sitzt er in der Aside-Spalte rechtsbündig
- * (margin-left: auto, max-width 560 px, height fills body).
+ * Layout:
+ * - MarginNote (200 px links): Sage-Caps-Anker (Eyebrow), wirkt wie
+ *   Magazintitel/Kapitelmarker
+ * - Body (608 px Mitte): H1 / Lede / optionale Meta
+ * - Aside (1fr rechts): illustrationSlot, quadratisch (aspect-ratio 1:1),
+ *   max-w 560 px, rechtsbündig
  *
  * Public-API unverändert seit PR #391 — Pages müssen nicht angepasst
- * werden. Layout darunter migriert von eigenem 2-Spalten-Grid (1.2fr/1fr)
- * zu Standard EditorialSection (200px / 608px / 1fr).
+ * werden.
  */
 export function EditorialHero({
   eyebrow,
@@ -39,19 +41,21 @@ export function EditorialHero({
 }: EditorialHeroProps) {
   return (
     <EditorialSection variant="cream">
-      <EditorialSection.Body>
-        {eyebrow && (
+      {eyebrow && (
+        <EditorialSection.MarginNote>
           <span
             className="block text-xs font-medium uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
-              marginBottom: "var(--space-5)",
+              lineHeight: 1.4,
             }}
           >
             {eyebrow}
           </span>
-        )}
+        </EditorialSection.MarginNote>
+      )}
+      <EditorialSection.Body>
         <h1
           className="font-display"
           style={{
@@ -103,8 +107,9 @@ export function EditorialHero({
       {illustrationSlot && (
         <EditorialSection.Aside>
           <div
-            className="ml-auto flex h-full w-full max-w-[560px] items-center"
+            className="ml-auto block w-full max-w-[560px]"
             style={{
+              aspectRatio: "5 / 6",
               filter: "drop-shadow(0 8px 24px rgba(91, 58, 78, 0.12))",
             }}
           >

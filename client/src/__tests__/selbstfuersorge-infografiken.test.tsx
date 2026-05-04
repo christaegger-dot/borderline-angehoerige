@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Router } from "wouter";
 import { describe, expect, it } from "vitest";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
@@ -11,11 +11,8 @@ describe("SelbstfuersorgeInfografikenSection", () => {
       </Router>
     );
 
-    fireEvent.click(
-      screen.getByRole("button", {
-        name: /Abschnitt Materialien zum Download aufklappen/i,
-      })
-    );
+    // Section ist nach Phase-2-Migration kein collapsible ContentSection mehr —
+    // Content ist immer sichtbar. Kein vorheriges fireEvent.click nötig.
 
     expect(
       screen.getByRole("link", {

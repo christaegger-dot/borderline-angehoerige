@@ -3,6 +3,7 @@ import {
   EditorialFootnotes,
   EditorialHero,
   EditorialLayout,
+  EditorialOrnament,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
@@ -98,65 +99,144 @@ export default function Home() {
       </EditorialSection>
 
       {/* ── 3 Kerngedanke ── vollflächige Aubergine-Sektion */}
-      <EditorialColorBlock
-        variant="aubergine"
-        label="Grundgedanke"
-        title="Mitgefühl und Selbstschutz sind kein Widerspruch."
-      >
-        <EditorialProse dropCap>
-          <p>
-            Viele Angehörige, die zu uns kommen, tragen eine leise Überzeugung
-            mit sich: dass ihr Wunsch nach Abstand der Beweis sei, nicht genug
-            zu lieben. Dass Grenzen kalt seien. Dass eine Pause Verrat ist.
+      <EditorialSection variant="aubergine">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "#d6c8be",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Aus der DBT-Tradition
+          </span>
+          <span
+            className="mt-2 block text-[12px] italic"
+            style={{
+              color: "rgba(245, 236, 230, 0.65)",
+              lineHeight: 1.4,
+            }}
+          >
+            Linehan 1993 · Lebowitz 2020
+          </span>
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "#d6c8be",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Grundgedanke
           </p>
-          <p>
-            Diese Überzeugung ist verständlich, aber sie hält Beziehungen nicht
-            zusammen – sie zermürbt sie. Wer dauerhaft in Anspannung lebt,
-            verliert irgendwann die Fähigkeit, präsent zu sein, auch dort, wo
-            Präsenz wirklich gebraucht wird. Erschöpfte Angehörige helfen
-            weniger, nicht mehr. Sie reagieren härter, schweigen länger, ziehen
-            sich tiefer zurück.
-          </p>
-          <p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "#f5ece6",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Mitgefühl und Selbstschutz sind kein Widerspruch.
+          </h2>
+          <EditorialProse dropCap>
+            <p>
+              Viele Angehörige, die zu uns kommen, tragen eine leise Überzeugung
+              mit sich: dass ihr Wunsch nach Abstand der Beweis sei, nicht genug
+              zu lieben. Dass Grenzen kalt seien. Dass eine Pause Verrat ist.
+            </p>
+            <p>
+              Diese Überzeugung ist verständlich, aber sie hält Beziehungen
+              nicht zusammen – sie zermürbt sie. Wer dauerhaft in Anspannung
+              lebt, verliert irgendwann die Fähigkeit, präsent zu sein, auch
+              dort, wo Präsenz wirklich gebraucht wird. Erschöpfte Angehörige
+              helfen weniger, nicht mehr. Sie reagieren härter, schweigen
+              länger, ziehen sich tiefer zurück.
+            </p>
+            <p>
+              Selbstschutz ist deshalb keine Gegenkraft zur Beziehung, sondern
+              ihre Voraussetzung. Eine ruhig gesetzte Grenze, eine geschützte
+              Pause, ein klarer Satz darüber, was Sie nicht mehr aushalten – das
+              ist nicht Egoismus. Es ist die Bedingung dafür, dass Sie morgen
+              noch da sein können.
+            </p>
+            <p>
+              Das gilt auch dann, wenn Ihr Angehöriger es nicht so erlebt.
+              Menschen in akuter Belastung empfinden Grenzen oft als Ablehnung,
+              manchmal als Bedrohung.¹ Diese Reaktion ist Teil der Erkrankung –
+              sie ist kein Beweis dafür, dass Sie etwas falsch tun.
+            </p>
+            <p>
+              Die Inhalte dieser Seite gehen von dieser Grundannahme aus. Sie
+              können verstehen <em>und</em> schützen. Sie können bleiben{" "}
+              <em>und</em> Distanz wahren. Sie können lieben <em>und</em> müde
+              sein. Diese Sätze schliessen sich nicht aus, auch wenn sie sich
+              oft so anfühlen.
+            </p>
+          </EditorialProse>
+          <EditorialFootnotes
+            notes={[
+              {
+                id: "1",
+                content: (
+                  <>
+                    Zur Bindungssensibilität und Verlassenheits-Reaktivität bei
+                    BPS: Linehan,{" "}
+                    <em>
+                      Cognitive-Behavioral Treatment of Borderline Personality
+                      Disorder
+                    </em>
+                    ; APA Practice Guideline (2024).
+                  </>
+                ),
+              },
+            ]}
+          />
+        </EditorialSection.Body>
+        <EditorialSection.Aside>
+          <blockquote
+            className="font-display italic"
+            style={{
+              fontSize: "1.75rem",
+              lineHeight: 1.25,
+              color: "#f5ece6",
+            }}
+          >
+            <span
+              aria-hidden="true"
+              style={{
+                color: "rgba(79, 107, 94, 0.6)",
+                marginRight: "0.05em",
+              }}
+            >
+              «
+            </span>
             Selbstschutz ist deshalb keine Gegenkraft zur Beziehung, sondern
-            ihre Voraussetzung. Eine ruhig gesetzte Grenze, eine geschützte
-            Pause, ein klarer Satz darüber, was Sie nicht mehr aushalten – das
-            ist nicht Egoismus. Es ist die Bedingung dafür, dass Sie morgen noch
-            da sein können.
-          </p>
-          <p>
-            Das gilt auch dann, wenn Ihr Angehöriger es nicht so erlebt.
-            Menschen in akuter Belastung empfinden Grenzen oft als Ablehnung,
-            manchmal als Bedrohung.¹ Diese Reaktion ist Teil der Erkrankung –
-            sie ist kein Beweis dafür, dass Sie etwas falsch tun.
-          </p>
-          <p>
-            Die Inhalte dieser Seite gehen von dieser Grundannahme aus. Sie
-            können verstehen <em>und</em> schützen. Sie können bleiben{" "}
-            <em>und</em> Distanz wahren. Sie können lieben <em>und</em> müde
-            sein. Diese Sätze schliessen sich nicht aus, auch wenn sie sich oft
-            so anfühlen.
-          </p>
-        </EditorialProse>
-        <EditorialFootnotes
-          notes={[
-            {
-              id: "1",
-              content: (
-                <>
-                  Zur Bindungssensibilität und Verlassenheits-Reaktivität bei
-                  BPS: Linehan,{" "}
-                  <em>
-                    Cognitive-Behavioral Treatment of Borderline Personality
-                    Disorder
-                  </em>
-                  ; APA Practice Guideline (2024).
-                </>
-              ),
-            },
-          ]}
-        />
-      </EditorialColorBlock>
+            ihre Voraussetzung.
+            <span
+              aria-hidden="true"
+              style={{
+                color: "rgba(79, 107, 94, 0.6)",
+                marginLeft: "0.05em",
+              }}
+            >
+              »
+            </span>
+          </blockquote>
+          <EditorialOrnament
+            variant="small-arc"
+            color="rgba(245, 236, 230, 0.45)"
+            className="mt-6"
+          />
+        </EditorialSection.Aside>
+      </EditorialSection>
 
       {/* ── 4 Visuelle Orientierung ── 8 Infografik-Tiles als narrativer Lese-Pfad */}
       <VisualOrientationGrid />

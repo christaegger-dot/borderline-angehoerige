@@ -4,9 +4,11 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
+  EditorialSection,
   EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
+import { AufgangIllustration } from "@/components/illustrations";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -110,32 +112,47 @@ export default function Genesung() {
       />
       <TableOfContents />
 
-      <EditorialLayout width="narrow">
-        {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+      {/* ── 1 Hero ── EditorialSection mit AufgangIllustration als Aside */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.4,
+            }}
+          >
+            Weg und Bewegung
+          </span>
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <p
             className="text-xs uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
               fontWeight: 500,
+              marginBottom: "var(--space-5)",
             }}
           >
-            Genesung — Langzeitverlauf &amp; Hoffnung
+            Genesung
           </p>
           <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            className="font-display"
             style={{
+              fontSize: "var(--text-hero)",
               lineHeight: "var(--lh-tight)",
               letterSpacing: "var(--tracking-tight)",
               color: "var(--fg-primary)",
               fontWeight: "var(--weight-display)",
+              marginBottom: "var(--space-5)",
             }}
           >
-            Genesung ist <em>möglich</em>
+            Genesung ist <em>möglich</em> — und sieht selten geradlinig aus.
           </h1>
           <p
-            className="mt-6"
+            className="max-w-[30em]"
             style={{
               fontSize: "var(--text-lg)",
               lineHeight: "var(--lh-snug)",
@@ -146,23 +163,75 @@ export default function Genesung() {
             Entwicklung selten glatt oder vorhersehbar. Für Angehörige ist
             beides wichtig: Zuversicht und eine realistische Sicht auf Zeit.
           </p>
-          <p
-            className="mt-4"
+          <div
+            className="mt-8 border-t pt-3"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p
+              className="text-xs uppercase"
+              style={{
+                color: "var(--accent-label)",
+                letterSpacing: "var(--tracking-caps)",
+                fontWeight: 500,
+              }}
+            >
+              Vollständig ca. 8 Min · Auch abschnittweise lesbar
+            </p>
+            <LastVerifiedBadge path="/genesung" className="mt-3" />
+          </div>
+        </EditorialSection.Body>
+        <EditorialSection.Aside>
+          <AufgangIllustration
+            ariaLabel="Ein Aufgang mit Wegmarkern, der nicht zu einem Ziel führt, sondern in Bewegung hält."
+            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+          />
+        </EditorialSection.Aside>
+      </EditorialSection>
+
+      {/* ── 2 Intro: Was auf dieser Seite besonders wichtig ist ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
             style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
             }}
           >
-            Vollständig ca. 8 Min · Auch abschnittweise lesbar.
+            Kerngedanke
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Überblick
           </p>
-          <LastVerifiedBadge path="/genesung" className="mt-6" />
-        </header>
-
-        {/* ── Intro: Was auf dieser Seite besonders wichtig ist ── */}
-        <EditorialSectionBlock
-          label="Überblick"
-          title="Was auf dieser Seite besonders wichtig ist"
-        >
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Was auf dieser Seite besonders wichtig ist
+          </h2>
           <EditorialProse>
             <p>
               Diese Seite übersetzt Prognose und Langzeitverlauf in eine
@@ -215,8 +284,10 @@ export default function Genesung() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
+      <EditorialLayout width="narrow">
         {/* ── Was die Forschung zeigt ── */}
         <EditorialSectionBlock
           label="Forschung"

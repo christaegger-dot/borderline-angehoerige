@@ -64,7 +64,7 @@ export function EditorialSection({ variant, children }: EditorialSectionProps) {
 
   return (
     <section
-      className="editorial-section px-[var(--container-pad)] py-20 md:px-[var(--container-pad-md)] md:py-[120px]"
+      className="editorial-section px-[var(--container-pad)] py-12 md:px-[var(--container-pad-md)] md:py-20"
       style={{ background: VARIANT_BG[variant] }}
       data-variant={variant}
     >

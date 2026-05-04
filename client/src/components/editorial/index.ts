@@ -1,5 +1,10 @@
 export { EditorialLayout } from "./EditorialLayout";
 export { EditorialSectionBlock } from "./EditorialSectionBlock";
+export {
+  EditorialSection,
+  type EditorialSectionVariant,
+  type EditorialSectionAsideBackground,
+} from "./EditorialSection";
 export { EditorialProse } from "./EditorialProse";
 export { EditorialPullQuote } from "./EditorialPullQuote";
 export { EditorialFootnotes, type Footnote } from "./EditorialFootnotes";

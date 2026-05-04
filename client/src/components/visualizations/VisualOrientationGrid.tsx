@@ -85,14 +85,14 @@ export function VisualOrientationGrid() {
                     style={{
                       borderColor: "var(--rule-color)",
                       background: "var(--bg-elevated)",
-                      aspectRatio: "600 / 848",
+                      aspectRatio: `600 / ${tile.thumbnailHeight}`,
                     }}
                   >
                     <img
                       src={tile.thumbnailUrl}
                       alt={tile.alt}
                       width={600}
-                      height={848}
+                      height={tile.thumbnailHeight}
                       loading="lazy"
                       decoding="async"
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"

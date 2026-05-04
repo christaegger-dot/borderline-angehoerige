@@ -1,9 +1,6 @@
 import type { ReactNode } from "react";
 
-export type EditorialColorBlockVariant =
-  | "aubergine"
-  | "sage-wash"
-  | "cream-deep";
+export type EditorialColorBlockVariant = "sage-wash" | "cream-deep";
 
 interface EditorialColorBlockProps {
   /** Farbflächen-Variant — bestimmt Hintergrund und Text-Overrides */
@@ -18,21 +15,16 @@ interface EditorialColorBlockProps {
 }
 
 /**
- * Vollflächige Akzent-Sektion (bricht aus der Lese-Spalte aus). Setzt für
- * dunkle Variants (aubergine) explizite Hex-Farben auf eyebrow/title via
- * Inline-Style — kein `var()`-Token, kein `inherit`. Damit ist die
- * Spezifizitäts-Falle (globale `h2.display { color: var(--fg-primary) }`)
- * nicht aktiv: Inline-Styles haben höhere Spezifität als jede Klassen-Regel.
+ * Vollflächige Akzent-Sektion auf hellem Hintergrund (sage-wash, cream-deep).
  *
- * Für Children-Text-Elemente (Prose, Drop-Cap, Links) hängen passende
- * scoped CSS-Regeln in `index.css` (Suffix `editorial-color-block-content--*`).
+ * Aubergine-Variante wurde in Phase 1.5 nach EditorialSection migriert
+ * (PR #394 + Schritt-6-Cleanup #397). Diese Komponente bedient nur noch
+ * die helleren Variants — H2/Eyebrow nutzen Default-Tokens (dunkler Text
+ * auf hellem Cream/Sage-Wash-Hintergrund), keine WCAG-Hex-Overrides nötig.
  *
- * TODO (Phase 1.5 / Schritt 6 Konsolidierung): Variant `aubergine` wird
- * nicht mehr genutzt — die Aubergine-Sektion auf der Home läuft jetzt
- * über `EditorialSection variant="aubergine"`. Variant aus dem Union-Type
- * entfernen + zugehörige scoped CSS in index.css aufräumen, sobald
- * auch `sage-wash`/`cream-deep` migriert sind oder explizit als Legacy
- * akzeptiert werden.
+ * Zukünftige Migration: Testimonial-Sektion auf Home (einziger Konsument
+ * von sage-wash) auf EditorialSection umstellen, dann diese Komponente
+ * komplett entfernen.
  */
 export function EditorialColorBlock({
   variant,
@@ -94,12 +86,6 @@ const VARIANT_STYLES: Record<
     contentClass: string;
   }
 > = {
-  aubergine: {
-    bg: "#5b3a4e",
-    label: "#d6c8be",
-    title: "#f5ece6",
-    contentClass: "editorial-color-block-content--aubergine",
-  },
   "sage-wash": {
     bg: "#eef0ea",
     label: "#4f6b5e",

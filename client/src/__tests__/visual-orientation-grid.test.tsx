@@ -73,9 +73,14 @@ describe("VisualOrientationGrid", () => {
     renderGrid();
     const images = screen.getAllByRole("img");
     expect(images).toHaveLength(8);
+    const validHeights = new Set(["803", "848", "855"]);
     images.forEach(img => {
       expect(img.getAttribute("width")).toBe("600");
-      expect(img.getAttribute("height")).toBe("848");
+      // Height kommt jetzt per-Tile aus homeFeaturedInfografiken
+      // (verhindert image-aspect-ratio-Mismatch — Lighthouse-Befund Phase 1.5)
+      const height = img.getAttribute("height");
+      expect(height).not.toBeNull();
+      expect(validHeights.has(height!)).toBe(true);
       expect(img.getAttribute("loading")).toBe("lazy");
     });
   });

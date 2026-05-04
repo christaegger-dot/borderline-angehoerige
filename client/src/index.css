@@ -400,34 +400,6 @@
     color: var(--accent-primary-h);
   }
 
-  /* ── Editorial Color Block — Aubergine ──
-     Explizite Hex-Farben für alle Text-Elemente auf dunklem Hintergrund.
-     Variable-Overrides nur dort, wo Child-Komponenten inline `var()` nutzen
-     und nicht direkt erreichbar sind (Footnotes-Border + Footnotes-Text).
-     WCAG: H2 8.0:1 AAA / Lede 7.5:1 AAA / Footnote 6.0:1 AA / Eyebrow 5.5:1 AA */
-  .editorial-color-block-content--aubergine {
-    --fg-tertiary: #e2d4cb;
-    --rule-color: rgba(245, 236, 230, 0.18);
-  }
-  .editorial-color-block-content--aubergine .editorial-prose {
-    color: #f0e5db;
-  }
-  .editorial-color-block-content--aubergine .editorial-prose a {
-    color: #f5ece6;
-    text-decoration-color: #f5ece6;
-  }
-  .editorial-color-block-content--aubergine .editorial-prose a:hover {
-    color: #ffffff;
-  }
-  .editorial-color-block-content--aubergine .editorial-prose strong {
-    color: #f5ece6;
-  }
-  .editorial-color-block-content--aubergine
-    .editorial-prose-dropcap
-    > p:first-child::first-letter {
-    color: #f5ece6;
-  }
-
   /* ── Editorial Pull-Quote — Testimonial-Variant ──
      Zentrierter Display-Pull-Quote mit «»-Anführungszeichen in Aubergine
      via Pseudo-Elemente. Explizite Hex-Farbe (analog Color-Block-Pattern). */
@@ -444,8 +416,9 @@
 
   /* ── Editorial Section — Aubergine-Variant Text-Overrides ──
      Explizite Hex-Farben für alle Text-Elemente auf dunklem Aubergine-
-     Hintergrund (analog zur Logik in editorial-color-block-content--aubergine,
-     migriert für die EditorialSection-Hülle).
+     Hintergrund. Single source of truth für Aubergine-Sektionen
+     (EditorialColorBlock variant="aubergine" wurde in Phase 1.5
+     entfernt — Cleanup PR #397).
      WCAG: H2 8.0:1 AAA / Lede 7.5:1 AAA / Footnote 6.0:1 AA / Eyebrow 5.5:1 AA */
   .editorial-section[data-variant="aubergine"] {
     --fg-tertiary: #e2d4cb;

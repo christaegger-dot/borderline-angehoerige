@@ -160,7 +160,7 @@ export default function VerstehenMaterialsSection() {
 
           <div
             ref={gridRef}
-            className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+            className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 min-[1100px]:grid-cols-3"
           >
             {filteredItems.map(item => {
               const textVersionHref = getHandoutTextVersionHrefBySource(

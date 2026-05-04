@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { EditorialSection } from "./EditorialSection";
 
 export interface EditorialHeroMetaItem {
   label: string;
@@ -14,18 +15,20 @@ interface EditorialHeroProps {
   lede?: ReactNode;
   /** Optionale Meta-Zeilen mit Hairline-Trenner — z.B. «Fachlich geprüft · 30.04.2026» */
   meta?: EditorialHeroMetaItem[];
-  /** Visueller Anker rechts (xl 2-Spalten), z.B. <HeroLeuchtturmIllustration /> */
+  /** Visueller Anker rechts (Aside-Spalte), z.B. <HeroLeuchtturmIllustration /> */
   illustrationSlot?: ReactNode;
 }
 
 /**
- * Editorial Hero mit asymmetrischem 2-Spalten-Grid (1.2fr / 1fr) und
- * Hero-typografie (`--text-hero`). Auf Mobile/Tablet einspaltig — Illustration
- * unter dem Text.
+ * Editorial Hero auf Basis der EditorialSection-Hülle (Phase 1.5).
  *
- * Bricht aus der EditorialLayout-Lese-Spalte aus: eigener Wrapper mit
- * Container-Padding und max-width 1240px. Wird in Pages **vor** dem
- * EditorialLayout-Block gerendert.
+ * Body trägt eyebrow / H1 / lede / optionale Meta-Zeile. Wenn ein
+ * illustrationSlot gesetzt ist, sitzt er in der Aside-Spalte rechtsbündig
+ * (margin-left: auto, max-width 560 px, height fills body).
+ *
+ * Public-API unverändert seit PR #391 — Pages müssen nicht angepasst
+ * werden. Layout darunter migriert von eigenem 2-Spalten-Grid (1.2fr/1fr)
+ * zu Standard EditorialSection (200px / 608px / 1fr).
  */
 export function EditorialHero({
   eyebrow,
@@ -35,83 +38,80 @@ export function EditorialHero({
   illustrationSlot,
 }: EditorialHeroProps) {
   return (
-    <section
-      className="bg-[var(--bg-primary)] px-[var(--container-pad)] pt-[var(--space-5)] pb-[var(--space-7)] md:px-[var(--container-pad-md)] md:pt-[var(--space-6)] md:pb-[var(--space-8)]"
-      aria-label="Seiten-Hero"
-    >
-      <div className="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-12 md:grid-cols-[1.2fr_1fr] md:gap-20">
-        <div>
-          {eyebrow && (
-            <span
-              className="block text-xs font-medium uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                marginBottom: "var(--space-5)",
-              }}
-            >
-              {eyebrow}
-            </span>
-          )}
-          <h1
-            className="font-display"
+    <EditorialSection variant="cream">
+      <EditorialSection.Body>
+        {eyebrow && (
+          <span
+            className="block text-xs font-medium uppercase"
             style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
               marginBottom: "var(--space-5)",
             }}
           >
-            {title}
-          </h1>
-          {lede && (
-            <p
-              className="max-w-[30em]"
-              style={{
-                fontSize: "1.375rem",
-                lineHeight: "var(--lh-snug)",
-                color: "var(--fg-secondary)",
-              }}
-            >
-              {lede}
-            </p>
-          )}
-          {meta && meta.length > 0 && (
-            <dl
-              className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t pt-6 text-[13px]"
-              style={{
-                borderColor: "var(--rule-color)",
-                color: "var(--fg-tertiary)",
-              }}
-            >
-              {meta.map(item => (
-                <div key={item.label} className="flex items-baseline gap-1.5">
-                  <dt
-                    className="font-medium"
-                    style={{ color: "var(--fg-primary)" }}
-                  >
-                    {item.label}
-                  </dt>
-                  <dd>· {item.value}</dd>
-                </div>
-              ))}
-            </dl>
-          )}
-        </div>
+            {eyebrow}
+          </span>
+        )}
+        <h1
+          className="font-display"
+          style={{
+            fontSize: "var(--text-hero)",
+            lineHeight: "var(--lh-tight)",
+            letterSpacing: "var(--tracking-tight)",
+            color: "var(--fg-primary)",
+            fontWeight: "var(--weight-display)",
+            marginBottom: "var(--space-5)",
+          }}
+        >
+          {title}
+        </h1>
+        {lede && (
+          <p
+            className="max-w-[30em]"
+            style={{
+              fontSize: "1.375rem",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            {lede}
+          </p>
+        )}
+        {meta && meta.length > 0 && (
+          <dl
+            className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t pt-6 text-[13px]"
+            style={{
+              borderColor: "var(--rule-color)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            {meta.map(item => (
+              <div key={item.label} className="flex items-baseline gap-1.5">
+                <dt
+                  className="font-medium"
+                  style={{ color: "var(--fg-primary)" }}
+                >
+                  {item.label}
+                </dt>
+                <dd>· {item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </EditorialSection.Body>
 
-        {illustrationSlot && (
+      {illustrationSlot && (
+        <EditorialSection.Aside>
           <div
-            className="aspect-square w-full max-w-[520px] md:ml-auto"
+            className="ml-auto flex h-full w-full max-w-[560px] items-center"
             style={{
               filter: "drop-shadow(0 8px 24px rgba(91, 58, 78, 0.12))",
             }}
           >
             {illustrationSlot}
           </div>
-        )}
-      </div>
-    </section>
+        </EditorialSection.Aside>
+      )}
+    </EditorialSection>
   );
 }

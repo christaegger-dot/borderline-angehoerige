@@ -5,6 +5,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
+  EditorialSection,
   EditorialSectionBlock,
   HeroLeuchtturmIllustration,
   TestimonialMark,
@@ -48,9 +49,37 @@ export default function Home() {
         illustrationSlot={<HeroLeuchtturmIllustration />}
       />
 
-      <EditorialLayout width="narrow">
-        {/* ── 2 Anerkennung ── */}
-        <EditorialSectionBlock label="Anerkennung">
+      {/* ── 2 Anerkennung ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Zwischen zwei Polen
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Anerkennung
+          </p>
           <EditorialProse>
             <p>
               Sie fragen sich seit Jahren, ob das, was Sie erleben, Krankheit
@@ -65,8 +94,8 @@ export default function Home() {
               das nicht mehr aus» – manchmal innerhalb derselben Stunde.
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
-      </EditorialLayout>
+        </EditorialSection.Body>
+      </EditorialSection>
 
       {/* ── 3 Kerngedanke ── vollflächige Aubergine-Sektion */}
       <EditorialColorBlock

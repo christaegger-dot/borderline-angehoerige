@@ -1,14 +1,7 @@
 import { useRef, useState } from "react";
-import {
-  ExternalLink,
-  FileText,
-  Filter,
-  Heart,
-  MessageCircle,
-  ShieldAlert,
-} from "lucide-react";
+import { ExternalLink, FileText } from "lucide-react";
 import { Link } from "wouter";
-import { EditorialProse, EditorialSectionBlock } from "@/components/editorial";
+import { EditorialSection } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   kommItems,
@@ -17,25 +10,6 @@ import {
 } from "@/content/kommunizieren";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
-
-function CategoryIcon({
-  icon,
-}: {
-  icon: "filter" | "heart" | "shield-alert" | "message-circle";
-}) {
-  if (icon === "heart") {
-    return <Heart className="h-4 w-4 text-[color:var(--accent-label)]" />;
-  }
-  if (icon === "shield-alert") {
-    return <ShieldAlert className="h-4 w-4 text-[color:var(--accent-label)]" />;
-  }
-  if (icon === "message-circle") {
-    return (
-      <MessageCircle className="h-4 w-4 text-[color:var(--accent-label)]" />
-    );
-  }
-  return <Filter className="h-4 w-4 text-[color:var(--accent-label)]" />;
-}
 
 const labelStyle = {
   fontSize: "var(--text-xs)",
@@ -76,134 +50,189 @@ export default function KommunizierenMaterialsSection() {
   };
 
   return (
-    <EditorialSectionBlock
-      label="Materialien"
-      title="Spickzettel & Infografiken"
-      rule
-    >
-      <EditorialProse>
-        <p>
-          Diese Materialien verdichten Gesprächstechniken, Deeskalation und
-          konkrete Formulierungen. Wenn verfügbar, führt «Textversion lesen» zur
-          lesbaren Web-Version. «PDF öffnen» öffnet die A4-Druckversion im neuen
-          Tab.
-        </p>
-      </EditorialProse>
+    <>
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Materialien zum Vertiefen
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Materialien
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Spickzettel & Infografiken
+          </h2>
+          <p
+            className="max-w-[36em]"
+            style={{
+              fontSize: "var(--text-md)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Diese Materialien verdichten Gesprächstechniken, Deeskalation und
+            konkrete Formulierungen. Wenn verfügbar, führt «Textversion lesen»
+            zur lesbaren Web-Version. «PDF öffnen» öffnet die A4-Druckversion im
+            neuen Tab.
+          </p>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-      <div
-        className="mt-6 flex flex-wrap gap-2 overflow-x-auto pb-3 -mx-4 px-4 md:mx-0 md:px-0"
-        role="group"
-        aria-label="Filter Kommunikations-Materialien"
+      <section
+        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
+        aria-label="Materialien zum Vertiefen — Filter und Tile-Liste"
       >
-        {kommSubcategories.map(category => {
-          const count =
-            category.id === "alle"
-              ? kommItems.length
-              : kommItems.filter(item => item.category === category.id).length;
+        <div className="mx-auto max-w-[1240px]">
+          <div
+            className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
+            role="tablist"
+            aria-label="Filter Kommunikations-Materialien"
+          >
+            {kommSubcategories.map(category => {
+              const count =
+                category.id === "alle"
+                  ? kommItems.length
+                  : kommItems.filter(item => item.category === category.id)
+                      .length;
 
-          return (
-            <EditorialPillButton
-              key={category.id}
-              variant="filter"
-              selected={activeFilter === category.id}
-              onClick={() => {
-                setActiveFilter(category.id);
-                scrollToResults();
-              }}
-              className="inline-flex items-center gap-1.5"
-            >
-              <CategoryIcon icon={category.icon} />
-              <span>{category.label}</span>
-              <span style={{ fontSize: "var(--text-xs)" }}>({count})</span>
-            </EditorialPillButton>
-          );
-        })}
-      </div>
-
-      <div
-        ref={gridRef}
-        className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2"
-      >
-        {filteredItems.map(item => {
-          const textVersionHref = getHandoutTextVersionHrefBySource(
-            item.pdfUrl
-          );
-          const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
-
-          return (
-            <article
-              key={item.title}
-              className={`${filteredItems.length > 1 && filteredItems[0]?.title === item.title ? "sm:col-span-2" : ""} space-y-3 border-t pt-6`}
-              style={{ borderColor: "var(--rule-color)" }}
-            >
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${item.title} – Vorschau öffnen`}
-                className="block overflow-hidden rounded-sm"
-                style={{ backgroundColor: "var(--bg-elevated)" }}
-              >
-                <img
-                  src={item.thumbnailUrl ?? item.url}
-                  alt={item.title}
-                  className="aspect-[4/3] w-full object-cover object-top"
-                  loading="lazy"
-                  width={600}
-                  height={848}
-                  decoding="async"
-                />
-              </a>
-
-              <p className="uppercase" style={labelStyle}>
-                {categoryLabel(item.category)}
-              </p>
-              <h3 style={entryTitleStyle}>{item.title}</h3>
-              <p style={bodyStyle}>{item.description}</p>
-
-              <p
-                className="flex flex-wrap gap-x-5 gap-y-1 pt-1"
-                style={{ fontSize: "var(--text-sm)" }}
-              >
-                {textVersionHref ? (
-                  <Link
-                    href={textVersionHref}
-                    aria-label={`Textversion lesen: ${item.title}`}
-                    className="editorial-link"
-                  >
-                    <span className="inline-flex items-center gap-1.5">
-                      <FileText className="h-4 w-4" />
-                      Textversion lesen
-                    </span>
-                  </Link>
-                ) : null}
-                <a
-                  href={pdfHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                  className="editorial-link"
+              return (
+                <EditorialPillButton
+                  key={category.id}
+                  variant="filter"
+                  selected={activeFilter === category.id}
+                  onClick={() => {
+                    setActiveFilter(category.id);
+                    scrollToResults();
+                  }}
                 >
-                  <span className="inline-flex items-center gap-1.5">
-                    <ExternalLink className="h-4 w-4" />
-                    PDF öffnen
+                  <span>{category.label}</span>
+                  <span aria-hidden="true" className="mx-2.5 opacity-50">
+                    ·
                   </span>
-                </a>
-              </p>
-            </article>
-          );
-        })}
-      </div>
+                  <span className="opacity-70">{count}</span>
+                </EditorialPillButton>
+              );
+            })}
+          </div>
 
-      <p
-        className="mt-8 flex flex-wrap gap-x-5 gap-y-1"
-        style={{ fontSize: "var(--text-sm)" }}
-      >
-        <Link href="/materialien" className="editorial-link">
-          Alle Materialien ansehen
-        </Link>
-      </p>
-    </EditorialSectionBlock>
+          <div
+            ref={gridRef}
+            className="mt-8 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 xl:grid-cols-3"
+          >
+            {filteredItems.map(item => {
+              const textVersionHref = getHandoutTextVersionHrefBySource(
+                item.pdfUrl
+              );
+              const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
+
+              return (
+                <article
+                  key={item.title}
+                  className="space-y-3 border-t pt-6"
+                  style={{ borderColor: "var(--rule-color)" }}
+                >
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${item.title} – Vorschau öffnen`}
+                    className="block overflow-hidden rounded-sm"
+                    style={{ backgroundColor: "var(--bg-elevated)" }}
+                  >
+                    <img
+                      src={item.thumbnailUrl ?? item.url}
+                      alt={item.title}
+                      className="aspect-[4/3] w-full object-cover object-top"
+                      loading="lazy"
+                      width={600}
+                      height={848}
+                      decoding="async"
+                    />
+                  </a>
+
+                  <p className="uppercase" style={labelStyle}>
+                    {categoryLabel(item.category)}
+                  </p>
+                  <h3 style={entryTitleStyle}>{item.title}</h3>
+                  <p style={bodyStyle}>{item.description}</p>
+
+                  <p
+                    className="flex flex-wrap gap-x-5 gap-y-1 pt-1"
+                    style={{ fontSize: "var(--text-sm)" }}
+                  >
+                    {textVersionHref ? (
+                      <Link
+                        href={textVersionHref}
+                        aria-label={`Textversion lesen: ${item.title}`}
+                        className="editorial-link"
+                      >
+                        <span className="inline-flex items-center gap-1.5">
+                          <FileText className="h-4 w-4" />
+                          Textversion lesen
+                        </span>
+                      </Link>
+                    ) : null}
+                    <a
+                      href={pdfHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                      className="editorial-link"
+                    >
+                      <span className="inline-flex items-center gap-1.5">
+                        <ExternalLink className="h-4 w-4" />
+                        PDF öffnen
+                      </span>
+                    </a>
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+
+          <p
+            className="mt-12 flex flex-wrap gap-x-5 gap-y-1"
+            style={{ fontSize: "var(--text-sm)" }}
+          >
+            <Link href="/materialien" className="editorial-link">
+              Alle Materialien ansehen
+            </Link>
+          </p>
+        </div>
+      </section>
+    </>
   );
 }
 

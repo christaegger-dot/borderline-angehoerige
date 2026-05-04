@@ -1,11 +1,6 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
-import {
-  EditorialLayout,
-  EditorialProse,
-  EditorialSection,
-  EditorialSectionBlock,
-} from "@/components/editorial";
+import { EditorialProse, EditorialSection } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { EisbergIllustration } from "@/components/illustrations";
 import Layout from "@/components/Layout";
@@ -844,9 +839,26 @@ export default function Verstehen() {
 
       <VerstehenMaterialsSection />
 
-      <EditorialLayout width="narrow">
-        {/* ── Schluss-Sektion: Übergang zu Unterstützen ── */}
-        <EditorialSectionBlock label="Weiter" rule>
+      {/* ── 6 Weiter-Hinweis ── EditorialSection mit «Weiter»-MarginNote */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Weiter
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <EditorialProse>
             <p>
               Wenn Sie Dynamiken besser einordnen können, wird oft klarer, wie
@@ -860,31 +872,53 @@ export default function Verstehen() {
               .
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        <RelatedLinksEditorial
-          links={[
-            {
-              href: "/unterstuetzen/uebersicht",
-              title: "Unterstützen",
-              description:
-                "Wie Sie konkret helfen können, ohne sich selbst zu verlieren – Alltag, Krise und Therapie.",
-            },
-            {
-              href: "/kommunizieren",
-              title: "Kommunizieren",
-              description:
-                "Gesprächsführung in belasteten Situationen: Deeskalation, Grenzsätze und die DEAR-Technik.",
-            },
-            {
-              href: "/selbsttest",
-              title: "Selbsttest: Wie belastet bin ich?",
-              description:
-                "Kurze Einschätzung Ihrer eigenen Belastung – als erster Orientierungsschritt.",
-            },
-          ]}
-        />
-      </EditorialLayout>
+      {/* ── 7 Querverweise ── EditorialSection variant="cream-deep" */}
+      <EditorialSection variant="cream-deep">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Weiterführen
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <RelatedLinksEditorial
+            links={[
+              {
+                href: "/unterstuetzen/uebersicht",
+                title: "Unterstützen",
+                description:
+                  "Wie Sie konkret helfen können, ohne sich selbst zu verlieren – Alltag, Krise und Therapie.",
+              },
+              {
+                href: "/kommunizieren",
+                title: "Kommunizieren",
+                description:
+                  "Gesprächsführung in belasteten Situationen: Deeskalation, Grenzsätze und die DEAR-Technik.",
+              },
+              {
+                href: "/selbsttest",
+                title: "Selbsttest: Wie belastet bin ich?",
+                description:
+                  "Kurze Einschätzung Ihrer eigenen Belastung – als erster Orientierungsschritt.",
+              },
+            ]}
+          />
+        </EditorialSection.Body>
+      </EditorialSection>
     </Layout>
   );
 }

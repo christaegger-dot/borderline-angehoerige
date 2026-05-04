@@ -9,3 +9,8 @@ export {
   EditorialColorBlock,
   type EditorialColorBlockVariant,
 } from "./EditorialColorBlock";
+export {
+  EditorialOrnament,
+  type EditorialOrnamentVariant,
+} from "./EditorialOrnament";
+export { TestimonialMark } from "./TestimonialMark";

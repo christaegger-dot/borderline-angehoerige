@@ -4,8 +4,10 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
+  EditorialSection,
   EditorialSectionBlock,
 } from "@/components/editorial";
+import { InnenraeumeIllustration } from "@/components/illustrations";
 import GrenzenCheck from "@/components/interactive/GrenzenCheck";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -132,32 +134,47 @@ export default function Grenzen() {
       />
       <TableOfContents />
 
-      <EditorialLayout width="narrow">
-        {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+      {/* ── 1 Hero ── EditorialSection mit InnenraeumeIllustration als Aside */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.4,
+            }}
+          >
+            Grenze und Beziehung
+          </span>
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <p
             className="text-xs uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
               fontWeight: 500,
+              marginBottom: "var(--space-5)",
             }}
           >
             Grenzen
           </p>
           <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            className="font-display"
             style={{
+              fontSize: "var(--text-hero)",
               lineHeight: "var(--lh-tight)",
               letterSpacing: "var(--tracking-tight)",
               color: "var(--fg-primary)",
               fontWeight: "var(--weight-display)",
+              marginBottom: "var(--space-5)",
             }}
           >
-            Grenzen <em>setzen</em>
+            Grenzen <em>setzen</em>, ohne die Beziehung aufzugeben.
           </h1>
           <p
-            className="mt-6"
+            className="max-w-[30em]"
             style={{
               fontSize: "var(--text-lg)",
               lineHeight: "var(--lh-snug)",
@@ -170,24 +187,76 @@ export default function Grenzen() {
             kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau
             deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
           </p>
-          <p
-            className="mt-4"
+          <div
+            className="mt-8 border-t pt-3"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p
+              className="text-xs uppercase"
+              style={{
+                color: "var(--accent-label)",
+                letterSpacing: "var(--tracking-caps)",
+                fontWeight: 500,
+              }}
+            >
+              Vollständig ca. 12 Min · Auch abschnittweise lesbar
+            </p>
+            <LastVerifiedBadge path="/grenzen" className="mt-3" />
+            <ReviewBadge path="/grenzen" />
+          </div>
+        </EditorialSection.Body>
+        <EditorialSection.Aside>
+          <InnenraeumeIllustration
+            ariaLabel="Zwei Räume, die sich respektieren — durch eine durchlässige Membran getrennt, nicht durch eine Mauer."
+            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+          />
+        </EditorialSection.Aside>
+      </EditorialSection>
+
+      {/* ── 2 Intro: Was auf dieser Seite besonders wichtig ist ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
             style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
             }}
           >
-            Vollständig ca. 12 Min · Auch abschnittweise lesbar.
+            Kernfrage
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Überblick
           </p>
-          <LastVerifiedBadge path="/grenzen" className="mt-6" />
-          <ReviewBadge path="/grenzen" />
-        </header>
-
-        {/* ── Intro: Was auf dieser Seite besonders wichtig ist (Variante A) ── */}
-        <EditorialSectionBlock
-          label="Überblick"
-          title="Was auf dieser Seite besonders wichtig ist"
-        >
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Was auf dieser Seite besonders wichtig ist
+          </h2>
           <EditorialProse>
             <p>
               Diese Seite hilft Ihnen, Grenzen nicht als Härte, sondern als
@@ -257,8 +326,10 @@ export default function Grenzen() {
               Regeneration geht.
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
+      <EditorialLayout width="narrow">
         {/* ── ContentSection 1: warnsignale ── */}
         <ContentSection
           variant="editorial"

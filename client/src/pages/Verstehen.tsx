@@ -3,7 +3,6 @@ import ContentSection from "@/components/ContentSection";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialPullQuote,
   EditorialSection,
   EditorialSectionBlock,
 } from "@/components/editorial";
@@ -131,12 +130,50 @@ export default function Verstehen() {
         </EditorialSection.Aside>
       </EditorialSection>
 
-      <EditorialLayout width="narrow">
-        {/* ── Intro: Worum es hier vor allem geht (Variante A) ── */}
-        <EditorialSectionBlock
-          label="Überblick"
-          title="Worum es hier vor allem geht"
-        >
+      {/* ── 2 Worum es hier vor allem geht ── EditorialSection mit Kernthema-MarginNote */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Kernthema
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Überblick
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Worum es hier vor allem geht
+          </h2>
           <EditorialProse>
             <p>
               Diese Seite erklärt Borderline nicht als Etikett, sondern als
@@ -182,18 +219,61 @@ export default function Verstehen() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── Pull-Quote ── */}
-        <EditorialSectionBlock rule>
-          <EditorialPullQuote cite="— Eine Angehörige (Kompositum, keine reale Person)">
-            «Verstehen hat mir nicht alles leichter gemacht. Aber ich habe
+      {/* ── 3 Pull-Quote ── inline, typografisch aufgewertet als Lese-Pause */}
+      <EditorialSection variant="cream">
+        <EditorialSection.Body>
+          <blockquote
+            className="font-display italic"
+            style={{
+              fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
+              lineHeight: 1.4,
+              color: "var(--accent-primary)",
+              paddingTop: "var(--space-7)",
+              paddingBottom: "var(--space-3)",
+              fontWeight: 400,
+              maxWidth: "32em",
+            }}
+          >
+            <span
+              aria-hidden="true"
+              style={{
+                color: "rgba(91, 58, 78, 0.25)",
+                marginRight: "0.05em",
+              }}
+            >
+              «
+            </span>
+            Verstehen hat mir nicht alles leichter gemacht. Aber ich habe
             aufgehört, jede Eskalation nur als Bosheit, jede Distanz nur als
             Ablehnung und jede Krise nur als mein persönliches Versagen zu
-            lesen.»
-          </EditorialPullQuote>
-        </EditorialSectionBlock>
+            lesen.
+            <span
+              aria-hidden="true"
+              style={{
+                color: "rgba(91, 58, 78, 0.25)",
+                marginLeft: "0.05em",
+              }}
+            >
+              »
+            </span>
+          </blockquote>
+          <p
+            className="mt-5 italic"
+            style={{
+              fontSize: "var(--text-sm)",
+              color: "var(--fg-tertiary)",
+              paddingBottom: "var(--space-7)",
+            }}
+          >
+            — Eine Angehörige (Kompositum, keine reale Person)
+          </p>
+        </EditorialSection.Body>
+      </EditorialSection>
 
+      <EditorialLayout width="narrow">
         {/* ── ContentSection × 6 (editorial variant) ── */}
         <ContentSection
           variant="editorial"

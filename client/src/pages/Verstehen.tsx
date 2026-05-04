@@ -886,7 +886,7 @@ export default function Verstehen() {
               lineHeight: 1.3,
             }}
           >
-            Weiterführen
+            Verwandt
           </span>
           <div
             aria-hidden="true"

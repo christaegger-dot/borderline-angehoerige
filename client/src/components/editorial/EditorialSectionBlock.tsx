@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-interface EditorialSectionProps {
+interface EditorialSectionBlockProps {
   /** Kapitälchen-Label, z.B. "ANERKENNUNG" */
   label?: string;
   /** Optional: H2-Titel der Sektion */
@@ -13,12 +13,12 @@ interface EditorialSectionProps {
   rule?: boolean;
 }
 
-export function EditorialSection({
+export function EditorialSectionBlock({
   label,
   title,
   children,
   rule = false,
-}: EditorialSectionProps) {
+}: EditorialSectionBlockProps) {
   const sectionClass = rule
     ? "mt-[var(--space-6)] pt-[var(--space-6)] space-y-[var(--space-4)] first:mt-0 first:pt-0 md:mt-[var(--space-7)] md:pt-[var(--space-7)]"
     : "mt-16 space-y-[var(--space-4)] first:mt-0 md:mt-[var(--space-8)]";

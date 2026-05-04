@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
@@ -108,16 +108,16 @@ export default function Selbstfuersorge() {
         </header>
 
         {/* ── Pull-Quote (war im Hero, jetzt eigenständig) ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialPullQuote>
             «Viele Angehörige merken erst spät, wie erschöpft sie geworden sind.
             Selbstfürsorge beginnt damit, die eigene Belastung überhaupt ernst
             zu nehmen.»
           </EditorialPullQuote>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Intro: Was auf dieser Seite besonders trägt ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was auf dieser Seite besonders trägt"
         >
@@ -175,7 +175,7 @@ export default function Selbstfuersorge() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection 1: warum-wichtig ── */}
         <ContentSection
@@ -360,17 +360,17 @@ export default function Selbstfuersorge() {
         />
 
         {/* ── Pull-Quote: «Denken Sie daran» ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialPullQuote>
             Sie sind wichtig. Ihre Gesundheit und Ihr Wohlbefinden sind wichtig.
             Indem Sie gut für sich sorgen, sorgen Sie auch besser für andere.
             Selbstfürsorge ist keine Selbstsucht – sie ist die Grundlage dafür,
             langfristig für Ihren Angehörigen da sein zu können.
           </EditorialPullQuote>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Schluss-Sektion: Übergang ── */}
-        <EditorialSection label="Weiter">
+        <EditorialSectionBlock label="Weiter">
           <EditorialProse>
             <p>
               Selbstfürsorge ist kein Soloprojekt — sie wird tragfähiger, wenn
@@ -385,7 +385,7 @@ export default function Selbstfuersorge() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

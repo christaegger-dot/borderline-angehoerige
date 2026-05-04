@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
@@ -226,7 +226,7 @@ export default function UnterstuetzenTherapie() {
         </header>
 
         {/* ── Intro: Was diese Seite bei Therapie ordnet ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was diese Seite bei Therapie ordnet"
         >
@@ -292,7 +292,7 @@ export default function UnterstuetzenTherapie() {
               der passendere Einstieg.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Visualisierung (out-of-scope) ── */}
         <RollenOrbitVisualisierung />
@@ -719,7 +719,10 @@ export default function UnterstuetzenTherapie() {
         </ContentSection>
 
         {/* ── Materialien-Block ── */}
-        <EditorialSection label="Materialien" title="Materialien zum Thema">
+        <EditorialSectionBlock
+          label="Materialien"
+          title="Materialien zum Thema"
+        >
           <EditorialProse>
             <p>
               Infografiken und Handouts zur Therapiebegleitung finden Sie
@@ -730,10 +733,10 @@ export default function UnterstuetzenTherapie() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Schluss-Sektion: Übergang ── */}
-        <EditorialSection label="Weiter" rule>
+        <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>
             <p>
               Wenn aus Therapierahmen akute Eskalation wird, geht es um{" "}
@@ -747,7 +750,7 @@ export default function UnterstuetzenTherapie() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

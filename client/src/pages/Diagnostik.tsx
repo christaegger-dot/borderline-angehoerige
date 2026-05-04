@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
@@ -179,7 +179,7 @@ export default function Diagnostik() {
         </header>
 
         {/* ── Intro / Überblick ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was Sie auf dieser Seite finden"
         >
@@ -227,7 +227,7 @@ export default function Diagnostik() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── 1: Wer stellt eine Diagnose ── */}
         <ContentSection
@@ -728,7 +728,7 @@ export default function Diagnostik() {
         </ContentSection>
 
         {/* ── Schluss-Sektion: Beratungs-Einladung ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Fachstelle"
           title="Sie müssen nicht warten, bis eine Diagnose gestellt ist"
           rule
@@ -755,7 +755,7 @@ export default function Diagnostik() {
               {fachstelleEmail.adresse}
             </a>
           </div>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── RelatedLinks ── */}
         <RelatedLinksEditorial

@@ -1,7 +1,7 @@
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -67,7 +67,7 @@ export default function Feedback() {
           </p>
         </header>
 
-        <EditorialSection label="Kontakt" title="Schreiben Sie uns">
+        <EditorialSectionBlock label="Kontakt" title="Schreiben Sie uns">
           <EditorialProse>
             <p>
               Rückmeldungen nehmen wir aktuell per E-Mail entgegen – ob Lob,
@@ -84,9 +84,9 @@ export default function Feedback() {
             </p>
             <p>Wir freuen uns über eine kurze Schilderung Ihres Anliegens.</p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
-        <EditorialSection
+        <EditorialSectionBlock
           label="Hilfreich"
           title="Worüber wir uns besonders freuen"
           rule
@@ -114,9 +114,9 @@ export default function Feedback() {
               </p>
             </li>
           </ol>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
-        <EditorialSection label="Zum Schluss" title="Ein Gedanke" rule>
+        <EditorialSectionBlock label="Zum Schluss" title="Ein Gedanke" rule>
           <EditorialProse>
             <p>
               Viele Angehörige gehen einen ähnlichen Weg. Ihr Engagement zeigt,
@@ -124,7 +124,7 @@ export default function Feedback() {
               Zeit nehmen, diese Website mit Ihrer Rückmeldung besser zu machen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

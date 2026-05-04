@@ -1,7 +1,7 @@
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -56,7 +56,7 @@ export default function Materialien() {
         </header>
 
         {/* ── Hinweis (vorher Sand-Card mit Eye-Icon) ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialProse>
             <p>
               Vorschau = Web-Bild. Wenn verfügbar, führt «Textversion lesen» zur
@@ -65,7 +65,7 @@ export default function Materialien() {
               im neuen Tab. Die Notfallkarte öffnet als HTML-Seite.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <MaterialienLibrarySection />
       </EditorialLayout>

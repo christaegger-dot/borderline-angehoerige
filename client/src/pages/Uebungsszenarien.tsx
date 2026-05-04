@@ -1,7 +1,7 @@
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import KommunikationsUebung from "@/components/interactive/KommunikationsUebung";
 import Layout from "@/components/Layout";
@@ -77,18 +77,18 @@ export default function Uebungsszenarien() {
           </p>
         </header>
 
-        <EditorialSection label="Praxis" title="Interaktive Szenarien">
+        <EditorialSectionBlock label="Praxis" title="Interaktive Szenarien">
           <KommunikationsUebung />
-        </EditorialSection>
+        </EditorialSectionBlock>
 
-        <EditorialSection label="Vertiefen" title="Theorie nachlesen" rule>
+        <EditorialSectionBlock label="Vertiefen" title="Theorie nachlesen" rule>
           <EditorialProse>
             <p>
               Wenn Sie die Muster hinter den Übungen vertiefen möchten, finden
               Sie hier die passenden Seiten.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

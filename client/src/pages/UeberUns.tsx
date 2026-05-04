@@ -3,7 +3,7 @@ import ContentSection from "@/components/ContentSection";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import EvidenceNote from "@/components/EvidenceNote";
@@ -144,7 +144,7 @@ export default function UeberUns() {
         </header>
 
         {/* ── Intro / Quick-Links ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was Sie auf dieser Seite finden"
         >
@@ -182,7 +182,7 @@ export default function UeberUns() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection 1: motivation ── */}
         <ContentSection
@@ -335,7 +335,7 @@ export default function UeberUns() {
         </ContentSection>
 
         {/* ── Wichtiger Hinweis ── */}
-        <EditorialSection label="Hinweis" title="Wichtiger Hinweis" rule>
+        <EditorialSectionBlock label="Hinweis" title="Wichtiger Hinweis" rule>
           <EditorialProse>
             <p>
               Diese Website ersetzt keine professionelle Beratung, Therapie oder
@@ -358,10 +358,10 @@ export default function UeberUns() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Einordnung dieser Website ── */}
-        <EditorialSection label="Transparenz" title="Einordnung">
+        <EditorialSectionBlock label="Transparenz" title="Einordnung">
           <EditorialProse>
             <p>
               Erstellt von Ch. Egger innerhalb der Fachstelle Angehörigenarbeit.
@@ -374,10 +374,14 @@ export default function UeberUns() {
               Zürich.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Feedback & Kontakt ── */}
-        <EditorialSection label="Feedback" title="Feedback &amp; Kontakt" rule>
+        <EditorialSectionBlock
+          label="Feedback"
+          title="Feedback &amp; Kontakt"
+          rule
+        >
           <EditorialProse>
             <p>
               Haben Sie Anregungen, Fragen oder möchten Sie einen Fehler melden?
@@ -388,7 +392,7 @@ export default function UeberUns() {
               — Ihre Rückmeldung hilft uns, diese Website zu verbessern.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

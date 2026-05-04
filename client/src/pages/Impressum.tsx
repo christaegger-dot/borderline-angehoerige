@@ -2,7 +2,7 @@ import ContentSection from "@/components/ContentSection";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -289,9 +289,9 @@ export default function Impressum() {
           </EditorialProse>
         </ContentSection>
 
-        <EditorialSection label="Stand" title="Aktualität" rule>
+        <EditorialSectionBlock label="Stand" title="Aktualität" rule>
           <p style={bodyStyle}>Stand: Februar 2026</p>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

@@ -1,7 +1,7 @@
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -518,7 +518,7 @@ export default function Selbsthilfegruppen() {
         </section>
 
         {/* ── Nächste Schritte ── */}
-        <EditorialSection label="Weiter" title="Nächste Schritte" rule>
+        <EditorialSectionBlock label="Weiter" title="Nächste Schritte" rule>
           <EditorialProse>
             <p>
               Nicht jede Unterstützung passt in jeder Lage. Diese drei Wege sind
@@ -543,7 +543,7 @@ export default function Selbsthilfegruppen() {
               </li>
             </ul>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
       </EditorialLayout>
     </Layout>
   );

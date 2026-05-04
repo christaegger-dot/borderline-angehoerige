@@ -3,7 +3,7 @@ import ContentSection from "@/components/ContentSection";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
@@ -392,7 +392,7 @@ export default function FAQ() {
         </header>
 
         {/* ── Hinweis (vorher Card) ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialProse>
             <p>
               Manche Fragen lassen sich nicht allgemein beantworten, weil
@@ -401,7 +401,7 @@ export default function FAQ() {
               Orientierung und holen Sie bei Bedarf zusätzliche Beratung dazu.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Kategorie-Sprungleiste ── */}
         <nav
@@ -434,7 +434,7 @@ export default function FAQ() {
           const catId = `cat-${slugify(category.title)}`;
           return (
             <section key={category.title} id={catId}>
-              <EditorialSection label="Themenfeld" title={category.title}>
+              <EditorialSectionBlock label="Themenfeld" title={category.title}>
                 <div className="mt-2">
                   {category.questions.map(faq => {
                     const faqId = `faq-${slugify(faq.question)}`;
@@ -479,7 +479,7 @@ export default function FAQ() {
                     );
                   })}
                 </div>
-              </EditorialSection>
+              </EditorialSectionBlock>
             </section>
           );
         })}
@@ -515,7 +515,7 @@ export default function FAQ() {
         </div>
 
         {/* ── Weitere Fragen ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Weiter"
           title="Ihre Frage ist nicht dabei?"
           rule
@@ -533,7 +533,7 @@ export default function FAQ() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
       </EditorialLayout>
     </Layout>
   );

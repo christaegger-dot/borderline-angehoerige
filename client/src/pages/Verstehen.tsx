@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
@@ -98,7 +98,7 @@ export default function Verstehen() {
         </header>
 
         {/* ── Intro: Worum es hier vor allem geht (Variante A) ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Worum es hier vor allem geht"
         >
@@ -147,17 +147,17 @@ export default function Verstehen() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Pull-Quote ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialPullQuote cite="— Eine Angehörige (Kompositum, keine reale Person)">
             «Verstehen hat mir nicht alles leichter gemacht. Aber ich habe
             aufgehört, jede Eskalation nur als Bosheit, jede Distanz nur als
             Ablehnung und jede Krise nur als mein persönliches Versagen zu
             lesen.»
           </EditorialPullQuote>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection × 6 (editorial variant) ── */}
         <ContentSection
@@ -700,7 +700,7 @@ export default function Verstehen() {
         <VerstehenMaterialsSection />
 
         {/* ── Schluss-Sektion: Übergang zu Unterstützen ── */}
-        <EditorialSection label="Weiter" rule>
+        <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>
             <p>
               Wenn Sie Dynamiken besser einordnen können, wird oft klarer, wie
@@ -714,7 +714,7 @@ export default function Verstehen() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
@@ -148,7 +148,7 @@ export default function Begleiterkrankungen() {
         </header>
 
         {/* ── Intro / Überblick ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was Sie auf dieser Seite finden"
         >
@@ -195,7 +195,7 @@ export default function Begleiterkrankungen() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── 1: Was Komorbidität bedeutet ── */}
         <ContentSection
@@ -535,7 +535,7 @@ export default function Begleiterkrankungen() {
         </ContentSection>
 
         {/* ── Schluss-Sektion: Beratungs-Einladung ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Fachstelle"
           title="Sie müssen nicht warten, bis sich die Lage klärt"
           rule
@@ -562,7 +562,7 @@ export default function Begleiterkrankungen() {
               {fachstelleEmail.adresse}
             </a>
           </div>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── RelatedLinks ── */}
         <RelatedLinksEditorial

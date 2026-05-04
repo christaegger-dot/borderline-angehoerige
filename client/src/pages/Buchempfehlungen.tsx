@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -407,7 +407,7 @@ export default function Buchempfehlungen() {
         </div>
 
         {/* ── Hinweis ── */}
-        <EditorialSection label="Hinweis" title="Zu den Empfehlungen" rule>
+        <EditorialSectionBlock label="Hinweis" title="Zu den Empfehlungen" rule>
           <EditorialProse>
             <p>
               Diese Liste ist eine persönliche Auswahl und erhebt keinen
@@ -420,7 +420,7 @@ export default function Buchempfehlungen() {
               die Fernleihe bestellt werden.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
       </EditorialLayout>
     </Layout>
   );

@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { BookOpen, Brain, FileText, Filter, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
-import { EditorialProse, EditorialSection } from "@/components/editorial";
+import { EditorialProse, EditorialSectionBlock } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   verstehenInfografiken,
@@ -72,7 +72,7 @@ export default function VerstehenMaterialsSection() {
   };
 
   return (
-    <EditorialSection
+    <EditorialSectionBlock
       label="Materialien"
       title="Materialien zum Vertiefen"
       rule
@@ -197,6 +197,6 @@ export default function VerstehenMaterialsSection() {
           Warum Textversionen hilfreich sind
         </Link>
       </p>
-    </EditorialSection>
+    </EditorialSectionBlock>
   );
 }

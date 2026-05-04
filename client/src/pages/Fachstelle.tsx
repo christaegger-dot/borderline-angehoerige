@@ -1,7 +1,7 @@
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -118,7 +118,7 @@ export default function Fachstelle() {
         </header>
 
         {/* ── Unser Angebot ── */}
-        <EditorialSection label="Leistungen" title="Unser Angebot">
+        <EditorialSectionBlock label="Leistungen" title="Unser Angebot">
           <EditorialProse>
             <p>
               Die Fachstelle ist kein Krisendienst und keine Therapie. Sie ist
@@ -136,10 +136,13 @@ export default function Fachstelle() {
               </li>
             ))}
           </ul>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Kontakt aufnehmen (Pattern wie Home-Section 6) ── */}
-        <EditorialSection label="Direkt erreichen" title="Kontakt aufnehmen">
+        <EditorialSectionBlock
+          label="Direkt erreichen"
+          title="Kontakt aufnehmen"
+        >
           <EditorialProse>
             <p>
               Fachstelle Angehörigenarbeit, Psychiatrische Universitätsklinik
@@ -208,10 +211,13 @@ export default function Fachstelle() {
               </p>
             </dd>
           </dl>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Einordnung dieser Website ── */}
-        <EditorialSection label="Transparenz" title="Einordnung dieser Website">
+        <EditorialSectionBlock
+          label="Transparenz"
+          title="Einordnung dieser Website"
+        >
           <EditorialProse>
             <p>
               Diese Website wurde von Ch. Egger innerhalb der Fachstelle
@@ -224,7 +230,7 @@ export default function Fachstelle() {
               Kommunikationskanal der PUK Zürich.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

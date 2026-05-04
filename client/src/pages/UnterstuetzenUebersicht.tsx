@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -109,7 +109,7 @@ export default function UnterstuetzenUebersicht() {
         </header>
 
         {/* ── Intro: Was auf dieser Seite besonders trägt ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was auf dieser Seite besonders trägt"
         >
@@ -158,7 +158,7 @@ export default function UnterstuetzenUebersicht() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection 1: unterstuetzung-ist-begrenzt ── */}
         <ContentSection
@@ -258,7 +258,10 @@ export default function UnterstuetzenUebersicht() {
         </ContentSection>
 
         {/* ── Modul-Navigation: Alltag / Krise / Therapie ── */}
-        <EditorialSection label="Vertiefen" title="Was möchten Sie vertiefen?">
+        <EditorialSectionBlock
+          label="Vertiefen"
+          title="Was möchten Sie vertiefen?"
+        >
           <ul className="mt-2 space-y-6">
             <li>
               <h4 style={h4Style}>
@@ -294,10 +297,10 @@ export default function UnterstuetzenUebersicht() {
               </p>
             </li>
           </ul>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Übergang zu Grenzen ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialProse>
             <p>
               Ohne Grenzen wird Unterstützung oft unklar, erschöpfend oder
@@ -308,7 +311,7 @@ export default function UnterstuetzenUebersicht() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection 4: familiendynamik ── */}
         <ContentSection
@@ -395,7 +398,10 @@ export default function UnterstuetzenUebersicht() {
         </ContentSection>
 
         {/* ── Materialien — editorial entschärft, kein Card-Wrapper ── */}
-        <EditorialSection label="Materialien" title="Materialien zum Thema">
+        <EditorialSectionBlock
+          label="Materialien"
+          title="Materialien zum Thema"
+        >
           <EditorialProse>
             <p>
               Wenn verfügbar, führt «Textversion lesen» zur Web-Version. «PDF
@@ -453,19 +459,19 @@ export default function UnterstuetzenUebersicht() {
               Alle Materialien ansehen
             </Link>
           </p>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Pull-Quote: Denken Sie daran ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialPullQuote>
             Unterstützen heisst nicht, sich selbst aufzugeben. Sie können nur
             dann tragfähig unterstützen, wenn Ihr eigenes Fundament geschützt
             bleibt.
           </EditorialPullQuote>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Schluss-Sektion: Übergang ── */}
-        <EditorialSection label="Weiter" rule>
+        <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>
             <p>
               Im Alltag wird aus dieser Haltung konkret, was Verlässlichkeit,
@@ -481,7 +487,7 @@ export default function UnterstuetzenUebersicht() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

@@ -3,7 +3,7 @@ import ContentSection from "@/components/ContentSection";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -411,7 +411,7 @@ export default function UnterstuetzenKrise() {
         <ReviewBadge path="/unterstuetzen/krise" />
 
         {/* ── Intro: Was diese Seite in Krisen ordnet ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was diese Seite in Krisen ordnet"
         >
@@ -478,7 +478,7 @@ export default function UnterstuetzenKrise() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection 1: ampel-system (sicherheitskritisch — Farben bleiben) ── */}
         <ContentSection
@@ -876,7 +876,7 @@ export default function UnterstuetzenKrise() {
         </ContentSection>
 
         {/* ── Situations-Wegweiser-Übergang ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialProse>
             <p>
               In der akuten Situation ist klares Denken schwer. Der{" "}
@@ -886,10 +886,13 @@ export default function UnterstuetzenKrise() {
               führt Sie Schritt für Schritt durch verschiedene Krisenszenarien.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Materialien ── */}
-        <EditorialSection label="Materialien" title="Materialien zum Thema">
+        <EditorialSectionBlock
+          label="Materialien"
+          title="Materialien zum Thema"
+        >
           <EditorialProse>
             <p>
               Infografiken und Handouts zum Thema Krisenbegleitung finden Sie
@@ -900,10 +903,10 @@ export default function UnterstuetzenKrise() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Schluss-Sektion: Übergang ── */}
-        <EditorialSection label="Weiter" rule>
+        <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>
             <p>
               Wenn die Spitze überstanden ist, hilft sprachliche Klarheit:{" "}
@@ -917,7 +920,7 @@ export default function UnterstuetzenKrise() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

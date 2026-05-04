@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
 import Layout from "@/components/Layout";
@@ -96,7 +96,7 @@ export default function Kommunizieren() {
         </header>
 
         {/* ── Intro: Was auf dieser Seite besonders wichtig ist (Variante A) ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was auf dieser Seite besonders wichtig ist"
         >
@@ -153,7 +153,7 @@ export default function Kommunizieren() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSections (editorial variant) ── */}
         <ContentSection
@@ -278,7 +278,7 @@ export default function Kommunizieren() {
         <KommunizierenMaterialsSection />
 
         {/* ── Schluss-Sektion: Übergang zu Grenzen ── */}
-        <EditorialSection label="Weiter" rule>
+        <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>
             <p>
               Wenn Kommunikation als Beziehungsregulation gelesen wird, wird
@@ -293,7 +293,7 @@ export default function Kommunizieren() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

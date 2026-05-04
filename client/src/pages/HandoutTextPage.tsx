@@ -3,7 +3,7 @@ import AppLink from "@/components/AppLink";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -236,7 +236,7 @@ export default function HandoutTextPage({
           </figure>
         </header>
 
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Worum es in diesem Handout geht"
         >
@@ -252,12 +252,16 @@ export default function HandoutTextPage({
               <p>Die ausführliche Textversion wird geladen.</p>
             </div>
           )}
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {handout ? (
           <>
             {handout.sections.map(section => (
-              <EditorialSection key={section.title} title={section.title} rule>
+              <EditorialSectionBlock
+                key={section.title}
+                title={section.title}
+                rule
+              >
                 {section.intro ? (
                   <EditorialProse>
                     <p>{section.intro}</p>
@@ -304,23 +308,23 @@ export default function HandoutTextPage({
                     ))}
                   </ul>
                 ) : null}
-              </EditorialSection>
+              </EditorialSectionBlock>
             ))}
 
-            <EditorialSection label="Quelle & Stand" rule>
+            <EditorialSectionBlock label="Quelle & Stand" rule>
               <p style={bodyStyle}>{handout.sourceLine}</p>
               <p className="mt-2" style={bodyStyle}>
                 {handout.standLine}
               </p>
-            </EditorialSection>
+            </EditorialSectionBlock>
           </>
         ) : (
-          <EditorialSection title="Textversion lädt" rule>
+          <EditorialSectionBlock title="Textversion lädt" rule>
             <div className="flex items-center gap-3" style={bodyStyle}>
               <Spinner className="size-5 text-[color:var(--accent-primary)]" />
               <p>Die Abschnitte dieser Textversion werden geladen.</p>
             </div>
-          </EditorialSection>
+          </EditorialSectionBlock>
         )}
 
         <RelatedLinksEditorial

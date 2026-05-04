@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -316,7 +316,7 @@ export default function UnterstuetzenAlltag() {
         </header>
 
         {/* ── Intro: Was diese Seite im Alltag ordnet ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was diese Seite im Alltag ordnet"
         >
@@ -383,7 +383,7 @@ export default function UnterstuetzenAlltag() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Visualisierung (out-of-scope, eigenständige Komponente) ── */}
         <EnergieHaushaltVisualisierung />
@@ -910,7 +910,7 @@ export default function UnterstuetzenAlltag() {
         </ContentSection>
 
         {/* ── Schluss-Sektion: Übergang ── */}
-        <EditorialSection label="Weiter" rule>
+        <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>
             <p>
               Wenn Spannung in akute Eskalation kippt, wird aus
@@ -925,7 +925,7 @@ export default function UnterstuetzenAlltag() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

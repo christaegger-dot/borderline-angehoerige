@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { EditorialSection, EditorialProse } from "@/components/editorial";
+import { EditorialSectionBlock, EditorialProse } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   categoryMeta,
@@ -193,7 +193,7 @@ export default function MaterialienLibrarySection() {
   return (
     <>
       {/* ── QuickStarts: «Was hilft gerade jetzt?» ── */}
-      <EditorialSection
+      <EditorialSectionBlock
         label="Schneller Einstieg"
         title="Was hilft gerade jetzt?"
       >
@@ -217,10 +217,10 @@ export default function MaterialienLibrarySection() {
             </li>
           ))}
         </ul>
-      </EditorialSection>
+      </EditorialSectionBlock>
 
       {/* ── Empfohlene Kernmaterialien ── */}
-      <EditorialSection
+      <EditorialSectionBlock
         label="Kernmaterialien"
         title="Empfohlene Kernmaterialien"
         rule
@@ -253,10 +253,10 @@ export default function MaterialienLibrarySection() {
             />
           ))}
         </div>
-      </EditorialSection>
+      </EditorialSectionBlock>
 
       {/* ── Filter + Sekundär-Grid ── */}
-      <EditorialSection
+      <EditorialSectionBlock
         label="Bibliothek"
         title="Weitere Materialien nach Kategorie"
         rule
@@ -322,10 +322,10 @@ export default function MaterialienLibrarySection() {
             </p>
           )}
         </div>
-      </EditorialSection>
+      </EditorialSectionBlock>
 
       {/* ── Besondere Konstellationen ── */}
-      <EditorialSection
+      <EditorialSectionBlock
         label="Spezialfälle"
         title="Besondere Konstellationen"
         rule
@@ -372,10 +372,10 @@ export default function MaterialienLibrarySection() {
             Grenzen &amp; Selbstschutz
           </button>
         </p>
-      </EditorialSection>
+      </EditorialSectionBlock>
 
       {/* ── Von hier aus weiter ── */}
-      <EditorialSection label="Weiter" title="Von hier aus weiter" rule>
+      <EditorialSectionBlock label="Weiter" title="Von hier aus weiter" rule>
         <EditorialProse>
           <p>
             Wenn Sie gerade eher Orientierung als Downloads brauchen, sind die
@@ -398,7 +398,7 @@ export default function MaterialienLibrarySection() {
             .
           </p>
         </EditorialProse>
-      </EditorialSection>
+      </EditorialSectionBlock>
 
       {/* ── Preview Modal ── */}
       {previewImage && (

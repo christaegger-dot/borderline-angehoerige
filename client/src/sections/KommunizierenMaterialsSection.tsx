@@ -8,7 +8,7 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { Link } from "wouter";
-import { EditorialProse, EditorialSection } from "@/components/editorial";
+import { EditorialProse, EditorialSectionBlock } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   kommItems,
@@ -76,7 +76,7 @@ export default function KommunizierenMaterialsSection() {
   };
 
   return (
-    <EditorialSection
+    <EditorialSectionBlock
       label="Materialien"
       title="Spickzettel & Infografiken"
       rule
@@ -203,7 +203,7 @@ export default function KommunizierenMaterialsSection() {
           Alle Materialien ansehen
         </Link>
       </p>
-    </EditorialSection>
+    </EditorialSectionBlock>
   );
 }
 

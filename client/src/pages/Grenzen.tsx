@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import GrenzenCheck from "@/components/interactive/GrenzenCheck";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
@@ -184,7 +184,7 @@ export default function Grenzen() {
         </header>
 
         {/* ── Intro: Was auf dieser Seite besonders wichtig ist (Variante A) ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was auf dieser Seite besonders wichtig ist"
         >
@@ -257,7 +257,7 @@ export default function Grenzen() {
               Regeneration geht.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection 1: warnsignale ── */}
         <ContentSection
@@ -641,14 +641,14 @@ export default function Grenzen() {
         </ContentSection>
 
         {/* ── Pull-Quote: «Denken Sie daran» ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialPullQuote>
             Grenzen fühlen sich anfangs oft unangenehm an. Das bedeutet nicht
             automatisch, dass sie falsch sind. In belasteten Beziehungen braucht
             gute Begrenzung meist Wiederholung, innere Festigkeit und die
             Erlaubnis, auch Schuldgefühle zu überstehen.
           </EditorialPullQuote>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection 10: gewalt ── */}
         <ContentSection
@@ -734,7 +734,7 @@ export default function Grenzen() {
         </ContentSection>
 
         {/* ── Materialien — editorial entschärft, kein Card-Wrapper ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Materialien"
           title="Spickzettel und Infografiken zu Grenzen"
         >
@@ -795,10 +795,10 @@ export default function Grenzen() {
               Alle Materialien ansehen
             </Link>
           </p>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Schluss-Sektion: Übergang zu Selbstfürsorge ── */}
-        <EditorialSection label="Weiter" rule>
+        <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>
             <p>
               Grenzen sind der Schutzraum — Selbstfürsorge ist das, was Sie
@@ -814,7 +814,7 @@ export default function Grenzen() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

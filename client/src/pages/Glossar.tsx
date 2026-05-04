@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo } from "react";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -492,7 +492,7 @@ export default function Glossar() {
         </dl>
 
         {/* ── Hinweis: Begriffe im Kontext verstehen ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Hinweis"
           title="Begriffe im Kontext verstehen"
           rule
@@ -505,7 +505,7 @@ export default function Glossar() {
               wenden Sie sich bitte an Fachpersonen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
       </EditorialLayout>
     </Layout>
   );

@@ -5,7 +5,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
   HeroLeuchtturmIllustration,
   TestimonialMark,
 } from "@/components/editorial";
@@ -50,7 +50,7 @@ export default function Home() {
 
       <EditorialLayout width="narrow">
         {/* ── 2 Anerkennung ── */}
-        <EditorialSection label="Anerkennung">
+        <EditorialSectionBlock label="Anerkennung">
           <EditorialProse>
             <p>
               Sie fragen sich seit Jahren, ob das, was Sie erleben, Krankheit
@@ -65,7 +65,7 @@ export default function Home() {
               das nicht mehr aus» – manchmal innerhalb derselben Stunde.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
       </EditorialLayout>
 
       {/* ── 3 Kerngedanke ── vollflächige Aubergine-Sektion */}
@@ -134,7 +134,7 @@ export default function Home() {
 
       <EditorialLayout width="narrow">
         {/* ── 5 Orientierung ── */}
-        <EditorialSection label="Orientierung">
+        <EditorialSectionBlock label="Orientierung">
           <EditorialProse>
             <p>
               Wenn Sie verstehen möchten, was passiert – die Beziehungsdynamik,
@@ -157,7 +157,7 @@ export default function Home() {
           >
             Eine vollständige Themenübersicht finden Sie über das Menü.
           </p>
-        </EditorialSection>
+        </EditorialSectionBlock>
       </EditorialLayout>
 
       {/* ── 6 Stimme ── vollflächige Sage-Wash-Sektion mit Testimonial-Mark */}
@@ -190,7 +190,7 @@ export default function Home() {
 
       <EditorialLayout width="narrow">
         {/* ── 7 Beratungseinladung ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Fachstelle"
           title="Sie müssen nicht wissen, was Sie sagen wollen."
         >
@@ -217,7 +217,7 @@ export default function Home() {
               </a>
             </div>
           )}
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── 8 Soforthilfe-Zeile ── nur Hairline + ein Satz */}
         <section

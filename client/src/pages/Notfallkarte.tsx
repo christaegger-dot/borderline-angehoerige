@@ -3,7 +3,7 @@ import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
@@ -752,7 +752,7 @@ export default function Notfallkarte() {
             Daten löschen
           </SecondaryButton>
         </div>
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialProse>
             <p>
               <strong>Änderungen werden automatisch lokal gespeichert.</strong>{" "}
@@ -764,7 +764,7 @@ export default function Notfallkarte() {
               oder PDF-Export werden Ihre persönlichen Einträge mit ausgegeben.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
         <RelatedLinksEditorial
           links={[
             {

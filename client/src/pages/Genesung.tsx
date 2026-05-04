@@ -4,7 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
@@ -159,7 +159,7 @@ export default function Genesung() {
         </header>
 
         {/* ── Intro: Was auf dieser Seite besonders wichtig ist ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Überblick"
           title="Was auf dieser Seite besonders wichtig ist"
         >
@@ -215,10 +215,10 @@ export default function Genesung() {
               springen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── Was die Forschung zeigt ── */}
-        <EditorialSection
+        <EditorialSectionBlock
           label="Forschung"
           title="Was die Forschung zeigt"
           rule
@@ -305,7 +305,7 @@ export default function Genesung() {
             länger. Genesung bleibt das realistische Ziel — aber Rückschritte
             und lange Phasen gehören dazu.
           </p>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         {/* ── ContentSection 1: remission ── */}
         <ContentSection
@@ -643,7 +643,7 @@ export default function Genesung() {
         </ContentSection>
 
         {/* ── Schluss-Sektion: Übergang ── */}
-        <EditorialSection label="Weiter" rule>
+        <EditorialSectionBlock label="Weiter" rule>
           <EditorialProse>
             <p>
               Unterstützung heisst nicht, Entwicklung herzustellen. Es heisst
@@ -663,7 +663,7 @@ export default function Genesung() {
               vertiefen.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

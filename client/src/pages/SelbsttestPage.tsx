@@ -1,7 +1,7 @@
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
@@ -66,7 +66,7 @@ export default function SelbsttestPage() {
         </div>
 
         {/* ── Hinweis ── */}
-        <EditorialSection rule>
+        <EditorialSectionBlock rule>
           <EditorialProse>
             <p>
               Dieser Test ersetzt keine professionelle Beratung. Er dient
@@ -79,7 +79,7 @@ export default function SelbsttestPage() {
               .
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
       </EditorialLayout>
     </Layout>
   );

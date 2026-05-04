@@ -2,7 +2,7 @@ import AppLink from "@/components/AppLink";
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -82,7 +82,7 @@ export default function Barrierefreiheit() {
           </p>
         </header>
 
-        <EditorialSection label="Ziel" title="Konformitätsziel">
+        <EditorialSectionBlock label="Ziel" title="Konformitätsziel">
           <EditorialProse>
             <p>
               Diese Website orientiert sich an den{" "}
@@ -93,9 +93,9 @@ export default function Barrierefreiheit() {
               zu verbessern.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
-        <EditorialSection
+        <EditorialSectionBlock
           label="Umgesetzt"
           title="Bereits umgesetzte Massnahmen"
           rule
@@ -107,9 +107,13 @@ export default function Barrierefreiheit() {
               </li>
             ))}
           </ul>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
-        <EditorialSection label="Bekannt" title="Bekannte Einschränkungen" rule>
+        <EditorialSectionBlock
+          label="Bekannt"
+          title="Bekannte Einschränkungen"
+          rule
+        >
           <ul className="space-y-5">
             {knownLimitations.map(item => (
               <li key={item}>
@@ -117,9 +121,13 @@ export default function Barrierefreiheit() {
               </li>
             ))}
           </ul>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
-        <EditorialSection label="Kontakt" title="Feedback und Kontakt" rule>
+        <EditorialSectionBlock
+          label="Kontakt"
+          title="Feedback und Kontakt"
+          rule
+        >
           <EditorialProse>
             <p>
               Wenn Sie auf Barrieren stossen oder Verbesserungsvorschläge haben,
@@ -138,11 +146,11 @@ export default function Barrierefreiheit() {
               genannte verantwortliche Person.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
-        <EditorialSection label="Stand" title="Aktualität" rule>
+        <EditorialSectionBlock label="Stand" title="Aktualität" rule>
           <p style={bodyStyle}>Stand: April 2026</p>
-        </EditorialSection>
+        </EditorialSectionBlock>
 
         <RelatedLinksEditorial
           links={[

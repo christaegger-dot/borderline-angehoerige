@@ -1,7 +1,7 @@
 import {
   EditorialLayout,
   EditorialProse,
-  EditorialSection,
+  EditorialSectionBlock,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import ReviewBadge from "@/components/ReviewBadge";
@@ -527,7 +527,11 @@ export default function Quellen() {
         </div>
 
         {/* ── Hinweis ── */}
-        <EditorialSection label="Hinweis" title="Zur Auswahl der Quellen" rule>
+        <EditorialSectionBlock
+          label="Hinweis"
+          title="Zur Auswahl der Quellen"
+          rule
+        >
           <EditorialProse>
             <p>
               Diese Liste ist nicht abschliessend. Einzelne Inhalte basieren auf
@@ -536,7 +540,7 @@ export default function Quellen() {
               Behandlungsempfehlungen wenden Sie sich an eine Fachstelle.
             </p>
           </EditorialProse>
-        </EditorialSection>
+        </EditorialSectionBlock>
       </EditorialLayout>
     </Layout>
   );

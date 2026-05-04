@@ -107,7 +107,7 @@ export function EditorialHero({
       {illustrationSlot && (
         <EditorialSection.Aside>
           <div
-            className="ml-auto block w-full max-w-[560px]"
+            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
             style={{
               aspectRatio: "5 / 6",
               filter: "drop-shadow(0 8px 24px rgba(91, 58, 78, 0.12))",

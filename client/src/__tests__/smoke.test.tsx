@@ -4,7 +4,7 @@
  * Ziel: Sicherstellen dass Kernseiten rendern ohne zu crashen
  * und wichtige Inhalte vorhanden sind.
  */
-import { render, screen, cleanup, fireEvent } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import { describe, it, expect, vi, beforeAll, afterEach } from "vitest";
 import { Router } from "wouter";
 
@@ -1018,11 +1018,8 @@ describe("Smoke Tests – Kritische Seiten", () => {
     const { default: Selbstfuersorge } =
       await import("@/pages/Selbstfuersorge");
     withRouter(<Selbstfuersorge />);
-    fireEvent.click(
-      screen.getByRole("button", {
-        name: /Abschnitt Materialien zum Download aufklappen/i,
-      })
-    );
+    // Materialien-Section ist nach Phase-2-Migration kein collapsible
+    // ContentSection mehr — Content ist immer sichtbar.
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Die Sauerstoffmaske/i,

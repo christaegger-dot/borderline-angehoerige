@@ -427,6 +427,20 @@
     > p:first-child::first-letter {
     color: #f5ece6;
   }
+
+  /* ── Editorial Pull-Quote — Testimonial-Variant ──
+     Zentrierter Display-Pull-Quote mit «»-Anführungszeichen in Aubergine
+     via Pseudo-Elemente. Explizite Hex-Farbe (analog Color-Block-Pattern). */
+  .editorial-pull-quote-testimonial-blockquote::before {
+    content: "«";
+    color: #5b3a4e;
+    margin-right: 0.1em;
+  }
+  .editorial-pull-quote-testimonial-blockquote::after {
+    content: "»";
+    color: #5b3a4e;
+    margin-left: 0.1em;
+  }
 }
 
 /* Scrollbar ausblenden für horizontale Tab-Leisten */

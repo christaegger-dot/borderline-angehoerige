@@ -7,6 +7,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
   HeroLeuchtturmIllustration,
+  TestimonialMark,
 } from "@/components/editorial";
 import { VisualOrientationGrid } from "@/components/visualizations/VisualOrientationGrid";
 import AppLink from "@/components/AppLink";
@@ -157,18 +158,38 @@ export default function Home() {
             Eine vollständige Themenübersicht finden Sie über das Menü.
           </p>
         </EditorialSection>
+      </EditorialLayout>
 
-        {/* ── 5 Stimme ── */}
-        <EditorialSection label="Aus der Angehörigenarbeit">
-          <EditorialPullQuote cite="Eine redaktionell verdichtete Erfahrung aus der Angehörigenarbeit. Keine Einzelperson.">
-            «Ich habe alles versucht – und trotzdem nicht gewusst, was ich
-            falsch mache. Was mir schliesslich geholfen hat, war zu verstehen,
-            dass die Dynamik nicht an mir lag. Und dass Grenzen setzen keine
-            Kälte ist, sondern Schutz für beide Seiten.»
-          </EditorialPullQuote>
-        </EditorialSection>
+      {/* ── 6 Stimme ── vollflächige Sage-Wash-Sektion mit Testimonial-Mark */}
+      <EditorialColorBlock variant="sage-wash" maxWidth="45rem">
+        <div className="text-center">
+          <TestimonialMark className="mx-auto" />
+          <p
+            className="mt-8 text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+            }}
+          >
+            Aus der Angehörigenarbeit
+          </p>
+          <div className="mt-6">
+            <EditorialPullQuote
+              variant="testimonial"
+              cite="Eine redaktionell verdichtete Erfahrung aus der Angehörigenarbeit. Keine Einzelperson."
+            >
+              Ich habe alles versucht – und trotzdem nicht gewusst, was ich
+              falsch mache. Was mir schliesslich geholfen hat, war zu verstehen,
+              dass die Dynamik nicht an mir lag. Und dass Grenzen setzen keine
+              Kälte ist, sondern Schutz für beide Seiten.
+            </EditorialPullQuote>
+          </div>
+        </div>
+      </EditorialColorBlock>
 
-        {/* ── 6 Beratungseinladung ── */}
+      <EditorialLayout width="narrow">
+        {/* ── 7 Beratungseinladung ── */}
         <EditorialSection
           label="Fachstelle"
           title="Sie müssen nicht wissen, was Sie sagen wollen."
@@ -198,7 +219,7 @@ export default function Home() {
           )}
         </EditorialSection>
 
-        {/* ── 7 Soforthilfe-Zeile ── nur Hairline + ein Satz */}
+        {/* ── 8 Soforthilfe-Zeile ── nur Hairline + ein Satz */}
         <section
           className="mt-24 border-t pt-12"
           style={{ borderColor: "var(--rule-color)" }}

@@ -13,6 +13,8 @@ interface EditorialColorBlockProps {
   /** H2-Titel der Sektion (optional) */
   title?: ReactNode;
   children: ReactNode;
+  /** Inner max-width — Default `var(--measure)` (608 px). Für breitere Blöcke wie das Testimonial 45rem (720 px). */
+  maxWidth?: string;
 }
 
 /**
@@ -30,6 +32,7 @@ export function EditorialColorBlock({
   label,
   title,
   children,
+  maxWidth = "var(--measure)",
 }: EditorialColorBlockProps) {
   const styles = VARIANT_STYLES[variant];
 
@@ -41,7 +44,7 @@ export function EditorialColorBlock({
     >
       <div
         className={`mx-auto space-y-[var(--space-4)] ${styles.contentClass}`}
-        style={{ maxWidth: "var(--measure)" }}
+        style={{ maxWidth }}
       >
         {label && (
           <p

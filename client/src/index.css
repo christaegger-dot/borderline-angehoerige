@@ -441,6 +441,77 @@
     color: #5b3a4e;
     margin-left: 0.1em;
   }
+
+  /* ── Editorial Section — Aubergine-Variant Text-Overrides ──
+     Explizite Hex-Farben für alle Text-Elemente auf dunklem Aubergine-
+     Hintergrund (analog zur Logik in editorial-color-block-content--aubergine,
+     migriert für die EditorialSection-Hülle).
+     WCAG: H2 8.0:1 AAA / Lede 7.5:1 AAA / Footnote 6.0:1 AA / Eyebrow 5.5:1 AA */
+  .editorial-section[data-variant="aubergine"] {
+    --fg-tertiary: #e2d4cb;
+    --rule-color: rgba(245, 236, 230, 0.18);
+  }
+  .editorial-section[data-variant="aubergine"] .editorial-prose {
+    color: #f0e5db;
+  }
+  .editorial-section[data-variant="aubergine"] .editorial-prose a {
+    color: #f5ece6;
+    text-decoration-color: #f5ece6;
+  }
+  .editorial-section[data-variant="aubergine"] .editorial-prose a:hover {
+    color: #ffffff;
+  }
+  .editorial-section[data-variant="aubergine"] .editorial-prose strong {
+    color: #f5ece6;
+  }
+  .editorial-section[data-variant="aubergine"]
+    .editorial-prose-dropcap
+    > p:first-child::first-letter {
+    color: #f5ece6;
+  }
+
+  /* ── Editorial Section — Layout-Hülle (Margin / Body / Aside) ──
+     Mobile (<768): einspaltig, Reihenfolge margin → body → aside.
+     Tablet (768-1023): einspaltig ohne Aside; zweispaltig mit Aside.
+     Desktop (≥1024): drei Spalten 200px / minmax(0, 608px) / 1fr. */
+  .editorial-section-grid {
+    display: grid;
+    column-gap: var(--space-5);
+    row-gap: var(--space-5);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "margin"
+      "body"
+      "aside";
+  }
+  @media (min-width: 768px) {
+    .editorial-section-grid--has-aside {
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 1fr);
+      grid-template-areas:
+        "margin margin"
+        "body aside";
+    }
+  }
+  @media (min-width: 1024px) {
+    .editorial-section-grid {
+      grid-template-columns: 200px minmax(0, var(--measure)) 1fr;
+      grid-template-areas: "margin body aside";
+    }
+  }
+  .editorial-section-grid__margin {
+    grid-area: margin;
+  }
+  .editorial-section-grid__body {
+    grid-area: body;
+  }
+  .editorial-section-grid__aside {
+    grid-area: aside;
+  }
+  @media (min-width: 1024px) {
+    .editorial-section-grid__aside {
+      min-width: 240px;
+    }
+  }
 }
 
 /* Scrollbar ausblenden für horizontale Tab-Leisten */

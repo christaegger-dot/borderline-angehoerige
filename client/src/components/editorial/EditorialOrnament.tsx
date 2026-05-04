@@ -5,6 +5,12 @@ export type EditorialOrnamentVariant = "dots-line" | "wave" | "small-arc";
 interface EditorialOrnamentProps {
   variant: EditorialOrnamentVariant;
   className?: string;
+  /**
+   * Farbe für Stroke + Fill. Default: `var(--accent-label)` (Sage).
+   * Auf dunklen Backgrounds (z.B. Aubergine) eine helle Farbe setzen,
+   * z.B. "rgba(245, 236, 230, 0.5)".
+   */
+  color?: string;
 }
 
 /**
@@ -20,9 +26,10 @@ interface EditorialOrnamentProps {
 export function EditorialOrnament({
   variant,
   className,
+  color,
 }: EditorialOrnamentProps) {
   const baseClass = cn("block", className);
-  const stroke = "var(--accent-label)";
+  const stroke = color ?? "var(--accent-label)";
 
   if (variant === "dots-line") {
     return (

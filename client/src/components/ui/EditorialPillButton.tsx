@@ -51,8 +51,11 @@ function getStyle(
   }
   if (variant === "filter") {
     return {
-      // Bottom-border via inline-style — Tailwind `border-b-2` ist gesetzt,
-      // aber die Border-Color-Active-State braucht Token-Resolution.
+      // Bottom-border via inline-style — Tailwind `border-b-2` setzt nur
+      // Width, nicht Style; ohne explizites `border-style: solid` rendert
+      // der Browser-Default `none` keinen Strich. Beide Properties müssen
+      // gesetzt sein, sonst ist der aktive Hairline unsichtbar.
+      borderBottomStyle: "solid",
       borderBottomColor: selected ? "var(--accent-primary)" : "transparent",
       color: selected ? "var(--fg-primary)" : "var(--accent-label)",
     };

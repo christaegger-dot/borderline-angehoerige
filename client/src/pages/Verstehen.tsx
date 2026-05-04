@@ -60,9 +60,14 @@ export default function Verstehen() {
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
               lineHeight: 1.4,
+              hyphens: "auto",
+              overflowWrap: "break-word",
             }}
           >
-            Borderline-Persönlichkeitsstörung
+            {/* Soft-hyphens als defensive Backup-Break-Points falls
+                hyphens:auto-Hyphenation-Dictionary den Compound nicht bricht.
+                Brechpunkte: Borderline-|Persönlich|keits|störung */}
+            {"Borderline-Persönlich­keits­störung"}
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>

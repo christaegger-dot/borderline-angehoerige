@@ -1,5 +1,6 @@
 import { genesungItems } from "./genesung";
 import { grenzenItems } from "./grenzen";
+import { homeFeaturedInfografiken } from "./homeFeaturedInfografiken";
 import { kommItems } from "./kommunizieren";
 import { materials } from "./materialien";
 import { selbstfuersorgeInfografiken } from "./selbstfuersorge";
@@ -14,7 +15,8 @@ export type InfografikAssetUsage = {
     | "kommunizieren"
     | "grenzen"
     | "selbstfuersorge"
-    | "genesung";
+    | "genesung"
+    | "home-featured";
   id: string;
   field: string;
 };
@@ -116,6 +118,13 @@ function getAssetCandidates(): AssetCandidate[] {
         img: item.img,
         thumbnailUrl: item.thumbnailUrl,
         pdf: item.pdf,
+      },
+    })),
+    ...homeFeaturedInfografiken.map(item => ({
+      source: "home-featured" as const,
+      id: item.id,
+      fields: {
+        thumbnailUrl: item.thumbnailUrl,
       },
     })),
   ];

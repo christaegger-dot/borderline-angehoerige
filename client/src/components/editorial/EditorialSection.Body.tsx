@@ -13,5 +13,5 @@ interface EditorialSectionBodyProps {
  * Lese-Erfahrung gehört.
  */
 export function EditorialSectionBody({ children }: EditorialSectionBodyProps) {
-  return <>{children}</>;
+  return <div className="editorial-section-grid__body">{children}</div>;
 }

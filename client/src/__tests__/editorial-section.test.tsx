@@ -180,13 +180,13 @@ describe("EditorialSection compound", () => {
     expect(aside?.getAttribute("style") ?? "").not.toContain("background");
   });
 
-  it("applies sage-wash asideBackground container on aubergine variant", () => {
+  it("applies sage-wash background container on Aside subcomponent", () => {
     const { container } = render(
-      <EditorialSection variant="aubergine" asideBackground="sage-wash">
+      <EditorialSection variant="aubergine">
         <EditorialSection.Body>
           <p>b</p>
         </EditorialSection.Body>
-        <EditorialSection.Aside>
+        <EditorialSection.Aside background="sage-wash">
           <span>a</span>
         </EditorialSection.Aside>
       </EditorialSection>
@@ -196,13 +196,13 @@ describe("EditorialSection compound", () => {
     expect(aside?.getAttribute("style")).toContain("padding");
   });
 
-  it("applies cream-deep asideBackground container on cream variant", () => {
+  it("applies cream-deep background container on Aside subcomponent", () => {
     const { container } = render(
-      <EditorialSection variant="cream" asideBackground="cream-deep">
+      <EditorialSection variant="cream">
         <EditorialSection.Body>
           <p>b</p>
         </EditorialSection.Body>
-        <EditorialSection.Aside>
+        <EditorialSection.Aside background="cream-deep">
           <span>a</span>
         </EditorialSection.Aside>
       </EditorialSection>

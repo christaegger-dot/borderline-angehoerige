@@ -9,17 +9,9 @@ export type EditorialSectionVariant =
   | "sage-wash"
   | "cream-deep";
 
-export type EditorialSectionAsideBackground = "sage-wash" | "cream-deep";
-
 interface EditorialSectionProps {
   /** Hintergrund-Variant der Sektion */
   variant: EditorialSectionVariant;
-  /**
-   * Optionaler Container-Hintergrund für die Aside-Spalte. Auf Aubergine-
-   * Variant ist `sage-wash` typisch (Pull-Quote-Box hebt sich ab). Auf
-   * Cream-Variants ist `cream-deep` typisch (z.B. Kontakt-Karte).
-   */
-  asideBackground?: EditorialSectionAsideBackground;
   /**
    * Compound-Children: `<EditorialSection.MarginNote>`,
    * `<EditorialSection.Body>` und `<EditorialSection.Aside>`. Reihenfolge
@@ -32,11 +24,6 @@ interface EditorialSectionProps {
 const VARIANT_BG: Record<EditorialSectionVariant, string> = {
   cream: "var(--bg-primary)",
   aubergine: "var(--accent-primary)",
-  "sage-wash": "var(--bg-sage-wash)",
-  "cream-deep": "var(--bg-cream-deep)",
-};
-
-const ASIDE_BG: Record<EditorialSectionAsideBackground, string> = {
   "sage-wash": "var(--bg-sage-wash)",
   "cream-deep": "var(--bg-cream-deep)",
 };
@@ -57,6 +44,9 @@ const ASIDE_BG: Record<EditorialSectionAsideBackground, string> = {
  * </EditorialSection>
  * ```
  *
+ * Aside hat einen optionalen `background`-Prop für eigene Container-
+ * Optik (`sage-wash` | `cream-deep`).
+ *
  * Alle drei Slots sind optional — fehlende Slots werden nicht gerendert.
  * Wenn weder MarginNote noch Aside vorhanden sind, bleibt die Body-Spalte
  * trotzdem auf 608 px (kein Auto-Fill auf Container-Breite — das wäre
@@ -68,11 +58,7 @@ const ASIDE_BG: Record<EditorialSectionAsideBackground, string> = {
  *   sonst einspaltig. MarginNote wird zu Inline-Eyebrow oben.
  * - Mobile (<768 px): einspaltig in Reihenfolge MarginNote → Body → Aside.
  */
-export function EditorialSection({
-  variant,
-  asideBackground,
-  children,
-}: EditorialSectionProps) {
+export function EditorialSection({ variant, children }: EditorialSectionProps) {
   const slots = collectSlots(children);
   const hasAside = slots.aside !== null;
 
@@ -85,30 +71,9 @@ export function EditorialSection({
       <div
         className={`mx-auto max-w-[1240px] editorial-section-grid${hasAside ? " editorial-section-grid--has-aside" : ""}`}
       >
-        {slots.marginNote !== null && (
-          <div className="editorial-section-grid__margin">
-            {slots.marginNote}
-          </div>
-        )}
-        {slots.body !== null && (
-          <div className="editorial-section-grid__body">{slots.body}</div>
-        )}
-        {hasAside && (
-          <div
-            className="editorial-section-grid__aside"
-            style={
-              asideBackground
-                ? {
-                    background: ASIDE_BG[asideBackground],
-                    padding: "var(--space-5)",
-                    borderRadius: "0.25rem",
-                  }
-                : undefined
-            }
-          >
-            {slots.aside}
-          </div>
-        )}
+        {slots.marginNote}
+        {slots.body}
+        {slots.aside}
       </div>
     </section>
   );

@@ -20,5 +20,5 @@ interface EditorialSectionMarginNoteProps {
 export function EditorialSectionMarginNote({
   children,
 }: EditorialSectionMarginNoteProps) {
-  return <>{children}</>;
+  return <div className="editorial-section-grid__margin">{children}</div>;
 }

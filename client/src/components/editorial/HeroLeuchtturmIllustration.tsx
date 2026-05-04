@@ -8,7 +8,7 @@
 export function HeroLeuchtturmIllustration() {
   return (
     <svg
-      viewBox="40 0 400 480"
+      viewBox="0 0 480 480"
       preserveAspectRatio="xMidYMid meet"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"

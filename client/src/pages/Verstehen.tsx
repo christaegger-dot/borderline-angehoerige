@@ -896,6 +896,7 @@ export default function Verstehen() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <RelatedLinksEditorial
+            flush
             links={[
               {
                 href: "/unterstuetzen/uebersicht",

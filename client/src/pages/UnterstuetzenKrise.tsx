@@ -1,10 +1,6 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
-import {
-  EditorialLayout,
-  EditorialProse,
-  EditorialSectionBlock,
-} from "@/components/editorial";
+import { EditorialProse, EditorialSection } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -342,32 +338,47 @@ export default function UnterstuetzenKrise() {
         </div>
       </section>
 
-      <EditorialLayout width="narrow">
-        {/* ── Hero ── */}
-        <header className="pb-10 pt-8 md:pb-16 md:pt-16">
+      {/* ── 1 Hero ── EditorialSection ohne Aside (Sub-Page-Identität) */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.4,
+            }}
+          >
+            Wenn es kippt
+          </span>
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <p
             className="text-xs uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
               fontWeight: 500,
+              marginBottom: "var(--space-5)",
             }}
           >
-            Unterstützen — Krise
+            In der Krise
           </p>
           <h1
-            className="mt-6 font-display text-[var(--text-3xl)] md:mt-8 md:text-[var(--text-4xl)]"
+            className="font-display"
             style={{
+              fontSize: "var(--text-hero)",
               lineHeight: "var(--lh-tight)",
               letterSpacing: "var(--tracking-tight)",
               color: "var(--fg-primary)",
               fontWeight: "var(--weight-display)",
+              marginBottom: "var(--space-5)",
             }}
           >
             In der Krise <em>unterstützen</em>
           </h1>
           <p
-            className="mt-5 md:mt-6"
+            className="max-w-[40em]"
             style={{
               fontSize: "var(--text-lg)",
               lineHeight: "var(--lh-snug)",
@@ -379,42 +390,108 @@ export default function UnterstuetzenKrise() {
             deeskalierend reagieren und Sicherheit im Blick behalten können,
             ohne Ihre eigene Grenze aus dem Blick zu verlieren.
           </p>
-          <p
-            className="mt-3 md:mt-4"
+          <div
+            className="mt-8 border-t pt-3"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p
+              className="text-xs uppercase"
+              style={{
+                color: "var(--accent-label)",
+                letterSpacing: "var(--tracking-caps)",
+                fontWeight: 500,
+              }}
+            >
+              Vollständig ca. 6 Min · Auch abschnittweise lesbar
+            </p>
+            <LastVerifiedBadge path="/unterstuetzen/krise" className="mt-3" />
+            <ReviewBadge path="/unterstuetzen/krise" />
+          </div>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── 2 Orientierung ── Disclaimer als Auftakt + KrisenampelVisualisierung */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
             style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
             }}
           >
-            Vollständig ca. 6 Min · Auch abschnittweise lesbar.
+            Orientierung
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+              fontStyle: "italic",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Diese Inhalte ersetzen keine professionelle Krisenberatung. Bei
+            akuter Gefahr direkt{" "}
+            <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
+            anrufen.
           </p>
-          <LastVerifiedBadge path="/unterstuetzen/krise" className="mt-5" />
-        </header>
+          <KrisenampelVisualisierung />
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── Disclaimer ── */}
-        <p
-          className="text-center"
-          style={{
-            fontSize: "var(--text-xs)",
-            color: "var(--fg-tertiary)",
-          }}
-        >
-          Diese Inhalte ersetzen keine professionelle Krisenberatung. Bei akuter
-          Gefahr direkt{" "}
-          <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
-          anrufen.
-        </p>
-
-        {/* ── Visualisierung (out-of-scope) ── */}
-        <KrisenampelVisualisierung />
-
-        <ReviewBadge path="/unterstuetzen/krise" />
-
-        {/* ── Intro: Was diese Seite in Krisen ordnet ── */}
-        <EditorialSectionBlock
-          label="Überblick"
-          title="Was diese Seite in Krisen ordnet"
-        >
+      {/* ── 3 Intro: Was diese Seite in Krisen ordnet ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Kernfrage
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Überblick
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Was diese Seite in Krisen ordnet
+          </h2>
           <EditorialProse>
             <p>
               Diese Seite hilft Ihnen, Krisen nicht nur als Chaos, sondern als
@@ -478,435 +555,511 @@ export default function UnterstuetzenKrise() {
               .
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── ContentSection 1: ampel-system (sicherheitskritisch — Farben bleiben) ── */}
-        <ContentSection
-          variant="editorial"
-          title="Das Ampel-System: Krisen erkennen"
-          id="ampel-system"
-          defaultOpen={true}
-          preview="Nicht jede schwierige Situation ist eine Krise. Das Ampel-System hilft Ihnen, die Intensität einzuschätzen."
-        >
-          <EditorialProse>
-            <p>
-              Nicht jede schwierige Situation ist eine Krise. Das Ampel-System
-              hilft Ihnen, die Intensität einzuschätzen und angemessen zu
-              reagieren.
-            </p>
-          </EditorialProse>
-          <div className="mt-6 space-y-3">
-            {ampelStufen.map(item => (
-              <article
-                key={item.level}
-                className={`border border-border/50 border-l-4 p-5 ${item.panelClass}`}
-              >
-                <h4 style={h4Style}>{item.level}</h4>
-                <p className="mt-2" style={bodyStyle}>
-                  {item.description}
-                </p>
-                <p className="mt-2" style={bodyStyle}>
-                  <strong style={{ color: "var(--fg-primary)" }}>
-                    Ihre Reaktion:
-                  </strong>{" "}
-                  {item.action}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          <div
-            className="mt-8 border-t pt-6"
-            style={{ borderColor: "var(--rule-color)" }}
+      {/* ── 4 Group A: Krise erkennen ── CS1 ampel-system */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
           >
-            <p className="uppercase" style={labelStyle}>
-              Was konkret hilft – je nach Stufe
-            </p>
-            <div className="mt-3 space-y-2">
-              {ampelHandlungen.map(stufe => (
-                <div
-                  key={stufe.label}
-                  className={`flex items-start gap-3 rounded-md border p-3 ${stufe.tone}`}
+            Krise erkennen
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <ContentSection
+            variant="editorial"
+            title="Das Ampel-System: Krisen erkennen"
+            id="ampel-system"
+            defaultOpen={true}
+            preview="Nicht jede schwierige Situation ist eine Krise. Das Ampel-System hilft Ihnen, die Intensität einzuschätzen."
+          >
+            <EditorialProse>
+              <p>
+                Nicht jede schwierige Situation ist eine Krise. Das Ampel-System
+                hilft Ihnen, die Intensität einzuschätzen und angemessen zu
+                reagieren.
+              </p>
+            </EditorialProse>
+            <div className="mt-6 space-y-3">
+              {ampelStufen.map(item => (
+                <article
+                  key={item.level}
+                  className={`border border-border/50 border-l-4 p-5 ${item.panelClass}`}
                 >
-                  <span
-                    className={`min-w-[52px] pt-0.5 text-xs font-bold ${stufe.fg}`}
-                  >
-                    {stufe.label}
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {stufe.items.map(s => (
-                      <span
-                        key={s}
-                        className="rounded border border-border/30 bg-background/70 px-2 py-0.5 text-xs text-foreground"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </ContentSection>
-
-        {/* ── ContentSection 2: deeskalation ── */}
-        <ContentSection
-          variant="editorial"
-          title="4 Schritte der Deeskalation"
-          id="deeskalation"
-          preview="Sicherheit prüfen, Ruhe bewahren, Validieren, Skills anbieten – ein bewährtes Vorgehen."
-        >
-          <ol className="mt-2 space-y-6">
-            {deeskalationsSchritte.map((item, index) => (
-              <li key={item.title} className="flex items-start gap-4">
-                <span
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
-                  style={{
-                    backgroundColor: "var(--accent-primary)",
-                    color: "var(--bg-primary)",
-                    fontSize: "var(--text-sm)",
-                    fontWeight: 600,
-                  }}
-                >
-                  {index + 1}
-                </span>
-                <div className="space-y-2">
-                  <h4 style={h4Style}>{item.title}</h4>
-                  <p style={bodyStyle}>{item.description}</p>
-                  <p style={exampleStyle}>{item.example}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </ContentSection>
-
-        {/* ── ContentSection 3: krise-formulierungen ── */}
-        <ContentSection
-          variant="editorial"
-          title="Was Sie in der Krise sagen können"
-          id="krise-formulierungen"
-          preview="In einer Krise zählt jedes Wort. Diese Formulierungen haben sich bewährt."
-        >
-          <EditorialProse>
-            <p>
-              In einer Krise zählt jedes Wort. Diese Formulierungen haben sich
-              bewährt:
-            </p>
-          </EditorialProse>
-          <div className="mt-8 space-y-8">
-            {formulierungen.map(item => (
-              <article key={item.title} className="space-y-2">
-                <h4 style={h4Style}>{item.title}</h4>
-                <p style={exampleStyle}>{item.quote}</p>
-                {item.note && <p style={bodyStyle}>{item.note}</p>}
-              </article>
-            ))}
-          </div>
-        </ContentSection>
-
-        {/* ── ContentSection 4: vermeiden (sicherheitskritisch — Alert-Akzent bleibt) ── */}
-        <ContentSection
-          variant="editorial"
-          title="Was Sie in der Krise vermeiden sollten"
-          id="vermeiden"
-          preview="Drohen, Vorwürfe machen oder Gefühle herunterspielen – diese Reaktionen können die Krise verschärfen."
-        >
-          <aside className="mt-2 border border-alert/20 border-l-4 border-l-alert bg-alert/6 p-6">
-            <ul className="space-y-2.5" style={bodyStyle}>
-              <li className="flex items-start gap-2">
-                <span className="text-alert" aria-hidden="true">
-                  ✗
-                </span>
-                Drohen oder Ultimaten stellen
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-alert" aria-hidden="true">
-                  ✗
-                </span>
-                Vorwürfe machen oder Schuld zuweisen
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-alert" aria-hidden="true">
-                  ✗
-                </span>
-                Die Gefühle herunterspielen («So schlimm ist es doch nicht»)
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-alert" aria-hidden="true">
-                  ✗
-                </span>
-                Logisch argumentieren oder überzeugen wollen
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-alert" aria-hidden="true">
-                  ✗
-                </span>
-                Die Person ohne Hilfe, Notfallplan oder professionelle
-                Einschätzung allein lassen – sofern Sie selbst sicher bleiben
-                können
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-alert" aria-hidden="true">
-                  ✗
-                </span>
-                Sich selbst in Gefahr bringen
-              </li>
-            </ul>
-          </aside>
-        </ContentSection>
-
-        {/* ── ContentSection 5: nach-der-krise ── */}
-        <ContentSection
-          variant="editorial"
-          title="Nach der Krise: Verarbeitung und Neubeginn"
-          id="nach-der-krise"
-          preview="Die akute Krise ist vorbei – aber die innere Landschaft braucht Zeit. Was jetzt hilft: für die betroffene Person, für Sie, und gemeinsam."
-        >
-          {/* Krisenphase-Timeline (sicherheitskritische Klassifikation, Farben bleiben) */}
-          <figure className="mt-2 rounded-lg border border-border/40 bg-background p-4">
-            <figcaption
-              className="mb-3 text-center uppercase"
-              style={labelStyle}
-            >
-              Typischer Krisenverlauf
-            </figcaption>
-            <div className="flex flex-col items-center gap-1.5 sm:flex-row">
-              {krisenphasen.map((phase, i) => (
-                <div
-                  key={phase.titel}
-                  className="flex w-full flex-1 items-center gap-1.5"
-                >
-                  <div
-                    className={`flex-1 rounded-md border px-3 py-2 text-center ${phase.tone}`}
-                  >
-                    <p className={`text-xs font-semibold ${phase.fg}`}>
-                      {phase.titel}
-                    </p>
-                    <p className="text-[10px] text-muted-foreground">
-                      {phase.dauer}
-                    </p>
-                  </div>
-                  {i < krisenphasen.length - 1 && (
-                    <span
-                      aria-hidden="true"
-                      className="shrink-0 rotate-90 text-xs text-muted-foreground sm:rotate-0"
-                    >
-                      →
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
-            <p
-              className="mt-3 text-center"
-              style={{
-                fontSize: "var(--text-xs)",
-                color: "var(--fg-tertiary)",
-              }}
-            >
-              Zeitangaben sind Richtwerte — jede Krise verläuft anders.
-            </p>
-          </figure>
-
-          {/* Für die betroffene Person */}
-          <article className="mt-10 space-y-3">
-            <h4 style={h4Style}>Für die betroffene Person</h4>
-            <p style={bodyStyle}>
-              Nach einer schweren Krise folgt oft eine Phase massiver{" "}
-              <strong style={{ color: "var(--fg-primary)" }}>
-                Scham und Reue
-              </strong>
-              . Manche ziehen sich zurück, andere entschuldigen sich übermässig.
-              Beides braucht eine ruhige, nicht-wertende Antwort – weder
-              Verharmlosen noch Aufbauschen.
-            </p>
-            <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
-              {fuerBetroffene.map(p => (
-                <li key={p}>{p}</li>
-              ))}
-            </ul>
-          </article>
-
-          {/* Für Sie persönlich */}
-          <article className="mt-10 space-y-3">
-            <h4 style={h4Style}>Für Sie persönlich</h4>
-            <p style={bodyStyle}>
-              Schwere Krisen hinterlassen auch bei Angehörigen Spuren. Dauernde
-              Alarmbereitschaft, Schreckhaftigkeit, Angst vor der nächsten
-              Eskalation oder emotionale Taubheit sind normale Reaktionen – kein
-              Zeichen von Schwäche.
-            </p>
-            <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
-              {fuerSiePersoenlich.map(p => (
-                <li key={p}>{p}</li>
-              ))}
-            </ul>
-          </article>
-
-          {/* Gemeinsame Krisenanalyse */}
-          <article className="mt-10 space-y-3">
-            <h4 style={h4Style}>
-              Gemeinsame Krisenanalyse (wenn beide bereit sind)
-            </h4>
-            <p style={bodyStyle}>
-              Nicht direkt nach der Krise – aber in den nächsten Tagen, in einem
-              ruhigen Moment, kann ein kurzes Gespräch helfen. Nicht als
-              Vorwurf, sondern als gemeinsames Lernen.
-            </p>
-            <dl className="mt-3 grid gap-4 sm:grid-cols-3">
-              {krisenanalyseFragen.map(item => (
-                <div key={item.frage} className="space-y-1">
-                  <dt
-                    style={{
-                      fontSize: "var(--text-sm)",
-                      fontWeight: 600,
-                      color: "var(--fg-primary)",
-                    }}
-                  >
-                    {item.frage}
-                  </dt>
-                  <dd style={exampleStyle}>{item.beispiel}</dd>
-                </div>
-              ))}
-            </dl>
-          </article>
-
-          {/* Vertrauenswiederaufbau */}
-          <article className="mt-10 space-y-3">
-            <h4 style={h4Style}>Vertrauenswiederaufbau – realistisch</h4>
-            <p style={bodyStyle}>
-              Vertrauen baut sich nicht durch ein Gespräch wieder auf – sondern
-              durch{" "}
-              <strong style={{ color: "var(--fg-primary)" }}>
-                viele kleine Momente der Verlässlichkeit
-              </strong>{" "}
-              über Zeit. Erwarten Sie keine sofortige Rückkehr zur Normalität.
-            </p>
-            <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
-              {vertrauensaufbau.map(p => (
-                <li key={p}>{p}</li>
-              ))}
-            </ul>
-          </article>
-
-          {/* Tag-für-Tag (Phasen-Tints bleiben dezent) */}
-          <article className="mt-10">
-            <h4 style={h4Style}>Erste Woche nach der Krise – Tag für Tag</h4>
-            <div className="mt-4 space-y-3">
-              {tagFuerTag.map(phase => (
-                <div
-                  key={phase.tage}
-                  className={`rounded-md border p-4 ${phase.farbe}`}
-                >
-                  <div className="mb-2 flex items-center gap-2">
-                    <span
-                      className="rounded-full border border-border/60 bg-background px-2 py-0.5 text-xs font-semibold"
-                      style={{ color: "var(--accent-primary)" }}
-                    >
-                      {phase.tage}
-                    </span>
-                    <span
-                      style={{ fontSize: "var(--text-sm)", fontWeight: 600 }}
-                    >
-                      {phase.titel}
-                    </span>
-                  </div>
-                  <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
-                    {phase.punkte.map(p => (
-                      <li key={p}>{p}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </article>
-
-          {/* Früherkennung */}
-          <article className="mt-10 space-y-3">
-            <h4 style={h4Style}>Früherkennung trainieren</h4>
-            <p style={bodyStyle}>
-              Jede überstandene Krise ist eine Lernchance für die nächste. Nicht
-              um sie zu erzwingen, sondern um früher zu erkennen, wann
-              Unterstützung nötig ist.
-            </p>
-            <ul className="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-              {frueherkennung.map(item => (
-                <li key={item.label}>
-                  <p
-                    style={{
-                      fontSize: "var(--text-sm)",
-                      fontWeight: 600,
-                      color: "var(--fg-primary)",
-                    }}
-                  >
-                    {item.label}
+                  <h4 style={h4Style}>{item.level}</h4>
+                  <p className="mt-2" style={bodyStyle}>
+                    {item.description}
                   </p>
-                  <p style={bodyStyle}>{item.sub}</p>
+                  <p className="mt-2" style={bodyStyle}>
+                    <strong style={{ color: "var(--fg-primary)" }}>
+                      Ihre Reaktion:
+                    </strong>{" "}
+                    {item.action}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <div
+              className="mt-8 border-t pt-6"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <p className="uppercase" style={labelStyle}>
+                Was konkret hilft – je nach Stufe
+              </p>
+              <div className="mt-3 space-y-2">
+                {ampelHandlungen.map(stufe => (
+                  <div
+                    key={stufe.label}
+                    className={`flex items-start gap-3 rounded-md border p-3 ${stufe.tone}`}
+                  >
+                    <span
+                      className={`min-w-[52px] pt-0.5 text-xs font-bold ${stufe.fg}`}
+                    >
+                      {stufe.label}
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {stufe.items.map(s => (
+                        <span
+                          key={s}
+                          className="rounded border border-border/30 bg-background/70 px-2 py-0.5 text-xs text-foreground"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── 5 Group B: Während der Krise ── CS2 deeskalation + CS3 krise-formulierungen + CS4 vermeiden */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Während der Krise
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <ContentSection
+            variant="editorial"
+            title="4 Schritte der Deeskalation"
+            id="deeskalation"
+            preview="Sicherheit prüfen, Ruhe bewahren, Validieren, Skills anbieten – ein bewährtes Vorgehen."
+          >
+            <ol className="mt-2 space-y-6">
+              {deeskalationsSchritte.map((item, index) => (
+                <li key={item.title} className="flex items-start gap-4">
+                  <span
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+                    style={{
+                      backgroundColor: "var(--accent-primary)",
+                      color: "var(--bg-primary)",
+                      fontSize: "var(--text-sm)",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {index + 1}
+                  </span>
+                  <div className="space-y-2">
+                    <h4 style={h4Style}>{item.title}</h4>
+                    <p style={bodyStyle}>{item.description}</p>
+                    <p style={exampleStyle}>{item.example}</p>
+                  </div>
                 </li>
               ))}
-            </ul>
-          </article>
+            </ol>
+          </ContentSection>
 
-          {/* Warnsignale Stagnation (sicherheitskritisch — amber-Akzent bleibt) */}
-          <aside
-            className="mt-10 border border-amber-300/60 border-l-4 bg-amber-50/40 p-5"
-            style={{ borderColor: "#d97706" }}
+          {/* ── ContentSection 3: krise-formulierungen ── */}
+          <ContentSection
+            variant="editorial"
+            title="Was Sie in der Krise sagen können"
+            id="krise-formulierungen"
+            preview="In einer Krise zählt jedes Wort. Diese Formulierungen haben sich bewährt."
           >
-            <h4 style={{ ...h4Style, color: "#92400e" }}>
-              Warnsignale: wenn die Nachphase nicht besser wird
-            </h4>
-            <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
-              <li>
-                Die betroffene Person zieht sich weiter zurück oder eskaliert
-                erneut
-              </li>
-              <li>
-                Sie selbst werden zynisch, gleichgültig oder dauerhaft
-                hypervigilant
-              </li>
-              <li>Keine Änderung der Muster, die zur Krise geführt haben</li>
-              <li>Krisen häufen sich ohne erkennbaren Fortschritt</li>
-            </ul>
-            <p className="mt-3" style={bodyStyle}>
-              <strong style={{ color: "var(--fg-primary)" }}>Dann:</strong>{" "}
-              Professionelle Unterstützung intensivieren – für die betroffene
-              Person, für Sie, oder für beide gemeinsam.
-            </p>
-          </aside>
-        </ContentSection>
+            <EditorialProse>
+              <p>
+                In einer Krise zählt jedes Wort. Diese Formulierungen haben sich
+                bewährt:
+              </p>
+            </EditorialProse>
+            <div className="mt-8 space-y-8">
+              {formulierungen.map(item => (
+                <article key={item.title} className="space-y-2">
+                  <h4 style={h4Style}>{item.title}</h4>
+                  <p style={exampleStyle}>{item.quote}</p>
+                  {item.note && <p style={bodyStyle}>{item.note}</p>}
+                </article>
+              ))}
+            </div>
+          </ContentSection>
 
-        {/* ── Situations-Wegweiser-Übergang ── */}
-        <EditorialSectionBlock rule>
-          <EditorialProse>
-            <p>
+          {/* ── ContentSection 4: vermeiden (sicherheitskritisch — Alert-Akzent bleibt) ── */}
+          <ContentSection
+            variant="editorial"
+            title="Was Sie in der Krise vermeiden sollten"
+            id="vermeiden"
+            preview="Drohen, Vorwürfe machen oder Gefühle herunterspielen – diese Reaktionen können die Krise verschärfen."
+          >
+            <aside className="mt-2 border border-alert/20 border-l-4 border-l-alert bg-alert/6 p-6">
+              <ul className="space-y-2.5" style={bodyStyle}>
+                <li className="flex items-start gap-2">
+                  <span className="text-alert" aria-hidden="true">
+                    ✗
+                  </span>
+                  Drohen oder Ultimaten stellen
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-alert" aria-hidden="true">
+                    ✗
+                  </span>
+                  Vorwürfe machen oder Schuld zuweisen
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-alert" aria-hidden="true">
+                    ✗
+                  </span>
+                  Die Gefühle herunterspielen («So schlimm ist es doch nicht»)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-alert" aria-hidden="true">
+                    ✗
+                  </span>
+                  Logisch argumentieren oder überzeugen wollen
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-alert" aria-hidden="true">
+                    ✗
+                  </span>
+                  Die Person ohne Hilfe, Notfallplan oder professionelle
+                  Einschätzung allein lassen – sofern Sie selbst sicher bleiben
+                  können
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-alert" aria-hidden="true">
+                    ✗
+                  </span>
+                  Sich selbst in Gefahr bringen
+                </li>
+              </ul>
+            </aside>
+          </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── 6 Group C: Nach der Krise ── CS5 nach-der-krise + Wegweiser-Übergang am Ende */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Nach der Krise
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <ContentSection
+            variant="editorial"
+            title="Nach der Krise: Verarbeitung und Neubeginn"
+            id="nach-der-krise"
+            preview="Die akute Krise ist vorbei – aber die innere Landschaft braucht Zeit. Was jetzt hilft: für die betroffene Person, für Sie, und gemeinsam."
+          >
+            {/* Krisenphase-Timeline (sicherheitskritische Klassifikation, Farben bleiben) */}
+            <figure className="mt-2 rounded-lg border border-border/40 bg-background p-4">
+              <figcaption
+                className="mb-3 text-center uppercase"
+                style={labelStyle}
+              >
+                Typischer Krisenverlauf
+              </figcaption>
+              <div className="flex flex-col items-center gap-1.5 sm:flex-row">
+                {krisenphasen.map((phase, i) => (
+                  <div
+                    key={phase.titel}
+                    className="flex w-full flex-1 items-center gap-1.5"
+                  >
+                    <div
+                      className={`flex-1 rounded-md border px-3 py-2 text-center ${phase.tone}`}
+                    >
+                      <p className={`text-xs font-semibold ${phase.fg}`}>
+                        {phase.titel}
+                      </p>
+                      <p className="text-[10px] text-muted-foreground">
+                        {phase.dauer}
+                      </p>
+                    </div>
+                    {i < krisenphasen.length - 1 && (
+                      <span
+                        aria-hidden="true"
+                        className="shrink-0 rotate-90 text-xs text-muted-foreground sm:rotate-0"
+                      >
+                        →
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <p
+                className="mt-3 text-center"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  color: "var(--fg-tertiary)",
+                }}
+              >
+                Zeitangaben sind Richtwerte — jede Krise verläuft anders.
+              </p>
+            </figure>
+
+            {/* Für die betroffene Person */}
+            <article className="mt-10 space-y-3">
+              <h4 style={h4Style}>Für die betroffene Person</h4>
+              <p style={bodyStyle}>
+                Nach einer schweren Krise folgt oft eine Phase massiver{" "}
+                <strong style={{ color: "var(--fg-primary)" }}>
+                  Scham und Reue
+                </strong>
+                . Manche ziehen sich zurück, andere entschuldigen sich
+                übermässig. Beides braucht eine ruhige, nicht-wertende Antwort –
+                weder Verharmlosen noch Aufbauschen.
+              </p>
+              <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
+                {fuerBetroffene.map(p => (
+                  <li key={p}>{p}</li>
+                ))}
+              </ul>
+            </article>
+
+            {/* Für Sie persönlich */}
+            <article className="mt-10 space-y-3">
+              <h4 style={h4Style}>Für Sie persönlich</h4>
+              <p style={bodyStyle}>
+                Schwere Krisen hinterlassen auch bei Angehörigen Spuren.
+                Dauernde Alarmbereitschaft, Schreckhaftigkeit, Angst vor der
+                nächsten Eskalation oder emotionale Taubheit sind normale
+                Reaktionen – kein Zeichen von Schwäche.
+              </p>
+              <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
+                {fuerSiePersoenlich.map(p => (
+                  <li key={p}>{p}</li>
+                ))}
+              </ul>
+            </article>
+
+            {/* Gemeinsame Krisenanalyse */}
+            <article className="mt-10 space-y-3">
+              <h4 style={h4Style}>
+                Gemeinsame Krisenanalyse (wenn beide bereit sind)
+              </h4>
+              <p style={bodyStyle}>
+                Nicht direkt nach der Krise – aber in den nächsten Tagen, in
+                einem ruhigen Moment, kann ein kurzes Gespräch helfen. Nicht als
+                Vorwurf, sondern als gemeinsames Lernen.
+              </p>
+              <dl className="mt-3 grid gap-4 sm:grid-cols-3">
+                {krisenanalyseFragen.map(item => (
+                  <div key={item.frage} className="space-y-1">
+                    <dt
+                      style={{
+                        fontSize: "var(--text-sm)",
+                        fontWeight: 600,
+                        color: "var(--fg-primary)",
+                      }}
+                    >
+                      {item.frage}
+                    </dt>
+                    <dd style={exampleStyle}>{item.beispiel}</dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
+
+            {/* Vertrauenswiederaufbau */}
+            <article className="mt-10 space-y-3">
+              <h4 style={h4Style}>Vertrauenswiederaufbau – realistisch</h4>
+              <p style={bodyStyle}>
+                Vertrauen baut sich nicht durch ein Gespräch wieder auf –
+                sondern durch{" "}
+                <strong style={{ color: "var(--fg-primary)" }}>
+                  viele kleine Momente der Verlässlichkeit
+                </strong>{" "}
+                über Zeit. Erwarten Sie keine sofortige Rückkehr zur Normalität.
+              </p>
+              <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
+                {vertrauensaufbau.map(p => (
+                  <li key={p}>{p}</li>
+                ))}
+              </ul>
+            </article>
+
+            {/* Tag-für-Tag (Phasen-Tints bleiben dezent) */}
+            <article className="mt-10">
+              <h4 style={h4Style}>Erste Woche nach der Krise – Tag für Tag</h4>
+              <div className="mt-4 space-y-3">
+                {tagFuerTag.map(phase => (
+                  <div
+                    key={phase.tage}
+                    className={`rounded-md border p-4 ${phase.farbe}`}
+                  >
+                    <div className="mb-2 flex items-center gap-2">
+                      <span
+                        className="rounded-full border border-border/60 bg-background px-2 py-0.5 text-xs font-semibold"
+                        style={{ color: "var(--accent-primary)" }}
+                      >
+                        {phase.tage}
+                      </span>
+                      <span
+                        style={{ fontSize: "var(--text-sm)", fontWeight: 600 }}
+                      >
+                        {phase.titel}
+                      </span>
+                    </div>
+                    <ul
+                      className="ml-5 list-disc space-y-1.5"
+                      style={bodyStyle}
+                    >
+                      {phase.punkte.map(p => (
+                        <li key={p}>{p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </article>
+
+            {/* Früherkennung */}
+            <article className="mt-10 space-y-3">
+              <h4 style={h4Style}>Früherkennung trainieren</h4>
+              <p style={bodyStyle}>
+                Jede überstandene Krise ist eine Lernchance für die nächste.
+                Nicht um sie zu erzwingen, sondern um früher zu erkennen, wann
+                Unterstützung nötig ist.
+              </p>
+              <ul className="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                {frueherkennung.map(item => (
+                  <li key={item.label}>
+                    <p
+                      style={{
+                        fontSize: "var(--text-sm)",
+                        fontWeight: 600,
+                        color: "var(--fg-primary)",
+                      }}
+                    >
+                      {item.label}
+                    </p>
+                    <p style={bodyStyle}>{item.sub}</p>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            {/* Warnsignale Stagnation (sicherheitskritisch — amber-Akzent bleibt) */}
+            <aside
+              className="mt-10 border border-amber-300/60 border-l-4 bg-amber-50/40 p-5"
+              style={{ borderColor: "#d97706" }}
+            >
+              <h4 style={{ ...h4Style, color: "#92400e" }}>
+                Warnsignale: wenn die Nachphase nicht besser wird
+              </h4>
+              <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
+                <li>
+                  Die betroffene Person zieht sich weiter zurück oder eskaliert
+                  erneut
+                </li>
+                <li>
+                  Sie selbst werden zynisch, gleichgültig oder dauerhaft
+                  hypervigilant
+                </li>
+                <li>Keine Änderung der Muster, die zur Krise geführt haben</li>
+                <li>Krisen häufen sich ohne erkennbaren Fortschritt</li>
+              </ul>
+              <p className="mt-3" style={bodyStyle}>
+                <strong style={{ color: "var(--fg-primary)" }}>Dann:</strong>{" "}
+                Professionelle Unterstützung intensivieren – für die betroffene
+                Person, für Sie, oder für beide gemeinsam.
+              </p>
+            </aside>
+          </ContentSection>
+
+          {/* Wegweiser-Übergang als typografisch markierter Block am Ende von Group C body */}
+          <div
+            className="mt-10 border-t pt-5"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p
+              style={{
+                fontSize: "var(--text-md)",
+                lineHeight: "var(--lh-relaxed)",
+                color: "var(--fg-secondary)",
+                fontStyle: "italic",
+              }}
+            >
               In der akuten Situation ist klares Denken schwer. Der{" "}
               <Link href="/wegweiser" className="editorial-link">
                 Situations-Wegweiser «Was tun wenn…»
               </Link>{" "}
               führt Sie Schritt für Schritt durch verschiedene Krisenszenarien.
             </p>
-          </EditorialProse>
-        </EditorialSectionBlock>
+          </div>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── Materialien ── */}
-        <EditorialSectionBlock
-          label="Materialien"
-          title="Materialien zum Thema"
-        >
-          <EditorialProse>
-            <p>
-              Infografiken und Handouts zum Thema Krisenbegleitung finden Sie
-              gesammelt auf der{" "}
-              <Link href="/materialien" className="editorial-link">
-                Materialien-Seite
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSectionBlock>
-
-        {/* ── Schluss-Sektion: Übergang ── */}
-        <EditorialSectionBlock label="Weiter" rule>
+      {/* ── 7 Weiter-Hinweis ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Weiter
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <EditorialProse>
             <p>
               Wenn die Spitze überstanden ist, hilft sprachliche Klarheit:{" "}
@@ -920,31 +1073,54 @@ export default function UnterstuetzenKrise() {
               .
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        <RelatedLinksEditorial
-          links={[
-            {
-              href: "/soforthilfe",
-              title: "Soforthilfe & Notfallnummern",
-              description:
-                "Akute Notfall-Kontakte, Krisenkarten und 24/7-Hotlines für Suizidgedanken oder Selbstverletzung.",
-            },
-            {
-              href: "/wegweiser",
-              title: "Situations-Wegweiser",
-              description:
-                "Interaktive Schritt-für-Schritt-Hilfe für konkrete Krisenszenarien.",
-            },
-            {
-              href: "/kommunizieren",
-              title: "Kommunizieren",
-              description:
-                "Validierung und DEAR-Technik — wie Sie Krisen sprachlich tragen, ohne in Eskalation zu kippen.",
-            },
-          ]}
-        />
-      </EditorialLayout>
+      {/* ── 8 Querverweise ── EditorialSection variant="cream-deep" */}
+      <EditorialSection variant="cream-deep">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Verwandt
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <RelatedLinksEditorial
+            flush
+            links={[
+              {
+                href: "/soforthilfe",
+                title: "Soforthilfe & Notfallnummern",
+                description:
+                  "Akute Notfall-Kontakte, Krisenkarten und 24/7-Hotlines für Suizidgedanken oder Selbstverletzung.",
+              },
+              {
+                href: "/wegweiser",
+                title: "Situations-Wegweiser",
+                description:
+                  "Interaktive Schritt-für-Schritt-Hilfe für konkrete Krisenszenarien.",
+              },
+              {
+                href: "/kommunizieren",
+                title: "Kommunizieren",
+                description:
+                  "Validierung und DEAR-Technik — wie Sie Krisen sprachlich tragen, ohne in Eskalation zu kippen.",
+              },
+            ]}
+          />
+        </EditorialSection.Body>
+      </EditorialSection>
     </Layout>
   );
 }

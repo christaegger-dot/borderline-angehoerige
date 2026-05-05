@@ -1,8 +1,4 @@
-import {
-  EditorialLayout,
-  EditorialProse,
-  EditorialSectionBlock,
-} from "@/components/editorial";
+import { EditorialSection } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import MaterialienLibrarySection from "@/sections/MaterialienLibrarySection";
@@ -16,32 +12,47 @@ export default function Materialien() {
         path="/materialien"
       />
 
-      <EditorialLayout width="wide">
-        {/* ── Hero ── */}
-        <header className="pb-16 pt-16 md:pb-24 md:pt-24">
+      {/* ── 1 Hero ── EditorialSection ohne Aside (Hub-Page-Identität) */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.4,
+            }}
+          >
+            Materialien und Hilfen
+          </span>
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <p
             className="text-xs uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
               fontWeight: 500,
+              marginBottom: "var(--space-5)",
             }}
           >
             Materialien
           </p>
           <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            className="font-display"
             style={{
+              fontSize: "var(--text-hero)",
               lineHeight: "var(--lh-tight)",
               letterSpacing: "var(--tracking-tight)",
               color: "var(--fg-primary)",
               fontWeight: "var(--weight-display)",
+              marginBottom: "var(--space-5)",
             }}
           >
             Materialien für <em>Angehörige</em>
           </h1>
           <p
-            className="mt-6"
+            className="max-w-[40em]"
             style={{
               fontSize: "var(--text-lg)",
               lineHeight: "var(--lh-snug)",
@@ -53,22 +64,54 @@ export default function Materialien() {
             Die Sammlung ist bewusst kuratiert: lieber wenige, wirklich
             hilfreiche Ressourcen als ein unübersichtliches Archiv.
           </p>
-        </header>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── Hinweis (vorher Sand-Card mit Eye-Icon) ── */}
-        <EditorialSectionBlock rule>
-          <EditorialProse>
-            <p>
-              Vorschau = Web-Bild. Wenn verfügbar, führt «Textversion lesen» zur
-              lesbaren Web-Version. Bei bildbasierten PDFs ist die Textversion
-              die empfohlene Lesefassung; «PDF öffnen» bleibt die Druckversion
-              im neuen Tab. Die Notfallkarte öffnet als HTML-Seite.
+      {/* ── 2 Zur Nutzung ── Disclaimer mit Hairline-Sage-Pattern (PR #411) */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Zur Nutzung
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <div
+            className="border-t pt-5"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p
+              style={{
+                fontSize: "var(--text-sm)",
+                lineHeight: "var(--lh-relaxed)",
+                color: "var(--accent-label)",
+                fontStyle: "italic",
+              }}
+            >
+              <strong style={{ color: "var(--fg-primary)" }}>
+                Vorschau = Web-Bild.
+              </strong>{" "}
+              Wenn verfügbar, führt «Textversion lesen» zur lesbaren
+              Web-Version. Bei bildbasierten PDFs ist die Textversion die
+              empfohlene Lesefassung; «PDF öffnen» bleibt die Druckversion im
+              neuen Tab. Die Notfallkarte öffnet als HTML-Seite.
             </p>
-          </EditorialProse>
-        </EditorialSectionBlock>
+          </div>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        <MaterialienLibrarySection />
-      </EditorialLayout>
+      <MaterialienLibrarySection />
     </Layout>
   );
 }

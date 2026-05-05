@@ -1,8 +1,9 @@
 import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { EditorialSectionBlock, EditorialProse } from "@/components/editorial";
+import { EditorialSection } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
+import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import {
   categoryMeta,
   materials,
@@ -192,46 +193,130 @@ export default function MaterialienLibrarySection() {
 
   return (
     <>
-      {/* ── QuickStarts: «Was hilft gerade jetzt?» ── */}
-      <EditorialSectionBlock
-        label="Schneller Einstieg"
-        title="Was hilft gerade jetzt?"
-      >
-        <ul className="mt-2 space-y-6">
-          {quickStarts.map(item => (
-            <li key={item.id} className="space-y-2">
-              <h3 style={titleStyle}>{item.title}</h3>
-              <p style={bodyStyle}>{item.text}</p>
-              <p style={{ fontSize: "var(--text-sm)" }}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setActiveCategory(item.id);
-                    scrollToResults();
-                  }}
-                  className="editorial-link"
-                >
-                  Materialien dieser Kategorie ansehen
-                </button>
-              </p>
-            </li>
-          ))}
-        </ul>
-      </EditorialSectionBlock>
+      {/* ── 3 Nach Situation ── QuickStarts «Was hilft gerade jetzt?» */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Nach Situation
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Schneller Einstieg
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Was hilft gerade jetzt?
+          </h2>
+          <ul className="space-y-6">
+            {quickStarts.map(item => (
+              <li key={item.id} className="space-y-2">
+                <h3 style={titleStyle}>{item.title}</h3>
+                <p style={bodyStyle}>{item.text}</p>
+                <p style={{ fontSize: "var(--text-sm)" }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveCategory(item.id);
+                      scrollToResults();
+                    }}
+                    className="editorial-link"
+                  >
+                    Materialien dieser Kategorie ansehen
+                  </button>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-      {/* ── Empfohlene Kernmaterialien ── */}
-      <EditorialSectionBlock
-        label="Kernmaterialien"
-        title="Empfohlene Kernmaterialien"
-        rule
-      >
-        <EditorialProse>
-          <p>
+      {/* ── 4 Kernmaterialien ── EditorialSection-Header + full-width Tile-Grid */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Kernmaterialien
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Bibliothek
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Empfohlene Kernmaterialien
+          </h2>
+          <p
+            className="max-w-[36em]"
+            style={{
+              fontSize: "var(--text-md)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+            }}
+          >
             Wenn Sie gerade nicht lange suchen möchten, beginnen Sie mit diesen
             Materialien. Sie decken Krise, Orientierung, Kommunikation, Grenzen
             und Selbstfürsorge ab.
           </p>
-          <p>
+          <p className="mt-3" style={{ fontSize: "var(--text-sm)" }}>
             <button
               type="button"
               onClick={scrollToResults}
@@ -240,144 +325,174 @@ export default function MaterialienLibrarySection() {
               Nach Kategorien filtern
             </button>
           </p>
-        </EditorialProse>
-        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
-          {coreMaterials.map(item => (
-            <MaterialEntry
-              key={item.id}
-              item={item}
-              onPreview={(image, title) => {
-                setPreviewImage(image);
-                setPreviewTitle(title);
-              }}
-            />
-          ))}
-        </div>
-      </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-      {/* ── Filter + Sekundär-Grid ── */}
-      <EditorialSectionBlock
-        label="Bibliothek"
-        title="Weitere Materialien nach Kategorie"
-        rule
+      <section
+        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-12 md:px-[var(--container-pad-md)] md:pb-16"
+        aria-label="Empfohlene Kernmaterialien — Tile-Liste"
       >
-        {/* Filter-Pills (Editorial Active-State: --accent-primary border + --bg-elevated bg) */}
-        <div
-          className="mt-2 flex flex-wrap gap-2 overflow-x-auto pb-3 -mx-4 px-4 md:mx-0 md:px-0"
-          role="group"
-          aria-label="Filter nach Kategorie"
-        >
-          {categoryMeta.map(cat => {
-            const count =
-              cat.id === "alle"
-                ? materials.filter(item => item.priority !== "core").length
-                : materials.filter(
-                    item => item.priority !== "core" && item.category === cat.id
-                  ).length;
-            const isActive = activeCategory === cat.id;
-            return (
-              <EditorialPillButton
-                key={cat.id}
-                variant="filter"
-                selected={isActive}
-                onClick={() => setActiveCategory(cat.id)}
-                aria-pressed={isActive}
-              >
-                {cat.label}
-                <span
-                  className="ml-1.5"
-                  style={{
-                    fontSize: "var(--text-xs)",
-                    color: "var(--fg-tertiary)",
-                  }}
-                >
-                  ({count})
-                </span>
-              </EditorialPillButton>
-            );
-          })}
+        <div className="mx-auto max-w-[1240px]">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
+            {coreMaterials.map(item => (
+              <MaterialEntry
+                key={item.id}
+                item={item}
+                onPreview={(image, title) => {
+                  setPreviewImage(image);
+                  setPreviewTitle(title);
+                }}
+              />
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div ref={gridRef} className="scroll-mt-24 md:scroll-mt-28">
-          {secondaryMaterials.length > 0 ? (
-            <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {secondaryMaterials.map(item => (
-                <MaterialEntry
-                  key={item.id}
-                  item={item}
-                  onPreview={(image, title) => {
-                    setPreviewImage(image);
-                    setPreviewTitle(title);
-                  }}
-                />
-              ))}
-            </div>
-          ) : (
-            <p
-              className="mt-10 border-t pt-8 text-center"
-              style={{ ...bodyStyle, borderColor: "var(--rule-color)" }}
-            >
-              In dieser Kategorie sind aktuell keine weiteren Materialien
-              sichtbar.
-            </p>
-          )}
-        </div>
-      </EditorialSectionBlock>
-
-      {/* ── Besondere Konstellationen ── */}
-      <EditorialSectionBlock
-        label="Spezialfälle"
-        title="Besondere Konstellationen"
-        rule
-      >
-        <EditorialProse>
-          <p>
-            Manche Materialien helfen besonders, wenn Kinder mitbetroffen sind,
-            wenn Schuld dominiert oder wenn Grenzen und Distanz zum Thema
-            werden.
+      {/* ── 5 Nach Kategorie ── EditorialSection-Header + Filter-Tabs (OLD pattern) + Tile-Grid */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Nach Kategorie
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Bibliothek
           </p>
-        </EditorialProse>
-        <p
-          className="mt-6 flex flex-wrap gap-x-5 gap-y-1"
-          style={{ fontSize: "var(--text-sm)" }}
-        >
-          <button
-            type="button"
-            onClick={() => {
-              setActiveCategory("verstehen");
-              scrollToResults();
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
             }}
-            className="editorial-link"
           >
-            Kinder &amp; Familie
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setActiveCategory("selbstfuersorge");
-              scrollToResults();
-            }}
-            className="editorial-link"
-          >
-            Schuld &amp; Erschöpfung
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setActiveCategory("grenzen");
-              scrollToResults();
-            }}
-            className="editorial-link"
-          >
-            Grenzen &amp; Selbstschutz
-          </button>
-        </p>
-      </EditorialSectionBlock>
+            Weitere Materialien nach Kategorie
+          </h2>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-      {/* ── Von hier aus weiter ── */}
-      <EditorialSectionBlock label="Weiter" title="Von hier aus weiter" rule>
-        <EditorialProse>
-          <p>
+      <section
+        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
+        aria-label="Materialien nach Kategorie — Filter und Tile-Liste"
+      >
+        <div className="mx-auto max-w-[1240px]">
+          {/* Filter-Pills — Commit 1: bleibt OLD «(count)»-Pattern.
+              Commit 2 macht die Tab-Konsolidierung auf NEU «· {count}». */}
+          <div
+            className="flex flex-wrap gap-2 overflow-x-auto pb-3"
+            role="group"
+            aria-label="Filter nach Kategorie"
+          >
+            {categoryMeta.map(cat => {
+              const count =
+                cat.id === "alle"
+                  ? materials.filter(item => item.priority !== "core").length
+                  : materials.filter(
+                      item =>
+                        item.priority !== "core" && item.category === cat.id
+                    ).length;
+              const isActive = activeCategory === cat.id;
+              return (
+                <EditorialPillButton
+                  key={cat.id}
+                  variant="filter"
+                  selected={isActive}
+                  onClick={() => setActiveCategory(cat.id)}
+                  aria-pressed={isActive}
+                >
+                  {cat.label}
+                  <span
+                    className="ml-1.5"
+                    style={{
+                      fontSize: "var(--text-xs)",
+                      color: "var(--fg-tertiary)",
+                    }}
+                  >
+                    ({count})
+                  </span>
+                </EditorialPillButton>
+              );
+            })}
+          </div>
+
+          <div ref={gridRef} className="scroll-mt-24 md:scroll-mt-28">
+            {secondaryMaterials.length > 0 ? (
+              <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
+                {secondaryMaterials.map(item => (
+                  <MaterialEntry
+                    key={item.id}
+                    item={item}
+                    onPreview={(image, title) => {
+                      setPreviewImage(image);
+                      setPreviewTitle(title);
+                    }}
+                  />
+                ))}
+              </div>
+            ) : (
+              <p
+                className="mt-10 border-t pt-8 text-center"
+                style={{ ...bodyStyle, borderColor: "var(--rule-color)" }}
+              >
+                In dieser Kategorie sind aktuell keine weiteren Materialien
+                sichtbar.
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6 Weiter ── Schluss-Hinweis */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Weiter
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            style={{
+              fontSize: "var(--text-md)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+            }}
+          >
             Wenn Sie gerade eher Orientierung als Downloads brauchen, sind die
             Hauptseiten oft der bessere Einstieg —{" "}
             <Link href="/verstehen" className="editorial-link">
@@ -397,10 +512,56 @@ export default function MaterialienLibrarySection() {
             </Link>
             .
           </p>
-        </EditorialProse>
-      </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-      {/* ── Preview Modal ── */}
+      {/* ── 7 Verwandt ── EditorialSection cream-deep + RelatedLinksEditorial flush */}
+      <EditorialSection variant="cream-deep">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Verwandt
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <RelatedLinksEditorial
+            flush
+            links={[
+              {
+                href: "/soforthilfe",
+                title: "Soforthilfe & Notfallnummern",
+                description:
+                  "Akute Notfall-Kontakte, Krisenkarten und 24/7-Hotlines.",
+              },
+              {
+                href: "/wegweiser",
+                title: "Situations-Wegweiser",
+                description:
+                  "Schritt-für-Schritt-Hilfe für konkrete Krisenszenarien.",
+              },
+              {
+                href: "/notfallkarte",
+                title: "Notfallkarte",
+                description:
+                  "Persönliche Notfallkarte zum Ausdrucken — Kontakte, Skills und Anker für die Krise.",
+              },
+            ]}
+          />
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── Preview Modal (unverändert) ── */}
       {previewImage && (
         <div
           className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center bg-black/80 p-4"

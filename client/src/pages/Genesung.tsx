@@ -365,7 +365,7 @@ export default function Genesung() {
               <dt style={versalStyle}>50%</dt>
               <dd className="mt-3" style={bodyStyle}>
                 erreichen eine umfassendere Genesung mit funktioneller
-                Stabilität.
+                Stabilität — meist innerhalb von 10 bis 20 Jahren.
               </dd>
             </div>
             <div

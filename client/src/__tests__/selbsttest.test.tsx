@@ -46,13 +46,13 @@ describe("Selbsttest", () => {
     });
     expect(
       screen.getByRole("heading", {
-        name: /Wie lange begleiten Sie Ihren Angehörigen schon\?/i,
+        name: /Wie intensiv war die Belastung in den letzten Wochen\?/i,
       })
     ).toBeInTheDocument();
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /Seit einiger Zeit \(6 Monate bis 2 Jahre\)/i,
+        name: /Deutlich spürbar — es kostet mich Kraft/i,
       })
     );
     act(() => {
@@ -99,13 +99,13 @@ describe("Selbsttest", () => {
     });
     expect(
       screen.getByRole("heading", {
-        name: /Wie lange begleiten Sie Ihren Angehörigen schon\?/i,
+        name: /Wie intensiv war die Belastung in den letzten Wochen\?/i,
       })
     ).toBeInTheDocument();
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /Seit kurzem \(unter 6 Monate\)/i,
+        name: /Kaum spürbar — ich komme gut zurecht/i,
       })
     );
     act(() => {

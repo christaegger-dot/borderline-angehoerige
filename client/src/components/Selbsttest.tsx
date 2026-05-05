@@ -87,23 +87,28 @@ const questions: Question[] = [
   },
   {
     id: 3,
-    text: "Wie lange begleiten Sie Ihren Angehörigen schon?",
+    text: "Wie intensiv war die Belastung in den letzten Wochen?",
     subtext: "Dies hilft uns, passende Ressourcen zu empfehlen.",
     options: [
       {
-        text: "Seit kurzem (unter 6 Monate)",
-        value: "neu",
-        weight: { verstehen: 6, unterstuetzen: 4 },
+        text: "Kaum spürbar — ich komme gut zurecht",
+        value: "niedrig",
+        weight: { verstehen: 4, unterstuetzen: 4 },
       },
       {
-        text: "Seit einiger Zeit (6 Monate bis 2 Jahre)",
+        text: "Deutlich spürbar — es kostet mich Kraft",
         value: "mittel",
         weight: { kommunizieren: 4, grenzen: 3, selbstfuersorge: 3 },
       },
       {
-        text: "Schon lange (über 2 Jahre)",
-        value: "lang",
-        weight: { selbstfuersorge: 5, grenzen: 3, kommunizieren: 2 },
+        text: "Sehr stark — ich bin oft erschöpft",
+        value: "hoch",
+        weight: { selbstfuersorge: 6, grenzen: 3, kommunizieren: 2 },
+      },
+      {
+        text: "Ich bin am Limit",
+        value: "limit",
+        weight: { selbstfuersorge: 8, krise: 3, grenzen: 2 },
       },
     ],
   },

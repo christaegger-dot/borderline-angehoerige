@@ -430,20 +430,31 @@ export default function UnterstuetzenKrise() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
+          {/* Disclaimer: Hairline-Trenner darüber + italic + Sage-Akzent
+              (Sage-Color für italic Body schafft visuelle Differenzierung
+              zum normalen Body-Text, analog Wegweiser-Übergangs-Pattern in
+              Group C body) */}
+          <div
+            className="border-t pt-5"
             style={{
-              fontSize: "var(--text-sm)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-              fontStyle: "italic",
+              borderColor: "var(--rule-color)",
               marginBottom: "var(--space-5)",
             }}
           >
-            Diese Inhalte ersetzen keine professionelle Krisenberatung. Bei
-            akuter Gefahr direkt{" "}
-            <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
-            anrufen.
-          </p>
+            <p
+              style={{
+                fontSize: "var(--text-sm)",
+                lineHeight: "var(--lh-relaxed)",
+                color: "var(--accent-label)",
+                fontStyle: "italic",
+              }}
+            >
+              Diese Inhalte ersetzen keine professionelle Krisenberatung. Bei
+              akuter Gefahr direkt{" "}
+              <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
+              anrufen.
+            </p>
+          </div>
           <KrisenampelVisualisierung />
         </EditorialSection.Body>
       </EditorialSection>

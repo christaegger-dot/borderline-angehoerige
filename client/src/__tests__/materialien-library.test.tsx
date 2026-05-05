@@ -13,8 +13,8 @@ describe("MaterialienLibrarySection", () => {
 
     expect(screen.getByText("Empfohlene Kernmaterialien")).toBeInTheDocument();
     expect(
-      screen.getByText("Notfallkarte Zürich – Psychische Krise")
-    ).toBeInTheDocument();
+      screen.getAllByText("Notfallkarte Zürich – Psychische Krise")
+    ).toHaveLength(2);
     expect(
       screen.getByText("Genesung in Zahlen – Was die Forschung zeigt")
     ).toBeInTheDocument();
@@ -27,23 +27,24 @@ describe("MaterialienLibrarySection", () => {
     );
     expect(localizedDownloadLink).toHaveAttribute("download", "");
 
-    const localDownloadLink = screen.getByRole("link", {
+    const notfallkarteDownloadLinks = screen.getAllByRole("link", {
       name: /Notfallkarte Zürich – Psychische Krise herunterladen/i,
     });
-    expect(localDownloadLink).toHaveAttribute(
+    expect(notfallkarteDownloadLinks).toHaveLength(2);
+    expect(notfallkarteDownloadLinks[0]).toHaveAttribute(
       "href",
       "/api/material-download/notfallkarte-zuerich"
     );
-    expect(localDownloadLink).toHaveAttribute("download", "");
+    expect(notfallkarteDownloadLinks[0]).toHaveAttribute("download", "");
     expect(
-      screen.getByRole("link", {
+      screen.getAllByRole("link", {
         name: /Notfallkarte Zürich – Psychische Krise öffnen/i,
-      })
+      })[0]
     ).toHaveAttribute("href", "/notfallkarte");
     expect(
-      screen.getByRole("link", {
+      screen.getAllByRole("link", {
         name: /Textversion lesen: Notfallplan Krise – Suizidgedanken & Selbstverletzung/i,
-      })
+      })[0]
     ).toHaveAttribute("href", "/materialien/text/notfallplan-krise");
 
     const textVersionLink = screen.getByRole("link", {
@@ -54,9 +55,9 @@ describe("MaterialienLibrarySection", () => {
       "/materialien/text/leuchtturm"
     );
     expect(
-      screen.getByRole("link", {
+      screen.getAllByRole("link", {
         name: /Textversion lesen: Ihre Rolle klären – Was Sie sein können/i,
-      })
+      })[0]
     ).toHaveAttribute("href", "/materialien/text/rolle-klaeren");
     expect(
       screen.getByRole("link", {

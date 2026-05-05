@@ -26,6 +26,12 @@ export interface MaterialItem {
   previewUrl?: string;
   isHtml?: boolean;
   priority?: "core" | "secondary";
+  /**
+   * Wenn true und priority="core", erscheint das Tile zusätzlich in der
+   * Bibliothek-Liste (Filter NACH KATEGORIE) unter seiner Haupt-Kategorie.
+   * Standardverhalten: nur secondary-Tiles erscheinen in der Bibliothek.
+   */
+  showInLibrary?: boolean;
   /** Datum der letzten Prüfung/Erstellung im Format MMMM YYYY (z.B. 'April 2025') */
   verifiedAt?: string;
 }
@@ -51,6 +57,7 @@ export const materials: MaterialItem[] = [
     pdfUrl: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
     isHtml: true,
     priority: "core",
+    showInLibrary: true,
     verifiedAt: "April 2026",
   },
   {
@@ -63,6 +70,7 @@ export const materials: MaterialItem[] = [
     url: "/notfallplan-krise-v03-preview.webp",
     downloadUrl: "/notfallplan-krise-v03.pdf",
     priority: "core",
+    showInLibrary: true,
     verifiedAt: "April 2026",
   },
   {
@@ -102,6 +110,7 @@ export const materials: MaterialItem[] = [
       "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
     downloadUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     priority: "core",
+    showInLibrary: true,
     verifiedAt: "April 2026",
   },
   {

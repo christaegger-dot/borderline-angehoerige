@@ -756,6 +756,31 @@ export default function Verstehen() {
                   color: "var(--fg-primary)",
                 }}
               >
+                «Borderline ist dasselbe wie Trauma.»
+              </h4>
+              <p>
+                Viele Menschen mit Borderline haben traumatische Erfahrungen
+                gemacht — das ist dokumentiert und klinisch relevant. Borderline
+                und PTBS sind aber eigenständige Diagnosen mit unterschiedlichen
+                Kernmerkmalen und Behandlungsansätzen. Eine PTBS-Diagnose allein
+                erklärt nicht die emotionale Dysregulation, das instabile
+                Selbstbild oder die Beziehungsmuster, die für Borderline
+                charakteristisch sind. Beide Diagnosen können gleichzeitig
+                vorliegen.{" "}
+                <Link href="/begleiterkrankungen" className="editorial-link">
+                  Begleiterkrankungen
+                </Link>
+                .
+              </p>
+
+              <h4
+                className="mt-6"
+                style={{
+                  fontSize: "var(--text-md)",
+                  fontWeight: 600,
+                  color: "var(--fg-primary)",
+                }}
+              >
                 «Suizid direkt anzusprechen macht es schlimmer.»
               </h4>
               <p>
@@ -808,7 +833,7 @@ export default function Verstehen() {
             <EvidenceNote
               variant="editorial"
               title="Quellen zu Mythen, Verlauf und Geschlecht"
-              definition="Die Einordnungen stützen sich auf Behandlungsforschung, Verlaufsstudien und eine Übersichtsarbeit zu Geschlechtsunterschieden."
+              definition="Die Einordnungen stützen sich auf Behandlungsforschung, Verlaufsstudien, eine Komorbidität-Studie und eine Übersichtsarbeit zu Geschlechtsunterschieden."
               sources={[
                 {
                   label:

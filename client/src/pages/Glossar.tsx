@@ -14,6 +14,10 @@ interface GlossaryTerm {
   category: "therapie" | "kommunikation" | "symptome" | "selbsthilfe";
   definition: string;
   example?: string;
+  criteria?: {
+    intro: string;
+    items: string[];
+  };
   relatedPage?: string;
   relatedPageTitle?: string;
 }
@@ -27,6 +31,21 @@ const glossaryTerms: GlossaryTerm[] = [
       "Ein komplexes Störungsbild mit starker emotionaler Reagibilität, Schwierigkeiten mit innerer Stabilität und einem Beziehungserleben, das unter Bindungsstress schnell ins Wanken geraten kann. Klassifiziert im DSM-5 als eigenständige Persönlichkeitsstörung und im ICD-11 als «Borderline-Muster» (Code 6D11.5). Die englische Bezeichnung lautet Borderline Personality Disorder (BPD).",
     example:
       "Ausprägung und Verlauf unterscheiden sich deutlich: Manche Menschen wirken vor allem impulsiv und explosiv, andere eher verzweifelt, zurückgezogen, leer oder selbstabwertend.",
+    criteria: {
+      intro:
+        "Für eine Diagnose nach DSM-5 müssen mindestens 5 der folgenden 9 Merkmale zutreffen:",
+      items: [
+        "Verzweifeltes Bemühen, reales oder vorgestelltes Verlassenwerden zu vermeiden",
+        "Instabile und intensive zwischenmenschliche Beziehungen (abwechselnd Idealisierung und Entwertung)",
+        "Instabiles Selbstbild oder instabile Selbstwahrnehmung",
+        "Impulsivität in mindestens zwei potenziell selbstschädigenden Bereichen (z.B. Geldausgaben, Substanzkonsum, Sexualität, rücksichtsloses Fahren, Essanfälle)",
+        "Wiederkehrende suizidale Handlungen, Drohungen oder Selbstverletzungen",
+        "Ausgeprägte Stimmungsinstabilität (intensive Episoden von Dysphorie, Reizbarkeit oder Angst)",
+        "Chronisches Gefühl der Leere",
+        "Unangemessene, intensive Wut oder Schwierigkeiten, Wut zu kontrollieren",
+        "Vorübergehende, stressabhängige paranoide Vorstellungen oder schwere dissoziative Symptome",
+      ],
+    },
     relatedPage: "/verstehen",
     relatedPageTitle: "Borderline verstehen",
   },
@@ -474,6 +493,32 @@ export default function Glossar() {
                           Beispiel:{" "}
                         </strong>
                         {t.example}
+                      </dd>
+                    )}
+                    {t.criteria && (
+                      <dd>
+                        <details className="mt-1">
+                          <summary
+                            className="cursor-pointer uppercase"
+                            style={{
+                              ...labelStyle,
+                              color: "var(--accent-primary)",
+                            }}
+                          >
+                            DSM-5-Kriterien anzeigen
+                          </summary>
+                          <div className="mt-3 space-y-2">
+                            <p style={ddStyle}>{t.criteria.intro}</p>
+                            <ol
+                              className="ml-4 mt-2 space-y-1"
+                              style={{ ...ddStyle, listStyleType: "decimal" }}
+                            >
+                              {t.criteria.items.map((item, i) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ol>
+                          </div>
+                        </details>
                       </dd>
                     )}
                     {t.relatedPage && t.relatedPageTitle && (

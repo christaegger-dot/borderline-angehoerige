@@ -206,7 +206,7 @@ export default function Grenzen() {
         <EditorialSection.Aside>
           <InnenraeumeIllustration
             ariaLabel="Zwei Räume, die sich respektieren — durch eine durchlässige Membran getrennt, nicht durch eine Mauer."
-            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+            className="ml-auto block aspect-square w-full max-w-[560px]"
           />
         </EditorialSection.Aside>
       </EditorialSection>

@@ -131,7 +131,7 @@ export default function Selbstfuersorge() {
         <EditorialSection.Aside>
           <SchaleIllustration
             ariaLabel="Eine offene Schale, die etwas hält ohne zu greifen — selbst tragend, selbst geformt."
-            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+            className="ml-auto block aspect-square w-full max-w-[560px]"
           />
         </EditorialSection.Aside>
       </EditorialSection>

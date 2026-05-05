@@ -181,7 +181,7 @@ export default function Genesung() {
         <EditorialSection.Aside>
           <AufgangIllustration
             ariaLabel="Ein Aufgang mit Wegmarkern, der nicht zu einem Ziel führt, sondern in Bewegung hält."
-            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+            className="ml-auto block aspect-square w-full max-w-[560px]"
           />
         </EditorialSection.Aside>
       </EditorialSection>

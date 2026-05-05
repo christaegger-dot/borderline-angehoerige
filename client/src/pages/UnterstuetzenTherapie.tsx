@@ -1,10 +1,9 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
-  EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
-  EditorialSectionBlock,
+  EditorialSection,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
@@ -176,32 +175,47 @@ export default function UnterstuetzenTherapie() {
 
       <UnterstuetzenSubNav />
 
-      <EditorialLayout width="narrow">
-        {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+      {/* ── 1 Hero ── EditorialSection ohne Aside (Sub-Page-Identität) */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.4,
+            }}
+          >
+            Rolle und Rahmen
+          </span>
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <p
             className="text-xs uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
               fontWeight: 500,
+              marginBottom: "var(--space-5)",
             }}
           >
-            Unterstützen — Therapie
+            Therapie
           </p>
           <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
+            className="font-display"
             style={{
+              fontSize: "var(--text-hero)",
               lineHeight: "var(--lh-tight)",
               letterSpacing: "var(--tracking-tight)",
               color: "var(--fg-primary)",
               fontWeight: "var(--weight-display)",
+              marginBottom: "var(--space-5)",
             }}
           >
             Therapie <em>begleiten</em>
           </h1>
           <p
-            className="mt-6"
+            className="max-w-[40em]"
             style={{
               fontSize: "var(--text-lg)",
               lineHeight: "var(--lh-snug)",
@@ -213,23 +227,98 @@ export default function UnterstuetzenTherapie() {
             nicht für den anderen übernehmen. Genau diese Grenze macht
             Therapiebegleitung oft so anspruchsvoll.
           </p>
-          <p
-            className="mt-4"
+          <div
+            className="mt-8 border-t pt-3"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p
+              className="text-xs uppercase"
+              style={{
+                color: "var(--accent-label)",
+                letterSpacing: "var(--tracking-caps)",
+                fontWeight: 500,
+              }}
+            >
+              Vollständig ca. 10 Min · Auch abschnittweise lesbar
+            </p>
+            <LastVerifiedBadge
+              path="/unterstuetzen/therapie"
+              className="mt-3"
+            />
+          </div>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── 2 Orientierung ── RollenOrbitVisualisierung
+           (verschoben von zwischen Intro und CS1, jetzt nach Hero —
+           analog Krise + Alltag-Pattern) */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
             style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
             }}
           >
-            Vollständig ca. 10 Min · Auch abschnittweise lesbar.
-          </p>
-          <LastVerifiedBadge path="/unterstuetzen/therapie" className="mt-6" />
-        </header>
+            Orientierung
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <RollenOrbitVisualisierung />
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── Intro: Was diese Seite bei Therapie ordnet ── */}
-        <EditorialSectionBlock
-          label="Überblick"
-          title="Was diese Seite bei Therapie ordnet"
-        >
+      {/* ── 3 Intro: Was diese Seite bei Therapie ordnet ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Kernfrage
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Überblick
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Was diese Seite bei Therapie ordnet
+          </h2>
           <EditorialProse>
             <p>
               Diese Seite hilft Ihnen, Therapiebegleitung klarer von
@@ -292,308 +381,436 @@ export default function UnterstuetzenTherapie() {
               der passendere Einstieg.
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── Visualisierung (out-of-scope) ── */}
-        <RollenOrbitVisualisierung />
+      {/* ── 4 Pull-Quote (dominant, eigene Sektion zwischen Intro und Group A) ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.Body>
+          <EditorialPullQuote>
+            Eine hilfreiche innere Frage lautet oft nicht: Wie bringe ich die
+            Therapie zum Funktionieren? Sondern: Wie kann ich den Rahmen
+            mittragen, ohne selbst zur Behandlung zu werden?
+          </EditorialPullQuote>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── ContentSection 1: rolle ── */}
-        <ContentSection
-          variant="editorial"
-          title="Was Angehörige in der Therapie wirklich tun können"
-          id="rolle"
-          defaultOpen={true}
-          preview="Hilfreiche Therapiebegleitung bedeutet meist: ermutigen, strukturieren, entlasten und realistisch bleiben, ohne selbst mitzubehandeln."
-        >
-          <EditorialProse>
-            <p>
-              Angehörige können ermutigen, Termine unterstützen, Veränderungen
-              wahrnehmen und Rückschläge einordnen helfen. Sie können aber keine
-              Therapie ersetzen, keine Motivation erzwingen und nicht
-              stellvertretend regulieren, was in Behandlung bearbeitet werden
-              muss.
-            </p>
-          </EditorialProse>
-          <div className="mt-4">
-            <EditorialPullQuote>
-              Eine hilfreiche innere Frage lautet oft nicht: Wie bringe ich die
-              Therapie zum Funktionieren? Sondern: Wie kann ich den Rahmen
-              mittragen, ohne selbst zur Behandlung zu werden?
-            </EditorialPullQuote>
-          </div>
-        </ContentSection>
-
-        {/* ── ContentSection 2: zusammenarbeit ── */}
-        <ContentSection
-          variant="editorial"
-          title="Mit dem Behandlungssystem zusammenarbeiten"
-          id="zusammenarbeit"
-          preview="Sie sind nicht Teil der Therapie – und das ist oft richtig so. Aber es gibt konstruktive Wege, mit dem klinischen Team in Kontakt zu treten."
-        >
-          <EditorialProse>
-            <p>
-              Dass Sie nicht in jede Sitzung eingeladen werden, ist meistens{" "}
-              <strong>therapeutisch beabsichtigt</strong> – nicht Ablehnung. Die
-              Therapie braucht einen geschützten Raum. Trotzdem gibt es
-              Situationen, in denen Kontakt sinnvoll und berechtigt ist.
-            </p>
-          </EditorialProse>
-          <div className="mt-8 space-y-10">
-            {zusammenarbeitSzenarien.map(szenario => (
-              <article key={szenario.titel} className="space-y-3">
-                <h4 style={h4Style}>{szenario.titel}</h4>
-                <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
-                  {szenario.inhalt.map(p => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-          <aside
-            className="mt-10 border-l-4 pl-5"
-            style={{ borderColor: "#d97706" }}
+      {/* ── 5 Group A: Was hilft ── CS1 rolle + CS2 zusammenarbeit */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
           >
-            <h4 style={{ ...h4Style, color: "#92400e" }}>
-              Warnsignale für eine problematische Therapiesituation
-            </h4>
-            <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
-              <li>
-                Therapeut kritisiert Angehörige offen vor Patient («Sie sind das
-                Problem»)
-              </li>
-              <li>
-                Kein Kontakt möglich, auch nicht bei konkreten
-                Sicherheitsbedenken
-              </li>
-              <li>
-                Patient wird von Familie isoliert («Vertrau nur mir, nicht
-                deinem Partner»)
-              </li>
-              <li>
-                Jahre Therapie ohne jede erkennbare Veränderung oder Reflexion
-                darüber
-              </li>
-            </ul>
-            <p className="mt-3" style={bodyStyle}>
-              <strong style={{ color: "var(--fg-primary)" }}>Dann:</strong>{" "}
-              Zweitmeinung einholen oder Therapeutenwechsel ansprechen – das ist
-              legitim und manchmal notwendig.
-            </p>
-          </aside>
-        </ContentSection>
-
-        {/* ── ContentSection 3: therapieformen ── */}
-        <ContentSection
-          variant="editorial"
-          title="Therapieformen knapp eingeordnet"
-          id="therapieformen"
-          preview="DBT, MBT, Schematherapie und TFP sind gut erforschte Behandlungsansätze. Für Angehörige ist oft weniger das Label als die Passung im Alltag entscheidend."
-        >
-          <div className="mt-2 space-y-6">
-            {therapieformen.map(item => (
-              <article key={item.name} className="space-y-2">
-                <h4 style={h4Style}>{item.name}</h4>
-                <p style={bodyStyle}>{item.description}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-6">
-            <EditorialPullQuote>
-              Für Angehörige ist meist wichtiger als das perfekte Therapielabel,
-              ob Behandlung tragfähig beginnt, ob Krisen professionell
-              eingebettet werden und ob der Prozess über Zeit gehalten werden
-              kann.
-            </EditorialPullQuote>
-          </div>
-          <EvidenceNote
-            variant="editorial"
-            title="Quellen zu Therapieverfahren und Angehörigenprogrammen"
-            definition="DBT, MBT und andere BPS-spezifische Psychotherapien sind die am besten untersuchten Verfahren. Für Angehörige sind psychoedukative Programme wie Family Connections nicht nur entlastend, sondern ebenfalls wissenschaftlich beschrieben."
-            sources={[
-              {
-                label:
-                  "Storebø et al. (2020) – Cochrane-Review zu psychologischen Therapien bei BPS",
-                href: quellenLinks.storebo2020,
-                type: "wissenschaft",
-              },
-              {
-                label:
-                  "Bateman & Fonagy (2009) – RCT zu mentalisierungsbasierter Therapie",
-                href: quellenLinks.batemanFonagy2009,
-                type: "wissenschaft",
-              },
-              {
-                label: "Linehan (2015) – DBT Skills Training Manual",
-                href: quellenLinks.linehan2015,
-                type: "wissenschaft",
-              },
-              {
-                label: "Hoffman et al. (2005) – Family Connections",
-                href: quellenLinks.hoffman2005,
-                type: "wissenschaft",
-              },
-              {
-                label:
-                  "Gunderson, Berkowitz & Ruiz-Sancho (1997) – psychoedukative Familienarbeit",
-                href: quellenLinks.gunderson1997,
-                type: "wissenschaft",
-              },
-            ]}
-          />
-        </ContentSection>
-
-        {/* ── ContentSection 4: unterstuetzen ── */}
-        <ContentSection
-          variant="editorial"
-          title="Wie Sie den Therapieprozess unterstützen können"
-          id="unterstuetzen"
-          preview="Hilfreich ist meist sanfte Unterstützung ohne Druck: Orientierung geben, Veränderungen wahrnehmen, eigene Erwartungen regulieren."
-        >
-          <EditorialProse>
-            <p>Hilfreich sind oft kleine, konkrete Schritte:</p>
-            <ul className="ml-6 list-disc space-y-1">
-              <li>
-                Therapie als Möglichkeit ansprechen, nicht als Drohkulisse
-              </li>
-              <li>bei Organisation helfen, wenn das erwünscht ist</li>
-              <li>Skills und neue Schritte bemerken, ohne zu kontrollieren</li>
-              <li>Fortschritte konkret benennen statt pauschal zu loben</li>
-              <li>Rückschläge einordnen, ohne sie zu dramatisieren</li>
-              <li>
-                eigene Unterstützung unabhängig von der Therapiebereitschaft
-                suchen
-              </li>
-            </ul>
-            <p>
-              Wenn Sprache, Scham oder Migrationserfahrungen Gespräche
-              erschweren, ist das kein Ausschlusskriterium für Behandlung.
-              Hilfreich ist oft, zunächst über das Beobachtbare zu sprechen:
-              Schlaf, Alarmzustand, Rückzug, Selbstverletzung, Wut oder
-              Sicherheit. Fragen Sie in Praxis, Klinik oder Beratung aktiv nach
-              professioneller Dolmetschung, wenn Deutsch nicht für alle sicher
-              genug ist. Kinder sollten Diagnose-, Krisen- oder Gewaltgespräche
-              nicht dolmetschen müssen.
-            </p>
-            <p>
-              Und: Sie müssen nicht warten, bis die betroffene Person sofort
-              mitzieht. Psychoedukative Angehörigenprogramme wie Family
-              Connections sind nicht nur entlastende Zusatzangebote, sondern
-              fachlich beschrieben. Mehr dazu finden Sie auf der{" "}
-              <Link href="/quellen" className="editorial-link">
-                Quellen-Seite
-              </Link>{" "}
-              und unter{" "}
-              <Link href="/selbsthilfegruppen" className="editorial-link">
-                Selbsthilfegruppen & Netzwerke
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </ContentSection>
-
-        {/* ── ContentSection 5: musterbrief ── */}
-        <ContentSection
-          variant="editorial"
-          title="Erstkontakt mit dem Therapeuten – Musterbrief"
-          id="musterbrief"
-          preview="Eine kurze, klare E-Mail kann den Einstieg erleichtern. Hier ein Muster, das Sie anpassen können."
-        >
-          <EditorialProse>
-            <p>
-              Wenn Sie als nahestehende Person Kontakt mit dem Therapeuten
-              aufnehmen möchten, kann eine kurze schriftliche Nachricht helfen.
-              Das Muster unten dient als Ausgangspunkt, wenn Sie Ihre
-              Perspektive einbringen oder nach einem Angehörigengespräch fragen
-              möchten.
-            </p>
-          </EditorialProse>
-          <figure
-            className="mt-8 border-t pt-6"
+            Was hilft
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
             style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <ContentSection
+            variant="editorial"
+            title="Was Angehörige in der Therapie wirklich tun können"
+            id="rolle"
+            defaultOpen={true}
+            preview="Hilfreiche Therapiebegleitung bedeutet meist: ermutigen, strukturieren, entlasten und realistisch bleiben, ohne selbst mitzubehandeln."
           >
-            <figcaption className="uppercase" style={labelStyle}>
-              Muster-E-Mail
-            </figcaption>
-            <pre
-              className="mt-3 whitespace-pre-line font-mono"
-              style={{
-                fontSize: "var(--text-sm)",
-                lineHeight: "var(--lh-relaxed)",
-                color: "var(--fg-primary)",
-              }}
+            <EditorialProse>
+              <p>
+                Angehörige können ermutigen, Termine unterstützen, Veränderungen
+                wahrnehmen und Rückschläge einordnen helfen. Sie können aber
+                keine Therapie ersetzen, keine Motivation erzwingen und nicht
+                stellvertretend regulieren, was in Behandlung bearbeitet werden
+                muss.
+              </p>
+            </EditorialProse>
+          </ContentSection>
+
+          {/* ── ContentSection 2: zusammenarbeit ── */}
+          <ContentSection
+            variant="editorial"
+            title="Mit dem Behandlungssystem zusammenarbeiten"
+            id="zusammenarbeit"
+            preview="Sie sind nicht Teil der Therapie – und das ist oft richtig so. Aber es gibt konstruktive Wege, mit dem klinischen Team in Kontakt zu treten."
+          >
+            <EditorialProse>
+              <p>
+                Dass Sie nicht in jede Sitzung eingeladen werden, ist meistens{" "}
+                <strong>therapeutisch beabsichtigt</strong> – nicht Ablehnung.
+                Die Therapie braucht einen geschützten Raum. Trotzdem gibt es
+                Situationen, in denen Kontakt sinnvoll und berechtigt ist.
+              </p>
+            </EditorialProse>
+            <div className="mt-8 space-y-10">
+              {zusammenarbeitSzenarien.map(szenario => (
+                <article key={szenario.titel} className="space-y-3">
+                  <h4 style={h4Style}>{szenario.titel}</h4>
+                  <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
+                    {szenario.inhalt.map(p => (
+                      <li key={p}>{p}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+            <aside
+              className="mt-10 border-l-4 pl-5"
+              style={{ borderColor: "#d97706" }}
             >
-              {musterMail}
-            </pre>
-          </figure>
-          <p className="mt-6" style={bodyStyle}>
-            <strong style={{ color: "var(--fg-primary)" }}>Wichtig:</strong> Der
-            Therapeut ist an die Schweigepflicht gebunden und darf ohne
-            Einwilligung Ihres Angehörigen keine Inhalte der Behandlung
-            besprechen. Das ist kein Ablehnen – sondern professionelles Handeln.
-          </p>
-        </ContentSection>
+              <h4 style={{ ...h4Style, color: "#92400e" }}>
+                Warnsignale für eine problematische Therapiesituation
+              </h4>
+              <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
+                <li>
+                  Therapeut kritisiert Angehörige offen vor Patient («Sie sind
+                  das Problem»)
+                </li>
+                <li>
+                  Kein Kontakt möglich, auch nicht bei konkreten
+                  Sicherheitsbedenken
+                </li>
+                <li>
+                  Patient wird von Familie isoliert («Vertrau nur mir, nicht
+                  deinem Partner»)
+                </li>
+                <li>
+                  Jahre Therapie ohne jede erkennbare Veränderung oder Reflexion
+                  darüber
+                </li>
+              </ul>
+              <p className="mt-3" style={bodyStyle}>
+                <strong style={{ color: "var(--fg-primary)" }}>Dann:</strong>{" "}
+                Zweitmeinung einholen oder Therapeutenwechsel ansprechen – das
+                ist legitim und manchmal notwendig.
+              </p>
+            </aside>
+          </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── ContentSection 6: rueckschlaege ── */}
-        <ContentSection
-          variant="editorial"
-          title="Rückschläge und Unterbrüche"
-          id="rueckschlaege"
-          preview="Therapie verläuft selten gradlinig. Abbrüche, Krisen oder Phasen von Widerstand bedeuten nicht automatisch, dass alles umsonst war."
-        >
-          <EditorialProse>
-            <p>
-              Viele Angehörige erleben Therapiebegleitung als Achterbahn:
-              Hoffnung, erster Fortschritt, erneute Krise, Rückzug, vielleicht
-              ein Therapieabbruch und später ein neuer Anlauf. Solche
-              Unterbrüche sind belastend, aber nicht ungewöhnlich.
+      {/* ── 6 Group B: Forschungsstand ── CS3 therapieformen + EvidenceNote */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Forschungsstand
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <ContentSection
+            variant="editorial"
+            title="Therapieformen knapp eingeordnet"
+            id="therapieformen"
+            preview="DBT, MBT, Schematherapie und TFP sind gut erforschte Behandlungsansätze. Für Angehörige ist oft weniger das Label als die Passung im Alltag entscheidend."
+          >
+            <div className="mt-2 space-y-6">
+              {therapieformen.map(item => (
+                <article key={item.name} className="space-y-2">
+                  <h4 style={h4Style}>{item.name}</h4>
+                  <p style={bodyStyle}>{item.description}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-6">
+              <EditorialPullQuote>
+                Für Angehörige ist meist wichtiger als das perfekte
+                Therapielabel, ob Behandlung tragfähig beginnt, ob Krisen
+                professionell eingebettet werden und ob der Prozess über Zeit
+                gehalten werden kann.
+              </EditorialPullQuote>
+            </div>
+            <EvidenceNote
+              variant="editorial"
+              title="Quellen zu Therapieverfahren und Angehörigenprogrammen"
+              definition="DBT, MBT und andere BPS-spezifische Psychotherapien sind die am besten untersuchten Verfahren. Für Angehörige sind psychoedukative Programme wie Family Connections nicht nur entlastend, sondern ebenfalls wissenschaftlich beschrieben."
+              sources={[
+                {
+                  label:
+                    "Storebø et al. (2020) – Cochrane-Review zu psychologischen Therapien bei BPS",
+                  href: quellenLinks.storebo2020,
+                  type: "wissenschaft",
+                },
+                {
+                  label:
+                    "Bateman & Fonagy (2009) – RCT zu mentalisierungsbasierter Therapie",
+                  href: quellenLinks.batemanFonagy2009,
+                  type: "wissenschaft",
+                },
+                {
+                  label: "Linehan (2015) – DBT Skills Training Manual",
+                  href: quellenLinks.linehan2015,
+                  type: "wissenschaft",
+                },
+                {
+                  label: "Hoffman et al. (2005) – Family Connections",
+                  href: quellenLinks.hoffman2005,
+                  type: "wissenschaft",
+                },
+                {
+                  label:
+                    "Gunderson, Berkowitz & Ruiz-Sancho (1997) – psychoedukative Familienarbeit",
+                  href: quellenLinks.gunderson1997,
+                  type: "wissenschaft",
+                },
+              ]}
+            />
+          </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── 7 Group C: Prozess-Begleitung ── CS4 unterstuetzen + CS5 musterbrief + CS6 rueckschlaege */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Prozess-Begleitung
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <ContentSection
+            variant="editorial"
+            title="Wie Sie den Therapieprozess unterstützen können"
+            id="unterstuetzen"
+            preview="Hilfreich ist meist sanfte Unterstützung ohne Druck: Orientierung geben, Veränderungen wahrnehmen, eigene Erwartungen regulieren."
+          >
+            <EditorialProse>
+              <p>Hilfreich sind oft kleine, konkrete Schritte:</p>
+              <ul className="ml-6 list-disc space-y-1">
+                <li>
+                  Therapie als Möglichkeit ansprechen, nicht als Drohkulisse
+                </li>
+                <li>bei Organisation helfen, wenn das erwünscht ist</li>
+                <li>
+                  Skills und neue Schritte bemerken, ohne zu kontrollieren
+                </li>
+                <li>Fortschritte konkret benennen statt pauschal zu loben</li>
+                <li>Rückschläge einordnen, ohne sie zu dramatisieren</li>
+                <li>
+                  eigene Unterstützung unabhängig von der Therapiebereitschaft
+                  suchen
+                </li>
+              </ul>
+              <p>
+                Wenn Sprache, Scham oder Migrationserfahrungen Gespräche
+                erschweren, ist das kein Ausschlusskriterium für Behandlung.
+                Hilfreich ist oft, zunächst über das Beobachtbare zu sprechen:
+                Schlaf, Alarmzustand, Rückzug, Selbstverletzung, Wut oder
+                Sicherheit. Fragen Sie in Praxis, Klinik oder Beratung aktiv
+                nach professioneller Dolmetschung, wenn Deutsch nicht für alle
+                sicher genug ist. Kinder sollten Diagnose-, Krisen- oder
+                Gewaltgespräche nicht dolmetschen müssen.
+              </p>
+              <p>
+                Und: Sie müssen nicht warten, bis die betroffene Person sofort
+                mitzieht. Psychoedukative Angehörigenprogramme wie Family
+                Connections sind nicht nur entlastende Zusatzangebote, sondern
+                fachlich beschrieben. Mehr dazu finden Sie auf der{" "}
+                <Link href="/quellen" className="editorial-link">
+                  Quellen-Seite
+                </Link>{" "}
+                und unter{" "}
+                <Link href="/selbsthilfegruppen" className="editorial-link">
+                  Selbsthilfegruppen & Netzwerke
+                </Link>
+                .
+              </p>
+            </EditorialProse>
+          </ContentSection>
+
+          {/* ── ContentSection 5: musterbrief ── */}
+          <ContentSection
+            variant="editorial"
+            title="Erstkontakt mit dem Therapeuten – Musterbrief"
+            id="musterbrief"
+            preview="Eine kurze, klare E-Mail kann den Einstieg erleichtern. Hier ein Muster, das Sie anpassen können."
+          >
+            <EditorialProse>
+              <p>
+                Wenn Sie als nahestehende Person Kontakt mit dem Therapeuten
+                aufnehmen möchten, kann eine kurze schriftliche Nachricht
+                helfen. Das Muster unten dient als Ausgangspunkt, wenn Sie Ihre
+                Perspektive einbringen oder nach einem Angehörigengespräch
+                fragen möchten.
+              </p>
+            </EditorialProse>
+            <figure
+              className="mt-8 border-t pt-6"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <figcaption className="uppercase" style={labelStyle}>
+                Muster-E-Mail
+              </figcaption>
+              <pre
+                className="mt-3 whitespace-pre-line font-mono"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-primary)",
+                }}
+              >
+                {musterMail}
+              </pre>
+            </figure>
+            <p className="mt-6" style={bodyStyle}>
+              <strong style={{ color: "var(--fg-primary)" }}>Wichtig:</strong>{" "}
+              Der Therapeut ist an die Schweigepflicht gebunden und darf ohne
+              Einwilligung Ihres Angehörigen keine Inhalte der Behandlung
+              besprechen. Das ist kein Ablehnen – sondern professionelles
+              Handeln.
             </p>
-          </EditorialProse>
-          <div className="mt-4">
-            <EditorialPullQuote>
-              Hilfreich ist dann meist weder Druck noch Resignation, sondern ein
-              nüchterner Blick: Was hat geholfen? Wo wurde es zu viel? Was wäre
-              der nächste tragfähige Schritt?
-            </EditorialPullQuote>
-          </div>
-        </ContentSection>
+          </ContentSection>
 
-        {/* ── ContentSection 7: nicht-ihre-rolle ── */}
-        <ContentSection
-          variant="editorial"
-          title="Was Ihre Rolle ausdrücklich nicht ist"
-          id="nicht-ihre-rolle"
-          preview="Gerade engagierte Angehörige geraten leicht in eine Nebenrolle als Coach, Therapeut oder Krisenmanager. Das ist verständlich, aber selten tragfähig."
-        >
-          <EditorialProse>
-            <ul className="ml-6 list-disc space-y-2">
-              <li>
-                Sie müssen nicht Therapiesprache permanent in den Alltag
-                übersetzen.
-              </li>
-              <li>
-                Sie müssen nicht jedes Verhalten analysieren oder mit
-                Fachbegriffen einordnen.
-              </li>
-              <li>
-                Sie sind nicht dafür zuständig, Motivation dauerhaft
-                aufrechtzuerhalten.
-              </li>
-              <li>
-                Sie müssen Behandlungsfortschritt nicht kontrollieren oder
-                überwachen.
-              </li>
-            </ul>
-          </EditorialProse>
-        </ContentSection>
+          {/* ── ContentSection 6: rueckschlaege ── */}
+          <ContentSection
+            variant="editorial"
+            title="Rückschläge und Unterbrüche"
+            id="rueckschlaege"
+            preview="Therapie verläuft selten gradlinig. Abbrüche, Krisen oder Phasen von Widerstand bedeuten nicht automatisch, dass alles umsonst war."
+          >
+            <EditorialProse>
+              <p>
+                Viele Angehörige erleben Therapiebegleitung als Achterbahn:
+                Hoffnung, erster Fortschritt, erneute Krise, Rückzug, vielleicht
+                ein Therapieabbruch und später ein neuer Anlauf. Solche
+                Unterbrüche sind belastend, aber nicht ungewöhnlich.
+              </p>
+            </EditorialProse>
+            <div className="mt-4">
+              <EditorialPullQuote>
+                Hilfreich ist dann meist weder Druck noch Resignation, sondern
+                ein nüchterner Blick: Was hat geholfen? Wo wurde es zu viel? Was
+                wäre der nächste tragfähige Schritt?
+              </EditorialPullQuote>
+            </div>
+          </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── ContentSection 8: therapieangebote ── */}
-        <ContentSection
-          variant="editorial"
-          title="Therapieangebote im Kanton Zürich"
-          id="therapieangebote"
-          preview="Ausgewählte spezialisierte Angebote und Suchwege für Jugendliche, Erwachsene und weiterführende Behandlung."
-        >
+      {/* ── 8 Group D: Grenzen der Rolle ── CS7 nicht-ihre-rolle */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Grenzen der Rolle
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <ContentSection
+            variant="editorial"
+            title="Was Ihre Rolle ausdrücklich nicht ist"
+            id="nicht-ihre-rolle"
+            preview="Gerade engagierte Angehörige geraten leicht in eine Nebenrolle als Coach, Therapeut oder Krisenmanager. Das ist verständlich, aber selten tragfähig."
+          >
+            <EditorialProse>
+              <ul className="ml-6 list-disc space-y-2">
+                <li>
+                  Sie müssen nicht Therapiesprache permanent in den Alltag
+                  übersetzen.
+                </li>
+                <li>
+                  Sie müssen nicht jedes Verhalten analysieren oder mit
+                  Fachbegriffen einordnen.
+                </li>
+                <li>
+                  Sie sind nicht dafür zuständig, Motivation dauerhaft
+                  aufrechtzuerhalten.
+                </li>
+                <li>
+                  Sie müssen Behandlungsfortschritt nicht kontrollieren oder
+                  überwachen.
+                </li>
+              </ul>
+            </EditorialProse>
+          </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── 9 Therapieangebote ZH ── eigener Block (nicht Group)
+           ID 'therapieangebote' auf H2 — Ziel des /therapieangebote-Redirects */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Therapieangebote ZH
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Angebote
+          </p>
+          <h2
+            id="therapieangebote"
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Therapieangebote im Kanton Zürich
+          </h2>
           <EditorialProse>
             <p>
               Therapie ist in drei Settings möglich: <em>ambulant</em> mit
@@ -716,27 +933,29 @@ export default function UnterstuetzenTherapie() {
               ))}
             </ul>
           </article>
-        </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        {/* ── Materialien-Block ── */}
-        <EditorialSectionBlock
-          label="Materialien"
-          title="Materialien zum Thema"
-        >
-          <EditorialProse>
-            <p>
-              Infografiken und Handouts zur Therapiebegleitung finden Sie
-              gesammelt auf der{" "}
-              <Link href="/materialien" className="editorial-link">
-                Materialien-Seite
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSectionBlock>
-
-        {/* ── Schluss-Sektion: Übergang ── */}
-        <EditorialSectionBlock label="Weiter" rule>
+      {/* ── 10 Weiter-Hinweis ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Weiter
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
           <EditorialProse>
             <p>
               Wenn aus Therapierahmen akute Eskalation wird, geht es um{" "}
@@ -750,31 +969,54 @@ export default function UnterstuetzenTherapie() {
               .
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </EditorialSection.Body>
+      </EditorialSection>
 
-        <RelatedLinksEditorial
-          links={[
-            {
-              href: "/unterstuetzen/krise",
-              title: "Krisen begleiten",
-              description:
-                "Ampel-System, Deeskalation, Was sagen / Was vermeiden — wenn Therapierahmen kippt.",
-            },
-            {
-              href: "/genesung",
-              title: "Genesung",
-              description:
-                "Realistische Perspektive auf Behandlungsverläufe, Remission und Recovery.",
-            },
-            {
-              href: "/fachstelle",
-              title: "Fachstelle",
-              description:
-                "Beratung für Angehörige — auch unabhängig vom therapeutischen Rahmen.",
-            },
-          ]}
-        />
-      </EditorialLayout>
+      {/* ── 11 Querverweise ── EditorialSection variant="cream-deep" */}
+      <EditorialSection variant="cream-deep">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Verwandt
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <RelatedLinksEditorial
+            flush
+            links={[
+              {
+                href: "/unterstuetzen/krise",
+                title: "Krisen begleiten",
+                description:
+                  "Ampel-System, Deeskalation, Was sagen / Was vermeiden — wenn Therapierahmen kippt.",
+              },
+              {
+                href: "/genesung",
+                title: "Genesung",
+                description:
+                  "Realistische Perspektive auf Behandlungsverläufe, Remission und Recovery.",
+              },
+              {
+                href: "/fachstelle",
+                title: "Fachstelle",
+                description:
+                  "Beratung für Angehörige — auch unabhängig vom therapeutischen Rahmen.",
+              },
+            ]}
+          />
+        </EditorialSection.Body>
+      </EditorialSection>
     </Layout>
   );
 }

@@ -400,12 +400,10 @@ export default function MaterialienLibrarySection() {
         aria-label="Materialien nach Kategorie — Filter und Tile-Liste"
       >
         <div className="mx-auto max-w-[1240px]">
-          {/* Filter-Pills — Commit 1: bleibt OLD «(count)»-Pattern.
-              Commit 2 macht die Tab-Konsolidierung auf NEU «· {count}». */}
           <div
-            className="flex flex-wrap gap-2 overflow-x-auto pb-3"
-            role="group"
-            aria-label="Filter nach Kategorie"
+            className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
+            role="tablist"
+            aria-label="Filter Materialien nach Kategorie"
           >
             {categoryMeta.map(cat => {
               const count =
@@ -415,25 +413,18 @@ export default function MaterialienLibrarySection() {
                       item =>
                         item.priority !== "core" && item.category === cat.id
                     ).length;
-              const isActive = activeCategory === cat.id;
               return (
                 <EditorialPillButton
                   key={cat.id}
                   variant="filter"
-                  selected={isActive}
+                  selected={activeCategory === cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  aria-pressed={isActive}
                 >
-                  {cat.label}
-                  <span
-                    className="ml-1.5"
-                    style={{
-                      fontSize: "var(--text-xs)",
-                      color: "var(--fg-tertiary)",
-                    }}
-                  >
-                    ({count})
+                  <span>{cat.label}</span>
+                  <span aria-hidden="true" className="mx-2.5 opacity-50">
+                    ·
                   </span>
+                  <span className="opacity-70">{count}</span>
                 </EditorialPillButton>
               );
             })}

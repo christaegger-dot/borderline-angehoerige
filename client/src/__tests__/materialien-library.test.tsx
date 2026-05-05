@@ -119,7 +119,7 @@ describe("MaterialienLibrarySection", () => {
       )
     ).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("tab", { name: /Genesung\s*\(1\)/ }));
+    fireEvent.click(screen.getByRole("tab", { name: /Genesung\s*·?\s*1/ }));
 
     expect(
       screen.getByText("Genesung in Zahlen – Was die Forschung zeigt")

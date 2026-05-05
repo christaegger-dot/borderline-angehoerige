@@ -175,12 +175,15 @@ export default function MaterialienLibrarySection() {
     []
   );
 
+  const isInLibrary = (item: MaterialItem) =>
+    item.priority !== "core" || item.showInLibrary === true;
+
   const secondaryMaterials = useMemo(
     () =>
       activeCategory === "alle"
-        ? materials.filter(item => item.priority !== "core")
+        ? materials.filter(isInLibrary)
         : materials.filter(
-            item => item.priority !== "core" && item.category === activeCategory
+            item => isInLibrary(item) && item.category === activeCategory
           ),
     [activeCategory]
   );
@@ -408,10 +411,9 @@ export default function MaterialienLibrarySection() {
             {categoryMeta.map(cat => {
               const count =
                 cat.id === "alle"
-                  ? materials.filter(item => item.priority !== "core").length
+                  ? materials.filter(isInLibrary).length
                   : materials.filter(
-                      item =>
-                        item.priority !== "core" && item.category === cat.id
+                      item => isInLibrary(item) && item.category === cat.id
                     ).length;
               return (
                 <EditorialPillButton

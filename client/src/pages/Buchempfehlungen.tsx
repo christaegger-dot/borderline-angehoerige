@@ -125,6 +125,15 @@ const bookCategories: BookCategory[] = [
           "Mit passendem Begleitbuch. Liefert Tipps und Anleitungen, um die Erkrankung zu erkennen und Mut zu fassen für den gemeinsamen Weg.",
         forWhom: "Eltern, Familien",
       },
+      {
+        title: "Borderline Personality Disorder in Adolescents",
+        author: "Blaise Aguirre",
+        publisher: "Fair Winds Press",
+        year: "2014",
+        description:
+          "Englischsprachiges Standardwerk zu BPS bei Jugendlichen. Erklärt Entstehung, Diagnose und Behandlung aus der Perspektive von Eltern und Fachpersonen. Aguirre leitet das McLean-Hospital-Programm für Adoleszente.",
+        forWhom: "Eltern, deren Kind (Jugendliche) betroffen ist",
+      },
     ],
   },
   {

@@ -361,7 +361,7 @@ export default function Home() {
           <EditorialProse>
             <p>
               Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die
-              erkrankte Person. Orientierung, Gespräch und Materialien für
+              betroffene Person. Orientierung, Gespräch und Materialien für
               Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
             </p>
           </EditorialProse>

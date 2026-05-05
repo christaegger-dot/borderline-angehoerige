@@ -798,11 +798,11 @@ export default function Verstehen() {
                 «Borderline betrifft nur Frauen.»
               </h4>
               <p>
-                Borderline kann Menschen aller Geschlechter betreffen. Männer
-                suchen teilweise später Hilfe oder werden mit anderen
-                Problembildern gelesen, etwa Substanzkonsum, Wut oder Rückzug.
-                Angehörige männlicher Betroffener sind hier ausdrücklich mit
-                gemeint.
+                Borderline kommt bei allen Geschlechtern vor — klinisch werden
+                Frauen häufiger diagnostiziert. Männer suchen teilweise später
+                Hilfe oder werden mit anderen Problembildern gelesen, etwa
+                Substanzkonsum, Wut oder Rückzug. Angehörige männlicher
+                Betroffener sind hier ausdrücklich mit gemeint.
               </p>
             </EditorialProse>
             <EvidenceNote

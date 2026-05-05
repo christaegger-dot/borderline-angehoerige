@@ -91,12 +91,12 @@ function renderWithRoute(ui: React.ReactElement, route: string) {
 }
 
 const HASH_CASES = [
-  {
-    route: "/unterstuetzen/therapie#therapieangebote",
-    loadPage: () => import("@/pages/UnterstuetzenTherapie"),
-    buttonName: /Abschnitt Therapieangebote im Kanton Zürich/i,
-    contentText: /HYPE Züri/i,
-  },
+  // /unterstuetzen/therapie#therapieangebote: nach Phase-3-Migration kein
+  // collapsible ContentSection mehr — Therapieangebote-Block ist eine static
+  // EditorialSection mit H2#therapieangebote (Anchor-Target erhalten,
+  // Redirect /therapieangebote weiter funktional). Hash-Scroll-Verhalten
+  // wird durch Browser nativ via fragment-anchor gehandhabt, nicht durch
+  // Custom-Event-Toggle.
   {
     route: "/diagnostik#anbieter",
     loadPage: () => import("@/pages/Diagnostik"),

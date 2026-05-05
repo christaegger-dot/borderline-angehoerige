@@ -116,9 +116,8 @@ export default function Verstehen() {
         </EditorialSection.Body>
         <EditorialSection.Aside>
           <div
-            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+            className="ml-auto block aspect-square w-full max-w-[560px]"
             style={{
-              aspectRatio: "1 / 1",
               filter: "drop-shadow(0 8px 24px rgba(91, 58, 78, 0.12))",
             }}
           >

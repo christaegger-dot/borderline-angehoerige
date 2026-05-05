@@ -119,7 +119,7 @@ export default function Kommunizieren() {
         <EditorialSection.Aside>
           <FadenIllustration
             ariaLabel="Ein dünner Faden, der zwischen zwei Punkten gespannt ist und trotz Belastung trägt."
-            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+            className="ml-auto block aspect-square w-full max-w-[560px]"
           />
         </EditorialSection.Aside>
       </EditorialSection>

@@ -740,9 +740,7 @@ export default function UnterstuetzenKrise() {
             id="vermeiden"
             preview="Drohen, Vorwürfe machen oder Gefühle herunterspielen – diese Reaktionen können die Krise verschärfen."
           >
-            <aside
-              className="mt-2 border border-[--color-sos-amber-border] border-l-2 border-l-[--color-sos-amber-text] bg-[--color-sos-amber-wash] p-6"
-            >
+            <aside className="mt-2 border border-[--color-sos-amber-border] border-l-2 border-l-[--color-sos-amber-text] bg-[--color-sos-amber-wash] p-6">
               <ul className="space-y-2.5" style={bodyStyle}>
                 <li className="flex items-start gap-2">
                   <span

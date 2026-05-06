@@ -11,13 +11,13 @@ PR-Titel: `feat(cluster-4-s1): Recovery-Zeit, Aguirre, Sprachregelung, Geschlech
 
 ## Übersicht der Änderungen
 
-| Edit | Datei | Art | Aufwand |
-|---|---|---|---|
-| A | `client/src/pages/Genesung.tsx` | Text-Edit (1 Satz) | trivial |
-| B | `client/src/pages/Buchempfehlungen.tsx` | Neuer Eintrag (Objekt) | klein |
-| C | `client/src/pages/Home.tsx` | Text-Edit (1 Wort) | trivial |
-| D | `client/src/pages/Verstehen.tsx` | Text-Edit (1 Satz) | trivial |
-| E | `_dev/STYLE-SPRACHREGELUNG.md` | Neue Datei | klein |
+| Edit | Datei                                   | Art                    | Aufwand |
+| ---- | --------------------------------------- | ---------------------- | ------- |
+| A    | `client/src/pages/Genesung.tsx`         | Text-Edit (1 Satz)     | trivial |
+| B    | `client/src/pages/Buchempfehlungen.tsx` | Neuer Eintrag (Objekt) | klein   |
+| C    | `client/src/pages/Home.tsx`             | Text-Edit (1 Wort)     | trivial |
+| D    | `client/src/pages/Verstehen.tsx`        | Text-Edit (1 Satz)     | trivial |
+| E    | `_dev/STYLE-SPRACHREGELUNG.md`          | Neue Datei             | klein   |
 
 ---
 
@@ -26,12 +26,14 @@ PR-Titel: `feat(cluster-4-s1): Recovery-Zeit, Aguirre, Sprachregelung, Geschlech
 **Datei:** `client/src/pages/Genesung.tsx`
 
 **Suche:**
+
 ```
 erreichen eine umfassendere Genesung mit funktioneller
                 Stabilität.
 ```
 
 **Ersetze durch:**
+
 ```
 erreichen eine umfassendere Genesung mit funktioneller
                 Stabilität — meist innerhalb von 10 bis 20 Jahren.
@@ -46,6 +48,7 @@ erreichen eine umfassendere Genesung mit funktioneller
 **Datei:** `client/src/pages/Buchempfehlungen.tsx`
 
 **Suche** (letzter Eintrag in der «Für Eltern»-Kategorie, ~Zeile 120):
+
 ```
       {
         title: "Borderline verstehen und bewältigen",
@@ -62,6 +65,7 @@ erreichen eine umfassendere Genesung mit funktioneller
 ```
 
 **Ersetze durch:**
+
 ```
       {
         title: "Borderline verstehen und bewältigen",
@@ -95,11 +99,13 @@ erreichen eine umfassendere Genesung mit funktioneller
 **Datei:** `client/src/pages/Home.tsx`
 
 **Suche:**
+
 ```
 erkrankte Person. Orientierung, Gespräch und Materialien für
 ```
 
 **Ersetze durch:**
+
 ```
 betroffene Person. Orientierung, Gespräch und Materialien für
 ```
@@ -113,11 +119,13 @@ betroffene Person. Orientierung, Gespräch und Materialien für
 **Datei:** `client/src/pages/Verstehen.tsx`
 
 **Suche:**
+
 ```
                 Borderline kann Menschen aller Geschlechter betreffen. Männer
 ```
 
 **Ersetze durch:**
+
 ```
                 Borderline kommt bei allen Geschlechtern vor — klinisch werden Frauen häufiger diagnostiziert. Männer
 ```
@@ -131,6 +139,7 @@ betroffene Person. Orientierung, Gespräch und Materialien für
 **Datei:** `_dev/STYLE-SPRACHREGELUNG.md` (neu erstellen)
 
 **Inhalt:**
+
 ```markdown
 ---
 Datum: 2026-05-05

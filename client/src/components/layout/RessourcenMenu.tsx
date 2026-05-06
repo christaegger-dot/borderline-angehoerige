@@ -113,12 +113,12 @@ export function RessourcenMenu({
               <div
                 key={group.name}
                 className={
-                  groupIdx > 0 ? "border-l border-border/40 pl-3" : undefined
+                  groupIdx > 0 ? "border-l border-border/60 pl-3" : undefined
                 }
               >
-                <div className="px-3 pt-2 pb-2.5">
+                <div className="border-b border-border/30 px-3 pt-2 pb-2 mb-1">
                   <span
-                    className={`text-[11px] font-semibold tracking-[0.08em] uppercase whitespace-nowrap ${currentAccent.groupLabel}`}
+                    className={`text-[11px] font-semibold tracking-[0.1em] uppercase whitespace-nowrap text-[color:var(--fg-primary)] ${currentAccent.groupLabel}`}
                   >
                     {group.name}
                   </span>

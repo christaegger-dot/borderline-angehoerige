@@ -321,6 +321,21 @@ export default function Glossar() {
     });
   }, [location]);
 
+  // Deep-Link /glossar#dsm-5-kriterien öffnet den <details>-Block automatisch.
+  useEffect(() => {
+    const openDetailsFromHash = () => {
+      const hash = window.location.hash.replace(/^#/, "");
+      if (!hash) return;
+      const el = document.getElementById(hash);
+      if (el && el.tagName === "DETAILS") {
+        (el as HTMLDetailsElement).open = true;
+      }
+    };
+    openDetailsFromHash();
+    window.addEventListener("hashchange", openDetailsFromHash);
+    return () => window.removeEventListener("hashchange", openDetailsFromHash);
+  }, []);
+
   const handleAnchorClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, anchorId: string) => {
       e.preventDefault();
@@ -497,7 +512,7 @@ export default function Glossar() {
                     )}
                     {t.criteria && (
                       <dd>
-                        <details className="mt-1">
+                        <details id="dsm-5-kriterien" className="mt-1">
                           <summary
                             className="cursor-pointer uppercase"
                             style={{

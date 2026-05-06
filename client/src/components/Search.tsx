@@ -35,6 +35,27 @@ export function getSearchTerms(query: string) {
     : [];
 }
 
+function levenshtein(a: string, b: string): number {
+  const m = a.length;
+  const n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  let prev = new Array(n + 1);
+  let curr = new Array(n + 1);
+  for (let j = 0; j <= n; j++) prev[j] = j;
+  for (let i = 1; i <= m; i++) {
+    curr[0] = i;
+    for (let j = 1; j <= n; j++) {
+      curr[j] =
+        a[i - 1] === b[j - 1]
+          ? prev[j - 1]
+          : 1 + Math.min(prev[j - 1], prev[j], curr[j - 1]);
+    }
+    [prev, curr] = [curr, prev];
+  }
+  return prev[n];
+}
+
 export default function Search({ isOpen, onClose }: SearchProps) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchEntry[]>([]);
@@ -173,6 +194,22 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     setQuery("");
     onClose();
   };
+
+  const suggestions = useMemo(() => {
+    if (!searchIndex || !normalizedQuery || normalizedQuery.length < 3) {
+      return [] as SearchEntry[];
+    }
+    const threshold = Math.max(2, Math.floor(normalizedQuery.length / 3));
+    return searchIndex
+      .map(entry => ({
+        item: entry.item,
+        dist: levenshtein(normalizedQuery, entry.normalizedTitle),
+      }))
+      .filter(({ dist }) => dist > 0 && dist <= threshold)
+      .sort((a, b) => a.dist - b.dist)
+      .slice(0, 3)
+      .map(({ item }) => item);
+  }, [searchIndex, normalizedQuery]);
 
   // Arrow key navigation in results
   const handleInputKeyDown = (e: React.KeyboardEvent) => {
@@ -319,12 +356,41 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                 ) : results.length === 0 ? (
                   <div className="px-4 py-8 text-center">
                     <p className="text-muted-foreground">
-                      Keine Ergebnisse für \"{query}\"
+                      Keine Ergebnisse für «{query}»
                     </p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Versuchen Sie andere Suchbegriffe oder schauen Sie in der
-                      Navigation
-                    </p>
+                    {suggestions.length > 0 ? (
+                      <div className="mt-4">
+                        <p className="text-sm text-muted-foreground">
+                          Haben Sie das gemeint?
+                        </p>
+                        <ul className="mt-2 space-y-1">
+                          {suggestions.map(s => (
+                            <li key={s.href}>
+                              <AppLink
+                                href={s.href}
+                                onClick={handleResultClick}
+                                className="text-sm font-medium text-foreground hover:underline"
+                              >
+                                {s.title}
+                              </AppLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        Versuchen Sie andere Suchbegriffe — oder bei einer
+                        akuten Lage direkt zum{" "}
+                        <AppLink
+                          href="/wegweiser"
+                          onClick={handleResultClick}
+                          className="font-medium text-foreground underline"
+                        >
+                          Situations-Wegweiser
+                        </AppLink>
+                        .
+                      </p>
+                    )}
                   </div>
                 ) : (
                   <div

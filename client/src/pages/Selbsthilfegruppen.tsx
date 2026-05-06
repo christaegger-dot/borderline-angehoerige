@@ -147,6 +147,30 @@ export default function Selbsthilfegruppen() {
             suchen. Hier finden Sie Beratung, Selbsthilfe und weitere
             Anlaufstellen für Angehörige in der Schweiz.
           </p>
+          <p
+            className="mt-4"
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            <strong style={{ color: "var(--fg-secondary)" }}>
+              Regional-Hinweis:
+            </strong>{" "}
+            Die hier aufgeführten Angebote sind primär für den Kanton Zürich
+            relevant. Für andere Kantone führt der schnellste Weg über{" "}
+            <a
+              href="https://www.selbsthilfeschweiz.ch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="editorial-link"
+            >
+              Selbsthilfe Schweiz
+            </a>{" "}
+            (kantonale Stellen finden) oder über die Hausarzt-/Psychiater:innen-
+            Praxis vor Ort.
+          </p>
           <LastVerifiedBadge path={canonicalPath} className="mt-6" />
           <ReviewBadge path={canonicalPath} />
         </header>

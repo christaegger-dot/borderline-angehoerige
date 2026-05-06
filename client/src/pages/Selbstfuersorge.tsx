@@ -136,7 +136,167 @@ export default function Selbstfuersorge() {
         </EditorialSection.Aside>
       </EditorialSection>
 
-      {/* ── 2 Pull-Quote (dominant, eigene Sektion) ── */}
+      {/* ── 2 Sofort-Block ── Was Sie sich jetzt schenken können (Quick-Einstieg
+           für Nutzer in akuter Erschöpfung — verlinkt auf #sofort-uebungen) */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Jetzt sofort
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Akute Belastung
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Was Sie sich jetzt schenken können
+          </h2>
+          <p
+            className="max-w-[40em]"
+            style={{
+              fontSize: "var(--text-md)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Wenn Sie die Seite gerade in akuter Erschöpfung lesen, ist eine
+            kurze Sofort-Übung oft hilfreicher als ein Konzept. Drei
+            Mini-Massnahmen, jederzeit anwendbar:
+          </p>
+          <ul className="space-y-5">
+            <li>
+              <h3
+                style={{
+                  fontSize: "var(--text-md)",
+                  fontWeight: 600,
+                  color: "var(--fg-primary)",
+                }}
+              >
+                Atmen — drei tiefe Züge
+              </h3>
+              <p
+                className="mt-1"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-secondary)",
+                }}
+              >
+                Vier Sekunden ein, sechs Sekunden aus. Verlangsamt das
+                vegetative Alarmsystem, ohne dass Sie irgendwohin müssen.{" "}
+                <a
+                  href="#sofort-uebungen"
+                  className="editorial-link"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleAnchorClick(e, "sofort-uebungen");
+                  }}
+                >
+                  Volle Atemübung
+                </a>
+              </p>
+            </li>
+            <li>
+              <h3
+                style={{
+                  fontSize: "var(--text-md)",
+                  fontWeight: 600,
+                  color: "var(--fg-primary)",
+                }}
+              >
+                5-4-3-2-1 Grounding
+              </h3>
+              <p
+                className="mt-1"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-secondary)",
+                }}
+              >
+                Fünf Dinge sehen, vier hören, drei spüren, zwei riechen, eins
+                schmecken. Holt Sie zurück in den Raum, wenn Gedanken kreisen.{" "}
+                <a
+                  href="#sofort-uebungen"
+                  className="editorial-link"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleAnchorClick(e, "sofort-uebungen");
+                  }}
+                >
+                  Mit Timer üben
+                </a>
+              </p>
+            </li>
+            <li>
+              <h3
+                style={{
+                  fontSize: "var(--text-md)",
+                  fontWeight: 600,
+                  color: "var(--fg-primary)",
+                }}
+              >
+                STOPP — kurz innehalten
+              </h3>
+              <p
+                className="mt-1"
+                style={{
+                  fontSize: "var(--text-sm)",
+                  lineHeight: "var(--lh-relaxed)",
+                  color: "var(--fg-secondary)",
+                }}
+              >
+                Stopp, tief atmen, orientieren, planen, einen Schritt tun.
+                Bricht den Sorgen-Strudel, ohne dass Sie eine Lösung haben
+                müssen.{" "}
+                <a
+                  href="#sofort-uebungen"
+                  className="editorial-link"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleAnchorClick(e, "sofort-uebungen");
+                  }}
+                >
+                  STOPP-Technik vollständig
+                </a>
+              </p>
+            </li>
+          </ul>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── 3 Pull-Quote (dominant, eigene Sektion) ── */}
       <EditorialSection variant="cream">
         <EditorialSection.Body>
           <EditorialPullQuote>
@@ -147,7 +307,7 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 3 Intro: Was auf dieser Seite besonders trägt ── */}
+      {/* ── 4 Intro: Was auf dieser Seite besonders trägt ── */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -248,7 +408,7 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 4 Group A: Ausgangspunkt ── warum-wichtig */}
+      {/* ── 5 Group A: Ausgangspunkt ── warum-wichtig */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -301,7 +461,7 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 5 Group B: Signale wahrnehmen ── signals + check */}
+      {/* ── 6 Group B: Signale wahrnehmen ── signals + check */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -326,7 +486,7 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 6 Group C: Was hilft ── exercises + radikale + erlaubnis
+      {/* ── 7 Group C: Was hilft ── exercises + radikale + erlaubnis
            (beratung-netzwerke verschoben hinter erlaubnis, damit Group C
            zusammenhängend bleibt — narrativ verbessert sich der Flow:
            erst selbst probieren, dann externe Hilfe) */}
@@ -442,7 +602,7 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 7 Group D: Nicht allein tragen ── beratung-netzwerke
+      {/* ── 8 Group D: Nicht allein tragen ── beratung-netzwerke
            (page-level reorder: war zwischen exercises und radikale,
            jetzt nach erlaubnis — narrativ besser, Group C bleibt
            zusammenhängend) */}
@@ -487,10 +647,10 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 8 Materialien ── SelbstfuersorgeInfografikenSection */}
+      {/* ── 9 Materialien ── SelbstfuersorgeInfografikenSection */}
       <SelbstfuersorgeInfografikenSection />
 
-      {/* ── 9 Group E: In der Rolle ── role-notes */}
+      {/* ── 10 Group E: In der Rolle ── role-notes */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -514,7 +674,7 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 10 Group F: Forschungsstand ── EvidenceNote */}
+      {/* ── 11 Group F: Forschungsstand ── EvidenceNote */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -559,7 +719,7 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 11 Weiter-Hinweis ── */}
+      {/* ── 12 Weiter-Hinweis ── */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -596,7 +756,7 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 12 Querverweise ── EditorialSection variant="cream-deep" */}
+      {/* ── 13 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
           <span

@@ -27,6 +27,77 @@ Konvention:
   wenn aber zukünftig PDF-Versionen aktualisiert werden, müssen beide Quellen synchronisiert werden.
   Status: ungeprüft / latentes Risiko, kein Akut-Fix nötig.
 
+- **Wegweiser-Ergebnis sofort sichtbar nach Klick** [Priorität HOCH, Aufwand klein]
+  Eröffnet 2026-05-06 (Live-Audit). Nach Klick auf eine Situation (z.B. «Suiziddrohung») bleibt
+  der Viewport auf der Situations-Liste — der Nutzer muss scrollen, um die Antwort zu sehen.
+  In akuten Situationen kritisch. Code: `client/src/pages/Wegweiser.tsx` hat keinen
+  `scrollIntoView`/`scrollTo`-Aufruf nach Auswahl. Fix: Auto-Scroll auf Ergebnis-Block
+  analog zum `scrollToResults`-Pattern in `MaterialienLibrarySection.tsx`.
+
+- **Selbsttest-Result mehr Substanz** [Priorität HOCH, Aufwand mittel]
+  Eröffnet 2026-05-06 (Live-Audit). Result-Block in `Selbsttest.tsx` zeigt nur Title + 1 Satz
+  Description + 1 Primary + 2-3 Secondary-Links. Keine Spiegelung des Antwort-Profils
+  («Sie haben angegeben, dass …»). Fix: Result-Komponente um einen kontextuellen Einleitungssatz
+  erweitern, der die Top-2-Weights des Users zurück-spiegelt, bevor die Empfehlungs-Links kommen.
+
+- **FAQ Volltextsuche innerhalb der Page** [Priorität MITTEL, Aufwand mittel]
+  Eröffnet 2026-05-06 (Live-Audit). FAQ hat 26 Fragen in 5 Kategorien, aber keinen
+  In-Page-Filter. Wer «Kinder», «Einweisung» oder «Medikamente» sucht, muss alle Kategorien
+  manuell durchgehen. Code: `FAQ.tsx` hat keinen `useState query`/`<input>`. Fix: schmales
+  Filter-Eingabefeld am Page-Anfang, das Q&A-Texte client-seitig filtert (analog Materialien
+  Filter-Tab-Pattern, aber als Volltext).
+
+- **Selbstfürsorge-Sofort-Block am Anfang** [Priorität MITTEL, Aufwand mittel]
+  Eröffnet 2026-05-06 (Live-Audit). Page beginnt mit Hero → Pull-Quote → konzeptueller Intro.
+  Wer in akuter Erschöpfung kommt, braucht zuerst eine «Was-jetzt-sofort?»-Orientierung
+  (3-4 Mini-Massnahmen) bevor Konzepte. Fix: Quick-Block-Sektion nach Hero, vor Pull-Quote,
+  mit 3-4 Sofort-Übungen aus `SelbstfuersorgeExercisesSection`.
+
+- **Beratung Kantons-Erwartung kalibrieren** [Priorität NIEDRIG, Aufwand klein]
+  Eröffnet 2026-05-06 (Live-Audit). `Selbsthilfegruppen.tsx` (`/beratung`) listet primär
+  Zürich-zentrische Angebote (PUK, VASK Zürich). Nutzer aus anderen Kantonen finden den
+  «Selbsthilfe Schweiz»-Hinweis nur klein. Fix: prominenter Orientierungs-Satz oben auf
+  der Page («Diese Angebote sind primär für Zürich — für andere Kantone empfehlen wir…»).
+
+- **Glossar Deep-Link auf DSM-5-Kriterien** [Priorität NIEDRIG, Aufwand klein]
+  Eröffnet 2026-05-06 (Live-Audit). Neuer `<details>`-Block für DSM-5-Kriterien im
+  BPS-Eintrag (PR #418) ist standardmässig geschlossen. Bei Deep-Link `/glossar#bps-kriterien`
+  oder ähnlich klappt der Block nicht automatisch auf. Fix: Hash-Listener in `Glossar.tsx`,
+  der bei passendem Hash das `<details>`-Element via `setAttribute("open", "")` öffnet.
+
+- **Breadcrumb-Label-Konsistenz** [Priorität NIEDRIG, Aufwand klein]
+  Eröffnet 2026-05-06 (Live-Audit). Beobachtung: auf `/unterstuetzen/uebersicht` zeigt
+  Breadcrumb «Grundlagen» statt «Übersicht» (Live-Site). Code: `Breadcrumbs.tsx` hat festes
+  Label-Mapping; Inkonsistenz nicht direkt im Code sichtbar — Live-Test nötig zur
+  Reproduktion. Fix: einheitliche Label-Sprache zwischen SubNav und Breadcrumb.
+
+- **Ressourcen-Dropdown stärker akzentuieren** [Priorität NIEDRIG, Aufwand mittel]
+  Eröffnet 2026-05-06 (Live-Audit). 14 Items in `resourceNavigationItems`, bereits in 3
+  Gruppen kategorisiert (Sofortige Hilfe / Wissen & Materialien / Beratung & Netzwerke).
+  User-Befund war «zu breit gefächert» — die Gruppierung existiert technisch, aber visuell
+  evtl. nicht prominent genug. Fix: stärkere visuelle Trennung der Gruppen im Dropdown,
+  oder schmalerer Hover-State, damit «Werkzeuge vs. Wissen» auf einen Blick klar ist.
+
+- **Suche-Empty-State um Smart-Suggestions erweitern** [Priorität NIEDRIG, Aufwand mittel]
+  Eröffnet 2026-05-06 (Live-Audit). `Search.tsx` Z. 319-328 zeigt bei `results.length === 0`
+  bereits «Keine Ergebnisse für \"{query}\"» + «Versuchen Sie andere Suchbegriffe oder
+  schauen Sie in der Navigation». Fehlt: Fuzzy-Match-Vorschlag («Haben Sie X gemeint?») oder
+  direkter Hinweis auf den Situations-Wegweiser für Nutzer in akuter Lage. Fix: Levenshtein-
+  basierter Suggestion bei 0 Treffern, plus Inline-Link auf `/wegweiser`.
+
+## Live-Audit 2026-05-06 — als unbegründet identifiziert
+
+Diese Befunde wurden bei der Reality-Check-Verifikation als nicht-zutreffend gegenüber
+dem aktuellen Code identifiziert und werden NICHT als offene Punkte geführt:
+
+- **Notfallkarte 3 Buttons gleichwertig** — Code (`Notfallkarte.tsx:747-753`) zeigt
+  tatsächlich nur **2** Buttons («Drucken / Als PDF» Primary + «Daten löschen» Secondary)
+  mit klarer Hierarchie. «Persönlich ausfüllen» ist die Page selbst, kein Button.
+
+- **Materialien-Tile keine Direktdownload-Option** —
+  `MaterialienLibrarySection.tsx:151-160` rendert pro Tile bereits einen «Herunterladen»-Link
+  mit `downloadHref` und `download=""`-Attribut, neben «Öffnen» und ggf. «Textversion lesen».
+
 ## Erledigt — 2026-05-05 / 06
 
 - **Phase 3 Stream 2a — Materialien-Hub Migration**

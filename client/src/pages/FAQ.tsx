@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useMemo, useState } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   EditorialLayout,
@@ -308,6 +308,7 @@ const faqCategories: FAQCategory[] = [
 ];
 
 export default function FAQ() {
+  const [query, setQuery] = useState("");
   const handleAnchorClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
       e.preventDefault();
@@ -320,6 +321,27 @@ export default function FAQ() {
       }
     },
     []
+  );
+
+  const filteredCategories = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return faqCategories;
+    return faqCategories
+      .map(cat => ({
+        ...cat,
+        questions: cat.questions.filter(faq => {
+          const haystack = [faq.question, faq.answer, ...(faq.bullets ?? [])]
+            .join(" ")
+            .toLowerCase();
+          return haystack.includes(q);
+        }),
+      }))
+      .filter(cat => cat.questions.length > 0);
+  }, [query]);
+
+  const totalMatches = filteredCategories.reduce(
+    (sum, cat) => sum + cat.questions.length,
+    0
   );
 
   const labelStyle = {
@@ -403,34 +425,92 @@ export default function FAQ() {
           </EditorialProse>
         </EditorialSectionBlock>
 
-        {/* ── Kategorie-Sprungleiste ── */}
-        <nav
-          aria-label="Kategorie-Sprungleiste"
-          className="mt-12 border-t border-b py-4"
-          style={{ borderColor: "var(--rule-color)" }}
-        >
-          <p
-            className="flex flex-wrap gap-x-5 gap-y-2 uppercase"
+        {/* ── Filter-Eingabe ── */}
+        <div className="mt-12">
+          <label
+            htmlFor="faq-filter"
+            className="block uppercase"
             style={labelStyle}
           >
-            {faqCategories.map(category => {
-              const catId = `cat-${slugify(category.title)}`;
-              return (
-                <a
-                  key={catId}
-                  href={`#${catId}`}
-                  className="editorial-link"
-                  onClick={e => handleAnchorClick(e, catId)}
-                >
-                  {category.title}
-                </a>
-              );
-            })}
-          </p>
-        </nav>
+            Fragen durchsuchen
+          </label>
+          <input
+            id="faq-filter"
+            type="search"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            placeholder="z.B. Kinder, Einweisung, Medikamente"
+            className="mt-2 w-full border-b bg-transparent py-2 outline-none focus:border-[color:var(--accent-primary)]"
+            style={{
+              borderColor: "var(--rule-color)",
+              fontSize: "var(--text-md)",
+              color: "var(--fg-primary)",
+            }}
+            aria-describedby="faq-filter-status"
+          />
+          {query.trim() && (
+            <p
+              id="faq-filter-status"
+              className="mt-2"
+              style={{
+                fontSize: "var(--text-sm)",
+                color: "var(--fg-tertiary)",
+              }}
+              aria-live="polite"
+            >
+              {totalMatches === 0
+                ? "Keine Treffer."
+                : `${totalMatches} ${totalMatches === 1 ? "Treffer" : "Treffer"}.`}
+            </p>
+          )}
+        </div>
+
+        {/* ── Kategorie-Sprungleiste ── */}
+        {!query.trim() && (
+          <nav
+            aria-label="Kategorie-Sprungleiste"
+            className="mt-8 border-t border-b py-4"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p
+              className="flex flex-wrap gap-x-5 gap-y-2 uppercase"
+              style={labelStyle}
+            >
+              {faqCategories.map(category => {
+                const catId = `cat-${slugify(category.title)}`;
+                return (
+                  <a
+                    key={catId}
+                    href={`#${catId}`}
+                    className="editorial-link"
+                    onClick={e => handleAnchorClick(e, catId)}
+                  >
+                    {category.title}
+                  </a>
+                );
+              })}
+            </p>
+          </nav>
+        )}
 
         {/* ── FAQ-Kategorien ── */}
-        {faqCategories.map(category => {
+        {filteredCategories.length === 0 && query.trim() && (
+          <p
+            className="mt-12"
+            style={{
+              fontSize: "var(--text-md)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Keine passenden Fragen gefunden. Versuchen Sie einen anderen
+            Suchbegriff oder kontaktieren Sie die{" "}
+            <Link href="/fachstelle" className="editorial-link">
+              Fachstelle Angehörigenarbeit
+            </Link>
+            .
+          </p>
+        )}
+        {filteredCategories.map(category => {
           const catId = `cat-${slugify(category.title)}`;
           return (
             <section key={category.title} id={catId}>
@@ -440,10 +520,11 @@ export default function FAQ() {
                     const faqId = `faq-${slugify(faq.question)}`;
                     return (
                       <ContentSection
-                        key={faqId}
+                        key={`${faqId}-${query.trim() ? "filtered" : "default"}`}
                         variant="editorial"
                         title={faq.question}
                         id={faqId}
+                        defaultOpen={!!query.trim()}
                       >
                         <EditorialProse>
                           <p>{faq.answer}</p>

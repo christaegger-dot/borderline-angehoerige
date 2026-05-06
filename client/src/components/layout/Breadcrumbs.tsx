@@ -8,7 +8,7 @@ const pageNames: Record<string, string> = {
   "/": "Startseite",
   "/verstehen": "Borderline verstehen",
   "/unterstuetzen": "Unterstützen",
-  "/unterstuetzen/uebersicht": "Grundlagen",
+  "/unterstuetzen/uebersicht": "Übersicht",
   "/unterstuetzen/alltag": "Alltag",
   "/unterstuetzen/therapie": "Therapie",
   "/unterstuetzen/krise": "Krise",

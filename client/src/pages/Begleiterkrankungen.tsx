@@ -507,11 +507,11 @@ export default function Begleiterkrankungen() {
           variant="editorial"
           title="Wenn die Belastung gross wird — auch bei Ihnen"
           id="auch-bei-ihnen"
-          preview="Komorbidität auf Seiten der erkrankten Person erhöht oft auch die Belastung der Angehörigen. Eigene Beratung ist legitim."
+          preview="Komorbidität auf Seiten der betroffenen Person erhöht oft auch die Belastung der Angehörigen. Eigene Beratung ist legitim."
         >
           <EditorialProse>
             <p>
-              Die Komorbidität auf Seiten der erkrankten Person erhöht oft auch
+              Die Komorbidität auf Seiten der betroffenen Person erhöht oft auch
               die Belastung der Angehörigen — depressive Phasen sind schwerer
               auszuhalten als reine Borderline-Schwankungen, weil sie länger
               dauern und stiller sind. Es ist kein Zeichen von Schwäche, wenn
@@ -583,7 +583,7 @@ export default function Begleiterkrankungen() {
               href: "/selbstfuersorge",
               title: "Selbstfürsorge",
               description:
-                "Eigene Belastung ernst nehmen, Warnsignale, Sofort-Übungen — wichtig besonders in depressiven Phasen der erkrankten Person.",
+                "Eigene Belastung ernst nehmen, Warnsignale, Sofort-Übungen — wichtig besonders in depressiven Phasen der betroffenen Person.",
             },
           ]}
         />

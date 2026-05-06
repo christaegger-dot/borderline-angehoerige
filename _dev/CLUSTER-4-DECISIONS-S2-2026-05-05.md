@@ -63,6 +63,7 @@ Inhalt: Die 9 DSM-5-Kriterien mit 5-Schwelle, kompakt formuliert für Angehörig
 Begründung: DSM-5 ist die Diagnosesprache, mit der Angehörige in der Schweiz am häufigsten konfrontiert werden. ICD-11 noch nicht flächendeckend eingeführt. Beide erzeugen Verwirrung ohne Mehrwert für Angehörige.
 
 DSM-5-Kriterien (9 Kriterien, mindestens 5 für Diagnose):
+
 1. Verzweifeltes Bemühen, reales oder vorgestelltes Verlassenwerden zu vermeiden
 2. Instabile und intensive zwischenmenschliche Beziehungen (Idealisierung ↔ Entwertung)
 3. Instabiles Selbstbild oder Selbstwahrnehmung
@@ -86,12 +87,12 @@ Neuer Subtext: «Dies hilft uns, passende Ressourcen zu empfehlen.» (unverände
 
 Neue Optionen mit angepassten Gewichtungen:
 
-| Option | value | Gewichtung |
-|---|---|---|
-| Kaum spürbar — ich komme gut zurecht | `niedrig` | `{ verstehen: 4, unterstuetzen: 4 }` |
-| Deutlich spürbar — es kostet mich Kraft | `mittel` | `{ kommunizieren: 4, grenzen: 3, selbstfuersorge: 3 }` |
-| Sehr stark — ich bin oft erschöpft | `hoch` | `{ selbstfuersorge: 6, grenzen: 3, kommunizieren: 2 }` |
-| Ich bin am Limit | `limit` | `{ selbstfuersorge: 8, krise: 3, grenzen: 2 }` |
+| Option                                  | value     | Gewichtung                                             |
+| --------------------------------------- | --------- | ------------------------------------------------------ |
+| Kaum spürbar — ich komme gut zurecht    | `niedrig` | `{ verstehen: 4, unterstuetzen: 4 }`                   |
+| Deutlich spürbar — es kostet mich Kraft | `mittel`  | `{ kommunizieren: 4, grenzen: 3, selbstfuersorge: 3 }` |
+| Sehr stark — ich bin oft erschöpft      | `hoch`    | `{ selbstfuersorge: 6, grenzen: 3, kommunizieren: 2 }` |
+| Ich bin am Limit                        | `limit`   | `{ selbstfuersorge: 8, krise: 3, grenzen: 2 }`         |
 
 Hinweis: 4 Optionen statt 3 — UX-Mehraufwand minimal, da kein zusätzlicher Schritt.
 
@@ -99,9 +100,9 @@ Hinweis: 4 Optionen statt 3 — UX-Mehraufwand minimal, da kein zusätzlicher Sc
 
 ## Zusammenfassung: 4 Edits in 3 Dateien
 
-| Edit | Datei | Was |
-|---|---|---|
-| A | `client/src/pages/Verstehen.tsx` | Neuer Mythos «Borderline ist dasselbe wie Trauma.» einfügen |
-| B | `client/src/pages/Glossar.tsx` | DSM-5-Kriterien als Aufklapp-Block im BPS-Eintrag ergänzen |
-| C | `client/src/components/Selbsttest.tsx` | Frage 3 umformulieren — Dauer → Intensität, 3 → 4 Optionen |
-| D | `client/src/__tests__/` | Tests für Selbsttest-Frage-3-Optionen anpassen (neue values) |
+| Edit | Datei                                  | Was                                                          |
+| ---- | -------------------------------------- | ------------------------------------------------------------ |
+| A    | `client/src/pages/Verstehen.tsx`       | Neuer Mythos «Borderline ist dasselbe wie Trauma.» einfügen  |
+| B    | `client/src/pages/Glossar.tsx`         | DSM-5-Kriterien als Aufklapp-Block im BPS-Eintrag ergänzen   |
+| C    | `client/src/components/Selbsttest.tsx` | Frage 3 umformulieren — Dauer → Intensität, 3 → 4 Optionen   |
+| D    | `client/src/__tests__/`                | Tests für Selbsttest-Frage-3-Optionen anpassen (neue values) |

@@ -33,6 +33,7 @@ Quelle: Zanarini et al. (2010, 2012) — bereits in der bestehenden EvidenceNote
 **Entscheid:** Option A — Zur Kategorie «Für Eltern» hinzufügen.
 
 Eintrag-Daten:
+
 - `title`: "Borderline Personality Disorder in Adolescents"
 - `author`: "Blaise Aguirre"
 - `publisher`: "Fair Winds Press"
@@ -67,6 +68,7 @@ Begründung für Brief: Aguirre ist eine Leseempfehlung, kein Seiten-Beleg. Maso
 **Entscheid:** Option B — `_dev/STYLE-SPRACHREGELUNG.md`-Memo (intern).
 
 Inhalt des Memos:
+
 - Primäre Formulierung: «betroffene Person» (nicht «erkrankte Person»)
 - Begründung: «erkrankt» impliziert einen passiven, dauerhaften Krankheitszustand; «betroffen» ist offener und entspricht dem Entstigmatisierungs-Framing der Site
 - Ausnahmen: Medizinische/klinische Kontexte (z.B. EvidenceNotes, Diagnostik-Seite) dürfen «erkrankt» verwenden, wenn es dem Quellen-Kontext entspricht
@@ -101,6 +103,7 @@ Neuer Text:
 ## Nicht in Sitzung 1 (Sitzung 2)
 
 Die folgenden Rückfragen werden in Sitzung 2 behandelt:
+
 - #1 Mythen-Sektion-Architektur
 - #2 Mythen-Inhalt
 - #3 Mythen-Sub-Nav

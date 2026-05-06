@@ -361,89 +361,7 @@ export default function UnterstuetzenUebersicht() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 5 Dispatch: Was möchten Sie vertiefen? ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Vertiefung
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Vertiefen
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Was möchten Sie vertiefen?
-          </h2>
-          <ul className="space-y-6">
-            <li>
-              <h3 style={h4Style}>
-                <Link href="/unterstuetzen/alltag" className="editorial-link">
-                  Im Alltag unterstützen
-                </Link>
-              </h3>
-              <p className="mt-1" style={bodyStyle}>
-                Verlässlichkeit, Klarheit, Konflikt-Repair und kleine stabile
-                Kontaktangebote.
-              </p>
-            </li>
-            <li>
-              <h3 style={h4Style}>
-                <Link href="/unterstuetzen/krise" className="editorial-link">
-                  Krisen begleiten
-                </Link>
-              </h3>
-              <p className="mt-1" style={bodyStyle}>
-                Ampel-System, Deeskalation, Was sagen / Was vermeiden, Nach der
-                Krise.
-              </p>
-            </li>
-            <li>
-              <h3 style={h4Style}>
-                <Link href="/unterstuetzen/therapie" className="editorial-link">
-                  Therapie unterstützen
-                </Link>
-              </h3>
-              <p className="mt-1" style={bodyStyle}>
-                Wie Sie den therapeutischen Prozess sinnvoll begleiten — ohne zu
-                übernehmen.
-              </p>
-            </li>
-          </ul>
-        </EditorialSection.Body>
-      </EditorialSection>
-
-      {/* ── 6 Group C: Woran es tragfähig wird ── familiendynamik + woran-erkennbar + grenzen-der-unterstuetzung
+      {/* ── 5 Group C: Woran es tragfähig wird ── familiendynamik + woran-erkennbar + grenzen-der-unterstuetzung
            Plus Grenzen-Übergangs-Block als typografisch markierter Intro
            (kursiv, Hairline-Trenner darüber) — Christa-Decision Variante d */}
       <EditorialSection variant="cream">
@@ -737,6 +655,88 @@ export default function UnterstuetzenUebersicht() {
               .
             </p>
           </EditorialProse>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      {/* ── 9 Dispatch: Was möchten Sie vertiefen? ── */}
+      <EditorialSection variant="cream">
+        <EditorialSection.MarginNote>
+          <span
+            className="block text-[13px] font-medium uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              lineHeight: 1.3,
+            }}
+          >
+            Vertiefung
+          </span>
+          <div
+            aria-hidden="true"
+            className="mt-3 border-t"
+            style={{ borderColor: "var(--rule-color)" }}
+          />
+        </EditorialSection.MarginNote>
+        <EditorialSection.Body>
+          <p
+            className="text-xs uppercase"
+            style={{
+              color: "var(--accent-label)",
+              letterSpacing: "var(--tracking-caps)",
+              fontWeight: 500,
+              marginBottom: "var(--space-4)",
+            }}
+          >
+            Vertiefen
+          </p>
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "var(--text-2xl)",
+              lineHeight: "var(--lh-snug)",
+              color: "var(--fg-primary)",
+              fontWeight: "var(--weight-display)",
+              letterSpacing: "var(--tracking-tight)",
+              marginBottom: "var(--space-5)",
+            }}
+          >
+            Was möchten Sie vertiefen?
+          </h2>
+          <ul className="space-y-6">
+            <li>
+              <h3 style={h4Style}>
+                <Link href="/unterstuetzen/alltag" className="editorial-link">
+                  Im Alltag unterstützen
+                </Link>
+              </h3>
+              <p className="mt-1" style={bodyStyle}>
+                Verlässlichkeit, Klarheit, Konflikt-Repair und kleine stabile
+                Kontaktangebote.
+              </p>
+            </li>
+            <li>
+              <h3 style={h4Style}>
+                <Link href="/unterstuetzen/krise" className="editorial-link">
+                  Krisen begleiten
+                </Link>
+              </h3>
+              <p className="mt-1" style={bodyStyle}>
+                Ampel-System, Deeskalation, Was sagen / Was vermeiden, Nach der
+                Krise.
+              </p>
+            </li>
+            <li>
+              <h3 style={h4Style}>
+                <Link href="/unterstuetzen/therapie" className="editorial-link">
+                  Therapie unterstützen
+                </Link>
+              </h3>
+              <p className="mt-1" style={bodyStyle}>
+                Wie Sie den therapeutischen Prozess sinnvoll begleiten — ohne zu
+                übernehmen.
+              </p>
+            </li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 

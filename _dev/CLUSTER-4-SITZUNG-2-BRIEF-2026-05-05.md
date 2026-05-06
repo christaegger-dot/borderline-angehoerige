@@ -21,6 +21,7 @@ Lies diesen Brief vollständig, dann setze die 4 Edits (A–D) um. Erstelle dana
 **Einfüge-Position:** Nach dem `</p>`-Abschluss des «Grenzen setzen ist lieblos.»-Blocks, vor dem `<h4>`-Tag von «Suizid direkt anzusprechen macht es schlimmer.».
 
 **Suche diesen Kontext:**
+
 ```tsx
               <p>
                 Grenzen sind kein Verrat, sondern oft die Voraussetzung dafür,
@@ -39,6 +40,7 @@ Lies diesen Brief vollständig, dann setze die 4 Edits (A–D) um. Erstelle dana
 ```
 
 **Ersetze durch (neuen Block einfügen zwischen den beiden):**
+
 ```tsx
               <p>
                 Grenzen sind kein Verrat, sondern oft die Voraussetzung dafür,
@@ -129,32 +131,34 @@ interface GlossaryTerm {
 **Schritt 3:** Im Render-Teil des Glossars (in der `group.terms.map`-Schleife, nach dem `{t.example && ...}`-Block) das `criteria`-Feld rendern:
 
 ```tsx
-                    {t.criteria && (
-                      <dd>
-                        <details className="mt-1">
-                          <summary
-                            className="cursor-pointer uppercase"
-                            style={{
-                              ...labelStyle,
-                              color: "var(--accent-primary)",
-                            }}
-                          >
-                            DSM-5-Kriterien anzeigen
-                          </summary>
-                          <div className="mt-3 space-y-2">
-                            <p style={ddStyle}>{t.criteria.intro}</p>
-                            <ol
-                              className="ml-4 mt-2 space-y-1"
-                              style={{ ...ddStyle, listStyleType: "decimal" }}
-                            >
-                              {t.criteria.items.map((item, i) => (
-                                <li key={i}>{item}</li>
-                              ))}
-                            </ol>
-                          </div>
-                        </details>
-                      </dd>
-                    )}
+{
+  t.criteria && (
+    <dd>
+      <details className="mt-1">
+        <summary
+          className="cursor-pointer uppercase"
+          style={{
+            ...labelStyle,
+            color: "var(--accent-primary)",
+          }}
+        >
+          DSM-5-Kriterien anzeigen
+        </summary>
+        <div className="mt-3 space-y-2">
+          <p style={ddStyle}>{t.criteria.intro}</p>
+          <ol
+            className="ml-4 mt-2 space-y-1"
+            style={{ ...ddStyle, listStyleType: "decimal" }}
+          >
+            {t.criteria.items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ol>
+        </div>
+      </details>
+    </dd>
+  );
+}
 ```
 
 ---
@@ -164,6 +168,7 @@ interface GlossaryTerm {
 **Was:** Frage 3 von Dauer-Messung auf Intensitäts-Messung umformulieren. 3 Optionen → 4 Optionen.
 
 **Suche:**
+
 ```tsx
   {
     id: 3,
@@ -190,6 +195,7 @@ interface GlossaryTerm {
 ```
 
 **Ersetze durch:**
+
 ```tsx
   {
     id: 3,

@@ -740,34 +740,49 @@ export default function UnterstuetzenKrise() {
             id="vermeiden"
             preview="Drohen, Vorwürfe machen oder Gefühle herunterspielen – diese Reaktionen können die Krise verschärfen."
           >
-            <aside className="mt-2 border border-alert/20 border-l-4 border-l-alert bg-alert/6 p-6">
+            <aside className="mt-2 border border-[--color-sos-amber-border] border-l-2 border-l-[--color-sos-amber-text] bg-[--color-sos-amber-wash] p-6">
               <ul className="space-y-2.5" style={bodyStyle}>
                 <li className="flex items-start gap-2">
-                  <span className="text-alert" aria-hidden="true">
+                  <span
+                    className="text-[--color-sos-amber-text]"
+                    aria-hidden="true"
+                  >
                     ✗
                   </span>
                   Drohen oder Ultimaten stellen
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-alert" aria-hidden="true">
+                  <span
+                    className="text-[--color-sos-amber-text]"
+                    aria-hidden="true"
+                  >
                     ✗
                   </span>
                   Vorwürfe machen oder Schuld zuweisen
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-alert" aria-hidden="true">
+                  <span
+                    className="text-[--color-sos-amber-text]"
+                    aria-hidden="true"
+                  >
                     ✗
                   </span>
                   Die Gefühle herunterspielen («So schlimm ist es doch nicht»)
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-alert" aria-hidden="true">
+                  <span
+                    className="text-[--color-sos-amber-text]"
+                    aria-hidden="true"
+                  >
                     ✗
                   </span>
                   Logisch argumentieren oder überzeugen wollen
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-alert" aria-hidden="true">
+                  <span
+                    className="text-[--color-sos-amber-text]"
+                    aria-hidden="true"
+                  >
                     ✗
                   </span>
                   Die Person ohne Hilfe, Notfallplan oder professionelle
@@ -775,7 +790,10 @@ export default function UnterstuetzenKrise() {
                   können
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-alert" aria-hidden="true">
+                  <span
+                    className="text-[--color-sos-amber-text]"
+                    aria-hidden="true"
+                  >
                     ✗
                   </span>
                   Sich selbst in Gefahr bringen

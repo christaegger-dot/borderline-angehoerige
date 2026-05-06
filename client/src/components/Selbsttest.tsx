@@ -173,6 +173,13 @@ const questions: Question[] = [
   },
 ];
 
+const intensityReflections: Record<string, string> = {
+  limit: "Sie haben angegeben, gerade am Limit zu sein.",
+  hoch: "Sie haben angegeben, sich oft erschöpft zu fühlen.",
+  mittel: "Sie haben angegeben, dass die Belastung Sie Kraft kostet.",
+  niedrig: "Sie haben angegeben, derzeit gut zurechtzukommen.",
+};
+
 const results: Result[] = [
   {
     id: "notfall",
@@ -451,6 +458,10 @@ export default function Selbsttest() {
     const result = getTopResult();
     const isSafetyCritical = result.safetyCritical === true;
     const diagnosisStatus = answers[4];
+    const reflection =
+      answers[1] === "akut"
+        ? "Sie haben eine akute Krise gemeldet — schnelle Orientierung steht im Vordergrund."
+        : (intensityReflections[answers[3]] ?? null);
     const secondaryLinks =
       diagnosisStatus && diagnosisNeedsGuidance.has(diagnosisStatus)
         ? [
@@ -488,6 +499,11 @@ export default function Selbsttest() {
           <h2 className="mt-2" style={questionStyle}>
             {result.title}
           </h2>
+          {reflection && (
+            <p className="mt-4" style={{ ...bodyStyle, fontStyle: "italic" }}>
+              {reflection}
+            </p>
+          )}
           <p className="mt-4" style={bodyStyle}>
             {result.description}
           </p>

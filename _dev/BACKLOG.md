@@ -12,97 +12,13 @@ Konvention:
 
 ## Offen
 
-Sortiert nach Priorität (P0 = sicherheitsrelevant / akut, P3 = Polish). Beobachtungen ohne
-konkretes Item-Profil stehen am Ende.
-
-### P0 — Sicherheitsrelevant / akut
-
-- **Wegweiser-Ergebnis sofort sichtbar nach Klick** [Aufwand klein]
-  Eröffnet 2026-05-06 (Live-Audit). Nach Klick auf eine Situation (z.B. «Suiziddrohung») bleibt
-  der Viewport auf der Situations-Liste — der Nutzer muss scrollen, um die Antwort zu sehen.
-  In akuten Situationen kritisch. Code: `client/src/pages/Wegweiser.tsx` hat keinen
-  `scrollIntoView`/`scrollTo`-Aufruf nach Auswahl. Fix: Auto-Scroll auf Ergebnis-Block
-  analog zum `scrollToResults`-Pattern in `MaterialienLibrarySection.tsx`.
-  P0-Begründung: bei Suizidgefahr-Klick muss Antwort ohne Scroll sichtbar sein — UX-Problem
-  mit Sicherheits-Implikation.
-
-### P1 — Substantielle UX-Verbesserung
-
-- **Selbsttest-Result mehr Substanz** [Aufwand mittel]
-  Eröffnet 2026-05-06 (Live-Audit). Result-Block in `Selbsttest.tsx` zeigt nur Title + 1 Satz
-  Description + 1 Primary + 2-3 Secondary-Links. Keine Spiegelung des Antwort-Profils
-  («Sie haben angegeben, dass …»). Fix: Result-Komponente um einen kontextuellen Einleitungssatz
-  erweitern, der die Top-2-Weights des Users zurück-spiegelt, bevor die Empfehlungs-Links kommen.
-  P1-Begründung: nach 5 Fragen ist mageres Result eine Vertrauenslücke an einem zentralen
-  Engagement-Punkt der Site.
-
-### P2 — Wichtige Erweiterungen
-
-- **FAQ Volltextsuche innerhalb der Page** [Aufwand mittel]
-  Eröffnet 2026-05-06 (Live-Audit). FAQ hat 26 Fragen in 5 Kategorien, aber keinen
-  In-Page-Filter. Wer «Kinder», «Einweisung» oder «Medikamente» sucht, muss alle Kategorien
-  manuell durchgehen. Code: `FAQ.tsx` hat keinen `useState query`/`<input>`. Fix: schmales
-  Filter-Eingabefeld am Page-Anfang, das Q&A-Texte client-seitig filtert (analog Materialien
-  Filter-Tab-Pattern, aber als Volltext).
-  P2-Begründung: Auffindbarkeits-Lücke bei wachsender FAQ-Sammlung.
-
-- **Selbstfürsorge-Sofort-Block am Anfang** [Aufwand mittel]
-  Eröffnet 2026-05-06 (Live-Audit). Page beginnt mit Hero → Pull-Quote → konzeptueller Intro.
-  Wer in akuter Erschöpfung kommt, braucht zuerst eine «Was-jetzt-sofort?»-Orientierung
-  (3-4 Mini-Massnahmen) bevor Konzepte. Fix: Quick-Block-Sektion nach Hero, vor Pull-Quote,
-  mit 3-4 Sofort-Übungen aus `SelbstfuersorgeExercisesSection`.
-  P2-Begründung: Erschöpfte Nutzer brauchen «Was-jetzt»-Antwort vor abstrakten Konzepten.
-
-### P3 — Polish
-
-- **Beratung Kantons-Erwartung kalibrieren** [Aufwand klein]
-  Eröffnet 2026-05-06 (Live-Audit). `Selbsthilfegruppen.tsx` (`/beratung`) listet primär
-  Zürich-zentrische Angebote (PUK, VASK Zürich). Nutzer aus anderen Kantonen finden den
-  «Selbsthilfe Schweiz»-Hinweis nur klein. Fix: prominenter Orientierungs-Satz oben auf
-  der Page («Diese Angebote sind primär für Zürich — für andere Kantone empfehlen wir…»).
-
-- **Glossar Deep-Link auf DSM-5-Kriterien** [Aufwand klein]
-  Eröffnet 2026-05-06 (Live-Audit). Neuer `<details>`-Block für DSM-5-Kriterien im
-  BPS-Eintrag (PR #418) ist standardmässig geschlossen. Bei Deep-Link `/glossar#bps-kriterien`
-  oder ähnlich klappt der Block nicht automatisch auf. Fix: Hash-Listener in `Glossar.tsx`,
-  der bei passendem Hash das `<details>`-Element via `setAttribute("open", "")` öffnet.
-
-- **Breadcrumb-Label-Konsistenz** [Aufwand klein]
-  Eröffnet 2026-05-06 (Live-Audit). Beobachtung: auf `/unterstuetzen/uebersicht` zeigt
-  Breadcrumb «Grundlagen» statt «Übersicht» (Live-Site). Code: `Breadcrumbs.tsx` hat festes
-  Label-Mapping; Inkonsistenz nicht direkt im Code sichtbar — Live-Test nötig zur
-  Reproduktion. Fix: einheitliche Label-Sprache zwischen SubNav und Breadcrumb.
-
-- **Ressourcen-Dropdown stärker akzentuieren** [Aufwand mittel]
-  Eröffnet 2026-05-06 (Live-Audit). 14 Items in `resourceNavigationItems`, bereits in 3
-  Gruppen kategorisiert (Sofortige Hilfe / Wissen & Materialien / Beratung & Netzwerke).
-  User-Befund war «zu breit gefächert» — die Gruppierung existiert technisch, aber visuell
-  evtl. nicht prominent genug. Fix: stärkere visuelle Trennung der Gruppen im Dropdown,
-  oder schmalerer Hover-State, damit «Werkzeuge vs. Wissen» auf einen Blick klar ist.
-
-- **Suche-Empty-State um Smart-Suggestions erweitern** [Aufwand mittel]
-  Eröffnet 2026-05-06 (Live-Audit). `Search.tsx` Z. 319-328 zeigt bei `results.length === 0`
-  bereits «Keine Ergebnisse für \"{query}\"» + «Versuchen Sie andere Suchbegriffe oder
-  schauen Sie in der Navigation». Fehlt: Fuzzy-Match-Vorschlag («Haben Sie X gemeint?») oder
-  direkter Hinweis auf den Situations-Wegweiser für Nutzer in akuter Lage. Fix: Levenshtein-
-  basierter Suggestion bei 0 Treffern, plus Inline-Link auf `/wegweiser`.
-
-### Beobachtungen (kein P0–P3 — neuer Scope / latentes Risiko)
+### Beobachtungen (kein P0–P3 — neuer Scope)
 
 - **Optionale `/mythen`-Page mit dedizierter MarginNote**
   Eröffnet 2026-05-05 (im Cluster-4-Abschluss-Bericht). Status: neuer Scope, kein Restposten —
   Mythen-Inhalte sind bereits im Verstehen-Mythen-Block (8 Mythen) abgedeckt. Eine eigene
   Page wäre nur dann sinnvoll, wenn die Mythen-Botschaft prominenter eingestiegen werden soll
   (z.B. von Home oder Selbsttest-Result-Bucket «verstehen»).
-
-- **Versions-Drift Static-HTML `/soforthilfe` vs. React-Materialien-Tiles**
-  Eröffnet 2026-05-05 (bei Inventur des Soforthilfe-Backlog-Eintrags entdeckt).
-  Beobachtung: Die App hat zwei Soforthilfe-Quellen — `client/public/soforthilfe/index.html`
-  (Static, App-unabhängig) und Materialien-Filter «Soforthilfe» (React, 2 Tiles).
-  Static-HTML linkt explizit `notfallplan-krise-v03.pdf` und `Notfallkarte-Zuerich-Psychische-Krise.pdf`.
-  Materialien-Tiles linken auf dieselben Files. **Aktuell kein konkreter Drift bestätigt** —
-  wenn aber zukünftig PDF-Versionen aktualisiert werden, müssen beide Quellen synchronisiert werden.
-  Status: ungeprüft / latentes Risiko, kein Akut-Fix nötig.
 
 ## Live-Audit 2026-05-06 — als unbegründet identifiziert
 
@@ -167,6 +83,68 @@ dem aktuellen Code identifiziert und werden NICHT als offene Punkte geführt:
   2 Stellen in Selbsthilfegruppen.tsx als Ausnahmen dokumentiert (Z. 204 Phrasenformel,
   Z. 339 historischer VASK-Verbandsname). Memo `STYLE-SPRACHREGELUNG.md` erweitert.
   Erledigt durch PR #421 (commit d5ec60c, gemerged 2026-05-06).
+
+- **P0 — Wegweiser-Ergebnis sofort sichtbar nach Klick**
+  `useRef` + `scrollIntoView` im `navigate`/`goBack`-Callback in `SituationsWegweiser.tsx`,
+  wrapper-Div mit `scroll-mt-24 md:scroll-mt-28` Header-Offset. Auto-Scroll greift bei
+  jedem Choice-Click, auch beim Zurücknavigieren.
+  Erledigt durch PR #425 (commit e90ab63, gemerged 2026-05-06).
+
+- **P1 — Selbsttest-Result Antwort-Profil-Spiegelung**
+  Neue Helper-Map `intensityReflections` in `Selbsttest.tsx` mit 4 Phrasen
+  (limit / hoch / mittel / niedrig). Im Render zwischen H2-Title und description ein
+  optional kursiver Spiegel-Satz; Override bei `answers[1]==="akut"` mit Krisen-Spezialphrase.
+  Erledigt durch PR #425 (commit e90ab63, gemerged 2026-05-06).
+
+- **P2 — FAQ Volltextsuche innerhalb der Page**
+  Suchfeld am Page-Anfang von `FAQ.tsx`, client-seitiger Filter auf Frage-Text, Antwort
+  und Bullets. ContentSections automatisch geöffnet bei aktivem Filter via key-change +
+  `defaultOpen={!!query.trim()}`. Empty-State mit Link auf Fachstelle.
+  Erledigt durch PR #426 (commit c7df7b4, gemerged 2026-05-06).
+
+- **P2 — Selbstfürsorge-Sofort-Block am Anfang**
+  Neue Sektion #2 in `Selbstfuersorge.tsx` zwischen Hero und Pull-Quote mit MarginNote
+  «JETZT SOFORT». Drei Quick-Items (Atmen / 5-4-3-2-1 Grounding / STOPP) mit Anker-Links
+  auf den vollen Übungs-Block (`#sofort-uebungen`). Sektions-Nummerierung darunter +1.
+  Erledigt durch PR #426 (commit c7df7b4, gemerged 2026-05-06).
+
+- **P3 — Breadcrumb-Label-Konsistenz**
+  `pageNames`-Mapping in `Breadcrumbs.tsx` und `UXEnhancements.tsx`:
+  `/unterstuetzen/uebersicht` von «Grundlagen» auf «Übersicht» normalisiert. Konsistent
+  mit `UnterstuetzenSubNav`-Label und Page-H1.
+  Erledigt durch PR #427 (commit 81c9509, gemerged 2026-05-06).
+
+- **P3 — Glossar Deep-Link auf DSM-5-Kriterien**
+  `<details id="dsm-5-kriterien">` in `Glossar.tsx`. Neuer `useEffect` mit `hashchange`-
+  Listener öffnet das Element via `(el as HTMLDetailsElement).open = true`, wenn der Hash
+  auf eine details-id matcht. Pattern generisch für zukünftige `<details id=*>`.
+  Erledigt durch PR #427 (commit 81c9509, gemerged 2026-05-06).
+
+- **P3 — Beratung Kantons-Erwartung kalibrieren**
+  Hero auf `/beratung` (= `Selbsthilfegruppen.tsx`) ergänzt um Regional-Hinweis nach der
+  Lede mit externem Link auf Selbsthilfe Schweiz (`target="_blank"`,
+  `rel="noopener noreferrer"`).
+  Erledigt durch PR #427 (commit 81c9509, gemerged 2026-05-06).
+
+- **P3 — Suche Smart-Suggestions bei 0 Treffern**
+  Levenshtein-Distance-Funktion in `Search.tsx` gegen `normalizedTitle` aller Index-Entries.
+  Threshold = `max(2, length/3)`. Bis zu 3 «Haben Sie das gemeint?»-Vorschläge bei Match;
+  bei keinem Match Inline-Link auf `/wegweiser` für akute Lagen.
+  Erledigt durch PR #427 (commit 81c9509, gemerged 2026-05-06).
+
+- **P3 — Ressourcen-Dropdown stärker akzentuieren**
+  `RessourcenMenu.tsx`: Group-Header mit `border-b border-border/30` + `mb-1` für
+  visuelle Trennung; Group-Header-Text in `var(--fg-primary)` + tracking `0.1em`;
+  Spalten-Trenner von `border-border/40` auf `border-border/60` für mehr Kontrast.
+  Erledigt durch PR #427 (commit 81c9509, gemerged 2026-05-06).
+
+- **Versions-Drift Soforthilfe-Quellen — Sync-Test-Mitigation**
+  `client/src/__tests__/soforthilfe-sync.test.ts`: bidirektionaler Set-Vergleich der
+  PDF/HTML-Pfade zwischen `client/public/soforthilfe/index.html` und Materialien-Tiles
+  mit `category="soforthilfe"`. Aktuell synchron (3 Pfade); Test schlägt bei künftigem
+  Drift fehl. Mitigiert das im Backlog dokumentierte latente Risiko ohne invasives
+  Refactoring.
+  Erledigt durch PR #428 (commit b1795fe, gemerged 2026-05-06).
 
 ## Backlog-Korrekturen 2026-05-05 / 06
 

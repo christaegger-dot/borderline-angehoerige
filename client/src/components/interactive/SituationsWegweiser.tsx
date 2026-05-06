@@ -1,5 +1,5 @@
 /* Decision tree for acute situations; crisis highlighting remains intentional. */
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { kontaktByIdStrict } from "@/data/kontakte";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
@@ -533,13 +533,22 @@ export default function SituationsWegweiser() {
   const [history, setHistory] = useState<string[]>(["start"]);
   const currentId = history[history.length - 1];
   const node = nodeById(currentId);
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  const scrollToResult = () => {
+    setTimeout(() => {
+      resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  };
 
   const navigate = useCallback((nextId: string) => {
     setHistory(prev => [...prev, nextId]);
+    scrollToResult();
   }, []);
 
   const goBack = useCallback(() => {
     setHistory(prev => (prev.length > 1 ? prev.slice(0, -1) : prev));
+    scrollToResult();
   }, []);
 
   const reset = useCallback(() => {
@@ -590,104 +599,109 @@ export default function SituationsWegweiser() {
       )}
 
       {/* ── Frage / Resultat ── */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentId}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
-        >
-          {/*
+      <div ref={resultRef} className="scroll-mt-24 md:scroll-mt-28">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentId}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+          >
+            {/*
             Sicherheits-kritische Resultat-Blöcke (suizid_akut,
             suizid_gespraech, selbstverletzung_schwer, aggression_gefahr)
             bekommen alert-border-l + alert-wash bg. Per-Brief-Erlaubnis
             analog Grenzen-`gewalt`-Sektion.
           */}
-          <div
-            className={isSafetyCritical ? "border-l-4 pl-6 py-2" : ""}
-            style={
-              isSafetyCritical
-                ? {
-                    borderColor: "var(--color-alert)",
-                    backgroundColor:
-                      "var(--color-alert-wash, rgba(197,95,61,0.05))",
-                  }
-                : undefined
-            }
-          >
-            <header className="space-y-2">
-              <h2 style={questionStyle}>{node.question}</h2>
-              {node.subtitle && <p style={subtitleStyle}>{node.subtitle}</p>}
-            </header>
+            <div
+              className={isSafetyCritical ? "border-l-4 pl-6 py-2" : ""}
+              style={
+                isSafetyCritical
+                  ? {
+                      borderColor: "var(--color-alert)",
+                      backgroundColor:
+                        "var(--color-alert-wash, rgba(197,95,61,0.05))",
+                    }
+                  : undefined
+              }
+            >
+              <header className="space-y-2">
+                <h2 style={questionStyle}>{node.question}</h2>
+                {node.subtitle && <p style={subtitleStyle}>{node.subtitle}</p>}
+              </header>
 
-            {/* Choice-Buttons */}
-            {node.choices && (
-              <div className="mt-8 space-y-3">
-                {node.choices.map(choice => (
-                  <ChoiceButton
-                    key={choice.nextId}
-                    label={choice.label}
-                    onClick={() => navigate(choice.nextId)}
-                  />
-                ))}
-              </div>
-            )}
+              {/* Choice-Buttons */}
+              {node.choices && (
+                <div className="mt-8 space-y-3">
+                  {node.choices.map(choice => (
+                    <ChoiceButton
+                      key={choice.nextId}
+                      label={choice.label}
+                      onClick={() => navigate(choice.nextId)}
+                    />
+                  ))}
+                </div>
+              )}
 
-            {/* Steps (Resultat) */}
-            {node.steps && (
-              <ol className="mt-8 space-y-8">
-                {node.steps.map((step, i) => (
-                  <li
-                    key={step.id}
-                    className="border-t pt-6"
-                    style={{ borderColor: "var(--rule-color)" }}
-                  >
-                    <div className="flex items-start gap-4">
-                      <span
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
-                        style={{
-                          backgroundColor: step.emergency
-                            ? "var(--color-alert)"
-                            : "var(--accent-primary)",
-                          color: "var(--bg-primary)",
-                          fontSize: "var(--text-sm)",
-                          fontWeight: 600,
-                        }}
-                      >
-                        {i + 1}
-                      </span>
-                      <div className="flex-1 space-y-2">
-                        <h3 style={stepTitleStyle}>{step.text}</h3>
-                        {step.detail && (
-                          <p style={detailStyle}>{step.detail}</p>
-                        )}
-                        {step.kontakte && step.kontakte.length > 0 && (
-                          <p className="flex flex-wrap gap-x-5 gap-y-1 pt-1">
-                            {step.kontakte.map(kId => (
-                              <KontaktInline key={kId} kontaktId={kId} />
-                            ))}
-                          </p>
-                        )}
-                        {step.link && (
-                          <p
-                            className="pt-1"
-                            style={{ fontSize: "var(--text-sm)" }}
-                          >
-                            <a href={step.link.href} className="editorial-link">
-                              {step.link.label}
-                            </a>
-                          </p>
-                        )}
+              {/* Steps (Resultat) */}
+              {node.steps && (
+                <ol className="mt-8 space-y-8">
+                  {node.steps.map((step, i) => (
+                    <li
+                      key={step.id}
+                      className="border-t pt-6"
+                      style={{ borderColor: "var(--rule-color)" }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <span
+                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+                          style={{
+                            backgroundColor: step.emergency
+                              ? "var(--color-alert)"
+                              : "var(--accent-primary)",
+                            color: "var(--bg-primary)",
+                            fontSize: "var(--text-sm)",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {i + 1}
+                        </span>
+                        <div className="flex-1 space-y-2">
+                          <h3 style={stepTitleStyle}>{step.text}</h3>
+                          {step.detail && (
+                            <p style={detailStyle}>{step.detail}</p>
+                          )}
+                          {step.kontakte && step.kontakte.length > 0 && (
+                            <p className="flex flex-wrap gap-x-5 gap-y-1 pt-1">
+                              {step.kontakte.map(kId => (
+                                <KontaktInline key={kId} kontaktId={kId} />
+                              ))}
+                            </p>
+                          )}
+                          {step.link && (
+                            <p
+                              className="pt-1"
+                              style={{ fontSize: "var(--text-sm)" }}
+                            >
+                              <a
+                                href={step.link.href}
+                                className="editorial-link"
+                              >
+                                {step.link.label}
+                              </a>
+                            </p>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            )}
-          </div>
-        </motion.div>
-      </AnimatePresence>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       {/* ── Navigation ── */}
       <div className="flex items-center justify-between gap-3">

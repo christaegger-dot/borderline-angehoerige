@@ -1,6 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import AppLink from "@/components/AppLink";
-import { useLocation } from "wouter";
 const Search = lazy(() => import("@/components/Search"));
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -18,10 +17,7 @@ export function isSearchShortcut(
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const [location] = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
-  const isSoforthilfePage = location === "/soforthilfe";
-  const showInlineSoforthilfeLink = !isSoforthilfePage;
 
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
@@ -47,31 +43,17 @@ export default function Layout({ children }: LayoutProps) {
 
       <HeaderNav onSearchOpen={() => setSearchOpen(true)} />
 
-      <aside
-        aria-label="Notfallhinweis"
+      <div
+        role="region"
+        aria-label="Regionaler Hinweis"
         className="border-b border-border/50 bg-background"
       >
         <div className="container flex flex-wrap items-center gap-x-3 gap-y-1 py-2 text-[13px] text-muted-foreground">
-          <AppLink
-            href="/notfallkarte"
-            className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)] transition-colors hover:text-[color:var(--accent-primary)] hover:underline hover:decoration-1 hover:underline-offset-4 focus-visible:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)] focus-visible:ring-offset-2"
-          >
-            Notfallkontakte
-          </AppLink>
-          <span className="hidden sm:inline">•</span>
           <span className="text-foreground/90">Schweiz · Kanton Zürich</span>
-          <span className="hidden md:inline">•</span>
+          <span className="hidden sm:inline">•</span>
           <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
-          {showInlineSoforthilfeLink && (
-            <AppLink
-              href="/soforthilfe"
-              className="sm:hidden inline-flex min-h-9 items-center rounded-full border border-border/70 bg-background px-3 py-1 text-sm font-medium text-[color:var(--accent-primary)] transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)]/30 focus-visible:ring-offset-2"
-            >
-              Zur Soforthilfe
-            </AppLink>
-          )}
         </div>
-      </aside>
+      </div>
 
       {/* Breadcrumb Navigation */}
       <Breadcrumbs />

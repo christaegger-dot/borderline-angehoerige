@@ -76,12 +76,12 @@ const VARIANT_STYLES: Record<
   }
 > = {
   "sage-wash": {
-    bg: "#eef0ea",
+    bg: "#dde3d4",
     title: "#1f2a37",
     contentClass: "editorial-color-block-content--sage-wash",
   },
   "cream-deep": {
-    bg: "#f3eee3",
+    bg: "#ebe2cf",
     title: "#1f2a37",
     contentClass: "editorial-color-block-content--cream-deep",
   },

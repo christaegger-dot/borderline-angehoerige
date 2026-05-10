@@ -56,8 +56,8 @@
   /* — Farben — */
   --bg-primary: #faf7f2; /* einzige Hintergrundfarbe der Site */
   --bg-elevated: #ffffff; /* Hervorhebungen, z.B. Pull-Quote-Card */
-  --bg-cream-deep: #f3eee3; /* tieferer Cream — für ruhige Sub-Bars (Phase-1-Token) */
-  --bg-sage-wash: #eef0ea; /* heller Sage-Wash — für Reflexions-Sektionen (Phase-1-Token) */
+  --bg-cream-deep: #ebe2cf; /* tieferer Cream — für ruhige Sub-Bars; spürbar wärmer/dunkler als bg-primary für klare Sektionsgrenzen */
+  --bg-sage-wash: #dde3d4; /* heller Sage-Wash — für Reflexions-Sektionen; salbei-grünlich, ähnliche Lightness wie cream-deep */
   --fg-primary: #1f2a37; /* Body-Text, dunkles Slate */
   --fg-secondary: #4b5563; /* Lead, Bildunterschriften, Meta */
   --fg-tertiary: #6b7280; /* Labels, Fussnoten */

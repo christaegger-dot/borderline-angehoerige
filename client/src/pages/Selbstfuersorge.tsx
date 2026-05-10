@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
@@ -80,20 +81,10 @@ export default function Selbstfuersorge() {
           <EyebrowLabel className="mb-8" spacing="compact">
             Selbstfürsorge
           </EyebrowLabel>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={1}>
             Selbstfürsorge für <em>Angehörige</em> — was trägt, wenn die
             Belastung bleibt.
-          </h1>
+          </DisplayHeading>
           <p
             className="max-w-[30em]"
             style={{

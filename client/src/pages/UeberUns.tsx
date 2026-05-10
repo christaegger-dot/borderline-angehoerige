@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
@@ -103,17 +104,9 @@ export default function UeberUns() {
         {/* ── Hero ── */}
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
           <EyebrowLabel spacing="compact">Über uns</EyebrowLabel>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <DisplayHeading level={1} size="page">
             Über diese <em>Website</em>
-          </h1>
+          </DisplayHeading>
           <p
             className="mt-6"
             style={{

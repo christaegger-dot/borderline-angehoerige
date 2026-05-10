@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
@@ -78,19 +79,9 @@ export default function UnterstuetzenUebersicht() {
           <EyebrowLabel className="mb-8" spacing="compact">
             Übersicht
           </EyebrowLabel>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={1}>
             Wie Angehörige <em>hilfreich</em> bleiben können
-          </h1>
+          </DisplayHeading>
           <p
             className="max-w-[40em]"
             style={{

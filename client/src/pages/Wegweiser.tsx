@@ -1,4 +1,8 @@
-import { EditorialLayout, EyebrowLabel } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialLayout,
+  EyebrowLabel,
+} from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -27,17 +31,9 @@ export default function Wegweiser() {
         {/* ── Hero ── */}
         <header className="pb-12 pt-16 md:pb-16 md:pt-24">
           <EyebrowLabel spacing="compact">Wegweiser</EyebrowLabel>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <DisplayHeading level={1} size="page">
             Situations-<em>Wegweiser</em>
-          </h1>
+          </DisplayHeading>
           <p
             className="mt-6"
             style={{

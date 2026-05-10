@@ -1,4 +1,8 @@
-import { EditorialSection, EyebrowLabel } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import MaterialienLibrarySection from "@/sections/MaterialienLibrarySection";
@@ -30,19 +34,9 @@ export default function Materialien() {
           <EyebrowLabel className="mb-8" spacing="compact">
             Materialien
           </EyebrowLabel>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={1}>
             Materialien für <em>Angehörige</em>
-          </h1>
+          </DisplayHeading>
           <p
             className="max-w-[40em]"
             style={{

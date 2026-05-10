@@ -45,4 +45,21 @@ describe("DisplayHeading", () => {
     const el = screen.getByText("Hero");
     expect(el).toHaveClass("font-display", "mt-8");
   });
+
+  it("renders size=page with mt-8 + text-3xl/4xl classes and no inline fontSize", () => {
+    render(
+      <DisplayHeading level={1} size="page">
+        Page
+      </DisplayHeading>
+    );
+    const el = screen.getByText("Page");
+    expect(el.tagName).toBe("H1");
+    expect(el).toHaveClass(
+      "mt-8",
+      "text-[var(--text-3xl)]",
+      "md:text-[var(--text-4xl)]"
+    );
+    expect(el.style.fontSize).toBe("");
+    expect(el.style.marginBottom).toBe("");
+  });
 });

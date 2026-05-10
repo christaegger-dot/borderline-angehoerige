@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
@@ -369,17 +370,9 @@ export default function FAQ() {
         {/* ── Hero ── */}
         <header className="pb-16 pt-16 md:pb-24 md:pt-24">
           <EyebrowLabel spacing="compact">Häufige Fragen</EyebrowLabel>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <DisplayHeading level={1} size="page">
             Häufig gestellte <em>Fragen</em>
-          </h1>
+          </DisplayHeading>
           <p
             className="mt-6"
             style={{

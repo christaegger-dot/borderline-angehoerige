@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialProse,
   EditorialSection,
   EyebrowLabel,
@@ -360,19 +361,9 @@ export default function UnterstuetzenKrise() {
           <EyebrowLabel className="mb-8" spacing="compact">
             In der Krise
           </EyebrowLabel>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={1}>
             In der Krise <em>unterstützen</em>
-          </h1>
+          </DisplayHeading>
           <p
             className="max-w-[40em]"
             style={{

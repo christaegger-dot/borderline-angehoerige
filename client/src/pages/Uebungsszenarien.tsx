@@ -2,6 +2,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
 } from "@/components/editorial";
 import KommunikationsUebung from "@/components/interactive/KommunikationsUebung";
 import Layout from "@/components/Layout";
@@ -28,16 +29,9 @@ export default function Uebungsszenarien() {
             ← Zur Kommunikations-Seite
           </Link>
 
-          <p
-            className="mt-8 text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
+          <EyebrowLabel className="mt-8" spacing="compact">
             Interaktive Übungen
-          </p>
+          </EyebrowLabel>
           <h1
             className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
             style={{

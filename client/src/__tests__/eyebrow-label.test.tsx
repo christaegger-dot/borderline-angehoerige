@@ -21,6 +21,13 @@ describe("EyebrowLabel", () => {
     expect(color === "#d6c8be" || color === "rgb(214, 200, 190)").toBe(true);
   });
 
+  it("renders muted tone for sage-wash / cream-deep backgrounds", () => {
+    render(<EyebrowLabel tone="muted">Bibliothek</EyebrowLabel>);
+    const label = screen.getByText("Bibliothek");
+    const color = label.style.color;
+    expect(color === "#4f6b5e" || color === "rgb(79, 107, 94)").toBe(true);
+  });
+
   it("omits marginBottom when spacing is compact", () => {
     render(
       <EyebrowLabel spacing="compact">Aus der Angehörigenarbeit</EyebrowLabel>

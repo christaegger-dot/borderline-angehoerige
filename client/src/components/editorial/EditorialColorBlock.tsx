@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { EyebrowLabel } from "./EyebrowLabel";
 
 export type EditorialColorBlockVariant = "sage-wash" | "cream-deep";
 
@@ -45,18 +46,7 @@ export function EditorialColorBlock({
         className={`mx-auto space-y-[var(--space-4)] ${styles.contentClass}`}
         style={{ maxWidth }}
       >
-        {label && (
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: styles.label,
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            {label}
-          </p>
-        )}
+        {label && <EyebrowLabel tone="muted">{label}</EyebrowLabel>}
         {title && (
           <h2
             style={{
@@ -81,20 +71,17 @@ const VARIANT_STYLES: Record<
   EditorialColorBlockVariant,
   {
     bg: string;
-    label: string;
     title: string;
     contentClass: string;
   }
 > = {
   "sage-wash": {
     bg: "#eef0ea",
-    label: "#4f6b5e",
     title: "#1f2a37",
     contentClass: "editorial-color-block-content--sage-wash",
   },
   "cream-deep": {
     bg: "#f3eee3",
-    label: "#4f6b5e",
     title: "#1f2a37",
     contentClass: "editorial-color-block-content--cream-deep",
   },

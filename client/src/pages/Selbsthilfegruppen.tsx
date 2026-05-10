@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -121,19 +122,12 @@ export default function Selbsthilfegruppen() {
           <DisplayHeading level={1} size="page">
             Beratung &amp; <em>Netzwerke</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Wenn Belastung, Unsicherheit oder Erschöpfung zu gross werden, kann
             es entlastend sein, nicht nur im eigenen System nach Lösungen zu
             suchen. Hier finden Sie Beratung, Selbsthilfe und weitere
             Anlaufstellen für Angehörige in der Schweiz.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

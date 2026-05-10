@@ -6,6 +6,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -287,20 +288,13 @@ export default function UnterstuetzenAlltag() {
           <DisplayHeading level={1}>
             Im Alltag <em>unterstützen</em>
           </DisplayHeading>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[40em]">
             Belastete Beziehungen bestehen nicht nur aus Krisen. Meist prägen
             sie den Alltag: Anspannung in der Luft, vorsichtiges Abtasten,
             Rückzug nach Konflikten, Schuldgefühle, Erreichbarkeitsdruck und die
             Frage, wie viel Nähe gerade hilfreich ist. Diese Seite geht darum,
             was im Alltag trägt und was eher erschöpft.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}

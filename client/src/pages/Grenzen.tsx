@@ -6,6 +6,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import { InnenraeumeIllustration } from "@/components/illustrations";
 import GrenzenCheck from "@/components/interactive/GrenzenCheck";
@@ -155,20 +156,13 @@ export default function Grenzen() {
           <DisplayHeading level={1}>
             Grenzen <em>setzen</em>, ohne die Beziehung aufzugeben.
           </DisplayHeading>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[30em]">
             Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine
             Voraussetzung. Sie schützen Ihre Integrität, machen Beziehungen
             berechenbarer und verhindern, dass Unterstützung in Selbstaufgabe
             kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau
             deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}

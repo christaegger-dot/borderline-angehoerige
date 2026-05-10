@@ -5,6 +5,7 @@ import {
   EditorialProse,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -364,19 +365,12 @@ export default function UnterstuetzenKrise() {
           <DisplayHeading level={1}>
             In der Krise <em>unterstützen</em>
           </DisplayHeading>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[40em]">
             Viele Angehörige erleben Phasen starker Anspannung, Eskalation oder
             Rückzug. Hier erfahren Sie, wie Sie Krisen besser einordnen,
             deeskalierend reagieren und Sicherheit im Blick behalten können,
             ohne Ihre eigene Grenze aus dem Blick zu verlieren.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}

@@ -5,6 +5,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -52,18 +53,11 @@ export default function Impressum() {
           <DisplayHeading level={1} size="page">
             Verantwortung und <em>rechtliche Hinweise</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Wer hinter diesem Informationsangebot steht, wie Sie die Fachstelle
             erreichen und welche rechtlichen Hinweise für Inhalte, Links und
             Materialien gelten.
-          </p>
+          </Lede>
         </header>
 
         <ContentSection

@@ -5,6 +5,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -300,18 +301,11 @@ export default function Buchempfehlungen() {
           <DisplayHeading level={1} size="page">
             Bücher für <em>Angehörige</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl
             verbindet Grundwissen, Beziehungsperspektiven, Selbstfürsorge und
             Erfahrungsnähe, ohne Anspruch auf Vollständigkeit.
-          </p>
+          </Lede>
         </header>
 
         {/* ── Kategorie-Sprungleiste ── */}

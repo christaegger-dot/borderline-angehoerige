@@ -6,6 +6,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { AufgangIllustration } from "@/components/illustrations";
@@ -133,18 +134,11 @@ export default function Genesung() {
           <DisplayHeading level={1}>
             Genesung ist <em>möglich</em> — und sieht selten geradlinig aus.
           </DisplayHeading>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[30em]">
             Hoffnung ist bei Borderline berechtigt – und gleichzeitig verläuft
             Entwicklung selten glatt oder vorhersehbar. Für Angehörige ist
             beides wichtig: Zuversicht und eine realistische Sicht auf Zeit.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}

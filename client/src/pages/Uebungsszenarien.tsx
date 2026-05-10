@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import KommunikationsUebung from "@/components/interactive/KommunikationsUebung";
 import Layout from "@/components/Layout";
@@ -37,18 +38,11 @@ export default function Uebungsszenarien() {
             Kommunikation <em>üben</em>
           </DisplayHeading>
 
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Realistische Situationen, verschiedene Antwortmöglichkeiten und
             sofortiges Feedback. Probieren Sie aus, wie SET, DEAR MAN und
             Validierung in der Praxis klingen.
-          </p>
+          </Lede>
 
           <p
             className="mt-6"

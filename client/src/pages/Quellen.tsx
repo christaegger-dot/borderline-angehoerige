@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import ReviewBadge from "@/components/ReviewBadge";
@@ -441,18 +442,11 @@ export default function Quellen() {
           <DisplayHeading level={1} size="page">
             Quellen &amp; <em>Literatur</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Diese Website basiert auf anerkannter Fachliteratur und
             evidenzbasierten Methoden. Hier finden Sie alle Quellen, geordnet
             nach Bereich.
-          </p>
+          </Lede>
           <ReviewBadge path="/quellen" />
           <p
             className="mt-4"

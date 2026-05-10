@@ -6,6 +6,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import { FadenIllustration } from "@/components/illustrations";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
@@ -73,17 +74,10 @@ export default function Kommunizieren() {
             Gespräche in <em>belasteten Beziehungen</em> — wie Verbindung
             möglich bleibt.
           </DisplayHeading>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[30em]">
             Kommunikation löst keine Grunddynamik – sie kann aber Eskalation
             bremsen und Ihre eigene Position klärer machen.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}

@@ -7,6 +7,7 @@ import {
   EditorialPullQuote,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
@@ -107,19 +108,12 @@ export default function Begleiterkrankungen() {
           <DisplayHeading level={1} size="page">
             Wenn <em>mehrere Erkrankungen</em> ineinandergreifen
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Borderline tritt selten allein auf. Besonders häufig kommt
             Depression dazu, oft auch Angststörungen, PTBS, Essstörungen oder
             Substanzgebrauch. Was das für Angehörige bedeutet — und was es nicht
             bedeutet.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -39,17 +40,10 @@ export default function Feedback() {
           <DisplayHeading level={1} size="page">
             Rückmeldung <em>geben</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Ihre Erfahrungen und Anregungen helfen uns, diese Website für andere
             Angehörige noch hilfreicher zu gestalten.
-          </p>
+          </Lede>
         </header>
 
         <EditorialSectionBlock label="Kontakt" title="Schreiben Sie uns">

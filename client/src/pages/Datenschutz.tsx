@@ -5,6 +5,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -40,18 +41,11 @@ export default function Datenschutz() {
           <DisplayHeading level={1} size="page">
             Wie diese Website mit <em>Daten</em> umgeht
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Der Schutz Ihrer Privatsphäre ist uns wichtig. Diese Erklärung
             beschreibt, welche Daten technisch anfallen, welche lokal im Browser
             bleiben und welche Rechte Sie haben.
-          </p>
+          </Lede>
           <div className="mt-6">
             <ReviewBadge path="/datenschutz" />
           </div>

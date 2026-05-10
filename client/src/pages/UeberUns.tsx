@@ -6,6 +6,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import EvidenceNote from "@/components/EvidenceNote";
@@ -107,16 +108,9 @@ export default function UeberUns() {
           <DisplayHeading level={1} size="page">
             Über diese <em>Website</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Warum es diese Website gibt – und wer dahinter steht.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

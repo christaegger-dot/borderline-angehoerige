@@ -3,6 +3,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -394,16 +395,7 @@ export default function Glossar() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-16 pt-16 md:pb-24 md:pt-24">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Glossar
-          </p>
+          <EyebrowLabel spacing="compact">Glossar</EyebrowLabel>
           <h1
             className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
             style={{

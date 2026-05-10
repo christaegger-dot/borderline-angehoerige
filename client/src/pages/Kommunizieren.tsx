@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
 } from "@/components/editorial";
 import { FadenIllustration } from "@/components/illustrations";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
@@ -64,17 +65,9 @@ export default function Kommunizieren() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Kommunizieren
-          </p>
+          </EyebrowLabel>
           <h1
             className="font-display"
             style={{
@@ -104,16 +97,9 @@ export default function Kommunizieren() {
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 14 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
           </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
@@ -144,17 +130,7 @@ export default function Kommunizieren() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
+          <EyebrowLabel>Überblick</EyebrowLabel>
           <h2
             className="font-display"
             style={{

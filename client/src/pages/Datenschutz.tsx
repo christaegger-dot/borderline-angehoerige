@@ -3,6 +3,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -34,16 +35,7 @@ export default function Datenschutz() {
 
       <EditorialLayout width="narrow">
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Datenschutz
-          </p>
+          <EyebrowLabel spacing="compact">Datenschutz</EyebrowLabel>
           <h1
             className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
             style={{

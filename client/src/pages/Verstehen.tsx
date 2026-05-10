@@ -1,6 +1,10 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
-import { EditorialProse, EditorialSection } from "@/components/editorial";
+import {
+  EditorialProse,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { EisbergIllustration } from "@/components/illustrations";
 import Layout from "@/components/Layout";
@@ -66,17 +70,9 @@ export default function Verstehen() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Verstehen
-          </p>
+          </EyebrowLabel>
           <h1
             className="font-display"
             style={{
@@ -149,17 +145,7 @@ export default function Verstehen() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
+          <EyebrowLabel>Überblick</EyebrowLabel>
           <h2
             className="font-display"
             style={{

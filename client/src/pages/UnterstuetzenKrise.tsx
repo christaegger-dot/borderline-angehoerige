@@ -1,6 +1,10 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
-import { EditorialProse, EditorialSection } from "@/components/editorial";
+import {
+  EditorialProse,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -353,17 +357,9 @@ export default function UnterstuetzenKrise() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             In der Krise
-          </p>
+          </EyebrowLabel>
           <h1
             className="font-display"
             style={{
@@ -394,16 +390,9 @@ export default function UnterstuetzenKrise() {
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 6 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
             <LastVerifiedBadge path="/unterstuetzen/krise" className="mt-3" />
             <ReviewBadge path="/unterstuetzen/krise" />
           </div>
@@ -479,17 +468,7 @@ export default function UnterstuetzenKrise() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
+          <EyebrowLabel>Überblick</EyebrowLabel>
           <h2
             className="font-display"
             style={{

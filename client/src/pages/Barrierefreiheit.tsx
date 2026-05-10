@@ -1,5 +1,6 @@
 import AppLink from "@/components/AppLink";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
@@ -49,17 +50,9 @@ export default function Barrierefreiheit() {
       <EditorialLayout width="narrow">
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
           <EyebrowLabel spacing="compact">Barrierefreiheit</EyebrowLabel>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <DisplayHeading level={1} size="page">
             Erklärung zur <em>Barrierefreiheit</em>
-          </h1>
+          </DisplayHeading>
           <p
             className="mt-6"
             style={{

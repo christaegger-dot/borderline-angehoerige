@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
@@ -151,19 +152,9 @@ export default function Grenzen() {
           <EyebrowLabel className="mb-8" spacing="compact">
             Grenzen
           </EyebrowLabel>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={1}>
             Grenzen <em>setzen</em>, ohne die Beziehung aufzugeben.
-          </h1>
+          </DisplayHeading>
           <p
             className="max-w-[30em]"
             style={{

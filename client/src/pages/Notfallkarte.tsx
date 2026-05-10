@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
@@ -478,17 +479,9 @@ export default function Notfallkarte() {
       <EditorialLayout width="narrow">
         <header className="pb-12 pt-16 md:pb-16 md:pt-24 print:hidden">
           <EyebrowLabel spacing="compact">Notfallkarte</EyebrowLabel>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <DisplayHeading level={1} size="page">
             Persönliche <em>Notfallkarte</em>
-          </h1>
+          </DisplayHeading>
           <p
             className="mt-6"
             style={{

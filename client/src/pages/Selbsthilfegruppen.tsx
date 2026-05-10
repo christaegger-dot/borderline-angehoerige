@@ -1,4 +1,5 @@
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
@@ -117,17 +118,9 @@ export default function Selbsthilfegruppen() {
           <EyebrowLabel spacing="compact">
             Beratung &amp; Netzwerke
           </EyebrowLabel>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <DisplayHeading level={1} size="page">
             Beratung &amp; <em>Netzwerke</em>
-          </h1>
+          </DisplayHeading>
           <p
             className="mt-6"
             style={{

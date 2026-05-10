@@ -18,3 +18,4 @@ export {
   type EditorialOrnamentVariant,
 } from "./EditorialOrnament";
 export { TestimonialMark } from "./TestimonialMark";
+export { EyebrowLabel } from "./EyebrowLabel";

@@ -1,5 +1,5 @@
 import AppLink from "@/components/AppLink";
-import { EditorialSection } from "@/components/editorial";
+import { EditorialSection, EyebrowLabel } from "@/components/editorial";
 import { homeFeaturedInfografiken } from "@/content/homeFeaturedInfografiken";
 
 /**
@@ -41,17 +41,7 @@ export function VisualOrientationGrid() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Visuelle Orientierung
-          </p>
+          <EyebrowLabel>Visuelle Orientierung</EyebrowLabel>
           <h2
             className="font-display"
             style={{
@@ -98,16 +88,9 @@ export function VisualOrientationGrid() {
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     />
                   </div>
-                  <p
-                    className="mt-4 text-xs uppercase"
-                    style={{
-                      color: "var(--accent-label)",
-                      letterSpacing: "var(--tracking-caps)",
-                      fontWeight: 500,
-                    }}
-                  >
+                  <EyebrowLabel className="mt-4" spacing="compact">
                     {tile.categoryLabel}
-                  </p>
+                  </EyebrowLabel>
                   <h3
                     className="mt-2 font-display transition-colors duration-200 group-hover:text-[color:var(--accent-primary)]"
                     style={{

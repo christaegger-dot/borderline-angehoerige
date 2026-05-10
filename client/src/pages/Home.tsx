@@ -7,6 +7,7 @@ import {
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
   TestimonialMark,
 } from "@/components/editorial";
 import { HeroLeuchtturmIllustration } from "@/components/illustrations";
@@ -70,17 +71,7 @@ export default function Home() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Anerkennung
-          </p>
+          <EyebrowLabel>Anerkennung</EyebrowLabel>
           <EditorialProse>
             <p>
               Sie fragen sich seit Jahren, ob das, was Sie erleben, Krankheit
@@ -122,17 +113,7 @@ export default function Home() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "#d6c8be",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Grundgedanke
-          </p>
+          <EyebrowLabel tone="light">Grundgedanke</EyebrowLabel>
           <h2
             className="font-display"
             style={{
@@ -261,17 +242,8 @@ export default function Home() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Orientierung
-          </p>
+          {/* Body-Eyebrow „Orientierung" entfernt — semantisch redundant
+              zur MarginNote „Wegweiser" in derselben Sektion. */}
           <EditorialProse>
             <p>
               Wenn Sie verstehen möchten, was passiert – die Beziehungsdynamik,
@@ -301,16 +273,9 @@ export default function Home() {
       <EditorialColorBlock variant="sage-wash" maxWidth="45rem">
         <div className="text-center">
           <TestimonialMark className="mx-auto" />
-          <p
-            className="mt-8 text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
+          <EyebrowLabel className="mt-8" spacing="compact">
             Aus der Angehörigenarbeit
-          </p>
+          </EyebrowLabel>
           <div className="mt-6">
             <EditorialPullQuote
               variant="testimonial"

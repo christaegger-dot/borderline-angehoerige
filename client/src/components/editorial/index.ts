@@ -19,3 +19,5 @@ export {
 } from "./EditorialOrnament";
 export { TestimonialMark } from "./TestimonialMark";
 export { EyebrowLabel } from "./EyebrowLabel";
+export { DisplayHeading } from "./DisplayHeading";
+export { Lede } from "./Lede";

@@ -1,4 +1,5 @@
 import {
+  DisplayHeading,
   EditorialColorBlock,
   EditorialFootnotes,
   EditorialHero,
@@ -113,19 +114,9 @@ export default function Home() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel tone="light">Grundgedanke</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "#f5ece6",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2} tone="light">
             Mitgefühl und Selbstschutz sind kein Widerspruch.
-          </h2>
+          </DisplayHeading>
           <EditorialProse dropCap>
             <p>
               Viele Angehörige, die zu uns kommen, tragen eine leise Überzeugung
@@ -266,19 +257,9 @@ export default function Home() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Sie müssen nicht wissen, was Sie sagen wollen.
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die

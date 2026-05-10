@@ -23,7 +23,7 @@ interface EditorialHeroProps {
  * Editorial Hero auf Basis der EditorialSection-Hülle (Phase 1.5).
  *
  * Layout:
- * - MarginNote (200 px links): Sage-Caps-Anker (Eyebrow), wirkt wie
+ * - MarginNote (160 px links): Sage-Caps-Anker (Eyebrow), wirkt wie
  *   Magazintitel/Kapitelmarker
  * - Body (608 px Mitte): H1 / Lede / optionale Meta
  * - Aside (1fr rechts): illustrationSlot, quadratisch (aspect-ratio 1:1),

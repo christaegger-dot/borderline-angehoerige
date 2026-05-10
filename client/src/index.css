@@ -333,6 +333,15 @@
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--fg-primary);
+    /* Defensive Lese-Mass-Sicherung: greift nur, falls EditorialProse
+       jemals ausserhalb von EditorialSection.Body o.ä. gerendert wird.
+       Im Normalfall begrenzt der Grid-Slot bereits auf var(--measure). */
+    max-width: var(--measure);
+    /* Deutsche Komposita („Borderline-Persönlichkeitsstörung") brechen
+       auf schmalen Viewports sonst hart oder erzwingen horizontales
+       Scrollen. */
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   @media (min-width: 768px) {
@@ -446,7 +455,7 @@
   /* ── Editorial Section — Layout-Hülle (Margin / Body / Aside) ──
      Mobile (<768): einspaltig, Reihenfolge margin → body → aside.
      Tablet (768-1023): einspaltig ohne Aside; zweispaltig mit Aside.
-     Desktop (≥1024): drei Spalten 200px / minmax(0, 608px) / 1fr. */
+     Desktop (≥1024): drei Spalten 160px / minmax(0, 608px) / 1fr. */
   .editorial-section-grid {
     display: grid;
     align-items: start;

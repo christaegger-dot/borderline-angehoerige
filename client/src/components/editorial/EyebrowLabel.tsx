@@ -2,8 +2,14 @@ import type { ReactNode } from "react";
 
 interface EyebrowLabelProps {
   children: ReactNode;
-  /** Akzentfarbe — `default` auf Cream/Sage-Wash, `light` auf Aubergine. */
-  tone?: "default" | "light";
+  /**
+   * Akzentfarbe:
+   * - `default`: `var(--accent-label)` für Cream-Hintergrund.
+   * - `light`: `#d6c8be` für Aubergine-Hintergrund.
+   * - `muted`: `#4f6b5e` für Sage-Wash- und Cream-Deep-Hintergrund
+   *   (EditorialColorBlock-Variants).
+   */
+  tone?: "default" | "light" | "muted";
   /** `default` rendert untere Margin (`var(--space-4)`); `compact` entfernt sie. */
   spacing?: "default" | "compact";
   /** Zusätzliche Klassen, z.B. eigene Top-Margin (`mt-8`). */
@@ -13,6 +19,7 @@ interface EyebrowLabelProps {
 const TONE_COLOR: Record<NonNullable<EyebrowLabelProps["tone"]>, string> = {
   default: "var(--accent-label)",
   light: "#d6c8be",
+  muted: "#4f6b5e",
 };
 
 export function EyebrowLabel({

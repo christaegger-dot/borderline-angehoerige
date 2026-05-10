@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { EditorialSection } from "@/components/editorial";
+import { EditorialSection, EyebrowLabel } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import {
@@ -216,17 +216,7 @@ export default function MaterialienLibrarySection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Schneller Einstieg
-          </p>
+          <EyebrowLabel>Schneller Einstieg</EyebrowLabel>
           <h2
             className="font-display"
             style={{
@@ -283,17 +273,7 @@ export default function MaterialienLibrarySection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Bibliothek
-          </p>
+          <EyebrowLabel>Bibliothek</EyebrowLabel>
           <h2
             className="font-display"
             style={{
@@ -371,17 +351,7 @@ export default function MaterialienLibrarySection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Bibliothek
-          </p>
+          <EyebrowLabel>Bibliothek</EyebrowLabel>
           <h2
             className="font-display"
             style={{

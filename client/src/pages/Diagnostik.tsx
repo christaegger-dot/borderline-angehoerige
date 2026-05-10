@@ -5,6 +5,7 @@ import {
   EditorialProse,
   EditorialPullQuote,
   EditorialSectionBlock,
+  EyebrowLabel,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
@@ -132,16 +133,7 @@ export default function Diagnostik() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Diagnostik
-          </p>
+          <EyebrowLabel spacing="compact">Diagnostik</EyebrowLabel>
           <h1
             className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
             style={{

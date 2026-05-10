@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
 } from "@/components/editorial";
 import { InnenraeumeIllustration } from "@/components/illustrations";
 import GrenzenCheck from "@/components/interactive/GrenzenCheck";
@@ -147,17 +148,9 @@ export default function Grenzen() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Grenzen
-          </p>
+          </EyebrowLabel>
           <h1
             className="font-display"
             style={{
@@ -189,16 +182,9 @@ export default function Grenzen() {
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 12 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
             <LastVerifiedBadge path="/grenzen" className="mt-3" />
             <ReviewBadge path="/grenzen" />
           </div>
@@ -231,17 +217,7 @@ export default function Grenzen() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
+          <EyebrowLabel>Überblick</EyebrowLabel>
           <h2
             className="font-display"
             style={{
@@ -916,17 +892,7 @@ export default function Grenzen() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Materialien
-          </p>
+          <EyebrowLabel>Materialien</EyebrowLabel>
           <h2
             className="font-display"
             style={{

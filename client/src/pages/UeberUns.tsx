@@ -4,6 +4,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import EvidenceNote from "@/components/EvidenceNote";
@@ -101,16 +102,7 @@ export default function UeberUns() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Über uns
-          </p>
+          <EyebrowLabel spacing="compact">Über uns</EyebrowLabel>
           <h1
             className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
             style={{

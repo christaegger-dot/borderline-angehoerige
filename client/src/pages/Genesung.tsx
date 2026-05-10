@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { AufgangIllustration } from "@/components/illustrations";
@@ -125,17 +126,9 @@ export default function Genesung() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Genesung
-          </p>
+          </EyebrowLabel>
           <h1
             className="font-display"
             style={{
@@ -165,16 +158,9 @@ export default function Genesung() {
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 8 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
             <LastVerifiedBadge path="/genesung" className="mt-3" />
           </div>
         </EditorialSection.Body>
@@ -206,17 +192,7 @@ export default function Genesung() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
+          <EyebrowLabel>Überblick</EyebrowLabel>
           <h2
             className="font-display"
             style={{
@@ -305,17 +281,7 @@ export default function Genesung() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Forschung
-          </p>
+          <EyebrowLabel>Forschung</EyebrowLabel>
           <h2
             className="font-display"
             style={{
@@ -736,17 +702,7 @@ export default function Genesung() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Materialien
-          </p>
+          <EyebrowLabel>Materialien</EyebrowLabel>
           <h2
             className="font-display"
             style={{

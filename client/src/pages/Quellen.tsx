@@ -2,6 +2,7 @@ import {
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import ReviewBadge from "@/components/ReviewBadge";
@@ -435,16 +436,7 @@ export default function Quellen() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-16 pt-16 md:pb-24 md:pt-24">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Quellen &amp; Literatur
-          </p>
+          <EyebrowLabel spacing="compact">Quellen &amp; Literatur</EyebrowLabel>
           <h1
             className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
             style={{

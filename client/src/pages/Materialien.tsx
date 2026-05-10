@@ -1,4 +1,4 @@
-import { EditorialSection } from "@/components/editorial";
+import { EditorialSection, EyebrowLabel } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import MaterialienLibrarySection from "@/sections/MaterialienLibrarySection";
@@ -27,17 +27,9 @@ export default function Materialien() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Materialien
-          </p>
+          </EyebrowLabel>
           <h1
             className="font-display"
             style={{

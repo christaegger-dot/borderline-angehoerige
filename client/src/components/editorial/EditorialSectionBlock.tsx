@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { EyebrowLabel } from "./EyebrowLabel";
 
 interface EditorialSectionBlockProps {
   /** Kapitälchen-Label, z.B. "ANERKENNUNG" */
@@ -32,18 +33,7 @@ export function EditorialSectionBlock({
           style={{ borderColor: "var(--rule-color)" }}
         />
       )}
-      {label && (
-        <p
-          className="text-xs uppercase"
-          style={{
-            color: "var(--accent-label)",
-            letterSpacing: "var(--tracking-caps)",
-            fontWeight: 500,
-          }}
-        >
-          {label}
-        </p>
-      )}
+      {label && <EyebrowLabel spacing="compact">{label}</EyebrowLabel>}
       {title && (
         <h2
           style={{

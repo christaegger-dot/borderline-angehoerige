@@ -98,17 +98,14 @@ export default function Verstehen() {
             sondern schwer auszuhalten – Situationen kippen, Reaktionen wirken
             widersprüchlich, die eigene Rolle bleibt unklar.
           </p>
-          <p
-            className="mt-10 border-t pt-6 text-xs uppercase"
-            style={{
-              borderColor: "var(--rule-color)",
-              color: "var(--fg-tertiary)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
+          <div
+            className="mt-8 border-t pt-3"
+            style={{ borderColor: "var(--rule-color)" }}
           >
-            Vollständig ca. 15 Min · Auch abschnittweise lesbar
-          </p>
+            <EyebrowLabel spacing="compact">
+              Vollständig ca. 15 Min · Auch abschnittweise lesbar
+            </EyebrowLabel>
+          </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
           <div

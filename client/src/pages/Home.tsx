@@ -16,7 +16,6 @@ import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
 import { ADRESSEN, EMAILS, INFO } from "@/data/kontakte";
-import { Link } from "wouter";
 
 // Single-source-of-truth: keine Telefon-/E-Mail-/Adress-Hardcoding im Markup
 const FACHSTELLE = INFO.find(k => k.id === "INFO_FACHSTELLE");
@@ -222,54 +221,11 @@ export default function Home() {
       {/* ── 4 Visuelle Orientierung ── 8 Infografik-Tiles als narrativer Lese-Pfad */}
       <VisualOrientationGrid />
 
-      {/* ── 5 Orientierung ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Wegweiser
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          {/* Body-Eyebrow „Orientierung" entfernt — semantisch redundant
-              zur MarginNote „Wegweiser" in derselben Sektion. */}
-          <EditorialProse>
-            <p>
-              Wenn Sie verstehen möchten, was passiert – die Beziehungsdynamik,
-              das Innenleben Ihres Angehörigen, die wiederkehrenden Muster –
-              beginnen Sie unter <Link href="/verstehen">Verstehen</Link>. Wenn
-              Sie konkrete Werkzeuge für den Alltag suchen, finden Sie diese
-              unter <Link href="/kommunizieren">Kommunizieren</Link>,{" "}
-              <Link href="/grenzen">Grenzen</Link> und{" "}
-              <Link href="/selbstfuersorge">Selbstfürsorge</Link>. Bei akuten
-              Krisen führt <AppLink href="/soforthilfe">Soforthilfe</AppLink> zu
-              den Schweizer Notfallnummern.
-            </p>
-          </EditorialProse>
-          <p
-            className="mt-4"
-            style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
-            }}
-          >
-            Eine vollständige Themenübersicht finden Sie über das Menü.
-          </p>
-        </EditorialSection.Body>
-      </EditorialSection>
-
-      {/* ── 6 Stimme ── vollflächige Sage-Wash-Sektion mit Testimonial-Mark */}
+      {/* ── 5 Stimme ── vollflächige Sage-Wash-Sektion mit Testimonial-Mark
+           Wegweiser-Sektion (1 Absatz mit Inline-Links zu Verstehen/Kommunizieren/
+           Grenzen/Selbstfürsorge/Soforthilfe) wurde entfernt — die acht
+           VisualOrientationGrid-Tiles direkt darüber bieten dieselbe
+           Themen-Navigation visuell und ohnehin ausführlicher. */}
       <EditorialColorBlock variant="sage-wash" maxWidth="45rem">
         <div className="text-center">
           <TestimonialMark className="mx-auto" />

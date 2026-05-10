@@ -455,7 +455,12 @@
   /* ── Editorial Section — Layout-Hülle (Margin / Body / Aside) ──
      Mobile (<768): einspaltig, Reihenfolge margin → body → aside.
      Tablet (768-1023): einspaltig ohne Aside; zweispaltig mit Aside.
-     Desktop (≥1024): drei Spalten 160px / minmax(0, 608px) / 1fr. */
+     Desktop (≥1024) mit Aside: drei Spalten 160px / minmax(0, 608px) / 1fr,
+       max-width 1240px.
+     Desktop (≥1024) ohne Aside: zwei Spalten 160px / minmax(0, 608px),
+       max-width 824px (= 160 + gap-5/32 + 608 + Reserve). Das Grid wird
+       durch mx-auto im Container zentriert, statt eine leere 1fr-Spalte
+       rechts neben dem 608-px-Body offen zu lassen. */
   .editorial-section-grid {
     display: grid;
     align-items: start;
@@ -476,7 +481,12 @@
     }
   }
   @media (min-width: 1024px) {
-    .editorial-section-grid {
+    .editorial-section-grid:not(.editorial-section-grid--has-aside) {
+      grid-template-columns: 160px minmax(0, var(--measure));
+      grid-template-areas: "margin body";
+      max-width: 824px;
+    }
+    .editorial-section-grid--has-aside {
       grid-template-columns: 160px minmax(0, var(--measure)) 1fr;
       grid-template-areas: "margin body aside";
     }

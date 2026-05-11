@@ -50,6 +50,26 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
+
+    <!-- Self-hosted Fonts: Preload für Critical-Path (Hero-H1 in Source Serif,
+         Body in Inter 400). Variable Fonts decken font-weight 200-900 in
+         einer Datei ab. -->
+    <link
+      rel="preload"
+      href="/fonts/source-serif-4-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+
     <link rel="stylesheet" href="/print.css" media="print" />
     <link rel="stylesheet" href="/startup-shell.css" />
     <script src="/route-prerender.js"></script>

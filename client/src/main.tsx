@@ -1,11 +1,11 @@
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/inter/700.css";
-import "@fontsource-variable/source-serif-4";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
+
+// Fonts (Inter + Source Serif 4) sind self-hosted in client/public/fonts/.
+// @font-face-Decls in /fonts/fonts.css, eingebunden via <link> in index.html
+// mit <link rel="preload"> für die Critical-Path-Varianten (Hero-H1 + Body).
+// Aus dem JS-Bundle entfernt, damit Fonts parallel zum JS-Download starten.
 
 const root = document.getElementById("root");
 if (!root) {

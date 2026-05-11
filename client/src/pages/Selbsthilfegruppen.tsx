@@ -84,15 +84,6 @@ export default function Selbsthilfegruppen() {
     fontWeight: 500,
   } as const;
 
-  const categoryHeadingStyle = {
-    fontFamily: "var(--font-display)",
-    fontSize: "var(--text-2xl)",
-    fontWeight: "var(--weight-display)",
-    color: "var(--fg-primary)",
-    letterSpacing: "var(--tracking-tight)",
-    lineHeight: "var(--lh-snug)",
-  };
-
   const subBlockTitleStyle = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
@@ -187,7 +178,9 @@ export default function Selbsthilfegruppen() {
             <p className="uppercase" style={labelStyle}>
               Kategorie
             </p>
-            <h2 style={categoryHeadingStyle}>Professionelle Beratung</h2>
+            <DisplayHeading level={2} spacing="compact">
+              Professionelle Beratung
+            </DisplayHeading>
             <p style={bodyStyle}>
               Anlaufstellen, die Angehörige fachlich begleiten, entlasten und
               bei der Einordnung unterstützen.
@@ -326,7 +319,9 @@ export default function Selbsthilfegruppen() {
             <p className="uppercase" style={labelStyle}>
               Kategorie
             </p>
-            <h2 style={categoryHeadingStyle}>Angehörigen-Netzwerke</h2>
+            <DisplayHeading level={2} spacing="compact">
+              Angehörigen-Netzwerke
+            </DisplayHeading>
             <p style={bodyStyle}>
               Organisationen und Netzwerke, die Austausch, Orientierung und
               Entlastung für Angehörige ermöglichen.
@@ -490,7 +485,9 @@ export default function Selbsthilfegruppen() {
             <p className="uppercase" style={labelStyle}>
               Kategorie
             </p>
-            <h2 style={categoryHeadingStyle}>Selbsthilfegruppen finden</h2>
+            <DisplayHeading level={2} spacing="compact">
+              Selbsthilfegruppen finden
+            </DisplayHeading>
             <p style={bodyStyle}>
               Wenn Sie mit anderen Angehörigen in Austausch kommen möchten, ist
               Selbsthilfe Schweiz die wichtigste Vermittlungsstelle.

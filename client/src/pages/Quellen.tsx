@@ -401,15 +401,6 @@ function entryAnchor(eintrag: QuelleEintrag): string {
 }
 
 export default function Quellen() {
-  const categoryHeadingStyle = {
-    fontFamily: "var(--font-display)",
-    fontSize: "var(--text-2xl)",
-    fontWeight: "var(--weight-display)",
-    color: "var(--fg-primary)",
-    letterSpacing: "var(--tracking-tight)",
-    lineHeight: "var(--lh-snug)",
-  };
-
   const citationStyle = {
     fontSize: "var(--text-md)",
     lineHeight: "var(--lh-relaxed)",
@@ -466,7 +457,9 @@ export default function Quellen() {
         <div className="space-y-16">
           {quellen.map(gruppe => (
             <section key={gruppe.kategorie} className="space-y-8">
-              <h2 style={categoryHeadingStyle}>{gruppe.kategorie}</h2>
+              <DisplayHeading level={2} spacing="compact">
+                {gruppe.kategorie}
+              </DisplayHeading>
               <ul className="space-y-8">
                 {gruppe.eintraege.map(q => (
                   <li

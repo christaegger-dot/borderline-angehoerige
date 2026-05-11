@@ -72,4 +72,14 @@ describe("DisplayHeading", () => {
     const el = screen.getByText("Therapieangebote");
     expect(el.id).toBe("therapieangebote");
   });
+
+  it("renders spacing=compact with marginBottom 0 (for space-y containers)", () => {
+    render(
+      <DisplayHeading level={2} spacing="compact">
+        Kategorie
+      </DisplayHeading>
+    );
+    const el = screen.getByText("Kategorie");
+    expect(el.style.marginBottom).toBe("0px");
+  });
 });

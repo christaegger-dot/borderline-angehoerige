@@ -277,15 +277,6 @@ export default function Buchempfehlungen() {
     fontWeight: 500,
   } as const;
 
-  const categoryHeadingStyle = {
-    fontFamily: "var(--font-display)",
-    fontSize: "var(--text-2xl)",
-    fontWeight: "var(--weight-display)",
-    color: "var(--fg-primary)",
-    letterSpacing: "var(--tracking-tight)",
-    lineHeight: "var(--lh-snug)",
-  };
-
   return (
     <Layout>
       <SEO
@@ -341,7 +332,9 @@ export default function Buchempfehlungen() {
             >
               {/* Kategorie-Kopf */}
               <div className="space-y-2">
-                <h2 style={categoryHeadingStyle}>{category.title}</h2>
+                <DisplayHeading level={2} spacing="compact">
+                  {category.title}
+                </DisplayHeading>
                 <p style={descStyle}>{category.subtitle}</p>
               </div>
 

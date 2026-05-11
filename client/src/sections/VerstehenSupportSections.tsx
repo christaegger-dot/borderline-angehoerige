@@ -170,7 +170,7 @@ export function VerstehenDiagnosticSection() {
       <p className="mt-6" style={bodyStyle}>
         Mehr zum Diagnostik-Prozess (wer stellt wie eine Diagnose, was sie für
         Angehörige bedeutet, wo sie im Kanton Zürich gestellt werden kann):{" "}
-        <Link href="/diagnostik" className="editorial-link">
+        <Link href="/verstehen/diagnostik" className="editorial-link">
           Diagnostik
         </Link>
         .

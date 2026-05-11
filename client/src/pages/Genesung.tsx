@@ -636,7 +636,10 @@ export default function Genesung() {
                 tritt selten nur eine Diagnose auf — Depression und andere
                 Komorbiditäten beeinflussen den Verlauf wesentlich. Mehr dazu
                 auf der Seite{" "}
-                <Link href="/begleiterkrankungen" className="editorial-link">
+                <Link
+                  href="/verstehen/begleiterkrankungen"
+                  className="editorial-link"
+                >
                   Begleiterkrankungen
                 </Link>
                 .

@@ -92,12 +92,12 @@ export default function Begleiterkrankungen() {
       <SEO
         title="Begleiterkrankungen"
         description="Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert."
-        path="/begleiterkrankungen"
+        path="/verstehen/begleiterkrankungen"
       />
       <MedicalPageSchema
         title="Begleiterkrankungen"
         description="Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert."
-        path="/begleiterkrankungen"
+        path="/verstehen/begleiterkrankungen"
       />
       <TableOfContents />
 
@@ -123,7 +123,7 @@ export default function Begleiterkrankungen() {
           >
             Vollständig ca. 9 Min · Auch abschnittweise lesbar.
           </p>
-          <ReviewBadge path="/begleiterkrankungen" />
+          <ReviewBadge path="/verstehen/begleiterkrankungen" />
         </header>
 
         {/* ── Intro / Überblick ── */}
@@ -547,7 +547,7 @@ export default function Begleiterkrankungen() {
         <RelatedLinksEditorial
           links={[
             {
-              href: "/diagnostik",
+              href: "/verstehen/diagnostik",
               title: "Diagnostik",
               description:
                 "Wie eine Borderline-Diagnose entsteht — und wie sie sich von Komorbidität unterscheidet (Differenzialdiagnostik vs. Komorbidität).",

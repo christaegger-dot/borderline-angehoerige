@@ -55,13 +55,13 @@ export const resourceNavigationItems: NavigationItem[] = [
     group: "Wissen & Materialien",
   },
   {
-    href: "/diagnostik",
+    href: "/verstehen/diagnostik",
     label: "Diagnostik",
     icon: Stethoscope,
     group: "Wissen & Materialien",
   },
   {
-    href: "/begleiterkrankungen",
+    href: "/verstehen/begleiterkrankungen",
     label: "Begleiterkrankungen",
     icon: BookOpen,
     group: "Wissen & Materialien",

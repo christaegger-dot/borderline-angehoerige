@@ -4,9 +4,9 @@ import { pageGovernance } from "@/data/pageGovernance";
 const isoDatePattern = /^\d{4}-\d{2}-\d{2}$/;
 const governanceBackedBadgePaths = [
   "/beratung",
-  "/begleiterkrankungen",
+  "/verstehen/begleiterkrankungen",
   "/datenschutz",
-  "/diagnostik",
+  "/verstehen/diagnostik",
   "/fachstelle",
   "/faq",
   "/genesung",

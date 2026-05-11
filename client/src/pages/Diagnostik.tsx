@@ -123,12 +123,12 @@ export default function Diagnostik() {
       <SEO
         title="Diagnostik"
         description="Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
-        path="/diagnostik"
+        path="/verstehen/diagnostik"
       />
       <MedicalPageSchema
         title="Diagnostik"
         description="Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
-        path="/diagnostik"
+        path="/verstehen/diagnostik"
       />
       <TableOfContents />
 
@@ -154,7 +154,7 @@ export default function Diagnostik() {
           >
             Vollständig ca. 10 Min · Auch abschnittweise lesbar.
           </p>
-          <ReviewBadge path="/diagnostik" />
+          <ReviewBadge path="/verstehen/diagnostik" />
         </header>
 
         {/* ── Intro / Überblick ── */}
@@ -349,7 +349,10 @@ export default function Diagnostik() {
               unterschiedliche Fragen — manche Erkrankungen wie PTBS werden im
               Diagnostik-Prozess geprüft und können auch parallel bestehen. Mehr
               dazu auf der Seite{" "}
-              <Link href="/begleiterkrankungen" className="editorial-link">
+              <Link
+                href="/verstehen/begleiterkrankungen"
+                className="editorial-link"
+              >
                 Begleiterkrankungen
               </Link>
               .

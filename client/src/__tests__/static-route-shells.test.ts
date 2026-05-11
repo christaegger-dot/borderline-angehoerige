@@ -16,7 +16,7 @@ describe("static route shells", () => {
   it("registers exact html shells for known routes and handout text pages", () => {
     const routes = getGeneratedStaticRouteHeadMetadata().map(meta => meta.path);
 
-    expect(routes).toContain("/diagnostik");
+    expect(routes).toContain("/verstehen/diagnostik");
     expect(routes).toContain("/notfallkarte/erstellen");
     expect(routes).toContain("/materialien/text/leuchtturm");
     expect(routes).not.toContain("/soforthilfe");
@@ -27,7 +27,7 @@ describe("static route shells", () => {
       path.join(repoRoot, "client/index.html"),
       "utf8"
     );
-    const diagnostikMeta = getStaticRouteHeadMetadata("/diagnostik");
+    const diagnostikMeta = getStaticRouteHeadMetadata("/verstehen/diagnostik");
 
     expect(diagnostikMeta).not.toBeNull();
 
@@ -37,7 +37,7 @@ describe("static route shells", () => {
       "<title>Diagnostik – Borderline · Hilfe für Angehörige</title>"
     );
     expect(html).toContain(
-      'href="https://borderline-angehoerige.netlify.app/diagnostik"'
+      'href="https://borderline-angehoerige.netlify.app/verstehen/diagnostik"'
     );
     expect(html).toContain(
       'property="og:title" content="Diagnostik – Borderline · Hilfe für Angehörige"'

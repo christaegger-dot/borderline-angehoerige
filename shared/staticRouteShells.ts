@@ -83,14 +83,14 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     includeMedicalSchema: true,
   },
   {
-    path: "/diagnostik",
+    path: "/verstehen/diagnostik",
     title: "Diagnostik",
     description:
       "Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist.",
     includeMedicalSchema: true,
   },
   {
-    path: "/begleiterkrankungen",
+    path: "/verstehen/begleiterkrankungen",
     title: "Begleiterkrankungen",
     description:
       "Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert.",

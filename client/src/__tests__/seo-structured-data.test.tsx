@@ -16,7 +16,7 @@ describe("SEO structured data hydration", () => {
   it("reuses prerendered static schema scripts instead of duplicating them", () => {
     document.head.innerHTML = `
       <script type="application/ld+json" data-static-schema="website">{"@type":"WebSite","url":"https://borderline-angehoerige.netlify.app"}</script>
-      <script type="application/ld+json" data-static-schema="medical-/diagnostik">{"@type":"MedicalWebPage","url":"https://borderline-angehoerige.netlify.app/diagnostik"}</script>
+      <script type="application/ld+json" data-static-schema="medical-/verstehen/diagnostik">{"@type":"MedicalWebPage","url":"https://borderline-angehoerige.netlify.app/verstehen/diagnostik"}</script>
     `;
 
     render(
@@ -25,7 +25,7 @@ describe("SEO structured data hydration", () => {
         <MedicalPageSchema
           title="Diagnostik"
           description="Beschreibung"
-          path="/diagnostik"
+          path="/verstehen/diagnostik"
         />
       </>
     );
@@ -39,7 +39,7 @@ describe("SEO structured data hydration", () => {
     ).toHaveLength(0);
     expect(
       document.head.querySelectorAll(
-        'script[data-static-schema="medical-/diagnostik"]'
+        'script[data-static-schema="medical-/verstehen/diagnostik"]'
       )
     ).toHaveLength(0);
     expect(
@@ -47,7 +47,7 @@ describe("SEO structured data hydration", () => {
     ).toHaveLength(1);
     expect(
       document.head.querySelectorAll(
-        'script[data-schema="medical-/diagnostik"]'
+        'script[data-schema="medical-/verstehen/diagnostik"]'
       )
     ).toHaveLength(1);
   });

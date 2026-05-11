@@ -34,13 +34,13 @@ export const pageGovernance: Record<string, PageGovernance> = {
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
-  "/diagnostik": {
+  "/verstehen/diagnostik": {
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
-  "/begleiterkrankungen": {
+  "/verstehen/begleiterkrankungen": {
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",

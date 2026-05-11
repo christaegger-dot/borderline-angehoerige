@@ -283,17 +283,35 @@ export default function Notfallkarte() {
   const [storageError, setStorageError] = useState(false);
   const [announcement, setAnnouncement] = useState("");
   const skipNextSaveRef = useRef(false);
+  const printIntervalRef = useRef<number | null>(null);
+  const printTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!isStorageAvailable()) setStorageError(true);
   }, []);
+
+  useEffect(
+    () => () => {
+      if (printIntervalRef.current !== null) {
+        window.clearInterval(printIntervalRef.current);
+      }
+      if (printTimeoutRef.current !== null) {
+        window.clearTimeout(printTimeoutRef.current);
+      }
+    },
+    []
+  );
   useEffect(() => {
     if (skipNextSaveRef.current) {
       skipNextSaveRef.current = false;
       return;
     }
 
-    if (!saveData(data)) setStorageError(true);
+    const timeoutId = window.setTimeout(() => {
+      if (!saveData(data)) setStorageError(true);
+    }, 500);
+
+    return () => window.clearTimeout(timeoutId);
   }, [data]);
 
   const handleDeleteData = useCallback(() => {
@@ -333,14 +351,19 @@ export default function Notfallkarte() {
       data,
     };
     let attempts = 0;
-    let intervalId: number | null = null;
 
     const stopSending = () => {
-      if (intervalId !== null) {
-        window.clearInterval(intervalId);
-        intervalId = null;
+      if (printIntervalRef.current !== null) {
+        window.clearInterval(printIntervalRef.current);
+        printIntervalRef.current = null;
+      }
+      if (printTimeoutRef.current !== null) {
+        window.clearTimeout(printTimeoutRef.current);
+        printTimeoutRef.current = null;
       }
     };
+
+    stopSending();
 
     const sendPayload = () => {
       try {
@@ -356,8 +379,8 @@ export default function Notfallkarte() {
     };
 
     sendPayload();
-    intervalId = window.setInterval(sendPayload, 150);
-    window.setTimeout(stopSending, 1800);
+    printIntervalRef.current = window.setInterval(sendPayload, 150);
+    printTimeoutRef.current = window.setTimeout(stopSending, 1800);
   }, [data]);
 
   const addContact = useCallback(() => {

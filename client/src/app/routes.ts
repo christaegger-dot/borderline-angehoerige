@@ -57,6 +57,11 @@ export const routes: AppRoute[] = [
     component: Begleiterkrankungen,
     requiresMotion: true,
   },
+  { path: "/diagnostik", redirectTo: "/verstehen/diagnostik" },
+  {
+    path: "/begleiterkrankungen",
+    redirectTo: "/verstehen/begleiterkrankungen",
+  },
   { path: "/unterstuetzen", redirectTo: "/unterstuetzen/uebersicht" },
   {
     path: "/unterstuetzen/uebersicht",

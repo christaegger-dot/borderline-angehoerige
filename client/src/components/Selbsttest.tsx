@@ -577,7 +577,11 @@ export default function Selbsttest() {
   const question = questions[currentQuestion];
 
   return (
-    <div role="form" aria-label="Selbsttest" className="space-y-8">
+    <form
+      aria-label="Selbsttest"
+      className="space-y-8"
+      onSubmit={e => e.preventDefault()}
+    >
       {/* Progress-Bar */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
@@ -637,6 +641,6 @@ export default function Selbsttest() {
           </fieldset>
         </motion.div>
       </AnimatePresence>
-    </div>
+    </form>
   );
 }

@@ -251,7 +251,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[60]"
             onClick={onClose}
           />
 
@@ -265,7 +265,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             role="dialog"
             aria-modal="true"
             aria-label="Suche"
-            className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 px-4"
+            className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-[60] px-4"
           >
             <div className="rounded-2xl border border-border/70 bg-[color:var(--bg-elevated)] shadow-[0_22px_48px_-34px_rgba(15,23,42,0.28)] overflow-hidden">
               {/* Search Input */}

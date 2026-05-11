@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -77,19 +78,12 @@ export default function Fachstelle() {
           <DisplayHeading level={1} size="page">
             Angehörigenarbeit – <em>professionell begleitet</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Ein Angebot der Psychiatrischen Universitätsklinik Zürich für
             Angehörige von Menschen mit psychischen Erkrankungen. Die Fachstelle
             bietet Orientierung, Entlastung und Beratung für Situationen, die im
             Alltag oft schwer alleine zu tragen sind.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

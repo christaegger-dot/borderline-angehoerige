@@ -4,6 +4,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
@@ -26,17 +27,10 @@ export default function SelbsttestPage() {
           <DisplayHeading level={1} size="page">
             Selbsttest: <em>Wo soll ich anfangen?</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Dieser kurze Test hilft Ihnen, die für Ihre aktuelle Situation
             passenden Inhalte zu finden. Er dauert nur etwa 2 Minuten.
-          </p>
+          </Lede>
         </header>
 
         {/* ── Hairline-Trenner Editorial-Hero → funktionales Tool ── */}

@@ -2,6 +2,7 @@ import {
   DisplayHeading,
   EditorialLayout,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
@@ -34,18 +35,11 @@ export default function Wegweiser() {
           <DisplayHeading level={1} size="page">
             Situations-<em>Wegweiser</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             In akuten Momenten ist es schwer, klar zu denken. Dieser Wegweiser
             führt Sie Schritt für Schritt – wählen Sie einfach die Situation,
             die am ehesten zutrifft.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

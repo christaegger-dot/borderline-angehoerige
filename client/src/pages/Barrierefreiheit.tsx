@@ -5,6 +5,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -53,18 +54,11 @@ export default function Barrierefreiheit() {
           <DisplayHeading level={1} size="page">
             Erklärung zur <em>Barrierefreiheit</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Wir sind bestrebt, diese Website für alle Menschen zugänglich zu
             gestalten, unabhängig von körperlichen, sensorischen oder kognitiven
             Einschränkungen.
-          </p>
+          </Lede>
         </header>
 
         <EditorialSectionBlock label="Ziel" title="Konformitätsziel">

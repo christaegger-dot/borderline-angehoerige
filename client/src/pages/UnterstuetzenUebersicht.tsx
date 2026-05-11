@@ -6,6 +6,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -82,19 +83,12 @@ export default function UnterstuetzenUebersicht() {
           <DisplayHeading level={1}>
             Wie Angehörige <em>hilfreich</em> bleiben können
           </DisplayHeading>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[40em]">
             Angehörige möchten oft gleichzeitig beruhigen, schützen, verstehen,
             Grenzen wahren und die Beziehung nicht verlieren. Genau diese
             Gleichzeitigkeit macht die Rolle so anspruchsvoll. Diese Seite hilft
             Ihnen, Unterstützung realistischer und tragfähiger zu denken.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}

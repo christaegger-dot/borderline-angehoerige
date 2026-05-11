@@ -6,6 +6,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
@@ -373,18 +374,11 @@ export default function FAQ() {
           <DisplayHeading level={1} size="page">
             Häufig gestellte <em>Fragen</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Antworten auf häufige Fragen von Angehörigen. Die FAQ sollen
             Orientierung geben, ohne schwierige Situationen zu stark zu
             vereinfachen oder eine individuelle Einschätzung zu ersetzen.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

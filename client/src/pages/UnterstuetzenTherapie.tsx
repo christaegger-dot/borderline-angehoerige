@@ -6,6 +6,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
@@ -198,19 +199,12 @@ export default function UnterstuetzenTherapie() {
           <DisplayHeading level={1}>
             Therapie <em>begleiten</em>
           </DisplayHeading>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[40em]">
             Professionelle Therapie ist ein zentraler Baustein im
             Genesungsprozess. Angehörige können diesen Weg unterstützen, aber
             nicht für den anderen übernehmen. Genau diese Grenze macht
             Therapiebegleitung oft so anspruchsvoll.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}

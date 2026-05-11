@@ -7,6 +7,7 @@ import {
   EditorialPullQuote,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
@@ -138,19 +139,12 @@ export default function Diagnostik() {
           <DisplayHeading level={1} size="page">
             Wie eine <em>Borderline-Diagnose</em> entsteht
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Was eine Diagnose bedeutet, wer sie stellen darf, wie sie abläuft —
             und was sie für Sie als Angehörige verändert. Nicht als Anleitung,
             jemanden zur Diagnose zu drängen, sondern als Orientierung in einer
             Phase, in der vieles unklar ist.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

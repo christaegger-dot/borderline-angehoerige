@@ -6,6 +6,7 @@ import {
   EditorialPullQuote,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { SchaleIllustration } from "@/components/illustrations";
@@ -85,17 +86,10 @@ export default function Selbstfuersorge() {
             Selbstfürsorge für <em>Angehörige</em> — was trägt, wenn die
             Belastung bleibt.
           </DisplayHeading>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[30em]">
             Wer dauerhaft mit Krisen und Loyalitätskonflikten lebt, braucht
             eigene Regeneration – nicht als Luxus, sondern als Grundlage.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}

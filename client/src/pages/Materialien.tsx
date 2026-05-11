@@ -2,6 +2,7 @@ import {
   DisplayHeading,
   EditorialSection,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -37,19 +38,12 @@ export default function Materialien() {
           <DisplayHeading level={1}>
             Materialien für <em>Angehörige</em>
           </DisplayHeading>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="max-w-[40em]">
             Hier finden Sie ausgewählte Handouts, Infografiken und
             Orientierungshilfen für belastende, unklare oder akute Situationen.
             Die Sammlung ist bewusst kuratiert: lieber wenige, wirklich
             hilfreiche Ressourcen als ein unübersichtliches Archiv.
-          </p>
+          </Lede>
         </EditorialSection.Body>
       </EditorialSection>
 

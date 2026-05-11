@@ -33,8 +33,8 @@ interface EditorialHeroProps {
  *
  * Public-API unverändert seit PR #391 — Pages müssen nicht angepasst
  * werden. H1 + Lede sind intern auf <DisplayHeading> und <Lede>
- * umgestellt; Eyebrow-MarginNote bleibt handgerollt (text-xs statt
- * 13px-Variante der anderen MarginNotes).
+ * umgestellt; Eyebrow-MarginNote nutzt jetzt text-[13px] wie alle
+ * anderen MarginNotes der Site.
  */
 export function EditorialHero({
   eyebrow,
@@ -48,7 +48,7 @@ export function EditorialHero({
       {eyebrow && (
         <EditorialSection.MarginNote>
           <span
-            className="block text-xs font-medium uppercase"
+            className="block text-[13px] font-medium uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",

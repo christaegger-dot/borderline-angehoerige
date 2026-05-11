@@ -130,7 +130,6 @@ export function TableOfContents() {
   const [location] = useLocation();
   const floatingMode = getMobileFloatingMode(location);
   // Scroll-basierte aktive Markierung (kein IntersectionObserver nötig)
-  const activeNavRef = useRef<HTMLButtonElement | null>(null);
   const scrollRafRef = useRef<number | null>(null);
 
   // Headings scannen
@@ -260,17 +259,7 @@ export function TableOfContents() {
     };
   }, [headings]);
 
-  // Aktiven Eintrag in der Desktop-Sidebar in den sichtbaren Bereich scrollen
-  useEffect(() => {
-    if (activeNavRef.current) {
-      activeNavRef.current.scrollIntoView({
-        block: "nearest",
-        behavior: "smooth",
-      });
-    }
-  }, [activeId]);
-
-  // Body-Scroll-Lock für Mobile-Drawer
+  // Body-Scroll-Lock für Drawer
   useScrollLock(isOpen);
 
   const scrollToHeading = useCallback((id: string) => {
@@ -305,11 +294,11 @@ export function TableOfContents() {
 
   return (
     <>
-      {/* ─── Mobile: Floating TOC Button ─── */}
+      {/* ─── Floating TOC Button (alle Viewports) ─── */}
       {floatingMode === "content" && showFloatingButton && (
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="min-[1800px]:hidden fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 items-center gap-2 rounded-full border border-border/70 bg-background px-4 text-sm font-medium text-foreground shadow-[0_10px_24px_-24px_rgba(15,23,42,0.34)]"
+          className="fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 items-center gap-2 rounded-full border border-border/70 bg-background px-4 text-sm font-medium text-foreground shadow-[0_10px_24px_-24px_rgba(15,23,42,0.34)]"
           aria-label="Inhaltsverzeichnis öffnen"
         >
           <List className="w-4 h-4" />
@@ -317,20 +306,20 @@ export function TableOfContents() {
         </motion.button>
       )}
 
-      {/* ─── Mobile: Overlay ─── */}
+      {/* ─── Overlay ─── */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="min-[1800px]:hidden fixed inset-0 z-40 bg-black/16"
+            className="fixed inset-0 z-40 bg-black/16"
             onClick={() => setIsOpen(false)}
           />
         )}
       </AnimatePresence>
 
-      {/* ─── Mobile: Drawer von unten ─── */}
+      {/* ─── Drawer von unten ─── */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -338,7 +327,7 @@ export function TableOfContents() {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="min-[1800px]:hidden fixed bottom-0 left-0 right-0 z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-t-[1.75rem] border-t border-border/60 bg-background shadow-[0_-14px_28px_-28px_rgba(15,23,42,0.24)] pb-[env(safe-area-inset-bottom,0px)]"
+            className="fixed bottom-0 left-0 right-0 z-50 mx-auto flex max-h-[70vh] max-w-[640px] flex-col overflow-hidden rounded-t-[1.75rem] border-t border-border/60 bg-background shadow-[0_-14px_28px_-28px_rgba(15,23,42,0.24)] pb-[env(safe-area-inset-bottom,0px)]"
           >
             {/* Drawer Handle */}
             <div className="flex justify-center pt-3 pb-1">
@@ -386,43 +375,6 @@ export function TableOfContents() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* ─── Desktop: Sticky Sidebar in der linken Gutter-Zone ─── */}
-      {/* EditorialSection.grid = mx-auto max-w-[1240px] mit 160px margin-col + 32px gap
-         vor der Body-Spalte. Body-LEFT liegt daher bei 50vw - 620 + 192 = 50vw - 428.
-         Sidebar-Rechte-Kante = body_left - 32 (Lücke) → sidebar_left = 50vw - 700. */}
-      <div className="hidden min-[1800px]:block fixed left-[calc(50vw-700px)] top-[calc(8rem+env(safe-area-inset-top,0px))] z-30 max-h-[calc(100vh-9.5rem)] w-60">
-        <div className="flex max-h-full flex-col overflow-hidden rounded-[1.4rem] border border-border/60 bg-background shadow-[0_18px_30px_-30px_rgba(15,23,42,0.18)]">
-          <div className="border-b border-border/60 px-4 pt-4 pb-3">
-            <span
-              className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]"
-              role="heading"
-              aria-level={2}
-            >
-              Auf dieser Seite
-            </span>
-          </div>
-          <nav className="overflow-y-auto overscroll-contain px-2 pb-3 flex-1">
-            <ul className="space-y-0.5">
-              {headings.map(({ id, text, level }) => (
-                <li key={id}>
-                  <button
-                    type="button"
-                    ref={activeId === id ? activeNavRef : null}
-                    onClick={() => scrollToHeading(id)}
-                    aria-label={`Zum Abschnitt: ${text}`}
-                    className={`w-full line-clamp-2 rounded-lg px-3 py-2 text-left text-xs transition-colors focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)]/30 focus-visible:ring-offset-1 ${
-                      level === 3 ? "pl-5" : ""
-                    } ${activeId === id ? activeClass : inactiveClass}`}
-                  >
-                    {text}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
     </>
   );
 }

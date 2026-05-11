@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
@@ -264,12 +265,6 @@ export default function Buchempfehlungen() {
     fontStyle: "italic" as const,
   };
 
-  const descStyle = {
-    fontSize: "var(--text-md)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   const labelStyle = {
     fontSize: "var(--text-xs)",
     letterSpacing: "var(--tracking-caps)",
@@ -335,7 +330,7 @@ export default function Buchempfehlungen() {
                 <DisplayHeading level={2} spacing="compact">
                   {category.title}
                 </DisplayHeading>
-                <p style={descStyle}>{category.subtitle}</p>
+                <EditorialBody>{category.subtitle}</EditorialBody>
               </div>
 
               {/* Bücher-Liste */}
@@ -360,7 +355,7 @@ export default function Buchempfehlungen() {
                         {book.publisher}
                         {book.year && `, ${book.year}`}
                       </p>
-                      <p style={descStyle}>{book.description}</p>
+                      <EditorialBody>{book.description}</EditorialBody>
                       <p
                         className="flex flex-wrap items-baseline gap-x-5 gap-y-1 pt-1"
                         style={{ fontSize: "var(--text-sm)" }}

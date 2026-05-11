@@ -24,6 +24,7 @@ export const primaryNavigationItems: NavigationItem[] = [
   { href: "/kommunizieren", label: "Kommunizieren", icon: MessageCircle },
   { href: "/grenzen", label: "Grenzen", icon: Shield },
   { href: "/selbstfuersorge", label: "Selbstfürsorge", icon: Sparkles },
+  { href: "/genesung", label: "Genesung", icon: TrendingUp },
 ];
 
 export const resourceNavigationItems: NavigationItem[] = [
@@ -51,12 +52,6 @@ export const resourceNavigationItems: NavigationItem[] = [
     href: "/materialien",
     label: "Materialien & Handouts",
     icon: Download,
-    group: "Wissen & Materialien",
-  },
-  {
-    href: "/genesung",
-    label: "Genesung & Hoffnung",
-    icon: TrendingUp,
     group: "Wissen & Materialien",
   },
   {

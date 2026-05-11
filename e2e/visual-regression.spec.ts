@@ -12,14 +12,16 @@ import { expect, test } from "@playwright/test";
 
 /**
  * Stable-Pages: Pages mit reproduzierbarem Rendering (kein timing-
- * sensitives Content). Grenzen und Materialien zeigten Drift zwischen
- * Runs — vermutlich framer-motion-Animations oder lazy-loaded Inhalte;
- * können lokal mit `pnpm test:visual:update` ergaenzt werden, sobald
- * die Quelle gefunden ist.
+ * sensitives Content). Grenzen, Materialien und Verstehen zeigten Drift
+ * zwischen Runs — vermutlich framer-motion-Animations oder lazy-loaded
+ * Inhalte; koennen lokal mit `pnpm test:visual:update` ergaenzt werden,
+ * sobald die Quelle der Drift gefunden ist.
+ *
+ * Hero-Region wird trotzdem fuer Home + Verstehen einzeln getestet
+ * (siehe unten) — das deckt die Editorial-Komponenten ab.
  */
 const PAGES = [
   { path: "/", name: "home" },
-  { path: "/verstehen", name: "verstehen" },
   { path: "/soforthilfe", name: "soforthilfe" },
   { path: "/glossar", name: "glossar" },
   { path: "/faq", name: "faq" },

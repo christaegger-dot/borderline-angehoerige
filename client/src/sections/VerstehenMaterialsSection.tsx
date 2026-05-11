@@ -1,7 +1,11 @@
 import { useRef, useState } from "react";
 import { ExternalLink, FileText } from "lucide-react";
 import { Link } from "wouter";
-import { EditorialSection, EyebrowLabel } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   verstehenInfografiken,
@@ -90,19 +94,7 @@ export default function VerstehenMaterialsSection() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Materialien</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Materialien zum Vertiefen
-          </h2>
+          <DisplayHeading level={2}>Materialien zum Vertiefen</DisplayHeading>
           <p
             className="max-w-[36em]"
             style={{

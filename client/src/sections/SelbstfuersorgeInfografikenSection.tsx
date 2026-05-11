@@ -1,7 +1,11 @@
 import { useRef, useState } from "react";
 import { Link } from "wouter";
 import { ExternalLink, FileText } from "lucide-react";
-import { EditorialSection, EyebrowLabel } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   selbstfuersorgeInfografiken,
@@ -98,19 +102,7 @@ export default function SelbstfuersorgeInfografikenSection() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Materialien</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Materialien zum Download
-          </h2>
+          <DisplayHeading level={2}>Materialien zum Download</DisplayHeading>
           <p
             className="max-w-[36em]"
             style={{

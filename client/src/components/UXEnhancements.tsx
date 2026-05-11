@@ -336,13 +336,9 @@ export function TableOfContents() {
 
             {/* Drawer Header */}
             <div className="flex items-center justify-between border-b border-border/60 px-5 py-3">
-              <span
-                className="text-base font-semibold text-foreground"
-                role="heading"
-                aria-level={2}
-              >
+              <h2 className="text-base font-semibold text-foreground">
                 Inhaltsverzeichnis
-              </span>
+              </h2>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}

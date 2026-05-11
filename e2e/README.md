@@ -74,6 +74,12 @@ Font-Rendering-Unterschiede zwischen Headless-Modi.
 
 ## CI
 
-Tests laufen aktuell nicht automatisch in CI. Empfehlung: in einer
-separaten GitHub-Action `visual-regression.yml`, die nach jedem PR die
-Baselines vergleicht.
+Visual-Regression-Tests laufen automatisch bei jedem Pull-Request gegen
+`main` über die GitHub-Action `.github/workflows/visual-regression.yml`.
+
+- Trigger: Änderungen an `client/**`, `e2e/**`, `playwright.config.ts`,
+  oder den Dependencies.
+- Bei Failures: Playwright-Report und Diff-Screenshots werden als
+  Artifact hochgeladen (14 Tage Aufbewahrung). Öffnen via Actions-Tab
+  → fehlgeschlagener Run → `playwright-report` herunterladen →
+  `index.html` öffnen.

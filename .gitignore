@@ -27,6 +27,13 @@ build/
 # QA-Audit-Output (Lighthouse-Reports etc., werden ad-hoc generiert)
 qa/output/
 
+# Playwright Visual-Regression-Output (Diff-Reports, Traces, Videos)
+# Baseline-Screenshots (e2e/visual-regression.spec.ts-snapshots/) bleiben
+# im Repo — sie sind die Source-of-Truth.
+playwright-report/
+test-results/
+e2e/.cache/
+
 # OS generated files
 .DS_Store
 .DS_Store?

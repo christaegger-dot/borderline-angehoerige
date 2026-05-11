@@ -6,6 +6,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
@@ -482,18 +483,11 @@ export default function Notfallkarte() {
           <DisplayHeading level={1} size="page">
             Persönliche <em>Notfallkarte</em>
           </DisplayHeading>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <Lede className="mt-6">
             Die wichtigsten Nummern und Ihre persönlichen Strategien – alles auf
             einen Blick. Zum Ausdrucken, als PDF speichern oder jederzeit hier
             abrufen.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

@@ -14,6 +14,12 @@ interface DisplayHeadingProps {
    */
   size?: "hero" | "page" | "section";
   /**
+   * Bottom-Spacing-Override. `default` rendert den size-typischen
+   * marginBottom. `compact` setzt marginBottom auf 0 — für Headings
+   * in `space-y-X`-Containern, wo der Parent den Abstand verwaltet.
+   */
+  spacing?: "default" | "compact";
+  /**
    * Textfarbe:
    * - `default`: `var(--fg-primary)` für Cream/Sage-Wash/Cream-Deep-Hintergrund
    * - `light`: `#f5ece6` für Aubergine-Hintergrund
@@ -38,6 +44,7 @@ function defaultSize(level: 1 | 2): "hero" | "section" {
 export function DisplayHeading({
   level,
   size,
+  spacing = "default",
   tone = "default",
   id,
   className,
@@ -56,13 +63,21 @@ export function DisplayHeading({
     .filter(Boolean)
     .join(" ");
 
+  // Spacing: compact uebergeht den size-typischen marginBottom.
+  const marginBottom =
+    spacing === "compact"
+      ? 0
+      : resolved === "page"
+        ? undefined
+        : "var(--space-5)";
+
   const style = {
     fontSize: resolved === "page" ? undefined : SIZE_FONT_SIZE[resolved],
     lineHeight: resolved === "section" ? "var(--lh-snug)" : "var(--lh-tight)",
     letterSpacing: "var(--tracking-tight)",
     color: TONE_COLOR[tone],
     fontWeight: "var(--weight-display)" as const,
-    marginBottom: resolved === "page" ? undefined : "var(--space-5)",
+    marginBottom,
   };
 
   if (level === 1) {

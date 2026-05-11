@@ -6,6 +6,7 @@ import {
   EditorialProse,
   EditorialSectionBlock,
   EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -104,12 +105,6 @@ export default function HandoutTextPage({
   const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
   const pageKicker = handout?.kicker ?? "Textversion";
 
-  const leadStyle = {
-    fontSize: "var(--text-lg)",
-    lineHeight: "var(--lh-snug)",
-    color: "var(--fg-secondary)",
-  };
-
   const bodyStyle = {
     fontSize: "var(--text-sm)",
     lineHeight: "var(--lh-relaxed)",
@@ -149,9 +144,7 @@ export default function HandoutTextPage({
           <DisplayHeading level={1} size="page">
             {pageTitle}
           </DisplayHeading>
-          <p className="mt-6" style={leadStyle}>
-            {pageSummary}
-          </p>
+          <Lede className="mt-6">{pageSummary}</Lede>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button

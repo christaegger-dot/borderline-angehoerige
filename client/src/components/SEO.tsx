@@ -1,5 +1,4 @@
 import { useEffect, useMemo } from "react";
-import type { EvidenceSource } from "@/domain/content-types";
 
 interface SEOProps {
   title?: string;

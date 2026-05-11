@@ -55,18 +55,6 @@ export const resourceNavigationItems: NavigationItem[] = [
     group: "Wissen & Materialien",
   },
   {
-    href: "/verstehen/diagnostik",
-    label: "Diagnostik",
-    icon: Stethoscope,
-    group: "Wissen & Materialien",
-  },
-  {
-    href: "/verstehen/begleiterkrankungen",
-    label: "Begleiterkrankungen",
-    icon: BookOpen,
-    group: "Wissen & Materialien",
-  },
-  {
     href: "/faq",
     label: "Häufige Fragen (FAQ)",
     icon: HelpCircle,

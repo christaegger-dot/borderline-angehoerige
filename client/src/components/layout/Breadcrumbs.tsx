@@ -7,6 +7,8 @@ import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
 const pageNames: Record<string, string> = {
   "/": "Startseite",
   "/verstehen": "Borderline verstehen",
+  "/verstehen/diagnostik": "Diagnostik",
+  "/verstehen/begleiterkrankungen": "Begleiterkrankungen",
   "/unterstuetzen": "Unterstützen",
   "/unterstuetzen/uebersicht": "Übersicht",
   "/unterstuetzen/alltag": "Alltag",
@@ -51,6 +53,10 @@ export function getParentInfo(
 
   if (normalizedLocation.startsWith("/unterstuetzen/")) {
     return { href: "/unterstuetzen/uebersicht", label: "Unterstützen" };
+  }
+
+  if (normalizedLocation.startsWith("/verstehen/")) {
+    return { href: "/verstehen", label: "Borderline verstehen" };
   }
 
   return null;

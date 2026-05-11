@@ -17,26 +17,43 @@ export default function ScrollToTop() {
   const [location] = useLocation();
 
   useEffect(() => {
-    const hasHashTarget = window.location.hash.length > 1;
+    const hash = window.location.hash.slice(1);
+    const hasHashTarget = hash.length > 0;
 
-    // Deaktiviere Browser's automatische Scroll-Restoration
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
 
-    // Scrolle nur dann nach oben, wenn keine Hash-Navigation
-    // auf einen konkreten Abschnitt zeigt.
     if (!hasHashTarget) {
       window.scrollTo(0, 0);
+      document.getElementById("main-content")?.focus({ preventScroll: true });
+      return;
     }
 
-    // A11y: Focus auf <main> setzen, damit Screen-Reader-Nutzer
-    // die Navigation wahrnehmen. preventScroll, da wir oben bereits
-    // gescrollt haben. :focus-visible feuert nicht bei programmatic
-    // focus, daher kein sichtbarer Focus-Ring.
-    if (!hasHashTarget) {
-      document.getElementById("main-content")?.focus({ preventScroll: true });
-    }
+    // Hash-Target nach lazy-load erneut anspringen: nach <Redirect> mit
+    // Hash existiert das Ziel-Element beim ersten Browser-Scroll noch nicht
+    // (Page wird lazy geladen). Wir pollen kurz und scrollen, sobald es da ist.
+    let frame: number | null = null;
+    let cancelled = false;
+    const deadline = performance.now() + 2000;
+
+    const tryScroll = () => {
+      if (cancelled) return;
+      const target = document.getElementById(decodeURIComponent(hash));
+      if (target) {
+        target.scrollIntoView({ behavior: "auto", block: "start" });
+        return;
+      }
+      if (performance.now() < deadline) {
+        frame = window.requestAnimationFrame(tryScroll);
+      }
+    };
+    frame = window.requestAnimationFrame(tryScroll);
+
+    return () => {
+      cancelled = true;
+      if (frame !== null) window.cancelAnimationFrame(frame);
+    };
   }, [location]);
 
   useEffect(() => {

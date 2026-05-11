@@ -16,6 +16,7 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import { quellenLinks } from "@/content/quellenLinks";
 import VerstehenMaterialsSection from "@/sections/VerstehenMaterialsSection";
 import {
+  VerstehenBegleitOverviewSection,
   VerstehenDiagnosticSection,
   VerstehenMeaningSection,
   VerstehenRelationshipSection,
@@ -819,6 +820,7 @@ export default function Verstehen() {
           </ContentSection>
 
           <VerstehenDiagnosticSection />
+          <VerstehenBegleitOverviewSection />
         </EditorialSection.Body>
       </EditorialSection>
 

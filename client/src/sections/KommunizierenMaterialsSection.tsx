@@ -3,6 +3,7 @@ import { ExternalLink, FileText } from "lucide-react";
 import { Link } from "wouter";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialSection,
   EyebrowLabel,
 } from "@/components/editorial";
@@ -76,19 +77,12 @@ export default function KommunizierenMaterialsSection() {
         <EditorialSection.Body>
           <EyebrowLabel>Materialien</EyebrowLabel>
           <DisplayHeading level={2}>Spickzettel & Infografiken</DisplayHeading>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody className="max-w-[36em]">
             Diese Materialien verdichten Gesprächstechniken, Deeskalation und
             konkrete Formulierungen. Wenn verfügbar, führt «Textversion lesen»
             zur lesbaren Web-Version. «PDF öffnen» öffnet die A4-Druckversion im
             neuen Tab.
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 

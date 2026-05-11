@@ -3,6 +3,7 @@ import { ExternalLink, FileText } from "lucide-react";
 import { Link } from "wouter";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialSection,
   EyebrowLabel,
 } from "@/components/editorial";
@@ -95,19 +96,12 @@ export default function VerstehenMaterialsSection() {
         <EditorialSection.Body>
           <EyebrowLabel>Materialien</EyebrowLabel>
           <DisplayHeading level={2}>Materialien zum Vertiefen</DisplayHeading>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody className="max-w-[36em]">
             Diese Materialien ergänzen die Seite, ersetzen sie aber nicht. Wenn
             verfügbar, führt «Textversion lesen» zur lesbaren Web-Version.
             Beginnen Sie mit den Grundlagen, wenn Sie gerade Orientierung
             brauchen.
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 

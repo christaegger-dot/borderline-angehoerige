@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialSection,
   EyebrowLabel,
 } from "@/components/editorial";
@@ -267,18 +268,11 @@ export default function MaterialienLibrarySection() {
         <EditorialSection.Body>
           <EyebrowLabel>Bibliothek</EyebrowLabel>
           <DisplayHeading level={2}>Empfohlene Kernmaterialien</DisplayHeading>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody className="max-w-[36em]">
             Wenn Sie gerade nicht lange suchen möchten, beginnen Sie mit diesen
             Materialien. Sie decken Krise, Orientierung, Kommunikation, Grenzen
             und Selbstfürsorge ab.
-          </p>
+          </EditorialBody>
           <p className="mt-3" style={{ fontSize: "var(--text-sm)" }}>
             <button
               type="button"
@@ -419,13 +413,7 @@ export default function MaterialienLibrarySection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody>
             Wenn Sie gerade eher Orientierung als Downloads brauchen, sind die
             Hauptseiten oft der bessere Einstieg —{" "}
             <Link href="/verstehen" className="editorial-link">
@@ -444,7 +432,7 @@ export default function MaterialienLibrarySection() {
               Selbstfürsorge
             </Link>
             .
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 

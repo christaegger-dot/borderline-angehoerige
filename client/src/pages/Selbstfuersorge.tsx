@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
@@ -132,19 +133,11 @@ export default function Selbstfuersorge() {
           <DisplayHeading level={2}>
             Was Sie sich jetzt schenken können
           </DisplayHeading>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EditorialBody className="max-w-[40em] mb-8">
             Wenn Sie die Seite gerade in akuter Erschöpfung lesen, ist eine
             kurze Sofort-Übung oft hilfreicher als ein Konzept. Drei
             Mini-Massnahmen, jederzeit anwendbar:
-          </p>
+          </EditorialBody>
           <ul className="space-y-5">
             <li>
               <h3

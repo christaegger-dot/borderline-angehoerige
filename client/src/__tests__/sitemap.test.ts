@@ -38,8 +38,8 @@ function parseSitemapEntries(xml: string) {
 
 const GOVERNED_SITEMAP_PATHS = [
   "/verstehen",
-  "/diagnostik",
-  "/begleiterkrankungen",
+  "/verstehen/diagnostik",
+  "/verstehen/begleiterkrankungen",
   "/unterstuetzen/alltag",
   "/unterstuetzen/therapie",
   "/unterstuetzen/krise",
@@ -61,8 +61,8 @@ describe("sitemap", () => {
   it("contains the newly added diagnostik and begleiterkrankungen routes", () => {
     const entries = parseSitemapEntries(readSitemap());
 
-    expect(entries.has("/diagnostik")).toBe(true);
-    expect(entries.has("/begleiterkrankungen")).toBe(true);
+    expect(entries.has("/verstehen/diagnostik")).toBe(true);
+    expect(entries.has("/verstehen/begleiterkrankungen")).toBe(true);
   });
 
   it("keeps governed medical and crisis pages in sync with page governance lastReviewed dates", () => {

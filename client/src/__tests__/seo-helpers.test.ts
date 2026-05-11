@@ -56,7 +56,7 @@ describe("SEO helpers", () => {
     const schema = buildMedicalPageSchemaData({
       title: "Diagnostik",
       description: "Beschreibung",
-      path: "/diagnostik",
+      path: "/verstehen/diagnostik",
     });
 
     expect(schema.lastReviewed).toBe("2026-04-30");

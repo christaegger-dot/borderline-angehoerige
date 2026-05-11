@@ -148,6 +148,6 @@ describe("Selbsttest", () => {
     ).toHaveAttribute("href", "/soforthilfe");
     expect(
       screen.getByRole("link", { name: /Diagnostik einordnen/i })
-    ).toHaveAttribute("href", "/diagnostik");
+    ).toHaveAttribute("href", "/verstehen/diagnostik");
   });
 });

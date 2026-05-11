@@ -198,7 +198,7 @@ const results: Result[] = [
     title: "Diagnostik einordnen",
     description:
       "Wenn Diagnose, Verdacht oder Ablehnung noch unklar sind, hilft eine ruhige Orientierung: Was spricht wofür, wer klärt ab und wie sprechen Sie darüber, ohne zu drängen?",
-    primaryLink: "/diagnostik",
+    primaryLink: "/verstehen/diagnostik",
     primaryText: "Diagnostik verstehen",
     secondaryLinks: [
       { href: "/verstehen", text: "Borderline verstehen" },
@@ -237,7 +237,10 @@ const results: Result[] = [
     primaryLink: "/verstehen",
     primaryText: "Borderline verstehen",
     secondaryLinks: [
-      { href: "/diagnostik", text: "Wie wird eine Diagnose gestellt?" },
+      {
+        href: "/verstehen/diagnostik",
+        text: "Wie wird eine Diagnose gestellt?",
+      },
       { href: "/unterstuetzen/uebersicht", text: "Unterstützungsstrategien" },
       { href: "/kommunizieren", text: "Kommunikation verbessern" },
     ],
@@ -466,10 +469,17 @@ export default function Selbsttest() {
       diagnosisStatus && diagnosisNeedsGuidance.has(diagnosisStatus)
         ? [
             ...result.secondaryLinks,
-            ...(result.primaryLink === "/diagnostik" ||
-            result.secondaryLinks.some(link => link.href === "/diagnostik")
+            ...(result.primaryLink === "/verstehen/diagnostik" ||
+            result.secondaryLinks.some(
+              link => link.href === "/verstehen/diagnostik"
+            )
               ? []
-              : [{ href: "/diagnostik", text: "Diagnostik einordnen" }]),
+              : [
+                  {
+                    href: "/verstehen/diagnostik",
+                    text: "Diagnostik einordnen",
+                  },
+                ]),
           ]
         : result.secondaryLinks;
 

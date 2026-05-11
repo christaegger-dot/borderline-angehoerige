@@ -87,7 +87,10 @@ const faqCategories: FAQCategory[] = [
         answer:
           "Eine formelle Borderline-Diagnose stellen vor allem Psychiater:innen mit FMH-Anerkennung Psychiatrie und Psychotherapie sowie psychologische Psychotherapeut:innen mit Berufsausübungsbewilligung und entsprechender klinischer Qualifikation. Hausärzt:innen können einen Verdacht äussern und überweisen, stellen die Diagnose aber in der Regel nicht selbst. Die Abklärung findet ambulant oder stationär statt; sie umfasst meist mehrere Termine über Wochen oder Monate, nicht ein einzelnes Gespräch.",
         links: [
-          { text: "Diagnostik-Seite — Wer & Wie", url: "/diagnostik#wer" },
+          {
+            text: "Diagnostik-Seite — Wer & Wie",
+            url: "/verstehen/diagnostik#wer",
+          },
         ],
       },
       {
@@ -97,7 +100,7 @@ const faqCategories: FAQCategory[] = [
         links: [
           {
             text: "Diagnostik-Seite — Diagnose-Ablehnung",
-            url: "/diagnostik#ablehnung",
+            url: "/verstehen/diagnostik#ablehnung",
           },
           { text: "Soforthilfe", url: "/soforthilfe" },
         ],
@@ -109,7 +112,7 @@ const faqCategories: FAQCategory[] = [
         links: [
           {
             text: "Diagnostik-Seite — Wie läuft eine Diagnostik ab",
-            url: "/diagnostik#wie",
+            url: "/verstehen/diagnostik#wie",
           },
         ],
       },
@@ -119,7 +122,10 @@ const faqCategories: FAQCategory[] = [
         answer:
           "Bei Borderline tritt selten nur eine Diagnose auf. Häufig kommen Depression, Angststörungen, PTBS oder weitere Erkrankungen hinzu — Fachpersonen sprechen dann von Komorbidität oder Begleiterkrankungen. Das bedeutet nicht «doppelt schlimm», sondern beschreibt eine Kombination, die in der Behandlung mitberücksichtigt wird. Komorbide Erkrankungen werden meistens integriert mitbehandelt; bei akut bedrohlichen Phasen (z. B. schwere Depression, Substanzgebrauchskrise) wird das vorrangig stabilisiert.",
         links: [
-          { text: "Begleiterkrankungen", url: "/begleiterkrankungen" },
+          {
+            text: "Begleiterkrankungen",
+            url: "/verstehen/begleiterkrankungen",
+          },
           { text: "Glossar — Komorbidität", url: "/glossar" },
         ],
       },
@@ -131,7 +137,7 @@ const faqCategories: FAQCategory[] = [
         links: [
           {
             text: "Begleiterkrankungen — Depression",
-            url: "/begleiterkrankungen#depression",
+            url: "/verstehen/begleiterkrankungen#depression",
           },
           { text: "Soforthilfe", url: "/soforthilfe" },
         ],
@@ -199,7 +205,10 @@ const faqCategories: FAQCategory[] = [
         links: [
           { text: "Grenzen setzen", url: "/grenzen" },
           { text: "Selbstfürsorge als Elternteil", url: "/selbstfuersorge" },
-          { text: "Jugendliche & Diagnostik", url: "/diagnostik#jugendliche" },
+          {
+            text: "Jugendliche & Diagnostik",
+            url: "/verstehen/diagnostik#jugendliche",
+          },
           { text: "Soforthilfe", url: "/soforthilfe" },
         ],
       },
@@ -241,7 +250,10 @@ const faqCategories: FAQCategory[] = [
         answer:
           "Medikamente «heilen» Borderline nicht. Sie können aber sinnvoll sein, wenn zusätzlich Depression, Angst, Schlafprobleme, starke innere Anspannung oder andere Begleiterkrankungen behandelt werden sollen. Wichtig ist: Einnahme, Umstellung oder Absetzen gehören in ärztliche Begleitung. Angehörige müssen nicht zum Medikamenten-Management werden – hilfreicher ist meist, Beobachtungen ruhig weiterzugeben und die Verantwortung bei der behandelnden Fachperson zu lassen.",
         links: [
-          { text: "Begleiterkrankungen", url: "/begleiterkrankungen" },
+          {
+            text: "Begleiterkrankungen",
+            url: "/verstehen/begleiterkrankungen",
+          },
           { text: "Therapie begleiten", url: "/unterstuetzen/therapie" },
         ],
       },

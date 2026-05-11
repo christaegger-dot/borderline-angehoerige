@@ -47,9 +47,13 @@ const Barrierefreiheit = lazy(() => import("@/pages/Barrierefreiheit"));
 export const routes: AppRoute[] = [
   { path: "/", component: Home },
   { path: "/verstehen", component: Verstehen, requiresMotion: true },
-  { path: "/diagnostik", component: Diagnostik, requiresMotion: true },
   {
-    path: "/begleiterkrankungen",
+    path: "/verstehen/diagnostik",
+    component: Diagnostik,
+    requiresMotion: true,
+  },
+  {
+    path: "/verstehen/begleiterkrankungen",
     component: Begleiterkrankungen,
     requiresMotion: true,
   },

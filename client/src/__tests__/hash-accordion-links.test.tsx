@@ -98,14 +98,14 @@ const HASH_CASES = [
   // wird durch Browser nativ via fragment-anchor gehandhabt, nicht durch
   // Custom-Event-Toggle.
   {
-    route: "/diagnostik#anbieter",
+    route: "/verstehen/diagnostik#anbieter",
     loadPage: () => import("@/pages/Diagnostik"),
     buttonName:
       /Abschnitt Wo eine Diagnose im Kanton Zürich gestellt werden kann/i,
     contentText: /Psychiatrische Universitätsklinik Zürich \(PUK\)/i,
   },
   {
-    route: "/begleiterkrankungen#depression",
+    route: "/verstehen/begleiterkrankungen#depression",
     loadPage: () => import("@/pages/Begleiterkrankungen"),
     buttonName: /Abschnitt Depression bei Borderline/i,
     contentText: /Forschung zeigt, dass im Lebenszeitverlauf/i,

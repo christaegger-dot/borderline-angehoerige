@@ -725,7 +725,10 @@ export default function Verstehen() {
                 Selbstbild oder die Beziehungsmuster, die für Borderline
                 charakteristisch sind. Beide Diagnosen können gleichzeitig
                 vorliegen.{" "}
-                <Link href="/begleiterkrankungen" className="editorial-link">
+                <Link
+                  href="/verstehen/begleiterkrankungen"
+                  className="editorial-link"
+                >
                   Begleiterkrankungen
                 </Link>
                 .

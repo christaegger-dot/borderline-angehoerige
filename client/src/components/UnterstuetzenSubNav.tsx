@@ -39,7 +39,7 @@ export default function UnterstuetzenSubNav() {
                 key={href}
                 href={href}
                 aria-current={isActive ? "page" : undefined}
-                className="px-3 py-2 text-[13px] font-medium uppercase tracking-[0.14em] whitespace-nowrap border-b-2 border-transparent transition-colors first:pl-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                className="inline-flex min-h-[44px] items-center px-3 py-2 text-[13px] font-medium uppercase tracking-[0.14em] whitespace-nowrap border-b-2 border-transparent transition-colors first:pl-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                 style={{
                   borderBottomStyle: "solid",
                   borderBottomColor: isActive

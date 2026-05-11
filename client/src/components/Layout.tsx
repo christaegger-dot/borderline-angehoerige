@@ -94,7 +94,7 @@ export default function Layout({ children }: LayoutProps) {
                   <li key={item.href}>
                     <AppLink
                       href={item.href}
-                      className="inline-flex items-center py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      className="inline-flex min-h-[44px] items-center py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
                     </AppLink>
@@ -113,7 +113,7 @@ export default function Layout({ children }: LayoutProps) {
                   <li key={item.href}>
                     <AppLink
                       href={item.href}
-                      className="inline-flex items-center py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      className="inline-flex min-h-[44px] items-center py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
                     </AppLink>

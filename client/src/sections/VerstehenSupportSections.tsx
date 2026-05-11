@@ -178,3 +178,55 @@ export function VerstehenDiagnosticSection() {
     </ContentSection>
   );
 }
+
+export function VerstehenBegleitOverviewSection() {
+  const bodyStyle = {
+    fontSize: "var(--text-sm)",
+    lineHeight: "var(--lh-relaxed)",
+    color: "var(--fg-secondary)",
+  };
+
+  const komorbiditaeten = [
+    "Depression (häufigste Komorbidität, ca. 75–80 %)",
+    "Angststörungen (Panik, soziale Phobie, generalisierte Angst)",
+    "Posttraumatische Belastungsstörung (PTBS)",
+    "Essstörungen (Bulimie, Binge-Eating)",
+    "Substanzgebrauch (Alkohol, Medikamente, illegale Substanzen)",
+  ] as const;
+
+  return (
+    <ContentSection
+      variant="editorial"
+      title="Begleiterkrankungen — selten allein"
+      id="begleiterkrankungen-ueberblick"
+      preview="Borderline tritt selten isoliert auf. Komorbiditäten verschärfen die Belastung und verändern, was Angehörige beobachten."
+    >
+      <EditorialProse>
+        <p>
+          Borderline tritt selten allein auf. Studien zeigen, dass die meisten
+          Betroffenen im Verlauf ihres Lebens auch andere psychische
+          Erkrankungen entwickeln. Für Angehörige bedeutet das: Vieles, was Sie
+          beobachten, gehört möglicherweise nicht (nur) zu Borderline, sondern
+          zu einer parallelen Belastung — und braucht eigene Aufmerksamkeit.
+        </p>
+      </EditorialProse>
+
+      <ul className="mt-5 space-y-2 pl-5 list-disc marker:text-[color:var(--accent-label)]">
+        {komorbiditaeten.map(item => (
+          <li key={item} style={bodyStyle}>
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      <p className="mt-6" style={bodyStyle}>
+        Mehr zu den einzelnen Komorbiditäten (Depression, Suizidrisiko,
+        Behandlungsfolgen, was Angehörige wissen sollten):{" "}
+        <Link href="/verstehen/begleiterkrankungen" className="editorial-link">
+          Begleiterkrankungen
+        </Link>
+        .
+      </p>
+    </ContentSection>
+  );
+}

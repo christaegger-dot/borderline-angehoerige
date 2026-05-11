@@ -19,7 +19,9 @@ interface DisplayHeadingProps {
    * - `light`: `#f5ece6` für Aubergine-Hintergrund
    */
   tone?: "default" | "light";
-  /** Zusätzliche Klassen, z.B. eigene Top-Margin (`mt-8`). */
+  /** Optionale `id` für Deep-Link-Anchors (z.B. `#therapieangebote`). */
+  id?: string;
+  /** Zusätzliche Klassen, z.B. eigene Top-Margin (`mt-8`) oder max-width (`max-w-[32rem]`). */
   className?: string;
   children: ReactNode;
 }
@@ -37,6 +39,7 @@ export function DisplayHeading({
   level,
   size,
   tone = "default",
+  id,
   className,
   children,
 }: DisplayHeadingProps) {
@@ -64,13 +67,13 @@ export function DisplayHeading({
 
   if (level === 1) {
     return (
-      <h1 className={combinedClass} style={style}>
+      <h1 className={combinedClass} style={style} id={id}>
         {children}
       </h1>
     );
   }
   return (
-    <h2 className={combinedClass} style={style}>
+    <h2 className={combinedClass} style={style} id={id}>
       {children}
     </h2>
   );

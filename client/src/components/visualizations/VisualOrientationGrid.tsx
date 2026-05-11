@@ -1,5 +1,9 @@
 import AppLink from "@/components/AppLink";
-import { EditorialSection, EyebrowLabel } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import { homeFeaturedInfografiken } from "@/content/homeFeaturedInfografiken";
 
 /**
@@ -42,19 +46,9 @@ export function VisualOrientationGrid() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Visuelle Orientierung</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              maxWidth: "32rem",
-            }}
-          >
+          <DisplayHeading level={2} className="max-w-[32rem]">
             Acht Konzepte, in Lese-Reihenfolge — ein Bild pro Idee.
-          </h2>
+          </DisplayHeading>
         </EditorialSection.Body>
       </EditorialSection>
 

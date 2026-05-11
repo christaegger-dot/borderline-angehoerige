@@ -178,19 +178,9 @@ export default function Genesung() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Überblick</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Was auf dieser Seite besonders wichtig ist
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite übersetzt Prognose und Langzeitverlauf in eine
@@ -267,19 +257,7 @@ export default function Genesung() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Forschung</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Was die Forschung zeigt
-          </h2>
+          <DisplayHeading level={2}>Was die Forschung zeigt</DisplayHeading>
           <EditorialProse>
             <p>
               Langzeitstudien sprechen klar gegen das alte Bild einer
@@ -688,20 +666,9 @@ export default function Genesung() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Materialien</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-            id="infografiken"
-          >
+          <DisplayHeading level={2} id="infografiken">
             Materialien & Infografiken
-          </h2>
+          </DisplayHeading>
           <p
             className="max-w-[36em]"
             style={{

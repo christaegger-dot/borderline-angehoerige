@@ -267,19 +267,9 @@ export default function UnterstuetzenTherapie() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Überblick</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Was diese Seite bei Therapie ordnet
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite hilft Ihnen, Therapiebegleitung klarer von
@@ -748,20 +738,9 @@ export default function UnterstuetzenTherapie() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Angebote</EyebrowLabel>
-          <h2
-            id="therapieangebote"
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2} id="therapieangebote">
             Therapieangebote im Kanton Zürich
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Therapie ist in drei Settings möglich: <em>ambulant</em> mit

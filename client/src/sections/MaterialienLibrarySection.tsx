@@ -1,7 +1,11 @@
 import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { EditorialSection, EyebrowLabel } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import {
@@ -217,19 +221,7 @@ export default function MaterialienLibrarySection() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Schneller Einstieg</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Was hilft gerade jetzt?
-          </h2>
+          <DisplayHeading level={2}>Was hilft gerade jetzt?</DisplayHeading>
           <ul className="space-y-6">
             {quickStarts.map(item => (
               <li key={item.id} className="space-y-2">
@@ -274,19 +266,7 @@ export default function MaterialienLibrarySection() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Bibliothek</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Empfohlene Kernmaterialien
-          </h2>
+          <DisplayHeading level={2}>Empfohlene Kernmaterialien</DisplayHeading>
           <p
             className="max-w-[36em]"
             style={{
@@ -352,19 +332,9 @@ export default function MaterialienLibrarySection() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Bibliothek</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Weitere Materialien nach Kategorie
-          </h2>
+          </DisplayHeading>
         </EditorialSection.Body>
       </EditorialSection>
 

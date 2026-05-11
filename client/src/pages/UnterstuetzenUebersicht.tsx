@@ -121,19 +121,9 @@ export default function UnterstuetzenUebersicht() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Überblick</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Was auf dieser Seite besonders trägt
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite klärt, was Angehörige tatsächlich beitragen können —
@@ -470,19 +460,7 @@ export default function UnterstuetzenUebersicht() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Materialien</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Materialien zum Thema
-          </h2>
+          <DisplayHeading level={2}>Materialien zum Thema</DisplayHeading>
           <p
             className="max-w-[36em]"
             style={{
@@ -630,19 +608,7 @@ export default function UnterstuetzenUebersicht() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Vertiefen</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Was möchten Sie vertiefen?
-          </h2>
+          <DisplayHeading level={2}>Was möchten Sie vertiefen?</DisplayHeading>
           <ul className="space-y-6">
             <li>
               <h3 style={h4Style}>

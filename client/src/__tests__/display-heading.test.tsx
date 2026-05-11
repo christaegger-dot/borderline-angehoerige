@@ -62,4 +62,14 @@ describe("DisplayHeading", () => {
     expect(el.style.fontSize).toBe("");
     expect(el.style.marginBottom).toBe("");
   });
+
+  it("forwards id prop for deep-link anchors", () => {
+    render(
+      <DisplayHeading level={2} id="therapieangebote">
+        Therapieangebote
+      </DisplayHeading>
+    );
+    const el = screen.getByText("Therapieangebote");
+    expect(el.id).toBe("therapieangebote");
+  });
 });

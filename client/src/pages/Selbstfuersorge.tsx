@@ -129,19 +129,9 @@ export default function Selbstfuersorge() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Akute Belastung</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Was Sie sich jetzt schenken können
-          </h2>
+          </DisplayHeading>
           <p
             className="max-w-[40em]"
             style={{
@@ -289,19 +279,9 @@ export default function Selbstfuersorge() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Überblick</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Was auf dieser Seite besonders trägt
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite versteht Selbstfürsorge nicht als Extra für gute Tage,

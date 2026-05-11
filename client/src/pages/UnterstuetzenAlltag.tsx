@@ -354,19 +354,9 @@ export default function UnterstuetzenAlltag() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Überblick</EyebrowLabel>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Was diese Seite im Alltag ordnet
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite hilft Ihnen, Alltagsunterstützung nicht nur als

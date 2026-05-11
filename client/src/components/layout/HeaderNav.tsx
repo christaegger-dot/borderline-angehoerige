@@ -91,7 +91,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
           />
 
           <nav
-            className="hidden md:flex items-center gap-3 lg:gap-6 shrink-0"
+            className="hidden md:flex items-center gap-x-1 lg:gap-4 shrink-0"
             aria-label="Hauptnavigation"
           >
             {navItems.map(item => {
@@ -102,7 +102,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
                   key={item.href}
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`inline-flex items-center min-h-[44px] text-sm whitespace-nowrap py-2 border-b-[1.5px] transition-colors duration-200 ${
+                  className={`inline-flex items-center min-h-[44px] text-[13px] lg:text-sm whitespace-nowrap py-2 border-b-[1.5px] transition-colors duration-200 ${
                     isActive
                       ? "font-medium text-[color:var(--fg-primary)] border-[color:var(--accent-primary)]"
                       : "font-normal text-[color:var(--fg-secondary)] border-transparent hover:text-[color:var(--fg-primary)] hover:border-[color:var(--accent-primary)]"

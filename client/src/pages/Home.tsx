@@ -1,5 +1,6 @@
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialColorBlock,
   EditorialFootnotes,
   EditorialHero,
@@ -342,19 +343,13 @@ export default function Home() {
           className="border-t pt-12"
           style={{ borderColor: "var(--rule-color)" }}
         >
-          <p
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody>
             In einer akuten Krise zählt der schnellste funktionierende Weg.{" "}
             <AppLink href="/soforthilfe" className="editorial-link">
               Notfallnummern öffnen
             </AppLink>
             .
-          </p>
+          </EditorialBody>
         </section>
       </EditorialLayout>
     </Layout>

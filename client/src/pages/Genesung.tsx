@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
@@ -669,18 +670,11 @@ export default function Genesung() {
           <DisplayHeading level={2} id="infografiken">
             Materialien & Infografiken
           </DisplayHeading>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody className="max-w-[36em]">
             Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der
             Rolle von Angehörigen. Wenn verfügbar, führt «Textversion lesen» zur
             Web-Version. «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 

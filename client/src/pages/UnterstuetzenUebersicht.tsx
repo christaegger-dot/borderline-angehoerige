@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
@@ -461,17 +462,10 @@ export default function UnterstuetzenUebersicht() {
         <EditorialSection.Body>
           <EyebrowLabel>Materialien</EyebrowLabel>
           <DisplayHeading level={2}>Materialien zum Thema</DisplayHeading>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody className="max-w-[36em]">
             Wenn verfügbar, führt «Textversion lesen» zur Web-Version. «PDF
             öffnen» öffnet die A4-Druckversion im neuen Tab.
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 

@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { ExternalLink, FileText } from "lucide-react";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialSection,
   EyebrowLabel,
 } from "@/components/editorial";
@@ -103,18 +104,11 @@ export default function SelbstfuersorgeInfografikenSection() {
         <EditorialSection.Body>
           <EyebrowLabel>Materialien</EyebrowLabel>
           <DisplayHeading level={2}>Materialien zum Download</DisplayHeading>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody className="max-w-[36em]">
             Infografiken als hochauflösende PDFs zum Herunterladen und lesbare
             Textversionen, wenn verfügbar. «PDF öffnen» öffnet die
             A4-Druckversion im neuen Tab.
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 

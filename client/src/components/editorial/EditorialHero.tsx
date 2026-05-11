@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
+import { DisplayHeading } from "./DisplayHeading";
 import { EditorialSection } from "./EditorialSection";
+import { Lede } from "./Lede";
 
 export interface EditorialHeroMetaItem {
   label: string;
@@ -30,7 +32,9 @@ interface EditorialHeroProps {
  *   max-w 560 px, rechtsbündig
  *
  * Public-API unverändert seit PR #391 — Pages müssen nicht angepasst
- * werden.
+ * werden. H1 + Lede sind intern auf <DisplayHeading> und <Lede>
+ * umgestellt; Eyebrow-MarginNote bleibt handgerollt (text-xs statt
+ * 13px-Variante der anderen MarginNotes).
  */
 export function EditorialHero({
   eyebrow,
@@ -56,31 +60,8 @@ export function EditorialHero({
         </EditorialSection.MarginNote>
       )}
       <EditorialSection.Body>
-        <h1
-          className="font-display"
-          style={{
-            fontSize: "var(--text-hero)",
-            lineHeight: "var(--lh-tight)",
-            letterSpacing: "var(--tracking-tight)",
-            color: "var(--fg-primary)",
-            fontWeight: "var(--weight-display)",
-            marginBottom: "var(--space-5)",
-          }}
-        >
-          {title}
-        </h1>
-        {lede && (
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "1.375rem",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
-            {lede}
-          </p>
-        )}
+        <DisplayHeading level={1}>{title}</DisplayHeading>
+        {lede && <Lede size="hero">{lede}</Lede>}
         {meta && meta.length > 0 && (
           <dl
             className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t pt-6 text-[13px]"

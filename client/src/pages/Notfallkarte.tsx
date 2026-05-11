@@ -293,7 +293,11 @@ export default function Notfallkarte() {
       return;
     }
 
-    if (!saveData(data)) setStorageError(true);
+    const timeoutId = window.setTimeout(() => {
+      if (!saveData(data)) setStorageError(true);
+    }, 500);
+
+    return () => window.clearTimeout(timeoutId);
   }, [data]);
 
   const handleDeleteData = useCallback(() => {

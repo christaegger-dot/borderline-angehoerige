@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo } from "react";
 import {
   DisplayHeading,
+  EditorialBody,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
@@ -481,7 +482,7 @@ export default function Glossar() {
                     <p className="uppercase" style={labelStyle}>
                       {categoryLabels[t.category]}
                     </p>
-                    <dd style={ddStyle}>{t.definition}</dd>
+                    <EditorialBody as="dd">{t.definition}</EditorialBody>
                     {t.example && (
                       <dd style={exampleStyle}>
                         <strong
@@ -508,7 +509,7 @@ export default function Glossar() {
                             DSM-5-Kriterien anzeigen
                           </summary>
                           <div className="mt-3 space-y-2">
-                            <p style={ddStyle}>{t.criteria.intro}</p>
+                            <EditorialBody>{t.criteria.intro}</EditorialBody>
                             <ol
                               className="ml-4 mt-2 space-y-1"
                               style={{ ...ddStyle, listStyleType: "decimal" }}

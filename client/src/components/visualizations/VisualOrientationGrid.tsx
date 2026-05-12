@@ -56,7 +56,7 @@ export function VisualOrientationGrid() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
         aria-label="Visuelle Orientierung — acht Infografiken"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <ul className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 md:gap-y-14 lg:grid-cols-4">
             {homeFeaturedInfografiken.map(tile => (
               <li key={tile.id} className="group">

@@ -289,7 +289,7 @@ export default function MaterialienLibrarySection() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-12 md:px-[var(--container-pad-md)] md:pb-16"
         aria-label="Empfohlene Kernmaterialien — Tile-Liste"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
             {coreMaterials.map(item => (
               <MaterialEntry
@@ -336,7 +336,7 @@ export default function MaterialienLibrarySection() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
         aria-label="Materialien nach Kategorie — Filter und Tile-Liste"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <div
             className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
             role="tablist"

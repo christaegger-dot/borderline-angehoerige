@@ -90,7 +90,7 @@ export default function KommunizierenMaterialsSection() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
         aria-label="Materialien zum Vertiefen — Filter und Tile-Liste"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <div
             className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
             role="tablist"

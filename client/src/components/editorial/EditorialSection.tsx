@@ -69,7 +69,7 @@ export function EditorialSection({ variant, children }: EditorialSectionProps) {
       data-variant={variant}
     >
       <div
-        className={`mx-auto max-w-[1240px] editorial-section-grid${hasAside ? " editorial-section-grid--has-aside" : ""}`}
+        className={`mx-auto max-w-page editorial-section-grid${hasAside ? " editorial-section-grid--has-aside" : ""}`}
       >
         {slots.marginNote}
         {slots.body}

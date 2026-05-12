@@ -43,6 +43,8 @@ export function EditorialSectionBlock({
             color: "var(--fg-primary)",
             fontWeight: "var(--weight-display)",
             letterSpacing: "var(--tracking-tight)",
+            overflowWrap: "anywhere",
+            hyphens: "auto",
           }}
         >
           {title}

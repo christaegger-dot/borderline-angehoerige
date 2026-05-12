@@ -466,7 +466,7 @@
     align-items: start;
     column-gap: var(--space-5);
     row-gap: var(--space-5);
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "margin"
       "body"
@@ -516,6 +516,7 @@
   }
   .editorial-section-grid__aside {
     grid-area: aside;
+    min-width: 0;
   }
   @media (min-width: 1024px) {
     .editorial-section-grid__aside {

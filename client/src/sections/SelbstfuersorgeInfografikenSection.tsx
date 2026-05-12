@@ -133,7 +133,7 @@ export default function SelbstfuersorgeInfografikenSection() {
                 }}
               >
                 <span>{cat.label}</span>
-                <span aria-hidden="true" className="mx-2.5 opacity-70">
+                <span aria-hidden="true" className="mx-2.5 opacity-90">
                   ·
                 </span>
                 <span>{cat.count}</span>

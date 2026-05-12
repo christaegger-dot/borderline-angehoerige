@@ -62,7 +62,9 @@ function MaterialEntry({
   item: MaterialItem;
   onPreview: (image: string, title: string) => void;
 }) {
-  const previewSrc = item.isHtml ? (item.previewUrl ?? item.url) : item.url;
+  const previewSrc = item.isHtml
+    ? (item.previewUrl ?? item.url)
+    : (item.thumbnailUrl ?? item.url);
   const pdfSource = item.pdfUrl ?? item.downloadUrl;
   const openHref = item.isHtml
     ? (item.downloadUrl ?? item.url)

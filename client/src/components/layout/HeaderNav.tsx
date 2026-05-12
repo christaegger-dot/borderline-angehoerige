@@ -91,7 +91,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
           />
 
           <nav
-            className="hidden md:flex items-center gap-x-1 lg:gap-4 shrink-0"
+            className="hidden lg:flex items-center gap-4 shrink-0"
             aria-label="Hauptnavigation"
           >
             {navItems.map(item => {
@@ -174,7 +174,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               ref={menuButtonRef}
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/74 transition-colors ${
+              className={`lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/74 transition-colors ${
                 mobileMenuOpen ? currentAccent.surfaceActive : "hover:bg-muted"
               }`}
               aria-controls="mobile-navigation-dialog"

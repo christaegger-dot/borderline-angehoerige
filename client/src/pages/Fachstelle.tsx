@@ -44,7 +44,7 @@ const leistungen = [
 ] as const;
 
 export default function Fachstelle() {
-  const h4Style = {
+  const h3Style = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
     color: "var(--fg-primary)",
@@ -108,7 +108,7 @@ export default function Fachstelle() {
           <ul className="mt-8 space-y-6">
             {leistungen.map(item => (
               <li key={item.title}>
-                <h4 style={h4Style}>{item.title}</h4>
+                <h3 style={h3Style}>{item.title}</h3>
                 <p className="mt-1" style={bodyStyle}>
                   {item.description}
                 </p>

@@ -357,7 +357,7 @@ export default function MaterialienLibrarySection() {
                   onClick={() => setActiveCategory(cat.id)}
                 >
                   <span>{cat.label}</span>
-                  <span aria-hidden="true" className="mx-2.5 opacity-70">
+                  <span aria-hidden="true" className="mx-2.5 opacity-90">
                     ·
                   </span>
                   <span>{count}</span>

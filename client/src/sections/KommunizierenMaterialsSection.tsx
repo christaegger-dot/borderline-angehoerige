@@ -114,7 +114,7 @@ export default function KommunizierenMaterialsSection() {
                   }}
                 >
                   <span>{category.label}</span>
-                  <span aria-hidden="true" className="mx-2.5 opacity-70">
+                  <span aria-hidden="true" className="mx-2.5 opacity-90">
                     ·
                   </span>
                   <span>{count}</span>

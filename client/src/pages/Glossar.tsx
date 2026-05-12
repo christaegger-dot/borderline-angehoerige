@@ -443,14 +443,19 @@ export default function Glossar() {
         </nav>
 
         {/* ── Glossar-Liste ── */}
-        <dl className="mt-12 space-y-12">
+        {/* HTML-Spec: <dl> darf direkt nur <dt>, <dd>, <div>, <script>,
+           <template> enthalten. Buchstaben-Sections + <h2> deshalb ausserhalb
+           der einzelnen <dl>-Bloecke (eines pro Buchstabe). */}
+        <div className="mt-12 space-y-12">
           {sortedGroups.map(group => (
             <section
               key={group.letter}
               id={`letter-${group.letter.toLowerCase()}`}
               className="space-y-8"
+              aria-labelledby={`letter-${group.letter.toLowerCase()}-heading`}
             >
               <h2
+                id={`letter-${group.letter.toLowerCase()}-heading`}
                 className="border-b pb-3"
                 style={{
                   ...letterHeaderStyle,
@@ -460,82 +465,86 @@ export default function Glossar() {
               >
                 {group.letter}
               </h2>
-              {group.terms.map(t => {
-                const id = `term-${slugifyTerm(t.term)}`;
-                return (
-                  <div key={t.term} id={id} className="space-y-3">
-                    <dt style={dtStyle}>
-                      {t.term}
-                      {t.abbreviation && (
-                        <span
-                          className="ml-2"
-                          style={{
-                            fontSize: "var(--text-md)",
-                            fontWeight: 400,
-                            color: "var(--fg-tertiary)",
-                          }}
-                        >
-                          ({t.abbreviation})
-                        </span>
-                      )}
-                    </dt>
-                    <p className="uppercase" style={labelStyle}>
-                      {categoryLabels[t.category]}
-                    </p>
-                    <EditorialBody as="dd">{t.definition}</EditorialBody>
-                    {t.example && (
-                      <dd style={exampleStyle}>
-                        <strong
-                          style={{
-                            color: "var(--fg-secondary)",
-                            fontStyle: "normal",
-                          }}
-                        >
-                          Beispiel:{" "}
-                        </strong>
-                        {t.example}
-                      </dd>
-                    )}
-                    {t.criteria && (
-                      <dd>
-                        <details id="dsm-5-kriterien" className="mt-1">
-                          <summary
-                            className="cursor-pointer uppercase"
+              <dl className="space-y-8">
+                {group.terms.map(t => {
+                  const id = `term-${slugifyTerm(t.term)}`;
+                  return (
+                    <div key={t.term} id={id} className="space-y-3">
+                      <dt style={dtStyle}>
+                        {t.term}
+                        {t.abbreviation && (
+                          <span
+                            className="ml-2"
                             style={{
-                              ...labelStyle,
-                              color: "var(--accent-primary)",
+                              fontSize: "var(--text-md)",
+                              fontWeight: 400,
+                              color: "var(--fg-tertiary)",
                             }}
                           >
-                            DSM-5-Kriterien anzeigen
-                          </summary>
-                          <div className="mt-3 space-y-2">
-                            <EditorialBody>{t.criteria.intro}</EditorialBody>
-                            <ol
-                              className="ml-4 mt-2 space-y-1"
-                              style={{ ...ddStyle, listStyleType: "decimal" }}
+                            ({t.abbreviation})
+                          </span>
+                        )}
+                      </dt>
+                      <dd>
+                        <p className="uppercase" style={labelStyle}>
+                          {categoryLabels[t.category]}
+                        </p>
+                      </dd>
+                      <EditorialBody as="dd">{t.definition}</EditorialBody>
+                      {t.example && (
+                        <dd style={exampleStyle}>
+                          <strong
+                            style={{
+                              color: "var(--fg-secondary)",
+                              fontStyle: "normal",
+                            }}
+                          >
+                            Beispiel:{" "}
+                          </strong>
+                          {t.example}
+                        </dd>
+                      )}
+                      {t.criteria && (
+                        <dd>
+                          <details id="dsm-5-kriterien" className="mt-1">
+                            <summary
+                              className="cursor-pointer uppercase"
+                              style={{
+                                ...labelStyle,
+                                color: "var(--accent-primary)",
+                              }}
                             >
-                              {t.criteria.items.map((item, i) => (
-                                <li key={i}>{item}</li>
-                              ))}
-                            </ol>
-                          </div>
-                        </details>
-                      </dd>
-                    )}
-                    {t.relatedPage && t.relatedPageTitle && (
-                      <dd style={{ fontSize: "var(--text-sm)" }}>
-                        Siehe auch:{" "}
-                        <Link href={t.relatedPage} className="editorial-link">
-                          {t.relatedPageTitle}
-                        </Link>
-                      </dd>
-                    )}
-                  </div>
-                );
-              })}
+                              DSM-5-Kriterien anzeigen
+                            </summary>
+                            <div className="mt-3 space-y-2">
+                              <EditorialBody>{t.criteria.intro}</EditorialBody>
+                              <ol
+                                className="ml-4 mt-2 space-y-1"
+                                style={{ ...ddStyle, listStyleType: "decimal" }}
+                              >
+                                {t.criteria.items.map((item, i) => (
+                                  <li key={i}>{item}</li>
+                                ))}
+                              </ol>
+                            </div>
+                          </details>
+                        </dd>
+                      )}
+                      {t.relatedPage && t.relatedPageTitle && (
+                        <dd style={{ fontSize: "var(--text-sm)" }}>
+                          Siehe auch:{" "}
+                          <Link href={t.relatedPage} className="editorial-link">
+                            {t.relatedPageTitle}
+                          </Link>
+                        </dd>
+                      )}
+                    </div>
+                  );
+                })}
+              </dl>
             </section>
           ))}
-        </dl>
+        </div>
 
         {/* ── Hinweis: Begriffe im Kontext verstehen ── */}
         <EditorialSectionBlock

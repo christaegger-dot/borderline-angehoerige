@@ -64,7 +64,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
       style={{ borderColor: "var(--rule-color)" }}
     >
       <div className="container">
-        <div className="flex min-h-14 items-center justify-between gap-3 py-1.5 md:min-h-20 md:gap-6 md:py-3">
+        <div className="flex min-h-14 items-center justify-between gap-3 py-1.5 md:min-h-20 md:gap-4 md:py-3">
           <AppLink
             href="/"
             aria-label="Borderline · Hilfe für Angehörige – Startseite"

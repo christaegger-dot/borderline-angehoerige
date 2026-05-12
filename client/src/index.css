@@ -493,9 +493,26 @@
   }
   .editorial-section-grid__margin {
     grid-area: margin;
+    min-width: 0;
   }
   .editorial-section-grid__body {
     grid-area: body;
+    min-width: 0;
+  }
+
+  /* Lange deutsche Komposita („Borderline-Persönlichkeitsstörung")
+     duerfen auf schmalen Viewports notfalls innerhalb des Wortes brechen,
+     statt das Grid-Item ueber den Viewport zu druecken. */
+  .font-display {
+    overflow-wrap: anywhere;
+  }
+
+  /* Sage-Wash-Hintergrund (#dde3d4) bringt --accent-label (#4f6b5e) auf
+     Kontrast 4.45 — knapp unter WCAG-AA-Schwelle 4.5. Lokal-darkening auf
+     #476358 (Kontrast 5.01) statt globalem Token-Eingriff, damit andere
+     Hintergruende (Cream, Cream-Deep, Aubergine) unveraendert bleiben. */
+  .editorial-color-block[data-variant="sage-wash"] {
+    --accent-label: #476358;
   }
   .editorial-section-grid__aside {
     grid-area: aside;

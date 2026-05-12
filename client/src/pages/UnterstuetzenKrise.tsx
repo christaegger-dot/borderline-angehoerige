@@ -60,7 +60,7 @@ const ampelHandlungen = [
   {
     label: "Rot",
     tone: "border-alert/25 bg-alert/8",
-    fg: "text-alert",
+    fg: "text-alert-dark",
     items: [
       "Professionelle Hilfe holen",
       "Eigene Sicherheit sichern",

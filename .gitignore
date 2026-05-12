@@ -27,6 +27,9 @@ build/
 # QA-Audit-Output (Lighthouse-Reports etc., werden ad-hoc generiert)
 qa/output/
 
+# Audit-Regression-Guard-Reports
+audit-results/
+
 # Playwright Visual-Regression-Output (Diff-Reports, Traces, Videos)
 # Baseline-Screenshots (e2e/visual-regression.spec.ts-snapshots/) bleiben
 # im Repo — sie sind die Source-of-Truth.

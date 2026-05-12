@@ -1,0 +1,109 @@
+name: Audit Regression Guard
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "client/**"
+      - "scripts/audit-regression-guard.mjs"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/audit-regression.yml"
+  schedule:
+    # Nightly Voll-Lauf gegen die Live-Production-Site (04:00 Zürich, 03:00 UTC).
+    - cron: "0 3 * * *"
+
+concurrency:
+  group: audit-regression-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit-smoke:
+    name: Audit Smoke (PR)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Build
+        run: pnpm build
+
+      - name: Start preview server
+        run: pnpm preview --port 4173 &
+        env:
+          NODE_ENV: production
+
+      - name: Wait for preview server
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://127.0.0.1:4173 > /dev/null; then
+              echo "Preview server up after ${i}s"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Preview server failed to start"
+          exit 1
+
+      - name: Run audit smoke
+        run: pnpm audit:smoke
+        env:
+          GUARD_URL: http://127.0.0.1:4173
+
+      - name: Upload audit report on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: audit-report
+          path: audit-results/
+          retention-days: 14
+
+  audit-full-nightly:
+    name: Audit Full (Nightly, Live)
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run audit full against live site
+        run: pnpm audit:full --label=nightly-$(date +%Y-%m-%d)
+        env:
+          GUARD_URL: https://borderline-angehoerige.netlify.app
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: audit-report-nightly
+          path: audit-results/
+          retention-days: 30

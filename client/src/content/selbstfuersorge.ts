@@ -31,7 +31,7 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     title: "Die Sauerstoffmaske",
     desc: "Kreislauf-Diagramm: Teufelskreis vs. positiver Kreislauf – warum Selbstfürsorge keine Selbstsucht ist.",
     category: "erkennen",
-    webp: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.png",
+    webp: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.png",
     pdf: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.pdf",

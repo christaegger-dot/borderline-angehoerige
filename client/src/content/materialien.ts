@@ -93,7 +93,7 @@ export const materials: MaterialItem[] = [
       "Wut, Schmerz, Angst und Scham als Beziehungsgeschehen verständlicher einordnen.",
     category: "verstehen",
     kind: "Infografik",
-    url: "/infografiken/eisberg-der-eisberg-v6.png",
+    url: "/infografiken/eisberg-der-eisberg-v6.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png",
     downloadUrl: "/infografiken/eisberg-der-eisberg-v6.pdf",
     priority: "core",
@@ -106,7 +106,7 @@ export const materials: MaterialItem[] = [
       "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
     category: "unterstuetzen",
     kind: "Infografik",
-    url: "/infografiken/sphären-die-einfluss-sphären-v3.png",
+    url: "/infografiken/sphären-die-einfluss-sphären-v3.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
     downloadUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
@@ -121,7 +121,7 @@ export const materials: MaterialItem[] = [
       "Kurze Formulierungen für akute Spannungszustände, wenn klare Sprache mehr hilft als lange Erklärungen.",
     category: "kommunizieren",
     kind: "Spickzettel",
-    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
+    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
     downloadUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
@@ -176,7 +176,7 @@ export const materials: MaterialItem[] = [
       "Einordnung von Idealisierung, Entwertung und dem erschwerten Zugang zu Grautönen unter Stress.",
     category: "verstehen",
     kind: "Infografik",
-    url: "/infografiken/pendel-das-bewertungs-pendel-v14.png",
+    url: "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png",
     downloadUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
@@ -190,7 +190,7 @@ export const materials: MaterialItem[] = [
       "Warum logische Klärung unter starker Anspannung oft nicht erreichbar ist und zuerst Beruhigung hilft.",
     category: "verstehen",
     kind: "Infografik",
-    url: "/infografiken/alarm-der-alarm-modus-v3.png",
+    url: "/infografiken/alarm-der-alarm-modus-v3.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png",
     downloadUrl: "/infografiken/alarm-der-alarm-modus-v3.pdf",

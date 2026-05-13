@@ -71,7 +71,7 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "zuhoeren-ohne-zustimmen",
     title: "Zuhören ohne Zustimmen",
     description: "Validieren ohne nachzugeben",
-    url: "/infografiken/validierung-die-validierungs-treppe-v5.png",
+    url: "/infografiken/validierung-die-validierungs-treppe-v5.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.png",
     pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
@@ -91,7 +91,7 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "krisenkommunikation",
     title: "Spickzettel Krisenkommunikation (A4)",
     description: "A4-Spickzettel für akute Spannungszustände",
-    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
+    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
     pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",

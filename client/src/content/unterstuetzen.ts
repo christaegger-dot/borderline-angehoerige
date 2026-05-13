@@ -13,7 +13,7 @@ export const unterstuetzenItems = [
     title: "Im Krisenmodus – Orientierung geben",
     description:
       "Das Ampel-System hilft, Anspannung, Eskalation und akute Gefahr schneller einzuordnen.",
-    url: "/infografiken/ampel-das-ampel-system-v3.png",
+    url: "/infografiken/ampel-das-ampel-system-v3.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.png",
     pdfUrl: "/infografiken/ampel-das-ampel-system-v3.pdf",
@@ -24,7 +24,7 @@ export const unterstuetzenItems = [
     title: "Ihre Rolle klären",
     description:
       "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
-    url: "/infografiken/sphären-die-einfluss-sphären-v3.png",
+    url: "/infografiken/sphären-die-einfluss-sphären-v3.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
     pdfUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",

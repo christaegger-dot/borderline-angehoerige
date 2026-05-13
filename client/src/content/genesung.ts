@@ -22,6 +22,8 @@ export const genesungItems: GenesungItem[] = [
     title: "Genesung in Zahlen",
     desc: "Orientierungs-Tracker mit Langzeitdaten",
     img: "/infografiken/manus-genesung-zahlen-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp",
     pdf: "/infografiken/manus-genesung-zahlen-v1.pdf",
     category: "verstehen",
   },
@@ -40,6 +42,8 @@ export const genesungItems: GenesungItem[] = [
     title: "Remission vs. Heilung",
     desc: "Was Besserung wirklich bedeutet",
     img: "/infografiken/manus-remission-heilung-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-remission-heilung-v1.webp",
     pdf: "/infografiken/manus-remission-heilung-v1.pdf",
     category: "verstehen",
   },
@@ -48,6 +52,8 @@ export const genesungItems: GenesungItem[] = [
     title: "5 Faktoren, die Genesung fördern",
     desc: "Säulen-Modell: Was positiv beeinflusst",
     img: "/infografiken/manus-5-faktoren-genesung-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-5-faktoren-genesung-v1.webp",
     pdf: "/infografiken/manus-5-faktoren-genesung-v1.pdf",
     category: "handeln",
   },
@@ -56,6 +62,8 @@ export const genesungItems: GenesungItem[] = [
     title: "Ihre Rolle im Genesungsprozess",
     desc: "Was Sie tun können (und was nicht)",
     img: "/infografiken/manus-rolle-genesungsprozess-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-rolle-genesungsprozess-v1.webp",
     pdf: "/infografiken/manus-rolle-genesungsprozess-v1.pdf",
     category: "handeln",
   },

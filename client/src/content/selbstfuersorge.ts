@@ -22,6 +22,7 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     desc: "Ampel-Stufenmodell: Grün → Gelb → Rot – erkennen Sie rechtzeitig, wann es zu viel wird.",
     category: "erkennen",
     webp: "/infografiken/manus-warnsignale-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
     pdf: "/infografiken/manus-warnsignale-v1.pdf",
     featured: true,
   },
@@ -41,6 +42,8 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     desc: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung.",
     category: "techniken",
     webp: "/infografiken/manus-radikale-akzeptanz-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp",
     pdf: "/infografiken/manus-radikale-akzeptanz-v1.pdf",
   },
   {
@@ -49,6 +52,7 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     desc: "5 Schritte aus der Stressspirale: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden.",
     category: "techniken",
     webp: "/infografiken/manus-stopp-technik-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp",
     pdf: "/infografiken/manus-stopp-technik-v1.pdf",
   },
   {
@@ -57,6 +61,7 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     desc: "Stock-&-Flow-Diagramm: Was füllt Ihre Batterie auf, was leert sie? Achten Sie auf die Balance.",
     category: "ressourcen",
     webp: "/infografiken/manus-energie-konto-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-energie-konto-v1.webp",
     pdf: "/infografiken/manus-energie-konto-v1.pdf",
   },
   {
@@ -65,6 +70,8 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     desc: "9 Erlaubnisse, die sich Angehörige oft nicht geben – gültig ab sofort, unbefristet.",
     category: "ressourcen",
     webp: "/infografiken/manus-erlaubnis-karte-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-erlaubnis-karte-v1.webp",
     pdf: "/infografiken/manus-erlaubnis-karte-v1.pdf",
   },
 ];

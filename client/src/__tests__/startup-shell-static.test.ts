@@ -8,7 +8,12 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "../../..");
 
 describe("startup shell static assets", () => {
-  it("loads root shell styles from a dedicated stylesheet instead of inline CSS", () => {
+  // Architektur-Regel: Shell-CSS (route-prerender) lebt extern in
+  // startup-shell.css, damit der Browser sie unabhaengig von index.html
+  // cachen und ueber Page-Loads wiederverwenden kann. Critical-Path-CSS
+  // wie @font-face-Decls darf inline sein (Render-Blocking-Save), solange
+  // die Shell-Rules nicht mit-inlinet werden.
+  it("keeps the startup shell stylesheet external (cacheable across page loads)", () => {
     const indexHtml = fs.readFileSync(
       path.join(repoRoot, "client/index.html"),
       "utf8"
@@ -17,7 +22,9 @@ describe("startup shell static assets", () => {
     expect(indexHtml).toContain(
       '<link rel="stylesheet" href="/startup-shell.css" />'
     );
-    expect(indexHtml).not.toContain("<style>");
+    // Shell-Selektoren (.route-prerender-*) duerfen nicht inline auftauchen
+    // - sie gehoeren in startup-shell.css.
+    expect(indexHtml).not.toMatch(/<style[^>]*>[\s\S]*\.route-prerender/);
   });
 
   it("keeps startup fonts and fallback handling out of the critical HTML path", () => {

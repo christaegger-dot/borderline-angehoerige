@@ -3,8 +3,8 @@ import App from "./App";
 import "./index.css";
 
 // Fonts (Inter + Source Serif 4) sind self-hosted in client/public/fonts/.
-// @font-face-Decls in /fonts/fonts.css, eingebunden via <link> in index.html
-// mit <link rel="preload"> für die Critical-Path-Varianten (Hero-H1 + Body).
+// @font-face-Decls inline in index.html (<style>), zusammen mit
+// <link rel="preload"> für die Critical-Path-Varianten (Hero-H1 + Body).
 // Aus dem JS-Bundle entfernt, damit Fonts parallel zum JS-Download starten.
 
 const root = document.getElementById("root");

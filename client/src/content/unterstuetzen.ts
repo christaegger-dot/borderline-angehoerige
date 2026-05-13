@@ -15,7 +15,7 @@ export const unterstuetzenItems = [
       "Das Ampel-System hilft, Anspannung, Eskalation und akute Gefahr schneller einzuordnen.",
     url: "/infografiken/ampel-das-ampel-system-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.png",
+      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.webp",
     pdfUrl: "/infografiken/ampel-das-ampel-system-v3.pdf",
     category: "grundlagen",
   },
@@ -26,7 +26,7 @@ export const unterstuetzenItems = [
       "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
     url: "/infografiken/sphären-die-einfluss-sphären-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
+      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
     pdfUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     category: "grundlagen",
   },

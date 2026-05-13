@@ -36,7 +36,7 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
       "Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.",
     category: "grundlagen",
     webpUrl: "/infografiken/eisberg-der-eisberg-v6.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png",
+    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
     pdfUrl: "/infografiken/eisberg-der-eisberg-v6.pdf",
     alt: "Der Eisberg – Wut ist oft die Spitze",
   },
@@ -47,7 +47,7 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     category: "grundlagen",
     webpUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png",
+      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
     pdfUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
     alt: "Spaltung – das Pendel zwischen Extremen",
   },
@@ -59,7 +59,7 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     category: "neurobiologie",
     webpUrl: "/infografiken/alarm-der-alarm-modus-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png",
+      "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.webp",
     pdfUrl: "/infografiken/alarm-der-alarm-modus-v3.pdf",
     alt: "Alarm-Modus vs. Denk-Modus",
   },

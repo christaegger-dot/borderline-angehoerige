@@ -286,7 +286,7 @@ export default function GrenzenCheck() {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     {istAlert ? (
-                      <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-alert" />
+                      <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-alert-dark" />
                     ) : (
                       <Shield
                         className={`mt-0.5 h-5 w-5 flex-shrink-0 ${istMid ? "text-[color:var(--accent-label)]" : "text-[color:var(--accent-primary)]"}`}

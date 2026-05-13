@@ -23,6 +23,7 @@ export const grenzenItems: GrenzenItem[] = [
     title: "Die DEAR-Technik",
     description: "4 Schritte für respektvolle Grenzsetzung",
     url: "/infografiken/manus-dear-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-dear-v1.webp",
     pdfUrl: "/infografiken/manus-dear-v1.pdf",
     category: "kommunizieren",
   },
@@ -31,6 +32,8 @@ export const grenzenItems: GrenzenItem[] = [
     title: "Spiegeln statt Aufsaugen",
     description: "Mitfühlen ohne Übernehmen",
     url: "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp",
     pdfUrl: "/infografiken/manus-spiegeln-statt-aufsaugen-v1.pdf",
     category: "kommunizieren",
   },
@@ -49,6 +52,8 @@ export const grenzenItems: GrenzenItem[] = [
     title: "Grenzen erkennen",
     description: "5 Warnsignale Ihres Körpers",
     url: "/infografiken/manus-grenzen-erkennen-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-grenzen-erkennen-v1.webp",
     pdfUrl: "/infografiken/manus-grenzen-erkennen-v1.pdf",
     category: "erkennen",
   },
@@ -57,6 +62,7 @@ export const grenzenItems: GrenzenItem[] = [
     title: "L.M.K. (Lebe Mit Konsequenzen)",
     description: "Wenn Grenzen nicht respektiert werden",
     url: "/infografiken/manus-lmk-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-lmk-v1.webp",
     pdfUrl: "/infografiken/manus-lmk-v1.pdf",
     category: "handeln",
   },
@@ -65,6 +71,8 @@ export const grenzenItems: GrenzenItem[] = [
     title: "Spickzettel Grenzen",
     description: "A4 mit den wichtigsten Sätzen",
     url: "/infografiken/manus-grenzen-spickzettel-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v1.webp",
     pdfUrl: "/infografiken/manus-grenzen-spickzettel-v1.pdf",
     category: "handeln",
   },

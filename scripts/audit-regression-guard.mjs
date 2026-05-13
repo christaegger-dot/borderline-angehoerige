@@ -27,11 +27,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
 const SMOKE = args.includes("--smoke");
 const BASE_URL =
-  args.find((a) => a.startsWith("--url="))?.split("=")[1] ??
+  args.find(a => a.startsWith("--url="))?.split("=")[1] ??
   process.env.GUARD_URL ??
   "http://127.0.0.1:4173";
 const LABEL =
-  args.find((a) => a.startsWith("--label="))?.split("=")[1] ??
+  args.find(a => a.startsWith("--label="))?.split("=")[1] ??
   new Date().toISOString().slice(0, 10);
 const OUT_DIR = join(__dirname, "..", "audit-results", LABEL);
 
@@ -108,21 +108,27 @@ function pass(check, detail = "") {
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 async function gotoIdle(page, path) {
-  await page.goto(BASE_URL + path, { waitUntil: "networkidle", timeout: 30000 });
+  await page.goto(BASE_URL + path, {
+    waitUntil: "networkidle",
+    timeout: 30000,
+  });
   await page.evaluate(() => document.fonts?.ready);
   // Trigger lazy-loaded sections so axe sees them.
   await page.evaluate(async () => {
     window.scrollTo(0, document.body.scrollHeight);
-    await new Promise((r) => setTimeout(r, 300));
+    await new Promise(r => setTimeout(r, 300));
     window.scrollTo(0, 0);
-    await new Promise((r) => setTimeout(r, 200));
+    await new Promise(r => setTimeout(r, 200));
   });
 }
 
 // ── Check 1: axe-core WCAG 2.1 AA ──────────────────────────────────────────
 
 async function checkAxe(page, route, viewport) {
-  await page.setViewportSize({ width: viewport.width, height: viewport.height });
+  await page.setViewportSize({
+    width: viewport.width,
+    height: viewport.height,
+  });
   await gotoIdle(page, route);
   const result = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
@@ -169,7 +175,7 @@ async function checkHeadingOrder(page) {
       document.querySelectorAll(
         "main h1, main h2, main h3, main h4, main h5, main h6"
       )
-    ).map((h) => h.tagName)
+    ).map(h => h.tagName)
   );
   const expected = EXPECT.fachstelleHeadings;
   const same =
@@ -220,7 +226,10 @@ async function checkHeaderLayout(page) {
         pass("header-layout", `${width}px: main-nav ✓ hamburger hidden ✓`);
     } else {
       if (r.mainNavVisible)
-        fail("header-layout", `Hauptnav sollte bei ${width}px ausgeblendet sein`);
+        fail(
+          "header-layout",
+          `Hauptnav sollte bei ${width}px ausgeblendet sein`
+        );
       if (!r.hamburgerVisible)
         fail("header-layout", `Hamburger sollte bei ${width}px sichtbar sein`);
       if (!r.mainNavVisible && r.hamburgerVisible)
@@ -235,9 +244,7 @@ async function checkFilterButtons(page) {
   await page.setViewportSize({ width: 1280, height: 800 });
   await gotoIdle(page, "/materialien");
   const r = await page.evaluate(() => {
-    const buttons = Array.from(
-      document.querySelectorAll('button[role="tab"]')
-    );
+    const buttons = Array.from(document.querySelectorAll('button[role="tab"]'));
     if (buttons.length === 0) return { found: false };
     const spans = buttons[0].querySelectorAll("span");
     if (spans.length < 3) return { found: true, spanCount: spans.length };
@@ -294,7 +301,7 @@ async function checkRessourcenAriaControls(page) {
     const triggers = Array.from(
       document.querySelectorAll('button[aria-haspopup="menu"]')
     );
-    const trigger = triggers.find((b) =>
+    const trigger = triggers.find(b =>
       b.textContent?.toLowerCase().includes("ressourcen")
     );
     if (!trigger) return { found: false };
@@ -305,7 +312,10 @@ async function checkRessourcenAriaControls(page) {
     };
   });
   if (!r.found) {
-    fail("ressourcen-aria-controls", "Desktop Ressourcen-Trigger nicht gefunden");
+    fail(
+      "ressourcen-aria-controls",
+      "Desktop Ressourcen-Trigger nicht gefunden"
+    );
     return;
   }
   if (r.hasAriaControlsAttr) {
@@ -509,7 +519,7 @@ async function main() {
   process.exit(issues.length > 0 ? 1 : 0);
 }
 
-main().catch((err) => {
+main().catch(err => {
   console.error("Fatal:", err);
   process.exit(2);
 });

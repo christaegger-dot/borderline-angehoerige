@@ -33,7 +33,7 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     category: "erkennen",
     webp: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.png",
+      "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.webp",
     pdf: "/infografiken/sauerstoff-die-sauerstoffmaske-v4.pdf",
   },
   {

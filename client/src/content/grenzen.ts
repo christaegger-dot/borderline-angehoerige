@@ -43,7 +43,7 @@ export const grenzenItems: GrenzenItem[] = [
     description: "Physisch, emotional, zeitlich, materiell",
     url: "/infografiken/grenzen-die-4-arten-von-grenzen-v4.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.png",
+      "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.webp",
     pdfUrl: "/infografiken/grenzen-die-4-arten-von-grenzen-v4.pdf",
     category: "erkennen",
   },

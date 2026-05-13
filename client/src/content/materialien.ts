@@ -94,7 +94,7 @@ export const materials: MaterialItem[] = [
     category: "verstehen",
     kind: "Infografik",
     url: "/infografiken/eisberg-der-eisberg-v6.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png",
+    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
     downloadUrl: "/infografiken/eisberg-der-eisberg-v6.pdf",
     priority: "core",
     verifiedAt: "April 2026",
@@ -108,7 +108,7 @@ export const materials: MaterialItem[] = [
     kind: "Infografik",
     url: "/infografiken/sphären-die-einfluss-sphären-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
+      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
     downloadUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     priority: "core",
     showInLibrary: true,
@@ -123,7 +123,7 @@ export const materials: MaterialItem[] = [
     kind: "Spickzettel",
     url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
     downloadUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
     priority: "core",
     verifiedAt: "April 2026",
@@ -178,7 +178,7 @@ export const materials: MaterialItem[] = [
     kind: "Infografik",
     url: "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png",
+      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
     downloadUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
     priority: "secondary",
     verifiedAt: "April 2026",
@@ -192,7 +192,7 @@ export const materials: MaterialItem[] = [
     kind: "Infografik",
     url: "/infografiken/alarm-der-alarm-modus-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png",
+      "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.webp",
     downloadUrl: "/infografiken/alarm-der-alarm-modus-v3.pdf",
     priority: "secondary",
     verifiedAt: "April 2026",

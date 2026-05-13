@@ -73,7 +73,7 @@ export const kommItems: KommunikationsMaterial[] = [
     description: "Validieren ohne nachzugeben",
     url: "/infografiken/validierung-die-validierungs-treppe-v5.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.png",
+      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
     pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
     category: "techniken",
   },
@@ -93,7 +93,7 @@ export const kommItems: KommunikationsMaterial[] = [
     description: "A4-Spickzettel für akute Spannungszustände",
     url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
     pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
     category: "praxis",
   },

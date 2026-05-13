@@ -33,8 +33,8 @@ function stripMotionProps(props: Record<string, unknown>) {
   );
 }
 
-vi.mock("framer-motion", () => ({
-  motion: new Proxy(
+vi.mock("framer-motion", () => {
+  const motion = new Proxy(
     {},
     {
       get:
@@ -53,14 +53,22 @@ vi.mock("framer-motion", () => ({
           );
         },
     }
-  ),
-  AnimatePresence: ({ children }: { children: React.ReactNode }) => (
+  );
+  const passthrough = ({ children }: { children?: React.ReactNode }) => (
     <>{children}</>
-  ),
-  useAnimation: () => ({ start: vi.fn() }),
-  useInView: () => false,
-  useReducedMotion: () => true,
-}));
+  );
+  return {
+    motion,
+    m: motion,
+    AnimatePresence: passthrough,
+    useAnimation: () => ({ start: vi.fn() }),
+    useInView: () => false,
+    useReducedMotion: () => true,
+    LazyMotion: passthrough,
+    MotionConfig: passthrough,
+    domAnimation: {},
+  };
+});
 
 // matchMedia: jsdom hat das nicht
 beforeAll(() => {

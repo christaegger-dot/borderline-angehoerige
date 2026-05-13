@@ -44,8 +44,8 @@ function stripMotionProps(props: Record<string, unknown>) {
   );
 }
 
-vi.mock("framer-motion", () => ({
-  motion: new Proxy(
+vi.mock("framer-motion", () => {
+  const motion = new Proxy(
     {},
     {
       get:
@@ -64,9 +64,19 @@ vi.mock("framer-motion", () => ({
           );
         },
     }
-  ),
-  AnimatePresence: ({ children }: { children: ReactNode }) => <>{children}</>,
-}));
+  );
+  const passthrough = ({ children }: { children?: ReactNode }) => (
+    <>{children}</>
+  );
+  return {
+    motion,
+    m: motion,
+    AnimatePresence: passthrough,
+    LazyMotion: passthrough,
+    MotionConfig: passthrough,
+    domAnimation: {},
+  };
+});
 
 function createStorageMock(): Storage {
   const store = new Map<string, string>();

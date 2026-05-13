@@ -11,7 +11,7 @@ import "./search.css";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import {
   loadNormalizedSearchIndex,
   type NormalizedSearchEntry,
@@ -246,7 +246,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
       {isOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -256,7 +256,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
           />
 
           {/* Search Modal */}
-          <motion.div
+          <m.div
             ref={dialogRef}
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -452,7 +452,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                 )}
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

@@ -7,7 +7,7 @@
  * Interaktiv: Klick auf eine Rolle zeigt Details.
  */
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Heart, Stethoscope, User, X } from "lucide-react";
 
 interface OrbitRolle {
@@ -202,7 +202,7 @@ export default function RollenOrbitVisualisierung() {
         <div className="min-h-[200px]">
           <AnimatePresence mode="wait">
             {aktivRolle ? (
-              <motion.div
+              <m.div
                 key={aktivRolle.id}
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -277,9 +277,9 @@ export default function RollenOrbitVisualisierung() {
                     </ul>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ) : (
-              <motion.div
+              <m.div
                 key="leer"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -289,7 +289,7 @@ export default function RollenOrbitVisualisierung() {
                   Klicken Sie auf eine Rolle im Diagramm, um Aufgaben und
                   Abgrenzungen zu sehen.
                 </p>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </div>

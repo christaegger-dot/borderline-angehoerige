@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   CheckCircle2,
@@ -498,7 +498,7 @@ function ScenarioCard({
                 {/* Per-option feedback */}
                 <AnimatePresence>
                   {showResult && isSelected && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -519,7 +519,7 @@ function ScenarioCard({
                           </p>
                         )}
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </button>
@@ -530,7 +530,7 @@ function ScenarioCard({
         {/* Correct answer reveal (if wrong answer selected) */}
         <AnimatePresence>
           {revealed && selectedOption && !selectedOption.correct && (
-            <motion.div
+            <m.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               transition={{ duration: 0.25, delay: 0.1 }}
@@ -545,14 +545,14 @@ function ScenarioCard({
                   {scenario.options.find(o => o.correct)?.feedback}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
 
         {/* Learning note */}
         <AnimatePresence>
           {revealed && (
-            <motion.div
+            <m.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               transition={{ duration: 0.25, delay: 0.15 }}
@@ -567,7 +567,7 @@ function ScenarioCard({
                   {scenario.learnNote}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
 

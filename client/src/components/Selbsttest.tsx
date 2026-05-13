@@ -1,7 +1,7 @@
 /* Interactive self-check with weighted routing for Angehörigen-Orientierung. */
 import { useEffect, useRef, useState } from "react";
 import AppLink from "@/components/AppLink";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 
 interface Question {
@@ -484,7 +484,7 @@ export default function Selbsttest() {
         : result.secondaryLinks;
 
     return (
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
@@ -569,7 +569,7 @@ export default function Selbsttest() {
             ↻ Test wiederholen
           </NavPillButton>
         </div>
-      </motion.div>
+      </m.div>
     );
   }
 
@@ -603,7 +603,7 @@ export default function Selbsttest() {
           aria-label={`Fortschritt: Frage ${currentQuestion + 1} von ${questions.length}`}
           style={{ backgroundColor: "var(--rule-color)" }}
         >
-          <motion.div
+          <m.div
             className="h-full"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
@@ -614,7 +614,7 @@ export default function Selbsttest() {
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.div
+        <m.div
           key={question.id}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -639,7 +639,7 @@ export default function Selbsttest() {
               />
             ))}
           </fieldset>
-        </motion.div>
+        </m.div>
       </AnimatePresence>
     </form>
   );

@@ -19,7 +19,7 @@ const QUALITY = 80;
 await mkdir(DST_DIR, { recursive: true });
 
 const files = (await readdir(SRC_DIR)).filter(
-  f => f.startsWith("manus-") && f.endsWith(".webp"),
+  f => f.startsWith("manus-") && f.endsWith(".webp")
 );
 
 let totalIn = 0;
@@ -37,10 +37,10 @@ for (const file of files) {
   totalIn += srcSize;
   totalOut += dstSize;
   console.log(
-    `${file.padEnd(48)} ${Math.round(srcSize / 1024)} KB -> ${Math.round(dstSize / 1024)} KB  (${meta.width}x${meta.height})`,
+    `${file.padEnd(48)} ${Math.round(srcSize / 1024)} KB -> ${Math.round(dstSize / 1024)} KB  (${meta.width}x${meta.height})`
   );
 }
 
 console.log(
-  `\nTotal: ${(totalIn / 1024 / 1024).toFixed(2)} MB -> ${(totalOut / 1024 / 1024).toFixed(2)} MB  (-${Math.round((1 - totalOut / totalIn) * 100)} %)  ${files.length} files`,
+  `\nTotal: ${(totalIn / 1024 / 1024).toFixed(2)} MB -> ${(totalOut / 1024 / 1024).toFixed(2)} MB  (-${Math.round((1 - totalOut / totalIn) * 100)} %)  ${files.length} files`
 );

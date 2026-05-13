@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "wouter";
 import {
   DisplayHeading,
@@ -490,7 +490,7 @@ export default function MaterialienLibrarySection() {
           className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center bg-black/80 p-4"
           onClick={() => setPreviewImage(null)}
         >
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="max-h-[90vh] max-w-4xl overflow-auto"
@@ -507,7 +507,7 @@ export default function MaterialienLibrarySection() {
             <p className="mt-4 text-center text-sm text-white">
               Klicken Sie irgendwo, um zu schliessen
             </p>
-          </motion.div>
+          </m.div>
         </div>
       )}
     </>

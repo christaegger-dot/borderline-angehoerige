@@ -3,7 +3,7 @@ import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { ChevronRight, Home, List, X, ArrowLeft } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { getMobileFloatingMode } from "@/domain/floating-ui";
 
 // Breadcrumb-Navigation mit Zurück-Pfeil und kontextbezogener Hierarchie
@@ -296,20 +296,20 @@ export function TableOfContents() {
     <>
       {/* ─── Floating TOC Button (alle Viewports) ─── */}
       {floatingMode === "content" && showFloatingButton && (
-        <motion.button
+        <m.button
           onClick={() => setIsOpen(true)}
           className="fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 items-center gap-2 rounded-full border border-border/70 bg-background px-4 text-sm font-medium text-foreground shadow-[0_10px_24px_-24px_rgba(15,23,42,0.34)]"
           aria-label="Inhaltsverzeichnis öffnen"
         >
           <List className="w-4 h-4" />
           <span>Inhalt</span>
-        </motion.button>
+        </m.button>
       )}
 
       {/* ─── Overlay ─── */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -322,7 +322,7 @@ export function TableOfContents() {
       {/* ─── Drawer von unten ─── */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
@@ -368,7 +368,7 @@ export function TableOfContents() {
                 ))}
               </ul>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

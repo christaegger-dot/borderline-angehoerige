@@ -6,7 +6,7 @@
  * als interaktive Waage/Balance-Metapher.
  */
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 
 interface EnergieItem {
@@ -124,7 +124,7 @@ function EnergieBalken({
             {item.label}
           </p>
           <div className="h-1.5 rounded-full bg-border/30 overflow-hidden">
-            <motion.div
+            <m.div
               className="h-full rounded-full"
               style={{ backgroundColor: `var(${tintVar})` }}
               initial={{ width: 0 }}
@@ -152,13 +152,13 @@ function EnergieBalken({
 
       {/* Hinweis-Tooltip */}
       {hover && item.hinweis && (
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
           className="mt-2 text-xs text-muted-foreground leading-relaxed pl-10"
         >
           {item.hinweis}
-        </motion.p>
+        </m.p>
       )}
     </div>
   );

@@ -31,7 +31,7 @@ export const genesungItems: GenesungItem[] = [
     id: "fortschritt-paradox",
     title: "Das Fortschritt-Paradox",
     desc: "Warum Rückfälle zum Weg gehören",
-    img: "/infografiken/fortschritt-das-fortschritt-paradox-v4.png",
+    img: "/infografiken/fortschritt-das-fortschritt-paradox-v4.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.png",
     pdf: "/infografiken/fortschritt-das-fortschritt-paradox-v4.pdf",

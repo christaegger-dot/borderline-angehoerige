@@ -88,7 +88,7 @@ try {
     const slug = routeSlug(route);
     await writeFile(
       path.join(OUTPUT_DIR, `lighthouse-${slug}-mobile.json`),
-      runner.report,
+      runner.report
     );
     console.log(`${summary.score ?? "??"} (LCP ${formatMs(summary.lcp)})`);
   }
@@ -98,12 +98,20 @@ try {
 
 await writeFile(
   path.join(OUTPUT_DIR, "lighthouse-summary.json"),
-  JSON.stringify({ baseUrl: BASE_URL, generatedAt: new Date().toISOString(), results }, null, 2),
+  JSON.stringify(
+    { baseUrl: BASE_URL, generatedAt: new Date().toISOString(), results },
+    null,
+    2
+  )
 );
 
 console.log("");
-console.log("Route                       Score   LCP        FCP        TBT      CLS");
-console.log("------------------------    -----   --------   --------   ------   -----");
+console.log(
+  "Route                       Score   LCP        FCP        TBT      CLS"
+);
+console.log(
+  "------------------------    -----   --------   --------   ------   -----"
+);
 for (const r of results) {
   const label = r.route.padEnd(24);
   const score = String(r.score ?? "??").padStart(5);

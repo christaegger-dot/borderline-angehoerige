@@ -22,10 +22,8 @@ describe("startup shell static assets", () => {
     expect(indexHtml).toContain(
       '<link rel="stylesheet" href="/startup-shell.css" />'
     );
-    // Shell-Selektoren (.route-prerender-*) duerfen nicht innerhalb eines
-    // <style>-Blocks auftauchen - sie gehoeren in startup-shell.css. Der
-    // Negative-Lookahead begrenzt das Match auf den <style>-Inhalt, damit
-    // spaetere Vorkommen (z.B. in Kommentaren) nicht versehentlich ausloesen.
+    // Negative-Lookahead begrenzt Match auf <style>-Inhalt, damit
+    // spaetere Vorkommen (z.B. in HTML-Kommentaren) nicht ausloesen.
     expect(indexHtml).not.toMatch(
       /<style[^>]*>(?:(?!<\/style>)[\s\S])*\.route-prerender/
     );

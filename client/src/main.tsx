@@ -2,10 +2,8 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-// Fonts (Inter + Source Serif 4) sind self-hosted in client/public/fonts/.
-// @font-face-Decls inline in index.html (<style>), zusammen mit
-// <link rel="preload"> für die Critical-Path-Varianten (Hero-H1 + Body).
-// Aus dem JS-Bundle entfernt, damit Fonts parallel zum JS-Download starten.
+// Fonts werden via @font-face in index.html geladen (parallel zum JS-Download).
+// Bewusst KEIN @fontsource-Import hier – wuerde Font-Download nach JS-Bundle serialisieren.
 
 const root = document.getElementById("root");
 if (!root) {

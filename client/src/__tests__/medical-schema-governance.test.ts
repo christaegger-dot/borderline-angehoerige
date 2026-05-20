@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { pageGovernance } from "../data/pageGovernance";
+import { STATIC_ROUTE_HEAD_METADATA } from "@shared/staticRouteShells";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -71,6 +72,32 @@ describe("MedicalPageSchema pageGovernance parity", () => {
       expect(
         entry?.lastReviewed,
         `${routePath} fehlt lastReviewed`
+      ).toBeDefined();
+    }
+  );
+});
+
+describe("STATIC_ROUTE_HEAD_METADATA medical-schema lastReviewed", () => {
+  // Statische Meta-Eintraege (inkl. Handout-Textversionen) mit
+  // includeMedicalSchema: true MUESSEN eine Review-Datum-Quelle haben -
+  // entweder medicalLastReviewed inline oder pageGovernance[path].lastReviewed.
+  // Ohne das emittiert MedicalWebPage-Schema ohne lastReviewed = Compliance-Gap.
+  const medicalRoutes = STATIC_ROUTE_HEAD_METADATA.filter(
+    meta => meta.includeMedicalSchema
+  );
+
+  it("findet medizinische Static-Routes (Sanity)", () => {
+    expect(medicalRoutes.length).toBeGreaterThan(10);
+  });
+
+  it.each(medicalRoutes)(
+    "$path hat medicalLastReviewed oder pageGovernance-lastReviewed",
+    meta => {
+      const fromMeta = meta.medicalLastReviewed;
+      const fromGovernance = pageGovernance[meta.path]?.lastReviewed;
+      expect(
+        fromMeta ?? fromGovernance,
+        `${meta.path}: weder medicalLastReviewed noch pageGovernance.lastReviewed gesetzt`
       ).toBeDefined();
     }
   );

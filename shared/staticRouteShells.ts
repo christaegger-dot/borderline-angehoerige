@@ -250,6 +250,11 @@ export const STATIC_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     title: `${meta.title} – Textversion`,
     description: meta.description,
     includeMedicalSchema: true,
+    // Sammel-Review-Datum fuer alle Handout-Textversionen: sie sind
+    // auto-generiert aus den PDF-Quellen, die in pageGovernance abgedeckt
+    // sind. Wenn sich der Review-Stand eines einzelnen Handouts aendert,
+    // hier auf ein meta-spezifisches Feld umstellen.
+    medicalLastReviewed: "2026-04-30",
   })),
 ];
 

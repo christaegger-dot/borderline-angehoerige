@@ -24,8 +24,10 @@ interface SearchProps {
   onClose: () => void;
 }
 
+import { normalizeQuery } from "@/lib/searchNormalize";
+
 export function normalizeSearchQuery(query: string) {
-  return query.trim().toLowerCase().replace(/\s+/g, " ");
+  return normalizeQuery(query);
 }
 
 export function getSearchTerms(query: string) {
@@ -152,32 +154,23 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     }
 
     debounceTimeoutRef.current = setTimeout(() => {
-      const matches = searchIndex
-        .filter(({ searchText }) =>
-          searchTerms.every(term => searchText.includes(term))
-        )
-        .map(({ item }) => item);
+      const matches = searchIndex.filter(({ searchText }) =>
+        searchTerms.every(term => searchText.includes(term))
+      );
 
-      // Sort by relevance (title matches first)
+      // Sort by relevance: title-match first. Vergleich gegen normalizedTitle,
+      // damit Translit-Queries ("zuerich") gegen normalisierten Titel
+      // ("zuerich" aus "Zürich") matchen.
       matches.sort((a, b) => {
-        const aTitle = a.title.toLowerCase();
-        const bTitle = b.title.toLowerCase();
-
-        if (
-          aTitle.includes(normalizedQuery) &&
-          !bTitle.includes(normalizedQuery)
-        )
-          return -1;
-        if (
-          !aTitle.includes(normalizedQuery) &&
-          bTitle.includes(normalizedQuery)
-        )
-          return 1;
+        const aMatch = a.normalizedTitle.includes(normalizedQuery);
+        const bMatch = b.normalizedTitle.includes(normalizedQuery);
+        if (aMatch && !bMatch) return -1;
+        if (!aMatch && bMatch) return 1;
         return 0;
       });
 
       startTransition(() => {
-        setResults(matches.slice(0, 8));
+        setResults(matches.slice(0, 8).map(({ item }) => item));
         setActiveIndex(-1);
       });
     }, 150);

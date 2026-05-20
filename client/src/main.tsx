@@ -13,10 +13,7 @@ if (!root) {
 }
 createRoot(root).render(<App />);
 
-document.body.setAttribute("data-app-ready", "true");
-window.dispatchEvent(new Event("app-ready"));
-
-const routePrerender = document.getElementById("route-prerender");
-if (routePrerender) {
-  routePrerender.remove();
-}
+// data-app-ready, app-ready-Event und route-prerender-Removal werden aus
+// <AppReady /> in Router.tsx getriggert - feuert erst NACH dem Commit der
+// ersten echten Route, damit die Prerender-Shell nicht verschwindet, waehrend
+// der Suspense-Fallback noch Inhalt nachlaedt.

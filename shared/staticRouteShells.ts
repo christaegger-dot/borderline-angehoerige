@@ -7,6 +7,7 @@ import {
   buildWebsiteSchemaData,
 } from "../client/src/lib/seoMetadata";
 import { handoutTextVersionMetas } from "../client/src/content/handoutTextMetas";
+import { APP_REDIRECTS } from "./redirects";
 
 export interface StaticRouteHeadMetadata {
   path: string;
@@ -22,17 +23,9 @@ export interface StaticRouteHeadMetadata {
   medicalLastReviewed?: string | null;
 }
 
-export const STATIC_ROUTE_REDIRECTS = [
-  { from: "/notfallkarte.html", to: "/notfallkarte", status: 301 },
-  { from: "/notfall", to: "/soforthilfe", status: 301 },
-  { from: "/unterstuetzen", to: "/unterstuetzen/uebersicht", status: 301 },
-  { from: "/selbsthilfegruppen", to: "/beratung", status: 301 },
-  {
-    from: "/therapieangebote",
-    to: "/unterstuetzen/therapie#therapieangebote",
-    status: 301,
-  },
-] as const;
+// Single source of truth: shared/redirects.ts (synchron mit netlify.toml,
+// _redirects, routes.ts - per redirects-parity.test.ts ueberwacht).
+export const STATIC_ROUTE_REDIRECTS = APP_REDIRECTS;
 
 export const SOURCE_STATIC_HTML_ROUTES = new Map<string, string>([
   ["/soforthilfe", "soforthilfe/index.html"],

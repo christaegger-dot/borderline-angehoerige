@@ -462,13 +462,19 @@ export default defineConfig(({ command }) => {
   const plugins = [
     react(),
     tailwindcss(),
-    jsxLocPlugin(),
     vitePluginStaticDirectPages(),
     vitePluginStaticRouteShells(),
   ];
 
   if (isServe) {
-    plugins.push(vitePluginManusRuntime(), vitePluginManusDebugCollector());
+    // jsx-loc + Manus-Plugins sind Dev-/Debug-Only: jsx-loc fuegt
+    // JSX-Line-Number-Metadaten an, Manus-Plugins instrumentieren das
+    // Dev-Runtime. Im Production-Build nicht benoetigt.
+    plugins.push(
+      jsxLocPlugin(),
+      vitePluginManusRuntime(),
+      vitePluginManusDebugCollector()
+    );
   }
 
   return {

@@ -44,7 +44,7 @@ export interface Kontakt {
   label: string;
   /** Einzeiliger Hinweistext */
   hinweis: string;
-  /** Forensik-Fundstelle als Nachweis, z. B. "Soforthilfe.tsx:94" */
+  /** Forensik-Fundstelle als Nachweis, z. B. "public/soforthilfe/index.html" */
   sourceRef: string;
   /** Verfügbarkeit, z. B. "24/7" */
   verfuegbarkeit?: string;
@@ -88,7 +88,7 @@ export const ROT: Kontakt[] = [
     label: "Rettungsdienst",
     hinweis:
       "Bei akuter Lebensgefahr, Selbstverletzung oder akuter Suizidgefahr",
-    sourceRef: "Soforthilfe.tsx:94, Notfallkarte v05 (HTML)",
+    sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
   {
@@ -98,7 +98,7 @@ export const ROT: Kontakt[] = [
     tel: "117",
     label: "Polizei",
     hinweis: "Bei Gewalt oder wenn Sie sich bedroht fühlen",
-    sourceRef: "Soforthilfe.tsx:100, Notfallkarte v05 (HTML)",
+    sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
   {
@@ -108,7 +108,7 @@ export const ROT: Kontakt[] = [
     tel: "112",
     label: "Notruf (wenn unsicher)",
     hinweis: "Wenn Sie unsicher sind, welche Nummer – funktioniert immer.",
-    sourceRef: "Soforthilfe.tsx:106, Notfallkarte v05 (HTML)",
+    sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
   {
@@ -118,7 +118,7 @@ export const ROT: Kontakt[] = [
     tel: "145",
     label: "Tox Info Suisse",
     hinweis: "Bei Vergiftungsverdacht oder Medikamentenüberdosierung",
-    sourceRef: "Notfallkarte v05 (HTML), Soforthilfe.tsx Block 4",
+    sourceRef: "Notfallkarte v05 (HTML), public/soforthilfe/index.html",
     verfuegbarkeit: "24/7",
   },
   {
@@ -146,7 +146,7 @@ export const GELB: Kontakt[] = [
     hinweis:
       "Für Kinder und Jugendliche bis 18 Jahre – wenn es psychisch akut ist.",
     sourceRef:
-      "Soforthilfe.tsx:183, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
+      "public/soforthilfe/index.html, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "bis 18 Jahre",
   },
@@ -158,7 +158,7 @@ export const GELB: Kontakt[] = [
     label: "PUK Erwachsene (24/7)",
     hinweis: "Für Erwachsene ab 18 – akute psychische Krise.",
     sourceRef:
-      "Soforthilfe.tsx:207, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
+      "public/soforthilfe/index.html, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "18–64 Jahre",
   },
@@ -170,7 +170,7 @@ export const GELB: Kontakt[] = [
     label: "PUK Erwachsene (ab 65) (24/7)",
     hinweis: "Für Menschen ab 65 – akute psychische Krise.",
     sourceRef:
-      "Soforthilfe.tsx:231, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
+      "public/soforthilfe/index.html, UnterstuetzenTherapie.tsx:310, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "ab 65 Jahre",
   },
@@ -187,7 +187,7 @@ export const GRUEN: Kontakt[] = [
     label: "Dargebotene Hand (24/7)",
     hinweis:
       "Anonymes Gesprächs- und Krisenangebot, vertraulich. Es kommt niemand vorbei.",
-    sourceRef: "Soforthilfe.tsx:324, Notfallkarte v05 (HTML)",
+    sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
   {
@@ -197,7 +197,7 @@ export const GRUEN: Kontakt[] = [
     tel: "147",
     label: "Pro Juventute (24/7)",
     hinweis: "Beratung für Kinder und Jugendliche, anonym, vertraulich.",
-    sourceRef: "Soforthilfe.tsx:367, Notfallkarte v05 (HTML)",
+    sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "Kinder & Jugendliche",
   },
@@ -208,7 +208,7 @@ export const GRUEN: Kontakt[] = [
     tel: "+41848354555",
     label: "Elternnotruf (24/7)",
     hinweis: "Beratung für Eltern, anonym, vertraulich.",
-    sourceRef: "Soforthilfe.tsx:347, Notfallkarte v05 (HTML)",
+    sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
     fuerWen: "Eltern",
   },
@@ -226,7 +226,7 @@ export const INFO: Kontakt[] = [
     tel: "+41583846500",
     label: "Kriseninterventionszentrum (KIZ)",
     hinweis: "Ambulante Krisenintervention für Erwachsene",
-    sourceRef: "Soforthilfe.tsx Block 5, Notfallkarte v05 (HTML)",
+    sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     fuerWen: "Erwachsene",
   },
   {
@@ -236,7 +236,7 @@ export const INFO: Kontakt[] = [
     tel: "0800336655",
     label: "Ärztefon Zürich",
     hinweis: "Ärztliche Beratung und Weitervermittlung, ggf. Hausbesuch",
-    sourceRef: "Soforthilfe.tsx:281",
+    sourceRef: "public/soforthilfe/index.html",
   },
   {
     id: "INFO_OPFERHILFE_142",
@@ -287,7 +287,7 @@ export const INFO: Kontakt[] = [
     tel: "+41583842111",
     label: "PUK Zentrale",
     hinweis: "Allgemeine Auskunft PUK",
-    sourceRef: "Soforthilfe.tsx:294, UnterstuetzenTherapie.tsx:268",
+    sourceRef: "public/soforthilfe/index.html, UnterstuetzenTherapie.tsx:268",
   },
   {
     id: "INFO_PUK_KJPP_HYPE",
@@ -413,7 +413,7 @@ export const ADRESSEN: AdresseKontakt[] = [
     id: "ADRESSE_PUK",
     adresse: "Lenggstrasse 31, 8032 Zürich",
     label: "PUK Zürich",
-    sourceRef: "Soforthilfe.tsx:167",
+    sourceRef: "public/soforthilfe/index.html",
   },
 ];
 

@@ -171,7 +171,13 @@ function resolveLocalPdfPath(sourceUrl: string) {
 
   for (const publicRoot of LOCAL_PUBLIC_ROOTS) {
     const absolutePath = path.resolve(publicRoot, relativePath);
-    if (!absolutePath.startsWith(publicRoot)) {
+    // path.relative() prevents prefix-only matches like /x/public2 vs /x/public.
+    // Empty string = identical path; ".." prefix = escapes the root.
+    const relativeFromRoot = path.relative(publicRoot, absolutePath);
+    if (
+      relativeFromRoot.startsWith("..") ||
+      path.isAbsolute(relativeFromRoot)
+    ) {
       continue;
     }
 

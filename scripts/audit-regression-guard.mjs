@@ -46,12 +46,15 @@ const EXPECT = {
   fachstelleHeadings: ["H1", "H2", "H3", "H3", "H3", "H3", "H2", "H2", "H2"],
 };
 
-// ── Routes — synchron mit client/src/app/routes.ts, Stand 2026-05-12. ───────
-// Bei neuen Routes hier ergaenzen (non-redirect, non-dynamic).
+// ── Routes — Audit-Targets, geprueft per parity-test gegen routes.ts. ───────
+// FULL_ROUTES enthaelt alle aktiven SPA-Routen (non-redirect, non-dynamic)
+// plus statische Direktseiten. Bei neuen Routes hier ergaenzen -
+// client/src/__tests__/audit-routes-parity.test.ts faengt Drift.
 
 const FULL_ROUTES = [
   "/",
   "/soforthilfe",
+  "/notfallkarte",
   "/verstehen",
   "/verstehen/diagnostik",
   "/verstehen/begleiterkrankungen",
@@ -71,10 +74,14 @@ const FULL_ROUTES = [
   "/feedback",
   "/glossar",
   "/buchempfehlungen",
-  "/therapieangebote",
   "/faq",
   "/ueber-uns",
   "/fachstelle",
+  "/notfallkarte/erstellen",
+  "/wegweiser",
+  "/uebungen",
+  "/quellen",
+  "/barrierefreiheit",
 ];
 
 const SMOKE_ROUTES = ["/", "/materialien", "/fachstelle", "/grenzen"];

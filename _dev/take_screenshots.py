@@ -1,13 +1,22 @@
 """
 Verifikations-Audit Screenshots
 Erstellt Full-Page-Screenshots der 5 Editorial-Seiten + 2 App-Modus-Kontrollseiten.
+
+Konfiguration via Env-Vars (Defaults setzen lokale Erwartung):
+  AUDIT_BASE_URL=http://localhost:4173 python3 _dev/take_screenshots.py
+  AUDIT_OUT_DIR=/tmp/screenshots      python3 _dev/take_screenshots.py
 """
 import asyncio
-from playwright.async_api import async_playwright
 import os
+from pathlib import Path
 
-BASE_URL = "http://localhost:3001"
-OUT_DIR = "/home/ubuntu/borderline-angehoerige/_dev/screenshots"
+from playwright.async_api import async_playwright
+
+BASE_URL = os.environ.get("AUDIT_BASE_URL", "http://127.0.0.1:4173")
+OUT_DIR = os.environ.get(
+    "AUDIT_OUT_DIR",
+    str(Path(__file__).resolve().parent / "screenshots"),
+)
 os.makedirs(OUT_DIR, exist_ok=True)
 
 PAGES = [

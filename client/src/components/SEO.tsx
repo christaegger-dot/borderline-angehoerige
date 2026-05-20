@@ -20,12 +20,9 @@ interface SEOProps {
   robots?: string;
 }
 
-const getSiteUrl = () => {
-  if (typeof window !== "undefined" && window.location?.origin) {
-    return window.location.origin.replace(/\/+$/, "");
-  }
-  return SITE_URL;
-};
+// SITE_URL ist die kanonische Origin (VITE_SITE_URL || DEFAULT_SITE_URL).
+// window.location.origin wird bewusst NICHT verwendet, damit Preview-Deploys
+// + alternative Domains die Production-Canonicals teilen (SEO-Standardpraxis).
 export {
   buildBreadcrumbSchemaData,
   buildCanonicalUrl,
@@ -76,10 +73,9 @@ export default function SEO({
   const metaDescription = buildMetaDescription(description);
 
   useEffect(() => {
-    const siteUrl = getSiteUrl();
     const canonicalOrPath = canonicalPath || path;
-    const canonicalUrl = buildCanonicalUrl(canonicalOrPath, siteUrl);
-    const ogImage = buildOgImageUrl(siteUrl);
+    const canonicalUrl = buildCanonicalUrl(canonicalOrPath, SITE_URL);
+    const ogImage = buildOgImageUrl(SITE_URL);
 
     // Update document title
     document.title = fullTitle;
@@ -134,8 +130,7 @@ export default function SEO({
 // Schema.org structured data for the website
 export function WebsiteSchema() {
   useEffect(() => {
-    const siteUrl = getSiteUrl();
-    const schema = buildWebsiteSchemaData(siteUrl);
+    const schema = buildWebsiteSchemaData(SITE_URL);
 
     const el = upsertSchemaScript("website", schema);
     return () => {
@@ -158,17 +153,16 @@ export function MedicalPageSchema({
   path: string;
   lastReviewed?: string | null;
 }) {
-  const siteUrl = getSiteUrl();
   const schema = useMemo(
     () =>
       buildMedicalPageSchemaData({
         title,
         description,
         path,
-        siteUrl,
+        siteUrl: SITE_URL,
         lastReviewed,
       }),
-    [description, lastReviewed, path, siteUrl, title]
+    [description, lastReviewed, path, title]
   );
 
   useEffect(() => {

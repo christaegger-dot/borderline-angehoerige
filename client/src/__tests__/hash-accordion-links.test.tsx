@@ -152,7 +152,9 @@ describe("hash-linked content sections", () => {
     renderWithRoute(<Page />, "/grenzen#%E0%A4%A");
 
     expect(
-      screen.getByRole("heading", { name: /grenzen setzen/i })
+      screen.getByRole("button", {
+        name: /Abschnitt Wo stehe ich beim Grenzen setzen\?/i,
+      })
     ).toBeInTheDocument();
   });
 });

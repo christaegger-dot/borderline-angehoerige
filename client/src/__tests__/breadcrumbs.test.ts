@@ -12,6 +12,10 @@ describe("Breadcrumb helpers", () => {
     );
   });
 
+  it("handles malformed URL-encoding in text-version routes without throwing", () => {
+    expect(getPageName("/materialien/text/%E0%A4%A")).toBe("Textversion");
+  });
+
   it("routes text-version pages back to the materials overview", () => {
     expect(getParentInfo("/materialien/text/leuchtturm")).toEqual({
       href: "/materialien",

@@ -38,6 +38,14 @@ const pageNames: Record<string, string> = {
   "/barrierefreiheit": "Barrierefreiheit",
 };
 
+function decodeUriComponentSafely(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 function normalizeLocation(location: string) {
   return location.split("#")[0];
 }
@@ -66,7 +74,7 @@ export function getPageName(location: string) {
   const normalizedLocation = normalizeLocation(location);
 
   if (normalizedLocation.startsWith("/materialien/text/")) {
-    const handoutId = decodeURIComponent(
+    const handoutId = decodeUriComponentSafely(
       normalizedLocation.replace("/materialien/text/", "")
     );
     return getHandoutTextVersionMeta(handoutId)?.title ?? "Textversion";

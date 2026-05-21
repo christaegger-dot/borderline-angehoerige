@@ -146,4 +146,15 @@ describe("hash-linked content sections", () => {
       expect(window.scrollTo).toHaveBeenCalled();
     }
   );
+
+  it("does not crash when the URL hash contains malformed encoding", async () => {
+    const { default: Page } = await import("@/pages/Grenzen");
+    renderWithRoute(<Page />, "/grenzen#%E0%A4%A");
+
+    expect(
+      screen.getByRole("button", {
+        name: /Abschnitt Wo stehe ich beim Grenzen setzen\?/i,
+      })
+    ).toBeInTheDocument();
+  });
 });

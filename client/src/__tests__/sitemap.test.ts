@@ -8,6 +8,26 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "../../..");
 const SITE_URL = "https://borderline-angehoerige.netlify.app";
+const GOVERNED_SITEMAP_PATHS = [
+  "/verstehen",
+  "/verstehen/diagnostik",
+  "/verstehen/begleiterkrankungen",
+  "/unterstuetzen/alltag",
+  "/unterstuetzen/therapie",
+  "/unterstuetzen/krise",
+  "/kommunizieren",
+  "/grenzen",
+  "/selbstfuersorge",
+  "/soforthilfe",
+  "/genesung",
+  "/beratung",
+  "/fachstelle",
+  "/notfallkarte",
+  "/notfallkarte/erstellen",
+  "/faq",
+  "/quellen",
+  "/datenschutz",
+] as const;
 
 function readSitemap() {
   return fs.readFileSync(
@@ -36,27 +56,6 @@ function parseSitemapEntries(xml: string) {
   return entries;
 }
 
-const GOVERNED_SITEMAP_PATHS = [
-  "/verstehen",
-  "/verstehen/diagnostik",
-  "/verstehen/begleiterkrankungen",
-  "/unterstuetzen/alltag",
-  "/unterstuetzen/therapie",
-  "/unterstuetzen/krise",
-  "/kommunizieren",
-  "/grenzen",
-  "/selbstfuersorge",
-  "/soforthilfe",
-  "/genesung",
-  "/beratung",
-  "/fachstelle",
-  "/notfallkarte",
-  "/notfallkarte/erstellen",
-  "/faq",
-  "/quellen",
-  "/datenschutz",
-] as const;
-
 describe("sitemap", () => {
   it("contains the newly added diagnostik and begleiterkrankungen routes", () => {
     const entries = parseSitemapEntries(readSitemap());
@@ -69,6 +68,8 @@ describe("sitemap", () => {
     const entries = parseSitemapEntries(readSitemap());
 
     for (const routePath of GOVERNED_SITEMAP_PATHS) {
+      expect(pageGovernance[routePath]).toBeDefined();
+      expect(pageGovernance[routePath]?.lastReviewed).toBeTruthy();
       expect(entries.get(routePath)?.lastmod).toBe(
         pageGovernance[routePath]?.lastReviewed
       );

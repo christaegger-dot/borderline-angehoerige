@@ -16,7 +16,14 @@ export const ROUTES = [
   "/notfallkarte",
   "/notfallkarte/erstellen",
 ];
-export const LIGHTHOUSE_ROUTES = ["/", "/soforthilfe", "/materialien"];
+export const LIGHTHOUSE_ROUTES = [
+  "/",
+  "/soforthilfe",
+  "/materialien",
+  "/notfallkarte/erstellen",
+  "/wegweiser",
+  "/grenzen",
+];
 
 export const VIEWPORTS = [
   {

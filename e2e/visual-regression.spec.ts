@@ -66,3 +66,39 @@ test("editorial section with aside matches baseline", async ({ page }) => {
   const section = page.locator("section.editorial-section").first();
   await expect(section).toHaveScreenshot("verstehen-hero-eisberg.png");
 });
+
+test("grenzen key sections match baseline", async ({ page }) => {
+  await page.goto("/grenzen", { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+
+  const hero = page.locator("section.editorial-section").first();
+  await expect(hero).toHaveScreenshot("grenzen-hero.png");
+
+  const allSections = page.locator("section.editorial-section");
+  const targetSection = allSections.nth(2);
+  await expect(targetSection).toHaveScreenshot("grenzen-konfliktbereich.png");
+});
+
+test("materialien filter and first cards match baseline", async ({ page }) => {
+  await page.goto("/materialien", { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+
+  const filterBar = page.locator(
+    "div[role='tablist'][aria-label='Filter Materialien nach Kategorie']"
+  );
+  await expect(filterBar).toHaveScreenshot("materialien-filterbar.png");
+
+  const firstGrid = page.locator(
+    "section[aria-label='Empfohlene Kernmaterialien — Tile-Liste']"
+  );
+  await expect(firstGrid).toHaveScreenshot("materialien-erste-karten.png");
+});
+
+test("krise key CTA region matches baseline", async ({ page }) => {
+  await page.goto("/unterstuetzen/krise", { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+
+  const sections = page.locator("section.editorial-section");
+  await expect(sections.first()).toHaveScreenshot("krise-hero.png");
+  await expect(sections.nth(1)).toHaveScreenshot("krise-cta.png");
+});

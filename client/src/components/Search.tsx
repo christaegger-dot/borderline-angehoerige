@@ -137,6 +137,13 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
+  // Query zurücksetzen wenn Suche geschlossen wird
+  useEffect(() => {
+    if (!isOpen) {
+      setQuery("");
+    }
+  }, [isOpen]);
+
   // Body-Scroll-Lock: Verhindert Hintergrund-Scrollen auf iOS/Safari
   useScrollLock(isOpen);
 

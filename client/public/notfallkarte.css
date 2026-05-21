@@ -21,10 +21,14 @@
   --nk-footer-bg: oklch(0.28 0.03 220); /* ~#263238 – Blaugrau */
   --nk-page-bg: oklch(0.9 0 0); /* ~#e0e0e0 – Vorschau-BG */
   --nk-text-primary: oklch(0.2 0 0); /* ~#212121 – Haupttext */
-  --nk-text-muted: oklch(0.55 0 0); /* ~#757575 – Nebentext */
-  --nk-text-faint: oklch(0.7 0 0); /* ~#9e9e9e – Sehr schwach */
+  --nk-text-muted: oklch(0.42 0 0); /* ~#5c5c5c – Nebentext mit AA-Kontrast */
+  --nk-text-faint: oklch(
+    0.38 0 0
+  ); /* ~#545454 – sekundärer Text mit AA-Kontrast */
   --nk-footer-text: oklch(0.75 0.02 220); /* ~#b0bec5 – Footer-Haupttext */
-  --nk-footer-sub: oklch(0.6 0.02 220); /* ~#78909c – Footer-Subtext */
+  --nk-footer-sub: oklch(
+    0.83 0.02 220
+  ); /* ~#c3d1d9 – Footer-Subtext mit AA-Kontrast */
 
   /* Typografie */
   --nk-font: "Inter", "Inter fallback", system-ui, sans-serif;
@@ -78,7 +82,7 @@ body {
   flex-shrink: 0;
 }
 .header-meta {
-  color: var(--nk-text-faint);
+  color: oklch(0.86 0.015 240);
   font-size: 6.5pt;
   text-align: right;
   line-height: 1.35;
@@ -104,8 +108,8 @@ body {
   white-space: nowrap;
 }
 .block-badge {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--nk-text-primary);
   font-size: 6pt;
   font-weight: 700;
   padding: 1mm 2.5mm;

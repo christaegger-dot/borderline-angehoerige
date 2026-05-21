@@ -83,10 +83,14 @@ test("materialien filter and first cards match baseline", async ({ page }) => {
   await page.goto("/materialien", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
 
-  const filterBar = page.locator("section[aria-label='Materialien filtern']");
+  const filterBar = page.locator(
+    "div[role='tablist'][aria-label='Filter Materialien nach Kategorie']"
+  );
   await expect(filterBar).toHaveScreenshot("materialien-filterbar.png");
 
-  const firstGrid = page.locator("section[aria-label='Materialien']").first();
+  const firstGrid = page.locator(
+    "section[aria-label='Empfohlene Kernmaterialien — Tile-Liste']"
+  );
   await expect(firstGrid).toHaveScreenshot("materialien-erste-karten.png");
 });
 

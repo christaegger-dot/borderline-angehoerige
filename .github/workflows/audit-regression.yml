@@ -5,9 +5,16 @@ on:
     branches: [main]
     paths:
       - "client/**"
+      - "server/**"
+      - "shared/**"
+      - "netlify/**"
+      - "qa/scripts/**"
+      - "netlify.toml"
       - "scripts/audit-regression-guard.mjs"
       - "package.json"
       - "pnpm-lock.yaml"
+      - "tsconfig.json"
+      - "vite.config.ts"
       - ".github/workflows/audit-regression.yml"
   schedule:
     # Nightly Voll-Lauf gegen die Live-Production-Site (04:00 Zürich, 03:00 UTC).

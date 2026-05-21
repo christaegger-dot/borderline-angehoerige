@@ -36,27 +36,6 @@ function parseSitemapEntries(xml: string) {
   return entries;
 }
 
-const GOVERNED_SITEMAP_PATHS = [
-  "/verstehen",
-  "/verstehen/diagnostik",
-  "/verstehen/begleiterkrankungen",
-  "/unterstuetzen/alltag",
-  "/unterstuetzen/therapie",
-  "/unterstuetzen/krise",
-  "/kommunizieren",
-  "/grenzen",
-  "/selbstfuersorge",
-  "/soforthilfe",
-  "/genesung",
-  "/beratung",
-  "/fachstelle",
-  "/notfallkarte",
-  "/notfallkarte/erstellen",
-  "/faq",
-  "/quellen",
-  "/datenschutz",
-] as const;
-
 describe("sitemap", () => {
   it("contains the newly added diagnostik and begleiterkrankungen routes", () => {
     const entries = parseSitemapEntries(readSitemap());
@@ -65,10 +44,13 @@ describe("sitemap", () => {
     expect(entries.has("/verstehen/begleiterkrankungen")).toBe(true);
   });
 
-  it("keeps governed medical and crisis pages in sync with page governance lastReviewed dates", () => {
+  it("keeps all governed sitemap pages in sync with page governance lastReviewed dates", () => {
     const entries = parseSitemapEntries(readSitemap());
+    const governedPaths = Object.entries(pageGovernance)
+      .filter(([, meta]) => Boolean(meta.lastReviewed))
+      .map(([routePath]) => routePath);
 
-    for (const routePath of GOVERNED_SITEMAP_PATHS) {
+    for (const routePath of governedPaths) {
       expect(entries.get(routePath)?.lastmod).toBe(
         pageGovernance[routePath]?.lastReviewed
       );

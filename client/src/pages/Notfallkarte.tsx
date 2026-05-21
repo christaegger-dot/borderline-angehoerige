@@ -134,7 +134,7 @@ function deleteStoredData(): boolean {
 const labelStyle = {
   fontSize: "var(--text-xs)",
   letterSpacing: "var(--tracking-caps)",
-  color: "var(--fg-tertiary)",
+  color: "var(--fg-secondary)",
   fontWeight: 500,
 } as const;
 
@@ -164,7 +164,7 @@ function EmergencyRow({ kontakt }: { kontakt: Kontakt }) {
         {kontakt.hinweis && (
           <span
             className="block text-xs leading-tight"
-            style={{ color: "var(--fg-tertiary)" }}
+            style={{ color: "var(--fg-secondary)" }}
           >
             {kontakt.hinweis}
           </span>
@@ -269,7 +269,7 @@ function PersonalContactRow({
         type="button"
         onClick={onRemove}
         className="mt-1.5 px-2 py-1 text-xs transition-colors print:hidden"
-        style={{ color: "var(--fg-tertiary)" }}
+        style={{ color: "var(--fg-secondary)" }}
         aria-label={`${contact.name || "Kontakt"} entfernen`}
       >
         entfernen
@@ -516,7 +516,7 @@ export default function Notfallkarte() {
             style={{
               fontSize: "var(--text-sm)",
               lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-tertiary)",
+              color: "var(--fg-secondary)",
             }}
           >
             Sofort Hilfe brauchen?{" "}
@@ -708,7 +708,7 @@ export default function Notfallkarte() {
                     type="button"
                     onClick={() => removeStrategy(s.id)}
                     className="px-2 py-1 text-xs transition-colors print:hidden"
-                    style={{ color: "var(--fg-tertiary)" }}
+                    style={{ color: "var(--fg-secondary)" }}
                     aria-label="Strategie entfernen"
                   >
                     entfernen

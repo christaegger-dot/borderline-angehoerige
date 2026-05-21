@@ -11,6 +11,30 @@ const REPORT_NAME = "release-http-gates.json";
 const MARKDOWN_NAME = "release-http-gates.md";
 const IMAGE_PATH_RE = /\.(?:avif|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/i;
 const MIN_PDF_BYTES = 1024;
+const SECURITY_HEADER_CASES = [
+  { route: "/", kind: "headers-html", checks: ["csp", "xfo", "xcto"] },
+  {
+    route: "/index.html",
+    kind: "headers-html",
+    checks: ["csp", "xfo", "xcto", "cache-index"],
+  },
+  {
+    route: "/soforthilfe",
+    kind: "headers-html",
+    checks: ["csp", "xfo", "xcto"],
+  },
+  {
+    route: "/notfallkarte",
+    kind: "headers-html",
+    checks: ["csp", "xfo", "xcto"],
+  },
+  { route: "/404", kind: "headers-html", checks: ["csp", "xfo", "xcto"] },
+  {
+    route: "/api/material-download/notfallplan-krise?disposition=inline",
+    kind: "headers-pdf",
+    checks: ["xcto", "pdf-type", "inline-disposition"],
+  },
+];
 
 const PAGE_CASES = ["/notfallkarte", "/notfallkarte/erstellen"];
 
@@ -277,6 +301,116 @@ async function checkTextVersion(item) {
   return checkHtmlRoute(item.route, item.kind, item.id, item.title);
 }
 
+function hasHeader(headers, name, expected) {
+  const value = headers.get(name) ?? "";
+  return value.toLowerCase().includes(expected.toLowerCase());
+}
+
+async function discoverAssetRoute() {
+  const rootUrl = new URL("/", BASE_URL).toString();
+  const html = await (await fetch(rootUrl, { redirect: "follow" })).text();
+  const match = html.match(/(?:src|href)=["'](\/assets\/[^"']+)["']/i);
+  return match?.[1] ?? null;
+}
+
+async function discoverFontRoute(assetRoute) {
+  if (!assetRoute || !assetRoute.match(/\.css(?:[?#].*)?$/i)) {
+    return null;
+  }
+
+  const assetUrl = new URL(assetRoute, BASE_URL).toString();
+  const css = await (await fetch(assetUrl, { redirect: "follow" })).text();
+  const match = css.match(
+    /url\((['"]?)(\/assets\/[^)'"]+\.woff2(?:\?[^)'"]*)?)\1\)/i
+  );
+
+  return match?.[2] ?? null;
+}
+
+async function checkHeaderRoute(item) {
+  const url = new URL(item.route, BASE_URL).toString();
+  const startedAt = nowIso();
+
+  try {
+    const response = await fetch(url, { redirect: "follow" });
+    const headers = response.headers;
+    const failures = [];
+
+    for (const check of item.checks) {
+      if (
+        check === "csp" &&
+        !hasHeader(headers, "content-security-policy", "default-src")
+      ) {
+        failures.push("CSP fehlt");
+      }
+      if (check === "xfo" && !hasHeader(headers, "x-frame-options", "deny")) {
+        failures.push("X-Frame-Options fehlt/inkorrekt");
+      }
+      if (
+        check === "xcto" &&
+        !hasHeader(headers, "x-content-type-options", "nosniff")
+      ) {
+        failures.push("X-Content-Type-Options fehlt/inkorrekt");
+      }
+      if (
+        check === "cache-index" &&
+        !hasHeader(headers, "cache-control", "must-revalidate")
+      ) {
+        failures.push("Cache-Control index fehlt/inkorrekt");
+      }
+      if (
+        check === "pdf-type" &&
+        !hasHeader(headers, "content-type", "application/pdf")
+      ) {
+        failures.push("Content-Type ist nicht application/pdf");
+      }
+      if (
+        check === "inline-disposition" &&
+        !hasHeader(headers, "content-disposition", "inline;")
+      ) {
+        failures.push("Content-Disposition ist nicht inline");
+      }
+      if (
+        check === "immutable-cache" &&
+        !hasHeader(headers, "cache-control", "immutable")
+      ) {
+        failures.push("Cache-Control immutable fehlt");
+      }
+    }
+
+    const ok = response.ok && failures.length === 0;
+
+    return {
+      id: item.route,
+      title: item.route,
+      kind: item.kind,
+      route: item.route,
+      url,
+      status: ok ? "passed" : "failed",
+      httpStatus: response.status,
+      contentType: headers.get("content-type") ?? "",
+      startedAt,
+      finishedAt: nowIso(),
+      finalUrl: response.url,
+      ...(ok
+        ? {}
+        : { message: failures.join("; ") || `HTTP ${response.status}` }),
+    };
+  } catch (error) {
+    return {
+      id: item.route,
+      title: item.route,
+      kind: item.kind,
+      route: item.route,
+      url,
+      status: "failed",
+      startedAt,
+      finishedAt: nowIso(),
+      message: normalizeError(error),
+    };
+  }
+}
+
 function markdownReport(report) {
   const lines = [
     "## Letzter Lauf",
@@ -328,6 +462,32 @@ async function main() {
     results.push(await checkHtmlRoute(route, "page"));
   }
 
+  for (const item of SECURITY_HEADER_CASES) {
+    results.push(await checkHeaderRoute(item));
+  }
+
+  const assetRoute = await discoverAssetRoute();
+  if (assetRoute) {
+    results.push(
+      await checkHeaderRoute({
+        route: assetRoute,
+        kind: "headers-asset",
+        checks: ["immutable-cache"],
+      })
+    );
+  }
+
+  const fontRoute = await discoverFontRoute(assetRoute);
+  if (fontRoute) {
+    results.push(
+      await checkHeaderRoute({
+        route: fontRoute,
+        kind: "headers-font",
+        checks: ["immutable-cache"],
+      })
+    );
+  }
+
   const report = {
     createdAt: nowIso(),
     baseUrl: BASE_URL,
@@ -337,6 +497,8 @@ async function main() {
       textversions: results.filter(result => result.kind === "textversion")
         .length,
       pages: results.filter(result => result.kind === "page").length,
+      headerChecks: results.filter(result => result.kind.startsWith("headers-"))
+        .length,
     },
     results,
     status: results.every(result => result.status === "passed")

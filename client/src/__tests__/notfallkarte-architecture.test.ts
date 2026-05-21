@@ -71,6 +71,8 @@ describe("notfallkarte architecture", () => {
     expect(printScript).toContain(
       'localStorage.removeItem("notfallkarte-print-data")'
     );
+    expect(printScript).toContain('typeof s.text === "string"');
+    expect(printScript).toContain("sEl.value = strategyText");
   });
 
   it("keeps static crisis pages aligned with the canonical contact register", () => {

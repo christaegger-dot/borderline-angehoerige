@@ -1,6 +1,14 @@
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
+function decodeUriComponentSafely(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 /**
  * ScrollToTop-Komponente
  *
@@ -39,7 +47,7 @@ export default function ScrollToTop() {
 
     const tryScroll = () => {
       if (cancelled) return;
-      const target = document.getElementById(decodeURIComponent(hash));
+      const target = document.getElementById(decodeUriComponentSafely(hash));
       if (target) {
         target.scrollIntoView({ behavior: "auto", block: "start" });
         return;

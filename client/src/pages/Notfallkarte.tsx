@@ -423,18 +423,25 @@ export default function Notfallkarte() {
     setAnnouncement("Kontakt entfernt");
   }, []);
   const addStrategy = useCallback(() => {
-    setData(prev =>
-      prev.calmingStrategies.length >= MAX_STRATEGIES
-        ? prev
-        : {
-            ...prev,
-            calmingStrategies: [
-              ...prev.calmingStrategies,
-              { id: createId(), text: "" },
-            ],
-          }
+    let added = false;
+
+    setData(prev => {
+      if (prev.calmingStrategies.length >= MAX_STRATEGIES) {
+        return prev;
+      }
+
+      added = true;
+      return {
+        ...prev,
+        calmingStrategies: [
+          ...prev.calmingStrategies,
+          { id: createId(), text: "" },
+        ],
+      };
+    });
+    setAnnouncement(
+      added ? "Strategie hinzugefügt" : "Maximal vier Strategien sind möglich."
     );
-    setAnnouncement("Strategie hinzugefügt");
   }, []);
   const updateStrategy = useCallback(
     (id: string, text: string) =>

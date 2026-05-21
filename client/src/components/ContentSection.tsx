@@ -17,6 +17,14 @@ interface ContentSectionProps {
   variant?: "editorial";
 }
 
+function decodeUriComponentSafely(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 /**
  * Aufklappbarer Inhaltsabschnitt mit sanfter Animation.
  * Unterstützt programmatisches Öffnen via Custom Event "open-section".
@@ -53,7 +61,7 @@ export default function ContentSection({
   const openFromHash = useCallback(() => {
     if (!id) return;
 
-    const hashTarget = decodeURIComponent(
+    const hashTarget = decodeUriComponentSafely(
       window.location.hash.replace(/^#/, "")
     );
     if (hashTarget !== id) return;

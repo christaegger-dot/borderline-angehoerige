@@ -1,7 +1,8 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { EyebrowLabel } from "./EyebrowLabel";
 
 export type EditorialColorBlockVariant = "sage-wash" | "cream-deep";
+type EditorialColorBlockDensity = "compact" | "normal" | "spacious";
 
 interface EditorialColorBlockProps {
   /** Farbflächen-Variant — bestimmt Hintergrund und Text-Overrides */
@@ -13,6 +14,8 @@ interface EditorialColorBlockProps {
   children: ReactNode;
   /** Inner max-width — Default `var(--measure)` (608 px). Für breitere Blöcke wie das Testimonial 45rem (720 px). */
   maxWidth?: string;
+  /** Vertikaler Makro-Rhythmus. Default `normal`, für ruhige Zwischenrufe `compact`. */
+  density?: EditorialColorBlockDensity;
 }
 
 /**
@@ -33,14 +36,22 @@ export function EditorialColorBlock({
   title,
   children,
   maxWidth = "var(--measure)",
+  density = "normal",
 }: EditorialColorBlockProps) {
   const styles = VARIANT_STYLES[variant];
+  const rhythm = DENSITY_Y[density];
+  const sectionStyle = {
+    background: styles.bg,
+    "--section-y-mobile": rhythm.mobile,
+    "--section-y-desktop": rhythm.desktop,
+  } as CSSProperties;
 
   return (
     <section
-      className="editorial-color-block px-[var(--container-pad)] py-20 md:px-[var(--container-pad-md)] md:py-[120px]"
-      style={{ background: styles.bg }}
+      className="editorial-color-block px-[var(--container-pad)] py-[var(--section-y-mobile)] md:px-[var(--container-pad-md)] md:py-[var(--section-y-desktop)]"
+      style={sectionStyle}
       data-variant={variant}
+      data-density={density}
     >
       <div
         className={`mx-auto space-y-[var(--space-4)] ${styles.contentClass}`}
@@ -76,13 +87,31 @@ const VARIANT_STYLES: Record<
   }
 > = {
   "sage-wash": {
-    bg: "#dde3d4",
-    title: "#1f2a37",
+    bg: "var(--bg-sage-wash)",
+    title: "var(--fg-primary)",
     contentClass: "editorial-color-block-content--sage-wash",
   },
   "cream-deep": {
-    bg: "#ebe2cf",
-    title: "#1f2a37",
+    bg: "var(--bg-cream-deep)",
+    title: "var(--fg-primary)",
     contentClass: "editorial-color-block-content--cream-deep",
+  },
+};
+
+const DENSITY_Y: Record<
+  EditorialColorBlockDensity,
+  { mobile: string; desktop: string }
+> = {
+  compact: {
+    mobile: "var(--section-y-compact-mobile)",
+    desktop: "var(--section-y-compact-desktop)",
+  },
+  normal: {
+    mobile: "var(--section-y-normal-mobile)",
+    desktop: "var(--section-y-normal-desktop)",
+  },
+  spacious: {
+    mobile: "var(--section-y-spacious-mobile)",
+    desktop: "var(--section-y-spacious-desktop)",
   },
 };

@@ -218,7 +218,11 @@ export default function Home() {
            Grenzen/Selbstfürsorge/Soforthilfe) wurde entfernt — die acht
            VisualOrientationGrid-Tiles direkt darüber bieten dieselbe
            Themen-Navigation visuell und ohnehin ausführlicher. */}
-      <EditorialColorBlock variant="sage-wash" maxWidth="45rem">
+      <EditorialColorBlock
+        variant="sage-wash"
+        maxWidth="45rem"
+        density="compact"
+      >
         <div className="text-center">
           <TestimonialMark className="mx-auto" />
           <EyebrowLabel className="mt-8" spacing="compact">

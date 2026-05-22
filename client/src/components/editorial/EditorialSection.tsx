@@ -1,4 +1,9 @@
-import { Children, isValidElement, type ReactNode } from "react";
+import {
+  Children,
+  isValidElement,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
 import { EditorialSectionMarginNote } from "./EditorialSection.MarginNote";
 import { EditorialSectionBody } from "./EditorialSection.Body";
 import { EditorialSectionAside } from "./EditorialSection.Aside";
@@ -9,9 +14,17 @@ export type EditorialSectionVariant =
   | "sage-wash"
   | "cream-deep";
 
+export type EditorialSectionDensity =
+  | "compact"
+  | "normal"
+  | "spacious"
+  | "hero";
+
 interface EditorialSectionProps {
   /** Hintergrund-Variant der Sektion */
   variant: EditorialSectionVariant;
+  /** Vertikaler Makro-Rhythmus. Default `normal` ersetzt rohe py-Utilities. */
+  density?: EditorialSectionDensity;
   /**
    * Compound-Children: `<EditorialSection.MarginNote>`,
    * `<EditorialSection.Body>` und `<EditorialSection.Aside>`. Reihenfolge
@@ -26,6 +39,28 @@ const VARIANT_BG: Record<EditorialSectionVariant, string> = {
   aubergine: "var(--accent-primary)",
   "sage-wash": "var(--bg-sage-wash)",
   "cream-deep": "var(--bg-cream-deep)",
+};
+
+const DENSITY_Y: Record<
+  EditorialSectionDensity,
+  { mobile: string; desktop: string }
+> = {
+  compact: {
+    mobile: "var(--section-y-compact-mobile)",
+    desktop: "var(--section-y-compact-desktop)",
+  },
+  normal: {
+    mobile: "var(--section-y-normal-mobile)",
+    desktop: "var(--section-y-normal-desktop)",
+  },
+  spacious: {
+    mobile: "var(--section-y-spacious-mobile)",
+    desktop: "var(--section-y-spacious-desktop)",
+  },
+  hero: {
+    mobile: "var(--section-y-hero-mobile)",
+    desktop: "var(--section-y-hero-desktop)",
+  },
 };
 
 /**
@@ -58,15 +93,26 @@ const VARIANT_BG: Record<EditorialSectionVariant, string> = {
  *   sonst einspaltig. MarginNote wird zu Inline-Eyebrow oben.
  * - Mobile (<768 px): einspaltig in Reihenfolge MarginNote → Body → Aside.
  */
-export function EditorialSection({ variant, children }: EditorialSectionProps) {
+export function EditorialSection({
+  variant,
+  density = "normal",
+  children,
+}: EditorialSectionProps) {
   const slots = collectSlots(children);
   const hasAside = slots.aside !== null;
+  const rhythm = DENSITY_Y[density];
+  const style = {
+    background: VARIANT_BG[variant],
+    "--section-y-mobile": rhythm.mobile,
+    "--section-y-desktop": rhythm.desktop,
+  } as CSSProperties;
 
   return (
     <section
-      className="editorial-section px-[var(--container-pad)] py-12 md:px-[var(--container-pad-md)] md:py-20"
-      style={{ background: VARIANT_BG[variant] }}
+      className="editorial-section px-[var(--container-pad)] py-[var(--section-y-mobile)] md:px-[var(--container-pad-md)] md:py-[var(--section-y-desktop)]"
+      style={style}
       data-variant={variant}
+      data-density={density}
     >
       <div
         className={`mx-auto max-w-page editorial-section-grid${hasAside ? " editorial-section-grid--has-aside" : ""}`}

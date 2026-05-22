@@ -81,6 +81,18 @@
   --space-7: 4.5rem; /* 72px */
   --space-8: 6rem; /* 96px — Sektionsabstand */
 
+  /* — Section-Rhythmus —
+     Zentrale Makro-Abstände für EditorialSection und verwandte Flächen.
+     Komponenten sollen diese Tokens statt ad-hoc py-20/md:py-[120px] nutzen. */
+  --section-y-compact-mobile: var(--space-6); /* 48px */
+  --section-y-compact-desktop: 3.5rem; /* 56px */
+  --section-y-normal-mobile: 3.5rem; /* 56px */
+  --section-y-normal-desktop: 5rem; /* 80px */
+  --section-y-spacious-mobile: var(--space-7); /* 72px */
+  --section-y-spacious-desktop: var(--space-8); /* 96px */
+  --section-y-hero-mobile: var(--space-7); /* 72px */
+  --section-y-hero-desktop: var(--space-8); /* 96px */
+
   /* — Typografie-Skala (rem-basiert, root 16px) — */
   --text-xs: 0.75rem; /* 12px — Sektionslabels in caps */
   --text-sm: 0.875rem; /* 14px — Fussnoten, Meta */
@@ -92,10 +104,10 @@
   --text-3xl: 2.625rem; /* 42px — H1 mobile */
   --text-4xl: 3.5rem; /* 56px — H1 desktop */
   --text-hero: clamp(
-    40px,
-    5.5vw,
-    72px
-  ); /* Home-Hero — eigene Skalierung (Phase-1-Token) */
+    38px,
+    4.6vw,
+    64px
+  ); /* Ruhiger Hero: gross genug als Einstieg, aber weniger plakativ */
 
   /* — Line-Heights — */
   --lh-tight: 1.15; /* H1, H2 */
@@ -103,8 +115,8 @@
   --lh-relaxed: 1.7; /* Fliesstext */
 
   /* — Letter-Spacing — */
-  --tracking-caps: 0.14em; /* Sektionslabels */
-  --tracking-tight: -0.01em; /* H1 */
+  --tracking-caps: 0.11em; /* Sektionslabels – reduziert, damit Wiederholung leiser wirkt */
+  --tracking-tight: -0.008em; /* H1/H2 – Source Serif braucht nur wenig Korrektur */
 
   /* — Font-Weights — */
   --weight-display: 400; /* H1, H2 */

@@ -204,7 +204,7 @@ export default function MaterialienLibrarySection() {
   return (
     <>
       {/* ── 3 Nach Situation ── QuickStarts «Was hilft gerade jetzt?» */}
-      <EditorialSection variant="cream">
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -249,7 +249,7 @@ export default function MaterialienLibrarySection() {
       </EditorialSection>
 
       {/* ── 4 Kernmaterialien ── EditorialSection-Header + full-width Tile-Grid */}
-      <EditorialSection variant="cream">
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -308,7 +308,7 @@ export default function MaterialienLibrarySection() {
       </section>
 
       {/* ── 5 Nach Kategorie ── EditorialSection-Header + Filter-Tabs (OLD pattern) + Tile-Grid */}
-      <EditorialSection variant="cream">
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -335,7 +335,7 @@ export default function MaterialienLibrarySection() {
       </EditorialSection>
 
       <section
-        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
+        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-[var(--section-y-normal-mobile)] md:px-[var(--container-pad-md)] md:pb-[var(--section-y-normal-desktop)]"
         aria-label="Materialien nach Kategorie — Filter und Tile-Liste"
       >
         <div className="mx-auto max-w-page">
@@ -396,7 +396,7 @@ export default function MaterialienLibrarySection() {
       </section>
 
       {/* ── 6 Weiter ── Schluss-Hinweis */}
-      <EditorialSection variant="cream">
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -439,7 +439,7 @@ export default function MaterialienLibrarySection() {
       </EditorialSection>
 
       {/* ── 7 Verwandt ── EditorialSection cream-deep + RelatedLinksEditorial flush */}
-      <EditorialSection variant="cream-deep">
+      <EditorialSection variant="cream-deep" density="compact">
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"

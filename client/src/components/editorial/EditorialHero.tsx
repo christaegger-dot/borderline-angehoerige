@@ -44,7 +44,7 @@ export function EditorialHero({
   illustrationSlot,
 }: EditorialHeroProps) {
   return (
-    <EditorialSection variant="cream">
+    <EditorialSection variant="cream" density="hero">
       {eyebrow && (
         <EditorialSection.MarginNote>
           <span
@@ -88,10 +88,10 @@ export function EditorialHero({
       {illustrationSlot && (
         <EditorialSection.Aside>
           <div
-            className="ml-auto block w-full max-w-[560px] min-h-[320px] md:min-h-[380px]"
+            className="ml-auto block w-full max-w-[500px] min-h-[280px] md:min-h-[340px]"
             style={{
               aspectRatio: "1 / 1",
-              filter: "drop-shadow(0 8px 24px rgba(91, 58, 78, 0.12))",
+              filter: "drop-shadow(0 6px 18px rgba(91, 58, 78, 0.1))",
             }}
           >
             {illustrationSlot}

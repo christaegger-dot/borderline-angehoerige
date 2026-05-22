@@ -1,5 +1,5 @@
 [build]
-  command = "pnpm check && pnpm test && pnpm build"
+  command = "pnpm check && pnpm test && pnpm lint && pnpm build"
   publish = "dist/public"
 
 [[headers]]

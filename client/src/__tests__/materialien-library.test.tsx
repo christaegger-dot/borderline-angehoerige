@@ -11,7 +11,7 @@ describe("MaterialienLibrarySection", () => {
       </Router>
     );
 
-    expect(screen.getByText("Empfohlene Kernmaterialien")).toBeInTheDocument();
+    expect(screen.getByText("Empfohlen für den Anfang")).toBeInTheDocument();
     expect(
       screen.getAllByText("Notfallkarte Zürich – Psychische Krise")
     ).toHaveLength(2);

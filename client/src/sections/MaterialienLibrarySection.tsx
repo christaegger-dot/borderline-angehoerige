@@ -55,12 +55,36 @@ const bodyStyle = {
   color: "var(--fg-secondary)",
 };
 
+function SectionKicker({ children }: { children: string }) {
+  return (
+    <>
+      <span
+        className="block text-[13px] font-medium uppercase"
+        style={{
+          color: "var(--accent-label)",
+          letterSpacing: "var(--tracking-caps)",
+          lineHeight: 1.3,
+        }}
+      >
+        {children}
+      </span>
+      <div
+        aria-hidden="true"
+        className="mt-3 border-t"
+        style={{ borderColor: "var(--rule-color)" }}
+      />
+    </>
+  );
+}
+
 function MaterialEntry({
   item,
   onPreview,
+  eager = false,
 }: {
   item: MaterialItem;
   onPreview: (image: string, title: string) => void;
+  eager?: boolean;
 }) {
   const previewSrc = item.isHtml
     ? (item.previewUrl ?? item.url)
@@ -78,13 +102,19 @@ function MaterialEntry({
 
   return (
     <article
-      className="space-y-3 border-t pt-6"
-      style={{ borderColor: "var(--rule-color)" }}
+      className="group flex h-full flex-col overflow-hidden rounded-[18px] border p-3 transition-colors"
+      style={{
+        backgroundColor: "var(--bg-elevated)",
+        borderColor: "var(--rule-color)",
+      }}
     >
       <button
         type="button"
-        className="block w-full overflow-hidden rounded-sm"
-        style={{ backgroundColor: "var(--bg-elevated)" }}
+        className="block w-full overflow-hidden rounded-[12px] border"
+        style={{
+          backgroundColor: "var(--bg-primary)",
+          borderColor: "var(--rule-color)",
+        }}
         onClick={() => {
           if (item.isHtml) {
             window.open(openHref, "_blank", "noopener,noreferrer");
@@ -97,75 +127,84 @@ function MaterialEntry({
         <img
           src={previewSrc}
           alt={item.title}
-          className="aspect-[3/4] w-full object-cover object-top"
-          loading="lazy"
+          className="aspect-[5/4] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.015]"
+          loading={eager ? "eager" : "lazy"}
           width={400}
           height={533}
           decoding="async"
         />
       </button>
 
-      <p className="uppercase" style={labelStyle}>
-        {categoryLabel[item.category]}
-        <span aria-hidden="true"> · </span>
-        {item.kind}
-        {item.verifiedAt && (
-          <>
-            <span aria-hidden="true"> · </span>
-            <span style={{ textTransform: "none", letterSpacing: 0 }}>
-              {item.verifiedAt}
-            </span>
-          </>
-        )}
-      </p>
+      <div className="flex flex-1 flex-col gap-3 px-1 pb-1 pt-3">
+        <p className="uppercase" style={labelStyle}>
+          {categoryLabel[item.category]}
+          <span aria-hidden="true"> · </span>
+          {item.kind}
+        </p>
 
-      <h3 style={titleStyle}>{item.title}</h3>
-      <p style={bodyStyle}>{item.description}</p>
-      {textVersionPreferred && textVersionHref ? (
+        <h3 style={titleStyle}>{item.title}</h3>
+        <p style={bodyStyle}>{item.description}</p>
+        {textVersionPreferred && textVersionHref ? (
+          <p
+            style={{
+              fontSize: "var(--text-xs)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-tertiary)",
+            }}
+          >
+            Für bildbasierte PDFs ist die Textversion die empfohlene
+            Lesefassung.
+          </p>
+        ) : null}
+
         <p
+          className="mt-auto flex flex-wrap gap-x-5 gap-y-1 border-t pt-3"
           style={{
-            fontSize: "var(--text-xs)",
-            lineHeight: "var(--lh-relaxed)",
-            color: "var(--fg-tertiary)",
+            borderColor: "var(--rule-color)",
+            fontSize: "var(--text-sm)",
           }}
         >
-          Für bildbasierte PDFs ist die Textversion die empfohlene Lesefassung.
-        </p>
-      ) : null}
-
-      <p
-        className="flex flex-wrap gap-x-5 gap-y-1 pt-1"
-        style={{ fontSize: "var(--text-sm)" }}
-      >
-        {textVersionHref && (
-          <Link
-            href={textVersionHref}
-            aria-label={`Textversion lesen: ${item.title}`}
-            className="editorial-link"
-          >
-            Textversion lesen
-          </Link>
-        )}
-        <a
-          href={openHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${item.title} öffnen`}
-          className="editorial-link"
-        >
-          {openLabel}
-        </a>
-        {downloadHref && (
+          {textVersionHref && (
+            <Link
+              href={textVersionHref}
+              aria-label={`Textversion lesen: ${item.title}`}
+              className="editorial-link"
+            >
+              Textversion lesen
+            </Link>
+          )}
           <a
-            href={downloadHref}
-            download=""
-            aria-label={`${item.title} herunterladen`}
+            href={openHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${item.title} öffnen`}
             className="editorial-link"
           >
-            Herunterladen
+            {openLabel}
           </a>
+          {downloadHref && (
+            <a
+              href={downloadHref}
+              download=""
+              aria-label={`${item.title} herunterladen`}
+              className="editorial-link"
+            >
+              Herunterladen
+            </a>
+          )}
+        </p>
+        {item.verifiedAt && (
+          <p
+            style={{
+              color: "var(--fg-tertiary)",
+              fontSize: "var(--text-xs)",
+              lineHeight: "var(--lh-relaxed)",
+            }}
+          >
+            Geprüft: {item.verifiedAt}
+          </p>
         )}
-      </p>
+      </div>
     </article>
   );
 }
@@ -203,34 +242,37 @@ export default function MaterialienLibrarySection() {
 
   return (
     <>
-      {/* ── 3 Nach Situation ── QuickStarts «Was hilft gerade jetzt?» */}
       <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Nach Situation
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
+          <SectionKicker>Nach Situation</SectionKicker>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Schneller Einstieg</EyebrowLabel>
           <DisplayHeading level={2}>Was hilft gerade jetzt?</DisplayHeading>
-          <ul className="space-y-6">
+          <p className="mt-4 max-w-[36em]" style={bodyStyle}>
+            Wählen Sie nach Lage, nicht nach Vollständigkeit. Eine gute erste
+            Ressource reicht oft mehr als zehn geöffnete Tabs.
+          </p>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {quickStarts.map(item => (
-              <li key={item.id} className="space-y-2">
-                <h3 style={titleStyle}>{item.title}</h3>
-                <p style={bodyStyle}>{item.text}</p>
-                <p style={{ fontSize: "var(--text-sm)" }}>
+              <li
+                key={item.id}
+                className="rounded-[16px] border p-5"
+                style={{
+                  backgroundColor: "var(--bg-elevated)",
+                  borderColor: "var(--rule-color)",
+                }}
+              >
+                <p className="uppercase" style={labelStyle}>
+                  {categoryLabel[item.id]}
+                </p>
+                <h3 className="mt-3" style={titleStyle}>
+                  {item.title}
+                </h3>
+                <p className="mt-2" style={bodyStyle}>
+                  {item.text}
+                </p>
+                <p className="mt-4" style={{ fontSize: "var(--text-sm)" }}>
                   <button
                     type="button"
                     onClick={() => {
@@ -248,28 +290,13 @@ export default function MaterialienLibrarySection() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 4 Kernmaterialien ── EditorialSection-Header + full-width Tile-Grid */}
       <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernmaterialien
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
+          <SectionKicker>Kernmaterialien</SectionKicker>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Bibliothek</EyebrowLabel>
-          <DisplayHeading level={2}>Empfohlene Kernmaterialien</DisplayHeading>
+          <DisplayHeading level={2}>Empfohlen für den Anfang</DisplayHeading>
           <EditorialBody className="max-w-[36em]">
             Wenn Sie gerade nicht lange suchen möchten, beginnen Sie mit diesen
             Materialien. Sie decken Krise, Orientierung, Kommunikation, Grenzen
@@ -292,11 +319,12 @@ export default function MaterialienLibrarySection() {
         aria-label="Empfohlene Kernmaterialien — Tile-Liste"
       >
         <div className="mx-auto max-w-page">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {coreMaterials.map(item => (
               <MaterialEntry
                 key={item.id}
                 item={item}
+                eager
                 onPreview={(image, title) => {
                   setPreviewImage(image);
                   setPreviewTitle(title);
@@ -307,30 +335,18 @@ export default function MaterialienLibrarySection() {
         </div>
       </section>
 
-      {/* ── 5 Nach Kategorie ── EditorialSection-Header + Filter-Tabs (OLD pattern) + Tile-Grid */}
       <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Nach Kategorie
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
+          <SectionKicker>Nach Kategorie</SectionKicker>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Bibliothek</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Weitere Materialien nach Kategorie
-          </DisplayHeading>
+          <DisplayHeading level={2}>Alle Materialien</DisplayHeading>
+          <EditorialBody className="max-w-[36em]">
+            Filtern Sie die Sammlung, wenn Sie gezielt nach einem Thema suchen.
+            Die vollständige Galerie bleibt hier, damit einzelne Inhaltsseiten
+            ruhiger und kuratierter bleiben können.
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -340,9 +356,10 @@ export default function MaterialienLibrarySection() {
       >
         <div className="mx-auto max-w-page">
           <div
-            className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
+            className="flex flex-wrap items-baseline gap-x-2 gap-y-2 overflow-x-auto border-y py-4"
             role="tablist"
             aria-label="Filter Materialien nach Kategorie"
+            style={{ borderColor: "var(--rule-color)" }}
           >
             {categoryMeta.map(cat => {
               const count =
@@ -370,7 +387,7 @@ export default function MaterialienLibrarySection() {
 
           <div ref={gridRef} className="scroll-mt-24 md:scroll-mt-28">
             {secondaryMaterials.length > 0 ? (
-              <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
                 {secondaryMaterials.map(item => (
                   <MaterialEntry
                     key={item.id}
@@ -395,24 +412,9 @@ export default function MaterialienLibrarySection() {
         </div>
       </section>
 
-      {/* ── 6 Weiter ── Schluss-Hinweis */}
       <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
+          <SectionKicker>Weiter</SectionKicker>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EditorialBody>
@@ -438,24 +440,9 @@ export default function MaterialienLibrarySection() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 7 Verwandt ── EditorialSection cream-deep + RelatedLinksEditorial flush */}
       <EditorialSection variant="cream-deep" density="compact">
         <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Verwandt
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
+          <SectionKicker>Verwandt</SectionKicker>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <RelatedLinksEditorial

@@ -70,11 +70,11 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-page {
   min-height: 100vh;
-  padding: 2rem 0 4rem;
+  padding: 3rem 0 4rem;
 }
 
 .fallback-wrap {
-  max-width: 56rem;
+  max-width: 72rem;
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -82,8 +82,8 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-header {
   display: block;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--rule-color);
 }
 
@@ -99,7 +99,7 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 .fallback-title {
   font-family: "Source Serif 4", "Source Serif 4 fallback", Georgia, serif;
   font-weight: 400;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.35rem, 5vw, 4.25rem);
   line-height: 1.08;
   letter-spacing: -0.01em;
   margin: 0;
@@ -107,25 +107,65 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 }
 
 .fallback-lead {
-  max-width: 46rem;
+  max-width: 42rem;
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--fg-secondary);
   margin: 1rem 0 0;
 }
 
+.fallback-review {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  max-width: 46rem;
+  margin: 1rem 0 0;
+  color: var(--fg-tertiary);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.fallback-priority-note {
+  max-width: 46rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(181, 65, 47, 0.24);
+  border-left: 4px solid var(--color-alert);
+  border-radius: 18px;
+  background: var(--color-alert-wash);
+}
+
+.fallback-priority-note p {
+  margin: 0;
+  color: var(--fg-primary);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
 .fallback-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 0;
+  gap: 1rem;
   margin: 0;
 }
 
+.fallback-grid + .fallback-grid {
+  margin-top: 1rem;
+}
+
+.fallback-grid-priority {
+  grid-template-columns: minmax(20rem, 1.15fr) repeat(
+      auto-fit,
+      minmax(18rem, 1fr)
+    );
+}
+
 .fallback-card {
-  background: var(--bg-primary);
-  border-top: 1px solid var(--rule-color);
-  border-radius: 0;
-  padding: 1.5rem 0;
+  min-height: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule-color);
+  border-radius: 18px;
+  padding: 1.35rem;
   box-shadow: none;
 }
 
@@ -147,9 +187,13 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-card.alert {
   background: var(--color-alert-wash);
-  border-top: 1px solid var(--color-alert);
+  border-color: rgba(181, 65, 47, 0.28);
   border-left: 4px solid var(--color-alert);
-  padding-left: 1.5rem;
+}
+
+.fallback-card.ok {
+  background: var(--color-ok-wash);
+  border-color: rgba(47, 107, 87, 0.2);
 }
 
 .fallback-list {
@@ -205,7 +249,7 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-meta {
   margin-top: 2rem;
-  padding-top: 1rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--rule-color);
   color: var(--fg-secondary);
   font-size: 0.95rem;
@@ -238,5 +282,15 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 @media (max-width: 720px) {
   .fallback-page {
     padding-top: 1.25rem;
+  }
+
+  .fallback-wrap {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .fallback-grid,
+  .fallback-grid-priority {
+    grid-template-columns: 1fr;
   }
 }

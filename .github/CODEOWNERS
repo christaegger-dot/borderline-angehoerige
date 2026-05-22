@@ -4,6 +4,14 @@
 # Zentrale Kontakt- und Governance-Register
 /client/src/data/kontakte.ts @christaegger-dot
 /client/src/data/pageGovernance.ts @christaegger-dot
+/shared/redirects.ts @christaegger-dot
+/shared/staticRouteShells.ts @christaegger-dot
+/shared/securityHeaders.ts @christaegger-dot
+/server/material-download.ts @christaegger-dot
+/netlify/functions/ @christaegger-dot
+/netlify.toml @christaegger-dot
+/.github/workflows/ @christaegger-dot
+/qa/scripts/ @christaegger-dot
 
 # Krisen- und Notfallseiten (statisch)
 /client/public/soforthilfe/ @christaegger-dot

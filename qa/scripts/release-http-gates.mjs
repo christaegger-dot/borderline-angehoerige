@@ -5,38 +5,82 @@ import {
   materials,
 } from "../../client/src/content/materialien.ts";
 import { getHandoutTextVersionBySource } from "../../client/src/content/handoutTextMetas.ts";
+import { SECURITY_HEADERS } from "../../shared/securityHeaders.ts";
 import { BASE_URL, qaPath, writeJson } from "./a11y-shared.mjs";
 
 const REPORT_NAME = "release-http-gates.json";
 const MARKDOWN_NAME = "release-http-gates.md";
 const IMAGE_PATH_RE = /\.(?:avif|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/i;
 const MIN_PDF_BYTES = 1024;
-const SECURITY_HEADER_CASES = [
-  { route: "/", kind: "headers-html", checks: ["csp", "xfo", "xcto"] },
+const PAGE_CASES = ["/notfallkarte", "/notfallkarte/erstellen"];
+const HEADER_CASES = [
   {
+    id: "home",
+    title: "Startseite",
+    kind: "header",
+    route: "/",
+    expectedStatus: 200,
+    contentTypeIncludes: "text/html",
+    requiredHeaders: SECURITY_HEADERS,
+  },
+  {
+    id: "index-html",
+    title: "Index HTML",
+    kind: "header",
     route: "/index.html",
-    kind: "headers-html",
-    checks: ["csp", "xfo", "xcto", "cache-index"],
+    expectedStatus: 200,
+    contentTypeIncludes: "text/html",
+    requiredHeaders: SECURITY_HEADERS,
+    cacheControlIncludes: ["public", "max-age=3600", "must-revalidate"],
   },
   {
+    id: "soforthilfe",
+    title: "Soforthilfe",
+    kind: "header",
     route: "/soforthilfe",
-    kind: "headers-html",
-    checks: ["csp", "xfo", "xcto"],
+    expectedStatus: 200,
+    contentTypeIncludes: "text/html",
+    requiredHeaders: SECURITY_HEADERS,
   },
   {
+    id: "notfallkarte",
+    title: "Notfallkarte",
+    kind: "header",
     route: "/notfallkarte",
-    kind: "headers-html",
-    checks: ["csp", "xfo", "xcto"],
+    expectedStatus: 200,
+    contentTypeIncludes: "text/html",
+    requiredHeaders: SECURITY_HEADERS,
   },
-  { route: "/404", kind: "headers-html", checks: ["csp", "xfo", "xcto"] },
   {
+    id: "not-found",
+    title: "404 Seite",
+    kind: "header",
+    route: "/404",
+    expectedStatus: 404,
+    contentTypeIncludes: "text/html",
+    requiredHeaders: SECURITY_HEADERS,
+  },
+  {
+    id: "material-inline",
+    title: "Material Inline Download",
+    kind: "header",
     route: "/api/material-download/notfallplan-krise?disposition=inline",
-    kind: "headers-pdf",
-    checks: ["xcto", "pdf-type", "inline-disposition"],
+    expectedStatus: 200,
+    contentTypeIncludes: "application/pdf",
+    contentDispositionIncludes: "inline;",
+    requiredHeaders: SECURITY_HEADERS,
+    cacheControlIncludes: ["public", "must-revalidate"],
+  },
+  {
+    id: "static-pdf",
+    title: "Statisches PDF",
+    kind: "header",
+    route: "/notfallplan-krise-v03.pdf",
+    expectedStatus: 200,
+    contentTypeIncludes: "application/pdf",
+    requiredHeaders: SECURITY_HEADERS,
   },
 ];
-
-const PAGE_CASES = ["/notfallkarte", "/notfallkarte/erstellen"];
 
 function nowIso() {
   return new Date().toISOString();
@@ -48,6 +92,27 @@ function normalizeError(error) {
   }
 
   return String(error);
+}
+
+function firstMatch(regex, text, groupIndex = 1) {
+  const match = text.match(regex);
+  return match?.[groupIndex] ?? null;
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function normalizeRoutePath(assetPath) {
+  if (assetPath.startsWith("http://") || assetPath.startsWith("https://")) {
+    return new URL(assetPath).pathname;
+  }
+
+  if (assetPath.startsWith("/")) {
+    return assetPath;
+  }
+
+  return `/${assetPath.replace(/^\.?\//, "")}`;
 }
 
 function looksLikeImagePath(url) {
@@ -269,6 +334,218 @@ async function checkPreviewRoute(item) {
   }
 }
 
+function inferContentTypePattern(route) {
+  if (/\.css(?:[?#].*)?$/i.test(route)) {
+    return /text\/css/i;
+  }
+
+  if (/\.js(?:[?#].*)?$/i.test(route)) {
+    return /(javascript|ecmascript)/i;
+  }
+
+  if (/\.woff2(?:[?#].*)?$/i.test(route)) {
+    return /(font\/woff2|application\/octet-stream)/i;
+  }
+
+  return null;
+}
+
+async function discoverRuntimeHeaderCases() {
+  const homeResponse = await fetch(new URL("/", BASE_URL).toString(), {
+    redirect: "follow",
+  });
+
+  if (!homeResponse.ok) {
+    throw new Error(
+      `Asset-Erkennung fehlgeschlagen: Startseite liefert ${homeResponse.status}`
+    );
+  }
+
+  const html = await homeResponse.text();
+  const assetRoutes = [
+    ...new Set(
+      [...html.matchAll(/(?:src|href)=["'](\/assets\/[^"']+)["']/g)].map(
+        match => match[1]
+      )
+    ),
+  ];
+
+  const assetRoute =
+    assetRoutes.find(route => /\.(?:css|js)(?:[?#].*)?$/i.test(route)) ??
+    assetRoutes[0] ??
+    null;
+
+  if (!assetRoute) {
+    throw new Error("Keine /assets/* Route in der Startseite gefunden.");
+  }
+
+  let fontRoute =
+    assetRoutes.find(route => /\.woff2(?:[?#].*)?$/i.test(route)) ?? null;
+
+  if (!fontRoute) {
+    const stylesheetRoutes = assetRoutes.filter(route =>
+      /\.css(?:[?#].*)?$/i.test(route)
+    );
+
+    for (const stylesheetRoute of stylesheetRoutes) {
+      const stylesheetResponse = await fetch(
+        new URL(stylesheetRoute, BASE_URL).toString(),
+        { redirect: "follow" }
+      );
+
+      if (!stylesheetResponse.ok) {
+        continue;
+      }
+
+      const stylesheet = await stylesheetResponse.text();
+      const discoveredFontRoute = firstMatch(
+        new RegExp(`url\\((["']?)([^)"']+\\.woff2(?:\\?[^)"']*)?)\\1\\)`, "i"),
+        stylesheet,
+        2
+      );
+
+      if (discoveredFontRoute) {
+        fontRoute = normalizeRoutePath(discoveredFontRoute);
+        break;
+      }
+    }
+  }
+
+  const cases = [
+    {
+      id: "runtime-asset",
+      title: "Gebautes Asset",
+      kind: "header",
+      route: assetRoute,
+      expectedStatus: 200,
+      requiredHeaders: SECURITY_HEADERS,
+      cacheControlIncludes: ["public", "max-age=31536000", "immutable"],
+      contentTypePattern: inferContentTypePattern(assetRoute),
+    },
+  ];
+
+  if (fontRoute) {
+    cases.push({
+      id: "runtime-font",
+      title: "Gebauter Font",
+      kind: "header",
+      route: fontRoute,
+      expectedStatus: 200,
+      requiredHeaders: SECURITY_HEADERS,
+      cacheControlIncludes: ["public", "max-age=31536000", "immutable"],
+      contentTypePattern: inferContentTypePattern(fontRoute),
+    });
+  }
+
+  return cases;
+}
+
+async function checkHeaderCase(item) {
+  const url = new URL(item.route, BASE_URL).toString();
+  const startedAt = nowIso();
+
+  function headerMatchesExpected(header, actualValue, expectedValue) {
+    if (!actualValue) {
+      return false;
+    }
+
+    if (header === "Strict-Transport-Security") {
+      return actualValue.includes(expectedValue);
+    }
+
+    return actualValue === expectedValue;
+  }
+
+  try {
+    const response = await fetch(url, { redirect: "follow" });
+    const contentType = response.headers.get("content-type") ?? "";
+    const cacheControl = response.headers.get("cache-control") ?? "";
+    const contentDisposition =
+      response.headers.get("content-disposition") ?? "";
+    const problems = [];
+
+    if (response.status !== item.expectedStatus) {
+      problems.push(
+        `erwartet HTTP ${item.expectedStatus}, erhalten ${response.status}`
+      );
+    }
+
+    if (
+      item.contentTypeIncludes &&
+      !contentType
+        .toLowerCase()
+        .includes(item.contentTypeIncludes.toLowerCase())
+    ) {
+      problems.push(
+        `erwartet Content-Type mit ${item.contentTypeIncludes}, erhalten ${contentType || "ohne content-type"}`
+      );
+    }
+
+    if (item.contentTypePattern && !item.contentTypePattern.test(contentType)) {
+      problems.push(
+        `erwartet Content-Type passend zu ${item.contentTypePattern}, erhalten ${contentType || "ohne content-type"}`
+      );
+    }
+
+    if (
+      item.contentDispositionIncludes &&
+      !contentDisposition.includes(item.contentDispositionIncludes)
+    ) {
+      problems.push(
+        `erwartet Content-Disposition mit ${item.contentDispositionIncludes}, erhalten ${contentDisposition || "ohne content-disposition"}`
+      );
+    }
+
+    for (const token of item.cacheControlIncludes ?? []) {
+      if (!cacheControl.toLowerCase().includes(token.toLowerCase())) {
+        problems.push(
+          `erwartet Cache-Control mit ${token}, erhalten ${cacheControl || "ohne cache-control"}`
+        );
+      }
+    }
+
+    for (const [header, expectedValue] of Object.entries(
+      item.requiredHeaders ?? {}
+    )) {
+      const actualValue = response.headers.get(header);
+      if (!headerMatchesExpected(header, actualValue, expectedValue)) {
+        problems.push(
+          `Header ${header} erwartet ${expectedValue}, erhalten ${actualValue || "ohne header"}`
+        );
+      }
+    }
+
+    return {
+      id: item.id,
+      title: item.title,
+      kind: item.kind,
+      route: item.route,
+      url,
+      status: problems.length === 0 ? "passed" : "failed",
+      httpStatus: response.status,
+      contentType,
+      cacheControl,
+      contentDisposition: contentDisposition || null,
+      startedAt,
+      finishedAt: nowIso(),
+      finalUrl: response.url,
+      ...(problems.length === 0 ? {} : { message: problems.join("; ") }),
+    };
+  } catch (error) {
+    return {
+      id: item.id,
+      title: item.title,
+      kind: item.kind,
+      route: item.route,
+      url,
+      status: "failed",
+      startedAt,
+      finishedAt: nowIso(),
+      message: normalizeError(error),
+    };
+  }
+}
+
 async function checkTextVersion(item) {
   const startedAt = nowIso();
 
@@ -299,116 +576,6 @@ async function checkTextVersion(item) {
   }
 
   return checkHtmlRoute(item.route, item.kind, item.id, item.title);
-}
-
-function hasHeader(headers, name, expected) {
-  const value = headers.get(name) ?? "";
-  return value.toLowerCase().includes(expected.toLowerCase());
-}
-
-async function discoverAssetRoute() {
-  const rootUrl = new URL("/", BASE_URL).toString();
-  const html = await (await fetch(rootUrl, { redirect: "follow" })).text();
-  const match = html.match(/(?:src|href)=["'](\/assets\/[^"']+)["']/i);
-  return match?.[1] ?? null;
-}
-
-async function discoverFontRoute(assetRoute) {
-  if (!assetRoute || !assetRoute.match(/\.css(?:[?#].*)?$/i)) {
-    return null;
-  }
-
-  const assetUrl = new URL(assetRoute, BASE_URL).toString();
-  const css = await (await fetch(assetUrl, { redirect: "follow" })).text();
-  const match = css.match(
-    /url\((['"]?)(\/assets\/[^)'"]+\.woff2(?:\?[^)'"]*)?)\1\)/i
-  );
-
-  return match?.[2] ?? null;
-}
-
-async function checkHeaderRoute(item) {
-  const url = new URL(item.route, BASE_URL).toString();
-  const startedAt = nowIso();
-
-  try {
-    const response = await fetch(url, { redirect: "follow" });
-    const headers = response.headers;
-    const failures = [];
-
-    for (const check of item.checks) {
-      if (
-        check === "csp" &&
-        !hasHeader(headers, "content-security-policy", "default-src")
-      ) {
-        failures.push("CSP fehlt");
-      }
-      if (check === "xfo" && !hasHeader(headers, "x-frame-options", "deny")) {
-        failures.push("X-Frame-Options fehlt/inkorrekt");
-      }
-      if (
-        check === "xcto" &&
-        !hasHeader(headers, "x-content-type-options", "nosniff")
-      ) {
-        failures.push("X-Content-Type-Options fehlt/inkorrekt");
-      }
-      if (
-        check === "cache-index" &&
-        !hasHeader(headers, "cache-control", "must-revalidate")
-      ) {
-        failures.push("Cache-Control index fehlt/inkorrekt");
-      }
-      if (
-        check === "pdf-type" &&
-        !hasHeader(headers, "content-type", "application/pdf")
-      ) {
-        failures.push("Content-Type ist nicht application/pdf");
-      }
-      if (
-        check === "inline-disposition" &&
-        !hasHeader(headers, "content-disposition", "inline;")
-      ) {
-        failures.push("Content-Disposition ist nicht inline");
-      }
-      if (
-        check === "immutable-cache" &&
-        !hasHeader(headers, "cache-control", "immutable")
-      ) {
-        failures.push("Cache-Control immutable fehlt");
-      }
-    }
-
-    const ok = response.ok && failures.length === 0;
-
-    return {
-      id: item.route,
-      title: item.route,
-      kind: item.kind,
-      route: item.route,
-      url,
-      status: ok ? "passed" : "failed",
-      httpStatus: response.status,
-      contentType: headers.get("content-type") ?? "",
-      startedAt,
-      finishedAt: nowIso(),
-      finalUrl: response.url,
-      ...(ok
-        ? {}
-        : { message: failures.join("; ") || `HTTP ${response.status}` }),
-    };
-  } catch (error) {
-    return {
-      id: item.route,
-      title: item.route,
-      kind: item.kind,
-      route: item.route,
-      url,
-      status: "failed",
-      startedAt,
-      finishedAt: nowIso(),
-      message: normalizeError(error),
-    };
-  }
 }
 
 function markdownReport(report) {
@@ -462,30 +629,25 @@ async function main() {
     results.push(await checkHtmlRoute(route, "page"));
   }
 
-  for (const item of SECURITY_HEADER_CASES) {
-    results.push(await checkHeaderRoute(item));
+  let runtimeHeaderCases = [];
+  try {
+    runtimeHeaderCases = await discoverRuntimeHeaderCases();
+  } catch (error) {
+    results.push({
+      id: "runtime-discovery",
+      title: "Runtime Asset Discovery",
+      kind: "header",
+      route: "/",
+      url: new URL("/", BASE_URL).toString(),
+      status: "failed",
+      startedAt: nowIso(),
+      finishedAt: nowIso(),
+      message: normalizeError(error),
+    });
   }
 
-  const assetRoute = await discoverAssetRoute();
-  if (assetRoute) {
-    results.push(
-      await checkHeaderRoute({
-        route: assetRoute,
-        kind: "headers-asset",
-        checks: ["immutable-cache"],
-      })
-    );
-  }
-
-  const fontRoute = await discoverFontRoute(assetRoute);
-  if (fontRoute) {
-    results.push(
-      await checkHeaderRoute({
-        route: fontRoute,
-        kind: "headers-font",
-        checks: ["immutable-cache"],
-      })
-    );
+  for (const item of [...HEADER_CASES, ...runtimeHeaderCases]) {
+    results.push(await checkHeaderCase(item));
   }
 
   const report = {
@@ -497,8 +659,7 @@ async function main() {
       textversions: results.filter(result => result.kind === "textversion")
         .length,
       pages: results.filter(result => result.kind === "page").length,
-      headerChecks: results.filter(result => result.kind.startsWith("headers-"))
-        .length,
+      headers: results.filter(result => result.kind === "header").length,
     },
     results,
     status: results.every(result => result.status === "passed")

@@ -8,26 +8,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "../../..");
 const SITE_URL = "https://borderline-angehoerige.netlify.app";
-const GOVERNED_SITEMAP_PATHS = [
-  "/verstehen",
-  "/verstehen/diagnostik",
-  "/verstehen/begleiterkrankungen",
-  "/unterstuetzen/alltag",
-  "/unterstuetzen/therapie",
-  "/unterstuetzen/krise",
-  "/kommunizieren",
-  "/grenzen",
-  "/selbstfuersorge",
-  "/soforthilfe",
-  "/genesung",
-  "/beratung",
-  "/fachstelle",
-  "/notfallkarte",
-  "/notfallkarte/erstellen",
-  "/faq",
-  "/quellen",
-  "/datenschutz",
-] as const;
 
 function readSitemap() {
   return fs.readFileSync(
@@ -64,12 +44,17 @@ describe("sitemap", () => {
     expect(entries.has("/verstehen/begleiterkrankungen")).toBe(true);
   });
 
-  it("keeps governed medical and crisis pages in sync with page governance lastReviewed dates", () => {
+  it("keeps every governance-backed sitemap route in sync with page governance lastReviewed dates", () => {
     const entries = parseSitemapEntries(readSitemap());
+    const governedPaths = Object.entries(pageGovernance)
+      .filter(([, meta]) => Boolean(meta.lastReviewed))
+      .map(([routePath]) => routePath);
 
-    for (const routePath of GOVERNED_SITEMAP_PATHS) {
-      expect(pageGovernance[routePath]).toBeDefined();
-      expect(pageGovernance[routePath]?.lastReviewed).toBeTruthy();
+    for (const routePath of governedPaths) {
+      expect(
+        entries.has(routePath),
+        `${routePath} is missing from sitemap`
+      ).toBe(true);
       expect(entries.get(routePath)?.lastmod).toBe(
         pageGovernance[routePath]?.lastReviewed
       );

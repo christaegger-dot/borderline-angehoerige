@@ -1,6 +1,7 @@
 dist/
 build/
 node_modules/
+_dev/
 pnpm-lock.yaml
 *.min.js
 *.min.css

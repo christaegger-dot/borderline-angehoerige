@@ -12,7 +12,7 @@ describe("ReviewBadge", () => {
     pageGovernance["/notfallkarte"] = { ...originalNotfallkarte };
   });
 
-  it("renders the review date, next review date, and owner", () => {
+  it("renders a compact review summary by default", () => {
     pageGovernance["/verstehen/diagnostik"] = {
       riskLevel: "high",
       lastReviewed: "2026-04-30",
@@ -21,6 +21,23 @@ describe("ReviewBadge", () => {
     };
 
     render(<ReviewBadge path="/verstehen/diagnostik" />);
+
+    expect(
+      screen.getByText("Fachlich geprüft: 30.04.2026")
+    ).toBeInTheDocument();
+    expect(screen.getByText("Details")).toBeInTheDocument();
+    expect(screen.queryByText("Review & Governance")).not.toBeInTheDocument();
+  });
+
+  it("keeps detailed review metadata available", () => {
+    pageGovernance["/verstehen/diagnostik"] = {
+      riskLevel: "high",
+      lastReviewed: "2026-04-30",
+      nextReviewDue: "2026-10-31",
+      owner: "Fachstelle Angehörigenarbeit",
+    };
+
+    render(<ReviewBadge path="/verstehen/diagnostik" variant="detailed" />);
 
     expect(screen.getByText("Review & Governance")).toBeInTheDocument();
     expect(screen.getByText("Fachlicher Review:")).toBeInTheDocument();

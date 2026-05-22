@@ -280,7 +280,7 @@ function StartIndex() {
               <span
                 aria-hidden="true"
                 className="font-display text-2xl"
-                style={{ color: "var(--rule-color-strong)" }}
+                style={{ color: "var(--fg-tertiary)" }}
               >
                 {String(index + 1).padStart(2, "0")}
               </span>

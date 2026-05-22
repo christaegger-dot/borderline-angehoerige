@@ -1,9 +1,12 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import { FadenIllustration } from "@/components/illustrations";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
@@ -64,56 +67,24 @@ export default function Kommunizieren() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Kommunizieren
-          </p>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1}>
             Gespräche in <em>belasteten Beziehungen</em> — wie Verbindung
             möglich bleibt.
-          </h1>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="max-w-[30em]">
             Kommunikation löst keine Grunddynamik – sie kann aber Eskalation
             bremsen und Ihre eigene Position klärer machen.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 14 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
           </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
@@ -144,30 +115,10 @@ export default function Kommunizieren() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Überblick</EyebrowLabel>
+          <DisplayHeading level={2}>
             Was auf dieser Seite besonders wichtig ist
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite ordnet Kommunikation nicht als Sammlung kluger

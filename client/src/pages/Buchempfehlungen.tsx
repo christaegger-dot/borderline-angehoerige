@@ -1,8 +1,12 @@
 import { useCallback } from "react";
 import {
+  DisplayHeading,
+  EditorialBody,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -261,27 +265,12 @@ export default function Buchempfehlungen() {
     fontStyle: "italic" as const,
   };
 
-  const descStyle = {
-    fontSize: "var(--text-md)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   const labelStyle = {
     fontSize: "var(--text-xs)",
     letterSpacing: "var(--tracking-caps)",
     color: "var(--fg-tertiary)",
     fontWeight: 500,
   } as const;
-
-  const categoryHeadingStyle = {
-    fontFamily: "var(--font-display)",
-    fontSize: "var(--text-2xl)",
-    fontWeight: "var(--weight-display)",
-    color: "var(--fg-primary)",
-    letterSpacing: "var(--tracking-tight)",
-    lineHeight: "var(--lh-snug)",
-  };
 
   return (
     <Layout>
@@ -294,39 +283,15 @@ export default function Buchempfehlungen() {
       <EditorialLayout width="wide">
         {/* ── Hero ── */}
         <header className="pb-16 pt-16 md:pb-24 md:pt-24">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Buchempfehlungen
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Buchempfehlungen</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Bücher für <em>Angehörige</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl
             verbindet Grundwissen, Beziehungsperspektiven, Selbstfürsorge und
             Erfahrungsnähe, ohne Anspruch auf Vollständigkeit.
-          </p>
+          </Lede>
         </header>
 
         {/* ── Kategorie-Sprungleiste ── */}
@@ -362,8 +327,10 @@ export default function Buchempfehlungen() {
             >
               {/* Kategorie-Kopf */}
               <div className="space-y-2">
-                <h2 style={categoryHeadingStyle}>{category.title}</h2>
-                <p style={descStyle}>{category.subtitle}</p>
+                <DisplayHeading level={2} spacing="compact">
+                  {category.title}
+                </DisplayHeading>
+                <EditorialBody>{category.subtitle}</EditorialBody>
               </div>
 
               {/* Bücher-Liste */}
@@ -388,7 +355,7 @@ export default function Buchempfehlungen() {
                         {book.publisher}
                         {book.year && `, ${book.year}`}
                       </p>
-                      <p style={descStyle}>{book.description}</p>
+                      <EditorialBody>{book.description}</EditorialBody>
                       <p
                         className="flex flex-wrap items-baseline gap-x-5 gap-y-1 pt-1"
                         style={{ fontSize: "var(--text-sm)" }}

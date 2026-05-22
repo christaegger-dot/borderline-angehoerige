@@ -25,8 +25,8 @@ function stripMotionProps(props: Record<string, unknown>) {
   );
 }
 
-vi.mock("framer-motion", () => ({
-  motion: new Proxy(
+vi.mock("framer-motion", () => {
+  const motion = new Proxy(
     {},
     {
       get:
@@ -45,9 +45,19 @@ vi.mock("framer-motion", () => ({
           );
         },
     }
-  ),
-  AnimatePresence: ({ children }: { children: ReactNode }) => <>{children}</>,
-}));
+  );
+  const passthrough = ({ children }: { children?: ReactNode }) => (
+    <>{children}</>
+  );
+  return {
+    motion,
+    m: motion,
+    AnimatePresence: passthrough,
+    LazyMotion: passthrough,
+    MotionConfig: passthrough,
+    domAnimation: {},
+  };
+});
 
 beforeAll(() => {
   Object.defineProperty(window, "matchMedia", {
@@ -98,14 +108,14 @@ const HASH_CASES = [
   // wird durch Browser nativ via fragment-anchor gehandhabt, nicht durch
   // Custom-Event-Toggle.
   {
-    route: "/diagnostik#anbieter",
+    route: "/verstehen/diagnostik#anbieter",
     loadPage: () => import("@/pages/Diagnostik"),
     buttonName:
       /Abschnitt Wo eine Diagnose im Kanton Zürich gestellt werden kann/i,
     contentText: /Psychiatrische Universitätsklinik Zürich \(PUK\)/i,
   },
   {
-    route: "/begleiterkrankungen#depression",
+    route: "/verstehen/begleiterkrankungen#depression",
     loadPage: () => import("@/pages/Begleiterkrankungen"),
     buttonName: /Abschnitt Depression bei Borderline/i,
     contentText: /Forschung zeigt, dass im Lebenszeitverlauf/i,
@@ -136,4 +146,15 @@ describe("hash-linked content sections", () => {
       expect(window.scrollTo).toHaveBeenCalled();
     }
   );
+
+  it("does not crash when the URL hash contains malformed encoding", async () => {
+    const { default: Page } = await import("@/pages/Grenzen");
+    renderWithRoute(<Page />, "/grenzen#%E0%A4%A");
+
+    expect(
+      screen.getByRole("button", {
+        name: /Abschnitt Wo stehe ich beim Grenzen setzen\?/i,
+      })
+    ).toBeInTheDocument();
+  });
 });

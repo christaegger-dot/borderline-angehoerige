@@ -1,7 +1,12 @@
 import { useRef, useState } from "react";
 import { Link } from "wouter";
 import { ExternalLink, FileText } from "lucide-react";
-import { EditorialSection } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialBody,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   selbstfuersorgeInfografiken,
@@ -97,42 +102,13 @@ export default function SelbstfuersorgeInfografikenSection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Materialien
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Materialien zum Download
-          </h2>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EyebrowLabel>Materialien</EyebrowLabel>
+          <DisplayHeading level={2}>Materialien zum Download</DisplayHeading>
+          <EditorialBody className="max-w-[36em]">
             Infografiken als hochauflösende PDFs zum Herunterladen und lesbare
             Textversionen, wenn verfügbar. «PDF öffnen» öffnet die
             A4-Druckversion im neuen Tab.
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -140,7 +116,7 @@ export default function SelbstfuersorgeInfografikenSection() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
         aria-label="Materialien zum Download — Filter und Tile-Liste"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <div
             className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
             role="tablist"
@@ -157,10 +133,10 @@ export default function SelbstfuersorgeInfografikenSection() {
                 }}
               >
                 <span>{cat.label}</span>
-                <span aria-hidden="true" className="mx-2.5 opacity-50">
+                <span aria-hidden="true" className="mx-2.5 opacity-90">
                   ·
                 </span>
-                <span className="opacity-70">{cat.count}</span>
+                <span>{cat.count}</span>
               </EditorialPillButton>
             ))}
           </div>

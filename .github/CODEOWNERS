@@ -27,3 +27,13 @@
 
 # Seitenebene: fachlicher Review fuer inhaltliche Aenderungen
 /client/src/pages/ @christaegger-dot
+
+# Kritische Infrastruktur
+/shared/redirects.ts @christaegger-dot
+/shared/staticRouteShells.ts @christaegger-dot
+/shared/securityHeaders.ts @christaegger-dot
+/server/material-download.ts @christaegger-dot
+/netlify/functions/ @christaegger-dot
+/netlify.toml @christaegger-dot
+/.github/workflows/ @christaegger-dot
+/qa/scripts/ @christaegger-dot

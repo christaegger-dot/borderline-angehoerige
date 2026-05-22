@@ -1,5 +1,9 @@
 import AppLink from "@/components/AppLink";
-import { EditorialSection } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import { homeFeaturedInfografiken } from "@/content/homeFeaturedInfografiken";
 
 /**
@@ -41,30 +45,10 @@ export function VisualOrientationGrid() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Visuelle Orientierung
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              maxWidth: "32rem",
-            }}
-          >
+          <EyebrowLabel>Visuelle Orientierung</EyebrowLabel>
+          <DisplayHeading level={2} className="max-w-[32rem]">
             Acht Konzepte, in Lese-Reihenfolge — ein Bild pro Idee.
-          </h2>
+          </DisplayHeading>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -72,7 +56,7 @@ export function VisualOrientationGrid() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
         aria-label="Visuelle Orientierung — acht Infografiken"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <ul className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 md:gap-y-14 lg:grid-cols-4">
             {homeFeaturedInfografiken.map(tile => (
               <li key={tile.id} className="group">
@@ -98,16 +82,9 @@ export function VisualOrientationGrid() {
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     />
                   </div>
-                  <p
-                    className="mt-4 text-xs uppercase"
-                    style={{
-                      color: "var(--accent-label)",
-                      letterSpacing: "var(--tracking-caps)",
-                      fontWeight: 500,
-                    }}
-                  >
+                  <EyebrowLabel className="mt-4" spacing="compact">
                     {tile.categoryLabel}
-                  </p>
+                  </EyebrowLabel>
                   <h3
                     className="mt-2 font-display transition-colors duration-200 group-hover:text-[color:var(--accent-primary)]"
                     style={{

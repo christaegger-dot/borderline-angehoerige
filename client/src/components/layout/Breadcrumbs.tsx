@@ -7,6 +7,8 @@ import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
 const pageNames: Record<string, string> = {
   "/": "Startseite",
   "/verstehen": "Borderline verstehen",
+  "/verstehen/diagnostik": "Diagnostik",
+  "/verstehen/begleiterkrankungen": "Begleiterkrankungen",
   "/unterstuetzen": "Unterstützen",
   "/unterstuetzen/uebersicht": "Übersicht",
   "/unterstuetzen/alltag": "Alltag",
@@ -36,6 +38,14 @@ const pageNames: Record<string, string> = {
   "/barrierefreiheit": "Barrierefreiheit",
 };
 
+function decodeUriComponentSafely(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 function normalizeLocation(location: string) {
   return location.split("#")[0];
 }
@@ -53,6 +63,10 @@ export function getParentInfo(
     return { href: "/unterstuetzen/uebersicht", label: "Unterstützen" };
   }
 
+  if (normalizedLocation.startsWith("/verstehen/")) {
+    return { href: "/verstehen", label: "Borderline verstehen" };
+  }
+
   return null;
 }
 
@@ -60,7 +74,7 @@ export function getPageName(location: string) {
   const normalizedLocation = normalizeLocation(location);
 
   if (normalizedLocation.startsWith("/materialien/text/")) {
-    const handoutId = decodeURIComponent(
+    const handoutId = decodeUriComponentSafely(
       normalizedLocation.replace("/materialien/text/", "")
     );
     return getHandoutTextVersionMeta(handoutId)?.title ?? "Textversion";

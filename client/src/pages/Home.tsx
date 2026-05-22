@@ -1,4 +1,6 @@
 import {
+  DisplayHeading,
+  EditorialBody,
   EditorialColorBlock,
   EditorialFootnotes,
   EditorialHero,
@@ -7,6 +9,7 @@ import {
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
   TestimonialMark,
 } from "@/components/editorial";
 import { HeroLeuchtturmIllustration } from "@/components/illustrations";
@@ -15,7 +18,6 @@ import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
 import { ADRESSEN, EMAILS, INFO } from "@/data/kontakte";
-import { Link } from "wouter";
 
 // Single-source-of-truth: keine Telefon-/E-Mail-/Adress-Hardcoding im Markup
 const FACHSTELLE = INFO.find(k => k.id === "INFO_FACHSTELLE");
@@ -70,17 +72,7 @@ export default function Home() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Anerkennung
-          </p>
+          <EyebrowLabel>Anerkennung</EyebrowLabel>
           <EditorialProse>
             <p>
               Sie fragen sich seit Jahren, ob das, was Sie erleben, Krankheit
@@ -122,30 +114,10 @@ export default function Home() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "#d6c8be",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Grundgedanke
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "#f5ece6",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel tone="light">Grundgedanke</EyebrowLabel>
+          <DisplayHeading level={2} tone="light">
             Mitgefühl und Selbstschutz sind kein Widerspruch.
-          </h2>
+          </DisplayHeading>
           <EditorialProse dropCap>
             <p>
               Viele Angehörige, die zu uns kommen, tragen eine leise Überzeugung
@@ -241,76 +213,17 @@ export default function Home() {
       {/* ── 4 Visuelle Orientierung ── 8 Infografik-Tiles als narrativer Lese-Pfad */}
       <VisualOrientationGrid />
 
-      {/* ── 5 Orientierung ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Wegweiser
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Orientierung
-          </p>
-          <EditorialProse>
-            <p>
-              Wenn Sie verstehen möchten, was passiert – die Beziehungsdynamik,
-              das Innenleben Ihres Angehörigen, die wiederkehrenden Muster –
-              beginnen Sie unter <Link href="/verstehen">Verstehen</Link>. Wenn
-              Sie konkrete Werkzeuge für den Alltag suchen, finden Sie diese
-              unter <Link href="/kommunizieren">Kommunizieren</Link>,{" "}
-              <Link href="/grenzen">Grenzen</Link> und{" "}
-              <Link href="/selbstfuersorge">Selbstfürsorge</Link>. Bei akuten
-              Krisen führt <AppLink href="/soforthilfe">Soforthilfe</AppLink> zu
-              den Schweizer Notfallnummern.
-            </p>
-          </EditorialProse>
-          <p
-            className="mt-4"
-            style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
-            }}
-          >
-            Eine vollständige Themenübersicht finden Sie über das Menü.
-          </p>
-        </EditorialSection.Body>
-      </EditorialSection>
-
-      {/* ── 6 Stimme ── vollflächige Sage-Wash-Sektion mit Testimonial-Mark */}
+      {/* ── 5 Stimme ── vollflächige Sage-Wash-Sektion mit Testimonial-Mark
+           Wegweiser-Sektion (1 Absatz mit Inline-Links zu Verstehen/Kommunizieren/
+           Grenzen/Selbstfürsorge/Soforthilfe) wurde entfernt — die acht
+           VisualOrientationGrid-Tiles direkt darüber bieten dieselbe
+           Themen-Navigation visuell und ohnehin ausführlicher. */}
       <EditorialColorBlock variant="sage-wash" maxWidth="45rem">
         <div className="text-center">
           <TestimonialMark className="mx-auto" />
-          <p
-            className="mt-8 text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
+          <EyebrowLabel className="mt-8" spacing="compact">
             Aus der Angehörigenarbeit
-          </p>
+          </EyebrowLabel>
           <div className="mt-6">
             <EditorialPullQuote
               variant="testimonial"
@@ -345,19 +258,9 @@ export default function Home() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <DisplayHeading level={2}>
             Sie müssen nicht wissen, was Sie sagen wollen.
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die
@@ -440,19 +343,13 @@ export default function Home() {
           className="border-t pt-12"
           style={{ borderColor: "var(--rule-color)" }}
         >
-          <p
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody>
             In einer akuten Krise zählt der schnellste funktionierende Weg.{" "}
             <AppLink href="/soforthilfe" className="editorial-link">
               Notfallnummern öffnen
             </AppLink>
             .
-          </p>
+          </EditorialBody>
         </section>
       </EditorialLayout>
     </Layout>

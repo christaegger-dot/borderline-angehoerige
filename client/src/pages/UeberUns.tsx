@@ -1,9 +1,12 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import EvidenceNote from "@/components/EvidenceNote";
@@ -101,37 +104,13 @@ export default function UeberUns() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Über uns
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Über uns</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Über diese <em>Website</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Warum es diese Website gibt – und wer dahinter steht.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

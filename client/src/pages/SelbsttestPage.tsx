@@ -1,7 +1,10 @@
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
@@ -20,38 +23,14 @@ export default function SelbsttestPage() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-12 pt-16 md:pb-16 md:pt-24">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Selbsttest
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Selbsttest</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Selbsttest: <em>Wo soll ich anfangen?</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Dieser kurze Test hilft Ihnen, die für Ihre aktuelle Situation
             passenden Inhalte zu finden. Er dauert nur etwa 2 Minuten.
-          </p>
+          </Lede>
         </header>
 
         {/* ── Hairline-Trenner Editorial-Hero → funktionales Tool ── */}

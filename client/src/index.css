@@ -56,8 +56,8 @@
   /* — Farben — */
   --bg-primary: #faf7f2; /* einzige Hintergrundfarbe der Site */
   --bg-elevated: #ffffff; /* Hervorhebungen, z.B. Pull-Quote-Card */
-  --bg-cream-deep: #f3eee3; /* tieferer Cream — für ruhige Sub-Bars (Phase-1-Token) */
-  --bg-sage-wash: #eef0ea; /* heller Sage-Wash — für Reflexions-Sektionen (Phase-1-Token) */
+  --bg-cream-deep: #ebe2cf; /* tieferer Cream — für ruhige Sub-Bars; spürbar wärmer/dunkler als bg-primary für klare Sektionsgrenzen */
+  --bg-sage-wash: #dde3d4; /* heller Sage-Wash — für Reflexions-Sektionen; salbei-grünlich, ähnliche Lightness wie cream-deep */
   --fg-primary: #1f2a37; /* Body-Text, dunkles Slate */
   --fg-secondary: #4b5563; /* Lead, Bildunterschriften, Meta */
   --fg-tertiary: #6b7280; /* Labels, Fussnoten */
@@ -333,6 +333,15 @@
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--fg-primary);
+    /* Defensive Lese-Mass-Sicherung: greift nur, falls EditorialProse
+       jemals ausserhalb von EditorialSection.Body o.ä. gerendert wird.
+       Im Normalfall begrenzt der Grid-Slot bereits auf var(--measure). */
+    max-width: var(--measure);
+    /* Deutsche Komposita („Borderline-Persönlichkeitsstörung") brechen
+       auf schmalen Viewports sonst hart oder erzwingen horizontales
+       Scrollen. */
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   @media (min-width: 768px) {
@@ -446,13 +455,18 @@
   /* ── Editorial Section — Layout-Hülle (Margin / Body / Aside) ──
      Mobile (<768): einspaltig, Reihenfolge margin → body → aside.
      Tablet (768-1023): einspaltig ohne Aside; zweispaltig mit Aside.
-     Desktop (≥1024): drei Spalten 200px / minmax(0, 608px) / 1fr. */
+     Desktop (≥1024) mit Aside: drei Spalten 160px / minmax(0, 608px) / 1fr,
+       max-width 1240px.
+     Desktop (≥1024) ohne Aside: zwei Spalten 160px / minmax(0, 608px),
+       max-width 824px (= 160 + gap-5/32 + 608 + Reserve). Das Grid wird
+       durch mx-auto im Container zentriert, statt eine leere 1fr-Spalte
+       rechts neben dem 608-px-Body offen zu lassen. */
   .editorial-section-grid {
     display: grid;
     align-items: start;
     column-gap: var(--space-5);
     row-gap: var(--space-5);
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "margin"
       "body"
@@ -467,19 +481,42 @@
     }
   }
   @media (min-width: 1024px) {
-    .editorial-section-grid {
+    .editorial-section-grid:not(.editorial-section-grid--has-aside) {
+      grid-template-columns: 160px minmax(0, var(--measure));
+      grid-template-areas: "margin body";
+      max-width: 824px;
+    }
+    .editorial-section-grid--has-aside {
       grid-template-columns: 160px minmax(0, var(--measure)) 1fr;
       grid-template-areas: "margin body aside";
     }
   }
   .editorial-section-grid__margin {
     grid-area: margin;
+    min-width: 0;
   }
   .editorial-section-grid__body {
     grid-area: body;
+    min-width: 0;
+  }
+
+  /* Lange deutsche Komposita („Borderline-Persönlichkeitsstörung")
+     duerfen auf schmalen Viewports notfalls innerhalb des Wortes brechen,
+     statt das Grid-Item ueber den Viewport zu druecken. */
+  .font-display {
+    overflow-wrap: anywhere;
+  }
+
+  /* Sage-Wash-Hintergrund (#dde3d4) bringt --accent-label (#4f6b5e) auf
+     Kontrast 4.45 — knapp unter WCAG-AA-Schwelle 4.5. Lokal-darkening auf
+     #476358 (Kontrast 5.01) statt globalem Token-Eingriff, damit andere
+     Hintergruende (Cream, Cream-Deep, Aubergine) unveraendert bleiben. */
+  .editorial-color-block[data-variant="sage-wash"] {
+    --accent-label: #476358;
   }
   .editorial-section-grid__aside {
     grid-area: aside;
+    min-width: 0;
   }
   @media (min-width: 1024px) {
     .editorial-section-grid__aside {

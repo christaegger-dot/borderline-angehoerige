@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
+import { DisplayHeading } from "./DisplayHeading";
 import { EditorialSection } from "./EditorialSection";
+import { Lede } from "./Lede";
 
 export interface EditorialHeroMetaItem {
   label: string;
@@ -23,14 +25,16 @@ interface EditorialHeroProps {
  * Editorial Hero auf Basis der EditorialSection-Hülle (Phase 1.5).
  *
  * Layout:
- * - MarginNote (200 px links): Sage-Caps-Anker (Eyebrow), wirkt wie
+ * - MarginNote (160 px links): Sage-Caps-Anker (Eyebrow), wirkt wie
  *   Magazintitel/Kapitelmarker
  * - Body (608 px Mitte): H1 / Lede / optionale Meta
  * - Aside (1fr rechts): illustrationSlot, quadratisch (aspect-ratio 1:1),
  *   max-w 560 px, rechtsbündig
  *
  * Public-API unverändert seit PR #391 — Pages müssen nicht angepasst
- * werden.
+ * werden. H1 + Lede sind intern auf <DisplayHeading> und <Lede>
+ * umgestellt; Eyebrow-MarginNote nutzt jetzt text-[13px] wie alle
+ * anderen MarginNotes der Site.
  */
 export function EditorialHero({
   eyebrow,
@@ -44,7 +48,7 @@ export function EditorialHero({
       {eyebrow && (
         <EditorialSection.MarginNote>
           <span
-            className="block text-xs font-medium uppercase"
+            className="block text-[13px] font-medium uppercase"
             style={{
               color: "var(--accent-label)",
               letterSpacing: "var(--tracking-caps)",
@@ -56,31 +60,8 @@ export function EditorialHero({
         </EditorialSection.MarginNote>
       )}
       <EditorialSection.Body>
-        <h1
-          className="font-display"
-          style={{
-            fontSize: "var(--text-hero)",
-            lineHeight: "var(--lh-tight)",
-            letterSpacing: "var(--tracking-tight)",
-            color: "var(--fg-primary)",
-            fontWeight: "var(--weight-display)",
-            marginBottom: "var(--space-5)",
-          }}
-        >
-          {title}
-        </h1>
-        {lede && (
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "1.375rem",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
-            {lede}
-          </p>
-        )}
+        <DisplayHeading level={1}>{title}</DisplayHeading>
+        {lede && <Lede size="hero">{lede}</Lede>}
         {meta && meta.length > 0 && (
           <dl
             className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t pt-6 text-[13px]"

@@ -40,8 +40,8 @@ describe("sitemap", () => {
   it("contains the newly added diagnostik and begleiterkrankungen routes", () => {
     const entries = parseSitemapEntries(readSitemap());
 
-    expect(entries.has("/diagnostik")).toBe(true);
-    expect(entries.has("/begleiterkrankungen")).toBe(true);
+    expect(entries.has("/verstehen/diagnostik")).toBe(true);
+    expect(entries.has("/verstehen/begleiterkrankungen")).toBe(true);
   });
 
   it("keeps every governance-backed sitemap route in sync with page governance lastReviewed dates", () => {

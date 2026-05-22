@@ -5,7 +5,7 @@
     "server/**/*",
     "netlify/functions/**/*"
   ],
-  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts", "**/*.test.tsx"],
   "compilerOptions": {
     "incremental": true,
     "tsBuildInfoFile": "./tsconfig.tsbuildinfo",

@@ -1,9 +1,12 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -279,58 +282,26 @@ export default function UnterstuetzenAlltag() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Im Alltag
-          </p>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1}>
             Im Alltag <em>unterstützen</em>
-          </h1>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="max-w-[40em]">
             Belastete Beziehungen bestehen nicht nur aus Krisen. Meist prägen
             sie den Alltag: Anspannung in der Luft, vorsichtiges Abtasten,
             Rückzug nach Konflikten, Schuldgefühle, Erreichbarkeitsdruck und die
             Frage, wie viel Nähe gerade hilfreich ist. Diese Seite geht darum,
             was im Alltag trägt und was eher erschöpft.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 8 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
             <LastVerifiedBadge path="/unterstuetzen/alltag" className="mt-3" />
           </div>
         </EditorialSection.Body>
@@ -382,30 +353,10 @@ export default function UnterstuetzenAlltag() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Überblick</EyebrowLabel>
+          <DisplayHeading level={2}>
             Was diese Seite im Alltag ordnet
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite hilft Ihnen, Alltagsunterstützung nicht nur als

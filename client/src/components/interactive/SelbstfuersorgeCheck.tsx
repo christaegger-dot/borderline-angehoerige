@@ -92,7 +92,7 @@ export default function SelbstfuersorgeCheck() {
             </p>
           </div>
           <div className="flex items-start gap-3">
-            <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-alert" />
+            <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-alert-dark" />
             <p className="text-sm leading-relaxed text-foreground">
               Die Fachstelle Angehörigenarbeit (PUK Zürich) bietet Beratung:{" "}
               {kontaktById("INFO_FACHSTELLE")?.nummer ?? "058 384 38 00"}.

@@ -46,6 +46,18 @@
   force = true
 
 [[redirects]]
+  from = "/diagnostik"
+  to = "/verstehen/diagnostik"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/begleiterkrankungen"
+  to = "/verstehen/begleiterkrankungen"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/selbsthilfegruppen"
   to = "/beratung"
   status = 301

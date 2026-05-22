@@ -1,6 +1,12 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
-import { EditorialProse, EditorialSection } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialProse,
+  EditorialSection,
+  EyebrowLabel,
+  Lede,
+} from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -54,7 +60,7 @@ const ampelHandlungen = [
   {
     label: "Rot",
     tone: "border-alert/25 bg-alert/8",
-    fg: "text-alert",
+    fg: "text-alert-dark",
     items: [
       "Professionelle Hilfe holen",
       "Eigene Sicherheit sichern",
@@ -158,7 +164,7 @@ const krisenphasen = [
     titel: "Peak",
     dauer: "Spitze",
     tone: "border-alert/25 bg-alert/8",
-    fg: "text-alert",
+    fg: "text-alert-dark",
   },
   {
     titel: "Abklingen",
@@ -330,7 +336,7 @@ export default function UnterstuetzenKrise() {
             </p>
             <AppLink
               href="/soforthilfe"
-              className="rounded bg-white px-3 py-2 text-sm font-medium text-alert transition-colors hover:bg-white/90"
+              className="rounded bg-white px-3 py-2 text-sm font-medium text-alert-dark transition-colors hover:bg-white/90"
             >
               Alle Notfallnummern
             </AppLink>
@@ -353,57 +359,25 @@ export default function UnterstuetzenKrise() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             In der Krise
-          </p>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1}>
             In der Krise <em>unterstützen</em>
-          </h1>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="max-w-[40em]">
             Viele Angehörige erleben Phasen starker Anspannung, Eskalation oder
             Rückzug. Hier erfahren Sie, wie Sie Krisen besser einordnen,
             deeskalierend reagieren und Sicherheit im Blick behalten können,
             ohne Ihre eigene Grenze aus dem Blick zu verlieren.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 6 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
             <LastVerifiedBadge path="/unterstuetzen/krise" className="mt-3" />
             <ReviewBadge path="/unterstuetzen/krise" />
           </div>
@@ -479,30 +453,10 @@ export default function UnterstuetzenKrise() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Überblick</EyebrowLabel>
+          <DisplayHeading level={2}>
             Was diese Seite in Krisen ordnet
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite hilft Ihnen, Krisen nicht nur als Chaos, sondern als

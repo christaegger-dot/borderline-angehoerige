@@ -13,9 +13,9 @@ export const unterstuetzenItems = [
     title: "Im Krisenmodus – Orientierung geben",
     description:
       "Das Ampel-System hilft, Anspannung, Eskalation und akute Gefahr schneller einzuordnen.",
-    url: "/infografiken/ampel-das-ampel-system-v3.png",
+    url: "/infografiken/ampel-das-ampel-system-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.png",
+      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.webp",
     pdfUrl: "/infografiken/ampel-das-ampel-system-v3.pdf",
     category: "grundlagen",
   },
@@ -24,9 +24,9 @@ export const unterstuetzenItems = [
     title: "Ihre Rolle klären",
     description:
       "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
-    url: "/infografiken/sphären-die-einfluss-sphären-v3.png",
+    url: "/infografiken/sphären-die-einfluss-sphären-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
+      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
     pdfUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
     category: "grundlagen",
   },
@@ -36,6 +36,7 @@ export const unterstuetzenItems = [
     description:
       "Drei tragende Prinzipien, damit Unterstützung stabil, klar und entlastend bleibt.",
     url: "/infografiken/manus-drei-saeulen-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-drei-saeulen-v1.webp",
     pdfUrl: "/infografiken/manus-drei-saeulen-v1.pdf",
     category: "grundlagen",
   },
@@ -45,6 +46,8 @@ export const unterstuetzenItems = [
     description:
       "Warum verlässliche, wiedererkennbare Reaktionen meist mehr helfen als spontane Kurswechsel.",
     url: "/infografiken/manus-konsistenz-prinzip-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-konsistenz-prinzip-v1.webp",
     pdfUrl: "/infografiken/manus-konsistenz-prinzip-v1.pdf",
     category: "haltung",
   },
@@ -54,6 +57,8 @@ export const unterstuetzenItems = [
     description:
       "Orientierung, wie Nähe möglich bleibt, ohne Warnzeichen, Erschöpfung oder Grenzverletzungen zu übergehen.",
     url: "/infografiken/manus-beziehungs-achtsamkeit-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp",
     pdfUrl: "/infografiken/manus-beziehungs-achtsamkeit-v1.pdf",
     category: "haltung",
   },
@@ -63,6 +68,7 @@ export const unterstuetzenItems = [
     description:
       "Sechs alltagstaugliche Leitsätze für Präsenz, Klarheit und Selbstschutz in belasteten Phasen.",
     url: "/infografiken/manus-6-leitlinien-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-6-leitlinien-v1.webp",
     pdfUrl: "/infografiken/manus-6-leitlinien-v1.pdf",
     category: "alltag",
   },
@@ -72,6 +78,8 @@ export const unterstuetzenItems = [
     description:
       "Vier konkrete Hinweise, wie Unterstützung im Alltag ruhiger, klarer und tragfähiger werden kann.",
     url: "/infografiken/manus-4-alltags-tipps-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v1.webp",
     pdfUrl: "/infografiken/manus-4-alltags-tipps-v1.pdf",
     category: "alltag",
   },

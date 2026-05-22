@@ -32,6 +32,8 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Wenn Gespräche kippen: 3 Schritte",
     description: "Beruhigen, verbinden, begrenzen",
     url: "/infografiken/manus-gespraeche-kippen-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp",
     pdfUrl: "/infografiken/manus-gespraeche-kippen-v1.pdf",
     category: "techniken",
   },
@@ -40,6 +42,8 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Grenzen setzen, ohne zu eskalieren",
     description: "Die 3-Teile-Formel für klare Ansagen",
     url: "/infografiken/manus-grenzen-ohne-eskalation-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
     pdfUrl: "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
     category: "konflikte",
   },
@@ -48,6 +52,8 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Pause statt Streit",
     description: "Warnstufen erkennen und rechtzeitig stoppen",
     url: "/infografiken/manus-pause-statt-streit-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
     pdfUrl: "/infografiken/manus-pause-statt-streit-v1.pdf",
     category: "konflikte",
   },
@@ -56,6 +62,8 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Wenn Worte treffen",
     description: "Schuldzuweisungen ruhiger einordnen",
     url: "/infografiken/manus-wenn-worte-treffen-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
     pdfUrl: "/infografiken/manus-wenn-worte-treffen-v1.pdf",
     category: "konflikte",
   },
@@ -63,9 +71,9 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "zuhoeren-ohne-zustimmen",
     title: "Zuhören ohne Zustimmen",
     description: "Validieren ohne nachzugeben",
-    url: "/infografiken/validierung-die-validierungs-treppe-v5.png",
+    url: "/infografiken/validierung-die-validierungs-treppe-v5.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.png",
+      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
     pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
     category: "techniken",
   },
@@ -74,6 +82,8 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Beispiel-Dialog",
     description: "Technik-Schritte in einem kurzen Gespräch",
     url: "/infografiken/manus-beispiel-dialog-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp",
     pdfUrl: "/infografiken/manus-beispiel-dialog-v1.pdf",
     category: "praxis",
   },
@@ -81,9 +91,9 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "krisenkommunikation",
     title: "Spickzettel Krisenkommunikation (A4)",
     description: "A4-Spickzettel für akute Spannungszustände",
-    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
+    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
     pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
     category: "praxis",
   },

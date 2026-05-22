@@ -1,6 +1,12 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
-import { EditorialProse, EditorialSection } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialProse,
+  EditorialSection,
+  EyebrowLabel,
+  Lede,
+} from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { EisbergIllustration } from "@/components/illustrations";
 import Layout from "@/components/Layout";
@@ -10,6 +16,7 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import { quellenLinks } from "@/content/quellenLinks";
 import VerstehenMaterialsSection from "@/sections/VerstehenMaterialsSection";
 import {
+  VerstehenBegleitOverviewSection,
   VerstehenDiagnosticSection,
   VerstehenMeaningSection,
   VerstehenRelationshipSection,
@@ -66,53 +73,25 @@ export default function Verstehen() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Verstehen
-          </p>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1}>
             <em>Borderline</em> verstehen, ohne die Distanz zu verlieren.
-          </h1>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "1.375rem",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede size="hero">
             Für Angehörige ist Borderline oft nicht nur schwer zu begreifen,
             sondern schwer auszuhalten – Situationen kippen, Reaktionen wirken
             widersprüchlich, die eigene Rolle bleibt unklar.
-          </p>
-          <p
-            className="mt-10 border-t pt-6 text-xs uppercase"
-            style={{
-              borderColor: "var(--rule-color)",
-              color: "var(--fg-tertiary)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
+          </Lede>
+          <div
+            className="mt-8 border-t pt-3"
+            style={{ borderColor: "var(--rule-color)" }}
           >
-            Vollständig ca. 15 Min · Auch abschnittweise lesbar
-          </p>
+            <EyebrowLabel spacing="compact">
+              Vollständig ca. 15 Min · Auch abschnittweise lesbar
+            </EyebrowLabel>
+          </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
           <div
@@ -149,30 +128,10 @@ export default function Verstehen() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Überblick</EyebrowLabel>
+          <DisplayHeading level={2}>
             Worum es hier vor allem geht
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite erklärt Borderline nicht als Etikett, sondern als
@@ -767,7 +726,10 @@ export default function Verstehen() {
                 Selbstbild oder die Beziehungsmuster, die für Borderline
                 charakteristisch sind. Beide Diagnosen können gleichzeitig
                 vorliegen.{" "}
-                <Link href="/begleiterkrankungen" className="editorial-link">
+                <Link
+                  href="/verstehen/begleiterkrankungen"
+                  className="editorial-link"
+                >
                   Begleiterkrankungen
                 </Link>
                 .
@@ -858,6 +820,7 @@ export default function Verstehen() {
           </ContentSection>
 
           <VerstehenDiagnosticSection />
+          <VerstehenBegleitOverviewSection />
         </EditorialSection.Body>
       </EditorialSection>
 

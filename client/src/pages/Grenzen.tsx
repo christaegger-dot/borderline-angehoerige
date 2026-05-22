@@ -1,9 +1,13 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
+  EditorialBody,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import { InnenraeumeIllustration } from "@/components/illustrations";
 import GrenzenCheck from "@/components/interactive/GrenzenCheck";
@@ -147,58 +151,26 @@ export default function Grenzen() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Grenzen
-          </p>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1}>
             Grenzen <em>setzen</em>, ohne die Beziehung aufzugeben.
-          </h1>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="max-w-[30em]">
             Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine
             Voraussetzung. Sie schützen Ihre Integrität, machen Beziehungen
             berechenbarer und verhindern, dass Unterstützung in Selbstaufgabe
             kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau
             deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 12 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
             <LastVerifiedBadge path="/grenzen" className="mt-3" />
             <ReviewBadge path="/grenzen" />
           </div>
@@ -231,30 +203,10 @@ export default function Grenzen() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Überblick</EyebrowLabel>
+          <DisplayHeading level={2}>
             Was auf dieser Seite besonders wichtig ist
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite hilft Ihnen, Grenzen nicht als Härte, sondern als
@@ -916,41 +868,14 @@ export default function Grenzen() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Materialien
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Materialien</EyebrowLabel>
+          <DisplayHeading level={2}>
             Spickzettel und Infografiken zu Grenzen
-          </h2>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <EditorialBody className="max-w-[36em]">
             Wenn verfügbar, führt «Textversion lesen» zur Web-Version. «PDF
             öffnen» öffnet die A4-Druckversion im neuen Tab.
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -958,7 +883,7 @@ export default function Grenzen() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
         aria-label="Spickzettel und Infografiken zu Grenzen — Tile-Liste"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
             {grenzenItems.map(item => {
               const textVersionHref = getHandoutTextVersionHrefBySource(

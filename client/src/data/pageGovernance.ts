@@ -16,6 +16,18 @@ export const pageGovernance: Record<string, PageGovernance> = {
     nextReviewDue: "2027-04-30",
     owner: DEFAULT_OWNER,
   },
+  "/unterstuetzen/uebersicht": {
+    riskLevel: "medium",
+    lastReviewed: "2026-04-30",
+    nextReviewDue: "2027-04-30",
+    owner: DEFAULT_OWNER,
+  },
+  "/wegweiser": {
+    riskLevel: "high",
+    lastReviewed: "2026-04-30",
+    nextReviewDue: "2026-10-31",
+    owner: DEFAULT_OWNER,
+  },
   "/soforthilfe": {
     riskLevel: "high",
     lastReviewed: "2026-04-30",
@@ -40,13 +52,13 @@ export const pageGovernance: Record<string, PageGovernance> = {
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
-  "/diagnostik": {
+  "/verstehen/diagnostik": {
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
-  "/begleiterkrankungen": {
+  "/verstehen/begleiterkrankungen": {
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
@@ -118,22 +130,10 @@ export const pageGovernance: Record<string, PageGovernance> = {
     nextReviewDue: "2027-04-30",
     owner: DEFAULT_OWNER,
   },
-  "/unterstuetzen/uebersicht": {
-    riskLevel: "medium",
-    lastReviewed: "2026-04-30",
-    nextReviewDue: "2027-04-30",
-    owner: DEFAULT_OWNER,
-  },
   "/unterstuetzen/alltag": {
     riskLevel: "medium",
     lastReviewed: "2026-04-16",
     nextReviewDue: "2027-04-16",
-    owner: DEFAULT_OWNER,
-  },
-  "/wegweiser": {
-    riskLevel: "high",
-    lastReviewed: "2026-04-30",
-    nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
 };

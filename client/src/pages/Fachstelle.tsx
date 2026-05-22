@@ -1,7 +1,10 @@
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -41,7 +44,7 @@ const leistungen = [
 ] as const;
 
 export default function Fachstelle() {
-  const h4Style = {
+  const h3Style = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
     color: "var(--fg-primary)",
@@ -71,40 +74,16 @@ export default function Fachstelle() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Fachstelle — PUK Zürich
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Fachstelle — PUK Zürich</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Angehörigenarbeit – <em>professionell begleitet</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Ein Angebot der Psychiatrischen Universitätsklinik Zürich für
             Angehörige von Menschen mit psychischen Erkrankungen. Die Fachstelle
             bietet Orientierung, Entlastung und Beratung für Situationen, die im
             Alltag oft schwer alleine zu tragen sind.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{
@@ -129,7 +108,7 @@ export default function Fachstelle() {
           <ul className="mt-8 space-y-6">
             {leistungen.map(item => (
               <li key={item.title}>
-                <h4 style={h4Style}>{item.title}</h4>
+                <h3 style={h3Style}>{item.title}</h3>
                 <p className="mt-1" style={bodyStyle}>
                   {item.description}
                 </p>

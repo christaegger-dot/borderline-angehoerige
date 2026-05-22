@@ -1,8 +1,11 @@
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -34,39 +37,15 @@ export default function Datenschutz() {
 
       <EditorialLayout width="narrow">
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Datenschutz
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Datenschutz</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Wie diese Website mit <em>Daten</em> umgeht
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Der Schutz Ihrer Privatsphäre ist uns wichtig. Diese Erklärung
             beschreibt, welche Daten technisch anfallen, welche lokal im Browser
             bleiben und welche Rechte Sie haben.
-          </p>
+          </Lede>
           <div className="mt-6">
             <ReviewBadge path="/datenschutz" />
           </div>

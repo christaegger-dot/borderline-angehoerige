@@ -28,12 +28,14 @@
       var s = strategies[j];
       var sEl = document.getElementById("strategy-" + j);
       if (sEl) {
-        if (s && s.text) {
-          sEl.value = s.text;
+        var strategyText = s && typeof s.text === "string" ? s.text : "";
+        sEl.value = strategyText;
+        if (strategyText) {
           sEl.removeAttribute("placeholder");
         } else if (j >= strategies.length) {
-          sEl.value = "";
           sEl.placeholder = "Eigene Strategie eingeben…";
+        } else {
+          sEl.removeAttribute("placeholder");
         }
       }
     }

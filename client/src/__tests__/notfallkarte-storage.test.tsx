@@ -1,4 +1,10 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import type { ElementType, HTMLAttributes, ReactNode } from "react";
 import {
   afterEach,
@@ -38,8 +44,8 @@ function stripMotionProps(props: Record<string, unknown>) {
   );
 }
 
-vi.mock("framer-motion", () => ({
-  motion: new Proxy(
+vi.mock("framer-motion", () => {
+  const motion = new Proxy(
     {},
     {
       get:
@@ -58,9 +64,19 @@ vi.mock("framer-motion", () => ({
           );
         },
     }
-  ),
-  AnimatePresence: ({ children }: { children: ReactNode }) => <>{children}</>,
-}));
+  );
+  const passthrough = ({ children }: { children?: ReactNode }) => (
+    <>{children}</>
+  );
+  return {
+    motion,
+    m: motion,
+    AnimatePresence: passthrough,
+    LazyMotion: passthrough,
+    MotionConfig: passthrough,
+    domAnimation: {},
+  };
+});
 
 function createStorageMock(): Storage {
   const store = new Map<string, string>();
@@ -221,7 +237,7 @@ describe("Notfallkarte storage fallbacks", () => {
     ).toBeInTheDocument();
   });
 
-  it("clears stored data persistently across delete and reload", () => {
+  it("clears stored data persistently across delete and reload", async () => {
     vi.spyOn(window, "confirm").mockReturnValue(true);
 
     renderPage();
@@ -236,9 +252,11 @@ describe("Notfallkarte storage fallbacks", () => {
       target: { value: "Testkontakt" },
     });
 
-    expect(window.localStorage.getItem(NOTFALLKARTE_STORAGE_KEY)).toContain(
-      "Nur lokal speichern"
-    );
+    await waitFor(() => {
+      expect(window.localStorage.getItem(NOTFALLKARTE_STORAGE_KEY)).toContain(
+        "Nur lokal speichern"
+      );
+    });
 
     fireEvent.click(
       screen.getByRole("button", {

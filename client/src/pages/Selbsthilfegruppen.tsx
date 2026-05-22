@@ -1,7 +1,11 @@
 import {
+  DisplayHeading,
+  EditorialBody,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -68,27 +72,12 @@ export default function Selbsthilfegruppen() {
     letterSpacing: "var(--tracking-tight)",
   };
 
-  const bodyStyle = {
-    fontSize: "var(--text-md)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   const labelStyle = {
     fontSize: "var(--text-xs)",
     letterSpacing: "var(--tracking-caps)",
     color: "var(--fg-tertiary)",
     fontWeight: 500,
   } as const;
-
-  const categoryHeadingStyle = {
-    fontFamily: "var(--font-display)",
-    fontSize: "var(--text-2xl)",
-    fontWeight: "var(--weight-display)",
-    color: "var(--fg-primary)",
-    letterSpacing: "var(--tracking-tight)",
-    lineHeight: "var(--lh-snug)",
-  };
 
   const subBlockTitleStyle = {
     fontSize: "var(--text-md)",
@@ -113,40 +102,18 @@ export default function Selbsthilfegruppen() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-16 pt-16 md:pb-24 md:pt-24">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
+          <EyebrowLabel spacing="compact">
             Beratung &amp; Netzwerke
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Beratung &amp; <em>Netzwerke</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Wenn Belastung, Unsicherheit oder Erschöpfung zu gross werden, kann
             es entlastend sein, nicht nur im eigenen System nach Lösungen zu
             suchen. Hier finden Sie Beratung, Selbsthilfe und weitere
             Anlaufstellen für Angehörige in der Schweiz.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{
@@ -206,11 +173,13 @@ export default function Selbsthilfegruppen() {
             <p className="uppercase" style={labelStyle}>
               Kategorie
             </p>
-            <h2 style={categoryHeadingStyle}>Professionelle Beratung</h2>
-            <p style={bodyStyle}>
+            <DisplayHeading level={2} spacing="compact">
+              Professionelle Beratung
+            </DisplayHeading>
+            <EditorialBody>
               Anlaufstellen, die Angehörige fachlich begleiten, entlasten und
               bei der Einordnung unterstützen.
-            </p>
+            </EditorialBody>
           </div>
 
           {/* Fachstelle Angehörigenarbeit PUK */}
@@ -221,13 +190,13 @@ export default function Selbsthilfegruppen() {
             <h3 style={stelleTitleStyle}>
               Fachstelle Angehörigenarbeit (PUK Zürich)
             </h3>
-            <p style={bodyStyle}>
+            <EditorialBody>
               Die Fachstelle an der Psychiatrischen Universitätsklinik Zürich
               bietet kostenlose, vertrauliche{" "}
               <strong>Einzelberatung und Entlastungsgespräche</strong> für
               Angehörige von psychisch erkrankten Menschen – unabhängig davon,
               ob die betroffene Person an der PUK behandelt wird.
-            </p>
+            </EditorialBody>
 
             <div className="space-y-2">
               <p className="uppercase" style={labelStyle}>
@@ -277,11 +246,11 @@ export default function Selbsthilfegruppen() {
               <dt className="uppercase" style={labelStyle}>
                 Adresse
               </dt>
-              <dd style={bodyStyle}>
+              <EditorialBody as="dd">
                 Lenggstrasse 31, Postfach
                 <br />
                 8032 Zürich
-              </dd>
+              </EditorialBody>
 
               <dt className="uppercase" style={labelStyle}>
                 Web
@@ -312,11 +281,11 @@ export default function Selbsthilfegruppen() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <h3 style={stelleTitleStyle}>Pro Mente Sana</h3>
-            <p style={bodyStyle}>
+            <EditorialBody>
               Die Schweizerische Stiftung Pro Mente Sana bietet psychosoziale
               und juristische Beratung für Betroffene und Angehörige. Kostenlose
               Telefonberatung zu Fragen rund um psychische Gesundheit.
-            </p>
+            </EditorialBody>
             <p
               className="flex flex-wrap items-baseline gap-x-6 gap-y-1"
               style={{ fontSize: "var(--text-md)" }}
@@ -345,11 +314,13 @@ export default function Selbsthilfegruppen() {
             <p className="uppercase" style={labelStyle}>
               Kategorie
             </p>
-            <h2 style={categoryHeadingStyle}>Angehörigen-Netzwerke</h2>
-            <p style={bodyStyle}>
+            <DisplayHeading level={2} spacing="compact">
+              Angehörigen-Netzwerke
+            </DisplayHeading>
+            <EditorialBody>
               Organisationen und Netzwerke, die Austausch, Orientierung und
               Entlastung für Angehörige ermöglichen.
-            </p>
+            </EditorialBody>
           </div>
 
           {/* Stand by You Schweiz */}
@@ -358,17 +329,17 @@ export default function Selbsthilfegruppen() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <h3 style={stelleTitleStyle}>Stand by You Schweiz</h3>
-            <p style={bodyStyle}>
+            <EditorialBody>
               Ehemals VASK Schweiz – Dachverband der Vereinigungen von
               Angehörigen psychisch Erkrankter. Seit Januar 2024 unter neuem
               Namen.
-            </p>
-            <p style={bodyStyle}>
+            </EditorialBody>
+            <EditorialBody>
               Stand by You macht Angehörige und Vertraute von Menschen mit
               psychischen Erkrankungen in der Schweiz sicht-, hör- und spürbar.
               Die Organisation bietet eine kostenlose HelpLine, die von
               Angehörigen für Angehörige betrieben wird.
-            </p>
+            </EditorialBody>
             <dl className="grid gap-y-3 sm:grid-cols-[max-content_1fr] sm:gap-x-8">
               <dt className="uppercase" style={labelStyle}>
                 HelpLine (kostenlos)
@@ -404,9 +375,9 @@ export default function Selbsthilfegruppen() {
             >
               <p style={subBlockTitleStyle}>HelpLine-Zeiten</p>
               <LastVerifiedBadge path={canonicalPath} />
-              <dl
+              <EditorialBody
+                as="dl"
                 className="grid grid-cols-[max-content_1fr] gap-x-6 gap-y-1"
-                style={bodyStyle}
               >
                 {standByYouHelpLineZeiten.map(([tag, zeit]) => (
                   <div key={tag} className="contents">
@@ -414,7 +385,7 @@ export default function Selbsthilfegruppen() {
                     <dd>{zeit}</dd>
                   </div>
                 ))}
-              </dl>
+              </EditorialBody>
             </div>
           </article>
 
@@ -424,10 +395,10 @@ export default function Selbsthilfegruppen() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <h3 style={stelleTitleStyle}>VASK Zürich</h3>
-            <p style={bodyStyle}>
+            <EditorialBody>
               Kantonale Vereinigung der Angehörigen von psychisch Kranken – mit
               regelmässigen Beratungs-Treffpunkten in Zürich und Winterthur.
-            </p>
+            </EditorialBody>
             <div
               className="border-t pt-4 space-y-6"
               style={{ borderColor: "var(--rule-color)" }}
@@ -436,13 +407,13 @@ export default function Selbsthilfegruppen() {
                 <div key={treff.titel} className="space-y-1">
                   <p style={subBlockTitleStyle}>{treff.titel}</p>
                   <LastVerifiedBadge path={canonicalPath} />
-                  <p style={bodyStyle}>{treff.beschreibung}</p>
-                  <p style={bodyStyle}>
+                  <EditorialBody>{treff.beschreibung}</EditorialBody>
+                  <EditorialBody>
                     <span className="uppercase" style={labelStyle}>
                       Termin:
                     </span>{" "}
                     {treff.termin}
-                  </p>
+                  </EditorialBody>
                 </div>
               ))}
             </div>
@@ -476,11 +447,11 @@ export default function Selbsthilfegruppen() {
               <dt className="uppercase" style={labelStyle}>
                 Adresse
               </dt>
-              <dd style={bodyStyle}>
+              <EditorialBody as="dd">
                 Langstrasse 149
                 <br />
                 8004 Zürich
-              </dd>
+              </EditorialBody>
 
               <dt className="uppercase" style={labelStyle}>
                 Web
@@ -509,11 +480,13 @@ export default function Selbsthilfegruppen() {
             <p className="uppercase" style={labelStyle}>
               Kategorie
             </p>
-            <h2 style={categoryHeadingStyle}>Selbsthilfegruppen finden</h2>
-            <p style={bodyStyle}>
+            <DisplayHeading level={2} spacing="compact">
+              Selbsthilfegruppen finden
+            </DisplayHeading>
+            <EditorialBody>
               Wenn Sie mit anderen Angehörigen in Austausch kommen möchten, ist
               Selbsthilfe Schweiz die wichtigste Vermittlungsstelle.
-            </p>
+            </EditorialBody>
           </div>
 
           <article
@@ -521,13 +494,13 @@ export default function Selbsthilfegruppen() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <h3 style={stelleTitleStyle}>Selbsthilfe Schweiz</h3>
-            <p style={bodyStyle}>
+            <EditorialBody>
               Selbsthilfegruppen für Angehörige von Menschen mit Borderline
               finden Sie über <strong>Selbsthilfe Schweiz</strong> – die
               zentrale Vermittlungsstelle für Selbsthilfegruppen in der ganzen
               Schweiz. Es gibt Gruppen in mehreren Kantonen, sowohl vor Ort als
               auch online.
-            </p>
+            </EditorialBody>
             <p style={{ fontSize: "var(--text-md)" }}>
               <a
                 href={selbsthilfeChUrl.url}

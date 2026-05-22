@@ -7,6 +7,7 @@ import {
   buildWebsiteSchemaData,
 } from "../client/src/lib/seoMetadata";
 import { handoutTextVersionMetas } from "../client/src/content/handoutTextMetas";
+import { APP_REDIRECTS } from "./redirects";
 
 export interface StaticRouteHeadMetadata {
   path: string;
@@ -22,17 +23,9 @@ export interface StaticRouteHeadMetadata {
   medicalLastReviewed?: string | null;
 }
 
-export const STATIC_ROUTE_REDIRECTS = [
-  { from: "/notfallkarte.html", to: "/notfallkarte", status: 301 },
-  { from: "/notfall", to: "/soforthilfe", status: 301 },
-  { from: "/unterstuetzen", to: "/unterstuetzen/uebersicht", status: 301 },
-  { from: "/selbsthilfegruppen", to: "/beratung", status: 301 },
-  {
-    from: "/therapieangebote",
-    to: "/unterstuetzen/therapie#therapieangebote",
-    status: 301,
-  },
-] as const;
+// Single source of truth: shared/redirects.ts (synchron mit netlify.toml,
+// _redirects, routes.ts - per redirects-parity.test.ts ueberwacht).
+export const STATIC_ROUTE_REDIRECTS = APP_REDIRECTS;
 
 export const SOURCE_STATIC_HTML_ROUTES = new Map<string, string>([
   ["/soforthilfe", "soforthilfe/index.html"],
@@ -83,14 +76,14 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     includeMedicalSchema: true,
   },
   {
-    path: "/diagnostik",
+    path: "/verstehen/diagnostik",
     title: "Diagnostik",
     description:
       "Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist.",
     includeMedicalSchema: true,
   },
   {
-    path: "/begleiterkrankungen",
+    path: "/verstehen/begleiterkrankungen",
     title: "Begleiterkrankungen",
     description:
       "Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert.",
@@ -257,6 +250,11 @@ export const STATIC_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     title: `${meta.title} – Textversion`,
     description: meta.description,
     includeMedicalSchema: true,
+    // Sammel-Review-Datum fuer alle Handout-Textversionen: sie sind
+    // auto-generiert aus den PDF-Quellen, die in pageGovernance abgedeckt
+    // sind. Wenn sich der Review-Stand eines einzelnen Handouts aendert,
+    // hier auf ein meta-spezifisches Feld umstellen.
+    medicalLastReviewed: "2026-04-30",
   })),
 ];
 

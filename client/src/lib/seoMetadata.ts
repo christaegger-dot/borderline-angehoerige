@@ -14,8 +14,6 @@ export const DEFAULT_SITE_URL = "https://borderline-angehoerige.netlify.app";
 export const SITE_URL = (
   IMPORT_META_ENV.VITE_SITE_URL || DEFAULT_SITE_URL
 ).replace(/\/+$/, "");
-const MEDICAL_LAST_REVIEWED =
-  IMPORT_META_ENV.VITE_MEDICAL_LAST_REVIEWED || null;
 
 export function buildOgImageUrl(siteUrl = SITE_URL) {
   return `${siteUrl}/og-image.jpg`;
@@ -63,7 +61,7 @@ function resolveMedicalLastReviewed(
     return lastReviewed;
   }
 
-  return pageGovernance[path]?.lastReviewed ?? MEDICAL_LAST_REVIEWED;
+  return pageGovernance[path]?.lastReviewed ?? null;
 }
 
 export function buildMedicalPageSchemaData({

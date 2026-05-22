@@ -1,8 +1,11 @@
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -46,39 +49,15 @@ export default function Impressum() {
 
       <EditorialLayout width="narrow">
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Impressum
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Impressum</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Verantwortung und <em>rechtliche Hinweise</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Wer hinter diesem Informationsangebot steht, wie Sie die Fachstelle
             erreichen und welche rechtlichen Hinweise für Inhalte, Links und
             Materialien gelten.
-          </p>
+          </Lede>
         </header>
 
         <ContentSection

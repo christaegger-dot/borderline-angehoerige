@@ -1,9 +1,13 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
+  EditorialBody,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { AufgangIllustration } from "@/components/illustrations";
@@ -125,56 +129,24 @@ export default function Genesung() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Genesung
-          </p>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1}>
             Genesung ist <em>möglich</em> — und sieht selten geradlinig aus.
-          </h1>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="max-w-[30em]">
             Hoffnung ist bei Borderline berechtigt – und gleichzeitig verläuft
             Entwicklung selten glatt oder vorhersehbar. Für Angehörige ist
             beides wichtig: Zuversicht und eine realistische Sicht auf Zeit.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 8 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
             <LastVerifiedBadge path="/genesung" className="mt-3" />
           </div>
         </EditorialSection.Body>
@@ -206,30 +178,10 @@ export default function Genesung() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Überblick</EyebrowLabel>
+          <DisplayHeading level={2}>
             Was auf dieser Seite besonders wichtig ist
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite übersetzt Prognose und Langzeitverlauf in eine
@@ -305,30 +257,8 @@ export default function Genesung() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Forschung
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Was die Forschung zeigt
-          </h2>
+          <EyebrowLabel>Forschung</EyebrowLabel>
+          <DisplayHeading level={2}>Was die Forschung zeigt</DisplayHeading>
           <EditorialProse>
             <p>
               Langzeitstudien sprechen klar gegen das alte Bild einer
@@ -706,7 +636,10 @@ export default function Genesung() {
                 tritt selten nur eine Diagnose auf — Depression und andere
                 Komorbiditäten beeinflussen den Verlauf wesentlich. Mehr dazu
                 auf der Seite{" "}
-                <Link href="/begleiterkrankungen" className="editorial-link">
+                <Link
+                  href="/verstehen/begleiterkrankungen"
+                  className="editorial-link"
+                >
                   Begleiterkrankungen
                 </Link>
                 .
@@ -736,43 +669,15 @@ export default function Genesung() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Materialien
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-            id="infografiken"
-          >
+          <EyebrowLabel>Materialien</EyebrowLabel>
+          <DisplayHeading level={2} id="infografiken">
             Materialien & Infografiken
-          </h2>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <EditorialBody className="max-w-[36em]">
             Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der
             Rolle von Angehörigen. Wenn verfügbar, führt «Textversion lesen» zur
             Web-Version. «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -780,7 +685,7 @@ export default function Genesung() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
         aria-label="Materialien & Infografiken — Tile-Liste"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
             {genesungMaterialItems.map(item => {
               const textVersionHref = getHandoutTextVersionHrefBySource(

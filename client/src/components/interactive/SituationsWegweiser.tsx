@@ -1,6 +1,6 @@
 /* Decision tree for acute situations; crisis highlighting remains intentional. */
 import { useCallback, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { kontaktByIdStrict } from "@/data/kontakte";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 
@@ -601,7 +601,7 @@ export default function SituationsWegweiser() {
       {/* ── Frage / Resultat ── */}
       <div ref={resultRef} className="scroll-mt-24 md:scroll-mt-28">
         <AnimatePresence mode="wait">
-          <motion.div
+          <m.div
             key={currentId}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -699,7 +699,7 @@ export default function SituationsWegweiser() {
                 </ol>
               )}
             </div>
-          </motion.div>
+          </m.div>
         </AnimatePresence>
       </div>
 

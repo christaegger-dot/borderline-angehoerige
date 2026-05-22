@@ -1,4 +1,9 @@
-import { EditorialLayout } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialLayout,
+  EyebrowLabel,
+  Lede,
+} from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -26,39 +31,15 @@ export default function Wegweiser() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-12 pt-16 md:pb-16 md:pt-24">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Wegweiser
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Wegweiser</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Situations-<em>Wegweiser</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             In akuten Momenten ist es schwer, klar zu denken. Dieser Wegweiser
             führt Sie Schritt für Schritt – wählen Sie einfach die Situation,
             die am ehesten zutrifft.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{

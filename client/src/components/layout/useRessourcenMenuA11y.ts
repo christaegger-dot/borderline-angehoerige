@@ -125,7 +125,7 @@ export function useRessourcenMenuA11y({
   const triggerA11yProps = {
     "aria-expanded": isOpen,
     "aria-haspopup": "menu",
-    "aria-controls": menuId,
+    "aria-controls": isOpen ? menuId : undefined,
   } as const;
 
   const menuA11yProps = {

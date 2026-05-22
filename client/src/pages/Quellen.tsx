@@ -1,7 +1,10 @@
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import ReviewBadge from "@/components/ReviewBadge";
@@ -398,15 +401,6 @@ function entryAnchor(eintrag: QuelleEintrag): string {
 }
 
 export default function Quellen() {
-  const categoryHeadingStyle = {
-    fontFamily: "var(--font-display)",
-    fontSize: "var(--text-2xl)",
-    fontWeight: "var(--weight-display)",
-    color: "var(--fg-primary)",
-    letterSpacing: "var(--tracking-tight)",
-    lineHeight: "var(--lh-snug)",
-  };
-
   const citationStyle = {
     fontSize: "var(--text-md)",
     lineHeight: "var(--lh-relaxed)",
@@ -435,39 +429,15 @@ export default function Quellen() {
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-16 pt-16 md:pb-24 md:pt-24">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Quellen &amp; Literatur
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Quellen &amp; Literatur</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Quellen &amp; <em>Literatur</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Diese Website basiert auf anerkannter Fachliteratur und
             evidenzbasierten Methoden. Hier finden Sie alle Quellen, geordnet
             nach Bereich.
-          </p>
+          </Lede>
           <ReviewBadge path="/quellen" />
           <p
             className="mt-4"
@@ -487,7 +457,9 @@ export default function Quellen() {
         <div className="space-y-16">
           {quellen.map(gruppe => (
             <section key={gruppe.kategorie} className="space-y-8">
-              <h2 style={categoryHeadingStyle}>{gruppe.kategorie}</h2>
+              <DisplayHeading level={2} spacing="compact">
+                {gruppe.kategorie}
+              </DisplayHeading>
               <ul className="space-y-8">
                 {gruppe.eintraege.map(q => (
                   <li

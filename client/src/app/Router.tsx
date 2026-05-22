@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Route, Switch, Redirect, useLocation } from "wouter";
 import { routes } from "@/app/routes";
 import NotFound from "@/pages/NotFound";
@@ -17,6 +17,21 @@ function PageLoader({ location }: { location: string }) {
       </div>
     </div>
   );
+}
+
+// Innerhalb der Suspense gerendert - useEffect feuert erst nach erfolgreichem
+// Commit der ersten echten Route, NICHT waehrend der Suspense-Fallback noch
+// laeuft. Verhindert leeren Zustand zwischen Prerender-Shell-Removal und
+// Page-Mount auf langsamen Verbindungen. Idempotent gegen Re-Suspense bei
+// spaeteren Navigationen.
+function AppReady() {
+  useEffect(() => {
+    if (document.body.dataset.appReady === "true") return;
+    document.body.dataset.appReady = "true";
+    window.dispatchEvent(new Event("app-ready"));
+    document.getElementById("route-prerender")?.remove();
+  }, []);
+  return null;
 }
 
 export default function Router() {
@@ -57,6 +72,7 @@ export default function Router() {
   return (
     <Suspense fallback={<PageLoader location={location} />}>
       {styledRouteContent}
+      <AppReady />
     </Suspense>
   );
 }

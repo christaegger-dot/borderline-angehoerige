@@ -6,7 +6,7 @@
  * Kein Bild – reine React/Tailwind-Komponente.
  */
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { AlertTriangle, ChevronDown } from "lucide-react";
 
 interface AmpelStufe {
@@ -193,7 +193,7 @@ export default function KrisenampelVisualisierung() {
               {/* Detail-Panel */}
               <AnimatePresence>
                 {isAktiv && (
-                  <motion.div
+                  <m.div
                     key="detail"
                     initial={{ opacity: 0, height: 0, marginTop: 0 }}
                     animate={{ opacity: 1, height: "auto", marginTop: 8 }}
@@ -242,7 +242,7 @@ export default function KrisenampelVisualisierung() {
                         </button>
                       )}
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
             </div>

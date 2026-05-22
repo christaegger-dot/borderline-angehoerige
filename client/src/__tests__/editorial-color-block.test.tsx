@@ -9,7 +9,7 @@ import { EditorialColorBlock } from "@/components/editorial/EditorialColorBlock"
  * Verhalten leben jetzt in editorial-section.test.tsx.
  */
 describe("EditorialColorBlock", () => {
-  it("applies sage-wash background (#eef0ea)", () => {
+  it("applies sage-wash background (#dde3d4)", () => {
     const { container } = render(
       <EditorialColorBlock variant="sage-wash" title="Test">
         <p>Body</p>
@@ -17,11 +17,11 @@ describe("EditorialColorBlock", () => {
     );
 
     const section = container.querySelector("section.editorial-color-block");
-    expect(section?.getAttribute("style")).toContain("rgb(238, 240, 234)");
+    expect(section?.getAttribute("style")).toContain("rgb(221, 227, 212)");
     expect(section?.getAttribute("data-variant")).toBe("sage-wash");
   });
 
-  it("applies cream-deep background (#f3eee3)", () => {
+  it("applies cream-deep background (#ebe2cf)", () => {
     const { container } = render(
       <EditorialColorBlock variant="cream-deep" title="Test">
         <p>Body</p>
@@ -29,7 +29,7 @@ describe("EditorialColorBlock", () => {
     );
 
     const section = container.querySelector("section.editorial-color-block");
-    expect(section?.getAttribute("style")).toContain("rgb(243, 238, 227)");
+    expect(section?.getAttribute("style")).toContain("rgb(235, 226, 207)");
     expect(section?.getAttribute("data-variant")).toBe("cream-deep");
   });
 

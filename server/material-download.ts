@@ -166,12 +166,33 @@ function createTextResponse(body: string, status: number) {
   return new Response(body, { status, headers });
 }
 
-function resolveLocalPdfPath(sourceUrl: string) {
+/**
+ * Prueft, ob absolutePath echt innerhalb publicRoot liegt (nicht nur per
+ * String-Prefix). path.relative() liefert ".." oder absoluten Pfad, wenn
+ * der Pfad ausserhalb landet - z.B. /x/public2/foo.pdf relativ zu
+ * /x/public ergibt "../public2/foo.pdf" und wird damit korrekt blockiert.
+ *
+ * Sicherheits-Kern: ohne diesen Check passierte /x/public2/foo.pdf den
+ * frueher genutzten absolutePath.startsWith(publicRoot)-Check, weil
+ * "public2" als String mit "public" beginnt.
+ */
+export function isPathInsidePublicRoot(
+  publicRoot: string,
+  absolutePath: string
+): boolean {
+  const relativeFromRoot = path.relative(publicRoot, absolutePath);
+  if (relativeFromRoot === "") return true;
+  if (relativeFromRoot.startsWith("..")) return false;
+  if (path.isAbsolute(relativeFromRoot)) return false;
+  return true;
+}
+
+export function resolveLocalPdfPath(sourceUrl: string) {
   const relativePath = sourceUrl.replace(/^\/+/, "");
 
   for (const publicRoot of LOCAL_PUBLIC_ROOTS) {
     const absolutePath = path.resolve(publicRoot, relativePath);
-    if (!absolutePath.startsWith(publicRoot)) {
+    if (!isPathInsidePublicRoot(publicRoot, absolutePath)) {
       continue;
     }
 

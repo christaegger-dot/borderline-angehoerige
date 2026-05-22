@@ -1,9 +1,13 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
+  EditorialBody,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { SchaleIllustration } from "@/components/illustrations";
@@ -76,56 +80,24 @@ export default function Selbstfuersorge() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Selbstfürsorge
-          </p>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1}>
             Selbstfürsorge für <em>Angehörige</em> — was trägt, wenn die
             Belastung bleibt.
-          </h1>
-          <p
-            className="max-w-[30em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="max-w-[30em]">
             Wer dauerhaft mit Krisen und Loyalitätskonflikten lebt, braucht
             eigene Regeneration – nicht als Luxus, sondern als Grundlage.
-          </p>
+          </Lede>
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <p
-              className="text-xs uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "var(--tracking-caps)",
-                fontWeight: 500,
-              }}
-            >
+            <EyebrowLabel spacing="compact">
               Vollständig ca. 12 Min · Auch abschnittweise lesbar
-            </p>
+            </EyebrowLabel>
           </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
@@ -157,43 +129,15 @@ export default function Selbstfuersorge() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Akute Belastung
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Akute Belastung</EyebrowLabel>
+          <DisplayHeading level={2}>
             Was Sie sich jetzt schenken können
-          </h2>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </DisplayHeading>
+          <EditorialBody className="max-w-[40em] mb-8">
             Wenn Sie die Seite gerade in akuter Erschöpfung lesen, ist eine
             kurze Sofort-Übung oft hilfreicher als ein Konzept. Drei
             Mini-Massnahmen, jederzeit anwendbar:
-          </p>
+          </EditorialBody>
           <ul className="space-y-5">
             <li>
               <h3
@@ -327,30 +271,10 @@ export default function Selbstfuersorge() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Überblick
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Überblick</EyebrowLabel>
+          <DisplayHeading level={2}>
             Was auf dieser Seite besonders trägt
-          </h2>
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Diese Seite versteht Selbstfürsorge nicht als Extra für gute Tage,

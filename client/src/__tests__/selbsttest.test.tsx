@@ -3,14 +3,22 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import Selbsttest from "@/components/Selbsttest";
 
-vi.mock("framer-motion", () => ({
-  AnimatePresence: ({ children }: { children: ReactNode }) => children,
-  motion: {
+vi.mock("framer-motion", () => {
+  const motion = {
     div: ({ children, ...props }: ComponentPropsWithoutRef<"div">) => (
       <div {...props}>{children}</div>
     ),
-  },
-}));
+  };
+  const passthrough = ({ children }: { children: ReactNode }) => children;
+  return {
+    motion,
+    m: motion,
+    AnimatePresence: passthrough,
+    LazyMotion: passthrough,
+    MotionConfig: passthrough,
+    domAnimation: {},
+  };
+});
 
 describe("Selbsttest", () => {
   afterEach(() => {
@@ -148,6 +156,6 @@ describe("Selbsttest", () => {
     ).toHaveAttribute("href", "/soforthilfe");
     expect(
       screen.getByRole("link", { name: /Diagnostik einordnen/i })
-    ).toHaveAttribute("href", "/diagnostik");
+    ).toHaveAttribute("href", "/verstehen/diagnostik");
   });
 });

@@ -1,10 +1,13 @@
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
@@ -120,52 +123,28 @@ export default function Diagnostik() {
       <SEO
         title="Diagnostik"
         description="Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
-        path="/diagnostik"
+        path="/verstehen/diagnostik"
       />
       <MedicalPageSchema
         title="Diagnostik"
         description="Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
-        path="/diagnostik"
+        path="/verstehen/diagnostik"
       />
       <TableOfContents />
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Diagnostik
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Diagnostik</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Wie eine <em>Borderline-Diagnose</em> entsteht
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Was eine Diagnose bedeutet, wer sie stellen darf, wie sie abläuft —
             und was sie für Sie als Angehörige verändert. Nicht als Anleitung,
             jemanden zur Diagnose zu drängen, sondern als Orientierung in einer
             Phase, in der vieles unklar ist.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{
@@ -175,7 +154,7 @@ export default function Diagnostik() {
           >
             Vollständig ca. 10 Min · Auch abschnittweise lesbar.
           </p>
-          <ReviewBadge path="/diagnostik" />
+          <ReviewBadge path="/verstehen/diagnostik" />
         </header>
 
         {/* ── Intro / Überblick ── */}
@@ -370,7 +349,10 @@ export default function Diagnostik() {
               unterschiedliche Fragen — manche Erkrankungen wie PTBS werden im
               Diagnostik-Prozess geprüft und können auch parallel bestehen. Mehr
               dazu auf der Seite{" "}
-              <Link href="/begleiterkrankungen" className="editorial-link">
+              <Link
+                href="/verstehen/begleiterkrankungen"
+                className="editorial-link"
+              >
                 Begleiterkrankungen
               </Link>
               .

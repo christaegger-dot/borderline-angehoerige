@@ -1,4 +1,9 @@
-import { EditorialSection } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialSection,
+  EyebrowLabel,
+  Lede,
+} from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import MaterialienLibrarySection from "@/sections/MaterialienLibrarySection";
@@ -27,43 +32,18 @@ export default function Materialien() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel className="mb-8" spacing="compact">
             Materialien
-          </p>
-          <h1
-            className="font-display"
-            style={{
-              fontSize: "var(--text-hero)",
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          </EyebrowLabel>
+          <DisplayHeading level={1}>
             Materialien für <em>Angehörige</em>
-          </h1>
-          <p
-            className="max-w-[40em]"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="max-w-[40em]">
             Hier finden Sie ausgewählte Handouts, Infografiken und
             Orientierungshilfen für belastende, unklare oder akute Situationen.
             Die Sammlung ist bewusst kuratiert: lieber wenige, wirklich
             hilfreiche Ressourcen als ein unübersichtliches Archiv.
-          </p>
+          </Lede>
         </EditorialSection.Body>
       </EditorialSection>
 

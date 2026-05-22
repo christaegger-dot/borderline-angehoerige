@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 interface ContentSectionProps {
@@ -15,6 +15,14 @@ interface ContentSectionProps {
   preview?: React.ReactNode;
   /** Kompatibilitäts-Prop für bestehende Callsites; nur editorial wird unterstützt. */
   variant?: "editorial";
+}
+
+function decodeUriComponentSafely(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
 }
 
 /**
@@ -53,7 +61,7 @@ export default function ContentSection({
   const openFromHash = useCallback(() => {
     if (!id) return;
 
-    const hashTarget = decodeURIComponent(
+    const hashTarget = decodeUriComponentSafely(
       window.location.hash.replace(/^#/, "")
     );
     if (hashTarget !== id) return;
@@ -180,7 +188,7 @@ export default function ContentSection({
 
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -190,7 +198,7 @@ export default function ContentSection({
             <div id={id ? `section-content-${id}` : undefined} className="pb-6">
               {children}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

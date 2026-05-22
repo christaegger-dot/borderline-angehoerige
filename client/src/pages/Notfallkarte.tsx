@@ -1,9 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
@@ -131,7 +134,7 @@ function deleteStoredData(): boolean {
 const labelStyle = {
   fontSize: "var(--text-xs)",
   letterSpacing: "var(--tracking-caps)",
-  color: "var(--fg-tertiary)",
+  color: "var(--fg-secondary)",
   fontWeight: 500,
 } as const;
 
@@ -161,7 +164,7 @@ function EmergencyRow({ kontakt }: { kontakt: Kontakt }) {
         {kontakt.hinweis && (
           <span
             className="block text-xs leading-tight"
-            style={{ color: "var(--fg-tertiary)" }}
+            style={{ color: "var(--fg-secondary)" }}
           >
             {kontakt.hinweis}
           </span>
@@ -266,7 +269,7 @@ function PersonalContactRow({
         type="button"
         onClick={onRemove}
         className="mt-1.5 px-2 py-1 text-xs transition-colors print:hidden"
-        style={{ color: "var(--fg-tertiary)" }}
+        style={{ color: "var(--fg-secondary)" }}
         aria-label={`${contact.name || "Kontakt"} entfernen`}
       >
         entfernen
@@ -280,17 +283,35 @@ export default function Notfallkarte() {
   const [storageError, setStorageError] = useState(false);
   const [announcement, setAnnouncement] = useState("");
   const skipNextSaveRef = useRef(false);
+  const printIntervalRef = useRef<number | null>(null);
+  const printTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!isStorageAvailable()) setStorageError(true);
   }, []);
+
+  useEffect(
+    () => () => {
+      if (printIntervalRef.current !== null) {
+        window.clearInterval(printIntervalRef.current);
+      }
+      if (printTimeoutRef.current !== null) {
+        window.clearTimeout(printTimeoutRef.current);
+      }
+    },
+    []
+  );
   useEffect(() => {
     if (skipNextSaveRef.current) {
       skipNextSaveRef.current = false;
       return;
     }
 
-    if (!saveData(data)) setStorageError(true);
+    const timeoutId = window.setTimeout(() => {
+      if (!saveData(data)) setStorageError(true);
+    }, 500);
+
+    return () => window.clearTimeout(timeoutId);
   }, [data]);
 
   const handleDeleteData = useCallback(() => {
@@ -330,14 +351,19 @@ export default function Notfallkarte() {
       data,
     };
     let attempts = 0;
-    let intervalId: number | null = null;
 
     const stopSending = () => {
-      if (intervalId !== null) {
-        window.clearInterval(intervalId);
-        intervalId = null;
+      if (printIntervalRef.current !== null) {
+        window.clearInterval(printIntervalRef.current);
+        printIntervalRef.current = null;
+      }
+      if (printTimeoutRef.current !== null) {
+        window.clearTimeout(printTimeoutRef.current);
+        printTimeoutRef.current = null;
       }
     };
+
+    stopSending();
 
     const sendPayload = () => {
       try {
@@ -353,8 +379,8 @@ export default function Notfallkarte() {
     };
 
     sendPayload();
-    intervalId = window.setInterval(sendPayload, 150);
-    window.setTimeout(stopSending, 1800);
+    printIntervalRef.current = window.setInterval(sendPayload, 150);
+    printTimeoutRef.current = window.setTimeout(stopSending, 1800);
   }, [data]);
 
   const addContact = useCallback(() => {
@@ -397,18 +423,25 @@ export default function Notfallkarte() {
     setAnnouncement("Kontakt entfernt");
   }, []);
   const addStrategy = useCallback(() => {
-    setData(prev =>
-      prev.calmingStrategies.length >= MAX_STRATEGIES
-        ? prev
-        : {
-            ...prev,
-            calmingStrategies: [
-              ...prev.calmingStrategies,
-              { id: createId(), text: "" },
-            ],
-          }
+    let added = false;
+
+    setData(prev => {
+      if (prev.calmingStrategies.length >= MAX_STRATEGIES) {
+        return prev;
+      }
+
+      added = true;
+      return {
+        ...prev,
+        calmingStrategies: [
+          ...prev.calmingStrategies,
+          { id: createId(), text: "" },
+        ],
+      };
+    });
+    setAnnouncement(
+      added ? "Strategie hinzugefügt" : "Maximal vier Strategien sind möglich."
     );
-    setAnnouncement("Strategie hinzugefügt");
   }, []);
   const updateStrategy = useCallback(
     (id: string, text: string) =>
@@ -476,45 +509,21 @@ export default function Notfallkarte() {
       )}
       <EditorialLayout width="narrow">
         <header className="pb-12 pt-16 md:pb-16 md:pt-24 print:hidden">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            Notfallkarte
-          </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <EyebrowLabel spacing="compact">Notfallkarte</EyebrowLabel>
+          <DisplayHeading level={1} size="page">
             Persönliche <em>Notfallkarte</em>
-          </h1>
-          <p
-            className="mt-6"
-            style={{
-              fontSize: "var(--text-lg)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          </DisplayHeading>
+          <Lede className="mt-6">
             Die wichtigsten Nummern und Ihre persönlichen Strategien – alles auf
             einen Blick. Zum Ausdrucken, als PDF speichern oder jederzeit hier
             abrufen.
-          </p>
+          </Lede>
           <p
             className="mt-4"
             style={{
               fontSize: "var(--text-sm)",
               lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-tertiary)",
+              color: "var(--fg-secondary)",
             }}
           >
             Sofort Hilfe brauchen?{" "}
@@ -706,7 +715,7 @@ export default function Notfallkarte() {
                     type="button"
                     onClick={() => removeStrategy(s.id)}
                     className="px-2 py-1 text-xs transition-colors print:hidden"
-                    style={{ color: "var(--fg-tertiary)" }}
+                    style={{ color: "var(--fg-secondary)" }}
                     aria-label="Strategie entfernen"
                   >
                     entfernen

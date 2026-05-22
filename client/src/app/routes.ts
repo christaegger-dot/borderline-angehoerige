@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import type { RouteComponentProps } from "wouter";
+import { APP_REDIRECTS } from "@shared/redirects";
 
 export interface AppRoute {
   path: string;
@@ -47,13 +48,16 @@ const Barrierefreiheit = lazy(() => import("@/pages/Barrierefreiheit"));
 export const routes: AppRoute[] = [
   { path: "/", component: Home },
   { path: "/verstehen", component: Verstehen, requiresMotion: true },
-  { path: "/diagnostik", component: Diagnostik, requiresMotion: true },
   {
-    path: "/begleiterkrankungen",
+    path: "/verstehen/diagnostik",
+    component: Diagnostik,
+    requiresMotion: true,
+  },
+  {
+    path: "/verstehen/begleiterkrankungen",
     component: Begleiterkrankungen,
     requiresMotion: true,
   },
-  { path: "/unterstuetzen", redirectTo: "/unterstuetzen/uebersicht" },
   {
     path: "/unterstuetzen/uebersicht",
     component: UnterstuetzenUebersicht,
@@ -88,17 +92,12 @@ export const routes: AppRoute[] = [
   { path: "/datenschutz", component: Datenschutz, requiresMotion: true },
   { path: "/genesung", component: Genesung, requiresMotion: true },
   { path: "/beratung", component: Selbsthilfegruppen, requiresMotion: true },
-  { path: "/selbsthilfegruppen", redirectTo: "/beratung" },
   { path: "/feedback", component: Feedback, requiresMotion: true },
   { path: "/glossar", component: Glossar, requiresMotion: true },
   {
     path: "/buchempfehlungen",
     component: Buchempfehlungen,
     requiresMotion: true,
-  },
-  {
-    path: "/therapieangebote",
-    redirectTo: "/unterstuetzen/therapie#therapieangebote",
   },
   { path: "/faq", component: FAQ, requiresMotion: true },
   { path: "/ueber-uns", component: UeberUns, requiresMotion: true },
@@ -112,4 +111,6 @@ export const routes: AppRoute[] = [
     component: Barrierefreiheit,
     requiresMotion: true,
   },
+  // Redirects: Single source of truth in shared/redirects.ts.
+  ...APP_REDIRECTS.map(r => ({ path: r.from, redirectTo: r.to })),
 ];

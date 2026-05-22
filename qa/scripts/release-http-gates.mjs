@@ -12,7 +12,6 @@ const REPORT_NAME = "release-http-gates.json";
 const MARKDOWN_NAME = "release-http-gates.md";
 const IMAGE_PATH_RE = /\.(?:avif|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/i;
 const MIN_PDF_BYTES = 1024;
-
 const PAGE_CASES = ["/notfallkarte", "/notfallkarte/erstellen"];
 const HEADER_CASES = [
   {

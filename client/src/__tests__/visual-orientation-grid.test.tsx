@@ -36,13 +36,13 @@ describe("VisualOrientationGrid", () => {
     });
   });
 
-  it("uses thumbnail URLs (not full-resolution PNGs)", () => {
+  it("uses thumbnail URLs (not full-resolution images)", () => {
     homeFeaturedInfografiken.forEach(tile => {
-      // Thumbnails leben unter /infografiken/extras/thumbnails/, full PNGs unter /infografiken/
+      // Thumbnails leben unter /infografiken/extras/thumbnails/, full Bilder unter /infografiken/
       expect(tile.thumbnailUrl).toMatch(
         /^\/infografiken\/extras\/thumbnails\//
       );
-      expect(tile.thumbnailUrl).toMatch(/\.png$/);
+      expect(tile.thumbnailUrl).toMatch(/\.webp$/);
     });
   });
 

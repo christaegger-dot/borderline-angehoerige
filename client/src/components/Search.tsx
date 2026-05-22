@@ -11,7 +11,7 @@ import "./search.css";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { Search as SearchIcon, X, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import {
   loadNormalizedSearchIndex,
   type NormalizedSearchEntry,
@@ -24,8 +24,10 @@ interface SearchProps {
   onClose: () => void;
 }
 
+import { normalizeQuery } from "@/lib/searchNormalize";
+
 export function normalizeSearchQuery(query: string) {
-  return query.trim().toLowerCase().replace(/\s+/g, " ");
+  return normalizeQuery(query);
 }
 
 export function getSearchTerms(query: string) {
@@ -135,6 +137,13 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
+  // Query zurücksetzen wenn Suche geschlossen wird
+  useEffect(() => {
+    if (!isOpen) {
+      setQuery("");
+    }
+  }, [isOpen]);
+
   // Body-Scroll-Lock: Verhindert Hintergrund-Scrollen auf iOS/Safari
   useScrollLock(isOpen);
 
@@ -152,32 +161,23 @@ export default function Search({ isOpen, onClose }: SearchProps) {
     }
 
     debounceTimeoutRef.current = setTimeout(() => {
-      const matches = searchIndex
-        .filter(({ searchText }) =>
-          searchTerms.every(term => searchText.includes(term))
-        )
-        .map(({ item }) => item);
+      const matches = searchIndex.filter(({ searchText }) =>
+        searchTerms.every(term => searchText.includes(term))
+      );
 
-      // Sort by relevance (title matches first)
+      // Sort by relevance: title-match first. Vergleich gegen normalizedTitle,
+      // damit Translit-Queries ("zuerich") gegen normalisierten Titel
+      // ("zuerich" aus "Zürich") matchen.
       matches.sort((a, b) => {
-        const aTitle = a.title.toLowerCase();
-        const bTitle = b.title.toLowerCase();
-
-        if (
-          aTitle.includes(normalizedQuery) &&
-          !bTitle.includes(normalizedQuery)
-        )
-          return -1;
-        if (
-          !aTitle.includes(normalizedQuery) &&
-          bTitle.includes(normalizedQuery)
-        )
-          return 1;
+        const aMatch = a.normalizedTitle.includes(normalizedQuery);
+        const bMatch = b.normalizedTitle.includes(normalizedQuery);
+        if (aMatch && !bMatch) return -1;
+        if (!aMatch && bMatch) return 1;
         return 0;
       });
 
       startTransition(() => {
-        setResults(matches.slice(0, 8));
+        setResults(matches.slice(0, 8).map(({ item }) => item));
         setActiveIndex(-1);
       });
     }, 150);
@@ -246,17 +246,17 @@ export default function Search({ isOpen, onClose }: SearchProps) {
       {isOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[60]"
             onClick={onClose}
           />
 
           {/* Search Modal */}
-          <motion.div
+          <m.div
             ref={dialogRef}
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -265,7 +265,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             role="dialog"
             aria-modal="true"
             aria-label="Suche"
-            className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 px-4"
+            className="fixed top-[10%] left-1/2 -translate-x-1/2 w-full max-w-2xl z-[60] px-4"
           >
             <div className="rounded-2xl border border-border/70 bg-[color:var(--bg-elevated)] shadow-[0_22px_48px_-34px_rgba(15,23,42,0.28)] overflow-hidden">
               {/* Search Input */}
@@ -452,7 +452,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                 )}
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

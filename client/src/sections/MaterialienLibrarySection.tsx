@@ -1,7 +1,12 @@
 import { useMemo, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "wouter";
-import { EditorialSection } from "@/components/editorial";
+import {
+  DisplayHeading,
+  EditorialBody,
+  EditorialSection,
+  EyebrowLabel,
+} from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import {
@@ -57,7 +62,9 @@ function MaterialEntry({
   item: MaterialItem;
   onPreview: (image: string, title: string) => void;
 }) {
-  const previewSrc = item.isHtml ? (item.previewUrl ?? item.url) : item.url;
+  const previewSrc = item.isHtml
+    ? (item.previewUrl ?? item.url)
+    : (item.thumbnailUrl ?? item.url);
   const pdfSource = item.pdfUrl ?? item.downloadUrl;
   const openHref = item.isHtml
     ? (item.downloadUrl ?? item.url)
@@ -216,30 +223,8 @@ export default function MaterialienLibrarySection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Schneller Einstieg
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Was hilft gerade jetzt?
-          </h2>
+          <EyebrowLabel>Schneller Einstieg</EyebrowLabel>
+          <DisplayHeading level={2}>Was hilft gerade jetzt?</DisplayHeading>
           <ul className="space-y-6">
             {quickStarts.map(item => (
               <li key={item.id} className="space-y-2">
@@ -283,42 +268,13 @@ export default function MaterialienLibrarySection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Bibliothek
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            Empfohlene Kernmaterialien
-          </h2>
-          <p
-            className="max-w-[36em]"
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EyebrowLabel>Bibliothek</EyebrowLabel>
+          <DisplayHeading level={2}>Empfohlene Kernmaterialien</DisplayHeading>
+          <EditorialBody className="max-w-[36em]">
             Wenn Sie gerade nicht lange suchen möchten, beginnen Sie mit diesen
             Materialien. Sie decken Krise, Orientierung, Kommunikation, Grenzen
             und Selbstfürsorge ab.
-          </p>
+          </EditorialBody>
           <p className="mt-3" style={{ fontSize: "var(--text-sm)" }}>
             <button
               type="button"
@@ -335,7 +291,7 @@ export default function MaterialienLibrarySection() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-12 md:px-[var(--container-pad-md)] md:pb-16"
         aria-label="Empfohlene Kernmaterialien — Tile-Liste"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
             {coreMaterials.map(item => (
               <MaterialEntry
@@ -371,30 +327,10 @@ export default function MaterialienLibrarySection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-              marginBottom: "var(--space-4)",
-            }}
-          >
-            Bibliothek
-          </p>
-          <h2
-            className="font-display"
-            style={{
-              fontSize: "var(--text-2xl)",
-              lineHeight: "var(--lh-snug)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-              letterSpacing: "var(--tracking-tight)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
+          <EyebrowLabel>Bibliothek</EyebrowLabel>
+          <DisplayHeading level={2}>
             Weitere Materialien nach Kategorie
-          </h2>
+          </DisplayHeading>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -402,7 +338,7 @@ export default function MaterialienLibrarySection() {
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
         aria-label="Materialien nach Kategorie — Filter und Tile-Liste"
       >
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-page">
           <div
             className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
             role="tablist"
@@ -423,10 +359,10 @@ export default function MaterialienLibrarySection() {
                   onClick={() => setActiveCategory(cat.id)}
                 >
                   <span>{cat.label}</span>
-                  <span aria-hidden="true" className="mx-2.5 opacity-50">
+                  <span aria-hidden="true" className="mx-2.5 opacity-90">
                     ·
                   </span>
-                  <span className="opacity-70">{count}</span>
+                  <span>{count}</span>
                 </EditorialPillButton>
               );
             })}
@@ -479,13 +415,7 @@ export default function MaterialienLibrarySection() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <p
-            style={{
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-secondary)",
-            }}
-          >
+          <EditorialBody>
             Wenn Sie gerade eher Orientierung als Downloads brauchen, sind die
             Hauptseiten oft der bessere Einstieg —{" "}
             <Link href="/verstehen" className="editorial-link">
@@ -504,7 +434,7 @@ export default function MaterialienLibrarySection() {
               Selbstfürsorge
             </Link>
             .
-          </p>
+          </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -560,7 +490,7 @@ export default function MaterialienLibrarySection() {
           className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center bg-black/80 p-4"
           onClick={() => setPreviewImage(null)}
         >
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="max-h-[90vh] max-w-4xl overflow-auto"
@@ -577,7 +507,7 @@ export default function MaterialienLibrarySection() {
             <p className="mt-4 text-center text-sm text-white">
               Klicken Sie irgendwo, um zu schliessen
             </p>
-          </motion.div>
+          </m.div>
         </div>
       )}
     </>

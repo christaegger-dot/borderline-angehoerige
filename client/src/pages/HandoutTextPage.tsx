@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import AppLink from "@/components/AppLink";
 import {
+  DisplayHeading,
   EditorialLayout,
   EditorialProse,
   EditorialSectionBlock,
+  EyebrowLabel,
+  Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -102,12 +105,6 @@ export default function HandoutTextPage({
   const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
   const pageKicker = handout?.kicker ?? "Textversion";
 
-  const leadStyle = {
-    fontSize: "var(--text-lg)",
-    lineHeight: "var(--lh-snug)",
-    color: "var(--fg-secondary)",
-  };
-
   const bodyStyle = {
     fontSize: "var(--text-sm)",
     lineHeight: "var(--lh-relaxed)",
@@ -140,33 +137,14 @@ export default function HandoutTextPage({
 
       <EditorialLayout width="wide">
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <p
-            className="text-xs uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              fontWeight: 500,
-            }}
-          >
-            {pageKicker}
-          </p>
+          <EyebrowLabel spacing="compact">{pageKicker}</EyebrowLabel>
           <p className="mt-4" style={metaStyle}>
             {pageTopicLabel} · {pageKind}
           </p>
-          <h1
-            className="mt-8 font-display text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-            style={{
-              lineHeight: "var(--lh-tight)",
-              letterSpacing: "var(--tracking-tight)",
-              color: "var(--fg-primary)",
-              fontWeight: "var(--weight-display)",
-            }}
-          >
+          <DisplayHeading level={1} size="page">
             {pageTitle}
-          </h1>
-          <p className="mt-6" style={leadStyle}>
-            {pageSummary}
-          </p>
+          </DisplayHeading>
+          <Lede className="mt-6">{pageSummary}</Lede>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button

@@ -1,7 +1,7 @@
 /* Interactive self-check with weighted routing for Angehörigen-Orientierung. */
 import { useEffect, useRef, useState } from "react";
 import AppLink from "@/components/AppLink";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 
 interface Question {
@@ -198,7 +198,7 @@ const results: Result[] = [
     title: "Diagnostik einordnen",
     description:
       "Wenn Diagnose, Verdacht oder Ablehnung noch unklar sind, hilft eine ruhige Orientierung: Was spricht wofür, wer klärt ab und wie sprechen Sie darüber, ohne zu drängen?",
-    primaryLink: "/diagnostik",
+    primaryLink: "/verstehen/diagnostik",
     primaryText: "Diagnostik verstehen",
     secondaryLinks: [
       { href: "/verstehen", text: "Borderline verstehen" },
@@ -237,7 +237,10 @@ const results: Result[] = [
     primaryLink: "/verstehen",
     primaryText: "Borderline verstehen",
     secondaryLinks: [
-      { href: "/diagnostik", text: "Wie wird eine Diagnose gestellt?" },
+      {
+        href: "/verstehen/diagnostik",
+        text: "Wie wird eine Diagnose gestellt?",
+      },
       { href: "/unterstuetzen/uebersicht", text: "Unterstützungsstrategien" },
       { href: "/kommunizieren", text: "Kommunikation verbessern" },
     ],
@@ -466,15 +469,22 @@ export default function Selbsttest() {
       diagnosisStatus && diagnosisNeedsGuidance.has(diagnosisStatus)
         ? [
             ...result.secondaryLinks,
-            ...(result.primaryLink === "/diagnostik" ||
-            result.secondaryLinks.some(link => link.href === "/diagnostik")
+            ...(result.primaryLink === "/verstehen/diagnostik" ||
+            result.secondaryLinks.some(
+              link => link.href === "/verstehen/diagnostik"
+            )
               ? []
-              : [{ href: "/diagnostik", text: "Diagnostik einordnen" }]),
+              : [
+                  {
+                    href: "/verstehen/diagnostik",
+                    text: "Diagnostik einordnen",
+                  },
+                ]),
           ]
         : result.secondaryLinks;
 
     return (
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
@@ -559,7 +569,7 @@ export default function Selbsttest() {
             ↻ Test wiederholen
           </NavPillButton>
         </div>
-      </motion.div>
+      </m.div>
     );
   }
 
@@ -567,7 +577,11 @@ export default function Selbsttest() {
   const question = questions[currentQuestion];
 
   return (
-    <div role="form" aria-label="Selbsttest" className="space-y-8">
+    <form
+      aria-label="Selbsttest"
+      className="space-y-8"
+      onSubmit={e => e.preventDefault()}
+    >
       {/* Progress-Bar */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
@@ -589,7 +603,7 @@ export default function Selbsttest() {
           aria-label={`Fortschritt: Frage ${currentQuestion + 1} von ${questions.length}`}
           style={{ backgroundColor: "var(--rule-color)" }}
         >
-          <motion.div
+          <m.div
             className="h-full"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
@@ -600,7 +614,7 @@ export default function Selbsttest() {
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.div
+        <m.div
           key={question.id}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -625,8 +639,8 @@ export default function Selbsttest() {
               />
             ))}
           </fieldset>
-        </motion.div>
+        </m.div>
       </AnimatePresence>
-    </div>
+    </form>
   );
 }

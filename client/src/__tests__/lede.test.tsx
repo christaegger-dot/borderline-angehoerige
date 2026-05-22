@@ -12,10 +12,10 @@ describe("Lede", () => {
     expect(el.style.color).toBe("var(--fg-secondary)");
   });
 
-  it("renders hero size with 1.375rem and max-w-[30em]", () => {
+  it("renders hero size with the lead token and max-w-[30em]", () => {
     render(<Lede size="hero">Hero lead</Lede>);
     const el = screen.getByText("Hero lead");
-    expect(el.style.fontSize).toBe("1.375rem");
+    expect(el.style.fontSize).toBe("var(--text-lg)");
     expect(el).toHaveClass("max-w-[30em]");
   });
 

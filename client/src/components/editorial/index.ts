@@ -2,6 +2,7 @@ export { EditorialLayout } from "./EditorialLayout";
 export { EditorialSectionBlock } from "./EditorialSectionBlock";
 export {
   EditorialSection,
+  type EditorialSectionDensity,
   type EditorialSectionVariant,
 } from "./EditorialSection";
 export { type EditorialSectionAsideBackground } from "./EditorialSection.Aside";

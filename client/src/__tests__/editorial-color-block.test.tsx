@@ -9,7 +9,7 @@ import { EditorialColorBlock } from "@/components/editorial/EditorialColorBlock"
  * Verhalten leben jetzt in editorial-section.test.tsx.
  */
 describe("EditorialColorBlock", () => {
-  it("applies sage-wash background (#dde3d4)", () => {
+  it("applies sage-wash background token", () => {
     const { container } = render(
       <EditorialColorBlock variant="sage-wash" title="Test">
         <p>Body</p>
@@ -17,11 +17,11 @@ describe("EditorialColorBlock", () => {
     );
 
     const section = container.querySelector("section.editorial-color-block");
-    expect(section?.getAttribute("style")).toContain("rgb(221, 227, 212)");
+    expect(section?.getAttribute("style")).toContain("var(--bg-sage-wash)");
     expect(section?.getAttribute("data-variant")).toBe("sage-wash");
   });
 
-  it("applies cream-deep background (#ebe2cf)", () => {
+  it("applies cream-deep background token", () => {
     const { container } = render(
       <EditorialColorBlock variant="cream-deep" title="Test">
         <p>Body</p>
@@ -29,8 +29,22 @@ describe("EditorialColorBlock", () => {
     );
 
     const section = container.querySelector("section.editorial-color-block");
-    expect(section?.getAttribute("style")).toContain("rgb(235, 226, 207)");
+    expect(section?.getAttribute("style")).toContain("var(--bg-cream-deep)");
     expect(section?.getAttribute("data-variant")).toBe("cream-deep");
+  });
+
+  it("exposes density rhythm tokens", () => {
+    const { container } = render(
+      <EditorialColorBlock variant="sage-wash" density="compact">
+        <p>Body</p>
+      </EditorialColorBlock>
+    );
+
+    const section = container.querySelector("section.editorial-color-block");
+    expect(section?.getAttribute("data-density")).toBe("compact");
+    expect(section?.getAttribute("style")).toContain(
+      "--section-y-mobile: var(--section-y-compact-mobile)"
+    );
   });
 
   it("attaches the variant-specific content class for descendant CSS overrides", () => {

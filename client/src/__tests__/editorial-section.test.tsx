@@ -122,6 +122,22 @@ describe("EditorialSection compound", () => {
     const section = container.querySelector("section.editorial-section");
     expect(section?.getAttribute("style")).toContain("var(--bg-primary)");
     expect(section?.getAttribute("data-variant")).toBe("cream");
+    expect(section?.getAttribute("data-density")).toBe("normal");
+  });
+
+  it("applies density rhythm tokens", () => {
+    const { container } = render(
+      <EditorialSection variant="cream" density="compact">
+        <EditorialSection.Body>
+          <p>b</p>
+        </EditorialSection.Body>
+      </EditorialSection>
+    );
+    const section = container.querySelector("section.editorial-section");
+    expect(section?.getAttribute("data-density")).toBe("compact");
+    expect(section?.getAttribute("style")).toContain(
+      "--section-y-mobile: var(--section-y-compact-mobile)"
+    );
   });
 
   it("applies the aubergine variant background", () => {

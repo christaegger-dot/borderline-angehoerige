@@ -4,7 +4,7 @@ interface LedeProps {
   /**
    * Lead-Variante:
    * - `default`: `var(--text-lg)`, ohne max-width
-   * - `hero`: `1.375rem` mit `max-w-[30em]` für Hero-Bereiche
+   * - `hero`: `var(--text-lg)` mit `max-w-[30em]` für Hero-Bereiche
    */
   size?: "default" | "hero";
   /** Zusätzliche Klassen, z.B. `mt-6`. */
@@ -20,7 +20,7 @@ export function Lede({ size = "default", className, children }: LedeProps) {
     <p
       className={combinedClass || undefined}
       style={{
-        fontSize: size === "hero" ? "1.375rem" : "var(--text-lg)",
+        fontSize: "var(--text-lg)",
         lineHeight: "var(--lh-snug)",
         color: "var(--fg-secondary)",
       }}

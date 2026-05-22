@@ -82,6 +82,14 @@ test("grenzen key sections match baseline", async ({ page }) => {
 test("materialien filter and first cards match baseline", async ({ page }) => {
   await page.goto("/materialien", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  await page.addStyleTag({
+    content: `
+      body > header,
+      button[aria-label="Nach oben scrollen"] {
+        display: none !important;
+      }
+    `,
+  });
 
   const filterBar = page.locator(
     "div[role='tablist'][aria-label='Filter Materialien nach Kategorie']"

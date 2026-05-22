@@ -515,11 +515,7 @@ async function runFlow(page, profile) {
 
   for (const hashCase of hashCases) {
     await step(`${hashCase.route} öffnet Zielabschnitt`, async () => {
-      await expectHashSectionOpen(
-        page,
-        hashCase.route,
-        hashCase
-      );
+      await expectHashSectionOpen(page, hashCase.route, hashCase);
     });
   }
 

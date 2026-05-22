@@ -152,14 +152,26 @@ async function visit(page, route) {
   await page.waitForLoadState("networkidle");
 }
 
-async function expectHashSectionOpen(page, route, buttonName, contentText) {
+async function expectHashSectionOpen(
+  page,
+  route,
+  { buttonName, headingName, contentText }
+) {
   await visit(page, route);
-  const toggle = page.getByRole("button", { name: buttonName });
-  await toggle.waitFor();
-  await page.waitForFunction(
-    element => element?.getAttribute("aria-expanded") === "true",
-    await toggle.elementHandle()
-  );
+
+  if (buttonName) {
+    const toggle = page.getByRole("button", { name: buttonName });
+    await toggle.waitFor();
+    await page.waitForFunction(
+      element => element?.getAttribute("aria-expanded") === "true",
+      await toggle.elementHandle()
+    );
+  } else if (headingName) {
+    await page.getByRole("heading", { name: headingName }).waitFor();
+  } else {
+    throw new Error("Hash-Case benötigt buttonName oder headingName");
+  }
+
   await page.getByText(contentText).waitFor();
 }
 
@@ -378,8 +390,7 @@ async function runFlow(page, profile) {
       .getByRole("heading", { level: 1, name: /Materialien/i })
       .waitFor();
     await page
-      .locator("button[aria-pressed]")
-      .filter({ hasText: "Verstehen" })
+      .getByRole("tab", { name: /Verstehen/i })
       .first()
       .click();
     await page.locator("article").first().waitFor();
@@ -481,7 +492,7 @@ async function runFlow(page, profile) {
   const hashCases = [
     {
       route: "/unterstuetzen/therapie#therapieangebote",
-      buttonName: "Abschnitt Therapieangebote im Kanton Zürich",
+      headingName: "Therapieangebote im Kanton Zürich",
       contentText: "HYPE Züri",
     },
     {
@@ -507,8 +518,7 @@ async function runFlow(page, profile) {
       await expectHashSectionOpen(
         page,
         hashCase.route,
-        hashCase.buttonName,
-        hashCase.contentText
+        hashCase
       );
     });
   }

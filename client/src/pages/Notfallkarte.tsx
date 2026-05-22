@@ -58,6 +58,17 @@ function createEmptyData(): NotfallkarteData {
   };
 }
 
+function isEmptyData(data: NotfallkarteData): boolean {
+  return (
+    data.personalContacts.length === 0 &&
+    data.notes.trim() === "" &&
+    data.calmingStrategies.length === DEFAULT_STRATEGIES.length &&
+    data.calmingStrategies.every(
+      (strategy, index) => strategy.text === DEFAULT_STRATEGIES[index]?.text
+    )
+  );
+}
+
 function normalizeData(raw: Partial<NotfallkarteData> | null | undefined) {
   const fallback = createEmptyData();
 
@@ -283,12 +294,17 @@ export default function Notfallkarte() {
   const [storageError, setStorageError] = useState(false);
   const [announcement, setAnnouncement] = useState("");
   const skipNextSaveRef = useRef(false);
+  const latestDataRef = useRef(data);
   const printIntervalRef = useRef<number | null>(null);
   const printTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!isStorageAvailable()) setStorageError(true);
   }, []);
+
+  useEffect(() => {
+    latestDataRef.current = data;
+  }, [data]);
 
   useEffect(
     () => () => {
@@ -313,6 +329,28 @@ export default function Notfallkarte() {
 
     return () => window.clearTimeout(timeoutId);
   }, [data]);
+
+  useEffect(() => {
+    const flushPendingData = () => {
+      const currentData = latestDataRef.current;
+
+      if (isEmptyData(currentData)) {
+        return;
+      }
+
+      if (!saveData(currentData)) {
+        setStorageError(true);
+      }
+    };
+
+    window.addEventListener("pagehide", flushPendingData);
+    window.addEventListener("beforeunload", flushPendingData);
+
+    return () => {
+      window.removeEventListener("pagehide", flushPendingData);
+      window.removeEventListener("beforeunload", flushPendingData);
+    };
+  }, []);
 
   const handleDeleteData = useCallback(() => {
     const confirmed = window.confirm(

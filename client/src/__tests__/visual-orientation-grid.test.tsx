@@ -12,6 +12,18 @@ function renderGrid() {
   );
 }
 
+function renderPreviewGrid() {
+  return render(
+    <Router>
+      <VisualOrientationGrid
+        maxItems={4}
+        title="Vier Schlüsselbilder für den Anfang."
+        intro="Kurzer Orientierungstext."
+      />
+    </Router>
+  );
+}
+
 describe("VisualOrientationGrid", () => {
   it("renders exactly 8 tiles in narrative order", () => {
     renderGrid();
@@ -82,6 +94,21 @@ describe("VisualOrientationGrid", () => {
       expect(height).not.toBeNull();
       expect(validHeights.has(height!)).toBe(true);
       expect(img.getAttribute("loading")).toBe("lazy");
+    });
+  });
+
+  it("can render a quieter four-tile Home preview with eager thumbnails", () => {
+    renderPreviewGrid();
+    expect(screen.getAllByRole("listitem")).toHaveLength(4);
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: "Vier Schlüsselbilder für den Anfang.",
+      })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Kurzer Orientierungstext.")).toBeInTheDocument();
+    screen.getAllByRole("img").forEach(img => {
+      expect(img.getAttribute("loading")).toBe("eager");
     });
   });
 

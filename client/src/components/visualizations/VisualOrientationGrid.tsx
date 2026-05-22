@@ -6,9 +6,19 @@ import {
 } from "@/components/editorial";
 import { homeFeaturedInfografiken } from "@/content/homeFeaturedInfografiken";
 
+interface VisualOrientationGridProps {
+  /**
+   * Anzahl sichtbarer Tiles. Default bleibt die volle kuratierte Reihe,
+   * Home kann daraus eine ruhigere Vorschau machen.
+   */
+  maxItems?: number;
+  title?: string;
+  intro?: string;
+}
+
 /**
- * Visuelle Orientierung auf der Home: 8 Infografik-Tiles als narrativer
- * Lese-Pfad (verstehen → begleiten → schützen → sich halten → vertiefen).
+ * Visuelle Orientierung auf der Home: kuratierte Infografik-Tiles als
+ * narrativer Lese-Pfad (verstehen → begleiten → schützen → sich halten).
  *
  * Jede Tile verlinkt zur **dazugehörigen Inhaltsseite**, nicht zu einer
  * isolierten Infografik-Detail-Seite — die Infografik ist Eintritt zur
@@ -23,7 +33,16 @@ import { homeFeaturedInfografiken } from "@/content/homeFeaturedInfografiken";
  *
  * 4 Spalten Desktop (lg+), 2 Spalten Tablet (md), 1 Spalte Mobile.
  */
-export function VisualOrientationGrid() {
+export function VisualOrientationGrid({
+  maxItems,
+  title = "Acht Konzepte, in Lese-Reihenfolge — ein Bild pro Idee.",
+  intro,
+}: VisualOrientationGridProps) {
+  const tiles =
+    typeof maxItems === "number"
+      ? homeFeaturedInfografiken.slice(0, maxItems)
+      : homeFeaturedInfografiken;
+
   return (
     <>
       <EditorialSection variant="cream">
@@ -47,8 +66,20 @@ export function VisualOrientationGrid() {
         <EditorialSection.Body>
           <EyebrowLabel>Visuelle Orientierung</EyebrowLabel>
           <DisplayHeading level={2} className="max-w-[32rem]">
-            Acht Konzepte, in Lese-Reihenfolge — ein Bild pro Idee.
+            {title}
           </DisplayHeading>
+          {intro && (
+            <p
+              className="mt-4"
+              style={{
+                color: "var(--fg-secondary)",
+                fontSize: "var(--text-md)",
+                lineHeight: "var(--lh-relaxed)",
+              }}
+            >
+              {intro}
+            </p>
+          )}
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -58,7 +89,7 @@ export function VisualOrientationGrid() {
       >
         <div className="mx-auto max-w-page">
           <ul className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 md:gap-y-14 lg:grid-cols-4">
-            {homeFeaturedInfografiken.map(tile => (
+            {tiles.map((tile, index) => (
               <li key={tile.id} className="group">
                 <AppLink
                   href={tile.href}
@@ -77,7 +108,11 @@ export function VisualOrientationGrid() {
                       alt={tile.alt}
                       width={600}
                       height={tile.thumbnailHeight}
-                      loading="lazy"
+                      loading={
+                        typeof maxItems === "number" && index < maxItems
+                          ? "eager"
+                          : "lazy"
+                      }
                       decoding="async"
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     />

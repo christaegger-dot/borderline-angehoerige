@@ -59,7 +59,10 @@ export function getParentInfo(
     return { href: "/materialien", label: "Materialien" };
   }
 
-  if (normalizedLocation.startsWith("/unterstuetzen/")) {
+  if (
+    normalizedLocation.startsWith("/unterstuetzen/") &&
+    normalizedLocation !== "/unterstuetzen/uebersicht"
+  ) {
     return { href: "/unterstuetzen/uebersicht", label: "Unterstützen" };
   }
 
@@ -68,6 +71,12 @@ export function getParentInfo(
   }
 
   return null;
+}
+
+export function shouldShowBreadcrumbs(location: string) {
+  const normalizedLocation = normalizeLocation(location);
+  if (normalizedLocation === "/") return false;
+  return getParentInfo(normalizedLocation) !== null;
 }
 
 export function getPageName(location: string) {
@@ -91,7 +100,7 @@ export function Breadcrumbs() {
   const [location] = useLocation();
   const accent = getRouteAccent(location);
 
-  if (location === "/") return null;
+  if (!shouldShowBreadcrumbs(location)) return null;
 
   const pageName = getPageName(location);
   const parent = getParentInfo(location);

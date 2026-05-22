@@ -67,7 +67,7 @@ describe("SiteHeader (HeaderNav)", () => {
     });
   });
 
-  it("renders the Soforthilfe pill with the white live-dot prefix on desktop", () => {
+  it("renders the Soforthilfe pill as a softer alert CTA on desktop", () => {
     const { container } = renderHeader();
     const soforthilfeLinks = Array.from(
       container.querySelectorAll('a[aria-label*="Soforthilfe"]')
@@ -75,11 +75,12 @@ describe("SiteHeader (HeaderNav)", () => {
     // Mindestens ein Soforthilfe-Link (Desktop-Version mit Text)
     expect(soforthilfeLinks.length).toBeGreaterThan(0);
 
-    // Desktop-Version (sm:inline-flex) hat einen weissen Live-Punkt vor dem Text
+    // Desktop-Version bleibt sichtbar, aber als ruhigere Alert-Wash-Pill.
     const desktopSoforthilfe = soforthilfeLinks.find(link =>
-      link.querySelector("span.bg-white\\/85")
+      link.className.includes("bg-alert-wash")
     );
     expect(desktopSoforthilfe).toBeTruthy();
+    expect(desktopSoforthilfe?.className).toContain("text-alert-dark");
   });
 
   it("renders the Brand wordmark with shortened text Borderline · Angehörige", () => {

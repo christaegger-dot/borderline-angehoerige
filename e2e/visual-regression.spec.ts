@@ -84,7 +84,7 @@ test("materialien filter and first cards match baseline", async ({ page }) => {
   await page.evaluate(() => document.fonts.ready);
   await page.addStyleTag({
     content: `
-      body > header,
+      header,
       button[aria-label="Nach oben scrollen"] {
         display: none !important;
       }

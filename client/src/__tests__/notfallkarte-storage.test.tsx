@@ -278,4 +278,34 @@ describe("Notfallkarte storage fallbacks", () => {
       screen.queryByRole("textbox", { name: /name der kontaktperson/i })
     ).not.toBeInTheDocument();
   });
+
+  it("flushes pending changes on pagehide before the debounce completes", async () => {
+    renderPage();
+
+    fireEvent.click(
+      screen.getByRole("button", { name: /kontakt hinzufügen/i })
+    );
+    fireEvent.change(screen.getByLabelText(/name der kontaktperson/i), {
+      target: { value: "Sofort speichern" },
+    });
+    fireEvent.change(screen.getByLabelText(/persönliche notizen/i), {
+      target: { value: "Nicht erst nach 500ms" },
+    });
+
+    window.dispatchEvent(new Event("pagehide"));
+
+    const saved = window.localStorage.getItem(NOTFALLKARTE_STORAGE_KEY);
+    expect(saved).toContain("Sofort speichern");
+    expect(saved).toContain("Nicht erst nach 500ms");
+
+    cleanup();
+    renderPage();
+
+    expect(screen.getByLabelText(/persönliche notizen/i)).toHaveValue(
+      "Nicht erst nach 500ms"
+    );
+    expect(screen.getByLabelText(/name der kontaktperson/i)).toHaveValue(
+      "Sofort speichern"
+    );
+  });
 });

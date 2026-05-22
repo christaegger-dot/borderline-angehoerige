@@ -43,18 +43,6 @@ export default function Layout({ children }: LayoutProps) {
 
       <HeaderNav onSearchOpen={() => setSearchOpen(true)} />
 
-      <div
-        role="region"
-        aria-label="Regionaler Hinweis"
-        className="border-b border-border/50 bg-background"
-      >
-        <div className="container flex flex-wrap items-center gap-x-3 gap-y-1 py-2 text-[13px] text-muted-foreground">
-          <span className="text-foreground/90">Schweiz · Kanton Zürich</span>
-          <span className="hidden sm:inline">•</span>
-          <span>Für andere Regionen bitte lokale Notrufnummern nutzen.</span>
-        </div>
-      </div>
-
       {/* Breadcrumb Navigation */}
       <Breadcrumbs />
 
@@ -131,6 +119,10 @@ export default function Layout({ children }: LayoutProps) {
                 Diese Website ersetzt keine professionelle Beratung oder
                 Therapie. Bei akuten Krisen wenden Sie sich bitte an die
                 Notfallnummern.
+              </p>
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                Schweiz · Kanton Zürich. Für andere Regionen bitte lokale
+                Notrufnummern nutzen.
               </p>
             </div>
           </div>

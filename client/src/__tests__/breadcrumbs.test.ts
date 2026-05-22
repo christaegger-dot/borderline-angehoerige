@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { getPageName, getParentInfo } from "@/components/layout/Breadcrumbs";
+import {
+  getPageName,
+  getParentInfo,
+  shouldShowBreadcrumbs,
+} from "@/components/layout/Breadcrumbs";
 
 describe("Breadcrumb helpers", () => {
   it("keeps explicit labels for known standalone pages", () => {
@@ -28,5 +32,18 @@ describe("Breadcrumb helpers", () => {
       href: "/unterstuetzen/uebersicht",
       label: "Unterstützen",
     });
+  });
+
+  it("does not point the Unterstützen overview breadcrumb back to itself", () => {
+    expect(getParentInfo("/unterstuetzen/uebersicht")).toBeNull();
+  });
+
+  it("shows breadcrumbs only for grouped deep routes", () => {
+    expect(shouldShowBreadcrumbs("/")).toBe(false);
+    expect(shouldShowBreadcrumbs("/grenzen")).toBe(false);
+    expect(shouldShowBreadcrumbs("/materialien")).toBe(false);
+    expect(shouldShowBreadcrumbs("/unterstuetzen/therapie")).toBe(true);
+    expect(shouldShowBreadcrumbs("/verstehen/diagnostik#anbieter")).toBe(true);
+    expect(shouldShowBreadcrumbs("/materialien/text/leuchtturm")).toBe(true);
   });
 });

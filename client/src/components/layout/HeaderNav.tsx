@@ -64,7 +64,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
       style={{ borderColor: "var(--rule-color)" }}
     >
       <div className="container">
-        <div className="flex min-h-14 items-center justify-between gap-3 py-1.5 md:min-h-20 md:gap-4 md:py-3">
+        <div className="flex min-h-14 items-center justify-between gap-3 py-1.5 md:min-h-[68px] md:gap-4 md:py-2">
           <AppLink
             href="/"
             aria-label="Borderline · Hilfe für Angehörige – Startseite"
@@ -148,7 +148,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               asChild
               variant="default"
               size="sm"
-              className="hidden lg:inline-flex h-10 rounded-full bg-alert px-5 text-sm font-semibold text-white shadow-[0_1px_2px_rgba(185,28,28,0.18)] hover:bg-alert/90"
+              className="hidden h-9 rounded-full border border-alert-light/80 bg-alert-wash px-4 text-[13px] font-semibold text-alert-dark shadow-none hover:bg-alert-light/70 lg:inline-flex"
             >
               <AppLink
                 href="/soforthilfe"
@@ -156,7 +156,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               >
                 <span
                   aria-hidden="true"
-                  className="mr-2 inline-block h-2 w-2 rounded-full bg-white/85"
+                  className="mr-2 inline-block h-2 w-2 rounded-full bg-alert"
                 />
                 <span>Soforthilfe</span>
               </AppLink>

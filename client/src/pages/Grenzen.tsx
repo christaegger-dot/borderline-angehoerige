@@ -2,7 +2,6 @@ import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
-  EditorialBody,
   EditorialProse,
   EditorialPullQuote,
   EditorialSection,
@@ -17,10 +16,8 @@ import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
-import { grenzenItems } from "@/content/grenzen";
-import { getHandoutOpenHref } from "@/content/handouts";
-import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 import { kontaktByIdStrict } from "@/data/kontakte";
+import GrenzenMaterialsSection from "@/sections/GrenzenMaterialsSection";
 import { Link } from "wouter";
 
 /** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
@@ -848,99 +845,8 @@ export default function Grenzen() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 8 Materialien ── EditorialSection cream + full-width tile section */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Materialien zum Vertiefen
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EyebrowLabel>Materialien</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Spickzettel und Infografiken zu Grenzen
-          </DisplayHeading>
-          <EditorialBody className="max-w-[36em]">
-            Wenn verfügbar, führt «Textversion lesen» zur Web-Version. «PDF
-            öffnen» öffnet die A4-Druckversion im neuen Tab.
-          </EditorialBody>
-        </EditorialSection.Body>
-      </EditorialSection>
-
-      <section
-        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
-        aria-label="Spickzettel und Infografiken zu Grenzen — Tile-Liste"
-      >
-        <div className="mx-auto max-w-page">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
-            {grenzenItems.map(item => {
-              const textVersionHref = getHandoutTextVersionHrefBySource(
-                item.pdfUrl
-              );
-              const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
-              return (
-                <article
-                  key={item.title}
-                  className="space-y-3 border-t pt-6"
-                  style={{ borderColor: "var(--rule-color)" }}
-                >
-                  <img
-                    src={item.thumbnailUrl ?? item.url}
-                    alt={item.title}
-                    className="aspect-[3/4] w-full rounded-md object-cover object-top"
-                    style={{ backgroundColor: "var(--bg-elevated)" }}
-                    loading="lazy"
-                    width={600}
-                    height={848}
-                    decoding="async"
-                  />
-                  <h3 style={h4Style}>{item.title}</h3>
-                  <div
-                    className="flex flex-wrap gap-x-5 gap-y-1"
-                    style={{ fontSize: "var(--text-sm)" }}
-                  >
-                    {textVersionHref && (
-                      <Link
-                        href={textVersionHref}
-                        className="editorial-link"
-                        aria-label={`Textversion lesen: ${item.title}`}
-                      >
-                        Textversion lesen
-                      </Link>
-                    )}
-                    <a
-                      href={pdfHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="editorial-link"
-                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                    >
-                      PDF öffnen
-                    </a>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-          <p className="mt-12" style={bodyStyle}>
-            <Link href="/materialien" className="editorial-link">
-              Alle Materialien ansehen
-            </Link>
-          </p>
-        </div>
-      </section>
+      {/* ── 8 Materialien ── kuratierte Auswahl statt kompletter Galerie */}
+      <GrenzenMaterialsSection />
 
       {/* ── 9 Weiter-Hinweis ── */}
       <EditorialSection variant="cream">

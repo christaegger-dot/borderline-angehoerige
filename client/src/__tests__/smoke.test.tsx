@@ -861,24 +861,14 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
   });
 
-  it("Grenzen: zeigt Textversionen für Grenzen-Handouts", async () => {
+  it("Grenzen: zeigt kuratierte Textversionen für Grenzen-Handouts", async () => {
     const { default: Grenzen } = await import("@/pages/Grenzen");
     withRouter(<Grenzen />);
     expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Spickzettel Grenzen/i,
+      screen.getByRole("heading", {
+        name: /Drei Materialien für klare Grenzen/i,
       })
-    ).toHaveAttribute("href", "/materialien/text/grenzen-spickzettel");
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Die DEAR-Technik/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/dear");
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Spiegeln statt Aufsaugen/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/spiegeln-statt-aufsaugen");
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Die 4 Arten von Grenzen/i,
@@ -891,29 +881,24 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/grenzen-erkennen");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: L\.M\.K\. \(Lebe Mit Konsequenzen\)/i,
+        name: /Textversion lesen: Spickzettel Grenzen/i,
       })
-    ).toHaveAttribute("href", "/materialien/text/lmk");
+    ).toHaveAttribute("href", "/materialien/text/grenzen-spickzettel");
   });
 
-  it("Kommunizieren: zeigt Textversionen für Kommunizieren-Handouts", async () => {
+  it("Kommunizieren: zeigt kuratierte Textversionen für Kommunizieren-Handouts", async () => {
     const { default: Kommunizieren } = await import("@/pages/Kommunizieren");
     withRouter(<Kommunizieren />);
     expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Wenn Worte treffen/i,
+      screen.getByRole("heading", {
+        name: /Drei Materialien für schwierige Gespräche/i,
       })
-    ).toHaveAttribute("href", "/materialien/text/wenn-worte-treffen");
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Wenn Gespräche kippen: 3 Schritte/i,
       })
     ).toHaveAttribute("href", "/materialien/text/gespraeche-kippen");
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Grenzen setzen, ohne zu eskalieren/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/grenzen-ohne-eskalation");
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Pause statt Streit/i,
@@ -924,16 +909,6 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Zuhören ohne Zustimmen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/zuhoeren-ohne-zustimmen");
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Beispiel-Dialog/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/beispiel-dialog");
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Spickzettel Krisenkommunikation \(A4\)/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/krisenkommunikation");
   });
 
   it("Genesung: zeigt Textversionen für Genesung-Handouts", async () => {
@@ -1022,12 +997,17 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/4-alltags-tipps");
   });
 
-  it("Selbstfürsorge: zeigt Textversionen für Selbstfürsorge-Handouts", async () => {
+  it("Selbstfürsorge: zeigt kuratierte Textversionen für Selbstfürsorge-Handouts", async () => {
     const { default: Selbstfuersorge } =
       await import("@/pages/Selbstfuersorge");
     withRouter(<Selbstfuersorge />);
     // Materialien-Section ist nach Phase-2-Migration kein collapsible
     // ContentSection mehr — Content ist immer sichtbar.
+    expect(
+      screen.getByRole("heading", {
+        name: /Drei Materialien, die Selbstfürsorge greifbar machen/i,
+      })
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Die Sauerstoffmaske/i,
@@ -1043,11 +1023,6 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Ihr Energie-Konto/i,
       })
     ).toHaveAttribute("href", "/materialien/text/energie-konto");
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Erlaubnis-Karte/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/erlaubnis-karte");
   });
 
   it("NotFound: rendert 404-Seite", async () => {

@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
 
 describe("SelbstfuersorgeInfografikenSection", () => {
-  it("shows text version links for Selbstfürsorge-Handouts", () => {
+  it("shows curated text version links for Selbstfürsorge-Handouts", () => {
     render(
       <Router>
         <SelbstfuersorgeInfografikenSection />
@@ -15,10 +15,10 @@ describe("SelbstfuersorgeInfografikenSection", () => {
     // Content ist immer sichtbar. Kein vorheriges fireEvent.click nötig.
 
     expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Radikale Akzeptanz/i,
+      screen.getByRole("heading", {
+        name: /Drei Materialien, die Selbstfürsorge greifbar machen/i,
       })
-    ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Die Sauerstoffmaske/i,
@@ -36,16 +36,11 @@ describe("SelbstfuersorgeInfografikenSection", () => {
     ).toHaveAttribute("href", "/materialien/text/energie-konto");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Erlaubnis-Karte/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/erlaubnis-karte");
-    expect(
-      screen.getByRole("link", {
-        name: /PDF öffnen: Radikale Akzeptanz \(neuer Tab\)/i,
+        name: /PDF öffnen: Die Sauerstoffmaske \(neuer Tab\)/i,
       })
     ).toHaveAttribute(
       "href",
-      "/api/material-download/radikale-akzeptanz?disposition=inline"
+      "/api/material-download/selbstfuersorge-sauerstoffmaske?disposition=inline"
     );
   });
 });

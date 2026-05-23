@@ -101,20 +101,10 @@ function MaterialEntry({
   const openLabel = item.isHtml ? "Öffnen" : "PDF öffnen";
 
   return (
-    <article
-      className="group flex h-full flex-col overflow-hidden rounded-[18px] border p-3 transition-colors"
-      style={{
-        backgroundColor: "var(--bg-elevated)",
-        borderColor: "var(--rule-color)",
-      }}
-    >
+    <article className="material-library-card">
       <button
         type="button"
-        className="block w-full overflow-hidden rounded-[12px] border"
-        style={{
-          backgroundColor: "var(--bg-primary)",
-          borderColor: "var(--rule-color)",
-        }}
+        className="material-library-card__media"
         onClick={() => {
           if (item.isHtml) {
             window.open(openHref, "_blank", "noopener,noreferrer");
@@ -127,7 +117,7 @@ function MaterialEntry({
         <img
           src={previewSrc}
           alt={item.title}
-          className="aspect-[5/4] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.015]"
+          className="material-library-card__image"
           loading={eager ? "eager" : "lazy"}
           width={400}
           height={533}
@@ -135,35 +125,23 @@ function MaterialEntry({
         />
       </button>
 
-      <div className="flex flex-1 flex-col gap-3 px-1 pb-1 pt-3">
-        <p className="uppercase" style={labelStyle}>
+      <div className="material-library-card__content">
+        <p className="material-library-card__kicker">
           {categoryLabel[item.category]}
           <span aria-hidden="true"> · </span>
           {item.kind}
         </p>
 
-        <h3 style={titleStyle}>{item.title}</h3>
-        <p style={bodyStyle}>{item.description}</p>
+        <h3 className="material-library-card__title">{item.title}</h3>
+        <p className="material-library-card__description">{item.description}</p>
         {textVersionPreferred && textVersionHref ? (
-          <p
-            style={{
-              fontSize: "var(--text-xs)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-tertiary)",
-            }}
-          >
+          <p className="material-library-card__note">
             Für bildbasierte PDFs ist die Textversion die empfohlene
             Lesefassung.
           </p>
         ) : null}
 
-        <p
-          className="mt-auto flex flex-wrap gap-x-5 gap-y-1 border-t pt-3"
-          style={{
-            borderColor: "var(--rule-color)",
-            fontSize: "var(--text-sm)",
-          }}
-        >
+        <p className="material-library-card__actions">
           {textVersionHref && (
             <Link
               href={textVersionHref}
@@ -194,13 +172,7 @@ function MaterialEntry({
           )}
         </p>
         {item.verifiedAt && (
-          <p
-            style={{
-              color: "var(--fg-tertiary)",
-              fontSize: "var(--text-xs)",
-              lineHeight: "var(--lh-relaxed)",
-            }}
-          >
+          <p className="material-library-card__verified">
             Geprüft: {item.verifiedAt}
           </p>
         )}
@@ -253,15 +225,15 @@ export default function MaterialienLibrarySection() {
             Wählen Sie nach Lage, nicht nach Vollständigkeit. Eine gute erste
             Ressource reicht oft mehr als zehn geöffnete Tabs.
           </p>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ul
+            className="mt-8 grid divide-y sm:grid-cols-2 sm:gap-x-8 sm:divide-y-0"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
             {quickStarts.map(item => (
               <li
                 key={item.id}
-                className="rounded-[16px] border p-5"
-                style={{
-                  backgroundColor: "var(--bg-elevated)",
-                  borderColor: "var(--rule-color)",
-                }}
+                className="border-t py-5 first:border-t-0 first:pt-0 sm:first:border-t sm:first:pt-5"
+                style={{ borderColor: "var(--rule-color)" }}
               >
                 <p className="uppercase" style={labelStyle}>
                   {categoryLabel[item.id]}
@@ -319,7 +291,7 @@ export default function MaterialienLibrarySection() {
         aria-label="Empfohlene Kernmaterialien — Tile-Liste"
       >
         <div className="mx-auto max-w-page">
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {coreMaterials.map(item => (
               <MaterialEntry
                 key={item.id}

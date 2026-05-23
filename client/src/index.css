@@ -548,24 +548,20 @@
   .topic-materials-grid {
     display: grid;
     gap: var(--space-4);
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .topic-materials-stack {
-    display: grid;
-    gap: var(--space-4);
-  }
-
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     .topic-materials-grid {
-      grid-template-columns: minmax(0, 1.16fr) minmax(19rem, 0.84fr);
-      align-items: stretch;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
   .topic-material-card {
-    display: grid;
+    display: flex;
     min-width: 0;
     overflow: hidden;
+    flex-direction: column;
     border: 1px solid var(--rule-color);
     border-radius: 0.75rem;
     background: var(--bg-elevated);
@@ -574,6 +570,8 @@
   .topic-material-card__media {
     display: block;
     min-width: 0;
+    aspect-ratio: 4 / 3;
+    border-bottom: 1px solid var(--rule-color);
     background: var(--bg-cream-deep);
   }
 
@@ -584,33 +582,12 @@
     padding: var(--space-3);
   }
 
-  .topic-material-card--featured .topic-material-card__media {
-    aspect-ratio: 4 / 3;
-    border-bottom: 1px solid var(--rule-color);
-  }
-
-  .topic-material-card--featured .topic-material-card__media img {
-    padding: var(--space-4);
-  }
-
-  .topic-material-card--compact {
-    grid-template-columns: minmax(9rem, 0.42fr) minmax(0, 1fr);
-  }
-
-  .topic-material-card--compact .topic-material-card__media {
-    min-height: 11rem;
-    border-right: 1px solid var(--rule-color);
-  }
-
   .topic-material-card__content {
     display: flex;
     min-width: 0;
+    flex: 1;
     flex-direction: column;
     padding: var(--space-4);
-  }
-
-  .topic-material-card--compact .topic-material-card__content {
-    padding: var(--space-3);
   }
 
   .topic-material-card__kicker {
@@ -625,15 +602,11 @@
   .topic-material-card__title {
     margin-top: var(--space-2);
     font-family: var(--font-display);
-    font-size: var(--text-xl);
+    font-size: var(--text-md);
     font-weight: var(--weight-display);
     line-height: var(--lh-snug);
     letter-spacing: var(--tracking-tight);
     color: var(--fg-primary);
-  }
-
-  .topic-material-card--compact .topic-material-card__title {
-    font-size: var(--text-md);
   }
 
   .topic-material-card__description,
@@ -661,6 +634,95 @@
   .topic-materials-library-link {
     margin-top: var(--space-5);
     font-size: var(--text-sm);
+  }
+
+  /* Material library cards: same quiet family as curated topic materials,
+     but with actions/download metadata included. */
+  .material-library-card {
+    display: flex;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid var(--rule-color);
+    border-radius: 0.75rem;
+    background: var(--bg-elevated);
+  }
+
+  .material-library-card__media {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--rule-color);
+    background: var(--bg-cream-deep);
+    cursor: pointer;
+  }
+
+  .material-library-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+    padding: var(--space-3);
+  }
+
+  .material-library-card__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .material-library-card__kicker {
+    margin: 0;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--fg-tertiary);
+  }
+
+  .material-library-card__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    font-weight: var(--weight-display);
+    line-height: var(--lh-snug);
+    letter-spacing: var(--tracking-tight);
+    color: var(--fg-primary);
+  }
+
+  .material-library-card__description,
+  .material-library-card__note {
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: var(--lh-relaxed);
+    color: var(--fg-secondary);
+  }
+
+  .material-library-card__note,
+  .material-library-card__verified {
+    font-size: var(--text-xs);
+    color: var(--fg-tertiary);
+  }
+
+  .material-library-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-4);
+    margin: auto 0 0;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--rule-color);
+    font-size: var(--text-sm);
+  }
+
+  .material-library-card__verified {
+    margin: 0;
+    line-height: var(--lh-relaxed);
   }
 
   /* Review metadata: visible enough for trust, quiet enough for readers. */
@@ -744,16 +806,6 @@
   .review-badge__term {
     font-weight: var(--weight-strong);
     color: var(--fg-primary);
-  }
-
-  @media (max-width: 639px) {
-    .topic-material-card--compact {
-      grid-template-columns: minmax(6.5rem, 0.38fr) minmax(0, 1fr);
-    }
-
-    .topic-material-card--compact .topic-material-card__media {
-      min-height: 9rem;
-    }
   }
 }
 

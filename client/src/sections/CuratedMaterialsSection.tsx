@@ -1,4 +1,3 @@
-import { ExternalLink, FileText } from "lucide-react";
 import { Link } from "wouter";
 import {
   DisplayHeading,
@@ -40,9 +39,9 @@ export default function CuratedMaterialsSection({
   ariaLabel,
   allMaterialsLabel = "Alle Materialien ansehen",
 }: CuratedMaterialsSectionProps) {
-  const [featured, ...supporting] = items.slice(0, 3);
+  const visibleItems = items.slice(0, 3);
 
-  if (!featured) return null;
+  if (visibleItems.length === 0) return null;
 
   return (
     <>
@@ -80,12 +79,9 @@ export default function CuratedMaterialsSection({
       >
         <div className="mx-auto max-w-page">
           <div className="topic-materials-grid">
-            <MaterialCard item={featured} featured />
-            <div className="topic-materials-stack">
-              {supporting.map(item => (
-                <MaterialCard key={item.id} item={item} />
-              ))}
-            </div>
+            {visibleItems.map(item => (
+              <MaterialCard key={item.id} item={item} />
+            ))}
           </div>
           <p className="topic-materials-library-link">
             <Link href="/materialien" className="editorial-link">
@@ -98,24 +94,14 @@ export default function CuratedMaterialsSection({
   );
 }
 
-function MaterialCard({
-  item,
-  featured = false,
-}: {
-  item: CuratedMaterialCard;
-  featured?: boolean;
-}) {
+function MaterialCard({ item }: { item: CuratedMaterialCard }) {
   const textVersionHref = getHandoutTextVersionHrefBySource(item.pdfUrl);
   const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
-  const imageSrc = featured
-    ? item.imageUrl
-    : (item.thumbnailUrl ?? item.imageUrl);
+  const imageSrc = item.thumbnailUrl ?? item.imageUrl;
   const previewHref = item.previewUrl ?? item.imageUrl;
 
   return (
-    <article
-      className={`topic-material-card ${featured ? "topic-material-card--featured" : "topic-material-card--compact"}`}
-    >
+    <article className="topic-material-card">
       <a
         href={previewHref}
         target="_blank"
@@ -123,12 +109,7 @@ function MaterialCard({
         aria-label={`${item.title} – Vorschau öffnen`}
         className="topic-material-card__media"
       >
-        <img
-          src={imageSrc}
-          alt={item.title}
-          loading={featured ? "eager" : "lazy"}
-          decoding="async"
-        />
+        <img src={imageSrc} alt={item.title} loading="lazy" decoding="async" />
       </a>
       <div className="topic-material-card__content">
         <p className="topic-material-card__kicker">{item.categoryLabel}</p>
@@ -144,10 +125,7 @@ function MaterialCard({
               aria-label={`Textversion lesen: ${item.title}`}
               className="editorial-link"
             >
-              <span className="inline-flex items-center gap-1.5">
-                <FileText className="h-4 w-4" />
-                Textversion
-              </span>
+              Textversion lesen
             </Link>
           ) : null}
           <a
@@ -157,10 +135,7 @@ function MaterialCard({
             aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
             className="editorial-link"
           >
-            <span className="inline-flex items-center gap-1.5">
-              <ExternalLink className="h-4 w-4" />
-              PDF
-            </span>
+            PDF öffnen
           </a>
         </div>
       </div>

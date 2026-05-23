@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { ExternalLink, FileText } from "lucide-react";
 import { Link } from "wouter";
 import {
   DisplayHeading,
@@ -34,28 +33,6 @@ const verstehenCategories = [
       .length,
   },
 ] as const;
-
-const labelStyle = {
-  fontSize: "var(--text-xs)",
-  letterSpacing: "var(--tracking-caps)",
-  color: "var(--fg-tertiary)",
-  fontWeight: 500,
-} as const;
-
-const entryTitleStyle = {
-  fontFamily: "var(--font-display)",
-  fontSize: "var(--text-md)",
-  fontWeight: "var(--weight-display)",
-  lineHeight: "var(--lh-snug)",
-  color: "var(--fg-primary)",
-  letterSpacing: "var(--tracking-tight)",
-};
-
-const bodyStyle = {
-  fontSize: "var(--text-sm)",
-  lineHeight: "var(--lh-relaxed)",
-  color: "var(--fg-secondary)",
-};
 
 export default function VerstehenMaterialsSection() {
   const [activeFilter, setActiveFilter] =
@@ -106,7 +83,7 @@ export default function VerstehenMaterialsSection() {
       </EditorialSection>
 
       <section
-        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
+        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-[var(--section-y-normal-mobile)] md:px-[var(--container-pad-md)] md:pb-[var(--section-y-spacious-desktop)]"
         aria-label="Materialien zum Vertiefen — Filter und Tile-Liste"
       >
         <div className="mx-auto max-w-page">
@@ -145,23 +122,18 @@ export default function VerstehenMaterialsSection() {
               const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
 
               return (
-                <article
-                  key={item.id}
-                  className="space-y-3 border-t pt-6"
-                  style={{ borderColor: "var(--rule-color)" }}
-                >
+                <article key={item.id} className="material-library-card">
                   <a
                     href={item.webpUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${item.alt} – Vorschau öffnen`}
-                    className="block overflow-hidden rounded-sm"
-                    style={{ backgroundColor: "var(--bg-elevated)" }}
+                    className="material-library-card__media"
                   >
                     <img
                       src={item.thumbnailUrl ?? item.webpUrl}
                       alt={item.alt}
-                      className="aspect-[3/4] w-full object-cover object-top"
+                      className="material-library-card__image"
                       loading="lazy"
                       width={600}
                       height={848}
@@ -169,43 +141,40 @@ export default function VerstehenMaterialsSection() {
                     />
                   </a>
 
-                  <p className="uppercase" style={labelStyle}>
-                    {item.category === "grundlagen"
-                      ? "Grundlagen"
-                      : "Stress & Gehirn"}
-                  </p>
-                  <h3 style={entryTitleStyle}>{item.title}</h3>
-                  <p style={bodyStyle}>{item.description}</p>
+                  <div className="material-library-card__content">
+                    <p className="material-library-card__kicker">
+                      {item.category === "grundlagen"
+                        ? "Grundlagen"
+                        : "Stress & Gehirn"}
+                    </p>
+                    <h3 className="material-library-card__title">
+                      {item.title}
+                    </h3>
+                    <p className="material-library-card__description">
+                      {item.description}
+                    </p>
 
-                  <p
-                    className="flex flex-wrap gap-x-5 gap-y-1 pt-1"
-                    style={{ fontSize: "var(--text-sm)" }}
-                  >
-                    {textVersionHref ? (
-                      <Link
-                        href={textVersionHref}
-                        aria-label={`Textversion lesen: ${item.title}`}
+                    <p className="material-library-card__actions">
+                      {textVersionHref ? (
+                        <Link
+                          href={textVersionHref}
+                          aria-label={`Textversion lesen: ${item.title}`}
+                          className="editorial-link"
+                        >
+                          Textversion lesen
+                        </Link>
+                      ) : null}
+                      <a
+                        href={pdfHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
                         className="editorial-link"
                       >
-                        <span className="inline-flex items-center gap-1.5">
-                          <FileText className="h-4 w-4" />
-                          Textversion lesen
-                        </span>
-                      </Link>
-                    ) : null}
-                    <a
-                      href={pdfHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                      className="editorial-link"
-                    >
-                      <span className="inline-flex items-center gap-1.5">
-                        <ExternalLink className="h-4 w-4" />
                         PDF öffnen
-                      </span>
-                    </a>
-                  </p>
+                      </a>
+                    </p>
+                  </div>
                 </article>
               );
             })}

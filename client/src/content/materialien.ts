@@ -121,12 +121,12 @@ export const materials: MaterialItem[] = [
       "Kurze Formulierungen für akute Spannungszustände, wenn klare Sprache mehr hilft als lange Erklärungen.",
     category: "kommunizieren",
     kind: "Spickzettel",
-    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
+    url: "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
-    downloadUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp",
+    downloadUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
     priority: "core",
-    verifiedAt: "April 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "grenzen-spickzettel",

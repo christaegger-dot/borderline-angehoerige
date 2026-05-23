@@ -21,20 +21,20 @@ Wichtig: Dieser Report ersetzt keine visuelle PDF-Prüfung. Er ist ein Reexport-
 
 ## Resolved: Ersatzassets geliefert
 
-| ID                        | Aktuelle produktive Assets                                                                                                                                                                             | Erwartung | Status                                                           |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ---------------------------------------------------------------- |
-| `zuhoeren-ohne-zustimmen` | `/infografiken/validierung-die-validierungs-treppe-v9.pdf`, `/infografiken/validierung-die-validierungs-treppe-v9.webp`, `/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp` | erfüllt   | v9-Assets liegen vor und ersetzen die produktiven v5-Referenzen. |
+| ID                        | Aktuelle produktive Assets                                                                                                                                                                                | Erwartung | Status                                                            |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------------------------- |
+| `zuhoeren-ohne-zustimmen` | `/infografiken/validierung-die-validierungs-treppe-v9.pdf`, `/infografiken/validierung-die-validierungs-treppe-v9.webp`, `/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp`    | erfüllt   | v9-Assets liegen vor und ersetzen die produktiven v5-Referenzen.  |
+| `krisenkommunikation`     | `/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf`, `/infografiken/deeskalation-der-deeskalations-pfad-v10.webp`, `/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp` | erfüllt   | v10-Assets liegen vor und ersetzen die produktiven v9-Referenzen. |
 
 ## P0: Sicherheits- und Kriseninhalte
 
 Diese Assets zuerst öffnen, gegen die Web-Textversion vergleichen und bei Abweichung neu exportieren.
 
-| ID                    | PDF                                                        | WebP/Preview                                                | Möglicher Drift                                                                                                                                                                          |
-| --------------------- | ---------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `notfallplan-krise`   | `/notfallplan-krise-v03.pdf`                               | `/notfallplan-krise-v03-preview.webp`                       | Textversion trennt jetzt 144, 117, PUK 058er-Nummern, 143 und Selbstschutz-Caveat klarer. PDF kann eine ältere Hierarchie oder weniger präzise Selbstschutzlogik enthalten.              |
-| `krisenkommunikation` | `/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf` | `/infografiken/deeskalation-der-deeskalations-pfad-v9.webp` | Textversion entfernt die alte PUK-Nummer `044 384 21 11`, nutzt die aktuellen PUK-058er-Nummern und trennt Notfall von Beratung. PDF/WebP muss exakt darauf geprüft werden.              |
-| `wenn-worte-treffen`  | `/infografiken/manus-wenn-worte-treffen-v1.pdf`            | `/infografiken/manus-wenn-worte-treffen-v1.webp`            | Textversion ergänzt bei Suizidandrohung eine klare Brücke zu Hilfe/Notfall. PDF/WebP kann diese Sicherheitsbrücke noch nicht enthalten.                                                  |
-| `pause-statt-streit`  | `/infografiken/manus-pause-statt-streit-v1.pdf`            | `/infografiken/manus-pause-statt-streit-v1.webp`            | Textversion präzisiert: Bei akuter Gefahr keine Pausenverhandlung und Person nicht ohne Hilfe/professionelle Einschätzung allein lassen, sofern Angehörige selbst sicher bleiben können. |
+| ID                   | PDF                                             | WebP/Preview                                     | Möglicher Drift                                                                                                                                                                          |
+| -------------------- | ----------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `notfallplan-krise`  | `/notfallplan-krise-v03.pdf`                    | `/notfallplan-krise-v03-preview.webp`            | Textversion trennt jetzt 144, 117, PUK 058er-Nummern, 143 und Selbstschutz-Caveat klarer. PDF kann eine ältere Hierarchie oder weniger präzise Selbstschutzlogik enthalten.              |
+| `wenn-worte-treffen` | `/infografiken/manus-wenn-worte-treffen-v1.pdf` | `/infografiken/manus-wenn-worte-treffen-v1.webp` | Textversion ergänzt bei Suizidandrohung eine klare Brücke zu Hilfe/Notfall. PDF/WebP kann diese Sicherheitsbrücke noch nicht enthalten.                                                  |
+| `pause-statt-streit` | `/infografiken/manus-pause-statt-streit-v1.pdf` | `/infografiken/manus-pause-statt-streit-v1.webp` | Textversion präzisiert: Bei akuter Gefahr keine Pausenverhandlung und Person nicht ohne Hilfe/professionelle Einschätzung allein lassen, sofern Angehörige selbst sicher bleiben können. |
 
 ## P1: Fachliche Kernaussagen
 
@@ -107,7 +107,6 @@ Diese Assets sollten im nächsten Design-/Asset-Pass mitgezogen werden, damit di
 Für einen kleinen, sicheren Folge-PR zuerst nur die P0-Gruppe behandeln:
 
 1. `notfallplan-krise`
-2. `krisenkommunikation`
-3. `wenn-worte-treffen`
-4. `pause-statt-streit`
-5. `zuhoeren-ohne-zustimmen` im normalen Fidelity-Audit prüfen, aber der v9-Asset-Blocker ist geschlossen
+2. `wenn-worte-treffen`
+3. `pause-statt-streit`
+4. `zuhoeren-ohne-zustimmen` und `krisenkommunikation` im normalen Fidelity-Audit prüfen, aber die Asset-Blocker sind geschlossen

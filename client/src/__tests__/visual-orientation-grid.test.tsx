@@ -38,7 +38,7 @@ describe("VisualOrientationGrid", () => {
       "Die 4 Arten von Grenzen",
       "Die Sauerstoffmaske",
       "Das Fortschritt-Paradox",
-      "Der Deeskalations-Pfad",
+      "Spickzettel Krisenkommunikation",
     ];
 
     expectedOrder.forEach((title, idx) => {

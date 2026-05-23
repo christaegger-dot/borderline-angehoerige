@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-23T21:35:26.190Z",
+  "generatedAt": "2026-05-23T22:47:19.756Z",
   "summary": {
-    "totalFiles": 125,
-    "totalSizeMb": 155.57,
+    "totalFiles": 128,
+    "totalSizeMb": 156.18,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 113.81,
-    "supportFiles": 6,
-    "supportFilesSizeMb": 41.29,
-    "unreferencedCandidates": 2,
-    "unreferencedCandidatesSizeMb": 0.46,
+    "activeReferencedSizeMb": 114,
+    "supportFiles": 7,
+    "supportFilesSizeMb": 41.32,
+    "unreferencedCandidates": 4,
+    "unreferencedCandidatesSizeMb": 0.86,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 1
+    "versionFamiliesWithLegacyCandidates": 2
   },
   "missingReferences": [],
   "activeReferences": [
@@ -69,8 +69,8 @@
       ]
     },
     {
-      "path": "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
-      "sizeBytes": 279830,
+      "path": "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
+      "sizeBytes": 404128,
       "usages": [
         {
           "source": "materials",
@@ -85,8 +85,8 @@
       ]
     },
     {
-      "path": "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
-      "sizeBytes": 132420,
+      "path": "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp",
+      "sizeBytes": 167170,
       "usages": [
         {
           "source": "materials",
@@ -170,8 +170,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
-      "sizeBytes": 24174,
+      "path": "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp",
+      "sizeBytes": 61998,
       "usages": [
         {
           "source": "materials",
@@ -1547,6 +1547,10 @@
       "sizeBytes": 2176
     },
     {
+      "path": "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
+      "sizeBytes": 24174
+    },
+    {
       "path": "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
       "sizeBytes": 31882
     },
@@ -1564,6 +1568,26 @@
     }
   ],
   "unreferencedCandidates": [
+    {
+      "path": "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
+      "sizeBytes": 279830,
+      "versionFamily": "/infografiken/deeskalation-der-deeskalations-pfad",
+      "version": 9,
+      "referencedSiblingPaths": [
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp"
+      ]
+    },
+    {
+      "path": "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
+      "sizeBytes": 132420,
+      "versionFamily": "/infografiken/deeskalation-der-deeskalations-pfad",
+      "version": 9,
+      "referencedSiblingPaths": [
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp"
+      ]
+    },
     {
       "path": "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
       "sizeBytes": 316731,
@@ -1607,14 +1631,19 @@
     {
       "family": "/infografiken/deeskalation-der-deeskalations-pfad",
       "availableFiles": [
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp",
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp"
       ],
       "referencedFiles": [
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/eisberg-der-eisberg",
@@ -1651,10 +1680,11 @@
     {
       "family": "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad",
       "availableFiles": [
+        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp",
         "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp"
+        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp"
       ],
       "legacyCandidateFiles": []
     },

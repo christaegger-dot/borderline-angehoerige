@@ -6,6 +6,20 @@ import { collectReferencedInfografikAssets } from "@/content/infografikAssetRefs
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const PUBLIC_ROOT = path.join(REPO_ROOT, "client", "public");
 
+function expectProductiveAssetVersion(
+  referencedPaths: string[],
+  currentPaths: string[],
+  legacyPaths: string[]
+) {
+  for (const assetPath of currentPaths) {
+    expect(referencedPaths).toContain(assetPath);
+  }
+
+  for (const assetPath of legacyPaths) {
+    expect(referencedPaths).not.toContain(assetPath);
+  }
+}
+
 describe("infografik assets", () => {
   it("keeps every referenced infografik asset available in public/", () => {
     const missingAssets = collectReferencedInfografikAssets()
@@ -27,23 +41,38 @@ describe("infografik assets", () => {
       asset => asset.path
     );
 
-    expect(referencedPaths).toContain(
-      "/infografiken/validierung-die-validierungs-treppe-v9.pdf"
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/validierung-die-validierungs-treppe-v9.pdf",
+        "/infografiken/validierung-die-validierungs-treppe-v9.webp",
+        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp",
+      ],
+      [
+        "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
+        "/infografiken/validierung-die-validierungs-treppe-v5.webp",
+        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
+      ]
     );
-    expect(referencedPaths).toContain(
-      "/infografiken/validierung-die-validierungs-treppe-v9.webp"
+  });
+
+  it("uses the freigegebene Krisenkommunikation v10 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
     );
-    expect(referencedPaths).toContain(
-      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp"
-    );
-    expect(referencedPaths).not.toContain(
-      "/infografiken/validierung-die-validierungs-treppe-v5.pdf"
-    );
-    expect(referencedPaths).not.toContain(
-      "/infografiken/validierung-die-validierungs-treppe-v5.webp"
-    );
-    expect(referencedPaths).not.toContain(
-      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp"
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
+        "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp",
+        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp",
+      ],
+      [
+        "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
+        "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
+        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
+      ]
     );
   });
 });

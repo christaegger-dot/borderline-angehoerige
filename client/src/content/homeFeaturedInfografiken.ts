@@ -111,13 +111,13 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
   },
   {
     id: "deeskalations-pfad",
-    title: "Der Deeskalations-Pfad",
-    description: "Klare Sätze für akute Spannungszustände.",
+    title: "Spickzettel Krisenkommunikation",
+    description: "Kurze Sätze, klare Grenze, nächster Kontaktpunkt.",
     categoryLabel: "Krise begleiten",
     href: "/unterstuetzen/krise",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp",
     thumbnailHeight: 848,
-    alt: "Der Deeskalations-Pfad für Krisenkommunikation",
+    alt: "Spickzettel Krisenkommunikation",
   },
 ];

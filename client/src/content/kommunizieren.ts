@@ -91,10 +91,10 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "krisenkommunikation",
     title: "Spickzettel Krisenkommunikation (A4)",
     description: "A4-Spickzettel für akute Spannungszustände",
-    url: "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
+    url: "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
-    pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp",
+    pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
     category: "praxis",
   },
 ];

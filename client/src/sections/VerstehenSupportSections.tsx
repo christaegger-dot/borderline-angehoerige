@@ -10,18 +10,6 @@ import { quellenLinks } from "@/content/quellenLinks";
 import EvidenceNote from "@/components/EvidenceNote";
 
 export function VerstehenRelationshipSection() {
-  const titleStyle = {
-    fontSize: "var(--text-md)",
-    fontWeight: 600,
-    color: "var(--fg-primary)",
-  };
-
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   return (
     <ContentSection
       variant="editorial"
@@ -41,10 +29,8 @@ export function VerstehenRelationshipSection() {
       <ul className="mt-6 space-y-6">
         {relationshipPatterns.map(item => (
           <li key={item.title}>
-            <h3 style={titleStyle}>{item.title}</h3>
-            <p className="mt-1" style={bodyStyle}>
-              {item.text}
-            </p>
+            <h3 className="editorial-item-heading">{item.title}</h3>
+            <p className="editorial-small-copy mt-1">{item.text}</p>
           </li>
         ))}
       </ul>
@@ -85,18 +71,6 @@ export function VerstehenRelationshipSection() {
 }
 
 export function VerstehenMeaningSection() {
-  const titleStyle = {
-    fontSize: "var(--text-md)",
-    fontWeight: 600,
-    color: "var(--fg-primary)",
-  };
-
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   return (
     <ContentSection
       variant="editorial"
@@ -107,10 +81,8 @@ export function VerstehenMeaningSection() {
       <div className="grid gap-6 sm:grid-cols-2">
         {meaningForRelativesCards.map(item => (
           <article key={item.text}>
-            <h3 style={titleStyle}>{item.text}</h3>
-            <p className="mt-1" style={bodyStyle}>
-              {item.sub}
-            </p>
+            <h3 className="editorial-item-heading">{item.text}</h3>
+            <p className="editorial-small-copy mt-1">{item.sub}</p>
           </article>
         ))}
       </div>
@@ -119,18 +91,6 @@ export function VerstehenMeaningSection() {
 }
 
 export function VerstehenDiagnosticSection() {
-  const titleStyle = {
-    fontSize: "var(--text-md)",
-    fontWeight: 600,
-    color: "var(--fg-primary)",
-  };
-
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   return (
     <ContentSection
       variant="editorial"
@@ -148,7 +108,7 @@ export function VerstehenDiagnosticSection() {
 
       <ul className="mt-5 space-y-2 pl-5 list-disc marker:text-[color:var(--accent-label)]">
         {diagnosticOverviewItems.map(item => (
-          <li key={item} style={bodyStyle}>
+          <li key={item} className="editorial-small-copy">
             {item}
           </li>
         ))}
@@ -158,8 +118,8 @@ export function VerstehenDiagnosticSection() {
         className="mt-6 border-t pt-5"
         style={{ borderColor: "var(--rule-color)" }}
       >
-        <h3 style={titleStyle}>Ursachen sind nie monokausal</h3>
-        <p className="mt-2" style={bodyStyle}>
+        <h3 className="editorial-item-heading">Ursachen sind nie monokausal</h3>
+        <p className="editorial-small-copy mt-2">
           Borderline entsteht nicht durch eine einzige Ursache, sondern im
           Zusammenspiel biologischer Empfindlichkeit, Bindungs- und
           Entwicklungserfahrungen sowie Belastungsfaktoren. Schuldzuweisungen an
@@ -167,7 +127,7 @@ export function VerstehenDiagnosticSection() {
         </p>
       </div>
 
-      <p className="mt-6" style={bodyStyle}>
+      <p className="editorial-small-copy mt-6">
         Mehr zum Diagnostik-Prozess (wer stellt wie eine Diagnose, was sie für
         Angehörige bedeutet, wo sie im Kanton Zürich gestellt werden kann):{" "}
         <Link href="/verstehen/diagnostik" className="editorial-link">
@@ -180,12 +140,6 @@ export function VerstehenDiagnosticSection() {
 }
 
 export function VerstehenBegleitOverviewSection() {
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   const komorbiditaeten = [
     "Depression (häufigste Komorbidität, ca. 75–80 %)",
     "Angststörungen (Panik, soziale Phobie, generalisierte Angst)",
@@ -213,13 +167,13 @@ export function VerstehenBegleitOverviewSection() {
 
       <ul className="mt-5 space-y-2 pl-5 list-disc marker:text-[color:var(--accent-label)]">
         {komorbiditaeten.map(item => (
-          <li key={item} style={bodyStyle}>
+          <li key={item} className="editorial-small-copy">
             {item}
           </li>
         ))}
       </ul>
 
-      <p className="mt-6" style={bodyStyle}>
+      <p className="editorial-small-copy mt-6">
         Mehr zu den einzelnen Komorbiditäten (Depression, Suizidrisiko,
         Behandlungsfolgen, was Angehörige wissen sollten):{" "}
         <Link href="/verstehen/begleiterkrankungen" className="editorial-link">

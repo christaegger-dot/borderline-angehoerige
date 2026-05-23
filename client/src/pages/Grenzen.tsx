@@ -98,6 +98,33 @@ const gewaltSchritte = [
   },
 ] as const;
 
+const grenzenOrientierung = [
+  {
+    kicker: "1 · Sicherheit",
+    title: "Gefahr geht vor Beziehungsklärung",
+    text: "Bei Gewalt, Drohung oder akuter Suizidgefahr zuerst Schutz organisieren — nicht weiterdiskutieren.",
+    sectionId: "gewalt",
+  },
+  {
+    kicker: "2 · Warnsignal",
+    title: "Belastung ernst nehmen",
+    text: "Wenn Sie aus Angst ja sagen oder innerlich hart werden, ist eine Grenze oft schon überfällig.",
+    sectionId: "warnsignale",
+  },
+  {
+    kicker: "3 · Reihenfolge",
+    title: "Eine tragfähige Grenze zuerst",
+    text: "Nicht alles gleichzeitig klären. Beginnen Sie mit der Grenze, die Sie wirklich halten können.",
+    sectionId: "priorisierung",
+  },
+  {
+    kicker: "4 · Sprache",
+    title: "Handlung statt Vorwurf",
+    text: "Ein guter Grenzsatz sagt, was Sie tun werden — nicht, dass die andere Person falsch ist.",
+    sectionId: "grenzsaetze",
+  },
+] as const;
+
 export default function Grenzen() {
   const handleAnchorClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -273,6 +300,34 @@ export default function Grenzen() {
               Regeneration geht.
             </p>
           </EditorialProse>
+          <div
+            className="mt-8 border-t pt-6"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p className="editorial-micro-label">Schnelle Orientierung</p>
+            <h3 className="editorial-card-heading mt-3">
+              Welche Grenze braucht es zuerst?
+            </h3>
+            <div className="mt-5 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+              {grenzenOrientierung.map(item => (
+                <a
+                  key={item.sectionId}
+                  href={`#${item.sectionId}`}
+                  className="group block border-t pt-4 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent-primary)]"
+                  style={{ borderColor: "var(--rule-color)" }}
+                  onClick={e => handleAnchorClick(e, item.sectionId)}
+                >
+                  <span className="editorial-micro-label">{item.kicker}</span>
+                  <span className="editorial-item-heading mt-2 block transition-colors group-hover:text-[color:var(--accent-primary)]">
+                    {item.title}
+                  </span>
+                  <span className="editorial-small-copy mt-2 block">
+                    {item.text}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -301,6 +356,7 @@ export default function Grenzen() {
             variant="editorial"
             title="Woran Sie merken, dass eine Grenze nötig ist"
             id="warnsignale"
+            defaultOpen={true}
             preview="Grenzen werden oft erst dann sichtbar, wenn Sie längst überschritten wurden: durch Erschöpfung, Druck, Angst, Groll oder innere Härte."
           >
             <EditorialProse>
@@ -414,6 +470,7 @@ export default function Grenzen() {
             variant="editorial"
             title="Welche Grenzen zuerst?"
             id="priorisierung"
+            defaultOpen={true}
             preview="Nicht alle Grenzen lassen sich gleichzeitig setzen. Diese Orientierung hilft, die wichtigsten zuerst anzugehen."
           >
             <EditorialProse>
@@ -585,6 +642,7 @@ export default function Grenzen() {
             variant="editorial"
             title="Konkrete Grenzsätze für typische Situationen"
             id="grenzsaetze"
+            defaultOpen={true}
             preview="Grenzen werden tragfähiger, wenn sie konkret, ruhig und auf Ihr eigenes Handeln bezogen sind — nicht als Vorwurf, sondern als klare Aussage."
           >
             <div className="space-y-8">
@@ -765,6 +823,7 @@ export default function Grenzen() {
             variant="editorial"
             title="Wenn der Angehörige körperlich übergriffig wird"
             id="gewalt"
+            defaultOpen={true}
             preview="Körperliche Übergriffe sind keine Grenzverletzung – sie sind eine Gefährdung. Das erfordert eine andere Reaktion als verbale Eskalation."
           >
             <div className="space-y-4">

@@ -29,6 +29,30 @@ function openSection(sectionId: string) {
   );
 }
 
+const kommunikationsPfad = [
+  {
+    kicker: "1 · Tempo",
+    title: "Erst regulieren",
+    text: "Wenn beide im Alarm sind, zählt zunächst Tempo senken: weniger Worte, mehr Pause, klarer Ton.",
+    beispiel: "«Ich merke, dass es gerade sehr viel ist.»",
+    sectionId: "haltung",
+  },
+  {
+    kicker: "2 · Kontakt",
+    title: "Erleben anerkennen",
+    text: "Validierung nimmt das Gefühl ernst, ohne jedem Vorwurf oder jeder Deutung zuzustimmen.",
+    beispiel: "«Das fühlt sich für dich gerade bedrohlich an.»",
+    sectionId: "validierung",
+  },
+  {
+    kicker: "3 · Grenze",
+    title: "Bei Eskalation kürzer werden",
+    text: "Wenn der Ton kippt, hilft nicht mehr Erklärung, sondern eine kurze Grenze mit nächstem Schritt.",
+    beispiel: "«Ich höre zu, aber nicht in diesem Ton. Wir machen Pause.»",
+    sectionId: "eskalation",
+  },
+] as const;
+
 export default function Kommunizieren() {
   const handleAnchorClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -172,6 +196,40 @@ export default function Kommunizieren() {
               springen.
             </p>
           </EditorialProse>
+          <div
+            className="mt-8 border-t pt-6"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p className="editorial-micro-label">Gesprächsführung</p>
+            <h3 className="editorial-card-heading mt-3">
+              Drei Schritte, bevor der Inhalt wieder zählt
+            </h3>
+            <div className="mt-5 grid gap-x-8 gap-y-6 md:grid-cols-3">
+              {kommunikationsPfad.map(item => (
+                <a
+                  key={item.sectionId}
+                  href={`#${item.sectionId}`}
+                  className="group block border-t pt-4 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent-primary)]"
+                  style={{ borderColor: "var(--rule-color)" }}
+                  onClick={e => handleAnchorClick(e, item.sectionId)}
+                >
+                  <span className="editorial-micro-label">{item.kicker}</span>
+                  <span className="editorial-item-heading mt-2 block transition-colors group-hover:text-[color:var(--accent-primary)]">
+                    {item.title}
+                  </span>
+                  <span className="editorial-small-copy mt-2 block">
+                    {item.text}
+                  </span>
+                  <span
+                    className="editorial-small-copy mt-3 block border-l-2 pl-3 italic"
+                    style={{ borderColor: "var(--rule-color)" }}
+                  >
+                    {item.beispiel}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -223,6 +281,7 @@ export default function Kommunizieren() {
             variant="editorial"
             title="Validierung: der wichtigste Ausgangspunkt"
             id="validierung"
+            defaultOpen={true}
             preview="Validierung heisst nicht zustimmen. Sie signalisiert: Ich nehme dein Erleben ernst, auch wenn ich nicht jede Sichtweise teile."
           >
             <EditorialProse>
@@ -252,6 +311,7 @@ export default function Kommunizieren() {
             variant="editorial"
             title="Timing ist oft wichtiger als der perfekte Satz"
             id="timing"
+            defaultOpen={true}
             preview="Viele Gespräche scheitern daran, dass Inhalte zu früh geklärt werden sollen, während Anspannung, Scham oder Wut noch den ganzen Raum füllen."
           >
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
@@ -308,7 +368,7 @@ export default function Kommunizieren() {
             </div>
           </ContentSection>
 
-          <KommunizierenEscalationSection />
+          <KommunizierenEscalationSection defaultOpen />
 
           <KommunizierenSituationsSection />
 

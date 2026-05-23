@@ -5,12 +5,19 @@ import {
   typicalSituationCards,
 } from "@/content/kommunizieren";
 
-export function KommunizierenEscalationSection() {
+interface KommunizierenPatternSectionProps {
+  defaultOpen?: boolean;
+}
+
+export function KommunizierenEscalationSection({
+  defaultOpen = false,
+}: KommunizierenPatternSectionProps) {
   return (
     <ContentSection
       variant="editorial"
       title="Wenn Gespräche kippen"
       id="eskalation"
+      defaultOpen={defaultOpen}
       preview="In eskalierenden Momenten hilft oft nicht mehr Inhalt, sondern weniger: weniger Worte, weniger Verteidigung, weniger Tempo."
     >
       <ul className="space-y-6">

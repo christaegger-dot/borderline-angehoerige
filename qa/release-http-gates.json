@@ -1,11 +1,12 @@
 {
-  "createdAt": "2026-05-03T18:38:26.704Z",
+  "createdAt": "2026-05-23T12:53:59.887Z",
   "baseUrl": "https://borderline-angehoerige.netlify.app",
   "counts": {
     "pdfs": 16,
     "previews": 16,
     "textversions": 16,
-    "pages": 2
+    "pages": 2,
+    "headers": 8
   },
   "results": [
     {
@@ -19,8 +20,8 @@
       "contentType": "application/pdf",
       "byteLength": 363941,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:07.225Z",
-      "finishedAt": "2026-05-03T18:38:08.902Z",
+      "startedAt": "2026-05-23T12:53:33.994Z",
+      "finishedAt": "2026-05-23T12:53:36.023Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/notfallkarte-zuerich"
     },
     {
@@ -34,8 +35,8 @@
       "contentType": "application/pdf",
       "byteLength": 439930,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:08.902Z",
-      "finishedAt": "2026-05-03T18:38:09.382Z",
+      "startedAt": "2026-05-23T12:53:36.023Z",
+      "finishedAt": "2026-05-23T12:53:36.492Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/notfallplan-krise"
     },
     {
@@ -49,8 +50,8 @@
       "contentType": "application/pdf",
       "byteLength": 3214789,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:09.382Z",
-      "finishedAt": "2026-05-03T18:38:10.183Z",
+      "startedAt": "2026-05-23T12:53:36.492Z",
+      "finishedAt": "2026-05-23T12:53:37.287Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/leuchtturm"
     },
     {
@@ -64,8 +65,8 @@
       "contentType": "application/pdf",
       "byteLength": 5407090,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:10.183Z",
-      "finishedAt": "2026-05-03T18:38:10.977Z",
+      "startedAt": "2026-05-23T12:53:37.287Z",
+      "finishedAt": "2026-05-23T12:53:38.076Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/eisberg"
     },
     {
@@ -79,8 +80,8 @@
       "contentType": "application/pdf",
       "byteLength": 415477,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:10.977Z",
-      "finishedAt": "2026-05-03T18:38:11.292Z",
+      "startedAt": "2026-05-23T12:53:38.076Z",
+      "finishedAt": "2026-05-23T12:53:38.484Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/rolle-klaeren"
     },
     {
@@ -94,8 +95,8 @@
       "contentType": "application/pdf",
       "byteLength": 279830,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:11.292Z",
-      "finishedAt": "2026-05-03T18:38:11.540Z",
+      "startedAt": "2026-05-23T12:53:38.484Z",
+      "finishedAt": "2026-05-23T12:53:38.940Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/krisenkommunikation"
     },
     {
@@ -109,8 +110,8 @@
       "contentType": "application/pdf",
       "byteLength": 2885399,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:11.540Z",
-      "finishedAt": "2026-05-03T18:38:12.102Z",
+      "startedAt": "2026-05-23T12:53:38.940Z",
+      "finishedAt": "2026-05-23T12:53:39.530Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/grenzen-spickzettel"
     },
     {
@@ -124,8 +125,8 @@
       "contentType": "application/pdf",
       "byteLength": 2967379,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:12.102Z",
-      "finishedAt": "2026-05-03T18:38:12.640Z",
+      "startedAt": "2026-05-23T12:53:39.530Z",
+      "finishedAt": "2026-05-23T12:53:40.089Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/warnsignale"
     },
     {
@@ -139,8 +140,8 @@
       "contentType": "application/pdf",
       "byteLength": 1125351,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:12.640Z",
-      "finishedAt": "2026-05-03T18:38:13.016Z",
+      "startedAt": "2026-05-23T12:53:40.089Z",
+      "finishedAt": "2026-05-23T12:53:40.609Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/schuld-verantwortung"
     },
     {
@@ -154,8 +155,8 @@
       "contentType": "application/pdf",
       "byteLength": 247521,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:13.016Z",
-      "finishedAt": "2026-05-03T18:38:13.463Z",
+      "startedAt": "2026-05-23T12:53:40.609Z",
+      "finishedAt": "2026-05-23T12:53:41.088Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/spaltung"
     },
     {
@@ -169,8 +170,8 @@
       "contentType": "application/pdf",
       "byteLength": 340805,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:13.464Z",
-      "finishedAt": "2026-05-03T18:38:13.860Z",
+      "startedAt": "2026-05-23T12:53:41.088Z",
+      "finishedAt": "2026-05-23T12:53:41.603Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/alarm-modus"
     },
     {
@@ -184,8 +185,8 @@
       "contentType": "application/pdf",
       "byteLength": 1032269,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:13.860Z",
-      "finishedAt": "2026-05-03T18:38:14.290Z",
+      "startedAt": "2026-05-23T12:53:41.603Z",
+      "finishedAt": "2026-05-23T12:53:43.251Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/wenn-worte-treffen"
     },
     {
@@ -199,8 +200,8 @@
       "contentType": "application/pdf",
       "byteLength": 2858355,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:14.290Z",
-      "finishedAt": "2026-05-03T18:38:14.798Z",
+      "startedAt": "2026-05-23T12:53:43.252Z",
+      "finishedAt": "2026-05-23T12:53:44.042Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/dear"
     },
     {
@@ -214,8 +215,8 @@
       "contentType": "application/pdf",
       "byteLength": 3168314,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:14.799Z",
-      "finishedAt": "2026-05-03T18:38:15.523Z",
+      "startedAt": "2026-05-23T12:53:44.042Z",
+      "finishedAt": "2026-05-23T12:53:44.621Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/radikale-akzeptanz"
     },
     {
@@ -229,8 +230,8 @@
       "contentType": "application/pdf",
       "byteLength": 2753141,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:15.523Z",
-      "finishedAt": "2026-05-03T18:38:16.004Z",
+      "startedAt": "2026-05-23T12:53:44.621Z",
+      "finishedAt": "2026-05-23T12:53:45.288Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/genesung-zahlen"
     },
     {
@@ -244,8 +245,8 @@
       "contentType": "application/pdf",
       "byteLength": 3519033,
       "pdfSignature": "%PDF-",
-      "startedAt": "2026-05-03T18:38:16.004Z",
-      "finishedAt": "2026-05-03T18:38:16.554Z",
+      "startedAt": "2026-05-23T12:53:45.288Z",
+      "finishedAt": "2026-05-23T12:53:45.896Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/kinder"
     },
     {
@@ -257,8 +258,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:16.554Z",
-      "finishedAt": "2026-05-03T18:38:17.121Z",
+      "startedAt": "2026-05-23T12:53:45.897Z",
+      "finishedAt": "2026-05-23T12:53:46.209Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/notfallkarte-preview.webp"
     },
     {
@@ -270,8 +271,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:17.121Z",
-      "finishedAt": "2026-05-03T18:38:17.387Z",
+      "startedAt": "2026-05-23T12:53:46.209Z",
+      "finishedAt": "2026-05-23T12:53:46.656Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/notfallplan-krise-v03-preview.webp"
     },
     {
@@ -283,48 +284,48 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:17.387Z",
-      "finishedAt": "2026-05-03T18:38:17.655Z",
+      "startedAt": "2026-05-23T12:53:46.656Z",
+      "finishedAt": "2026-05-23T12:53:47.074Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-leuchtturm-v1.webp"
     },
     {
       "id": "eisberg",
       "title": "Der Eisberg – Wut ist oft die Spitze",
       "kind": "preview",
-      "route": "/infografiken/eisberg-der-eisberg-v6.png",
-      "url": "https://borderline-angehoerige.netlify.app/infografiken/eisberg-der-eisberg-v6.png",
+      "route": "/infografiken/eisberg-der-eisberg-v6.webp",
+      "url": "https://borderline-angehoerige.netlify.app/infografiken/eisberg-der-eisberg-v6.webp",
       "status": "passed",
       "httpStatus": 200,
-      "contentType": "image/png",
-      "startedAt": "2026-05-03T18:38:17.655Z",
-      "finishedAt": "2026-05-03T18:38:18.142Z",
-      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/eisberg-der-eisberg-v6.png"
+      "contentType": "image/webp",
+      "startedAt": "2026-05-23T12:53:47.074Z",
+      "finishedAt": "2026-05-23T12:53:47.527Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/eisberg-der-eisberg-v6.webp"
     },
     {
       "id": "rolle-klaeren",
       "title": "Ihre Rolle klären – Was Sie sein können (und was nicht)",
       "kind": "preview",
-      "route": "/infografiken/sphären-die-einfluss-sphären-v3.png",
-      "url": "https://borderline-angehoerige.netlify.app/infografiken/sph%C3%A4ren-die-einfluss-sph%C3%A4ren-v3.png",
+      "route": "/infografiken/sphären-die-einfluss-sphären-v3.webp",
+      "url": "https://borderline-angehoerige.netlify.app/infografiken/sph%C3%A4ren-die-einfluss-sph%C3%A4ren-v3.webp",
       "status": "passed",
       "httpStatus": 200,
-      "contentType": "image/png",
-      "startedAt": "2026-05-03T18:38:18.142Z",
-      "finishedAt": "2026-05-03T18:38:18.762Z",
-      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/sph%C3%A4ren-die-einfluss-sph%C3%A4ren-v3.png"
+      "contentType": "image/webp",
+      "startedAt": "2026-05-23T12:53:47.527Z",
+      "finishedAt": "2026-05-23T12:53:47.926Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/sph%C3%A4ren-die-einfluss-sph%C3%A4ren-v3.webp"
     },
     {
       "id": "krisenkommunikation",
       "title": "Spickzettel Krisenkommunikation (A4)",
       "kind": "preview",
-      "route": "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
-      "url": "https://borderline-angehoerige.netlify.app/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
+      "route": "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
+      "url": "https://borderline-angehoerige.netlify.app/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
       "status": "passed",
       "httpStatus": 200,
-      "contentType": "image/png",
-      "startedAt": "2026-05-03T18:38:18.762Z",
-      "finishedAt": "2026-05-03T18:38:19.030Z",
-      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/deeskalation-der-deeskalations-pfad-v9.png"
+      "contentType": "image/webp",
+      "startedAt": "2026-05-23T12:53:47.926Z",
+      "finishedAt": "2026-05-23T12:53:48.438Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/deeskalation-der-deeskalations-pfad-v9.webp"
     },
     {
       "id": "grenzen-spickzettel",
@@ -335,8 +336,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:19.030Z",
-      "finishedAt": "2026-05-03T18:38:19.422Z",
+      "startedAt": "2026-05-23T12:53:48.438Z",
+      "finishedAt": "2026-05-23T12:53:49.208Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-grenzen-spickzettel-v1.webp"
     },
     {
@@ -348,8 +349,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:19.422Z",
-      "finishedAt": "2026-05-03T18:38:19.584Z",
+      "startedAt": "2026-05-23T12:53:49.208Z",
+      "finishedAt": "2026-05-23T12:53:49.638Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-warnsignale-v1.webp"
     },
     {
@@ -361,35 +362,35 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:19.584Z",
-      "finishedAt": "2026-05-03T18:38:19.995Z",
+      "startedAt": "2026-05-23T12:53:49.638Z",
+      "finishedAt": "2026-05-23T12:53:50.076Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-schuld-verantwortung-v1.webp"
     },
     {
       "id": "spaltung",
       "title": "Spaltung – das Pendel zwischen Extremen",
       "kind": "preview",
-      "route": "/infografiken/pendel-das-bewertungs-pendel-v14.png",
-      "url": "https://borderline-angehoerige.netlify.app/infografiken/pendel-das-bewertungs-pendel-v14.png",
+      "route": "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
+      "url": "https://borderline-angehoerige.netlify.app/infografiken/pendel-das-bewertungs-pendel-v14.webp",
       "status": "passed",
       "httpStatus": 200,
-      "contentType": "image/png",
-      "startedAt": "2026-05-03T18:38:19.995Z",
-      "finishedAt": "2026-05-03T18:38:20.254Z",
-      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/pendel-das-bewertungs-pendel-v14.png"
+      "contentType": "image/webp",
+      "startedAt": "2026-05-23T12:53:50.076Z",
+      "finishedAt": "2026-05-23T12:53:50.379Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/pendel-das-bewertungs-pendel-v14.webp"
     },
     {
       "id": "alarm-modus",
       "title": "Alarm-Modus vs. Denk-Modus",
       "kind": "preview",
-      "route": "/infografiken/alarm-der-alarm-modus-v3.png",
-      "url": "https://borderline-angehoerige.netlify.app/infografiken/alarm-der-alarm-modus-v3.png",
+      "route": "/infografiken/alarm-der-alarm-modus-v3.webp",
+      "url": "https://borderline-angehoerige.netlify.app/infografiken/alarm-der-alarm-modus-v3.webp",
       "status": "passed",
       "httpStatus": 200,
-      "contentType": "image/png",
-      "startedAt": "2026-05-03T18:38:20.254Z",
-      "finishedAt": "2026-05-03T18:38:20.632Z",
-      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/alarm-der-alarm-modus-v3.png"
+      "contentType": "image/webp",
+      "startedAt": "2026-05-23T12:53:50.379Z",
+      "finishedAt": "2026-05-23T12:53:50.898Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/alarm-der-alarm-modus-v3.webp"
     },
     {
       "id": "wenn-worte-treffen",
@@ -400,8 +401,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:20.632Z",
-      "finishedAt": "2026-05-03T18:38:20.985Z",
+      "startedAt": "2026-05-23T12:53:50.898Z",
+      "finishedAt": "2026-05-23T12:53:51.205Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-wenn-worte-treffen-v1.webp"
     },
     {
@@ -413,8 +414,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:20.985Z",
-      "finishedAt": "2026-05-03T18:38:21.142Z",
+      "startedAt": "2026-05-23T12:53:51.205Z",
+      "finishedAt": "2026-05-23T12:53:51.608Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-dear-v1.webp"
     },
     {
@@ -426,8 +427,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:21.142Z",
-      "finishedAt": "2026-05-03T18:38:21.525Z",
+      "startedAt": "2026-05-23T12:53:51.608Z",
+      "finishedAt": "2026-05-23T12:53:51.922Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-radikale-akzeptanz-v1.webp"
     },
     {
@@ -439,8 +440,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:21.525Z",
-      "finishedAt": "2026-05-03T18:38:21.686Z",
+      "startedAt": "2026-05-23T12:53:51.922Z",
+      "finishedAt": "2026-05-23T12:53:52.228Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-genesung-zahlen-v1.webp"
     },
     {
@@ -452,8 +453,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "image/webp",
-      "startedAt": "2026-05-03T18:38:21.686Z",
-      "finishedAt": "2026-05-03T18:38:21.957Z",
+      "startedAt": "2026-05-23T12:53:52.229Z",
+      "finishedAt": "2026-05-23T12:53:52.672Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/infografiken/manus-kinder-v1.webp"
     },
     {
@@ -462,8 +463,8 @@
       "kind": "textversion",
       "route": null,
       "status": "passed",
-      "startedAt": "2026-05-03T18:38:21.957Z",
-      "finishedAt": "2026-05-03T18:38:21.957Z",
+      "startedAt": "2026-05-23T12:53:52.672Z",
+      "finishedAt": "2026-05-23T12:53:52.672Z",
       "note": "HTML-Notfallkarte erwartet keine Textversion"
     },
     {
@@ -475,8 +476,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:21.957Z",
-      "finishedAt": "2026-05-03T18:38:22.292Z",
+      "startedAt": "2026-05-23T12:53:52.673Z",
+      "finishedAt": "2026-05-23T12:53:52.949Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/notfallplan-krise"
     },
     {
@@ -488,8 +489,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:22.292Z",
-      "finishedAt": "2026-05-03T18:38:22.683Z",
+      "startedAt": "2026-05-23T12:53:52.950Z",
+      "finishedAt": "2026-05-23T12:53:53.220Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/leuchtturm"
     },
     {
@@ -501,8 +502,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:22.683Z",
-      "finishedAt": "2026-05-03T18:38:22.929Z",
+      "startedAt": "2026-05-23T12:53:53.220Z",
+      "finishedAt": "2026-05-23T12:53:53.467Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/eisberg"
     },
     {
@@ -514,8 +515,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:22.929Z",
-      "finishedAt": "2026-05-03T18:38:23.162Z",
+      "startedAt": "2026-05-23T12:53:53.467Z",
+      "finishedAt": "2026-05-23T12:53:53.716Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/rolle-klaeren"
     },
     {
@@ -527,8 +528,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:23.162Z",
-      "finishedAt": "2026-05-03T18:38:23.401Z",
+      "startedAt": "2026-05-23T12:53:53.716Z",
+      "finishedAt": "2026-05-23T12:53:54.263Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/krisenkommunikation"
     },
     {
@@ -540,8 +541,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:23.401Z",
-      "finishedAt": "2026-05-03T18:38:23.675Z",
+      "startedAt": "2026-05-23T12:53:54.263Z",
+      "finishedAt": "2026-05-23T12:53:54.525Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/grenzen-spickzettel"
     },
     {
@@ -553,8 +554,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:23.675Z",
-      "finishedAt": "2026-05-03T18:38:24.084Z",
+      "startedAt": "2026-05-23T12:53:54.525Z",
+      "finishedAt": "2026-05-23T12:53:54.769Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/warnsignale"
     },
     {
@@ -566,8 +567,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:24.084Z",
-      "finishedAt": "2026-05-03T18:38:24.449Z",
+      "startedAt": "2026-05-23T12:53:54.769Z",
+      "finishedAt": "2026-05-23T12:53:55.125Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/schuld-verantwortung"
     },
     {
@@ -579,8 +580,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:24.449Z",
-      "finishedAt": "2026-05-03T18:38:24.801Z",
+      "startedAt": "2026-05-23T12:53:55.125Z",
+      "finishedAt": "2026-05-23T12:53:55.503Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/spaltung"
     },
     {
@@ -592,8 +593,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:24.801Z",
-      "finishedAt": "2026-05-03T18:38:25.054Z",
+      "startedAt": "2026-05-23T12:53:55.503Z",
+      "finishedAt": "2026-05-23T12:53:55.731Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/alarm-modus"
     },
     {
@@ -605,8 +606,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:25.055Z",
-      "finishedAt": "2026-05-03T18:38:25.282Z",
+      "startedAt": "2026-05-23T12:53:55.731Z",
+      "finishedAt": "2026-05-23T12:53:56.016Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/wenn-worte-treffen"
     },
     {
@@ -618,8 +619,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:25.282Z",
-      "finishedAt": "2026-05-03T18:38:25.516Z",
+      "startedAt": "2026-05-23T12:53:56.017Z",
+      "finishedAt": "2026-05-23T12:53:56.259Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/dear"
     },
     {
@@ -631,8 +632,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:25.516Z",
-      "finishedAt": "2026-05-03T18:38:25.885Z",
+      "startedAt": "2026-05-23T12:53:56.259Z",
+      "finishedAt": "2026-05-23T12:53:56.531Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/radikale-akzeptanz"
     },
     {
@@ -644,8 +645,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:25.885Z",
-      "finishedAt": "2026-05-03T18:38:26.144Z",
+      "startedAt": "2026-05-23T12:53:56.531Z",
+      "finishedAt": "2026-05-23T12:53:56.769Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/genesung-zahlen"
     },
     {
@@ -657,8 +658,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:26.144Z",
-      "finishedAt": "2026-05-03T18:38:26.442Z",
+      "startedAt": "2026-05-23T12:53:56.769Z",
+      "finishedAt": "2026-05-23T12:53:57.007Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/materialien/text/kinder"
     },
     {
@@ -670,8 +671,8 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:26.442Z",
-      "finishedAt": "2026-05-03T18:38:26.574Z",
+      "startedAt": "2026-05-23T12:53:57.007Z",
+      "finishedAt": "2026-05-23T12:53:57.270Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/notfallkarte"
     },
     {
@@ -683,9 +684,129 @@
       "status": "passed",
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
-      "startedAt": "2026-05-03T18:38:26.574Z",
-      "finishedAt": "2026-05-03T18:38:26.704Z",
+      "startedAt": "2026-05-23T12:53:57.270Z",
+      "finishedAt": "2026-05-23T12:53:57.524Z",
       "finalUrl": "https://borderline-angehoerige.netlify.app/notfallkarte/erstellen"
+    },
+    {
+      "id": "home",
+      "title": "Startseite",
+      "kind": "header",
+      "route": "/",
+      "url": "https://borderline-angehoerige.netlify.app/",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "cacheControl": "public,max-age=0,must-revalidate",
+      "contentDisposition": null,
+      "startedAt": "2026-05-23T12:53:58.079Z",
+      "finishedAt": "2026-05-23T12:53:58.209Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/"
+    },
+    {
+      "id": "index-html",
+      "title": "Index HTML",
+      "kind": "header",
+      "route": "/index.html",
+      "url": "https://borderline-angehoerige.netlify.app/index.html",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "cacheControl": "public,max-age=3600,must-revalidate",
+      "contentDisposition": null,
+      "startedAt": "2026-05-23T12:53:58.209Z",
+      "finishedAt": "2026-05-23T12:53:58.436Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/index.html"
+    },
+    {
+      "id": "soforthilfe",
+      "title": "Soforthilfe",
+      "kind": "header",
+      "route": "/soforthilfe",
+      "url": "https://borderline-angehoerige.netlify.app/soforthilfe",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "cacheControl": "public,max-age=0,must-revalidate",
+      "contentDisposition": null,
+      "startedAt": "2026-05-23T12:53:58.436Z",
+      "finishedAt": "2026-05-23T12:53:58.679Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/soforthilfe"
+    },
+    {
+      "id": "notfallkarte",
+      "title": "Notfallkarte",
+      "kind": "header",
+      "route": "/notfallkarte",
+      "url": "https://borderline-angehoerige.netlify.app/notfallkarte",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "cacheControl": "public,max-age=0,must-revalidate",
+      "contentDisposition": null,
+      "startedAt": "2026-05-23T12:53:58.679Z",
+      "finishedAt": "2026-05-23T12:53:58.694Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/notfallkarte"
+    },
+    {
+      "id": "not-found",
+      "title": "404 Seite",
+      "kind": "header",
+      "route": "/404",
+      "url": "https://borderline-angehoerige.netlify.app/404",
+      "status": "passed",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "cacheControl": "public,max-age=0,must-revalidate",
+      "contentDisposition": null,
+      "startedAt": "2026-05-23T12:53:58.695Z",
+      "finishedAt": "2026-05-23T12:53:58.934Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/404"
+    },
+    {
+      "id": "material-inline",
+      "title": "Material Inline Download",
+      "kind": "header",
+      "route": "/api/material-download/notfallplan-krise?disposition=inline",
+      "url": "https://borderline-angehoerige.netlify.app/api/material-download/notfallplan-krise?disposition=inline",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "cacheControl": "public,max-age=0,must-revalidate",
+      "contentDisposition": "inline; filename=\"notfallplan-krise-v03.pdf\"; filename*=UTF-8''notfallplan-krise-v03.pdf",
+      "startedAt": "2026-05-23T12:53:58.934Z",
+      "finishedAt": "2026-05-23T12:53:59.209Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/api/material-download/notfallplan-krise?disposition=inline"
+    },
+    {
+      "id": "static-pdf",
+      "title": "Statisches PDF",
+      "kind": "header",
+      "route": "/notfallplan-krise-v03.pdf",
+      "url": "https://borderline-angehoerige.netlify.app/notfallplan-krise-v03.pdf",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "cacheControl": "public,max-age=0,must-revalidate",
+      "contentDisposition": null,
+      "startedAt": "2026-05-23T12:53:59.209Z",
+      "finishedAt": "2026-05-23T12:53:59.429Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/notfallplan-krise-v03.pdf"
+    },
+    {
+      "id": "runtime-asset",
+      "title": "Gebautes Asset",
+      "kind": "header",
+      "route": "/assets/index-DxdPYkXv.js",
+      "url": "https://borderline-angehoerige.netlify.app/assets/index-DxdPYkXv.js",
+      "status": "passed",
+      "httpStatus": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "cacheControl": "public,max-age=31536000,immutable",
+      "contentDisposition": null,
+      "startedAt": "2026-05-23T12:53:59.429Z",
+      "finishedAt": "2026-05-23T12:53:59.887Z",
+      "finalUrl": "https://borderline-angehoerige.netlify.app/assets/index-DxdPYkXv.js"
     }
   ],
   "status": "passed"

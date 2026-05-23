@@ -107,8 +107,8 @@ Dabei prüfen:
 ## Browser-Matrix
 
 - Release / PR: main
-- Commit / Deploy-Stand: 30eaf5a
-- Datum: 2026-05-22
+- Commit / Deploy-Stand: 244a527
+- Datum: 2026-05-23
 - Basis-URL: https://borderline-angehoerige.netlify.app
 
 | Gerät          | Browser | Status                | Notizen                                                                                               |

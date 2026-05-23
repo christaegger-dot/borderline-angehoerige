@@ -1,15 +1,15 @@
 {
-  "label": "Production Browser Matrix 2026-05-22",
-  "createdAt": "2026-05-22T17:47:41.551Z",
+  "label": "Production Browser Matrix 2026-05-23",
+  "createdAt": "2026-05-23T12:59:20.085Z",
   "baseUrl": "https://borderline-angehoerige.netlify.app",
-  "gitHead": "30eaf5a",
+  "gitHead": "244a527",
   "profiles": [
     {
       "device": "iPhone",
       "browser": "Safari",
       "optional": false,
       "status": "bestanden mit Hinweis",
-      "testedAt": "2026-05-22",
+      "testedAt": "2026-05-23",
       "testedBy": "Codex",
       "notes": "Playwright WebKit mit iPhone-13-Emulation; starke WebKit-Abdeckung, aber kein physisches iOS-Gerät",
       "findings": [],
@@ -17,158 +17,158 @@
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:10.593Z",
-          "finishedAt": "2026-05-22T17:45:12.813Z"
+          "startedAt": "2026-05-23T12:56:59.816Z",
+          "finishedAt": "2026-05-23T12:57:01.702Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:12.813Z",
-          "finishedAt": "2026-05-22T17:45:13.684Z"
+          "startedAt": "2026-05-23T12:57:01.702Z",
+          "finishedAt": "2026-05-23T12:57:02.576Z"
         },
         {
           "name": "Mobiles Menü öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:13.684Z",
-          "finishedAt": "2026-05-22T17:45:13.768Z"
+          "startedAt": "2026-05-23T12:57:02.576Z",
+          "finishedAt": "2026-05-23T12:57:02.643Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:13.768Z",
-          "finishedAt": "2026-05-22T17:45:13.771Z"
+          "startedAt": "2026-05-23T12:57:02.643Z",
+          "finishedAt": "2026-05-23T12:57:02.647Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:13.771Z",
-          "finishedAt": "2026-05-22T17:45:14.899Z"
+          "startedAt": "2026-05-23T12:57:02.647Z",
+          "finishedAt": "2026-05-23T12:57:03.544Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:14.899Z",
-          "finishedAt": "2026-05-22T17:45:16.076Z"
+          "startedAt": "2026-05-23T12:57:03.545Z",
+          "finishedAt": "2026-05-23T12:57:04.455Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:16.077Z",
-          "finishedAt": "2026-05-22T17:45:17.633Z"
+          "startedAt": "2026-05-23T12:57:04.455Z",
+          "finishedAt": "2026-05-23T12:57:05.690Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:17.633Z",
-          "finishedAt": "2026-05-22T17:45:20.506Z"
+          "startedAt": "2026-05-23T12:57:05.690Z",
+          "finishedAt": "2026-05-23T12:57:08.538Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:20.506Z",
-          "finishedAt": "2026-05-22T17:45:20.621Z"
+          "startedAt": "2026-05-23T12:57:08.538Z",
+          "finishedAt": "2026-05-23T12:57:08.654Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:20.621Z",
-          "finishedAt": "2026-05-22T17:45:22.586Z"
+          "startedAt": "2026-05-23T12:57:08.654Z",
+          "finishedAt": "2026-05-23T12:57:10.424Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:22.586Z",
-          "finishedAt": "2026-05-22T17:45:23.226Z"
+          "startedAt": "2026-05-23T12:57:10.424Z",
+          "finishedAt": "2026-05-23T12:57:11.040Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:23.226Z",
-          "finishedAt": "2026-05-22T17:45:24.737Z"
+          "startedAt": "2026-05-23T12:57:11.040Z",
+          "finishedAt": "2026-05-23T12:57:12.606Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:24.737Z",
-          "finishedAt": "2026-05-22T17:45:25.604Z"
+          "startedAt": "2026-05-23T12:57:12.606Z",
+          "finishedAt": "2026-05-23T12:57:13.448Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:25.604Z",
-          "finishedAt": "2026-05-22T17:45:27.828Z"
+          "startedAt": "2026-05-23T12:57:13.448Z",
+          "finishedAt": "2026-05-23T12:57:14.282Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:27.828Z",
-          "finishedAt": "2026-05-22T17:45:28.552Z"
+          "startedAt": "2026-05-23T12:57:14.282Z",
+          "finishedAt": "2026-05-23T12:57:14.663Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:28.552Z",
-          "finishedAt": "2026-05-22T17:45:30.242Z"
+          "startedAt": "2026-05-23T12:57:14.663Z",
+          "finishedAt": "2026-05-23T12:57:15.878Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:30.242Z",
-          "finishedAt": "2026-05-22T17:45:31.427Z"
+          "startedAt": "2026-05-23T12:57:15.878Z",
+          "finishedAt": "2026-05-23T12:57:16.814Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:31.427Z",
-          "finishedAt": "2026-05-22T17:45:32.554Z"
+          "startedAt": "2026-05-23T12:57:16.814Z",
+          "finishedAt": "2026-05-23T12:57:17.683Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:32.554Z",
-          "finishedAt": "2026-05-22T17:45:33.842Z"
+          "startedAt": "2026-05-23T12:57:17.683Z",
+          "finishedAt": "2026-05-23T12:57:18.597Z"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:33.842Z",
-          "finishedAt": "2026-05-22T17:45:35.614Z"
+          "startedAt": "2026-05-23T12:57:18.597Z",
+          "finishedAt": "2026-05-23T12:57:19.659Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:35.614Z",
-          "finishedAt": "2026-05-22T17:45:36.234Z"
+          "startedAt": "2026-05-23T12:57:19.659Z",
+          "finishedAt": "2026-05-23T12:57:20.268Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:36.234Z",
-          "finishedAt": "2026-05-22T17:45:37.120Z"
+          "startedAt": "2026-05-23T12:57:20.268Z",
+          "finishedAt": "2026-05-23T12:57:20.864Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:37.120Z",
-          "finishedAt": "2026-05-22T17:45:38.418Z"
+          "startedAt": "2026-05-23T12:57:20.864Z",
+          "finishedAt": "2026-05-23T12:57:21.742Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:38.418Z",
-          "finishedAt": "2026-05-22T17:45:39.465Z"
+          "startedAt": "2026-05-23T12:57:21.742Z",
+          "finishedAt": "2026-05-23T12:57:22.704Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-22T17:45:10.165Z",
-      "finishedAt": "2026-05-22T17:45:39.465Z"
+      "startedAt": "2026-05-23T12:56:59.142Z",
+      "finishedAt": "2026-05-23T12:57:22.705Z"
     },
     {
       "device": "optional macOS",
       "browser": "Safari",
       "optional": true,
       "status": "bestanden mit Hinweis",
-      "testedAt": "2026-05-22",
+      "testedAt": "2026-05-23",
       "testedBy": "Codex",
       "notes": "Playwright WebKit-Desktoplauf als Safari-Näherung; optionaler Zusatzcheck",
       "findings": [],
@@ -176,152 +176,152 @@
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:39.612Z",
-          "finishedAt": "2026-05-22T17:45:41.199Z"
+          "startedAt": "2026-05-23T12:57:22.832Z",
+          "finishedAt": "2026-05-23T12:57:24.442Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:41.199Z",
-          "finishedAt": "2026-05-22T17:45:42.067Z"
+          "startedAt": "2026-05-23T12:57:24.442Z",
+          "finishedAt": "2026-05-23T12:57:25.308Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:42.067Z",
-          "finishedAt": "2026-05-22T17:45:42.069Z"
+          "startedAt": "2026-05-23T12:57:25.308Z",
+          "finishedAt": "2026-05-23T12:57:25.310Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:42.069Z",
-          "finishedAt": "2026-05-22T17:45:42.884Z"
+          "startedAt": "2026-05-23T12:57:25.310Z",
+          "finishedAt": "2026-05-23T12:57:26.198Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:42.884Z",
-          "finishedAt": "2026-05-22T17:45:43.858Z"
+          "startedAt": "2026-05-23T12:57:26.198Z",
+          "finishedAt": "2026-05-23T12:57:27.008Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:43.859Z",
-          "finishedAt": "2026-05-22T17:45:45.088Z"
+          "startedAt": "2026-05-23T12:57:27.008Z",
+          "finishedAt": "2026-05-23T12:57:28.224Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:45.088Z",
-          "finishedAt": "2026-05-22T17:45:47.960Z"
+          "startedAt": "2026-05-23T12:57:28.224Z",
+          "finishedAt": "2026-05-23T12:57:31.068Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:47.960Z",
-          "finishedAt": "2026-05-22T17:45:48.072Z"
+          "startedAt": "2026-05-23T12:57:31.068Z",
+          "finishedAt": "2026-05-23T12:57:31.142Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:48.072Z",
-          "finishedAt": "2026-05-22T17:45:49.843Z"
+          "startedAt": "2026-05-23T12:57:31.142Z",
+          "finishedAt": "2026-05-23T12:57:32.803Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:49.843Z",
-          "finishedAt": "2026-05-22T17:45:50.479Z"
+          "startedAt": "2026-05-23T12:57:32.803Z",
+          "finishedAt": "2026-05-23T12:57:33.424Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:50.479Z",
-          "finishedAt": "2026-05-22T17:45:51.700Z"
+          "startedAt": "2026-05-23T12:57:33.424Z",
+          "finishedAt": "2026-05-23T12:57:34.757Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:51.700Z",
-          "finishedAt": "2026-05-22T17:45:52.543Z"
+          "startedAt": "2026-05-23T12:57:34.757Z",
+          "finishedAt": "2026-05-23T12:57:35.596Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:52.543Z",
-          "finishedAt": "2026-05-22T17:45:53.560Z"
+          "startedAt": "2026-05-23T12:57:35.596Z",
+          "finishedAt": "2026-05-23T12:57:36.489Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:53.560Z",
-          "finishedAt": "2026-05-22T17:45:54.094Z"
+          "startedAt": "2026-05-23T12:57:36.489Z",
+          "finishedAt": "2026-05-23T12:57:36.898Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:54.094Z",
-          "finishedAt": "2026-05-22T17:45:55.893Z"
+          "startedAt": "2026-05-23T12:57:36.898Z",
+          "finishedAt": "2026-05-23T12:57:37.788Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:55.893Z",
-          "finishedAt": "2026-05-22T17:45:56.799Z"
+          "startedAt": "2026-05-23T12:57:37.788Z",
+          "finishedAt": "2026-05-23T12:57:38.818Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:56.799Z",
-          "finishedAt": "2026-05-22T17:45:57.735Z"
+          "startedAt": "2026-05-23T12:57:38.818Z",
+          "finishedAt": "2026-05-23T12:57:39.698Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:57.735Z",
-          "finishedAt": "2026-05-22T17:45:58.750Z"
+          "startedAt": "2026-05-23T12:57:39.698Z",
+          "finishedAt": "2026-05-23T12:57:40.704Z"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:45:58.750Z",
-          "finishedAt": "2026-05-22T17:46:00.511Z"
+          "startedAt": "2026-05-23T12:57:40.704Z",
+          "finishedAt": "2026-05-23T12:57:42.076Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:00.511Z",
-          "finishedAt": "2026-05-22T17:46:01.162Z"
+          "startedAt": "2026-05-23T12:57:42.076Z",
+          "finishedAt": "2026-05-23T12:57:42.706Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:01.162Z",
-          "finishedAt": "2026-05-22T17:46:01.823Z"
+          "startedAt": "2026-05-23T12:57:42.706Z",
+          "finishedAt": "2026-05-23T12:57:43.335Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:01.823Z",
-          "finishedAt": "2026-05-22T17:46:02.965Z"
+          "startedAt": "2026-05-23T12:57:43.335Z",
+          "finishedAt": "2026-05-23T12:57:44.176Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:02.965Z",
-          "finishedAt": "2026-05-22T17:46:04.026Z"
+          "startedAt": "2026-05-23T12:57:44.176Z",
+          "finishedAt": "2026-05-23T12:57:45.014Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-22T17:45:39.478Z",
-      "finishedAt": "2026-05-22T17:46:04.026Z"
+      "startedAt": "2026-05-23T12:57:22.710Z",
+      "finishedAt": "2026-05-23T12:57:45.014Z"
     },
     {
       "device": "iPhone",
       "browser": "Chrome",
       "optional": false,
       "status": "bestanden mit Hinweis",
-      "testedAt": "2026-05-22",
+      "testedAt": "2026-05-23",
       "testedBy": "Codex",
       "notes": "mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün",
       "findings": [],
@@ -329,158 +329,158 @@
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:05.050Z",
-          "finishedAt": "2026-05-22T17:46:06.686Z"
+          "startedAt": "2026-05-23T12:57:46.007Z",
+          "finishedAt": "2026-05-23T12:57:47.851Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:06.686Z",
-          "finishedAt": "2026-05-22T17:46:07.570Z"
+          "startedAt": "2026-05-23T12:57:47.851Z",
+          "finishedAt": "2026-05-23T12:57:48.724Z"
         },
         {
           "name": "Mobiles Menü öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:07.570Z",
-          "finishedAt": "2026-05-22T17:46:07.633Z"
+          "startedAt": "2026-05-23T12:57:48.724Z",
+          "finishedAt": "2026-05-23T12:57:48.790Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:07.633Z",
-          "finishedAt": "2026-05-22T17:46:07.635Z"
+          "startedAt": "2026-05-23T12:57:48.790Z",
+          "finishedAt": "2026-05-23T12:57:48.792Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:07.635Z",
-          "finishedAt": "2026-05-22T17:46:08.434Z"
+          "startedAt": "2026-05-23T12:57:48.792Z",
+          "finishedAt": "2026-05-23T12:57:49.620Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:08.434Z",
-          "finishedAt": "2026-05-22T17:46:09.394Z"
+          "startedAt": "2026-05-23T12:57:49.620Z",
+          "finishedAt": "2026-05-23T12:57:50.559Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:09.394Z",
-          "finishedAt": "2026-05-22T17:46:10.462Z"
+          "startedAt": "2026-05-23T12:57:50.559Z",
+          "finishedAt": "2026-05-23T12:57:51.537Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:10.462Z",
-          "finishedAt": "2026-05-22T17:46:13.384Z"
+          "startedAt": "2026-05-23T12:57:51.537Z",
+          "finishedAt": "2026-05-23T12:57:54.338Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:13.384Z",
-          "finishedAt": "2026-05-22T17:46:13.471Z"
+          "startedAt": "2026-05-23T12:57:54.338Z",
+          "finishedAt": "2026-05-23T12:57:54.409Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:13.471Z",
-          "finishedAt": "2026-05-22T17:46:15.329Z"
+          "startedAt": "2026-05-23T12:57:54.409Z",
+          "finishedAt": "2026-05-23T12:57:56.374Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:15.329Z",
-          "finishedAt": "2026-05-22T17:46:16.276Z"
+          "startedAt": "2026-05-23T12:57:56.374Z",
+          "finishedAt": "2026-05-23T12:57:57.341Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:16.276Z",
-          "finishedAt": "2026-05-22T17:46:17.458Z"
+          "startedAt": "2026-05-23T12:57:57.341Z",
+          "finishedAt": "2026-05-23T12:57:58.598Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:17.458Z",
-          "finishedAt": "2026-05-22T17:46:17.827Z"
+          "startedAt": "2026-05-23T12:57:58.598Z",
+          "finishedAt": "2026-05-23T12:57:59.477Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:17.827Z",
-          "finishedAt": "2026-05-22T17:46:18.727Z"
+          "startedAt": "2026-05-23T12:57:59.477Z",
+          "finishedAt": "2026-05-23T12:58:00.347Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:18.727Z",
-          "finishedAt": "2026-05-22T17:46:19.351Z"
+          "startedAt": "2026-05-23T12:58:00.347Z",
+          "finishedAt": "2026-05-23T12:58:00.745Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:19.351Z",
-          "finishedAt": "2026-05-22T17:46:20.411Z"
+          "startedAt": "2026-05-23T12:58:00.745Z",
+          "finishedAt": "2026-05-23T12:58:01.887Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:20.412Z",
-          "finishedAt": "2026-05-22T17:46:21.394Z"
+          "startedAt": "2026-05-23T12:58:01.887Z",
+          "finishedAt": "2026-05-23T12:58:02.707Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:21.394Z",
-          "finishedAt": "2026-05-22T17:46:22.339Z"
+          "startedAt": "2026-05-23T12:58:02.707Z",
+          "finishedAt": "2026-05-23T12:58:03.743Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:22.339Z",
-          "finishedAt": "2026-05-22T17:46:23.238Z"
+          "startedAt": "2026-05-23T12:58:03.743Z",
+          "finishedAt": "2026-05-23T12:58:04.843Z"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:23.238Z",
-          "finishedAt": "2026-05-22T17:46:24.429Z"
+          "startedAt": "2026-05-23T12:58:04.843Z",
+          "finishedAt": "2026-05-23T12:58:06.139Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:24.429Z",
-          "finishedAt": "2026-05-22T17:46:25.126Z"
+          "startedAt": "2026-05-23T12:58:06.139Z",
+          "finishedAt": "2026-05-23T12:58:06.727Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:25.126Z",
-          "finishedAt": "2026-05-22T17:46:25.765Z"
+          "startedAt": "2026-05-23T12:58:06.727Z",
+          "finishedAt": "2026-05-23T12:58:07.319Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:25.765Z",
-          "finishedAt": "2026-05-22T17:46:26.620Z"
+          "startedAt": "2026-05-23T12:58:07.319Z",
+          "finishedAt": "2026-05-23T12:58:08.136Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:26.620Z",
-          "finishedAt": "2026-05-22T17:46:27.478Z"
+          "startedAt": "2026-05-23T12:58:08.136Z",
+          "finishedAt": "2026-05-23T12:58:08.935Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-22T17:46:04.802Z",
-      "finishedAt": "2026-05-22T17:46:27.478Z"
+      "startedAt": "2026-05-23T12:57:45.787Z",
+      "finishedAt": "2026-05-23T12:58:08.936Z"
     },
     {
       "device": "Android",
       "browser": "Chrome",
       "optional": false,
       "status": "bestanden mit Hinweis",
-      "testedAt": "2026-05-22",
+      "testedAt": "2026-05-23",
       "testedBy": "Codex",
       "notes": "mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün",
       "findings": [],
@@ -488,158 +488,158 @@
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:27.625Z",
-          "finishedAt": "2026-05-22T17:46:29.633Z"
+          "startedAt": "2026-05-23T12:58:09.081Z",
+          "finishedAt": "2026-05-23T12:58:10.817Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:29.633Z",
-          "finishedAt": "2026-05-22T17:46:30.498Z"
+          "startedAt": "2026-05-23T12:58:10.818Z",
+          "finishedAt": "2026-05-23T12:58:11.672Z"
         },
         {
           "name": "Mobiles Menü öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:30.498Z",
-          "finishedAt": "2026-05-22T17:46:30.565Z"
+          "startedAt": "2026-05-23T12:58:11.672Z",
+          "finishedAt": "2026-05-23T12:58:11.740Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:30.565Z",
-          "finishedAt": "2026-05-22T17:46:30.567Z"
+          "startedAt": "2026-05-23T12:58:11.740Z",
+          "finishedAt": "2026-05-23T12:58:11.742Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:30.567Z",
-          "finishedAt": "2026-05-22T17:46:31.345Z"
+          "startedAt": "2026-05-23T12:58:11.742Z",
+          "finishedAt": "2026-05-23T12:58:12.521Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:31.345Z",
-          "finishedAt": "2026-05-22T17:46:32.206Z"
+          "startedAt": "2026-05-23T12:58:12.521Z",
+          "finishedAt": "2026-05-23T12:58:13.301Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:32.206Z",
-          "finishedAt": "2026-05-22T17:46:33.541Z"
+          "startedAt": "2026-05-23T12:58:13.301Z",
+          "finishedAt": "2026-05-23T12:58:14.525Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:33.541Z",
-          "finishedAt": "2026-05-22T17:46:36.400Z"
+          "startedAt": "2026-05-23T12:58:14.525Z",
+          "finishedAt": "2026-05-23T12:58:17.383Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:36.400Z",
-          "finishedAt": "2026-05-22T17:46:36.471Z"
+          "startedAt": "2026-05-23T12:58:17.383Z",
+          "finishedAt": "2026-05-23T12:58:17.460Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:36.471Z",
-          "finishedAt": "2026-05-22T17:46:38.261Z"
+          "startedAt": "2026-05-23T12:58:17.460Z",
+          "finishedAt": "2026-05-23T12:58:19.247Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:38.261Z",
-          "finishedAt": "2026-05-22T17:46:39.222Z"
+          "startedAt": "2026-05-23T12:58:19.247Z",
+          "finishedAt": "2026-05-23T12:58:20.191Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:39.222Z",
-          "finishedAt": "2026-05-22T17:46:40.290Z"
+          "startedAt": "2026-05-23T12:58:20.191Z",
+          "finishedAt": "2026-05-23T12:58:21.395Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:40.290Z",
-          "finishedAt": "2026-05-22T17:46:41.152Z"
+          "startedAt": "2026-05-23T12:58:21.396Z",
+          "finishedAt": "2026-05-23T12:58:22.245Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:41.152Z",
-          "finishedAt": "2026-05-22T17:46:42.045Z"
+          "startedAt": "2026-05-23T12:58:22.245Z",
+          "finishedAt": "2026-05-23T12:58:22.944Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:42.045Z",
-          "finishedAt": "2026-05-22T17:46:42.430Z"
+          "startedAt": "2026-05-23T12:58:22.944Z",
+          "finishedAt": "2026-05-23T12:58:23.312Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:42.430Z",
-          "finishedAt": "2026-05-22T17:46:43.671Z"
+          "startedAt": "2026-05-23T12:58:23.312Z",
+          "finishedAt": "2026-05-23T12:58:24.217Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:43.671Z",
-          "finishedAt": "2026-05-22T17:46:44.560Z"
+          "startedAt": "2026-05-23T12:58:24.217Z",
+          "finishedAt": "2026-05-23T12:58:25.058Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:44.560Z",
-          "finishedAt": "2026-05-22T17:46:45.525Z"
+          "startedAt": "2026-05-23T12:58:25.058Z",
+          "finishedAt": "2026-05-23T12:58:26.090Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:45.525Z",
-          "finishedAt": "2026-05-22T17:46:46.548Z"
+          "startedAt": "2026-05-23T12:58:26.090Z",
+          "finishedAt": "2026-05-23T12:58:27.048Z"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:46.548Z",
-          "finishedAt": "2026-05-22T17:46:47.943Z"
+          "startedAt": "2026-05-23T12:58:27.048Z",
+          "finishedAt": "2026-05-23T12:58:27.900Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:47.943Z",
-          "finishedAt": "2026-05-22T17:46:48.572Z"
+          "startedAt": "2026-05-23T12:58:27.900Z",
+          "finishedAt": "2026-05-23T12:58:28.489Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:48.572Z",
-          "finishedAt": "2026-05-22T17:46:49.206Z"
+          "startedAt": "2026-05-23T12:58:28.489Z",
+          "finishedAt": "2026-05-23T12:58:29.076Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:49.206Z",
-          "finishedAt": "2026-05-22T17:46:50.058Z"
+          "startedAt": "2026-05-23T12:58:29.076Z",
+          "finishedAt": "2026-05-23T12:58:30.110Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:50.058Z",
-          "finishedAt": "2026-05-22T17:46:50.900Z"
+          "startedAt": "2026-05-23T12:58:30.110Z",
+          "finishedAt": "2026-05-23T12:58:30.920Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-22T17:46:27.493Z",
-      "finishedAt": "2026-05-22T17:46:50.900Z"
+      "startedAt": "2026-05-23T12:58:08.949Z",
+      "finishedAt": "2026-05-23T12:58:30.920Z"
     },
     {
       "device": "Desktop",
       "browser": "Chrome",
       "optional": false,
       "status": "bestanden",
-      "testedAt": "2026-05-22",
+      "testedAt": "2026-05-23",
       "testedBy": "Codex",
       "notes": "Playwright-Lauf gegen Production mit System-Chrome/Chromium",
       "findings": [],
@@ -647,152 +647,152 @@
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:51.048Z",
-          "finishedAt": "2026-05-22T17:46:52.742Z"
+          "startedAt": "2026-05-23T12:58:31.065Z",
+          "finishedAt": "2026-05-23T12:58:32.909Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:52.742Z",
-          "finishedAt": "2026-05-22T17:46:53.620Z"
+          "startedAt": "2026-05-23T12:58:32.909Z",
+          "finishedAt": "2026-05-23T12:58:33.794Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:53.620Z",
-          "finishedAt": "2026-05-22T17:46:53.624Z"
+          "startedAt": "2026-05-23T12:58:33.794Z",
+          "finishedAt": "2026-05-23T12:58:33.797Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:53.624Z",
-          "finishedAt": "2026-05-22T17:46:54.449Z"
+          "startedAt": "2026-05-23T12:58:33.797Z",
+          "finishedAt": "2026-05-23T12:58:34.700Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:54.449Z",
-          "finishedAt": "2026-05-22T17:46:55.342Z"
+          "startedAt": "2026-05-23T12:58:34.700Z",
+          "finishedAt": "2026-05-23T12:58:35.653Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:55.342Z",
-          "finishedAt": "2026-05-22T17:46:56.671Z"
+          "startedAt": "2026-05-23T12:58:35.653Z",
+          "finishedAt": "2026-05-23T12:58:36.624Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:56.671Z",
-          "finishedAt": "2026-05-22T17:46:59.478Z"
+          "startedAt": "2026-05-23T12:58:36.624Z",
+          "finishedAt": "2026-05-23T12:58:39.404Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:59.478Z",
-          "finishedAt": "2026-05-22T17:46:59.549Z"
+          "startedAt": "2026-05-23T12:58:39.404Z",
+          "finishedAt": "2026-05-23T12:58:39.476Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-22T17:46:59.549Z",
-          "finishedAt": "2026-05-22T17:47:01.379Z"
+          "startedAt": "2026-05-23T12:58:39.476Z",
+          "finishedAt": "2026-05-23T12:58:41.186Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:01.379Z",
-          "finishedAt": "2026-05-22T17:47:02.324Z"
+          "startedAt": "2026-05-23T12:58:41.186Z",
+          "finishedAt": "2026-05-23T12:58:42.115Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:02.324Z",
-          "finishedAt": "2026-05-22T17:47:03.624Z"
+          "startedAt": "2026-05-23T12:58:42.115Z",
+          "finishedAt": "2026-05-23T12:58:43.296Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:03.624Z",
-          "finishedAt": "2026-05-22T17:47:03.995Z"
+          "startedAt": "2026-05-23T12:58:43.297Z",
+          "finishedAt": "2026-05-23T12:58:44.128Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:03.995Z",
-          "finishedAt": "2026-05-22T17:47:04.816Z"
+          "startedAt": "2026-05-23T12:58:44.128Z",
+          "finishedAt": "2026-05-23T12:58:44.726Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:04.816Z",
-          "finishedAt": "2026-05-22T17:47:05.135Z"
+          "startedAt": "2026-05-23T12:58:44.726Z",
+          "finishedAt": "2026-05-23T12:58:45.107Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:05.136Z",
-          "finishedAt": "2026-05-22T17:47:06.296Z"
+          "startedAt": "2026-05-23T12:58:45.107Z",
+          "finishedAt": "2026-05-23T12:58:46.227Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:06.296Z",
-          "finishedAt": "2026-05-22T17:47:07.187Z"
+          "startedAt": "2026-05-23T12:58:46.227Z",
+          "finishedAt": "2026-05-23T12:58:47.180Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:07.187Z",
-          "finishedAt": "2026-05-22T17:47:08.058Z"
+          "startedAt": "2026-05-23T12:58:47.180Z",
+          "finishedAt": "2026-05-23T12:58:48.224Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:08.058Z",
-          "finishedAt": "2026-05-22T17:47:08.993Z"
+          "startedAt": "2026-05-23T12:58:48.224Z",
+          "finishedAt": "2026-05-23T12:58:49.328Z"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:08.993Z",
-          "finishedAt": "2026-05-22T17:47:10.521Z"
+          "startedAt": "2026-05-23T12:58:49.328Z",
+          "finishedAt": "2026-05-23T12:58:50.590Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:10.521Z",
-          "finishedAt": "2026-05-22T17:47:11.141Z"
+          "startedAt": "2026-05-23T12:58:50.590Z",
+          "finishedAt": "2026-05-23T12:58:51.173Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:11.141Z",
-          "finishedAt": "2026-05-22T17:47:11.795Z"
+          "startedAt": "2026-05-23T12:58:51.173Z",
+          "finishedAt": "2026-05-23T12:58:51.769Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:11.795Z",
-          "finishedAt": "2026-05-22T17:47:12.663Z"
+          "startedAt": "2026-05-23T12:58:51.769Z",
+          "finishedAt": "2026-05-23T12:58:52.675Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:12.663Z",
-          "finishedAt": "2026-05-22T17:47:13.620Z"
+          "startedAt": "2026-05-23T12:58:52.675Z",
+          "finishedAt": "2026-05-23T12:58:53.482Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-22T17:46:50.907Z",
-      "finishedAt": "2026-05-22T17:47:13.620Z"
+      "startedAt": "2026-05-23T12:58:30.926Z",
+      "finishedAt": "2026-05-23T12:58:53.483Z"
     },
     {
       "device": "Desktop",
       "browser": "Firefox",
       "optional": false,
       "status": "bestanden",
-      "testedAt": "2026-05-22",
+      "testedAt": "2026-05-23",
       "testedBy": "Codex",
       "notes": "Playwright-Firefox-Lauf gegen Production",
       "findings": [],
@@ -800,145 +800,145 @@
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:14.628Z",
-          "finishedAt": "2026-05-22T17:47:17.028Z"
+          "startedAt": "2026-05-23T12:58:55.745Z",
+          "finishedAt": "2026-05-23T12:58:57.517Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:17.028Z",
-          "finishedAt": "2026-05-22T17:47:18.002Z"
+          "startedAt": "2026-05-23T12:58:57.517Z",
+          "finishedAt": "2026-05-23T12:58:58.479Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:18.002Z",
-          "finishedAt": "2026-05-22T17:47:18.005Z"
+          "startedAt": "2026-05-23T12:58:58.479Z",
+          "finishedAt": "2026-05-23T12:58:58.483Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:18.005Z",
-          "finishedAt": "2026-05-22T17:47:18.886Z"
+          "startedAt": "2026-05-23T12:58:58.483Z",
+          "finishedAt": "2026-05-23T12:58:59.412Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:18.886Z",
-          "finishedAt": "2026-05-22T17:47:19.800Z"
+          "startedAt": "2026-05-23T12:58:59.412Z",
+          "finishedAt": "2026-05-23T12:59:00.340Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:19.800Z",
-          "finishedAt": "2026-05-22T17:47:21.022Z"
+          "startedAt": "2026-05-23T12:59:00.340Z",
+          "finishedAt": "2026-05-23T12:59:01.362Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:21.022Z",
-          "finishedAt": "2026-05-22T17:47:24.399Z"
+          "startedAt": "2026-05-23T12:59:01.362Z",
+          "finishedAt": "2026-05-23T12:59:04.679Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:24.399Z",
-          "finishedAt": "2026-05-22T17:47:24.537Z"
+          "startedAt": "2026-05-23T12:59:04.679Z",
+          "finishedAt": "2026-05-23T12:59:04.815Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:24.537Z",
-          "finishedAt": "2026-05-22T17:47:26.357Z"
+          "startedAt": "2026-05-23T12:59:04.815Z",
+          "finishedAt": "2026-05-23T12:59:06.512Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:26.357Z",
-          "finishedAt": "2026-05-22T17:47:27.461Z"
+          "startedAt": "2026-05-23T12:59:06.512Z",
+          "finishedAt": "2026-05-23T12:59:07.634Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:27.461Z",
-          "finishedAt": "2026-05-22T17:47:28.711Z"
+          "startedAt": "2026-05-23T12:59:07.634Z",
+          "finishedAt": "2026-05-23T12:59:08.972Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:28.711Z",
-          "finishedAt": "2026-05-22T17:47:29.599Z"
+          "startedAt": "2026-05-23T12:59:08.972Z",
+          "finishedAt": "2026-05-23T12:59:09.855Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:29.599Z",
-          "finishedAt": "2026-05-22T17:47:30.548Z"
+          "startedAt": "2026-05-23T12:59:09.855Z",
+          "finishedAt": "2026-05-23T12:59:10.690Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:30.548Z",
-          "finishedAt": "2026-05-22T17:47:30.980Z"
+          "startedAt": "2026-05-23T12:59:10.690Z",
+          "finishedAt": "2026-05-23T12:59:10.956Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:30.980Z",
-          "finishedAt": "2026-05-22T17:47:32.423Z"
+          "startedAt": "2026-05-23T12:59:10.956Z",
+          "finishedAt": "2026-05-23T12:59:12.211Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:32.423Z",
-          "finishedAt": "2026-05-22T17:47:33.413Z"
+          "startedAt": "2026-05-23T12:59:12.211Z",
+          "finishedAt": "2026-05-23T12:59:13.252Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:33.413Z",
-          "finishedAt": "2026-05-22T17:47:34.856Z"
+          "startedAt": "2026-05-23T12:59:13.252Z",
+          "finishedAt": "2026-05-23T12:59:14.357Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:34.856Z",
-          "finishedAt": "2026-05-22T17:47:35.794Z"
+          "startedAt": "2026-05-23T12:59:14.357Z",
+          "finishedAt": "2026-05-23T12:59:15.252Z"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:35.794Z",
-          "finishedAt": "2026-05-22T17:47:38.046Z"
+          "startedAt": "2026-05-23T12:59:15.252Z",
+          "finishedAt": "2026-05-23T12:59:16.588Z"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:38.046Z",
-          "finishedAt": "2026-05-22T17:47:38.687Z"
+          "startedAt": "2026-05-23T12:59:16.588Z",
+          "finishedAt": "2026-05-23T12:59:17.212Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:38.687Z",
-          "finishedAt": "2026-05-22T17:47:39.365Z"
+          "startedAt": "2026-05-23T12:59:17.212Z",
+          "finishedAt": "2026-05-23T12:59:17.859Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:39.365Z",
-          "finishedAt": "2026-05-22T17:47:40.365Z"
+          "startedAt": "2026-05-23T12:59:17.859Z",
+          "finishedAt": "2026-05-23T12:59:18.954Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-22T17:47:40.365Z",
-          "finishedAt": "2026-05-22T17:47:41.282Z"
+          "startedAt": "2026-05-23T12:59:18.954Z",
+          "finishedAt": "2026-05-23T12:59:19.831Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-22T17:47:14.269Z",
-      "finishedAt": "2026-05-22T17:47:41.282Z"
+      "startedAt": "2026-05-23T12:58:55.338Z",
+      "finishedAt": "2026-05-23T12:59:19.831Z"
     }
   ],
   "releaseDecision": "green-with-notes"

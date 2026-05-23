@@ -1,5 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const visualBaseURL = process.env.VISUAL_BASE_URL ?? "http://127.0.0.1:4173";
+const visualWebServerCommand =
+  process.env.VISUAL_WEB_SERVER_COMMAND ?? "pnpm preview";
+
 /**
  * Visual-Regression-Tests für die Editorial-Komponenten und Hauptseiten.
  *
@@ -26,7 +30,7 @@ export default defineConfig({
   reporter: process.env.CI ? "github" : "list",
 
   use: {
-    baseURL: process.env.VISUAL_BASE_URL ?? "http://127.0.0.1:4173",
+    baseURL: visualBaseURL,
     trace: "on-first-retry",
     // Stabile Screenshots: keine animations, system font fallback identisch
     screenshot: "only-on-failure",
@@ -66,8 +70,8 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: "pnpm preview",
-    url: "http://127.0.0.1:4173",
+    command: visualWebServerCommand,
+    url: visualBaseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 60_000,
   },

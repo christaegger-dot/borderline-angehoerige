@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import MaterialienLibrarySection from "@/sections/MaterialienLibrarySection";
 
 describe("MaterialienLibrarySection", () => {
-  it("shows core materials and filters secondary materials by category", () => {
+  it("shows starter materials and filters the full library by category", () => {
     render(
       <Router>
         <MaterialienLibrarySection />
@@ -18,9 +18,9 @@ describe("MaterialienLibrarySection", () => {
     expect(
       screen.getByText("Genesung in Zahlen – Was die Forschung zeigt")
     ).toBeInTheDocument();
-    const localizedDownloadLink = screen.getByRole("link", {
+    const localizedDownloadLink = screen.getAllByRole("link", {
       name: /Der Leuchtturm – Orientierung für Angehörige herunterladen/i,
-    });
+    })[0];
     expect(localizedDownloadLink).toHaveAttribute(
       "href",
       "/api/material-download/leuchtturm"
@@ -47,9 +47,9 @@ describe("MaterialienLibrarySection", () => {
       })[0]
     ).toHaveAttribute("href", "/materialien/text/notfallplan-krise");
 
-    const textVersionLink = screen.getByRole("link", {
+    const textVersionLink = screen.getAllByRole("link", {
       name: /Textversion lesen: Der Leuchtturm – Orientierung für Angehörige/i,
-    });
+    })[0];
     expect(textVersionLink).toHaveAttribute(
       "href",
       "/materialien/text/leuchtturm"
@@ -80,9 +80,9 @@ describe("MaterialienLibrarySection", () => {
       })
     ).toHaveAttribute("href", "/materialien/text/grenzen-spickzettel");
     expect(
-      screen.getByRole("link", {
+      screen.getAllByRole("link", {
         name: /Textversion lesen: Warnsignale der Überlastung/i,
-      })
+      })[0]
     ).toHaveAttribute("href", "/materialien/text/warnsignale");
     expect(
       screen.getByRole("link", {

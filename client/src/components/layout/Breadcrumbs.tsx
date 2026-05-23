@@ -1,5 +1,4 @@
 import { Link, useLocation } from "wouter";
-import { getRouteAccent } from "@/components/layout/routeAccent";
 import { getHandoutTextVersionMeta } from "@/content/handoutTextVersions";
 import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
@@ -98,7 +97,6 @@ export function getPageName(location: string) {
 
 export function Breadcrumbs() {
   const [location] = useLocation();
-  const accent = getRouteAccent(location);
 
   if (!shouldShowBreadcrumbs(location)) return null;
 
@@ -108,55 +106,51 @@ export function Breadcrumbs() {
   const backLabel = parent?.label || "Startseite";
 
   return (
-    <div className="border-b border-border/40 bg-background/92">
-      <nav className="container py-2 md:py-3.5" aria-label="Breadcrumb">
+    <div className="border-b border-border/25 bg-background">
+      <nav className="container py-1.5 md:py-2" aria-label="Breadcrumb">
         <div className="flex items-center justify-between gap-3 sm:gap-4">
           <Link
             href={backHref}
-            className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[13px] font-medium transition-colors group sm:hidden ${accent.breadcrumbBack}`}
+            className="inline-flex items-center gap-1.5 text-[13px] font-medium text-muted-foreground transition-colors hover:text-foreground sm:hidden"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="h-4 w-4" />
             <span>{backLabel}</span>
           </Link>
 
-          <p
-            className={`min-w-0 flex-1 truncate text-right text-[13px] font-medium sm:hidden ${accent.textAccent}`}
-          >
+          <p className="min-w-0 flex-1 truncate text-right text-[13px] font-medium text-muted-foreground sm:hidden">
             {pageName}
           </p>
 
-          <ol className="hidden sm:flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+          <ol className="hidden flex-wrap items-center gap-x-1.5 gap-y-1 text-[13px] text-muted-foreground sm:flex">
             <li>
               <Link
                 href="/"
                 className="flex items-center gap-1.5 transition-colors hover:text-foreground"
               >
-                <Home className="w-4 h-4" />
+                <Home className="h-3.5 w-3.5" />
                 <span>Startseite</span>
               </Link>
             </li>
             {parent && (
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-1.5">
                 <ChevronRight
-                  className="w-4 h-4 text-muted-foreground/50"
+                  className="h-3.5 w-3.5 text-muted-foreground/45"
                   aria-hidden="true"
                 />
                 <Link
                   href={parent.href}
-                  className={`transition-colors ${accent.textAccent}`}
+                  className="transition-colors hover:text-foreground"
                 >
                   {parent.label}
                 </Link>
               </li>
             )}
-            <li className="flex items-center gap-2">
+            <li className="flex items-center gap-1.5">
               <ChevronRight
-                className="w-4 h-4 text-muted-foreground/50"
+                className="h-3.5 w-3.5 text-muted-foreground/45"
                 aria-hidden="true"
               />
-              <span className={`font-medium ${accent.textAccent}`}>
-                {pageName}
-              </span>
+              <span className="font-medium text-foreground/75">{pageName}</span>
             </li>
           </ol>
         </div>

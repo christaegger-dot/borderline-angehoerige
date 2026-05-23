@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import { Router } from "wouter";
 import { HeaderNav } from "@/components/layout/HeaderNav";
 
@@ -26,16 +26,14 @@ describe("SiteHeader (HeaderNav)", () => {
     expect(brandMark?.querySelector("svg")).toBeTruthy();
   });
 
-  it("renders the vertical hairline separator between brand and nav", () => {
+  it("does not add a separate brand/nav hairline separator", () => {
     const { container } = renderHeader();
-    // Trenner: 1 px × 32 px (h-8 w-px), rule-color-strong, nur xl+
+    // Der Header soll als ruhige Editorial-Chrome wirken; ein eigener
+    // Brand/Nav-Trenner fuehrte visuell zu einer zusaetzlichen Ebene.
     const separator = container.querySelector(
       'span[aria-hidden="true"].h-8.w-px'
     );
-    expect(separator).toBeTruthy();
-    expect(separator?.getAttribute("style")).toContain(
-      "var(--rule-color-strong)"
-    );
+    expect(separator).toBeNull();
   });
 
   it("renders nav items with fg-secondary by default and fg-primary on active", () => {
@@ -67,7 +65,7 @@ describe("SiteHeader (HeaderNav)", () => {
     });
   });
 
-  it("renders the Soforthilfe pill as a softer alert CTA on desktop", () => {
+  it("renders the Soforthilfe link as a quiet alert outline on desktop", () => {
     const { container } = renderHeader();
     const soforthilfeLinks = Array.from(
       container.querySelectorAll('a[aria-label*="Soforthilfe"]')
@@ -75,12 +73,13 @@ describe("SiteHeader (HeaderNav)", () => {
     // Mindestens ein Soforthilfe-Link (Desktop-Version mit Text)
     expect(soforthilfeLinks.length).toBeGreaterThan(0);
 
-    // Desktop-Version bleibt sichtbar, aber als ruhigere Alert-Wash-Pill.
+    // Desktop-Version bleibt sichtbar, aber ohne gefuellte Buttonflaeche.
     const desktopSoforthilfe = soforthilfeLinks.find(link =>
-      link.className.includes("bg-alert-wash")
+      link.className.includes("border-alert-light")
     );
     expect(desktopSoforthilfe).toBeTruthy();
     expect(desktopSoforthilfe?.className).toContain("text-alert-dark");
+    expect(desktopSoforthilfe?.className).toContain("bg-transparent");
   });
 
   it("renders the Brand wordmark with shortened text Borderline · Angehörige", () => {
@@ -94,5 +93,19 @@ describe("SiteHeader (HeaderNav)", () => {
     expect(brandSub).toBeInTheDocument();
     // Sage-Color via accent-label-Token im inline style
     expect(brandSub.getAttribute("style")).toContain("var(--accent-label)");
+  });
+
+  it("opens the mobile menu across the full non-desktop breakpoint", () => {
+    window.scrollTo = vi.fn();
+    renderHeader();
+    fireEvent.click(screen.getByRole("button", { name: /Menü öffnen/i }));
+
+    const mobileDialog = screen
+      .getByRole("navigation", { name: /Mobile Navigation/i })
+      .closest("#mobile-navigation-dialog");
+
+    expect(mobileDialog).toBeTruthy();
+    expect(mobileDialog?.className).toContain("lg:hidden");
+    expect(mobileDialog?.className).not.toContain("md:hidden");
   });
 });

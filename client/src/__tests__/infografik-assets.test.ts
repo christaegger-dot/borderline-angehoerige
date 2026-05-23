@@ -75,4 +75,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Wenn-Worte-Treffen v2 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-wenn-worte-treffen-v2.pdf",
+        "/infografiken/manus-wenn-worte-treffen-v2.webp",
+        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp",
+      ],
+      [
+        "/infografiken/manus-wenn-worte-treffen-v1.pdf",
+        "/infografiken/manus-wenn-worte-treffen-v1.webp",
+        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
+      ]
+    );
+  });
 });

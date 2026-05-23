@@ -1,12 +1,19 @@
 import ContentSection from "@/components/ContentSection";
 import { warningSignalGroups } from "@/content/selbstfuersorge-page";
 
-export function SelbstfuersorgeSignalsSection() {
+interface SelbstfuersorgeSignalsSectionProps {
+  defaultOpen?: boolean;
+}
+
+export function SelbstfuersorgeSignalsSection({
+  defaultOpen = false,
+}: SelbstfuersorgeSignalsSectionProps) {
   return (
     <ContentSection
       variant="editorial"
       title="Warnsignale für Überlastung"
       id="warnsignale"
+      defaultOpen={defaultOpen}
       preview="Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr Selbstfürsorge brauchen."
     >
       <p className="editorial-small-copy mb-6">

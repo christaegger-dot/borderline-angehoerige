@@ -10,7 +10,6 @@ import {
   Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
-import { SchaleIllustration } from "@/components/illustrations";
 import SelbstfuersorgeCheck from "@/components/interactive/SelbstfuersorgeCheck";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -29,6 +28,33 @@ function openSection(sectionId: string) {
     new CustomEvent("open-section", { detail: { sectionId } })
   );
 }
+
+const selbstfuersorgePfad = [
+  {
+    kicker: "1 · Erkennen",
+    title: "Warnsignale nicht wegdrücken",
+    text: "Erschöpfung, Gereiztheit oder ständige Alarmbereitschaft sind keine Schwäche, sondern Signale.",
+    sectionId: "warnsignale",
+  },
+  {
+    kicker: "2 · Stoppen",
+    title: "Erst den Körper beruhigen",
+    text: "Eine kurze Atem- oder Grounding-Übung ist oft sinnvoller als sofort weiterzureden.",
+    sectionId: "sofort-uebungen",
+  },
+  {
+    kicker: "3 · Erlauben",
+    title: "Sich nicht selbst verlieren",
+    text: "Sie dürfen Nein sagen, müde sein, Hilfe brauchen und trotzdem verbunden bleiben.",
+    sectionId: "erlaubnis",
+  },
+  {
+    kicker: "4 · Teilen",
+    title: "Nicht allein tragen",
+    text: "Beratung, Austausch und andere Zuständigkeiten schützen vor dem stillen Alleintragen.",
+    sectionId: "beratung-netzwerke",
+  },
+] as const;
 
 export default function Selbstfuersorge() {
   const handleAnchorClick = useCallback(
@@ -101,10 +127,27 @@ export default function Selbstfuersorge() {
           </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
-          <SchaleIllustration
-            ariaLabel="Eine offene Schale, die etwas hält ohne zu greifen — selbst tragend, selbst geformt."
-            className="ml-auto block aspect-square w-full max-w-[560px]"
-          />
+          <figure className="ml-auto w-full max-w-[430px]">
+            <div
+              className="overflow-hidden rounded-[1.35rem] border"
+              style={{
+                borderColor: "var(--rule-color)",
+                backgroundColor: "var(--bg-elevated)",
+              }}
+            >
+              <img
+                src="/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.webp"
+                alt="Diagramm: Ohne Selbstfürsorge entsteht ein Teufelskreis aus Erschöpfung, weniger Geduld, Konflikten und Schuldgefühlen. Mit Selbstfürsorge entsteht ein Schutzkreislauf aus Stabilität, Kraft, Geduld und ruhigeren Reaktionen."
+                className="block w-full"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <figcaption className="editorial-small-copy mt-3 border-t pt-3">
+              Visueller Kern: Selbstfürsorge ist nicht Abkehr, sondern die
+              Sauerstoffmaske, die ruhigeres Helfen überhaupt möglich macht.
+            </figcaption>
+          </figure>
         </EditorialSection.Aside>
       </EditorialSection>
 
@@ -329,6 +372,34 @@ export default function Selbstfuersorge() {
               springen.
             </p>
           </EditorialProse>
+          <div
+            className="mt-8 border-t pt-6"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <p className="editorial-micro-label">Lesepfad</p>
+            <h3 className="editorial-card-heading mt-3">
+              Vom Alarm zurück in Handlungsspielraum
+            </h3>
+            <div className="mt-5 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+              {selbstfuersorgePfad.map(item => (
+                <a
+                  key={item.sectionId}
+                  href={`#${item.sectionId}`}
+                  className="group block border-t pt-4 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent-primary)]"
+                  style={{ borderColor: "var(--rule-color)" }}
+                  onClick={e => handleAnchorClick(e, item.sectionId)}
+                >
+                  <span className="editorial-micro-label">{item.kicker}</span>
+                  <span className="editorial-item-heading mt-2 block transition-colors group-hover:text-[color:var(--accent-primary)]">
+                    {item.title}
+                  </span>
+                  <span className="editorial-small-copy mt-2 block">
+                    {item.text}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -405,7 +476,7 @@ export default function Selbstfuersorge() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <SelbstfuersorgeSignalsSection />
+          <SelbstfuersorgeSignalsSection defaultOpen />
           <SelbstfuersorgeCheck />
         </EditorialSection.Body>
       </EditorialSection>
@@ -433,7 +504,7 @@ export default function Selbstfuersorge() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <SelbstfuersorgeExercisesSection />
+          <SelbstfuersorgeExercisesSection immediateDefaultOpen />
 
           <ContentSection
             variant="editorial"
@@ -512,6 +583,7 @@ export default function Selbstfuersorge() {
             variant="editorial"
             title="Geben Sie sich die Erlaubnis"
             id="erlaubnis"
+            defaultOpen={true}
             preview="Als Angehöriger dürfen Sie auch mal wütend sein, Nein sagen und Ihre eigenen Bedürfnisse ernst nehmen."
           >
             <EditorialProse>
@@ -553,6 +625,7 @@ export default function Selbstfuersorge() {
             variant="editorial"
             title="Beratung & Netzwerke"
             id="beratung-netzwerke"
+            defaultOpen={true}
             preview="Sie müssen das nicht allein tragen – professionelle Beratung und Austausch mit anderen Angehörigen helfen."
           >
             <EditorialProse>

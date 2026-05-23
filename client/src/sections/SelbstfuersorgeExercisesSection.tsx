@@ -221,7 +221,15 @@ function UebungAkkordeon({
   );
 }
 
-export function SelbstfuersorgeExercisesSection() {
+interface SelbstfuersorgeExercisesSectionProps {
+  immediateDefaultOpen?: boolean;
+  longTermDefaultOpen?: boolean;
+}
+
+export function SelbstfuersorgeExercisesSection({
+  immediateDefaultOpen = false,
+  longTermDefaultOpen = false,
+}: SelbstfuersorgeExercisesSectionProps) {
   const bodyStyle = {
     fontSize: "var(--text-sm)",
     lineHeight: "var(--lh-relaxed)",
@@ -240,6 +248,7 @@ export function SelbstfuersorgeExercisesSection() {
         variant="editorial"
         title="Sofort-Übungen für akute Belastung"
         id="sofort-uebungen"
+        defaultOpen={immediateDefaultOpen}
         preview="Atemübung, 5-4-3-2-1 Grounding und STOPP-Technik – jederzeit anwendbar."
       >
         <p className="mb-6" style={bodyStyle}>
@@ -288,6 +297,7 @@ export function SelbstfuersorgeExercisesSection() {
         variant="editorial"
         title="Langfristige Selbstfürsorge-Strategien"
         id="langfristige-strategien"
+        defaultOpen={longTermDefaultOpen}
         preview="Tägliche Mini-Auszeiten, Bewegung, soziale Kontakte und professionelle Unterstützung."
       >
         <p className="mb-6" style={bodyStyle}>

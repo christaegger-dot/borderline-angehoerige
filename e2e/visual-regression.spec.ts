@@ -97,7 +97,7 @@ test("materialien filter and first cards match baseline", async ({ page }) => {
   await expect(filterBar).toHaveScreenshot("materialien-filterbar.png");
 
   const firstGrid = page.locator(
-    "section[aria-label='Empfohlene Kernmaterialien — Tile-Liste']"
+    "section[aria-label='Empfohlene Startmaterialien']"
   );
   await firstGrid
     .locator("img")

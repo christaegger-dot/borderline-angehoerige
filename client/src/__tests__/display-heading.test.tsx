@@ -63,6 +63,18 @@ describe("DisplayHeading", () => {
     expect(el.style.marginBottom).toBe("");
   });
 
+  it("renders size=utility with a more compact responsive font-size", () => {
+    render(
+      <DisplayHeading level={1} size="utility">
+        Utility
+      </DisplayHeading>
+    );
+    const el = screen.getByText("Utility");
+    expect(el).toHaveClass("font-display", "mt-8");
+    expect(el.style.fontSize).toBe("clamp(2rem, 4vw, var(--text-4xl))");
+    expect(el.style.marginBottom).toBe("");
+  });
+
   it("forwards id prop for deep-link anchors", () => {
     render(
       <DisplayHeading level={2} id="therapieangebote">

@@ -22,6 +22,7 @@ import {
   prefersHandoutTextVersion,
 } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import { cn } from "@/lib/utils";
 
 const categoryLabel: Record<Exclude<MaterialCategory, "alle">, string> = {
   verstehen: "Verstehen",
@@ -32,6 +33,13 @@ const categoryLabel: Record<Exclude<MaterialCategory, "alle">, string> = {
   genesung: "Genesung",
   soforthilfe: "Soforthilfe",
 };
+
+const starterMaterialIds = [
+  "notfallkarte-zuerich",
+  "notfallplan-krise",
+  "leuchtturm",
+  "warnsignale",
+] as const;
 
 function SectionKicker({ children }: { children: string }) {
   return (
@@ -50,10 +58,12 @@ function MaterialEntry({
   item,
   onPreview,
   eager = false,
+  variant = "library",
 }: {
   item: MaterialItem;
   onPreview: (image: string, title: string) => void;
   eager?: boolean;
+  variant?: "starter" | "library";
 }) {
   const previewSrc = item.isHtml
     ? (item.previewUrl ?? item.url)
@@ -70,7 +80,12 @@ function MaterialEntry({
   const openLabel = item.isHtml ? "Öffnen" : "PDF öffnen";
 
   return (
-    <article className="material-library-card">
+    <article
+      className={cn(
+        "material-library-card",
+        variant === "starter" && "material-library-card--starter"
+      )}
+    >
       <button
         type="button"
         className="material-library-card__media"
@@ -157,21 +172,19 @@ export default function MaterialienLibrarySection() {
   const [previewTitle, setPreviewTitle] = useState("Vorschau");
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const coreMaterials = useMemo(
-    () => materials.filter(item => item.priority === "core"),
+  const starterMaterials = useMemo(
+    () =>
+      starterMaterialIds
+        .map(id => materials.find(item => item.id === id))
+        .filter((item): item is MaterialItem => Boolean(item)),
     []
   );
-
-  const isInLibrary = (item: MaterialItem) =>
-    item.priority !== "core" || item.showInLibrary === true;
 
   const secondaryMaterials = useMemo(
     () =>
       activeCategory === "alle"
-        ? materials.filter(isInLibrary)
-        : materials.filter(
-            item => isInLibrary(item) && item.category === activeCategory
-          ),
+        ? materials
+        : materials.filter(item => item.category === activeCategory),
     [activeCategory]
   );
 
@@ -189,79 +202,64 @@ export default function MaterialienLibrarySection() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Schneller Einstieg</EyebrowLabel>
-          <DisplayHeading level={2}>Was hilft gerade jetzt?</DisplayHeading>
+          <DisplayHeading level={2}>Erst die Lage sortieren</DisplayHeading>
           <p className="editorial-small-copy mt-4 max-w-[36em]">
             Wählen Sie nach Lage, nicht nach Vollständigkeit. Eine gute erste
             Ressource reicht oft mehr als zehn geöffnete Tabs.
           </p>
-          <ul
-            className="mt-8 grid divide-y sm:grid-cols-2 sm:gap-x-8 sm:divide-y-0"
-            style={{ borderColor: "var(--rule-color)" }}
-          >
+          <ol className="material-start-list">
             {quickStarts.map(item => (
-              <li
-                key={item.id}
-                className="border-t py-5 first:border-t-0 first:pt-0 sm:first:border-t sm:first:pt-5"
-                style={{ borderColor: "var(--rule-color)" }}
-              >
-                <p className="editorial-micro-label">
+              <li key={item.id} className="material-start-list__item">
+                <span className="material-start-list__number">
                   {categoryLabel[item.id]}
-                </p>
-                <h3 className="editorial-card-heading mt-3">{item.title}</h3>
-                <p className="editorial-small-copy mt-2">{item.text}</p>
-                <p className="editorial-small-copy mt-4">
+                </span>
+                <div className="material-start-list__content">
+                  <h3 className="editorial-card-heading">{item.title}</h3>
+                  <p className="editorial-small-copy mt-2">{item.text}</p>
                   <button
                     type="button"
                     onClick={() => {
                       setActiveCategory(item.id);
                       scrollToResults();
                     }}
-                    className="editorial-link"
+                    className="editorial-link mt-4"
                   >
-                    Materialien dieser Kategorie ansehen
+                    Passende Materialien anzeigen
                   </button>
-                </p>
+                </div>
               </li>
             ))}
-          </ul>
+          </ol>
         </EditorialSection.Body>
       </EditorialSection>
 
       <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
-          <SectionKicker>Kernmaterialien</SectionKicker>
+          <SectionKicker>Startauswahl</SectionKicker>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel>Bibliothek</EyebrowLabel>
+          <EyebrowLabel>Kuratierte Auswahl</EyebrowLabel>
           <DisplayHeading level={2}>Empfohlen für den Anfang</DisplayHeading>
           <EditorialBody className="max-w-[36em]">
             Wenn Sie gerade nicht lange suchen möchten, beginnen Sie mit diesen
-            Materialien. Sie decken Krise, Orientierung, Kommunikation, Grenzen
-            und Selbstfürsorge ab.
+            vier Materialien. Sie geben akute Sicherheit, eine erste Ordnung und
+            eine Erinnerung an die eigene Belastungsgrenze.
           </EditorialBody>
-          <p className="editorial-small-copy mt-3">
-            <button
-              type="button"
-              onClick={scrollToResults}
-              className="editorial-link"
-            >
-              Nach Kategorien filtern
-            </button>
-          </p>
         </EditorialSection.Body>
       </EditorialSection>
 
       <section
-        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-12 md:px-[var(--container-pad-md)] md:pb-16"
-        aria-label="Empfohlene Kernmaterialien — Tile-Liste"
+        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-12 md:px-[var(--container-pad-md)] md:pb-14"
+        aria-label="Empfohlene Startmaterialien"
       >
         <div className="mx-auto max-w-page">
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {coreMaterials.map(item => (
+          <div className="material-starter-shelf">
+            {starterMaterials.map(item => (
               <MaterialEntry
                 key={item.id}
                 item={item}
                 eager
+                variant="starter"
                 onPreview={(image, title) => {
                   setPreviewImage(image);
                   setPreviewTitle(title);
@@ -280,11 +278,18 @@ export default function MaterialienLibrarySection() {
           <EyebrowLabel>Bibliothek</EyebrowLabel>
           <DisplayHeading level={2}>Alle Materialien</DisplayHeading>
           <EditorialBody className="max-w-[36em]">
-            Filtern Sie die Sammlung, wenn Sie gezielt nach einem Thema suchen.
-            Die vollständige Galerie bleibt hier, damit einzelne Inhaltsseiten
-            ruhiger und kuratierter bleiben können.
+            Die vollständige Sammlung bleibt hier gebündelt, damit einzelne
+            Inhaltsseiten ruhiger bleiben. Filtern Sie nur, wenn Sie gezielt
+            nach einem Thema suchen.
           </EditorialBody>
         </EditorialSection.Body>
+        <EditorialSection.Aside background="cream-deep">
+          <p className="material-library-use-note">
+            <strong>Lesetipp:</strong> «Textversion lesen» ist die ruhigste
+            Fassung für bildbasierte PDFs. «PDF öffnen» bleibt die Druck- oder
+            Vorschaufassung im neuen Tab.
+          </p>
+        </EditorialSection.Aside>
       </EditorialSection>
 
       <section
@@ -301,14 +306,13 @@ export default function MaterialienLibrarySection() {
             {categoryMeta.map(cat => {
               const count =
                 cat.id === "alle"
-                  ? materials.filter(isInLibrary).length
-                  : materials.filter(
-                      item => isInLibrary(item) && item.category === cat.id
-                    ).length;
+                  ? materials.length
+                  : materials.filter(item => item.category === cat.id).length;
               return (
                 <EditorialPillButton
                   key={cat.id}
                   variant="filter"
+                  className="material-filter-tab"
                   selected={activeCategory === cat.id}
                   onClick={() => setActiveCategory(cat.id)}
                 >
@@ -348,34 +352,6 @@ export default function MaterialienLibrarySection() {
           </div>
         </div>
       </section>
-
-      <EditorialSection variant="cream" density="compact">
-        <EditorialSection.MarginNote>
-          <SectionKicker>Weiter</SectionKicker>
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialBody>
-            Wenn Sie gerade eher Orientierung als Downloads brauchen, sind die
-            Hauptseiten oft der bessere Einstieg —{" "}
-            <Link href="/verstehen" className="editorial-link">
-              Verstehen
-            </Link>
-            ,{" "}
-            <Link href="/kommunizieren" className="editorial-link">
-              Kommunizieren
-            </Link>
-            ,{" "}
-            <Link href="/grenzen" className="editorial-link">
-              Grenzen
-            </Link>{" "}
-            oder{" "}
-            <Link href="/selbstfuersorge" className="editorial-link">
-              Selbstfürsorge
-            </Link>
-            .
-          </EditorialBody>
-        </EditorialSection.Body>
-      </EditorialSection>
 
       <EditorialSection variant="cream-deep" density="compact">
         <EditorialSection.MarginNote>

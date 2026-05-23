@@ -10,9 +10,11 @@ interface DisplayHeadingProps {
    * - `page` (level=1 für einfachere Pages): `text-3xl mobile / text-4xl md+`,
    *   mit `mt-8` (oben Abstand nach Eyebrow) und KEIN marginBottom.
    *   Für Pages wie Impressum, FAQ, Glossar, etc.
+   * - `utility` (level=1 für Tool-/Bibliotheksseiten): kompakter als `page`
+   *   auf Mobile, damit der erste Screen schneller Orientierung zeigt.
    * - `section` (Default für level=2): `--text-2xl`, mit `marginBottom: var(--space-5)`.
    */
-  size?: "hero" | "page" | "section";
+  size?: "hero" | "page" | "section" | "utility";
   /**
    * Bottom-Spacing-Override. `default` rendert den size-typischen
    * marginBottom. `compact` setzt marginBottom auf 0 — für Headings
@@ -52,12 +54,12 @@ export function DisplayHeading({
 }: DisplayHeadingProps) {
   const resolved = size ?? defaultSize(level);
 
-  // Page-Variante setzt Font-Size + mt-8 via Tailwind-Classes (responsive),
-  // damit md:text-4xl greift. Inline fontSize bleibt dann leer.
   const pageClasses =
     resolved === "page"
       ? "mt-8 text-[var(--text-3xl)] md:text-[var(--text-4xl)]"
-      : "";
+      : resolved === "utility"
+        ? "mt-8"
+        : "";
 
   const combinedClass = ["font-display", pageClasses, className]
     .filter(Boolean)
@@ -67,7 +69,7 @@ export function DisplayHeading({
   const marginBottom =
     spacing === "compact"
       ? 0
-      : resolved === "page"
+      : resolved === "page" || resolved === "utility"
         ? undefined
         : "var(--space-5)";
 
@@ -94,7 +96,8 @@ export function DisplayHeading({
   );
 }
 
-const SIZE_FONT_SIZE: Record<"hero" | "section", string> = {
+const SIZE_FONT_SIZE: Record<"hero" | "section" | "utility", string> = {
   hero: "var(--text-hero)",
+  utility: "clamp(2rem, 4vw, var(--text-4xl))",
   section: "var(--text-2xl)",
 };

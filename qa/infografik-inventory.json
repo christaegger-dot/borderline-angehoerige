@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-02T15:25:12.095Z",
+  "generatedAt": "2026-05-23T21:35:26.190Z",
   "summary": {
-    "totalFiles": 93,
-    "totalSizeMb": 172.45,
-    "activeReferencedFiles": 88,
-    "activeReferencedSizeMb": 131.18,
-    "supportFiles": 5,
-    "supportFilesSizeMb": 41.26,
-    "unreferencedCandidates": 0,
-    "unreferencedCandidatesSizeMb": 0,
+    "totalFiles": 125,
+    "totalSizeMb": 155.57,
+    "activeReferencedFiles": 117,
+    "activeReferencedSizeMb": 113.81,
+    "supportFiles": 6,
+    "supportFilesSizeMb": 41.29,
+    "unreferencedCandidates": 2,
+    "unreferencedCandidatesSizeMb": 0.46,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 0
+    "versionFamiliesWithLegacyCandidates": 1
   },
   "missingReferences": [],
   "activeReferences": [
@@ -31,8 +31,8 @@
       ]
     },
     {
-      "path": "/infografiken/alarm-der-alarm-modus-v3.png",
-      "sizeBytes": 346704,
+      "path": "/infografiken/alarm-der-alarm-modus-v3.webp",
+      "sizeBytes": 164078,
       "usages": [
         {
           "source": "materials",
@@ -58,8 +58,8 @@
       ]
     },
     {
-      "path": "/infografiken/ampel-das-ampel-system-v3.png",
-      "sizeBytes": 4170717,
+      "path": "/infografiken/ampel-das-ampel-system-v3.webp",
+      "sizeBytes": 164836,
       "usages": [
         {
           "source": "unterstuetzen",
@@ -85,8 +85,8 @@
       ]
     },
     {
-      "path": "/infografiken/deeskalation-der-deeskalations-pfad-v9.png",
-      "sizeBytes": 276881,
+      "path": "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
+      "sizeBytes": 132420,
       "usages": [
         {
           "source": "materials",
@@ -117,8 +117,8 @@
       ]
     },
     {
-      "path": "/infografiken/eisberg-der-eisberg-v6.png",
-      "sizeBytes": 4027491,
+      "path": "/infografiken/eisberg-der-eisberg-v6.webp",
+      "sizeBytes": 149746,
       "usages": [
         {
           "source": "materials",
@@ -133,8 +133,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png",
-      "sizeBytes": 165597,
+      "path": "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.webp",
+      "sizeBytes": 35524,
       "usages": [
         {
           "source": "materials",
@@ -145,23 +145,33 @@
           "source": "verstehen",
           "id": "alarm-modus",
           "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.png",
-      "sizeBytes": 466353,
-      "usages": [
+        },
         {
-          "source": "unterstuetzen",
-          "id": "im-krisenmodus",
+          "source": "home-featured",
+          "id": "alarm-modus",
           "field": "thumbnailUrl"
         }
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png",
-      "sizeBytes": 122994,
+      "path": "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.webp",
+      "sizeBytes": 37226,
+      "usages": [
+        {
+          "source": "unterstuetzen",
+          "id": "im-krisenmodus",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "home-featured",
+          "id": "ampel-system",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
+      "sizeBytes": 24174,
       "usages": [
         {
           "source": "materials",
@@ -172,12 +182,17 @@
           "source": "kommunizieren",
           "id": "krisenkommunikation",
           "field": "thumbnailUrl"
+        },
+        {
+          "source": "home-featured",
+          "id": "deeskalations-pfad",
+          "field": "thumbnailUrl"
         }
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png",
-      "sizeBytes": 479903,
+      "path": "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
+      "sizeBytes": 36302,
       "usages": [
         {
           "source": "materials",
@@ -188,34 +203,408 @@
           "source": "verstehen",
           "id": "eisberg",
           "field": "thumbnailUrl"
+        },
+        {
+          "source": "home-featured",
+          "id": "eisberg",
+          "field": "thumbnailUrl"
         }
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.png",
-      "sizeBytes": 114649,
+      "path": "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.webp",
+      "sizeBytes": 21826,
       "usages": [
         {
           "source": "genesung",
+          "id": "fortschritt-paradox",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "home-featured",
           "id": "fortschritt-paradox",
           "field": "thumbnailUrl"
         }
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.png",
-      "sizeBytes": 517574,
+      "path": "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.webp",
+      "sizeBytes": 46024,
       "usages": [
         {
           "source": "grenzen",
           "id": "4-arten-von-grenzen",
           "field": "thumbnailUrl"
+        },
+        {
+          "source": "home-featured",
+          "id": "vier-arten-grenzen",
+          "field": "thumbnailUrl"
         }
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png",
-      "sizeBytes": 124109,
+      "path": "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v1.webp",
+      "sizeBytes": 62308,
+      "usages": [
+        {
+          "source": "unterstuetzen",
+          "id": "4-alltags-tipps",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-4-phasen-v1.webp",
+      "sizeBytes": 53578,
+      "usages": [
+        {
+          "source": "verstehen",
+          "id": "4-phasen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-5-faktoren-genesung-v1.webp",
+      "sizeBytes": 58086,
+      "usages": [
+        {
+          "source": "genesung",
+          "id": "5-faktoren-genesung",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-6-leitlinien-v1.webp",
+      "sizeBytes": 72734,
+      "usages": [
+        {
+          "source": "unterstuetzen",
+          "id": "6-leitlinien",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp",
+      "sizeBytes": 59010,
+      "usages": [
+        {
+          "source": "kommunizieren",
+          "id": "beispiel-dialog",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp",
+      "sizeBytes": 51480,
+      "usages": [
+        {
+          "source": "unterstuetzen",
+          "id": "beziehungs-achtsamkeit",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-dear-v1.webp",
+      "sizeBytes": 60484,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "dear",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "grenzen",
+          "id": "dear",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-drei-saeulen-v1.webp",
+      "sizeBytes": 52960,
+      "usages": [
+        {
+          "source": "unterstuetzen",
+          "id": "drei-saeulen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-energie-konto-v1.webp",
+      "sizeBytes": 74256,
+      "usages": [
+        {
+          "source": "selbstfuersorge",
+          "id": "energie-konto",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-erlaubnis-karte-v1.webp",
+      "sizeBytes": 54922,
+      "usages": [
+        {
+          "source": "selbstfuersorge",
+          "id": "erlaubnis-karte",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-gehirn-v1.webp",
+      "sizeBytes": 63700,
+      "usages": [
+        {
+          "source": "verstehen",
+          "id": "gehirn",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp",
+      "sizeBytes": 58336,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "genesung-zahlen",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "genesung",
+          "id": "genesung-zahlen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp",
+      "sizeBytes": 59956,
+      "usages": [
+        {
+          "source": "kommunizieren",
+          "id": "gespraeche-kippen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-grenzen-erkennen-v1.webp",
+      "sizeBytes": 63126,
+      "usages": [
+        {
+          "source": "grenzen",
+          "id": "grenzen-erkennen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
+      "sizeBytes": 65158,
+      "usages": [
+        {
+          "source": "kommunizieren",
+          "id": "grenzen-ohne-eskalation",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v1.webp",
+      "sizeBytes": 70914,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "grenzen-spickzettel",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "grenzen",
+          "id": "grenzen-spickzettel",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-kinder-v1.webp",
+      "sizeBytes": 76554,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "kinder",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "verstehen",
+          "id": "kinder",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-konsistenz-prinzip-v1.webp",
+      "sizeBytes": 50370,
+      "usages": [
+        {
+          "source": "unterstuetzen",
+          "id": "konsistenz-prinzip",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-leuchtturm-v1.webp",
+      "sizeBytes": 63296,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "leuchtturm",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "verstehen",
+          "id": "leuchtturm",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-lmk-v1.webp",
+      "sizeBytes": 55166,
+      "usages": [
+        {
+          "source": "grenzen",
+          "id": "lmk",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
+      "sizeBytes": 62062,
+      "usages": [
+        {
+          "source": "kommunizieren",
+          "id": "pause-statt-streit",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp",
+      "sizeBytes": 70060,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "radikale-akzeptanz",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "selbstfuersorge",
+          "id": "radikale-akzeptanz",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-remission-heilung-v1.webp",
+      "sizeBytes": 65102,
+      "usages": [
+        {
+          "source": "genesung",
+          "id": "remission-heilung",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-rolle-genesungsprozess-v1.webp",
+      "sizeBytes": 66080,
+      "usages": [
+        {
+          "source": "genesung",
+          "id": "rolle-genesungsprozess",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp",
+      "sizeBytes": 87316,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "schuld-verantwortung",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp",
+      "sizeBytes": 64810,
+      "usages": [
+        {
+          "source": "grenzen",
+          "id": "spiegeln-statt-aufsaugen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp",
+      "sizeBytes": 54400,
+      "usages": [
+        {
+          "source": "selbstfuersorge",
+          "id": "stopp-technik",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
+      "sizeBytes": 58502,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "warnsignale",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "selbstfuersorge",
+          "id": "warnsignale",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
+      "sizeBytes": 87008,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "wenn-worte-treffen",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "kommunizieren",
+          "id": "wenn-worte-treffen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
+      "sizeBytes": 23074,
       "usages": [
         {
           "source": "materials",
@@ -230,19 +619,24 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.png",
-      "sizeBytes": 526968,
+      "path": "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.webp",
+      "sizeBytes": 47694,
       "usages": [
         {
           "source": "selbstfuersorge",
+          "id": "sauerstoffmaske",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "home-featured",
           "id": "sauerstoffmaske",
           "field": "thumbnailUrl"
         }
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png",
-      "sizeBytes": 191274,
+      "path": "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
+      "sizeBytes": 24990,
       "usages": [
         {
           "source": "materials",
@@ -257,12 +651,17 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.png",
-      "sizeBytes": 147220,
+      "path": "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp",
+      "sizeBytes": 46060,
       "usages": [
         {
           "source": "kommunizieren",
           "id": "zuhoeren-ohne-zustimmen",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "home-featured",
+          "id": "validierungs-treppe",
           "field": "thumbnailUrl"
         }
       ]
@@ -279,8 +678,8 @@
       ]
     },
     {
-      "path": "/infografiken/fortschritt-das-fortschritt-paradox-v4.png",
-      "sizeBytes": 252722,
+      "path": "/infografiken/fortschritt-das-fortschritt-paradox-v4.webp",
+      "sizeBytes": 115408,
       "usages": [
         {
           "source": "genesung",
@@ -301,8 +700,8 @@
       ]
     },
     {
-      "path": "/infografiken/grenzen-die-4-arten-von-grenzen-v4.png",
-      "sizeBytes": 4384176,
+      "path": "/infografiken/grenzen-die-4-arten-von-grenzen-v4.webp",
+      "sizeBytes": 186840,
       "usages": [
         {
           "source": "grenzen",
@@ -1046,8 +1445,8 @@
       ]
     },
     {
-      "path": "/infografiken/pendel-das-bewertungs-pendel-v14.png",
-      "sizeBytes": 264558,
+      "path": "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
+      "sizeBytes": 131050,
       "usages": [
         {
           "source": "materials",
@@ -1073,8 +1472,8 @@
       ]
     },
     {
-      "path": "/infografiken/sauerstoff-die-sauerstoffmaske-v4.png",
-      "sizeBytes": 4622441,
+      "path": "/infografiken/sauerstoff-die-sauerstoffmaske-v4.webp",
+      "sizeBytes": 196982,
       "usages": [
         {
           "source": "selbstfuersorge",
@@ -1100,8 +1499,8 @@
       ]
     },
     {
-      "path": "/infografiken/sphären-die-einfluss-sphären-v3.png",
-      "sizeBytes": 327893,
+      "path": "/infografiken/sphären-die-einfluss-sphären-v3.webp",
+      "sizeBytes": 51032,
       "usages": [
         {
           "source": "materials",
@@ -1116,8 +1515,8 @@
       ]
     },
     {
-      "path": "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
-      "sizeBytes": 316731,
+      "path": "/infografiken/validierung-die-validierungs-treppe-v9.pdf",
+      "sizeBytes": 329914,
       "usages": [
         {
           "source": "kommunizieren",
@@ -1127,8 +1526,8 @@
       ]
     },
     {
-      "path": "/infografiken/validierung-die-validierungs-treppe-v5.png",
-      "sizeBytes": 301766,
+      "path": "/infografiken/validierung-die-validierungs-treppe-v9.webp",
+      "sizeBytes": 128374,
       "usages": [
         {
           "source": "kommunizieren",
@@ -1148,6 +1547,10 @@
       "sizeBytes": 2176
     },
     {
+      "path": "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
+      "sizeBytes": 31882
+    },
+    {
       "path": "/infografiken/extras/uebersichtsbogen.pdf",
       "sizeBytes": 380127
     },
@@ -1160,17 +1563,32 @@
       "sizeBytes": 37556162
     }
   ],
-  "unreferencedCandidates": [],
+  "unreferencedCandidates": [
+    {
+      "path": "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
+      "sizeBytes": 316731,
+      "versionFamily": "/infografiken/validierung-die-validierungs-treppe",
+      "version": 5,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/validierung-die-validierungs-treppe-v5.webp",
+      "sizeBytes": 168978,
+      "versionFamily": "/infografiken/validierung-die-validierungs-treppe",
+      "version": 5,
+      "referencedSiblingPaths": []
+    }
+  ],
   "versionFamilies": [
     {
       "family": "/infografiken/alarm-der-alarm-modus",
       "availableFiles": [
         "/infografiken/alarm-der-alarm-modus-v3.pdf",
-        "/infografiken/alarm-der-alarm-modus-v3.png"
+        "/infografiken/alarm-der-alarm-modus-v3.webp"
       ],
       "referencedFiles": [
         "/infografiken/alarm-der-alarm-modus-v3.pdf",
-        "/infografiken/alarm-der-alarm-modus-v3.png"
+        "/infografiken/alarm-der-alarm-modus-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1178,11 +1596,11 @@
       "family": "/infografiken/ampel-das-ampel-system",
       "availableFiles": [
         "/infografiken/ampel-das-ampel-system-v3.pdf",
-        "/infografiken/ampel-das-ampel-system-v3.png"
+        "/infografiken/ampel-das-ampel-system-v3.webp"
       ],
       "referencedFiles": [
         "/infografiken/ampel-das-ampel-system-v3.pdf",
-        "/infografiken/ampel-das-ampel-system-v3.png"
+        "/infografiken/ampel-das-ampel-system-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1190,11 +1608,11 @@
       "family": "/infografiken/deeskalation-der-deeskalations-pfad",
       "availableFiles": [
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
-        "/infografiken/deeskalation-der-deeskalations-pfad-v9.png"
+        "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp"
       ],
       "referencedFiles": [
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
-        "/infografiken/deeskalation-der-deeskalations-pfad-v9.png"
+        "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1202,111 +1620,394 @@
       "family": "/infografiken/eisberg-der-eisberg",
       "availableFiles": [
         "/infografiken/eisberg-der-eisberg-v6.pdf",
-        "/infografiken/eisberg-der-eisberg-v6.png"
+        "/infografiken/eisberg-der-eisberg-v6.webp"
       ],
       "referencedFiles": [
         "/infografiken/eisberg-der-eisberg-v6.pdf",
-        "/infografiken/eisberg-der-eisberg-v6.png"
+        "/infografiken/eisberg-der-eisberg-v6.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/alarm-der-alarm-modus",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png"
+        "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.png"
+        "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/ampel-das-ampel-system",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.png"
+        "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.png"
+        "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png"
+        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.png"
+        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/eisberg-der-eisberg",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png"
+        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.png"
+        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.png"
+        "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.png"
+        "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v4.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.png"
+        "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.png"
+        "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v4.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-4-alltags-tipps",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-4-phasen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-4-phasen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-4-phasen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-5-faktoren-genesung",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-5-faktoren-genesung-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-5-faktoren-genesung-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-6-leitlinien",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-6-leitlinien-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-6-leitlinien-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-beispiel-dialog",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-dear",
+      "availableFiles": ["/infografiken/extras/thumbnails/manus-dear-v1.webp"],
+      "referencedFiles": ["/infografiken/extras/thumbnails/manus-dear-v1.webp"],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-drei-saeulen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-drei-saeulen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-drei-saeulen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-energie-konto",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-energie-konto-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-energie-konto-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-erlaubnis-karte",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-erlaubnis-karte-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-erlaubnis-karte-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-gehirn",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-gehirn-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-gehirn-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-genesung-zahlen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-gespraeche-kippen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-grenzen-erkennen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-grenzen-erkennen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-grenzen-erkennen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-grenzen-spickzettel",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-kinder",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-kinder-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-kinder-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-konsistenz-prinzip",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-konsistenz-prinzip-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-konsistenz-prinzip-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-leuchtturm",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-leuchtturm-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-leuchtturm-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-lmk",
+      "availableFiles": ["/infografiken/extras/thumbnails/manus-lmk-v1.webp"],
+      "referencedFiles": ["/infografiken/extras/thumbnails/manus-lmk-v1.webp"],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-pause-statt-streit",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-radikale-akzeptanz",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-remission-heilung",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-remission-heilung-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-remission-heilung-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-rolle-genesungsprozess",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-rolle-genesungsprozess-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-rolle-genesungsprozess-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-schuld-verantwortung",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-stopp-technik",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-warnsignale",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png"
+        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.png"
+        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.png"
+        "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.png"
+        "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png"
+        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.png"
+        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.png"
+        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
+        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.png"
+        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1314,11 +2015,11 @@
       "family": "/infografiken/fortschritt-das-fortschritt-paradox",
       "availableFiles": [
         "/infografiken/fortschritt-das-fortschritt-paradox-v4.pdf",
-        "/infografiken/fortschritt-das-fortschritt-paradox-v4.png"
+        "/infografiken/fortschritt-das-fortschritt-paradox-v4.webp"
       ],
       "referencedFiles": [
         "/infografiken/fortschritt-das-fortschritt-paradox-v4.pdf",
-        "/infografiken/fortschritt-das-fortschritt-paradox-v4.png"
+        "/infografiken/fortschritt-das-fortschritt-paradox-v4.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1326,11 +2027,11 @@
       "family": "/infografiken/grenzen-die-4-arten-von-grenzen",
       "availableFiles": [
         "/infografiken/grenzen-die-4-arten-von-grenzen-v4.pdf",
-        "/infografiken/grenzen-die-4-arten-von-grenzen-v4.png"
+        "/infografiken/grenzen-die-4-arten-von-grenzen-v4.webp"
       ],
       "referencedFiles": [
         "/infografiken/grenzen-die-4-arten-von-grenzen-v4.pdf",
-        "/infografiken/grenzen-die-4-arten-von-grenzen-v4.png"
+        "/infografiken/grenzen-die-4-arten-von-grenzen-v4.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1686,11 +2387,11 @@
       "family": "/infografiken/pendel-das-bewertungs-pendel",
       "availableFiles": [
         "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
-        "/infografiken/pendel-das-bewertungs-pendel-v14.png"
+        "/infografiken/pendel-das-bewertungs-pendel-v14.webp"
       ],
       "referencedFiles": [
         "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
-        "/infografiken/pendel-das-bewertungs-pendel-v14.png"
+        "/infografiken/pendel-das-bewertungs-pendel-v14.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1698,11 +2399,11 @@
       "family": "/infografiken/sauerstoff-die-sauerstoffmaske",
       "availableFiles": [
         "/infografiken/sauerstoff-die-sauerstoffmaske-v4.pdf",
-        "/infografiken/sauerstoff-die-sauerstoffmaske-v4.png"
+        "/infografiken/sauerstoff-die-sauerstoffmaske-v4.webp"
       ],
       "referencedFiles": [
         "/infografiken/sauerstoff-die-sauerstoffmaske-v4.pdf",
-        "/infografiken/sauerstoff-die-sauerstoffmaske-v4.png"
+        "/infografiken/sauerstoff-die-sauerstoffmaske-v4.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1710,11 +2411,11 @@
       "family": "/infografiken/sphären-die-einfluss-sphären",
       "availableFiles": [
         "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
-        "/infografiken/sphären-die-einfluss-sphären-v3.png"
+        "/infografiken/sphären-die-einfluss-sphären-v3.webp"
       ],
       "referencedFiles": [
         "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
-        "/infografiken/sphären-die-einfluss-sphären-v3.png"
+        "/infografiken/sphären-die-einfluss-sphären-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -1722,13 +2423,18 @@
       "family": "/infografiken/validierung-die-validierungs-treppe",
       "availableFiles": [
         "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
-        "/infografiken/validierung-die-validierungs-treppe-v5.png"
+        "/infografiken/validierung-die-validierungs-treppe-v5.webp",
+        "/infografiken/validierung-die-validierungs-treppe-v9.pdf",
+        "/infografiken/validierung-die-validierungs-treppe-v9.webp"
       ],
       "referencedFiles": [
-        "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
-        "/infografiken/validierung-die-validierungs-treppe-v5.png"
+        "/infografiken/validierung-die-validierungs-treppe-v9.pdf",
+        "/infografiken/validierung-die-validierungs-treppe-v9.webp"
       ],
-      "legacyCandidateFiles": []
+      "legacyCandidateFiles": [
+        "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
+        "/infografiken/validierung-die-validierungs-treppe-v5.webp"
+      ]
     }
   ]
 }

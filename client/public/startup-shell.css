@@ -11,129 +11,185 @@ body[data-app-ready="true"] #route-prerender {
 }
 
 .route-prerender-shell {
+  --shell-surface: #faf7f2;
+  --shell-surface-elevated: #fffdf9;
+  --shell-surface-muted: #f0eadf;
+  --shell-ink: #1f2a37;
+  --shell-muted: #4b5563;
+  --shell-soft: #6b7280;
+  --shell-brand: #5b3a4e;
+  --shell-sage: #4f6b5e;
+  --shell-alert: #b5412f;
+  --shell-rule: rgba(31, 42, 55, 0.12);
+
   min-height: 100vh;
-  color: #1f2a37;
-  background: #faf7f2;
+  color: var(--shell-ink);
+  background:
+    linear-gradient(90deg, rgba(79, 107, 94, 0.08), transparent 36rem),
+    var(--shell-surface);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
 
 .route-prerender-topbar {
-  padding: 1.1rem 1rem 0;
+  padding: 1.25rem 1.25rem 0;
 }
 
 .route-prerender-brand {
   max-width: 72rem;
   margin: 0 auto;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #1f2a37;
+  color: var(--shell-ink);
   text-decoration: none;
 }
 
 .route-prerender-mark {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
-  border: 1px solid rgba(31, 42, 55, 0.1);
-  background: #ffffff;
-  box-shadow: 0 18px 32px -28px rgba(31, 42, 55, 0.24);
+  border-radius: 999px;
+  border: 1px solid var(--shell-rule);
+  background: var(--shell-surface-elevated);
+}
+
+.route-prerender-brand-label {
+  color: var(--shell-sage);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .route-prerender-mark svg {
   width: 1.15rem;
   height: 1.15rem;
-  color: #5b3a4e;
+  color: var(--shell-brand);
 }
 
 .route-prerender-body {
   max-width: 72rem;
   margin: 0 auto;
-  padding: 3.5rem 1rem 4.5rem;
+  padding: clamp(3rem, 8vw, 6.5rem) 1.25rem 4.5rem;
 }
 
 .route-prerender-card {
-  max-width: 44rem;
+  display: grid;
+  grid-template-columns: minmax(0, 42rem) minmax(16rem, 22rem);
+  gap: clamp(2rem, 7vw, 5rem);
+  align-items: end;
+}
+
+.route-prerender-main {
+  max-width: 42rem;
 }
 
 .route-prerender-kicker {
-  display: inline-block;
-  margin: 0 0 1rem;
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  border: 1px solid rgba(79, 107, 94, 0.18);
-  background: rgba(79, 107, 94, 0.1);
-  color: #4f6b5e;
+  margin: 0 0 0.9rem;
+  color: var(--shell-sage);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
   text-transform: uppercase;
 }
 
 .route-prerender-title {
   margin: 0;
   font-family: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
-  font-size: clamp(2.35rem, 5vw, 4rem);
-  line-height: 1.08;
+  font-size: clamp(2.5rem, 4.9vw, 3.9rem);
+  line-height: 1.02;
   letter-spacing: -0.018em;
 }
 
 .route-prerender-title span {
-  color: #5b3a4e;
+  color: var(--shell-brand);
+  font-style: italic;
 }
 
 .route-prerender-copy {
-  max-width: 40rem;
-  margin: 1.15rem 0 0;
-  color: #4b5563;
+  max-width: 38rem;
+  margin: 1.25rem 0 0;
+  color: var(--shell-muted);
   font-size: clamp(1rem, 2vw, 1.15rem);
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .route-prerender-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-  margin-top: 1.8rem;
+  display: grid;
+  gap: 0;
+  max-width: 32rem;
+  margin-top: 2.1rem;
+  border-top: 1px solid var(--shell-rule);
 }
 
 .route-prerender-actions a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 3rem;
-  padding: 0.85rem 1.15rem;
-  border-radius: 999px;
-  border: 1px solid rgba(31, 42, 55, 0.1);
-  color: #5b3a4e;
-  background: #ffffff;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--shell-rule);
+  color: var(--shell-brand);
   font-weight: 600;
+  line-height: 1.35;
   text-decoration: none;
 }
 
-.route-prerender-actions a.route-prerender-primary {
-  border-color: #5b3a4e;
-  background: #5b3a4e;
-  color: #faf7f2;
+.route-prerender-actions a::after {
+  content: "Weiter";
+  color: var(--shell-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.route-prerender-aside {
+  padding: 1.3rem;
+  border: 1px solid var(--shell-rule);
+  border-radius: 1.1rem;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.route-prerender-aside-title {
+  margin: 0;
+  color: var(--shell-ink);
+  font-family: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.12;
 }
 
 .route-prerender-crisis {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.55rem;
-  margin-top: 1.1rem;
-  color: #5b3a4e;
-  font-size: 0.95rem;
-  font-weight: 600;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--shell-alert);
+  border-radius: 0.75rem;
+  color: var(--shell-brand);
+  background: #f9eae5;
+  font-weight: 700;
+  line-height: 1.35;
   text-decoration: none;
 }
 
 .route-prerender-note {
-  margin: 1.75rem 0 0;
-  color: #6b7280;
-  font-size: 0.92rem;
+  margin: 1rem 0 0;
+  color: var(--shell-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .fallback-noscript {
@@ -148,8 +204,34 @@ body[data-app-ready="true"] #route-prerender {
 }
 
 @media (max-width: 768px) {
+  .route-prerender-topbar {
+    padding-top: 1rem;
+  }
+
+  .route-prerender-brand {
+    gap: 0.65rem;
+  }
+
+  .route-prerender-brand-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.11em;
+  }
+
   .route-prerender-body {
-    padding-top: 2.5rem;
+    padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .route-prerender-card {
+    display: block;
+  }
+
+  .route-prerender-title {
+    font-size: clamp(2.35rem, 14vw, 3.5rem);
+  }
+
+  .route-prerender-aside {
+    margin-top: 2rem;
+    padding: 1rem;
   }
 }

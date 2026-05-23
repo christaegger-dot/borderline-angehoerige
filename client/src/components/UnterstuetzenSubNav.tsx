@@ -27,11 +27,11 @@ export default function UnterstuetzenSubNav() {
   return (
     <nav
       aria-label="Unterstützen – Unterseiten"
-      className="border-b bg-background/94"
+      className="border-b bg-background"
       style={{ borderColor: "var(--rule-color)" }}
     >
       <div className="container">
-        <div className="scrollbar-none -mb-px flex flex-wrap items-baseline gap-x-1 overflow-x-auto pt-3 pb-3">
+        <div className="scrollbar-none -mb-px flex flex-wrap items-baseline gap-x-1 overflow-x-auto py-2">
           {tabs.map(({ href, label }) => {
             const isActive = location === href;
             return (
@@ -39,7 +39,7 @@ export default function UnterstuetzenSubNav() {
                 key={href}
                 href={href}
                 aria-current={isActive ? "page" : undefined}
-                className="inline-flex min-h-[44px] items-center px-3 py-2 text-[13px] font-medium uppercase tracking-[0.14em] whitespace-nowrap border-b-2 border-transparent transition-colors first:pl-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                className="inline-flex min-h-10 items-center border-b px-2.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.11em] whitespace-nowrap border-transparent transition-colors first:pl-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 md:text-[13px]"
                 style={{
                   borderBottomStyle: "solid",
                   borderBottomColor: isActive

@@ -70,7 +70,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     categoryLabel: "Kommunizieren",
     href: "/kommunizieren",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
+      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp",
     thumbnailHeight: 848,
     alt: "Die Validierungs-Treppe",
   },

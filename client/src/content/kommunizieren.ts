@@ -71,10 +71,10 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "zuhoeren-ohne-zustimmen",
     title: "Zuhören ohne Zustimmen",
     description: "Validieren ohne nachzugeben",
-    url: "/infografiken/validierung-die-validierungs-treppe-v5.webp",
+    url: "/infografiken/validierung-die-validierungs-treppe-v9.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
-    pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
+      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp",
+    pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v9.pdf",
     category: "techniken",
   },
   {

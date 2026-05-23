@@ -21,4 +21,29 @@ describe("infografik assets", () => {
 
     expect(missingAssets).toEqual([]);
   });
+
+  it("uses the freigegebene Validierungstreppe v9 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expect(referencedPaths).toContain(
+      "/infografiken/validierung-die-validierungs-treppe-v9.pdf"
+    );
+    expect(referencedPaths).toContain(
+      "/infografiken/validierung-die-validierungs-treppe-v9.webp"
+    );
+    expect(referencedPaths).toContain(
+      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp"
+    );
+    expect(referencedPaths).not.toContain(
+      "/infografiken/validierung-die-validierungs-treppe-v5.pdf"
+    );
+    expect(referencedPaths).not.toContain(
+      "/infografiken/validierung-die-validierungs-treppe-v5.webp"
+    );
+    expect(referencedPaths).not.toContain(
+      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp"
+    );
+  });
 });

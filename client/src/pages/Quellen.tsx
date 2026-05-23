@@ -262,7 +262,7 @@ const quellen: QuelleKategorie[] = [
           "The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-Regulation",
         quelle: "W. W. Norton, New York",
         hinweis:
-          "In der klinischen Praxis – insbesondere in Trauma- und Körpertherapien – breit verwendet. Die zugrundeliegenden neurobiologischen Mechanismen sind in peer-reviewed Forschung umstritten. Im Body in Handout-Materialien zur Atemregulation referenziert.",
+          "In der klinischen Praxis – insbesondere in Trauma- und Körpertherapien – breit verwendet. Die zugrundeliegenden neurobiologischen Mechanismen sind in peer-reviewed Forschung umstritten; daher nur als didaktisches Modell mit Caveat verwenden, nicht als harte neurobiologische Kurzquelle.",
       },
     ],
   },
@@ -293,9 +293,7 @@ const quellen: QuelleKategorie[] = [
           "Family Connections: A program for relatives of persons with borderline personality disorder",
         quelle: "Family Process",
         hinweis:
-          "Evidenzbasiertes Psychoedukationsprogramm für Angehörige (NEA-BPD). Grundlage für Angehörigen-Schulungsansätze.",
-        link: "https://pubmed.ncbi.nlm.nih.gov/15943545/",
-        linkLabel: "PubMed",
+          "Psychoedukatives Angehörigenprogramm (NEA-BPD). In den Handouts wird Family Connections als Programm-/Praxisrahmen genannt; peer-reviewte Grundlagen psychoedukativer Familienarbeit sind separat bei Gunderson/Berkowitz ausgewiesen.",
       },
     ],
   },

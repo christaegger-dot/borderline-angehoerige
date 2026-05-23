@@ -13,7 +13,8 @@ export const handoutTextVersions = [
       {
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
-        calloutText: "Überlastung kommt nicht plötzlich – sie kündigt sich an.",
+        calloutText:
+          "Überlastung kommt oft nicht plötzlich – sie kündigt sich an. Warnsignale sind Orientierung, keine Diagnose.",
       },
       {
         title: "Noch im Rahmen",
@@ -95,7 +96,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Maslach/Leiter (2016), Burnout-Prävention; Mason/Kreger (2014).",
+      "Quelle: Maslach/Leiter (2016), allgemeine Burnout-Prävention; Mason/Kreger (2014), Angehörigenperspektive.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -164,7 +165,7 @@ export const handoutTextVersions = [
         title: "Wendepunkt",
         calloutTitle: "Wo sich der Kreislauf verändert",
         calloutText:
-          "Der entscheidende Wechsel passiert dort, wo Sie Selbstfürsorge nicht mehr verschieben, sondern als Voraussetzung für verlässliche Unterstützung behandeln.",
+          "Der entscheidende Wechsel passiert dort, wo Sie Selbstfürsorge nicht mehr verschieben, sondern als Voraussetzung für verlässliche Unterstützung behandeln. Auch kleine Entlastungen zählen.",
       },
       {
         title: "Was können Sie tun?",
@@ -201,7 +202,7 @@ export const handoutTextVersions = [
         title: "Zentraler Satz",
         calloutTitle: "Worum es bei STOPP geht",
         calloutText:
-          "Wenn die Emotionen überkochen: STOPP gibt Ihnen 30 Sekunden Abstand zwischen Reiz und Reaktion.",
+          "Wenn die Emotionen überkochen: STOPP gibt Ihnen 30 Sekunden Abstand zwischen Reiz und Reaktion. Bei Gewalt, akuter Selbstgefährdung oder unmittelbarer Gefahr nicht STOPP üben, sondern Hilfe holen.",
       },
       {
         title: "Die 5 STOPP-Schritte",
@@ -248,7 +249,7 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Linehan (1993), DBT Skills Training.",
+    sourceLine: "Quelle: Linehan (2015), DBT Skills Training Manual.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -265,7 +266,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Worum es beim Energie-Konto geht",
         calloutText:
-          "Ihre Energie ist begrenzt. Achten Sie darauf, dass Sie regelmässig auftanken – bevor das Konto leer ist.",
+          "Ihre Energie ist begrenzt. Das Energie-Konto ist eine Selbstbeobachtungsmetapher, kein Messinstrument. Es geht nicht um perfekte Balance, sondern um frühes Bemerken.",
       },
       {
         title: "Was füllt",
@@ -353,7 +354,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Maslach und Leiter (2016), Burnout-Prävention.",
+    sourceLine:
+      "Quelle: Maslach und Leiter (2016), allgemeine Burnout-Prävention; Selbstfürsorge-orientierte Angehörigenarbeit.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -373,11 +375,11 @@ export const handoutTextVersions = [
         bullets: [
           "Nein sagen, ohne sich schuldig zu fühlen.",
           "Eigene Bedürfnisse haben und äussern.",
-          "Pausen machen, wenn es zu viel wird.",
+          "Pausen machen, wenn es zu viel wird – bei akuter Gefahr aber Hilfe holen.",
           "Hilfe annehmen und um Hilfe bitten.",
           "Wütend, traurig oder überfordert sein.",
           "Grenzen setzen, auch wenn es Widerstand gibt.",
-          "Sich zurückziehen, ohne Erklärung.",
+          "Sich kurz zurückziehen und später erklären, wenn wieder mehr Ruhe da ist.",
           "Freude empfinden, auch wenn es dem Angehörigen schlecht geht.",
           "Ihr eigenes Leben leben.",
         ],
@@ -511,7 +513,7 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Was Sie sich merken dürfen",
         calloutText:
-          "Sie haben die Erkrankung nicht verursacht. Sie können sie nicht heilen. Aber Sie können einen Unterschied machen – wenn Sie sich selbst dabei nicht verlieren. (Angelehnt an die «3 C's» der Angehörigenarbeit.)",
+          "Sie haben die Erkrankung nicht verursacht. Sie können sie nicht heilen. Betroffene bleiben dennoch für ihr Verhalten nicht einfach «entschuldigt». Sie dürfen Grenzen verantworten und einen Unterschied machen – wenn Sie sich selbst dabei nicht verlieren. (Angelehnt an die «3 C's» der Angehörigenarbeit.)",
       },
     ],
     sourceLine:
@@ -532,7 +534,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Es ist, wie es ist – und trotzdem können Sie handeln. Radikale Akzeptanz gibt Ihnen Ihre Energie zurück.",
+          "Akzeptieren heisst: aufhören, gegen die Realität zu kämpfen – nicht: alles hinnehmen. Es ist, wie es ist, und trotzdem können Sie handeln.",
       },
       {
         title: "Was Radikale Akzeptanz nicht ist",
@@ -545,7 +547,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Nicht Gutheissen",
-            text: "Sie müssen schwierige Realität nicht gut finden, um sie anzuerkennen.",
+            text: "Sie müssen schwierige Realität nicht gut finden, um sie anzuerkennen. Akzeptanz heisst nicht bleiben, schweigen oder Gewalt tolerieren.",
           },
           {
             title: "Nicht Passivität",
@@ -607,10 +609,11 @@ export const handoutTextVersions = [
           "Üben Sie die 4 Schritte regelmässig in Ihrem Alltag. Starten Sie mit kleinen Situationen.",
           "Wiederholen Sie das Mantra «Es ist, wie es ist», wenn Sie sich gestresst fühlen.",
           "Richten Sie Ihre Energie bewusst auf Aufgaben, die Sie kontrollieren können, und lassen Sie den Rest los.",
+          "Bei Gefahr geht Schutz vor Akzeptanzübung.",
         ],
       },
     ],
-    sourceLine: "Quelle: Linehan (1993), DBT Skills Training.",
+    sourceLine: "Quelle: Linehan (2015), DBT Skills Training Manual.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

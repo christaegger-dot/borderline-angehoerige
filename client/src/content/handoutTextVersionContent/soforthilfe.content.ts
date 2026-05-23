@@ -12,7 +12,8 @@ export const handoutTextVersions = [
     sections: [
       {
         title: "Akute Gefahr? Sofort handeln.",
-        intro: "Sofort 144 anrufen, wenn die Person:",
+        intro:
+          "Sofort 144 anrufen, wenn medizinische Hilfe oder Rettung vor Ort nötig ist, zum Beispiel wenn die Person:",
         bullets: [
           "sich gerade verletzt",
           "eine Überdosis eingenommen hat oder eine schwere Intoxikation vermutet wird",
@@ -28,12 +29,28 @@ export const handoutTextVersions = [
             text: "Akute Lebensgefahr, laufende Suizidhandlung, schwere Selbstverletzung, Bewusstlosigkeit oder schwere Intoxikation.",
           },
           {
+            title: "117 Polizei",
+            text: "Gewalt, akute Bedrohung oder wenn sofort Schutz vor Ort nötig ist.",
+          },
+          {
             title: "0800 33 66 55 – Ärztefon",
             text: "Dringende medizinische oder psychiatrische Notfall-Triage, 24/7.",
           },
           {
             title: "058 384 20 00 – PUK Zürich Notfall Erwachsene",
-            text: "Direkte psychiatrische Notfallstelle, 24/7.",
+            text: "Psychiatrische Krise ohne unmittelbare Lebensgefahr, 24/7.",
+          },
+          {
+            title: "058 384 66 66 – PUK Kinder und Jugendliche",
+            text: "Psychiatrische Krise bis 18 Jahre, 24/7.",
+          },
+          {
+            title: "058 384 46 82 – PUK ab 65",
+            text: "Psychiatrische Krise ab 65 Jahren, 24/7.",
+          },
+          {
+            title: "143 – Dargebotene Hand",
+            text: "Entlastendes Gespräch für Angehörige und Betroffene. Kein Einsatzdienst.",
           },
         ],
       },
@@ -68,7 +85,7 @@ export const handoutTextVersions = [
       {
         title: "Das hilft",
         bullets: [
-          "ruhig bleiben und dableiben",
+          "ruhig bleiben und, wenn es für Sie sicher ist, dableiben",
           "direkt und klar nachfragen",
           "Gefühle ernst nehmen und anerkennen",
           "Gefährdung einschätzen und Hilfe holen",
@@ -84,7 +101,8 @@ export const handoutTextVersions = [
           "lange Diskussionen, warum das Leben doch schön sei",
           "argumentieren oder überzeugen wollen",
           "drohen oder bestrafen",
-          "die Person trotz akuter Gefahr ohne Hilfe oder Sicherheitsplan allein lassen",
+          "die Person trotz akuter Gefahr ohne Hilfe, Sicherheitsplan oder professionelle Einschätzung allein lassen",
+          "selbst in einer unsicheren oder bedrohlichen Situation bleiben",
           "Suizidgedanken als Geheimnis für sich behalten",
         ],
       },

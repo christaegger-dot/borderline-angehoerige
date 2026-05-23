@@ -59,11 +59,20 @@ export const handoutTextVersions = [
           "Ich gehe nicht weg, ich mache nur eine Pause. Wir sprechen um [Uhrzeit] weiter. Ich bin wieder da.",
       },
       {
-        title: "5. Notfallnummern",
-        bullets: [
-          "Dargebotene Hand 143",
-          "Pro Mente Sana 0848 800 858",
-          "Notfall PUK Zürich 044 384 21 11",
+        title: "5. Wenn es nicht mehr Gespräch, sondern Krise ist",
+        cards: [
+          {
+            title: "Akut / unmittelbare Gefahr",
+            text: "Bei Lebensgefahr, laufender Selbstgefährdung, schwerer Verletzung oder schwerer Intoxikation: 144. Bei Gewalt oder akuter Bedrohung: 117.",
+          },
+          {
+            title: "Psychiatrische Krise ohne unmittelbare Lebensgefahr",
+            text: "PUK Zürich 24/7: Erwachsene 058 384 20 00, Kinder/Jugendliche 058 384 66 66, ab 65 Jahren 058 384 46 82.",
+          },
+          {
+            title: "Entlastung / Beratung",
+            text: "Die Dargebotene Hand 143 ist für ein entlastendes Gespräch da. Pro Mente Sana 0848 800 858 ist Beratung und Information, kein akuter Einsatzdienst.",
+          },
         ],
       },
     ],
@@ -95,7 +104,7 @@ export const handoutTextVersions = [
           },
           {
             title: "«Wenn du gehst, bringe ich mich um.»",
-            text: "Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich bleibe damit nicht allein und hole jetzt Hilfe dazu.» Solche Sätze immer ernst nehmen.",
+            text: "Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich bleibe damit nicht allein und hole jetzt Hilfe dazu.» Solche Sätze immer ernst nehmen: Bei unmittelbarer Gefahr 144, 117 oder eine psychiatrische Notfallstelle einbeziehen.",
           },
           {
             title: "«Du verstehst mich sowieso nicht.»",
@@ -175,6 +184,7 @@ export const handoutTextVersions = [
           "Üben Sie die drei Schritte in ruhigen Momenten, damit sie unter Anspannung verfügbarer sind.",
           "Halten Sie Sätze so kurz, dass Sie sie im Stress wiederholen können.",
           "Verbinden Sie jede Pause mit einer Rückkehr: «Wir sprechen um [Uhrzeit] weiter.»",
+          "Bei Bedrohung, Gewalt oder akuter Selbstgefährdung nicht weiter diskutieren, sondern Abstand schaffen und Hilfe holen.",
         ],
       },
     ],
@@ -218,7 +228,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Nicht rechtfertigen. Nicht erklären. Nicht streiten. Einfach sagen, was ist.",
+          "Nicht in lange Rechtfertigungen gehen. Nicht in Streitlogik einsteigen. Klar sagen, was ist, welche Grenze gilt und was als Nächstes passiert.",
       },
       {
         title: "Merkhilfe",
@@ -232,6 +242,7 @@ export const handoutTextVersions = [
           "Schreiben Sie zwei oder drei typische Grenzsätze vorab aus.",
           "Üben Sie die Formel laut in Ihrer eigenen Sprache.",
           "Bleiben Sie bei einem Satz pro Teil, auch wenn Gegenwind kommt.",
+          "Bei Gewalt oder Bedrohung braucht es keine Gesprächsformel, sondern Abstand, Schutz und Hilfe.",
         ],
       },
     ],
@@ -285,7 +296,8 @@ export const handoutTextVersions = [
       {
         title: "Zusatzhinweis",
         calloutTitle: "Bei Gefahr",
-        calloutText: "Bei Gefahr: Notfallplan aktivieren.",
+        calloutText:
+          "Bei Gewalt, akuter Selbstgefährdung oder unmittelbarer Gefahr keine Pausenverhandlung führen, sondern Hilfe holen. Lassen Sie eine akut gefährdete Person nicht ohne Hilfe oder professionelle Einschätzung allein, sofern Sie selbst sicher bleiben können.",
       },
       {
         title: "Orientierung",
@@ -338,7 +350,7 @@ export const handoutTextVersions = [
         title: "Grenze + Plan",
         calloutTitle: "Kombination aus Respekt und Selbstschutz",
         calloutText:
-          "Ich kann zuhören, ohne allem zuzustimmen. Wenn das Gespräch kippt, mache ich eine Pause und komme wieder.",
+          "Ich kann zuhören, ohne allem zuzustimmen. Wenn das Gespräch kippt, mache ich eine Pause und komme wieder. Bei Gefahr gilt Schutz vor Gespräch.",
       },
       {
         title: "Kernaussage",
@@ -358,6 +370,7 @@ export const handoutTextVersions = [
           "Üben Sie Sätze wie: «Ich sehe, dass es dir nicht gut geht.» und lassen Sie diesen Satz erst einmal stehen.",
           "Trennen Sie Gefühl und Inhalt: Das Gefühl ist echt, die Interpretation muss nicht stimmen.",
           "Bleiben Sie bei sich: Sie dürfen anderer Meinung sein, ohne das Gefühl abzuwerten.",
+          "Sie dürfen gleichzeitig zuhören und Grenzen setzen; Validieren heisst nicht, verletzendes Verhalten gutzuheissen.",
         ],
       },
     ],
@@ -413,7 +426,7 @@ export const handoutTextVersions = [
         title: "Was der Dialog zeigt",
         calloutTitle: "Nicht perfekt, sondern klar",
         calloutText:
-          "Der Ablauf zeigt keine Zauberformel, sondern eine Richtung: erst wahrnehmen, dann Kontakt halten, dann Grenze und Rückkehr vereinbaren.",
+          "Der Ablauf zeigt keine Zauberformel, sondern eine Richtung: erst wahrnehmen, dann Kontakt halten, dann Grenze und Rückkehr vereinbaren. Passen Sie die Sätze an Ihre Sprache und Situation an.",
       },
       {
         title: "Was können Sie tun?",
@@ -421,6 +434,7 @@ export const handoutTextVersions = [
           "Lesen Sie den Dialog laut und markieren Sie die Sätze, die zu Ihrer Sprache passen.",
           "Üben Sie besonders Grenze und Rückkehr, weil genau diese beiden Schritte in Stress oft wegbrechen.",
           "Erinnern Sie sich: Es geht nicht um Perfektion, sondern um Richtung.",
+          "Bei Eskalation, Bedrohung oder akuter Gefahr den Dialog abbrechen und Hilfe holen.",
         ],
       },
     ],

@@ -154,7 +154,7 @@ Eindeutig genannt im Body-Text (Pages + Handouts):
 | --- | ---------------------------- | -------- | --------------------------- | --------------- |
 | 10  | Mason, P. T. & Kreger, R.    | **2010** | Schluss mit dem Eiertanz    | —               |
 | 11  | Kreisman, J. J. & Straus, H. | 2004     | I Hate You – Don't Leave Me | —               |
-| 12  | Hoffman, P. D. et al.        | 2005     | Family Connections          | PubMed 15943545 |
+| 12  | Hoffman, P. D. et al.        | 2005     | Family Connections          | — (kein geprüfter PubMed-Link) |
 
 ### 2.4 Diagnostik & Klassifikation (2)
 

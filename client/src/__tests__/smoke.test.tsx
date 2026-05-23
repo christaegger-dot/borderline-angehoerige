@@ -224,7 +224,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener\./i
+        /Wenn alle ähnlich reagieren, kann mehr Sicherheit entstehen/i
       )
     ).toBeInTheDocument();
     expect(
@@ -286,7 +286,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Kleine Handlungen im Alltag machen den grössten Unterschied\./i
+        /Kleine Handlungen im Alltag können viel unterstützen/i
       )
     ).toBeInTheDocument();
     expect(
@@ -304,7 +304,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Überlastung kommt nicht plötzlich/i)
+      await screen.findByText(/Überlastung kommt oft nicht plötzlich/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -363,7 +363,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Ihre Energie ist begrenzt\. Achten Sie darauf, dass Sie regelmässig auftanken – bevor das Konto leer ist\./i
+        /Das Energie-Konto ist eine Selbstbeobachtungsmetapher/i
       )
     ).toBeInTheDocument();
     expect(
@@ -423,7 +423,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Radikale Akzeptanz gibt Ihnen Ihre Energie zurück/i
+        /Akzeptieren heisst: aufhören, gegen die Realität zu kämpfen/i
       )
     ).toBeInTheDocument();
     expect(
@@ -481,9 +481,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
-        /Nicht rechtfertigen\. Nicht erklären\. Nicht streiten\./i
-      )
+      await screen.findByText(/Nicht in lange Rechtfertigungen gehen/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
@@ -561,7 +559,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/DEAR hilft Ihnen, Wünsche klar zu formulieren/i)
+      await screen.findByText(
+        /DEAR hilft Ihnen, Wünsche klarer zu formulieren/i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
@@ -676,7 +676,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Rückschritte sind Teil des Weges – nicht das Ende\./i
+        /Rückschritte können Teil eines Veränderungsprozesses sein/i
       )
     ).toBeInTheDocument();
     expect(
@@ -695,7 +695,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Remission ist das realistische Ziel – und ein grosser Erfolg\./i
+        /Symptome können deutlich zurückgehen; Funktionsfähigkeit/i
       )
     ).toBeInTheDocument();
     expect(
@@ -716,7 +716,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Sie als Angehörige können bei den beeinflussbaren Faktoren unterstützen\./i
+        /Angehörige können beeinflussbare Faktoren unterstützen/i
       )
     ).toBeInTheDocument();
     expect(
@@ -791,7 +791,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Emotionale Überflutung ist keine Absicht/i)
+      await screen.findByText(
+        /Emotionale Überflutung ist nicht automatisch Absicht/i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
@@ -856,7 +858,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Im Alarm-Modus ist Ihr Gegenüber vorübergehend nicht erreichbar/i
+        /Im Alarm-Modus ist Ihr Gegenüber vorübergehend schwerer erreichbar/i
       )
     ).toBeInTheDocument();
   });

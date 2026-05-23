@@ -4,7 +4,7 @@ import {
   getMaterialDownloadHref,
   materials,
 } from "../../client/src/content/materialien.ts";
-import { getHandoutTextVersionBySource } from "../../client/src/content/handoutTextMetas.ts";
+import { handoutTextVersionMetas } from "../../client/src/content/handoutTextMetas.ts";
 import { SECURITY_HEADERS } from "../../shared/securityHeaders.ts";
 import { BASE_URL, qaPath, writeJson } from "./a11y-shared.mjs";
 
@@ -120,51 +120,93 @@ function looksLikeImagePath(url) {
 }
 
 function materialPdfCases() {
-  return materials
-    .map(item => {
-      const sourceUrl = item.pdfUrl ?? item.downloadUrl;
-      const downloadHref = getMaterialDownloadHref(item);
+  const casesById = new Map();
 
-      if (!sourceUrl || !downloadHref) {
-        return null;
-      }
+  for (const item of materials) {
+    const sourceUrl = item.pdfUrl ?? item.downloadUrl;
+    const downloadHref = getMaterialDownloadHref(item);
 
-      return {
-        id: item.id,
-        title: item.title,
-        kind: "pdf",
-        route: downloadHref,
-        sourceUrl,
-        expectsTextVersion: !item.isHtml,
-      };
-    })
-    .filter(Boolean);
+    if (!sourceUrl || !downloadHref) {
+      continue;
+    }
+
+    casesById.set(item.id, {
+      id: item.id,
+      title: item.title,
+      kind: "pdf",
+      route: downloadHref,
+      sourceUrl,
+      expectsTextVersion: !item.isHtml,
+    });
+  }
+
+  for (const meta of handoutTextVersionMetas) {
+    if (casesById.has(meta.id)) {
+      continue;
+    }
+
+    casesById.set(meta.id, {
+      id: meta.id,
+      title: meta.title,
+      kind: "pdf",
+      route: meta.pdfSourceUrl,
+      sourceUrl: meta.pdfSourceUrl,
+      expectsTextVersion: true,
+    });
+  }
+
+  return Array.from(casesById.values());
 }
 
 function materialPreviewCases() {
-  return materials
-    .map(item => {
-      const previewHref =
-        item.previewUrl ?? (looksLikeImagePath(item.url) ? item.url : null);
+  const casesByRoute = new Map();
 
-      if (!previewHref) {
-        return null;
-      }
+  for (const item of materials) {
+    const previewHref =
+      item.previewUrl ?? (looksLikeImagePath(item.url) ? item.url : null);
 
-      return {
-        id: item.id,
-        title: item.title,
-        kind: "preview",
-        route: previewHref,
-      };
-    })
-    .filter(Boolean);
+    if (!previewHref) {
+      continue;
+    }
+
+    casesByRoute.set(previewHref, {
+      id: item.id,
+      title: item.title,
+      kind: "preview",
+      route: previewHref,
+    });
+  }
+
+  for (const meta of handoutTextVersionMetas) {
+    if (!looksLikeImagePath(meta.previewImageUrl)) {
+      continue;
+    }
+
+    casesByRoute.set(meta.previewImageUrl, {
+      id: meta.id,
+      title: meta.title,
+      kind: "preview",
+      route: meta.previewImageUrl,
+    });
+  }
+
+  return Array.from(casesByRoute.values());
 }
 
 function textVersionCases() {
-  return materials
-    .map(item => {
-      if (item.isHtml) {
+  const cases = handoutTextVersionMetas.map(meta => ({
+    id: meta.id,
+    title: meta.title,
+    kind: "textversion",
+    route: meta.path,
+    expectsTextVersion: true,
+  }));
+
+  return [
+    ...cases,
+    ...materials
+      .filter(item => item.isHtml)
+      .map(item => {
         return {
           id: item.id,
           title: item.title,
@@ -172,20 +214,8 @@ function textVersionCases() {
           route: null,
           expectsTextVersion: false,
         };
-      }
-
-      const sourceUrl = item.pdfUrl ?? item.downloadUrl;
-      const meta = getHandoutTextVersionBySource(sourceUrl);
-
-      return {
-        id: item.id,
-        title: item.title,
-        kind: "textversion",
-        route: meta?.path ?? null,
-        expectsTextVersion: true,
-      };
-    })
-    .filter(Boolean);
+      }),
+  ];
 }
 
 async function fetchBuffer(url) {

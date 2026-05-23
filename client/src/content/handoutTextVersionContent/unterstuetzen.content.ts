@@ -68,7 +68,7 @@ export const handoutTextVersions = [
         title: "Professionelle Hilfe",
         calloutTitle: "Was Fachpersonen übernehmen",
         calloutText:
-          "Therapie, Psychiatrie und Beratung – das ist Aufgabe der Fachpersonen.",
+          "Therapie, Psychiatrie und Beratung – das ist Aufgabe der Fachpersonen. Sie sind nicht Therapeut:in, Retter:in oder Kontrollinstanz.",
       },
       {
         title: "Kernaussage",
@@ -139,7 +139,13 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es im Krisenmodus geht",
         calloutText:
-          "In der Krise hilft weniger Logik – mehr Ruhe, Präsenz und Orientierung.",
+          "In der Krise hilft weniger Logik – mehr Ruhe, Präsenz und Orientierung. Bei akuter Gefahr ersetzt das keine professionelle Hilfe.",
+      },
+      {
+        title: "Sicherheitsrahmen",
+        calloutTitle: "Orientierung, keine Notfallbeurteilung",
+        calloutText:
+          "Die Ampel und die Gegenüberstellung geben Orientierung. Wenn Sicherheit gefährdet ist, gilt Soforthilfe: Rot = Einsatzdienst, Gelb = psychiatrische Notfallhilfe, Grün = Entlastung und Gespräch.",
       },
       {
         title: "Mini-Legende",
@@ -203,7 +209,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Worum es bei den drei Säulen geht",
         calloutText:
-          "Präsenz, Stabilität und Grenze – drei Säulen, die Angehörigen Halt geben und die Beziehung stärken.",
+          "Präsenz, Stabilität und Grenze – drei Säulen, die Angehörigen Halt geben und die Beziehung stärken. Hilfreiche Unterstützung trägt nur, wenn sie auch für Angehörige tragbar bleibt.",
       },
       {
         title: "Was können Sie tun?",
@@ -259,13 +265,13 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es beim Konsistenz-Prinzip geht",
         calloutText:
-          "Wenn alle ähnlich reagieren, entsteht Sicherheit – und Eskalationen werden seltener.",
+          "Wenn alle ähnlich reagieren, kann mehr Sicherheit entstehen. Konsistenz bedeutet wiedererkennbare Haltung, nicht immer dieselbe Reaktion in jeder Situation.",
       },
       {
         title: "Merkhilfe",
         calloutTitle: "Worum es bei Konsistenz wirklich geht",
         calloutText:
-          "Nicht Härte macht den Unterschied, sondern Abstimmung: ähnliche Reaktionen, ähnliche Grenzen, weniger Ausspielen gegeneinander.",
+          "Nicht Härte macht den Unterschied, sondern Abstimmung: ähnliche Reaktionen, ähnliche Grenzen, weniger Ausspielen gegeneinander. Bei Gefahr oder Krise darf von normalen Regeln abgewichen und Hilfe geholt werden.",
       },
       {
         title: "Was können Sie tun?",
@@ -325,7 +331,7 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es bei Beziehungs-Achtsamkeit geht",
         calloutText:
-          "Innehalten – wahrnehmen – nicht bewerten – bewusst handeln.",
+          "Innehalten – wahrnehmen – nicht bewerten – bewusst handeln. Achtsamkeit in Beziehung bedeutet auch, eigene Warnsignale ernst zu nehmen.",
       },
       {
         title: "Merkhilfe",
@@ -380,7 +386,7 @@ export const handoutTextVersions = [
           },
           {
             title: "3. Zuhören statt verteidigen",
-            text: "Hören Sie zuerst zu, ohne sich sofort zu verteidigen, auch wenn Vorwürfe unfair wirken.",
+            text: "Hilfreich kann sein, zuerst zuzuhören, ohne sich sofort zu verteidigen, auch wenn Vorwürfe unfair wirken.",
           },
           {
             title: "4. Selbstverletzung ernst nehmen",
@@ -388,7 +394,7 @@ export const handoutTextVersions = [
           },
           {
             title: "5. Gemeinsam handeln",
-            text: "Handeln Sie als Familie gemeinsam – gleiche Regeln, weniger Konflikte.",
+            text: "Wenn mehrere Angehörige beteiligt sind, können kurze gemeinsame Absprachen helfen.",
           },
           {
             title: "6. Klare Grenzen setzen",
@@ -467,7 +473,7 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es im Alltag geht",
         calloutText:
-          "Kleine Handlungen im Alltag machen den grössten Unterschied.",
+          "Kleine Handlungen im Alltag können viel unterstützen. In akuter Gefahr gilt Soforthilfe, nicht Alltagstipps.",
       },
       {
         title: "Was können Sie tun?",

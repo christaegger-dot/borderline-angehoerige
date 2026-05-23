@@ -15,15 +15,15 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "85–93%",
-            text: "erreichen innerhalb von 10 Jahren eine symptomatische Remission.",
+            text: "erreichen in grossen Längsschnittstudien innerhalb von etwa 10 Jahren eine symptomatische Remission. Die genaue Zahl hängt von Definition und Stichprobe ab.",
           },
           {
-            title: "50%",
-            text: "erreichen eine umfassendere Genesung im Sinn von Recovery.",
+            title: "Recovery",
+            text: "umfasst mehr als Symptomrückgang: soziale, berufliche oder alltagsbezogene Stabilität. Diese umfassendere Genesung ist seltener als reine Remission.",
           },
           {
-            title: "77%",
-            text: "zeigen über 16 Jahre eine anhaltende Remission.",
+            title: "Langzeitverlauf",
+            text: "Langzeitdaten zeigen, dass Remission häufig stabil bleiben kann. Einzelne Prozentwerte sind ohne Studienkontext keine individuelle Prognose.",
           },
         ],
       },
@@ -64,19 +64,19 @@ export const handoutTextVersions = [
         title: "Begriffe kurz eingeordnet",
         calloutTitle: "Was die Grafik mit den Begriffen meint",
         calloutText:
-          "Remission meint eine deutliche Abnahme der Symptome. Recovery beschreibt eine umfassendere alltagsbezogene Genesung. Anhaltende Remission meint eine stabilere Besserung über längere Zeit.",
+          "Remission meint eine deutliche Abnahme der Symptome. Recovery beschreibt zusätzlich mehr Stabilität in Alltag, Beziehungen, Arbeit oder Ausbildung. Diese Zahlen stammen aus Längsschnittstudien und sind keine individuelle Prognose.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Teilen Sie diese Zahlen mit Ihrem Angehörigen, wenn der Moment passt.",
-          "Erinnern Sie sich: Rückschläge gehören zum Prozess und entwerten Fortschritt nicht automatisch.",
+          "Teilen Sie diese Zahlen nur dann, wenn sie entlasten und nicht Druck machen.",
+          "Erinnern Sie sich: Rückschläge können vorkommen und entwerten Fortschritt nicht automatisch.",
           "Bleiben Sie geduldig – Genesung ist eher ein Marathon als ein Sprint.",
         ],
       },
     ],
     sourceLine:
-      "Quelle: Zanarini et al. (2012), McLean Study; Gunderson et al. (2011).",
+      "Quellen: Zanarini et al. (2010/2012); Gunderson et al. (2011).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -93,7 +93,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Genesung verläuft nicht linear. Rückschritte sind Teil des Weges – nicht das Ende.",
+          "Genesung verläuft selten linear. Rückschritte können Teil eines Veränderungsprozesses sein und müssen trotzdem ernst genommen werden.",
       },
       {
         title: "Wichtige Einordnungen",
@@ -104,18 +104,18 @@ export const handoutTextVersions = [
           },
           {
             title: "Rückschläge entwerten nicht alles",
-            text: "Jeder Rückschlag ist kürzer als der vorherige.",
+            text: "Ein Rückschritt bedeutet nicht, dass alles Erreichte verloren ist.",
           },
           {
             title: "Der Weg zurück",
-            text: "Der Weg zurück wird schneller.",
+            text: "Manchmal gelingt der Weg zurück in Stabilität schneller, manchmal braucht es erneut Unterstützung.",
           },
         ],
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Sehen Sie Rückfälle als Teil des Prozesses.",
+          "Ordnen Sie Rückfälle als mögliches Signal ein, nicht als persönliches Scheitern.",
           "Vergleichen Sie mit früher, nicht mit gestern.",
           "Feiern Sie kleine Fortschritte.",
         ],
@@ -128,7 +128,7 @@ export const handoutTextVersions = [
   createHandoutTextVersion("remission-heilung", {
     kicker: "Textversion",
     summary:
-      "Remission ist oft das realistische Ziel: Symptome können deutlich abnehmen, Alltag und Beziehungen stabiler werden, auch wenn nicht alles vollständig verschwindet.",
+      "Symptome können deutlich zurückgehen, und Alltag, Beziehungen sowie Lebensqualität können stabiler werden. Remission, Recovery und Heilung bedeuten nicht dasselbe.",
     intro: [
       "Remission und Heilung werden im Alltag oft vermischt. Diese Einordnung hilft, Besserung differenzierter und weniger schwarz-weiss zu verstehen.",
       "Heilung und Remission werden bewusst gegenübergestellt und mit einer knappen Kernaussage sowie drei alltagsnahen Hinweisen ergänzt.",
@@ -137,32 +137,38 @@ export const handoutTextVersions = [
       {
         title: "Heilung",
         bullets: [
-          "Alle Symptome gelöst.",
-          "Keine Therapie mehr nötig.",
-          "Persönlichkeit verändert.",
-          "Selten realistisch.",
+          "Wird im Alltag oft als «alles ist weg» verstanden.",
+          "Ist bei Borderline kein einheitlich definierter Forschungsbegriff.",
+          "Sollte nicht als Versprechen oder als Gegenpol zu «für immer krank» verwendet werden.",
         ],
       },
       {
         title: "Remission",
         bullets: [
           "Symptome deutlich reduziert.",
-          "Stabilität im Alltag.",
-          "Fähigkeit zu Beziehungen.",
-          "Realistisches Ziel.",
+          "Krisen werden seltener oder weniger intensiv.",
+          "Der Alltag wird besser handhabbar.",
+        ],
+      },
+      {
+        title: "Recovery",
+        bullets: [
+          "Symptomverbesserung plus mehr Funktionsfähigkeit.",
+          "Mehr Stabilität in Beziehungen, Arbeit, Ausbildung oder Alltag.",
+          "Ein individueller Prozess, nicht nur eine Zahl.",
         ],
       },
       {
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Remission ist das realistische Ziel – und ein grosser Erfolg.",
+          "Symptome können deutlich zurückgehen; Funktionsfähigkeit und Lebensqualität können sich verbessern. Das ist ein grosser Erfolg, auch wenn Entwicklung selten perfekt oder linear ist.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Setzen Sie realistische Erwartungen: Besserung ja, Perfektion nein.",
-          "Feiern Sie kleine Fortschritte, statt auf die komplette Heilung zu warten.",
+          "Feiern Sie kleine Fortschritte, statt nur auf ein Alles-oder-nichts-Ergebnis zu schauen.",
           "Akzeptieren Sie, dass manche Muster bleiben können – aber handhabbar werden.",
         ],
       },
@@ -209,14 +215,14 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Genesung ist möglich – und Sie als Angehörige können bei den beeinflussbaren Faktoren unterstützen.",
+          "Genesung ist möglich – und Angehörige können beeinflussbare Faktoren unterstützen. Sie können den Prozess aber nicht garantieren oder alleine herstellen.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Prüfen Sie: Welchen Faktor können Sie unterstützen?",
           "Konzentrieren Sie sich auf das Beeinflussbare.",
-          "Geben Sie nicht auf – Veränderung braucht Zeit.",
+          "Erinnern Sie sich: Genesung ist individuell und selten linear.",
         ],
       },
     ],
@@ -300,7 +306,7 @@ export const handoutTextVersions = [
         title: "Orientierung",
         calloutTitle: "Worum es bei Ihrer Rolle geht",
         calloutText:
-          "Hilfreich ist, was Stabilität, Hoffnung und professionelle Unterstützung stärkt. Nicht Ihre Aufgabe ist es, Therapie zu ersetzen oder Genesung zu erzwingen.",
+          "Hilfreich ist, was Stabilität, Hoffnung und professionelle Unterstützung stärkt. Sie können Rahmen und Beziehung mitgestalten; Sie können Genesung nicht machen.",
       },
       {
         title: "Was können Sie tun?",

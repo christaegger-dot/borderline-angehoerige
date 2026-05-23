@@ -56,7 +56,7 @@ export const handoutTextVersions = [
         title: "Orientierung",
         calloutTitle: "Was der Leuchtturm nicht bedeutet",
         calloutText:
-          "Der Leuchtturm steht nicht für Kontrolle, sondern für Haltung: ruhig bleiben, Richtung geben und nicht in jeden Sturm hineingezogen werden.",
+          "Der Leuchtturm steht nicht für Kontrolle, sondern für Haltung: ruhig bleiben, Richtung geben und nicht in jeden Sturm hineingezogen werden. Auch ein Leuchtturm braucht Wartung: Angehörige dürfen Hilfe holen und Pausen brauchen.",
       },
     ],
     sourceLine:
@@ -165,7 +165,7 @@ export const handoutTextVersions = [
         title: "Orientierung",
         calloutTitle: "Wie der Eisberg gelesen werden kann",
         calloutText:
-          "Oben zeigt die Grafik sichtbares Verhalten. Unter der Oberfläche liegen oft Gefühle und Bedürfnisse, die im Streit leicht aus dem Blick geraten.",
+          "Oben zeigt die Grafik sichtbares Verhalten. Unter der Oberfläche liegen oft Gefühle und Bedürfnisse, die im Streit leicht aus dem Blick geraten. Verstehen hilft beim Reagieren – es bedeutet nicht, Beschimpfungen, Drohungen oder Gewalt auszuhalten.",
       },
     ],
     sourceLine:
@@ -211,7 +211,7 @@ export const handoutTextVersions = [
         title: "Wichtiger Hinweis",
         calloutTitle: "Warum das Kippen so irritierend ist",
         calloutText:
-          "Diese Trigger sind oft winzig – für Aussenstehende kaum erkennbar. Das Kippen ist kein böser Wille Ihres Angehörigen, sondern ein erlerntes Muster der Emotionsregulation.",
+          "Diese Trigger können von aussen klein wirken und unter Stress trotzdem stark ins Gewicht fallen. Das Kippen kann Teil eines Stress- oder Beziehungsmusters sein; es erklärt die Dynamik, macht Entwertung aber nicht harmlos.",
       },
       {
         title: "Kernaussage",
@@ -223,7 +223,7 @@ export const handoutTextVersions = [
         title: "Orientierung",
         calloutTitle: "Worum es bei der Grauzone geht",
         calloutText:
-          "Idealisierung und Entwertung sind beide verzerrte Stresszustände. Die Grauzone ist der realistischere Bereich, in dem Beziehung wieder differenzierter erlebt werden kann.",
+          "Idealisierung und Entwertung sind beide verzerrte Stresszustände. Die Grauzone ist der realistischere Bereich, in dem Beziehung wieder differenzierter erlebt werden kann. Entwertung kann verletzen; Sie dürfen auch dann Grenzen setzen.",
       },
       {
         title: "3 Schritte zur Stabilisierung",
@@ -254,7 +254,7 @@ export const handoutTextVersions = [
       "Wenn der Alarm-Modus aktiv ist, ist Ihr Gegenüber vorübergehend schwer erreichbar. Erst beruhigen, dann klären: Die Brücke vom Alarm zum Denken braucht Sicherheit und weniger Druck.",
     intro: [
       "Alarm-Modus und Denk-Modus erklären, warum Gespräche unter hoher Anspannung so schnell eng werden. Unter Stress steht nicht dieselbe Denkfähigkeit zur Verfügung wie in ruhigeren Momenten.",
-      "Für Angehörige ist das eine Entlastung und eine Handlungsorientierung zugleich. Nicht jede Eskalation ist böser Wille oder bewusste Verweigerung – oft ist sie Ausdruck eines neurobiologisch eingeengten Zustands.",
+      "Für Angehörige ist das eine Entlastung und eine Handlungsorientierung zugleich. Nicht jede Eskalation ist böser Wille oder bewusste Verweigerung – unter hoher Anspannung wird Nachdenken und Perspektivwechsel oft schwerer zugänglich.",
     ],
     sections: [
       {
@@ -269,11 +269,11 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Alarm-Modus",
-            text: "Der Körper geht in Kampf oder Flucht. Die Amygdala ist überaktiv, Denken eingeschränkt und Impulse werden schwerer steuerbar. Schuldgefühle kommen oft erst später.",
+            text: "Der Körper ist stark aktiviert. Zuhören, Abwägen und Impulse steuern werden schwerer. Schuldgefühle oder Einsicht kommen oft erst später.",
           },
           {
             title: "Denk-Modus",
-            text: "Der präfrontale Kortex ist besser verfügbar. Zuhören, Abwägen und Planen werden wieder möglich, und erst dann trägt ein Gespräch eher.",
+            text: "Wenn Anspannung sinkt, werden Zuhören, Abwägen und Planen wieder besser zugänglich. Erst dann trägt ein klärendes Gespräch eher.",
           },
           {
             title: "Übergang",
@@ -285,7 +285,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Worum es beim Alarm-Modus geht",
         calloutText:
-          "Im Alarm-Modus ist Ihr Gegenüber vorübergehend nicht erreichbar. Das ist keine Lüge und kein böser Wille, sondern eine neurobiologische Alarmreaktion.",
+          "Im Alarm-Modus ist Ihr Gegenüber vorübergehend schwerer erreichbar. Das ist nicht automatisch Lüge oder böser Wille; hohe Anspannung macht Denken, Perspektivwechsel und Selbststeuerung oft enger.",
       },
       {
         title: "Orientierung",
@@ -311,7 +311,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Porges (2011), Polyvagal-Theorie; Linehan (1993).",
+    sourceLine:
+      "Quelle: Linehan (1993/2015), DBT und Emotionsregulation; Stressmodell als didaktische Vereinfachung.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -390,28 +391,28 @@ export const handoutTextVersions = [
   createHandoutTextVersion("gehirn", {
     kicker: "Textversion",
     summary:
-      "Bei emotionaler Überflutung übernimmt das Alarm-System. Das Denken kommt erst zurück, wenn der Körper wieder etwas ruhiger ist.",
+      "Bei emotionaler Überflutung wird Denken oft enger. Klärung gelingt meist erst besser, wenn der Körper wieder etwas ruhiger ist.",
     intro: [
       "Das Gehirn-Modell erklärt in einfacher Form, was bei emotionaler Überflutung passiert. Für Angehörige wird dadurch nachvollziehbarer, warum zuerst Beruhigung und erst danach Klärung hilft.",
-      "Für Angehörige ist die Grafik vor allem als Einordnungshilfe gedacht: Überflutung ist keine Absicht, sondern eine neurobiologische Reaktion. Deshalb hilft zuerst Beruhigung und erst danach Klärung.",
+      "Für Angehörige ist die Grafik vor allem als Einordnungshilfe gedacht: Unter Stress wird Denken, Einordnen und Zuhören oft enger. Deshalb hilft zuerst Beruhigung und erst danach Klärung.",
     ],
     sections: [
       {
         title: "Die drei Bereiche der Grafik",
         intro:
-          "Die Infografik stellt drei Hirn-Bereiche mit ihren Funktionen und ihrer Rolle unter Stress gegenüber.",
+          "Die Infografik nutzt drei Bereiche als vereinfachte Orientierung dafür, was unter Stress oft schwerer zugänglich wird.",
         cards: [
           {
-            title: "Amygdala – Alarm-Zentrale",
-            text: "Reagiert auf Bedrohung und löst Kampf oder Flucht aus. Bei einer Borderline-Persönlichkeitsstörung reagiert sie oft stärker und schneller.",
+            title: "Alarm",
+            text: "Der Körper reagiert auf Bedrohung, Stress oder Überforderung. Impulse können schneller und stärker werden.",
           },
           {
-            title: "Hippocampus – Erinnerungsspeicher",
-            text: "Ordnet Erlebnisse zeitlich ein. Unterscheidet Vergangenheit von Gegenwart. Bei Stress: Funktion eingeschränkt.",
+            title: "Einordnen",
+            text: "Erinnern, Sortieren und Gegenwart von früheren Erfahrungen unterscheiden kann unter Stress schwerer werden.",
           },
           {
-            title: "Präfrontaler Kortex – Denk-Zentrale",
-            text: "Planung, Impulskontrolle, Reflexion. Bei Überflutung: vorübergehend offline.",
+            title: "Abwägen",
+            text: "Planen, Perspektivwechsel und Impulskontrolle sind bei hoher Anspannung oft weniger gut erreichbar.",
           },
         ],
       },
@@ -420,7 +421,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Überflutet",
-            text: "Die Alarmreaktion übernimmt, und der innere Spielraum wird klein.",
+            text: "Die Anspannung ist hoch, und der innere Spielraum wird klein.",
           },
           {
             title: "Beruhigung fehlt",
@@ -436,7 +437,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Worum es bei der Überflutung geht",
         calloutText:
-          "Emotionale Überflutung ist keine Absicht, sondern eine neurobiologische Reaktion. Das Gehirn braucht Zeit, um wieder klar zu denken.",
+          "Emotionale Überflutung ist nicht automatisch Absicht. Unter Stress wird Denken enger; der Körper braucht oft Zeit und Beruhigung, bevor Klärung wieder möglich wird.",
       },
       {
         title: "Orientierung",
@@ -462,7 +463,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Porges (2011); LeDoux (1996).",
+    sourceLine:
+      "Quelle: Stress- und Emotionsregulation in Anlehnung an Linehan (1993/2015); LeDoux (1996) als Hintergrund zur Angst- und Stressverarbeitung.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -527,6 +529,12 @@ export const handoutTextVersions = [
         calloutTitle: "Ein Satz, der immer wieder gesagt werden darf",
         calloutText:
           "«Du bist nicht schuld. Und du musst das nicht allein verstehen.» Dieser Satz darf in jeder Altersgruppe fallen – so oft wie nötig.",
+      },
+      {
+        title: "Hinweis für Erwachsene",
+        calloutTitle: "Wann Unterstützung wichtig wird",
+        calloutText:
+          "Wenn Kinder Angst haben, Gewalt erleben, Verantwortung übernehmen oder versuchen, Erwachsene zu trösten oder zu regulieren, bitte fachliche Unterstützung holen. Erwachsene bleiben für Hilfe und Sicherheit verantwortlich.",
       },
     ],
     sourceLine:

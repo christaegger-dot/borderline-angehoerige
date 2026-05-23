@@ -14,7 +14,13 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "DEAR hilft Ihnen, Wünsche klar zu formulieren – ohne Vorwürfe, ohne Eskalation.",
+          "DEAR hilft Ihnen, Wünsche klarer zu formulieren – ohne Vorwürfe. Es ist eine hilfreiche Struktur, aber keine Garantie für Kooperation.",
+      },
+      {
+        title: "Sicherheitsgrenze",
+        calloutTitle: "Wann DEAR nicht der nächste Schritt ist",
+        calloutText:
+          "Wenn Sicherheit gefährdet ist, ist DEAR nicht der richtige nächste Schritt. Dann geht Abstand, Schutz und Hilfe vor Gesprächsstruktur.",
       },
       {
         title: "Die 4 Schritte",
@@ -54,7 +60,7 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Linehan (1993), DBT Skills Training, DEAR MAN.",
+    sourceLine: "Quelle: Linehan (2015), DBT Skills Training Manual, DEAR MAN.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -120,6 +126,7 @@ export const handoutTextVersions = [
           "Fragen Sie sich: Ist das mein Gefühl oder das der anderen Person?",
           "Sagen Sie: Ich verstehe, dass du leidest (nicht: Ich leide mit dir).",
           "Erinnern Sie sich: Die innere Leere der anderen Person können Sie nicht stellvertretend ausfüllen.",
+          "Wenn Sie selbst überflutet sind, ist Abstand oder Unterstützung hilfreicher als weiteres Spiegeln.",
         ],
       },
     ],
@@ -167,7 +174,7 @@ export const handoutTextVersions = [
         title: "Merke",
         calloutTitle: "Abschlusssatz des Handouts",
         calloutText:
-          "Alle vier Grenzen sind gleichwertig. Sie haben das Recht, jede davon zu schützen.",
+          "Alle vier Grenzen sind wichtig. Körperliche Sicherheit hat immer Priorität; bei Gewalt oder Bedrohung geht Schutz vor Gespräch.",
       },
     ],
     sourceLine: "Quelle: Mason/Kreger (2014).",
@@ -218,7 +225,7 @@ export const handoutTextVersions = [
         title: "Abschluss",
         calloutTitle: "Frage zur Selbstbeobachtung",
         calloutText:
-          "Welches Signal kennen Sie am besten und in welchen Situationen taucht es immer wieder auf?",
+          "Welches Signal kennen Sie am besten und in welchen Situationen taucht es immer wieder auf? Warnsignale sind Hinweise, keine Diagnose – und Erschöpfung ist kein persönliches Versagen.",
       },
     ],
     sourceLine: "Quelle: Mason/Kreger (2014), Angehörigen-Psychoedukation.",
@@ -266,6 +273,8 @@ export const handoutTextVersions = [
       },
       {
         title: "Stufe 2: L.M.K. – logische, machbare Konsequenz",
+        intro:
+          "L.M.K. steht hier für «logische, machbare Konsequenz»: eine Folge, die Sie ruhig ankündigen und wirklich umsetzen können.",
         bullets: [
           "«Wenn du weiter schreist, gehe ich in mein Zimmer.»",
           "«Wenn das nochmals passiert, schlafe ich heute woanders.»",
@@ -295,6 +304,7 @@ export const handoutTextVersions = [
           "Definieren Sie vorab zwei oder drei logische, machbare Konsequenzen.",
           "Besprechen Sie diese möglichst in einem ruhigen Moment.",
           "Setzen Sie die Konsequenz ruhig um, ohne danach in eine neue Diskussion einzusteigen.",
+          "Bei Gewalt oder Bedrohung ist keine Kommunikationsformel gefragt, sondern Schutz und Hilfe.",
         ],
       },
     ],
@@ -315,7 +325,7 @@ export const handoutTextVersions = [
         title: "Wann anwenden?",
         calloutTitle: "Einsatz des Spickzettels",
         calloutText:
-          "Wenn Sie eine Grenze setzen möchten, ohne die Beziehung zu gefährden. Ideal zum Üben vor schwierigen Gesprächen.",
+          "Wenn Sie eine Grenze setzen möchten, ohne die Beziehung zu gefährden. Ideal zum Üben vor schwierigen Gesprächen. Eine Grenze ist nur hilfreich, wenn sie realistisch haltbar ist.",
       },
       {
         title: "Bereich 1: DEAR-Technik",

@@ -44,4 +44,22 @@ describe("startup shell static assets", () => {
     expect(prerenderScript).not.toContain("fonts.googleapis.com");
     expect(prerenderScript).not.toContain("fonts.gstatic.com");
   });
+
+  it("keeps the startup shell aligned with the light editorial system", () => {
+    const indexHtml = fs.readFileSync(
+      path.join(repoRoot, "client/index.html"),
+      "utf8"
+    );
+    const shellCss = fs.readFileSync(
+      path.join(repoRoot, "client/public/startup-shell.css"),
+      "utf8"
+    );
+
+    expect(indexHtml).toContain("route-prerender-brand-label");
+    expect(indexHtml).toContain("route-prerender-aside");
+    expect(indexHtml).toContain("Soforthilfe öffnen");
+    expect(shellCss).toContain("--shell-surface: #faf7f2");
+    expect(shellCss).toContain("--shell-brand: #5b3a4e");
+    expect(shellCss).not.toMatch(/#0f172a|#111827|radial-gradient|text-shadow/);
+  });
 });

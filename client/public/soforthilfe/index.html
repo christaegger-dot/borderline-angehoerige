@@ -78,13 +78,15 @@
     <main class="fallback-page">
       <div class="fallback-wrap">
         <header class="fallback-header">
-          <div>
-            <p class="fallback-brand">Borderline · Hilfe für Angehörige</p>
+          <div class="fallback-hero-copy">
+            <p class="fallback-brand">
+              Fachstelle Angehörigenarbeit · PUK Zürich
+            </p>
             <h1 class="fallback-title">Soforthilfe bei akuter Gefahr</h1>
             <p class="fallback-lead">
-              Diese Direktseite liefert die wichtigsten Notfallkontakte ohne
-              App-JavaScript aus. Bei unmittelbarer Gefahr zählt der schnellste
-              funktionierende Weg.
+              Die wichtigsten Notfallkontakte auf einer robusten Direktseite.
+              Wenn es akut ist, zählt nicht die perfekte Einordnung, sondern der
+              schnellste funktionierende Weg.
             </p>
             <div class="fallback-review">
               <div>Fachlich geprüft am: 30.04.2026</div>
@@ -93,6 +95,7 @@
             </div>
           </div>
           <div class="fallback-priority-note" role="note">
+            <p class="fallback-note-label">Erste Entscheidung</p>
             <p>
               <strong>Akute Gefahr?</strong> Wählen Sie direkt
               <a href="tel:144">144</a> bei medizinischer Notlage,
@@ -103,128 +106,169 @@
           </div>
         </header>
 
-        <section class="fallback-grid fallback-grid-priority">
-          <article class="fallback-card alert">
-            <h2>Lebensgefahr</h2>
-            <ul class="fallback-list">
-              <li><a href="tel:144">144</a> Rettungsdienst</li>
-              <li><a href="tel:117">117</a> Polizei</li>
-              <li><a href="tel:112">112</a> Notruf</li>
-            </ul>
-            <p class="fallback-small">
-              Für akute Suizidgefahr, schwere Selbstverletzung, Gewalt oder
-              unmittelbare Bedrohung.
-            </p>
-          </article>
+        <section
+          class="fallback-section"
+          aria-labelledby="soforthilfe-prioritaet"
+        >
+          <div class="fallback-section-head">
+            <p class="fallback-section-kicker">Priorität</p>
+            <h2 id="soforthilfe-prioritaet">
+              Was ist jetzt der schnellste passende Weg?
+            </h2>
+          </div>
 
-          <article class="fallback-card">
-            <h2>Psychiatrische Krise</h2>
-            <ul class="fallback-list">
-              <li>
-                <a href="tel:+41583842000">058 384 20 00</a> PUK Erwachsene,
-                24/7
-              </li>
-              <li>
-                <a href="tel:+41583846666">058 384 66 66</a> PUK Kinder und
-                Jugendliche, 24/7
-              </li>
-              <li>
-                <a href="tel:+41583844682">058 384 46 82</a> PUK ab 65, 24/7
-              </li>
-            </ul>
-            <p class="fallback-small">
-              Für akute psychische Krisen ohne unmittelbare Lebensgefahr.
-            </p>
-          </article>
+          <div class="fallback-emergency-grid">
+            <article class="fallback-card fallback-card-primary alert">
+              <p class="fallback-step">1</p>
+              <div>
+                <h3>Lebensgefahr</h3>
+                <ul class="fallback-list">
+                  <li><a href="tel:144">144</a> Rettungsdienst</li>
+                  <li><a href="tel:117">117</a> Polizei</li>
+                  <li><a href="tel:112">112</a> Notruf</li>
+                </ul>
+                <p class="fallback-small">
+                  Für akute Suizidgefahr, schwere Selbstverletzung, Gewalt oder
+                  unmittelbare Bedrohung.
+                </p>
+              </div>
+            </article>
 
-          <article class="fallback-card ok">
-            <h2>Entlastung und Gespräch</h2>
-            <ul class="fallback-list">
-              <li><a href="tel:143">143</a> Die Dargebotene Hand, 24/7</li>
-              <li>
-                <a href="tel:+41848354555">0848 35 45 55</a> Elternnotruf, 24/7
-              </li>
-              <li>
-                <a href="tel:147">147</a> Pro Juventute – Beratung für Kinder
-                und Jugendliche, 24/7
-              </li>
-            </ul>
-            <p class="fallback-small">
-              Diese Nummern hören zu und entlasten, schicken aber keinen
-              Einsatzdienst.
-            </p>
-          </article>
+            <div class="fallback-emergency-secondary">
+              <article class="fallback-card">
+                <p class="fallback-step">2</p>
+                <div>
+                  <h3>Psychiatrische Krise</h3>
+                  <ul class="fallback-list">
+                    <li>
+                      <a href="tel:+41583842000">058 384 20 00</a> PUK
+                      Erwachsene, 24/7
+                    </li>
+                    <li>
+                      <a href="tel:+41583846666">058 384 66 66</a> PUK Kinder
+                      und Jugendliche, 24/7
+                    </li>
+                    <li>
+                      <a href="tel:+41583844682">058 384 46 82</a> PUK ab 65,
+                      24/7
+                    </li>
+                  </ul>
+                  <p class="fallback-small">
+                    Für akute psychische Krisen ohne unmittelbare Lebensgefahr.
+                  </p>
+                </div>
+              </article>
+
+              <article class="fallback-card ok">
+                <p class="fallback-step">3</p>
+                <div>
+                  <h3>Entlastung und Gespräch</h3>
+                  <ul class="fallback-list">
+                    <li>
+                      <a href="tel:143">143</a> Die Dargebotene Hand, 24/7
+                    </li>
+                    <li>
+                      <a href="tel:+41848354555">0848 35 45 55</a>
+                      Elternnotruf, 24/7
+                    </li>
+                    <!-- prettier-ignore -->
+                    <li><a href="tel:147">147</a> Pro Juventute – Beratung für Kinder und Jugendliche, 24/7</li>
+                  </ul>
+                  <p class="fallback-small">
+                    Diese Nummern hören zu und entlasten, schicken aber keinen
+                    Einsatzdienst.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
 
-        <section class="fallback-grid fallback-grid-support">
-          <!-- Spiegelung aus client/src/data/kontakte.ts: Gewalt-/Opferhilfe-Kontakte -->
-          <article class="fallback-card">
-            <h3>Gewalt, Bedrohung oder Übergriff</h3>
-            <ul class="fallback-list">
-              <li>
-                <a href="tel:117">117</a> Polizei bei akuter Bedrohung oder wenn
-                sofort Schutz vor Ort nötig ist
-              </li>
-              <li>
-                <a href="tel:144">144</a> Rettungsdienst bei Verletzung,
-                Bewusstseinsstörung oder medizinischer Notlage
-              </li>
-              <li><a href="tel:142">142</a> Opferhilfe 142, 24/7</li>
-              <li>
-                <a href="tel:+41444552142">044 455 21 42</a> Opferhilfe Zürich,
-                24/7
-              </li>
-              <li>
-                <a href="tel:0800090909">0800 09 09 09</a> Forensic Nurses
-                Zürich, 24/7
-              </li>
-              <li>
-                <a href="tel:+41442994050">044 299 40 50</a> Opferberatung
-                Zürich
-              </li>
-            </ul>
-            <p class="fallback-small">
-              Opferhilfe gilt auch für Angehörige, Männer, Frauen und
-              Vertrauenspersonen. Forensic Nurses unterstützen nach sexueller
-              oder häuslicher Gewalt bei medizinischer Hilfe und Spurensicherung
-              – auch ohne sofortige Anzeige.
-            </p>
-          </article>
+        <section
+          class="fallback-section fallback-section-support"
+          aria-labelledby="soforthilfe-weitere-hilfe"
+        >
+          <div class="fallback-section-head">
+            <p class="fallback-section-kicker">Weitere Hilfe</p>
+            <h2 id="soforthilfe-weitere-hilfe">
+              Wenn Schutz, Beratung oder Materialien gebraucht werden
+            </h2>
+          </div>
 
-          <article class="fallback-card">
-            <h3>Weitere Hilfe</h3>
-            <ul class="fallback-list">
-              <li>
-                <a href="tel:145">145</a> Tox Info Suisse bei
-                Vergiftungsverdacht
-              </li>
-              <li>
-                <a href="tel:0800336655">0800 33 66 55</a> Ärztefon Zürich
-              </li>
-              <li>
-                <a href="tel:+41583846500">058 384 65 00</a>
-                Kriseninterventionszentrum
-              </li>
-            </ul>
-          </article>
+          <div class="fallback-grid fallback-grid-support">
+            <!-- Spiegelung aus client/src/data/kontakte.ts: Gewalt-/Opferhilfe-Kontakte -->
+            <article class="fallback-card fallback-card-wide">
+              <h3>Gewalt, Bedrohung oder Übergriff</h3>
+              <ul class="fallback-list">
+                <li>
+                  <a href="tel:117">117</a> Polizei bei akuter Bedrohung oder
+                  wenn sofort Schutz vor Ort nötig ist
+                </li>
+                <li>
+                  <a href="tel:144">144</a> Rettungsdienst bei Verletzung,
+                  Bewusstseinsstörung oder medizinischer Notlage
+                </li>
+                <li><a href="tel:142">142</a> Opferhilfe 142, 24/7</li>
+                <li>
+                  <a href="tel:+41444552142">044 455 21 42</a> Opferhilfe
+                  Zürich, 24/7
+                </li>
+                <li>
+                  <a href="tel:0800090909">0800 09 09 09</a> Forensic Nurses
+                  Zürich, 24/7
+                </li>
+                <li>
+                  <a href="tel:+41442994050">044 299 40 50</a> Opferberatung
+                  Zürich
+                </li>
+              </ul>
+              <p class="fallback-small">
+                Opferhilfe gilt auch für Angehörige, Männer, Frauen und
+                Vertrauenspersonen. Forensic Nurses unterstützen nach sexueller
+                oder häuslicher Gewalt bei medizinischer Hilfe und
+                Spurensicherung – auch ohne sofortige Anzeige.
+              </p>
+            </article>
 
-          <article class="fallback-card">
-            <h3>Materialien</h3>
-            <div class="fallback-actions">
-              <a
-                class="fallback-button primary"
-                href="/Notfallkarte-Zuerich-Psychische-Krise.pdf"
-              >
-                Notfallkarte PDF
-              </a>
-              <a class="fallback-button" href="/notfallkarte"
-                >Notfallkarte im Browser</a
-              >
-              <a class="fallback-button" href="/notfallplan-krise-v03.pdf"
-                >Notfallplan PDF</a
-              >
-            </div>
-          </article>
+            <article class="fallback-card">
+              <h3>Weitere Hilfe</h3>
+              <ul class="fallback-list">
+                <li>
+                  <a href="tel:145">145</a> Tox Info Suisse bei
+                  Vergiftungsverdacht
+                </li>
+                <li>
+                  <a href="tel:0800336655">0800 33 66 55</a> Ärztefon Zürich
+                </li>
+                <li>
+                  <a href="tel:+41583846500">058 384 65 00</a>
+                  Kriseninterventionszentrum
+                </li>
+              </ul>
+            </article>
+
+            <article class="fallback-card fallback-card-materials">
+              <h3>Materialien</h3>
+              <p class="fallback-small">
+                Für den nächsten ruhigen Moment: Karte öffnen, drucken oder
+                gemeinsam ausfüllen.
+              </p>
+              <div class="fallback-actions">
+                <a
+                  class="fallback-button primary"
+                  href="/Notfallkarte-Zuerich-Psychische-Krise.pdf"
+                >
+                  Notfallkarte PDF
+                </a>
+                <a class="fallback-button" href="/notfallkarte"
+                  >Notfallkarte im Browser</a
+                >
+                <a class="fallback-button" href="/notfallplan-krise-v03.pdf"
+                  >Notfallplan PDF</a
+                >
+              </div>
+            </article>
+          </div>
         </section>
 
         <footer class="fallback-meta">

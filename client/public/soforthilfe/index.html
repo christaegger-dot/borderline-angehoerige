@@ -77,10 +77,22 @@
   <body>
     <main class="fallback-page">
       <div class="fallback-wrap">
+        <nav class="fallback-topbar" aria-label="Schnellnavigation">
+          <a class="fallback-logo" href="/">
+            <span class="fallback-logo-main">Borderline · Angehörige</span>
+            <span class="fallback-logo-sub">Fachstelle · PUK Zürich</span>
+          </a>
+          <div class="fallback-toplinks">
+            <a href="/">Startseite</a>
+            <a href="/notfallkarte">Notfallkarte</a>
+            <a href="/materialien">Materialien</a>
+          </div>
+        </nav>
+
         <header class="fallback-header">
           <div class="fallback-hero-copy">
             <p class="fallback-brand">
-              Fachstelle Angehörigenarbeit · PUK Zürich
+              Direktseite · funktioniert ohne App-JavaScript
             </p>
             <h1 class="fallback-title">Soforthilfe bei akuter Gefahr</h1>
             <p class="fallback-lead">
@@ -95,13 +107,24 @@
             </div>
           </div>
           <div class="fallback-priority-note" role="note">
-            <p class="fallback-note-label">Erste Entscheidung</p>
+            <p class="fallback-note-label">Sofort wählen</p>
+            <div class="fallback-call-row" aria-label="Akute Notfallnummern">
+              <a class="fallback-call-link alert" href="tel:144">
+                <span class="fallback-call-number">144</span>
+                <span>Medizinischer Notfall</span>
+              </a>
+              <a class="fallback-call-link alert" href="tel:117">
+                <span class="fallback-call-number">117</span>
+                <span>Bedrohung oder Gewalt</span>
+              </a>
+              <a class="fallback-call-link" href="tel:112">
+                <span class="fallback-call-number">112</span>
+                <span>Schnellster Notruf</span>
+              </a>
+            </div>
             <p>
-              <strong>Akute Gefahr?</strong> Wählen Sie direkt
-              <a href="tel:144">144</a> bei medizinischer Notlage,
-              <a href="tel:117">117</a> bei Bedrohung oder
-              <a href="tel:112">112</a>, wenn der schnellste erreichbare Notruf
-              zählt.
+              Wenn Sie unsicher sind, wählen Sie den schnellsten erreichbaren
+              Weg. Bei akuter Gefahr zählt nicht die perfekte Einordnung.
             </p>
           </div>
         </header>

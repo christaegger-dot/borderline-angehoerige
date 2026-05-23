@@ -33,41 +33,10 @@ const categoryLabel: Record<Exclude<MaterialCategory, "alle">, string> = {
   soforthilfe: "Soforthilfe",
 };
 
-const labelStyle = {
-  fontSize: "var(--text-xs)",
-  letterSpacing: "var(--tracking-caps)",
-  color: "var(--fg-tertiary)",
-  fontWeight: 500,
-} as const;
-
-const titleStyle = {
-  fontFamily: "var(--font-display)",
-  fontSize: "var(--text-md)",
-  fontWeight: "var(--weight-display)",
-  lineHeight: "var(--lh-snug)",
-  color: "var(--fg-primary)",
-  letterSpacing: "var(--tracking-tight)",
-};
-
-const bodyStyle = {
-  fontSize: "var(--text-sm)",
-  lineHeight: "var(--lh-relaxed)",
-  color: "var(--fg-secondary)",
-};
-
 function SectionKicker({ children }: { children: string }) {
   return (
     <>
-      <span
-        className="block text-[13px] font-medium uppercase"
-        style={{
-          color: "var(--accent-label)",
-          letterSpacing: "var(--tracking-caps)",
-          lineHeight: 1.3,
-        }}
-      >
-        {children}
-      </span>
+      <span className="editorial-section-kicker">{children}</span>
       <div
         aria-hidden="true"
         className="mt-3 border-t"
@@ -221,7 +190,7 @@ export default function MaterialienLibrarySection() {
         <EditorialSection.Body>
           <EyebrowLabel>Schneller Einstieg</EyebrowLabel>
           <DisplayHeading level={2}>Was hilft gerade jetzt?</DisplayHeading>
-          <p className="mt-4 max-w-[36em]" style={bodyStyle}>
+          <p className="editorial-small-copy mt-4 max-w-[36em]">
             Wählen Sie nach Lage, nicht nach Vollständigkeit. Eine gute erste
             Ressource reicht oft mehr als zehn geöffnete Tabs.
           </p>
@@ -235,16 +204,12 @@ export default function MaterialienLibrarySection() {
                 className="border-t py-5 first:border-t-0 first:pt-0 sm:first:border-t sm:first:pt-5"
                 style={{ borderColor: "var(--rule-color)" }}
               >
-                <p className="uppercase" style={labelStyle}>
+                <p className="editorial-micro-label">
                   {categoryLabel[item.id]}
                 </p>
-                <h3 className="mt-3" style={titleStyle}>
-                  {item.title}
-                </h3>
-                <p className="mt-2" style={bodyStyle}>
-                  {item.text}
-                </p>
-                <p className="mt-4" style={{ fontSize: "var(--text-sm)" }}>
+                <h3 className="editorial-card-heading mt-3">{item.title}</h3>
+                <p className="editorial-small-copy mt-2">{item.text}</p>
+                <p className="editorial-small-copy mt-4">
                   <button
                     type="button"
                     onClick={() => {
@@ -274,7 +239,7 @@ export default function MaterialienLibrarySection() {
             Materialien. Sie decken Krise, Orientierung, Kommunikation, Grenzen
             und Selbstfürsorge ab.
           </EditorialBody>
-          <p className="mt-3" style={{ fontSize: "var(--text-sm)" }}>
+          <p className="editorial-small-copy mt-3">
             <button
               type="button"
               onClick={scrollToResults}
@@ -373,8 +338,8 @@ export default function MaterialienLibrarySection() {
               </div>
             ) : (
               <p
-                className="mt-10 border-t pt-8 text-center"
-                style={{ ...bodyStyle, borderColor: "var(--rule-color)" }}
+                className="editorial-small-copy mt-10 border-t pt-8 text-center"
+                style={{ borderColor: "var(--rule-color)" }}
               >
                 In dieser Kategorie sind aktuell keine weiteren Materialien
                 sichtbar.

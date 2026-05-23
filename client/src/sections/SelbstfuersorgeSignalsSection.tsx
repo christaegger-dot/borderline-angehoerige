@@ -2,18 +2,6 @@ import ContentSection from "@/components/ContentSection";
 import { warningSignalGroups } from "@/content/selbstfuersorge-page";
 
 export function SelbstfuersorgeSignalsSection() {
-  const titleStyle = {
-    fontSize: "var(--text-md)",
-    fontWeight: 600,
-    color: "var(--fg-primary)",
-  };
-
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   return (
     <ContentSection
       variant="editorial"
@@ -21,7 +9,7 @@ export function SelbstfuersorgeSignalsSection() {
       id="warnsignale"
       preview="Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr Selbstfürsorge brauchen."
     >
-      <p className="mb-6" style={bodyStyle}>
+      <p className="editorial-small-copy mb-6">
         Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr
         Selbstfürsorge brauchen:
       </p>
@@ -34,10 +22,10 @@ export function SelbstfuersorgeSignalsSection() {
               className="border-t pt-4"
               style={{ borderColor: "var(--rule-color)" }}
             >
-              <h3 style={titleStyle}>{group.title}</h3>
+              <h3 className="editorial-item-heading">{group.title}</h3>
               <ul className="mt-3 space-y-2 pl-5 list-disc marker:text-[color:var(--accent-label)]">
                 {group.items.map(item => (
-                  <li key={item} style={bodyStyle}>
+                  <li key={item} className="editorial-small-copy">
                     {item}
                   </li>
                 ))}
@@ -51,8 +39,8 @@ export function SelbstfuersorgeSignalsSection() {
         className="mt-8 border-t pt-5"
         style={{ borderColor: "var(--rule-color)" }}
       >
-        <p style={bodyStyle}>
-          <strong style={{ color: "var(--fg-primary)" }}>
+        <p className="editorial-small-copy">
+          <strong className="editorial-strong">
             Wenn Sie mehrere dieser Warnsignale bei sich bemerken, ist es Zeit
             zu handeln.
           </strong>{" "}

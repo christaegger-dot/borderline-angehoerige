@@ -1,5 +1,13 @@
 import { pageGovernance } from "@/data/pageGovernance";
 
+type ReviewBadgeVariant = "compact" | "detailed";
+
+interface ReviewBadgeProps {
+  path: string;
+  variant?: ReviewBadgeVariant;
+  className?: string;
+}
+
 function formatDate(date: string) {
   const [year, month, day] = date.split("-");
 
@@ -8,7 +16,11 @@ function formatDate(date: string) {
   return `${day}.${month}.${year}`;
 }
 
-export default function ReviewBadge({ path }: { path: string }) {
+export default function ReviewBadge({
+  path,
+  variant = "compact",
+  className = "",
+}: ReviewBadgeProps) {
   const meta = pageGovernance[path];
 
   if (!meta) return null;
@@ -21,36 +33,73 @@ export default function ReviewBadge({ path }: { path: string }) {
     ? formatDate(meta.nextReviewDue)
     : null;
 
+  if (variant === "detailed") {
+    return (
+      <aside
+        className={`review-badge review-badge--detailed ${className}`.trim()}
+        aria-label="Review-Informationen"
+      >
+        <p className="review-badge__heading">Review & Governance</p>
+        <ReviewDetails
+          lastReviewed={lastReviewed}
+          nextReviewDue={nextReviewDue}
+          owner={meta.owner}
+        />
+      </aside>
+    );
+  }
+
+  const summary = meta.lastReviewed
+    ? `Fachlich geprüft: ${formatDate(meta.lastReviewed)}`
+    : "Fachlicher Review: Datum noch offen";
+
   return (
-    <aside
-      className="mt-6 border-t pt-4 text-sm text-muted-foreground"
+    <details
+      className={`review-badge review-badge--compact ${className}`.trim()}
       aria-label="Review-Informationen"
-      style={{ borderColor: "var(--rule-color)" }}
     >
-      <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
-        Review & Governance
-      </p>
+      <summary className="review-badge__summary">
+        <span>{summary}</span>
+        <span className="review-badge__summary-action">Details</span>
+      </summary>
+      <ReviewDetails
+        lastReviewed={lastReviewed}
+        nextReviewDue={nextReviewDue}
+        owner={meta.owner}
+      />
+    </details>
+  );
+}
 
-      <dl className="space-y-1.5">
-        <div className="flex flex-wrap gap-x-2 gap-y-0.5">
-          <dt className="font-medium text-foreground">Fachlicher Review:</dt>
-          <dd>{lastReviewed}</dd>
+function ReviewDetails({
+  lastReviewed,
+  nextReviewDue,
+  owner,
+}: {
+  lastReviewed: string;
+  nextReviewDue: string | null;
+  owner?: string;
+}) {
+  return (
+    <dl className="review-badge__details">
+      <div className="review-badge__details-row">
+        <dt className="review-badge__term">Fachlicher Review:</dt>
+        <dd>{lastReviewed}</dd>
+      </div>
+
+      {nextReviewDue && (
+        <div className="review-badge__details-row">
+          <dt className="review-badge__term">Nächste Prüfung:</dt>
+          <dd>{nextReviewDue}</dd>
         </div>
+      )}
 
-        {nextReviewDue && (
-          <div className="flex flex-wrap gap-x-2 gap-y-0.5">
-            <dt className="font-medium text-foreground">Nächste Prüfung:</dt>
-            <dd>{nextReviewDue}</dd>
-          </div>
-        )}
-
-        {meta.owner && (
-          <div className="flex flex-wrap gap-x-2 gap-y-0.5">
-            <dt className="font-medium text-foreground">Verantwortlich:</dt>
-            <dd>{meta.owner}</dd>
-          </div>
-        )}
-      </dl>
-    </aside>
+      {owner && (
+        <div className="review-badge__details-row">
+          <dt className="review-badge__term">Verantwortlich:</dt>
+          <dd>{owner}</dd>
+        </div>
+      )}
+    </dl>
   );
 }

@@ -663,6 +663,89 @@
     font-size: var(--text-sm);
   }
 
+  /* Review metadata: visible enough for trust, quiet enough for readers. */
+  .review-badge {
+    color: var(--fg-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--lh-relaxed);
+  }
+
+  .review-badge--compact {
+    display: block;
+    margin-top: var(--space-3);
+  }
+
+  .review-badge--detailed {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--rule-color);
+  }
+
+  .review-badge__heading {
+    margin-bottom: var(--space-3);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--accent-label);
+  }
+
+  .review-badge__summary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--fg-tertiary);
+    cursor: pointer;
+    font-size: var(--text-xs);
+    line-height: 1.4;
+    list-style: none;
+  }
+
+  .review-badge__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .review-badge__summary::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: var(--accent-label);
+    opacity: 0.7;
+  }
+
+  .review-badge__summary-action {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  .review-badge__details {
+    display: grid;
+    gap: 0.25rem;
+    max-width: 34rem;
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--rule-color);
+  }
+
+  .review-badge--compact:not([open]) .review-badge__details {
+    display: none;
+  }
+
+  .review-badge__details-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.5rem;
+  }
+
+  .review-badge__term {
+    font-weight: var(--weight-strong);
+    color: var(--fg-primary);
+  }
+
   @media (max-width: 639px) {
     .topic-material-card--compact {
       grid-template-columns: minmax(6.5rem, 0.38fr) minmax(0, 1fr);

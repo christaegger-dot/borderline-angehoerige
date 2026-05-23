@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-23T22:47:19.756Z",
+  "generatedAt": "2026-05-23T23:50:58.023Z",
   "summary": {
-    "totalFiles": 128,
-    "totalSizeMb": 156.18,
+    "totalFiles": 131,
+    "totalSizeMb": 156.83,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 114,
-    "supportFiles": 7,
-    "supportFilesSizeMb": 41.32,
-    "unreferencedCandidates": 4,
-    "unreferencedCandidatesSizeMb": 0.86,
+    "activeReferencedSizeMb": 113.46,
+    "supportFiles": 8,
+    "supportFilesSizeMb": 41.4,
+    "unreferencedCandidates": 6,
+    "unreferencedCandidatesSizeMb": 1.97,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 2
+    "versionFamiliesWithLegacyCandidates": 3
   },
   "missingReferences": [],
   "activeReferences": [
@@ -587,8 +587,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
-      "sizeBytes": 87008,
+      "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp",
+      "sizeBytes": 68470,
       "usages": [
         {
           "source": "materials",
@@ -1397,8 +1397,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-wenn-worte-treffen-v1.pdf",
-      "sizeBytes": 1032269,
+      "path": "/infografiken/manus-wenn-worte-treffen-v2.pdf",
+      "sizeBytes": 436726,
       "usages": [
         {
           "source": "materials",
@@ -1413,8 +1413,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-wenn-worte-treffen-v1.webp",
-      "sizeBytes": 135678,
+      "path": "/infografiken/manus-wenn-worte-treffen-v2.webp",
+      "sizeBytes": 184518,
       "usages": [
         {
           "source": "materials",
@@ -1551,6 +1551,10 @@
       "sizeBytes": 24174
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
+      "sizeBytes": 87008
+    },
+    {
       "path": "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
       "sizeBytes": 31882
     },
@@ -1587,6 +1591,20 @@
         "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
         "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp"
       ]
+    },
+    {
+      "path": "/infografiken/manus-wenn-worte-treffen-v1.pdf",
+      "sizeBytes": 1032269,
+      "versionFamily": "/infografiken/manus-wenn-worte-treffen",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-wenn-worte-treffen-v1.webp",
+      "sizeBytes": 135678,
+      "versionFamily": "/infografiken/manus-wenn-worte-treffen",
+      "version": 1,
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
@@ -1993,10 +2011,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp"
+        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
+        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp"
+        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2405,13 +2424,18 @@
       "family": "/infografiken/manus-wenn-worte-treffen",
       "availableFiles": [
         "/infografiken/manus-wenn-worte-treffen-v1.pdf",
-        "/infografiken/manus-wenn-worte-treffen-v1.webp"
+        "/infografiken/manus-wenn-worte-treffen-v1.webp",
+        "/infografiken/manus-wenn-worte-treffen-v2.pdf",
+        "/infografiken/manus-wenn-worte-treffen-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/manus-wenn-worte-treffen-v2.pdf",
+        "/infografiken/manus-wenn-worte-treffen-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/manus-wenn-worte-treffen-v1.pdf",
         "/infografiken/manus-wenn-worte-treffen-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/pendel-das-bewertungs-pendel",

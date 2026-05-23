@@ -204,10 +204,10 @@ export const materials: MaterialItem[] = [
       "Typische anklagende Sätze einordnen und eigene Reaktionen ruhiger und klarer gestalten.",
     category: "kommunizieren",
     kind: "Infografik",
-    url: "/infografiken/manus-wenn-worte-treffen-v1.webp",
+    url: "/infografiken/manus-wenn-worte-treffen-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
-    downloadUrl: "/infografiken/manus-wenn-worte-treffen-v1.pdf",
+      "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp",
+    downloadUrl: "/infografiken/manus-wenn-worte-treffen-v2.pdf",
     priority: "secondary",
     verifiedAt: "Mai 2026",
   },

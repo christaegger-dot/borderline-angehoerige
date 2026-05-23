@@ -1,6 +1,5 @@
 import {
   DisplayHeading,
-  EditorialBody,
   EditorialProse,
   EditorialSection,
   EyebrowLabel,
@@ -31,10 +30,10 @@ const HERO_INDEX = [
     href: "/verstehen",
   },
   {
-    label: "Handeln",
-    title: "Kommunizieren",
-    text: "Wenn Sie Sätze, Grenzen und weniger Eskalation brauchen.",
-    href: "/kommunizieren",
+    label: "Kraft",
+    title: "Selbstfürsorge",
+    text: "Wenn Sie merken, dass Ihre eigene Kraft aufgebraucht ist.",
+    href: "/selbstfuersorge",
   },
 ];
 
@@ -123,10 +122,9 @@ export default function Home() {
 
       <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
-          <HomeMarginLabel>Warum diese Seite</HomeMarginLabel>
+          <HomeMarginLabel>Einordnung</HomeMarginLabel>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel>Anerkennung</EyebrowLabel>
           <DisplayHeading level={2}>
             Viele Angehörige kommen nicht mit einer klaren Frage, sondern mit
             einem Knäuel.
@@ -147,34 +145,19 @@ export default function Home() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      <EditorialSection variant="aubergine" density="compact">
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
-          <HomeMarginLabel tone="light">Grundsatz</HomeMarginLabel>
+          <HomeMarginLabel>Grundsatz</HomeMarginLabel>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel tone="light">Mitgefühl und Selbstschutz</EyebrowLabel>
-          <DisplayHeading level={2} tone="light">
-            Grenzen sind nicht das Gegenteil von Beziehung.
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Viele Angehörige tragen die stille Sorge, dass Abstand lieblos
-              sei. Dabei ist Selbstschutz oft die Voraussetzung dafür, morgen
-              noch ruhig, präsent und ansprechbar sein zu können.
-            </p>
-            <p>
-              Sie dürfen verstehen <em>und</em> sich schützen. Sie dürfen
-              bleiben <em>und</em> Distanz wahren. Sie dürfen lieben{" "}
-              <em>und</em> müde sein.
-            </p>
-          </EditorialProse>
+          <GuidingPrinciple />
         </EditorialSection.Body>
       </EditorialSection>
 
       <VisualOrientationGrid
-        maxItems={4}
-        title="Vier Schlüsselbilder für den Anfang."
-        intro="Die Bilder führen nicht weg vom Inhalt, sondern hinein: erst verstehen, dann Krise einordnen, Gespräche beruhigen und Grenzen sichtbar machen."
+        maxItems={3}
+        title="Drei Bilder für den ersten Überblick."
+        intro="Nicht als Galerie, sondern als Einstieg: Was passiert innerlich, wann wird es akut, und warum hilft Beruhigung vor Klärung?"
       />
 
       <EditorialSection variant="cream-deep" density="compact">
@@ -192,6 +175,11 @@ export default function Home() {
               betroffene Person. Orientierung, Gespräch und Materialien für
               Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
             </p>
+            <p>
+              Wenn es akut ist, gehen Sie nicht über diese Seite als Umweg:
+              Nutzen Sie direkt die{" "}
+              <AppLink href="/soforthilfe">Soforthilfe-Kontakte</AppLink>.
+            </p>
           </EditorialProse>
         </EditorialSection.Body>
         {FACHSTELLE && EMAIL_ANGEHOERIGEN && ADRESSE_PUK && (
@@ -200,23 +188,6 @@ export default function Home() {
           </EditorialSection.Aside>
         )}
       </EditorialSection>
-
-      <section className="bg-[var(--bg-primary)] px-[var(--container-pad)] py-[var(--section-y-compact-mobile)] md:px-[var(--container-pad-md)] md:py-[var(--section-y-compact-desktop)]">
-        <div
-          className="mx-auto flex max-w-page flex-col gap-4 border-t pt-8 md:flex-row md:items-center md:justify-between"
-          style={{ borderColor: "var(--rule-color)" }}
-        >
-          <EditorialBody as="p">
-            In einer akuten Krise zählt der schnellste funktionierende Weg.
-          </EditorialBody>
-          <AppLink
-            href="/soforthilfe"
-            className="editorial-link text-sm font-medium"
-          >
-            Notfallnummern öffnen
-          </AppLink>
-        </div>
-      </section>
     </Layout>
   );
 }
@@ -390,6 +361,63 @@ function PathwaySection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function GuidingPrinciple() {
+  const points = [
+    {
+      title: "Verstehen",
+      text: "heisst nicht, alles zu entschuldigen.",
+    },
+    {
+      title: "Unterstützen",
+      text: "heisst nicht, allein verantwortlich zu werden.",
+    },
+    {
+      title: "Grenzen",
+      text: "sind nicht das Ende von Beziehung, sondern oft ihr Schutz.",
+    },
+  ];
+
+  return (
+    <div className="border-y py-8" style={{ borderColor: "var(--rule-color)" }}>
+      <p
+        className="max-w-[34rem] font-display text-[1.75rem] md:text-[2.1rem]"
+        style={{
+          color: "var(--fg-primary)",
+          lineHeight: "var(--lh-snug)",
+          letterSpacing: "var(--tracking-tight)",
+          fontWeight: "var(--weight-display)",
+        }}
+      >
+        Mitgefühl und Selbstschutz gehören auf dieselbe Seite.
+      </p>
+      <ul className="mt-8 grid gap-5 md:grid-cols-3">
+        {points.map(point => (
+          <li key={point.title}>
+            <p
+              className="text-xs font-medium uppercase"
+              style={{
+                color: "var(--accent-label)",
+                letterSpacing: "0.08em",
+              }}
+            >
+              {point.title}
+            </p>
+            <p
+              className="mt-2 text-sm"
+              style={{
+                color: "var(--fg-secondary)",
+                lineHeight: "var(--lh-relaxed)",
+              }}
+            >
+              {point.text}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

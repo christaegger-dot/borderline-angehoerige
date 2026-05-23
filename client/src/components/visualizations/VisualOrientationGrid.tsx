@@ -42,6 +42,10 @@ export function VisualOrientationGrid({
     typeof maxItems === "number"
       ? homeFeaturedInfografiken.slice(0, maxItems)
       : homeFeaturedInfografiken;
+  const gridClass =
+    typeof maxItems === "number" && maxItems <= 3
+      ? "grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-y-12 lg:grid-cols-3"
+      : "grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-y-12 lg:grid-cols-4";
 
   return (
     <>
@@ -84,11 +88,11 @@ export function VisualOrientationGrid({
       </EditorialSection>
 
       <section
-        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-20 md:px-[var(--container-pad-md)] md:pb-[120px]"
-        aria-label="Visuelle Orientierung — acht Infografiken"
+        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-[var(--section-y-normal-mobile)] md:px-[var(--container-pad-md)] md:pb-[var(--section-y-spacious-desktop)]"
+        aria-label={`Visuelle Orientierung — ${tiles.length} Infografiken`}
       >
         <div className="mx-auto max-w-page">
-          <ul className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 md:gap-y-14 lg:grid-cols-4">
+          <ul className={gridClass}>
             {tiles.map((tile, index) => (
               <li key={tile.id} className="group">
                 <AppLink

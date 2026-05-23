@@ -30,11 +30,11 @@ body {
   padding: 0;
   background:
     radial-gradient(
-      circle at top left,
-      rgba(226, 231, 220, 0.55),
-      transparent 28rem
+      circle at 14% 0,
+      rgba(226, 231, 220, 0.46),
+      transparent 24rem
     ),
-    linear-gradient(180deg, #fbf8f2 0%, var(--surface) 32rem);
+    linear-gradient(180deg, #fbf8f2 0%, var(--surface) 28rem);
   color: var(--ink);
   font-family:
     Inter,
@@ -122,26 +122,65 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-page {
   min-height: 100vh;
-  padding: clamp(1.5rem, 4vw, 4rem) 0 4rem;
+  padding: clamp(1rem, 3vw, 2.75rem) 0 4rem;
 }
 
 .fallback-wrap {
-  width: min(100% - 2rem, 76rem);
+  width: min(100% - 2rem, 72rem);
   margin: 0 auto;
+}
+
+.fallback-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 0 1.1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.fallback-logo {
+  display: inline-grid;
+  gap: 0.12rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.fallback-logo-main {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.fallback-logo-sub {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.fallback-toplinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem 1.15rem;
+  font-size: 0.9rem;
+}
+
+.fallback-toplinks a {
+  color: var(--brand);
+  text-underline-offset: 0.2em;
 }
 
 .fallback-header {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(19rem, 0.78fr);
-  align-items: end;
-  gap: clamp(2rem, 6vw, 5rem);
-  min-height: min(58vh, 35rem);
-  padding: clamp(2rem, 7vw, 5rem) 0 clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.8fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: clamp(2.4rem, 6vw, 4.2rem) 0 clamp(2.25rem, 5vw, 3.5rem);
   border-bottom: 1px solid var(--rule);
 }
 
 .fallback-hero-copy {
-  max-width: 48rem;
+  max-width: 44rem;
 }
 
 .fallback-brand,
@@ -173,14 +212,14 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 }
 
 .fallback-title {
-  max-width: 12ch;
+  max-width: 15ch;
   margin: 0;
   color: var(--ink);
   font-family: "Source Serif 4", "Source Serif 4 fallback", Georgia, serif;
-  font-size: clamp(3rem, 7vw, 5.75rem);
+  font-size: clamp(3rem, 5.3vw, 4.55rem);
   font-weight: 400;
   letter-spacing: -0.035em;
-  line-height: 0.96;
+  line-height: 1;
   text-wrap: balance;
 }
 
@@ -221,23 +260,56 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   align-self: center;
   padding: clamp(1.25rem, 3vw, 1.75rem);
   border: 1px solid rgba(181, 65, 47, 0.24);
-  border-top: 4px solid var(--alert);
-  border-radius: 24px;
+  border-left: 4px solid var(--alert);
+  border-radius: 18px;
   background:
     linear-gradient(
       180deg,
-      rgba(255, 253, 250, 0.82),
-      rgba(249, 234, 229, 0.86)
+      rgba(255, 253, 250, 0.9),
+      rgba(249, 234, 229, 0.78)
     ),
     var(--alert-soft);
-  box-shadow: 0 1.25rem 3rem rgba(31, 42, 55, 0.08);
+  box-shadow: 0 1px 0 rgba(31, 42, 55, 0.04);
+}
+
+.fallback-call-row {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.fallback-call-link {
+  display: grid;
+  grid-template-columns: 4.2rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.1rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.85rem;
+  background: rgba(255, 253, 250, 0.78);
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.fallback-call-link.alert {
+  border-color: rgba(181, 65, 47, 0.22);
+}
+
+.fallback-call-number {
+  color: var(--alert);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .fallback-priority-note p:not(.fallback-note-label) {
-  margin: 0.75rem 0 0;
+  margin: 1rem 0 0;
   color: var(--ink);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.95rem;
+  line-height: 1.58;
 }
 
 .fallback-priority-note strong {
@@ -246,7 +318,7 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 }
 
 .fallback-section {
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  padding: clamp(2.5rem, 5vw, 3.75rem) 0;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -259,14 +331,14 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   grid-template-columns: 10rem minmax(0, 42rem);
   gap: clamp(1rem, 4vw, 2.5rem);
   align-items: start;
-  margin-bottom: clamp(1.5rem, 4vw, 2.4rem);
+  margin-bottom: clamp(1.35rem, 3vw, 2.1rem);
 }
 
 .fallback-section-head h2 {
   margin: 0;
   color: var(--ink);
   font-family: "Source Serif 4", "Source Serif 4 fallback", Georgia, serif;
-  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  font-size: clamp(1.85rem, 3vw, 2.75rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.05;
@@ -297,9 +369,8 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   gap: 1rem;
   padding: clamp(1.25rem, 2.5vw, 1.65rem);
   border: 1px solid var(--rule);
-  border-radius: 20px;
-  background: rgba(255, 253, 250, 0.84);
-  box-shadow: 0 1px 0 rgba(31, 42, 55, 0.03);
+  border-radius: 16px;
+  background: rgba(255, 253, 250, 0.76);
 }
 
 .fallback-card-primary {
@@ -333,11 +404,12 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-card.alert {
   border-color: rgba(181, 65, 47, 0.25);
+  border-left: 4px solid var(--alert);
   background:
     linear-gradient(
       180deg,
-      rgba(255, 253, 250, 0.52),
-      rgba(249, 234, 229, 0.95)
+      rgba(255, 253, 250, 0.58),
+      rgba(249, 234, 229, 0.88)
     ),
     var(--alert-soft);
 }
@@ -349,6 +421,7 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-card.ok {
   border-color: rgba(79, 107, 94, 0.2);
+  border-left: 4px solid var(--ok);
   background:
     linear-gradient(
       180deg,
@@ -365,8 +438,8 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
 
 .fallback-step {
   display: inline-grid;
-  width: 2.15rem;
-  height: 2.15rem;
+  width: 2rem;
+  height: 2rem;
   flex: 0 0 auto;
   place-items: center;
   margin: 0.1rem 0 0;
@@ -494,7 +567,7 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   }
 
   .fallback-title {
-    max-width: 11ch;
+    max-width: 13ch;
   }
 }
 
@@ -506,6 +579,15 @@ body[data-app-ready="true"] [data-static-fallback="root"] {
   .fallback-header {
     padding-top: 1rem;
     gap: 1.5rem;
+  }
+
+  .fallback-topbar {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .fallback-toplinks {
+    justify-content: flex-start;
   }
 
   .fallback-title {

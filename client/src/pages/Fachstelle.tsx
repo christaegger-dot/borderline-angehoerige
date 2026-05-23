@@ -44,25 +44,6 @@ const leistungen = [
 ] as const;
 
 export default function Fachstelle() {
-  const h3Style = {
-    fontSize: "var(--text-md)",
-    fontWeight: 600,
-    color: "var(--fg-primary)",
-  };
-
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
-  const labelStyle = {
-    fontSize: "var(--text-xs)",
-    letterSpacing: "var(--tracking-caps)",
-    color: "var(--fg-tertiary)",
-    fontWeight: 500,
-  } as const;
-
   return (
     <Layout>
       <SEO
@@ -71,11 +52,11 @@ export default function Fachstelle() {
         path="/fachstelle"
       />
 
-      <EditorialLayout width="narrow">
+      <EditorialLayout width="wide">
         {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+        <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Fachstelle — PUK Zürich</EyebrowLabel>
-          <DisplayHeading level={1} size="page">
+          <DisplayHeading level={1} size="utility">
             Angehörigenarbeit – <em>professionell begleitet</em>
           </DisplayHeading>
           <Lede className="mt-6">
@@ -84,13 +65,7 @@ export default function Fachstelle() {
             bietet Orientierung, Entlastung und Beratung für Situationen, die im
             Alltag oft schwer alleine zu tragen sind.
           </Lede>
-          <p
-            className="mt-4"
-            style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
-            }}
-          >
+          <p className="secondary-page-meta">
             Vollständig ca. 4 Min · Auch abschnittweise lesbar.
           </p>
           <LastVerifiedBadge path="/fachstelle" className="mt-6" />
@@ -105,13 +80,11 @@ export default function Fachstelle() {
               einordnen und passende nächste Schritte finden möchten.
             </p>
           </EditorialProse>
-          <ul className="mt-8 space-y-6">
+          <ul className="secondary-page-list secondary-page-list--spacious">
             {leistungen.map(item => (
               <li key={item.title}>
-                <h3 style={h3Style}>{item.title}</h3>
-                <p className="mt-1" style={bodyStyle}>
-                  {item.description}
-                </p>
+                <h3 className="secondary-page-list-title">{item.title}</h3>
+                <p className="secondary-page-list-text">{item.description}</p>
               </li>
             ))}
           </ul>
@@ -128,11 +101,9 @@ export default function Fachstelle() {
               Zürich (PUK).
             </p>
           </EditorialProse>
-          <dl className="mt-8 grid gap-y-6 sm:grid-cols-[max-content_1fr] sm:gap-x-10">
-            <dt className="uppercase" style={labelStyle}>
-              Adresse
-            </dt>
-            <dd style={bodyStyle}>
+          <dl className="secondary-page-definition-list">
+            <dt className="secondary-page-definition-term">Adresse</dt>
+            <dd className="secondary-page-definition-description">
               Lenggstrasse 31
               <br />
               Postfach
@@ -140,52 +111,43 @@ export default function Fachstelle() {
               8032 Zürich
             </dd>
 
-            <dt className="uppercase" style={labelStyle}>
-              Telefon
-            </dt>
+            <dt className="secondary-page-definition-term">Telefon</dt>
             <dd>
               <a
                 href={`tel:${fachstelleTel.tel}`}
-                className="editorial-link"
-                style={{ fontSize: "var(--text-md)" }}
+                className="editorial-link secondary-page-contact-link"
               >
                 {fachstelleTel.nummer}
               </a>
-              <p className="mt-1" style={bodyStyle}>
+              <p className="secondary-page-list-text">
                 Terminvereinbarung telefonisch.
               </p>
             </dd>
 
-            <dt className="uppercase" style={labelStyle}>
-              E-Mail
-            </dt>
+            <dt className="secondary-page-definition-term">E-Mail</dt>
             <dd>
               <a
                 href={`mailto:${fachstelleEmail.adresse}`}
-                className="editorial-link"
-                style={{ fontSize: "var(--text-md)" }}
+                className="editorial-link secondary-page-contact-link"
               >
                 {fachstelleEmail.adresse}
               </a>
-              <p className="mt-1" style={bodyStyle}>
+              <p className="secondary-page-list-text">
                 Terminvereinbarung per E-Mail.
               </p>
             </dd>
 
-            <dt className="uppercase" style={labelStyle}>
-              Web
-            </dt>
+            <dt className="secondary-page-definition-term">Web</dt>
             <dd>
               <a
                 href={pukUrl.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="editorial-link"
-                style={{ fontSize: "var(--text-md)" }}
+                className="editorial-link secondary-page-contact-link"
               >
                 {pukUrl.url.replace("https://", "")}
               </a>
-              <p className="mt-1" style={bodyStyle}>
+              <p className="secondary-page-list-text">
                 Website der PUK Zürich.
               </p>
             </dd>

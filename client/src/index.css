@@ -869,6 +869,103 @@
     font-weight: 600;
   }
 
+  /* Secondary pages: legal, trust and contact pages share one calm grammar. */
+  .secondary-page-header {
+    padding-block: var(--section-y-normal-mobile) var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .secondary-page-header {
+      padding-block: var(--section-y-normal-desktop) var(--space-7);
+    }
+  }
+
+  .secondary-page-meta {
+    margin-top: var(--space-3);
+    color: var(--fg-tertiary);
+    font-size: var(--text-sm);
+    line-height: var(--lh-relaxed);
+  }
+
+  .secondary-page-body {
+    color: var(--fg-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--lh-relaxed);
+  }
+
+  .secondary-page-list {
+    display: grid;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .secondary-page-list--spacious {
+    gap: var(--space-5);
+  }
+
+  .secondary-page-list--bulleted {
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+
+  .secondary-page-list--bulleted li::marker {
+    color: var(--accent-label);
+  }
+
+  .secondary-page-list-title {
+    margin: 0;
+    color: var(--fg-primary);
+    font-size: var(--text-md);
+    font-weight: var(--weight-strong);
+    line-height: var(--lh-snug);
+  }
+
+  .secondary-page-list-meta {
+    margin-top: 0.25rem;
+    color: var(--accent-label);
+    font-size: var(--text-sm);
+    font-style: italic;
+  }
+
+  .secondary-page-list-text {
+    margin-top: 0.25rem;
+    color: var(--fg-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--lh-relaxed);
+  }
+
+  .secondary-page-definition-list {
+    display: grid;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+  }
+
+  @media (min-width: 640px) {
+    .secondary-page-definition-list {
+      grid-template-columns: max-content minmax(0, 1fr);
+      column-gap: var(--space-6);
+      row-gap: var(--space-4);
+    }
+  }
+
+  .secondary-page-definition-term {
+    color: var(--fg-tertiary);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+  }
+
+  .secondary-page-definition-description {
+    color: var(--fg-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--lh-relaxed);
+  }
+
+  .secondary-page-contact-link {
+    font-size: var(--text-md);
+  }
+
   /* Review metadata: visible enough for trust, quiet enough for readers. */
   .review-badge {
     color: var(--fg-secondary);

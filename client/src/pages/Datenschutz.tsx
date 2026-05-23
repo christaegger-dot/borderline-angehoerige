@@ -17,12 +17,6 @@ import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 export default function Datenschutz() {
   const lastReviewed = pageGovernance["/datenschutz"]?.lastReviewed;
 
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   const formattedReviewDate = lastReviewed
     ? lastReviewed.split("-").reverse().join(".")
     : null;
@@ -35,10 +29,10 @@ export default function Datenschutz() {
         path="/datenschutz"
       />
 
-      <EditorialLayout width="narrow">
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+      <EditorialLayout width="wide">
+        <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Datenschutz</EyebrowLabel>
-          <DisplayHeading level={1} size="page">
+          <DisplayHeading level={1} size="utility">
             Wie diese Website mit <em>Daten</em> umgeht
           </DisplayHeading>
           <Lede className="mt-6">
@@ -137,16 +131,22 @@ export default function Datenschutz() {
             </p>
           </EditorialProse>
 
-          <ul className="mt-6 space-y-3 pl-5 marker:text-[color:var(--accent-label)]">
-            <li style={bodyStyle}>Browsertyp und Browserversion</li>
-            <li style={bodyStyle}>verwendetes Betriebssystem</li>
-            <li style={bodyStyle}>Referrer URL</li>
-            <li style={bodyStyle}>Hostname des zugreifenden Rechners</li>
-            <li style={bodyStyle}>Uhrzeit der Serveranfrage</li>
-            <li style={bodyStyle}>IP-Adresse in anonymisierter Form</li>
+          <ul className="secondary-page-list secondary-page-list--bulleted">
+            <li className="secondary-page-body">
+              Browsertyp und Browserversion
+            </li>
+            <li className="secondary-page-body">verwendetes Betriebssystem</li>
+            <li className="secondary-page-body">Referrer URL</li>
+            <li className="secondary-page-body">
+              Hostname des zugreifenden Rechners
+            </li>
+            <li className="secondary-page-body">Uhrzeit der Serveranfrage</li>
+            <li className="secondary-page-body">
+              IP-Adresse in anonymisierter Form
+            </li>
           </ul>
 
-          <p className="mt-6" style={bodyStyle}>
+          <p className="secondary-page-body mt-6">
             Diese Daten werden ausschliesslich zur Gewährleistung eines
             störungsfreien Betriebs und zur technischen Verbesserung des
             Angebots ausgewertet. Eine Zusammenführung mit anderen Datenquellen
@@ -282,34 +282,34 @@ export default function Datenschutz() {
             </p>
           </EditorialProse>
 
-          <ul className="mt-6 space-y-4">
+          <ul className="secondary-page-list">
             <li>
-              <p style={bodyStyle}>
+              <p className="secondary-page-body">
                 <strong>Auskunftsrecht:</strong> Sie können Auskunft über
                 gespeicherte personenbezogene Daten verlangen.
               </p>
             </li>
             <li>
-              <p style={bodyStyle}>
+              <p className="secondary-page-body">
                 <strong>Berichtigungsrecht:</strong> Sie können die Berichtigung
                 unrichtiger Daten verlangen.
               </p>
             </li>
             <li>
-              <p style={bodyStyle}>
+              <p className="secondary-page-body">
                 <strong>Löschungsrecht:</strong> Sie können die Löschung Ihrer
                 Daten verlangen.
               </p>
             </li>
             <li>
-              <p style={bodyStyle}>
+              <p className="secondary-page-body">
                 <strong>Widerspruchsrecht:</strong> Sie können der Verarbeitung
                 Ihrer Daten widersprechen.
               </p>
             </li>
           </ul>
 
-          <p className="mt-6" style={bodyStyle}>
+          <p className="secondary-page-body mt-6">
             Auf unseren Servern speichern wir grundsätzlich keine persönlichen
             Inhalte aus der Notfallkarte. Falls Sie die persönliche Notfallkarte
             verwenden, können solche Angaben lokal auf Ihrem Gerät gespeichert
@@ -335,7 +335,7 @@ export default function Datenschutz() {
         </ContentSection>
 
         <EditorialSectionBlock label="Stand" title="Aktualität" rule>
-          <p style={bodyStyle}>
+          <p className="secondary-page-body">
             Stand der Erklärung: {formattedReviewDate ?? "nicht angegeben"}
           </p>
         </EditorialSectionBlock>

@@ -18,6 +18,14 @@ export function isSearchShortcut(
 
 export default function Layout({ children }: LayoutProps) {
   const [searchOpen, setSearchOpen] = useState(false);
+  const footerLegalItems = [
+    { href: "/fachstelle", label: "Fachstelle" },
+    { href: "/ueber-uns", label: "Über uns" },
+    { href: "/impressum", label: "Impressum" },
+    { href: "/datenschutz", label: "Datenschutz" },
+    { href: "/barrierefreiheit", label: "Barrierefreiheit" },
+    { href: "/feedback", label: "Feedback" },
+  ];
 
   // Keyboard shortcut for search (Ctrl/Cmd + K) + ESC closes dropdown
   useEffect(() => {
@@ -56,69 +64,42 @@ export default function Layout({ children }: LayoutProps) {
         className="mt-auto border-t bg-background"
         style={{ borderColor: "var(--rule-color)" }}
       >
-        <div className="container py-8 md:py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {/* Brand + Absender */}
-            <div className="lg:col-span-1">
-              <AppLink href="/" className="flex items-center gap-2 mb-4">
-                <BrandMark variant="light" />
-                <span className="font-medium text-base text-foreground">
-                  Borderline · Hilfe für Angehörige
+        <div className="container py-10 md:py-14">
+          <div
+            className="grid gap-7 border-b pb-8 md:grid-cols-[minmax(0,1.4fr)_minmax(18rem,0.8fr)] md:gap-10"
+            style={{ borderColor: "var(--rule-color)" }}
+          >
+            <div className="max-w-2xl">
+              <AppLink href="/" className="inline-flex items-center gap-3">
+                <BrandMark variant="light" className="h-10 w-10" />
+                <span className="flex flex-col leading-tight">
+                  <span className="font-display text-lg font-medium tracking-[-0.01em] text-foreground">
+                    Borderline · Hilfe für Angehörige
+                  </span>
+                  <span className="mt-1 text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
+                    Fachstelle Angehörigenarbeit · PUK Zürich
+                  </span>
                 </span>
               </AppLink>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Psychoedukatives Informationsangebot für Angehörige von Menschen
-                mit Borderline-Muster.
+              <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                Psychoedukative Orientierung für Angehörige: fachlich
+                eingeordnet, entstigmatisierend und mit klarem Blick auf
+                Selbstschutz.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-foreground">
+                Herausgegeben von der Fachstelle Angehörigenarbeit der
+                Psychiatrischen Universitätsklinik Zürich.
               </p>
             </div>
 
-            {/* Navigation */}
-            <div>
-              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
-                Themen
-              </p>
-              <ul className="space-y-1">
-                {navItems.map(item => (
-                  <li key={item.href}>
-                    <AppLink
-                      href={item.href}
-                      className="inline-flex min-h-[44px] items-center py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      {item.label}
-                    </AppLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
-                Ressourcen
-              </p>
-              <ul className="space-y-1">
-                {ressourcenItems.map(item => (
-                  <li key={item.href}>
-                    <AppLink
-                      href={item.href}
-                      className="inline-flex min-h-[44px] items-center py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      {item.label}
-                    </AppLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Hinweis */}
-            <div>
-              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
+            <div className="rounded-2xl border bg-white/45 p-5 md:p-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
                 Hinweis
               </p>
-              <p className="text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 Diese Website ersetzt keine professionelle Beratung oder
-                Therapie. Bei akuten Krisen wenden Sie sich bitte an die
-                Notfallnummern.
+                Therapie. Bei akuten Krisen zählen die Notfallnummern und der
+                schnellste erreichbare Weg.
               </p>
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                 Schweiz · Kanton Zürich. Für andere Regionen bitte lokale
@@ -127,65 +108,61 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
-          {/* Absender-Einordnung */}
-          <div
-            className="mt-8 border-t pt-8"
-            style={{ borderColor: "var(--rule-color)" }}
-          >
-            <p className="text-sm leading-relaxed text-foreground">
-              Herausgegeben von der Fachstelle Angehörigenarbeit der
-              Psychiatrischen Universitätsklinik Zürich (PUK).
-            </p>
-            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-              Redaktionell eigenständiges Informationsangebot der Fachstelle
-              Angehörigenarbeit innerhalb der PUK Zürich.
-            </p>
+          <div className="grid gap-8 py-8 md:grid-cols-2 md:gap-12">
+            <nav aria-label="Themen im Footer">
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
+                Themen
+              </p>
+              <ul className="grid gap-x-6 sm:grid-cols-2">
+                {navItems.map(item => (
+                  <li key={item.href}>
+                    <AppLink
+                      href={item.href}
+                      className="inline-flex min-h-10 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {item.label}
+                    </AppLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <nav aria-label="Ressourcen im Footer">
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
+                Ressourcen
+              </p>
+              <ul className="grid gap-x-6 sm:grid-cols-2">
+                {ressourcenItems.map(item => (
+                  <li key={item.href}>
+                    <AppLink
+                      href={item.href}
+                      className="inline-flex min-h-10 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {item.label}
+                    </AppLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           <div
-            className="mt-6 flex flex-col items-start justify-between gap-4 border-t pt-6 sm:flex-row sm:items-center"
+            className="flex flex-col items-start justify-between gap-4 border-t pt-6 sm:flex-row sm:items-center"
             style={{ borderColor: "var(--rule-color)" }}
           >
             <p className="text-sm text-muted-foreground">
               © 2026 Borderline · Hilfe für Angehörige. Alle Rechte vorbehalten.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
-              <AppLink
-                href="/fachstelle"
-                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Fachstelle
-              </AppLink>
-              <AppLink
-                href="/ueber-uns"
-                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Über uns
-              </AppLink>
-              <AppLink
-                href="/impressum"
-                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Impressum
-              </AppLink>
-              <AppLink
-                href="/datenschutz"
-                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Datenschutz
-              </AppLink>
-              <AppLink
-                href="/barrierefreiheit"
-                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Barrierefreiheit
-              </AppLink>
-              <AppLink
-                href="/feedback"
-                className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Feedback
-              </AppLink>
+              {footerLegalItems.map(item => (
+                <AppLink
+                  key={item.href}
+                  href={item.href}
+                  className="inline-flex min-h-10 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {item.label}
+                </AppLink>
+              ))}
             </div>
           </div>
         </div>

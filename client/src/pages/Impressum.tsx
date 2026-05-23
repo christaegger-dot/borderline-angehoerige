@@ -20,25 +20,6 @@ const rot117 = kontaktByIdStrict("ROT_117");
 const gruen143 = kontaktByIdStrict("GRUEN_143");
 
 export default function Impressum() {
-  const subheadingStyle = {
-    fontSize: "var(--text-md)",
-    fontWeight: 600,
-    color: "var(--fg-primary)",
-  };
-
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
-  const labelStyle = {
-    fontSize: "var(--text-xs)",
-    letterSpacing: "var(--tracking-caps)",
-    color: "var(--fg-tertiary)",
-    fontWeight: 500,
-  } as const;
-
   return (
     <Layout>
       <SEO
@@ -47,10 +28,10 @@ export default function Impressum() {
         path="/impressum"
       />
 
-      <EditorialLayout width="narrow">
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+      <EditorialLayout width="wide">
+        <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Impressum</EyebrowLabel>
-          <DisplayHeading level={1} size="page">
+          <DisplayHeading level={1} size="utility">
             Verantwortung und <em>rechtliche Hinweise</em>
           </DisplayHeading>
           <Lede className="mt-6">
@@ -86,40 +67,34 @@ export default function Impressum() {
             </p>
           </EditorialProse>
 
-          <dl className="mt-8 grid gap-y-6 sm:grid-cols-[max-content_1fr] sm:gap-x-10">
-            <dt className="uppercase" style={labelStyle}>
-              Funktion
-            </dt>
-            <dd style={bodyStyle}>Angehörigenberaterin</dd>
+          <dl className="secondary-page-definition-list">
+            <dt className="secondary-page-definition-term">Funktion</dt>
+            <dd className="secondary-page-definition-description">
+              Angehörigenberaterin
+            </dd>
 
-            <dt className="uppercase" style={labelStyle}>
-              Telefon
-            </dt>
+            <dt className="secondary-page-definition-term">Telefon</dt>
             <dd>
               <a
                 href={`tel:${fachstelle.tel}`}
-                className="editorial-link"
-                style={{ fontSize: "var(--text-md)" }}
+                className="editorial-link secondary-page-contact-link"
               >
                 {fachstelle.nummer}
               </a>
             </dd>
 
-            <dt className="uppercase" style={labelStyle}>
-              E-Mail
-            </dt>
+            <dt className="secondary-page-definition-term">E-Mail</dt>
             <dd>
               <a
                 href={`mailto:${emailAngehoerigen.adresse}`}
-                className="editorial-link"
-                style={{ fontSize: "var(--text-md)" }}
+                className="editorial-link secondary-page-contact-link"
               >
                 {emailAngehoerigen.adresse}
               </a>
             </dd>
           </dl>
 
-          <p className="mt-6" style={bodyStyle}>
+          <p className="secondary-page-body mt-6">
             Die Beratung für Angehörige ist kostenlos und steht Angehörigen von
             psychisch kranken Menschen im Kanton Zürich vertraulich zur
             Verfügung.
@@ -146,15 +121,17 @@ export default function Impressum() {
             </p>
           </EditorialProse>
 
-          <ul className="mt-6 space-y-3 pl-5 marker:text-[color:var(--accent-label)]">
-            <li style={bodyStyle}>Informationen zum Verständnis der Störung</li>
-            <li style={bodyStyle}>
+          <ul className="secondary-page-list secondary-page-list--bulleted">
+            <li className="secondary-page-body">
+              Informationen zum Verständnis der Störung
+            </li>
+            <li className="secondary-page-body">
               Strategien für Alltag und Krisensituationen
             </li>
-            <li style={bodyStyle}>
+            <li className="secondary-page-body">
               Kommunikationstechniken für schwierige Gespräche
             </li>
-            <li style={bodyStyle}>
+            <li className="secondary-page-body">
               Ressourcen zur Selbstfürsorge und Burnout-Prävention
             </li>
           </ul>
@@ -212,33 +189,35 @@ export default function Impressum() {
             </p>
           </EditorialProse>
 
-          <ul className="mt-6 space-y-6">
+          <ul className="secondary-page-list secondary-page-list--spacious">
             <li>
-              <h3 style={subheadingStyle}>Mason, P. T. &amp; Kreger, R.</h3>
-              <p className="mt-1" style={bodyStyle}>
+              <h3 className="secondary-page-list-title">
+                Mason, P. T. &amp; Kreger, R.
+              </h3>
+              <p className="secondary-page-list-text">
                 Schluss mit dem Eiertanz: Für Angehörige von Menschen mit
                 Borderline. Balance Buch + Medien Verlag.
               </p>
             </li>
             <li>
-              <h3 style={subheadingStyle}>Linehan, M. M.</h3>
-              <p className="mt-1" style={bodyStyle}>
+              <h3 className="secondary-page-list-title">Linehan, M. M.</h3>
+              <p className="secondary-page-list-text">
                 Dialektisch-Behaviorale Therapie der
                 Borderline-Persönlichkeitsstörung. CIP-Medien.
               </p>
             </li>
             <li>
-              <h3 style={subheadingStyle}>Fruzzetti, A. E.</h3>
-              <p className="mt-1" style={bodyStyle}>
+              <h3 className="secondary-page-list-title">Fruzzetti, A. E.</h3>
+              <p className="secondary-page-list-text">
                 The High-Conflict Couple: A Dialectical Behavior Therapy Guide.
                 New Harbinger Publications.
               </p>
             </li>
             <li>
-              <h3 style={subheadingStyle}>
+              <h3 className="secondary-page-list-title">
                 Gunderson, J. G. &amp; Hoffman, P. D.
               </h3>
-              <p className="mt-1" style={bodyStyle}>
+              <p className="secondary-page-list-text">
                 Understanding and Treating Borderline Personality Disorder.
                 American Psychiatric Publishing.
               </p>
@@ -269,7 +248,7 @@ export default function Impressum() {
         </ContentSection>
 
         <EditorialSectionBlock label="Stand" title="Aktualität" rule>
-          <p style={bodyStyle}>Stand: Februar 2026</p>
+          <p className="secondary-page-body">Stand: Februar 2026</p>
         </EditorialSectionBlock>
 
         <RelatedLinksEditorial

@@ -81,18 +81,6 @@ export default function UeberUns() {
     []
   );
 
-  const h4Style = {
-    fontSize: "var(--text-md)",
-    fontWeight: 600,
-    color: "var(--fg-primary)",
-  };
-
-  const bodyStyle = {
-    fontSize: "var(--text-sm)",
-    lineHeight: "var(--lh-relaxed)",
-    color: "var(--fg-secondary)",
-  };
-
   return (
     <Layout>
       <SEO
@@ -101,23 +89,17 @@ export default function UeberUns() {
         path="/ueber-uns"
       />
 
-      <EditorialLayout width="narrow">
+      <EditorialLayout width="wide">
         {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+        <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Über uns</EyebrowLabel>
-          <DisplayHeading level={1} size="page">
+          <DisplayHeading level={1} size="utility">
             Über diese <em>Website</em>
           </DisplayHeading>
           <Lede className="mt-6">
             Warum es diese Website gibt – und wer dahinter steht.
           </Lede>
-          <p
-            className="mt-4"
-            style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
-            }}
-          >
+          <p className="secondary-page-meta">
             Vollständig ca. 4 Min · Auch abschnittweise lesbar.
           </p>
         </header>
@@ -202,13 +184,11 @@ export default function UeberUns() {
           id="prinzipien"
           preview="Fachlich fundiert, entstigmatisierend, selbstfürsorge-orientiert und praxisnah."
         >
-          <ul className="mt-2 space-y-6">
+          <ul className="secondary-page-list secondary-page-list--spacious mt-2">
             {prinzipien.map(item => (
               <li key={item.title}>
-                <h4 style={h4Style}>{item.title}</h4>
-                <p className="mt-1" style={bodyStyle}>
-                  {item.description}
-                </p>
+                <h3 className="secondary-page-list-title">{item.title}</h3>
+                <p className="secondary-page-list-text">{item.description}</p>
               </li>
             ))}
           </ul>
@@ -254,23 +234,12 @@ export default function UeberUns() {
               und Therapieansätze:
             </p>
           </EditorialProse>
-          <ul className="mt-6 space-y-6">
+          <ul className="secondary-page-list secondary-page-list--spacious">
             {grundlagen.map(source => (
               <li key={source.title}>
-                <h4 style={h4Style}>{source.title}</h4>
-                <p
-                  className="mt-1"
-                  style={{
-                    fontSize: "var(--text-sm)",
-                    color: "var(--accent-label)",
-                    fontStyle: "italic",
-                  }}
-                >
-                  {source.author}
-                </p>
-                <p className="mt-1" style={bodyStyle}>
-                  {source.description}
-                </p>
+                <h3 className="secondary-page-list-title">{source.title}</h3>
+                <p className="secondary-page-list-meta">{source.author}</p>
+                <p className="secondary-page-list-text">{source.description}</p>
               </li>
             ))}
           </ul>
@@ -304,7 +273,7 @@ export default function UeberUns() {
               ]}
             />
           </div>
-          <p className="mt-6" style={bodyStyle}>
+          <p className="secondary-page-body mt-6">
             Eine vollständige Liste unserer Buchempfehlungen finden Sie auf der{" "}
             <Link href="/buchempfehlungen" className="editorial-link">
               Buchempfehlungen-Seite

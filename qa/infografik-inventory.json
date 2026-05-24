@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-24T18:07:08.265Z",
+  "generatedAt": "2026-05-24T19:29:44.851Z",
   "summary": {
-    "totalFiles": 137,
-    "totalSizeMb": 158.12,
+    "totalFiles": 140,
+    "totalSizeMb": 158.76,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 108.12,
-    "supportFiles": 10,
-    "supportFilesSizeMb": 41.52,
-    "unreferencedCandidates": 10,
-    "unreferencedCandidatesSizeMb": 8.47,
+    "activeReferencedSizeMb": 105.28,
+    "supportFiles": 11,
+    "supportFilesSizeMb": 41.58,
+    "unreferencedCandidates": 12,
+    "unreferencedCandidatesSizeMb": 11.9,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 5
+    "versionFamiliesWithLegacyCandidates": 6
   },
   "missingReferences": [],
   "activeReferences": [
@@ -549,8 +549,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp",
-      "sizeBytes": 64810,
+      "path": "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp",
+      "sizeBytes": 65996,
       "usages": [
         {
           "source": "grenzen",
@@ -1321,8 +1321,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-spiegeln-statt-aufsaugen-v1.pdf",
-      "sizeBytes": 3308758,
+      "path": "/infografiken/manus-spiegeln-statt-aufsaugen-v2.pdf",
+      "sizeBytes": 432881,
       "usages": [
         {
           "source": "grenzen",
@@ -1332,8 +1332,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp",
-      "sizeBytes": 288288,
+      "path": "/infografiken/manus-spiegeln-statt-aufsaugen-v2.webp",
+      "sizeBytes": 178012,
       "usages": [
         {
           "source": "grenzen",
@@ -1559,6 +1559,10 @@
       "sizeBytes": 62062
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp",
+      "sizeBytes": 64810
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
       "sizeBytes": 87008
     },
@@ -1625,6 +1629,20 @@
       "path": "/infografiken/manus-pause-statt-streit-v1.webp",
       "sizeBytes": 276332,
       "versionFamily": "/infografiken/manus-pause-statt-streit",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-spiegeln-statt-aufsaugen-v1.pdf",
+      "sizeBytes": 3308758,
+      "versionFamily": "/infografiken/manus-spiegeln-statt-aufsaugen",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp",
+      "sizeBytes": 288288,
+      "versionFamily": "/infografiken/manus-spiegeln-statt-aufsaugen",
       "version": 1,
       "referencedSiblingPaths": []
     },
@@ -2019,10 +2037,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp"
+        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp",
+        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp"
+        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2436,13 +2455,18 @@
       "family": "/infografiken/manus-spiegeln-statt-aufsaugen",
       "availableFiles": [
         "/infografiken/manus-spiegeln-statt-aufsaugen-v1.pdf",
-        "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp"
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp",
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v2.pdf",
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v2.pdf",
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/manus-spiegeln-statt-aufsaugen-v1.pdf",
         "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/manus-stopp-technik",

@@ -135,4 +135,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Spiegeln-statt-Aufsaugen v2 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v2.pdf",
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v2.webp",
+        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp",
+      ],
+      [
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v1.pdf",
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp",
+        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp",
+      ]
+    );
+  });
 });

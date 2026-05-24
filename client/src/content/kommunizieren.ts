@@ -41,10 +41,10 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "grenzen-ohne-eskalation",
     title: "Grenzen setzen, ohne zu eskalieren",
     description: "Die 3-Teile-Formel für klare Ansagen",
-    url: "/infografiken/manus-grenzen-ohne-eskalation-v1.webp",
+    url: "/infografiken/manus-grenzen-ohne-eskalation-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
-    pdfUrl: "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
+      "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp",
+    pdfUrl: "/infografiken/manus-grenzen-ohne-eskalation-v2.pdf",
     category: "konflikte",
   },
   {

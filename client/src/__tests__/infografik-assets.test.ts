@@ -115,4 +115,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Grenzen-ohne-Eskalation v2 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-grenzen-ohne-eskalation-v2.pdf",
+        "/infografiken/manus-grenzen-ohne-eskalation-v2.webp",
+        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp",
+      ],
+      [
+        "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
+        "/infografiken/manus-grenzen-ohne-eskalation-v1.webp",
+        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
+      ]
+    );
+  });
 });

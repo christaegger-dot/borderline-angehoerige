@@ -51,10 +51,10 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "pause-statt-streit",
     title: "Pause statt Streit",
     description: "Warnstufen erkennen und rechtzeitig stoppen",
-    url: "/infografiken/manus-pause-statt-streit-v1.webp",
+    url: "/infografiken/manus-pause-statt-streit-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
-    pdfUrl: "/infografiken/manus-pause-statt-streit-v1.pdf",
+      "/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp",
+    pdfUrl: "/infografiken/manus-pause-statt-streit-v2.pdf",
     category: "konflikte",
   },
   {

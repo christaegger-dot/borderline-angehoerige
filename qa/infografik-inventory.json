@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-24T00:52:05.319Z",
+  "generatedAt": "2026-05-24T18:07:08.265Z",
   "summary": {
-    "totalFiles": 134,
-    "totalSizeMb": 157.5,
+    "totalFiles": 137,
+    "totalSizeMb": 158.12,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 110.83,
-    "supportFiles": 9,
-    "supportFilesSizeMb": 41.46,
-    "unreferencedCandidates": 8,
-    "unreferencedCandidatesSizeMb": 5.22,
+    "activeReferencedSizeMb": 108.12,
+    "supportFiles": 10,
+    "supportFilesSizeMb": 41.52,
+    "unreferencedCandidates": 10,
+    "unreferencedCandidatesSizeMb": 8.47,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 4
+    "versionFamiliesWithLegacyCandidates": 5
   },
   "missingReferences": [],
   "activeReferences": [
@@ -408,8 +408,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
-      "sizeBytes": 65158,
+      "path": "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp",
+      "sizeBytes": 62038,
       "usages": [
         {
           "source": "kommunizieren",
@@ -1039,8 +1039,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
-      "sizeBytes": 3132342,
+      "path": "/infografiken/manus-grenzen-ohne-eskalation-v2.pdf",
+      "sizeBytes": 410930,
       "usages": [
         {
           "source": "kommunizieren",
@@ -1050,8 +1050,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-grenzen-ohne-eskalation-v1.webp",
-      "sizeBytes": 279380,
+      "path": "/infografiken/manus-grenzen-ohne-eskalation-v2.webp",
+      "sizeBytes": 170612,
       "usages": [
         {
           "source": "kommunizieren",
@@ -1551,6 +1551,10 @@
       "sizeBytes": 24174
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
+      "sizeBytes": 65158
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
       "sizeBytes": 62062
     },
@@ -1595,6 +1599,20 @@
         "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
         "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp"
       ]
+    },
+    {
+      "path": "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
+      "sizeBytes": 3132342,
+      "versionFamily": "/infografiken/manus-grenzen-ohne-eskalation",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-grenzen-ohne-eskalation-v1.webp",
+      "sizeBytes": 279380,
+      "versionFamily": "/infografiken/manus-grenzen-ohne-eskalation",
+      "version": 1,
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-pause-statt-streit-v1.pdf",
@@ -1893,10 +1911,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp"
+        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
+        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp"
+        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2275,13 +2294,18 @@
       "family": "/infografiken/manus-grenzen-ohne-eskalation",
       "availableFiles": [
         "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
-        "/infografiken/manus-grenzen-ohne-eskalation-v1.webp"
+        "/infografiken/manus-grenzen-ohne-eskalation-v1.webp",
+        "/infografiken/manus-grenzen-ohne-eskalation-v2.pdf",
+        "/infografiken/manus-grenzen-ohne-eskalation-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/manus-grenzen-ohne-eskalation-v2.pdf",
+        "/infografiken/manus-grenzen-ohne-eskalation-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
         "/infografiken/manus-grenzen-ohne-eskalation-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/manus-grenzen-spickzettel",

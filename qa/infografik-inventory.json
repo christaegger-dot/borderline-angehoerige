@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-23T23:50:58.023Z",
+  "generatedAt": "2026-05-24T00:52:05.319Z",
   "summary": {
-    "totalFiles": 131,
-    "totalSizeMb": 156.83,
+    "totalFiles": 134,
+    "totalSizeMb": 157.5,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 113.46,
-    "supportFiles": 8,
-    "supportFilesSizeMb": 41.4,
-    "unreferencedCandidates": 6,
-    "unreferencedCandidatesSizeMb": 1.97,
+    "activeReferencedSizeMb": 110.83,
+    "supportFiles": 9,
+    "supportFilesSizeMb": 41.46,
+    "unreferencedCandidates": 8,
+    "unreferencedCandidatesSizeMb": 5.22,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 3
+    "versionFamiliesWithLegacyCandidates": 4
   },
   "missingReferences": [],
   "activeReferences": [
@@ -489,8 +489,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
-      "sizeBytes": 62062,
+      "path": "/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp",
+      "sizeBytes": 72026,
       "usages": [
         {
           "source": "kommunizieren",
@@ -1201,8 +1201,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-pause-statt-streit-v1.pdf",
-      "sizeBytes": 3131045,
+      "path": "/infografiken/manus-pause-statt-streit-v2.pdf",
+      "sizeBytes": 441386,
       "usages": [
         {
           "source": "kommunizieren",
@@ -1212,8 +1212,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-pause-statt-streit-v1.webp",
-      "sizeBytes": 276332,
+      "path": "/infografiken/manus-pause-statt-streit-v2.webp",
+      "sizeBytes": 189376,
       "usages": [
         {
           "source": "kommunizieren",
@@ -1551,6 +1551,10 @@
       "sizeBytes": 24174
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
+      "sizeBytes": 62062
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
       "sizeBytes": 87008
     },
@@ -1591,6 +1595,20 @@
         "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
         "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp"
       ]
+    },
+    {
+      "path": "/infografiken/manus-pause-statt-streit-v1.pdf",
+      "sizeBytes": 3131045,
+      "versionFamily": "/infografiken/manus-pause-statt-streit",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-pause-statt-streit-v1.webp",
+      "sizeBytes": 276332,
+      "versionFamily": "/infografiken/manus-pause-statt-streit",
+      "version": 1,
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-wenn-worte-treffen-v1.pdf",
@@ -1931,10 +1949,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-pause-statt-streit",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp"
+        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
+        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp"
+        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2328,13 +2347,18 @@
       "family": "/infografiken/manus-pause-statt-streit",
       "availableFiles": [
         "/infografiken/manus-pause-statt-streit-v1.pdf",
-        "/infografiken/manus-pause-statt-streit-v1.webp"
+        "/infografiken/manus-pause-statt-streit-v1.webp",
+        "/infografiken/manus-pause-statt-streit-v2.pdf",
+        "/infografiken/manus-pause-statt-streit-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/manus-pause-statt-streit-v2.pdf",
+        "/infografiken/manus-pause-statt-streit-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/manus-pause-statt-streit-v1.pdf",
         "/infografiken/manus-pause-statt-streit-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/manus-radikale-akzeptanz",

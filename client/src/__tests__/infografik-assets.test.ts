@@ -95,4 +95,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Pause-statt-Streit v2 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-pause-statt-streit-v2.pdf",
+        "/infografiken/manus-pause-statt-streit-v2.webp",
+        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp",
+      ],
+      [
+        "/infografiken/manus-pause-statt-streit-v1.pdf",
+        "/infografiken/manus-pause-statt-streit-v1.webp",
+        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
+      ]
+    );
+  });
 });

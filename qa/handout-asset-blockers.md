@@ -26,15 +26,15 @@ Wichtig: Dieser Report ersetzt keine visuelle PDF-Prüfung. Er ist ein Reexport-
 | `zuhoeren-ohne-zustimmen` | `/infografiken/validierung-die-validierungs-treppe-v9.pdf`, `/infografiken/validierung-die-validierungs-treppe-v9.webp`, `/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp`    | erfüllt   | v9-Assets liegen vor und ersetzen die produktiven v5-Referenzen.  |
 | `krisenkommunikation`     | `/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf`, `/infografiken/deeskalation-der-deeskalations-pfad-v10.webp`, `/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp` | erfüllt   | v10-Assets liegen vor und ersetzen die produktiven v9-Referenzen. |
 | `wenn-worte-treffen`      | `/infografiken/manus-wenn-worte-treffen-v2.pdf`, `/infografiken/manus-wenn-worte-treffen-v2.webp`, `/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp`                                     | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven v1-Referenzen.  |
+| `pause-statt-streit`      | `/infografiken/manus-pause-statt-streit-v2.pdf`, `/infografiken/manus-pause-statt-streit-v2.webp`, `/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp`                                     | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven v1-Referenzen.  |
 
 ## P0: Sicherheits- und Kriseninhalte
 
 Diese Assets zuerst öffnen, gegen die Web-Textversion vergleichen und bei Abweichung neu exportieren.
 
-| ID                   | PDF                                             | WebP/Preview                                     | Möglicher Drift                                                                                                                                                                          |
-| -------------------- | ----------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `notfallplan-krise`  | `/notfallplan-krise-v03.pdf`                    | `/notfallplan-krise-v03-preview.webp`            | Textversion trennt jetzt 144, 117, PUK 058er-Nummern, 143 und Selbstschutz-Caveat klarer. PDF kann eine ältere Hierarchie oder weniger präzise Selbstschutzlogik enthalten.              |
-| `pause-statt-streit` | `/infografiken/manus-pause-statt-streit-v1.pdf` | `/infografiken/manus-pause-statt-streit-v1.webp` | Textversion präzisiert: Bei akuter Gefahr keine Pausenverhandlung und Person nicht ohne Hilfe/professionelle Einschätzung allein lassen, sofern Angehörige selbst sicher bleiben können. |
+| ID                  | PDF                          | WebP/Preview                          | Möglicher Drift                                                                                                                                                             |
+| ------------------- | ---------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `notfallplan-krise` | `/notfallplan-krise-v03.pdf` | `/notfallplan-krise-v03-preview.webp` | Textversion trennt jetzt 144, 117, PUK 058er-Nummern, 143 und Selbstschutz-Caveat klarer. PDF kann eine ältere Hierarchie oder weniger präzise Selbstschutzlogik enthalten. |
 
 ## P1: Fachliche Kernaussagen
 
@@ -107,5 +107,4 @@ Diese Assets sollten im nächsten Design-/Asset-Pass mitgezogen werden, damit di
 Für einen kleinen, sicheren Folge-PR zuerst nur die P0-Gruppe behandeln:
 
 1. `notfallplan-krise`
-2. `pause-statt-streit`
-3. `zuhoeren-ohne-zustimmen`, `krisenkommunikation` und `wenn-worte-treffen` im normalen Fidelity-Audit prüfen, aber die Asset-Blocker sind geschlossen
+2. `zuhoeren-ohne-zustimmen`, `krisenkommunikation`, `wenn-worte-treffen` und `pause-statt-streit` im normalen Fidelity-Audit prüfen, aber die Asset-Blocker sind geschlossen

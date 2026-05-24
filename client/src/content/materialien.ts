@@ -106,13 +106,12 @@ export const materials: MaterialItem[] = [
       "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
     category: "unterstuetzen",
     kind: "Infografik",
-    url: "/infografiken/sphären-die-einfluss-sphären-v3.webp",
-    thumbnailUrl:
-      "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
-    downloadUrl: "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
+    url: "/infografiken/manus-rolle-klaeren-v2.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp",
+    downloadUrl: "/infografiken/manus-rolle-klaeren-v2.pdf",
     priority: "core",
     showInLibrary: true,
-    verifiedAt: "April 2026",
+    verifiedAt: "Mai 2026",
   },
   {
     id: "krisenkommunikation",

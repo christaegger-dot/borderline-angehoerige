@@ -155,4 +155,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Rolle-klaeren v2 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-rolle-klaeren-v2.pdf",
+        "/infografiken/manus-rolle-klaeren-v2.webp",
+        "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp",
+      ],
+      [
+        "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
+        "/infografiken/sphären-die-einfluss-sphären-v3.webp",
+        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
+      ]
+    );
+  });
 });

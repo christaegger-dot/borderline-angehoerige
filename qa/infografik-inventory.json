@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-24T19:29:44.851Z",
+  "generatedAt": "2026-05-24T23:40:53.420Z",
   "summary": {
-    "totalFiles": 140,
-    "totalSizeMb": 158.76,
+    "totalFiles": 143,
+    "totalSizeMb": 159.18,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 105.28,
-    "supportFiles": 11,
-    "supportFilesSizeMb": 41.58,
-    "unreferencedCandidates": 12,
-    "unreferencedCandidatesSizeMb": 11.9,
+    "activeReferencedSizeMb": 105.22,
+    "supportFiles": 12,
+    "supportFilesSizeMb": 41.61,
+    "unreferencedCandidates": 14,
+    "unreferencedCandidatesSizeMb": 12.35,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 6
+    "versionFamiliesWithLegacyCandidates": 7
   },
   "missingReferences": [],
   "activeReferences": [
@@ -538,6 +538,22 @@
       ]
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp",
+      "sizeBytes": 52800,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "rolle-klaeren",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "unterstuetzen",
+          "id": "rolle-klaeren",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp",
       "sizeBytes": 87316,
       "usages": [
@@ -630,22 +646,6 @@
         {
           "source": "home-featured",
           "id": "sauerstoffmaske",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
-      "sizeBytes": 24990,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "rolle-klaeren",
-          "field": "thumbnailUrl"
-        },
-        {
-          "source": "unterstuetzen",
-          "id": "rolle-klaeren",
           "field": "thumbnailUrl"
         }
       ]
@@ -1299,6 +1299,38 @@
       ]
     },
     {
+      "path": "/infografiken/manus-rolle-klaeren-v2.pdf",
+      "sizeBytes": 247547,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "rolle-klaeren",
+          "field": "downloadUrl"
+        },
+        {
+          "source": "unterstuetzen",
+          "id": "rolle-klaeren",
+          "field": "pdfUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/manus-rolle-klaeren-v2.webp",
+      "sizeBytes": 136006,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "rolle-klaeren",
+          "field": "url"
+        },
+        {
+          "source": "unterstuetzen",
+          "id": "rolle-klaeren",
+          "field": "url"
+        }
+      ]
+    },
+    {
       "path": "/infografiken/manus-schuld-verantwortung-v1.pdf",
       "sizeBytes": 1125351,
       "usages": [
@@ -1483,38 +1515,6 @@
       ]
     },
     {
-      "path": "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
-      "sizeBytes": 415477,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "rolle-klaeren",
-          "field": "downloadUrl"
-        },
-        {
-          "source": "unterstuetzen",
-          "id": "rolle-klaeren",
-          "field": "pdfUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/sphären-die-einfluss-sphären-v3.webp",
-      "sizeBytes": 51032,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "rolle-klaeren",
-          "field": "url"
-        },
-        {
-          "source": "unterstuetzen",
-          "id": "rolle-klaeren",
-          "field": "url"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/validierung-die-validierungs-treppe-v9.pdf",
       "sizeBytes": 329914,
       "usages": [
@@ -1565,6 +1565,10 @@
     {
       "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
       "sizeBytes": 87008
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
+      "sizeBytes": 24990
     },
     {
       "path": "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
@@ -1658,6 +1662,20 @@
       "sizeBytes": 135678,
       "versionFamily": "/infografiken/manus-wenn-worte-treffen",
       "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
+      "sizeBytes": 415477,
+      "versionFamily": "/infografiken/sphären-die-einfluss-sphären",
+      "version": 3,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/sphären-die-einfluss-sphären-v3.webp",
+      "sizeBytes": 51032,
+      "versionFamily": "/infografiken/sphären-die-einfluss-sphären",
+      "version": 3,
       "referencedSiblingPaths": []
     },
     {
@@ -2025,6 +2043,16 @@
       "legacyCandidateFiles": []
     },
     {
+      "family": "/infografiken/extras/thumbnails/manus-rolle-klaeren",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
       "family": "/infografiken/extras/thumbnails/manus-schuld-verantwortung",
       "availableFiles": [
         "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp"
@@ -2093,16 +2121,6 @@
       ],
       "referencedFiles": [
         "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.webp"
-      ],
-      "legacyCandidateFiles": []
-    },
-    {
-      "family": "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären",
-      "availableFiles": [
-        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp"
-      ],
-      "referencedFiles": [
-        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2440,6 +2458,18 @@
       "legacyCandidateFiles": []
     },
     {
+      "family": "/infografiken/manus-rolle-klaeren",
+      "availableFiles": [
+        "/infografiken/manus-rolle-klaeren-v2.pdf",
+        "/infografiken/manus-rolle-klaeren-v2.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/manus-rolle-klaeren-v2.pdf",
+        "/infografiken/manus-rolle-klaeren-v2.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
       "family": "/infografiken/manus-schuld-verantwortung",
       "availableFiles": [
         "/infografiken/manus-schuld-verantwortung-v1.pdf",
@@ -2539,11 +2569,11 @@
         "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
         "/infografiken/sphären-die-einfluss-sphären-v3.webp"
       ],
-      "referencedFiles": [
+      "referencedFiles": [],
+      "legacyCandidateFiles": [
         "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
         "/infografiken/sphären-die-einfluss-sphären-v3.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/validierung-die-validierungs-treppe",

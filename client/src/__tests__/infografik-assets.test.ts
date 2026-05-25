@@ -215,4 +215,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Spaltung v15 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/pendel-das-bewertungs-pendel-v15.pdf",
+        "/infografiken/pendel-das-bewertungs-pendel-v15.webp",
+        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp",
+      ],
+      [
+        "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
+        "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
+        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
+      ]
+    );
+  });
 });

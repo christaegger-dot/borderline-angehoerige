@@ -235,4 +235,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Schuld-Verantwortung v2 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-schuld-verantwortung-v2.pdf",
+        "/infografiken/manus-schuld-verantwortung-v2.webp",
+        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v2.webp",
+      ],
+      [
+        "/infografiken/manus-schuld-verantwortung-v1.pdf",
+        "/infografiken/manus-schuld-verantwortung-v1.webp",
+        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp",
+      ]
+    );
+  });
 });

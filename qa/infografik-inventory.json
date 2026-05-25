@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-25T16:36:07.567Z",
+  "generatedAt": "2026-05-25T17:08:10.021Z",
   "summary": {
-    "totalFiles": 152,
-    "totalSizeMb": 160.45,
+    "totalFiles": 155,
+    "totalSizeMb": 161.05,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 97.66,
-    "supportFiles": 15,
-    "supportFilesSizeMb": 41.72,
-    "unreferencedCandidates": 20,
-    "unreferencedCandidatesSizeMb": 21.07,
+    "activeReferencedSizeMb": 96.97,
+    "supportFiles": 16,
+    "supportFilesSizeMb": 41.8,
+    "unreferencedCandidates": 22,
+    "unreferencedCandidatesSizeMb": 22.28,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 10
+    "versionFamiliesWithLegacyCandidates": 11
   },
   "missingReferences": [],
   "activeReferences": [
@@ -554,8 +554,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp",
-      "sizeBytes": 87316,
+      "path": "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v2.webp",
+      "sizeBytes": 80340,
       "usages": [
         {
           "source": "materials",
@@ -1331,8 +1331,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-schuld-verantwortung-v1.pdf",
-      "sizeBytes": 1125351,
+      "path": "/infografiken/manus-schuld-verantwortung-v2.pdf",
+      "sizeBytes": 265025,
       "usages": [
         {
           "source": "materials",
@@ -1342,8 +1342,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-schuld-verantwortung-v1.webp",
-      "sizeBytes": 142978,
+      "path": "/infografiken/manus-schuld-verantwortung-v2.webp",
+      "sizeBytes": 289104,
       "usages": [
         {
           "source": "materials",
@@ -1563,6 +1563,10 @@
       "sizeBytes": 62062
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp",
+      "sizeBytes": 87316
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp",
       "sizeBytes": 64810
     },
@@ -1659,6 +1663,20 @@
       "path": "/infografiken/manus-pause-statt-streit-v1.webp",
       "sizeBytes": 276332,
       "versionFamily": "/infografiken/manus-pause-statt-streit",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-schuld-verantwortung-v1.pdf",
+      "sizeBytes": 1125351,
+      "versionFamily": "/infografiken/manus-schuld-verantwortung",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-schuld-verantwortung-v1.webp",
+      "sizeBytes": 142978,
+      "versionFamily": "/infografiken/manus-schuld-verantwortung",
       "version": 1,
       "referencedSiblingPaths": []
     },
@@ -2115,10 +2133,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-schuld-verantwortung",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp"
+        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp",
+        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp"
+        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2535,13 +2554,18 @@
       "family": "/infografiken/manus-schuld-verantwortung",
       "availableFiles": [
         "/infografiken/manus-schuld-verantwortung-v1.pdf",
-        "/infografiken/manus-schuld-verantwortung-v1.webp"
+        "/infografiken/manus-schuld-verantwortung-v1.webp",
+        "/infografiken/manus-schuld-verantwortung-v2.pdf",
+        "/infografiken/manus-schuld-verantwortung-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/manus-schuld-verantwortung-v2.pdf",
+        "/infografiken/manus-schuld-verantwortung-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/manus-schuld-verantwortung-v1.pdf",
         "/infografiken/manus-schuld-verantwortung-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/manus-spiegeln-statt-aufsaugen",

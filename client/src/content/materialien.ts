@@ -161,10 +161,10 @@ export const materials: MaterialItem[] = [
       "Hilft, Schuldgefühle bei Angehörigen zu entlasten und Verantwortung differenzierter zu sehen.",
     category: "selbstfuersorge",
     kind: "Infografik",
-    url: "/infografiken/manus-schuld-verantwortung-v1.webp",
+    url: "/infografiken/manus-schuld-verantwortung-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp",
-    downloadUrl: "/infografiken/manus-schuld-verantwortung-v1.pdf",
+      "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v2.webp",
+    downloadUrl: "/infografiken/manus-schuld-verantwortung-v2.pdf",
     priority: "secondary",
     verifiedAt: "Mai 2026",
   },

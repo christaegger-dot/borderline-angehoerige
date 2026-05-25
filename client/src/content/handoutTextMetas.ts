@@ -13,6 +13,7 @@ export const HANDOUT_TEXT_VERSION_IDS = [
   "eisberg",
   "spaltung",
   "krisenkommunikation",
+  "anspannungskurve",
   "alarm-modus",
   "4-phasen",
   "gehirn",

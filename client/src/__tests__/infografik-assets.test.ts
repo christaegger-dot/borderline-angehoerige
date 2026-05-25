@@ -271,4 +271,20 @@ describe("infografik assets", () => {
       []
     );
   });
+
+  it("uses the freigegebene Anspannungskurve v1 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-anspannungskurve-v1.pdf",
+        "/infografiken/manus-anspannungskurve-v1.webp",
+        "/infografiken/extras/thumbnails/manus-anspannungskurve-v1.webp",
+      ],
+      []
+    );
+  });
 });

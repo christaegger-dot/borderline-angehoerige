@@ -128,6 +128,20 @@ export const materials: MaterialItem[] = [
     verifiedAt: "Mai 2026",
   },
   {
+    id: "anspannungskurve",
+    title: "Die Anspannungskurve – Wann Reden hilft",
+    description:
+      "Orientierung dazu, wann ein Gespräch möglich ist und wann zuerst Ruhe, weniger Druck oder eine Pause hilfreicher sind.",
+    category: "kommunizieren",
+    kind: "Infografik",
+    url: "/infografiken/manus-anspannungskurve-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-anspannungskurve-v1.webp",
+    downloadUrl: "/infografiken/manus-anspannungskurve-v1.pdf",
+    priority: "secondary",
+    verifiedAt: "Mai 2026",
+  },
+  {
     id: "grenzen-spickzettel",
     title: "Spickzettel Grenzen – Die wichtigsten Sätze",
     description:

@@ -80,6 +80,85 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("anspannungskurve", {
+    kicker: "Textversion",
+    summary:
+      "Die Anspannungskurve hilft einzuschätzen, wann ein Gespräch möglich ist und wann zuerst Ruhe, weniger Druck oder eine Pause hilfreicher sind.",
+    intro: [
+      "Nicht jedes Gespräch ist in jedem Moment möglich. Wenn Anspannung steigt, wird Zuhören schwerer, Denken enger und Perspektivwechsel seltener erreichbar.",
+      "Die Kurve unterscheidet Rückzug, Gesprächsfähigkeit und zu viel Alarm. Sie unterstützt Angehörige dabei, nicht weiter zu drücken, wenn gerade wenig ankommt.",
+    ],
+    sections: [
+      {
+        title: "Merksatz",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText: "Wenn die Anspannung steigt, kommen weniger Worte an.",
+      },
+      {
+        title: "Rückzug",
+        calloutTitle: "Gerade kommt wenig an",
+        calloutText:
+          "Schweigen, Leere, Wegsehen, Erstarren oder innerer Rückzug können zeigen: Mehr Druck hilft jetzt nicht.",
+      },
+      {
+        title: "Im Gespräch",
+        calloutTitle: "Wir können sprechen",
+        calloutText:
+          "Zuhören, kurze Sätze, Perspektivwechsel und Absprachen sind eher erreichbar.",
+      },
+      {
+        title: "Zu viel Alarm",
+        calloutTitle: "Es ist gerade zu viel",
+        calloutText:
+          "Druck, Vorwürfe, laute Stimme, Drängen oder körperliche Anspannung können ein Gespräch verengen.",
+      },
+      {
+        title: "Was Angehörigen hilft",
+        bullets: [
+          "Nicht weiterargumentieren.",
+          "Langsamer sprechen.",
+          "Kurze Sätze verwenden.",
+          "Eine Pause mit Rückkehrzeit anbieten.",
+          "Auch auf die eigene Anspannung achten.",
+          "Das Gespräch später wieder aufnehmen.",
+        ],
+      },
+      {
+        title: "Drei Sätze für die Kurve",
+        cards: [
+          {
+            title: "Bei Rückzug",
+            text: "«Ich lasse dir Raum. Ich bin um [Uhrzeit] wieder ansprechbar.»",
+          },
+          {
+            title: "Im Gespräch",
+            text: "«Ich möchte verstehen. Lass uns bei einer Sache bleiben.»",
+          },
+          {
+            title: "Bei Alarm",
+            text: "«Ich merke, es ist gerade zu viel. Ich spreche langsamer.»",
+          },
+        ],
+      },
+      {
+        title: "Warum Pausen helfen",
+        bullets: [
+          "Pausen senken Anspannung und öffnen wieder mehr Spielraum für Zuhören und Denken.",
+          "Ein klarer Rückkehrzeitpunkt gibt Sicherheit und schützt die Beziehung.",
+          "Eine Pause ist kein Rückzug aus der Beziehung, sondern eine Investition in sie.",
+        ],
+      },
+      {
+        title: "Schutzsatz",
+        calloutTitle: "Erst wieder ansprechbar werden",
+        calloutText: "Erst wieder ansprechbar werden – dann klären.",
+      },
+    ],
+    sourceLine:
+      "Quellen: Linehan; Carpenter/Trull; NICE CG78; Family Connections; Siegel/Ogden als didaktisches Modell; Stand by You/Sotomo 2024.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
+  }),
   createHandoutTextVersion("wenn-worte-treffen", {
     kicker: "Textversion",
     summary:

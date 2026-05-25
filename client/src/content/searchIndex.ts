@@ -735,6 +735,25 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Die Anspannungskurve",
+    description:
+      "Lesbare Web-Version zur Anspannungskurve: wann Gespräch möglich ist und wann zuerst Ruhe, weniger Druck oder eine Pause hilft",
+    keywords: [
+      "textversion",
+      "anspannungskurve",
+      "anspannung",
+      "gesprächsfähigkeit",
+      "im gespräch",
+      "rückzug",
+      "alarm",
+      "pause",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/anspannungskurve",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Alarm-Modus vs. Denk-Modus",
     description:
       "Lesbare Web-Version zur Unterscheidung zwischen Alarm-Zustand, Denk-Zustand und den passenden nächsten Schritten",

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T19:01:05.913Z",
+  "generatedAt": "2026-05-25T21:59:30.275Z",
   "summary": {
-    "totalFiles": 158,
-    "totalSizeMb": 161.73,
-    "activeReferencedFiles": 120,
-    "activeReferencedSizeMb": 97.64,
+    "totalFiles": 161,
+    "totalSizeMb": 162.23,
+    "activeReferencedFiles": 123,
+    "activeReferencedSizeMb": 98.14,
     "supportFiles": 16,
     "supportFilesSizeMb": 41.8,
     "unreferencedCandidates": 22,
@@ -283,6 +283,17 @@
         {
           "source": "unterstuetzen",
           "id": "6-leitlinien",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-anspannungskurve-v1.webp",
+      "sizeBytes": 63216,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "anspannungskurve",
           "field": "thumbnailUrl"
         }
       ]
@@ -805,6 +816,28 @@
         {
           "source": "unterstuetzen",
           "id": "6-leitlinien",
+          "field": "url"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/manus-anspannungskurve-v1.pdf",
+      "sizeBytes": 228622,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "anspannungskurve",
+          "field": "downloadUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/manus-anspannungskurve-v1.webp",
+      "sizeBytes": 234296,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "anspannungskurve",
           "field": "url"
         }
       ]
@@ -1960,6 +1993,16 @@
       "legacyCandidateFiles": []
     },
     {
+      "family": "/infografiken/extras/thumbnails/manus-anspannungskurve",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-anspannungskurve-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-anspannungskurve-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
       "family": "/infografiken/extras/thumbnails/manus-beispiel-dialog",
       "availableFiles": [
         "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp"
@@ -2328,6 +2371,18 @@
       "referencedFiles": [
         "/infografiken/manus-6-leitlinien-v1.pdf",
         "/infografiken/manus-6-leitlinien-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/manus-anspannungskurve",
+      "availableFiles": [
+        "/infografiken/manus-anspannungskurve-v1.pdf",
+        "/infografiken/manus-anspannungskurve-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/manus-anspannungskurve-v1.pdf",
+        "/infografiken/manus-anspannungskurve-v1.webp"
       ],
       "legacyCandidateFiles": []
     },

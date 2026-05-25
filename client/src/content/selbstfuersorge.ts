@@ -19,11 +19,11 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
   {
     id: "warnsignale",
     title: "Warnsignale der Überlastung",
-    desc: "Ampel-Stufenmodell: Grün → Gelb → Rot – erkennen Sie rechtzeitig, wann es zu viel wird.",
+    desc: "Drei Stufen der Überlastung: erste Zeichen wahrnehmen, Entlastung aktivieren und Unterstützung dazuholen.",
     category: "erkennen",
-    webp: "/infografiken/manus-warnsignale-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
-    pdf: "/infografiken/manus-warnsignale-v1.pdf",
+    webp: "/infografiken/manus-warnsignale-v2.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-warnsignale-v2.webp",
+    pdf: "/infografiken/manus-warnsignale-v2.pdf",
     featured: true,
   },
   {

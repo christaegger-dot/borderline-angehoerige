@@ -175,10 +175,10 @@ export const materials: MaterialItem[] = [
       "Einordnung von Idealisierung, Entwertung und dem erschwerten Zugang zu Grautönen unter Stress.",
     category: "verstehen",
     kind: "Infografik",
-    url: "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
+    url: "/infografiken/pendel-das-bewertungs-pendel-v15.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
-    downloadUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
+      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp",
+    downloadUrl: "/infografiken/pendel-das-bewertungs-pendel-v15.pdf",
     priority: "secondary",
     verifiedAt: "April 2026",
   },

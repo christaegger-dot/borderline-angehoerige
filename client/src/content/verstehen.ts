@@ -45,10 +45,10 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     title: "Spaltung",
     description: "Das Pendel zwischen Extremen – die Grauzone stärken.",
     category: "grundlagen",
-    webpUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
+    webpUrl: "/infografiken/pendel-das-bewertungs-pendel-v15.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
-    pdfUrl: "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
+      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp",
+    pdfUrl: "/infografiken/pendel-das-bewertungs-pendel-v15.pdf",
     alt: "Spaltung – das Pendel zwischen Extremen",
   },
   {

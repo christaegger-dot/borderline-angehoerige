@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-25T16:14:26.690Z",
+  "generatedAt": "2026-05-25T16:36:07.567Z",
   "summary": {
-    "totalFiles": 149,
-    "totalSizeMb": 160.08,
+    "totalFiles": 152,
+    "totalSizeMb": 160.45,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 97.67,
-    "supportFiles": 14,
-    "supportFilesSizeMb": 41.7,
-    "unreferencedCandidates": 18,
-    "unreferencedCandidatesSizeMb": 20.71,
+    "activeReferencedSizeMb": 97.66,
+    "supportFiles": 15,
+    "supportFilesSizeMb": 41.72,
+    "unreferencedCandidates": 20,
+    "unreferencedCandidatesSizeMb": 21.07,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 9
+    "versionFamiliesWithLegacyCandidates": 10
   },
   "missingReferences": [],
   "activeReferences": [
@@ -619,8 +619,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
-      "sizeBytes": 23074,
+      "path": "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp",
+      "sizeBytes": 49956,
       "usages": [
         {
           "source": "materials",
@@ -1461,8 +1461,8 @@
       ]
     },
     {
-      "path": "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
-      "sizeBytes": 247521,
+      "path": "/infografiken/pendel-das-bewertungs-pendel-v15.pdf",
+      "sizeBytes": 178557,
       "usages": [
         {
           "source": "materials",
@@ -1477,8 +1477,8 @@
       ]
     },
     {
-      "path": "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
-      "sizeBytes": 131050,
+      "path": "/infografiken/pendel-das-bewertungs-pendel-v15.webp",
+      "sizeBytes": 160418,
       "usages": [
         {
           "source": "materials",
@@ -1573,6 +1573,10 @@
     {
       "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
       "sizeBytes": 87008
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
+      "sizeBytes": 23074
     },
     {
       "path": "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
@@ -1698,6 +1702,20 @@
       "sizeBytes": 135678,
       "versionFamily": "/infografiken/manus-wenn-worte-treffen",
       "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
+      "sizeBytes": 247521,
+      "versionFamily": "/infografiken/pendel-das-bewertungs-pendel",
+      "version": 14,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
+      "sizeBytes": 131050,
+      "versionFamily": "/infografiken/pendel-das-bewertungs-pendel",
+      "version": 14,
       "referencedSiblingPaths": []
     },
     {
@@ -2150,10 +2168,11 @@
     {
       "family": "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp"
+        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
+        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp"
+        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2591,13 +2610,18 @@
       "family": "/infografiken/pendel-das-bewertungs-pendel",
       "availableFiles": [
         "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
-        "/infografiken/pendel-das-bewertungs-pendel-v14.webp"
+        "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
+        "/infografiken/pendel-das-bewertungs-pendel-v15.pdf",
+        "/infografiken/pendel-das-bewertungs-pendel-v15.webp"
       ],
       "referencedFiles": [
+        "/infografiken/pendel-das-bewertungs-pendel-v15.pdf",
+        "/infografiken/pendel-das-bewertungs-pendel-v15.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
         "/infografiken/pendel-das-bewertungs-pendel-v14.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/sauerstoff-die-sauerstoffmaske",

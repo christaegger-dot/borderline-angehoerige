@@ -35,9 +35,9 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     description:
       "Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.",
     category: "grundlagen",
-    webpUrl: "/infografiken/eisberg-der-eisberg-v6.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
-    pdfUrl: "/infografiken/eisberg-der-eisberg-v6.pdf",
+    webpUrl: "/infografiken/eisberg-der-eisberg-v7.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp",
+    pdfUrl: "/infografiken/eisberg-der-eisberg-v7.pdf",
     alt: "Der Eisberg – Wut ist oft die Spitze",
   },
   {

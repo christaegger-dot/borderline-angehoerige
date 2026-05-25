@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-25T11:44:40.265Z",
+  "generatedAt": "2026-05-25T16:14:26.690Z",
   "summary": {
-    "totalFiles": 146,
-    "totalSizeMb": 159.68,
+    "totalFiles": 149,
+    "totalSizeMb": 160.08,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 102.6,
-    "supportFiles": 13,
-    "supportFilesSizeMb": 41.66,
-    "unreferencedCandidates": 16,
-    "unreferencedCandidatesSizeMb": 15.41,
+    "activeReferencedSizeMb": 97.67,
+    "supportFiles": 14,
+    "supportFilesSizeMb": 41.7,
+    "unreferencedCandidates": 18,
+    "unreferencedCandidatesSizeMb": 20.71,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 8
+    "versionFamiliesWithLegacyCandidates": 9
   },
   "missingReferences": [],
   "activeReferences": [
@@ -101,8 +101,8 @@
       ]
     },
     {
-      "path": "/infografiken/eisberg-der-eisberg-v6.pdf",
-      "sizeBytes": 5407090,
+      "path": "/infografiken/eisberg-der-eisberg-v7.pdf",
+      "sizeBytes": 183868,
       "usages": [
         {
           "source": "materials",
@@ -117,8 +117,8 @@
       ]
     },
     {
-      "path": "/infografiken/eisberg-der-eisberg-v6.webp",
-      "sizeBytes": 149746,
+      "path": "/infografiken/eisberg-der-eisberg-v7.webp",
+      "sizeBytes": 178874,
       "usages": [
         {
           "source": "materials",
@@ -191,8 +191,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
-      "sizeBytes": 36302,
+      "path": "/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp",
+      "sizeBytes": 54430,
       "usages": [
         {
           "source": "materials",
@@ -1551,6 +1551,10 @@
       "sizeBytes": 24174
     },
     {
+      "path": "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
+      "sizeBytes": 36302
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
       "sizeBytes": 65158
     },
@@ -1611,6 +1615,20 @@
         "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
         "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp"
       ]
+    },
+    {
+      "path": "/infografiken/eisberg-der-eisberg-v6.pdf",
+      "sizeBytes": 5407090,
+      "versionFamily": "/infografiken/eisberg-der-eisberg",
+      "version": 6,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/eisberg-der-eisberg-v6.webp",
+      "sizeBytes": 149746,
+      "versionFamily": "/infografiken/eisberg-der-eisberg",
+      "version": 6,
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
@@ -1757,13 +1775,18 @@
       "family": "/infografiken/eisberg-der-eisberg",
       "availableFiles": [
         "/infografiken/eisberg-der-eisberg-v6.pdf",
-        "/infografiken/eisberg-der-eisberg-v6.webp"
+        "/infografiken/eisberg-der-eisberg-v6.webp",
+        "/infografiken/eisberg-der-eisberg-v7.pdf",
+        "/infografiken/eisberg-der-eisberg-v7.webp"
       ],
       "referencedFiles": [
+        "/infografiken/eisberg-der-eisberg-v7.pdf",
+        "/infografiken/eisberg-der-eisberg-v7.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/eisberg-der-eisberg-v6.pdf",
         "/infografiken/eisberg-der-eisberg-v6.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/extras/thumbnails/alarm-der-alarm-modus",
@@ -1799,10 +1822,11 @@
     {
       "family": "/infografiken/extras/thumbnails/eisberg-der-eisberg",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp"
+        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
+        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp"
+        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp"
       ],
       "legacyCandidateFiles": []
     },

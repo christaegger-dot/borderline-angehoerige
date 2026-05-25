@@ -46,7 +46,7 @@ describe("handout delivery helpers", () => {
       getHandoutDownloadHref("/Notfallkarte-Zuerich-Psychische-Krise.pdf")
     ).toBe("/api/material-download/notfallkarte-zuerich");
     expect(
-      getHandoutAssetBySource("/infografiken/eisberg-der-eisberg-v6.pdf")
+      getHandoutAssetBySource("/infografiken/eisberg-der-eisberg-v7.pdf")
     ).toMatchObject({
       id: "eisberg",
       sourceKind: "local",

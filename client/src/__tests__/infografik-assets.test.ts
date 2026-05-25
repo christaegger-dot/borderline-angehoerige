@@ -195,4 +195,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Eisberg v7 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/eisberg-der-eisberg-v7.pdf",
+        "/infografiken/eisberg-der-eisberg-v7.webp",
+        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp",
+      ],
+      [
+        "/infografiken/eisberg-der-eisberg-v6.pdf",
+        "/infografiken/eisberg-der-eisberg-v6.webp",
+        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
+      ]
+    );
+  });
 });

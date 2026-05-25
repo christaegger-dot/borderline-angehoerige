@@ -255,4 +255,20 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Bruecke-Gelaender v1 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-bruecke-gelaender-v1.pdf",
+        "/infografiken/manus-bruecke-gelaender-v1.webp",
+        "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v1.webp",
+      ],
+      []
+    );
+  });
 });

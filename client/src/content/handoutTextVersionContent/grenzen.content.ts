@@ -134,6 +134,86 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
+  createHandoutTextVersion("bruecke-gelaender", {
+    kicker: "Textversion",
+    summary:
+      "Die Brücken-Metapher verbindet Kontakt und Grenze: Beziehung bleibt tragfähiger, wenn Geländer, Pfeiler und Absprachen sichtbar sind.",
+    intro: [
+      "Die Brücke mit Geländer beschreibt eine Beziehungshaltung für Angehörige: Kontakt halten, ohne grenzenlos verfügbar zu werden.",
+      "Die Brücke steht für Verbindung, das Geländer für klare Grenzen und die Pfeiler für Absprachen, Pausen, Fachpersonen und Selbstschutz.",
+    ],
+    sections: [
+      {
+        title: "Merksatz",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText: "Kontakt braucht Geländer.",
+      },
+      {
+        title: "Die drei Teile der Brücke",
+        cards: [
+          {
+            title: "Verbindung",
+            text: "«Ich bleibe ansprechbar.» Kontakt bedeutet: Ich ziehe mich nicht wortlos zurück. Ich bleibe in Beziehung, soweit es für mich sicher und tragbar ist.",
+          },
+          {
+            title: "Geländer",
+            text: "«Ich sage, was geht – und was nicht.» Grenzen sind keine Strafe. Sie geben Orientierung und schützen beide Seiten vor weiterer Eskalation.",
+          },
+          {
+            title: "Pfeiler",
+            text: "«Ich trage nicht allein.» Absprachen, Pausen, Fachpersonen, andere Vertrauenspersonen und Selbstschutz machen Beziehung stabiler.",
+          },
+        ],
+      },
+      {
+        title: "Was die Brücke belasten kann",
+        bullets: ["Druck", "Schuld", "Angst", "Streit", "Daueranspannung"],
+      },
+      {
+        title: "Was hilft",
+        bullets: [
+          "Früh sagen, was möglich ist.",
+          "Die Grenze kurz und ruhig benennen.",
+          "Eine Pause mit Rückkehrzeit vereinbaren.",
+          "Verantwortung auf mehrere Schultern verteilen.",
+          "Nach ruhigen Momenten wieder Kontakt aufnehmen.",
+        ],
+      },
+      {
+        title: "Drei Sätze fürs Geländer",
+        cards: [
+          {
+            title: "Verbindung",
+            text: "«Ich bin da – und ich brauche einen ruhigen Ton.»",
+          },
+          {
+            title: "Pause",
+            text: "«Ich mache eine Pause und komme um [Uhrzeit] zurück.»",
+          },
+          {
+            title: "Unterstützung",
+            text: "«Das kann ich nicht allein tragen. Wir holen Unterstützung dazu.»",
+          },
+        ],
+      },
+      {
+        title: "Schutzsatz",
+        calloutTitle: "Grenzen und Beziehung",
+        calloutText:
+          "Grenzen beenden nicht Beziehung – sie machen Kontakt sicherer.",
+      },
+      {
+        title: "Geländer sind kein Liebesentzug",
+        calloutTitle: "Einordnung",
+        calloutText:
+          "Eine Grenze sagt nicht: «Du bist mir egal.» Sie sagt: «So kann Kontakt sicherer bleiben.»",
+      },
+    ],
+    sourceLine:
+      "Quelle: Family Connections; NICE CG78; Linehan; Mason/Kreger; Stand by You/Sotomo 2024.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
+  }),
   createHandoutTextVersion("4-arten-von-grenzen", {
     kicker: "Textversion",
     summary:

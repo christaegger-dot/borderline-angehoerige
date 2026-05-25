@@ -30,6 +30,7 @@ export const HANDOUT_TEXT_VERSION_IDS = [
   "zuhoeren-ohne-zustimmen",
   "beispiel-dialog",
   "dear",
+  "bruecke-gelaender",
   "spiegeln-statt-aufsaugen",
   "4-arten-von-grenzen",
   "grenzen-erkennen",

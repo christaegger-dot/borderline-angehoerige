@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T17:08:10.021Z",
+  "generatedAt": "2026-05-25T19:01:05.913Z",
   "summary": {
-    "totalFiles": 155,
-    "totalSizeMb": 161.05,
-    "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 96.97,
+    "totalFiles": 158,
+    "totalSizeMb": 161.73,
+    "activeReferencedFiles": 120,
+    "activeReferencedSizeMb": 97.64,
     "supportFiles": 16,
     "supportFilesSizeMb": 41.8,
     "unreferencedCandidates": 22,
@@ -305,6 +305,17 @@
         {
           "source": "unterstuetzen",
           "id": "beziehungs-achtsamkeit",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v1.webp",
+      "sizeBytes": 88536,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "bruecke-gelaender",
           "field": "thumbnailUrl"
         }
       ]
@@ -838,6 +849,28 @@
         {
           "source": "unterstuetzen",
           "id": "beziehungs-achtsamkeit",
+          "field": "url"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/manus-bruecke-gelaender-v1.pdf",
+      "sizeBytes": 289952,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "bruecke-gelaender",
+          "field": "downloadUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/manus-bruecke-gelaender-v1.webp",
+      "sizeBytes": 327788,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "bruecke-gelaender",
           "field": "url"
         }
       ]
@@ -1947,6 +1980,16 @@
       "legacyCandidateFiles": []
     },
     {
+      "family": "/infografiken/extras/thumbnails/manus-bruecke-gelaender",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
       "family": "/infografiken/extras/thumbnails/manus-dear",
       "availableFiles": ["/infografiken/extras/thumbnails/manus-dear-v1.webp"],
       "referencedFiles": ["/infografiken/extras/thumbnails/manus-dear-v1.webp"],
@@ -2309,6 +2352,18 @@
       "referencedFiles": [
         "/infografiken/manus-beziehungs-achtsamkeit-v1.pdf",
         "/infografiken/manus-beziehungs-achtsamkeit-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/manus-bruecke-gelaender",
+      "availableFiles": [
+        "/infografiken/manus-bruecke-gelaender-v1.pdf",
+        "/infografiken/manus-bruecke-gelaender-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/manus-bruecke-gelaender-v1.pdf",
+        "/infografiken/manus-bruecke-gelaender-v1.webp"
       ],
       "legacyCandidateFiles": []
     },

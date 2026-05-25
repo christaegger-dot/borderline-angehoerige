@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-24T23:40:53.420Z",
+  "generatedAt": "2026-05-25T11:44:40.265Z",
   "summary": {
-    "totalFiles": 143,
-    "totalSizeMb": 159.18,
+    "totalFiles": 146,
+    "totalSizeMb": 159.68,
     "activeReferencedFiles": 117,
-    "activeReferencedSizeMb": 105.22,
-    "supportFiles": 12,
-    "supportFilesSizeMb": 41.61,
-    "unreferencedCandidates": 14,
-    "unreferencedCandidatesSizeMb": 12.35,
+    "activeReferencedSizeMb": 102.6,
+    "supportFiles": 13,
+    "supportFilesSizeMb": 41.66,
+    "unreferencedCandidates": 16,
+    "unreferencedCandidatesSizeMb": 15.41,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 7
+    "versionFamiliesWithLegacyCandidates": 8
   },
   "missingReferences": [],
   "activeReferences": [
@@ -587,8 +587,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
-      "sizeBytes": 58502,
+      "path": "/infografiken/extras/thumbnails/manus-warnsignale-v2.webp",
+      "sizeBytes": 63782,
       "usages": [
         {
           "source": "materials",
@@ -1397,8 +1397,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-warnsignale-v1.pdf",
-      "sizeBytes": 2967379,
+      "path": "/infografiken/manus-warnsignale-v2.pdf",
+      "sizeBytes": 294370,
       "usages": [
         {
           "source": "materials",
@@ -1413,8 +1413,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-warnsignale-v1.webp",
-      "sizeBytes": 243248,
+      "path": "/infografiken/manus-warnsignale-v2.webp",
+      "sizeBytes": 164268,
       "usages": [
         {
           "source": "materials",
@@ -1563,6 +1563,10 @@
       "sizeBytes": 64810
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
+      "sizeBytes": 58502
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
       "sizeBytes": 87008
     },
@@ -1647,6 +1651,20 @@
       "path": "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp",
       "sizeBytes": 288288,
       "versionFamily": "/infografiken/manus-spiegeln-statt-aufsaugen",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-warnsignale-v1.pdf",
+      "sizeBytes": 2967379,
+      "versionFamily": "/infografiken/manus-warnsignale",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-warnsignale-v1.webp",
+      "sizeBytes": 243248,
+      "versionFamily": "/infografiken/manus-warnsignale",
       "version": 1,
       "referencedSiblingPaths": []
     },
@@ -2086,10 +2104,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-warnsignale",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp"
+        "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
+        "/infografiken/extras/thumbnails/manus-warnsignale-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp"
+        "/infografiken/extras/thumbnails/manus-warnsignale-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2514,13 +2533,18 @@
       "family": "/infografiken/manus-warnsignale",
       "availableFiles": [
         "/infografiken/manus-warnsignale-v1.pdf",
-        "/infografiken/manus-warnsignale-v1.webp"
+        "/infografiken/manus-warnsignale-v1.webp",
+        "/infografiken/manus-warnsignale-v2.pdf",
+        "/infografiken/manus-warnsignale-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/manus-warnsignale-v2.pdf",
+        "/infografiken/manus-warnsignale-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/manus-warnsignale-v1.pdf",
         "/infografiken/manus-warnsignale-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/manus-wenn-worte-treffen",

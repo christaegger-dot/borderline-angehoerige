@@ -175,4 +175,24 @@ describe("infografik assets", () => {
       ]
     );
   });
+
+  it("uses the freigegebene Warnsignale v2 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-warnsignale-v2.pdf",
+        "/infografiken/manus-warnsignale-v2.webp",
+        "/infografiken/extras/thumbnails/manus-warnsignale-v2.webp",
+      ],
+      [
+        "/infografiken/manus-warnsignale-v1.pdf",
+        "/infografiken/manus-warnsignale-v1.webp",
+        "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
+      ]
+    );
+  });
 });

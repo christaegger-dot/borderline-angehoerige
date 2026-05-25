@@ -142,6 +142,20 @@ export const materials: MaterialItem[] = [
     verifiedAt: "Mai 2026",
   },
   {
+    id: "bruecke-gelaender",
+    title: "Die Brücke mit Geländer – Kontakt braucht Grenzen",
+    description:
+      "Orientierung dazu, wie Kontakt tragfähiger bleibt, wenn Grenzen, Absprachen und Unterstützung sichtbar werden.",
+    category: "grenzen",
+    kind: "Infografik",
+    url: "/infografiken/manus-bruecke-gelaender-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v1.webp",
+    downloadUrl: "/infografiken/manus-bruecke-gelaender-v1.pdf",
+    priority: "secondary",
+    verifiedAt: "Mai 2026",
+  },
+  {
     id: "warnsignale",
     title: "Warnsignale der Überlastung",
     description:

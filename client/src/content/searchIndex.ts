@@ -1028,6 +1028,25 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Die Brücke mit Geländer",
+    description:
+      "Lesbare Web-Version zur Brücken-Metapher für Kontakt, Grenzen, Absprachen und Selbstschutz in belasteten Beziehungen",
+    keywords: [
+      "textversion",
+      "brücke mit geländer",
+      "bruecke",
+      "geländer",
+      "grenzen",
+      "kontakt",
+      "beziehung",
+      "selbstschutz",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/bruecke-gelaender",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Spiegeln statt Aufsaugen",
     description:
       "Lesbare Web-Version zu Mitfühlen ohne Übernehmen, Selbstschutz und Eigenverantwortung in belasteten Beziehungen",

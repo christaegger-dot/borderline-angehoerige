@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T21:59:30.275Z",
+  "generatedAt": "2026-05-26T06:14:29.179Z",
   "summary": {
-    "totalFiles": 161,
-    "totalSizeMb": 162.23,
-    "activeReferencedFiles": 123,
-    "activeReferencedSizeMb": 98.14,
+    "totalFiles": 164,
+    "totalSizeMb": 162.87,
+    "activeReferencedFiles": 126,
+    "activeReferencedSizeMb": 98.79,
     "supportFiles": 16,
     "supportFilesSizeMb": 41.8,
     "unreferencedCandidates": 22,
@@ -376,6 +376,17 @@
         {
           "source": "selbstfuersorge",
           "id": "erlaubnis-karte",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-garten-v1.webp",
+      "sizeBytes": 83594,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "garten",
           "field": "thumbnailUrl"
         }
       ]
@@ -1003,6 +1014,28 @@
           "source": "selbstfuersorge",
           "id": "erlaubnis-karte",
           "field": "webp"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/manus-garten-v1.pdf",
+      "sizeBytes": 272512,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "garten",
+          "field": "downloadUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/manus-garten-v1.webp",
+      "sizeBytes": 321996,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "garten",
+          "field": "url"
         }
       ]
     },
@@ -2069,6 +2102,16 @@
       "legacyCandidateFiles": []
     },
     {
+      "family": "/infografiken/extras/thumbnails/manus-garten",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/manus-garten-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/manus-garten-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
       "family": "/infografiken/extras/thumbnails/manus-gehirn",
       "availableFiles": [
         "/infografiken/extras/thumbnails/manus-gehirn-v1.webp"
@@ -2467,6 +2510,18 @@
       "referencedFiles": [
         "/infografiken/manus-erlaubnis-karte-v1.pdf",
         "/infografiken/manus-erlaubnis-karte-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/manus-garten",
+      "availableFiles": [
+        "/infografiken/manus-garten-v1.pdf",
+        "/infografiken/manus-garten-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/manus-garten-v1.pdf",
+        "/infografiken/manus-garten-v1.webp"
       ],
       "legacyCandidateFiles": []
     },

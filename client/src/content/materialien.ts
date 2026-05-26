@@ -266,6 +266,19 @@ export const materials: MaterialItem[] = [
     verifiedAt: "Mai 2026",
   },
   {
+    id: "garten",
+    title: "Der Garten – Unterstützen, ohne Wachstum zu erzwingen",
+    description:
+      "Genesungsorientierte Metapher dazu, was Angehörige beitragen können und was nicht in ihrer Hand liegt.",
+    category: "genesung",
+    kind: "Infografik",
+    url: "/infografiken/manus-garten-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-garten-v1.webp",
+    downloadUrl: "/infografiken/manus-garten-v1.pdf",
+    priority: "secondary",
+    verifiedAt: "Mai 2026",
+  },
+  {
     id: "genesung-zahlen",
     title: "Genesung in Zahlen – Was die Forschung zeigt",
     description:

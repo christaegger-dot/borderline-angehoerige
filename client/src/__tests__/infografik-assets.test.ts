@@ -287,4 +287,20 @@ describe("infografik assets", () => {
       []
     );
   });
+
+  it("uses the freigegebene Garten v1 assets in productive references", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [
+        "/infografiken/manus-garten-v1.pdf",
+        "/infografiken/manus-garten-v1.webp",
+        "/infografiken/extras/thumbnails/manus-garten-v1.webp",
+      ],
+      []
+    );
+  });
 });

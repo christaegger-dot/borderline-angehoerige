@@ -1,6 +1,89 @@
 import { createHandoutTextVersion } from "./shared";
 
 export const handoutTextVersions = [
+  createHandoutTextVersion("garten", {
+    kicker: "Textversion",
+    summary:
+      "Die Garten-Metapher zeigt, was Angehörige zur Genesung beitragen können, ohne Wachstum erzwingen oder allein verantworten zu müssen.",
+    intro: [
+      "Angehörige können viel beitragen: Verlässlichkeit, Ermutigung, Grenzen und Hilfe von aussen. Gleichzeitig lässt sich Entwicklung nicht erzwingen.",
+      "Der Garten hilft, Unterstützung als Bedingungen zu verstehen: Boden, Wasser, Beetkante und Jahreszeiten. Er entlastet von der Idee, Genesung machen oder kontrollieren zu müssen.",
+    ],
+    sections: [
+      {
+        title: "Merksatz",
+        calloutTitle: "Zentraler Satz des Handouts",
+        calloutText:
+          "Ich kann Bedingungen schaffen – nicht Wachstum erzwingen.",
+      },
+      {
+        title: "Boden",
+        calloutTitle: "Was trägt",
+        calloutText:
+          "Sicherheit, Verlässlichkeit, Alltag und ruhige Absprachen geben Entwicklung Halt.",
+      },
+      {
+        title: "Wasser",
+        calloutTitle: "Was nährt",
+        calloutText:
+          "Zuhören, Ermutigung und kleine Schritte würdigen können hilfreich sein.",
+      },
+      {
+        title: "Beetkante",
+        calloutTitle: "Was schützt",
+        calloutText:
+          "Grenzen, Pausen, eigene Kraft und Hilfe von aussen halten Unterstützung tragbar.",
+      },
+      {
+        title: "Jahreszeiten",
+        calloutTitle: "Was entlastet",
+        calloutText:
+          "Entwicklung verläuft selten gerade. Rückschritte bedeuten nicht, dass alles verloren ist.",
+      },
+      {
+        title: "Nicht am Wachstum ziehen",
+        calloutTitle: "Was Unterstützung schwerer macht",
+        calloutText:
+          "Druck, Kontrolle, Dauerkorrektur und alles allein tragen machen Unterstützung schwerer – und oft nicht wirksamer.",
+      },
+      {
+        title: "Was Angehörige beitragen können",
+        bullets: [
+          "Verlässlich bleiben, ohne ständig verfügbar zu sein.",
+          "Kleine Fortschritte bemerken.",
+          "Grenzen klar und freundlich halten.",
+          "Unterstützung auf mehrere Schultern verteilen.",
+          "Eigene Kraft ernst nehmen.",
+        ],
+      },
+      {
+        title: "Was in Ihrer Hand liegt – und was nicht",
+        cards: [
+          {
+            title: "Beitragen",
+            text: "Sie können Beziehung, Rahmen und Ermutigung anbieten.",
+          },
+          {
+            title: "Begrenzen",
+            text: "Sie dürfen prüfen, was Sie tragen können – und was nicht.",
+          },
+          {
+            title: "Nicht kontrollieren",
+            text: "Sie können Genesung begleiten, aber nicht machen.",
+          },
+        ],
+      },
+      {
+        title: "Schutzsatz",
+        calloutTitle: "Selbstschutz gehört dazu",
+        calloutText: "Pflegen heisst nicht, sich selbst auszutrocknen.",
+      },
+    ],
+    sourceLine:
+      "Quellen: Family Connections; Linehan; Mason/Kreger; Recovery-Forschung; Stand by You/Sotomo 2024.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
+  }),
   createHandoutTextVersion("genesung-zahlen", {
     kicker: "Textversion",
     summary:

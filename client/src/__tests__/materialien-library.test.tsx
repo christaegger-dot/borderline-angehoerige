@@ -120,10 +120,13 @@ describe("MaterialienLibrarySection", () => {
       )
     ).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("tab", { name: /Genesung\s*·?\s*1/ }));
+    fireEvent.click(screen.getByRole("tab", { name: /Genesung\s*·?\s*2/ }));
 
     expect(
       screen.getByText("Genesung in Zahlen – Was die Forschung zeigt")
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("Der Garten – Unterstützen, ohne Wachstum zu erzwingen")
     ).toBeInTheDocument();
     expect(
       screen.queryByText("Schuld, Verantwortung und was dazwischen liegt")

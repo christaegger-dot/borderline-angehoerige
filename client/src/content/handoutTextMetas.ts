@@ -36,6 +36,7 @@ export const HANDOUT_TEXT_VERSION_IDS = [
   "4-arten-von-grenzen",
   "grenzen-erkennen",
   "lmk",
+  "garten",
   "genesung-zahlen",
   "fortschritt-paradox",
   "remission-heilung",

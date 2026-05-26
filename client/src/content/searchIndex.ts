@@ -1151,6 +1151,25 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
+    title: "Textversion: Der Garten",
+    description:
+      "Lesbare Web-Version zur Garten-Metapher: Bedingungen schaffen, Grenzen halten und Genesung nicht erzwingen",
+    keywords: [
+      "textversion",
+      "garten",
+      "genesung",
+      "unterstützen",
+      "wachstum",
+      "bedingungen schaffen",
+      "grenzen",
+      "selbstschutz",
+      "handout",
+      "pdf",
+    ],
+    href: "/materialien/text/garten",
+    section: "Materialien",
+  },
+  {
     title: "Textversion: Das Fortschritt-Paradox",
     description:
       "Lesbare Web-Version dazu, warum Rückschläge zum Genesungsweg gehören und Fortschritt nicht linear verläuft",

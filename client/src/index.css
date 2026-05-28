@@ -1128,3 +1128,31 @@
 @source "./pages/Home.tsx";
 @source "./components/editorial";
 @source "./components/visualizations";
+
+/* ── Editorial Section — Naht zwischen gleichfarbigen Sektionen ──
+   Jede EditorialSection trägt oben und unten vollen vertikalen Abstand
+   (--section-y-*). Beim Stapeln addieren sich Unterkante + Oberkante an
+   jeder Naht zum doppelten Wert. Wo ein Hintergrundwechsel die Pause
+   begründet (z. B. cream → cream-deep), ist das gewollt. Folgen jedoch
+   zwei Sektionen mit identischem Hintergrund aufeinander, entsteht ein
+   unmotivierter Leerraum (mobil 112px, Desktop 160px).
+
+   Lösung: Bei gleichfarbiger Nachbarschaft entfällt das obere Padding der
+   Folge-Sektion — die Naht behält nur die Unterkante der vorigen Sektion
+   (mobil 56px, Desktop 80px). Farbwechsel-Nähte bleiben unverändert.
+
+   Liegt bewusst in `layer(utilities)` (nicht `components`), damit die
+   Regel die `py-[…]`-Utilities der Sektion überstimmt; die höhere
+   Spezifität gewinnt ohne `!important`. */
+@layer utilities {
+  .editorial-section[data-variant="cream"]
+    + .editorial-section[data-variant="cream"],
+  .editorial-section[data-variant="aubergine"]
+    + .editorial-section[data-variant="aubergine"],
+  .editorial-section[data-variant="sage-wash"]
+    + .editorial-section[data-variant="sage-wash"],
+  .editorial-section[data-variant="cream-deep"]
+    + .editorial-section[data-variant="cream-deep"] {
+    padding-top: 0;
+  }
+}

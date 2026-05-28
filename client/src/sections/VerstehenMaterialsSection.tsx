@@ -82,8 +82,14 @@ export default function VerstehenMaterialsSection() {
         </EditorialSection.Body>
       </EditorialSection>
 
+      {/* data-variant="cream" + editorial-section: markiert die Filter-/Tile-
+          Liste als gleichfarbige Sektion, damit die nachfolgende cream-Sektion
+          ihr doppeltes oberes Padding an der Naht abbaut (siehe index.css,
+          layer utilities). Setzt keine weiteren Styles — es gibt keine bare
+          .editorial-section-Regel, nur die Geschwister-Naht-Regel greift. */}
       <section
-        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-[var(--section-y-normal-mobile)] md:px-[var(--container-pad-md)] md:pb-[var(--section-y-spacious-desktop)]"
+        className="editorial-section bg-[var(--bg-primary)] px-[var(--container-pad)] pb-[var(--section-y-normal-mobile)] md:px-[var(--container-pad-md)] md:pb-[var(--section-y-spacious-desktop)]"
+        data-variant="cream"
         aria-label="Materialien zum Vertiefen — Filter und Tile-Liste"
       >
         <div className="mx-auto max-w-page">

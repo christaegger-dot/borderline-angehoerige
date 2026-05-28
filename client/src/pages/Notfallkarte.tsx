@@ -546,7 +546,7 @@ export default function Notfallkarte() {
         </div>
       )}
       <EditorialLayout width="narrow">
-        <header className="pb-12 pt-16 md:pb-16 md:pt-24 print:hidden">
+        <header className="pb-12 pt-12 md:pb-16 md:pt-16 print:hidden">
           <EyebrowLabel spacing="compact">Notfallkarte</EyebrowLabel>
           <DisplayHeading level={1} size="page">
             Persönliche <em>Notfallkarte</em>

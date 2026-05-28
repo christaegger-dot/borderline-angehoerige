@@ -137,7 +137,7 @@ export default function Diagnostik() {
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
           <EyebrowLabel spacing="compact">Diagnostik</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Wie eine <em>Borderline-Diagnose</em> entsteht
+            Wie eine Borderline-Diagnose entsteht
           </DisplayHeading>
           <Lede className="mt-6">
             Was eine Diagnose bedeutet, wer sie stellen darf, wie sie abläuft —

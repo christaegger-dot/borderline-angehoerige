@@ -52,7 +52,7 @@ export default function Barrierefreiheit() {
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
           <EyebrowLabel spacing="compact">Barrierefreiheit</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Erklärung zur <em>Barrierefreiheit</em>
+            Erklärung zur Barrierefreiheit
           </DisplayHeading>
           <Lede className="mt-6">
             Wir sind bestrebt, diese Website für alle Menschen zugänglich zu

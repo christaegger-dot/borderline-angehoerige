@@ -282,10 +282,10 @@ export default function Buchempfehlungen() {
 
       <EditorialLayout width="wide">
         {/* ── Hero ── */}
-        <header className="pb-16 pt-16 md:pb-24 md:pt-24">
+        <header className="pb-16 pt-12 md:pb-24 md:pt-16">
           <EyebrowLabel spacing="compact">Buchempfehlungen</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Bücher für <em>Angehörige</em>
+            Bücher für Angehörige
           </DisplayHeading>
           <Lede className="mt-6">
             Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl

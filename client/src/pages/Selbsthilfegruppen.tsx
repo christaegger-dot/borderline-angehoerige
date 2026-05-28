@@ -101,12 +101,12 @@ export default function Selbsthilfegruppen() {
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
-        <header className="pb-16 pt-16 md:pb-24 md:pt-24">
+        <header className="pb-16 pt-12 md:pb-24 md:pt-16">
           <EyebrowLabel spacing="compact">
             Beratung &amp; Netzwerke
           </EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Beratung &amp; <em>Netzwerke</em>
+            Beratung &amp; Netzwerke
           </DisplayHeading>
           <Lede className="mt-6">
             Wenn Belastung, Unsicherheit oder Erschöpfung zu gross werden, kann

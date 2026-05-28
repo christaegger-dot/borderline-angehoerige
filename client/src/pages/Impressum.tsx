@@ -32,7 +32,7 @@ export default function Impressum() {
         <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Impressum</EyebrowLabel>
           <DisplayHeading level={1} size="utility">
-            Verantwortung und <em>rechtliche Hinweise</em>
+            Verantwortung und rechtliche Hinweise
           </DisplayHeading>
           <Lede className="mt-6">
             Wer hinter diesem Informationsangebot steht, wie Sie die Fachstelle

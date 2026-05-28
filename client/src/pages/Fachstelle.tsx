@@ -57,7 +57,7 @@ export default function Fachstelle() {
         <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Fachstelle — PUK Zürich</EyebrowLabel>
           <DisplayHeading level={1} size="utility">
-            Angehörigenarbeit – <em>professionell begleitet</em>
+            Angehörigenarbeit – professionell begleitet
           </DisplayHeading>
           <Lede className="mt-6">
             Ein Angebot der Psychiatrischen Universitätsklinik Zürich für

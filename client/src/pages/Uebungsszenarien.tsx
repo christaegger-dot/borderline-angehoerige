@@ -35,7 +35,7 @@ export default function Uebungsszenarien() {
             Interaktive Übungen
           </EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Kommunikation <em>üben</em>
+            Kommunikation üben
           </DisplayHeading>
 
           <Lede className="mt-6">

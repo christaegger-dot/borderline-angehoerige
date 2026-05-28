@@ -33,7 +33,7 @@ export default function Datenschutz() {
         <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Datenschutz</EyebrowLabel>
           <DisplayHeading level={1} size="utility">
-            Wie diese Website mit <em>Daten</em> umgeht
+            Wie diese Website mit Daten umgeht
           </DisplayHeading>
           <Lede className="mt-6">
             Der Schutz Ihrer Privatsphäre ist uns wichtig. Diese Erklärung

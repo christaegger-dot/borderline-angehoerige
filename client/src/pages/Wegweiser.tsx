@@ -30,10 +30,10 @@ export default function Wegweiser() {
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
-        <header className="pb-12 pt-16 md:pb-16 md:pt-24">
+        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
           <EyebrowLabel spacing="compact">Wegweiser</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Situations-<em>Wegweiser</em>
+            Situations-Wegweiser
           </DisplayHeading>
           <Lede className="mt-6">
             In akuten Momenten ist es schwer, klar zu denken. Dieser Wegweiser

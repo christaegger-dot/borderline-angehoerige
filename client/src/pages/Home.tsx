@@ -87,8 +87,7 @@ export default function Home() {
       <EditorialSection variant="cream" density="hero">
         <EditorialSection.MarginNote>
           <HomeMarginLabel>
-            Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik
-            Zürich
+            Fachstelle Angehörigenarbeit · PUK Zürich
           </HomeMarginLabel>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>

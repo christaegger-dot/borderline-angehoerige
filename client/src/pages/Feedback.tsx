@@ -26,7 +26,7 @@ export default function Feedback() {
         <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Feedback</EyebrowLabel>
           <DisplayHeading level={1} size="utility">
-            Rückmeldung <em>geben</em>
+            Rückmeldung geben
           </DisplayHeading>
           <Lede className="mt-6">
             Ihre Erfahrungen und Anregungen helfen uns, diese Website für andere

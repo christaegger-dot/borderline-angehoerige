@@ -94,7 +94,7 @@ export default function UeberUns() {
         <header className="secondary-page-header">
           <EyebrowLabel spacing="compact">Über uns</EyebrowLabel>
           <DisplayHeading level={1} size="utility">
-            Über diese <em>Website</em>
+            Über diese Website
           </DisplayHeading>
           <Lede className="mt-6">
             Warum es diese Website gibt – und wer dahinter steht.

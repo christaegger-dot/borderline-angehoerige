@@ -106,7 +106,7 @@ export default function Begleiterkrankungen() {
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
           <EyebrowLabel spacing="compact">Begleiterkrankungen</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Wenn <em>mehrere Erkrankungen</em> ineinandergreifen
+            Wenn mehrere Erkrankungen ineinandergreifen
           </DisplayHeading>
           <Lede className="mt-6">
             Borderline tritt selten allein auf. Besonders häufig kommt

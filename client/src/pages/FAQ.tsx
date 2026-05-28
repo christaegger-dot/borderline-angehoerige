@@ -384,7 +384,7 @@ export default function FAQ() {
         <header className="pb-16 pt-12 md:pb-24 md:pt-16">
           <EyebrowLabel spacing="compact">Häufige Fragen</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Häufig gestellte <em>Fragen</em>
+            Häufig gestellte Fragen
           </DisplayHeading>
           <Lede className="mt-6">
             Antworten auf häufige Fragen von Angehörigen. Die FAQ sollen

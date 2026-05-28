@@ -429,7 +429,7 @@ export default function Quellen() {
         <header className="pb-16 pt-12 md:pb-24 md:pt-16">
           <EyebrowLabel spacing="compact">Quellen &amp; Literatur</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Quellen &amp; <em>Literatur</em>
+            Quellen &amp; Literatur
           </DisplayHeading>
           <Lede className="mt-6">
             Diese Website basiert auf anerkannter Fachliteratur und

@@ -25,7 +25,7 @@ export default function SelbsttestPage() {
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
           <EyebrowLabel spacing="compact">Selbsttest</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Selbsttest: <em>Wo soll ich anfangen?</em>
+            Selbsttest: Wo soll ich anfangen?
           </DisplayHeading>
           <Lede className="mt-6">
             Dieser kurze Test hilft Ihnen, die für Ihre aktuelle Situation

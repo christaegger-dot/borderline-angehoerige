@@ -106,7 +106,7 @@ export default function Selbsthilfegruppen() {
             Beratung &amp; Netzwerke
           </EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Beratung &amp; <em>Netzwerke</em>
+            Beratung &amp; Netzwerke
           </DisplayHeading>
           <Lede className="mt-6">
             Wenn Belastung, Unsicherheit oder Erschöpfung zu gross werden, kann

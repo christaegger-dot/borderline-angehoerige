@@ -354,10 +354,9 @@ export default function Grenzen() {
           {/* ── ContentSection 1: warnsignale ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Woran Sie merken, dass eine Grenze nötig ist"
             id="warnsignale"
-            defaultOpen={true}
-            preview="Grenzen werden oft erst dann sichtbar, wenn Sie längst überschritten wurden: durch Erschöpfung, Druck, Angst, Groll oder innere Härte."
           >
             <EditorialProse>
               <ul className="ml-6 list-disc space-y-2">
@@ -390,41 +389,42 @@ export default function Grenzen() {
           {/* ── ContentSection 2: arten ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Welche Arten von Grenzen häufig relevant sind"
             id="arten"
             preview="Grenzen betreffen nicht nur Lautstärke oder Streit, sondern Zeit, Erreichbarkeit, Raum, Geld und emotionale Zumutbarkeit."
           >
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4 className="mb-2" style={h4Style}>
+                <h3 className="mb-2" style={h4Style}>
                   Zeitliche Grenzen
-                </h4>
+                </h3>
                 <p style={bodyStyle}>
                   Wann sind Sie erreichbar, wann nicht? Wann ist Pause nötig?
                 </p>
               </div>
               <div>
-                <h4 className="mb-2" style={h4Style}>
+                <h3 className="mb-2" style={h4Style}>
                   Emotionale Grenzen
-                </h4>
+                </h3>
                 <p style={bodyStyle}>
                   Welcher Ton, welche Vorwürfe, welche Dynamiken überschreiten
                   Ihre Grenze?
                 </p>
               </div>
               <div>
-                <h4 className="mb-2" style={h4Style}>
+                <h3 className="mb-2" style={h4Style}>
                   Räumliche Grenzen
-                </h4>
+                </h3>
                 <p style={bodyStyle}>
                   Wo brauchen Sie Rückzug, Distanz oder Schutz des eigenen
                   Raums?
                 </p>
               </div>
               <div>
-                <h4 className="mb-2" style={h4Style}>
+                <h3 className="mb-2" style={h4Style}>
                   Materielle Grenzen
-                </h4>
+                </h3>
                 <p style={bodyStyle}>
                   Wie weit gehen finanzielle Hilfe, Ausleihen oder praktische
                   Übernahmen?
@@ -468,10 +468,9 @@ export default function Grenzen() {
           {/* ── ContentSection 4: priorisierung ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Welche Grenzen zuerst?"
             id="priorisierung"
-            defaultOpen={true}
-            preview="Nicht alle Grenzen lassen sich gleichzeitig setzen. Diese Orientierung hilft, die wichtigsten zuerst anzugehen."
           >
             <EditorialProse>
               <p>
@@ -493,9 +492,9 @@ export default function Grenzen() {
                 >
                   Dringend · Emotional hoch
                 </p>
-                <h4 className="mt-2" style={h4Style}>
+                <h3 className="mt-2" style={h4Style}>
                   Sofort setzen
-                </h4>
+                </h3>
                 <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
                   <li>Körperliche Sicherheit</li>
                   <li>Bedrohungen / Übergriffe</li>
@@ -514,9 +513,9 @@ export default function Grenzen() {
                 >
                   Dringend · Emotional niedriger
                 </p>
-                <h4 className="mt-2" style={h4Style}>
+                <h3 className="mt-2" style={h4Style}>
                   Klar kommunizieren
-                </h4>
+                </h3>
                 <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
                   <li>Erreichbarkeitszeiten</li>
                   <li>Gesprächsregeln</li>
@@ -535,9 +534,9 @@ export default function Grenzen() {
                 >
                   Langfristig · Emotional hoch
                 </p>
-                <h4 className="mt-2" style={h4Style}>
+                <h3 className="mt-2" style={h4Style}>
                   Sorgfältig vorbereiten
-                </h4>
+                </h3>
                 <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
                   <li>Finanzielle Regelungen</li>
                   <li>Wohnsituation</li>
@@ -556,9 +555,9 @@ export default function Grenzen() {
                 >
                   Langfristig · Emotional niedrig
                 </p>
-                <h4 className="mt-2" style={h4Style}>
+                <h3 className="mt-2" style={h4Style}>
                   Im Blick behalten
-                </h4>
+                </h3>
                 <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
                   <li>Kleine Gewohnheitsfragen</li>
                   <li>Alltagsabsprachen</li>
@@ -603,6 +602,7 @@ export default function Grenzen() {
           {/* ── ContentSection 5: kommunizieren ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Wie Grenzen eher gut kommuniziert werden"
             id="kommunizieren"
             preview="Hilfreiche Grenzen sind meist konkret, ruhig und wiederholbar. Sie erklären sich nicht endlos und werden nicht als moralischer Angriff formuliert."
@@ -618,18 +618,18 @@ export default function Grenzen() {
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4 className="mb-2" style={h4Style}>
+                <h3 className="mb-2" style={h4Style}>
                   Eher hilfreich
-                </h4>
+                </h3>
                 <p style={{ ...bodyStyle, fontStyle: "italic" }}>
                   «Ich spreche weiter mit dir, aber nicht, wenn du mich
                   anschreist.»
                 </p>
               </div>
               <div>
-                <h4 className="mb-2" style={h4Style}>
+                <h3 className="mb-2" style={h4Style}>
                   Eher problematisch
-                </h4>
+                </h3>
                 <p style={{ ...bodyStyle, fontStyle: "italic" }}>
                   «Du bist unmöglich. So rede ich nie wieder mit dir.»
                 </p>
@@ -640,10 +640,9 @@ export default function Grenzen() {
           {/* ── ContentSection 6: grenzsaetze ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Konkrete Grenzsätze für typische Situationen"
             id="grenzsaetze"
-            defaultOpen={true}
-            preview="Grenzen werden tragfähiger, wenn sie konkret, ruhig und auf Ihr eigenes Handeln bezogen sind — nicht als Vorwurf, sondern als klare Aussage."
           >
             <div className="space-y-8">
               {grenzsaetzeBeispiele.map((item, idx) => (
@@ -654,7 +653,7 @@ export default function Grenzen() {
                     idx > 0 ? { borderColor: "var(--rule-color)" } : undefined
                   }
                 >
-                  <h4 style={h4Style}>{item.thema}</h4>
+                  <h3 style={h4Style}>{item.thema}</h3>
                   <p
                     className="mt-1"
                     style={{
@@ -694,6 +693,7 @@ export default function Grenzen() {
           {/* ── ContentSection 7: konsequenz ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Konsequenz ist oft der schwierigste Teil"
             id="konsequenz"
             preview="Viele Grenzen scheitern nicht an der Formulierung, sondern daran, dass Angst, Schuld oder Hoffnung sie sofort wieder aufweichen."
@@ -790,26 +790,26 @@ export default function Grenzen() {
             preview="Partner, Eltern und erwachsene Kinder geraten auf unterschiedliche Weise in Loyalitätsdruck. Das verändert auch, wie schwer Grenzen sich anfühlen."
           >
             <EditorialProse>
-              <h4 className="mt-2" style={h4Style}>
+              <h3 className="mt-2" style={h4Style}>
                 Als Partner/in
-              </h4>
+              </h3>
               <p>
                 In Partnerschaften fühlen sich Grenzen oft schnell wie
                 Beziehungsgefahr an. Gerade deshalb sind sie wichtig: Sie
                 unterscheiden zwischen Nähe und Verschmelzung, Mitgefühl und
                 Selbstaufgabe.
               </p>
-              <h4 className="mt-6" style={h4Style}>
+              <h3 className="mt-6" style={h4Style}>
                 Als Elternteil
-              </h4>
+              </h3>
               <p>
                 Eltern erleben Grenzen oft als Widerspruch zu Fürsorge. Bei
                 erwachsenen Kindern ist Begrenzung aber häufig Teil
                 verantwortlicher Elternschaft, nicht ihr Gegenstück.
               </p>
-              <h4 className="mt-6" style={h4Style}>
+              <h3 className="mt-6" style={h4Style}>
                 Als erwachsenes Kind
-              </h4>
+              </h3>
               <p>
                 Wer seinem Elternteil Grenzen setzt, erlebt oft besonders starke
                 Schuld. Ihre emotionale Gesundheit ist dennoch nicht nachrangig.
@@ -821,10 +821,9 @@ export default function Grenzen() {
           {/* ── ContentSection 10: gewalt ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Wenn der Angehörige körperlich übergriffig wird"
             id="gewalt"
-            defaultOpen={true}
-            preview="Körperliche Übergriffe sind keine Grenzverletzung – sie sind eine Gefährdung. Das erfordert eine andere Reaktion als verbale Eskalation."
           >
             <div className="space-y-4">
               {/* Alert-Block: farbig (Sicherheitsentscheid) */}

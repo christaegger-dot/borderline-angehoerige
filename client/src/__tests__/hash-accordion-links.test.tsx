@@ -120,12 +120,6 @@ const HASH_CASES = [
     buttonName: /Abschnitt Depression bei Borderline/i,
     contentText: /Forschung zeigt, dass im Lebenszeitverlauf/i,
   },
-  {
-    route: "/grenzen#gewalt",
-    loadPage: () => import("@/pages/Grenzen"),
-    buttonName: /Abschnitt Wenn der Angehörige körperlich übergriffig wird/i,
-    contentText: /Körperliche Gewalt ist kein Beziehungsproblem/i,
-  },
 ] as const;
 
 describe("hash-linked content sections", () => {
@@ -146,6 +140,23 @@ describe("hash-linked content sections", () => {
       expect(window.scrollTo).toHaveBeenCalled();
     }
   );
+
+  it("scrollt bei Hash-Navigation zum jetzt offenen Abschnitt /grenzen#gewalt", async () => {
+    const { default: Page } = await import("@/pages/Grenzen");
+    renderWithRoute(<Page />, "/grenzen#gewalt");
+
+    // «Wenn körperlich übergriffig» ist jetzt offene Prosa (collapsible={false}):
+    // kein Toggle-Button, Inhalt direkt sichtbar, Deep-Link scrollt trotzdem.
+    expect(
+      screen.queryByRole("button", {
+        name: /Abschnitt Wenn der Angehörige körperlich übergriffig wird/i,
+      })
+    ).toBeNull();
+    expect(
+      screen.getByText(/Körperliche Gewalt ist kein Beziehungsproblem/i)
+    ).toBeInTheDocument();
+    await waitFor(() => expect(window.scrollTo).toHaveBeenCalled());
+  });
 
   it("does not crash when the URL hash contains malformed encoding", async () => {
     const { default: Page } = await import("@/pages/Grenzen");

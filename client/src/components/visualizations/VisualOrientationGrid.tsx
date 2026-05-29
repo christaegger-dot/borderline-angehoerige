@@ -93,7 +93,7 @@ export function VisualOrientationGrid({
       >
         <div className="mx-auto max-w-page">
           <ul className={gridClass}>
-            {tiles.map((tile, index) => (
+            {tiles.map(tile => (
               <li key={tile.id} className="group">
                 <AppLink
                   href={tile.href}
@@ -112,11 +112,7 @@ export function VisualOrientationGrid({
                       alt={tile.alt}
                       width={600}
                       height={tile.thumbnailHeight}
-                      loading={
-                        typeof maxItems === "number" && index < maxItems
-                          ? "eager"
-                          : "lazy"
-                      }
+                      loading="lazy"
                       decoding="async"
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     />

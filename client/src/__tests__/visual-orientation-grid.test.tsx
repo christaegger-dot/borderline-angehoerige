@@ -97,7 +97,7 @@ describe("VisualOrientationGrid", () => {
     });
   });
 
-  it("can render a quieter four-tile Home preview with eager thumbnails", () => {
+  it("can render a quieter four-tile Home preview with lazy thumbnails", () => {
     renderPreviewGrid();
     expect(screen.getAllByRole("listitem")).toHaveLength(4);
     expect(
@@ -107,8 +107,10 @@ describe("VisualOrientationGrid", () => {
       })
     ).toBeInTheDocument();
     expect(screen.getByText("Kurzer Orientierungstext.")).toBeInTheDocument();
+    // Die Orientierungs-Tiles liegen unter dem Fold und sind nicht
+    // LCP-relevant — lazy hält sie aus dem kritischen Pfad.
     screen.getAllByRole("img").forEach(img => {
-      expect(img.getAttribute("loading")).toBe("eager");
+      expect(img.getAttribute("loading")).toBe("lazy");
     });
   });
 

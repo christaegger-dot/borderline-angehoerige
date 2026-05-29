@@ -7,14 +7,18 @@ import {
 
 interface KommunizierenPatternSectionProps {
   defaultOpen?: boolean;
+  /** Wenn false: dauerhaft offene Prosa ohne Toggle (an ContentSection durchgereicht). */
+  collapsible?: boolean;
 }
 
 export function KommunizierenEscalationSection({
   defaultOpen = false,
+  collapsible = true,
 }: KommunizierenPatternSectionProps) {
   return (
     <ContentSection
       variant="editorial"
+      collapsible={collapsible}
       title="Wenn Gespräche kippen"
       id="eskalation"
       defaultOpen={defaultOpen}

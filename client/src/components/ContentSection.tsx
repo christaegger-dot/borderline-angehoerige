@@ -13,6 +13,12 @@ interface ContentSectionProps {
   children: React.ReactNode;
   /** Kurze Vorschau, die im geschlossenen Zustand sichtbar bleibt */
   preview?: React.ReactNode;
+  /**
+   * `false` rendert den Abschnitt als dauerhaft offene Prosa ohne Toggle —
+   * für Kerninhalt, der nicht hinter einem Klick liegen soll. Default `true`
+   * (klassisches Akkordeon). Anker/Deep-Links scrollen weiterhin zum Abschnitt.
+   */
+  collapsible?: boolean;
   /** Kompatibilitäts-Prop für bestehende Callsites; nur editorial wird unterstützt. */
   variant?: "editorial";
 }
@@ -36,9 +42,10 @@ export default function ContentSection({
   defaultOpen = false,
   children,
   preview,
+  collapsible = true,
   variant: _variant = "editorial",
 }: ContentSectionProps) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [isOpen, setIsOpen] = useState(collapsible ? defaultOpen : true);
   const sectionRef = useRef<HTMLDivElement>(null);
   const pendingScrollRef = useRef(false);
   const pendingScrollBehaviorRef = useRef<ScrollBehavior>("smooth");
@@ -155,25 +162,29 @@ export default function ContentSection({
           fontWeight: "var(--weight-display)",
         }}
       >
-        <button
-          type="button"
-          onClick={() => setIsOpen(open => !open)}
-          className="group flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent-primary)]"
-          aria-expanded={isOpen}
-          aria-controls={id ? `section-content-${id}` : undefined}
-          aria-label={`Abschnitt ${title} ${isOpen ? "zuklappen" : "aufklappen"}`}
-        >
-          <span>{title}</span>
-          <ChevronDown
-            className={`h-5 w-5 flex-shrink-0 transition-transform duration-200 ${
-              isOpen ? "rotate-180" : ""
-            }`}
-            style={{ color: "var(--fg-tertiary)" }}
-            aria-hidden="true"
-          />
-        </button>
+        {collapsible ? (
+          <button
+            type="button"
+            onClick={() => setIsOpen(open => !open)}
+            className="group flex w-full items-center justify-between gap-3 py-5 text-left transition-opacity hover:opacity-80 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent-primary)]"
+            aria-expanded={isOpen}
+            aria-controls={id ? `section-content-${id}` : undefined}
+            aria-label={`Abschnitt ${title} ${isOpen ? "zuklappen" : "aufklappen"}`}
+          >
+            <span>{title}</span>
+            <ChevronDown
+              className={`h-5 w-5 flex-shrink-0 transition-transform duration-200 ${
+                isOpen ? "rotate-180" : ""
+              }`}
+              style={{ color: "var(--fg-tertiary)" }}
+              aria-hidden="true"
+            />
+          </button>
+        ) : (
+          <span className="block py-5">{title}</span>
+        )}
       </h2>
-      {!isOpen && preview && (
+      {collapsible && !isOpen && preview && (
         <p
           className="-mt-2 mb-5 line-clamp-2"
           style={{
@@ -186,21 +197,30 @@ export default function ContentSection({
         </p>
       )}
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <m.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="overflow-hidden"
-          >
-            <div id={id ? `section-content-${id}` : undefined} className="pb-6">
-              {children}
-            </div>
-          </m.div>
-        )}
-      </AnimatePresence>
+      {collapsible ? (
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <m.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="overflow-hidden"
+            >
+              <div
+                id={id ? `section-content-${id}` : undefined}
+                className="pb-6"
+              >
+                {children}
+              </div>
+            </m.div>
+          )}
+        </AnimatePresence>
+      ) : (
+        <div id={id ? `section-content-${id}` : undefined} className="pb-6">
+          {children}
+        </div>
+      )}
     </div>
   );
 }

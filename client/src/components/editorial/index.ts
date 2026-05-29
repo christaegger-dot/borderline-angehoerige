@@ -27,3 +27,4 @@ export {
   EditorialCallout,
   type EditorialCalloutVariant,
 } from "./EditorialCallout";
+export { EditorialFigure } from "./EditorialFigure";

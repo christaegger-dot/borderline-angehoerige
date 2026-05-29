@@ -545,10 +545,9 @@ export default function UnterstuetzenKrise() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Das Ampel-System: Krisen erkennen"
             id="ampel-system"
-            defaultOpen={true}
-            preview="Nicht jede schwierige Situation ist eine Krise. Das Ampel-System hilft Ihnen, die Intensität einzuschätzen."
           >
             <EditorialProse>
               <p>
@@ -563,7 +562,7 @@ export default function UnterstuetzenKrise() {
                   key={item.level}
                   className={`border border-border/50 border-l-4 p-5 ${item.panelClass}`}
                 >
-                  <h4 style={h4Style}>{item.level}</h4>
+                  <h3 style={h4Style}>{item.level}</h3>
                   <p className="mt-2" style={bodyStyle}>
                     {item.description}
                   </p>
@@ -635,9 +634,9 @@ export default function UnterstuetzenKrise() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="4 Schritte der Deeskalation"
             id="deeskalation"
-            preview="Sicherheit prüfen, Ruhe bewahren, Validieren, Skills anbieten – ein bewährtes Vorgehen."
           >
             <ol className="mt-2 space-y-6">
               {deeskalationsSchritte.map((item, index) => (
@@ -654,7 +653,7 @@ export default function UnterstuetzenKrise() {
                     {index + 1}
                   </span>
                   <div className="space-y-2">
-                    <h4 style={h4Style}>{item.title}</h4>
+                    <h3 style={h4Style}>{item.title}</h3>
                     <p style={bodyStyle}>{item.description}</p>
                     <p style={exampleStyle}>{item.example}</p>
                   </div>
@@ -666,9 +665,9 @@ export default function UnterstuetzenKrise() {
           {/* ── ContentSection 3: krise-formulierungen ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Sie in der Krise sagen können"
             id="krise-formulierungen"
-            preview="In einer Krise zählt jedes Wort. Diese Formulierungen haben sich bewährt."
           >
             <EditorialProse>
               <p>
@@ -679,7 +678,7 @@ export default function UnterstuetzenKrise() {
             <div className="mt-8 space-y-8">
               {formulierungen.map(item => (
                 <article key={item.title} className="space-y-2">
-                  <h4 style={h4Style}>{item.title}</h4>
+                  <h3 style={h4Style}>{item.title}</h3>
                   <p style={exampleStyle}>{item.quote}</p>
                   {item.note && <p style={bodyStyle}>{item.note}</p>}
                 </article>
@@ -690,9 +689,9 @@ export default function UnterstuetzenKrise() {
           {/* ── ContentSection 4: vermeiden (sicherheitskritisch — Alert-Akzent bleibt) ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Sie in der Krise vermeiden sollten"
             id="vermeiden"
-            preview="Drohen, Vorwürfe machen oder Gefühle herunterspielen – diese Reaktionen können die Krise verschärfen."
           >
             <aside className="mt-2 border border-[--color-sos-amber-border] border-l-2 border-l-[--color-sos-amber-text] bg-[--color-sos-amber-wash] p-6">
               <ul className="space-y-2.5" style={bodyStyle}>
@@ -832,7 +831,7 @@ export default function UnterstuetzenKrise() {
 
             {/* Für die betroffene Person */}
             <article className="mt-10 space-y-3">
-              <h4 style={h4Style}>Für die betroffene Person</h4>
+              <h3 style={h4Style}>Für die betroffene Person</h3>
               <p style={bodyStyle}>
                 Nach einer schweren Krise folgt oft eine Phase massiver{" "}
                 <strong style={{ color: "var(--fg-primary)" }}>
@@ -851,7 +850,7 @@ export default function UnterstuetzenKrise() {
 
             {/* Für Sie persönlich */}
             <article className="mt-10 space-y-3">
-              <h4 style={h4Style}>Für Sie persönlich</h4>
+              <h3 style={h4Style}>Für Sie persönlich</h3>
               <p style={bodyStyle}>
                 Schwere Krisen hinterlassen auch bei Angehörigen Spuren.
                 Dauernde Alarmbereitschaft, Schreckhaftigkeit, Angst vor der
@@ -867,9 +866,9 @@ export default function UnterstuetzenKrise() {
 
             {/* Gemeinsame Krisenanalyse */}
             <article className="mt-10 space-y-3">
-              <h4 style={h4Style}>
+              <h3 style={h4Style}>
                 Gemeinsame Krisenanalyse (wenn beide bereit sind)
-              </h4>
+              </h3>
               <p style={bodyStyle}>
                 Nicht direkt nach der Krise – aber in den nächsten Tagen, in
                 einem ruhigen Moment, kann ein kurzes Gespräch helfen. Nicht als
@@ -895,7 +894,7 @@ export default function UnterstuetzenKrise() {
 
             {/* Vertrauenswiederaufbau */}
             <article className="mt-10 space-y-3">
-              <h4 style={h4Style}>Vertrauenswiederaufbau – realistisch</h4>
+              <h3 style={h4Style}>Vertrauenswiederaufbau – realistisch</h3>
               <p style={bodyStyle}>
                 Vertrauen baut sich nicht durch ein Gespräch wieder auf –
                 sondern durch{" "}
@@ -913,7 +912,7 @@ export default function UnterstuetzenKrise() {
 
             {/* Tag-für-Tag (Phasen-Tints bleiben dezent) */}
             <article className="mt-10">
-              <h4 style={h4Style}>Erste Woche nach der Krise – Tag für Tag</h4>
+              <h3 style={h4Style}>Erste Woche nach der Krise – Tag für Tag</h3>
               <div className="mt-4 space-y-3">
                 {tagFuerTag.map(phase => (
                   <div
@@ -948,7 +947,7 @@ export default function UnterstuetzenKrise() {
 
             {/* Früherkennung */}
             <article className="mt-10 space-y-3">
-              <h4 style={h4Style}>Früherkennung trainieren</h4>
+              <h3 style={h4Style}>Früherkennung trainieren</h3>
               <p style={bodyStyle}>
                 Jede überstandene Krise ist eine Lernchance für die nächste.
                 Nicht um sie zu erzwingen, sondern um früher zu erkennen, wann
@@ -977,9 +976,9 @@ export default function UnterstuetzenKrise() {
               className="mt-10 border border-amber-300/60 border-l-4 bg-amber-50/40 p-5"
               style={{ borderColor: "#d97706" }}
             >
-              <h4 style={{ ...h4Style, color: "#92400e" }}>
+              <h3 style={{ ...h4Style, color: "#92400e" }}>
                 Warnsignale: wenn die Nachphase nicht besser wird
-              </h4>
+              </h3>
               <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
                 <li>
                   Die betroffene Person zieht sich weiter zurück oder eskaliert

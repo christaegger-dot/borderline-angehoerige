@@ -1,8 +1,7 @@
 import {
   DisplayHeading,
+  EditorialCallout,
   EditorialLayout,
-  EditorialProse,
-  EditorialSectionBlock,
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
@@ -45,20 +44,15 @@ export default function SelbsttestPage() {
         </div>
 
         {/* ── Hinweis ── */}
-        <EditorialSectionBlock rule>
-          <EditorialProse>
-            <p>
-              Dieser Test ersetzt keine professionelle Beratung. Er dient
-              lediglich als Orientierungshilfe, um Ihnen den Einstieg in unsere
-              Inhalte zu erleichtern. Bei akuten Krisen wenden Sie sich bitte an
-              die{" "}
-              <AppLink href="/soforthilfe" className="editorial-link">
-                Notfallressourcen
-              </AppLink>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSectionBlock>
+        <EditorialCallout variant="hinweis" className="mt-12 md:mt-16">
+          Dieser Test ersetzt keine professionelle Beratung. Er dient lediglich
+          als Orientierungshilfe, um Ihnen den Einstieg in unsere Inhalte zu
+          erleichtern. Bei akuten Krisen wenden Sie sich bitte an die{" "}
+          <AppLink href="/soforthilfe" className="editorial-link">
+            Notfallressourcen
+          </AppLink>
+          .
+        </EditorialCallout>
       </EditorialLayout>
     </Layout>
   );

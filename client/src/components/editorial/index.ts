@@ -23,3 +23,7 @@ export { EyebrowLabel } from "./EyebrowLabel";
 export { DisplayHeading } from "./DisplayHeading";
 export { Lede } from "./Lede";
 export { EditorialBody } from "./EditorialBody";
+export {
+  EditorialCallout,
+  type EditorialCalloutVariant,
+} from "./EditorialCallout";

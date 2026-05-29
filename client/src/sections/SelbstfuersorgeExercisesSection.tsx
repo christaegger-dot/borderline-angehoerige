@@ -224,11 +224,14 @@ function UebungAkkordeon({
 interface SelbstfuersorgeExercisesSectionProps {
   immediateDefaultOpen?: boolean;
   longTermDefaultOpen?: boolean;
+  /** Wenn false: «Sofort-Übungen» dauerhaft offen (akute Hilfe, kein Toggle). */
+  immediateCollapsible?: boolean;
 }
 
 export function SelbstfuersorgeExercisesSection({
   immediateDefaultOpen = false,
   longTermDefaultOpen = false,
+  immediateCollapsible = true,
 }: SelbstfuersorgeExercisesSectionProps) {
   const bodyStyle = {
     fontSize: "var(--text-sm)",
@@ -246,6 +249,7 @@ export function SelbstfuersorgeExercisesSection({
     <>
       <ContentSection
         variant="editorial"
+        collapsible={immediateCollapsible}
         title="Sofort-Übungen für akute Belastung"
         id="sofort-uebungen"
         defaultOpen={immediateDefaultOpen}

@@ -133,9 +133,9 @@ export default function Home() {
       </EditorialSection>
 
       <VisualOrientationGrid
-        maxItems={3}
-        title="Drei Bilder für den ersten Überblick."
-        intro="Nicht als Galerie, sondern als Einstieg: Was passiert innerlich, wann wird es akut, und warum hilft Beruhigung vor Klärung?"
+        ids={["validierungs-treppe", "vier-arten-grenzen", "sauerstoffmaske"]}
+        title="Drei Bilder für die nächsten Schritte."
+        intro="Nicht als Galerie, sondern als Einstieg: validieren ohne nachzugeben, Grenzen halten und die eigene Kraft schützen — je ein Bild pro Idee."
       />
 
       <EditorialSection variant="cream-deep" density="compact">

@@ -1,6 +1,10 @@
 import { Link } from "wouter";
 import ContentSection from "@/components/ContentSection";
-import { EditorialProse, EditorialPullQuote } from "@/components/editorial";
+import {
+  EditorialCallout,
+  EditorialProse,
+  EditorialPullQuote,
+} from "@/components/editorial";
 import {
   diagnosticOverviewItems,
   meaningForRelativesCards,
@@ -114,18 +118,16 @@ export function VerstehenDiagnosticSection() {
         ))}
       </ul>
 
-      <div
-        className="mt-6 border-t pt-5"
-        style={{ borderColor: "var(--rule-color)" }}
+      <EditorialCallout
+        variant="entlastung"
+        title="Ursachen sind nie monokausal"
+        className="mt-6"
       >
-        <h3 className="editorial-item-heading">Ursachen sind nie monokausal</h3>
-        <p className="editorial-small-copy mt-2">
-          Borderline entsteht nicht durch eine einzige Ursache, sondern im
-          Zusammenspiel biologischer Empfindlichkeit, Bindungs- und
-          Entwicklungserfahrungen sowie Belastungsfaktoren. Schuldzuweisungen an
-          Betroffene oder Angehörige greifen zu kurz und helfen niemandem.
-        </p>
-      </div>
+        Borderline entsteht nicht durch eine einzige Ursache, sondern im
+        Zusammenspiel biologischer Empfindlichkeit, Bindungs- und
+        Entwicklungserfahrungen sowie Belastungsfaktoren. Schuldzuweisungen an
+        Betroffene oder Angehörige greifen zu kurz und helfen niemandem.
+      </EditorialCallout>
 
       <p className="editorial-small-copy mt-6">
         Mehr zum Diagnostik-Prozess (wer stellt wie eine Diagnose, was sie für

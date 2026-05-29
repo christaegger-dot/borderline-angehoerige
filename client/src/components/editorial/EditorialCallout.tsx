@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import { Info, AlertTriangle } from "lucide-react";
+import { Info, AlertTriangle, Sprout } from "lucide-react";
 
-export type EditorialCalloutVariant = "hinweis" | "achtung";
+export type EditorialCalloutVariant = "hinweis" | "achtung" | "entlastung";
 
 interface EditorialCalloutProps {
   /**
@@ -11,6 +11,8 @@ interface EditorialCalloutProps {
    * - `achtung`: warm abgesetzter Terrakotta-Block — gedämpfte Fortsetzung der
    *   Soforthilfe-Ampel, damit Dringlichkeit innerhalb einer Seite erkennbar
    *   wird, ohne die Ruhe zu brechen.
+   * - `entlastung`: ruhiger Salbei-Block für entlastende/beruhigende Aussagen
+   *   (z.B. «Sie tragen keine Schuld»).
    */
   variant?: EditorialCalloutVariant;
   /** Sichtbares Label oben. Default je nach Variante («Hinweis» / «Achtung»). */
@@ -28,8 +30,9 @@ interface VariantStyle {
 }
 
 // Kontraste auf der jeweiligen Surface mit axe verifiziert (WCAG AA):
-// hinweis  – Label #3f5a4e auf #ebe2cf, Body --fg-primary auf #ebe2cf
-// achtung  – Label #8a3f1d auf #f7e7dd, Body --fg-primary auf #f7e7dd
+// hinweis    – Label #3f5a4e auf #ebe2cf, Body --fg-primary auf #ebe2cf
+// achtung    – Label #8a3f1d auf #f7e7dd, Body --fg-primary auf #f7e7dd
+// entlastung – Label #3f5a4e auf #dde3d4, Body --fg-primary auf #dde3d4
 const VARIANTS: Record<EditorialCalloutVariant, VariantStyle> = {
   hinweis: {
     label: "Hinweis",
@@ -44,6 +47,13 @@ const VARIANTS: Record<EditorialCalloutVariant, VariantStyle> = {
     rule: "#c67a5c",
     labelColor: "#8a3f1d",
     Icon: AlertTriangle,
+  },
+  entlastung: {
+    label: "Entlastung",
+    surface: "var(--bg-sage-wash)",
+    rule: "#476358",
+    labelColor: "#3f5a4e",
+    Icon: Sprout,
   },
 };
 

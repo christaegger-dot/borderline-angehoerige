@@ -16,27 +16,6 @@ const FACHSTELLE = INFO.find(k => k.id === "INFO_FACHSTELLE");
 const EMAIL_ANGEHOERIGEN = EMAILS.find(e => e.id === "EMAIL_ANGEHOERIGEN");
 const ADRESSE_PUK = ADRESSEN.find(a => a.id === "ADRESSE_PUK");
 
-const HERO_INDEX = [
-  {
-    label: "Akut",
-    title: "Soforthilfe",
-    text: "Wenn Gefahr, Suiziddruck oder Gewalt im Raum steht.",
-    href: "/soforthilfe",
-  },
-  {
-    label: "Einordnen",
-    title: "Verstehen",
-    text: "Wenn Sie erst wissen möchten, was gerade passiert.",
-    href: "/verstehen",
-  },
-  {
-    label: "Kraft",
-    title: "Selbstfürsorge",
-    text: "Wenn Sie merken, dass Ihre eigene Kraft aufgebraucht ist.",
-    href: "/selbstfuersorge",
-  },
-];
-
 const PATHWAYS = [
   {
     kicker: "Gefahr oder Krise",
@@ -113,7 +92,7 @@ export default function Home() {
           </p>
         </EditorialSection.Body>
         <EditorialSection.Aside>
-          <StartIndex />
+          <CrisisQuickAccess />
         </EditorialSection.Aside>
       </EditorialSection>
 
@@ -224,70 +203,55 @@ function HomeMarginLabel({
   );
 }
 
-function StartIndex() {
+function CrisisQuickAccess() {
   return (
-    <nav
-      aria-label="Schneller Einstieg"
-      className="border-y"
-      style={{ borderColor: "var(--rule-color)" }}
+    <aside
+      aria-label="Wenn es akut ist"
+      className="border p-6"
+      style={{
+        borderColor: "var(--rule-color-strong)",
+        borderRadius: "0.25rem",
+        background: "var(--bg-primary)",
+      }}
     >
       <p
-        className="py-3 text-xs font-medium uppercase"
+        className="text-[11px] font-medium uppercase"
         style={{
           color: "var(--accent-label)",
           letterSpacing: "var(--tracking-caps)",
+          marginBottom: "var(--space-3)",
         }}
       >
-        Beginnen Sie hier
+        Wenn es akut ist
       </p>
-      <ol className="divide-y" style={{ borderColor: "var(--rule-color)" }}>
-        {HERO_INDEX.map((item, index) => (
-          <li key={item.href}>
-            <AppLink
-              href={item.href}
-              className="group grid grid-cols-[2.5rem_1fr] gap-4 py-5 no-underline"
-            >
-              <span
-                aria-hidden="true"
-                className="font-display text-2xl"
-                style={{ color: "var(--fg-tertiary)" }}
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span>
-                <span
-                  className="block text-xs font-medium uppercase"
-                  style={{
-                    color: "var(--fg-tertiary)",
-                    letterSpacing: "0.08em",
-                  }}
-                >
-                  {item.label}
-                </span>
-                <span
-                  className="mt-1 block font-display text-[1.35rem] transition-colors group-hover:text-[color:var(--accent-primary)]"
-                  style={{
-                    color: "var(--fg-primary)",
-                    lineHeight: "var(--lh-snug)",
-                  }}
-                >
-                  {item.title}
-                </span>
-                <span
-                  className="mt-2 block text-sm"
-                  style={{
-                    color: "var(--fg-secondary)",
-                    lineHeight: "var(--lh-snug)",
-                  }}
-                >
-                  {item.text}
-                </span>
-              </span>
-            </AppLink>
-          </li>
-        ))}
-      </ol>
-    </nav>
+      <p
+        className="font-display"
+        style={{
+          fontSize: "var(--text-md)",
+          color: "var(--fg-primary)",
+          fontWeight: 500,
+          lineHeight: 1.4,
+        }}
+      >
+        Bei Gefahr, Suiziddruck oder Gewalt zählt der direkte Weg.
+      </p>
+      <p
+        className="mt-3"
+        style={{
+          fontSize: "var(--text-sm)",
+          color: "var(--fg-secondary)",
+          lineHeight: "var(--lh-relaxed)",
+        }}
+      >
+        Notfallnummern und psychiatrische Krisenstellen ohne Umwege.
+      </p>
+      <AppLink
+        href="/soforthilfe"
+        className="editorial-link mt-4 inline-block text-sm font-medium"
+      >
+        Soforthilfe öffnen
+      </AppLink>
+    </aside>
   );
 }
 

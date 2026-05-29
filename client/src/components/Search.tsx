@@ -71,6 +71,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const dialogRef = useFocusTrap(isOpen);
+  const triggerRef = useRef<HTMLElement | null>(null);
   const focusTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const debounceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const deferredQuery = useDeferredValue(query);
@@ -107,6 +108,21 @@ export default function Search({ isOpen, onClose }: SearchProps) {
       cancelled = true;
     };
   }, [isOpen]);
+
+  // WCAG 2.4.3: Fokus beim Schliessen auf das auslösende Element zurückgeben.
+  // Search wird nur bei isOpen gemountet (siehe Layout), darum deckt
+  // capture-beim-Mount + restore-beim-Unmount alle Schliesswege ab (Escape,
+  // Schliessen-Button, Backdrop-Klick, Treffer-Auswahl). Der Fokus-Trap
+  // (useFocusTrap) bleibt davon unberührt.
+  useEffect(() => {
+    triggerRef.current = document.activeElement as HTMLElement | null;
+    return () => {
+      const trigger = triggerRef.current;
+      if (trigger instanceof HTMLElement) {
+        trigger.focus();
+      }
+    };
+  }, []);
 
   // Focus input when opened
   useEffect(() => {

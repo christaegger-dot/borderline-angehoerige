@@ -368,10 +368,9 @@ export default function UnterstuetzenTherapie() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Angehörige in der Therapie wirklich tun können"
             id="rolle"
-            defaultOpen={true}
-            preview="Hilfreiche Therapiebegleitung bedeutet meist: ermutigen, strukturieren, entlasten und realistisch bleiben, ohne selbst mitzubehandeln."
           >
             <EditorialProse>
               <p>
@@ -387,9 +386,9 @@ export default function UnterstuetzenTherapie() {
           {/* ── ContentSection 2: zusammenarbeit ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Mit dem Behandlungssystem zusammenarbeiten"
             id="zusammenarbeit"
-            preview="Sie sind nicht Teil der Therapie – und das ist oft richtig so. Aber es gibt konstruktive Wege, mit dem klinischen Team in Kontakt zu treten."
           >
             <EditorialProse>
               <p>
@@ -402,7 +401,7 @@ export default function UnterstuetzenTherapie() {
             <div className="mt-8 space-y-10">
               {zusammenarbeitSzenarien.map(szenario => (
                 <article key={szenario.titel} className="space-y-3">
-                  <h4 style={h4Style}>{szenario.titel}</h4>
+                  <h3 style={h4Style}>{szenario.titel}</h3>
                   <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
                     {szenario.inhalt.map(p => (
                       <li key={p}>{p}</li>
@@ -415,9 +414,9 @@ export default function UnterstuetzenTherapie() {
               className="mt-10 border-l-4 pl-5"
               style={{ borderColor: "#d97706" }}
             >
-              <h4 style={{ ...h4Style, color: "#92400e" }}>
+              <h3 style={{ ...h4Style, color: "#92400e" }}>
                 Warnsignale für eine problematische Therapiesituation
-              </h4>
+              </h3>
               <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
                 <li>
                   Therapeut kritisiert Angehörige offen vor Patient («Sie sind
@@ -468,14 +467,14 @@ export default function UnterstuetzenTherapie() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Therapieformen knapp eingeordnet"
             id="therapieformen"
-            preview="DBT, MBT, Schematherapie und TFP sind gut erforschte Behandlungsansätze. Für Angehörige ist oft weniger das Label als die Passung im Alltag entscheidend."
           >
             <div className="mt-2 space-y-6">
               {therapieformen.map(item => (
                 <article key={item.name} className="space-y-2">
-                  <h4 style={h4Style}>{item.name}</h4>
+                  <h3 style={h4Style}>{item.name}</h3>
                   <p style={bodyStyle}>{item.description}</p>
                 </article>
               ))}
@@ -549,9 +548,9 @@ export default function UnterstuetzenTherapie() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Wie Sie den Therapieprozess unterstützen können"
             id="unterstuetzen"
-            preview="Hilfreich ist meist sanfte Unterstützung ohne Druck: Orientierung geben, Veränderungen wahrnehmen, eigene Erwartungen regulieren."
           >
             <EditorialProse>
               <p>Hilfreich sind oft kleine, konkrete Schritte:</p>
@@ -643,9 +642,9 @@ export default function UnterstuetzenTherapie() {
           {/* ── ContentSection 6: rueckschlaege ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Rückschläge und Unterbrüche"
             id="rueckschlaege"
-            preview="Therapie verläuft selten gradlinig. Abbrüche, Krisen oder Phasen von Widerstand bedeuten nicht automatisch, dass alles umsonst war."
           >
             <EditorialProse>
               <p>
@@ -688,9 +687,9 @@ export default function UnterstuetzenTherapie() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Ihre Rolle ausdrücklich nicht ist"
             id="nicht-ihre-rolle"
-            preview="Gerade engagierte Angehörige geraten leicht in eine Nebenrolle als Coach, Therapeut oder Krisenmanager. Das ist verständlich, aber selten tragfähig."
           >
             <EditorialProse>
               <ul className="ml-6 list-disc space-y-2">
@@ -751,7 +750,7 @@ export default function UnterstuetzenTherapie() {
           </EditorialProse>
 
           <article className="mt-10 space-y-2">
-            <h4 style={h4Style}>HYPE Züri</h4>
+            <h3 style={h4Style}>HYPE Züri</h3>
             <p style={bodyStyle}>
               Frühinterventionsangebot für Jugendliche ab 13 Jahren mit
               Verdacht, Risiko oder bereits diagnostizierter Borderline-Störung.
@@ -773,7 +772,7 @@ export default function UnterstuetzenTherapie() {
           </article>
 
           <article className="mt-8 space-y-2">
-            <h4 style={h4Style}>PUK Zürich – Erwachsene</h4>
+            <h3 style={h4Style}>PUK Zürich – Erwachsene</h3>
             <p style={bodyStyle}>
               Spezialisierte DBT-orientierte Behandlungsangebote für Erwachsene.
             </p>
@@ -795,7 +794,7 @@ export default function UnterstuetzenTherapie() {
 
           <div className="mt-8 grid gap-8 sm:grid-cols-2">
             <article className="space-y-2">
-              <h4 style={h4Style}>IPW Winterthur</h4>
+              <h3 style={h4Style}>IPW Winterthur</h3>
               <p style={bodyStyle}>
                 Erwachsenenpsychiatrisches Angebot in Winterthur mit regionaler
                 Anbindung.
@@ -807,7 +806,7 @@ export default function UnterstuetzenTherapie() {
               </p>
             </article>
             <article className="space-y-2">
-              <h4 style={h4Style}>Clienia Schlössli</h4>
+              <h3 style={h4Style}>Clienia Schlössli</h3>
               <p style={bodyStyle}>
                 Weiterführendes stationäres Emotionsregulationsprogramm.
               </p>
@@ -823,7 +822,7 @@ export default function UnterstuetzenTherapie() {
               </p>
             </article>
             <article className="space-y-2">
-              <h4 style={h4Style}>DBT-Therapeutensuche</h4>
+              <h3 style={h4Style}>DBT-Therapeutensuche</h3>
               <p style={bodyStyle}>
                 Suchweg für zertifizierte DBT-Therapeutinnen und -Therapeuten.
               </p>
@@ -844,7 +843,7 @@ export default function UnterstuetzenTherapie() {
             className="mt-10 border-t pt-6"
             style={{ borderColor: "var(--rule-color)" }}
           >
-            <h4 style={h4Style}>Notfall-Nummern PUK Zürich (24/7)</h4>
+            <h3 style={h4Style}>Notfall-Nummern PUK Zürich (24/7)</h3>
             <ul
               className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-3"
               style={bodyStyle}

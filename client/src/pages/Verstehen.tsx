@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
+  EditorialFigure,
   EditorialProse,
   EditorialSection,
   EyebrowLabel,
@@ -360,6 +361,13 @@ export default function Verstehen() {
                 innerlich ist es nicht selten hochverletzlich.
               </p>
             </EditorialProse>
+            <EditorialFigure
+              src="/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp"
+              alt="Der Eisberg – Wut ist oft die Spitze"
+              width={600}
+              height={848}
+              caption="Der Eisberg: Wut ist oft nur die sichtbare Spitze — darunter liegen Scham, Angst, Ohnmacht und Überflutung."
+            />
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
                 <h3
@@ -420,6 +428,13 @@ export default function Verstehen() {
             title="Wenn Denken unter Stress enger wird"
             id="stressmodus"
           >
+            <EditorialFigure
+              src="/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.webp"
+              alt="Alarm-Modus vs. Denk-Modus"
+              width={600}
+              height={848}
+              caption="Alarm-Modus vs. Denk-Modus: Unter starker Anspannung übernimmt das Alarmsystem — Beruhigung kommt vor Klärung."
+            />
             <EditorialProse>
               <p>
                 Unter hoher emotionaler Überflutung verengt sich das Erleben

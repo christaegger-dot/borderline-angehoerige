@@ -179,10 +179,9 @@ export default function Begleiterkrankungen() {
         {/* ── 1: Was Komorbidität bedeutet ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Was Komorbidität bei Borderline bedeutet"
           id="was-ist-komorbiditaet"
-          defaultOpen={true}
-          preview="Komorbidität heisst: mehrere Erkrankungen, die gleichzeitig oder nacheinander auftreten. Bei Borderline ist das die Regel, nicht die Ausnahme."
         >
           <EditorialProse>
             <p>
@@ -213,9 +212,9 @@ export default function Begleiterkrankungen() {
         {/* ── 2: Depression bei Borderline ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Depression bei Borderline — die häufigste Komorbidität"
           id="depression"
-          preview="Depression ist die mit Abstand häufigste Begleiterkrankung. Borderline-Stimmungsschwankungen und depressive Episoden überlagern sich oft — die Differenzierung ist klinische Aufgabe."
         >
           <EditorialProse>
             <p>
@@ -282,9 +281,9 @@ export default function Begleiterkrankungen() {
         {/* ── 3: Suizidrisiko ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Erhöhtes Suizidrisiko bei depressiver Komorbidität"
           id="suizidrisiko"
-          preview="Eine schwere depressive Episode zusätzlich zur Borderline-Erkrankung erhöht das Suizidrisiko. Bei Hinweisen auf konkrete Suizidalität gilt: nicht abwarten, sondern Soforthilfe nutzen."
         >
           <EditorialProse>
             <p>
@@ -337,9 +336,9 @@ export default function Begleiterkrankungen() {
         {/* ── 4: Was Sie als Angehörige wissen sollten ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Was Sie als Angehörige wissen sollten"
           id="angehoerige"
-          preview="Validieren, ohne diagnostisch zu werden. Was bei längerem Rückzug zu tun ist. Warum die eigene Erschöpfung in depressiven Phasen oft besonders gross wird."
         >
           <EditorialProse>
             <p>
@@ -392,9 +391,9 @@ export default function Begleiterkrankungen() {
         {/* ── 5: Andere häufige Komorbiditäten ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Andere häufige Komorbiditäten — knapp"
           id="andere"
-          preview="Angststörungen, PTBS, Essstörungen, Substanzgebrauchsstörungen — die wichtigsten weiteren Erkrankungen, die mit Borderline auftreten können."
         >
           <EditorialProse>
             <p>
@@ -407,7 +406,7 @@ export default function Begleiterkrankungen() {
           <div className="mt-6 space-y-6">
             {andereKomorbiditaeten.map(item => (
               <article key={item.title} className="space-y-2">
-                <h4 style={h4Style}>{item.title}</h4>
+                <h3 style={h4Style}>{item.title}</h3>
                 <p style={bodyStyle}>{item.desc}</p>
               </article>
             ))}
@@ -417,9 +416,9 @@ export default function Begleiterkrankungen() {
         {/* ── 6: Was bedeutet das für die Behandlung ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Was bedeutet das für die Behandlung?"
           id="behandlung"
-          preview="Komorbide Erkrankungen werden in der Regel mitbehandelt, nicht ignoriert. Reine «Borderline-Therapie» gibt es selten."
         >
           <EditorialProse>
             <p>
@@ -484,9 +483,9 @@ export default function Begleiterkrankungen() {
         {/* ── 7: Auch bei Ihnen (Mini-Sektion) ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Wenn die Belastung gross wird — auch bei Ihnen"
           id="auch-bei-ihnen"
-          preview="Komorbidität auf Seiten der betroffenen Person erhöht oft auch die Belastung der Angehörigen. Eigene Beratung ist legitim."
         >
           <EditorialProse>
             <p>

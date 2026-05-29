@@ -445,10 +445,9 @@ export default function UnterstuetzenAlltag() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Der Alltag ist oft nicht ruhig, sondern vorspannt"
             id="alltagsspannung"
-            defaultOpen={true}
-            preview="Viele Angehörige leben nicht in dauernder Krise, sondern in dauernder Vorahnung von Krise. Gerade das kann zermürbend sein."
           >
             <EditorialProse>
               <p>
@@ -598,14 +597,14 @@ export default function UnterstuetzenAlltag() {
           {/* ── ContentSection 2: was-hilft ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was im Alltag oft wirklich hilft"
             id="was-hilft"
-            preview="Nicht grosse Gesten, sondern Klarheit, Verlässlichkeit, ruhige Präsenz und begrenzte Verfügbarkeit tragen häufig am meisten."
           >
             <div className="mt-2 space-y-10">
               {wasHilft.map(item => (
                 <article key={item.title} className="space-y-3">
-                  <h4 style={h4Style}>{item.title}</h4>
+                  <h3 style={h4Style}>{item.title}</h3>
                   <p style={bodyStyle}>{item.description}</p>
                   <p style={exampleStyle}>{item.example}</p>
                   <div
@@ -686,9 +685,9 @@ export default function UnterstuetzenAlltag() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Nach Konflikten und Rückzug"
             id="rueckzug"
-            preview="Viele Beziehungen leiden weniger nur an Streit als an dem, was danach folgt: Schweigen, Unsicherheit, Funkstille oder ein vorsichtiger Neustart."
           >
             <EditorialProse>
               <p>
@@ -700,7 +699,7 @@ export default function UnterstuetzenAlltag() {
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4 style={h4Style}>Hilfreich kann sein</h4>
+                <h3 style={h4Style}>Hilfreich kann sein</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>ein kurzes, klares Kontaktangebot</li>
                   <li>nicht drängen, aber auch nicht strafen</li>
@@ -711,7 +710,7 @@ export default function UnterstuetzenAlltag() {
                 </ul>
               </div>
               <div>
-                <h4 style={h4Style}>Weniger hilfreich ist oft</h4>
+                <h3 style={h4Style}>Weniger hilfreich ist oft</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>mehrfach nachfassen aus Panik</li>
                   <li>Gegenrückzug aus Verletzung</li>
@@ -732,7 +731,7 @@ export default function UnterstuetzenAlltag() {
             <ol className="mt-2 ml-5 list-decimal space-y-4">
               {beziehungsAchtsamkeitSchritte.map(item => (
                 <li key={item.title}>
-                  <h4 style={h4Style}>{item.title}</h4>
+                  <h3 style={h4Style}>{item.title}</h3>
                   <p className="mt-1" style={bodyStyle}>
                     {item.description}
                   </p>
@@ -759,7 +758,7 @@ export default function UnterstuetzenAlltag() {
             <ul className="mt-6 space-y-4">
               {positiveInselnItems.map(item => (
                 <li key={item.title}>
-                  <h4 style={h4Style}>{item.title}</h4>
+                  <h3 style={h4Style}>{item.title}</h3>
                   <p className="mt-1" style={bodyStyle}>
                     {item.examples}
                   </p>
@@ -792,13 +791,13 @@ export default function UnterstuetzenAlltag() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Sie konkret tun können"
             id="konkrete-schritte"
-            preview="Praktische Alltagshilfen sind oft einfach, aber nicht leicht: klar bleiben, Rückmeldungen dosieren, Fortschritte benennen und nicht alles übernehmen."
           >
             <div className="mt-2 space-y-10">
               <article className="space-y-3">
-                <h4 style={h4Style}>Fortschritte benennen</h4>
+                <h3 style={h4Style}>Fortschritte benennen</h3>
                 <p style={bodyStyle}>
                   Nicht überloben, aber wahrnehmen, wenn etwas weniger
                   zerstörerisch, etwas bewusster oder etwas klarer gelungen ist.
@@ -810,7 +809,7 @@ export default function UnterstuetzenAlltag() {
               </article>
 
               <article className="space-y-3">
-                <h4 style={h4Style}>Fragen statt übernehmen</h4>
+                <h3 style={h4Style}>Fragen statt übernehmen</h3>
                 <p style={bodyStyle}>
                   Alltagshilfe wird tragfähiger, wenn Sie nicht alles lösen,
                   sondern Beteiligung und Eigenanteil offenlassen.
@@ -823,7 +822,7 @@ export default function UnterstuetzenAlltag() {
               </article>
 
               <article className="space-y-3">
-                <h4 style={h4Style}>Vorhersehbar bleiben</h4>
+                <h3 style={h4Style}>Vorhersehbar bleiben</h3>
                 <ul className="ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>Änderungen möglichst früh ankündigen</li>
                   <li>Versprechen halten oder offen revidieren</li>
@@ -858,9 +857,9 @@ export default function UnterstuetzenAlltag() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Wenn Impulsivität ausbricht"
             id="impulsivitaet"
-            preview="Plötzliche Entscheidungen, Ausgaben, Risikoverhalten – dieser Alltag ist anders als Depression. Wie Sie reagieren, ohne zu moralisieren, und Ihre Grenzen dennoch halten."
           >
             <EditorialProse>
               <p>
@@ -884,7 +883,7 @@ export default function UnterstuetzenAlltag() {
             </EditorialProse>
 
             <div className="mt-8">
-              <h4 style={h4Style}>Zeichen einer impulsiven Phase erkennen</h4>
+              <h3 style={h4Style}>Zeichen einer impulsiven Phase erkennen</h3>
               <ul className="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2">
                 {impulsivitaetZeichen.map(item => (
                   <li key={item.label}>
@@ -911,7 +910,7 @@ export default function UnterstuetzenAlltag() {
             </div>
 
             <div className="mt-8">
-              <h4 style={h4Style}>Drei Szenarien — was hilft, was nicht</h4>
+              <h3 style={h4Style}>Drei Szenarien — was hilft, was nicht</h3>
               <div className="mt-4 space-y-10">
                 {impulsivitaetSzenarien.map(szenario => (
                   <article key={szenario.titel} className="space-y-4">
@@ -974,7 +973,7 @@ export default function UnterstuetzenAlltag() {
             </div>
 
             <div className="mt-10">
-              <h4 style={h4Style}>Nach der impulsiven Phase: Scham und Reue</h4>
+              <h3 style={h4Style}>Nach der impulsiven Phase: Scham und Reue</h3>
               <p className="mt-2" style={bodyStyle}>
                 Nach impulsiven Phasen folgt oft massive <strong>Scham</strong>{" "}
                 – manchmal Rückzug, manchmal übermässige Entschuldigungen.
@@ -989,9 +988,9 @@ export default function UnterstuetzenAlltag() {
           {/* ── ContentSection 8: grenzen ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Grenzen der Alltagsunterstützung"
             id="grenzen"
-            preview="Auch im Alltag gibt es Grenzen. Sie müssen nicht perfekt sein, aber Sie sollten Ihre Erschöpfung und Ihre roten Linien ernst nehmen."
           >
             <EditorialProse>
               <p>

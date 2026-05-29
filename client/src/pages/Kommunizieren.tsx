@@ -255,10 +255,9 @@ export default function Kommunizieren() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Kommunikation beginnt nicht mit Technik"
             id="haltung"
-            defaultOpen={true}
-            preview="Viele Gespräche scheitern nicht nur am Wortlaut, sondern daran, dass beide Seiten bereits im Alarmzustand, in Rechtfertigung oder in Kränkung sprechen."
           >
             <EditorialProse>
               <p>
@@ -279,10 +278,9 @@ export default function Kommunizieren() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Validierung: der wichtigste Ausgangspunkt"
             id="validierung"
-            defaultOpen={true}
-            preview="Validierung heisst nicht zustimmen. Sie signalisiert: Ich nehme dein Erleben ernst, auch wenn ich nicht jede Sichtweise teile."
           >
             <EditorialProse>
               <p>
@@ -309,14 +307,13 @@ export default function Kommunizieren() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Timing ist oft wichtiger als der perfekte Satz"
             id="timing"
-            defaultOpen={true}
-            preview="Viele Gespräche scheitern daran, dass Inhalte zu früh geklärt werden sollen, während Anspannung, Scham oder Wut noch den ganzen Raum füllen."
           >
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4
+                <h3
                   className="mb-3"
                   style={{
                     fontSize: "var(--text-md)",
@@ -325,7 +322,7 @@ export default function Kommunizieren() {
                   }}
                 >
                   Eher jetzt
-                </h4>
+                </h3>
                 <ul
                   className="space-y-2"
                   style={{
@@ -341,7 +338,7 @@ export default function Kommunizieren() {
                 </ul>
               </div>
               <div>
-                <h4
+                <h3
                   className="mb-3"
                   style={{
                     fontSize: "var(--text-md)",
@@ -350,7 +347,7 @@ export default function Kommunizieren() {
                   }}
                 >
                   Eher später
-                </h4>
+                </h3>
                 <ul
                   className="space-y-2"
                   style={{
@@ -368,7 +365,7 @@ export default function Kommunizieren() {
             </div>
           </ContentSection>
 
-          <KommunizierenEscalationSection defaultOpen />
+          <KommunizierenEscalationSection collapsible={false} />
 
           <KommunizierenSituationsSection />
 

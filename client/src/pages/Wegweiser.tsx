@@ -1,5 +1,6 @@
 import {
   DisplayHeading,
+  EditorialCallout,
   EditorialLayout,
   EyebrowLabel,
   Lede,
@@ -40,17 +41,11 @@ export default function Wegweiser() {
             führt Sie Schritt für Schritt – wählen Sie einfach die Situation,
             die am ehesten zutrifft.
           </Lede>
-          <p
-            className="mt-4"
-            style={{
-              fontSize: "var(--text-sm)",
-              lineHeight: "var(--lh-relaxed)",
-              color: "var(--fg-tertiary)",
-            }}
+          <EditorialCallout
+            variant="achtung"
+            title="Bei akuter Lebensgefahr"
+            className="mt-6"
           >
-            <strong style={{ color: "var(--fg-primary)" }}>
-              Bei akuter Lebensgefahr:
-            </strong>{" "}
             Rufen Sie sofort{" "}
             <a href={`tel:${rot144.tel}`} className="editorial-link">
               {rot144.nummer}
@@ -60,7 +55,7 @@ export default function Wegweiser() {
               alle Notfallnummern
             </AppLink>
             .
-          </p>
+          </EditorialCallout>
         </header>
 
         {/* ── Hairline-Trenner Editorial-Hero → funktionales Tool ── */}

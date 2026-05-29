@@ -155,16 +155,16 @@ export function TableOfContents() {
           return;
         }
 
-        // Prüfen ob das Heading innerhalb einer ContentSection liegt
-        const contentSectionWrapper = el.closest(
-          "[data-content-section], [id]:not(h2):not(h3)"
-        );
-        const isInsideContentSection =
-          contentSectionWrapper?.querySelector("[aria-expanded]") !== null;
+        // Jede ContentSection (offen wie Akkordeon) ergibt genau EINEN
+        // TOC-Eintrag: Unter-Überschriften (h3) werden über die Wrapper-id
+        // dedupliziert. Hält die Abschnitts-Navigation schlank — auch nachdem
+        // Kernabschnitte zu offener Prosa wurden (collapsible={false}, also
+        // kein aria-expanded mehr, das die frühere Logik zum Deduplizieren
+        // brauchte).
+        const contentSectionWrapper = el.closest("[data-content-section]");
 
         let id: string;
         if (
-          isInsideContentSection &&
           contentSectionWrapper?.id &&
           !contentSectionWrapper.id.startsWith("heading-")
         ) {

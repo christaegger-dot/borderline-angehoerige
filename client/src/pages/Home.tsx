@@ -16,14 +16,11 @@ const FACHSTELLE = INFO.find(k => k.id === "INFO_FACHSTELLE");
 const EMAIL_ANGEHOERIGEN = EMAILS.find(e => e.id === "EMAIL_ANGEHOERIGEN");
 const ADRESSE_PUK = ADRESSEN.find(a => a.id === "ADRESSE_PUK");
 
+// Krise/Soforthilfe ist bewusst NICHT als Triage-Karte hier: die akute Lage
+// läuft prominent über den Krisen-Aside im Hero und den persistenten roten
+// Header-Button. So bleibt diese Triage auf die nicht-akuten Situationen
+// fokussiert (verstehen / Worte / am Limit) statt Soforthilfe zu doppeln.
 const PATHWAYS = [
-  {
-    kicker: "Gefahr oder Krise",
-    title: "Schnell den richtigen Kontakt finden",
-    body: "Notfallnummern, psychiatrische Krisenstellen und Gewalt-/Opferhilfe ohne Umwege.",
-    href: "/soforthilfe",
-    link: "Soforthilfe öffnen",
-  },
   {
     kicker: "Ich will verstehen",
     title: "Muster erkennen, ohne zu entschuldigen",

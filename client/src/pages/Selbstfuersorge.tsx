@@ -425,10 +425,9 @@ export default function Selbstfuersorge() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Warum Selbstfürsorge so wichtig ist"
             id="selbstfuersorge-warum-wichtig"
-            defaultOpen={true}
-            preview="Angehörige tragen eine besondere Last. Selbstfürsorge ist keine Selbstsucht, sondern Selbsterhaltung."
           >
             <EditorialProse>
               <p>
@@ -476,7 +475,7 @@ export default function Selbstfuersorge() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <SelbstfuersorgeSignalsSection defaultOpen />
+          <SelbstfuersorgeSignalsSection collapsible={false} />
           <SelbstfuersorgeCheck />
         </EditorialSection.Body>
       </EditorialSection>
@@ -504,13 +503,13 @@ export default function Selbstfuersorge() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <SelbstfuersorgeExercisesSection immediateDefaultOpen />
+          <SelbstfuersorgeExercisesSection immediateCollapsible={false} />
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Radikale Akzeptanz"
             id="radikale-akzeptanz"
-            preview="«Es ist, wie es ist.» – Dieses DBT-Konzept kann auch für Angehörige befreiend sein."
           >
             <div className="mt-2">
               <EditorialPullQuote cite="Dieser Satz kann befreiend sein.">
@@ -530,9 +529,9 @@ export default function Selbstfuersorge() {
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4 className="mb-2" style={h4Style}>
+                <h3 className="mb-2" style={h4Style}>
                   Was radikale Akzeptanz NICHT ist
-                </h4>
+                </h3>
                 <ul className="ml-5 list-disc space-y-1" style={bodyStyle}>
                   <li>Aufgeben</li>
                   <li>Gutheissen</li>
@@ -541,9 +540,9 @@ export default function Selbstfuersorge() {
                 </ul>
               </div>
               <div>
-                <h4 className="mb-2" style={h4Style}>
+                <h3 className="mb-2" style={h4Style}>
                   Was radikale Akzeptanz IST
-                </h4>
+                </h3>
                 <ul className="ml-5 list-disc space-y-1" style={bodyStyle}>
                   <li>Anerkennen, was Sie nicht ändern können</li>
                   <li>Energie sparen für das, was Sie beeinflussen können</li>
@@ -553,9 +552,9 @@ export default function Selbstfuersorge() {
               </div>
             </div>
             <div className="mt-8">
-              <h4 className="mb-3" style={h4Style}>
+              <h3 className="mb-3" style={h4Style}>
                 Übung: Radikale Akzeptanz praktizieren
-              </h4>
+              </h3>
               <ol className="ml-5 list-decimal space-y-2" style={bodyStyle}>
                 <li>Benennen Sie die Situation: «Es ist so, dass…»</li>
                 <li>
@@ -581,10 +580,9 @@ export default function Selbstfuersorge() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Geben Sie sich die Erlaubnis"
             id="erlaubnis"
-            defaultOpen={true}
-            preview="Als Angehöriger dürfen Sie auch mal wütend sein, Nein sagen und Ihre eigenen Bedürfnisse ernst nehmen."
           >
             <EditorialProse>
               <p>Als Angehöriger dürfen Sie:</p>
@@ -623,10 +621,9 @@ export default function Selbstfuersorge() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Beratung & Netzwerke"
             id="beratung-netzwerke"
-            defaultOpen={true}
-            preview="Sie müssen das nicht allein tragen – professionelle Beratung und Austausch mit anderen Angehörigen helfen."
           >
             <EditorialProse>
               <p>

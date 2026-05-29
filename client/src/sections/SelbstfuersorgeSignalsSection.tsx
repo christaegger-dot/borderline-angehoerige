@@ -3,14 +3,18 @@ import { warningSignalGroups } from "@/content/selbstfuersorge-page";
 
 interface SelbstfuersorgeSignalsSectionProps {
   defaultOpen?: boolean;
+  /** Wenn false: dauerhaft offene Prosa ohne Toggle (an ContentSection durchgereicht). */
+  collapsible?: boolean;
 }
 
 export function SelbstfuersorgeSignalsSection({
   defaultOpen = false,
+  collapsible = true,
 }: SelbstfuersorgeSignalsSectionProps) {
   return (
     <ContentSection
       variant="editorial"
+      collapsible={collapsible}
       title="Warnsignale für Überlastung"
       id="warnsignale"
       defaultOpen={defaultOpen}

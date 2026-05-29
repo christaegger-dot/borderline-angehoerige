@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
+  EditorialCallout,
   EditorialProse,
   EditorialSection,
   EyebrowLabel,
@@ -408,27 +409,12 @@ export default function UnterstuetzenKrise() {
               (Sage-Color für italic Body schafft visuelle Differenzierung
               zum normalen Body-Text, analog Wegweiser-Übergangs-Pattern in
               Group C body) */}
-          <div
-            className="border-t pt-5"
-            style={{
-              borderColor: "var(--rule-color)",
-              marginBottom: "var(--space-5)",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "var(--text-sm)",
-                lineHeight: "var(--lh-relaxed)",
-                color: "var(--accent-label)",
-                fontStyle: "italic",
-              }}
-            >
-              Diese Inhalte ersetzen keine professionelle Krisenberatung. Bei
-              akuter Gefahr direkt{" "}
-              <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
-              anrufen.
-            </p>
-          </div>
+          <EditorialCallout variant="hinweis">
+            Diese Inhalte ersetzen keine professionelle Krisenberatung. Bei
+            akuter Gefahr direkt{" "}
+            <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
+            anrufen.
+          </EditorialCallout>
           <KrisenampelVisualisierung />
         </EditorialSection.Body>
       </EditorialSection>

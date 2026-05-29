@@ -211,10 +211,9 @@ export default function Diagnostik() {
         {/* ── 1: Wer stellt eine Diagnose ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Wer stellt eine Borderline-Diagnose?"
           id="wer"
-          defaultOpen={true}
-          preview="Eine Borderline-Diagnose darf nicht jede Fachperson stellen. Hausärzt:innen können den Verdacht äussern und überweisen — die Diagnose selbst kommt von Spezialist:innen."
         >
           <EditorialProse>
             <p>
@@ -258,9 +257,9 @@ export default function Diagnostik() {
         {/* ── 2: Wie läuft Diagnostik ab ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Wie läuft eine Diagnostik ab?"
           id="wie"
-          preview="Eine Borderline-Abklärung ist mehr als ein Termin. Anamnese, strukturierte Interviews und Verlaufsbeobachtung greifen ineinander."
         >
           <EditorialProse>
             <p>
@@ -283,7 +282,7 @@ export default function Diagnostik() {
                   {index + 1}
                 </span>
                 <div>
-                  <h4 style={h4Style}>{item.title}</h4>
+                  <h3 style={h4Style}>{item.title}</h3>
                   <p className="mt-1" style={bodyStyle}>
                     {item.desc}
                   </p>
@@ -331,9 +330,9 @@ export default function Diagnostik() {
         {/* ── 3: Differenzialdiagnostik (kurz) ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Differenzialdiagnostik — kurz"
           id="differenzial"
-          preview="Bei einer Borderline-Abklärung werden auch andere Erkrankungen geprüft, die ähnliche Muster zeigen können."
         >
           <EditorialProse>
             <p>
@@ -363,9 +362,9 @@ export default function Diagnostik() {
         {/* ── 4: Bedeutung für Angehörige ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Was bedeutet die Diagnose für Sie als Angehörige?"
           id="bedeutung"
-          preview="Eine Diagnose ist kein Etikett, sondern eine Eintrittskarte zu evidenzbasierter Behandlung. Sie verändert oft das Verständnis — und sie hat Grenzen."
         >
           <EditorialProse>
             <p>
@@ -396,9 +395,9 @@ export default function Diagnostik() {
         {/* ── 5: Diagnose-Ablehnung ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Was, wenn die erkrankte Person die Diagnose ablehnt?"
           id="ablehnung"
-          preview="Diagnose-Ablehnung ist eine häufige Reaktion und kein Versagen. Was Angehörige nicht tun sollten — und was möglich ist."
         >
           <EditorialProse>
             <p>
@@ -410,7 +409,7 @@ export default function Diagnostik() {
           </EditorialProse>
           <div className="mt-6 grid gap-8 sm:grid-cols-2">
             <div>
-              <h4 style={h4Style}>Was nicht hilft</h4>
+              <h3 style={h4Style}>Was nicht hilft</h3>
               <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                 {ablehnungWasNicht.map(item => (
                   <li key={item}>{item}</li>
@@ -418,7 +417,7 @@ export default function Diagnostik() {
               </ul>
             </div>
             <div>
-              <h4 style={h4Style}>Was möglich ist</h4>
+              <h3 style={h4Style}>Was möglich ist</h3>
               <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                 {ablehnungWasMoeglich.map(item => (
                   <li key={item}>{item}</li>
@@ -484,9 +483,9 @@ export default function Diagnostik() {
         {/* ── 7: Vermutung ohne Diagnose ── */}
         <ContentSection
           variant="editorial"
+          collapsible={false}
           title="Was, wenn die Diagnose noch nicht gestellt ist, aber wir vermuten es?"
           id="vermutung"
-          preview="Wenn keine Diagnose vorliegt, aber Sie Borderline vermuten: drei mögliche erste Schritte."
         >
           <EditorialProse>
             <p>
@@ -503,7 +502,7 @@ export default function Diagnostik() {
           <div className="mt-6 space-y-6">
             {vermutungSchritte.map(item => (
               <article key={item.title} className="space-y-2">
-                <h4 style={h4Style}>{item.title}</h4>
+                <h3 style={h4Style}>{item.title}</h3>
                 <p style={bodyStyle}>{item.desc}</p>
               </article>
             ))}
@@ -569,9 +568,9 @@ export default function Diagnostik() {
 
           <div className="mt-8 space-y-8">
             <article className="space-y-2">
-              <h4 style={h4Style}>
+              <h3 style={h4Style}>
                 Psychiatrische Universitätsklinik Zürich (PUK)
-              </h4>
+              </h3>
               <p style={bodyStyle}>
                 <strong>Erwachsene (18+):</strong> Anmeldung über das
                 elektronische Anmeldeformular auf pukzh.ch oder die Zentrale.
@@ -601,7 +600,7 @@ export default function Diagnostik() {
             </article>
 
             <article className="space-y-2">
-              <h4 style={h4Style}>ipw — Integrierte Psychiatrie Winterthur</h4>
+              <h3 style={h4Style}>ipw — Integrierte Psychiatrie Winterthur</h3>
               <p style={bodyStyle}>
                 Ambulante und stationäre Behandlung von
                 Persönlichkeitsstörungen.
@@ -625,7 +624,7 @@ export default function Diagnostik() {
             </article>
 
             <article className="space-y-2">
-              <h4 style={h4Style}>Sanatorium Kilchberg</h4>
+              <h3 style={h4Style}>Sanatorium Kilchberg</h3>
               <p style={bodyStyle}>
                 Privatklinik für Psychiatrie und Psychotherapie am Zürichsee.
               </p>
@@ -648,7 +647,7 @@ export default function Diagnostik() {
             </article>
 
             <article className="space-y-2">
-              <h4 style={h4Style}>Clienia Schlössli (Oetwil am See)</h4>
+              <h3 style={h4Style}>Clienia Schlössli (Oetwil am See)</h3>
               <p style={bodyStyle}>
                 Spezialisierte DBT-Station für
                 Borderline-Persönlichkeitsstörung.

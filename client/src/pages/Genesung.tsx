@@ -367,14 +367,13 @@ export default function Genesung() {
           {/* ── ContentSection 1: remission ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Remission und Genesung bedeuten"
             id="remission"
-            defaultOpen={true}
-            preview="Besserung heisst nicht zwingend völlige Symptomfreiheit. Für Angehörige ist wichtig, die Begriffe realistischer zu lesen."
           >
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
               <article className="space-y-2">
-                <h4 style={h4Style}>Symptomatische Remission</h4>
+                <h3 style={h4Style}>Symptomatische Remission</h3>
                 <p style={bodyStyle}>
                   Die diagnostischen Kriterien werden über längere Zeit nicht
                   mehr erfüllt oder deutlich schwächer. Das bedeutet häufig
@@ -383,7 +382,7 @@ export default function Genesung() {
                 </p>
               </article>
               <article className="space-y-2">
-                <h4 style={h4Style}>Umfassendere Genesung</h4>
+                <h3 style={h4Style}>Umfassendere Genesung</h3>
                 <p style={bodyStyle}>
                   Zusätzlich zur Symptomverbesserung kommen alltagsbezogene
                   Stabilität, Beziehungen, Arbeit oder Ausbildung und mehr
@@ -402,9 +401,9 @@ export default function Genesung() {
           {/* ── ContentSection 2: fortschritt-paradox ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Das Fortschritt-Paradox"
             id="fortschritt-paradox"
-            preview="Gerade wenn es besser läuft, können Rückschritte besonders verunsichern. Das entwertet den Weg aber nicht automatisch."
           >
             <EditorialProse>
               <p>
@@ -554,9 +553,9 @@ export default function Genesung() {
           {/* ── ContentSection 3: hoffnung ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Realistische Hoffnung statt glatter Zuversicht"
             id="hoffnung"
-            preview="Hoffnung ist wichtig. Sie wird aber tragfähiger, wenn sie Raum lässt für Erschöpfung, Zweifel, lange Dauer und ungleichmässige Entwicklung."
           >
             <EditorialProse>
               <p>
@@ -568,7 +567,7 @@ export default function Genesung() {
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4 style={h4Style}>Weniger hilfreich</h4>
+                <h3 style={h4Style}>Weniger hilfreich</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>«Jetzt muss es doch endlich besser werden»</li>
                   <li>«Ein Rückschritt entwertet alles»</li>
@@ -576,7 +575,7 @@ export default function Genesung() {
                 </ul>
               </div>
               <div>
-                <h4 style={h4Style}>Tragfähiger</h4>
+                <h3 style={h4Style}>Tragfähiger</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>Besserung ist möglich und oft wahrscheinlich</li>
                   <li>Rückschritte kommen vor und müssen nicht alles kippen</li>
@@ -589,14 +588,14 @@ export default function Genesung() {
           {/* ── ContentSection 4: beitragen ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Angehörige zur Genesung beitragen können"
             id="beitragen"
-            preview="Ihre Rolle ist wertvoll, aber begrenzt. Sie können Bedingungen mittragen, nicht Entwicklung herstellen."
           >
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
               {beitragenItems.map(item => (
                 <article key={item.title} className="space-y-2">
-                  <h4 style={h4Style}>{item.title}</h4>
+                  <h3 style={h4Style}>{item.title}</h3>
                   <p style={bodyStyle}>{item.desc}</p>
                 </article>
               ))}
@@ -606,9 +605,9 @@ export default function Genesung() {
           {/* ── ContentSection 5: faktoren ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Entwicklung eher fördert"
             id="faktoren"
-            preview="Die Forschung beschreibt mehrere günstige Bedingungen. Keine davon ist eine Garantie, aber viele sind beeinflussbar."
           >
             <ol className="mt-2 space-y-4">
               {foerderfaktoren.map((item, index) => (

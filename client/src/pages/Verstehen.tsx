@@ -231,7 +231,8 @@ export default function Verstehen() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 4 Akkordeon (Leitfragen) ── 11 Items als Lese-Tiefe der Page */}
+      {/* ── 4 Kernabschnitte ── Erzählung als offene Prosa (collapsible={false});
+          nur Mythen, Diagnostik und Begleiterkrankungen bleiben Akkordeon. */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -254,10 +255,9 @@ export default function Verstehen() {
           {/* ── ContentSection × 6 (editorial variant) ── */}
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Angehörige oft erleben"
             id="angehoerige-erleben"
-            defaultOpen={true}
-            preview="Viele Angehörige erleben nicht nur schwierige Gespräche, sondern ein ständiges Schwanken zwischen Nähe, Alarm, Hoffnung, Wut, Schuld und Erschöpfung."
           >
             <EditorialProse>
               <p>
@@ -283,9 +283,9 @@ export default function Verstehen() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Borderline im Kern so belastend macht"
             id="was-ist-borderline"
-            preview="Borderline ist kein einzelnes Verhalten, sondern ein Muster aus starker innerer Anspannung, erschwerter Emotionsregulation und instabilem Beziehungserleben."
           >
             <EditorialProse>
               <p>
@@ -340,9 +340,9 @@ export default function Verstehen() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Scham, Wut und innere Überflutung"
             id="scham-wut"
-            preview="Wut ist oft sichtbar. Darunter liegen nicht selten Scham, Angst, Kränkung, Leere oder der Versuch, unerträgliche Spannung loszuwerden."
           >
             <EditorialProse>
               <p>
@@ -362,7 +362,7 @@ export default function Verstehen() {
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4
+                <h3
                   className="mb-3"
                   style={{
                     fontSize: "var(--text-md)",
@@ -371,7 +371,7 @@ export default function Verstehen() {
                   }}
                 >
                   Was sichtbar werden kann
-                </h4>
+                </h3>
                 <ul
                   className="space-y-1"
                   style={{
@@ -387,7 +387,7 @@ export default function Verstehen() {
                 </ul>
               </div>
               <div>
-                <h4
+                <h3
                   className="mb-3"
                   style={{
                     fontSize: "var(--text-md)",
@@ -396,7 +396,7 @@ export default function Verstehen() {
                   }}
                 >
                   Was darunter liegen kann
-                </h4>
+                </h3>
                 <ul
                   className="space-y-1"
                   style={{
@@ -416,9 +416,9 @@ export default function Verstehen() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Wenn Denken unter Stress enger wird"
             id="stressmodus"
-            preview="Unter starker Anspannung werden Grautöne, Perspektivenwechsel und logische Einordnung oft schlechter erreichbar."
           >
             <EditorialProse>
               <p>
@@ -428,7 +428,7 @@ export default function Verstehen() {
                 Zugang zu Grautönen, Beziehungsgeschichte und nüchterner
                 Einordnung.
               </p>
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -437,13 +437,13 @@ export default function Verstehen() {
                 }}
               >
                 Alarmmodus
-              </h4>
+              </h3>
               <p>
                 Das innere Alarmsystem reagiert rasch und heftig. Neutrale
                 Signale können leichter als Distanz, Kritik oder Bedrohung
                 gelesen werden.
               </p>
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -452,13 +452,13 @@ export default function Verstehen() {
                 }}
               >
                 Tunnelblick
-              </h4>
+              </h3>
               <p>
                 In diesem Zustand kommen Argumente, Erklärungen und Korrekturen
                 oft kaum an. Hilfreicher ist meist zuerst Beruhigung,
                 Orientierung und emotionale Anerkennung.
               </p>
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -467,7 +467,7 @@ export default function Verstehen() {
                 }}
               >
                 Dissoziation und Entfremdung
-              </h4>
+              </h3>
               <p>
                 Unter starkem Stress können auch Unwirklichkeitsgefühle, innere
                 Abspaltung oder das Gefühl auftreten, nicht mehr richtig präsent
@@ -483,9 +483,9 @@ export default function Verstehen() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Typische Muster in belasteten Beziehungen"
             id="muster"
-            preview="Viele Angehörige berichten von wiederkehrenden Mustern. Diese können ähnlich aussehen, verlaufen aber nie bei allen gleich."
           >
             <EditorialProse>
               <p>
@@ -497,7 +497,7 @@ export default function Verstehen() {
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4
+                <h3
                   className="mb-2"
                   style={{
                     fontSize: "var(--text-md)",
@@ -506,7 +506,7 @@ export default function Verstehen() {
                   }}
                 >
                   Idealisierung und Entwertung
-                </h4>
+                </h3>
                 <p
                   style={{
                     fontSize: "var(--text-sm)",
@@ -520,7 +520,7 @@ export default function Verstehen() {
                 </p>
               </div>
               <div>
-                <h4
+                <h3
                   className="mb-2"
                   style={{
                     fontSize: "var(--text-md)",
@@ -529,7 +529,7 @@ export default function Verstehen() {
                   }}
                 >
                   Rückzug und Funkstille
-                </h4>
+                </h3>
                 <p
                   style={{
                     fontSize: "var(--text-sm)",
@@ -543,7 +543,7 @@ export default function Verstehen() {
                 </p>
               </div>
               <div>
-                <h4
+                <h3
                   className="mb-2"
                   style={{
                     fontSize: "var(--text-md)",
@@ -552,7 +552,7 @@ export default function Verstehen() {
                   }}
                 >
                   Schuldspiralen
-                </h4>
+                </h3>
                 <p
                   style={{
                     fontSize: "var(--text-sm)",
@@ -567,7 +567,7 @@ export default function Verstehen() {
                 </p>
               </div>
               <div>
-                <h4
+                <h3
                   className="mb-2"
                   style={{
                     fontSize: "var(--text-md)",
@@ -576,7 +576,7 @@ export default function Verstehen() {
                   }}
                 >
                   Nähe und Selbstschutz zugleich
-                </h4>
+                </h3>
                 <p
                   style={{
                     fontSize: "var(--text-sm)",
@@ -596,9 +596,9 @@ export default function Verstehen() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Verstehen hat Grenzen"
             id="grenzen-des-verstehens"
-            preview="Verstehen ist wichtig. Es ersetzt aber weder Selbstschutz noch Grenzsetzung noch professionelle Hilfe."
           >
             <EditorialProse>
               <p>
@@ -628,7 +628,7 @@ export default function Verstehen() {
             preview="Viele Sätze über Borderline klingen eindeutig, greifen aber zu kurz. Eine realistischere Einordnung hilft Angehörigen, Betroffenen und Fachpersonen."
           >
             <EditorialProse>
-              <h4
+              <h3
                 style={{
                   fontSize: "var(--text-md)",
                   fontWeight: 600,
@@ -636,7 +636,7 @@ export default function Verstehen() {
                 }}
               >
                 «Borderline ist nicht behandelbar.»
-              </h4>
+              </h3>
               <p>
                 Realistischer ist: Borderline ist belastend, aber behandelbar.
                 Viele Menschen erleben über Jahre deutliche Besserungen,
@@ -648,7 +648,7 @@ export default function Verstehen() {
                 .
               </p>
 
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -657,7 +657,7 @@ export default function Verstehen() {
                 }}
               >
                 «Menschen mit Borderline manipulieren bewusst.»
-              </h4>
+              </h3>
               <p>
                 Manche Verhaltensweisen können auf Angehörige manipulativ
                 wirken. Hilfreicher ist aber oft die Frage, welche innere Not,
@@ -674,7 +674,7 @@ export default function Verstehen() {
                 .
               </p>
 
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -683,7 +683,7 @@ export default function Verstehen() {
                 }}
               >
                 «Angehörige sind schuld.»
-              </h4>
+              </h3>
               <p>
                 Borderline entsteht nicht durch eine einzelne Person und nicht
                 durch «falsche Liebe». Angehörige können Beziehungsmuster
@@ -691,7 +691,7 @@ export default function Verstehen() {
                 Schuld hilft weder Verständnis noch Veränderung.
               </p>
 
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -700,14 +700,14 @@ export default function Verstehen() {
                 }}
               >
                 «Grenzen setzen ist lieblos.»
-              </h4>
+              </h3>
               <p>
                 Grenzen sind kein Verrat, sondern oft die Voraussetzung dafür,
                 dass Beziehung tragfähig bleibt. Sie schützen Sie selbst und
                 schaffen mehr Orientierung als wechselnde Nachgiebigkeit.
               </p>
 
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -716,7 +716,7 @@ export default function Verstehen() {
                 }}
               >
                 «Borderline ist dasselbe wie Trauma.»
-              </h4>
+              </h3>
               <p>
                 Viele Menschen mit Borderline haben traumatische Erfahrungen
                 gemacht — das ist dokumentiert und klinisch relevant. Borderline
@@ -735,7 +735,7 @@ export default function Verstehen() {
                 .
               </p>
 
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -744,7 +744,7 @@ export default function Verstehen() {
                 }}
               >
                 «Suizid direkt anzusprechen macht es schlimmer.»
-              </h4>
+              </h3>
               <p>
                 Bei konkreter Sorge ist das Gegenteil hilfreicher: ruhig, klar
                 und direkt fragen. Offenes Ansprechen erhöht das Risiko nicht,
@@ -756,7 +756,7 @@ export default function Verstehen() {
                 .
               </p>
 
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -766,7 +766,7 @@ export default function Verstehen() {
               >
                 «Wenn jemand bei anderen stabiler wirkt, spielt er oder sie
                 nur.»
-              </h4>
+              </h3>
               <p>
                 Enge Beziehungen aktivieren oft genau die Muster, die bei
                 Fremden weniger sichtbar sind. Mehr Stabilität in anderen
@@ -774,7 +774,7 @@ export default function Verstehen() {
                 Ausdruck unterschiedlicher Bindungsbelastung sein.
               </p>
 
-              <h4
+              <h3
                 className="mt-6"
                 style={{
                   fontSize: "var(--text-md)",
@@ -783,7 +783,7 @@ export default function Verstehen() {
                 }}
               >
                 «Borderline betrifft nur Frauen.»
-              </h4>
+              </h3>
               <p>
                 Borderline kommt bei allen Geschlechtern vor — klinisch werden
                 Frauen häufiger diagnostiziert. Männer suchen teilweise später

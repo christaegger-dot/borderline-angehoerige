@@ -13,9 +13,9 @@ export function VerstehenRelationshipSection() {
   return (
     <ContentSection
       variant="editorial"
+      collapsible={false}
       title="Warum gerade nahe Beziehungen so schnell kippen können"
       id="beziehungsdynamik"
-      preview="Was für Aussenstehende klein wirkt, kann in engen Beziehungen als Zurückweisung, Kontrollverlust oder drohender Verlust erlebt werden."
     >
       <EditorialProse>
         <p>
@@ -74,9 +74,9 @@ export function VerstehenMeaningSection() {
   return (
     <ContentSection
       variant="editorial"
+      collapsible={false}
       title="Was das für Angehörige bedeutet"
       id="bedeutung-fuer-angehoerige"
-      preview="Wenn Sie diese Dynamiken kennen, können Sie manches klarer einordnen. Das schützt nicht vor Schmerz, hilft aber oft gegen vorschnelle Selbstanklage."
     >
       <div className="grid gap-6 sm:grid-cols-2">
         {meaningForRelativesCards.map(item => (

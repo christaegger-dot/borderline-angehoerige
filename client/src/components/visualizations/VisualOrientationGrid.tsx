@@ -12,6 +12,12 @@ interface VisualOrientationGridProps {
    * Home kann daraus eine ruhigere Vorschau machen.
    */
   maxItems?: number;
+  /**
+   * Explizite Tile-Auswahl per id (in dieser Reihenfolge). Hat Vorrang vor
+   * `maxItems` — z.B. damit die Home gezielt andere Konzepte zeigt als jene,
+   * die bereits inline an ihrem Wirkort stehen.
+   */
+  ids?: string[];
   title?: string;
   intro?: string;
 }
@@ -35,15 +41,22 @@ interface VisualOrientationGridProps {
  */
 export function VisualOrientationGrid({
   maxItems,
+  ids,
   title = "Acht Konzepte, in Lese-Reihenfolge — ein Bild pro Idee.",
   intro,
 }: VisualOrientationGridProps) {
-  const tiles =
-    typeof maxItems === "number"
+  const tiles = ids
+    ? ids
+        .map(id => homeFeaturedInfografiken.find(tile => tile.id === id))
+        .filter(
+          (tile): tile is (typeof homeFeaturedInfografiken)[number] =>
+            tile !== undefined
+        )
+    : typeof maxItems === "number"
       ? homeFeaturedInfografiken.slice(0, maxItems)
       : homeFeaturedInfografiken;
   const gridClass =
-    typeof maxItems === "number" && maxItems <= 3
+    tiles.length <= 3
       ? "grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-y-12 lg:grid-cols-3"
       : "grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-y-12 lg:grid-cols-4";
 

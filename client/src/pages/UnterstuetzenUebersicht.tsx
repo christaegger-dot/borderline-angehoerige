@@ -195,10 +195,9 @@ export default function UnterstuetzenUebersicht() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Unterstützung ist wichtig, aber nicht allmächtig"
             id="unterstuetzung-ist-begrenzt"
-            defaultOpen={true}
-            preview="Sie können viel beitragen. Sie können aber weder Krisen vollständig verhindern noch Entwicklung für einen anderen Menschen herstellen."
           >
             <EditorialProse>
               <p>
@@ -225,13 +224,13 @@ export default function UnterstuetzenUebersicht() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Die Angehörigenrolle realistisch klären"
             id="rolle"
-            preview="Hilfreich ist oft eine Rolle, die gleichzeitig zugewandt, klar und begrenzt bleibt."
           >
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4 style={h4Style}>Was Sie sein können</h4>
+                <h3 style={h4Style}>Was Sie sein können</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>eine verlässliche Bezugsperson</li>
                   <li>jemand, der Gefühle ernst nimmt</li>
@@ -241,7 +240,7 @@ export default function UnterstuetzenUebersicht() {
                 </ul>
               </div>
               <div>
-                <h4 style={h4Style}>Was nicht Ihre Aufgabe ist</h4>
+                <h3 style={h4Style}>Was nicht Ihre Aufgabe ist</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>Therapeut oder Therapeutin zu sein</li>
                   <li>jeden Spannungszustand aufzufangen</li>
@@ -277,9 +276,9 @@ export default function UnterstuetzenUebersicht() {
         <EditorialSection.Body>
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Was Unterstützung so schwierig macht"
             id="ambivalenz"
-            preview="Unterstützung scheitert nicht nur an fehlendem Wissen, sondern oft an Erschöpfung, Angst, Wut, Schuld und widersprüchlichen Erwartungen."
           >
             <EditorialProse>
               <p>
@@ -374,7 +373,7 @@ export default function UnterstuetzenUebersicht() {
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
-                <h4 style={h4Style}>Hilfreich</h4>
+                <h3 style={h4Style}>Hilfreich</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>gemeinsame Grundlinien klären</li>
                   <li>Absprachen ausserhalb akuter Krisen treffen</li>
@@ -383,7 +382,7 @@ export default function UnterstuetzenUebersicht() {
                 </ul>
               </div>
               <div>
-                <h4 style={h4Style}>Belastend</h4>
+                <h3 style={h4Style}>Belastend</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>widersprüchliche Botschaften</li>
                   <li>heimliche Sonderabsprachen</li>
@@ -396,9 +395,9 @@ export default function UnterstuetzenUebersicht() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Woran hilfreiche Unterstützung erkennbar ist"
             id="woran-erkennbar"
-            preview="Hilfreiche Unterstützung macht nicht alles ruhig. Sie macht Beziehungen eher klarer, berechenbarer und weniger zerstörerisch."
           >
             <EditorialProse>
               <p>
@@ -418,9 +417,9 @@ export default function UnterstuetzenUebersicht() {
 
           <ContentSection
             variant="editorial"
+            collapsible={false}
             title="Wann Unterstützung an Grenzen kommt"
             id="grenzen-der-unterstuetzung"
-            preview="Es gibt Situationen, in denen Angehörige nicht weiter stabilisieren können und andere Hilfe oder mehr Distanz nötig wird."
           >
             <EditorialProse>
               <p>

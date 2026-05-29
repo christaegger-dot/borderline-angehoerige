@@ -914,7 +914,7 @@ export default function UnterstuetzenAlltag() {
               <div className="mt-4 space-y-10">
                 {impulsivitaetSzenarien.map(szenario => (
                   <article key={szenario.titel} className="space-y-4">
-                    <h5
+                    <h4
                       style={{
                         ...h4Style,
                         fontSize: "var(--text-sm)",
@@ -922,7 +922,7 @@ export default function UnterstuetzenAlltag() {
                       }}
                     >
                       {szenario.titel}
-                    </h5>
+                    </h4>
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
                         <p

@@ -243,7 +243,7 @@ export const INFO: Kontakt[] = [
     kategorie: "info",
     nummer: "142",
     tel: "142",
-    label: "Opferhilfe 142",
+    label: "Opferhilfe",
     hinweis:
       "Nationale Opferhilfe-Hotline für körperliche, psychische oder sexuelle Gewalt",
     sourceRef: "Grenzen.tsx Gewalt-Sektion",

@@ -141,14 +141,14 @@ export default function Verstehen() {
               Bindungsstress, Scham oder Alarm mitläuft.
             </p>
             <p>
-              Drei Lesarten ziehen sich durch die Abschnitte: die eigene
-              Belastung als Angehörigenrealität einordnen – Ambivalenz, Alarm,
-              Erschöpfung und Loyalitätsdruck als typische Erfahrung, nicht als
-              persönliches Versagen; die Dynamiken besser verstehen, also
+              Drei Lesarten ziehen sich durch die Abschnitte. Zuerst die eigene
+              Belastung als Angehörigenrealität einordnen — Ambivalenz, Alarm,
+              Erschöpfung und Loyalitätsdruck sind typische Erfahrungen, nicht
+              persönliches Versagen. Dann die Dynamiken besser verstehen —
               Überflutung, Bindungsstress und Denkverengung erkennen, statt nur
-              auf sichtbare Reaktionen zu schauen; und wiederkehrende Muster
-              nüchterner sehen, als Schleifen aus Eskalation, Rückzug und
-              Schuld, nicht als Charakterurteil.
+              auf sichtbare Reaktionen zu schauen. Und schliesslich
+              wiederkehrende Muster nüchterner sehen — als Schleifen aus
+              Eskalation, Rückzug und Schuld, nicht als Charakterurteil.
             </p>
             <p>
               Sie können auch direkt zu{" "}

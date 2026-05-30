@@ -90,6 +90,7 @@ export default function VerstehenMaterialsSection() {
       <section
         className="editorial-section bg-[var(--bg-primary)] px-[var(--container-pad)] pb-[var(--section-y-normal-mobile)] md:px-[var(--container-pad-md)] md:pb-[var(--section-y-spacious-desktop)]"
         data-variant="cream"
+        data-toc-skip
         aria-label="Materialien zum Vertiefen — Filter und Tile-Liste"
       >
         <div className="mx-auto max-w-page">

@@ -149,7 +149,7 @@ export function TableOfContents() {
       elements.forEach((el, index) => {
         if (
           el.closest(
-            "nav, aside, footer, [role='dialog'], [aria-labelledby='related-links-editorial-heading']"
+            "nav, aside, footer, [data-toc-skip], [role='dialog'], [aria-labelledby='related-links-editorial-heading']"
           )
         ) {
           return;

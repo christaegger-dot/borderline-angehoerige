@@ -103,6 +103,7 @@ export function VisualOrientationGrid({
       <section
         className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-[var(--section-y-normal-mobile)] md:px-[var(--container-pad-md)] md:pb-[var(--section-y-spacious-desktop)]"
         aria-label={`Visuelle Orientierung — ${tiles.length} Infografiken`}
+        data-toc-skip
       >
         <div className="mx-auto max-w-page">
           <ul className={gridClass}>

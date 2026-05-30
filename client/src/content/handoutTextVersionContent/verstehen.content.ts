@@ -60,7 +60,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Nach Mason & Kreger (2014), Angehörigen-Psychoedukation.",
+      "Quelle: Nach Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation; S3-Leitlinie Persönlichkeitsstörungen.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -169,7 +169,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Psychoedukation, Emotionsmodell nach DBT (Linehan, 1993).",
+      "Quelle: Psychoedukation, Emotionsmodell nach DBT (Linehan, M. M., 1993).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -244,7 +244,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Nach Linehan (2015), DBT Skills Training, Handouts 10, 15, 16. Gunderson et al. (2011), Family Psychoeducation for BPD.",
+      "Quelle: Nach Linehan, M. M. (2015), DBT Skills Training, Handouts 10, 15, 16. Gunderson, J. G. et al. (2011), Family Psychoeducation for BPD.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
   }),
@@ -312,7 +312,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Linehan (1993/2015), DBT und Emotionsregulation; Stressmodell als didaktische Vereinfachung.",
+      "Quelle: Linehan, M. M. (1993/2015), DBT und Emotionsregulation; Stressmodell als didaktische Vereinfachung.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -384,7 +384,7 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014).",
+    sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -464,7 +464,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Stress- und Emotionsregulation in Anlehnung an Linehan (1993/2015); LeDoux (1996) als Hintergrund zur Angst- und Stressverarbeitung.",
+      "Quelle: Stress- und Emotionsregulation in Anlehnung an Linehan, M. M. (1993/2015); LeDoux (1996) als Hintergrund zur Angst- und Stressverarbeitung.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

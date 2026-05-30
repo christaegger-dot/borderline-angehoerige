@@ -60,7 +60,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Linehan (2015), DBT Skills Training Manual, DEAR MAN.",
+    sourceLine:
+      "Quelle: Linehan, M. M. (2015), DBT Skills Training Manual, DEAR MAN.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -130,7 +131,7 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014).",
+    sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -210,7 +211,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Family Connections; NICE CG78; Linehan; Mason/Kreger; Stand by You/Sotomo 2024.",
+      "Quelle: Hoffman, P. D. et al. (2005), Family Connections; NICE CG78; Linehan, M. M.; Mason, P. T. & Kreger, R. (2014); Stand by You / Sotomo (2024).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
   }),
@@ -257,7 +258,7 @@ export const handoutTextVersions = [
           "Alle vier Grenzen sind wichtig. Körperliche Sicherheit hat immer Priorität; bei Gewalt oder Bedrohung geht Schutz vor Gespräch.",
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014).",
+    sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -308,7 +309,8 @@ export const handoutTextVersions = [
           "Welches Signal kennen Sie am besten und in welchen Situationen taucht es immer wieder auf? Warnsignale sind Hinweise, keine Diagnose – und Erschöpfung ist kein persönliches Versagen.",
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014), Angehörigen-Psychoedukation.",
+    sourceLine:
+      "Quelle: Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -388,7 +390,7 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014).",
+    sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -462,7 +464,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014); Linehan (1993), DBT.",
+    sourceLine:
+      "Quelle: Mason, P. T. & Kreger, R. (2014); Linehan, M. M. (1993), DBT.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

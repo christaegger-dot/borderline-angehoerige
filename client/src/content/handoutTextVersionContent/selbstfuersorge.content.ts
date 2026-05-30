@@ -96,7 +96,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Maslach/Leiter (2016), allgemeine Burnout-Prävention; Mason/Kreger (2014), Angehörigenperspektive.",
+      "Quelle: Maslach, C. & Leiter, M. P. (2016), allgemeine Burnout-Prävention; Mason, P. T. & Kreger, R. (2014), Angehörigenperspektive.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -185,7 +185,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014), Angehörigen-Psychoedukation.",
+    sourceLine:
+      "Quelle: Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -249,7 +250,7 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Linehan (2015), DBT Skills Training Manual.",
+    sourceLine: "Quelle: Linehan, M. M. (2015), DBT Skills Training Manual.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -355,7 +356,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Maslach und Leiter (2016), allgemeine Burnout-Prävention; Selbstfürsorge-orientierte Angehörigenarbeit.",
+      "Quelle: Maslach, C. & Leiter, M. P. (2016), allgemeine Burnout-Prävention; Selbstfürsorge-orientierte Angehörigenarbeit.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -414,7 +415,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Selbstfürsorge-orientierte Angehörigenarbeit, nach Mason/Kreger (2014).",
+      "Quelle: Selbstfürsorge-orientierte Angehörigenarbeit, nach Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -517,7 +518,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quellen: [1] Gunderson & Berkowitz, BPD Family Guidelines (NEABPD). [2] Fruzzetti, Hoffman & Buteau, Family Connections (NEABPD, 2005). [3] Gunderson et al., Nature Reviews Disease Primers (2018).",
+      "Quellen: [1] Berkowitz, C. & Gunderson, J. G., BPD Family Guidelines (NEABPD). [2] Hoffman, P. D. et al. (2005), Family Connections (NEABPD). [3] Gunderson, J. G., Herpertz, S. C., Skodol, A. E., Torgersen, S. & Zanarini, M. C. (2018), Nature Reviews Disease Primers.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
   }),
@@ -613,7 +614,7 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Linehan (2015), DBT Skills Training Manual.",
+    sourceLine: "Quelle: Linehan, M. M. (2015), DBT Skills Training Manual.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

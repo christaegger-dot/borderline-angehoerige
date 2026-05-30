@@ -120,10 +120,10 @@ fest in den Root-Preload zu heben.
   `index · vendor-utils · vendor-radix-slot` (kein Motion mehr).
 - Keine Chunk-Duplizierung über Routen (eine Motion-Quelle: `MotionProviders`-
   Chunk); Route-Chunk-Grössen unverändert; Gesamt-JS unverändert.
-- Lighthouse `/`: Score 95, LCP 2556 ms, TBT 8 ms, CLS 0 — **identisch** zur
-  Baseline (Lantern modelliert die `/`-LCP über die Shell-HTML/CSS, nicht über
-  das nicht-render-blockierende Motion-JS). Also reale Byte-/Request-Ersparnis
-  ohne Score-Regression.
+- Lighthouse `/` nach Eingriff: Score **96** (Baseline 95), LCP **2414 ms**
+  (Baseline 2556), TBT **0 ms** (Baseline 8), CLS 0 — leicht **besser**, keine
+  Regression. (Lantern modelliert die `/`-LCP primär über Shell-HTML/CSS; die
+  Verbesserung kommt aus dem schlankeren, nicht mehr root-preloadeten JS.)
 - Keine Motion-Regression: ContentSection-Akkordeons und `requiresMotion`-
   Seiten rendern/toggeln fehlerfrei; 362 Unit-Tests grün.
 
@@ -133,10 +133,10 @@ routes) war bereits vorhanden.
 
 ## Phase 4 — Verifikation (abgeschlossen)
 
-Re-Audit gegen den Production-Build nach dem Eingriff: Score 95 (≥ 90),
-LCP simuliert 2556 ms / beobachtet ~0,25 s, TBT 8 ms, CLS 0 — keine
-Regression, plus die oben belegte Reduktion der `/`-Initial-JS. `check`,
-`test` (362), `lint`, `build` grün.
+Re-Audit gegen den Production-Build nach dem Eingriff: Score 96 (Baseline 95),
+LCP simuliert 2414 ms (Baseline 2556) / beobachtet ~0,25 s, TBT 0 ms, CLS 0 —
+leicht besser, keine Regression, plus die oben belegte Reduktion der
+`/`-Initial-JS (9 → 5 Requests). `check`, `test` (362), `lint`, `build` grün.
 
 ## Optionale Kleinigkeiten
 

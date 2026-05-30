@@ -103,7 +103,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Gunderson et al., Family Guidelines; Mason & Kreger (2014).",
+      "Quelle: Berkowitz, C. & Gunderson, J. G., Family Guidelines; Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -229,7 +229,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014); Gunderson (2011).",
+    sourceLine:
+      "Quelle: Mason, P. T. & Kreger, R. (2014); Gunderson, J. G. et al. (2011).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -358,7 +359,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Achtsamkeitsbasierte Angehörigenarbeit, nach DBT (Linehan, 1993).",
+      "Quelle: Achtsamkeitsbasierte Angehörigenarbeit, nach DBT (Linehan, M. M., 1993).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -433,7 +434,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Gunderson et al., Family Guidelines for Borderline Personality Disorder.",
+      "Quelle: Berkowitz, C. & Gunderson, J. G., Family Guidelines for Borderline Personality Disorder.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -494,7 +495,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: DBT-orientierte Angehörigenarbeit; Fruzzetti (2006), Family Psychoeducation.",
+      "Quelle: DBT-orientierte Angehörigenarbeit; Fruzzetti, A. E. (2006), Family Psychoeducation.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

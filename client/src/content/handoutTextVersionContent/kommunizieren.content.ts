@@ -81,7 +81,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014); Linehan (1993).",
+    sourceLine:
+      "Quelle: Mason, P. T. & Kreger, R. (2014); Linehan, M. M. (1993).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -160,7 +161,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quellen: Linehan; Carpenter/Trull; NICE CG78; Family Connections; Siegel/Ogden als didaktisches Modell; Stand by You/Sotomo 2024.",
+      "Quellen: Linehan, M. M.; Carpenter/Trull; NICE CG78; Hoffman, P. D. et al. (2005), Family Connections; Siegel/Ogden als didaktisches Modell; Stand by You / Sotomo (2024).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
   }),
@@ -212,7 +213,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quellen: [1] Gunderson & Berkowitz, BPD Family Guidelines (NEABPD). [2] APA, DSM-5. [3] Linehan (1993).",
+      "Quellen: [1] Berkowitz, C. & Gunderson, J. G., BPD Family Guidelines (NEABPD). [2] American Psychiatric Association, DSM-5-TR (2022). [3] Linehan, M. M. (1993).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
   }),
@@ -272,7 +273,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014); Linehan (1993).",
+    sourceLine:
+      "Quelle: Mason, P. T. & Kreger, R. (2014); Linehan, M. M. (1993).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -330,7 +332,7 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014).",
+    sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -399,7 +401,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Deeskalation nach DBT, Linehan (1993); Mason/Kreger (2014).",
+      "Quelle: Deeskalation nach DBT, Linehan, M. M. (1993); Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -458,7 +460,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014); Fruzzetti (2006).",
+    sourceLine:
+      "Quelle: Mason, P. T. & Kreger, R. (2014); Fruzzetti, A. E. (2006).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -522,7 +525,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Mason/Kreger (2014); Fruzzetti (2006).",
+    sourceLine:
+      "Quelle: Mason, P. T. & Kreger, R. (2014); Fruzzetti, A. E. (2006).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

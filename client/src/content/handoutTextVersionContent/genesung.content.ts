@@ -80,7 +80,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quellen: Family Connections; Linehan; Mason/Kreger; Recovery-Forschung; Stand by You/Sotomo 2024.",
+      "Quellen: Hoffman, P. D. et al. (2005), Family Connections; Linehan, M. M.; Mason, P. T. & Kreger, R. (2014); Zanarini, M. C. et al. (2010/2012); Stand by You / Sotomo (2024).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
   }),
@@ -159,7 +159,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quellen: Zanarini et al. (2010/2012); Gunderson et al. (2011).",
+      "Quellen: Zanarini, M. C. et al. (2010/2012); Gunderson, J. G. et al. (2011).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -204,7 +204,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Zanarini et al. (2012); Mason/Kreger (2014).",
+    sourceLine:
+      "Quelle: Zanarini, M. C. et al. (2012); Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -256,7 +257,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Zanarini et al. (2012); in Anlehnung an Paris (2020).",
+    sourceLine:
+      "Quelle: Zanarini, M. C. et al. (2012); in Anlehnung an Paris, J. (2020).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -309,7 +311,8 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Zanarini et al. (2012); in Anlehnung an Paris (2020).",
+    sourceLine:
+      "Quelle: Zanarini, M. C. et al. (2012); in Anlehnung an Paris, J. (2020).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -401,7 +404,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Gunderson et al., Family Guidelines; Mason & Kreger (2014).",
+      "Quelle: Berkowitz, C. & Gunderson, J. G., Family Guidelines; Mason, P. T. & Kreger, R. (2014).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),

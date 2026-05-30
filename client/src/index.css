@@ -1070,6 +1070,64 @@
     font-weight: var(--weight-strong);
     color: var(--fg-primary);
   }
+
+  /* Quellen-Disclosure (EvidenceNote): ruhiger Lesefluss — die Quellenliste
+     klappt hinter einem dezenten Summary-Toggle auf. Mirror des review-badge-
+     Musters; native <details>/<summary>, voll tastatur-/screenreader-tauglich. */
+  .evidence-note__disclosure {
+    color: var(--fg-secondary);
+  }
+
+  .evidence-note__summary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    cursor: pointer;
+    list-style: none;
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--accent-label);
+    transition: color 0.15s ease;
+  }
+
+  .evidence-note__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .evidence-note__summary::after {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    flex: 0 0 auto;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 0.15s ease;
+  }
+
+  .evidence-note__disclosure[open] .evidence-note__summary::after {
+    transform: rotate(45deg);
+  }
+
+  .evidence-note__summary:hover {
+    color: var(--accent-primary);
+  }
+
+  .evidence-note__summary:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .evidence-note__body {
+    margin-top: var(--space-2);
+  }
+
+  .evidence-note__disclosure:not([open]) .evidence-note__body {
+    display: none;
+  }
 }
 
 /* Scrollbar ausblenden für horizontale Tab-Leisten */

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import type { EvidenceSource } from "@/domain/content-types";
 
 interface EvidenceNoteProps {
@@ -22,6 +23,30 @@ export default function EvidenceNote({
     source => source.type !== "versorgung"
   );
   const serviceSources = sources.filter(source => source.type === "versorgung");
+  const totalSources = sources.length;
+
+  // Beim Drucken die Quellenliste erzwungen aufklappen, damit Ausdrucke
+  // vollständig sind; danach den vorherigen (vom Lesenden gewählten) Zustand
+  // wiederherstellen.
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    const el = detailsRef.current;
+    if (!el) return;
+    let previousOpen = el.open;
+    const handleBeforePrint = () => {
+      previousOpen = el.open;
+      el.open = true;
+    };
+    const handleAfterPrint = () => {
+      el.open = previousOpen;
+    };
+    window.addEventListener("beforeprint", handleBeforePrint);
+    window.addEventListener("afterprint", handleAfterPrint);
+    return () => {
+      window.removeEventListener("beforeprint", handleBeforePrint);
+      window.removeEventListener("afterprint", handleAfterPrint);
+    };
+  }, []);
 
   const renderSources = (items: EvidenceSource[]) => (
     <ul
@@ -54,20 +79,10 @@ export default function EvidenceNote({
       style={{ borderColor: "var(--rule-color)" }}
       aria-label={title}
     >
-      <p
-        className="uppercase"
-        style={{
-          fontSize: "var(--text-xs)",
-          letterSpacing: "var(--tracking-caps)",
-          color: "var(--accent-label)",
-          fontWeight: 500,
-        }}
-      >
-        {title}
-      </p>
+      {/* Die Einordnung (definition) bleibt sichtbar — sie ist die inhaltliche
+          Evidenz-Aussage. Nur die Quellenliste klappt ein (Lesefluss). */}
       {definition && (
         <p
-          className="mt-2"
           style={{
             fontSize: "var(--text-sm)",
             lineHeight: "var(--lh-relaxed)",
@@ -77,33 +92,57 @@ export default function EvidenceNote({
           {definition}
         </p>
       )}
-      {scientificSources.length > 0 && renderSources(scientificSources)}
-      {serviceSources.length > 0 && (
-        <>
+      {totalSources > 0 ? (
+        <details
+          ref={detailsRef}
+          className={`evidence-note__disclosure${definition ? " mt-3" : ""}`}
+        >
+          <summary className="evidence-note__summary">
+            {title} ({totalSources})
+          </summary>
+          <div className="evidence-note__body">
+            {scientificSources.length > 0 && renderSources(scientificSources)}
+            {serviceSources.length > 0 && (
+              <>
+                <p
+                  className="mt-3 uppercase"
+                  style={{
+                    fontSize: "var(--text-xs)",
+                    letterSpacing: "var(--tracking-caps)",
+                    color: "var(--accent-label)",
+                    fontWeight: 500,
+                  }}
+                >
+                  Versorgung / Hilfe
+                </p>
+                {renderSources(serviceSources)}
+              </>
+            )}
+            {reviewDate && (
+              <p
+                className="mt-3"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  color: "var(--fg-tertiary)",
+                }}
+              >
+                Zuletzt redaktionell geprüft: {reviewDate}
+              </p>
+            )}
+          </div>
+        </details>
+      ) : (
+        reviewDate && (
           <p
-            className="mt-3 uppercase"
+            className="mt-3"
             style={{
               fontSize: "var(--text-xs)",
-              letterSpacing: "var(--tracking-caps)",
-              color: "var(--accent-label)",
-              fontWeight: 500,
+              color: "var(--fg-tertiary)",
             }}
           >
-            Versorgung / Hilfe
+            Zuletzt redaktionell geprüft: {reviewDate}
           </p>
-          {renderSources(serviceSources)}
-        </>
-      )}
-      {reviewDate && (
-        <p
-          className="mt-3"
-          style={{
-            fontSize: "var(--text-xs)",
-            color: "var(--fg-tertiary)",
-          }}
-        >
-          Zuletzt redaktionell geprüft: {reviewDate}
-        </p>
+        )
       )}
     </aside>
   );

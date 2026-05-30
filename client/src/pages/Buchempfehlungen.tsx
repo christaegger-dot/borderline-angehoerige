@@ -60,8 +60,8 @@ const bookCategories: BookCategory[] = [
       {
         title: "Borderline – Das Selbsthilfe-Buch für Angehörige",
         author: "Christa Windmüller",
-        publisher: "Thieme",
-        year: "2024",
+        publisher: "TRIAS",
+        year: "2025",
         description:
           "Aktueller Ratgeber mit Fokus auf Selbstfürsorge. Zeigt, wie Sie Stabilität im Alltag finden und ein positives Miteinander gestalten können – ohne sich selbst zu verlieren.",
         forWhom: "Partner, Familienmitglieder",

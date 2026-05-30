@@ -90,6 +90,17 @@ export function VerstehenMeaningSection() {
           </article>
         ))}
       </div>
+
+      <EditorialCallout
+        variant="entlastung"
+        title="Ursachen sind nie monokausal"
+        className="mt-8"
+      >
+        Borderline entsteht nicht durch eine einzige Ursache, sondern im
+        Zusammenspiel biologischer Empfindlichkeit, Bindungs- und
+        Entwicklungserfahrungen sowie Belastungsfaktoren. Schuldzuweisungen an
+        Betroffene oder Angehörige greifen zu kurz und helfen niemandem.
+      </EditorialCallout>
     </ContentSection>
   );
 }
@@ -117,17 +128,6 @@ export function VerstehenDiagnosticSection() {
           </li>
         ))}
       </ul>
-
-      <EditorialCallout
-        variant="entlastung"
-        title="Ursachen sind nie monokausal"
-        className="mt-6"
-      >
-        Borderline entsteht nicht durch eine einzige Ursache, sondern im
-        Zusammenspiel biologischer Empfindlichkeit, Bindungs- und
-        Entwicklungserfahrungen sowie Belastungsfaktoren. Schuldzuweisungen an
-        Betroffene oder Angehörige greifen zu kurz und helfen niemandem.
-      </EditorialCallout>
 
       <p className="editorial-small-copy mt-6">
         Mehr zum Diagnostik-Prozess (wer stellt wie eine Diagnose, was sie für

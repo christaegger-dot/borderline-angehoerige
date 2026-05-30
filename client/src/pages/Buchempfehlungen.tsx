@@ -123,8 +123,9 @@ const bookCategories: BookCategory[] = [
       },
       {
         title: "Borderline verstehen und bewältigen",
-        author: "Psychiatrie-Verlag",
+        author: "Ewald Rahn & Karsten Giertz",
         publisher: "Psychiatrie-Verlag",
+        year: "2023",
         description:
           "Mit passendem Begleitbuch. Liefert Tipps und Anleitungen, um die Erkrankung zu erkennen und Mut zu fassen für den gemeinsamen Weg.",
         forWhom: "Eltern, Familien",

@@ -45,7 +45,7 @@ const TREE: TreeNode[] = [
       { label: "Starker Wutausbruch oder Aggression", nextId: "aggression" },
       { label: "Kontaktabbruch / Rückzug", nextId: "kontaktabbruch" },
       { label: "Starke Verzweiflung / Weinkrampf", nextId: "verzweiflung" },
-      { label: "Manipulation / emotionale Erpressung", nextId: "manipulation" },
+      { label: "Druck, Vorwürfe oder Drohungen", nextId: "manipulation" },
     ],
   },
 
@@ -397,13 +397,13 @@ const TREE: TreeNode[] = [
   // ─── MANIPULATION ───
   {
     id: "manipulation",
-    question: "Emotionale Erpressung / Manipulation",
+    question: "Mit Druck und Drohungen umgehen",
     steps: [
       {
         id: "s1",
         text: "Erkennen Sie das Muster",
         detail:
-          "«Wenn du gehst, bringe ich mich um» oder «Ohne dich kann ich nicht leben» – das sind Zeichen extremer Not, aber auch Versuche, Kontrolle zu behalten.",
+          "«Wenn du gehst, bringe ich mich um» oder «Ohne dich kann ich nicht leben» – das sind Zeichen extremer Not und Verzweiflung, die enormen Druck auf Sie erzeugen können.",
       },
       {
         id: "s2",
@@ -421,14 +421,14 @@ const TREE: TreeNode[] = [
         id: "s4",
         text: "Delegieren Sie an Profis",
         detail:
-          "Wenn jemand mit Suizid droht, um Sie zu halten: Informieren Sie professionelle Hilfe. Das ist kein Verrat, sondern Fürsorge.",
+          "Wenn Suiziddrohungen Sie unter Druck setzen: Informieren Sie professionelle Hilfe. Das ist kein Verrat, sondern Fürsorge.",
         kontakte: ["GELB_PUK_ERW", "GRUEN_143"],
       },
       {
         id: "s5",
         text: "Schützen Sie sich",
         detail:
-          "Emotionale Erpressung ist eine Form von Gewalt. Sie brauchen eigene Unterstützung, um damit umzugehen.",
+          "Anhaltender Druck dieser Art ist real und kann Sie selbst verletzen. Sie brauchen eigene Unterstützung, um damit umzugehen.",
         link: { href: "/grenzen", label: "Mehr zu Grenzen setzen" },
       },
     ],

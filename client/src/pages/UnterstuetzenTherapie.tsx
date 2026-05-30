@@ -588,7 +588,7 @@ export default function UnterstuetzenTherapie() {
                   Quellen-Seite
                 </Link>{" "}
                 und unter{" "}
-                <Link href="/selbsthilfegruppen" className="editorial-link">
+                <Link href="/beratung" className="editorial-link">
                   Selbsthilfegruppen & Netzwerke
                 </Link>
                 .

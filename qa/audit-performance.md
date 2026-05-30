@@ -38,15 +38,15 @@ initialen HTML** aus — er hängt nicht mehr am React-/JS-Pfad:
 
 ## Aktuelle Messung — `/` mobil (2026-05-30)
 
-| Kennzahl                             | Wert                 | Bewertung        |
-| ------------------------------------ | -------------------- | ---------------- |
-| Performance-Score                    | **95**               | grün (≥ 90)      |
-| First Contentful Paint               | 2,2 s (2206 ms)      | gelb             |
-| Largest Contentful Paint (simuliert) | **2,6 s (2584 ms)**  | knapp über 2,5 s |
-| LCP **beobachtet** (Trace)           | **~0,25 s (246 ms)** | sehr schnell     |
-| Speed Index                          | 2,2 s                | gelb             |
-| Total Blocking Time                  | 12 ms                | grün (< 200 ms)  |
-| Cumulative Layout Shift              | 0                    | grün             |
+| Kennzahl                             | Wert                  | Bewertung        |
+| ------------------------------------ | --------------------- | ---------------- |
+| Performance-Score                    | **95**                | grün (≥ 90)      |
+| First Contentful Paint               | 2,2 s (2206 ms)       | gelb             |
+| Largest Contentful Paint (simuliert) | **2,6 s (≈2556 ms)**  | knapp über 2,5 s |
+| LCP **beobachtet** (Trace)           | **~0,25 s (≈246 ms)** | sehr schnell     |
+| Speed Index                          | 2,2 s                 | gelb             |
+| Total Blocking Time                  | 8–12 ms               | grün (< 200 ms)  |
+| Cumulative Layout Shift              | 0                     | grün             |
 
 **LCP-Element:** der statische Shell-Hero (`#route-prerender`, Copy/H1) —
 **nicht** der React-Hero aus `Home.tsx`. Per Live-Observer bestätigt: Der LCP
@@ -60,7 +60,7 @@ Trace zeigt den Shell-Paint **beobachtet bei 246 ms**. Der Audit
 `render-blocking-resources` meldet **Score 1 / 0 ms Einsparpotenzial** — der
 kritische Pfad ist bereits ausgereizt.
 
-## Diagnose & Entscheidung (kein Code-Eingriff)
+## Diagnose & Entscheidung (LCP)
 
 Nach der Diagnose-Logik des Audit-Briefs:
 
@@ -69,14 +69,13 @@ Nach der Diagnose-Logik des Audit-Briefs:
    später nach) → die im Brief skizzierten Fixes (React-Hero deckungsgleich
    halten / Shell-Removal-Timing) zielen auf ein Problem, das die Messung
    **nicht** zeigt.
-3. `render-blocking-resources` meldet **0 ms** Einsparung; jede weitere
-   Änderung wäre spekulativ und ohne stützende Messung — laut Audit-Regel
-   ausgeschlossen.
-4. TBT 12 ms (grün) → framer-motion bleibt am Root (Phase 3).
+3. `render-blocking-resources` meldet **0 ms** Einsparung → für die LCP selbst
+   ist kein weiterer Hebel vorhanden.
 
-→ **Bewusst kein Code-Eingriff.** Der simulierte LCP von 2,6 s liegt knapp über
-der 2,5-s-Linie; die beobachtete Paint-Zeit (246 ms) und der Score (95) sind
-klar im grünen Bereich, und es gibt keinen messbar wirksamen Hebel.
+→ **Für die LCP von `/` kein Eingriff** (Shell trägt sie, Score grün). Der
+beobachtete Engpass liegt nicht bei der LCP, sondern bei der **initialen
+JS-Grösse / dem Root-Preload** — siehe Phase 3 (framer-motion vom Root-Pfad
+gelöst).
 
 ## Phase 1 — Baseline (historisch, **vor** dem `route-prerender`-Shell)
 
@@ -99,25 +98,58 @@ beobachteter LCP 5,71 s → ~0,25 s) und nur noch als Ausgangspunkt dokumentiert
 - `font-display: swap`; kritische Fonts (Source Serif Hero-H1, Inter Body) als
   `<link rel="preload">`, Font-Faces inline im `<head>` (kein Extra-Request).
 
-## Phase 3 — JavaScript-Pfad (geprüft — kein Eingriff nötig)
+## Phase 3 — JavaScript-Pfad (Eingriff: framer-motion vom Root-Pfad gelöst)
 
-`framer-motion` wird am Root geladen (`MotionProviders`,
-`LazyMotion`/`domAnimation`) und betrifft TBT/INP, **nicht** LCP. Die Messung
-zeigt **TBT 12 ms** (grün) — kein Blocking-Engpass. Ein Herauslösen aus dem
-kritischen Pfad erfolgt laut Vorgabe nur bei auffälligem TBT; das ist nicht der
-Fall. Daher **bewusst kein Eingriff**. Bleibt Beobachtungspunkt, falls TBT
-künftig steigt. Route-Level-Splitting (lazy routes) ist vorhanden.
+**Befund:** `framer-motion` (80 KB raw / ~28 KB gzip) wurde über den
+`manualChunks`-Eintrag `"vendor-motion": ["framer-motion"]` in einen festen
+Vendor-Chunk gezwungen, der im **Root-Critical-Path von `/` modulepreloaded**
+und beim `/`-Load auch tatsächlich geladen wurde — obwohl `/` (Home) keine
+Motion-Komponente above-the-fold nutzt und `MotionProviders` bereits `lazy()`
+ist (nur für `requiresMotion`-Routen gemountet).
+
+**Eingriff (minimal):** Den `manualChunks`-Eintrag für `vendor-motion`
+entfernt. Rollup bündelt `framer-motion` jetzt in die Async-Chunks seiner
+tatsächlichen Importeure (lazy `MotionProviders` + Seiten-Chunks), statt es
+fest in den Root-Preload zu heben.
+
+**Messbar (gegen Baseline, mobil, Production-Build):**
+
+- `/` lädt **kein** Motion-Chunk mehr (vorher `vendor-motion` ~28 KB gzip
+  geladen). JS-Requests auf `/`: **9 → 5**.
+- Root-`modulepreload`: vorher `index · vendor-utils · vendor-motion` → jetzt
+  `index · vendor-utils · vendor-radix-slot` (kein Motion mehr).
+- Keine Chunk-Duplizierung über Routen (eine Motion-Quelle: `MotionProviders`-
+  Chunk); Route-Chunk-Grössen unverändert; Gesamt-JS unverändert.
+- Lighthouse `/`: Score 95, LCP 2556 ms, TBT 8 ms, CLS 0 — **identisch** zur
+  Baseline (Lantern modelliert die `/`-LCP über die Shell-HTML/CSS, nicht über
+  das nicht-render-blockierende Motion-JS). Also reale Byte-/Request-Ersparnis
+  ohne Score-Regression.
+- Keine Motion-Regression: ContentSection-Akkordeons und `requiresMotion`-
+  Seiten rendern/toggeln fehlerfrei; 362 Unit-Tests grün.
+
+TBT war bereits grün (8–12 ms); der Hebel war also nicht TBT, sondern die
+**initiale JS-Grösse / der Root-Preload** von `/`. Route-Level-Splitting (lazy
+routes) war bereits vorhanden.
 
 ## Phase 4 — Verifikation (abgeschlossen)
 
-Re-Audit gegen den Production-Build durchgeführt. Score 95 (≥ 90), TBT 12 ms,
-CLS 0; LCP beobachtet ~246 ms (simuliert 2,6 s). Der `route-prerender`-Shell
-trägt die LCP; es war **kein** weiterer Code-Eingriff erforderlich und keiner
-messbar begründbar.
+Re-Audit gegen den Production-Build nach dem Eingriff: Score 95 (≥ 90),
+LCP simuliert 2556 ms / beobachtet ~0,25 s, TBT 8 ms, CLS 0 — keine
+Regression, plus die oben belegte Reduktion der `/`-Initial-JS. `check`,
+`test` (362), `lint`, `build` grün.
+
+## Optionale Kleinigkeiten
+
+- **Erledigt:** Interner Link auf `/selbsthilfegruppen` (301 → `/beratung`)
+  in `UnterstuetzenTherapie.tsx` direkt auf `/beratung` gesetzt — spart einen
+  301-Hop.
+- **Offen (bewusst nicht angefasst):** `uebersichtsbogen.png` (1,1 MB,
+  reiner Download, nicht eingebettet) → WebP-Konvertierung. Reine
+  Download-Gewichts-Optimierung, niedrige Priorität — für später vorgemerkt.
 
 ## Anhang — Nebenbeobachtungen (nicht Scope dieses Tasks)
 
 Im selben Lauf lagen Routen **ohne** Prerender-Shell höher (simuliert):
-`/soforthilfe` 1,5 s · `/wegweiser` 3,0 s · `/notfallkarte/erstellen` 3,5 s ·
+`/soforthilfe` 1,5 s · `/wegweiser` 3,5 s · `/notfallkarte/erstellen` 3,5 s ·
 `/materialien` 3,5 s · `/grenzen` 3,8 s. Für eine spätere, separate Betrachtung
 vorgemerkt — hier nicht behandelt.

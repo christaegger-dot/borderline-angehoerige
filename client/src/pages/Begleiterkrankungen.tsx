@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
+  EditorialFigure,
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
@@ -9,6 +10,7 @@ import {
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
+import { BegleiterkrankungenSvg } from "@/components/infografik/BegleiterkrankungenSvg";
 import EvidenceNote from "@/components/EvidenceNote";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -207,6 +209,45 @@ export default function Begleiterkrankungen() {
               Strafe zu lesen.
             </p>
           </EditorialProse>
+          <EditorialFigure
+            caption="Borderline im Zentrum, häufige Begleiterkrankungen als Satelliten – gruppiert nach klinischen Familien, Kreisgrösse nach Häufigkeit."
+            textVersion={
+              <>
+                <p>
+                  Borderline tritt selten allein auf. Häufige
+                  Begleiterkrankungen, gruppiert nach klinischen Familien:
+                </p>
+                <ul className="mt-2 list-disc space-y-1 pl-5">
+                  <li>
+                    <strong>Affektiv:</strong> Depression (die häufigste
+                    Begleiterkrankung).
+                  </li>
+                  <li>
+                    <strong>Angst &amp; Trauma:</strong> Angststörungen,
+                    PTBS/Trauma.
+                  </li>
+                  <li>
+                    <strong>Impuls &amp; Verhalten:</strong> Substanzgebrauch,
+                    Essstörungen, ADHS.
+                  </li>
+                </ul>
+                <p className="mt-2">
+                  Die Kreisgrösse zeigt, wie häufig eine Begleiterkrankung ist –
+                  gemessen als Einzeldiagnose.
+                </p>
+                <p className="mt-2">
+                  Für Angehörige: Mehrere Diagnosen heissen mehr Komplexität –
+                  nicht mehr Schuld. Die Behandlung beginnt oft beim
+                  Dringlichsten – das ist kein Widerspruch. Sie müssen nicht
+                  sortieren, was was ist. Kommt eine Depression dazu, braucht es
+                  oft mehr fachliche Aufmerksamkeit, auch für die Sicherheit;
+                  eine abgestimmte Behandlung entlastet auch Sie.
+                </p>
+              </>
+            }
+          >
+            <BegleiterkrankungenSvg />
+          </EditorialFigure>
         </ContentSection>
 
         {/* ── 2: Depression bei Borderline ── */}

@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
+  EditorialFigure,
   EditorialLayout,
   EditorialProse,
   EditorialPullQuote,
@@ -9,6 +10,7 @@ import {
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
+import { DiagnostikWegSvg } from "@/components/infografik/DiagnostikWegSvg";
 import EvidenceNote from "@/components/EvidenceNote";
 import GlossarBegriff from "@/components/GlossarBegriff";
 import Layout from "@/components/Layout";
@@ -291,6 +293,51 @@ export default function Diagnostik() {
               </li>
             ))}
           </ol>
+          <EditorialFigure
+            caption="Der Weg zur Abklärung: fünf Schritte entlang einer Zeitachse – und Ihre Rolle dabei."
+            textVersion={
+              <>
+                <p>
+                  Fünf Schritte entlang einer Zeitachse von oben nach unten:
+                </p>
+                <ol className="mt-2 list-decimal space-y-2 pl-5">
+                  <li>
+                    <strong>Erste Anlaufstelle</strong> – Den ersten Kontakt
+                    dürfen Sie anregen oder begleiten (Hausärzt:in, Praxis,
+                    Ambulatorium). Anbieten ja, erzwingen nein.
+                  </li>
+                  <li>
+                    <strong>Fachliche Abklärung</strong> – Die Abklärung machen
+                    Fachpersonen: Fachärzt:innen für Psychiatrie und
+                    Psychotherapie oder klinische Psycholog:innen.
+                  </li>
+                  <li>
+                    <strong>Mehrere Gespräche</strong> – Eine Abklärung entsteht
+                    aus einem Muster über die Zeit, nicht aus einem einzelnen
+                    Moment. Geduld ist hier kein Nichtstun.
+                  </li>
+                  <li>
+                    <strong>Rückmeldung &amp; Einordnung</strong> – Die
+                    Fachperson ordnet ein und grenzt ab. Ob Sie einbezogen
+                    werden, hängt vom Einverständnis Ihres/Ihrer Angehörigen ab
+                    – das kann schwer sein.
+                  </li>
+                  <li>
+                    <strong>Behandlungsplanung</strong> – Jetzt entsteht ein
+                    Behandlungsplan, oft eine störungsspezifische Psychotherapie
+                    wie DBT. Fragen Sie, wie Sie unterstützen können.
+                  </li>
+                </ol>
+                <p className="mt-2">
+                  Für Jugendliche läuft die Abklärung über die Kinder- und
+                  Jugendpsychiatrie (KJPP); die Familie ist meist von Anfang an
+                  Teil des Prozesses.
+                </p>
+              </>
+            }
+          >
+            <DiagnostikWegSvg />
+          </EditorialFigure>
           <div className="mt-8">
             <EditorialPullQuote>
               Die Diagnose ist eine fachliche Beurteilung über Zeit, nicht ein

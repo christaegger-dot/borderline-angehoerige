@@ -19,7 +19,13 @@ interface Book {
   description: string;
   forWhom: string;
   highlight?: boolean;
-  shopLink?: string;
+  /**
+   * Schweizer Bezugs-Link auf die konkrete Produktseite (Ex Libris, per
+   * ISBN/EAN). Konvention: nur gesetzt, wenn eine verifizierte CH-Produktseite
+   * vorliegt — sonst leer und im Render ausgeblendet (kein Verlags-Startseiten-
+   * Link mehr).
+   */
+  bezugsUrl?: string;
 }
 
 interface BookCategory {
@@ -44,7 +50,6 @@ const bookCategories: BookCategory[] = [
           "Ein langjähriger Standardtitel für Angehörige. Beschreibt typische Beziehungsmuster, Kommunikationsideen und Fragen des Selbstschutzes in engeren Beziehungen.",
         forWhom: "Partner, Familienmitglieder, enge Freunde",
         highlight: true,
-        shopLink: "https://www.psychiatrie-verlag.de",
       },
       {
         title: "Ich hasse dich – verlass mich nicht",
@@ -55,7 +60,6 @@ const bookCategories: BookCategory[] = [
           "Erklärt die Schwarz-Weiss-Welt der Borderline-Persönlichkeit aus beiden Perspektiven. Hilft zu verstehen, warum Betroffene zwischen Idealisierung und Entwertung schwanken – und wie man damit umgehen kann.",
         forWhom: "Alle Angehörigen, auch Betroffene selbst",
         highlight: true,
-        shopLink: "https://www.koesel.de",
       },
       {
         title: "Borderline – Das Selbsthilfe-Buch für Angehörige",
@@ -65,7 +69,8 @@ const bookCategories: BookCategory[] = [
         description:
           "Aktueller Ratgeber mit Fokus auf Selbstfürsorge. Zeigt, wie Sie Stabilität im Alltag finden und ein positives Miteinander gestalten können – ohne sich selbst zu verlieren.",
         forWhom: "Partner, Familienmitglieder",
-        shopLink: "https://www.thieme.de",
+        bezugsUrl:
+          "https://www.exlibris.ch/de/buecher-buch/deutschsprachige-buecher/christa-windmueller/borderline-das-selbsthilfe-buch-fuer-angehoerige/id/9783432120751/",
       },
       {
         title: "L(i)eben mit Borderline",
@@ -101,7 +106,6 @@ const bookCategories: BookCategory[] = [
           "Stellt erstmals im deutschen Sprachraum die von Alan Fruzzetti und Perry Hoffman entwickelten Familienskills vor. Praktische Fertigkeiten für den Familienalltag, basierend auf der Dialektisch-Behavioralen Therapie.",
         forWhom: "Eltern, Familien, auch für Fachpersonen",
         highlight: true,
-        shopLink: "https://www.hogrefe.com/de",
       },
       {
         title: "Ratgeber Borderline-Persönlichkeitsstörung",
@@ -129,6 +133,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Mit passendem Begleitbuch. Liefert Tipps und Anleitungen, um die Erkrankung zu erkennen und Mut zu fassen für den gemeinsamen Weg.",
         forWhom: "Eltern, Familien",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783867393201",
       },
       {
         title: "Borderline Personality Disorder in Adolescents",
@@ -155,7 +160,8 @@ const bookCategories: BookCategory[] = [
           "Das einzige deutschsprachige Kinderbuch speziell zum Thema Borderline. Erklärt kindgerecht das 'Schleuderprogramm der Gefühle' und zeigt Kindern, dass sie geliebt werden – auch wenn Mama oder Papa es manchmal nicht zeigen können.",
         forWhom: "Kinder ab 6 Jahren",
         highlight: true,
-        shopLink: "https://www.psychiatrie-verlag.de",
+        bezugsUrl:
+          "https://www.exlibris.ch/de/buecher-buch/deutschsprachige-buecher/christiane-tilly/mama-mia-und-das-schleuderprogramm/id/9783867393614/",
       },
       {
         title: "Mamas Monster",
@@ -206,7 +212,6 @@ const bookCategories: BookCategory[] = [
           "Texte von Betroffenen und Angehörigen über ihr Erleben, ihre Gefühle und den Alltag mit Borderline. Hilfreich, wenn Sie unterschiedliche Innen- und Beziehungsperspektiven besser verstehen möchten.",
         forWhom: "Alle, die verstehen wollen",
         highlight: true,
-        shopLink: "https://www.psychiatrie-verlag.de",
       },
       {
         title: "Borderline-Mütter und ihre Kinder",
@@ -365,14 +370,14 @@ export default function Buchempfehlungen() {
                         <span style={labelStyle} className="uppercase">
                           Für: {book.forWhom}
                         </span>
-                        {book.shopLink && (
+                        {book.bezugsUrl && (
                           <a
-                            href={book.shopLink}
+                            href={book.bezugsUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="editorial-link"
                           >
-                            Beim Verlag
+                            Bei Ex Libris (CH)
                           </a>
                         )}
                       </p>

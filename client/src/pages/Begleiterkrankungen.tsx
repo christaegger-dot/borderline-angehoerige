@@ -54,7 +54,7 @@ const andereKomorbiditaeten = [
   },
   {
     title: "Posttraumatische Belastungsstörung (PTBS)",
-    desc: "Häufig im Hintergrund von Borderline-Symptomatik, besonders bei Patient:innen mit traumatischer Vorgeschichte. PTBS wird im Diagnostik-Prozess als Differenzialdiagnose geprüft (siehe Diagnostik) und kann gleichzeitig als Komorbidität bestehen. Beides ist möglich und schliesst sich nicht aus. In der Therapie meist eigenes Vorgehen, oft mit trauma-fokussierten Verfahren nach Stabilisierung.",
+    desc: "Häufig im Hintergrund von Borderline-Symptomatik, besonders bei Patient:innen mit traumatischer Vorgeschichte. PTBS wird im Diagnostik-Prozess als Differenzialdiagnose geprüft (siehe Diagnostik) und kann gleichzeitig als Begleiterkrankung bestehen. Beides ist möglich und schliesst sich nicht aus. In der Therapie meist eigenes Vorgehen, oft mit trauma-fokussierten Verfahren nach Stabilisierung.",
   },
   {
     title: "Essstörungen",
@@ -161,7 +161,7 @@ export default function Begleiterkrankungen() {
                 className="editorial-link"
                 onClick={e => handleAnchorClick(e, "andere")}
               >
-                «Andere häufige Komorbiditäten»
+                «Andere häufige Begleiterkrankungen»
               </a>{" "}
               oder{" "}
               <a
@@ -185,11 +185,11 @@ export default function Begleiterkrankungen() {
         >
           <EditorialProse>
             <p>
-              <strong>Komorbidität</strong> bedeutet, dass eine Person
-              gleichzeitig oder im Verlauf an mehreren Erkrankungen leidet. Bei
-              Borderline ist das die Regel, nicht die Ausnahme — die meisten
-              Patient:innen haben im Lebenszeitverlauf mindestens eine weitere
-              psychische Diagnose.
+              <strong>Komorbidität</strong>, der medizinische Begriff für
+              Begleiterkrankungen, bedeutet, dass eine Person gleichzeitig oder
+              im Verlauf an mehreren Erkrankungen leidet. Bei Borderline ist das
+              die Regel, nicht die Ausnahme — die meisten Patient:innen haben im
+              Lebenszeitverlauf mindestens eine weitere psychische Diagnose.
             </p>
             <p>Besonders häufig kommen folgende Erkrankungen dazu:</p>
             <ul className="ml-6 list-disc space-y-1">
@@ -203,8 +203,8 @@ export default function Begleiterkrankungen() {
               verschiedenen Erkrankungen Ausdruck derselben zugrundeliegenden
               Belastung — sie zeigen sich nur in unterschiedlichen Symptomen
               oder Phasen. Diese Sichtweise nimmt nichts von der realen
-              Belastung, hilft aber, Komorbidität nicht als zusätzliche Strafe
-              zu lesen.
+              Belastung, hilft aber, Begleiterkrankungen nicht als zusätzliche
+              Strafe zu lesen.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -213,7 +213,7 @@ export default function Begleiterkrankungen() {
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Depression bei Borderline — die häufigste Komorbidität"
+          title="Depression bei Borderline — die häufigste Begleiterkrankung"
           id="depression"
         >
           <EditorialProse>
@@ -282,7 +282,7 @@ export default function Begleiterkrankungen() {
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Erhöhtes Suizidrisiko bei depressiver Komorbidität"
+          title="Erhöhtes Suizidrisiko bei zusätzlicher Depression"
           id="suizidrisiko"
         >
           <EditorialProse>
@@ -392,7 +392,7 @@ export default function Begleiterkrankungen() {
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Andere häufige Komorbiditäten — knapp"
+          title="Andere häufige Begleiterkrankungen — knapp"
           id="andere"
         >
           <EditorialProse>
@@ -489,11 +489,11 @@ export default function Begleiterkrankungen() {
         >
           <EditorialProse>
             <p>
-              Die Komorbidität auf Seiten der betroffenen Person erhöht oft auch
-              die Belastung der Angehörigen — depressive Phasen sind schwerer
-              auszuhalten als reine Borderline-Schwankungen, weil sie länger
-              dauern und stiller sind. Es ist kein Zeichen von Schwäche, wenn
-              Sie selbst Beratung oder Therapie suchen — im Gegenteil.
+              Die Begleiterkrankung auf Seiten der betroffenen Person erhöht oft
+              auch die Belastung der Angehörigen — depressive Phasen sind
+              schwerer auszuhalten als reine Borderline-Schwankungen, weil sie
+              länger dauern und stiller sind. Es ist kein Zeichen von Schwäche,
+              wenn Sie selbst Beratung oder Therapie suchen — im Gegenteil.
             </p>
             <ul className="ml-6 list-disc space-y-1">
               <li>
@@ -555,7 +555,7 @@ export default function Begleiterkrankungen() {
               href: "/genesung",
               title: "Genesung",
               description:
-                "Verlauf und Recovery bei Borderline. Komorbiditäten nehmen über Zeit oft ab — siehe Zanarini-Verlaufsstudien.",
+                "Verlauf und Recovery bei Borderline. Begleiterkrankungen nehmen über Zeit oft ab — siehe Zanarini-Verlaufsstudien.",
             },
             {
               href: "/selbstfuersorge",

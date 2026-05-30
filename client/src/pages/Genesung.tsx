@@ -275,8 +275,8 @@ export default function Genesung() {
             >
               <dt style={versalStyle}>85–93%</dt>
               <dd className="mt-3" style={bodyStyle}>
-                erreichen eine symptomatische Remission innerhalb von etwa 10
-                Jahren.
+                erreichen eine symptomatische Remission (also weitgehende
+                Symptomfreiheit) innerhalb von etwa 10 Jahren.
               </dd>
               <dd
                 className="mt-1"

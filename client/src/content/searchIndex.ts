@@ -1888,7 +1888,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Krisenressourcen",
   },
   {
-    title: "Emotionale Erpressung – Was tun?",
+    title: "Druck und Drohungen – Was tun?",
     description:
       "Umgang mit Drohungen, Schuldvorwürfen und starkem Beziehungsdruck",
     keywords: [

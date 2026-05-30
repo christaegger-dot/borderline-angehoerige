@@ -494,8 +494,12 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            // Animation library – used on many pages but heavy
-            "vendor-motion": ["framer-motion"],
+            // framer-motion NICHT in einen festen Vendor-Chunk zwingen: es wird
+            // ausschliesslich dynamisch genutzt (lazy MotionProviders + lazy
+            // Seiten). Ohne diesen Eintrag bündelt Rollup es in die Async-Chunks
+            // seiner Importeure, statt es in den Root-Critical-Path von / zu
+            // modulepreloaden. (Mess-belegt: entfernt vendor-motion aus dem
+            // Root-Preload, ohne Duplizierung über Routen.)
             // Root path only needs Radix Slot via Button asChild
             "vendor-radix-slot": ["@radix-ui/react-slot"],
             // Radix UI primitives – shared across components

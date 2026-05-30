@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 1045" width="820" height="1045" role="img" aria-labelledby="a2t a2d"><title id="a2t">Borderline kommt selten allein</title><desc id="a2d">Konstellation: Borderline im Zentrum, häufige Begleiterkrankungen als Satelliten, gruppiert nach klinischen Familien. Affektiv: Depression, am häufigsten. Angst und Trauma: Angststörungen, PTBS. Impuls und Verhalten: Substanzgebrauch, Essstörungen, ADHS. Die Kreisgrösse zeigt, wie häufig eine Begleiterkrankung als Einzeldiagnose ist. Für Angehörige: mehrere Diagnosen bedeuten mehr Komplexität, nicht mehr Schuld; die Behandlung beginnt oft beim Dringlichsten; Sie müssen nicht sortieren, was was ist.</desc><rect width="820" height="1045" fill="#faf7f2"/>
+<defs><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#5b3a4e" stop-opacity="0.07"/><stop offset="100%" stop-color="#5b3a4e" stop-opacity="0"/></radialGradient></defs>
+<text x="64.00" y="70.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="13.5" fill="#4f6b5e" font-weight="600" font-style="normal" text-anchor="start" letter-spacing="2.2">KONSTELLATION · BEGLEITERKRANKUNGEN</text>
+<text x="64.00" y="116.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="34" fill="#1f2a37" font-weight="700" font-style="normal" text-anchor="start">Borderline kommt selten allein</text>
+<rect x="64" y="132" width="58" height="3" fill="#5b3a4e"/>
+<text x="64.00" y="162.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="16.5" fill="#4b5563" font-weight="normal" font-style="normal" text-anchor="start">Warum mehrere Diagnosen zusammen auftreten – und was das für Sie bedeutet</text>
+<circle cx="412" cy="412" r="210" fill="url(#glow)"/>
+<line x1="412" y1="412" x2="562" y2="317" stroke="#5b3a4e" stroke-opacity="0.26" stroke-width="1.4"/>
+<line x1="412" y1="412" x2="612" y2="482" stroke="#5b3a4e" stroke-opacity="0.26" stroke-width="1.4"/>
+<line x1="412" y1="412" x2="507" y2="612" stroke="#5b3a4e" stroke-opacity="0.26" stroke-width="1.4"/>
+<line x1="412" y1="412" x2="207" y2="427" stroke="#5b3a4e" stroke-opacity="0.26" stroke-width="1.4"/>
+<line x1="412" y1="412" x2="262" y2="572" stroke="#5b3a4e" stroke-opacity="0.26" stroke-width="1.4"/>
+<line x1="412" y1="412" x2="282" y2="262" stroke="#5b3a4e" stroke-opacity="0.26" stroke-width="1.4"/>
+<circle cx="562" cy="317" r="52" fill="#e0c6cd" stroke="#5b3a4e" stroke-opacity="0.35" stroke-width="1"/>
+<text x="562.00" y="322.10" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="15.0" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">Depression</text>
+<circle cx="612" cy="482" r="45" fill="#e0c6cd" stroke="#5b3a4e" stroke-opacity="0.35" stroke-width="1"/>
+<text x="612.00" y="478.45" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="14.4" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">Angst-</text>
+<text x="612.00" y="495.35" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="14.4" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">störungen</text>
+<circle cx="507" cy="612" r="41" fill="#e0c6cd" stroke="#5b3a4e" stroke-opacity="0.35" stroke-width="1"/>
+<text x="507.00" y="608.35" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="15.0" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">PTBS /</text>
+<text x="507.00" y="625.85" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="15.0" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">Trauma</text>
+<circle cx="207" cy="427" r="43" fill="#e0c6cd" stroke="#5b3a4e" stroke-opacity="0.35" stroke-width="1"/>
+<text x="207.00" y="423.57" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="13.6" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">Substanz-</text>
+<text x="207.00" y="439.67" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="13.6" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">gebrauch</text>
+<circle cx="262" cy="572" r="38" fill="#e0c6cd" stroke="#5b3a4e" stroke-opacity="0.35" stroke-width="1"/>
+<text x="262.00" y="568.88" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11.7" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">Ess-</text>
+<text x="262.00" y="583.08" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11.7" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">störungen</text>
+<circle cx="282" cy="262" r="29" fill="#e0c6cd" stroke="#5b3a4e" stroke-opacity="0.35" stroke-width="1"/>
+<text x="282.00" y="267.10" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="15.0" fill="#4a2f40" font-weight="600" font-style="normal" text-anchor="middle">ADHS</text>
+<text x="562.00" y="256.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11" fill="#4f6b5e" font-weight="600" font-style="normal" text-anchor="middle" letter-spacing="2" opacity="0.62">AFFEKTIV</text>
+<text x="636.00" y="604.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11" fill="#4f6b5e" font-weight="600" font-style="normal" text-anchor="middle" letter-spacing="2" opacity="0.62">ANGST &amp;</text>
+<text x="636.00" y="619.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11" fill="#4f6b5e" font-weight="600" font-style="normal" text-anchor="middle" letter-spacing="2" opacity="0.62">TRAUMA</text>
+<text x="120.00" y="452.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11" fill="#4f6b5e" font-weight="600" font-style="normal" text-anchor="middle" letter-spacing="2" opacity="0.62">IMPULS &amp;</text>
+<text x="120.00" y="467.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11" fill="#4f6b5e" font-weight="600" font-style="normal" text-anchor="middle" letter-spacing="2" opacity="0.62">VERHALTEN</text>
+<circle cx="412" cy="412" r="64" fill="#5b3a4e"/>
+<text x="412.00" y="418.50" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="19" fill="#faf7f2" font-weight="600" font-style="normal" text-anchor="middle">Borderline</text>
+<text x="64.00" y="712.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="12.5" fill="#4b5563" font-weight="normal" font-style="italic" text-anchor="start">Die Kreisgrösse zeigt, wie häufig eine Begleiterkrankung ist – gemessen als Einzeldiagnose.</text>
+<rect x="64" y="734" width="3" height="98" fill="#5b3a4e"/>
+<text x="86.00" y="752.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="17.5" fill="#1f2a37" font-weight="normal" font-style="italic" text-anchor="start">Mehrere Diagnosen heissen mehr Komplexität – nicht mehr Schuld.</text>
+<text x="86.00" y="782.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="17.5" fill="#1f2a37" font-weight="normal" font-style="italic" text-anchor="start">Die Behandlung beginnt oft beim Dringlichsten – das ist kein Widerspruch.</text>
+<text x="86.00" y="812.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="17.5" fill="#1f2a37" font-weight="normal" font-style="italic" text-anchor="start">Sie müssen nicht sortieren, was was ist.</text>
+<rect x="64" y="844" width="692" height="87" rx="10" fill="#dde3d4"/>
+<text x="84.00" y="866.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11.5" fill="#476358" font-weight="700" font-style="normal" text-anchor="start" letter-spacing="2.0">HINWEIS</text>
+<text x="84.00" y="886.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="14" fill="#1f2a37" font-weight="normal" font-style="normal" text-anchor="start">Kommt eine Depression dazu, braucht es oft mehr fachliche Aufmerksamkeit – auch</text><text x="84.00" y="905.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="14" fill="#1f2a37" font-weight="normal" font-style="normal" text-anchor="start">für die Sicherheit. Eine abgestimmte Behandlung, die beides im Blick hat,</text><text x="84.00" y="924.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="14" fill="#1f2a37" font-weight="normal" font-style="normal" text-anchor="start">entlastet auch Sie.</text>
+<line x1="64" y1="961" x2="756" y2="961" stroke="#1f2a37" stroke-opacity="0.14" stroke-width="1"/>
+<text x="64.00" y="985.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="12.5" fill="#4b5563" font-weight="600" font-style="normal" text-anchor="start">Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich</text>
+<text x="64.00" y="1005.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11.5" fill="#4b5563" font-weight="normal" font-style="italic" text-anchor="start" opacity="0.9">Quellen: S3-Leitlinie Borderline-Persönlichkeitsstörung (DGPPN 2022, AWMF 038-015) · Shah &amp; Zanarini (2018)</text>
+<text x="64.00" y="1021.00" font-family="'Source Serif 4','Source Serif 4 Variable',Georgia,serif" font-size="11.5" fill="#4b5563" font-weight="normal" font-style="italic" text-anchor="start" opacity="0.9">Vollbibliographie: borderline-angehoerige.netlify.app/quellen</text>
+</svg>

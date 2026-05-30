@@ -148,8 +148,9 @@ const bookCategories: BookCategory[] = [
     books: [
       {
         title: "Mama, Mia und das Schleuderprogramm",
-        author: "Psychiatrie-Verlag (Kids in BALANCE)",
+        author: "Christiane Tilly & Anja Offermann",
         publisher: "Psychiatrie-Verlag",
+        year: "2012, 3. Aufl. 2025",
         description:
           "Das einzige deutschsprachige Kinderbuch speziell zum Thema Borderline. Erklärt kindgerecht das 'Schleuderprogramm der Gefühle' und zeigt Kindern, dass sie geliebt werden – auch wenn Mama oder Papa es manchmal nicht zeigen können.",
         forWhom: "Kinder ab 6 Jahren",

@@ -468,6 +468,28 @@
     color: var(--accent-primary-h);
   }
 
+  /* ── Glossar-Begriff — dezente Fachbegriff-Verlinkung im Fliesstext ──
+     Erbt die Textfarbe, damit das editoriale Schriftbild nicht bricht; die
+     Affordance ist allein die gepunktete Unterstreichung (nicht-farbliches
+     Signal → WCAG-konform). Hover/Fokus hebt den Begriff auf Akzent. */
+  .glossar-term {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--accent-label);
+    text-underline-offset: 0.2em;
+    transition:
+      color 0.15s ease,
+      text-decoration-color 0.15s ease;
+  }
+
+  .glossar-term:hover,
+  .glossar-term:focus-visible {
+    color: var(--accent-primary);
+    text-decoration-color: var(--accent-primary);
+  }
+
   /* ── Editorial Pull-Quote — Testimonial-Variant ──
      Zentrierter Display-Pull-Quote mit «»-Anführungszeichen in Aubergine
      via Pseudo-Elemente. Explizite Hex-Farbe (analog Color-Block-Pattern). */

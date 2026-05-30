@@ -8,6 +8,7 @@ import {
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
+import GlossarBegriff from "@/components/GlossarBegriff";
 import { FadenIllustration } from "@/components/illustrations";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
 import Layout from "@/components/Layout";
@@ -147,8 +148,9 @@ export default function Kommunizieren() {
             <p>
               Diese Seite ordnet Kommunikation nicht als Sammlung kluger
               Formulierungen, sondern als Beziehungsregulation unter Belastung
-              ein. Relevant sind vor allem Timing, Validierung, Begrenzung und
-              die Frage, ob überhaupt schon Gesprächsraum da ist.
+              ein. Relevant sind vor allem Timing,{" "}
+              <GlossarBegriff term="Validierung">Validierung</GlossarBegriff>,
+              Begrenzung und die Frage, ob überhaupt schon Gesprächsraum da ist.
             </p>
             <p>
               Drei Akzente ziehen sich durch die Seite: zuerst die Frage, ob

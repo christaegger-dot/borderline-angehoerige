@@ -9,6 +9,7 @@ import {
   Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
+import GlossarBegriff from "@/components/GlossarBegriff";
 import { EisbergIllustration } from "@/components/illustrations";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -291,10 +292,10 @@ export default function Verstehen() {
             <EditorialProse>
               <p>
                 Die Borderline-Persönlichkeitsstörung ist ein komplexes
-                Störungsbild. Typisch sind starke emotionale Reagibilität,
-                Schwierigkeiten mit innerer Stabilität und ein
-                Beziehungserleben, das unter Bindungsstress schnell ins Wanken
-                geraten kann.
+                Störungsbild. Typisch sind starke emotionale Reagibilität (wie
+                schnell und heftig jemand emotional reagiert), Schwierigkeiten
+                mit innerer Stabilität und ein Beziehungserleben, das unter
+                Bindungsstress schnell ins Wanken geraten kann.
               </p>
               <p>
                 Nicht alle Menschen mit Borderline zeigen dieselben Muster.
@@ -312,7 +313,7 @@ export default function Verstehen() {
             <EvidenceNote
               variant="editorial"
               title="Quellen zur diagnostischen und klinischen Einordnung"
-              definition="Die Störung zeigt je nach Person unterschiedliche Ausprägungen. Für Angehörige ist vor allem relevant, dass Bindungsstress, Affektregulation und Scham-/Überflutungserleben klinisch gut beschrieben sind."
+              definition="Die Störung zeigt je nach Person unterschiedliche Ausprägungen. Für Angehörige ist vor allem relevant, dass Bindungsstress, Affektregulation (die Fähigkeit, Gefühle zu steuern) und Scham-/Überflutungserleben klinisch gut beschrieben sind."
               reviewDate="24.03.2026"
               sources={[
                 {
@@ -481,7 +482,10 @@ export default function Verstehen() {
                   color: "var(--fg-primary)",
                 }}
               >
-                Dissoziation und Entfremdung
+                <GlossarBegriff term="Dissoziation">
+                  Dissoziation
+                </GlossarBegriff>{" "}
+                und Entfremdung
               </h3>
               <p>
                 Unter starkem Stress können auch Unwirklichkeitsgefühle, innere
@@ -654,9 +658,10 @@ export default function Verstehen() {
               </h3>
               <p>
                 Realistischer ist: Borderline ist belastend, aber behandelbar.
-                Viele Menschen erleben über Jahre deutliche Besserungen,
-                Remission oder umfassendere Genesung — oft nicht geradlinig,
-                aber gut dokumentiert. Mehr dazu auf{" "}
+                Viele Menschen erleben über Jahre deutliche Besserungen,{" "}
+                <GlossarBegriff term="Remission">Remission</GlossarBegriff> oder
+                umfassendere Genesung — oft nicht geradlinig, aber gut
+                dokumentiert. Mehr dazu auf{" "}
                 <Link href="/genesung" className="editorial-link">
                   Genesung
                 </Link>

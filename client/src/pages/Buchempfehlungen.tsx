@@ -62,6 +62,17 @@ const bookCategories: BookCategory[] = [
         highlight: true,
       },
       {
+        title: "Die Kunst, mit einem Vulkan zu sprechen",
+        author: "Jerold J. Kreisman",
+        publisher: "Kösel",
+        year: "2020",
+        description:
+          "Kommunikationstechniken für Angehörige (SET-UP-Methode). Vom Autor von «Ich hasse dich – verlass mich nicht», aber inhaltlich eigenständig: praktische Strategien, um Krisen zu entschärfen und im Gespräch zu bleiben.",
+        forWhom: "Angehörige, Partner",
+        bezugsUrl:
+          "https://www.exlibris.ch/de/buecher-buch/deutschsprachige-buecher/jerold-j-kreisman/die-kunst-mit-einem-vulkan-zu-sprechen/id/9783466347568/",
+      },
+      {
         title: "Borderline – Das Selbsthilfe-Buch für Angehörige",
         author: "Christa Windmüller",
         publisher: "TRIAS",
@@ -117,15 +128,6 @@ const bookCategories: BookCategory[] = [
         forWhom: "Eltern, Bezugspersonen",
       },
       {
-        title: "Borderline – Ein Ratgeber für Betroffene und Angehörige",
-        author: "Ewald Rahn",
-        publisher: "Psychiatrie-Verlag",
-        year: "2001",
-        description:
-          "Ein Klassiker, verständlich geschrieben. Bietet einen guten Überblick über die Störung und praktische Hinweise für den Umgang.",
-        forWhom: "Alle Angehörigen",
-      },
-      {
         title: "Borderline verstehen und bewältigen",
         author: "Ewald Rahn & Karsten Giertz",
         publisher: "Psychiatrie-Verlag",
@@ -134,15 +136,6 @@ const bookCategories: BookCategory[] = [
           "Mit passendem Begleitbuch. Liefert Tipps und Anleitungen, um die Erkrankung zu erkennen und Mut zu fassen für den gemeinsamen Weg.",
         forWhom: "Eltern, Familien",
         bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783867393201",
-      },
-      {
-        title: "Borderline Personality Disorder in Adolescents",
-        author: "Blaise Aguirre",
-        publisher: "Fair Winds Press",
-        year: "2014",
-        description:
-          "Englischsprachiges Standardwerk zu BPS bei Jugendlichen. Erklärt Entstehung, Diagnose und Behandlung aus der Perspektive von Eltern und Fachpersonen. Aguirre leitet das McLean-Hospital-Programm für Adoleszente.",
-        forWhom: "Eltern, deren Kind (Jugendliche) betroffen ist",
       },
     ],
   },
@@ -233,6 +226,42 @@ const bookCategories: BookCategory[] = [
       },
     ],
   },
+  {
+    id: "vertiefen",
+    title: "Zum Vertiefen",
+    subtitle:
+      "Klinisch fundiert — für Angehörige und Fachpersonen, die tiefer einsteigen möchten",
+    books: [
+      {
+        title: "Borderline – Die andere Art zu fühlen",
+        author: "Alice Sendera & Martina Sendera",
+        publisher: "Springer",
+        year: "2016 (2. Aufl.)",
+        description:
+          "Klinisch fundiert (DBT, Schematheorie, Bindung), mit Lösungsansätzen, Übungen und Texten von Angehörigen. Anspruchsvoller als ein niederschwelliger Einstieg — auch Neurobiologie und Psychopharmakotherapie kommen vor.",
+        forWhom: "Angehörige und Fachpersonen, die tiefer einsteigen wollen",
+        bezugsUrl:
+          "https://www.exlibris.ch/de/buecher-buch/deutschsprachige-buecher/alice-sendera/borderline-die-andere-art-zu-fuehlen/id/9783662480021/",
+      },
+    ],
+  },
+  {
+    id: "englisch",
+    title: "Englischsprachig",
+    subtitle:
+      "Ein englischsprachiger Titel — aufgenommen, weil es für Jugendliche mit Borderline keinen vergleichbaren deutschsprachigen Eltern-Ratgeber gibt.",
+    books: [
+      {
+        title: "Borderline Personality Disorder in Adolescents",
+        author: "Blaise Aguirre",
+        publisher: "Fair Winds Press",
+        year: "2014",
+        description:
+          "Englischsprachiges Standardwerk zu BPS bei Jugendlichen. Erklärt Entstehung, Diagnose und Behandlung aus der Perspektive von Eltern und Fachpersonen. Aguirre leitet das McLean-Hospital-Programm für Adoleszente.",
+        forWhom: "Eltern, deren Kind (Jugendliche) betroffen ist",
+      },
+    ],
+  },
 ];
 
 /** Slugifiziert Buchtitel für stabile Anker-IDs. */
@@ -295,9 +324,10 @@ export default function Buchempfehlungen() {
             Bücher für Angehörige
           </DisplayHeading>
           <Lede className="mt-6">
-            Kuratierte deutschsprachige Bücher für Angehörige. Die Auswahl
-            verbindet Grundwissen, Beziehungsperspektiven, Selbstfürsorge und
-            Erfahrungsnähe, ohne Anspruch auf Vollständigkeit.
+            Kuratierte, überwiegend deutschsprachige Bücher für Angehörige. Die
+            Auswahl verbindet Grundwissen, Beziehungsperspektiven,
+            Selbstfürsorge und Erfahrungsnähe, ohne Anspruch auf
+            Vollständigkeit.
           </Lede>
         </header>
 

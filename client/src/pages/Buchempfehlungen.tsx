@@ -125,12 +125,13 @@ const bookCategories: BookCategory[] = [
       },
       {
         title: "Ratgeber Borderline-Persönlichkeitsstörung",
-        author: "Martin Bohus & Martina Wolf-Arehult",
+        author: "Anne Kristin von Auer & Michael Kaess",
         publisher: "Hogrefe",
-        year: "2018",
+        year: "2022",
         description:
-          "Informiert über Erscheinungsform, Ursachen und Behandlungsmöglichkeiten. Zeigt Eltern und Bezugspersonen, wie sie unterstützen können.",
+          "Informiert über Erscheinungsform, Ursachen und Behandlungsmöglichkeiten. Zeigt Eltern und weiteren Bezugspersonen, wie sie Jugendliche unterstützen und mit der eigenen Belastung umgehen können.",
         forWhom: "Eltern, Bezugspersonen",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783801727765",
       },
       {
         title: "Borderline verstehen und bewältigen",

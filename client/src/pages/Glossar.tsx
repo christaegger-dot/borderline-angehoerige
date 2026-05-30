@@ -9,6 +9,7 @@ import {
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
+import { slugifyTerm } from "@/lib/glossarAnchor";
 import { Link, useLocation } from "wouter";
 
 interface GlossaryTerm {
@@ -260,18 +261,6 @@ const categoryLabels: Record<GlossaryTerm["category"], string> = {
   symptome: "Symptome & Muster",
   selbsthilfe: "Selbsthilfe & Angehörige",
 };
-
-/** Slugifiziert einen Term zu URL-sicherer Anker-ID. */
-function slugifyTerm(term: string): string {
-  return term
-    .toLowerCase()
-    .replace(/ä/g, "ae")
-    .replace(/ö/g, "oe")
-    .replace(/ü/g, "ue")
-    .replace(/ß/g, "ss")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /** Liefert den ersten Buchstaben (uppercase) für Gruppierung. */
 function firstLetter(term: string): string {

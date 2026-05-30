@@ -8,6 +8,7 @@ import {
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
+import GlossarBegriff from "@/components/GlossarBegriff";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -455,10 +456,12 @@ export default function UnterstuetzenKrise() {
               einordnen — nicht jede belastende Situation ist gleich ein
               Notfall, das Ampel-System hilft, die Intensität klarer zu lesen;
               dann ruhig und sicher handeln — in akuten Momenten zählen
-              Sicherheit, kurze Sätze, Validierung und ein begrenztes Vorgehen
-              mehr als Diskussionen; und schliesslich auch das Danach mitdenken
-              — nach der Eskalation braucht es oft Scham, Erschöpfung und
-              Aufarbeitung mit derselben Ruhe wie in der Krise selbst.
+              Sicherheit, kurze Sätze,{" "}
+              <GlossarBegriff term="Validierung">Validierung</GlossarBegriff>{" "}
+              und ein begrenztes Vorgehen mehr als Diskussionen; und
+              schliesslich auch das Danach mitdenken — nach der Eskalation
+              braucht es oft Scham, Erschöpfung und Aufarbeitung mit derselben
+              Ruhe wie in der Krise selbst.
             </p>
             <p>
               Sie können auch direkt zu{" "}

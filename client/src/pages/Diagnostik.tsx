@@ -10,6 +10,7 @@ import {
   Lede,
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
+import GlossarBegriff from "@/components/GlossarBegriff";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
@@ -343,11 +344,11 @@ export default function Diagnostik() {
               Verzögerungstaktik.
             </p>
             <p>
-              Differenzialdiagnostik (was IST Borderline und was nicht) und
-              Komorbidität (was MIT Borderline parallel auftreten kann) sind
-              unterschiedliche Fragen — manche Erkrankungen wie PTBS werden im
-              Diagnostik-Prozess geprüft und können auch parallel bestehen. Mehr
-              dazu auf der Seite{" "}
+              Differenzialdiagnostik (was IST Borderline und was nicht) und{" "}
+              <GlossarBegriff term="Komorbidität">Komorbidität</GlossarBegriff>{" "}
+              (was MIT Borderline parallel auftreten kann) sind unterschiedliche
+              Fragen — manche Erkrankungen wie PTBS werden im Diagnostik-Prozess
+              geprüft und können auch parallel bestehen. Mehr dazu auf der Seite{" "}
               <Link
                 href="/verstehen/begleiterkrankungen"
                 className="editorial-link"

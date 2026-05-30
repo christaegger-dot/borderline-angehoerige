@@ -24,7 +24,7 @@ describe("EvidenceNote", () => {
       />
     );
 
-    expect(screen.getByText("Quellenhinweis")).toBeInTheDocument();
+    expect(screen.getByText(/Quellenhinweis \(2\)/)).toBeInTheDocument();
     expect(screen.getByText("APA Practice Guideline")).toBeInTheDocument();
     expect(screen.getByText("Versorgung / Hilfe")).toBeInTheDocument();
     expect(
@@ -32,5 +32,28 @@ describe("EvidenceNote", () => {
     ).toBeInTheDocument();
     expect(screen.getByText(/PUK Zürich/)).toBeInTheDocument();
     expect(screen.getByText(/Regionale Versorgung/)).toBeInTheDocument();
+  });
+
+  it("collapses the source list behind a details/summary toggle", () => {
+    const { container } = render(
+      <EvidenceNote
+        title="Quellen"
+        sources={[
+          {
+            label: "Studie A",
+            href: "https://example.com/a",
+            type: "wissenschaft",
+          },
+        ]}
+      />
+    );
+
+    const details = container.querySelector(
+      "details.evidence-note__disclosure"
+    );
+    expect(details).toBeInTheDocument();
+    // standardmässig eingeklappt (kein open-Attribut)
+    expect(details).not.toHaveAttribute("open");
+    expect(container.querySelector("summary")).toBeInTheDocument();
   });
 });

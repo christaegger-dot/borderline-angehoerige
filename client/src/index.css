@@ -64,6 +64,8 @@
   --accent-primary: #5b3a4e; /* Aubergine — Inline-Links, Drop-Cap (~8.6:1 auf bg-primary, AAA) */
   --accent-primary-h: #4a2f40; /* Aubergine hover */
   --accent-label: #4f6b5e; /* gedämpftes Sage für Sektionslabels in Caps */
+  --ig-rose: #e0c6cd; /* Infografik: Rosé-Satelliten (A2 Begleiterkrankungen) */
+  --ig-sage-deep: #476358; /* Infografik: dunkleres Sage auf Sage-Wash (A2 HINWEIS), AA-sicher */
   --rule-color: oklch(
     0.91 0.008 85
   ); /* Hairline – warm, sehr hell (≈ rgba(31,42,55,0.08) auf Cream) */
@@ -1128,6 +1130,18 @@
   .evidence-note__disclosure:not([open]) .evidence-note__body {
     display: none;
   }
+}
+
+/* Inline-Infografiken: responsive Skalierung + Source Serif statt Inline-
+   font-family. width/height-Attribute am <svg> liefern das intrinsische
+   Seitenverhältnis → kein Layout-Shift (CLS 0). */
+.ig-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ig-svg text {
+  font-family: var(--font-display);
 }
 
 /* Scrollbar ausblenden für horizontale Tab-Leisten */

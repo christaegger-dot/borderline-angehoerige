@@ -93,6 +93,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Einfühlsam geschrieben von einem erfahrenen Psychotherapeuten. Verbindet fachliches Wissen mit praktischen Tipps für den Beziehungsalltag.",
         forWhom: "Partner, Angehörige",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783843606363",
       },
       {
         title: "Wenn lieben weh tut",
@@ -102,6 +103,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Kommunikationsratgeber speziell für Partner in einer Borderline-Beziehung. Konkrete Gesprächsstrategien für schwierige Situationen.",
         forWhom: "Partner in Paarbeziehungen",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783980949675",
       },
     ],
   },
@@ -167,6 +169,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Einfühlsames Bilderbuch über Depression, aber gut übertragbar auf andere psychische Erkrankungen. Zeigt, dass das 'Monster' nicht die Schuld des Kindes ist.",
         forWhom: "Kinder ab 4 Jahren",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783867393447",
       },
       {
         title: "Was ist bloss mit Mama los?",
@@ -175,6 +178,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Hilft Kindern zu verstehen, wenn Eltern in seelische Krisen geraten. Mit Tipps, wie man mit Kindern über Angst, Depression, Stress und Trauma sprechen kann.",
         forWhom: "Kinder ab 5 Jahren, auch für Eltern",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783466310203",
       },
       {
         title: "Sonnige Traurigtage",
@@ -183,6 +187,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Ein Bilderbuch für Kinder psychisch kranker Eltern. Zeigt, dass Kinder nicht schuld sind und dass es Hilfe gibt.",
         forWhom: "Jüngere Kinder ab 4 Jahren",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783863215347",
       },
       {
         title: "Papas Seele hat Schnupfen",
@@ -191,6 +196,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Ein erzählendes Kindersachbuch über die Welt der Psychiatrie. Nimmt Kindern die Angst vor dem Unbekannten.",
         forWhom: "Kinder ab 6 Jahren",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783942640213",
       },
     ],
   },
@@ -218,6 +224,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Für erwachsene Kinder, die ihre Kindheit mit einer Borderline-Mutter verstehen und verarbeiten möchten. Beschreibt verschiedene Mutter-Typen und Wege zur Bewältigung.",
         forWhom: "Erwachsene Kinder von Betroffenen",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783837928235",
       },
       {
         title: "Borderline-Störung: Wie mir die DBT geholfen hat",
@@ -227,6 +234,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Betroffene berichten, wie ihnen die Dialektisch-Behaviorale Therapie geholfen hat. Gibt Hoffnung und zeigt, dass Veränderung möglich ist.",
         forWhom: "Angehörige, die Therapie verstehen wollen",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783801720216",
       },
     ],
   },
@@ -263,6 +271,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Englischsprachiges Standardwerk zu BPS bei Jugendlichen. Erklärt Entstehung, Diagnose und Behandlung aus der Perspektive von Eltern und Fachpersonen. Aguirre leitet das McLean-Hospital-Programm für Adoleszente.",
         forWhom: "Eltern, deren Kind (Jugendliche) betroffen ist",
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9781592336494",
       },
     ],
   },

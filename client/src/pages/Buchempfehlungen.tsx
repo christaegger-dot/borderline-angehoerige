@@ -50,6 +50,7 @@ const bookCategories: BookCategory[] = [
           "Ein langjähriger Standardtitel für Angehörige. Beschreibt typische Beziehungsmuster, Kommunikationsideen und Fragen des Selbstschutzes in engeren Beziehungen.",
         forWhom: "Partner, Familienmitglieder, enge Freunde",
         highlight: true,
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783867390057",
       },
       {
         title: "Ich hasse dich – verlass mich nicht",
@@ -60,6 +61,7 @@ const bookCategories: BookCategory[] = [
           "Erklärt die Schwarz-Weiss-Welt der Borderline-Persönlichkeit aus beiden Perspektiven. Hilft zu verstehen, warum Betroffene zwischen Idealisierung und Entwertung schwanken – und wie man damit umgehen kann.",
         forWhom: "Alle Angehörigen, auch Betroffene selbst",
         highlight: true,
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783466347841",
       },
       {
         title: "Die Kunst, mit einem Vulkan zu sprechen",
@@ -117,6 +119,7 @@ const bookCategories: BookCategory[] = [
           "Stellt erstmals im deutschen Sprachraum die von Alan Fruzzetti und Perry Hoffman entwickelten Familienskills vor. Praktische Fertigkeiten für den Familienalltag, basierend auf der Dialektisch-Behavioralen Therapie.",
         forWhom: "Eltern, Familien, auch für Fachpersonen",
         highlight: true,
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783801731816",
       },
       {
         title: "Ratgeber Borderline-Persönlichkeitsstörung",
@@ -205,6 +208,7 @@ const bookCategories: BookCategory[] = [
           "Texte von Betroffenen und Angehörigen über ihr Erleben, ihre Gefühle und den Alltag mit Borderline. Hilfreich, wenn Sie unterschiedliche Innen- und Beziehungsperspektiven besser verstehen möchten.",
         forWhom: "Alle, die verstehen wollen",
         highlight: true,
+        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783867390033",
       },
       {
         title: "Borderline-Mütter und ihre Kinder",

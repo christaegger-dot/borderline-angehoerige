@@ -1,8 +1,26 @@
 (function () {
   var PRINT_MESSAGE_TYPE = "notfallkarte-print-data";
 
+  function setFieldById(id, val) {
+    var el = document.getElementById(id);
+    if (el && val) {
+      el.value = val;
+      el.removeAttribute("placeholder");
+    }
+  }
+
   function applyData(d) {
     if (!d) return;
+
+    // Eigene Textfelder (Behandlung, Warnsignale, Was hilft, Absprachen, Orte)
+    setFieldById("treatment-name", d.treatmentName);
+    setFieldById("treatment-phone", d.treatmentPhone);
+    setFieldById("warning-person", d.warningPerson);
+    setFieldById("warning-self", d.warningSelf);
+    setFieldById("helps", d.helps);
+    setFieldById("helps-not", d.helpsNot);
+    setFieldById("agreements", d.agreements);
+    setFieldById("safe-places", d.safePlaces);
 
     // Kontaktpersonen (bis zu 3 Zeilen)
     var contacts = d.personalContacts || [];

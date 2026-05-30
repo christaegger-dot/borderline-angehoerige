@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import {
   DisplayHeading,
@@ -35,6 +36,14 @@ interface CalmingStrategy {
 
 interface NotfallkarteData {
   personalContacts: PersonalContact[];
+  treatmentName: string;
+  treatmentPhone: string;
+  warningPerson: string;
+  warningSelf: string;
+  helps: string;
+  helpsNot: string;
+  agreements: string;
+  safePlaces: string;
   calmingStrategies: CalmingStrategy[];
   notes: string;
 }
@@ -50,9 +59,29 @@ const MAX_STRATEGIES = 4;
 
 const NOTFALLKARTE_PRINT_MESSAGE_TYPE = "notfallkarte-print-data";
 
+const TEXT_FIELDS = [
+  "treatmentName",
+  "treatmentPhone",
+  "warningPerson",
+  "warningSelf",
+  "helps",
+  "helpsNot",
+  "agreements",
+  "safePlaces",
+  "notes",
+] as const satisfies readonly (keyof NotfallkarteData)[];
+
 function createEmptyData(): NotfallkarteData {
   return {
     personalContacts: [],
+    treatmentName: "",
+    treatmentPhone: "",
+    warningPerson: "",
+    warningSelf: "",
+    helps: "",
+    helpsNot: "",
+    agreements: "",
+    safePlaces: "",
     calmingStrategies: DEFAULT_STRATEGIES.map(strategy => ({ ...strategy })),
     notes: "",
   };
@@ -61,7 +90,7 @@ function createEmptyData(): NotfallkarteData {
 function isEmptyData(data: NotfallkarteData): boolean {
   return (
     data.personalContacts.length === 0 &&
-    data.notes.trim() === "" &&
+    TEXT_FIELDS.every(field => data[field].trim() === "") &&
     data.calmingStrategies.length === DEFAULT_STRATEGIES.length &&
     data.calmingStrategies.every(
       (strategy, index) => strategy.text === DEFAULT_STRATEGIES[index]?.text
@@ -72,6 +101,13 @@ function isEmptyData(data: NotfallkarteData): boolean {
 function normalizeData(raw: Partial<NotfallkarteData> | null | undefined) {
   const fallback = createEmptyData();
 
+  const textValues = Object.fromEntries(
+    TEXT_FIELDS.map(field => [
+      field,
+      typeof raw?.[field] === "string" ? raw[field] : fallback[field],
+    ])
+  ) as Pick<NotfallkarteData, (typeof TEXT_FIELDS)[number]>;
+
   return {
     personalContacts: Array.isArray(raw?.personalContacts)
       ? raw.personalContacts.slice(0, MAX_CONTACTS)
@@ -80,7 +116,7 @@ function normalizeData(raw: Partial<NotfallkarteData> | null | undefined) {
       Array.isArray(raw?.calmingStrategies) && raw.calmingStrategies.length > 0
         ? raw.calmingStrategies.slice(0, MAX_STRATEGIES)
         : fallback.calmingStrategies,
-    notes: typeof raw?.notes === "string" ? raw.notes : fallback.notes,
+    ...textValues,
   };
 }
 
@@ -157,6 +193,55 @@ const inputStyle = {
   backgroundColor: "var(--bg-elevated)",
   color: "var(--fg-primary)",
 } as const;
+
+function CardSectionHeading({ children }: { children: ReactNode }) {
+  return (
+    <h2
+      className="font-display print:text-base"
+      style={{
+        fontSize: "var(--text-lg)",
+        fontWeight: "var(--weight-display)",
+        color: "var(--fg-primary)",
+        letterSpacing: "var(--tracking-tight)",
+      }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function CardTextField({
+  id,
+  label,
+  value,
+  placeholder,
+  rows = 2,
+  onChange,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  placeholder?: string;
+  rows?: number;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <div className="space-y-1">
+      <label htmlFor={id} className="block uppercase" style={labelStyle}>
+        {label}
+      </label>
+      <textarea
+        id={id}
+        value={value}
+        rows={rows}
+        placeholder={placeholder}
+        onChange={e => onChange(e.target.value)}
+        className={`resize-y ${inputClass} print:resize-none`}
+        style={inputStyle}
+      />
+    </div>
+  );
+}
 
 function EmergencyRow({ kontakt }: { kontakt: Kontakt }) {
   return (
@@ -761,6 +846,126 @@ export default function Notfallkarte() {
                 </li>
               ))}
             </ol>
+          </section>
+          <section className="space-y-3 print:break-inside-avoid">
+            <CardSectionHeading>Behandlung</CardSectionHeading>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 print:grid-cols-2">
+              <div className="space-y-1">
+                <label
+                  htmlFor="treatment-name"
+                  className="block uppercase"
+                  style={labelStyle}
+                >
+                  Fachperson oder Klinik
+                </label>
+                <input
+                  id="treatment-name"
+                  value={data.treatmentName}
+                  onChange={e =>
+                    setData(prev => ({
+                      ...prev,
+                      treatmentName: e.target.value,
+                    }))
+                  }
+                  placeholder="Name"
+                  className={inputClass}
+                  style={inputStyle}
+                />
+              </div>
+              <div className="space-y-1">
+                <label
+                  htmlFor="treatment-phone"
+                  className="block uppercase"
+                  style={labelStyle}
+                >
+                  Telefon
+                </label>
+                <input
+                  id="treatment-phone"
+                  type="tel"
+                  value={data.treatmentPhone}
+                  onChange={e =>
+                    setData(prev => ({
+                      ...prev,
+                      treatmentPhone: e.target.value,
+                    }))
+                  }
+                  placeholder="Telefon"
+                  className={inputClass}
+                  style={inputStyle}
+                />
+              </div>
+            </div>
+          </section>
+          <section className="space-y-3 print:break-inside-avoid">
+            <CardSectionHeading>Warnsignale</CardSectionHeading>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 print:grid-cols-2">
+              <CardTextField
+                id="warning-person"
+                label="Bei der betroffenen Person"
+                value={data.warningPerson}
+                placeholder="Frühe Anzeichen, die auf eine Zuspitzung hindeuten…"
+                rows={3}
+                onChange={v => setData(prev => ({ ...prev, warningPerson: v }))}
+              />
+              <CardTextField
+                id="warning-self"
+                label="Bei mir selbst"
+                value={data.warningSelf}
+                placeholder="Woran ich merke, dass es mir zu viel wird…"
+                rows={3}
+                onChange={v => setData(prev => ({ ...prev, warningSelf: v }))}
+              />
+            </div>
+          </section>
+          <section className="space-y-3 print:break-inside-avoid">
+            <CardSectionHeading>
+              Was in der Krise hilft — und was eher nicht
+            </CardSectionHeading>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 print:grid-cols-2">
+              <CardTextField
+                id="helps"
+                label="Was hilft"
+                value={data.helps}
+                placeholder="Was sich früher bewährt hat…"
+                rows={3}
+                onChange={v => setData(prev => ({ ...prev, helps: v }))}
+              />
+              <CardTextField
+                id="helps-not"
+                label="Was eher nicht hilft"
+                value={data.helpsNot}
+                placeholder="Was die Lage eher verschärft…"
+                rows={3}
+                onChange={v => setData(prev => ({ ...prev, helpsNot: v }))}
+              />
+            </div>
+          </section>
+          <section className="space-y-3 print:break-inside-avoid">
+            <CardSectionHeading>
+              Absprachen &amp; Vereinbarungen
+            </CardSectionHeading>
+            <CardTextField
+              id="agreements"
+              label="Was im Voraus besprochen wurde"
+              value={data.agreements}
+              placeholder="Vereinbarungen mit der betroffenen Person oder der Behandlung…"
+              rows={3}
+              onChange={v => setData(prev => ({ ...prev, agreements: v }))}
+            />
+          </section>
+          <section className="space-y-3 print:break-inside-avoid">
+            <CardSectionHeading>
+              Sichere Orte &amp; entlastende Aktivitäten
+            </CardSectionHeading>
+            <CardTextField
+              id="safe-places"
+              label="Orte und Tätigkeiten, die Halt geben"
+              value={data.safePlaces}
+              placeholder="Für die betroffene Person und für Sie…"
+              rows={3}
+              onChange={v => setData(prev => ({ ...prev, safePlaces: v }))}
+            />
           </section>
           <section className="space-y-3 print:break-inside-avoid">
             <p className="uppercase" style={labelStyle}>

@@ -562,6 +562,27 @@ export function kontaktByIdStrict(id: string): Kontakt {
   return k;
 }
 
+/**
+ * Kanonischer Akutblock — geordnete ID-Liste (akut → entlastend), aus der die
+ * Handout-Notfalllisten EINHEITLICH gerendert werden (Single Source of Truth
+ * für die Krisennummern-Sätze). Reihenfolge bewusst: Rettung/Polizei →
+ * ärztliche Triage → psychiatrische 24/7-Krise (PUK) → entlastendes Gespräch.
+ *
+ * Bewusst NICHT enthalten (Freigabe 30.05.2026):
+ * - INFO_KIZ (ambulante Krisenintervention, kein 24/7-Notfall)
+ * - INFO_FACHSTELLE (Angehörigen-Beratung — wird kontextuell als Ergänzung
+ *   angehängt, nicht als Akutnummer geführt)
+ */
+export const AKUT_KONTAKT_IDS = [
+  "ROT_144", // Sanität
+  "ROT_117", // Polizei
+  "INFO_AERZTEFON", // Ärztefon Zürich, Triage 24/7
+  "GELB_PUK_ERW", // PUK Notfall Erwachsene 24/7
+  "GELB_PUK_KJP", // PUK Kinder & Jugendliche 24/7
+  "GELB_PUK_65", // PUK ab 65 24/7
+  "GRUEN_143", // Dargebotene Hand
+] as const;
+
 /** E-Mail nach ID finden */
 export function emailById(id: string): EmailKontakt | undefined {
   return EMAILS.find(e => e.id === id);

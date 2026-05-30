@@ -1,4 +1,52 @@
 import { createHandoutTextVersion } from "./shared";
+import { AKUT_KONTAKT_IDS, kontaktByIdStrict } from "@/data/kontakte";
+
+// Ziffern kommen aus der Single Source (kontakte.ts); Label/Beschreibung
+// bleiben handgeschrieben. Beide Notfalllisten unten rendern aus demselben
+// kanonischen AKUT_KONTAKT_IDS-Satz → identisch zusammengesetzt und sortiert.
+const nr = (id: (typeof AKUT_KONTAKT_IDS)[number]) =>
+  kontaktByIdStrict(id).nummer;
+
+const AKUT_LABEL: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
+  ROT_144: "Sanität",
+  ROT_117: "Polizei",
+  INFO_AERZTEFON: "Ärztefon",
+  GELB_PUK_ERW: "PUK Zürich Notfall Erwachsene",
+  GELB_PUK_KJP: "PUK Kinder und Jugendliche",
+  GELB_PUK_65: "PUK ab 65",
+  GRUEN_143: "Dargebotene Hand",
+};
+
+// Ausführliche Beschreibungen (Liste «Wichtige Nummern im Akutfall»).
+const AKUT_TEXT_LANG: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
+  ROT_144:
+    "Akute Lebensgefahr, laufende Suizidhandlung, schwere Selbstverletzung, Bewusstlosigkeit oder schwere Intoxikation.",
+  ROT_117: "Gewalt, akute Bedrohung oder wenn sofort Schutz vor Ort nötig ist.",
+  INFO_AERZTEFON:
+    "Dringende medizinische oder psychiatrische Notfall-Triage, 24/7.",
+  GELB_PUK_ERW: "Psychiatrische Krise ohne unmittelbare Lebensgefahr, 24/7.",
+  GELB_PUK_KJP: "Psychiatrische Krise bis 18 Jahre, 24/7.",
+  GELB_PUK_65: "Psychiatrische Krise ab 65 Jahren, 24/7.",
+  GRUEN_143:
+    "Entlastendes Gespräch für Angehörige und Betroffene. Kein Einsatzdienst.",
+};
+
+// Kurze Beschreibungen (Liste «Notfallnummern – Kurzreferenz»).
+const AKUT_TEXT_KURZ: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
+  ROT_144: "Akute Lebensgefahr.",
+  ROT_117: "Bedrohung oder Gewalt.",
+  INFO_AERZTEFON: "Triage 24/7.",
+  GELB_PUK_ERW: "Psychiatrischer Notfall, 24/7.",
+  GELB_PUK_KJP: "Bis 18 Jahre, 24/7.",
+  GELB_PUK_65: "Ab 65 Jahren, 24/7.",
+  GRUEN_143: "Anonym, 24/7.",
+};
+
+const akutCards = (texts: Record<(typeof AKUT_KONTAKT_IDS)[number], string>) =>
+  AKUT_KONTAKT_IDS.map(id => ({
+    title: `${nr(id)} – ${AKUT_LABEL[id]}`,
+    text: texts[id],
+  }));
 
 export const handoutTextVersions = [
   createHandoutTextVersion("notfallplan-krise", {
@@ -12,8 +60,7 @@ export const handoutTextVersions = [
     sections: [
       {
         title: "Akute Gefahr? Sofort handeln.",
-        intro:
-          "Sofort 144 anrufen, wenn medizinische Hilfe oder Rettung vor Ort nötig ist, zum Beispiel wenn die Person:",
+        intro: `Sofort ${nr("ROT_144")} anrufen, wenn medizinische Hilfe oder Rettung vor Ort nötig ist, zum Beispiel wenn die Person:`,
         bullets: [
           "sich gerade verletzt",
           "eine Überdosis eingenommen hat oder eine schwere Intoxikation vermutet wird",
@@ -23,36 +70,7 @@ export const handoutTextVersions = [
       },
       {
         title: "Wichtige Nummern im Akutfall",
-        cards: [
-          {
-            title: "144 Sanität",
-            text: "Akute Lebensgefahr, laufende Suizidhandlung, schwere Selbstverletzung, Bewusstlosigkeit oder schwere Intoxikation.",
-          },
-          {
-            title: "117 Polizei",
-            text: "Gewalt, akute Bedrohung oder wenn sofort Schutz vor Ort nötig ist.",
-          },
-          {
-            title: "0800 33 66 55 – Ärztefon",
-            text: "Dringende medizinische oder psychiatrische Notfall-Triage, 24/7.",
-          },
-          {
-            title: "058 384 20 00 – PUK Zürich Notfall Erwachsene",
-            text: "Psychiatrische Krise ohne unmittelbare Lebensgefahr, 24/7.",
-          },
-          {
-            title: "058 384 66 66 – PUK Kinder und Jugendliche",
-            text: "Psychiatrische Krise bis 18 Jahre, 24/7.",
-          },
-          {
-            title: "058 384 46 82 – PUK ab 65",
-            text: "Psychiatrische Krise ab 65 Jahren, 24/7.",
-          },
-          {
-            title: "143 – Dargebotene Hand",
-            text: "Entlastendes Gespräch für Angehörige und Betroffene. Kein Einsatzdienst.",
-          },
-        ],
+        cards: akutCards(AKUT_TEXT_LANG),
       },
       {
         title: "Wichtiger Soforthinweis",
@@ -133,35 +151,17 @@ export const handoutTextVersions = [
           "Gespräch mit eigener Fachperson suchen",
           "nicht alles allein tragen müssen",
           "Fachstelle Angehörigenarbeit PUK kontaktieren",
-          "Dargebotene Hand 143 – auch für Angehörige",
+          `Dargebotene Hand ${nr("GRUEN_143")} – auch für Angehörige`,
           "eigene Gefühle (Angst, Wut, Erschöpfung) zulassen",
         ],
       },
       {
         title: "Notfallnummern – Kurzreferenz",
         cards: [
+          ...akutCards(AKUT_TEXT_KURZ),
           {
-            title: "144 – Sanität",
-            text: "Akute Lebensgefahr.",
-          },
-          {
-            title: "0800 33 66 55 – Ärztefon",
-            text: "Triage 24/7.",
-          },
-          {
-            title: "058 384 20 00 – PUK Notfall Erwachsene",
-            text: "Psychiatrischer Notfall, 24/7.",
-          },
-          {
-            title: "143 – Dargebotene Hand",
-            text: "Anonym, 24/7.",
-          },
-          {
-            title: "117 – Polizei",
-            text: "Bedrohung oder Gewalt.",
-          },
-          {
-            title: "058 384 38 00 – Fachstelle Angehörigenarbeit PUK",
+            // Angehörigen-Ergänzung (bewusst kein Akutblock-Eintrag).
+            title: `${kontaktByIdStrict("INFO_FACHSTELLE").nummer} – Fachstelle Angehörigenarbeit PUK`,
             text: "Unterstützung für Angehörige.",
           },
         ],
@@ -169,8 +169,7 @@ export const handoutTextVersions = [
       {
         title: "Wichtiger Hinweis",
         calloutTitle: "Orientierung, kein Ersatz für Notfallbeurteilung",
-        calloutText:
-          "Dieser Notfallplan ersetzt keine professionelle Beurteilung und keine psychiatrische Diagnose. Er dient der Orientierung in einer akuten Situation. Bei akuter Lebensgefahr sofort 144 anrufen.",
+        calloutText: `Dieser Notfallplan ersetzt keine professionelle Beurteilung und keine psychiatrische Diagnose. Er dient der Orientierung in einer akuten Situation. Bei akuter Lebensgefahr sofort ${nr("ROT_144")} anrufen.`,
       },
     ],
     sourceLine:

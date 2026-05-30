@@ -1,4 +1,9 @@
 import { createHandoutTextVersion } from "./shared";
+import { kontaktByIdStrict } from "@/data/kontakte";
+
+// Krisennummern aus der Single Source (kontakte.ts); umgebender Text bleibt
+// die eigene Stimme dieses Handouts. Nur die Ziffern werden gebunden.
+const n = (id: string) => kontaktByIdStrict(id).nummer;
 
 export const handoutTextVersions = [
   createHandoutTextVersion("krisenkommunikation", {
@@ -63,15 +68,15 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Akut / unmittelbare Gefahr",
-            text: "Bei Lebensgefahr, laufender Selbstgefährdung, schwerer Verletzung oder schwerer Intoxikation: 144. Bei Gewalt oder akuter Bedrohung: 117.",
+            text: `Bei Lebensgefahr, laufender Selbstgefährdung, schwerer Verletzung oder schwerer Intoxikation: ${n("ROT_144")}. Bei Gewalt oder akuter Bedrohung: ${n("ROT_117")}.`,
           },
           {
             title: "Psychiatrische Krise ohne unmittelbare Lebensgefahr",
-            text: "PUK Zürich 24/7: Erwachsene 058 384 20 00, Kinder/Jugendliche 058 384 66 66, ab 65 Jahren 058 384 46 82.",
+            text: `PUK Zürich 24/7: Erwachsene ${n("GELB_PUK_ERW")}, Kinder/Jugendliche ${n("GELB_PUK_KJP")}, ab 65 Jahren ${n("GELB_PUK_65")}.`,
           },
           {
             title: "Entlastung / Beratung",
-            text: "Die Dargebotene Hand 143 ist für ein entlastendes Gespräch da. Pro Mente Sana 0848 800 858 ist Beratung und Information, kein akuter Einsatzdienst.",
+            text: `Die Dargebotene Hand ${n("GRUEN_143")} ist für ein entlastendes Gespräch da. Pro Mente Sana ${n("INFO_PROMENTE")} ist Beratung und Information, kein akuter Einsatzdienst.`,
           },
         ],
       },
@@ -183,7 +188,7 @@ export const handoutTextVersions = [
           },
           {
             title: "«Wenn du gehst, bringe ich mich um.»",
-            text: "Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich bleibe damit nicht allein und hole jetzt Hilfe dazu.» Solche Sätze immer ernst nehmen: Bei unmittelbarer Gefahr 144, 117 oder eine psychiatrische Notfallstelle einbeziehen.",
+            text: `Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich bleibe damit nicht allein und hole jetzt Hilfe dazu.» Solche Sätze immer ernst nehmen: Bei unmittelbarer Gefahr ${n("ROT_144")}, ${n("ROT_117")} oder eine psychiatrische Notfallstelle einbeziehen.`,
           },
           {
             title: "«Du verstehst mich sowieso nicht.»",

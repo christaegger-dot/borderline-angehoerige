@@ -27,6 +27,32 @@
  * ID-Schema: KATEGORIE_BEZEICHNUNG (Grossbuchstaben + Unterstriche, keine Umlaute)
  */
 
+/**
+ * QUELLEN-VERIFIKATION (Notfallnummern)
+ *
+ * Verifikationsdatum: 30.05.2026. Abgleich der sicherheitskritischen Notfall-
+ * nummern gegen zwei offizielle Quellen — reiner Verifikations-Durchlauf, keine
+ * Werte geaendert.
+ *
+ * Quelle A — PUK Zuerich, https://www.pukzh.ch (Notfall Zentrale)
+ * Quelle B — Suizidpraevention Kanton Zuerich,
+ *            https://www.suizidpraevention-zh.ch (Traeger BAG /
+ *            reden-kann-retten.ch)
+ *
+ * Zuordnung (ID ↔ verifizierte Nummer ↔ Quelle), Stand 30.05.2026 — alle MATCH:
+ *   GELB_PUK_KJP  058 384 66 66  A (KJPD auch bei B)
+ *   GELB_PUK_ERW  058 384 20 00  A
+ *   GELB_PUK_65   058 384 46 82  A
+ *   INFO_KIZ      058 384 65 00  B (KIZ der PUK, Durchwahl 4)
+ *   ROT_144       144            B
+ *   ROT_145       145            B
+ *   ROT_117       117            B
+ *   GRUEN_143     143            B
+ *
+ * Hinweis: Die PUK-Telefonzentrale +41 58 384 21 11 ist KEIN Notfall-Kontakt
+ * und daher bewusst nicht als ROT/GELB gefuehrt.
+ */
+
 // ─── Typen ───────────────────────────────────────────────
 
 export type Kategorie = "rot" | "gelb" | "gruen" | "info";

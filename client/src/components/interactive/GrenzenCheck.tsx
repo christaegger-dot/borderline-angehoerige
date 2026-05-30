@@ -7,6 +7,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { kontaktByIdStrict } from "@/data/kontakte";
 
 type Antwort = "ja" | "manchmal" | "nein" | null;
 
@@ -298,8 +299,9 @@ export default function GrenzenCheck() {
                   </div>
                   <p className="ml-8 text-xs leading-relaxed text-muted-foreground">
                     Die Fachstelle Angehörigenarbeit (PUK Zürich) bietet
-                    Beratung: 058 384 38 00. Grenzen setzen lässt sich üben –
-                    manchmal hilft ein Gespräch mehr als jeder Ratgeber.
+                    Beratung: {kontaktByIdStrict("INFO_FACHSTELLE").nummer}.
+                    Grenzen setzen lässt sich üben – manchmal hilft ein Gespräch
+                    mehr als jeder Ratgeber.
                   </p>
                 </div>
               </div>

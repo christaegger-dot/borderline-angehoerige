@@ -1,5 +1,5 @@
 import { Heart, Shield, AlertTriangle } from "lucide-react";
-import { kontaktById } from "@/data/kontakte";
+import { kontaktByIdStrict } from "@/data/kontakte";
 
 const orientierungspunkte = [
   {
@@ -95,7 +95,7 @@ export default function SelbstfuersorgeCheck() {
             <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-alert-dark" />
             <p className="text-sm leading-relaxed text-foreground">
               Die Fachstelle Angehörigenarbeit (PUK Zürich) bietet Beratung:{" "}
-              {kontaktById("INFO_FACHSTELLE")?.nummer ?? "058 384 38 00"}.
+              {kontaktByIdStrict("INFO_FACHSTELLE").nummer}.
             </p>
           </div>
         </div>

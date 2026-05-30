@@ -150,6 +150,40 @@ leicht besser, keine Regression, plus die oben belegte Reduktion der
 ## Anhang — Nebenbeobachtungen (nicht Scope dieses Tasks)
 
 Im selben Lauf lagen Routen **ohne** Prerender-Shell höher (simuliert):
-`/soforthilfe` 1,5 s · `/wegweiser` 3,5 s · `/notfallkarte/erstellen` 3,5 s ·
-`/materialien` 3,5 s · `/grenzen` 3,8 s. Für eine spätere, separate Betrachtung
-vorgemerkt — hier nicht behandelt.
+`/soforthilfe` 1,5 s · `/wegweiser` 3,4 s · `/notfallkarte/erstellen` 3,2 s ·
+`/materialien` 3,8 s · `/grenzen` 3,9 s. Scores 87–92, CLS 0 — solide, aber
+LCP im «needs improvement»-Band.
+
+## Geprüft & verworfen — generischer Prerender-Shell auf Nicht-Home-Routen
+
+**Hypothese:** Den (bereits ins gebaute HTML injizierten) generischen
+`buildRoutePrerenderSection`-Shell auch auf Nicht-Home-Routen einblenden
+(`route-prerender.js`: `"none"` → `"route"` + CSS), um wie auf `/` einen
+frühen statischen Above-the-fold-Paint zu liefern.
+
+**Messung (mobil, Production-Build) — Baseline vs. Shell-an:**
+
+| Route                   | Score       | CLS               |
+| ----------------------- | ----------- | ----------------- |
+| /grenzen                | 87 → **66** | 0,000 → **0,600** |
+| /materialien            | 87 → **63** | 0,000 → **0,600** |
+| /wegweiser              | 91 → **67** | 0,000 → **0,600** |
+| /notfallkarte/erstellen | 92 → **74** | 0,000 → **0,600** |
+
+**Ergebnis: verworfen, nicht committet.** Der generische Shell (Platzhalter-
+Titel + CTAs) hat ein **anderes Layout** als der echte React-Inhalt jeder
+Seite; beim Shell→React-Übergang entsteht ein massiver Layout-Shift
+(**CLS 0,6**) und der Score fällt ~20 Punkte. FCP sank zwar (z. B. /grenzen
+1544 → 864 ms), aber das **LCP-Element blieb** der spät gepaintete React-Text
+(z. B. die Lede `p.max-w-[30em]`), der LCP-Wert änderte sich nicht.
+
+**Warum der Home-Shell funktioniert, ein generischer aber nicht:** Der
+Home-Shell ist **pixelgenau** auf den React-Hero abgestimmt (kein Shift). Für
+10+ inhaltlich unterschiedliche Seiten lässt sich das generisch nicht
+nachbilden — jeder generische Platzhalter shiftet beim Swap.
+
+**Realer Hebel (offen, bewusst nicht umgesetzt):** Die LCP dieser Routen wartet
+auf das Route-JS, nicht auf Schrift/CSS. Sauber lösbar nur mit **echtem
+per-Route-Prerender/SSR des Seiten-Heros** — laut Guardrails ausgeschlossen
+(«kein neues SSR-/Prerender-Framework»). Daher hier **kein Eingriff**; bei
+Bedarf als eigenes, bewusst entschiedenes Architektur-Vorhaben aufgreifen.

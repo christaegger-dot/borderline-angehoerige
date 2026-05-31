@@ -176,7 +176,7 @@ export default function EnergieHaushaltVisualisierung() {
           Visualisierung
         </p>
         <p className="text-sm font-semibold text-foreground mb-1">
-          Energie-Haushalt im Angehörigenalltag
+          Energiehaushalt im Angehörigenalltag
         </p>
         <p className="text-xs text-muted-foreground">
           Was typischerweise Energie kostet – und was sie zurückgibt. Fahren Sie
@@ -220,7 +220,11 @@ export default function EnergieHaushaltVisualisierung() {
       {/* Footer */}
       <p className="mt-4 border-t border-border/30 pt-3 text-center text-xs text-muted-foreground">
         Selbstfürsorge beginnt mit ehrlicher Wahrnehmung der eigenen
-        Energiebilanz.
+        Energiebilanz.{" "}
+        <span className="opacity-60">
+          Grundlage: Maslach, C. &amp; Leiter, M. P. (2016); Linehan, M. M.
+          (1993).
+        </span>
       </p>
     </section>
   );

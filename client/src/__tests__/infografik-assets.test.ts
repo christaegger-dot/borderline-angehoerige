@@ -168,11 +168,7 @@ describe("infografik assets", () => {
         "/infografiken/manus-rolle-klaeren-v2.webp",
         "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp",
       ],
-      [
-        "/infografiken/sphären-die-einfluss-sphären-v4.pdf",
-        "/infografiken/sphären-die-einfluss-sphären-v4.webp",
-        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v4.webp",
-      ]
+      []
     );
   });
 

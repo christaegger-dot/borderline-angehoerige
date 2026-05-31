@@ -290,7 +290,12 @@ export default function HandoutTextPage({
             ))}
 
             <EditorialSectionBlock label="Quelle & Stand" rule>
-              <p style={bodyStyle}>{handout.sourceLine}</p>
+              <p style={bodyStyle}>
+                {handout.sourceLine}{" "}
+                <AppLink href="/quellen" className="editorial-link">
+                  Vollbibliographie
+                </AppLink>
+              </p>
               <p className="mt-2" style={bodyStyle}>
                 {handout.standLine}
               </p>

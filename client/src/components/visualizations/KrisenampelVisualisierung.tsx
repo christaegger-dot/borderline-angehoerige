@@ -4,10 +4,13 @@
  * Interaktive Drei-Stufen-Ampel für die Krisenbegleitung.
  * Zeigt Gelb / Orange / Rot mit Hover-Details und Scroll-Anker.
  * Kein Bild – reine React/Tailwind-Komponente.
+ *
+ * Krisennummern werden aus der Single Source (kontakte.ts) bezogen.
  */
 import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { AlertTriangle, ChevronDown } from "lucide-react";
+import { kontaktByIdStrict } from "@/data/kontakte";
 
 interface AmpelStufe {
   id: string;
@@ -102,6 +105,11 @@ const FARB_TOKENS = {
     line: "bg-[var(--color-sos-rot)]",
   },
 };
+
+// Krisennummern aus Single Source (kontakte.ts)
+const k144 = kontaktByIdStrict("ROT_144");
+const k117 = kontaktByIdStrict("ROT_117");
+const kPuk = kontaktByIdStrict("GELB_PUK_ERW");
 
 export default function KrisenampelVisualisierung() {
   const [aktiv, setAktiv] = useState<string | null>(null);
@@ -250,16 +258,34 @@ export default function KrisenampelVisualisierung() {
         })}
       </div>
 
-      {/* Footer-Hinweis */}
+      {/* Footer-Hinweis — dreistufige Notfalllogik */}
       <p className="mt-4 text-xs text-muted-foreground text-center">
         Bei akuter Lebensgefahr sofort{" "}
         <a
-          href="tel:144"
+          href={`tel:${k144.tel}`}
           className="font-semibold text-[var(--color-sos-rot)] underline underline-offset-2"
         >
-          144
-        </a>{" "}
-        anrufen. Diese Ampel ersetzt keine professionelle Krisenberatung.
+          {k144.nummer}
+        </a>
+        , bei Gewalt oder Bedrohung{" "}
+        <a
+          href={`tel:${k117.tel}`}
+          className="font-semibold text-[var(--color-sos-rot)] underline underline-offset-2"
+        >
+          {k117.nummer}
+        </a>
+        . Bei akuter psychischer Krise ohne unmittelbare Lebensgefahr:{" "}
+        <a
+          href={`tel:${kPuk.tel}`}
+          className="font-semibold text-foreground underline underline-offset-2"
+        >
+          PUK-Notfall Erwachsene {kPuk.nummer}
+        </a>
+        . Diese Ampel ersetzt keine professionelle Krisenberatung.{" "}
+        <span className="opacity-60">
+          Grundlage: S3-Leitlinie Persönlichkeitsstörungen (AWMF, 2022);
+          Linehan, M. M. (1993).
+        </span>
       </p>
     </div>
   );

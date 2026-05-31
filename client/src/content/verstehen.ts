@@ -35,9 +35,9 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     description:
       "Wut ist oft nur die Spitze – darunter liegen Schmerz und Angst.",
     category: "grundlagen",
-    webpUrl: "/infografiken/eisberg-der-eisberg-v7.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp",
-    pdfUrl: "/infografiken/eisberg-der-eisberg-v7.pdf",
+    webpUrl: "/infografiken/eisberg-der-eisberg-v8.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v8.webp",
+    pdfUrl: "/infografiken/eisberg-der-eisberg-v8.pdf",
     alt: "Der Eisberg – Wut ist oft die Spitze",
   },
   {
@@ -45,10 +45,10 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     title: "Spaltung",
     description: "Das Pendel zwischen Extremen – die Grauzone stärken.",
     category: "grundlagen",
-    webpUrl: "/infografiken/pendel-das-bewertungs-pendel-v15.webp",
+    webpUrl: "/infografiken/pendel-das-bewertungs-pendel-v16.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp",
-    pdfUrl: "/infografiken/pendel-das-bewertungs-pendel-v15.pdf",
+      "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v16.webp",
+    pdfUrl: "/infografiken/pendel-das-bewertungs-pendel-v16.pdf",
     alt: "Spaltung – das Pendel zwischen Extremen",
   },
   {
@@ -57,10 +57,10 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     description:
       "Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.",
     category: "neurobiologie",
-    webpUrl: "/infografiken/alarm-der-alarm-modus-v3.webp",
+    webpUrl: "/infografiken/alarm-der-alarm-modus-v4.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.webp",
-    pdfUrl: "/infografiken/alarm-der-alarm-modus-v3.pdf",
+      "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v4.webp",
+    pdfUrl: "/infografiken/alarm-der-alarm-modus-v4.pdf",
     alt: "Alarm-Modus vs. Denk-Modus",
   },
   {

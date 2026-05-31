@@ -13,10 +13,10 @@ export const unterstuetzenItems = [
     title: "Im Krisenmodus – Orientierung geben",
     description:
       "Das Ampel-System hilft, Anspannung, Eskalation und akute Gefahr schneller einzuordnen.",
-    url: "/infografiken/ampel-das-ampel-system-v3.webp",
+    url: "/infografiken/ampel-das-ampel-system-v4.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v3.webp",
-    pdfUrl: "/infografiken/ampel-das-ampel-system-v3.pdf",
+      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v4.webp",
+    pdfUrl: "/infografiken/ampel-das-ampel-system-v4.pdf",
     category: "grundlagen",
   },
   {

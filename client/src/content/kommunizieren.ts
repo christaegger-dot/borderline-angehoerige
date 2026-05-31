@@ -71,10 +71,10 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "zuhoeren-ohne-zustimmen",
     title: "Zuhören ohne Zustimmen",
     description: "Validieren ohne nachzugeben",
-    url: "/infografiken/validierung-die-validierungs-treppe-v9.webp",
+    url: "/infografiken/validierung-die-validierungs-treppe-v10.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp",
-    pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v9.pdf",
+      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v10.webp",
+    pdfUrl: "/infografiken/validierung-die-validierungs-treppe-v10.pdf",
     category: "techniken",
   },
   {
@@ -91,10 +91,10 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "krisenkommunikation",
     title: "Spickzettel Krisenkommunikation (A4)",
     description: "A4-Spickzettel für akute Spannungszustände",
-    url: "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp",
+    url: "/infografiken/deeskalation-der-deeskalations-pfad-v11.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp",
-    pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
+      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v11.webp",
+    pdfUrl: "/infografiken/deeskalation-der-deeskalations-pfad-v11.pdf",
     category: "praxis",
   },
 ];

@@ -44,9 +44,9 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
-        "/infografiken/validierung-die-validierungs-treppe-v9.pdf",
-        "/infografiken/validierung-die-validierungs-treppe-v9.webp",
-        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp",
+        "/infografiken/validierung-die-validierungs-treppe-v10.pdf",
+        "/infografiken/validierung-die-validierungs-treppe-v10.webp",
+        "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v10.webp",
       ],
       [
         "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
@@ -64,9 +64,9 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
-        "/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf",
-        "/infografiken/deeskalation-der-deeskalations-pfad-v10.webp",
-        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp",
+        "/infografiken/deeskalation-der-deeskalations-pfad-v11.pdf",
+        "/infografiken/deeskalation-der-deeskalations-pfad-v11.webp",
+        "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v11.webp",
       ],
       [
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
@@ -169,9 +169,9 @@ describe("infografik assets", () => {
         "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp",
       ],
       [
-        "/infografiken/sphären-die-einfluss-sphären-v3.pdf",
-        "/infografiken/sphären-die-einfluss-sphären-v3.webp",
-        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v3.webp",
+        "/infografiken/sphären-die-einfluss-sphären-v4.pdf",
+        "/infografiken/sphären-die-einfluss-sphären-v4.webp",
+        "/infografiken/extras/thumbnails/sphären-die-einfluss-sphären-v4.webp",
       ]
     );
   });
@@ -204,9 +204,9 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
-        "/infografiken/eisberg-der-eisberg-v7.pdf",
-        "/infografiken/eisberg-der-eisberg-v7.webp",
-        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp",
+        "/infografiken/eisberg-der-eisberg-v8.pdf",
+        "/infografiken/eisberg-der-eisberg-v8.webp",
+        "/infografiken/extras/thumbnails/eisberg-der-eisberg-v8.webp",
       ],
       [
         "/infografiken/eisberg-der-eisberg-v6.pdf",
@@ -224,9 +224,9 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
-        "/infografiken/pendel-das-bewertungs-pendel-v15.pdf",
-        "/infografiken/pendel-das-bewertungs-pendel-v15.webp",
-        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp",
+        "/infografiken/pendel-das-bewertungs-pendel-v16.pdf",
+        "/infografiken/pendel-das-bewertungs-pendel-v16.webp",
+        "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v16.webp",
       ],
       [
         "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",

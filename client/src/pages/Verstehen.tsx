@@ -363,7 +363,7 @@ export default function Verstehen() {
               </p>
             </EditorialProse>
             <EditorialFigure
-              src="/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp"
+              src="/infografiken/extras/thumbnails/eisberg-der-eisberg-v8.webp"
               alt="Der Eisberg – Wut ist oft die Spitze"
               width={600}
               height={848}
@@ -430,7 +430,7 @@ export default function Verstehen() {
             id="stressmodus"
           >
             <EditorialFigure
-              src="/infografiken/extras/thumbnails/alarm-der-alarm-modus-v3.webp"
+              src="/infografiken/extras/thumbnails/alarm-der-alarm-modus-v4.webp"
               alt="Alarm-Modus vs. Denk-Modus"
               width={600}
               height={848}

@@ -136,7 +136,7 @@ export default function Selbstfuersorge() {
               }}
             >
               <img
-                src="/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v4.webp"
+                src="/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v5.webp"
                 alt="Diagramm: Ohne Selbstfürsorge entsteht ein Teufelskreis aus Erschöpfung, weniger Geduld, Konflikten und Schuldgefühlen. Mit Selbstfürsorge entsteht ein Schutzkreislauf aus Stabilität, Kraft, Geduld und ruhigeren Reaktionen."
                 className="block w-full"
                 loading="eager"

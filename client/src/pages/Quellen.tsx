@@ -378,6 +378,99 @@ const quellen: QuelleKategorie[] = [
       },
     ],
   },
+  {
+    kategorie: "Weitere Quellen & Hintergrundliteratur",
+    eintraege: [
+      {
+        autoren: "National Institute for Health and Care Excellence (NICE)",
+        jahr: "2009",
+        titel:
+          "Borderline personality disorder: recognition and management (Clinical guideline CG78)",
+        quelle: "NICE, London",
+        hinweis:
+          "Britische Leitlinie zu Erkennung und Behandlung der Borderline-Persönlichkeitsstörung. Veröffentlicht 2009, zuletzt überprüft am 30. Juli 2024 (rein präsentationelle Vereinfachung, keine inhaltliche Praxisänderung). Empfiehlt unter anderem DBT bei BPS und wiederholter Selbstverletzung. Ergänzt die internationale Leitlinien-Basis (APA, AWMF) um den NICE-Bezug.",
+        link: "https://www.nice.org.uk/guidance/cg78",
+        linkLabel: "NICE CG78",
+      },
+      {
+        autoren: "Carpenter, R. W. & Trull, T. J.",
+        jahr: "2013",
+        titel:
+          "Components of emotion dysregulation in borderline personality disorder: a review",
+        quelle: "Current Psychiatry Reports 15(1), 335",
+        hinweis:
+          "Peer-reviewte Übersichtsarbeit, die Emotionsdysregulation bei BPS nach Linehans biosozialem Modell in vier Komponenten gliedert: Emotionssensitivität, erhöhter und labiler Negativaffekt, Defizit angemessener und Überschuss maladaptiver Regulationsstrategien. Fachliche Grundlage für die Darstellung der Anspannungs- bzw. Arousal-Kurve.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/23250816/",
+        linkLabel: "PubMed",
+      },
+      {
+        autoren: "Siegel, D. J.",
+        jahr: "1999",
+        titel:
+          "The Developing Mind: Toward a Neurobiology of Interpersonal Experience",
+        quelle: "Guilford Press, New York",
+        hinweis:
+          "Prägt das Konzept des «Window of Tolerance» – des optimalen Erregungsbereichs, in dem Menschen Belastung verarbeiten können, ohne in Über- oder Untererregung zu geraten. Als didaktisches Modell für die Anspannungskurve verwendet, nicht BPS-spezifisch.",
+      },
+      {
+        autoren: "Ogden, P., Minton, K. & Pain, C.",
+        jahr: "2006",
+        titel: "Trauma and the Body: A Sensorimotor Approach to Psychotherapy",
+        quelle: "W. W. Norton, New York",
+        hinweis:
+          "Überträgt das «Window of Tolerance» in die körperorientierte Traumatherapie (Hyper- und Hypoarousal). Wie Siegel (1999) als didaktisches Modell für die Anspannungskurve verwendet, nicht als BPS-spezifische Quelle.",
+      },
+      {
+        autoren: "LeDoux, J. E.",
+        jahr: "1996",
+        titel:
+          "The Emotional Brain: The Mysterious Underpinnings of Emotional Life",
+        quelle: "Simon & Schuster, New York",
+        hinweis:
+          "Grundlegendes Werk zum furchtverarbeitenden Schaltkreis des Gehirns, insbesondere zur Rolle der Amygdala als Bedrohungs- und Alarmsystem. Als didaktisches Modell für das Blatt «Das Gehirn verstehen» (Amygdala, Hippocampus und präfrontaler Kortex bei emotionaler Überflutung) verwendet, nicht BPS-spezifisch.",
+      },
+      {
+        autoren: "Sotomo",
+        jahr: "2024",
+        titel:
+          "Stand by You Studie. Situation der Angehörigen und Vertrauten von Menschen mit psychischen Erkrankungen",
+        quelle:
+          "Im Auftrag von und in Zusammenarbeit mit Stand by You Schweiz, Zürich",
+        hinweis:
+          "Erste repräsentative Studie der Schweiz zur Rolle von Angehörigen und Vertrauten psychisch erkrankter Menschen (Befragung von 2'042 Personen, März 2024). Stand by You Schweiz ist die Nachfolgeorganisation der VASK Schweiz. Als Schweizer Kontext- und Häufigkeitsquelle herangezogen, nicht BPS-spezifisch.",
+        link: "https://stand-by-you.ch/wp-content/uploads/2024/03/sby_studie_final.pdf",
+        linkLabel: "Studienbericht (PDF)",
+      },
+      {
+        autoren: "Lenz, A.",
+        jahr: "2014",
+        titel: "Kinder psychisch kranker Eltern",
+        quelle:
+          "Hogrefe Verlag, Göttingen, 2., vollständig überarbeitete und erweiterte Auflage",
+        hinweis:
+          "Standardwerk zu Belastungen, Schutzfaktoren und Unterstützung von Kindern psychisch erkrankter Eltern. Fachliche Grundlage des Blatts zu Kindern als Angehörige; nicht BPS-spezifisch, sondern allgemein zu Kindern psychisch kranker Eltern.",
+      },
+      {
+        autoren: "Mattejat, F. & Lisofsky, B. (Hrsg.)",
+        jahr: "2014",
+        titel: "Nicht von schlechten Eltern. Kinder psychisch Kranker",
+        quelle:
+          "Balance buch + medien verlag, 4. korrigierte und erweiterte Auflage",
+        hinweis:
+          "Niedrigschwelliges Fach- und Ratgeberwerk für Fachpersonen, Betroffene und Angehörige, mit Fokus auf die oft übersehenen Kinder psychisch erkrankter Eltern. Mitherangezogen für das Blatt zu Kindern als Angehörige.",
+      },
+      {
+        autoren:
+          "Bundesverband der Angehörigen psychisch erkrankter Menschen (BApK)",
+        jahr: "laufend",
+        titel:
+          "Informationsmaterialien für Angehörige, Kinder und Geschwister psychisch erkrankter Menschen",
+        quelle: "BApK e. V., Bonn",
+        hinweis:
+          "Deutsche Dachorganisation der Angehörigen psychisch erkrankter Menschen; gibt Informations- und Selbsthilfematerialien heraus, unter anderem zu Kindern und Geschwistern. Als ergänzende Praxisquelle für das Blatt zu Kindern als Angehörige genannt.",
+      },
+    ],
+  },
 ];
 
 /** Slugifiziert Autor-Feld für stabile id-Anker. */

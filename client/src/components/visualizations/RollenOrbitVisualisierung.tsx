@@ -294,6 +294,13 @@ export default function RollenOrbitVisualisierung() {
           </AnimatePresence>
         </div>
       </div>
+      {/* Footer */}
+      <p className="mt-4 border-t border-border/30 pt-3 text-xs text-muted-foreground">
+        <span className="opacity-60">
+          Grundlage: Linehan (1993); Hoffman et al. (2005); S3-Leitlinie BPS,
+          AWMF 2022.
+        </span>
+      </p>
     </section>
   );
 }

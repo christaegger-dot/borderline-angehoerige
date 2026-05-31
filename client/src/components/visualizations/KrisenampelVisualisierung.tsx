@@ -258,8 +258,18 @@ export default function KrisenampelVisualisierung() {
           className="font-semibold text-[var(--color-sos-rot)] underline underline-offset-2"
         >
           144
+        </a>
+        {"/"}
+        <a
+          href="tel:117"
+          className="font-semibold text-[var(--color-sos-rot)] underline underline-offset-2"
+        >
+          117
         </a>{" "}
-        anrufen. Diese Ampel ersetzt keine professionelle Krisenberatung.
+        anrufen. Diese Ampel ersetzt keine professionelle Krisenberatung.{" "}
+        <span className="opacity-60">
+          Grundlage: S3-Leitlinie BPS, AWMF 2022; Linehan (1993).
+        </span>
       </p>
     </div>
   );

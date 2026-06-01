@@ -317,9 +317,9 @@ export const handoutTextVersions = [
   createHandoutTextVersion("lmk", {
     kicker: "Textversion",
     summary:
-      "Wenn Grenzen ignoriert werden, reicht eine Bitte oft nicht. L.M.K. verbindet klare Ansage, logische Konsequenz und ruhiges Handeln.",
+      "Wenn Grenzen ignoriert werden, reicht eine Bitte oft nicht. Eine wirksame Konsequenz ist logisch, machbar und wird ruhig umgesetzt.",
     intro: [
-      "Die LMK-Methode hilft, nach wiederholten Grenzverletzungen konsequent zu bleiben, ohne in Drohlogik zu geraten. Sie verbindet Lage, Mitteilung und Konsequenz.",
+      "Dieses Vorgehen hilft, nach wiederholten Grenzverletzungen konsequent zu bleiben, ohne in Drohlogik zu geraten.",
       "Sie finden drei Stufen: Grenze setzen, die eigene Kontrolle klären, logische Konsequenz ankündigen und bei Bedarf handeln. Dazu kommen eine kurze Merkhilfe und drei Hinweise für die Umsetzung.",
     ],
     sections: [
@@ -354,9 +354,9 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Stufe 2: L.M.K. – logische, machbare Konsequenz",
+        title: "Stufe 2: Logische, machbare Konsequenz",
         intro:
-          "L.M.K. steht hier für «logische, machbare Konsequenz»: eine Folge, die Sie ruhig ankündigen und wirklich umsetzen können.",
+          "Eine logische, machbare Konsequenz ist eine Folge, die Sie ruhig ankündigen und wirklich umsetzen können.",
         bullets: [
           "«Wenn du weiter schreist, gehe ich in mein Zimmer.»",
           "«Wenn das nochmals passiert, schlafe ich heute woanders.»",
@@ -376,7 +376,7 @@ export const handoutTextVersions = [
       },
       {
         title: "Merkhilfe",
-        calloutTitle: "Der Drehpunkt von LMK",
+        calloutTitle: "Der Drehpunkt",
         calloutText:
           "Sie kontrollieren nicht das Verhalten der anderen Person, sondern nur Ihre Grenze und die Konsequenz, die Sie danach wirklich umsetzen.",
       },
@@ -397,10 +397,10 @@ export const handoutTextVersions = [
   createHandoutTextVersion("grenzen-spickzettel", {
     kicker: "Textversion",
     summary:
-      "Der Spickzettel bündelt konkrete Satzbausteine für klare Grenzen, Spiegeln ohne Aufsaugen und eine Exit-Strategie mit Liebe, Grenze und Konsequenz.",
+      "Der Spickzettel bündelt konkrete Satzbausteine für klare Grenzen, Spiegeln ohne Aufsaugen und eine Exit-Strategie mit klaren Konsequenzen.",
     intro: [
       "Der Spickzettel Grenzen bündelt kurze Satzmuster für schwierige Gespräche. Er ist dafür gedacht, vor einem Gespräch schnell die wichtigsten Formulierungen durchzugehen.",
-      "Die vier Bereiche sind direkt nutzbar aufgebaut: DEAR-Technik, Beispielsätze bei Grenzüberschreitungen, Spiegeln statt Aufsaugen und die L.M.K.-Exit-Strategie.",
+      "Die vier Bereiche sind direkt nutzbar aufgebaut: DEAR-Technik, Beispielsätze bei Grenzüberschreitungen, Spiegeln statt Aufsaugen und eine Exit-Strategie mit klaren Konsequenzen.",
     ],
     sections: [
       {
@@ -447,19 +447,19 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Bereich 4: L.M.K. (Lebe Mit Konsequenzen) – Exit-Strategie",
+        title: "Bereich 4: Logische, machbare Konsequenz – Exit-Strategie",
         cards: [
           {
-            title: "L = Liebe zeigen",
-            text: "Du bist mir wichtig...",
+            title: "Logisch",
+            text: "Die Konsequenz hat mit dem Verhalten zu tun.",
           },
           {
-            title: "M = Meine Grenze",
-            text: "Ich brauche...",
+            title: "Machbar",
+            text: "Ich kann sie wirklich umsetzen – keine leere Drohung.",
           },
           {
-            title: "K = Konsequenz",
-            text: "Wenn nicht, dann...",
+            title: "Ruhig",
+            text: "Ich setze sie ohne Vorwurf um.",
           },
         ],
       },

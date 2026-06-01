@@ -633,7 +633,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "lmk" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /L\.M\.K\. \(Lebe Mit Konsequenzen\)/i,
+        name: /Wenn Grenzen nicht respektiert werden/i,
       })
     ).toBeInTheDocument();
     expect(

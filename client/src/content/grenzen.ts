@@ -70,10 +70,10 @@ export const grenzenItems: GrenzenItem[] = [
     id: "grenzen-spickzettel",
     title: "Spickzettel Grenzen",
     description: "A4 mit den wichtigsten Sätzen",
-    url: "/infografiken/manus-grenzen-spickzettel-v1.webp",
+    url: "/infografiken/manus-grenzen-spickzettel-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v1.webp",
-    pdfUrl: "/infografiken/manus-grenzen-spickzettel-v1.pdf",
+      "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v2-thumb.png",
+    pdfUrl: "/infografiken/manus-grenzen-spickzettel-v2.pdf",
     category: "handeln",
   },
 ];

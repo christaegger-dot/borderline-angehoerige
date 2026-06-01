@@ -148,10 +148,10 @@ export const materials: MaterialItem[] = [
       "Knappe Formulierungen für klare, respektvolle Grenzsetzung im Alltag und in belasteten Gesprächen.",
     category: "grenzen",
     kind: "Spickzettel",
-    url: "/infografiken/manus-grenzen-spickzettel-v1.webp",
+    url: "/infografiken/manus-grenzen-spickzettel-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v1.webp",
-    downloadUrl: "/infografiken/manus-grenzen-spickzettel-v1.pdf",
+      "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v2-thumb.png",
+    downloadUrl: "/infografiken/manus-grenzen-spickzettel-v2.pdf",
     priority: "core",
     verifiedAt: "Mai 2026",
   },

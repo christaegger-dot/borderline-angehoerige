@@ -59,8 +59,8 @@ export const grenzenItems: GrenzenItem[] = [
   },
   {
     id: "lmk",
-    title: "L.M.K. (Lebe Mit Konsequenzen)",
-    description: "Wenn Grenzen nicht respektiert werden",
+    title: "Wenn Grenzen nicht respektiert werden",
+    description: "Grenze setzen, Konsequenz ankündigen, ruhig handeln",
     url: "/infografiken/manus-lmk-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-lmk-v1.webp",
     pdfUrl: "/infografiken/manus-lmk-v1.pdf",

@@ -1117,7 +1117,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: L.M.K. (Lebe Mit Konsequenzen)",
+    title: "Textversion: Wenn Grenzen nicht respektiert werden",
     description:
       "Lesbare Web-Version zu logischen, machbaren Konsequenzen, wenn gesetzte Grenzen nicht respektiert werden",
     keywords: [
@@ -1257,7 +1257,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Spickzettel Grenzen",
     description:
-      "Lesbare Web-Version mit DEAR-Technik, Beispielsätzen für Grenzen und L.M.K.-Exit-Strategie",
+      "Lesbare Web-Version mit DEAR-Technik, Beispielsätzen für Grenzen und einer Exit-Strategie mit klaren Konsequenzen",
     keywords: [
       "textversion",
       "spickzettel grenzen",

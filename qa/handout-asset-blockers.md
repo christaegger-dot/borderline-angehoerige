@@ -1,104 +1,137 @@
 # Handout Asset Blocker Report
 
-Stand: 2026-05-23  
-Basis: Web-Textversionen nach Content-Härtung auf `main`  
-Zweck: Sichtbar machen, bei welchen Handouts die editierbare Web-Textversion inzwischen fachlich weiter ist als das flach gerenderte PDF/WebP-Asset.
+Stand: 2026-06-02  
+Basis: `main` nach dem Handout-Governance-PR  
+Quelle der Wahrheit: `client/src/content/handoutGovernance.ts`
+
+## Zweck
+
+Dieser Report zeigt, welche Handout-Assets auf der gerenderten PDF-/WebP-Ebene
+noch einen Reexport- oder Fidelity-Review brauchen können. Seit dem
+Handout-Governance-PR ist nicht mehr die höchste vorhandene Datei automatisch
+produktiv, sondern die pro Handout freigegebene `approvedVersion`.
+
+Wichtig: Dieser Report ersetzt keine visuelle PDF-Prüfung und keine
+fachliche Schlussfreigabe. Er ist ein Arbeitsraster für die Design-/Asset-Ebene.
 
 ## Kurzurteil
 
-Die Web-Textversionen sind die aktuell fachlich gehärtete Ebene. Die bestehenden PDF-/WebP-Handouts wurden dadurch nicht automatisch neu gesetzt. Dieser Report markiert deshalb alle Handouts, bei denen Textversion und gerendertes Asset auseinanderlaufen können.
+Die frühere Versionsdrift im produktiven Register ist technisch geschlossen:
 
-Wichtig: Dieser Report ersetzt keine visuelle PDF-Prüfung. Er ist ein Reexport-/Review-Backlog für die Design-/Asset-Ebene.
+- Jedes Handout hat einen Dokumenttyp und eine `approvedVersion`.
+- Produktive PDF-Quellen müssen per Test exakt auf diese `approvedVersion`
+  zeigen.
+- Orientierungs- und Praxisblätter dürfen keine Krisennummern tragen.
+- Orientierungs- und Praxisblätter müssen den Standard-Disclaimer enthalten.
+
+Offen bleibt die eigentliche Asset-Fidelity: flach gerenderte PDFs/WebPs können
+fachlich oder sprachlich älter sein als die Web-Textversion. Genau diese
+verbleibenden Kandidaten sind unten priorisiert.
 
 ## Legende
 
-| Stufe    | Bedeutung                                                                                                                  | Release-Entscheid                                                         |
-| -------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| P0       | Sicherheits-, Krisen-, Telefonnummern- oder Suizid-/Gewaltlogik kann im PDF/WebP veraltet sein.                            | Vor formaler Veröffentlichung des Assets prüfen und ggf. neu exportieren. |
-| P1       | Fachliche Kernaussage, Quellenlogik oder Prognose-/Neuro-/DBT-Formulierung wurde in der Textversion substanziell geändert. | Vor aktiver Bewerbung des Assets prüfen und bei Drift neu exportieren.    |
-| P2       | Tonalitäts-, Entlastungs-, Caveat- oder Überverantwortungspräzisierung wurde ergänzt.                                      | In den nächsten Asset-Pass aufnehmen.                                     |
-| Resolved | Ersatzasset ist geliefert und produktiv referenzierbar.                                                                    | Asset bleibt trotzdem im normalen Fidelity-Audit.                         |
+| Stufe    | Bedeutung                                                                                                      | Release-Entscheid                                                         |
+| -------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| P0       | Sicherheits-, Krisen-, Telefonnummern- oder Suizid-/Gewaltlogik kann im PDF/WebP veraltet sein.                | Vor formaler Veröffentlichung des Assets prüfen und ggf. neu exportieren. |
+| P1       | Fachliche Kernaussage, Quellenlogik oder Prognose-/Neuro-/DBT-Formulierung kann von der Textversion abweichen. | Vor aktiver Bewerbung des Assets prüfen und bei Drift neu exportieren.    |
+| P2       | Tonalitäts-, Entlastungs-, Caveat- oder Überverantwortungspräzisierung kann fehlen.                            | In den nächsten Asset-Pass aufnehmen.                                     |
+| Approved | Produktive Register zeigen auf die aktuell freigegebene `approvedVersion`.                                     | Kein Versionsblocker; bleibt Teil des normalen Fidelity-Audits.           |
 
-## Resolved: Ersatzassets geliefert
+## Aktuell freigegebene neue Asset-Versionen
 
-| ID                         | Aktuelle produktive Assets                                                                                                                                                                                | Erwartung | Status                                                                   |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------ |
-| `zuhoeren-ohne-zustimmen`  | `/infografiken/validierung-die-validierungs-treppe-v9.pdf`, `/infografiken/validierung-die-validierungs-treppe-v9.webp`, `/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v9.webp`    | erfüllt   | v9-Assets liegen vor und ersetzen die produktiven v5-Referenzen.         |
-| `krisenkommunikation`      | `/infografiken/deeskalation-der-deeskalations-pfad-v10.pdf`, `/infografiken/deeskalation-der-deeskalations-pfad-v10.webp`, `/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v10.webp` | erfüllt   | v10-Assets liegen vor und ersetzen die produktiven v9-Referenzen.        |
-| `wenn-worte-treffen`       | `/infografiken/manus-wenn-worte-treffen-v2.pdf`, `/infografiken/manus-wenn-worte-treffen-v2.webp`, `/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp`                                     | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven v1-Referenzen.         |
-| `pause-statt-streit`       | `/infografiken/manus-pause-statt-streit-v2.pdf`, `/infografiken/manus-pause-statt-streit-v2.webp`, `/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp`                                     | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven v1-Referenzen.         |
-| `grenzen-ohne-eskalation`  | `/infografiken/manus-grenzen-ohne-eskalation-v2.pdf`, `/infografiken/manus-grenzen-ohne-eskalation-v2.webp`, `/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp`                      | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven v1-Referenzen.         |
-| `spiegeln-statt-aufsaugen` | `/infografiken/manus-spiegeln-statt-aufsaugen-v2.pdf`, `/infografiken/manus-spiegeln-statt-aufsaugen-v2.webp`, `/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp`                   | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven v1-Referenzen.         |
-| `rolle-klaeren`            | `/infografiken/manus-rolle-klaeren-v2.pdf`, `/infografiken/manus-rolle-klaeren-v2.webp`, `/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp`                                                    | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven Sphären-v3-Referenzen. |
-| `warnsignale`              | `/infografiken/manus-warnsignale-v2.pdf`, `/infografiken/manus-warnsignale-v2.webp`, `/infografiken/extras/thumbnails/manus-warnsignale-v2.webp`                                                          | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven v1-Referenzen.         |
-| `eisberg`                  | `/infografiken/eisberg-der-eisberg-v7.pdf`, `/infografiken/eisberg-der-eisberg-v7.webp`, `/infografiken/extras/thumbnails/eisberg-der-eisberg-v7.webp`                                                    | erfüllt   | v7-Assets liegen vor und ersetzen die produktiven v6-Referenzen.         |
-| `spaltung`                 | `/infografiken/pendel-das-bewertungs-pendel-v15.pdf`, `/infografiken/pendel-das-bewertungs-pendel-v15.webp`, `/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v15.webp`                      | erfüllt   | v15-Assets liegen vor und ersetzen die produktiven v14-Referenzen.       |
-| `schuld-verantwortung`     | `/infografiken/manus-schuld-verantwortung-v2.pdf`, `/infografiken/manus-schuld-verantwortung-v2.webp`, `/infografiken/extras/thumbnails/manus-schuld-verantwortung-v2.webp`                               | erfüllt   | v2-Assets liegen vor und ersetzen die produktiven v1-Referenzen.         |
+Diese Einträge waren im alten Report veraltet oder noch als ältere Versionen
+dokumentiert. Sie sind jetzt mit der Governance synchronisiert.
+
+| ID                         | Dokumenttyp          | Freigegebene Version                      | Status   |
+| -------------------------- | -------------------- | ----------------------------------------- | -------- |
+| `zuhoeren-ohne-zustimmen`  | `PRAXISBLATT`        | `validierung-die-validierungs-treppe-v10` | approved |
+| `krisenkommunikation`      | `KRISEN-HANDOUT`     | `deeskalation-der-deeskalations-pfad-v11` | approved |
+| `wenn-worte-treffen`       | `PRAXISBLATT`        | `manus-wenn-worte-treffen-v3`             | approved |
+| `pause-statt-streit`       | `PRAXISBLATT`        | `manus-pause-statt-streit-v3`             | approved |
+| `grenzen-ohne-eskalation`  | `PRAXISBLATT`        | `manus-grenzen-ohne-eskalation-v3`        | approved |
+| `spiegeln-statt-aufsaugen` | `PRAXISBLATT`        | `manus-spiegeln-statt-aufsaugen-v3`       | approved |
+| `rolle-klaeren`            | `ORIENTIERUNGSBLATT` | `manus-rolle-klaeren-v3`                  | approved |
+| `warnsignale`              | `ORIENTIERUNGSBLATT` | `manus-warnsignale-v3`                    | approved |
+| `eisberg`                  | `ORIENTIERUNGSBLATT` | `eisberg-der-eisberg-v8`                  | approved |
+| `spaltung`                 | `ORIENTIERUNGSBLATT` | `pendel-das-bewertungs-pendel-v16`        | approved |
+| `schuld-verantwortung`     | `ORIENTIERUNGSBLATT` | `manus-schuld-verantwortung-v3`           | approved |
+| `bruecke-gelaender`        | `ORIENTIERUNGSBLATT` | `manus-bruecke-gelaender-v2`              | approved |
+| `anspannungskurve`         | `ORIENTIERUNGSBLATT` | `manus-anspannungskurve-v2`               | approved |
+| `garten`                   | `ORIENTIERUNGSBLATT` | `manus-garten-v2`                         | approved |
+| `im-krisenmodus`           | `KRISEN-HANDOUT`     | `ampel-das-ampel-system-v4`               | approved |
+| `sauerstoffmaske`          | `ORIENTIERUNGSBLATT` | `sauerstoff-die-sauerstoffmaske-v5`       | approved |
+| `fortschritt-paradox`      | `ORIENTIERUNGSBLATT` | `fortschritt-das-fortschritt-paradox-v5`  | approved |
+| `4-arten-von-grenzen`      | `ORIENTIERUNGSBLATT` | `grenzen-die-4-arten-von-grenzen-v5`      | approved |
+| `grenzen-spickzettel`      | `PRAXISBLATT`        | `manus-grenzen-spickzettel-v2`            | approved |
 
 ## P0: Sicherheits- und Kriseninhalte
 
-Diese Assets zuerst öffnen, gegen die Web-Textversion vergleichen und bei Abweichung neu exportieren.
+Diese Assets zuerst öffnen, gegen die Web-Textversion vergleichen und bei
+Abweichung neu exportieren.
 
-| ID                  | PDF                          | WebP/Preview                          | Möglicher Drift                                                                                                                                                             |
-| ------------------- | ---------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `notfallplan-krise` | `/notfallplan-krise-v03.pdf` | `/notfallplan-krise-v03-preview.webp` | Textversion trennt jetzt 144, 117, PUK 058er-Nummern, 143 und Selbstschutz-Caveat klarer. PDF kann eine ältere Hierarchie oder weniger präzise Selbstschutzlogik enthalten. |
+| ID                  | Freigegebene Version    | Asset                                                                  | Möglicher Drift                                                                                                                                                            |
+| ------------------- | ----------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `notfallplan-krise` | `notfallplan-krise-v03` | `/notfallplan-krise-v03.pdf` und `/notfallplan-krise-v03-preview.webp` | Textversion trennt 144, 117, PUK-058er-Nummern, 143 und Selbstschutz-Caveat klarer. PDF/WebP kann eine ältere Hierarchie oder weniger präzise Selbstschutzlogik enthalten. |
 
 ## P1: Fachliche Kernaussagen
 
-Diese Assets vor einer aktiven Bewerbung oder Neuverlinkung als fachlich autoritatives PDF prüfen.
+Diese Assets vor aktiver Bewerbung oder Neuverlinkung als fachlich autoritatives
+PDF prüfen.
 
-| ID                       | PDF                                                        | WebP/Preview                                                | Möglicher Drift                                                                                                                      |
-| ------------------------ | ---------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `genesung-zahlen`        | `/infografiken/manus-genesung-zahlen-v1.pdf`               | `/infografiken/manus-genesung-zahlen-v1.webp`               | Textversion kontextualisiert Prozentzahlen stärker, trennt Remission/Recovery und vermeidet isolierte Prognosewirkung.               |
-| `alarm-modus`            | `/infografiken/alarm-der-alarm-modus-v3.pdf`               | `/infografiken/alarm-der-alarm-modus-v3.webp`               | Textversion entschärft harte Neuro-/Polyvagal-Sprache zugunsten von Stress- und Emotionsregulationssprache.                          |
-| `gehirn`                 | `/infografiken/manus-gehirn-v1.pdf`                        | `/infografiken/manus-gehirn-v1.webp`                        | Textversion vermeidet deterministische Gehirnregionen-Aussagen und nutzt alltagsnähere Stresssprache.                                |
-| `radikale-akzeptanz`     | `/infografiken/manus-radikale-akzeptanz-v1.pdf`            | `/infografiken/manus-radikale-akzeptanz-v1.webp`            | Textversion stellt klar: Akzeptanz heisst nicht gutheissen, bleiben, schweigen oder Gewalt tolerieren.                               |
-| `dear`                   | `/infografiken/manus-dear-v1.pdf`                          | `/infografiken/manus-dear-v1.webp`                          | Textversion erklärt DEAR als Struktur ohne Wirksamkeitsgarantie und nimmt Sicherheitsfälle aus.                                      |
-| `gespraeche-kippen`      | `/infografiken/manus-gespraeche-kippen-v1.pdf`             | `/infografiken/manus-gespraeche-kippen-v1.webp`             | Textversion ergänzt Sicherheitshinweis bei Bedrohung, Gewalt oder akuter Selbstgefährdung.                                           |
-| `beispiel-dialog`        | `/infografiken/manus-beispiel-dialog-v1.pdf`               | `/infografiken/manus-beispiel-dialog-v1.webp`               | Textversion betont: Beispiel nicht als einzig richtige Sprache verstehen; bei Gefahr Dialog abbrechen und Hilfe holen.               |
-| `kinder`                 | `/infografiken/manus-kinder-v1.pdf`                        | `/infografiken/manus-kinder-v1.webp`                        | Textversion ergänzt Schutzverantwortung der Erwachsenen und fachliche Hilfe, wenn Kinder Angst/Gewalt/Überverantwortung erleben.     |
-| `im-krisenmodus`         | `/infografiken/ampel-das-ampel-system-v3.pdf`              | `/infografiken/ampel-das-ampel-system-v3.webp`              | Textversion präzisiert Ampellogik: Rot = Einsatzdienst/akute Gefahr, Gelb = psychiatrische Notfallhilfe, Grün = Entlastung/Gespräch. |
-| `remission-heilung`      | `/infografiken/manus-remission-heilung-v1.pdf`             | `/infografiken/manus-remission-heilung-v1.webp`             | Textversion unterscheidet Remission, Recovery und Heilung vorsichtiger und vermeidet Heilsversprechen.                               |
-| `fortschritt-paradox`    | `/infografiken/fortschritt-das-fortschritt-paradox-v4.pdf` | `/infografiken/fortschritt-das-fortschritt-paradox-v4.webp` | Textversion formuliert Rückschritte als mögliches, aber ernst zu nehmendes Veränderungselement ohne Beschönigung.                    |
-| `5-faktoren-genesung`    | `/infografiken/manus-5-faktoren-genesung-v1.pdf`           | `/infografiken/manus-5-faktoren-genesung-v1.webp`           | Textversion vermeidet Kausalitäts-/Garantieformulierung und betont individuelle, nichtlineare Genesung.                              |
-| `rolle-genesungsprozess` | `/infografiken/manus-rolle-genesungsprozess-v1.pdf`        | `/infografiken/manus-rolle-genesungsprozess-v1.webp`        | Textversion entlastet Angehörige stärker: Sie können Rahmen und Beziehung mitgestalten, Genesung aber nicht machen.                  |
+| ID                       | Dokumenttyp          | Freigegebene Version              | Möglicher Drift                                                                                                                        |
+| ------------------------ | -------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `genesung-zahlen`        | `ORIENTIERUNGSBLATT` | `manus-genesung-zahlen-v1`        | Textversion kontextualisiert Prozentzahlen stärker, trennt Remission/Recovery und vermeidet isolierte Prognosewirkung.                 |
+| `gehirn`                 | `ORIENTIERUNGSBLATT` | `manus-gehirn-v1`                 | Textversion vermeidet deterministische Gehirnregionen-Aussagen und nutzt alltagsnähere Stresssprache.                                  |
+| `radikale-akzeptanz`     | `PRAXISBLATT`        | `manus-radikale-akzeptanz-v1`     | Textversion stellt klar: Akzeptanz heisst nicht gutheissen, bleiben, schweigen oder Gewalt tolerieren.                                 |
+| `dear`                   | `PRAXISBLATT`        | `manus-dear-v1`                   | Textversion erklärt DEAR als Struktur ohne Wirksamkeitsgarantie und nimmt Sicherheitsfälle aus.                                        |
+| `gespraeche-kippen`      | `PRAXISBLATT`        | `manus-gespraeche-kippen-v1`      | Textversion ergänzt die Abgrenzung: bei Bedrohung, Gewalt oder akuter Selbstgefährdung nicht weiterdiskutieren, sondern Hilfe holen.   |
+| `beispiel-dialog`        | `PRAXISBLATT`        | `manus-beispiel-dialog-v1`        | Textversion betont: Beispiel nicht als einzig richtige Sprache verstehen; bei Gefahr Dialog abbrechen und Hilfe holen.                 |
+| `kinder`                 | `ORIENTIERUNGSBLATT` | `manus-kinder-v1`                 | Textversion ergänzt Schutzverantwortung der Erwachsenen und fachliche Hilfe, wenn Kinder Angst, Gewalt oder Überverantwortung erleben. |
+| `remission-heilung`      | `ORIENTIERUNGSBLATT` | `manus-remission-heilung-v1`      | Textversion unterscheidet Remission, Recovery und Heilung vorsichtiger und vermeidet Heilsversprechen.                                 |
+| `5-faktoren-genesung`    | `ORIENTIERUNGSBLATT` | `manus-5-faktoren-genesung-v1`    | Textversion vermeidet Kausalitäts-/Garantieformulierung und betont individuelle, nichtlineare Genesung.                                |
+| `rolle-genesungsprozess` | `ORIENTIERUNGSBLATT` | `manus-rolle-genesungsprozess-v1` | Textversion entlastet Angehörige stärker: Sie können Rahmen und Beziehung mitgestalten, Genesung aber nicht machen.                    |
 
 ## P2: Tonalität, Caveats und Überverantwortung
 
-Diese Assets sollten im nächsten Design-/Asset-Pass mitgezogen werden, damit die PDF/WebP-Ebene dieselbe entlastende Sprache spricht wie die Web-Textversion.
+Diese Assets sollten im nächsten Design-/Asset-Pass mitgezogen werden, damit die
+PDF/WebP-Ebene dieselbe entlastende Sprache spricht wie die Web-Textversion.
 
-| ID                       | PDF                                                    | WebP/Preview                                            | Möglicher Drift                                                                                                    |
-| ------------------------ | ------------------------------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `leuchtturm`             | `/infografiken/manus-leuchtturm-v1.pdf`                | `/infografiken/manus-leuchtturm-v1.webp`                | Textversion ergänzt: Auch ein Leuchtturm braucht Wartung; Angehörige dürfen Hilfe und Pausen brauchen.             |
-| `drei-saeulen`           | `/infografiken/manus-drei-saeulen-v1.pdf`              | `/infografiken/manus-drei-saeulen-v1.webp`              | Textversion ergänzt Tragbarkeit für Angehörige und vermeidet Stabilitäts-Überverantwortung.                        |
-| `konsistenz-prinzip`     | `/infografiken/manus-konsistenz-prinzip-v1.pdf`        | `/infografiken/manus-konsistenz-prinzip-v1.webp`        | Textversion grenzt Konsistenz von Starrheit ab und erlaubt in Gefahr/Krise Hilfe statt Regel-Treue.                |
-| `beziehungs-achtsamkeit` | `/infografiken/manus-beziehungs-achtsamkeit-v1.pdf`    | `/infografiken/manus-beziehungs-achtsamkeit-v1.webp`    | Textversion betont eigene Warnsignale und vermeidet dauernde Selbstkontrolle.                                      |
-| `6-leitlinien`           | `/infografiken/manus-6-leitlinien-v1.pdf`              | `/infografiken/manus-6-leitlinien-v1.webp`              | Textversion entschärft Pflicht-/Muss-Ton und stärkt Selbstschutz als Leitlinie.                                    |
-| `4-alltags-tipps`        | `/infografiken/manus-4-alltags-tipps-v1.pdf`           | `/infografiken/manus-4-alltags-tipps-v1.webp`           | Textversion macht klar: Alltagstipps gelten nicht als Krisenintervention.                                          |
-| `sauerstoffmaske`        | `/infografiken/sauerstoff-die-sauerstoffmaske-v4.pdf`  | `/infografiken/sauerstoff-die-sauerstoffmaske-v4.webp`  | Textversion entlastet stärker: Auch kleine Entlastungen zählen; keine Beschämung, wenn Selbstfürsorge schwerfällt. |
-| `stopp-technik`          | `/infografiken/manus-stopp-technik-v1.pdf`             | `/infografiken/manus-stopp-technik-v1.webp`             | Textversion ordnet STOPP als Skill für ansprechbare Situationen ein, nicht als Notfalllösung.                      |
-| `energie-konto`          | `/infografiken/manus-energie-konto-v1.pdf`             | `/infografiken/manus-energie-konto-v1.webp`             | Textversion betont Selbstbeobachtung statt Messinstrument oder perfekter Bilanz.                                   |
-| `erlaubnis-karte`        | `/infografiken/manus-erlaubnis-karte-v1.pdf`           | `/infografiken/manus-erlaubnis-karte-v1.webp`           | Textversion ergänzt Sicherheitscaveat: Pausen sind erlaubt, bei akuter Gefahr aber Hilfe holen.                    |
-| `4-arten-von-grenzen`    | `/infografiken/grenzen-die-4-arten-von-grenzen-v4.pdf` | `/infografiken/grenzen-die-4-arten-von-grenzen-v4.webp` | Textversion ergänzt konkrete Alltagssätze und priorisiert körperliche Sicherheit.                                  |
-| `grenzen-erkennen`       | `/infografiken/manus-grenzen-erkennen-v1.pdf`          | `/infografiken/manus-grenzen-erkennen-v1.webp`          | Textversion entlastet bei Erschöpfung und markiert Warnsignale als Hinweise, nicht Diagnose.                       |
-| `lmk`                    | `/infografiken/manus-lmk-v1.pdf`                       | `/infografiken/manus-lmk-v1.webp`                       | Textversion erklärt LMK deutlicher und ergänzt Sicherheitshinweis bei Gewalt/Bedrohung.                            |
-| `grenzen-spickzettel`    | `/infografiken/manus-grenzen-spickzettel-v1.pdf`       | `/infografiken/manus-grenzen-spickzettel-v1.webp`       | Textversion ergänzt realistisch haltbare Grenzen und nimmt Gewalt/Bedrohung aus Gesprächsformeln aus.              |
+| ID                       | Dokumenttyp          | Freigegebene Version              | Möglicher Drift                                                                                        |
+| ------------------------ | -------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `leuchtturm`             | `ORIENTIERUNGSBLATT` | `manus-leuchtturm-v1`             | Textversion ergänzt: Auch ein Leuchtturm braucht Wartung; Angehörige dürfen Hilfe und Pausen brauchen. |
+| `drei-saeulen`           | `ORIENTIERUNGSBLATT` | `manus-drei-saeulen-v1`           | Textversion ergänzt Tragbarkeit für Angehörige und vermeidet Stabilitäts-Überverantwortung.            |
+| `konsistenz-prinzip`     | `PRAXISBLATT`        | `manus-konsistenz-prinzip-v1`     | Textversion grenzt Konsistenz von Starrheit ab und erlaubt in Gefahr/Krise Hilfe statt Regel-Treue.    |
+| `beziehungs-achtsamkeit` | `PRAXISBLATT`        | `manus-beziehungs-achtsamkeit-v1` | Textversion betont eigene Warnsignale und vermeidet dauernde Selbstkontrolle.                          |
+| `6-leitlinien`           | `ORIENTIERUNGSBLATT` | `manus-6-leitlinien-v1`           | Textversion entschärft Pflicht-/Muss-Ton und stärkt Selbstschutz als Leitlinie.                        |
+| `4-alltags-tipps`        | `PRAXISBLATT`        | `manus-4-alltags-tipps-v1`        | Textversion macht klar: Alltagstipps gelten nicht als Krisenintervention.                              |
+| `stopp-technik`          | `PRAXISBLATT`        | `manus-stopp-technik-v1`          | Textversion ordnet STOPP als Skill für ansprechbare Situationen ein, nicht als Notfalllösung.          |
+| `energie-konto`          | `PRAXISBLATT`        | `manus-energie-konto-v1`          | Textversion betont Selbstbeobachtung statt Messinstrument oder perfekter Bilanz.                       |
+| `erlaubnis-karte`        | `PRAXISBLATT`        | `manus-erlaubnis-karte-v1`        | Textversion ergänzt Sicherheitscaveat: Pausen sind erlaubt, bei akuter Gefahr aber Hilfe holen.        |
+| `grenzen-erkennen`       | `ORIENTIERUNGSBLATT` | `manus-grenzen-erkennen-v1`       | Textversion entlastet bei Erschöpfung und markiert Warnsignale als Hinweise, nicht Diagnose.           |
+| `lmk`                    | `PRAXISBLATT`        | `manus-lmk-v1`                    | Textversion erklärt LMK deutlicher und ergänzt Sicherheitshinweis bei Gewalt/Bedrohung.                |
 
 ## Nicht als Drift-Blocker markiert
 
-| ID                     | Grund                                                                                                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `4-phasen`             | In der letzten Content-Härtung wurde keine spezifische Textversionsänderung markiert. Das Asset bleibt trotzdem Teil des normalen PDF-/Textversion-Fidelity-Audits. |
-| `notfallkarte-zuerich` | Kein `HANDOUT_TEXT_VERSION_IDS`-Eintrag. Die Notfallkarte hat eigene HTML/PDF-Sync- und Kontaktprüfungen.                                                           |
+| ID                     | Grund                                                                                                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `notfallkarte-zuerich` | Kein `HANDOUT_TEXT_VERSION_IDS`-Eintrag. Die Notfallkarte hat eigene HTML/PDF-Sync- und Kontaktprüfungen.                                                   |
+| `4-phasen`             | In den letzten Content-Härtungen wurde kein spezifischer Asset-Drift markiert. Bleibt Teil des normalen PDF-/Textversion-Fidelity-Audits.                   |
+| `alarm-modus`          | Die produktive Quelle ist auf `alarm-der-alarm-modus-v4` gehoben. Aktuell kein eigener Asset-Blocker, aber weiterhin normaler Fidelity-Audit.               |
+| `fortschritt-paradox`  | Die produktive Quelle ist auf `fortschritt-das-fortschritt-paradox-v5` gehoben. Aktuell kein eigener Asset-Blocker, aber weiterhin normaler Fidelity-Audit. |
+| `sauerstoffmaske`      | Die produktive Quelle ist auf `sauerstoff-die-sauerstoffmaske-v5` gehoben. Aktuell kein eigener Asset-Blocker, aber weiterhin normaler Fidelity-Audit.      |
 
 ## Operative Reexport-Regeln
 
-1. Für jedes P0-Asset zuerst die PDF-Datei und das WebP öffnen und gegen die Web-Textversion unter `/materialien/text/:id` vergleichen.
-2. Wenn Text im PDF/WebP abweicht: nicht im flachen PDF punktuell patchen, sondern aus editierbarer Quelle neu exportieren.
-3. Bei Versionssprung neue Assetnamen verwenden oder das bestehende Versionierungsmodell bewusst aktualisieren.
-4. Danach Referenzen in `client/src/content/*.ts`, `client/src/content/materialien.ts` und ggf. `client/src/content/homeFeaturedInfografiken.ts` aktualisieren.
+1. Für jedes P0-/P1-/P2-Asset zuerst PDF und WebP öffnen und gegen die
+   Web-Textversion unter `/materialien/text/:id` vergleichen.
+2. Wenn Text im PDF/WebP abweicht: nicht im flachen PDF punktuell patchen,
+   sondern aus editierbarer Quelle neu exportieren.
+3. Bei Versionssprung neue Assetnamen verwenden oder das bestehende
+   Versionierungsmodell bewusst aktualisieren.
+4. Danach `approvedVersion` in `client/src/content/handoutGovernance.ts` und
+   die produktiven Referenzen in den Content-Registern aktualisieren.
 5. Nach Asset-Austausch ausführen:
-   - `pnpm test`
+   - `pnpm test -- handout-governance`
    - `pnpm build`
    - `pnpm audit:release-http-gates`
 
@@ -106,5 +139,6 @@ Diese Assets sollten im nächsten Design-/Asset-Pass mitgezogen werden, damit di
 
 Für einen kleinen, sicheren Folge-PR zuerst nur die P0-Gruppe behandeln:
 
-1. `notfallplan-krise`
-2. `zuhoeren-ohne-zustimmen`, `krisenkommunikation`, `wenn-worte-treffen` und `pause-statt-streit` im normalen Fidelity-Audit prüfen, aber die Asset-Blocker sind geschlossen
+1. `notfallplan-krise` PDF/WebP gegen die gehärtete Textversion prüfen.
+2. Falls Drift sichtbar ist: neues Krisenhandout-Asset exportieren.
+3. Danach `approvedVersion`, Materialregister und Release-Gates aktualisieren.

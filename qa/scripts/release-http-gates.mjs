@@ -75,7 +75,7 @@ const HEADER_CASES = [
     id: "static-pdf",
     title: "Statisches PDF",
     kind: "header",
-    route: "/notfallplan-krise-v03.pdf",
+    route: "/notfallplan-krise-v04.pdf",
     expectedStatus: 200,
     contentTypeIncludes: "application/pdf",
     requiredHeaders: SECURITY_HEADERS,

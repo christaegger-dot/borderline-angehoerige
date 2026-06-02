@@ -22,7 +22,7 @@ CONTENT_DIR = REPO_ROOT / "client" / "src" / "content"
 MATERIALS_FILE = CONTENT_DIR / "materialien.ts"
 LOCAL_PDFS = [
     REPO_ROOT / "client" / "public" / "Notfallkarte-Zuerich-Psychische-Krise.pdf",
-    REPO_ROOT / "client" / "public" / "notfallplan-krise-v03.pdf",
+    REPO_ROOT / "client" / "public" / "notfallplan-krise-v04.pdf",
 ]
 REMOTE_PDF_RE = re.compile(r'https://files\.manuscdn\.com[^"\']+\.pdf')
 

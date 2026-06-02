@@ -1,22 +1,25 @@
 # Notfallplan Krise Fidelity Audit
 
 Stand: 2026-06-02  
-Asset: `notfallplan-krise-v03`  
+Historisches Drift-Asset: `notfallplan-krise-v03`
+Integriertes Korrektur-Asset: `notfallplan-krise-v04`
 Dateien:
 
 - `client/public/notfallplan-krise-v03.pdf`
 - `client/public/notfallplan-krise-v03-preview.webp`
+- `client/public/notfallplan-krise-v04.pdf`
+- `client/public/notfallplan-krise-v04-preview.webp`
 - Web-Textversion: `/materialien/text/notfallplan-krise`
 
 ## Kurzurteil
 
-`notfallplan-krise-v03` ist als PDF/WebP nicht mehr vollständig synchron mit
-der gehärteten Web-Textversion. Der Drift ist P0-relevant, weil er
-Krisenlogik, Notfallhierarchie und Selbstschutz-Caveats betrifft.
+`notfallplan-krise-v03` war als PDF/WebP nicht mehr vollständig synchron mit
+der gehärteten Web-Textversion. Der Drift war P0-relevant, weil er
+Krisenlogik, Notfallhierarchie und Selbstschutz-Caveats betraf.
 
-Empfehlung: v03 nicht als final fachlich synchrones Release-Asset behandeln.
-Für den formalen Release ein neues `notfallplan-krise-v04` aus editierbarer
-Quelle exportieren oder v03 bewusst als Restrisiko dokumentieren.
+Status: Der Drift wurde am 2026-06-02 durch ein deterministisch gerendertes
+`notfallplan-krise-v04` geschlossen. Governance, Materialregister, statische
+Soforthilfe-Seite und Release-Gates zeigen auf v04.
 
 ## Geprüfte Kriterien
 
@@ -130,14 +133,15 @@ Ein neues Asset sollte mindestens diese Punkte erfüllen:
    - Asset-Version `v04`
    - Stand-/Review-Logik konsistent zur Materialkarte.
 
-## Operativer nächster Schritt
+## Umsetzung am 2026-06-02
 
-Neues `notfallplan-krise-v04` gemäss
-`qa/notfallplan-krise-v04-asset-brief.md` aus editierbarer Quelle
-exportieren. Danach:
+`notfallplan-krise-v04` wurde aus einer editierbaren HTML/CSS-Renderquelle
+deterministisch exportiert:
 
-1. `client/public/notfallplan-krise-v04.pdf` und Preview ablegen.
-2. `client/src/content/handoutGovernance.ts` auf `notfallplan-krise-v04`
-   aktualisieren.
-3. `client/src/content/materialien.ts` auf v04 aktualisieren.
-4. Release-HTTP-Gates gegen das neue PDF/Preview laufen lassen.
+1. `client/public/notfallplan-krise-v04.pdf` abgelegt.
+2. `client/public/notfallplan-krise-v04-preview.webp` und
+   `client/public/notfallplan-krise-v04-preview.png` abgelegt.
+3. `client/src/content/handoutGovernance.ts` auf `notfallplan-krise-v04`
+   aktualisiert.
+4. `client/src/content/materialien.ts` auf v04 aktualisiert.
+5. Statische Soforthilfe-Seite und Release-Gate-Pfade auf v04 aktualisiert.

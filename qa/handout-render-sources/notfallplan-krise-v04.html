@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="utf-8" />
+    <title>Notfallplan bei psychischer Krise · v04</title>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        src: url("../../client/public/fonts/inter-latin-400-normal.woff2")
+          format("woff2");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        src: url("../../client/public/fonts/inter-latin-500-normal.woff2")
+          format("woff2");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        src: url("../../client/public/fonts/inter-latin-600-normal.woff2")
+          format("woff2");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        src: url("../../client/public/fonts/inter-latin-700-normal.woff2")
+          format("woff2");
+      }
+
+      @font-face {
+        font-family: "Source Serif 4";
+        font-style: normal;
+        font-weight: 400;
+        src: url("../../client/public/fonts/source-serif-4-latin-ext-wght-normal.woff2")
+          format("woff2");
+      }
+
+      :root {
+        --paper: #fbf8f1;
+        --ink: #1f2a37;
+        --muted: #536171;
+        --rule: rgba(31, 42, 55, 0.16);
+        --rule-strong: rgba(31, 42, 55, 0.28);
+        --acute: #a8382f;
+        --acute-soft: #f7e5df;
+        --police: #5b3a4e;
+        --police-soft: #efe6ec;
+        --crisis: #b27025;
+        --crisis-soft: #f6ead4;
+        --triage: #526b78;
+        --triage-soft: #e6edf0;
+        --support: #4f6b5e;
+        --support-soft: #e2ebe5;
+        --quiet: #f3efe7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #e6e0d7;
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+        font-size: 10.25pt;
+        line-height: 1.32;
+      }
+
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        padding: 10mm 11mm 9mm;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(79, 107, 94, 0.035),
+            transparent 22%,
+            transparent 78%,
+            rgba(166, 56, 47, 0.025)
+          ),
+          var(--paper);
+        page-break-after: always;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 1.05rem;
+      }
+
+      li + li {
+        margin-top: 1.05mm;
+      }
+
+      .eyebrow {
+        color: var(--acute);
+        font-size: 8pt;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .title {
+        margin-top: 1.5mm;
+        font-family: "Source Serif 4", serif;
+        font-size: 27pt;
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        line-height: 0.94;
+      }
+
+      .subtitle {
+        margin-top: 1.7mm;
+        color: var(--support);
+        font-size: 12.2pt;
+        font-weight: 700;
+        line-height: 1.16;
+      }
+
+      .lead {
+        max-width: 171mm;
+        margin-top: 2.7mm;
+        color: #334155;
+        font-size: 9.7pt;
+        line-height: 1.28;
+      }
+
+      .section-title {
+        font-family: "Source Serif 4", serif;
+        font-size: 16.8pt;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+      }
+
+      .small-label {
+        font-size: 7.2pt;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .rule {
+        height: 1px;
+        background: var(--rule);
+      }
+
+      .triage-title {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 8mm;
+        margin-top: 5.5mm;
+        padding-bottom: 2.4mm;
+        border-bottom: 1.6px solid rgba(168, 56, 47, 0.34);
+      }
+
+      .triage-title h2 {
+        color: var(--acute);
+        font-size: 15.5pt;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      .triage-title p {
+        color: var(--muted);
+        font-size: 8.3pt;
+        font-weight: 600;
+      }
+
+      .triage-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 5mm;
+        margin-top: 3mm;
+        align-items: start;
+      }
+
+      .priority-panel {
+        border-left: 3.2px solid var(--acute);
+        background: linear-gradient(
+          90deg,
+          rgba(168, 56, 47, 0.09),
+          rgba(168, 56, 47, 0.025)
+        );
+        padding: 3.1mm 3.7mm 3mm;
+      }
+
+      .number-row {
+        display: grid;
+        grid-template-columns: 23mm 1fr;
+        gap: 3.2mm;
+        align-items: start;
+      }
+
+      .number-row + .number-row {
+        margin-top: 2.8mm;
+        padding-top: 2.8mm;
+        border-top: 1px solid rgba(168, 56, 47, 0.22);
+      }
+
+      .num {
+        font-family: "Inter", sans-serif;
+        font-size: 25pt;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        line-height: 0.95;
+      }
+
+      .num.acute {
+        color: var(--acute);
+      }
+
+      .num.police {
+        color: var(--police);
+      }
+
+      .num.support {
+        color: var(--support);
+      }
+
+      .number-copy h3 {
+        font-size: 11.2pt;
+        font-weight: 800;
+        line-height: 1.08;
+      }
+
+      .number-copy p {
+        margin-top: 1mm;
+        color: #334155;
+        font-size: 8.8pt;
+      }
+
+      .criteria {
+        margin-top: 1.5mm;
+        color: #334155;
+        font-size: 8.05pt;
+        line-height: 1.23;
+      }
+
+      .criteria li::marker {
+        color: var(--acute);
+      }
+
+      .secondary-panel {
+        display: grid;
+        gap: 2.4mm;
+      }
+
+      .info-band {
+        border: 1px solid var(--rule);
+        background: rgba(255, 255, 255, 0.52);
+        padding: 2.55mm 3.1mm;
+      }
+
+      .info-band.crisis {
+        border-color: rgba(178, 112, 37, 0.46);
+        background: var(--crisis-soft);
+      }
+
+      .info-band.triage {
+        border-color: rgba(82, 107, 120, 0.36);
+        background: var(--triage-soft);
+      }
+
+      .info-band.support {
+        border-color: rgba(79, 107, 94, 0.44);
+        background: var(--support-soft);
+      }
+
+      .info-band h3 {
+        color: var(--ink);
+        font-size: 10.3pt;
+        font-weight: 800;
+      }
+
+      .info-band .subhead {
+        margin-top: 1mm;
+        color: #334155;
+        font-size: 8pt;
+        font-weight: 700;
+      }
+
+      .phone-list {
+        margin-top: 1.4mm;
+        display: grid;
+        gap: 0.8mm;
+      }
+
+      .phone-line {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2mm;
+        align-items: baseline;
+        font-size: 8.5pt;
+      }
+
+      .phone-line strong,
+      .standalone-phone {
+        color: #8d5a1f;
+        font-size: 14.3pt;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+
+      .standalone-phone.triage-number {
+        color: var(--triage);
+      }
+
+      .support-call {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 3mm;
+        align-items: center;
+      }
+
+      .support-call .num {
+        font-size: 22pt;
+      }
+
+      .support-call h3 {
+        color: var(--support);
+      }
+
+      .steps {
+        margin-top: 4.2mm;
+      }
+
+      .steps-header {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 4mm;
+      }
+
+      .step-ladder {
+        margin-top: 2.7mm;
+        border-top: 1px solid var(--rule-strong);
+      }
+
+      .step-row {
+        display: grid;
+        grid-template-columns: 11mm 1fr;
+        gap: 3.1mm;
+        padding: 2.35mm 0;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .badge {
+        display: grid;
+        width: 8mm;
+        height: 8mm;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--support);
+        color: #fff;
+        font-size: 8pt;
+        font-weight: 800;
+      }
+
+      .step-row h3 {
+        color: var(--support);
+        font-size: 10.2pt;
+        font-weight: 800;
+      }
+
+      .step-row p {
+        margin-top: 0.7mm;
+        color: #334155;
+        font-size: 8.15pt;
+        line-height: 1.2;
+      }
+
+      .examples {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2mm 3mm;
+        margin-top: 1.3mm;
+        color: #3f4a59;
+        font-family: "Source Serif 4", serif;
+        font-size: 8.25pt;
+      }
+
+      .sofort {
+        margin-top: 3.4mm;
+        display: grid;
+        grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+        gap: 3.2mm;
+        align-items: stretch;
+      }
+
+      .sofort-note {
+        border-left: 3px solid var(--acute);
+        background: rgba(168, 56, 47, 0.06);
+        padding: 2.5mm 3.1mm;
+      }
+
+      .sofort-note h3 {
+        color: var(--acute);
+        font-size: 9.2pt;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .sofort-note p {
+        margin-top: 1mm;
+        color: #334155;
+        font-size: 7.9pt;
+        line-height: 1.2;
+      }
+
+      .anchor {
+        border: 1.2px solid rgba(79, 107, 94, 0.46);
+        background: rgba(226, 235, 229, 0.58);
+        padding: 2.7mm 3.4mm 2.8mm;
+      }
+
+      .anchor .small-label {
+        color: var(--support);
+      }
+
+      .anchor p {
+        margin-top: 1.1mm;
+        font-family: "Source Serif 4", serif;
+        font-size: 13.9pt;
+        line-height: 1.12;
+      }
+
+      .footer {
+        position: absolute;
+        left: 11mm;
+        right: 11mm;
+        bottom: 5.2mm;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 6mm;
+        padding-top: 2.1mm;
+        border-top: 1px solid var(--rule);
+        color: #5b6470;
+        font-size: 6.85pt;
+        line-height: 1.15;
+      }
+
+      .page2-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.8mm;
+        margin-top: 5.2mm;
+      }
+
+      .panel {
+        border-top: 2px solid var(--support);
+        background: rgba(255, 255, 255, 0.44);
+        padding: 2.55mm 3mm 2.7mm;
+      }
+
+      .panel.harm {
+        border-color: var(--acute);
+        background: rgba(168, 56, 47, 0.045);
+      }
+
+      .panel h2 {
+        font-family: "Source Serif 4", serif;
+        font-size: 13.8pt;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+      }
+
+      .panel ul {
+        margin-top: 1.5mm;
+        font-size: 8.25pt;
+        line-height: 1.16;
+      }
+
+      .panel li::marker {
+        color: var(--support);
+      }
+
+      .panel.harm li::marker {
+        color: var(--acute);
+      }
+
+      .aftercare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.8mm;
+        margin-top: 3.4mm;
+      }
+
+      .compact-card {
+        border: 1px solid var(--rule);
+        background: rgba(255, 255, 255, 0.48);
+        padding: 2.55mm 3mm;
+      }
+
+      .compact-card h2 {
+        color: var(--support);
+        font-size: 10.35pt;
+        font-weight: 800;
+      }
+
+      .compact-card p,
+      .compact-card li {
+        color: #334155;
+        font-size: 7.85pt;
+        line-height: 1.18;
+      }
+
+      .compact-card p {
+        margin-top: 1.1mm;
+      }
+
+      .compact-card ul {
+        margin-top: 1.2mm;
+      }
+
+      .phone-ref {
+        margin-top: 3mm;
+        border: 1.3px solid rgba(31, 42, 55, 0.18);
+        background: rgba(243, 239, 231, 0.74);
+        padding: 2.2mm 3.1mm 2.4mm;
+      }
+
+      .phone-ref h2 {
+        margin: 0 0 1.6mm;
+        padding-bottom: 1.2mm;
+        border-bottom: 0.5px solid rgba(31, 42, 55, 0.18);
+        color: var(--ink);
+        font-family: "Source Serif 4", serif;
+        font-size: 12pt;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+
+      .phone-ref__group {
+        padding: 1.45mm 0;
+        border-bottom: 0.5px solid rgba(31, 42, 55, 0.12);
+      }
+
+      .phone-ref__group:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .phone-ref__kicker {
+        margin: 0 0 1mm;
+        color: var(--support);
+        font-size: 6.8pt;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .phone-ref__split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.2mm;
+      }
+
+      .phone-ref__group--crisis {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 2.2mm;
+      }
+
+      .phone-ref__group--crisis .phone-ref__kicker {
+        grid-column: 1 / -1;
+        margin-bottom: -0.6mm;
+      }
+
+      .phone-ref__item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: baseline;
+        gap: 1.8mm;
+        padding: 1.6mm 2.2mm;
+        border-left: 3px solid rgba(79, 107, 94, 0.45);
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+      .phone-ref__item--life {
+        border-left-color: var(--acute);
+        background: rgba(168, 56, 47, 0.06);
+      }
+
+      .phone-ref__item--protection {
+        border-left-color: var(--police);
+        background: rgba(111, 65, 80, 0.06);
+      }
+
+      .phone-ref__item--triage {
+        border-left-color: var(--triage);
+        background: rgba(82, 107, 120, 0.06);
+      }
+
+      .phone-ref__item--support {
+        border-left-color: var(--support);
+        background: rgba(79, 107, 94, 0.06);
+      }
+
+      .phone-ref__number {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Source Serif 4", serif;
+        font-size: 16.4pt;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        line-height: 0.95;
+        white-space: nowrap;
+      }
+
+      .phone-ref__number--medium {
+        font-size: 13.1pt;
+      }
+
+      .phone-ref__number--support {
+        color: #31483f;
+        font-size: 14pt;
+      }
+
+      .phone-ref__service {
+        margin: 0 0 0.3mm;
+        color: var(--ink);
+        font-size: 8.55pt;
+        font-weight: 800;
+        line-height: 1.12;
+      }
+
+      .phone-ref__desc {
+        margin: 0;
+        color: #59646d;
+        font-size: 6.9pt;
+        line-height: 1.15;
+      }
+
+      .phone-ref__puk {
+        padding: 1.7mm 2.3mm;
+        border-left: 3px solid var(--crisis);
+        background: rgba(178, 112, 37, 0.075);
+      }
+
+      .phone-ref__puk-head {
+        margin-bottom: 1.25mm;
+      }
+
+      .phone-ref__puk-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8mm;
+        margin: 0;
+      }
+
+      .phone-ref__puk-list div {
+        min-width: 0;
+      }
+
+      .phone-ref__puk-list dt {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Source Serif 4", serif;
+        font-size: 10.4pt;
+        font-weight: 800;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .phone-ref__puk-list dd {
+        margin: 0.35mm 0 0;
+        color: #4b5563;
+        font-size: 6.55pt;
+        line-height: 1.15;
+      }
+
+      .notice {
+        margin-top: 2.2mm;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.8mm;
+        align-items: stretch;
+      }
+
+      .notice .compact-card {
+        background: rgba(168, 56, 47, 0.045);
+        border-color: rgba(168, 56, 47, 0.26);
+      }
+
+      .source-line {
+        color: #5b6470;
+        font-size: 6.85pt;
+        line-height: 1.16;
+      }
+
+      @media print {
+        body {
+          background: transparent;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="page-1" class="page">
+        <header>
+          <div class="eyebrow">KRISEN-HANDOUT · SOFORTHILFE</div>
+          <h1 class="title">Notfallplan bei psychischer Krise</h1>
+          <p class="subtitle">
+            Konkrete Schritte bei Suizidgedanken, Selbstverletzung oder akuter
+            seelischer Krise
+          </p>
+          <p class="lead">
+            Wenn Suizidgedanken, Selbstverletzung oder eine akute psychische
+            Krise im Raum stehen, zählt zuerst Sicherheit. Dieser Plan hilft
+            Angehörigen, ruhig zu bleiben, Gefahr einzuschätzen und Hilfe
+            einzubeziehen. Er ersetzt keine professionelle Beurteilung.
+          </p>
+        </header>
+
+        <section class="triage-title" aria-label="Akutpfad">
+          <h2>Akute Gefahr? Sofort handeln.</h2>
+          <p>Nummern zuerst. Gespräch erst, wenn Sicherheit geklärt ist.</p>
+        </section>
+
+        <section class="triage-grid">
+          <div class="priority-panel">
+            <div class="number-row">
+              <div class="num acute">144</div>
+              <div class="number-copy">
+                <h3>Sanität</h3>
+                <p>medizinische Hilfe oder Rettung vor Ort</p>
+                <ul class="criteria">
+                  <li>sich gerade schwer verletzt</li>
+                  <li>
+                    eine Überdosis eingenommen hat oder eine schwere
+                    Intoxikation vermutet wird
+                  </li>
+                  <li>bewusstlos ist</li>
+                  <li>
+                    einen konkreten Suizidplan äussert oder unmittelbar in
+                    Gefahr ist
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="number-row">
+              <div class="num police">117</div>
+              <div class="number-copy">
+                <h3>Polizei</h3>
+                <p>
+                  Gewalt, akute Bedrohung oder wenn sofort Schutz vor Ort nötig
+                  ist
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="secondary-panel">
+            <div class="info-band crisis">
+              <h3>Psychiatrische Krise ohne unmittelbare Lebensgefahr</h3>
+              <p class="subhead">PUK Zürich, 24/7:</p>
+              <div class="phone-list">
+                <div class="phone-line">
+                  <span>Erwachsene 18-64</span><strong>058 384 20 00</strong>
+                </div>
+                <div class="phone-line">
+                  <span>Kinder/Jugendliche bis 18</span
+                  ><strong>058 384 66 66</strong>
+                </div>
+                <div class="phone-line">
+                  <span>ab 65</span><strong>058 384 46 82</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-band triage">
+              <h3>Ärztefon Zürich</h3>
+              <p class="subhead">
+                medizinische oder psychiatrische Triage 24/7:
+              </p>
+              <div class="standalone-phone triage-number">0800 33 66 55</div>
+            </div>
+
+            <div class="info-band support support-call">
+              <div class="num support">143</div>
+              <div>
+                <h3>Dargebotene Hand</h3>
+                <p>Anonymes Gespräch, 24/7. Kein Einsatzdienst.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="steps">
+          <div class="steps-header">
+            <h2 class="section-title">4 Schritte in der Krise</h2>
+            <div class="rule"></div>
+          </div>
+          <div class="step-ladder">
+            <article class="step-row">
+              <div class="badge">1</div>
+              <div>
+                <h3>1 · Ruhe bewahren</h3>
+                <p>
+                  Ihre Angst ist verständlich. Sprechen Sie langsam, vermeiden
+                  Sie Druck und bleiben Sie so ruhig wie möglich. Ihre Ruhe kann
+                  vorübergehend Halt geben.
+                </p>
+              </div>
+            </article>
+            <article class="step-row">
+              <div class="badge">2</div>
+              <div>
+                <h3>2 · Ernst nehmen und direkt ansprechen</h3>
+                <p>
+                  Jede Äusserung über Suizid oder Selbstverletzung ernst nehmen.
+                  Direktes Nachfragen erhöht das Risiko nicht, sondern kann
+                  entlasten.
+                </p>
+                <div class="examples">
+                  <span
+                    >«Ich habe gehört, was du gesagt hast. Ich nehme das
+                    ernst.»</span
+                  >
+                  <span>«Denkst du daran, dir etwas anzutun?»</span>
+                </div>
+              </div>
+            </article>
+            <article class="step-row">
+              <div class="badge">3</div>
+              <div>
+                <h3>3 · Zuhören und Gefühle anerkennen</h3>
+                <p>
+                  Hören Sie zu, ohne vorschnell zu beruhigen, zu argumentieren
+                  oder sofort Lösungen anzubieten. Es geht zuerst darum, die Not
+                  wahrzunehmen.
+                </p>
+                <div class="examples">
+                  <span
+                    >«Ich sehe, dass es dir gerade sehr schlecht geht.»</span
+                  >
+                  <span>«Du musst das gerade nicht allein aushalten.»</span>
+                </div>
+              </div>
+            </article>
+            <article class="step-row">
+              <div class="badge">4</div>
+              <div>
+                <h3>4 · Professionelle Hilfe einbeziehen</h3>
+                <p>
+                  Sie müssen diese Situation nicht allein tragen. Ziehen Sie
+                  frühzeitig professionelle Hilfe bei. Informieren Sie wenn
+                  möglich die behandelnde Fachperson oder nutzen Sie die
+                  Notfallnummern. Suizidgedanken und akute Selbstgefährdung
+                  sollten nicht als Geheimnis mitgetragen werden.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="sofort">
+          <div class="sofort-note">
+            <h3>Wichtiger Soforthinweis</h3>
+            <p>
+              Die Person nach Möglichkeit nicht ohne Hilfe, Notfallplan oder
+              professionelle Einschätzung allein lassen — sofern Sie selbst
+              sicher bleiben können. Gefährliche Gegenstände, Medikamente,
+              Alkohol oder andere Mittel wenn möglich entfernen. Bei
+              Unsicherheit lieber einmal zu viel Hilfe holen als einmal zu
+              wenig.
+            </p>
+          </div>
+
+          <div class="anchor">
+            <div class="small-label">Merksatz</div>
+            <p>
+              «Ich nehme dich ernst. Ich bin da. Und ich hole Hilfe — für dich
+              und für mich.»
+            </p>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>
+            Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik
+            Zürich
+          </div>
+          <div>Stand: Juni 2026 · v04</div>
+        </footer>
+      </section>
+
+      <section id="page-2" class="page">
+        <header>
+          <div class="eyebrow">KRISEN-HANDOUT · SOFORTHILFE</div>
+          <h1 class="title">Nach der Akutlage</h1>
+          <p class="subtitle">
+            Kurze Referenz für Unterstützung, Selbstschutz und nächste Schritte
+          </p>
+        </header>
+
+        <section class="page2-grid">
+          <article class="panel">
+            <h2>Das hilft</h2>
+            <ul>
+              <li>ruhig bleiben und, wenn es für Sie sicher ist, dableiben</li>
+              <li>direkt und klar nachfragen</li>
+              <li>Gefühle ernst nehmen und anerkennen</li>
+              <li>Gefährdung einschätzen und Hilfe holen</li>
+              <li>Fachpersonen oder Notfallstellen einbeziehen</li>
+              <li>konkrete Sicherheit vor Diskussion stellen</li>
+            </ul>
+          </article>
+
+          <article class="panel harm">
+            <h2>Das schadet eher</h2>
+            <ul>
+              <li>Panik, Vorwürfe oder Druck</li>
+              <li>bagatellisieren oder ablenken</li>
+              <li>lange Diskussionen, warum das Leben doch schön sei</li>
+              <li>argumentieren oder überzeugen wollen</li>
+              <li>drohen oder bestrafen</li>
+              <li>
+                die Person trotz akuter Gefahr ohne Hilfe, Sicherheitsplan oder
+                professionelle Einschätzung allein lassen
+              </li>
+              <li>
+                selbst in einer unsicheren oder bedrohlichen Situation bleiben
+              </li>
+              <li>Suizidgedanken als Geheimnis für sich behalten</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="aftercare">
+          <article class="compact-card">
+            <h2>Nach der akuten Situation</h2>
+            <ul>
+              <li>behandelnde Fachperson informieren</li>
+              <li>gemeinsam überlegen, was jetzt Sicherheit gibt</li>
+              <li>Unterstützung auch für Angehörige organisieren</li>
+              <li>nächste Stunden und Nacht nicht dem Zufall überlassen</li>
+              <li>Warnzeichen und Auslöser festhalten</li>
+            </ul>
+          </article>
+
+          <article class="compact-card">
+            <h2>Selbstfürsorge für Angehörige</h2>
+            <p>
+              Auch Sie brauchen Unterstützung. Krisen belasten Angehörige stark
+              — das ist normal und kein Zeichen von Schwäche.
+            </p>
+            <ul>
+              <li>eigene Belastungsgrenze wahrnehmen</li>
+              <li>Gespräch mit eigener Fachperson suchen</li>
+              <li>nicht alles allein tragen müssen</li>
+              <li>eigene Gefühle wie Angst, Wut oder Erschöpfung zulassen</li>
+              <li>
+                Entlastungsgespräch nutzen, zum Beispiel «143 Dargebotene Hand»
+              </li>
+            </ul>
+            <p>
+              Fachstelle Angehörigenarbeit PUK Zürich: Unterstützung für
+              Angehörige nach oder ausserhalb der Akutlage.
+            </p>
+          </article>
+        </section>
+
+        <section class="phone-ref" aria-labelledby="phone-ref-title">
+          <h2 id="phone-ref-title">Notfallnummern — Kurzreferenz</h2>
+
+          <div class="phone-ref__group phone-ref__group--urgent">
+            <p class="phone-ref__kicker">Sofort</p>
+            <div class="phone-ref__split">
+              <article class="phone-ref__item phone-ref__item--life">
+                <p class="phone-ref__number">144</p>
+                <div>
+                  <p class="phone-ref__service">Sanität</p>
+                  <p class="phone-ref__desc">
+                    Akute Lebensgefahr / medizinischer Notfall
+                  </p>
+                </div>
+              </article>
+
+              <article class="phone-ref__item phone-ref__item--protection">
+                <p class="phone-ref__number">117</p>
+                <div>
+                  <p class="phone-ref__service">Polizei</p>
+                  <p class="phone-ref__desc">Gewalt / akute Bedrohung</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="phone-ref__group phone-ref__group--crisis">
+            <p class="phone-ref__kicker">
+              Krise einschätzen / Hilfe organisieren
+            </p>
+
+            <article class="phone-ref__item phone-ref__item--triage">
+              <p class="phone-ref__number phone-ref__number--medium">
+                0800 33 66 55
+              </p>
+              <div>
+                <p class="phone-ref__service">Ärztefon</p>
+                <p class="phone-ref__desc">
+                  Medizinische oder psychiatrische Triage
+                </p>
+              </div>
+            </article>
+
+            <article class="phone-ref__puk">
+              <div class="phone-ref__puk-head">
+                <p class="phone-ref__service">PUK Zürich, 24/7</p>
+                <p class="phone-ref__desc">
+                  Psychiatrische Krise ohne unmittelbare Lebensgefahr
+                </p>
+              </div>
+
+              <dl class="phone-ref__puk-list">
+                <div>
+                  <dt>058 384 20 00</dt>
+                  <dd>Erwachsene 18-64</dd>
+                </div>
+                <div>
+                  <dt>058 384 66 66</dt>
+                  <dd>Kinder/Jugendliche</dd>
+                </div>
+                <div>
+                  <dt>058 384 46 82</dt>
+                  <dd>ab 65</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+
+          <div class="phone-ref__group phone-ref__group--support">
+            <p class="phone-ref__kicker">Entlastendes Gespräch</p>
+
+            <article class="phone-ref__item phone-ref__item--support">
+              <p class="phone-ref__number phone-ref__number--support">143</p>
+              <div>
+                <p class="phone-ref__service">Dargebotene Hand</p>
+                <p class="phone-ref__desc">
+                  Anonymes Gespräch, 24/7. Kein Einsatzdienst.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="notice">
+          <article class="compact-card">
+            <h2>Wichtiger Hinweis</h2>
+            <p>
+              Dieser Notfallplan ersetzt keine professionelle Beurteilung und
+              keine psychiatrische Diagnose. Er dient der Orientierung in einer
+              akuten Situation. Bei akuter Lebensgefahr sofort 144 anrufen.
+            </p>
+          </article>
+          <article class="compact-card">
+            <h2>Quellen</h2>
+            <p class="source-line">
+              Quellen: Berkowitz &amp; Gunderson, BPD Family Guidelines
+              (NEABPD); Project Air Strategy, Understanding Self-Harm &amp;
+              Suicidal Thinking for Families &amp; Carers.
+            </p>
+          </article>
+        </section>
+
+        <footer class="footer">
+          <div>
+            Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik
+            Zürich
+          </div>
+          <div>Stand: Juni 2026 · v04</div>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

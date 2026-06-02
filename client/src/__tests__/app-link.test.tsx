@@ -14,7 +14,7 @@ describe("AppLink", () => {
     expect(isHardNavigationHref("/soforthilfe")).toBe(true);
     expect(isHardNavigationHref("/notfall")).toBe(true);
     expect(isHardNavigationHref("/notfallkarte")).toBe(true);
-    expect(isHardNavigationHref("/notfallplan-krise-v03.pdf")).toBe(true);
+    expect(isHardNavigationHref("/notfallplan-krise-v04.pdf")).toBe(true);
     expect(isHardNavigationHref("/verstehen")).toBe(false);
   });
 

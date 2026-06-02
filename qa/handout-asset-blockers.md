@@ -58,6 +58,7 @@ dokumentiert. Sie sind jetzt mit der Governance synchronisiert.
 | `bruecke-gelaender`        | `ORIENTIERUNGSBLATT` | `manus-bruecke-gelaender-v2`              | approved |
 | `anspannungskurve`         | `ORIENTIERUNGSBLATT` | `manus-anspannungskurve-v2`               | approved |
 | `garten`                   | `ORIENTIERUNGSBLATT` | `manus-garten-v2`                         | approved |
+| `notfallplan-krise`        | `KRISEN-HANDOUT`     | `notfallplan-krise-v04`                   | approved |
 | `im-krisenmodus`           | `KRISEN-HANDOUT`     | `ampel-das-ampel-system-v4`               | approved |
 | `sauerstoffmaske`          | `ORIENTIERUNGSBLATT` | `sauerstoff-die-sauerstoffmaske-v5`       | approved |
 | `fortschritt-paradox`      | `ORIENTIERUNGSBLATT` | `fortschritt-das-fortschritt-paradox-v5`  | approved |
@@ -66,12 +67,10 @@ dokumentiert. Sie sind jetzt mit der Governance synchronisiert.
 
 ## P0: Sicherheits- und Kriseninhalte
 
-Diese Assets zuerst öffnen, gegen die Web-Textversion vergleichen und bei
-Abweichung neu exportieren.
-
-| ID                  | Freigegebene Version    | Asset                                                                  | Möglicher Drift                                                                                                                                      |
-| ------------------- | ----------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `notfallplan-krise` | `notfallplan-krise-v03` | `/notfallplan-krise-v03.pdf` und `/notfallplan-krise-v03-preview.webp` | **Drift bestätigt am 2026-06-02.** PDF/WebP enthalten ältere Selbstschutz- und Kurzreferenzlogik. Details: `qa/notfallplan-krise-fidelity-audit.md`. |
+Aktuell ist kein P0-Asset-Blocker offen. `notfallplan-krise` wurde am
+2026-06-02 als deterministisch gerendertes `notfallplan-krise-v04` exportiert
+und in Governance, Materialregister, statischer Soforthilfe-Seite und
+Release-Gates integriert.
 
 ## P1: Fachliche Kernaussagen
 
@@ -137,9 +136,8 @@ PDF/WebP-Ebene dieselbe entlastende Sprache spricht wie die Web-Textversion.
 
 ## Nächster sinnvoller Schritt
 
-Für einen kleinen, sicheren Folge-PR zuerst nur die P0-Gruppe behandeln:
-
-1. `notfallplan-krise-v04` gemäss
-   `qa/notfallplan-krise-v04-asset-brief.md` aus editierbarer Quelle
-   exportieren.
-2. Danach `approvedVersion`, Materialregister und Release-Gates aktualisieren.
+Nach Schliessung der P0-Gruppe als nächstes ein P1-Asset einzeln prüfen und
+bei bestätigter Drift neu exportieren. Sinnvolle Kandidaten sind
+`genesung-zahlen`, `gehirn`, `radikale-akzeptanz`, `kinder` oder
+`remission-heilung`, weil dort fachliche Präzision und Quellenlogik besonders
+wichtig sind.

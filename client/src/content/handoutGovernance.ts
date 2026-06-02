@@ -26,7 +26,7 @@ export const handoutGovernance = {
   "notfallplan-krise": {
     id: "notfallplan-krise",
     documentType: "KRISEN-HANDOUT",
-    approvedVersion: "notfallplan-krise-v03",
+    approvedVersion: "notfallplan-krise-v04",
   },
   leuchtturm: {
     id: "leuchtturm",

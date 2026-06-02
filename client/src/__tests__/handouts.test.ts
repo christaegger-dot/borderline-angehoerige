@@ -39,7 +39,7 @@ describe("handout delivery helpers", () => {
   });
 
   it("routes local pdf paths through the controlled download endpoint", () => {
-    expect(getHandoutOpenHref("/notfallplan-krise-v03.pdf")).toBe(
+    expect(getHandoutOpenHref("/notfallplan-krise-v04.pdf")).toBe(
       "/api/material-download/notfallplan-krise?disposition=inline"
     );
     expect(

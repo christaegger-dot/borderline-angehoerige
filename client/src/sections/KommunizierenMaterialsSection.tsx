@@ -27,6 +27,7 @@ export default function KommunizierenMaterialsSection() {
       curationNote="Die vollständige Materialsammlung bleibt auf der Bibliotheksseite. Hier stehen nur die drei Hilfen, die beim Lesen dieser Seite unmittelbar weiterführen."
       items={curatedItems}
       ariaLabel="Ausgewählte Materialien für schwierige Gespräche"
+      tone="terracotta"
     />
   );
 }

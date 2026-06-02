@@ -55,11 +55,6 @@ export function VisualOrientationGrid({
     : typeof maxItems === "number"
       ? homeFeaturedInfografiken.slice(0, maxItems)
       : homeFeaturedInfografiken;
-  const gridClass =
-    tiles.length <= 3
-      ? "grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-y-12 lg:grid-cols-3"
-      : "grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-y-12 lg:grid-cols-4";
-
   return (
     <>
       <EditorialSection variant="cream">
@@ -106,21 +101,18 @@ export function VisualOrientationGrid({
         data-toc-skip
       >
         <div className="mx-auto max-w-page">
-          <ul className={gridClass}>
+          <ul
+            className="featured-infographic-grid"
+            data-grid-size={tiles.length <= 3 ? "compact" : "default"}
+          >
             {tiles.map(tile => (
-              <li key={tile.id} className="group">
+              <li key={tile.id}>
                 <AppLink
                   href={tile.href}
-                  className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent-primary)] focus-visible:ring-offset-4 focus-visible:ring-offset-[color:var(--bg-primary)]"
+                  className="featured-infographic-card"
+                  data-feature-tone={getFeatureTone(tile.categoryLabel)}
                 >
-                  <div
-                    className="overflow-hidden rounded-md border"
-                    style={{
-                      borderColor: "var(--rule-color)",
-                      background: "var(--bg-elevated)",
-                      aspectRatio: `600 / ${tile.thumbnailHeight}`,
-                    }}
-                  >
+                  <div className="featured-infographic-card__media">
                     <img
                       src={tile.thumbnailUrl}
                       alt={tile.alt}
@@ -128,32 +120,20 @@ export function VisualOrientationGrid({
                       height={tile.thumbnailHeight}
                       loading="lazy"
                       decoding="async"
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      className="featured-infographic-card__image"
                     />
                   </div>
-                  <EyebrowLabel className="mt-4" spacing="compact">
-                    {tile.categoryLabel}
-                  </EyebrowLabel>
-                  <h3
-                    className="mt-2 font-display transition-colors duration-200 group-hover:text-[color:var(--accent-primary)]"
-                    style={{
-                      fontSize: "1.125rem",
-                      lineHeight: "var(--lh-snug)",
-                      color: "var(--fg-primary)",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {tile.title}
-                  </h3>
-                  <p
-                    className="mt-2 text-sm"
-                    style={{
-                      color: "var(--fg-secondary)",
-                      lineHeight: "var(--lh-snug)",
-                    }}
-                  >
-                    {tile.description}
-                  </p>
+                  <div className="featured-infographic-card__content">
+                    <p className="featured-infographic-card__kicker">
+                      {tile.categoryLabel}
+                    </p>
+                    <h3 className="featured-infographic-card__title">
+                      {tile.title}
+                    </h3>
+                    <p className="featured-infographic-card__description">
+                      {tile.description}
+                    </p>
+                  </div>
                 </AppLink>
               </li>
             ))}
@@ -162,4 +142,17 @@ export function VisualOrientationGrid({
       </section>
     </>
   );
+}
+
+function getFeatureTone(categoryLabel: string) {
+  if (categoryLabel === "Kommunizieren" || categoryLabel === "Grenzen") {
+    return "terracotta";
+  }
+  if (categoryLabel === "Krise begleiten") {
+    return "danger";
+  }
+  if (categoryLabel === "Genesung") {
+    return "steel";
+  }
+  return "sage";
 }

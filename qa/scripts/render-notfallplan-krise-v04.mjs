@@ -5,10 +5,19 @@ import path from "node:path";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, "../..");
-const sourcePath = path.join(repoRoot, "qa/handout-render-sources/notfallplan-krise-v04.html");
+const sourcePath = path.join(
+  repoRoot,
+  "qa/handout-render-sources/notfallplan-krise-v04.html"
+);
 const pdfPath = path.join(repoRoot, "client/public/notfallplan-krise-v04.pdf");
-const pngPath = path.join(repoRoot, "client/public/notfallplan-krise-v04-preview.png");
-const webpPath = path.join(repoRoot, "client/public/notfallplan-krise-v04-preview.webp");
+const pngPath = path.join(
+  repoRoot,
+  "client/public/notfallplan-krise-v04-preview.png"
+);
+const webpPath = path.join(
+  repoRoot,
+  "client/public/notfallplan-krise-v04-preview.webp"
+);
 
 const browser = await chromium.launch();
 try {

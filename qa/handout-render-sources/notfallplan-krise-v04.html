@@ -463,28 +463,28 @@
         position: absolute;
         left: 11mm;
         right: 11mm;
-        bottom: 6.5mm;
+        bottom: 5.2mm;
         display: grid;
         grid-template-columns: 1fr auto;
         gap: 6mm;
         padding-top: 2.1mm;
         border-top: 1px solid var(--rule);
         color: #5b6470;
-        font-size: 7.1pt;
+        font-size: 6.85pt;
         line-height: 1.15;
       }
 
       .page2-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 4.5mm;
-        margin-top: 6.5mm;
+        gap: 3.8mm;
+        margin-top: 5.2mm;
       }
 
       .panel {
         border-top: 2px solid var(--support);
         background: rgba(255, 255, 255, 0.44);
-        padding: 3.2mm 3.5mm 3.4mm;
+        padding: 2.55mm 3mm 2.7mm;
       }
 
       .panel.harm {
@@ -494,15 +494,15 @@
 
       .panel h2 {
         font-family: "Source Serif 4", serif;
-        font-size: 15pt;
+        font-size: 13.8pt;
         font-weight: 400;
         letter-spacing: -0.01em;
       }
 
       .panel ul {
-        margin-top: 2.2mm;
-        font-size: 8.8pt;
-        line-height: 1.23;
+        margin-top: 1.5mm;
+        font-size: 8.25pt;
+        line-height: 1.16;
       }
 
       .panel li::marker {
@@ -516,97 +516,200 @@
       .aftercare {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 4.5mm;
-        margin-top: 4.8mm;
+        gap: 3.8mm;
+        margin-top: 3.4mm;
       }
 
       .compact-card {
         border: 1px solid var(--rule);
         background: rgba(255, 255, 255, 0.48);
-        padding: 3.3mm 3.6mm;
+        padding: 2.55mm 3mm;
       }
 
       .compact-card h2 {
         color: var(--support);
-        font-size: 11pt;
+        font-size: 10.35pt;
         font-weight: 800;
       }
 
       .compact-card p,
       .compact-card li {
         color: #334155;
-        font-size: 8.45pt;
-        line-height: 1.24;
+        font-size: 7.85pt;
+        line-height: 1.18;
       }
 
       .compact-card p {
-        margin-top: 1.7mm;
+        margin-top: 1.1mm;
       }
 
       .compact-card ul {
-        margin-top: 1.8mm;
+        margin-top: 1.2mm;
       }
 
-      .reference {
-        margin-top: 4.8mm;
-        border: 1.3px solid rgba(31, 42, 55, 0.2);
-        background: rgba(243, 239, 231, 0.76);
-        padding: 3.5mm 4mm;
+      .phone-ref {
+        margin-top: 3mm;
+        border: 1.3px solid rgba(31, 42, 55, 0.18);
+        background: rgba(243, 239, 231, 0.74);
+        padding: 2.2mm 3.1mm 2.4mm;
       }
 
-      .reference h2 {
+      .phone-ref h2 {
+        margin: 0 0 1.6mm;
+        padding-bottom: 1.2mm;
+        border-bottom: 0.5px solid rgba(31, 42, 55, 0.18);
+        color: var(--ink);
         font-family: "Source Serif 4", serif;
-        font-size: 14.2pt;
-        font-weight: 400;
+        font-size: 12pt;
+        font-weight: 500;
+        letter-spacing: -0.01em;
       }
 
-      .ref-grid {
+      .phone-ref__group {
+        padding: 1.45mm 0;
+        border-bottom: 0.5px solid rgba(31, 42, 55, 0.12);
+      }
+
+      .phone-ref__group:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .phone-ref__kicker {
+        margin: 0 0 1mm;
+        color: var(--support);
+        font-size: 6.8pt;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .phone-ref__split {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.8mm 5mm;
-        margin-top: 2.6mm;
+        gap: 2.2mm;
       }
 
-      .ref-row {
+      .phone-ref__group--crisis {
         display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 2.5mm;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 2.2mm;
+      }
+
+      .phone-ref__group--crisis .phone-ref__kicker {
+        grid-column: 1 / -1;
+        margin-bottom: -0.6mm;
+      }
+
+      .phone-ref__item {
+        display: grid;
+        grid-template-columns: auto 1fr;
         align-items: baseline;
-        padding-bottom: 1.2mm;
-        border-bottom: 1px solid var(--rule);
-        font-size: 8.15pt;
+        gap: 1.8mm;
+        padding: 1.6mm 2.2mm;
+        border-left: 3px solid rgba(79, 107, 94, 0.45);
+        background: rgba(255, 255, 255, 0.54);
       }
 
-      .ref-row strong {
-        font-size: 12pt;
+      .phone-ref__item--life {
+        border-left-color: var(--acute);
+        background: rgba(168, 56, 47, 0.06);
+      }
+
+      .phone-ref__item--protection {
+        border-left-color: var(--police);
+        background: rgba(111, 65, 80, 0.06);
+      }
+
+      .phone-ref__item--triage {
+        border-left-color: var(--triage);
+        background: rgba(82, 107, 120, 0.06);
+      }
+
+      .phone-ref__item--support {
+        border-left-color: var(--support);
+        background: rgba(79, 107, 94, 0.06);
+      }
+
+      .phone-ref__number {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Source Serif 4", serif;
+        font-size: 16.4pt;
         font-weight: 800;
+        letter-spacing: 0.01em;
+        line-height: 0.95;
+        white-space: nowrap;
       }
 
-      .ref-row .red {
-        color: var(--acute);
+      .phone-ref__number--medium {
+        font-size: 13.1pt;
       }
 
-      .ref-row .purple {
-        color: var(--police);
+      .phone-ref__number--support {
+        color: #31483f;
+        font-size: 14pt;
       }
 
-      .ref-row .amber {
-        color: var(--crisis);
+      .phone-ref__service {
+        margin: 0 0 0.3mm;
+        color: var(--ink);
+        font-size: 8.55pt;
+        font-weight: 800;
+        line-height: 1.12;
       }
 
-      .ref-row .blue {
-        color: var(--triage);
+      .phone-ref__desc {
+        margin: 0;
+        color: #59646d;
+        font-size: 6.9pt;
+        line-height: 1.15;
       }
 
-      .ref-row .green {
-        color: var(--support);
+      .phone-ref__puk {
+        padding: 1.7mm 2.3mm;
+        border-left: 3px solid var(--crisis);
+        background: rgba(178, 112, 37, 0.075);
+      }
+
+      .phone-ref__puk-head {
+        margin-bottom: 1.25mm;
+      }
+
+      .phone-ref__puk-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8mm;
+        margin: 0;
+      }
+
+      .phone-ref__puk-list div {
+        min-width: 0;
+      }
+
+      .phone-ref__puk-list dt {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Source Serif 4", serif;
+        font-size: 10.4pt;
+        font-weight: 800;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .phone-ref__puk-list dd {
+        margin: 0.35mm 0 0;
+        color: #4b5563;
+        font-size: 6.55pt;
+        line-height: 1.15;
       }
 
       .notice {
-        margin-top: 4.5mm;
+        margin-top: 2.2mm;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 4.5mm;
+        gap: 3.8mm;
         align-items: stretch;
       }
 
@@ -617,7 +720,7 @@
 
       .source-line {
         color: #5b6470;
-        font-size: 7.1pt;
+        font-size: 6.85pt;
         line-height: 1.16;
       }
 
@@ -895,39 +998,86 @@
           </article>
         </section>
 
-        <section class="reference">
-          <h2>Notfallnummern — Kurzreferenz</h2>
-          <div class="ref-grid">
-            <div class="ref-row">
-              <span>Akute Lebensgefahr / medizinischer Notfall</span
-              ><strong class="red">144 Sanität</strong>
+        <section class="phone-ref" aria-labelledby="phone-ref-title">
+          <h2 id="phone-ref-title">Notfallnummern — Kurzreferenz</h2>
+
+          <div class="phone-ref__group phone-ref__group--urgent">
+            <p class="phone-ref__kicker">Sofort</p>
+            <div class="phone-ref__split">
+              <article class="phone-ref__item phone-ref__item--life">
+                <p class="phone-ref__number">144</p>
+                <div>
+                  <p class="phone-ref__service">Sanität</p>
+                  <p class="phone-ref__desc">
+                    Akute Lebensgefahr / medizinischer Notfall
+                  </p>
+                </div>
+              </article>
+
+              <article class="phone-ref__item phone-ref__item--protection">
+                <p class="phone-ref__number">117</p>
+                <div>
+                  <p class="phone-ref__service">Polizei</p>
+                  <p class="phone-ref__desc">Gewalt / akute Bedrohung</p>
+                </div>
+              </article>
             </div>
-            <div class="ref-row">
-              <span>Gewalt / akute Bedrohung</span
-              ><strong class="purple">117 Polizei</strong>
-            </div>
-            <div class="ref-row">
-              <span>Medizinische oder psychiatrische Triage</span
-              ><strong class="blue">0800 33 66 55 Ärztefon</strong>
-            </div>
-            <div class="ref-row">
-              <span>Entlastendes Gespräch</span
-              ><strong class="green">143 Dargebotene Hand</strong>
-            </div>
-            <div class="ref-row">
-              <span>Psychiatrische Krise ohne unmittelbare Lebensgefahr</span
-              ><strong class="amber">058 384 20 00 PUK Erwachsene 18-64</strong>
-            </div>
-            <div class="ref-row">
-              <span>Psychiatrische Krise ohne unmittelbare Lebensgefahr</span
-              ><strong class="amber"
-                >058 384 66 66 PUK Kinder/Jugendliche</strong
-              >
-            </div>
-            <div class="ref-row">
-              <span>Psychiatrische Krise ohne unmittelbare Lebensgefahr</span
-              ><strong class="amber">058 384 46 82 PUK ab 65</strong>
-            </div>
+          </div>
+
+          <div class="phone-ref__group phone-ref__group--crisis">
+            <p class="phone-ref__kicker">
+              Krise einschätzen / Hilfe organisieren
+            </p>
+
+            <article class="phone-ref__item phone-ref__item--triage">
+              <p class="phone-ref__number phone-ref__number--medium">
+                0800 33 66 55
+              </p>
+              <div>
+                <p class="phone-ref__service">Ärztefon</p>
+                <p class="phone-ref__desc">
+                  Medizinische oder psychiatrische Triage
+                </p>
+              </div>
+            </article>
+
+            <article class="phone-ref__puk">
+              <div class="phone-ref__puk-head">
+                <p class="phone-ref__service">PUK Zürich, 24/7</p>
+                <p class="phone-ref__desc">
+                  Psychiatrische Krise ohne unmittelbare Lebensgefahr
+                </p>
+              </div>
+
+              <dl class="phone-ref__puk-list">
+                <div>
+                  <dt>058 384 20 00</dt>
+                  <dd>Erwachsene 18-64</dd>
+                </div>
+                <div>
+                  <dt>058 384 66 66</dt>
+                  <dd>Kinder/Jugendliche</dd>
+                </div>
+                <div>
+                  <dt>058 384 46 82</dt>
+                  <dd>ab 65</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+
+          <div class="phone-ref__group phone-ref__group--support">
+            <p class="phone-ref__kicker">Entlastendes Gespräch</p>
+
+            <article class="phone-ref__item phone-ref__item--support">
+              <p class="phone-ref__number phone-ref__number--support">143</p>
+              <div>
+                <p class="phone-ref__service">Dargebotene Hand</p>
+                <p class="phone-ref__desc">
+                  Anonymes Gespräch, 24/7. Kein Einsatzdienst.
+                </p>
+              </div>
+            </article>
           </div>
         </section>
 

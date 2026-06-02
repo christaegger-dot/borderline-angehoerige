@@ -20,6 +20,8 @@ export interface CuratedMaterialCard {
   guidance?: string;
 }
 
+type CuratedMaterialTone = "sage" | "terracotta" | "steel" | "sand" | "danger";
+
 interface CuratedMaterialsSectionProps {
   marginLabel: string;
   title: string;
@@ -28,6 +30,7 @@ interface CuratedMaterialsSectionProps {
   items: CuratedMaterialCard[];
   ariaLabel: string;
   allMaterialsLabel?: string;
+  tone?: CuratedMaterialTone;
 }
 
 export default function CuratedMaterialsSection({
@@ -38,6 +41,7 @@ export default function CuratedMaterialsSection({
   items,
   ariaLabel,
   allMaterialsLabel = "Alle Materialien ansehen",
+  tone = "sage",
 }: CuratedMaterialsSectionProps) {
   const visibleItems = items.slice(0, 3);
 
@@ -81,7 +85,7 @@ export default function CuratedMaterialsSection({
         <div className="mx-auto max-w-page">
           <div className="topic-materials-grid">
             {visibleItems.map(item => (
-              <MaterialCard key={item.id} item={item} />
+              <MaterialCard key={item.id} item={item} tone={tone} />
             ))}
           </div>
           <p className="topic-materials-library-link">
@@ -95,14 +99,20 @@ export default function CuratedMaterialsSection({
   );
 }
 
-function MaterialCard({ item }: { item: CuratedMaterialCard }) {
+function MaterialCard({
+  item,
+  tone,
+}: {
+  item: CuratedMaterialCard;
+  tone: CuratedMaterialTone;
+}) {
   const textVersionHref = getHandoutTextVersionHrefBySource(item.pdfUrl);
   const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
   const imageSrc = item.thumbnailUrl ?? item.imageUrl;
   const previewHref = item.previewUrl ?? item.imageUrl;
 
   return (
-    <article className="topic-material-card">
+    <article className="topic-material-card" data-material-tone={tone}>
       <a
         href={previewHref}
         target="_blank"

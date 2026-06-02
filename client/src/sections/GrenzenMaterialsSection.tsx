@@ -27,6 +27,7 @@ export default function GrenzenMaterialsSection() {
       curationNote="Grenzsetzung wird schnell unübersichtlich. Diese Auswahl ist deshalb absichtlich klein: erst sortieren, dann formulieren, dann konsequent bleiben."
       items={curatedItems}
       ariaLabel="Ausgewählte Materialien zu Grenzen"
+      tone="terracotta"
     />
   );
 }

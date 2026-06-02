@@ -651,8 +651,11 @@
   }
 
   .topic-material-card {
+    --material-accent: var(--fs-sage);
+    --material-accent-soft: var(--fs-sage-soft);
     display: flex;
     min-width: 0;
+    height: 100%;
     overflow: hidden;
     flex-direction: column;
     border: 1px solid var(--fs-rule);
@@ -665,27 +668,70 @@
       ),
       var(--fs-paper);
     box-shadow: 0 1px 0 rgba(31, 42, 55, 0.04);
+    transition:
+      border-color 160ms ease,
+      transform 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .topic-material-card[data-material-tone="terracotta"] {
+    --material-accent: var(--fs-terracotta);
+    --material-accent-soft: var(--fs-terracotta-soft);
+  }
+
+  .topic-material-card[data-material-tone="steel"] {
+    --material-accent: var(--fs-steel);
+    --material-accent-soft: var(--fs-steel-soft);
+  }
+
+  .topic-material-card[data-material-tone="sand"] {
+    --material-accent: var(--fs-sand);
+    --material-accent-soft: var(--fs-sand-soft);
+  }
+
+  .topic-material-card[data-material-tone="danger"] {
+    --material-accent: var(--fs-danger);
+    --material-accent-soft: var(--fs-danger-soft);
+  }
+
+  .topic-material-card:hover {
+    border-color: color-mix(in srgb, var(--material-accent) 48%, transparent);
+    box-shadow: 0 14px 32px rgba(31, 42, 55, 0.06);
+    transform: translateY(-1px);
   }
 
   .topic-material-card__media {
-    display: block;
+    display: grid;
+    place-items: center;
     min-width: 0;
+    overflow: hidden;
     aspect-ratio: 4 / 3;
     border-bottom: 1px solid var(--fs-rule);
     background:
+      radial-gradient(
+        circle at 50% 10%,
+        rgba(255, 253, 248, 0.76),
+        transparent 52%
+      ),
       linear-gradient(
         135deg,
-        rgba(237, 243, 236, 0.82),
-        rgba(246, 239, 226, 0.72)
-      ),
-      var(--fs-paper-muted);
+        var(--material-accent-soft),
+        rgba(255, 253, 248, 0.88)
+      );
   }
 
   .topic-material-card__media img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: center top;
     padding: var(--space-3);
+    filter: saturate(0.96) drop-shadow(0 8px 14px rgba(31, 42, 55, 0.12));
+    transition: transform 180ms ease;
+  }
+
+  .topic-material-card:hover .topic-material-card__media img {
+    transform: scale(1.025);
   }
 
   .topic-material-card__content {
@@ -702,7 +748,7 @@
     font-weight: 500;
     letter-spacing: var(--tracking-caps);
     text-transform: uppercase;
-    color: var(--fg-tertiary);
+    color: var(--material-accent);
   }
 
   .topic-material-card__title {
@@ -724,8 +770,16 @@
   }
 
   .topic-material-card__guidance {
+    padding: 0.65rem 0.75rem;
     padding-left: var(--space-3);
-    border-left: 2px solid var(--fs-rule-strong);
+    border-left: 2px solid
+      color-mix(in srgb, var(--material-accent) 82%, transparent);
+    border-radius: 0 10px 10px 0;
+    background: color-mix(
+      in srgb,
+      var(--material-accent-soft) 68%,
+      transparent
+    );
   }
 
   .topic-material-card__actions {
@@ -734,6 +788,7 @@
     gap: var(--space-2) var(--space-4);
     margin-top: auto;
     padding-top: var(--space-3);
+    border-top: 1px solid var(--fs-rule);
     font-size: var(--text-sm);
   }
 
@@ -808,6 +863,159 @@
     .material-starter-shelf {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+  }
+
+  .featured-infographic-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .featured-infographic-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-5) var(--space-4);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .featured-infographic-grid[data-grid-size="compact"] {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .featured-infographic-grid[data-grid-size="default"] {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .featured-infographic-card {
+    --material-accent: var(--fs-sage);
+    --material-accent-soft: var(--fs-sage-soft);
+    display: flex;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    flex-direction: column;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid var(--fs-rule);
+    border-radius: var(--fs-radius-panel);
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 253, 248, 0.98),
+        rgba(255, 253, 248, 0.9)
+      ),
+      var(--fs-paper);
+    box-shadow: 0 1px 0 rgba(31, 42, 55, 0.04);
+    transition:
+      border-color 160ms ease,
+      transform 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .featured-infographic-card[data-feature-tone="terracotta"] {
+    --material-accent: var(--fs-terracotta);
+    --material-accent-soft: var(--fs-terracotta-soft);
+  }
+
+  .featured-infographic-card[data-feature-tone="steel"] {
+    --material-accent: var(--fs-steel);
+    --material-accent-soft: var(--fs-steel-soft);
+  }
+
+  .featured-infographic-card[data-feature-tone="sand"] {
+    --material-accent: var(--fs-sand);
+    --material-accent-soft: var(--fs-sand-soft);
+  }
+
+  .featured-infographic-card[data-feature-tone="danger"] {
+    --material-accent: var(--fs-danger);
+    --material-accent-soft: var(--fs-danger-soft);
+  }
+
+  .featured-infographic-card:hover,
+  .featured-infographic-card:focus-visible {
+    border-color: color-mix(in srgb, var(--material-accent) 54%, transparent);
+    box-shadow: 0 14px 32px rgba(31, 42, 55, 0.07);
+    transform: translateY(-1px);
+  }
+
+  .featured-infographic-card:focus-visible {
+    outline: 2px solid var(--material-accent);
+    outline-offset: 4px;
+  }
+
+  .featured-infographic-card__media {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-bottom: 1px solid var(--fs-rule);
+    background:
+      radial-gradient(
+        circle at 50% 10%,
+        rgba(255, 253, 248, 0.78),
+        transparent 52%
+      ),
+      linear-gradient(
+        135deg,
+        var(--material-accent-soft),
+        rgba(255, 253, 248, 0.88)
+      );
+  }
+
+  .featured-infographic-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+    padding: 0.85rem;
+    filter: saturate(0.96) drop-shadow(0 8px 14px rgba(31, 42, 55, 0.12));
+    transition: transform 180ms ease;
+  }
+
+  .featured-infographic-card:hover .featured-infographic-card__image {
+    transform: scale(1.025);
+  }
+
+  .featured-infographic-card__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: calc(var(--space-4) + 0.125rem);
+  }
+
+  .featured-infographic-card__kicker {
+    margin: 0;
+    color: var(--material-accent);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+  }
+
+  .featured-infographic-card__title {
+    margin: 0;
+    color: var(--fg-primary);
+    font-family: var(--font-display);
+    font-size: clamp(1.125rem, 1.15vw, 1.25rem);
+    font-weight: var(--weight-display);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--lh-snug);
+    transition: color 160ms ease;
+  }
+
+  .featured-infographic-card:hover .featured-infographic-card__title {
+    color: var(--material-accent);
+  }
+
+  .featured-infographic-card__description {
+    margin: 0;
+    color: var(--fg-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--lh-relaxed);
   }
 
   /* Material library cards: same quiet family as curated topic materials,

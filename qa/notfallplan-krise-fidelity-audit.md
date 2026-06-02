@@ -132,7 +132,9 @@ Ein neues Asset sollte mindestens diese Punkte erfüllen:
 
 ## Operativer nächster Schritt
 
-Neues `notfallplan-krise-v04` aus editierbarer Quelle exportieren. Danach:
+Neues `notfallplan-krise-v04` gemäss
+`qa/notfallplan-krise-v04-asset-brief.md` aus editierbarer Quelle
+exportieren. Danach:
 
 1. `client/public/notfallplan-krise-v04.pdf` und Preview ablegen.
 2. `client/src/content/handoutGovernance.ts` auf `notfallplan-krise-v04`

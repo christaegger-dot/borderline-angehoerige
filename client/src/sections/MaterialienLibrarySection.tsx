@@ -85,6 +85,8 @@ function MaterialEntry({
         "material-library-card",
         variant === "starter" && "material-library-card--starter"
       )}
+      data-material-category={item.category}
+      data-material-kind={item.kind}
     >
       <button
         type="button"
@@ -298,10 +300,9 @@ export default function MaterialienLibrarySection() {
       >
         <div className="mx-auto max-w-page">
           <div
-            className="flex flex-wrap items-baseline gap-x-2 gap-y-2 overflow-x-auto border-y py-4"
+            className="material-filter-bar"
             role="tablist"
             aria-label="Filter Materialien nach Kategorie"
-            style={{ borderColor: "var(--rule-color)" }}
           >
             {categoryMeta.map(cat => {
               const count =
@@ -328,7 +329,7 @@ export default function MaterialienLibrarySection() {
 
           <div ref={gridRef} className="scroll-mt-24 md:scroll-mt-28">
             {secondaryMaterials.length > 0 ? (
-              <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="material-library-grid">
                 {secondaryMaterials.map(item => (
                   <MaterialEntry
                     key={item.id}

@@ -56,8 +56,12 @@ function getStyle(
       // der Browser-Default `none` keinen Strich. Beide Properties müssen
       // gesetzt sein, sonst ist der aktive Hairline unsichtbar.
       borderBottomStyle: "solid",
-      borderBottomColor: selected ? "var(--accent-primary)" : "transparent",
-      color: selected ? "var(--fg-primary)" : "var(--accent-label)",
+      borderBottomColor: selected
+        ? "var(--fs-terracotta, var(--accent-primary))"
+        : "transparent",
+      color: selected
+        ? "var(--fs-ink, var(--fg-primary))"
+        : "var(--fs-sage, var(--accent-label))",
     };
   }
   if (variant === "choice") {
@@ -103,8 +107,9 @@ export function EditorialPillButton({
     : variant === "filter"
       ? (e: React.MouseEvent<HTMLButtonElement>) => {
           if (!selected && !disabled) {
-            // Hover: zarte Aubergine-Hairline unten andeuten
-            e.currentTarget.style.borderBottomColor = "rgba(91, 58, 78, 0.4)";
+            // Hover: zarte Terrakotta-Hairline unten andeuten.
+            e.currentTarget.style.borderBottomColor =
+              "color-mix(in srgb, var(--fs-terracotta, var(--accent-primary)) 45%, transparent)";
           }
           onMouseEnter?.(e);
         }

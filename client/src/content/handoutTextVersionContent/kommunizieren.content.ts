@@ -189,7 +189,7 @@ export const handoutTextVersions = [
           },
           {
             title: "«Wenn du gehst, bringe ich mich um.»",
-            text: `Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich bleibe damit nicht allein und hole jetzt Hilfe dazu.» Solche Sätze immer ernst nehmen: Bei unmittelbarer Gefahr ${n("ROT_144")}, ${n("ROT_117")} oder eine psychiatrische Notfallstelle einbeziehen.`,
+            text: "Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich bleibe damit nicht allein und hole jetzt Hilfe dazu.» Solche Sätze immer ernst nehmen: Bei unmittelbarer Gefahr nicht weiterdiskutieren, sondern professionelle Hilfe einbeziehen.",
           },
           {
             title: "«Du verstehst mich sowieso nicht.»",

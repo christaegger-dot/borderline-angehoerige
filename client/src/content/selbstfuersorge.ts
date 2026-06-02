@@ -21,9 +21,10 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     title: "Warnsignale der Überlastung",
     desc: "Drei Stufen der Überlastung: erste Zeichen wahrnehmen, Entlastung aktivieren und Unterstützung dazuholen.",
     category: "erkennen",
-    webp: "/infografiken/manus-warnsignale-v2.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-warnsignale-v2.webp",
-    pdf: "/infografiken/manus-warnsignale-v2.pdf",
+    webp: "/infografiken/manus-warnsignale-v3.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-warnsignale-v3-thumb.png",
+    pdf: "/infografiken/manus-warnsignale-v3.pdf",
     featured: true,
   },
   {

@@ -1,4 +1,5 @@
 import type { MaterialCategory, MaterialItem } from "./materialien";
+import type { HandoutDocumentType } from "./handoutGovernance";
 
 export interface HandoutTextCard {
   title: string;
@@ -19,6 +20,8 @@ export interface HandoutTextVersionMeta {
   path: string;
   title: string;
   description: string;
+  documentType: HandoutDocumentType;
+  approvedVersion: string;
   topicLabel: string;
   topicHref: string;
   category: Exclude<MaterialCategory, "alle">;

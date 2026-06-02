@@ -145,7 +145,7 @@ export const handoutTextVersions = [
         title: "Sicherheitsrahmen",
         calloutTitle: "Orientierung, keine Notfallbeurteilung",
         calloutText:
-          "Die Ampel und die Gegenüberstellung geben Orientierung. Wenn Sicherheit gefährdet ist, gilt Soforthilfe: Rot = Einsatzdienst, Gelb = psychiatrische Notfallhilfe, Grün = Entlastung und Gespräch.",
+          "Die Ampel und die Gegenüberstellung geben Orientierung. Wenn Sicherheit gefährdet ist, hat sofortige Hilfe Vorrang: Rot = Einsatzdienst, Gelb = psychiatrische Notfallhilfe, Grün = Entlastung und Gespräch.",
       },
       {
         title: "Mini-Legende",
@@ -474,7 +474,7 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es im Alltag geht",
         calloutText:
-          "Kleine Handlungen im Alltag können viel unterstützen. In akuter Gefahr gilt Soforthilfe, nicht Alltagstipps.",
+          "Kleine Handlungen im Alltag können viel unterstützen. In akuter Gefahr haben Sicherheit und Hilfe Vorrang, nicht Alltagstipps.",
       },
       {
         title: "Was können Sie tun?",

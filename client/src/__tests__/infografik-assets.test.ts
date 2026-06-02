@@ -36,7 +36,7 @@ describe("infografik assets", () => {
     expect(missingAssets).toEqual([]);
   });
 
-  it("uses the freigegebene Validierungstreppe v9 assets in productive references", () => {
+  it("uses the freigegebene Validierungstreppe v10 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -56,7 +56,7 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Krisenkommunikation v10 assets in productive references", () => {
+  it("uses the freigegebene Krisenkommunikation v11 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -76,7 +76,7 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Wenn-Worte-Treffen v2 assets in productive references", () => {
+  it("uses the freigegebene Wenn-Worte-Treffen v3 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -84,11 +84,14 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
+        "/infografiken/manus-wenn-worte-treffen-v3.pdf",
+        "/infografiken/manus-wenn-worte-treffen-v3.webp",
+        "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v3-thumb.png",
+      ],
+      [
         "/infografiken/manus-wenn-worte-treffen-v2.pdf",
         "/infografiken/manus-wenn-worte-treffen-v2.webp",
         "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp",
-      ],
-      [
         "/infografiken/manus-wenn-worte-treffen-v1.pdf",
         "/infografiken/manus-wenn-worte-treffen-v1.webp",
         "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v1.webp",
@@ -96,7 +99,7 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Pause-statt-Streit v2 assets in productive references", () => {
+  it("uses the freigegebene Pause-statt-Streit v3 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -104,11 +107,14 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
+        "/infografiken/manus-pause-statt-streit-v3.pdf",
+        "/infografiken/manus-pause-statt-streit-v3.webp",
+        "/infografiken/extras/thumbnails/manus-pause-statt-streit-v3-thumb.png",
+      ],
+      [
         "/infografiken/manus-pause-statt-streit-v2.pdf",
         "/infografiken/manus-pause-statt-streit-v2.webp",
         "/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp",
-      ],
-      [
         "/infografiken/manus-pause-statt-streit-v1.pdf",
         "/infografiken/manus-pause-statt-streit-v1.webp",
         "/infografiken/extras/thumbnails/manus-pause-statt-streit-v1.webp",
@@ -116,7 +122,7 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Grenzen-ohne-Eskalation v2 assets in productive references", () => {
+  it("uses the freigegebene Grenzen-ohne-Eskalation v3 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -124,11 +130,14 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
+        "/infografiken/manus-grenzen-ohne-eskalation-v3.pdf",
+        "/infografiken/manus-grenzen-ohne-eskalation-v3.webp",
+        "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v3-thumb.png",
+      ],
+      [
         "/infografiken/manus-grenzen-ohne-eskalation-v2.pdf",
         "/infografiken/manus-grenzen-ohne-eskalation-v2.webp",
         "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp",
-      ],
-      [
         "/infografiken/manus-grenzen-ohne-eskalation-v1.pdf",
         "/infografiken/manus-grenzen-ohne-eskalation-v1.webp",
         "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v1.webp",
@@ -136,7 +145,7 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Spiegeln-statt-Aufsaugen v2 assets in productive references", () => {
+  it("uses the freigegebene Spiegeln-statt-Aufsaugen v3 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -144,11 +153,14 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v3.pdf",
+        "/infografiken/manus-spiegeln-statt-aufsaugen-v3.webp",
+        "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v3-thumb.png",
+      ],
+      [
         "/infografiken/manus-spiegeln-statt-aufsaugen-v2.pdf",
         "/infografiken/manus-spiegeln-statt-aufsaugen-v2.webp",
         "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp",
-      ],
-      [
         "/infografiken/manus-spiegeln-statt-aufsaugen-v1.pdf",
         "/infografiken/manus-spiegeln-statt-aufsaugen-v1.webp",
         "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v1.webp",
@@ -156,23 +168,27 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Rolle-klaeren v2 assets in productive references", () => {
+  it("uses the freigegebene Rolle-klaeren v3 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [
+        "/infografiken/manus-rolle-klaeren-v3.pdf",
+        "/infografiken/manus-rolle-klaeren-v3.webp",
+        "/infografiken/extras/thumbnails/manus-rolle-klaeren-v3-thumb.png",
+      ],
       [
         "/infografiken/manus-rolle-klaeren-v2.pdf",
         "/infografiken/manus-rolle-klaeren-v2.webp",
         "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp",
-      ],
-      []
+      ]
     );
   });
 
-  it("uses the freigegebene Warnsignale v2 assets in productive references", () => {
+  it("uses the freigegebene Warnsignale v3 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -180,11 +196,14 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
+        "/infografiken/manus-warnsignale-v3.pdf",
+        "/infografiken/manus-warnsignale-v3.webp",
+        "/infografiken/extras/thumbnails/manus-warnsignale-v3-thumb.png",
+      ],
+      [
         "/infografiken/manus-warnsignale-v2.pdf",
         "/infografiken/manus-warnsignale-v2.webp",
         "/infografiken/extras/thumbnails/manus-warnsignale-v2.webp",
-      ],
-      [
         "/infografiken/manus-warnsignale-v1.pdf",
         "/infografiken/manus-warnsignale-v1.webp",
         "/infografiken/extras/thumbnails/manus-warnsignale-v1.webp",
@@ -232,7 +251,7 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Schuld-Verantwortung v2 assets in productive references", () => {
+  it("uses the freigegebene Schuld-Verantwortung v3 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -240,11 +259,14 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
+        "/infografiken/manus-schuld-verantwortung-v3.pdf",
+        "/infografiken/manus-schuld-verantwortung-v3.webp",
+        "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v3-thumb.png",
+      ],
+      [
         "/infografiken/manus-schuld-verantwortung-v2.pdf",
         "/infografiken/manus-schuld-verantwortung-v2.webp",
         "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v2.webp",
-      ],
-      [
         "/infografiken/manus-schuld-verantwortung-v1.pdf",
         "/infografiken/manus-schuld-verantwortung-v1.webp",
         "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v1.webp",
@@ -252,39 +274,47 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Bruecke-Gelaender v1 assets in productive references", () => {
+  it("uses the freigegebene Bruecke-Gelaender v2 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [
+        "/infografiken/manus-bruecke-gelaender-v2.pdf",
+        "/infografiken/manus-bruecke-gelaender-v2.webp",
+        "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v2-thumb.png",
+      ],
       [
         "/infografiken/manus-bruecke-gelaender-v1.pdf",
         "/infografiken/manus-bruecke-gelaender-v1.webp",
         "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v1.webp",
-      ],
-      []
+      ]
     );
   });
 
-  it("uses the freigegebene Anspannungskurve v1 assets in productive references", () => {
+  it("uses the freigegebene Anspannungskurve v2 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [
+        "/infografiken/manus-anspannungskurve-v2.pdf",
+        "/infografiken/manus-anspannungskurve-v2.webp",
+        "/infografiken/extras/thumbnails/manus-anspannungskurve-v2-thumb.png",
+      ],
       [
         "/infografiken/manus-anspannungskurve-v1.pdf",
         "/infografiken/manus-anspannungskurve-v1.webp",
         "/infografiken/extras/thumbnails/manus-anspannungskurve-v1.webp",
-      ],
-      []
+      ]
     );
   });
 
-  it("uses the freigegebene Garten v1 assets in productive references", () => {
+  it("uses the freigegebene Garten v2 assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -292,11 +322,15 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
+        "/infografiken/manus-garten-v2.pdf",
+        "/infografiken/manus-garten-v2.webp",
+        "/infografiken/extras/thumbnails/manus-garten-v2-thumb.png",
+      ],
+      [
         "/infografiken/manus-garten-v1.pdf",
         "/infografiken/manus-garten-v1.webp",
         "/infografiken/extras/thumbnails/manus-garten-v1.webp",
-      ],
-      []
+      ]
     );
   });
 });

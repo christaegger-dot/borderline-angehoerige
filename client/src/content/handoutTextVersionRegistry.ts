@@ -1,6 +1,7 @@
 import { genesungItems } from "./genesung";
 import { grenzenItems } from "./grenzen";
 import { kommItems } from "./kommunizieren";
+import { requireHandoutGovernance } from "./handoutGovernance";
 import { materials, type MaterialCategory } from "./materialien";
 import { selbstfuersorgeInfografiken } from "./selbstfuersorge";
 import type { HandoutTextVersionMeta } from "./handoutTextVersionTypes";
@@ -125,6 +126,7 @@ export function requireHandoutMaterial(id: string) {
 export function createHandoutTextVersionMeta(
   id: string
 ): HandoutTextVersionMeta {
+  const governance = requireHandoutGovernance(id);
   const {
     title,
     description,
@@ -140,6 +142,8 @@ export function createHandoutTextVersionMeta(
     path: `/materialien/text/${id}`,
     title,
     description,
+    documentType: governance.documentType,
+    approvedVersion: governance.approvedVersion,
     topicLabel: topic.label,
     topicHref: topic.href,
     category,

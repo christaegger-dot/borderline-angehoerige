@@ -31,10 +31,10 @@ export const grenzenItems: GrenzenItem[] = [
     id: "spiegeln-statt-aufsaugen",
     title: "Spiegeln statt Aufsaugen",
     description: "Mitfühlen ohne Übernehmen",
-    url: "/infografiken/manus-spiegeln-statt-aufsaugen-v2.webp",
+    url: "/infografiken/manus-spiegeln-statt-aufsaugen-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp",
-    pdfUrl: "/infografiken/manus-spiegeln-statt-aufsaugen-v2.pdf",
+      "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v3-thumb.png",
+    pdfUrl: "/infografiken/manus-spiegeln-statt-aufsaugen-v3.pdf",
     category: "kommunizieren",
   },
   {

@@ -24,9 +24,10 @@ export const unterstuetzenItems = [
     title: "Ihre Rolle klären",
     description:
       "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
-    url: "/infografiken/manus-rolle-klaeren-v2.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp",
-    pdfUrl: "/infografiken/manus-rolle-klaeren-v2.pdf",
+    url: "/infografiken/manus-rolle-klaeren-v3.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/manus-rolle-klaeren-v3-thumb.png",
+    pdfUrl: "/infografiken/manus-rolle-klaeren-v3.pdf",
     category: "grundlagen",
   },
   {

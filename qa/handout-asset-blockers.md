@@ -139,6 +139,7 @@ PDF/WebP-Ebene dieselbe entlastende Sprache spricht wie die Web-Textversion.
 
 Für einen kleinen, sicheren Folge-PR zuerst nur die P0-Gruppe behandeln:
 
-1. `notfallplan-krise` PDF/WebP gegen die gehärtete Textversion prüfen.
-2. Falls Drift sichtbar ist: neues Krisenhandout-Asset exportieren.
-3. Danach `approvedVersion`, Materialregister und Release-Gates aktualisieren.
+1. `notfallplan-krise-v04` gemäss
+   `qa/notfallplan-krise-v04-asset-brief.md` aus editierbarer Quelle
+   exportieren.
+2. Danach `approvedVersion`, Materialregister und Release-Gates aktualisieren.

@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
@@ -42,6 +44,18 @@ function pdfStem(sourceUrl: string) {
       ?.split("/")
       .pop()
       ?.replace(/\.pdf$/i, "") ?? ""
+  );
+}
+
+function localPublicPath(sourceUrl: string) {
+  if (!sourceUrl.startsWith("/") || !sourceUrl.toLowerCase().endsWith(".pdf")) {
+    return null;
+  }
+
+  return path.resolve(
+    process.cwd(),
+    "client/public",
+    sourceUrl.replace(/^\//, "")
   );
 }
 
@@ -103,6 +117,18 @@ describe("handout governance", () => {
       expect(pdfStem(item.sourceUrl), item.id).toBe(
         governance?.approvedVersion
       );
+    }
+  });
+
+  it("keeps local productive pdf sources present on disk", () => {
+    for (const item of collectProductiveHandoutSources()) {
+      const localPath = localPublicPath(item.sourceUrl);
+
+      if (!localPath) {
+        continue;
+      }
+
+      expect(fs.existsSync(localPath), item.sourceUrl).toBe(true);
     }
   });
 

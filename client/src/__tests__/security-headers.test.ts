@@ -84,7 +84,7 @@ describe("security headers", () => {
       "public, max-age=0, must-revalidate"
     );
     expect(response.headers.get("Content-Disposition")).toContain(
-      'attachment; filename="notfallplan-krise-v03.pdf"'
+      'attachment; filename="notfallplan-krise-v04.pdf"'
     );
     expect(Number(response.headers.get("Content-Length"))).toBeGreaterThan(
       1000
@@ -115,7 +115,7 @@ describe("security headers", () => {
 
     expect(existsSpy).toHaveBeenCalled();
     expect(fetch).toHaveBeenCalledWith(
-      "https://borderline-angehoerige.netlify.app/notfallplan-krise-v03.pdf",
+      "https://borderline-angehoerige.netlify.app/notfallplan-krise-v04.pdf",
       expect.objectContaining({
         headers: expect.objectContaining({
           Accept: expect.stringContaining("application/pdf"),
@@ -150,7 +150,7 @@ describe("security headers", () => {
     );
 
     expect(fetch).toHaveBeenCalledWith(
-      "https://borderline-angehoerige.netlify.app/notfallplan-krise-v03.pdf",
+      "https://borderline-angehoerige.netlify.app/notfallplan-krise-v04.pdf",
       expect.any(Object)
     );
     expect(response.status).toBe(200);

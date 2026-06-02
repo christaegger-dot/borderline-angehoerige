@@ -69,9 +69,9 @@ dokumentiert. Sie sind jetzt mit der Governance synchronisiert.
 Diese Assets zuerst öffnen, gegen die Web-Textversion vergleichen und bei
 Abweichung neu exportieren.
 
-| ID                  | Freigegebene Version    | Asset                                                                  | Möglicher Drift                                                                                                                                                            |
-| ------------------- | ----------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `notfallplan-krise` | `notfallplan-krise-v03` | `/notfallplan-krise-v03.pdf` und `/notfallplan-krise-v03-preview.webp` | Textversion trennt 144, 117, PUK-058er-Nummern, 143 und Selbstschutz-Caveat klarer. PDF/WebP kann eine ältere Hierarchie oder weniger präzise Selbstschutzlogik enthalten. |
+| ID                  | Freigegebene Version    | Asset                                                                  | Möglicher Drift                                                                                                                                      |
+| ------------------- | ----------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `notfallplan-krise` | `notfallplan-krise-v03` | `/notfallplan-krise-v03.pdf` und `/notfallplan-krise-v03-preview.webp` | **Drift bestätigt am 2026-06-02.** PDF/WebP enthalten ältere Selbstschutz- und Kurzreferenzlogik. Details: `qa/notfallplan-krise-fidelity-audit.md`. |
 
 ## P1: Fachliche Kernaussagen
 

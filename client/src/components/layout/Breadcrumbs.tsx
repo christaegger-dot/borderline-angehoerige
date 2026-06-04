@@ -106,27 +106,21 @@ export function Breadcrumbs() {
   const backLabel = parent?.label || "Startseite";
 
   return (
-    <div className="border-b border-border/25 bg-background">
-      <nav className="container py-1.5 md:py-2" aria-label="Breadcrumb">
+    <div className="breadcrumb-shell">
+      <nav className="container breadcrumb-shell__nav" aria-label="Breadcrumb">
         <div className="flex items-center justify-between gap-3 sm:gap-4">
-          <Link
-            href={backHref}
-            className="inline-flex items-center gap-1.5 text-[13px] font-medium text-muted-foreground transition-colors hover:text-foreground sm:hidden"
-          >
+          <Link href={backHref} className="breadcrumb-shell__back sm:hidden">
             <ArrowLeft className="h-4 w-4" />
             <span>{backLabel}</span>
           </Link>
 
-          <p className="min-w-0 flex-1 truncate text-right text-[13px] font-medium text-muted-foreground sm:hidden">
+          <p className="breadcrumb-shell__mobile-current sm:hidden">
             {pageName}
           </p>
 
-          <ol className="hidden flex-wrap items-center gap-x-1.5 gap-y-1 text-[13px] text-muted-foreground sm:flex">
+          <ol className="breadcrumb-shell__list">
             <li>
-              <Link
-                href="/"
-                className="flex items-center gap-1.5 transition-colors hover:text-foreground"
-              >
+              <Link href="/" className="breadcrumb-shell__link">
                 <Home className="h-3.5 w-3.5" />
                 <span>Startseite</span>
               </Link>
@@ -134,23 +128,20 @@ export function Breadcrumbs() {
             {parent && (
               <li className="flex items-center gap-1.5">
                 <ChevronRight
-                  className="h-3.5 w-3.5 text-muted-foreground/45"
+                  className="breadcrumb-shell__separator"
                   aria-hidden="true"
                 />
-                <Link
-                  href={parent.href}
-                  className="transition-colors hover:text-foreground"
-                >
+                <Link href={parent.href} className="breadcrumb-shell__link">
                   {parent.label}
                 </Link>
               </li>
             )}
             <li className="flex items-center gap-1.5">
               <ChevronRight
-                className="h-3.5 w-3.5 text-muted-foreground/45"
+                className="breadcrumb-shell__separator"
                 aria-hidden="true"
               />
-              <span className="font-medium text-foreground/75">{pageName}</span>
+              <span className="breadcrumb-shell__current">{pageName}</span>
             </li>
           </ol>
         </div>

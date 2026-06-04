@@ -204,47 +204,18 @@ function CrisisQuickAccess() {
   return (
     <aside
       aria-label="Wenn es akut ist"
-      className="border p-6"
-      style={{
-        borderColor: "var(--rule-color-strong)",
-        borderRadius: "0.25rem",
-        background: "var(--bg-primary)",
-      }}
+      className="home-side-panel home-side-panel--crisis"
     >
-      <p
-        className="text-[11px] font-medium uppercase"
-        style={{
-          color: "var(--accent-label)",
-          letterSpacing: "var(--tracking-caps)",
-          marginBottom: "var(--space-3)",
-        }}
-      >
-        Wenn es akut ist
-      </p>
-      <p
-        className="font-display"
-        style={{
-          fontSize: "var(--text-md)",
-          color: "var(--fg-primary)",
-          fontWeight: 500,
-          lineHeight: 1.4,
-        }}
-      >
+      <p className="home-side-panel__kicker">Wenn es akut ist</p>
+      <p className="home-side-panel__title">
         Bei Gefahr, Suiziddruck oder Gewalt zählt der direkte Weg.
       </p>
-      <p
-        className="mt-3"
-        style={{
-          fontSize: "var(--text-sm)",
-          color: "var(--fg-secondary)",
-          lineHeight: "var(--lh-relaxed)",
-        }}
-      >
+      <p className="home-side-panel__body">
         Notfallnummern und psychiatrische Krisenstellen ohne Umwege.
       </p>
       <AppLink
         href="/soforthilfe"
-        className="editorial-link mt-4 inline-block text-sm font-medium"
+        className="editorial-link home-side-panel__link"
       >
         Soforthilfe öffnen
       </AppLink>
@@ -385,52 +356,13 @@ function ContactPanel() {
   if (!FACHSTELLE || !EMAIL_ANGEHOERIGEN || !ADRESSE_PUK) return null;
 
   return (
-    <div
-      className="border p-6"
-      style={{
-        borderColor: "var(--rule-color-strong)",
-        borderRadius: "0.25rem",
-        background: "var(--bg-primary)",
-      }}
-    >
-      <p
-        className="text-[11px] font-medium uppercase"
-        style={{
-          color: "var(--accent-label)",
-          letterSpacing: "var(--tracking-caps)",
-          marginBottom: "var(--space-3)",
-        }}
-      >
-        Kontakt
-      </p>
-      <p
-        className="font-display"
-        style={{
-          fontSize: "var(--text-md)",
-          color: "var(--fg-primary)",
-          fontWeight: 500,
-          lineHeight: 1.4,
-        }}
-      >
-        {FACHSTELLE.label}
-      </p>
-      <p
-        className="mt-1"
-        style={{
-          fontSize: "var(--text-sm)",
-          color: "var(--fg-secondary)",
-          lineHeight: 1.5,
-        }}
-      >
+    <div className="home-side-panel home-side-panel--contact">
+      <p className="home-side-panel__kicker">Kontakt</p>
+      <p className="home-side-panel__title">{FACHSTELLE.label}</p>
+      <p className="home-side-panel__body home-side-panel__body--compact">
         {ADRESSE_PUK.adresse}
       </p>
-      <ul
-        className="mt-4 space-y-2"
-        style={{
-          fontSize: "var(--text-sm)",
-          color: "var(--fg-secondary)",
-        }}
-      >
+      <ul className="home-side-panel__contact-list">
         <li>
           <a href={`tel:${FACHSTELLE.tel}`} className="editorial-link">
             {FACHSTELLE.nummer}

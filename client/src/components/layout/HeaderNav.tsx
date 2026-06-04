@@ -58,30 +58,24 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
   }, [mobileMenuOpen]);
 
   return (
-    <header
-      className="sticky top-0 z-50 border-b bg-background/96"
-      style={{ borderColor: "var(--rule-color)" }}
-    >
+    <header className="site-header">
       <div className="container">
-        <div className="flex min-h-[52px] items-center justify-between gap-3 py-1 md:min-h-16 md:gap-4 md:py-1.5">
+        <div className="site-header__inner">
           <AppLink
             href="/"
             aria-label="Borderline · Hilfe für Angehörige – Startseite"
-            className="flex items-center gap-3.5 group shrink-0"
+            className="site-header__brand group"
           >
             <BrandMark
               variant="primary"
-              className="h-9 w-9 md:h-10 md:w-10"
-              iconClassName="h-[18px] w-[18px] md:h-5 md:w-5"
+              className="h-9 w-9 md:h-[38px] md:w-[38px]"
+              iconClassName="h-[18px] w-[18px] md:h-[19px] md:w-[19px]"
             />
-            <span className="hidden xl:flex flex-col leading-tight">
-              <span className="font-display text-[19px] font-medium leading-[1.1] tracking-[-0.01em] text-foreground transition-colors group-hover:text-[color:var(--accent-primary)] whitespace-nowrap">
+            <span className="site-header__brand-text">
+              <span className="site-header__brand-title">
                 Borderline · Angehörige
               </span>
-              <span
-                className="mt-1 text-[11px] font-medium uppercase tracking-[0.08em] whitespace-nowrap"
-                style={{ color: "var(--accent-label)" }}
-              >
+              <span className="site-header__brand-subtitle">
                 Fachstelle · PUK Zürich
               </span>
             </span>
@@ -99,10 +93,8 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
                   key={item.href}
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`inline-flex min-h-10 items-center whitespace-nowrap border-b py-1.5 text-[13px] transition-colors duration-200 lg:text-sm ${
-                    isActive
-                      ? "font-medium text-[color:var(--fg-primary)] border-[color:var(--accent-primary)]"
-                      : "font-normal text-[color:var(--fg-secondary)] border-transparent hover:text-[color:var(--fg-primary)] hover:border-[color:var(--accent-primary)]"
+                  className={`site-header__link ${
+                    isActive ? "site-header__link--active" : ""
                   }`}
                 >
                   {item.label}
@@ -121,11 +113,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <button
               type="button"
               onClick={onSearchOpen}
-              className="hidden h-9 items-center gap-1.5 rounded-full border bg-transparent px-3 text-[13px] transition-colors hover:bg-white/60 hover:text-[color:var(--fg-primary)] sm:inline-flex lg:px-3.5"
-              style={{
-                borderColor: "var(--rule-color)",
-                color: "var(--fg-secondary)",
-              }}
+              className="site-header__action site-header__action--search hidden sm:inline-flex"
               aria-label="Suchen"
             >
               <SearchIcon className="w-4 h-4" />
@@ -135,7 +123,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <button
               type="button"
               onClick={onSearchOpen}
-              className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/74 text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
+              className="site-header__icon-button sm:hidden"
               aria-label="Suche öffnen"
             >
               <SearchIcon className="h-[18px] w-[18px]" />
@@ -144,19 +132,16 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <AppLink
               href="/soforthilfe"
               aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-              className="hidden h-9 items-center gap-2 rounded-full border border-alert-light/70 bg-transparent px-3.5 text-[13px] font-semibold text-alert-dark transition-colors hover:bg-alert-wash lg:inline-flex"
+              className="site-header__action site-header__action--crisis hidden lg:inline-flex"
             >
-              <span
-                aria-hidden="true"
-                className="inline-block h-1.5 w-1.5 rounded-full bg-alert"
-              />
+              <span aria-hidden="true" className="site-header__crisis-dot" />
               <span>Soforthilfe</span>
             </AppLink>
 
             <AppLink
               href="/soforthilfe"
               aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-alert text-white shadow-[0_8px_14px_-14px_rgba(197,95,61,0.5)] lg:hidden"
+              className="site-header__mobile-crisis lg:hidden"
             >
               <Phone className="h-[18px] w-[18px]" />
             </AppLink>
@@ -165,7 +150,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               ref={menuButtonRef}
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-white/74 transition-colors ${
+              className={`site-header__icon-button lg:hidden ${
                 mobileMenuOpen ? currentAccent.surfaceActive : "hover:bg-muted"
               }`}
               aria-controls="mobile-navigation-dialog"

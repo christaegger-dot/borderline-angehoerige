@@ -92,7 +92,7 @@ export default function Layout({ children }: LayoutProps) {
               </p>
             </div>
 
-            <div className="rounded-2xl border bg-white/45 p-5 md:p-6">
+            <div className="footer-note-panel">
               <p className="text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
                 Hinweis
               </p>

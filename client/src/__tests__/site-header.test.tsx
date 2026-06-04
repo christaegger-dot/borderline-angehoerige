@@ -36,15 +36,15 @@ describe("SiteHeader (HeaderNav)", () => {
     expect(separator).toBeNull();
   });
 
-  it("renders nav items with fg-secondary by default and fg-primary on active", () => {
+  it("renders nav items with quiet default state and active underline marker", () => {
     const { container } = renderHeader();
     const nav = container.querySelector('nav[aria-label="Hauptnavigation"]');
     expect(nav).toBeTruthy();
     const links = nav?.querySelectorAll("a") ?? [];
     expect(links.length).toBeGreaterThan(0);
 
-    // Default (nicht aktiv): fg-secondary
-    // Aktiv: fg-primary mit Aubergine-Underline
+    // Default (nicht aktiv): semantische Link-Klasse
+    // Aktiv: zusaetzlicher Marker fuer Aubergine-Underline
     const inactiveLinks = Array.from(links).filter(
       a => !a.hasAttribute("aria-current")
     );
@@ -55,17 +55,17 @@ describe("SiteHeader (HeaderNav)", () => {
     // Mindestens ein Inactive-Link existiert (Test rendert Root "/", die meisten Items sind nicht /)
     expect(inactiveLinks.length).toBeGreaterThan(0);
     inactiveLinks.forEach(link => {
-      expect(link.className).toContain("fg-secondary");
+      expect(link.className).toContain("site-header__link");
+      expect(link.className).not.toContain("site-header__link--active");
     });
 
     // Optional: Active-State kann existieren (wenn die Test-Route matcht)
     activeLinks.forEach(link => {
-      expect(link.className).toContain("fg-primary");
-      expect(link.className).toContain("font-medium");
+      expect(link.className).toContain("site-header__link--active");
     });
   });
 
-  it("renders the Soforthilfe link as a quiet alert outline on desktop", () => {
+  it("renders the Soforthilfe link as a quiet crisis action on desktop", () => {
     const { container } = renderHeader();
     const soforthilfeLinks = Array.from(
       container.querySelectorAll('a[aria-label*="Soforthilfe"]')
@@ -73,13 +73,15 @@ describe("SiteHeader (HeaderNav)", () => {
     // Mindestens ein Soforthilfe-Link (Desktop-Version mit Text)
     expect(soforthilfeLinks.length).toBeGreaterThan(0);
 
-    // Desktop-Version bleibt sichtbar, aber ohne gefuellte Buttonflaeche.
+    // Desktop-Version bleibt sichtbar, aber weniger button-heavy.
     const desktopSoforthilfe = soforthilfeLinks.find(link =>
-      link.className.includes("border-alert-light")
+      link.className.includes("site-header__action--crisis")
     );
     expect(desktopSoforthilfe).toBeTruthy();
-    expect(desktopSoforthilfe?.className).toContain("text-alert-dark");
-    expect(desktopSoforthilfe?.className).toContain("bg-transparent");
+    expect(desktopSoforthilfe?.className).toContain("site-header__action");
+    expect(
+      desktopSoforthilfe?.querySelector(".site-header__crisis-dot")
+    ).toBeTruthy();
   });
 
   it("renders the Brand wordmark with shortened text Borderline · Angehörige", () => {
@@ -91,8 +93,7 @@ describe("SiteHeader (HeaderNav)", () => {
     renderHeader();
     const brandSub = screen.getByText(/Fachstelle · PUK Zürich/);
     expect(brandSub).toBeInTheDocument();
-    // Sage-Color via accent-label-Token im inline style
-    expect(brandSub.getAttribute("style")).toContain("var(--accent-label)");
+    expect(brandSub.className).toContain("site-header__brand-subtitle");
   });
 
   it("opens the mobile menu across the full non-desktop breakpoint", () => {

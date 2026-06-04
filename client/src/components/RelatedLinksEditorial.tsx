@@ -1,4 +1,4 @@
-/* Editorial variant of related links: plain list, no card framing. */
+/* Editorial related links: quiet paper panels in the shared style-bridge grammar. */
 import AppLink from "@/components/AppLink";
 
 export interface RelatedLink {
@@ -26,66 +26,28 @@ export default function RelatedLinksEditorial({
 }: RelatedLinksEditorialProps) {
   if (links.length === 0) return null;
 
-  const wrapperSpacing = flush
-    ? ""
-    : "mt-16 border-t pt-12 md:mt-[var(--space-8)]";
+  const wrapperSpacing = flush ? "" : "mt-16 md:mt-[var(--space-8)]";
 
   return (
     <section
       aria-labelledby="related-links-editorial-heading"
-      className={`${wrapperSpacing} ${className}`.trim()}
-      style={flush ? undefined : { borderColor: "var(--rule-color)" }}
+      className={`related-links-editorial ${flush ? "related-links-editorial--flush" : ""} ${wrapperSpacing} ${className}`.trim()}
     >
-      <p
-        className="uppercase"
-        style={{
-          fontSize: "var(--text-xs)",
-          letterSpacing: "var(--tracking-caps)",
-          color: "var(--accent-label)",
-          fontWeight: 500,
-        }}
-      >
-        Weiterführen
-      </p>
+      <p className="related-links-editorial__kicker">Weiterführen</p>
       <h2
         id="related-links-editorial-heading"
-        className="mt-3 font-display"
-        style={{
-          fontSize: "var(--text-2xl)",
-          lineHeight: "var(--lh-snug)",
-          color: "var(--fg-primary)",
-          fontWeight: "var(--weight-display)",
-          letterSpacing: "var(--tracking-tight)",
-        }}
+        className="related-links-editorial__title"
       >
         Das könnte Sie auch interessieren
       </h2>
-      <ul className="mt-6">
+      <ul className="related-links-editorial__list">
         {links.map(link => (
-          <li
-            key={link.href}
-            className="border-t py-5"
-            style={{ borderColor: "var(--rule-color)" }}
-          >
-            <AppLink href={link.href} className="block">
-              <p
-                className="editorial-link"
-                style={{
-                  fontSize: "var(--text-md)",
-                  fontWeight: 500,
-                  textDecoration: "none",
-                }}
-              >
+          <li key={link.href} className="related-links-editorial__item">
+            <AppLink href={link.href} className="related-links-editorial__link">
+              <p className="related-links-editorial__link-title">
                 {link.title}
               </p>
-              <p
-                className="mt-1"
-                style={{
-                  fontSize: "var(--text-sm)",
-                  lineHeight: "var(--lh-relaxed)",
-                  color: "var(--fg-secondary)",
-                }}
-              >
+              <p className="related-links-editorial__description">
                 {link.description}
               </p>
             </AppLink>

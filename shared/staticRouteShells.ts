@@ -83,6 +83,13 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     includeMedicalSchema: true,
   },
   {
+    path: "/verstehen/beziehungen",
+    title: "Borderline und Beziehungen",
+    description:
+      "Warum gut gemeinte Unterstützung anders ankommen kann: Ereignis, Bedeutung, Gefühl und Reaktion zwischen Angehörigen und erkrankter Person — ohne Motive zu unterstellen oder Schuld zu verteilen.",
+    includeMedicalSchema: true,
+  },
+  {
     path: "/verstehen/begleiterkrankungen",
     title: "Begleiterkrankungen",
     description:

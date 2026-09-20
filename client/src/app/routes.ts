@@ -15,6 +15,7 @@ const Home = lazy(() => import("@/pages/Home"));
 const Verstehen = lazy(() => import("@/pages/Verstehen"));
 const Diagnostik = lazy(() => import("@/pages/Diagnostik"));
 const Begleiterkrankungen = lazy(() => import("@/pages/Begleiterkrankungen"));
+const VerstehenBeziehungen = lazy(() => import("@/pages/VerstehenBeziehungen"));
 const UnterstuetzenUebersicht = lazy(
   () => import("@/pages/UnterstuetzenUebersicht")
 );
@@ -56,6 +57,11 @@ export const routes: AppRoute[] = [
   {
     path: "/verstehen/begleiterkrankungen",
     component: Begleiterkrankungen,
+    requiresMotion: true,
+  },
+  {
+    path: "/verstehen/beziehungen",
+    component: VerstehenBeziehungen,
     requiresMotion: true,
   },
   {

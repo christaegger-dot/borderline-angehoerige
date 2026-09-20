@@ -12,6 +12,7 @@
     "lint:fix": "eslint client/src/ server/ shared/ netlify/functions/ --fix",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --config vitest.config.ts",
+    "verify": "pnpm lint && pnpm prettier --check . && pnpm check && pnpm test && pnpm build",
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots",
     "check": "tsc --noEmit",

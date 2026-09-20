@@ -75,31 +75,33 @@ jobs:
             exit 0
           fi
 
-          # 6. Auf CI-Checks warten (max 10 Min)
+          # 6. Auf fremde Checks warten (max 10 Min)
           #
-          # Zustaende, die einen Merge verhindern. ACTION_REQUIRED ist der
-          # wichtigste Fall: Von GITHUB_TOKEN erstellte PRs loesen keine
-          # Workflows aus, ihr CI-Lauf wartet auf manuelle Freigabe und meldet
-          # dabei weder FAILURE noch einen laufenden Zustand. Ohne diesen
-          # Eintrag galt ein nie gestarteter Lauf als bestanden.
+          # Nur Checks anderer Dienste, etwa Netlify. Der eigene Check-Run
+          # dieses Jobs ist waehrend der gesamten Laufzeit IN_PROGRESS; wuerde
+          # er mitgezaehlt, liefe die Schleife immer in den Timeout.
+          EIGENE_CHECKS='create-and-merge'
+          # Zustaende, die einen Merge verhindern. ACTION_REQUIRED gehoert dazu:
+          # ein Lauf, der auf Freigabe wartet, meldet weder FAILURE noch einen
+          # laufenden Zustand und galt vorher als bestanden.
           BLOCKIERT='FAILURE|CANCELLED|TIMED_OUT|STALE|STARTUP_FAILURE|ACTION_REQUIRED|ERROR'
-          # Zustaende, bei denen weiter gewartet wird.
+          # Zustaende, bei denen weiter gewartet wird. NEUTRAL ist zulaessig,
+          # weil Netlifys "Pages changed" diesen Zustand regulaer meldet.
           LAEUFT='PENDING|QUEUED|IN_PROGRESS|REQUESTED|WAITING|EXPECTED'
-          # Dieser Check muss vorhanden und bestanden sein (Jobname aus ci.yml).
-          PFLICHT_CHECK='Typecheck · Lint · Test · Build'
 
-          echo "Warte auf CI-Checks..."
+          echo "Warte auf fremde Checks..."
           for i in $(seq 1 20); do
             sleep 30
-            STATUS=$(gh pr checks "$PR_URL" --json state -q '.[].state' 2>/dev/null || echo "PENDING")
-            echo "  Versuch $i: $STATUS"
+            STATUS=$(gh pr checks "$PR_URL" --json name,state \
+              -q ".[] | select(.name != \"$EIGENE_CHECKS\") | .state" 2>/dev/null || echo "PENDING")
+            echo "  Versuch $i: ${STATUS:-keine fremden Checks}"
             if echo "$STATUS" | grep -qE "$BLOCKIERT"; then
               echo "Check in blockierendem Zustand - PR bleibt offen fuer manuelle Bearbeitung"
               echo "skip=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             if ! echo "$STATUS" | grep -qE "$LAEUFT"; then
-              echo "Keine laufenden Checks mehr."
+              echo "Keine laufenden fremden Checks mehr."
               break
             fi
             if [ "$i" -eq 20 ]; then
@@ -109,22 +111,36 @@ jobs:
             fi
           done
 
-          # 7. Positiv bestaetigen, dass die CI wirklich gelaufen und gruen ist.
-          #    Ein fehlender Check bedeutet: nicht ausgefuehrt, also kein Merge.
-          CI_STATE=$(gh pr checks "$PR_URL" --json name,state \
-            -q ".[] | select(.name == \"$PFLICHT_CHECK\") | .state" 2>/dev/null || echo "")
-          if [ "$CI_STATE" != "SUCCESS" ]; then
-            echo "Pflicht-Check '$PFLICHT_CHECK' ist nicht bestanden (Zustand: '${CI_STATE:-nicht vorhanden}')."
-            echo "PR bleibt offen fuer manuelle Bearbeitung."
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          echo "Pflicht-Check bestanden."
-
           echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
 
+      # Die Qualitaetstore laufen hier im Job, nicht als eigener CI-Lauf.
+      # Grund: Von GITHUB_TOKEN ausgeloeste Ereignisse starten keine Workflows
+      # (siehe GitHub-Doku zu automatic token authentication). Auf einem PR,
+      # den dieser Workflow selbst anlegt, wuerde ci.yml also nie laufen.
+      # Zusaetzlicher Vorteil: geprueft wird der Stand nach dem Rebase, also
+      # genau der Commit, der gemergt wird.
+      - name: pnpm einrichten
+        if: ${{ steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' }}
+        uses: pnpm/action-setup@v5
+
+      - name: Node einrichten
+        if: ${{ steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' }}
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Abhaengigkeiten installieren
+        if: ${{ steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' }}
+        run: pnpm install --frozen-lockfile
+
+      - name: Qualitaetstore (Lint, Format, Typecheck, Test, Build)
+        id: verify
+        if: ${{ steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' }}
+        run: pnpm verify
+
       - name: Auto-merge Claude branches
-        if: ${{ !startsWith(github.ref_name, 'claude/editorial-') && steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' }}
+        if: ${{ !startsWith(github.ref_name, 'claude/editorial-') && steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' && steps.verify.outcome == 'success' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

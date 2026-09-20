@@ -16,9 +16,15 @@ import ReviewBadge from "@/components/ReviewBadge";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
-import KrisenampelVisualisierung from "@/components/visualizations/KrisenampelVisualisierung";
+import BelastungHandlungsraeume from "@/components/visualizations/BelastungHandlungsraeume";
 import AppLink from "@/components/AppLink";
 import { kontaktByIdStrict } from "@/data/kontakte";
+import {
+  belastungLead,
+  handlungsraeume,
+  keineSicherheitsbewertung,
+  wichtigeAbgrenzung,
+} from "@/content/belastungHandlungsraeume";
 import { Link } from "wouter";
 
 const rot144 = kontaktByIdStrict("ROT_144");
@@ -30,62 +36,6 @@ function openSection(sectionId: string) {
     new CustomEvent("open-section", { detail: { sectionId } })
   );
 }
-
-const ampelStufen = [
-  {
-    level: "Grün – Stabil",
-    description: "Alltägliche Stimmungsschwankungen, normale Belastungen",
-    action: "Präsent sein, zuhören, Routinen beibehalten",
-    panelClass: "border-l-emerald-500 bg-background",
-  },
-  {
-    level: "Gelb – Angespannt",
-    description: "Erhöhte Reizbarkeit, Rückzug, erkennbare Trigger",
-    action: "Validieren, Skills anbieten, Raum geben",
-    panelClass: "border-l-amber-400 bg-background",
-  },
-  {
-    level: "Orange – Eskalierend",
-    description: "Starke Emotionen, verbale Aggression, Kontrollverlust",
-    action: "Deeskalieren, Sicherheit prüfen, Grenzen setzen",
-    panelClass: "border-l-amber-500 bg-background",
-  },
-  {
-    level: "Rot – Akute Krise",
-    description: "Suizidgedanken, Selbstverletzung, akute Gefahr",
-    action: "Professionelle Hilfe holen, Notruf wenn nötig",
-    panelClass: "border-l-alert bg-alert/10",
-  },
-] as const;
-
-const ampelHandlungen = [
-  {
-    label: "Rot",
-    tone: "border-alert/25 bg-alert/8",
-    fg: "text-alert-dark",
-    items: [
-      "Professionelle Hilfe holen",
-      "Eigene Sicherheit sichern",
-      "Nicht ohne Hilfe oder Notfallplan allein lassen",
-    ],
-  },
-  {
-    label: "Orange",
-    tone: "border-amber-300/60 bg-background",
-    fg: "text-amber-700",
-    items: [
-      "Nicht diskutieren",
-      "Körperabstand anbieten",
-      "Kurze, ruhige Sätze",
-    ],
-  },
-  {
-    label: "Gelb",
-    tone: "border-[color:var(--rule-color-strong)] bg-background",
-    fg: "text-[color:var(--accent-label)]",
-    items: ["Validieren", "Raum geben", "Skills gemeinsam erinnern"],
-  },
-] as const;
 
 const deeskalationsSchritte = [
   {
@@ -386,7 +336,7 @@ export default function UnterstuetzenKrise() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 2 Orientierung ── Disclaimer als Auftakt + KrisenampelVisualisierung */}
+      {/* ── 2 Orientierung ── Disclaimer als Auftakt + BelastungHandlungsraeume */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -416,7 +366,7 @@ export default function UnterstuetzenKrise() {
             <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
             anrufen.
           </EditorialCallout>
-          <KrisenampelVisualisierung />
+          <BelastungHandlungsraeume />
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -452,11 +402,11 @@ export default function UnterstuetzenKrise() {
               was nach der akuten Spitze für beide Seiten tragfähig weiterhilft.
             </p>
             <p>
-              Drei Akzente ziehen sich durch die Seite: zuerst Krise genauer
-              einordnen — nicht jede belastende Situation ist gleich ein
-              Notfall, das Ampel-System hilft, die Intensität klarer zu lesen;
-              dann ruhig und sicher handeln — in akuten Momenten zählen
-              Sicherheit, kurze Sätze,{" "}
+              Drei Akzente ziehen sich durch die Seite: zuerst die eigene Lage
+              ordnen — nicht jede belastende Situation ist gleich ein Notfall,
+              und die drei Handlungsräume zeigen, wie weit die eigenen Mittel
+              gerade tragen; dann ruhig und sicher handeln — in akuten Momenten
+              zählen Sicherheit, kurze Sätze,{" "}
               <GlossarBegriff term="Validierung">Validierung</GlossarBegriff>{" "}
               und ein begrenztes Vorgehen mehr als Diskussionen; und
               schliesslich auch das Danach mitdenken — nach der Eskalation
@@ -466,11 +416,11 @@ export default function UnterstuetzenKrise() {
             <p>
               Sie können auch direkt zu{" "}
               <a
-                href="#ampel-system"
+                href="#belastung-handlungsraeume"
                 className="editorial-link"
-                onClick={e => handleAnchorClick(e, "ampel-system")}
+                onClick={e => handleAnchorClick(e, "belastung-handlungsraeume")}
               >
-                Krise einschätzen
+                Belastung ordnen
               </a>
               ,{" "}
               <a
@@ -512,7 +462,7 @@ export default function UnterstuetzenKrise() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 4 Group A: Krise erkennen ── CS1 ampel-system */}
+      {/* ── 4 Group A: Belastung ordnen ── CS1 belastung-handlungsraeume */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span
@@ -523,7 +473,7 @@ export default function UnterstuetzenKrise() {
               lineHeight: 1.3,
             }}
           >
-            Krise erkennen
+            Belastung ordnen
           </span>
           <div
             aria-hidden="true"
@@ -535,31 +485,46 @@ export default function UnterstuetzenKrise() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Das Ampel-System: Krisen erkennen"
-            id="ampel-system"
+            title="Wenn Belastung zunimmt"
+            id="belastung-handlungsraeume"
           >
             <EditorialProse>
               <p>
-                Nicht jede schwierige Situation ist eine Krise. Das Ampel-System
-                hilft Ihnen, die Intensität einzuschätzen und angemessen zu
-                reagieren.
+                Nicht jede schwierige Situation ist eine Krise. Die drei
+                Bereiche ordnen beobachtbare Belastung und
+                Handlungsmöglichkeiten — sie zeigen, wie weit die eigenen Mittel
+                gerade tragen.
               </p>
+              <p>{belastungLead}</p>
             </EditorialProse>
+
+            <div
+              className="mt-6 border-l-4 bg-background p-5"
+              style={{ borderColor: "var(--rule-color-strong)" }}
+            >
+              <h3 style={h4Style}>{keineSicherheitsbewertung.titel}</h3>
+              <p className="mt-2" style={bodyStyle}>
+                {keineSicherheitsbewertung.text}
+              </p>
+            </div>
+
             <div className="mt-6 space-y-3">
-              {ampelStufen.map(item => (
+              {handlungsraeume.map((raum, idx) => (
                 <article
-                  key={item.level}
-                  className={`border border-border/50 border-l-4 p-5 ${item.panelClass}`}
+                  key={raum.id}
+                  className="border border-border/50 bg-background p-5"
                 >
-                  <h3 style={h4Style}>{item.level}</h3>
+                  <h3 style={h4Style}>
+                    {idx + 1}. {raum.label}
+                  </h3>
                   <p className="mt-2" style={bodyStyle}>
-                    {item.description}
+                    {raum.beschreibung}
                   </p>
                   <p className="mt-2" style={bodyStyle}>
                     <strong style={{ color: "var(--fg-primary)" }}>
-                      Ihre Reaktion:
+                      Eher hilfreich:
                     </strong>{" "}
-                    {item.action}
+                    {raum.hilfreich.join(", ")}.
                   </p>
                 </article>
               ))}
@@ -570,32 +535,11 @@ export default function UnterstuetzenKrise() {
               style={{ borderColor: "var(--rule-color)" }}
             >
               <p className="uppercase" style={labelStyle}>
-                Was konkret hilft – je nach Stufe
+                Wichtige Abgrenzung
               </p>
-              <div className="mt-3 space-y-2">
-                {ampelHandlungen.map(stufe => (
-                  <div
-                    key={stufe.label}
-                    className={`flex items-start gap-3 rounded-md border p-3 ${stufe.tone}`}
-                  >
-                    <span
-                      className={`min-w-[52px] pt-0.5 text-xs font-bold ${stufe.fg}`}
-                    >
-                      {stufe.label}
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {stufe.items.map(s => (
-                        <span
-                          key={s}
-                          className="rounded border border-border/30 bg-background/70 px-2 py-0.5 text-xs text-foreground"
-                        >
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="mt-3" style={bodyStyle}>
+                {wichtigeAbgrenzung}
+              </p>
             </div>
           </ContentSection>
         </EditorialSection.Body>

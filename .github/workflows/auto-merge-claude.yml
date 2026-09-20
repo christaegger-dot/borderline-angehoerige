@@ -76,18 +76,30 @@ jobs:
           fi
 
           # 6. Auf CI-Checks warten (max 10 Min)
+          #
+          # Zustaende, die einen Merge verhindern. ACTION_REQUIRED ist der
+          # wichtigste Fall: Von GITHUB_TOKEN erstellte PRs loesen keine
+          # Workflows aus, ihr CI-Lauf wartet auf manuelle Freigabe und meldet
+          # dabei weder FAILURE noch einen laufenden Zustand. Ohne diesen
+          # Eintrag galt ein nie gestarteter Lauf als bestanden.
+          BLOCKIERT='FAILURE|CANCELLED|TIMED_OUT|STALE|STARTUP_FAILURE|ACTION_REQUIRED|ERROR'
+          # Zustaende, bei denen weiter gewartet wird.
+          LAEUFT='PENDING|QUEUED|IN_PROGRESS|REQUESTED|WAITING|EXPECTED'
+          # Dieser Check muss vorhanden und bestanden sein (Jobname aus ci.yml).
+          PFLICHT_CHECK='Typecheck · Lint · Test · Build'
+
           echo "Warte auf CI-Checks..."
           for i in $(seq 1 20); do
             sleep 30
             STATUS=$(gh pr checks "$PR_URL" --json state -q '.[].state' 2>/dev/null || echo "PENDING")
             echo "  Versuch $i: $STATUS"
-            if echo "$STATUS" | grep -q "FAILURE"; then
-              echo "CI fehlgeschlagen - PR bleibt offen fuer manuelle Bearbeitung"
+            if echo "$STATUS" | grep -qE "$BLOCKIERT"; then
+              echo "Check in blockierendem Zustand - PR bleibt offen fuer manuelle Bearbeitung"
               echo "skip=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
-            if ! echo "$STATUS" | grep -qE "PENDING|QUEUED|IN_PROGRESS"; then
-              echo "Alle Checks bestanden."
+            if ! echo "$STATUS" | grep -qE "$LAEUFT"; then
+              echo "Keine laufenden Checks mehr."
               break
             fi
             if [ "$i" -eq 20 ]; then
@@ -96,6 +108,18 @@ jobs:
               exit 0
             fi
           done
+
+          # 7. Positiv bestaetigen, dass die CI wirklich gelaufen und gruen ist.
+          #    Ein fehlender Check bedeutet: nicht ausgefuehrt, also kein Merge.
+          CI_STATE=$(gh pr checks "$PR_URL" --json name,state \
+            -q ".[] | select(.name == \"$PFLICHT_CHECK\") | .state" 2>/dev/null || echo "")
+          if [ "$CI_STATE" != "SUCCESS" ]; then
+            echo "Pflicht-Check '$PFLICHT_CHECK' ist nicht bestanden (Zustand: '${CI_STATE:-nicht vorhanden}')."
+            echo "PR bleibt offen fuer manuelle Bearbeitung."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "Pflicht-Check bestanden."
 
           echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
 

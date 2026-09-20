@@ -162,7 +162,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "SET-Kommunikation",
     description:
-      "Ein bekannter Gesprächsrahmen aus der Angehörigenliteratur für schwierige Situationen",
+      "Begriff aus der Angehörigenliteratur — im Glossar erklärt, kein empfohlenes Schema",
     keywords: [
       "set",
       "support",
@@ -171,8 +171,9 @@ export const searchableContent: SearchEntry[] = [
       "kommunikation",
       "gespräch",
       "technik",
+      "glossar",
     ],
-    href: "/kommunizieren",
+    href: "/glossar",
     section: "Kommunizieren",
   },
   {

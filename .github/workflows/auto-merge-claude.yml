@@ -9,7 +9,7 @@ permissions:
 jobs:
   create-and-merge:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
         with:
@@ -139,8 +139,37 @@ jobs:
         if: ${{ steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' }}
         run: pnpm verify
 
+      # Visuelle Regression, gespiegelt aus visual-regression.yml. Auch dieser
+      # Workflow laeuft auf auto-erzeugten PRs nicht, weil GITHUB_TOKEN keine
+      # Workflows ausloest. Playwright startet `pnpm preview` selbst und nutzt
+      # dafuer den Build, den `pnpm verify` bereits erzeugt hat.
+      - name: Playwright-Browser installieren
+        if: ${{ steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' }}
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Visuelle Regression (Chromium)
+        id: visual
+        if: ${{ steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' }}
+        run: pnpm test:visual
+
+      - name: Playwright-Bericht bei Fehlschlag sichern
+        if: ${{ failure() && steps.visual.outcome == 'failure' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Diff-Screenshots bei Fehlschlag sichern
+        if: ${{ failure() && steps.visual.outcome == 'failure' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 14
+
       - name: Auto-merge Claude branches
-        if: ${{ !startsWith(github.ref_name, 'claude/editorial-') && steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' && steps.verify.outcome == 'success' }}
+        if: ${{ !startsWith(github.ref_name, 'claude/editorial-') && steps.prepare.outputs.skip != 'true' && steps.prepare.outputs.pr_url != '' && steps.verify.outcome == 'success' && steps.visual.outcome == 'success' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

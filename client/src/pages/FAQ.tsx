@@ -158,8 +158,8 @@ const faqCategories: FAQCategory[] = [
         answer:
           "Vermeiden Sie Rechtfertigungen oder Gegenangriffe – das eskaliert die Situation. Nutzen Sie stattdessen Validierung: «Ich verstehe, dass du dich gerade verletzt fühlst» (validiert das Gefühl, nicht die Beschuldigung). Dann setzen Sie eine Grenze: «Ich möchte mit dir darüber sprechen, aber nicht, wenn du mich anschreist.» Wenn möglich, bieten Sie eine Pause an: «Lass uns in 20 Minuten weitersprechen, wenn wir beide ruhiger sind.» Wichtig: Sie müssen sich nicht für Dinge entschuldigen, die Sie nicht getan haben.",
         links: [
-          { text: "SET-Kommunikation lernen", url: "/kommunizieren" },
-          { text: "SET üben →", url: "/uebungen" },
+          { text: "Gesprächshilfen kennenlernen", url: "/kommunizieren" },
+          { text: "Gespräche üben →", url: "/uebungen" },
         ],
       },
       {

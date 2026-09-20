@@ -386,7 +386,7 @@ export default function UnterstuetzenUebersicht() {
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>widersprüchliche Botschaften</li>
                   <li>heimliche Sonderabsprachen</li>
-                  <li>guter Cop, böser Cop</li>
+                  <li>Rollen verteilen: streng und nachgiebig</li>
                   <li>sich gegeneinander ausspielen lassen</li>
                 </ul>
               </div>

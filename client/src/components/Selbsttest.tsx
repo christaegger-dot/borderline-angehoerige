@@ -221,7 +221,7 @@ const results: Result[] = [
     id: "kommunizieren",
     title: "Kommunikation verbessern",
     description:
-      "Validierung und SET-Kommunikation können helfen, auch in schwierigen Momenten im Gespräch zu bleiben.",
+      "Zuhören, das Erleben anerkennen und die eigene Grenze benennen können helfen, auch in schwierigen Momenten im Gespräch zu bleiben.",
     primaryLink: "/kommunizieren",
     primaryText: "Kommunikationstechniken entdecken",
     secondaryLinks: [

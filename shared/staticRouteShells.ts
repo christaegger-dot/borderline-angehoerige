@@ -146,9 +146,9 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
   },
   {
     path: "/selbsttest",
-    title: "Selbsttest",
+    title: "Passende Inhalte finden",
     description:
-      "Selbsttest für Angehörige: Wie stark sind Sie gerade belastet? Anonyme Einschätzung in wenigen Minuten – mit Hinweisen auf passende Hilfsangebote.",
+      "Finden Sie passende Informationen für Ihre Situation. Fünf Orientierungsfragen, keine Diagnose oder Risikoeinschätzung. Bei Krisensignalen direkt zu Hilfekontakten.",
   },
   {
     path: "/impressum",

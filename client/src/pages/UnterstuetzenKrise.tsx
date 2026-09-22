@@ -42,7 +42,8 @@ const deeskalationsSchritte = [
     title: "Sicherheit prüfen",
     description:
       "Sind Sie und Ihr Angehöriger sicher? Gibt es gefährliche Gegenstände in der Nähe?",
-    example: "Entfernen Sie unauffällig scharfe Gegenstände oder Medikamente.",
+    example:
+      "Begrenzen Sie den Zugang zu Medikamenten oder gefährlichen Gegenständen nur ohne Eigengefährdung, möglichst gemeinsam und nach professioneller Anleitung. Nehmen Sie nichts aus der Hand oder gegen Widerstand weg; greifen Sie nicht körperlich ein. Bei unmittelbarer Gefahr holen Sie Hilfe über den Notruf.",
   },
   {
     title: "Ruhe bewahren",

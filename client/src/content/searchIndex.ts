@@ -1275,12 +1275,12 @@ export const searchableContent: SearchEntry[] = [
 
   // Selbsttest
   {
-    title: "Selbsttest: Finden Sie Ihren Weg",
+    title: "Passende Inhalte finden",
     description:
       "Kurze Orientierung, welche Bereiche der Website im Moment am ehesten helfen könnten",
     keywords: ["selbsttest", "test", "orientierung", "fragen", "empfehlung"],
     href: "/selbsttest",
-    section: "Selbsttest",
+    section: "Orientierung",
   },
 
   // Selbsthilfegruppen

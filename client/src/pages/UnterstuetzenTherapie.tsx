@@ -44,28 +44,28 @@ const zusammenarbeitSzenarien = [
   {
     titel: "Der Therapeut lädt mich nicht zur Sitzung ein",
     inhalt: [
-      "Das ist oft korrekt – Vertrauen zwischen Therapeut und Patient braucht Schutz",
-      "Was Sie trotzdem tun können: um einen einzelnen Angehörigentermin bitten (1–2× pro Jahr)",
-      "Kurzer Brief: «Ich möchte verstehen, wie ich unterstützen kann, ohne zu schaden» – Therapeutin kann orientieren, ohne vertrauliche Inhalte zu teilen",
-      "Nicht hilfreich: ständiges Drängen auf Informationen oder «bessere Einbindung»",
+      "Die Therapie braucht einen geschützten Raum. Wie Angehörige einbezogen werden, hängt unter anderem vom Wunsch der betroffenen Person, vom Behandlungsrahmen und vom Unterstützungsbedarf ab.",
+      "Bitten Sie um Klärung: Ist ein gemeinsames Gespräch oder ein Angehörigentermin möglich? Vereinbaren Sie Anlass, Häufigkeit und Kommunikationsweg individuell.",
+      "Eine mögliche Anfrage: «Ich möchte klären, was ich beitragen kann und welche Unterstützung ich selbst brauche.» Allgemeine Orientierung ist auch ohne vertrauliche Behandlungsauskünfte möglich.",
+      "Sprechen Sie Ihren Wunsch nach Einbezug offen an und respektieren Sie die Grenzen der Schweigepflicht.",
     ],
   },
   {
     titel: "Ich möchte über meine eigene Belastung sprechen",
     inhalt: [
       "Das ist berechtigt – Sie dürfen Orientierung für Ihre eigene Rolle suchen",
-      "Bitten Sie um eine «Beratungssitzung nur für Angehörige» (ohne die betroffene Person)",
-      "Ziel: Sie bekommen Orientierung – keine Mitbehandlung, keine Diagnose",
-      "Gute Fragen: «Wie reagiere ich auf X? Wann ist etwas Sorge, wann überreagiere ich?»",
+      "Sie können unabhängig von der Behandlung eine Angehörigenberatung nutzen. Bei der Fachstelle Angehörigenarbeit der PUK ist sie kostenlos und ohne Vollmacht der erkrankten Person möglich.",
+      "Wenn Sie sich an das Behandlungsteam wenden, klären Sie, welche allgemeine Beratung dort möglich ist und wer Sie bei Ihrer eigenen Belastung unterstützen kann.",
+      "Mögliche Fragen: «Was kann ich übernehmen? Was ist zu viel für mich? Wen kann ich bei Unsicherheit kontaktieren?»",
     ],
   },
   {
     titel: "Die Therapie scheint zu stagnieren",
     inhalt: [
       "Bedenken Sie: Sie sehen nicht, was in der Therapie passiert – Vertrauensaufbau dauert oft Monate",
-      "Wenn Sie wirklich besorgt sind: konkrete Beobachtungen formulieren, nicht Urteile",
-      "Formulierungsbeispiel: «Mir ist aufgefallen, dass sich die Selbstverletzungen nicht bessern. Ist das ein normaler Teil des Prozesses?»",
-      "Therapeut wird erklären oder reagieren – Zweitmeinung ist nach einem Jahr ohne Fortschritt berechtigt",
+      "Bei Sorgen können Sie konkrete Beobachtungen mitteilen und um Klärung des weiteren Vorgehens bitten. Vertrauliche Rückmeldungen setzen eine entsprechende Berechtigung voraus.",
+      "Formulierungsbeispiel: «Ich beobachte weiterhin Selbstverletzungen und mache mir Sorgen. Welche Abklärung oder Unterstützung ist jetzt nötig?» Bei akuter Gefahr nutzen Sie den Notruf, statt auf eine Antwort zu warten.",
+      "Bei begründeten Zweifeln an Diagnose oder Behandlung kann eine zweite fachliche Einschätzung sinnvoll sein; eine pauschale Wartefrist von einem Jahr gibt es dafür nicht. Besprechen Sie dies möglichst mit der betroffenen Person. Für Ihre eigene Rolle können Sie unabhängig davon Beratung suchen.",
     ],
   },
   {
@@ -73,7 +73,7 @@ const zusammenarbeitSzenarien = [
     inhalt: [
       "Direkt ansprechen (in stabiler Phase): «Mir scheint, dass die Therapie für dich gerade schwierig ist. Was macht sie dir schwierig?»",
       "Sie können Motivation nicht erzwingen – aber Sie können Interesse zeigen",
-      "Nur bei Sicherheitsgefährdung: eigenständig Kontakt mit Therapeutin aufnehmen",
+      "Sie dürfen dem Behandlungsteam relevante Beobachtungen auch ausserhalb akuter Gefahr mitteilen. Besprechen Sie den Kontakt möglichst mit der betroffenen Person. Die Mitteilung begründet keinen Anspruch auf vertrauliche Auskünfte.",
       "Therapieambivalenz kann viele Gründe haben – Scham, Angst, Überforderung, schlechte Erfahrungen oder Misstrauen. Nehmen Sie das nicht vorschnell persönlich.",
     ],
   },
@@ -81,18 +81,18 @@ const zusammenarbeitSzenarien = [
     titel: "Was sollte ich dem Behandlungsteam berichten?",
     inhalt: [
       "Relevant: Sicherheitsrisiken (Suizidgedanken, Selbstverletzung, Gewalt), grösste Beziehungsherausforderungen, was funktioniert",
-      "Nicht nötig: tägliche Detailberichte – das überfordert und schadet der Therapiebeziehung",
-      "Kurze, konkrete Nachrichten (1–2× pro Monat reicht meist)",
+      "Konzentrieren Sie sich auf relevante Veränderungen und vereinbarte Themen. Eine laufende Überwachung ist nicht Ihre Aufgabe.",
+      "Vereinbaren Sie Anlass, Häufigkeit, Zuständigkeit und einen geeigneten Übermittlungsweg mit dem Team. Es gibt keine allgemeine monatliche Vorgabe. Akute Gefahr gehört zum Notruf, nicht in eine E-Mail.",
       "Fragen statt Diagnosen: «Mir fällt auf, dass … – Ist das Teil des Prozesses?»",
     ],
   },
   {
     titel: "Nach einer Krise: Nachsorge koordinieren",
     inhalt: [
-      "Fragen Sie aktiv: «Gibt es einen Nachsorgeplan für die nächsten 2 Wochen? Wie kann ich unterstützen?»",
+      "Fragen Sie aktiv: «Wer übernimmt die Nachsorge, wann ist der nächste Kontakt und was kann ich verlässlich beitragen?»",
       "Klare Absprache: Wer macht was? Therapeutin, Angehöriger, betroffene Person",
       "Notfallkontakt klären: «Wenn es wieder kritisch wird, rufe ich … an?»",
-      "Kurze Zusammenfassung nach Klinikaufenthalt einfordern – Sie müssen nicht blind weiterarbeiten",
+      "Bitten Sie mit Einwilligung der betroffenen Person um die für Ihre vereinbarte Rolle nötigen Informationen. Ohne entsprechende Einwilligung oder andere Rechtsgrundlage besteht kein allgemeiner Anspruch auf vertrauliche Behandlungsinformationen oder den Austrittsbericht. Ihre eigene Belastungsgrenze dürfen Sie trotzdem benennen.",
     ],
   },
 ] as const;
@@ -126,9 +126,9 @@ Guten Tag Frau/Herr [Name]
 
 ich bin [Beziehung zu Vorname, z. B. Mutter, Vater oder Partnerin] von [Vorname].
 
-Mir ist bewusst, dass Sie wegen der Schweigepflicht keine Informationen aus der Behandlung weitergeben dürfen. Ich möchte Sie deshalb nicht um Inhalte bitten.
+Mir ist bewusst, dass Sie ohne entsprechende Einwilligung oder andere Rechtsgrundlage keine vertraulichen Behandlungsauskünfte weitergeben dürfen.
 
-Mich würde interessieren, ob es für Angehörige einmal die Möglichkeit für ein kurzes Gespräch gibt – nicht über die Therapie selbst, sondern über meine eigene Rolle und hilfreiche Unterstützungsmöglichkeiten.
+Ich möchte meine eigenen Beobachtungen mitteilen und klären, welche Unterstützung ich anbieten kann. Ist dafür ein Gespräch möglich, oder können Sie mir eine Angehörigenberatung nennen? Bitte teilen Sie mir mit, welcher Kontaktweg dafür geeignet ist.
 
 Mit freundlichen Grüssen,
 [Ihr Name]
@@ -392,12 +392,71 @@ export default function UnterstuetzenTherapie() {
           >
             <EditorialProse>
               <p>
-                Dass Sie nicht in jede Sitzung eingeladen werden, ist meistens{" "}
-                <strong>therapeutisch beabsichtigt</strong> – nicht Ablehnung.
-                Die Therapie braucht einen geschützten Raum. Trotzdem gibt es
-                Situationen, in denen Kontakt sinnvoll und berechtigt ist.
+                Klären Sie gemeinsam, welche Rolle Sie übernehmen möchten und
+                können. Der Einbezug soll die Wünsche der betroffenen Person,
+                den Behandlungsrahmen und Ihren eigenen Unterstützungsbedarf
+                berücksichtigen. Drei Informationswege sind zu unterscheiden:
               </p>
             </EditorialProse>
+            <div className="mt-6 space-y-6">
+              <article className="space-y-2">
+                <h3 style={h4Style}>1. Beobachtungen mitteilen</h3>
+                <p style={bodyStyle}>
+                  Sie können dem Behandlungsteam relevante Beobachtungen und
+                  Sorgen mitteilen, auch wenn Sie keine Behandlungsauskünfte
+                  erhalten dürfen. Die Schweigepflicht verhindert nicht
+                  grundsätzlich, dass Fachpersonen Ihnen zuhören. Klären Sie den
+                  geeigneten Kontaktweg und besprechen Sie das Vorgehen
+                  möglichst mit der betroffenen Person. Vertraulichkeit Ihrer
+                  Mitteilung gegenüber der betroffenen Person kann nicht
+                  pauschal zugesichert werden.
+                </p>
+              </article>
+              <article className="space-y-2">
+                <h3 style={h4Style}>2. Vertrauliche Auskünfte erhalten</h3>
+                <p style={bodyStyle}>
+                  Informationen über Diagnose, Sitzungen oder Verlauf dürfen
+                  grundsätzlich nur mit entsprechender Einwilligung oder einer
+                  anderen Rechtsgrundlage weitergegeben werden. Eine Mitteilung
+                  an das Team hebt die Schweigepflicht nicht auf. Besprechen
+                  Sie, welche Informationen für Ihre vereinbarte Unterstützung
+                  nötig sind und welche Einwilligung dafür vorliegt.
+                </p>
+              </article>
+              <article className="space-y-2">
+                <h3 style={h4Style}>3. Eigene Beratung nutzen</h3>
+                <p style={bodyStyle}>
+                  Für Ihre eigene Belastung und Ihre Fragen dürfen Sie
+                  unabhängig Hilfe suchen. Die Fachstelle Angehörigenarbeit der
+                  PUK berät kostenlos und vertraulich, auch ohne Vollmacht der
+                  erkrankten Person. Diese Beratung gibt Ihnen keinen Zugang zu
+                  deren Behandlungsinformationen.
+                </p>
+                <Link href="/fachstelle" className="editorial-link">
+                  Angehörigenberatung kontaktieren
+                </Link>
+              </article>
+            </div>
+            <EvidenceNote
+              title="Quellen zu Schweigepflicht, Angehörigenberatung und Zweitmeinung"
+              sources={[
+                {
+                  label: "BAG: Berufs- oder Arztgeheimnis",
+                  href: "https://www.bag.admin.ch/de/berufs-oder-arztgeheimnis",
+                  type: "versorgung",
+                },
+                {
+                  label: "PUK Zürich: Informationen für Angehörige",
+                  href: "https://www.pukzh.ch/patienten-angehoerige/informationen-fuer-angehoerige/",
+                  type: "versorgung",
+                },
+                {
+                  label: "Kanton Zürich: Anlaufstellen und Zweitmeinung",
+                  href: "https://www.zh.ch/de/gesundheit/anlaufstellen-gesundheitswesen/patientinnen-patienten-angehoerige.html",
+                  type: "versorgung",
+                },
+              ]}
+            />
             <div className="mt-8 space-y-10">
               {zusammenarbeitSzenarien.map(szenario => (
                 <article key={szenario.titel} className="space-y-3">

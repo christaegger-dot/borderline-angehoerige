@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import AppLink from "@/components/AppLink";
 import { m, AnimatePresence } from "framer-motion";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
+import { kontaktByIdStrict } from "@/data/kontakte";
+
+const immediateHelpAnswers = new Set(["akut", "unsicher"]);
 
 interface Question {
   id: number;
@@ -36,6 +39,11 @@ const questions: Question[] = [
         text: "Akute Krise – Suizidgedanken, Selbstverletzung oder Gefahr",
         value: "akut",
         weight: { notfall: 10, krise: 5 },
+      },
+      {
+        text: "Ich bin unsicher, ob gerade Gefahr besteht",
+        value: "unsicher",
+        weight: { notfall: 10 },
       },
       {
         text: "Hohe Anspannung – starke Emotionen, drohende Eskalation",
@@ -116,7 +124,7 @@ const questions: Question[] = [
     id: 4,
     text: "Wie ist der Diagnose-Status?",
     subtext:
-      "Der Test dient der Orientierung für Angehörige, nicht der Selbstdiagnose.",
+      "Die Fragen dienen der Orientierung für Angehörige, nicht der Selbstdiagnose.",
     options: [
       {
         text: "Offizielle Diagnose liegt vor",
@@ -376,6 +384,11 @@ export default function Selbsttest() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const resultHeadingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (showResult) resultHeadingRef.current?.focus();
+  }, [showResult]);
 
   useEffect(() => {
     return () => {
@@ -395,6 +408,14 @@ export default function Selbsttest() {
     setScores(newScores);
 
     setAnswers({ ...answers, [questions[currentQuestion].id]: option.value });
+
+    // Krisensignale unterbrechen die Orientierung sofort, ohne Folgfragen
+    // oder die sonstige Übergangsverzögerung.
+    if (currentQuestion === 0 && immediateHelpAnswers.has(option.value)) {
+      setShowResult(true);
+      setIsTransitioning(false);
+      return;
+    }
 
     transitionTimer.current = setTimeout(() => {
       if (currentQuestion < questions.length - 1) {
@@ -429,15 +450,17 @@ export default function Selbsttest() {
   };
 
   const restart = () => {
+    if (transitionTimer.current) clearTimeout(transitionTimer.current);
     setCurrentQuestion(0);
     setAnswers({});
     setScores({});
     setShowResult(false);
     setSelectedOption(null);
+    setIsTransitioning(false);
   };
 
   const getTopResult = (): Result => {
-    if (answers[1] === "akut") {
+    if (immediateHelpAnswers.has(answers[1])) {
       return results.find(r => r.id === "notfall") || results[0];
     }
 
@@ -461,10 +484,9 @@ export default function Selbsttest() {
     const result = getTopResult();
     const isSafetyCritical = result.safetyCritical === true;
     const diagnosisStatus = answers[4];
-    const reflection =
-      answers[1] === "akut"
-        ? "Sie haben eine akute Krise gemeldet — schnelle Orientierung steht im Vordergrund."
-        : (intensityReflections[answers[3]] ?? null);
+    const reflection = immediateHelpAnswers.has(answers[1])
+      ? "Sie müssen keine weiteren Fragen beantworten. Holen Sie jetzt Unterstützung, wenn Sie sich um die Sicherheit sorgen."
+      : (intensityReflections[answers[3]] ?? null);
     const secondaryLinks =
       diagnosisStatus && diagnosisNeedsGuidance.has(diagnosisStatus)
         ? [
@@ -485,7 +507,7 @@ export default function Selbsttest() {
 
     return (
       <m.div
-        initial={{ opacity: 0, scale: 0.97 }}
+        initial={isSafetyCritical ? false : { opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         aria-live="polite"
@@ -506,7 +528,12 @@ export default function Selbsttest() {
           <p className="uppercase" style={labelStyle}>
             Unsere Empfehlung für Sie
           </p>
-          <h2 className="mt-2" style={questionStyle}>
+          <h2
+            ref={resultHeadingRef}
+            tabIndex={-1}
+            className="mt-2"
+            style={questionStyle}
+          >
             {result.title}
           </h2>
           {reflection && (
@@ -517,6 +544,57 @@ export default function Selbsttest() {
           <p className="mt-4" style={bodyStyle}>
             {result.description}
           </p>
+
+          {isSafetyCritical && (
+            <div className="mt-6 space-y-6" style={bodyStyle}>
+              <section aria-label="Bei unmittelbarer Gefahr">
+                <h3 className="font-semibold">Bei unmittelbarer Gefahr</h3>
+                <p>
+                  Bei akuter Suizidgefahr oder medizinischem Notfall den
+                  Rettungsdienst rufen. Bei Gewalt oder Bedrohung die Polizei
+                  kontaktieren. Bringen Sie sich selbst nicht in Gefahr.
+                </p>
+                <p className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+                  {["ROT_144", "ROT_117"].map(id => {
+                    const k = kontaktByIdStrict(id);
+                    return (
+                      <a
+                        key={id}
+                        href={`tel:${k.tel}`}
+                        className="editorial-link"
+                      >
+                        {k.nummer} – {k.label}
+                      </a>
+                    );
+                  })}
+                </p>
+              </section>
+              <section aria-label="Bei einer psychischen Krise oder Unsicherheit">
+                <h3 className="font-semibold">
+                  Bei einer psychischen Krise oder Unsicherheit
+                </h3>
+                <p>
+                  Sie müssen die Dringlichkeit nicht allein beurteilen. Wenn
+                  keine unmittelbare Gefahr erkennbar ist oder Sie unsicher
+                  sind, kontaktieren Sie jetzt den psychiatrischen
+                  Notfalldienst. Bei möglicher unmittelbarer Lebensgefahr wählen
+                  Sie den Rettungsdienst.
+                </p>
+                <ul className="mt-2 space-y-2">
+                  {["GELB_PUK_KJP", "GELB_PUK_ERW", "GELB_PUK_65"].map(id => {
+                    const k = kontaktByIdStrict(id);
+                    return (
+                      <li key={id}>
+                        <a href={`tel:${k.tel}`} className="editorial-link">
+                          {k.nummer} – {k.label}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            </div>
+          )}
 
           {/* Primary CTA — bleibt echter Button (Tier-1-Navigation) */}
           <p
@@ -538,7 +616,7 @@ export default function Selbsttest() {
           </p>
 
           {/* Secondary Links */}
-          {secondaryLinks.length > 0 && (
+          {!isSafetyCritical && secondaryLinks.length > 0 && (
             <div
               className="mt-8 border-t pt-6"
               style={{ borderColor: "var(--rule-color)" }}
@@ -565,8 +643,8 @@ export default function Selbsttest() {
         </div>
 
         <div className="mt-8 flex justify-center">
-          <NavPillButton onClick={restart} ariaLabel="Test wiederholen">
-            ↻ Test wiederholen
+          <NavPillButton onClick={restart} ariaLabel="Zurück zur Auswahl">
+            Zurück zur Auswahl
           </NavPillButton>
         </div>
       </m.div>
@@ -578,7 +656,7 @@ export default function Selbsttest() {
 
   return (
     <form
-      aria-label="Selbsttest"
+      aria-label="Passende Inhalte finden"
       className="space-y-8"
       onSubmit={e => e.preventDefault()}
     >

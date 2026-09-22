@@ -540,7 +540,7 @@ export default function Diagnostik() {
               Eine Vermutung ist ein berechtigter Ausgangspunkt, aber kein
               Diagnose-Werkzeug. Der{" "}
               <Link href="/selbsttest" className="editorial-link">
-                Selbsttest
+                Passende Inhalte finden
               </Link>{" "}
               auf dieser Site ist eine Orientierungshilfe für Angehörige — er
               sagt etwas darüber aus, wo Sie selbst stehen, nicht ob die andere

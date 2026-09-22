@@ -32,7 +32,7 @@ interface TreeNode {
   steps?: Step[];
 }
 
-// ─── Decision tree data (unverändert) ────────────────────
+// ─── Orientierung zu Hilfewegen, keine Risikoeinstufung ──
 
 const TREE: TreeNode[] = [
   {
@@ -54,15 +54,51 @@ const TREE: TreeNode[] = [
     id: "suizid",
     question: "Besteht unmittelbare Gefahr?",
     subtitle:
-      "Versuchen Sie einzuschätzen: Handelt Ihr Angehöriger gerade aktiv oder spricht er/sie davon?",
+      "Sie müssen das nicht sicher beurteilen können. Auch ohne sichtbare Handlung oder bekannten Plan kann Gefahr bestehen. Wenn Sie unsicher sind, holen Sie professionelle Einschätzung.",
     choices: [
       {
         label: "Ja – akute Handlung oder konkreter Plan",
         nextId: "suizid_akut",
       },
       {
-        label: "Nein – er/sie spricht darüber, aber keine akute Handlung",
+        label: "Suizidgedanken werden geäussert – keine Handlung erkennbar",
         nextId: "suizid_gespraech",
+      },
+      {
+        label:
+          "Ich weiss es nicht – ich brauche eine professionelle Einschätzung",
+        nextId: "gefahr_unklar",
+      },
+    ],
+  },
+  {
+    id: "gefahr_unklar",
+    question: "Unsicherheit – jetzt Unterstützung holen",
+    safetyCritical: true,
+    subtitle:
+      "Sie müssen die Dringlichkeit nicht allein einschätzen. Fehlende sichtbare Handlungen oder ein nicht bekannter Plan bedeuten keine Sicherheit.",
+    steps: [
+      {
+        id: "s1",
+        text: "Bei möglicher unmittelbarer Lebensgefahr den Rettungsdienst rufen",
+        detail:
+          "Bei Gewalt oder Bedrohung rufen Sie die Polizei. Bringen Sie sich selbst nicht in Gefahr und folgen Sie den Anweisungen der Leitstelle.",
+        emergency: true,
+        kontakte: ["ROT_144", "ROT_117"],
+      },
+      {
+        id: "s2",
+        text: "Psychiatrische Einschätzung einholen",
+        detail:
+          "Wenn keine unmittelbare Lebensgefahr erkennbar ist, Sie sich aber um die Sicherheit sorgen, kontaktieren Sie jetzt den psychiatrischen Notfalldienst. Beschreiben Sie, was Sie beobachten und was Ihnen unklar ist. Die PUK-Notfalldienste sind rund um die Uhr erreichbar.",
+        kontakte: ["GELB_PUK_KJP", "GELB_PUK_ERW", "GELB_PUK_65"],
+      },
+      {
+        id: "s3",
+        text: "Bis zur Hilfe die eigene Sicherheit beachten",
+        detail:
+          "Bleiben Sie bei der Person oder in Kontakt, soweit dies für Sie sicher möglich ist. Versuchen Sie nicht, gefährliche Gegenstände gegen Widerstand wegzunehmen.",
+        link: { href: "/soforthilfe", label: "Alle Notfallkontakte" },
       },
     ],
   },
@@ -81,15 +117,15 @@ const TREE: TreeNode[] = [
       },
       {
         id: "s2",
-        text: "Bleiben Sie bei der Person",
+        text: "Bleiben Sie bei der Person, soweit Sie selbst sicher sind",
         detail:
-          "Lassen Sie Ihren Angehörigen nicht allein, bis professionelle Hilfe eintrifft. Sprechen Sie ruhig und klar.",
+          "Bleiben Sie bis zum Eintreffen professioneller Hilfe bei der Person oder in Kontakt, soweit dies ohne Eigengefährdung möglich ist. Bei Bedrohung bringen Sie sich in Sicherheit und informieren die Leitstelle.",
       },
       {
         id: "s3",
         text: "Sichern Sie die Umgebung",
         detail:
-          "Entfernen Sie – wenn möglich – Medikamente, scharfe Gegenstände oder andere gefährliche Mittel aus der Reichweite.",
+          "Begrenzen Sie den Zugang zu Medikamenten oder gefährlichen Gegenständen nur ohne Eigengefährdung, möglichst gemeinsam und nach Anleitung der Leitstelle. Nehmen Sie nichts aus der Hand oder gegen Widerstand weg; greifen Sie nicht körperlich ein.",
       },
       {
         id: "s4",
@@ -103,6 +139,8 @@ const TREE: TreeNode[] = [
   {
     id: "suizid_gespraech",
     question: "Suizidgedanken – Gespräch führen",
+    subtitle:
+      "Keine sichtbare Handlung bedeutet keine Entwarnung. Bei neuer oder möglicher unmittelbarer Lebensgefahr den Rettungsdienst rufen; bei Unsicherheit jetzt professionelle Einschätzung holen.",
     safetyCritical: true,
     steps: [
       {
@@ -121,14 +159,18 @@ const TREE: TreeNode[] = [
         id: "s3",
         text: "Fragen Sie nach einem Plan",
         detail:
-          "Gibt es einen konkreten Plan, ein Mittel, einen Zeitpunkt? Je konkreter, desto dringlicher ist professionelle Hilfe.",
+          "Fragen Sie nach einem Plan, verfügbaren Mitteln oder einem Zeitpunkt und teilen Sie die Antworten der Fachperson mit. Auch ohne bekannten Plan kann Gefahr bestehen. Warten Sie mit dem Hilfeholen nicht auf vollständige Antworten.",
       },
       {
         id: "s4",
         text: "Verbinden Sie mit professioneller Hilfe",
         detail:
-          "Schlagen Sie vor, gemeinsam bei der PUK oder der Dargebotenen Hand anzurufen.",
-        kontakte: ["GELB_PUK_ERW", "GRUEN_143"],
+          "Kontaktieren Sie zur Einschätzung den psychiatrischen Notfalldienst, wenn möglich gemeinsam. Bei unmittelbarer Gefahr rufen Sie den Rettungsdienst. Die Dargebotene Hand bietet Entlastung im Gespräch, ersetzt aber keine medizinische Notfallabklärung.",
+        kontakte: ["ROT_144", "GELB_PUK_ERW"],
+        link: {
+          href: "/soforthilfe",
+          label: "Notfalldienste für alle Altersgruppen",
+        },
       },
       {
         id: "s5",

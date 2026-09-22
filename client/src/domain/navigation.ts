@@ -43,7 +43,7 @@ export const resourceNavigationItems: NavigationItem[] = [
   },
   {
     href: "/selbsttest",
-    label: "Selbsttest",
+    label: "Passende Inhalte finden",
     icon: ClipboardCheck,
     group: "Sofortige Hilfe",
   },

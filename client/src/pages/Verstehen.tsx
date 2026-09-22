@@ -919,7 +919,7 @@ export default function Verstehen() {
               },
               {
                 href: "/selbsttest",
-                title: "Selbsttest: Wie belastet bin ich?",
+                title: "Passende Inhalte finden",
                 description:
                   "Kurze Einschätzung Ihrer eigenen Belastung – als erster Orientierungsschritt.",
               },

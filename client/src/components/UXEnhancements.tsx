@@ -20,7 +20,7 @@ const pageNames: Record<string, string> = {
   "/selbstfuersorge": "Selbstfürsorge",
   "/soforthilfe": "Soforthilfe",
   "/materialien": "Materialien",
-  "/selbsttest": "Selbsttest",
+  "/selbsttest": "Passende Inhalte finden",
   "/genesung": "Genesung",
   "/beratung": "Beratung & Netzwerke",
   "/selbsthilfegruppen": "Selbsthilfegruppen",

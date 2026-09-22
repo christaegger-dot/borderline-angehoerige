@@ -14,21 +14,22 @@ export default function SelbsttestPage() {
   return (
     <Layout>
       <SEO
-        title="Selbsttest"
-        description="Selbsttest für Angehörige: Wie stark sind Sie gerade belastet? Anonyme Einschätzung in wenigen Minuten – mit Hinweisen auf passende Hilfsangebote."
+        title="Passende Inhalte finden"
+        description="Finden Sie passende Informationen für Ihre Situation. Fünf Orientierungsfragen, keine Diagnose oder Risikoeinschätzung. Bei Krisensignalen direkt zu Hilfekontakten."
         path="/selbsttest"
       />
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
         <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <EyebrowLabel spacing="compact">Selbsttest</EyebrowLabel>
+          <EyebrowLabel spacing="compact">Orientierung</EyebrowLabel>
           <DisplayHeading level={1} size="page">
-            Selbsttest: Wo soll ich anfangen?
+            Passende Inhalte finden
           </DisplayHeading>
           <Lede className="mt-6">
-            Dieser kurze Test hilft Ihnen, die für Ihre aktuelle Situation
-            passenden Inhalte zu finden. Er dauert nur etwa 2 Minuten.
+            Fünf kurze Fragen helfen Ihnen, passende Inhalte zu finden. Dies ist
+            kein psychologischer Test und keine Einschätzung Ihrer Sicherheit.
+            Bei Krisensignalen erhalten Sie sofort Hilfekontakte.
           </Lede>
         </header>
 
@@ -45,9 +46,9 @@ export default function SelbsttestPage() {
 
         {/* ── Hinweis ── */}
         <EditorialCallout variant="hinweis" className="mt-12 md:mt-16">
-          Dieser Test ersetzt keine professionelle Beratung. Er dient lediglich
-          als Orientierungshilfe, um Ihnen den Einstieg in unsere Inhalte zu
-          erleichtern. Bei akuten Krisen wenden Sie sich bitte an die{" "}
+          Diese Orientierungshilfe ersetzt keine professionelle Beratung und
+          kann keine Diagnose oder Gefährdung beurteilen. Bei akuten Krisen
+          wenden Sie sich bitte an die{" "}
           <AppLink href="/soforthilfe" className="editorial-link">
             Notfallressourcen
           </AppLink>

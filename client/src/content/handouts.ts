@@ -98,6 +98,7 @@ function buildRegistry() {
   const registry = new Map<string, HandoutAsset>();
 
   for (const item of materials) {
+    if (item.topicRecommendation) continue;
     registerAsset(
       registry,
       item.pdfUrl ?? item.downloadUrl,

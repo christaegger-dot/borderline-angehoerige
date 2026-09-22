@@ -87,8 +87,8 @@ export default function Layout({ children }: LayoutProps) {
                 Selbstschutz.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-foreground">
-                Herausgegeben von der Fachstelle Angehörigenarbeit der
-                Psychiatrischen Universitätsklinik Zürich.
+                Erstellt in der Fachstelle Angehörigenarbeit. Kein offizieller
+                Kommunikationskanal der PUK Zürich.
               </p>
             </div>
 

@@ -23,8 +23,8 @@ export default function GrenzenMaterialsSection() {
     <CuratedMaterialsSection
       marginLabel="Auswahl"
       title="Drei Materialien für klare Grenzen"
-      intro="Hier geht es nicht um möglichst viele Downloads, sondern um Orientierung: Grenze erkennen, Art der Grenze benennen, Satz vorbereiten."
-      curationNote="Grenzsetzung wird schnell unübersichtlich. Diese Auswahl ist deshalb absichtlich klein: erst sortieren, dann formulieren, dann konsequent bleiben."
+      intro="Erkennen Sie Ihre Grenze, benennen Sie sie und finden Sie einen passenden Satz."
+      curationNote="Eine Grenze muss nicht perfekt formuliert sein. Bei Bedrohung oder Gewalt zählt Ihre Sicherheit mehr als das Gespräch."
       items={curatedItems}
       ariaLabel="Ausgewählte Materialien zu Grenzen"
       tone="terracotta"

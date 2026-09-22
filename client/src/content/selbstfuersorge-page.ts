@@ -61,7 +61,7 @@ export const longTermStrategies: LongTermStrategy[] = [
     title: "Tägliche Mini-Auszeiten",
     icon: "clock",
     intro:
-      "Versuchen Sie, im Alltag regelmässig kurze Zeiten nur für sich zu reservieren. An manchen Tagen sind 15 bis 30 Minuten realistisch, an anderen vielleicht nur 5. Entscheidend ist die Verlässlichkeit, nicht Perfektion.",
+      "Wählen Sie eine Pause, die gerade möglich und angenehm ist. Auch wenige Minuten können gut tun. Wenn dafür kein Raum bleibt, braucht es Entlastung oder eine andere Aufgabenverteilung – keine zusätzliche Disziplin.",
     checklist: [
       "Morgens: 10 Min. Kaffee in Ruhe",
       "Mittags: Kurzer Spaziergang",
@@ -76,7 +76,7 @@ export const longTermStrategies: LongTermStrategy[] = [
     title: "Bewegung und Körper",
     icon: "heart",
     intro:
-      "Körperliche Aktivität baut Stresshormone ab und setzt Endorphine frei. Schon 20 Minuten machen einen Unterschied.",
+      "Bewegung kann Wohlbefinden und Erholung unterstützen. Wählen Sie etwas, das zu Ihrer Kraft, Gesundheit und Ihrem Alltag passt; eine feste Mindestdauer ist hier kein Ziel.",
     checklist: [
       "Spaziergang in der Natur",
       "Yoga oder Stretching",
@@ -85,9 +85,9 @@ export const longTermStrategies: LongTermStrategy[] = [
       "Gartenarbeit",
       "Radfahren",
     ],
-    noteTitle: "Evidenz:",
+    noteTitle: "Bei anhaltender Belastung:",
     noteText:
-      "Studien zeigen, dass regelmässige Bewegung bei der Prävention und Behandlung von Depressionen ähnlich wirksam sein kann wie Antidepressiva.",
+      "Bewegung ist eine mögliche Ergänzung. Bei anhaltender Erschöpfung, Schlafproblemen oder depressiver Stimmung kann eine ärztliche oder psychotherapeutische Abklärung sinnvoll sein.",
   },
   {
     title: "Soziale Kontakte pflegen",
@@ -96,7 +96,7 @@ export const longTermStrategies: LongTermStrategy[] = [
       "Isolation ist einer der grössten Risikofaktoren für Angehörige. Halten Sie aktiv Kontakt zu Menschen ausserhalb der Betreuungssituation.",
     checklist: [
       "Verabreden Sie sich regelmässig mit Freunden",
-      "Pflegen Sie mindestens eine Freundschaft, in der Borderline kein Thema ist",
+      "Vielleicht tut ein Kontakt gut, bei dem auch andere Themen Platz haben",
       "Treten Sie einer Gruppe bei (Sport, Hobby, Chor)",
       "Nutzen Sie Selbsthilfegruppen für Angehörige",
     ],
@@ -127,7 +127,7 @@ export const permissionList = [
   "Auch mal wütend, frustriert oder traurig sein",
   "Nicht immer die Lösung haben",
   "Ihre eigenen Bedürfnisse ernst nehmen",
-  "Nein sagen, ohne sich schuldig zu fühlen",
+  "Nein sagen, auch wenn dabei Schuldgefühle auftauchen",
   "Freude empfinden, auch wenn es Ihrem Angehörigen schlecht geht",
   "Professionelle Hilfe für sich selbst suchen",
   "Pausen machen und auftanken",
@@ -149,6 +149,6 @@ export const roleNotes: RoleNote[] = [
   {
     title: "Als erwachsenes Kind",
     icon: "user-circle",
-    text: "Sie mussten früh erwachsen werden und Verantwortung übernehmen, die nicht Ihre war. Selbstfürsorge kann sich fremd anfühlen – üben Sie sie trotzdem. Sie haben ein Recht auf ein eigenes Leben, ohne ständig verfügbar zu sein.",
+    text: "Falls Sie früh Verantwortung übernehmen mussten, kann es ungewohnt sein, eigene Bedürfnisse ernst zu nehmen. Sie dürfen sich dabei unterstützen lassen. Sie haben ein Recht auf ein eigenes Leben, ohne ständig verfügbar zu sein.",
   },
 ];

@@ -159,7 +159,7 @@ function MaterialEntry({
         </p>
         {item.verifiedAt && (
           <p className="material-library-card__verified">
-            Geprüft: {item.verifiedAt}
+            Materialstand: {item.verifiedAt}
           </p>
         )}
       </div>

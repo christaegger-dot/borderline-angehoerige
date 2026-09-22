@@ -23,8 +23,8 @@ export default function KommunizierenMaterialsSection() {
     <CuratedMaterialsSection
       marginLabel="Auswahl"
       title="Drei Materialien für schwierige Gespräche"
-      intro="Nicht jede Gesprächssituation braucht eine ganze Bibliothek. Diese Auswahl führt von Validierung über Deeskalation zur rechtzeitigen Pause."
-      curationNote="Die vollständige Materialsammlung bleibt auf der Bibliotheksseite. Hier stehen nur die drei Hilfen, die beim Lesen dieser Seite unmittelbar weiterführen."
+      intro="Gefühle anerkennen, Anspannung bemerken und ein Gespräch rechtzeitig unterbrechen."
+      curationNote="Sie sind nicht allein für den Gesprächsverlauf verantwortlich. Ein hilfreicher Satz kann unterstützen, aber die Reaktion des Gegenübers nicht garantieren."
       items={curatedItems}
       ariaLabel="Ausgewählte Materialien für schwierige Gespräche"
       tone="terracotta"

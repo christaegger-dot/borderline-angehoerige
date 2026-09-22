@@ -193,7 +193,7 @@ export const handoutTextVersions = [
   createHandoutTextVersion("stopp-technik", {
     kicker: "Textversion",
     summary:
-      "Die STOPP-Technik schafft in etwa 30 Sekunden Abstand zwischen Reiz und Reaktion. Das gibt Körper und Kopf wieder etwas mehr Handlungsspielraum.",
+      "Die STOPP-Technik bietet eine kurze Pause zwischen Reiz und Reaktion. Sie kann helfen, den nächsten Schritt bewusster zu wählen.",
     intro: [
       "Die STOPP-Technik schafft eine kurze Pause zwischen Reiz und Reaktion. Die fünf Schritte sind alltagsnah formuliert, damit sie in angespannten Momenten schnell nutzbar bleiben.",
       "Die fünf Buchstaben geben eine feste Reihenfolge vor: stoppen, atmen, orientieren, Perspektive weiten und dann erst handeln.",
@@ -203,7 +203,7 @@ export const handoutTextVersions = [
         title: "Zentraler Satz",
         calloutTitle: "Worum es bei STOPP geht",
         calloutText:
-          "Wenn die Emotionen überkochen: STOPP gibt Ihnen 30 Sekunden Abstand zwischen Reiz und Reaktion. Bei Gewalt, akuter Selbstgefährdung oder unmittelbarer Gefahr nicht STOPP üben, sondern Hilfe holen.",
+          "Wenn die Emotionen überkochen: STOPP kann eine Pause zwischen Reiz und Reaktion ermöglichen. Bei Gewalt, akuter Selbstgefährdung oder unmittelbarer Gefahr nicht STOPP üben, sondern Hilfe holen.",
       },
       {
         title: "Die 5 STOPP-Schritte",
@@ -216,7 +216,7 @@ export const handoutTextVersions = [
           },
           {
             title: "T = TIEF ATMEN",
-            text: "Drei tiefe Atemzüge. Nur atmen, noch nicht reagieren.",
+            text: "Atmen Sie ruhig, ohne Anstrengung oder Atemanhalten. «Tief» bedeutet nicht möglichst viel Luft. Wenn der Atemfokus unangenehm ist, orientieren Sie sich stattdessen im Raum.",
           },
           {
             title: "O = ORIENTIEREN",

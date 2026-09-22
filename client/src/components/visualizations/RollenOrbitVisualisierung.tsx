@@ -298,7 +298,8 @@ export default function RollenOrbitVisualisierung() {
       <p className="mt-4 border-t border-border/30 pt-3 text-xs text-muted-foreground">
         <span className="opacity-60">
           Grundlage: Linehan, M. M. (1993); Gunderson, J. G. &amp; Hoffman, P.
-          D. (2005); S3-Leitlinie Persönlichkeitsstörungen (AWMF, 2022).
+          D. (2005); S3-Leitlinie Borderline-Persönlichkeitsstörung (AWMF,
+          2022).
         </span>
       </p>
     </section>

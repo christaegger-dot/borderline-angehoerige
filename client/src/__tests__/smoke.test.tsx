@@ -343,7 +343,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /STOPP gibt Ihnen 30 Sekunden Abstand zwischen Reiz und Reaktion\./i
+        /STOPP kann eine Pause zwischen Reiz und Reaktion ermöglichen\./i
       )
     ).toBeInTheDocument();
     expect(

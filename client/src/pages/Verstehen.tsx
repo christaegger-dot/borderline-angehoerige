@@ -136,20 +136,17 @@ export default function Verstehen() {
           </DisplayHeading>
           <EditorialProse>
             <p>
-              Diese Seite erklärt Borderline nicht als Etikett, sondern als
-              Belastungsdynamik in Beziehungen. Entscheidend ist meist nicht
-              nur, was sichtbar passiert, sondern was darunter an Überflutung,
-              Bindungsstress, Scham oder Alarm mitläuft.
+              Borderline betrifft das Erleben und Regulieren von Gefühlen, das
+              Selbstbild und Beziehungen. Wie sich die Erkrankung zeigt,
+              unterscheidet sich von Mensch zu Mensch. Eine Diagnose beschreibt
+              weder die ganze Persönlichkeit noch die Qualität jeder Beziehung.
             </p>
             <p>
-              Drei Lesarten ziehen sich durch die Abschnitte. Zuerst die eigene
-              Belastung als Angehörigenrealität einordnen — Ambivalenz, Alarm,
-              Erschöpfung und Loyalitätsdruck sind typische Erfahrungen, nicht
-              persönliches Versagen. Dann die Dynamiken besser verstehen —
-              Überflutung, Bindungsstress und Denkverengung erkennen, statt nur
-              auf sichtbare Reaktionen zu schauen. Und schliesslich
-              wiederkehrende Muster nüchterner sehen — als Schleifen aus
-              Eskalation, Rückzug und Schuld, nicht als Charakterurteil.
+              Neben Belastungen gibt es Fähigkeiten, Interessen und tragfähige
+              Beziehungen. Behandlung und Besserung sind möglich. Verständnis
+              für die Erkrankung und Schutz vor verletzendem Verhalten gehören
+              zusammen; nicht jeder Konflikt lässt sich durch die Diagnose
+              erklären.
             </p>
             <p>
               Sie können auch direkt zu{" "}

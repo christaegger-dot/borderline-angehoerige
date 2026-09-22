@@ -21,15 +21,13 @@ describe("LastVerifiedBadge", () => {
     render(<LastVerifiedBadge path="/genesung" date="16.04.2026" />);
 
     expect(
-      screen.getByText("Zuletzt verifiziert: 30.04.2026")
+      screen.getByText("Dokumentierte Fachprüfung: 30.04.2026")
     ).toBeInTheDocument();
   });
 
   it("falls back to the explicit date when no governance metadata exists", () => {
     render(<LastVerifiedBadge date="24.03.2026" />);
 
-    expect(
-      screen.getByText("Zuletzt verifiziert: 24.03.2026")
-    ).toBeInTheDocument();
+    expect(screen.getByText("Stand: 24.03.2026")).toBeInTheDocument();
   });
 });

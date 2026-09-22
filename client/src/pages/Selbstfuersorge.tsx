@@ -144,8 +144,8 @@ export default function Selbstfuersorge() {
               />
             </div>
             <figcaption className="editorial-small-copy mt-3 border-t pt-3">
-              Visueller Kern: Selbstfürsorge ist nicht Abkehr, sondern die
-              Sauerstoffmaske, die ruhigeres Helfen überhaupt möglich macht.
+              Ihre Bedürfnisse zählen. Erholung ist auch dann berechtigt, wenn
+              Sie danach keine weitere Unterstützung leisten können.
             </figcaption>
           </figure>
         </EditorialSection.Aside>
@@ -178,8 +178,8 @@ export default function Selbstfuersorge() {
           </DisplayHeading>
           <EditorialBody className="max-w-[40em] mb-8">
             Wenn Sie die Seite gerade in akuter Erschöpfung lesen, ist eine
-            kurze Sofort-Übung oft hilfreicher als ein Konzept. Drei
-            Mini-Massnahmen, jederzeit anwendbar:
+            kurze Pause vielleicht hilfreicher als weitere Informationen. Wählen
+            Sie nur, was Ihnen gut tut. Bei Gefahr hat Schutz Vorrang:
           </EditorialBody>
           <ul className="space-y-5">
             <li>
@@ -190,7 +190,7 @@ export default function Selbstfuersorge() {
                   color: "var(--fg-primary)",
                 }}
               >
-                Atmen — drei tiefe Züge
+                Atmen — im angenehmen Rhythmus
               </h3>
               <p
                 className="mt-1"
@@ -200,8 +200,9 @@ export default function Selbstfuersorge() {
                   color: "var(--fg-secondary)",
                 }}
               >
-                Vier Sekunden ein, sechs Sekunden aus. Verlangsamt das
-                vegetative Alarmsystem, ohne dass Sie irgendwohin müssen.{" "}
+                Wenn angenehm: vier Sekunden ein, sechs Sekunden aus, ohne
+                Atemanhalten oder besonders tiefes Atmen. Passen Sie das Tempo
+                an. Bei Schwindel oder Unwohlsein beenden Sie die Übung.{" "}
                 <a
                   href="#sofort-uebungen"
                   className="editorial-link"
@@ -242,7 +243,7 @@ export default function Selbstfuersorge() {
                     handleAnchorClick(e, "sofort-uebungen");
                   }}
                 >
-                  Mit Timer üben
+                  Schritt für Schritt üben
                 </a>
               </p>
             </li>
@@ -264,9 +265,9 @@ export default function Selbstfuersorge() {
                   color: "var(--fg-secondary)",
                 }}
               >
-                Stopp, tief atmen, orientieren, planen, einen Schritt tun.
-                Bricht den Sorgen-Strudel, ohne dass Sie eine Lösung haben
-                müssen.{" "}
+                Stopp, atmen, orientieren, Perspektive, Plan. Eine kurze Pause
+                kann helfen, den nächsten Schritt zu wählen; Sie müssen dabei
+                nicht sofort ruhig werden.{" "}
                 <a
                   href="#sofort-uebungen"
                   className="editorial-link"
@@ -327,14 +328,9 @@ export default function Selbstfuersorge() {
               nehmen.
             </p>
             <p>
-              Drei Akzente ziehen sich durch die Seite: zuerst Belastung ernst
-              nehmen — Selbstfürsorge beginnt oft nicht mit mehr Disziplin,
-              sondern mit ehrlicher Wahrnehmung von Erschöpfung und Druck; dann
-              früher gegensteuern — Warnsignale, kurze Pausen und kleine
-              Regulationsschritte helfen oft mehr als spätes Durchhalten bis zur
-              Überlastung; und schliesslich nicht allein tragen — Entlastung
-              entsteht leichter, wenn Sie Verantwortung, Beratung und Rückhalt
-              mitdenken statt alles selbst zu halten.
+              Es geht um Ihre Gesundheit und Ihr eigenes Leben. Entlastung kann
+              eine Pause, weniger Aufgaben oder Unterstützung von aussen
+              bedeuten. Sie müssen nicht erst erschöpft sein, um sie zu nutzen.
             </p>
             <p>
               Sie können auch direkt zu{" "}

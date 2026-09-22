@@ -87,7 +87,7 @@ export const handoutTextVersions = [
   createHandoutTextVersion("genesung-zahlen", {
     kicker: "Textversion",
     summary:
-      "Langzeitdaten machen Hoffnung: Genesung ist möglich, aber sie braucht Zeit, Rückschläge, Geduld und professionelle Unterstützung.",
+      "Langzeitdaten machen Hoffnung. Besserung ist möglich; Zeitbedarf und Unterstützungsbedarf unterscheiden sich individuell. Rückschläge können vorkommen, sind aber keine Voraussetzung für Genesung.",
     intro: [
       "Genesung in Zahlen stützt Hoffnung auf belastbare Verlaufsdaten, ohne den Weg zu romantisieren. Die Zahlen helfen, Fortschritt realistischer einzuordnen.",
       "Sie finden drei zentrale Kennzahlen, eine grobe zeitliche Einordnung, die Kernaussage des Handouts und drei konkrete Hinweise für den Alltag von Angehörigen.",
@@ -97,12 +97,12 @@ export const handoutTextVersions = [
         title: "Was die Forschung zeigt",
         cards: [
           {
-            title: "85–93%",
-            text: "erreichen in grossen Längsschnittstudien innerhalb von etwa 10 Jahren eine symptomatische Remission. Die genaue Zahl hängt von Definition und Stichprobe ab.",
+            title: "93% – mindestens zweijährige Remission",
+            text: "erreichten in der Studie von Zanarini et al. (2010) während zehn Jahren mindestens einmal eine zweijährige Remission. Untersucht wurden 290 Erwachsene, die zu Beginn stationär behandelt wurden.",
           },
           {
-            title: "Recovery",
-            text: "umfasst mehr als Symptomrückgang: soziale, berufliche oder alltagsbezogene Stabilität. Diese umfassendere Genesung ist seltener als reine Remission.",
+            title: "50% – mindestens zweijährige Recovery",
+            text: "erreichten im selben Zeitraum Remission zusammen mit guter sozialer und beruflicher Funktionsfähigkeit nach der Studiendefinition. Das ist kein Massstab für den Wert eines Menschen oder seines Lebens.",
           },
           {
             title: "Langzeitverlauf",
@@ -111,31 +111,9 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Zeitliche Orientierung",
+        title: "Keine persönliche Zeitvorgabe",
         intro:
-          "Die Zeitachse des Handouts ist keine feste Prognose, sondern eine grobe Orientierung dafür, wie Entwicklung über Jahre statt über Wochen gedacht werden sollte.",
-        cards: [
-          {
-            title: "Jahr 0",
-            text: "Diagnose",
-          },
-          {
-            title: "2–4 Jahre",
-            text: "Erste Remission möglich",
-          },
-          {
-            title: "4–6 Jahre",
-            text: "Stabilere Phasen",
-          },
-          {
-            title: "6–10 Jahre",
-            text: "Hohe Remissionsrate",
-          },
-          {
-            title: "10+ Jahre",
-            text: "Anhaltende Remission",
-          },
-        ],
+          "Die zehn Jahre sind der Beobachtungszeitraum, nicht eine Wartefrist bis zur Besserung. Manche Veränderungen zeigen sich früher, andere benötigen länger. Die Zahlen beschreiben jemals erreichte Zustände; sie bedeuten nicht, dass alle dauerhaft beschwerdefrei blieben.",
       },
       {
         title: "Kernaussage",
@@ -147,7 +125,7 @@ export const handoutTextVersions = [
         title: "Begriffe kurz eingeordnet",
         calloutTitle: "Was die Grafik mit den Begriffen meint",
         calloutText:
-          "Remission meint eine deutliche Abnahme der Symptome. Recovery beschreibt zusätzlich mehr Stabilität in Alltag, Beziehungen, Arbeit oder Ausbildung. Diese Zahlen stammen aus Längsschnittstudien und sind keine individuelle Prognose.",
+          "Remission bedeutet hier, dass die Diagnosekriterien während mindestens zwei Jahren nicht mehr erfüllt wurden; einzelne Beschwerden können trotzdem bestehen. Recovery beschreibt zusätzlich mehr Stabilität in Alltag, Beziehungen, Arbeit oder Ausbildung. Diese Zahlen stammen aus Längsschnittstudien und sind keine individuelle Prognose.",
       },
       {
         title: "Was können Sie tun?",

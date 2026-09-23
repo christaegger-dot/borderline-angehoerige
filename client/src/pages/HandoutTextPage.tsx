@@ -103,6 +103,11 @@ export default function HandoutTextPage({
   const openHref = getHandoutOpenHref(pdfSourceUrl) ?? pdfSourceUrl;
   const downloadHref = getHandoutDownloadHref(pdfSourceUrl) ?? pdfSourceUrl;
   const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
+  const revisedWebCopy = [
+    "genesung-zahlen",
+    "kinder",
+    "stopp-technik",
+  ].includes(handoutMeta.id);
   const pageKicker = handout?.kicker ?? "Textversion";
 
   const bodyStyle = {
@@ -146,6 +151,13 @@ export default function HandoutTextPage({
           </DisplayHeading>
           <Lede className="mt-6">{pageSummary}</Lede>
 
+          {revisedWebCopy && (
+            <p className="mt-6 border-l pl-4" style={bodyStyle}>
+              Webfassung aktualisiert am 22.09.2026. Die PDF- und Bildfassung
+              enthält noch ältere Formulierungen. Für die aktuelle inhaltliche
+              Einordnung verwenden Sie bitte den Text auf dieser Seite.
+            </p>
+          )}
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
               asChild
@@ -188,8 +200,8 @@ export default function HandoutTextPage({
                 borderColor: "var(--rule-color)",
               }}
             >
-              Diese Textversion ist die empfohlene Lesefassung. Das PDF bleibt
-              als Druck- und Layoutversion verfügbar.
+              Diese Textversion ist die empfohlene Lesefassung. Das PDF ist als
+              separate Druck- und Layoutversion verfügbar.
             </p>
           ) : null}
 

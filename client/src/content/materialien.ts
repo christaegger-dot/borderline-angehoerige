@@ -1,3 +1,7 @@
+import { grenzenItems } from "./grenzen";
+import { kommItems } from "./kommunizieren";
+import { selbstfuersorgeInfografiken } from "./selbstfuersorge";
+
 export type MaterialCategory =
   | "alle"
   | "verstehen"
@@ -34,6 +38,8 @@ export interface MaterialItem {
   showInLibrary?: boolean;
   /** Datum der letzten Prüfung/Erstellung im Format MMMM YYYY (z.B. 'April 2025') */
   verifiedAt?: string;
+  /** Keeps established download IDs when a topic recommendation joins the library. */
+  topicRecommendation?: boolean;
 }
 
 export interface ResolvedMaterialDownload {
@@ -308,6 +314,72 @@ export const materials: MaterialItem[] = [
     verifiedAt: "Mai 2026",
   },
 ];
+
+// Keep recommendations on topic pages discoverable in the library.
+const recommendedMaterials: MaterialItem[] = [
+  ...grenzenItems
+    .filter(item =>
+      [
+        "4-arten-von-grenzen",
+        "grenzen-erkennen",
+        "grenzen-spickzettel",
+      ].includes(item.id)
+    )
+    .map(item => ({
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      category: "grenzen" as const,
+      kind: "Infografik" as const,
+      url: item.url,
+      thumbnailUrl: item.thumbnailUrl,
+      downloadUrl: item.pdfUrl,
+      priority: "secondary" as const,
+    })),
+  ...kommItems
+    .filter(item =>
+      [
+        "zuhoeren-ohne-zustimmen",
+        "gespraeche-kippen",
+        "pause-statt-streit",
+      ].includes(item.id)
+    )
+    .map(item => ({
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      category: "kommunizieren" as const,
+      kind: "Infografik" as const,
+      url: item.url,
+      thumbnailUrl: item.thumbnailUrl,
+      downloadUrl: item.pdfUrl,
+      priority: "secondary" as const,
+    })),
+  ...selbstfuersorgeInfografiken
+    .filter(item =>
+      ["sauerstoffmaske", "stopp-technik", "energie-konto"].includes(item.id)
+    )
+    .map(item => ({
+      id: item.id,
+      title: item.title,
+      description: item.desc,
+      category: "selbstfuersorge" as const,
+      kind: "Infografik" as const,
+      url: item.webp,
+      thumbnailUrl: item.thumbnailUrl,
+      downloadUrl: item.pdf,
+      priority: "secondary" as const,
+    })),
+];
+for (const item of recommendedMaterials) {
+  if (!materials.some(existing => existing.id === item.id)) {
+    materials.push({
+      ...item,
+      topicRecommendation: true,
+      verifiedAt: "Februar 2026 (laut Textfassung)",
+    });
+  }
+}
 
 const MATERIAL_DOWNLOAD_PATH_PREFIX = "/api/material-download";
 const LOCAL_FILE_RE = /^\/.+$/;

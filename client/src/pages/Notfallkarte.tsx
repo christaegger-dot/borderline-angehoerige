@@ -49,7 +49,7 @@ interface NotfallkarteData {
 }
 
 const DEFAULT_STRATEGIES: CalmingStrategy[] = [
-  { id: "s1", text: "Langsam ein- und ausatmen (4-7-8)" },
+  { id: "s1", text: "Ruhig ein- und ausatmen, ohne Atemanhalten" },
   { id: "s2", text: "Beide Füsse bewusst auf den Boden stellen" },
   { id: "s3", text: "Kaltes Wasser über die Handgelenke laufen lassen" },
 ];

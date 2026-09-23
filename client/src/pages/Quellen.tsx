@@ -323,12 +323,12 @@ const quellen: QuelleKategorie[] = [
         autoren:
           "Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF)",
         jahr: "2022",
-        titel: "S3-Leitlinie Persönlichkeitsstörungen",
+        titel: "S3-Leitlinie Borderline-Persönlichkeitsstörung",
         quelle: "AWMF-Registernummer 038-015",
         hinweis:
-          "Deutschsprachige Leitlinie zur Diagnostik und Behandlung von Persönlichkeitsstörungen. Ergänzt die internationale Quellenbasis um einen DACH-Bezug.",
-        link: "https://register.awmf.org/assets/guidelines/038-015l_S3_Persoenlichkeitsstoerungen_2022-10.pdf",
-        linkLabel: "AWMF PDF",
+          "Fassung vom 14.11.2022, Version 2.0. Im AWMF-Register mit Gültigkeit bis 31.05.2026 geführt (Abgleich 22.09.2026). Die angegebene Gültigkeit ist abgelaufen; hier als datierte Quelle verwendet, nicht als aktuell gültige Leitlinie. Den aktuellen Status zeigt das Register.",
+        link: "https://register.awmf.org/de/leitlinien/detail/038-015",
+        linkLabel: "AWMF-Register und aktueller Status",
       },
       {
         autoren:

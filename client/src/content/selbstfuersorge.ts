@@ -50,7 +50,7 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
   {
     id: "stopp-technik",
     title: "Die STOPP-Technik",
-    desc: "5 Schritte aus der Stressspirale: Stopp, Tief atmen, Orientieren, Perspektive, Plan – in 30 Sekunden.",
+    desc: "Fünf Schritte für eine kurze Pause: Stopp, atmen, orientieren, Perspektive, Plan. Im eigenen Tempo.",
     category: "techniken",
     webp: "/infografiken/manus-stopp-technik-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp",

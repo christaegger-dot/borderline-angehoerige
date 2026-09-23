@@ -60,10 +60,9 @@ export default function Fachstelle() {
             Angehörigenarbeit – professionell begleitet
           </DisplayHeading>
           <Lede className="mt-6">
-            Ein Angebot der Psychiatrischen Universitätsklinik Zürich für
-            Angehörige von Menschen mit psychischen Erkrankungen. Die Fachstelle
-            bietet Orientierung, Entlastung und Beratung für Situationen, die im
-            Alltag oft schwer alleine zu tragen sind.
+            Kostenlose, vertrauliche Beratung für Angehörige und weitere
+            Bezugspersonen – ohne Vollmacht der erkrankten Person und auch dann,
+            wenn diese nicht in der PUK behandelt wird.
           </Lede>
           <p className="secondary-page-meta">
             Vollständig ca. 4 Min · Auch abschnittweise lesbar.

@@ -11,14 +11,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ContentSection from "@/components/ContentSection";
+import EvidenceNote from "@/components/EvidenceNote";
 import GroundingTimer from "@/components/interactive/GroundingTimer";
 import { longTermStrategies } from "@/content/selbstfuersorge-page";
 
 function AtemuebungCard() {
   const [isActive, setIsActive] = useState(false);
-  const [phase, setPhase] = useState<"einatmen" | "halten" | "ausatmen">(
-    "einatmen"
-  );
+  const [phase, setPhase] = useState<"einatmen" | "ausatmen">("einatmen");
   const [count, setCount] = useState(4);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -44,7 +43,7 @@ function AtemuebungCard() {
     }
 
     const runPhase = (
-      nextPhase: "einatmen" | "halten" | "ausatmen",
+      nextPhase: "einatmen" | "ausatmen",
       seconds: number,
       onDone: () => void
     ) => {
@@ -65,11 +64,7 @@ function AtemuebungCard() {
     };
 
     runPhase("einatmen", 4, () =>
-      runPhase("halten", 4, () =>
-        runPhase("ausatmen", 6, () => {
-          setIsActive(false);
-        })
-      )
+      runPhase("ausatmen", 6, () => setIsActive(false))
     );
   };
 
@@ -86,14 +81,16 @@ function AtemuebungCard() {
             role="heading"
             aria-level={2}
           >
-            4-4-6 Atemübung
+            4-6 Atemübung ohne Atemanhalten
           </span>
         </div>
       </div>
 
       <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
-        Diese Atemtechnik aktiviert den beruhigenden Teil Ihres Nervensystems
-        und hilft, aus dem Stressmodus herauszukommen.
+        Ruhiges Atmen kann bei Anspannung angenehm sein. Der Timer ist eine
+        Orientierung, keine Vorgabe: Atmen Sie ohne Anstrengung und nur so tief,
+        wie es angenehm ist. Bei Schwindel, Luftnot oder Unwohlsein stoppen Sie
+        und atmen in Ihrem gewohnten Rhythmus weiter.
       </p>
 
       {isActive ? (
@@ -126,17 +123,12 @@ function AtemuebungCard() {
             style={{ color: "var(--fg-primary)" }}
           >
             {phase === "einatmen" && "Einatmen..."}
-            {phase === "halten" && "Halten..."}
             {phase === "ausatmen" && "Langsam ausatmen..."}
           </p>
         </div>
       ) : (
         <div className="space-y-3">
-          {[
-            "4 Sekunden einatmen",
-            "4 Sekunden halten",
-            "6 Sekunden ausatmen",
-          ].map((item, index) => (
+          {["4 Sekunden einatmen", "6 Sekunden ausatmen"].map((item, index) => (
             <div
               key={item}
               className="flex items-center gap-3 border-t pt-3 text-sm text-muted-foreground"
@@ -165,6 +157,19 @@ function AtemuebungCard() {
             Übung starten
           </Button>
         </div>
+      )}
+      {isActive && (
+        <Button
+          variant="outline"
+          className="mt-4 w-full"
+          onClick={() => {
+            if (timerRef.current) clearInterval(timerRef.current);
+            timerRef.current = null;
+            setIsActive(false);
+          }}
+        >
+          Übung beenden
+        </Button>
       )}
     </article>
   );
@@ -253,11 +258,12 @@ export function SelbstfuersorgeExercisesSection({
         title="Sofort-Übungen für akute Belastung"
         id="sofort-uebungen"
         defaultOpen={immediateDefaultOpen}
-        preview="Atemübung, 5-4-3-2-1 Grounding und STOPP-Technik – jederzeit anwendbar."
+        preview="Atemübung, Grounding und STOPP – wählen Sie, was sich für Sie angenehm anfühlt."
       >
         <p className="mb-6" style={bodyStyle}>
-          Diese Übungen können Sie jederzeit anwenden, wenn Sie merken, dass der
-          Stress überhand nimmt:
+          Sie können eine Übung ausprobieren, wenn die Situation sicher ist.
+          Lassen Sie Schritte weg, die nicht passen. Bei Gewalt oder akuter
+          Gefahr holen Sie Hilfe, statt weiterzuüben.
         </p>
 
         <div className="grid gap-6 md:grid-cols-[7fr_5fr]">
@@ -277,10 +283,16 @@ export function SelbstfuersorgeExercisesSection({
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             {[
               { letter: "S", text: "Stopp – Innehalten" },
-              { letter: "T", text: "Tief durchatmen" },
+              { letter: "T", text: "Tief atmen – ruhig und ohne Anstrengung" },
               { letter: "O", text: "Orientieren – Was passiert gerade?" },
-              { letter: "P", text: "Planen – Was ist jetzt hilfreich?" },
-              { letter: "P", text: "Praktizieren – Einen Schritt tun" },
+              {
+                letter: "P",
+                text: "Perspektive – Gibt es eine andere Sichtweise?",
+              },
+              {
+                letter: "P",
+                text: "Plan – Einen hilfreichen nächsten Schritt wählen",
+              },
             ].map(item => (
               <div
                 key={`${item.letter}-${item.text}`}
@@ -295,6 +307,22 @@ export function SelbstfuersorgeExercisesSection({
             ))}
           </div>
         </div>
+        <EvidenceNote
+          title="Quellen und Einordnung der Übungen"
+          definition="Die Zählzeiten sind eine anpassbare Orientierung. Grounding wird hier in der Variante Sehen – Hören – Spüren angeleitet; andere Reihenfolgen sind ebenfalls gebräuchlich."
+          sources={[
+            {
+              label: "NHS: Ruhiges Atmen ohne Anstrengung",
+              href: "https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/breathing-exercises-for-stress/",
+              type: "versorgung",
+            },
+            {
+              label: "NHS inform: Grounding-Übungen",
+              href: "https://www.nhsinform.scot/healthy-living/mental-wellbeing/breathing-and-relaxation-exercises/grounding-exercises/",
+              type: "versorgung",
+            },
+          ]}
+        />
       </ContentSection>
 
       <ContentSection
@@ -305,8 +333,10 @@ export function SelbstfuersorgeExercisesSection({
         preview="Tägliche Mini-Auszeiten, Bewegung, soziale Kontakte und professionelle Unterstützung."
       >
         <p className="mb-6" style={bodyStyle}>
-          Neben den Sofort-Übungen brauchen Sie auch langfristige Strategien, um
-          Ihre Gesundheit zu erhalten:
+          Die folgenden Ideen sind eine Auswahl, kein zusätzliches Programm.
+          Entscheiden Sie, was Sie entlastet. Wenn selbst kleine Pausen nicht
+          möglich sind, kann Unterstützung bei Betreuung und Aufgaben wichtiger
+          sein.
         </p>
 
         <div>

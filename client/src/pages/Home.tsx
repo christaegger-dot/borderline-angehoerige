@@ -94,27 +94,24 @@ export default function Home() {
       </EditorialSection>
 
       <PathwaySection />
-
       <EditorialSection variant="cream" density="compact">
-        <EditorialSection.MarginNote>
-          <HomeMarginLabel>Einordnung</HomeMarginLabel>
-        </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <DisplayHeading level={2}>
-            Viele Angehörige kommen nicht mit einer klaren Frage, sondern mit
-            einem Knäuel.
+            Beratung für Sie – auch ohne Vollmacht
           </DisplayHeading>
           <EditorialProse>
             <p>
-              Sie fragen sich, ob das, was Sie erleben, Krankheit ist,
-              Charakter, Krise oder Ihre eigene Schuld. Oft liegt die Antwort
-              nicht in einem einzigen Begriff, sondern in wiederkehrenden
-              Dynamiken: Überflutung, Rückzug, Angst, Scham, Nähe und Grenze.
+              Die Fachstelle Angehörigenarbeit berät kostenlos und vertraulich.
+              Die betroffene Person muss dafür nicht in der PUK behandelt
+              werden. Sie dürfen auch mit Unsicherheit oder eigenen Belastungen
+              kommen.
             </p>
             <p>
-              Diese Website soll nicht bewerten. Sie soll sortieren: Was ist
-              akut? Was lässt sich verstehen? Wo können Sie unterstützen? Und wo
-              braucht es Schutz, Abstand oder professionelle Hilfe?
+              <AppLink href="/fachstelle">Beratung und Kontakt</AppLink>
+              {" · "}
+              <AppLink href="/materialien/text/kinder">
+                Wenn Kinder mitbetroffen sind
+              </AppLink>
             </p>
           </EditorialProse>
         </EditorialSection.Body>
@@ -132,7 +129,7 @@ export default function Home() {
       <VisualOrientationGrid
         ids={["validierungs-treppe", "vier-arten-grenzen", "sauerstoffmaske"]}
         title="Drei Bilder für die nächsten Schritte."
-        intro="Nicht als Galerie, sondern als Einstieg: validieren ohne nachzugeben, Grenzen halten und die eigene Kraft schützen — je ein Bild pro Idee."
+        intro="Gefühle anerkennen, Grenzen setzen und die eigene Kraft schützen: Wählen Sie die Hilfe, die zu Ihrer Situation passt."
       />
 
       <EditorialSection variant="cream-deep" density="compact">

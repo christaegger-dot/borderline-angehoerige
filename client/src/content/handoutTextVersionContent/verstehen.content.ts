@@ -60,7 +60,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Nach Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation; S3-Leitlinie Persönlichkeitsstörungen.",
+      "Quelle: Nach Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation; S3-Leitlinie Borderline-Persönlichkeitsstörung (2022; im Register gültig bis 31.05.2026).",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
@@ -488,7 +488,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "4–7 Jahre: Bildsprache",
-            text: "«Mama/Papa hat manchmal ganz grosse Gefühle – wie ein Sturm im Kopf. Das ist nicht deine Schuld. Wir sind für dich da.» Vermeiden Sie das Wort krank und sprechen Sie von grossen Gefühlen.",
+            text: "«Mama/Papa hat manchmal ganz grosse Gefühle – wie ein Sturm im Kopf. Das ist nicht deine Schuld. Wir sind für dich da.» Benennen Sie die psychische Erkrankung in einfachen, altersgerechten Worten: «Mama/Papa ist psychisch krank und bekommt Hilfe. Du bist nicht schuld und musst das nicht lösen.» Fragen Sie, was das Kind verstanden hat; Erwachsene übernehmen Versorgung und Schutz.",
           },
           {
             title: "8–12 Jahre: Einfache Erklärung",
@@ -538,7 +538,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quellen: [1] Lenz, A. (2014): Kinder psychisch kranker Eltern. Hogrefe. [2] Mattejat, F. & Lisofsky, B. (2008): Nicht von schlechten Eltern. Balance Verlag. [3] BApK: Geschwister psychisch erkrankter Menschen.",
+      "Quellen: PUK Zürich, Informationen für Angehörige – Elternberatung (https://www.pukzh.ch/patienten-angehoerige/informationen-fuer-angehoerige/; abgerufen 22.09.2026). [1] Lenz, A. (2014): Kinder psychisch kranker Eltern. Hogrefe. [2] Mattejat, F. & Lisofsky, B. (2008): Nicht von schlechten Eltern. Balance Verlag. [3] BApK: Geschwister psychisch erkrankter Menschen.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
   }),

@@ -11,7 +11,7 @@ const selectedIds = [
 
 const guidanceById: Record<(typeof selectedIds)[number], string> = {
   sauerstoffmaske:
-    "Der visuelle Kern dieser Seite: Selbstfürsorge ist kein Extra, sondern das, was den Kreislauf stabilisiert.",
+    "Eigene Bedürfnisse wahrnehmen und Überlastung früher erkennen.",
   "stopp-technik":
     "Für akute Überforderung: ein kurzer Ablauf, bevor Sie antworten, retten oder weiterdiskutieren.",
   "energie-konto":
@@ -21,10 +21,10 @@ const guidanceById: Record<(typeof selectedIds)[number], string> = {
 export default function SelbstfuersorgeInfografikenSection() {
   return (
     <CuratedMaterialsSection
-      marginLabel="Bildführung"
+      marginLabel="Zum Mitnehmen"
       title="Drei Materialien, die Selbstfürsorge greifbar machen"
-      intro="Diese Seite braucht vor allem eine klare innere Logik: erkennen, stoppen, Kräfte wieder auffüllen. Die Auswahl folgt genau dieser Reihenfolge."
-      curationNote="Die Sauerstoffmaske bleibt der visuelle Hauptanker. Weitere Selbstfürsorge-PDFs sind bewusst in die Materialbibliothek ausgelagert, damit diese Seite nicht zur Galerie wird."
+      intro="Belastung bemerken, eine Pause finden und die eigene Kraft ernst nehmen: Wählen Sie das Blatt, das Ihnen jetzt hilft."
+      curationNote="Sie müssen nicht alle Übungen anwenden. Ihre Erholung und Ihr eigenes Leben sind wichtig – unabhängig davon, wie viel Unterstützung Sie leisten können."
       items={curatedItems}
       ariaLabel="Ausgewählte Materialien zu Selbstfürsorge"
       allMaterialsLabel="Weitere Selbstfürsorge-Materialien ansehen"

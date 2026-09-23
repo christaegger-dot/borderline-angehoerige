@@ -273,10 +273,10 @@ export default function Genesung() {
               className="border-t pt-6"
               style={{ borderColor: "var(--rule-color)" }}
             >
-              <dt style={versalStyle}>85–93%</dt>
+              <dt style={versalStyle}>93%</dt>
               <dd className="mt-3" style={bodyStyle}>
-                erreichen eine symptomatische Remission (also weitgehende
-                Symptomfreiheit) innerhalb von etwa 10 Jahren.
+                erreichten während einer zehnjährigen Studie mindestens einmal
+                eine symptomatische Remission über zwei Jahre.
               </dd>
               <dd
                 className="mt-1"
@@ -285,7 +285,7 @@ export default function Genesung() {
                   color: "var(--fg-tertiary)",
                 }}
               >
-                (Daten aus Spezialzentren)
+                (Zanarini et al., 2010)
               </dd>
             </div>
             <div
@@ -294,8 +294,9 @@ export default function Genesung() {
             >
               <dt style={versalStyle}>50%</dt>
               <dd className="mt-3" style={bodyStyle}>
-                erreichen eine umfassendere Genesung mit funktioneller
-                Stabilität — meist innerhalb von 10 bis 20 Jahren.
+                erreichten im selben Beobachtungszeitraum eine mindestens
+                zweijährige Recovery: Remission zusammen mit guter sozialer und
+                beruflicher Funktionsfähigkeit nach der Studiendefinition.
               </dd>
             </div>
             <div
@@ -304,8 +305,8 @@ export default function Genesung() {
             >
               <dt style={versalStyle}>Jahre</dt>
               <dd className="mt-3" style={bodyStyle}>
-                nicht Wochen oder Monate – eher mindestens ein bis mehrere
-                Jahre, oft mit mehreren Anläufen.
+                beschreiben den Beobachtungszeitraum der Forschung. Daraus lässt
+                sich keine feste Wartezeit bis zu einer Besserung ableiten.
               </dd>
             </div>
           </dl>
@@ -336,10 +337,12 @@ export default function Genesung() {
 
           <p className="mt-6" style={bodyStyle}>
             <strong style={{ color: "var(--fg-primary)" }}>Hinweis:</strong>{" "}
-            Diese Zahlen stammen aus Spezialzentren unter optimalen Bedingungen.
-            Der reale Weg ist für viele Menschen nicht-linear und braucht
-            länger. Genesung bleibt das realistische Ziel — aber Rückschritte
-            und lange Phasen gehören dazu.
+            Untersucht wurden 290 Erwachsene, die zu Studienbeginn stationär
+            behandelt wurden. Die Zahlen beschreiben jemals erreichte Zustände
+            im Verlauf, nicht den Anteil dauerhaft beschwerdefreier Menschen am
+            Studienende. Sie sind keine individuelle Prognose. Lebensqualität
+            und ein selbstbestimmter Alltag zählen auch dann, wenn die strengen
+            Recovery-Kriterien einer Studie nicht erfüllt sind.
           </p>
         </EditorialSection.Body>
       </EditorialSection>
@@ -375,10 +378,11 @@ export default function Genesung() {
               <article className="space-y-2">
                 <h3 style={h4Style}>Symptomatische Remission</h3>
                 <p style={bodyStyle}>
-                  Die diagnostischen Kriterien werden über längere Zeit nicht
-                  mehr erfüllt oder deutlich schwächer. Das bedeutet häufig
-                  weniger Impulsdurchbrüche, weniger Instabilität und mehr
-                  inneren Spielraum.
+                  Die diagnostischen Kriterien der Borderline-Störung werden
+                  über einen festgelegten Zeitraum nicht mehr erfüllt. Einzelne
+                  Beschwerden können trotzdem bestehen bleiben. Das bedeutet
+                  häufig weniger Impulsdurchbrüche, weniger Instabilität und
+                  mehr inneren Spielraum.
                 </p>
               </article>
               <article className="space-y-2">

@@ -36,7 +36,7 @@ const prinzipien = [
   {
     title: "Selbstfürsorge-orientiert",
     description:
-      "Angehörige können nur helfen, wenn sie selbst gesund bleiben. Grenzen setzen ist kein Verrat, sondern notwendig für eine nachhaltige Beziehung.",
+      "Angehörige haben ein eigenes Recht auf Gesundheit, Erholung und ein selbstbestimmtes Leben. Grenzen und Unterstützung sind auch dann berechtigt, wenn sie der erkrankten Person nicht unmittelbar nützen.",
   },
   {
     title: "Praxisnah",
@@ -50,13 +50,13 @@ const grundlagen = [
     title: "Dialektisch-Behaviorale Therapie (DBT)",
     author: "Marsha M. Linehan",
     description:
-      "Die evidenzbasierte Standardtherapie für Borderline, entwickelt in den 1980er Jahren.",
+      "Ein gut untersuchtes störungsspezifisches Therapieverfahren für Borderline; daneben gibt es weitere wirksame Ansätze.",
   },
   {
     title: "Stop Walking on Eggshells",
     author: "Paul T. Mason & Randi Kreger",
     description:
-      "Das Standardwerk für Angehörige, Grundlage für den Namen dieser Website. Auf Deutsch erschienen als «Schluss mit dem Eiertanz» (Balance Buch + Medien Verlag).",
+      "Ein verbreitetes Ratgeberbuch für Angehörige. Auf Deutsch erschienen als «Schluss mit dem Eiertanz» (Balance Buch + Medien Verlag).",
   },
   {
     title: "Ich hasse dich – verlass mich nicht",

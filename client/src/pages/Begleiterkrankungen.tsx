@@ -501,7 +501,8 @@ export default function Begleiterkrankungen() {
                 type: "wissenschaft",
               },
               {
-                label: "AWMF S3-Leitlinie Persönlichkeitsstörungen (2022)",
+                label:
+                  "AWMF S3-Leitlinie Borderline-Persönlichkeitsstörung (2022; Gültigkeit abgelaufen)",
                 href: quellenLinks.awmf2022,
                 type: "wissenschaft",
               },

@@ -1,4 +1,4 @@
-import { pageGovernance } from "@/data/pageGovernance";
+import { pageGovernance, type PageGovernance } from "@/data/pageGovernance";
 
 type ReviewBadgeVariant = "compact" | "detailed";
 
@@ -39,19 +39,22 @@ export default function ReviewBadge({
         className={`review-badge review-badge--detailed ${className}`.trim()}
         aria-label="Review-Informationen"
       >
-        <p className="review-badge__heading">Review & Governance</p>
+        <p className="review-badge__heading">Stand und Prüfung</p>
         <ReviewDetails
           lastReviewed={lastReviewed}
           nextReviewDue={nextReviewDue}
           owner={meta.owner}
+          meta={meta}
         />
       </aside>
     );
   }
 
-  const summary = meta.lastReviewed
-    ? `Fachlich geprüft: ${formatDate(meta.lastReviewed)}`
-    : "Fachlicher Review: Datum noch offen";
+  const summary = meta.editorialUpdated
+    ? `Text aktualisiert: ${formatDate(meta.editorialUpdated)}`
+    : meta.lastReviewed
+      ? `Fachlich geprüft: ${formatDate(meta.lastReviewed)}`
+      : "Fachlicher Review: Datum noch offen";
 
   return (
     <details
@@ -66,6 +69,7 @@ export default function ReviewBadge({
         lastReviewed={lastReviewed}
         nextReviewDue={nextReviewDue}
         owner={meta.owner}
+        meta={meta}
       />
     </details>
   );
@@ -75,10 +79,12 @@ function ReviewDetails({
   lastReviewed,
   nextReviewDue,
   owner,
+  meta,
 }: {
   lastReviewed: string;
   nextReviewDue: string | null;
   owner?: string;
+  meta: PageGovernance;
 }) {
   return (
     <dl className="review-badge__details">
@@ -87,10 +93,40 @@ function ReviewDetails({
         <dd>{lastReviewed}</dd>
       </div>
 
+      {meta.editorialUpdated && (
+        <div className="review-badge__details-row">
+          <dt className="review-badge__term">Text aktualisiert:</dt>
+          <dd>
+            {formatDate(meta.editorialUpdated)} – keine neue fachliche Freigabe
+          </dd>
+        </div>
+      )}
+      {meta.contactCheck && (
+        <div className="review-badge__details-row">
+          <dt className="review-badge__term">Kontaktabgleich:</dt>
+          <dd>
+            {formatDate(meta.contactCheck.date)}: {meta.contactCheck.scope}.{" "}
+            <a
+              className="editorial-link"
+              href={meta.contactCheck.source}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Offizielle Quelle
+            </a>
+          </dd>
+        </div>
+      )}
       {nextReviewDue && (
         <div className="review-badge__details-row">
           <dt className="review-badge__term">Nächste Prüfung:</dt>
-          <dd>{nextReviewDue}</dd>
+          <dd>
+            {nextReviewDue}
+            {meta.nextReviewDue &&
+            meta.nextReviewDue < new Date().toISOString().slice(0, 10)
+              ? " – erneute Fachprüfung ausstehend"
+              : ""}
+          </dd>
         </div>
       )}
 

@@ -66,11 +66,11 @@ export default function Selbstfuersorge() {
       />
       <TableOfContents />
 
-      {/* ── 1 Hero ── EditorialSection mit SchaleIllustration als Aside */}
+      {/* ── 1 Hero ── informative Grafik mit Bildunterschrift */}
       <EditorialSection
         variant="cream"
         density="compact"
-        className="topic-intro"
+        className="topic-intro topic-intro--informative-aside"
       >
         <EditorialSection.MarginNote>
           <span

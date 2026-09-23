@@ -43,6 +43,6 @@ Benötigte Python-Pakete: ReportLab, PyMuPDF, Pillow; Schrift: DejaVu Sans. Aufr
 
 ## Technische Prüfung
 
-Lokal bestanden: Lint, Prettier, TypeScript, 386 Tests in 55 Dateien und Produktionsbuild (`pnpm verify`). Zusätzlich vollständiger Textabgleich der drei einseitigen PDFs mit ihrer gemeinsamen Textquelle; keine fehlenden Textabschnitte. Neue Prüfungen decken das Öffnen eines eingeklappten Abschnitts über die Sprunglinks sowie die Weiterleitung alter Materiallinks ab.
+Lokal bestanden: Lint, Prettier, TypeScript, 389 Tests in 55 Dateien und Produktionsbuild (`pnpm verify`). Zusätzlich vollständiger Textabgleich der drei einseitigen PDFs mit ihrer gemeinsamen Textquelle; keine fehlenden Textabschnitte. Neue Prüfungen decken das Öffnen eines eingeklappten Abschnitts über die Sprunglinks sowie die Weiterleitung alter Materiallinks ab.
 
-Visuelle Regression und veröffentlichte Vorschau werden im Änderungsantrag dokumentiert.
+In der Netlify-Vorschau wurden die drei PDF-Downloads und die drei alten Direktlinks erfolgreich geprüft: HTTP 200, PDF-Inhaltstyp und bytegleicher Inhalt mit den neuen Druckfassungen. 18 geänderte Vergleichsbilder wurden vor ihrer Übernahme visuell geprüft; sie decken Desktop-, Tablet- und mobile Chromium-Ansichten ab. Die informative Selbstfürsorge-Grafik ist von den Regeln für kompakte dekorative Bilder ausgenommen. Eine zusätzliche Browserprüfung kontrolliert Sichtbarkeit und überlagerungsfreie Darstellung in allen drei Ansichtsgrössen. Der abschliessende Lauf der visuellen Regression wird im Änderungsantrag dokumentiert.

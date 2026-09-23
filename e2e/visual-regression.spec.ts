@@ -25,6 +25,34 @@ const PAGES = [
   { path: "/wegweiser", name: "wegweiser" },
 ];
 
+test("self-care infographic remains visible and contained", async ({
+  page,
+}) => {
+  await page.goto("/selbstfuersorge", { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+  const intro = page.locator("section.topic-intro");
+  const figure = intro.locator("figure");
+  const caption = figure.locator("figcaption");
+  await expect(figure).toBeVisible();
+  await expect(caption).toBeVisible();
+  await figure
+    .locator("img")
+    .evaluate((image: HTMLImageElement) => image.decode());
+  const figureBox = await figure.boundingBox();
+  const captionBox = await caption.boundingBox();
+  const nextBox = await page
+    .locator("section.editorial-section")
+    .nth(1)
+    .boundingBox();
+  expect(figureBox).not.toBeNull();
+  expect(captionBox).not.toBeNull();
+  expect(nextBox).not.toBeNull();
+  expect(captionBox!.y + captionBox!.height).toBeLessThanOrEqual(
+    figureBox!.y + figureBox!.height + 1
+  );
+  expect(figureBox!.y + figureBox!.height).toBeLessThanOrEqual(nextBox!.y + 1);
+});
+
 for (const { path, name } of PAGES) {
   test(`page ${name} matches baseline`, async ({ page }) => {
     await page.goto(path, { waitUntil: "networkidle" });

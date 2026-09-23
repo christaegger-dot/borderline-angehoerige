@@ -53,6 +53,11 @@ for (const { path, name } of PAGES) {
 test("home hero region matches baseline", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Isolated section capture: the sticky header is outside this component.
+  // Full-page tests above continue to include and check the header.
+  await page.addStyleTag({
+    content: "header { visibility: hidden !important; }",
+  });
 
   const hero = page.locator("section.editorial-section").first();
   await expect(hero).toHaveScreenshot("home-hero.png");
@@ -61,6 +66,11 @@ test("home hero region matches baseline", async ({ page }) => {
 test("editorial section with aside matches baseline", async ({ page }) => {
   await page.goto("/verstehen", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Isolated section capture: the sticky header is outside this component.
+  // Full-page tests above continue to include and check the header.
+  await page.addStyleTag({
+    content: "header { visibility: hidden !important; }",
+  });
 
   // Erste EditorialSection mit Aside (Eisberg-Illustration)
   const section = page.locator("section.editorial-section").first();
@@ -70,6 +80,11 @@ test("editorial section with aside matches baseline", async ({ page }) => {
 test("grenzen key sections match baseline", async ({ page }) => {
   await page.goto("/grenzen", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Isolated section capture: the sticky header is outside this component.
+  // Full-page tests above continue to include and check the header.
+  await page.addStyleTag({
+    content: "header { visibility: hidden !important; }",
+  });
 
   const hero = page.locator("section.editorial-section").first();
   await expect(hero).toHaveScreenshot("grenzen-hero.png");
@@ -110,6 +125,11 @@ test("materialien filter and first cards match baseline", async ({ page }) => {
 test("krise key CTA region matches baseline", async ({ page }) => {
   await page.goto("/unterstuetzen/krise", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Isolated section capture: the sticky header is outside this component.
+  // Full-page tests above continue to include and check the header.
+  await page.addStyleTag({
+    content: "header { visibility: hidden !important; }",
+  });
 
   const sections = page.locator("section.editorial-section");
   await expect(sections.first()).toHaveScreenshot("krise-hero.png");

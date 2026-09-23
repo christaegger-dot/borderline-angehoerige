@@ -80,20 +80,40 @@ export default function Home() {
             className="mt-5 space-y-3 text-base leading-relaxed"
           >
             <p>
-              <AppLink href="/soforthilfe">Akute Hilfe</AppLink> – Notruf und
-              Krisenberatung.
+              <AppLink
+                className="editorial-link inline-flex min-h-11 items-center"
+                href="/soforthilfe"
+              >
+                Akute Hilfe
+              </AppLink>{" "}
+              – Notruf und Krisenberatung.
             </p>
             <p>
-              <AppLink href="/wegweiser">Eine konkrete Situation</AppLink> – zum
-              nächsten hilfreichen Schritt.
+              <AppLink
+                className="editorial-link inline-flex min-h-11 items-center"
+                href="/wegweiser"
+              >
+                Eine konkrete Situation
+              </AppLink>{" "}
+              – zum nächsten hilfreichen Schritt.
             </p>
             <p>
-              <AppLink href="/verstehen">Vertiefendes Wissen</AppLink> –
-              Borderline und die eigene Rolle verstehen.
+              <AppLink
+                className="editorial-link inline-flex min-h-11 items-center"
+                href="/verstehen"
+              >
+                Vertiefendes Wissen
+              </AppLink>{" "}
+              – Borderline und die eigene Rolle verstehen.
             </p>
             <p>
-              <AppLink href="/selbsttest">Passende Inhalte finden</AppLink> –
-              wenn Sie noch keinen Einstieg wissen.
+              <AppLink
+                className="editorial-link inline-flex min-h-11 items-center"
+                href="/selbsttest"
+              >
+                Passende Inhalte finden
+              </AppLink>{" "}
+              – wenn Sie noch keinen Einstieg wissen.
             </p>
           </nav>
         </EditorialSection.Body>

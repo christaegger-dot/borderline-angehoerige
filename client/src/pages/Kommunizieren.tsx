@@ -60,12 +60,11 @@ export default function Kommunizieren() {
             Kommunizieren
           </EyebrowLabel>
           <DisplayHeading level={1} size="topic">
-            Gespräche in <em>belasteten Beziehungen</em> — wie Verbindung
-            möglich bleibt.
+            Zugewandt und klar <em>kommunizieren</em>
           </DisplayHeading>
           <Lede className="max-w-[30em]">
-            Kommunikation löst keine Grunddynamik – sie kann aber Eskalation
-            bremsen und Ihre eigene Position klärer machen.
+            Konkrete Sätze können Gespräche erleichtern. Sie dürfen dabei Ihre
+            Sicht vertreten, Pausen machen und Grenzen setzen.
           </Lede>
           <TopicQuickLinks
             items={[

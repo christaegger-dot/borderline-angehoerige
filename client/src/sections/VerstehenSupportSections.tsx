@@ -45,6 +45,14 @@ export function VerstehenRelationshipSection() {
           Vorwürfe oder Grenztests ausfallen.
         </EditorialPullQuote>
       </div>
+      <p className="editorial-small-copy mt-6">
+        Ausführlich, mit Bedeutungsschleife, wechselseitigen Reaktionen und den
+        Grenzen der Verantwortung:{" "}
+        <Link href="/verstehen/beziehungen" className="editorial-link">
+          Borderline und Beziehungen
+        </Link>
+        .
+      </p>
       <EvidenceNote
         variant="editorial"
         title="Quellen zu Beziehungsmustern und Validierung"

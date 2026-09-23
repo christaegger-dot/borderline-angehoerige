@@ -58,6 +58,7 @@ const FULL_ROUTES = [
   "/verstehen",
   "/verstehen/diagnostik",
   "/verstehen/begleiterkrankungen",
+  "/verstehen/beziehungen",
   "/unterstuetzen/uebersicht",
   "/unterstuetzen/alltag",
   "/unterstuetzen/therapie",

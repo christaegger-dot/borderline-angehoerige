@@ -8,6 +8,7 @@ const pageNames: Record<string, string> = {
   "/verstehen": "Borderline verstehen",
   "/verstehen/diagnostik": "Diagnostik",
   "/verstehen/begleiterkrankungen": "Begleiterkrankungen",
+  "/verstehen/beziehungen": "Borderline und Beziehungen",
   "/unterstuetzen": "Unterstützen",
   "/unterstuetzen/uebersicht": "Übersicht",
   "/unterstuetzen/alltag": "Alltag",

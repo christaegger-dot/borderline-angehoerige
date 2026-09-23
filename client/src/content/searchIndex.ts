@@ -177,6 +177,26 @@ export const searchableContent: SearchEntry[] = [
     section: "Kommunizieren",
   },
   {
+    title: "Borderline und Beziehungen",
+    description:
+      "Grundlagen: wie Ereignis, Bedeutung, Gefühl und Reaktion zwischen beiden Seiten zusammenwirken",
+    keywords: [
+      "beziehung",
+      "beziehungen",
+      "bedeutungsschleife",
+      "zurückweisung",
+      "mentalisieren",
+      "nähe",
+      "distanz",
+      "scham",
+      "dissoziation",
+      "wechselwirkung",
+      "verstehen",
+    ],
+    href: "/verstehen/beziehungen",
+    section: "Verstehen",
+  },
+  {
     title: "Ich-Botschaften",
     description: "Eigene Gefühle und Bedürfnisse ausdrücken ohne Vorwürfe",
     keywords: [

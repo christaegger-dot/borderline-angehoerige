@@ -84,6 +84,12 @@ export const pageGovernance: Record<string, PageGovernance> = {
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
+  "/verstehen/beziehungen": {
+    riskLevel: "high",
+    lastReviewed: "2026-09-20",
+    nextReviewDue: "2027-03-31",
+    owner: DEFAULT_OWNER,
+  },
   "/verstehen/begleiterkrankungen": {
     editorialUpdated: "2026-09-22",
     riskLevel: "high",

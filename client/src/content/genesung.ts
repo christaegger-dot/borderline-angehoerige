@@ -21,10 +21,10 @@ export const genesungItems: GenesungItem[] = [
     id: "genesung-zahlen",
     title: "Genesung in Zahlen",
     desc: "Orientierungs-Tracker mit Langzeitdaten",
-    img: "/infografiken/manus-genesung-zahlen-v1.webp",
+    img: "/infografiken/manus-genesung-zahlen-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp",
-    pdf: "/infografiken/manus-genesung-zahlen-v1.pdf",
+      "/infografiken/extras/thumbnails/manus-genesung-zahlen-v3.webp",
+    pdf: "/infografiken/manus-genesung-zahlen-v3.pdf",
     category: "verstehen",
   },
   {

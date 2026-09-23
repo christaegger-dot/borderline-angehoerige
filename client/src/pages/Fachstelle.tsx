@@ -1,3 +1,4 @@
+import WebsiteEinordnung from "@/components/WebsiteEinordnung";
 import {
   DisplayHeading,
   EditorialLayout,
@@ -159,16 +160,7 @@ export default function Fachstelle() {
           title="Einordnung dieser Website"
         >
           <EditorialProse>
-            <p>
-              Diese Website wurde von Ch. Egger innerhalb der Fachstelle
-              Angehörigenarbeit aufgebaut. Die inhaltliche Verantwortung liegt
-              bei der Fachstelle Angehörigenarbeit.
-            </p>
-            <p>
-              Es handelt sich um ein eigenständig gestaltetes
-              Informationsangebot der Fachstelle und nicht um einen offiziellen
-              Kommunikationskanal der PUK Zürich.
-            </p>
+            <WebsiteEinordnung />
           </EditorialProse>
         </EditorialSectionBlock>
 

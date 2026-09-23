@@ -46,7 +46,7 @@ describe("self-care guidance", () => {
     ]) {
       expect(materials.some(item => item.id === id)).toBe(true);
     }
-    const source = "/infografiken/manus-stopp-technik-v1.pdf";
+    const source = "/infografiken/manus-stopp-technik-v3.pdf";
     expect(getHandoutOpenHref(source)).toBe(
       "/api/material-download/selbstfuersorge-stopp-technik?disposition=inline"
     );

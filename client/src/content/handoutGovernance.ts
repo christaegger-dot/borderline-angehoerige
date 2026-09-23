@@ -61,7 +61,7 @@ export const handoutGovernance = {
   kinder: {
     id: "kinder",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-kinder-v1",
+    approvedVersion: "manus-kinder-v3",
   },
   "rolle-klaeren": {
     id: "rolle-klaeren",
@@ -186,7 +186,7 @@ export const handoutGovernance = {
   "stopp-technik": {
     id: "stopp-technik",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-stopp-technik-v1",
+    approvedVersion: "manus-stopp-technik-v3",
   },
   "energie-konto": {
     id: "energie-konto",
@@ -216,7 +216,7 @@ export const handoutGovernance = {
   "genesung-zahlen": {
     id: "genesung-zahlen",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-genesung-zahlen-v1",
+    approvedVersion: "manus-genesung-zahlen-v3",
   },
   "fortschritt-paradox": {
     id: "fortschritt-paradox",

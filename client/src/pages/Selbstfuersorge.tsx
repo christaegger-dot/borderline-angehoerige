@@ -1,3 +1,5 @@
+import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -28,33 +30,6 @@ function openSection(sectionId: string) {
     new CustomEvent("open-section", { detail: { sectionId } })
   );
 }
-
-const selbstfuersorgePfad = [
-  {
-    kicker: "1 · Erkennen",
-    title: "Warnsignale nicht wegdrücken",
-    text: "Erschöpfung, Gereiztheit oder ständige Alarmbereitschaft sind keine Schwäche, sondern Signale.",
-    sectionId: "warnsignale",
-  },
-  {
-    kicker: "2 · Stoppen",
-    title: "Erst den Körper beruhigen",
-    text: "Eine kurze Atem- oder Grounding-Übung ist oft sinnvoller als sofort weiterzureden.",
-    sectionId: "sofort-uebungen",
-  },
-  {
-    kicker: "3 · Erlauben",
-    title: "Sich nicht selbst verlieren",
-    text: "Sie dürfen Nein sagen, müde sein, Hilfe brauchen und trotzdem verbunden bleiben.",
-    sectionId: "erlaubnis",
-  },
-  {
-    kicker: "4 · Teilen",
-    title: "Nicht allein tragen",
-    text: "Beratung, Austausch und andere Zuständigkeiten schützen vor dem stillen Alleintragen.",
-    sectionId: "beratung-netzwerke",
-  },
-] as const;
 
 export default function Selbstfuersorge() {
   const handleAnchorClick = useCallback(
@@ -92,7 +67,11 @@ export default function Selbstfuersorge() {
       <TableOfContents />
 
       {/* ── 1 Hero ── EditorialSection mit SchaleIllustration als Aside */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -106,10 +85,10 @@ export default function Selbstfuersorge() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Selbstfürsorge
           </EyebrowLabel>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             Selbstfürsorge für <em>Angehörige</em> — was trägt, wenn die
             Belastung bleibt.
           </DisplayHeading>
@@ -117,6 +96,14 @@ export default function Selbstfuersorge() {
             Wer dauerhaft mit Krisen und Loyalitätskonflikten lebt, braucht
             eigene Regeneration – nicht als Luxus, sondern als Grundlage.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              { href: "#warnsignale", label: "Warnsignale" },
+              { href: "#sofort-uebungen", label: "Kurze Übungen" },
+              { href: "#erlaubnis", label: "Eigene Bedürfnisse ernst nehmen" },
+              { href: "#beratung-netzwerke", label: "Beratung" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -296,106 +283,22 @@ export default function Selbstfuersorge() {
       </EditorialSection>
 
       {/* ── 4 Intro: Was auf dieser Seite besonders trägt ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernfrage
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Was auf dieser Seite besonders trägt
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Diese Seite versteht Selbstfürsorge nicht als Extra für gute Tage,
-              sondern als Schutzfaktor in einem dauerhaft fordernden
-              Angehörigenalltag. Im Zentrum stehen Warnsignale, kurze
-              Regulierung und die Erlaubnis, Ihre eigenen Grenzen ernst zu
-              nehmen.
-            </p>
-            <p>
-              Es geht um Ihre Gesundheit und Ihr eigenes Leben. Entlastung kann
-              eine Pause, weniger Aufgaben oder Unterstützung von aussen
-              bedeuten. Sie müssen nicht erst erschöpft sein, um sie zu nutzen.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#warnsignale"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "warnsignale")}
-              >
-                Warnsignalen
-              </a>
-              ,{" "}
-              <a
-                href="#sofort-uebungen"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "sofort-uebungen")}
-              >
-                Sofort-Übungen
-              </a>
-              ,{" "}
-              <a
-                href="#erlaubnis"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "erlaubnis")}
-              >
-                Erlaubnis geben
-              </a>{" "}
-              oder{" "}
-              <a
-                href="#beratung-netzwerke"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "beratung-netzwerke")}
-              >
-                Beratung &amp; Netzwerke
-              </a>{" "}
-              springen.
-            </p>
-          </EditorialProse>
-          <div
-            className="mt-8 border-t pt-6"
-            style={{ borderColor: "var(--rule-color)" }}
-          >
-            <p className="editorial-micro-label">Lesepfad</p>
-            <h3 className="editorial-card-heading mt-3">
-              Vom Alarm zurück in Handlungsspielraum
-            </h3>
-            <div className="mt-5 grid gap-x-8 gap-y-6 sm:grid-cols-2">
-              {selbstfuersorgePfad.map(item => (
-                <a
-                  key={item.sectionId}
-                  href={`#${item.sectionId}`}
-                  className="group block border-t pt-4 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent-primary)]"
-                  style={{ borderColor: "var(--rule-color)" }}
-                  onClick={e => handleAnchorClick(e, item.sectionId)}
-                >
-                  <span className="editorial-micro-label">{item.kicker}</span>
-                  <span className="editorial-item-heading mt-2 block transition-colors group-hover:text-[color:var(--accent-primary)]">
-                    {item.title}
-                  </span>
-                  <span className="editorial-small-copy mt-2 block">
-                    {item.text}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
+          <ul className="topic-takeaways">
+            <li>
+              Ihre Bedürfnisse zählen unabhängig davon, wie viel Unterstützung
+              Sie leisten.
+            </li>
+            <li>
+              Übungen sind Angebote: Anpassen, Auslassen und Beenden sind
+              erlaubt.
+            </li>
+            <li>
+              Entlastung kann auch weniger Aufgaben, Abstand oder Beratung
+              bedeuten.
+            </li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -633,6 +536,7 @@ export default function Selbstfuersorge() {
                 .
               </p>
             </EditorialProse>
+            <AngehoerigenBeratung />
           </ContentSection>
         </EditorialSection.Body>
       </EditorialSection>

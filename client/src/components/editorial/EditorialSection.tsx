@@ -21,6 +21,7 @@ export type EditorialSectionDensity =
   | "hero";
 
 interface EditorialSectionProps {
+  className?: string;
   /** Hintergrund-Variant der Sektion */
   variant: EditorialSectionVariant;
   /** Vertikaler Makro-Rhythmus. Default `normal` ersetzt rohe py-Utilities. */
@@ -96,6 +97,7 @@ const DENSITY_Y: Record<
 export function EditorialSection({
   variant,
   density = "normal",
+  className = "",
   children,
 }: EditorialSectionProps) {
   const slots = collectSlots(children);
@@ -109,7 +111,7 @@ export function EditorialSection({
 
   return (
     <section
-      className="editorial-section px-[var(--container-pad)] py-[var(--section-y-mobile)] md:px-[var(--container-pad-md)] md:py-[var(--section-y-desktop)]"
+      className={`editorial-section px-[var(--container-pad)] py-[var(--section-y-mobile)] md:px-[var(--container-pad-md)] md:py-[var(--section-y-desktop)] ${className}`.trim()}
       style={style}
       data-variant={variant}
       data-density={density}

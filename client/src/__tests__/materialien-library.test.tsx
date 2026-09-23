@@ -15,9 +15,7 @@ describe("MaterialienLibrarySection", () => {
     expect(
       screen.getAllByText("Notfallkarte Zürich – Psychische Krise")
     ).toHaveLength(2);
-    expect(
-      screen.getByText("Genesung in Zahlen – Was die Forschung zeigt")
-    ).toBeInTheDocument();
+    expect(screen.getByText("Genesung in Zahlen")).toBeInTheDocument();
     const localizedDownloadLink = screen.getAllByRole("link", {
       name: /Der Leuchtturm – Orientierung für Angehörige herunterladen/i,
     })[0];
@@ -106,12 +104,12 @@ describe("MaterialienLibrarySection", () => {
     ).toHaveAttribute("href", "/materialien/text/dear");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Genesung in Zahlen – Was die Forschung zeigt/i,
+        name: /Textversion lesen: Genesung in Zahlen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/genesung-zahlen");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Wenn Mama oder Papa grosse Gefühle hat/i,
+        name: /Textversion lesen: Kinder verstehen und entlasten/i,
       })
     ).toHaveAttribute("href", "/materialien/text/kinder");
     expect(
@@ -122,9 +120,7 @@ describe("MaterialienLibrarySection", () => {
 
     fireEvent.click(screen.getByRole("tab", { name: /Genesung\s*·?\s*2/ }));
 
-    expect(
-      screen.getByText("Genesung in Zahlen – Was die Forschung zeigt")
-    ).toBeInTheDocument();
+    expect(screen.getByText("Genesung in Zahlen")).toBeInTheDocument();
     expect(
       screen.getByText("Der Garten – Unterstützen, ohne Wachstum zu erzwingen")
     ).toBeInTheDocument();

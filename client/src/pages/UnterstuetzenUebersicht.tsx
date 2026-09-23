@@ -1,4 +1,5 @@
-import { useCallback } from "react";
+import KinderEntlasten from "@/components/KinderEntlasten";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -19,22 +20,7 @@ import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions
 import { unterstuetzenItems } from "@/content/unterstuetzen";
 import { Link } from "wouter";
 
-/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
-function openSection(sectionId: string) {
-  window.dispatchEvent(
-    new CustomEvent("open-section", { detail: { sectionId } })
-  );
-}
-
 export default function UnterstuetzenUebersicht() {
-  const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-      e.preventDefault();
-      openSection(sectionId);
-    },
-    []
-  );
-
   const h4Style = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
@@ -64,7 +50,11 @@ export default function UnterstuetzenUebersicht() {
       <UnterstuetzenSubNav />
 
       {/* ── 1 Hero ── EditorialSection ohne Aside (Sub-Page-Identität) */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -78,10 +68,10 @@ export default function UnterstuetzenUebersicht() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Übersicht
           </EyebrowLabel>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             Wie Angehörige <em>hilfreich</em> bleiben können
           </DisplayHeading>
           <Lede className="max-w-[40em]">
@@ -90,6 +80,17 @@ export default function UnterstuetzenUebersicht() {
             Gleichzeitigkeit macht die Rolle so anspruchsvoll. Diese Seite hilft
             Ihnen, Unterstützung realistischer und tragfähiger zu denken.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              {
+                href: "#unterstuetzung-ist-begrenzt",
+                label: "Eigene Möglichkeiten",
+              },
+              { href: "#rolle", label: "Die eigene Rolle" },
+              { href: "#ambivalenz", label: "Ambivalenz" },
+              { href: "#familiendynamik", label: "Familiendynamik" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -102,74 +103,20 @@ export default function UnterstuetzenUebersicht() {
       </EditorialSection>
 
       {/* ── 2 Intro: Was auf dieser Seite besonders trägt ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernfrage
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Was auf dieser Seite besonders trägt
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Diese Seite klärt, was Angehörige tatsächlich beitragen können —
-              und wo Unterstützung an realistische Grenzen kommt. Im Zentrum
-              stehen die Rolle, die Ambivalenz beim Helfen, die Familiendynamik
-              und Hinweise, woran tragfähige Unterstützung erkennbar wird.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#unterstuetzung-ist-begrenzt"
-                className="editorial-link"
-                onClick={e =>
-                  handleAnchorClick(e, "unterstuetzung-ist-begrenzt")
-                }
-              >
-                Begrenztheit der Unterstützung
-              </a>
-              ,{" "}
-              <a
-                href="#rolle"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "rolle")}
-              >
-                Rolle klären
-              </a>
-              ,{" "}
-              <a
-                href="#ambivalenz"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "ambivalenz")}
-              >
-                Ambivalenz
-              </a>{" "}
-              oder{" "}
-              <a
-                href="#familiendynamik"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "familiendynamik")}
-              >
-                Familiendynamik
-              </a>{" "}
-              springen.
-            </p>
-          </EditorialProse>
+          <ul className="topic-takeaways">
+            <li>
+              Sie können Unterstützung anbieten, aber keine Genesung erzwingen.
+            </li>
+            <li>
+              Begrenzen Sie Ihre Aufgaben danach, was für Sie sicher und tragbar
+              ist.
+            </li>
+            <li>
+              Hilfe lässt sich auf mehrere Menschen und Fachstellen verteilen.
+            </li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -435,6 +382,7 @@ export default function UnterstuetzenUebersicht() {
                 Ausdruck verantwortlichen Handelns.
               </p>
             </EditorialProse>
+            <KinderEntlasten />
           </ContentSection>
         </EditorialSection.Body>
       </EditorialSection>
@@ -621,8 +569,8 @@ export default function UnterstuetzenUebersicht() {
                 </Link>
               </h3>
               <p className="mt-1" style={bodyStyle}>
-                Ampel-System, Deeskalation, Was sagen / Was vermeiden, Nach der
-                Krise.
+                Hilfe bei Gefahr oder Unsicherheit, Selbstschutz und sichere
+                Gesprächsführung, Nach der Krise.
               </p>
             </li>
             <li>

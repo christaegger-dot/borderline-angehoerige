@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -8,7 +8,6 @@ import {
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
-import GlossarBegriff from "@/components/GlossarBegriff";
 import { FadenIllustration } from "@/components/illustrations";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
 import Layout from "@/components/Layout";
@@ -23,46 +22,7 @@ import {
 } from "@/sections/KommunizierenPatternSections";
 import { Link } from "wouter";
 
-/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
-function openSection(sectionId: string) {
-  window.dispatchEvent(
-    new CustomEvent("open-section", { detail: { sectionId } })
-  );
-}
-
-const kommunikationsPfad = [
-  {
-    kicker: "1 · Tempo",
-    title: "Erst regulieren",
-    text: "Wenn beide im Alarm sind, zählt zunächst Tempo senken: weniger Worte, mehr Pause, klarer Ton.",
-    beispiel: "«Ich merke, dass es gerade sehr viel ist.»",
-    sectionId: "haltung",
-  },
-  {
-    kicker: "2 · Kontakt",
-    title: "Erleben anerkennen",
-    text: "Validierung nimmt das Gefühl ernst, ohne jedem Vorwurf oder jeder Deutung zuzustimmen.",
-    beispiel: "«Das fühlt sich für dich gerade bedrohlich an.»",
-    sectionId: "validierung",
-  },
-  {
-    kicker: "3 · Grenze",
-    title: "Bei Eskalation kürzer werden",
-    text: "Wenn der Ton kippt, hilft nicht mehr Erklärung, sondern eine kurze Grenze mit nächstem Schritt.",
-    beispiel: "«Ich höre zu, aber nicht in diesem Ton. Wir machen Pause.»",
-    sectionId: "eskalation",
-  },
-] as const;
-
 export default function Kommunizieren() {
-  const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-      e.preventDefault();
-      openSection(sectionId);
-    },
-    []
-  );
-
   return (
     <Layout>
       <SEO
@@ -78,7 +38,11 @@ export default function Kommunizieren() {
       <TableOfContents />
 
       {/* ── 1 Hero ── EditorialSection mit FadenIllustration als Aside */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -92,10 +56,10 @@ export default function Kommunizieren() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Kommunizieren
           </EyebrowLabel>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             Gespräche in <em>belasteten Beziehungen</em> — wie Verbindung
             möglich bleibt.
           </DisplayHeading>
@@ -103,6 +67,14 @@ export default function Kommunizieren() {
             Kommunikation löst keine Grunddynamik – sie kann aber Eskalation
             bremsen und Ihre eigene Position klärer machen.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              { href: "#haltung", label: "Haltung" },
+              { href: "#validierung", label: "Validierung" },
+              { href: "#eskalation", label: "Eskalation" },
+              { href: "#situationen", label: "Typische Situationen" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -121,117 +93,19 @@ export default function Kommunizieren() {
       </EditorialSection>
 
       {/* ── 2 Intro: Was auf dieser Seite besonders wichtig ist ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernhaltung
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Was auf dieser Seite besonders wichtig ist
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Diese Seite ordnet Kommunikation nicht als Sammlung kluger
-              Formulierungen, sondern als Beziehungsregulation unter Belastung
-              ein. Relevant sind vor allem Timing,{" "}
-              <GlossarBegriff term="Validierung">Validierung</GlossarBegriff>,
-              Begrenzung und die Frage, ob überhaupt schon Gesprächsraum da ist.
-            </p>
-            <p>
-              Drei Akzente ziehen sich durch die Seite: zuerst die Frage, ob
-              Haltung, Tempo und Präsenz schon stehen — gelungene Gespräche
-              beginnen meist nicht mit dem perfekten Satz, sondern mit innerer
-              Klarheit; dann Validierung als belastbarer Ausgangspunkt, also das
-              Erleben des Gegenübers ernst nehmen, ohne automatisch zuzustimmen;
-              und schliesslich Vereinfachung in Eskalationsmomenten — weniger
-              Inhalt, weniger Verteidigung, klarere Grenzen, damit das Gespräch
-              regulierbar bleibt.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#haltung"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "haltung")}
-              >
-                Haltung
-              </a>
-              ,{" "}
-              <a
-                href="#validierung"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "validierung")}
-              >
-                Validierung
-              </a>
-              ,{" "}
-              <a
-                href="#eskalation"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "eskalation")}
-              >
-                Eskalation
-              </a>{" "}
-              oder{" "}
-              <a
-                href="#situationen"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "situationen")}
-              >
-                Typische Situationen
-              </a>{" "}
-              springen.
-            </p>
-          </EditorialProse>
-          <div
-            className="mt-8 border-t pt-6"
-            style={{ borderColor: "var(--rule-color)" }}
-          >
-            <p className="editorial-micro-label">Gesprächsführung</p>
-            <h3 className="editorial-card-heading mt-3">
-              Drei Schritte, bevor der Inhalt wieder zählt
-            </h3>
-            <div className="mt-5 grid gap-x-8 gap-y-6 md:grid-cols-3">
-              {kommunikationsPfad.map(item => (
-                <a
-                  key={item.sectionId}
-                  href={`#${item.sectionId}`}
-                  className="group block border-t pt-4 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent-primary)]"
-                  style={{ borderColor: "var(--rule-color)" }}
-                  onClick={e => handleAnchorClick(e, item.sectionId)}
-                >
-                  <span className="editorial-micro-label">{item.kicker}</span>
-                  <span className="editorial-item-heading mt-2 block transition-colors group-hover:text-[color:var(--accent-primary)]">
-                    {item.title}
-                  </span>
-                  <span className="editorial-small-copy mt-2 block">
-                    {item.text}
-                  </span>
-                  <span
-                    className="editorial-small-copy mt-3 block border-l-2 pl-3 italic"
-                    style={{ borderColor: "var(--rule-color)" }}
-                  >
-                    {item.beispiel}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
+          <ul className="topic-takeaways">
+            <li>
+              Sie können Gefühle anerkennen, ohne einer Aussage oder Forderung
+              zuzustimmen.
+            </li>
+            <li>
+              Kurze Sätze und Pausen können helfen; eine bestimmte Reaktion
+              lässt sich nicht garantieren.
+            </li>
+            <li>Bei Bedrohung oder Gewalt geht Schutz vor Gesprächsführung.</li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -303,6 +177,17 @@ export default function Kommunizieren() {
                 <strong>Ein hilfreicher innerer Satz für Angehörige:</strong>{" "}
                 Ich muss nicht recht bekommen, um zuerst zu zeigen, dass ich den
                 Schmerz wahrnehme.
+              </p>
+            </EditorialProse>
+            <EditorialProse>
+              <p>
+                <strong>Jetzt beruhigen, später klären:</strong> In einem
+                angespannten Moment geht es zunächst um Sicherheit und eine
+                mögliche Pause. Das verpflichtet Sie nicht, Forderungen zu
+                erfüllen oder verletzendes Verhalten hinzunehmen. Absprachen und
+                Folgen können später besprochen werden, wenn es sicher und
+                ruhiger ist. Ob ein Muster bestehen bleibt, hängt von vielen
+                Faktoren ab; Deeskalation macht Sie dafür nicht verantwortlich.
               </p>
             </EditorialProse>
           </ContentSection>

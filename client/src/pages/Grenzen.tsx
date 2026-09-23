@@ -1,4 +1,6 @@
-import { useCallback } from "react";
+import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
+import KinderEntlasten from "@/components/KinderEntlasten";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -19,13 +21,6 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import { kontaktByIdStrict } from "@/data/kontakte";
 import GrenzenMaterialsSection from "@/sections/GrenzenMaterialsSection";
 import { Link } from "wouter";
-
-/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
-function openSection(sectionId: string) {
-  window.dispatchEvent(
-    new CustomEvent("open-section", { detail: { sectionId } })
-  );
-}
 
 const grenzsaetzeBeispiele = [
   {
@@ -53,7 +48,7 @@ const grenzsaetzeBeispiele = [
     richtig:
       "«Wenn du mich so ansprichst, beende ich dieses Gespräch. Wir können es später weiterführen, wenn beide ruhiger sind.»",
     hinweis:
-      "Sagen Sie es ruhig und gehen Sie dann tatsächlich. Die Grenze trägt nur, wenn Sie sie auch einhalten.",
+      "Wählen Sie einen Schritt, der für Sie sicher und umsetzbar ist. Wenn Sie das Gespräch nicht verlassen können, holen Sie Unterstützung; das ist kein persönliches Versagen.",
   },
   {
     thema: "Grenzen bei Rollenübernahme",
@@ -98,42 +93,7 @@ const gewaltSchritte = [
   },
 ] as const;
 
-const grenzenOrientierung = [
-  {
-    kicker: "1 · Sicherheit",
-    title: "Gefahr geht vor Beziehungsklärung",
-    text: "Bei Gewalt, Drohung oder akuter Suizidgefahr zuerst Schutz organisieren — nicht weiterdiskutieren.",
-    sectionId: "gewalt",
-  },
-  {
-    kicker: "2 · Warnsignal",
-    title: "Belastung ernst nehmen",
-    text: "Wenn Sie aus Angst ja sagen oder innerlich hart werden, ist eine Grenze oft schon überfällig.",
-    sectionId: "warnsignale",
-  },
-  {
-    kicker: "3 · Reihenfolge",
-    title: "Eine tragfähige Grenze zuerst",
-    text: "Nicht alles gleichzeitig klären. Beginnen Sie mit der Grenze, die Sie wirklich halten können.",
-    sectionId: "priorisierung",
-  },
-  {
-    kicker: "4 · Sprache",
-    title: "Handlung statt Vorwurf",
-    text: "Ein guter Grenzsatz sagt, was Sie tun werden — nicht, dass die andere Person falsch ist.",
-    sectionId: "grenzsaetze",
-  },
-] as const;
-
 export default function Grenzen() {
-  const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-      e.preventDefault();
-      openSection(sectionId);
-    },
-    []
-  );
-
   const h4Style = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
@@ -161,7 +121,11 @@ export default function Grenzen() {
       <TableOfContents />
 
       {/* ── 1 Hero ── EditorialSection mit InnenraeumeIllustration als Aside */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -175,19 +139,28 @@ export default function Grenzen() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Grenzen
           </EyebrowLabel>
-          <DisplayHeading level={1}>
-            Grenzen <em>setzen</em>, ohne die Beziehung aufzugeben.
+          <DisplayHeading level={1} size="topic">
+            Grenzen <em>setzen</em>, das eigene Leben schützen.
           </DisplayHeading>
           <Lede className="max-w-[30em]">
-            Grenzen sind kein Gegenpol zu Mitgefühl, sondern oft seine
-            Voraussetzung. Sie schützen Ihre Integrität, machen Beziehungen
-            berechenbarer und verhindern, dass Unterstützung in Selbstaufgabe
-            kippt. Gleichzeitig können Grenzen Spannungen auslösen. Genau
-            deshalb brauchen sie Klarheit, Wiederholbarkeit und Konsequenz.
+            Ihre Bedürfnisse und Ihre Sicherheit zählen. Grenzen können den
+            Alltag erleichtern, garantieren aber keine bestimmte Reaktion. Sie
+            dürfen abwägen, wie viel Kontakt für Sie tragbar ist – auch eine
+            Pause oder eine Trennung kann eine mögliche Entscheidung sein.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              { href: "#warnsignale", label: "Warnsignale" },
+              { href: "#grenzen-check", label: "Eigene Grenzen klären" },
+              { href: "#kontakt-gestalten", label: "Kontakt gestalten" },
+              { href: "#priorisierung", label: "Priorisierung" },
+              { href: "#grenzsaetze", label: "Sätze für Grenzen" },
+              { href: "#gewalt", label: "Schutz bei Gewalt" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -208,126 +181,22 @@ export default function Grenzen() {
       </EditorialSection>
 
       {/* ── 2 Intro: Was auf dieser Seite besonders wichtig ist ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernfrage
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Was auf dieser Seite besonders wichtig ist
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Diese Seite hilft Ihnen, Grenzen nicht als Härte, sondern als
-              tragfähigen Selbstschutz zu lesen. Entscheidend sind meist
-              Warnsignale, Priorisierung, konkrete Sprache und die Frage, ob Sie
-              eine Grenze nachher auch wirklich halten können.
-            </p>
-            <p>
-              Drei Akzente ziehen sich durch die Seite: zuerst der Selbstschutz
-              ernst nehmen — Grenzen sind nicht gegen Nähe gerichtet, sondern
-              schützen Ihre Integrität und machen Beziehungen berechenbarer;
-              dann wenige zuerst klären — tragfähige Grenzen entstehen meist aus
-              Priorisierung, nicht aus zehn gleichzeitigen Ansagen; und
-              schliesslich ruhig und konkret bleiben — hilfreiche Grenzen
-              bleiben auf Ihr Handeln bezogen, nicht moralisch aufgeladen und
-              nicht endlos verhandelbar.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#warnsignale"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "warnsignale")}
-              >
-                Warnsignalen
-              </a>
-              ,{" "}
-              <a
-                href="#grenzen-check"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "grenzen-check")}
-              >
-                Reflexionsfragen
-              </a>
-              ,{" "}
-              <a
-                href="#priorisierung"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "priorisierung")}
-              >
-                Priorisierung
-              </a>
-              ,{" "}
-              <a
-                href="#grenzsaetze"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "grenzsaetze")}
-              >
-                konkreten Grenzsätzen
-              </a>{" "}
-              oder zur Sicherheitssektion bei{" "}
-              <a
-                href="#gewalt"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "gewalt")}
-              >
-                körperlicher Übergriffigkeit
-              </a>{" "}
-              springen.
-            </p>
-            <p>
-              Grenzen regeln, was Sie nach aussen kommunizieren und einhalten.{" "}
-              <Link href="/selbstfuersorge" className="editorial-link">
-                Selbstfürsorge
-              </Link>{" "}
-              ergänzt diese Seite dort, wo es um Ihre eigene Stabilität und
-              Regeneration geht.
-            </p>
-          </EditorialProse>
-          <div
-            className="mt-8 border-t pt-6"
-            style={{ borderColor: "var(--rule-color)" }}
-          >
-            <p className="editorial-micro-label">Schnelle Orientierung</p>
-            <h3 className="editorial-card-heading mt-3">
-              Welche Grenze braucht es zuerst?
-            </h3>
-            <div className="mt-5 grid gap-x-8 gap-y-6 sm:grid-cols-2">
-              {grenzenOrientierung.map(item => (
-                <a
-                  key={item.sectionId}
-                  href={`#${item.sectionId}`}
-                  className="group block border-t pt-4 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--accent-primary)]"
-                  style={{ borderColor: "var(--rule-color)" }}
-                  onClick={e => handleAnchorClick(e, item.sectionId)}
-                >
-                  <span className="editorial-micro-label">{item.kicker}</span>
-                  <span className="editorial-item-heading mt-2 block transition-colors group-hover:text-[color:var(--accent-primary)]">
-                    {item.title}
-                  </span>
-                  <span className="editorial-small-copy mt-2 block">
-                    {item.text}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
+          <ul className="topic-takeaways">
+            <li>
+              Eine Grenze beschreibt, was Sie selbst tun oder nicht übernehmen
+              können.
+            </li>
+            <li>
+              Wenn die Umsetzung schwerfällt, dürfen Sie Unterstützung holen und
+              die Absprache anpassen.
+            </li>
+            <li>
+              Kontaktgestaltung und Selbstschutz richten sich auch nach Ihren
+              Bedürfnissen.
+            </li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -474,9 +343,10 @@ export default function Grenzen() {
           >
             <EditorialProse>
               <p>
-                Wer versucht, alle Grenzen auf einmal zu setzen, scheitert meist
-                an sich selbst. Sinnvoller ist es, nach Dringlichkeit und
-                emotionaler Last zu priorisieren.
+                Viele Veränderungen gleichzeitig können überfordern. Beginnen
+                Sie mit dem Schutz, den Sie gerade am dringendsten brauchen.
+                Wenn eine Grenze nicht umsetzbar ist, sind Anpassung und
+                Unterstützung sinnvoll – kein Selbstvorwurf.
               </p>
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
@@ -696,28 +566,61 @@ export default function Grenzen() {
             collapsible={false}
             title="Konsequenz ist oft der schwierigste Teil"
             id="konsequenz"
-            preview="Viele Grenzen scheitern nicht an der Formulierung, sondern daran, dass Angst, Schuld oder Hoffnung sie sofort wieder aufweichen."
+            preview="Angst, Abhängigkeit und Erschöpfung können Grenzen erschweren. Unterstützung und realistische Absprachen helfen beim nächsten Schritt."
           >
             <EditorialProse>
               <p>
-                Grenzen wirken selten, wenn sie nur angekündigt, aber nicht
-                umgesetzt werden. Genau hier geraten viele Angehörige in
-                Loyalitätskonflikte: Sie wollen klar sein, fürchten aber
-                Eskalation, Ablehnung oder Schuld.
+                Eine angekündigte Grenze umzusetzen kann schwierig sein, etwa
+                bei Angst, Abhängigkeit oder fehlender Unterstützung. Prüfen
+                Sie, was Sie selbst beeinflussen können und welche Hilfe Sie
+                brauchen. Sie sind nicht für die Reaktion des Gegenübers
+                verantwortlich.
               </p>
               <p>
                 <strong>Konsequenz heisst nicht Härte.</strong> Es heisst, dass
-                Ihr Handeln zu dem passt, was Sie angekündigt haben.
+                Sie sich an tragfähigen Absprachen orientieren. Sie dürfen eine
+                Grenze verändern, wenn sie nicht sicher oder nicht mehr
+                umsetzbar ist. Bei Gefahr hat Schutz Vorrang.
               </p>
             </EditorialProse>
+          </ContentSection>
+
+          <ContentSection
+            variant="editorial"
+            collapsible={false}
+            title="Wie viel Kontakt ist für Sie tragbar?"
+            id="kontakt-gestalten"
+          >
+            <EditorialProse>
+              <p>
+                Ihre Gesundheit und Ihr eigenes Leben zählen. Beziehungserhalt
+                ist kein verpflichtendes Ziel. Je nach Situation können weniger
+                Kontakt, eine vereinbarte Pause, getrenntes Wohnen oder eine
+                Trennung erwogen werden. Keine dieser Entscheidungen lässt sich
+                aus einer Diagnose allein ableiten.
+              </p>
+              <p>
+                Sie müssen nicht sofort eine endgültige Lösung finden. Fragen
+                Sie sich: Was brauche ich, um sicher zu sein? Was kann ich noch
+                tragen? Welche Unterstützung brauche ich für eine Veränderung?
+                Beratung kann helfen, Wünsche, Bindungen und praktische
+                Abhängigkeiten zu sortieren.
+              </p>
+              <p>
+                Bei Gewalt oder Bedrohung planen Sie Veränderungen möglichst mit
+                einer geeigneten Fachstelle. Sie müssen eine Grenze nicht
+                persönlich durchsetzen, wenn Sie sich dadurch gefährden.
+              </p>
+            </EditorialProse>
+            <AngehoerigenBeratung />
           </ContentSection>
 
           {/* ── ContentSection 8: fehler ── */}
           <ContentSection
             variant="editorial"
-            title="Häufige Fehler beim Grenzen setzen"
+            title="Wenn Grenzen schwer umzusetzen sind"
             id="fehler"
-            preview="Grenzen werden oft im Affekt, zu gross, zu unklar oder aus Kränkung formuliert. Dann tragen sie selten lange."
+            preview="Prüfen Sie, was die Umsetzung erschwert und was den nächsten Schritt erleichtern könnte."
           >
             <EditorialProse>
               <ul className="ml-6 list-disc space-y-2">
@@ -734,8 +637,8 @@ export default function Grenzen() {
                   Selbstschutz erklären
                 </li>
                 <li>
-                  <s>Grenzen nicht durchhalten</s> → nur ankündigen, was Sie
-                  tragen können
+                  Eine Grenze nicht umsetzen können → Belastung und Sicherheit
+                  prüfen, Unterstützung holen und die Absprache anpassen
                 </li>
                 <li>
                   <s>bei Schuld sofort zurückrudern</s> → Schuldgefühl nicht
@@ -894,8 +797,9 @@ export default function Grenzen() {
                 <p>
                   Viele Angehörige zögern, weil sie fürchten, die Person zu
                   «verraten» oder die Situation zu eskalieren. Professionelle
-                  Hilfe zu holen ist kein Verrat — es ist oft der einzige Weg,
-                  eine Beziehung langfristig überhaupt zu stabilisieren.
+                  Hilfe zu holen ist kein Verrat. Es kann Sicherheit und eigene
+                  Entscheidungsmöglichkeiten stärken – unabhängig davon, wie
+                  sich die Beziehung weiterentwickelt.
                 </p>
               </EditorialProse>
             </div>
@@ -904,6 +808,11 @@ export default function Grenzen() {
       </EditorialSection>
 
       {/* ── 8 Materialien ── kuratierte Auswahl statt kompletter Galerie */}
+      <EditorialSection variant="cream" density="compact">
+        <EditorialSection.Body>
+          <KinderEntlasten />
+        </EditorialSection.Body>
+      </EditorialSection>
       <GrenzenMaterialsSection />
 
       {/* ── 9 Weiter-Hinweis ── */}

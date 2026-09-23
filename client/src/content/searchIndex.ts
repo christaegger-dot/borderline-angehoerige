@@ -1239,7 +1239,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Wenn Mama oder Papa grosse Gefühle hat",
+    title: "Textversion: Kinder verstehen und entlasten",
     description:
       "Lesbare Web-Version zu altersgerechter Erklärung von Borderline, Entlastung von Kindern und Schutzfaktoren im Familiensystem",
     keywords: [

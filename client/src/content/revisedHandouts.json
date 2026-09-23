@@ -1,0 +1,125 @@
+{
+  "genesung-zahlen": {
+    "title": "Genesung in Zahlen",
+    "kicker": "Orientierung für Angehörige",
+    "summary": "Besserung ist möglich. Zwei Ergebnisse einer Zehnjahresstudie helfen, Hoffnung realistisch einzuordnen.",
+    "intro": [
+      "Untersucht wurden 290 Erwachsene mit Borderline, die zu Beginn stationär behandelt wurden. Die Zahlen beschreiben diese Studiengruppe und keine persönliche Prognose."
+    ],
+    "sections": [
+      {
+        "title": "Zwei unterschiedliche Ergebnisse",
+        "cards": [
+          {
+            "title": "93 %: mindestens zweijährige Remission",
+            "text": "erreichten während zehn Jahren mindestens einmal eine Remission über zwei Jahre. Die Diagnosekriterien waren in diesem Zeitraum nicht mehr erfüllt. Einzelne Beschwerden konnten weiterhin bestehen."
+          },
+          {
+            "title": "50 %: mindestens zweijährige Recovery",
+            "text": "erreichten im selben Zeitraum zusätzlich gute soziale und berufliche Funktionsfähigkeit nach der Studiendefinition. Recovery umfasste somit mehr als den Rückgang der Diagnosekriterien."
+          }
+        ]
+      },
+      {
+        "title": "Was die Zahlen nicht sagen",
+        "bullets": [
+          "Es sind jemals erreichte Zustände innerhalb von zehn Jahren, keine Quote dauerhaft beschwerdefreier Menschen am Studienende.",
+          "Zehn Jahre sind der Beobachtungszeitraum, keine Wartefrist. Veränderungen können früher eintreten; Verläufe bleiben unterschiedlich.",
+          "Eine zu Beginn stationär behandelte Gruppe bildet nicht alle Menschen mit Borderline ab."
+        ]
+      },
+      {
+        "title": "Was das für Angehörige bedeutet",
+        "calloutTitle": "Hoffnung ohne Leistungsdruck",
+        "calloutText": "Entwicklung darf am persönlichen Leben und an eigenen Zielen gemessen werden. Arbeit oder Partnerschaft sind kein Massstab für den Wert eines Menschen. Sie können begleiten und zugleich Ihre eigenen Grenzen achten."
+      }
+    ],
+    "sourceLine": "Quelle: Zanarini MC et al. (2010). Time to attainment of recovery from borderline personality disorder and stability of recovery: a 10-year prospective follow-up study. American Journal of Psychiatry 167:663-667. https://pubmed.ncbi.nlm.nih.gov/20395399/",
+    "standLine": "Redaktionell aktualisiert: 23.09.2026. Erneute fachliche Prüfung ausstehend."
+  },
+  "stopp-technik": {
+    "title": "STOPP: einen Moment innehalten",
+    "kicker": "Praxisblatt für Angehörige",
+    "summary": "Fünf Schritte können helfen, eine nächste Handlung bewusster zu wählen. Sie müssen dabei nicht sofort ruhig werden.",
+    "intro": [
+      "Nutzen Sie die Übung nur, wenn die Situation sicher ist. Bei Bedrohung, Gewalt oder akuter Selbstgefährdung geht Hilfeholen vor dem Weiterüben."
+    ],
+    "sections": [
+      {
+        "title": "Die fünf Schritte",
+        "cards": [
+          {
+            "title": "S - Stopp",
+            "text": "Unterbrechen Sie kurz, was Sie gerade tun, wenn das sicher möglich ist. Ein Satz kann helfen: «Ich brauche einen Moment.»"
+          },
+          {
+            "title": "T - Tief atmen, ohne Anstrengung",
+            "text": "Nehmen Sie einen angenehmen Atemzug wahr. Kein Atemanhalten, kein besonders tiefes Einatmen. Wenn Atemfokus unangenehm ist, schauen Sie sich stattdessen im Raum um."
+          },
+          {
+            "title": "O - Orientieren",
+            "text": "Was bemerke ich: Gedanken, Gefühle, Körperempfindungen? Was habe ich beobachtet, und was vermute ich nur?"
+          },
+          {
+            "title": "P - Perspektive",
+            "text": "Welche andere Sicht ist möglich? Was würde ich einer vertrauten Person in dieser Situation raten?"
+          },
+          {
+            "title": "P - Plan",
+            "text": "Wählen Sie einen machbaren nächsten Schritt: zum Beispiel eine Pause, eine kurze Antwort oder Unterstützung holen."
+          }
+        ]
+      },
+      {
+        "title": "Im eigenen Tempo",
+        "calloutTitle": "Eine Möglichkeit, keine Pflicht",
+        "calloutText": "Es gibt keine feste Sekundenzahl und kein richtiges Ergebnis. Sie dürfen Schritte auslassen oder die Übung beenden. Bei Unwohlsein kehren Sie zu einer für Sie angenehmen Orientierung zurück."
+      }
+    ],
+    "sourceLine": "Grundlage: Carol Vivyan, STOPP (Getselfhelp). https://www.getselfhelp.co.uk/stopp/ - deutschsprachige, angepasste Fassung. Atemhinweise: NHS, Breathing exercises for stress, nhs.uk. Quellenabgleich: 23.09.2026.",
+    "standLine": "Redaktionell aktualisiert: 23.09.2026. Erneute fachliche Prüfung ausstehend."
+  },
+  "kinder": {
+    "title": "Kinder verstehen und entlasten",
+    "kicker": "Wenn ein Elternteil psychisch erkrankt ist",
+    "summary": "Kinder brauchen verständliche Worte, verlässliche Erwachsene und Raum für ihr eigenes Leben.",
+    "intro": [
+      "Erklären Sie die Erkrankung ehrlich und passend zum Entwicklungsstand. Fragen Sie nach, was das Kind verstanden hat. Seine Fragen und Bedürfnisse geben das Tempo vor."
+    ],
+    "sections": [
+      {
+        "title": "Worte, die entlasten",
+        "cards": [
+          {
+            "title": "Für jüngere Kinder",
+            "text": "«Mama/Papa ist psychisch krank. Deshalb fällt manches gerade schwer. Das ist nicht deine Schuld. Erwachsene kümmern sich um Hilfe und um dich.» Ergänzen Sie, was sich im Alltag konkret ändert."
+          },
+          {
+            "title": "Für ältere Kinder und Jugendliche",
+            "text": "Benennen und erklären Sie die Erkrankung, lassen Sie Fragen zu und sagen Sie auch, was Sie noch nicht wissen. Das Kind muss weder die Behandlung erklären noch die Familie zusammenhalten."
+          }
+        ]
+      },
+      {
+        "title": "Betreuung gemeinsam vorbereiten",
+        "bullets": [
+          "Wer übernimmt die Betreuung, wenn der Elternteil ausfällt? Name und Erreichbarkeit gemeinsam festhalten.",
+          "Wohin kann das Kind gehen, und wer organisiert Abholen, Essen, Schule und Übernachtung?",
+          "Welche zweite erwachsene Person ist erreichbar, wenn die erste ausfällt?",
+          "Den Plan mit den beteiligten Erwachsenen vereinbaren und dem Kind erklären. Regelmässig prüfen, ob die Absprachen noch passen."
+        ]
+      },
+      {
+        "title": "Was Kinder nicht übernehmen müssen",
+        "calloutTitle": "Erwachsene tragen die Verantwortung",
+        "calloutText": "Kinder müssen weder Streit schlichten noch Medikamente kontrollieren oder einen Elternteil bewachen. Sie dürfen spielen, Freunde treffen und mit einer vertrauten Person sprechen. Auch Geschwister eines erkrankten Kindes brauchen Aufmerksamkeit und Freiräume."
+      },
+      {
+        "title": "Wenn die Belastung zu gross wird",
+        "intro": "Bei Angst, Gewalt oder fehlender Betreuung organisieren Erwachsene Hilfe. Fachstelle, Kinderarztpraxis oder eine geeignete Familienberatung können beim Planen unterstützen. Bei akuter Gefahr gilt der direkte Weg zur Soforthilfe."
+      }
+    ],
+    "sourceLine": "Quellen: Pro Juventute, Wenn ein Elternteil psychisch krank ist: projuventute.ch/de/eltern/familie-gesellschaft/psychisch-kranke-eltern. PUK Zürich, Informationen für Angehörige / Elternberatung: pukzh.ch. Quellenabgleich: 23.09.2026.",
+    "standLine": "Redaktionell aktualisiert: 23.09.2026. Erneute fachliche Prüfung ausstehend."
+  }
+}

@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -21,13 +21,6 @@ import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 import { quellenLinks } from "@/content/quellenLinks";
 import { Link } from "wouter";
-
-/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
-function openSection(sectionId: string) {
-  window.dispatchEvent(
-    new CustomEvent("open-section", { detail: { sectionId } })
-  );
-}
 
 const fortschrittParadoxItems = [
   "Rückschritte einordnen, statt sofort zu katastrophisieren",
@@ -64,14 +57,6 @@ const foerderfaktoren = [
 ] as const;
 
 export default function Genesung() {
-  const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-      e.preventDefault();
-      openSection(sectionId);
-    },
-    []
-  );
-
   const h4Style = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
@@ -115,7 +100,11 @@ export default function Genesung() {
       <TableOfContents />
 
       {/* ── 1 Hero ── EditorialSection mit AufgangIllustration als Aside */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -129,10 +118,10 @@ export default function Genesung() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Genesung
           </EyebrowLabel>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             Genesung ist <em>möglich</em> — und sieht selten geradlinig aus.
           </DisplayHeading>
           <Lede className="max-w-[30em]">
@@ -140,6 +129,14 @@ export default function Genesung() {
             Entwicklung selten glatt oder vorhersehbar. Für Angehörige ist
             beides wichtig: Zuversicht und eine realistische Sicht auf Zeit.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              { href: "#remission", label: "Remission und Genesung" },
+              { href: "#fortschritt-paradox", label: "Fortschritt-Paradox" },
+              { href: "#hoffnung", label: "Realistische Hoffnung" },
+              { href: "#beitragen", label: "Was Angehörige beitragen können" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -159,81 +156,21 @@ export default function Genesung() {
       </EditorialSection>
 
       {/* ── 2 Intro: Was auf dieser Seite besonders wichtig ist ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kerngedanke
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Was auf dieser Seite besonders wichtig ist
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Diese Seite übersetzt Prognose und Langzeitverlauf in eine
-              alltagsnahe Angehörigenperspektive. Entscheidend sind weniger
-              glatte Erfolgsbilder als ein realistischer Blick auf Zeit,
-              Rückschritte, Hoffnung und den begrenzten eigenen Einfluss.
-            </p>
-            <p>
-              Drei Akzente ziehen sich durch die Seite: zuerst Hoffnung
-              realistisch halten — Genesung ist oft möglich, aber selten glatt,
-              schnell oder vollständig planbar; dann Rückschritte einordnen —
-              ein Einbruch oder Stillstand entwertet bisherigen Fortschritt
-              nicht automatisch; und schliesslich die eigene Rolle begrenzt
-              sehen — Angehörige können Entwicklung mittragen, aber nicht
-              herstellen oder beschleunigen.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#remission"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "remission")}
-              >
-                Remission und Genesung
-              </a>
-              ,{" "}
-              <a
-                href="#fortschritt-paradox"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "fortschritt-paradox")}
-              >
-                Fortschritt-Paradox
-              </a>
-              ,{" "}
-              <a
-                href="#hoffnung"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "hoffnung")}
-              >
-                realistischer Hoffnung
-              </a>{" "}
-              oder{" "}
-              <a
-                href="#beitragen"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "beitragen")}
-              >
-                der Angehörigenrolle
-              </a>{" "}
-              springen.
-            </p>
-          </EditorialProse>
+          <ul className="topic-takeaways">
+            <li>
+              Besserung ist möglich; Verlauf und Tempo unterscheiden sich von
+              Mensch zu Mensch.
+            </li>
+            <li>
+              Studienzahlen beschreiben Gruppen und keine persönliche Prognose.
+            </li>
+            <li>
+              Angehörige können begleiten. Den Verlauf müssen sie nicht
+              herstellen oder verantworten.
+            </li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 

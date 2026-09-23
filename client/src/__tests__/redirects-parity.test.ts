@@ -66,4 +66,17 @@ describe("redirects parity (single source: shared/redirects.ts)", () => {
   it("STATIC_ROUTE_REDIRECTS === APP_REDIRECTS", () => {
     expect(STATIC_ROUTE_REDIRECTS).toBe(APP_REDIRECTS);
   });
+  it("redirects superseded handout links to existing current assets", () => {
+    for (const id of ["genesung-zahlen", "stopp-technik", "kinder"]) {
+      for (const ext of ["pdf", "webp"]) {
+        const oldPath = `/infografiken/manus-${id}-v1.${ext}`;
+        const target = `/infografiken/manus-${id}-v3.${ext}`;
+        expect(redirectsMap.get(oldPath)).toBe(target);
+        expect(
+          fs.existsSync(path.join(repoRoot, "client/public", target))
+        ).toBe(true);
+        expect(redirectsFile).toContain(`${oldPath} ${target} 301!`);
+      }
+    }
+  });
 });

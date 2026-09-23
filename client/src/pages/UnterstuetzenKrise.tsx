@@ -1,4 +1,5 @@
-import { useCallback } from "react";
+import KinderEntlasten from "@/components/KinderEntlasten";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -8,7 +9,6 @@ import {
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
-import GlossarBegriff from "@/components/GlossarBegriff";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -29,13 +29,6 @@ import { Link } from "wouter";
 
 const rot144 = kontaktByIdStrict("ROT_144");
 const gruen143 = kontaktByIdStrict("GRUEN_143");
-
-/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
-function openSection(sectionId: string) {
-  window.dispatchEvent(
-    new CustomEvent("open-section", { detail: { sectionId } })
-  );
-}
 
 const deeskalationsSchritte = [
   {
@@ -222,14 +215,6 @@ const frueherkennung = [
 ] as const;
 
 export default function UnterstuetzenKrise() {
-  const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-      e.preventDefault();
-      openSection(sectionId);
-    },
-    []
-  );
-
   const h4Style = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
@@ -298,7 +283,11 @@ export default function UnterstuetzenKrise() {
       </section>
 
       {/* ── 1 Hero ── EditorialSection ohne Aside (Sub-Page-Identität) */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -312,10 +301,10 @@ export default function UnterstuetzenKrise() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             In der Krise
           </EyebrowLabel>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             In der Krise <em>unterstützen</em>
           </DisplayHeading>
           <Lede className="max-w-[40em]">
@@ -324,6 +313,14 @@ export default function UnterstuetzenKrise() {
             deeskalierend reagieren und Sicherheit im Blick behalten können,
             ohne Ihre eigene Grenze aus dem Blick zu verlieren.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              { href: "#belastung-handlungsraeume", label: "Belastung ordnen" },
+              { href: "#deeskalation", label: "Deeskalation" },
+              { href: "#krise-formulierungen", label: "Formulierungen" },
+              { href: "#nach-der-krise", label: "Nach der Krise" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -372,94 +369,22 @@ export default function UnterstuetzenKrise() {
       </EditorialSection>
 
       {/* ── 3 Intro: Was diese Seite in Krisen ordnet ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernfrage
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Was diese Seite in Krisen ordnet
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Diese Seite hilft Ihnen, Krisen nicht nur als Chaos, sondern als
-              Folge unterschiedlicher Eskalationsstufen zu lesen. Im Zentrum
-              stehen Einordnung, Deeskalation, sichere Sprache und die Frage,
-              was nach der akuten Spitze für beide Seiten tragfähig weiterhilft.
-            </p>
-            <p>
-              Drei Akzente ziehen sich durch die Seite: zuerst die eigene Lage
-              ordnen — nicht jede belastende Situation ist gleich ein Notfall,
-              und die drei Handlungsräume zeigen, wie weit die eigenen Mittel
-              gerade tragen; dann ruhig und sicher handeln — in akuten Momenten
-              zählen Sicherheit, kurze Sätze,{" "}
-              <GlossarBegriff term="Validierung">Validierung</GlossarBegriff>{" "}
-              und ein begrenztes Vorgehen mehr als Diskussionen; und
-              schliesslich auch das Danach mitdenken — nach der Eskalation
-              braucht es oft Scham, Erschöpfung und Aufarbeitung mit derselben
-              Ruhe wie in der Krise selbst.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#belastung-handlungsraeume"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "belastung-handlungsraeume")}
-              >
-                Belastung ordnen
-              </a>
-              ,{" "}
-              <a
-                href="#deeskalation"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "deeskalation")}
-              >
-                Deeskalation
-              </a>
-              ,{" "}
-              <a
-                href="#krise-formulierungen"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "krise-formulierungen")}
-              >
-                Formulierungen
-              </a>{" "}
-              oder{" "}
-              <a
-                href="#nach-der-krise"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "nach-der-krise")}
-              >
-                Nach der Krise
-              </a>{" "}
-              springen.
-            </p>
-            <p>
-              <strong>Unterschied Krise vs. Notfall:</strong> Diese Seite ist
-              für emotionale Eskalationen, starke Anspannung und Rückzug. Bei
-              akuter Gefahr, Suizidgefahr oder Selbstverletzung gehen Sie direkt
-              zu{" "}
-              <AppLink href="/soforthilfe" className="editorial-link">
-                Soforthilfe &amp; Notfallnummern
-              </AppLink>
-              .
-            </p>
-          </EditorialProse>
+          <ul className="topic-takeaways">
+            <li>
+              Bei unmittelbarer Gefahr holen Sie sofort Hilfe und schützen sich
+              selbst.
+            </li>
+            <li>
+              Bei Unsicherheit ist professionelle Einschätzung sinnvoll; ein
+              unbekannter Plan bedeutet keine Sicherheit.
+            </li>
+            <li>
+              Nach der Krise können Absprachen und Unterstützung in Ruhe geklärt
+              werden.
+            </li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -931,6 +856,7 @@ export default function UnterstuetzenKrise() {
                 Person, für Sie, oder für beide gemeinsam.
               </p>
             </aside>
+            <KinderEntlasten />
           </ContentSection>
 
           {/* Wegweiser-Übergang als typografisch markierter Block am Ende von Group C body */}

@@ -1,3 +1,4 @@
+import WebsiteEinordnung from "@/components/WebsiteEinordnung";
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -311,16 +312,7 @@ export default function UeberUns() {
         {/* ── Einordnung dieser Website ── */}
         <EditorialSectionBlock label="Transparenz" title="Einordnung">
           <EditorialProse>
-            <p>
-              Erstellt von Ch. Egger innerhalb der Fachstelle Angehörigenarbeit.
-              Die inhaltliche Verantwortung liegt bei der Fachstelle
-              Angehörigenarbeit.
-            </p>
-            <p>
-              Eigenständig gestaltetes Informationsangebot der Fachstelle
-              Angehörigenarbeit. Kein offizieller Kommunikationskanal der PUK
-              Zürich.
-            </p>
+            <WebsiteEinordnung />
           </EditorialProse>
         </EditorialSectionBlock>
 

@@ -60,33 +60,42 @@ export default function Home() {
         lastReviewed="2026-04-30"
       />
 
-      <EditorialSection variant="cream" density="hero">
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
           <HomeMarginLabel>
             Fachstelle Angehörigenarbeit · PUK Zürich
           </HomeMarginLabel>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             Wenn jemand, den Sie lieben, <em>Borderline</em> hat
           </DisplayHeading>
-          <Lede size="hero">
+          <Lede>
             Eine Orientierung zur Borderline-Persönlichkeitsstörung für
             Partnerinnen, Eltern, Geschwister und erwachsene Kinder, die
             verstehen, unterstützen und sich selbst schützen möchten.
           </Lede>
-          <p
-            className="mt-8 max-w-[34rem]"
-            style={{
-              color: "var(--fg-secondary)",
-              fontSize: "var(--text-md)",
-              lineHeight: "var(--lh-relaxed)",
-            }}
+          <nav
+            aria-label="Welcher Einstieg passt?"
+            className="mt-5 space-y-3 text-base leading-relaxed"
           >
-            Wenn Sie seit Monaten zwischen Sorge, Schuld und Erschöpfung
-            schwanken: Sie sind hier richtig. Sie müssen nicht zuerst alles
-            sortieren, um anfangen zu dürfen.
-          </p>
+            <p>
+              <AppLink href="/soforthilfe">Akute Hilfe</AppLink> – Notruf und
+              Krisenberatung.
+            </p>
+            <p>
+              <AppLink href="/wegweiser">Eine konkrete Situation</AppLink> – zum
+              nächsten hilfreichen Schritt.
+            </p>
+            <p>
+              <AppLink href="/verstehen">Vertiefendes Wissen</AppLink> –
+              Borderline und die eigene Rolle verstehen.
+            </p>
+            <p>
+              <AppLink href="/selbsttest">Passende Inhalte finden</AppLink> –
+              wenn Sie noch keinen Einstieg wissen.
+            </p>
+          </nav>
         </EditorialSection.Body>
         <EditorialSection.Aside>
           <CrisisQuickAccess />

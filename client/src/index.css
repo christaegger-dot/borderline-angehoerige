@@ -2070,3 +2070,21 @@
     padding-top: 0;
   }
 }
+/* Compact topic entries: useful links precede decorative illustrations. */
+.topic-intro .editorial-section-grid__aside > * {
+  max-height: 240px;
+}
+.topic-takeaways {
+  display: grid;
+  gap: 0.6rem;
+  padding-left: 1.2rem;
+  list-style: disc;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--fg-secondary);
+}
+@media (max-width: 767px) {
+  .topic-intro .editorial-section-grid__aside {
+    display: none;
+  }
+}

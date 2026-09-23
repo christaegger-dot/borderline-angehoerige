@@ -14,7 +14,7 @@ interface DisplayHeadingProps {
    *   auf Mobile, damit der erste Screen schneller Orientierung zeigt.
    * - `section` (Default für level=2): `--text-2xl`, mit `marginBottom: var(--space-5)`.
    */
-  size?: "hero" | "page" | "section" | "utility";
+  size?: "hero" | "page" | "section" | "utility" | "topic";
   /**
    * Bottom-Spacing-Override. `default` rendert den size-typischen
    * marginBottom. `compact` setzt marginBottom auf 0 — für Headings
@@ -96,8 +96,10 @@ export function DisplayHeading({
   );
 }
 
-const SIZE_FONT_SIZE: Record<"hero" | "section" | "utility", string> = {
-  hero: "var(--text-hero)",
-  utility: "clamp(2rem, 4vw, var(--text-4xl))",
-  section: "var(--text-2xl)",
-};
+const SIZE_FONT_SIZE: Record<"hero" | "section" | "utility" | "topic", string> =
+  {
+    topic: "clamp(2rem, 4vw, 3rem)",
+    hero: "var(--text-hero)",
+    utility: "clamp(2rem, 4vw, var(--text-4xl))",
+    section: "var(--text-2xl)",
+  };

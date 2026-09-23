@@ -37,8 +37,8 @@ describe("handout release content guardrails", () => {
       expect(version.sourceLine.trim(), `${version.id} sourceLine`).not.toBe(
         ""
       );
-      expect(version.standLine.trim(), `${version.id} standLine`).toContain(
-        "Stand:"
+      expect(version.standLine.trim(), `${version.id} standLine`).toMatch(
+        /Stand:|Redaktionell aktualisiert:/
       );
     }
   });
@@ -65,7 +65,9 @@ describe("handout release content guardrails", () => {
 
   it("keeps recovery numbers contextual instead of presenting isolated percentages", () => {
     expect(textFor("genesung-zahlen")).not.toContain('"77%"');
-    expect(textFor("genesung-zahlen")).toContain("keine individuelle Prognose");
+    expect(textFor("genesung-zahlen")).toMatch(
+      /keine (individuelle|persönliche) Prognose/
+    );
     expect(textFor("fortschritt-paradox")).not.toContain(
       "Jeder Rückschlag ist kürzer"
     );

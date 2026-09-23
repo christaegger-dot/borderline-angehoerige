@@ -1,3 +1,4 @@
+import revisedHandouts from "@/content/revisedHandouts.json";
 import { useEffect, useRef, useState } from "react";
 import {
   CheckCircle2,
@@ -281,28 +282,16 @@ export function SelbstfuersorgeExercisesSection({
             geraten:
           </p>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            {[
-              { letter: "S", text: "Stopp – Innehalten" },
-              { letter: "T", text: "Tief atmen – ruhig und ohne Anstrengung" },
-              { letter: "O", text: "Orientieren – Was passiert gerade?" },
-              {
-                letter: "P",
-                text: "Perspektive – Gibt es eine andere Sichtweise?",
-              },
-              {
-                letter: "P",
-                text: "Plan – Einen hilfreichen nächsten Schritt wählen",
-              },
-            ].map(item => (
+            {revisedHandouts["stopp-technik"].sections[0].cards?.map(item => (
               <div
-                key={`${item.letter}-${item.text}`}
-                className="flex items-start gap-3 border-t pt-3"
+                key={item.title}
+                className="border-t pt-3"
                 style={{ borderColor: "var(--rule-color)" }}
               >
-                <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-border/60 text-xs font-semibold text-foreground">
-                  {item.letter}
-                </span>
-                <span style={bodyStyle}>{item.text}</span>
+                <h4 className="font-semibold">{item.title}</h4>
+                <p className="mt-2" style={bodyStyle}>
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>
@@ -311,6 +300,11 @@ export function SelbstfuersorgeExercisesSection({
           title="Quellen und Einordnung der Übungen"
           definition="Die Zählzeiten sind eine anpassbare Orientierung. Grounding wird hier in der Variante Sehen – Hören – Spüren angeleitet; andere Reihenfolgen sind ebenfalls gebräuchlich."
           sources={[
+            {
+              label: "Carol Vivyan: STOPP (angepasste deutsche Fassung)",
+              href: "https://www.getselfhelp.co.uk/stopp/",
+              type: "versorgung",
+            },
             {
               label: "NHS: Ruhiges Atmen ohne Anstrengung",
               href: "https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/breathing-exercises-for-stress/",

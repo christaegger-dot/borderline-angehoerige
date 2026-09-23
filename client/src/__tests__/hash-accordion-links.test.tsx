@@ -1,4 +1,11 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from "@testing-library/react";
 import type { ElementType, HTMLAttributes, ReactNode } from "react";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { Router } from "wouter";
@@ -167,6 +174,30 @@ describe("hash-linked content sections", () => {
       screen.getByText(/Körperliche Gewalt ist kein Beziehungsproblem/i)
     ).toBeInTheDocument();
     await waitFor(() => expect(window.scrollTo).toHaveBeenCalled());
+  });
+
+  it("opens a collapsed section from the new quick links", async () => {
+    const { default: Page } = await import("@/pages/Grenzen");
+    renderWithRoute(<Page />, "/grenzen");
+    const nav = screen.getByRole("navigation", {
+      name: "Direkt zur Hilfe auf dieser Seite",
+    });
+    const toggle = screen.getByRole("button", {
+      name: /Abschnitt Wo stehe ich beim Grenzen setzen/,
+    });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+    fireEvent.click(
+      within(nav).getByRole("link", { name: "Eigene Grenzen klären" })
+    );
+    await waitFor(() =>
+      expect(toggle).toHaveAttribute("aria-expanded", "true")
+    );
+    for (const link of within(nav).getAllByRole("link")) {
+      expect(link.textContent).not.toMatch(/handleAnchorClick|[{}]/);
+      expect(
+        document.getElementById(link.getAttribute("href")!.slice(1))
+      ).not.toBeNull();
+    }
   });
 
   it("does not crash when the URL hash contains malformed encoding", async () => {

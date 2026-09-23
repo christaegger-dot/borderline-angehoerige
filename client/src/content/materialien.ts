@@ -288,30 +288,30 @@ export const materials: MaterialItem[] = [
   },
   {
     id: "genesung-zahlen",
-    title: "Genesung in Zahlen – Was die Forschung zeigt",
+    title: "Genesung in Zahlen",
     description:
       "Langfristige Hoffnung mit realistischen Daten: Besserung ist möglich, aber selten linear.",
     category: "genesung",
     kind: "Infografik",
-    url: "/infografiken/manus-genesung-zahlen-v1.webp",
+    url: "/infografiken/manus-genesung-zahlen-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp",
-    downloadUrl: "/infografiken/manus-genesung-zahlen-v1.pdf",
+      "/infografiken/extras/thumbnails/manus-genesung-zahlen-v3.webp",
+    downloadUrl: "/infografiken/manus-genesung-zahlen-v3.pdf",
     priority: "secondary",
-    verifiedAt: "Mai 2026",
+    verifiedAt: "23.09.2026 (Text und Druckfassung)",
   },
   {
     id: "kinder",
-    title: "Wenn Mama oder Papa grosse Gefühle hat",
+    title: "Kinder verstehen und entlasten",
     description:
       "Altersgerechte Erklärung für Kinder und Hinweise zum Schutz von Kindern im belasteten Familiensystem.",
     category: "verstehen",
     kind: "Infografik",
-    url: "/infografiken/manus-kinder-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-kinder-v1.webp",
-    downloadUrl: "/infografiken/manus-kinder-v1.pdf",
+    url: "/infografiken/manus-kinder-v3.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-kinder-v3.webp",
+    downloadUrl: "/infografiken/manus-kinder-v3.pdf",
     priority: "secondary",
-    verifiedAt: "Mai 2026",
+    verifiedAt: "23.09.2026 (Text und Druckfassung)",
   },
 ];
 
@@ -376,7 +376,10 @@ for (const item of recommendedMaterials) {
     materials.push({
       ...item,
       topicRecommendation: true,
-      verifiedAt: "Februar 2026 (laut Textfassung)",
+      verifiedAt:
+        item.id === "stopp-technik"
+          ? "23.09.2026 (Text und Druckfassung)"
+          : "Februar 2026 (laut Textfassung)",
     });
   }
 }

@@ -1,3 +1,4 @@
+import WebsiteEinordnung from "@/components/WebsiteEinordnung";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -49,22 +50,7 @@ export default function Impressum() {
           preview="Christa Egger, Fachstelle Angehörigenarbeit der PUK Zürich."
         >
           <EditorialProse>
-            <p>
-              Verantwortlich für die Inhalte dieser Website ist{" "}
-              <strong>Christa Egger</strong>, Angehörigenberaterin der
-              Fachstelle Angehörigenarbeit.
-            </p>
-            <p>
-              Erstellt von Ch. Egger innerhalb der Fachstelle Angehörigenarbeit
-              der PUK Zürich. Die inhaltliche Verantwortung liegt bei der
-              Fachstelle Angehörigenarbeit. Das Informationsdesign ist
-              eigenständig und folgt nicht der PUK-CI.
-            </p>
-            <p>
-              Die Website ist ein unabhängiges Informationsangebot der
-              Fachstelle Angehörigenarbeit und kein offizieller
-              Kommunikationskanal der PUK Zürich.
-            </p>
+            <WebsiteEinordnung />
           </EditorialProse>
 
           <dl className="secondary-page-definition-list">

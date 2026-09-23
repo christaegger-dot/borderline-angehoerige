@@ -1,4 +1,5 @@
-import { useCallback } from "react";
+import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -32,13 +33,6 @@ const ipw = kontaktByIdStrict("INFO_IPW");
 const emailHard = emailByIdStrict("EMAIL_HARD");
 const clieniaUrl = urlByIdStrict("URL_CLIENIA");
 const dbtDachUrl = urlByIdStrict("URL_DBT_DACH");
-
-/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
-function openSection(sectionId: string) {
-  window.dispatchEvent(
-    new CustomEvent("open-section", { detail: { sectionId } })
-  );
-}
 
 const zusammenarbeitSzenarien = [
   {
@@ -135,14 +129,6 @@ Mit freundlichen Grüssen,
 [Optional: Telefonnummer für Rückruf]`;
 
 export default function UnterstuetzenTherapie() {
-  const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-      e.preventDefault();
-      openSection(sectionId);
-    },
-    []
-  );
-
   const h4Style = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
@@ -179,7 +165,11 @@ export default function UnterstuetzenTherapie() {
       <UnterstuetzenSubNav />
 
       {/* ── 1 Hero ── EditorialSection ohne Aside (Sub-Page-Identität) */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -193,10 +183,10 @@ export default function UnterstuetzenTherapie() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Therapie
           </EyebrowLabel>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             Therapie <em>begleiten</em>
           </DisplayHeading>
           <Lede className="max-w-[40em]">
@@ -205,6 +195,14 @@ export default function UnterstuetzenTherapie() {
             nicht für den anderen übernehmen. Genau diese Grenze macht
             Therapiebegleitung oft so anspruchsvoll.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              { href: "#rolle", label: "Die eigene Rolle" },
+              { href: "#zusammenarbeit", label: "Kontakt zum Behandlungsteam" },
+              { href: "#musterbrief", label: "Musterbrief" },
+              { href: "#therapieangebote", label: "Therapieangebote" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -247,91 +245,21 @@ export default function UnterstuetzenTherapie() {
       </EditorialSection>
 
       {/* ── 3 Intro: Was diese Seite bei Therapie ordnet ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernfrage
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Was diese Seite bei Therapie ordnet
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Diese Seite hilft Ihnen, Therapiebegleitung klarer von
-              Mitbehandlung zu unterscheiden. Im Zentrum stehen Ihre Rolle, der
-              Kontakt zum Behandlungssystem, realistische Erwartungen an
-              Rückschläge und die Frage, wie Sie unterstützen können, ohne
-              Verantwortung zu übernehmen, die nicht Ihnen gehört.
-            </p>
-            <p>
-              Drei Akzente ziehen sich durch die Seite: zuerst die Rolle
-              begrenzt sehen — Angehörige können Behandlung mittragen, aber
-              nicht selbst zu Therapie oder Motivation werden; dann mit dem
-              System arbeiten — klarer, dosierter Kontakt zum Behandlungsteam
-              hilft oft mehr als ständiges Drängen auf Einblick; und
-              schliesslich Rückschläge einordnen — Stagnation oder Unterbrüche
-              bedeuten nicht automatisch, dass Therapie wirkungslos oder sinnlos
-              ist.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#rolle"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "rolle")}
-              >
-                Ihrer Rolle
-              </a>
-              ,{" "}
-              <a
-                href="#zusammenarbeit"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "zusammenarbeit")}
-              >
-                Kontakt mit dem Behandlungsteam
-              </a>
-              ,{" "}
-              <a
-                href="#musterbrief"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "musterbrief")}
-              >
-                Musterbrief
-              </a>{" "}
-              oder{" "}
-              <a
-                href="#therapieangebote"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "therapieangebote")}
-              >
-                Therapieangeboten
-              </a>{" "}
-              springen.
-            </p>
-            <p>
-              Diese Seite hilft bei Rolle, Behandlungssystem und Therapierahmen.
-              Wenn es gerade um akute Eskalation oder Sicherheit geht, ist{" "}
-              <Link href="/unterstuetzen/krise" className="editorial-link">
-                Krisenbegleitung
-              </Link>{" "}
-              der passendere Einstieg.
-            </p>
-          </EditorialProse>
+          <ul className="topic-takeaways">
+            <li>
+              Behandlung liegt bei der erkrankten Person und den Fachpersonen.
+            </li>
+            <li>
+              Beobachtungen mitteilen und vertrauliche Auskünfte erhalten sind
+              unterschiedliche Dinge.
+            </li>
+            <li>
+              Für Ihre eigene Belastung dürfen Sie unabhängig von der Behandlung
+              Beratung nutzen.
+            </li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -500,6 +428,7 @@ export default function UnterstuetzenTherapie() {
                 ist legitim und manchmal notwendig.
               </p>
             </aside>
+            <AngehoerigenBeratung />
           </ContentSection>
         </EditorialSection.Body>
       </EditorialSection>

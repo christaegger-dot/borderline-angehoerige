@@ -1,3 +1,4 @@
+import revisedHandouts from "@/content/revisedHandouts.json";
 import { createHandoutTextVersion } from "./shared";
 
 export const handoutTextVersions = [
@@ -468,78 +469,5 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
-  createHandoutTextVersion("kinder", {
-    kicker: "Textversion",
-    summary:
-      "Kinder merken meist, dass etwas anders ist. Eine altersgerechte Erklärung schafft Sicherheit, nimmt Schuld und stärkt das Vertrauen.",
-    intro: [
-      "Wenn Kinder grosse Gefühle in der Familie miterleben, brauchen sie einfache Worte und verlässliche Entlastung. Diese Orientierung unterstützt Angehörige beim kindgerechten Erklären und Schützen.",
-      "Sie finden zuerst die entlastende Grundhaltung, dann altersbezogene Erklärungen, Hinweise für Geschwisterkinder, Schutzfaktoren und einen Merksatz, der Kinder konsequent von Verantwortung entlastet.",
-    ],
-    sections: [
-      {
-        title: "Kernaussage",
-        calloutTitle: "Worum es im Handout geht",
-        calloutText:
-          "Kinder spüren, dass etwas anders ist – auch wenn niemand darüber spricht. Schweigen schützt sie nicht. Eine altersgerechte Erklärung gibt ihnen Sicherheit, nimmt ihnen die Schuld und stärkt das Vertrauen.",
-      },
-      {
-        title: "So können Sie es erklären – nach Alter",
-        cards: [
-          {
-            title: "4–7 Jahre: Bildsprache",
-            text: "«Mama/Papa hat manchmal ganz grosse Gefühle – wie ein Sturm im Kopf. Das ist nicht deine Schuld. Wir sind für dich da.» Benennen Sie die psychische Erkrankung in einfachen, altersgerechten Worten: «Mama/Papa ist psychisch krank und bekommt Hilfe. Du bist nicht schuld und musst das nicht lösen.» Fragen Sie, was das Kind verstanden hat; Erwachsene übernehmen Versorgung und Schutz.",
-          },
-          {
-            title: "8–12 Jahre: Einfache Erklärung",
-            text: "«Das Gehirn verarbeitet Gefühle anders. Es gibt Fachleute, die helfen. Es ist nicht deine Aufgabe, Mama/Papa besser zu machen.» Benennen Sie klar: Das Kind trägt keine Verantwortung.",
-          },
-          {
-            title: "13+ Jahre: Ehrliches Gespräch",
-            text: "«Mama/Papa hat eine Diagnose, die Borderline heisst. Gefühle werden extrem stark erlebt. Es ist behandelbar. Du darfst Fragen stellen – jederzeit.» Bieten Sie an, gemeinsam verlässliche Infos zu lesen.",
-          },
-        ],
-      },
-      {
-        title: "Wenn ein Geschwisterkind betroffen ist",
-        bullets: [
-          "Unter 12: Dein Bruder/deine Schwester braucht mehr Hilfe. Du bist genauso wichtig.",
-          "12+: Du musst nicht die Rolle der Erwachsenen übernehmen. Deine Gefühle sind erlaubt.",
-        ],
-      },
-      {
-        title: "3 Schutzfaktoren für Kinder",
-        cards: [
-          {
-            title: "Stabilität",
-            text: "Verlässliche Bezugsperson. Routinen beibehalten.",
-          },
-          {
-            title: "Offenheit",
-            text: "Erklären statt schweigen. Gefühle aktiv erfragen.",
-          },
-          {
-            title: "Entlastung",
-            text: "Du bist nicht schuld. Eigene Freiräume geben.",
-          },
-        ],
-      },
-      {
-        title: "Merksatz",
-        calloutTitle: "Ein Satz, der immer wieder gesagt werden darf",
-        calloutText:
-          "«Du bist nicht schuld. Und du musst das nicht allein verstehen.» Dieser Satz darf in jeder Altersgruppe fallen – so oft wie nötig.",
-      },
-      {
-        title: "Hinweis für Erwachsene",
-        calloutTitle: "Wann Unterstützung wichtig wird",
-        calloutText:
-          "Wenn Kinder Angst haben, Gewalt erleben, Verantwortung übernehmen oder versuchen, Erwachsene zu trösten oder zu regulieren, bitte fachliche Unterstützung holen. Erwachsene bleiben für Hilfe und Sicherheit verantwortlich.",
-      },
-    ],
-    sourceLine:
-      "Quellen: PUK Zürich, Informationen für Angehörige – Elternberatung (https://www.pukzh.ch/patienten-angehoerige/informationen-fuer-angehoerige/; abgerufen 22.09.2026). [1] Lenz, A. (2014): Kinder psychisch kranker Eltern. Hogrefe. [2] Mattejat, F. & Lisofsky, B. (2008): Nicht von schlechten Eltern. Balance Verlag. [3] BApK: Geschwister psychisch erkrankter Menschen.",
-    standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
-  }),
+  createHandoutTextVersion("kinder", revisedHandouts["kinder"]),
 ];

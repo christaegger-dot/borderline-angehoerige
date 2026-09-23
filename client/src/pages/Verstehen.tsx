@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -25,22 +25,7 @@ import {
 } from "@/sections/VerstehenSupportSections";
 import { Link } from "wouter";
 
-/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
-function openSection(sectionId: string) {
-  window.dispatchEvent(
-    new CustomEvent("open-section", { detail: { sectionId } })
-  );
-}
-
 export default function Verstehen() {
-  const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-      e.preventDefault();
-      openSection(sectionId);
-    },
-    []
-  );
-
   return (
     <Layout>
       <SEO
@@ -56,7 +41,11 @@ export default function Verstehen() {
       <TableOfContents />
 
       {/* ── 1 Hero ── EditorialSection mit EisbergIllustration als Aside */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -75,10 +64,10 @@ export default function Verstehen() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Verstehen
           </EyebrowLabel>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             <em>Borderline</em> verstehen, ohne die Distanz zu verlieren.
           </DisplayHeading>
           <Lede size="hero">
@@ -86,6 +75,16 @@ export default function Verstehen() {
             sondern schwer auszuhalten – Situationen kippen, Reaktionen wirken
             widersprüchlich, die eigene Rolle bleibt unklar.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              {
+                href: "#angehoerige-erleben",
+                label: "Erleben von Angehörigen",
+              },
+              { href: "#was-ist-borderline", label: "Borderline verstehen" },
+              { href: "#muster", label: "Typische Muster" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -111,71 +110,19 @@ export default function Verstehen() {
       </EditorialSection>
 
       {/* ── 2 Worum es hier vor allem geht ── EditorialSection mit Kernthema-MarginNote */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernthema
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Worum es hier vor allem geht
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Borderline betrifft das Erleben und Regulieren von Gefühlen, das
-              Selbstbild und Beziehungen. Wie sich die Erkrankung zeigt,
-              unterscheidet sich von Mensch zu Mensch. Eine Diagnose beschreibt
-              weder die ganze Persönlichkeit noch die Qualität jeder Beziehung.
-            </p>
-            <p>
-              Neben Belastungen gibt es Fähigkeiten, Interessen und tragfähige
-              Beziehungen. Behandlung und Besserung sind möglich. Verständnis
-              für die Erkrankung und Schutz vor verletzendem Verhalten gehören
-              zusammen; nicht jeder Konflikt lässt sich durch die Diagnose
-              erklären.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#angehoerige-erleben"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "angehoerige-erleben")}
-              >
-                Was Angehörige oft erleben
-              </a>
-              ,{" "}
-              <a
-                href="#was-ist-borderline"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "was-ist-borderline")}
-              >
-                Was Borderline im Kern so belastend macht
-              </a>{" "}
-              oder{" "}
-              <a
-                href="#muster"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "muster")}
-              >
-                Typische Muster
-              </a>{" "}
-              springen.
-            </p>
-          </EditorialProse>
+          <ul className="topic-takeaways">
+            <li>
+              Borderline kann Gefühle, Selbstbild und Beziehungen belasten und
+              zeigt sich unterschiedlich.
+            </li>
+            <li>
+              Ein Verhalten lässt keine sichere Aussage über Diagnose oder
+              innere Motive zu.
+            </li>
+            <li>Verständnis und Selbstschutz dürfen gleichzeitig bestehen.</li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -490,9 +437,10 @@ export default function Verstehen() {
                 zu sein. Das ist für Betroffene wie Angehörige oft verstörend.
               </p>
               <p>
-                <strong>Für Angehörige heisst das:</strong> Nicht zuerst
-                überzeugen, sondern zuerst stabilisieren. Erst wenn die
-                Anspannung sinkt, wird gemeinsames Denken eher wieder möglich.
+                <strong>Für Angehörige heisst das:</strong> Bei hoher Anspannung
+                können eine Pause und wenige klare Worte hilfreicher sein als
+                weitere Erklärungen. Sie müssen die andere Person nicht
+                beruhigen können. Bei Gefahr hat Schutz Vorrang.
               </p>
             </EditorialProse>
           </ContentSection>
@@ -785,10 +733,11 @@ export default function Verstehen() {
                 nur.»
               </h3>
               <p>
-                Enge Beziehungen aktivieren oft genau die Muster, die bei
-                Fremden weniger sichtbar sind. Mehr Stabilität in anderen
-                Kontexten ist deshalb nicht automatisch Täuschung, sondern kann
-                Ausdruck unterschiedlicher Bindungsbelastung sein.
+                Verhalten kann je nach Beziehung und Situation unterschiedlich
+                sein. Das allein belegt weder Täuschung noch einen bestimmten
+                inneren Beweggrund. Fragen Sie, wenn es möglich und sicher ist,
+                nach dem Erleben der Person; auch eigene Grenzen bleiben
+                wichtig.
               </p>
 
               <h3

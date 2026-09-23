@@ -1,3 +1,4 @@
+import revisedHandouts from "@/content/revisedHandouts.json";
 import { createHandoutTextVersion } from "./shared";
 
 export const handoutTextVersions = [
@@ -165,7 +166,7 @@ export const handoutTextVersions = [
         title: "Wendepunkt",
         calloutTitle: "Wo sich der Kreislauf verändert",
         calloutText:
-          "Der entscheidende Wechsel passiert dort, wo Sie Selbstfürsorge nicht mehr verschieben, sondern als Voraussetzung für verlässliche Unterstützung behandeln. Auch kleine Entlastungen zählen.",
+          "Der entscheidende Wechsel passiert dort, wo Sie Selbstfürsorge nicht mehr verschieben, sondern als eigenes Bedürfnis ernst nehmen. Auch kleine Entlastungen zählen.",
       },
       {
         title: "Was können Sie tun?",
@@ -176,7 +177,7 @@ export const handoutTextVersions = [
           },
           {
             title: "2. Den eigenen Bedarf aussprechen",
-            text: "Sagen Sie klar, was Sie brauchen, um zugewandt und verlässlich bleiben zu können.",
+            text: "Benennen Sie, was Sie für Ihre eigene Gesundheit und Erholung brauchen.",
           },
           {
             title: "3. Hilfe annehmen üben",
@@ -190,70 +191,7 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
-  createHandoutTextVersion("stopp-technik", {
-    kicker: "Textversion",
-    summary:
-      "Die STOPP-Technik bietet eine kurze Pause zwischen Reiz und Reaktion. Sie kann helfen, den nächsten Schritt bewusster zu wählen.",
-    intro: [
-      "Die STOPP-Technik schafft eine kurze Pause zwischen Reiz und Reaktion. Die fünf Schritte sind alltagsnah formuliert, damit sie in angespannten Momenten schnell nutzbar bleiben.",
-      "Die fünf Buchstaben geben eine feste Reihenfolge vor: stoppen, atmen, orientieren, Perspektive weiten und dann erst handeln.",
-    ],
-    sections: [
-      {
-        title: "Zentraler Satz",
-        calloutTitle: "Worum es bei STOPP geht",
-        calloutText:
-          "Wenn die Emotionen überkochen: STOPP kann eine Pause zwischen Reiz und Reaktion ermöglichen. Bei Gewalt, akuter Selbstgefährdung oder unmittelbarer Gefahr nicht STOPP üben, sondern Hilfe holen.",
-      },
-      {
-        title: "Die 5 STOPP-Schritte",
-        intro:
-          "Die Grafik zeigt die Technik als kurze Folge von fünf Schritten, die Sie in hoher Anspannung abrufen können.",
-        cards: [
-          {
-            title: "S = STOPP",
-            text: "Halten Sie inne. Tun Sie nichts.",
-          },
-          {
-            title: "T = TIEF ATMEN",
-            text: "Atmen Sie ruhig, ohne Anstrengung oder Atemanhalten. «Tief» bedeutet nicht möglichst viel Luft. Wenn der Atemfokus unangenehm ist, orientieren Sie sich stattdessen im Raum.",
-          },
-          {
-            title: "O = ORIENTIEREN",
-            text: "Was passiert gerade wirklich?",
-          },
-          {
-            title: "P = PERSPEKTIVE",
-            text: "Wie sehe ich das in einer Woche?",
-          },
-          {
-            title: "P = PLAN",
-            text: "Wählen Sie eine konkrete nächste Handlung.",
-          },
-        ],
-      },
-      {
-        title: "Was können Sie tun?",
-        cards: [
-          {
-            title: "1. Im ruhigen Moment üben",
-            text: "Üben Sie STOPP mehrmals in ruhigen Situationen, damit die Reihenfolge unter Stress verfügbarer wird.",
-          },
-          {
-            title: "2. Anker-Satz bereitlegen",
-            text: "Ein kurzer Satz wie «Ich habe einen Moment» hilft, nicht sofort zu reagieren.",
-          },
-          {
-            title: "3. Abends kurz zurückblicken",
-            text: "Fragen Sie sich am Abend: Wo hätte mir STOPP heute gutgetan?",
-          },
-        ],
-      },
-    ],
-    sourceLine: "Quelle: Linehan, M. M. (2015), DBT Skills Training Manual.",
-    standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
-  }),
+  createHandoutTextVersion("stopp-technik", revisedHandouts["stopp-technik"]),
   createHandoutTextVersion("energie-konto", {
     kicker: "Textversion",
     summary:
@@ -374,7 +312,7 @@ export const handoutTextVersions = [
         intro:
           "Die Karte nennt neun Dinge, die Sie sich ausdrücklich erlauben dürfen.",
         bullets: [
-          "Nein sagen, ohne sich schuldig zu fühlen.",
+          "Nein sagen, auch wenn dabei Schuldgefühle auftauchen.",
           "Eigene Bedürfnisse haben und äussern.",
           "Pausen machen, wenn es zu viel wird – bei akuter Gefahr aber Hilfe holen.",
           "Hilfe annehmen und um Hilfe bitten.",

@@ -153,9 +153,8 @@ export default function HandoutTextPage({
 
           {revisedWebCopy && (
             <p className="mt-6 border-l pl-4" style={bodyStyle}>
-              Webfassung aktualisiert am 22.09.2026. Die PDF- und Bildfassung
-              enthält noch ältere Formulierungen. Für die aktuelle inhaltliche
-              Einordnung verwenden Sie bitte den Text auf dieser Seite.
+              Text-, PDF- und Bildfassung sind redaktionell auf dem Stand vom
+              23.09.2026. Die erneute fachliche Prüfung ist ausstehend.
             </p>
           )}
           <div className="mt-8 flex flex-wrap gap-3">

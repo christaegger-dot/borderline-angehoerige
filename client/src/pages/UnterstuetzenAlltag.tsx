@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
@@ -16,13 +16,6 @@ import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import EnergieHaushaltVisualisierung from "@/components/visualizations/EnergieHaushaltVisualisierung";
 import { Link } from "wouter";
-
-/** Öffnet eine ContentSection via Custom Event und scrollt dorthin. */
-function openSection(sectionId: string) {
-  window.dispatchEvent(
-    new CustomEvent("open-section", { detail: { sectionId } })
-  );
-}
 
 const wasHilft = [
   {
@@ -224,14 +217,6 @@ const impulsivitaetSzenarien = [
 ] as const;
 
 export default function UnterstuetzenAlltag() {
-  const handleAnchorClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-      e.preventDefault();
-      openSection(sectionId);
-    },
-    []
-  );
-
   const h4Style = {
     fontSize: "var(--text-md)",
     fontWeight: 600,
@@ -268,7 +253,11 @@ export default function UnterstuetzenAlltag() {
       <UnterstuetzenSubNav />
 
       {/* ── 1 Hero ── EditorialSection ohne Aside (Sub-Page-Identität) */}
-      <EditorialSection variant="cream">
+      <EditorialSection
+        variant="cream"
+        density="compact"
+        className="topic-intro"
+      >
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -282,10 +271,10 @@ export default function UnterstuetzenAlltag() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Im Alltag
           </EyebrowLabel>
-          <DisplayHeading level={1}>
+          <DisplayHeading level={1} size="topic">
             Im Alltag <em>unterstützen</em>
           </DisplayHeading>
           <Lede className="max-w-[40em]">
@@ -295,6 +284,14 @@ export default function UnterstuetzenAlltag() {
             Frage, wie viel Nähe gerade hilfreich ist. Diese Seite geht darum,
             was im Alltag trägt und was eher erschöpft.
           </Lede>
+          <TopicQuickLinks
+            items={[
+              { href: "#alltagsspannung", label: "Alltagsspannung" },
+              { href: "#was-hilft", label: "Was hilft" },
+              { href: "#impulsivitaet", label: "Impulsivität" },
+              { href: "#grenzen", label: "Grenzen" },
+            ]}
+          />
           <div
             className="mt-8 border-t pt-3"
             style={{ borderColor: "var(--rule-color)" }}
@@ -334,92 +331,19 @@ export default function UnterstuetzenAlltag() {
       </EditorialSection>
 
       {/* ── 3 Intro: Was diese Seite im Alltag ordnet ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Kernfrage
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.Body>
-          <EyebrowLabel>Überblick</EyebrowLabel>
-          <DisplayHeading level={2}>
-            Was diese Seite im Alltag ordnet
-          </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Diese Seite hilft Ihnen, Alltagsunterstützung nicht nur als
-              Reaktion auf einzelne Krisen zu sehen. Im Zentrum stehen
-              Daueranspannung, vorhersehbare Absprachen, kleine
-              Entlastungsinseln und die Frage, wie Unterstützung tragfähig
-              bleibt, ohne dass Sie sich selbst verlieren.
-            </p>
-            <p>
-              Drei Akzente ziehen sich durch die Seite: zuerst die
-              Daueranspannung ernst nehmen — Alltag kann erschöpfend sein, auch
-              wenn äusserlich gerade nichts eskaliert; dann Vorhersehbarkeit
-              schaffen — klare Absprachen, ruhige Präsenz und begrenzte
-              Verfügbarkeit tragen oft mehr als hektische Reparatur; und
-              schliesslich die Beziehung atmungsfähig halten — kleine positive
-              Inseln und klare Grenzen helfen, dass Unterstützung nicht in
-              Überforderung kippt.
-            </p>
-            <p>
-              Sie können auch direkt zu{" "}
-              <a
-                href="#alltagsspannung"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "alltagsspannung")}
-              >
-                Alltagsspannung
-              </a>
-              ,{" "}
-              <a
-                href="#was-hilft"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "was-hilft")}
-              >
-                was hilft
-              </a>
-              ,{" "}
-              <a
-                href="#impulsivitaet"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "impulsivitaet")}
-              >
-                Impulsivität
-              </a>{" "}
-              oder{" "}
-              <a
-                href="#grenzen"
-                className="editorial-link"
-                onClick={e => handleAnchorClick(e, "grenzen")}
-              >
-                Grenzen
-              </a>{" "}
-              springen.
-            </p>
-            <p>
-              Wenn die Lage in Richtung Selbst- oder Fremdgefährdung, massiver
-              Eskalation oder Kontrollverlust kippt, geht es nicht mehr primär
-              um Alltagsbegleitung, sondern um{" "}
-              <Link href="/unterstuetzen/krise" className="editorial-link">
-                Krisenbegleitung
-              </Link>
-              .
-            </p>
-          </EditorialProse>
+          <ul className="topic-takeaways">
+            <li>Kleine Absprachen können den Alltag übersichtlicher machen.</li>
+            <li>
+              Sie müssen nicht ständig erreichbar sein oder jede Stimmung
+              ausgleichen.
+            </li>
+            <li>
+              Bei akuter Gefahr oder Unsicherheit führt der direkte Weg zur
+              Soforthilfe.
+            </li>
+          </ul>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -1082,7 +1006,7 @@ export default function UnterstuetzenAlltag() {
                 href: "/unterstuetzen/krise",
                 title: "Krisen begleiten",
                 description:
-                  "Ampel-System, Deeskalation, Was sagen / Was vermeiden — wenn Alltag in Eskalation kippt.",
+                  "Hilfe bei Gefahr oder Unsicherheit, Selbstschutz und sichere Gesprächsführung — wenn Alltag in Eskalation kippt.",
               },
               {
                 href: "/grenzen",

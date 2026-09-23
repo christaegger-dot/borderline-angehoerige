@@ -26,7 +26,7 @@ describe("SelbstfuersorgeInfografikenSection", () => {
     ).toHaveAttribute("href", "/materialien/text/sauerstoffmaske");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Die STOPP-Technik/i,
+        name: /Textversion lesen: STOPP: einen Moment innehalten/i,
       })
     ).toHaveAttribute("href", "/materialien/text/stopp-technik");
     expect(

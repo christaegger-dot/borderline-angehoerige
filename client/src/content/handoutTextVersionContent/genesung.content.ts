@@ -1,3 +1,4 @@
+import revisedHandouts from "@/content/revisedHandouts.json";
 import { createHandoutTextVersion } from "./shared";
 
 export const handoutTextVersions = [
@@ -84,63 +85,10 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
   }),
-  createHandoutTextVersion("genesung-zahlen", {
-    kicker: "Textversion",
-    summary:
-      "Langzeitdaten machen Hoffnung. Besserung ist möglich; Zeitbedarf und Unterstützungsbedarf unterscheiden sich individuell. Rückschläge können vorkommen, sind aber keine Voraussetzung für Genesung.",
-    intro: [
-      "Genesung in Zahlen stützt Hoffnung auf belastbare Verlaufsdaten, ohne den Weg zu romantisieren. Die Zahlen helfen, Fortschritt realistischer einzuordnen.",
-      "Sie finden drei zentrale Kennzahlen, eine grobe zeitliche Einordnung, die Kernaussage des Handouts und drei konkrete Hinweise für den Alltag von Angehörigen.",
-    ],
-    sections: [
-      {
-        title: "Was die Forschung zeigt",
-        cards: [
-          {
-            title: "93% – mindestens zweijährige Remission",
-            text: "erreichten in der Studie von Zanarini et al. (2010) während zehn Jahren mindestens einmal eine zweijährige Remission. Untersucht wurden 290 Erwachsene, die zu Beginn stationär behandelt wurden.",
-          },
-          {
-            title: "50% – mindestens zweijährige Recovery",
-            text: "erreichten im selben Zeitraum Remission zusammen mit guter sozialer und beruflicher Funktionsfähigkeit nach der Studiendefinition. Das ist kein Massstab für den Wert eines Menschen oder seines Lebens.",
-          },
-          {
-            title: "Langzeitverlauf",
-            text: "Langzeitdaten zeigen, dass Remission häufig stabil bleiben kann. Einzelne Prozentwerte sind ohne Studienkontext keine individuelle Prognose.",
-          },
-        ],
-      },
-      {
-        title: "Keine persönliche Zeitvorgabe",
-        intro:
-          "Die zehn Jahre sind der Beobachtungszeitraum, nicht eine Wartefrist bis zur Besserung. Manche Veränderungen zeigen sich früher, andere benötigen länger. Die Zahlen beschreiben jemals erreichte Zustände; sie bedeuten nicht, dass alle dauerhaft beschwerdefrei blieben.",
-      },
-      {
-        title: "Kernaussage",
-        calloutTitle: "Zentraler Satz des Handouts",
-        calloutText:
-          "Genesung ist möglich. Sie braucht Zeit, Geduld und professionelle Hilfe.",
-      },
-      {
-        title: "Begriffe kurz eingeordnet",
-        calloutTitle: "Was die Grafik mit den Begriffen meint",
-        calloutText:
-          "Remission bedeutet hier, dass die Diagnosekriterien während mindestens zwei Jahren nicht mehr erfüllt wurden; einzelne Beschwerden können trotzdem bestehen. Recovery beschreibt zusätzlich mehr Stabilität in Alltag, Beziehungen, Arbeit oder Ausbildung. Diese Zahlen stammen aus Längsschnittstudien und sind keine individuelle Prognose.",
-      },
-      {
-        title: "Was können Sie tun?",
-        bullets: [
-          "Teilen Sie diese Zahlen nur dann, wenn sie entlasten und nicht Druck machen.",
-          "Erinnern Sie sich: Rückschläge können vorkommen und entwerten Fortschritt nicht automatisch.",
-          "Bleiben Sie geduldig – Genesung ist eher ein Marathon als ein Sprint.",
-        ],
-      },
-    ],
-    sourceLine:
-      "Quellen: Zanarini, M. C. et al. (2010/2012); Gunderson, J. G. et al. (2011).",
-    standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
-  }),
+  createHandoutTextVersion(
+    "genesung-zahlen",
+    revisedHandouts["genesung-zahlen"]
+  ),
   createHandoutTextVersion("fortschritt-paradox", {
     kicker: "Textversion",
     summary:

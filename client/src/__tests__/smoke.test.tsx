@@ -337,14 +337,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "stopp-technik" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Die STOPP-Technik/i,
+        name: /STOPP: einen Moment innehalten/i,
         level: 1,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
-        /STOPP kann eine Pause zwischen Reiz und Reaktion ermöglichen\./i
-      )
+      await screen.findByText(/Fünf Schritte können helfen/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -652,11 +650,11 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "genesung-zahlen" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Genesung in Zahlen – Was die Forschung zeigt/i,
+        name: /Genesung in Zahlen/i,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Genesung ist möglich\. Sie braucht Zeit/i)
+      await screen.findByText(/Besserung ist möglich/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
@@ -751,11 +749,11 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "kinder" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Wenn Mama oder Papa grosse Gefühle hat/i,
+        name: /Kinder verstehen und entlasten/i,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Kinder spüren, dass etwas anders ist/i)
+      await screen.findByText(/Kinder brauchen verständliche Worte/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
@@ -958,7 +956,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/gehirn");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Wenn Mama oder Papa grosse Gefühle hat/i,
+        name: /Textversion lesen: Kinder verstehen und entlasten/i,
       })
     ).toHaveAttribute("href", "/materialien/text/kinder");
   });
@@ -1017,7 +1015,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/sauerstoffmaske");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Die STOPP-Technik/i,
+        name: /Textversion lesen: STOPP: einen Moment innehalten/i,
       })
     ).toHaveAttribute("href", "/materialien/text/stopp-technik");
     expect(

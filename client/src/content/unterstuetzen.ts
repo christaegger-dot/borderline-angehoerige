@@ -12,7 +12,7 @@ export const unterstuetzenItems = [
     id: "im-krisenmodus",
     title: "Im Krisenmodus – Orientierung geben",
     description:
-      "Das Ampel-System hilft, Anspannung, Eskalation und akute Gefahr schneller einzuordnen.",
+      "Das Blatt gibt Orientierung zum Hilfeholen und Selbstschutz. Eine Farbe erlaubt keine verlässliche Einschätzung von Suizidgefahr; holen Sie bei Unsicherheit professionelle Hilfe.",
     url: "/infografiken/ampel-das-ampel-system-v4.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/ampel-das-ampel-system-v4.webp",

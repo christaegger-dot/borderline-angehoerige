@@ -65,14 +65,14 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
   },
   {
     id: "kinder",
-    title: "Wenn Mama oder Papa grosse Gefühle hat",
+    title: "Kinder verstehen und entlasten",
     description:
       "Borderline altersgerecht erklären und Kinder mit Klarheit, Entlastung und Schutz begleiten.",
     category: "grundlagen",
-    webpUrl: "/infografiken/manus-kinder-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-kinder-v1.webp",
-    pdfUrl: "/infografiken/manus-kinder-v1.pdf",
-    alt: "Wenn Mama oder Papa grosse Gefühle hat",
+    webpUrl: "/infografiken/manus-kinder-v3.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-kinder-v3.webp",
+    pdfUrl: "/infografiken/manus-kinder-v3.pdf",
+    alt: "Kinder verstehen und entlasten",
   },
   {
     id: "4-phasen",

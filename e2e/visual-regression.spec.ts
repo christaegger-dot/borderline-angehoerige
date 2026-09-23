@@ -25,6 +25,34 @@ const PAGES = [
   { path: "/wegweiser", name: "wegweiser" },
 ];
 
+test("self-care infographic remains visible and contained", async ({
+  page,
+}) => {
+  await page.goto("/selbstfuersorge", { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+  const intro = page.locator("section.topic-intro");
+  const figure = intro.locator("figure");
+  const caption = figure.locator("figcaption");
+  await expect(figure).toBeVisible();
+  await expect(caption).toBeVisible();
+  await figure
+    .locator("img")
+    .evaluate((image: HTMLImageElement) => image.decode());
+  const figureBox = await figure.boundingBox();
+  const captionBox = await caption.boundingBox();
+  const nextBox = await page
+    .locator("section.editorial-section")
+    .nth(1)
+    .boundingBox();
+  expect(figureBox).not.toBeNull();
+  expect(captionBox).not.toBeNull();
+  expect(nextBox).not.toBeNull();
+  expect(captionBox!.y + captionBox!.height).toBeLessThanOrEqual(
+    figureBox!.y + figureBox!.height + 1
+  );
+  expect(figureBox!.y + figureBox!.height).toBeLessThanOrEqual(nextBox!.y + 1);
+});
+
 for (const { path, name } of PAGES) {
   test(`page ${name} matches baseline`, async ({ page }) => {
     await page.goto(path, { waitUntil: "networkidle" });
@@ -53,6 +81,11 @@ for (const { path, name } of PAGES) {
 test("home hero region matches baseline", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Isolated section capture: the sticky header is outside this component.
+  // Full-page tests above continue to include and check the header.
+  await page.addStyleTag({
+    content: "header { visibility: hidden !important; }",
+  });
 
   const hero = page.locator("section.editorial-section").first();
   await expect(hero).toHaveScreenshot("home-hero.png");
@@ -61,6 +94,11 @@ test("home hero region matches baseline", async ({ page }) => {
 test("editorial section with aside matches baseline", async ({ page }) => {
   await page.goto("/verstehen", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Isolated section capture: the sticky header is outside this component.
+  // Full-page tests above continue to include and check the header.
+  await page.addStyleTag({
+    content: "header { visibility: hidden !important; }",
+  });
 
   // Erste EditorialSection mit Aside (Eisberg-Illustration)
   const section = page.locator("section.editorial-section").first();
@@ -70,6 +108,11 @@ test("editorial section with aside matches baseline", async ({ page }) => {
 test("grenzen key sections match baseline", async ({ page }) => {
   await page.goto("/grenzen", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Isolated section capture: the sticky header is outside this component.
+  // Full-page tests above continue to include and check the header.
+  await page.addStyleTag({
+    content: "header { visibility: hidden !important; }",
+  });
 
   const hero = page.locator("section.editorial-section").first();
   await expect(hero).toHaveScreenshot("grenzen-hero.png");
@@ -110,6 +153,11 @@ test("materialien filter and first cards match baseline", async ({ page }) => {
 test("krise key CTA region matches baseline", async ({ page }) => {
   await page.goto("/unterstuetzen/krise", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Isolated section capture: the sticky header is outside this component.
+  // Full-page tests above continue to include and check the header.
+  await page.addStyleTag({
+    content: "header { visibility: hidden !important; }",
+  });
 
   const sections = page.locator("section.editorial-section");
   await expect(sections.first()).toHaveScreenshot("krise-hero.png");

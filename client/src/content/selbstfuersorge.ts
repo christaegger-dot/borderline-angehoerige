@@ -49,12 +49,12 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
   },
   {
     id: "stopp-technik",
-    title: "Die STOPP-Technik",
+    title: "STOPP: einen Moment innehalten",
     desc: "Fünf Schritte für eine kurze Pause: Stopp, atmen, orientieren, Perspektive, Plan. Im eigenen Tempo.",
     category: "techniken",
-    webp: "/infografiken/manus-stopp-technik-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp",
-    pdf: "/infografiken/manus-stopp-technik-v1.pdf",
+    webp: "/infografiken/manus-stopp-technik-v3.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-stopp-technik-v3.webp",
+    pdf: "/infografiken/manus-stopp-technik-v3.pdf",
   },
   {
     id: "energie-konto",

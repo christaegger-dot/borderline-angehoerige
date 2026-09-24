@@ -39,22 +39,21 @@ const deeskalationsSchritte = [
       "Begrenzen Sie den Zugang zu Medikamenten oder gefährlichen Gegenständen nur ohne Eigengefährdung, möglichst gemeinsam und nach professioneller Anleitung. Nehmen Sie nichts aus der Hand oder gegen Widerstand weg; greifen Sie nicht körperlich ein. Bei unmittelbarer Gefahr holen Sie Hilfe über den Notruf.",
   },
   {
-    title: "Ruhe bewahren",
+    title: "Mit wenigen Worten sprechen",
     description:
-      "Ihre Ruhe kann ansteckend sein. Atmen Sie tief, sprechen Sie langsam und leise.",
-    example: "«Ich bin hier. Wir schaffen das zusammen.»",
+      "Wenn es Ihnen möglich ist, sprechen Sie kurz und ohne zusätzliche Vorwürfe. Sie dürfen selbst erschrocken sein und müssen keine Beruhigung erreichen.",
+    example: "«Ich bin gerade auch erschrocken. Ich hole Unterstützung.»",
   },
   {
-    title: "Validieren",
+    title: "Nachfragen und zuhören",
     description:
-      "Anerkennen Sie die Gefühle, ohne sie zu bewerten oder zu lösen.",
-    example:
-      "«Ich sehe, dass du gerade sehr viel Schmerz fühlst. Das muss furchtbar sein.»",
+      "Fragen Sie offen, was die Person erlebt. Sie können Anteil nehmen, ohne einer Forderung zuzustimmen.",
+    example: "«Das wirkt gerade sehr schmerzhaft. Verstehe ich dich richtig?»",
   },
   {
-    title: "Skills anbieten",
+    title: "An vereinbarte Strategien erinnern",
     description:
-      "Erinnern Sie sanft an Strategien, die in der Vergangenheit geholfen haben.",
+      "Wenn die Person das möchte, können Sie an bereits mit Fachpersonen vereinbarte Strategien erinnern. Drängen Sie keine Übung auf; bei Gefahr geht Hilfeholen vor.",
     example:
       "«Möchtest du die Atemübung ausprobieren, die dir letztens geholfen hat?»",
   },
@@ -67,18 +66,19 @@ const formulierungen: ReadonlyArray<{
 }> = [
   {
     title: "Präsenz zeigen",
-    quote: "«Ich bin hier. Ich gehe nicht weg. Du bist nicht allein.»",
-    note: "Wenn Nähe die Situation verschärft, kann auch eine ruhig angekündigte Distanz hilfreich sein: «Ich bleibe in der Nähe und komme in ein paar Minuten wieder.»",
+    quote:
+      "«Möchtest du, dass ich bei dir sitze? Wir können Unterstützung holen.»",
+    note: "Bieten Sie nur Nähe oder Erreichbarkeit an, die für Sie möglich und sicher ist. Bei Bedrohung bringen Sie sich in Sicherheit und informieren die Leitstelle.",
   },
   {
     title: "Gefühle validieren",
     quote:
-      "«Ich sehe, dass du gerade unglaublich viel Schmerz fühlst. Das muss sich furchtbar anfühlen.»",
+      "«Das wirkt gerade sehr schmerzhaft. Magst du sagen, was dich beschäftigt?»",
   },
   {
     title: "Hoffnung vermitteln",
     quote:
-      "«Dieses Gefühl wird vorbeigehen. Es fühlt sich jetzt endlos an, aber es wird sich verändern.»",
+      "«Wir müssen jetzt nicht alles lösen. Lass uns schauen, welche Unterstützung gerade erreichbar ist.»",
   },
   {
     title: "Konkrete Hilfe anbieten",
@@ -93,50 +93,17 @@ const formulierungen: ReadonlyArray<{
   },
 ];
 
-const krisenphasen = [
-  {
-    titel: "Anspannung",
-    dauer: "Minuten–Stunden",
-    tone: "border-[color:var(--rule-color-strong)] bg-background",
-    fg: "text-[color:var(--fg-secondary)]",
-  },
-  {
-    titel: "Eskalation",
-    dauer: "15–90 Min",
-    tone: "border-amber-300/60 bg-background",
-    fg: "text-amber-700",
-  },
-  {
-    titel: "Peak",
-    dauer: "Spitze",
-    tone: "border-alert/25 bg-alert/8",
-    fg: "text-alert-dark",
-  },
-  {
-    titel: "Abklingen",
-    dauer: "1–4 Std",
-    tone: "border-amber-200/60 bg-background",
-    fg: "text-amber-600",
-  },
-  {
-    titel: "Erschöpfung",
-    dauer: "Stunden–Tage",
-    tone: "border-border/50 bg-muted/30",
-    fg: "text-[color:var(--accent-label)]",
-  },
-] as const;
-
 const fuerBetroffene = [
   "Scham anerkennen, ohne sie zu bestätigen: «Ich sehe, dass es dir schlecht damit geht. Mir auch. Lass uns das besprechen, wenn du dich bereit fühlst.»",
-  "Nicht sofort eine Aufarbeitung fordern – Wartezeit einplanen (1–2 Tage)",
-  "Therapeutin informieren, damit die Krise dort aufgearbeitet werden kann",
-  "Krisenursachen gemeinsam benennen: Was war der Auslöser? Was hätte früher geholfen?",
+  "Eine gemeinsame Nachbesprechung kann warten, bis sie für beide möglich ist. Nötige medizinische oder psychiatrische Hilfe hat keine Wartefrist.",
+  "Mit dem Behandlungsteam klären, welche fachliche Nachsorge nötig ist und welche Rolle Sie freiwillig übernehmen können",
+  "Wenn beide möchten: Was wurde vor der Krise bemerkt, was hat geholfen und wo braucht es zusätzliche Unterstützung?",
 ] as const;
 
 const fuerSiePersoenlich = [
   "Eigene Erschütterung ernst nehmen – Sie dürfen erschöpft, wütend oder traurig sein",
   "Gespräch suchen: Fachstelle, Selbsthilfegruppe oder eigene Therapie",
-  "Dauernde Alarmbereitschaft beobachten: Sie erschöpft schnell – versuchen Sie, bewusst zu regulieren",
+  "Bei anhaltender Alarmbereitschaft oder gesundheitlichen Beschwerden eigene Beratung oder ärztliche Hilfe nutzen",
   "Keine Aufarbeitung leisten, solange Sie selbst noch in Aufruhr sind",
 ] as const;
 
@@ -158,39 +125,39 @@ const krisenanalyseFragen = [
 const vertrauensaufbau = [
   "Kleine Zusagen, kleine Erfüllungen – nicht grosse Versprechen",
   "Transparenz über eigene Gefühle: «Mir ist noch beklemmend zumute. Ich bin trotzdem hier.»",
-  "Keine impliziten Kontoschuld-Bilanzen führen («Du hast mir das angetan»)",
-  "Realistischer Zeitrahmen: 2–4 Wochen bis spürbar mehr Stabilität",
+  "Eigene Verletzungen und Verantwortung besprechen dürfen, ohne gegenseitig Schuld aufzurechnen",
+  "Vertrauen hat keinen festen Zeitplan. Auch Abstand oder eine Veränderung der Beziehung darf Thema sein.",
 ] as const;
 
 const tagFuerTag = [
   {
-    tage: "Tag 1–2",
-    titel: "Ruhe und Sicherheit",
+    tage: "Erholung",
+    titel: "Was wird jetzt gebraucht?",
     farbe: "border-border/50 bg-background",
     punkte: [
-      "Keine Aufarbeitung, keine Erklärungen, kein Warum",
-      "Sagen Sie: «Ich bin froh, dass du da bist. Wir müssen jetzt nichts besprechen.»",
-      "Grundbedürfnisse sichern: Schlafen, Essen, körperliche Anwesenheit",
+      "Eine ausführliche Nachbesprechung muss nicht sofort stattfinden",
+      "Fragen Sie, was gerade hilfreich wäre, und beachten Sie Ihre eigenen Bedürfnisse",
+      "Nötige Betreuung gemeinsam organisieren; Sie müssen sie nicht allein übernehmen",
     ],
   },
   {
-    tage: "Tag 3–4",
-    titel: "Kurze Check-ins",
+    tage: "Unterstützung",
+    titel: "Wer ist wofür zuständig?",
     farbe: "border-border/50 bg-muted/20",
     punkte: [
-      "Kurzes, konkretes Nachfragen erlaubt: «Wie geht es dir gerade – in diesem Moment?»",
-      "Keine Bewertungen, keine Rückblicke auf die Krise",
-      "Therapeut oder Krisentelefon kontaktieren, falls nötig",
+      "Fachliche Nachsorge und erreichbare Kontakte mit dem Behandlungsteam klären",
+      "Nur konkrete Aufgaben zusagen, die Sie freiwillig übernehmen können",
+      "Bei erneuten Sorgen um die Sicherheit sofort Hilfe holen, unabhängig vom Zeitpunkt",
     ],
   },
   {
-    tage: "Tag 5–7",
-    titel: "Aufarbeitung vorbereiten",
+    tage: "Nachbesprechung",
+    titel: "Was möchten wir gemeinsam klären?",
     farbe: "border-border/50 bg-muted/30",
     punkte: [
-      "Erst wenn beide bereit sind: Was hat geholfen? Was hat die Krise ausgelöst?",
-      "Kein Vorwurf, kein Schuldaufbau – gemeinsames Lernen",
-      "Nächsten Termin beim Therapeuten koordinieren",
+      "Wenn beide bereit sind: Was hat geholfen und was möchten wir verändern?",
+      "Eigene Verletzungen und Grenzen ansprechen dürfen",
+      "Für Fragen, die gemeinsam nicht geklärt werden können, Unterstützung nutzen",
     ],
   },
 ] as const;
@@ -494,23 +461,17 @@ export default function UnterstuetzenKrise() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="4 Schritte der Deeskalation"
+            title="Was während einer Krise helfen kann"
             id="deeskalation"
           >
-            <ol className="mt-2 space-y-6">
-              {deeskalationsSchritte.map((item, index) => (
-                <li key={item.title} className="flex items-start gap-4">
-                  <span
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
-                    style={{
-                      backgroundColor: "var(--accent-primary)",
-                      color: "var(--bg-primary)",
-                      fontSize: "var(--text-sm)",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {index + 1}
-                  </span>
+            <p className="mb-5" style={bodyStyle}>
+              Sicherheit hat Vorrang. Die Gesprächsvorschläge sind eine Auswahl;
+              Sie müssen sie nicht der Reihe nach umsetzen oder erst ruhig
+              werden, bevor Sie Hilfe holen.
+            </p>
+            <ul className="mt-2 space-y-6">
+              {deeskalationsSchritte.map(item => (
+                <li key={item.title} className="border-t border-border pt-4">
                   <div className="space-y-2">
                     <h3 style={h4Style}>{item.title}</h3>
                     <p style={bodyStyle}>{item.description}</p>
@@ -518,7 +479,7 @@ export default function UnterstuetzenKrise() {
                   </div>
                 </li>
               ))}
-            </ol>
+            </ul>
           </ContentSection>
 
           {/* ── ContentSection 3: krise-formulierungen ── */}
@@ -530,8 +491,9 @@ export default function UnterstuetzenKrise() {
           >
             <EditorialProse>
               <p>
-                In einer Krise zählt jedes Wort. Diese Formulierungen haben sich
-                bewährt:
+                Sie müssen keine perfekten Worte finden. Diese Beispiele können
+                eine Orientierung sein; keine Formulierung garantiert einen
+                bestimmten Verlauf.
               </p>
             </EditorialProse>
             <div className="mt-8 space-y-8">
@@ -642,63 +604,21 @@ export default function UnterstuetzenKrise() {
             id="nach-der-krise"
             preview="Die akute Krise ist vorbei – aber die innere Landschaft braucht Zeit. Was jetzt hilft: für die betroffene Person, für Sie, und gemeinsam."
           >
-            {/* Krisenphase-Timeline (sicherheitskritische Klassifikation, Farben bleiben) */}
-            <figure className="mt-2 rounded-lg border border-border/40 bg-background p-4">
-              <figcaption
-                className="mb-3 text-center uppercase"
-                style={labelStyle}
-              >
-                Typischer Krisenverlauf
-              </figcaption>
-              <div className="flex flex-col items-center gap-1.5 sm:flex-row">
-                {krisenphasen.map((phase, i) => (
-                  <div
-                    key={phase.titel}
-                    className="flex w-full flex-1 items-center gap-1.5"
-                  >
-                    <div
-                      className={`flex-1 rounded-md border px-3 py-2 text-center ${phase.tone}`}
-                    >
-                      <p className={`text-xs font-semibold ${phase.fg}`}>
-                        {phase.titel}
-                      </p>
-                      <p className="text-[10px] text-muted-foreground">
-                        {phase.dauer}
-                      </p>
-                    </div>
-                    {i < krisenphasen.length - 1 && (
-                      <span
-                        aria-hidden="true"
-                        className="shrink-0 rotate-90 text-xs text-muted-foreground sm:rotate-0"
-                      >
-                        →
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-              <p
-                className="mt-3 text-center"
-                style={{
-                  fontSize: "var(--text-xs)",
-                  color: "var(--fg-tertiary)",
-                }}
-              >
-                Zeitangaben sind Richtwerte — jede Krise verläuft anders.
-              </p>
-            </figure>
+            <p className="mt-3" style={bodyStyle}>
+              Krisen verlaufen unterschiedlich. Ein ruhigerer Eindruck oder
+              verstrichene Zeit beweist keine Sicherheit. Bei erneuter Sorge
+              holen Sie professionelle Einschätzung; bei möglicher unmittelbarer
+              Lebensgefahr rufen Sie den Rettungsdienst.
+            </p>
 
             {/* Für die betroffene Person */}
             <article className="mt-10 space-y-3">
               <h3 style={h4Style}>Für die betroffene Person</h3>
               <p style={bodyStyle}>
-                Nach einer schweren Krise folgt oft eine Phase massiver{" "}
-                <strong style={{ color: "var(--fg-primary)" }}>
-                  Scham und Reue
-                </strong>
-                . Manche ziehen sich zurück, andere entschuldigen sich
-                übermässig. Beides braucht eine ruhige, nicht-wertende Antwort –
-                weder Verharmlosen noch Aufbauschen.
+                Nach einer Krise können Scham, Rückzug, Erleichterung oder
+                andere Gefühle auftreten. Fragen Sie nach, statt ein bestimmtes
+                Erleben vorauszusetzen. Auch Ihre eigene Erschütterung darf Raum
+                haben.
               </p>
               <ul className="ml-5 list-disc space-y-1.5" style={bodyStyle}>
                 {fuerBetroffene.map(p => (
@@ -771,7 +691,12 @@ export default function UnterstuetzenKrise() {
 
             {/* Tag-für-Tag (Phasen-Tints bleiben dezent) */}
             <article className="mt-10">
-              <h3 style={h4Style}>Erste Woche nach der Krise – Tag für Tag</h3>
+              <h3 style={h4Style}>Nach der Krise: drei mögliche Anliegen</h3>
+              <p className="mt-3" style={bodyStyle}>
+                Dafür gibt es keinen festen Tagesplan. Dringende Hilfe kann zu
+                jedem Zeitpunkt nötig sein; eine gemeinsame Nachbesprechung
+                richtet sich danach, was für beide möglich ist.
+              </p>
               <div className="mt-4 space-y-3">
                 {tagFuerTag.map(phase => (
                   <div

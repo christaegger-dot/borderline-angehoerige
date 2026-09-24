@@ -87,7 +87,7 @@ test("home hero region matches baseline", async ({ page }) => {
     content: "header { visibility: hidden !important; }",
   });
 
-  const hero = page.locator("section.editorial-section").first();
+  const hero = page.locator("section.home-puk");
   await expect(hero).toHaveScreenshot("home-hero.png");
 });
 
@@ -139,9 +139,7 @@ test("materialien filter and first cards match baseline", async ({ page }) => {
   );
   await expect(filterBar).toHaveScreenshot("materialien-filterbar.png");
 
-  const firstGrid = page.locator(
-    "section[aria-label='Empfohlene Startmaterialien']"
-  );
+  const firstGrid = page.locator(".material-library-grid");
   await firstGrid
     .locator("img")
     .evaluateAll(images =>

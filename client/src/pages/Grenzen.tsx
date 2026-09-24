@@ -1,3 +1,4 @@
+import LearningGuide from "@/components/interactive/LearningGuide";
 import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
 import KinderEntlasten from "@/components/KinderEntlasten";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
@@ -10,7 +11,7 @@ import {
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
-import { InnenraeumeIllustration } from "@/components/illustrations";
+import AngehoerigenIllustration from "@/components/AngehoerigenIllustration";
 import GrenzenCheck from "@/components/interactive/GrenzenCheck";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import Layout from "@/components/Layout";
@@ -156,7 +157,8 @@ export default function Grenzen() {
               { href: "#warnsignale", label: "Warnsignale" },
               { href: "#grenzen-check", label: "Eigene Grenzen klären" },
               { href: "#kontakt-gestalten", label: "Kontakt gestalten" },
-              { href: "#priorisierung", label: "Priorisierung" },
+              { href: "#grenzen-arten", label: "Vier Arten von Grenzen" },
+              { href: "#dear", label: "Ein Anliegen formulieren" },
               { href: "#grenzsaetze", label: "Sätze für Grenzen" },
               { href: "#gewalt", label: "Schutz bei Gewalt" },
             ]}
@@ -173,9 +175,11 @@ export default function Grenzen() {
           </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
-          <InnenraeumeIllustration
-            ariaLabel="Zwei Räume, die sich respektieren — durch eine durchlässige Membran getrennt, nicht durch eine Mauer."
-            className="ml-auto block aspect-square w-full max-w-[560px]"
+          <AngehoerigenIllustration
+            name="verbunden-mit-abstand-v1"
+            alt="Zwei Menschen mit Raum zwischen sich."
+            caption="Abstand darf Platz haben. Sie entscheiden, welcher Kontakt für Sie tragbar ist."
+            eager
           />
         </EditorialSection.Aside>
       </EditorialSection>
@@ -256,51 +260,8 @@ export default function Grenzen() {
           </ContentSection>
 
           {/* ── ContentSection 2: arten ── */}
-          <ContentSection
-            variant="editorial"
-            collapsible={false}
-            title="Welche Arten von Grenzen häufig relevant sind"
-            id="arten"
-            preview="Grenzen betreffen nicht nur Lautstärke oder Streit, sondern Zeit, Erreichbarkeit, Raum, Geld und emotionale Zumutbarkeit."
-          >
-            <div className="mt-2 grid gap-8 sm:grid-cols-2">
-              <div>
-                <h3 className="mb-2" style={h4Style}>
-                  Zeitliche Grenzen
-                </h3>
-                <p style={bodyStyle}>
-                  Wann sind Sie erreichbar, wann nicht? Wann ist Pause nötig?
-                </p>
-              </div>
-              <div>
-                <h3 className="mb-2" style={h4Style}>
-                  Emotionale Grenzen
-                </h3>
-                <p style={bodyStyle}>
-                  Welcher Ton, welche Vorwürfe, welche Dynamiken überschreiten
-                  Ihre Grenze?
-                </p>
-              </div>
-              <div>
-                <h3 className="mb-2" style={h4Style}>
-                  Räumliche Grenzen
-                </h3>
-                <p style={bodyStyle}>
-                  Wo brauchen Sie Rückzug, Distanz oder Schutz des eigenen
-                  Raums?
-                </p>
-              </div>
-              <div>
-                <h3 className="mb-2" style={h4Style}>
-                  Materielle Grenzen
-                </h3>
-                <p style={bodyStyle}>
-                  Wie weit gehen finanzielle Hilfe, Ausleihen oder praktische
-                  Übernahmen?
-                </p>
-              </div>
-            </div>
-          </ContentSection>
+          <span id="arten" />
+          <LearningGuide kind="4-arten-von-grenzen" id="grenzen-arten" />
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -324,12 +285,12 @@ export default function Grenzen() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          {/* ── ContentSection 3: grenzen-check (interaktiv, out of scope) ── */}
+          {/* ── Eigene Grenzen ohne Bewertung reflektieren ── */}
           <ContentSection
             variant="editorial"
-            title="Wo stehe ich beim Grenzen setzen?"
+            title="Was brauche ich für meine Grenzen?"
             id="grenzen-check"
-            preview="Fünf kurze Reflexionsfragen zu den häufigsten Schwierigkeiten beim Grenzen setzen – mit persönlicher Einordnung."
+            preview="Wählen Sie eine Frage zu Ihrer Situation. Es gibt keine Punkte oder Gesamtbewertung."
           >
             <GrenzenCheck />
           </ContentSection>
@@ -446,6 +407,12 @@ export default function Grenzen() {
               gleichzeitig.
             </p>
           </ContentSection>
+        </EditorialSection.Body>
+      </EditorialSection>
+
+      <EditorialSection variant="cream" density="compact">
+        <EditorialSection.Body>
+          <LearningGuide kind="dear" id="dear" />
         </EditorialSection.Body>
       </EditorialSection>
 

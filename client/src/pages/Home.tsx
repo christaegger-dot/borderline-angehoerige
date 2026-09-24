@@ -2,407 +2,131 @@ import {
   DisplayHeading,
   EditorialProse,
   EditorialSection,
-  EyebrowLabel,
-  Lede,
 } from "@/components/editorial";
-import { VisualOrientationGrid } from "@/components/visualizations/VisualOrientationGrid";
 import AppLink from "@/components/AppLink";
 import Layout from "@/components/Layout";
 import SEO, { MedicalPageSchema, WebsiteSchema } from "@/components/SEO";
-import { ADRESSEN, EMAILS, INFO } from "@/data/kontakte";
-
-// Single-source-of-truth: keine Telefon-/E-Mail-/Adress-Hardcoding im Markup
-const FACHSTELLE = INFO.find(k => k.id === "INFO_FACHSTELLE");
-const EMAIL_ANGEHOERIGEN = EMAILS.find(e => e.id === "EMAIL_ANGEHOERIGEN");
-const ADRESSE_PUK = ADRESSEN.find(a => a.id === "ADRESSE_PUK");
-
-// Krise/Soforthilfe ist bewusst NICHT als Triage-Karte hier: die akute Lage
-// läuft prominent über den Krisen-Aside im Hero und den persistenten roten
-// Header-Button. So bleibt diese Triage auf die nicht-akuten Situationen
-// fokussiert (verstehen / Worte / am Limit) statt Soforthilfe zu doppeln.
-const PATHWAYS = [
-  {
-    kicker: "Ich will verstehen",
-    title: "Muster erkennen, ohne zu entschuldigen",
-    body: "Was emotionale Überflutung, Scham, Angst und Bindungsstress bedeuten können.",
-    href: "/verstehen",
-    link: "Mit Verstehen beginnen",
-  },
-  {
-    kicker: "Ich brauche Worte",
-    title: "Ruhiger sprechen, klarer bleiben",
-    body: "Validieren, Grenzen formulieren und Konflikte weniger stark anheizen.",
-    href: "/kommunizieren",
-    link: "Gesprächshilfen ansehen",
-  },
-  {
-    kicker: "Ich bin am Limit",
-    title: "Die eigene Kraft wieder schützen",
-    body: "Selbstfürsorge, Beratung und Entlastung, ohne sich dafür rechtfertigen zu müssen.",
-    href: "/selbstfuersorge",
-    link: "Selbstfürsorge einordnen",
-  },
-];
+import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
 
 export default function Home() {
   return (
     <Layout>
       <SEO
         title="Startseite"
-        description="Orientierung für Angehörige von Menschen mit Borderline: differenziert, fachlich fundiert und transparent eingeordnet."
+        description="Orientierung für Angehörige von Menschen mit Borderline: Hilfe in schwierigen Situationen, verständliches Wissen und Raum für das eigene Leben."
         path="/"
       />
       <WebsiteSchema />
       <MedicalPageSchema
         title="Borderline: Orientierung für Angehörige"
-        description="Psychoedukative Unterstützung für Angehörige von Menschen mit Borderline-Muster."
+        description="Informationen und Unterstützung für Angehörige von Menschen mit Borderline."
         path="/"
-        lastReviewed="2026-04-30"
       />
-
-      <EditorialSection variant="cream" density="compact">
-        <EditorialSection.MarginNote>
-          <HomeMarginLabel>
-            Fachstelle Angehörigenarbeit · PUK Zürich
-          </HomeMarginLabel>
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <DisplayHeading level={1} size="topic">
-            Wenn jemand, den Sie lieben, <em>Borderline</em> hat
-          </DisplayHeading>
-          <Lede>
-            Eine Orientierung zur Borderline-Persönlichkeitsstörung für
-            Partnerinnen, Eltern, Geschwister und erwachsene Kinder, die
-            verstehen, unterstützen und sich selbst schützen möchten.
-          </Lede>
-          <nav
-            aria-label="Welcher Einstieg passt?"
-            className="mt-5 space-y-3 text-base leading-relaxed"
-          >
+      <section className="home-puk" aria-labelledby="home-title">
+        <div className="home-puk__inner">
+          <div className="home-puk__intro">
+            <p>Borderline · Orientierung für Angehörige</p>
+            <h1 id="home-title">
+              Verstehen. Unterstützung finden. Auf sich achten.
+            </h1>
             <p>
-              <AppLink
-                className="editorial-link inline-flex min-h-11 items-center"
-                href="/soforthilfe"
-              >
-                Akute Hilfe
-              </AppLink>{" "}
-              – Notruf und Krisenberatung.
+              Wenn ein nahestehender Mensch mit Borderline lebt, kann vieles
+              schwierig werden. Hier finden Sie Hilfe für den Alltag und Ihre
+              eigene Entlastung.
             </p>
-            <p>
-              <AppLink
-                className="editorial-link inline-flex min-h-11 items-center"
-                href="/wegweiser"
-              >
-                Eine konkrete Situation
-              </AppLink>{" "}
-              – zum nächsten hilfreichen Schritt.
-            </p>
-            <p>
-              <AppLink
-                className="editorial-link inline-flex min-h-11 items-center"
-                href="/verstehen"
-              >
-                Vertiefendes Wissen
-              </AppLink>{" "}
-              – Borderline und die eigene Rolle verstehen.
-            </p>
-            <p>
-              <AppLink
-                className="editorial-link inline-flex min-h-11 items-center"
-                href="/selbsttest"
-              >
-                Passende Inhalte finden
-              </AppLink>{" "}
-              – wenn Sie noch keinen Einstieg wissen.
-            </p>
+          </div>
+          <nav className="home-puk__paths" aria-label="Welcher Einstieg passt?">
+            <AppLink
+              href="/soforthilfe"
+              className="home-puk__path home-puk__path--crisis"
+            >
+              <strong>Akute Hilfe</strong>
+              <span>
+                Notruf und Krisenberatung – auch wenn Sie unsicher sind.
+              </span>
+            </AppLink>
+            <AppLink href="/wegweiser" className="home-puk__path">
+              <strong>Eine konkrete Situation</strong>
+              <span>Den nächsten hilfreichen Schritt finden.</span>
+            </AppLink>
+            <AppLink href="/verstehen" className="home-puk__path">
+              <strong>Borderline verstehen</strong>
+              <span>Erleben, Behandlung und Angehörigenrollen einordnen.</span>
+            </AppLink>
           </nav>
-        </EditorialSection.Body>
-        <EditorialSection.Aside>
-          <CrisisQuickAccess />
-        </EditorialSection.Aside>
-      </EditorialSection>
-
-      <PathwaySection />
-      <EditorialSection variant="cream" density="compact">
-        <EditorialSection.Body>
-          <DisplayHeading level={2}>
-            Beratung für Sie – auch ohne Vollmacht
+          <p className="home-puk__more">
+            Noch unsicher, wo anfangen?{" "}
+            <AppLink href="/selbsttest" className="editorial-link">
+              Passende Inhalte finden
+            </AppLink>
+          </p>
+        </div>
+      </section>
+      <section
+        className="home-practical"
+        aria-labelledby="home-practical-title"
+      >
+        <div className="home-practical__inner">
+          <DisplayHeading level={2} id="home-practical-title">
+            Hilfe für den Alltag
           </DisplayHeading>
-          <EditorialProse>
-            <p>
-              Die Fachstelle Angehörigenarbeit berät kostenlos und vertraulich.
-              Die betroffene Person muss dafür nicht in der PUK behandelt
-              werden. Sie dürfen auch mit Unsicherheit oder eigenen Belastungen
-              kommen.
-            </p>
-            <p>
-              <AppLink href="/fachstelle">Beratung und Kontakt</AppLink>
-              {" · "}
-              <AppLink href="/materialien/text/kinder">
-                Wenn Kinder mitbetroffen sind
-              </AppLink>
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
+          <div className="home-practical__links">
+            <AppLink href="/kommunizieren">
+              <strong>Worte für schwierige Gespräche</strong>
+              <span>
+                Gefühle anerkennen, Anliegen formulieren und Pausen ermöglichen.
+              </span>
+            </AppLink>
+            <AppLink href="/grenzen#grenzen-arten">
+              <strong>Die eigenen Grenzen klären</strong>
+              <span>
+                Beispiele für körperliche, emotionale, zeitliche und materielle
+                Grenzen.
+              </span>
+            </AppLink>
+            <AppLink href="/selbstfuersorge">
+              <strong>Die eigene Gesundheit schützen</strong>
+              <span>
+                Ihre Bedürfnisse und Ihr Leben zählen – unabhängig davon, wie
+                viel Sie unterstützen.
+              </span>
+            </AppLink>
+          </div>
+        </div>
+      </section>
       <EditorialSection variant="cream" density="compact">
-        <EditorialSection.MarginNote>
-          <HomeMarginLabel>Grundsatz</HomeMarginLabel>
-        </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <GuidingPrinciple />
+          <AngehoerigenBeratung />
+          <p className="mt-4">
+            <AppLink href="/materialien/text/kinder" className="editorial-link">
+              Wenn Kinder mitbetroffen sind: erklären, Betreuung planen und
+              entlasten
+            </AppLink>
+          </p>
         </EditorialSection.Body>
       </EditorialSection>
-
-      <VisualOrientationGrid
-        ids={["validierungs-treppe", "vier-arten-grenzen", "sauerstoffmaske"]}
-        title="Drei Bilder für die nächsten Schritte."
-        intro="Gefühle anerkennen, Grenzen setzen und die eigene Kraft schützen: Wählen Sie die Hilfe, die zu Ihrer Situation passt."
-      />
-
       <EditorialSection variant="cream-deep" density="compact">
-        <EditorialSection.MarginNote>
-          <HomeMarginLabel>Fachstelle</HomeMarginLabel>
-        </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <DisplayHeading level={2}>
-            Wenn Sie nicht wissen, wo anfangen: bringen Sie einfach die Lage
-            mit.
+            Mitgefühl und Selbstschutz gehören zusammen
           </DisplayHeading>
           <EditorialProse>
             <p>
-              Die Fachstelle Angehörigenarbeit berät auch Sie – nicht nur die
-              betroffene Person. Orientierung, Gespräch und Materialien für
-              Partnerinnen, Eltern, Geschwister und erwachsene Kinder.
+              Sie können Unterstützung anbieten und zugleich entscheiden, was
+              für Sie tragbar ist. Grenzen, eigene Beratung und Kontaktpausen
+              dürfen dazugehören. Sie sind nicht allein für die Genesung eines
+              anderen Menschen verantwortlich.
             </p>
             <p>
-              Wenn es akut ist, gehen Sie nicht über diese Seite als Umweg:
-              Nutzen Sie direkt die{" "}
-              <AppLink href="/soforthilfe">Soforthilfe-Kontakte</AppLink>.
+              <AppLink href="/genesung#garten">
+                Was Sie beitragen können – und was nicht in Ihrer Hand liegt
+              </AppLink>
+              {" · "}
+              <AppLink href="/materialien">Alle Materialien</AppLink>
             </p>
           </EditorialProse>
         </EditorialSection.Body>
-        {FACHSTELLE && EMAIL_ANGEHOERIGEN && ADRESSE_PUK && (
-          <EditorialSection.Aside>
-            <ContactPanel />
-          </EditorialSection.Aside>
-        )}
       </EditorialSection>
     </Layout>
-  );
-}
-
-function HomeMarginLabel({
-  children,
-  tone = "default",
-}: {
-  children: string;
-  tone?: "default" | "light";
-}) {
-  return (
-    <>
-      <span
-        className="block text-[13px] font-medium uppercase"
-        style={{
-          color: tone === "light" ? "#d6c8be" : "var(--accent-label)",
-          letterSpacing: "var(--tracking-caps)",
-          lineHeight: 1.35,
-        }}
-      >
-        {children}
-      </span>
-      <div
-        aria-hidden="true"
-        className="mt-3 border-t"
-        style={{
-          borderColor:
-            tone === "light"
-              ? "rgba(245, 236, 230, 0.22)"
-              : "var(--rule-color)",
-        }}
-      />
-    </>
-  );
-}
-
-function CrisisQuickAccess() {
-  return (
-    <aside
-      aria-label="Wenn es akut ist"
-      className="home-side-panel home-side-panel--crisis"
-    >
-      <p className="home-side-panel__kicker">Wenn es akut ist</p>
-      <p className="home-side-panel__title">
-        Bei Gefahr, Suiziddruck oder Gewalt zählt der direkte Weg.
-      </p>
-      <p className="home-side-panel__body">
-        Notfallnummern und psychiatrische Krisenstellen ohne Umwege.
-      </p>
-      <AppLink
-        href="/soforthilfe"
-        className="editorial-link home-side-panel__link"
-      >
-        Soforthilfe öffnen
-      </AppLink>
-    </aside>
-  );
-}
-
-function PathwaySection() {
-  return (
-    <section className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-[var(--section-y-normal-mobile)] md:px-[var(--container-pad-md)] md:pb-[var(--section-y-normal-desktop)]">
-      <div className="mx-auto max-w-page">
-        <div
-          className="grid gap-6 border-y py-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-10"
-          style={{ borderColor: "var(--rule-color)" }}
-        >
-          <div>
-            <EyebrowLabel spacing="compact">Erste Orientierung</EyebrowLabel>
-            <h2
-              className="mt-4 font-display text-[2rem] md:text-[2.4rem]"
-              style={{
-                color: "var(--fg-primary)",
-                lineHeight: "var(--lh-tight)",
-                letterSpacing: "var(--tracking-tight)",
-                fontWeight: "var(--weight-display)",
-              }}
-            >
-              Was brauchen Sie gerade?
-            </h2>
-          </div>
-          <ul className="grid divide-y md:grid-cols-2 md:gap-x-8 md:divide-y-0">
-            {PATHWAYS.map(item => (
-              <li
-                key={item.href}
-                className="py-5 first:pt-0 md:border-t md:first:pt-5"
-                style={{ borderColor: "var(--rule-color)" }}
-              >
-                <p
-                  className="text-xs font-medium uppercase"
-                  style={{
-                    color: "var(--accent-label)",
-                    letterSpacing: "0.08em",
-                  }}
-                >
-                  {item.kicker}
-                </p>
-                <h3
-                  className="mt-2 font-display text-[1.35rem]"
-                  style={{
-                    color: "var(--fg-primary)",
-                    lineHeight: "var(--lh-snug)",
-                    fontWeight: 500,
-                  }}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  className="mt-2 text-sm"
-                  style={{
-                    color: "var(--fg-secondary)",
-                    lineHeight: "var(--lh-relaxed)",
-                  }}
-                >
-                  {item.body}
-                </p>
-                <AppLink
-                  href={item.href}
-                  className="editorial-link mt-4 inline-block text-sm"
-                >
-                  {item.link}
-                </AppLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function GuidingPrinciple() {
-  const points = [
-    {
-      title: "Verstehen",
-      text: "heisst nicht, alles zu entschuldigen.",
-    },
-    {
-      title: "Unterstützen",
-      text: "heisst nicht, allein verantwortlich zu werden.",
-    },
-    {
-      title: "Grenzen",
-      text: "sind nicht das Ende von Beziehung, sondern oft ihr Schutz.",
-    },
-  ];
-
-  return (
-    <div className="border-y py-8" style={{ borderColor: "var(--rule-color)" }}>
-      <p
-        className="max-w-[34rem] font-display text-[1.75rem] md:text-[2.1rem]"
-        style={{
-          color: "var(--fg-primary)",
-          lineHeight: "var(--lh-snug)",
-          letterSpacing: "var(--tracking-tight)",
-          fontWeight: "var(--weight-display)",
-        }}
-      >
-        Mitgefühl und Selbstschutz gehören auf dieselbe Seite.
-      </p>
-      <ul className="mt-8 grid gap-5 md:grid-cols-3">
-        {points.map(point => (
-          <li key={point.title}>
-            <p
-              className="text-xs font-medium uppercase"
-              style={{
-                color: "var(--accent-label)",
-                letterSpacing: "0.08em",
-              }}
-            >
-              {point.title}
-            </p>
-            <p
-              className="mt-2 text-sm"
-              style={{
-                color: "var(--fg-secondary)",
-                lineHeight: "var(--lh-relaxed)",
-              }}
-            >
-              {point.text}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function ContactPanel() {
-  if (!FACHSTELLE || !EMAIL_ANGEHOERIGEN || !ADRESSE_PUK) return null;
-
-  return (
-    <div className="home-side-panel home-side-panel--contact">
-      <p className="home-side-panel__kicker">Kontakt</p>
-      <p className="home-side-panel__title">{FACHSTELLE.label}</p>
-      <p className="home-side-panel__body home-side-panel__body--compact">
-        {ADRESSE_PUK.adresse}
-      </p>
-      <ul className="home-side-panel__contact-list">
-        <li>
-          <a href={`tel:${FACHSTELLE.tel}`} className="editorial-link">
-            {FACHSTELLE.nummer}
-          </a>
-        </li>
-        <li>
-          <a
-            href={`mailto:${EMAIL_ANGEHOERIGEN.adresse}`}
-            className="editorial-link break-all"
-          >
-            {EMAIL_ANGEHOERIGEN.adresse}
-          </a>
-        </li>
-      </ul>
-    </div>
   );
 }

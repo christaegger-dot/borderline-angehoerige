@@ -87,7 +87,7 @@ const wasHilft = [
   {
     title: "Begrenzte Verfügbarkeit",
     description:
-      "Viele Angehörige fühlen sich verpflichtet, rund um die Uhr erreichbar zu sein – dieses Gefühl ist verständlich, aber auf Dauer nicht tragfähig. Grenzen bei der Erreichbarkeit sind keine Ablehnung, sondern ein Weg, langfristig präsent bleiben zu können.",
+      "Sie müssen nicht rund um die Uhr erreichbar sein. Ihre Erholung und Ihr eigenes Leben sind wichtig. Vereinbaren Sie eine Verfügbarkeit, die Sie freiwillig übernehmen können, und klären Sie professionelle Hilfewege für Krisen.",
     example:
       "«Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu.»",
     dialog: [

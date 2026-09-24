@@ -27,7 +27,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/wegweiser": {
-    editorialUpdated: "2026-09-22",
+    editorialUpdated: "2026-09-23",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
@@ -85,6 +85,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/verstehen/beziehungen": {
+    editorialUpdated: "2026-09-23",
     riskLevel: "high",
     lastReviewed: "2026-09-20",
     nextReviewDue: "2027-03-31",

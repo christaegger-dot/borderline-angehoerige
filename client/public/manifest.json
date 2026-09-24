@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FAF8F5",
-  "theme_color": "#C67A5C",
+  "theme_color": "#3C64FF",
   "lang": "de-CH",
   "orientation": "any",
   "categories": ["health", "education"],

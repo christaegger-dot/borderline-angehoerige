@@ -81,11 +81,12 @@ const zusammenarbeitSzenarien = [
     ],
   },
   {
-    titel: "Nach einer Krise: Nachsorge koordinieren",
+    titel: "Nach einer Krise: Zuständigkeiten klären",
     inhalt: [
       "Fragen Sie aktiv: «Wer übernimmt die Nachsorge, wann ist der nächste Kontakt und was kann ich verlässlich beitragen?»",
       "Klare Absprache: Wer macht was? Therapeutin, Angehöriger, betroffene Person",
       "Notfallkontakt klären: «Wenn es wieder kritisch wird, rufe ich … an?»",
+      "Eine Entlassung bedeutet nicht automatisch, dass Angehörige Betreuung übernehmen oder rund um die Uhr verfügbar sind. Sagen Sie früh, was Sie freiwillig übernehmen können; auch eine nicht übernommene Aufgabe muss im Nachsorgeplan berücksichtigt werden.",
       "Bitten Sie mit Einwilligung der betroffenen Person um die für Ihre vereinbarte Rolle nötigen Informationen. Ohne entsprechende Einwilligung oder andere Rechtsgrundlage besteht kein allgemeiner Anspruch auf vertrauliche Behandlungsinformationen oder den Austrittsbericht. Ihre eigene Belastungsgrenze dürfen Sie trotzdem benennen.",
     ],
   },

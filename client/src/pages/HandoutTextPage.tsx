@@ -283,6 +283,11 @@ export default function HandoutTextPage({
                         <p className="mt-2" style={bodyStyle}>
                           {card.text}
                         </p>
+                        {card.example && (
+                          <p className="mt-3 border-l-2 border-primary pl-3 text-base leading-relaxed">
+                            {card.example}
+                          </p>
+                        )}
                       </article>
                     ))}
                   </div>

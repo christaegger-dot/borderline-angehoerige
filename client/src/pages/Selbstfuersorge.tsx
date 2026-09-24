@@ -1,4 +1,5 @@
 import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
+import AngehoerigenIllustration from "@/components/AngehoerigenIllustration";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
@@ -18,6 +19,7 @@ import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { permissionList } from "@/content/selbstfuersorge-page";
+import revisedHandouts from "@/content/revisedHandouts.json";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
 import { SelbstfuersorgeExercisesSection } from "@/sections/SelbstfuersorgeExercisesSection";
 import { SelbstfuersorgeRoleNotesSection } from "@/sections/SelbstfuersorgeRoleNotesSection";
@@ -70,7 +72,7 @@ export default function Selbstfuersorge() {
       <EditorialSection
         variant="cream"
         density="compact"
-        className="topic-intro topic-intro--informative-aside"
+        className="topic-intro"
       >
         <EditorialSection.MarginNote>
           <span
@@ -89,15 +91,16 @@ export default function Selbstfuersorge() {
             Selbstfürsorge
           </EyebrowLabel>
           <DisplayHeading level={1} size="topic">
-            Selbstfürsorge für <em>Angehörige</em> — was trägt, wenn die
-            Belastung bleibt.
+            Auch Ihr eigenes <em>Leben</em> zählt.
           </DisplayHeading>
           <Lede className="max-w-[30em]">
-            Wer dauerhaft mit Krisen und Loyalitätskonflikten lebt, braucht
-            eigene Regeneration – nicht als Luxus, sondern als Grundlage.
+            Ihre Gesundheit, Beziehungen und Interessen verdienen Raum.
+            Selbstfürsorge kann eine Pause bedeuten – oder eine konkrete
+            Veränderung bei Aufgaben, Grenzen und Unterstützung.
           </Lede>
           <TopicQuickLinks
             items={[
+              { href: "#eigene-unterstuetzung", label: "Entlastung für mich" },
               { href: "#warnsignale", label: "Warnsignale" },
               { href: "#sofort-uebungen", label: "Kurze Übungen" },
               { href: "#erlaubnis", label: "Eigene Bedürfnisse ernst nehmen" },
@@ -114,27 +117,12 @@ export default function Selbstfuersorge() {
           </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
-          <figure className="ml-auto w-full max-w-[430px]">
-            <div
-              className="overflow-hidden rounded-[1.35rem] border"
-              style={{
-                borderColor: "var(--rule-color)",
-                backgroundColor: "var(--bg-elevated)",
-              }}
-            >
-              <img
-                src="/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v5.webp"
-                alt="Diagramm: Ohne Selbstfürsorge entsteht ein Teufelskreis aus Erschöpfung, weniger Geduld, Konflikten und Schuldgefühlen. Mit Selbstfürsorge entsteht ein Schutzkreislauf aus Stabilität, Kraft, Geduld und ruhigeren Reaktionen."
-                className="block w-full"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-            <figcaption className="editorial-small-copy mt-3 border-t pt-3">
-              Ihre Bedürfnisse zählen. Erholung ist auch dann berechtigt, wenn
-              Sie danach keine weitere Unterstützung leisten können.
-            </figcaption>
-          </figure>
+          <AngehoerigenIllustration
+            name="pause-und-handlungsspielraum-v1"
+            alt="Eine Person nimmt sich Zeit für eine Pause."
+            caption="Eigene Zeit muss nicht erst durch zusätzliche Hilfe verdient werden."
+            eager
+          />
         </EditorialSection.Aside>
       </EditorialSection>
 
@@ -252,9 +240,11 @@ export default function Selbstfuersorge() {
                   color: "var(--fg-secondary)",
                 }}
               >
-                Stopp, atmen, orientieren, Perspektive, Plan. Eine kurze Pause
-                kann helfen, den nächsten Schritt zu wählen; Sie müssen dabei
-                nicht sofort ruhig werden.{" "}
+                {revisedHandouts["stopp-technik"].sections[0].cards
+                  ?.map(card => card.title.split(" - ")[1])
+                  .join(", ")}
+                . Eine kurze Pause kann helfen, den nächsten Schritt zu wählen;
+                Sie müssen dabei nicht sofort ruhig werden.{" "}
                 <a
                   href="#sofort-uebungen"
                   className="editorial-link"
@@ -268,17 +258,6 @@ export default function Selbstfuersorge() {
               </p>
             </li>
           </ul>
-        </EditorialSection.Body>
-      </EditorialSection>
-
-      {/* ── 3 Pull-Quote (dominant, eigene Sektion) ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.Body>
-          <EditorialPullQuote>
-            «Viele Angehörige merken erst spät, wie erschöpft sie geworden sind.
-            Selbstfürsorge beginnt damit, die eigene Belastung überhaupt ernst
-            zu nehmen.»
-          </EditorialPullQuote>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -322,35 +301,8 @@ export default function Selbstfuersorge() {
           />
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <ContentSection
-            variant="editorial"
-            collapsible={false}
-            title="Warum Selbstfürsorge so wichtig ist"
-            id="selbstfuersorge-warum-wichtig"
-          >
-            <EditorialProse>
-              <p>
-                Angehörige von Menschen mit Borderline tragen oft eine besondere
-                Last. Die emotionale Intensität, die Unvorhersehbarkeit und die
-                dauernde innere Wachsamkeit können zu chronischem Stress führen.
-                Nicht jeder entwickelt daraus eine psychische Erkrankung, aber
-                viele geraten über längere Zeit an Grenzen. Studien zeigen ein
-                erhöhtes Risiko für:
-              </p>
-              <ul className="ml-6 list-disc space-y-1">
-                <li>Erschöpfungsdepression</li>
-                <li>Angststörungen</li>
-                <li>Schlafstörungen</li>
-                <li>Körperliche Beschwerden</li>
-              </ul>
-              <p>
-                Selbstfürsorge ist daher keine Selbstsucht, sondern{" "}
-                <strong>Selbsterhaltung</strong>. Sie erhöht die Chance, dass
-                Sie auf Dauer präsent bleiben können, statt sich Schritt für
-                Schritt zu erschöpfen.
-              </p>
-            </EditorialProse>
-          </ContentSection>
+          <div id="selbstfuersorge-warum-wichtig" className="scroll-mt-28" />
+          <SelbstfuersorgeCheck />
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -375,14 +327,10 @@ export default function Selbstfuersorge() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <SelbstfuersorgeSignalsSection collapsible={false} />
-          <SelbstfuersorgeCheck />
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 7 Group C: Was hilft ── exercises + radikale + erlaubnis
-           (beratung-netzwerke verschoben hinter erlaubnis, damit Group C
-           zusammenhängend bleibt — narrativ verbessert sich der Flow:
-           erst selbst probieren, dann externe Hilfe) */}
+      {/* ── Übungen und eigene Bedürfnisse ── */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span

@@ -17,7 +17,7 @@ export default function Materialien() {
         path="/materialien"
       />
 
-      <EditorialSection variant="cream" density="normal">
+      <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
           <span
             className="block text-[13px] font-medium uppercase"
@@ -31,16 +31,15 @@ export default function Materialien() {
           </span>
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
-          <EyebrowLabel className="mb-8" spacing="compact">
+          <EyebrowLabel className="mb-3" spacing="compact">
             Materialien
           </EyebrowLabel>
-          <DisplayHeading level={1} size="utility">
+          <DisplayHeading level={1} size="topic">
             Materialien, die schnell Orientierung geben
           </DisplayHeading>
-          <Lede className="mt-6 max-w-[40em]">
-            Ausgewählte Handouts, Infografiken und Notfallhilfen für belastende
-            oder akute Situationen. Beginnen Sie mit einer Lage; die
-            vollständige Bibliothek folgt darunter.
+          <Lede className="max-w-[40em]">
+            Handouts und Infografiken zum Lesen, Ausdrucken und Mitnehmen.
+            Wählen Sie unten das Thema, das Sie gerade beschäftigt.
           </Lede>
         </EditorialSection.Body>
       </EditorialSection>

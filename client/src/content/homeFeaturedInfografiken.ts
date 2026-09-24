@@ -82,7 +82,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     categoryLabel: "Grenzen",
     href: "/grenzen",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v5.webp",
+      "/infografiken/extras/thumbnails/puk-4-arten-von-grenzen-v1.webp",
     thumbnailHeight: 803,
     alt: "Die 4 Arten von Grenzen",
   },
@@ -90,7 +90,7 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     id: "sauerstoffmaske",
     title: "Die Sauerstoffmaske",
     description:
-      "Selbstfürsorge ist keine Selbstsucht — sie ist die Voraussetzung.",
+      "Ihre Gesundheit, Beziehungen und Interessen haben einen eigenen Wert.",
     categoryLabel: "Selbstfürsorge",
     href: "/selbstfuersorge",
     thumbnailUrl:

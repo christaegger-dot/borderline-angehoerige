@@ -6,7 +6,7 @@ export default function TopicQuickLinks({
   return (
     <nav
       aria-label="Direkt zur Hilfe auf dieser Seite"
-      className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-base"
+      className="topic-quick-links mt-4 flex flex-wrap gap-2 text-base"
     >
       {items.map(item => (
         <a

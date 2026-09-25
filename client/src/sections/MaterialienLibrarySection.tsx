@@ -12,7 +12,6 @@ import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import {
   categoryMeta,
   materials,
-  quickStarts,
   type MaterialCategory,
   type MaterialItem,
 } from "@/content/materialien";
@@ -33,13 +32,6 @@ const categoryLabel: Record<Exclude<MaterialCategory, "alle">, string> = {
   genesung: "Genesung",
   soforthilfe: "Soforthilfe",
 };
-
-const starterMaterialIds = [
-  "notfallkarte-zuerich",
-  "notfallplan-krise",
-  "leuchtturm",
-  "warnsignale",
-] as const;
 
 function SectionKicker({ children }: { children: string }) {
   return (
@@ -174,14 +166,6 @@ export default function MaterialienLibrarySection() {
   const [previewTitle, setPreviewTitle] = useState("Vorschau");
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const starterMaterials = useMemo(
-    () =>
-      starterMaterialIds
-        .map(id => materials.find(item => item.id === id))
-        .filter((item): item is MaterialItem => Boolean(item)),
-    []
-  );
-
   const secondaryMaterials = useMemo(
     () =>
       activeCategory === "alle"
@@ -190,88 +174,8 @@ export default function MaterialienLibrarySection() {
     [activeCategory]
   );
 
-  const scrollToResults = () => {
-    setTimeout(() => {
-      gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
-  };
-
   return (
     <>
-      <EditorialSection variant="cream" density="compact">
-        <EditorialSection.MarginNote>
-          <SectionKicker>Nach Situation</SectionKicker>
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EyebrowLabel>Schneller Einstieg</EyebrowLabel>
-          <DisplayHeading level={2}>Erst die Lage sortieren</DisplayHeading>
-          <p className="editorial-small-copy mt-4 max-w-[36em]">
-            Wählen Sie nach Lage, nicht nach Vollständigkeit. Eine gute erste
-            Ressource reicht oft mehr als zehn geöffnete Tabs.
-          </p>
-          <ol className="material-start-list">
-            {quickStarts.map(item => (
-              <li key={item.id} className="material-start-list__item">
-                <span className="material-start-list__number">
-                  {categoryLabel[item.id]}
-                </span>
-                <div className="material-start-list__content">
-                  <h3 className="editorial-card-heading">{item.title}</h3>
-                  <p className="editorial-small-copy mt-2">{item.text}</p>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setActiveCategory(item.id);
-                      scrollToResults();
-                    }}
-                    className="editorial-link mt-4"
-                  >
-                    Passende Materialien anzeigen
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </EditorialSection.Body>
-      </EditorialSection>
-
-      <EditorialSection variant="cream" density="compact">
-        <EditorialSection.MarginNote>
-          <SectionKicker>Startauswahl</SectionKicker>
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EyebrowLabel>Kuratierte Auswahl</EyebrowLabel>
-          <DisplayHeading level={2}>Empfohlen für den Anfang</DisplayHeading>
-          <EditorialBody className="max-w-[36em]">
-            Wenn Sie gerade nicht lange suchen möchten, beginnen Sie mit diesen
-            vier Materialien. Sie geben akute Sicherheit, eine erste Ordnung und
-            eine Erinnerung an die eigene Belastungsgrenze.
-          </EditorialBody>
-        </EditorialSection.Body>
-      </EditorialSection>
-
-      <section
-        className="bg-[var(--bg-primary)] px-[var(--container-pad)] pb-12 md:px-[var(--container-pad-md)] md:pb-14"
-        aria-label="Empfohlene Startmaterialien"
-      >
-        <div className="mx-auto max-w-page">
-          <div className="material-starter-shelf">
-            {starterMaterials.map(item => (
-              <MaterialEntry
-                key={item.id}
-                item={item}
-                eager
-                variant="starter"
-                onPreview={(image, title) => {
-                  setPreviewImage(image);
-                  setPreviewTitle(title);
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <EditorialSection variant="cream" density="compact">
         <EditorialSection.MarginNote>
           <SectionKicker>Nach Kategorie</SectionKicker>
@@ -280,9 +184,9 @@ export default function MaterialienLibrarySection() {
           <EyebrowLabel>Bibliothek</EyebrowLabel>
           <DisplayHeading level={2}>Alle Materialien</DisplayHeading>
           <EditorialBody className="max-w-[36em]">
-            Die vollständige Sammlung bleibt hier gebündelt, damit einzelne
-            Inhaltsseiten ruhiger bleiben. Filtern Sie nur, wenn Sie gezielt
-            nach einem Thema suchen.
+            Wählen Sie ein Thema oder blättern Sie durch die Sammlung. Zu jedem
+            Material finden Sie eine Textfassung und eine Druckfassung, soweit
+            verfügbar.
           </EditorialBody>
         </EditorialSection.Body>
         <EditorialSection.Aside background="cream-deep">

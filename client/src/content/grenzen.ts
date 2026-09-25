@@ -22,9 +22,9 @@ export const grenzenItems: GrenzenItem[] = [
     id: "dear",
     title: "Die DEAR-Technik",
     description: "4 Schritte für respektvolle Grenzsetzung",
-    url: "/infografiken/manus-dear-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-dear-v1.webp",
-    pdfUrl: "/infografiken/manus-dear-v1.pdf",
+    url: "/infografiken/puk-dear-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-dear-v1.webp",
+    pdfUrl: "/infografiken/puk-dear-v1.pdf",
     category: "kommunizieren",
   },
   {
@@ -41,10 +41,10 @@ export const grenzenItems: GrenzenItem[] = [
     id: "4-arten-von-grenzen",
     title: "Die 4 Arten von Grenzen",
     description: "Physisch, emotional, zeitlich, materiell",
-    url: "/infografiken/grenzen-die-4-arten-von-grenzen-v5.webp",
+    url: "/infografiken/puk-4-arten-von-grenzen-v1.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v5.webp",
-    pdfUrl: "/infografiken/grenzen-die-4-arten-von-grenzen-v5.pdf",
+      "/infografiken/extras/thumbnails/puk-4-arten-von-grenzen-v1.webp",
+    pdfUrl: "/infografiken/puk-4-arten-von-grenzen-v1.pdf",
     category: "erkennen",
   },
   {

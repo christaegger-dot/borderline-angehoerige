@@ -1,0 +1,218 @@
+{
+  "4-arten-von-grenzen": {
+    "title": "Vier Arten von Grenzen",
+    "kicker": "Orientierung für Angehörige",
+    "summary": "Welche Grenze brauchen Sie gerade? Vier Bereiche helfen, die eigenen Bedürfnisse konkreter zu benennen.",
+    "intro": [
+      "Eine Grenze beschreibt, was für Sie tragbar ist und was Sie selbst tun können. Sie soll das Verhalten anderer Menschen nicht kontrollieren."
+    ],
+    "sections": [
+      {
+        "title": "Vier Bereiche im Alltag",
+        "cards": [
+          {
+            "title": "Körper und Raum",
+            "text": "Ihr Körper, Ihre Privatsphäre und Ihr Rückzugsraum verdienen Schutz. Sie dürfen Berührungen ablehnen oder ein Gespräch verlassen, wenn das sicher möglich ist.",
+            "example": "«Ich möchte gerade nicht berührt werden. Ich brauche etwas Abstand.»"
+          },
+          {
+            "title": "Gefühle und Verantwortung",
+            "text": "Sie können Gefühle ernst nehmen, ohne jede Anschuldigung zu übernehmen oder die Stimmung der anderen Person verändern zu müssen.",
+            "example": "«Ich höre, dass du enttäuscht bist. Meine Entscheidung bleibt trotzdem bestehen.»"
+          },
+          {
+            "title": "Zeit und Erreichbarkeit",
+            "text": "Schlaf, Arbeit, Freundschaften und freie Zeit zählen. Eine erreichbare Zeit anzubieten ist eine Möglichkeit, keine Verpflichtung zur ständigen Verfügbarkeit.",
+            "example": "«Heute kann ich noch zehn Minuten telefonieren. Danach brauche ich Zeit für mich.»"
+          },
+          {
+            "title": "Geld und Unterstützung",
+            "text": "Sie dürfen prüfen, welche Ausgaben oder Aufgaben Sie übernehmen können. Eigene finanzielle Sicherheit und Belastungsgrenzen gehören in diese Entscheidung.",
+            "example": "«Ich kann dir bei der Suche nach Beratung helfen. Weiteres Geld kann ich dir nicht leihen.»"
+          }
+        ]
+      },
+      {
+        "title": "Eine Grenze darf angepasst werden",
+        "calloutTitle": "Selbstschutz ohne Selbstvorwurf",
+        "calloutText": "Auch eine klare Grenze garantiert keine Zustimmung. Wenn sie schwer einzuhalten ist, können kleinere Schritte oder eigene Beratung helfen. Bei Bedrohung oder Gewalt geht Schutz vor Gesprächsführung. Auch eine Kontaktpause oder eine Veränderung der Beziehung darf erwogen werden."
+      }
+    ],
+    "sourceLine": "Redaktionelle Orientierung, kein Testverfahren. Bezug: NICE CG78, Information for families and carers, nice.org.uk/guidance/cg78/ifp/chapter/information-for-families-and-carers.",
+    "standLine": "Redaktionell aktualisiert: 23.09.2026. Erneute fachliche Prüfung ausstehend.",
+    "visual": {
+      "title": "Auch Ihre Bedürfnisse zählen.",
+      "subtitle": "Vier Arten von Grenzen im Alltag",
+      "opening": "Welcher Bereich ist heute wichtig für Sie? Ein Anfang genügt.",
+      "cards": [
+        {
+          "title": "Körper & Raum",
+          "body": "Abstand und ein eigener Rückzugsort sind erlaubt.",
+          "quote": "«Ich brauche jetzt etwas Abstand.»"
+        },
+        {
+          "title": "Gefühle & Verantwortung",
+          "body": "Mitfühlen heisst nicht, alles lösen zu müssen.",
+          "quote": "«Ich sehe, dass du enttäuscht bist. Mein Nein bleibt.»"
+        },
+        {
+          "title": "Zeit & Erreichbarkeit",
+          "body": "Sie dürfen Zeit für Schlaf, Arbeit und Ihr eigenes Leben schützen.",
+          "quote": "«Ich kann noch zehn Minuten reden. Dann höre ich auf.»"
+        },
+        {
+          "title": "Geld & Unterstützung",
+          "body": "Sie entscheiden, welche Hilfe für Sie tragbar ist.",
+          "quote": "«Ich helfe bei der Suche nach Beratung. Geld leihe ich nicht.»"
+        }
+      ],
+      "noteTitle": "Eine Grenze beschreibt, was Sie selbst tun.",
+      "note": "Die andere Person muss nicht einverstanden sein. Wenn eine Grenze schwer einzuhalten ist, dürfen Sie sie anpassen und sich Unterstützung holen.",
+      "safety": "Bei Bedrohung oder Gewalt geht Ihre Sicherheit vor. Sie müssen keine Grenze im Gespräch durchsetzen.",
+      "source": "Redaktionelle Orientierung zu eigenen Bedürfnissen; Bezug: NICE CG78, Information for families and carers."
+    }
+  },
+  "dear": {
+    "title": "DEAR: ein Anliegen klar formulieren",
+    "kicker": "Gesprächshilfe für Angehörige",
+    "summary": "Vier Schritte helfen, ein Anliegen vorzubereiten. Wählen Sie einen Schritt aus und lesen Sie einen passenden Beispielsatz.",
+    "intro": [
+      "DEAR ist ein Teil der DBT-Fertigkeit DEAR MAN. Die folgenden eigenen Beispiele betreffen Telefonanrufe am späten Abend. Nutzen Sie die Struktur in einer ausreichend ruhigen und sicheren Situation."
+    ],
+    "sections": [
+      {
+        "title": "Ein Beispiel in vier Schritten",
+        "cards": [
+          {
+            "title": "D · Beschreiben",
+            "text": "Benennen Sie eine konkrete Beobachtung. Vermeiden Sie Vermutungen über Absichten sowie «immer» und «nie».",
+            "example": "«In den letzten drei Nächten hast du mich nach 23 Uhr angerufen.»"
+          },
+          {
+            "title": "E · Empfinden ausdrücken",
+            "text": "Sagen Sie, was die Situation bei Ihnen auslöst. Sie müssen Ihre Gefühle weder beweisen noch ausführlich rechtfertigen.",
+            "example": "«Danach konnte ich schlecht schlafen. Ich bin morgens erschöpft.»"
+          },
+          {
+            "title": "A · Anliegen nennen",
+            "text": "Formulieren Sie die Bitte oder Grenze konkret. Unterscheiden Sie den Wunsch an die andere Person von dem, was Sie selbst tun werden.",
+            "example": "«Bitte ruf mich für Alltagsfragen vor 21 Uhr an. Danach stelle ich mein Telefon stumm.»"
+          },
+          {
+            "title": "R · Nutzen erklären",
+            "text": "Beschreiben Sie, warum die Vereinbarung hilfreich wäre. Daraus soll weder eine Drohung noch ein Versprechen für den Gesprächsausgang werden.",
+            "example": "«So kann ich mich ausruhen und habe bei unserem nächsten Gespräch mehr Aufmerksamkeit.»"
+          }
+        ]
+      },
+      {
+        "title": "Grenzen der Gesprächshilfe",
+        "calloutTitle": "Sie können klar sein und trotzdem auf Ablehnung stossen",
+        "calloutText": "DEAR garantiert keine Kooperation. Sie dürfen unterbrechen, sich Unterstützung holen oder eine Grenze neu planen. Vereinbaren Sie für Krisen passende professionelle Anlaufstellen. Bei akuter Gefahr, Bedrohung oder Gewalt geht direkte Hilfe vor dem Üben."
+      }
+    ],
+    "sourceLine": "Grundlage: Linehan, M. M. (2015), DBT Skills Training Manual, 2. Auflage, Guilford Press, DEAR MAN. Deutschsprachige redaktionelle Anpassung mit eigenen Beispielen.",
+    "standLine": "Redaktionell aktualisiert: 23.09.2026. Erneute fachliche Prüfung ausstehend.",
+    "visual": {
+      "title": "Ein Anliegen klar aussprechen.",
+      "subtitle": "DEAR: vier Schritte für ein Gespräch",
+      "opening": "Beispiel: Telefonanrufe am späten Abend. Für eine ruhige, sichere Situation.",
+      "cards": [
+        {
+          "letter": "D",
+          "title": "Beschreiben",
+          "body": "Was ist konkret passiert?",
+          "quote": "«Du hast mich in den letzten drei Nächten nach 23 Uhr angerufen.»"
+        },
+        {
+          "letter": "E",
+          "title": "Empfinden ausdrücken",
+          "body": "Wie geht es mir damit?",
+          "quote": "«Danach schlafe ich schlecht. Morgens bin ich erschöpft.»"
+        },
+        {
+          "letter": "A",
+          "title": "Anliegen nennen",
+          "body": "Was wünsche ich mir? Was werde ich tun?",
+          "quote": "«Bitte ruf für Alltagsfragen vor 21 Uhr an. Danach stelle ich mein Telefon stumm.»"
+        },
+        {
+          "letter": "R",
+          "title": "Nutzen erklären",
+          "body": "Wofür wäre diese Absprache hilfreich?",
+          "quote": "«So kann ich mich ausruhen und dir beim nächsten Gespräch besser zuhören.»"
+        }
+      ],
+      "noteTitle": "Es muss nicht perfekt sein.",
+      "note": "Eine klare Bitte garantiert keine Zustimmung. Sie dürfen das Gespräch unterbrechen oder sich Unterstützung holen.",
+      "safety": "Für Krisen professionelle Anlaufstellen vereinbaren. Bei akuter Gefahr, Bedrohung oder Gewalt geht direkte Hilfe vor.",
+      "source": "Nach DEAR MAN, Teil der Dialektisch-Behavioralen Therapie (DBT). Linehan, DBT Skills Training Manual, 2015. Eigene Beispiele."
+    }
+  },
+  "garten": {
+    "title": "Der Garten: begleiten, ohne Wachstum zu erzwingen",
+    "kicker": "Genesung und Angehörigenrolle",
+    "summary": "Was können Sie anbieten? Was entscheiden Sie selbst? Und was bleibt ausserhalb Ihres Einflusses?",
+    "intro": [
+      "Der Garten ist eine Metapher: Hilfreiche Bedingungen können Entwicklung unterstützen. Wie und wann ein Mensch sich verändert, lässt sich daraus nicht vorhersagen."
+    ],
+    "sections": [
+      {
+        "title": "Drei unterschiedliche Verantwortungsbereiche",
+        "cards": [
+          {
+            "title": "Bedingungen anbieten",
+            "text": "Wie Wasser oder Licht im Garten können Zuhören, Ermutigung oder praktische Hilfe Entwicklung unterstützen. Fragen Sie, welche Unterstützung gewünscht ist, und bieten Sie nur an, was für Sie möglich ist.",
+            "example": "«Wenn du möchtest, helfe ich dir, die Fragen für deinen Termin aufzuschreiben.»"
+          },
+          {
+            "title": "Die eigene Kraft schützen",
+            "text": "Ihre Zeit, Gesundheit und Lebenspläne haben einen eigenen Wert. Sie dürfen Unterstützung begrenzen, Verantwortung teilen und selbst Beratung suchen.",
+            "example": "«Ich kann diese Woche einmal mitkommen. Für die weiteren Termine brauchen wir eine andere Lösung.»"
+          },
+          {
+            "title": "Wachstum nicht bestimmen",
+            "text": "Behandlung, persönliche Entscheidungen und Lebensumstände beeinflussen den Verlauf. Angehörige können Genesung nicht herstellen. Ein Rückschritt beweist nicht, dass Sie zu wenig getan haben.",
+            "example": "«Ich wünsche dir, dass es besser wird. Ich kann diesen Weg begleiten, aber nicht für dich gehen.»"
+          }
+        ]
+      },
+      {
+        "title": "Hoffnung ohne Auftrag zum Retten",
+        "calloutTitle": "Auch Ihr eigenes Leben zählt",
+        "calloutText": "Sie müssen diese Beiträge nicht alle leisten. Manchmal ist weniger Unterstützung, eine Kontaktpause oder zusätzliche professionelle Hilfe nötig. Welche Form von Kontakt tragbar ist, dürfen Sie auch mit Blick auf Ihre eigene Sicherheit und Gesundheit entscheiden."
+      }
+    ],
+    "sourceLine": "Redaktionelle Metapher, kein Erklärungsmodell für den individuellen Verlauf. Bezug: NICE CG78, Information for families and carers, nice.org.uk/guidance/cg78/ifp/chapter/information-for-families-and-carers.",
+    "standLine": "Redaktionell aktualisiert: 23.09.2026. Erneute fachliche Prüfung ausstehend.",
+    "visual": {
+      "title": "Begleiten, ohne alles zu tragen.",
+      "subtitle": "Ein Garten als Bild für Ihre Möglichkeiten und Grenzen",
+      "opening": "Sie können unterstützen. Sie müssen Genesung nicht herstellen.",
+      "cards": [
+        {
+          "title": "Ich kann etwas anbieten.",
+          "body": "Zuhören oder praktisch helfen: wenn es gewünscht und für mich möglich ist.",
+          "quote": "«Möchtest du, dass ich mitkomme?»",
+          "imageLabel": "Unterstützung anbieten"
+        },
+        {
+          "title": "Ich darf für mich sorgen.",
+          "body": "Meine Gesundheit, Beziehungen und eigenen Pläne zählen. Auch eine Pause darf sein.",
+          "quote": "«Heute brauche ich Zeit für mich.»",
+          "imageLabel": "Das eigene Leben pflegen"
+        },
+        {
+          "title": "Ich kann den Verlauf nicht steuern.",
+          "body": "Wie und wann es besser wird, liegt nicht in meiner Hand. Behandlung und viele weitere Faktoren spielen mit.",
+          "quote": "Ein Rückschritt ist kein Beweis, dass Sie zu wenig getan haben.",
+          "imageLabel": "Wachstum nicht erzwingen"
+        }
+      ],
+      "noteTitle": "Auch Ihr eigenes Leben hat einen Wert.",
+      "note": "Sie dürfen Hilfe begrenzen, Aufgaben teilen und selbst Beratung suchen. Auch eine Kontaktpause kann eine Möglichkeit sein.",
+      "safety": "Der Garten ist ein Bild. Er erklärt oder prognostiziert keinen individuellen Krankheitsverlauf.",
+      "source": "Redaktionelle Metapher; Bezug: NICE CG78, Information for families and carers. Keine Vorhersage des Genesungsverlaufs."
+    }
+  }
+}

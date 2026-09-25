@@ -12,7 +12,7 @@
  * Anker, kleine Stern-Konstellationen, Hand-drawn Bodenlinie.
  *
  * Farben sind als Hex-Werte hardcoded und auf die aktuelle Token-Palette
- * abgestimmt (--accent-primary #5b3a4e, --accent-label #4f6b5e).
+ * abgestimmt (--accent-primary #3c64ff, --accent-label #3155dc).
  * Bei Theme-Änderungen müssen die Werte hier nachgezogen werden.
  */
 
@@ -43,7 +43,7 @@ export default function SchaleIllustration({
         </radialGradient>
         <linearGradient id="sch-bowl" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#7a5066" />
-          <stop offset="50%" stopColor="#5b3a4e" />
+          <stop offset="50%" stopColor="#3c64ff" />
           <stop offset="100%" stopColor="#3a2632" />
         </linearGradient>
         <radialGradient id="sch-light" cx="50%" cy="50%" r="50%">
@@ -60,15 +60,15 @@ export default function SchaleIllustration({
 
       <circle cx="240" cy="200" r="180" fill="url(#sch-halo)" />
 
-      <circle cx="100" cy="100" r="1.8" fill="#5b3a4e" opacity="0.55" />
-      <circle cx="375" cy="95" r="2" fill="#5b3a4e" opacity="0.55" />
-      <circle cx="80" cy="170" r="1.5" fill="#4f6b5e" opacity="0.5" />
-      <circle cx="395" cy="160" r="1.6" fill="#4f6b5e" opacity="0.5" />
-      <circle cx="60" cy="260" r="1.4" fill="#5b3a4e" opacity="0.45" />
-      <circle cx="415" cy="250" r="1.5" fill="#5b3a4e" opacity="0.45" />
-      <circle cx="170" cy="65" r="1.3" fill="#4f6b5e" opacity="0.5" />
-      <circle cx="310" cy="60" r="1.5" fill="#5b3a4e" opacity="0.5" />
-      <circle cx="240" cy="40" r="1.5" fill="#5b3a4e" opacity="0.5" />
+      <circle cx="100" cy="100" r="1.8" fill="#3c64ff" opacity="0.55" />
+      <circle cx="375" cy="95" r="2" fill="#3c64ff" opacity="0.55" />
+      <circle cx="80" cy="170" r="1.5" fill="#3155dc" opacity="0.5" />
+      <circle cx="395" cy="160" r="1.6" fill="#3155dc" opacity="0.5" />
+      <circle cx="60" cy="260" r="1.4" fill="#3c64ff" opacity="0.45" />
+      <circle cx="415" cy="250" r="1.5" fill="#3c64ff" opacity="0.45" />
+      <circle cx="170" cy="65" r="1.3" fill="#3155dc" opacity="0.5" />
+      <circle cx="310" cy="60" r="1.5" fill="#3c64ff" opacity="0.5" />
+      <circle cx="240" cy="40" r="1.5" fill="#3c64ff" opacity="0.5" />
 
       <ellipse cx="240" cy="245" rx="120" ry="85" fill="url(#sch-inner-glow)" />
 
@@ -128,7 +128,7 @@ export default function SchaleIllustration({
 
       <path
         d="M40,455 Q240,448 440,455"
-        stroke="#5b3a4e"
+        stroke="#3c64ff"
         strokeWidth="1.2"
         fill="none"
         strokeLinecap="round"

@@ -16,7 +16,7 @@
  * kleine Stern-Konstellationen, Hand-drawn Bodenlinie.
  *
  * Farben sind als Hex-Werte hardcoded und auf die aktuelle Token-Palette
- * abgestimmt (--accent-primary #5b3a4e, --accent-label #4f6b5e).
+ * abgestimmt (--accent-primary #3c64ff, --accent-label #3155dc).
  */
 
 interface AufgangIllustrationProps {
@@ -48,7 +48,7 @@ export default function AufgangIllustration({
         {/* Path gradient: starts deep aubergine, lightens as it ascends */}
         <linearGradient id="auf-path" x1="50%" y1="100%" x2="50%" y2="0%">
           <stop offset="0%" stopColor="#3a2632" stopOpacity="0.85" />
-          <stop offset="40%" stopColor="#5b3a4e" stopOpacity="0.85" />
+          <stop offset="40%" stopColor="#3c64ff" stopOpacity="0.85" />
           <stop offset="75%" stopColor="#7a5066" stopOpacity="0.7" />
           <stop offset="100%" stopColor="#a08594" stopOpacity="0.3" />
         </linearGradient>
@@ -75,14 +75,14 @@ export default function AufgangIllustration({
       <circle cx="240" cy="240" r="190" fill="url(#auf-halo)" />
 
       {/* Stars in atmosphere */}
-      <circle cx="100" cy="80" r="1.8" fill="#5b3a4e" opacity="0.55" />
-      <circle cx="395" cy="75" r="2" fill="#5b3a4e" opacity="0.55" />
-      <circle cx="65" cy="150" r="1.5" fill="#4f6b5e" opacity="0.45" />
-      <circle cx="420" cy="140" r="1.6" fill="#4f6b5e" opacity="0.45" />
-      <circle cx="180" cy="55" r="1.3" fill="#5b3a4e" opacity="0.5" />
-      <circle cx="320" cy="50" r="1.5" fill="#5b3a4e" opacity="0.5" />
-      <circle cx="60" cy="220" r="1.4" fill="#5b3a4e" opacity="0.45" />
-      <circle cx="425" cy="215" r="1.5" fill="#5b3a4e" opacity="0.45" />
+      <circle cx="100" cy="80" r="1.8" fill="#3c64ff" opacity="0.55" />
+      <circle cx="395" cy="75" r="2" fill="#3c64ff" opacity="0.55" />
+      <circle cx="65" cy="150" r="1.5" fill="#3155dc" opacity="0.45" />
+      <circle cx="420" cy="140" r="1.6" fill="#3155dc" opacity="0.45" />
+      <circle cx="180" cy="55" r="1.3" fill="#3c64ff" opacity="0.5" />
+      <circle cx="320" cy="50" r="1.5" fill="#3c64ff" opacity="0.5" />
+      <circle cx="60" cy="220" r="1.4" fill="#3c64ff" opacity="0.45" />
+      <circle cx="425" cy="215" r="1.5" fill="#3c64ff" opacity="0.45" />
 
       {/* THE PATH — winding line, not linear, with setbacks. Starts at lower-right
       (entrance), winds left, swings right, swings back left, and fades out as
@@ -131,10 +131,10 @@ export default function AufgangIllustration({
       {/* Waymarkers along the path — small dots showing "I have been here" */}
       {/* Each one is a stage of the journey. Earlier ones (lower) are darker/smaller,
       later ones (higher) are lighter/larger — but the journey isn't finished. */}
-      <circle cx="360" cy="400" r="5" fill="#5b3a4e" opacity="0.85" />
+      <circle cx="360" cy="400" r="5" fill="#3c64ff" opacity="0.85" />
       <circle cx="360" cy="400" r="2" fill="#f5ece6" />
 
-      <circle cx="220" cy="345" r="4.5" fill="#5b3a4e" opacity="0.8" />
+      <circle cx="220" cy="345" r="4.5" fill="#3c64ff" opacity="0.8" />
       <circle cx="220" cy="345" r="1.8" fill="#f5ece6" />
 
       <circle cx="298" cy="265" r="5" fill="#7a5066" opacity="0.85" />
@@ -165,7 +165,7 @@ export default function AufgangIllustration({
       {/* Hand-drawn ground line */}
       <path
         d="M40,455 Q240,448 440,455"
-        stroke="#5b3a4e"
+        stroke="#3c64ff"
         strokeWidth="1.2"
         fill="none"
         strokeLinecap="round"

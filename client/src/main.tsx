@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
+import "./styles/puk-experience.css";
 
 // Fonts werden via @font-face in index.html geladen (parallel zum JS-Download).
 // Bewusst KEIN @fontsource-Import hier – wuerde Font-Download nach JS-Bundle serialisieren.

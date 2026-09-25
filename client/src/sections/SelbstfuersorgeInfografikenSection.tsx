@@ -13,9 +13,9 @@ const guidanceById: Record<(typeof selectedIds)[number], string> = {
   sauerstoffmaske:
     "Eigene Bedürfnisse wahrnehmen und Überlastung früher erkennen.",
   "stopp-technik":
-    "Für akute Überforderung: ein kurzer Ablauf, bevor Sie antworten, retten oder weiterdiskutieren.",
+    "Wenn die Situation sicher ist: einen Moment innehalten und den nächsten Schritt wählen.",
   "energie-konto":
-    "Für die ruhigere Nacharbeit: Was entzieht Kraft, was gibt sie zurück, und wo braucht es Ausgleich?",
+    "Für die ruhigere Nacharbeit: Was kostet Kraft, und welche Aufgaben oder Bedingungen müssten sich verändern?",
 };
 
 export default function SelbstfuersorgeInfografikenSection() {

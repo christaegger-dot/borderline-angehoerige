@@ -93,7 +93,7 @@ export const longTermStrategies: LongTermStrategy[] = [
     title: "Soziale Kontakte pflegen",
     icon: "users",
     intro:
-      "Isolation ist einer der grössten Risikofaktoren für Angehörige. Halten Sie aktiv Kontakt zu Menschen ausserhalb der Betreuungssituation.",
+      "Eigene Kontakte können Halt geben und haben ihren eigenen Wert. Wenn dafür kaum Raum bleibt, darf es zunächst darum gehen, Aufgaben abzugeben oder Unterstützung zu organisieren.",
     checklist: [
       "Verabreden Sie sich regelmässig mit Freunden",
       "Vielleicht tut ein Kontakt gut, bei dem auch andere Themen Platz haben",
@@ -105,7 +105,7 @@ export const longTermStrategies: LongTermStrategy[] = [
     title: "Professionelle Unterstützung",
     icon: "shield",
     intro:
-      "Auch Sie dürfen sich Hilfe holen – das ist kein Zeichen von Schwäche, sondern von Stärke und Selbstfürsorge.",
+      "Für Ihre eigenen Anliegen dürfen Sie Beratung oder Behandlung nutzen. Sie müssen dafür weder besonders belastbar sein noch erst alle anderen Möglichkeiten ausschöpfen.",
     cards: [
       {
         title: "Eigene Therapie",
@@ -139,12 +139,12 @@ export const roleNotes: RoleNote[] = [
   {
     title: "Als Partner/in",
     icon: "heart",
-    text: "Ihre Beziehung ist nicht Ihre einzige Identität. Pflegen Sie Freundschaften und Hobbys ausserhalb der Partnerschaft. Es ist kein Verrat, Zeit für sich zu beanspruchen – es ist Überlebensstrategie.",
+    text: "Ihre Beziehung ist ein Teil Ihres Lebens. Eigene Freundschaften, Interessen und Entscheidungen dürfen daneben Raum haben. Auch eine Kontaktpause oder eine Veränderung der Beziehung kann in einer eigenen Beratung Thema sein.",
   },
   {
     title: "Als Elternteil",
     icon: "users",
-    text: "Elterliche Schuldgefühle sind normal, aber oft unbegründet. Borderline hat komplexe Ursachen – Sie haben nicht «versagt». Erlauben Sie sich, auch stolz auf das zu sein, was Sie richtig gemacht haben. Und: Sie dürfen auch mal wütend sein.",
+    text: "Als Eltern können Sie sich verbunden und zugleich überfordert fühlen. Ein Schuldgefühl allein erklärt weder die Erkrankung noch Ihre Verantwortung. Eigene Fehler lassen sich ernst nehmen, ohne für alles verantwortlich zu sein. Eine Beratung kann beim Unterscheiden helfen.",
   },
   {
     title: "Als erwachsenes Kind",

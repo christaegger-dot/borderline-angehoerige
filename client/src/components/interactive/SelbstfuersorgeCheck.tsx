@@ -1,105 +1,134 @@
-import { Heart, Shield, AlertTriangle } from "lucide-react";
-import { kontaktByIdStrict } from "@/data/kontakte";
+import {
+  ArrowRight,
+  CalendarDays,
+  HandHelping,
+  MessageCircle,
+  Heart,
+} from "lucide-react";
+import { Link } from "wouter";
 
-const orientierungspunkte = [
+const wege = [
   {
-    area: "Emotionale Belastung",
-    frage:
-      "Fühle ich mich in den letzten zwei Wochen häufig erschöpft, gereizt oder innerlich leer?",
-    einordnung:
-      "Wenn ja, ist das kein Versagen, sondern ein Hinweis darauf, dass Ihre Belastungsgrenze näher rückt.",
+    title: "Abgeben",
+    icon: HandHelping,
+    text: "Eine konkrete Aufgabe mit jemandem teilen.",
+    beispiel: "«Kannst du am Donnerstag den Fahrdienst übernehmen?»",
   },
   {
-    area: "Körperliche Signale",
-    frage:
-      "Kommen Schlaf, Essen, Bewegung und medizinische Selbstfürsorge noch ausreichend vor?",
-    einordnung:
-      "Wenn Grundbedürfnisse dauerhaft wegrutschen, ist das meist ein frühes Warnsignal für Überforderung.",
+    title: "Begrenzen",
+    icon: CalendarDays,
+    text: "Eine freie Zeit oder eine kleinere Zusage ermöglichen.",
+    beispiel:
+      "«Am Samstag brauche ich Zeit für mich. Ich übernehme dann keine Besuche.»",
   },
   {
-    area: "Soziale Kontakte",
-    frage:
-      "Gibt es in meinem Alltag noch etwas, das nicht nur mit meinem Angehörigen zu tun hat?",
-    einordnung:
-      "Eigene Kontakte, Interessen und kurze Auszeiten sind kein Luxus, sondern Teil der Stabilisierung.",
+    title: "Beraten lassen",
+    icon: MessageCircle,
+    text: "Auch praktische Fragen zu Arbeit, Wohnen oder Geld ansprechen.",
+    beispiel:
+      "«Ich brauche einen Termin, bei dem meine eigene Situation im Mittelpunkt steht.»",
   },
   {
-    area: "Grenzen",
-    frage:
-      "Kann ich Grenzen setzen, ohne mich danach vollständig schuldig zu fühlen?",
-    einordnung:
-      "Wenn Nein-Sagen kaum möglich ist, lohnt es sich, Unterstützung beim Einüben von Grenzen zu holen.",
+    title: "Eigenes Leben bewahren",
+    icon: Heart,
+    text: "Freundschaften, Interessen und Freude haben ihren eigenen Wert.",
+    beispiel:
+      "«Ich möchte wieder regelmässig mit meiner Freundin spazieren gehen.»",
   },
-  {
-    area: "Unterstützung",
-    frage:
-      "Habe ich wenigstens eine Person oder Stelle, bei der ich offen über meine Situation sprechen kann?",
-    einordnung:
-      "Anhaltende Isolation verstärkt Belastung oft deutlich. Unterstützung entlastet nicht nur emotional, sondern auch praktisch.",
-  },
+];
+
+const fragen = [
+  "Was belastet mich im Moment am stärksten?",
+  "Was möchte ich abgeben, begrenzen oder anders organisieren?",
+  "Wen spreche ich konkret an – und bis wann?",
+  "Woran werde ich merken, dass die Entlastung tatsächlich stattfindet?",
 ];
 
 export default function SelbstfuersorgeCheck() {
   return (
-    <div className="mt-6 space-y-5">
-      <section className="border-t border-[color:var(--rule-color)] pt-5">
-        <div className="flex items-start gap-3">
-          <Heart className="mt-0.5 h-5 w-5 flex-shrink-0 text-[color:var(--accent-primary)]" />
-          <div>
-            <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-label)]">
-              Reflexion
-            </p>
-            <h3 className="mb-1 font-semibold text-foreground">
-              Orientierung zur eigenen Belastung
-            </h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              Statt eines Kurztests kann es hilfreicher sein, einige Bereiche
-              ruhig für sich durchzugehen. Nicht jede Frage muss mit Ja
-              beantwortet werden, damit Unterstützung sinnvoll ist. Schon
-              einzelne deutliche Warnsignale verdienen Aufmerksamkeit.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div className="space-y-4">
-        {orientierungspunkte.map((punkt, index) => (
-          <section
-            key={index}
-            className="border-t border-[color:var(--rule-color)] pt-5"
+    <section id="eigene-unterstuetzung" className="scroll-mt-28 py-5">
+      <h2 className="text-2xl font-medium leading-tight">
+        Auch ich brauche Unterstützung
+      </h2>
+      <p className="mt-4 text-base leading-relaxed">
+        Ihre Gesundheit, Ihre Beziehungen und Ihr eigenes Leben zählen. Sie
+        müssen nicht erst völlig erschöpft sein, um Unterstützung zu suchen.
+        Fragen Sie sich: Was müsste sich konkret verändern?
+      </p>
+      <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+        Die folgenden Möglichkeiten sind eine Auswahl. Ein einzelner Schritt
+        darf reichen; Sie müssen kein zusätzliches Programm erfüllen.
+      </p>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {wege.map(weg => (
+          <article
+            key={weg.title}
+            className="border border-border bg-background p-5"
           >
-            <p className="mb-2 text-xs font-medium text-[color:var(--accent-label)]">
-              {punkt.area}
+            <weg.icon
+              aria-hidden="true"
+              className="mb-3 h-7 w-7 text-primary"
+            />
+            <h3 className="text-lg font-medium">{weg.title}</h3>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+              {weg.text}
             </p>
-            <p className="mb-2 text-sm font-medium leading-relaxed text-foreground">
-              {punkt.frage}
+            <p className="mt-4 border-l-2 border-primary pl-3 text-base leading-relaxed">
+              {weg.beispiel}
             </p>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {punkt.einordnung}
-            </p>
-          </section>
+          </article>
         ))}
       </div>
-
-      <section className="border-t border-[color:var(--rule-color-strong)] pt-5">
-        <div className="space-y-3 border border-border/60 bg-muted/20 p-5">
-          <div className="flex items-start gap-3">
-            <Shield className="mt-0.5 h-5 w-5 flex-shrink-0 text-[color:var(--accent-primary)]" />
-            <p className="text-sm leading-relaxed text-foreground">
-              Wenn Sie sich in mehreren Punkten wiedererkennen, kann es
-              entlastend sein, gezielt Unterstützung zu holen, statt zu warten,
-              bis gar nichts mehr geht.
-            </p>
-          </div>
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-alert-dark" />
-            <p className="text-sm leading-relaxed text-foreground">
-              Die Fachstelle Angehörigenarbeit (PUK Zürich) bietet Beratung:{" "}
-              {kontaktByIdStrict("INFO_FACHSTELLE").nummer}.
-            </p>
-          </div>
+      <details className="mt-5 border-y border-border py-1">
+        <summary className="cursor-pointer py-4 text-base font-medium text-[color:var(--accent-primary)]">
+          Wenn Schuldgefühle dazukommen
+        </summary>
+        <div className="space-y-3 pb-5 text-base leading-relaxed">
+          <p>
+            Sie können sich verbunden fühlen und zugleich wütend, traurig oder
+            erschöpft sein. In einer Beratung müssen Sie sich nicht als
+            besonders geduldig darstellen.
+          </p>
+          <p>
+            Ein Schuldgefühl allein entscheidet nicht, ob Sie etwas falsch
+            gemacht haben. Gibt es ein eigenes Verhalten, das Sie bedauern und
+            verändern möchten? Oder fühlen Sie sich für etwas verantwortlich,
+            das Sie nicht vollständig beeinflussen können? Beides kann
+            nebeneinander bestehen.
+          </p>
+          <p>
+            Sie können einen eigenen Fehler anerkennen, ohne die gesamte
+            Verantwortung für die Erkrankung oder die Entscheidungen eines
+            anderen Menschen zu übernehmen.
+          </p>
         </div>
-      </section>
-    </div>
+      </details>
+      <details className="border-b border-border py-1">
+        <summary className="cursor-pointer py-4 text-base font-medium text-[color:var(--accent-primary)]">
+          Meinen nächsten Entlastungsschritt überlegen
+        </summary>
+        <p className="pb-4 text-base leading-relaxed text-muted-foreground">
+          Sie können eine Frage für sich aufschreiben oder in ein Gespräch
+          mitnehmen.
+        </p>
+        <ul className="list-disc space-y-3 pb-5 pl-5 text-base leading-relaxed">
+          {fragen.map(frage => (
+            <li key={frage}>{frage}</li>
+          ))}
+        </ul>
+      </details>
+      <p className="mt-5 text-base leading-relaxed">
+        Eigene Beratung darf unabhängig davon beginnen, ob die andere Person
+        Hilfe möchte. Die PUK-Angehörigenberatung ist kostenlos, ohne Vollmacht
+        und nach Voranmeldung möglich.
+      </p>
+      <Link
+        href="/fachstelle"
+        className="editorial-link mt-3 inline-flex items-center gap-2 text-base"
+      >
+        Beratung für mich finden{" "}
+        <ArrowRight aria-hidden="true" className="h-4 w-4" />
+      </Link>
+    </section>
   );
 }

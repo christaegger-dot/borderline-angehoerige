@@ -1,3 +1,4 @@
+import LearningGuide from "@/components/interactive/LearningGuide";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -134,7 +135,7 @@ export default function Genesung() {
               { href: "#remission", label: "Remission und Genesung" },
               { href: "#fortschritt-paradox", label: "Fortschritt-Paradox" },
               { href: "#hoffnung", label: "Realistische Hoffnung" },
-              { href: "#beitragen", label: "Was Angehörige beitragen können" },
+              { href: "#garten", label: "Was in Ihrer Hand liegt" },
             ]}
           />
           <div
@@ -153,6 +154,12 @@ export default function Genesung() {
             className="ml-auto block aspect-square w-full max-w-[560px]"
           />
         </EditorialSection.Aside>
+      </EditorialSection>
+
+      <EditorialSection variant="cream" density="compact">
+        <EditorialSection.Body>
+          <LearningGuide kind="garten" id="garten" />
+        </EditorialSection.Body>
       </EditorialSection>
 
       {/* ── 2 Intro: Was auf dieser Seite besonders wichtig ist ── */}
@@ -775,7 +782,7 @@ export default function Genesung() {
                 href: "/selbstfuersorge",
                 title: "Selbstfürsorge",
                 description:
-                  "Eigene Belastung ernst nehmen — Voraussetzung, um langfristig präsent bleiben zu können.",
+                  "Eigene Gesundheit, Beziehungen und Interessen ernst nehmen — unabhängig davon, wie viel Sie unterstützen.",
               },
             ]}
           />

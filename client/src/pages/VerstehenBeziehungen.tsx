@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import ContentSection from "@/components/ContentSection";
+import AngehoerigenIllustration from "@/components/AngehoerigenIllustration";
 import {
   DisplayHeading,
   EditorialLayout,
@@ -60,26 +61,31 @@ export default function VerstehenBeziehungen() {
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
-          <EyebrowLabel spacing="compact">
-            Grundlagen · Beziehung verstehen
-          </EyebrowLabel>
-          <DisplayHeading level={1} size="page">
-            Borderline und Beziehungen — verstehen, was zwischen uns geschieht
-          </DisplayHeading>
-          <Lede className="mt-6">
-            Warum kann gut gemeinte Unterstützung anders ankommen? Weshalb
-            werden Nähe, Rückzug oder Kritik manchmal so bedeutsam? Diese Seite
-            zeigt mögliche Zusammenhänge — ohne Motive zu unterstellen oder
-            Schuld zu verteilen.
-          </Lede>
-          <p
-            className="mt-4"
-            style={{ fontSize: "var(--text-sm)", color: "var(--fg-tertiary)" }}
-          >
-            Vollständig ca. 12 Min · Auch abschnittweise lesbar.
-          </p>
-          <ReviewBadge path="/verstehen/beziehungen" />
+        <header className="py-8">
+          <div>
+            <EyebrowLabel spacing="compact">
+              Grundlagen · Beziehung verstehen
+            </EyebrowLabel>
+            <DisplayHeading level={1} size="page">
+              Borderline und Beziehungen — verstehen, was zwischen uns geschieht
+            </DisplayHeading>
+            <Lede className="mt-6">
+              Warum kann gut gemeinte Unterstützung anders ankommen? Weshalb
+              werden Nähe, Rückzug oder Kritik manchmal so bedeutsam? Diese
+              Seite zeigt mögliche Zusammenhänge — ohne Motive zu unterstellen
+              oder Schuld zu verteilen.
+            </Lede>
+            <p
+              className="mt-4"
+              style={{
+                fontSize: "var(--text-sm)",
+                color: "var(--fg-tertiary)",
+              }}
+            >
+              Vollständig ca. 12 Min · Auch abschnittweise lesbar.
+            </p>
+            <ReviewBadge path="/verstehen/beziehungen" />
+          </div>
         </header>
 
         {/* ── Einordnung und Sprungmarken ── */}
@@ -122,6 +128,11 @@ export default function VerstehenBeziehungen() {
           title="Was verbindet uns bereits?"
         >
           <div id="verbindung" style={{ scrollMarginTop: "120px" }} />
+          <AngehoerigenIllustration
+            name="verbindungsmomente-v2"
+            alt="Gemeinsame Momente beim Kochen, Spazierengehen und Lachen."
+            caption="Gemeinsame Freude darf neben Schwierigkeiten bestehen. Sie verpflichtet niemanden, Verletzungen hinzunehmen."
+          />
           <EditorialProse>
             <p>
               Zuneigung, Humor, Fürsorge, Verlässlichkeit und gemeinsame Freude
@@ -156,6 +167,11 @@ export default function VerstehenBeziehungen() {
           title="Nicht nur was geschieht, sondern was es bedeutet"
         >
           <div id="bedeutungsschleife" style={{ scrollMarginTop: "120px" }} />
+          <AngehoerigenIllustration
+            name="zwei-perspektiven-v2"
+            alt="Eine Person schaut auf ihr Telefon, eine andere sitzt mit einem Getränk an einem Tisch."
+            caption="Was jemand meint und was beim Gegenüber ankommt, kann sich unterscheiden. Nachfragen lässt die Bedeutung offen."
+          />
           <EditorialProse>
             <p>
               Ein verspäteter Rückruf ist zunächst ein Ereignis. Für die eine

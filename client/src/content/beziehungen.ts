@@ -149,7 +149,7 @@ export const beziehungsThemen: BeziehungsThema[] = [
     title: "Starke Gefühle können den Handlungsspielraum verengen",
     text: "In einem stark belasteten Moment kann es schwerer werden, abzuwarten, verschiedene Erklärungen zu prüfen oder eine Enttäuschung auszuhalten, ohne sofort zu handeln. Das erklärt nicht jede Reaktion und bedeutet nicht, dass Verhalten grundsätzlich unbeeinflussbar wäre.",
     takeaway:
-      "Zuerst Anspannung senken, dann gemeinsam klären. Ein engerer Handlungsspielraum hebt Verantwortung nicht auf.",
+      "Eine Pause kann Raum für spätere Klärung schaffen. Sie müssen keine Beruhigung erreichen. Ein engerer Handlungsspielraum hebt Verantwortung nicht auf.",
   },
   {
     id: "bez-naehe",

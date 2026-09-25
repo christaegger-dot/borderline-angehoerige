@@ -44,56 +44,46 @@
   /* Supplemental token families for remaining shared consumers. */
 
   /* --- Warm Family (Hue 55/85) --- */
-  --color-terracotta-darker: oklch(
-    0.35 0.1 55
-  ); /* Dunkler Text auf warmen BGs */
-  --color-terracotta-dark: oklch(0.45 0.12 55); /* Hover/Active States */
-  --color-terracotta-mid: oklch(
-    0.55 0.15 55
-  ); /* Starker Akzent-Text, Borders */
-  --color-terracotta: oklch(0.55 0.15 55); /* Primary alias */
-  --color-terracotta-light: oklch(0.85 0.08 55); /* Light Accent */
-  --color-terracotta-lighter: oklch(0.92 0.05 55); /* Subtle Backgrounds */
-  --color-terracotta-wash: oklch(0.95 0.02 55); /* Sehr helle Hintergründe */
-  --color-sand-warm: oklch(0.55 0.1 85); /* Warme Borders/Dividers */
-  --color-sand-mid: oklch(0.6 0.1 85); /* Borders, muted elements */
-  --color-sand-accent: oklch(0.65 0.15 85); /* Warmer Akzent */
-  --color-sand-border: oklch(0.75 0.08 85); /* Card Borders */
-  --color-sand-subtle: oklch(0.88 0.04 85); /* Subtle Borders */
-  --color-sand-muted: oklch(0.94 0.02 85); /* Muted Backgrounds */
-  --color-sand: oklch(0.96 0.02 85); /* Background */
-  --color-cream: oklch(0.98 0.01 85); /* Card BG */
+  --color-terracotta-darker: #2444be; /* Dunkler Text auf warmen BGs */
+  --color-terracotta-dark: #2444be; /* Hover/Active States */
+  --color-terracotta-mid: #3155dc; /* Starker Akzent-Text, Borders */
+  --color-terracotta: #3155dc; /* Primary alias */
+  --color-terracotta-light: #ebefff; /* Light Accent */
+  --color-terracotta-lighter: #ebefff; /* Subtle Backgrounds */
+  --color-terracotta-wash: #ebefff; /* Sehr helle Hintergründe */
+  --color-sand-warm: #3155dc; /* Warme Borders/Dividers */
+  --color-sand-mid: #3155dc; /* Borders, muted elements */
+  --color-sand-accent: #3155dc; /* Warmer Akzent */
+  --color-sand-border: #3155dc; /* Card Borders */
+  --color-sand-subtle: #ebefff; /* Subtle Borders */
+  --color-sand-muted: #ebefff; /* Muted Backgrounds */
+  --color-sand: #ebefff; /* Background */
+  --color-cream: #ffffff; /* Card BG */
 
   /* --- Teal Family (Hue 190, mapped from SA #1E656D) --- */
-  --color-sage-darker: oklch(0.35 0.07 190);
-  --color-sage-dark: oklch(0.44 0.07 190); /* ≈ SA --teal #1E656D */
-  --color-sage-mid-darker: oklch(
-    0.4 0.08 190
-  ); /* Between sage-darker and sage-mid */
-  --color-sage-mid-dark: oklch(
-    0.47 0.08 190
-  ); /* Between sage-dark and sage-mid */
-  --color-sage-mid: oklch(0.52 0.09 190);
-  --color-sage-mid-mid: oklch(0.52 0.09 190); /* Alias for sage-mid */
-  --color-sage: oklch(
-    0.62 0.07 190
-  ); /* 3.23:1 auf Cream – NUR für Icons/Dekor, NICHT als Textfarbe auf hellem BG */
-  --color-sage-light: oklch(0.88 0.04 190);
-  --color-sage-lighter: oklch(0.92 0.03 190);
-  --color-sage-wash: oklch(0.95 0.02 190);
-  --color-sage-pale: oklch(0.97 0.01 190);
+  --color-sage-darker: #2444be;
+  --color-sage-dark: #2444be; /* ≈ SA --teal #1E656D */
+  --color-sage-mid-darker: #2444be; /* Between sage-darker and sage-mid */
+  --color-sage-mid-dark: #2444be; /* Between sage-dark and sage-mid */
+  --color-sage-mid: #3155dc;
+  --color-sage-mid-mid: #3155dc; /* Alias for sage-mid */
+  --color-sage: #3155dc; /* 3.23:1 auf Cream – NUR für Icons/Dekor, NICHT als Textfarbe auf hellem BG */
+  --color-sage-light: #ebefff;
+  --color-sage-lighter: #ebefff;
+  --color-sage-wash: #ebefff;
+  --color-sage-pale: #ebefff;
 
   /* --- Slate Family (Hue 250) --- */
   --color-charcoal: oklch(0.3 0.02 250); /* Darkest text */
   --color-navy: oklch(0.25 0.04 250);
   --color-navy-light: oklch(0.35 0.03 250);
-  --color-slate-blue: oklch(0.45 0.05 250); /* Links */
-  --color-slate-dark: oklch(0.45 0.08 250); /* Stärkere Links/Icons */
-  --color-slate-mid: oklch(0.55 0.1 250); /* Muted text/icons */
-  --color-slate-light: oklch(0.9 0.03 250); /* Light BGs, Borders */
-  --color-slate-lighter: oklch(0.92 0.04 250); /* Lighter BGs */
-  --color-slate-wash: oklch(0.95 0.02 250); /* Sehr helle Hintergründe */
-  --color-slate-pale: oklch(0.97 0.01 250); /* Palest Slate */
+  --color-slate-blue: #2444be; /* Links */
+  --color-slate-dark: #2444be; /* Stärkere Links/Icons */
+  --color-slate-mid: #3155dc; /* Muted text/icons */
+  --color-slate-light: #ebefff; /* Light BGs, Borders */
+  --color-slate-lighter: #ebefff; /* Lighter BGs */
+  --color-slate-wash: #ebefff; /* Sehr helle Hintergründe */
+  --color-slate-pale: #ebefff; /* Palest Slate */
 
   /* --- Alert Family (Hue 25) --- */
   --color-alert-dark: oklch(0.45 0.15 25); /* Dunkler Alert-Text */
@@ -143,7 +133,7 @@
   --container-page: 77.5rem; /* 1240px — Outer-Layout-Boundary */
 
   /* Typography aliases shared across layout and editorial components. */
-  --font-body: "Inter", "Inter fallback", sans-serif;
-  --font-heading: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
-  --font-display: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  --font-body: "Rubik", Arial, sans-serif;
+  --font-heading: "Rubik", Arial, sans-serif;
+  --font-display: "Rubik", Arial, sans-serif;
 }

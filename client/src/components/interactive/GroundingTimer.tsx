@@ -83,8 +83,9 @@ export default function GroundingTimer() {
       <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
         Diese Übung kann helfen, sich in einem angespannten Moment wieder
         stärker im Hier und Jetzt zu verankern. Gehen Sie die Schritte in Ihrem
-        eigenen Tempo durch. Es braucht keinen Timer und kein «richtiges»
-        Ergebnis.
+        eigenen Tempo durch. Lassen Sie einen Sinn aus, wenn er nicht zugänglich
+        oder angenehm ist; Sie können stattdessen etwas anderes im Raum
+        wahrnehmen. Es braucht keinen Timer und kein «richtiges» Ergebnis.
       </p>
 
       <div className="space-y-3">

@@ -782,7 +782,7 @@ export default function Genesung() {
                 href: "/selbstfuersorge",
                 title: "Selbstfürsorge",
                 description:
-                  "Eigene Belastung ernst nehmen — Voraussetzung, um langfristig präsent bleiben zu können.",
+                  "Eigene Gesundheit, Beziehungen und Interessen ernst nehmen — unabhängig davon, wie viel Sie unterstützen.",
               },
             ]}
           />

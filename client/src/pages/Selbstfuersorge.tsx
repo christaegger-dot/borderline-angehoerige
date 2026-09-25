@@ -72,7 +72,7 @@ export default function Selbstfuersorge() {
       <EditorialSection
         variant="cream"
         density="compact"
-        className="topic-intro"
+        className="topic-intro topic-intro--informative-aside"
       >
         <EditorialSection.MarginNote>
           <span

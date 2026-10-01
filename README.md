@@ -74,3 +74,11 @@ nicht an einen Server der Website übertragen. Details stehen in
 
 Die Website verzichtet bewusst auf Analyse- und Tracking-Tools; maßgeblich
 ist die aktuelle Datenschutzerklärung im Produkt.
+
+## Gültige Projektzuordnung
+
+- **Öffentliche Website:** [https://borderline-angehoerige.netlify.app/](https://borderline-angehoerige.netlify.app/)
+- **Netlify-Site:** `borderline-angehoerige`
+- **Kanonische Arbeitsgrundlage:** Branch `main` dieses Repositories
+
+Stand der Zuordnung: 1. Oktober 2026. Andere Deployments oder Branches gelten nicht automatisch als freigegebene Hauptversion.

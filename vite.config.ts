@@ -537,8 +537,9 @@ export default defineConfig(({ command }) => {
     server: {
       port: 3000,
       strictPort: false, // Will find next available port if 3000 is busy
-      host: true,
+      host: "0.0.0.0",
       allowedHosts: [
+        "terminal.local",
         ".manuspre.computer",
         ".manus.computer",
         ".manus-asia.computer",

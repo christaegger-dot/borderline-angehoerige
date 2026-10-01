@@ -82,7 +82,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
           </AppLink>
 
           <nav
-            className="hidden lg:flex items-center gap-4 shrink-0"
+            className="hidden xl:flex items-center gap-4 shrink-0"
             aria-label="Hauptnavigation"
           >
             {navItems.map(item => {
@@ -117,7 +117,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
               aria-label="Suchen"
             >
               <SearchIcon className="w-4 h-4" />
-              <span className="hidden lg:inline">Suchen</span>
+              <span className="hidden xl:inline">Suchen</span>
             </button>
 
             <button
@@ -132,7 +132,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <AppLink
               href="/soforthilfe"
               aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-              className="site-header__action site-header__action--crisis hidden lg:inline-flex"
+              className="site-header__action site-header__action--crisis hidden xl:inline-flex"
             >
               <span aria-hidden="true" className="site-header__crisis-dot" />
               <span>Soforthilfe</span>
@@ -141,16 +141,17 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             <AppLink
               href="/soforthilfe"
               aria-label="Soforthilfe – Notfallnummern und Krisenberatung"
-              className="site-header__mobile-crisis lg:hidden"
+              className="site-header__mobile-crisis xl:hidden"
             >
               <Phone className="h-[18px] w-[18px]" />
+              <span>Hilfe</span>
             </AppLink>
 
             <button
               ref={menuButtonRef}
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`site-header__icon-button lg:hidden ${
+              className={`site-header__icon-button xl:hidden ${
                 mobileMenuOpen ? currentAccent.surfaceActive : "hover:bg-muted"
               }`}
               aria-controls="mobile-navigation-dialog"

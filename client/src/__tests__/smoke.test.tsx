@@ -552,14 +552,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
       await import("@/pages/HandoutTextPage");
     withRouter(<HandoutTextPage params={{ handoutId: "dear" }} />);
     expect(
-      screen.getByRole("heading", {
-        name: /Die DEAR-Technik – Grenzen setzen ohne Vorwürfe/i,
+      await screen.findByRole("heading", {
+        name: /DEAR: ein Anliegen klar formulieren/i,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
-        /DEAR hilft Ihnen, Wünsche klarer zu formulieren/i
-      )
+      await screen.findByText(/DEAR garantiert keine Kooperation/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
@@ -592,13 +590,13 @@ describe("Smoke Tests – Kritische Seiten", () => {
       <HandoutTextPage params={{ handoutId: "4-arten-von-grenzen" }} />
     );
     expect(
-      screen.getByRole("heading", {
-        name: /Die 4 Arten von Grenzen/i,
+      await screen.findByRole("heading", {
+        name: /Vier Arten von Grenzen/i,
       })
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Grenzen sind keine Mauern, sondern Türen mit Schloss\./i
+        /Eine Grenze beschreibt, was für Sie tragbar ist/i
       )
     ).toBeInTheDocument();
     expect(

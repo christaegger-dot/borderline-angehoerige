@@ -58,8 +58,8 @@ describe("startup shell static assets", () => {
     expect(indexHtml).toContain("route-prerender-brand-label");
     expect(indexHtml).toContain("route-prerender-aside");
     expect(indexHtml).toContain("Soforthilfe öffnen");
-    expect(shellCss).toContain("--shell-surface: #faf7f2");
-    expect(shellCss).toContain("--shell-brand: #5b3a4e");
+    expect(shellCss).toContain("--shell-surface: #ffffff");
+    expect(shellCss).toContain("--shell-brand: #3155dc");
     expect(shellCss).not.toMatch(/#0f172a|#111827|radial-gradient|text-shadow/);
   });
 });

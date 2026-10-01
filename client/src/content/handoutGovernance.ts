@@ -141,7 +141,7 @@ export const handoutGovernance = {
   dear: {
     id: "dear",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-dear-v1",
+    approvedVersion: "puk-dear-v1",
   },
   "bruecke-gelaender": {
     id: "bruecke-gelaender",
@@ -156,7 +156,7 @@ export const handoutGovernance = {
   "4-arten-von-grenzen": {
     id: "4-arten-von-grenzen",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "grenzen-die-4-arten-von-grenzen-v5",
+    approvedVersion: "puk-4-arten-von-grenzen-v1",
   },
   "grenzen-erkennen": {
     id: "grenzen-erkennen",
@@ -211,7 +211,7 @@ export const handoutGovernance = {
   garten: {
     id: "garten",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-garten-v2",
+    approvedVersion: "puk-garten-v1",
   },
   "genesung-zahlen": {
     id: "genesung-zahlen",

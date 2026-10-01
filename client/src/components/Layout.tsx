@@ -76,15 +76,14 @@ export default function Layout({ children }: LayoutProps) {
                   <span className="font-display text-lg font-medium tracking-[-0.01em] text-foreground">
                     Borderline · Hilfe für Angehörige
                   </span>
-                  <span className="mt-1 text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
+                  <span className="mt-1 text-xs font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
                     Fachstelle Angehörigenarbeit · PUK Zürich
                   </span>
                 </span>
               </AppLink>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Psychoedukative Orientierung für Angehörige: fachlich
-                eingeordnet, entstigmatisierend und mit klarem Blick auf
-                Selbstschutz.
+                Informationen und praktische Hilfen für Angehörige: Borderline
+                verstehen, Unterstützung finden und das eigene Leben schützen.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-foreground">
                 Erstellt in der Fachstelle Angehörigenarbeit. Kein offizieller
@@ -93,7 +92,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
 
             <div className="footer-note-panel">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
                 Hinweis
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -110,7 +109,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <div className="grid gap-8 py-8 md:grid-cols-2 md:gap-12">
             <nav aria-label="Themen im Footer">
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
                 Themen
               </p>
               <ul className="grid gap-x-6 sm:grid-cols-2">
@@ -128,7 +127,7 @@ export default function Layout({ children }: LayoutProps) {
             </nav>
 
             <nav aria-label="Ressourcen im Footer">
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.11em] text-[color:var(--accent-label)]">
                 Ressourcen
               </p>
               <ul className="grid gap-x-6 sm:grid-cols-2">

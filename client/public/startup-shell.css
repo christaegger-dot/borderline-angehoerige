@@ -11,13 +11,13 @@ body[data-app-ready="true"] #route-prerender {
 }
 
 .route-prerender-shell {
-  --shell-surface: #faf7f2;
+  --shell-surface: #ffffff;
   --shell-surface-elevated: #fffdf9;
   --shell-surface-muted: #f0eadf;
   --shell-ink: #1f2a37;
   --shell-muted: #4b5563;
   --shell-soft: #6b7280;
-  --shell-brand: #5b3a4e;
+  --shell-brand: #3155dc;
   --shell-sage: #4f6b5e;
   --shell-alert: #b5412f;
   --shell-rule: rgba(31, 42, 55, 0.12);
@@ -28,7 +28,7 @@ body[data-app-ready="true"] #route-prerender {
     linear-gradient(90deg, rgba(79, 107, 94, 0.08), transparent 36rem),
     var(--shell-surface);
   font-family:
-    "Inter",
+    "Rubik",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -105,7 +105,7 @@ body[data-app-ready="true"] #route-prerender {
 
 .route-prerender-title {
   margin: 0;
-  font-family: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  font-family: "Rubik", Arial, sans-serif;
   font-size: clamp(2.5rem, 4.9vw, 3.9rem);
   line-height: 1.02;
   letter-spacing: -0.018em;
@@ -164,7 +164,7 @@ body[data-app-ready="true"] #route-prerender {
 .route-prerender-aside-title {
   margin: 0;
   color: var(--shell-ink);
-  font-family: "Source Serif 4 Variable", "Source Serif 4", Georgia, serif;
+  font-family: "Rubik", Arial, sans-serif;
   font-size: 1.35rem;
   line-height: 1.12;
 }

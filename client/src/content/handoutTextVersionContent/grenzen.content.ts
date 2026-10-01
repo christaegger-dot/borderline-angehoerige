@@ -1,70 +1,8 @@
+import learningGuides from "../learningGuides.json";
 import { createHandoutTextVersion } from "./shared";
 
 export const handoutTextVersions = [
-  createHandoutTextVersion("dear", {
-    kicker: "Textversion",
-    summary:
-      "DEAR hilft, Wünsche klar und ohne Vorwürfe zu formulieren. Die vier Schritte geben Gesprächen Struktur und senken das Eskalationsrisiko.",
-    intro: [
-      "Die DEAR-Technik unterstützt klare Wünsche und Grenzen ohne Vorwurfslogik. Sie hilft, beim eigenen Anliegen zu bleiben und trotzdem respektvoll zu formulieren.",
-      "Die vier Schritte von DEAR werden mit kurzen Beispielen, einer Merkhilfe und drei alltagsnahen Übungshinweisen verbunden.",
-    ],
-    sections: [
-      {
-        title: "Kernaussage",
-        calloutTitle: "Zentraler Satz des Handouts",
-        calloutText:
-          "DEAR hilft Ihnen, Wünsche klarer zu formulieren – ohne Vorwürfe. Es ist eine hilfreiche Struktur, aber keine Garantie für Kooperation.",
-      },
-      {
-        title: "Sicherheitsgrenze",
-        calloutTitle: "Wann DEAR nicht der nächste Schritt ist",
-        calloutText:
-          "Wenn Sicherheit gefährdet ist, ist DEAR nicht der richtige nächste Schritt. Dann geht Abstand, Schutz und Hilfe vor Gesprächsstruktur.",
-      },
-      {
-        title: "Die 4 Schritte",
-        intro:
-          "Die Abfolge ist bewusst nach dem Akronym DEAR sortiert. Jeder Schritt kombiniert eine Funktion mit einem kurzen Beispielsatz.",
-        cards: [
-          {
-            title: "D = Describe (Beschreiben)",
-            text: "Beschreiben Sie die Situation objektiv, ohne Bewertung. Beispiel: «Mir ist aufgefallen, dass du in den letzten Tagen oft spät nach Hause kommst.»",
-          },
-          {
-            title: "E = Express (Äussern)",
-            text: "Drücken Sie Ihre Gefühle aus. Ich-Botschaft. Beispiel: «Das macht mir Sorgen, weil ich mich dann allein fühle.»",
-          },
-          {
-            title: "A = Assert (Behaupten)",
-            text: "Sagen Sie klar, was Sie sich wünschen. Beispiel: «Ich wünsche mir, dass wir abends öfter zusammen essen.»",
-          },
-          {
-            title: "R = Reinforce (Verstärken)",
-            text: "Zeigen Sie den positiven Effekt auf. Beispiel: «Das würde mir helfen, mich verbundener zu fühlen.»",
-          },
-        ],
-      },
-      {
-        title: "Merkhilfe",
-        calloutTitle: "Vier Schritte, ein roter Faden",
-        calloutText:
-          "Erst beschreiben, dann Gefühl äussern, dann Wunsch klar sagen und zum Schluss den positiven Effekt benennen.",
-      },
-      {
-        title: "Was können Sie tun?",
-        bullets: [
-          "Schreiben Sie einen DEAR-Satz für eine aktuelle Situation in Ihrer eigenen Sprache auf.",
-          "Üben Sie ihn laut, bevor Sie ihn im Gespräch einsetzen.",
-          "Beginnen Sie mit kleinen Themen, bevor Sie grosse ansprechen.",
-        ],
-      },
-    ],
-    sourceLine:
-      "Quelle: Linehan, M. M. (2015), DBT Skills Training Manual, DEAR MAN.",
-    standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
-  }),
+  createHandoutTextVersion("dear", learningGuides["dear"]),
   createHandoutTextVersion("spiegeln-statt-aufsaugen", {
     kicker: "Textversion",
     summary:
@@ -215,53 +153,10 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 25.05.2026.",
   }),
-  createHandoutTextVersion("4-arten-von-grenzen", {
-    kicker: "Textversion",
-    summary:
-      "Grenzen sind nicht nur emotional. Auch Körper, Zeit und materielle Ressourcen dürfen geschützt werden.",
-    intro: [
-      "Die vier Arten von Grenzen helfen, Schutzbedarf genauer zu benennen. So wird klarer, welche Grenze gerade verletzt ist und welche Reaktion dazu passt.",
-      "Die vier Bereiche werden mit kurzen Beispielen und je einem Warnsignal verbunden.",
-    ],
-    sections: [
-      {
-        title: "Kernbotschaft",
-        calloutTitle: "Zentraler Satz des Handouts",
-        calloutText:
-          "Grenzen sind keine Mauern, sondern Türen mit Schloss. Sie entscheiden, wann Sie öffnen.",
-      },
-      {
-        title: "Die vier Bereiche",
-        cards: [
-          {
-            title: "Physische Grenzen",
-            text: "Schutz Ihres Körpers und Ihrer körperlichen Unversehrtheit. Beispiele: «Ich möchte jetzt nicht umarmt werden.» und «Bitte klopfe an, bevor du mein Zimmer betrittst.» Warnsignal: Wenn jemand Ihren persönlichen Raum ohne Erlaubnis betritt.",
-          },
-          {
-            title: "Emotionale Grenzen",
-            text: "Trennung zwischen Ihren Gefühlen und denen anderer. Beispiele: «Ich kann deine Trauer verstehen, aber ich muss sie nicht übernehmen.» und «Deine Wut ist deine Wut, nicht meine Schuld.» Warnsignal: Wenn Sie sich für die Gefühle anderer verantwortlich fühlen.",
-          },
-          {
-            title: "Zeitliche Grenzen",
-            text: "Schutz Ihrer Zeit und Energie. Beispiele: «Ich bin heute Abend nicht verfügbar.» und «Ich kann maximal eine Stunde telefonieren.» Warnsignal: Wenn Ihre gesamte Freizeit von einer Person beansprucht wird.",
-          },
-          {
-            title: "Materielle Grenzen",
-            text: "Schutz Ihrer Ressourcen und Besitztümer. Beispiele: «Ich kann dir kein Geld leihen.» und «Bitte frage, bevor du meine Sachen benutzt.» Warnsignal: Wenn Sie sich finanziell ausgenutzt fühlen.",
-          },
-        ],
-      },
-      {
-        title: "Merke",
-        calloutTitle: "Abschlusssatz des Handouts",
-        calloutText:
-          "Alle vier Grenzen sind wichtig. Körperliche Sicherheit hat immer Priorität; bei Gewalt oder Bedrohung geht Schutz vor Gespräch.",
-      },
-    ],
-    sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
-    standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
-  }),
+  createHandoutTextVersion(
+    "4-arten-von-grenzen",
+    learningGuides["4-arten-von-grenzen"]
+  ),
   createHandoutTextVersion("grenzen-erkennen", {
     kicker: "Textversion",
     summary:

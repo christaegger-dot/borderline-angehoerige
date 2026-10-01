@@ -1,4 +1,5 @@
 import ContentSection from "@/components/ContentSection";
+import { Link } from "wouter";
 import {
   escalationCards,
   roleCommunicationCards,
@@ -22,8 +23,17 @@ export function KommunizierenEscalationSection({
       title="Wenn Gespräche kippen"
       id="eskalation"
       defaultOpen={defaultOpen}
-      preview="In eskalierenden Momenten hilft oft nicht mehr Inhalt, sondern weniger: weniger Worte, weniger Verteidigung, weniger Tempo."
+      preview="Zuhören, nachfragen, eine Grenze benennen oder pausieren: Wählen Sie, was gerade möglich und sicher ist."
     >
+      <p className="mb-5 text-base leading-relaxed">
+        Diese Möglichkeiten sind keine feste Reihenfolge. Eine Pause oder eine
+        Grenze darf am Anfang stehen. Sie müssen keine Beruhigung erreichen,
+        bevor Sie sich schützen. Bei Bedrohung oder akuter Gefahr:{" "}
+        <Link href="/soforthilfe" className="editorial-link">
+          Soforthilfe
+        </Link>
+        .
+      </p>
       <ul className="space-y-6">
         {escalationCards.map(item => (
           <li key={item.title}>
@@ -36,12 +46,15 @@ export function KommunizierenEscalationSection({
         className="mt-6 border-t pt-5"
         style={{ borderColor: "var(--rule-color)" }}
       >
-        <h3 className="editorial-item-heading">Ein möglicher Ablauf</h3>
-        <ol className="editorial-small-copy mt-3 space-y-2">
-          <li>1. «Ich sehe, dass es gerade sehr viel ist.»</li>
-          <li>2. «Ich möchte zuhören, aber nicht in diesem Ton.»</li>
-          <li>3. «Lass uns 10 Minuten Pause machen und dann weitersehen.»</li>
-        </ol>
+        <h3 className="editorial-item-heading">Ein Satz darf reichen</h3>
+        <p className="mt-3 border-l-2 border-primary pl-4 text-base leading-relaxed">
+          «Ich unterbreche das Gespräch jetzt. Morgen kann ich dir sagen, ob und
+          wann ich weitersprechen möchte.»
+        </p>
+        <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+          Bieten Sie nur einen nächsten Kontakt an, den Sie einhalten können und
+          möchten. Eine Wiederaufnahme muss nicht sofort vereinbart werden.
+        </p>
       </div>
     </ContentSection>
   );

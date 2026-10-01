@@ -64,7 +64,7 @@ export function MobileMenu({
     <div
       ref={dialogRef}
       id="mobile-navigation-dialog"
-      className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border/40 bg-background [-webkit-overflow-scrolling:touch] lg:hidden"
+      className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border/40 bg-background [-webkit-overflow-scrolling:touch] xl:hidden"
       onKeyDown={e => {
         if (e.key === "Escape") {
           closeMenu();

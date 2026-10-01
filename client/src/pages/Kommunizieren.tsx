@@ -8,7 +8,7 @@ import {
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
-import { FadenIllustration } from "@/components/illustrations";
+import AngehoerigenIllustration from "@/components/AngehoerigenIllustration";
 import ValidierungsStufenleiter from "@/components/interactive/ValidierungsStufenleiter";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
@@ -68,9 +68,9 @@ export default function Kommunizieren() {
           </Lede>
           <TopicQuickLinks
             items={[
+              { href: "#eskalation", label: "Wenn ein Gespräch kippt" },
               { href: "#haltung", label: "Haltung" },
               { href: "#validierung", label: "Validierung" },
-              { href: "#eskalation", label: "Eskalation" },
               { href: "#situationen", label: "Typische Situationen" },
             ]}
           />
@@ -84,9 +84,11 @@ export default function Kommunizieren() {
           </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>
-          <FadenIllustration
-            ariaLabel="Ein dünner Faden, der zwischen zwei Punkten gespannt ist und trotz Belastung trägt."
-            className="ml-auto block aspect-square w-full max-w-[560px]"
+          <AngehoerigenIllustration
+            name="zuhoeren-v1"
+            alt="Zwei Erwachsene wenden sich im Gespräch einander zu."
+            caption="Zuhören, nachfragen und die eigene Sicht behalten dürfen gleichzeitig möglich sein."
+            eager
           />
         </EditorialSection.Aside>
       </EditorialSection>
@@ -144,9 +146,8 @@ export default function Kommunizieren() {
             </EditorialProse>
             <div className="mt-5">
               <EditorialPullQuote>
-                Hilfreiche Kommunikation ist meist kürzer, langsamer und klarer.
-                Sie versucht nicht sofort zu überzeugen, sondern zuerst
-                Beziehungsspannung etwas zu senken.
+                Sie dürfen zuhören, nachfragen oder eine Pause machen. Ihre
+                eigenen Anliegen bleiben dabei wichtig.
               </EditorialPullQuote>
             </div>
           </ContentSection>

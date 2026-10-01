@@ -40,7 +40,7 @@ const TREE: TreeNode[] = [
     question: "Was passiert gerade?",
     subtitle: "Wählen Sie die Situation, die am ehesten zutrifft.",
     choices: [
-      { label: "Suiziddrohung oder Suizidgedanken", nextId: "suizid" },
+      { label: "Suizidgedanken oder Suizidankündigung", nextId: "suizid" },
       { label: "Selbstverletzung", nextId: "selbstverletzung" },
       { label: "Starker Wutausbruch oder Aggression", nextId: "aggression" },
       { label: "Kontaktabbruch / Rückzug", nextId: "kontaktabbruch" },
@@ -109,9 +109,9 @@ const TREE: TreeNode[] = [
     steps: [
       {
         id: "s1",
-        text: "Rufen Sie sofort den Notruf an",
+        text: "Rufen Sie sofort den Rettungsdienst",
         detail:
-          "Bleiben Sie am Telefon und folgen Sie den Anweisungen der Leitstelle.",
+          "Bei Lebensgefahr rufen Sie 144, bei Gewalt oder Bedrohung 117. Bleiben Sie am Telefon und folgen Sie den Anweisungen der Leitstelle.",
         emergency: true,
         kontakte: ["ROT_144", "ROT_117"],
       },
@@ -185,79 +185,87 @@ const TREE: TreeNode[] = [
   // ─── SELBSTVERLETZUNG ───
   {
     id: "selbstverletzung",
-    question: "Wie schwer ist die Verletzung?",
-    subtitle: "Versuchen Sie die Situation einzuschätzen.",
+    question: "Braucht die Situation sofort medizinische Hilfe?",
+    subtitle:
+      "Starke Blutung, Bewusstseinsstörung, Atemprobleme oder eine mögliche Vergiftung brauchen sofortige Abklärung. Sie müssen die Schwere nicht selbst bestimmen können.",
     choices: [
       {
-        label: "Schwere Verletzung – braucht medizinische Hilfe",
+        label: "Ja – oder ich bin unsicher, ob sofort Hilfe nötig ist",
         nextId: "selbstverletzung_schwer",
       },
       {
-        label: "Leichte Verletzung – keine akute medizinische Gefahr",
-        nextId: "selbstverletzung_leicht",
+        label: "Keine solchen Anzeichen erkennbar – wie weiter?",
+        nextId: "selbstverletzung_danach",
       },
     ],
   },
   {
     id: "selbstverletzung_schwer",
-    question: "Schwere Selbstverletzung",
+    question: "Jetzt medizinische Hilfe holen",
     safetyCritical: true,
     steps: [
       {
         id: "s1",
         text: "Rufen Sie den Rettungsdienst",
         detail:
-          "Bei starker Blutung oder Vergiftungsverdacht: sofort 144 anrufen.",
+          "Bei starker Blutung, Bewusstseinsstörung, Atemproblemen oder möglicher unmittelbarer Lebensgefahr rufen Sie 144. Auch wenn Sie nicht wissen, ob die Verletzung lebensbedrohlich ist: Beschreiben Sie der Leitstelle, was Sie beobachten.",
         emergency: true,
         kontakte: ["ROT_144"],
       },
       {
         id: "s2",
-        text: "Leisten Sie Erste Hilfe",
+        text: "Folgen Sie den Anweisungen der Leitstelle",
         detail:
-          "Stillen Sie Blutungen mit sauberem Tuch, bringen Sie die Person in eine stabile Position.",
+          "Leisten Sie Erste Hilfe nach deren Anleitung und nur ohne Eigengefährdung. Bleiben Sie bei der Person oder in Kontakt, soweit dies für Sie sicher möglich ist.",
       },
       {
         id: "s3",
-        text: "Bleiben Sie ruhig und präsent",
-        detail: "«Ich bin da. Hilfe kommt.» Vermeiden Sie Vorwürfe.",
+        text: "Bei möglicher Vergiftung sofort Beratung einholen",
+        detail:
+          "Tox Info Suisse berät auch dann, wenn noch keine Beschwerden sichtbar sind. Bei akuten schweren Beschwerden hat der Rettungsdienst Vorrang. Lösen Sie kein Erbrechen aus; folgen Sie den individuellen Anweisungen.",
+        kontakte: ["ROT_145"],
       },
     ],
   },
   {
-    id: "selbstverletzung_leicht",
-    question: "Leichte Selbstverletzung",
+    id: "selbstverletzung_danach",
+    question: "Nach einer Selbstverletzung",
+    safetyCritical: true,
+    subtitle:
+      "Eine klein wirkende Verletzung sagt nichts über die seelische Not oder Suizidgefahr aus. Wenn Sie unsicher sind, holen Sie jetzt professionelle Einschätzung.",
     steps: [
       {
         id: "s1",
-        text: "Bleiben Sie ruhig – keine Panik zeigen",
+        text: "Fragen Sie, was gerade gebraucht wird",
         detail:
-          "Selbstverletzung ist oft ein Versuch, unerträgliche Spannung abzubauen. Ihre Ruhe hilft.",
+          "«Ich sehe, dass du verletzt bist. Was brauchst du gerade?» Sie dürfen selbst erschrocken sein. Sie müssen die Situation nicht mit den richtigen Worten lösen.",
       },
       {
         id: "s2",
-        text: "Versorgen Sie die Verletzung sachlich",
+        text: "Körperliche Folgen abklären lassen",
         detail:
-          "Bieten Sie Pflaster oder Verband an, ohne die Verletzung zu dramatisieren oder zu ignorieren.",
+          "Bieten Sie Unterstützung bei der ärztlichen Versorgung an. Wenn unklar ist, wie die Verletzung versorgt werden muss, holen Sie medizinischen Rat. Bei möglicher Vergiftung rufen Sie sofort Tox Info Suisse, bei möglicher Lebensgefahr den Rettungsdienst.",
+        kontakte: ["ROT_145", "ROT_144"],
       },
       {
         id: "s3",
-        text: "Bieten Sie Alternativen an",
+        text: "Professionelle Unterstützung einbeziehen",
         detail:
-          "«Möchtest du stattdessen Eiswürfel halten, kalt duschen oder etwas anderes Intensives spüren?»",
+          "Auch eine erstmalige Selbstverletzung verdient fachliche Abklärung. Kontaktieren Sie das Behandlungsteam oder bei dringender Sorge den psychiatrischen Notfalldienst der passenden Altersgruppe. Warten Sie nicht auf eine Wiederholung.",
+        kontakte: ["GELB_PUK_KJP", "GELB_PUK_ERW", "GELB_PUK_65"],
       },
       {
         id: "s4",
-        text: "Sprechen Sie es später an",
+        text: "An Bekanntes anknüpfen, wenn es gewünscht ist",
         detail:
-          "Nicht in der akuten Situation, aber danach: «Ich habe gesehen, dass es dir schlecht ging. Können wir darüber reden?»",
+          "Fragen Sie nach Strategien, die die Person bereits mit ihrer Fachperson vereinbart hat und jetzt nutzen möchte. Drängen Sie keine Übung auf. Ein vorhandener Krisenplan kann beim Hilfeholen unterstützen; er ersetzt keine aktuelle Abklärung.",
       },
       {
         id: "s5",
-        text: "Professionelle Hilfe einbeziehen",
+        text: "Auch Ihre Belastung zählt",
         detail:
-          "Wenn Selbstverletzung wiederholt vorkommt, ist therapeutische Unterstützung wichtig.",
-        kontakte: ["GELB_PUK_ERW"],
+          "Sie müssen die weitere Begleitung nicht allein übernehmen. Sprechen Sie mit einer Vertrauensperson oder holen Sie eigene Angehörigenberatung.",
+        link: { href: "/fachstelle", label: "Beratung für Angehörige" },
       },
     ],
   },
@@ -313,37 +321,40 @@ const TREE: TreeNode[] = [
   },
   {
     id: "aggression_verbal",
-    question: "Verbale Eskalation deeskalieren",
+    question: "Wenn ein Gespräch eskaliert",
+    subtitle:
+      "Wählen Sie, was gerade möglich ist. Sie müssen diese Vorschläge nicht der Reihe nach umsetzen. Bei Bedrohung geht Ihre Sicherheit vor.",
     steps: [
       {
         id: "s1",
-        text: "Sprechen Sie langsam und leise",
+        text: "Wenige Worte können reichen",
         detail:
-          "Ihre ruhige Stimme kann ansteckend wirken. Senken Sie bewusst Lautstärke und Tempo.",
+          "Wenn es Ihnen möglich ist, sprechen Sie kurz und ohne zusätzliche Vorwürfe. Ob die andere Person sich beruhigt, liegt nicht allein bei Ihnen.",
       },
       {
         id: "s2",
-        text: "Validieren Sie die Emotion",
+        text: "Nachfragen, statt Gefühle festzulegen",
         detail:
-          "«Ich sehe, dass du gerade extrem wütend bist. Das muss sich furchtbar anfühlen.»",
+          "«Das scheint dich sehr zu ärgern. Verstehe ich dich richtig?» Die Person darf Sie korrigieren. Sie können zuhören, ohne einer Beschuldigung zuzustimmen.",
       },
       {
         id: "s3",
         text: "Setzen Sie eine klare Grenze",
         detail:
-          "«Ich möchte für dich da sein, aber ich kann nicht bleiben, wenn du mich anschreist. Sollen wir 10 Minuten Pause machen?»",
+          "«Ich möchte nicht angeschrien werden. Ich unterbreche das Gespräch jetzt.» Sie brauchen dafür kein Einverständnis. Einen späteren Kontakt können Sie anbieten, wenn er für Sie möglich und sicher ist.",
       },
       {
         id: "s4",
-        text: "Bieten Sie körperliche Entladung an",
+        text: "Reize reduzieren oder Abstand anbieten",
         detail:
-          "Kissen schlagen, Eiswürfel halten, kaltes Wasser – intensive Reize helfen, die Spannung abzubauen.",
+          "Wenn es passt: «Möchtest du etwas Ruhe oder soll ich dir Raum lassen?» Lassen Sie die Person wählen. Sie müssen keine Technik anleiten oder eine Beruhigung erreichen.",
       },
       {
         id: "s5",
         text: "Gehen Sie, wenn es nötig ist",
         detail:
-          "Wenn die Eskalation nicht nachlässt, dürfen Sie den Raum verlassen. Das ist kein Aufgeben, sondern Selbstschutz.",
+          "Sie dürfen ein Gespräch auch frühzeitig beenden. Bei Bedrohung bringen Sie sich in Sicherheit und holen Hilfe; Sie müssen keine weiteren Gesprächsschritte versuchen.",
+        kontakte: ["ROT_117"],
         link: { href: "/grenzen", label: "Mehr zu Grenzen setzen" },
       },
     ],
@@ -353,24 +364,26 @@ const TREE: TreeNode[] = [
   {
     id: "kontaktabbruch",
     question: "Kontaktabbruch oder Rückzug",
+    subtitle:
+      "Wenn Sie sich um die Sicherheit sorgen, holen Sie jetzt professionelle Einschätzung. Warten Sie dann keine Kontaktfrist ab.",
     steps: [
       {
         id: "s1",
         text: "Atmen Sie durch – Rückzug ist nicht Ihr Versagen",
         detail:
-          "Kontaktabbruch kann ein Schutzmechanismus sein. Er bedeutet nicht, dass Sie etwas falsch gemacht haben.",
+          "Rückzug kann unterschiedliche Gründe haben. Aus dem Schweigen allein lässt sich weder ein Motiv noch Ihre Verantwortung ableiten.",
       },
       {
         id: "s2",
         text: "Senden Sie eine kurze, wertungsfreie Nachricht",
         detail:
-          "«Ich bin da, wenn du bereit bist. Kein Druck.» Einmal senden, dann Raum lassen.",
+          "Wenn Sie Kontakt anbieten möchten: «Du kannst dich melden, wenn du möchtest.» Versprechen Sie nur eine Erreichbarkeit, die für Sie möglich ist.",
       },
       {
         id: "s3",
-        text: "Setzen Sie sich eine innere Frist",
+        text: "Klären Sie Ihren eigenen nächsten Schritt",
         detail:
-          "Überlegen Sie sich: Wie lange warten Sie, bevor Sie sich erneut melden? Z.B. nach 3 Tagen eine weitere kurze Nachricht.",
+          "Es gibt keine passende Wartefrist für alle. Überlegen Sie, ob und wann Sie erneut Kontakt anbieten möchten. Absprachen, Ihre eigenen Bedürfnisse und mögliche Sorgen um die Sicherheit spielen dabei eine Rolle.",
       },
       {
         id: "s4",
@@ -390,8 +403,8 @@ const TREE: TreeNode[] = [
         id: "s6",
         text: "Wenn Sie sich Sorgen machen",
         detail:
-          "Wenn der Rückzug untypisch ist und Sie Suizidgefahr befürchten, vertrauen Sie Ihrem Gefühl und handeln Sie.",
-        kontakte: ["GELB_PUK_ERW"],
+          "Beschreiben Sie dem psychiatrischen Notfalldienst, was Sie beobachtet haben und was Sie befürchten. Bei möglicher unmittelbarer Lebensgefahr rufen Sie den Rettungsdienst.",
+        kontakte: ["ROT_144", "GELB_PUK_KJP", "GELB_PUK_ERW", "GELB_PUK_65"],
       },
     ],
   },
@@ -400,24 +413,26 @@ const TREE: TreeNode[] = [
   {
     id: "verzweiflung",
     question: "Starke Verzweiflung begleiten",
+    subtitle:
+      "Wenn Sie Suizidgedanken vermuten oder sich um die Sicherheit sorgen, fragen Sie direkt nach und holen Sie jetzt professionelle Einschätzung. Sie müssen nicht abwarten, wie lange die Verzweiflung anhält.",
     steps: [
       {
         id: "s1",
-        text: "Seien Sie einfach da",
+        text: "Nähe anbieten, wenn sie passt",
         detail:
-          "Sie müssen nichts Kluges sagen. «Ich bin hier» reicht oft. Setzen Sie sich daneben, halten Sie aus.",
+          "«Möchtest du, dass ich bei dir sitze, oder brauchst du etwas Raum?» Sie müssen weder alles aushalten noch allein für die Begleitung sorgen.",
       },
       {
         id: "s2",
         text: "Validieren Sie den Schmerz",
         detail:
-          "«Das muss sich gerade furchtbar anfühlen. Es ist okay zu weinen.» Keine Ratschläge, kein Relativieren.",
+          "«Das wirkt gerade sehr schmerzhaft. Magst du erzählen?» Hören Sie zu, soweit Sie können, und lassen Sie sich korrigieren.",
       },
       {
         id: "s3",
         text: "Bieten Sie Körperliches an",
         detail:
-          "Ein Glas Wasser, eine Decke, ein warmes Getränk. Kleine, konkrete Gesten helfen mehr als grosse Worte.",
+          "Wenn es zur Situation passt: «Möchtest du ein Glas Wasser oder eine Decke?» Ein Angebot darf abgelehnt werden.",
       },
       {
         id: "s4",
@@ -428,10 +443,16 @@ const TREE: TreeNode[] = [
       },
       {
         id: "s5",
-        text: "Wissen Sie, wann es zu viel wird",
+        text: "Hilfe holen, wenn Sie sich sorgen oder Entlastung brauchen",
         detail:
-          "Wenn die Verzweiflung Stunden anhält oder Sie Suizidgedanken vermuten, ziehen Sie Hilfe hinzu.",
-        kontakte: ["GRUEN_143", "GELB_PUK_ERW"],
+          "Der psychiatrische Notfalldienst hilft bei dringender Einschätzung; bei möglicher unmittelbarer Lebensgefahr rufen Sie 144. Für Ihre eigene Entlastung im Gespräch ist auch die Dargebotene Hand da. Sie ersetzt keine medizinische Abklärung.",
+        kontakte: [
+          "ROT_144",
+          "GELB_PUK_KJP",
+          "GELB_PUK_ERW",
+          "GELB_PUK_65",
+          "GRUEN_143",
+        ],
       },
     ],
   },
@@ -440,31 +461,40 @@ const TREE: TreeNode[] = [
   {
     id: "manipulation",
     question: "Mit Druck und Drohungen umgehen",
+    safetyCritical: true,
+    subtitle:
+      "Eine Suizidankündigung braucht professionelle Einschätzung – auch in einem Konflikt. Bei möglicher unmittelbarer Lebensgefahr rufen Sie 144; bei Gewalt oder Bedrohung 117.",
     steps: [
       {
         id: "s1",
         text: "Erkennen Sie das Muster",
         detail:
-          "«Wenn du gehst, bringe ich mich um» oder «Ohne dich kann ich nicht leben» – das sind Zeichen extremer Not und Verzweiflung, die enormen Druck auf Sie erzeugen können.",
+          "Sätze wie «Wenn du gehst, bringe ich mich um» können enormen Druck erzeugen. Sie müssen nicht entscheiden, welches Motiv dahintersteht, um Hilfe zu holen und sich zu schützen.",
       },
       {
         id: "s2",
         text: "Nehmen Sie die Not ernst, aber nicht die Verantwortung",
         detail:
-          "Die Gefühle dahinter sind real. Aber Sie sind nicht dafür verantwortlich, was ein anderer Mensch mit seinem Leben tut.",
+          "Nehmen Sie die Ankündigung ernst und holen Sie Unterstützung. Sie können die Sicherheit eines anderen Menschen nicht allein gewährleisten.",
       },
       {
         id: "s3",
-        text: "Bleiben Sie bei Ihrer Grenze",
+        text: "Eine Grenze darf bestehen bleiben",
         detail:
-          "«Ich nehme deine Verzweiflung ernst. Aber ich kann diese Entscheidung nicht für dich treffen. Lass uns gemeinsam Hilfe holen.»",
+          "«Ich nehme das ernst und hole Hilfe. Ich kann jetzt nicht bei dir bleiben.» Sie dürfen Hilfe verständigen, ohne eine Forderung zu erfüllen oder sich selbst zu gefährden.",
       },
       {
         id: "s4",
-        text: "Delegieren Sie an Profis",
+        text: "Professionelle Hilfe hinzuziehen",
         detail:
-          "Wenn Suiziddrohungen Sie unter Druck setzen: Informieren Sie professionelle Hilfe. Das ist kein Verrat, sondern Fürsorge.",
-        kontakte: ["GELB_PUK_ERW", "GRUEN_143"],
+          "Bei möglicher Lebensgefahr den Rettungsdienst rufen, bei Bedrohung die Polizei. Für eine dringende psychiatrische Einschätzung erreichen Sie die PUK-Notfalldienste nach Altersgruppe.",
+        kontakte: [
+          "ROT_144",
+          "ROT_117",
+          "GELB_PUK_KJP",
+          "GELB_PUK_ERW",
+          "GELB_PUK_65",
+        ],
       },
       {
         id: "s5",

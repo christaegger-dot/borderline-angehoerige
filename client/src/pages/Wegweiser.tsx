@@ -31,15 +31,15 @@ export default function Wegweiser() {
 
       <EditorialLayout width="narrow">
         {/* ── Hero ── */}
-        <header className="pb-12 pt-12 md:pb-16 md:pt-16">
+        <header className="py-6">
           <EyebrowLabel spacing="compact">Wegweiser</EyebrowLabel>
           <DisplayHeading level={1} size="page">
             Situations-Wegweiser
           </DisplayHeading>
           <Lede className="mt-6">
-            In akuten Momenten ist es schwer, klar zu denken. Dieser Wegweiser
-            führt Sie Schritt für Schritt – wählen Sie einfach die Situation,
-            die am ehesten zutrifft.
+            Wählen Sie die Situation, die am ehesten zutrifft. Sie müssen Gefahr
+            nicht selbst sicher einschätzen können. Bei Unsicherheit helfen
+            professionelle Anlaufstellen weiter.
           </Lede>
           <EditorialCallout
             variant="achtung"
@@ -65,7 +65,7 @@ export default function Wegweiser() {
         />
 
         {/* ── Interaktives Tool ── */}
-        <div className="mt-12 md:mt-16">
+        <div className="mt-6">
           <SituationsWegweiser />
         </div>
 
@@ -75,7 +75,8 @@ export default function Wegweiser() {
             {
               href: "/unterstuetzen/krise",
               title: "Krisenbegleitung",
-              description: "Deeskalation und Ampel-System.",
+              description:
+                "Hilfe holen, eigene Grenzen beachten und Unterstützung finden.",
             },
             {
               href: "/soforthilfe",
@@ -88,9 +89,9 @@ export default function Wegweiser() {
               description: "Persönliche Karte erstellen.",
             },
             {
-              href: "/selbstfuersorge",
+              href: "/selbstfuersorge#eigene-unterstuetzung",
               title: "Selbstfürsorge",
-              description: "Strategien für die Zeit danach.",
+              description: "Entlastung für Ihre eigene Situation.",
             },
           ]}
         />

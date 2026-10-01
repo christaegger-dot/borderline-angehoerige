@@ -253,11 +253,11 @@ export const materials: MaterialItem[] = [
       "DBT-orientierte Struktur für klare Bitten und Grenzsetzungen ohne unnötige Eskalation.",
     category: "grenzen",
     kind: "Infografik",
-    url: "/infografiken/manus-dear-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-dear-v1.webp",
-    downloadUrl: "/infografiken/manus-dear-v1.pdf",
+    url: "/infografiken/puk-dear-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-dear-v1.webp",
+    downloadUrl: "/infografiken/puk-dear-v1.pdf",
     priority: "secondary",
-    verifiedAt: "Mai 2026",
+    verifiedAt: "23.09.2026 (Text und Druckfassung)",
   },
   {
     id: "radikale-akzeptanz",
@@ -280,11 +280,11 @@ export const materials: MaterialItem[] = [
       "Genesungsorientierte Metapher dazu, was Angehörige beitragen können und was nicht in ihrer Hand liegt.",
     category: "genesung",
     kind: "Infografik",
-    url: "/infografiken/manus-garten-v2.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-garten-v2-thumb.png",
-    downloadUrl: "/infografiken/manus-garten-v2.pdf",
+    url: "/infografiken/puk-garten-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-garten-v1.webp",
+    downloadUrl: "/infografiken/puk-garten-v1.pdf",
     priority: "secondary",
-    verifiedAt: "Mai 2026",
+    verifiedAt: "23.09.2026 (Text und Druckfassung)",
   },
   {
     id: "genesung-zahlen",
@@ -329,6 +329,10 @@ const recommendedMaterials: MaterialItem[] = [
       id: item.id,
       title: item.title,
       description: item.description,
+      verifiedAt:
+        item.id === "4-arten-von-grenzen"
+          ? "23.09.2026 (Text und Druckfassung)"
+          : undefined,
       category: "grenzen" as const,
       kind: "Infografik" as const,
       url: item.url,

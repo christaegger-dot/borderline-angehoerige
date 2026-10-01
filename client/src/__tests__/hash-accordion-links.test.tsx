@@ -183,7 +183,7 @@ describe("hash-linked content sections", () => {
       name: "Direkt zur Hilfe auf dieser Seite",
     });
     const toggle = screen.getByRole("button", {
-      name: /Abschnitt Wo stehe ich beim Grenzen setzen/,
+      name: /Abschnitt Was brauche ich für meine Grenzen/,
     });
     expect(toggle).toHaveAttribute("aria-expanded", "false");
     fireEvent.click(
@@ -206,7 +206,7 @@ describe("hash-linked content sections", () => {
 
     expect(
       screen.getByRole("button", {
-        name: /Abschnitt Wo stehe ich beim Grenzen setzen\?/i,
+        name: /Abschnitt Was brauche ich für meine Grenzen\?/i,
       })
     ).toBeInTheDocument();
   });

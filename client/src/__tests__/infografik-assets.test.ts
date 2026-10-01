@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { collectReferencedInfografikAssets } from "@/content/infografikAssetRefs";
@@ -27,7 +27,10 @@ describe("infografik assets", () => {
         ...asset,
         filePath: path.join(PUBLIC_ROOT, asset.path.replace(/^\//, "")),
       }))
-      .filter(asset => !existsSync(asset.filePath))
+      .filter(
+        asset =>
+          !existsSync(asset.filePath) || statSync(asset.filePath).size === 0
+      )
       .map(asset => ({
         path: asset.path,
         usages: asset.usages,
@@ -314,7 +317,7 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Garten v2 assets in productive references", () => {
+  it("uses the synchronized PUK Garten assets in productive references", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
@@ -322,9 +325,9 @@ describe("infografik assets", () => {
     expectProductiveAssetVersion(
       referencedPaths,
       [
-        "/infografiken/manus-garten-v2.pdf",
-        "/infografiken/manus-garten-v2.webp",
-        "/infografiken/extras/thumbnails/manus-garten-v2-thumb.png",
+        "/infografiken/puk-garten-v1.pdf",
+        "/infografiken/puk-garten-v1.webp",
+        "/infografiken/extras/thumbnails/puk-garten-v1.webp",
       ],
       [
         "/infografiken/manus-garten-v1.pdf",

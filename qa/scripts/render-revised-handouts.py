@@ -1,4 +1,4 @@
-"""Render the three revised PDFs and previews from the same copy as the web text.
+"""Render the revised PDFs and interactive guides from the same copy as the web text.
 
 Run from the repository root with reportlab, PyMuPDF and Pillow installed.
 An editorial export is not a clinical sign-off.
@@ -7,6 +7,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 import json
 import hashlib
+import importlib.util
 import fitz
 from PIL import Image
 from reportlab.pdfbase import pdfmetrics
@@ -21,13 +22,13 @@ DATA = ROOT / 'client/src/content/revisedHandouts.json'
 OUT = ROOT / 'client/public/infografiken'
 TMP = ROOT / 'tmp/pdfs/revised-handouts'
 TMP.mkdir(parents=True, exist_ok=True)
-for name, filename in [('Body', 'DejaVuSans.ttf'), ('Bold', 'DejaVuSans-Bold.ttf')]:
-    pdfmetrics.registerFont(TTFont(name, '/usr/share/fonts/truetype/dejavu/' + filename))
+for name, filename in [('Body', 'Rubik-Regular.ttf'), ('Bold', 'Rubik-Medium.ttf')]:
+    pdfmetrics.registerFont(TTFont(name, str(ROOT / 'client/public/fonts' / filename)))
 pdfmetrics.registerFontFamily('Body', normal='Body', bold='Bold')
-INK = HexColor('#26343A')
-PLUM = HexColor('#5B3A4E')
-WASH = HexColor('#F1F3EE')
-RULE = HexColor('#D8DAD3')
+INK = HexColor('#222222')
+PLUM = HexColor('#3155DC')
+WASH = HexColor('#EBEFFF')
+RULE = HexColor('#DCE1EA')
 W, H = A4
 WIDTH = W - 80
 STYLES = {
@@ -49,7 +50,12 @@ def panel(flowables, width=WIDTH, color=WASH):
     return table
 
 def render(ident, data):
-    stem = 'manus-' + ident + '-v3'
+    if data.get('visual'):
+        spec = importlib.util.spec_from_file_location('visual_guides', Path(__file__).with_name('render-visual-guides.py'))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module.render(ident, data)
+    stem = data.get('assetStem', 'manus-' + ident + '-v3')
     story = [p(data['kicker'].upper(), 'label'), p(data['title'], 'title'), p(data['summary'], 'summary')]
     for line in data['intro']: story.append(p(line))
     story.append(Spacer(1, 6))
@@ -62,11 +68,13 @@ def render(ident, data):
                 # Each percentage stays with its definition, never an isolated figure.
                 cells = [[p(c['title'],'card'),p(c['text'])] for c in cards]
                 table = Table([[cells[0], '', cells[1]]], colWidths=[(WIDTH-12)/2,12,(WIDTH-12)/2])
-                table.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('BACKGROUND',(0,0),(0,0),WASH),('BACKGROUND',(2,0),(2,0),HexColor('#F4ECEF')),('LEFTPADDING',(0,0),(-1,-1),10),('RIGHTPADDING',(0,0),(-1,-1),10),('TOPPADDING',(0,0),(-1,-1),10),('BOTTOMPADDING',(0,0),(-1,-1),8)]))
+                table.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('BACKGROUND',(0,0),(0,0),WASH),('BACKGROUND',(2,0),(2,0),HexColor('#F4F5F7')),('LEFTPADDING',(0,0),(-1,-1),10),('RIGHTPADDING',(0,0),(-1,-1),10),('TOPPADDING',(0,0),(-1,-1),10),('BOTTOMPADDING',(0,0),(-1,-1),8)]))
                 group.append(table)
             else:
                 for card in cards:
-                    group.extend([p(card['title'],'card'),p(card['text']),Spacer(1,4)])
+                    group.extend([p(card['title'],'card'),p(card['text'])])
+                    if card.get('example'): group.append(p(card['example']))
+                    group.append(Spacer(1,4))
         for bullet in section.get('bullets', []):
             group.append(Paragraph('• '+escape(bullet), STYLES['body']))
         if section.get('calloutText'):
@@ -95,8 +103,13 @@ def render(ident, data):
     text=' '.join(pdf[0].get_text().split())
     for section in data['sections']:
         assert section['title'] in text
-    return {'id':ident,'stem':stem,'pages':len(pdf),'sourceSha256':hashlib.sha256(DATA.read_bytes()).hexdigest(),'pdfSha256':hashlib.sha256(target.read_bytes()).hexdigest()}
+    return {'id':ident,'stem':stem,'pages':len(pdf),'sourceSha256':hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True).encode()).hexdigest(),'pdfSha256':hashlib.sha256(target.read_bytes()).hexdigest()}
 
 if __name__ == '__main__':
-    result=[render(ident,data) for ident,data in json.loads(DATA.read_text()).items()]
+    all_data=json.loads(DATA.read_text())
+    guides=json.loads((DATA.parent / 'learningGuides.json').read_text())
+    for ident, data in guides.items():
+        data['assetStem']='puk-'+ident+'-v1'
+    all_data.update(guides)
+    result=[render(ident,data) for ident,data in all_data.items()]
     print(json.dumps(result,ensure_ascii=False,indent=2))

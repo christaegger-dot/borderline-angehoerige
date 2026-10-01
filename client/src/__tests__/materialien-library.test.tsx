@@ -4,17 +4,17 @@ import { describe, expect, it } from "vitest";
 import MaterialienLibrarySection from "@/sections/MaterialienLibrarySection";
 
 describe("MaterialienLibrarySection", () => {
-  it("shows starter materials and filters the full library by category", () => {
+  it("shows each material once and filters the full library by category", () => {
     render(
       <Router>
         <MaterialienLibrarySection />
       </Router>
     );
 
-    expect(screen.getByText("Empfohlen für den Anfang")).toBeInTheDocument();
+    expect(screen.getByText("Alle Materialien")).toBeInTheDocument();
     expect(
       screen.getAllByText("Notfallkarte Zürich – Psychische Krise")
-    ).toHaveLength(2);
+    ).toHaveLength(1);
     expect(screen.getByText("Genesung in Zahlen")).toBeInTheDocument();
     const localizedDownloadLink = screen.getAllByRole("link", {
       name: /Der Leuchtturm – Orientierung für Angehörige herunterladen/i,
@@ -28,7 +28,7 @@ describe("MaterialienLibrarySection", () => {
     const notfallkarteDownloadLinks = screen.getAllByRole("link", {
       name: /Notfallkarte Zürich – Psychische Krise herunterladen/i,
     });
-    expect(notfallkarteDownloadLinks).toHaveLength(2);
+    expect(notfallkarteDownloadLinks).toHaveLength(1);
     expect(notfallkarteDownloadLinks[0]).toHaveAttribute(
       "href",
       "/api/material-download/notfallkarte-zuerich"

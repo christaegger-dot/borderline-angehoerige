@@ -12,18 +12,11 @@ function renderHeader() {
 }
 
 describe("SiteHeader (HeaderNav)", () => {
-  it("renders the Aubergine Brand-Mark with primary variant", () => {
+  it("uses the supplied PUK symbol inside the labelled home link", () => {
     const { container } = renderHeader();
-    // BrandMark variant="primary" rendert einen runden Container mit
-    // Aubergine-Background-Token
-    const brandMark = container.querySelector(
-      '[aria-hidden="true"].rounded-full'
-    );
-    expect(brandMark).toBeTruthy();
-    // Klassen-Marker für primary-variant: bg via accent-primary-Token
-    expect(brandMark?.className).toContain("accent-primary");
-    // Compass-Icon darin
-    expect(brandMark?.querySelector("svg")).toBeTruthy();
+    const symbol = container.querySelector('a[aria-label*="Startseite"] img');
+    expect(symbol).toHaveAttribute("src", "/puk/symbol.svg");
+    expect(symbol).toHaveAttribute("alt", "");
   });
 
   it("does not add a separate brand/nav hairline separator", () => {
@@ -106,7 +99,7 @@ describe("SiteHeader (HeaderNav)", () => {
       .closest("#mobile-navigation-dialog");
 
     expect(mobileDialog).toBeTruthy();
-    expect(mobileDialog?.className).toContain("lg:hidden");
+    expect(mobileDialog?.className).toContain("xl:hidden");
     expect(mobileDialog?.className).not.toContain("md:hidden");
   });
 });

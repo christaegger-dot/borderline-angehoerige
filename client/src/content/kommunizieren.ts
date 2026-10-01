@@ -101,31 +101,31 @@ export const kommItems: KommunikationsMaterial[] = [
 
 export const escalationCards: KommunikationsTextCard[] = [
   {
-    title: "Nicht sofort verteidigen",
-    text: "Rechtfertigung wirkt unter hoher Anspannung oft wie Gegenangriff oder Nichtverstehen.",
+    title: "Kurz antworten",
+    text: "Wenige Worte können in hoher Anspannung leichter ankommen. Sie dürfen Ihre Sicht sagen und müssen nicht jede Beschuldigung sofort klären.",
   },
   {
-    title: "Den emotionalen Kern benennen",
-    text: "Nicht den Vorwurf, sondern die Kränkung, Angst oder Wut dahinter ansprechen.",
+    title: "Offen nachfragen",
+    text: "«Das scheint dich sehr zu beschäftigen. Verstehe ich dich richtig?» Lassen Sie sich korrigieren; die Gefühle und Motive des Gegenübers sind nicht von aussen sicher erkennbar.",
   },
   {
-    title: "Kurz und wiederholbar bleiben",
-    text: "In eskalierenden Momenten tragen wenige klare Sätze meist mehr als komplexe Erklärungen.",
+    title: "Das eigene Handeln begrenzen",
+    text: "«Ich möchte nicht angeschrien werden. Ich beende das Gespräch jetzt.» Eine Grenze braucht keine vorherige Einigung über den Konflikt.",
   },
   {
-    title: "Grenze und Pause kombinieren",
-    text: "Sie können Kontakt halten und gleichzeitig sagen, dass Beschimpfungen oder Druck nicht gehen.",
+    title: "Eine Pause ermöglichen",
+    text: "Sie dürfen Abstand nehmen. Ob und wann ein neuer Kontakt möglich ist, können Sie später klären. Akute Beruhigung und spätere Absprachen sind unterschiedliche Aufgaben.",
   },
 ];
 
 export const typicalSituationCards: KommunikationsTextCard[] = [
   {
     title: "Vorwürfe",
-    text: "Reagieren Sie eher auf das Gefühl dahinter als auf die ganze Anklage. Sie müssen nicht jede Verzerrung korrigieren, bevor Sie Beziehung herstellen.",
+    text: "Sie können nachfragen, was die Person verletzt hat, ohne ihrer Darstellung zuzustimmen. Prüfen Sie konkrete Kritik, statt jeden Vorwurf als Symptom oder Verzerrung zu verstehen.",
   },
   {
     title: "Rückzug und Schweigen",
-    text: "Raum geben kann hilfreich sein. Raum geben ist aber etwas anderes als strafendes Schweigen oder völliges Verschwinden aus Kontakt.",
+    text: "Rückzug kann verschiedene Gründe haben. Ein Kontaktangebot darf kurz sein und muss keine ständige Verfügbarkeit versprechen. Wenn Sie sich um die Sicherheit sorgen, holen Sie professionelle Einschätzung.",
   },
   {
     title: "Schwarz-Weiss-Sätze",

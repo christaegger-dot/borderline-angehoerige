@@ -8,91 +8,90 @@
   /* Core theme bridge. Editorial tokens below drive content and layout;
      shared primitives and functional crisis states still read from the
      compatibility tokens above. */
-  --primary: oklch(0.55 0.15 55); /* Terracotta */
-  --primary-foreground: oklch(0.98 0.01 85); /* Cream */
-  --sidebar-primary: oklch(0.52 0.09 190); /* Sage-mid */
-  --sidebar-primary-foreground: oklch(0.98 0.01 85);
+  --primary: #3c64ff; /* Terracotta */
+  --primary-foreground: #ffffff; /* Cream */
+  --sidebar-primary: #3c64ff; /* Sage-mid */
+  --sidebar-primary-foreground: #ffffff;
   --chart-1: oklch(0.55 0.15 55); /* Terracotta */
   --chart-2: oklch(0.52 0.09 190); /* Sage-mid */
   --chart-3: oklch(0.45 0.05 250); /* Slate Blue */
   --chart-4: oklch(0.85 0.08 55); /* Light Terracotta */
   --chart-5: oklch(0.88 0.04 145); /* Light Sage */
-  --radius: 0.5rem;
+  --radius: 0.375rem;
   /* Border-radius convention:
      rounded-sm  (2px)  = Tags, Badges, kleine Chips
      rounded-md  (4px)  = Buttons, Inputs
      rounded-lg  (8px)  = Standard-Elemente, Listen-Items
      rounded-xl  (12px) = Karten und Content-Boxen
      rounded-2xl (20px) = Sonderflächen und Overlays */
-  --background: oklch(0.97 0.02 85); /* Warmer Cream */
-  --foreground: oklch(0.25 0.02 250); /* Charcoal */
-  --card: oklch(0.99 0.008 85); /* Cream */
-  --card-foreground: oklch(0.25 0.02 250);
-  --popover: oklch(0.99 0.008 85);
-  --popover-foreground: oklch(0.25 0.02 250);
-  --secondary: oklch(0.88 0.04 145); /* Light Sage */
-  --secondary-foreground: oklch(0.3 0.04 145);
-  --muted: oklch(0.94 0.01 85);
-  --muted-foreground: oklch(0.45 0.02 250);
-  --accent: oklch(0.85 0.08 55); /* Light Terracotta */
-  --accent-foreground: oklch(0.3 0.08 55);
+  --background: #ffffff; /* Warmer Cream */
+  --foreground: #222222; /* Charcoal */
+  --card: #ffffff; /* Cream */
+  --card-foreground: #222222;
+  --popover: #ffffff;
+  --popover-foreground: #222222;
+  --secondary: #ebefff; /* Light Sage */
+  --secondary-foreground: #2444be;
+  --muted: #f4f5f7;
+  --muted-foreground: #595959;
+  --accent: #ebefff; /* Light Terracotta */
+  --accent-foreground: #2444be;
   --destructive: oklch(
     0.55 0.2 25
   ); /* AUSNAHME: Funktionales Rot nur für Soforthilfe/Notfall/Alarm. Nicht als allgemeine Akzentfarbe verwenden. */
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.9 0.02 85);
-  --input: oklch(0.92 0.015 85);
-  --ring: oklch(0.55 0.15 55); /* Terracotta */
-  --sidebar: oklch(0.98 0.01 85);
-  --sidebar-foreground: oklch(0.25 0.02 250);
-  --sidebar-accent: oklch(0.94 0.02 85);
-  --sidebar-accent-foreground: oklch(0.25 0.02 250);
-  --sidebar-border: oklch(0.9 0.02 85);
-  --sidebar-ring: oklch(0.55 0.15 55); /* Terracotta */
+  --border: #dce1ea;
+  --input: #c5cbd6;
+  --ring: #3c64ff; /* Terracotta */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #222222;
+  --sidebar-accent: #ebefff;
+  --sidebar-accent-foreground: #2444be;
+  --sidebar-border: #dce1ea;
+  --sidebar-ring: #3c64ff; /* Terracotta */
 
-  /* Editorial tokens — primary design source for layout and content pages.
+  /* PUK-derived foundations, using compatible tokens for existing content.
+     Functional red remains reserved for urgent help. Readability takes priority
+     over reproducing the prototype's smaller or lower-contrast typography.
+     Editorial tokens — primary design source for layout and content pages.
      Functional crisis colors remain separate. */
 
   /* — Farben — */
-  --bg-primary: #faf7f2; /* einzige Hintergrundfarbe der Site */
+  --bg-primary: #ffffff; /* einzige Hintergrundfarbe der Site */
   --bg-elevated: #ffffff; /* Hervorhebungen, z.B. Pull-Quote-Card */
-  --bg-cream-deep: #ebe2cf; /* tieferer Cream — für ruhige Sub-Bars; spürbar wärmer/dunkler als bg-primary für klare Sektionsgrenzen */
-  --bg-sage-wash: #dde3d4; /* heller Sage-Wash — für Reflexions-Sektionen; salbei-grünlich, ähnliche Lightness wie cream-deep */
-  --fg-primary: #1f2a37; /* Body-Text, dunkles Slate */
-  --fg-secondary: #4b5563; /* Lead, Bildunterschriften, Meta */
-  --fg-tertiary: #6b7280; /* Labels, Fussnoten */
-  --accent-primary: #5b3a4e; /* Aubergine — Inline-Links, Drop-Cap (~8.6:1 auf bg-primary, AAA) */
-  --accent-primary-h: #4a2f40; /* Aubergine hover */
-  --accent-label: #4f6b5e; /* gedämpftes Sage für Sektionslabels in Caps */
-  --ig-rose: #e0c6cd; /* Infografik: Rosé-Satelliten (A2 Begleiterkrankungen) */
-  --ig-sage-deep: #476358; /* Infografik: dunkleres Sage auf Sage-Wash (A2 HINWEIS), AA-sicher */
-  --rule-color: oklch(
-    0.91 0.008 85
-  ); /* Hairline – warm, sehr hell (≈ rgba(31,42,55,0.08) auf Cream) */
-  --rule-color-strong: oklch(
-    0.8 0.012 85
-  ); /* Hairline stark – für Pull-Quote-Border (≈ rgba(31,42,55,0.20) auf Cream) */
+  --bg-cream-deep: #f4f5f7; /* tieferer Cream — für ruhige Sub-Bars; spürbar wärmer/dunkler als bg-primary für klare Sektionsgrenzen */
+  --bg-sage-wash: #ebefff; /* heller Sage-Wash — für Reflexions-Sektionen; salbei-grünlich, ähnliche Lightness wie cream-deep */
+  --fg-primary: #222222; /* Body-Text, dunkles Slate */
+  --fg-secondary: #505050; /* Lead, Bildunterschriften, Meta */
+  --fg-tertiary: #646464; /* Labels, Fussnoten */
+  --accent-primary: #3155dc; /* Aubergine — Inline-Links, Drop-Cap (~8.6:1 auf bg-primary, AAA) */
+  --accent-primary-h: #2444be; /* Aubergine hover */
+  --accent-label: #3155dc; /* gedämpftes Sage für Sektionslabels in Caps */
+  --ig-rose: #d8e0ff; /* Infografik: Rosé-Satelliten (A2 Begleiterkrankungen) */
+  --ig-sage-deep: #2444be; /* Infografik: dunkleres Sage auf Sage-Wash (A2 HINWEIS), AA-sicher */
+  --rule-color: #dce1ea; /* Hairline – warm, sehr hell (≈ rgba(31,42,55,0.08) auf Cream) */
+  --rule-color-strong: #9ba8c1; /* Hairline stark – für Pull-Quote-Border (≈ rgba(31,42,55,0.20) auf Cream) */
 
   /* Fachstelle style bridge — uebersetzt das neue Handout-System auf Web-UI.
      A4-Kompositionen werden nicht 1:1 kopiert; diese Tokens halten Website,
      Materialien und neue Handouts visuell in derselben ruhigen Familie. */
-  --fs-paper: #fffdf8;
-  --fs-paper-muted: #f7f1e7;
-  --fs-ink: #1f2a37;
-  --fs-ink-muted: #53606a;
-  --fs-sage: #587263;
-  --fs-sage-soft: #edf3ec;
-  --fs-steel: #577385;
-  --fs-steel-soft: #edf3f5;
-  --fs-terracotta: #a84d37;
-  --fs-terracotta-soft: #f8ece6;
-  --fs-sand: #b9894c;
-  --fs-sand-soft: #f6efe2;
-  --fs-danger: #9f3d32;
-  --fs-danger-soft: #f8e7e2;
+  --fs-paper: #ffffff;
+  --fs-paper-muted: #f4f5f7;
+  --fs-ink: #222222;
+  --fs-ink-muted: #505050;
+  --fs-sage: #3155dc;
+  --fs-sage-soft: #ebefff;
+  --fs-steel: #3155dc;
+  --fs-steel-soft: #ebefff;
+  --fs-terracotta: #3155dc;
+  --fs-terracotta-soft: #ebefff;
+  --fs-sand: #505050;
+  --fs-sand-soft: #f4f5f7;
+  --fs-danger: #9e2814;
+  --fs-danger-soft: #fff0ed;
   --fs-rule: rgba(31, 42, 55, 0.12);
   --fs-rule-strong: rgba(31, 42, 55, 0.22);
-  --fs-radius-panel: 14px;
+  --fs-radius-panel: 4px;
   --fs-radius-chip: 999px;
 
   /* — Spacing-Skala (Vertikal-Rhythmus) — */
@@ -108,17 +107,17 @@
   /* — Section-Rhythmus —
      Zentrale Makro-Abstände für EditorialSection und verwandte Flächen.
      Komponenten sollen diese Tokens statt ad-hoc py-20/md:py-[120px] nutzen. */
-  --section-y-compact-mobile: var(--space-6); /* 48px */
-  --section-y-compact-desktop: 3.5rem; /* 56px */
-  --section-y-normal-mobile: 3.5rem; /* 56px */
-  --section-y-normal-desktop: 5rem; /* 80px */
+  --section-y-compact-mobile: 1.5rem; /* 48px */
+  --section-y-compact-desktop: 2rem; /* 56px */
+  --section-y-normal-mobile: 2rem; /* 56px */
+  --section-y-normal-desktop: 3rem; /* 80px */
   --section-y-spacious-mobile: var(--space-7); /* 72px */
   --section-y-spacious-desktop: var(--space-8); /* 96px */
-  --section-y-hero-mobile: var(--space-7); /* 72px */
-  --section-y-hero-desktop: var(--space-8); /* 96px */
+  --section-y-hero-mobile: 2rem; /* 72px */
+  --section-y-hero-desktop: 3rem; /* 96px */
 
   /* — Typografie-Skala (rem-basiert, root 16px) — */
-  --text-xs: 0.75rem; /* 12px — Sektionslabels in caps */
+  --text-xs: 0.875rem; /* 12px — Sektionslabels in caps */
   --text-sm: 0.875rem; /* 14px — Fussnoten, Meta */
   --text-base: 1rem; /* 16px — Fliesstext mobile */
   --text-md: 1.0625rem; /* 17px — Fliesstext desktop */
@@ -128,9 +127,9 @@
   --text-3xl: 2.625rem; /* 42px — H1 mobile */
   --text-4xl: 3.5rem; /* 56px — H1 desktop */
   --text-hero: clamp(
-    38px,
-    4.6vw,
-    64px
+    2rem,
+    4vw,
+    3.25rem
   ); /* Ruhiger Hero: gross genug als Einstieg, aber weniger plakativ */
 
   /* — Line-Heights — */
@@ -139,18 +138,18 @@
   --lh-relaxed: 1.7; /* Fliesstext */
 
   /* — Letter-Spacing — */
-  --tracking-caps: 0.11em; /* Sektionslabels – reduziert, damit Wiederholung leiser wirkt */
-  --tracking-tight: -0.008em; /* H1/H2 – Source Serif braucht nur wenig Korrektur */
+  --tracking-caps: 0.035em; /* Sektionslabels – reduziert, damit Wiederholung leiser wirkt */
+  --tracking-tight: -0.015em; /* H1/H2 – Source Serif braucht nur wenig Korrektur */
 
   /* — Font-Weights — */
   --weight-display: 400; /* H1, H2 */
   --weight-body: 400; /* Fliesstext */
-  --weight-strong: 600; /* sparsame Hervorhebung */
+  --weight-strong: 500; /* sparsame Hervorhebung */
 
   /* — Layout — */
   --measure: 38rem; /* 608px — Lese-Mass für Fliesstext */
   --measure-wide: 46rem; /* 736px — Hero und etwas breitere Blöcke */
-  --container-pad: 1.5rem; /* Mobile Padding */
+  --container-pad: 1.25rem; /* Mobile Padding */
   --container-pad-md: 2.5rem; /* Desktop Padding */
 }
 
@@ -1004,12 +1003,12 @@
      via Pseudo-Elemente. Explizite Hex-Farbe (analog Color-Block-Pattern). */
   .editorial-pull-quote-testimonial-blockquote::before {
     content: "«";
-    color: #5b3a4e;
+    color: #3155dc;
     margin-right: 0.1em;
   }
   .editorial-pull-quote-testimonial-blockquote::after {
     content: "»";
-    color: #5b3a4e;
+    color: #3155dc;
     margin-left: 0.1em;
   }
 
@@ -1027,19 +1026,19 @@
     color: #f0e5db;
   }
   .editorial-section[data-variant="aubergine"] .editorial-prose a {
-    color: #f5ece6;
-    text-decoration-color: #f5ece6;
+    color: #ffffff;
+    text-decoration-color: #ffffff;
   }
   .editorial-section[data-variant="aubergine"] .editorial-prose a:hover {
     color: #ffffff;
   }
   .editorial-section[data-variant="aubergine"] .editorial-prose strong {
-    color: #f5ece6;
+    color: #ffffff;
   }
   .editorial-section[data-variant="aubergine"]
     .editorial-prose-dropcap
     > p:first-child::first-letter {
-    color: #f5ece6;
+    color: #ffffff;
   }
 
   /* ── Editorial Section — Layout-Hülle (Margin / Body / Aside) ──
@@ -1102,7 +1101,7 @@
      #476358 (Kontrast 5.01) statt globalem Token-Eingriff, damit andere
      Hintergruende (Cream, Cream-Deep, Aubergine) unveraendert bleiben. */
   .editorial-color-block[data-variant="sage-wash"] {
-    --accent-label: #476358;
+    --accent-label: #2444be;
   }
   .editorial-section-grid__aside {
     grid-area: aside;

@@ -4,6 +4,7 @@ import type { HandoutDocumentType } from "./handoutGovernance";
 export interface HandoutTextCard {
   title: string;
   text: string;
+  example?: string;
 }
 
 export interface HandoutTextSection {

@@ -21,6 +21,10 @@ import {
   getHandoutTextVersionMeta,
   loadHandoutTextVersion,
 } from "@/content/handoutTextVersions";
+import {
+  HANDOUT_VISUAL_REFRESH_NOTE,
+  isHandoutVisualPublished,
+} from "@/content/handoutGovernance";
 import type {
   HandoutTextCard,
   HandoutTextVersion,
@@ -103,6 +107,7 @@ export default function HandoutTextPage({
   const openHref = getHandoutOpenHref(pdfSourceUrl) ?? pdfSourceUrl;
   const downloadHref = getHandoutDownloadHref(pdfSourceUrl) ?? pdfSourceUrl;
   const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
+  const visualPublished = isHandoutVisualPublished(handoutMeta.id);
   const revisedWebCopy = [
     "genesung-zahlen",
     "kinder",
@@ -157,24 +162,36 @@ export default function HandoutTextPage({
               23.09.2026. Die erneute fachliche Prüfung ist ausstehend.
             </p>
           )}
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button
-              asChild
-              variant="outline"
-              className="border-[color:var(--accent-primary)] bg-[color:var(--accent-primary)] text-[color:var(--bg-primary)] shadow-none hover:border-[color:var(--accent-primary-h)] hover:bg-[color:var(--accent-primary-h)] hover:text-[color:var(--bg-primary)]"
+          {visualPublished ? (
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button
+                asChild
+                variant="outline"
+                className="border-[color:var(--accent-primary)] bg-[color:var(--accent-primary)] text-[color:var(--bg-primary)] shadow-none hover:border-[color:var(--accent-primary-h)] hover:bg-[color:var(--accent-primary-h)] hover:text-[color:var(--bg-primary)]"
+              >
+                <a href={openHref} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-4 h-4" />
+                  PDF öffnen
+                </a>
+              </Button>
+              <Button asChild variant="outline">
+                <a href={downloadHref} download="">
+                  <Download className="w-4 h-4" />
+                  PDF herunterladen
+                </a>
+              </Button>
+            </div>
+          ) : (
+            <p
+              className="mt-8 border-l pl-4"
+              style={{
+                ...bodyStyle,
+                borderColor: "var(--accent-label)",
+              }}
             >
-              <a href={openHref} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4" />
-                PDF öffnen
-              </a>
-            </Button>
-            <Button asChild variant="outline">
-              <a href={downloadHref} download="">
-                <Download className="w-4 h-4" />
-                PDF herunterladen
-              </a>
-            </Button>
-          </div>
+              {HANDOUT_VISUAL_REFRESH_NOTE}
+            </p>
+          )}
 
           <div
             className="mt-5 flex flex-wrap gap-x-5 gap-y-2"
@@ -191,7 +208,7 @@ export default function HandoutTextPage({
             </AppLink>
           </div>
 
-          {textVersionPreferred ? (
+          {visualPublished && textVersionPreferred ? (
             <p
               className="mt-8 border-t pt-4"
               style={{
@@ -204,25 +221,27 @@ export default function HandoutTextPage({
             </p>
           ) : null}
 
-          <figure
-            className="mt-10 border-t pt-5"
-            style={{ borderColor: "var(--rule-color)" }}
-          >
-            <img
-              src={pagePreviewImageUrl}
-              alt={`Vorschau des Handouts ${pageTitle}`}
-              className="w-full h-auto border object-cover object-top"
+          {visualPublished ? (
+            <figure
+              className="mt-10 border-t pt-5"
               style={{ borderColor: "var(--rule-color)" }}
-              loading="eager"
-              width={720}
-              height={900}
-              decoding="async"
-            />
-            <figcaption className="mt-3" style={metaStyle}>
-              Vorschau der Druckversion. Für ruhiges Lesen ist diese Textfassung
-              gedacht.
-            </figcaption>
-          </figure>
+            >
+              <img
+                src={pagePreviewImageUrl}
+                alt={`Vorschau des Handouts ${pageTitle}`}
+                className="w-full h-auto border object-cover object-top"
+                style={{ borderColor: "var(--rule-color)" }}
+                loading="eager"
+                width={720}
+                height={900}
+                decoding="async"
+              />
+              <figcaption className="mt-3" style={metaStyle}>
+                Vorschau der Druckversion. Für ruhiges Lesen ist diese
+                Textfassung gedacht.
+              </figcaption>
+            </figure>
+          ) : null}
         </header>
 
         <EditorialSectionBlock

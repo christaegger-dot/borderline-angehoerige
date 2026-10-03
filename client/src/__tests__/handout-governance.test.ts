@@ -6,6 +6,7 @@ import { grenzenItems } from "@/content/grenzen";
 import {
   getHandoutGovernance,
   HANDOUT_STANDARD_DISCLAIMER,
+  isHandoutVisualPublished,
 } from "@/content/handoutGovernance";
 import { HANDOUT_TEXT_VERSION_IDS } from "@/content/handoutTextMetas";
 import { handoutTextVersions as genesungTextVersions } from "@/content/handoutTextVersionContent/genesung.content";
@@ -97,6 +98,35 @@ function collectProductiveHandoutSources() {
 }
 
 describe("handout governance", () => {
+  it("keeps confirmed P1 drift assets text-only until a new visual is approved", () => {
+    const textOnlyIds = [
+      "4-phasen",
+      "gehirn",
+      "remission-heilung",
+      "5-faktoren-genesung",
+      "radikale-akzeptanz",
+      "gespraeche-kippen",
+      "beispiel-dialog",
+      "rolle-genesungsprozess",
+    ];
+
+    for (const id of textOnlyIds) {
+      expect(isHandoutVisualPublished(id), id).toBe(false);
+      expect(getHandoutGovernance(id)?.visualAssetStatus, id).toBe("text-only");
+    }
+
+    for (const id of [
+      "genesung-zahlen",
+      "kinder",
+      "stopp-technik",
+      "dear",
+      "garten",
+      "4-arten-von-grenzen",
+    ]) {
+      expect(isHandoutVisualPublished(id), id).toBe(true);
+    }
+  });
+
   it("requires document type and approved version for every text version", () => {
     for (const id of HANDOUT_TEXT_VERSION_IDS) {
       const governance = getHandoutGovernance(id);

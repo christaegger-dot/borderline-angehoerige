@@ -13,6 +13,7 @@ import {
 import EvidenceNote from "@/components/EvidenceNote";
 import { AufgangIllustration } from "@/components/illustrations";
 import LastVerifiedBadge from "@/components/LastVerifiedBadge";
+import HandoutVisualPlaceholder from "@/components/HandoutVisualPlaceholder";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
@@ -20,6 +21,10 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import { genesungItems as genesungMaterialItems } from "@/content/genesung";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import {
+  HANDOUT_VISUAL_REFRESH_NOTE,
+  isHandoutVisualPublished,
+} from "@/content/handoutGovernance";
 import { quellenLinks } from "@/content/quellenLinks";
 import { Link } from "wouter";
 
@@ -623,7 +628,8 @@ export default function Genesung() {
           <EditorialBody className="max-w-[36em]">
             Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der
             Rolle von Angehörigen. Wenn verfügbar, führt «Textversion lesen» zur
-            Web-Version. «PDF öffnen» öffnet die A4-Druckversion im neuen Tab.
+            Web-Version. Eine aktuelle A4-Druckversion wird nur dort angeboten,
+            wo Text und Grafik übereinstimmen.
           </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
@@ -639,24 +645,32 @@ export default function Genesung() {
                 item.pdf
               );
               const pdfHref = getHandoutOpenHref(item.pdf) ?? item.pdf;
+              const visualPublished = isHandoutVisualPublished(item.id);
               return (
                 <article
                   key={item.title}
                   className="space-y-3 border-t pt-6"
                   style={{ borderColor: "var(--rule-color)" }}
                 >
-                  <img
-                    src={item.thumbnailUrl ?? item.img}
-                    alt={item.title}
-                    className="aspect-[3/4] w-full rounded-md object-cover object-top"
-                    style={{ backgroundColor: "var(--bg-elevated)" }}
-                    loading="lazy"
-                    width={600}
-                    height={848}
-                    decoding="async"
-                  />
+                  {visualPublished ? (
+                    <img
+                      src={item.thumbnailUrl ?? item.img}
+                      alt={item.title}
+                      className="aspect-[3/4] w-full rounded-md object-cover object-top"
+                      style={{ backgroundColor: "var(--bg-elevated)" }}
+                      loading="lazy"
+                      width={600}
+                      height={848}
+                      decoding="async"
+                    />
+                  ) : (
+                    <HandoutVisualPlaceholder title={item.title} />
+                  )}
                   <h3 style={h4Style}>{item.title}</h3>
                   <p style={bodyStyle}>{item.desc}</p>
+                  {!visualPublished ? (
+                    <p style={bodyStyle}>{HANDOUT_VISUAL_REFRESH_NOTE}</p>
+                  ) : null}
                   <p
                     className="flex flex-wrap gap-x-5 gap-y-1"
                     style={{ fontSize: "var(--text-sm)" }}
@@ -670,15 +684,17 @@ export default function Genesung() {
                         Textversion lesen
                       </Link>
                     )}
-                    <a
-                      href={pdfHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="editorial-link"
-                      aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                    >
-                      PDF öffnen
-                    </a>
+                    {visualPublished ? (
+                      <a
+                        href={pdfHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="editorial-link"
+                        aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                      >
+                        PDF öffnen
+                      </a>
+                    ) : null}
                   </p>
                 </article>
               );

@@ -9,6 +9,7 @@ import {
 } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import HandoutVisualPlaceholder from "@/components/HandoutVisualPlaceholder";
 import {
   categoryMeta,
   materials,
@@ -21,6 +22,10 @@ import {
   prefersHandoutTextVersion,
 } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import {
+  HANDOUT_VISUAL_REFRESH_NOTE,
+  isHandoutVisualPublished,
+} from "@/content/handoutGovernance";
 import { cn } from "@/lib/utils";
 
 const categoryLabel: Record<Exclude<MaterialCategory, "alle">, string> = {
@@ -69,6 +74,7 @@ function MaterialEntry({
     ? null
     : getHandoutTextVersionHrefBySource(pdfSource);
   const textVersionPreferred = prefersHandoutTextVersion(pdfSource);
+  const visualPublished = item.isHtml || isHandoutVisualPublished(item.id);
   const openLabel = item.isHtml ? "Öffnen" : "PDF öffnen";
 
   return (
@@ -80,28 +86,32 @@ function MaterialEntry({
       data-material-category={item.category}
       data-material-kind={item.kind}
     >
-      <button
-        type="button"
-        className="material-library-card__media"
-        onClick={() => {
-          if (item.isHtml) {
-            window.open(openHref, "_blank", "noopener,noreferrer");
-          } else {
-            onPreview(item.url, item.title);
-          }
-        }}
-        aria-label={`${item.title} öffnen`}
-      >
-        <img
-          src={previewSrc}
-          alt={item.title}
-          className="material-library-card__image"
-          loading={eager ? "eager" : "lazy"}
-          width={400}
-          height={533}
-          decoding="async"
-        />
-      </button>
+      {visualPublished ? (
+        <button
+          type="button"
+          className="material-library-card__media"
+          onClick={() => {
+            if (item.isHtml) {
+              window.open(openHref, "_blank", "noopener,noreferrer");
+            } else {
+              onPreview(item.url, item.title);
+            }
+          }}
+          aria-label={`${item.title} öffnen`}
+        >
+          <img
+            src={previewSrc}
+            alt={item.title}
+            className="material-library-card__image"
+            loading={eager ? "eager" : "lazy"}
+            width={400}
+            height={533}
+            decoding="async"
+          />
+        </button>
+      ) : (
+        <HandoutVisualPlaceholder title={item.title} />
+      )}
 
       <div className="material-library-card__content">
         <p className="material-library-card__kicker">
@@ -112,7 +122,11 @@ function MaterialEntry({
 
         <h3 className="material-library-card__title">{item.title}</h3>
         <p className="material-library-card__description">{item.description}</p>
-        {textVersionPreferred && textVersionHref ? (
+        {!visualPublished && textVersionHref ? (
+          <p className="material-library-card__note">
+            {HANDOUT_VISUAL_REFRESH_NOTE}
+          </p>
+        ) : textVersionPreferred && textVersionHref ? (
           <p className="material-library-card__note">
             Für bildbasierte PDFs ist die Textversion die empfohlene
             Lesefassung.
@@ -129,16 +143,18 @@ function MaterialEntry({
               Textversion lesen
             </Link>
           )}
-          <a
-            href={openHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${item.title} öffnen`}
-            className="editorial-link"
-          >
-            {openLabel}
-          </a>
-          {downloadHref && (
+          {visualPublished && (
+            <a
+              href={openHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${item.title} öffnen`}
+              className="editorial-link"
+            >
+              {openLabel}
+            </a>
+          )}
+          {visualPublished && downloadHref && (
             <a
               href={downloadHref}
               download=""
@@ -149,11 +165,15 @@ function MaterialEntry({
             </a>
           )}
         </p>
-        {item.verifiedAt && (
+        {!visualPublished ? (
+          <p className="material-library-card__verified">
+            Materialstand: Textversion aktuell · Druckfassung in Überarbeitung
+          </p>
+        ) : item.verifiedAt ? (
           <p className="material-library-card__verified">
             Materialstand: {item.verifiedAt}
           </p>
-        )}
+        ) : null}
       </div>
     </article>
   );
@@ -192,8 +212,8 @@ export default function MaterialienLibrarySection() {
         <EditorialSection.Aside background="cream-deep">
           <p className="material-library-use-note">
             <strong>Lesetipp:</strong> «Textversion lesen» ist die ruhigste
-            Fassung für bildbasierte PDFs. «PDF öffnen» bleibt die Druck- oder
-            Vorschaufassung im neuen Tab.
+            Fassung für bildbasierte PDFs. Wenn eine aktuelle Druckfassung
+            vorliegt, öffnet «PDF öffnen» sie in einem neuen Tab.
           </p>
         </EditorialSection.Aside>
       </EditorialSection>

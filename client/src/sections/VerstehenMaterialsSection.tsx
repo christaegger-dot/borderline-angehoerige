@@ -7,12 +7,17 @@ import {
   EyebrowLabel,
 } from "@/components/editorial";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
+import HandoutVisualPlaceholder from "@/components/HandoutVisualPlaceholder";
 import {
   verstehenInfografiken,
   type VerstehenMaterialCategory,
 } from "@/content/verstehen";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import {
+  HANDOUT_VISUAL_REFRESH_NOTE,
+  isHandoutVisualPublished,
+} from "@/content/handoutGovernance";
 
 const verstehenCategories = [
   {
@@ -127,26 +132,31 @@ export default function VerstehenMaterialsSection() {
                 item.pdfUrl
               );
               const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
+              const visualPublished = isHandoutVisualPublished(item.id);
 
               return (
                 <article key={item.id} className="material-library-card">
-                  <a
-                    href={item.webpUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${item.alt} – Vorschau öffnen`}
-                    className="material-library-card__media"
-                  >
-                    <img
-                      src={item.thumbnailUrl ?? item.webpUrl}
-                      alt={item.alt}
-                      className="material-library-card__image"
-                      loading="lazy"
-                      width={600}
-                      height={848}
-                      decoding="async"
-                    />
-                  </a>
+                  {visualPublished ? (
+                    <a
+                      href={item.webpUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${item.alt} – Vorschau öffnen`}
+                      className="material-library-card__media"
+                    >
+                      <img
+                        src={item.thumbnailUrl ?? item.webpUrl}
+                        alt={item.alt}
+                        className="material-library-card__image"
+                        loading="lazy"
+                        width={600}
+                        height={848}
+                        decoding="async"
+                      />
+                    </a>
+                  ) : (
+                    <HandoutVisualPlaceholder title={item.title} />
+                  )}
 
                   <div className="material-library-card__content">
                     <p className="material-library-card__kicker">
@@ -160,6 +170,11 @@ export default function VerstehenMaterialsSection() {
                     <p className="material-library-card__description">
                       {item.description}
                     </p>
+                    {!visualPublished ? (
+                      <p className="material-library-card__note">
+                        {HANDOUT_VISUAL_REFRESH_NOTE}
+                      </p>
+                    ) : null}
 
                     <p className="material-library-card__actions">
                       {textVersionHref ? (
@@ -171,15 +186,17 @@ export default function VerstehenMaterialsSection() {
                           Textversion lesen
                         </Link>
                       ) : null}
-                      <a
-                        href={pdfHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-                        className="editorial-link"
-                      >
-                        PDF öffnen
-                      </a>
+                      {visualPublished ? (
+                        <a
+                          href={pdfHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+                          className="editorial-link"
+                        >
+                          PDF öffnen
+                        </a>
+                      ) : null}
                     </p>
                   </div>
                 </article>

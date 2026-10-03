@@ -79,7 +79,7 @@ export default function Kommunizieren() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <EyebrowLabel spacing="compact">
-              Vollständig ca. 14 Min · Auch abschnittweise lesbar
+              Grundtext ca. 14 Min · Mit Übungen und Vertiefungen länger
             </EyebrowLabel>
           </div>
         </EditorialSection.Body>

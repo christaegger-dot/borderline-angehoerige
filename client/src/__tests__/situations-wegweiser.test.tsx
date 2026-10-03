@@ -26,6 +26,37 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     vi.useRealTimers();
   });
 
+  it("fokussiert neue Fragen sowie Rückkehr- und Neustartziele", () => {
+    vi.useFakeTimers();
+    render(<SituationsWegweiser />);
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: "Suizidgedanken oder Suizidankündigung",
+      })
+    );
+    expect(
+      screen.getByRole("heading", { name: "Besteht unmittelbare Gefahr?" })
+    ).toHaveFocus();
+
+    fireEvent.click(screen.getByRole("button", { name: "Eine Frage zurück" }));
+    expect(
+      screen.getByRole("heading", { name: "Was passiert gerade?" })
+    ).toHaveFocus();
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: "Suizidgedanken oder Suizidankündigung",
+      })
+    );
+    fireEvent.click(
+      screen.getByRole("button", { name: "Wegweiser neu starten" })
+    );
+    expect(
+      screen.getByRole("heading", { name: "Was passiert gerade?" })
+    ).toHaveFocus();
+  });
+
   it("bietet bei unklaren körperlichen Folgen sofort Rettungsdienst und Vergiftungsberatung an", () => {
     vi.useFakeTimers();
     render(<SituationsWegweiser />);
@@ -167,9 +198,11 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     expect(
       screen.getByRole("link", { name: /Telefon 144/ })
     ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /Telefon 058 384 20 00/ })
-    ).toBeInTheDocument();
+    for (const nummer of ["058 384 66 66", "058 384 20 00", "058 384 46 82"]) {
+      expect(
+        screen.getByRole("link", { name: new RegExp("Telefon " + nummer) })
+      ).toBeInTheDocument();
+    }
   });
 
   it("nennt Eigengefährdung und Widerstand direkt bei der Handlung zur Umgebungssicherung", () => {

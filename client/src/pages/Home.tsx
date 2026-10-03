@@ -55,6 +55,11 @@ export default function Home() {
             </AppLink>
           </nav>
           <p className="home-puk__more">
+            <strong>Ein möglicher Lernweg:</strong> verstehen → Situationen
+            einordnen → Warnzeichen erkennen → passend unterstützen →
+            kommunizieren und Grenzen setzen → eigene Entlastung finden.
+          </p>
+          <p className="home-puk__more">
             Noch unsicher, wo anfangen?{" "}
             <AppLink href="/selbsttest" className="editorial-link">
               Passende Inhalte finden

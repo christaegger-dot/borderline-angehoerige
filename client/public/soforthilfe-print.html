@@ -1,8 +1,13 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-CH" data-web-profile="website" data-document-variant="print">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Druckansicht mit Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz, Schwerpunkt Kanton Zürich."
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>
       Soforthilfe bei akuter Gefahr – Notfallnummern Schweiz (Kanton Zürich)
     </title>
@@ -578,10 +583,24 @@
         .back-link:hover {
           color: #111;
         }
+        .skip-link {
+          position: fixed;
+          z-index: 1000;
+          top: 8px;
+          left: 8px;
+          padding: 10px 14px;
+          transform: translateY(-160%);
+          background: #111;
+          color: #fff;
+        }
+        .skip-link:focus {
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
   <body>
+    <a class="skip-link no-print" href="#main-content">Zum Inhalt springen</a>
     <!-- Screen-only: Navigation -->
     <div class="print-btn-bar no-print">
       <button class="print-btn" onclick="window.print()">
@@ -592,7 +611,7 @@
       >
     </div>
 
-    <div class="page">
+    <main class="page" id="main-content" tabindex="-1">
       <!-- Header -->
       <div class="doc-header">
         <div class="kicker">Soforthilfe · Notfallnummern Schweiz</div>
@@ -912,7 +931,7 @@
         >
         <span>Zuletzt verifiziert: April 2026 · Gilt für Kanton Zürich</span>
       </div>
-    </div>
+    </main>
     <!-- /.page -->
 
     <script>

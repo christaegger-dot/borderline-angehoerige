@@ -199,10 +199,10 @@ async function checkHeadingOrder(page) {
   }
 }
 
-// ── Check 4: Header-Layout (Main-Nav vs Hamburger × lg-Breakpoint) ─────────
+// ── Check 4: Header-Layout (Main-Nav vs Hamburger × xl-Breakpoint) ─────────
 
 async function checkHeaderLayout(page) {
-  for (const width of [375, 1024]) {
+  for (const width of [375, 1024, 1280]) {
     await page.setViewportSize({ width, height: 800 });
     await gotoIdle(page, "/");
     const r = await page.evaluate(() => {
@@ -221,8 +221,8 @@ async function checkHeaderLayout(page) {
           : null,
       };
     });
-    const lg = width >= 1024;
-    if (lg) {
+    const xl = width >= 1280;
+    if (xl) {
       if (!r.mainNavVisible)
         fail("header-layout", `Hauptnav sollte bei ${width}px sichtbar sein`);
       if (r.hamburgerVisible)
@@ -498,7 +498,7 @@ async function main() {
     log("\n[3/10] /fachstelle Heading-Order");
     await checkHeadingOrder(page);
 
-    log("\n[4/10] Header-Layout (Main-Nav vs Hamburger × lg)");
+    log("\n[4/10] Header-Layout (Main-Nav vs Hamburger × xl)");
     await checkHeaderLayout(page);
 
     log("\n[5+6/10] Filter-Counter + Separator Opacity");

@@ -58,7 +58,7 @@ const SCENARIOS: Scenario[] = [
         text: "«Ich bin jetzt hier bei dir und gehe nicht weg. Ich kann spüren, dass du dich gerade unglaublich allein fühlst. Lass uns gemeinsam überlegen, was dir jetzt helfen könnte.»",
         correct: true,
         feedback:
-          "Genau richtig. S: «Ich bin hier und gehe nicht weg» zeigt Unterstützung. E: «Ich kann spüren, dass du dich allein fühlst» validiert das Gefühl. T: «Lass uns überlegen, was helfen könnte» bringt sachliche Klarheit.",
+          "Diese Antwort bildet die SET-Bausteine in diesem Beispiel gut ab. S: «Ich bin hier und gehe nicht weg» zeigt Unterstützung. E: «Ich kann spüren, dass du dich allein fühlst» anerkennt das mögliche Gefühl. T: «Lass uns überlegen, was helfen könnte» bringt sachliche Klarheit.",
         techniqueHint: "S → E → T",
       },
       {
@@ -67,7 +67,7 @@ const SCENARIOS: Scenario[] = [
         correct: false,
         feedback:
           "Das ist eine Verteidigung. Auch wenn der Inhalt stimmt, fühlt sich Ihr Angehöriger dadurch nicht gehört. In SET fehlt hier die Empathie-Komponente komplett.",
-        techniqueHint: "Keine SET-Struktur",
+        techniqueHint: "SET-Bausteine nicht erkennbar",
       },
       {
         id: "c",
@@ -79,7 +79,7 @@ const SCENARIOS: Scenario[] = [
       },
     ],
     learnNote:
-      "SET steht für Support – Empathy – Truth. Die Reihenfolge ist wichtig: Zuerst Unterstützung zeigen, dann Empathie, dann sachliche Klarheit. Ohne S und E wird T als Angriff empfunden.",
+      "SET steht für Support – Empathy – Truth. Diese Übung nutzt Unterstützung, Empathie und anschliessende Klarheit als mögliche Reihenfolge. Je nach Situation kann eine andere Reihenfolge oder eine Pause passender sein; sachliche Klarheit ohne erkennbare Zugewandtheit kann als Angriff ankommen.",
   },
   {
     id: "set-2",
@@ -103,7 +103,7 @@ const SCENARIOS: Scenario[] = [
         text: "«Ich höre, dass es dir gerade ganz schlecht geht, und das nehme ich ernst. Ich bin jetzt am Telefon für dich da. Ich kann heute Nacht nicht kommen, aber lass uns schauen, was dir jetzt helfen kann – möchtest du die 143 anrufen?»",
         correct: true,
         feedback:
-          "Gut gelöst. S: «Ich bin am Telefon für dich da.» E: «Es geht dir gerade ganz schlecht, das nehme ich ernst.» T: «Ich kann heute Nacht nicht kommen» – klare Grenze mit konkreter Alternative (143).",
+          "Diese Antwort verbindet in diesem Beispiel Unterstützung, Empathie und eine klare Grenze mit einer Alternative (143). Eine andere sichere Formulierung kann ebenfalls passen.",
         techniqueHint: "S → E → T mit Alternative",
       },
       {
@@ -116,7 +116,7 @@ const SCENARIOS: Scenario[] = [
       },
     ],
     learnNote:
-      "Grenzen setzen (Truth) ist ein wichtiger Teil von SET. Aber die Grenze braucht immer das Fundament von Support und Empathie, sonst wird sie als Ablehnung erlebt.",
+      "Grenzen setzen (Truth) ist ein wichtiger Teil von SET. Zugewandtheit und Empathie können helfen, eine Grenze verständlicher zu machen; sie garantieren aber keine bestimmte Reaktion und sind keine Voraussetzung dafür, eine nötige Grenze zu setzen.",
   },
 
   // ─── DEAR MAN scenarios ─────────────────────────────
@@ -217,7 +217,7 @@ const SCENARIOS: Scenario[] = [
         text: "«Du kommst vom Arzt und fühlst dich nicht gehört. Das muss wirklich enttäuschend sein – du hast Mut gebraucht, um dort hinzugehen, und dann das Gefühl, ignoriert zu werden. Ich kann nachvollziehen, dass dich das wütend macht.»",
         correct: true,
         feedback:
-          "Sehr gute Validierung auf mehreren Stufen: Spiegeln (du fühlst dich nicht gehört), Zwischen den Zeilen (es brauchte Mut), Nachvollziehen (ich kann verstehen, dass…). Die Gefühle bekommen Raum, ohne vorschnelle Lösungen.",
+          "Diese Antwort nutzt in diesem Beispiel mehrere Formen der Validierung: Spiegeln, eine vorsichtige Deutung und Nachvollziehen. Das Gegenüber darf die Deutung korrigieren; andere Formulierungen können ebenfalls passen.",
         techniqueHint: "Stufe 2 → 3 → 4",
       },
       {
@@ -539,7 +539,7 @@ function ScenarioCard({
               <div className="rounded-[1rem] border border-green-200 bg-green-50/70 p-4">
                 <p className="text-sm font-medium text-green-800 mb-1 flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4" />
-                  Bessere Antwort:
+                  Eine in dieser Übung bevorzugte Alternative:
                 </p>
                 <p className="text-sm text-green-700 leading-relaxed">
                   {scenario.options.find(o => o.correct)?.feedback}
@@ -689,6 +689,12 @@ export default function KommunikationsUebung() {
 
   return (
     <div className="space-y-10">
+      <p className="text-sm leading-relaxed text-muted-foreground">
+        Die folgenden Szenarien sind fachlich adaptierte Übungsbeispiele. Sie
+        zeigen mögliche Formulierungen, keine universellen Gesprächsrezepte.
+        Kontext, Beziehung und Sicherheit können eine andere Antwort oder eine
+        Pause sinnvoll machen; keine Formulierung garantiert den Verlauf.
+      </p>
       {(["SET", "DEAR", "Validierung"] as Technique[]).map(
         tech =>
           grouped[tech].length > 0 && (

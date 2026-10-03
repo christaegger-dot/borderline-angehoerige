@@ -38,10 +38,10 @@ describe("Breadcrumb helpers", () => {
     expect(getParentInfo("/unterstuetzen/uebersicht")).toBeNull();
   });
 
-  it("shows breadcrumbs only for grouped deep routes", () => {
+  it("shows breadcrumbs on every non-home route", () => {
     expect(shouldShowBreadcrumbs("/")).toBe(false);
-    expect(shouldShowBreadcrumbs("/grenzen")).toBe(false);
-    expect(shouldShowBreadcrumbs("/materialien")).toBe(false);
+    expect(shouldShowBreadcrumbs("/grenzen")).toBe(true);
+    expect(shouldShowBreadcrumbs("/materialien")).toBe(true);
     expect(shouldShowBreadcrumbs("/unterstuetzen/therapie")).toBe(true);
     expect(shouldShowBreadcrumbs("/verstehen/diagnostik#anbieter")).toBe(true);
     expect(shouldShowBreadcrumbs("/materialien/text/leuchtturm")).toBe(true);

@@ -7,6 +7,7 @@ import { RessourcenMenu } from "@/components/layout/RessourcenMenu";
 import { getRouteAccent } from "@/components/layout/routeAccent";
 import { BrandMark } from "@/components/layout/BrandMark";
 import { Menu, Phone, Search as SearchIcon, X } from "@/icons/root-icons";
+import { isPrimaryNavigationItemActive } from "@/domain/navigation";
 
 interface HeaderNavProps {
   onSearchOpen: () => void;
@@ -64,6 +65,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
           <AppLink
             href="/"
             aria-label="Borderline · Hilfe für Angehörige – Startseite"
+            aria-current={location === "/" ? "page" : undefined}
             className="site-header__brand group"
           >
             <BrandMark
@@ -86,8 +88,10 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
             aria-label="Hauptnavigation"
           >
             {navItems.map(item => {
-              const isActive =
-                location === item.href || location.startsWith(item.href + "/");
+              const isActive = isPrimaryNavigationItemActive(
+                item.href,
+                location
+              );
               return (
                 <AppLink
                   key={item.href}

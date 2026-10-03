@@ -164,9 +164,12 @@ export default function ValidierungsStufenleiter() {
   return (
     <div className="mt-6 space-y-6">
       <p className="text-sm text-muted-foreground">
-        Die sechs Stufen sind kein Schema, das immer vollständig abgearbeitet
-        werden muss. Sie helfen eher dabei, den eigenen Ton zu klären: zuerst
-        Präsenz und Verstehen, dann bei Bedarf mehr Einordnung und Grenze.
+        Diese sechs Stufen sind eine fachlich adaptierte Gesprächshilfe, kein
+        universelles Rezept und keine garantierte Reihenfolge. Sie helfen eher
+        dabei, den eigenen Ton zu klären: zuerst Präsenz und Verstehen, dann bei
+        Bedarf mehr Einordnung und Grenze. Formulierungen dürfen angepasst oder
+        weggelassen werden; das Gegenüber kann eine Vermutung jederzeit
+        korrigieren.
       </p>
 
       {stufen.map(stufe => {

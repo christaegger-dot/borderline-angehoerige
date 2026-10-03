@@ -8,6 +8,7 @@ export const quellenLinks = {
   fruzzetti2006: "/quellen#src-fruzzetti-2006",
   gunderson1997: "/quellen#src-gunderson-berkowitz-ruiz-sancho-1997",
   gunderson2011: "/quellen#src-gunderson-2011",
+  guillen2021: "/quellen#src-guill-nt-al-2021",
   hoffman2005: "/quellen#src-hoffman-2005",
   icd11: "/quellen#src-world-health-organization-2019",
   ipde1999: "/quellen#src-loranger-1999",

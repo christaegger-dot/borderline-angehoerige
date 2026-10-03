@@ -50,25 +50,25 @@ export default function Datenschutz() {
           title="Rechtsgrundlage"
           id="rechtsgrundlage"
           defaultOpen={true}
-          preview="Schweizer DSG, ergänzend DSGVO für Nutzer:innen aus dem EWR."
+          preview="Schweizer DSG; die ergänzende Anwendbarkeit der DSGVO richtet sich nach ihrem räumlichen Geltungsbereich."
         >
           <EditorialProse>
             <p>
               Diese Website unterliegt dem{" "}
               <strong>Bundesgesetz über den Datenschutz (DSG, SR 235.1)</strong>{" "}
-              der Schweiz in der revidierten Fassung vom 1. September 2023.
-              Soweit die Website auch von Personen aus dem Europäischen
-              Wirtschaftsraum genutzt wird, gilt ergänzend die{" "}
+              der Schweiz in der revidierten Fassung vom 1. September 2023. Je
+              nach räumlichem Anwendungsbereich kann ergänzend die{" "}
               <strong>
                 EU-Datenschutz-Grundverordnung (DSGVO/GDPR, Verordnung (EU)
                 2016/679)
-              </strong>
-              .
+              </strong>{" "}
+              anwendbar sein.
             </p>
             <p>
-              Die Verarbeitung technischer Daten erfolgt auf Grundlage
-              berechtigter Interessen zur Bereitstellung und Sicherung dieser
-              Website.
+              Technische Daten werden bearbeitet, soweit dies für die
+              Bereitstellung, Absicherung und Fehleranalyse der Website
+              erforderlich ist. Die formelle Einordnung der Rechtsgrundlagen und
+              Verantwortlichkeiten wird noch bestätigt.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -83,9 +83,21 @@ export default function Datenschutz() {
             <p>
               Diese Website wird über <strong>Netlify, Inc.</strong> (San
               Francisco, USA) gehostet. Beim Aufruf der Website werden technisch
-              notwendige Daten an Server von Netlify übertragen. Die
-              Datenverarbeitung erfolgt auf Grundlage von
-              Standardvertragsklauseln.
+              notwendige Daten an Netlify übertragen. Nach Angaben von Netlify
+              können dazu insbesondere IP-Adresse, Gerätetyp, Betriebssystem
+              sowie Browsertyp und -version gehören. Daten können ausserhalb der
+              Schweiz bearbeitet werden. Netlify nennt dafür unter anderem
+              Standardvertragsklauseln und das Swiss-U.S. Data Privacy
+              Framework. Weitere Angaben enthält die{" "}
+              <a
+                href="https://www.netlify.com/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="editorial-link"
+              >
+                Datenschutzerklärung von Netlify
+              </a>
+              .
             </p>
             <p>
               Darüber hinaus werden{" "}
@@ -110,9 +122,10 @@ export default function Datenschutz() {
               Tracking-Tools, Werbung und Social-Media-Plugins.
             </p>
             <p>
-              Verantwortliche Stelle ist <strong>Christa Egger</strong>,
-              Angehörigenberaterin. Bei Fragen zum Datenschutz können Sie sich
-              an die im Impressum genannte verantwortliche Person wenden.
+              Datenschutzanfragen können Sie derzeit an die im Impressum
+              genannte Kontaktperson richten. Die formelle datenschutzrechtliche
+              Verantwortlichkeit der Fachstelle beziehungsweise der PUK wird
+              noch bestätigt.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -141,16 +154,14 @@ export default function Datenschutz() {
               Hostname des zugreifenden Rechners
             </li>
             <li className="secondary-page-body">Uhrzeit der Serveranfrage</li>
-            <li className="secondary-page-body">
-              IP-Adresse in anonymisierter Form
-            </li>
+            <li className="secondary-page-body">IP-Adresse</li>
           </ul>
 
           <p className="secondary-page-body mt-6">
-            Diese Daten werden ausschliesslich zur Gewährleistung eines
-            störungsfreien Betriebs und zur technischen Verbesserung des
-            Angebots ausgewertet. Eine Zusammenführung mit anderen Datenquellen
-            findet nicht statt.
+            Diese technischen Daten dienen der Bereitstellung, Absicherung und
+            Fehleranalyse des Angebots. Die konkrete Aufbewahrungsdauer der
+            Hosting-Protokolle und die datenschutzrechtliche Rollenverteilung
+            werden derzeit mit der verantwortlichen Stelle geprüft.
           </p>
         </ContentSection>
 
@@ -167,17 +178,20 @@ export default function Datenschutz() {
               Beruhigungsstrategien oder freie Notizen.
             </p>
             <p>
-              Diese Angaben werden{" "}
-              <strong>lokal im Browser auf Ihrem Gerät</strong> gespeichert,
-              damit die Notfallkarte zwischen Ihren Besuchen erhalten bleibt.
-              Die Daten werden dabei{" "}
+              Standardmässig werden neue Einträge nicht dauerhaft gespeichert.
+              Sie bleiben nur erhalten, solange die Seite geöffnet ist. Wenn Sie
+              «Auf diesem Gerät speichern» aktivieren, werden die Angaben{" "}
+              <strong>lokal im Browser auf Ihrem Gerät</strong> gespeichert, bis
+              Sie sie löschen oder die Browserdaten entfernen. Die Einträge
+              werden dabei{" "}
               <strong>nicht an einen Server dieser Website übertragen</strong>.
             </p>
             <p>
-              Auf gemeinsam genutzten Geräten können andere Personen diese
-              Einträge sehen, wenn sie denselben Browser verwenden. Wenn die
-              Angaben nicht auf dem Gerät bleiben sollen, können Sie sie in der
-              Notfallkarte über <strong>«Daten löschen»</strong> entfernen.
+              Bei aktivierter Speicherung können andere Personen auf gemeinsam
+              genutzten Geräten die Einträge sehen, wenn sie denselben Browser
+              verwenden. Sie können die Speicherung wieder deaktivieren oder in
+              der Notfallkarte über <strong>«Daten löschen»</strong> sämtliche
+              Einträge entfernen.
             </p>
             <p>
               Für die Druckansicht wird zusätzlich kurzfristig lokaler
@@ -191,26 +205,21 @@ export default function Datenschutz() {
           variant="editorial"
           title="Cookies"
           id="cookies"
-          preview="Nur technisch notwendige Cookies; Notfallkarten-Einträge liegen im localStorage, nicht im Cookie."
+          preview="Die Website setzt selbst keine Tracking- oder Werbe-Cookies; eine optional gespeicherte Notfallkarte liegt im localStorage."
         >
           <EditorialProse>
             <p>
-              Diese Website verwendet ausschliesslich technisch notwendige
-              Cookies, die für den Betrieb erforderlich sind. Es werden{" "}
-              <strong>keine Tracking-Cookies</strong> oder Cookies zu
-              Werbezwecken eingesetzt.
+              Die Website setzt nach aktuellem technischem Stand selbst{" "}
+              <strong>keine Tracking- oder Werbe-Cookies</strong>. Beim
+              geprüften Seitenaufruf wurde auch kein Cookie durch den
+              Hosting-Dienst gesetzt.
             </p>
             <p>
-              Die persönliche Notfallkarte verwendet für ihre Einträge{" "}
+              Wenn Sie das dauerhafte Speichern der persönlichen Notfallkarte
+              aktivieren, verwendet sie für ihre Einträge{" "}
               <strong>kein Cookie</strong>, sondern lokalen Browser-Speicher
-              (`localStorage`). Dieser unterscheidet sich von Cookies und wird
-              nur auf Ihrem Gerät abgelegt.
-            </p>
-            <p>
-              Sie können Ihren Browser so einstellen, dass Sie über das Setzen
-              von Cookies informiert werden und Cookies nur im Einzelfall
-              erlauben. Bei der Deaktivierung von Cookies kann die
-              Funktionalität dieser Website eingeschränkt sein.
+              (`localStorage`). Dieser unterscheidet sich von Cookies und liegt
+              in diesem Browser auf Ihrem Gerät.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -272,13 +281,12 @@ export default function Datenschutz() {
           variant="editorial"
           title="Ihre Rechte"
           id="rechte"
-          preview="Auskunft, Berichtigung, Löschung und Widerspruch nach DSG und DSGVO."
+          preview="Datenschutzrechte richten sich nach dem anwendbaren Recht und den jeweiligen gesetzlichen Voraussetzungen."
         >
           <EditorialProse>
             <p>
-              Gemäss dem schweizerischen Datenschutzgesetz und der
-              EU-Datenschutz-Grundverordnung haben Sie insbesondere folgende
-              Rechte:
+              Je nach anwendbarem Recht und unter den jeweiligen gesetzlichen
+              Voraussetzungen kommen insbesondere folgende Rechte in Betracht:
             </p>
           </EditorialProse>
 

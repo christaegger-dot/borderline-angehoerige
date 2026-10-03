@@ -19,16 +19,9 @@ import { TableOfContents } from "@/components/UXEnhancements";
 import BelastungHandlungsraeume from "@/components/visualizations/BelastungHandlungsraeume";
 import AppLink from "@/components/AppLink";
 import { kontaktByIdStrict } from "@/data/kontakte";
-import {
-  belastungLead,
-  handlungsraeume,
-  keineSicherheitsbewertung,
-  wichtigeAbgrenzung,
-} from "@/content/belastungHandlungsraeume";
 import { Link } from "wouter";
 
 const rot144 = kontaktByIdStrict("ROT_144");
-const gruen143 = kontaktByIdStrict("GRUEN_143");
 
 const deeskalationsSchritte = [
   {
@@ -201,13 +194,6 @@ export default function UnterstuetzenKrise() {
     fontStyle: "italic" as const,
   };
 
-  const labelStyle = {
-    fontSize: "var(--text-xs)",
-    letterSpacing: "var(--tracking-caps)",
-    color: "var(--fg-tertiary)",
-    fontWeight: 500,
-  } as const;
-
   return (
     <Layout>
       <SEO
@@ -234,16 +220,15 @@ export default function UnterstuetzenKrise() {
               <a href={`tel:${rot144.tel}`} className="font-bold underline">
                 {rot144.nummer}
               </a>
-              . Zur Entlastung danach:{" "}
-              <a href={`tel:${gruen143.tel}`} className="underline">
-                {gruen143.label} ({gruen143.nummer})
-              </a>
+              . Für psychiatrische Krisen ohne unmittelbare Lebensgefahr finden
+              Sie auf der Soforthilfe-Seite den Notfalldienst für Kinder und
+              Jugendliche, Erwachsene oder Menschen ab 65 Jahren.
             </p>
             <AppLink
               href="/soforthilfe"
               className="rounded bg-white px-3 py-2 text-sm font-medium text-alert-dark transition-colors hover:bg-white/90"
             >
-              Alle Notfallnummern
+              Soforthilfe nach Altersgruppe
             </AppLink>
           </div>
         </div>
@@ -293,7 +278,7 @@ export default function UnterstuetzenKrise() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <EyebrowLabel spacing="compact">
-              Vollständig ca. 6 Min · Auch abschnittweise lesbar
+              Grundtext ca. 6 Min · Mit Vertiefungen länger
             </EyebrowLabel>
             <LastVerifiedBadge path="/unterstuetzen/krise" className="mt-3" />
             <ReviewBadge path="/unterstuetzen/krise" />
@@ -331,7 +316,9 @@ export default function UnterstuetzenKrise() {
             <strong style={{ color: "var(--fg-primary)" }}>144 / 117</strong>{" "}
             anrufen.
           </EditorialCallout>
-          <BelastungHandlungsraeume />
+          <div id="belastung-handlungsraeume" className="scroll-mt-28">
+            <BelastungHandlungsraeume />
+          </div>
         </EditorialSection.Body>
       </EditorialSection>
 
@@ -355,90 +342,7 @@ export default function UnterstuetzenKrise() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 4 Group A: Belastung ordnen ── CS1 belastung-handlungsraeume */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Belastung ordnen
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <ContentSection
-            variant="editorial"
-            collapsible={false}
-            title="Wenn Belastung zunimmt"
-            id="belastung-handlungsraeume"
-          >
-            <EditorialProse>
-              <p>
-                Nicht jede schwierige Situation ist eine Krise. Die drei
-                Bereiche ordnen beobachtbare Belastung und
-                Handlungsmöglichkeiten — sie zeigen, wie weit die eigenen Mittel
-                gerade tragen.
-              </p>
-              <p>{belastungLead}</p>
-            </EditorialProse>
-
-            <div
-              className="mt-6 border-l-4 bg-background p-5"
-              style={{ borderColor: "var(--rule-color-strong)" }}
-            >
-              <h3 style={h4Style}>{keineSicherheitsbewertung.titel}</h3>
-              <p className="mt-2" style={bodyStyle}>
-                {keineSicherheitsbewertung.text}
-              </p>
-            </div>
-
-            <div className="mt-6 space-y-3">
-              {handlungsraeume.map((raum, idx) => (
-                <article
-                  key={raum.id}
-                  className="border border-border/50 bg-background p-5"
-                >
-                  <h3 style={h4Style}>
-                    {idx + 1}. {raum.label}
-                  </h3>
-                  <p className="mt-2" style={bodyStyle}>
-                    {raum.beschreibung}
-                  </p>
-                  <p className="mt-2" style={bodyStyle}>
-                    <strong style={{ color: "var(--fg-primary)" }}>
-                      Eher hilfreich:
-                    </strong>{" "}
-                    {raum.hilfreich.join(", ")}.
-                  </p>
-                </article>
-              ))}
-            </div>
-
-            <div
-              className="mt-8 border-t pt-6"
-              style={{ borderColor: "var(--rule-color)" }}
-            >
-              <p className="uppercase" style={labelStyle}>
-                Wichtige Abgrenzung
-              </p>
-              <p className="mt-3" style={bodyStyle}>
-                {wichtigeAbgrenzung}
-              </p>
-            </div>
-          </ContentSection>
-        </EditorialSection.Body>
-      </EditorialSection>
-
-      {/* ── 5 Group B: Während der Krise ── CS2 deeskalation + CS3 krise-formulierungen + CS4 vermeiden */}
+      {/* ── Während der Krise ── CS2 deeskalation + CS3 krise-formulierungen + CS4 vermeiden */}
       <EditorialSection variant="cream">
         <EditorialSection.MarginNote>
           <span

@@ -47,9 +47,8 @@ const bookCategories: BookCategory[] = [
         publisher: "Psychiatrie-Verlag",
         year: "2010",
         description:
-          "Ein langjähriger Standardtitel für Angehörige. Beschreibt typische Beziehungsmuster, Kommunikationsideen und Fragen des Selbstschutzes in engeren Beziehungen.",
+          "Ein historisch einflussreicher Ratgeber für Angehörige. Er enthält Ideen zu Kommunikation und Selbstschutz, verallgemeinert aber stellenweise Beziehungsmuster und Motive. Krisenhinweise nicht als heutige Notfallanleitung verwenden; mit kritischer Distanz lesen.",
         forWhom: "Partner, Familienmitglieder, enge Freunde",
-        highlight: true,
         bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783867390057",
       },
       {
@@ -58,9 +57,8 @@ const bookCategories: BookCategory[] = [
         publisher: "Kösel",
         year: "2012",
         description:
-          "Erklärt die Schwarz-Weiss-Welt der Borderline-Persönlichkeit aus beiden Perspektiven. Hilft zu verstehen, warum Betroffene zwischen Idealisierung und Entwertung schwanken – und wie man damit umgehen kann.",
+          "Ein historisch einflussreicher Ratgeber, der Begriffe und Beziehungserleben anschaulich macht. Einige Aussagen und Motiverklärungen verallgemeinern; deshalb nicht als diagnostische Grundlage und nur mit kritischer Distanz lesen.",
         forWhom: "Alle Angehörigen, auch Betroffene selbst",
-        highlight: true,
         bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783466347841",
       },
       {
@@ -223,7 +221,7 @@ const bookCategories: BookCategory[] = [
         publisher: "Psychosozial-Verlag",
         year: "2006",
         description:
-          "Für erwachsene Kinder, die ihre Kindheit mit einer Borderline-Mutter verstehen und verarbeiten möchten. Beschreibt verschiedene Mutter-Typen und Wege zur Bewältigung.",
+          "Für erwachsene Kinder, die belastende Kindheitserfahrungen einordnen möchten. Die typologischen Mutterbilder können jedoch stigmatisieren und individuelle Menschen auf Rollen reduzieren; nicht zur Diagnose einer Mutter verwenden und nur mit kritischer Distanz lesen.",
         forWhom: "Erwachsene Kinder von Betroffenen",
         bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783837928235",
       },
@@ -438,9 +436,12 @@ export default function Buchempfehlungen() {
           <EditorialProse>
             <p>
               Diese Liste ist eine persönliche Auswahl und erhebt keinen
-              Anspruch auf Vollständigkeit. Die Bücher wurden nach
-              Praxisrelevanz, Verständlichkeit und Aktualität ausgewählt. Einige
-              ältere Titel sind Klassiker, die nach wie vor wertvoll sind.
+              Anspruch auf Vollständigkeit. Die Auswahl enthält aktuelle Fach-
+              und Praxisbücher sowie historisch einflussreiche ältere Ratgeber.
+              Ältere Titel sind keine wissenschaftlichen Evidenzquellen; ihre
+              Sprache, Verallgemeinerungen und Krisenhinweise müssen kritisch
+              eingeordnet werden. Das Label «Empfehlung» bezeichnet eine
+              redaktionelle Auswahl, keine wissenschaftliche Bewertung.
             </p>
             <p>
               Viele Bücher sind auch in Bibliotheken verfügbar oder können über

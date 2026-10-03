@@ -1,5 +1,5 @@
 /* Interactive self-check with weighted routing for Angehörigen-Orientierung. */
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import AppLink from "@/components/AppLink";
 import { m, AnimatePresence } from "framer-motion";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
@@ -28,6 +28,23 @@ interface Result {
   /** Sicherheits-kritisches Resultat: alert-border-l + alert-wash bg */
   safetyCritical?: boolean;
 }
+
+const concernReasonLabels: Record<string, string> = {
+  verstehen: "Sie möchten das Erleben Ihres Angehörigen besser einordnen.",
+  helfen:
+    "Sie suchen nach einer hilfreichen Rolle, ohne alles übernehmen zu müssen.",
+  kommunikation:
+    "Schwierige Gespräche und Eskalationen stehen für Sie im Vordergrund.",
+  erschoepft: "Ihre eigene Erschöpfung braucht Raum und Unterstützung.",
+  grenzen: "Sie möchten Ihre Grenzen klarer wahrnehmen und benennen.",
+};
+
+const wellbeingReasonLabels: Record<string, string> = {
+  gut: "Sie haben Ihre eigene Kraft derzeit als tragfähig eingeschätzt.",
+  okay: "Ihre Kraft ist vorhanden, die Situation kostet Sie aber zeitweise Energie.",
+  erschoepft: "Sie haben angegeben, dringend Unterstützung zu brauchen.",
+  ueberfordert: "Sie haben angegeben, im Moment nicht mehr weiterzuwissen.",
+};
 
 const questions: Question[] = [
   {
@@ -281,7 +298,7 @@ const results: Result[] = [
     id: "selbstfuersorge",
     title: "Selbstfürsorge priorisieren",
     description:
-      "Sie können nur helfen, wenn Sie selbst Kraft haben. Ihre eigene Gesundheit ist genauso wichtig.",
+      "Auch wenn Ihre Kraft knapp ist, dürfen Sie Unterstützung begrenzen und Hilfe für sich suchen. Ihre eigene Gesundheit ist genauso wichtig.",
     primaryLink: "/selbstfuersorge",
     primaryText: "Selbstfürsorge-Strategien",
     secondaryLinks: [
@@ -384,10 +401,26 @@ export default function Selbsttest() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const questionHeadingRef = useRef<HTMLHeadingElement>(null);
   const resultHeadingRef = useRef<HTMLHeadingElement>(null);
+  const focusQuestionAfterChange = useRef(false);
+
+  const setQuestionHeadingRef = useCallback(
+    (heading: HTMLHeadingElement | null) => {
+      questionHeadingRef.current = heading;
+      if (heading && !showResult && focusQuestionAfterChange.current) {
+        heading.focus({ preventScroll: true });
+        focusQuestionAfterChange.current = false;
+      }
+    },
+    [showResult]
+  );
 
   useEffect(() => {
-    if (showResult) resultHeadingRef.current?.focus();
+    if (showResult) {
+      focusQuestionAfterChange.current = false;
+      resultHeadingRef.current?.focus();
+    }
   }, [showResult]);
 
   useEffect(() => {
@@ -419,6 +452,7 @@ export default function Selbsttest() {
 
     transitionTimer.current = setTimeout(() => {
       if (currentQuestion < questions.length - 1) {
+        focusQuestionAfterChange.current = true;
         setCurrentQuestion(currentQuestion + 1);
         setSelectedOption(null);
       } else {
@@ -444,6 +478,7 @@ export default function Selbsttest() {
           setScores(newScores);
         }
       }
+      focusQuestionAfterChange.current = true;
       setCurrentQuestion(currentQuestion - 1);
       setSelectedOption(answers[prevQuestionId] || null);
     }
@@ -454,6 +489,7 @@ export default function Selbsttest() {
     setCurrentQuestion(0);
     setAnswers({});
     setScores({});
+    focusQuestionAfterChange.current = true;
     setShowResult(false);
     setSelectedOption(null);
     setIsTransitioning(false);
@@ -504,6 +540,12 @@ export default function Selbsttest() {
                 ]),
           ]
         : result.secondaryLinks;
+    const reasons = isSafetyCritical
+      ? []
+      : [
+          concernReasonLabels[answers[2]],
+          wellbeingReasonLabels[answers[5]],
+        ].filter((reason): reason is string => Boolean(reason));
 
     return (
       <m.div
@@ -526,7 +568,7 @@ export default function Selbsttest() {
           }
         >
           <p className="uppercase" style={labelStyle}>
-            Unsere Empfehlung für Sie
+            Redaktionelle Orientierung
           </p>
           <h2
             ref={resultHeadingRef}
@@ -544,6 +586,26 @@ export default function Selbsttest() {
           <p className="mt-4" style={bodyStyle}>
             {result.description}
           </p>
+
+          {reasons.length > 0 && (
+            <div
+              className="mt-6 border-t pt-5"
+              style={{ borderColor: "var(--rule-color)" }}
+            >
+              <p className="uppercase" style={labelStyle}>
+                Warum dieser Einstieg erscheint
+              </p>
+              <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
+                {reasons.map(reason => (
+                  <li key={reason}>{reason}</li>
+                ))}
+              </ul>
+              <p className="mt-3" style={bodyStyle}>
+                Die Zuordnung folgt einer redaktionellen Gewichtung Ihrer
+                Auswahl. Sie ist keine fachliche oder klinische Beurteilung.
+              </p>
+            </div>
+          )}
 
           {isSafetyCritical && (
             <div className="mt-6 space-y-6" style={bodyStyle}>
@@ -701,7 +763,9 @@ export default function Selbsttest() {
           className="space-y-6"
         >
           <header className="space-y-2">
-            <h2 style={questionStyle}>{question.text}</h2>
+            <h2 ref={setQuestionHeadingRef} tabIndex={-1} style={questionStyle}>
+              {question.text}
+            </h2>
             {question.subtext && <p style={subtextStyle}>{question.subtext}</p>}
           </header>
 

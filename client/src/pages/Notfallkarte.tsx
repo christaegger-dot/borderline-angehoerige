@@ -5,7 +5,6 @@ import {
   DisplayHeading,
   EditorialLayout,
   EditorialProse,
-  EditorialSectionBlock,
   EyebrowLabel,
   Lede,
 } from "@/components/editorial";
@@ -128,14 +127,24 @@ const CARD_ROT = ROT.filter(k => k.id !== "ROT_118");
 const CARD_GELB = GELB;
 const CARD_GRUEN = GRUEN.filter(k => k.id === "GRUEN_143");
 
-function loadData(): NotfallkarteData {
+interface InitialStorageState {
+  data: NotfallkarteData;
+  persistenceEnabled: boolean;
+}
+
+function loadInitialStorageState(): InitialStorageState {
   try {
     const raw = localStorage.getItem(NOTFALLKARTE_STORAGE_KEY);
-    if (raw) return normalizeData(JSON.parse(raw) as Partial<NotfallkarteData>);
+    if (raw) {
+      return {
+        data: normalizeData(JSON.parse(raw) as Partial<NotfallkarteData>),
+        persistenceEnabled: true,
+      };
+    }
   } catch {
     /* ignore corrupt data */
   }
-  return createEmptyData();
+  return { data: createEmptyData(), persistenceEnabled: false };
 }
 
 function isStorageAvailable(): boolean {
@@ -186,7 +195,7 @@ const labelStyle = {
 } as const;
 
 const inputClass =
-  "w-full rounded-md border px-3 py-2 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5";
+  "min-h-11 w-full rounded-md border px-3 py-2 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 print:border-b print:border-t-0 print:border-l-0 print:border-r-0 print:rounded-none print:px-0 print:py-0.5";
 
 const inputStyle = {
   borderColor: "var(--rule-color)",
@@ -300,12 +309,14 @@ function SecondaryButton({
   disabled,
   ariaLabel,
   title,
+  dataStorageDelete,
 }: {
   onClick: () => void;
   children: React.ReactNode;
   disabled?: boolean;
   ariaLabel?: string;
   title?: string;
+  dataStorageDelete?: boolean;
 }) {
   return (
     <EditorialPillButton
@@ -314,6 +325,7 @@ function SecondaryButton({
       disabled={disabled}
       aria-label={ariaLabel}
       title={title}
+      data-storage-delete={dataStorageDelete ? "true" : undefined}
       className="disabled:opacity-60 print:hidden"
     >
       {children}
@@ -364,7 +376,7 @@ function PersonalContactRow({
       <button
         type="button"
         onClick={onRemove}
-        className="mt-1.5 px-2 py-1 text-xs transition-colors print:hidden"
+        className="mt-1.5 min-h-11 min-w-11 px-2 py-1 text-xs transition-colors print:hidden"
         style={{ color: "var(--fg-secondary)" }}
         aria-label={`${contact.name || "Kontakt"} entfernen`}
       >
@@ -375,17 +387,20 @@ function PersonalContactRow({
 }
 
 export default function Notfallkarte() {
-  const [data, setData] = useState<NotfallkarteData>(loadData);
+  const [initialStorageState] = useState(loadInitialStorageState);
+  const [data, setData] = useState<NotfallkarteData>(initialStorageState.data);
+  const [persistenceEnabled, setPersistenceEnabled] = useState(
+    initialStorageState.persistenceEnabled
+  );
   const [storageError, setStorageError] = useState(false);
   const [announcement, setAnnouncement] = useState("");
-  const skipNextSaveRef = useRef(false);
   const latestDataRef = useRef(data);
   const printIntervalRef = useRef<number | null>(null);
   const printTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!isStorageAvailable()) setStorageError(true);
-  }, []);
+    if (persistenceEnabled && !isStorageAvailable()) setStorageError(true);
+  }, [persistenceEnabled]);
 
   useEffect(() => {
     latestDataRef.current = data;
@@ -403,8 +418,7 @@ export default function Notfallkarte() {
     []
   );
   useEffect(() => {
-    if (skipNextSaveRef.current) {
-      skipNextSaveRef.current = false;
+    if (!persistenceEnabled) {
       return;
     }
 
@@ -413,10 +427,14 @@ export default function Notfallkarte() {
     }, 500);
 
     return () => window.clearTimeout(timeoutId);
-  }, [data]);
+  }, [data, persistenceEnabled]);
 
   useEffect(() => {
     const flushPendingData = () => {
+      if (!persistenceEnabled) {
+        return;
+      }
+
       const currentData = latestDataRef.current;
 
       if (isEmptyData(currentData)) {
@@ -435,19 +453,50 @@ export default function Notfallkarte() {
       window.removeEventListener("pagehide", flushPendingData);
       window.removeEventListener("beforeunload", flushPendingData);
     };
-  }, []);
+  }, [persistenceEnabled]);
+
+  const handlePersistenceChange = useCallback(
+    (enabled: boolean) => {
+      if (enabled) {
+        if (!isStorageAvailable() || !saveData(data)) {
+          setStorageError(true);
+          setAnnouncement("Lokales Speichern konnte nicht aktiviert werden.");
+          return;
+        }
+
+        setStorageError(false);
+        setPersistenceEnabled(true);
+        setAnnouncement("Lokales Speichern wurde aktiviert.");
+        return;
+      }
+
+      if (!deleteStoredData()) {
+        setStorageError(true);
+        setAnnouncement("Die gespeicherte Kopie konnte nicht entfernt werden.");
+        return;
+      }
+
+      setPersistenceEnabled(false);
+      setStorageError(false);
+      setAnnouncement(
+        "Lokales Speichern wurde deaktiviert. Die aktuellen Einträge bleiben bis zum Schliessen dieser Seite sichtbar."
+      );
+    },
+    [data]
+  );
 
   const handleDeleteData = useCallback(() => {
     const confirmed = window.confirm(
-      "Lokale Notfallkarten-Daten auf diesem Gerät löschen?"
+      "Alle Einträge auf dieser Seite und gespeicherte Kopien löschen?"
     );
 
     if (!confirmed) return;
 
     if (deleteStoredData()) {
-      skipNextSaveRef.current = true;
+      setPersistenceEnabled(false);
       setData(createEmptyData());
-      setAnnouncement("Lokale Notfallkarten-Daten wurden gelöscht.");
+      setStorageError(false);
+      setAnnouncement("Alle Notfallkarten-Daten wurden gelöscht.");
     } else {
       setStorageError(true);
       setAnnouncement("Daten konnten nicht gelöscht werden.");
@@ -638,8 +687,8 @@ export default function Notfallkarte() {
           </DisplayHeading>
           <Lede className="mt-6">
             Die wichtigsten Nummern und Ihre persönlichen Strategien – alles auf
-            einen Blick. Zum Ausdrucken, als PDF speichern oder jederzeit hier
-            abrufen.
+            einen Blick. Zum Ausdrucken oder als PDF speichern. Auf Wunsch
+            können Sie die Einträge zusätzlich in diesem Browser behalten.
           </Lede>
           <p
             className="mt-4"
@@ -664,6 +713,72 @@ export default function Notfallkarte() {
           className="border-0 border-t print:hidden"
           style={{ borderColor: "var(--rule-color)" }}
         />
+        <section
+          data-storage-notice
+          className="mt-8 border px-5 py-5 print:hidden"
+          style={{
+            borderColor: "var(--rule-color)",
+            backgroundColor: "var(--bg-elevated)",
+          }}
+          aria-labelledby="notfallkarte-speichern-title"
+        >
+          <h2
+            id="notfallkarte-speichern-title"
+            className="font-display"
+            style={{
+              fontSize: "var(--text-md)",
+              fontWeight: 500,
+              color: "var(--fg-primary)",
+            }}
+          >
+            Speichern auf diesem Gerät
+          </h2>
+          <p
+            className="mt-2"
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Standardmässig bleiben neue Einträge nur in dieser geöffneten Seite.
+            Wenn Sie das Speichern aktivieren, bleiben sie in diesem Browser,
+            bis Sie «Daten löschen» verwenden oder die Browserdaten löschen.
+            Aktivieren Sie dies nicht auf einem gemeinsam genutzten Gerät. Die
+            Einträge werden nicht an den Server dieser Website übertragen.
+          </p>
+          <label className="mt-4 flex min-h-11 cursor-pointer items-center gap-3">
+            <input
+              type="checkbox"
+              checked={persistenceEnabled}
+              onChange={event =>
+                handlePersistenceChange(event.currentTarget.checked)
+              }
+              className="h-5 w-5 shrink-0 accent-[var(--accent-primary)]"
+            />
+            <span
+              style={{
+                fontSize: "var(--text-sm)",
+                color: "var(--fg-primary)",
+              }}
+            >
+              Auf diesem Gerät speichern
+            </span>
+          </label>
+          {initialStorageState.persistenceEnabled && (
+            <p
+              className="mt-2"
+              style={{
+                fontSize: "var(--text-xs)",
+                lineHeight: "var(--lh-relaxed)",
+                color: "var(--fg-secondary)",
+              }}
+            >
+              Eine bereits gespeicherte Notfallkarte wurde geladen. Sie können
+              die Speicherung hier deaktivieren oder unten alle Daten löschen.
+            </p>
+          )}
+        </section>
         <div className="notfallkarte-print mt-12 space-y-12 print:mt-0 print:space-y-3">
           <section className="space-y-3 print:break-inside-avoid">
             <p className="uppercase" style={labelStyle}>
@@ -837,7 +952,7 @@ export default function Notfallkarte() {
                   <button
                     type="button"
                     onClick={() => removeStrategy(s.id)}
-                    className="px-2 py-1 text-xs transition-colors print:hidden"
+                    className="min-h-11 min-w-11 px-2 py-1 text-xs transition-colors print:hidden"
                     style={{ color: "var(--fg-secondary)" }}
                     aria-label="Strategie entfernen"
                   >
@@ -999,24 +1114,21 @@ export default function Notfallkarte() {
           <PrimaryButton onClick={handlePrint}>Drucken / Als PDF</PrimaryButton>
           <SecondaryButton
             onClick={handleDeleteData}
-            ariaLabel="Lokale Notfallkarten-Daten löschen"
+            ariaLabel="Alle Notfallkarten-Daten löschen"
+            dataStorageDelete
           >
             Daten löschen
           </SecondaryButton>
         </div>
-        <EditorialSectionBlock rule>
+        <div className="mt-6 print:hidden">
           <EditorialProse>
             <p>
-              <strong>Änderungen werden automatisch lokal gespeichert.</strong>{" "}
-              Die Notfallkarte nutzt dafür den Speicher Ihres Browsers auf
-              diesem Gerät. Die Angaben werden nicht an einen Server dieser
-              Website übertragen. Auf gemeinsam genutzten Geräten können andere
-              Personen diese Einträge sehen. Nutzen Sie «Daten löschen», wenn
-              die Notfallkarte nicht auf diesem Gerät bleiben soll. Beim Drucken
-              oder PDF-Export werden Ihre persönlichen Einträge mit ausgegeben.
+              Beim Drucken oder PDF-Export werden Ihre persönlichen Einträge mit
+              ausgegeben. Prüfen Sie deshalb, wo Sie die Datei speichern oder
+              den Ausdruck aufbewahren.
             </p>
           </EditorialProse>
-        </EditorialSectionBlock>
+        </div>
         <RelatedLinksEditorial
           links={[
             {

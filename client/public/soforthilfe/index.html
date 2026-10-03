@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de-CH">
+<html lang="de-CH" data-web-profile="website">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,7 +75,10 @@
     <link rel="stylesheet" href="/fallback.css" />
   </head>
   <body>
-    <main class="fallback-page">
+    <a href="#main-content" class="visually-hidden-focusable"
+      >Zum Inhalt springen</a
+    >
+    <main class="fallback-page" id="main-content" tabindex="-1">
       <div class="fallback-wrap">
         <nav class="fallback-topbar" aria-label="Schnellnavigation">
           <a class="fallback-logo" href="/">
@@ -83,6 +86,7 @@
             <span class="fallback-logo-sub">Fachstelle · PUK Zürich</span>
           </a>
           <div class="fallback-toplinks">
+            <a href="/soforthilfe" aria-current="page">Soforthilfe</a>
             <a href="/">Startseite</a>
             <a href="/notfallkarte">Notfallkarte</a>
             <a href="/materialien">Materialien</a>

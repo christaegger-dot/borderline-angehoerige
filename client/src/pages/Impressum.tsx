@@ -157,7 +157,7 @@ export default function Impressum() {
           variant="editorial"
           title="Quellenangaben"
           id="impressum-quellen"
-          preview="Fachliteratur von Mason/Kreger, Linehan, Fruzzetti und Gunderson/Hoffman."
+          preview="Wissenschaftliche, klinische und kritisch eingeordnete Praxisquellen."
         >
           <EditorialProse>
             <p>
@@ -182,7 +182,9 @@ export default function Impressum() {
               </h3>
               <p className="secondary-page-list-text">
                 Schluss mit dem Eiertanz: Für Angehörige von Menschen mit
-                Borderline. Balance Buch + Medien Verlag.
+                Borderline. Balance Buch + Medien Verlag. Historisch
+                einflussreicher Ratgeber; auf dieser Website als Praxisquelle,
+                nicht als wissenschaftliche Evidenz eingeordnet.
               </p>
             </li>
             <li>

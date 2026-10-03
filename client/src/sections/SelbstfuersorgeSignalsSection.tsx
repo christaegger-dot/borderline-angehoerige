@@ -18,11 +18,12 @@ export function SelbstfuersorgeSignalsSection({
       title="Warnsignale für Überlastung"
       id="warnsignale"
       defaultOpen={defaultOpen}
-      preview="Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr Selbstfürsorge brauchen."
+      preview="Unspezifische Hinweise, die Anlass für Entlastung oder eine fachliche Abklärung sein können."
     >
       <p className="editorial-small-copy mb-6">
-        Achten Sie auf diese Anzeichen – sie zeigen, dass Sie dringend mehr
-        Selbstfürsorge brauchen:
+        Diese Anzeichen sind unspezifisch: Sie können bei Überlastung auftreten,
+        aber auch andere körperliche oder psychische Ursachen haben. Sie sind
+        keine Diagnose und kein Beweis, dass Sie «zu wenig» für sich tun.
       </p>
 
       <div className="grid gap-8 sm:grid-cols-3">
@@ -52,11 +53,13 @@ export function SelbstfuersorgeSignalsSection({
       >
         <p className="editorial-small-copy">
           <strong className="editorial-strong">
-            Wenn Sie mehrere dieser Warnsignale bei sich bemerken, ist es Zeit
-            zu handeln.
+            Wenn mehrere Anzeichen anhalten, stark sind oder Ihren Alltag
+            beeinträchtigen, nehmen Sie sie ernst.
           </strong>{" "}
-          Sprechen Sie mit Ihrem Hausarzt oder suchen Sie professionelle
-          Unterstützung.
+          Entlastung, weniger Aufgaben oder Unterstützung können sinnvoll sein.
+          Sprechen Sie bei Bedarf mit Ihrer Hausärzt:in oder einer
+          psychologischen Fachperson, damit auch andere Ursachen abgeklärt
+          werden können.
         </p>
       </div>
     </ContentSection>

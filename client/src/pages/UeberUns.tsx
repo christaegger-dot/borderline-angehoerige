@@ -54,22 +54,22 @@ const grundlagen = [
       "Ein gut untersuchtes störungsspezifisches Therapieverfahren für Borderline; daneben gibt es weitere wirksame Ansätze.",
   },
   {
-    title: "Stop Walking on Eggshells",
-    author: "Paul T. Mason & Randi Kreger",
+    title: "Aktuelle Leitlinien und systematische Übersichten",
+    author: "APA, Cochrane und weitere Fachquellen",
     description:
-      "Ein verbreitetes Ratgeberbuch für Angehörige. Auf Deutsch erschienen als «Schluss mit dem Eiertanz» (Balance Buch + Medien Verlag).",
+      "Sie bilden die wissenschaftliche Grundlage für Aussagen zu Diagnostik, Behandlung, Verlauf und Sicherheit. Aussagekraft und Grenzen werden transparent benannt.",
   },
   {
-    title: "Ich hasse dich – verlass mich nicht",
-    author: "Jerold J. Kreisman & Hal Straus",
+    title: "Angehörigen- und Praxisliteratur",
+    author: "Unter anderem Mason/Kreger und Kreisman/Straus",
     description:
-      "Klassiker zum Verständnis der Borderline-Dynamik aus Betroffenen- und Angehörigensicht.",
+      "Sie ergänzt Erfahrungswissen und Praxisideen, ist aber keine wissenschaftliche Evidenz. Ältere Titel werden wegen möglicher Verallgemeinerungen und veralteter Krisenhinweise kritisch eingeordnet.",
   },
   {
     title: "Family Connections",
     author: "NEA-BPD / Alan Fruzzetti",
     description:
-      "Evidenzbasiertes Programm für Angehörige, entwickelt an der University of Nevada.",
+      "Strukturiertes Programm für Angehörige mit vielversprechenden Studienergebnissen; die Evidenzbasis ist kleiner und vorläufiger als bei den untersuchten Psychotherapien.",
   },
 ] as const;
 
@@ -139,7 +139,7 @@ export default function UeberUns() {
                 className="editorial-link"
                 onClick={e => handleAnchorClick(e, "ueber-uns-quellen")}
               >
-                wissenschaftlichen Grundlagen
+                Quellen und ihrer Einordnung
               </a>{" "}
               springen.
             </p>
@@ -164,10 +164,11 @@ export default function UeberUns() {
               machen.
             </p>
             <p>
-              Der Begriff «Eiertanz» aus dem Standardwerk von Paul T. Mason und
-              Randi Kreger (deutsche Ausgabe) beschreibt dieses Gefühl treffend:
-              das ständige Auf-der-Hut-Sein, die Angst vor dem nächsten
-              Ausbruch, das Gefühl, auf Eierschalen zu laufen.
+              Der in der älteren Angehörigenliteratur verbreitete Begriff
+              «Eiertanz» beschreibt das Erleben, ständig auf der Hut zu sein und
+              Angst vor der nächsten Eskalation zu haben. Er ist eine Metapher
+              für Belastung, keine wissenschaftliche Erklärung der erkrankten
+              Person oder ihrer Motive.
             </p>
             <p>
               Diese Website möchte Angehörigen fachlich fundierte Orientierung
@@ -225,14 +226,17 @@ export default function UeberUns() {
         {/* ── ContentSection 3: ueber-uns-quellen ── */}
         <ContentSection
           variant="editorial"
-          title="Wissenschaftliche Grundlagen"
+          title="Quellen und ihre Funktion"
           id="ueber-uns-quellen"
-          preview="DBT, Family Connections und die Standardwerke von Mason/Kreger und Kreisman/Straus."
+          preview="Forschung, Leitlinien, Therapieansätze sowie kritisch eingeordnete Angehörigen- und Praxisliteratur."
         >
           <EditorialProse>
             <p>
-              Die Inhalte dieser Website stützen sich auf etablierte Forschung
-              und Therapieansätze:
+              Die Inhalte dieser Website stützen sich auf Quellen mit
+              unterschiedlichen Funktionen. Wissenschaftliche Forschung und
+              Leitlinien tragen medizinische Aussagen; Praxis- und
+              Angehörigenliteratur ergänzt Perspektiven, ohne denselben
+              Evidenzstatus zu beanspruchen.
             </p>
           </EditorialProse>
           <ul className="secondary-page-list secondary-page-list--spacious">
@@ -248,8 +252,7 @@ export default function UeberUns() {
             <EvidenceNote
               variant="editorial"
               title="Auswahl der Grundlagen"
-              definition="Die Website stützt sich auf klinische Standardwerke, evidenzbasierte Therapieansätze und Angehörigenprogramme. Die Auswahl ist kuratiert, nicht vollständig bibliografisch."
-              reviewDate="24.03.2026"
+              definition="Wissenschaftliche Evidenz, Leitlinien, Versorgungsquellen und Ratgeberliteratur werden nach ihrer Funktion getrennt. Die Auswahl ist kuratiert, nicht vollständig bibliografisch."
               sources={[
                 {
                   label:
@@ -257,19 +260,21 @@ export default function UeberUns() {
                   type: "wissenschaft",
                 },
                 {
-                  label:
-                    "Mason & Kreger, Stop Walking on Eggshells / Schluss mit dem Eiertanz (deutsche Ausgabe)",
+                  label: "APA Practice Guideline zur Behandlung der BPS (2024)",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/39482953/",
                   type: "wissenschaft",
                 },
                 {
                   label:
-                    "Kreisman & Straus, Ich hasse dich – verlass mich nicht",
+                    "Storebø et al. (2020), Cochrane-Review zu psychologischen Therapien bei BPS",
+                  href: "https://pubmed.ncbi.nlm.nih.gov/32368793/",
                   type: "wissenschaft",
                 },
                 {
                   label: "Family Connections (NEA-BPD / Alan Fruzzetti)",
                   href: "https://www.borderlinepersonalitydisorder.org/family-connections/",
                   type: "versorgung",
+                  note: "Programmquelle; Wirksamkeitsevidenz separat eingeordnet",
                 },
               ]}
             />

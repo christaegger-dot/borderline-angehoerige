@@ -36,7 +36,7 @@ const quellen: QuelleKategorie[] = [
           "Psychological therapies for people with borderline personality disorder",
         quelle: "Cochrane Database of Systematic Reviews 5(5), CD012955",
         hinweis:
-          "Cochrane-Übersichtsarbeit zu 75 randomisierten Studien (4'507 Teilnehmer:innen). DBT und MBT sind die am häufigsten untersuchten Verfahren. Insgesamt belegt der Review klinisch relevante Verbesserungen der Borderline-Symptomatik durch BPS-spezifische Psychotherapie gegenüber Standardbehandlung.",
+          "Cochrane-Übersichtsarbeit zu 75 randomisierten Studien (4'507 Teilnehmer:innen). Psychotherapie zeigte gegenüber Vergleichsbedingungen im Mittel Vorteile; die Vertrauenswürdigkeit der Evidenz war für viele Ergebnisse jedoch niedrig oder sehr niedrig. Nur bei der BPS-Symptomschwere wurde der vorab festgelegte Schwellenwert für klinische Relevanz erreicht. Der Review begründet keine sichere Rangfolge einzelner Verfahren.",
         link: "https://pubmed.ncbi.nlm.nih.gov/32368793/",
         linkLabel: "PubMed",
       },
@@ -201,7 +201,7 @@ const quellen: QuelleKategorie[] = [
           "The American Psychiatric Association Practice Guideline for the Treatment of Patients With Borderline Personality Disorder",
         quelle: "American Journal of Psychiatry 181(11), 1024–1028",
         hinweis:
-          "Aktuelle US-amerikanische Behandlungsleitlinie für Borderline-Persönlichkeitsstörung. Im Body als Quelle für klinische und diagnostische Einordnung referenziert (Verstehen, Home, Über uns).",
+          "Aktuelle US-amerikanische Behandlungsleitlinie für Borderline-Persönlichkeitsstörung. Sie empfiehlt eine strukturierte Psychotherapie, die auf die zentralen Merkmale und damit verbundenen Beeinträchtigungen ausgerichtet ist, ohne ein einzelnes Verfahren pauschal an erste Stelle zu setzen.",
         link: "https://pubmed.ncbi.nlm.nih.gov/39482953/",
         linkLabel: "PubMed",
       },
@@ -276,7 +276,7 @@ const quellen: QuelleKategorie[] = [
         quelle:
           "Balance Buch + Medien Verlag (deutsche Ausgabe 2007, 8. Auflage 2014); New Harbinger Publications (englische 3. Auflage 2014)",
         hinweis:
-          "Praxisnahe Anleitung für Angehörige. Grundlage für Konzepte wie «walking on eggshells», Kommunikationsstrategien und Grenzen. Originalausgabe (englisch) 1998.",
+          "Historisch einflussreicher Ratgeber für Angehörige, keine wissenschaftliche Studie oder aktuelle systematische Übersicht. Einzelne Beschreibungen verallgemeinern Beziehungsmuster und Motive; Krisenhinweise sind nicht als heutige Notfallanleitung zu verwenden. Als Erfahrungs- und Praxisquelle kritisch lesen. Originalausgabe (englisch) 1998.",
       },
       {
         autoren: "Kreisman, J. J. & Straus, H.",
@@ -284,7 +284,8 @@ const quellen: QuelleKategorie[] = [
         titel:
           "I Hate You – Don't Leave Me: Understanding the Borderline Personality",
         quelle: "Avery / Penguin",
-        hinweis: "Einflussreiches Angehörigenbuch; SET-Kommunikationsmodell.",
+        hinweis:
+          "Historisch einflussreicher Ratgeber, keine wissenschaftliche Evidenzquelle. Das Buch kann Begriffe und Beziehungserleben anschaulich machen, verallgemeinert jedoch stellenweise. Nicht als diagnostische Grundlage oder pauschale Erklärung individueller Motive verwenden.",
       },
       {
         autoren: "Hoffman, P. D. et al.",
@@ -293,7 +294,18 @@ const quellen: QuelleKategorie[] = [
           "Family Connections: A program for relatives of persons with borderline personality disorder",
         quelle: "Family Process",
         hinweis:
-          "Psychoedukatives Angehörigenprogramm (NEA-BPD). In den Handouts wird Family Connections als Programm-/Praxisrahmen genannt; peer-reviewte Grundlagen psychoedukativer Familienarbeit sind separat bei Gunderson/Berkowitz ausgewiesen.",
+          "Psychoedukatives Angehörigenprogramm (NEA-BPD). Studien berichten vielversprechende Verbesserungen bei Belastung, Trauer und Bewältigung; wegen kleinerer Studien und begrenzter Vergleichsdaten bleibt die Evidenz vorläufig. Peer-reviewte Grundlagen psychoedukativer Familienarbeit sind separat bei Gunderson/Berkowitz ausgewiesen.",
+      },
+      {
+        autoren: "Guillén, V. et al.",
+        jahr: "2021",
+        titel:
+          "Interventions for Family Members and Carers of Patients with Borderline Personality Disorder: A Systematic Review",
+        quelle: "Family Process 60(1), 134–144",
+        hinweis:
+          "Systematische Übersicht zu Interventionen für Familien und Betreuungspersonen. Die Ergebnisse sind ermutigend, die Autor:innen fordern jedoch methodisch stärkere Studien, bevor die Wirksamkeit verlässlich beurteilt werden kann.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/32304101/",
+        linkLabel: "PubMed",
       },
     ],
   },
@@ -525,9 +537,10 @@ export default function Quellen() {
             Quellen &amp; Literatur
           </DisplayHeading>
           <Lede className="mt-6">
-            Diese Website basiert auf anerkannter Fachliteratur und
-            evidenzbasierten Methoden. Hier finden Sie alle Quellen, geordnet
-            nach Bereich.
+            Diese Website nutzt wissenschaftliche Forschung, Leitlinien,
+            Fachliteratur und gesondert gekennzeichnete Ratgeber- und
+            Praxisquellen. Hier finden Sie die Quellen nach ihrer Funktion
+            geordnet.
           </Lede>
           <ReviewBadge path="/quellen" />
           <p
@@ -538,9 +551,10 @@ export default function Quellen() {
               color: "var(--fg-tertiary)",
             }}
           >
-            Nicht alle Aussagen lassen sich einzeln belegen — manche basieren
-            auf klinischer Erfahrung und Angehörigenliteratur. Wo Studien
-            zitiert werden, sind sie hier aufgeführt.
+            Ratgeber und Angehörigenliteratur werden nicht als wissenschaftliche
+            Evidenz behandelt. Sie können Erfahrungswissen und Praxisideen
+            beitragen, müssen aber hinsichtlich Alter, Sprache,
+            Verallgemeinerungen und Krisenhinweisen kritisch eingeordnet werden.
           </p>
         </header>
 

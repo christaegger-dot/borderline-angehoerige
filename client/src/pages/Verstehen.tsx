@@ -90,7 +90,7 @@ export default function Verstehen() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <EyebrowLabel spacing="compact">
-              Vollständig ca. 15 Min · Auch abschnittweise lesbar
+              Grundtext ca. 15 Min · Mit Vertiefungen länger
             </EyebrowLabel>
           </div>
         </EditorialSection.Body>
@@ -126,53 +126,24 @@ export default function Verstehen() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 3 Pull-Quote ── inline, typografisch aufgewertet als Lese-Pause */}
+      {/* ── 3 Redaktioneller Merksatz ── keine erfundene Personenstimme */}
       <EditorialSection variant="cream">
         <EditorialSection.Body>
-          <blockquote
-            className="font-display italic"
+          <p
+            className="font-display"
             style={{
               fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
               lineHeight: 1.4,
               color: "var(--accent-primary)",
               paddingTop: "var(--space-7)",
-              paddingBottom: "var(--space-3)",
+              paddingBottom: "var(--space-7)",
               fontWeight: 400,
               maxWidth: "32em",
             }}
           >
-            <span
-              aria-hidden="true"
-              style={{
-                color: "rgba(91, 58, 78, 0.25)",
-                marginRight: "0.05em",
-              }}
-            >
-              «
-            </span>
-            Verstehen hat mir nicht alles leichter gemacht. Aber ich habe
-            aufgehört, jede Eskalation nur als Bosheit, jede Distanz nur als
-            Ablehnung und jede Krise nur als mein persönliches Versagen zu
-            lesen.
-            <span
-              aria-hidden="true"
-              style={{
-                color: "rgba(91, 58, 78, 0.25)",
-                marginLeft: "0.05em",
-              }}
-            >
-              »
-            </span>
-          </blockquote>
-          <p
-            className="mt-5 italic"
-            style={{
-              fontSize: "var(--text-sm)",
-              color: "var(--fg-tertiary)",
-              paddingBottom: "var(--space-7)",
-            }}
-          >
-            — Eine Angehörige (Kompositum, keine reale Person)
+            Verstehen macht nicht alles leichter. Es kann aber helfen,
+            Eskalationen nicht vorschnell als Bosheit, Distanz nicht nur als
+            Ablehnung und Krisen nicht als persönliches Versagen zu lesen.
           </p>
         </EditorialSection.Body>
       </EditorialSection>
@@ -248,10 +219,11 @@ export default function Verstehen() {
                 Ausprägung, Verlauf und Belastung unterscheiden sich deutlich.
               </p>
               <p>
-                Für Angehörige ist vor allem wichtig: Hinter heftigen Reaktionen
-                liegen oft Überflutung, Angst, Scham oder Verlassenheitsstress.
-                Das macht Verhalten nicht folgenlos, hilft aber, es genauer
-                einzuordnen.
+                Für Angehörige ist vor allem wichtig: Bei heftigen Reaktionen
+                können Überflutung, Angst, Scham oder Verlassenheitsstress eine
+                Rolle spielen. Andere Erklärungen sind ebenfalls möglich. Das
+                macht Verhalten nicht folgenlos und ersetzt kein Nachfragen,
+                kann aber helfen, vorschnelle Deutungen zu vermeiden.
               </p>
             </EditorialProse>
             <EvidenceNote
@@ -293,10 +265,11 @@ export default function Verstehen() {
             <EditorialProse>
               <p>
                 Angehörige erleben Wut oft als das dominierende Thema. Sie ist
-                laut, verletzend und schwer zu übersehen. Gleichzeitig ist Wut
-                bei Borderline häufig nicht der ganze Kern, sondern eher eine
-                Reaktion auf tiefer liegende Zustände wie Scham,
-                Verlassenheitsangst, Ohnmacht oder innere Leere.
+                laut, verletzend und schwer zu übersehen. Gleichzeitig kann Wut
+                mit Zuständen wie Scham, Verlassenheitsangst, Ohnmacht oder
+                innerer Leere zusammenhängen. Das Eisberg-Bild ist eine mögliche
+                Verständnishilfe, keine Aussage darüber, was in einer konkreten
+                Person sicher «darunterliegt».
               </p>
               <p>
                 Scham spielt dabei eine besonders grosse Rolle. Wer sich tief
@@ -311,7 +284,7 @@ export default function Verstehen() {
               alt="Der Eisberg – Wut ist oft die Spitze"
               width={600}
               height={848}
-              caption="Der Eisberg: Wut ist oft nur die sichtbare Spitze — darunter liegen Scham, Angst, Ohnmacht und Überflutung."
+              caption="Eigene didaktische Darstellung: Wut kann eine sichtbare Spitze sein. Darunter können Scham, Angst, Ohnmacht oder Überflutung mitwirken; andere Erklärungen sind möglich."
             />
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
@@ -625,10 +598,11 @@ export default function Verstehen() {
               </h3>
               <p>
                 Manche Verhaltensweisen können auf Angehörige manipulativ
-                wirken. Hilfreicher ist aber oft die Frage, welche innere Not,
-                Angst, Scham oder Überflutung darunter mitläuft. Das
-                entschuldigt destruktives Verhalten nicht, macht es aber genauer
-                lesbar. Mehr dazu auf{" "}
+                wirken. Ob bewusste Absicht, innere Not, Angst, Scham,
+                Überflutung oder etwas anderes dahintersteht, lässt sich von
+                aussen nicht sicher feststellen. Fragen Sie nach, statt ein
+                Motiv festzulegen, und beurteilen Sie zugleich die Wirkung des
+                Verhaltens und Ihre eigene Grenze. Mehr dazu auf{" "}
                 <Link href="/kommunizieren" className="editorial-link">
                   Kommunizieren
                 </Link>{" "}

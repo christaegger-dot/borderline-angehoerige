@@ -38,6 +38,23 @@ describe("handout delivery helpers", () => {
     });
   });
 
+  it.each([
+    "4-arten-von-grenzen",
+    "grenzen-erkennen",
+    "gespraeche-kippen",
+    "pause-statt-streit",
+    "zuhoeren-ohne-zustimmen",
+    "sauerstoffmaske",
+    "stopp-technik",
+    "energie-konto",
+  ])("keeps the public material id %s resolvable", id => {
+    expect(resolveHandoutAsset(id)).toMatchObject({
+      id,
+      sourceKind: "local",
+      textLayer: "present",
+    });
+  });
+
   it("routes local pdf paths through the controlled download endpoint", () => {
     expect(getHandoutOpenHref("/notfallplan-krise-v04.pdf")).toBe(
       "/api/material-download/notfallplan-krise?disposition=inline"

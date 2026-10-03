@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import ContentSection from "@/components/ContentSection";
 import AngehoerigenIllustration from "@/components/AngehoerigenIllustration";
 import {
@@ -32,6 +32,7 @@ const DESCRIPTION =
 
 export default function VerstehenBeziehungen() {
   const [aktiverSchritt, setAktiverSchritt] = useState(0);
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const scrollToAnchor = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -44,6 +45,34 @@ export default function VerstehenBeziehungen() {
   );
 
   const schritt = beziehungsSchritte[aktiverSchritt];
+
+  const selectSchritt = useCallback((index: number) => {
+    setAktiverSchritt(index);
+    tabRefs.current[index]?.focus();
+  }, []);
+
+  const handleSchrittKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+      let nextIndex: number | null = null;
+
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        nextIndex = (index + 1) % beziehungsSchritte.length;
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        nextIndex =
+          (index - 1 + beziehungsSchritte.length) % beziehungsSchritte.length;
+      } else if (event.key === "Home") {
+        nextIndex = 0;
+      } else if (event.key === "End") {
+        nextIndex = beziehungsSchritte.length - 1;
+      }
+
+      if (nextIndex !== null) {
+        event.preventDefault();
+        selectSchritt(nextIndex);
+      }
+    },
+    [selectSchritt]
+  );
 
   return (
     <Layout>
@@ -82,7 +111,7 @@ export default function VerstehenBeziehungen() {
                 color: "var(--fg-tertiary)",
               }}
             >
-              Vollständig ca. 12 Min · Auch abschnittweise lesbar.
+              Grundtext ca. 12 Min · Mit Vertiefungen länger.
             </p>
             <ReviewBadge path="/verstehen/beziehungen" />
           </div>
@@ -191,10 +220,17 @@ export default function VerstehenBeziehungen() {
               return (
                 <button
                   key={eintrag.label}
+                  ref={element => {
+                    tabRefs.current[index] = element;
+                  }}
                   type="button"
                   role="tab"
+                  id={`bedeutungsschleife-tab-${index}`}
+                  aria-controls="bedeutungsschleife-panel"
                   aria-selected={aktiv}
+                  tabIndex={aktiv ? 0 : -1}
                   onClick={() => setAktiverSchritt(index)}
+                  onKeyDown={event => handleSchrittKeyDown(event, index)}
                   className={`min-h-11 border px-3 py-2 text-sm transition-colors ${
                     aktiv
                       ? "border-[color:var(--rule-color-strong)] bg-muted/50 font-medium"
@@ -207,7 +243,13 @@ export default function VerstehenBeziehungen() {
             })}
           </div>
 
-          <div className="mt-4 border border-border/50 bg-background p-5">
+          <div
+            id="bedeutungsschleife-panel"
+            role="tabpanel"
+            aria-labelledby={`bedeutungsschleife-tab-${aktiverSchritt}`}
+            tabIndex={0}
+            className="mt-4 border border-border/50 bg-background p-5"
+          >
             <p className="uppercase" style={{ fontSize: "var(--text-sm)" }}>
               {schritt.kicker}
             </p>

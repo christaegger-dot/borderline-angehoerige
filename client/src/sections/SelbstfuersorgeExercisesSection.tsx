@@ -152,7 +152,7 @@ function AtemuebungCard() {
           <Button
             variant="outline"
             onClick={startUebung}
-            className="mt-4 w-full gap-2 border-border/70 bg-background text-[color:var(--accent-primary)] shadow-none hover:bg-muted/20 hover:text-foreground"
+            className="mt-4 min-h-11 w-full gap-2 border-border/70 bg-background text-[color:var(--accent-primary)] shadow-none hover:bg-muted/20 hover:text-foreground"
             disabled={isActive}
           >
             Übung starten
@@ -162,7 +162,7 @@ function AtemuebungCard() {
       {isActive && (
         <Button
           variant="outline"
-          className="mt-4 w-full"
+          className="mt-4 min-h-11 w-full"
           onClick={() => {
             if (timerRef.current) clearInterval(timerRef.current);
             timerRef.current = null;

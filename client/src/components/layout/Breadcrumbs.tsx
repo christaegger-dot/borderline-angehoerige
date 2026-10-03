@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { getHandoutTextVersionMeta } from "@/content/handoutTextVersions";
 import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
+import { hasHeaderNavigationCurrent } from "@/domain/navigation";
 import { ArrowLeft, ChevronRight, Home } from "@/icons/root-icons";
 
 const pageNames: Record<string, string> = {
@@ -75,8 +76,7 @@ export function getParentInfo(
 
 export function shouldShowBreadcrumbs(location: string) {
   const normalizedLocation = normalizeLocation(location);
-  if (normalizedLocation === "/") return false;
-  return getParentInfo(normalizedLocation) !== null;
+  return normalizedLocation !== "/";
 }
 
 export function getPageName(location: string) {
@@ -105,6 +105,7 @@ export function Breadcrumbs() {
   const parent = getParentInfo(location);
   const backHref = parent?.href || "/";
   const backLabel = parent?.label || "Startseite";
+  const currentIsRepresentedInHeader = hasHeaderNavigationCurrent(location);
 
   return (
     <div className="breadcrumb-shell">
@@ -114,10 +115,6 @@ export function Breadcrumbs() {
             <ArrowLeft className="h-4 w-4" />
             <span>{backLabel}</span>
           </Link>
-
-          <p className="breadcrumb-shell__mobile-current sm:hidden">
-            {pageName}
-          </p>
 
           <ol className="breadcrumb-shell__list">
             <li>
@@ -142,7 +139,12 @@ export function Breadcrumbs() {
                 className="breadcrumb-shell__separator"
                 aria-hidden="true"
               />
-              <span className="breadcrumb-shell__current">{pageName}</span>
+              <span
+                className="breadcrumb-shell__current"
+                aria-current={currentIsRepresentedInHeader ? undefined : "page"}
+              >
+                {pageName}
+              </span>
             </li>
           </ol>
         </div>

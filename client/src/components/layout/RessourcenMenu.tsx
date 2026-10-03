@@ -3,6 +3,7 @@ import { ressourcenItems } from "@/components/layout/navigationData";
 import { getRouteAccent } from "@/components/layout/routeAccent";
 import { useRessourcenMenuA11y } from "@/components/layout/useRessourcenMenuA11y";
 import type { NavigationItem } from "@/domain/content-types";
+import { isResourceNavigationItemActive } from "@/domain/navigation";
 import { ChevronDown } from "@/icons/root-icons";
 
 interface RessourcenMenuProps {
@@ -47,7 +48,7 @@ export function RessourcenMenu({
   setIsOpen,
 }: RessourcenMenuProps) {
   const isRessourcenActive = ressourcenItems.some(item =>
-    location.startsWith(item.href.split("#")[0])
+    isResourceNavigationItemActive(item.href, location)
   );
   const currentAccent = getRouteAccent(location);
   const isTriggerActive = isRessourcenActive || isOpen;
@@ -95,6 +96,7 @@ export function RessourcenMenu({
             : "font-normal text-[color:var(--fg-secondary)] border-transparent hover:text-[color:var(--fg-primary)] hover:border-[color:var(--accent-primary)]"
         }`}
         {...triggerA11yProps}
+        aria-current={isRessourcenActive ? "page" : undefined}
       >
         Ressourcen
         <ChevronDown
@@ -127,10 +129,10 @@ export function RessourcenMenu({
                 <div className="flex flex-col">
                   {group.items.map((item, itemIdx) => {
                     const Icon = item.icon;
-                    const normalizedHref = item.href.split("#")[0];
-                    const isActive =
-                      location === normalizedHref ||
-                      location.startsWith(`${normalizedHref}/`);
+                    const isActive = isResourceNavigationItemActive(
+                      item.href,
+                      location
+                    );
                     const accent = getRouteAccent(item.href);
                     const idx = flatIndex(groups, groupIdx, itemIdx);
 
@@ -147,7 +149,7 @@ export function RessourcenMenu({
                           onMenuItemFocus(idx);
                         }}
                         onClick={closeDropdown}
-                        className={`flex items-center gap-2.5 rounded-xl border px-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
+                        className={`flex min-h-11 items-center gap-2.5 rounded-xl border px-3 transition-all outline-none focus-visible:ring-2 focus-visible:ring-sage-dark/40 focus-visible:ring-inset ${
                           item.secondary
                             ? "py-1.5 text-[12px]"
                             : "py-2.5 text-[13px]"

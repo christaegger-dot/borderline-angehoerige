@@ -56,14 +56,14 @@ const zusammenarbeitSzenarien = [
   {
     titel: "Die Therapie scheint zu stagnieren",
     inhalt: [
-      "Bedenken Sie: Sie sehen nicht, was in der Therapie passiert – Vertrauensaufbau dauert oft Monate",
+      "Bedenken Sie: Sie sehen nicht, was in der Therapie passiert – Vertrauensaufbau und Veränderung können Zeit brauchen.",
       "Bei Sorgen können Sie konkrete Beobachtungen mitteilen und um Klärung des weiteren Vorgehens bitten. Vertrauliche Rückmeldungen setzen eine entsprechende Berechtigung voraus.",
       "Formulierungsbeispiel: «Ich beobachte weiterhin Selbstverletzungen und mache mir Sorgen. Welche Abklärung oder Unterstützung ist jetzt nötig?» Bei akuter Gefahr nutzen Sie den Notruf, statt auf eine Antwort zu warten.",
       "Bei begründeten Zweifeln an Diagnose oder Behandlung kann eine zweite fachliche Einschätzung sinnvoll sein; eine pauschale Wartefrist von einem Jahr gibt es dafür nicht. Besprechen Sie dies möglichst mit der betroffenen Person. Für Ihre eigene Rolle können Sie unabhängig davon Beratung suchen.",
     ],
   },
   {
-    titel: "Ich vermute, dass mein Angehöriger nicht mitmacht",
+    titel: "Ich habe den Eindruck, dass Therapie gerade schwierig ist",
     inhalt: [
       "Direkt ansprechen (in stabiler Phase): «Mir scheint, dass die Therapie für dich gerade schwierig ist. Was macht sie dir schwierig?»",
       "Sie können Motivation nicht erzwingen – aber Sie können Interesse zeigen",
@@ -112,6 +112,11 @@ const therapieformen = [
     name: "TFP · Übertragungsfokussierte Psychotherapie",
     description:
       "Arbeitet mit dem Beziehungserleben in der therapeutischen Beziehung selbst: innere Konflikte werden im «Hier und Jetzt» zwischen Therapeut:in und Patient:in sichtbar und bearbeitbar. In der Schweizer Versorgungsrealität weniger verbreitet als DBT, aber als evidenzbasierte Therapie etabliert.",
+  },
+  {
+    name: "Strukturierte generalistische Behandlung",
+    description:
+      "Auch klar strukturierte, störungsinformierte Behandlungen ohne spezialisiertes Therapielabel können wirksam sein. Dazu gehören ein verlässlicher Rahmen, gemeinsam vereinbarte Ziele, Krisenplanung, aktive Begleitung und eine koordinierte Behandlung von Begleiterkrankungen.",
   },
 ] as const;
 
@@ -209,7 +214,7 @@ export default function UnterstuetzenTherapie() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <EyebrowLabel spacing="compact">
-              Vollständig ca. 10 Min · Auch abschnittweise lesbar
+              Grundtext ca. 10 Min · Mit Vertiefungen länger
             </EyebrowLabel>
             <LastVerifiedBadge
               path="/unterstuetzen/therapie"
@@ -400,33 +405,47 @@ export default function UnterstuetzenTherapie() {
             </div>
             <aside
               className="mt-10 border-l-4 pl-5"
-              style={{ borderColor: "#d97706" }}
+              style={{ borderColor: "var(--accent-label)" }}
             >
-              <h3 style={{ ...h4Style, color: "#92400e" }}>
-                Warnsignale für eine problematische Therapiesituation
+              <h3 style={h4Style}>
+                Fragen, wenn Sie sich um die Behandlung sorgen
               </h3>
+              <p className="mt-3" style={bodyStyle}>
+                Angehörige sehen nur einen Teil des Behandlungsprozesses. Kein
+                einzelner Punkt beweist, dass eine Behandlung ungeeignet ist.
+                Die Fragen helfen, Sicherheitsbedenken, Behandlungsrahmen und
+                eingeschränkte Auskunft durch die Schweigepflicht
+                auseinanderzuhalten.
+              </p>
               <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
                 <li>
-                  Therapeut kritisiert Angehörige offen vor Patient («Sie sind
-                  das Problem»)
+                  Werden Sie im gemeinsamen Gespräch pauschal abgewertet oder
+                  wird ein konkreter Konflikt respektvoll und nachvollziehbar
+                  besprochen?
                 </li>
                 <li>
-                  Kein Kontakt möglich, auch nicht bei konkreten
-                  Sicherheitsbedenken
+                  Gibt es einen benannten Weg, konkrete Sicherheitsbedenken
+                  mitzuteilen, auch wenn das Team keine vertraulichen Auskünfte
+                  geben darf?
                 </li>
                 <li>
-                  Patient wird von Familie isoliert («Vertrau nur mir, nicht
-                  deinem Partner»)
+                  Werden Kontakte pauschal unterbunden oder werden Abstand und
+                  Schutz aufgrund einer konkreten Belastungs- oder
+                  Gefährdungssituation besprochen?
                 </li>
                 <li>
-                  Jahre Therapie ohne jede erkennbare Veränderung oder Reflexion
-                  darüber
+                  Werden Ziele, Fortschritte, Belastungen und ausbleibende
+                  Veränderungen regelmässig mit der betroffenen Person
+                  überprüft?
                 </li>
               </ul>
               <p className="mt-3" style={bodyStyle}>
-                <strong style={{ color: "var(--fg-primary)" }}>Dann:</strong>{" "}
-                Zweitmeinung einholen oder Therapeutenwechsel ansprechen – das
-                ist legitim und manchmal notwendig.
+                Bei akuten Sicherheitsbedenken holen Sie sofort professionelle
+                Hilfe. Sonst können Sie Ihre Beobachtungen mit der betroffenen
+                Person besprechen, um Klärung des Rahmens bitten oder eine
+                unabhängige fachliche Zweitmeinung erwägen. Ein Wechsel ist eine
+                gemeinsame Einzelfallentscheidung, keine automatische Folge
+                dieser Fragen.
               </p>
             </aside>
             <AngehoerigenBeratung />
@@ -479,8 +498,14 @@ export default function UnterstuetzenTherapie() {
             <EvidenceNote
               variant="editorial"
               title="Quellen zu Therapieverfahren und Angehörigenprogrammen"
-              definition="DBT, MBT und andere BPS-spezifische Psychotherapien sind die am besten untersuchten Verfahren. Für Angehörige sind psychoedukative Programme wie Family Connections nicht nur entlastend, sondern ebenfalls wissenschaftlich beschrieben."
+              definition="Mehrere strukturierte Psychotherapien können bei BPS helfen; die Sicherheit der Evidenz ist für viele Einzelvergleiche begrenzt, und es gibt keine für alle Menschen beste Methode. Auch strukturierte generalistische Behandlung ist relevant. Familienprogramme wie Family Connections zeigen vielversprechende Ergebnisse, die Evidenzbasis ist jedoch kleiner und vorläufiger als bei den untersuchten Psychotherapien."
               sources={[
+                {
+                  label:
+                    "APA Practice Guideline (2024) – strukturierte Psychotherapie bei BPS",
+                  href: quellenLinks.apa2024,
+                  type: "wissenschaft",
+                },
                 {
                   label:
                     "Storebø et al. (2020) – Cochrane-Review zu psychologischen Therapien bei BPS",
@@ -501,6 +526,12 @@ export default function UnterstuetzenTherapie() {
                 {
                   label: "Hoffman et al. (2005) – Family Connections",
                   href: quellenLinks.hoffman2005,
+                  type: "wissenschaft",
+                },
+                {
+                  label:
+                    "Guillén et al. (2021) – systematische Übersicht zu Angehörigeninterventionen",
+                  href: quellenLinks.guillen2021,
                   type: "wissenschaft",
                 },
                 {

@@ -159,6 +159,30 @@ const handoutAssetsById = new Map(
   Array.from(handoutAssetsBySource.values()).map(asset => [asset.id, asset])
 );
 
+// The library exposes recommended materials with their short public IDs, while
+// topic pages historically registered the same files under section-prefixed
+// IDs. Keep both routes valid: the source registry remains canonical for links
+// generated from a PDF URL, and these aliases make every public material ID a
+// resolvable download endpoint as well.
+for (const item of materials) {
+  const sourceUrl = item.pdfUrl ?? item.downloadUrl;
+  const sourceKind = sourceUrl ? getSourceKind(sourceUrl) : null;
+
+  if (!sourceUrl || !sourceKind || handoutAssetsById.has(item.id)) {
+    continue;
+  }
+
+  handoutAssetsById.set(item.id, {
+    id: item.id,
+    title: item.title,
+    sourceUrl,
+    fileName: getFileName(sourceUrl, item.id),
+    sourceKind,
+    textLayer: sourceKind === "local" ? "present" : "missing",
+    preferredReadingFormat: sourceKind === "local" ? "pdf" : "textversion",
+  });
+}
+
 export function buildHandoutAssetPath(
   id: string,
   disposition: HandoutDisposition = "attachment"

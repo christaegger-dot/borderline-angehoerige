@@ -200,13 +200,13 @@ export default function Begleiterkrankungen() {
               ))}
             </ul>
             <p>
-              Wichtig zur Einordnung: Diese Kombination bedeutet nicht «doppelt
-              schlimm» oder «zwei Probleme statt einem». Häufig sind die
-              verschiedenen Erkrankungen Ausdruck derselben zugrundeliegenden
-              Belastung — sie zeigen sich nur in unterschiedlichen Symptomen
-              oder Phasen. Diese Sichtweise nimmt nichts von der realen
-              Belastung, hilft aber, Begleiterkrankungen nicht als zusätzliche
-              Strafe zu lesen.
+              Wichtig zur Einordnung: Mehrere Diagnosen bedeuten mehr
+              Komplexität, aber keine Rangfolge des Leids. Erkrankungen können
+              gemeinsame Risikofaktoren haben, sich gegenseitig beeinflussen
+              oder unabhängig nebeneinander bestehen. Welche Erklärung passt,
+              muss individuell abgeklärt werden. Begleiterkrankungen sind weder
+              eine zusätzliche «Strafe» noch etwas, das Angehörige selbst
+              diagnostisch sortieren müssen.
             </p>
           </EditorialProse>
           <EditorialFigure
@@ -468,11 +468,13 @@ export default function Begleiterkrankungen() {
               meistens ist die Behandlung integriert, manchmal sequenziell.
             </p>
             <p>
-              <strong>Was «vorrangig» bedeutet:</strong> Wenn etwas akut
-              bedrohlich ist — eine schwere depressive Episode, eine akute
-              Substanzgebrauchskrise, eine Essstörung mit körperlicher
-              Gefährdung — wird das vorrangig stabilisiert. Erst danach kann die
-              Borderline-spezifische Therapie greifen.
+              <strong>Was «vorrangig» bedeutet:</strong> Akute Gefährdungen —
+              etwa eine schwere depressive Episode, eine Substanzgebrauchskrise
+              oder eine Essstörung mit körperlicher Gefährdung — brauchen
+              sofortige Aufmerksamkeit. Die weitere Behandlung kann je nach
+              Situation integriert, parallel oder schrittweise geplant werden.
+              Eine starre Reihenfolge gilt nicht; der Gesamtbehandlungsplan wird
+              individuell abgestimmt.
             </p>
             <p>
               <strong>Medikation:</strong> Die Borderline-Erkrankung selbst ist
@@ -531,11 +533,12 @@ export default function Begleiterkrankungen() {
         >
           <EditorialProse>
             <p>
-              Die Begleiterkrankung auf Seiten der betroffenen Person erhöht oft
-              auch die Belastung der Angehörigen — depressive Phasen sind
-              schwerer auszuhalten als reine Borderline-Schwankungen, weil sie
-              länger dauern und stiller sind. Es ist kein Zeichen von Schwäche,
-              wenn Sie selbst Beratung oder Therapie suchen — im Gegenteil.
+              Begleiterkrankungen können auch die Belastung der Angehörigen
+              verändern. Depressive Phasen dauern oft länger und zeigen sich
+              stiller als kurzfristige Stimmungsschwankungen; andere Krisen
+              können auf andere Weise besonders fordernd sein. Daraus lässt sich
+              keine allgemeine Rangfolge ableiten. Es ist kein Zeichen von
+              Schwäche, wenn Sie selbst Beratung oder Therapie suchen.
             </p>
             <ul className="ml-6 list-disc space-y-1">
               <li>

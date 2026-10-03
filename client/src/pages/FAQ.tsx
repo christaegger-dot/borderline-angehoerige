@@ -66,7 +66,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Ist Borderline heilbar?",
         answer:
-          "Die Prognose ist deutlich besser, als lange angenommen wurde – die meisten Betroffenen erreichen im Verlauf eine Remission. Entwicklung verläuft selten geradlinig, Rückschläge gehören dazu. Therapie unterstützt den Prozess, macht ihn aber nicht vollständig planbar.",
+          "Der Begriff «heilbar» ist dafür zu ungenau. Remission bedeutet, dass die Diagnosekriterien nicht mehr erfüllt sind; Recovery umfasst darüber hinaus persönliche Lebensqualität, Beziehungen und Teilhabe. Viele Menschen erreichen im Verlauf eine deutliche Besserung oder Remission, doch Zeitpunkt, Ausmass und persönliche Genesung unterscheiden sich. Therapie kann den Prozess unterstützen, macht ihn aber nicht vollständig planbar.",
         links: [{ text: "Verlauf & Prognose im Detail", url: "/genesung" }],
       },
       {
@@ -79,13 +79,13 @@ const faqCategories: FAQCategory[] = [
         question:
           "Warum verhält sich mein Angehöriger bei anderen regulierter und stabiler?",
         answer:
-          "Dieses Phänomen ist häufig und nicht automatisch ein Zeichen von Manipulation. Menschen mit Borderline haben oft die grössten Schwierigkeiten in engen Beziehungen, weil dort die Verlassensangst am stärksten aktiviert wird. Bei Fremden oder in oberflächlichen Kontakten ist diese Angst geringer, daher können sie sich besser regulieren. Es ist paradox: Je wichtiger Sie Ihrem Angehörigen sind, desto intensiver können die Symptome sein. Das ist keine bewusste Entscheidung, sondern ein Muster, das in der Therapie bearbeitet wird.",
+          "Dass jemand in verschiedenen Beziehungen unterschiedlich wirkt, ist nicht automatisch ein Zeichen von Manipulation. Nähe, Erwartungen, Sicherheit, Stress und eingeübte Rollen können die Regulation beeinflussen. Bei manchen Menschen aktiviert eine enge Beziehung besonders starke Verlust- oder Bindungssorgen; bei anderen spielen andere Gründe mit. Die Absicht lässt sich von aussen nicht sicher feststellen. Fragen Sie nach, beschreiben Sie beobachtbares Verhalten und behalten Sie Ihre eigene Grenze im Blick.",
         links: [{ text: "Beziehungsmuster verstehen", url: "/verstehen" }],
       },
       {
         question: "Wer kann eine Borderline-Diagnose stellen?",
         answer:
-          "Eine formelle Borderline-Diagnose stellen vor allem Psychiater:innen mit FMH-Anerkennung Psychiatrie und Psychotherapie sowie psychologische Psychotherapeut:innen mit Berufsausübungsbewilligung und entsprechender klinischer Qualifikation. Hausärzt:innen können einen Verdacht äussern und überweisen, stellen die Diagnose aber in der Regel nicht selbst. Die Abklärung findet ambulant oder stationär statt; sie umfasst meist mehrere Termine über Wochen oder Monate, nicht ein einzelnes Gespräch.",
+          "Eine vertiefte Borderline-Abklärung wird häufig von Fachärzt:innen für Psychiatrie und Psychotherapie oder entsprechend qualifizierten psychologischen Psychotherapeut:innen durchgeführt. Hausärzt:innen können Beschwerden einordnen, andere Ursachen mitprüfen und an geeignete Fachpersonen überweisen. Wer die diagnostische Gesamtbeurteilung übernimmt und wie viele Termine nötig sind, hängt von Qualifikation, Fragestellung und Setting ab; entscheidend ist eine sorgfältige Beurteilung über mehr als einen Momenteindruck.",
         links: [
           {
             text: "Diagnostik-Seite — Wer & Wie",
@@ -108,7 +108,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Wie lange dauert es, bis eine Diagnose feststeht?",
         answer:
-          "Eine Borderline-Diagnose entsteht meist nicht in einem Termin. Anamnese, strukturierte Interviews und Verlaufsbeobachtung greifen ineinander; in der Regel sind dafür mehrere Sitzungen über Wochen oder Monate nötig. Diese Sorgfalt ist kein Warten ohne Ergebnis, sondern Teil der Diagnostik selbst — die Diagnose soll über die Zeit Bestand haben und nicht aus einem Momenteindruck stammen.",
+          "Dafür gibt es keine feste Dauer. Anamnese, strukturierte Gespräche, Differenzialdiagnostik und Informationen zum Verlauf können je nach Fragestellung in unterschiedlich vielen Terminen zusammengeführt werden. Entscheidend ist, dass die Einordnung nicht nur auf einem Momenteindruck beruht und verbleibende Unsicherheit offen benannt wird.",
         links: [
           {
             text: "Diagnostik-Seite — Wie läuft eine Diagnostik ab",
@@ -150,7 +150,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Wie reagiere ich auf bedrohlich wirkende Aussagen?",
         answer:
-          "Bei Suizidäusserungen gilt: immer ernst nehmen und die Verantwortung an Fachpersonen weitergeben – sagen Sie klar: «Wenn du sagst, du willst dir etwas antun, hole ich Hilfe.» Bei anderen Aussagen aus Verzweiflung (z.B. «Dann verlasse ich dich») ruhig bleiben, das Gefühl dahinter ansprechen und nicht aus Angst nachgeben. Solche Aussagen entstehen meist aus grosser Verlassensangst, nicht aus rationaler Absicht – sie signalisieren innere Not, keine Strategie.",
+          "Suizidäusserungen immer ernst nehmen und professionelle Hilfe einschalten – sagen Sie klar: «Wenn du sagst, du willst dir etwas antun, hole ich Hilfe.» Bei anderen bedrohlich wirkenden Aussagen ruhig bleiben, nach der Bedeutung fragen und nicht aus Angst nachgeben. Von aussen lässt sich nicht sicher erkennen, ob Verzweiflung, Verlassensangst, Druck, bewusste Absicht oder mehrere Faktoren mitwirken. Entscheidend sind Sicherheit, beobachtbares Verhalten und Ihre Grenze, nicht eine vermutete Motivation.",
         links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }],
       },
       {
@@ -182,7 +182,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Wann ist eine Einweisung nötig?",
         answer:
-          "Bei akuter Suizidalität mit konkreten Plänen oder Mitteln, schwerer Selbstverletzung mit Versorgungsbedarf, Fremdgefährdung oder völliger Dekompensation. In der Schweiz kann in solchen Situationen durch einen Arzt oder eine Ärztin eine fürsorgerische Unterbringung angeordnet werden – vereinfacht gesagt eine vorübergehende psychiatrische Einweisung zum Schutz der betroffenen Person. Im Zweifelsfall: psychiatrischen Notdienst anrufen – die können die Situation einschätzen.",
+          "Ob eine stationäre Aufnahme oder eine fürsorgerische Unterbringung angezeigt und rechtlich zulässig ist, können Angehörige nicht selbst entscheiden. Das braucht eine professionelle Einschätzung; die fürsorgerische Unterbringung ist zusätzlich gesetzlich geregelt und hängt von der konkreten Situation und Zuständigkeit ab. Bei unmittelbarer Gefahr rufen Sie 144 beziehungsweise bei Gewalt 117. Wenn Sie unsicher sind, kontaktieren Sie den psychiatrischen Notfalldienst der passenden Altersgruppe.",
         links: [{ text: "Notfallnummern", url: "/soforthilfe" }],
       },
       {
@@ -240,7 +240,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Welche Therapie ist am besten?",
         answer:
-          "Es gibt mehrere gut erforschte Methoden, zum Beispiel DBT (Dialektisch-Behaviorale Therapie), MBT (Mentalisierungsbasierte Therapie), Schematherapie oder TFP (Übertragungsfokussierte Psychotherapie). Alle können wirksam sein – wichtiger als die Methode ist oft die Passung zwischen Therapeut und Patient.",
+          "Es gibt keine einzelne Therapie, die für alle Menschen am besten ist. Empfohlen wird eine strukturierte Psychotherapie, die auf die zentralen Schwierigkeiten der Borderline-Persönlichkeitsstörung ausgerichtet ist. Dazu gehören zum Beispiel DBT, MBT, Schematherapie oder TFP; auch strukturierte generalistische Behandlungen können wirksam sein. Methode, Qualifikation der Fachperson, gemeinsam vereinbarte Ziele, verlässlicher Rahmen, Zugänglichkeit und therapeutische Zusammenarbeit sind gemeinsam wichtig.",
         links: [
           { text: "Therapieformen erklärt", url: "/unterstuetzen/therapie" },
         ],
@@ -248,7 +248,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Helfen Medikamente bei Borderline?",
         answer:
-          "Medikamente «heilen» Borderline nicht. Sie können aber sinnvoll sein, wenn zusätzlich Depression, Angst, Schlafprobleme, starke innere Anspannung oder andere Begleiterkrankungen behandelt werden sollen. Wichtig ist: Einnahme, Umstellung oder Absetzen gehören in ärztliche Begleitung. Angehörige müssen nicht zum Medikamenten-Management werden – hilfreicher ist meist, Beobachtungen ruhig weiterzugeben und die Verantwortung bei der behandelnden Fachperson zu lassen.",
+          "Es gibt keine etablierte medikamentöse Kernbehandlung der Borderline-Persönlichkeitsstörung; strukturierte Psychotherapie steht im Zentrum. Medikamente können für klar benannte Begleiterkrankungen oder in einzelnen Situationen zeitlich begrenzt erwogen werden. Ziel, erwarteter Nutzen, Risiken, Dauer und Überprüfung sollten ärztlich festgelegt werden; unwirksame oder nicht mehr nötige Medikamente gehören überprüft. Einnahme, Umstellung oder Absetzen erfolgen ärztlich begleitet. Angehörige müssen nicht zum Medikamenten-Management werden.",
         links: [
           {
             text: "Begleiterkrankungen",
@@ -398,8 +398,8 @@ export default function FAQ() {
               color: "var(--fg-tertiary)",
             }}
           >
-            Vollständig ca. 18 Min · Springen Sie zu einer Frage über das
-            Inhaltsverzeichnis.
+            Alle Antworten zusammen ca. 18 Min · Einzelne Fragen sind direkt
+            über das Inhaltsverzeichnis erreichbar.
           </p>
           <LastVerifiedBadge path="/faq" className="mt-6" />
         </header>

@@ -1,8 +1,13 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-CH" data-web-profile="website" data-document-variant="print">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Druckansicht der persönlichen Notfallkarte mit Notfallnummern, Kontaktpersonen und persönlichen Strategien."
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Persönliche Notfallkarte – Druckversion</title>
     <style>
       /* ── Fonts: lokal eingebettet (offline-fähig) ── */
@@ -78,6 +83,21 @@
         line-height: 1.4;
         color: var(--charcoal);
         background: white;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 1000;
+        top: 8px;
+        left: 8px;
+        padding: 10px 14px;
+        transform: translateY(-160%);
+        background: var(--navy);
+        color: white;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
       }
 
       /* ── Page Setup ── */
@@ -363,11 +383,12 @@
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
     <button class="print-btn" onclick="window.print()">
       🖨 Drucken / Als PDF speichern
     </button>
 
-    <div class="page">
+    <main class="page" id="main-content" tabindex="-1">
       <!-- ── Header ── -->
       <div class="doc-header">
         <h1>Persönliche Notfallkarte</h1>
@@ -848,7 +869,7 @@
         Fachstelle Angehörigenarbeit · PUK Zürich · borderline-angehoerige.ch ·
         Alle Angaben ohne Gewähr
       </div>
-    </div>
+    </main>
     <!-- /page -->
 
     <script src="/notfallkarte-print.js"></script>

@@ -296,7 +296,7 @@ export default function RollenOrbitVisualisierung() {
       </div>
       {/* Footer */}
       <p className="mt-4 border-t border-border/30 pt-3 text-xs text-muted-foreground">
-        <span className="opacity-60">
+        <span>
           Grundlage: Linehan, M. M. (1993); Gunderson, J. G. &amp; Hoffman, P.
           D. (2005); S3-Leitlinie Borderline-Persönlichkeitsstörung (AWMF,
           2022).

@@ -112,7 +112,7 @@ export default function Selbstfuersorge() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <EyebrowLabel spacing="compact">
-              Vollständig ca. 12 Min · Auch abschnittweise lesbar
+              Grundtext ca. 12 Min · Mit Übungen und Vertiefungen länger
             </EyebrowLabel>
           </div>
         </EditorialSection.Body>

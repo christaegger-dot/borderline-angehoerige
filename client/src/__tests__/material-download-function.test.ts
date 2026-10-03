@@ -29,6 +29,25 @@ describe("material-download netlify function adapter", () => {
     expect(response.headers.get("Content-Disposition")).toContain("inline;");
   });
 
+  it.each([
+    "4-arten-von-grenzen",
+    "grenzen-erkennen",
+    "gespraeche-kippen",
+    "pause-statt-streit",
+    "zuhoeren-ohne-zustimmen",
+    "sauerstoffmaske",
+    "stopp-technik",
+    "energie-konto",
+  ])("serves the public material alias %s", async id => {
+    const response = await handler(
+      new Request(`https://example.com/api/material-download/${id}`),
+      { params: { id } }
+    );
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get("Content-Type")).toBe("application/pdf");
+  });
+
   it("falls back to attachment for non-inline disposition values", async () => {
     const response = await handler(
       new Request(

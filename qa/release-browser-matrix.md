@@ -107,28 +107,84 @@ Dabei prüfen:
 ## Browser-Matrix
 
 - Release / PR: main
-- Commit / Deploy-Stand: 244a527
-- Datum: 2026-05-23
+- Commit / Deploy-Stand: b50dc18
+- Datum: 2026-10-02
 - Basis-URL: https://borderline-angehoerige.netlify.app
 
-| Gerät          | Browser | Status                | Notizen                                                                                               |
-| -------------- | ------- | --------------------- | ----------------------------------------------------------------------------------------------------- |
-| iPhone         | Safari  | bestanden mit Hinweis | Playwright WebKit mit iPhone-13-Emulation; starke WebKit-Abdeckung, aber kein physisches iOS-Gerät    |
-| optional macOS | Safari  | bestanden mit Hinweis | Playwright WebKit-Desktoplauf als Safari-Näherung; optionaler Zusatzcheck                             |
-| iPhone         | Chrome  | bestanden mit Hinweis | mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün |
-| Android        | Chrome  | bestanden mit Hinweis | mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün                            |
-| Desktop        | Chrome  | bestanden             | Playwright-Lauf gegen Production mit System-Chrome/Chromium                                           |
-| Desktop        | Firefox | bestanden             | Playwright-Firefox-Lauf gegen Production                                                              |
+| Gerät          | Browser | Status          | Notizen                                                                                               |
+| -------------- | ------- | --------------- | ----------------------------------------------------------------------------------------------------- |
+| iPhone         | Safari  | nicht bestanden | Playwright WebKit mit iPhone-13-Emulation; starke WebKit-Abdeckung, aber kein physisches iOS-Gerät    |
+| optional macOS | Safari  | nicht bestanden | Playwright WebKit-Desktoplauf als Safari-Näherung; optionaler Zusatzcheck                             |
+| iPhone         | Chrome  | nicht bestanden | mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün |
+| Android        | Chrome  | nicht bestanden | mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün                            |
+| Desktop        | Chrome  | nicht bestanden | Playwright-Lauf gegen Production mit System-Chrome/Chromium                                           |
+| Desktop        | Firefox | nicht bestanden | Playwright-Firefox-Lauf gegen Production                                                              |
 
 ### Kritische Befunde
 
-- keine technischen Blocker im durchgeführten Scope
+- iPhone Safari: Suche öffnen und schließen: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for locator('button[aria-label="Suche öffnen"]').first() to be visible[22m
+  [2m 45 × locator resolved to hidden <button type="button" aria-label="Suche öffnen" class="site-header__icon-button sm:hidden">…</button>[22m
+
+- iPhone Safari: /begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible[22m
+
+- iPhone Safari: /grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible[22m
+
+- optional macOS Safari: /begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible[22m
+
+- optional macOS Safari: /grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible[22m
+
+- iPhone Chrome: Suche öffnen und schließen: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for locator('button[aria-label="Suche öffnen"]').first() to be visible[22m
+  [2m 45 × locator resolved to hidden <button type="button" aria-label="Suche öffnen" class="site-header__icon-button sm:hidden">…</button>[22m
+
+- iPhone Chrome: /begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible[22m
+
+- iPhone Chrome: /grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible[22m
+
+- Android Chrome: /begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible[22m
+
+- Android Chrome: /grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible[22m
+
+- Desktop Chrome: /begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible[22m
+
+- Desktop Chrome: /grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible[22m
+
+- Desktop Firefox: /begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible[22m
+
+- Desktop Firefox: /grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.
+  Call log:
+  [2m - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible[22m
 
 ### Freigabeentscheidung
 
 - [ ] Matrix vollständig grün
-- [x] grün mit dokumentierten Resthinweisen
-- [ ] nicht freigabefähig
+- [ ] grün mit dokumentierten Resthinweisen
+- [x] nicht freigabefähig
 
 ### Methodik
 

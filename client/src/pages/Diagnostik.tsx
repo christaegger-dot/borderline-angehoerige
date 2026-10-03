@@ -63,11 +63,11 @@ const ablaufSchritte = [
   },
   {
     title: "Verlauf statt Momentaufnahme",
-    desc: "Die Diagnose entsteht meist nicht in einem Termin, sondern über mehrere Sitzungen, oft über Wochen oder Monate.",
+    desc: "Eine sorgfältige Abklärung stützt sich auf mehr als einen Momenteindruck. Wie viele Termine und wie viel Zeit nötig sind, hängt von Fragestellung, Verlauf und Setting ab.",
   },
   {
     title: "Mitteilung im Gespräch",
-    desc: "Wenn die Diagnose feststeht, wird sie in einem Gespräch mitgeteilt — mit Erklärung, was sie bedeutet und welche Behandlungs-Optionen bestehen.",
+    desc: "Die fachliche Einordnung sollte in einem Gespräch erklärt werden — einschliesslich Unsicherheiten, Bedeutung und möglicher nächster Schritte.",
   },
 ] as const;
 
@@ -88,7 +88,7 @@ const ablehnungWasMoeglich = [
 const vermutungSchritte = [
   {
     title: "Mit der Hausärzt:in sprechen",
-    desc: "Erste Anlaufstelle für eine Einschätzung und Überweisung. Hausärzt:innen stellen die Diagnose meist nicht selbst, können aber an Fachpersonen mit Borderline-Erfahrung überweisen.",
+    desc: "Eine mögliche erste Anlaufstelle für Einschätzung, erste Abklärungen und Überweisung. Welche Aufgaben die Hausärzt:in selbst übernimmt, hängt von Qualifikation, Situation und Versorgungsweg ab.",
   },
   {
     title: "Fachstelle Angehörigenarbeit kontaktieren",
@@ -155,7 +155,7 @@ export default function Diagnostik() {
               color: "var(--fg-tertiary)",
             }}
           >
-            Vollständig ca. 10 Min · Auch abschnittweise lesbar.
+            Grundtext ca. 10 Min · Mit Vertiefungen länger.
           </p>
           <ReviewBadge path="/verstehen/diagnostik" />
         </header>
@@ -220,8 +220,8 @@ export default function Diagnostik() {
         >
           <EditorialProse>
             <p>
-              Diagnostisch befugt sind in der Schweiz vor allem zwei
-              Berufsgruppen:
+              Eine vertiefte Borderline-Abklärung wird in der Schweiz häufig von
+              Fachpersonen aus zwei Berufsgruppen durchgeführt:
             </p>
             <ul className="ml-6 list-disc space-y-2">
               <li>
@@ -236,9 +236,10 @@ export default function Diagnostik() {
             </ul>
             <p>
               <strong>Hausärzt:innen</strong> oder andere Fachärzt:innen können
-              einen Verdacht äussern und überweisen. Die formelle Diagnose
-              stellen sie in der Regel nicht selbst — die Abklärung gehört zu
-              den genannten Spezialist:innen.
+              Beschwerden einordnen, andere Ursachen mitprüfen und an eine
+              geeignete Fachperson überweisen. Wer die diagnostische
+              Gesamtbeurteilung übernimmt, hängt von Qualifikation, Setting und
+              Behandlungsweg ab.
             </p>
             <p>
               In der Praxis findet die Abklärung ambulant in Praxen oder
@@ -329,9 +330,13 @@ export default function Diagnostik() {
                   </li>
                 </ol>
                 <p className="mt-2">
-                  Für Jugendliche läuft die Abklärung über die Kinder- und
-                  Jugendpsychiatrie (KJPP); die Familie ist meist von Anfang an
-                  Teil des Prozesses.
+                  Bei Jugendlichen erfolgt die Abklärung in der Kinder- und
+                  Jugendpsychiatrie. Wie Eltern oder andere Bezugspersonen
+                  einbezogen werden, hängt unter anderem von Alter,
+                  Urteilsfähigkeit, Einwilligung, Behandlungsrahmen und
+                  Schutzbedarf ab. Auch urteilsfähige Minderjährige haben ein
+                  Recht auf Vertraulichkeit; konkrete Fragen sollten mit der
+                  zuständigen Fachperson geklärt werden.
                 </p>
               </>
             }
@@ -416,11 +421,12 @@ export default function Diagnostik() {
         >
           <EditorialProse>
             <p>
-              Eine gestellte Diagnose ist <strong>kein Etikett</strong>, sondern
-              eine Behandlungs-Eintrittskarte. Sie öffnet Zugang zu
-              evidenzbasierten Therapien wie DBT, MBT, Schematherapie oder TFP —
-              und sie verändert oft, wie Verhalten gelesen werden kann: nicht
-              als Charakter, sondern als Erkrankung mit Verlaufsmuster.
+              Eine sorgfältige Diagnose kann Behandlung und Verständigung
+              erleichtern. Sie kann helfen, passende strukturierte
+              Psychotherapie zu planen und wiederkehrende Schwierigkeiten
+              fachlich einzuordnen. Sie ist aber weder Voraussetzung für jede
+              Hilfe noch eine vollständige Erklärung eines Menschen oder einer
+              Beziehung.
             </p>
             <p>
               Wichtig: Eine Diagnose ist nicht dauerhaft fixiert. Recovery ist
@@ -609,8 +615,8 @@ export default function Diagnostik() {
               Stellen infrage. Diese Liste ist nicht abschliessend — niedrig-
               gelassene Psychiater:innen oder psychologische
               Psychotherapeut:innen mit Borderline-Erfahrung sind ebenfalls
-              möglich. Meist ist die <strong>Hausärzt:in</strong> der erste
-              Schritt mit Überweisung.
+              möglich. Die <strong>Hausärzt:in</strong> kann ein erster Schritt
+              sein und bei Bedarf an eine geeignete Fachperson überweisen.
             </p>
           </EditorialProse>
 
@@ -720,8 +726,10 @@ export default function Diagnostik() {
               color: "var(--fg-tertiary)",
             }}
           >
-            Ärztlich indizierte psychiatrische Diagnostik wird in der Regel von
-            der Grundversicherung gedeckt.
+            Ob und unter welchen Voraussetzungen die Grundversicherung Kosten
+            übernimmt, hängt von Leistung, Zuweisung und Versicherungsmodell ab.
+            Klären Sie die Kostenübernahme bei der Fachstelle und Ihrer
+            Versicherung vorab.
           </p>
         </ContentSection>
 

@@ -83,6 +83,33 @@ describe("Selbsttest", () => {
     ).toBeInTheDocument();
   });
 
+  it("setzt den Fokus nach einem Wechsel auf die neue Frage", () => {
+    vi.useFakeTimers();
+    render(<Selbsttest />);
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /Relativ stabil – Zeit zum Lernen und Vorbereiten/i,
+      })
+    );
+    act(() => {
+      vi.advanceTimersByTime(300);
+    });
+
+    expect(
+      screen.getByRole("heading", {
+        name: /Was beschäftigt Sie gerade am meisten\?/i,
+      })
+    ).toHaveFocus();
+
+    fireEvent.click(screen.getByRole("button", { name: "Eine Frage zurück" }));
+    expect(
+      screen.getByRole("heading", {
+        name: /Wie würden Sie die aktuelle Situation beschreiben\?/i,
+      })
+    ).toHaveFocus();
+  });
+
   it.each([
     "Akute Krise – Suizidgedanken, Selbstverletzung oder Gefahr",
     "Ich bin unsicher, ob gerade Gefahr besteht",
@@ -163,6 +190,19 @@ describe("Selbsttest", () => {
     expect(
       screen.getByRole("heading", { name: "Selbstfürsorge priorisieren" })
     ).toBeInTheDocument();
+    expect(screen.getByText("Redaktionelle Orientierung")).toBeInTheDocument();
+    expect(
+      screen.getByText(/Ihre eigene Erschöpfung braucht Raum/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/dringend Unterstützung zu brauchen/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/keine fachliche oder klinische Beurteilung/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(/Sie können nur helfen, wenn Sie selbst Kraft haben/i)
+    ).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: "Diagnostik einordnen" })
     ).toHaveAttribute("href", "/verstehen/diagnostik");

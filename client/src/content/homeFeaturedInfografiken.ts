@@ -33,7 +33,8 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
   {
     id: "eisberg",
     title: "Der Eisberg",
-    description: "Wut ist oft die Spitze — darunter liegen Schmerz und Angst.",
+    description:
+      "Wut kann eine sichtbare Spitze sein; darunter können Schmerz, Angst oder andere Belastungen mitwirken.",
     categoryLabel: "Verstehen",
     href: "/verstehen",
     thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v8.webp",

@@ -100,3 +100,48 @@ export const resourceNavigationItems: NavigationItem[] = [
     group: "Beratung & Netzwerke",
   },
 ];
+
+function normalizeNavigationLocation(location: string) {
+  return location.split("#")[0];
+}
+
+export function isPrimaryNavigationItemActive(
+  itemHref: string,
+  location: string
+) {
+  const normalizedLocation = normalizeNavigationLocation(location);
+
+  if (itemHref === "/unterstuetzen/uebersicht") {
+    return normalizedLocation.startsWith("/unterstuetzen/");
+  }
+
+  return (
+    normalizedLocation === itemHref ||
+    normalizedLocation.startsWith(`${itemHref}/`)
+  );
+}
+
+export function isResourceNavigationItemActive(
+  itemHref: string,
+  location: string
+) {
+  const normalizedHref = normalizeNavigationLocation(itemHref);
+  const normalizedLocation = normalizeNavigationLocation(location);
+
+  return (
+    normalizedLocation === normalizedHref ||
+    normalizedLocation.startsWith(`${normalizedHref}/`)
+  );
+}
+
+export function hasHeaderNavigationCurrent(location: string) {
+  return (
+    normalizeNavigationLocation(location) === "/" ||
+    primaryNavigationItems.some(item =>
+      isPrimaryNavigationItemActive(item.href, location)
+    ) ||
+    resourceNavigationItems.some(item =>
+      isResourceNavigationItemActive(item.href, location)
+    )
+  );
+}

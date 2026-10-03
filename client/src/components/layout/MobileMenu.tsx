@@ -10,6 +10,10 @@ import { navItems, ressourcenItems } from "@/components/layout/navigationData";
 import { getRouteAccent } from "@/components/layout/routeAccent";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import {
+  isPrimaryNavigationItemActive,
+  isResourceNavigationItemActive,
+} from "@/domain/navigation";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -40,7 +44,7 @@ export function MobileMenu({
   onSearchOpen,
 }: MobileMenuProps) {
   const isRessourcenActive = ressourcenItems.some(item =>
-    location.startsWith(item.href.split("#")[0])
+    isResourceNavigationItemActive(item.href, location)
   );
   const currentAccent = getRouteAccent(location);
 
@@ -84,7 +88,7 @@ export function MobileMenu({
         </div>
         {navItems.map(item => {
           const Icon = item.icon;
-          const isActive = location.startsWith(item.href);
+          const isActive = isPrimaryNavigationItemActive(item.href, location);
           const accent = getRouteAccent(item.href);
           return (
             <AppLink
@@ -142,8 +146,10 @@ export function MobileMenu({
                       </p>
                       {items.map(item => {
                         const Icon = item.icon;
-                        const normalizedHref = item.href.split("#")[0];
-                        const isActive = location === normalizedHref;
+                        const isActive = isResourceNavigationItemActive(
+                          item.href,
+                          location
+                        );
                         const accent = getRouteAccent(item.href);
 
                         return (
@@ -154,7 +160,7 @@ export function MobileMenu({
                               closeMenu();
                               setMobileRessourcenOpen(false);
                             }}
-                            className={`flex items-center gap-3 px-4 rounded-xl border font-medium transition-all ${
+                            className={`flex min-h-11 items-center gap-3 px-4 rounded-xl border font-medium transition-all ${
                               item.secondary
                                 ? "py-1.5 text-xs"
                                 : "py-2.5 text-sm"

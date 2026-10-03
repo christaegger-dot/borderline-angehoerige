@@ -1,0 +1,21 @@
+{
+  "status": "prepared-not-executed",
+  "systemVersion": "1.10.1",
+  "minimumRuns": 2,
+  "runs": [
+    {
+      "screenreader": "VoiceOver",
+      "browser": "Safari",
+      "platform": "macOS",
+      "status": "not-executed",
+      "reason": "Die macOS-Sitzung war während des Audits gesperrt."
+    },
+    {
+      "screenreader": "NVDA",
+      "browser": "Firefox",
+      "platform": "Windows",
+      "status": "not-executed",
+      "reason": "Es stand keine Windows-/NVDA-Umgebung zur Verfügung."
+    }
+  ]
+}

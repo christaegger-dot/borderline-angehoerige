@@ -16,6 +16,18 @@ export function isSearchShortcut(
   return (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k";
 }
 
+export function focusMainContent() {
+  const mainContent = document.getElementById("main-content");
+  if (!mainContent) return false;
+
+  if (window.location.hash !== "#main-content") {
+    window.history.pushState(null, "", "#main-content");
+  }
+  mainContent.focus({ preventScroll: true });
+  mainContent.scrollIntoView?.({ block: "start" });
+  return true;
+}
+
 export default function Layout({ children }: LayoutProps) {
   const [searchOpen, setSearchOpen] = useState(false);
   const footerLegalItems = [
@@ -44,6 +56,10 @@ export default function Layout({ children }: LayoutProps) {
       {/* Skip-Navigation für Accessibility (WCAG 2.1 Level A) */}
       <a
         href="#main-content"
+        onClick={event => {
+          event.preventDefault();
+          focusMainContent();
+        }}
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-sage-dark focus:text-white focus:rounded-lg focus:text-sm focus:font-medium focus:shadow-lg focus:outline-none"
       >
         Zum Inhalt springen
@@ -55,7 +71,12 @@ export default function Layout({ children }: LayoutProps) {
       <Breadcrumbs />
 
       {/* Main Content */}
-      <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        aria-label="Hauptinhalt"
+        className="flex-1 outline-none"
+      >
         {children}
       </main>
 
@@ -117,7 +138,7 @@ export default function Layout({ children }: LayoutProps) {
                   <li key={item.href}>
                     <AppLink
                       href={item.href}
-                      className="inline-flex min-h-10 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      className="inline-flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
                     </AppLink>
@@ -135,7 +156,7 @@ export default function Layout({ children }: LayoutProps) {
                   <li key={item.href}>
                     <AppLink
                       href={item.href}
-                      className="inline-flex min-h-10 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      className="inline-flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
                     </AppLink>
@@ -157,7 +178,7 @@ export default function Layout({ children }: LayoutProps) {
                 <AppLink
                   key={item.href}
                   href={item.href}
-                  className="inline-flex min-h-10 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="inline-flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {item.label}
                 </AppLink>

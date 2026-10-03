@@ -1566,7 +1566,8 @@ export const searchableContent: SearchEntry[] = [
   },
   {
     title: "Schluss mit dem Eiertanz (Buch)",
-    description: "Das Standardwerk von Mason & Kreger für Angehörige",
+    description:
+      "Historisch einflussreicher Ratgeber von Mason & Kreger – kritisch eingeordnet",
     keywords: ["eiertanz", "mason", "kreger", "buch", "partner", "angehörige"],
     href: "/buchempfehlungen",
     section: "Buchempfehlungen",

@@ -28,8 +28,9 @@ export default function SelbsttestPage() {
           </DisplayHeading>
           <Lede className="mt-6">
             Fünf kurze Fragen helfen Ihnen, passende Inhalte zu finden. Dies ist
-            kein psychologischer Test und keine Einschätzung Ihrer Sicherheit.
-            Bei Krisensignalen erhalten Sie sofort Hilfekontakte.
+            eine redaktionelle Navigation, kein psychologischer Test, keine
+            Behandlungsempfehlung und keine Einschätzung Ihrer Sicherheit. Bei
+            Krisensignalen erhalten Sie sofort Hilfekontakte.
           </Lede>
         </header>
 

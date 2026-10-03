@@ -163,12 +163,14 @@ describe("Notfallkarte storage fallbacks", () => {
 
     renderPage();
 
+    fireEvent.click(
+      screen.getByRole("checkbox", { name: /auf diesem gerät speichern/i })
+    );
+
     expect(screen.getByRole("alert")).toHaveTextContent(
       /speichern nicht möglich/i
     );
-    expect(screen.getByRole("alert")).toHaveTextContent(
-      /eingaben bleiben dann möglicherweise nicht auf diesem gerät erhalten/i
-    );
+    expect(screen.getByRole("alert")).toHaveTextContent(/speicher/i);
   });
 
   it("falls back to direct window messaging for printing when localStorage is unavailable", () => {
@@ -186,7 +188,9 @@ describe("Notfallkarte storage fallbacks", () => {
 
     renderPage();
 
-    fireEvent.click(screen.getByRole("button", { name: /jetzt drucken/i }));
+    fireEvent.click(
+      screen.getByRole("button", { name: /drucken \/ als pdf/i })
+    );
 
     expect(openSpy).toHaveBeenCalledWith(
       "/notfallkarte-print.html?print=1",
@@ -219,28 +223,59 @@ describe("Notfallkarte storage fallbacks", () => {
     );
   });
 
-  it("tells people that entries are saved automatically in the browser", () => {
+  it("keeps sensitive entries non-persistent by default and explains the opt-in", async () => {
     renderPage();
 
     expect(
-      screen.getByText(/Änderungen werden automatisch lokal gespeichert\./i)
-    ).toBeInTheDocument();
-    expect(
       screen.getByText(
-        /werden nicht an einen Server dieser Website übertragen/i
+        /Standardmässig bleiben neue Einträge nur in dieser geöffneten Seite/i
       )
     ).toBeInTheDocument();
     expect(
+      screen.getByText(/werden nicht an den Server dieser Website übertragen/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("checkbox", { name: /auf diesem gerät speichern/i })
+    ).not.toBeChecked();
+    expect(
       screen.getByRole("button", {
-        name: /lokale notfallkarten-daten löschen/i,
+        name: /alle notfallkarten-daten löschen/i,
       })
     ).toBeInTheDocument();
+
+    fireEvent.change(screen.getByLabelText(/persönliche notizen/i), {
+      target: { value: "Nur in dieser Seite" },
+    });
+
+    await new Promise(resolve => window.setTimeout(resolve, 550));
+    expect(window.localStorage.getItem(NOTFALLKARTE_STORAGE_KEY)).toBeNull();
+  });
+
+  it("persists only after explicit activation", async () => {
+    renderPage();
+
+    fireEvent.change(screen.getByLabelText(/persönliche notizen/i), {
+      target: { value: "Bewusst lokal speichern" },
+    });
+    fireEvent.click(
+      screen.getByRole("checkbox", { name: /auf diesem gerät speichern/i })
+    );
+
+    await waitFor(() => {
+      expect(window.localStorage.getItem(NOTFALLKARTE_STORAGE_KEY)).toContain(
+        "Bewusst lokal speichern"
+      );
+    });
   });
 
   it("clears stored data persistently across delete and reload", async () => {
     vi.spyOn(window, "confirm").mockReturnValue(true);
 
     renderPage();
+
+    fireEvent.click(
+      screen.getByRole("checkbox", { name: /auf diesem gerät speichern/i })
+    );
 
     fireEvent.change(screen.getByLabelText(/persönliche notizen/i), {
       target: { value: "Nur lokal speichern" },
@@ -260,7 +295,7 @@ describe("Notfallkarte storage fallbacks", () => {
 
     fireEvent.click(
       screen.getByRole("button", {
-        name: /lokale notfallkarten-daten löschen/i,
+        name: /alle notfallkarten-daten löschen/i,
       })
     );
 
@@ -281,6 +316,10 @@ describe("Notfallkarte storage fallbacks", () => {
 
   it("flushes pending changes on pagehide before the debounce completes", async () => {
     renderPage();
+
+    fireEvent.click(
+      screen.getByRole("checkbox", { name: /auf diesem gerät speichern/i })
+    );
 
     fireEvent.click(
       screen.getByRole("button", { name: /kontakt hinzufügen/i })
@@ -307,5 +346,24 @@ describe("Notfallkarte storage fallbacks", () => {
     expect(screen.getByLabelText(/name der kontaktperson/i)).toHaveValue(
       "Sofort speichern"
     );
+  });
+
+  it("loads existing local data without silently deleting it", () => {
+    window.localStorage.setItem(
+      NOTFALLKARTE_STORAGE_KEY,
+      JSON.stringify({ notes: "Bereits gespeicherter Eintrag" })
+    );
+
+    renderPage();
+
+    expect(screen.getByLabelText(/persönliche notizen/i)).toHaveValue(
+      "Bereits gespeicherter Eintrag"
+    );
+    expect(
+      screen.getByRole("checkbox", { name: /auf diesem gerät speichern/i })
+    ).toBeChecked();
+    expect(
+      screen.getByText(/Eine bereits gespeicherte Notfallkarte wurde geladen/i)
+    ).toBeInTheDocument();
   });
 });

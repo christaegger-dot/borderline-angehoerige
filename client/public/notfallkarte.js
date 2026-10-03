@@ -2,7 +2,7 @@
   const RESPONSIVE_BREAKPOINT = 860;
 
   function scaleToFit() {
-    const pageWrapper = document.getElementById("pw");
+    const pageWrapper = document.getElementById("main-content");
     if (!pageWrapper) return;
 
     if (window.matchMedia(`(max-width: ${RESPONSIVE_BREAKPOINT}px)`).matches) {

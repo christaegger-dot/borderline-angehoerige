@@ -143,7 +143,7 @@ export default function Genesung() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <EyebrowLabel spacing="compact">
-              Vollständig ca. 8 Min · Auch abschnittweise lesbar
+              Grundtext ca. 8 Min · Mit Vertiefungen länger
             </EyebrowLabel>
             <LastVerifiedBadge path="/genesung" className="mt-3" />
           </div>

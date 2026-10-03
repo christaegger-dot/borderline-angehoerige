@@ -86,7 +86,7 @@ describe("Datenschutz", () => {
     });
     fireEvent.click(cookiesToggle);
     expect(document.body).toHaveTextContent(
-      /verwendet für ihre Einträge kein Cookie/i
+      /verwendet sie für ihre Einträge kein Cookie/i
     );
   });
 

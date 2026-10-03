@@ -1,6 +1,6 @@
 ## Letzter Lauf
 
-- Datum: 2026-05-23
+- Datum: 2026-10-02
 - Basis-URL: https://borderline-angehoerige.netlify.app
 
 | Typ         | ID                       | Ergebnis | HTTP | Content-Type                          |
@@ -11,7 +11,9 @@
 | pdf         | eisberg                  | passed   | 200  | application/pdf                       |
 | pdf         | rolle-klaeren            | passed   | 200  | application/pdf                       |
 | pdf         | krisenkommunikation      | passed   | 200  | application/pdf                       |
+| pdf         | anspannungskurve         | passed   | 200  | application/pdf                       |
 | pdf         | grenzen-spickzettel      | passed   | 200  | application/pdf                       |
+| pdf         | bruecke-gelaender        | passed   | 200  | application/pdf                       |
 | pdf         | warnsignale              | passed   | 200  | application/pdf                       |
 | pdf         | schuld-verantwortung     | passed   | 200  | application/pdf                       |
 | pdf         | spaltung                 | passed   | 200  | application/pdf                       |
@@ -19,8 +21,17 @@
 | pdf         | wenn-worte-treffen       | passed   | 200  | application/pdf                       |
 | pdf         | dear                     | passed   | 200  | application/pdf                       |
 | pdf         | radikale-akzeptanz       | passed   | 200  | application/pdf                       |
+| pdf         | garten                   | passed   | 200  | application/pdf                       |
 | pdf         | genesung-zahlen          | passed   | 200  | application/pdf                       |
 | pdf         | kinder                   | passed   | 200  | application/pdf                       |
+| pdf         | 4-arten-von-grenzen      | failed   | 404  | text/plain; charset=utf-8             |
+| pdf         | grenzen-erkennen         | failed   | 404  | text/plain; charset=utf-8             |
+| pdf         | gespraeche-kippen        | failed   | 404  | text/plain; charset=utf-8             |
+| pdf         | pause-statt-streit       | failed   | 404  | text/plain; charset=utf-8             |
+| pdf         | zuhoeren-ohne-zustimmen  | failed   | 404  | text/plain; charset=utf-8             |
+| pdf         | sauerstoffmaske          | failed   | 404  | text/plain; charset=utf-8             |
+| pdf         | stopp-technik            | failed   | 404  | text/plain; charset=utf-8             |
+| pdf         | energie-konto            | failed   | 404  | text/plain; charset=utf-8             |
 | pdf         | im-krisenmodus           | passed   | 200  | application/pdf                       |
 | pdf         | drei-saeulen             | passed   | 200  | application/pdf                       |
 | pdf         | konsistenz-prinzip       | passed   | 200  | application/pdf                       |
@@ -29,18 +40,10 @@
 | pdf         | 4-alltags-tipps          | passed   | 200  | application/pdf                       |
 | pdf         | 4-phasen                 | passed   | 200  | application/pdf                       |
 | pdf         | gehirn                   | passed   | 200  | application/pdf                       |
-| pdf         | sauerstoffmaske          | passed   | 200  | application/pdf                       |
-| pdf         | stopp-technik            | passed   | 200  | application/pdf                       |
-| pdf         | energie-konto            | passed   | 200  | application/pdf                       |
 | pdf         | erlaubnis-karte          | passed   | 200  | application/pdf                       |
-| pdf         | gespraeche-kippen        | passed   | 200  | application/pdf                       |
 | pdf         | grenzen-ohne-eskalation  | passed   | 200  | application/pdf                       |
-| pdf         | pause-statt-streit       | passed   | 200  | application/pdf                       |
-| pdf         | zuhoeren-ohne-zustimmen  | passed   | 200  | application/pdf                       |
 | pdf         | beispiel-dialog          | passed   | 200  | application/pdf                       |
 | pdf         | spiegeln-statt-aufsaugen | passed   | 200  | application/pdf                       |
-| pdf         | 4-arten-von-grenzen      | passed   | 200  | application/pdf                       |
-| pdf         | grenzen-erkennen         | passed   | 200  | application/pdf                       |
 | pdf         | lmk                      | passed   | 200  | application/pdf                       |
 | pdf         | fortschritt-paradox      | passed   | 200  | application/pdf                       |
 | pdf         | remission-heilung        | passed   | 200  | application/pdf                       |
@@ -52,7 +55,9 @@
 | preview     | eisberg                  | passed   | 200  | image/webp                            |
 | preview     | rolle-klaeren            | passed   | 200  | image/webp                            |
 | preview     | krisenkommunikation      | passed   | 200  | image/webp                            |
+| preview     | anspannungskurve         | passed   | 200  | image/webp                            |
 | preview     | grenzen-spickzettel      | passed   | 200  | image/webp                            |
+| preview     | bruecke-gelaender        | passed   | 200  | image/webp                            |
 | preview     | warnsignale              | passed   | 200  | image/webp                            |
 | preview     | schuld-verantwortung     | passed   | 200  | image/webp                            |
 | preview     | spaltung                 | passed   | 200  | image/webp                            |
@@ -60,8 +65,17 @@
 | preview     | wenn-worte-treffen       | passed   | 200  | image/webp                            |
 | preview     | dear                     | passed   | 200  | image/webp                            |
 | preview     | radikale-akzeptanz       | passed   | 200  | image/webp                            |
+| preview     | garten                   | passed   | 200  | image/webp                            |
 | preview     | genesung-zahlen          | passed   | 200  | image/webp                            |
 | preview     | kinder                   | passed   | 200  | image/webp                            |
+| preview     | 4-arten-von-grenzen      | passed   | 200  | image/webp                            |
+| preview     | grenzen-erkennen         | passed   | 200  | image/webp                            |
+| preview     | gespraeche-kippen        | passed   | 200  | image/webp                            |
+| preview     | pause-statt-streit       | passed   | 200  | image/webp                            |
+| preview     | zuhoeren-ohne-zustimmen  | passed   | 200  | image/webp                            |
+| preview     | sauerstoffmaske          | passed   | 200  | image/webp                            |
+| preview     | stopp-technik            | passed   | 200  | image/webp                            |
+| preview     | energie-konto            | passed   | 200  | image/webp                            |
 | preview     | im-krisenmodus           | passed   | 200  | image/webp                            |
 | preview     | drei-saeulen             | passed   | 200  | image/webp                            |
 | preview     | konsistenz-prinzip       | passed   | 200  | image/webp                            |
@@ -70,18 +84,10 @@
 | preview     | 4-alltags-tipps          | passed   | 200  | image/webp                            |
 | preview     | 4-phasen                 | passed   | 200  | image/webp                            |
 | preview     | gehirn                   | passed   | 200  | image/webp                            |
-| preview     | sauerstoffmaske          | passed   | 200  | image/webp                            |
-| preview     | stopp-technik            | passed   | 200  | image/webp                            |
-| preview     | energie-konto            | passed   | 200  | image/webp                            |
 | preview     | erlaubnis-karte          | passed   | 200  | image/webp                            |
-| preview     | gespraeche-kippen        | passed   | 200  | image/webp                            |
 | preview     | grenzen-ohne-eskalation  | passed   | 200  | image/webp                            |
-| preview     | pause-statt-streit       | passed   | 200  | image/webp                            |
-| preview     | zuhoeren-ohne-zustimmen  | passed   | 200  | image/webp                            |
 | preview     | beispiel-dialog          | passed   | 200  | image/webp                            |
 | preview     | spiegeln-statt-aufsaugen | passed   | 200  | image/webp                            |
-| preview     | 4-arten-von-grenzen      | passed   | 200  | image/webp                            |
-| preview     | grenzen-erkennen         | passed   | 200  | image/webp                            |
 | preview     | lmk                      | passed   | 200  | image/webp                            |
 | preview     | fortschritt-paradox      | passed   | 200  | image/webp                            |
 | preview     | remission-heilung        | passed   | 200  | image/webp                            |
@@ -99,6 +105,7 @@
 | textversion | eisberg                  | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | spaltung                 | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | krisenkommunikation      | passed   | 200  | text/html; charset=UTF-8              |
+| textversion | anspannungskurve         | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | alarm-modus              | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | 4-phasen                 | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | gehirn                   | passed   | 200  | text/html; charset=UTF-8              |
@@ -116,10 +123,12 @@
 | textversion | zuhoeren-ohne-zustimmen  | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | beispiel-dialog          | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | dear                     | passed   | 200  | text/html; charset=UTF-8              |
+| textversion | bruecke-gelaender        | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | spiegeln-statt-aufsaugen | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | 4-arten-von-grenzen      | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | grenzen-erkennen         | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | lmk                      | passed   | 200  | text/html; charset=UTF-8              |
+| textversion | garten                   | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | genesung-zahlen          | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | fortschritt-paradox      | passed   | 200  | text/html; charset=UTF-8              |
 | textversion | remission-heilung        | passed   | 200  | text/html; charset=UTF-8              |
@@ -141,4 +150,11 @@
 
 ### Befunde
 
-- keine Blocker in den HTTP-Release-Gates
+- pdf 4-arten-von-grenzen: erwartet PDF 200 mit plausibler Groesse und %PDF- Signatur, erhalten 404 text/plain; charset=utf-8 24B Mater
+- pdf grenzen-erkennen: erwartet PDF 200 mit plausibler Groesse und %PDF- Signatur, erhalten 404 text/plain; charset=utf-8 24B Mater
+- pdf gespraeche-kippen: erwartet PDF 200 mit plausibler Groesse und %PDF- Signatur, erhalten 404 text/plain; charset=utf-8 24B Mater
+- pdf pause-statt-streit: erwartet PDF 200 mit plausibler Groesse und %PDF- Signatur, erhalten 404 text/plain; charset=utf-8 24B Mater
+- pdf zuhoeren-ohne-zustimmen: erwartet PDF 200 mit plausibler Groesse und %PDF- Signatur, erhalten 404 text/plain; charset=utf-8 24B Mater
+- pdf sauerstoffmaske: erwartet PDF 200 mit plausibler Groesse und %PDF- Signatur, erhalten 404 text/plain; charset=utf-8 24B Mater
+- pdf stopp-technik: erwartet PDF 200 mit plausibler Groesse und %PDF- Signatur, erhalten 404 text/plain; charset=utf-8 24B Mater
+- pdf energie-konto: erwartet PDF 200 mit plausibler Groesse und %PDF- Signatur, erhalten 404 text/plain; charset=utf-8 24B Mater

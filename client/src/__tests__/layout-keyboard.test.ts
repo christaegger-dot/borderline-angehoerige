@@ -1,7 +1,12 @@
-import { describe, expect, it } from "vitest";
-import { isSearchShortcut } from "@/components/Layout";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { focusMainContent, isSearchShortcut } from "@/components/Layout";
 
 describe("Layout keyboard helpers", () => {
+  afterEach(() => {
+    document.body.innerHTML = "";
+    window.history.replaceState(null, "", "/");
+  });
+
   it("recognizes Cmd+K as a search shortcut", () => {
     expect(
       isSearchShortcut({
@@ -47,5 +52,16 @@ describe("Layout keyboard helpers", () => {
         key: "k",
       } as KeyboardEvent)
     ).toBe(false);
+  });
+
+  it("focuses and scrolls the main content for the skip link", () => {
+    document.body.innerHTML = '<main id="main-content" tabindex="-1"></main>';
+    const main = document.getElementById("main-content") as HTMLElement;
+    main.scrollIntoView = vi.fn();
+
+    expect(focusMainContent()).toBe(true);
+    expect(main).toHaveFocus();
+    expect(window.location.hash).toBe("#main-content");
+    expect(main.scrollIntoView).toHaveBeenCalledWith({ block: "start" });
   });
 });

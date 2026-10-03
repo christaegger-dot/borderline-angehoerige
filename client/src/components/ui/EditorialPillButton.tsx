@@ -29,12 +29,12 @@ const BASE =
   "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
 
 const VARIANT_CLASS: Record<EditorialPillButtonVariant, string> = {
-  primary: "rounded-full border px-5 py-2 text-sm",
-  secondary: "rounded-full border px-4 py-1.5 text-sm",
+  primary: "min-h-11 rounded-full border px-5 py-2 text-sm",
+  secondary: "min-h-11 rounded-full border px-4 py-1.5 text-sm",
   choice:
     "block w-full rounded-md border px-5 py-4 text-left disabled:cursor-not-allowed",
   filter:
-    "uppercase tracking-[0.14em] px-3 py-2 text-[13px] font-medium border-b-2 border-transparent first:pl-0",
+    "min-h-11 uppercase tracking-[0.14em] px-3 py-2 text-[13px] font-medium border-b-2 border-transparent first:pl-0",
 };
 
 function getStyle(

@@ -166,7 +166,7 @@ const TREE: TreeNode[] = [
         text: "Verbinden Sie mit professioneller Hilfe",
         detail:
           "Kontaktieren Sie zur Einschätzung den psychiatrischen Notfalldienst, wenn möglich gemeinsam. Bei unmittelbarer Gefahr rufen Sie den Rettungsdienst. Die Dargebotene Hand bietet Entlastung im Gespräch, ersetzt aber keine medizinische Notfallabklärung.",
-        kontakte: ["ROT_144", "GELB_PUK_ERW"],
+        kontakte: ["ROT_144", "GELB_PUK_KJP", "GELB_PUK_ERW", "GELB_PUK_65"],
         link: {
           href: "/soforthilfe",
           label: "Notfalldienste für alle Altersgruppen",
@@ -606,25 +606,51 @@ export default function SituationsWegweiser() {
   const currentId = history[history.length - 1];
   const node = nodeById(currentId);
   const resultRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const focusHeadingAfterChange = useRef(false);
+
+  const setHeadingRef = useCallback((heading: HTMLHeadingElement | null) => {
+    headingRef.current = heading;
+    if (heading && focusHeadingAfterChange.current) {
+      heading.focus({ preventScroll: true });
+      focusHeadingAfterChange.current = false;
+    }
+  }, []);
 
   const scrollToResult = () => {
     setTimeout(() => {
-      resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      const reduceMotion = window.matchMedia?.(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      resultRef.current?.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "start",
+      });
     }, 50);
   };
 
   const navigate = useCallback((nextId: string) => {
+    focusHeadingAfterChange.current = true;
     setHistory(prev => [...prev, nextId]);
     scrollToResult();
   }, []);
 
   const goBack = useCallback(() => {
+    focusHeadingAfterChange.current = true;
     setHistory(prev => (prev.length > 1 ? prev.slice(0, -1) : prev));
     scrollToResult();
   }, []);
 
   const reset = useCallback(() => {
+    focusHeadingAfterChange.current = true;
     setHistory(["start"]);
+    scrollToResult();
+  }, []);
+
+  const jumpToHistory = useCallback((index: number) => {
+    focusHeadingAfterChange.current = true;
+    setHistory(prev => prev.slice(0, index + 2));
+    scrollToResult();
   }, []);
 
   if (!node) return null;
@@ -658,7 +684,7 @@ export default function SituationsWegweiser() {
                 ) : (
                   <button
                     type="button"
-                    onClick={() => setHistory(history.slice(0, i + 2))}
+                    onClick={() => jumpToHistory(i)}
                     className="editorial-link"
                   >
                     {hNode?.question}
@@ -699,7 +725,9 @@ export default function SituationsWegweiser() {
               }
             >
               <header className="space-y-2">
-                <h2 style={questionStyle}>{node.question}</h2>
+                <h2 ref={setHeadingRef} tabIndex={-1} style={questionStyle}>
+                  {node.question}
+                </h2>
                 {node.subtitle && <p style={subtitleStyle}>{node.subtitle}</p>}
               </header>
 

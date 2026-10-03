@@ -168,7 +168,7 @@ export default function Grenzen() {
             style={{ borderColor: "var(--rule-color)" }}
           >
             <EyebrowLabel spacing="compact">
-              Vollständig ca. 12 Min · Auch abschnittweise lesbar
+              Grundtext ca. 12 Min · Mit Übungen und Vertiefungen länger
             </EyebrowLabel>
             <LastVerifiedBadge path="/grenzen" className="mt-3" />
             <ReviewBadge path="/grenzen" />

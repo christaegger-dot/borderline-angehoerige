@@ -1,945 +1,979 @@
 {
-  "label": "Production Browser Matrix 2026-05-23",
-  "createdAt": "2026-05-23T12:59:20.085Z",
+  "label": "Production Browser Matrix 2026-10-02",
+  "createdAt": "2026-10-02T07:44:28.466Z",
   "baseUrl": "https://borderline-angehoerige.netlify.app",
-  "gitHead": "244a527",
+  "gitHead": "b50dc18",
   "profiles": [
     {
       "device": "iPhone",
       "browser": "Safari",
       "optional": false,
-      "status": "bestanden mit Hinweis",
-      "testedAt": "2026-05-23",
+      "status": "nicht bestanden",
+      "testedAt": "2026-10-02",
       "testedBy": "Codex",
       "notes": "Playwright WebKit mit iPhone-13-Emulation; starke WebKit-Abdeckung, aber kein physisches iOS-Gerät",
-      "findings": [],
+      "findings": [
+        "Suche öffnen und schließen: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Suche öffnen\"]').first() to be visible\u001b[22m\n\u001b[2m    45 × locator resolved to hidden <button type=\"button\" aria-label=\"Suche öffnen\" class=\"site-header__icon-button sm:hidden\">…</button>\u001b[22m\n",
+        "/begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n",
+        "/grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
+      ],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:56:59.816Z",
-          "finishedAt": "2026-05-23T12:57:01.702Z"
+          "startedAt": "2026-10-02T07:37:26.244Z",
+          "finishedAt": "2026-10-02T07:37:28.265Z"
         },
         {
           "name": "Suche öffnen und schließen",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:57:01.702Z",
-          "finishedAt": "2026-05-23T12:57:02.576Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:37:28.265Z",
+          "finishedAt": "2026-10-02T07:37:48.268Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Suche öffnen\"]').first() to be visible\u001b[22m\n\u001b[2m    45 × locator resolved to hidden <button type=\"button\" aria-label=\"Suche öffnen\" class=\"site-header__icon-button sm:hidden\">…</button>\u001b[22m\n"
         },
         {
           "name": "Mobiles Menü öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:02.576Z",
-          "finishedAt": "2026-05-23T12:57:02.643Z"
+          "startedAt": "2026-10-02T07:37:48.268Z",
+          "finishedAt": "2026-10-02T07:37:48.353Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:02.643Z",
-          "finishedAt": "2026-05-23T12:57:02.647Z"
+          "startedAt": "2026-10-02T07:37:48.353Z",
+          "finishedAt": "2026-10-02T07:37:48.355Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:02.647Z",
-          "finishedAt": "2026-05-23T12:57:03.544Z"
+          "startedAt": "2026-10-02T07:37:48.355Z",
+          "finishedAt": "2026-10-02T07:37:49.149Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:03.545Z",
-          "finishedAt": "2026-05-23T12:57:04.455Z"
+          "startedAt": "2026-10-02T07:37:49.149Z",
+          "finishedAt": "2026-10-02T07:37:49.918Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:04.455Z",
-          "finishedAt": "2026-05-23T12:57:05.690Z"
+          "startedAt": "2026-10-02T07:37:49.918Z",
+          "finishedAt": "2026-10-02T07:37:50.981Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:05.690Z",
-          "finishedAt": "2026-05-23T12:57:08.538Z"
+          "startedAt": "2026-10-02T07:37:50.981Z",
+          "finishedAt": "2026-10-02T07:37:54.148Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:08.538Z",
-          "finishedAt": "2026-05-23T12:57:08.654Z"
+          "startedAt": "2026-10-02T07:37:54.148Z",
+          "finishedAt": "2026-10-02T07:37:54.219Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:08.654Z",
-          "finishedAt": "2026-05-23T12:57:10.424Z"
+          "startedAt": "2026-10-02T07:37:54.219Z",
+          "finishedAt": "2026-10-02T07:37:56.431Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:10.424Z",
-          "finishedAt": "2026-05-23T12:57:11.040Z"
+          "startedAt": "2026-10-02T07:37:56.431Z",
+          "finishedAt": "2026-10-02T07:37:57.363Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:11.040Z",
-          "finishedAt": "2026-05-23T12:57:12.606Z"
+          "startedAt": "2026-10-02T07:37:57.363Z",
+          "finishedAt": "2026-10-02T07:37:59.025Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:12.606Z",
-          "finishedAt": "2026-05-23T12:57:13.448Z"
+          "startedAt": "2026-10-02T07:37:59.025Z",
+          "finishedAt": "2026-10-02T07:37:59.871Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:13.448Z",
-          "finishedAt": "2026-05-23T12:57:14.282Z"
+          "startedAt": "2026-10-02T07:37:59.871Z",
+          "finishedAt": "2026-10-02T07:38:01.794Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:14.282Z",
-          "finishedAt": "2026-05-23T12:57:14.663Z"
+          "startedAt": "2026-10-02T07:38:01.794Z",
+          "finishedAt": "2026-10-02T07:38:02.219Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:14.663Z",
-          "finishedAt": "2026-05-23T12:57:15.878Z"
+          "startedAt": "2026-10-02T07:38:02.219Z",
+          "finishedAt": "2026-10-02T07:38:04.522Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:15.878Z",
-          "finishedAt": "2026-05-23T12:57:16.814Z"
+          "startedAt": "2026-10-02T07:38:04.522Z",
+          "finishedAt": "2026-10-02T07:38:05.520Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:16.814Z",
-          "finishedAt": "2026-05-23T12:57:17.683Z"
+          "startedAt": "2026-10-02T07:38:05.520Z",
+          "finishedAt": "2026-10-02T07:38:06.563Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:57:17.683Z",
-          "finishedAt": "2026-05-23T12:57:18.597Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:38:06.563Z",
+          "finishedAt": "2026-10-02T07:38:27.863Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:57:18.597Z",
-          "finishedAt": "2026-05-23T12:57:19.659Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:38:27.863Z",
+          "finishedAt": "2026-10-02T07:38:49.128Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:19.659Z",
-          "finishedAt": "2026-05-23T12:57:20.268Z"
+          "startedAt": "2026-10-02T07:38:49.128Z",
+          "finishedAt": "2026-10-02T07:38:50.076Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:20.268Z",
-          "finishedAt": "2026-05-23T12:57:20.864Z"
+          "startedAt": "2026-10-02T07:38:50.076Z",
+          "finishedAt": "2026-10-02T07:38:50.983Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:20.864Z",
-          "finishedAt": "2026-05-23T12:57:21.742Z"
+          "startedAt": "2026-10-02T07:38:50.983Z",
+          "finishedAt": "2026-10-02T07:38:52.005Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:21.742Z",
-          "finishedAt": "2026-05-23T12:57:22.704Z"
+          "startedAt": "2026-10-02T07:38:52.005Z",
+          "finishedAt": "2026-10-02T07:38:53.015Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-23T12:56:59.142Z",
-      "finishedAt": "2026-05-23T12:57:22.705Z"
+      "startedAt": "2026-10-02T07:37:25.947Z",
+      "finishedAt": "2026-10-02T07:38:53.016Z"
     },
     {
       "device": "optional macOS",
       "browser": "Safari",
       "optional": true,
-      "status": "bestanden mit Hinweis",
-      "testedAt": "2026-05-23",
+      "status": "nicht bestanden",
+      "testedAt": "2026-10-02",
       "testedBy": "Codex",
       "notes": "Playwright WebKit-Desktoplauf als Safari-Näherung; optionaler Zusatzcheck",
-      "findings": [],
+      "findings": [
+        "/begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n",
+        "/grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
+      ],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:22.832Z",
-          "finishedAt": "2026-05-23T12:57:24.442Z"
+          "startedAt": "2026-10-02T07:38:53.137Z",
+          "finishedAt": "2026-10-02T07:38:54.639Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:24.442Z",
-          "finishedAt": "2026-05-23T12:57:25.308Z"
+          "startedAt": "2026-10-02T07:38:54.639Z",
+          "finishedAt": "2026-10-02T07:38:55.514Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:25.308Z",
-          "finishedAt": "2026-05-23T12:57:25.310Z"
+          "startedAt": "2026-10-02T07:38:55.514Z",
+          "finishedAt": "2026-10-02T07:38:55.516Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:25.310Z",
-          "finishedAt": "2026-05-23T12:57:26.198Z"
+          "startedAt": "2026-10-02T07:38:55.516Z",
+          "finishedAt": "2026-10-02T07:38:56.311Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:26.198Z",
-          "finishedAt": "2026-05-23T12:57:27.008Z"
+          "startedAt": "2026-10-02T07:38:56.311Z",
+          "finishedAt": "2026-10-02T07:38:57.282Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:27.008Z",
-          "finishedAt": "2026-05-23T12:57:28.224Z"
+          "startedAt": "2026-10-02T07:38:57.282Z",
+          "finishedAt": "2026-10-02T07:38:58.460Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:28.224Z",
-          "finishedAt": "2026-05-23T12:57:31.068Z"
+          "startedAt": "2026-10-02T07:38:58.460Z",
+          "finishedAt": "2026-10-02T07:39:01.622Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:31.068Z",
-          "finishedAt": "2026-05-23T12:57:31.142Z"
+          "startedAt": "2026-10-02T07:39:01.622Z",
+          "finishedAt": "2026-10-02T07:39:01.682Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:31.142Z",
-          "finishedAt": "2026-05-23T12:57:32.803Z"
+          "startedAt": "2026-10-02T07:39:01.682Z",
+          "finishedAt": "2026-10-02T07:39:03.496Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:32.803Z",
-          "finishedAt": "2026-05-23T12:57:33.424Z"
+          "startedAt": "2026-10-02T07:39:03.496Z",
+          "finishedAt": "2026-10-02T07:39:04.441Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:33.424Z",
-          "finishedAt": "2026-05-23T12:57:34.757Z"
+          "startedAt": "2026-10-02T07:39:04.441Z",
+          "finishedAt": "2026-10-02T07:39:06.302Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:34.757Z",
-          "finishedAt": "2026-05-23T12:57:35.596Z"
+          "startedAt": "2026-10-02T07:39:06.302Z",
+          "finishedAt": "2026-10-02T07:39:07.156Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:35.596Z",
-          "finishedAt": "2026-05-23T12:57:36.489Z"
+          "startedAt": "2026-10-02T07:39:07.156Z",
+          "finishedAt": "2026-10-02T07:39:08.029Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:36.489Z",
-          "finishedAt": "2026-05-23T12:57:36.898Z"
+          "startedAt": "2026-10-02T07:39:08.029Z",
+          "finishedAt": "2026-10-02T07:39:08.453Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:36.898Z",
-          "finishedAt": "2026-05-23T12:57:37.788Z"
+          "startedAt": "2026-10-02T07:39:08.453Z",
+          "finishedAt": "2026-10-02T07:39:09.286Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:37.788Z",
-          "finishedAt": "2026-05-23T12:57:38.818Z"
+          "startedAt": "2026-10-02T07:39:09.286Z",
+          "finishedAt": "2026-10-02T07:39:10.298Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:38.818Z",
-          "finishedAt": "2026-05-23T12:57:39.698Z"
+          "startedAt": "2026-10-02T07:39:10.298Z",
+          "finishedAt": "2026-10-02T07:39:11.390Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:57:39.698Z",
-          "finishedAt": "2026-05-23T12:57:40.704Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:39:11.390Z",
+          "finishedAt": "2026-10-02T07:39:32.581Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:57:40.704Z",
-          "finishedAt": "2026-05-23T12:57:42.076Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:39:32.581Z",
+          "finishedAt": "2026-10-02T07:39:54.189Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:42.076Z",
-          "finishedAt": "2026-05-23T12:57:42.706Z"
+          "startedAt": "2026-10-02T07:39:54.189Z",
+          "finishedAt": "2026-10-02T07:39:55.117Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:42.706Z",
-          "finishedAt": "2026-05-23T12:57:43.335Z"
+          "startedAt": "2026-10-02T07:39:55.117Z",
+          "finishedAt": "2026-10-02T07:39:56.079Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:43.335Z",
-          "finishedAt": "2026-05-23T12:57:44.176Z"
+          "startedAt": "2026-10-02T07:39:56.079Z",
+          "finishedAt": "2026-10-02T07:39:57.132Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:44.176Z",
-          "finishedAt": "2026-05-23T12:57:45.014Z"
+          "startedAt": "2026-10-02T07:39:57.132Z",
+          "finishedAt": "2026-10-02T07:39:58.139Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-23T12:57:22.710Z",
-      "finishedAt": "2026-05-23T12:57:45.014Z"
+      "startedAt": "2026-10-02T07:38:53.021Z",
+      "finishedAt": "2026-10-02T07:39:58.139Z"
     },
     {
       "device": "iPhone",
       "browser": "Chrome",
       "optional": false,
-      "status": "bestanden mit Hinweis",
-      "testedAt": "2026-05-23",
+      "status": "nicht bestanden",
+      "testedAt": "2026-10-02",
       "testedBy": "Codex",
       "notes": "mobile Chrome-Emulation in Chromium; kein echter iOS-Lauf, aber Pflichtpfade und Flows technisch grün",
-      "findings": [],
+      "findings": [
+        "Suche öffnen und schließen: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Suche öffnen\"]').first() to be visible\u001b[22m\n\u001b[2m    45 × locator resolved to hidden <button type=\"button\" aria-label=\"Suche öffnen\" class=\"site-header__icon-button sm:hidden\">…</button>\u001b[22m\n",
+        "/begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n",
+        "/grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
+      ],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:46.007Z",
-          "finishedAt": "2026-05-23T12:57:47.851Z"
+          "startedAt": "2026-10-02T07:39:58.849Z",
+          "finishedAt": "2026-10-02T07:39:59.969Z"
         },
         {
           "name": "Suche öffnen und schließen",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:57:47.851Z",
-          "finishedAt": "2026-05-23T12:57:48.724Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:39:59.969Z",
+          "finishedAt": "2026-10-02T07:40:19.972Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[aria-label=\"Suche öffnen\"]').first() to be visible\u001b[22m\n\u001b[2m    45 × locator resolved to hidden <button type=\"button\" aria-label=\"Suche öffnen\" class=\"site-header__icon-button sm:hidden\">…</button>\u001b[22m\n"
         },
         {
           "name": "Mobiles Menü öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:48.724Z",
-          "finishedAt": "2026-05-23T12:57:48.790Z"
+          "startedAt": "2026-10-02T07:40:19.972Z",
+          "finishedAt": "2026-10-02T07:40:20.074Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:48.790Z",
-          "finishedAt": "2026-05-23T12:57:48.792Z"
+          "startedAt": "2026-10-02T07:40:20.074Z",
+          "finishedAt": "2026-10-02T07:40:20.088Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:48.792Z",
-          "finishedAt": "2026-05-23T12:57:49.620Z"
+          "startedAt": "2026-10-02T07:40:20.088Z",
+          "finishedAt": "2026-10-02T07:40:20.885Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:49.620Z",
-          "finishedAt": "2026-05-23T12:57:50.559Z"
+          "startedAt": "2026-10-02T07:40:20.886Z",
+          "finishedAt": "2026-10-02T07:40:21.577Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:50.559Z",
-          "finishedAt": "2026-05-23T12:57:51.537Z"
+          "startedAt": "2026-10-02T07:40:21.577Z",
+          "finishedAt": "2026-10-02T07:40:22.740Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:51.537Z",
-          "finishedAt": "2026-05-23T12:57:54.338Z"
+          "startedAt": "2026-10-02T07:40:22.740Z",
+          "finishedAt": "2026-10-02T07:40:25.815Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:54.338Z",
-          "finishedAt": "2026-05-23T12:57:54.409Z"
+          "startedAt": "2026-10-02T07:40:25.815Z",
+          "finishedAt": "2026-10-02T07:40:25.891Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:54.409Z",
-          "finishedAt": "2026-05-23T12:57:56.374Z"
+          "startedAt": "2026-10-02T07:40:25.891Z",
+          "finishedAt": "2026-10-02T07:40:27.567Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:56.374Z",
-          "finishedAt": "2026-05-23T12:57:57.341Z"
+          "startedAt": "2026-10-02T07:40:27.567Z",
+          "finishedAt": "2026-10-02T07:40:28.504Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:57.341Z",
-          "finishedAt": "2026-05-23T12:57:58.598Z"
+          "startedAt": "2026-10-02T07:40:28.504Z",
+          "finishedAt": "2026-10-02T07:40:30.361Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:58.598Z",
-          "finishedAt": "2026-05-23T12:57:59.477Z"
+          "startedAt": "2026-10-02T07:40:30.361Z",
+          "finishedAt": "2026-10-02T07:40:31.199Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:57:59.477Z",
-          "finishedAt": "2026-05-23T12:58:00.347Z"
+          "startedAt": "2026-10-02T07:40:31.199Z",
+          "finishedAt": "2026-10-02T07:40:32.001Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:00.347Z",
-          "finishedAt": "2026-05-23T12:58:00.745Z"
+          "startedAt": "2026-10-02T07:40:32.001Z",
+          "finishedAt": "2026-10-02T07:40:32.402Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:00.745Z",
-          "finishedAt": "2026-05-23T12:58:01.887Z"
+          "startedAt": "2026-10-02T07:40:32.402Z",
+          "finishedAt": "2026-10-02T07:40:33.410Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:01.887Z",
-          "finishedAt": "2026-05-23T12:58:02.707Z"
+          "startedAt": "2026-10-02T07:40:33.410Z",
+          "finishedAt": "2026-10-02T07:40:34.431Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:02.707Z",
-          "finishedAt": "2026-05-23T12:58:03.743Z"
+          "startedAt": "2026-10-02T07:40:34.431Z",
+          "finishedAt": "2026-10-02T07:40:35.485Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:58:03.743Z",
-          "finishedAt": "2026-05-23T12:58:04.843Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:40:35.485Z",
+          "finishedAt": "2026-10-02T07:40:56.489Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:58:04.843Z",
-          "finishedAt": "2026-05-23T12:58:06.139Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:40:56.489Z",
+          "finishedAt": "2026-10-02T07:41:17.477Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:06.139Z",
-          "finishedAt": "2026-05-23T12:58:06.727Z"
+          "startedAt": "2026-10-02T07:41:17.477Z",
+          "finishedAt": "2026-10-02T07:41:18.379Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:06.727Z",
-          "finishedAt": "2026-05-23T12:58:07.319Z"
+          "startedAt": "2026-10-02T07:41:18.379Z",
+          "finishedAt": "2026-10-02T07:41:19.266Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:07.319Z",
-          "finishedAt": "2026-05-23T12:58:08.136Z"
+          "startedAt": "2026-10-02T07:41:19.266Z",
+          "finishedAt": "2026-10-02T07:41:20.262Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:08.136Z",
-          "finishedAt": "2026-05-23T12:58:08.935Z"
+          "startedAt": "2026-10-02T07:41:20.262Z",
+          "finishedAt": "2026-10-02T07:41:21.257Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-23T12:57:45.787Z",
-      "finishedAt": "2026-05-23T12:58:08.936Z"
+      "startedAt": "2026-10-02T07:39:58.694Z",
+      "finishedAt": "2026-10-02T07:41:21.257Z"
     },
     {
       "device": "Android",
       "browser": "Chrome",
       "optional": false,
-      "status": "bestanden mit Hinweis",
-      "testedAt": "2026-05-23",
+      "status": "nicht bestanden",
+      "testedAt": "2026-10-02",
       "testedBy": "Codex",
       "notes": "mobile Chrome-Emulation in Chromium; Pflichtpfade und Flows technisch grün",
-      "findings": [],
+      "findings": [
+        "/begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n",
+        "/grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
+      ],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:09.081Z",
-          "finishedAt": "2026-05-23T12:58:10.817Z"
+          "startedAt": "2026-10-02T07:41:21.358Z",
+          "finishedAt": "2026-10-02T07:41:22.715Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:10.818Z",
-          "finishedAt": "2026-05-23T12:58:11.672Z"
+          "startedAt": "2026-10-02T07:41:22.715Z",
+          "finishedAt": "2026-10-02T07:41:23.584Z"
         },
         {
           "name": "Mobiles Menü öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:11.672Z",
-          "finishedAt": "2026-05-23T12:58:11.740Z"
+          "startedAt": "2026-10-02T07:41:23.584Z",
+          "finishedAt": "2026-10-02T07:41:23.646Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:11.740Z",
-          "finishedAt": "2026-05-23T12:58:11.742Z"
+          "startedAt": "2026-10-02T07:41:23.646Z",
+          "finishedAt": "2026-10-02T07:41:23.662Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:11.742Z",
-          "finishedAt": "2026-05-23T12:58:12.521Z"
+          "startedAt": "2026-10-02T07:41:23.662Z",
+          "finishedAt": "2026-10-02T07:41:24.474Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:12.521Z",
-          "finishedAt": "2026-05-23T12:58:13.301Z"
+          "startedAt": "2026-10-02T07:41:24.474Z",
+          "finishedAt": "2026-10-02T07:41:25.291Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:13.301Z",
-          "finishedAt": "2026-05-23T12:58:14.525Z"
+          "startedAt": "2026-10-02T07:41:25.291Z",
+          "finishedAt": "2026-10-02T07:41:26.282Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:14.525Z",
-          "finishedAt": "2026-05-23T12:58:17.383Z"
+          "startedAt": "2026-10-02T07:41:26.282Z",
+          "finishedAt": "2026-10-02T07:41:29.359Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:17.383Z",
-          "finishedAt": "2026-05-23T12:58:17.460Z"
+          "startedAt": "2026-10-02T07:41:29.359Z",
+          "finishedAt": "2026-10-02T07:41:29.432Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:17.460Z",
-          "finishedAt": "2026-05-23T12:58:19.247Z"
+          "startedAt": "2026-10-02T07:41:29.432Z",
+          "finishedAt": "2026-10-02T07:41:31.187Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:19.247Z",
-          "finishedAt": "2026-05-23T12:58:20.191Z"
+          "startedAt": "2026-10-02T07:41:31.187Z",
+          "finishedAt": "2026-10-02T07:41:32.143Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:20.191Z",
-          "finishedAt": "2026-05-23T12:58:21.395Z"
+          "startedAt": "2026-10-02T07:41:32.143Z",
+          "finishedAt": "2026-10-02T07:41:33.420Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:21.396Z",
-          "finishedAt": "2026-05-23T12:58:22.245Z"
+          "startedAt": "2026-10-02T07:41:33.420Z",
+          "finishedAt": "2026-10-02T07:41:33.772Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:22.245Z",
-          "finishedAt": "2026-05-23T12:58:22.944Z"
+          "startedAt": "2026-10-02T07:41:33.772Z",
+          "finishedAt": "2026-10-02T07:41:34.492Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:22.944Z",
-          "finishedAt": "2026-05-23T12:58:23.312Z"
+          "startedAt": "2026-10-02T07:41:34.492Z",
+          "finishedAt": "2026-10-02T07:41:34.866Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:23.312Z",
-          "finishedAt": "2026-05-23T12:58:24.217Z"
+          "startedAt": "2026-10-02T07:41:34.866Z",
+          "finishedAt": "2026-10-02T07:41:36.076Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:24.217Z",
-          "finishedAt": "2026-05-23T12:58:25.058Z"
+          "startedAt": "2026-10-02T07:41:36.076Z",
+          "finishedAt": "2026-10-02T07:41:37.090Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:25.058Z",
-          "finishedAt": "2026-05-23T12:58:26.090Z"
+          "startedAt": "2026-10-02T07:41:37.090Z",
+          "finishedAt": "2026-10-02T07:41:38.102Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:58:26.090Z",
-          "finishedAt": "2026-05-23T12:58:27.048Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:41:38.102Z",
+          "finishedAt": "2026-10-02T07:41:59.095Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:58:27.048Z",
-          "finishedAt": "2026-05-23T12:58:27.900Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:41:59.095Z",
+          "finishedAt": "2026-10-02T07:42:20.211Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:27.900Z",
-          "finishedAt": "2026-05-23T12:58:28.489Z"
+          "startedAt": "2026-10-02T07:42:20.211Z",
+          "finishedAt": "2026-10-02T07:42:21.104Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:28.489Z",
-          "finishedAt": "2026-05-23T12:58:29.076Z"
+          "startedAt": "2026-10-02T07:42:21.104Z",
+          "finishedAt": "2026-10-02T07:42:21.997Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:29.076Z",
-          "finishedAt": "2026-05-23T12:58:30.110Z"
+          "startedAt": "2026-10-02T07:42:21.997Z",
+          "finishedAt": "2026-10-02T07:42:22.999Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:30.110Z",
-          "finishedAt": "2026-05-23T12:58:30.920Z"
+          "startedAt": "2026-10-02T07:42:22.999Z",
+          "finishedAt": "2026-10-02T07:42:24.001Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-23T12:58:08.949Z",
-      "finishedAt": "2026-05-23T12:58:30.920Z"
+      "startedAt": "2026-10-02T07:41:21.270Z",
+      "finishedAt": "2026-10-02T07:42:24.001Z"
     },
     {
       "device": "Desktop",
       "browser": "Chrome",
       "optional": false,
-      "status": "bestanden",
-      "testedAt": "2026-05-23",
+      "status": "nicht bestanden",
+      "testedAt": "2026-10-02",
       "testedBy": "Codex",
       "notes": "Playwright-Lauf gegen Production mit System-Chrome/Chromium",
-      "findings": [],
+      "findings": [
+        "/begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n",
+        "/grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
+      ],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:31.065Z",
-          "finishedAt": "2026-05-23T12:58:32.909Z"
+          "startedAt": "2026-10-02T07:42:24.099Z",
+          "finishedAt": "2026-10-02T07:42:25.190Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:32.909Z",
-          "finishedAt": "2026-05-23T12:58:33.794Z"
+          "startedAt": "2026-10-02T07:42:25.190Z",
+          "finishedAt": "2026-10-02T07:42:26.073Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:33.794Z",
-          "finishedAt": "2026-05-23T12:58:33.797Z"
+          "startedAt": "2026-10-02T07:42:26.073Z",
+          "finishedAt": "2026-10-02T07:42:26.083Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:33.797Z",
-          "finishedAt": "2026-05-23T12:58:34.700Z"
+          "startedAt": "2026-10-02T07:42:26.083Z",
+          "finishedAt": "2026-10-02T07:42:26.755Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:34.700Z",
-          "finishedAt": "2026-05-23T12:58:35.653Z"
+          "startedAt": "2026-10-02T07:42:26.755Z",
+          "finishedAt": "2026-10-02T07:42:27.522Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:35.653Z",
-          "finishedAt": "2026-05-23T12:58:36.624Z"
+          "startedAt": "2026-10-02T07:42:27.522Z",
+          "finishedAt": "2026-10-02T07:42:28.403Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:36.624Z",
-          "finishedAt": "2026-05-23T12:58:39.404Z"
+          "startedAt": "2026-10-02T07:42:28.403Z",
+          "finishedAt": "2026-10-02T07:42:31.517Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:39.404Z",
-          "finishedAt": "2026-05-23T12:58:39.476Z"
+          "startedAt": "2026-10-02T07:42:31.517Z",
+          "finishedAt": "2026-10-02T07:42:31.585Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:39.476Z",
-          "finishedAt": "2026-05-23T12:58:41.186Z"
+          "startedAt": "2026-10-02T07:42:31.585Z",
+          "finishedAt": "2026-10-02T07:42:33.262Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:41.186Z",
-          "finishedAt": "2026-05-23T12:58:42.115Z"
+          "startedAt": "2026-10-02T07:42:33.262Z",
+          "finishedAt": "2026-10-02T07:42:34.213Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:42.115Z",
-          "finishedAt": "2026-05-23T12:58:43.296Z"
+          "startedAt": "2026-10-02T07:42:34.213Z",
+          "finishedAt": "2026-10-02T07:42:36.107Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:43.297Z",
-          "finishedAt": "2026-05-23T12:58:44.128Z"
+          "startedAt": "2026-10-02T07:42:36.107Z",
+          "finishedAt": "2026-10-02T07:42:36.935Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:44.128Z",
-          "finishedAt": "2026-05-23T12:58:44.726Z"
+          "startedAt": "2026-10-02T07:42:36.935Z",
+          "finishedAt": "2026-10-02T07:42:37.667Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:44.726Z",
-          "finishedAt": "2026-05-23T12:58:45.107Z"
+          "startedAt": "2026-10-02T07:42:37.667Z",
+          "finishedAt": "2026-10-02T07:42:37.917Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:45.107Z",
-          "finishedAt": "2026-05-23T12:58:46.227Z"
+          "startedAt": "2026-10-02T07:42:37.917Z",
+          "finishedAt": "2026-10-02T07:42:38.898Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:46.227Z",
-          "finishedAt": "2026-05-23T12:58:47.180Z"
+          "startedAt": "2026-10-02T07:42:38.898Z",
+          "finishedAt": "2026-10-02T07:42:39.912Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:47.180Z",
-          "finishedAt": "2026-05-23T12:58:48.224Z"
+          "startedAt": "2026-10-02T07:42:39.912Z",
+          "finishedAt": "2026-10-02T07:42:40.942Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:58:48.224Z",
-          "finishedAt": "2026-05-23T12:58:49.328Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:42:40.942Z",
+          "finishedAt": "2026-10-02T07:43:01.952Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:58:49.328Z",
-          "finishedAt": "2026-05-23T12:58:50.590Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:43:01.952Z",
+          "finishedAt": "2026-10-02T07:43:23.162Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:50.590Z",
-          "finishedAt": "2026-05-23T12:58:51.173Z"
+          "startedAt": "2026-10-02T07:43:23.162Z",
+          "finishedAt": "2026-10-02T07:43:24.104Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:51.173Z",
-          "finishedAt": "2026-05-23T12:58:51.769Z"
+          "startedAt": "2026-10-02T07:43:24.104Z",
+          "finishedAt": "2026-10-02T07:43:24.989Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:51.769Z",
-          "finishedAt": "2026-05-23T12:58:52.675Z"
+          "startedAt": "2026-10-02T07:43:24.989Z",
+          "finishedAt": "2026-10-02T07:43:26.023Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:52.675Z",
-          "finishedAt": "2026-05-23T12:58:53.482Z"
+          "startedAt": "2026-10-02T07:43:26.023Z",
+          "finishedAt": "2026-10-02T07:43:27.017Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-23T12:58:30.926Z",
-      "finishedAt": "2026-05-23T12:58:53.483Z"
+      "startedAt": "2026-10-02T07:42:24.007Z",
+      "finishedAt": "2026-10-02T07:43:27.017Z"
     },
     {
       "device": "Desktop",
       "browser": "Firefox",
       "optional": false,
-      "status": "bestanden",
-      "testedAt": "2026-05-23",
+      "status": "nicht bestanden",
+      "testedAt": "2026-10-02",
       "testedBy": "Codex",
       "notes": "Playwright-Firefox-Lauf gegen Production",
-      "findings": [],
+      "findings": [
+        "/begleiterkrankungen#depression öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n",
+        "/grenzen#gewalt öffnet Zielabschnitt: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
+      ],
       "steps": [
         {
           "name": "Startseite direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:55.745Z",
-          "finishedAt": "2026-05-23T12:58:57.517Z"
+          "startedAt": "2026-10-02T07:43:27.923Z",
+          "finishedAt": "2026-10-02T07:43:29.219Z"
         },
         {
           "name": "Suche öffnen und schließen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:57.517Z",
-          "finishedAt": "2026-05-23T12:58:58.479Z"
+          "startedAt": "2026-10-02T07:43:29.219Z",
+          "finishedAt": "2026-10-02T07:43:30.142Z"
         },
         {
           "name": "Sticky Header über Scrollstrecke sichtbar",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:58.479Z",
-          "finishedAt": "2026-05-23T12:58:58.483Z"
+          "startedAt": "2026-10-02T07:43:30.142Z",
+          "finishedAt": "2026-10-02T07:43:30.145Z"
         },
         {
           "name": "/soforthilfe direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:58.483Z",
-          "finishedAt": "2026-05-23T12:58:59.412Z"
+          "startedAt": "2026-10-02T07:43:30.145Z",
+          "finishedAt": "2026-10-02T07:43:30.882Z"
         },
         {
           "name": "/notfallkarte direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:58:59.412Z",
-          "finishedAt": "2026-05-23T12:59:00.340Z"
+          "startedAt": "2026-10-02T07:43:30.882Z",
+          "finishedAt": "2026-10-02T07:43:31.463Z"
         },
         {
           "name": "/notfallkarte/erstellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:00.340Z",
-          "finishedAt": "2026-05-23T12:59:01.362Z"
+          "startedAt": "2026-10-02T07:43:31.463Z",
+          "finishedAt": "2026-10-02T07:43:32.166Z"
         },
         {
           "name": "Notfallkarte Eingaben + Reload + Zurück/Vorwärts",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:01.362Z",
-          "finishedAt": "2026-05-23T12:59:04.679Z"
+          "startedAt": "2026-10-02T07:43:32.166Z",
+          "finishedAt": "2026-10-02T07:43:35.569Z"
         },
         {
           "name": "Notfallkarte Kontaktlimit bis 3",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:04.679Z",
-          "finishedAt": "2026-05-23T12:59:04.815Z"
+          "startedAt": "2026-10-02T07:43:35.569Z",
+          "finishedAt": "2026-10-02T07:43:35.703Z"
         },
         {
           "name": "Notfallkarte Druckansicht",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:04.815Z",
-          "finishedAt": "2026-05-23T12:59:06.512Z"
+          "startedAt": "2026-10-02T07:43:35.703Z",
+          "finishedAt": "2026-10-02T07:43:37.193Z"
         },
         {
           "name": "Notfallkarte löschen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:06.512Z",
-          "finishedAt": "2026-05-23T12:59:07.634Z"
+          "startedAt": "2026-10-02T07:43:37.193Z",
+          "finishedAt": "2026-10-02T07:43:38.298Z"
         },
         {
           "name": "/materialien + Filter",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:07.634Z",
-          "finishedAt": "2026-05-23T12:59:08.972Z"
+          "startedAt": "2026-10-02T07:43:38.298Z",
+          "finishedAt": "2026-10-02T07:43:39.425Z"
         },
         {
           "name": "Materialien Textversion öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:08.972Z",
-          "finishedAt": "2026-05-23T12:59:09.855Z"
+          "startedAt": "2026-10-02T07:43:39.425Z",
+          "finishedAt": "2026-10-02T07:43:40.297Z"
         },
         {
           "name": "Materialien PDF inline öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:09.855Z",
-          "finishedAt": "2026-05-23T12:59:10.690Z"
+          "startedAt": "2026-10-02T07:43:40.297Z",
+          "finishedAt": "2026-10-02T07:43:41.300Z"
         },
         {
           "name": "Materialien PDF herunterladen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:10.690Z",
-          "finishedAt": "2026-05-23T12:59:10.956Z"
+          "startedAt": "2026-10-02T07:43:41.300Z",
+          "finishedAt": "2026-10-02T07:43:41.722Z"
         },
         {
           "name": "Release-PDF-Routen direkt prüfen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:10.956Z",
-          "finishedAt": "2026-05-23T12:59:12.211Z"
+          "startedAt": "2026-10-02T07:43:41.722Z",
+          "finishedAt": "2026-10-02T07:43:42.699Z"
         },
         {
           "name": "/unterstuetzen/therapie#therapieangebote öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:12.211Z",
-          "finishedAt": "2026-05-23T12:59:13.252Z"
+          "startedAt": "2026-10-02T07:43:42.699Z",
+          "finishedAt": "2026-10-02T07:43:43.382Z"
         },
         {
           "name": "/diagnostik#anbieter öffnet Zielabschnitt",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:13.252Z",
-          "finishedAt": "2026-05-23T12:59:14.357Z"
+          "startedAt": "2026-10-02T07:43:43.382Z",
+          "finishedAt": "2026-10-02T07:43:44.067Z"
         },
         {
           "name": "/begleiterkrankungen#depression öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:59:14.357Z",
-          "finishedAt": "2026-05-23T12:59:15.252Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:43:44.067Z",
+          "finishedAt": "2026-10-02T07:44:04.694Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Depression bei Borderline' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/grenzen#gewalt öffnet Zielabschnitt",
-          "status": "passed",
-          "startedAt": "2026-05-23T12:59:15.252Z",
-          "finishedAt": "2026-05-23T12:59:16.588Z"
+          "status": "failed",
+          "startedAt": "2026-10-02T07:44:04.694Z",
+          "finishedAt": "2026-10-02T07:44:25.674Z",
+          "message": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Abschnitt Wenn der Angehörige körperlich übergriffig wird' }) to be visible\u001b[22m\n"
         },
         {
           "name": "/diagnostik direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:16.588Z",
-          "finishedAt": "2026-05-23T12:59:17.212Z"
+          "startedAt": "2026-10-02T07:44:25.674Z",
+          "finishedAt": "2026-10-02T07:44:26.321Z"
         },
         {
           "name": "/grenzen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:17.212Z",
-          "finishedAt": "2026-05-23T12:59:17.859Z"
+          "startedAt": "2026-10-02T07:44:26.321Z",
+          "finishedAt": "2026-10-02T07:44:26.959Z"
         },
         {
           "name": "/beratung direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:17.859Z",
-          "finishedAt": "2026-05-23T12:59:18.954Z"
+          "startedAt": "2026-10-02T07:44:26.959Z",
+          "finishedAt": "2026-10-02T07:44:27.597Z"
         },
         {
           "name": "/quellen direkt öffnen",
           "status": "passed",
-          "startedAt": "2026-05-23T12:59:18.954Z",
-          "finishedAt": "2026-05-23T12:59:19.831Z"
+          "startedAt": "2026-10-02T07:44:27.597Z",
+          "finishedAt": "2026-10-02T07:44:28.225Z"
         }
       ],
       "available": true,
-      "startedAt": "2026-05-23T12:58:55.338Z",
-      "finishedAt": "2026-05-23T12:59:19.831Z"
+      "startedAt": "2026-10-02T07:43:27.567Z",
+      "finishedAt": "2026-10-02T07:44:28.225Z"
     }
   ],
-  "releaseDecision": "green-with-notes"
+  "releaseDecision": "blocked"
 }

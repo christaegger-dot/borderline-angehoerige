@@ -521,6 +521,8 @@
 
   .site-header__brand {
     display: flex;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
     flex-shrink: 0;
     align-items: center;
     gap: 0.85rem;
@@ -568,7 +570,7 @@
 
   .site-header__link {
     display: inline-flex;
-    min-height: 34px;
+    min-height: 2.75rem;
     align-items: center;
     border-bottom: 1px solid transparent;
     color: var(--fg-secondary);
@@ -595,7 +597,7 @@
   }
 
   .site-header__action {
-    height: 34px;
+    height: 2.75rem;
     align-items: center;
     gap: 0.4rem;
     border: 1px solid var(--fs-rule);
@@ -643,8 +645,8 @@
   .site-header__icon-button,
   .site-header__mobile-crisis {
     display: inline-flex;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
     align-items: center;
     justify-content: center;
     border-radius: var(--fs-radius-chip);
@@ -689,6 +691,7 @@
 
   .breadcrumb-shell__back {
     display: inline-flex;
+    min-height: 2.75rem;
     align-items: center;
     gap: 0.35rem;
     color: var(--fg-tertiary);
@@ -716,12 +719,31 @@
   }
 
   .breadcrumb-shell__list {
-    display: none;
+    display: flex;
+    min-width: 0;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.25rem 0.4rem;
     color: var(--fg-tertiary);
     font-size: 0.78rem;
+  }
+
+  @media (max-width: 639px) {
+    .breadcrumb-shell__list > li:not(:last-child) {
+      display: none;
+    }
+
+    .breadcrumb-shell__list > li:last-child .breadcrumb-shell__separator {
+      display: none;
+    }
+
+    .breadcrumb-shell__list > li:last-child,
+    .breadcrumb-shell__current {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   @media (min-width: 640px) {
@@ -732,6 +754,7 @@
 
   .breadcrumb-shell__link {
     display: flex;
+    min-height: 2.75rem;
     align-items: center;
     gap: 0.35rem;
     color: inherit;

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "package": "borderline-p1-illustrations",
+  "designSystem": {
+    "fullSystem": "PUK Zürich Design System 1.10.1",
+    "websiteProfile": "PUK Zürich Website-Profil 1.10.1-r4",
+    "handoutProfile": "PUK Fachstelle-Handouts in Vollsystem 1.10.1"
+  },
+  "sourceStylesheet": {
+    "path": "handouts/p1-illustrations/p1-illustrations.css",
+    "sha256": "07b0c6b2a62da69cc853e6d12ab7f906547eafe83a8f9cfbb4bbd4299616d224"
+  },
+  "exportContract": {
+    "pdf": "A4 portrait, one page, tagged export requested",
+    "fullWebp": "1600 x 2263 px",
+    "thumbnailWebp": "600 x 849 px",
+    "pdfUaClaim": false,
+    "matterhornReview": "pending"
+  },
+  "renderer": {
+    "playwright": "1.56.1",
+    "browser": "154.0.8037.93"
+  },
+  "entries": [
+    {
+      "id": "radikale-akzeptanz",
+      "version": "puk-radikale-akzeptanz-v1",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-radikale-akzeptanz-v1.html",
+      "sourceHtmlSha256": "f8e0db9cc56961d0ad68dc8fb21cf84595736e43b0205dc8a452ae45fb8433f3",
+      "pdf": {
+        "path": "client/public/infografiken/puk-radikale-akzeptanz-v1.pdf",
+        "bytes": 54941,
+        "sha256": "bdd4674a82ae6ac7c28a82de0722e1a7731a4344b6b0ab0d70e6240233ea0fa5",
+        "pages": 1,
+        "tagged": true
+      },
+      "webp": {
+        "path": "client/public/infografiken/puk-radikale-akzeptanz-v1.webp",
+        "bytes": 148040,
+        "sha256": "82204f492da71ffb19a6a3b1254cdd835bd2968c1af5e5d3a62d5847cb28be67",
+        "width": 1600,
+        "height": 2263
+      },
+      "thumbnail": {
+        "path": "client/public/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
+        "bytes": 32826,
+        "sha256": "5c590b133b9a7ffe4e2306adc8c435f4071aaec4e89f2759f8335b2f26e55b12",
+        "width": 600,
+        "height": 849
+      },
+      "safetyText": "Bei Gefahr geht Schutz vor Akzeptanzübung. Sie müssen schwierige Realität nicht gut finden, um sie anzuerkennen. Akzeptanz heisst nicht bleiben, schweigen oder Gewalt tolerieren."
+    },
+    {
+      "id": "gespraeche-kippen",
+      "version": "puk-gespraeche-kippen-v1",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-gespraeche-kippen-v1.html",
+      "sourceHtmlSha256": "c4cd431ed1172fdc7fb4d73352022dc39717f92d210bacef1f8f71dcf341c40e",
+      "pdf": {
+        "path": "client/public/infografiken/puk-gespraeche-kippen-v1.pdf",
+        "bytes": 53211,
+        "sha256": "8345443757db2162d7783ca5ceeaa39b590674c66d528fa461ac28eb7f3c7049",
+        "pages": 1,
+        "tagged": true
+      },
+      "webp": {
+        "path": "client/public/infografiken/puk-gespraeche-kippen-v1.webp",
+        "bytes": 155230,
+        "sha256": "45a0f1816fd0463477947503ec9cc7540b1b93a468efe1db97319cef7be820a3",
+        "width": 1600,
+        "height": 2263
+      },
+      "thumbnail": {
+        "path": "client/public/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
+        "bytes": 33812,
+        "sha256": "45696908f602e56c5e5fe6cf8e60da7454cef00ed82018d53c5b5b21df843295",
+        "width": 600,
+        "height": 849
+      },
+      "safetyText": "Bei Bedrohung, Gewalt oder akuter Selbstgefährdung nicht weiter diskutieren, sondern Abstand schaffen und Hilfe holen."
+    },
+    {
+      "id": "beispiel-dialog",
+      "version": "puk-beispiel-dialog-v1",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-beispiel-dialog-v1.html",
+      "sourceHtmlSha256": "90201985f0bc132a13d4d078f0b1eb573885acb7a0c81465d3ad5f123906ede0",
+      "pdf": {
+        "path": "client/public/infografiken/puk-beispiel-dialog-v1.pdf",
+        "bytes": 55046,
+        "sha256": "d4d0ab428a70e243b366988bdfe817b7e38158dbf2625761c92f6329f972ac42",
+        "pages": 1,
+        "tagged": true
+      },
+      "webp": {
+        "path": "client/public/infografiken/puk-beispiel-dialog-v1.webp",
+        "bytes": 149576,
+        "sha256": "aa189ece238681a61acfb841700140bcb0aca7d603d1fa1b3ac5fd8dd5b1649d",
+        "width": 1600,
+        "height": 2263
+      },
+      "thumbnail": {
+        "path": "client/public/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
+        "bytes": 32616,
+        "sha256": "4d6335069fd4296904a4d777c063d01a5806f9f089aa1dc8c1aab1c323f11f91",
+        "width": 600,
+        "height": 849
+      },
+      "safetyText": "Bei Eskalation, Bedrohung oder akuter Gefahr den Dialog abbrechen und Hilfe holen."
+    }
+  ]
+}

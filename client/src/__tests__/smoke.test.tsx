@@ -417,24 +417,23 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("heading", {
         name: /Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln/i,
+        level: 1,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
+      await screen.findAllByText(
         /Akzeptieren heisst: aufhören, gegen die Realität zu kämpfen/i
       )
-    ).toBeInTheDocument();
+    ).not.toHaveLength(0);
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
     ).toHaveAttribute("href", "/selbstfuersorge");
     expect(
-      screen.queryByRole("link", { name: /PDF öffnen/i })
-    ).not.toBeInTheDocument();
-    expect(
-      screen.getByText(
-        /Druckgrafik und das PDF werden fachlich und visuell überarbeitet/i
-      )
+      screen.getByRole("link", { name: /PDF öffnen/i })
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).toHaveTextContent(/Schutz vor Akzeptanzübung/i);
   });
 
   it("HandoutTextPage: rendert Wenn-Worte-treffen-Textversion", async () => {
@@ -463,16 +462,20 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("heading", {
         name: /Wenn Gespräche kippen: 3 Schritte/i,
+        level: 1,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
+      await screen.findAllByText(
         /Kurz, ruhig und wiederholbar wirkt in Krisen stärker als Argumente\./i
       )
-    ).toBeInTheDocument();
+    ).not.toHaveLength(0);
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
     ).toHaveAttribute("href", "/kommunizieren");
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).toHaveTextContent(/Bedrohung, Gewalt oder akuter Selbstgefährdung/i);
   });
 
   it("HandoutTextPage: rendert Grenzen-ohne-Eskalation-Textversion", async () => {
@@ -543,16 +546,21 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("heading", {
         name: /Beispiel-Dialog/i,
+        level: 1,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
+      await screen.findAllByText(
         /Kurz, ruhig, wiederholbar\. Nicht erklären, nicht rechtfertigen, nicht streiten\./i
       )
-    ).toBeInTheDocument();
+    ).not.toHaveLength(0);
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
     ).toHaveAttribute("href", "/kommunizieren");
+    expect(screen.getAllByText(/keine Zauberformel/i)).not.toHaveLength(0);
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).toHaveTextContent(/Dialog abbrechen und Hilfe holen/i);
   });
 
   it("HandoutTextPage: rendert DEAR-Textversion", async () => {
@@ -906,10 +914,10 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toHaveAttribute("href", "/materialien/text/gespraeche-kippen");
     expect(
-      screen.queryByRole("link", {
+      screen.getByRole("link", {
         name: /PDF öffnen: Wenn Gespräche kippen: 3 Schritte/i,
       })
-    ).not.toBeInTheDocument();
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Pause statt Streit/i,

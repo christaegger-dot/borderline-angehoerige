@@ -225,6 +225,21 @@ export const handoutTextVersions = [
       "Wenn Gespräche kippen, hilft eine kurze Struktur mehr als lange Erklärungen. Die Schritte unterstützen Angehörige dabei, früher zu verlangsamen und Eskalation zu vermeiden.",
       "Sie finden drei Schritte, einen kurzen Pausenplan für Kipppunkte, die Kernaussage des Blatts, eine kleine Merkhilfe und drei alltagsnahe Hinweise.",
     ],
+    visualization: {
+      kind: "conversation-path",
+      title: "Wenn Gespräche kippen",
+      lead: "Drei kurze Schritte helfen, ein angespanntes Gespräch zu verlangsamen und klar zu bleiben.",
+      longDescription:
+        "Die Darstellung zeigt eine feste Reihenfolge: zuerst selbst beruhigen und das Tempo senken, dann das Gefühl des Gegenübers benennen und Kontakt anbieten, danach eine Grenze und einen konkreten Rückkehrplan formulieren. Eine Pause wird angekündigt, zeitlich begrenzt und mit einer Rückkehr verbunden. Bei Bedrohung, Gewalt oder akuter Selbstgefährdung endet der Gesprächspfad; dann sollen Angehörige Abstand schaffen und Hilfe holen.",
+      safetyTitle: "Gespräch abbrechen, wenn Schutz nötig ist",
+      safetyBulletStartsWith: "Bei Bedrohung",
+      sections: {
+        keyStatement: "Kernaussage",
+        steps: "Die 3 Schritte",
+        pausePlan: "Wenn es kippt: Mini-Plan",
+        actions: "Was können Sie tun?",
+      },
+    },
     sections: [
       {
         title: "Die 3 Schritte",
@@ -473,6 +488,20 @@ export const handoutTextVersions = [
       "Der Beispiel-Dialog zeigt einen möglichen Gesprächsablauf Schritt für Schritt. Er ist hilfreich, wenn sich konkrete Sätze greifbarer anfühlen als reine Regeln.",
       "Sie finden einen kurzen Dialogverlauf, die Kernaussage und drei Hinweise für das eigene Üben.",
     ],
+    visualization: {
+      kind: "dialog-sequence",
+      lead: "Ein möglicher Gesprächsablauf: wahrnehmen, Kontakt halten, begrenzen und verlässlich zurückkehren.",
+      longDescription:
+        "Die Darstellung beginnt mit dem Vorwurf «Du bist nie für mich da». Darauf folgen fünf mögliche Bewegungen: Aufregung wahrnehmen, Kontakt anbieten, eine Grenze setzen, eine zehnminütige Pause mit genauer Rückkehrzeit vereinbaren und tatsächlich zum Gespräch zurückkehren. Das Blatt kennzeichnet den Dialog als anpassbares Beispiel und nicht als Zauberformel. Bei Eskalation, Bedrohung oder akuter Gefahr soll der Dialog abgebrochen und Hilfe geholt werden.",
+      safetyTitle: "Sicherheit vor Gesprächsführung",
+      safetyBulletStartsWith: "Bei Eskalation",
+      sections: {
+        keyStatement: "Kernaussage",
+        dialog: "Dialogverlauf",
+        adaptation: "Was der Dialog zeigt",
+        actions: "Was können Sie tun?",
+      },
+    },
     sections: [
       {
         title: "Dialogverlauf",

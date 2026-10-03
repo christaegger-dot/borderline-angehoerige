@@ -124,8 +124,7 @@ export const handoutGovernance = {
   "gespraeche-kippen": {
     id: "gespraeche-kippen",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-gespraeche-kippen-v1",
-    visualAssetStatus: "text-only",
+    approvedVersion: "puk-gespraeche-kippen-v1",
   },
   "grenzen-ohne-eskalation": {
     id: "grenzen-ohne-eskalation",
@@ -150,8 +149,7 @@ export const handoutGovernance = {
   "beispiel-dialog": {
     id: "beispiel-dialog",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-beispiel-dialog-v1",
-    visualAssetStatus: "text-only",
+    approvedVersion: "puk-beispiel-dialog-v1",
   },
   dear: {
     id: "dear",
@@ -221,8 +219,7 @@ export const handoutGovernance = {
   "radikale-akzeptanz": {
     id: "radikale-akzeptanz",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-radikale-akzeptanz-v1",
-    visualAssetStatus: "text-only",
+    approvedVersion: "puk-radikale-akzeptanz-v1",
   },
   garten: {
     id: "garten",

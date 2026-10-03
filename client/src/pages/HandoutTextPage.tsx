@@ -9,6 +9,7 @@ import {
   Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
+import HandoutSemanticVisual from "@/components/HandoutSemanticVisual";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import {
@@ -25,6 +26,10 @@ import {
   HANDOUT_VISUAL_REFRESH_NOTE,
   isHandoutVisualPublished,
 } from "@/content/handoutGovernance";
+import {
+  hasHandoutVisualization,
+  resolveHandoutVisualization,
+} from "@/content/handoutVisualizations";
 import type {
   HandoutTextCard,
   HandoutTextVersion,
@@ -108,6 +113,8 @@ export default function HandoutTextPage({
   const downloadHref = getHandoutDownloadHref(pdfSourceUrl) ?? pdfSourceUrl;
   const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
   const visualPublished = isHandoutVisualPublished(handoutMeta.id);
+  const hasSemanticVisualization = hasHandoutVisualization(handoutMeta.id);
+  const semanticVisualization = resolveHandoutVisualization(handout);
   const revisedWebCopy = [
     "genesung-zahlen",
     "kinder",
@@ -221,7 +228,14 @@ export default function HandoutTextPage({
             </p>
           ) : null}
 
-          {visualPublished ? (
+          {semanticVisualization ? (
+            <HandoutSemanticVisual visualization={semanticVisualization} />
+          ) : hasSemanticVisualization ? (
+            <div className="mt-10 flex items-center gap-3" style={bodyStyle}>
+              <Spinner className="size-5 text-[color:var(--accent-primary)]" />
+              <p>Die barrierefreie Darstellung wird geladen.</p>
+            </div>
+          ) : visualPublished ? (
             <figure
               className="mt-10 border-t pt-5"
               style={{ borderColor: "var(--rule-color)" }}

@@ -16,6 +16,46 @@ export interface HandoutTextSection {
   calloutText?: string;
 }
 
+type HandoutVisualizationBaseConfig = {
+  title?: string;
+  lead?: string;
+  longDescription: string;
+  safetyTitle: string;
+  safetyBulletStartsWith: string;
+  nextStepBulletIndex?: number;
+};
+
+export type HandoutVisualizationConfig =
+  | (HandoutVisualizationBaseConfig & {
+      kind: "acceptance-path";
+      sections: {
+        keyStatement: string;
+        notAcceptance: string;
+        safetyCardTitle: string;
+        acceptance: string;
+        steps: string;
+        actions: string;
+      };
+    })
+  | (HandoutVisualizationBaseConfig & {
+      kind: "conversation-path";
+      sections: {
+        keyStatement: string;
+        steps: string;
+        pausePlan: string;
+        actions: string;
+      };
+    })
+  | (HandoutVisualizationBaseConfig & {
+      kind: "dialog-sequence";
+      sections: {
+        keyStatement: string;
+        dialog: string;
+        adaptation: string;
+        actions: string;
+      };
+    });
+
 export interface HandoutTextVersionMeta {
   id: string;
   path: string;
@@ -38,6 +78,7 @@ export interface HandoutTextVersionContent {
   sections: HandoutTextSection[];
   sourceLine: string;
   standLine: string;
+  visualization?: HandoutVisualizationConfig;
 }
 
 export interface HandoutTextVersion

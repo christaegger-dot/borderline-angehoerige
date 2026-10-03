@@ -468,6 +468,23 @@ export const handoutTextVersions = [
       "Radikale Akzeptanz bedeutet nicht Aufgeben. Sie hilft, die Realität anzuerkennen und Kraft wieder auf das zu richten, was heute beeinflussbar ist.",
       "Die Gegenüberstellung zeigt, was radikale Akzeptanz nicht ist, was sie ist, wie Sie sie in vier Schritten üben und worauf Sie Ihre Energie stattdessen richten können.",
     ],
+    visualization: {
+      kind: "acceptance-path",
+      title: "Radikale Akzeptanz",
+      lead: "Die Realität anerkennen, ohne aufzugeben – und Kraft für das Beeinflussbare zurückgewinnen.",
+      longDescription:
+        "Die Darstellung grenzt zuerst vier Missverständnisse ab: Radikale Akzeptanz ist weder Aufgeben noch Gutheissen, Passivität oder Resignation. Danach zeigt sie vier Schritte: die Realität benennen, die eigene Reaktion spüren, den inneren Kampf loslassen und den Fokus auf das Beeinflussbare richten. Der Sicherheitshinweis stellt klar, dass Schutz vor der Akzeptanzübung geht und Akzeptanz niemals bedeutet, zu bleiben, zu schweigen oder Gewalt zu tolerieren.",
+      safetyTitle: "Schutz geht vor",
+      safetyBulletStartsWith: "Bei Gefahr",
+      sections: {
+        keyStatement: "Kernaussage",
+        notAcceptance: "Was Radikale Akzeptanz nicht ist",
+        safetyCardTitle: "Nicht Gutheissen",
+        acceptance: "Was Radikale Akzeptanz ist",
+        steps: "4-Schritte-Übung",
+        actions: "Was können Sie tun?",
+      },
+    },
     sections: [
       {
         title: "Kernaussage",

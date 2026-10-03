@@ -93,20 +93,20 @@ describe("MaterialienLibrarySection", () => {
       })
     ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
     expect(
-      screen.getByRole("img", {
-        name: /Radikale Akzeptanz.*Druckgrafik in Überarbeitung/i,
+      screen.getByRole("button", {
+        name: /Radikale Akzeptanz.*öffnen/i,
       })
     ).toBeInTheDocument();
     expect(
-      screen.queryByRole("button", {
-        name: /Radikale Akzeptanz.*öffnen/i,
+      screen.getByRole("link", {
+        name: /Textversion lesen: Beispiel-Dialog/i,
       })
-    ).not.toBeInTheDocument();
+    ).toHaveAttribute("href", "/materialien/text/beispiel-dialog");
     expect(
-      screen.queryByRole("link", {
+      screen.getByRole("link", {
         name: /Radikale Akzeptanz.*herunterladen/i,
       })
-    ).not.toBeInTheDocument();
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Wenn Worte treffen – 5 häufige Schuldzuweisungen/i,

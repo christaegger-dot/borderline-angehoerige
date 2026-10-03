@@ -98,15 +98,12 @@ function collectProductiveHandoutSources() {
 }
 
 describe("handout governance", () => {
-  it("keeps confirmed P1 drift assets text-only until a new visual is approved", () => {
+  it("keeps unresolved P1 drift assets text-only and publishes rebuilt visuals", () => {
     const textOnlyIds = [
       "4-phasen",
       "gehirn",
       "remission-heilung",
       "5-faktoren-genesung",
-      "radikale-akzeptanz",
-      "gespraeche-kippen",
-      "beispiel-dialog",
       "rolle-genesungsprozess",
     ];
 
@@ -122,6 +119,9 @@ describe("handout governance", () => {
       "dear",
       "garten",
       "4-arten-von-grenzen",
+      "radikale-akzeptanz",
+      "gespraeche-kippen",
+      "beispiel-dialog",
     ]) {
       expect(isHandoutVisualPublished(id), id).toBe(true);
     }

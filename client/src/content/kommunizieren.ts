@@ -31,10 +31,10 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "gespraeche-kippen",
     title: "Wenn Gespräche kippen: 3 Schritte",
     description: "Beruhigen, verbinden, begrenzen",
-    url: "/infografiken/manus-gespraeche-kippen-v1.webp",
+    url: "/infografiken/puk-gespraeche-kippen-v1.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp",
-    pdfUrl: "/infografiken/manus-gespraeche-kippen-v1.pdf",
+      "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
+    pdfUrl: "/infografiken/puk-gespraeche-kippen-v1.pdf",
     category: "techniken",
   },
   {
@@ -81,10 +81,9 @@ export const kommItems: KommunikationsMaterial[] = [
     id: "beispiel-dialog",
     title: "Beispiel-Dialog",
     description: "Technik-Schritte in einem kurzen Gespräch",
-    url: "/infografiken/manus-beispiel-dialog-v1.webp",
-    thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp",
-    pdfUrl: "/infografiken/manus-beispiel-dialog-v1.pdf",
+    url: "/infografiken/puk-beispiel-dialog-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
+    pdfUrl: "/infografiken/puk-beispiel-dialog-v1.pdf",
     category: "praxis",
   },
   {

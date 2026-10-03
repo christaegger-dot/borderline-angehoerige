@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-06-02T08:44:52.563Z",
+  "generatedAt": "2026-10-03T23:28:51.819Z",
   "summary": {
-    "totalFiles": 228,
-    "totalSizeMb": 189.92,
+    "totalFiles": 255,
+    "totalSizeMb": 191.61,
     "activeReferencedFiles": 126,
-    "activeReferencedSizeMb": 91.51,
-    "supportFiles": 37,
-    "supportFilesSizeMb": 52.28,
-    "unreferencedCandidates": 65,
-    "unreferencedCandidatesSizeMb": 46.13,
+    "activeReferencedSizeMb": 68.48,
+    "supportFiles": 46,
+    "supportFilesSizeMb": 53.06,
+    "unreferencedCandidates": 83,
+    "unreferencedCandidatesSizeMb": 70.07,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 32
+    "versionFamiliesWithLegacyCandidates": 33
   },
   "missingReferences": [],
   "activeReferences": [
@@ -228,22 +228,6 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v5.webp",
-      "sizeBytes": 57316,
-      "usages": [
-        {
-          "source": "grenzen",
-          "id": "4-arten-von-grenzen",
-          "field": "thumbnailUrl"
-        },
-        {
-          "source": "home-featured",
-          "id": "vier-arten-grenzen",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v1.webp",
       "sizeBytes": 62308,
       "usages": [
@@ -299,17 +283,6 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp",
-      "sizeBytes": 59010,
-      "usages": [
-        {
-          "source": "kommunizieren",
-          "id": "beispiel-dialog",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp",
       "sizeBytes": 51480,
       "usages": [
@@ -332,22 +305,6 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-dear-v1.webp",
-      "sizeBytes": 60484,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "dear",
-          "field": "thumbnailUrl"
-        },
-        {
-          "source": "grenzen",
-          "id": "dear",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/extras/thumbnails/manus-drei-saeulen-v1.webp",
       "sizeBytes": 52960,
       "usages": [
@@ -362,6 +319,11 @@
       "path": "/infografiken/extras/thumbnails/manus-energie-konto-v1.webp",
       "sizeBytes": 74256,
       "usages": [
+        {
+          "source": "materials",
+          "id": "energie-konto",
+          "field": "thumbnailUrl"
+        },
         {
           "source": "selbstfuersorge",
           "id": "energie-konto",
@@ -381,17 +343,6 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-garten-v2-thumb.png",
-      "sizeBytes": 321009,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "garten",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/extras/thumbnails/manus-gehirn-v1.webp",
       "sizeBytes": 63700,
       "usages": [
@@ -403,8 +354,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp",
-      "sizeBytes": 58336,
+      "path": "/infografiken/extras/thumbnails/manus-genesung-zahlen-v3.webp",
+      "sizeBytes": 26052,
       "usages": [
         {
           "source": "materials",
@@ -419,20 +370,14 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp",
-      "sizeBytes": 59956,
-      "usages": [
-        {
-          "source": "kommunizieren",
-          "id": "gespraeche-kippen",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/extras/thumbnails/manus-grenzen-erkennen-v1.webp",
       "sizeBytes": 63126,
       "usages": [
+        {
+          "source": "materials",
+          "id": "grenzen-erkennen",
+          "field": "thumbnailUrl"
+        },
         {
           "source": "grenzen",
           "id": "grenzen-erkennen",
@@ -468,8 +413,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-kinder-v1.webp",
-      "sizeBytes": 76554,
+      "path": "/infografiken/extras/thumbnails/manus-kinder-v3.webp",
+      "sizeBytes": 30890,
       "usages": [
         {
           "source": "materials",
@@ -526,24 +471,13 @@
       "sizeBytes": 446124,
       "usages": [
         {
-          "source": "kommunizieren",
-          "id": "pause-statt-streit",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp",
-      "sizeBytes": 70060,
-      "usages": [
-        {
           "source": "materials",
-          "id": "radikale-akzeptanz",
+          "id": "pause-statt-streit",
           "field": "thumbnailUrl"
         },
         {
-          "source": "selbstfuersorge",
-          "id": "radikale-akzeptanz",
+          "source": "kommunizieren",
+          "id": "pause-statt-streit",
           "field": "thumbnailUrl"
         }
       ]
@@ -609,9 +543,14 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp",
-      "sizeBytes": 54400,
+      "path": "/infografiken/extras/thumbnails/manus-stopp-technik-v3.webp",
+      "sizeBytes": 22258,
       "usages": [
+        {
+          "source": "materials",
+          "id": "stopp-technik",
+          "field": "thumbnailUrl"
+        },
         {
           "source": "selbstfuersorge",
           "id": "stopp-technik",
@@ -668,9 +607,110 @@
       ]
     },
     {
+      "path": "/infografiken/extras/thumbnails/puk-4-arten-von-grenzen-v1.webp",
+      "sizeBytes": 30184,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "4-arten-von-grenzen",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "grenzen",
+          "id": "4-arten-von-grenzen",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "home-featured",
+          "id": "vier-arten-grenzen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
+      "sizeBytes": 32616,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "beispiel-dialog",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "kommunizieren",
+          "id": "beispiel-dialog",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/puk-dear-v1.webp",
+      "sizeBytes": 29978,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "dear",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "grenzen",
+          "id": "dear",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/puk-garten-v1.webp",
+      "sizeBytes": 30386,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "garten",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
+      "sizeBytes": 33812,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "gespraeche-kippen",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "kommunizieren",
+          "id": "gespraeche-kippen",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
+      "sizeBytes": 32826,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "radikale-akzeptanz",
+          "field": "thumbnailUrl"
+        },
+        {
+          "source": "selbstfuersorge",
+          "id": "radikale-akzeptanz",
+          "field": "thumbnailUrl"
+        }
+      ]
+    },
+    {
       "path": "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v5.webp",
       "sizeBytes": 59144,
       "usages": [
+        {
+          "source": "materials",
+          "id": "sauerstoffmaske",
+          "field": "thumbnailUrl"
+        },
         {
           "source": "selbstfuersorge",
           "id": "sauerstoffmaske",
@@ -687,6 +727,11 @@
       "path": "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v10.webp",
       "sizeBytes": 49488,
       "usages": [
+        {
+          "source": "materials",
+          "id": "zuhoeren-ohne-zustimmen",
+          "field": "thumbnailUrl"
+        },
         {
           "source": "kommunizieren",
           "id": "zuhoeren-ohne-zustimmen",
@@ -718,28 +763,6 @@
           "source": "genesung",
           "id": "fortschritt-paradox",
           "field": "img"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/grenzen-die-4-arten-von-grenzen-v5.pdf",
-      "sizeBytes": 184150,
-      "usages": [
-        {
-          "source": "grenzen",
-          "id": "4-arten-von-grenzen",
-          "field": "pdfUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/grenzen-die-4-arten-von-grenzen-v5.webp",
-      "sizeBytes": 224058,
-      "usages": [
-        {
-          "source": "grenzen",
-          "id": "4-arten-von-grenzen",
-          "field": "url"
         }
       ]
     },
@@ -854,28 +877,6 @@
       ]
     },
     {
-      "path": "/infografiken/manus-beispiel-dialog-v1.pdf",
-      "sizeBytes": 2962611,
-      "usages": [
-        {
-          "source": "kommunizieren",
-          "id": "beispiel-dialog",
-          "field": "pdfUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/manus-beispiel-dialog-v1.webp",
-      "sizeBytes": 245686,
-      "usages": [
-        {
-          "source": "kommunizieren",
-          "id": "beispiel-dialog",
-          "field": "url"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/manus-beziehungs-achtsamkeit-v1.pdf",
       "sizeBytes": 2464940,
       "usages": [
@@ -920,38 +921,6 @@
       ]
     },
     {
-      "path": "/infografiken/manus-dear-v1.pdf",
-      "sizeBytes": 2858355,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "dear",
-          "field": "downloadUrl"
-        },
-        {
-          "source": "grenzen",
-          "id": "dear",
-          "field": "pdfUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/manus-dear-v1.webp",
-      "sizeBytes": 265820,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "dear",
-          "field": "url"
-        },
-        {
-          "source": "grenzen",
-          "id": "dear",
-          "field": "url"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/manus-drei-saeulen-v1.pdf",
       "sizeBytes": 2790666,
       "usages": [
@@ -978,6 +947,11 @@
       "sizeBytes": 3669652,
       "usages": [
         {
+          "source": "materials",
+          "id": "energie-konto",
+          "field": "downloadUrl"
+        },
+        {
           "source": "selbstfuersorge",
           "id": "energie-konto",
           "field": "pdf"
@@ -988,6 +962,11 @@
       "path": "/infografiken/manus-energie-konto-v1.webp",
       "sizeBytes": 318974,
       "usages": [
+        {
+          "source": "materials",
+          "id": "energie-konto",
+          "field": "url"
+        },
         {
           "source": "selbstfuersorge",
           "id": "energie-konto",
@@ -1018,28 +997,6 @@
       ]
     },
     {
-      "path": "/infografiken/manus-garten-v2.pdf",
-      "sizeBytes": 1659864,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "garten",
-          "field": "downloadUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/manus-garten-v2.webp",
-      "sizeBytes": 284646,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "garten",
-          "field": "url"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/manus-gehirn-v1.pdf",
       "sizeBytes": 3093524,
       "usages": [
@@ -1062,8 +1019,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-genesung-zahlen-v1.pdf",
-      "sizeBytes": 2753141,
+      "path": "/infografiken/manus-genesung-zahlen-v3.pdf",
+      "sizeBytes": 24411,
       "usages": [
         {
           "source": "materials",
@@ -1078,8 +1035,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-genesung-zahlen-v1.webp",
-      "sizeBytes": 243030,
+      "path": "/infografiken/manus-genesung-zahlen-v3.webp",
+      "sizeBytes": 127746,
       "usages": [
         {
           "source": "materials",
@@ -1094,31 +1051,14 @@
       ]
     },
     {
-      "path": "/infografiken/manus-gespraeche-kippen-v1.pdf",
-      "sizeBytes": 2925422,
-      "usages": [
-        {
-          "source": "kommunizieren",
-          "id": "gespraeche-kippen",
-          "field": "pdfUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/manus-gespraeche-kippen-v1.webp",
-      "sizeBytes": 264030,
-      "usages": [
-        {
-          "source": "kommunizieren",
-          "id": "gespraeche-kippen",
-          "field": "url"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/manus-grenzen-erkennen-v1.pdf",
       "sizeBytes": 2980462,
       "usages": [
+        {
+          "source": "materials",
+          "id": "grenzen-erkennen",
+          "field": "downloadUrl"
+        },
         {
           "source": "grenzen",
           "id": "grenzen-erkennen",
@@ -1130,6 +1070,11 @@
       "path": "/infografiken/manus-grenzen-erkennen-v1.webp",
       "sizeBytes": 265172,
       "usages": [
+        {
+          "source": "materials",
+          "id": "grenzen-erkennen",
+          "field": "url"
+        },
         {
           "source": "grenzen",
           "id": "grenzen-erkennen",
@@ -1192,8 +1137,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-kinder-v1.pdf",
-      "sizeBytes": 3519033,
+      "path": "/infografiken/manus-kinder-v3.pdf",
+      "sizeBytes": 24728,
       "usages": [
         {
           "source": "materials",
@@ -1208,8 +1153,8 @@
       ]
     },
     {
-      "path": "/infografiken/manus-kinder-v1.webp",
-      "sizeBytes": 326220,
+      "path": "/infografiken/manus-kinder-v3.webp",
+      "sizeBytes": 151620,
       "usages": [
         {
           "source": "materials",
@@ -1304,6 +1249,11 @@
       "sizeBytes": 943298,
       "usages": [
         {
+          "source": "materials",
+          "id": "pause-statt-streit",
+          "field": "downloadUrl"
+        },
+        {
           "source": "kommunizieren",
           "id": "pause-statt-streit",
           "field": "pdfUrl"
@@ -1315,41 +1265,14 @@
       "sizeBytes": 186140,
       "usages": [
         {
+          "source": "materials",
+          "id": "pause-statt-streit",
+          "field": "url"
+        },
+        {
           "source": "kommunizieren",
           "id": "pause-statt-streit",
           "field": "url"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/manus-radikale-akzeptanz-v1.pdf",
-      "sizeBytes": 3168314,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "radikale-akzeptanz",
-          "field": "downloadUrl"
-        },
-        {
-          "source": "selbstfuersorge",
-          "id": "radikale-akzeptanz",
-          "field": "pdf"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/manus-radikale-akzeptanz-v1.webp",
-      "sizeBytes": 287344,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "radikale-akzeptanz",
-          "field": "url"
-        },
-        {
-          "source": "selbstfuersorge",
-          "id": "radikale-akzeptanz",
-          "field": "webp"
         }
       ]
     },
@@ -1474,9 +1397,14 @@
       ]
     },
     {
-      "path": "/infografiken/manus-stopp-technik-v1.pdf",
-      "sizeBytes": 2698514,
+      "path": "/infografiken/manus-stopp-technik-v3.pdf",
+      "sizeBytes": 24449,
       "usages": [
+        {
+          "source": "materials",
+          "id": "stopp-technik",
+          "field": "downloadUrl"
+        },
         {
           "source": "selbstfuersorge",
           "id": "stopp-technik",
@@ -1485,9 +1413,14 @@
       ]
     },
     {
-      "path": "/infografiken/manus-stopp-technik-v1.webp",
-      "sizeBytes": 238440,
+      "path": "/infografiken/manus-stopp-technik-v3.webp",
+      "sizeBytes": 107328,
       "usages": [
+        {
+          "source": "materials",
+          "id": "stopp-technik",
+          "field": "url"
+        },
         {
           "source": "selbstfuersorge",
           "id": "stopp-technik",
@@ -1592,9 +1525,196 @@
       ]
     },
     {
+      "path": "/infografiken/puk-4-arten-von-grenzen-v1.pdf",
+      "sizeBytes": 27139,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "4-arten-von-grenzen",
+          "field": "downloadUrl"
+        },
+        {
+          "source": "grenzen",
+          "id": "4-arten-von-grenzen",
+          "field": "pdfUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-4-arten-von-grenzen-v1.webp",
+      "sizeBytes": 118150,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "4-arten-von-grenzen",
+          "field": "url"
+        },
+        {
+          "source": "grenzen",
+          "id": "4-arten-von-grenzen",
+          "field": "url"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-beispiel-dialog-v1.pdf",
+      "sizeBytes": 55046,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "beispiel-dialog",
+          "field": "downloadUrl"
+        },
+        {
+          "source": "kommunizieren",
+          "id": "beispiel-dialog",
+          "field": "pdfUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-beispiel-dialog-v1.webp",
+      "sizeBytes": 149576,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "beispiel-dialog",
+          "field": "url"
+        },
+        {
+          "source": "kommunizieren",
+          "id": "beispiel-dialog",
+          "field": "url"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-dear-v1.pdf",
+      "sizeBytes": 26598,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "dear",
+          "field": "downloadUrl"
+        },
+        {
+          "source": "grenzen",
+          "id": "dear",
+          "field": "pdfUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-dear-v1.webp",
+      "sizeBytes": 112932,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "dear",
+          "field": "url"
+        },
+        {
+          "source": "grenzen",
+          "id": "dear",
+          "field": "url"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-garten-v1.pdf",
+      "sizeBytes": 26182,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "garten",
+          "field": "downloadUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-garten-v1.webp",
+      "sizeBytes": 114436,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "garten",
+          "field": "url"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-gespraeche-kippen-v1.pdf",
+      "sizeBytes": 53211,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "gespraeche-kippen",
+          "field": "downloadUrl"
+        },
+        {
+          "source": "kommunizieren",
+          "id": "gespraeche-kippen",
+          "field": "pdfUrl"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-gespraeche-kippen-v1.webp",
+      "sizeBytes": 155230,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "gespraeche-kippen",
+          "field": "url"
+        },
+        {
+          "source": "kommunizieren",
+          "id": "gespraeche-kippen",
+          "field": "url"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-radikale-akzeptanz-v1.pdf",
+      "sizeBytes": 54941,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "radikale-akzeptanz",
+          "field": "downloadUrl"
+        },
+        {
+          "source": "selbstfuersorge",
+          "id": "radikale-akzeptanz",
+          "field": "pdf"
+        }
+      ]
+    },
+    {
+      "path": "/infografiken/puk-radikale-akzeptanz-v1.webp",
+      "sizeBytes": 148040,
+      "usages": [
+        {
+          "source": "materials",
+          "id": "radikale-akzeptanz",
+          "field": "url"
+        },
+        {
+          "source": "selbstfuersorge",
+          "id": "radikale-akzeptanz",
+          "field": "webp"
+        }
+      ]
+    },
+    {
       "path": "/infografiken/sauerstoff-die-sauerstoffmaske-v5.pdf",
       "sizeBytes": 186404,
       "usages": [
+        {
+          "source": "materials",
+          "id": "sauerstoffmaske",
+          "field": "downloadUrl"
+        },
         {
           "source": "selbstfuersorge",
           "id": "sauerstoffmaske",
@@ -1607,6 +1727,11 @@
       "sizeBytes": 235252,
       "usages": [
         {
+          "source": "materials",
+          "id": "sauerstoffmaske",
+          "field": "url"
+        },
+        {
           "source": "selbstfuersorge",
           "id": "sauerstoffmaske",
           "field": "webp"
@@ -1618,6 +1743,11 @@
       "sizeBytes": 168098,
       "usages": [
         {
+          "source": "materials",
+          "id": "zuhoeren-ohne-zustimmen",
+          "field": "downloadUrl"
+        },
+        {
           "source": "kommunizieren",
           "id": "zuhoeren-ohne-zustimmen",
           "field": "pdfUrl"
@@ -1628,6 +1758,11 @@
       "path": "/infografiken/validierung-die-validierungs-treppe-v10.webp",
       "sizeBytes": 123588,
       "usages": [
+        {
+          "source": "materials",
+          "id": "zuhoeren-ohne-zustimmen",
+          "field": "url"
+        },
         {
           "source": "kommunizieren",
           "id": "zuhoeren-ohne-zustimmen",
@@ -1644,6 +1779,10 @@
     {
       "path": "/infografiken/extras/README.txt",
       "sizeBytes": 2176
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v5.webp",
+      "sizeBytes": 57316
     },
     {
       "path": "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v2-thumb.png",
@@ -1666,6 +1805,10 @@
       "sizeBytes": 63216
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp",
+      "sizeBytes": 59010
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-beispiel-dialog-v2-thumb.png",
       "sizeBytes": 488189
     },
@@ -1676,6 +1819,10 @@
     {
       "path": "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v1.webp",
       "sizeBytes": 88536
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-dear-v1.webp",
+      "sizeBytes": 60484
     },
     {
       "path": "/infografiken/extras/thumbnails/manus-dear-v2-thumb.png",
@@ -1698,12 +1845,24 @@
       "sizeBytes": 83594
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-garten-v2-thumb.png",
+      "sizeBytes": 321009
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-gehirn-v2-thumb.png",
       "sizeBytes": 534667
     },
     {
+      "path": "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp",
+      "sizeBytes": 58336
+    },
+    {
       "path": "/infografiken/extras/thumbnails/manus-genesung-zahlen-v2-thumb.png",
       "sizeBytes": 478053
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp",
+      "sizeBytes": 59956
     },
     {
       "path": "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v2-thumb.png",
@@ -1716,6 +1875,10 @@
     {
       "path": "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp",
       "sizeBytes": 62038
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-kinder-v1.webp",
+      "sizeBytes": 76554
     },
     {
       "path": "/infografiken/extras/thumbnails/manus-kinder-v2-thumb.png",
@@ -1736,6 +1899,10 @@
     {
       "path": "/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp",
       "sizeBytes": 72026
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp",
+      "sizeBytes": 70060
     },
     {
       "path": "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v2-thumb.png",
@@ -1760,6 +1927,10 @@
     {
       "path": "/infografiken/extras/thumbnails/manus-spiegeln-statt-aufsaugen-v2.webp",
       "sizeBytes": 65996
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp",
+      "sizeBytes": 54400
     },
     {
       "path": "/infografiken/extras/thumbnails/manus-stopp-technik-v2-thumb.png",
@@ -1792,6 +1963,20 @@
       "sizeBytes": 1626,
       "versionFamily": null,
       "version": null,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/grenzen-die-4-arten-von-grenzen-v5.pdf",
+      "sizeBytes": 184150,
+      "versionFamily": "/infografiken/grenzen-die-4-arten-von-grenzen",
+      "version": 5,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/grenzen-die-4-arten-von-grenzen-v5.webp",
+      "sizeBytes": 224058,
+      "versionFamily": "/infografiken/grenzen-die-4-arten-von-grenzen",
+      "version": 5,
       "referencedSiblingPaths": []
     },
     {
@@ -1889,24 +2074,32 @@
       "referencedSiblingPaths": []
     },
     {
+      "path": "/infografiken/manus-beispiel-dialog-v1.pdf",
+      "sizeBytes": 2962611,
+      "versionFamily": "/infografiken/manus-beispiel-dialog",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-beispiel-dialog-v1.webp",
+      "sizeBytes": 245686,
+      "versionFamily": "/infografiken/manus-beispiel-dialog",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
       "path": "/infografiken/manus-beispiel-dialog-v2.pdf",
       "sizeBytes": 1849296,
       "versionFamily": "/infografiken/manus-beispiel-dialog",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-beispiel-dialog-v1.pdf",
-        "/infografiken/manus-beispiel-dialog-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-beispiel-dialog-v2.webp",
       "sizeBytes": 273038,
       "versionFamily": "/infografiken/manus-beispiel-dialog",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-beispiel-dialog-v1.pdf",
-        "/infografiken/manus-beispiel-dialog-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-beziehungs-achtsamkeit-v2.pdf",
@@ -1943,24 +2136,32 @@
       "referencedSiblingPaths": []
     },
     {
+      "path": "/infografiken/manus-dear-v1.pdf",
+      "sizeBytes": 2858355,
+      "versionFamily": "/infografiken/manus-dear",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-dear-v1.webp",
+      "sizeBytes": 265820,
+      "versionFamily": "/infografiken/manus-dear",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
       "path": "/infografiken/manus-dear-v2.pdf",
       "sizeBytes": 1872536,
       "versionFamily": "/infografiken/manus-dear",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-dear-v1.pdf",
-        "/infografiken/manus-dear-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-dear-v2.webp",
       "sizeBytes": 291760,
       "versionFamily": "/infografiken/manus-dear",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-dear-v1.pdf",
-        "/infografiken/manus-dear-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-drei-saeulen-v2.pdf",
@@ -2037,6 +2238,20 @@
       "referencedSiblingPaths": []
     },
     {
+      "path": "/infografiken/manus-garten-v2.pdf",
+      "sizeBytes": 1659864,
+      "versionFamily": "/infografiken/manus-garten",
+      "version": 2,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-garten-v2.webp",
+      "sizeBytes": 284646,
+      "versionFamily": "/infografiken/manus-garten",
+      "version": 2,
+      "referencedSiblingPaths": []
+    },
+    {
       "path": "/infografiken/manus-gehirn-v2.pdf",
       "sizeBytes": 2036159,
       "versionFamily": "/infografiken/manus-gehirn",
@@ -2057,44 +2272,60 @@
       ]
     },
     {
+      "path": "/infografiken/manus-genesung-zahlen-v1.pdf",
+      "sizeBytes": 2753141,
+      "versionFamily": "/infografiken/manus-genesung-zahlen",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-genesung-zahlen-v1.webp",
+      "sizeBytes": 243030,
+      "versionFamily": "/infografiken/manus-genesung-zahlen",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
       "path": "/infografiken/manus-genesung-zahlen-v2.pdf",
       "sizeBytes": 1721140,
       "versionFamily": "/infografiken/manus-genesung-zahlen",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-genesung-zahlen-v1.pdf",
-        "/infografiken/manus-genesung-zahlen-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-genesung-zahlen-v2.webp",
       "sizeBytes": 262760,
       "versionFamily": "/infografiken/manus-genesung-zahlen",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-genesung-zahlen-v1.pdf",
-        "/infografiken/manus-genesung-zahlen-v1.webp"
-      ]
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-gespraeche-kippen-v1.pdf",
+      "sizeBytes": 2925422,
+      "versionFamily": "/infografiken/manus-gespraeche-kippen",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-gespraeche-kippen-v1.webp",
+      "sizeBytes": 264030,
+      "versionFamily": "/infografiken/manus-gespraeche-kippen",
+      "version": 1,
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-gespraeche-kippen-v2.pdf",
       "sizeBytes": 1913249,
       "versionFamily": "/infografiken/manus-gespraeche-kippen",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-gespraeche-kippen-v1.pdf",
-        "/infografiken/manus-gespraeche-kippen-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-gespraeche-kippen-v2.webp",
       "sizeBytes": 316584,
       "versionFamily": "/infografiken/manus-gespraeche-kippen",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-gespraeche-kippen-v1.pdf",
-        "/infografiken/manus-gespraeche-kippen-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-grenzen-erkennen-v2.pdf",
@@ -2131,24 +2362,32 @@
       "referencedSiblingPaths": []
     },
     {
+      "path": "/infografiken/manus-kinder-v1.pdf",
+      "sizeBytes": 3519033,
+      "versionFamily": "/infografiken/manus-kinder",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-kinder-v1.webp",
+      "sizeBytes": 326220,
+      "versionFamily": "/infografiken/manus-kinder",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
       "path": "/infografiken/manus-kinder-v2.pdf",
       "sizeBytes": 2119695,
       "versionFamily": "/infografiken/manus-kinder",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-kinder-v1.pdf",
-        "/infografiken/manus-kinder-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-kinder-v2.webp",
       "sizeBytes": 357008,
       "versionFamily": "/infografiken/manus-kinder",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-kinder-v1.pdf",
-        "/infografiken/manus-kinder-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-konsistenz-prinzip-v2.pdf",
@@ -2225,24 +2464,32 @@
       "referencedSiblingPaths": []
     },
     {
+      "path": "/infografiken/manus-radikale-akzeptanz-v1.pdf",
+      "sizeBytes": 3168314,
+      "versionFamily": "/infografiken/manus-radikale-akzeptanz",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-radikale-akzeptanz-v1.webp",
+      "sizeBytes": 287344,
+      "versionFamily": "/infografiken/manus-radikale-akzeptanz",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
       "path": "/infografiken/manus-radikale-akzeptanz-v2.pdf",
       "sizeBytes": 2037535,
       "versionFamily": "/infografiken/manus-radikale-akzeptanz",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-radikale-akzeptanz-v1.pdf",
-        "/infografiken/manus-radikale-akzeptanz-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-radikale-akzeptanz-v2.webp",
       "sizeBytes": 318192,
       "versionFamily": "/infografiken/manus-radikale-akzeptanz",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-radikale-akzeptanz-v1.pdf",
-        "/infografiken/manus-radikale-akzeptanz-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-remission-heilung-v2.pdf",
@@ -2327,24 +2574,32 @@
       "referencedSiblingPaths": []
     },
     {
+      "path": "/infografiken/manus-stopp-technik-v1.pdf",
+      "sizeBytes": 2698514,
+      "versionFamily": "/infografiken/manus-stopp-technik",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/manus-stopp-technik-v1.webp",
+      "sizeBytes": 238440,
+      "versionFamily": "/infografiken/manus-stopp-technik",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
       "path": "/infografiken/manus-stopp-technik-v2.pdf",
       "sizeBytes": 1763055,
       "versionFamily": "/infografiken/manus-stopp-technik",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-stopp-technik-v1.pdf",
-        "/infografiken/manus-stopp-technik-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-stopp-technik-v2.webp",
       "sizeBytes": 263674,
       "versionFamily": "/infografiken/manus-stopp-technik",
       "version": 2,
-      "referencedSiblingPaths": [
-        "/infografiken/manus-stopp-technik-v1.pdf",
-        "/infografiken/manus-stopp-technik-v1.webp"
-      ]
+      "referencedSiblingPaths": []
     },
     {
       "path": "/infografiken/manus-warnsignale-v2.pdf",
@@ -2475,16 +2730,6 @@
       "legacyCandidateFiles": []
     },
     {
-      "family": "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen",
-      "availableFiles": [
-        "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v5.webp"
-      ],
-      "referencedFiles": [
-        "/infografiken/extras/thumbnails/grenzen-die-4-arten-von-grenzen-v5.webp"
-      ],
-      "legacyCandidateFiles": []
-    },
-    {
       "family": "/infografiken/extras/thumbnails/manus-4-alltags-tipps",
       "availableFiles": [
         "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v1.webp"
@@ -2525,16 +2770,6 @@
       "legacyCandidateFiles": []
     },
     {
-      "family": "/infografiken/extras/thumbnails/manus-beispiel-dialog",
-      "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp"
-      ],
-      "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-beispiel-dialog-v1.webp"
-      ],
-      "legacyCandidateFiles": []
-    },
-    {
       "family": "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit",
       "availableFiles": [
         "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp"
@@ -2542,12 +2777,6 @@
       "referencedFiles": [
         "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp"
       ],
-      "legacyCandidateFiles": []
-    },
-    {
-      "family": "/infografiken/extras/thumbnails/manus-dear",
-      "availableFiles": ["/infografiken/extras/thumbnails/manus-dear-v1.webp"],
-      "referencedFiles": ["/infografiken/extras/thumbnails/manus-dear-v1.webp"],
       "legacyCandidateFiles": []
     },
     {
@@ -2593,20 +2822,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-genesung-zahlen",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp"
+        "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp",
+        "/infografiken/extras/thumbnails/manus-genesung-zahlen-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-genesung-zahlen-v1.webp"
-      ],
-      "legacyCandidateFiles": []
-    },
-    {
-      "family": "/infografiken/extras/thumbnails/manus-gespraeche-kippen",
-      "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp"
-      ],
-      "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-gespraeche-kippen-v1.webp"
+        "/infografiken/extras/thumbnails/manus-genesung-zahlen-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2623,10 +2843,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-kinder",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-kinder-v1.webp"
+        "/infografiken/extras/thumbnails/manus-kinder-v1.webp",
+        "/infografiken/extras/thumbnails/manus-kinder-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-kinder-v1.webp"
+        "/infografiken/extras/thumbnails/manus-kinder-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2652,17 +2873,11 @@
     },
     {
       "family": "/infografiken/extras/thumbnails/manus-lmk",
-      "availableFiles": ["/infografiken/extras/thumbnails/manus-lmk-v1.webp"],
-      "referencedFiles": ["/infografiken/extras/thumbnails/manus-lmk-v1.webp"],
-      "legacyCandidateFiles": []
-    },
-    {
-      "family": "/infografiken/extras/thumbnails/manus-radikale-akzeptanz",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp"
+        "/infografiken/extras/thumbnails/manus-lmk-v1.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp"
+        "/infografiken/extras/thumbnails/manus-lmk-v1.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2689,10 +2904,11 @@
     {
       "family": "/infografiken/extras/thumbnails/manus-stopp-technik",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp"
+        "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp",
+        "/infografiken/extras/thumbnails/manus-stopp-technik-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/manus-stopp-technik-v1.webp"
+        "/infografiken/extras/thumbnails/manus-stopp-technik-v3.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2703,6 +2919,66 @@
       ],
       "referencedFiles": [
         "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v16.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/puk-4-arten-von-grenzen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/puk-4-arten-von-grenzen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/puk-4-arten-von-grenzen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/puk-beispiel-dialog",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/puk-dear",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/puk-dear-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/puk-dear-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/puk-garten",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/puk-garten-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/puk-garten-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/puk-gespraeche-kippen",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/extras/thumbnails/puk-radikale-akzeptanz",
+      "availableFiles": [
+        "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2744,11 +3020,11 @@
         "/infografiken/grenzen-die-4-arten-von-grenzen-v5.pdf",
         "/infografiken/grenzen-die-4-arten-von-grenzen-v5.webp"
       ],
-      "referencedFiles": [
+      "referencedFiles": [],
+      "legacyCandidateFiles": [
         "/infografiken/grenzen-die-4-arten-von-grenzen-v5.pdf",
         "/infografiken/grenzen-die-4-arten-von-grenzen-v5.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/manus-4-alltags-tipps",
@@ -2843,11 +3119,10 @@
         "/infografiken/manus-beispiel-dialog-v2.pdf",
         "/infografiken/manus-beispiel-dialog-v2.webp"
       ],
-      "referencedFiles": [
-        "/infografiken/manus-beispiel-dialog-v1.pdf",
-        "/infografiken/manus-beispiel-dialog-v1.webp"
-      ],
+      "referencedFiles": [],
       "legacyCandidateFiles": [
+        "/infografiken/manus-beispiel-dialog-v1.pdf",
+        "/infografiken/manus-beispiel-dialog-v1.webp",
         "/infografiken/manus-beispiel-dialog-v2.pdf",
         "/infografiken/manus-beispiel-dialog-v2.webp"
       ]
@@ -2894,11 +3169,10 @@
         "/infografiken/manus-dear-v2.pdf",
         "/infografiken/manus-dear-v2.webp"
       ],
-      "referencedFiles": [
-        "/infografiken/manus-dear-v1.pdf",
-        "/infografiken/manus-dear-v1.webp"
-      ],
+      "referencedFiles": [],
       "legacyCandidateFiles": [
+        "/infografiken/manus-dear-v1.pdf",
+        "/infografiken/manus-dear-v1.webp",
         "/infografiken/manus-dear-v2.pdf",
         "/infografiken/manus-dear-v2.webp"
       ]
@@ -2962,13 +3236,12 @@
         "/infografiken/manus-garten-v2.pdf",
         "/infografiken/manus-garten-v2.webp"
       ],
-      "referencedFiles": [
-        "/infografiken/manus-garten-v2.pdf",
-        "/infografiken/manus-garten-v2.webp"
-      ],
+      "referencedFiles": [],
       "legacyCandidateFiles": [
         "/infografiken/manus-garten-v1.pdf",
-        "/infografiken/manus-garten-v1.webp"
+        "/infografiken/manus-garten-v1.webp",
+        "/infografiken/manus-garten-v2.pdf",
+        "/infografiken/manus-garten-v2.webp"
       ]
     },
     {
@@ -2994,13 +3267,17 @@
         "/infografiken/manus-genesung-zahlen-v1.pdf",
         "/infografiken/manus-genesung-zahlen-v1.webp",
         "/infografiken/manus-genesung-zahlen-v2.pdf",
-        "/infografiken/manus-genesung-zahlen-v2.webp"
+        "/infografiken/manus-genesung-zahlen-v2.webp",
+        "/infografiken/manus-genesung-zahlen-v3.pdf",
+        "/infografiken/manus-genesung-zahlen-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/manus-genesung-zahlen-v1.pdf",
-        "/infografiken/manus-genesung-zahlen-v1.webp"
+        "/infografiken/manus-genesung-zahlen-v3.pdf",
+        "/infografiken/manus-genesung-zahlen-v3.webp"
       ],
       "legacyCandidateFiles": [
+        "/infografiken/manus-genesung-zahlen-v1.pdf",
+        "/infografiken/manus-genesung-zahlen-v1.webp",
         "/infografiken/manus-genesung-zahlen-v2.pdf",
         "/infografiken/manus-genesung-zahlen-v2.webp"
       ]
@@ -3013,11 +3290,10 @@
         "/infografiken/manus-gespraeche-kippen-v2.pdf",
         "/infografiken/manus-gespraeche-kippen-v2.webp"
       ],
-      "referencedFiles": [
-        "/infografiken/manus-gespraeche-kippen-v1.pdf",
-        "/infografiken/manus-gespraeche-kippen-v1.webp"
-      ],
+      "referencedFiles": [],
       "legacyCandidateFiles": [
+        "/infografiken/manus-gespraeche-kippen-v1.pdf",
+        "/infografiken/manus-gespraeche-kippen-v1.webp",
         "/infografiken/manus-gespraeche-kippen-v2.pdf",
         "/infografiken/manus-gespraeche-kippen-v2.webp"
       ]
@@ -3074,13 +3350,17 @@
         "/infografiken/manus-kinder-v1.pdf",
         "/infografiken/manus-kinder-v1.webp",
         "/infografiken/manus-kinder-v2.pdf",
-        "/infografiken/manus-kinder-v2.webp"
+        "/infografiken/manus-kinder-v2.webp",
+        "/infografiken/manus-kinder-v3.pdf",
+        "/infografiken/manus-kinder-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/manus-kinder-v1.pdf",
-        "/infografiken/manus-kinder-v1.webp"
+        "/infografiken/manus-kinder-v3.pdf",
+        "/infografiken/manus-kinder-v3.webp"
       ],
       "legacyCandidateFiles": [
+        "/infografiken/manus-kinder-v1.pdf",
+        "/infografiken/manus-kinder-v1.webp",
         "/infografiken/manus-kinder-v2.pdf",
         "/infografiken/manus-kinder-v2.webp"
       ]
@@ -3161,11 +3441,10 @@
         "/infografiken/manus-radikale-akzeptanz-v2.pdf",
         "/infografiken/manus-radikale-akzeptanz-v2.webp"
       ],
-      "referencedFiles": [
-        "/infografiken/manus-radikale-akzeptanz-v1.pdf",
-        "/infografiken/manus-radikale-akzeptanz-v1.webp"
-      ],
+      "referencedFiles": [],
       "legacyCandidateFiles": [
+        "/infografiken/manus-radikale-akzeptanz-v1.pdf",
+        "/infografiken/manus-radikale-akzeptanz-v1.webp",
         "/infografiken/manus-radikale-akzeptanz-v2.pdf",
         "/infografiken/manus-radikale-akzeptanz-v2.webp"
       ]
@@ -3261,13 +3540,17 @@
         "/infografiken/manus-stopp-technik-v1.pdf",
         "/infografiken/manus-stopp-technik-v1.webp",
         "/infografiken/manus-stopp-technik-v2.pdf",
-        "/infografiken/manus-stopp-technik-v2.webp"
+        "/infografiken/manus-stopp-technik-v2.webp",
+        "/infografiken/manus-stopp-technik-v3.pdf",
+        "/infografiken/manus-stopp-technik-v3.webp"
       ],
       "referencedFiles": [
-        "/infografiken/manus-stopp-technik-v1.pdf",
-        "/infografiken/manus-stopp-technik-v1.webp"
+        "/infografiken/manus-stopp-technik-v3.pdf",
+        "/infografiken/manus-stopp-technik-v3.webp"
       ],
       "legacyCandidateFiles": [
+        "/infografiken/manus-stopp-technik-v1.pdf",
+        "/infografiken/manus-stopp-technik-v1.webp",
         "/infografiken/manus-stopp-technik-v2.pdf",
         "/infografiken/manus-stopp-technik-v2.webp"
       ]
@@ -3315,6 +3598,78 @@
       "referencedFiles": [
         "/infografiken/pendel-das-bewertungs-pendel-v16.pdf",
         "/infografiken/pendel-das-bewertungs-pendel-v16.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/puk-4-arten-von-grenzen",
+      "availableFiles": [
+        "/infografiken/puk-4-arten-von-grenzen-v1.pdf",
+        "/infografiken/puk-4-arten-von-grenzen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/puk-4-arten-von-grenzen-v1.pdf",
+        "/infografiken/puk-4-arten-von-grenzen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/puk-beispiel-dialog",
+      "availableFiles": [
+        "/infografiken/puk-beispiel-dialog-v1.pdf",
+        "/infografiken/puk-beispiel-dialog-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/puk-beispiel-dialog-v1.pdf",
+        "/infografiken/puk-beispiel-dialog-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/puk-dear",
+      "availableFiles": [
+        "/infografiken/puk-dear-v1.pdf",
+        "/infografiken/puk-dear-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/puk-dear-v1.pdf",
+        "/infografiken/puk-dear-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/puk-garten",
+      "availableFiles": [
+        "/infografiken/puk-garten-v1.pdf",
+        "/infografiken/puk-garten-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/puk-garten-v1.pdf",
+        "/infografiken/puk-garten-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/puk-gespraeche-kippen",
+      "availableFiles": [
+        "/infografiken/puk-gespraeche-kippen-v1.pdf",
+        "/infografiken/puk-gespraeche-kippen-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/puk-gespraeche-kippen-v1.pdf",
+        "/infografiken/puk-gespraeche-kippen-v1.webp"
+      ],
+      "legacyCandidateFiles": []
+    },
+    {
+      "family": "/infografiken/puk-radikale-akzeptanz",
+      "availableFiles": [
+        "/infografiken/puk-radikale-akzeptanz-v1.pdf",
+        "/infografiken/puk-radikale-akzeptanz-v1.webp"
+      ],
+      "referencedFiles": [
+        "/infografiken/puk-radikale-akzeptanz-v1.pdf",
+        "/infografiken/puk-radikale-akzeptanz-v1.webp"
       ],
       "legacyCandidateFiles": []
     },

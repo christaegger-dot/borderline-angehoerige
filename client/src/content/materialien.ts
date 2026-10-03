@@ -49,6 +49,8 @@ export interface ResolvedMaterialDownload {
   sourceUrl: string;
 }
 
+const P1_MATERIAL_STAND = "03.02.2026 (Inhalt) · Ausgabe geprüft am 04.10.2026";
+
 export const materials: MaterialItem[] = [
   {
     id: "notfallkarte-zuerich",
@@ -266,12 +268,12 @@ export const materials: MaterialItem[] = [
       "Hilft Angehörigen, Realität anzuerkennen, ohne aufzugeben oder alles gutzuheissen.",
     category: "selbstfuersorge",
     kind: "Infografik",
-    url: "/infografiken/manus-radikale-akzeptanz-v1.webp",
+    url: "/infografiken/puk-radikale-akzeptanz-v1.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp",
-    downloadUrl: "/infografiken/manus-radikale-akzeptanz-v1.pdf",
+      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
+    downloadUrl: "/infografiken/puk-radikale-akzeptanz-v1.pdf",
     priority: "secondary",
-    verifiedAt: "Mai 2026",
+    verifiedAt: P1_MATERIAL_STAND,
   },
   {
     id: "garten",
@@ -345,6 +347,7 @@ const recommendedMaterials: MaterialItem[] = [
       [
         "zuhoeren-ohne-zustimmen",
         "gespraeche-kippen",
+        "beispiel-dialog",
         "pause-statt-streit",
       ].includes(item.id)
     )
@@ -358,6 +361,9 @@ const recommendedMaterials: MaterialItem[] = [
       thumbnailUrl: item.thumbnailUrl,
       downloadUrl: item.pdfUrl,
       priority: "secondary" as const,
+      verifiedAt: ["gespraeche-kippen", "beispiel-dialog"].includes(item.id)
+        ? P1_MATERIAL_STAND
+        : undefined,
     })),
   ...selbstfuersorgeInfografiken
     .filter(item =>
@@ -381,9 +387,10 @@ for (const item of recommendedMaterials) {
       ...item,
       topicRecommendation: true,
       verifiedAt:
-        item.id === "stopp-technik"
+        item.verifiedAt ??
+        (item.id === "stopp-technik"
           ? "23.09.2026 (Text und Druckfassung)"
-          : "Februar 2026 (laut Textfassung)",
+          : "Februar 2026 (laut Textfassung)"),
     });
   }
 }

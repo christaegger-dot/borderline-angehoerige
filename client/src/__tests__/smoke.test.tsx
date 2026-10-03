@@ -427,6 +427,14 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
     ).toHaveAttribute("href", "/selbstfuersorge");
+    expect(
+      screen.queryByRole("link", { name: /PDF öffnen/i })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Druckgrafik und das PDF werden fachlich und visuell überarbeitet/i
+      )
+    ).toBeInTheDocument();
   });
 
   it("HandoutTextPage: rendert Wenn-Worte-treffen-Textversion", async () => {
@@ -898,6 +906,11 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toHaveAttribute("href", "/materialien/text/gespraeche-kippen");
     expect(
+      screen.queryByRole("link", {
+        name: /PDF öffnen: Wenn Gespräche kippen: 3 Schritte/i,
+      })
+    ).not.toBeInTheDocument();
+    expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Pause statt Streit/i,
       })
@@ -937,6 +950,21 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Ihre Rolle im Genesungsprozess/i,
       })
     ).toHaveAttribute("href", "/materialien/text/rolle-genesungsprozess");
+    expect(
+      screen.queryByRole("link", {
+        name: /PDF öffnen: Remission vs\. Heilung/i,
+      })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", {
+        name: /PDF öffnen: 5 Faktoren, die Genesung fördern/i,
+      })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", {
+        name: /PDF öffnen: Ihre Rolle im Genesungsprozess/i,
+      })
+    ).not.toBeInTheDocument();
   });
 
   it("Verstehen: zeigt Textversionen für Verstehen-Handouts", async () => {
@@ -957,6 +985,16 @@ describe("Smoke Tests – Kritische Seiten", () => {
         name: /Textversion lesen: Kinder verstehen und entlasten/i,
       })
     ).toHaveAttribute("href", "/materialien/text/kinder");
+    expect(
+      screen.queryByRole("link", {
+        name: /PDF öffnen: Der 4-Phasen-Zyklus/i,
+      })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", {
+        name: /PDF öffnen: Das Gehirn verstehen/i,
+      })
+    ).not.toBeInTheDocument();
   });
 
   it("Unterstützen: zeigt Textversionen für Unterstützen-Handouts", async () => {

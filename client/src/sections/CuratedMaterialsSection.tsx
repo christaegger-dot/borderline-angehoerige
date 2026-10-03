@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import HandoutVisualPlaceholder from "@/components/HandoutVisualPlaceholder";
 import {
   DisplayHeading,
   EditorialBody,
@@ -7,6 +8,10 @@ import {
 } from "@/components/editorial";
 import { getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
+import {
+  HANDOUT_VISUAL_REFRESH_NOTE,
+  isHandoutVisualPublished,
+} from "@/content/handoutGovernance";
 
 export interface CuratedMaterialCard {
   id: string;
@@ -110,24 +115,39 @@ function MaterialCard({
   const pdfHref = getHandoutOpenHref(item.pdfUrl) ?? item.pdfUrl;
   const imageSrc = item.thumbnailUrl ?? item.imageUrl;
   const previewHref = item.previewUrl ?? item.imageUrl;
+  const visualPublished = isHandoutVisualPublished(item.id);
 
   return (
     <article className="topic-material-card" data-material-tone={tone}>
-      <a
-        href={previewHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${item.title} – Vorschau öffnen`}
-        className="topic-material-card__media"
-      >
-        <img src={imageSrc} alt={item.title} loading="lazy" decoding="async" />
-      </a>
+      {visualPublished ? (
+        <a
+          href={previewHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${item.title} – Vorschau öffnen`}
+          className="topic-material-card__media"
+        >
+          <img
+            src={imageSrc}
+            alt={item.title}
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      ) : (
+        <HandoutVisualPlaceholder title={item.title} />
+      )}
       <div className="topic-material-card__content">
         <p className="topic-material-card__kicker">{item.categoryLabel}</p>
         <h3 className="topic-material-card__title">{item.title}</h3>
         <p className="topic-material-card__description">{item.description}</p>
         {item.guidance ? (
           <p className="topic-material-card__guidance">{item.guidance}</p>
+        ) : null}
+        {!visualPublished ? (
+          <p className="topic-material-card__guidance">
+            {HANDOUT_VISUAL_REFRESH_NOTE}
+          </p>
         ) : null}
         <div className="topic-material-card__actions">
           {textVersionHref ? (
@@ -139,15 +159,17 @@ function MaterialCard({
               Textversion lesen
             </Link>
           ) : null}
-          <a
-            href={pdfHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
-            className="editorial-link"
-          >
-            PDF öffnen
-          </a>
+          {visualPublished ? (
+            <a
+              href={pdfHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`PDF öffnen: ${item.title} (neuer Tab)`}
+              className="editorial-link"
+            >
+              PDF öffnen
+            </a>
+          ) : null}
         </div>
       </div>
     </article>

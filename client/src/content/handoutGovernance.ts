@@ -3,6 +3,8 @@ export type HandoutDocumentType =
   | "PRAXISBLATT"
   | "KRISEN-HANDOUT";
 
+export type HandoutVisualAssetStatus = "published" | "text-only";
+
 export interface HandoutGovernanceEntry {
   id: string;
   documentType: HandoutDocumentType;
@@ -12,10 +14,19 @@ export interface HandoutGovernanceEntry {
    * bewusst gelockt bleiben, bis sie fachlich/designseitig freigegeben sind.
    */
   approvedVersion: string;
+  /**
+   * `text-only` zieht eine fachlich oder visuell veraltete Druckgrafik aus den
+   * Empfehlungsflächen zurück. Die aktuelle HTML-Textversion bleibt verfügbar.
+   * Ohne Angabe gilt das freigegebene Asset als publiziert.
+   */
+  visualAssetStatus?: HandoutVisualAssetStatus;
 }
 
 export const HANDOUT_STANDARD_DISCLAIMER =
   "Dieses Blatt ersetzt keine persönliche Beratung oder Behandlung.";
+
+export const HANDOUT_VISUAL_REFRESH_NOTE =
+  "Die Druckgrafik und das PDF werden fachlich und visuell überarbeitet. Nutzen Sie bis dahin die aktuelle Textversion.";
 
 export const handoutGovernance = {
   "notfallkarte-zuerich": {
@@ -52,11 +63,13 @@ export const handoutGovernance = {
     id: "4-phasen",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-4-phasen-v1",
+    visualAssetStatus: "text-only",
   },
   gehirn: {
     id: "gehirn",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-gehirn-v1",
+    visualAssetStatus: "text-only",
   },
   kinder: {
     id: "kinder",
@@ -112,6 +125,7 @@ export const handoutGovernance = {
     id: "gespraeche-kippen",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-gespraeche-kippen-v1",
+    visualAssetStatus: "text-only",
   },
   "grenzen-ohne-eskalation": {
     id: "grenzen-ohne-eskalation",
@@ -137,6 +151,7 @@ export const handoutGovernance = {
     id: "beispiel-dialog",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-beispiel-dialog-v1",
+    visualAssetStatus: "text-only",
   },
   dear: {
     id: "dear",
@@ -207,6 +222,7 @@ export const handoutGovernance = {
     id: "radikale-akzeptanz",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-radikale-akzeptanz-v1",
+    visualAssetStatus: "text-only",
   },
   garten: {
     id: "garten",
@@ -227,20 +243,25 @@ export const handoutGovernance = {
     id: "remission-heilung",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-remission-heilung-v1",
+    visualAssetStatus: "text-only",
   },
   "5-faktoren-genesung": {
     id: "5-faktoren-genesung",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-5-faktoren-genesung-v1",
+    visualAssetStatus: "text-only",
   },
   "rolle-genesungsprozess": {
     id: "rolle-genesungsprozess",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-rolle-genesungsprozess-v1",
+    visualAssetStatus: "text-only",
   },
 } as const satisfies Record<string, HandoutGovernanceEntry>;
 
-export function getHandoutGovernance(id: string | undefined) {
+export function getHandoutGovernance(
+  id: string | undefined
+): HandoutGovernanceEntry | null {
   if (!id) {
     return null;
   }
@@ -255,6 +276,11 @@ export function requireHandoutGovernance(id: string) {
   }
 
   return governance;
+}
+
+export function isHandoutVisualPublished(id: string | undefined) {
+  const governance = getHandoutGovernance(id);
+  return governance?.visualAssetStatus !== "text-only";
 }
 
 export function allowsCrisisNumbers(id: string) {

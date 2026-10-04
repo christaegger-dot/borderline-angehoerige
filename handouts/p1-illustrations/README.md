@@ -46,3 +46,9 @@ Abmessungen und SHA-256-Werte.
 Vor einer Freigabe bleiben die fachlich-redaktionelle Bestätigung, eine
 verantwortete Matterhorn-Prüfung und die vorgesehenen realen
 Screenreader-Durchgänge erforderlich.
+
+Für die fachredaktionelle Prüfung steht unter
+[`docs/governance/fachliche-freigabe-p1-illustrationen-2026-10-04.md`](../../docs/governance/fachliche-freigabe-p1-illustrationen-2026-10-04.md)
+eine paketbezogene Freigabevorlage bereit. Sie dokumentiert den Prüfstand, die
+Freigabestufe, die drei Einzelentscheide und die Regeln für die anschliessende
+Versionierung. Die leere Vorlage selbst ist ausdrücklich kein Sign-off.

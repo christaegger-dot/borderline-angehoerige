@@ -17,6 +17,12 @@ Die Dokumente sind bewusst nicht als juristische Formalität geschrieben, sonder
 9. `09-umsetzungsplan-90-tage.md` — erste Umsetzungsetappen.
 10. `10-fachliche-freigabe-vorlage.md` — Vorlage für fachliches Sign-off vor Release.
 
+Paketbezogenes Protokoll:
+
+- `fachliche-freigabe-p1-illustrationen-2026-10-04.md` — kompakte
+  Freigabevorlage für Radikale Akzeptanz, Wenn Gespräche kippen und
+  Beispiel-Dialog.
+
 ## Grundsatz
 
 Die Website bietet psychoedukative Orientierung für Angehörige. Sie ersetzt keine medizinische, psychotherapeutische, juristische oder notfallpsychiatrische Abklärung. Medizinische und therapeutische Aussagen werden fachlich geprüft und mit Quellen hinterlegt; praxisnahe Orientierungstexte beruhen zusätzlich auf klinischer Erfahrung aus der Angehörigenarbeit.

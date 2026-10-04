@@ -1,8 +1,10 @@
 # Fachredaktionelle Freigabe · P1-Illustrationspaket
 
 > **Dokumentiertes KI-gestütztes redaktionelles Review – keine institutionelle Fachfreigabe.**
-> Die Inhalts- und Dateiprüfung ist dokumentiert. Die direkte Prüfung der geschützten
-> Deploy-Preview und die verantwortete Fachfreigabe sind noch offen.
+> Die Inhalts- und Dateiprüfung sowie die Liveprüfung aller drei Webfassungen
+> einschliesslich aufgeklappter Textbeschreibungen sind dokumentiert.
+> Die verantwortete Fachfreigabe bleibt offen; PDF-Auslieferung und Browser-Druck
+> sind noch nicht abschliessend bestätigt.
 > Kein Blatt darf aufgrund dieses Protokolls als `approved` gekennzeichnet werden.
 
 ## Prüfstand
@@ -10,9 +12,9 @@
 - **PR:** [#617 · P1-Illustrationspaket für Borderline](https://github.com/christaegger-dot/borderline-angehoerige/pull/617)
 - **Commit:** `fff12445fd01fb1f2a1a82f1e58b4cc0d86a9ba0`
 - **Status:** Korrekturen erforderlich; anschliessend Gesamtprüfung vervollständigen und erneut vorlegen.
-- **Zum Prüfzeitpunkt aktueller PR-Head:** `47796aff30c69b43a0a6537e3c2fb8e6ea7a8541`.
-  Der Vergleich mit dem genannten Inhaltscommit zeigt genau einen späteren Commit,
-  der nur diese Freigabevorlage verändert. Die geprüften Inhalte und Assets sind unverändert.
+- **PR-Head vor Dokumentation der Live-Nachprüfung:** `c34e3f662027145046d9a3f73eb277af489721e5`.
+  Der Vergleich mit dem genannten Inhaltscommit zeigt zwei spätere Commits,
+  die ausschliesslich diese Freigabevorlage verändern. Die geprüften Inhalte und Assets sind unverändert.
 
 | Blatt                 | Asset-Version               | Webpfad                                | PDF                                                                   |
 | --------------------- | --------------------------- | -------------------------------------- | --------------------------------------------------------------------- |
@@ -21,19 +23,21 @@
 | Beispiel-Dialog       | `puk-beispiel-dialog-v2`    | `/materialien/text/beispiel-dialog`    | [PDF](../../client/public/infografiken/puk-beispiel-dialog-v2.pdf)    |
 
 Der Sollumfang umfasst Webfassung, aufklappbare Textbeschreibung, PDF,
-Vollbild-WebP und Thumbnail. Tatsächlich geprüft wurden die Web-Inhaltsquellen
-inklusive Textbeschreibungen sowie alle neun PDF-/WebP-/Thumbnail-Dateien.
-Die direkte Web- und Browser-Druckprüfung ist noch offen; siehe Prüfnachweise.
+Vollbild-WebP und Thumbnail. Geprüft wurden die Web-Inhaltsquellen, alle drei
+Live-Webfassungen mit tatsächlich aufgeklappten Textbeschreibungen sowie alle
+neun PDF-/WebP-/Thumbnail-Dateien aus dem Repository. Die PDF-Auslieferung über
+die Preview und die Browser-Druckausgabe sind nicht abschliessend bestätigt;
+siehe Prüfnachweise.
 
 ## Prüfende Person
 
 - **Name:** ChatGPT (KI-System)
 - **Rolle / Funktion:** Redaktionelles Review mit fachlicher Plausibilitätsprüfung; keine vertretungsberechtigte Fachperson der PUK
 - **Datum:** 04.10.2026
-- **Geprüfter Commit oder Deploy-Stand:** Inhalts- und Assetstand `fff12445fd01fb1f2a1a82f1e58b4cc0d86a9ba0`; direkter Deploy-Inhalt nicht eingesehen
+- **Geprüfter Commit oder Deploy-Stand:** Inhalts- und Assetstand `fff12445fd01fb1f2a1a82f1e58b4cc0d86a9ba0`; ergänzende direkte Prüfung der Deploy-Preview #617 am 04.10.2026. Die sichtbaren Inhalte entsprechen den geprüften V2-Quellen. Die Preview zeigt keinen separat verifizierten Deploy-Commit an.
 
 Die folgenden Häkchen bezeichnen nur die ausdrücklich genannten, aus den
-Inhaltsquellen und Dateien beurteilbaren Kriterien. Sie sind kein klinisches,
+Inhaltsquellen, Dateien und der beschriebenen Liveprüfung beurteilbaren Kriterien. Sie sind kein klinisches,
 kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
 
 ## Paketweite Prüfung
@@ -47,7 +51,8 @@ kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
 - [ ] Quellenlage oder fachliche Herleitung trägt die Aussagen und ist
       dokumentiert
 - [x] Die Bezeichnung als eigene didaktische Darstellung ist korrekt
-- [ ] Webfassung, Textbeschreibung und PDF vermitteln dieselben Kernaussagen
+- [x] Webfassung, Textbeschreibung und PDF vermitteln dieselben Kernaussagen
+      (PDF-Dateien aus dem Repository; Auslieferung über die Preview separat offen)
 
 ## Einzelentscheide
 
@@ -86,12 +91,14 @@ kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
 - [ ] Korrekturen erforderlich; erneut vorlegen
 - [ ] nicht freigegeben
 - [x] Redaktionell inhaltlich unbeanstandet; endgültiger Freigabeentscheid offen
-- **Korrekturen oder Begründung:** In den geprüften Inhaltsquellen und Dateien
-  keine zwingende inhaltliche Korrektur festgestellt. Wahlfreiheit,
+- **Korrekturen oder Begründung:** In den geprüften Inhaltsquellen, Dateien und
+  der Live-Webfassung mit aufgeklappter Textbeschreibung keine zwingende
+  inhaltliche Korrektur festgestellt. Wahlfreiheit,
   vorsichtiges Spiegeln, Beenden ohne Rückkehrversprechen, fehlende
   Wirkungsgarantie und Eigenschutz sind klar. Die Nummern 117 und 144 sind
-  passend zugeordnet. Die fehlende direkte Webprüfung und das institutionelle
-  Fachsign-off werden durch diese positive Inhaltsbewertung nicht ersetzt.
+  passend zugeordnet. Die direkte Webprüfung bestätigt diese Bewertung.
+  Die institutionelle Fachfreigabe und die noch offenen formatübergreifenden
+  Prüfungen werden durch diese positive Inhaltsbewertung nicht ersetzt.
 
 ### 3. Beispiel-Dialog
 
@@ -126,8 +133,9 @@ kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
    wurden die Handout-Inhalte nicht verändert.
 2. Nach bestätigten Inhaltsänderungen Web, Textbeschreibung, PDF, WebP und
    Thumbnail gemeinsam aktualisieren und erneut prüfen.
-3. Direkte Deploy-Preview einschliesslich geöffnetem Aufklapper und Browser-Druck
-   vervollständigen. Quellenprüfung ist keine visuelle Liveprüfung.
+3. Live-Webprüfung mit geöffneten Textbeschreibungen ist abgeschlossen.
+   PDF-Auslieferung klären und erneut prüfen (T1 unten); die Browser-Druckausgabe
+   im aktuellen Stand bleibt unabhängig zu bestätigen.
 4. Verantwortete fachliche Bestätigung sowie die vorgesehenen realen
    Screenreader-, Nutzenden- und Matterhorn-Prüfungen bleiben offen.
 5. Entwurfsstatus beibehalten; keine `approvedVersion` oder
@@ -159,17 +167,19 @@ kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
 | Gegenstand | Eigenständig geprüft | Ergebnis / Grenze |
 | --- | --- | --- |
 | Web-Inhaltsquellen der drei V2-Blätter | Ja | Texte, Schrittfolgen, Quellenhinweise und sämtliche hinterlegten `longDescription`-Texte gelesen; R1/R2 siehe oben |
-| Aufklappbare Textbeschreibung im Browser | Nein | Hinterlegte Texte geprüft, tatsächliches Aufklappen im Deploy noch offen |
+| Aufklappbare Textbeschreibung im Browser | Ja | Alle drei Aufklapper tatsächlich geöffnet und vollständig gelesen; Kernaussagen stimmen mit Darstellung und hinterlegtem Text überein |
 | Drei separate PDF-Handouts | Ja | Alle Seiten gerendert und visuell gelesen; jedes PDF eine vollständige A4-Seite, kein sichtbarer Überlauf |
 | Drei Vollbild-WebP | Ja | Je 1600 × 2263 Pixel, visuell mit den PDFs abgeglichen |
 | Drei Thumbnail-WebP | Ja | Je 600 × 849 Pixel, als verkleinerte Vorschau geprüft; keine eigenständige Lesefassung |
 | Assetidentität | Ja | SHA-256 und Dateigrössen aller neun Dateien stimmen mit `handouts/p1-illustrations/manifest.json` am Prüfcommit überein |
-| Live-Webdarstellung / Viewports / Druckdialog | Nein | Netlify Team Protection; nach gewählter Google-Anmeldung wurde der nächste Browserzugriff automatisch blockiert. Kein bestätigter Login und keine Sichtprüfung der Deploy-Inhalte |
+| Live-Webdarstellung | Ja | Nach erfolgreicher Anmeldung alle drei Seiten nacheinander gelesen und anhand vollständiger Screenshots visuell geprüft; keine fehlenden Handout-Abschnitte erkannt, R1/R2 bestätigt |
+| Weitere Viewports / Browser-Druckdialog | Nein | Keine Wiederholung des berichteten Viewport-Audits. Der Druckaufruf lieferte in dieser Browserumgebung keine auswertbare Druckvorschau; kein eigener Nachweis der reparierten Druckausgabe |
+| PDF-Auslieferung über die Preview | Nicht bestätigt | Beim Beispiel-Dialog zeigte «PDF öffnen» die Meldung «Download derzeit nicht verfügbar». Downloadversuche bei Radikaler Akzeptanz wurden abgebrochen; ein späterer Navigationsversuch wurde vom Browser blockiert. Ursache und Verbreitung nicht festgestellt; siehe T1 |
 | Reparatur der Druckregeln | Nur Quellprüfung | Die globale Ausblendung aller `header` ist in `client/public/print.css` entfernt. Die Wirksamkeit im aktuellen Deploy wurde in diesem Review nicht selbst getestet |
 | PDF/UA, Matterhorn, reale Screenreader und Nutzendentests | Nein | Keine Konformitäts- oder Nutzungsgarantie aus Sichtprüfung, Textauszug oder vorhandenen Tags ableiten |
 
-Die Kernaussagen der geprüften Web-Inhaltsquellen und der exportierten Dateien
-stimmen überein. Die Dateien sind nicht wortgleich: Die Webfassung enthält
+Die Kernaussagen der geprüften Live-Webfassungen, Textbeschreibungen,
+Web-Inhaltsquellen und exportierten Dateien stimmen überein. Die Dateien sind nicht wortgleich: Die Webfassung enthält
 zusätzliche Erläuterungen. Die aufklappbaren Beschreibungen ordnen die
 Darstellung zusammenfassend ein; die vollständigen Handlungs- und Beispielsätze
 stehen zusätzlich als semantischer Webtext bereit.
@@ -179,6 +189,45 @@ die damals hochgeladenen Browser-Druckfassungen. In den jetzt tatsächlich
 geprüften separaten V2-Handout-PDFs sind die Schritte und Beispielsätze
 vollständig enthalten. Eine damalige Prüfung der V1-Originalhandouts wird
 dadurch nicht nachträglich behauptet.
+
+### Live-Nachprüfung am 04.10.2026
+
+Nach erfolgreicher Anmeldung konnten die drei vorgesehenen Routen in der
+Deploy-Preview #617 nacheinander direkt geprüft werden:
+
+- `/materialien/text/radikale-akzeptanz`
+- `/materialien/text/gespraeche-kippen`
+- `/materialien/text/beispiel-dialog`
+
+Die sichtbaren Darstellungen enthalten die zentralen Inhalte vollständig.
+Freiwilligkeit, fehlende Rückkehrpflicht, vorsichtiges Spiegeln sowie die
+Unterscheidung zwischen Gewalt und vermuteter unmittelbarer Selbstgefährdung
+sind auch in den aufgeklappten Textbeschreibungen erhalten. Die Sichtprüfung
+liefert keinen Ersatz für die vorgesehenen realen Screenreader- und Nutzendentests.
+
+**T1 – PDF-Auslieferung erneut prüfen:** Beim Klick auf «PDF öffnen» auf der
+Seite Beispiel-Dialog öffnete sich die Route
+`/api/material-download/kommunizieren-beispiel-dialog?disposition=inline`
+mit der sichtbaren Meldung «Download derzeit nicht verfügbar». Dies ist ein
+zusätzlicher funktionaler Prüfpunkt vor Kennzeichnung oder Freigabe des Pakets.
+Die geprüfte PDF-Datei im Repository ist vorhanden und vollständig; aus der
+Meldung lässt sich weder eine fehlende Originaldatei noch die technische
+Ursache ableiten. Ob andere Nutzer oder alle drei PDF-Routen betroffen sind,
+wurde nicht nachgewiesen.
+
+Bei Radikaler Akzeptanz waren zwei Downloadversuche erfolglos. Ein anschliessender
+Navigationsversuch zur PDF-Route wurde durch die Browserumgebung blockiert.
+Diese Beobachtungen werden nicht als weiterer bestätigter Websitefehler gewertet.
+Die PDF-Auslieferung aller drei Blätter ist deshalb nach Klärung regulär
+nachzuprüfen. Die separaten Original-PDFs wurden weiterhin anhand des geprüften
+Repository-Commits bewertet; ein erfolgreicher Download aus der Live-Preview
+wird nicht behauptet.
+
+Die anfängliche Anmeldesperre ist für die Webprüfung überwunden. Der frühere
+Vermerk «Deploy-Inhalt nicht eingesehen» ist durch diese Nachprüfung überholt.
+Die Browser-Druckausgabe konnte in dieser Umgebung weiterhin nicht unabhängig
+visuell geprüft werden. Es wurden ausschliesslich die Prüfnachweise ergänzt;
+Inhalte, Assets und Freigabekennzeichen bleiben unverändert.
 
 ### Technische Nachweise
 

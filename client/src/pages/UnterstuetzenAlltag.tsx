@@ -754,12 +754,20 @@ export default function UnterstuetzenAlltag() {
               </article>
 
               <article className="space-y-3">
-                <h3 style={h4Style}>Vorhersehbar bleiben</h3>
+                <h3 style={h4Style}>Absprachen klar und anpassbar halten</h3>
+                <p style={bodyStyle}>
+                  Verlässlichkeit entsteht durch klare, anpassbare Absprachen –
+                  nicht dadurch, dass Sie immer gleich reagieren oder jederzeit
+                  verfügbar bleiben. Ihre Möglichkeiten, Grenzen und Ihre
+                  Verfügbarkeit dürfen sich ändern. Sprechen Sie Veränderungen
+                  offen an und vereinbaren Sie neu, was für beide Seiten passt.
+                </p>
                 <ul className="ml-5 list-disc space-y-2" style={bodyStyle}>
+                  <li>Absprachen konkret und verständlich formulieren</li>
                   <li>Änderungen möglichst früh ankündigen</li>
                   <li>Versprechen halten oder offen revidieren</li>
-                  <li>Erreichbarkeit klar benennen</li>
-                  <li>nicht jedes Mal völlig anders reagieren</li>
+                  <li>Erreichbarkeit und Grenzen klar benennen</li>
+                  <li>Absprachen an veränderte Möglichkeiten anpassen</li>
                 </ul>
               </article>
             </div>

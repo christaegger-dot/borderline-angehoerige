@@ -205,11 +205,11 @@ const SCENARIOS: Scenario[] = [
     options: [
       {
         id: "a",
-        text: "«Das ist frustrierend. Vielleicht war er nur gestresst, versuch es nochmal bei einem anderen Arzt.»",
+        text: "«Das klingt frustrierend. Vielleicht war er nur gestresst, versuch es nochmal bei einem anderen Arzt.»",
         correct: false,
         feedback:
-          "Der erste Satz ist gut (Gefühl benennen), aber dann wird sofort relativiert und eine Lösung angeboten. Das unterbricht die Validierung und vermittelt: «Dein Gefühl ist nicht so wichtig, hier ist die Lösung.»",
-        techniqueHint: "Stufe 1, dann Lösungsmodus",
+          "Der erste Satz spiegelt das mögliche Erleben vorsichtig. Danach folgen jedoch eine Erklärung und ein Lösungsvorschlag, bevor geklärt ist, was die Person gerade braucht. Das kann den Fokus verschieben; ein Lösungsvorschlag ist nicht automatisch falsch und kann passen, wenn er gewünscht ist.",
+        techniqueHint: "Erklärung und Lösung vor offener Nachfrage",
       },
       {
         id: "b",
@@ -224,12 +224,12 @@ const SCENARIOS: Scenario[] = [
         text: "«Ach, das kenne ich. Bei meinem letzten Arztbesuch war es genauso. Das ist leider normal heutzutage.»",
         correct: false,
         feedback:
-          "Das verlagert den Fokus auf Ihre eigene Erfahrung. Auch wenn Sie Mitgefühl zeigen wollen – Ihr Angehöriger fühlt sich dadurch erneut nicht gehört. Validierung heisst: Es geht jetzt um dich.",
-        techniqueHint: "Thema gekapert",
+          "Eine eigene Erfahrung kann verbinden. Hier kann sie den Fokus aber verschieben, bevor das aktuelle Erleben genauer gehört wurde; die Verallgemeinerung «normal heutzutage» kann den konkreten Arztbesuch zusätzlich überdecken. Die Formulierung ist nicht automatisch falsch – eine offene Nachfrage oder die Frage, ob die eigene Erfahrung gerade hilfreich ist, lässt mehr Wahl.",
+        techniqueHint: "Eigene Erfahrung vor offener Nachfrage",
       },
     ],
     learnNote:
-      "Validierung bedeutet nicht, einer Aussage zuzustimmen. Spiegeln Sie, was tatsächlich gesagt wurde, und fragen Sie offen nach, statt ein verborgenes Gefühl oder Motiv festzulegen.",
+      "Validierung bedeutet nicht, einer Aussage zuzustimmen. Spiegeln Sie, was tatsächlich gesagt wurde, und fragen Sie offen nach, statt ein verborgenes Gefühl oder Motiv festzulegen. Das eigene Erleben kann verbinden oder den Fokus verschieben; fragen Sie im Zweifel, ob es gerade hilfreich ist.",
   },
   {
     id: "val-2",

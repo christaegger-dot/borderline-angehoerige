@@ -457,6 +457,16 @@ describe("anti-stigma governance", () => {
     expect(normalizedSource(everyday)).toContain(
       "weder für die Vorhersehbarkeit einer Beziehung noch für die Regulation einer anderen Person verantwortlich"
     );
+    expect(normalizedSource(everyday)).toContain(
+      "Verlässlichkeit entsteht durch klare, anpassbare Absprachen"
+    );
+    expect(everyday).toContain("Absprachen klar und anpassbar halten");
+    expect(normalizedSource(everyday)).toContain(
+      "Ihre Möglichkeiten, Grenzen und Ihre Verfügbarkeit dürfen sich ändern"
+    );
+    expect(everyday).not.toMatch(
+      /Vorhersehbar bleiben|nicht jedes Mal völlig anders reagieren/
+    );
     expect(relationships).not.toContain("Sicherheit sei nur");
     expect(normalizedSource(relationships)).toContain(
       "Angehörige müssen keinen dieser Wege allein tragen"
@@ -487,6 +497,13 @@ describe("anti-stigma governance", () => {
       path.resolve(process.cwd(), "client/src/content/kommunizieren.ts"),
       "utf8"
     );
+    const exercise = fs.readFileSync(
+      path.resolve(
+        process.cwd(),
+        "client/src/components/interactive/KommunikationsUebung.tsx"
+      ),
+      "utf8"
+    );
 
     expect(guide).toContain("Starke Verzweiflung oder anhaltendes Weinen");
     expect(guide).toContain("Konkrete Aussage und Wirkung benennen");
@@ -501,6 +518,13 @@ describe("anti-stigma governance", () => {
       "Gefühle anerkennen, ohne automatisch zuzustimmen"
     );
     expect(communication).not.toContain("Validieren ohne nachzugeben");
+    expect(exercise).toContain("Eine eigene Erfahrung kann verbinden");
+    expect(exercise).toContain(
+      "ein Lösungsvorschlag ist nicht automatisch falsch"
+    );
+    expect(exercise).not.toMatch(
+      /vermittelt: «Dein Gefühl ist nicht so wichtig|fühlt sich dadurch erneut nicht gehört|Thema gekapert/
+    );
   });
 
   it("keeps legacy P1 labels out of visible search copy", () => {

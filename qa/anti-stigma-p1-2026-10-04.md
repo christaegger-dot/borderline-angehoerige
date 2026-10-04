@@ -23,6 +23,18 @@ Massgeblich waren der PUK-Website- und Gestaltungsrahmen, der Borderline-Handout
 - Die Begleiterkrankungen-Grafik zeigt sechs gleichwertige, unverbundene Einträge ohne Borderline als hierarchisches Zentrum.
 - Die Genesungsdarstellung zeigt mehrere unbewertete Verläufe statt eines einheitlichen oder linearen Weges.
 
+## Redaktionelle Nachbesserung zu PR #619
+
+Die fünf Befunde der redaktionellen Prüfung des Stands `e64c2a09` wurden im Draft-PR nachgezogen:
+
+- «Zuhören ohne Zustimmen» trennt pauschale Schuldzuweisung von Verantwortung und Entschuldigung für eigenes konkretes verletzendes Verhalten.
+- «Pause statt Streit» bindet eine Fortsetzung an den Wunsch beider Seiten. Pause und Gesprächsende brauchen weder ein Rückkehrversprechen noch die Begründung, dass die Beziehung wichtig sei.
+- Die Kommunikationsübung nach einem Arztbesuch beschreibt mögliche Wirkungen statt eine innere Reaktion sicher vorherzusagen. Eigene Erfahrungen oder Lösungsvorschläge werden nicht pauschal als falsch eingeordnet.
+- «Absprachen klar und anpassbar halten» stellt klar, dass sich Verfügbarkeit, Grenzen und Möglichkeiten ändern dürfen und Verlässlichkeit keine unveränderte Reaktion verlangt.
+- «Genesung in Zahlen» ordnet Langzeitdaten ein, ohne daraus einen individuellen oder bevorzugten Verlauf abzuleiten.
+
+Gezielte Regressionstests sichern die Freiwilligkeit, die Unterscheidung von Schuld und konkreter Verantwortung, die offene Wirkungsbeschreibung sowie die nicht-prognostische Einordnung der Langzeitdaten. Die Änderungen benötigen weiterhin die im Review verlangte erneute Perspektiven- und Fachprüfung; dieser technische Nachzug ist keine institutionelle Freigabe.
+
 ## Bild- und Handout-Governance
 
 - Die Auslieferung ist fail-closed: Nur im Register ausdrücklich freigegebene kanonische Assets verbleiben im öffentlichen Build.
@@ -38,7 +50,7 @@ Massgeblich waren der PUK-Website- und Gestaltungsrahmen, der Borderline-Handout
 | --------------------------------------- | ------------------------------- |
 | TypeScript                              | bestanden                       |
 | ESLint                                  | bestanden                       |
-| Vitest-Gesamtsuite                      | 59 Dateien, 529 Tests bestanden |
+| Vitest-Gesamtsuite                      | 61 Dateien, 533 Tests bestanden |
 | Produktions-Build                       | bestanden                       |
 | Öffentliche Infografik-Assets           | genau 39 registrierte Dateien   |
 | P1-Entwurfsnachweise                    | 3 Pakete, 9 Assets geprüft      |
@@ -51,6 +63,9 @@ Die Anti-Stigma-Regressionstests prüfen unter anderem:
 - den Sicherheitsweg auch bei nicht-körperlicher Bedrohung;
 - sechs gleichwertige, unverbundene Einträge in der Begleiterkrankungen-Grafik;
 - mehrere unbewertete Genesungsverläufe ohne normative Einheitsform;
+- freiwillige Gesprächsfortsetzung sowie Verantwortung ohne pauschale Schuldübernahme;
+- mögliche statt behauptete Wirkungen von Gesprächsantworten und anpassbare Absprachen;
+- Langzeitdaten ohne Prognose eines individuellen Genesungsverlaufs;
 - die Sperre nicht freigegebener Handout- und Bilddateien.
 
 ## Browser- und Responsive-Prüfung

@@ -518,7 +518,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Ich stoppe jetzt – nicht weil ich aufgebe, sondern weil mir diese Beziehung wichtig ist\./i
+        /Ich darf ein Gespräch unterbrechen oder beenden, wenn ich eine Pause oder Abstand brauche\./i
       )
     ).toBeInTheDocument();
     expect(

@@ -368,7 +368,9 @@ export const handoutTextVersions = [
           "Gespräch möglich.",
           "Zuhören funktioniert.",
           "Körper entspannt.",
-          "Bleiben Sie im Gespräch.",
+          "Wenn beide Seiten möchten, können Sie das Gespräch fortsetzen.",
+          "Sie dürfen auch eine Pause machen oder es beenden, bevor es eskaliert.",
+          "«Ich brauche jetzt eine Pause und unterbreche das Gespräch.»",
           "Nutzen Sie klare, kurze Sätze.",
         ],
       },
@@ -394,7 +396,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Ich stoppe jetzt – nicht weil ich aufgebe, sondern weil mir diese Beziehung wichtig ist.",
+          "Ich stoppe jetzt. Ich darf ein Gespräch unterbrechen oder beenden, wenn ich eine Pause oder Abstand brauche.",
       },
       {
         title: "Zusatzhinweis",
@@ -425,10 +427,10 @@ export const handoutTextVersions = [
   createHandoutTextVersion("zuhoeren-ohne-zustimmen", {
     kicker: "Textversion",
     summary:
-      "Anerkennen heisst nicht automatisch zustimmen. Sie können Gefühle wahrnehmen, ohne Schuld zu übernehmen oder eine Deutung teilen zu müssen.",
+      "Anerkennen heisst nicht automatisch zustimmen. Sie können Gefühle wahrnehmen, ohne pauschale Schuld zu übernehmen oder eine Deutung teilen zu müssen.",
     intro: [
       "Zuhören ohne Zustimmen zeigt, wie Anerkennung möglich ist, ohne die eigene Sicht aufzugeben. So kann ein Gespräch respektvoller werden, ohne dass Grenzen verschwimmen.",
-      "Sie finden anerkennende Sätze, Beispiele für ungünstige Zustimmung, eine Grenze mit Plan, die Kernaussage und drei kurze Übungshinweise.",
+      "Sie finden anerkennende Sätze, Beispiele für pauschale Schuldübernahme, eine Grenze mit Plan, die Kernaussage und kurze Übungshinweise.",
     ],
     sections: [
       {
@@ -440,12 +442,11 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Nicht zustimmen",
+        title: "Pauschale Schuld nicht übernehmen",
         intro:
-          "Die folgenden Sätze wirken auf den ersten Blick beruhigend, kippen aber in Schuldübernahme oder Selbstaufgabe.",
+          "Sie müssen keine pauschale Schuldzuweisung übernehmen. Wenn Sie selbst etwas Verletzendes gesagt oder getan haben, können Sie dafür Verantwortung übernehmen und sich entschuldigen. Das bedeutet nicht, für die Erkrankung oder Genesung der anderen Person verantwortlich zu sein.",
         bullets: [
-          "Du hast recht, ich bin schuld.",
-          "Ja, ich hätte anders reagieren sollen.",
+          "Du hast recht, ich bin an allem schuld.",
           "Okay, dann mache ich es so, wie du willst.",
         ],
       },
@@ -465,13 +466,13 @@ export const handoutTextVersions = [
         title: "Merkhilfe",
         calloutTitle: "Gefühl anerkennen, Deutung offenlassen",
         calloutText:
-          "Sie können sagen, dass der Schmerz real ist, ohne automatisch die ganze Erklärung oder Schuld zu übernehmen.",
+          "Sie können sagen, dass der Schmerz real ist, ohne automatisch die ganze Erklärung zu teilen oder pauschale Schuld zu übernehmen.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Üben Sie Sätze wie: «Ich sehe, dass es dir nicht gut geht.» und lassen Sie diesen Satz erst einmal stehen.",
-          "Trennen Sie Gefühl und Inhalt: Das Gefühl ist echt, die Interpretation muss nicht stimmen.",
+          "Trennen Sie Gefühl und Deutung: Das Gefühl ist real; die Deutung müssen Sie nicht teilen.",
           "Bleiben Sie bei sich: Sie dürfen anderer Meinung sein, ohne das Gefühl abzuwerten.",
           "Sie dürfen gleichzeitig zuhören und Grenzen setzen; Validieren heisst nicht, verletzendes Verhalten gutzuheissen.",
         ],

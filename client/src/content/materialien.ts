@@ -294,7 +294,7 @@ export const materials: MaterialItem[] = [
     id: "genesung-zahlen",
     title: "Genesung in Zahlen",
     description:
-      "Langfristige Hoffnung mit realistischen Daten: Besserung ist möglich, aber selten linear.",
+      "Langfristige Studien zeigen Möglichkeiten der Besserung. Der individuelle Verlauf lässt sich daraus nicht vorhersagen.",
     category: "genesung",
     kind: "Infografik",
     url: "/infografiken/manus-genesung-zahlen-v3.webp",

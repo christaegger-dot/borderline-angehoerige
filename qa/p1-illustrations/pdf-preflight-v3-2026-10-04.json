@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-04T10:31:41.542494+00:00",
+  "tool": {
+    "name": "pypdf",
+    "version": "6.10.0"
+  },
+  "scope": "Read-only asset identity and PDF object inventory; no PDF/UA certification, human screenreader test or physical print test.",
+  "manifest_sha256": "9f8ed42f523a90c5de9306ab58b8f39134998c8f71ff162778e1bc1a0ce798af",
+  "all_asset_hashes_match_manifest": true,
+  "entries": [
+    {
+      "id": "radikale-akzeptanz",
+      "version": "puk-radikale-akzeptanz-v3",
+      "assets": {
+        "pdf": {
+          "path": "client/public/infografiken/puk-radikale-akzeptanz-v3.pdf",
+          "bytes": 59068,
+          "sha256": "dca1e2a4afbb9fddb73208c498a8e74f3ee53650ebc253d7c836fbc31b90ec42",
+          "manifest_match": true
+        },
+        "webp": {
+          "path": "client/public/infografiken/puk-radikale-akzeptanz-v3.webp",
+          "bytes": 231992,
+          "sha256": "89c9840d8b4dbcc5056de8bbe233cdfeae51624768808f887cb126c790f4c19e",
+          "manifest_match": true
+        },
+        "thumbnail": {
+          "path": "client/public/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v3.webp",
+          "bytes": 51324,
+          "sha256": "22c2e59a83e64df81e278d57ff9219b2392f0dac845da28d4194290c31663257",
+          "manifest_match": true
+        }
+      },
+      "pdf_inventory": {
+        "pdf_header": "%PDF-1.4",
+        "catalog_version": null,
+        "pages": 1,
+        "media_boxes_points": [
+          [
+            0.0,
+            0.0,
+            594.95996,
+            841.91998
+          ]
+        ],
+        "document_info_title": "Radikale Akzeptanz · Praxisblatt",
+        "catalog_language": "de-CH",
+        "marked": true,
+        "display_doc_title": true,
+        "structure_tree_present": true,
+        "catalog_xmp_present": false,
+        "role_map": {},
+        "roles": {
+          "/Aside": 1,
+          "/BlockQuote": 1,
+          "/Document": 1,
+          "/Figure": 1,
+          "/H1": 1,
+          "/H2": 6,
+          "/H3": 4,
+          "/L": 3,
+          "/LI": 12,
+          "/NonStruct": 42,
+          "/P": 15
+        },
+        "heading_roles_in_tree_order": [
+          "/H1",
+          "/H2",
+          "/H2",
+          "/H2",
+          "/H3",
+          "/H3",
+          "/H3",
+          "/H3",
+          "/H2",
+          "/H2",
+          "/H2"
+        ],
+        "figures": [
+          {
+            "alt": "Psychiatrische Universitätsklinik Zürich",
+            "actual_text": null
+          }
+        ],
+        "page_tab_orders": [
+          "/S"
+        ],
+        "fonts": [
+          {
+            "page": 1,
+            "resource": "/F4",
+            "base_font": "/AAAAAA+Rubik-Medium",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          },
+          {
+            "page": 1,
+            "resource": "/F5",
+            "base_font": "/BAAAAA+Rubik-Light",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          },
+          {
+            "page": 1,
+            "resource": "/F6",
+            "base_font": "/CAAAAA+Rubik-Regular",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "gespraeche-kippen",
+      "version": "puk-gespraeche-kippen-v3",
+      "assets": {
+        "pdf": {
+          "path": "client/public/infografiken/puk-gespraeche-kippen-v3.pdf",
+          "bytes": 56180,
+          "sha256": "f18df764adedf62dd014fe7d67e8438292aa0b5e3363b70220bf77dd6b654b0c",
+          "manifest_match": true
+        },
+        "webp": {
+          "path": "client/public/infografiken/puk-gespraeche-kippen-v3.webp",
+          "bytes": 237130,
+          "sha256": "f50f2a78227ddb3cfdffc3fe232b25c3fdc1f8f642babd49cf251345754e33b5",
+          "manifest_match": true
+        },
+        "thumbnail": {
+          "path": "client/public/infografiken/extras/thumbnails/puk-gespraeche-kippen-v3.webp",
+          "bytes": 52104,
+          "sha256": "38871b2415b5ec2cb575fc8c442a1c0482a20f04dd6f00803442363185f6ff5e",
+          "manifest_match": true
+        }
+      },
+      "pdf_inventory": {
+        "pdf_header": "%PDF-1.4",
+        "catalog_version": null,
+        "pages": 1,
+        "media_boxes_points": [
+          [
+            0.0,
+            0.0,
+            594.95996,
+            841.91998
+          ]
+        ],
+        "document_info_title": "Wenn Gespräche kippen · Praxisblatt",
+        "catalog_language": "de-CH",
+        "marked": true,
+        "display_doc_title": true,
+        "structure_tree_present": true,
+        "catalog_xmp_present": false,
+        "role_map": {},
+        "roles": {
+          "/BlockQuote": 1,
+          "/Document": 1,
+          "/Figure": 1,
+          "/H1": 1,
+          "/H2": 4,
+          "/H3": 3,
+          "/L": 2,
+          "/LI": 6,
+          "/NonStruct": 31,
+          "/P": 13
+        },
+        "heading_roles_in_tree_order": [
+          "/H1",
+          "/H2",
+          "/H3",
+          "/H3",
+          "/H3",
+          "/H2",
+          "/H2",
+          "/H2"
+        ],
+        "figures": [
+          {
+            "alt": "Psychiatrische Universitätsklinik Zürich",
+            "actual_text": null
+          }
+        ],
+        "page_tab_orders": [
+          "/S"
+        ],
+        "fonts": [
+          {
+            "page": 1,
+            "resource": "/F4",
+            "base_font": "/AAAAAA+Rubik-Medium",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          },
+          {
+            "page": 1,
+            "resource": "/F5",
+            "base_font": "/BAAAAA+Rubik-Light",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          },
+          {
+            "page": 1,
+            "resource": "/F6",
+            "base_font": "/CAAAAA+Rubik-Regular",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "beispiel-dialog",
+      "version": "puk-beispiel-dialog-v3",
+      "assets": {
+        "pdf": {
+          "path": "client/public/infografiken/puk-beispiel-dialog-v3.pdf",
+          "bytes": 56758,
+          "sha256": "9e4b6d4740015bde43dda6b70e65bf84f77c5fb74417db69a7171bbe9bd2c23d",
+          "manifest_match": true
+        },
+        "webp": {
+          "path": "client/public/infografiken/puk-beispiel-dialog-v3.webp",
+          "bytes": 202584,
+          "sha256": "f0547d830ea6e450fbc16177cc883a3a723ddb10eeebc051e015538f30c9dc84",
+          "manifest_match": true
+        },
+        "thumbnail": {
+          "path": "client/public/infografiken/extras/thumbnails/puk-beispiel-dialog-v3.webp",
+          "bytes": 44466,
+          "sha256": "e8f092704bc254e86637277403f01fc29cf1d261f64183a13db83beef4cc3d45",
+          "manifest_match": true
+        }
+      },
+      "pdf_inventory": {
+        "pdf_header": "%PDF-1.4",
+        "catalog_version": null,
+        "pages": 1,
+        "media_boxes_points": [
+          [
+            0.0,
+            0.0,
+            594.95996,
+            841.91998
+          ]
+        ],
+        "document_info_title": "Beispiel-Dialog · Praxisblatt",
+        "catalog_language": "de-CH",
+        "marked": true,
+        "display_doc_title": true,
+        "structure_tree_present": true,
+        "catalog_xmp_present": false,
+        "role_map": {},
+        "roles": {
+          "/BlockQuote": 2,
+          "/Document": 1,
+          "/Figure": 1,
+          "/H1": 1,
+          "/H2": 4,
+          "/H3": 5,
+          "/L": 1,
+          "/LI": 5,
+          "/NonStruct": 34,
+          "/P": 17
+        },
+        "heading_roles_in_tree_order": [
+          "/H1",
+          "/H2",
+          "/H2",
+          "/H3",
+          "/H3",
+          "/H3",
+          "/H3",
+          "/H3",
+          "/H2",
+          "/H2"
+        ],
+        "figures": [
+          {
+            "alt": "Psychiatrische Universitätsklinik Zürich",
+            "actual_text": null
+          }
+        ],
+        "page_tab_orders": [
+          "/S"
+        ],
+        "fonts": [
+          {
+            "page": 1,
+            "resource": "/F4",
+            "base_font": "/AAAAAA+Rubik-Medium",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          },
+          {
+            "page": 1,
+            "resource": "/F5",
+            "base_font": "/BAAAAA+Rubik-Light",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          },
+          {
+            "page": 1,
+            "resource": "/F6",
+            "base_font": "/CAAAAA+Rubik-Regular",
+            "font_program_present": true,
+            "to_unicode_stream_present": true
+          }
+        ]
+      }
+    }
+  ]
+}

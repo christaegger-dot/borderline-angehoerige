@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T23:28:51.819Z",
+  "generatedAt": "2026-10-04T00:22:27.743Z",
   "summary": {
     "totalFiles": 255,
-    "totalSizeMb": 191.61,
+    "totalSizeMb": 191.75,
     "activeReferencedFiles": 126,
-    "activeReferencedSizeMb": 68.48,
+    "activeReferencedSizeMb": 68.62,
     "supportFiles": 46,
     "supportFilesSizeMb": 53.06,
     "unreferencedCandidates": 83,
@@ -629,7 +629,7 @@
     },
     {
       "path": "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
-      "sizeBytes": 32616,
+      "sizeBytes": 43468,
       "usages": [
         {
           "source": "materials",
@@ -672,7 +672,7 @@
     },
     {
       "path": "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
-      "sizeBytes": 33812,
+      "sizeBytes": 44826,
       "usages": [
         {
           "source": "materials",
@@ -688,7 +688,7 @@
     },
     {
       "path": "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
-      "sizeBytes": 32826,
+      "sizeBytes": 36948,
       "usages": [
         {
           "source": "materials",
@@ -1558,7 +1558,7 @@
     },
     {
       "path": "/infografiken/puk-beispiel-dialog-v1.pdf",
-      "sizeBytes": 55046,
+      "sizeBytes": 56456,
       "usages": [
         {
           "source": "materials",
@@ -1574,7 +1574,7 @@
     },
     {
       "path": "/infografiken/puk-beispiel-dialog-v1.webp",
-      "sizeBytes": 149576,
+      "sizeBytes": 195724,
       "usages": [
         {
           "source": "materials",
@@ -1644,7 +1644,7 @@
     },
     {
       "path": "/infografiken/puk-gespraeche-kippen-v1.pdf",
-      "sizeBytes": 53211,
+      "sizeBytes": 54994,
       "usages": [
         {
           "source": "materials",
@@ -1660,7 +1660,7 @@
     },
     {
       "path": "/infografiken/puk-gespraeche-kippen-v1.webp",
-      "sizeBytes": 155230,
+      "sizeBytes": 211660,
       "usages": [
         {
           "source": "materials",
@@ -1676,7 +1676,7 @@
     },
     {
       "path": "/infografiken/puk-radikale-akzeptanz-v1.pdf",
-      "sizeBytes": 54941,
+      "sizeBytes": 55166,
       "usages": [
         {
           "source": "materials",
@@ -1692,7 +1692,7 @@
     },
     {
       "path": "/infografiken/puk-radikale-akzeptanz-v1.webp",
-      "sizeBytes": 148040,
+      "sizeBytes": 163290,
       "usages": [
         {
           "source": "materials",

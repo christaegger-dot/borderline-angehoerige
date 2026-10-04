@@ -1,5 +1,8 @@
 import type { MaterialCategory, MaterialItem } from "./materialien";
-import type { HandoutDocumentType } from "./handoutGovernance";
+import type {
+  HandoutApprovalStatus,
+  HandoutDocumentType,
+} from "./handoutGovernance";
 
 export interface HandoutTextCard {
   title: string;
@@ -62,7 +65,8 @@ export interface HandoutTextVersionMeta {
   title: string;
   description: string;
   documentType: HandoutDocumentType;
-  approvedVersion: string;
+  assetVersion: string;
+  approvalStatus: HandoutApprovalStatus;
   topicLabel: string;
   topicHref: string;
   category: Exclude<MaterialCategory, "alle">;

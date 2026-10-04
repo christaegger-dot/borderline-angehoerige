@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
 import {
+  getHandoutAssetVersion,
   getHandoutGovernance,
   HANDOUT_STANDARD_DISCLAIMER,
   isHandoutVisualPublished,
@@ -127,7 +128,7 @@ describe("handout governance", () => {
     }
   });
 
-  it("requires document type and approved version for every text version", () => {
+  it("requires document type, asset version and an explicit approval state for every text version", () => {
     for (const id of HANDOUT_TEXT_VERSION_IDS) {
       const governance = getHandoutGovernance(id);
 
@@ -135,7 +136,26 @@ describe("handout governance", () => {
       expect(governance?.documentType, id).toMatch(
         /^(ORIENTIERUNGSBLATT|PRAXISBLATT|KRISEN-HANDOUT)$/
       );
-      expect(governance?.approvedVersion, id).not.toBe("");
+      expect(getHandoutAssetVersion(governance!), id).not.toBe("");
+      expect(governance?.approvalStatus ?? "approved", id).toMatch(
+        /^(approved|draft-editorial-review-pending)$/
+      );
+    }
+  });
+
+  it("does not present the three P1 illustration drafts as approved assets", () => {
+    for (const id of [
+      "radikale-akzeptanz",
+      "gespraeche-kippen",
+      "beispiel-dialog",
+    ]) {
+      const governance = getHandoutGovernance(id);
+
+      expect(governance?.approvalStatus, id).toBe(
+        "draft-editorial-review-pending"
+      );
+      expect(governance?.approvedVersion, id).toBeUndefined();
+      expect(governance?.assetVersion, id).toMatch(/^puk-.+-v1$/);
     }
   });
 
@@ -145,7 +165,7 @@ describe("handout governance", () => {
 
       expect(governance, item.id).toBeTruthy();
       expect(pdfStem(item.sourceUrl), item.id).toBe(
-        governance?.approvedVersion
+        getHandoutAssetVersion(governance!)
       );
     }
   });

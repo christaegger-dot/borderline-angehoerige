@@ -57,6 +57,15 @@ function escapeHtml(value: string) {
     .replaceAll('"', "&quot;");
 }
 
+function formatSourceReference(sourceLine: string) {
+  return sourceLine
+    .replace(
+      /^(?:Quelle|Quellen|Fachlicher Bezugspunkt|Fachliche Bezugspunkte):\s*/u,
+      ""
+    )
+    .replace(/\.$/u, "");
+}
+
 function renderSteps(steps: VisualizationStep[], modifier: string) {
   return `<ol class="p1-path ${modifier}" role="list">${steps
     .map(
@@ -78,15 +87,15 @@ function renderAcceptance(
     <div class="p1-contrast">
       <section aria-labelledby="not-title">
         <h2 class="p1-section-title" id="not-title">Akzeptanz ist nicht</h2>
-        <ul role="list">${visual.notAcceptance.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        <ul role="list">${visual.notAcceptance.map(item => `<li>${escapeHtml(item.title)}</li>`).join("")}</ul>
       </section>
       <section aria-labelledby="is-title">
         <h2 class="p1-section-title" id="is-title">Akzeptanz kann heissen</h2>
-        <ul role="list">${visual.acceptance.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        <ul role="list">${visual.acceptance.map(item => `<li>${escapeHtml(item.title)}</li>`).join("")}</ul>
       </section>
     </div>
     <section aria-labelledby="path-title">
-      <h2 class="p1-section-title" id="path-title">Vier Schritte zurück zum Handlungsraum</h2>
+      <h2 class="p1-section-title" id="path-title">Vier mögliche Schritte zum Handlungsraum</h2>
       ${renderSteps(visual.steps, "p1-path--four")}
     </section>`;
 }
@@ -96,11 +105,11 @@ function renderConversation(
 ) {
   return `<blockquote class="p1-statement"><p>${escapeHtml(visual.keyStatement)}</p></blockquote>
     <section aria-labelledby="path-title">
-      <h2 class="p1-section-title" id="path-title">Die Reihenfolge zählt</h2>
+      <h2 class="p1-section-title" id="path-title">Drei mögliche Schritte</h2>
       ${renderSteps(visual.steps, "p1-path--three")}
     </section>
     <section class="p1-pause" aria-labelledby="pause-title">
-      <h2 class="p1-section-title" id="pause-title">Eine Pause bleibt verbindlich</h2>
+      <h2 class="p1-section-title" id="pause-title">Eine Pause schafft Wahlraum</h2>
       <ul role="list">${visual.pausePlan.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
     </section>`;
 }
@@ -171,7 +180,7 @@ function renderHtml(visual: HandoutVisualization) {
       <footer class="p1-footer">
         <p class="p1-footer__institution">Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich</p>
         <p>${escapeHtml(visual.disclaimer)}</p>
-        <p>Eigene didaktische Darstellung. ${escapeHtml(visual.sourceLine)}</p>
+        <p>Eigene didaktische Darstellung der Fachstelle Angehörigenarbeit in Anlehnung an ${escapeHtml(formatSourceReference(visual.sourceLine))}.</p>
         <div class="p1-footer__meta">
           <p>${escapeHtml(visual.standLine)}</p>
           <p>Seite 1 / 1</p>
@@ -197,8 +206,8 @@ function contentFragments(visual: HandoutVisualization) {
     return [
       ...shared,
       visual.keyStatement,
-      ...visual.notAcceptance,
-      ...visual.acceptance,
+      ...visual.notAcceptance.map(item => item.title),
+      ...visual.acceptance.map(item => item.title),
       ...visual.steps.flatMap(step => [step.title, step.text]),
       visual.safetyText,
       visual.nextStep,
@@ -434,6 +443,9 @@ async function main() {
           pdf: "A4 portrait, one page, tagged export requested",
           fullWebp: "1600 x 2263 px",
           thumbnailWebp: "600 x 849 px",
+          editorialStatus: "draft-editorial-review-pending",
+          editorialStatusLabel:
+            "Entwurf – fachlich-redaktionelle Freigabe ausstehend",
           pdfUaClaim: false,
           matterhornReview: "pending",
         },

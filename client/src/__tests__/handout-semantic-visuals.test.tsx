@@ -25,39 +25,65 @@ describe("accessible P1 handout visualizations", () => {
       screen.getByRole("figure", { name: "Radikale Akzeptanz" })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: /Vier Schritte zurück/i })
+      screen.getByRole("heading", { name: /Vier mögliche Schritte/i })
     ).toBeInTheDocument();
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
     ).toHaveTextContent(/nicht bleiben, schweigen oder Gewalt tolerieren/i);
-    expect(screen.getAllByRole("list")).toHaveLength(3);
+    expect(
+      screen.getByText(/Radikale Akzeptanz ist kein Rückzug aus dem Leben/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Akzeptanz kann die Anspannung einen Moment mindern/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Ein Satz wie «Im Moment ist es so»/i)
+    ).toBeInTheDocument();
+    expect(screen.getAllByRole("list")).toHaveLength(4);
+    expect(screen.getByText(/Dieses Blatt ersetzt/i)).toBeInTheDocument();
+    expect(screen.getByText(/in Anlehnung an Linehan/i)).toBeInTheDocument();
   });
 
   it("keeps the three conversation steps and the safety stop visible", () => {
     renderVisualization("gespraeche-kippen");
 
-    for (const title of ["Beruhigen", "Verbinden", "Begrenzen + Plan"]) {
+    for (const title of ["Beruhigen", "Verbinden", "Begrenzen oder beenden"]) {
       expect(screen.getByRole("heading", { name: title })).toBeInTheDocument();
     }
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Abstand schaffen und Hilfe holen/i);
-    expect(screen.getAllByRole("list")).toHaveLength(2);
+    ).toHaveTextContent(/Bei Bedrohung oder Gewalt.*in Sicherheit/i);
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).toHaveTextContent(/Bei vermuteter akuter Selbstgefährdung/i);
+    expect(screen.getByText(/keine Pflicht/i)).toBeInTheDocument();
+    expect(
+      screen.getAllByText(/keine Formulierung garantiert/i)
+    ).not.toHaveLength(0);
+    expect(screen.getAllByRole("list")).toHaveLength(3);
+    expect(screen.getByText(/Halten Sie Sätze so kurz/i)).toBeInTheDocument();
   });
 
   it("presents the dialogue as an adaptable example, not a script", () => {
     renderVisualization("beispiel-dialog");
 
-    expect(screen.getByText(/keine Zauberformel/i)).toBeInTheDocument();
+    expect(screen.getByText(/keine Rückkehrpflicht/i)).toBeInTheDocument();
+    expect(screen.getByText(/Verstehe ich dich richtig/i)).toBeInTheDocument();
     expect(
-      screen.getByText(/Passen Sie die Sätze an Ihre Sprache und Situation an/i)
-    ).toBeInTheDocument();
+      screen.getAllByText(/keine Formulierung garantiert/i)
+    ).not.toHaveLength(0);
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Dialog abbrechen und Hilfe holen/i);
+    ).toHaveTextContent(/Bei Bedrohung oder Gewalt.*in Sicherheit/i);
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).toHaveTextContent(/Bei vermuteter akuter Selbstgefährdung/i);
     expect(
       screen.getByText(/Textbeschreibung der Darstellung/i)
     ).toBeInTheDocument();
-    expect(screen.getAllByRole("list")).toHaveLength(1);
+    expect(screen.getAllByRole("list")).toHaveLength(2);
+    expect(
+      screen.getByText(/Üben Sie besonders einen klaren Grenz- und Pausensatz/i)
+    ).toBeInTheDocument();
   });
 });

@@ -463,17 +463,17 @@ export const handoutTextVersions = [
   createHandoutTextVersion("radikale-akzeptanz", {
     kicker: "Textversion",
     summary:
-      "Radikale Akzeptanz bedeutet nicht Aufgeben, sondern die Realität anzuerkennen und Energie für das Beeinflussbare zurückzugewinnen.",
+      "Radikale Akzeptanz bedeutet nicht Aufgeben. Sie kann helfen, den inneren Kampf einen Moment zu lösen und Kraft auf das Beeinflussbare zu richten.",
     intro: [
-      "Radikale Akzeptanz bedeutet nicht Aufgeben. Sie hilft, die Realität anzuerkennen und Kraft wieder auf das zu richten, was heute beeinflussbar ist.",
+      "Radikale Akzeptanz bedeutet nicht Aufgeben. Sie kann Entlastung ermöglichen, indem Sie die gegenwärtige Realität anerkennen und Ihre Kraft auf das richten, was heute beeinflussbar ist.",
       "Die Gegenüberstellung zeigt, was radikale Akzeptanz nicht ist, was sie ist, wie Sie sie in vier Schritten üben und worauf Sie Ihre Energie stattdessen richten können.",
     ],
     visualization: {
       kind: "acceptance-path",
       title: "Radikale Akzeptanz",
-      lead: "Die Realität anerkennen, ohne aufzugeben – und Kraft für das Beeinflussbare zurückgewinnen.",
+      lead: "Die Realität anerkennen, ohne aufzugeben – und den inneren Kampf einen Moment lösen.",
       longDescription:
-        "Die Darstellung grenzt zuerst vier Missverständnisse ab: Radikale Akzeptanz ist weder Aufgeben noch Gutheissen, Passivität oder Resignation. Danach zeigt sie vier Schritte: die Realität benennen, die eigene Reaktion spüren, den inneren Kampf loslassen und den Fokus auf das Beeinflussbare richten. Der Sicherheitshinweis stellt klar, dass Schutz vor der Akzeptanzübung geht und Akzeptanz niemals bedeutet, zu bleiben, zu schweigen oder Gewalt zu tolerieren.",
+        "Die eigene didaktische Darstellung grenzt zuerst vier Missverständnisse ab: Radikale Akzeptanz ist weder Aufgeben noch Gutheissen, Passivität oder Resignation. Danach zeigt sie vier mögliche Schritte: die Realität benennen, die eigene Reaktion spüren, den inneren Kampf einen Moment lösen und den Fokus auf das Beeinflussbare richten. Der Sicherheitshinweis stellt klar, dass Schutz vor der Akzeptanzübung geht und Akzeptanz niemals bedeutet, zu bleiben, zu schweigen oder Gewalt zu tolerieren.",
       safetyTitle: "Schutz geht vor",
       safetyBulletStartsWith: "Bei Gefahr",
       sections: {
@@ -490,7 +490,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Akzeptieren heisst: aufhören, gegen die Realität zu kämpfen – nicht: alles hinnehmen. Es ist, wie es ist, und trotzdem können Sie handeln.",
+          "Akzeptieren kann heissen, den inneren Kampf gegen die gegenwärtige Realität einen Moment zu lösen – nicht: alles hinzunehmen. Sie dürfen weiterhin entscheiden und handeln.",
       },
       {
         title: "Was Radikale Akzeptanz nicht ist",
@@ -511,7 +511,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Nicht Resignation",
-            text: "Es geht nicht darum, hoffnungslos zu werden, sondern inneren Widerstand zu lösen.",
+            text: "Es geht nicht darum, hoffnungslos zu werden, sondern den inneren Kampf einen Moment zu lösen.",
           },
         ],
       },
@@ -529,8 +529,8 @@ export const handoutTextVersions = [
             text: "Ihre Kraft bleibt nicht im inneren Widerstand stecken.",
           },
           {
-            title: "Inneren Frieden finden",
-            text: "Akzeptanz kann Anspannung senken und wieder mehr Boden unter die Füsse bringen.",
+            title: "Etwas Entlastung ermöglichen",
+            text: "Akzeptanz kann die Anspannung einen Moment mindern und wieder etwas mehr Boden unter die Füsse bringen.",
           },
           {
             title: "Loslassen von «Es sollte anders sein»",
@@ -551,7 +551,7 @@ export const handoutTextVersions = [
           },
           {
             title: "3. Loslassen",
-            text: "Ich höre auf zu kämpfen.",
+            text: "Kann ich den inneren Kampf einen Moment lösen?",
           },
           {
             title: "4. Fokus",
@@ -562,15 +562,16 @@ export const handoutTextVersions = [
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Üben Sie die 4 Schritte regelmässig in Ihrem Alltag. Starten Sie mit kleinen Situationen.",
-          "Wiederholen Sie das Mantra «Es ist, wie es ist», wenn Sie sich gestresst fühlen.",
-          "Richten Sie Ihre Energie bewusst auf Aufgaben, die Sie kontrollieren können, und lassen Sie den Rest los.",
+          "Probieren Sie die vier Schritte zunächst in einer kleinen, sicheren Alltagssituation aus.",
+          "Ein Satz wie «Im Moment ist es so» kann helfen, bei der gegenwärtigen Realität zu bleiben.",
+          "Prüfen Sie danach, was Sie beeinflussen können und wofür Sie gerade keine Verantwortung tragen.",
           "Bei Gefahr geht Schutz vor Akzeptanzübung.",
         ],
       },
     ],
-    sourceLine: "Quelle: Linehan, M. M. (2015), DBT Skills Training Manual.",
+    sourceLine:
+      "Fachlicher Bezugspunkt: Linehan, M. M. (2015), DBT Skills Training Manual.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 04.10.2026.",
   }),
 ];

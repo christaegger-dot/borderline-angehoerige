@@ -18,6 +18,8 @@ Rückkehr in Empfehlungsflächen.
 - 27 davon sind aktuell anschlussfähig und bleiben sichtbar.
 - 15 ältere beige «Manus»-Grafiken bilden den verbleibenden Drift-Block.
 - Es fehlen keine referenzierten Dateien.
+- Die drei neu aufgebauten P1-Praxisblätter sind technisch integriert, bleiben
+  aber **Entwürfe; die fachlich-redaktionelle Freigabe steht aus**.
 - Fünf P1-Assets werden bis zum Ersatz nur als aktuelle HTML-Textversion
   angeboten. Die veraltete Vorschau und das PDF werden nicht mehr beworben.
 - Zehn P2-Assets bleiben für einen nachfolgenden visuellen Pass vorgemerkt.
@@ -36,19 +38,25 @@ ersetzt werden:
 | `dear`                | `puk-dear-v1`                |
 | `garten`              | `puk-garten-v1`              |
 | `4-arten-von-grenzen` | `puk-4-arten-von-grenzen-v1` |
-| `radikale-akzeptanz`  | `puk-radikale-akzeptanz-v1`  |
-| `gespraeche-kippen`   | `puk-gespraeche-kippen-v1`   |
-| `beispiel-dialog`     | `puk-beispiel-dialog-v1`     |
-
-Die drei zuletzt genannten Praxisblätter bilden das P1-Illustrationspaket vom 4. Oktober 2026. Sie verwenden dieselbe korrigierte Inhaltsquelle für die
-semantische Webdarstellung und den A4-Export. Vollbild und Thumbnail werden aus
-dem PDF-Seitenbild erzeugt. Die früheren `manus-*`-Dateien bleiben vorerst als
-Vergleichsstand erhalten, sind aber nicht mehr referenziert.
 
 Ebenfalls anschlussfähig sind die neueren PUK-Illustrationen unter
 `/puk/illustrations`, die Hero-SVGs und die aktuellen Inline-Diagramme sowie die
 hochversionierten Modelle Eisberg v8, Pendel v16, Alarm v4, Ampel v4,
 Deeskalation v11, Validierung v10, Sauerstoff v5 und Fortschritt v5.
+
+## P1-Illustrationspaket: technisch integriert, redaktionell noch Entwurf
+
+| ID                   | Asset-Version               | Status                                               |
+| -------------------- | --------------------------- | ---------------------------------------------------- |
+| `radikale-akzeptanz` | `puk-radikale-akzeptanz-v1` | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+| `gespraeche-kippen`  | `puk-gespraeche-kippen-v1`  | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+| `beispiel-dialog`    | `puk-beispiel-dialog-v1`    | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+
+Die drei Praxisblätter verwenden dieselbe redaktionell überarbeitete
+Inhaltsquelle für die semantische Webdarstellung und den A4-Export. Vollbild
+und Thumbnail werden aus dem PDF-Seitenbild erzeugt. Die technischen Prüfungen
+belegen keine fachliche Freigabe. Die früheren `manus-*`-Dateien bleiben
+vorerst als Vergleichsstand erhalten, sind aber nicht mehr referenziert.
 
 ## P1: vorläufig nur HTML-Textversion
 
@@ -90,7 +98,9 @@ PDF-Link oder Download in der Website.
 3. Flache WebP-/PDF-Dateien nicht punktuell übermalen. Aus einer editierbaren
    Quelle neu aufbauen und exportieren.
 4. Nach fachlicher und visueller Freigabe eine neue Assetversion vergeben,
-   `approvedVersion` aktualisieren und `visualAssetStatus` entfernen.
+   den Entwurfswert `assetVersion` nach `approvedVersion` überführen,
+   `approvalStatus` auf `approved` setzen und gegebenenfalls
+   `visualAssetStatus` entfernen.
 5. Danach Inventar, Governance, Textversionen, Responsive Layout,
    Tastaturbedienung und PDF-Vorschau erneut prüfen.
 

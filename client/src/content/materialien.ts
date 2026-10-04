@@ -49,7 +49,8 @@ export interface ResolvedMaterialDownload {
   sourceUrl: string;
 }
 
-const P1_MATERIAL_STAND = "03.02.2026 (Inhalt) · Ausgabe geprüft am 04.10.2026";
+const P1_MATERIAL_STAND =
+  "Entwurf · fachlich-redaktionelle Freigabe ausstehend · Stand 04.10.2026";
 
 export const materials: MaterialItem[] = [
   {
@@ -265,7 +266,7 @@ export const materials: MaterialItem[] = [
     id: "radikale-akzeptanz",
     title: "Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln",
     description:
-      "Hilft Angehörigen, Realität anzuerkennen, ohne aufzugeben oder alles gutzuheissen.",
+      "Kann Angehörigen helfen, Realität anzuerkennen, ohne aufzugeben oder alles gutzuheissen.",
     category: "selbstfuersorge",
     kind: "Infografik",
     url: "/infografiken/puk-radikale-akzeptanz-v1.webp",

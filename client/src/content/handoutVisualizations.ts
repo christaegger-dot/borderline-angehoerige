@@ -18,6 +18,11 @@ export type VisualizationStep = {
   text: string;
 };
 
+export type VisualizationContrastItem = {
+  title: string;
+  text: string;
+};
+
 type HandoutVisualizationBase = {
   id: HandoutVisualizationId;
   title: string;
@@ -26,6 +31,7 @@ type HandoutVisualizationBase = {
   longDescription: string;
   keyStatement: string;
   nextStep: string;
+  additionalActions: string[];
   safetyTitle: string;
   safetyText: string;
   sourceLine: string;
@@ -35,8 +41,8 @@ type HandoutVisualizationBase = {
 
 export type AcceptanceVisualization = HandoutVisualizationBase & {
   kind: "acceptance-path";
-  notAcceptance: string[];
-  acceptance: string[];
+  notAcceptance: VisualizationContrastItem[];
+  acceptance: VisualizationContrastItem[];
   steps: VisualizationStep[];
 };
 
@@ -134,6 +140,9 @@ function baseVisualization(
     throw new Error(`Missing visualization next step for ${handout.id}`);
   }
 
+  const safetyText = requireSafetyBullet(actions, config, handout.id);
+  const nextStepIndex = config.nextStepBulletIndex ?? 0;
+
   return {
     id: handout.id as HandoutVisualizationId,
     title: config.title ?? handout.title,
@@ -142,8 +151,11 @@ function baseVisualization(
     longDescription: config.longDescription,
     keyStatement: requireCallout(keySection, handout.id),
     nextStep,
+    additionalActions: actions.filter(
+      (item, index) => index !== nextStepIndex && item !== safetyText
+    ),
     safetyTitle: config.safetyTitle,
-    safetyText: requireSafetyBullet(actions, config, handout.id),
+    safetyText,
     sourceLine: handout.sourceLine,
     standLine: handout.standLine,
     disclaimer:
@@ -187,9 +199,9 @@ export function resolveHandoutVisualization(
       ...base,
       kind: config.kind,
       safetyText: `${base.safetyText} ${safetyCard.text}`,
-      notAcceptance: notCards.map(card => card.title),
+      notAcceptance: notCards.map(({ title, text }) => ({ title, text })),
       acceptance: requireCards(acceptanceSection, handout.id).map(
-        card => card.title
+        ({ title, text }) => ({ title, text })
       ),
       steps: toSteps(requireCards(stepSection, handout.id)),
     };

@@ -28,7 +28,11 @@ type ManifestEntry = {
 
 type Manifest = {
   sourceStylesheet: { path: string; sha256: string };
-  exportContract: { pdfUaClaim: boolean };
+  exportContract: {
+    editorialStatus: string;
+    editorialStatusLabel: string;
+    pdfUaClaim: boolean;
+  };
   entries: ManifestEntry[];
 };
 
@@ -62,6 +66,17 @@ if (!existsSync(manifestPath)) {
 const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as Manifest;
 if (manifest.exportContract.pdfUaClaim !== false) {
   fail("PDF/UA must not be claimed before the responsible final review");
+}
+if (
+  manifest.exportContract.editorialStatus !== "draft-editorial-review-pending"
+) {
+  fail("P1 package must remain a draft until editorial approval is recorded");
+}
+if (
+  manifest.exportContract.editorialStatusLabel !==
+  "Entwurf – fachlich-redaktionelle Freigabe ausstehend"
+) {
+  fail("P1 package is missing the explicit editorial draft label");
 }
 
 const stylesheetPath = path.join(repoRoot, manifest.sourceStylesheet.path);
@@ -102,6 +117,7 @@ for (const entry of manifest.entries) {
   for (const requiredText of [
     "Dieses Blatt ersetzt keine persönliche Beratung oder Behandlung.",
     "Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich",
+    manifest.exportContract.editorialStatusLabel,
     entry.safetyText,
   ]) {
     if (!normalizedSourceText.includes(normalizeText(requiredText))) {

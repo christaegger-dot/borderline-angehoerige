@@ -421,9 +421,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findAllByText(
-        /Akzeptieren heisst: aufhören, gegen die Realität zu kämpfen/i
-      )
+      await screen.findAllByText(/Akzeptieren kann heissen, den inneren Kampf/i)
     ).not.toHaveLength(0);
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -434,6 +432,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
     ).toHaveTextContent(/Schutz vor Akzeptanzübung/i);
+    expect(
+      screen.getAllByText(/fachlich-redaktionelle Freigabe ausstehend/i)
+    ).not.toHaveLength(0);
   });
 
   it("HandoutTextPage: rendert Wenn-Worte-treffen-Textversion", async () => {
@@ -467,7 +468,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findAllByText(
-        /Kurz, ruhig und wiederholbar wirkt in Krisen stärker als Argumente\./i
+        /Keine Formulierung garantiert eine bestimmte Reaktion\./i
       )
     ).not.toHaveLength(0);
     expect(
@@ -475,7 +476,10 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/kommunizieren");
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Bedrohung, Gewalt oder akuter Selbstgefährdung/i);
+    ).toHaveTextContent(
+      /Bei Bedrohung oder Gewalt.*Bei vermuteter akuter Selbstgefährdung/i
+    );
+    expect(screen.queryByText(/Worum es in diesem Handout geht/i)).toBeNull();
   });
 
   it("HandoutTextPage: rendert Grenzen-ohne-Eskalation-Textversion", async () => {
@@ -551,16 +555,18 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findAllByText(
-        /Kurz, ruhig, wiederholbar\. Nicht erklären, nicht rechtfertigen, nicht streiten\./i
+        /Keine Formulierung garantiert eine bestimmte Reaktion\./i
       )
     ).not.toHaveLength(0);
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
     ).toHaveAttribute("href", "/kommunizieren");
-    expect(screen.getAllByText(/keine Zauberformel/i)).not.toHaveLength(0);
+    expect(screen.getAllByText(/keine Rückkehrpflicht/i)).not.toHaveLength(0);
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Dialog abbrechen und Hilfe holen/i);
+    ).toHaveTextContent(
+      /Bei Bedrohung oder Gewalt.*Bei vermuteter akuter Selbstgefährdung/i
+    );
   });
 
   it("HandoutTextPage: rendert DEAR-Textversion", async () => {

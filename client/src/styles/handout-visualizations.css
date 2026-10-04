@@ -107,6 +107,15 @@
     padding-left: 1.25rem;
   }
 
+  .handout-visual__contrast h4 {
+    margin: 0;
+  }
+
+  .handout-visual__contrast li p {
+    margin: 0.3rem 0 0;
+    color: var(--visual-muted);
+  }
+
   .handout-visual__contrast li::before,
   .handout-visual__pause li::before {
     position: absolute;
@@ -199,6 +208,24 @@
     padding-top: 1rem;
   }
 
+  .handout-visual__additional-actions {
+    display: grid;
+    gap: 0.75rem;
+    border-top: 1px solid var(--visual-rule);
+    padding-top: 1rem;
+  }
+
+  .handout-visual__additional-actions ul {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .handout-visual__additional-actions li::marker {
+    color: var(--visual-blue);
+  }
+
   .handout-visual__opening {
     display: grid;
     gap: 0.8rem;
@@ -257,6 +284,13 @@
 
   .handout-visual__caption details {
     max-width: 70ch;
+  }
+
+  .handout-visual__disclaimer {
+    max-width: 70ch;
+    border-left: 2px solid var(--visual-blue);
+    padding-left: 0.85rem;
+    color: var(--visual-ink);
   }
 
   .handout-visual__caption summary {

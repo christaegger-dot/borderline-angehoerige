@@ -4,6 +4,9 @@ export type HandoutDocumentType =
   | "KRISEN-HANDOUT";
 
 export type HandoutVisualAssetStatus = "published" | "text-only";
+export type HandoutApprovalStatus =
+  | "approved"
+  | "draft-editorial-review-pending";
 
 export interface HandoutGovernanceEntry {
   id: string;
@@ -13,7 +16,14 @@ export interface HandoutGovernanceEntry {
    * Nicht automatisch die hoechste vorhandene Version: alte Assets koennen
    * bewusst gelockt bleiben, bis sie fachlich/designseitig freigegeben sind.
    */
-  approvedVersion: string;
+  approvedVersion?: string;
+  /**
+   * Dateistamm eines Entwurfs, der technisch eingebunden ist, aber noch keine
+   * fachlich-redaktionelle Freigabe besitzt. Darf nicht zugleich mit
+   * `approvedVersion` gesetzt werden.
+   */
+  assetVersion?: string;
+  approvalStatus?: HandoutApprovalStatus;
   /**
    * `text-only` zieht eine fachlich oder visuell veraltete Druckgrafik aus den
    * Empfehlungsflächen zurück. Die aktuelle HTML-Textversion bleibt verfügbar.
@@ -27,6 +37,9 @@ export const HANDOUT_STANDARD_DISCLAIMER =
 
 export const HANDOUT_VISUAL_REFRESH_NOTE =
   "Die Druckgrafik und das PDF werden fachlich und visuell überarbeitet. Nutzen Sie bis dahin die aktuelle Textversion.";
+
+export const HANDOUT_EDITORIAL_DRAFT_NOTE =
+  "Entwurf – fachlich-redaktionelle Freigabe ausstehend.";
 
 export const handoutGovernance = {
   "notfallkarte-zuerich": {
@@ -124,7 +137,8 @@ export const handoutGovernance = {
   "gespraeche-kippen": {
     id: "gespraeche-kippen",
     documentType: "PRAXISBLATT",
-    approvedVersion: "puk-gespraeche-kippen-v1",
+    assetVersion: "puk-gespraeche-kippen-v1",
+    approvalStatus: "draft-editorial-review-pending",
   },
   "grenzen-ohne-eskalation": {
     id: "grenzen-ohne-eskalation",
@@ -149,7 +163,8 @@ export const handoutGovernance = {
   "beispiel-dialog": {
     id: "beispiel-dialog",
     documentType: "PRAXISBLATT",
-    approvedVersion: "puk-beispiel-dialog-v1",
+    assetVersion: "puk-beispiel-dialog-v1",
+    approvalStatus: "draft-editorial-review-pending",
   },
   dear: {
     id: "dear",
@@ -219,7 +234,8 @@ export const handoutGovernance = {
   "radikale-akzeptanz": {
     id: "radikale-akzeptanz",
     documentType: "PRAXISBLATT",
-    approvedVersion: "puk-radikale-akzeptanz-v1",
+    assetVersion: "puk-radikale-akzeptanz-v1",
+    approvalStatus: "draft-editorial-review-pending",
   },
   garten: {
     id: "garten",
@@ -273,6 +289,20 @@ export function requireHandoutGovernance(id: string) {
   }
 
   return governance;
+}
+
+export function getHandoutAssetVersion(
+  governance: HandoutGovernanceEntry
+): string {
+  const version = governance.approvedVersion ?? governance.assetVersion;
+  if (!version) {
+    throw new Error(`Missing handout asset version: ${governance.id}`);
+  }
+  return version;
+}
+
+export function getHandoutApprovalStatus(id: string | undefined) {
+  return getHandoutGovernance(id)?.approvalStatus ?? "approved";
 }
 
 export function isHandoutVisualPublished(id: string | undefined) {

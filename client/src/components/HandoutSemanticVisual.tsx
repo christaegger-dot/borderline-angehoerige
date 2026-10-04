@@ -50,6 +50,36 @@ function NextStep({ children, id }: { children: string; id: string }) {
   );
 }
 
+function AdditionalActions({ visualization }: Props) {
+  if (!visualization.additionalActions.length) {
+    return null;
+  }
+
+  const titleId = `${visualization.id}-additional-actions`;
+  return (
+    <section
+      className="handout-visual__additional-actions"
+      aria-labelledby={titleId}
+    >
+      <h3 id={titleId}>Weitere Handlungsmöglichkeiten</h3>
+      <ul>
+        {visualization.additionalActions.map(item => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function formatSourceReference(sourceLine: string) {
+  return sourceLine
+    .replace(
+      /^(?:Quelle|Quellen|Fachlicher Bezugspunkt|Fachliche Bezugspunkte):\s*/,
+      ""
+    )
+    .replace(/\.$/, "");
+}
+
 function AcceptanceVisual({
   visualization,
 }: {
@@ -63,7 +93,10 @@ function AcceptanceVisual({
           <h3 id="not-acceptance-title">Akzeptanz ist nicht</h3>
           <ul role="list">
             {visualization.notAcceptance.map(item => (
-              <li key={item}>{item}</li>
+              <li key={item.title}>
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+              </li>
             ))}
           </ul>
         </section>
@@ -71,7 +104,10 @@ function AcceptanceVisual({
           <h3 id="acceptance-title">Akzeptanz kann heissen</h3>
           <ul role="list">
             {visualization.acceptance.map(item => (
-              <li key={item}>{item}</li>
+              <li key={item.title}>
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+              </li>
             ))}
           </ul>
         </section>
@@ -81,7 +117,7 @@ function AcceptanceVisual({
         aria-labelledby="acceptance-path-title"
       >
         <h3 id="acceptance-path-title">
-          Vier Schritte zurück zum Handlungsraum
+          Vier mögliche Schritte zum Handlungsraum
         </h3>
         <ol
           className="handout-visual__path handout-visual__path--four"
@@ -102,6 +138,7 @@ function AcceptanceVisual({
       <NextStep id={`${visualization.id}-next-step`}>
         {visualization.nextStep}
       </NextStep>
+      <AdditionalActions visualization={visualization} />
     </>
   );
 }
@@ -118,7 +155,7 @@ function ConversationVisual({
         className="handout-visual__path-block"
         aria-labelledby="conversation-path-title"
       >
-        <h3 id="conversation-path-title">Die Reihenfolge zählt</h3>
+        <h3 id="conversation-path-title">Drei mögliche Schritte</h3>
         <ol
           className="handout-visual__path handout-visual__path--three"
           role="list"
@@ -138,7 +175,7 @@ function ConversationVisual({
         className="handout-visual__pause"
         aria-labelledby="pause-plan-title"
       >
-        <h3 id="pause-plan-title">Eine Pause bleibt verbindlich</h3>
+        <h3 id="pause-plan-title">Eine Pause schafft Wahlraum</h3>
         <ul role="list">
           {visualization.pausePlan.map(item => (
             <li key={item}>{item}</li>
@@ -149,6 +186,7 @@ function ConversationVisual({
       <NextStep id={`${visualization.id}-next-step`}>
         {visualization.nextStep}
       </NextStep>
+      <AdditionalActions visualization={visualization} />
     </>
   );
 }
@@ -194,6 +232,7 @@ function DialogVisual({
       <NextStep id={`${visualization.id}-next-step`}>
         {visualization.nextStep}
       </NextStep>
+      <AdditionalActions visualization={visualization} />
     </>
   );
 }
@@ -215,7 +254,13 @@ export default function HandoutSemanticVisual({ visualization }: Props) {
         )}
       </div>
       <figcaption className="handout-visual__caption">
-        <p>Eigene didaktische Darstellung der Fachstelle Angehörigenarbeit.</p>
+        <p>
+          Eigene didaktische Darstellung der Fachstelle Angehörigenarbeit in
+          Anlehnung an {formatSourceReference(visualization.sourceLine)}.
+        </p>
+        <p className="handout-visual__disclaimer">
+          <strong>Hinweis:</strong> {visualization.disclaimer}
+        </p>
         <details>
           <summary>Textbeschreibung der Darstellung</summary>
           <p>{visualization.longDescription}</p>

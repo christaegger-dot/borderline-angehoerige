@@ -40,7 +40,7 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
   {
     id: "radikale-akzeptanz",
     title: "Radikale Akzeptanz",
-    desc: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung.",
+    desc: "Gegenüberstellung und vier mögliche Schritte, um den inneren Kampf einen Moment zu lösen.",
     category: "techniken",
     webp: "/infografiken/puk-radikale-akzeptanz-v1.webp",
     thumbnailUrl:

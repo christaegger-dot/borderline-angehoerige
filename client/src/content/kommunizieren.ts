@@ -30,7 +30,8 @@ export const kommItems: KommunikationsMaterial[] = [
   {
     id: "gespraeche-kippen",
     title: "Wenn Gespräche kippen: 3 Schritte",
-    description: "Beruhigen, verbinden, begrenzen",
+    description:
+      "Tempo senken, vorsichtig spiegeln, die eigene Grenze schützen",
     url: "/infografiken/puk-gespraeche-kippen-v1.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
@@ -80,7 +81,8 @@ export const kommItems: KommunikationsMaterial[] = [
   {
     id: "beispiel-dialog",
     title: "Beispiel-Dialog",
-    description: "Technik-Schritte in einem kurzen Gespräch",
+    description:
+      "Mögliche Sätze für Spiegeln, Grenze und optionalen Wiedereinstieg",
     url: "/infografiken/puk-beispiel-dialog-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
     pdfUrl: "/infografiken/puk-beispiel-dialog-v1.pdf",

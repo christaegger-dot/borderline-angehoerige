@@ -7,9 +7,13 @@ Praxisblätter:
 - Wenn Gespräche kippen
 - Beispiel-Dialog
 
+**Status: Entwurf – fachlich-redaktionelle Freigabe ausstehend.** Die
+technische Integration und die automatisierten Prüfungen sind kein inhaltlicher
+Freigabenachweis.
+
 ## Vertrag
 
-- Inhaltsquelle: die freigegebenen Textversionen unter
+- Inhaltsquelle: die redaktionell überarbeiteten Textversionen unter
   `client/src/content/handoutTextVersionContent/`.
 - Strukturzuordnung und Textalternativen: das optionale `visualization`-Feld der
   jeweiligen Textversion.
@@ -23,7 +27,9 @@ Praxisblätter:
 - Thumbnail-WebP: 600 × 849 px.
 
 Alle drei Blätter sind Praxisblätter, enthalten keine Krisennummern und führen
-den Schutz- oder Sicherheitsabbruch sichtbar ausserhalb optionaler Inhalte.
+Schutz vor Gesprächstechnik sichtbar ausserhalb optionaler Inhalte. Gewalt oder
+Bedrohung und vermutete akute Selbstgefährdung werden als unterschiedliche
+Situationen beschrieben.
 
 ## Erzeugen und prüfen
 
@@ -37,5 +43,6 @@ erst dann in WebP umgewandelt. Dadurch bleiben PDF, Vollbild und Thumbnail
 visuell deckungsgleich. `manifest.json` dokumentiert Browser, Dateigrössen,
 Abmessungen und SHA-256-Werte.
 
-Vor einer PDF/UA-Freigabe bleiben eine verantwortete Matterhorn-Prüfung und ein
-realer Screenreader-Durchgang erforderlich.
+Vor einer Freigabe bleiben die fachlich-redaktionelle Bestätigung, eine
+verantwortete Matterhorn-Prüfung und die vorgesehenen realen
+Screenreader-Durchgänge erforderlich.

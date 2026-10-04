@@ -41,6 +41,21 @@ describe("accessible P1 handout visualizations", () => {
     expect(
       screen.getByText(/Die andere Person möchte heute keine Hilfe annehmen/i)
     ).toBeInTheDocument();
+    for (const label of [
+      "Aufgeben",
+      "Gutheissen",
+      "Passivität",
+      "Resignation",
+    ]) {
+      expect(
+        screen.getByRole("heading", { name: label, exact: true })
+      ).toBeInTheDocument();
+    }
+    expect(
+      screen.queryByRole("heading", {
+        name: /Nicht (?:Aufgeben|Gutheissen|Passivität|Resignation)/i,
+      })
+    ).not.toBeInTheDocument();
     expect(screen.getAllByText(/Sie machen nichts falsch/i)).not.toHaveLength(
       0
     );
@@ -74,6 +89,14 @@ describe("accessible P1 handout visualizations", () => {
 
     expect(screen.getByText(/keine Rückkehrpflicht/i)).toBeInTheDocument();
     expect(screen.getByText(/Verstehe ich dich richtig/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Ich möchte dieses Gespräch so nicht weiterführen\. Ich beende es jetzt/i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(/Ich möchte nicht angeschrien werden/i)
+    ).not.toBeInTheDocument();
     expect(
       screen.getAllByText(/keine Formulierung garantiert/i)
     ).not.toHaveLength(0);

@@ -520,7 +520,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Grenze",
-            text: "«Ich möchte nicht angeschrien werden. Ich beende das Gespräch jetzt.»",
+            text: "«Ich möchte dieses Gespräch so nicht weiterführen. Ich beende es jetzt.»",
           },
           {
             title: "Pause",

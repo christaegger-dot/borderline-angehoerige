@@ -26,27 +26,27 @@
   "entries": [
     {
       "id": "radikale-akzeptanz",
-      "version": "puk-radikale-akzeptanz-v2",
-      "sourceHtml": "handouts/p1-illustrations/sources/puk-radikale-akzeptanz-v2.html",
-      "sourceHtmlSha256": "4fae576ee4287c39412eeeaf7145a1b72a5fa407a7992a121424cadb292df0e6",
+      "version": "puk-radikale-akzeptanz-v3",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-radikale-akzeptanz-v3.html",
+      "sourceHtmlSha256": "aaa137573c7799cd94c0e7072251c004db34998b9891ee091e6b1247af02b2a8",
       "pdf": {
-        "path": "client/public/infografiken/puk-radikale-akzeptanz-v2.pdf",
-        "bytes": 59163,
-        "sha256": "578e488d63db1fd709ce5bcb9b397a10f1892ab74924000d689f4f7aef696d46",
+        "path": "client/public/infografiken/puk-radikale-akzeptanz-v3.pdf",
+        "bytes": 59068,
+        "sha256": "dca1e2a4afbb9fddb73208c498a8e74f3ee53650ebc253d7c836fbc31b90ec42",
         "pages": 1,
         "tagged": true
       },
       "webp": {
-        "path": "client/public/infografiken/puk-radikale-akzeptanz-v2.webp",
-        "bytes": 234286,
-        "sha256": "395e02bbda781f25c91913881fa6ffe23c441176cabfb70be371475f01400448",
+        "path": "client/public/infografiken/puk-radikale-akzeptanz-v3.webp",
+        "bytes": 231992,
+        "sha256": "89c9840d8b4dbcc5056de8bbe233cdfeae51624768808f887cb126c790f4c19e",
         "width": 1600,
         "height": 2263
       },
       "thumbnail": {
-        "path": "client/public/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp",
-        "bytes": 51808,
-        "sha256": "aefc6f6574b4854ee536be17cb53849ffa591ccee737f1930b609e64a16ae732",
+        "path": "client/public/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v3.webp",
+        "bytes": 51324,
+        "sha256": "22c2e59a83e64df81e278d57ff9219b2392f0dac845da28d4194290c31663257",
         "width": 600,
         "height": 849
       },
@@ -54,25 +54,25 @@
     },
     {
       "id": "gespraeche-kippen",
-      "version": "puk-gespraeche-kippen-v2",
-      "sourceHtml": "handouts/p1-illustrations/sources/puk-gespraeche-kippen-v2.html",
+      "version": "puk-gespraeche-kippen-v3",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-gespraeche-kippen-v3.html",
       "sourceHtmlSha256": "a2e0bd9366868b45c1c2f5df9c8419233f51a684b14f1ee33ea73539421dc2bb",
       "pdf": {
-        "path": "client/public/infografiken/puk-gespraeche-kippen-v2.pdf",
+        "path": "client/public/infografiken/puk-gespraeche-kippen-v3.pdf",
         "bytes": 56180,
-        "sha256": "99f2a02467101cb572204f2bb4c953a92104d1703f73e669842a246e174957f1",
+        "sha256": "f18df764adedf62dd014fe7d67e8438292aa0b5e3363b70220bf77dd6b654b0c",
         "pages": 1,
         "tagged": true
       },
       "webp": {
-        "path": "client/public/infografiken/puk-gespraeche-kippen-v2.webp",
+        "path": "client/public/infografiken/puk-gespraeche-kippen-v3.webp",
         "bytes": 237130,
         "sha256": "f50f2a78227ddb3cfdffc3fe232b25c3fdc1f8f642babd49cf251345754e33b5",
         "width": 1600,
         "height": 2263
       },
       "thumbnail": {
-        "path": "client/public/infografiken/extras/thumbnails/puk-gespraeche-kippen-v2.webp",
+        "path": "client/public/infografiken/extras/thumbnails/puk-gespraeche-kippen-v3.webp",
         "bytes": 52104,
         "sha256": "38871b2415b5ec2cb575fc8c442a1c0482a20f04dd6f00803442363185f6ff5e",
         "width": 600,
@@ -82,27 +82,27 @@
     },
     {
       "id": "beispiel-dialog",
-      "version": "puk-beispiel-dialog-v2",
-      "sourceHtml": "handouts/p1-illustrations/sources/puk-beispiel-dialog-v2.html",
-      "sourceHtmlSha256": "132ed5316cb89266424646317a9a52c8826028c4eef93b53fe073555b2a5298a",
+      "version": "puk-beispiel-dialog-v3",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-beispiel-dialog-v3.html",
+      "sourceHtmlSha256": "b46fde7fb1892db2bbe7793ffb07a098eb993605f481d4d85a6f05d99d137eb2",
       "pdf": {
-        "path": "client/public/infografiken/puk-beispiel-dialog-v2.pdf",
-        "bytes": 56757,
-        "sha256": "b293d3bfa957e309d2e3d1f7a376842b516ef3a8f4c6d1bef03ab3b4ca75e1ef",
+        "path": "client/public/infografiken/puk-beispiel-dialog-v3.pdf",
+        "bytes": 56758,
+        "sha256": "9e4b6d4740015bde43dda6b70e65bf84f77c5fb74417db69a7171bbe9bd2c23d",
         "pages": 1,
         "tagged": true
       },
       "webp": {
-        "path": "client/public/infografiken/puk-beispiel-dialog-v2.webp",
-        "bytes": 202442,
-        "sha256": "434d9c3366287cf0f88281db4edd38e29a2e7a494a40761a60f5b0321f90b7cc",
+        "path": "client/public/infografiken/puk-beispiel-dialog-v3.webp",
+        "bytes": 202584,
+        "sha256": "f0547d830ea6e450fbc16177cc883a3a723ddb10eeebc051e015538f30c9dc84",
         "width": 1600,
         "height": 2263
       },
       "thumbnail": {
-        "path": "client/public/infografiken/extras/thumbnails/puk-beispiel-dialog-v2.webp",
-        "bytes": 44470,
-        "sha256": "e1e8709bf70fdfa5253ea9fe8b6925ade6a2d62f3067a22bf177edf343e7f6a3",
+        "path": "client/public/infografiken/extras/thumbnails/puk-beispiel-dialog-v3.webp",
+        "bytes": 44466,
+        "sha256": "e8f092704bc254e86637277403f01fc29cf1d261f64183a13db83beef4cc3d45",
         "width": 600,
         "height": 849
       },

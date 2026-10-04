@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import materialDownloadFunction from "../../../netlify/functions/material-download";
+import { SECURITY_HEADERS } from "@shared/securityHeaders";
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -13,33 +14,28 @@ describe("netlify material-download function adapter", () => {
     ["kinder", "kinder"],
     ["genesung-zahlen", "genesung-zahlen"],
     ["selbstfuersorge-stopp-technik", "stopp-technik"],
-  ])("serves %s from its matching preview deploy", async (id, slug) => {
-    vi.spyOn(fs, "existsSync").mockReturnValue(false);
-    vi.stubEnv("URL", "https://production.example.com");
-    const fetchPdf = vi.fn().mockResolvedValue(
-      new Response("%PDF-1.7 preview", {
-        headers: { "Content-Type": "application/pdf" },
-      })
-    );
-    vi.stubGlobal("fetch", fetchPdf);
-    const response = await materialDownloadFunction(
-      new Request(`https://preview.example.com/api/material-download/${id}`),
-      {
-        params: { id },
-        deploy: { id: "abc123" },
-        site: { name: "example-site" },
+  ])(
+    "redirects missing local %s PDFs to their static asset",
+    async (id, slug) => {
+      vi.spyOn(fs, "existsSync").mockReturnValue(false);
+      vi.stubEnv("URL", "https://production.example.com");
+      const fetchPdf = vi.fn();
+      vi.stubGlobal("fetch", fetchPdf);
+      const response = await materialDownloadFunction(
+        new Request(`https://preview.example.com/api/material-download/${id}`),
+        { params: { id } }
+      );
+      expect(fetchPdf).not.toHaveBeenCalled();
+      expect(response.status).toBe(307);
+      expect(response.headers.get("Location")).toBe(
+        `/infografiken/manus-${slug}-v3.pdf`
+      );
+      expect(response.headers.get("Cache-Control")).toBe("private, no-store");
+      for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
+        expect(response.headers.get(header)).toBe(value);
       }
-    );
-    expect(fetchPdf).toHaveBeenCalledWith(
-      `https://abc123--example-site.netlify.app/infografiken/manus-${slug}-v3.pdf`,
-      expect.any(Object)
-    );
-    expect(response.status).toBe(200);
-    expect(response.headers.get("Content-Disposition")).toContain(
-      "attachment;"
-    );
-    expect(await response.text()).toBe("%PDF-1.7 preview");
-  });
+    }
+  );
   it("returns 404 when id param is missing", async () => {
     const req = new Request("https://example.com/api/material-download");
 

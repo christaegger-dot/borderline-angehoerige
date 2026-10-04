@@ -27,10 +27,7 @@ describe("interactive learning guides", () => {
       expect(within(region).getByText(expected.example)).toBeVisible();
       expect(
         screen.getByRole("link", { name: "Druckfassung als PDF" })
-      ).toHaveAttribute(
-        "href",
-        expect.stringContaining("/api/material-download/")
-      );
+      ).toHaveAttribute("href", expect.stringMatching(/^\/.*\.pdf$/));
       expect(
         screen.getByRole("link", { name: "Vollständige Textfassung" })
       ).toHaveAttribute("href", `/materialien/text/${kind}`);

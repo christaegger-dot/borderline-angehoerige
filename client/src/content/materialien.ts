@@ -270,10 +270,10 @@ export const materials: MaterialItem[] = [
       "Eine freiwillige Übung, um gegenwärtige Realität anzuerkennen, ohne aufzugeben oder die Zukunft festzuschreiben.",
     category: "selbstfuersorge",
     kind: "Infografik",
-    url: "/infografiken/puk-radikale-akzeptanz-v2.webp",
+    url: "/infografiken/puk-radikale-akzeptanz-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp",
-    downloadUrl: "/infografiken/puk-radikale-akzeptanz-v2.pdf",
+      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v3.webp",
+    downloadUrl: "/infografiken/puk-radikale-akzeptanz-v3.pdf",
     priority: "secondary",
     verifiedAt: P1_MATERIAL_STAND,
   },
@@ -412,7 +412,9 @@ export function getMaterialDownloadHref(item: MaterialItem) {
 
   return item.isHtml && !item.pdfUrl
     ? sourceUrl
-    : buildMaterialDownloadPath(item.id);
+    : LOCAL_FILE_RE.test(sourceUrl)
+      ? sourceUrl
+      : buildMaterialDownloadPath(item.id);
 }
 
 export function resolveMaterialDownload(

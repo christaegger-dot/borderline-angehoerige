@@ -44,9 +44,9 @@ const chromePath =
   process.env.P1_CHROME_PATH ??
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const slugById = {
-  "radikale-akzeptanz": "puk-radikale-akzeptanz-v2",
-  "gespraeche-kippen": "puk-gespraeche-kippen-v2",
-  "beispiel-dialog": "puk-beispiel-dialog-v2",
+  "radikale-akzeptanz": "puk-radikale-akzeptanz-v3",
+  "gespraeche-kippen": "puk-gespraeche-kippen-v3",
+  "beispiel-dialog": "puk-beispiel-dialog-v3",
 } as const;
 
 function escapeHtml(value: string) {

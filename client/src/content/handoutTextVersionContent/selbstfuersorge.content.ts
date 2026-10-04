@@ -479,7 +479,7 @@ export const handoutTextVersions = [
       sections: {
         keyStatement: "Kernaussage",
         notAcceptance: "Was Radikale Akzeptanz nicht ist",
-        safetyCardTitle: "Nicht Gutheissen",
+        safetyCardTitle: "Gutheissen",
         acceptance: "Was Radikale Akzeptanz ist",
         steps: "4-Schritte-Übung",
         example: "Beispiel ohne akute Gefährdung",
@@ -499,19 +499,19 @@ export const handoutTextVersions = [
           "Die Gegenüberstellung grenzt bewusst Missverständnisse ab. Akzeptanz bedeutet nicht, Belastendes schönzureden oder sich selbst aufzugeben.",
         cards: [
           {
-            title: "Nicht Aufgeben",
+            title: "Aufgeben",
             text: "Radikale Akzeptanz ist kein Rückzug aus dem Leben.",
           },
           {
-            title: "Nicht Gutheissen",
+            title: "Gutheissen",
             text: "Sie müssen schwierige Realität nicht gut finden, um sie anzuerkennen. Akzeptanz heisst nicht bleiben, schweigen oder Gewalt tolerieren.",
           },
           {
-            title: "Nicht Passivität",
+            title: "Passivität",
             text: "Akzeptanz ersetzt Handeln nicht, sondern macht gezielteres Handeln wieder möglich.",
           },
           {
-            title: "Nicht Resignation",
+            title: "Resignation",
             text: "Es geht nicht darum, hoffnungslos zu werden, sondern den inneren Kampf einen Moment zu lösen.",
           },
         ],

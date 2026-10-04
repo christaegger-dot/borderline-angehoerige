@@ -211,7 +211,16 @@ export function getHandoutOpenHref(sourceUrl: string | undefined) {
   }
 
   const asset = getHandoutAssetBySource(sourceUrl);
-  return asset ? buildHandoutAssetPath(asset.id, "inline") : sourceUrl;
+  if (!asset) {
+    return sourceUrl;
+  }
+
+  // Same-origin PDFs are deployed as static assets. Linking to them directly
+  // keeps protected Deploy Previews usable: a serverless function cannot
+  // forward the viewer's Edge Access session when it fetches that deploy again.
+  return asset.sourceKind === "local"
+    ? asset.sourceUrl
+    : buildHandoutAssetPath(asset.id, "inline");
 }
 
 export function getHandoutDownloadHref(sourceUrl: string | undefined) {
@@ -220,7 +229,13 @@ export function getHandoutDownloadHref(sourceUrl: string | undefined) {
   }
 
   const asset = getHandoutAssetBySource(sourceUrl);
-  return asset ? buildHandoutAssetPath(asset.id, "attachment") : sourceUrl;
+  if (!asset) {
+    return sourceUrl;
+  }
+
+  return asset.sourceKind === "local"
+    ? asset.sourceUrl
+    : buildHandoutAssetPath(asset.id, "attachment");
 }
 
 export function prefersHandoutTextVersion(sourceUrl: string | undefined) {

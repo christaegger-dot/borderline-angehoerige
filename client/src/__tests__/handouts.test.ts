@@ -9,24 +9,18 @@ import { kommItems } from "@/content/kommunizieren";
 import { verstehenInfografiken } from "@/content/verstehen";
 
 describe("handout delivery helpers", () => {
-  it("maps known materials to proxied open and download URLs", () => {
+  it("maps known local materials to their same-origin open and download URLs", () => {
     const sourceUrl = verstehenInfografiken[0].pdfUrl;
 
-    expect(getHandoutOpenHref(sourceUrl)).toBe(
-      "/api/material-download/leuchtturm?disposition=inline"
-    );
-    expect(getHandoutDownloadHref(sourceUrl)).toBe(
-      "/api/material-download/leuchtturm"
-    );
+    expect(getHandoutOpenHref(sourceUrl)).toBe(sourceUrl);
+    expect(getHandoutDownloadHref(sourceUrl)).toBe(sourceUrl);
     expect(resolveHandoutAsset("leuchtturm")?.sourceUrl).toBe(sourceUrl);
   });
 
   it("allowlists non-library handouts through generated local ids", () => {
     const sourceUrl = kommItems[0].pdfUrl;
 
-    expect(getHandoutOpenHref(sourceUrl)).toBe(
-      "/api/material-download/kommunizieren-wenn-gespraeche-kippen-3-schritte?disposition=inline"
-    );
+    expect(getHandoutOpenHref(sourceUrl)).toBe(sourceUrl);
     expect(
       resolveHandoutAsset("kommunizieren-wenn-gespraeche-kippen-3-schritte")
         ?.sourceUrl
@@ -55,13 +49,13 @@ describe("handout delivery helpers", () => {
     });
   });
 
-  it("routes local pdf paths through the controlled download endpoint", () => {
+  it("keeps local pdf paths on the same protected deploy", () => {
     expect(getHandoutOpenHref("/notfallplan-krise-v04.pdf")).toBe(
-      "/api/material-download/notfallplan-krise?disposition=inline"
+      "/notfallplan-krise-v04.pdf"
     );
     expect(
       getHandoutDownloadHref("/Notfallkarte-Zuerich-Psychische-Krise.pdf")
-    ).toBe("/api/material-download/notfallkarte-zuerich");
+    ).toBe("/Notfallkarte-Zuerich-Psychische-Krise.pdf");
     expect(
       getHandoutAssetBySource("/infografiken/eisberg-der-eisberg-v8.pdf")
     ).toMatchObject({

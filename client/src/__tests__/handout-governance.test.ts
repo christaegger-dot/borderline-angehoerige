@@ -156,7 +156,7 @@ describe("handout governance", () => {
         "draft-editorial-review-pending"
       );
       expect(governance?.approvedVersion, id).toBeUndefined();
-      expect(governance?.assetVersion, id).toMatch(/^puk-.+-v2$/);
+      expect(governance?.assetVersion, id).toMatch(/^puk-.+-v3$/);
     }
   });
 

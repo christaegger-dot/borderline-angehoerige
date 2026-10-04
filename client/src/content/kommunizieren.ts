@@ -32,10 +32,10 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Wenn Gespräche kippen: 3 Schritte",
     description:
       "Tempo senken, vorsichtig spiegeln, die eigene Grenze schützen",
-    url: "/infografiken/puk-gespraeche-kippen-v2.webp",
+    url: "/infografiken/puk-gespraeche-kippen-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v2.webp",
-    pdfUrl: "/infografiken/puk-gespraeche-kippen-v2.pdf",
+      "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v3.webp",
+    pdfUrl: "/infografiken/puk-gespraeche-kippen-v3.pdf",
     category: "techniken",
   },
   {
@@ -83,9 +83,9 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Beispiel-Dialog",
     description:
       "Mögliche Sätze für Spiegeln, Grenze und optionalen Wiedereinstieg",
-    url: "/infografiken/puk-beispiel-dialog-v2.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/puk-beispiel-dialog-v2.webp",
-    pdfUrl: "/infografiken/puk-beispiel-dialog-v2.pdf",
+    url: "/infografiken/puk-beispiel-dialog-v3.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-beispiel-dialog-v3.webp",
+    pdfUrl: "/infografiken/puk-beispiel-dialog-v3.pdf",
     category: "praxis",
   },
   {
@@ -111,7 +111,7 @@ export const escalationCards: KommunikationsTextCard[] = [
   },
   {
     title: "Das eigene Handeln begrenzen",
-    text: "«Ich möchte nicht angeschrien werden. Ich beende das Gespräch jetzt.» Eine Grenze braucht keine vorherige Einigung über den Konflikt.",
+    text: "«Ich möchte dieses Gespräch so nicht weiterführen. Ich beende es jetzt.» Eine Grenze braucht keine vorherige Einigung über den Konflikt.",
   },
   {
     title: "Eine Pause ermöglichen",

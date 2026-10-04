@@ -47,6 +47,29 @@ const expectedIds = [
   "beispiel-dialog",
 ];
 
+const editorialTextContracts: Record<
+  string,
+  { required: string[]; forbidden: string[] }
+> = {
+  "radikale-akzeptanz": {
+    required: ["Aufgeben", "Gutheissen", "Passivität", "Resignation"],
+    forbidden: [
+      "Nicht Aufgeben",
+      "Nicht Gutheissen",
+      "Nicht Passivität",
+      "Nicht Resignation",
+    ],
+  },
+  "beispiel-dialog": {
+    required: [
+      "Ich möchte dieses Gespräch so nicht weiterführen. Ich beende es jetzt.",
+    ],
+    forbidden: [
+      "Ich möchte nicht angeschrien werden. Ich beende das Gespräch jetzt.",
+    ],
+  },
+};
+
 function sha256(filePath: string) {
   return createHash("sha256").update(readFileSync(filePath)).digest("hex");
 }
@@ -162,6 +185,31 @@ for (const entry of manifest.entries) {
     "-",
   ]);
   const normalizedPdfText = normalizeText(extractedText);
+  const editorialContract = editorialTextContracts[entry.id];
+  if (editorialContract) {
+    for (const requiredText of editorialContract.required) {
+      const normalizedRequiredText = normalizeText(requiredText);
+      if (
+        !normalizedSourceText.includes(normalizedRequiredText) ||
+        !normalizedPdfText.includes(normalizedRequiredText)
+      ) {
+        fail(
+          `${entry.id} must contain the reviewed wording in source and PDF: ${requiredText}`
+        );
+      }
+    }
+    for (const forbiddenText of editorialContract.forbidden) {
+      const normalizedForbiddenText = normalizeText(forbiddenText);
+      if (
+        normalizedSourceText.includes(normalizedForbiddenText) ||
+        normalizedPdfText.includes(normalizedForbiddenText)
+      ) {
+        fail(
+          `${entry.id} retains superseded wording in source or PDF: ${forbiddenText}`
+        );
+      }
+    }
+  }
   const walker = sourceDocument.createTreeWalker(
     sourceDocument.body,
     sourceDocument.defaultView?.NodeFilter.SHOW_TEXT ?? 4

@@ -42,10 +42,10 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
     title: "Radikale Akzeptanz",
     desc: "Gegenüberstellung und freiwillige Übung, um gegenwärtige Realität anzuerkennen und Handlungsspielraum zu finden.",
     category: "techniken",
-    webp: "/infografiken/puk-radikale-akzeptanz-v2.webp",
+    webp: "/infografiken/puk-radikale-akzeptanz-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp",
-    pdf: "/infografiken/puk-radikale-akzeptanz-v2.pdf",
+      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v3.webp",
+    pdf: "/infografiken/puk-radikale-akzeptanz-v3.pdf",
   },
   {
     id: "stopp-technik",

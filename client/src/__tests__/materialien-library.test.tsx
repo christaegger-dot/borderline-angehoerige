@@ -21,7 +21,7 @@ describe("MaterialienLibrarySection", () => {
     })[0];
     expect(localizedDownloadLink).toHaveAttribute(
       "href",
-      "/api/material-download/leuchtturm"
+      "/infografiken/manus-leuchtturm-v1.pdf"
     );
     expect(localizedDownloadLink).toHaveAttribute("download", "");
 
@@ -31,7 +31,7 @@ describe("MaterialienLibrarySection", () => {
     expect(notfallkarteDownloadLinks).toHaveLength(1);
     expect(notfallkarteDownloadLinks[0]).toHaveAttribute(
       "href",
-      "/api/material-download/notfallkarte-zuerich"
+      "/Notfallkarte-Zuerich-Psychische-Krise.pdf"
     );
     expect(notfallkarteDownloadLinks[0]).toHaveAttribute("download", "");
     expect(

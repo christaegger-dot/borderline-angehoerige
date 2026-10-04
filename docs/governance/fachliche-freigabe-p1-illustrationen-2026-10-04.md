@@ -5,7 +5,10 @@
 > Die unabhängige redaktionelle Nachprüfung ist abgeschlossen. Die verantwortete
 > institutionelle Fachfreigabe und die unten genannten Praxis- und
 > Barrierefreiheitsprüfungen bleiben offen. Dieses KI-Review allein berechtigt
-> nicht zur Kennzeichnung als `approved`, zum Merge oder zur Veröffentlichung.
+> nicht zur Kennzeichnung als `approved` oder zur Veröffentlichung. Die
+> Auftraggeberin hat am 04.10.2026 ausdrücklich entschieden, dass die noch
+> offene institutionelle Fachfreigabe kein Merge-Kriterium für diesen privaten
+> Entwicklungsstand ist. Ein Merge ist keine institutionelle Freigabe.
 > Der frühere V2-Entscheid bleibt als Historie erhalten und gilt nicht für V3.
 
 ## Redaktioneller V3-Entscheid vom 04.10.2026
@@ -85,7 +88,7 @@ T1 ist mit dem dokumentierten authentifizierten V3-Gesamttest und der eigenen
 erfolgreichen Stichprobe des zuvor fehlgeschlagenen Beispiel-Dialog-Aufrufs
 geschlossen. Die historischen V2-Fehlermeldungen sind kein aktueller V3-Befund.
 
-### Offene Freigabestufen nach dem V3-Review
+### Offene Qualitäts- und Publikationsprüfungen nach dem V3-Review
 
 1. **Verantwortete institutionelle Fachfreigabe:** Name, Rolle, Datum und
    ausdrücklicher Entscheid der zuständigen Fachperson fehlen weiterhin.
@@ -96,6 +99,13 @@ geschlossen. Die historischen V2-Fehlermeldungen sind kein aktueller V3-Befund.
 4. **Reale Druckprüfung:** den nativen Browser-Druckdialog und Ausdrucke auf realen
    Druckern prüfen, insbesondere Vollständigkeit, Lesbarkeit und Seitenumbrüche.
 
+**Merge-Entscheid der Auftraggeberin vom 04.10.2026:** Die verantwortete
+institutionelle Fachfreigabe ist für PR #617 kein Merge-Kriterium. Die oben
+genannten offenen Punkte bleiben nachvollziehbar dokumentiert und werden durch
+den Merge weder als abgeschlossen noch als institutionell freigegeben gewertet.
+Sie bleiben vor einer öffentlichen Freigabe beziehungsweise einer entsprechenden
+Konformitätsaussage zu bearbeiten.
+
 **Institutionelle Bestätigung**
 
 - Verantwortliche Fachperson: offen.
@@ -105,7 +115,8 @@ geschlossen. Die historischen V2-Fehlermeldungen sind kein aktueller V3-Befund.
 Die Entwurfskennzeichnung und die technischen Freigabefelder bleiben bis zum
 Abschluss der vorgesehenen Freigabestufen unverändert. Diese Nachprüfung
 ändert nur das Protokoll; sie führt keine Inhaltsänderung, GitHub-Review-Approval,
-Umstellung des Draft-Status, Zusammenführung oder Produktionsveröffentlichung aus.
+Umstellung des Draft-Status oder Produktionsveröffentlichung aus. Die spätere
+Zusammenführung erfolgt aufgrund des separat dokumentierten Merge-Entscheids.
 
 ## Umsetzung und technische Nachweise V3
 

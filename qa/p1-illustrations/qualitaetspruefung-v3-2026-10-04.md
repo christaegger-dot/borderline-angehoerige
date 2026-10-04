@@ -6,39 +6,49 @@ Stand: 4. Oktober 2026. Erstellt durch Codex als technische Prüfvorbereitung; k
 
 - PR [#617](https://github.com/christaegger-dot/borderline-angehoerige/pull/617) wurde gemergt. Geprüfter Merge-Commit: `2ce8193fc5a61043b0b584c54793f0c20eae3be9`. Beim Abgleich entsprach GitHub-`main` genau diesem Commit.
 - Der zugehörige [CI-Lauf 37193862447](https://github.com/christaegger-dot/borderline-angehoerige/actions/runs/37193862447) war abgeschlossen und erfolgreich.
-- Die drei PDFs, drei WebP-Vollbilder und drei Thumbnails stimmen in Dateigrösse und SHA-256 mit dem Manifest dieses Commits überein. Die redaktionelle V3-Beurteilung im [Freigabeprotokoll](../../docs/governance/fachliche-freigabe-p1-illustrationen-2026-10-04.md) bleibt bestehen.
+- Die beim Merge enthaltenen drei PDFs, drei WebP-Vollbilder und drei Thumbnails stimmten mit dem damaligen Manifest überein. Der technische PDF-Nachexport in PR #618 besitzt neue, im aktuellen Manifest und Objektinventar dokumentierte Hashes; sichtbarer und redaktioneller Wortlaut sowie die WebP-Darstellungen blieben unverändert. Die redaktionelle V3-Beurteilung im [Freigabeprotokoll](../../docs/governance/fachliche-freigabe-p1-illustrationen-2026-10-04.md) bleibt bestehen.
 - Erfolgreiches Netlify-Hauptdeployment, `401` ohne Anmeldung auf beiden Netlify-Adressen, gelöschter Remote-Arbeitsbranch und lokaler Gleichstand sind Angaben der Auftraggeberin. Sie wurden bei dieser Nachprüfung nicht nochmals unabhängig getestet.
-- Die lokale ungetrackte Datei `handoutVisualizations 2.ts` war nicht Gegenstand dieser Arbeit. Auf den lokalen Mac-Arbeitsstand wurde nicht zugegriffen; im geprüften GitHub-Baum ist diese Datei nicht enthalten.
+- Die lokale ungetrackte Datei `handoutVisualizations 2.ts` war nicht Gegenstand dieser Arbeit, blieb unverändert und ist im GitHub-Baum nicht enthalten.
 
 Der Merge betrifft die geschützte Entwicklung. Die folgenden offenen Prüfungen werden dadurch weder als erledigt behandelt noch rückwirkend zu einem Merge-Hindernis. Institutionelle Kennzeichen und eine öffentliche Publikation benötigen weiterhin den dafür verantworteten Entscheid.
 
-## Ergebnis der begrenzten PDF-Vorprüfung
+## Technische PDF-Korrektur und automatisierte PDF/UA-1-Prüfung
 
 Nachweis: [Objektinventar und Prüfsummen](pdf-preflight-v3-2026-10-04.json), erstellt mit pypdf 6.10.0. Reproduzierbare, nur lesende Prüfung: [pdf-preflight-v3.py](pdf-preflight-v3.py).
 
 ```bash
-python qa/p1-illustrations/pdf-preflight-v3.py --repo-root . > /tmp/p1-preflight.json
+python3 -m venv /tmp/p1-pdf-venv
+P1_PDF_PYTHON_PATH=/tmp/p1-pdf-venv/bin/python3
+"$P1_PDF_PYTHON_PATH" -m pip install -r qa/p1-illustrations/requirements.txt
+"$P1_PDF_PYTHON_PATH" qa/p1-illustrations/pdf-preflight-v3.py --repo-root . \
+  > /tmp/p1-preflight.json
 ```
 
-Für denselben Befund die Dateien des oben genannten Commits verwenden und die SHA-256-Werte vergleichen. Ein späterer Export ist ein neuer Prüfgegenstand. Das Skript inventarisiert vorhandene Objekte; es ist kein Konformitätsvalidator.
+Ein späterer Export ist ein neuer Prüfgegenstand. Das Inventarskript prüft Objekte, Hashes und Strukturmerkmale; es ist kein Konformitätsvalidator.
 
-| Merkmal | Radikale Akzeptanz | Wenn Gespräche kippen | Beispiel-Dialog |
-| --- | --- | --- | --- |
-| PDF-Version im Header | 1.4 | 1.4 | 1.4 |
-| Seiten / Format | 1 / A4 hoch, gerundet | 1 / A4 hoch, gerundet | 1 / A4 hoch, gerundet |
-| Dokumenttitel / Sprache | vorhanden / de-CH | vorhanden / de-CH | vorhanden / de-CH |
-| Tag-Baum / Marked / DisplayDocTitle | vorhanden / true / true | vorhanden / true / true | vorhanden / true / true |
-| Schriften | 3 Fontprogramme und ToUnicode-Streams vorhanden | ebenso | ebenso |
-| XMP-Metadaten im Katalog | fehlen | fehlen | fehlen |
-| Nicht standardmässiger Tag ohne RoleMap für PDF/UA-1 | Aside, einmal | keiner im inventarisierten Rollenbestand | keiner im inventarisierten Rollenbestand |
+| Merkmal                             | Radikale Akzeptanz                   | Wenn Gespräche kippen         | Beispiel-Dialog            |
+| ----------------------------------- | ------------------------------------ | ----------------------------- | -------------------------- |
+| PDF-Version im Header               | 1.7                                  | 1.7                           | 1.7                        |
+| Seiten / Format                     | 1 / A4 hoch, gerundet                | 1 / A4 hoch, gerundet         | 1 / A4 hoch, gerundet      |
+| Dokumenttitel / Sprache             | vorhanden / de-CH                    | vorhanden / de-CH             | vorhanden / de-CH          |
+| Tag-Baum / Marked / DisplayDocTitle | vorhanden / true / true              | vorhanden / true / true       | vorhanden / true / true    |
+| XMP `/Metadata` / `/XML`            | vorhanden                            | vorhanden                     | vorhanden                  |
+| Listenstruktur                      | `Lbl`/`LBody`; Square/Square/Decimal | `Lbl`/`LBody`; Decimal/Square | `Lbl`/`LBody`; Decimal     |
+| Ungültiger `Aside`-Tag              | keiner                               | keiner                        | keiner                     |
+| PDF/UA-Identifier im Repository-PDF | bewusst noch nicht gesetzt           | bewusst noch nicht gesetzt    | bewusst noch nicht gesetzt |
 
-**Befund P1-PDF-01 – Korrektur für PDF/UA-1 erforderlich:** Alle drei PDFs besitzen keinen XMP-Metadatenstream. Dies entspricht Matterhorn 1.1, Fehlerbedingung 06-001. Damit fehlen dort auch ein XMP-Titel und ein PDF/UA-Identifier. Der vorhandene Titel im Document-Info-Dictionary ersetzt XMP nicht. Ein Identifier darf nicht als isolierte Reparatur oder als Ersatz für die vollständige Konformitätsprüfung gesetzt werden.
+Die zunächst dokumentierten Befunde sind korrigiert: Alle drei PDFs besitzen synchronisierte XMP-Metadaten, und der nicht standardmässige `Aside`-Tag wurde quellenbasiert entfernt. Eine vollständige veraPDF-Prüfung zeigte zusätzlich unmarkierte Zeichenoperationen sowie ungültige `LI`-Kinder. Der reproduzierbare Exportprozess bereitet deshalb nun auch Listen als `Lbl`/`LBody` mit `ListNumbering` auf und ordnet nur quellenspezifisch bekannte Vektorgruppen nach einer fail-closed Operator-Prüfung als Layout-Artefakt ein. Ob diese Gruppen semantisch tatsächlich dekorativ sind, bleibt ein manueller Matterhorn-Prüfpunkt. Exakte logische und layoutbezogene Textparität sowie Rasterparität zwischen Chromium-Rohdatei und nachbearbeitetem PDF sind Pflichtprüfungen des Generators.
 
-**Befund P1-PDF-02 – Korrektur für PDF/UA-1 erforderlich:** Das PDF «Radikale Akzeptanz» enthält einen `Aside`-Strukturtyp ohne RoleMap. `Aside` wurde erst mit PDF 2.0 standardisiert; für den PDF/UA-1-Prüfpfad muss der Typ passend auf einen PDF-1.7-Standardtyp abgebildet oder entsprechend ersetzt werden. Die PDF Association nennt `Div` als mögliche Zuordnung. Die semantische Eignung ist am betroffenen Inhalt zu prüfen (Matterhorn 02-001 und 02-002).
+Der PDF/UA-Identifier bleibt in den eingecheckten und von der Website ausgelieferten PDFs bewusst aus. Er wäre eine Konformitätsdeklaration, obwohl die manuelle Matterhorn-, Screenreader- und Lesereihenfolgeprüfung noch offen ist. Beim erzwungenen veraPDF-Profil `ua1` haben die Repository-PDFs deshalb je genau einen erwarteten Fehler: ISO 14289-1, Abschnitt 5-1, fehlende PDF/UA-Identifikation. Die früheren XMP-, `Aside`-, Listen- und Artefaktfehler treten nicht mehr auf.
 
-**Weitere Prüffrage, noch kein abschliessender Fehlerentscheid:** Alle drei Tag-Bäume enthalten Listen und Listeneinträge, aber keine `Lbl`-/`LBody`-Elemente. Die Einträge enthalten unter anderem Überschriften, Absätze und NonStruct-Gruppen. Die zuständige PDF-Fachperson soll deren Semantik, Nummernzuordnung und Navigation am Original mit Validator und assistiver Technik prüfen; ein blosses Zählen der Tags entscheidet dies nicht.
+Für die automatisierte Prüfung erzeugt [validate-pdfua-candidates.py](validate-pdfua-candidates.py) Kopien, verarbeitet deren Metadaten mit demselben Postprozessor und ergänzt nur in diesen Prüfkandidaten `pdfuaid:part=1`. Ohne `--candidate-dir` werden sie nach qpdf-, Paritäts- und veraPDF-Prüfung verworfen. Der [maschinenlesbare Bericht](verapdf-ua1-candidates-v3-2026-10-04.json) belegt mit veraPDF 1.30.0 und erzwungenem Profil `ua1` für alle drei temporären Kandidaten: **106 bestandene Regeln, 0 fehlgeschlagene Regeln und 0 fehlgeschlagene Checks**. Die Kandidaten wurden nicht publiziert und nicht als Repository-Artefakte behalten.
 
-Die Vorprüfung belegt vorhandene Strukturmerkmale, aber weder deren vollständige Richtigkeit noch die tatsächliche Lesereihenfolge. Unicode-Zuordnungen wurden auf Vorhandensein, nicht auf inhaltliche Vollständigkeit geprüft. Die PDFs können auf dieser Grundlage **nicht als PDF/UA-konform freigegeben** werden. Das ist von ihrer redaktionellen Inhaltsbeurteilung zu unterscheiden.
+```bash
+"$P1_PDF_PYTHON_PATH" qa/p1-illustrations/validate-pdfua-candidates.py --repo-root . \
+  > /tmp/p1-verapdf-candidates.json
+```
+
+Das ist ein vollständiger Lauf der maschinenprüfbaren veraPDF-Regeln, aber **keine vollständige PDF/UA- oder Matterhorn-Freigabe**. Tagsemantik, tatsächliche Lesereihenfolge, Verständlichkeit mit assistiver Technik und alle manuellen Matterhorn-Punkte müssen an dauerhaft gespeicherten, bereits identifiertragenden Kandidaten mit exakt dokumentiertem Hash geprüft werden. Nach bestandener Prüfung ist genau derselbe Kandidat zu übernehmen; der Identifier darf nicht erst nachträglich in eine bereits geprüfte andere Datei geschrieben werden.
 
 Quellen für die technische Einordnung:
 
@@ -49,15 +59,16 @@ Quellen für die technische Einordnung:
 
 ## Arbeitsstand und Zuständigkeit
 
-| Arbeitspaket | Aktueller Stand | Benötigte Durchführung / Nachweis |
-| --- | --- | --- |
-| Redaktionelle V3-Prüfung | bereits dokumentiert | bestehendes Freigabeprotokoll; keine neue institutionelle Freigabe hier |
-| PDF-Objektinventar | durchgeführt; zwei konkrete Befunde | JSON und reproduzierbares Skript oben |
-| PDF-Aufbereitung / PDF-UA-1 und Matterhorn | offen; Korrekturbedarf belegt | PDF-Fachperson, neuer Export mit Hashes, Validatorbericht und manuelle Prüfung |
-| Reale Screenreader-Prüfung V3 | nicht durchgeführt | Person mit tatsächlicher Sprachausgabe und eigener Bedienung, Testmatrix unten |
-| Verständlichkeit mit Angehörigen | nicht durchgeführt | moderierter freiwilliger Test, anonymisierte Beobachtungen |
-| Physischer Druck | nicht durchgeführt | reale Ausdrucke, Druckparameter, Sichtprüfung |
-| Institutioneller / öffentlicher Publikationsentscheid | offen | benannte zuständige Person und dokumentierter Geltungsbereich |
+| Arbeitspaket                                          | Aktueller Stand                                              | Benötigte Durchführung / Nachweis                                                   |
+| ----------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| Redaktionelle V3-Prüfung                              | bereits dokumentiert                                         | bestehendes Freigabeprotokoll; keine neue institutionelle Freigabe hier             |
+| PDF-Objektinventar                                    | aktualisiert; technische Befunde korrigiert                  | JSON und reproduzierbares Skript oben                                               |
+| Automatisierte veraPDF-PDF/UA-1-Prüfung               | temporäre Kandidaten bestanden; 0 Fehlchecks                 | Bericht und reproduzierbares Kandidatenskript oben                                  |
+| Manuelle PDF-UA-1-/Matterhorn-Prüfung                 | offen; kein PDF/UA-Identifier in den auszuliefernden Dateien | PDF-Fachperson, dauerhaft gespeicherter Kandidat mit Hash und manueller Prüfbericht |
+| Reale Screenreader-Prüfung V3                         | nicht durchgeführt                                           | Person mit tatsächlicher Sprachausgabe und eigener Bedienung, Testmatrix unten      |
+| Verständlichkeit mit Angehörigen                      | nicht durchgeführt                                           | moderierter freiwilliger Test, anonymisierte Beobachtungen                          |
+| Physischer Druck                                      | nicht durchgeführt                                           | reale Ausdrucke, Druckparameter, Sichtprüfung                                       |
+| Institutioneller / öffentlicher Publikationsentscheid | offen                                                        | benannte zuständige Person und dokumentierter Geltungsbereich                       |
 
 Der vorhandene [VoiceOver-Nachweis](screenreader-voiceover-safari-2026-10-04.json) bezieht sich auf `5f1116db214177b6139c17794cf3a4c869b6bf31` und schliesst die menschliche akustische Bestätigung ausdrücklich aus. Er ersetzt keinen realen Test der aktuellen V3. Die menschlichen Prüfungen benötigen echte Geräte, Personen beziehungsweise einen Drucker und konnten in dieser Sitzung nicht durchgeführt werden.
 
@@ -90,11 +101,11 @@ Geplante Mindestabdeckung für dieses Paket: die drei Seiten jeweils mit VoiceOv
 
 Die geschützte Hauptwebsite mit berechtigtem Zugang verwenden. Je Lauf die tatsächliche Basis-URL und den dazugehörigen Deployment-Commit festhalten; keine Zugangsdaten ins Protokoll aufnehmen.
 
-| Blatt | Pfad ab Basis-URL | VoiceOver/Safari | NVDA/Firefox | PDF mit Screenreader |
-| --- | --- | --- | --- | --- |
-| Radikale Akzeptanz | `/materialien/text/radikale-akzeptanz` | nicht durchgeführt | nicht durchgeführt | nicht durchgeführt |
-| Wenn Gespräche kippen | `/materialien/text/gespraeche-kippen` | nicht durchgeführt | nicht durchgeführt | nicht durchgeführt |
-| Beispiel-Dialog | `/materialien/text/beispiel-dialog` | nicht durchgeführt | nicht durchgeführt | nicht durchgeführt |
+| Blatt                 | Pfad ab Basis-URL                      | VoiceOver/Safari   | NVDA/Firefox       | PDF mit Screenreader |
+| --------------------- | -------------------------------------- | ------------------ | ------------------ | -------------------- |
+| Radikale Akzeptanz    | `/materialien/text/radikale-akzeptanz` | nicht durchgeführt | nicht durchgeführt | nicht durchgeführt   |
+| Wenn Gespräche kippen | `/materialien/text/gespraeche-kippen`  | nicht durchgeführt | nicht durchgeführt | nicht durchgeführt   |
+| Beispiel-Dialog       | `/materialien/text/beispiel-dialog`    | nicht durchgeführt | nicht durchgeführt | nicht durchgeführt   |
 
 Pro Blatt und Web-Kombination:
 
@@ -115,24 +126,26 @@ Als ersten qualitativen Durchlauf drei bis fünf freiwillige Personen mit unters
 
 Zuerst selbstständig lesen lassen, erst danach erklären. Beobachten, welche Stellen gesucht, missverstanden oder als belastend erlebt werden. Webdarstellung, aufklappbare Beschreibung und PDF einbeziehen; Vollbild und Thumbnail auf erkennbare Zuordnung zum richtigen Blatt prüfen.
 
-| ID | Neutrale Aufgabe / Frage | Worauf bei der Auswertung achten |
-| --- | --- | --- |
-| U1 | «Was bedeutet Akzeptanz hier in Ihren eigenen Worten? Was bedeutet sie nicht?» | Anerkennen der Gegenwart wird von Gutheissen, Aufgeben und einer Festlegung der Zukunft unterschieden. |
-| U2 | «Welche Möglichkeiten haben Sie, wenn Ihnen das Gespräch zu viel wird?» | Auswahl und Abbruch werden erkannt; keine Pflichtfolge und keine Pflicht zur späteren Wiederaufnahme. |
-| U3 | «Was nehmen Sie aus dem Blatt darüber mit, wofür Angehörige verantwortlich sind?» | Keine Schuldzuweisung, Erfolgsgarantie oder alleinige Verantwortung für die andere Person. |
-| U4 | «Wo würden Sie im Blatt nach Hilfe für Bedrohung oder Gewalt suchen? Und wo bei vermuteter unmittelbarer Selbstgefährdung?» | Die beiden Situationen und Hinweise werden auseinandergehalten; keine Pflicht, sich selbst zu gefährden oder das Risiko allein zu beurteilen. |
-| U5 | «Welcher Beispielsatz wäre für Sie brauchbar? Wie würden Sie ihn selbst sagen?» | Sätze wirken alltagstauglich; eigene Formulierungen und das Nichtverwenden eines Satzes sind möglich. |
-| U6 | «Finden Sie die ausführliche Beschreibung und die passende Datei zum Mitnehmen.» | Auffindbarkeit, verständliche Linktexte und korrekte Zuordnung von Web/PDF/WebP/Thumbnail. |
+| ID  | Neutrale Aufgabe / Frage                                                                                                    | Worauf bei der Auswertung achten                                                                                                              |
+| --- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| U1  | «Was bedeutet Akzeptanz hier in Ihren eigenen Worten? Was bedeutet sie nicht?»                                              | Anerkennen der Gegenwart wird von Gutheissen, Aufgeben und einer Festlegung der Zukunft unterschieden.                                        |
+| U2  | «Welche Möglichkeiten haben Sie, wenn Ihnen das Gespräch zu viel wird?»                                                     | Auswahl und Abbruch werden erkannt; keine Pflichtfolge und keine Pflicht zur späteren Wiederaufnahme.                                         |
+| U3  | «Was nehmen Sie aus dem Blatt darüber mit, wofür Angehörige verantwortlich sind?»                                           | Keine Schuldzuweisung, Erfolgsgarantie oder alleinige Verantwortung für die andere Person.                                                    |
+| U4  | «Wo würden Sie im Blatt nach Hilfe für Bedrohung oder Gewalt suchen? Und wo bei vermuteter unmittelbarer Selbstgefährdung?» | Die beiden Situationen und Hinweise werden auseinandergehalten; keine Pflicht, sich selbst zu gefährden oder das Risiko allein zu beurteilen. |
+| U5  | «Welcher Beispielsatz wäre für Sie brauchbar? Wie würden Sie ihn selbst sagen?»                                             | Sätze wirken alltagstauglich; eigene Formulierungen und das Nichtverwenden eines Satzes sind möglich.                                         |
+| U6  | «Finden Sie die ausführliche Beschreibung und die passende Datei zum Mitnehmen.»                                            | Auffindbarkeit, verständliche Linktexte und korrekte Zuordnung von Web/PDF/WebP/Thumbnail.                                                    |
 
 Missverständnisse als Beobachtung dokumentieren, nicht als Fehler der Person bewerten. Bei wiederholt gleicher Fehlinterpretation oder einer sicherheitsrelevanten Fehlinterpretation Inhalt/Präsentation mit der zuständigen Fachperson überprüfen und die betroffene Variante erneut testen. Im Repository nur anonymisierte Ergebnisse und keine Gesundheitsdaten oder unfreigegebenen Aufnahmen speichern.
 
 ## PDF-UA/Matterhorn durch eine zuständige PDF-Fachperson
 
-1. Prüfziel und Version festlegen; für den hier verwendeten Matterhorn-1.1-Prüfpfad ist das PDF/UA-1. Die beiden konkreten Befunde korrigieren und die Listenstruktur beurteilen.
-2. Validator, Version, Profil, Originalbericht und Dateihashes dokumentieren. Automatisches Bestehen allein genügt nicht für die Gesamtfreigabe.
+1. Mit `"$P1_PDF_PYTHON_PATH" qa/p1-illustrations/validate-pdfua-candidates.py --repo-root . --candidate-dir /absoluter/prüfpfad` dauerhaft zu speichernde, identifiertragende Prüfkandidaten erzeugen. Diese Kandidaten vor Freigabe nicht in die ausgelieferten Repository- oder Website-Pfade kopieren.
+2. Kandidatenhashes, veraPDF-Version und Profil dokumentieren. Den automatischen Nullfehler-Befund mit einem zweiten geeigneten Prüfwerkzeug gegenprüfen; automatisches Bestehen allein genügt nicht für die Gesamtfreigabe.
 3. Alle anwendbaren manuellen Matterhorn-Punkte beurteilen, unter anderem Tag-Semantik und Lesereihenfolge, Überschriften und Listen, sinnvolle Alternativtexte, dekorative Artefakte, Sprache, Zeichenwiedergabe, Farbe/Kontrast sowie vorhandene Verknüpfungen.
-4. Menschliche Screenreader-Ergebnisse mit den Befunden abgleichen. Nach jeder PDF-Korrektur die betroffenen Tests wiederholen.
-5. Geänderte PDFs gemeinsam mit Web, WebP und Thumbnail auf Inhaltsgleichheit und Version prüfen; erforderliche Exporte und Manifest aktualisieren. Ein rein technischer Metadaten-Fix darf keine neue inhaltliche oder institutionelle Freigabe vortäuschen.
+4. Menschliche Screenreader-Ergebnisse mit exakt denselben Kandidatenhashes abgleichen. Nach jeder PDF-Korrektur die automatisierten und menschlichen Prüfungen wiederholen.
+5. Erst nach bestandener manueller Prüfung genau die geprüften, mit `pdfuaid:part=1` gekennzeichneten Dateien übernehmen, Manifest und Bericht aktualisieren und Web, PDF, WebP sowie Thumbnail nochmals auf Inhaltsgleichheit prüfen. Technische Konformität setzt keine institutionelle oder öffentliche Publikationsfreigabe.
+
+Der kanonische Generator und Audit bleiben bis zu diesem verantworteten Entscheid absichtlich im Modus `pdfUaClaim: false`. Die spätere Promotion der exakt geprüften Kandidaten erfordert deshalb einen eigenen, dokumentierten Release-Schritt, der Generator, Manifest und Audit gemeinsam auf den freigegebenen Stand umstellt.
 
 ## Reale Druckprüfung
 
@@ -149,7 +162,8 @@ Für alle drei Original-PDFs je einen physischen A4-Ausdruck im Hochformat bei 1
 Geprüftes Paket / Commit / Manifest:
 Screenreader Web und PDF: offen
 Nutzendentest: offen
-PDF-UA/Matterhorn: offen – Vorprüfung zeigt Korrekturbedarf
+Automatisierte veraPDF-Prüfung: temporäre PDF/UA-1-Kandidaten bestanden (0 Fehlchecks)
+Manuelle PDF-UA/Matterhorn-Prüfung: offen
 Realer Druck: offen
 Gemeinsamer Abgleich Web / PDF / WebP / Thumbnail: nach Änderungen erneut erforderlich
 Verbleibende Befunde und Umgang damit:

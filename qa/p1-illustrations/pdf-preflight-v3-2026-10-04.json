@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-10-04T10:31:41.542494+00:00",
+  "generated_at_utc": "2026-10-04T15:06:02.148269+00:00",
   "tool": {
     "name": "pypdf",
     "version": "6.10.0"
   },
   "scope": "Read-only asset identity and PDF object inventory; no PDF/UA certification, human screenreader test or physical print test.",
-  "manifest_sha256": "9f8ed42f523a90c5de9306ab58b8f39134998c8f71ff162778e1bc1a0ce798af",
+  "manifest_sha256": "9559144f74cc1e75f61d3434ef6ca318b45390896d4d6e948c7ba2486c66012b",
+  "preflight_script_sha256": "a8de66e25e441ea6af91cc09d4f6bb46563e3c3b31a2e178c842475552738450",
   "all_asset_hashes_match_manifest": true,
   "entries": [
     {
@@ -15,8 +16,8 @@
       "assets": {
         "pdf": {
           "path": "client/public/infografiken/puk-radikale-akzeptanz-v3.pdf",
-          "bytes": 59068,
-          "sha256": "dca1e2a4afbb9fddb73208c498a8e74f3ee53650ebc253d7c836fbc31b90ec42",
+          "bytes": 195876,
+          "sha256": "9c89e918e072bc8fa18941355b3040b4913fdd9ea4e035c4f41a23e7e34cc06d",
           "manifest_match": true
         },
         "webp": {
@@ -33,26 +34,21 @@
         }
       },
       "pdf_inventory": {
-        "pdf_header": "%PDF-1.4",
+        "pdf_header": "%PDF-1.7",
         "catalog_version": null,
         "pages": 1,
-        "media_boxes_points": [
-          [
-            0.0,
-            0.0,
-            594.95996,
-            841.91998
-          ]
-        ],
+        "media_boxes_points": [[0.0, 0.0, 594.95996, 841.91998]],
         "document_info_title": "Radikale Akzeptanz · Praxisblatt",
         "catalog_language": "de-CH",
         "marked": true,
         "display_doc_title": true,
         "structure_tree_present": true,
-        "catalog_xmp_present": false,
+        "catalog_xmp_present": true,
+        "catalog_xmp_type": "/Metadata",
+        "catalog_xmp_subtype": "/XML",
+        "pdfua_identifier_present": false,
         "role_map": {},
         "roles": {
-          "/Aside": 1,
           "/BlockQuote": 1,
           "/Document": 1,
           "/Figure": 1,
@@ -60,10 +56,14 @@
           "/H2": 6,
           "/H3": 4,
           "/L": 3,
+          "/LBody": 12,
           "/LI": 12,
-          "/NonStruct": 42,
+          "/Lbl": 4,
+          "/NonStruct": 35,
           "/P": 15
         },
+        "list_numbering": ["/Square", "/Square", "/Decimal"],
+        "invalid_list_item_children": [],
         "heading_roles_in_tree_order": [
           "/H1",
           "/H2",
@@ -83,9 +83,7 @@
             "actual_text": null
           }
         ],
-        "page_tab_orders": [
-          "/S"
-        ],
+        "page_tab_orders": ["/S"],
         "fonts": [
           {
             "page": 1,
@@ -117,8 +115,8 @@
       "assets": {
         "pdf": {
           "path": "client/public/infografiken/puk-gespraeche-kippen-v3.pdf",
-          "bytes": 56180,
-          "sha256": "f18df764adedf62dd014fe7d67e8438292aa0b5e3363b70220bf77dd6b654b0c",
+          "bytes": 192986,
+          "sha256": "c5e7ea393526f166844d3f68114fd3ab54f20147c591959245267493b20aa505",
           "manifest_match": true
         },
         "webp": {
@@ -135,23 +133,19 @@
         }
       },
       "pdf_inventory": {
-        "pdf_header": "%PDF-1.4",
+        "pdf_header": "%PDF-1.7",
         "catalog_version": null,
         "pages": 1,
-        "media_boxes_points": [
-          [
-            0.0,
-            0.0,
-            594.95996,
-            841.91998
-          ]
-        ],
+        "media_boxes_points": [[0.0, 0.0, 594.95996, 841.91998]],
         "document_info_title": "Wenn Gespräche kippen · Praxisblatt",
         "catalog_language": "de-CH",
         "marked": true,
         "display_doc_title": true,
         "structure_tree_present": true,
-        "catalog_xmp_present": false,
+        "catalog_xmp_present": true,
+        "catalog_xmp_type": "/Metadata",
+        "catalog_xmp_subtype": "/XML",
+        "pdfua_identifier_present": false,
         "role_map": {},
         "roles": {
           "/BlockQuote": 1,
@@ -161,10 +155,14 @@
           "/H2": 4,
           "/H3": 3,
           "/L": 2,
+          "/LBody": 6,
           "/LI": 6,
-          "/NonStruct": 31,
+          "/Lbl": 3,
+          "/NonStruct": 28,
           "/P": 13
         },
+        "list_numbering": ["/Decimal", "/Square"],
+        "invalid_list_item_children": [],
         "heading_roles_in_tree_order": [
           "/H1",
           "/H2",
@@ -181,9 +179,7 @@
             "actual_text": null
           }
         ],
-        "page_tab_orders": [
-          "/S"
-        ],
+        "page_tab_orders": ["/S"],
         "fonts": [
           {
             "page": 1,
@@ -215,8 +211,8 @@
       "assets": {
         "pdf": {
           "path": "client/public/infografiken/puk-beispiel-dialog-v3.pdf",
-          "bytes": 56758,
-          "sha256": "9e4b6d4740015bde43dda6b70e65bf84f77c5fb74417db69a7171bbe9bd2c23d",
+          "bytes": 186005,
+          "sha256": "7f1e740927baa7fa238fe549c15dadb315331ab62bc0b381f8fa0d1214ed182e",
           "manifest_match": true
         },
         "webp": {
@@ -233,23 +229,19 @@
         }
       },
       "pdf_inventory": {
-        "pdf_header": "%PDF-1.4",
+        "pdf_header": "%PDF-1.7",
         "catalog_version": null,
         "pages": 1,
-        "media_boxes_points": [
-          [
-            0.0,
-            0.0,
-            594.95996,
-            841.91998
-          ]
-        ],
+        "media_boxes_points": [[0.0, 0.0, 594.95996, 841.91998]],
         "document_info_title": "Beispiel-Dialog · Praxisblatt",
         "catalog_language": "de-CH",
         "marked": true,
         "display_doc_title": true,
         "structure_tree_present": true,
-        "catalog_xmp_present": false,
+        "catalog_xmp_present": true,
+        "catalog_xmp_type": "/Metadata",
+        "catalog_xmp_subtype": "/XML",
+        "pdfua_identifier_present": false,
         "role_map": {},
         "roles": {
           "/BlockQuote": 2,
@@ -259,10 +251,14 @@
           "/H2": 4,
           "/H3": 5,
           "/L": 1,
+          "/LBody": 5,
           "/LI": 5,
+          "/Lbl": 5,
           "/NonStruct": 34,
           "/P": 17
         },
+        "list_numbering": ["/Decimal"],
+        "invalid_list_item_children": [],
         "heading_roles_in_tree_order": [
           "/H1",
           "/H2",
@@ -281,9 +277,7 @@
             "actual_text": null
           }
         ],
-        "page_tab_orders": [
-          "/S"
-        ],
+        "page_tab_orders": ["/S"],
         "fonts": [
           {
             "page": 1,

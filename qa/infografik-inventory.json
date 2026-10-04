@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-04T09:10:26.889Z",
+  "generatedAt": "2026-10-04T15:01:00.190Z",
   "summary": {
     "totalFiles": 273,
-    "totalSizeMb": 193.64,
+    "totalSizeMb": 194.03,
     "activeReferencedFiles": 126,
-    "activeReferencedSizeMb": 68.74,
+    "activeReferencedSizeMb": 69.12,
     "supportFiles": 52,
     "supportFilesSizeMb": 53.32,
     "unreferencedCandidates": 95,
@@ -1558,7 +1558,7 @@
     },
     {
       "path": "/infografiken/puk-beispiel-dialog-v3.pdf",
-      "sizeBytes": 56758,
+      "sizeBytes": 186005,
       "usages": [
         {
           "source": "materials",
@@ -1644,7 +1644,7 @@
     },
     {
       "path": "/infografiken/puk-gespraeche-kippen-v3.pdf",
-      "sizeBytes": 56180,
+      "sizeBytes": 192986,
       "usages": [
         {
           "source": "materials",
@@ -1676,7 +1676,7 @@
     },
     {
       "path": "/infografiken/puk-radikale-akzeptanz-v3.pdf",
-      "sizeBytes": 59068,
+      "sizeBytes": 195876,
       "usages": [
         {
           "source": "materials",

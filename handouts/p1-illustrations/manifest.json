@@ -12,6 +12,8 @@
   },
   "exportContract": {
     "pdf": "A4 portrait, one page, tagged export requested",
+    "xmpMetadata": "present; no PDF/UA identifier until the complete responsible review",
+    "postprocessing": "guarded PDF 1.7 list and source-mapped artifact preparation; exact text and raster parity required",
     "fullWebp": "1600 x 2263 px",
     "thumbnailWebp": "600 x 849 px",
     "editorialStatus": "draft-editorial-review-pending",
@@ -28,11 +30,11 @@
       "id": "radikale-akzeptanz",
       "version": "puk-radikale-akzeptanz-v3",
       "sourceHtml": "handouts/p1-illustrations/sources/puk-radikale-akzeptanz-v3.html",
-      "sourceHtmlSha256": "aaa137573c7799cd94c0e7072251c004db34998b9891ee091e6b1247af02b2a8",
+      "sourceHtmlSha256": "d92ee4f7013e60861eabe3c5c01878b3353d276c3634275cbe0b280dbb09d425",
       "pdf": {
         "path": "client/public/infografiken/puk-radikale-akzeptanz-v3.pdf",
-        "bytes": 59068,
-        "sha256": "dca1e2a4afbb9fddb73208c498a8e74f3ee53650ebc253d7c836fbc31b90ec42",
+        "bytes": 195876,
+        "sha256": "9c89e918e072bc8fa18941355b3040b4913fdd9ea4e035c4f41a23e7e34cc06d",
         "pages": 1,
         "tagged": true
       },
@@ -56,11 +58,11 @@
       "id": "gespraeche-kippen",
       "version": "puk-gespraeche-kippen-v3",
       "sourceHtml": "handouts/p1-illustrations/sources/puk-gespraeche-kippen-v3.html",
-      "sourceHtmlSha256": "a2e0bd9366868b45c1c2f5df9c8419233f51a684b14f1ee33ea73539421dc2bb",
+      "sourceHtmlSha256": "e933d956f0082217bfe89356ba327642ed84147ad990e52b9be0af4a66bd738e",
       "pdf": {
         "path": "client/public/infografiken/puk-gespraeche-kippen-v3.pdf",
-        "bytes": 56180,
-        "sha256": "f18df764adedf62dd014fe7d67e8438292aa0b5e3363b70220bf77dd6b654b0c",
+        "bytes": 192986,
+        "sha256": "c5e7ea393526f166844d3f68114fd3ab54f20147c591959245267493b20aa505",
         "pages": 1,
         "tagged": true
       },
@@ -84,11 +86,11 @@
       "id": "beispiel-dialog",
       "version": "puk-beispiel-dialog-v3",
       "sourceHtml": "handouts/p1-illustrations/sources/puk-beispiel-dialog-v3.html",
-      "sourceHtmlSha256": "b46fde7fb1892db2bbe7793ffb07a098eb993605f481d4d85a6f05d99d137eb2",
+      "sourceHtmlSha256": "b436526a1fab58959045c023d9cda2c00d8a92986def0e4a96b6ca8b055258ac",
       "pdf": {
         "path": "client/public/infografiken/puk-beispiel-dialog-v3.pdf",
-        "bytes": 56758,
-        "sha256": "9e4b6d4740015bde43dda6b70e65bf84f77c5fb74417db69a7171bbe9bd2c23d",
+        "bytes": 186005,
+        "sha256": "7f1e740927baa7fa238fe549c15dadb315331ab62bc0b381f8fa0d1214ed182e",
         "pages": 1,
         "tagged": true
       },

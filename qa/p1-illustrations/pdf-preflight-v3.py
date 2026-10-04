@@ -1,7 +1,7 @@
 """Read-only inventory for the P1 handouts; not a PDF/UA validator.
 
-Run from a repository checkout with Python and pypdf 6.10.0:
-  python qa/p1-illustrations/pdf-preflight-v3.py --repo-root . > /tmp/p1-preflight.json
+Run from a repository checkout with the configured pypdf 6.10.0 interpreter:
+  "$P1_PDF_PYTHON_PATH" qa/p1-illustrations/pdf-preflight-v3.py --repo-root . > /tmp/p1-preflight.json
 The input files are never modified. Compare the hashes with the reviewed snapshot.
 """
 
@@ -39,6 +39,24 @@ def pdf_inventory(path):
     roles = Counter(str(node["/S"]) for node in nodes)
     mark_info = resolve(catalog.get("/MarkInfo", {}))
     preferences = resolve(catalog.get("/ViewerPreferences", {}))
+    metadata_stream = resolve(catalog.get("/Metadata", {}))
+    metadata_bytes = (
+        metadata_stream.get_data() if hasattr(metadata_stream, "get_data") else b""
+    )
+    list_numbering = []
+    invalid_list_items = []
+    for node in nodes:
+        role = str(node.get("/S"))
+        if role == "/L":
+            attributes = resolve(node.get("/A", {}))
+            list_numbering.append(str(attributes.get("/ListNumbering", "")))
+        elif role == "/LI":
+            children = resolve(node.get("/K", []))
+            if not isinstance(children, list):
+                children = [children]
+            child_roles = [str(resolve(child).get("/S", "")) for child in children]
+            if any(child not in {"/Lbl", "/LBody"} for child in child_roles):
+                invalid_list_items.append(child_roles)
     fonts = []
     for page_number, page in enumerate(reader.pages, 1):
         for name, font_ref in resolve(page["/Resources"].get("/Font", {})).items():
@@ -62,8 +80,14 @@ def pdf_inventory(path):
         "display_doc_title": getattr(preferences.get("/DisplayDocTitle"), "value", None),
         "structure_tree_present": "/StructTreeRoot" in catalog,
         "catalog_xmp_present": "/Metadata" in catalog,
+        "catalog_xmp_type": str(metadata_stream.get("/Type", "")),
+        "catalog_xmp_subtype": str(metadata_stream.get("/Subtype", "")),
+        "pdfua_identifier_present": b"<pdfuaid:part>1</pdfuaid:part>"
+        in metadata_bytes,
         "role_map": {str(k): str(v) for k, v in resolve(tree.get("/RoleMap", {})).items()},
         "roles": dict(sorted(roles.items())),
+        "list_numbering": list_numbering,
+        "invalid_list_item_children": invalid_list_items,
         "heading_roles_in_tree_order": [str(n["/S"]) for n in nodes if str(n["/S"]).startswith("/H")],
         "figures": [{"alt": n.get("/Alt"), "actual_text": n.get("/ActualText")} for n in nodes if n["/S"] == "/Figure"],
         "page_tab_orders": [page.get("/Tabs") for page in reader.pages],
@@ -96,6 +120,7 @@ def main():
         "tool": {"name": "pypdf", "version": pypdf.__version__},
         "scope": "Read-only asset identity and PDF object inventory; no PDF/UA certification, human screenreader test or physical print test.",
         "manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+        "preflight_script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "all_asset_hashes_match_manifest": all(a["manifest_match"] for e in entries for a in e["assets"].values()),
         "entries": entries,
     }, ensure_ascii=False, indent=2))

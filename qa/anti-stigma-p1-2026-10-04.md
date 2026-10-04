@@ -76,6 +76,8 @@ Zusätzlich geprüft:
 
 Der Playwright-Lauf konnte auf diesem Mac keine vollständige visuelle Regression bewerten: 30 Darwin-Referenzbilder fehlten und wurden vom Werkzeug lediglich als neue Ist-Bilder erzeugt. Drei referenzunabhängige Tests bestanden. Die erzeugten Referenzbilder wurden nicht übernommen. Dieser Befund ist kein nachgewiesener Darstellungsfehler, ersetzt aber auch keinen belastbaren Bildvergleich.
 
+Der anschliessende Linux-CI-Lauf verglich die vorhandenen Referenzen: 12 unveränderte Kontrollen bestanden, 21 Aufnahmen wichen auf den bewusst überarbeiteten Seiten ab. Alle 21 Differenzpaare wurden einzeln geprüft und waren über Erstlauf und zwei Wiederholungen byteidentisch. Die Abweichungen entsprachen den vorgesehenen Text-, Sicherheits- und Visual-Governance-Änderungen; es fanden sich keine Überläufe, Überlagerungen, abgeschnittenen Inhalte oder globale Schrift- und Layoutdrift. Nur diese 21 Linux-Referenzen wurden aktualisiert. Bereits bestandene Referenzen blieben unverändert. Die drei `krise-cta`-Referenzen wurden im fehlschlagenden Lauf nach dem vorgelagerten `krise-hero`-Vergleich nicht erreicht und deshalb nicht ungeprüft ersetzt; ihre Kontrolle erfolgt im nachfolgenden CI-Lauf.
+
 Das generische PUK-Audit interpretierte wegen der Repository-Struktur den Projektstamm statt des ausgelieferten Vite-Builds als Delivery-Root. Dadurch wurden auch Quellvorlagen, A4- und QA-Dateien als Webseiten geprüft (91 Seiten, 1'216 vermeintlich ausgelieferte Dateien, 4'776 fehlgeschlagene lokale Requests, 32 gemeldete Überläufe und 470 Source-Failures). Diese Werte sind Scope-Artefakte des Werkzeugs und kein Befund zur gebauten Website. Massgeblich sind deshalb der Produktions-Build und die oben dokumentierte Laufzeitprüfung.
 
 ## Bewusst offen

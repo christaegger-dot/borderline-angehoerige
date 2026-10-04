@@ -1,13 +1,69 @@
 # Fachredaktionelle Freigabe · P1-Illustrationspaket
 
 > **Dokumentiertes KI-gestütztes redaktionelles Review – keine institutionelle Fachfreigabe.**
-> Die Inhalts- und Dateiprüfung sowie die Liveprüfung aller drei Webfassungen
-> einschliesslich aufgeklappter Textbeschreibungen sind dokumentiert.
-> Die verantwortete Fachfreigabe bleibt offen; PDF-Auslieferung und Browser-Druck
-> sind noch nicht abschliessend bestätigt.
-> Kein Blatt darf aufgrund dieses Protokolls als `approved` gekennzeichnet werden.
+> Dieses Dokument bewahrt den unabhängigen V2-Prüfentscheid und dokumentiert
+> separat den daraufhin umgesetzten V3-Korrekturstand. Die verantwortete
+> Fachfreigabe bleibt offen. Kein Blatt darf aufgrund dieses Protokolls als
+> `approved` gekennzeichnet werden.
 
-## Prüfstand
+## Korrekturstand V3 – bereit zur unabhängigen Nachprüfung
+
+- **Implementierungscommit:** `b451f8e1fe2bd95a07bd14241da95b930a8d48f2`
+- **Status:** Die zwei verlangten redaktionellen Korrekturen und die technische
+  Reparatur der PDF-Auslieferung sind umgesetzt. Das Paket bleibt ein Entwurf
+  und muss erneut unabhängig geprüft werden.
+
+| Blatt                 | Asset-Version               | Webpfad                                | PDF                                                                   |
+| --------------------- | --------------------------- | -------------------------------------- | --------------------------------------------------------------------- |
+| Radikale Akzeptanz    | `puk-radikale-akzeptanz-v3` | `/materialien/text/radikale-akzeptanz` | [PDF](../../client/public/infografiken/puk-radikale-akzeptanz-v3.pdf) |
+| Wenn Gespräche kippen | `puk-gespraeche-kippen-v3`  | `/materialien/text/gespraeche-kippen`  | [PDF](../../client/public/infografiken/puk-gespraeche-kippen-v3.pdf)  |
+| Beispiel-Dialog       | `puk-beispiel-dialog-v3`    | `/materialien/text/beispiel-dialog`    | [PDF](../../client/public/infografiken/puk-beispiel-dialog-v3.pdf)    |
+
+### Umgesetzte Befunde
+
+1. **R1 – Radikale Akzeptanz:** Unter «Was Radikale Akzeptanz nicht ist»
+   stehen nun die einfachen Bezeichnungen «Aufgeben», «Gutheissen»,
+   «Passivität» und «Resignation». Die beanstandete gestapelte Verneinung ist
+   in semantischer Webdarstellung, Textbeschreibung, PDF, Vollbild-WebP und
+   Thumbnail entfernt.
+2. **R2 – Beispiel-Dialog:** Der situationsunabhängige Grenzsatz lautet nun:
+   «Ich möchte dieses Gespräch so nicht weiterführen. Ich beende es jetzt.»
+   Er setzt kein Anschreien mehr voraus und ist in allen Formaten synchron.
+3. **Wenn Gespräche kippen:** Inhaltlich unverändert, aber gemeinsam als V3
+   exportiert, damit das erneut vorzulegende Paket einen eindeutigen,
+   zusammengehörigen Stand hat.
+4. **PDF-Auslieferung:** Lokale PDFs werden direkt als Same-Origin-Assets
+   geöffnet und heruntergeladen. Alte `/api/material-download/...`-Links
+   leiten mit HTTP 307 auf das statische Asset um. Dadurch muss die
+   Serverfunktion keine geschützte Deploy-Preview ohne Browser-Sitzung mehr
+   selbst abrufen.
+
+### Technische Nachweise für V3
+
+- Manifest: genau drei V3-Einträge und neun Artefakte; SHA-256, Dateigrössen
+  und Abmessungen stimmen vollständig.
+- PDFs: je eine vollständige A4-Seite, `Tagged: yes`, ohne sichtbaren Überlauf,
+  Clipping, Überlagerungen oder Exportartefakte.
+- WebP: Vollbilder je 1600 × 2263 px; Thumbnails je 600 × 849 px; visuell und
+  inhaltlich mit den PDFs synchron.
+- Lokale PDF-Links: alle drei Öffnen- und Downloadpfade liefern direkt
+  `application/pdf`; der frühere Funktionspfad wird im UI nicht mehr verwendet.
+- Automatische Prüfung: Typprüfung, Lint, Produktionsbuild, 424 Tests,
+  P1-Illustrationsaudit und zwölf Browser-/Viewport-Fälle bestanden.
+- Browser-Druckregeln: in den zwölf lokalen Browserfällen bleiben Kopf und
+  Inhalt der Visualisierung sichtbar; die Seitennavigation wird ausgeblendet.
+
+### Weiterhin offen
+
+- unabhängiger redaktioneller Gesamtentscheid für den V3-Stand;
+- verantwortete institutionelle Fachfreigabe;
+- erneute Auslieferungsprüfung im geschützten Netlify-Deploy nach Bereitstellung
+  dieses Commits;
+- reale Screenreader- und Nutzendentests;
+- PDF-UA-/Matterhorn-Prüfung und Prüfung der semantischen PDF-Lesereihenfolge;
+- unabhängige Prüfung im nativen Browser-Druckdialog sowie auf realen Druckern.
+
+## Prüfstand des V2-Reviews
 
 - **PR:** [#617 · P1-Illustrationspaket für Borderline](https://github.com/christaegger-dot/borderline-angehoerige/pull/617)
 - **Commit:** `fff12445fd01fb1f2a1a82f1e58b4cc0d86a9ba0`
@@ -159,24 +215,23 @@ kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
 4. Erst nach erneuten Tests den Draft-PR als bereit zur Prüfung markieren. Eine
    Freigabe oder ein Merge veröffentlicht die Website nicht automatisch.
 
-
 ## Prüfnachweise und Grenzen dieses Reviews
 
 ### Inhalte und Formate
 
-| Gegenstand | Eigenständig geprüft | Ergebnis / Grenze |
-| --- | --- | --- |
-| Web-Inhaltsquellen der drei V2-Blätter | Ja | Texte, Schrittfolgen, Quellenhinweise und sämtliche hinterlegten `longDescription`-Texte gelesen; R1/R2 siehe oben |
-| Aufklappbare Textbeschreibung im Browser | Ja | Alle drei Aufklapper tatsächlich geöffnet und vollständig gelesen; Kernaussagen stimmen mit Darstellung und hinterlegtem Text überein |
-| Drei separate PDF-Handouts | Ja | Alle Seiten gerendert und visuell gelesen; jedes PDF eine vollständige A4-Seite, kein sichtbarer Überlauf |
-| Drei Vollbild-WebP | Ja | Je 1600 × 2263 Pixel, visuell mit den PDFs abgeglichen |
-| Drei Thumbnail-WebP | Ja | Je 600 × 849 Pixel, als verkleinerte Vorschau geprüft; keine eigenständige Lesefassung |
-| Assetidentität | Ja | SHA-256 und Dateigrössen aller neun Dateien stimmen mit `handouts/p1-illustrations/manifest.json` am Prüfcommit überein |
-| Live-Webdarstellung | Ja | Nach erfolgreicher Anmeldung alle drei Seiten nacheinander gelesen und anhand vollständiger Screenshots visuell geprüft; keine fehlenden Handout-Abschnitte erkannt, R1/R2 bestätigt |
-| Weitere Viewports / Browser-Druckdialog | Nein | Keine Wiederholung des berichteten Viewport-Audits. Der Druckaufruf lieferte in dieser Browserumgebung keine auswertbare Druckvorschau; kein eigener Nachweis der reparierten Druckausgabe |
-| PDF-Auslieferung über die Preview | Nicht bestätigt | Beim Beispiel-Dialog zeigte «PDF öffnen» die Meldung «Download derzeit nicht verfügbar». Downloadversuche bei Radikaler Akzeptanz wurden abgebrochen; ein späterer Navigationsversuch wurde vom Browser blockiert. Ursache und Verbreitung nicht festgestellt; siehe T1 |
-| Reparatur der Druckregeln | Nur Quellprüfung | Die globale Ausblendung aller `header` ist in `client/public/print.css` entfernt. Die Wirksamkeit im aktuellen Deploy wurde in diesem Review nicht selbst getestet |
-| PDF/UA, Matterhorn, reale Screenreader und Nutzendentests | Nein | Keine Konformitäts- oder Nutzungsgarantie aus Sichtprüfung, Textauszug oder vorhandenen Tags ableiten |
+| Gegenstand                                                | Eigenständig geprüft | Ergebnis / Grenze                                                                                                                                                                                                                                                       |
+| --------------------------------------------------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Web-Inhaltsquellen der drei V2-Blätter                    | Ja                   | Texte, Schrittfolgen, Quellenhinweise und sämtliche hinterlegten `longDescription`-Texte gelesen; R1/R2 siehe oben                                                                                                                                                      |
+| Aufklappbare Textbeschreibung im Browser                  | Ja                   | Alle drei Aufklapper tatsächlich geöffnet und vollständig gelesen; Kernaussagen stimmen mit Darstellung und hinterlegtem Text überein                                                                                                                                   |
+| Drei separate PDF-Handouts                                | Ja                   | Alle Seiten gerendert und visuell gelesen; jedes PDF eine vollständige A4-Seite, kein sichtbarer Überlauf                                                                                                                                                               |
+| Drei Vollbild-WebP                                        | Ja                   | Je 1600 × 2263 Pixel, visuell mit den PDFs abgeglichen                                                                                                                                                                                                                  |
+| Drei Thumbnail-WebP                                       | Ja                   | Je 600 × 849 Pixel, als verkleinerte Vorschau geprüft; keine eigenständige Lesefassung                                                                                                                                                                                  |
+| Assetidentität                                            | Ja                   | SHA-256 und Dateigrössen aller neun Dateien stimmen mit `handouts/p1-illustrations/manifest.json` am Prüfcommit überein                                                                                                                                                 |
+| Live-Webdarstellung                                       | Ja                   | Nach erfolgreicher Anmeldung alle drei Seiten nacheinander gelesen und anhand vollständiger Screenshots visuell geprüft; keine fehlenden Handout-Abschnitte erkannt, R1/R2 bestätigt                                                                                    |
+| Weitere Viewports / Browser-Druckdialog                   | Nein                 | Keine Wiederholung des berichteten Viewport-Audits. Der Druckaufruf lieferte in dieser Browserumgebung keine auswertbare Druckvorschau; kein eigener Nachweis der reparierten Druckausgabe                                                                              |
+| PDF-Auslieferung über die Preview                         | Nicht bestätigt      | Beim Beispiel-Dialog zeigte «PDF öffnen» die Meldung «Download derzeit nicht verfügbar». Downloadversuche bei Radikaler Akzeptanz wurden abgebrochen; ein späterer Navigationsversuch wurde vom Browser blockiert. Ursache und Verbreitung nicht festgestellt; siehe T1 |
+| Reparatur der Druckregeln                                 | Nur Quellprüfung     | Die globale Ausblendung aller `header` ist in `client/public/print.css` entfernt. Die Wirksamkeit im aktuellen Deploy wurde in diesem Review nicht selbst getestet                                                                                                      |
+| PDF/UA, Matterhorn, reale Screenreader und Nutzendentests | Nein                 | Keine Konformitäts- oder Nutzungsgarantie aus Sichtprüfung, Textauszug oder vorhandenen Tags ableiten                                                                                                                                                                   |
 
 Die Kernaussagen der geprüften Live-Webfassungen, Textbeschreibungen,
 Web-Inhaltsquellen und exportierten Dateien stimmen überein. Die Dateien sind nicht wortgleich: Die Webfassung enthält

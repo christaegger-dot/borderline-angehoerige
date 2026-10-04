@@ -1,17 +1,120 @@
 # Fachredaktionelle Freigabe · P1-Illustrationspaket
 
 > **Dokumentiertes KI-gestütztes redaktionelles Review – keine institutionelle Fachfreigabe.**
-> Dieses Dokument bewahrt den unabhängigen V2-Prüfentscheid und dokumentiert
-> separat den daraufhin umgesetzten V3-Korrekturstand. Die verantwortete
-> Fachfreigabe bleibt offen. Kein Blatt darf aufgrund dieses Protokolls als
-> `approved` gekennzeichnet werden.
+> **Aktueller Entscheid V3: alle drei Blätter redaktionell freigegeben wie vorliegend.**
+> Die unabhängige redaktionelle Nachprüfung ist abgeschlossen. Die verantwortete
+> institutionelle Fachfreigabe und die unten genannten Praxis- und
+> Barrierefreiheitsprüfungen bleiben offen. Dieses KI-Review allein berechtigt
+> nicht zur Kennzeichnung als `approved`, zum Merge oder zur Veröffentlichung.
+> Der frühere V2-Entscheid bleibt als Historie erhalten und gilt nicht für V3.
 
-## Korrekturstand V3 – bereit zur unabhängigen Nachprüfung
+## Redaktioneller V3-Entscheid vom 04.10.2026
+
+- **Prüfende Person:** ChatGPT (KI-System).
+- **Rolle / Funktion:** Redaktionelles Review mit fachlicher Plausibilitätsprüfung;
+  keine vertretungsberechtigte Fachperson der PUK.
+- **Prüfdatum:** 04.10.2026, Europe/Zurich.
+- **Geprüfter Repository-Stand:** `3d458c3ba9e58a56308062ef60f263e5f8e51a7f`.
+- **Inhalts- und Assetcommit:** `b451f8e1fe2bd95a07bd14241da95b930a8d48f2`.
+  Der GitHub-Vergleich bis `3d458c3b…` zeigt zwei weitere Commits, die nur
+  dieses Protokoll betreffen; die V3-Inhalte und Assets sind unverändert.
+- **Direkte Webprüfung:** Deploy-Preview #617, alle drei vorgesehenen Routen,
+  jeweils einschliesslich tatsächlich aufgeklappter Textbeschreibung.
+
+Die nachfolgenden Entscheide gelten ausschliesslich für die redaktionelle
+Prüfstufe und die bezeichneten V3-Dateien. Sie sind keine institutionelle
+Fach-, Kommunikations-, Barrierefreiheits- oder Publikationsfreigabe.
+
+### Einzelentscheide V3
+
+| Blatt | Redaktioneller Entscheid | Begründung |
+| --- | --- | --- |
+| Radikale Akzeptanz | **freigegeben wie vorliegend** | R1 ist behoben: Unter «Akzeptanz ist nicht» stehen «Aufgeben», «Gutheissen», «Passivität» und «Resignation» ohne zusätzliche Verneinung. Freiwilligkeit, Trennung von Gegenwart und Zukunft, Berechtigung der Gefühle und Grenzen sowie das nicht-akute Beispiel bleiben erhalten. Schutz wird nicht der Akzeptanzübung untergeordnet. |
+| Wenn Gespräche kippen | **freigegeben wie vorliegend** | Die bereits unbeanstandeten Inhalte sind erhalten. Die Schritte bleiben Wahlmöglichkeiten; Pausen und ein späterer Kontakt sind freiwillig. Vorsichtiges Spiegeln, fehlende Wirkungsgarantie und die Grenze eigener Verantwortung sind verständlich formuliert. |
+| Beispiel-Dialog | **freigegeben wie vorliegend** | R2 ist behoben: «Ich möchte dieses Gespräch so nicht weiterführen. Ich beende es jetzt.» setzt kein Anschreien voraus und passt zum offenen Ausgangspunkt. Die Auswahl möglicher Sätze, die fehlende Rückkehrpflicht und der nur sichere und gewollte Wiedereinstieg bleiben ausdrücklich erkennbar. |
+
+**Gesamtentscheid V3: gesamtes Paket redaktionell freigegeben wie vorliegend.**
+Es bestehen aus dieser Nachprüfung keine weiteren zwingenden redaktionellen
+Korrekturaufträge. Die früheren optionalen Verfeinerungen bleiben Anregungen,
+keine zusätzlichen Freigabevoraussetzungen.
+
+### Inhaltliche Bewertung und Formatabgleich V3
+
+- [x] Die beanstandeten redaktionellen Punkte R1 und R2 sind behoben.
+- [x] Die Darstellung ist für die angesprochene Angehörigenperspektive nachvollziehbar;
+      es wird keine garantierte Entlastung oder Gesprächswirkung zugesagt.
+- [x] Angehörige werden nicht für das Befinden oder Verhalten der anderen Person
+      verantwortlich gemacht; eigene Bedürfnisse, Gefühle und Grenzen bleiben berechtigt.
+- [x] Die Gesprächsschritte erscheinen ausdrücklich freiwillig. Die Nummerierung
+      wird durch Hinweise auf Auswahl, Auslassen und Beenden eingeordnet.
+- [x] Eine Pflicht zur späteren Gesprächsaufnahme oder zu einem Rückkehrversprechen
+      wird ausdrücklich ausgeschlossen.
+- [x] Gewalt oder Bedrohung und vermutete unmittelbare Selbstgefährdung bleiben
+      getrennt; 117 und 144, Eigenschutz und professionelle Hilfe sind wie im
+      fachlich plausibilisierten V2-Sicherheitsabschnitt zugeordnet.
+- [x] Die vorgeschlagenen Sätze sind als anpassbare Beispiele erkennbar.
+      Der korrigierte Grenzsatz beschreibt die eigene Entscheidung.
+- [x] Webfassung, geöffnete Textbeschreibung, PDF, Vollbild-WebP und Thumbnail
+      wurden gemeinsam auf ihre Kernaussagen und die V3-Korrekturen abgeglichen.
+      Die ausführlichere Webfassung muss nicht wortgleich mit dem kompakten PDF sein.
+
+Die fachlichen Bezugspunkte und die bereits am 04.10.2026 geprüften
+Sicherheitsquellen bleiben die Grundlage der Plausibilitätsprüfung; die unten
+im historischen V2-Review dokumentierte Grenze der Quellenprüfung gilt weiter.
+Insbesondere wird keine vollständige, seitengetreue Prüfung der Bücher von
+Mason/Kreger oder Fruzzetti behauptet. Die Kennzeichnung als eigene didaktische
+Darstellung bleibt angemessen.
+
+### Eigenständige Prüfnachweise V3
+
+| Gegenstand | Nachweis in dieser Nachprüfung |
+| --- | --- |
+| Webdarstellungen | Alle drei Routen nach Anmeldung direkt gelesen und mit vollständigen Screenshots visuell geprüft; die beiden Korrekturen sind sichtbar, keine fehlenden Handout-Abschnitte festgestellt. |
+| Aufklapptexte | Alle drei Textbeschreibungen tatsächlich geöffnet und gelesen; die zentralen Aussagen zu Freiwilligkeit, Grenzen und Sicherheit bleiben erhalten. |
+| PDF-Links im Web | Alle sechs sichtbaren Öffnen-/Downloadlinks zeigen unmittelbar auf die jeweils richtige Datei `puk-…-v3.pdf`. |
+| Separate Original-PDFs | Alle drei Dateien am geprüften Repository-Stand bezogen, gerendert und visuell gelesen. Je eine vollständige A4-Seite (594,96 × 841,92 pt); kein sichtbarer Überlauf oder abgeschnittener Abschnitt festgestellt. |
+| Vollbild-WebP und Thumbnail | Alle sechs Dateien visuell mit den PDFs abgeglichen. Vollbilder 1600 × 2263 px, Thumbnails 600 × 849 px. Die Thumbnails sind Vorschauen, keine eigenständigen Lesefassungen. |
+| Dateiversionen | SHA-256 und Dateigrössen aller neun V3-Artefakte sowie alle Bilddimensionen eigenständig gegen das Manifest geprüft; sämtliche Werte stimmen überein. |
+| PDF-Auslieferung T1 | Der ehemals fehlgeschlagene Aufruf «PDF öffnen» beim Beispiel-Dialog wurde erneut angeklickt. Das V3-PDF erschien im nativen PDF-Viewer mit einer Seite und dem korrigierten Grenzsatz, ohne die frühere Fehlermeldung. |
+| Alle Downloads und Legacy-Weiterleitungen | Der bereits in `3d458c3b…` dokumentierte authentifizierte Gesamttest wurde gelesen. Die drei Download-Aktionen und die drei alten API-Routen wurden in dieser redaktionellen Nachprüfung nicht nochmals ausgeführt. Der Implementierungsnachweis wird als solcher ausgewiesen. |
+| CI / Netlify | Für `3d458c3b…` über GitHub nachgelesen: CI-Lauf 37191933803 erfolgreich, Visual-Regression-Lauf 37191933804 erfolgreich, Netlify-Deploy-Preview-Status erfolgreich. Die berichteten 424 Tests und zwölf Browserfälle wurden hier nicht erneut ausgeführt. |
+| Freigabegrenzen | Reale Screenreader-/Nutzendentests, PDF-UA/Matterhorn, semantische PDF-Lesereihenfolge sowie nativer Browser-Druckdialog und reale Ausdrucke sind nicht durch diese Sichtprüfung abgedeckt. Vorhandene PDF-Tags sind kein Konformitätsnachweis. |
+
+**Abschluss der bisherigen Befunde:** R1 und R2 sind redaktionell geschlossen.
+T1 ist mit dem dokumentierten authentifizierten V3-Gesamttest und der eigenen
+erfolgreichen Stichprobe des zuvor fehlgeschlagenen Beispiel-Dialog-Aufrufs
+geschlossen. Die historischen V2-Fehlermeldungen sind kein aktueller V3-Befund.
+
+### Offene Freigabestufen nach dem V3-Review
+
+1. **Verantwortete institutionelle Fachfreigabe:** Name, Rolle, Datum und
+   ausdrücklicher Entscheid der zuständigen Fachperson fehlen weiterhin.
+2. **Reale Screenreader- und Nutzendentests:** am endgültigen V3-Stand durchführen
+   und dokumentieren, einschliesslich der vorgesehenen NVDA-/Firefox-Prüfung.
+3. **PDF-UA/Matterhorn und semantische Lesereihenfolge:** separat verantwortlich
+   prüfen; bis dahin keine PDF/UA-Konformität ausweisen.
+4. **Reale Druckprüfung:** den nativen Browser-Druckdialog und Ausdrucke auf realen
+   Druckern prüfen, insbesondere Vollständigkeit, Lesbarkeit und Seitenumbrüche.
+
+**Institutionelle Bestätigung**
+
+- Verantwortliche Fachperson: offen.
+- Rolle / Funktion: offen.
+- Datum / ausdrücklicher Gesamtentscheid: offen.
+
+Die Entwurfskennzeichnung und die technischen Freigabefelder bleiben bis zum
+Abschluss der vorgesehenen Freigabestufen unverändert. Diese Nachprüfung
+ändert nur das Protokoll; sie führt keine Inhaltsänderung, GitHub-Review-Approval,
+Umstellung des Draft-Status, Zusammenführung oder Produktionsveröffentlichung aus.
+
+## Umsetzung und technische Nachweise V3
 
 - **Implementierungscommit:** `b451f8e1fe2bd95a07bd14241da95b930a8d48f2`
-- **Status:** Die zwei verlangten redaktionellen Korrekturen und die technische
-  Reparatur der PDF-Auslieferung sind umgesetzt. Das Paket bleibt ein Entwurf
-  und muss erneut unabhängig geprüft werden.
+- **Status:** R1 und R2 sind umgesetzt und in der unten dokumentierten
+  unabhängigen V3-Nachprüfung redaktionell abgenommen. Für T1 liegt der
+  erfolgreiche authentifizierte Live-Nachweis vor; der zuvor fehlgeschlagene
+  PDF-Aufruf des Beispiel-Dialogs wurde zusätzlich unabhängig bestätigt.
+  Das Paket bleibt bis zu den noch offenen Freigaben und Prüfungen ein Entwurf.
 
 | Blatt                 | Asset-Version               | Webpfad                                | PDF                                                                   |
 | --------------------- | --------------------------- | -------------------------------------- | --------------------------------------------------------------------- |
@@ -63,13 +166,16 @@
 
 ### Weiterhin offen
 
-- unabhängiger redaktioneller Gesamtentscheid für den V3-Stand;
 - verantwortete institutionelle Fachfreigabe;
 - reale Screenreader- und Nutzendentests;
 - PDF-UA-/Matterhorn-Prüfung und Prüfung der semantischen PDF-Lesereihenfolge;
 - unabhängige Prüfung im nativen Browser-Druckdialog sowie auf realen Druckern.
 
-## Prüfstand des V2-Reviews
+## Historischer Prüfstand des V2-Reviews
+
+> Die folgenden Entscheide und offenen Befunde dokumentieren den damaligen
+> V2-Stand. Für den aktuellen V3-Stand gilt der neue Entscheid am Anfang dieses
+> Dokuments. R1 und R2 sind erledigt; T1 ist gemäss V3-Nachweis geschlossen.
 
 - **PR:** [#617 · P1-Illustrationspaket für Borderline](https://github.com/christaegger-dot/borderline-angehoerige/pull/617)
 - **Commit:** `fff12445fd01fb1f2a1a82f1e58b4cc0d86a9ba0`
@@ -91,7 +197,7 @@ neun PDF-/WebP-/Thumbnail-Dateien aus dem Repository. Die PDF-Auslieferung über
 die Preview und die Browser-Druckausgabe sind nicht abschliessend bestätigt;
 siehe Prüfnachweise.
 
-## Prüfende Person
+## Prüfende Person des V2-Reviews
 
 - **Name:** ChatGPT (KI-System)
 - **Rolle / Funktion:** Redaktionelles Review mit fachlicher Plausibilitätsprüfung; keine vertretungsberechtigte Fachperson der PUK
@@ -102,7 +208,7 @@ Die folgenden Häkchen bezeichnen nur die ausdrücklich genannten, aus den
 Inhaltsquellen, Dateien und der beschriebenen Liveprüfung beurteilbaren Kriterien. Sie sind kein klinisches,
 kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
 
-## Paketweite Prüfung
+## Paketweite Prüfung V2
 
 - [ ] Fachlich korrekt, verständlich und ruhig formuliert
 - [x] Angehörige werden validiert, ohne Schuld oder übermässige Verantwortung
@@ -116,7 +222,7 @@ kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
 - [x] Webfassung, Textbeschreibung und PDF vermitteln dieselben Kernaussagen
       (PDF-Dateien aus dem Repository; Auslieferung über die Preview separat offen)
 
-## Einzelentscheide
+## Einzelentscheide V2
 
 ### 1. Radikale Akzeptanz
 
@@ -182,7 +288,7 @@ kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
   Gespräch gerade zu viel. Ich beende es jetzt.» verwenden. Die bewusste
   Auswahl möglicher Sätze und die fehlende Rückkehrpflicht beibehalten.
 
-## Gesamtentscheid
+## Historischer Gesamtentscheid V2
 
 - [ ] Paket freigegeben wie vorliegend
 - [x] Paket nach dokumentierten Korrekturen erneut vorlegen
@@ -221,7 +327,7 @@ kommunikatives, rechtliches oder barrierefreiheitsbezogenes Sign-off.
 4. Erst nach erneuten Tests den Draft-PR als bereit zur Prüfung markieren. Eine
    Freigabe oder ein Merge veröffentlicht die Website nicht automatisch.
 
-## Prüfnachweise und Grenzen dieses Reviews
+## Prüfnachweise und Grenzen des V2-Reviews
 
 ### Inhalte und Formate
 

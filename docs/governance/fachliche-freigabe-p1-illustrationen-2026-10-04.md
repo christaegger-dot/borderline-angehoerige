@@ -23,10 +23,6 @@ Die Prüfung umfasst Webfassung, vollständige Textbeschreibung und PDF.
 - **Rolle / Funktion:**
 - **Datum:**
 - **Geprüfter Commit oder Deploy-Stand:**
-- **Freigabe gilt als:** fachstellenintern / institutionell / Kommunikation / andere:
-
-Nur die tatsächlich erteilte Freigabestufe stehen lassen. Eine
-fachstelleninterne Freigabe ist keine institutionelle Kommunikationsfreigabe.
 
 ## Paketweite Prüfung
 
@@ -36,7 +32,9 @@ fachstelleninterne Freigabe ist keine institutionelle Kommunikationsfreigabe.
 - [ ] Eigene Sicherheit und Grenzen der Angehörigen bleiben sichtbar
 - [ ] Bedrohung oder Gewalt und vermutete akute Selbstgefährdung sind klar
       getrennt
-- [ ] Quellenrolle und Bezeichnung als eigene didaktische Darstellung stimmen
+- [ ] Quellenlage oder fachliche Herleitung trägt die Aussagen und ist
+      dokumentiert
+- [ ] Die Bezeichnung als eigene didaktische Darstellung ist korrekt
 - [ ] Webfassung, Textbeschreibung und PDF vermitteln dieselben Kernaussagen
 
 ## Einzelentscheide
@@ -47,7 +45,9 @@ fachstelleninterne Freigabe ist keine institutionelle Kommunikationsfreigabe.
 - [ ] Vier Schritte fachlich tragfähig; keine sichere Entlastung versprochen
 - [ ] «Schutz geht vor» verhindert ein Missverständnis als Bleiben, Schweigen
       oder Tolerieren von Gewalt
-- **Entscheid:** freigegeben / mit Auflagen / nicht freigegeben
+- [ ] freigegeben wie vorliegend
+- [ ] Korrekturen erforderlich; erneut vorlegen
+- [ ] nicht freigegeben
 - **Korrekturen oder Begründung:** —
 
 ### 2. Wenn Gespräche kippen
@@ -55,7 +55,9 @@ fachstelleninterne Freigabe ist keine institutionelle Kommunikationsfreigabe.
 - [ ] Drei Schritte sind Wahlmöglichkeiten, keine Pflichtfolge
 - [ ] Spiegeln bleibt vorsichtig; Pause und Rückkehr bleiben freiwillig
 - [ ] Schutztext zu Gewalt und vermuteter akuter Selbstgefährdung ist korrekt
-- **Entscheid:** freigegeben / mit Auflagen / nicht freigegeben
+- [ ] freigegeben wie vorliegend
+- [ ] Korrekturen erforderlich; erneut vorlegen
+- [ ] nicht freigegeben
 - **Korrekturen oder Begründung:** —
 
 ### 3. Beispiel-Dialog
@@ -63,7 +65,9 @@ fachstelleninterne Freigabe ist keine institutionelle Kommunikationsfreigabe.
 - [ ] Klar als anpassbares Beispiel und nicht als Gesprächsrezept bezeichnet
 - [ ] Grenze, Pause und optionaler Wiedereinstieg sind realistisch und sicher
 - [ ] Schutztext zu Gewalt und vermuteter akuter Selbstgefährdung ist korrekt
-- **Entscheid:** freigegeben / mit Auflagen / nicht freigegeben
+- [ ] freigegeben wie vorliegend
+- [ ] Korrekturen erforderlich; erneut vorlegen
+- [ ] nicht freigegeben
 - **Korrekturen oder Begründung:** —
 
 ## Gesamtentscheid
@@ -78,7 +82,7 @@ fachstelleninterne Freigabe ist keine institutionelle Kommunikationsfreigabe.
 **Nachweis des Entscheids**
 
 - Signatur, Protokoll- oder PR-Kommentar-Link:
-- Nächster Review-Termin, falls erforderlich:
+- Nächster fachlicher Review spätestens: (für mittlere Risikostufe jährlich)
 
 ## Nach dem Entscheid
 

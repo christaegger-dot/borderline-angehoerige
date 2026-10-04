@@ -32,6 +32,8 @@ type Manifest = {
     editorialStatus: string;
     editorialStatusLabel: string;
     pdfUaClaim: boolean;
+    xmpMetadata: string;
+    postprocessing: string;
   };
   entries: ManifestEntry[];
 };
@@ -40,6 +42,23 @@ const repoRoot = process.cwd();
 const manifestPath = path.join(
   repoRoot,
   "handouts/p1-illustrations/manifest.json"
+);
+const preflightReportPath = path.join(
+  repoRoot,
+  "qa/p1-illustrations/pdf-preflight-v3-2026-10-04.json"
+);
+const veraPdfReportPath = path.join(
+  repoRoot,
+  "qa/p1-illustrations/verapdf-ua1-candidates-v3-2026-10-04.json"
+);
+const postprocessorPath = path.join(repoRoot, "scripts/postprocess-p1-pdf.py");
+const preflightScriptPath = path.join(
+  repoRoot,
+  "qa/p1-illustrations/pdf-preflight-v3.py"
+);
+const validatorPath = path.join(
+  repoRoot,
+  "qa/p1-illustrations/validate-pdfua-candidates.py"
 );
 const expectedIds = [
   "radikale-akzeptanz",
@@ -87,19 +106,30 @@ if (!existsSync(manifestPath)) {
 }
 
 const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as Manifest;
+const manifestSha256 = sha256(manifestPath);
 if (manifest.exportContract.pdfUaClaim !== false) {
   fail("PDF/UA must not be claimed before the responsible final review");
+}
+if (!manifest.exportContract.xmpMetadata.startsWith("present;")) {
+  fail("P1 PDFs must retain synchronized XMP metadata");
+}
+if (
+  !manifest.exportContract.postprocessing.includes("text and raster parity")
+) {
+  fail("P1 PDFs must retain guarded text and raster parity checks");
 }
 if (
   manifest.exportContract.editorialStatus !== "draft-editorial-review-pending"
 ) {
-  fail("P1 package must remain a draft until editorial approval is recorded");
+  fail(
+    "P1 package must remain a draft until institutional approval is recorded"
+  );
 }
 if (
   manifest.exportContract.editorialStatusLabel !==
   "Entwurf – fachlich-redaktionelle Freigabe ausstehend"
 ) {
-  fail("P1 package is missing the explicit editorial draft label");
+  fail("P1 package is missing the explicit institutional draft label");
 }
 
 const stylesheetPath = path.join(repoRoot, manifest.sourceStylesheet.path);
@@ -114,6 +144,88 @@ if (
   manifest.entries.map(entry => entry.id).join("|") !== expectedIds.join("|")
 ) {
   fail("manifest IDs or ordering do not match the P1 contract");
+}
+
+for (const reportPath of [preflightReportPath, veraPdfReportPath]) {
+  if (!existsSync(reportPath)) {
+    fail(`${path.relative(repoRoot, reportPath)} is missing`);
+  }
+}
+
+const preflightReport = JSON.parse(
+  readFileSync(preflightReportPath, "utf8")
+) as {
+  manifest_sha256: string;
+  preflight_script_sha256: string;
+  all_asset_hashes_match_manifest: boolean;
+  entries: Array<{
+    id: string;
+    assets: { pdf: { sha256: string; manifest_match: boolean } };
+  }>;
+};
+if (
+  preflightReport.manifest_sha256 !== manifestSha256 ||
+  preflightReport.preflight_script_sha256 !== sha256(preflightScriptPath) ||
+  !preflightReport.all_asset_hashes_match_manifest ||
+  preflightReport.entries.map(entry => entry.id).join("|") !==
+    expectedIds.join("|")
+) {
+  fail("PDF preflight evidence is stale or does not match the manifest");
+}
+
+const veraPdfReport = JSON.parse(readFileSync(veraPdfReportPath, "utf8")) as {
+  manifest_sha256: string;
+  postprocessor_sha256: string;
+  validator_sha256: string;
+  all_candidates_pass_verapdf_profile: boolean;
+  entries: Array<{
+    id: string;
+    source_sha256: string;
+    exact_text_parity: boolean;
+    exact_layout_text_parity: boolean;
+    source_raster_sha256: string;
+    candidate_raster_sha256: string;
+    failed_rules: number;
+    failed_checks: number;
+  }>;
+};
+if (
+  veraPdfReport.manifest_sha256 !== manifestSha256 ||
+  veraPdfReport.postprocessor_sha256 !== sha256(postprocessorPath) ||
+  veraPdfReport.validator_sha256 !== sha256(validatorPath) ||
+  !veraPdfReport.all_candidates_pass_verapdf_profile ||
+  veraPdfReport.entries.map(entry => entry.id).join("|") !==
+    expectedIds.join("|")
+) {
+  fail("veraPDF candidate evidence is stale or does not match the toolchain");
+}
+
+for (const entry of manifest.entries) {
+  const preflightEntry = preflightReport.entries.find(
+    candidate => candidate.id === entry.id
+  );
+  if (
+    !preflightEntry ||
+    !preflightEntry.assets.pdf.manifest_match ||
+    preflightEntry.assets.pdf.sha256 !== entry.pdf.sha256
+  ) {
+    fail(`PDF preflight evidence is stale for ${entry.id}`);
+  }
+  const veraPdfEntry = veraPdfReport.entries.find(
+    candidate => candidate.id === entry.id
+  );
+  if (
+    !veraPdfEntry ||
+    veraPdfEntry.source_sha256 !== entry.pdf.sha256 ||
+    !veraPdfEntry.exact_text_parity ||
+    !veraPdfEntry.exact_layout_text_parity ||
+    veraPdfEntry.source_raster_sha256 !==
+      veraPdfEntry.candidate_raster_sha256 ||
+    veraPdfEntry.failed_rules !== 0 ||
+    veraPdfEntry.failed_checks !== 0
+  ) {
+    fail(`veraPDF candidate evidence is incomplete or stale for ${entry.id}`);
+  }
 }
 
 for (const entry of manifest.entries) {
@@ -153,6 +265,14 @@ for (const entry of manifest.entries) {
   if (/<article[^>]*class="p1-sheet"/u.test(html)) {
     fail(`${entry.sourceHtml} nests the main landmark inside an article`);
   }
+  if (sourceDocument.querySelector("aside.p1-example")) {
+    fail(`${entry.sourceHtml} exports the PDF 2.0-only Aside structure type`);
+  }
+  if (sourceDocument.querySelector('.p1-step-number[aria-hidden="true"]')) {
+    fail(
+      `${entry.sourceHtml} hides a visible list label from the PDF tag tree`
+    );
+  }
   if (
     entry.id === "beispiel-dialog" &&
     !sourceDocument.querySelector('ol.p1-dialog[role="list"]')
@@ -177,6 +297,28 @@ for (const entry of manifest.entries) {
   }
   if (!/^Tagged:\s+yes$/mu.test(pdfInfo)) {
     fail(`${entry.pdf.path} must retain its tagged export`);
+  }
+  if (!/^PDF version:\s+1\.7$/mu.test(pdfInfo)) {
+    fail(`${entry.pdf.path} must remain a PDF 1.7 review candidate`);
+  }
+  const { stdout: xmpMetadata } = await execFileAsync("pdfinfo", [
+    "-meta",
+    pdfPath,
+  ]);
+  for (const requiredXmpFragment of [
+    "<dc:title>",
+    'xml:lang="de-CH"',
+    "<dc:creator>",
+    "<dc:language>",
+  ]) {
+    if (!xmpMetadata.includes(requiredXmpFragment)) {
+      fail(`${entry.pdf.path} XMP is missing: ${requiredXmpFragment}`);
+    }
+  }
+  if (xmpMetadata.includes("<pdfuaid:part>")) {
+    fail(
+      `${entry.pdf.path} must not claim PDF/UA before the complete responsible review`
+    );
   }
   await execFileAsync("qpdf", ["--check", pdfPath]);
 

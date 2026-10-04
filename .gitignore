@@ -1,6 +1,8 @@
 # Dependencies
 **/node_modules
 .pnpm-store/
+__pycache__/
+*.py[cod]
 
 # Build outputs
 dist/

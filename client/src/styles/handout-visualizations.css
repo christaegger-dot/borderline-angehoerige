@@ -292,6 +292,10 @@
     line-height: 1.55;
   }
 
+  .handout-visual__caption cite {
+    font-style: inherit;
+  }
+
   .handout-visual__caption details {
     max-width: 70ch;
   }

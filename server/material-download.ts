@@ -20,7 +20,7 @@ const LOCAL_PUBLIC_ROOTS = [
 export async function createMaterialDownloadResponse(
   id: string,
   disposition: HandoutDisposition = "attachment",
-  publicOrigin?: string
+  _publicOrigin?: string
 ) {
   const download = resolveHandoutAsset(id);
   if (!download) {
@@ -31,8 +31,7 @@ export async function createMaterialDownloadResponse(
     return createLocalMaterialDownloadResponse(
       download.sourceUrl,
       download.fileName,
-      disposition,
-      publicOrigin
+      disposition
     );
   }
 
@@ -52,8 +51,7 @@ export async function createMaterialDownloadResponse(
 async function createLocalMaterialDownloadResponse(
   sourceUrl: string,
   fileName: string,
-  disposition: HandoutDisposition,
-  publicOrigin?: string
+  disposition: HandoutDisposition
 ) {
   const absolutePath = resolveLocalPdfPath(sourceUrl);
   if (absolutePath) {
@@ -78,29 +76,12 @@ async function createLocalMaterialDownloadResponse(
     }
   }
 
-  const resolvedPublicOrigin =
-    publicOrigin ??
-    process.env.URL ??
-    process.env.DEPLOY_PRIME_URL ??
-    process.env.SITE_URL;
-
-  if (!resolvedPublicOrigin) {
-    return createTextResponse("Material nicht gefunden.", 404);
-  }
-
-  try {
-    const upstream = await fetchPdf(
-      new URL(sourceUrl, resolvedPublicOrigin).toString()
-    );
-    return createPdfProxyResponse(
-      upstream,
-      fileName,
-      disposition,
-      "public, max-age=0, must-revalidate"
-    );
-  } catch {
-    return createTextResponse("Download derzeit nicht verfügbar.", 502);
-  }
+  // Netlify's function bundle intentionally does not duplicate the complete
+  // static PDF collection. Redirecting lets the browser request the file from
+  // the same deploy and retain an existing Edge Access session. A server-side
+  // self-fetch cannot forward that browser session and returned 502 in
+  // protected Deploy Previews.
+  return createLocalAssetRedirect(sourceUrl);
 }
 
 async function fetchPdf(sourceUrl: string) {
@@ -164,6 +145,13 @@ function createTextResponse(body: string, status: number) {
   headers.set("Content-Type", "text/plain; charset=utf-8");
 
   return new Response(body, { status, headers });
+}
+
+function createLocalAssetRedirect(sourceUrl: string) {
+  const headers = createSecurityHeaders();
+  headers.set("Location", sourceUrl);
+  headers.set("Cache-Control", "private, no-store");
+  return new Response(null, { status: 307, headers });
 }
 
 /**

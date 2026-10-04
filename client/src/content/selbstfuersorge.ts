@@ -40,12 +40,12 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
   {
     id: "radikale-akzeptanz",
     title: "Radikale Akzeptanz",
-    desc: "2-Spalten-Vergleich: Was Radikale Akzeptanz NICHT ist vs. was sie IST, plus 4-Schritte-Übung.",
+    desc: "Gegenüberstellung und freiwillige Übung, um gegenwärtige Realität anzuerkennen und Handlungsspielraum zu finden.",
     category: "techniken",
-    webp: "/infografiken/manus-radikale-akzeptanz-v1.webp",
+    webp: "/infografiken/puk-radikale-akzeptanz-v3.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/manus-radikale-akzeptanz-v1.webp",
-    pdf: "/infografiken/manus-radikale-akzeptanz-v1.pdf",
+      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v3.webp",
+    pdf: "/infografiken/puk-radikale-akzeptanz-v3.pdf",
   },
   {
     id: "stopp-technik",

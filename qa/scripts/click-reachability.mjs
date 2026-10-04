@@ -63,8 +63,8 @@ async function run() {
               const style = getComputedStyle(element);
 
               if (
-                rect.width < 1 ||
-                rect.height < 1 ||
+                rect.width <= 1 ||
+                rect.height <= 1 ||
                 style.display === "none" ||
                 style.visibility === "hidden" ||
                 element.getAttribute("aria-hidden") === "true"

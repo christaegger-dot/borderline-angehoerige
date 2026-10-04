@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
 import {
+  getHandoutAssetVersion,
   getHandoutGovernance,
   HANDOUT_STANDARD_DISCLAIMER,
   isHandoutVisualPublished,
@@ -22,6 +23,7 @@ import { selbstfuersorgeInfografiken } from "@/content/selbstfuersorge";
 import { unterstuetzenItems } from "@/content/unterstuetzen";
 import { verstehenInfografiken } from "@/content/verstehen";
 import type { HandoutTextVersion } from "@/content/handoutTextVersionTypes";
+import { kontaktByIdStrict } from "@/data/kontakte";
 
 const allTextVersions: HandoutTextVersion[] = [
   ...genesungTextVersions,
@@ -98,15 +100,12 @@ function collectProductiveHandoutSources() {
 }
 
 describe("handout governance", () => {
-  it("keeps confirmed P1 drift assets text-only until a new visual is approved", () => {
+  it("keeps unresolved P1 drift assets text-only and publishes rebuilt visuals", () => {
     const textOnlyIds = [
       "4-phasen",
       "gehirn",
       "remission-heilung",
       "5-faktoren-genesung",
-      "radikale-akzeptanz",
-      "gespraeche-kippen",
-      "beispiel-dialog",
       "rolle-genesungsprozess",
     ];
 
@@ -122,12 +121,15 @@ describe("handout governance", () => {
       "dear",
       "garten",
       "4-arten-von-grenzen",
+      "radikale-akzeptanz",
+      "gespraeche-kippen",
+      "beispiel-dialog",
     ]) {
       expect(isHandoutVisualPublished(id), id).toBe(true);
     }
   });
 
-  it("requires document type and approved version for every text version", () => {
+  it("requires document type, asset version and an explicit approval state for every text version", () => {
     for (const id of HANDOUT_TEXT_VERSION_IDS) {
       const governance = getHandoutGovernance(id);
 
@@ -135,7 +137,26 @@ describe("handout governance", () => {
       expect(governance?.documentType, id).toMatch(
         /^(ORIENTIERUNGSBLATT|PRAXISBLATT|KRISEN-HANDOUT)$/
       );
-      expect(governance?.approvedVersion, id).not.toBe("");
+      expect(getHandoutAssetVersion(governance!), id).not.toBe("");
+      expect(governance?.approvalStatus ?? "approved", id).toMatch(
+        /^(approved|draft-editorial-review-pending)$/
+      );
+    }
+  });
+
+  it("does not present the three P1 illustration drafts as approved assets", () => {
+    for (const id of [
+      "radikale-akzeptanz",
+      "gespraeche-kippen",
+      "beispiel-dialog",
+    ]) {
+      const governance = getHandoutGovernance(id);
+
+      expect(governance?.approvalStatus, id).toBe(
+        "draft-editorial-review-pending"
+      );
+      expect(governance?.approvedVersion, id).toBeUndefined();
+      expect(governance?.assetVersion, id).toMatch(/^puk-.+-v3$/);
     }
   });
 
@@ -145,7 +166,7 @@ describe("handout governance", () => {
 
       expect(governance, item.id).toBeTruthy();
       expect(pdfStem(item.sourceUrl), item.id).toBe(
-        governance?.approvedVersion
+        getHandoutAssetVersion(governance!)
       );
     }
   });
@@ -162,12 +183,33 @@ describe("handout governance", () => {
     }
   });
 
-  it("keeps crisis numbers out of orientation and practice handouts", () => {
+  it("keeps crisis numbers out of non-acute handouts and limits the two handlungsnahe exceptions", () => {
     const crisisNumberPattern =
       /\b(?:112|117|143|144|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i;
+    const handlungsnaheExceptions = new Set([
+      "gespraeche-kippen",
+      "beispiel-dialog",
+    ]);
 
     for (const version of allTextVersions) {
       if (version.documentType === "KRISEN-HANDOUT") {
+        continue;
+      }
+
+      if (handlungsnaheExceptions.has(version.id)) {
+        const serialized = JSON.stringify(version);
+        expect(serialized, `${version.id} must carry 117`).toContain(
+          kontaktByIdStrict("ROT_117").nummer
+        );
+        expect(serialized, `${version.id} must carry 144`).toContain(
+          kontaktByIdStrict("ROT_144").nummer
+        );
+        expect(
+          serialized,
+          `${version.id} must not add other crisis numbers`
+        ).not.toMatch(
+          /\b(?:112|143|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i
+        );
         continue;
       }
 

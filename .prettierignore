@@ -5,3 +5,4 @@ _dev/
 pnpm-lock.yaml
 *.min.js
 *.min.css
+qa/infografik-inventory.json

@@ -2027,9 +2027,7 @@
 }
 
 @media print {
-  header,
   nav,
-  footer,
   [data-print-hidden],
   .print\:hidden {
     display: none !important;

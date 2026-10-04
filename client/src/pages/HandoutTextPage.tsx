@@ -9,6 +9,7 @@ import {
   Lede,
 } from "@/components/editorial";
 import Layout from "@/components/Layout";
+import HandoutSemanticVisual from "@/components/HandoutSemanticVisual";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import {
@@ -22,9 +23,15 @@ import {
   loadHandoutTextVersion,
 } from "@/content/handoutTextVersions";
 import {
+  HANDOUT_EDITORIAL_DRAFT_NOTE,
+  getHandoutApprovalStatus,
   HANDOUT_VISUAL_REFRESH_NOTE,
   isHandoutVisualPublished,
 } from "@/content/handoutGovernance";
+import {
+  hasHandoutVisualization,
+  resolveHandoutVisualization,
+} from "@/content/handoutVisualizations";
 import type {
   HandoutTextCard,
   HandoutTextVersion,
@@ -108,6 +115,16 @@ export default function HandoutTextPage({
   const downloadHref = getHandoutDownloadHref(pdfSourceUrl) ?? pdfSourceUrl;
   const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
   const visualPublished = isHandoutVisualPublished(handoutMeta.id);
+  const hasSemanticVisualization = hasHandoutVisualization(handoutMeta.id);
+  const semanticVisualization = resolveHandoutVisualization(handout);
+  const approvalStatus = getHandoutApprovalStatus(handoutMeta.id);
+  const coveredSectionTitles = new Set(
+    handout?.visualization ? Object.values(handout.visualization.sections) : []
+  );
+  const supplementalSections =
+    handout?.sections.filter(
+      section => !coveredSectionTitles.has(section.title)
+    ) ?? [];
   const revisedWebCopy = [
     "genesung-zahlen",
     "kinder",
@@ -155,6 +172,18 @@ export default function HandoutTextPage({
             {pageTitle}
           </DisplayHeading>
           <Lede className="mt-6">{pageSummary}</Lede>
+
+          {approvalStatus === "draft-editorial-review-pending" ? (
+            <p
+              className="mt-6 border-l pl-4"
+              style={{
+                ...bodyStyle,
+                borderColor: "var(--accent-label)",
+              }}
+            >
+              {HANDOUT_EDITORIAL_DRAFT_NOTE}
+            </p>
+          ) : null}
 
           {revisedWebCopy && (
             <p className="mt-6 border-l pl-4" style={bodyStyle}>
@@ -221,7 +250,14 @@ export default function HandoutTextPage({
             </p>
           ) : null}
 
-          {visualPublished ? (
+          {semanticVisualization ? (
+            <HandoutSemanticVisual visualization={semanticVisualization} />
+          ) : hasSemanticVisualization ? (
+            <div className="mt-10 flex items-center gap-3" style={bodyStyle}>
+              <Spinner className="size-5 text-[color:var(--accent-primary)]" />
+              <p>Die barrierefreie Darstellung wird geladen.</p>
+            </div>
+          ) : visualPublished ? (
             <figure
               className="mt-10 border-t pt-5"
               style={{ borderColor: "var(--rule-color)" }}
@@ -244,27 +280,29 @@ export default function HandoutTextPage({
           ) : null}
         </header>
 
-        <EditorialSectionBlock
-          label="Überblick"
-          title="Worum es in diesem Handout geht"
-        >
-          {handout ? (
-            <EditorialProse>
-              {handout.intro.map(text => (
-                <p key={text}>{text}</p>
-              ))}
-            </EditorialProse>
-          ) : (
-            <div className="flex items-center gap-3" style={bodyStyle}>
-              <Spinner className="size-5 text-[color:var(--accent-primary)]" />
-              <p>Die ausführliche Textversion wird geladen.</p>
-            </div>
-          )}
-        </EditorialSectionBlock>
+        {!semanticVisualization ? (
+          <EditorialSectionBlock
+            label="Überblick"
+            title="Worum es in diesem Handout geht"
+          >
+            {handout ? (
+              <EditorialProse>
+                {handout.intro.map(text => (
+                  <p key={text}>{text}</p>
+                ))}
+              </EditorialProse>
+            ) : (
+              <div className="flex items-center gap-3" style={bodyStyle}>
+                <Spinner className="size-5 text-[color:var(--accent-primary)]" />
+                <p>Die ausführliche Textversion wird geladen.</p>
+              </div>
+            )}
+          </EditorialSectionBlock>
+        ) : null}
 
         {handout ? (
           <>
-            {handout.sections.map(section => (
+            {supplementalSections.map(section => (
               <EditorialSectionBlock
                 key={section.title}
                 title={section.title}

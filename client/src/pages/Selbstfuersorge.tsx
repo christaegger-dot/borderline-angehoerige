@@ -359,19 +359,21 @@ export default function Selbstfuersorge() {
             id="radikale-akzeptanz"
           >
             <div className="mt-2">
-              <EditorialPullQuote cite="Dieser Satz kann befreiend sein.">
-                «Es ist, wie es ist.»
+              <EditorialPullQuote cite="Ein möglicher Satz – wenn er Ihnen hilft.">
+                «So ist es gerade. Ich muss es nicht gut finden.»
               </EditorialPullQuote>
             </div>
             <EditorialProse>
               <p>
-                Radikale Akzeptanz bedeutet nicht, dass Sie die Situation
-                gutheissen. Es bedeutet, dass Sie aufhören, gegen die Realität
-                zu kämpfen. Dieses Konzept aus der{" "}
+                Radikale Akzeptanz bedeutet, die gegenwärtige Realität
+                anzuerkennen, ohne sie gutzuheissen. Sie kann manchen Menschen
+                helfen, den inneren Kampf für einen Moment zu lösen; sie ist
+                kein Auftrag und kann schwerfallen. Dieses Konzept aus der{" "}
                 <Link href="/glossar?q=DBT" className="editorial-link">
                   DBT (Dialektisch-Behaviorale Therapie)
                 </Link>{" "}
-                kann auch für Angehörige sehr hilfreich sein.
+                lässt Gefühle, Grenzen, Unterstützung und den Einsatz für
+                Veränderung ausdrücklich zu.
               </p>
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
@@ -391,30 +393,46 @@ export default function Selbstfuersorge() {
                   Was radikale Akzeptanz IST
                 </h3>
                 <ul className="ml-5 list-disc space-y-1" style={bodyStyle}>
-                  <li>Anerkennen, was Sie nicht ändern können</li>
-                  <li>Energie sparen für das, was Sie beeinflussen können</li>
-                  <li>Inneren Frieden finden trotz äusserer Turbulenzen</li>
-                  <li>Loslassen von «Es sollte anders sein»</li>
+                  <li>Anerkennen, was im Moment tatsächlich ist</li>
+                  <li>
+                    Kraft für das eigene Entscheiden und Beeinflussen bewahren
+                  </li>
+                  <li>
+                    Etwas Handlungsspielraum gewinnen – Gefühle dürfen trotzdem
+                    da sein
+                  </li>
+                  <li>Weniger gegen das Jetzt ankämpfen</li>
                 </ul>
               </div>
             </div>
             <div className="mt-8">
               <h3 className="mb-3" style={h4Style}>
-                Übung: Radikale Akzeptanz praktizieren
+                Freiwillige Übung: vier mögliche Schritte
               </h3>
               <ol className="ml-5 list-decimal space-y-2" style={bodyStyle}>
                 <li>Benennen Sie die Situation: «Es ist so, dass…»</li>
                 <li>
                   Spüren Sie den Widerstand: «Ich wünschte, es wäre anders.»
                 </li>
-                <li>Lassen Sie los: «Ich kann diese Realität nicht ändern.»</li>
-                <li>Richten Sie den Fokus neu: «Was kann ich jetzt tun?»</li>
+                <li>
+                  Anerkennen: «So ist es gerade. Ich muss es nicht gut finden.»
+                </li>
+                <li>
+                  Handlungsspielraum klären: «Was kann ich entscheiden oder
+                  beeinflussen? Wobei brauche ich Unterstützung? Was liegt nicht
+                  allein bei mir?»
+                </li>
               </ol>
+              <p className="mt-4" style={bodyStyle}>
+                Diese Übung ist ein Angebot. Sie machen nichts falsch, wenn
+                Akzeptanz heute schwerfällt. Ihre Gefühle und Grenzen bleiben
+                berechtigt.
+              </p>
             </div>
             <EvidenceNote
               variant="editorial"
               title="Quelle zur Radikalen Akzeptanz"
-              definition="Das Konzept der Radikalen Akzeptanz ist ein zentrales Element der Dialektisch-Behavioralen Therapie (DBT). Es beschreibt eine Haltung, keine Kapitulation."
+              definition="Das Konzept der Radikalen Akzeptanz ist ein zentrales Element der Dialektisch-Behavioralen Therapie (DBT). Es beschreibt eine Haltung, keine Kapitulation. Die hier gezeigte Vier-Schritte-Übung ist eine vereinfachte eigene Darstellung in Anlehnung an Linehan."
               reviewDate="26.04.2026"
               sources={[
                 {

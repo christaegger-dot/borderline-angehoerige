@@ -416,7 +416,7 @@ async function runFlow(page, profile) {
 
   await step("Materialien PDF inline öffnen", async () => {
     const inlineHref = await page
-      .locator('article a[href*="/api/material-download/"]:not([download])')
+      .locator('article a[aria-label$=" öffnen"]:not([download])')
       .first()
       .getAttribute("href");
     if (!inlineHref) {
@@ -425,12 +425,26 @@ async function runFlow(page, profile) {
 
     const inlinePage = await page.context().newPage();
     const inlineUrl = new URL(inlineHref, BASE_URL).toString();
+    const inlineTarget = new URL(inlineUrl);
+    const baseOrigin = new URL(BASE_URL).origin;
+
+    if (
+      inlineTarget.origin !== baseOrigin ||
+      inlineTarget.pathname.startsWith("/api/material-download/") ||
+      !inlineTarget.pathname.toLowerCase().endsWith(".pdf")
+    ) {
+      throw new Error(`kein direkter Same-Origin-PDF-Link: ${inlineHref}`);
+    }
 
     try {
       await inlinePage.goto(inlineUrl, {
         waitUntil: "domcontentloaded",
       });
-      if (!inlinePage.url().includes("/api/material-download/")) {
+      const openedUrl = new URL(inlinePage.url());
+      if (
+        openedUrl.origin !== inlineTarget.origin ||
+        openedUrl.pathname !== inlineTarget.pathname
+      ) {
         throw new Error(`unerwartete Inline-PDF-URL: ${inlinePage.url()}`);
       }
     } catch (error) {
@@ -460,9 +474,16 @@ async function runFlow(page, profile) {
       throw new Error("kein Download-Link gefunden");
     }
 
-    const response = await fetchWithRetry(
-      new URL(downloadHref, BASE_URL).toString()
-    );
+    const downloadUrl = new URL(downloadHref, BASE_URL);
+    if (
+      downloadUrl.origin !== new URL(BASE_URL).origin ||
+      downloadUrl.pathname.startsWith("/api/material-download/") ||
+      !downloadUrl.pathname.toLowerCase().endsWith(".pdf")
+    ) {
+      throw new Error(`kein direkter Same-Origin-PDF-Link: ${downloadHref}`);
+    }
+
+    const response = await fetchWithRetry(downloadUrl.toString());
     const contentType = response.headers.get("content-type") ?? "";
     if (!response.ok || !contentType.includes("application/pdf")) {
       throw new Error(
@@ -473,9 +494,9 @@ async function runFlow(page, profile) {
 
   await step("Release-PDF-Routen direkt prüfen", async () => {
     const pdfRoutes = [
-      "/api/material-download/notfallplan-krise?disposition=inline",
-      "/api/material-download/leuchtturm",
-      "/api/material-download/grenzen-spickzettel",
+      "/notfallplan-krise-v04.pdf",
+      "/infografiken/manus-leuchtturm-v1.pdf",
+      "/infografiken/manus-grenzen-spickzettel-v2.pdf",
     ];
 
     for (const route of pdfRoutes) {
@@ -484,6 +505,42 @@ async function runFlow(page, profile) {
       if (!response.ok || !contentType.includes("application/pdf")) {
         throw new Error(
           `${route} liefert ${response.status} mit ${contentType || "ohne content-type"}`
+        );
+      }
+    }
+  });
+
+  await step("Legacy-PDF-Routen leiten mit 307 auf Assets um", async () => {
+    const redirectCases = [
+      {
+        route: "/api/material-download/notfallplan-krise?disposition=inline",
+        target: "/notfallplan-krise-v04.pdf",
+      },
+      {
+        route: "/api/material-download/leuchtturm",
+        target: "/infografiken/manus-leuchtturm-v1.pdf",
+      },
+      {
+        route: "/api/material-download/grenzen-spickzettel",
+        target: "/infografiken/manus-grenzen-spickzettel-v2.pdf",
+      },
+    ];
+
+    for (const { route, target } of redirectCases) {
+      const response = await fetch(routeUrl(route), { redirect: "manual" });
+      const location = response.headers.get("location");
+      const expectedUrl = new URL(target, BASE_URL);
+      const actualUrl = location ? new URL(location, BASE_URL) : null;
+
+      if (
+        response.status !== 307 ||
+        !actualUrl ||
+        actualUrl.origin !== expectedUrl.origin ||
+        actualUrl.pathname !== expectedUrl.pathname ||
+        actualUrl.search !== expectedUrl.search
+      ) {
+        throw new Error(
+          `${route} liefert ${response.status} mit Location ${location || "ohne Location"}; erwartet 307 auf ${target}`
         );
       }
     }

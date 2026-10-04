@@ -1,6 +1,6 @@
 # Handout Asset Blocker Report
 
-Stand: 2026-10-03
+Stand: 2026-10-04
 Basis: aktuelles `main` nach dem fachlich-inhaltlichen und visuellen Audit
 Quelle der Wahrheit: `client/src/content/handoutGovernance.ts`
 
@@ -15,10 +15,12 @@ Rückkehr in Empfehlungsflächen.
 ## Kurzurteil
 
 - 42 Vollgrafiken sind direkt in den Content-Registern referenziert.
-- 24 davon sind aktuell anschlussfähig und bleiben sichtbar.
-- 18 ältere beige «Manus»-Grafiken bilden den verbleibenden Drift-Block.
+- 27 davon sind aktuell anschlussfähig und bleiben sichtbar.
+- 15 ältere beige «Manus»-Grafiken bilden den verbleibenden Drift-Block.
 - Es fehlen keine referenzierten Dateien.
-- Acht P1-Assets werden bis zum Ersatz nur als aktuelle HTML-Textversion
+- Die drei neu aufgebauten P1-Praxisblätter sind technisch integriert, bleiben
+  aber **Entwürfe; die fachlich-redaktionelle Freigabe steht aus**.
+- Fünf P1-Assets werden bis zum Ersatz nur als aktuelle HTML-Textversion
   angeboten. Die veraltete Vorschau und das PDF werden nicht mehr beworben.
 - Zehn P2-Assets bleiben für einen nachfolgenden visuellen Pass vorgemerkt.
 
@@ -42,22 +44,33 @@ Ebenfalls anschlussfähig sind die neueren PUK-Illustrationen unter
 hochversionierten Modelle Eisberg v8, Pendel v16, Alarm v4, Ampel v4,
 Deeskalation v11, Validierung v10, Sauerstoff v5 und Fortschritt v5.
 
+## P1-Illustrationspaket: technisch integriert, redaktionell noch Entwurf
+
+| ID                   | Asset-Version               | Status                                               |
+| -------------------- | --------------------------- | ---------------------------------------------------- |
+| `radikale-akzeptanz` | `puk-radikale-akzeptanz-v3` | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+| `gespraeche-kippen`  | `puk-gespraeche-kippen-v3`  | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+| `beispiel-dialog`    | `puk-beispiel-dialog-v3`    | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+
+Die drei Praxisblätter verwenden dieselbe redaktionell überarbeitete
+Inhaltsquelle für die semantische Webdarstellung und den A4-Export. Vollbild
+und Thumbnail werden aus dem PDF-Seitenbild erzeugt. Die technischen Prüfungen
+belegen keine fachliche Freigabe. Die früheren `manus-*`-Dateien bleiben
+vorerst als Vergleichsstand erhalten, sind aber nicht mehr referenziert.
+
 ## P1: vorläufig nur HTML-Textversion
 
 Diese Assets haben `visualAssetStatus: "text-only"`. Ihre Dateien bleiben als
 Arbeits- und Vergleichsstand erhalten, erscheinen aber nicht mehr als Vorschau,
 PDF-Link oder Download in der Website.
 
-| ID                       | Problem                                                                    | Nächster Schritt                                  |
-| ------------------------ | -------------------------------------------------------------------------- | ------------------------------------------------- |
-| `4-phasen`               | Starres Zyklusmodell und problematische Verantwortungszuschreibung         | Fachlich neu konzipieren und illustrieren         |
-| `gehirn`                 | Vereinfachende Lokalisierung und deterministische Neuroaussagen            | Funktionales Stress-/Anspannungsmodell entwickeln |
-| `remission-heilung`      | Unzutreffende Dichotomie; Recovery fehlt                                   | Begriffe fachlich neu ordnen und illustrieren     |
-| `5-faktoren-genesung`    | Kausale Übervereinfachungen und starke Forschungsbehauptung                | Evidenz prüfen, danach neu illustrieren           |
-| `radikale-akzeptanz`     | Schutzgrenzen, Gewalt und «nicht bleiben/schweigen» fehlen                 | Aus aktueller Textversion neu exportieren         |
-| `gespraeche-kippen`      | Sicherheitsabbruch bei Drohung, Gewalt oder akuter Selbstgefährdung fehlt  | Aus aktueller Textversion neu exportieren         |
-| `beispiel-dialog`        | Wirkt wie verbindliches Skript; Anpassungs- und Sicherheitshinweise fehlen | Aus aktueller Textversion neu exportieren         |
-| `rolle-genesungsprozess` | Legt zu viel Genesungsverantwortung bei Angehörigen                        | Neu illustrieren und klar entlasten               |
+| ID                       | Problem                                                            | Nächster Schritt                                  |
+| ------------------------ | ------------------------------------------------------------------ | ------------------------------------------------- |
+| `4-phasen`               | Starres Zyklusmodell und problematische Verantwortungszuschreibung | Fachlich neu konzipieren und illustrieren         |
+| `gehirn`                 | Vereinfachende Lokalisierung und deterministische Neuroaussagen    | Funktionales Stress-/Anspannungsmodell entwickeln |
+| `remission-heilung`      | Unzutreffende Dichotomie; Recovery fehlt                           | Begriffe fachlich neu ordnen und illustrieren     |
+| `5-faktoren-genesung`    | Kausale Übervereinfachungen und starke Forschungsbehauptung        | Evidenz prüfen, danach neu illustrieren           |
+| `rolle-genesungsprozess` | Legt zu viel Genesungsverantwortung bei Angehörigen                | Neu illustrieren und klar entlasten               |
 
 ## P2: nächstes Asset-Paket
 
@@ -85,7 +98,9 @@ PDF-Link oder Download in der Website.
 3. Flache WebP-/PDF-Dateien nicht punktuell übermalen. Aus einer editierbaren
    Quelle neu aufbauen und exportieren.
 4. Nach fachlicher und visueller Freigabe eine neue Assetversion vergeben,
-   `approvedVersion` aktualisieren und `visualAssetStatus` entfernen.
+   den Entwurfswert `assetVersion` nach `approvedVersion` überführen,
+   `approvalStatus` auf `approved` setzen und gegebenenfalls
+   `visualAssetStatus` entfernen.
 5. Danach Inventar, Governance, Textversionen, Responsive Layout,
    Tastaturbedienung und PDF-Vorschau erneut prüfen.
 

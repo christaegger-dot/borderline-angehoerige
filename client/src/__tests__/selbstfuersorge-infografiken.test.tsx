@@ -40,7 +40,7 @@ describe("SelbstfuersorgeInfografikenSection", () => {
       })
     ).toHaveAttribute(
       "href",
-      "/api/material-download/selbstfuersorge-sauerstoffmaske?disposition=inline"
+      "/infografiken/sauerstoff-die-sauerstoffmaske-v5.pdf"
     );
   });
 });

@@ -27,10 +27,9 @@
     line-height: 1.5;
   }
 
-  header,
-  footer,
   nav,
   button:not(.print-visible),
+  [data-print-hidden],
   [data-print-hide="true"],
   .search-button,
   [role="dialog"],

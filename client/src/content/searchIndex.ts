@@ -934,12 +934,12 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Radikale Akzeptanz",
     description:
-      "Lesbare Web-Version zu radikaler Akzeptanz, innerem Widerstand, 4 Schritten und dem Fokus auf das Beeinflussbare",
+      "Lesbare Web-Version zu radikaler Akzeptanz als freiwilligem Angebot, vier möglichen Schritten und dem eigenen Handlungsspielraum",
     keywords: [
       "textversion",
       "radikale akzeptanz",
       "akzeptanz",
-      "loslassen",
+      "handlungsspielraum",
       "dbt",
       "selbstfürsorge",
       "handout",
@@ -968,7 +968,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Wenn Gespräche kippen",
     description:
-      "Lesbare Web-Version zu drei Krisenschritten: beruhigen, verbinden, begrenzen und Pausen mit Rückkehrangebot",
+      "Lesbare Web-Version zu drei Wahlmöglichkeiten: Tempo senken, vorsichtig spiegeln, begrenzen und Pausen ohne Rückkehrpflicht",
     keywords: [
       "textversion",
       "gespräche kippen",
@@ -1036,7 +1036,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Beispiel-Dialog",
     description:
-      "Lesbare Web-Version eines Gesprächsbeispiels mit Verbinden, Kontakt, Grenze, Plan und Rückkehr",
+      "Lesbare Web-Version eines Gesprächsbeispiels mit vorsichtigem Spiegeln, Grenze, Pause und optionalem Wiedereinstieg",
     keywords: [
       "textversion",
       "beispiel dialog",

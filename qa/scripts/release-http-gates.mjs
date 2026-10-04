@@ -1,9 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import {
-  getMaterialDownloadHref,
-  materials,
-} from "../../client/src/content/materialien.ts";
+import { getHandoutDownloadHref } from "../../client/src/content/handouts.ts";
+import { materials } from "../../client/src/content/materialien.ts";
 import { handoutTextVersionMetas } from "../../client/src/content/handoutTextMetas.ts";
 import { SECURITY_HEADERS } from "../../shared/securityHeaders.ts";
 import { BASE_URL, qaPath, writeJson } from "./a11y-shared.mjs";
@@ -61,15 +59,15 @@ const HEADER_CASES = [
     requiredHeaders: SECURITY_HEADERS,
   },
   {
-    id: "material-inline",
-    title: "Material Inline Download",
+    id: "legacy-material-redirect",
+    title: "Legacy-Material-Redirect",
     kind: "header",
     route: "/api/material-download/notfallplan-krise?disposition=inline",
-    expectedStatus: 200,
-    contentTypeIncludes: "application/pdf",
-    contentDispositionIncludes: "inline;",
+    expectedStatus: 307,
+    expectedLocation: "/notfallplan-krise-v04.pdf",
+    redirect: "manual",
     requiredHeaders: SECURITY_HEADERS,
-    cacheControlIncludes: ["public", "must-revalidate"],
+    cacheControlIncludes: ["private", "no-store"],
   },
   {
     id: "static-pdf",
@@ -124,7 +122,7 @@ function materialPdfCases() {
 
   for (const item of materials) {
     const sourceUrl = item.pdfUrl ?? item.downloadUrl;
-    const downloadHref = getMaterialDownloadHref(item);
+    const downloadHref = getHandoutDownloadHref(sourceUrl);
 
     if (!sourceUrl || !downloadHref) {
       continue;
@@ -149,7 +147,7 @@ function materialPdfCases() {
       id: meta.id,
       title: meta.title,
       kind: "pdf",
-      route: meta.pdfSourceUrl,
+      route: getHandoutDownloadHref(meta.pdfSourceUrl) ?? meta.pdfSourceUrl,
       sourceUrl: meta.pdfSourceUrl,
       expectsTextVersion: true,
     });
@@ -487,11 +485,12 @@ async function checkHeaderCase(item) {
   }
 
   try {
-    const response = await fetch(url, { redirect: "follow" });
+    const response = await fetch(url, { redirect: item.redirect ?? "follow" });
     const contentType = response.headers.get("content-type") ?? "";
     const cacheControl = response.headers.get("cache-control") ?? "";
     const contentDisposition =
       response.headers.get("content-disposition") ?? "";
+    const location = response.headers.get("location") ?? "";
     const problems = [];
 
     if (response.status !== item.expectedStatus) {
@@ -526,6 +525,22 @@ async function checkHeaderCase(item) {
       );
     }
 
+    if (item.expectedLocation) {
+      const expectedLocation = new URL(item.expectedLocation, BASE_URL);
+      const actualLocation = location ? new URL(location, BASE_URL) : null;
+
+      if (
+        !actualLocation ||
+        actualLocation.origin !== expectedLocation.origin ||
+        actualLocation.pathname !== expectedLocation.pathname ||
+        actualLocation.search !== expectedLocation.search
+      ) {
+        problems.push(
+          `erwartet Location ${expectedLocation.pathname}${expectedLocation.search}, erhalten ${location || "ohne Location"}`
+        );
+      }
+    }
+
     for (const token of item.cacheControlIncludes ?? []) {
       if (!cacheControl.toLowerCase().includes(token.toLowerCase())) {
         problems.push(
@@ -556,6 +571,7 @@ async function checkHeaderCase(item) {
       contentType,
       cacheControl,
       contentDisposition: contentDisposition || null,
+      location: location || null,
       startedAt,
       finishedAt: nowIso(),
       finalUrl: response.url,

@@ -6,14 +6,14 @@
 ## Prüfstand
 
 - **PR:** [#617 · P1-Illustrationspaket für Borderline](https://github.com/christaegger-dot/borderline-angehoerige/pull/617)
-- **Commit:** `399473539eca5ce565c865f8ed277b82aac461cd`
+- **Commit:** `fff12445fd01fb1f2a1a82f1e58b4cc0d86a9ba0`
 - **Status:** Entwurf – fachlich-redaktionelle Freigabe ausstehend
 
 | Blatt                 | Asset-Version               | Webpfad                                | PDF                                                                   |
 | --------------------- | --------------------------- | -------------------------------------- | --------------------------------------------------------------------- |
-| Radikale Akzeptanz    | `puk-radikale-akzeptanz-v1` | `/materialien/text/radikale-akzeptanz` | [PDF](../../client/public/infografiken/puk-radikale-akzeptanz-v1.pdf) |
-| Wenn Gespräche kippen | `puk-gespraeche-kippen-v1`  | `/materialien/text/gespraeche-kippen`  | [PDF](../../client/public/infografiken/puk-gespraeche-kippen-v1.pdf)  |
-| Beispiel-Dialog       | `puk-beispiel-dialog-v1`    | `/materialien/text/beispiel-dialog`    | [PDF](../../client/public/infografiken/puk-beispiel-dialog-v1.pdf)    |
+| Radikale Akzeptanz    | `puk-radikale-akzeptanz-v2` | `/materialien/text/radikale-akzeptanz` | [PDF](../../client/public/infografiken/puk-radikale-akzeptanz-v2.pdf) |
+| Wenn Gespräche kippen | `puk-gespraeche-kippen-v2`  | `/materialien/text/gespraeche-kippen`  | [PDF](../../client/public/infografiken/puk-gespraeche-kippen-v2.pdf)  |
+| Beispiel-Dialog       | `puk-beispiel-dialog-v2`    | `/materialien/text/beispiel-dialog`    | [PDF](../../client/public/infografiken/puk-beispiel-dialog-v2.pdf)    |
 
 Die Prüfung umfasst Webfassung, vollständige Textbeschreibung und PDF.
 
@@ -42,7 +42,13 @@ Die Prüfung umfasst Webfassung, vollständige Textbeschreibung und PDF.
 ### 1. Radikale Akzeptanz
 
 - [ ] Klar von Aufgeben, Gutheissen, Passivität und Resignation abgegrenzt
+- [ ] Als freiwilliges Angebot bezeichnet; gegenwärtige Realität wird nicht
+      mit unveränderbarer Zukunft gleichgesetzt
+- [ ] Gefühle, Grenzen, Handeln und Unterstützung bleiben berechtigt; die
+      Schwierigkeit der Übung wird nicht als persönliches Versagen dargestellt
 - [ ] Vier Schritte fachlich tragfähig; keine sichere Entlastung versprochen
+- [ ] Beispiel ohne akute Gefährdung ist verständlich und verallgemeinert
+      nicht auf Krisensituationen
 - [ ] «Schutz geht vor» verhindert ein Missverständnis als Bleiben, Schweigen
       oder Tolerieren von Gewalt
 - [ ] freigegeben wie vorliegend
@@ -55,6 +61,8 @@ Die Prüfung umfasst Webfassung, vollständige Textbeschreibung und PDF.
 - [ ] Drei Schritte sind Wahlmöglichkeiten, keine Pflichtfolge
 - [ ] Spiegeln bleibt vorsichtig; Pause und Rückkehr bleiben freiwillig
 - [ ] Schutztext zu Gewalt und vermuteter akuter Selbstgefährdung ist korrekt
+- [ ] 117 und 144 sind richtig zugeordnet; Eigenschutz und die Grenze
+      eigenständiger Risikobeurteilung sind klar
 - [ ] freigegeben wie vorliegend
 - [ ] Korrekturen erforderlich; erneut vorlegen
 - [ ] nicht freigegeben
@@ -65,6 +73,8 @@ Die Prüfung umfasst Webfassung, vollständige Textbeschreibung und PDF.
 - [ ] Klar als anpassbares Beispiel und nicht als Gesprächsrezept bezeichnet
 - [ ] Grenze, Pause und optionaler Wiedereinstieg sind realistisch und sicher
 - [ ] Schutztext zu Gewalt und vermuteter akuter Selbstgefährdung ist korrekt
+- [ ] 117 und 144 sind richtig zugeordnet; Dableiben wird nur ohne
+      Eigengefährdung empfohlen
 - [ ] freigegeben wie vorliegend
 - [ ] Korrekturen erforderlich; erneut vorlegen
 - [ ] nicht freigegeben

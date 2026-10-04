@@ -42,6 +42,11 @@ Der nachgezogene Stand wurde am 5. Oktober 2026 anhand des Commits
 `39102f95241bd942237a893bc7f6100bfc203361` erneut redaktionell beurteilt.
 Im geprüften Umfang wurden die fünf bisherigen Befunde als behoben bewertet:
 
+- Prüfgrundlage: GitHub-Commit `39102f95` und die geschützte Netlify-Vorschau
+  von PR #619;
+- Rolle: KI-gestütztes redaktionelles Review, keine menschliche Fach- oder
+  Erfahrungsperspektivenprüfung.
+
 | Prüfpunkt                        | Ergebnis der Nachprüfung                                                                                                                                              |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Verantwortung und Schuld         | Verantwortung für eigenes konkretes verletzendes Verhalten und eine Entschuldigung bleiben möglich. Verantwortung für Erkrankung oder Genesung wird davon abgegrenzt. |
@@ -130,6 +135,8 @@ Vor einer institutionellen Veröffentlichung bleiben erforderlich:
 - unabhängige Reviews durch eine Person mit eigener Borderline-Erfahrung und
   eine angehörige Person;
 - reale Tests mit VoiceOver/Safari und NVDA/Firefox am aktuellen Commit;
+- reale Nutzendentests mit typischen Aufgaben, beobachteter Orientierung und
+  emotionaler Wirkung;
 - PDF-UA-/Matterhorn-Prüfung und reale Drucktests für künftig freigegebene PDF-Fassungen.
 
 Diese offenen Punkte sind keine Merge-Automatik. Die weitere Freigabe bleibt eine bewusste Entscheidung der verantwortlichen Stelle.

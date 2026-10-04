@@ -19,6 +19,24 @@ Es ergänzt die allgemeine
 Wird nach diesem Commit Inhalt oder Verhalten geändert, sind die betroffenen
 Prüfungen für den neuen Stand zu wiederholen.
 
+### Commitbezogener Mindestumfang
+
+Die fünf korrigierten Befunde sind mindestens an diesen Stellen zu prüfen:
+
+- `/materialien/text/zuhoeren-ohne-zustimmen`: Verantwortung und Schuld;
+- `/materialien/text/pause-statt-streit`: Freiwilligkeit von Pause,
+  Gesprächsende und Fortsetzung;
+- `/uebungen`, Situation «Niemand nimmt mich ernst!»: mögliche Wirkungen aller
+  Antworten und kontextabhängige Einordnung eigener Erfahrungen;
+- `/unterstuetzen/alltag#konkrete-schritte`: klare, verlässliche und zugleich
+  anpassbare Absprachen;
+- `/materialien` und `/materialien/text/genesung-zahlen`: Langzeitbefunde ohne
+  individuelle Verlaufsprognose.
+
+Die Prüfung soll zusätzlich die unmittelbar umgebenden Texte, Navigation und
+Interaktionszustände einbeziehen, damit Korrekturen nicht isoliert beurteilt
+werden.
+
 ## Gemeinsame Prüfregel
 
 Die drei folgenden Prüfungen werden unabhängig voneinander durchgeführt. Eine
@@ -40,7 +58,7 @@ Ein Befund beschreibt möglichst genau:
 - Datum:
 - fachlich prüfende Person:
 - Rolle / Funktion:
-- vollständig geprüfter Commit: [ ] ja [ ] nein
+- oben genannter Mindestumfang vollständig geprüft: [ ] ja [ ] nein
 
 ### Prüffragen
 
@@ -58,7 +76,7 @@ Ein Befund beschreibt möglichst genau:
       Lebensgefahr sowie Bedrohung oder Gewalt.
 - [ ] Schweizer und Zürcher Kontakt-, Krisen- und Rechtsangaben sind aktuell
       und institutionell vertretbar.
-- [ ] Interaktive Rückmeldungen versprechen keine Wirkung und moralisierten
+- [ ] Interaktive Rückmeldungen versprechen keine Wirkung und moralisieren
       keine Antwort.
 
 ### Befunde
@@ -82,7 +100,7 @@ Auflagen, Grenzen oder weiterzuleitende Fragen:
 
 - Datum:
 - prüfende Perspektive: Person mit eigener Borderline-Erfahrung
-- vollständig geprüfter Commit: [ ] ja [ ] nein
+- oben genannter Mindestumfang vollständig geprüft: [ ] ja [ ] nein
 
 ### Offene Leitfragen
 
@@ -116,7 +134,7 @@ Hinweise und Grenzen der eigenen Beurteilung:
 
 - Datum:
 - prüfende Perspektive: angehörige Person
-- vollständig geprüfter Commit: [ ] ja [ ] nein
+- oben genannter Mindestumfang vollständig geprüft: [ ] ja [ ] nein
 
 ### Offene Leitfragen
 
@@ -168,33 +186,57 @@ nicht.
 
 ### VoiceOver / Safari auf macOS
 
+- geprüfter Commit:
+- geprüfte Basis-URL:
+- Status: [ ] nicht durchgeführt [ ] bestanden [ ] Korrektur erforderlich
 - [ ] Startseite und Hauptnavigation
 - [ ] Sprunglink, Überschriften und Landmarken
-- [ ] Antwortauswahl in interaktiven Übungen
-- [ ] verständliche Ansage der Rückmeldung
-- [ ] Zurücksetzen der Übung und anschliessender Fokus
+- [ ] alle drei Antworten der Situation «Niemand nimmt mich ernst!»
+- [ ] dynamisches Feedback, bevorzugte Alternative und «Merke» verständlich
+      angesagt
+- [ ] deaktivierte Zustände und aktuelle Auswahl verständlich angesagt
+- [ ] «Andere Antwort prüfen», Fokus nach Antwort, Zurücksetzen und erneuter
+      Auswahl nachvollziehbar
 - [ ] Links zu Textfassungen und Materialien
 - [ ] Krisen- und Sicherheitswege
 
 - Datum:
 - Versionen von macOS, Safari und VoiceOver:
 - prüfende Person:
-- Ergebnis / Befunde:
+
+| Schritt / Element | erwartete Ansage oder Fokusposition | tatsächlich gehört / beobachtet | Befund-ID |
+| ----------------- | ----------------------------------- | ------------------------------- | --------- |
+|                   |                                     |                                 |           |
+
+- Nachprüfungscommit zu behobenen Befunden:
+- Ergebnis / offene Befund-IDs:
 
 ### NVDA / Firefox auf Windows
 
+- geprüfter Commit:
+- geprüfte Basis-URL:
+- Status: [ ] nicht durchgeführt [ ] bestanden [ ] Korrektur erforderlich
 - [ ] Startseite und Hauptnavigation
 - [ ] Sprunglink, Überschriften und Landmarken
-- [ ] Antwortauswahl in interaktiven Übungen
-- [ ] verständliche Ansage der Rückmeldung
-- [ ] Zurücksetzen der Übung und anschliessender Fokus
+- [ ] alle drei Antworten der Situation «Niemand nimmt mich ernst!»
+- [ ] dynamisches Feedback, bevorzugte Alternative und «Merke» verständlich
+      angesagt
+- [ ] deaktivierte Zustände und aktuelle Auswahl verständlich angesagt
+- [ ] «Andere Antwort prüfen», Fokus nach Antwort, Zurücksetzen und erneuter
+      Auswahl nachvollziehbar
 - [ ] Links zu Textfassungen und Materialien
 - [ ] Krisen- und Sicherheitswege
 
 - Datum:
 - Versionen von Windows, Firefox und NVDA:
 - prüfende Person:
-- Ergebnis / Befunde:
+
+| Schritt / Element | erwartete Ansage oder Fokusposition | tatsächlich gehört / beobachtet | Befund-ID |
+| ----------------- | ----------------------------------- | ------------------------------- | --------- |
+|                   |                                     |                                 |           |
+
+- Nachprüfungscommit zu behobenen Befunden:
+- Ergebnis / offene Befund-IDs:
 
 ### Verständlichkeits- und Nutzungstest
 

@@ -72,6 +72,10 @@ Quellen für die technische Einordnung:
 
 Der vorhandene [VoiceOver-Nachweis](screenreader-voiceover-safari-2026-10-04.json) bezieht sich auf `5f1116db214177b6139c17794cf3a4c869b6bf31` und schliesst die menschliche akustische Bestätigung ausdrücklich aus. Er ersetzt keinen realen Test der aktuellen V3. Die menschlichen Prüfungen benötigen echte Geräte, Personen beziehungsweise einen Drucker und konnten in dieser Sitzung nicht durchgeführt werden.
 
+## Durchführung ab Commit 9ea47922
+
+Die [Durchführungsmappe für die manuellen V3-Prüfungen](manuelle-pruefung-v3-9ea47922.md) enthält verifizierte PDF-Dateilinks und Hashes, das Register aller 47 menschlich zu beurteilenden Matterhorn-Einträge pro Blatt, konkrete Screenreader-Aufgaben sowie die Nutzenden- und Druckplanung. Der [ergänzende Strukturnachweis](pdf-strukturreview-v3-9ea47922.json) ist eine Vorprüfung, kein realer Screenreader-Test. Der aktuelle Live-Browserdurchgang wurde durch die automatische Sicherheitsprüfung am Netlify-Zugang blockiert.
+
 ## Gemeinsames Protokoll pro Testlauf
 
 Diese Vorlage kopieren. Statuswerte: `nicht durchgeführt`, `bestanden`, `Korrektur erforderlich`, `nicht anwendbar mit Begründung`. Ein leerer Eintrag bedeutet keine Freigabe.
@@ -99,7 +103,7 @@ Nachprüfung am Commit / Hash:
 
 Geplante Mindestabdeckung für dieses Paket: die drei Seiten jeweils mit VoiceOver/Safari auf macOS und NVDA/Firefox auf Windows; die drei PDFs zusätzlich mit einem tatsächlich verwendeten PDF-Reader und Screenreader (beispielsweise Acrobat Reader/NVDA). Geräte, Versionen und Abweichungen dokumentieren. Diese Auswahl ist ein Testplan und keine Behauptung allgemeiner Kompatibilität.
 
-Die geschützte Hauptwebsite mit berechtigtem Zugang verwenden. Je Lauf die tatsächliche Basis-URL und den dazugehörigen Deployment-Commit festhalten; keine Zugangsdaten ins Protokoll aufnehmen.
+Für den noch ungemergten PR #618 die geschützte Deploy-Preview mit berechtigtem Zugang verwenden; die Hauptwebsite enthält vor dem Merge einen anderen PDF-Stand. Je Lauf die tatsächliche Basis-URL und den dazugehörigen Deployment-Commit festhalten; keine Zugangsdaten ins Protokoll aufnehmen.
 
 | Blatt                 | Pfad ab Basis-URL                      | VoiceOver/Safari   | NVDA/Firefox       | PDF mit Screenreader |
 | --------------------- | -------------------------------------- | ------------------ | ------------------ | -------------------- |

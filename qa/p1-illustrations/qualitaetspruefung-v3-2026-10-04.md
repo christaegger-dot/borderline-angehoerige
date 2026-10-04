@@ -74,7 +74,7 @@ Der vorhandene [VoiceOver-Nachweis](screenreader-voiceover-safari-2026-10-04.jso
 
 ## Durchführung ab Commit 9ea47922
 
-Die [Durchführungsmappe für die manuellen V3-Prüfungen](manuelle-pruefung-v3-9ea47922.md) enthält verifizierte PDF-Dateilinks und Hashes, das Register aller 47 menschlich zu beurteilenden Matterhorn-Einträge pro Blatt, konkrete Screenreader-Aufgaben sowie die Nutzenden- und Druckplanung. Der [ergänzende Strukturnachweis](pdf-strukturreview-v3-9ea47922.json) ist eine Vorprüfung, kein realer Screenreader-Test. Der aktuelle Live-Browserdurchgang wurde durch die automatische Sicherheitsprüfung am Netlify-Zugang blockiert.
+Die [Durchführungsmappe für die manuellen V3-Prüfungen](manuelle-pruefung-v3-9ea47922.md) enthält verifizierte PDF-Dateilinks und Hashes, das Register aller 47 menschlich zu beurteilenden Matterhorn-Einträge pro Blatt, konkrete Screenreader-Aufgaben sowie die Nutzenden- und Druckplanung. Der [ergänzende Strukturnachweis](pdf-strukturreview-v3-9ea47922.json) ist eine Vorprüfung, kein realer Screenreader-Test. Der zunächst am Netlify-Zugang blockierte Live-Browserdurchgang wurde nach ausdrücklicher Zustimmung am 04.10.2026 am PR-Kopf `92d0c354e5f9e7130f03609b905c35323e2bb4d6` nachgeholt. Der [Live-Nachweis](live-preview-v3-92d0c354-2026-10-04.md) dokumentiert die drei Tastatur-/Beschreibungspfade, sechs PDF-Bedienelemente und drei abgeschlossenen Downloads mit passenden Manifest-Hashes. Das ergänzt die technische Vorprüfung; die realen Screenreader- und übrigen menschlichen Tests bleiben offen.
 
 ## Gemeinsames Protokoll pro Testlauf
 

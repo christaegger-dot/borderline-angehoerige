@@ -1,6 +1,8 @@
 # Durchführungsmappe: manuelle V3-Prüfungen zu PR #618
 
 Stand: 04.10.2026, Europe/Zurich. Bezugscommit: `9ea47922ab1f2dd6ae317d102b547a97f981af42`.
+Ergänzende Liveprüfung am Kopf `92d0c354e5f9e7130f03609b905c35323e2bb4d6`: siehe [Live-Nachweis](live-preview-v3-92d0c354-2026-10-04.md). Die übrigen Erstprüfungen beziehen sich weiterhin auf den oben genannten Bezugscommit.
+
 Diese Mappe ergänzt den [bestehenden Prüfplan](qualitaetspruefung-v3-2026-10-04.md). Sie bereitet die tatsächlichen Durchgänge vor und dokumentiert die in dieser Sitzung durchgeführte Vorprüfung. Sie erteilt keine institutionelle oder PDF/UA-Freigabe.
 
 ## 1. Ergebnis dieser Sitzung
@@ -14,7 +16,7 @@ Diese Mappe ergänzt den [bestehenden Prüfplan](qualitaetspruefung-v3-2026-10-0
 | Unabhängiger Vergleich mit #617 | Logische und layoutbezogene Poppler-Textextraktion exakt gleich; RGB-Pixel bei identischer Rasterung auf 1800 px lange Kante exakt gleich. |
 | Strukturvorprüfung | XMP vorhanden, kein PDF/UA-Identifier; 4/3/5 nummerierte Schritte als Lbl/LBody. Nach korrekter Behandlung verschachtelter ActualText-Spans keine sichtbaren Glyphen ohne übergeordnete MCID-Zuordnung gefunden. |
 | veraPDF | Vorhandenen Bericht gelesen und dessen Quellhashes abgeglichen: temporäre Kandidaten je 106/0/0. In dieser Sitzung kein neuer veraPDF-Lauf; qpdf und veraPDF sind hier nicht installiert. |
-| Live-Browserprüfung | Blockiert: Die automatische Browser-Sicherheitsprüfung lehnte den bei der Preview-Öffnung benötigten Netlify-Dashboard-/Anmeldeursprung ab. Keine Live-Bedienung als bestanden gewertet. |
+| Live-Browserprüfung | Zunächst am Netlify-Ursprung blockiert; nach ausdrücklicher Zustimmung am 04.10.2026 erfolgreich nachgeprüft: drei Tastatur-/Beschreibungspfade, sechs PDF-Bedienelemente, drei abgeschlossene Downloads mit passenden Hashes. Umfang und Grenzen im [Live-Nachweis](live-preview-v3-92d0c354-2026-10-04.md). Kein realer Screenreader-Test. |
 | Echte Screenreader-Prüfung | Nicht durchgeführt: native VoiceOver-/NVDA-Bedienung und menschliches Anhören sind in dieser Umgebung nicht verfügbar. |
 | Nutzenden- / physische Drucktests | Geplant, nicht durchgeführt. |
 
@@ -32,7 +34,7 @@ Die vorhandenen automatisierten Ergebnisse zu den temporären Prüfkandidaten we
 | Wenn Gespräche kippen (GK) | [Repository-PDF](https://github.com/christaegger-dot/borderline-angehoerige/blob/9ea47922ab1f2dd6ae317d102b547a97f981af42/client/public/infografiken/puk-gespraeche-kippen-v3.pdf) | `c5e7ea393526f166844d3f68114fd3ab54f20147c591959245267493b20aa505` |
 | Beispiel-Dialog (BD) | [Repository-PDF](https://github.com/christaegger-dot/borderline-angehoerige/blob/9ea47922ab1f2dd6ae317d102b547a97f981af42/client/public/infografiken/puk-beispiel-dialog-v3.pdf) | `7f1e740927baa7fa238fe549c15dadb315331ab62bc0b381f8fa0d1214ed182e` |
 
-Diese Links ersetzen die im Übergabetext leeren PDF-Angaben. Es sind verifizierte GitHub-Dateilinks; die authentifizierte Auslieferung aus der Deploy-Preview wurde in dieser Sitzung nicht geprüft.
+Diese Links ersetzen die im Übergabetext leeren PDF-Angaben. Es sind verifizierte GitHub-Dateilinks. Die ergänzende [Liveprüfung](live-preview-v3-92d0c354-2026-10-04.md) bestätigt inzwischen auch das Öffnen und Herunterladen aller drei Preview-PDFs; die dort protokollierten Downloadhashes stimmen mit diesen Dateien überein.
 
 **Zwei Prüfgegenstände auseinanderhalten:** Bedienbarkeit der aktuellen Preview und Repository-PDFs kann sofort auf den richtigen Geräten getestet werden. Die abschliessende manuelle PDF/UA-Prüfung und deren Screenreader-Nachweis müssen sich hingegen auf dauerhaft aufbewahrte, identifiertragende Kandidaten beziehen. Ergebnisse zwischen beiden Fassungen dürfen nur mit dokumentiertem Abgleich übertragen werden.
 

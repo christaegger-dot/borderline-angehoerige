@@ -8,7 +8,7 @@
   },
   "sourceStylesheet": {
     "path": "handouts/p1-illustrations/p1-illustrations.css",
-    "sha256": "07b0c6b2a62da69cc853e6d12ab7f906547eafe83a8f9cfbb4bbd4299616d224"
+    "sha256": "31151fc474fc73858e739b64df4ee1d614e1d4d522eba79482a536cd00e79689"
   },
   "exportContract": {
     "pdf": "A4 portrait, one page, tagged export requested",
@@ -26,27 +26,27 @@
   "entries": [
     {
       "id": "radikale-akzeptanz",
-      "version": "puk-radikale-akzeptanz-v1",
-      "sourceHtml": "handouts/p1-illustrations/sources/puk-radikale-akzeptanz-v1.html",
-      "sourceHtmlSha256": "bcbfad246d3cf2179d781c751d63b1c1f8cf917092ee5cc9d4ba951835979ebf",
+      "version": "puk-radikale-akzeptanz-v2",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-radikale-akzeptanz-v2.html",
+      "sourceHtmlSha256": "4fae576ee4287c39412eeeaf7145a1b72a5fa407a7992a121424cadb292df0e6",
       "pdf": {
-        "path": "client/public/infografiken/puk-radikale-akzeptanz-v1.pdf",
-        "bytes": 55166,
-        "sha256": "4910772ca7c2ba51864318eb91e113224010a41174f537dcd87298a3026f995f",
+        "path": "client/public/infografiken/puk-radikale-akzeptanz-v2.pdf",
+        "bytes": 59163,
+        "sha256": "578e488d63db1fd709ce5bcb9b397a10f1892ab74924000d689f4f7aef696d46",
         "pages": 1,
         "tagged": true
       },
       "webp": {
-        "path": "client/public/infografiken/puk-radikale-akzeptanz-v1.webp",
-        "bytes": 163290,
-        "sha256": "e8e62f500c986866cec3b7f730efe1c6b32e7b3de6c09a2990ce5d5793a1952f",
+        "path": "client/public/infografiken/puk-radikale-akzeptanz-v2.webp",
+        "bytes": 234286,
+        "sha256": "395e02bbda781f25c91913881fa6ffe23c441176cabfb70be371475f01400448",
         "width": 1600,
         "height": 2263
       },
       "thumbnail": {
-        "path": "client/public/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
-        "bytes": 36948,
-        "sha256": "20f99fcd1b8c762443b1e48a719b2576b56b3853761f328cc39b946e31264850",
+        "path": "client/public/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp",
+        "bytes": 51808,
+        "sha256": "aefc6f6574b4854ee536be17cb53849ffa591ccee737f1930b609e64a16ae732",
         "width": 600,
         "height": 849
       },
@@ -54,59 +54,59 @@
     },
     {
       "id": "gespraeche-kippen",
-      "version": "puk-gespraeche-kippen-v1",
-      "sourceHtml": "handouts/p1-illustrations/sources/puk-gespraeche-kippen-v1.html",
-      "sourceHtmlSha256": "c6813033359a159d27556701ea979a5364c87ac68108c362f4d2b2bffcad1ef0",
+      "version": "puk-gespraeche-kippen-v2",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-gespraeche-kippen-v2.html",
+      "sourceHtmlSha256": "a2e0bd9366868b45c1c2f5df9c8419233f51a684b14f1ee33ea73539421dc2bb",
       "pdf": {
-        "path": "client/public/infografiken/puk-gespraeche-kippen-v1.pdf",
-        "bytes": 54994,
-        "sha256": "fe002e3c84abab15996995b22ee5c229e84331c8a00da326f0fb74347df91f50",
+        "path": "client/public/infografiken/puk-gespraeche-kippen-v2.pdf",
+        "bytes": 56180,
+        "sha256": "99f2a02467101cb572204f2bb4c953a92104d1703f73e669842a246e174957f1",
         "pages": 1,
         "tagged": true
       },
       "webp": {
-        "path": "client/public/infografiken/puk-gespraeche-kippen-v1.webp",
-        "bytes": 211660,
-        "sha256": "639eebc04bb5006bdf8896e8347254c726912f7aa06a697621f1adc34a9244a3",
+        "path": "client/public/infografiken/puk-gespraeche-kippen-v2.webp",
+        "bytes": 237130,
+        "sha256": "f50f2a78227ddb3cfdffc3fe232b25c3fdc1f8f642babd49cf251345754e33b5",
         "width": 1600,
         "height": 2263
       },
       "thumbnail": {
-        "path": "client/public/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
-        "bytes": 44826,
-        "sha256": "2db8c07f7050429cbfa6b057998401129587af9e3157963b90b2c739ea699e4e",
+        "path": "client/public/infografiken/extras/thumbnails/puk-gespraeche-kippen-v2.webp",
+        "bytes": 52104,
+        "sha256": "38871b2415b5ec2cb575fc8c442a1c0482a20f04dd6f00803442363185f6ff5e",
         "width": 600,
         "height": 849
       },
-      "safetyText": "Bei Bedrohung oder Gewalt: Beenden Sie das Gespräch, schaffen Sie Abstand und bringen Sie sich in Sicherheit. Bei vermuteter akuter Selbstgefährdung: Beenden Sie die Gesprächstechnik und ziehen Sie umgehend professionelle Hilfe bei; bleiben Sie nur bei der Person, wenn Ihre eigene Sicherheit gewährleistet ist."
+      "safetyText": "Bei Bedrohung oder Gewalt: Beenden Sie das Gespräch, schaffen Sie Abstand und bringen Sie sich in Sicherheit; im Notfall 117. Bei vermuteter unmittelbarer Selbstgefährdung: Holen Sie umgehend professionelle Hilfe; bei unmittelbarer Gefahr 144. Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen das Risiko nicht allein beurteilen oder bewältigen."
     },
     {
       "id": "beispiel-dialog",
-      "version": "puk-beispiel-dialog-v1",
-      "sourceHtml": "handouts/p1-illustrations/sources/puk-beispiel-dialog-v1.html",
-      "sourceHtmlSha256": "74dd38bfaa6546a6d2d358e142286cdb5b521bf0fc1d923549ce98e513d408a6",
+      "version": "puk-beispiel-dialog-v2",
+      "sourceHtml": "handouts/p1-illustrations/sources/puk-beispiel-dialog-v2.html",
+      "sourceHtmlSha256": "132ed5316cb89266424646317a9a52c8826028c4eef93b53fe073555b2a5298a",
       "pdf": {
-        "path": "client/public/infografiken/puk-beispiel-dialog-v1.pdf",
-        "bytes": 56456,
-        "sha256": "f9ceab164a3999a3cf2baba58d5096aab10827713143a517d351a0c97a354a92",
+        "path": "client/public/infografiken/puk-beispiel-dialog-v2.pdf",
+        "bytes": 56757,
+        "sha256": "b293d3bfa957e309d2e3d1f7a376842b516ef3a8f4c6d1bef03ab3b4ca75e1ef",
         "pages": 1,
         "tagged": true
       },
       "webp": {
-        "path": "client/public/infografiken/puk-beispiel-dialog-v1.webp",
-        "bytes": 195724,
-        "sha256": "d4c45b4d2121c64c87c0b33e5d237c95fde0da99b2e720708e3248a73543d9cd",
+        "path": "client/public/infografiken/puk-beispiel-dialog-v2.webp",
+        "bytes": 202442,
+        "sha256": "434d9c3366287cf0f88281db4edd38e29a2e7a494a40761a60f5b0321f90b7cc",
         "width": 1600,
         "height": 2263
       },
       "thumbnail": {
-        "path": "client/public/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
-        "bytes": 43468,
-        "sha256": "8eabaca68609cda383c32b0d4283bebe147d518f84d6c120ff4afa4fd1e4b901",
+        "path": "client/public/infografiken/extras/thumbnails/puk-beispiel-dialog-v2.webp",
+        "bytes": 44470,
+        "sha256": "e1e8709bf70fdfa5253ea9fe8b6925ade6a2d62f3067a22bf177edf343e7f6a3",
         "width": 600,
         "height": 849
       },
-      "safetyText": "Bei Bedrohung oder Gewalt: Beenden Sie den Dialog, schaffen Sie Abstand und bringen Sie sich in Sicherheit. Bei vermuteter akuter Selbstgefährdung: Beenden Sie die Gesprächstechnik und ziehen Sie umgehend professionelle Hilfe bei; bleiben Sie nur bei der Person, wenn Ihre eigene Sicherheit gewährleistet ist."
+      "safetyText": "Bei Bedrohung oder Gewalt: Beenden Sie den Dialog, schaffen Sie Abstand und bringen Sie sich in Sicherheit; im Notfall 117. Bei vermuteter unmittelbarer Selbstgefährdung: Holen Sie umgehend professionelle Hilfe; bei unmittelbarer Gefahr 144. Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen das Risiko nicht allein beurteilen oder bewältigen."
     }
   ]
 }

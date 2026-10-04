@@ -416,12 +416,14 @@ describe("Smoke Tests – Kritische Seiten", () => {
     );
     expect(
       screen.getByRole("heading", {
-        name: /Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln/i,
+        name: /Radikale Akzeptanz – die Realität anerkennen und Handlungsspielraum finden/i,
         level: 1,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findAllByText(/Akzeptieren kann heissen, den inneren Kampf/i)
+      await screen.findAllByText(
+        /Diese Übung ist ein Angebot: «So ist es gerade/i
+      )
     ).not.toHaveLength(0);
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -477,7 +479,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
     ).toHaveTextContent(
-      /Bei Bedrohung oder Gewalt.*Bei vermuteter akuter Selbstgefährdung/i
+      /Bei Bedrohung oder Gewalt.*117.*Bei vermuteter unmittelbarer Selbstgefährdung.*144/i
     );
     expect(screen.queryByText(/Worum es in diesem Handout geht/i)).toBeNull();
   });
@@ -565,7 +567,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
     ).toHaveTextContent(
-      /Bei Bedrohung oder Gewalt.*Bei vermuteter akuter Selbstgefährdung/i
+      /Bei Bedrohung oder Gewalt.*117.*Bei vermuteter unmittelbarer Selbstgefährdung.*144/i
     );
   });
 

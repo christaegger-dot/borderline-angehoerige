@@ -228,9 +228,9 @@ export const handoutTextVersions = [
     visualization: {
       kind: "conversation-path",
       title: "Wenn Gespräche kippen",
-      lead: "Drei mögliche Schritte können helfen, ein angespanntes Gespräch zu verlangsamen und die eigene Grenze zu schützen.",
+      lead: "Drei mögliche Schritte können helfen, ein angespanntes Gespräch zu verlangsamen und die eigene Grenze zu schützen. Sie sind ein Angebot, keine Pflichtfolge: Schritte dürfen ausgelassen und Gespräche beendet werden.",
       longDescription:
-        "Die eigene didaktische Darstellung zeigt drei wählbare Schritte: das eigene Tempo senken, das Erleben des Gegenübers vorsichtig spiegeln und die eigene Grenze benennen. Angehörige dürfen Schritte auslassen, eine Pause ohne Rückkehrversprechen machen oder das Gespräch beenden. Bei Bedrohung oder Gewalt gilt Schutz vor Gesprächstechnik. Bei vermuteter akuter Selbstgefährdung soll professionelle Hilfe beigezogen werden; Angehörige bleiben nur bei der Person, wenn ihre eigene Sicherheit gewährleistet ist.",
+        "Die eigene didaktische Darstellung zeigt drei wählbare Schritte: das eigene Tempo senken, das Erleben des Gegenübers vorsichtig spiegeln und die eigene Grenze benennen. Angehörige dürfen Schritte auslassen, eine Pause ohne Rückkehrversprechen machen oder das Gespräch beenden. Bei Bedrohung oder Gewalt gilt Schutz vor Gesprächstechnik und im Notfall 117. Bei vermuteter unmittelbarer Selbstgefährdung soll professionelle Hilfe beigezogen werden, bei unmittelbarer Gefahr 144. Angehörige bleiben nur bei der Person, soweit dies für sie sicher möglich ist, und müssen das Risiko nicht allein beurteilen oder bewältigen.",
       safetyTitle: "Schutz und Akuthilfe vor Gesprächstechnik",
       safetyBulletStartsWith: "Bei Bedrohung oder Gewalt",
       sections: {
@@ -270,21 +270,21 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Kurze, ruhige Sätze können unter Anspannung leichter ankommen als lange Argumente. Keine Formulierung garantiert eine bestimmte Reaktion.",
+          "Kurze, ruhige Sätze können unter Anspannung leichter ankommen als lange Argumente. Die Schritte sind ein Angebot, keine Pflichtfolge; keine Formulierung garantiert eine bestimmte Reaktion.",
       },
       {
         title: "Merkhilfe",
-        calloutTitle: "Die Reihenfolge zählt",
+        calloutTitle: "Sie entscheiden, welche Schritte gerade passen",
         calloutText:
           "Die drei Schritte sind ein Angebot, keine Pflichtfolge. Wählen Sie, was in der Situation möglich ist; Schutz und Ihre eigene Grenze gehen vor.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Üben Sie die drei Schritte in ruhigen Momenten, damit sie unter Anspannung verfügbarer sind.",
+          "Wenn Sie möchten, üben Sie in ruhigen Momenten einen oder mehrere passende Schritte, damit sie unter Anspannung verfügbarer sind.",
           "Halten Sie Sätze so kurz, dass Sie sie im Stress wiederholen können.",
           "Bereiten Sie einen Pausensatz ohne Rückkehrversprechen vor: «Ich beende das Gespräch jetzt und entscheide später, ob und wann ich wieder ansprechbar bin.»",
-          "Bei Bedrohung oder Gewalt: Beenden Sie das Gespräch, schaffen Sie Abstand und bringen Sie sich in Sicherheit. Bei vermuteter akuter Selbstgefährdung: Beenden Sie die Gesprächstechnik und ziehen Sie umgehend professionelle Hilfe bei; bleiben Sie nur bei der Person, wenn Ihre eigene Sicherheit gewährleistet ist.",
+          `Bei Bedrohung oder Gewalt: Beenden Sie das Gespräch, schaffen Sie Abstand und bringen Sie sich in Sicherheit; im Notfall ${n("ROT_117")}. Bei vermuteter unmittelbarer Selbstgefährdung: Holen Sie umgehend professionelle Hilfe; bei unmittelbarer Gefahr ${n("ROT_144")}. Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen das Risiko nicht allein beurteilen oder bewältigen.`,
         ],
       },
     ],
@@ -492,7 +492,7 @@ export const handoutTextVersions = [
       kind: "dialog-sequence",
       lead: "Ein möglicher Gesprächsweg: wahrnehmen, vorsichtig spiegeln, begrenzen – und nur wenn es passt wieder einsteigen.",
       longDescription:
-        "Die eigene didaktische Darstellung beginnt mit dem Vorwurf «Du bist nie für mich da». Darauf folgen fünf mögliche Bewegungen: die Anspannung wahrnehmen, das Erleben vorsichtig und als Frage spiegeln, eine Grenze setzen, eine Pause ohne Rückkehrpflicht nehmen und – nur wenn es sicher und gewollt ist – einen neuen Kontakt anbieten. Das Blatt ist ein anpassbares Beispiel, kein Rezept; keine Formulierung garantiert den Verlauf. Bei Bedrohung oder Gewalt gilt Schutz vor Gesprächstechnik. Bei vermuteter akuter Selbstgefährdung soll professionelle Hilfe beigezogen werden.",
+        "Die eigene didaktische Darstellung beginnt mit dem Vorwurf «Du bist nie für mich da». Darauf folgen fünf mögliche Bewegungen: die Anspannung wahrnehmen, das Erleben vorsichtig und als Frage spiegeln, eine Grenze setzen, eine Pause ohne Rückkehrpflicht nehmen und – nur wenn es sicher und gewollt ist – einen neuen Kontakt anbieten. Das Blatt ist ein anpassbares Beispiel, kein Rezept; keine Formulierung garantiert den Verlauf. Bei Bedrohung oder Gewalt gilt Schutz vor Gesprächstechnik und im Notfall 117. Bei vermuteter unmittelbarer Selbstgefährdung soll professionelle Hilfe beigezogen werden, bei unmittelbarer Gefahr 144. Angehörige bleiben nur bei der Person, soweit dies für sie sicher möglich ist, und müssen das Risiko nicht allein beurteilen oder bewältigen.",
       safetyTitle: "Schutz und Akuthilfe vor Gesprächstechnik",
       safetyBulletStartsWith: "Bei Bedrohung oder Gewalt",
       sections: {
@@ -550,7 +550,7 @@ export const handoutTextVersions = [
           "Lesen Sie den Dialog laut und markieren Sie die Sätze, die zu Ihrer Sprache passen.",
           "Üben Sie besonders einen klaren Grenz- und Pausensatz, der kein Rückkehrversprechen enthält.",
           "Ein späterer Wiedereinstieg ist nur sinnvoll, wenn er für Sie sicher und gewollt ist.",
-          "Bei Bedrohung oder Gewalt: Beenden Sie den Dialog, schaffen Sie Abstand und bringen Sie sich in Sicherheit. Bei vermuteter akuter Selbstgefährdung: Beenden Sie die Gesprächstechnik und ziehen Sie umgehend professionelle Hilfe bei; bleiben Sie nur bei der Person, wenn Ihre eigene Sicherheit gewährleistet ist.",
+          `Bei Bedrohung oder Gewalt: Beenden Sie den Dialog, schaffen Sie Abstand und bringen Sie sich in Sicherheit; im Notfall ${n("ROT_117")}. Bei vermuteter unmittelbarer Selbstgefährdung: Holen Sie umgehend professionelle Hilfe; bei unmittelbarer Gefahr ${n("ROT_144")}. Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen das Risiko nicht allein beurteilen oder bewältigen.`,
         ],
       },
     ],

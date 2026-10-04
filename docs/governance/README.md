@@ -22,6 +22,9 @@ Paketbezogenes Protokoll:
 - `fachliche-freigabe-p1-illustrationen-2026-10-04.md` — kompakte
   Freigabevorlage für Radikale Akzeptanz, Wenn Gespräche kippen und
   Beispiel-Dialog.
+- `../../qa/p1-illustrations/editorial-review-follow-up-2026-10-04.md` —
+  dokumentierte Einordnung und Nachbearbeitung des KI-gestützten
+  redaktionellen Reviews; ausdrücklich keine Fachfreigabe.
 
 ## Grundsatz
 

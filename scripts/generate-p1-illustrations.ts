@@ -44,9 +44,9 @@ const chromePath =
   process.env.P1_CHROME_PATH ??
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const slugById = {
-  "radikale-akzeptanz": "puk-radikale-akzeptanz-v1",
-  "gespraeche-kippen": "puk-gespraeche-kippen-v1",
-  "beispiel-dialog": "puk-beispiel-dialog-v1",
+  "radikale-akzeptanz": "puk-radikale-akzeptanz-v2",
+  "gespraeche-kippen": "puk-gespraeche-kippen-v2",
+  "beispiel-dialog": "puk-beispiel-dialog-v2",
 } as const;
 
 function escapeHtml(value: string) {
@@ -95,9 +95,13 @@ function renderAcceptance(
       </section>
     </div>
     <section aria-labelledby="path-title">
-      <h2 class="p1-section-title" id="path-title">Vier mögliche Schritte zum Handlungsraum</h2>
+      <h2 class="p1-section-title" id="path-title">Vereinfachte Übung: vier mögliche Schritte</h2>
       ${renderSteps(visual.steps, "p1-path--four")}
-    </section>`;
+    </section>
+    <aside class="p1-example" aria-labelledby="example-title">
+      <h2 id="example-title">${escapeHtml(visual.example.title)}</h2>
+      <p>${escapeHtml(visual.example.text)}</p>
+    </aside>`;
 }
 
 function renderConversation(
@@ -209,6 +213,8 @@ function contentFragments(visual: HandoutVisualization) {
       ...visual.notAcceptance.map(item => item.title),
       ...visual.acceptance.map(item => item.title),
       ...visual.steps.flatMap(step => [step.title, step.text]),
+      visual.example.title,
+      visual.example.text,
       visual.safetyText,
       visual.nextStep,
     ];
@@ -317,11 +323,46 @@ async function main() {
       await page.evaluate(() => document.fonts.ready);
       await page.emulateMedia({ media: "print" });
 
-      const overflow = await page.locator(".p1-sheet").evaluate(element => ({
-        horizontal: element.scrollWidth > element.clientWidth + 1,
-        vertical: element.scrollHeight > element.clientHeight + 1,
-      }));
-      if (overflow.horizontal || overflow.vertical) {
+      const overflow = await page.locator(".p1-sheet").evaluate(element => {
+        const header = element.querySelector<HTMLElement>(".p1-brand");
+        const main = element.querySelector<HTMLElement>(".p1-main");
+        const footer = element.querySelector<HTMLElement>(".p1-footer");
+        if (!header || !main || !footer) {
+          throw new Error(
+            "P1 sheet is missing its header, main or footer region"
+          );
+        }
+        const sheetRect = element.getBoundingClientRect();
+        const headerRect = header.getBoundingClientRect();
+        const footerRect = footer.getBoundingClientRect();
+        const contentBottom = Math.max(
+          ...Array.from(main.children).map(
+            child => child.getBoundingClientRect().bottom
+          )
+        );
+        const footerTop = footerRect.top;
+
+        return {
+          sheetHorizontal: element.scrollWidth > element.clientWidth + 1,
+          sheetVertical: element.scrollHeight > element.clientHeight + 1,
+          mainHorizontal: main.scrollWidth > main.clientWidth + 1,
+          mainVertical: main.scrollHeight > main.clientHeight + 1,
+          headerClipped: headerRect.top < sheetRect.top - 1,
+          footerClipped: footerRect.bottom > sheetRect.bottom + 1,
+          contentOverlapsFooter: contentBottom > footerTop - 1,
+          contentBottom: Math.round(contentBottom),
+          footerTop: Math.round(footerTop),
+        };
+      });
+      if (
+        overflow.sheetHorizontal ||
+        overflow.sheetVertical ||
+        overflow.mainHorizontal ||
+        overflow.mainVertical ||
+        overflow.headerClipped ||
+        overflow.footerClipped ||
+        overflow.contentOverlapsFooter
+      ) {
         throw new Error(
           `${visual.id} overflows its A4 sheet: ${JSON.stringify(overflow)}`
         );

@@ -109,7 +109,11 @@ export function Breadcrumbs() {
 
   return (
     <div className="breadcrumb-shell">
-      <nav className="container breadcrumb-shell__nav" aria-label="Breadcrumb">
+      <nav
+        className="container breadcrumb-shell__nav"
+        aria-label="Breadcrumb"
+        data-print-hidden
+      >
         <div className="flex items-center justify-between gap-3 sm:gap-4">
           <Link href={backHref} className="breadcrumb-shell__back sm:hidden">
             <ArrowLeft className="h-4 w-4" />

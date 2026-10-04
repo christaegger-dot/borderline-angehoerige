@@ -23,6 +23,7 @@ import { selbstfuersorgeInfografiken } from "@/content/selbstfuersorge";
 import { unterstuetzenItems } from "@/content/unterstuetzen";
 import { verstehenInfografiken } from "@/content/verstehen";
 import type { HandoutTextVersion } from "@/content/handoutTextVersionTypes";
+import { kontaktByIdStrict } from "@/data/kontakte";
 
 const allTextVersions: HandoutTextVersion[] = [
   ...genesungTextVersions,
@@ -155,7 +156,7 @@ describe("handout governance", () => {
         "draft-editorial-review-pending"
       );
       expect(governance?.approvedVersion, id).toBeUndefined();
-      expect(governance?.assetVersion, id).toMatch(/^puk-.+-v1$/);
+      expect(governance?.assetVersion, id).toMatch(/^puk-.+-v2$/);
     }
   });
 
@@ -182,12 +183,33 @@ describe("handout governance", () => {
     }
   });
 
-  it("keeps crisis numbers out of orientation and practice handouts", () => {
+  it("keeps crisis numbers out of non-acute handouts and limits the two handlungsnahe exceptions", () => {
     const crisisNumberPattern =
       /\b(?:112|117|143|144|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i;
+    const handlungsnaheExceptions = new Set([
+      "gespraeche-kippen",
+      "beispiel-dialog",
+    ]);
 
     for (const version of allTextVersions) {
       if (version.documentType === "KRISEN-HANDOUT") {
+        continue;
+      }
+
+      if (handlungsnaheExceptions.has(version.id)) {
+        const serialized = JSON.stringify(version);
+        expect(serialized, `${version.id} must carry 117`).toContain(
+          kontaktByIdStrict("ROT_117").nummer
+        );
+        expect(serialized, `${version.id} must carry 144`).toContain(
+          kontaktByIdStrict("ROT_144").nummer
+        );
+        expect(
+          serialized,
+          `${version.id} must not add other crisis numbers`
+        ).not.toMatch(
+          /\b(?:112|143|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i
+        );
         continue;
       }
 

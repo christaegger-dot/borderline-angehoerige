@@ -62,7 +62,7 @@ describe("security headers", () => {
       "public, max-age=0, must-revalidate"
     );
     expect(response.headers.get("Content-Disposition")).toContain(
-      'inline; filename="puk-gespraeche-kippen-v1.pdf"'
+      'inline; filename="puk-gespraeche-kippen-v2.pdf"'
     );
     expect(Number(response.headers.get("Content-Length"))).toBeGreaterThan(
       1000

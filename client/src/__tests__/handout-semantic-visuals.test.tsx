@@ -25,7 +25,9 @@ describe("accessible P1 handout visualizations", () => {
       screen.getByRole("figure", { name: "Radikale Akzeptanz" })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: /Vier mögliche Schritte/i })
+      screen.getByRole("heading", {
+        name: /Vereinfachte Übung: vier mögliche Schritte/i,
+      })
     ).toBeInTheDocument();
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
@@ -34,11 +36,14 @@ describe("accessible P1 handout visualizations", () => {
       screen.getByText(/Radikale Akzeptanz ist kein Rückzug aus dem Leben/i)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Akzeptanz kann die Anspannung einen Moment mindern/i)
+      screen.getByText(/Trauer, Wut oder Angst dürfen trotzdem da sein/i)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Ein Satz wie «Im Moment ist es so»/i)
+      screen.getByText(/Die andere Person möchte heute keine Hilfe annehmen/i)
     ).toBeInTheDocument();
+    expect(screen.getAllByText(/Sie machen nichts falsch/i)).not.toHaveLength(
+      0
+    );
     expect(screen.getAllByRole("list")).toHaveLength(4);
     expect(screen.getByText(/Dieses Blatt ersetzt/i)).toBeInTheDocument();
     expect(screen.getByText(/in Anlehnung an Linehan/i)).toBeInTheDocument();
@@ -52,11 +57,11 @@ describe("accessible P1 handout visualizations", () => {
     }
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Bei Bedrohung oder Gewalt.*in Sicherheit/i);
+    ).toHaveTextContent(/Bei Bedrohung oder Gewalt.*117/i);
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Bei vermuteter akuter Selbstgefährdung/i);
-    expect(screen.getByText(/keine Pflicht/i)).toBeInTheDocument();
+    ).toHaveTextContent(/unmittelbarer Selbstgefährdung.*144/i);
+    expect(screen.getAllByText(/keine Pflicht/i)).not.toHaveLength(0);
     expect(
       screen.getAllByText(/keine Formulierung garantiert/i)
     ).not.toHaveLength(0);
@@ -74,10 +79,10 @@ describe("accessible P1 handout visualizations", () => {
     ).not.toHaveLength(0);
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Bei Bedrohung oder Gewalt.*in Sicherheit/i);
+    ).toHaveTextContent(/Bei Bedrohung oder Gewalt.*117/i);
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
-    ).toHaveTextContent(/Bei vermuteter akuter Selbstgefährdung/i);
+    ).toHaveTextContent(/unmittelbarer Selbstgefährdung.*144/i);
     expect(
       screen.getByText(/Textbeschreibung der Darstellung/i)
     ).toBeInTheDocument();

@@ -264,15 +264,16 @@ export const materials: MaterialItem[] = [
   },
   {
     id: "radikale-akzeptanz",
-    title: "Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln",
+    title:
+      "Radikale Akzeptanz – die Realität anerkennen und Handlungsspielraum finden",
     description:
-      "Kann Angehörigen helfen, Realität anzuerkennen, ohne aufzugeben oder alles gutzuheissen.",
+      "Eine freiwillige Übung, um gegenwärtige Realität anzuerkennen, ohne aufzugeben oder die Zukunft festzuschreiben.",
     category: "selbstfuersorge",
     kind: "Infografik",
-    url: "/infografiken/puk-radikale-akzeptanz-v1.webp",
+    url: "/infografiken/puk-radikale-akzeptanz-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
-    downloadUrl: "/infografiken/puk-radikale-akzeptanz-v1.pdf",
+      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp",
+    downloadUrl: "/infografiken/puk-radikale-akzeptanz-v2.pdf",
     priority: "secondary",
     verifiedAt: P1_MATERIAL_STAND,
   },

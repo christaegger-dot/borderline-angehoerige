@@ -32,10 +32,10 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Wenn Gespräche kippen: 3 Schritte",
     description:
       "Tempo senken, vorsichtig spiegeln, die eigene Grenze schützen",
-    url: "/infografiken/puk-gespraeche-kippen-v1.webp",
+    url: "/infografiken/puk-gespraeche-kippen-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
-    pdfUrl: "/infografiken/puk-gespraeche-kippen-v1.pdf",
+      "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v2.webp",
+    pdfUrl: "/infografiken/puk-gespraeche-kippen-v2.pdf",
     category: "techniken",
   },
   {
@@ -83,9 +83,9 @@ export const kommItems: KommunikationsMaterial[] = [
     title: "Beispiel-Dialog",
     description:
       "Mögliche Sätze für Spiegeln, Grenze und optionalen Wiedereinstieg",
-    url: "/infografiken/puk-beispiel-dialog-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
-    pdfUrl: "/infografiken/puk-beispiel-dialog-v1.pdf",
+    url: "/infografiken/puk-beispiel-dialog-v2.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-beispiel-dialog-v2.webp",
+    pdfUrl: "/infografiken/puk-beispiel-dialog-v2.pdf",
     category: "praxis",
   },
   {

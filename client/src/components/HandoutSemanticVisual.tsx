@@ -117,7 +117,7 @@ function AcceptanceVisual({
         aria-labelledby="acceptance-path-title"
       >
         <h3 id="acceptance-path-title">
-          Vier mögliche Schritte zum Handlungsraum
+          Vereinfachte Übung: vier mögliche Schritte
         </h3>
         <ol
           className="handout-visual__path handout-visual__path--four"
@@ -134,6 +134,13 @@ function AcceptanceVisual({
           ))}
         </ol>
       </section>
+      <aside
+        className="handout-visual__example"
+        aria-labelledby="acceptance-example-title"
+      >
+        <h3 id="acceptance-example-title">{visualization.example.title}</h3>
+        <p>{visualization.example.text}</p>
+      </aside>
       <SafetyNote visualization={visualization} />
       <NextStep id={`${visualization.id}-next-step`}>
         {visualization.nextStep}

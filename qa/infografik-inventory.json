@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-04T00:22:27.743Z",
+  "generatedAt": "2026-10-04T02:00:32.739Z",
   "summary": {
-    "totalFiles": 255,
-    "totalSizeMb": 191.75,
+    "totalFiles": 264,
+    "totalSizeMb": 192.7,
     "activeReferencedFiles": 126,
-    "activeReferencedSizeMb": 68.62,
-    "supportFiles": 46,
-    "supportFilesSizeMb": 53.06,
-    "unreferencedCandidates": 83,
-    "unreferencedCandidatesSizeMb": 70.07,
+    "activeReferencedSizeMb": 68.74,
+    "supportFiles": 49,
+    "supportFilesSizeMb": 53.18,
+    "unreferencedCandidates": 89,
+    "unreferencedCandidatesSizeMb": 70.77,
     "missingReferencedFiles": 0,
-    "versionFamiliesWithLegacyCandidates": 33
+    "versionFamiliesWithLegacyCandidates": 36
   },
   "missingReferences": [],
   "activeReferences": [
@@ -628,8 +628,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
-      "sizeBytes": 43468,
+      "path": "/infografiken/extras/thumbnails/puk-beispiel-dialog-v2.webp",
+      "sizeBytes": 44470,
       "usages": [
         {
           "source": "materials",
@@ -671,8 +671,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
-      "sizeBytes": 44826,
+      "path": "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v2.webp",
+      "sizeBytes": 52104,
       "usages": [
         {
           "source": "materials",
@@ -687,8 +687,8 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
-      "sizeBytes": 36948,
+      "path": "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp",
+      "sizeBytes": 51808,
       "usages": [
         {
           "source": "materials",
@@ -1557,8 +1557,8 @@
       ]
     },
     {
-      "path": "/infografiken/puk-beispiel-dialog-v1.pdf",
-      "sizeBytes": 56456,
+      "path": "/infografiken/puk-beispiel-dialog-v2.pdf",
+      "sizeBytes": 56757,
       "usages": [
         {
           "source": "materials",
@@ -1573,8 +1573,8 @@
       ]
     },
     {
-      "path": "/infografiken/puk-beispiel-dialog-v1.webp",
-      "sizeBytes": 195724,
+      "path": "/infografiken/puk-beispiel-dialog-v2.webp",
+      "sizeBytes": 202442,
       "usages": [
         {
           "source": "materials",
@@ -1643,8 +1643,8 @@
       ]
     },
     {
-      "path": "/infografiken/puk-gespraeche-kippen-v1.pdf",
-      "sizeBytes": 54994,
+      "path": "/infografiken/puk-gespraeche-kippen-v2.pdf",
+      "sizeBytes": 56180,
       "usages": [
         {
           "source": "materials",
@@ -1659,8 +1659,8 @@
       ]
     },
     {
-      "path": "/infografiken/puk-gespraeche-kippen-v1.webp",
-      "sizeBytes": 211660,
+      "path": "/infografiken/puk-gespraeche-kippen-v2.webp",
+      "sizeBytes": 237130,
       "usages": [
         {
           "source": "materials",
@@ -1675,8 +1675,8 @@
       ]
     },
     {
-      "path": "/infografiken/puk-radikale-akzeptanz-v1.pdf",
-      "sizeBytes": 55166,
+      "path": "/infografiken/puk-radikale-akzeptanz-v2.pdf",
+      "sizeBytes": 59163,
       "usages": [
         {
           "source": "materials",
@@ -1691,8 +1691,8 @@
       ]
     },
     {
-      "path": "/infografiken/puk-radikale-akzeptanz-v1.webp",
-      "sizeBytes": 163290,
+      "path": "/infografiken/puk-radikale-akzeptanz-v2.webp",
+      "sizeBytes": 234286,
       "usages": [
         {
           "source": "materials",
@@ -1943,6 +1943,18 @@
     {
       "path": "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp",
       "sizeBytes": 68470
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
+      "sizeBytes": 43468
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
+      "sizeBytes": 44826
+    },
+    {
+      "path": "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
+      "sizeBytes": 36948
     },
     {
       "path": "/infografiken/extras/uebersichtsbogen.pdf",
@@ -2628,6 +2640,48 @@
       "versionFamily": "/infografiken/manus-wenn-worte-treffen",
       "version": 2,
       "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/puk-beispiel-dialog-v1.pdf",
+      "sizeBytes": 56456,
+      "versionFamily": "/infografiken/puk-beispiel-dialog",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/puk-beispiel-dialog-v1.webp",
+      "sizeBytes": 195724,
+      "versionFamily": "/infografiken/puk-beispiel-dialog",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/puk-gespraeche-kippen-v1.pdf",
+      "sizeBytes": 54994,
+      "versionFamily": "/infografiken/puk-gespraeche-kippen",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/puk-gespraeche-kippen-v1.webp",
+      "sizeBytes": 211660,
+      "versionFamily": "/infografiken/puk-gespraeche-kippen",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/puk-radikale-akzeptanz-v1.pdf",
+      "sizeBytes": 55166,
+      "versionFamily": "/infografiken/puk-radikale-akzeptanz",
+      "version": 1,
+      "referencedSiblingPaths": []
+    },
+    {
+      "path": "/infografiken/puk-radikale-akzeptanz-v1.webp",
+      "sizeBytes": 163290,
+      "versionFamily": "/infografiken/puk-radikale-akzeptanz",
+      "version": 1,
+      "referencedSiblingPaths": []
     }
   ],
   "versionFamilies": [
@@ -2935,10 +2989,11 @@
     {
       "family": "/infografiken/extras/thumbnails/puk-beispiel-dialog",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp"
+        "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp",
+        "/infografiken/extras/thumbnails/puk-beispiel-dialog-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/puk-beispiel-dialog-v1.webp"
+        "/infografiken/extras/thumbnails/puk-beispiel-dialog-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -2965,20 +3020,22 @@
     {
       "family": "/infografiken/extras/thumbnails/puk-gespraeche-kippen",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp"
+        "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp",
+        "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v1.webp"
+        "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
     {
       "family": "/infografiken/extras/thumbnails/puk-radikale-akzeptanz",
       "availableFiles": [
-        "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp"
+        "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
+        "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp"
       ],
       "referencedFiles": [
-        "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp"
+        "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -3617,13 +3674,18 @@
       "family": "/infografiken/puk-beispiel-dialog",
       "availableFiles": [
         "/infografiken/puk-beispiel-dialog-v1.pdf",
-        "/infografiken/puk-beispiel-dialog-v1.webp"
+        "/infografiken/puk-beispiel-dialog-v1.webp",
+        "/infografiken/puk-beispiel-dialog-v2.pdf",
+        "/infografiken/puk-beispiel-dialog-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/puk-beispiel-dialog-v2.pdf",
+        "/infografiken/puk-beispiel-dialog-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/puk-beispiel-dialog-v1.pdf",
         "/infografiken/puk-beispiel-dialog-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/puk-dear",
@@ -3653,25 +3715,35 @@
       "family": "/infografiken/puk-gespraeche-kippen",
       "availableFiles": [
         "/infografiken/puk-gespraeche-kippen-v1.pdf",
-        "/infografiken/puk-gespraeche-kippen-v1.webp"
+        "/infografiken/puk-gespraeche-kippen-v1.webp",
+        "/infografiken/puk-gespraeche-kippen-v2.pdf",
+        "/infografiken/puk-gespraeche-kippen-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/puk-gespraeche-kippen-v2.pdf",
+        "/infografiken/puk-gespraeche-kippen-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/puk-gespraeche-kippen-v1.pdf",
         "/infografiken/puk-gespraeche-kippen-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/puk-radikale-akzeptanz",
       "availableFiles": [
         "/infografiken/puk-radikale-akzeptanz-v1.pdf",
-        "/infografiken/puk-radikale-akzeptanz-v1.webp"
+        "/infografiken/puk-radikale-akzeptanz-v1.webp",
+        "/infografiken/puk-radikale-akzeptanz-v2.pdf",
+        "/infografiken/puk-radikale-akzeptanz-v2.webp"
       ],
       "referencedFiles": [
+        "/infografiken/puk-radikale-akzeptanz-v2.pdf",
+        "/infografiken/puk-radikale-akzeptanz-v2.webp"
+      ],
+      "legacyCandidateFiles": [
         "/infografiken/puk-radikale-akzeptanz-v1.pdf",
         "/infografiken/puk-radikale-akzeptanz-v1.webp"
-      ],
-      "legacyCandidateFiles": []
+      ]
     },
     {
       "family": "/infografiken/sauerstoff-die-sauerstoffmaske",

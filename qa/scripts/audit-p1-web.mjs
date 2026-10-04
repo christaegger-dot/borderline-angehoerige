@@ -182,6 +182,25 @@ async function run() {
         // without clipped or protruding content.
         await inspectLayout(page, route, viewport, " at 200% text size", false);
 
+        await page.emulateMedia({ media: "print" });
+        assert(
+          await figure.locator(".handout-visual__header").isVisible(),
+          `${route} ${viewport.width}px: visualization header disappears in print mode`
+        );
+        assert(
+          await figure.locator(".handout-visual__body").isVisible(),
+          `${route} ${viewport.width}px: visualization body disappears in print mode`
+        );
+        assert(
+          (await figure.locator("h3").count()) > 0,
+          `${route} ${viewport.width}px: visualization content is missing in print mode`
+        );
+        assert(
+          (await page.locator("nav:visible").count()) === 0,
+          `${route} ${viewport.width}px: page navigation remains visible in print mode`
+        );
+        await page.emulateMedia({ media: "screen" });
+
         assert(
           runtimeErrors.length === 0,
           `${route} ${viewport.width}px: console/page errors ${runtimeErrors.join(" | ")}`

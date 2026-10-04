@@ -193,6 +193,16 @@
     background: var(--visual-blue-soft);
   }
 
+  .handout-visual__example {
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    border-left: 0.35rem solid var(--visual-blue);
+    background: var(--visual-blue-soft);
+  }
+
+  .handout-visual__example p {
+    margin-top: 0.55rem;
+  }
+
   .handout-visual__safety {
     padding: clamp(1.25rem, 3vw, 1.75rem);
     border: 2px solid var(--visual-ink);

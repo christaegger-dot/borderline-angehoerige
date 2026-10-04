@@ -89,7 +89,7 @@ describe("MaterialienLibrarySection", () => {
     ).toHaveAttribute("href", "/materialien/text/schuld-verantwortung");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Radikale Akzeptanz – Aufhören zu kämpfen, anfangen zu handeln/i,
+        name: /Textversion lesen: Radikale Akzeptanz – die Realität anerkennen und Handlungsspielraum finden/i,
       })
     ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
     expect(

@@ -37,6 +37,7 @@ export type HandoutVisualizationConfig =
         safetyCardTitle: string;
         acceptance: string;
         steps: string;
+        example: string;
         actions: string;
       };
     })

@@ -48,9 +48,9 @@ Deeskalation v11, Validierung v10, Sauerstoff v5 und Fortschritt v5.
 
 | ID                   | Asset-Version               | Status                                               |
 | -------------------- | --------------------------- | ---------------------------------------------------- |
-| `radikale-akzeptanz` | `puk-radikale-akzeptanz-v1` | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
-| `gespraeche-kippen`  | `puk-gespraeche-kippen-v1`  | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
-| `beispiel-dialog`    | `puk-beispiel-dialog-v1`    | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+| `radikale-akzeptanz` | `puk-radikale-akzeptanz-v2` | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+| `gespraeche-kippen`  | `puk-gespraeche-kippen-v2`  | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+| `beispiel-dialog`    | `puk-beispiel-dialog-v2`    | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
 
 Die drei Praxisblätter verwenden dieselbe redaktionell überarbeitete
 Inhaltsquelle für die semantische Webdarstellung und den A4-Export. Vollbild

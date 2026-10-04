@@ -59,7 +59,7 @@ export function HeaderNav({ onSearchOpen }: HeaderNavProps) {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="site-header">
+    <header className="site-header" data-print-hidden>
       <div className="container">
         <div className="site-header__inner">
           <AppLink

@@ -84,6 +84,7 @@ export default function Layout({ children }: LayoutProps) {
       <footer
         className="mt-auto border-t bg-background"
         style={{ borderColor: "var(--rule-color)" }}
+        data-print-hidden
       >
         <div className="container py-10 md:py-14">
           <div

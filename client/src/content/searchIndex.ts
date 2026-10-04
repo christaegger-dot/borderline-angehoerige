@@ -934,12 +934,12 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Radikale Akzeptanz",
     description:
-      "Lesbare Web-Version zu radikaler Akzeptanz, innerem Kampf, vier möglichen Schritten und dem Fokus auf das Beeinflussbare",
+      "Lesbare Web-Version zu radikaler Akzeptanz als freiwilligem Angebot, vier möglichen Schritten und dem eigenen Handlungsspielraum",
     keywords: [
       "textversion",
       "radikale akzeptanz",
       "akzeptanz",
-      "loslassen",
+      "handlungsspielraum",
       "dbt",
       "selbstfürsorge",
       "handout",

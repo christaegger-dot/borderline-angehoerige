@@ -26,10 +26,12 @@ Freigabenachweis.
 - Vollbild-WebP: 1600 × 2263 px.
 - Thumbnail-WebP: 600 × 849 px.
 
-Alle drei Blätter sind Praxisblätter, enthalten keine Krisennummern und führen
-Schutz vor Gesprächstechnik sichtbar ausserhalb optionaler Inhalte. Gewalt oder
-Bedrohung und vermutete akute Selbstgefährdung werden als unterschiedliche
-Situationen beschrieben.
+Alle drei Blätter sind Praxisblätter und führen Schutz vor Gesprächstechnik
+sichtbar ausserhalb optionaler Inhalte. Das nicht-akute Blatt «Radikale
+Akzeptanz» bleibt ohne Krisennummern. Die beiden handlungsnahen
+Kommunikationsblätter unterscheiden Gewalt oder Bedrohung von vermuteter
+unmittelbarer Selbstgefährdung und nennen zurückhaltend die aus dem kanonischen
+Kontaktregister bezogenen Nummern 117 beziehungsweise 144.
 
 ## Erzeugen und prüfen
 
@@ -52,3 +54,8 @@ Für die fachredaktionelle Prüfung steht unter
 eine paketbezogene Freigabevorlage bereit. Sie dokumentiert den Prüfstand, die
 prüfende Rolle, die drei Einzelentscheide und die Regeln für die anschliessende
 Versionierung. Die leere Vorlage selbst ist ausdrücklich kein Sign-off.
+
+Die Nachbearbeitung des redaktionellen Reviews und die Abgrenzung zwischen
+Browser-Druck und den eigentlichen einseitigen Handout-PDFs sind unter
+[`qa/p1-illustrations/editorial-review-follow-up-2026-10-04.md`](../../qa/p1-illustrations/editorial-review-follow-up-2026-10-04.md)
+dokumentiert.

@@ -463,17 +463,17 @@ export const handoutTextVersions = [
   createHandoutTextVersion("radikale-akzeptanz", {
     kicker: "Textversion",
     summary:
-      "Radikale Akzeptanz bedeutet nicht Aufgeben. Sie kann helfen, den inneren Kampf einen Moment zu lösen und Kraft auf das Beeinflussbare zu richten.",
+      "Radikale Akzeptanz ist ein freiwilliges Angebot: die gegenwärtige Realität anerkennen, ohne sie gutzuheissen – und Handlungsspielraum für das Beeinflussbare finden.",
     intro: [
-      "Radikale Akzeptanz bedeutet nicht Aufgeben. Sie kann Entlastung ermöglichen, indem Sie die gegenwärtige Realität anerkennen und Ihre Kraft auf das richten, was heute beeinflussbar ist.",
-      "Die Gegenüberstellung zeigt, was radikale Akzeptanz nicht ist, was sie ist, wie Sie sie in vier Schritten üben und worauf Sie Ihre Energie stattdessen richten können.",
+      "Radikale Akzeptanz bedeutet nicht Aufgeben. Sie kann Entlastung ermöglichen, indem Sie die gegenwärtige Realität anerkennen und Ihre Kraft auf das richten, was heute beeinflussbar ist. Das bedeutet nicht, dass die Zukunft unveränderbar ist.",
+      "Die Gegenüberstellung zeigt, was radikale Akzeptanz nicht ist, was sie sein kann und wie eine vereinfachte Übung in Anlehnung an die DBT nach Linehan aussehen kann.",
     ],
     visualization: {
       kind: "acceptance-path",
       title: "Radikale Akzeptanz",
-      lead: "Die Realität anerkennen, ohne aufzugeben – und den inneren Kampf einen Moment lösen.",
+      lead: "Eine freiwillige Übung: die gegenwärtige Realität anerkennen, ohne aufzugeben – und Handlungsspielraum für das Beeinflussbare finden.",
       longDescription:
-        "Die eigene didaktische Darstellung grenzt zuerst vier Missverständnisse ab: Radikale Akzeptanz ist weder Aufgeben noch Gutheissen, Passivität oder Resignation. Danach zeigt sie vier mögliche Schritte: die Realität benennen, die eigene Reaktion spüren, den inneren Kampf einen Moment lösen und den Fokus auf das Beeinflussbare richten. Der Sicherheitshinweis stellt klar, dass Schutz vor der Akzeptanzübung geht und Akzeptanz niemals bedeutet, zu bleiben, zu schweigen oder Gewalt zu tolerieren.",
+        "Die eigene didaktische Darstellung grenzt zuerst vier Missverständnisse ab: Radikale Akzeptanz ist weder Aufgeben noch Gutheissen, Passivität oder Resignation. Danach zeigt sie eine vereinfachte eigene Übung in Anlehnung an die DBT nach Linehan: die gegenwärtige Realität benennen, die eigene Reaktion spüren, die Realität anerkennen und den eigenen Handlungsspielraum klären. Ein Beispiel ohne akute Gefährdung verdeutlicht, wie Angehörige Unterstützung anbieten, ihre Grenze beachten und Beratung suchen können. Der Sicherheitshinweis stellt klar, dass Schutz vor der Akzeptanzübung geht und Akzeptanz niemals bedeutet, zu bleiben, zu schweigen oder Gewalt zu tolerieren.",
       safetyTitle: "Schutz geht vor",
       safetyBulletStartsWith: "Bei Gefahr",
       sections: {
@@ -482,6 +482,7 @@ export const handoutTextVersions = [
         safetyCardTitle: "Nicht Gutheissen",
         acceptance: "Was Radikale Akzeptanz ist",
         steps: "4-Schritte-Übung",
+        example: "Beispiel ohne akute Gefährdung",
         actions: "Was können Sie tun?",
       },
     },
@@ -490,7 +491,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Akzeptieren kann heissen, den inneren Kampf gegen die gegenwärtige Realität einen Moment zu lösen – nicht: alles hinzunehmen. Sie dürfen weiterhin entscheiden und handeln.",
+          "Diese Übung ist ein Angebot: «So ist es gerade. Ich muss es nicht gut finden.» Das schreibt die Zukunft nicht fest. Sie machen nichts falsch, wenn Akzeptanz heute schwerfällt. Gefühle und Grenzen bleiben berechtigt; Sie dürfen handeln und Unterstützung suchen.",
       },
       {
         title: "Was Radikale Akzeptanz nicht ist",
@@ -518,23 +519,23 @@ export const handoutTextVersions = [
       {
         title: "Was Radikale Akzeptanz ist",
         intro:
-          "Die rechte Spalte fasst zusammen, worauf die Haltung zielt: Realität anerkennen, Kräfte bündeln und das Beeinflussbare wieder sehen.",
+          "Die folgenden Punkte beschreiben die Haltung: die gegenwärtige Realität anerkennen, Kräfte bündeln und den eigenen Handlungsspielraum wieder sehen.",
         cards: [
           {
-            title: "Anerkennen, was nicht änderbar ist",
-            text: "Sie benennen die Realität, statt gegen sie anzukämpfen.",
+            title: "Anerkennen, was im Moment tatsächlich ist",
+            text: "Sie benennen die gegenwärtige Realität. Das bedeutet nicht, dass die Zukunft unveränderbar ist.",
           },
           {
-            title: "Energie sparen für Beeinflussbares",
-            text: "Ihre Kraft bleibt nicht im inneren Widerstand stecken.",
+            title: "Kraft für Handlungsspielraum bewahren",
+            text: "Sie klären, was Sie entscheiden oder beeinflussen können und wobei Sie Unterstützung brauchen.",
           },
           {
-            title: "Etwas Entlastung ermöglichen",
-            text: "Akzeptanz kann die Anspannung einen Moment mindern und wieder etwas mehr Boden unter die Füsse bringen.",
+            title: "Mehr Handlungsspielraum gewinnen",
+            text: "Akzeptanz kann die Anspannung einen Moment mindern. Trauer, Wut oder Angst dürfen trotzdem da sein.",
           },
           {
-            title: "Loslassen von «Es sollte anders sein»",
-            text: "Sie müssen nicht ständig gegen das kämpfen, was gerade faktisch da ist.",
+            title: "Weniger gegen das Jetzt ankämpfen",
+            text: "Sie müssen die Situation nicht gutheissen. Akzeptanz kann schwerfallen und viele Anläufe brauchen.",
           },
         ],
       },
@@ -543,28 +544,34 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "1. Benennen",
-            text: "Was ist die Realität?",
+            text: "Was ist im Moment tatsächlich so?",
           },
           {
             title: "2. Spüren",
             text: "Was löst das in mir aus?",
           },
           {
-            title: "3. Loslassen",
-            text: "Kann ich den inneren Kampf einen Moment lösen?",
+            title: "3. Anerkennen",
+            text: "Kann ich mir sagen: «So ist es gerade. Ich muss es nicht gut finden»? Akzeptanz braucht manchmal viele Anläufe.",
           },
           {
-            title: "4. Fokus",
-            text: "Was kann ich beeinflussen?",
+            title: "4. Handlungsspielraum",
+            text: "Was kann ich entscheiden oder beeinflussen? Wobei brauche ich Unterstützung? Was liegt nicht allein bei mir?",
           },
         ],
       },
       {
+        title: "Beispiel ohne akute Gefährdung",
+        calloutTitle: "Beispiel ohne akute Gefährdung",
+        calloutText:
+          "Die andere Person möchte heute keine Hilfe annehmen. Das enttäuscht mich, und ich mache mir Sorgen. Ich kann ihre Entscheidung nicht allein verändern. Ich kann sagen, was ich anbieten kann, meine Grenze beachten und mir selbst Beratung holen.",
+      },
+      {
         title: "Was können Sie tun?",
         bullets: [
-          "Probieren Sie die vier Schritte zunächst in einer kleinen, sicheren Alltagssituation aus.",
-          "Ein Satz wie «Im Moment ist es so» kann helfen, bei der gegenwärtigen Realität zu bleiben.",
-          "Prüfen Sie danach, was Sie beeinflussen können und wofür Sie gerade keine Verantwortung tragen.",
+          "Wenn Sie möchten, probieren Sie die vier Schritte zunächst an einer kleinen, sicheren Alltagssituation aus. Wählen Sie einen Satz, der Ihnen hilft.",
+          "Sie machen nichts falsch, wenn Akzeptanz heute schwerfällt. Ihre Gefühle und Grenzen bleiben berechtigt.",
+          "Prüfen Sie, was Sie entscheiden oder beeinflussen können, wobei Sie Unterstützung brauchen und was nicht allein bei Ihnen liegt.",
           "Bei Gefahr geht Schutz vor Akzeptanzübung.",
         ],
       },

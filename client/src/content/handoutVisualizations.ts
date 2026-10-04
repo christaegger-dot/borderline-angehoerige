@@ -44,6 +44,10 @@ export type AcceptanceVisualization = HandoutVisualizationBase & {
   notAcceptance: VisualizationContrastItem[];
   acceptance: VisualizationContrastItem[];
   steps: VisualizationStep[];
+  example: {
+    title: string;
+    text: string;
+  };
 };
 
 export type ConversationVisualization = HandoutVisualizationBase & {
@@ -194,6 +198,12 @@ export function resolveHandoutVisualization(
       config.sections.acceptance
     );
     const stepSection = requireSection(handout, config.sections.steps);
+    const exampleSection = requireSection(handout, config.sections.example);
+    if (!exampleSection.calloutTitle) {
+      throw new Error(
+        `Missing visualization example title for ${handout.id}: ${exampleSection.title}`
+      );
+    }
 
     return {
       ...base,
@@ -204,6 +214,10 @@ export function resolveHandoutVisualization(
         ({ title, text }) => ({ title, text })
       ),
       steps: toSteps(requireCards(stepSection, handout.id)),
+      example: {
+        title: exampleSection.calloutTitle,
+        text: requireCallout(exampleSection, handout.id),
+      },
     };
   }
 

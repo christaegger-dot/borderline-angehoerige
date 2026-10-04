@@ -40,12 +40,12 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
   {
     id: "radikale-akzeptanz",
     title: "Radikale Akzeptanz",
-    desc: "Gegenüberstellung und vier mögliche Schritte, um den inneren Kampf einen Moment zu lösen.",
+    desc: "Gegenüberstellung und freiwillige Übung, um gegenwärtige Realität anzuerkennen und Handlungsspielraum zu finden.",
     category: "techniken",
-    webp: "/infografiken/puk-radikale-akzeptanz-v1.webp",
+    webp: "/infografiken/puk-radikale-akzeptanz-v2.webp",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v1.webp",
-    pdf: "/infografiken/puk-radikale-akzeptanz-v1.pdf",
+      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v2.webp",
+    pdf: "/infografiken/puk-radikale-akzeptanz-v2.pdf",
   },
   {
     id: "stopp-technik",

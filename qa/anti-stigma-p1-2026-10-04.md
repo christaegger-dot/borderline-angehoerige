@@ -4,7 +4,8 @@
 
 **Branch:** `codex/anti-stigma-p1-20261004`
 
-**Status:** technisch und redaktionell als Entwurf umgesetzt; nicht gemergt, nicht veröffentlicht
+**Status:** technisch sowie KI-gestützt redaktionell nachgeprüft; menschliche
+Fach- und Perspektivenprüfung offen; nicht gemergt, nicht veröffentlicht
 
 ## Ziel und Prüfmassstab
 
@@ -34,6 +35,32 @@ Die fünf Befunde der redaktionellen Prüfung des Stands `e64c2a09` wurden im Dr
 - «Genesung in Zahlen» ordnet Langzeitdaten ein, ohne daraus einen individuellen oder bevorzugten Verlauf abzuleiten.
 
 Gezielte Regressionstests sichern die Freiwilligkeit, die Unterscheidung von Schuld und konkreter Verantwortung, die offene Wirkungsbeschreibung sowie die nicht-prognostische Einordnung der Langzeitdaten. Die Änderungen benötigen weiterhin die im Review verlangte erneute Perspektiven- und Fachprüfung; dieser technische Nachzug ist keine institutionelle Freigabe.
+
+## KI-gestützte redaktionelle Nachprüfung
+
+Der nachgezogene Stand wurde am 5. Oktober 2026 anhand des Commits
+`39102f95241bd942237a893bc7f6100bfc203361` erneut redaktionell beurteilt.
+Im geprüften Umfang wurden die fünf bisherigen Befunde als behoben bewertet:
+
+| Prüfpunkt                        | Ergebnis der Nachprüfung                                                                                                                                              |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Verantwortung und Schuld         | Verantwortung für eigenes konkretes verletzendes Verhalten und eine Entschuldigung bleiben möglich. Verantwortung für Erkrankung oder Genesung wird davon abgegrenzt. |
+| Gesprächsfortsetzung und Abstand | Eine Fortsetzung setzt den Wunsch beider Seiten voraus. Pause und Gesprächsende sind auch vor einer Eskalation möglich; eine spätere Rückkehr ist keine Pflicht.      |
+| Gesprächswirkungen               | Interaktives Feedback beschreibt mögliche statt sicher behauptete Wirkungen. Eigene Erfahrungen und Lösungsvorschläge werden kontextabhängig eingeordnet.             |
+| Verlässlichkeit                  | Klare, anpassbare Absprachen ersetzen die Forderung, stets gleich zu reagieren. Grenzen und Verfügbarkeit dürfen sich verändern.                                      |
+| Genesungsdaten                   | Langzeitbefunde werden ausdrücklich von einer individuellen Verlaufsprognose getrennt.                                                                                |
+
+**Redaktioneller Entscheid:** Im geprüften Umfang sind keine weiteren
+KI-redaktionellen Korrekturen erforderlich. Dieser Entscheid ist weder eine
+verantwortete fachliche oder institutionelle Freigabe noch ein Nachweis realer
+Nutzenden- oder Screenreader-Tests.
+
+Für die ausstehenden menschlichen Prüfungen steht das verbindlich auf diesen
+Commit bezogene Arbeitsblatt
+`docs/governance/pr619-menschliche-fach-und-perspektivenpruefung.md` bereit.
+Rückmeldungen aus den beiden Erfahrungsperspektiven werden unabhängig erhoben;
+abweichende Einschätzungen bleiben sichtbar und werden pro Befund begründet
+angenommen, verworfen oder zurückgestellt.
 
 ## Bild- und Handout-Governance
 
@@ -100,8 +127,9 @@ Das generische PUK-Audit interpretierte wegen der Repository-Struktur den Projek
 Vor einer institutionellen Veröffentlichung bleiben erforderlich:
 
 - verantwortete fachliche und institutionelle Publikationsfreigabe;
-- reale Tests mit VoiceOver und NVDA;
-- Tests mit betroffenen Personen und Angehörigen;
+- unabhängige Reviews durch eine Person mit eigener Borderline-Erfahrung und
+  eine angehörige Person;
+- reale Tests mit VoiceOver/Safari und NVDA/Firefox am aktuellen Commit;
 - PDF-UA-/Matterhorn-Prüfung und reale Drucktests für künftig freigegebene PDF-Fassungen.
 
 Diese offenen Punkte sind keine Merge-Automatik. Die weitere Freigabe bleibt eine bewusste Entscheidung der verantwortlichen Stelle.

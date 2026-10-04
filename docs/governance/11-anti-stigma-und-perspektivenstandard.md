@@ -95,10 +95,17 @@ Zu dokumentieren sind:
 ## Aktueller Nachweisstand
 
 Der KI-gestützte Anti-Stigma-Querschnittsreview vom 4. Oktober 2026 ist eine
-redaktionelle Vorprüfung. Ein dokumentierter gemeinsamer Review durch Menschen
-mit Borderline-Erfahrung und Angehörige steht weiterhin aus. Bis dieser
-Nachweis vorliegt, darf er nicht als durchgeführt oder bestanden bezeichnet
-werden.
+redaktionelle Vorprüfung. Die fünf daraus abgeleiteten Befunde wurden im Commit
+`39102f95241bd942237a893bc7f6100bfc203361` nachgezogen und am 5. Oktober 2026
+KI-gestützt erneut beurteilt. Im geprüften Umfang waren keine weiteren
+redaktionellen Korrekturen erforderlich.
+
+Dieser Stand ist keine menschliche, medizinische, institutionelle oder
+barrierefreiheitsbezogene Freigabe. Die unabhängigen Reviews durch eine Person
+mit eigener Borderline-Erfahrung und eine angehörige Person stehen weiterhin
+aus. Bis diese Nachweise vorliegen, dürfen sie nicht als durchgeführt oder
+bestanden bezeichnet werden. Das commitbezogene Arbeitsblatt liegt unter
+`docs/governance/pr619-menschliche-fach-und-perspektivenpruefung.md`.
 
 ## Fachliche Referenzen
 

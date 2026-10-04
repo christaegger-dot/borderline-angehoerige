@@ -1,5 +1,12 @@
 # Durchführungsmappe: manuelle V3-Prüfungen zu PR #618
 
+> **Historischer Bezugsstand:** Die Testaufgaben und das Matterhorn-Register
+> bleiben verwendbar. Die hier genannten PDF-Hashes, Kandidatenhinweise und
+> technischen Strukturbefunde sind jedoch überholt. Für alle neuen Durchgänge
+> gilt ausschliesslich der
+> [technische R2-Nachweis](technische-nachpruefung-r2-2026-10-04.md) mit dem
+> dauerhaft gespeicherten R2-Kandidatenpaket.
+
 Stand: 04.10.2026, Europe/Zurich. Bezugscommit: `9ea47922ab1f2dd6ae317d102b547a97f981af42`.
 Ergänzende Liveprüfung am Kopf `92d0c354e5f9e7130f03609b905c35323e2bb4d6`: siehe [Live-Nachweis](live-preview-v3-92d0c354-2026-10-04.md). Die übrigen Erstprüfungen beziehen sich weiterhin auf den oben genannten Bezugscommit.
 

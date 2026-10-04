@@ -170,6 +170,15 @@ body {
   font-size: 9.1pt;
 }
 
+.p1-list-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  font-size: 1px;
+  line-height: 1;
+}
+
 .p1-contrast li::before,
 .p1-pause li::before {
   position: absolute;
@@ -379,6 +388,10 @@ body {
   color: var(--puk-muted);
   font-size: 8.2pt;
   line-height: 1.3;
+}
+
+.p1-footer cite {
+  font-style: inherit;
 }
 
 .p1-footer p {

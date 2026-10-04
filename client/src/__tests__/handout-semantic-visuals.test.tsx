@@ -61,7 +61,9 @@ describe("accessible P1 handout visualizations", () => {
     );
     expect(screen.getAllByRole("list")).toHaveLength(4);
     expect(screen.getByText(/Dieses Blatt ersetzt/i)).toBeInTheDocument();
-    expect(screen.getByText(/in Anlehnung an Linehan/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("figure", { name: "Radikale Akzeptanz" })
+    ).toHaveTextContent(/in Anlehnung an Linehan/i);
   });
 
   it("keeps the three conversation steps and the safety stop visible", () => {

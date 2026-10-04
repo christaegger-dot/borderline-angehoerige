@@ -97,18 +97,29 @@ function renderSteps(steps: VisualizationStep[], modifier: string) {
     .join("")}</ol>`;
 }
 
+function renderBulletList(items: string[]) {
+  return `<ul role="list">${items
+    .map(
+      item => `<li>
+        <span class="p1-list-label">•</span>
+        <span class="p1-list-body">${escapeHtml(item)}</span>
+      </li>`
+    )
+    .join("")}</ul>`;
+}
+
 function renderAcceptance(
   visual: Extract<HandoutVisualization, { kind: "acceptance-path" }>
 ) {
-  return `<blockquote class="p1-statement"><p>${escapeHtml(visual.keyStatement)}</p></blockquote>
+  return `<div class="p1-statement" role="note"><p>${escapeHtml(visual.keyStatement)}</p></div>
     <div class="p1-contrast">
       <section aria-labelledby="not-title">
         <h2 class="p1-section-title" id="not-title">Akzeptanz ist nicht</h2>
-        <ul role="list">${visual.notAcceptance.map(item => `<li>${escapeHtml(item.title)}</li>`).join("")}</ul>
+        ${renderBulletList(visual.notAcceptance.map(item => item.title))}
       </section>
       <section aria-labelledby="is-title">
         <h2 class="p1-section-title" id="is-title">Akzeptanz kann heissen</h2>
-        <ul role="list">${visual.acceptance.map(item => `<li>${escapeHtml(item.title)}</li>`).join("")}</ul>
+        ${renderBulletList(visual.acceptance.map(item => item.title))}
       </section>
     </div>
     <section aria-labelledby="path-title">
@@ -124,14 +135,14 @@ function renderAcceptance(
 function renderConversation(
   visual: Extract<HandoutVisualization, { kind: "conversation-path" }>
 ) {
-  return `<blockquote class="p1-statement"><p>${escapeHtml(visual.keyStatement)}</p></blockquote>
+  return `<div class="p1-statement" role="note"><p>${escapeHtml(visual.keyStatement)}</p></div>
     <section aria-labelledby="path-title">
       <h2 class="p1-section-title" id="path-title">Drei mögliche Schritte</h2>
       ${renderSteps(visual.steps, "p1-path--three")}
     </section>
     <section class="p1-pause" aria-labelledby="pause-title">
       <h2 class="p1-section-title" id="pause-title">Eine Pause schafft Wahlraum</h2>
-      <ul role="list">${visual.pausePlan.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+      ${renderBulletList(visual.pausePlan)}
     </section>`;
 }
 
@@ -157,7 +168,7 @@ function renderDialog(
         .join("")}</ol>
     </section>
     <p class="p1-adaptation">${escapeHtml(visual.adaptationNote)}</p>
-    <blockquote class="p1-statement"><p>${escapeHtml(visual.keyStatement)}</p></blockquote>`;
+    <div class="p1-statement" role="note"><p>${escapeHtml(visual.keyStatement)}</p></div>`;
 }
 
 function renderHtml(visual: HandoutVisualization) {
@@ -201,7 +212,7 @@ function renderHtml(visual: HandoutVisualization) {
       <footer class="p1-footer">
         <p class="p1-footer__institution">Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich</p>
         <p>${escapeHtml(visual.disclaimer)}</p>
-        <p>Eigene didaktische Darstellung der Fachstelle Angehörigenarbeit in Anlehnung an ${escapeHtml(formatSourceReference(visual.sourceLine))}.</p>
+        <p>Eigene didaktische Darstellung der Fachstelle Angehörigenarbeit in Anlehnung an <cite>${escapeHtml(formatSourceReference(visual.sourceLine))}</cite>.</p>
         <div class="p1-footer__meta">
           <p>${escapeHtml(visual.standLine)}</p>
           <p>Seite 1 / 1</p>
@@ -629,7 +640,7 @@ async function main() {
           xmpMetadata:
             "present; no PDF/UA identifier until the complete responsible review",
           postprocessing:
-            "guarded PDF 1.7 list and source-mapped artifact preparation; exact text and raster parity required",
+            "guarded PDF 1.7 semantic repair for lists, layout and pagination artifacts, sources, wrap spaces and outlines; exact text and raster parity required",
           fullWebp: "1600 x 2263 px",
           thumbnailWebp: "600 x 849 px",
           editorialStatus: "draft-editorial-review-pending",

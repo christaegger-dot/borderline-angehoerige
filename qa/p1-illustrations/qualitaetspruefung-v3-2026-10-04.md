@@ -6,11 +6,17 @@ Stand: 4. Oktober 2026. Erstellt durch Codex als technische Prüfvorbereitung; k
 
 - PR [#617](https://github.com/christaegger-dot/borderline-angehoerige/pull/617) wurde gemergt. Geprüfter Merge-Commit: `2ce8193fc5a61043b0b584c54793f0c20eae3be9`. Beim Abgleich entsprach GitHub-`main` genau diesem Commit.
 - Der zugehörige [CI-Lauf 37193862447](https://github.com/christaegger-dot/borderline-angehoerige/actions/runs/37193862447) war abgeschlossen und erfolgreich.
-- Die beim Merge enthaltenen drei PDFs, drei WebP-Vollbilder und drei Thumbnails stimmten mit dem damaligen Manifest überein. Der technische PDF-Nachexport in PR #618 besitzt neue, im aktuellen Manifest und Objektinventar dokumentierte Hashes; sichtbarer und redaktioneller Wortlaut sowie die WebP-Darstellungen blieben unverändert. Die redaktionelle V3-Beurteilung im [Freigabeprotokoll](../../docs/governance/fachliche-freigabe-p1-illustrationen-2026-10-04.md) bleibt bestehen.
+- Die beim Merge enthaltenen drei PDFs, drei WebP-Vollbilder und drei Thumbnails stimmten mit dem damaligen Manifest überein. Der technische Nachexport in PR #618 besitzt neue, im aktuellen Manifest und Objektinventar dokumentierte Hashes. Der redaktionelle Wortlaut blieb unverändert; PDFs, WebP und Thumbnails wurden gemeinsam reproduzierbar neu erzeugt. Die redaktionelle V3-Beurteilung im [Freigabeprotokoll](../../docs/governance/fachliche-freigabe-p1-illustrationen-2026-10-04.md) bleibt bestehen.
 - Erfolgreiches Netlify-Hauptdeployment, `401` ohne Anmeldung auf beiden Netlify-Adressen, gelöschter Remote-Arbeitsbranch und lokaler Gleichstand sind Angaben der Auftraggeberin. Sie wurden bei dieser Nachprüfung nicht nochmals unabhängig getestet.
 - Die lokale ungetrackte Datei `handoutVisualizations 2.ts` war nicht Gegenstand dieser Arbeit, blieb unverändert und ist im GitHub-Baum nicht enthalten.
 
 Der Merge betrifft die geschützte Entwicklung. Die folgenden offenen Prüfungen werden dadurch weder als erledigt behandelt noch rückwirkend zu einem Merge-Hindernis. Institutionelle Kennzeichen und eine öffentliche Publikation benötigen weiterhin den dafür verantworteten Entscheid.
+
+Die nach dieser Erstfassung durchgeführte vertiefte Strukturprüfung ist im
+[technischen R2-Nachweis](technische-nachpruefung-r2-2026-10-04.md)
+dokumentiert. Dieser Nachweis und das externe R2-Kandidatenpaket ersetzen den
+früheren PDF-Strukturstand für alle weiteren Matterhorn- und
+Screenreader-Prüfungen.
 
 ## Technische PDF-Korrektur und automatisierte PDF/UA-1-Prüfung
 
@@ -37,11 +43,11 @@ Ein späterer Export ist ein neuer Prüfgegenstand. Das Inventarskript prüft Ob
 | Ungültiger `Aside`-Tag              | keiner                               | keiner                        | keiner                     |
 | PDF/UA-Identifier im Repository-PDF | bewusst noch nicht gesetzt           | bewusst noch nicht gesetzt    | bewusst noch nicht gesetzt |
 
-Die zunächst dokumentierten Befunde sind korrigiert: Alle drei PDFs besitzen synchronisierte XMP-Metadaten, und der nicht standardmässige `Aside`-Tag wurde quellenbasiert entfernt. Eine vollständige veraPDF-Prüfung zeigte zusätzlich unmarkierte Zeichenoperationen sowie ungültige `LI`-Kinder. Der reproduzierbare Exportprozess bereitet deshalb nun auch Listen als `Lbl`/`LBody` mit `ListNumbering` auf und ordnet nur quellenspezifisch bekannte Vektorgruppen nach einer fail-closed Operator-Prüfung als Layout-Artefakt ein. Ob diese Gruppen semantisch tatsächlich dekorativ sind, bleibt ein manueller Matterhorn-Prüfpunkt. Exakte logische und layoutbezogene Textparität sowie Rasterparität zwischen Chromium-Rohdatei und nachbearbeitetem PDF sind Pflichtprüfungen des Generators.
+Die zunächst dokumentierten Befunde sind korrigiert: Alle drei PDFs besitzen synchronisierte XMP-Metadaten, und der nicht standardmässige `Aside`-Tag wurde quellenbasiert entfernt. Die vertiefte Nachprüfung deckte zusätzlich falsch eingeordnete dekorative Vektoren, fehlende `Lbl` bei ungeordneten Listen, eine strukturierte Seitenzahl, eine falsch typisierte Quellenzeile, 64 fehlende U+0020-Zeichen an Zeilenumbrüchen und zwei Lesezeichentitel ohne Wortabstand auf. Der reproduzierbare Exportprozess korrigiert diese Fälle nun inhaltlich abgeleitet und fail-closed. Er prüft danach Strukturbaum, ParentTree, Inhaltsströme, Quellen- und Pagination-Rollen, Listen, Lesezeichen und den Erhalt des Logo-Alternativtexts. Exakte logische und layoutbezogene Textparität sowie Rasterparität zwischen Chromium-Rohdatei und nachbearbeitetem PDF bleiben Pflichtprüfungen des Generators.
 
 Der PDF/UA-Identifier bleibt in den eingecheckten und von der Website ausgelieferten PDFs bewusst aus. Er wäre eine Konformitätsdeklaration, obwohl die manuelle Matterhorn-, Screenreader- und Lesereihenfolgeprüfung noch offen ist. Beim erzwungenen veraPDF-Profil `ua1` haben die Repository-PDFs deshalb je genau einen erwarteten Fehler: ISO 14289-1, Abschnitt 5-1, fehlende PDF/UA-Identifikation. Die früheren XMP-, `Aside`-, Listen- und Artefaktfehler treten nicht mehr auf.
 
-Für die automatisierte Prüfung erzeugt [validate-pdfua-candidates.py](validate-pdfua-candidates.py) Kopien, verarbeitet deren Metadaten mit demselben Postprozessor und ergänzt nur in diesen Prüfkandidaten `pdfuaid:part=1`. Ohne `--candidate-dir` werden sie nach qpdf-, Paritäts- und veraPDF-Prüfung verworfen. Der [maschinenlesbare Bericht](verapdf-ua1-candidates-v3-2026-10-04.json) belegt mit veraPDF 1.30.0 und erzwungenem Profil `ua1` für alle drei temporären Kandidaten: **106 bestandene Regeln, 0 fehlgeschlagene Regeln und 0 fehlgeschlagene Checks**. Die Kandidaten wurden nicht publiziert und nicht als Repository-Artefakte behalten.
+Für die automatisierte Prüfung erzeugt [validate-pdfua-candidates.py](validate-pdfua-candidates.py) Kopien, verarbeitet deren Metadaten mit demselben Postprozessor und ergänzt nur in diesen Prüfkandidaten `pdfuaid:part=1`. Ohne `--candidate-dir` werden sie nach qpdf-, Paritäts- und veraPDF-Prüfung verworfen. Der [maschinenlesbare Bericht](verapdf-ua1-candidates-v3-2026-10-04.json) belegt mit veraPDF 1.30.0 und erzwungenem Profil `ua1` für alle drei aktuellen Kandidaten: **106 bestandene Regeln, 0 fehlgeschlagene Regeln und 0 fehlgeschlagene Checks**. Zusätzlich liegt ausserhalb des Repository das dauerhafte, unveröffentlichte Paket `borderline-p1-v3-pdfua-2026-10-04-r2` mit denselben Kandidatenhashes vor.
 
 ```bash
 "$P1_PDF_PYTHON_PATH" qa/p1-illustrations/validate-pdfua-candidates.py --repo-root . \
@@ -59,22 +65,22 @@ Quellen für die technische Einordnung:
 
 ## Arbeitsstand und Zuständigkeit
 
-| Arbeitspaket                                          | Aktueller Stand                                              | Benötigte Durchführung / Nachweis                                                   |
-| ----------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| Redaktionelle V3-Prüfung                              | bereits dokumentiert                                         | bestehendes Freigabeprotokoll; keine neue institutionelle Freigabe hier             |
-| PDF-Objektinventar                                    | aktualisiert; technische Befunde korrigiert                  | JSON und reproduzierbares Skript oben                                               |
-| Automatisierte veraPDF-PDF/UA-1-Prüfung               | temporäre Kandidaten bestanden; 0 Fehlchecks                 | Bericht und reproduzierbares Kandidatenskript oben                                  |
-| Manuelle PDF-UA-1-/Matterhorn-Prüfung                 | offen; kein PDF/UA-Identifier in den auszuliefernden Dateien | PDF-Fachperson, dauerhaft gespeicherter Kandidat mit Hash und manueller Prüfbericht |
-| Reale Screenreader-Prüfung V3                         | nicht durchgeführt                                           | Person mit tatsächlicher Sprachausgabe und eigener Bedienung, Testmatrix unten      |
-| Verständlichkeit mit Angehörigen                      | nicht durchgeführt                                           | moderierter freiwilliger Test, anonymisierte Beobachtungen                          |
-| Physischer Druck                                      | nicht durchgeführt                                           | reale Ausdrucke, Druckparameter, Sichtprüfung                                       |
-| Institutioneller / öffentlicher Publikationsentscheid | offen                                                        | benannte zuständige Person und dokumentierter Geltungsbereich                       |
+| Arbeitspaket                                          | Aktueller Stand                                                                  | Benötigte Durchführung / Nachweis                                              |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Redaktionelle V3-Prüfung                              | bereits dokumentiert                                                             | bestehendes Freigabeprotokoll; keine neue institutionelle Freigabe hier        |
+| PDF-Objektinventar                                    | aktualisiert; technische Befunde korrigiert                                      | JSON und reproduzierbares Skript oben                                          |
+| Automatisierte veraPDF-PDF/UA-1-Prüfung               | temporäre Kandidaten bestanden; 0 Fehlchecks                                     | Bericht und reproduzierbares Kandidatenskript oben                             |
+| Manuelle PDF-UA-1-/Matterhorn-Prüfung                 | offen; R2-Kandidaten dauerhaft gespeichert, Auslieferungsdateien ohne Identifier | PDF-Fachperson, R2-Hash und manueller Prüfbericht                              |
+| Reale Screenreader-Prüfung V3                         | nicht durchgeführt                                                               | Person mit tatsächlicher Sprachausgabe und eigener Bedienung, Testmatrix unten |
+| Verständlichkeit mit Angehörigen                      | nicht durchgeführt                                                               | moderierter freiwilliger Test, anonymisierte Beobachtungen                     |
+| Physischer Druck                                      | nicht durchgeführt                                                               | reale Ausdrucke, Druckparameter, Sichtprüfung                                  |
+| Institutioneller / öffentlicher Publikationsentscheid | offen                                                                            | benannte zuständige Person und dokumentierter Geltungsbereich                  |
 
 Der vorhandene [VoiceOver-Nachweis](screenreader-voiceover-safari-2026-10-04.json) bezieht sich auf `5f1116db214177b6139c17794cf3a4c869b6bf31` und schliesst die menschliche akustische Bestätigung ausdrücklich aus. Er ersetzt keinen realen Test der aktuellen V3. Die menschlichen Prüfungen benötigen echte Geräte, Personen beziehungsweise einen Drucker und konnten in dieser Sitzung nicht durchgeführt werden.
 
 ## Durchführung ab Commit 9ea47922
 
-Die [Durchführungsmappe für die manuellen V3-Prüfungen](manuelle-pruefung-v3-9ea47922.md) enthält verifizierte PDF-Dateilinks und Hashes, das Register aller 47 menschlich zu beurteilenden Matterhorn-Einträge pro Blatt, konkrete Screenreader-Aufgaben sowie die Nutzenden- und Druckplanung. Der [ergänzende Strukturnachweis](pdf-strukturreview-v3-9ea47922.json) ist eine Vorprüfung, kein realer Screenreader-Test. Der zunächst am Netlify-Zugang blockierte Live-Browserdurchgang wurde nach ausdrücklicher Zustimmung am 04.10.2026 am PR-Kopf `92d0c354e5f9e7130f03609b905c35323e2bb4d6` nachgeholt. Der [Live-Nachweis](live-preview-v3-92d0c354-2026-10-04.md) dokumentiert die drei Tastatur-/Beschreibungspfade, sechs PDF-Bedienelemente und drei abgeschlossenen Downloads mit passenden Manifest-Hashes. Das ergänzt die technische Vorprüfung; die realen Screenreader- und übrigen menschlichen Tests bleiben offen.
+Die [Durchführungsmappe für die manuellen V3-Prüfungen](manuelle-pruefung-v3-9ea47922.md) enthält das Register aller 47 menschlich zu beurteilenden Matterhorn-Einträge pro Blatt, konkrete Screenreader-Aufgaben sowie die Nutzenden- und Druckplanung. Ihre alten Dateihashes und der [frühere Strukturnachweis](pdf-strukturreview-v3-9ea47922.json) sind historische Belege und dürfen nicht mehr als aktueller Prüfgegenstand verwendet werden; dafür gilt der [technische R2-Nachweis](technische-nachpruefung-r2-2026-10-04.md). Der zunächst am Netlify-Zugang blockierte Live-Browserdurchgang wurde nach ausdrücklicher Zustimmung am 04.10.2026 am PR-Kopf `92d0c354e5f9e7130f03609b905c35323e2bb4d6` nachgeholt. Der [Live-Nachweis](live-preview-v3-92d0c354-2026-10-04.md) dokumentiert die damaligen drei Tastatur-/Beschreibungspfade, sechs PDF-Bedienelemente und drei Downloads; nach dem PDF-Nachexport ist eine erneute reale Stichprobe nötig. Die realen Screenreader- und übrigen menschlichen Tests bleiben offen.
 
 ## Gemeinsames Protokoll pro Testlauf
 
@@ -143,8 +149,8 @@ Missverständnisse als Beobachtung dokumentieren, nicht als Fehler der Person be
 
 ## PDF-UA/Matterhorn durch eine zuständige PDF-Fachperson
 
-1. Mit `"$P1_PDF_PYTHON_PATH" qa/p1-illustrations/validate-pdfua-candidates.py --repo-root . --candidate-dir /absoluter/prüfpfad` dauerhaft zu speichernde, identifiertragende Prüfkandidaten erzeugen. Diese Kandidaten vor Freigabe nicht in die ausgelieferten Repository- oder Website-Pfade kopieren.
-2. Kandidatenhashes, veraPDF-Version und Profil dokumentieren. Den automatischen Nullfehler-Befund mit einem zweiten geeigneten Prüfwerkzeug gegenprüfen; automatisches Bestehen allein genügt nicht für die Gesamtfreigabe.
+1. Das dauerhaft gespeicherte R2-Kandidatenpaket und die im [technischen R2-Nachweis](technische-nachpruefung-r2-2026-10-04.md) dokumentierten Hashes verwenden. Bei jeder Änderung ein neues, eindeutig benanntes Paket mit `validate-pdfua-candidates.py --candidate-dir` erzeugen; Kandidaten vor Freigabe nicht in die ausgelieferten Repository- oder Website-Pfade kopieren.
+2. Kandidatenhashes, veraPDF-Version und Profil abgleichen. Den automatischen Nullfehler-Befund mit einem zweiten geeigneten Prüfwerkzeug gegenprüfen; automatisches Bestehen allein genügt nicht für die Gesamtfreigabe.
 3. Alle anwendbaren manuellen Matterhorn-Punkte beurteilen, unter anderem Tag-Semantik und Lesereihenfolge, Überschriften und Listen, sinnvolle Alternativtexte, dekorative Artefakte, Sprache, Zeichenwiedergabe, Farbe/Kontrast sowie vorhandene Verknüpfungen.
 4. Menschliche Screenreader-Ergebnisse mit exakt denselben Kandidatenhashes abgleichen. Nach jeder PDF-Korrektur die automatisierten und menschlichen Prüfungen wiederholen.
 5. Erst nach bestandener manueller Prüfung genau die geprüften, mit `pdfuaid:part=1` gekennzeichneten Dateien übernehmen, Manifest und Bericht aktualisieren und Web, PDF, WebP sowie Thumbnail nochmals auf Inhaltsgleichheit prüfen. Technische Konformität setzt keine institutionelle oder öffentliche Publikationsfreigabe.

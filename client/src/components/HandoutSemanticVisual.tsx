@@ -22,9 +22,9 @@ function FigureHeader({ visualization }: Props) {
 
 function KeyStatement({ children }: { children: string }) {
   return (
-    <blockquote className="handout-visual__statement">
+    <div className="handout-visual__statement" role="note">
       <p>{children}</p>
-    </blockquote>
+    </div>
   );
 }
 
@@ -263,7 +263,8 @@ export default function HandoutSemanticVisual({ visualization }: Props) {
       <figcaption className="handout-visual__caption">
         <p>
           Eigene didaktische Darstellung der Fachstelle Angehörigenarbeit in
-          Anlehnung an {formatSourceReference(visualization.sourceLine)}.
+          Anlehnung an{" "}
+          <cite>{formatSourceReference(visualization.sourceLine)}</cite>.
         </p>
         <p className="handout-visual__disclaimer">
           <strong>Hinweis:</strong> {visualization.disclaimer}

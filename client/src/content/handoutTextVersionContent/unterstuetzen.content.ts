@@ -4,36 +4,36 @@ export const handoutTextVersions = [
   createHandoutTextVersion("rolle-klaeren", {
     kicker: "Textversion",
     summary:
-      "Sie können Orientierung, Hoffnung und klare Grenzen geben. Therapie ersetzen, Verhalten kontrollieren oder die Genesung tragen müssen Sie nicht.",
+      "Sie können Unterstützung anbieten, wenn sie gewünscht und für Sie tragbar ist. Therapie, Kontrolle und Verantwortung für die Genesung gehören nicht zu Ihrer Rolle.",
     intro: [
-      "Rollenklarheit hilft, Unterstützung von Überverantwortung zu unterscheiden. Im Zentrum stehen drei Fragen: Was ist Ihr Beitrag, was ist nicht Ihre Aufgabe, und wann braucht es professionelle Hilfe?",
-      "Das Handout hilft Angehörigen dabei, Unterstützung realistisch zu verstehen: zugewandt und stabil bleiben, ohne in Therapie, Kontrolle oder Selbstaufgabe abzurutschen.",
+      "Rollenklarheit hilft, freiwillige Unterstützung von Überverantwortung zu unterscheiden. Im Zentrum stehen drei Fragen: Was möchte und kann ich anbieten, was ist nicht meine Aufgabe, und wann braucht es professionelle Hilfe?",
+      "Unterstützung kann unterschiedlich aussehen. Entscheidend ist, was die Beteiligten möchten, was für Sie möglich ist und was in der jeweiligen Situation sicher bleibt.",
     ],
     sections: [
       {
-        title: "Ihr Beitrag",
+        title: "Was Sie anbieten können",
         intro:
-          "Die linke Spalte des Handouts beschreibt, was Angehörige tatsächlich leisten können, ohne ihre Rolle zu überschreiten.",
+          "Diese Möglichkeiten sind Angebote, keine Erwartungen. Sie dürfen sie an Ihre Beziehung, Ihre Kräfte und die Wünsche der betroffenen Person anpassen.",
         cards: [
           {
-            title: "Verlässlicher Anker",
-            text: "Berechenbar und stabil bleiben.",
+            title: "Absprachen anbieten",
+            text: "Absprachen treffen und einhalten, soweit sie gemeinsam gewünscht und für Sie möglich sind.",
           },
           {
-            title: "Geduldige Begleitung",
-            text: "Zuhören, ohne zu urteilen.",
+            title: "Zuhören anbieten",
+            text: "Zuhören, wenn die andere Person das möchte und Sie dafür Raum haben.",
           },
           {
             title: "Übungsbegleitung",
-            text: "Neue Verhaltensweisen gemeinsam üben.",
+            text: "Gemeinsam üben, wenn dies gewünscht und vereinbart ist.",
           },
           {
-            title: "Hoffnung geben",
-            text: "Vermitteln, dass Besserung möglich ist.",
+            title: "Zuversicht teilen",
+            text: "Eigene Zuversicht teilen, ohne Druck, Versprechen oder Erwartung.",
           },
           {
-            title: "Grenzen halten",
-            text: "Klar und konsequent bleiben.",
+            title: "Eigene Grenzen benennen",
+            text: "Sagen, was Sie freiwillig übernehmen können und was nicht.",
           },
         ],
       },
@@ -47,15 +47,15 @@ export const handoutTextVersions = [
             text: "Die Therapie ersetzen oder kontrollieren.",
           },
           {
-            title: "Retterrolle",
-            text: "Alle Probleme lösen wollen.",
+            title: "Alles übernehmen",
+            text: "Alle Probleme stellvertretend lösen.",
           },
           {
             title: "Kontrollinstanz",
             text: "Verhalten überwachen oder erzwingen.",
           },
           {
-            title: "Sündenbock",
+            title: "Alle Schuld übernehmen",
             text: "Schuld für alles übernehmen.",
           },
           {
@@ -68,7 +68,7 @@ export const handoutTextVersions = [
         title: "Professionelle Hilfe",
         calloutTitle: "Was Fachpersonen übernehmen",
         calloutText:
-          "Therapie, Psychiatrie und Beratung – das ist Aufgabe der Fachpersonen. Sie sind nicht Therapeut:in, Retter:in oder Kontrollinstanz.",
+          "Therapie, Psychiatrie und Beratung werden von Fachpersonen angeboten. Sie müssen Behandlung, Krisenhilfe oder Kontrolle nicht übernehmen.",
       },
       {
         title: "Kernaussage",
@@ -81,7 +81,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Regelmässig prüfen",
-            text: "Fragen Sie sich: Bin ich noch in meiner Rolle oder rutsche ich ab?",
+            text: "Fragen Sie sich: Passt das noch zu dem, was ich freiwillig und sicher übernehmen kann?",
           },
           {
             title: "Mit Fachpersonen sprechen",
@@ -89,7 +89,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Sich erinnern",
-            text: "Ihre Stabilität ist Ihr wichtigster Beitrag.",
+            text: "Ihre eigenen Bedürfnisse, Grenzen und Möglichkeiten zählen ebenfalls.",
           },
         ],
       },
@@ -107,101 +107,31 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
-  createHandoutTextVersion("im-krisenmodus", {
-    kicker: "Textversion",
-    summary:
-      "In der Krise hilft weniger Logik, dafür mehr Ruhe, Präsenz und Orientierung. Ihre ruhige Haltung kann helfen, von Überforderung zu mehr Sicherheit zurückzufinden.",
-    intro: [
-      "Im Krisenmodus zählt weniger Erklärung und mehr Orientierung. Die Gegenüberstellung von Krise und beruhigtem Zustand zeigt, wie Ruhe und Präsenz wieder Handlungsspielraum öffnen können.",
-      "Für Angehörige ist die Kernaussage klar: In akuter Überforderung bringt langes Erklären oft wenig. Wichtiger sind ein ruhiger Ton, Präsenz und das Verschieben schwieriger Diskussionen.",
-    ],
-    sections: [
-      {
-        title: "Von Krise zu Beruhigung",
-        intro:
-          "Die Infografik stellt zwei Zustände gegenüber und markiert den Übergang dazwischen.",
-        cards: [
-          {
-            title: "Krise",
-            text: "überwältigt, verängstigt, impulsiv",
-          },
-          {
-            title: "Ihr Beitrag",
-            text: "Ihre Ruhe + Präsenz",
-          },
-          {
-            title: "Beruhigt",
-            text: "orientiert, verbunden, sicherer",
-          },
-        ],
-      },
-      {
-        title: "Merksatz",
-        calloutTitle: "Worum es im Krisenmodus geht",
-        calloutText:
-          "In der Krise hilft weniger Logik – mehr Ruhe, Präsenz und Orientierung. Bei akuter Gefahr ersetzt das keine professionelle Hilfe.",
-      },
-      {
-        title: "Sicherheitsrahmen",
-        calloutTitle: "Orientierung, keine Notfallbeurteilung",
-        calloutText:
-          "Die Ampel und die Gegenüberstellung geben Orientierung. Wenn Sicherheit gefährdet ist, hat sofortige Hilfe Vorrang: Rot = Einsatzdienst, Gelb = psychiatrische Notfallhilfe, Grün = Entlastung und Gespräch.",
-      },
-      {
-        title: "Mini-Legende",
-        bullets: [
-          "Symbol = emotionaler Zustand",
-          "Pfeil = Übergang durch Ihr Verhalten",
-          "Herz = beruhigter Zustand",
-        ],
-      },
-      {
-        title: "Was können Sie tun?",
-        cards: [
-          {
-            title: "1. Atmen Sie durch",
-            text: "Atmen Sie durch und sprechen Sie leise und langsam.",
-          },
-          {
-            title: "2. Präsenzsatz sagen",
-            text: "Sagen Sie einen Präsenzsatz: «Ich bin da. Wir schaffen das.»",
-          },
-          {
-            title: "3. Diskussion verschieben",
-            text: "Verschieben Sie Diskussionen: «Wir reden später – jetzt beruhigen wir uns.»",
-          },
-        ],
-      },
-    ],
-    sourceLine: "Quelle: Psychoedukation, Angehörigenarbeit (DBT-nah).",
-    standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
-  }),
   createHandoutTextVersion("drei-saeulen", {
     kicker: "Textversion",
     summary:
-      "Präsenz, Stabilität und Grenze sind drei Säulen, die Angehörigen Halt geben und die Beziehung stärken. Hilfreiche Unterstützung braucht alle drei zusammen.",
+      "Drei freiwillige Fragen können Orientierung geben: Möchte und kann ich gerade präsent sein? Was hilft mir, mich selbst zu orientieren? Welche Grenze oder zusätzliche Unterstützung brauche ich?",
     intro: [
-      "Die drei Säulen beschreiben eine tragfähige Angehörigen-Haltung: Präsenz, Stabilität und Grenze. Sie geben Orientierung, wenn Unterstützung unübersichtlich wird.",
-      "Die Grafik ist als praktische Orientierung gedacht: zugewandt bleiben, innerlich ruhig bleiben und gleichzeitig den eigenen Schutz nicht verlieren.",
+      "Die drei Bereiche Präsenz, Selbstorientierung und Grenze sind Wahlmöglichkeiten, keine Pflicht zu einer bestimmten Angehörigen-Haltung.",
+      "Sie dürfen je nach Beziehung, Situation und eigener Kraft unterschiedlich gewichtet werden. Abstand, ein Gesprächsende oder professionelle Unterstützung können ebenfalls passende Schritte sein.",
     ],
     sections: [
       {
         title: "Die drei Säulen",
         intro:
-          "Die Infografik beschreibt drei Haltungen, die sich ergänzen und zusammen tragfähige Unterstützung ermöglichen.",
+          "Die Textversion beschreibt drei mögliche Orientierungspunkte. Keiner davon muss in jeder Situation erfüllt sein.",
         cards: [
           {
-            title: "Präsenz – Ich bin da.",
-            text: "Zugewandt und ansprechbar bleiben, ohne alles lösen zu müssen.",
+            title: "Präsenz – wenn ich da sein möchte.",
+            text: "Zuhören oder ansprechbar sein kann ein Angebot sein, wenn es gewünscht und für Sie möglich ist.",
           },
           {
-            title: "Stabilität – Ich bleibe ruhig.",
-            text: "Innerlich ruhiger und berechenbar bleiben, auch wenn es angespannt wird.",
+            title: "Selbstorientierung – ich darf pausieren.",
+            text: "Eigene Gefühle und Grenzen wahrnehmen, Tempo herausnehmen oder das Gespräch beenden.",
           },
           {
             title: "Grenze – Ich schütze mich.",
-            text: "Eigene Bedürfnisse ernst nehmen und Nein sagen können, wenn es nötig ist.",
+            text: "Eigene Bedürfnisse ernst nehmen, Nein sagen und bei Bedarf Abstand oder Hilfe wählen.",
           },
         ],
       },
@@ -209,22 +139,22 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Worum es bei den drei Säulen geht",
         calloutText:
-          "Präsenz, Stabilität und Grenze – drei Säulen, die Angehörigen Halt geben und die Beziehung stärken. Hilfreiche Unterstützung trägt nur, wenn sie auch für Angehörige tragbar bleibt.",
+          "Die drei Bereiche helfen bei der Selbstklärung. Sie messen weder die Qualität einer Beziehung noch, ob Sie genug unterstützen.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Wählen",
-            text: "Wählen Sie eine Säule, auf die Sie diese Woche besonders achten wollen.",
+            title: "1. Prüfen",
+            text: "Fragen Sie sich, ob Sie gerade etwas anbieten möchten und können.",
           },
           {
-            title: "2. Üben",
-            text: "Üben Sie sie bewusst in kleinen, alltäglichen Situationen.",
+            title: "2. Wählen",
+            text: "Wählen Sie Präsenz, Pause, Grenze oder zusätzliche Hilfe – je nachdem, was passt.",
           },
           {
-            title: "3. Reflektieren",
-            text: "Fragen Sie sich am Abend: Welche Säule hat heute am meisten geholfen?",
+            title: "3. Nachjustieren",
+            text: "Prüfen Sie später, was für Sie tragbar war. Sie dürfen Ihre Entscheidung verändern.",
           },
         ],
       },
@@ -237,28 +167,28 @@ export const handoutTextVersions = [
   createHandoutTextVersion("konsistenz-prinzip", {
     kicker: "Textversion",
     summary:
-      "Wenn Angehörige ähnlich reagieren und gemeinsame Grenzen einhalten, entstehen mehr Sicherheit, Vertrauen und weniger Eskalationen.",
+      "Transparente, wiedererkennbare Absprachen können Orientierung geben. Sie dürfen an Situation, Sicherheit und Möglichkeiten der Beteiligten angepasst werden.",
     intro: [
-      "Das Konsistenz-Prinzip zeigt, wie ähnliche Reaktionen im Umfeld Sicherheit schaffen können. Es stellt einen hilfreichen und einen schwierigen Beziehungskreislauf gegenüber.",
-      "Die Grundidee ist einfach: Gleiche Grenzen führen zu mehr Sicherheit. Widersprüchliche Reaktionen machen es leichter, Grenzen gegeneinander auszuspielen, und erhöhen Konflikte.",
+      "Das Konsistenz-Prinzip zeigt, wie transparente und wiedererkennbare Absprachen Orientierung geben können. Es vergleicht mögliche Folgen klarer und unklarer Kommunikation, ohne eine bestimmte Reaktion vorherzusagen.",
+      "Es geht nicht darum, dass alle immer gleich reagieren. Absprachen sollten die betroffene Person einbeziehen, soweit sie das möchte, und sich an Situation, Sicherheit und Möglichkeiten anpassen lassen.",
     ],
     sections: [
       {
-        title: "Zwei Kreisläufe im Vergleich",
+        title: "Zwei Kommunikationssituationen im Vergleich",
         intro:
-          "Die Infografik zeigt links einen hilfreichen Kreislauf und rechts einen schwierigen Kreislauf.",
+          "Die Textversion stellt mögliche Erfahrungen gegenüber. Sie beschreibt keine feste Ursache-Wirkungs-Kette.",
         cards: [
           {
             title: "Konsistenz",
-            text: "Vertrauen, weniger Ausspielen und ein hilfreicher Beziehungskreislauf.",
+            text: "Transparenz, Verlässlichkeit und ein hilfreicher Beziehungskreislauf.",
           },
           {
             title: "Gemeinsame Grenze",
-            text: "Wenn Grenzen ähnlich formuliert und eingehalten werden, gibt es weniger Streit über die Grenze selbst.",
+            text: "Gemeinsam besprochene Grenzen können Rückfragen erleichtern. Unterschiedliche Grenzen bleiben erlaubt.",
           },
           {
-            title: "Inkonsistenz",
-            text: "Widersprüchliche Reaktionen fördern Unsicherheit, Misstrauen und mehr Konflikte.",
+            title: "Unklare oder wechselnde Absprachen",
+            text: "Sie können für Beteiligte schwer verständlich sein. Was daraus folgt, ist individuell und nicht aus einer Diagnose ableitbar.",
           },
         ],
       },
@@ -266,28 +196,28 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es beim Konsistenz-Prinzip geht",
         calloutText:
-          "Wenn alle ähnlich reagieren, kann mehr Sicherheit entstehen. Konsistenz bedeutet wiedererkennbare Haltung, nicht immer dieselbe Reaktion in jeder Situation.",
+          "Wiedererkennbare Absprachen können Orientierung geben. Konsistenz bedeutet keine starre Einheitsreaktion und keine Garantie für eine bestimmte Wirkung.",
       },
       {
         title: "Merkhilfe",
         calloutTitle: "Worum es bei Konsistenz wirklich geht",
         calloutText:
-          "Nicht Härte macht den Unterschied, sondern Abstimmung: ähnliche Reaktionen, ähnliche Grenzen, weniger Ausspielen gegeneinander. Bei Gefahr oder Krise darf von normalen Regeln abgewichen und Hilfe geholt werden.",
+          "Nicht Härte macht den Unterschied, sondern transparente Abstimmung. Vereinbarungen dürfen verändert werden, wenn Bedürfnisse, Möglichkeiten oder Sicherheit es erfordern. Bei Gefahr oder Krise hat das Hilfeholen Vorrang.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
             title: "1. Kurze Absprachen",
-            text: "Machen Sie kurze Absprachen: wer sagt was, wann Pause ist und welche Grenze gemeinsam gilt.",
+            text: "Klären Sie gemeinsam, wer was übernehmen möchte, wann eine Pause möglich ist und welche Grenzen gelten.",
           },
           {
             title: "2. Gemeinsam dranbleiben",
-            text: "Wählen Sie ein oder zwei gemeinsame Grenzen und halten Sie sie möglichst gleich ein.",
+            text: "Wählen Sie ein oder zwei Absprachen, die für die Beteiligten verständlich und tragbar sind.",
           },
           {
-            title: "3. Unterschiede privat besprechen",
-            text: "Besprechen Sie Unterschiede privat – nicht im Streitmoment.",
+            title: "3. Unterschiede transparent besprechen",
+            text: "Besprechen Sie Unterschiede in einem ruhigen Moment und beziehen Sie Betroffene ein, soweit sie das möchten.",
           },
         ],
       },
@@ -299,28 +229,28 @@ export const handoutTextVersions = [
   createHandoutTextVersion("beziehungs-achtsamkeit", {
     kicker: "Textversion",
     summary:
-      "Innehalten, wahrnehmen, nicht bewerten und bewusst handeln helfen Angehörigen, aus dem Autopiloten auszusteigen und klarer zu reagieren.",
+      "Innehalten, beobachten, Unsicherheit anerkennen und bewusst wählen können helfen, aus automatischen Reaktionen auszusteigen.",
     intro: [
-      "Beziehungs-Achtsamkeit übersetzt Achtsamkeit in vier konkrete Schritte für angespannte Beziehungssituationen: innehalten, wahrnehmen, nicht bewerten und bewusst handeln.",
-      "Die Struktur ist bewusst alltagsnah: erst stoppen, dann wahrnehmen, nicht vorschnell bewerten und am Schluss bewusst einen nächsten Schritt wählen.",
+      "Beziehungs-Achtsamkeit übersetzt Achtsamkeit in vier freiwillige Schritte für angespannte Situationen: innehalten, beobachten, Deutungen offenlassen und einen nächsten Schritt wählen.",
+      "Die Struktur ist ein Angebot, kein Auftrag zur Beruhigung oder zum Beziehungserhalt. Auch Abstand, ein Gesprächsende oder Hilfeholen können passende Entscheidungen sein.",
     ],
     sections: [
       {
         title: "4 Schritte im Alltag",
         intro:
-          "Die Grafik beschreibt eine Reihenfolge, die helfen soll, impulsive Reaktionen zu unterbrechen.",
+          "Die Grafik beschreibt eine Reihenfolge, die helfen soll, vorschnelle Reaktionen zu unterbrechen.",
         cards: [
           {
             title: "Innehalten",
             text: "Moment mal – Stopp.",
           },
           {
-            title: "Wahrnehmen",
-            text: "Was passiert gerade – in mir und im Gegenüber?",
+            title: "Beobachten",
+            text: "Was beobachte ich zwischen uns – und was geschieht in mir? Was über die andere Person weiss ich nicht?",
           },
           {
-            title: "Nicht bewerten",
-            text: "Es ist, wie es ist. Eine Lösung muss nicht im selben Moment entstehen.",
+            title: "Deutungen offenlassen",
+            text: "Eine Beobachtung ist nicht automatisch eine Erklärung. Eine Lösung muss nicht im selben Moment entstehen.",
           },
           {
             title: "Bewusst handeln",
@@ -332,28 +262,28 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es bei Beziehungs-Achtsamkeit geht",
         calloutText:
-          "Innehalten – wahrnehmen – nicht bewerten – bewusst handeln. Achtsamkeit in Beziehung bedeutet auch, eigene Warnsignale ernst zu nehmen.",
+          "Innehalten – beobachten – Unsicherheit anerkennen – bewusst wählen. Eigene Warnsignale und Sicherheit haben Vorrang.",
       },
       {
         title: "Merkhilfe",
         calloutTitle: "Achtsamkeit als Reihenfolge",
         calloutText:
-          "Die vier Schritte helfen vor allem deshalb, weil sie Tempo aus dem Autopiloten nehmen: erst stoppen, dann wahrnehmen, dann einordnen, dann handeln.",
+          "Die vier Schritte können Tempo aus automatischen Reaktionen nehmen: erst stoppen, dann beobachten, Deutungen offenlassen und eine Option wählen.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Täglich üben",
-            text: "Üben Sie die ersten beiden Schritte täglich in kleinen Situationen.",
+            title: "1. Ausprobieren",
+            text: "Probieren Sie einen Schritt in einer kleinen Situation aus, wenn Sie das möchten.",
           },
           {
-            title: "2. Als Anti-Streit-Regel nutzen",
-            text: "Nutzen Sie Schritt 3 als Anti-Streit-Regel: nicht sofort bewerten und nicht sofort reagieren.",
+            title: "2. Unsicherheit benennen",
+            text: "Trennen Sie, was Sie beobachtet haben, von dem, was Sie vermuten.",
           },
           {
-            title: "3. Konkret entscheiden",
-            text: "Machen Sie Schritt 4 konkret: ein Satz, eine Grenze oder ein nächster Schritt.",
+            title: "3. Frei entscheiden",
+            text: "Wählen Sie einen Satz, eine Grenze, eine Pause, ein Gesprächsende oder zusätzliche Hilfe.",
           },
         ],
       },
@@ -366,40 +296,40 @@ export const handoutTextVersions = [
   createHandoutTextVersion("6-leitlinien", {
     kicker: "Textversion",
     summary:
-      "Sechs alltagsnahe Leitlinien helfen Angehörigen, ruhig, klar und gemeinsam zu unterstützen, ohne vorschnelle Erwartungen oder unnötige Eskalationen.",
+      "Sechs freiwillige Orientierungspunkte können helfen, Erwartungen, Kommunikation, Sicherheit, Absprachen und eigene Grenzen zu klären.",
     intro: [
-      "Die sechs Leitlinien bündeln evidenzbasierte Empfehlungen nach Gunderson in konkrete Alltagshinweise. Sie helfen, Unterstützung klar, verlässlich und begrenzt zugleich zu gestalten.",
-      "Die Aussagen bleiben bewusst praktisch: Erwartungen realistisch halten, Sicherheit fördern, zuhören, Selbstverletzung ernst nehmen, als Familie gemeinsam handeln und Grenzen durchhaltbar setzen.",
+      "Die sechs Leitlinien übersetzen familienbezogene Empfehlungen in Wahlmöglichkeiten für den Alltag. Sie schreiben Angehörigen weder Ruhe noch Einigkeit oder ständige Verfügbarkeit vor.",
+      "Welche Orientierung passt, hängt von Beziehung, Einwilligung, eigener Kraft und Sicherheit ab. Unterschiedliche Angehörige dürfen unterschiedliche Grenzen haben.",
     ],
     sections: [
       {
         title: "Die 6 Leitlinien",
         intro:
-          "Die Grafik zeigt sechs konkrete Empfehlungen, die Angehörige im Alltag Schritt für Schritt umsetzen können.",
+          "Die Textversion beschreibt sechs mögliche Orientierungspunkte. Sie müssen nicht gemeinsam oder vollständig umgesetzt werden.",
         cards: [
           {
             title: "1. Veränderung braucht Zeit",
-            text: "Halten Sie Erwartungen an schnelle Fortschritte bewusst realistisch.",
+            text: "Verläufe sind individuell. Vermeiden Sie Zeitdruck und feste Fortschrittserwartungen.",
           },
           {
-            title: "2. Ruhige Umgebung schaffen",
-            text: "Routinen und Vorhersehbarkeit geben oft mehr Sicherheit als ständige neue Lösungen.",
+            title: "2. Absprachen klären",
+            text: "Transparente Absprachen können Orientierung geben, wenn alle Beteiligten sie möchten und anpassen dürfen.",
           },
           {
-            title: "3. Zuhören statt verteidigen",
-            text: "Hilfreich kann sein, zuerst zuzuhören, ohne sich sofort zu verteidigen, auch wenn Vorwürfe unfair wirken.",
+            title: "3. Zuhören oder begrenzen",
+            text: "Sie können zuhören, nachfragen, widersprechen, pausieren oder ein Gespräch beenden. Respekt gilt für alle Beteiligten.",
           },
           {
             title: "4. Selbstverletzung ernst nehmen",
-            text: "Nicht ignorieren, nicht dramatisieren, Hilfe anbieten.",
+            text: "Direkt nach Sicherheit fragen und bei unmittelbarer Gefahr den Notruf nutzen. Sie müssen die Situation nicht allein beurteilen oder absichern.",
           },
           {
-            title: "5. Gemeinsam handeln",
-            text: "Wenn mehrere Angehörige beteiligt sind, können kurze gemeinsame Absprachen helfen.",
+            title: "5. Zuständigkeiten besprechen",
+            text: "Wenn mehrere Menschen beteiligt sind, können freiwillige Absprachen helfen. Niemand muss dieselbe Rolle oder Grenze übernehmen.",
           },
           {
-            title: "6. Klare Grenzen setzen",
-            text: "Setzen Sie klare Grenzen – aber nur solche, die Sie auch durchhalten können.",
+            title: "6. Eigene Grenzen benennen",
+            text: "Sagen Sie, was Sie übernehmen können und was nicht. Grenzen dürfen sich verändern.",
           },
         ],
       },
@@ -407,28 +337,28 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es bei den Leitlinien geht",
         calloutText:
-          "Nicht alles auf einmal: Wählen Sie eine Leitlinie pro Woche.",
+          "Die Leitlinien sind Angebote. Sie dürfen einen Punkt wählen, anpassen oder ganz weglassen.",
       },
       {
         title: "Merkhilfe",
         calloutTitle: "Lieber klein und verlässlich",
         calloutText:
-          "Die Leitlinien wirken meist nicht als Gesamtprogramm, sondern dann, wenn Sie eine davon verlässlich in den Alltag bringen.",
+          "Es gibt keine Garantie für eine bestimmte Wirkung. Sicherheit und die Autonomie aller Beteiligten haben Vorrang.",
       },
       {
         title: "Action",
         cards: [
           {
-            title: "1. Leitlinie wählen",
-            text: "Wählen Sie eine Leitlinie für diese Woche.",
+            title: "1. Passung prüfen",
+            text: "Fragen Sie sich, ob einer der Punkte für Sie überhaupt hilfreich ist.",
           },
           {
-            title: "2. Gemeinsam besprechen",
-            text: "Besprechen Sie sie, wenn möglich, mit Familie oder Mitbeteiligten.",
+            title: "2. Wünsche erfragen",
+            text: "Besprechen Sie mögliche Absprachen nur, wenn die Beteiligten das möchten.",
           },
           {
-            title: "3. Reflektieren",
-            text: "Reflektieren Sie: Was hat sich verändert?",
+            title: "3. Nachjustieren",
+            text: "Prüfen Sie, was tragbar war, und verändern oder beenden Sie die Abmachung bei Bedarf.",
           },
         ],
       },
@@ -441,32 +371,32 @@ export const handoutTextVersions = [
   createHandoutTextVersion("4-alltags-tipps", {
     kicker: "Textversion",
     summary:
-      "Kleine, konkrete Handlungen im Alltag helfen oft mehr als grosse Reden: mitüben, Fortschritte würdigen, verlässlich bleiben und gemeinsam Lösungen entwickeln.",
+      "Vier freiwillige Fragen helfen zu klären, ob Unterstützung gewünscht ist, was Sie anbieten können und wo Ihre Grenzen liegen.",
     intro: [
-      "Die vier Alltags-Tipps fokussieren auf wenige Unterstützungsformen, die Angehörige direkt ausprobieren können. Der Schwerpunkt liegt auf kleinen, tragfähigen Schritten statt auf perfekten Lösungen.",
-      "Das Handout bleibt praktisch: Sie müssen nicht alles übernehmen. Oft reicht es, verlässlich präsent zu sein, kleine Fortschritte sichtbar zu machen und hilfreiche Fragen zu stellen.",
+      "Die vier Alltags-Tipps sind keine Aufgabenliste für Angehörige. Sie helfen, Unterstützung als freiwillige, gemeinsam geklärte Möglichkeit zu verstehen.",
+      "Auch Nichtverfügbarkeit, Abstand oder eine eigene Beratung können angemessene Entscheidungen sein.",
     ],
     sections: [
       {
         title: "4 Alltags-Tipps",
         intro:
-          "Die Grafik bündelt vier konkrete Handlungsfelder für den Alltag mit einer nahestehenden Person.",
+          "Die Textversion bündelt vier Fragen für den Alltag mit einer nahestehenden Person.",
         cards: [
           {
-            title: "Übungspartner sein",
-            text: "Unterstützen Sie beim Üben neuer Skills, ohne die Übung selbst zu übernehmen.",
+            title: "Ist gemeinsames Üben gewünscht?",
+            text: "Bieten Sie es nur an, wenn die Person es möchte und Sie die Rolle freiwillig übernehmen können.",
           },
           {
-            title: "Fortschritte anerkennen",
-            text: "Würdigen Sie auch kleine Schritte und benennen Sie, was bereits gelingt.",
+            title: "Welche Veränderung ist der Person wichtig?",
+            text: "Fragen Sie nach, statt Fortschritt von aussen zu definieren oder zu bewerten.",
           },
           {
-            title: "Vorhersehbar sein",
-            text: "Klare Routinen, Absprachen und Verlässlichkeit entlasten oft mehr als spontane Rettungsversuche.",
+            title: "Welche Absprachen passen?",
+            text: "Treffen Sie nur Absprachen, die gemeinsam gewünscht, verständlich und für Sie tragbar sind.",
           },
           {
-            title: "Gemeinsam Probleme lösen",
-            text: "Fragen Sie mit, statt sofort Lösungen vorzugeben. Unterstützen statt übernehmen.",
+            title: "Welche Hilfe wird gewünscht?",
+            text: "Fragen Sie offen. Eine mögliche Antwort ist auch: keine Hilfe, später oder von jemand anderem.",
           },
         ],
       },
@@ -474,22 +404,22 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Worum es im Alltag geht",
         calloutText:
-          "Kleine Handlungen im Alltag können viel unterstützen. In akuter Gefahr haben Sicherheit und Hilfe Vorrang, nicht Alltagstipps.",
+          "Unterstützung ist ein Angebot, keine Pflicht. In akuter Gefahr haben Sicherheit und professionelle Hilfe Vorrang.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Einen Tipp wählen",
-            text: "Wählen Sie einen Tipp, den Sie diese Woche bewusst ausprobieren wollen.",
+            title: "1. Wunsch klären",
+            text: "Fragen Sie, ob Unterstützung gewünscht ist.",
           },
           {
-            title: "2. In Ruhe üben",
-            text: "Probieren Sie ihn zuerst in ruhigen Momenten aus.",
+            title: "2. Eigene Möglichkeit prüfen",
+            text: "Klären Sie, was Sie freiwillig und sicher anbieten können.",
           },
           {
-            title: "3. Hilfreich fragen",
-            text: "Fragen Sie: Was wäre jetzt hilfreich?",
+            title: "3. Offen nachfragen",
+            text: "Fragen Sie: Was wäre hilfreich – und was eher nicht?",
           },
         ],
       },

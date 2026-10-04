@@ -29,8 +29,8 @@ export const genesungItems: GenesungItem[] = [
   },
   {
     id: "fortschritt-paradox",
-    title: "Das Fortschritt-Paradox",
-    desc: "Warum Rückfälle zum Weg gehören",
+    title: "Veränderung verläuft unterschiedlich",
+    desc: "Schwierigere Phasen können vorkommen – ohne festes Muster",
     img: "/infografiken/fortschritt-das-fortschritt-paradox-v5.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v5.webp",
@@ -59,8 +59,8 @@ export const genesungItems: GenesungItem[] = [
   },
   {
     id: "rolle-genesungsprozess",
-    title: "Ihre Rolle im Genesungsprozess",
-    desc: "Was Sie tun können (und was nicht)",
+    title: "Freiwillige Unterstützung und eigene Grenzen",
+    desc: "Mögliche Angebote ohne Genesungsverantwortung",
     img: "/infografiken/manus-rolle-genesungsprozess-v1.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/manus-rolle-genesungsprozess-v1.webp",

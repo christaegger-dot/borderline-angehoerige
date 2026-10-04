@@ -73,12 +73,12 @@ describe("Selbsttest", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: /Wie ist der Diagnose-Status\?/i,
+        name: /Gibt es eine fachliche Einordnung\?/i,
       })
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", {
-        name: /Keine Diagnose, aber ich vermute Borderline/i,
+        name: /Keine Diagnose – ich suche Orientierung zu beobachtbaren Situationen/i,
       })
     ).toBeInTheDocument();
   });
@@ -171,14 +171,14 @@ describe("Selbsttest", () => {
     expect(screen.getByText("Frage 2 von 5")).toBeInTheDocument();
   });
 
-  it("führt den nicht akuten Weg weiter und ergänzt Diagnostik bei Verdacht", () => {
+  it("führt den nicht akuten Weg weiter und ergänzt fachliche Orientierung", () => {
     vi.useFakeTimers();
     render(<Selbsttest />);
     const answers = [
       /Relativ stabil/,
       /Ich fühle mich überfordert und erschöpft/,
       /Sehr stark/,
-      /Keine Diagnose, aber ich vermute Borderline/,
+      /Keine Diagnose – ich suche Orientierung zu beobachtbaren Situationen/,
       /Erschöpft – ich brauche dringend Unterstützung/,
     ];
     for (const name of answers) {

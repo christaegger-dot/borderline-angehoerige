@@ -3,7 +3,6 @@ import { m, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   CheckCircle2,
-  XCircle,
   RotateCcw,
   Lightbulb,
   Heart,
@@ -13,7 +12,7 @@ import {
 
 // ─── Types ────────────────────────────────────────────────
 
-type Technique = "SET" | "DEAR" | "Validierung";
+type Technique = "Zugewandtheit" | "DEAR" | "Validierung";
 
 interface AnswerOption {
   id: string;
@@ -32,7 +31,7 @@ interface Scenario {
   technique: Technique;
   /** Scene-setting context */
   context: string;
-  /** What the affected person says */
+  /** What one person in the fictional scene says */
   statement: string;
   /** Available response options */
   options: AnswerOption[];
@@ -43,48 +42,48 @@ interface Scenario {
 // ─── Scenario data ────────────────────────────────────────
 
 const SCENARIOS: Scenario[] = [
-  // ─── SET scenarios ──────────────────────────────────
+  // ─── Zugewandtheit + Klarheit ───────────────────────
   {
     id: "set-1",
     title: "«Du bist nie für mich da!»",
-    technique: "SET",
+    technique: "Zugewandtheit",
     context:
-      "Ihr Angehöriger ist nach einem schwierigen Tag aufgewühlt und macht Ihnen Vorwürfe. Sie möchten mit SET reagieren: Support (Unterstützung zeigen), Empathie (Gefühle anerkennen), Truth (Klarheit schaffen).",
+      "Eine nahestehende Person ist nach einem schwierigen Tag aufgewühlt und macht Ihnen Vorwürfe. Sie möchten begrenzt zugewandt reagieren, ohne ein Gefühl oder Motiv vorzugeben.",
     statement:
       "«Du bist nie für mich da! Niemand versteht mich! Du machst alles nur schlimmer!»",
     options: [
       {
         id: "a",
-        text: "«Ich bin jetzt hier bei dir und gehe nicht weg. Ich kann spüren, dass du dich gerade unglaublich allein fühlst. Lass uns gemeinsam überlegen, was dir jetzt helfen könnte.»",
+        text: "«Ich höre dir jetzt zu. Ich kann mir vorstellen, dass du dich gerade sehr allein fühlst. Lass uns gemeinsam überlegen, was dir in diesem Moment helfen könnte.»",
         correct: true,
         feedback:
-          "Diese Antwort bildet die SET-Bausteine in diesem Beispiel gut ab. S: «Ich bin hier und gehe nicht weg» zeigt Unterstützung. E: «Ich kann spüren, dass du dich allein fühlst» anerkennt das mögliche Gefühl. T: «Lass uns überlegen, was helfen könnte» bringt sachliche Klarheit.",
-        techniqueHint: "S → E → T",
+          "Diese Antwort bietet begrenzte und wahrheitsgemässe Präsenz an, formuliert das mögliche Erleben ausdrücklich vorsichtig und öffnet eine gemeinsame Frage. Auch eine Pause oder ein Gesprächsende kann passend sein.",
+        techniqueHint: "Präsenz → vorsichtig spiegeln → offen fragen",
       },
       {
         id: "b",
         text: "«Das stimmt doch gar nicht, ich bin ständig für dich da. Letzte Woche erst habe ich alles stehen und liegen lassen.»",
         correct: false,
         feedback:
-          "Das ist eine Verteidigung. Auch wenn der Inhalt stimmt, fühlt sich Ihr Angehöriger dadurch nicht gehört. In SET fehlt hier die Empathie-Komponente komplett.",
-        techniqueHint: "SET-Bausteine nicht erkennbar",
+          "Die Antwort verteidigt die eigene Sicht, ohne zuerst nach dem konkreten Erleben oder Anliegen zu fragen. Das kann ein Gespräch weiter verengen; Ihre eigene Sicht dürfen Sie später trotzdem benennen.",
+        techniqueHint: "Rechtfertigung statt offener Frage",
       },
       {
         id: "c",
         text: "«So schlimm ist es doch nicht. Versuch mal, positiv zu denken.»",
         correct: false,
         feedback:
-          "Das wirkt bagatellisierend. Der Schmerz wird heruntergespielt, was die Eskalation oft verstärkt. SET beginnt damit, den Schmerz anzuerkennen – nicht zu relativieren.",
+          "Die Formulierung kann bagatellisierend wirken, weil sie das geäusserte Erleben relativiert. Eine offene Frage lässt der Person mehr Raum, selbst zu beschreiben, was gerade wichtig ist.",
         techniqueHint: "Invalidierung",
       },
     ],
     learnNote:
-      "SET steht für Support – Empathy – Truth. Diese Übung nutzt Unterstützung, Empathie und anschliessende Klarheit als mögliche Reihenfolge. Je nach Situation kann eine andere Reihenfolge oder eine Pause passender sein; sachliche Klarheit ohne erkennbare Zugewandtheit kann als Angriff ankommen.",
+      "Begrenzte Präsenz, vorsichtiges Spiegeln und eine offene Frage können ein Gespräch unterstützen. Das ist kein festes Schema: Je nach Situation kann eine andere Reihenfolge, eine Pause oder ein Gesprächsende passender sein.",
   },
   {
     id: "set-2",
     title: "«Ich brauche dich jetzt sofort!»",
-    technique: "SET",
+    technique: "Zugewandtheit",
     context:
       "Es ist 23 Uhr. Ihr Angehöriger ruft an und verlangt, dass Sie sofort vorbeikommen. Sie haben morgen früh einen wichtigen Termin.",
     statement:
@@ -95,28 +94,28 @@ const SCENARIOS: Scenario[] = [
         text: "«Ich komme sofort. Halte durch, ich bin gleich da.»",
         correct: false,
         feedback:
-          "Das zeigt Support, aber ohne Klarheit (Truth) opfern Sie Ihre eigene Grenze. Langfristig führt das zu Erschöpfung und dem Gefühl, erpresst zu werden.",
-        techniqueHint: "Nur S, kein T",
+          "Das bietet sofortige persönliche Hilfe an, prüft aber weder die mögliche akute Gefahr noch Ihre eigene Grenze. Selbst hinzufahren ersetzt keine professionelle Einschätzung und kann Ihnen die alleinige Verantwortung zuschieben.",
+        techniqueHint: "Hilfeversprechen ohne Sicherheitsklärung",
       },
       {
         id: "b",
-        text: "«Ich höre, dass es dir gerade ganz schlecht geht, und das nehme ich ernst. Ich bin jetzt am Telefon für dich da. Ich kann heute Nacht nicht kommen, aber lass uns schauen, was dir jetzt helfen kann – möchtest du die 143 anrufen?»",
+        text: "«Ich nehme das ernst: Denkst du daran, dir etwas anzutun, oder bist du unmittelbar in Gefahr? Ich kann heute Nacht nicht kommen. Bei akuter Gefahr rufen wir jetzt 144; sonst holen wir eine professionelle Einschätzung beim psychiatrischen Notfalldienst. 143 kann zusätzlich im Gespräch entlasten.»",
         correct: true,
         feedback:
-          "Diese Antwort verbindet in diesem Beispiel Unterstützung, Empathie und eine klare Grenze mit einer Alternative (143). Eine andere sichere Formulierung kann ebenfalls passen.",
-        techniqueHint: "S → E → T mit Alternative",
+          "Diese Antwort nimmt die unklare Sicherheitsäusserung ernst, fragt direkt nach möglicher Selbstgefährdung, benennt die eigene Grenze und ordnet die Hilfen korrekt: 144 bei akuter Gefahr, psychiatrischer Notfalldienst zur Einschätzung und 143 nur ergänzend für ein entlastendes Gespräch.",
+        techniqueHint: "Sicherheit klären → Grenze → passende Hilfe",
       },
       {
         id: "c",
         text: "«Du rufst immer so spät an. Das geht nicht. Ruf eine Beratungsstelle an.»",
         correct: false,
         feedback:
-          "Die Grenze (T) ist wichtig, aber ohne S und E klingt es kalt und abweisend. Das Gefühl des Angehörigen wird ignoriert.",
+          "Die Grenze ist wichtig. Die Antwort klärt jedoch nicht, ob eine unmittelbare Gefahr oder Selbstgefährdung vorliegt, und nennt keine passend abgestufte professionelle Hilfe.",
         techniqueHint: "Nur T, ohne S und E",
       },
     ],
     learnNote:
-      "Grenzen setzen (Truth) ist ein wichtiger Teil von SET. Zugewandtheit und Empathie können helfen, eine Grenze verständlicher zu machen; sie garantieren aber keine bestimmte Reaktion und sind keine Voraussetzung dafür, eine nötige Grenze zu setzen.",
+      "Bei einer unklaren Aussage über die eigene Sicherheit hat die direkte Gefährdungsabklärung Vorrang vor einer Kommunikationsmethode. Fragen Sie direkt und ruhig nach Suizidgedanken und unmittelbarer Gefahr. Bei möglicher unmittelbarer Lebensgefahr 144 rufen; sonst professionelle psychiatrische Einschätzung einholen. 143 bietet zusätzliche Gesprächsentlastung, ist aber kein Einsatzdienst. Eigene Grenzen und Sicherheit bleiben wichtig.",
   },
 
   // ─── DEAR MAN scenarios ─────────────────────────────
@@ -162,23 +161,23 @@ const SCENARIOS: Scenario[] = [
     title: "Abmachung neu verhandeln",
     technique: "DEAR",
     context:
-      "Ihr Angehöriger hatte versprochen, sich um einen Therapieplatz zu kümmern. Nach zwei Monaten ist nichts passiert. Sie möchten das ohne Vorwurf ansprechen.",
+      "Ihr Angehöriger hatte vor zwei Monaten erwähnt, vielleicht einen Therapieplatz suchen zu wollen. Sie machen sich Sorgen und möchten nachfragen, ohne die Behandlungsentscheidung zu übernehmen.",
     statement: "Wie formulieren Sie Ihr Anliegen?",
     options: [
       {
         id: "a",
-        text: "«Du hast versprochen, dich um Therapie zu kümmern. Jetzt sind zwei Monate rum und nichts ist passiert. Ich bin enttäuscht.»",
+        text: "«Du hast versprochen, dich um Therapie zu kümmern. Jetzt sind zwei Monate rum und nichts ist passiert. Du musst das endlich angehen.»",
         correct: false,
         feedback:
-          "Die Beschreibung stimmt, das Gefühl auch – aber es fehlt ein konkreter Wunsch (A) und eine positive Verstärkung (R). Ohne klaren nächsten Schritt bleibt das Gespräch beim Vorwurf stehen.",
-        techniqueHint: "D + E, aber ohne A und R",
+          "Die Formulierung macht aus einer früheren Äusserung eine Pflicht und übernimmt die Behandlungsentscheidung. Sie können Ihre Sorge benennen, ohne eine Therapieplatzsuche zu verlangen.",
+        techniqueHint: "Druck statt eigener Bitte",
       },
       {
         id: "b",
-        text: "«Vor zwei Monaten haben wir besprochen, dass du einen Therapieplatz suchst. Ich mache mir Sorgen, weil mir dein Wohlergehen wichtig ist. Kann ich dich unterstützen, z.B. bei der Suche nach Therapeut:innen? Ich glaube, das könnte uns beiden helfen, uns sicherer zu fühlen.»",
+        text: "«Vor zwei Monaten hast du eine mögliche Therapieplatzsuche erwähnt. Ich merke, dass ich mir Sorgen mache. Möchtest du darüber sprechen – und gibt es eine Unterstützung von mir, die du dir wünschst? Ob du eine Therapie suchst, entscheidest du.»",
         correct: true,
         feedback:
-          "D: Sachliche Erinnerung (vor zwei Monaten besprochen). E: Ich-Botschaft (mache mir Sorgen). A: Konkretes Unterstützungsangebot (Suche helfen). R: Positive Verstärkung (uns beiden sicherer fühlen).",
+          "D: Die frühere Äusserung wird sachlich erinnert. E: Die Sorge bleibt eine Ich-Botschaft. A: Das Gespräch und mögliche Unterstützung werden mit Einverständnis angeboten. Die Behandlungsentscheidung bleibt ausdrücklich bei der betroffenen Person.",
         techniqueHint: "D → E → A → R",
       },
       {
@@ -186,12 +185,12 @@ const SCENARIOS: Scenario[] = [
         text: "«Ist schon okay, du machst das, wenn du bereit bist. Ich will dich nicht drängen.»",
         correct: false,
         feedback:
-          "Das klingt verständnisvoll, unterdrückt aber Ihre berechtigte Sorge. DEAR MAN ermutigt dazu, eigene Bedürfnisse zu äussern – «nicht drängen» kann auch «nicht ernst nehmen» bedeuten.",
-        techniqueHint: "Vermeidung statt DEAR",
+          "Nicht zu drängen kann eine respektvolle Entscheidung sein, besonders wenn keine akute Gefahr besteht. Für diese DEAR-Übung fehlt lediglich eine konkrete Ich-Botschaft oder offene Frage; die Formulierung ist deshalb nicht grundsätzlich falsch.",
+        techniqueHint: "Respektvoll, aber ohne eigene Bitte",
       },
     ],
     learnNote:
-      "DEAR MAN funktioniert besonders gut, wenn Sie statt Vorwürfen ein konkretes Unterstützungsangebot machen. Das A (Assert) muss kein Ultimatum sein – ein Angebot zur Zusammenarbeit ist oft wirksamer.",
+      "DEAR MAN kann helfen, Sorge und einen eigenen Wunsch ohne Vorwurf auszudrücken. Unterstützung wird angeboten, nicht vorausgesetzt; die betroffene Person darf sie ablehnen und entscheidet selbst über Behandlung. Bei akuter Gefahr gelten die Soforthilfewege.",
   },
 
   // ─── Validierungs-Szenarien ─────────────────────────
@@ -206,31 +205,31 @@ const SCENARIOS: Scenario[] = [
     options: [
       {
         id: "a",
-        text: "«Das ist frustrierend. Vielleicht war er nur gestresst, versuch es nochmal bei einem anderen Arzt.»",
+        text: "«Das klingt frustrierend. Vielleicht war er nur gestresst, versuch es nochmal bei einem anderen Arzt.»",
         correct: false,
         feedback:
-          "Der erste Satz ist gut (Gefühl benennen), aber dann wird sofort relativiert und eine Lösung angeboten. Das unterbricht die Validierung und vermittelt: «Dein Gefühl ist nicht so wichtig, hier ist die Lösung.»",
-        techniqueHint: "Stufe 1, dann Lösungsmodus",
+          "Der erste Satz spiegelt das mögliche Erleben vorsichtig. Danach folgen jedoch eine Erklärung und ein Lösungsvorschlag, bevor geklärt ist, was die Person gerade braucht. Das kann den Fokus verschieben; ein Lösungsvorschlag ist nicht automatisch falsch und kann passen, wenn er gewünscht ist.",
+        techniqueHint: "Erklärung und Lösung vor offener Nachfrage",
       },
       {
         id: "b",
-        text: "«Du kommst vom Arzt und fühlst dich nicht gehört. Das muss wirklich enttäuschend sein – du hast Mut gebraucht, um dort hinzugehen, und dann das Gefühl, ignoriert zu werden. Ich kann nachvollziehen, dass dich das wütend macht.»",
+        text: "«Du kommst vom Arzt und fühlst dich nicht gehört. War das für dich eher enttäuschend, wütend machend oder ganz anders?»",
         correct: true,
         feedback:
-          "Diese Antwort nutzt in diesem Beispiel mehrere Formen der Validierung: Spiegeln, eine vorsichtige Deutung und Nachvollziehen. Das Gegenüber darf die Deutung korrigieren; andere Formulierungen können ebenfalls passen.",
-        techniqueHint: "Stufe 2 → 3 → 4",
+          "Die Antwort spiegelt nur das ausdrücklich Gesagte und fragt offen nach dem Erleben. Das Gegenüber muss keine vorgegebene Deutung korrigieren; andere Formulierungen können ebenfalls passen.",
+        techniqueHint: "Spiegeln + offen nachfragen",
       },
       {
         id: "c",
         text: "«Ach, das kenne ich. Bei meinem letzten Arztbesuch war es genauso. Das ist leider normal heutzutage.»",
         correct: false,
         feedback:
-          "Das verlagert den Fokus auf Ihre eigene Erfahrung. Auch wenn Sie Mitgefühl zeigen wollen – Ihr Angehöriger fühlt sich dadurch erneut nicht gehört. Validierung heisst: Es geht jetzt um dich.",
-        techniqueHint: "Thema gekapert",
+          "Eine eigene Erfahrung kann verbinden. Hier kann sie den Fokus aber verschieben, bevor das aktuelle Erleben genauer gehört wurde; die Verallgemeinerung «normal heutzutage» kann den konkreten Arztbesuch zusätzlich überdecken. Die Formulierung ist nicht automatisch falsch – eine offene Nachfrage oder die Frage, ob die eigene Erfahrung gerade hilfreich ist, lässt mehr Wahl.",
+        techniqueHint: "Eigene Erfahrung vor offener Nachfrage",
       },
     ],
     learnNote:
-      "Validierung bedeutet nicht, einer Aussage zuzustimmen. Es bedeutet, das Gefühl dahinter anzuerkennen. Stufe 2 (Spiegeln) + Stufe 3 (Zwischen den Zeilen lesen) + Stufe 4 (Nachvollziehen) ist eine kraftvolle Kombination.",
+      "Validierung bedeutet nicht, einer Aussage zuzustimmen. Spiegeln Sie, was tatsächlich gesagt wurde, und fragen Sie offen nach, statt ein verborgenes Gefühl oder Motiv festzulegen. Das eigene Erleben kann verbinden oder den Fokus verschieben; fragen Sie im Zweifel, ob es gerade hilfreich ist.",
   },
   {
     id: "val-2",
@@ -262,12 +261,12 @@ const SCENARIOS: Scenario[] = [
         text: "«Ich höre, dass du gerade das Gefühl hast, es bringt nichts. Nach so einem Rückschlag ist es verständlich, dass sich alles sinnlos anfühlt. Ich bin trotzdem hier.»",
         correct: true,
         feedback:
-          "Stufe 2 (Spiegeln: «das Gefühl, es bringt nichts»), Stufe 4 (Nachvollziehen: «nach einem Rückschlag verständlich»), S aus SET (Präsenz: «Ich bin trotzdem hier»). Die Hoffnungslosigkeit wird weder bestätigt noch bekämpft.",
-        techniqueHint: "Stufe 2 → 4 + Support",
+          "Die Antwort spiegelt die Aussage, ordnet sie vorsichtig in den genannten Rückschlag ein und bietet begrenzte Präsenz an. Die Hoffnungslosigkeit wird weder bestätigt noch bekämpft.",
+        techniqueHint: "Spiegeln → vorsichtig einordnen → Präsenz anbieten",
       },
     ],
     learnNote:
-      "Bei Hoffnungslosigkeit ist der Impuls gross, dagegen zu argumentieren. Aber: Erst wenn das Gefühl Raum bekommt, wird der Mensch wieder offen für neue Perspektiven. Validierung ist die Brücke.",
+      "Bei Hoffnungslosigkeit ist der Impuls gross, dagegen zu argumentieren. Anerkennung kann eher Raum für weitere Perspektiven schaffen, garantiert aber keine bestimmte Reaktion. Bei Hinweisen auf Selbstgefährdung geht Sicherheitsklärung vor Gesprächstechnik.",
   },
 ];
 
@@ -281,8 +280,8 @@ const TECHNIQUE_META: Record<
     icon: React.ElementType;
   }
 > = {
-  SET: {
-    label: "SET-Kommunikation",
+  Zugewandtheit: {
+    label: "Zugewandtheit & Klarheit",
     tintVar: "--color-sage-dark",
     icon: Heart,
   },
@@ -301,10 +300,10 @@ const TECHNIQUE_META: Record<
 const TECHNIQUE_STEPS: Partial<
   Record<Technique, { letter: string; label: string; desc: string }[]>
 > = {
-  SET: [
-    { letter: "S", label: "Support", desc: "Unterstützung zeigen" },
-    { letter: "E", label: "Empathie", desc: "Gefühle anerkennen" },
-    { letter: "T", label: "Truth", desc: "Sachliche Klarheit" },
+  Zugewandtheit: [
+    { letter: "1", label: "Präsenz", desc: "Nur anbieten, was möglich ist" },
+    { letter: "2", label: "Offenheit", desc: "Fragen statt festlegen" },
+    { letter: "3", label: "Klarheit", desc: "Grenzen und Sicherheit benennen" },
   ],
   DEAR: [
     { letter: "D", label: "Describe", desc: "Situation beschreiben" },
@@ -318,7 +317,7 @@ function groupByTechnique(
   scenarios: Scenario[]
 ): Record<Technique, Scenario[]> {
   const grouped: Record<Technique, Scenario[]> = {
-    SET: [],
+    Zugewandtheit: [],
     DEAR: [],
     Validierung: [],
   };
@@ -461,8 +460,8 @@ function ScenarioCard({
               borderClass = "border-green-500/60";
               bgClass = "bg-green-50";
             } else if (showResult && isSelected && !option.correct) {
-              borderClass = "border-red-400/60";
-              bgClass = "bg-red-50";
+              borderClass = "border-blue-400/50";
+              bgClass = "bg-blue-50/60";
             } else if (showResult && option.correct) {
               borderClass = "border-green-400/40";
               bgClass = "bg-green-50/50";
@@ -485,7 +484,7 @@ function ScenarioCard({
                     {showResult && option.correct ? (
                       <CheckCircle2 className="w-5 h-5 text-green-600" />
                     ) : showResult && isSelected && !option.correct ? (
-                      <XCircle className="w-5 h-5 text-red-500" />
+                      <Lightbulb className="w-5 h-5 text-blue-600" />
                     ) : (
                       <div className="w-5 h-5 rounded-full border-2 border-border" />
                     )}
@@ -509,7 +508,7 @@ function ScenarioCard({
                         className={`mt-3 pt-3 border-t text-sm leading-relaxed ${
                           option.correct
                             ? "border-green-200 text-green-800"
-                            : "border-red-200 text-red-700"
+                            : "border-blue-200 text-blue-800"
                         }`}
                       >
                         <p>{option.feedback}</p>
@@ -527,7 +526,7 @@ function ScenarioCard({
           })}
         </div>
 
-        {/* Correct answer reveal (if wrong answer selected) */}
+        {/* Preferred alternative for this didactic example */}
         <AnimatePresence>
           {revealed && selectedOption && !selectedOption.correct && (
             <m.div
@@ -581,7 +580,7 @@ function ScenarioCard({
               className="gap-1.5 text-muted-foreground"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              Nochmal versuchen
+              Andere Antwort prüfen
             </Button>
           </div>
         )}
@@ -691,11 +690,13 @@ export default function KommunikationsUebung() {
     <div className="space-y-10">
       <p className="text-sm leading-relaxed text-muted-foreground">
         Die folgenden Szenarien sind fachlich adaptierte Übungsbeispiele. Sie
-        zeigen mögliche Formulierungen, keine universellen Gesprächsrezepte.
-        Kontext, Beziehung und Sicherheit können eine andere Antwort oder eine
+        zeigen mögliche Formulierungen, keine universellen Gesprächsrezepte. Die
+        Rollen sind erfunden und nicht aus einer Diagnose ableitbar; die Übung
+        trainiert bewusst nur eine mögliche Sprecherposition. Kontext, Beziehung
+        und Sicherheit können eine andere Antwort, einen Rollenwechsel oder eine
         Pause sinnvoll machen; keine Formulierung garantiert den Verlauf.
       </p>
-      {(["SET", "DEAR", "Validierung"] as Technique[]).map(
+      {(["Zugewandtheit", "DEAR", "Validierung"] as Technique[]).map(
         tech =>
           grouped[tech].length > 0 && (
             <TechniqueSection

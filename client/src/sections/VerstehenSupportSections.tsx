@@ -18,16 +18,16 @@ export function VerstehenRelationshipSection() {
     <ContentSection
       variant="editorial"
       collapsible={false}
-      title="Warum gerade nahe Beziehungen so schnell kippen können"
+      title="Wenn Nähe und Belastung zusammenkommen"
       id="beziehungsdynamik"
     >
       <EditorialProse>
         <p>
-          Viele Menschen mit Borderline haben ihre grössten Schwierigkeiten
-          nicht in oberflächlichen Kontakten, sondern in engen Beziehungen.
-          Gerade dort, wo viel Bindung, Hoffnung und Verletzbarkeit im Spiel
-          sind, werden Unsicherheit, Unklarheit oder Distanz besonders
-          schmerzhaft erlebt.
+          In engen Beziehungen können Bindung, Hoffnung, Verletzbarkeit und
+          unterschiedliche Bedürfnisse nach Nähe oder Abstand besonders viel
+          Gewicht bekommen. Manche Menschen mit Borderline erleben dabei starke
+          Unsicherheit oder Schmerz; andere erleben Beziehungen anders. Ähnliche
+          Wechselwirkungen kommen auch ohne Borderline-Diagnose vor.
         </p>
       </EditorialProse>
       <ul className="mt-6 space-y-6">
@@ -40,9 +40,10 @@ export function VerstehenRelationshipSection() {
       </ul>
       <div className="mt-6">
         <EditorialPullQuote>
-          Gerade deshalb erleben Angehörige oft etwas Paradoxes: Je wichtiger
-          sie der betroffenen Person sind, desto stärker können Konflikte,
-          Vorwürfe oder Grenztests ausfallen.
+          Gerade deshalb können Konflikte in engen Beziehungen heftiger erlebt
+          werden. Vorwürfe oder rasch wechselnde Bewertungen sind mögliche
+          Reaktionen unter hoher Anspannung, aber kein verlässlicher Hinweis auf
+          Absicht oder Charakter.
         </EditorialPullQuote>
       </div>
       <p className="editorial-small-copy mt-6">
@@ -56,7 +57,7 @@ export function VerstehenRelationshipSection() {
       <EvidenceNote
         variant="editorial"
         title="Quellen zu Beziehungsmustern und Validierung"
-        definition="Die beschriebenen Muster sind klinisch gut belegt, treten aber individuell unterschiedlich stark auf und erklären Verhalten nicht vollständig."
+        definition="Die beschriebenen Erfahrungen und Wechselwirkungen können vorkommen, sind aber weder diagnoseexklusiv noch bei jeder Person vorhanden. Sie erklären Verhalten nicht vollständig."
         reviewDate="24.03.2026"
         sources={[
           {
@@ -161,17 +162,17 @@ export function VerstehenBegleitOverviewSection() {
   return (
     <ContentSection
       variant="editorial"
-      title="Begleiterkrankungen — selten allein"
+      title="Begleiterkrankungen — mögliche Kombinationen"
       id="begleiterkrankungen-ueberblick"
-      preview="Borderline tritt selten isoliert auf. Komorbiditäten verschärfen die Belastung und verändern, was Angehörige beobachten."
+      preview="In Studien hatten viele, aber nicht alle Menschen mit Borderline weitere psychische Diagnosen. Welche Kombination vorliegt, wird individuell abgeklärt."
     >
       <EditorialProse>
         <p>
-          Borderline tritt selten allein auf. Studien zeigen, dass die meisten
-          Betroffenen im Verlauf ihres Lebens auch andere psychische
-          Erkrankungen entwickeln. Für Angehörige bedeutet das: Vieles, was Sie
-          beobachten, gehört möglicherweise nicht (nur) zu Borderline, sondern
-          zu einer parallelen Belastung — und braucht eigene Aufmerksamkeit.
+          In Studien hatten viele, aber nicht alle Menschen mit Borderline im
+          Verlauf ihres Lebens auch andere psychische Diagnosen. Welche
+          Beschwerden zu welcher Erkrankung gehören oder unabhängig davon
+          bestehen, lässt sich nur individuell fachlich beurteilen. Angehörige
+          müssen diese Zuordnung nicht selbst vornehmen.
         </p>
       </EditorialProse>
 

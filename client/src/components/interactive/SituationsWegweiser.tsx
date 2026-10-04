@@ -42,10 +42,16 @@ const TREE: TreeNode[] = [
     choices: [
       { label: "Suizidgedanken oder Suizidankündigung", nextId: "suizid" },
       { label: "Selbstverletzung", nextId: "selbstverletzung" },
-      { label: "Starker Wutausbruch oder Aggression", nextId: "aggression" },
+      {
+        label: "Ein Gespräch kippt oder ich fühle mich bedroht",
+        nextId: "gespraech_bedrohung",
+      },
       { label: "Kontaktabbruch / Rückzug", nextId: "kontaktabbruch" },
-      { label: "Starke Verzweiflung / Weinkrampf", nextId: "verzweiflung" },
-      { label: "Druck, Vorwürfe oder Drohungen", nextId: "manipulation" },
+      {
+        label: "Starke Verzweiflung oder anhaltendes Weinen",
+        nextId: "verzweiflung",
+      },
+      { label: "Druck, Vorwürfe oder Drohungen", nextId: "druck_drohungen" },
     ],
   },
 
@@ -97,7 +103,7 @@ const TREE: TreeNode[] = [
         id: "s3",
         text: "Bis zur Hilfe die eigene Sicherheit beachten",
         detail:
-          "Bleiben Sie bei der Person oder in Kontakt, soweit dies für Sie sicher möglich ist. Versuchen Sie nicht, gefährliche Gegenstände gegen Widerstand wegzunehmen.",
+          "Bleiben Sie bei der Person oder in Kontakt, soweit dies für Sie sicher möglich ist. Nehmen Sie gefährliche Gegenstände nicht gegen Widerstand weg und greifen Sie nicht körperlich ein.",
         link: { href: "/soforthilfe", label: "Alle Notfallkontakte" },
       },
     ],
@@ -270,37 +276,41 @@ const TREE: TreeNode[] = [
     ],
   },
 
-  // ─── AGGRESSION ───
+  // ─── GESPRÄCH ESKALIERT ODER BEDROHUNG ───
   {
-    id: "aggression",
-    question: "Fühlen Sie sich körperlich bedroht?",
-    subtitle: "Ihre Sicherheit geht vor.",
+    id: "gespraech_bedrohung",
+    question: "Fühlen Sie sich bedroht, eingeschüchtert oder unter Zwang?",
+    subtitle:
+      "Auch Einschüchterung, Stalking oder Zwang können Ihre Sicherheit betreffen – nicht nur körperliche Gewalt.",
     choices: [
       {
-        label: "Ja – ich fühle mich unsicher oder bedroht",
-        nextId: "aggression_gefahr",
+        label:
+          "Ja – ich erlebe Bedrohung, Einschüchterung, Stalking, Zwang oder Gewalt",
+        nextId: "bedrohung_akut",
       },
       {
-        label: "Nein – starke Emotionen, aber keine körperliche Bedrohung",
-        nextId: "aggression_verbal",
+        label:
+          "Nein – das Gespräch ist angespannt, aber ich fühle mich nicht bedroht oder unter Zwang",
+        nextId: "gespraech_angespannt",
       },
     ],
   },
   {
-    id: "aggression_gefahr",
-    question: "Sie fühlen sich bedroht",
+    id: "bedrohung_akut",
+    question: "Ihre Sicherheit hat Vorrang",
     safetyCritical: true,
     steps: [
       {
         id: "s1",
         text: "Bringen Sie sich in Sicherheit",
         detail:
-          "Verlassen Sie den Raum oder die Wohnung. Ihre Sicherheit hat absolute Priorität.",
+          "Schaffen Sie Abstand oder gehen Sie an einen sicheren Ort, wenn das möglich ist. Sie müssen kein Gespräch fortsetzen, um die Situation zu klären.",
       },
       {
         id: "s2",
         text: "Rufen Sie bei Bedarf die Polizei",
-        detail: "Wenn Sie sich bedroht fühlen oder Gewalt droht.",
+        detail:
+          "Bei akuter Bedrohung oder Gewalt rufen Sie 117. Beschreiben Sie, was Sie erleben oder beobachten; Sie müssen kein Motiv beurteilen.",
         emergency: true,
         kontakte: ["ROT_117"],
       },
@@ -308,7 +318,7 @@ const TREE: TreeNode[] = [
         id: "s3",
         text: "Sie tragen keine Schuld",
         detail:
-          "Gewalt ist nie akzeptabel, auch nicht in einer Krise. Sich zu schützen ist kein Verrat.",
+          "Bedrohung, Einschüchterung, Stalking, Zwang und Gewalt sind nicht akzeptabel. Sie müssen kein Motiv beurteilen, um sich zu schützen. Sich zu schützen ist kein Verrat.",
       },
       {
         id: "s4",
@@ -320,7 +330,7 @@ const TREE: TreeNode[] = [
     ],
   },
   {
-    id: "aggression_verbal",
+    id: "gespraech_angespannt",
     question: "Wenn ein Gespräch eskaliert",
     subtitle:
       "Wählen Sie, was gerade möglich ist. Sie müssen diese Vorschläge nicht der Reihe nach umsetzen. Bei Bedrohung geht Ihre Sicherheit vor.",
@@ -457,9 +467,9 @@ const TREE: TreeNode[] = [
     ],
   },
 
-  // ─── MANIPULATION ───
+  // ─── DRUCK UND DROHUNGEN ───
   {
-    id: "manipulation",
+    id: "druck_drohungen",
     question: "Mit Druck und Drohungen umgehen",
     safetyCritical: true,
     subtitle:
@@ -467,9 +477,9 @@ const TREE: TreeNode[] = [
     steps: [
       {
         id: "s1",
-        text: "Erkennen Sie das Muster",
+        text: "Konkrete Aussage und Wirkung benennen",
         detail:
-          "Sätze wie «Wenn du gehst, bringe ich mich um» können enormen Druck erzeugen. Sie müssen nicht entscheiden, welches Motiv dahintersteht, um Hilfe zu holen und sich zu schützen.",
+          "Benennen Sie, was gesagt wurde und was es bei Ihnen auslöst. Sätze wie «Wenn du gehst, bringe ich mich um» können enormen Druck erzeugen. Sie müssen kein Motiv zuordnen, um Hilfe zu holen und sich zu schützen.",
       },
       {
         id: "s2",
@@ -708,7 +718,7 @@ export default function SituationsWegweiser() {
           >
             {/*
             Sicherheits-kritische Resultat-Blöcke (suizid_akut,
-            suizid_gespraech, selbstverletzung_schwer, aggression_gefahr)
+            suizid_gespraech, selbstverletzung_schwer, bedrohung_akut)
             bekommen alert-border-l + alert-wash bg. Per-Brief-Erlaubnis
             analog Grenzen-`gewalt`-Sektion.
           */}

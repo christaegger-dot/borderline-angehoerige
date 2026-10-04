@@ -69,7 +69,11 @@ describe("accessible P1 handout visualizations", () => {
   it("keeps the three conversation steps and the safety stop visible", () => {
     renderVisualization("gespraeche-kippen");
 
-    for (const title of ["Beruhigen", "Verbinden", "Begrenzen oder beenden"]) {
+    for (const title of [
+      "Eigenes Tempo senken",
+      "Verbinden",
+      "Begrenzen oder beenden",
+    ]) {
       expect(screen.getByRole("heading", { name: title })).toBeInTheDocument();
     }
     expect(

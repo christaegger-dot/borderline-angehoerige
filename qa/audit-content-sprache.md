@@ -219,6 +219,14 @@
 
 ### 1.7 Stigma- und Sensibilitaets-Check
 
+> **Überholt seit 4. Oktober 2026.** Die damalige Einschätzung verwendete
+> keinen vollständig beidseitigen Anti-Stigma-Massstab und prüfte insbesondere
+> Textversionen, Suchbegriffe, Visualisierungen, Autonomie und
+> Herstellungsverantwortung nicht ausreichend zusammen. Massgeblich ist jetzt
+> `docs/governance/11-anti-stigma-und-perspektivenstandard.md`. Die Aussage
+> «kein harter Stigma-Fund» darf nicht mehr als aktueller Freigabenachweis
+> verwendet werden.
+
 - Insgesamt sehr gute Sensibilitaet.
 - Positiv:
   - `Manipulation` wird nicht behauptet, sondern explizit relativiert, z. B. `client/src/pages/FAQ.tsx:81`

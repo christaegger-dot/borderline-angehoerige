@@ -1,6 +1,6 @@
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { promisify } from "node:util";
 import { JSDOM } from "jsdom";
@@ -18,6 +18,7 @@ type ManifestAsset = {
 
 type ManifestEntry = {
   id: string;
+  version: string;
   sourceHtml: string;
   sourceHtmlSha256: string;
   pdf: ManifestAsset & { pages: number; tagged: boolean };
@@ -43,6 +44,12 @@ const manifestPath = path.join(
   repoRoot,
   "handouts/p1-illustrations/manifest.json"
 );
+const publicRoot = path.join(repoRoot, "client/public");
+const builtPublicRoot = path.join(repoRoot, "dist/public");
+const withheldRoot = path.join(
+  repoRoot,
+  "qa/withheld-handouts/p1-illustrations-v3-2026-10-04"
+);
 const preflightReportPath = path.join(
   repoRoot,
   "qa/p1-illustrations/pdf-preflight-v3-2026-10-04.json"
@@ -65,6 +72,11 @@ const expectedIds = [
   "gespraeche-kippen",
   "beispiel-dialog",
 ];
+const expectedVersions: Record<string, string> = {
+  "radikale-akzeptanz": "puk-radikale-akzeptanz-v3",
+  "gespraeche-kippen": "puk-gespraeche-kippen-v3",
+  "beispiel-dialog": "puk-beispiel-dialog-v3",
+};
 
 const editorialTextContracts: Record<
   string,
@@ -101,8 +113,50 @@ function normalizeText(value: string) {
   return value.normalize("NFKC").replace(/\s+/g, " ").trim();
 }
 
+function resolveWithheldAsset(manifestAssetPath: string) {
+  const normalizedManifestPath = manifestAssetPath.replaceAll("\\", "/");
+  const publicPrefix = "client/public/";
+  if (!normalizedManifestPath.startsWith(publicPrefix)) {
+    fail(
+      `manifest asset path must remain rooted in ${publicPrefix}: ${manifestAssetPath}`
+    );
+  }
+
+  const publicRelativePath = normalizedManifestPath.slice(publicPrefix.length);
+  if (
+    !publicRelativePath ||
+    path.isAbsolute(publicRelativePath) ||
+    publicRelativePath.split("/").includes("..")
+  ) {
+    fail(`manifest asset path is unsafe: ${manifestAssetPath}`);
+  }
+
+  const publicPath = path.join(publicRoot, publicRelativePath);
+  if (existsSync(publicPath)) {
+    fail(
+      `${manifestAssetPath} is a draft asset and must not be present in client/public`
+    );
+  }
+
+  const builtPublicPath = path.join(builtPublicRoot, publicRelativePath);
+  if (existsSync(builtPublicPath)) {
+    fail(
+      `${path.relative(repoRoot, builtPublicPath)} contains a withheld draft asset`
+    );
+  }
+
+  const withheldPath = path.join(withheldRoot, publicRelativePath);
+  if (!existsSync(withheldPath)) {
+    fail(
+      `${path.relative(repoRoot, withheldPath)} is missing from the withheld review package`
+    );
+  }
+
+  return withheldPath;
+}
+
 if (!existsSync(manifestPath)) {
-  fail("manifest.json is missing; run pnpm generate:p1-illustrations first");
+  fail("manifest.json is missing; restore the reviewed manifest evidence");
 }
 
 const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as Manifest;
@@ -145,6 +199,13 @@ if (
 ) {
   fail("manifest IDs or ordering do not match the P1 contract");
 }
+for (const entry of manifest.entries) {
+  if (entry.version !== expectedVersions[entry.id]) {
+    fail(
+      `manifest version does not match the reviewed V3 contract: ${entry.id}`
+    );
+  }
+}
 
 for (const reportPath of [preflightReportPath, veraPdfReportPath]) {
   if (!existsSync(reportPath)) {
@@ -160,7 +221,11 @@ const preflightReport = JSON.parse(
   all_asset_hashes_match_manifest: boolean;
   entries: Array<{
     id: string;
-    assets: { pdf: { sha256: string; manifest_match: boolean } };
+    version: string;
+    assets: Record<
+      "pdf" | "webp" | "thumbnail",
+      ManifestAsset & { manifest_match: boolean }
+    >;
   }>;
 };
 if (
@@ -204,12 +269,20 @@ for (const entry of manifest.entries) {
   const preflightEntry = preflightReport.entries.find(
     candidate => candidate.id === entry.id
   );
-  if (
-    !preflightEntry ||
-    !preflightEntry.assets.pdf.manifest_match ||
-    preflightEntry.assets.pdf.sha256 !== entry.pdf.sha256
-  ) {
-    fail(`PDF preflight evidence is stale for ${entry.id}`);
+  if (!preflightEntry || preflightEntry.version !== entry.version) {
+    fail(`asset preflight evidence is stale for ${entry.id}`);
+  }
+  for (const assetKind of ["pdf", "webp", "thumbnail"] as const) {
+    const manifestAsset = entry[assetKind];
+    const preflightAsset = preflightEntry.assets[assetKind];
+    if (
+      !preflightAsset.manifest_match ||
+      preflightAsset.path !== manifestAsset.path ||
+      preflightAsset.bytes !== manifestAsset.bytes ||
+      preflightAsset.sha256 !== manifestAsset.sha256
+    ) {
+      fail(`asset preflight evidence is stale for ${entry.id}/${assetKind}`);
+    }
   }
   const veraPdfEntry = veraPdfReport.entries.find(
     candidate => candidate.id === entry.id
@@ -282,24 +355,34 @@ for (const entry of manifest.entries) {
     );
   }
 
-  for (const asset of [entry.pdf, entry.webp, entry.thumbnail]) {
-    const assetPath = path.join(repoRoot, asset.path);
-    if (!existsSync(assetPath)) fail(`${asset.path} is missing`);
-    if (sha256(assetPath) !== asset.sha256) {
-      fail(`${asset.path} hash differs from manifest`);
+  const withheldAssets = [entry.pdf, entry.webp, entry.thumbnail].map(asset => {
+    const withheldPath = resolveWithheldAsset(asset.path);
+    if (statSync(withheldPath).size !== asset.bytes) {
+      fail(
+        `${path.relative(repoRoot, withheldPath)} byte size differs from manifest`
+      );
     }
-  }
+    if (sha256(withheldPath) !== asset.sha256) {
+      fail(
+        `${path.relative(repoRoot, withheldPath)} hash differs from manifest`
+      );
+    }
+    return withheldPath;
+  });
 
-  const pdfPath = path.join(repoRoot, entry.pdf.path);
+  const [pdfPath, webpPath, thumbnailPath] = withheldAssets;
+  const pdfDisplayPath = path.relative(repoRoot, pdfPath);
+  const webpDisplayPath = path.relative(repoRoot, webpPath);
+  const thumbnailDisplayPath = path.relative(repoRoot, thumbnailPath);
   const { stdout: pdfInfo } = await execFileAsync("pdfinfo", [pdfPath]);
   if (!/^Pages:\s+1$/mu.test(pdfInfo)) {
-    fail(`${entry.pdf.path} must contain exactly one page`);
+    fail(`${pdfDisplayPath} must contain exactly one page`);
   }
   if (!/^Tagged:\s+yes$/mu.test(pdfInfo)) {
-    fail(`${entry.pdf.path} must retain its tagged export`);
+    fail(`${pdfDisplayPath} must retain its tagged export`);
   }
   if (!/^PDF version:\s+1\.7$/mu.test(pdfInfo)) {
-    fail(`${entry.pdf.path} must remain a PDF 1.7 review candidate`);
+    fail(`${pdfDisplayPath} must remain a PDF 1.7 review candidate`);
   }
   const { stdout: xmpMetadata } = await execFileAsync("pdfinfo", [
     "-meta",
@@ -312,12 +395,12 @@ for (const entry of manifest.entries) {
     "<dc:language>",
   ]) {
     if (!xmpMetadata.includes(requiredXmpFragment)) {
-      fail(`${entry.pdf.path} XMP is missing: ${requiredXmpFragment}`);
+      fail(`${pdfDisplayPath} XMP is missing: ${requiredXmpFragment}`);
     }
   }
   if (xmpMetadata.includes("<pdfuaid:part>")) {
     fail(
-      `${entry.pdf.path} must not claim PDF/UA before the complete responsible review`
+      `${pdfDisplayPath} must not claim PDF/UA before the complete responsible review`
     );
   }
   await execFileAsync("qpdf", ["--check", pdfPath]);
@@ -366,7 +449,7 @@ for (const entry of manifest.entries) {
   }
   for (const fragment of sourceFragments) {
     if (!normalizedPdfText.includes(fragment)) {
-      fail(`${entry.pdf.path} text layer differs from source: ${fragment}`);
+      fail(`${pdfDisplayPath} text layer differs from source: ${fragment}`);
     }
   }
 
@@ -379,25 +462,21 @@ for (const entry of manifest.entries) {
   for (const fragment of orderedSections) {
     const index = normalizedPdfText.indexOf(fragment, orderCursor + 1);
     if (!fragment || index < 0) {
-      fail(`${entry.pdf.path} reorders a major source section`);
+      fail(`${pdfDisplayPath} reorders a major source section`);
     }
     orderCursor = index;
   }
 
-  const fullMetadata = await sharp(
-    path.join(repoRoot, entry.webp.path)
-  ).metadata();
+  const fullMetadata = await sharp(webpPath).metadata();
   if (fullMetadata.width !== 1600 || fullMetadata.height !== 2263) {
-    fail(`${entry.webp.path} must be 1600 x 2263 px`);
+    fail(`${webpDisplayPath} must be 1600 x 2263 px`);
   }
-  const thumbnailMetadata = await sharp(
-    path.join(repoRoot, entry.thumbnail.path)
-  ).metadata();
+  const thumbnailMetadata = await sharp(thumbnailPath).metadata();
   if (thumbnailMetadata.width !== 600 || thumbnailMetadata.height !== 849) {
-    fail(`${entry.thumbnail.path} must be 600 x 849 px`);
+    fail(`${thumbnailDisplayPath} must be 600 x 849 px`);
   }
 }
 
 console.log(
-  `P1 illustration audit passed: ${manifest.entries.length} packages`
+  `P1 illustration audit passed: ${manifest.entries.length} withheld V3 packages verified; 9 draft assets absent from public delivery`
 );

@@ -12,7 +12,7 @@ describe("Breadcrumb helpers", () => {
 
   it("uses the handout title for text-version routes", () => {
     expect(getPageName("/materialien/text/leuchtturm")).toBe(
-      "Der Leuchtturm – Orientierung für Angehörige"
+      "Der Leuchtturm – eigene Orientierung finden"
     );
   });
 

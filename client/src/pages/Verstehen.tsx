@@ -2,7 +2,6 @@ import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
   DisplayHeading,
-  EditorialFigure,
   EditorialProse,
   EditorialSection,
   EyebrowLabel,
@@ -30,12 +29,12 @@ export default function Verstehen() {
     <Layout>
       <SEO
         title="Borderline verstehen"
-        description="Borderline aus Sicht von Angehörigen verstehen: Beziehungsdynamik, Überflutung, Nähe-Distanz und hilfreiche Einordnung."
+        description="Borderline personen- und perspektivenbewusst verstehen: individuelle Erfahrungen, diagnostische Grenzen und Orientierung für Angehörige."
         path="/verstehen"
       />
       <MedicalPageSchema
         title="Borderline verstehen"
-        description="Borderline aus Sicht von Angehörigen verstehen: Beziehungsdynamik, Überflutung, Nähe-Distanz und hilfreiche Einordnung."
+        description="Borderline personen- und perspektivenbewusst verstehen: individuelle Erfahrungen, diagnostische Grenzen und Orientierung für Angehörige."
         path="/verstehen"
       />
       <TableOfContents />
@@ -71,9 +70,10 @@ export default function Verstehen() {
             <em>Borderline</em> verstehen, ohne die Distanz zu verlieren.
           </DisplayHeading>
           <Lede size="hero">
-            Für Angehörige ist Borderline oft nicht nur schwer zu begreifen,
-            sondern schwer auszuhalten – Situationen kippen, Reaktionen wirken
-            widersprüchlich, die eigene Rolle bleibt unklar.
+            Borderline wird von jeder Person anders erlebt. Diese Seite bietet
+            Angehörigen Orientierung, ohne Menschen auf eine Diagnose zu
+            reduzieren, Motive festzulegen oder Angehörigen eine feste Rolle
+            zuzuweisen.
           </Lede>
           <TopicQuickLinks
             items={[
@@ -82,7 +82,7 @@ export default function Verstehen() {
                 label: "Erleben von Angehörigen",
               },
               { href: "#was-ist-borderline", label: "Borderline verstehen" },
-              { href: "#muster", label: "Typische Muster" },
+              { href: "#muster", label: "Mögliche Wechselwirkungen" },
             ]}
           />
           <div
@@ -103,7 +103,7 @@ export default function Verstehen() {
           >
             <EisbergIllustration
               className="block h-full w-full"
-              ariaLabel="Eine Eisberg-Spitze über der Wasserlinie. Darunter eine grosse verborgene Form, die viel mehr ausmacht als die sichtbare Spitze."
+              ariaLabel="Eine Eisberg-Spitze über der Wasserlinie und eine grössere Form unter Wasser als Metapher für sichtbares Verhalten und mögliche Kontexte."
             />
           </div>
         </EditorialSection.Aside>
@@ -173,15 +173,17 @@ export default function Verstehen() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Was Angehörige oft erleben"
+            title="Was Angehörige in belasteten Beziehungen erleben können"
             id="angehoerige-erleben"
           >
             <EditorialProse>
               <p>
-                Für Angehörige wirkt Borderline oft widersprüchlich: Nähe kann
-                sehr intensiv werden und kurz darauf in Angriff, Rückzug oder
-                Funkstille kippen. Eine Beziehung kann sich gleichzeitig
-                bedeutsam, erschöpfend, zart und bedrohlich anfühlen.
+                Manche Angehörige berichten in belasteten Beziehungen von
+                intensiver Nähe, Rückzug, Funkstille oder Konflikten. Eine
+                Beziehung kann sich dabei gleichzeitig bedeutsam, zart,
+                erschöpfend oder unsicher anfühlen. Solche Erfahrungen kommen
+                nicht bei allen Menschen mit Borderline vor und lassen sich aus
+                der Diagnose nicht vorhersagen.
               </p>
               <p>
                 Viele Angehörige schwanken deshalb nicht nur zwischen Mitgefühl
@@ -201,22 +203,25 @@ export default function Verstehen() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Was Borderline im Kern so belastend macht"
+            title="Was die Diagnose Borderline beschreiben kann"
             id="was-ist-borderline"
           >
             <EditorialProse>
               <p>
                 Die Borderline-Persönlichkeitsstörung ist ein komplexes
-                Störungsbild. Typisch sind starke emotionale Reagibilität (wie
-                schnell und heftig jemand emotional reagiert), Schwierigkeiten
-                mit innerer Stabilität und ein Beziehungserleben, das unter
-                Bindungsstress schnell ins Wanken geraten kann.
+                Störungsbild. Die Diagnose kann unter anderem intensive oder
+                rasch wechselnde Gefühle, Schwierigkeiten mit innerer
+                Stabilität, dem Selbstbild oder Beziehungen beschreiben. Diese
+                Erfahrungen sind individuell verschieden und kommen teilweise
+                auch ausserhalb einer Borderline-Diagnose vor.
               </p>
               <p>
                 Nicht alle Menschen mit Borderline zeigen dieselben Muster.
-                Manche wirken vor allem impulsiv und explosiv, andere eher
-                verzweifelt, zurückgezogen, leer oder selbstabwertend.
-                Ausprägung, Verlauf und Belastung unterscheiden sich deutlich.
+                Manche drücken starke Gefühle sichtbar aus, andere erleben sie
+                eher nach innen gerichtet oder ziehen sich zurück. Ausdruck,
+                Verlauf und Belastung unterscheiden sich deutlich. Die Diagnose
+                allein erlaubt keine Aussage darüber, ob von einem Menschen
+                Gefahr ausgeht.
               </p>
               <p>
                 Für Angehörige ist vor allem wichtig: Bei heftigen Reaktionen
@@ -229,7 +234,7 @@ export default function Verstehen() {
             <EvidenceNote
               variant="editorial"
               title="Quellen zur diagnostischen und klinischen Einordnung"
-              definition="Die Störung zeigt je nach Person unterschiedliche Ausprägungen. Für Angehörige ist vor allem relevant, dass Bindungsstress, Affektregulation (die Fähigkeit, Gefühle zu steuern) und Scham-/Überflutungserleben klinisch gut beschrieben sind."
+              definition="Die Diagnose kann unterschiedliche Erfahrungen mit Gefühlen, Selbstbild und Beziehungen beschreiben. Kein einzelnes Merkmal gilt für alle; ähnliche Erfahrungen kommen auch ohne Borderline-Diagnose vor."
               reviewDate="24.03.2026"
               sources={[
                 {
@@ -264,29 +269,24 @@ export default function Verstehen() {
           >
             <EditorialProse>
               <p>
-                Angehörige erleben Wut oft als das dominierende Thema. Sie ist
-                laut, verletzend und schwer zu übersehen. Gleichzeitig kann Wut
-                mit Zuständen wie Scham, Verlassenheitsangst, Ohnmacht oder
-                innerer Leere zusammenhängen. Das Eisberg-Bild ist eine mögliche
+                Ärger oder Wut können in einer Beziehung deutlich spürbar sein,
+                müssen aber weder im Vordergrund stehen noch auf eine bestimmte
+                Weise geäussert werden. Gleichzeitig können Scham, Sorge vor
+                Beziehungsverlust, Ohnmacht, innere Leere oder ganz andere
+                Erfahrungen mitwirken. Das Eisberg-Bild ist eine mögliche
                 Verständnishilfe, keine Aussage darüber, was in einer konkreten
                 Person sicher «darunterliegt».
               </p>
               <p>
-                Scham spielt dabei eine besonders grosse Rolle. Wer sich tief
-                beschämt, blossgestellt oder innerlich wertlos fühlt, reagiert
-                leichter mit Angriff, Rückzug, Selbstentwertung oder abruptem
-                Kontaktabbruch. Für Angehörige wirkt das oft hart und kalt,
-                innerlich ist es nicht selten hochverletzlich.
+                Scham kann eine Situation mitprägen und schwer auszusprechen
+                sein. Manche Menschen reagieren dann mit Rückzug,
+                Selbstentwertung oder Abwehr; andere reagieren anders. Aus einem
+                harten Satz oder Kontaktabbruch lässt sich deshalb nicht sicher
+                auf ein verborgenes Gefühl schliessen. Wenn ein Gespräch möglich
+                ist, hilft offenes Nachfragen mehr als eine feste Deutung.
               </p>
             </EditorialProse>
-            <EditorialFigure
-              src="/infografiken/extras/thumbnails/eisberg-der-eisberg-v8.webp"
-              alt="Der Eisberg – Wut ist oft die Spitze"
-              width={600}
-              height={848}
-              caption="Eigene didaktische Darstellung: Wut kann eine sichtbare Spitze sein. Darunter können Scham, Angst, Ohnmacht oder Überflutung mitwirken; andere Erklärungen sind möglich."
-            />
-            <div className="mt-6 grid gap-8 sm:grid-cols-2">
+            <div className="mt-6 space-y-6">
               <div>
                 <h3
                   className="mb-3"
@@ -306,10 +306,10 @@ export default function Verstehen() {
                     color: "var(--fg-secondary)",
                   }}
                 >
-                  <li>Wutausbruch oder Vorwurf</li>
+                  <li>hörbar geäusserter Ärger oder ein Vorwurf</li>
                   <li>Rückzug oder Schweigen</li>
-                  <li>Abwertung oder Beziehungsabbruch</li>
-                  <li>Selbstverletzung oder Impulsdurchbruch</li>
+                  <li>eine harte Bewertung oder der Wunsch nach Abstand</li>
+                  <li>angespannter Ton oder abrupter Gesprächsabbruch</li>
                 </ul>
               </div>
               <div>
@@ -321,7 +321,7 @@ export default function Verstehen() {
                     color: "var(--fg-primary)",
                   }}
                 >
-                  Was darunter liegen kann
+                  Offene Fragen statt Zuordnungen
                 </h3>
                 <ul
                   className="space-y-1"
@@ -331,11 +331,23 @@ export default function Verstehen() {
                     color: "var(--fg-secondary)",
                   }}
                 >
-                  <li>Scham und Kränkung</li>
-                  <li>Angst vor Verlust oder Abwertung</li>
-                  <li>innere Leere oder Überflutung</li>
-                  <li>das Gefühl, nicht mehr regulieren zu können</li>
+                  <li>Was beschreibt die Person selbst als belastend?</li>
+                  <li>Welche aktuellen Lebensumstände wirken mit?</li>
+                  <li>Welche anderen Erklärungen sind möglich?</li>
+                  <li>Ist ein Nachfragen gerade gewollt und sicher?</li>
                 </ul>
+                <p
+                  className="mt-3"
+                  style={{
+                    fontSize: "var(--text-sm)",
+                    lineHeight: "var(--lh-relaxed)",
+                    color: "var(--fg-secondary)",
+                  }}
+                >
+                  Zwischen den beiden Listen besteht keine Zuordnung. Aus einem
+                  beobachtbaren Verhalten lässt sich kein bestimmtes Gefühl,
+                  Bedürfnis oder Motiv ablesen.
+                </p>
               </div>
             </div>
           </ContentSection>
@@ -346,13 +358,6 @@ export default function Verstehen() {
             title="Wenn Denken unter Stress enger wird"
             id="stressmodus"
           >
-            <EditorialFigure
-              src="/infografiken/extras/thumbnails/alarm-der-alarm-modus-v4.webp"
-              alt="Alarm-Modus vs. Denk-Modus"
-              width={600}
-              height={848}
-              caption="Alarm-Modus vs. Denk-Modus: Unter starker Anspannung übernimmt das Alarmsystem — Beruhigung kommt vor Klärung."
-            />
             <EditorialProse>
               <p>
                 Unter hoher emotionaler Überflutung verengt sich das Erleben
@@ -388,8 +393,10 @@ export default function Verstehen() {
               </h3>
               <p>
                 In diesem Zustand kommen Argumente, Erklärungen und Korrekturen
-                oft kaum an. Hilfreicher ist meist zuerst Beruhigung,
-                Orientierung und emotionale Anerkennung.
+                oft kaum an. Weniger Druck, eine Pause, Abstand oder selbst
+                gewählte Unterstützung können dann hilfreicher sein. Welche
+                Erfahrung oder welcher innere Zustand mitwirkt, lässt sich von
+                aussen nicht sicher ablesen.
               </p>
               <h3
                 className="mt-6"
@@ -421,112 +428,29 @@ export default function Verstehen() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Typische Muster in belasteten Beziehungen"
+            title="Mögliche Wechselwirkungen in belasteten Beziehungen"
             id="muster"
           >
             <EditorialProse>
               <p>
-                Manche Beziehungen folgen über längere Zeit wiederkehrenden
-                Schleifen: Eskalation, Rückzug, Wiederannäherung, Hoffnung, neue
-                Spannung. Das ist kein starres Gesetz, aber ein Muster, das
-                Angehörigen helfen kann, Entwicklungen nüchterner zu lesen.
+                Belastete Beziehungen können von wechselseitigem Druck,
+                Unsicherheit, Rückzug oder unterschiedlichen Wünschen nach Nähe
+                und Abstand geprägt sein. Daraus ergibt sich keine feste
+                Abfolge, und die Diagnose einer Person erklärt den Verlauf nicht
+                allein.
+              </p>
+              <p>
+                Hilfreicher als ein vorgegebener Zyklus ist die gemeinsame
+                Frage: Was ist gerade beobachtbar, was braucht jede beteiligte
+                Person, und wo liegen ihre Grenzen? Die vertiefende Seite zeigt
+                mögliche Wechselwirkungen, ohne Schuld oder feste Rollen
+                zuzuteilen. Mehr dazu unter{" "}
+                <Link href="/verstehen/beziehungen" className="editorial-link">
+                  Borderline und Beziehungen
+                </Link>
+                .
               </p>
             </EditorialProse>
-            <div className="mt-6 grid gap-8 sm:grid-cols-2">
-              <div>
-                <h3
-                  className="mb-2"
-                  style={{
-                    fontSize: "var(--text-md)",
-                    fontWeight: 600,
-                    color: "var(--fg-primary)",
-                  }}
-                >
-                  Idealisierung und Entwertung
-                </h3>
-                <p
-                  style={{
-                    fontSize: "var(--text-sm)",
-                    lineHeight: "var(--lh-relaxed)",
-                    color: "var(--fg-secondary)",
-                  }}
-                >
-                  Eine Person kann zeitweise als einzig sicher und verstehend
-                  erlebt werden, kurz darauf aber als kalt, ungerecht oder
-                  gefährlich. Für Angehörige ist das oft tief verunsichernd.
-                </p>
-              </div>
-              <div>
-                <h3
-                  className="mb-2"
-                  style={{
-                    fontSize: "var(--text-md)",
-                    fontWeight: 600,
-                    color: "var(--fg-primary)",
-                  }}
-                >
-                  Rückzug und Funkstille
-                </h3>
-                <p
-                  style={{
-                    fontSize: "var(--text-sm)",
-                    lineHeight: "var(--lh-relaxed)",
-                    color: "var(--fg-secondary)",
-                  }}
-                >
-                  Nach Konflikten kann Schweigen, Abbruch oder Distanzierung
-                  folgen. Das ist nicht zwingend Gleichgültigkeit, für
-                  Angehörige aber oft besonders schwer auszuhalten.
-                </p>
-              </div>
-              <div>
-                <h3
-                  className="mb-2"
-                  style={{
-                    fontSize: "var(--text-md)",
-                    fontWeight: 600,
-                    color: "var(--fg-primary)",
-                  }}
-                >
-                  Schuldspiralen
-                </h3>
-                <p
-                  style={{
-                    fontSize: "var(--text-sm)",
-                    lineHeight: "var(--lh-relaxed)",
-                    color: "var(--fg-secondary)",
-                  }}
-                >
-                  Angehörige geben aus Angst oder Schuld nach, fühlen sich
-                  danach ausgenutzt, reagieren irgendwann härter und empfinden
-                  dann erneut Schuld. So entsteht ein Kreislauf, der beide
-                  Seiten belastet.
-                </p>
-              </div>
-              <div>
-                <h3
-                  className="mb-2"
-                  style={{
-                    fontSize: "var(--text-md)",
-                    fontWeight: 600,
-                    color: "var(--fg-primary)",
-                  }}
-                >
-                  Nähe und Selbstschutz zugleich
-                </h3>
-                <p
-                  style={{
-                    fontSize: "var(--text-sm)",
-                    lineHeight: "var(--lh-relaxed)",
-                    color: "var(--fg-secondary)",
-                  }}
-                >
-                  Viele Angehörige möchten bleiben und gleichzeitig Abstand.
-                  Gerade diese Ambivalenz verdient Ernstnahme statt moralische
-                  Bewertung.
-                </p>
-              </div>
-            </div>
           </ContentSection>
 
           <VerstehenMeaningSection />
@@ -578,8 +502,8 @@ export default function Verstehen() {
                 Realistischer ist: Borderline ist belastend, aber behandelbar.
                 Viele Menschen erleben über Jahre deutliche Besserungen,{" "}
                 <GlossarBegriff term="Remission">Remission</GlossarBegriff> oder
-                umfassendere Genesung — oft nicht geradlinig, aber gut
-                dokumentiert. Mehr dazu auf{" "}
+                umfassendere Genesung — mit individuell unterschiedlichen,
+                fachlich gut dokumentierten Verläufen. Mehr dazu auf{" "}
                 <Link href="/genesung" className="editorial-link">
                   Genesung
                 </Link>
@@ -597,12 +521,12 @@ export default function Verstehen() {
                 «Menschen mit Borderline manipulieren bewusst.»
               </h3>
               <p>
-                Manche Verhaltensweisen können auf Angehörige manipulativ
-                wirken. Ob bewusste Absicht, innere Not, Angst, Scham,
-                Überflutung oder etwas anderes dahintersteht, lässt sich von
-                aussen nicht sicher feststellen. Fragen Sie nach, statt ein
-                Motiv festzulegen, und beurteilen Sie zugleich die Wirkung des
-                Verhaltens und Ihre eigene Grenze. Mehr dazu auf{" "}
+                Manche Aussagen oder Handlungen können bei Angehörigen Druck,
+                Angst oder Verunsicherung auslösen. Ein Motiv lässt sich daraus
+                nicht sicher ableiten. Fragen Sie offen nach, wenn ein Gespräch
+                möglich ist, und bleiben Sie zugleich bei der beobachtbaren
+                Wirkung, Ihrer Sicherheit und Ihrer eigenen Grenze. Mehr dazu
+                auf{" "}
                 <Link href="/kommunizieren" className="editorial-link">
                   Kommunizieren
                 </Link>{" "}
@@ -624,10 +548,12 @@ export default function Verstehen() {
                 «Angehörige sind schuld.»
               </h3>
               <p>
-                Borderline entsteht nicht durch eine einzelne Person und nicht
-                durch «falsche Liebe». Angehörige können Beziehungsmuster
-                entlasten oder belasten, sie verursachen die Störung aber nicht.
-                Schuld hilft weder Verständnis noch Veränderung.
+                Angehörige sind weder Ursache der Borderline-Erkrankung noch für
+                die Genesung einer anderen Person verantwortlich.
+                Beziehungsmuster entstehen in einem konkreten Kontext und werden
+                von mehreren Faktoren beeinflusst. Wechselseitigen Einfluss
+                anzuerkennen bedeutet keine Schuldzuweisung und keine Aufteilung
+                von Verantwortung für die Erkrankung.
               </p>
 
               <h3

@@ -72,13 +72,14 @@ export default function UnterstuetzenUebersicht() {
             Übersicht
           </EyebrowLabel>
           <DisplayHeading level={1} size="topic">
-            Wie Angehörige <em>hilfreich</em> bleiben können
+            Unterstützung anbieten und <em>eigene Grenzen</em> wahren
           </DisplayHeading>
           <Lede className="max-w-[40em]">
-            Angehörige möchten oft gleichzeitig beruhigen, schützen, verstehen,
-            Grenzen wahren und die Beziehung nicht verlieren. Genau diese
-            Gleichzeitigkeit macht die Rolle so anspruchsvoll. Diese Seite hilft
-            Ihnen, Unterstützung realistischer und tragfähiger zu denken.
+            Angehörige möchten oft verstehen, schützen oder etwas anbieten und
+            zugleich das eigene Leben, ihre Sicherheit und Grenzen wahren. Diese
+            Seite hilft Ihnen, frei zu wählen, welche Unterstützung Sie geben
+            können und möchten. Sie müssen keine andere Person beruhigen oder
+            ihre Behandlung und Genesung tragen.
           </Lede>
           <TopicQuickLinks
             items={[
@@ -148,10 +149,10 @@ export default function UnterstuetzenUebersicht() {
           >
             <EditorialProse>
               <p>
-                Angehörige können in belasteten Beziehungen eine wichtige Rolle
-                spielen. Sie können beruhigen, orientieren, Struktur geben,
-                emotionale Anerkennung vermitteln und mithelfen, dass
-                Situationen weniger zerstörerisch verlaufen.
+                Angehörige können – wenn es gewollt und für sie tragbar ist –
+                zuhören, Informationen teilen, eine konkrete Hilfe anbieten oder
+                gemeinsam nach einem nächsten Schritt fragen. Die betroffene
+                Person darf Angebote annehmen, verändern oder ablehnen.
               </p>
               <p>
                 Gleichzeitig ist Unterstützung nie allmächtig. Sie können nicht
@@ -162,9 +163,9 @@ export default function UnterstuetzenUebersicht() {
             </EditorialProse>
             <div className="mt-4">
               <EditorialPullQuote>
-                Hilfreiche Unterstützung ist deshalb nicht totale Verfügbarkeit,
-                sondern eine Form von tragfähiger Beziehung: zugewandt, klar,
-                begrenzt und längerfristig durchhaltbar.
+                Unterstützung ist ein Angebot, keine feste Rolle. Auch Abstand,
+                ein Nein oder das Beiziehen professioneller Hilfe kann ein
+                verantwortbarer nächster Schritt sein.
               </EditorialPullQuote>
             </div>
           </ContentSection>
@@ -177,13 +178,15 @@ export default function UnterstuetzenUebersicht() {
           >
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
               <div>
-                <h3 style={h4Style}>Was Sie sein können</h3>
+                <h3 style={h4Style}>Was Sie freiwillig anbieten können</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
-                  <li>eine verlässliche Bezugsperson</li>
-                  <li>jemand, der Gefühle ernst nimmt</li>
-                  <li>ein Mensch, der Orientierung gibt</li>
-                  <li>ein Gegenüber mit realistischer Hoffnung</li>
-                  <li>jemand, der Grenzen klar benennt und hält</li>
+                  <li>zuhören oder nachfragen, wenn das gewünscht ist</li>
+                  <li>eine konkrete, begrenzte Hilfe anbieten</li>
+                  <li>Informationen teilen, ohne Behandlung zu steuern</li>
+                  <li>
+                    gemeinsame Absprachen treffen, soweit sie tragbar sind
+                  </li>
+                  <li>eigene Grenzen, Abstand oder ein Nein benennen</li>
                 </ul>
               </div>
               <div>
@@ -235,11 +238,11 @@ export default function UnterstuetzenUebersicht() {
                 innerlich hart werden, Grenzen setzen wollen und dann aus Schuld
                 doch wieder nachgeben.
               </p>
-              <p>Typische Muster sind unter anderem:</p>
+              <p>Mögliche Reaktionen auf anhaltende Belastung sind:</p>
               <ul className="ml-6 list-disc space-y-1">
                 <li>
-                  aus Angst deeskalieren und dadurch problematische Muster
-                  stabilisieren
+                  aus Angst zustimmen, obwohl es für sie selbst nicht tragbar
+                  ist
                 </li>
                 <li>aus Schuld zu viel übernehmen</li>
                 <li>aus Erschöpfung kalt oder kurz angebunden werden</li>
@@ -307,34 +310,43 @@ export default function UnterstuetzenUebersicht() {
             variant="editorial"
             title="Wenn mehrere Angehörige beteiligt sind"
             id="familiendynamik"
-            preview="Unterschiedliche Haltungen in Familien sind normal. Problematisch wird es, wenn sie verdeckt gegeneinander arbeiten."
+            preview="Unterschiedliche Haltungen in Familien sind normal. Transparente, anpassbare Absprachen helfen, damit alle Beteiligten wissen, woran sie sind."
           >
             <EditorialProse>
               <p>
                 Wenn mehrere Angehörige beteiligt sind, entstehen oft
-                Spannungen: Eine Person grenzt ab, eine andere rettet, eine
-                dritte will Ruhe um jeden Preis. Solche Unterschiede sind
-                normal. Schwierig wird es, wenn Betroffene und Angehörige in
-                widersprüchliche Bündnisse geraten.
+                Spannungen: Eine Person wünscht mehr Abstand, eine andere möchte
+                mehr unterstützen, eine dritte vor allem Ruhe. Solche
+                Unterschiede sind normal. Hilfreich sind transparente
+                Absprachen, die die Wünsche der betroffenen Person einbeziehen
+                und angepasst werden können, wenn Situation oder Sicherheit es
+                erfordern.
               </p>
             </EditorialProse>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
                 <h3 style={h4Style}>Hilfreich</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
-                  <li>gemeinsame Grundlinien klären</li>
-                  <li>Absprachen ausserhalb akuter Krisen treffen</li>
-                  <li>einander nicht unterlaufen</li>
+                  <li>
+                    gemeinsame Grundlinien mit den Beteiligten klären, soweit
+                    sie das möchten
+                  </li>
+                  <li>
+                    Absprachen transparent und in ruhigen Momenten treffen
+                  </li>
+                  <li>
+                    Absprachen bei Bedarf und Sicherheit flexibel anpassen
+                  </li>
                   <li>Unterschiede offen besprechen</li>
                 </ul>
               </div>
               <div>
                 <h3 style={h4Style}>Belastend</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
-                  <li>widersprüchliche Botschaften</li>
-                  <li>heimliche Sonderabsprachen</li>
-                  <li>Rollen verteilen: streng und nachgiebig</li>
-                  <li>sich gegeneinander ausspielen lassen</li>
+                  <li>Absprachen ohne die Beteiligten treffen</li>
+                  <li>Ausnahmen verschweigen oder gegeneinander verwenden</li>
+                  <li>starre Rollen wie «streng» und «nachgiebig» verteilen</li>
+                  <li>Unterschiede im Streit austragen</li>
                 </ul>
               </div>
             </div>
@@ -354,7 +366,7 @@ export default function UnterstuetzenUebersicht() {
               <ul className="ml-6 list-disc space-y-1">
                 <li>weniger hektisches Reagieren auf jede Krise</li>
                 <li>mehr Benennbarkeit von Belastung und Grenzen</li>
-                <li>mehr Berechenbarkeit in Beziehungen</li>
+                <li>mehr Verlässlichkeit in Beziehungen</li>
                 <li>weniger Schuld und Gegenschuld</li>
                 <li>mehr Bereitschaft, Hilfe von aussen einzubeziehen</li>
                 <li>mehr Selbstschutz ohne vollständigen Beziehungsabbruch</li>
@@ -576,7 +588,7 @@ export default function UnterstuetzenUebersicht() {
             <li>
               <h3 style={h4Style}>
                 <Link href="/unterstuetzen/therapie" className="editorial-link">
-                  Therapie unterstützen
+                  Therapie und Angehörigenrolle
                 </Link>
               </h3>
               <p className="mt-1" style={bodyStyle}>

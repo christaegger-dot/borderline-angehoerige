@@ -1,8 +1,15 @@
-/* Inline-Infografik, automatisch aus a2-begleiterkrankungen.svg konvertiert.
-   Farben auf Design-Tokens gemappt; font-family per CSS (.ig-svg text →
-   var(--font-display)); <title>/<desc> unverändert (Screenreader-Text).
-   Inline statt <img>, damit Source Serif 4, die var(--…)-Tokens und der
-   Druck gestochen geerbt werden. */
+const diagnoses = [
+  { x: 195, y: 330, lines: ["Depression"] },
+  { x: 410, y: 330, lines: ["Angst-", "störungen"] },
+  { x: 625, y: 330, lines: ["PTBS"] },
+  { x: 195, y: 535, lines: ["Substanz-", "gebrauchsstörung"] },
+  { x: 410, y: 535, lines: ["Essstörungen"] },
+  { x: 625, y: 535, lines: ["ADHS"] },
+] as const;
+
+/* Inline statt <img>, damit Schrift und Design-Tokens sauber vererbt werden.
+   Die sechs Einträge sind bewusst gleich gross und unverbunden: Die Darstellung
+   zeigt weder diagnostische Hierarchie noch Ursache oder Wahrscheinlichkeit. */
 export function BegleiterkrankungenSvg() {
   return (
     <svg
@@ -14,466 +21,197 @@ export function BegleiterkrankungenSvg() {
       role="img"
       aria-labelledby="a2t a2d"
     >
-      <title id="a2t">Borderline kommt selten allein</title>
+      <title id="a2t">Mögliche Begleiterkrankungen bei Borderline</title>
       <desc id="a2d">
-        Konstellation: Borderline im Zentrum, häufige Begleiterkrankungen als
-        Satelliten, gruppiert nach klinischen Familien. Affektiv: Depression, am
-        häufigsten. Angst und Trauma: Angststörungen, PTBS. Impuls und
-        Verhalten: Substanzgebrauch, Essstörungen, ADHS. Die Kreisgrösse zeigt,
-        wie häufig eine Begleiterkrankung als Einzeldiagnose ist. Für
-        Angehörige: mehrere Diagnosen bedeuten mehr Komplexität, nicht mehr
-        Schuld; die Behandlung beginnt oft beim Dringlichsten; Sie müssen nicht
-        sortieren, was was ist.
+        Schematische Liste von sechs möglichen zusätzlichen Diagnosen:
+        Depression, Angststörungen, posttraumatische Belastungsstörung,
+        Substanzgebrauchsstörung, Essstörungen und ADHS. Alle Einträge sind
+        gleich gross und unverbunden dargestellt. In Studien hatten viele, aber
+        nicht alle Menschen mit Borderline weitere Diagnosen. Die Grafik zeigt
+        weder Ursache noch individuelle Wahrscheinlichkeit oder Rangfolge.
+        Angehörige müssen Beschwerden nicht selbst diagnostisch zuordnen.
       </desc>
       <rect width="820" height="1045" fill="var(--bg-primary)" />
-      <defs>
-        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-          <stop
-            offset="0%"
-            stopColor="var(--accent-primary)"
-            stopOpacity="0.07"
-          />
-          <stop
-            offset="100%"
-            stopColor="var(--accent-primary)"
-            stopOpacity="0"
-          />
-        </radialGradient>
-      </defs>
+
       <text
-        x="64.00"
-        y="70.00"
+        x="64"
+        y="70"
         fontSize="13.5"
         fill="var(--accent-label)"
         fontWeight="600"
-        fontStyle="normal"
         textAnchor="start"
         letterSpacing="2.2"
       >
         KONSTELLATION · BEGLEITERKRANKUNGEN
       </text>
       <text
-        x="64.00"
-        y="116.00"
+        x="64"
+        y="116"
         fontSize="34"
         fill="var(--fg-primary)"
         fontWeight="700"
-        fontStyle="normal"
         textAnchor="start"
       >
-        Borderline kommt selten allein
+        Mögliche Begleiterkrankungen
       </text>
       <rect x="64" y="132" width="58" height="3" fill="var(--accent-primary)" />
       <text
-        x="64.00"
-        y="162.00"
+        x="64"
+        y="162"
         fontSize="16.5"
         fill="var(--fg-secondary)"
-        fontWeight="normal"
-        fontStyle="normal"
         textAnchor="start"
       >
-        Warum mehrere Diagnosen zusammen auftreten – und was das für Sie
-        bedeutet
-      </text>
-      <circle cx="412" cy="412" r="210" fill="url(#glow)" />
-      <line
-        x1="412"
-        y1="412"
-        x2="562"
-        y2="317"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.26"
-        strokeWidth="1.4"
-      />
-      <line
-        x1="412"
-        y1="412"
-        x2="612"
-        y2="482"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.26"
-        strokeWidth="1.4"
-      />
-      <line
-        x1="412"
-        y1="412"
-        x2="507"
-        y2="612"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.26"
-        strokeWidth="1.4"
-      />
-      <line
-        x1="412"
-        y1="412"
-        x2="207"
-        y2="427"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.26"
-        strokeWidth="1.4"
-      />
-      <line
-        x1="412"
-        y1="412"
-        x2="262"
-        y2="572"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.26"
-        strokeWidth="1.4"
-      />
-      <line
-        x1="412"
-        y1="412"
-        x2="282"
-        y2="262"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.26"
-        strokeWidth="1.4"
-      />
-      <circle
-        cx="562"
-        cy="317"
-        r="52"
-        fill="var(--ig-rose)"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.35"
-        strokeWidth="1"
-      />
-      <text
-        x="562.00"
-        y="322.10"
-        fontSize="15.0"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        Depression
-      </text>
-      <circle
-        cx="612"
-        cy="482"
-        r="45"
-        fill="var(--ig-rose)"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.35"
-        strokeWidth="1"
-      />
-      <text
-        x="612.00"
-        y="478.45"
-        fontSize="14.4"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        Angst-
+        Viele, aber nicht alle Menschen mit Borderline haben weitere Diagnosen
       </text>
       <text
-        x="612.00"
-        y="495.35"
-        fontSize="14.4"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        störungen
-      </text>
-      <circle
-        cx="507"
-        cy="612"
-        r="41"
-        fill="var(--ig-rose)"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.35"
-        strokeWidth="1"
-      />
-      <text
-        x="507.00"
-        y="608.35"
-        fontSize="15.0"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        PTBS /
-      </text>
-      <text
-        x="507.00"
-        y="625.85"
-        fontSize="15.0"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        Trauma
-      </text>
-      <circle
-        cx="207"
-        cy="427"
-        r="43"
-        fill="var(--ig-rose)"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.35"
-        strokeWidth="1"
-      />
-      <text
-        x="207.00"
-        y="423.57"
-        fontSize="13.6"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        Substanz-
-      </text>
-      <text
-        x="207.00"
-        y="439.67"
-        fontSize="13.6"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        gebrauch
-      </text>
-      <circle
-        cx="262"
-        cy="572"
-        r="38"
-        fill="var(--ig-rose)"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.35"
-        strokeWidth="1"
-      />
-      <text
-        x="262.00"
-        y="568.88"
-        fontSize="11.7"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        Ess-
-      </text>
-      <text
-        x="262.00"
-        y="583.08"
-        fontSize="11.7"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        störungen
-      </text>
-      <circle
-        cx="282"
-        cy="262"
-        r="29"
-        fill="var(--ig-rose)"
-        stroke="var(--accent-primary)"
-        strokeOpacity="0.35"
-        strokeWidth="1"
-      />
-      <text
-        x="282.00"
-        y="267.10"
-        fontSize="15.0"
-        fill="var(--accent-primary-h)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        ADHS
-      </text>
-      <text
-        x="562.00"
-        y="256.00"
-        fontSize="11"
-        fill="var(--accent-label)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-        letterSpacing="2"
-        opacity="0.62"
-      >
-        AFFEKTIV
-      </text>
-      <text
-        x="636.00"
-        y="604.00"
-        fontSize="11"
-        fill="var(--accent-label)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-        letterSpacing="2"
-        opacity="0.62"
-      >
-        ANGST &amp;
-      </text>
-      <text
-        x="636.00"
-        y="619.00"
-        fontSize="11"
-        fill="var(--accent-label)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-        letterSpacing="2"
-        opacity="0.62"
-      >
-        TRAUMA
-      </text>
-      <text
-        x="120.00"
-        y="452.00"
-        fontSize="11"
-        fill="var(--accent-label)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-        letterSpacing="2"
-        opacity="0.62"
-      >
-        IMPULS &amp;
-      </text>
-      <text
-        x="120.00"
-        y="467.00"
-        fontSize="11"
-        fill="var(--accent-label)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-        letterSpacing="2"
-        opacity="0.62"
-      >
-        VERHALTEN
-      </text>
-      <circle cx="412" cy="412" r="64" fill="var(--accent-primary)" />
-      <text
-        x="412.00"
-        y="418.50"
-        fontSize="19"
-        fill="var(--bg-primary)"
-        fontWeight="600"
-        fontStyle="normal"
-        textAnchor="middle"
-      >
-        Borderline
-      </text>
-      <text
-        x="64.00"
-        y="712.00"
+        x="64"
+        y="205"
         fontSize="12.5"
         fill="var(--fg-secondary)"
-        fontWeight="normal"
         fontStyle="italic"
         textAnchor="start"
       >
-        Die Kreisgrösse zeigt, wie häufig eine Begleiterkrankung ist – gemessen
-        als Einzeldiagnose.
+        Sechs mögliche Diagnosen · keine Rangfolge · keine individuelle Prognose
       </text>
-      <rect x="64" y="734" width="3" height="98" fill="var(--accent-primary)" />
+
+      <g id="diagnosis-list" data-layout="equal-list" aria-hidden="true">
+        {diagnoses.map(diagnosis => (
+          <g key={`${diagnosis.x}-${diagnosis.y}`}>
+            <circle
+              cx={diagnosis.x}
+              cy={diagnosis.y}
+              r="68"
+              fill="var(--ig-rose)"
+              stroke="var(--accent-primary)"
+              strokeOpacity="0.35"
+              strokeWidth="1"
+            />
+            {diagnosis.lines.map((line, index) => (
+              <text
+                key={line}
+                x={diagnosis.x}
+                y={
+                  diagnosis.y +
+                  (index - (diagnosis.lines.length - 1) / 2) * 20 +
+                  5
+                }
+                fontSize={line === "gebrauchsstörung" ? 12.5 : 15}
+                fill="var(--accent-primary-h)"
+                fontWeight="600"
+                textAnchor="middle"
+              >
+                {line}
+              </text>
+            ))}
+          </g>
+        ))}
+      </g>
+
       <text
-        x="86.00"
-        y="752.00"
+        x="64"
+        y="654"
+        fontSize="12.5"
+        fill="var(--fg-secondary)"
+        fontStyle="italic"
+        textAnchor="start"
+      >
+        Die Einträge sind schematisch, gleich gross und ohne Verbindungen
+        dargestellt.
+      </text>
+      <text
+        x="64"
+        y="674"
+        fontSize="12.5"
+        fill="var(--fg-secondary)"
+        fontStyle="italic"
+        textAnchor="start"
+      >
+        Sie zeigen keine Ursache, individuelle Wahrscheinlichkeit oder
+        Rangfolge.
+      </text>
+
+      <rect x="64" y="710" width="3" height="98" fill="var(--accent-primary)" />
+      <text
+        x="86"
+        y="734"
         fontSize="17.5"
         fill="var(--fg-primary)"
-        fontWeight="normal"
         fontStyle="italic"
         textAnchor="start"
       >
         Mehrere Diagnosen heissen mehr Komplexität – nicht mehr Schuld.
       </text>
       <text
-        x="86.00"
-        y="782.00"
+        x="86"
+        y="764"
         fontSize="17.5"
         fill="var(--fg-primary)"
-        fontWeight="normal"
         fontStyle="italic"
         textAnchor="start"
       >
-        Die Behandlung beginnt oft beim Dringlichsten – das ist kein
-        Widerspruch.
+        Welche Unterstützung passt, wird individuell fachlich geklärt.
       </text>
       <text
-        x="86.00"
-        y="812.00"
+        x="86"
+        y="794"
         fontSize="17.5"
         fill="var(--fg-primary)"
-        fontWeight="normal"
         fontStyle="italic"
         textAnchor="start"
       >
         Sie müssen nicht sortieren, was was ist.
       </text>
+
       <rect
         x="64"
-        y="844"
+        y="836"
         width="692"
-        height="87"
+        height="95"
         rx="10"
         fill="var(--bg-sage-wash)"
       />
       <text
-        x="84.00"
-        y="866.00"
+        x="84"
+        y="860"
         fontSize="11.5"
         fill="var(--ig-sage-deep)"
         fontWeight="700"
-        fontStyle="normal"
         textAnchor="start"
-        letterSpacing="2.0"
+        letterSpacing="2"
       >
         HINWEIS
       </text>
       <text
-        x="84.00"
-        y="886.00"
+        x="84"
+        y="883"
         fontSize="14"
         fill="var(--fg-primary)"
-        fontWeight="normal"
-        fontStyle="normal"
         textAnchor="start"
       >
-        Kommt eine Depression dazu, braucht es oft mehr fachliche Aufmerksamkeit
-        – auch
+        Bei deutlicher Verschlechterung, Hoffnungslosigkeit oder Sorge um die
+        Sicherheit
       </text>
       <text
-        x="84.00"
-        y="905.00"
+        x="84"
+        y="903"
         fontSize="14"
         fill="var(--fg-primary)"
-        fontWeight="normal"
-        fontStyle="normal"
         textAnchor="start"
       >
-        für die Sicherheit. Eine abgestimmte Behandlung, die beides im Blick
-        hat,
+        braucht es eine professionelle Einschätzung – unabhängig davon, welcher
+        Diagnose
       </text>
       <text
-        x="84.00"
-        y="924.00"
+        x="84"
+        y="923"
         fontSize="14"
         fill="var(--fg-primary)"
-        fontWeight="normal"
-        fontStyle="normal"
         textAnchor="start"
       >
-        entlastet auch Sie.
+        Beschwerden zugeordnet werden.
       </text>
+
       <line
         x1="64"
         y1="961"
@@ -484,22 +222,20 @@ export function BegleiterkrankungenSvg() {
         strokeWidth="1"
       />
       <text
-        x="64.00"
-        y="985.00"
+        x="64"
+        y="985"
         fontSize="12.5"
         fill="var(--fg-secondary)"
         fontWeight="600"
-        fontStyle="normal"
         textAnchor="start"
       >
         Fachstelle Angehörigenarbeit · Psychiatrische Universitätsklinik Zürich
       </text>
       <text
-        x="64.00"
-        y="1005.00"
+        x="64"
+        y="1005"
         fontSize="11.5"
         fill="var(--fg-secondary)"
-        fontWeight="normal"
         fontStyle="italic"
         textAnchor="start"
         opacity="0.9"
@@ -508,11 +244,10 @@ export function BegleiterkrankungenSvg() {
         AWMF 038-015) · Shah &amp; Zanarini (2018)
       </text>
       <text
-        x="64.00"
-        y="1021.00"
+        x="64"
+        y="1021"
         fontSize="11.5"
         fill="var(--fg-secondary)"
-        fontWeight="normal"
         fontStyle="italic"
         textAnchor="start"
         opacity="0.9"

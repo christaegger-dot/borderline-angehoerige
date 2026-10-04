@@ -5,6 +5,7 @@ import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
 import {
   getHandoutAssetVersion,
+  getHandoutApprovalStatus,
   getHandoutGovernance,
   HANDOUT_STANDARD_DISCLAIMER,
   isHandoutVisualPublished,
@@ -87,6 +88,10 @@ function collectProductiveHandoutSources() {
 
   const byId = new Map<string, ProductiveHandoutSource>();
   for (const candidate of candidates) {
+    if (!isHandoutVisualPublished(candidate.id)) {
+      continue;
+    }
+
     const existing = byId.get(candidate.id);
     if (existing && existing.sourceUrl !== candidate.sourceUrl) {
       throw new Error(
@@ -100,19 +105,64 @@ function collectProductiveHandoutSources() {
 }
 
 describe("handout governance", () => {
+  it("fails closed for unknown handout ids", () => {
+    expect(isHandoutVisualPublished("nicht-registriert")).toBe(false);
+    expect(getHandoutApprovalStatus("nicht-registriert")).toBe(
+      "draft-editorial-review-pending"
+    );
+  });
+
   it("keeps unresolved P1 drift assets text-only and publishes rebuilt visuals", () => {
     const textOnlyIds = [
-      "4-phasen",
+      "notfallplan-krise",
       "gehirn",
+      "leuchtturm",
+      "eisberg",
+      "spaltung",
+      "alarm-modus",
+      "rolle-klaeren",
+      "drei-saeulen",
+      "konsistenz-prinzip",
+      "beziehungs-achtsamkeit",
+      "6-leitlinien",
+      "4-alltags-tipps",
+      "wenn-worte-treffen",
+      "krisenkommunikation",
+      "anspannungskurve",
+      "grenzen-ohne-eskalation",
+      "pause-statt-streit",
+      "zuhoeren-ohne-zustimmen",
+      "bruecke-gelaender",
+      "sauerstoffmaske",
       "remission-heilung",
       "5-faktoren-genesung",
       "rolle-genesungsprozess",
+      "fortschritt-paradox",
+      "schuld-verantwortung",
     ];
 
     for (const id of textOnlyIds) {
       expect(isHandoutVisualPublished(id), id).toBe(false);
       expect(getHandoutGovernance(id)?.visualAssetStatus, id).toBe("text-only");
     }
+
+    expect(getHandoutGovernance("4-phasen")?.publicationStatus).toBe(
+      "withdrawn"
+    );
+    expect(isHandoutVisualPublished("4-phasen")).toBe(false);
+    expect(HANDOUT_TEXT_VERSION_IDS).not.toContain("4-phasen");
+    expect(verstehenInfografiken.some(item => item.id === "4-phasen")).toBe(
+      false
+    );
+    expect(verstehenTextVersions.some(item => item.id === "4-phasen")).toBe(
+      false
+    );
+
+    expect(getHandoutGovernance("im-krisenmodus")?.publicationStatus).toBe(
+      "withdrawn"
+    );
+    expect(isHandoutVisualPublished("im-krisenmodus")).toBe(false);
+    expect(HANDOUT_TEXT_VERSION_IDS).not.toContain("im-krisenmodus");
 
     for (const id of [
       "genesung-zahlen",
@@ -121,9 +171,6 @@ describe("handout governance", () => {
       "dear",
       "garten",
       "4-arten-von-grenzen",
-      "radikale-akzeptanz",
-      "gespraeche-kippen",
-      "beispiel-dialog",
     ]) {
       expect(isHandoutVisualPublished(id), id).toBe(true);
     }
@@ -157,6 +204,7 @@ describe("handout governance", () => {
       );
       expect(governance?.approvedVersion, id).toBeUndefined();
       expect(governance?.assetVersion, id).toMatch(/^puk-.+-v3$/);
+      expect(isHandoutVisualPublished(id), id).toBe(false);
     }
   });
 

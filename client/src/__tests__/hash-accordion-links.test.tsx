@@ -163,11 +163,11 @@ describe("hash-linked content sections", () => {
     const { default: Page } = await import("@/pages/Grenzen");
     renderWithRoute(<Page />, "/grenzen#gewalt");
 
-    // «Wenn körperlich übergriffig» ist jetzt offene Prosa (collapsible={false}):
+    // «Wenn körperliche Gewalt oder Bedrohung vorkommt» ist offene Prosa:
     // kein Toggle-Button, Inhalt direkt sichtbar, Deep-Link scrollt trotzdem.
     expect(
       screen.queryByRole("button", {
-        name: /Abschnitt Wenn der Angehörige körperlich übergriffig wird/i,
+        name: /Abschnitt Wenn körperliche Gewalt oder Bedrohung vorkommt/i,
       })
     ).toBeNull();
     expect(

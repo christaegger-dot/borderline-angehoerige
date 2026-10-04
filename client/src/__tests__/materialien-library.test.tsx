@@ -16,14 +16,11 @@ describe("MaterialienLibrarySection", () => {
       screen.getAllByText("Notfallkarte Zürich – Psychische Krise")
     ).toHaveLength(1);
     expect(screen.getByText("Genesung in Zahlen")).toBeInTheDocument();
-    const localizedDownloadLink = screen.getAllByRole("link", {
-      name: /Der Leuchtturm – Orientierung für Angehörige herunterladen/i,
-    })[0];
-    expect(localizedDownloadLink).toHaveAttribute(
-      "href",
-      "/infografiken/manus-leuchtturm-v1.pdf"
-    );
-    expect(localizedDownloadLink).toHaveAttribute("download", "");
+    expect(
+      screen.queryByRole("link", {
+        name: /Der Leuchtturm.*herunterladen/i,
+      })
+    ).not.toBeInTheDocument();
 
     const notfallkarteDownloadLinks = screen.getAllByRole("link", {
       name: /Notfallkarte Zürich – Psychische Krise herunterladen/i,
@@ -46,7 +43,7 @@ describe("MaterialienLibrarySection", () => {
     ).toHaveAttribute("href", "/materialien/text/notfallplan-krise");
 
     const textVersionLink = screen.getAllByRole("link", {
-      name: /Textversion lesen: Der Leuchtturm – Orientierung für Angehörige/i,
+      name: /Textversion lesen: Der Leuchtturm – eigene Orientierung finden/i,
     })[0];
     expect(textVersionLink).toHaveAttribute(
       "href",
@@ -54,17 +51,17 @@ describe("MaterialienLibrarySection", () => {
     );
     expect(
       screen.getAllByRole("link", {
-        name: /Textversion lesen: Ihre Rolle klären – Was Sie sein können/i,
+        name: /Textversion lesen: Ihre Rolle klären – Was Sie freiwillig anbieten können/i,
       })[0]
     ).toHaveAttribute("href", "/materialien/text/rolle-klaeren");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Der Eisberg – Wut ist oft die Spitze/i,
+        name: /Textversion lesen: Der Eisberg – sichtbares Verhalten und mögliche Kontexte/i,
       })
     ).toHaveAttribute("href", "/materialien/text/eisberg");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Spaltung – das Pendel zwischen Extremen/i,
+        name: /Textversion lesen: Wenn Bewertungen unter Stress einseitiger werden/i,
       })
     ).toHaveAttribute("href", "/materialien/text/spaltung");
     expect(
@@ -93,23 +90,23 @@ describe("MaterialienLibrarySection", () => {
       })
     ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
     expect(
-      screen.getByRole("button", {
+      screen.queryByRole("button", {
         name: /Radikale Akzeptanz.*öffnen/i,
       })
-    ).toBeInTheDocument();
+    ).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Beispiel-Dialog/i,
       })
     ).toHaveAttribute("href", "/materialien/text/beispiel-dialog");
     expect(
-      screen.getByRole("link", {
+      screen.queryByRole("link", {
         name: /Radikale Akzeptanz.*herunterladen/i,
       })
-    ).toBeInTheDocument();
+    ).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Wenn Worte treffen – 5 häufige Schuldzuweisungen/i,
+        name: /Textversion lesen: Wenn Worte treffen – belastende Aussagen einordnen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/wenn-worte-treffen");
     expect(

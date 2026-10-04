@@ -22,6 +22,9 @@ Bei jedem Review prüfen:
 
 - fachliche Korrektheit
 - Verständlichkeit für Angehörige
+- Anti-Stigma- und Perspektivenstandard in allen Fassungen
+- Autonomie, Einwilligung und Vertraulichkeit der erkrankten Person
+- keine Herstellungsverantwortung oder Schuldzuweisung an Angehörige
 - Krisenlogik (wird klar auf Soforthilfe verwiesen?)
 - Quellenlage
 - lokale Relevanz (Schweiz / Zürich)
@@ -33,6 +36,12 @@ Bei jedem Review prüfen:
 - fachliche Aussage geprüft wurde
 - Soforthilfe-Logik intakt ist
 - keine missverständlichen Formulierungen entstehen
+- keine Diagnose zur Erklärung von Motiven, Gewalt oder Gefährlichkeit
+  verwendet wird
+
+Vor der öffentlichen Freigabe des Gesamtangebots ist zusätzlich der in
+`11-anti-stigma-und-perspektivenstandard.md` beschriebene Review mit Menschen
+aus beiden Erfahrungsperspektiven zu dokumentieren.
 
 ## Dokumentation
 

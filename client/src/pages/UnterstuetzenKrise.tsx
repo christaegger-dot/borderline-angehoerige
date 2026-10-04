@@ -102,16 +102,18 @@ const fuerSiePersoenlich = [
 
 const krisenanalyseFragen = [
   {
-    frage: "Was hat die Krise ausgelöst?",
-    beispiel: "«Dir ist aufgefallen, dass ich distanzierter war ab Montag»",
+    frage: "Was war konkret beobachtbar?",
+    beispiel:
+      "«Unsere Gespräche wurden ab Montag kürzer. Was ist dir selbst aufgefallen?»",
   },
   {
-    frage: "Was hätte früher geholfen?",
-    beispiel: "«Ein kurzes Gespräch, bevor es eskalierte»",
+    frage: "Was war hilfreich – und was nicht?",
+    beispiel: "«Was hat dich unterstützt, und was war eher belastend?»",
   },
   {
-    frage: "Was machen wir nächstes Mal anders?",
-    beispiel: "«Du sagst mir, wenn du merkst, dass es kommt»",
+    frage: "Welche Hilfewege sollen leicht erreichbar sein?",
+    beispiel:
+      "«Welche professionelle Anlaufstelle möchtest du griffbereit haben?»",
   },
 ] as const;
 
@@ -158,19 +160,19 @@ const tagFuerTag = [
 const frueherkennung = [
   {
     label: "Persönliche Warnsignale benennen",
-    sub: "Was hat die betroffene Person beobachtet? Was haben Sie bemerkt?",
+    sub: "Welche Veränderungen hat die Person selbst beobachtet? Was haben andere konkret wahrgenommen?",
   },
   {
-    label: "Miniplan vereinbaren",
-    sub: "«Wenn du merkst, dass es kommt, sagst du mir das Stichwort X»",
+    label: "Gewünschte Hinweise vereinbaren",
+    sub: "Gemeinsam klären, ob und wie Hinweise, Stichwörter oder Kontakte in einer Belastungssituation genutzt werden sollen",
   },
   {
     label: "Notfallkarte aktualisieren",
     sub: "Neue Erkenntnisse eintragen, Kontakte überprüfen",
   },
   {
-    label: "Professionelle Unterstützung intensivieren",
-    sub: "Falls Krisen häufiger werden: Therapiedichte erhöhen",
+    label: "Fachliche Unterstützung prüfen",
+    sub: "Bei erneuter oder zunehmender Belastung kann die Person mit dem Behandlungsteam passende Schritte besprechen",
   },
 ] as const;
 
@@ -198,12 +200,12 @@ export default function UnterstuetzenKrise() {
     <Layout>
       <SEO
         title="Krisenbegleitung"
-        description="Krisenbegleitung bei Borderline: Wie Sie in akuten Situationen deeskalieren, Grenzen wahren und professionelle Hilfe richtig einbeziehen."
+        description="Krisenbegleitung bei Borderline: Warnzeichen professionell einordnen lassen, den eigenen Schutz wahren und passende Hilfe einbeziehen."
         path="/unterstuetzen/krise"
       />
       <MedicalPageSchema
         title="Krisenbegleitung"
-        description="Krisenbegleitung bei Borderline: Wie Sie in akuten Situationen deeskalieren, Grenzen wahren und professionelle Hilfe richtig einbeziehen."
+        description="Krisenbegleitung bei Borderline: Warnzeichen professionell einordnen lassen, den eigenen Schutz wahren und passende Hilfe einbeziehen."
         path="/unterstuetzen/krise"
       />
       <TableOfContents />
@@ -261,9 +263,10 @@ export default function UnterstuetzenKrise() {
           </DisplayHeading>
           <Lede className="max-w-[40em]">
             Viele Angehörige erleben Phasen starker Anspannung, Eskalation oder
-            Rückzug. Hier erfahren Sie, wie Sie Krisen besser einordnen,
-            deeskalierend reagieren und Sicherheit im Blick behalten können,
-            ohne Ihre eigene Grenze aus dem Blick zu verlieren.
+            Rückzug. Hier finden Sie Orientierung, um beobachtbare Warnzeichen
+            professionell einordnen zu lassen, den eigenen Schutz zu wahren und
+            passende Hilfe einzubeziehen. Sie müssen eine Krise nicht allein
+            deeskalieren oder bewältigen.
           </Lede>
           <TopicQuickLinks
             items={[
@@ -547,15 +550,18 @@ export default function UnterstuetzenKrise() {
               </ul>
             </article>
 
-            {/* Gemeinsame Krisenanalyse */}
+            {/* Freiwillige gemeinsame Nachbesprechung */}
             <article className="mt-10 space-y-3">
               <h3 style={h4Style}>
-                Gemeinsame Krisenanalyse (wenn beide bereit sind)
+                Gemeinsame Nachbesprechung (wenn beide bereit sind)
               </h3>
               <p style={bodyStyle}>
-                Nicht direkt nach der Krise – aber in den nächsten Tagen, in
-                einem ruhigen Moment, kann ein kurzes Gespräch helfen. Nicht als
-                Vorwurf, sondern als gemeinsames Lernen.
+                Eine Nachbesprechung ist freiwillig und kann warten, bis sie für
+                beide möglich ist. Sie dient nicht dazu, einen einzigen Auslöser
+                zu finden. Niemand ist verpflichtet, eine nächste Krise
+                vorherzusagen oder rechtzeitig zu melden. Im Mittelpunkt stehen
+                beobachtbare Veränderungen, gewünschte Unterstützung und
+                vereinbarte professionelle Hilfewege.
               </p>
               <dl className="mt-3 grid gap-4 sm:grid-cols-3">
                 {krisenanalyseFragen.map(item => (
@@ -637,9 +643,10 @@ export default function UnterstuetzenKrise() {
             <article className="mt-10 space-y-3">
               <h3 style={h4Style}>Früherkennung trainieren</h3>
               <p style={bodyStyle}>
-                Jede überstandene Krise ist eine Lernchance für die nächste.
-                Nicht um sie zu erzwingen, sondern um früher zu erkennen, wann
-                Unterstützung nötig ist.
+                Nach einer Krise kann gemeinsam und ohne Ursachenzwang geprüft
+                werden, welche Veränderungen beobachtbar waren und welche
+                Hinweise oder Hilfen künftig gewünscht sind. Niemand muss eine
+                Krise vorhersagen oder rechtzeitig melden.
               </p>
               <ul className="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2">
                 {frueherkennung.map(item => (
@@ -665,24 +672,32 @@ export default function UnterstuetzenKrise() {
               style={{ borderColor: "#d97706" }}
             >
               <h3 style={{ ...h4Style, color: "#92400e" }}>
-                Warnsignale: wenn die Nachphase nicht besser wird
+                Hinweise: wenn Belastung oder Gefahr bestehen bleibt
               </h3>
               <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
                 <li>
-                  Die betroffene Person zieht sich weiter zurück oder eskaliert
-                  erneut
+                  Erneute Aussagen oder Handlungen weisen auf unmittelbare
+                  Selbst- oder Fremdgefährdung hin
                 </li>
                 <li>
-                  Sie selbst werden zynisch, gleichgültig oder dauerhaft
-                  hypervigilant
+                  Eine beteiligte Person erholt sich nicht, fühlt sich dauerhaft
+                  in Alarm oder kann den Alltag kaum bewältigen
                 </li>
-                <li>Keine Änderung der Muster, die zur Krise geführt haben</li>
-                <li>Krisen häufen sich ohne erkennbaren Fortschritt</li>
+                <li>
+                  Belastende Situationen wiederholen sich, ohne dass die
+                  Beteiligten passende Entlastung finden
+                </li>
+                <li>
+                  Sicherheit, Wohnen, Versorgung oder körperliche Gesundheit
+                  sind nicht verlässlich gewährleistet
+                </li>
               </ul>
               <p className="mt-3" style={bodyStyle}>
                 <strong style={{ color: "var(--fg-primary)" }}>Dann:</strong>{" "}
-                Professionelle Unterstützung intensivieren – für die betroffene
-                Person, für Sie, oder für beide gemeinsam.
+                Bei akuter Gefahr gilt der Notfallweg. Sonst kann jede
+                beteiligte Person eigene Beratung nutzen; weitere
+                Behandlungsschritte klärt die betroffene Person mit dem
+                Fachteam.
               </p>
             </aside>
             <KinderEntlasten />
@@ -739,7 +754,7 @@ export default function UnterstuetzenKrise() {
               </Link>
               . Zurück geht es zu{" "}
               <Link href="/unterstuetzen/therapie" className="editorial-link">
-                Therapie begleiten
+                Therapie und Angehörigenrolle
               </Link>
               .
             </p>
@@ -786,7 +801,7 @@ export default function UnterstuetzenKrise() {
                 href: "/kommunizieren",
                 title: "Kommunizieren",
                 description:
-                  "Validierung und DEAR-Technik — wie Sie Krisen sprachlich tragen, ohne in Eskalation zu kippen.",
+                  "Mögliche Gesprächswege bei hoher Anspannung — ohne Verantwortung für den Verlauf zu übernehmen.",
               },
             ]}
           />

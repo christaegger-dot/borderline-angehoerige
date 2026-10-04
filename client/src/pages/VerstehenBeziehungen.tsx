@@ -397,21 +397,21 @@ export default function VerstehenBeziehungen() {
           </div>
 
           <div className="mt-6">
-            <p className="font-medium">
-              Wie sich eine Schleife über längere Zeit festigen kann
-            </p>
+            <p className="font-medium">Wenn Unterstützung alle Kraft bindet</p>
             <EditorialProse>
               <p>
-                Wenn Angehörige zum Beispiel immer eigene Termine absagen,
-                sobald grosse Verzweiflung entsteht, kann das heute entlasten.
-                Mit der Zeit kann aber der Eindruck wachsen, Sicherheit sei nur
-                möglich, wenn genau diese eine Person verfügbar bleibt.
+                Wenn Angehörige häufig eigene Termine absagen oder dauerhaft
+                verfügbar bleiben, kann das kurzfristig entlasten und zugleich
+                die eigene Belastung erhöhen. Wie die andere Person Sicherheit
+                erlebt, lässt sich daraus nicht ableiten; keine einzelne
+                Bezugsperson kann Sicherheit allein gewährleisten.
               </p>
               <p>
-                Die Alternative ist nicht, Trost zu verweigern. Hilfreiche
-                Unterstützung lindert die aktuelle Not und öffnet zugleich
-                mehrere Wege: eigene Strategien, weitere Bezugspersonen und
-                professionelle Hilfe.
+                Trost und Unterstützung dürfen freiwillig und begrenzt sein. Je
+                nach Wunsch und Situation können mehrere Wege nebeneinander
+                stehen: eigene Strategien der betroffenen Person, weitere
+                Bezugspersonen, Beratung oder professionelle Hilfe. Angehörige
+                müssen keinen dieser Wege allein tragen.
               </p>
             </EditorialProse>
           </div>
@@ -432,11 +432,12 @@ export default function VerstehenBeziehungen() {
           <div id="was-hilft" style={{ scrollMarginTop: "120px" }} />
           <EditorialProse>
             <p>
-              Wenn beide stark angespannt sind, geht Beruhigung vor Klärung. Ist
-              wieder Gesprächsraum da, kann die Schleife an mehreren Stellen
-              unterbrochen werden: bei der Bedeutung eines Ereignisses, bei der
-              Form der Unterstützung oder bei der späteren Wiedergutmachung.
-              Kein einzelner Satz garantiert Beruhigung.
+              Wenn beide stark angespannt sind, gehen Sicherheit, Abstand oder
+              eine Pause vor Klärung. Ist wieder Gesprächsraum da, kann die
+              Schleife an mehreren Stellen unterbrochen werden: bei der
+              Bedeutung eines Ereignisses, bei der Form der Unterstützung oder
+              bei der späteren Wiedergutmachung. Kein einzelner Satz garantiert
+              eine bestimmte Reaktion.
             </p>
           </EditorialProse>
 

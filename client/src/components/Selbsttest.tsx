@@ -139,32 +139,32 @@ const questions: Question[] = [
   },
   {
     id: 4,
-    text: "Wie ist der Diagnose-Status?",
+    text: "Gibt es eine fachliche Einordnung?",
     subtext:
-      "Die Fragen dienen der Orientierung für Angehörige, nicht der Selbstdiagnose.",
+      "Die Auswahl steuert nur passende Informationen. Sie stellt keine Diagnose und bewertet keine Zustimmung oder Ablehnung.",
     options: [
       {
-        text: "Offizielle Diagnose liegt vor",
+        text: "Eine Borderline-Diagnose wurde fachlich gestellt",
         value: "diagnose",
         weight: { unterstuetzen: 3, kommunizieren: 2, grenzen: 2 },
       },
       {
-        text: "Verdachtsdiagnose / Abklärung läuft",
+        text: "Eine fachliche Abklärung läuft",
         value: "abklaerung",
         weight: { diagnostik: 8, verstehen: 4 },
       },
       {
-        text: "Keine Diagnose, aber ich vermute Borderline",
+        text: "Keine Diagnose – ich suche Orientierung zu beobachtbaren Situationen",
         value: "vermutung",
         weight: { diagnostik: 8, verstehen: 5 },
       },
       {
-        text: "Die Diagnose wird abgelehnt",
+        text: "Die Diagnose ist umstritten oder eine Zweitmeinung ist gewünscht",
         value: "abgelehnt",
         weight: { diagnostik: 7, kommunizieren: 3, grenzen: 3 },
       },
       {
-        text: "Ich weiss es nicht",
+        text: "Ich weiss es nicht oder möchte es nicht angeben",
         value: "unklar",
         weight: { diagnostik: 7, verstehen: 5 },
       },
@@ -214,7 +214,10 @@ const results: Result[] = [
     primaryLink: "/soforthilfe",
     primaryText: "Zu den Notfallressourcen",
     secondaryLinks: [
-      { href: "/unterstuetzen/krise", text: "Krisenbegleitung lernen" },
+      {
+        href: "/unterstuetzen/krise",
+        text: "Krise einordnen und eigenen nächsten Schritt wählen",
+      },
     ],
     safetyCritical: true,
   },
@@ -222,7 +225,7 @@ const results: Result[] = [
     id: "diagnostik",
     title: "Diagnostik einordnen",
     description:
-      "Wenn Diagnose, Verdacht oder Ablehnung noch unklar sind, hilft eine ruhige Orientierung: Was spricht wofür, wer klärt ab und wie sprechen Sie darüber, ohne zu drängen?",
+      "Wenn eine fachliche Einordnung fehlt, offen ist oder nicht geteilt wird, hilft eine ruhige Orientierung: Was wurde beobachtet, welche Unsicherheiten gibt es, wer kann abklären oder eine Zweitmeinung anbieten – und wie lässt sich darüber sprechen, ohne zu drängen?",
     primaryLink: "/verstehen/diagnostik",
     primaryText: "Diagnostik verstehen",
     secondaryLinks: [
@@ -232,11 +235,11 @@ const results: Result[] = [
   },
   {
     id: "krise",
-    title: "Krisenbegleitung",
+    title: "Krise einordnen und Schutz wählen",
     description:
-      "Sie können lernen, Ihren Angehörigen in schwierigen Momenten zu begleiten – ohne sich selbst zu verlieren.",
+      "Sie finden Orientierung zu beobachtbaren Warnzeichen, professioneller Einschätzung, eigenem Schutz und passenden Hilfen. Sie müssen eine Krise nicht allein begleiten oder lösen.",
     primaryLink: "/unterstuetzen/krise",
-    primaryText: "Krisenbegleitung lernen",
+    primaryText: "Krisenwege und Schutzmöglichkeiten",
     secondaryLinks: [
       { href: "/kommunizieren", text: "Kommunikationsstrategien" },
       { href: "/soforthilfe", text: "Soforthilfe" },
@@ -246,7 +249,7 @@ const results: Result[] = [
     id: "kommunizieren",
     title: "Kommunikation verbessern",
     description:
-      "Zuhören, das Erleben anerkennen und die eigene Grenze benennen können helfen, auch in schwierigen Momenten im Gespräch zu bleiben.",
+      "Zuhören, offen nachfragen und die eigene Grenze benennen können ein Gespräch unterstützen. Sie dürfen es auch pausieren oder beenden.",
     primaryLink: "/kommunizieren",
     primaryText: "Kommunikationstechniken entdecken",
     secondaryLinks: [
@@ -258,7 +261,7 @@ const results: Result[] = [
     id: "verstehen",
     title: "Borderline verstehen",
     description:
-      "Wissen schafft Verständnis. Erfahren Sie, was Borderline ist und wie die Störung das Erleben beeinflusst.",
+      "Wissen kann Orientierung geben. Erfahren Sie, was die Diagnose beschreiben kann, wo ihre Grenzen liegen und wie unterschiedlich Menschen sie erleben.",
     primaryLink: "/verstehen",
     primaryText: "Borderline verstehen",
     secondaryLinks: [
@@ -272,21 +275,24 @@ const results: Result[] = [
   },
   {
     id: "unterstuetzen",
-    title: "Unterstützung geben",
+    title: "Unterstützung frei wählen",
     description:
-      "Sie können einen wichtigen Beitrag leisten – nicht als Therapeut, sondern als verlässlicher Begleiter.",
+      "Sie können Unterstützung anbieten, soweit sie gewollt, sicher und für Sie tragbar ist. Behandlung und Genesung bleiben nicht Ihre Verantwortung.",
     primaryLink: "/unterstuetzen/uebersicht",
     primaryText: "Unterstützungsstrategien entdecken",
     secondaryLinks: [
       { href: "/unterstuetzen/alltag", text: "Alltag gestalten" },
-      { href: "/unterstuetzen/therapie", text: "Therapie unterstützen" },
+      {
+        href: "/unterstuetzen/therapie",
+        text: "Therapie und Angehörigenrolle",
+      },
     ],
   },
   {
     id: "grenzen",
     title: "Grenzen setzen",
     description:
-      "Grenzen sind kein Zeichen von Ablehnung, sondern von Selbstfürsorge. Lernen Sie, sie liebevoll zu kommunizieren.",
+      "Grenzen beschreiben, was für Sie möglich, sicher und tragbar ist. Sie dürfen sie klar kommunizieren und brauchen dafür weder Zustimmung noch ein Rückkehrversprechen.",
     primaryLink: "/grenzen",
     primaryText: "Grenzen setzen lernen",
     secondaryLinks: [

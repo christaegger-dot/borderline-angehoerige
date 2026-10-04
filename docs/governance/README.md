@@ -16,6 +16,9 @@ Die Dokumente sind bewusst nicht als juristische Formalität geschrieben, sonder
 8. `08-seiten-risikoklassifikation.md` — Risikoeinstufung der zentralen Seiten.
 9. `09-umsetzungsplan-90-tage.md` — erste Umsetzungsetappen.
 10. `10-fachliche-freigabe-vorlage.md` — Vorlage für fachliches Sign-off vor Release.
+11. `11-anti-stigma-und-perspektivenstandard.md` — verbindlicher Standard für
+    Würde, Autonomie, Zuschreibungen und die Prüfung beider
+    Erfahrungsperspektiven.
 
 Paketbezogenes Protokoll:
 

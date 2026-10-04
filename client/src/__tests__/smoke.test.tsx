@@ -129,6 +129,20 @@ describe("Smoke Tests – Kritische Seiten", () => {
     const { default: Notfallkarte } = await import("@/pages/Notfallkarte");
     withRouter(<Notfallkarte />);
     expect(screen.getAllByText(/Notfallkarte/i)[0]).toBeInTheDocument();
+    expect(
+      screen.getByText(/Gemeinsam und mit Einverständnis ausfüllen/i)
+    ).toBeInTheDocument();
+  });
+
+  it("Situations-Wegweiser: ordnet Situationen ohne Diagnose- oder Charakterurteil ein", async () => {
+    const { default: Wegweiser } = await import("@/pages/Wegweiser");
+    withRouter(<Wegweiser />);
+    expect(
+      screen.getByText(/kommen nicht bei allen Menschen mit Borderline vor/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/nicht Diagnose, Motive oder Charakter/i)
+    ).toBeInTheDocument();
   });
 
   it("HandoutTextPage: rendert Leuchtturm-Textversion", async () => {
@@ -137,11 +151,13 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "leuchtturm" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Der Leuchtturm – Orientierung für Angehörige/i,
+        name: /Der Leuchtturm – eigene Orientierung finden/i,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Sie können das Schiff nicht steuern/i)
+      await screen.findByText(
+        /Sie können die Reise einer anderen Person nicht steuern/i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
@@ -164,31 +180,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Gefahr einschätzen, ruhig bleiben, direkt ansprechen/i
+        /Beobachtungen ernst nehmen, direkt ansprechen und professionelle Hilfe einbeziehen/i
       )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Soforthilfe/i })
     ).toHaveAttribute("href", "/soforthilfe");
-  });
-
-  it("HandoutTextPage: rendert Krisenmodus-Textversion", async () => {
-    const { default: HandoutTextPage } =
-      await import("@/pages/HandoutTextPage");
-    withRouter(<HandoutTextPage params={{ handoutId: "im-krisenmodus" }} />);
-    expect(
-      screen.getByRole("heading", {
-        name: /Im Krisenmodus – Orientierung geben/i,
-      })
-    ).toBeInTheDocument();
-    expect(
-      await screen.findByText(
-        /In der Krise hilft weniger Logik – mehr Ruhe, Präsenz und Orientierung\./i
-      )
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
-    ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
   });
 
   it("HandoutTextPage: rendert Drei-Säulen-Textversion", async () => {
@@ -202,7 +199,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Präsenz, Stabilität und Grenze sind drei Säulen/i
+        /Drei freiwillige Fragen können Orientierung geben/i
       )
     ).toBeInTheDocument();
     expect(
@@ -224,7 +221,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Wenn alle ähnlich reagieren, kann mehr Sicherheit entstehen/i
+        /Konsistenz bedeutet keine starre Einheitsreaktion/i
       )
     ).toBeInTheDocument();
     expect(
@@ -246,7 +243,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Innehalten – wahrnehmen – nicht bewerten – bewusst handeln\./i
+        /Innehalten, beobachten, Unsicherheit anerkennen und bewusst wählen/i
       )
     ).toBeInTheDocument();
     expect(
@@ -266,7 +263,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Nicht alles auf einmal: Wählen Sie eine Leitlinie pro Woche\./i
+        /Sechs freiwillige Orientierungspunkte können helfen/i
       )
     ).toBeInTheDocument();
     expect(
@@ -285,9 +282,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
-        /Kleine Handlungen im Alltag können viel unterstützen/i
-      )
+      await screen.findByText(/Vier freiwillige Fragen helfen zu klären/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
@@ -323,7 +318,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Im Flugzeug gilt: Erst die eigene Maske aufsetzen, dann anderen helfen\. Für Angehörige gilt dasselbe\./i
+        /Ihre Bedürfnisse zählen\. Sie dürfen zuerst oder ausschliesslich für die eigene Sicherheit und Gesundheit sorgen\./i
       )
     ).toBeInTheDocument();
     expect(
@@ -429,8 +424,8 @@ describe("Smoke Tests – Kritische Seiten", () => {
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
     ).toHaveAttribute("href", "/selbstfuersorge");
     expect(
-      screen.getByRole("link", { name: /PDF öffnen/i })
-    ).toBeInTheDocument();
+      screen.queryByRole("link", { name: /PDF öffnen/i })
+    ).not.toBeInTheDocument();
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
     ).toHaveTextContent(/Schutz vor Akzeptanzübung/i);
@@ -447,12 +442,19 @@ describe("Smoke Tests – Kritische Seiten", () => {
     );
     expect(
       screen.getByRole("heading", {
-        name: /Wenn Worte treffen – 5 häufige Schuldzuweisungen/i,
+        name: /Wenn Worte treffen – belastende Aussagen einordnen/i,
+        level: 1,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Schuldzuweisungen sind keine Tatsachen/i)
+      await screen.findByText(/Von aussen lässt sich nicht sicher erkennen/i)
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /Wenn Suizid angesprochen wird/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: /PDF öffnen/i })
+    ).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Kommunizieren/i })
     ).toHaveAttribute("href", "/kommunizieren");
@@ -516,7 +518,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Ich stoppe jetzt – nicht weil ich aufgebe, sondern weil mir diese Beziehung wichtig ist\./i
+        /Ich darf ein Gespräch unterbrechen oder beenden, wenn ich eine Pause oder Abstand brauche\./i
       )
     ).toBeInTheDocument();
     expect(
@@ -600,7 +602,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Wem gehört dieses Gefühl\?/i)
+      await screen.findByText(/Was habe ich beobachtet, was vermute ich/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Grenzen/i })
@@ -683,7 +685,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/genesung");
   });
 
-  it("HandoutTextPage: rendert Fortschritt-Paradox-Textversion", async () => {
+  it("HandoutTextPage: rendert Textversion zu unterschiedlichen Veränderungsverläufen", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(
@@ -691,13 +693,11 @@ describe("Smoke Tests – Kritische Seiten", () => {
     );
     expect(
       screen.getByRole("heading", {
-        name: /Das Fortschritt-Paradox/i,
+        name: /Veränderung verläuft unterschiedlich/i,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
-        /Rückschritte können Teil eines Veränderungsprozesses sein/i
-      )
+      await screen.findByText(/Veränderung kann unterschiedlich verlaufen/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
@@ -735,16 +735,14 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
-        /Angehörige können beeinflussbare Faktoren unterstützen/i
-      )
+      await screen.findByText(/Verantwortung liegt nicht bei Angehörigen/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
     ).toHaveAttribute("href", "/genesung");
   });
 
-  it("HandoutTextPage: rendert Rolle-im-Genesungsprozess-Textversion", async () => {
+  it("HandoutTextPage: rendert Textversion zu freiwilliger Unterstützung und eigenen Grenzen", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(
@@ -752,13 +750,11 @@ describe("Smoke Tests – Kritische Seiten", () => {
     );
     expect(
       screen.getByRole("heading", {
-        name: /Ihre Rolle im Genesungsprozess/i,
+        name: /Freiwillige Unterstützung und eigene Grenzen/i,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
-        /Sie können unterstützen\. Sie müssen nicht retten\./i
-      )
+      await screen.findByText(/Angehörige können auf Wunsch etwas anbieten/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
@@ -782,25 +778,6 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/verstehen");
   });
 
-  it("HandoutTextPage: rendert 4-Phasen-Textversion", async () => {
-    const { default: HandoutTextPage } =
-      await import("@/pages/HandoutTextPage");
-    withRouter(<HandoutTextPage params={{ handoutId: "4-phasen" }} />);
-    expect(
-      screen.getByRole("heading", {
-        name: /Der 4-Phasen-Zyklus/i,
-      })
-    ).toBeInTheDocument();
-    expect(
-      await screen.findByText(
-        /Freundlichkeit, Verschlechterung, Explosion und Schweigen/i
-      )
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
-    ).toHaveAttribute("href", "/verstehen");
-  });
-
   it("HandoutTextPage: rendert Gehirn-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
@@ -812,7 +789,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Emotionale Überflutung ist nicht automatisch Absicht/i
+        /Hohe Anspannung kann Denken verengen\. Daraus lässt sich keine Absicht ablesen/i
       )
     ).toBeInTheDocument();
     expect(
@@ -826,29 +803,30 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "eisberg" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Der Eisberg – Wut ist oft die Spitze/i,
+        name: /Der Eisberg – sichtbares Verhalten und mögliche Kontexte/i,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Was Sie sehen \(Wut\) ist oft nur die Spitze/i)
+      await screen.findByText(/Was Sie sehen, ist ein Teil der Situation/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
     ).toHaveAttribute("href", "/verstehen");
   });
 
-  it("HandoutTextPage: rendert Spaltung-Textversion", async () => {
+  it("HandoutTextPage: rendert die differenzierte Pendel-Textversion", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(<HandoutTextPage params={{ handoutId: "spaltung" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Spaltung – das Pendel zwischen Extremen/i,
+        name: /Wenn Bewertungen unter Stress einseitiger werden/i,
+        level: 1,
       })
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Unter Stress kippt die Bewertung Ihres Angehörigen/i
+        /Weder eine sehr positive noch eine sehr negative Momentaufnahme/i
       )
     ).toBeInTheDocument();
   });
@@ -859,7 +837,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "spaltung" }} />);
 
     const denseCardText = await screen.findByText(
-      /Erkennen Sie das Muster – bei Ihrem Angehörigen und bei sich selbst/i
+      /Was wurde gerade tatsächlich gesagt oder getan/i
     );
     const cardGrid = denseCardText.closest(".grid");
 
@@ -878,7 +856,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Im Alarm-Modus ist Ihr Gegenüber vorübergehend schwerer erreichbar/i
+        /Hohe Anspannung kann Denken, Perspektivwechsel und Selbststeuerung verengen/i
       )
     ).toBeInTheDocument();
   });
@@ -913,7 +891,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<Kommunizieren />);
     expect(
       screen.getByRole("heading", {
-        name: /Drei Materialien für schwierige Gespräche/i,
+        name: /Zwei Materialien für schwierige Gespräche/i,
       })
     ).toBeInTheDocument();
     expect(
@@ -923,19 +901,14 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/gespraeche-kippen");
     expect(
       screen.getByRole("link", {
+        name: /Textversion lesen: Beispiel-Dialog/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/beispiel-dialog");
+    expect(
+      screen.queryByRole("link", {
         name: /PDF öffnen: Wenn Gespräche kippen: 3 Schritte/i,
       })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Pause statt Streit/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/pause-statt-streit");
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Zuhören ohne Zustimmen/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/zuhoeren-ohne-zustimmen");
+    ).not.toBeInTheDocument();
   });
 
   it("Genesung: zeigt Textversionen für Genesung-Handouts", async () => {
@@ -948,7 +921,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/genesung-zahlen");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Das Fortschritt-Paradox/i,
+        name: /Textversion lesen: Veränderung verläuft unterschiedlich/i,
       })
     ).toHaveAttribute("href", "/materialien/text/fortschritt-paradox");
     expect(
@@ -963,7 +936,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/5-faktoren-genesung");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Ihre Rolle im Genesungsprozess/i,
+        name: /Textversion lesen: Freiwillige Unterstützung und eigene Grenzen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/rolle-genesungsprozess");
     expect(
@@ -978,7 +951,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).not.toBeInTheDocument();
     expect(
       screen.queryByRole("link", {
-        name: /PDF öffnen: Ihre Rolle im Genesungsprozess/i,
+        name: /PDF öffnen: Freiwillige Unterstützung und eigene Grenzen/i,
       })
     ).not.toBeInTheDocument();
   });
@@ -986,11 +959,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
   it("Verstehen: zeigt Textversionen für Verstehen-Handouts", async () => {
     const { default: Verstehen } = await import("@/pages/Verstehen");
     withRouter(<Verstehen />);
-    expect(
-      screen.getByRole("link", {
-        name: /Textversion lesen: Der 4-Phasen-Zyklus/i,
-      })
-    ).toHaveAttribute("href", "/materialien/text/4-phasen");
+    expect(screen.queryByText(/Der 4-Phasen-Zyklus/i)).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Das Gehirn verstehen/i,
@@ -1003,11 +972,6 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/kinder");
     expect(
       screen.queryByRole("link", {
-        name: /PDF öffnen: Der 4-Phasen-Zyklus/i,
-      })
-    ).not.toBeInTheDocument();
-    expect(
-      screen.queryByRole("link", {
         name: /PDF öffnen: Das Gehirn verstehen/i,
       })
     ).not.toBeInTheDocument();
@@ -1018,10 +982,10 @@ describe("Smoke Tests – Kritische Seiten", () => {
       await import("@/pages/UnterstuetzenUebersicht");
     withRouter(<UnterstuetzenUebersicht />);
     expect(
-      screen.getByRole("link", {
+      screen.queryByRole("link", {
         name: /Textversion lesen: Im Krisenmodus – Orientierung geben/i,
       })
-    ).toHaveAttribute("href", "/materialien/text/im-krisenmodus");
+    ).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: Drei Säulen hilfreicher Unterstützung/i,
@@ -1062,9 +1026,9 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Die Sauerstoffmaske/i,
+        name: /Textversion lesen: Radikale Akzeptanz/i,
       })
-    ).toHaveAttribute("href", "/materialien/text/sauerstoffmaske");
+    ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: STOPP: einen Moment innehalten/i,

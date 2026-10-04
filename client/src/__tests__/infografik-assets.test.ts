@@ -39,19 +39,18 @@ describe("infografik assets", () => {
     expect(missingAssets).toEqual([]);
   });
 
-  it("uses the freigegebene Validierungstreppe v10 assets in productive references", () => {
+  it("withholds the superseded Validierungstreppe assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/validierung-die-validierungs-treppe-v10.pdf",
         "/infografiken/validierung-die-validierungs-treppe-v10.webp",
         "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v10.webp",
-      ],
-      [
         "/infografiken/validierung-die-validierungs-treppe-v5.pdf",
         "/infografiken/validierung-die-validierungs-treppe-v5.webp",
         "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v5.webp",
@@ -59,19 +58,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Krisenkommunikation v11 assets in productive references", () => {
+  it("withholds the superseded Krisenkommunikation assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/deeskalation-der-deeskalations-pfad-v11.pdf",
         "/infografiken/deeskalation-der-deeskalations-pfad-v11.webp",
         "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v11.webp",
-      ],
-      [
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.pdf",
         "/infografiken/deeskalation-der-deeskalations-pfad-v9.webp",
         "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v9.webp",
@@ -79,19 +77,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Wenn-Worte-Treffen v3 assets in productive references", () => {
+  it("withholds the superseded Wenn-Worte-Treffen visuals", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/manus-wenn-worte-treffen-v3.pdf",
         "/infografiken/manus-wenn-worte-treffen-v3.webp",
         "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v3-thumb.png",
-      ],
-      [
         "/infografiken/manus-wenn-worte-treffen-v2.pdf",
         "/infografiken/manus-wenn-worte-treffen-v2.webp",
         "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v2.webp",
@@ -102,19 +99,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Pause-statt-Streit v3 assets in productive references", () => {
+  it("withholds the superseded Pause-statt-Streit assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/manus-pause-statt-streit-v3.pdf",
         "/infografiken/manus-pause-statt-streit-v3.webp",
         "/infografiken/extras/thumbnails/manus-pause-statt-streit-v3-thumb.png",
-      ],
-      [
         "/infografiken/manus-pause-statt-streit-v2.pdf",
         "/infografiken/manus-pause-statt-streit-v2.webp",
         "/infografiken/extras/thumbnails/manus-pause-statt-streit-v2.webp",
@@ -125,19 +121,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Grenzen-ohne-Eskalation v3 assets in productive references", () => {
+  it("withholds the superseded Grenzen-ohne-Eskalation assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/manus-grenzen-ohne-eskalation-v3.pdf",
         "/infografiken/manus-grenzen-ohne-eskalation-v3.webp",
         "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v3-thumb.png",
-      ],
-      [
         "/infografiken/manus-grenzen-ohne-eskalation-v2.pdf",
         "/infografiken/manus-grenzen-ohne-eskalation-v2.webp",
         "/infografiken/extras/thumbnails/manus-grenzen-ohne-eskalation-v2.webp",
@@ -171,19 +166,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Rolle-klaeren v3 assets in productive references", () => {
+  it("withholds the superseded Rolle-klaeren assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/manus-rolle-klaeren-v3.pdf",
         "/infografiken/manus-rolle-klaeren-v3.webp",
         "/infografiken/extras/thumbnails/manus-rolle-klaeren-v3-thumb.png",
-      ],
-      [
         "/infografiken/manus-rolle-klaeren-v2.pdf",
         "/infografiken/manus-rolle-klaeren-v2.webp",
         "/infografiken/extras/thumbnails/manus-rolle-klaeren-v2.webp",
@@ -214,19 +208,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Eisberg v7 assets in productive references", () => {
+  it("withholds the superseded Eisberg assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/eisberg-der-eisberg-v8.pdf",
         "/infografiken/eisberg-der-eisberg-v8.webp",
         "/infografiken/extras/thumbnails/eisberg-der-eisberg-v8.webp",
-      ],
-      [
         "/infografiken/eisberg-der-eisberg-v6.pdf",
         "/infografiken/eisberg-der-eisberg-v6.webp",
         "/infografiken/extras/thumbnails/eisberg-der-eisberg-v6.webp",
@@ -234,19 +227,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Spaltung v15 assets in productive references", () => {
+  it("withholds the superseded Pendel visuals", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/pendel-das-bewertungs-pendel-v16.pdf",
         "/infografiken/pendel-das-bewertungs-pendel-v16.webp",
         "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v16.webp",
-      ],
-      [
         "/infografiken/pendel-das-bewertungs-pendel-v14.pdf",
         "/infografiken/pendel-das-bewertungs-pendel-v14.webp",
         "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v14.webp",
@@ -254,19 +246,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Schuld-Verantwortung v3 assets in productive references", () => {
+  it("withholds the superseded Schuld-Verantwortung assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/manus-schuld-verantwortung-v3.pdf",
         "/infografiken/manus-schuld-verantwortung-v3.webp",
         "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v3-thumb.png",
-      ],
-      [
         "/infografiken/manus-schuld-verantwortung-v2.pdf",
         "/infografiken/manus-schuld-verantwortung-v2.webp",
         "/infografiken/extras/thumbnails/manus-schuld-verantwortung-v2.webp",
@@ -277,19 +268,40 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Bruecke-Gelaender v2 assets in productive references", () => {
+  it("withholds the superseded Drei-Saeulen and Fortschritt-Paradox assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
+      [
+        "/infografiken/manus-drei-saeulen-v2.pdf",
+        "/infografiken/manus-drei-saeulen-v2.webp",
+        "/infografiken/extras/thumbnails/manus-drei-saeulen-v2-thumb.png",
+        "/infografiken/manus-drei-saeulen-v1.pdf",
+        "/infografiken/manus-drei-saeulen-v1.webp",
+        "/infografiken/extras/thumbnails/manus-drei-saeulen-v1.webp",
+        "/infografiken/fortschritt-das-fortschritt-paradox-v5.pdf",
+        "/infografiken/fortschritt-das-fortschritt-paradox-v5.webp",
+        "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v5.webp",
+      ]
+    );
+  });
+
+  it("withholds the superseded Bruecke-Gelaender assets", () => {
+    const referencedPaths = collectReferencedInfografikAssets().map(
+      asset => asset.path
+    );
+
+    expectProductiveAssetVersion(
+      referencedPaths,
+      [],
       [
         "/infografiken/manus-bruecke-gelaender-v2.pdf",
         "/infografiken/manus-bruecke-gelaender-v2.webp",
         "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v2-thumb.png",
-      ],
-      [
         "/infografiken/manus-bruecke-gelaender-v1.pdf",
         "/infografiken/manus-bruecke-gelaender-v1.webp",
         "/infografiken/extras/thumbnails/manus-bruecke-gelaender-v1.webp",
@@ -297,19 +309,18 @@ describe("infografik assets", () => {
     );
   });
 
-  it("uses the freigegebene Anspannungskurve v2 assets in productive references", () => {
+  it("withholds the superseded Anspannungskurve assets", () => {
     const referencedPaths = collectReferencedInfografikAssets().map(
       asset => asset.path
     );
 
     expectProductiveAssetVersion(
       referencedPaths,
+      [],
       [
         "/infografiken/manus-anspannungskurve-v2.pdf",
         "/infografiken/manus-anspannungskurve-v2.webp",
         "/infografiken/extras/thumbnails/manus-anspannungskurve-v2-thumb.png",
-      ],
-      [
         "/infografiken/manus-anspannungskurve-v1.pdf",
         "/infografiken/manus-anspannungskurve-v1.webp",
         "/infografiken/extras/thumbnails/manus-anspannungskurve-v1.webp",

@@ -6,35 +6,36 @@ export const handoutTextVersions = [
   createHandoutTextVersion("spiegeln-statt-aufsaugen", {
     kicker: "Textversion",
     summary:
-      "Mitgefühl heisst nicht Übernehmen. Sie können Leid anerkennen, ohne Schmerz, Wut oder Leere des anderen zu Ihren eigenen zu machen.",
+      "Mitgefühl heisst nicht Übernehmen. Sie können Beobachtungen vorsichtig spiegeln, offen nachfragen und zugleich bei den eigenen Gefühlen und Grenzen bleiben.",
     intro: [
-      "Spiegeln statt Aufsaugen hilft, empathisch zu bleiben, ohne alles zu übernehmen. Der Unterschied schützt Verbindung und Selbstgrenze zugleich.",
-      "Sie finden zuerst die Kernfrage, dann den Unterschied zwischen Aufsaugen und Spiegeln und zum Schluss drei kurze Hinweise für den Alltag.",
+      "Spiegeln statt Aufsaugen ist eine Metapher für eine freiwillige Gesprächsoption: Wahrnehmen, was sichtbar oder gesagt wurde, ohne verborgene Gefühle festzulegen oder Verantwortung zu übernehmen.",
+      "Sie finden zuerst eine Kernfrage, dann den Unterschied zwischen Beobachtung und Übernahme und zum Schluss Hinweise für den Alltag. Abstand oder ein Gesprächsende bleiben gleichwertige Möglichkeiten.",
     ],
     sections: [
       {
         title: "Kernfrage",
         calloutTitle: "Zentraler Prüfstein",
-        calloutText: "Wem gehört dieses Gefühl?",
+        calloutText:
+          "Was habe ich beobachtet, was vermute ich – und was geschieht gerade in mir?",
       },
       {
-        title: "Aufsaugen",
+        title: "Übernehmen",
         cards: [
           {
             title: "Was passiert?",
-            text: "Sie übernehmen Schmerz, Wut oder Leere der anderen Person fast wie Ihre eigenen Gefühle.",
+            text: "Aus einer Beobachtung wird die Annahme, Sie müssten das Erleben oder die Situation der anderen Person lösen.",
           },
           {
-            title: "Folge",
-            text: "Das führt oft zu Erschöpfung, Schuldgefühlen und innerer Verstrickung.",
+            title: "Mögliche Folge",
+            text: "Das kann Druck, Schuldgefühle oder Erschöpfung verstärken. Die Wirkung ist individuell.",
           },
           {
             title: "Typischer Satz",
             text: "Es ist meine Schuld, dass es dir schlecht geht.",
           },
           {
-            title: "Innere Dynamik",
-            text: "Ich muss diese Leere für die andere Person ausgleichen.",
+            title: "Innere Annahme",
+            text: "Ich glaube, dass ich die Lage der anderen Person ausgleichen muss.",
           },
         ],
       },
@@ -43,28 +44,28 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Was passiert?",
-            text: "Sie nehmen das Gefühl wahr, lassen es aber bei der anderen Person.",
+            text: "Sie benennen vorsichtig, was Sie beobachtet oder verstanden haben, und lassen Raum für Korrektur.",
           },
           {
-            title: "Folge",
-            text: "Das stärkt Selbstschutz und lässt Eigenverantwortung eher beim Gegenüber.",
+            title: "Mögliche Wirkung",
+            text: "Das kann Verständnis erleichtern, garantiert aber keine bestimmte Reaktion. Ihre Selbstgrenze bleibt bestehen.",
           },
           {
             title: "Typischer Satz",
-            text: "Ich sehe, dass du leidest. Ich bin für dich da, aber ich kann es nicht für dich fühlen.",
+            text: "Ich höre, dass es gerade schwer ist. Habe ich dich richtig verstanden?",
           },
           {
-            title: "Innere Haltung",
-            text: "Das sind deine Gefühle, nicht meine.",
+            title: "Eigene Orientierung",
+            text: "Ich darf mitfühlen, nachfragen, widersprechen, pausieren oder das Gespräch beenden.",
           },
         ],
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Fragen Sie sich: Ist das mein Gefühl oder das der anderen Person?",
-          "Sagen Sie: Ich verstehe, dass du leidest (nicht: Ich leide mit dir).",
-          "Erinnern Sie sich: Die innere Leere der anderen Person können Sie nicht stellvertretend ausfüllen.",
+          "Trennen Sie konkrete Beobachtung, eigene Reaktion und Vermutung.",
+          "Spiegeln Sie vorsichtig und fragen Sie offen nach, statt ein Gefühl festzulegen.",
+          "Erinnern Sie sich: Sie müssen das Erleben oder die Situation einer anderen Person nicht stellvertretend lösen.",
           "Wenn Sie selbst überflutet sind, ist Abstand oder Unterstützung hilfreicher als weiteres Spiegeln.",
         ],
       },
@@ -79,7 +80,7 @@ export const handoutTextVersions = [
       "Die Brücken-Metapher verbindet Kontakt und Grenze: Beziehung bleibt tragfähiger, wenn Geländer, Pfeiler und Absprachen sichtbar sind.",
     intro: [
       "Die Brücke mit Geländer beschreibt eine Beziehungshaltung für Angehörige: Kontakt halten, ohne grenzenlos verfügbar zu werden.",
-      "Die Brücke steht für Verbindung, das Geländer für klare Grenzen und die Pfeiler für Absprachen, Pausen, Fachpersonen und Selbstschutz.",
+      "Die Brücke steht für möglichen Kontakt, das Geländer für klare Grenzen und die Pfeiler für Absprachen, Pausen, Fachpersonen und Selbstschutz. Sie müssen die Brücke nicht allein tragen und keinen Kontakt versprechen, der für Sie nicht sicher oder tragbar ist.",
     ],
     sections: [
       {
@@ -92,7 +93,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Verbindung",
-            text: "«Ich bleibe ansprechbar.» Kontakt bedeutet: Ich ziehe mich nicht wortlos zurück. Ich bleibe in Beziehung, soweit es für mich sicher und tragbar ist.",
+            text: "«Ich entscheide, welcher Kontakt für mich möglich ist.» Verbindung kann Nähe, eine begrenzte Nachricht oder auch Abstand bedeuten. Massgeblich ist, was sicher und tragbar ist.",
           },
           {
             title: "Geländer",
@@ -113,9 +114,9 @@ export const handoutTextVersions = [
         bullets: [
           "Früh sagen, was möglich ist.",
           "Die Grenze kurz und ruhig benennen.",
-          "Eine Pause mit Rückkehrzeit vereinbaren.",
+          "Eine Pause oder ein Gesprächsende ohne Rückkehrversprechen benennen.",
           "Verantwortung auf mehrere Schultern verteilen.",
-          "Nach ruhigen Momenten wieder Kontakt aufnehmen.",
+          "Nur wenn es sicher und gewollt ist, später neuen Kontakt anbieten.",
         ],
       },
       {
@@ -127,7 +128,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Pause",
-            text: "«Ich mache eine Pause und komme um [Uhrzeit] zurück.»",
+            text: "«Ich beende das Gespräch jetzt. Ob und wann ich wieder ansprechbar bin, entscheide ich später.»",
           },
           {
             title: "Unterstützung",
@@ -139,13 +140,13 @@ export const handoutTextVersions = [
         title: "Schutzsatz",
         calloutTitle: "Grenzen und Beziehung",
         calloutText:
-          "Grenzen beenden nicht Beziehung – sie machen Kontakt sicherer.",
+          "Grenzen können Kontakt schützen. Sie dürfen ein Gespräch oder – wenn nötig – auch einen Kontakt beenden.",
       },
       {
         title: "Geländer sind kein Liebesentzug",
         calloutTitle: "Einordnung",
         calloutText:
-          "Eine Grenze sagt nicht: «Du bist mir egal.» Sie sagt: «So kann Kontakt sicherer bleiben.»",
+          "Eine Grenze bewertet keinen Menschen. Sie beschreibt, was für Sie möglich, sicher und tragbar ist.",
       },
     ],
     sourceLine:

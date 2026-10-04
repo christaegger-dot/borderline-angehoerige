@@ -47,11 +47,11 @@ describe("netlify material-download function adapter", () => {
 
   it("uses inline disposition when requested", async () => {
     const req = new Request(
-      "https://example.com/api/material-download/notfallplan-krise?disposition=inline"
+      "https://example.com/api/material-download/4-arten-von-grenzen?disposition=inline"
     );
 
     const response = await materialDownloadFunction(req, {
-      params: { id: "notfallplan-krise" },
+      params: { id: "4-arten-von-grenzen" },
     });
 
     expect(response.status).toBe(200);
@@ -60,6 +60,21 @@ describe("netlify material-download function adapter", () => {
 
   it("defaults to attachment disposition", async () => {
     const req = new Request(
+      "https://example.com/api/material-download/4-arten-von-grenzen"
+    );
+
+    const response = await materialDownloadFunction(req, {
+      params: { id: "4-arten-von-grenzen" },
+    });
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get("content-disposition")).toContain(
+      "attachment;"
+    );
+  });
+
+  it("returns 404 for a text-only handout", async () => {
+    const req = new Request(
       "https://example.com/api/material-download/notfallplan-krise"
     );
 
@@ -67,9 +82,6 @@ describe("netlify material-download function adapter", () => {
       params: { id: "notfallplan-krise" },
     });
 
-    expect(response.status).toBe(200);
-    expect(response.headers.get("content-disposition")).toContain(
-      "attachment;"
-    );
+    expect(response.status).toBe(404);
   });
 });

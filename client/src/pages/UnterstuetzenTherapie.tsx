@@ -54,9 +54,9 @@ const zusammenarbeitSzenarien = [
     ],
   },
   {
-    titel: "Die Therapie scheint zu stagnieren",
+    titel: "Ich mache mir Sorgen um den Verlauf",
     inhalt: [
-      "Bedenken Sie: Sie sehen nicht, was in der Therapie passiert – Vertrauensaufbau und Veränderung können Zeit brauchen.",
+      "Sie sehen von aussen nicht, was in der Therapie geschieht und welche Ziele die Person mit dem Fachteam vereinbart hat.",
       "Bei Sorgen können Sie konkrete Beobachtungen mitteilen und um Klärung des weiteren Vorgehens bitten. Vertrauliche Rückmeldungen setzen eine entsprechende Berechtigung voraus.",
       "Formulierungsbeispiel: «Ich beobachte weiterhin Selbstverletzungen und mache mir Sorgen. Welche Abklärung oder Unterstützung ist jetzt nötig?» Bei akuter Gefahr nutzen Sie den Notruf, statt auf eine Antwort zu warten.",
       "Bei begründeten Zweifeln an Diagnose oder Behandlung kann eine zweite fachliche Einschätzung sinnvoll sein; eine pauschale Wartefrist von einem Jahr gibt es dafür nicht. Besprechen Sie dies möglichst mit der betroffenen Person. Für Ihre eigene Rolle können Sie unabhängig davon Beratung suchen.",
@@ -67,17 +67,17 @@ const zusammenarbeitSzenarien = [
     inhalt: [
       "Direkt ansprechen (in stabiler Phase): «Mir scheint, dass die Therapie für dich gerade schwierig ist. Was macht sie dir schwierig?»",
       "Sie können Motivation nicht erzwingen – aber Sie können Interesse zeigen",
-      "Sie dürfen dem Behandlungsteam relevante Beobachtungen auch ausserhalb akuter Gefahr mitteilen. Besprechen Sie den Kontakt möglichst mit der betroffenen Person. Die Mitteilung begründet keinen Anspruch auf vertrauliche Auskünfte.",
+      "Wenn Sie ausserhalb akuter Gefahr etwas mitteilen möchten, besprechen Sie Anlass, Inhalt und Kontaktweg möglichst vorher mit der betroffenen Person. Beschreiben Sie nur eigene konkrete Beobachtungen und Ihren eigenen Unterstützungsbedarf. Die Mitteilung begründet keinen Anspruch auf vertrauliche Auskünfte.",
       "Therapieambivalenz kann viele Gründe haben – Scham, Angst, Überforderung, schlechte Erfahrungen oder Misstrauen. Nehmen Sie das nicht vorschnell persönlich.",
     ],
   },
   {
-    titel: "Was sollte ich dem Behandlungsteam berichten?",
+    titel: "Was kann ich in einem vereinbarten Kontakt mitteilen?",
     inhalt: [
-      "Relevant: Sicherheitsrisiken (Suizidgedanken, Selbstverletzung, Gewalt), grösste Beziehungsherausforderungen, was funktioniert",
-      "Konzentrieren Sie sich auf relevante Veränderungen und vereinbarte Themen. Eine laufende Überwachung ist nicht Ihre Aufgabe.",
-      "Vereinbaren Sie Anlass, Häufigkeit, Zuständigkeit und einen geeigneten Übermittlungsweg mit dem Team. Es gibt keine allgemeine monatliche Vorgabe. Akute Gefahr gehört zum Notruf, nicht in eine E-Mail.",
-      "Fragen statt Diagnosen: «Mir fällt auf, dass … – Ist das Teil des Prozesses?»",
+      "Eigene konkrete Beobachtungen, vereinbarte Themen und der eigene Unterstützungsbedarf – ohne Diagnose, Motiv- oder Verlaufsbewertung.",
+      "Stimmen Sie nicht-akute Angaben möglichst mit der betroffenen Person ab. Eine laufende Überwachung ist nicht Ihre Aufgabe.",
+      "Vereinbaren Sie Anlass, Zuständigkeit und einen geeigneten Übermittlungsweg. Bei möglicher akuter Gefahr nutzen Sie sofort die Notfallwege und warten nicht auf eine E-Mail-Antwort.",
+      "Beobachtung statt Deutung: «Mir ist aufgefallen, dass …; an wen kann ich mich mit meiner Sorge wenden?»",
     ],
   },
   {
@@ -157,13 +157,13 @@ export default function UnterstuetzenTherapie() {
   return (
     <Layout>
       <SEO
-        title="Therapie unterstützen"
-        description="Wie Angehörige Behandlung unterstützen können, ohne mitzubehandeln oder die Verantwortung zu übernehmen."
+        title="Therapie und Angehörigenrolle"
+        description="Behandlung verstehen, Autonomie und Schweigepflicht achten und die eigene Angehörigenrolle klären."
         path="/unterstuetzen/therapie"
       />
       <MedicalPageSchema
-        title="Therapie unterstützen"
-        description="Wie Angehörige Behandlung unterstützen können, ohne mitzubehandeln oder die Verantwortung zu übernehmen."
+        title="Therapie und Angehörigenrolle"
+        description="Behandlung verstehen, Autonomie und Schweigepflicht achten und die eigene Angehörigenrolle klären."
         path="/unterstuetzen/therapie"
       />
       <TableOfContents />
@@ -193,13 +193,14 @@ export default function UnterstuetzenTherapie() {
             Therapie
           </EyebrowLabel>
           <DisplayHeading level={1} size="topic">
-            Therapie <em>begleiten</em>
+            Therapie und <em>Angehörigenrolle</em>
           </DisplayHeading>
           <Lede className="max-w-[40em]">
-            Professionelle Therapie ist ein zentraler Baustein im
-            Genesungsprozess. Angehörige können diesen Weg unterstützen, aber
-            nicht für den anderen übernehmen. Genau diese Grenze macht
-            Therapiebegleitung oft so anspruchsvoll.
+            Professionelle Behandlung kann ein wichtiger Teil eines
+            individuellen Genesungswegs sein. Ob, wie und mit welchen Zielen sie
+            stattfindet, entscheidet die betroffene Person gemeinsam mit
+            Fachpersonen. Angehörige dürfen ihre eigene Rolle und Unterstützung
+            unabhängig davon klären.
           </Lede>
           <TopicQuickLinks
             items={[
@@ -273,9 +274,9 @@ export default function UnterstuetzenTherapie() {
       <EditorialSection variant="cream">
         <EditorialSection.Body>
           <EditorialPullQuote>
-            Eine hilfreiche innere Frage lautet oft nicht: Wie bringe ich die
-            Therapie zum Funktionieren? Sondern: Wie kann ich den Rahmen
-            mittragen, ohne selbst zur Behandlung zu werden?
+            Sie müssen eine Therapie weder zum Funktionieren bringen noch ihren
+            Rahmen mittragen. Klären Sie, ob überhaupt etwas von Ihnen gewünscht
+            ist und was Sie freiwillig übernehmen können.
           </EditorialPullQuote>
         </EditorialSection.Body>
       </EditorialSection>
@@ -303,16 +304,16 @@ export default function UnterstuetzenTherapie() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Was Angehörige in der Therapie wirklich tun können"
+            title="Was Angehörige freiwillig anbieten können"
             id="rolle"
           >
             <EditorialProse>
               <p>
-                Angehörige können ermutigen, Termine unterstützen, Veränderungen
-                wahrnehmen und Rückschläge einordnen helfen. Sie können aber
-                keine Therapie ersetzen, keine Motivation erzwingen und nicht
-                stellvertretend regulieren, was in Behandlung bearbeitet werden
-                muss.
+                Auf Wunsch können Angehörige eine organisatorische Hilfe, ein
+                Gespräch oder Begleitung anbieten. Die betroffene Person darf
+                das Angebot annehmen, verändern oder ablehnen. Sie müssen weder
+                Therapieerfolg bewerten noch Motivation, Übungen oder
+                Krisenregulation übernehmen.
               </p>
             </EditorialProse>
           </ContentSection>
@@ -336,14 +337,15 @@ export default function UnterstuetzenTherapie() {
               <article className="space-y-2">
                 <h3 style={h4Style}>1. Beobachtungen mitteilen</h3>
                 <p style={bodyStyle}>
-                  Sie können dem Behandlungsteam relevante Beobachtungen und
-                  Sorgen mitteilen, auch wenn Sie keine Behandlungsauskünfte
-                  erhalten dürfen. Die Schweigepflicht verhindert nicht
-                  grundsätzlich, dass Fachpersonen Ihnen zuhören. Klären Sie den
-                  geeigneten Kontaktweg und besprechen Sie das Vorgehen
-                  möglichst mit der betroffenen Person. Vertraulichkeit Ihrer
-                  Mitteilung gegenüber der betroffenen Person kann nicht
-                  pauschal zugesichert werden.
+                  Ausserhalb akuter Gefahr sollte ein Kontakt zum
+                  Behandlungsteam möglichst mit der betroffenen Person
+                  abgesprochen sein. Beschreiben Sie eigene konkrete
+                  Beobachtungen und Ihren eigenen Unterstützungsbedarf, ohne
+                  Motive, Diagnose oder Therapieverlauf zu bewerten. Klären Sie
+                  den geeigneten Kontaktweg. Vertraulichkeit Ihrer Mitteilung
+                  gegenüber der betroffenen Person kann nicht pauschal
+                  zugesichert werden. Bei möglicher akuter Gefahr nutzen Sie die
+                  Notfallwege und warten nicht auf eine Rückmeldung per E-Mail.
                 </p>
               </article>
               <article className="space-y-2">
@@ -407,45 +409,38 @@ export default function UnterstuetzenTherapie() {
               className="mt-10 border-l-4 pl-5"
               style={{ borderColor: "var(--accent-label)" }}
             >
-              <h3 style={h4Style}>
-                Fragen, wenn Sie sich um die Behandlung sorgen
-              </h3>
+              <h3 style={h4Style}>Die eigene Rolle und Ansprechwege klären</h3>
               <p className="mt-3" style={bodyStyle}>
-                Angehörige sehen nur einen Teil des Behandlungsprozesses. Kein
-                einzelner Punkt beweist, dass eine Behandlung ungeeignet ist.
-                Die Fragen helfen, Sicherheitsbedenken, Behandlungsrahmen und
-                eingeschränkte Auskunft durch die Schweigepflicht
-                auseinanderzuhalten.
+                Sie müssen die Behandlung weder beurteilen noch ihren Verlauf
+                kontrollieren. Hilfreicher ist, die eigene Perspektive, eine
+                vereinbarte Rolle und erreichbare Ansprechwege zu klären.
               </p>
               <ul className="mt-3 ml-5 list-disc space-y-1.5" style={bodyStyle}>
                 <li>
-                  Werden Sie im gemeinsamen Gespräch pauschal abgewertet oder
-                  wird ein konkreter Konflikt respektvoll und nachvollziehbar
-                  besprochen?
+                  Welche eigenen konkreten Beobachtungen möchten Sie – möglichst
+                  mit Wissen der betroffenen Person – in ein gemeinsames
+                  Gespräch einbringen?
                 </li>
                 <li>
-                  Gibt es einen benannten Weg, konkrete Sicherheitsbedenken
-                  mitzuteilen, auch wenn das Team keine vertraulichen Auskünfte
-                  geben darf?
+                  Was belastet Sie selbst, und wo erhalten Sie unabhängig von
+                  der Behandlung Beratung oder Entlastung?
                 </li>
                 <li>
-                  Werden Kontakte pauschal unterbunden oder werden Abstand und
-                  Schutz aufgrund einer konkreten Belastungs- oder
-                  Gefährdungssituation besprochen?
+                  Welche Unterstützung haben alle Beteiligten miteinander
+                  vereinbart – und was gehört ausdrücklich nicht zu Ihrer Rolle?
                 </li>
                 <li>
-                  Werden Ziele, Fortschritte, Belastungen und ausbleibende
-                  Veränderungen regelmässig mit der betroffenen Person
-                  überprüft?
+                  Welcher Kontaktweg ist für nicht akute Anliegen vorgesehen,
+                  und an wen wenden Sie sich bei möglicher akuter Gefahr?
                 </li>
               </ul>
               <p className="mt-3" style={bodyStyle}>
                 Bei akuten Sicherheitsbedenken holen Sie sofort professionelle
-                Hilfe. Sonst können Sie Ihre Beobachtungen mit der betroffenen
-                Person besprechen, um Klärung des Rahmens bitten oder eine
-                unabhängige fachliche Zweitmeinung erwägen. Ein Wechsel ist eine
-                gemeinsame Einzelfallentscheidung, keine automatische Folge
-                dieser Fragen.
+                Hilfe. Nicht akute Beobachtungen können Sie, wenn möglich und
+                gewünscht, zuerst mit der betroffenen Person besprechen. Das
+                Behandlungsteam entscheidet gemeinsam mit ihr über Ziele und
+                Verlauf; Sie dürfen sich auf Ihre eigene Rolle und Belastung
+                konzentrieren.
               </p>
             </aside>
             <AngehoerigenBeratung />
@@ -489,10 +484,11 @@ export default function UnterstuetzenTherapie() {
             </div>
             <div className="mt-6">
               <EditorialPullQuote>
-                Für Angehörige ist meist wichtiger als das perfekte
-                Therapielabel, ob Behandlung tragfähig beginnt, ob Krisen
-                professionell eingebettet werden und ob der Prozess über Zeit
-                gehalten werden kann.
+                Angehörige dürfen allgemeine Fragen zu Abläufen, Kontaktwegen
+                und eigener Unterstützung stellen. Behandlungsziele und
+                Fortschritt bewertet die betroffene Person gemeinsam mit dem
+                Fachteam; Angehörige müssen den Therapieverlauf nicht
+                beurteilen.
               </EditorialPullQuote>
             </div>
             <EvidenceNote
@@ -557,7 +553,7 @@ export default function UnterstuetzenTherapie() {
               lineHeight: 1.3,
             }}
           >
-            Prozess-Begleitung
+            Rolle im Umfeld
           </span>
           <div
             aria-hidden="true"
@@ -569,21 +565,30 @@ export default function UnterstuetzenTherapie() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Wie Sie den Therapieprozess unterstützen können"
+            title="Welche Angebote möglich sein können"
             id="unterstuetzen"
           >
             <EditorialProse>
-              <p>Hilfreich sind oft kleine, konkrete Schritte:</p>
+              <p>
+                Wenn Unterstützung gewünscht ist, können kleine, begrenzte
+                Angebote möglich sein:
+              </p>
               <ul className="ml-6 list-disc space-y-1">
                 <li>
                   Therapie als Möglichkeit ansprechen, nicht als Drohkulisse
                 </li>
                 <li>bei Organisation helfen, wenn das erwünscht ist</li>
                 <li>
-                  Skills und neue Schritte bemerken, ohne zu kontrollieren
+                  gemeinsam üben, wenn die Person dies ausdrücklich möchte
                 </li>
-                <li>Fortschritte konkret benennen statt pauschal zu loben</li>
-                <li>Rückschläge einordnen, ohne sie zu dramatisieren</li>
+                <li>
+                  nachfragen, welche Veränderungen für die Person selbst
+                  bedeutsam sind
+                </li>
+                <li>
+                  schwierige Phasen ernst nehmen, ohne den Therapieverlauf von
+                  aussen zu bewerten
+                </li>
                 <li>
                   eigene Unterstützung unabhängig von der Therapiebereitschaft
                   suchen
@@ -600,10 +605,11 @@ export default function UnterstuetzenTherapie() {
                 Gewaltgespräche nicht dolmetschen müssen.
               </p>
               <p>
-                Und: Sie müssen nicht warten, bis die betroffene Person sofort
-                mitzieht. Psychoedukative Angehörigenprogramme wie Family
-                Connections sind nicht nur entlastende Zusatzangebote, sondern
-                fachlich beschrieben. Mehr dazu finden Sie auf der{" "}
+                Für die eigene Entlastung müssen Sie nicht auf eine
+                Behandlungsentscheidung der betroffenen Person warten.
+                Psychoedukative Angehörigenprogramme wie Family Connections sind
+                nicht nur entlastende Zusatzangebote, sondern fachlich
+                beschrieben. Mehr dazu finden Sie auf der{" "}
                 <Link href="/quellen" className="editorial-link">
                   Quellen-Seite
                 </Link>{" "}
@@ -668,17 +674,18 @@ export default function UnterstuetzenTherapie() {
           >
             <EditorialProse>
               <p>
-                Viele Angehörige erleben Therapiebegleitung als Achterbahn:
-                Hoffnung, erster Fortschritt, erneute Krise, Rückzug, vielleicht
-                ein Therapieabbruch und später ein neuer Anlauf. Solche
-                Unterbrüche sind belastend, aber nicht ungewöhnlich.
+                Behandlungswege können Unterbrüche, Wechsel oder neue Anläufe
+                enthalten. Angehörige erleben dabei mitunter Hoffnung, Sorge,
+                Erleichterung oder Erschöpfung. Diese Reaktionen sind
+                verständlich; sie machen Sie nicht zur Bewertungsinstanz des
+                Verlaufs.
               </p>
             </EditorialProse>
             <div className="mt-4">
               <EditorialPullQuote>
-                Hilfreich ist dann meist weder Druck noch Resignation, sondern
-                ein nüchterner Blick: Was hat geholfen? Wo wurde es zu viel? Was
-                wäre der nächste tragfähige Schritt?
+                Wenn die Person darüber sprechen möchte, können offene Fragen
+                helfen: Was war hilfreich? Was war schwierig? Welche Art von
+                Unterstützung ist jetzt gewünscht – oder auch nicht?
               </EditorialPullQuote>
             </div>
           </ContentSection>
@@ -948,7 +955,7 @@ export default function UnterstuetzenTherapie() {
                 href: "/unterstuetzen/krise",
                 title: "Krisen begleiten",
                 description:
-                  "Ampel-System, Deeskalation, Was sagen / Was vermeiden — wenn Therapierahmen kippt.",
+                  "Deeskalation, Sicherheitsorientierung und passende Hilfe — wenn eine Krise den Therapierahmen übersteigt.",
               },
               {
                 href: "/genesung",

@@ -71,7 +71,7 @@ export const kommItems: KommunikationsMaterial[] = [
   {
     id: "zuhoeren-ohne-zustimmen",
     title: "Zuhören ohne Zustimmen",
-    description: "Validieren ohne nachzugeben",
+    description: "Gefühle anerkennen, ohne automatisch zuzustimmen",
     url: "/infografiken/validierung-die-validierungs-treppe-v10.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v10.webp",
@@ -115,7 +115,7 @@ export const escalationCards: KommunikationsTextCard[] = [
   },
   {
     title: "Eine Pause ermöglichen",
-    text: "Sie dürfen Abstand nehmen. Ob und wann ein neuer Kontakt möglich ist, können Sie später klären. Akute Beruhigung und spätere Absprachen sind unterschiedliche Aufgaben.",
+    text: "Sie dürfen Abstand nehmen. Ob und wann ein neuer Kontakt möglich ist, können Sie später klären. Druck in der akuten Situation zu reduzieren und spätere Absprachen sind unterschiedliche Aufgaben.",
   },
 ];
 
@@ -129,7 +129,7 @@ export const typicalSituationCards: KommunikationsTextCard[] = [
     text: "Rückzug kann verschiedene Gründe haben. Ein Kontaktangebot darf kurz sein und muss keine ständige Verfügbarkeit versprechen. Wenn Sie sich um die Sicherheit sorgen, holen Sie professionelle Einschätzung.",
   },
   {
-    title: "Schwarz-Weiss-Sätze",
+    title: "Einseitige Aussagen unter Stress",
     text: "Es hilft oft, Gefühle anzuerkennen und gleichzeitig bei Ihrer komplexeren Wirklichkeit zu bleiben: Beziehung und Konflikt können gleichzeitig wahr sein.",
   },
   {
@@ -146,16 +146,16 @@ export const roleCommunicationCards: {
   {
     title: "Als Partner/in",
     tone: "terracotta",
-    text: "In Partnerschaften ist die Intensität oft am höchsten. Nähe, Eifersucht, Angst vor Verlust und wechselseitige Kränkung mischen sich schnell. Gerade deshalb brauchen Gespräche oft mehr Klarheit und weniger Verschmelzung.",
+    text: "Partnerschaften können Nähe, Abhängigkeiten, gemeinsame Entscheidungen und eigene Grenzen berühren. Welche Themen schwierig werden, lässt sich nicht aus einer Diagnose ableiten. Hilfreich kann sein, Wünsche und Grenzen konkret zu benennen.",
   },
   {
     title: "Als Elternteil",
     tone: "slate",
-    text: "Alte Eltern-Kind-Muster färben viele Gespräche mit. Es kann helfen, das erwachsene Gegenüber nicht nur als Kind von früher zu adressieren, sondern als eigenständige Person mit eigener Verantwortung.",
+    text: "Elternbeziehungen verändern sich mit Alter, Abhängigkeit und Lebenssituation. Bei erwachsenen Kindern hilft es, Selbstbestimmung und Verantwortung aller Beteiligten zu beachten; bei Minderjährigen gelten andere Schutz- und Sorgepflichten.",
   },
   {
     title: "Als erwachsenes Kind",
     tone: "sage",
-    text: "Wer als erwachsenes Kind kommuniziert, gerät oft schnell in Loyalitätsdruck. Gerade dann ist wichtig: Ihre eigene Wahrnehmung und Ihre Begrenzung sind nicht weniger legitim als die Not Ihres Elternteils.",
+    text: "Erwachsene Kinder dürfen ihre eigene Wahrnehmung, Beziehung und Grenzen ernst nehmen. Unterstützung ist freiwillig; familiäre Zugehörigkeit begründet keine Pflicht, Belastungen oder Verantwortung zu übernehmen.",
   },
 ];

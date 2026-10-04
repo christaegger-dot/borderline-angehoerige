@@ -32,9 +32,9 @@ const glossaryTerms: GlossaryTerm[] = [
     abbreviation: "BPS",
     category: "symptome",
     definition:
-      "Ein komplexes Störungsbild mit starker emotionaler Reagibilität, Schwierigkeiten mit innerer Stabilität und einem Beziehungserleben, das unter Bindungsstress schnell ins Wanken geraten kann. Klassifiziert im DSM-5 als eigenständige Persönlichkeitsstörung und im ICD-11 als «Borderline-Muster» (Code 6D11.5). Die englische Bezeichnung lautet Borderline Personality Disorder (BPD).",
+      "Ein komplexes Störungsbild, das unter anderem intensive oder rasch wechselnde Gefühle, Schwierigkeiten mit innerer Stabilität, dem Selbstbild oder Beziehungen beschreiben kann. Erfahrungen und Ausprägung sind individuell verschieden. Klassifiziert im DSM-5 als eigenständige Persönlichkeitsstörung und im ICD-11 als «Borderline-Muster» (Code 6D11.5). Die englische Bezeichnung lautet Borderline Personality Disorder (BPD).",
     example:
-      "Ausprägung und Verlauf unterscheiden sich deutlich: Manche Menschen wirken vor allem impulsiv und explosiv, andere eher verzweifelt, zurückgezogen, leer oder selbstabwertend.",
+      "Ausprägung und Verlauf unterscheiden sich deutlich. Manche Menschen erleben vor allem rasch wechselnde starke Gefühle, andere eher Leere, Rückzug oder Selbstzweifel. Eine Diagnose beschreibt weder die ganze Person noch ihre Fähigkeiten.",
     criteria: {
       intro:
         "Für eine Diagnose nach DSM-5 müssen mindestens 5 der folgenden 9 Merkmale zutreffen:",
@@ -43,10 +43,10 @@ const glossaryTerms: GlossaryTerm[] = [
         "Instabile und intensive zwischenmenschliche Beziehungen (abwechselnd Idealisierung und Entwertung)",
         "Instabiles Selbstbild oder instabile Selbstwahrnehmung",
         "Impulsivität in mindestens zwei potenziell selbstschädigenden Bereichen (z.B. Geldausgaben, Substanzkonsum, Sexualität, rücksichtsloses Fahren, Essanfälle)",
-        "Wiederkehrende suizidale Handlungen, Drohungen oder Selbstverletzungen",
+        "Wiederkehrende suizidale Handlungen oder Ankündigungen sowie Selbstverletzungen",
         "Ausgeprägte Stimmungsinstabilität (intensive Episoden von Dysphorie, Reizbarkeit oder Angst)",
         "Chronisches Gefühl der Leere",
-        "Unangemessene, intensive Wut oder Schwierigkeiten, Wut zu kontrollieren",
+        "Intensive Wut oder Schwierigkeiten, sie zu regulieren",
         "Vorübergehende, stressabhängige paranoide Vorstellungen oder schwere dissoziative Symptome",
       ],
     },
@@ -62,7 +62,7 @@ const glossaryTerms: GlossaryTerm[] = [
     example:
       "In der DBT lernen Betroffene konkrete Fertigkeiten (Skills) zur Emotionsregulation, Stresstoleranz, zwischenmenschlichen Effektivität und Achtsamkeit.",
     relatedPage: "/unterstuetzen/therapie",
-    relatedPageTitle: "Therapie unterstützen",
+    relatedPageTitle: "Therapie und Angehörigenrolle",
   },
   {
     term: "Skills",
@@ -86,9 +86,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Mentalisierung",
     category: "therapie",
     definition:
-      "Die Fähigkeit, das eigene Verhalten und das Verhalten anderer Menschen als Ausdruck von Gedanken, Gefühlen, Wünschen und Absichten zu verstehen. Bei Menschen mit Borderline ist diese Fähigkeit oft beeinträchtigt, besonders in emotional aufgeladenen Situationen.",
+      "Die Fähigkeit, das eigene Verhalten und das Verhalten anderer Menschen im Zusammenhang mit Gedanken, Gefühlen, Wünschen und möglichen Absichten zu verstehen. Diese Fähigkeit nutzen alle Menschen. Unter hoher Anspannung kann sie vorübergehend schwerer zugänglich sein — auch bei manchen Menschen mit Borderline. Sie lässt sich in der Therapie üben.",
     example:
-      "Wenn jemand mentalisiert, denkt er: 'Sie ist vielleicht gereizt, weil sie einen stressigen Tag hatte' – statt: 'Sie hasst mich'.",
+      "Mentalisieren kann heissen: «Ich deute ihre Reaktion gerade als Ablehnung. Vielleicht gibt es noch andere Erklärungen; ich kann nachfragen, statt mir sicher zu sein.»",
   },
   {
     term: "Übertragungsfokussierte Psychotherapie",
@@ -97,9 +97,9 @@ const glossaryTerms: GlossaryTerm[] = [
     definition:
       "Eine evidenzbasierte Psychotherapie für Borderline, entwickelt von Otto Kernberg und Mitarbeitenden. TFP arbeitet mit dem Beziehungserleben in der therapeutischen Beziehung selbst: innere Konflikte werden im «Hier und Jetzt» zwischen Therapeut:in und Patient:in sichtbar und können dort bearbeitet werden. In der Schweizer Versorgungsrealität weniger verbreitet als DBT, aber als evidenzbasierte Therapie etabliert.",
     example:
-      "Wenn eine Patientin in der Therapie wechselnd Idealisierung und Entwertung der Therapeutin erlebt, wird genau diese Schwankung zum Bearbeitungs-Material — als gelebte Form innerer Spaltung.",
+      "Wenn sich das Erleben der Therapeutin stark zwischen Sicherheit und Enttäuschung verändert, kann diese Erfahrung gemeinsam untersucht werden — ohne sie als Absicht oder Charakterzug zu bewerten.",
     relatedPage: "/unterstuetzen/therapie",
-    relatedPageTitle: "Therapie unterstützen",
+    relatedPageTitle: "Therapie und Angehörigenrolle",
   },
   {
     term: "Remission",
@@ -123,7 +123,7 @@ const glossaryTerms: GlossaryTerm[] = [
     definition:
       "Validierung bedeutet, die Gefühle und Erfahrungen einer Person als verständlich und nachvollziehbar anzuerkennen, auch wenn man das Verhalten nicht gutheisst. Für Angehörige ist sie oft ein hilfreicher Ausgangspunkt, weil sie Druck aus Gesprächen nehmen kann, ohne alles zu bestätigen.",
     example:
-      "'Ich verstehe, dass du dich verletzt fühlst, wenn ich später nach Hause komme als angekündigt. Das macht Sinn, weil du dir Sorgen machst.'",
+      "'Du sagst, dass dich meine verspätete Rückkehr verletzt hat. Möchtest du erzählen, was daran für dich besonders schwierig war?'",
     relatedPage: "/kommunizieren",
     relatedPageTitle: "Kommunizieren",
   },
@@ -131,9 +131,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "SET-Kommunikation",
     category: "kommunikation",
     definition:
-      "SET steht für Support (Unterstützung), Empathy (Empathie) und Truth (Wahrheit/Realität). Gemeint ist ein Gesprächsrahmen aus der Angehörigenliteratur, der helfen soll, Zugewandtheit, Mitgefühl und Klarheit zusammenzuhalten.",
+      "SET steht für Support (Unterstützung), Empathy (Empathie) und Truth (Wahrheit/Realität). Der Begriff stammt aus der Angehörigenliteratur. Er ist kein allgemein empfohlenes oder verpflichtendes Schema; einzelne Elemente wie begrenzte Präsenz, vorsichtiges Spiegeln und Klarheit können situationsabhängig nützlich sein.",
     example:
-      "Support: 'Ich bin für dich da.' Empathy: 'Ich sehe, wie sehr dich das belastet.' Truth: 'Gleichzeitig können wir nicht jede Nacht bis 3 Uhr diskutieren.'",
+      "Begrenzte Präsenz: 'Ich kann dir jetzt zehn Minuten zuhören.' Offene Frage: 'Wie ist es gerade für dich?' Klarheit: 'Danach beende ich das Gespräch für heute.'",
     relatedPage: "/kommunizieren",
     relatedPageTitle: "Kommunizieren",
   },
@@ -151,7 +151,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Invalidierung",
     category: "kommunikation",
     definition:
-      "Das Gegenteil von Validierung: Die Gefühle oder Erfahrungen einer Person werden abgewertet, ignoriert oder als übertrieben dargestellt. Invalidierung kann Krisen verschärfen und ist besonders schmerzhaft für Menschen mit Borderline.",
+      "Das Gegenteil von Validierung: Die Gefühle oder Erfahrungen einer Person werden abgewertet, ignoriert oder als übertrieben dargestellt. Das kann für viele Menschen schmerzhaft sein und ein belastetes Gespräch weiter erschweren.",
     example:
       "Invalidierende Aussagen: 'Das ist doch nicht so schlimm', 'Du übertreibst mal wieder', 'Andere haben es viel schwerer'.",
   },
@@ -159,9 +159,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Emotionale Dysregulation",
     category: "symptome",
     definition:
-      "Die Schwierigkeit, Emotionen zu regulieren – sie werden intensiver erlebt, schneller ausgelöst und klingen langsamer ab. Dies ist ein Kernmerkmal von Borderline und erklärt viele der beobachtbaren Verhaltensweisen.",
+      "Schwierigkeiten, starke Emotionen zu regulieren. Gefühle können rasch an Intensität gewinnen und länger anhalten. Das kann ein Merkmal von Borderline sein, kommt aber auch in anderen Zusammenhängen vor und erklärt Verhalten nie vollständig.",
     example:
-      "Eine kleine Enttäuschung kann sich anfühlen wie ein Weltuntergang. Die Emotion ist real und intensiv – nur die Auslöser-Reaktion-Verhältnis ist anders.",
+      "Eine Enttäuschung kann starke Trauer, Angst oder Wut auslösen. Das Gefühl ist real; zugleich kann es helfen, zwischen dem Gefühl, der eigenen Deutung und einer möglichen Handlung zu unterscheiden.",
     relatedPage: "/verstehen",
     relatedPageTitle: "Borderline verstehen",
   },
@@ -169,9 +169,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Splitting",
     category: "symptome",
     definition:
-      "Ein Denkmuster, bei dem Menschen oder Situationen als 'ganz gut' oder 'ganz schlecht' wahrgenommen werden, ohne Grautöne. Dies ist keine bewusste Manipulation, sondern eine automatische Reaktion auf emotionale Überforderung.",
+      "Ein klinischer Begriff, der leicht missverstanden wird. Unter hoher Anspannung kann es vorübergehend schwer sein, widersprüchliche Eindrücke gleichzeitig im Blick zu behalten; eine Person oder Situation wird dann überwiegend positiv oder negativ erlebt. Das tritt nicht bei allen Menschen mit Borderline auf und erlaubt keinen Schluss auf Absicht oder Charakter.",
     example:
-      "Gestern war der Partner 'der beste Mensch der Welt', heute nach einem Streit 'hat er mich nie geliebt'. Beide Extreme fühlen sich im Moment absolut wahr an.",
+      "Nach einem Konflikt können frühere positive Erfahrungen vorübergehend kaum zugänglich sein. Mit sinkender Anspannung kann wieder eine umfassendere Sicht möglich werden.",
     relatedPage: "/verstehen",
     relatedPageTitle: "Borderline verstehen",
   },
@@ -179,9 +179,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Verlassensangst",
     category: "symptome",
     definition:
-      "Eine intensive, oft überwältigende Angst vor dem Verlassenwerden – real oder eingebildet. Diese Angst kann zu verzweifelten Versuchen führen, Beziehungen aufrechtzuerhalten, oder paradoxerweise dazu, andere zuerst zu verlassen.",
+      "Eine intensive Sorge, eine wichtige Beziehung könne enden oder eine nahestehende Person könne sich zurückziehen. Sie kann mit aktuellen Signalen, früheren Beziehungserfahrungen oder beidem zusammenhängen und ist individuell unterschiedlich ausgeprägt.",
     example:
-      "Schon eine kurze Verzögerung bei einer Antwort kann Panik auslösen: 'Er antwortet nicht – er will mich verlassen!'",
+      "Eine verzögerte Antwort kann starke Unsicherheit auslösen. Hilfreich kann sein, die Sorge zunächst wahrzunehmen und nachzufragen, statt eine Absicht als sicher anzunehmen.",
     relatedPage: "/verstehen",
     relatedPageTitle: "Borderline verstehen",
   },
@@ -197,7 +197,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Identitätsdiffusion",
     category: "symptome",
     definition:
-      "Ein instabiles oder unklares Selbstbild. Menschen mit Borderline haben oft Schwierigkeiten zu beschreiben, wer sie sind, was sie wollen oder was ihre Werte sind – unabhängig von anderen Menschen.",
+      "Ein instabiles oder unklares Selbstbild. Manche Menschen mit Borderline erleben zeitweise Schwierigkeiten zu beschreiben, wer sie sind, was sie wollen oder was ihre Werte sind. Andere erleben dies nicht oder anders.",
     example:
       "'Ich weiss nicht, wer ich bin, wenn ich alleine bin. Ich übernehme immer die Interessen meines Partners.'",
     relatedPage: "/verstehen",
@@ -207,7 +207,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Selbstfürsorge",
     category: "selbsthilfe",
     definition:
-      "Bewusste Handlungen, um die eigene körperliche, emotionale und mentale Gesundheit zu erhalten. Für Angehörige von Menschen mit Borderline ist Selbstfürsorge keine Selbstsucht, sondern notwendig, um langfristig unterstützen zu können.",
+      "Bewusste Handlungen, um die eigene körperliche, emotionale und mentale Gesundheit zu erhalten. Angehörige dürfen ihre Bedürfnisse und Grenzen unabhängig davon schützen, wie viel Unterstützung sie geben können oder möchten.",
     example:
       "Regelmässige Pausen, eigene Hobbys pflegen, professionelle Unterstützung suchen, Grenzen setzen.",
     relatedPage: "/selbstfuersorge",
@@ -217,9 +217,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Grenzen setzen",
     category: "selbsthilfe",
     definition:
-      "Klare Kommunikation darüber, welches Verhalten akzeptabel ist und welches nicht – mit konsequenter Umsetzung. Grenzen schützen beide Seiten und sind ein Zeichen von Respekt, nicht von Ablehnung.",
+      "Klare Kommunikation darüber, was für Sie möglich, sicher und tragbar ist. Grenzen können beide Seiten schützen; sie brauchen weder Zustimmung noch ein Versprechen auf späteren Kontakt.",
     example:
-      "'Ich bin bereit, mit dir zu sprechen, aber nicht, wenn du schreist. Wenn du ruhiger bist, bin ich wieder da.'",
+      "'Ich möchte dieses Gespräch so nicht weiterführen. Ich beende es jetzt und entscheide später, ob und wann ich wieder ansprechbar bin.'",
     relatedPage: "/grenzen",
     relatedPageTitle: "Grenzen setzen",
   },
@@ -227,9 +227,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Co-Abhängigkeit",
     category: "selbsthilfe",
     definition:
-      "Ein Beziehungsmuster, bei dem das eigene Wohlbefinden übermässig vom Zustand des anderen abhängt. Angehörige vernachlässigen dabei oft eigene Bedürfnisse und versuchen, die Lage des anderen ständig mitzutragen oder zu kontrollieren.",
+      "Ein uneinheitlich verwendeter Begriff aus der Angehörigen- und Suchthilfeliteratur, keine klar abgegrenzte klinische Diagnose. Er kann Angehörige vorschnell etikettieren. Hilfreicher ist es, konkret zu fragen, ob eigene Bedürfnisse, Gesundheit oder Beziehungen zu kurz kommen und ob jemand mehr Verantwortung übernimmt, als gewollt oder tragbar ist.",
     example:
-      "Warnsignale: 'Ich kann nur glücklich sein, wenn es ihr gut geht', 'Ich habe keine eigenen Freunde mehr', 'Ich sage nie Nein'.",
+      "Mögliche Fragen: «Habe ich noch Zeit für Erholung und eigene Beziehungen? Welche Verantwortung gehört zu mir — und welche nicht?»",
     relatedPage: "/selbstfuersorge",
     relatedPageTitle: "Selbstfürsorge",
   },
@@ -237,9 +237,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Enabling",
     category: "selbsthilfe",
     definition:
-      "Verhaltensweisen von Angehörigen, die problematische Muster unbeabsichtigt mittragen oder verstärken, oft aus dem Wunsch zu helfen. Das Gegenstück ist nicht Härte, sondern klarere Grenzen und das Zulassen natürlicher Konsequenzen.",
+      "Ein englischer Begriff aus der Sucht- und Angehörigenliteratur, der schnell vorwurfsvoll wirken kann. Statt eine helfende Handlung pauschal so zu etikettieren, sollte konkret geprüft werden: Entlastet sie kurzfristig? Überschreitet sie eigene Grenzen? Hat sie unbeabsichtigte Folgen? Verantwortlichkeiten und Unterstützung lassen sich möglichst gemeinsam klären.",
     example:
-      "Immer wieder Geld leihen, obwohl es nie zurückkommt; Ausreden für verpasste Termine erfinden; alle Konflikte vermeiden.",
+      "Wer wiederholt Termine für eine erwachsene Person absagt und sich damit überlastet, kann besprechen, wer künftig welche Aufgabe übernehmen möchte und kann.",
     relatedPage: "/grenzen",
     relatedPageTitle: "Grenzen setzen",
   },
@@ -247,9 +247,9 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Leuchtturm-Prinzip",
     category: "selbsthilfe",
     definition:
-      "Eine Metapher für die Rolle von Angehörigen: Sie können ein Leuchtturm sein – stabil, verlässlich, orientierungsgebend – aber sie können nicht das Schiff steuern. Die Verantwortung für die Genesung liegt beim Betroffenen.",
+      "Eine Metapher für die Selbstorientierung von Angehörigen: Sie können den eigenen nächsten Schritt an Werten, Grenzen, Möglichkeiten und verfügbarer Unterstützung ausrichten. Sie müssen nicht dauerhaft ruhig oder stabil sein und sind nicht für die Steuerung oder Genesung einer anderen Person verantwortlich.",
     example:
-      "'Ich bin da, ich leuchte, ich zeige die Richtung – aber ich kann nicht für dich schwimmen.'",
+      "«Was ist mir wichtig? Was kann ich heute anbieten? Wo brauche ich eine Grenze, eine Pause oder Unterstützung?»",
     relatedPage: "/",
     relatedPageTitle: "Startseite",
   },

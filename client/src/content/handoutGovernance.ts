@@ -4,6 +4,7 @@ export type HandoutDocumentType =
   | "KRISEN-HANDOUT";
 
 export type HandoutVisualAssetStatus = "published" | "text-only";
+export type HandoutPublicationStatus = "active" | "withdrawn";
 export type HandoutApprovalStatus =
   | "approved"
   | "draft-editorial-review-pending";
@@ -30,6 +31,11 @@ export interface HandoutGovernanceEntry {
    * Ohne Angabe gilt das freigegebene Asset als publiziert.
    */
   visualAssetStatus?: HandoutVisualAssetStatus;
+  /**
+   * `withdrawn` hält eine veraltete Fassung für die Historie im Register,
+   * entfernt sie aber aus den produktiven Katalogen und Textversionen.
+   */
+  publicationStatus?: HandoutPublicationStatus;
 }
 
 export const HANDOUT_STANDARD_DISCLAIMER =
@@ -51,32 +57,38 @@ export const handoutGovernance = {
     id: "notfallplan-krise",
     documentType: "KRISEN-HANDOUT",
     approvedVersion: "notfallplan-krise-v04",
+    visualAssetStatus: "text-only",
   },
   leuchtturm: {
     id: "leuchtturm",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-leuchtturm-v1",
+    visualAssetStatus: "text-only",
   },
   eisberg: {
     id: "eisberg",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "eisberg-der-eisberg-v8",
+    visualAssetStatus: "text-only",
   },
   spaltung: {
     id: "spaltung",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "pendel-das-bewertungs-pendel-v16",
+    visualAssetStatus: "text-only",
   },
   "alarm-modus": {
     id: "alarm-modus",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "alarm-der-alarm-modus-v4",
+    visualAssetStatus: "text-only",
   },
   "4-phasen": {
     id: "4-phasen",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-4-phasen-v1",
     visualAssetStatus: "text-only",
+    publicationStatus: "withdrawn",
   },
   gehirn: {
     id: "gehirn",
@@ -93,46 +105,56 @@ export const handoutGovernance = {
     id: "rolle-klaeren",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-rolle-klaeren-v3",
+    visualAssetStatus: "text-only",
   },
   "im-krisenmodus": {
     id: "im-krisenmodus",
     documentType: "KRISEN-HANDOUT",
     approvedVersion: "ampel-das-ampel-system-v4",
+    visualAssetStatus: "text-only",
+    publicationStatus: "withdrawn",
   },
   "drei-saeulen": {
     id: "drei-saeulen",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-drei-saeulen-v1",
+    visualAssetStatus: "text-only",
   },
   "konsistenz-prinzip": {
     id: "konsistenz-prinzip",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-konsistenz-prinzip-v1",
+    visualAssetStatus: "text-only",
   },
   "beziehungs-achtsamkeit": {
     id: "beziehungs-achtsamkeit",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-beziehungs-achtsamkeit-v1",
+    visualAssetStatus: "text-only",
   },
   "6-leitlinien": {
     id: "6-leitlinien",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-6-leitlinien-v1",
+    visualAssetStatus: "text-only",
   },
   "4-alltags-tipps": {
     id: "4-alltags-tipps",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-4-alltags-tipps-v1",
+    visualAssetStatus: "text-only",
   },
   krisenkommunikation: {
     id: "krisenkommunikation",
     documentType: "KRISEN-HANDOUT",
     approvedVersion: "deeskalation-der-deeskalations-pfad-v11",
+    visualAssetStatus: "text-only",
   },
   anspannungskurve: {
     id: "anspannungskurve",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-anspannungskurve-v2",
+    visualAssetStatus: "text-only",
   },
   "gespraeche-kippen": {
     id: "gespraeche-kippen",
@@ -144,21 +166,25 @@ export const handoutGovernance = {
     id: "grenzen-ohne-eskalation",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-grenzen-ohne-eskalation-v3",
+    visualAssetStatus: "text-only",
   },
   "pause-statt-streit": {
     id: "pause-statt-streit",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-pause-statt-streit-v3",
+    visualAssetStatus: "text-only",
   },
   "wenn-worte-treffen": {
     id: "wenn-worte-treffen",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-wenn-worte-treffen-v3",
+    visualAssetStatus: "text-only",
   },
   "zuhoeren-ohne-zustimmen": {
     id: "zuhoeren-ohne-zustimmen",
     documentType: "PRAXISBLATT",
     approvedVersion: "validierung-die-validierungs-treppe-v10",
+    visualAssetStatus: "text-only",
   },
   "beispiel-dialog": {
     id: "beispiel-dialog",
@@ -175,6 +201,7 @@ export const handoutGovernance = {
     id: "bruecke-gelaender",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-bruecke-gelaender-v2",
+    visualAssetStatus: "text-only",
   },
   "spiegeln-statt-aufsaugen": {
     id: "spiegeln-statt-aufsaugen",
@@ -210,6 +237,7 @@ export const handoutGovernance = {
     id: "sauerstoffmaske",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "sauerstoff-die-sauerstoffmaske-v5",
+    visualAssetStatus: "text-only",
   },
   "stopp-technik": {
     id: "stopp-technik",
@@ -230,6 +258,7 @@ export const handoutGovernance = {
     id: "schuld-verantwortung",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "manus-schuld-verantwortung-v3",
+    visualAssetStatus: "text-only",
   },
   "radikale-akzeptanz": {
     id: "radikale-akzeptanz",
@@ -251,6 +280,7 @@ export const handoutGovernance = {
     id: "fortschritt-paradox",
     documentType: "ORIENTIERUNGSBLATT",
     approvedVersion: "fortschritt-das-fortschritt-paradox-v5",
+    visualAssetStatus: "text-only",
   },
   "remission-heilung": {
     id: "remission-heilung",
@@ -302,12 +332,19 @@ export function getHandoutAssetVersion(
 }
 
 export function getHandoutApprovalStatus(id: string | undefined) {
-  return getHandoutGovernance(id)?.approvalStatus ?? "approved";
+  const governance = getHandoutGovernance(id);
+  if (!governance) return "draft-editorial-review-pending";
+  return governance.approvalStatus ?? "approved";
 }
 
 export function isHandoutVisualPublished(id: string | undefined) {
   const governance = getHandoutGovernance(id);
-  return governance?.visualAssetStatus !== "text-only";
+  return Boolean(
+    governance &&
+    governance.publicationStatus !== "withdrawn" &&
+    governance.visualAssetStatus !== "text-only" &&
+    getHandoutApprovalStatus(governance.id) === "approved"
+  );
 }
 
 export function allowsCrisisNumbers(id: string) {

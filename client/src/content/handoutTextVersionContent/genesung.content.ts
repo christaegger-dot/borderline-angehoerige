@@ -11,9 +11,9 @@ export const handoutTextVersions = [
   createHandoutTextVersion("fortschritt-paradox", {
     kicker: "Textversion",
     summary:
-      "Genesung verläuft nicht linear. Rückschläge gehören zum Weg und entwerten bereits Erreichtes nicht automatisch.",
+      "Veränderung kann unterschiedlich verlaufen. Schwierigere Phasen können vorkommen, ohne frühere Erfahrungen und Fähigkeiten ungeschehen zu machen.",
     intro: [
-      "Das Fortschritt-Paradox erklärt, warum Rückschritte den bisherigen Weg nicht automatisch entwerten. Es hilft, Einbrüche realistischer einzuordnen.",
+      "Genesungswege sind individuell und folgen keinem festgelegten Muster. Die Darstellung hilft, schwierigere Phasen einzuordnen, ohne daraus einen vorgeschriebenen Verlauf abzuleiten.",
       "Zuerst steht die Kernaussage im Vordergrund, danach folgen drei kurze Einordnungen und konkrete Hinweise für den Alltag.",
     ],
     sections: [
@@ -21,7 +21,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Genesung verläuft selten linear. Rückschritte können Teil eines Veränderungsprozesses sein und müssen trotzdem ernst genommen werden.",
+          "Genesungswege unterscheiden sich. Schwierigere Phasen können vorkommen und müssen ernst genommen werden; sie sind weder vorgeschrieben noch ein Beleg für fehlenden Willen.",
       },
       {
         title: "Wichtige Einordnungen",
@@ -31,21 +31,21 @@ export const handoutTextVersions = [
             text: "Veränderung braucht Zeit und Geduld.",
           },
           {
-            title: "Rückschläge entwerten nicht alles",
-            text: "Ein Rückschritt bedeutet nicht, dass alles Erreichte verloren ist.",
+            title: "Schwierigere Phasen entwerten nicht alles",
+            text: "Eine schwierigere Phase bedeutet nicht, dass alles Erreichte verloren ist.",
           },
           {
-            title: "Der Weg zurück",
-            text: "Manchmal gelingt der Weg zurück in Stabilität schneller, manchmal braucht es erneut Unterstützung.",
+            title: "Individuelle Bedeutung",
+            text: "Die betroffene Person bestimmt selbst, welche Veränderung bedeutsam ist und ob sie Unterstützung neu klären möchte.",
           },
         ],
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Ordnen Sie Rückfälle als mögliches Signal ein, nicht als persönliches Scheitern.",
-          "Vergleichen Sie mit früher, nicht mit gestern.",
-          "Feiern Sie kleine Fortschritte.",
+          "Fragen Sie die betroffene Person, was die aktuelle Phase für sie bedeutet, statt den Verlauf von aussen zu bewerten.",
+          "Nehmen Sie erneute Belastungen ernst, ohne sie als persönliches Scheitern zu deuten.",
+          "Achten Sie auch auf Ihre eigenen Grenzen und holen Sie bei Bedarf Unterstützung.",
         ],
       },
     ],
@@ -91,14 +91,14 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Symptome können deutlich zurückgehen; Funktionsfähigkeit und Lebensqualität können sich verbessern. Das ist ein grosser Erfolg, auch wenn Entwicklung selten perfekt oder linear ist.",
+          "Symptome können deutlich zurückgehen; Funktionsfähigkeit und Lebensqualität können sich verbessern. Welche Veränderungen bedeutsam sind, bestimmt die betroffene Person selbst.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Setzen Sie realistische Erwartungen: Besserung ja, Perfektion nein.",
-          "Feiern Sie kleine Fortschritte, statt nur auf ein Alles-oder-nichts-Ergebnis zu schauen.",
-          "Akzeptieren Sie, dass manche Muster bleiben können – aber handhabbar werden.",
+          "Vermeiden Sie Vorgaben von aussen dazu, wie schnell oder wie weit Veränderung gehen soll.",
+          "Fragen Sie die Person, welche Veränderungen für sie selbst bedeutsam sind, statt Fortschritt von aussen festzulegen.",
+          "Verläufe unterscheiden sich. Anhaltende Beschwerden können mit Fachpersonen besprochen werden, wenn die betroffene Person das möchte.",
         ],
       },
     ],
@@ -110,10 +110,10 @@ export const handoutTextVersions = [
   createHandoutTextVersion("5-faktoren-genesung", {
     kicker: "Textversion",
     summary:
-      "Genesung wird eher gefördert, wenn Behandlung, Medikation, Beziehungen, Lebensqualität und Zeit zusammenspielen. Angehörige können vor allem das Beeinflussbare unterstützen.",
+      "Behandlung, körperliche Gesundheit, Beziehungen, Lebensbedingungen und Zeit können Genesungswege beeinflussen. Welche Faktoren wichtig sind, ist individuell.",
     intro: [
-      "Die fünf Faktoren verbinden Hoffnung mit einem realistischen Blick auf wirksame Einflussfaktoren. Sie zeigen, was Entwicklung begünstigen kann, ohne sie zu garantieren.",
-      "Sie finden fünf Faktoren, eine Kernaussage und drei Hinweise dazu, wie Angehörige den Prozess hilfreich begleiten können.",
+      "Die fünf Bereiche sind eine vereinfachte Orientierung, keine Formel für Genesung und keine Rangliste von Verantwortlichkeiten.",
+      "Sie beschreiben mögliche persönliche, soziale und professionelle Bedingungen. Angehörige müssen keinen dieser Bereiche herstellen oder absichern.",
     ],
     sections: [
       {
@@ -124,12 +124,12 @@ export const handoutTextVersions = [
             text: "Professionelle Behandlung als Säule.",
           },
           {
-            title: "Medikation",
-            text: "Unterstützend, nicht allein.",
+            title: "Körperliche und medikamentöse Behandlung",
+            text: "Je nach Situation und gemeinsamer fachlicher Entscheidung.",
           },
           {
-            title: "Soziales Netz",
-            text: "Verlässliche Beziehungen.",
+            title: "Soziales Umfeld",
+            text: "Gewünschte Beziehungen, Gemeinschaft und praktische Unterstützung.",
           },
           {
             title: "Lebensqualität",
@@ -137,7 +137,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Zeit",
-            text: "Genesung braucht Jahre, nicht Wochen.",
+            text: "Verläufe und Zeiträume sind individuell.",
           },
         ],
       },
@@ -145,14 +145,14 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Genesung ist möglich – und Angehörige können beeinflussbare Faktoren unterstützen. Sie können den Prozess aber nicht garantieren oder alleine herstellen.",
+          "Genesung ist ein individueller Prozess. Behandlungssystem, Lebensbedingungen und soziale Beziehungen können mitwirken; die Verantwortung liegt nicht bei Angehörigen.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Prüfen Sie: Welchen Faktor können Sie unterstützen?",
-          "Konzentrieren Sie sich auf das Beeinflussbare.",
-          "Erinnern Sie sich: Genesung ist individuell und selten linear.",
+          "Fragen Sie, ob und welche Unterstützung überhaupt gewünscht ist.",
+          "Bieten Sie nur an, was für Sie freiwillig, möglich und sicher ist.",
+          "Erinnern Sie sich: Genesung ist individuell und keine Leistung der Familie.",
         ],
       },
     ],
@@ -164,34 +164,34 @@ export const handoutTextVersions = [
   createHandoutTextVersion("rolle-genesungsprozess", {
     kicker: "Textversion",
     summary:
-      "Angehörige können Genesung unterstützen, aber nicht herstellen. Der wichtigste Beitrag ist oft die eigene Stabilität, nicht das Retten.",
+      "Angehörige können auf Wunsch etwas anbieten, sind aber nicht für Genesung verantwortlich. Die eigene Gesundheit und das eigene Leben haben einen eigenständigen Wert.",
     intro: [
-      "Die Rolle von Angehörigen im Genesungsprozess ist wichtig, aber begrenzt. Diese Orientierung hilft, den eigenen Beitrag klarer von Überverantwortung zu unterscheiden.",
-      "Sie finden hilfreiche Beiträge, klare Nicht-Aufgaben, die Kernbotschaft des Blatts und drei kurze Selbstchecks für den Alltag.",
+      "Beziehungen können Genesungswege berühren, doch es gibt keine einheitliche Angehörigenrolle. Diese Orientierung trennt freiwillige Angebote von Erwartungen und Überverantwortung.",
+      "Sie finden mögliche Angebote, klare Nicht-Aufgaben und drei kurze Selbstchecks für den Alltag.",
     ],
     sections: [
       {
-        title: "Was Sie tun können",
+        title: "Was Sie freiwillig anbieten können",
         cards: [
           {
-            title: "Konsistenz",
-            text: "Berechenbar und verlässlich bleiben.",
+            title: "Absprachen",
+            text: "Gemeinsame Absprachen anbieten, soweit Sie diese einhalten können.",
           },
           {
-            title: "Realistische Hoffnung",
-            text: "Genesung ist möglich – vermitteln Sie das.",
+            title: "Zuversicht",
+            text: "Eigene Zuversicht teilen, wenn das gewünscht ist – ohne Druck oder Versprechen.",
           },
           {
             title: "Eigene Grenzen",
-            text: "Klar und konsequent bleiben.",
+            text: "Benennen, was Sie übernehmen können und was nicht.",
           },
           {
-            title: "Fortschritte benennen",
-            text: "Kleine Erfolge sichtbar machen.",
+            title: "Nachfragen",
+            text: "Die Person selbst fragen, welche Veränderungen für sie bedeutsam sind.",
           },
           {
-            title: "Professionelle Hilfe unterstützen",
-            text: "Therapie fördern, nicht ersetzen.",
+            title: "Information anbieten",
+            text: "Auf Wunsch Informationen oder Begleitung zu Angeboten bereitstellen; Behandlung bleibt die Entscheidung der Person und des Fachteams.",
           },
         ],
       },
@@ -204,7 +204,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Veränderung erzwingen",
-            text: "Genesung braucht eigene Motivation.",
+            text: "Genesung lässt sich nicht erzwingen und hängt von persönlichen, sozialen, materiellen und professionellen Bedingungen ab. Ein schwieriger Verlauf ist kein Beleg für fehlenden Willen.",
           },
           {
             title: "Immer verfügbar sein",
@@ -225,7 +225,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Ihre Stabilität",
-            text: "Ihre Stabilität ist Teil der Genesung.",
+            text: "Ihre Gesundheit und Ihr eigenes Leben zählen unabhängig vom Genesungsweg einer anderen Person.",
           },
           {
             title: "Kernaussage",
@@ -237,14 +237,14 @@ export const handoutTextVersions = [
         title: "Orientierung",
         calloutTitle: "Worum es bei Ihrer Rolle geht",
         calloutText:
-          "Hilfreich ist, was Stabilität, Hoffnung und professionelle Unterstützung stärkt. Sie können Rahmen und Beziehung mitgestalten; Sie können Genesung nicht machen.",
+          "Sie können Beziehung und Unterstützung mitgestalten, wenn alle Beteiligten das möchten. Sie müssen weder Hoffnung erzeugen noch Behandlung steuern oder Genesung absichern.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Prüfen Sie regelmässig: Bin ich noch in meiner Rolle oder rutsche ich in Überverantwortung?",
           "Sprechen Sie mit Fachpersonen, wenn Sie bei Zuständigkeiten oder Grenzen unsicher sind.",
-          "Erinnern Sie sich: Ihre Stabilität ist Ihr wichtigster Beitrag.",
+          "Erinnern Sie sich: Ihre Gesundheit ist kein Beitrag, den Sie einer anderen Person schulden.",
         ],
       },
     ],

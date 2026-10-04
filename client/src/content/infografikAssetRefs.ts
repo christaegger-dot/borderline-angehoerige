@@ -1,5 +1,6 @@
 import { genesungItems } from "./genesung";
 import { grenzenItems } from "./grenzen";
+import { isHandoutVisualPublished } from "./handoutGovernance";
 import { homeFeaturedInfografiken } from "./homeFeaturedInfografiken";
 import { kommItems } from "./kommunizieren";
 import { materials } from "./materialien";
@@ -134,6 +135,10 @@ export function collectReferencedInfografikAssets() {
   const registry = new Map<string, ReferencedInfografikAsset>();
 
   for (const candidate of getAssetCandidates()) {
+    if (!isHandoutVisualPublished(candidate.id)) {
+      continue;
+    }
+
     for (const [field, assetPath] of Object.entries(candidate.fields)) {
       pushAssetReference(
         registry,

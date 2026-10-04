@@ -17,7 +17,7 @@ export default function Uebungsszenarien() {
     <Layout>
       <SEO
         title="Kommunikations-Übungen"
-        description="Üben Sie SET, DEAR MAN und Validierung anhand realistischer Szenarien – interaktiv, mit Feedback und Erklärungen."
+        description="Üben Sie offene Fragen, klare Grenzen, DEAR MAN und Validierung anhand anpassbarer Szenarien – interaktiv, mit Feedback und Erklärungen."
         path="/uebungen"
       />
 
@@ -40,8 +40,8 @@ export default function Uebungsszenarien() {
 
           <Lede className="mt-6">
             Realistische Situationen, verschiedene Antwortmöglichkeiten und
-            sofortiges Feedback. Probieren Sie aus, wie SET, DEAR MAN und
-            Validierung in der Praxis klingen.
+            sofortiges Feedback. Probieren Sie aus, wie begrenzte Zugewandtheit,
+            offene Fragen, DEAR MAN und Validierung klingen können.
           </Lede>
 
           <p
@@ -76,7 +76,8 @@ export default function Uebungsszenarien() {
             {
               href: "/kommunizieren",
               title: "Kommunizieren",
-              description: "SET, Validierung, Timing und Deeskalation.",
+              description:
+                "Offene Fragen, Validierung, Timing und klare Grenzen.",
             },
             {
               href: "/grenzen",
@@ -91,7 +92,7 @@ export default function Uebungsszenarien() {
             {
               href: "/unterstuetzen/krise",
               title: "Krisenbegleitung",
-              description: "Ampel-System, Deeskalation und Akutlogik.",
+              description: "Deeskalation, Sicherheit und passende Akutwege.",
             },
           ]}
         />

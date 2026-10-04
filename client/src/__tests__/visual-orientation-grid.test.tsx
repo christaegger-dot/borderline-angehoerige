@@ -16,8 +16,8 @@ function renderPreviewGrid() {
   return render(
     <Router>
       <VisualOrientationGrid
-        maxItems={4}
-        title="Vier Schlüsselbilder für den Anfang."
+        maxItems={3}
+        title="Drei Schlüsselbilder für den Anfang."
         intro="Kurzer Orientierungstext."
       />
     </Router>
@@ -25,20 +25,15 @@ function renderPreviewGrid() {
 }
 
 describe("VisualOrientationGrid", () => {
-  it("renders exactly 8 tiles in narrative order", () => {
+  it("renders only the three approved tiles in narrative order", () => {
     renderGrid();
     const tiles = screen.getAllByRole("listitem");
-    expect(tiles).toHaveLength(8);
+    expect(tiles).toHaveLength(3);
 
     const expectedOrder = [
-      "Der Eisberg",
-      "Alarm-Modus vs. Denk-Modus",
-      "Das Ampel-System",
-      "Die Validierungs-Treppe",
       "Die 4 Arten von Grenzen",
-      "Die Sauerstoffmaske",
-      "Das Fortschritt-Paradox",
-      "Spickzettel Krisenkommunikation",
+      "STOPP: einen Moment innehalten",
+      "Der Garten der Genesung",
     ];
 
     expectedOrder.forEach((title, idx) => {
@@ -84,8 +79,8 @@ describe("VisualOrientationGrid", () => {
   it("renders thumbnails with width/height for layout-shift prevention", () => {
     renderGrid();
     const images = screen.getAllByRole("img");
-    expect(images).toHaveLength(8);
-    const validHeights = new Set(["803", "848", "855"]);
+    expect(images).toHaveLength(3);
+    const validHeights = new Set(["849"]);
     images.forEach(img => {
       expect(img.getAttribute("width")).toBe("600");
       // Height kommt jetzt per-Tile aus homeFeaturedInfografiken
@@ -97,13 +92,13 @@ describe("VisualOrientationGrid", () => {
     });
   });
 
-  it("can render a quieter four-tile Home preview with lazy thumbnails", () => {
+  it("can render a quieter three-tile Home preview with lazy thumbnails", () => {
     renderPreviewGrid();
-    expect(screen.getAllByRole("listitem")).toHaveLength(4);
+    expect(screen.getAllByRole("listitem")).toHaveLength(3);
     expect(
       screen.getByRole("heading", {
         level: 2,
-        name: "Vier Schlüsselbilder für den Anfang.",
+        name: "Drei Schlüsselbilder für den Anfang.",
       })
     ).toBeInTheDocument();
     expect(screen.getByText("Kurzer Orientierungstext.")).toBeInTheDocument();
@@ -120,7 +115,7 @@ describe("VisualOrientationGrid", () => {
     expect(
       screen.getByRole("heading", {
         level: 2,
-        name: /Acht Konzepte, in Lese-Reihenfolge/,
+        name: /Kuratierte Konzepte/,
       })
     ).toBeInTheDocument();
   });

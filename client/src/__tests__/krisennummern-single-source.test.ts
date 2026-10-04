@@ -31,9 +31,11 @@ describe("Krisennummern — Single Source (kontakte.ts)", () => {
     }
   });
 
-  it("soforthilfe rendert beide Notfalllisten identisch aus dem Akutblock", () => {
+  it("soforthilfe rendert beide Kontaktlisten identisch aus der zentralen Kontaktfolge", () => {
     const lists = (soforthilfe[0].sections ?? []).filter(s =>
-      /Wichtige Nummern im Akutfall|Notfallnummern – Kurzreferenz/.test(s.title)
+      /Wichtige Kontakte in einer Krise|Kontaktübersicht – Kurzreferenz/.test(
+        s.title
+      )
     );
     expect(lists).toHaveLength(2);
 
@@ -51,6 +53,15 @@ describe("Krisennummern — Single Source (kontakte.ts)", () => {
         expect(akutTitles[i]).toContain(nummer);
       });
     }
+  });
+
+  it("ordnet 143 als Gesprächsunterstützung und nicht als Einsatzdienst ein", () => {
+    expect(soforthilfeText).toContain(
+      "Entlastendes Gespräch für Angehörige und Betroffene. Kein Einsatzdienst."
+    );
+    expect(soforthilfeText).toContain(
+      "Entlastendes Gespräch, anonym und 24/7. Kein Einsatzdienst."
+    );
   });
 
   it("kommunizieren-Handout bezieht Krisennummern aus kontakte.ts", () => {

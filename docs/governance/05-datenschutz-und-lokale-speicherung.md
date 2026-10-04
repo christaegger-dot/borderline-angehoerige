@@ -33,6 +33,13 @@ Für die Notfallkarte gilt zusätzlich:
 - persönliche Einträge verlassen das Gerät nicht
 - ein Löschpfad für lokale Daten muss vorhanden sein
 - Druck- und PDF-Export dürfen nur die bewusst eingegebenen Inhalte ausgeben
+- es ist klar, wem die Karte gehört und auf welche Person sich ein Eintrag
+  bezieht
+- Gesundheitsangaben, Behandlungsinformationen und persönliche Strategien
+  einer anderen Person werden nach Möglichkeit gemeinsam und nur mit deren
+  Einverständnis eingetragen
+- gemeinsam genutzte Geräte, Ausdrucke und die Weitergabe einer Karte werden
+  als eigenständige Vertraulichkeitsrisiken benannt
 
 ## Release-Regel
 

@@ -1,5 +1,7 @@
+import { isHandoutVisualPublished } from "./handoutGovernance";
+
 /**
- * Acht kuratierte Infografiken für das Visual-Orientation-Grid auf der Home.
+ * Kuratierte Infografiken für das Visual-Orientation-Grid auf der Home.
  *
  * Reihenfolge folgt einem narrativen Lese-Pfad für Erstbesucher:
  * verstehen → begleiten → schützen → sich halten → vertiefen.
@@ -29,54 +31,44 @@ export interface HomeFeaturedInfografik {
   alt: string;
 }
 
-export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
+const homeFeaturedCandidates: HomeFeaturedInfografik[] = [
   {
-    id: "eisberg",
-    title: "Der Eisberg",
+    id: "radikale-akzeptanz",
+    title: "Radikale Akzeptanz",
     description:
-      "Wut kann eine sichtbare Spitze sein; darunter können Schmerz, Angst oder andere Belastungen mitwirken.",
-    categoryLabel: "Verstehen",
-    href: "/verstehen",
-    thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v8.webp",
-    thumbnailHeight: 848,
-    alt: "Der Eisberg – Wut ist oft die Spitze",
+      "Gegenwärtige Realität anerkennen, ohne sie gutzuheissen oder hinnehmen zu müssen.",
+    categoryLabel: "Selbstfürsorge",
+    href: "/selbstfuersorge",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/puk-radikale-akzeptanz-v3.webp",
+    thumbnailHeight: 849,
+    alt: "Radikale Akzeptanz – freiwillige Schritte zu mehr Handlungsspielraum",
   },
   {
-    id: "alarm-modus",
-    title: "Alarm-Modus vs. Denk-Modus",
+    id: "gespraeche-kippen",
+    title: "Wenn Gespräche kippen",
     description:
-      "Erst beruhigen, dann klären — warum Logik manchmal nicht ankommt.",
-    categoryLabel: "Verstehen",
-    href: "/verstehen",
-    thumbnailUrl:
-      "/infografiken/extras/thumbnails/alarm-der-alarm-modus-v4.webp",
-    thumbnailHeight: 848,
-    alt: "Alarm-Modus vs. Denk-Modus",
-  },
-  {
-    id: "ampel-system",
-    title: "Das Ampel-System",
-    description: "Anspannung, Eskalation und akute Gefahr schneller einordnen.",
-    categoryLabel: "Krise begleiten",
-    href: "/unterstuetzen/krise",
-    thumbnailUrl:
-      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v4.webp",
-    thumbnailHeight: 803,
-    alt: "Ampel-System für Krisenphasen",
-  },
-  {
-    id: "validierungs-treppe",
-    title: "Die Validierungs-Treppe",
-    description: "Zuhören und validieren — ohne nachzugeben.",
+      "Wählbare Schritte: Tempo senken, offen nachfragen, begrenzen oder beenden.",
     categoryLabel: "Kommunizieren",
     href: "/kommunizieren",
     thumbnailUrl:
-      "/infografiken/extras/thumbnails/validierung-die-validierungs-treppe-v10.webp",
-    thumbnailHeight: 848,
-    alt: "Die Validierungs-Treppe",
+      "/infografiken/extras/thumbnails/puk-gespraeche-kippen-v3.webp",
+    thumbnailHeight: 849,
+    alt: "Wenn Gespräche kippen – drei wählbare Schritte",
   },
   {
-    id: "vier-arten-grenzen",
+    id: "beispiel-dialog",
+    title: "Beispiel-Dialog",
+    description:
+      "Mögliche Sätze für eine offene Frage, eine Grenze und einen freiwilligen Wiedereinstieg.",
+    categoryLabel: "Kommunizieren",
+    href: "/kommunizieren",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-beispiel-dialog-v3.webp",
+    thumbnailHeight: 849,
+    alt: "Beispiel-Dialog mit anpassbaren Gesprächssätzen",
+  },
+  {
+    id: "4-arten-von-grenzen",
     title: "Die 4 Arten von Grenzen",
     description:
       "Physisch, emotional, zeitlich, materiell — was wo gemeint ist.",
@@ -84,41 +76,47 @@ export const homeFeaturedInfografiken: HomeFeaturedInfografik[] = [
     href: "/grenzen",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/puk-4-arten-von-grenzen-v1.webp",
-    thumbnailHeight: 803,
+    thumbnailHeight: 849,
     alt: "Die 4 Arten von Grenzen",
   },
   {
-    id: "sauerstoffmaske",
-    title: "Die Sauerstoffmaske",
+    id: "stopp-technik",
+    title: "STOPP: einen Moment innehalten",
     description:
-      "Ihre Gesundheit, Beziehungen und Interessen haben einen eigenen Wert.",
+      "Eine freiwillige kurze Pause, um sich zu orientieren und den nächsten Schritt zu wählen.",
     categoryLabel: "Selbstfürsorge",
     href: "/selbstfuersorge",
-    thumbnailUrl:
-      "/infografiken/extras/thumbnails/sauerstoff-die-sauerstoffmaske-v5.webp",
-    thumbnailHeight: 803,
-    alt: "Die Sauerstoffmaske – Selbstfürsorge zuerst",
+    thumbnailUrl: "/infografiken/extras/thumbnails/manus-stopp-technik-v3.webp",
+    thumbnailHeight: 849,
+    alt: "STOPP-Technik – fünf freiwillige Schritte zum Innehalten",
+  },
+  {
+    id: "garten",
+    title: "Der Garten der Genesung",
+    description:
+      "Genesung braucht unterschiedliche Bedingungen und bleibt der Weg der betroffenen Person.",
+    categoryLabel: "Genesung",
+    href: "/genesung",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-garten-v1.webp",
+    thumbnailHeight: 849,
+    alt: "Garten-Metapher für unterschiedliche Bedingungen von Genesung",
   },
   {
     id: "fortschritt-paradox",
-    title: "Das Fortschritt-Paradox",
-    description: "Warum Rückfälle zum Weg gehören.",
+    title: "Veränderung verläuft unterschiedlich",
+    description:
+      "Genesungswege unterscheiden sich; einzelne Phasen legen den weiteren Verlauf nicht fest.",
     categoryLabel: "Genesung",
     href: "/genesung",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/fortschritt-das-fortschritt-paradox-v5.webp",
-    thumbnailHeight: 848,
-    alt: "Das Fortschritt-Paradox – Rückfälle als Teil des Wegs",
-  },
-  {
-    id: "deeskalations-pfad",
-    title: "Spickzettel Krisenkommunikation",
-    description: "Kurze Sätze, klare Grenze, nächster Kontaktpunkt.",
-    categoryLabel: "Krise begleiten",
-    href: "/unterstuetzen/krise",
-    thumbnailUrl:
-      "/infografiken/extras/thumbnails/deeskalation-der-deeskalations-pfad-v11.webp",
-    thumbnailHeight: 848,
-    alt: "Spickzettel Krisenkommunikation",
+    thumbnailHeight: 849,
+    alt: "Schematische Darstellung unterschiedlicher Genesungsverläufe",
   },
 ];
+
+// Fail closed: Home darf nie ein altes oder noch nicht freigegebenes Visual
+// über einen direkten Thumbnail-Pfad wieder sichtbar machen.
+export const homeFeaturedInfografiken = homeFeaturedCandidates.filter(item =>
+  isHandoutVisualPublished(item.id)
+);

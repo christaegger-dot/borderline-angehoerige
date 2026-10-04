@@ -4,14 +4,14 @@ import CuratedMaterialsSection, {
 import { selbstfuersorgeInfografiken } from "@/content/selbstfuersorge";
 
 const selectedIds = [
-  "sauerstoffmaske",
+  "radikale-akzeptanz",
   "stopp-technik",
   "energie-konto",
 ] as const;
 
 const guidanceById: Record<(typeof selectedIds)[number], string> = {
-  sauerstoffmaske:
-    "Eigene Bedürfnisse wahrnehmen und Überlastung früher erkennen.",
+  "radikale-akzeptanz":
+    "Wenn etwas gerade nicht veränderbar ist: Realität anerkennen, ohne sie gutzuheissen oder hinnehmen zu müssen.",
   "stopp-technik":
     "Wenn die Situation sicher ist: einen Moment innehalten und den nächsten Schritt wählen.",
   "energie-konto":

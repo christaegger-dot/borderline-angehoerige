@@ -34,7 +34,7 @@ interface VisualOrientationGridProps {
  * - Header in EditorialSection-Hülle (variant="cream") mit MarginNote
  *   «ÜBERBLICK» und Body-H2
  * - Tile-Grid darunter in eigener vollflächiger Section, max-w 1240 px,
- *   damit die acht Tiles weiter Container-Breite bekommen (nicht auf
+ *   damit die Tiles weiter Container-Breite bekommen (nicht auf
  *   608 px Lese-Spalte beschränkt)
  *
  * 4 Spalten Desktop (lg+), 2 Spalten Tablet (md), 1 Spalte Mobile.
@@ -42,7 +42,7 @@ interface VisualOrientationGridProps {
 export function VisualOrientationGrid({
   maxItems,
   ids,
-  title = "Acht Konzepte, in Lese-Reihenfolge — ein Bild pro Idee.",
+  title = "Kuratierte Konzepte — ein Bild pro Idee.",
   intro,
 }: VisualOrientationGridProps) {
   const tiles = ids

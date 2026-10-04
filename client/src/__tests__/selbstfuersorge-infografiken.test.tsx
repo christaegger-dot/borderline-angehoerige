@@ -21,9 +21,9 @@ describe("SelbstfuersorgeInfografikenSection", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Die Sauerstoffmaske/i,
+        name: /Textversion lesen: Radikale Akzeptanz/i,
       })
-    ).toHaveAttribute("href", "/materialien/text/sauerstoffmaske");
+    ).toHaveAttribute("href", "/materialien/text/radikale-akzeptanz");
     expect(
       screen.getByRole("link", {
         name: /Textversion lesen: STOPP: einen Moment innehalten/i,
@@ -35,12 +35,12 @@ describe("SelbstfuersorgeInfografikenSection", () => {
       })
     ).toHaveAttribute("href", "/materialien/text/energie-konto");
     expect(
-      screen.getByRole("link", {
-        name: /PDF öffnen: Die Sauerstoffmaske \(neuer Tab\)/i,
+      screen.queryByRole("link", {
+        name: /PDF öffnen: Radikale Akzeptanz/i,
       })
-    ).toHaveAttribute(
-      "href",
-      "/infografiken/sauerstoff-die-sauerstoffmaske-v5.pdf"
-    );
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByText(/Druckgrafik und das PDF werden fachlich/i)
+    ).toBeInTheDocument();
   });
 });

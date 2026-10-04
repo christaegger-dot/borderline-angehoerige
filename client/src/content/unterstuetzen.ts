@@ -9,21 +9,10 @@ export const unterstuetzenSubcategories = [
 
 export const unterstuetzenItems = [
   {
-    id: "im-krisenmodus",
-    title: "Im Krisenmodus – Orientierung geben",
-    description:
-      "Das Blatt gibt Orientierung zum Hilfeholen und Selbstschutz. Eine Farbe erlaubt keine verlässliche Einschätzung von Suizidgefahr; holen Sie bei Unsicherheit professionelle Hilfe.",
-    url: "/infografiken/ampel-das-ampel-system-v4.webp",
-    thumbnailUrl:
-      "/infografiken/extras/thumbnails/ampel-das-ampel-system-v4.webp",
-    pdfUrl: "/infografiken/ampel-das-ampel-system-v4.pdf",
-    category: "grundlagen",
-  },
-  {
     id: "rolle-klaeren",
     title: "Ihre Rolle klären",
     description:
-      "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
+      "Klarheit darüber, was Sie freiwillig anbieten können und was nicht zu Ihrer Verantwortung gehört.",
     url: "/infografiken/manus-rolle-klaeren-v3.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/manus-rolle-klaeren-v3-thumb.png",
@@ -34,7 +23,7 @@ export const unterstuetzenItems = [
     id: "drei-saeulen",
     title: "Drei Säulen hilfreicher Unterstützung",
     description:
-      "Drei tragende Prinzipien, damit Unterstützung stabil, klar und entlastend bleibt.",
+      "Präsenz, Selbstorientierung, Pause und Grenze als freiwillige Wahlmöglichkeiten.",
     url: "/infografiken/manus-drei-saeulen-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-drei-saeulen-v1.webp",
     pdfUrl: "/infografiken/manus-drei-saeulen-v1.pdf",
@@ -44,7 +33,7 @@ export const unterstuetzenItems = [
     id: "konsistenz-prinzip",
     title: "Konsistenz-Prinzip",
     description:
-      "Warum verlässliche, wiedererkennbare Reaktionen meist mehr helfen als spontane Kurswechsel.",
+      "Transparente, anpassbare Absprachen ohne starre Einheitsreaktion oder Wirkungsgarantie.",
     url: "/infografiken/manus-konsistenz-prinzip-v1.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/manus-konsistenz-prinzip-v1.webp",
@@ -55,7 +44,7 @@ export const unterstuetzenItems = [
     id: "beziehungs-achtsamkeit",
     title: "Beziehungs-Achtsamkeit",
     description:
-      "Orientierung, wie Nähe möglich bleibt, ohne Warnzeichen, Erschöpfung oder Grenzverletzungen zu übergehen.",
+      "Beobachtung und Vermutung trennen und frei zwischen Satz, Grenze, Pause oder Hilfe wählen.",
     url: "/infografiken/manus-beziehungs-achtsamkeit-v1.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp",
@@ -66,7 +55,7 @@ export const unterstuetzenItems = [
     id: "6-leitlinien",
     title: "6 Leitlinien für Angehörige",
     description:
-      "Sechs alltagstaugliche Leitsätze für Präsenz, Klarheit und Selbstschutz in belasteten Phasen.",
+      "Sechs freiwillige Orientierungspunkte zu Autonomie, Sicherheit, Absprachen und Selbstschutz.",
     url: "/infografiken/manus-6-leitlinien-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-6-leitlinien-v1.webp",
     pdfUrl: "/infografiken/manus-6-leitlinien-v1.pdf",
@@ -76,7 +65,7 @@ export const unterstuetzenItems = [
     id: "4-alltags-tipps",
     title: "4 Alltags-Tipps",
     description:
-      "Vier konkrete Hinweise, wie Unterstützung im Alltag ruhiger, klarer und tragfähiger werden kann.",
+      "Vier Fragen dazu, ob Hilfe gewünscht ist, was möglich ist und wo eigene Grenzen liegen.",
     url: "/infografiken/manus-4-alltags-tipps-v1.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v1.webp",

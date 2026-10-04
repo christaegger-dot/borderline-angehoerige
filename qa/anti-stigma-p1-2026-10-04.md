@@ -41,6 +41,7 @@ Massgeblich waren der PUK-Website- und Gestaltungsrahmen, der Borderline-Handout
 | Vitest-Gesamtsuite                      | 59 Dateien, 529 Tests bestanden |
 | Produktions-Build                       | bestanden                       |
 | Öffentliche Infografik-Assets           | genau 39 registrierte Dateien   |
+| P1-Entwurfsnachweise                    | 3 Pakete, 9 Assets geprüft      |
 | XML-Prüfung der Begleiterkrankungen-SVG | bestanden                       |
 | `git diff --check`                      | bestanden                       |
 

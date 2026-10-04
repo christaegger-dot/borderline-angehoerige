@@ -657,33 +657,40 @@ export default function Grenzen() {
             variant="editorial"
             title="Grenzen in verschiedenen Angehörigenrollen"
             id="rollen"
-            preview="Partner, Eltern und erwachsene Kinder geraten auf unterschiedliche Weise in Loyalitätsdruck. Das verändert auch, wie schwer Grenzen sich anfühlen."
+            preview="Die Angehörigenrolle legt nicht fest, wie jemand Belastung oder Grenzen erlebt. Die Beispiele können bei der individuellen Einordnung helfen."
           >
             <EditorialProse>
+              <p>
+                Menschen in derselben Angehörigenrolle können eine Situation
+                sehr unterschiedlich erleben. Die folgenden Erfahrungen sind
+                möglich, aber weder typisch noch unausweichlich.
+              </p>
               <h3 className="mt-2" style={h4Style}>
                 Als Partner/in
               </h3>
               <p>
-                In Partnerschaften fühlen sich Grenzen oft schnell wie
-                Beziehungsgefahr an. Gerade deshalb sind sie wichtig: Sie
-                unterscheiden zwischen Nähe und Verschmelzung, Mitgefühl und
-                Selbstaufgabe.
+                Manche Menschen in Partnerschaften befürchten, dass eine Grenze
+                die Beziehung gefährdet. Eine individuell passende Grenze kann
+                Nähe und eigenen Raum nebeneinander ermöglichen.
               </p>
               <h3 className="mt-6" style={h4Style}>
                 Als Elternteil
               </h3>
               <p>
-                Eltern erleben Grenzen oft als Widerspruch zu Fürsorge. Bei
-                erwachsenen Kindern ist Begrenzung aber häufig Teil
-                verantwortlicher Elternschaft, nicht ihr Gegenstück.
+                Manche Eltern erleben selbstschützende Grenzen zunächst als
+                Widerspruch zu Fürsorge. Bei erwachsenen Kindern können
+                Fürsorge, Selbstbestimmung und eigene Grenzen gleichzeitig
+                wichtig sein. Welche Grenze passt, ist individuell und darf ohne
+                moralische Bewertung entschieden werden.
               </p>
               <h3 className="mt-6" style={h4Style}>
                 Als erwachsenes Kind
               </h3>
               <p>
-                Wer seinem Elternteil Grenzen setzt, erlebt oft besonders starke
-                Schuld. Ihre emotionale Gesundheit ist dennoch nicht nachrangig.
-                Sie dürfen Ihr eigenes Leben schützen.
+                Manche erwachsene Kinder erleben Schuldgefühle, wenn sie einem
+                Elternteil Grenzen setzen. Andere erleben Erleichterung oder
+                beides zugleich. Ihre Gesundheit und Ihr eigenes Leben dürfen
+                bei der Entscheidung Gewicht haben.
               </p>
             </EditorialProse>
           </ContentSection>
@@ -692,7 +699,7 @@ export default function Grenzen() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Wenn der Angehörige körperlich übergriffig wird"
+            title="Wenn körperliche Gewalt oder Bedrohung vorkommt"
             id="gewalt"
           >
             <div className="space-y-4">
@@ -712,13 +719,14 @@ export default function Grenzen() {
                     color: "var(--fg-primary)",
                   }}
                 >
-                  Körperliche Gewalt ist kein Beziehungsproblem — es ist eine
+                  Körperliche Gewalt ist kein Beziehungsproblem — sie ist eine
                   Sicherheitsfrage.
                 </p>
                 <p style={bodyStyle}>
-                  Borderline erklärt Übergriffe nicht und entschuldigt sie
-                  nicht. Wenn Sie körperlich bedroht oder verletzt werden, ist
-                  Ihre Sicherheit die einzige Priorität.
+                  Gewalt kann in unterschiedlichen Beziehungen vorkommen. Sie
+                  lässt sich nicht aus einer Borderline-Diagnose ableiten und
+                  wird dadurch nicht entschuldigt. Wenn Sie körperlich bedroht
+                  oder verletzt werden, hat Ihre Sicherheit Vorrang.
                 </p>
               </div>
               {/* Numerierte Schritte: alert-Badges bleiben farbig (Sicherheitsentscheid) */}

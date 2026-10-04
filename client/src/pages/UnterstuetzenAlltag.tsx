@@ -26,19 +26,19 @@ const wasHilft = [
       "«Ich rufe dich heute Abend nach dem Essen an. Wenn ich mich verspäte, sage ich Bescheid.»",
     dialog: [
       {
-        sprecher: "Betroffene Person",
+        sprecher: "Person A",
         text: "Du hast dich gestern gar nicht gemeldet.",
       },
       {
-        sprecher: "Sie",
+        sprecher: "Person B",
         text: "Du hast recht — ich hätte Bescheid geben sollen. Das war nicht gut. Heute Abend um 20 Uhr rufe ich an.",
       },
       {
-        sprecher: "Betroffene Person",
+        sprecher: "Person A",
         text: "Und wenn wieder nichts kommt?",
       },
       {
-        sprecher: "Sie",
+        sprecher: "Person B",
         text: "Dann schreibe ich kurz. Aber ich halte das ein.",
       },
     ],
@@ -51,16 +51,16 @@ const wasHilft = [
       "«Ich brauche heute Abend Ruhe und bin morgen wieder ansprechbar.»",
     dialog: [
       {
-        sprecher: "Betroffene Person",
+        sprecher: "Person A",
         text: "Kannst du heute noch vorbeikommen?",
       },
       {
-        sprecher: "Sie",
+        sprecher: "Person B",
         text: "Nein, heute nicht. Ich brauche den Abend für mich.",
       },
-      { sprecher: "Betroffene Person", text: "Du willst also nicht." },
+      { sprecher: "Person A", text: "Du willst also nicht." },
       {
-        sprecher: "Sie",
+        sprecher: "Person B",
         text: "Ich will — und ich brauche heute Abstand. Morgen Nachmittag bin ich gerne da.",
       },
     ],
@@ -73,14 +73,17 @@ const wasHilft = [
       "«Ich merke, dass heute viel Anspannung da ist. Ich bin da, aber wir müssen das nicht sofort lösen.»",
     dialog: [
       {
-        sprecher: "Betroffene Person",
-        text: "Alles ist sinnlos. Es hat keinen Zweck mehr.",
+        sprecher: "Person A",
+        text: "Heute ist mir alles zu viel. Ich möchte gerade nicht reden.",
       },
-      { sprecher: "Sie", text: "Das klingt gerade sehr schwer. Ich bin da." },
-      { sprecher: "Betroffene Person", text: "[Schweigen]" },
       {
-        sprecher: "Sie",
-        text: "Wir müssen das nicht sofort klären. Ich bleibe noch ein bisschen.",
+        sprecher: "Person B",
+        text: "Das klingt gerade sehr schwer. Möchtest du Ruhe oder soll ich noch etwas bleiben?",
+      },
+      { sprecher: "Person A", text: "[Schweigen]" },
+      {
+        sprecher: "Person B",
+        text: "Du musst jetzt nicht antworten. Ich gehe, wenn du Ruhe möchtest.",
       },
     ],
   },
@@ -92,20 +95,20 @@ const wasHilft = [
       "«Nach 22 Uhr bin ich nicht mehr am Handy. Wenn es ernst wird, holen wir zusätzliche Hilfe dazu.»",
     dialog: [
       {
-        sprecher: "Betroffene Person",
+        sprecher: "Person A",
         text: "Es ist 23 Uhr und ich kann nicht schlafen. Du gehst nicht ran.",
       },
       {
-        sprecher: "Sie",
+        sprecher: "Person B",
         text: "Ich sehe deine Nachricht erst morgen früh. Nach 22 Uhr bin ich offline.",
       },
       {
-        sprecher: "Betroffene Person",
+        sprecher: "Person A",
         text: "Was soll ich denn jetzt tun?",
       },
       {
-        sprecher: "Sie",
-        text: "Für Notfälle gibt es die 143. Die ist immer da. Morgen früh melden wir uns.",
+        sprecher: "Person B",
+        text: "Für ein entlastendes Gespräch ist 143 rund um die Uhr da. Bei medizinischer Lebensgefahr rufst du 144, bei Gewalt oder Bedrohung 117. Morgen früh melde ich mich.",
       },
     ],
   },
@@ -120,12 +123,12 @@ const beziehungsAchtsamkeitSchritte = [
   {
     title: "die Lage genauer lesen",
     description:
-      "Was ist gerade wirklich los: Angst, Kränkung, Rückzug, Überforderung, alte Dynamik?",
+      "Was beobachte ich konkret? Was vermute ich nur? Was könnte ich offen erfragen?",
   },
   {
     title: "auch sich selbst wahrnehmen",
     description:
-      "Sind Sie gerade hilfsbereit, erschöpft, gereizt, schuldig oder im Rettungsmodus?",
+      "Sind Sie gerade hilfsbereit, erschöpft, gereizt, schuldig oder unter dem Druck, alles lösen zu müssen?",
   },
   {
     title: "bewusst und begrenzt handeln",
@@ -147,14 +150,10 @@ const positiveInselnItems = [
   },
 ] as const;
 
-const impulsivitaetZeichen = [
+const beobachtbareRisiken = [
   {
-    label: "Getriebensein",
-    sub: "Ruhelosigkeit, Drang zu handeln, kann nicht warten",
-  },
-  {
-    label: "Konsequenzblindheit",
-    sub: "Folgen werden ausgeblendet oder kleingredet",
+    label: "Starker Handlungsdruck",
+    sub: "Ruhelosigkeit oder Entscheidungen unter hohem Zeitdruck",
   },
   {
     label: "Grossausgaben",
@@ -166,15 +165,15 @@ const impulsivitaetZeichen = [
   },
   {
     label: "Substanzkonsum",
-    sub: "Alkohol, Cannabis oder andere Mittel als Ventil",
+    sub: "Beobachtbarer oder riskanter Konsum von Alkohol, Cannabis oder anderen Substanzen; die mögliche Funktion bleibt offen",
   },
   {
-    label: "Risikoverhaltens",
-    sub: "Fahren unter Einfluss, ungeschützter Sex, Gewalt",
+    label: "Riskante Situationen",
+    sub: "Zum Beispiel Fahren unter Einfluss oder ungeschützter Sex",
   },
 ] as const;
 
-const impulsivitaetSzenarien = [
+const risikoSzenarien = [
   {
     titel: "Grossausgaben / finanzielle Risiken",
     hilft: [
@@ -206,7 +205,7 @@ const impulsivitaetSzenarien = [
     hilft: [
       "Eigene Sicherheit priorisieren: Fahren mit unter Einfluss stehender Person ablehnen",
       "Konkret und ohne Urteil benennen: «Ich mache mir Sorgen, wie viel du trinkst.»",
-      "Therapeutin oder Fachstelle einbeziehen, wenn das Muster anhält",
+      "Wenn die Person das möchte, das Behandlungsteam einbeziehen; eigene Beratung können Sie unabhängig nutzen",
     ],
     nichtHilft: [
       "Konsum verstecken oder normalisieren",
@@ -278,17 +277,18 @@ export default function UnterstuetzenAlltag() {
             Im Alltag <em>unterstützen</em>
           </DisplayHeading>
           <Lede className="max-w-[40em]">
-            Belastete Beziehungen bestehen nicht nur aus Krisen. Meist prägen
-            sie den Alltag: Anspannung in der Luft, vorsichtiges Abtasten,
-            Rückzug nach Konflikten, Schuldgefühle, Erreichbarkeitsdruck und die
-            Frage, wie viel Nähe gerade hilfreich ist. Diese Seite geht darum,
-            was im Alltag trägt und was eher erschöpft.
+            Manche Angehörige berichten in belastenden Phasen von Anspannung,
+            vorsichtigem Abtasten, Rückzug nach Konflikten, Schuldgefühlen oder
+            Erreichbarkeitsdruck. Andere erleben den Alltag anders; aus einer
+            Diagnose lässt sich der Beziehungsverlauf nicht vorhersagen. Diese
+            Seite bietet freiwillige Möglichkeiten für den Alltag und nimmt
+            zugleich Ihre eigenen Grenzen ernst.
           </Lede>
           <TopicQuickLinks
             items={[
               { href: "#alltagsspannung", label: "Alltagsspannung" },
               { href: "#was-hilft", label: "Was hilft" },
-              { href: "#impulsivitaet", label: "Impulsivität" },
+              { href: "#impulsivitaet", label: "Riskante Entscheidungen" },
               { href: "#grenzen", label: "Grenzen" },
             ]}
           />
@@ -370,30 +370,30 @@ export default function UnterstuetzenAlltag() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Der Alltag ist oft nicht ruhig, sondern vorspannt"
+            title="Wenn der Alltag angespannt erlebt wird"
             id="alltagsspannung"
           >
             <EditorialProse>
               <p>
-                Viele Angehörige kennen weniger den permanenten Ausnahmezustand
-                als einen Alltag, der unterschwellig unter Spannung steht: Man
-                beobachtet Stimmungen, wägt Worte ab, rechnet mit plötzlichem
-                Rückzug oder Ärger und versucht gleichzeitig, Normalität
-                aufrechtzuerhalten.
+                Einige Angehörige berichten von Phasen, in denen sie Stimmungen
+                genauer beobachten, Worte abwägen oder mit Rückzug und Ärger
+                rechnen. Das ist eine mögliche Erfahrung, kein typischer oder
+                aus der Diagnose vorhersehbarer Beziehungsverlauf.
               </p>
               <p>
-                Diese dauernde innere Wachsamkeit ist anstrengend. Sie kostet
-                Energie, auch wenn äusserlich gerade «nichts passiert».
-                Hilfreiche Alltagsunterstützung beginnt oft damit, diese
-                Belastung ernst zu nehmen und nicht nur auf sichtbare
-                Eskalationen zu reagieren.
+                Wenn Sie sich häufig wachsam oder erschöpft fühlen, verdient
+                diese Belastung Aufmerksamkeit — auch wenn äusserlich gerade
+                wenig sichtbar ist. Sie können prüfen, welche Absprachen Sie
+                freiwillig anbieten möchten und welche Entlastung Sie selbst
+                brauchen.
               </p>
             </EditorialProse>
             <div className="mt-4">
               <EditorialPullQuote>
-                Alltagshilfe bedeutet deshalb nicht, immer mehr zu tun. Oft
-                bedeutet sie, Beziehungen etwas vorhersehbarer, klarer und
-                weniger reaktiv zu machen.
+                Klarheit oder Absprachen können eine freiwillige Möglichkeit
+                sein, wenn sie für die Beteiligten passen. Angehörige sind weder
+                für die Vorhersehbarkeit einer Beziehung noch für die Regulation
+                einer anderen Person verantwortlich.
               </EditorialPullQuote>
             </div>
             <figure
@@ -409,7 +409,7 @@ export default function UnterstuetzenAlltag() {
                   fontWeight: 500,
                 }}
               >
-                Spannungsverlauf im Alltag
+                Beispiel für die eigene Anspannung
               </p>
               <svg
                 viewBox="0 0 300 72"
@@ -483,7 +483,7 @@ export default function UnterstuetzenAlltag() {
                   fill="currentColor"
                   opacity="0.6"
                 >
-                  Mit Angehörigem
+                  Beispielverlauf
                 </text>
                 <line
                   x1="140"
@@ -502,7 +502,7 @@ export default function UnterstuetzenAlltag() {
                   fill="currentColor"
                   opacity="0.6"
                 >
-                  Ohne Belastung
+                  Eigene Basislinie
                 </text>
               </svg>
               <figcaption
@@ -512,8 +512,9 @@ export default function UnterstuetzenAlltag() {
                   color: "var(--fg-tertiary)",
                 }}
               >
-                Erhöhte Grundspannung kostet Energie — auch wenn äusserlich
-                «nichts passiert».
+                Schematisches Beispiel: Die eigene Anspannung kann auch ohne
+                sichtbares Ereignis schwanken. Verlauf und Basislinie sind
+                individuell und hängen von vielen Einflüssen ab.
               </figcaption>
             </figure>
           </ContentSection>
@@ -525,6 +526,12 @@ export default function UnterstuetzenAlltag() {
             title="Was im Alltag oft wirklich hilft"
             id="was-hilft"
           >
+            <p className="mt-2 mb-8" style={bodyStyle}>
+              Die folgenden Situationen sind erfunden. «Person A» und «Person B»
+              bezeichnen keine festen Rollen und lassen sich nicht aus einer
+              Diagnose ableiten. Die Sätze sind anpassbare Möglichkeiten, keine
+              Vorgaben für ein richtiges Gespräch.
+            </p>
             <div className="mt-2 space-y-10">
               {wasHilft.map(item => (
                 <article key={item.title} className="space-y-3">
@@ -721,14 +728,15 @@ export default function UnterstuetzenAlltag() {
           >
             <div className="mt-2 space-y-10">
               <article className="space-y-3">
-                <h3 style={h4Style}>Fortschritte benennen</h3>
+                <h3 style={h4Style}>Bedeutsame Veränderungen erfragen</h3>
                 <p style={bodyStyle}>
-                  Nicht überloben, aber wahrnehmen, wenn etwas weniger
-                  zerstörerisch, etwas bewusster oder etwas klarer gelungen ist.
+                  Beschreiben Sie konkrete Beobachtungen und fragen Sie die
+                  andere Person, ob die Veränderung für sie bedeutsam war, statt
+                  ihren Verlauf von aussen zu bewerten.
                 </p>
                 <p style={exampleStyle}>
-                  «Ich habe gemerkt, dass du dich heute zurückgezogen hast, ohne
-                  dass es ganz eskaliert ist. Das war nicht leicht.»
+                  «Mir ist aufgefallen, dass du heute früher eine Pause gemacht
+                  hast. War das für dich hilfreich oder eher nicht?»
                 </p>
               </article>
 
@@ -782,34 +790,33 @@ export default function UnterstuetzenAlltag() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Wenn Impulsivität ausbricht"
+            title="Wenn Entscheidungen oder Verhalten riskant werden"
             id="impulsivitaet"
           >
             <EditorialProse>
               <p>
-                Wird die Situation akut – Selbst- oder Fremdgefährdung,
-                unkontrollierbare Eskalation? Dann geht es nicht mehr um
-                Alltagsbegleitung, sondern um{" "}
+                Bei unmittelbarer Selbst- oder Fremdgefährdung oder bei Gewalt
+                geht es nicht mehr um Alltagsbegleitung, sondern um{" "}
                 <Link href="/unterstuetzen/krise" className="editorial-link">
                   Krisenbegleitung
                 </Link>
                 .
               </p>
               <p>
-                Borderline zeigt sich nicht nur als Rückzug und Erschöpfung.
-                Manche Phasen sind geprägt von <strong>Impulsivität</strong>:
-                plötzliche Grossausgaben, Kündigung ohne Plan, riskante
-                Beziehungsentscheidungen, Substanzkonsum, Fahrtabenteuer oder
-                abrupte Ortsveränderungen. Für Angehörige kann das
-                überraschender und belastender sein als depressive Phasen – weil
-                es Konsequenzen hat, die beide betreffen.
+                Riskante oder abrupte Entscheidungen können in unterschiedlichen
+                Belastungslagen vorkommen. Sie treten nicht bei allen Menschen
+                mit Borderline auf und sagen nichts über Charakter oder Absicht
+                aus. Orientieren Sie sich daran, was Sie konkret beobachten, was
+                Sie selbst betrifft und welche Unterstützung die Person möchte.
               </p>
             </EditorialProse>
 
             <div className="mt-8">
-              <h3 style={h4Style}>Zeichen einer impulsiven Phase erkennen</h3>
+              <h3 style={h4Style}>
+                Beobachtungen, die Anlass für ein Gespräch sein können
+              </h3>
               <ul className="mt-3 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-                {impulsivitaetZeichen.map(item => (
+                {beobachtbareRisiken.map(item => (
                   <li key={item.label}>
                     <p
                       style={{
@@ -828,15 +835,16 @@ export default function UnterstuetzenAlltag() {
 
             <div className="mt-8">
               <EditorialPullQuote>
-                Impulsive Handlungen entstehen oft aus intensivem emotionalen
-                Druck, nicht aus Rücksichtslosigkeit oder bösem Willen.
+                Starker emotionaler Druck kann Entscheidungen beeinflussen. Aus
+                einer Handlung allein lassen sich weder Motiv noch Charakter
+                eines Menschen ableiten.
               </EditorialPullQuote>
             </div>
 
             <div className="mt-8">
-              <h3 style={h4Style}>Drei Szenarien — was hilft, was nicht</h3>
+              <h3 style={h4Style}>Drei Alltagssituationen — was eher hilft</h3>
               <div className="mt-4 space-y-10">
-                {impulsivitaetSzenarien.map(szenario => (
+                {risikoSzenarien.map(szenario => (
                   <article key={szenario.titel} className="space-y-4">
                     <h4
                       style={{
@@ -897,14 +905,15 @@ export default function UnterstuetzenAlltag() {
             </div>
 
             <div className="mt-10">
-              <h3 style={h4Style}>Nach der impulsiven Phase: Scham und Reue</h3>
+              <h3 style={h4Style}>
+                Nach einer belastenden Situation: Erleben offen lassen
+              </h3>
               <p className="mt-2" style={bodyStyle}>
-                Nach impulsiven Phasen folgt oft massive <strong>Scham</strong>{" "}
-                – manchmal Rückzug, manchmal übermässige Entschuldigungen.
-                Beides braucht eine ruhige Antwort: Anerkennen, was passiert
-                ist, ohne es kleinzureden oder aufzubauschen. Erst wenn die
-                Emotionen sich gelegt haben, ist der Moment für ein echtes
-                Gespräch über Konsequenzen und nächste Schritte.
+                Danach können Scham, Reue, Erleichterung, Ärger, Rückzug oder
+                ganz andere Reaktionen auftreten. Fragen Sie nach, statt ein
+                bestimmtes Erleben vorauszusetzen. Wenn beide bereit sind, kann
+                später ein Gespräch darüber helfen, was passiert ist, was die
+                Folgen sind und welche nächsten Schritte gewünscht werden.
               </p>
             </div>
           </ContentSection>

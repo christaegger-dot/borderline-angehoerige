@@ -17,7 +17,7 @@ const AKUT_LABEL: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
   GRUEN_143: "Dargebotene Hand",
 };
 
-// Ausführliche Beschreibungen (Liste «Wichtige Nummern im Akutfall»).
+// Ausführliche Beschreibungen (Liste «Wichtige Kontakte in einer Krise»).
 const AKUT_TEXT_LANG: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
   ROT_144:
     "Akute Lebensgefahr, laufende Suizidhandlung, schwere Selbstverletzung, Bewusstlosigkeit oder schwere Intoxikation.",
@@ -31,7 +31,7 @@ const AKUT_TEXT_LANG: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
     "Entlastendes Gespräch für Angehörige und Betroffene. Kein Einsatzdienst.",
 };
 
-// Kurze Beschreibungen (Liste «Notfallnummern – Kurzreferenz»).
+// Kurze Beschreibungen (Liste «Kontaktübersicht – Kurzreferenz»).
 const AKUT_TEXT_KURZ: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
   ROT_144: "Akute Lebensgefahr.",
   ROT_117: "Bedrohung oder Gewalt.",
@@ -39,7 +39,7 @@ const AKUT_TEXT_KURZ: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
   GELB_PUK_ERW: "Psychiatrischer Notfall, 24/7.",
   GELB_PUK_KJP: "Bis 18 Jahre, 24/7.",
   GELB_PUK_65: "Ab 65 Jahren, 24/7.",
-  GRUEN_143: "Anonym, 24/7.",
+  GRUEN_143: "Entlastendes Gespräch, anonym und 24/7. Kein Einsatzdienst.",
 };
 
 const akutCards = (texts: Record<(typeof AKUT_KONTAKT_IDS)[number], string>) =>
@@ -52,7 +52,7 @@ export const handoutTextVersions = [
   createHandoutTextVersion("notfallplan-krise", {
     kicker: "Textversion",
     summary:
-      "Konkrete Orientierung für Angehörige bei Suizidgedanken, Selbstverletzung oder akuter seelischer Krise: Gefahr einschätzen, ruhig bleiben, direkt ansprechen und Hilfe einbeziehen.",
+      "Konkrete Orientierung für Angehörige bei Suizidgedanken, Selbstverletzung oder akuter seelischer Krise: Beobachtungen ernst nehmen, direkt ansprechen und professionelle Hilfe einbeziehen.",
     intro: [
       "Diese Seite macht den «Notfallplan bei psychischer Krise» direkt lesbar. Die Orientierung bleibt bewusst nah am Notfallplan, damit wichtige Hinweise auch ohne PDF-Ansicht schnell zugänglich sind.",
       "Der Notfallplan richtet sich an Angehörige, wenn Suizidgedanken, Selbstverletzung oder eine akute psychische Krise im Raum stehen. Er ersetzt keine professionelle Beurteilung, soll aber helfen, in einer belastenden Situation klarer zu handeln.",
@@ -69,22 +69,22 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Wichtige Nummern im Akutfall",
+        title: "Wichtige Kontakte in einer Krise",
         cards: akutCards(AKUT_TEXT_LANG),
       },
       {
         title: "Wichtiger Soforthinweis",
         calloutTitle: "Sicherheit vor Diskussion",
         calloutText:
-          "Die Person nach Möglichkeit nicht ohne Hilfe, Notfallplan oder professionelle Einschätzung allein lassen – sofern Sie selbst sicher bleiben können. Gefährliche Gegenstände, Medikamente, Alkohol oder andere Mittel wenn möglich entfernen. Bei Unsicherheit lieber einmal zu viel Hilfe holen als einmal zu wenig.",
+          "Die Person nach Möglichkeit nicht ohne Hilfe, Notfallplan oder professionelle Einschätzung allein lassen – sofern Sie selbst sicher bleiben können. Begrenzen Sie den Zugang zu Medikamenten, Alkohol oder gefährlichen Gegenständen nur ohne Eigengefährdung, möglichst gemeinsam und nach Anleitung der Leitstelle. Nehmen Sie nichts gegen Widerstand weg und greifen Sie nicht körperlich ein. Bei Unsicherheit lieber einmal zu viel Hilfe holen als einmal zu wenig.",
       },
       {
         title:
           "4 Schritte in der Krise – wenn jemand Suizidgedanken äussert oder sich selbst verletzt",
         cards: [
           {
-            title: "1. Ruhe bewahren",
-            text: "Ihre Angst ist verständlich. Panik, hektisches Sprechen oder Druck verstärken die Krise oft zusätzlich. Atmen Sie bewusst, sprechen Sie langsam und bleiben Sie so ruhig wie möglich. Ihre Ruhe kann der betroffenen Person vorübergehend Halt geben.",
+            title: "1. Eigenes Tempo reduzieren",
+            text: "Ihre Angst ist verständlich. Wenn es Ihnen möglich ist, atmen Sie bewusst und sprechen Sie langsam. Das kann Ihnen helfen, Beobachtungen klar zu benennen und professionelle Hilfe einzubeziehen. Sie müssen weder vollkommen ruhig sein noch die Krise des anderen Menschen regulieren.",
           },
           {
             title: "2. Ernst nehmen und direkt ansprechen",
@@ -103,11 +103,11 @@ export const handoutTextVersions = [
       {
         title: "Das hilft",
         bullets: [
-          "ruhig bleiben und, wenn es für Sie sicher ist, dableiben",
+          "früh professionelle Hilfe holen und klare Beobachtungen weitergeben",
+          "nur wenn es für Sie sicher ist und Sie es möchten, bis zum Eintreffen von Hilfe dableiben",
           "direkt und klar nachfragen",
           "Gefühle ernst nehmen und anerkennen",
-          "Gefährdung einschätzen und Hilfe holen",
-          "Fachpersonen oder Notfallstellen einbeziehen",
+          "die professionelle Einschätzung einer möglichen Gefährdung veranlassen",
           "konkrete Sicherheit vor Diskussion stellen",
         ],
       },
@@ -132,14 +132,13 @@ export const handoutTextVersions = [
       },
       {
         title: "Nach der akuten Situation",
-        intro:
-          "Auch wenn sich die Lage zunächst beruhigt hat, ist die Krise oft noch nicht vorbei. Wichtig ist danach:",
+        intro: `Nach einer akuten Situation kann fachliche Nachsorge nötig sein. Bei erneut möglicher unmittelbarer Lebensgefahr gilt weiterhin: ${nr("ROT_144")} anrufen. Angehörige müssen den Verlauf weder überwachen noch eine weitere Krise vorhersagen. Mögliche nächste Schritte sind:`,
         bullets: [
-          "behandelnde Fachperson informieren",
-          "gemeinsam überlegen, was jetzt Sicherheit gibt",
-          "Unterstützung auch für Angehörige organisieren",
-          "nächste Stunden und Nacht nicht dem Zufall überlassen",
-          "Warnzeichen und Auslöser festhalten",
+          "mit der betroffenen Person und, wenn sie einverstanden ist, mit der Fachperson klären, welche Nachsorge vorgesehen ist",
+          "die betroffene Person fragen, welche Unterstützung jetzt gewünscht ist oder nicht",
+          "eigene Unterstützung für Angehörige organisieren",
+          "einen vereinbarten professionellen Hilfeweg für erneute Sorge griffbereit halten",
+          "Beobachtungen oder Wünsche nur freiwillig festhalten; es besteht keine Pflicht, Warnzeichen zu überwachen oder einen Auslöser zu bestimmen",
         ],
       },
       {
@@ -156,7 +155,7 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Notfallnummern – Kurzreferenz",
+        title: "Kontaktübersicht – Kurzreferenz",
         cards: [
           ...akutCards(AKUT_TEXT_KURZ),
           {

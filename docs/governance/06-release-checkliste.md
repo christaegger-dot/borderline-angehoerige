@@ -13,6 +13,12 @@ Diese Checkliste ist vor jedem Release zwingend zu prüfen.
 
 - [ ] Keine neue medizinische Aussage ohne Quellenprüfung
 - [ ] EvidenceNotes konsistent
+- [ ] Anti-Stigma- und Perspektivenstandard auf Seite, Suche, Textversion,
+      Visualisierung und PDF geprüft
+- [ ] Keine Motiv-, Gewalt- oder Gefährlichkeitszuschreibung aus der Diagnose
+- [ ] Angehörige nicht für Regulation, Behandlung oder Genesung verantwortlich
+      gemacht
+- [ ] Autonomie, Einwilligung und Vertraulichkeit gewahrt
 
 ## Hochrisiko-Seiten
 
@@ -28,6 +34,7 @@ Diese Checkliste ist vor jedem Release zwingend zu prüfen.
 ## Freigabe
 
 - [ ] Fachlich geprüft
+- [ ] Erfahrungsperspektiven geprüft oder als offen dokumentiert
 - [ ] Release freigegeben
 
 ## Release-Gates

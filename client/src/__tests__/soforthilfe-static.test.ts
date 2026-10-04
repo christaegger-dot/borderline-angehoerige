@@ -48,4 +48,47 @@ describe("static soforthilfe page", () => {
       /<a href="tel:147">147<\/a>\s*Pro Juventute – Beratung für Kinder\s+und Jugendliche,\s*24\/7/
     );
   });
+
+  it("limits the crisis examples without linking them to character or diagnosis", () => {
+    const html = readSoforthilfeDirectPage();
+
+    expect(html).toContain(
+      "Krisensituationen treten nicht bei allen Menschen mit Borderline"
+    );
+    expect(html).toContain("sind nicht diagnosespezifisch");
+    expect(html).toContain("Charakter oder Wert einer Person");
+  });
+
+  it("distinguishes listening services from emergency response", () => {
+    const html = readSoforthilfeDirectPage();
+
+    expect(html).toContain("Entlastung und Gespräch");
+    expect(html).toMatch(/<a href="tel:143">143<\/a>/);
+    expect(html).toContain("schicken aber keinen");
+    expect(html).toContain("Einsatzdienst");
+  });
+
+  it("separates medical emergencies from police protection", () => {
+    const html = readSoforthilfeDirectPage();
+    const medicalBlock = html.match(
+      /<h3>Medizinische Lebensgefahr<\/h3>([\s\S]*?)<\/article>/
+    )?.[1];
+    const policeBlock = html.match(
+      /<h3>Gewalt oder unmittelbare Bedrohung<\/h3>([\s\S]*?)<\/article>/
+    )?.[1];
+
+    expect(medicalBlock).toContain('href="tel:144"');
+    expect(medicalBlock).toContain('href="tel:112"');
+    expect(medicalBlock).not.toContain('href="tel:117"');
+    expect(policeBlock).toContain('href="tel:117"');
+    expect(policeBlock).not.toContain('href="tel:144"');
+  });
+
+  it("links to the current crisis-plan text instead of the withdrawn PDF", () => {
+    const html = readSoforthilfeDirectPage();
+
+    expect(html).toContain('href="/materialien/text/notfallplan-krise"');
+    expect(html).toContain("Notfallplan im Browser");
+    expect(html).not.toContain('href="/notfallplan-krise-v04.pdf"');
+  });
 });

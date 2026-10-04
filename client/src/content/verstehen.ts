@@ -20,42 +20,44 @@ export interface VerstehenTextCard {
 export const verstehenInfografiken: VerstehenInfografik[] = [
   {
     id: "leuchtturm",
-    title: "Der Leuchtturm",
-    description: "Orientierung für Angehörige: stabil bleiben trotz Sturm.",
+    title: "Der Leuchtturm – eigene Orientierung finden",
+    description:
+      "Eine Metapher für die eigenen Werte, Grenzen, Möglichkeiten und passende Unterstützung — nicht für die Steuerung einer anderen Person.",
     category: "grundlagen",
     webpUrl: "/infografiken/manus-leuchtturm-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-leuchtturm-v1.webp",
     pdfUrl: "/infografiken/manus-leuchtturm-v1.pdf",
-    alt: "Der Leuchtturm – Orientierung für Angehörige",
+    alt: "Leuchtturm-Metapher für die Selbstorientierung von Angehörigen",
     featured: true,
   },
   {
     id: "eisberg",
     title: "Der Eisberg",
     description:
-      "Wut kann eine sichtbare Spitze sein; darunter können Schmerz, Angst oder andere Belastungen mitwirken.",
+      "Sichtbares Verhalten ist ein Teil der Situation. Gefühle, Bedürfnisse und Belastungen können mitwirken, ohne von aussen sicher erkennbar zu sein.",
     category: "grundlagen",
     webpUrl: "/infografiken/eisberg-der-eisberg-v8.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/eisberg-der-eisberg-v8.webp",
     pdfUrl: "/infografiken/eisberg-der-eisberg-v8.pdf",
-    alt: "Der Eisberg – Wut ist oft die Spitze",
+    alt: "Eisberg-Metapher mit sichtbarem Verhalten und möglichen Kontexten",
   },
   {
     id: "spaltung",
-    title: "Spaltung",
-    description: "Das Pendel zwischen Extremen – die Grauzone stärken.",
+    title: "Wenn Bewertungen unter Stress einseitiger werden",
+    description:
+      "Eine Pendel-Metapher für einen vorübergehend verengten Blick – nicht für eine feste Eigenschaft oder Absicht.",
     category: "grundlagen",
     webpUrl: "/infografiken/pendel-das-bewertungs-pendel-v16.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v16.webp",
     pdfUrl: "/infografiken/pendel-das-bewertungs-pendel-v16.pdf",
-    alt: "Spaltung – das Pendel zwischen Extremen",
+    alt: "Pendel-Metapher: Bewertungen können unter Stress einseitiger werden",
   },
   {
     id: "alarm-modus",
     title: "Alarm-Modus vs. Denk-Modus",
     description:
-      "Erst beruhigen, dann klären – warum Logik manchmal nicht ankommt.",
+      "Vereinfachtes Stressmodell: weniger Druck, Pause, Abstand und eigene Sicherheit statt Beruhigungspflicht.",
     category: "neurobiologie",
     webpUrl: "/infografiken/alarm-der-alarm-modus-v4.webp",
     thumbnailUrl:
@@ -75,21 +77,10 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     alt: "Kinder verstehen und entlasten",
   },
   {
-    id: "4-phasen",
-    title: "Der 4-Phasen-Zyklus",
-    description:
-      "Ein häufiges Muster in belasteten Beziehungen, nicht ein fixes Schicksal.",
-    category: "neurobiologie",
-    webpUrl: "/infografiken/manus-4-phasen-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-4-phasen-v1.webp",
-    pdfUrl: "/infografiken/manus-4-phasen-v1.pdf",
-    alt: "Der 4-Phasen-Zyklus",
-  },
-  {
     id: "gehirn",
     title: "Das Gehirn verstehen",
     description:
-      "Neurobiologie einfach erklärt – warum Stress Denken blockiert.",
+      "Vereinfachtes Stressmodell mit freiwilligen Schritten zur eigenen Orientierung – ohne Regulationsauftrag für Angehörige.",
     category: "neurobiologie",
     webpUrl: "/infografiken/manus-gehirn-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-gehirn-v1.webp",
@@ -100,16 +91,16 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
 
 export const relationshipPatterns: VerstehenTextCard[] = [
   {
-    title: "Verlassenheitsangst",
-    text: "Schon kleine Verzögerungen, Unklarheiten oder Distanzsignale können als drohender Verlust erlebt werden. Für Angehörige wirkt das oft unverhältnismässig, für die betroffene Person aber sehr real.",
+    title: "Sorge vor Beziehungsverlust",
+    text: "Verzögerungen, Unklarheiten oder Distanzsignale können als drohender Verlust erlebt werden. Das kann für Angehörige schwer nachvollziehbar sein; das Erleben der betroffenen Person ist dennoch real.",
   },
   {
-    title: "Nähe-Distanz-Pendeln",
-    text: "Es kann vorkommen, dass jemand sehr viel Nähe sucht und sich kurz darauf zurückzieht, abwertet oder abbricht. Das ist nicht einfach Widersprüchlichkeit, sondern oft Ausdruck von Bindungsstress.",
+    title: "Nähe und Distanz",
+    text: "Es kann vorkommen, dass jemand Nähe sucht und sich später zurückzieht oder Abstand wünscht. Bindungsstress kann dabei mitwirken; aus dem Wechsel allein lässt sich weder eine Ursache noch eine Absicht ableiten.",
   },
   {
-    title: "Spaltung unter Stress",
-    text: "In Belastungssituationen wird es schwerer, gleichzeitig Gutes und Schwieriges an einer Person zu halten. Dann kippt das Erleben leichter in Idealisierung oder Entwertung.",
+    title: "Einseitigere Bewertungen unter Stress",
+    text: "In Belastungssituationen kann es schwieriger werden, positive und schwierige Aspekte einer Person gleichzeitig im Blick zu behalten. Diese mögliche Verengung ist keine Absicht und lässt sich nicht aus einer Diagnose vorhersagen.",
   },
 ];
 

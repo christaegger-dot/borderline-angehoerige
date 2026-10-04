@@ -49,7 +49,7 @@ describe("security headers", () => {
 
   it("applies the shared security headers to generated local handout download responses", async () => {
     const response = await createMaterialDownloadResponse(
-      "kommunizieren-wenn-gespraeche-kippen-3-schritte",
+      "grenzen-die-4-arten-von-grenzen",
       "inline"
     );
 
@@ -62,7 +62,7 @@ describe("security headers", () => {
       "public, max-age=0, must-revalidate"
     );
     expect(response.headers.get("Content-Disposition")).toContain(
-      'inline; filename="puk-gespraeche-kippen-v3.pdf"'
+      'inline; filename="puk-4-arten-von-grenzen-v1.pdf"'
     );
     expect(Number(response.headers.get("Content-Length"))).toBeGreaterThan(
       1000
@@ -71,7 +71,7 @@ describe("security headers", () => {
 
   it("applies the shared security headers to local material download responses", async () => {
     const response = await createMaterialDownloadResponse(
-      "notfallplan-krise",
+      "notfallkarte-zuerich",
       "attachment"
     );
 
@@ -84,7 +84,7 @@ describe("security headers", () => {
       "public, max-age=0, must-revalidate"
     );
     expect(response.headers.get("Content-Disposition")).toContain(
-      'attachment; filename="notfallplan-krise-v04.pdf"'
+      'attachment; filename="Notfallkarte-Zuerich-Psychische-Krise.pdf"'
     );
     expect(Number(response.headers.get("Content-Length"))).toBeGreaterThan(
       1000
@@ -97,7 +97,7 @@ describe("security headers", () => {
     vi.stubGlobal("fetch", fetchPdf);
 
     const response = await createMaterialDownloadResponse(
-      "notfallplan-krise",
+      "grenzen-die-4-arten-von-grenzen",
       "inline",
       "https://borderline-angehoerige.netlify.app"
     );
@@ -105,7 +105,9 @@ describe("security headers", () => {
     expect(existsSpy).toHaveBeenCalled();
     expect(fetchPdf).not.toHaveBeenCalled();
     expect(response.status).toBe(307);
-    expect(response.headers.get("Location")).toBe("/notfallplan-krise-v04.pdf");
+    expect(response.headers.get("Location")).toBe(
+      "/infografiken/puk-4-arten-von-grenzen-v1.pdf"
+    );
     expect(response.headers.get("Cache-Control")).toBe("private, no-store");
     for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
       expect(response.headers.get(header)).toBe(value);
@@ -119,13 +121,15 @@ describe("security headers", () => {
     vi.stubGlobal("fetch", fetchPdf);
 
     const response = await createMaterialDownloadResponse(
-      "notfallplan-krise",
+      "grenzen-die-4-arten-von-grenzen",
       "inline"
     );
 
     expect(fetchPdf).not.toHaveBeenCalled();
     expect(response.status).toBe(307);
-    expect(response.headers.get("Location")).toBe("/notfallplan-krise-v04.pdf");
+    expect(response.headers.get("Location")).toBe(
+      "/infografiken/puk-4-arten-von-grenzen-v1.pdf"
+    );
     expect(response.headers.get("Cache-Control")).toBe("private, no-store");
   });
 });

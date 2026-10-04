@@ -57,7 +57,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Soll ich die Diagnose ansprechen?",
         answer:
-          "Das hängt von der Situation ab. Wenn Ihr Angehöriger die Diagnose bereits kennt und akzeptiert, kann ein offenes Gespräch hilfreich sein – es zeigt, dass Sie sich informieren und verstehen wollen. Vermeiden Sie jedoch, die Diagnose als «Waffe» zu benutzen («Du verhältst dich wieder so borderline-mässig»). Wenn die Diagnose noch nicht gestellt oder nicht akzeptiert wurde, konzentrieren Sie sich besser auf konkrete Verhaltensweisen und Gefühle statt auf Labels. Sagen Sie zum Beispiel: «Ich merke, dass du gerade sehr aufgewühlt bist» statt «Das ist deine Borderline».",
+          "Das hängt von der Situation ab. Wenn die betroffene Person die Diagnose kennt und darüber sprechen möchte, kann ein offenes Gespräch hilfreich sein. Fragen Sie, welche Begriffe für sie passen und was sie von Ihnen braucht. Verwenden Sie die Diagnose nicht als Erklärung für jedes Verhalten oder als Argument im Konflikt («Das ist wieder deine Borderline»). Wenn keine Diagnose gestellt wurde oder die Einordnung nicht geteilt wird, bleiben Sie bei konkreten Beobachtungen und Ihrem eigenen Erleben: «Ich merke, dass unser Gespräch gerade sehr angespannt ist.»",
         links: [
           { text: "Mehr zur Kommunikation", url: "/kommunizieren" },
           { text: "Kommunikation üben", url: "/uebungen" },
@@ -94,12 +94,13 @@ const faqCategories: FAQCategory[] = [
         ],
       },
       {
-        question: "Was, wenn die betroffene Person die Diagnose ablehnt?",
+        question:
+          "Was, wenn die betroffene Person die Diagnose nicht teilt oder unsicher ist?",
         answer:
-          "Diagnose-Ablehnung ist eine häufige Reaktion und kein Versagen — Stigma, Scham oder Misstrauen gegenüber Psychiatrie sind verständliche Gründe. Drängen, Beweisen oder die Diagnose in Konflikten als Argument einzusetzen verschärft die Lage meist. Was möglich ist: die Diagnose für sich selbst als Orientierung nutzen, Beratung der Fachstelle in Anspruch nehmen, geduldig bleiben, konkrete Verhaltensweisen statt das Label ansprechen. Bei akuter Gefahr ist die Diagnose-Frage ohnehin nachrangig — dann zählt die Soforthilfe.",
+          "Eine Diagnose kann hilfreich sein, muss sich für die betroffene Person aber nicht stimmig anfühlen. Es können fachliche Fragen, andere Erklärungen, frühere Erfahrungen im Versorgungssystem oder Sorge vor Stigmatisierung dahinterstehen. Drängen, Beweisen oder das Etikett im Konflikt einzusetzen hilft nicht. Fragen Sie, was unklar ist, sprechen Sie über konkrete Beobachtungen und respektieren Sie die Entscheidung der Person. Wenn sie das möchte, können das Behandlungsteam oder eine zweite fachliche Einschätzung offene Fragen klären. Eigene Angehörigenberatung ist auch ohne Diagnose möglich. Bei akuter Gefahr ist die Diagnose-Frage nachrangig — dann zählt die Soforthilfe.",
         links: [
           {
-            text: "Diagnostik-Seite — Diagnose-Ablehnung",
+            text: "Diagnostik-Seite — offene Fragen und Zweitmeinung",
             url: "/verstehen/diagnostik#ablehnung",
           },
           { text: "Soforthilfe", url: "/soforthilfe" },
@@ -120,7 +121,7 @@ const faqCategories: FAQCategory[] = [
         question:
           "Was bedeutet es, wenn mehrere Diagnosen gleichzeitig genannt werden?",
         answer:
-          "Bei Borderline tritt selten nur eine Diagnose auf. Häufig kommen Depression, Angststörungen, PTBS oder weitere Erkrankungen hinzu — Fachpersonen sprechen dann von Komorbidität oder Begleiterkrankungen. Das bedeutet nicht «doppelt schlimm», sondern beschreibt eine Kombination, die in der Behandlung mitberücksichtigt wird. Komorbide Erkrankungen werden meistens integriert mitbehandelt; bei akut bedrohlichen Phasen (z. B. schwere Depression, Substanzgebrauchskrise) wird das vorrangig stabilisiert.",
+          "Begleiterkrankungen wie Depression, Angststörungen oder PTBS kommen bei Borderline häufig vor, aber nicht bei allen Menschen. Fachpersonen sprechen dann von Komorbidität. Das bedeutet nicht «doppelt schlimm», sondern beschreibt eine Kombination, die in der Behandlung mitberücksichtigt wird. Welche Beschwerden gemeinsam oder nacheinander behandelt werden, wird individuell mit der betroffenen Person entschieden; akut bedrohliche Situationen brauchen zuerst Sicherheit und passende Hilfe.",
         links: [
           {
             text: "Begleiterkrankungen",
@@ -133,7 +134,7 @@ const faqCategories: FAQCategory[] = [
         question:
           "Mein Angehöriger hat zusätzlich zur Borderline auch eine Depression — was bedeutet das?",
         answer:
-          "Depression ist die häufigste Komorbidität bei Borderline. Borderline-typische Stimmungsschwankungen sind oft kürzer (Stunden bis Tage) und können schnell kippen, eine depressive Episode hält länger an (Wochen bis Monate). Die Differenzierung ist Aufgabe der behandelnden Fachperson — Sie als Angehörige müssen das nicht selbst leisten. Wichtig: Eine schwere depressive Episode erhöht das Suizidrisiko. Wenn Sie Anzeichen wie anhaltende Hoffnungslosigkeit oder konkrete Aussagen mit suizidalem Inhalt wahrnehmen, gehen Sie nicht davon aus, dass das «nur Borderline» ist. Nutzen Sie die Soforthilfe.",
+          "Depressive Beschwerden oder eine depressive Erkrankung können zusätzlich zu Borderline auftreten, aber nicht bei allen Menschen. Dauer oder Wechsel einer Stimmung reichen für Angehörige nicht aus, um die Ursache einzuordnen; das ist Aufgabe einer fachlichen Abklärung. Wichtig: Eine schwere depressive Episode kann das Suizidrisiko erhöhen. Wenn Sie anhaltende Hoffnungslosigkeit oder konkrete Aussagen mit suizidalem Inhalt wahrnehmen, nehmen Sie diese ernst und nutzen Sie die Soforthilfe — unabhängig von einer bestehenden Diagnose.",
         links: [
           {
             text: "Begleiterkrankungen — Depression",
@@ -150,28 +151,28 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Wie reagiere ich auf bedrohlich wirkende Aussagen?",
         answer:
-          "Suizidäusserungen immer ernst nehmen und professionelle Hilfe einschalten – sagen Sie klar: «Wenn du sagst, du willst dir etwas antun, hole ich Hilfe.» Bei anderen bedrohlich wirkenden Aussagen ruhig bleiben, nach der Bedeutung fragen und nicht aus Angst nachgeben. Von aussen lässt sich nicht sicher erkennen, ob Verzweiflung, Verlassensangst, Druck, bewusste Absicht oder mehrere Faktoren mitwirken. Entscheidend sind Sicherheit, beobachtbares Verhalten und Ihre Grenze, nicht eine vermutete Motivation.",
+          "Suizidäusserungen immer ernst nehmen und professionelle Hilfe einschalten – sagen Sie klar: «Wenn du sagst, du willst dir etwas antun, hole ich Hilfe.» Bei anderen bedrohlich wirkenden Aussagen bleiben Sie bei dem, was Sie tatsächlich wahrnehmen: Fragen Sie nach der Bedeutung, achten Sie auf konkrete Hinweise auf Gefahr und benennen Sie Ihre Grenze. Ein Motiv lässt sich von aussen nicht sicher ableiten. Bei Bedrohung oder Gewalt haben Abstand und Schutz Vorrang vor dem Gespräch.",
         links: [{ text: "Krisenszenarien-Anleitungen", url: "/soforthilfe" }],
       },
       {
         question: "Was sage ich, wenn mein Angehöriger mich beschuldigt?",
         answer:
-          "Vermeiden Sie Rechtfertigungen oder Gegenangriffe – das eskaliert die Situation. Nutzen Sie stattdessen Validierung: «Ich verstehe, dass du dich gerade verletzt fühlst» (validiert das Gefühl, nicht die Beschuldigung). Dann setzen Sie eine Grenze: «Ich möchte mit dir darüber sprechen, aber nicht, wenn du mich anschreist.» Wenn möglich, bieten Sie eine Pause an: «Lass uns in 20 Minuten weitersprechen, wenn wir beide ruhiger sind.» Wichtig: Sie müssen sich nicht für Dinge entschuldigen, die Sie nicht getan haben.",
+          "Rechtfertigungen oder Gegenangriffe können ein angespanntes Gespräch weiter verschärfen. Versuchen Sie zunächst zu klären, was die andere Person erlebt: «Ich höre, dass dich das verletzt hat.» Damit erkennen Sie ihr Erleben an, ohne einer Beschuldigung zuzustimmen. Wenn Sie angeschrien werden, können Sie eine Grenze benennen: «Ich möchte darüber sprechen, aber nicht, solange wir schreien.» Eine Pause kann helfen; Sie dürfen auch sagen, wenn Sie das Gespräch heute nicht fortsetzen. Sie müssen sich nicht für etwas entschuldigen, das Sie nicht getan haben.",
         links: [
           { text: "Gesprächshilfen kennenlernen", url: "/kommunizieren" },
           { text: "Gespräche üben →", url: "/uebungen" },
         ],
       },
       {
-        question: "Wie gehe ich mit dem Schwarz-Weiss-Denken um?",
+        question: "Was hilft bei stark wechselnden Bewertungen?",
         answer:
-          "Das «Splitting» (Idealisierung und Abwertung) ist ein häufiges Merkmal bei Borderline, aber nicht bei allen Betroffenen gleich ausgeprägt. In einem Moment sind Sie der beste Mensch der Welt, im nächsten der schlimmste. Wichtig: Nehmen Sie weder die Idealisierung noch die Abwertung persönlich. Beides kann Ausdruck von innerer Anspannung und Beziehungssorge sein. Bleiben Sie konsistent in Ihrem Verhalten, auch wenn die Bewertung schwankt. Sagen Sie zum Beispiel: «Ich bin derselbe Mensch wie gestern. Ich liebe dich, auch wenn du gerade wütend auf mich bist.» Mit der Zeit und Therapie lernen Betroffene, Grautöne zu sehen.",
+          "Unter hoher Anspannung kann es vorübergehend schwerer sein, widersprüchliche Gefühle und Eindrücke gleichzeitig wahrzunehmen. Das kann sich als stark wechselnde Bewertung einer Person oder Situation zeigen, tritt aber nicht bei allen Menschen mit Borderline auf und sagt nichts Sicheres über Absicht oder Charakter. Bleiben Sie bei Ihrer Wahrnehmung und fragen Sie nach: «Gestern haben wir uns nah gefühlt; gerade erlebe ich viel Distanz. Wie ist es für dich?» Sie dürfen zugleich Ihre eigene Sicht und Ihre Grenzen behalten.",
         links: [{ text: "Borderline verstehen", url: "/verstehen" }],
       },
       {
         question: "Soll ich lügen, um Konflikte zu vermeiden?",
         answer:
-          "Nein. Kurzfristig mag eine Lüge Frieden bringen, aber langfristig zerstört sie Vertrauen – und Vertrauen ist für Menschen mit Borderline ohnehin schwierig. Stattdessen: Seien Sie ehrlich, aber taktvoll. Nutzen Sie «Ich»-Aussagen statt Vorwürfe. Wenn die Wahrheit schmerzhaft ist, validieren Sie zuerst das Gefühl: «Ich weiss, das ist nicht das, was du hören wolltest, und ich verstehe, dass dich das verletzt.» Ehrlichkeit mit Mitgefühl ist der Mittelweg zwischen brutaler Offenheit und Vermeidung.",
+          "Ehrlichkeit und ein Recht auf Privatsphäre sind in jeder Beziehung wichtig. Frühere Verletzungen, aktuelle Unsicherheit oder Erfahrungen mit Stigmatisierung können Vertrauen erschweren; das ist individuell verschieden und nicht allein durch eine Diagnose erklärt. Sprechen Sie ehrlich und respektvoll, verwenden Sie «Ich»-Aussagen und teilen Sie nur, was Sie verantworten können. Wenn ein Gespräch belastet, können Sie das Erleben anerkennen, ohne etwas Unwahres zu sagen. Ehrlichkeit mit Mitgefühl liegt zwischen verletzender Offenheit und Vermeidung.",
         links: [{ text: "Kommunikation & Validierung", url: "/kommunizieren" }],
       },
     ],
@@ -188,13 +189,13 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Darf ich meinen Angehörigen verlassen?",
         answer:
-          "Ja. Eine Beziehung zu beenden kann eine legitime und verantwortbare Entscheidung sein – auch wenn Ihr Angehöriger psychisch krank ist. Wenn die Beziehung Ihre psychische oder körperliche Gesundheit ernsthaft belastet oder gefährdet, braucht dieser Umstand ein grosses Gewicht. Wichtig ist, eine Trennung nach Möglichkeit nicht mitten in einer akuten Krise impulsiv zu vollziehen, sondern vorbereitet, mit Blick auf Sicherheit und – wenn nötig – mit fachlicher Begleitung. Wenn Drohungen, Gewalt, Kinder oder Suizidankündigungen im Raum stehen, braucht es oft zuerst Schutzplanung und zusätzliche Beratung. Und: Sie können eine Grenze ziehen oder gehen und trotzdem Mitgefühl behalten.",
+          "Ja. Eine Krise verpflichtet Sie nicht, in einer Beziehung oder an einem Ort zu bleiben. Ihre Sicherheit und Selbstbestimmung haben Vorrang; Sie dürfen eine Beziehung beenden oder eine Situation verlassen, auch wenn die andere Person psychisch erkrankt oder akut belastet ist. Wenn es für Sie sicher und gewünscht ist, können Vorbereitung, Schutzplanung oder fachliche Beratung helfen. Bei Drohungen, Gewalt, betroffenen Kindern oder Suizidankündigungen holen Sie zusätzliche Hilfe, ohne die Verantwortung allein zu übernehmen. Sie können gehen und trotzdem Mitgefühl behalten.",
         links: [{ text: "Grenzen setzen", url: "/grenzen" }],
       },
       {
         question: "Wie schütze ich meine Kinder?",
         answer:
-          "Wichtig ist, alltägliche Belastung, wiederholte Eskalation, Kindeswohlgefährdung und akute Gefahr auseinanderzuhalten. Nicht jede überforderte Familie braucht sofort eine Meldung – aber Kinder brauchen Schutz vor Gewalt, massiver Alarmstimmung und unberechenbaren Krisen. Erklären Sie altersgerecht, dass starke Gefühle nicht die Schuld des Kindes sind, und schützen Sie Kinder aktiv vor Eskalationen.",
+          "Wichtig ist, alltägliche Belastung, wiederholte Eskalation, Kindeswohlgefährdung und akute Gefahr auseinanderzuhalten. Nicht jede überforderte Familie braucht sofort eine Meldung – aber Kinder brauchen Schutz vor Gewalt, massiver Alarmstimmung und Krisensituationen, die sie nicht einschätzen können. Erklären Sie altersgerecht, dass starke Gefühle nicht die Schuld des Kindes sind, und schützen Sie Kinder aktiv vor Eskalationen.",
         bullets: [
           "Im Alltag helfen Routinen, verlässliche Bezugspersonen, Schlaf, Schule, Freunde und eine einfache Sprache: «Bei uns ist es gerade schwer. Du hast daran keine Schuld.»",
           `Bei wiederholten Eskalationen holen Sie früh Beratung dazu, zum Beispiel den ${elternnotruf.label} (${elternnotruf.nummer}). Zusätzlich kann eine Elternberatung wie die Pro Juventute Elternberatung 24/7 helfen.`,
@@ -213,12 +214,12 @@ const faqCategories: FAQCategory[] = [
         ],
       },
       {
-        question: "Bin ich co-abhängig?",
+        question: "Woran merke ich, dass mein eigenes Leben zu kurz kommt?",
         answer:
-          "«Co-Abhängigkeit» meint, dass sich Ihr eigenes Leben immer stärker um den Zustand des anderen dreht: Sie entschuldigen destruktives Verhalten, geben Ihr soziales Leben auf oder fühlen sich für die Gefühle des anderen verantwortlich. Das spricht nicht gegen Ihren Charakter, sondern zeigt ein belastendes Beziehungsmuster. Beratung, eigene Therapie oder eine Angehörigengruppe können helfen, wieder klarer zu werden.",
+          "«Co-Abhängigkeit» ist keine klar abgegrenzte klinische Diagnose und kann Angehörige vorschnell etikettieren. Hilfreicher sind konkrete Fragen: Vernachlässigen Sie Schlaf, Gesundheit, Freundschaften oder Arbeit? Fühlen Sie sich für Gefühle und Entscheidungen der anderen Person verantwortlich? Übernehmen Sie mehr, als Sie wollen oder tragen können? Solche Reaktionen können unter anhaltender Belastung entstehen und sind kein persönliches Versagen. Beratung, eigene Therapie oder eine Angehörigengruppe können helfen, Bedürfnisse, Verantwortung und Grenzen neu zu sortieren.",
         links: [
           { text: "Selbstfürsorge", url: "/selbstfuersorge" },
-          { text: "Glossar: Co-Abhängigkeit", url: "/glossar" },
+          { text: "Glossar: Co-Abhängigkeit einordnen", url: "/glossar" },
         ],
       },
     ],
@@ -227,9 +228,9 @@ const faqCategories: FAQCategory[] = [
     title: "Therapie & Behandlung",
     questions: [
       {
-        question: "Mein Angehöriger will keine Therapie – was tun?",
+        question: "Was, wenn die nahestehende Person keine Therapie möchte?",
         answer:
-          "Sie können niemanden zur Therapie zwingen (ausser bei akuter Gefährdung). Was Sie tun können: Informieren Sie sich selbst über Borderline und ändern Sie Ihr eigenes Verhalten – das kann indirekt helfen. Sprechen Sie Therapie als Möglichkeit an, ohne zu drängen. Nutzen Sie «Ich»-Aussagen: «Ich mache mir Sorgen und wünsche mir, dass du Unterstützung bekommst.» Setzen Sie Grenzen für inakzeptables Verhalten – manchmal motiviert das zur Veränderung. Und: Holen Sie sich selbst Unterstützung, unabhängig davon, ob Ihr Angehöriger Therapie macht.",
+          "Ob jemand eine Therapie beginnt, entscheidet die betroffene Person. Sprechen Sie Unterstützung als Möglichkeit an, ohne zu drängen: «Ich mache mir Sorgen. Möchtest du gemeinsam nach Angeboten schauen?» Fragen Sie, was gegen eine Behandlung spricht und welche Form von Hilfe vorstellbar wäre. Eigene Grenzen dienen Ihrem Schutz und Ihren Bedürfnissen, nicht als Druckmittel für eine Behandlung. Holen Sie sich selbst Unterstützung, unabhängig davon, wie die andere Person entscheidet. Bei akuter Gefährdung gelten die beschriebenen Notfallwege; eine notwendige Intervention beurteilen die zuständigen Fachpersonen.",
         links: [
           {
             text: "Therapieangebote Zürich",
@@ -254,21 +255,27 @@ const faqCategories: FAQCategory[] = [
             text: "Begleiterkrankungen",
             url: "/verstehen/begleiterkrankungen",
           },
-          { text: "Therapie begleiten", url: "/unterstuetzen/therapie" },
+          {
+            text: "Therapie und Angehörigenrolle",
+            url: "/unterstuetzen/therapie",
+          },
         ],
       },
       {
         question: "Soll ich an der Therapie teilnehmen?",
         answer:
-          "Wenn Sie eingeladen werden: Ja, das kann sehr hilfreich sein. Angehörigensitzungen oder Familiengespräche können Verständnis, Zusammenarbeit und Alltagstransfer verbessern. Sie lernen, wie Sie unterstützen können, ohne zu schaden, und der Therapeut kann Kommunikationsmuster beobachten. Wichtig: Gehen Sie nicht hin, um sich zu beschweren oder Recht zu bekommen. Ziel ist gemeinsames Lernen. Wenn Sie nicht eingeladen werden: Respektieren Sie das. Ihr Angehöriger braucht einen geschützten Raum. Sie können trotzdem eigene Beratung suchen.",
+          "Wenn die betroffene Person und die behandelnde Fachperson Sie einladen und alle Beteiligten zustimmen, können Angehörigensitzungen oder Familiengespräche Verständnis und Zusammenarbeit fördern. Klären Sie vorab Ziel, Rolle und Vertraulichkeit. Bringen Sie Ihre eigene Perspektive ein und hören Sie auch die anderen Sichtweisen an; es geht nicht darum, Schuld oder Recht zu verteilen. Wenn Sie nicht eingeladen werden, respektieren Sie die Entscheidung und den geschützten Therapieraum. Eigene Angehörigenberatung bleibt unabhängig davon möglich.",
         links: [
-          { text: "Therapie unterstützen", url: "/unterstuetzen/therapie" },
+          {
+            text: "Therapie und Angehörigenrolle",
+            url: "/unterstuetzen/therapie",
+          },
         ],
       },
       {
         question: "Wie lange dauert die Behandlung?",
         answer:
-          "Borderline-Behandlung ist häufig längerfristig angelegt. Je nach Belastung, Komorbidität, Setting und Krisenverlauf können Monate bis mehrere Jahre relevant sein. Stationäre Aufenthalte (z.B. DBT-Station) dauern oft einige Wochen und sind eher ein Baustein als «die ganze Lösung». Fortschritte sind nicht linear – Rückschläge sind normal und kein Zeichen von Versagen.",
+          "Borderline-Behandlung ist häufig längerfristig angelegt. Je nach Belastung, Komorbidität, Setting und Krisenverlauf können Monate bis mehrere Jahre relevant sein. Stationäre Aufenthalte (z.B. DBT-Station) dauern oft einige Wochen und sind eher ein Baustein als «die ganze Lösung». Verläufe unterscheiden sich; schwierigere Phasen können auftreten und sind kein Zeichen von Versagen.",
         links: [{ text: "Genesung & Prognose", url: "/genesung" }],
       },
     ],
@@ -279,13 +286,13 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Wie erkläre ich die Situation Freunden/Familie?",
         answer:
-          "Sie müssen nicht alles erklären. Sagen Sie so viel, wie Sie möchten: «Eine mir nahestehende Person hat eine psychische Erkrankung, die starke Stimmungsschwankungen auslösen kann. Wir arbeiten daran.» Sie können auch Grenzen setzen: «Ich möchte nicht ins Detail gehen, aber ich schätze eure Unterstützung.» Wählen Sie sorgfältig aus, wem Sie was erzählen – nicht jeder muss alles wissen. Und: Bitten Sie um konkrete Hilfe statt allgemeinem Mitleid («Könntest du nächste Woche auf die Kinder aufpassen?»).",
+          "Sie müssen nicht alles erklären und sollten die Privatsphäre der betroffenen Person mitbedenken. Sagen Sie nur so viel, wie für Ihre eigene Unterstützung nötig ist: «Eine mir nahestehende Person erlebt gerade psychische Belastungen. Ich möchte ihre Privatsphäre wahren, brauche aber selbst etwas Unterstützung.» Sie können Grenzen setzen: «Ich möchte nicht ins Detail gehen.» Wählen Sie sorgfältig aus, wem Sie was erzählen, und bitten Sie um konkrete Hilfe, zum Beispiel: «Könntest du nächste Woche auf die Kinder aufpassen?»",
       },
       {
         question:
           "Was, wenn Deutsch nicht die Hauptsprache ist oder psychische Erkrankung in unserer Familie tabuisiert ist?",
         answer:
-          "Das ist häufiger, als viele denken. Hilfe kann auch dann sinnvoll sein, wenn das Wort «Borderline» in der Familie noch gar nicht fällt. Oft ist es leichter, zuerst über das Beobachtbare zu sprechen: Schlaf, Alarmzustand, Rückzug, Wutausbrüche, Selbstverletzung, Angst, Schule, Arbeit oder Sicherheit.",
+          "Das ist häufiger, als viele denken. Hilfe kann auch dann sinnvoll sein, wenn das Wort «Borderline» in der Familie noch gar nicht fällt. Oft ist es leichter, zuerst über das Beobachtbare zu sprechen: Schlaf, starke Anspannung, Rückzug, laut geführte Konflikte, Selbstverletzung, Angst, Schule, Arbeit oder Sicherheit.",
         bullets: [
           "Verwenden Sie kurze, konkrete Sätze statt Fachsprache. Nicht jede Familie muss zuerst die Diagnose akzeptieren, bevor Unterstützung beginnen darf.",
           "Fragen Sie in Praxis, Klinik oder Beratungsstelle ausdrücklich nach professioneller Dolmetschung, wenn Deutsch nicht für alle sicher genug ist. Gerade bei Diagnose-, Krisen- oder Gewaltgesprächen sollten Kinder diese Rolle nicht übernehmen müssen.",
@@ -293,20 +300,23 @@ const faqCategories: FAQCategory[] = [
           "Bei akuter Gefahr gilt trotzdem: Sicherheit geht vor. Dann lieber früh Hilfe holen, auch wenn noch nicht alle Begriffe, Hintergründe oder Familienkonflikte geklärt sind.",
         ],
         links: [
-          { text: "Therapie begleiten", url: "/unterstuetzen/therapie" },
+          {
+            text: "Therapie und Angehörigenrolle",
+            url: "/unterstuetzen/therapie",
+          },
           { text: "Soforthilfe", url: "/soforthilfe" },
         ],
       },
       {
         question: "Wie gehe ich mit Eifersucht und Kontrolle um?",
         answer:
-          "Eifersucht bei Borderline wurzelt aus Angehörigensicht häufig in Verlassensangst, nicht nur in Misstrauen. Verstehen Sie das, ohne es zu akzeptieren. Setzen Sie klare Grenzen: «Ich werde mein Handy nicht zeigen. Ich habe nichts zu verbergen, aber ich brauche Privatsphäre.» Geben Sie nicht nach, um Ruhe zu haben – das verstärkt das Muster. Gleichzeitig: Seien Sie transparent, wo es Ihnen möglich ist, ohne sich zu verbiegen. Ermutigen Sie Ihren Angehörigen, die Eifersucht in der Therapie zu bearbeiten.",
+          "Eifersucht und kontrollierendes Verhalten können viele Ursachen haben; aus einer Borderline-Diagnose lässt sich das Motiv nicht ableiten. Unterscheiden Sie zwischen einem nachvollziehbaren Gefühl und einem Verhalten, das Ihre Privatsphäre oder Sicherheit verletzt. Sie können Unsicherheit anerkennen und zugleich eine Grenze benennen: «Ich sehe, dass dich das verunsichert. Mein Handy bleibt privat.» Die Grenze schützt Ihre Privatsphäre; sie soll die andere Person weder bestrafen noch zu einer Veränderung zwingen. Wenn die betroffene Person das möchte, kann sie solche Situationen in einer Therapie oder einem gemeinsamen Beratungsgespräch bearbeiten.",
         links: [{ text: "Grenzen setzen", url: "/grenzen" }],
       },
       {
-        question: "Kann ich noch ein normales Leben führen?",
+        question: "Wie kann ich mein eigenes Leben behalten?",
         answer:
-          "Ja, ein eigenes Leben ist weiterhin möglich, aber oft nicht ohne bewusste Gegenbewegung zur Belastung. Eigene Freundschaften, Interessen und Erholungszeiten sind kein Verrat, sondern wichtig für Ihre Stabilität. Gleichzeitig ist es realistisch, dass Ihr Alltag zeitweise stärker von Unsicherheit geprägt ist als der anderer Menschen. Ziel ist deshalb nicht ein «perfekt normales» Leben, sondern ein tragfähiger Alltag, in dem Beziehung, Selbstschutz und eigene Lebensbereiche nebeneinander Platz haben.",
+          "Eigene Freundschaften, Interessen und Erholungszeiten sind kein Verrat, sondern gehören zu Ihrem Leben. Unter hoher Belastung braucht es manchmal bewusste Entscheidungen, damit diese Bereiche nicht vollständig verschwinden. Ein tragfähiger Alltag darf Beziehung, Selbstschutz, Freude und eigene Ziele nebeneinander enthalten. Beratung oder Austausch mit anderen Angehörigen kann helfen, dafür wieder Raum zu schaffen.",
         links: [
           { text: "Selbstfürsorge-Strategien", url: "/selbstfuersorge" },
           { text: "Beratung & Netzwerke", url: "/beratung" },
@@ -315,7 +325,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Wann wird es besser?",
         answer:
-          "Das ist für viele Angehörige die schwierigste Frage. Die ehrliche Antwort lautet: Der Verlauf bleibt begrenzt vorhersehbar. Manche Betroffene zeigen nach Monaten deutliche Fortschritte, bei anderen dauert es deutlich länger – und nicht alle Verläufe sind gleich. Was Sie beeinflussen können, sind Ihr eigenes Verhalten, Ihre Grenzen und Ihre Selbstfürsorge. Was Sie nicht steuern können, ist der Zeitpunkt oder das Tempo der Veränderung Ihres Angehörigen. Hilfreich ist meist, auf Entwicklungen über längere Zeit zu achten statt auf einzelne Tage oder Krisen.",
+          "Das ist für viele Angehörige eine schwierige Frage. Der Verlauf bleibt begrenzt vorhersehbar: Manche Menschen erleben nach Monaten deutliche Fortschritte, bei anderen dauert es länger, und Genesung kann unterschiedlich aussehen. Sie sind nicht für Zeitpunkt, Tempo oder Erfolg der Genesung verantwortlich. Entscheiden können Sie über Ihre eigenen Reaktionen, Grenzen und Unterstützung. Hilfreich ist meist, Entwicklungen über längere Zeit zu betrachten statt einzelne Tage oder Krisen.",
         links: [{ text: "Genesung & Prognose", url: "/genesung" }],
       },
     ],

@@ -1,5 +1,6 @@
 import { chromium } from "playwright";
 import sharp from "sharp";
+import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -9,15 +10,15 @@ const sourcePath = path.join(
   repoRoot,
   "qa/handout-render-sources/notfallplan-krise-v04.html"
 );
-const pdfPath = path.join(repoRoot, "client/public/notfallplan-krise-v04.pdf");
-const pngPath = path.join(
+const outputDir = path.join(
   repoRoot,
-  "client/public/notfallplan-krise-v04-preview.png"
+  "qa/withheld-handouts/notfallplan-krise-v04-draft"
 );
-const webpPath = path.join(
-  repoRoot,
-  "client/public/notfallplan-krise-v04-preview.webp"
-);
+const pdfPath = path.join(outputDir, "notfallplan-krise-v04.pdf");
+const pngPath = path.join(outputDir, "notfallplan-krise-v04-preview.png");
+const webpPath = path.join(outputDir, "notfallplan-krise-v04-preview.webp");
+
+await fs.mkdir(outputDir, { recursive: true });
 
 const browser = await chromium.launch();
 try {

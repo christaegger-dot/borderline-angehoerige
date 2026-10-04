@@ -71,18 +71,19 @@ const ablaufSchritte = [
   },
 ] as const;
 
-const ablehnungWasNicht = [
+const unterschiedlicheEinordnungWasNicht = [
   "drängen oder mit der Diagnose argumentieren",
   "in Konflikten die Diagnose als Etikett einsetzen",
-  "die Person zu beweisen versuchen, dass sie «Borderline hat»",
+  "der Person beweisen wollen, dass sie «Borderline hat»",
+  "beobachtbares Verhalten ausschliesslich mit der Diagnose erklären",
   "eigene Sicherheit oder Geduld auf später verschieben",
 ] as const;
 
-const ablehnungWasMoeglich = [
-  "die Diagnose als persönliche Orientierungshilfe nutzen, ohne sie der Person aufzuzwingen",
+const unterschiedlicheEinordnungWasMoeglich = [
+  "fragen, was unklar ist oder sich für die Person nicht stimmig anfühlt",
+  "konkrete Erfahrungen und beobachtbares Verhalten ansprechen statt ein Etikett",
+  "offene Fragen mit der behandelnden Fachperson klären oder eine zweite fachliche Einschätzung einholen — sofern die Person das möchte",
   "Beratung der Fachstelle Angehörigenarbeit in Anspruch nehmen — auch ohne Diagnose-Stellung",
-  "geduldig bleiben; Akzeptanz braucht oft Zeit",
-  "konkrete Verhaltensweisen ansprechen statt das Label",
 ] as const;
 
 const vermutungSchritte = [
@@ -92,11 +93,11 @@ const vermutungSchritte = [
   },
   {
     title: "Fachstelle Angehörigenarbeit kontaktieren",
-    desc: "Beratung für Angehörige läuft unabhängig davon, ob die erkrankte Person schon in Behandlung ist — eine Diagnose-Vermutung reicht aus, um Unterstützung zu bekommen.",
+    desc: "Beratung für Angehörige ist auch möglich, wenn keine Diagnose vorliegt oder die betroffene Person nicht in Behandlung ist.",
   },
   {
     title: "Spezialisierte Anlaufstelle anfragen",
-    desc: "Bei klarem Verdacht kann eine direkte Anfrage bei einer der Anbieter-Stellen (siehe unten) sinnvoll sein.",
+    desc: "Wenn die betroffene Person eine fachliche Abklärung wünscht, kann eine direkte Anfrage bei einer der unten genannten Stellen sinnvoll sein.",
   },
 ] as const;
 
@@ -170,8 +171,9 @@ export default function Diagnostik() {
               Diese Seite gliedert den Diagnostik-Prozess für Angehörige: wer
               befugt ist, eine Borderline-Persönlichkeitsstörung zu
               diagnostizieren, wie eine Abklärung typischerweise abläuft, was
-              die Diagnose für Sie verändert — und was zu tun ist, wenn die
-              Person sie ablehnt oder noch keine gestellt wurde.
+              die Diagnose für Sie verändert — und welche Möglichkeiten es gibt,
+              wenn die Einordnung nicht geteilt wird, Fragen offenbleiben oder
+              noch keine Diagnose gestellt wurde.
             </p>
             <p>
               Sie können auch direkt zu{" "}
@@ -446,26 +448,29 @@ export default function Diagnostik() {
           </EditorialProse>
         </ContentSection>
 
-        {/* ── 5: Diagnose-Ablehnung ── */}
+        {/* ── 5: Unterschiedliche Einordnung ── */}
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Was, wenn die erkrankte Person die Diagnose ablehnt?"
+          title="Was, wenn die Diagnose nicht geteilt wird oder Fragen offenbleiben?"
           id="ablehnung"
         >
           <EditorialProse>
             <p>
-              Wenn die erkrankte Person die Diagnose ablehnt, ist das eine
-              häufige Reaktion und kein Versagen. Mögliche Gründe sind Stigma,
-              Scham, Angst vor Etikettierung oder Misstrauen gegenüber
-              Psychiatrie.
+              Eine Diagnose kann hilfreich sein, muss sich für die betroffene
+              Person aber nicht stimmig anfühlen. Zweifel können viele Gründe
+              haben: offene diagnostische Fragen, andere Erklärungen, belastende
+              Erfahrungen im Versorgungssystem, Stigma oder Sorge vor
+              Etikettierung. Auch eine fachlich gestellte Diagnose darf
+              hinterfragt werden; eine zweite fachliche Einschätzung ist
+              legitim.
             </p>
           </EditorialProse>
           <div className="mt-6 grid gap-8 sm:grid-cols-2">
             <div>
               <h3 style={h4Style}>Was nicht hilft</h3>
               <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
-                {ablehnungWasNicht.map(item => (
+                {unterschiedlicheEinordnungWasNicht.map(item => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -473,7 +478,7 @@ export default function Diagnostik() {
             <div>
               <h3 style={h4Style}>Was möglich ist</h3>
               <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
-                {ablehnungWasMoeglich.map(item => (
+                {unterschiedlicheEinordnungWasMoeglich.map(item => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -534,17 +539,19 @@ export default function Diagnostik() {
           </EditorialProse>
         </ContentSection>
 
-        {/* ── 7: Vermutung ohne Diagnose ── */}
+        {/* ── 7: Orientierung ohne Diagnose ── */}
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Was, wenn die Diagnose noch nicht gestellt ist, aber wir vermuten es?"
+          title="Was, wenn noch keine Diagnose gestellt ist?"
           id="vermutung"
         >
           <EditorialProse>
             <p>
-              Eine Vermutung ist ein berechtigter Ausgangspunkt, aber kein
-              Diagnose-Werkzeug. Der{" "}
+              Wenn Sie Verhaltensweisen oder Erfahrungen aus den Beschreibungen
+              auf dieser Website wiedererkennen, kann das ein Anlass sein,
+              Beobachtungen zu benennen und Beratung zu suchen. Es erlaubt aber
+              keine Diagnose der anderen Person. Der{" "}
               <Link href="/selbsttest" className="editorial-link">
                 Passende Inhalte finden
               </Link>{" "}
@@ -801,17 +808,17 @@ export default function Diagnostik() {
               href: "/verstehen",
               title: "Borderline verstehen",
               description:
-                "Was Borderline ist, typische Muster und was Angehörige oft erleben — als Hintergrund zur Diagnose.",
+                "Was die Diagnose beschreiben kann und was Angehörige erleben können — als Hintergrund zur Einordnung.",
             },
             {
               href: "/genesung",
               title: "Genesung",
               description:
-                "Was Diagnose und Behandlung über Zeit bewirken können — Recovery, Rückschritte, realistische Hoffnung.",
+                "Was Behandlung und Lebensumstände über Zeit ermöglichen können — Recovery, schwierigere Phasen und realistische Hoffnung.",
             },
             {
               href: "/unterstuetzen/therapie",
-              title: "Therapie begleiten",
+              title: "Therapie und Angehörigenrolle",
               description:
                 "Was nach der Diagnose kommt — Therapieformen, Behandlungssystem, Rolle der Angehörigen.",
             },

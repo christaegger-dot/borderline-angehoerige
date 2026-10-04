@@ -52,19 +52,19 @@ const depressionsZeichen = [
 const andereKomorbiditaeten = [
   {
     title: "Angststörungen",
-    desc: "Häufig parallel zur Borderline-Diagnose, oft nicht als eigenständig erkannt, weil sie im Borderline-Bild «mitschwingen». Eine eigenständige Behandlung kann trotzdem sinnvoll sein.",
+    desc: "Angststörungen können zusätzlich zu einer Borderline-Diagnose bestehen. Ob Beschwerden Teil eines Gesamtbilds oder eigenständig zu behandeln sind, beurteilen Fachpersonen individuell.",
   },
   {
     title: "Posttraumatische Belastungsstörung (PTBS)",
-    desc: "Häufig im Hintergrund von Borderline-Symptomatik, besonders bei Patient:innen mit traumatischer Vorgeschichte. PTBS wird im Diagnostik-Prozess als Differenzialdiagnose geprüft (siehe Diagnostik) und kann gleichzeitig als Begleiterkrankung bestehen. Beides ist möglich und schliesst sich nicht aus. In der Therapie meist eigenes Vorgehen, oft mit trauma-fokussierten Verfahren nach Stabilisierung.",
+    desc: "PTBS kann gleichzeitig bestehen oder bei der fachlichen Differenzialdiagnostik geprüft werden. Die Diagnose und eine mögliche traumafokussierte Behandlung werden individuell mit Fachpersonen geplant.",
   },
   {
     title: "Essstörungen",
-    desc: "Häufig parallel, besonders bei jüngeren Frauen. Anorexie, Bulimie und Binge-Eating-Störungen treten in unterschiedlichen Kombinationen auf. Bei körperlicher Gefährdung wird die Essstörung in der Behandlung oft vorrangig stabilisiert.",
+    desc: "Essstörungen können bei Menschen verschiedener Geschlechter und Altersgruppen gleichzeitig bestehen. Bei körperlicher Gefährdung braucht es rasch eine fachliche und medizinische Einschätzung.",
   },
   {
     title: "Substanzgebrauchsstörungen",
-    desc: "Oft als Selbstregulation eingesetzt — Alkohol, Cannabis oder andere Mittel zur Dämpfung von Anspannung, Dissoziation oder Schmerz. In der Therapie eigenes Thema; bei akuter Suchterkrankung oft Stabilisierung vor Beginn der Borderline-Therapie nötig.",
+    desc: "Manche Menschen berichten von problematischem Alkohol-, Cannabis- oder anderem Substanzgebrauch. Gründe und Funktionen unterscheiden sich und lassen sich nicht aus einer Diagnose ableiten. Eine fachliche Abklärung kann passende Behandlungsschritte klären.",
   },
 ] as const;
 
@@ -111,10 +111,10 @@ export default function Begleiterkrankungen() {
             Wenn mehrere Erkrankungen ineinandergreifen
           </DisplayHeading>
           <Lede className="mt-6">
-            Borderline tritt selten allein auf. Besonders häufig kommt
-            Depression dazu, oft auch Angststörungen, PTBS, Essstörungen oder
-            Substanzgebrauch. Was das für Angehörige bedeutet — und was es nicht
-            bedeutet.
+            Bei vielen Menschen mit Borderline bestehen zusätzlich Depression,
+            Angststörungen, PTBS, Essstörungen oder problematischer
+            Substanzgebrauch. Was das für Angehörige bedeuten kann — und was
+            sich nur fachlich beurteilen lässt.
           </Lede>
           <p
             className="mt-4"
@@ -135,10 +135,11 @@ export default function Begleiterkrankungen() {
         >
           <EditorialProse>
             <p>
-              Diese Seite ordnet, warum bei Borderline so häufig weitere
-              Diagnosen dazukommen, was die wichtigste — Depression — für den
-              Alltag und die Behandlung bedeutet, und wie Sie als Angehörige
-              damit umgehen können, ohne in eine Diagnostiker-Rolle zu kippen.
+              Diese Seite ordnet ein, welche Begleiterkrankungen in Studien bei
+              vielen, aber nicht allen Menschen mit Borderline beschrieben
+              werden, was eine zusätzliche Depression für Alltag und Behandlung
+              bedeuten kann und wie Angehörige unterstützen können, ohne
+              Diagnosen selbst zuzuordnen.
             </p>
             <p>
               Sie können auch direkt zu{" "}
@@ -189,9 +190,9 @@ export default function Begleiterkrankungen() {
             <p>
               <strong>Komorbidität</strong>, der medizinische Begriff für
               Begleiterkrankungen, bedeutet, dass eine Person gleichzeitig oder
-              im Verlauf an mehreren Erkrankungen leidet. Bei Borderline ist das
-              die Regel, nicht die Ausnahme — die meisten Patient:innen haben im
-              Lebenszeitverlauf mindestens eine weitere psychische Diagnose.
+              im Verlauf an mehreren Erkrankungen leidet. Bei Menschen mit
+              Borderline kommen weitere psychische Diagnosen häufig vor. Wie sie
+              zusammenhängen, ist individuell verschieden.
             </p>
             <p>Besonders häufig kommen folgende Erkrankungen dazu:</p>
             <ul className="ml-6 list-disc space-y-1">
@@ -210,38 +211,34 @@ export default function Begleiterkrankungen() {
             </p>
           </EditorialProse>
           <EditorialFigure
-            caption="Borderline im Zentrum, häufige Begleiterkrankungen als Satelliten – gruppiert nach klinischen Familien, Kreisgrösse nach Häufigkeit."
+            caption="Schematische Übersicht möglicher Begleiterkrankungen: sechs gleich grosse, unverbundene Einträge ohne diagnostische Rangfolge. Die Darstellung sagt nichts über eine einzelne Person aus."
             textVersion={
               <>
                 <p>
-                  Borderline tritt selten allein auf. Häufige
-                  Begleiterkrankungen, gruppiert nach klinischen Familien:
+                  In Studien hatten viele, aber nicht alle Menschen mit
+                  Borderline weitere psychische Diagnosen. Mögliche
+                  Begleiterkrankungen sind:
                 </p>
                 <ul className="mt-2 list-disc space-y-1 pl-5">
-                  <li>
-                    <strong>Affektiv:</strong> Depression (die häufigste
-                    Begleiterkrankung).
-                  </li>
-                  <li>
-                    <strong>Angst &amp; Trauma:</strong> Angststörungen,
-                    PTBS/Trauma.
-                  </li>
-                  <li>
-                    <strong>Impuls &amp; Verhalten:</strong> Substanzgebrauch,
-                    Essstörungen, ADHS.
-                  </li>
+                  <li>Depression</li>
+                  <li>Angststörungen</li>
+                  <li>Posttraumatische Belastungsstörung (PTBS)</li>
+                  <li>Substanzgebrauchsstörung</li>
+                  <li>Essstörungen</li>
+                  <li>ADHS</li>
                 </ul>
                 <p className="mt-2">
-                  Die Kreisgrösse zeigt, wie häufig eine Begleiterkrankung ist –
-                  gemessen als Einzeldiagnose.
+                  Die Einträge sind schematisch, gleich gross und ohne
+                  Verbindungen dargestellt. Sie zeigen weder Ursache noch eine
+                  individuelle Wahrscheinlichkeit oder Rangfolge.
                 </p>
                 <p className="mt-2">
                   Für Angehörige: Mehrere Diagnosen heissen mehr Komplexität –
-                  nicht mehr Schuld. Die Behandlung beginnt oft beim
-                  Dringlichsten – das ist kein Widerspruch. Sie müssen nicht
-                  sortieren, was was ist. Kommt eine Depression dazu, braucht es
-                  oft mehr fachliche Aufmerksamkeit, auch für die Sicherheit;
-                  eine abgestimmte Behandlung entlastet auch Sie.
+                  nicht mehr Schuld. Welche Unterstützung passt, wird
+                  individuell fachlich geklärt. Sie müssen nicht sortieren, was
+                  was ist. Bei deutlicher Verschlechterung, Hoffnungslosigkeit
+                  oder Sorge um die Sicherheit braucht es eine professionelle
+                  Einschätzung – unabhängig von der diagnostischen Zuordnung.
                 </p>
               </>
             }
@@ -267,15 +264,15 @@ export default function Begleiterkrankungen() {
             </p>
             <p>
               <strong>
-                Eine Differenzierung zwischen Borderline-typischen
-                Stimmungsschwankungen und einer eigenständigen depressiven
-                Episode ist Aufgabe der behandelnden Fachperson — Sie als
-                Angehörige müssen das nicht selbst leisten.
+                Eine Differenzierung zwischen kurzfristigen Stimmungswechseln
+                und einer eigenständigen depressiven Episode ist Aufgabe der
+                behandelnden Fachperson — Sie als Angehörige müssen das nicht
+                selbst leisten.
               </strong>{" "}
-              Zur Orientierung: Borderline-typische Schwankungen sind oft kürzer
-              (Stunden bis Tage und können schnell kippen), eine depressive
-              Episode hält in der Regel länger an (Wochen oder Monate). Beides
-              kann sich überlagern.
+              Dauer, Auslöser und Auswirkungen sind hilfreiche Beobachtungen,
+              reichen aber nicht für eine Diagnose. Beschwerden können sich
+              überlagern und brauchen eine fachliche Beurteilung des
+              Gesamtbilds.
             </p>
             <p>
               Mögliche Hinweise auf eine depressive Phase im Borderline-Kontext:
@@ -329,11 +326,11 @@ export default function Begleiterkrankungen() {
           <EditorialProse>
             <p>
               Eine schwere depressive Episode zusätzlich zur Borderline-
-              Erkrankung erhöht das Suizidrisiko. Wenn Sie Anzeichen wie
-              anhaltende Hoffnungslosigkeit, sozialen Rückzug über Wochen,
-              Aussagen mit suizidalem Inhalt oder Hinweise auf konkrete Pläne
-              wahrnehmen, gehen Sie nicht davon aus, dass das «nur Borderline»
-              ist.
+              Erkrankung kann das Suizidrisiko erhöhen. Suizidale Aussagen oder
+              Hinweise auf konkrete Pläne brauchen unabhängig von ihrer
+              diagnostischen Zuordnung eine professionelle Einschätzung. Nehmen
+              Sie auch anhaltende Hoffnungslosigkeit oder deutliche
+              Veränderungen ernst.
             </p>
             <p>
               Bei akuter Gefahr oder Hinweisen auf konkrete suizidale Absicht:
@@ -383,10 +380,10 @@ export default function Begleiterkrankungen() {
         >
           <EditorialProse>
             <p>
-              Sie müssen nicht zwischen «Borderline-Stimmung» und «depressiver
-              Episode» selbst unterscheiden. Diese Differenzierung ist klinische
-              Aufgabe. Was Sie tun können, ist die Sorge ernst zu nehmen und
-              nicht zu verharmlosen.
+              Sie müssen kurzfristige Stimmungswechsel und eine depressive
+              Episode nicht selbst unterscheiden. Diese Differenzierung ist
+              klinische Aufgabe. Was Sie tun können, ist beobachtbare
+              Veränderungen zu benennen und Ihre Sorge nicht zu verharmlosen.
             </p>
             <p>
               Wenn der Rückzug länger dauert, mehr Symptome dazukommen oder
@@ -395,8 +392,9 @@ export default function Begleiterkrankungen() {
             <ul className="ml-6 list-disc space-y-1">
               <li>Sorge ruhig ansprechen, ohne zu drängen oder zu drohen.</li>
               <li>
-                Behandelnde Fachpersonen informieren, falls Ihre Angehörige
-                bereits in Behandlung ist.
+                Wenn möglich und gewünscht, gemeinsam eine fachliche
+                Einschätzung anregen. Bei Fragen zu Schweigepflicht oder eigener
+                Entlastung können Sie sich unabhängig beraten lassen.
               </li>
               <li>
                 Bei Hinweisen auf Suizidalität → siehe{" "}
@@ -413,10 +411,11 @@ export default function Begleiterkrankungen() {
               nicht durch Ihr Verhalten verursachen oder verhindern.
             </p>
             <p>
-              Die Erschöpfung der Angehörigen ist in depressiven Phasen oft
-              besonders gross, weil das Beziehungsgeschehen stiller, schwerer,
-              hoffnungsloser wird. Das ist real und kein Zeichen von Schwäche —
-              siehe Sektion{" "}
+              Manche Angehörige erleben depressive Phasen als besonders
+              belastend, etwa wenn Rückzug, weniger Kontakt oder
+              Hoffnungslosigkeit hinzukommen. Andere erleben die Situation
+              anders. Eigene Erschöpfung ist kein Zeichen von Schwäche — siehe
+              Sektion{" "}
               <a
                 href="#auch-bei-ihnen"
                 className="editorial-link"

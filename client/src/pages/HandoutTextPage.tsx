@@ -111,8 +111,8 @@ export default function HandoutTextPage({
     handout?.previewImageUrl ?? handoutMeta.previewImageUrl;
   const pdfSourceUrl = handout?.pdfSourceUrl ?? handoutMeta.pdfSourceUrl;
 
-  const openHref = getHandoutOpenHref(pdfSourceUrl) ?? pdfSourceUrl;
-  const downloadHref = getHandoutDownloadHref(pdfSourceUrl) ?? pdfSourceUrl;
+  const openHref = getHandoutOpenHref(pdfSourceUrl);
+  const downloadHref = getHandoutDownloadHref(pdfSourceUrl);
   const textVersionPreferred = prefersHandoutTextVersion(pdfSourceUrl);
   const visualPublished = isHandoutVisualPublished(handoutMeta.id);
   const hasSemanticVisualization = hasHandoutVisualization(handoutMeta.id);
@@ -191,7 +191,7 @@ export default function HandoutTextPage({
               23.09.2026. Die erneute fachliche Prüfung ist ausstehend.
             </p>
           )}
-          {visualPublished ? (
+          {visualPublished && openHref && downloadHref ? (
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
                 asChild

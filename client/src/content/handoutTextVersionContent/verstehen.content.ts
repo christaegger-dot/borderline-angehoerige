@@ -5,28 +5,28 @@ export const handoutTextVersions = [
   createHandoutTextVersion("leuchtturm", {
     kicker: "Textversion",
     summary:
-      "Sie können die Krise nicht steuern, aber Sie können als Angehörige oder Angehöriger Orientierung geben: ruhig, klar und verlässlich.",
+      "Der Leuchtturm steht hier für Ihre eigene Orientierung: Was ist Ihnen wichtig, was können Sie übernehmen, wo liegt Ihre Grenze und welche Hilfe brauchen Sie?",
     intro: [
-      "Der Leuchtturm verdichtet die wichtigste Haltung für Angehörige: Sie können Orientierung geben, ohne das Schiff steuern zu müssen. Die Bildidee macht die Kernaussage direkt zugänglich.",
-      "Die Grafik stellt nicht die Gefühle der betroffenen Person in den Mittelpunkt, sondern Ihre Haltung als Angehörige oder Angehöriger: Zustände wechseln, Ihre Orientierung darf stabil bleiben.",
+      "Die Metapher erinnert daran, dass Sie die Entscheidungen, Gefühle oder Genesung einer anderen Person nicht steuern können. Sie dürfen stattdessen den eigenen nächsten Schritt an Werten, Möglichkeiten und Sicherheit ausrichten.",
+      "Angehörige müssen dabei nicht dauerhaft ruhig, stabil oder richtungsgebend sein. Auch Erschöpfung, Unsicherheit, Abstand und das Hilfeholen haben Platz.",
     ],
     sections: [
       {
         title: "Die Bildidee",
         intro:
-          "Das Handout arbeitet mit einer einfachen Metapher: Krise und Alltag wechseln sich ab, der Leuchtturm bleibt trotzdem stehen.",
+          "Das Licht dient als Bild für eine eigene Orientierung in wechselnden Situationen, nicht als Auftrag, eine andere Person zu führen.",
         cards: [
           {
-            title: "Sturm",
-            text: "Krise oder Überflutung: intensive Gefühle, hohe Anspannung, wenig Übersicht.",
+            title: "Situation wahrnehmen",
+            text: "Was geschieht gerade konkret, und wie geht es Ihnen damit?",
           },
           {
-            title: "Ruhe",
-            text: "Stabilität oder Alltag: mehr Kontaktfähigkeit, mehr Orientierung, mehr Spielraum.",
+            title: "Eigenen Spielraum klären",
+            text: "Was möchten und können Sie im Moment anbieten — und was nicht?",
           },
           {
-            title: "Übergang",
-            text: "Krisen kommen und gehen. Der Übergang erinnert daran, dass belastende Zustände nicht statisch bleiben.",
+            title: "Unterstützung einbeziehen",
+            text: "Welche Fachperson, Vertrauensperson oder Pause kann Sie und die Situation entlasten?",
           },
         ],
       },
@@ -34,22 +34,22 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Was der Leuchtturm meint",
         calloutText:
-          "Sie können das Schiff nicht steuern – aber Sie können Orientierung geben: ruhig, klar, verlässlich.",
+          "Sie können die Reise einer anderen Person nicht steuern. Sie dürfen sich am eigenen Kompass orientieren: Werte, Grenzen, Möglichkeiten und passende Unterstützung.",
       },
       {
         title: "3 Schritte",
         cards: [
           {
-            title: "1. Stabilität wahren",
-            text: "Bewahren Sie möglichst innere Ruhe, auch wenn es im Gegenüber stürmisch wird.",
+            title: "1. Bei sich einchecken",
+            text: "Nehmen Sie wahr, was Sie fühlen, brauchen und sicher leisten können.",
           },
           {
-            title: "2. Orientierung geben",
-            text: "Geben Sie mit wenigen klaren Sätzen Orientierung statt immer neuen Erklärungen.",
+            title: "2. Eigenen nächsten Schritt wählen",
+            text: "Benennen Sie ein mögliches Angebot oder eine Grenze, ohne eine Wirkung beim Gegenüber versprechen zu müssen.",
           },
           {
-            title: "3. Verlässlich bleiben",
-            text: "Bleiben Sie möglichst berechenbar, auch wenn sich Zustände schnell ändern.",
+            title: "3. Unterstützung nutzen",
+            text: "Holen Sie Beratung oder Hilfe und nehmen Sie Abstand, wenn das nötig oder entlastend ist.",
           },
         ],
       },
@@ -57,35 +57,35 @@ export const handoutTextVersions = [
         title: "Orientierung",
         calloutTitle: "Was der Leuchtturm nicht bedeutet",
         calloutText:
-          "Der Leuchtturm steht nicht für Kontrolle, sondern für Haltung: ruhig bleiben, Richtung geben und nicht in jeden Sturm hineingezogen werden. Auch ein Leuchtturm braucht Wartung: Angehörige dürfen Hilfe holen und Pausen brauchen.",
+          "Die Metapher verteilt keine festen Rollen: Die betroffene Person ist kein steuerloses Schiff, und Sie müssen kein dauernd ruhiger Anker sein. Genesung wird von der Person selbst mitgestaltet und zugleich von Behandlung, Beziehungen, materiellen Bedingungen und gesellschaftlicher Unterstützung beeinflusst.",
       },
     ],
     sourceLine:
-      "Quelle: Nach Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation; S3-Leitlinie Borderline-Persönlichkeitsstörung (2022; im Register gültig bis 31.05.2026).",
+      "Eigene didaktische Metapher zur Selbstorientierung von Angehörigen; recovery- und rechteorientiert überarbeitet.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 04.10.2026.",
   }),
   createHandoutTextVersion("eisberg", {
     kicker: "Textversion",
     summary:
-      "Was sichtbar wie Wut, Vorwürfe oder Lautwerden wirkt, hat oft eine verdeckte Unterseite aus Angst, Scham, Trauer, Einsamkeit und Stress.",
+      "Wut, Vorwürfe oder Lautwerden können mit Angst, Scham, Trauer, Einsamkeit, Stress oder anderen Erfahrungen zusammenhängen. Von aussen bleibt offen, was im konkreten Moment mitwirkt.",
     intro: [
-      "Der Eisberg macht sichtbar, dass Verhalten oft nur die Oberfläche ist. Darunter liegen häufig Angst, Scham, Überforderung, Bedürfnisse oder Verletzlichkeit.",
-      "Für Angehörige ist die Grafik als Einordnungshilfe gedacht. Sie soll Wut nicht verharmlosen, aber helfen, Verhalten differenzierter zu lesen und die eigene Reaktion bewusster zu wählen.",
+      "Der Eisberg ist eine Metapher: Sichtbares Verhalten erklärt eine Situation nicht vollständig. Gefühle, Bedürfnisse, Erfahrungen und Lebensumstände können mitwirken, ohne dass Aussenstehende sie sicher kennen.",
+      "Für Angehörige ist die Grafik als Einordnungshilfe gedacht. Sie soll Wut nicht verharmlosen und keine verborgene Ursache behaupten. Fragen Sie nach, wenn dies möglich ist, und behalten Sie Ihre eigene Wahrnehmung und Grenze im Blick.",
     ],
     sections: [
       {
         title: "Sichtbar",
         intro:
-          "Die obere Spitze des Eisbergs steht für das, was im Alltag direkt auffällt und oft schnell eskaliert.",
+          "Die obere Spitze des Eisbergs steht beispielhaft für beobachtbares Verhalten. Ausdruck und Intensität unterscheiden sich von Person zu Person und lassen sich nicht aus einer Diagnose vorhersagen.",
         cards: [
           {
             title: "Wut",
-            text: "Starke Gereiztheit oder explosive Reaktionen, die sofort als Problem sichtbar werden.",
+            text: "Zum Beispiel hörbare Gereiztheit oder deutlich geäusserter Ärger.",
           },
           {
             title: "Vorwürfe",
-            text: "Anklagen, Schuldzuweisungen oder harte Botschaften, die bei Angehörigen schnell Abwehr auslösen.",
+            text: "Zum Beispiel eine konkrete Beschuldigung oder eine harte Aussage, die Angehörige belastet.",
           },
           {
             title: "Laut werden",
@@ -94,25 +94,25 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Darunter",
+        title: "Mögliche Kontexte",
         intro:
-          "Unter der Wasserlinie zeigt die Grafik die verborgenen Gefühle und Bedürfnisse, die an der Oberfläche nicht sofort erkennbar sind.",
+          "Unter der Wasserlinie zeigt die Grafik mögliche Gefühle und Belastungen. Sie sind Beispiele, keine sichere Deutung einer konkreten Person.",
         cards: [
           {
             title: "Angst",
-            text: "Unsicherheit, Bedrohungsgefühl oder Verlassensangst können sich hinter Wut verbergen.",
+            text: "Unsicherheit, ein Bedrohungsgefühl oder Sorge vor Beziehungsverlust können gleichzeitig vorhanden sein.",
           },
           {
             title: "Scham",
-            text: "Starke innere Beschämung wird oft nicht direkt gezeigt, sondern über Abwehr oder Angriff nach aussen geleitet.",
+            text: "Scham kann schwer auszusprechen sein. Ob sie eine Situation beeinflusst, lässt sich nur im Gespräch klären.",
           },
           {
             title: "Trauer",
-            text: "Verlust, Schmerz oder Enttäuschung können verdeckt bleiben und trotzdem das Verhalten prägen.",
+            text: "Verlust, Schmerz oder Enttäuschung können eine Situation mitprägen, müssen es aber nicht.",
           },
           {
             title: "Einsamkeit",
-            text: "Das Gefühl, nicht erreicht oder verstanden zu werden, kann unterm sichtbaren Konflikt liegen.",
+            text: "Das Gefühl, nicht erreicht oder verstanden zu werden, ist ein möglicher Kontext eines Konflikts.",
           },
           {
             title: "Stress",
@@ -143,18 +143,18 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Worum es beim Eisberg geht",
         calloutText:
-          "Was Sie sehen (Wut) ist oft nur die Spitze – darunter liegen Schmerz, Angst, Scham und Überforderung.",
+          "Was Sie sehen, ist ein Teil der Situation. Schmerz, Angst, Scham, Überforderung oder ganz andere Erfahrungen können mitwirken; aus dem Verhalten allein lässt sich das nicht sicher ableiten.",
       },
       {
         title: "3 Schritte",
         cards: [
           {
             title: "1. Erkennen",
-            text: "Was sehe ich? Was könnte darunter liegen?",
+            text: "Was wurde konkret gesagt oder getan? Was löst das bei mir aus?",
           },
           {
             title: "2. Verstehen",
-            text: "Welches Gefühl oder Bedürfnis steckt dahinter?",
+            text: "Welche Erklärungen sind möglich, und was kann ich offen nachfragen?",
           },
           {
             title: "3. Handeln",
@@ -166,102 +166,109 @@ export const handoutTextVersions = [
         title: "Orientierung",
         calloutTitle: "Wie der Eisberg gelesen werden kann",
         calloutText:
-          "Oben zeigt die Grafik sichtbares Verhalten. Unter der Oberfläche liegen oft Gefühle und Bedürfnisse, die im Streit leicht aus dem Blick geraten. Verstehen hilft beim Reagieren – es bedeutet nicht, Beschimpfungen, Drohungen oder Gewalt auszuhalten.",
+          "Oben zeigt die Grafik sichtbares Verhalten. Unter der Oberfläche stehen beispielhaft mögliche Gefühle und Belastungen. Die Metapher lädt zum Nachfragen ein, nicht zum Gedankenlesen. Verstehen bedeutet nicht, Beschimpfungen, Drohungen oder Gewalt auszuhalten.",
       },
     ],
     sourceLine:
-      "Quelle: Psychoedukation, Emotionsmodell nach DBT (Linehan, M. M., 1993).",
+      "Fachlicher Bezugspunkt: Emotionsregulation nach Linehan, M. M. (1993). Eisberg-Metapher und Beispiele: eigene didaktische Darstellung.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
   createHandoutTextVersion("spaltung", {
     kicker: "Textversion",
     summary:
-      "Unter Stress kippt die Bewertung oft in Extreme. Angehörige werden dann vorübergehend idealisiert oder entwertet, während die Grauzone schwer erreichbar wird.",
+      "Unter hoher Anspannung kann die Bewertung eines Menschen vorübergehend einseitiger werden. Dann treten positive oder negative Aspekte stärker hervor, während ein differenzierter Blick schwerer zugänglich ist.",
     intro: [
-      "Die Pendel-Metapher zeigt, wie Wahrnehmung unter Belastung zwischen Idealisierung und Entwertung kippen kann. Ziel ist, den ganzen Menschen wieder besser im Blick zu behalten.",
-      "Für Angehörige ist die Grafik als Orientierung gedacht. Sie erklärt, warum das Kippen so schmerzhaft und verwirrend wirkt, und zeigt, wie stabilisierende Reaktionen helfen können, die Grauzone wieder erreichbar zu machen.",
+      "Die Pendel-Metapher veranschaulicht eine mögliche Veränderung der Bewertung unter hoher Anspannung. Sie beschreibt weder eine feste Eigenschaft einer Person noch eine Absicht und lässt sich nicht aus einer Diagnose vorhersagen.",
+      "Für Angehörige ist die Grafik als Einordnungshilfe gedacht. Sie kann helfen, eine belastende Situation genauer wahrzunehmen, ohne Motive zu unterstellen oder verletzende Aussagen zu verharmlosen.",
     ],
     sections: [
       {
-        title: "Die drei Zustände",
+        title: "Zwei Pole und eine differenziertere Mitte",
         intro:
-          "Das Handout stellt zwei verzerrte Bewertungszustände und die schwer erreichbare Grauzone dazwischen gegenüber.",
+          "Das Handout stellt zwei mögliche Pole und eine breitere, differenziertere Sicht dazwischen gegenüber.",
         cards: [
           {
-            title: "Idealisierung",
-            text: "«Du bist der beste Mensch der Welt!» So erleben Sie es: Ihr Angehöriger überhäuft Sie mit Lob und Zuneigung. Sie fühlen sich gebraucht und wichtig – aber auch unter Druck, diesem Bild gerecht zu werden.",
+            title: "Sehr positive Bewertung",
+            text: "Nähe, Dankbarkeit oder Hoffnung können sehr gross werden. Das kann warm wirken und zugleich Erwartungen oder Druck erzeugen.",
           },
           {
-            title: "Grauzone",
-            text: "«Du bist ein Mensch – mit Stärken und Schwächen.» Das Ziel: Ihr Angehöriger kann Sie als ganzen Menschen sehen – nicht nur als Retter oder Feind. Dieses Sowohl-als-auch ist das, was Therapie langfristig fördert.",
+            title: "Differenziertere Sicht",
+            text: "Stärken, Grenzen, Nähe und Ärger können gleichzeitig wahr sein. Diese breitere Sicht lässt mehr als eine Bewertung zu, ohne schwierige Erfahrungen kleinzureden.",
           },
           {
-            title: "Entwertung",
-            text: "«Du bist das Schlimmste. Du bist gegen mich!» So erleben Sie es: Plötzlich sind Sie der Feind – obwohl sich nichts geändert hat. Alles Gute scheint vergessen. Das tut weh und ist verwirrend.",
+            title: "Sehr negative Bewertung",
+            text: "Kränkung, Angst oder Wut können den Blick stark färben. Harte Aussagen können verletzen und sind trotzdem nicht automatisch ein vollständiges Bild der Person oder Beziehung.",
           },
         ],
       },
       {
-        title: "Was das Pendel kippen kann",
+        title: "Was Bewertungen beeinflussen kann",
         intro:
-          "Die Grafik markiert kleine Auslöser, die von aussen oft banal wirken, unter Stress aber stark ins Gewicht fallen.",
-        bullets: ["Stress", "Kritik", "Abstand", "Missverständnis"],
+          "Hohe Anspannung kann den Blick verengen. Was dabei ins Gewicht fällt und wie jemand reagiert, ist individuell und nicht sicher vorhersehbar.",
+        bullets: [
+          "Stress oder Erschöpfung",
+          "erlebte Kritik",
+          "Nähe oder Abstand",
+          "Missverständnisse",
+          "Scham oder Kränkung",
+        ],
       },
       {
         title: "Wichtiger Hinweis",
-        calloutTitle: "Warum das Kippen so irritierend ist",
+        calloutTitle: "Eine Möglichkeit, keine Festlegung",
         calloutText:
-          "Diese Trigger können von aussen klein wirken und unter Stress trotzdem stark ins Gewicht fallen. Das Kippen kann Teil eines Stress- oder Beziehungsmusters sein; es erklärt die Dynamik, macht Entwertung aber nicht harmlos.",
+          "Die Metapher beschreibt eine mögliche Stressreaktion, nicht den Charakter eines Menschen. Sie gilt nicht für alle Menschen mit Borderline und erklärt keine einzelne Situation abschliessend.",
       },
       {
         title: "Kernaussage",
-        calloutTitle: "Worum es bei der Spaltung geht",
+        calloutTitle: "Wenn Bewertungen unter Stress einseitiger werden",
         calloutText:
-          "Unter Stress kippt die Bewertung Ihres Angehörigen leicht ins Extreme – die Grauzone wird schwer erreichbar. Weder die Idealisierung noch die Entwertung sind ein realistisches Bild von Ihnen. Beides sind Verzerrungen. Sie sind derselbe Mensch – vor und nach dem Kippen.",
+          "Unter hoher Anspannung kann der Blick auf einen Menschen vorübergehend enger werden. Weder eine sehr positive noch eine sehr negative Momentaufnahme muss die ganze Beziehung oder Person beschreiben.",
       },
       {
         title: "Orientierung",
-        calloutTitle: "Worum es bei der Grauzone geht",
+        calloutTitle: "Verstehen heisst nicht hinnehmen",
         calloutText:
-          "Idealisierung und Entwertung sind beide verzerrte Stresszustände. Die Grauzone ist der realistischere Bereich, in dem Beziehung wieder differenzierter erlebt werden kann. Entwertung kann verletzen; Sie dürfen auch dann Grenzen setzen.",
+          "Eine mögliche Stressreaktion zu verstehen, bedeutet nicht, verletzende Aussagen, Drohungen oder Gewalt hinzunehmen. Ihre Wahrnehmung, Ihre Grenzen und Ihre Sicherheit bleiben wichtig.",
       },
       {
-        title: "3 Schritte zur Stabilisierung",
+        title: "3 mögliche Schritte",
         cards: [
           {
-            title: "1. Wahrnehmen",
-            text: "Erkennen Sie das Muster – bei Ihrem Angehörigen und bei sich selbst. «Werde ich gerade idealisiert oder entwertet? Bin ich wirklich so gut oder so schlecht – oder ist das Pendel gekippt?» Allein dieses Erkennen schafft inneren Abstand.",
+            title: "1. Konkret wahrnehmen",
+            text: "Fragen Sie sich: Was wurde gerade tatsächlich gesagt oder getan? Was löst das bei mir aus? Bleiben Sie bei Beobachtungen, ohne eine Absicht festzulegen.",
           },
           {
-            title: "2. Pause",
-            text: "Nicht sofort reagieren. Zeit gewinnen und Distanz schaffen. «Ich brauche einen Moment, bevor ich antworte.» Lassen Sie die erste Welle vorbeiziehen. Weder Gegenangriff noch Unterwerfung helfen.",
+            title: "2. Pause oder Grenze",
+            text: "Wenn es sicher ist, können Sie Zeit gewinnen: «Ich brauche einen Moment, bevor ich antworte.» Sie müssen sich weder sofort verteidigen noch zustimmen.",
           },
           {
-            title: "3. Integration",
-            text: "Bleiben Sie konsistent – auch wenn die Bewertung schwankt. «Ich bin derselbe Mensch wie gestern. Ich habe dich lieb, auch wenn du gerade wütend auf mich bist.» Ihre Beständigkeit ist der Anker, der die Grauzone erreichbar macht. Sowohl-als-auch statt Entweder-oder.",
+            title: "3. Differenziert fortsetzen",
+            text: "Wenn beide Seiten möchten und genügend Ruhe da ist, kann das Gespräch später weitergehen: «Ich sehe, dass du wütend bist, und ich erlebe die Situation anders.» Eine ruhige Antwort ist ein Angebot, keine Erfolgsgarantie und nicht Ihre Pflicht.",
           },
         ],
       },
     ],
     sourceLine:
-      "Quelle: Nach Linehan, M. M. (2015), DBT Skills Training, Handouts 10, 15, 16. Gunderson, J. G. et al. (2011), Family Psychoeducation for BPD.",
+      "Grundlage: Linehan, M. M. (1993); Hoffman, P. D. et al. (2005). Eigene didaktische Pendel-Darstellung.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 04.10.2026.",
   }),
   createHandoutTextVersion("alarm-modus", {
     kicker: "Textversion",
     summary:
-      "Wenn der Alarm-Modus aktiv ist, ist Ihr Gegenüber vorübergehend schwer erreichbar. Erst beruhigen, dann klären: Die Brücke vom Alarm zum Denken braucht Sicherheit und weniger Druck.",
+      "Unter hoher Anspannung kann Denken enger werden. Weniger Druck, eine Pause oder Abstand können dann hilfreicher sein als weitere Argumente. Angehörige müssen die andere Person nicht beruhigen.",
     intro: [
-      "Alarm-Modus und Denk-Modus erklären, warum Gespräche unter hoher Anspannung so schnell eng werden. Unter Stress steht nicht dieselbe Denkfähigkeit zur Verfügung wie in ruhigeren Momenten.",
-      "Für Angehörige ist das eine Entlastung und eine Handlungsorientierung zugleich. Nicht jede Eskalation ist böser Wille oder bewusste Verweigerung – unter hoher Anspannung wird Nachdenken und Perspektivwechsel oft schwerer zugänglich.",
+      "Alarm-Modus und Denk-Modus sind eine vereinfachte Metapher dafür, dass Gespräche unter hoher Anspannung enger werden können. Sie ist keine Diagnose eines konkreten Moments und lässt sich einer Person nicht sicher von aussen zuordnen.",
+      "Für Angehörige kann das entlasten: Sie dürfen das eigene Tempo senken, weniger sagen, eine Pause anbieten oder das Gespräch beenden. Ob und was dem Gegenüber hilft, entscheidet nicht allein die angehörige Person.",
     ],
     sections: [
       {
-        title: "Trigger",
-        calloutTitle: "Was den Alarm auslösen kann",
-        calloutText: "Kritik, Zurückweisung oder starke Überforderung.",
+        title: "Mögliche Belastungen",
+        calloutTitle: "Individuell und nicht von aussen ablesbar",
+        calloutText:
+          "Kritik, Konflikte, Reizüberflutung oder andere Belastungen können Anspannung erhöhen. Was gerade mitwirkt, lässt sich nur offen erfragen – und manchmal bleibt es unklar.",
       },
       {
         title: "Die zwei Modi",
@@ -270,7 +277,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Alarm-Modus",
-            text: "Der Körper ist stark aktiviert. Zuhören, Abwägen und Impulse steuern werden schwerer. Schuldgefühle oder Einsicht kommen oft erst später.",
+            text: "Bei starker Aktivierung können Zuhören, Abwägen und Impulse steuern vorübergehend schwerer werden. Das ist eine Möglichkeit, keine sichere Erklärung für beobachtetes Verhalten.",
           },
           {
             title: "Denk-Modus",
@@ -278,7 +285,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Übergang",
-            text: "Erst beruhigen, dann klären. Die Brücke vom Alarm zum Denken entsteht nicht durch Druck, sondern durch Entlastung und Sicherheit.",
+            text: "Zeit, weniger Reize, selbst gewählte Unterstützung oder Abstand können helfen. Ein klärendes Gespräch ist erst sinnvoll, wenn beide Seiten es möchten und führen können.",
           },
         ],
       },
@@ -286,28 +293,28 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Worum es beim Alarm-Modus geht",
         calloutText:
-          "Im Alarm-Modus ist Ihr Gegenüber vorübergehend schwerer erreichbar. Das ist nicht automatisch Lüge oder böser Wille; hohe Anspannung macht Denken, Perspektivwechsel und Selbststeuerung oft enger.",
+          "Hohe Anspannung kann Denken, Perspektivwechsel und Selbststeuerung verengen. Daraus lässt sich weder ein Motiv noch der innere Zustand einer konkreten Person sicher ableiten.",
       },
       {
         title: "Orientierung",
         calloutTitle: "Was in welchem Modus hilft",
         calloutText:
-          "Im Alarm-Modus helfen Druck und Logik wenig. Zuerst braucht es Beruhigung, dann einen Übergang, erst danach wieder Klärung.",
+          "Wenn Argumente nicht mehr ankommen, dürfen Sie Druck reduzieren, eine Pause anbieten oder das Gespräch beenden. Sie müssen keine Beruhigung erreichen. Bei Gefahr haben Abstand, Schutz und professionelle Hilfe Vorrang.",
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Erkennen und Stopp",
-            text: "Fragen Sie sich: Ist mein Gegenüber gerade im Alarm-Modus?",
+            title: "1. Beobachten und innehalten",
+            text: "Fragen Sie sich: Erreichen wir einander noch, oder wird das Gespräch gerade enger und belastender?",
           },
           {
-            title: "2. Aktiv beruhigen",
-            text: "Stimme senken, Tempo verlangsamen, Raum geben.",
+            title: "2. Eigenen Druck reduzieren",
+            text: "Weniger sprechen, das eigene Tempo senken, Raum lassen oder Abstand nehmen.",
           },
           {
-            title: "3. Klärendes Gespräch",
-            text: "Erst wenn der Denk-Modus zurück ist.",
+            title: "3. Neu entscheiden",
+            text: "Später nur dann klären, wenn beide Seiten es möchten und ein respektvolles Gespräch möglich ist.",
           },
         ],
       },
@@ -317,85 +324,13 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
-  createHandoutTextVersion("4-phasen", {
-    kicker: "Textversion",
-    summary:
-      "Freundlichkeit, Verschlechterung, Explosion und Schweigen können sich als wiederkehrender Zyklus verstärken. Entscheidend ist, das Muster früh zu erkennen und in Phase 2 anders zu reagieren.",
-    intro: [
-      "Der 4-Phasen-Zyklus beschreibt ein wiederkehrendes Muster, das in belasteten Beziehungen immer wieder auftreten kann. Er hilft, Eskalationen früher einzuordnen.",
-      "Die Grafik versteht den Zyklus nicht als fixes Schicksal, sondern als Muster, das erkannt und unterbrochen werden kann. Genau dort liegt der entlastende Kern für Angehörige.",
-    ],
-    sections: [
-      {
-        title: "Die 4 Phasen",
-        intro:
-          "Die Infografik beschreibt vier Zustände, die sich gegenseitig verstärken und im Kreis wiederholen können.",
-        cards: [
-          {
-            title: "Phase 1: Freundlichkeit",
-            text: "Alles scheint gut. Nähe, Harmonie.",
-          },
-          {
-            title: "Phase 2: Verschlechterung",
-            text: "Spannung steigt. Reizbarkeit, Rückzug, Misstrauen.",
-          },
-          {
-            title: "Phase 3: Explosion",
-            text: "Krise. Vorwürfe, Drohungen, Kontrollverlust.",
-          },
-          {
-            title: "Phase 4: Schweigen",
-            text: "Rückzug. Schuldgefühle. Erschöpfung.",
-          },
-        ],
-      },
-      {
-        title: "Verstärkende Schleife",
-        calloutTitle: "Warum sich das Muster so fest anfühlen kann",
-        calloutText:
-          "Die Grafik zeigt den Zyklus als verstärkende Schleife: Jede Phase bereitet oft schon den Boden für die nächste, wenn niemand das Muster bewusst unterbricht.",
-      },
-      {
-        title: "Kernaussage",
-        calloutTitle: "Worum es beim 4-Phasen-Zyklus geht",
-        calloutText:
-          "Der Zyklus wiederholt sich, bis das Muster früher erkannt und unterbrochen wird. Dazu können Sie beitragen.",
-      },
-      {
-        title: "Orientierung",
-        calloutTitle: "Wo Veränderung am ehesten möglich wird",
-        calloutText:
-          "Am meisten Spielraum entsteht meist schon in Phase 2, bevor aus Spannung wieder eine Explosion wird.",
-      },
-      {
-        title: "Was können Sie tun?",
-        cards: [
-          {
-            title: "Erkennen",
-            text: "In welcher Phase sind wir gerade?",
-          },
-          {
-            title: "Verstehen",
-            text: "Der Zyklus ist ein Muster, kein Schicksal.",
-          },
-          {
-            title: "Verändern",
-            text: "Reagieren Sie in Phase 2 anders als früher.",
-          },
-        ],
-      },
-    ],
-    sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
-    standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
-  }),
   createHandoutTextVersion("gehirn", {
     kicker: "Textversion",
     summary:
-      "Bei emotionaler Überflutung wird Denken oft enger. Klärung gelingt meist erst besser, wenn der Körper wieder etwas ruhiger ist.",
+      "Unter hoher Anspannung kann Denken enger werden. Das vereinfachte Modell bietet Einordnung, weist Angehörigen aber keine Beruhigungs- oder Regulationsaufgabe zu.",
     intro: [
-      "Das Gehirn-Modell erklärt in einfacher Form, was bei emotionaler Überflutung passiert. Für Angehörige wird dadurch nachvollziehbarer, warum zuerst Beruhigung und erst danach Klärung hilft.",
-      "Für Angehörige ist die Grafik vor allem als Einordnungshilfe gedacht: Unter Stress wird Denken, Einordnen und Zuhören oft enger. Deshalb hilft zuerst Beruhigung und erst danach Klärung.",
+      "Das Gehirn-Modell vereinfacht mögliche Vorgänge bei hoher Anspannung. Es bildet kein einzelnes Gehirn ab und erklärt das Verhalten einer konkreten Person nicht vollständig.",
+      "Für Angehörige ist die Textversion eine Einordnungshilfe: Wenn ein Gespräch enger wird, dürfen Sie weniger Druck machen, pausieren, Abstand nehmen oder es beenden. Sie müssen den inneren Zustand einer anderen Person weder erkennen noch verändern.",
     ],
     sections: [
       {
@@ -418,19 +353,19 @@ export const handoutTextVersions = [
         ],
       },
       {
-        title: "Was dann oft passiert",
+        title: "Was unter Stress möglich ist",
         cards: [
           {
             title: "Überflutet",
             text: "Die Anspannung ist hoch, und der innere Spielraum wird klein.",
           },
           {
-            title: "Beruhigung fehlt",
-            text: "Ohne Beruhigung bleibt das System in Alarm oder Übergang hängen.",
+            title: "Anspannung bleibt hoch",
+            text: "Zeit, Sicherheit, weniger Reize oder selbst gewählte Unterstützung können fehlen oder noch nicht wirksam sein.",
           },
           {
-            title: "Beruhigung → Denken kommt zurück",
-            text: "Wenn der Körper ruhiger wird, wird Denken wieder zugänglicher.",
+            title: "Mehr Spielraum kann zurückkehren",
+            text: "Wenn Anspannung sinkt, können Abwägen und Gespräch wieder leichter werden. Der Verlauf ist individuell.",
           },
         ],
       },
@@ -438,28 +373,28 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Worum es bei der Überflutung geht",
         calloutText:
-          "Emotionale Überflutung ist nicht automatisch Absicht. Unter Stress wird Denken enger; der Körper braucht oft Zeit und Beruhigung, bevor Klärung wieder möglich wird.",
+          "Hohe Anspannung kann Denken verengen. Daraus lässt sich keine Absicht ablesen. Zeit, weniger Druck oder selbst gewählte Unterstützung können helfen; Angehörige müssen keine Beruhigung erreichen.",
       },
       {
         title: "Orientierung",
         calloutTitle: "Was die Grafik verständlich machen will",
         calloutText:
-          "Wenn Alarm übernimmt, wird Denken enger. Mit Beruhigung kommt Schritt für Schritt wieder mehr Zugang zu Reflexion und Gespräch zurück.",
+          "Wenn ein Gespräch unter Stress enger wird, können Pause, Abstand und der eigene Schutz sinnvoller sein als weitere Argumente. Ein späteres Gespräch ist nur eine Möglichkeit, keine Pflicht.",
       },
       {
-        title: "3 Schritte zur Beruhigung",
+        title: "3 freiwillige Schritte zur eigenen Orientierung",
         cards: [
           {
             title: "1. Atmen und Wahrnehmen",
-            text: "4 Sekunden ein, 6 Sekunden aus. Benennen Sie, was Sie spüren.",
+            text: "Wenn es Ihnen guttut: langsamer ausatmen und wahrnehmen, was Sie selbst gerade brauchen.",
           },
           {
             title: "2. Pausieren und Bewegen",
-            text: "Raum wechseln, kurz gehen, Wasser trinken.",
+            text: "Raum wechseln, kurz gehen, Wasser trinken oder Abstand schaffen – soweit dies sicher möglich ist.",
           },
           {
             title: "3. Fokus und Einordnen",
-            text: "Erst wenn der Körper ruhig ist, kann das Gespräch weitergehen.",
+            text: "Später neu entscheiden, ob überhaupt und unter welchen Bedingungen ein Gespräch möglich ist.",
           },
         ],
       },

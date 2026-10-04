@@ -84,22 +84,22 @@ export const materials: MaterialItem[] = [
   },
   {
     id: "leuchtturm",
-    title: "Der Leuchtturm – Orientierung für Angehörige",
+    title: "Der Leuchtturm – eigene Orientierung finden",
     description:
-      "Orientierung zur Angehörigenrolle: stabil bleiben, ohne das Schiff steuern zu wollen.",
+      "Eigene Werte, Grenzen, Möglichkeiten und passende Unterstützung klären, ohne eine feste Stabilitätsrolle zu übernehmen.",
     category: "verstehen",
     kind: "Infografik",
     url: "/infografiken/manus-leuchtturm-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-leuchtturm-v1.webp",
     downloadUrl: "/infografiken/manus-leuchtturm-v1.pdf",
     priority: "core",
-    verifiedAt: "Mai 2026",
+    verifiedAt: "04.10.2026 (Textversion)",
   },
   {
     id: "eisberg",
-    title: "Der Eisberg – Wut ist oft die Spitze",
+    title: "Der Eisberg – sichtbares Verhalten und mögliche Kontexte",
     description:
-      "Wut, Schmerz, Angst und Scham als Beziehungsgeschehen verständlicher einordnen.",
+      "Eine Metapher, um sichtbares Verhalten von möglichen Gefühlen und Belastungen zu unterscheiden – ohne eine verborgene Ursache zu behaupten.",
     category: "verstehen",
     kind: "Infografik",
     url: "/infografiken/eisberg-der-eisberg-v8.webp",
@@ -110,9 +110,9 @@ export const materials: MaterialItem[] = [
   },
   {
     id: "rolle-klaeren",
-    title: "Ihre Rolle klären – Was Sie sein können (und was nicht)",
+    title: "Ihre Rolle klären – Was Sie freiwillig anbieten können",
     description:
-      "Klarheit über hilfreiche Unterstützung, Verantwortung und die Grenzen der Angehörigenrolle.",
+      "Klarheit darüber, was Sie freiwillig anbieten können und was nicht zu Ihrer Verantwortung gehört.",
     category: "unterstuetzen",
     kind: "Infografik",
     url: "/infografiken/manus-rolle-klaeren-v3.webp",
@@ -209,9 +209,9 @@ export const materials: MaterialItem[] = [
   },
   {
     id: "spaltung",
-    title: "Spaltung – das Pendel zwischen Extremen",
+    title: "Wenn Bewertungen unter Stress einseitiger werden",
     description:
-      "Einordnung von Idealisierung, Entwertung und dem erschwerten Zugang zu Grautönen unter Stress.",
+      "Eine didaktische Pendel-Metapher dafür, wie Anspannung den Blick verengen kann – ohne eine Person oder Diagnose festzulegen.",
     category: "verstehen",
     kind: "Infografik",
     url: "/infografiken/pendel-das-bewertungs-pendel-v16.webp",
@@ -219,13 +219,13 @@ export const materials: MaterialItem[] = [
       "/infografiken/extras/thumbnails/pendel-das-bewertungs-pendel-v16.webp",
     downloadUrl: "/infografiken/pendel-das-bewertungs-pendel-v16.pdf",
     priority: "secondary",
-    verifiedAt: "April 2026",
+    verifiedAt: "04.10.2026 (Textversion)",
   },
   {
     id: "alarm-modus",
     title: "Alarm-Modus vs. Denk-Modus",
     description:
-      "Warum logische Klärung unter starker Anspannung oft nicht erreichbar ist und zuerst Beruhigung hilft.",
+      "Vereinfachtes Stressmodell mit Wahlmöglichkeiten für weniger Druck, Pause, Abstand und eigenen Schutz – ohne Beruhigungspflicht.",
     category: "verstehen",
     kind: "Infografik",
     url: "/infografiken/alarm-der-alarm-modus-v4.webp",
@@ -237,9 +237,9 @@ export const materials: MaterialItem[] = [
   },
   {
     id: "wenn-worte-treffen",
-    title: "Wenn Worte treffen – 5 häufige Schuldzuweisungen",
+    title: "Wenn Worte treffen – belastende Aussagen einordnen",
     description:
-      "Typische anklagende Sätze einordnen und eigene Reaktionen ruhiger und klarer gestalten.",
+      "Belastende Aussagen konkret einordnen, ohne Motive zuzuschreiben, und Gesprächsantworten klar von Sicherheitssignalen unterscheiden.",
     category: "kommunizieren",
     kind: "Infografik",
     url: "/infografiken/manus-wenn-worte-treffen-v3.webp",
@@ -247,7 +247,7 @@ export const materials: MaterialItem[] = [
       "/infografiken/extras/thumbnails/manus-wenn-worte-treffen-v3-thumb.png",
     downloadUrl: "/infografiken/manus-wenn-worte-treffen-v3.pdf",
     priority: "secondary",
-    verifiedAt: "Mai 2026",
+    verifiedAt: "04.10.2026 (Textversion)",
   },
   {
     id: "dear",

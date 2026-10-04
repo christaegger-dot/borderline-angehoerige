@@ -29,35 +29,35 @@ import { quellenLinks } from "@/content/quellenLinks";
 import { Link } from "wouter";
 
 const fortschrittParadoxItems = [
-  "Rückschritte einordnen, statt sofort zu katastrophisieren",
-  "Fortschritte konkret benennen, statt nur global zu hoffen",
-  "Tempo nicht übersteuern, wenn es besser läuft",
-  "für schwierige Phasen einen kleinen Plan bereithalten",
+  "erneute Belastung ernst nehmen, ohne bisherige Entwicklung für verloren zu erklären",
+  "die Person selbst fragen, welche Veränderungen für sie bedeutsam sind",
+  "bei einer besseren Phase keinen Zeit- oder Erfolgsdruck aufbauen",
+  "für eigene Grenzen und professionelle Kontakte einen kleinen Plan bereithalten",
 ] as const;
 
 const beitragenItems = [
   {
-    title: "Konsistenz",
-    desc: "berechenbar bleiben, statt in Alarm mitzukippen",
+    title: "Absprachen anbieten",
+    desc: "gemeinsame Absprachen, soweit sie gewünscht und für Sie tragbar sind",
   },
   {
-    title: "realistische Hoffnung",
-    desc: "Zuversicht ohne Druck vermitteln",
+    title: "Nachfragen",
+    desc: "die Person selbst fragen, welche Unterstützung oder welcher Abstand hilfreich wäre",
   },
   {
     title: "eigene Grenzen",
-    desc: "die eigene Stabilität nicht opfern",
+    desc: "die eigene Gesundheit und das eigene Leben unabhängig schützen",
   },
   {
-    title: "professionelle Hilfe",
-    desc: "Behandlung unterstützen, aber nicht ersetzen",
+    title: "Information anbieten",
+    desc: "auf Wunsch Angebote suchen; Behandlung bleibt Entscheidung der Person und des Fachteams",
   },
 ] as const;
 
 const foerderfaktoren = [
   "spezialisierte Psychotherapie",
   "Zeit und Geduld",
-  "stabile, nicht verschlingende Beziehungen",
+  "sichere, respektvolle Beziehungen mit freiwillig vereinbarten Grenzen",
   "alltagsbezogene Struktur",
   "Behandlung von Begleiterkrankungen",
 ] as const;
@@ -128,17 +128,20 @@ export default function Genesung() {
             Genesung
           </EyebrowLabel>
           <DisplayHeading level={1} size="topic">
-            Genesung ist <em>möglich</em> — und sieht selten geradlinig aus.
+            Genesung ist <em>möglich</em> — und kann unterschiedlich aussehen.
           </DisplayHeading>
           <Lede className="max-w-[30em]">
-            Hoffnung ist bei Borderline berechtigt – und gleichzeitig verläuft
-            Entwicklung selten glatt oder vorhersehbar. Für Angehörige ist
-            beides wichtig: Zuversicht und eine realistische Sicht auf Zeit.
+            Hoffnung ist bei Borderline berechtigt. Wege, Tempo und Bedeutung
+            von Veränderung sind individuell; weder eine Diagnose noch eine
+            einzelne Phase legt den weiteren Verlauf fest.
           </Lede>
           <TopicQuickLinks
             items={[
               { href: "#remission", label: "Remission und Genesung" },
-              { href: "#fortschritt-paradox", label: "Fortschritt-Paradox" },
+              {
+                href: "#fortschritt-paradox",
+                label: "Unterschiedliche Verläufe",
+              },
               { href: "#hoffnung", label: "Realistische Hoffnung" },
               { href: "#garten", label: "Was in Ihrer Hand liegt" },
             ]}
@@ -351,27 +354,26 @@ export default function Genesung() {
             </div>
           </ContentSection>
 
-          {/* ── ContentSection 2: fortschritt-paradox ── */}
+          {/* ── ContentSection 2: individuelle Verläufe ── */}
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Das Fortschritt-Paradox"
+            title="Veränderung verläuft unterschiedlich"
             id="fortschritt-paradox"
           >
             <EditorialProse>
               <p>
-                Viele Angehörige erleben ein irritierendes Muster: Nach einer
-                ruhigeren Phase kommt wieder ein Einbruch. Dann fühlt es sich
-                schnell an, als wäre alles umsonst gewesen. Meist ist das nicht
-                die treffendste Deutung.
+                Genesungswege unterscheiden sich. Ruhigere und schwierigere
+                Phasen können vorkommen, müssen aber keinem festen Muster
+                folgen. Ein schwieriger Abschnitt macht frühere Erfahrungen oder
+                Fähigkeiten nicht wertlos.
               </p>
             </EditorialProse>
             <div className="mt-4">
               <EditorialPullQuote>
-                Entwicklung bedeutet bei Borderline häufig nicht: Schritt für
-                Schritt nur vorwärts. Eher: Es gibt Bewegungen, Unterbrüche,
-                Wiederaufnahmen und Phasen, in denen neue Stabilität erst
-                gelernt werden muss.
+                Was als hilfreiche Veränderung erlebt wird, bestimmt die
+                betroffene Person selbst. Angehörige müssen keinen Verlauf
+                vorhersagen, bewerten oder beschleunigen.
               </EditorialPullQuote>
             </div>
 
@@ -380,84 +382,39 @@ export default function Genesung() {
               style={{ borderColor: "var(--rule-color)" }}
             >
               <figcaption className="text-center uppercase" style={labelStyle}>
-                Genesungsverlauf: nicht linear
+                Drei schematische Beispiele – ohne Rangfolge
               </figcaption>
               <svg
-                viewBox="0 0 300 70"
-                className="mt-3 h-14 w-full"
+                viewBox="0 0 300 105"
+                className="mt-3 h-24 w-full"
+                data-layout="multiple-unranked-paths"
                 aria-hidden="true"
               >
-                <line
-                  x1="15"
-                  y1="58"
-                  x2="285"
-                  y2="12"
-                  stroke="var(--accent-primary)"
-                  strokeWidth="1"
-                  strokeDasharray="5,4"
-                  opacity="0.35"
-                />
                 <path
-                  d="M 15,56 C 40,56 48,22 65,28 S 95,60 115,50 S 155,16 182,22 S 215,48 245,36 S 272,14 285,10"
+                  d="M 15,22 C 45,8 70,34 100,22 S 155,18 185,24 S 240,32 285,18"
                   fill="none"
                   stroke="var(--accent-primary)"
-                  strokeWidth="2.5"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <text
-                  x="15"
-                  y="68"
-                  fontSize="8"
-                  fill="currentColor"
-                  opacity="0.45"
-                >
-                  Beginn
-                </text>
-                <text
-                  x="255"
-                  y="9"
-                  fontSize="8"
-                  fill="currentColor"
-                  opacity="0.45"
-                >
-                  Ziel
-                </text>
-                <text
-                  x="88"
-                  y="68"
-                  fontSize="7.5"
-                  fill="currentColor"
-                  opacity="0.5"
-                >
-                  Rückschritt
-                </text>
-                <line
-                  x1="115"
-                  y1="65"
-                  x2="115"
-                  y2="52"
-                  stroke="currentColor"
-                  strokeWidth="0.8"
-                  opacity="0.35"
+                <path
+                  d="M 15,53 C 60,52 80,43 118,50 S 178,61 218,52 S 260,47 285,54"
+                  fill="none"
+                  stroke="var(--accent-primary)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  opacity="0.72"
                 />
-                <text
-                  x="187"
-                  y="68"
-                  fontSize="7.5"
-                  fill="currentColor"
-                  opacity="0.5"
-                >
-                  Rückschritt
-                </text>
-                <line
-                  x1="215"
-                  y1="65"
-                  x2="215"
-                  y2="49"
-                  stroke="currentColor"
-                  strokeWidth="0.8"
-                  opacity="0.35"
+                <path
+                  d="M 15,84 C 55,68 84,92 126,82 S 190,78 222,86 S 258,88 285,76"
+                  fill="none"
+                  stroke="var(--accent-primary)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  opacity="0.48"
                 />
               </svg>
               <p
@@ -467,8 +424,9 @@ export default function Genesung() {
                   color: "var(--fg-tertiary)",
                 }}
               >
-                Rückschritte gehören zum Weg — die gestrichelte Linie zeigt den
-                Gesamttrend.
+                Keine Verlaufskurve ist eine Prognose oder ein Ziel. Die drei
+                Linien stehen nur dafür, dass Veränderung verschiedene Formen
+                und Zeitverläufe haben kann.
               </p>
             </figure>
 
@@ -523,7 +481,7 @@ export default function Genesung() {
                 <h3 style={h4Style}>Weniger hilfreich</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>«Jetzt muss es doch endlich besser werden»</li>
-                  <li>«Ein Rückschritt entwertet alles»</li>
+                  <li>«Eine schwierigere Phase entwertet alles»</li>
                   <li>«Wenn genug Wille da ist, geht es schnell»</li>
                 </ul>
               </div>
@@ -531,7 +489,9 @@ export default function Genesung() {
                 <h3 style={h4Style}>Tragfähiger</h3>
                 <ul className="mt-3 ml-5 list-disc space-y-2" style={bodyStyle}>
                   <li>Besserung ist möglich und oft wahrscheinlich</li>
-                  <li>Rückschritte kommen vor und müssen nicht alles kippen</li>
+                  <li>
+                    Schwierigere Phasen kommen vor und müssen nicht alles kippen
+                  </li>
                   <li>Tempo und Zeitpunkt bleiben begrenzt steuerbar</li>
                 </ul>
               </div>
@@ -542,7 +502,7 @@ export default function Genesung() {
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Was Angehörige zur Genesung beitragen können"
+            title="Was Angehörige freiwillig anbieten können"
             id="beitragen"
           >
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
@@ -584,10 +544,10 @@ export default function Genesung() {
             </ol>
             <EditorialProse>
               <p className="mt-6">
-                Zum Punkt «Behandlung von Begleiterkrankungen»: Bei Borderline
-                tritt selten nur eine Diagnose auf — Depression und andere
-                Komorbiditäten beeinflussen den Verlauf wesentlich. Mehr dazu
-                auf der Seite{" "}
+                Bei vielen, nicht allen Menschen bestehen zusätzlich andere
+                psychische oder körperliche Belastungen. Was davon relevant ist
+                und welche Behandlung passt, braucht eine individuelle fachliche
+                Abklärung. Mehr dazu auf der Seite{" "}
                 <Link
                   href="/verstehen/begleiterkrankungen"
                   className="editorial-link"
@@ -626,10 +586,10 @@ export default function Genesung() {
             Materialien & Infografiken
           </DisplayHeading>
           <EditorialBody className="max-w-[36em]">
-            Vertiefende Materialien zu Verlauf, Hoffnung, Rückschritten und der
-            Rolle von Angehörigen. Wenn verfügbar, führt «Textversion lesen» zur
-            Web-Version. Eine aktuelle A4-Druckversion wird nur dort angeboten,
-            wo Text und Grafik übereinstimmen.
+            Vertiefende Materialien zu Verlauf, Hoffnung, schwierigeren Phasen
+            und der Rolle von Angehörigen. Wenn verfügbar, führt «Textversion
+            lesen» zur Web-Version. Eine aktuelle A4-Druckversion wird nur dort
+            angeboten, wo Text und Grafik übereinstimmen.
           </EditorialBody>
         </EditorialSection.Body>
       </EditorialSection>
@@ -739,15 +699,15 @@ export default function Genesung() {
         <EditorialSection.Body>
           <EditorialProse>
             <p>
-              Unterstützung heisst nicht, Entwicklung herzustellen. Es heisst
-              oft, Beziehung, Klarheit und Selbstschutz über längere Zeit
-              auszubalancieren —{" "}
+              Unterstützung heisst nicht, Entwicklung herzustellen. Sie kann
+              freiwillig angeboten und gemeinsam geklärt werden; die eigene
+              Gesundheit und eigene Grenzen zählen unabhängig davon —{" "}
               <Link href="/unterstuetzen/uebersicht" className="editorial-link">
-                Unterstützen lernen
+                Unterstützung klären
               </Link>
               ,{" "}
               <Link href="/unterstuetzen/therapie" className="editorial-link">
-                Therapie begleiten
+                Therapie und Angehörigenrolle
               </Link>{" "}
               oder{" "}
               <Link href="/selbstfuersorge" className="editorial-link">
@@ -784,15 +744,15 @@ export default function Genesung() {
             links={[
               {
                 href: "/unterstuetzen/uebersicht",
-                title: "Unterstützen — Übersicht",
+                title: "Unterstützung klären",
                 description:
-                  "Wie Angehörige hilfreich bleiben können: Rolle, Krisenlogik und tragfähige Unterstützung.",
+                  "Freiwillige Angebote, eigene Grenzen und passende externe Unterstützung unterscheiden.",
               },
               {
                 href: "/unterstuetzen/therapie",
-                title: "Therapie begleiten",
+                title: "Therapie und Angehörigenrolle",
                 description:
-                  "Behandlung mittragen, ohne mitzubehandeln — Rolle, Behandlungssystem und Rückschläge.",
+                  "Was Angehörige auf Wunsch anbieten können — ohne Behandlung zu steuern oder zu bewerten.",
               },
               {
                 href: "/selbstfuersorge",

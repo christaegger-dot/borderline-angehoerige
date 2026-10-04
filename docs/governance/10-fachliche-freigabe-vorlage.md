@@ -18,6 +18,7 @@ Vor jedem Release mit Änderungen an:
 - Hochrisiko-Seiten
 - Kontakt- und Kriseninhalten
 - Diagnostik-, Quellen- oder Beratungsinhalten
+- Darstellungen von Erleben, Beziehungen, Rollen oder Genesung
 - lokalen Notfall-PDFs
 
 ## Pflicht-Scope
@@ -70,6 +71,19 @@ Mindestens diese Stellen prüfen, wenn sie vom Release betroffen sind:
 - [ ] lokale Relevanz für Schweiz / Zürich gegeben
 - [ ] Soforthilfe-Logik intakt
 - [ ] keine neue fachliche Aussage ohne belastbare Quelle
+- [ ] Anti-Stigma- und Perspektivenstandard in allen betroffenen Fassungen
+      erfüllt
+- [ ] keine Motive, Gewalt oder Gefährlichkeit aus einer Diagnose abgeleitet
+- [ ] Angehörige nicht für Regulation, Behandlung oder Genesung verantwortlich
+      gemacht
+- [ ] Autonomie, Einwilligung und Vertraulichkeit gewahrt
+
+### Erfahrungsperspektiven
+
+- [ ] Review durch eine Person mit eigener Borderline-Erfahrung dokumentiert
+- [ ] Review durch eine angehörige Person dokumentiert
+- [ ] unterschiedliche Rückmeldungen und offene Punkte festgehalten
+- [ ] noch offen und deshalb keine öffentliche Gesamtfreigabe
 
 ### Ergebnis
 

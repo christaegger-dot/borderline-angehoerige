@@ -30,9 +30,9 @@ const prinzipien = [
       "Medizinische und therapeutische Aussagen stützen wir auf wissenschaftliche Quellen und bewährte Therapieansätze wie DBT (Dialektisch-Behaviorale Therapie). Orientierungstexte ergänzen wir mit klinischer Erfahrung aus der Angehörigenarbeit.",
   },
   {
-    title: "Entstigmatisierend",
+    title: "Entstigmatisierend und perspektivenbewusst",
     description:
-      "Borderline ist eine behandelbare Erkrankung, keine Charakterschwäche. Wir vermeiden schuldzuweisende Sprache und fördern Verständnis für alle Beteiligten.",
+      "Menschen sind mehr als eine Diagnose. Wir beschreiben konkrete Situationen, ohne Motive, Gefährlichkeit oder Beziehungsfähigkeit aus Borderline abzuleiten. Angehörige werden weder beschuldigt noch für Regulation, Behandlung oder Genesung verantwortlich gemacht. Autonomie, Grenzen, Stärken und Genesungsmöglichkeiten beider Seiten bleiben sichtbar.",
   },
   {
     title: "Selbstfürsorge-orientiert",

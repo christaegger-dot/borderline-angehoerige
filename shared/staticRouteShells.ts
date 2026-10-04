@@ -72,7 +72,7 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     path: "/verstehen",
     title: "Borderline verstehen",
     description:
-      "Borderline aus Sicht von Angehörigen verstehen: Beziehungsdynamik, Überflutung, Nähe-Distanz und hilfreiche Einordnung.",
+      "Borderline personen- und perspektivenbewusst verstehen: individuelle Erfahrungen, diagnostische Grenzen und Orientierung für Angehörige.",
     includeMedicalSchema: true,
   },
   {
@@ -86,42 +86,42 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     path: "/verstehen/beziehungen",
     title: "Borderline und Beziehungen",
     description:
-      "Warum gut gemeinte Unterstützung anders ankommen kann: Ereignis, Bedeutung, Gefühl und Reaktion zwischen Angehörigen und erkrankter Person — ohne Motive zu unterstellen oder Schuld zu verteilen.",
+      "Mögliche Wechselwirkungen in Beziehungen: Ereignis, Bedeutung, Gefühl und Reaktion zwischen mehreren Beteiligten — ohne Motive zu unterstellen oder Schuld zu verteilen.",
     includeMedicalSchema: true,
   },
   {
     path: "/verstehen/begleiterkrankungen",
     title: "Begleiterkrankungen",
     description:
-      "Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert.",
+      "Komorbidität bei Borderline: welche Begleiterkrankungen vorkommen können, warum das individuell verschieden ist und wie sie fachlich abgeklärt werden.",
     includeMedicalSchema: true,
   },
   {
     path: "/unterstuetzen/uebersicht",
     title: "Unterstützen – Übersicht",
     description:
-      "Wie Angehörige hilfreich bleiben können: Rolle, Krisenlogik, Grenzen und tragfähige Unterstützung.",
+      "Unterstützung frei wählen, eigene Grenzen wahren und Verantwortung realistisch verteilen.",
     includeMedicalSchema: true,
   },
   {
     path: "/unterstuetzen/alltag",
     title: "Unterstützen im Alltag",
     description:
-      "Wie Angehörige im Alltag hilfreich bleiben können: verlässlich, klar und ohne sich selbst zu verlieren.",
+      "Unterstützung im Alltag als freiwilliges Angebot: klar, begrenzt und mit Blick auf das eigene Leben.",
     includeMedicalSchema: true,
   },
   {
     path: "/unterstuetzen/therapie",
-    title: "Therapie unterstützen",
+    title: "Therapie und Angehörigenrolle",
     description:
-      "Wie Angehörige Behandlung unterstützen können, ohne mitzubehandeln oder die Verantwortung zu übernehmen.",
+      "Wie Angehörige auf Wunsch Unterstützung anbieten können, ohne Behandlungsentscheidungen oder Verantwortung zu übernehmen.",
     includeMedicalSchema: true,
   },
   {
     path: "/unterstuetzen/krise",
     title: "Krisenbegleitung",
     description:
-      "Krisenbegleitung bei Borderline: Wie Sie in akuten Situationen deeskalieren, Grenzen wahren und professionelle Hilfe richtig einbeziehen.",
+      "Krisenbegleitung bei Borderline: Warnzeichen professionell einordnen lassen, den eigenen Schutz wahren und passende Hilfe einbeziehen.",
     includeMedicalSchema: true,
   },
   {
@@ -220,14 +220,14 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     path: "/wegweiser",
     title: "Situations-Wegweiser",
     description:
-      "Was tun, wenn Ihr Angehöriger in einer Krise ist? Unser interaktiver Wegweiser führt Sie Schritt für Schritt durch verschiedene Situationen.",
+      "Orientierung in belastenden oder akuten Situationen: Beobachtbares einordnen, eigenen Schutz wahren und passende Hilfe finden.",
     includeMedicalSchema: true,
   },
   {
     path: "/uebungen",
     title: "Kommunikations-Übungen",
     description:
-      "Üben Sie SET, DEAR MAN und Validierung anhand realistischer Szenarien – interaktiv, mit Feedback und Erklärungen.",
+      "Üben Sie offene Fragen, klare Grenzen, DEAR MAN und Validierung anhand anpassbarer Szenarien – interaktiv, mit Feedback und Erklärungen.",
   },
   {
     path: "/quellen",

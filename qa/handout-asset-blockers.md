@@ -1,119 +1,99 @@
 # Handout Asset Blocker Report
 
 Stand: 2026-10-04
-Basis: aktuelles `main` nach dem fachlich-inhaltlichen und visuellen Audit
 Quelle der Wahrheit: `client/src/content/handoutGovernance.ts`
 
 ## Zweck
 
-Dieser Report trennt aktuelle, anschlussfähige Druckgrafiken von Assets, deren
-Bild- oder PDF-Fassung nicht mehr zuverlässig zur aktuellen HTML-Textversion
-passt. Eine vorhandene Datei gilt nicht automatisch als publizierbar. Erst die
-fachliche, sprachliche, visuelle und barrierebezogene Freigabe erlaubt die
-Rückkehr in Empfehlungsflächen.
+Dieser Report trennt freigegebene, aktuell auslieferbare Druckgrafiken von
+Textversionen, deren PDF-, WebP- oder Thumbnail-Fassung fachlich,
+sicherheitsbezogen oder perspektivisch nicht mehr anschlussfähig ist. Eine
+vorhandene Datei gilt nicht automatisch als publizierbar.
 
-## Kurzurteil
+## Aktueller Freigabestand
 
-- 42 Vollgrafiken sind direkt in den Content-Registern referenziert.
-- 27 davon sind aktuell anschlussfähig und bleiben sichtbar.
-- 15 ältere beige «Manus»-Grafiken bilden den verbleibenden Drift-Block.
-- Es fehlen keine referenzierten Dateien.
-- Die drei neu aufgebauten P1-Praxisblätter sind technisch integriert, bleiben
-  aber **Entwürfe; die fachlich-redaktionelle Freigabe steht aus**.
-- Fünf P1-Assets werden bis zum Ersatz nur als aktuelle HTML-Textversion
-  angeboten. Die veraltete Vorschau und das PDF werden nicht mehr beworben.
-- Zehn P2-Assets bleiben für einen nachfolgenden visuellen Pass vorgemerkt.
+- Die Website veröffentlicht Visuals ausschliesslich fail-closed: unbekannte,
+  zurückgezogene, als `text-only` markierte oder nicht freigegebene Entwürfe
+  werden weder in Katalogen noch über die Download-Funktion ausgeliefert.
+- Zurückgezogene und überholte Dateien liegen ausserhalb von `client/public`
+  unter `qa/archived-handouts/anti-stigma-p1-2026-10-04/`.
+- Das neue P1-Paket `radikale-akzeptanz`, `gespraeche-kippen` und
+  `beispiel-dialog` bleibt als HTML-Textversion lesbar. Seine V3-Visuals liegen
+  bis zur verantworteten institutionellen Freigabe unter
+  `qa/withheld-handouts/p1-illustrations-v3-2026-10-04/`.
+- Die Notfallplan-Textversion ist aktuell; die ältere PDF- und Bildfassung ist
+  wegen fehlender Schutzklauseln vorläufig zurückgezogen.
 
-## Bereits aktualisiert und beizubehalten
+## Weiterhin freigegebene Visuals
 
-Diese Versionen sind mit den aktuellen Textfassungen synchronisiert und dürfen
-nicht durch ältere, bloss höher nummerierte oder unreferenzierte Varianten
-ersetzt werden:
+Diese Familien bleiben als Visual, PDF und Textversion auslieferbar, solange
+die automatischen und manuellen Freigabegates grün bleiben:
 
-| ID                    | Freigegebene Version         |
-| --------------------- | ---------------------------- |
-| `genesung-zahlen`     | `manus-genesung-zahlen-v3`   |
-| `kinder`              | `manus-kinder-v3`            |
-| `stopp-technik`       | `manus-stopp-technik-v3`     |
-| `dear`                | `puk-dear-v1`                |
-| `garten`              | `puk-garten-v1`              |
-| `4-arten-von-grenzen` | `puk-4-arten-von-grenzen-v1` |
+| ID                         | Freigegebene Version                    |
+| -------------------------- | --------------------------------------- |
+| `notfallkarte-zuerich`     | `Notfallkarte-Zuerich-Psychische-Krise` |
+| `kinder`                   | `manus-kinder-v3`                       |
+| `dear`                     | `puk-dear-v1`                           |
+| `spiegeln-statt-aufsaugen` | `manus-spiegeln-statt-aufsaugen-v3`     |
+| `4-arten-von-grenzen`      | `puk-4-arten-von-grenzen-v1`            |
+| `garten`                   | `puk-garten-v1`                         |
+| `genesung-zahlen`          | `manus-genesung-zahlen-v3`              |
+| `stopp-technik`            | `manus-stopp-technik-v3`                |
 
-Ebenfalls anschlussfähig sind die neueren PUK-Illustrationen unter
-`/puk/illustrations`, die Hero-SVGs und die aktuellen Inline-Diagramme sowie die
-hochversionierten Modelle Eisberg v8, Pendel v16, Alarm v4, Ampel v4,
-Deeskalation v11, Validierung v10, Sauerstoff v5 und Fortschritt v5.
+Weitere in der Governance als publiziert geführte P2-Handouts bleiben
+freigegeben, sofern ihre referenzierten Dateien vorhanden sind. Die Tabelle ist
+eine hervorgehobene Kernliste und ersetzt nicht das maschinenlesbare Register.
 
-## P1-Illustrationspaket: technisch integriert, redaktionell noch Entwurf
+## Vorläufig nur als HTML-Textversion
 
-| ID                   | Asset-Version               | Status                                               |
-| -------------------- | --------------------------- | ---------------------------------------------------- |
-| `radikale-akzeptanz` | `puk-radikale-akzeptanz-v3` | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
-| `gespraeche-kippen`  | `puk-gespraeche-kippen-v3`  | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
-| `beispiel-dialog`    | `puk-beispiel-dialog-v3`    | Entwurf – fachlich-redaktionelle Freigabe ausstehend |
+Die folgenden Familien haben `visualAssetStatus: "text-only"`. Ihre aktuelle
+HTML-Textversion bleibt erreichbar; alte Grafiken werden nicht mehr beworben
+oder direkt ausgeliefert:
 
-Die drei Praxisblätter verwenden dieselbe redaktionell überarbeitete
-Inhaltsquelle für die semantische Webdarstellung und den A4-Export. Vollbild
-und Thumbnail werden aus dem PDF-Seitenbild erzeugt. Die technischen Prüfungen
-belegen keine fachliche Freigabe. Die früheren `manus-*`-Dateien bleiben
-vorerst als Vergleichsstand erhalten, sind aber nicht mehr referenziert.
+- sicherheits- oder krisenbezogen: `notfallplan-krise`, `alarm-modus`,
+  `krisenkommunikation`, `anspannungskurve`, `grenzen-ohne-eskalation`,
+  `pause-statt-streit`, `zuhoeren-ohne-zustimmen`, `bruecke-gelaender`;
+- erklärende Modelle: `leuchtturm`, `eisberg`, `spaltung`, `gehirn`,
+  `fortschritt-paradox`, `remission-heilung`, `5-faktoren-genesung`,
+  `rolle-genesungsprozess`;
+- Angehörigenrolle und Alltag: `rolle-klaeren`, `drei-saeulen`,
+  `konsistenz-prinzip`, `beziehungs-achtsamkeit`, `6-leitlinien`,
+  `4-alltags-tipps`, `schuld-verantwortung`, `sauerstoffmaske`,
+  `wenn-worte-treffen`.
 
-## P1: vorläufig nur HTML-Textversion
+`4-phasen` und `im-krisenmodus` sind zusätzlich vollständig `withdrawn` und
+erscheinen auch nicht mehr als aktive Textversion.
 
-Diese Assets haben `visualAssetStatus: "text-only"`. Ihre Dateien bleiben als
-Arbeits- und Vergleichsstand erhalten, erscheinen aber nicht mehr als Vorschau,
-PDF-Link oder Download in der Website.
+## Entwürfe ohne Publikationsfreigabe
 
-| ID                       | Problem                                                            | Nächster Schritt                                  |
-| ------------------------ | ------------------------------------------------------------------ | ------------------------------------------------- |
-| `4-phasen`               | Starres Zyklusmodell und problematische Verantwortungszuschreibung | Fachlich neu konzipieren und illustrieren         |
-| `gehirn`                 | Vereinfachende Lokalisierung und deterministische Neuroaussagen    | Funktionales Stress-/Anspannungsmodell entwickeln |
-| `remission-heilung`      | Unzutreffende Dichotomie; Recovery fehlt                           | Begriffe fachlich neu ordnen und illustrieren     |
-| `5-faktoren-genesung`    | Kausale Übervereinfachungen und starke Forschungsbehauptung        | Evidenz prüfen, danach neu illustrieren           |
-| `rolle-genesungsprozess` | Legt zu viel Genesungsverantwortung bei Angehörigen                | Neu illustrieren und klar entlasten               |
-
-## P2: nächstes Asset-Paket
-
-### Neu illustrieren
-
-- `leuchtturm`
-- `konsistenz-prinzip`
-- `energie-konto`
-- `grenzen-erkennen`
-- `lmk`
-
-### Aus den aktuellen Textversionen neu exportieren
-
-- `drei-saeulen`
-- `beziehungs-achtsamkeit`
-- `6-leitlinien`
-- `4-alltags-tipps`
-- `erlaubnis-karte`
+| ID                   | Asset-Version               | Status                                   |
+| -------------------- | --------------------------- | ---------------------------------------- |
+| `radikale-akzeptanz` | `puk-radikale-akzeptanz-v3` | redaktioneller Entwurf, nicht publiziert |
+| `gespraeche-kippen`  | `puk-gespraeche-kippen-v3`  | redaktioneller Entwurf, nicht publiziert |
+| `beispiel-dialog`    | `puk-beispiel-dialog-v3`    | redaktioneller Entwurf, nicht publiziert |
 
 ## Operative Regeln
 
-1. Eine unreferenzierte v2-Datei nie automatisch aktivieren. Mehrere davon sind
-   nur Varianten derselben überholten Gestaltung.
-2. Inhalt zuerst in der aktuellen HTML-Textversion prüfen und freigeben.
-3. Flache WebP-/PDF-Dateien nicht punktuell übermalen. Aus einer editierbaren
-   Quelle neu aufbauen und exportieren.
-4. Nach fachlicher und visueller Freigabe eine neue Assetversion vergeben,
-   den Entwurfswert `assetVersion` nach `approvedVersion` überführen,
-   `approvalStatus` auf `approved` setzen und gegebenenfalls
-   `visualAssetStatus` entfernen.
-5. Danach Inventar, Governance, Textversionen, Responsive Layout,
-   Tastaturbedienung und PDF-Vorschau erneut prüfen.
+1. Nie automatisch die höchste Dateiversion aktivieren.
+2. Inhalt, Sicherheitslogik und Perspektivenstandard zuerst in der
+   HTML-Textversion prüfen.
+3. Flache PDF- oder WebP-Dateien nicht punktuell übermalen; aus einer
+   editierbaren Quelle neu produzieren.
+4. Eine Visualfamilie erst nach fachlicher, visueller,
+   barrierefreiheitsbezogener und institutioneller Freigabe wieder auf
+   `published` setzen.
+5. Danach Registry, Suchindex, Materialbibliothek, direkte Asset-URLs,
+   Download-Funktion, Responsive Layout und Tastaturbedienung erneut prüfen.
 
-## Verifikation
-
-Mindestens ausführen:
+## Mindestverifikation
 
 ```bash
 pnpm test -- handout-governance
-pnpm test -- handout-text-versions
+pnpm test -- anti-stigma-governance
+pnpm test -- material-download-function
 pnpm build
 pnpm audit:release-http-gates
 ```
 
-Eine neue Grafik wird erst wieder sichtbar geschaltet, wenn Text, Abbildung und
-PDF denselben fachlichen Stand zeigen.
+Eine neue Grafik wird erst sichtbar, wenn HTML, Abbildung, PDF und Thumbnail
+denselben freigegebenen fachlichen Stand zeigen.

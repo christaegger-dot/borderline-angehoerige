@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { getHandoutDownloadHref } from "../../client/src/content/handouts.ts";
+import { isHandoutVisualPublished } from "../../client/src/content/handoutGovernance.ts";
 import { materials } from "../../client/src/content/materialien.ts";
 import { handoutTextVersionMetas } from "../../client/src/content/handoutTextMetas.ts";
 import { SECURITY_HEADERS } from "../../shared/securityHeaders.ts";
@@ -59,12 +60,12 @@ const HEADER_CASES = [
     requiredHeaders: SECURITY_HEADERS,
   },
   {
-    id: "legacy-material-redirect",
-    title: "Legacy-Material-Redirect",
+    id: "material-redirect",
+    title: "Freigegebener Material-Redirect",
     kind: "header",
-    route: "/api/material-download/notfallplan-krise?disposition=inline",
+    route: "/api/material-download/kinder?disposition=inline",
     expectedStatus: 307,
-    expectedLocation: "/notfallplan-krise-v04.pdf",
+    expectedLocation: "/infografiken/manus-kinder-v3.pdf",
     redirect: "manual",
     requiredHeaders: SECURITY_HEADERS,
     cacheControlIncludes: ["private", "no-store"],
@@ -73,9 +74,27 @@ const HEADER_CASES = [
     id: "static-pdf",
     title: "Statisches PDF",
     kind: "header",
-    route: "/notfallplan-krise-v04.pdf",
+    route: "/infografiken/manus-kinder-v3.pdf",
     expectedStatus: 200,
     contentTypeIncludes: "application/pdf",
+    requiredHeaders: SECURITY_HEADERS,
+  },
+  {
+    id: "withheld-notfallplan-api",
+    title: "Zurückgezogener Notfallplan über API",
+    kind: "header",
+    route: "/api/material-download/notfallplan-krise?disposition=inline",
+    expectedStatus: 404,
+    redirect: "manual",
+    requiredHeaders: SECURITY_HEADERS,
+  },
+  {
+    id: "withheld-notfallplan-static",
+    title: "Zurückgezogener Notfallplan als Direktdatei",
+    kind: "header",
+    route: "/notfallplan-krise-v04.pdf",
+    expectedStatus: 404,
+    redirect: "manual",
     requiredHeaders: SECURITY_HEADERS,
   },
 ];
@@ -121,6 +140,10 @@ function materialPdfCases() {
   const casesById = new Map();
 
   for (const item of materials) {
+    if (!item.isHtml && !isHandoutVisualPublished(item.id)) {
+      continue;
+    }
+
     const sourceUrl = item.pdfUrl ?? item.downloadUrl;
     const downloadHref = getHandoutDownloadHref(sourceUrl);
 
@@ -143,11 +166,20 @@ function materialPdfCases() {
       continue;
     }
 
+    if (!isHandoutVisualPublished(meta.id)) {
+      continue;
+    }
+
+    const downloadHref = getHandoutDownloadHref(meta.pdfSourceUrl);
+    if (!downloadHref) {
+      continue;
+    }
+
     casesById.set(meta.id, {
       id: meta.id,
       title: meta.title,
       kind: "pdf",
-      route: getHandoutDownloadHref(meta.pdfSourceUrl) ?? meta.pdfSourceUrl,
+      route: downloadHref,
       sourceUrl: meta.pdfSourceUrl,
       expectsTextVersion: true,
     });
@@ -160,6 +192,10 @@ function materialPreviewCases() {
   const casesByRoute = new Map();
 
   for (const item of materials) {
+    if (!item.isHtml && !isHandoutVisualPublished(item.id)) {
+      continue;
+    }
+
     const previewHref =
       item.previewUrl ?? (looksLikeImagePath(item.url) ? item.url : null);
 
@@ -176,6 +212,10 @@ function materialPreviewCases() {
   }
 
   for (const meta of handoutTextVersionMetas) {
+    if (!isHandoutVisualPublished(meta.id)) {
+      continue;
+    }
+
     if (!looksLikeImagePath(meta.previewImageUrl)) {
       continue;
     }

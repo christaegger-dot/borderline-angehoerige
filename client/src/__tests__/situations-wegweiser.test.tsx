@@ -26,6 +26,58 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     vi.useRealTimers();
   });
 
+  it("benennt beobachtbare Gesprächs- und Bedrohungssituationen ohne Aggressionsetikett", () => {
+    render(<SituationsWegweiser />);
+
+    expect(
+      screen.getByRole("button", {
+        name: "Ein Gespräch kippt oder ich fühle mich bedroht",
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", {
+        name: "Starker Wutausbruch oder Aggression",
+      })
+    ).not.toBeInTheDocument();
+  });
+
+  it("führt auch nicht-körperliche Bedrohung klar in den Sicherheitsweg", () => {
+    vi.useFakeTimers();
+    render(<SituationsWegweiser />);
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: "Ein Gespräch kippt oder ich fühle mich bedroht",
+      })
+    );
+
+    expect(
+      screen.getByRole("heading", {
+        name: "Fühlen Sie sich bedroht, eingeschüchtert oder unter Zwang?",
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Auch Einschüchterung, Stalking oder Zwang/)
+    ).toHaveTextContent(/nicht nur körperliche Gewalt/);
+
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /Bedrohung, Einschüchterung, Stalking, Zwang oder Gewalt/,
+      })
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Ihre Sicherheit hat Vorrang" })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Telefon 117/ })).toHaveAttribute(
+      "href",
+      "tel:117"
+    );
+    expect(
+      screen.getByText(/Bedrohung, Einschüchterung, Stalking, Zwang und Gewalt/)
+    ).toHaveTextContent(/kein Motiv beurteilen/);
+  });
+
   it("fokussiert neue Fragen sowie Rückkehr- und Neustartziele", () => {
     vi.useFakeTimers();
     render(<SituationsWegweiser />);
@@ -167,6 +219,11 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     expect(
       screen.getByRole("link", { name: /Telefon 058 384 46 82/ })
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /Nehmen Sie gefährliche Gegenstände nicht gegen Widerstand weg/
+      )
+    ).toHaveTextContent(/greifen Sie nicht körperlich ein/);
     fireEvent.click(screen.getByRole("button", { name: "Eine Frage zurück" }));
     expect(
       screen.getByRole("button", { name: /Ich weiss es nicht – ich brauche/ })

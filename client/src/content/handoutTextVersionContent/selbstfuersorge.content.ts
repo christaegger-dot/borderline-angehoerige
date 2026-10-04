@@ -104,25 +104,25 @@ export const handoutTextVersions = [
   createHandoutTextVersion("sauerstoffmaske", {
     kicker: "Textversion",
     summary:
-      "Selbstfürsorge ist keine Selbstsucht. Wer zuerst die eigene Maske aufsetzt, hat mehr Energie, weniger Schuldgefühle und kann verlässlicher unterstützen.",
+      "Ihre Gesundheit, Beziehungen, Interessen und Erholung haben einen eigenen Wert. Selbstfürsorge muss nicht damit begründet werden, später wieder besser helfen zu können.",
     intro: [
-      "Die Sauerstoffmaske erinnert daran, dass Selbstfürsorge kein Rückzug aus Verantwortung ist. Erst die eigene Maske aufsetzen, dann anderen helfen: Dieses Bild entlastet und klärt Prioritäten.",
-      "Die Grafik stellt zwei Kreisläufe gegenüber. Links zeigt sie, wie Überforderung und Schuldgefühle entstehen, wenn Angehörige nur noch für andere da sind. Rechts zeigt sie den hilfreicheren Kreislauf, wenn Selbstfürsorge bewusst Platz bekommt.",
+      "Die Sauerstoffmaske ist eine Metapher dafür, die eigene Sicherheit und Gesundheit ernst zu nehmen. Sie begründet keine Pflicht, danach wieder Unterstützung zu leisten.",
+      "Die Textversion beschreibt mögliche Belastungssignale und persönliche Schutzräume. Sie vermeidet die Einteilung in einen negativen und einen angeblich richtigen Kreislauf.",
     ],
     sections: [
       {
         title: "Kernaussage",
         calloutTitle: "Worum es bei der Sauerstoffmaske geht",
         calloutText:
-          "Im Flugzeug gilt: Erst die eigene Maske aufsetzen, dann anderen helfen. Für Angehörige gilt dasselbe.",
+          "Ihre Bedürfnisse zählen. Sie dürfen zuerst oder ausschliesslich für die eigene Sicherheit und Gesundheit sorgen.",
       },
       {
-        title: "Negativer Kreislauf",
+        title: "Wenn eigene Bedürfnisse zu kurz kommen",
         intro:
-          "Die linke Seite der Grafik beschreibt einen Kreislauf, in dem Selbstfürsorge ausfällt und die Belastung zunimmt.",
+          "Diese Hinweise können zeigen, dass die eigene Belastung zu viel Raum einnimmt. Sie sind keine Bewertung und kein persönliches Versagen.",
         cards: [
           {
-            title: "Nur für andere da sein",
+            title: "Fast nur noch für andere da sein",
             text: "Der ganze Fokus liegt auf dem Gegenüber, nicht mehr auch auf Ihnen selbst.",
           },
           {
@@ -135,18 +135,18 @@ export const handoutTextVersions = [
           },
           {
             title: "Erschöpfung und Gereiztheit",
-            text: "Die Belastung steigt, die Kraft sinkt und hilfreiche Unterstützung wird schwerer.",
+            text: "Die Belastung steigt und die eigene Lebensqualität, Gesundheit oder Sicherheit können leiden.",
           },
         ],
       },
       {
-        title: "Hilfreicher Kreislauf",
+        title: "Eigene Schutzräume stärken",
         intro:
-          "Die rechte Seite zeigt, was sich verändert, wenn Selbstfürsorge nicht als Egoismus, sondern als Voraussetzung verstanden wird.",
+          "Selbstfürsorge darf als eigenes Recht verstanden werden – unabhängig davon, welche Angehörigenrolle Sie übernehmen.",
         cards: [
           {
-            title: "Eigene Maske zuerst aufsetzen",
-            text: "Sie nehmen Ihre Bedürfnisse ernst und sorgen bewusst für Stabilität.",
+            title: "Eigene Bedürfnisse ernst nehmen",
+            text: "Sie schützen bewusst Zeit, Gesundheit, Beziehungen, Interessen und Erholung.",
           },
           {
             title: "Weniger Schuldgefühle",
@@ -157,8 +157,8 @@ export const handoutTextVersions = [
             text: "Mit mehr Kraft und Übersicht reagieren Sie ruhiger und gezielter.",
           },
           {
-            title: "Bessere Unterstützung möglich",
-            text: "Gerade weil Sie auf sich achten, können Sie verlässlicher für andere da sein.",
+            title: "Freier über Unterstützung entscheiden",
+            text: "Mit mehr Klarheit können Sie neu entscheiden, ob, wie viel und welche Unterstützung Sie geben möchten.",
           },
         ],
       },
@@ -386,8 +386,8 @@ export const handoutTextVersions = [
             text: "Es gibt keine einzelne Ursache – und keinen einzelnen Schuldigen.",
           },
           {
-            title: "Wechselseitige Beziehung",
-            text: "Ein empfindsames Kind stellt andere Anforderungen – das macht niemanden schuldig.",
+            title: "Entwicklung im Kontext",
+            text: "Temperament, Beziehungen, Erfahrungen, soziale Bedingungen und Versorgung können zusammenwirken. Daraus lässt sich keine Einzelschuld ableiten.",
           },
         ],
       },
@@ -434,7 +434,7 @@ export const handoutTextVersions = [
           {
             title:
               "«Vielleicht bin ich der Grund, warum es nicht besser wird.»",
-            text: "Genesung hängt von vielen Faktoren ab. Sie sind ein wichtiger – aber nicht der einzige.",
+            text: "Genesung hängt von vielen persönlichen, sozialen und professionellen Faktoren ab. Sie sind nicht für den Verlauf einer anderen Person verantwortlich.",
           },
           {
             title: "«Andere Familien haben dieses Problem nicht.»",
@@ -452,7 +452,7 @@ export const handoutTextVersions = [
         title: "Merksatz",
         calloutTitle: "Was Sie sich merken dürfen",
         calloutText:
-          "Sie haben die Erkrankung nicht verursacht. Sie können sie nicht heilen. Betroffene bleiben dennoch für ihr Verhalten nicht einfach «entschuldigt». Sie dürfen Grenzen verantworten und einen Unterschied machen – wenn Sie sich selbst dabei nicht verlieren. (Angelehnt an die «3 C's» der Angehörigenarbeit.)",
+          "Sie haben die Erkrankung nicht verursacht und müssen sie nicht heilen. Eine Diagnose legt Verhalten oder Schuld nicht fest. Alle Beteiligten dürfen Verantwortung für eigene Handlungen übernehmen, Grenzen benennen und Sicherheit priorisieren. (Angelehnt an die «3 C's» der Angehörigenarbeit.)",
       },
     ],
     sourceLine:

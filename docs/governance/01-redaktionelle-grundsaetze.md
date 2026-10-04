@@ -19,9 +19,20 @@ Hauptzielgruppe sind Angehörige in der Schweiz: Partner:innen, Eltern, Geschwis
 ## Grundhaltung
 
 - Angehörige dürfen belastet, wütend, erschöpft und ambivalent sein.
-- Betroffene werden nicht stigmatisiert.
-- Erklärungen entschuldigen kein verletzendes, gewalttätiges oder gefährdendes Verhalten.
+- Menschen werden nicht über eine Diagnose definiert. Wir leiten weder
+  Charakter noch Motive, Gefährlichkeit oder Beziehungsfähigkeit aus
+  «Borderline» ab.
+- Angehörige werden weder beschuldigt noch für Regulation, Behandlung oder
+  Genesung eines anderen Menschen verantwortlich gemacht.
+- Erklärungen entschuldigen kein verletzendes, gewalttätiges oder gefährdendes
+  Verhalten. Zugleich wird solches Verhalten nicht als diagnosespezifisch
+  dargestellt.
 - Mitgefühl und Selbstschutz werden immer zusammen gedacht.
+- Autonomie, Einwilligung, Vertraulichkeit, Stärken und Genesungsmöglichkeiten
+  beider Seiten bleiben sichtbar.
+
+Der verbindliche Prüfmassstab steht in
+`11-anti-stigma-und-perspektivenstandard.md`.
 
 ## Grenzen des Angebots
 
@@ -31,6 +42,9 @@ Die Website ersetzt keine medizinische, psychotherapeutische, juristische oder n
 
 - Keine Ferndiagnosen.
 - Keine Diagnosedruck-Sprache wie „Sie müssen ihn/sie zur Diagnose bringen“.
+- Beobachtbares Verhalten beschreiben; Motive nicht aus der Diagnose ableiten.
+- Grenzen als Schutz und Klarheit formulieren, nicht als Mittel, um eine andere
+  Person zu verändern.
 - Keine Heilsversprechen.
 - Keine Garantieformulierungen wie „verhindert Krise“.
 - Stattdessen: „kann helfen“, „häufig“, „bei manchen“, „in akuter Gefahr“.

@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { genesungItems } from "@/content/genesung";
 import { grenzenItems } from "@/content/grenzen";
+import { isHandoutVisualPublished } from "@/content/handoutGovernance";
 import { getHandoutAssetBySource } from "@/content/handouts";
 import {
   getHandoutTextVersion,
@@ -136,6 +137,16 @@ describe("handout text versions", () => {
 
       const sourceUrl = item.pdfUrl ?? item.downloadUrl;
       const asset = getHandoutAssetBySource(sourceUrl);
+
+      if (!isHandoutVisualPublished(item.id)) {
+        expect(asset).toBeNull();
+        expect(getHandoutTextVersionHrefBySource(sourceUrl)).toBe(
+          `/materialien/text/${item.id}`
+        );
+        expect(item.verifiedAt).toBeTruthy();
+        continue;
+      }
+
       expect(asset).toBeTruthy();
       expect(asset?.sourceKind).toBe("local");
       expect(asset?.textLayer).toBe("present");
@@ -150,6 +161,12 @@ describe("handout text versions", () => {
   it("keeps locally controlled handout pdfs on the text-layer-present path", () => {
     for (const item of expectedHandoutSources) {
       const asset = getHandoutAssetBySource(item.sourceUrl);
+
+      if (!isHandoutVisualPublished(item.id)) {
+        expect(asset).toBeNull();
+        continue;
+      }
+
       expect(asset).toBeTruthy();
       if (!asset) {
         throw new Error(`Missing handout asset for ${item.id}`);

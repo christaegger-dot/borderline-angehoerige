@@ -165,29 +165,31 @@ export default function Kommunizieren() {
                 Vorwurf, jede Interpretation oder jedes Verhalten zu bestätigen.
               </p>
               <p>
-                In Beziehungen mit Borderline ist das oft deshalb so wichtig,
-                weil Nichtgesehenwerden, Kränkung oder Unklarheit rasch
-                zusätzlichen Druck erzeugen. Validierung kann diesen Druck etwas
-                senken und den Boden für spätere Klärung bereiten.
+                In angespannten Gesprächen kann es hilfreich sein, Erleben
+                zunächst anzuerkennen. Gründe, Wirkung und passende Reaktion
+                unterscheiden sich jedoch von Person zu Person. Validierung ist
+                ein mögliches Gesprächsangebot, kein Mittel, um die andere
+                Person zu beruhigen oder eine spätere Klärung zu erzwingen.
               </p>
             </EditorialProse>
             <ValidierungsStufenleiter />
             <EditorialProse>
               <p>
                 <strong>Ein hilfreicher innerer Satz für Angehörige:</strong>{" "}
-                Ich muss nicht recht bekommen, um zuerst zu zeigen, dass ich den
-                Schmerz wahrnehme.
+                Ich kann anerkennen, was ich verstanden habe, und zugleich bei
+                meiner eigenen Wahrnehmung und meinen Grenzen bleiben.
               </p>
             </EditorialProse>
             <EditorialProse>
               <p>
-                <strong>Jetzt beruhigen, später klären:</strong> In einem
-                angespannten Moment geht es zunächst um Sicherheit und eine
-                mögliche Pause. Das verpflichtet Sie nicht, Forderungen zu
-                erfüllen oder verletzendes Verhalten hinzunehmen. Absprachen und
-                Folgen können später besprochen werden, wenn es sicher und
-                ruhiger ist. Ob ein Muster bestehen bleibt, hängt von vielen
-                Faktoren ab; Deeskalation macht Sie dafür nicht verantwortlich.
+                <strong>Sicherheit oder Pause, später klären:</strong> In einem
+                angespannten Moment dürfen Sie Sicherheit herstellen, Abstand
+                nehmen oder eine Pause vorschlagen. Das verpflichtet Sie nicht,
+                Forderungen zu erfüllen, verletzendes Verhalten hinzunehmen oder
+                das Gegenüber zu beruhigen. Absprachen und Folgen können später
+                besprochen werden, wenn es für alle Beteiligten sicher ist. Ob
+                ein Muster bestehen bleibt, hängt von vielen Faktoren ab;
+                Deeskalation macht Sie dafür nicht verantwortlich.
               </p>
             </EditorialProse>
           </ContentSection>
@@ -219,7 +221,7 @@ export default function Kommunizieren() {
                   }}
                 >
                   <li>kurz spiegeln, was Sie wahrnehmen</li>
-                  <li>Ton und Tempo beruhigen</li>
+                  <li>das eigene Sprechtempo reduzieren</li>
                   <li>klare Begrenzung bei Beschimpfung oder Druck</li>
                   <li>vorschlagen, später weiterzureden</li>
                 </ul>

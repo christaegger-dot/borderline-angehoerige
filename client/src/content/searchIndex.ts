@@ -13,7 +13,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Was ist Borderline?",
     description:
-      "Borderline aus Sicht von Angehörigen verstehen: Beziehungsmuster, Überflutung und Belastungsdynamik",
+      "Borderline personen- und perspektivenbewusst verstehen: individuelle Erfahrungen, diagnostische Grenzen und Orientierung für Angehörige",
     keywords: [
       "borderline",
       "bps",
@@ -29,9 +29,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Verstehen",
   },
   {
-    title: "Emotionale Dysregulation",
+    title: "Emotionen unter hoher Anspannung",
     description:
-      "Warum Emotionen bei Borderline so intensiv sind und schnell wechseln",
+      "Wie intensive Gefühle in bestimmten Situationen erlebt und reguliert werden können",
     keywords: [
       "emotionen",
       "gefühle",
@@ -46,9 +46,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Verstehen",
   },
   {
-    title: "Schwarz-Weiss-Denken",
+    title: "Bewertungen unter Stress",
     description:
-      "Die Tendenz, Menschen und Situationen als entweder ganz gut oder ganz schlecht zu sehen",
+      "Warum unter hoher Belastung zeitweise nur eine Seite einer Person oder Situation präsent sein kann",
     keywords: [
       "schwarz-weiss",
       "splitting",
@@ -60,14 +60,15 @@ export const searchableContent: SearchEntry[] = [
     section: "Verstehen",
   },
   {
-    title: "Verlassensangst",
-    description: "Intensive Angst vor Zurückweisung oder Verlassenwerden",
+    title: "Sorge vor Beziehungsverlust",
+    description:
+      "Intensive Sorge, eine wichtige Beziehung zu verlieren – individuell und kontextabhängig",
     keywords: [
       "verlassensangst",
       "trennungsangst",
       "zurückweisung",
-      "klammern",
-      "abhängigkeit",
+      "nähe",
+      "beziehung",
     ],
     href: "/verstehen",
     section: "Verstehen",
@@ -98,9 +99,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Unterstützen",
   },
   {
-    title: "Therapie begleiten",
+    title: "Therapie und Angehörigenrolle",
     description:
-      "Therapie realistisch begleiten und mit Rückschlägen oder Überforderung umgehen",
+      "Behandlung verstehen, Autonomie achten und die eigene Angehörigenrolle klären",
     keywords: [
       "therapie",
       "dbt",
@@ -115,7 +116,8 @@ export const searchableContent: SearchEntry[] = [
   },
   {
     title: "In der Krise unterstützen",
-    description: "Krisen erkennen, deeskalieren und Sicherheit gewährleisten",
+    description:
+      "Warnzeichen einordnen lassen, den eigenen Schutz wahren und professionelle Hilfe einbeziehen",
     keywords: [
       "krise",
       "eskalation",
@@ -435,24 +437,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Der Leuchtturm: Orientierung für Angehörige",
+    title: "Textversion: Der Leuchtturm – eigene Orientierung finden",
     description:
-      "Infografik: Orientierung, Verlässlichkeit und Selbstschutz in der Angehörigenrolle",
-    keywords: [
-      "leuchtturm",
-      "rolle",
-      "stabil",
-      "orientierung",
-      "metapher",
-      "infografik",
-    ],
-    href: "/materialien",
-    section: "Materialien",
-  },
-  {
-    title: "Textversion: Der Leuchtturm",
-    description:
-      "Lesbare Web-Version des Handouts zur Angehörigenrolle mit Kernaussage, Bildidee und 3 Schritten",
+      "Lesbare Web-Version zur Selbstorientierung an eigenen Werten, Grenzen, Möglichkeiten und passender Unterstützung",
     keywords: [
       "textversion",
       "leuchtturm",
@@ -464,24 +451,6 @@ export const searchableContent: SearchEntry[] = [
       "pdf",
     ],
     href: "/materialien/text/leuchtturm",
-    section: "Materialien",
-  },
-  {
-    title: "Textversion: Im Krisenmodus – Orientierung geben",
-    description:
-      "Lesbare Web-Version zur Deeskalation mit Ruhe, Präsenz, Mini-Legende und 3 konkreten Schritten für Angehörige",
-    keywords: [
-      "textversion",
-      "krisenmodus",
-      "orientierung geben",
-      "präsenz",
-      "ruhe",
-      "deeskalation",
-      "unterstützen",
-      "handout",
-      "pdf",
-    ],
-    href: "/materialien/text/im-krisenmodus",
     section: "Materialien",
   },
   {
@@ -504,7 +473,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Drei Säulen hilfreicher Unterstützung",
     description:
-      "Lesbare Web-Version zu Präsenz, Stabilität, Grenze und drei kleinen Übungsschritten für Angehörige",
+      "Lesbare Web-Version zu freiwilliger Präsenz, Selbstorientierung, Pause, Grenze und zusätzlicher Hilfe",
     keywords: [
       "textversion",
       "drei säulen",
@@ -522,7 +491,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Konsistenz-Prinzip",
     description:
-      "Lesbare Web-Version zum hilfreichen und schwierigen Beziehungskreislauf mit Merksatz, Legende und 3 Absprachen für Angehörige",
+      "Lesbare Web-Version zu transparenten, freiwilligen Absprachen ohne feste Wirkung oder einheitliche Angehörigenrolle",
     keywords: [
       "textversion",
       "konsistenz-prinzip",
@@ -540,7 +509,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Beziehungs-Achtsamkeit",
     description:
-      "Lesbare Web-Version zu Innehalten, Wahrnehmen, nicht Bewerten und bewusstem Handeln im Alltag",
+      "Lesbare Web-Version zum Trennen von Beobachtung und Vermutung sowie zum freien Wählen von Satz, Grenze, Pause oder Hilfe",
     keywords: [
       "textversion",
       "beziehungs-achtsamkeit",
@@ -558,7 +527,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: 6 Leitlinien für Angehörige",
     description:
-      "Lesbare Web-Version mit sechs evidenzbasierten Empfehlungen, Merksatz und drei Reflexionsschritten für Angehörige",
+      "Lesbare Web-Version mit sechs freiwilligen Orientierungspunkten zu Autonomie, Sicherheit, Absprachen und eigenen Grenzen",
     keywords: [
       "textversion",
       "6 leitlinien",
@@ -576,13 +545,13 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: 4 Alltags-Tipps",
     description:
-      "Lesbare Web-Version zu Übungspartner sein, Fortschritte anerkennen, Vorhersehbarkeit und gemeinsamem Problemlösen",
+      "Lesbare Web-Version zu vier Fragen: Ist Hilfe gewünscht, was ist freiwillig möglich und wo liegen eigene Grenzen?",
     keywords: [
       "textversion",
       "4 alltags-tipps",
       "alltag",
-      "fortschritte anerkennen",
-      "vorhersehbar",
+      "unterstützung erfragen",
+      "freiwillig",
       "unterstützen",
       "skills",
       "handout",
@@ -592,24 +561,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Der Eisberg: Was hinter Wut liegen kann",
-    description:
-      "Infografik: Hinter sichtbarer Wut liegen oft Schmerz, Angst oder Scham",
-    keywords: [
-      "eisberg",
-      "wut",
-      "trauer",
-      "gefühle",
-      "verborgen",
-      "infografik",
-    ],
-    href: "/materialien",
-    section: "Materialien",
-  },
-  {
     title: "Textversion: Der Eisberg",
     description:
-      "Lesbare Web-Version des Eisberg-Handouts zu sichtbarer Wut, verborgenen Gefühlen und 3 Schritten zur Einordnung",
+      "Lesbare Web-Version zu sichtbarem Verhalten, möglichen Kontexten und drei Schritten für beobachtungsnahes Nachfragen",
     keywords: [
       "textversion",
       "eisberg",
@@ -624,15 +578,15 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Spaltung",
+    title: "Textversion: Bewertungen unter Stress",
     description:
-      "Lesbare Web-Version zum Pendel zwischen Idealisierung, Entwertung und der schwer erreichbaren Grauzone",
+      "Lesbare Web-Version dazu, wie Bewertungen unter hoher Belastung zeitweise einseitiger werden können",
     keywords: [
       "textversion",
       "spaltung",
       "idealisierung",
       "entwertung",
-      "grauzone",
+      "perspektivwechsel",
       "pendel",
       "handout",
       "pdf",
@@ -641,107 +595,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Die Spaltung verstehen",
-    description:
-      "Infografik: Wie starke Idealisierung und Entwertung in Krisen entstehen können",
-    keywords: [
-      "spaltung",
-      "pendel",
-      "idealisierung",
-      "entwertung",
-      "ehrlich",
-      "infografik",
-    ],
-    href: "/materialien",
-    section: "Materialien",
-  },
-  {
-    title: "U.M.W.E.G.© – Das Gesamtsystem",
-    description:
-      "Ältere Infografik zur Gesprächsorientierung in akuten Krisensituationen",
-    keywords: [
-      "umweg",
-      "krise",
-      "kommunikation",
-      "empathie",
-      "geduld",
-      "system",
-      "infografik",
-    ],
-    href: "/materialien",
-    section: "Materialien",
-  },
-  {
-    title: "Die U.M.W.-Formel: So sprechen Sie in der Krise",
-    description:
-      "Ältere Infografik mit Schritt-für-Schritt-Orientierung für akute Krisengespräche",
-    keywords: [
-      "umweg",
-      "formel",
-      "amygdala",
-      "hippocampus",
-      "cortex",
-      "gehirn",
-      "infografik",
-    ],
-    href: "/materialien",
-    section: "Materialien",
-  },
-  {
-    title: "U.M.W.E.G.© Praxis + Exit-Strategie",
-    description:
-      "Ältere Infografik mit Gesprächsbeispiel sowie Orientierung zu Grenzen und Konsequenzen",
-    keywords: [
-      "umweg",
-      "praxis",
-      "exit",
-      "lmk",
-      "konsequenzen",
-      "dialog",
-      "infografik",
-    ],
-    href: "/materialien",
-    section: "Materialien",
-  },
-  {
-    title: "Die U.M.W.-Formel in der Praxis",
-    description:
-      "Ältere Infografik mit möglichen Formulierungen für akute Krisensituationen",
-    keywords: [
-      "umweg",
-      "formel",
-      "praxis",
-      "krise",
-      "team",
-      "dein",
-      "dir",
-      "wir",
-      "infografik",
-    ],
-    href: "/materialien",
-    section: "Materialien",
-  },
-  {
-    title: "Die 5 Leitlinien für den Alltag",
-    description:
-      "Infografik: Orientierung für einen ruhigeren und klareren Alltag",
-    keywords: [
-      "leitlinien",
-      "alltag",
-      "hektik",
-      "routinen",
-      "ruhe",
-      "team",
-      "grenzen",
-      "infografik",
-    ],
-    href: "/materialien",
-    section: "Materialien",
-  },
-  {
     title: "Textversion: Spickzettel Krisenkommunikation",
     description:
-      "Lesbare Web-Version mit 3 Schritten, Standardsatz, Exit-Sätzen und Notfallnummern",
+      "Lesbare Web-Version mit drei wählbaren Schritten, Ausstiegssätzen ohne Rückkehrpflicht und Notfallnummern",
     keywords: [
       "textversion",
       "krisenkommunikation",
@@ -758,7 +614,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Die Anspannungskurve",
     description:
-      "Lesbare Web-Version zur Anspannungskurve: wann Gespräch möglich ist und wann zuerst Ruhe, weniger Druck oder eine Pause hilft",
+      "Lesbare Web-Version zur Anspannungskurve: wann ein Gespräch möglich ist und wann Pause, Abstand oder ein Gesprächsende helfen können",
     keywords: [
       "textversion",
       "anspannungskurve",
@@ -777,14 +633,14 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Alarm-Modus vs. Denk-Modus",
     description:
-      "Lesbare Web-Version zur Unterscheidung zwischen Alarm-Zustand, Denk-Zustand und den passenden nächsten Schritten",
+      "Lesbare Web-Version eines vereinfachten Stressmodells mit Wahlmöglichkeiten für weniger Druck, Pause, Abstand und Selbstschutz",
     keywords: [
       "textversion",
       "alarm-modus",
       "denk-modus",
       "neurobiologie",
       "trigger",
-      "beruhigen",
+      "weniger druck",
       "handout",
       "pdf",
     ],
@@ -792,28 +648,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Der 4-Phasen-Zyklus",
-    description:
-      "Lesbare Web-Version zum wiederkehrenden Beziehungszyklus mit 4 Phasen, Kernaussage und möglichen Ansatzpunkten für Angehörige",
-    keywords: [
-      "textversion",
-      "4-phasen-zyklus",
-      "zyklus",
-      "freundlichkeit",
-      "verschlechterung",
-      "explosion",
-      "schweigen",
-      "verstehen",
-      "handout",
-      "pdf",
-    ],
-    href: "/materialien/text/4-phasen",
-    section: "Materialien",
-  },
-  {
     title: "Textversion: Das Gehirn verstehen",
     description:
-      "Lesbare Web-Version zu Amygdala, Hippocampus, präfrontalem Kortex und 3 Schritten zur Beruhigung bei Überflutung",
+      "Lesbare Web-Version eines vereinfachten Stressmodells mit freiwilligen Schritten zu eigener Orientierung, Pause, Abstand und Schutz",
     keywords: [
       "textversion",
       "gehirn verstehen",
@@ -821,7 +658,7 @@ export const searchableContent: SearchEntry[] = [
       "hippocampus",
       "präfrontaler kortex",
       "überflutung",
-      "beruhigung",
+      "eigene orientierung",
       "neurobiologie",
       "handout",
       "pdf",
@@ -849,7 +686,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Die Sauerstoffmaske",
     description:
-      "Lesbare Web-Version zum negativen und hilfreichen Kreislauf der Selbstfürsorge mit drei konkreten Schritten",
+      "Lesbare Web-Version zur Selbstfürsorge als eigenem Recht – unabhängig davon, wie viel Unterstützung Angehörige geben",
     keywords: [
       "textversion",
       "sauerstoffmaske",
@@ -949,15 +786,15 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Wenn Worte treffen",
+    title: "Textversion: Wenn Worte treffen – belastende Aussagen einordnen",
     description:
-      "Lesbare Web-Version zu Schuldzuweisungen, typischen harten Sätzen und ruhigeren Antworten für Angehörige",
+      "Lesbare Web-Version, um belastende Aussagen ohne Motivzuschreibung einzuordnen, mögliche Antworten zu finden und Sicherheitssignale getrennt zu behandeln",
     keywords: [
       "textversion",
       "wenn worte treffen",
       "schuldzuweisungen",
       "vorwürfe",
-      "anklage",
+      "sicherheitssignal",
       "kommunikation",
       "handout",
       "pdf",
@@ -973,7 +810,8 @@ export const searchableContent: SearchEntry[] = [
       "textversion",
       "gespräche kippen",
       "eskalation",
-      "beruhigen",
+      "eigenes tempo",
+      "tempo senken",
       "verbinden",
       "begrenzen",
       "handout",
@@ -985,7 +823,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Grenzen setzen, ohne zu eskalieren",
     description:
-      "Lesbare Web-Version zur 3-Teile-Formel mit Fakt, Ich-Grenze und nächstem Schritt",
+      "Lesbare Web-Version zur 3-Teile-Formel mit Beobachtung, Ich-Grenze und einem selbst verantwortbaren nächsten Schritt",
     keywords: [
       "textversion",
       "grenzen setzen ohne eskalation",
@@ -1002,7 +840,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Pause statt Streit",
     description:
-      "Lesbare Web-Version zu Stabil, Warnstufe und Eskalation mit klaren Stopp- und Rückkehrsätzen",
+      "Lesbare Web-Version zu Stabil, Warnstufe und Eskalation mit klaren Stoppsätzen ohne Rückkehrpflicht",
     keywords: [
       "textversion",
       "pause statt streit",
@@ -1019,7 +857,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Zuhören ohne Zustimmen",
     description:
-      "Lesbare Web-Version zu Validierung ohne Nachgeben, Anerkennen ohne Schuldübernahme und Grenze plus Plan",
+      "Lesbare Web-Version zu Anerkennung ohne automatische Zustimmung, Schuldübernahme oder Rückkehrversprechen",
     keywords: [
       "textversion",
       "zuhören ohne zustimmen",
@@ -1070,7 +908,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Textversion: Die Brücke mit Geländer",
     description:
-      "Lesbare Web-Version zur Brücken-Metapher für Kontakt, Grenzen, Absprachen und Selbstschutz in belasteten Beziehungen",
+      "Lesbare Web-Version zur Brücken-Metapher für freiwilligen Kontakt, Grenzen, geteilte Verantwortung und Selbstschutz",
     keywords: [
       "textversion",
       "brücke mit geländer",
@@ -1191,16 +1029,15 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Das Fortschritt-Paradox",
+    title: "Textversion: Veränderung verläuft unterschiedlich",
     description:
-      "Lesbare Web-Version dazu, warum Rückschläge zum Genesungsweg gehören und Fortschritt nicht linear verläuft",
+      "Lesbare Web-Version zu unterschiedlichen Genesungswegen, ohne festes Rückfallmuster oder Bewertung von aussen",
     keywords: [
       "textversion",
-      "fortschritt paradox",
-      "rückschläge",
+      "veränderung",
+      "schwierigere phasen",
       "genesung",
-      "nicht linear",
-      "rückfälle",
+      "individueller verlauf",
       "handout",
       "pdf",
     ],
@@ -1242,16 +1079,15 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Ihre Rolle im Genesungsprozess",
+    title: "Textversion: Freiwillige Unterstützung und eigene Grenzen",
     description:
-      "Lesbare Web-Version zu hilfreichen Angehörigenbeiträgen, klaren Nicht-Aufgaben und realistischer Rollenklarheit",
+      "Lesbare Web-Version zu freiwilligen Angeboten, eigenen Grenzen und klarer Abgrenzung von Genesungsverantwortung",
     keywords: [
       "textversion",
-      "rolle im genesungsprozess",
+      "freiwillige unterstützung",
       "angehörige",
-      "rollenklarheit",
-      "nicht retten",
-      "stabilität",
+      "eigene grenzen",
+      "keine genesungsverantwortung",
       "handout",
       "pdf",
     ],
@@ -1458,8 +1294,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Glossar",
   },
   {
-    title: "Splitting",
-    description: "Schwarz-Weiss-Denken bei Borderline – Glossar-Eintrag",
+    title: "Bewertungen unter hoher Belastung",
+    description:
+      "Einordnung eines beschreibenden Modells, das keine feste Eigenschaft oder Absicht bezeichnet",
     keywords: [
       "splitting",
       "schwarz-weiss",
@@ -1499,8 +1336,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Glossar",
   },
   {
-    title: "Co-Abhängigkeit",
-    description: "Wenn das eigene Wohlbefinden vom Zustand des anderen abhängt",
+    title: "Überanpassung und übernommene Verantwortung",
+    description:
+      "Wenn Angehörige eigene Bedürfnisse wiederholt zurückstellen oder sich übermässig verantwortlich fühlen",
     keywords: [
       "co-abhängigkeit",
       "abhängigkeit",
@@ -1512,8 +1350,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Glossar",
   },
   {
-    title: "Enabling",
-    description: "Unbeabsichtigtes Ermöglichen von problematischem Verhalten",
+    title: "Unbeabsichtigte Wirkung von Hilfe",
+    description:
+      "Wie konkrete Hilfen neben Entlastung auch unerwünschte Wirkungen haben können",
     keywords: [
       "enabling",
       "ermöglichen",
@@ -1535,7 +1374,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Leuchtturm-Prinzip",
     description:
-      "Metapher für die Rolle von Angehörigen – stabil sein, ohne zu steuern",
+      "Metapher für die Selbstorientierung von Angehörigen – ohne feste Stabilitäts- oder Führungsrolle",
     keywords: [
       "leuchtturm",
       "prinzip",
@@ -1574,7 +1413,8 @@ export const searchableContent: SearchEntry[] = [
   },
   {
     title: "Ich hasse dich – verlass mich nicht",
-    description: "Klassiker zum Verständnis von Borderline",
+    description:
+      "Historisch einflussreicher Ratgeber mit verallgemeinernden Aussagen – kritisch eingeordnet",
     keywords: [
       "ich hasse dich",
       "verlass mich nicht",
@@ -1662,16 +1502,24 @@ export const searchableContent: SearchEntry[] = [
     section: "FAQ",
   },
   {
-    title: "Mein Angehöriger will keine Therapie",
-    description: "FAQ: Was tun, wenn Betroffene Behandlung ablehnen",
-    keywords: ["therapie", "ablehnen", "will nicht", "verweigert", "faq"],
+    title: "Die nahestehende Person möchte keine Therapie",
+    description:
+      "FAQ: Autonomie respektieren, Möglichkeiten ansprechen und die eigene Rolle klären",
+    keywords: ["therapie", "ablehnen", "will nicht", "autonomie", "faq"],
     href: "/faq",
     section: "FAQ",
   },
   {
-    title: "Bin ich co-abhängig?",
-    description: "FAQ: Warnsignale für Co-Abhängigkeit erkennen",
-    keywords: ["co-abhängig", "abhängigkeit", "warnsignale", "muster", "faq"],
+    title: "Kommt mein eigenes Leben zu kurz?",
+    description:
+      "FAQ: Übernommene Verantwortung und die eigenen Bedürfnisse einordnen",
+    keywords: [
+      "co-abhängig",
+      "überanpassung",
+      "verantwortung",
+      "bedürfnisse",
+      "faq",
+    ],
     href: "/faq",
     section: "FAQ",
   },
@@ -1828,7 +1676,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Im Alltag unterstützen",
     description:
-      "Stabilität bieten, Skills unterstützen, gemeinsame Aktivitäten – praktische Tipps für den Alltag",
+      "Freiwillige Absprachen, eigene Grenzen und gemeinsame Aktivitäten – praktische Orientierung für den Alltag",
     keywords: [
       "alltag",
       "stabilität",
@@ -1842,9 +1690,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Unterstützen",
   },
   {
-    title: "Therapie begleiten",
+    title: "Therapie und Angehörigenrolle",
     description:
-      "DBT und andere Therapien verstehen, Fortschritte würdigen, mit Rückschlägen umgehen",
+      "DBT und andere Therapien verstehen, Autonomie achten und die eigene Angehörigenrolle klären",
     keywords: [
       "therapie",
       "dbt",
@@ -1860,7 +1708,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "In der Krise unterstützen",
     description:
-      "Krisen erkennen, deeskalieren und Sicherheit gewährleisten – konkrete Handlungsschritte",
+      "Warnzeichen einordnen lassen, den eigenen Schutz wahren und professionelle Hilfe einbeziehen – konkrete Handlungsschritte",
     keywords: [
       "krise",
       "deeskalation",
@@ -1875,11 +1723,12 @@ export const searchableContent: SearchEntry[] = [
 
   // Krisenszenarien (Notfall-Seite)
   {
-    title: "Suiziddrohung – Was tun?",
-    description: "Schritt-für-Schritt-Anleitung bei Suiziddrohungen",
+    title: "Suizidgedanken oder Suizidankündigung – was tun?",
+    description:
+      "Orientierung bei suizidbezogenen Äusserungen oder möglicher unmittelbarer Gefahr",
     keywords: [
       "suizid",
-      "drohung",
+      "suizidankündigung",
       "selbstmord",
       "will nicht mehr",
       "umbringen",
@@ -1888,16 +1737,16 @@ export const searchableContent: SearchEntry[] = [
     section: "Krisenressourcen",
   },
   {
-    title: "Selbstverletzung – Was tun?",
+    title: "Orientierung nach Selbstverletzung",
     description:
-      "Anleitung bei Ritzen, Brennen oder anderen Selbstverletzungen",
+      "Medizinische Versorgung, fachliche Unterstützung und nächste sichere Schritte",
     keywords: ["selbstverletzung", "ritzen", "schneiden", "brennen", "svv"],
     href: "/soforthilfe",
     section: "Krisenressourcen",
   },
   {
-    title: "Aggressive Eskalation – Was tun?",
-    description: "Deeskalation bei Schreien, Drohen oder Gewalt",
+    title: "Wenn eine Situation bedrohlich wird",
+    description: "Schutz und Hilfewege bei Schreien, Drohen oder Gewalt",
     keywords: [
       "aggression",
       "eskalation",
@@ -1910,16 +1759,10 @@ export const searchableContent: SearchEntry[] = [
     section: "Krisenressourcen",
   },
   {
-    title: "Druck und Drohungen – Was tun?",
+    title: "Wenn Druck oder Drohungen auftreten",
     description:
-      "Umgang mit Drohungen, Schuldvorwürfen und starkem Beziehungsdruck",
-    keywords: [
-      "erpressung",
-      "manipulation",
-      "schuld",
-      "drohung",
-      "wenn du gehst",
-    ],
+      "Eigene Grenzen, Sicherheit und professionelle Unterstützung bei starkem Beziehungsdruck",
+    keywords: ["schuld", "drohung", "wenn du gehst"],
     href: "/soforthilfe",
     section: "Krisenressourcen",
   },
@@ -1928,7 +1771,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Situations-Wegweiser",
     description:
-      "Was tun in konkreten Situationen? Interaktiver Wegweiser durch Krise, Eskalation und Alltagssituationen",
+      "Beobachtbare Situationen einordnen, den eigenen Schutz wahren und passende professionelle Hilfe finden",
     keywords: [
       "wegweiser",
       "situation",
@@ -1948,12 +1791,12 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Kommunikations-Übungen",
     description:
-      "SET, DEAR MAN und Validierung interaktiv üben – mit realistischen Szenarien und Feedback",
+      "Offene Fragen, klare Grenzen, DEAR MAN und Validierung interaktiv üben – mit anpassbaren Szenarien und Feedback",
     keywords: [
       "üben",
       "szenarien",
       "kommunikation",
-      "set",
+      "offene fragen",
       "dear man",
       "validierung",
       "feedback",

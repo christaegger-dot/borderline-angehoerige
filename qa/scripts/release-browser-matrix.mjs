@@ -494,8 +494,7 @@ async function runFlow(page, profile) {
 
   await step("Release-PDF-Routen direkt prüfen", async () => {
     const pdfRoutes = [
-      "/notfallplan-krise-v04.pdf",
-      "/infografiken/manus-leuchtturm-v1.pdf",
+      "/infografiken/manus-kinder-v3.pdf",
       "/infografiken/manus-grenzen-spickzettel-v2.pdf",
     ];
 
@@ -510,15 +509,30 @@ async function runFlow(page, profile) {
     }
   });
 
+  await step(
+    "Zurückgezogene Notfallplan-Dateien bleiben gesperrt",
+    async () => {
+      const routes = [
+        "/api/material-download/notfallplan-krise?disposition=inline",
+        "/notfallplan-krise-v04.pdf",
+        "/notfallplan-krise-v04-preview.webp",
+        "/notfallplan-krise-v04-preview.png",
+      ];
+
+      for (const route of routes) {
+        const response = await fetch(routeUrl(route), { redirect: "manual" });
+        if (response.status !== 404) {
+          throw new Error(`${route} liefert ${response.status}; erwartet 404`);
+        }
+      }
+    }
+  );
+
   await step("Legacy-PDF-Routen leiten mit 307 auf Assets um", async () => {
     const redirectCases = [
       {
-        route: "/api/material-download/notfallplan-krise?disposition=inline",
-        target: "/notfallplan-krise-v04.pdf",
-      },
-      {
-        route: "/api/material-download/leuchtturm",
-        target: "/infografiken/manus-leuchtturm-v1.pdf",
+        route: "/api/material-download/kinder",
+        target: "/infografiken/manus-kinder-v3.pdf",
       },
       {
         route: "/api/material-download/grenzen-spickzettel",

@@ -227,6 +227,9 @@ describe("Notfallkarte storage fallbacks", () => {
     renderPage();
 
     expect(
+      screen.getByText(/wem die Karte gehört, wer sie aufbewahrt/i)
+    ).toBeInTheDocument();
+    expect(
       screen.getByText(
         /Standardmässig bleiben neue Einträge nur in dieser geöffneten Seite/i
       )

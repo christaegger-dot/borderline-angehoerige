@@ -2,8 +2,7 @@
  * RollenOrbitVisualisierung
  *
  * Orbit-Diagramm für die Therapie-Seite.
- * Zeigt die Rollen im Therapiesystem: Was ist Aufgabe der Angehörigen,
- * was gehört zur Therapie, was liegt beim Betroffenen.
+ * Zeigt mögliche Beiträge und Grenzen im Therapiesystem.
  * Interaktiv: Klick auf eine Rolle zeigt Details.
  */
 import { useState } from "react";
@@ -16,8 +15,8 @@ interface OrbitRolle {
   kurz: string;
   icon: React.ElementType;
   tintVar: string;
-  aufgaben: string[];
-  nichtAufgaben: string[];
+  moeglicheBeitraege: string[];
+  nichtZuErwarten: string[];
 }
 
 const rollen: OrbitRolle[] = [
@@ -27,18 +26,18 @@ const rollen: OrbitRolle[] = [
     kurz: "Ihre Rolle",
     icon: Heart,
     tintVar: "--color-terracotta-mid",
-    aufgaben: [
-      "Stabile Präsenz zeigen",
+    moeglicheBeitraege: [
+      "Kontakt anbieten, wenn er gewünscht und für Sie tragbar ist",
       "Eigene Grenzen kommunizieren",
-      "Therapie emotional mittragen",
+      "Auf Wunsch bei Behandlungsschritten unterstützen",
       "Eigene Entlastung suchen",
-      "Verlässlich und berechenbar bleiben",
+      "Vereinbarungen einhalten, soweit es möglich ist",
     ],
-    nichtAufgaben: [
-      "Therapieziele vorgeben",
+    nichtZuErwarten: [
+      "Therapieziele bestimmen",
       "Fortschritt kontrollieren",
-      "Therapeut ersetzen",
-      "Motivation übernehmen",
+      "Behandlung oder Krisenhilfe ersetzen",
+      "Motivation oder Genesung herstellen",
     ],
   },
   {
@@ -47,32 +46,32 @@ const rollen: OrbitRolle[] = [
     kurz: "Therapie",
     icon: Stethoscope,
     tintVar: "--color-slate-blue",
-    aufgaben: [
-      "Behandlung planen und leiten",
-      "Skills vermitteln (z.B. DBT)",
+    moeglicheBeitraege: [
+      "Behandlung gemeinsam planen und fachlich begleiten",
+      "Skills anbieten und vermitteln (z. B. DBT)",
       "Krisen professionell begleiten",
-      "Therapieziele mit Betroffenen setzen",
-      "Angehörige ggf. einbeziehen",
+      "Therapieziele mit der behandelten Person vereinbaren",
+      "Angehörige mit Einwilligung einbeziehen",
     ],
-    nichtAufgaben: [
+    nichtZuErwarten: [
       "Angehörige therapieren",
-      "Familienprobleme lösen",
+      "Alle Beziehungsfragen stellvertretend lösen",
       "Rund-um-die-Uhr erreichbar sein",
     ],
   },
   {
     id: "betroffene",
-    label: "Betroffene Person",
-    kurz: "Betroffene/r",
+    label: "Person in Behandlung",
+    kurz: "Person",
     icon: User,
     tintVar: "--color-sage-mid",
-    aufgaben: [
-      "Eigene Therapiemotivation entwickeln",
-      "Skills im Alltag üben",
-      "Verantwortung für eigenes Handeln",
-      "Krisen-Signale früh kommunizieren",
+    moeglicheBeitraege: [
+      "Eigene Ziele und Wünsche für die Behandlung benennen",
+      "Skills ausprobieren, wenn sie passen",
+      "Verantwortung für eigenes Handeln soweit möglich übernehmen",
+      "Warnzeichen mitteilen, wenn dies möglich und gewünscht ist",
     ],
-    nichtAufgaben: [
+    nichtZuErwarten: [
       "Angehörige therapieren",
       "Allein für Beziehungsqualität sorgen",
     ],
@@ -98,8 +97,9 @@ export default function RollenOrbitVisualisierung() {
           Rollen im Therapiesystem
         </p>
         <p className="text-xs text-muted-foreground">
-          Wer trägt was? Klicken Sie auf eine Rolle, um Aufgaben und
-          Abgrenzungen zu sehen.
+          Wer kann was beitragen? Klicken Sie auf eine Rolle, um Möglichkeiten
+          und Grenzen zu sehen. Was passt, hängt von Wünschen, Einwilligung,
+          Situation und verfügbaren Kräften ab.
         </p>
       </div>
 
@@ -240,10 +240,10 @@ export default function RollenOrbitVisualisierung() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground mb-1.5">
-                      Aufgaben
+                      Mögliche Beiträge – wenn gewünscht und möglich
                     </p>
                     <ul className="space-y-1">
-                      {aktivRolle.aufgaben.map(a => (
+                      {aktivRolle.moeglicheBeitraege.map(a => (
                         <li
                           key={a}
                           className="flex items-start gap-2 text-sm text-foreground"
@@ -262,10 +262,10 @@ export default function RollenOrbitVisualisierung() {
 
                   <div className="border-t border-border/30 pt-3">
                     <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground mb-1.5">
-                      Nicht Ihre Aufgabe
+                      Nicht von dieser Rolle zu erwarten
                     </p>
                     <ul className="space-y-1">
-                      {aktivRolle.nichtAufgaben.map(a => (
+                      {aktivRolle.nichtZuErwarten.map(a => (
                         <li
                           key={a}
                           className="flex items-start gap-2 text-sm text-muted-foreground"
@@ -286,8 +286,8 @@ export default function RollenOrbitVisualisierung() {
                 className="h-full flex items-center justify-center rounded-xl border border-dashed border-border/40 p-6"
               >
                 <p className="text-sm text-muted-foreground text-center">
-                  Klicken Sie auf eine Rolle im Diagramm, um Aufgaben und
-                  Abgrenzungen zu sehen.
+                  Klicken Sie auf eine Rolle im Diagramm, um mögliche Beiträge
+                  und Grenzen zu sehen.
                 </p>
               </m.div>
             )}

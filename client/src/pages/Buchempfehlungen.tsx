@@ -67,7 +67,7 @@ const bookCategories: BookCategory[] = [
         publisher: "Kösel",
         year: "2020",
         description:
-          "Kommunikationstechniken für Angehörige (SET-UP-Methode). Vom Autor von «Ich hasse dich – verlass mich nicht», aber inhaltlich eigenständig: praktische Strategien, um Krisen zu entschärfen und im Gespräch zu bleiben.",
+          "Ein Ratgeber zur SET-UP-Methode. Schon die Vulkanmetapher kann Menschen mit Borderline-Erfahrung als unberechenbar oder gefährlich darstellen; auch Motive und Beziehungsmuster werden teilweise verallgemeinert. Deshalb nur mit kritischer Distanz lesen und nicht als heutige Krisen- oder Gesprächsanleitung verwenden.",
         forWhom: "Angehörige, Partner",
         bezugsUrl:
           "https://www.exlibris.ch/de/buecher-buch/deutschsprachige-buecher/jerold-j-kreisman/die-kunst-mit-einem-vulkan-zu-sprechen/id/9783466347568/",

@@ -20,12 +20,12 @@ export default function Wegweiser() {
     <Layout>
       <SEO
         title="Situations-Wegweiser"
-        description="Was tun, wenn Ihr Angehöriger in einer Krise ist? Unser interaktiver Wegweiser führt Sie Schritt für Schritt durch verschiedene Situationen."
+        description="Beobachtbare Situationen einordnen, den eigenen Schutz wahren und passende professionelle Hilfe finden."
         path="/wegweiser"
       />
       <MedicalPageSchema
         title="Situations-Wegweiser"
-        description="Was tun, wenn Ihr Angehöriger in einer Krise ist? Unser interaktiver Wegweiser führt Sie Schritt für Schritt durch verschiedene Situationen."
+        description="Beobachtbare Situationen einordnen, den eigenen Schutz wahren und passende professionelle Hilfe finden."
         path="/wegweiser"
       />
 
@@ -41,6 +41,19 @@ export default function Wegweiser() {
             nicht selbst sicher einschätzen können. Bei Unsicherheit helfen
             professionelle Anlaufstellen weiter.
           </Lede>
+          <p
+            className="mt-4"
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+            }}
+          >
+            Die beschriebenen Situationen kommen nicht bei allen Menschen mit
+            Borderline vor und können auch unabhängig von einer Diagnose
+            auftreten. Der Wegweiser ordnet beobachtbare Situationen – nicht
+            Diagnose, Motive oder Charakter einer Person.
+          </p>
           <EditorialCallout
             variant="achtung"
             title="Bei akuter Lebensgefahr"

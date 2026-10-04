@@ -28,7 +28,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Grenze + Plan",
-            text: "«So kann ich nicht weiterreden. Pause 10 Min, dann weiter.»",
+            text: "«So kann ich nicht weiterreden. Ich beende das Gespräch jetzt.»",
           },
         ],
       },
@@ -36,7 +36,7 @@ export const handoutTextVersions = [
         title: "2. Der Standardsatz",
         calloutTitle: "Standardsatz",
         calloutText:
-          "Ich sehe, dass du gerade sehr angespannt bist. Und gleichzeitig gilt: So reden wir nicht. Pause 10 Minuten, dann weiter.",
+          "Ich sehe, dass du gerade sehr angespannt bist. Und gleichzeitig gilt: So kann ich nicht weiterreden. Ich beende das Gespräch jetzt.",
       },
       {
         title: "3. Grenzen setzen",
@@ -53,15 +53,15 @@ export const handoutTextVersions = [
           },
           {
             title: "Nächster Schritt",
-            text: "Formulieren Sie, wie es konkret weitergeht: Pause, Uhrzeit oder nächster Kontaktpunkt.",
+            text: "Benennen Sie den nächsten Schritt, den Sie selbst verantworten können: eine Pause, das Gesprächsende oder – nur wenn es für Sie sicher und gewollt ist – ein späteres Kontaktangebot.",
           },
         ],
       },
       {
-        title: "4. Exit-Sätze",
+        title: "4. Ausstiegssätze",
         calloutTitle: "Exit-Sätze",
         calloutText:
-          "Ich gehe nicht weg, ich mache nur eine Pause. Wir sprechen um [Uhrzeit] weiter. Ich bin wieder da.",
+          "Ich beende das Gespräch jetzt. Ich entscheide später, ob und wann ich wieder ansprechbar bin. Bei Bedrohung oder Gewalt gehe ich auf Abstand und hole Hilfe.",
       },
       {
         title: "5. Wenn es nicht mehr Gespräch, sondern Krise ist",
@@ -124,9 +124,9 @@ export const handoutTextVersions = [
           "Nicht weiterargumentieren.",
           "Langsamer sprechen.",
           "Kurze Sätze verwenden.",
-          "Eine Pause mit Rückkehrzeit anbieten.",
+          "Eine Pause oder ein Gesprächsende ohne Rückkehrversprechen benennen.",
           "Auch auf die eigene Anspannung achten.",
-          "Das Gespräch später wieder aufnehmen.",
+          "Später nur dann neuen Kontakt anbieten, wenn es für Sie sicher und gewollt ist.",
         ],
       },
       {
@@ -134,7 +134,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Bei Rückzug",
-            text: "«Ich lasse dir Raum. Ich bin um [Uhrzeit] wieder ansprechbar.»",
+            text: "«Ich lasse dir Raum. Ob und wann wir wieder sprechen, können wir später neu entscheiden.»",
           },
           {
             title: "Im Gespräch",
@@ -150,8 +150,8 @@ export const handoutTextVersions = [
         title: "Warum Pausen helfen",
         bullets: [
           "Pausen senken Anspannung und öffnen wieder mehr Spielraum für Zuhören und Denken.",
-          "Ein klarer Rückkehrzeitpunkt gibt Sicherheit und schützt die Beziehung.",
-          "Eine Pause ist kein Rückzug aus der Beziehung, sondern eine Investition in sie.",
+          "Eine Pause kann Selbstschutz sein. Sie braucht weder ein Rückkehrversprechen noch eine Rechtfertigung.",
+          "Ein späterer Kontakt ist möglich, wenn beide Seiten ihn möchten und er sicher erscheint.",
         ],
       },
       {
@@ -168,54 +168,56 @@ export const handoutTextVersions = [
   createHandoutTextVersion("wenn-worte-treffen", {
     kicker: "Textversion",
     summary:
-      "Schuldzuweisungen treffen oft hart, sagen aber meist mehr über Schmerz, Angst oder Hilflosigkeit als über Ihren Wert. Die Web-Version zeigt fünf häufige Sätze und ruhigere Antworten darauf.",
+      "Harte oder vorwurfsvolle Aussagen können treffen. Diese Web-Version bleibt bei Wortlaut und Wirkung, bietet mögliche Antworten an und trennt ein suizidbezogenes Sicherheitssignal klar vom Gesprächskonflikt.",
     intro: [
-      "Harte Vorwürfe können Angehörige stark verunsichern. Die fünf Schuldzuweisungen helfen, typische Sätze einzuordnen und innerlich etwas mehr Abstand zu behalten.",
-      "Sie finden eine entlastende Grundhaltung, fünf typische Schuldzuweisungen mit möglicher Einordnung und Antwort sowie einen abschliessenden Merksatz, der Mitgefühl und Selbstschutz zusammenhält.",
+      "Harte Vorwürfe können Angehörige stark verunsichern. Die Beispiele zeigen mögliche Antworten, ohne festzulegen, ob eine Aussage stimmt oder welches Motiv dahintersteht.",
+      "Die Sätze sind Beispiele und nicht typisch für alle Menschen mit Borderline. Belastung anzuerkennen bedeutet nicht, einer Behauptung zuzustimmen oder verletzende Sprache hinzunehmen.",
     ],
     sections: [
       {
         title: "Kernaussage",
-        calloutTitle: "Worum es im Handout geht",
+        calloutTitle: "Bei Aussage und Wirkung bleiben",
         calloutText:
-          "Schuldzuweisungen sind keine Tatsachen. Sie sind Ausdruck von Schmerz, der keinen anderen Weg findet. Das zu wissen schützt Sie – ohne den Schmerz des anderen zu entwerten.",
+          "Von aussen lässt sich nicht sicher erkennen, was hinter einem Satz steht. Sie können Belastung wahrnehmen, die Aussage anders beurteilen und zugleich Ihre Grenze benennen.",
       },
       {
-        title: "5 häufige Schuldzuweisungen – und was dahintersteckt",
+        title: "4 belastende Aussagen – mögliche Antworten",
         cards: [
           {
             title: "«Du bist schuld, dass es mir so schlecht geht.»",
-            text: "Dahinter stehen oft Überforderung und Hilflosigkeit. Mögliche Antwort: «Ich sehe, dass es dir schlecht geht. Ich bin nicht die Ursache – aber ich bin da.»",
-          },
-          {
-            title: "«Wenn du gehst, bringe ich mich um.»",
-            text: "Dahinter stehen oft Verlustangst und Verzweiflung. Mögliche Antwort: «Ich höre, wie verzweifelt du bist. Ich bleibe damit nicht allein und hole jetzt Hilfe dazu.» Solche Sätze immer ernst nehmen: Bei unmittelbarer Gefahr nicht weiterdiskutieren, sondern professionelle Hilfe einbeziehen.",
+            text: "Sie müssen diese Zuschreibung nicht übernehmen. Mögliche Antwort: «Ich höre, dass es dir schlecht geht. Ich sehe die Ursache anders. Wir können darüber sprechen, wenn wir respektvoll bleiben.»",
           },
           {
             title: "«Du verstehst mich sowieso nicht.»",
-            text: "Dahinter stehen oft Einsamkeit und Enttäuschung. Mögliche Antwort: «Vielleicht verstehe ich nicht alles. Aber ich versuche es. Erzähl mir mehr.»",
+            text: "Mögliche Antwort: «Vielleicht verstehe ich nicht alles. Wenn du möchtest, sag mir, was dir gerade besonders wichtig ist.» Sie dürfen zugleich entscheiden, wie viel Sie in diesem Moment aufnehmen können.",
           },
           {
             title: "«Du bist genau wie alle anderen.»",
-            text: "Dahinter stehen oft Angst vor Ablehnung und Spaltung. Mögliche Antwort: «Das tut mir weh. Ich bin hier, weil du mir wichtig bist – auch wenn es gerade schwierig ist.»",
+            text: "Mögliche Antwort: «Ich höre, dass du enttäuscht bist. Ich bin ich und erlebe die Situation anders.» Sie müssen die Aussage weder widerlegen noch als Diagnosemerkmal deuten.",
           },
           {
             title: "«Ohne dich wäre alles besser.»",
-            text: "Dahinter stehen oft Scham und nach aussen gerichteter Selbsthass. Mögliche Antwort: «Das ist ein harter Satz. Ich bleibe trotzdem. Aber ich brauche auch Respekt.»",
+            text: "Dieser Satz kann verletzen. Mögliche Antwort: «Das ist ein harter Satz. Ich beende das Gespräch jetzt. Wir können später weiterreden, wenn ein respektvolles Gespräch möglich ist.»",
           },
         ],
       },
       {
-        title: "Merksatz",
-        calloutTitle: "Mitfühlen und sich gleichzeitig schützen",
+        title: "Separates Sicherheitssignal",
+        calloutTitle: "Wenn Suizid angesprochen wird",
         calloutText:
-          "Der Satz sagt etwas über den Schmerz – nicht über Sie. Sie dürfen mitfühlen und sich gleichzeitig schützen.",
+          "Eine Aussage wie «Wenn du gehst, bringe ich mich um» gehört nicht in eine Liste von Vorwürfen. Nehmen Sie sie ernst und holen Sie eine professionelle Einschätzung oder Hilfe dazu. Versuchen Sie nicht, Motiv oder Gefährdung allein zu beurteilen; nutzen Sie bei akuter Gefahr die separat ausgewiesenen Krisen- und Notfallwege. Ihre eigene Sicherheit bleibt wichtig.",
+      },
+      {
+        title: "Merksatz",
+        calloutTitle: "Anerkennen, ohne Motive festzulegen",
+        calloutText:
+          "Eine Aussage ist keine verlässliche Auskunft über ein verborgenes Motiv. Sie dürfen Belastung anerkennen, anders denken und sich gleichzeitig schützen.",
       },
     ],
     sourceLine:
-      "Quellen: [1] Berkowitz, C. & Gunderson, J. G., BPD Family Guidelines (NEABPD). [2] American Psychiatric Association, DSM-5-TR (2022). [3] Linehan, M. M. (1993).",
+      "Fachliche Bezugspunkte: Berkowitz, C. & Gunderson, J. G., BPD Family Guidelines (NEABPD); Linehan, M. M. (1993). Beispiele und Antwortsätze: eigene didaktische Darstellung.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 09.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 04.10.2026.",
   }),
   createHandoutTextVersion("gespraeche-kippen", {
     kicker: "Textversion",
@@ -245,7 +247,7 @@ export const handoutTextVersions = [
         title: "Die 3 Schritte",
         cards: [
           {
-            title: "Schritt 1: Beruhigen",
+            title: "Schritt 1: Eigenes Tempo senken",
             text: "Wenn es Ihnen möglich ist: Atmen Sie durch, sprechen Sie langsamer oder sagen Sie zunächst nichts.",
           },
           {
@@ -315,7 +317,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Nächster Schritt",
-            text: "Nennen Sie den nächsten Schritt konkret und machbar. Beispiel: «Pause 10 Minuten, dann sprechen wir weiter.»",
+            text: "Nennen Sie den nächsten Schritt konkret und in Ihrer Kontrolle. Beispiel: «Ich beende das Gespräch jetzt und entscheide später, ob ich wieder ansprechbar bin.»",
           },
         ],
       },
@@ -323,7 +325,7 @@ export const handoutTextVersions = [
         title: "Beispielsatz",
         calloutTitle: "Kurzform des Handouts",
         calloutText:
-          "Es eskaliert gerade. Ich bleibe ansprechbar, aber nicht im Streit. Pause 10 Min, dann weiter.",
+          "Es eskaliert gerade. Ich beende das Gespräch jetzt. Ob und wann ein neuer Kontakt möglich ist, kläre ich später.",
       },
       {
         title: "Kernaussage",
@@ -376,16 +378,16 @@ export const handoutTextVersions = [
           "Stimme wird lauter.",
           "Vorwürfe beginnen.",
           "Körper spannt sich an.",
-          "Kündigen Sie früh an: «Ich merke, es wird schwierig. Pause 10 Minuten.»",
+          "Kündigen Sie früh an: «Ich merke, es wird schwierig. Ich unterbreche das Gespräch jetzt.»",
         ],
       },
       {
         title: "Eskalation",
         bullets: [
-          "Schreien, Beschimpfungen.",
-          "Kontrolle geht verloren.",
+          "Schreien, Beschimpfungen, Drohungen oder anderes grenzüberschreitendes Verhalten.",
+          "Ein respektvolles Gespräch ist in diesem Moment nicht möglich.",
           "Jetzt stoppen und Abstand schaffen.",
-          "«Ich unterbreche das Gespräch jetzt. Wir sprechen um [Uhrzeit] weiter.»",
+          "«Ich unterbreche das Gespräch jetzt. Ob und wann ich wieder ansprechbar bin, entscheide ich später.»",
         ],
       },
       {
@@ -404,14 +406,14 @@ export const handoutTextVersions = [
         title: "Orientierung",
         calloutTitle: "Was in welcher Stufe hilft",
         calloutText:
-          "Stabil: im Gespräch bleiben. Warnstufe: Pause ankündigen. Eskalation: Gespräch stoppen und Rückkehr vereinbaren.",
+          "Stabil: sprechen, solange es für beide Seiten möglich ist. Warnstufe: Pause ankündigen. Eskalation: Gespräch stoppen und Abstand schaffen. Ein späterer Kontakt ist keine Pflicht.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Definieren Sie Ihre persönliche Warnstufe: Woran merken Sie, dass es kippt?",
           "Üben Sie einen Stopp-Satz, der für Sie natürlich klingt.",
-          "Planen Sie Rückkehrsätze vorab, damit Sie sie unter Stress nicht erst suchen müssen.",
+          "Planen Sie einen Ausstiegssatz ohne Rückkehrversprechen, damit Sie ihn unter Stress nicht erst suchen müssen.",
         ],
       },
     ],
@@ -423,9 +425,9 @@ export const handoutTextVersions = [
   createHandoutTextVersion("zuhoeren-ohne-zustimmen", {
     kicker: "Textversion",
     summary:
-      "Validieren ist nicht nachgeben. Sie können Gefühle anerkennen, ohne Schuld zu übernehmen oder der Interpretation zustimmen zu müssen.",
+      "Anerkennen heisst nicht automatisch zustimmen. Sie können Gefühle wahrnehmen, ohne Schuld zu übernehmen oder eine Deutung teilen zu müssen.",
     intro: [
-      "Zuhören ohne Zustimmen zeigt, wie Anerkennung möglich ist, ohne die eigene Sicht aufzugeben. So kann Verbindung entstehen, ohne dass Grenzen verschwimmen.",
+      "Zuhören ohne Zustimmen zeigt, wie Anerkennung möglich ist, ohne die eigene Sicht aufzugeben. So kann ein Gespräch respektvoller werden, ohne dass Grenzen verschwimmen.",
       "Sie finden anerkennende Sätze, Beispiele für ungünstige Zustimmung, eine Grenze mit Plan, die Kernaussage und drei kurze Übungshinweise.",
     ],
     sections: [
@@ -451,7 +453,7 @@ export const handoutTextVersions = [
         title: "Grenze + Plan",
         calloutTitle: "Kombination aus Respekt und Selbstschutz",
         calloutText:
-          "Ich kann zuhören, ohne allem zuzustimmen. Wenn das Gespräch kippt, mache ich eine Pause und komme wieder. Bei Gefahr gilt Schutz vor Gespräch.",
+          "Ich kann zuhören, ohne allem zuzustimmen. Wenn das Gespräch kippt, beende ich es. Ob und wann ein neuer Kontakt möglich ist, entscheide ich später. Bei Gefahr gilt Schutz vor Gespräch.",
       },
       {
         title: "Kernaussage",
@@ -461,7 +463,7 @@ export const handoutTextVersions = [
       },
       {
         title: "Merkhilfe",
-        calloutTitle: "Gefühl anerkennen, Deutung nicht schlucken",
+        calloutTitle: "Gefühl anerkennen, Deutung offenlassen",
         calloutText:
           "Sie können sagen, dass der Schmerz real ist, ohne automatisch die ganze Erklärung oder Schuld zu übernehmen.",
       },

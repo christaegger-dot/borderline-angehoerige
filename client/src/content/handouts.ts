@@ -1,5 +1,10 @@
 import { genesungItems } from "./genesung";
 import { grenzenItems } from "./grenzen";
+import {
+  getHandoutAssetVersion,
+  handoutGovernance,
+  isHandoutVisualPublished,
+} from "./handoutGovernance";
 import { kommItems } from "./kommunizieren";
 import { materials } from "./materialien";
 import { selbstfuersorgeInfografiken } from "./selbstfuersorge";
@@ -24,6 +29,13 @@ export interface HandoutAsset {
 const HANDOUT_ASSET_PATH_PREFIX = "/api/material-download";
 const REMOTE_ASSET_RE = /^https?:\/\//i;
 const LOCAL_PDF_RE = /^\/.+\.pdf(?:[?#].*)?$/i;
+const withheldHandoutSources = new Set<string>();
+
+for (const governance of Object.values(handoutGovernance)) {
+  if (isHandoutVisualPublished(governance.id)) continue;
+  const version = getHandoutAssetVersion(governance);
+  if (version) withheldHandoutSources.add(`/infografiken/${version}.pdf`);
+}
 
 function slugifySegment(value: string) {
   return value
@@ -94,58 +106,90 @@ function registerAsset(
   });
 }
 
+function registerGovernedAsset(
+  registry: Map<string, HandoutAsset>,
+  sourceUrl: string | undefined,
+  governanceId: string,
+  assetId: string,
+  title: string
+) {
+  if (!isHandoutVisualPublished(governanceId)) {
+    if (sourceUrl) withheldHandoutSources.add(sourceUrl);
+    return;
+  }
+
+  registerAsset(registry, sourceUrl, assetId, title);
+}
+
 function buildRegistry() {
   const registry = new Map<string, HandoutAsset>();
 
   for (const item of materials) {
     if (item.topicRecommendation) continue;
-    registerAsset(
+    registerGovernedAsset(
       registry,
       item.pdfUrl ?? item.downloadUrl,
+      item.id,
       item.id,
       item.title
     );
   }
 
   for (const item of verstehenInfografiken) {
-    registerAsset(registry, item.pdfUrl, `verstehen-${item.id}`, item.title);
+    registerGovernedAsset(
+      registry,
+      item.pdfUrl,
+      item.id,
+      `verstehen-${item.id}`,
+      item.title
+    );
   }
 
   for (const item of unterstuetzenItems) {
-    registerAsset(
+    registerGovernedAsset(
       registry,
       item.pdfUrl,
+      item.id,
       `unterstuetzen-${slugifySegment(item.title)}`,
       item.title
     );
   }
 
   for (const item of kommItems) {
-    registerAsset(
+    registerGovernedAsset(
       registry,
       item.pdfUrl,
+      item.id,
       `kommunizieren-${slugifySegment(item.title)}`,
       item.title
     );
   }
 
   for (const item of grenzenItems) {
-    registerAsset(
+    registerGovernedAsset(
       registry,
       item.pdfUrl,
+      item.id,
       `grenzen-${slugifySegment(item.title)}`,
       item.title
     );
   }
 
   for (const item of selbstfuersorgeInfografiken) {
-    registerAsset(registry, item.pdf, `selbstfuersorge-${item.id}`, item.title);
+    registerGovernedAsset(
+      registry,
+      item.pdf,
+      item.id,
+      `selbstfuersorge-${item.id}`,
+      item.title
+    );
   }
 
   for (const item of genesungItems) {
-    registerAsset(
+    registerGovernedAsset(
       registry,
       item.pdf,
+      item.id,
       `genesung-${slugifySegment(item.title)}`,
       item.title
     );
@@ -168,7 +212,12 @@ for (const item of materials) {
   const sourceUrl = item.pdfUrl ?? item.downloadUrl;
   const sourceKind = sourceUrl ? getSourceKind(sourceUrl) : null;
 
-  if (!sourceUrl || !sourceKind || handoutAssetsById.has(item.id)) {
+  if (
+    !sourceUrl ||
+    !sourceKind ||
+    !isHandoutVisualPublished(item.id) ||
+    handoutAssetsById.has(item.id)
+  ) {
     continue;
   }
 
@@ -210,9 +259,13 @@ export function getHandoutOpenHref(sourceUrl: string | undefined) {
     return null;
   }
 
+  if (withheldHandoutSources.has(sourceUrl)) {
+    return null;
+  }
+
   const asset = getHandoutAssetBySource(sourceUrl);
   if (!asset) {
-    return sourceUrl;
+    return sourceUrl.startsWith("/infografiken/") ? null : sourceUrl;
   }
 
   // Same-origin PDFs are deployed as static assets. Linking to them directly
@@ -228,9 +281,13 @@ export function getHandoutDownloadHref(sourceUrl: string | undefined) {
     return null;
   }
 
+  if (withheldHandoutSources.has(sourceUrl)) {
+    return null;
+  }
+
   const asset = getHandoutAssetBySource(sourceUrl);
   if (!asset) {
-    return sourceUrl;
+    return sourceUrl.startsWith("/infografiken/") ? null : sourceUrl;
   }
 
   return asset.sourceKind === "local"

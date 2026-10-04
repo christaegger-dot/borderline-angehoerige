@@ -698,6 +698,22 @@ export default function Notfallkarte() {
               color: "var(--fg-secondary)",
             }}
           >
+            <strong style={{ color: "var(--fg-primary)" }}>
+              Gemeinsam und mit Einverständnis ausfüllen:
+            </strong>{" "}
+            Wenn die Karte Angaben über eine andere Person enthält, erstellen
+            Sie sie möglichst gemeinsam und mit deren Einverständnis. Klären
+            Sie, wem die Karte gehört, wer sie aufbewahrt und wer sie sehen
+            darf. In akuter Gefahr hat das Hilfeholen Vorrang.
+          </p>
+          <p
+            className="mt-4"
+            style={{
+              fontSize: "var(--text-sm)",
+              lineHeight: "var(--lh-relaxed)",
+              color: "var(--fg-secondary)",
+            }}
+          >
             Sofort Hilfe brauchen?{" "}
             <AppLink href="/soforthilfe" className="editorial-link">
               Soforthilfe-Nummern
@@ -1146,7 +1162,7 @@ export default function Notfallkarte() {
               href: "/unterstuetzen/krise",
               title: "Krisenbegleitung",
               description:
-                "Deeskalation, Ampel-System, was sagen / was vermeiden.",
+                "Deeskalation, Sicherheitsorientierung und passende Akutwege.",
             },
           ]}
         />

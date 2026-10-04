@@ -52,13 +52,19 @@
   P1-Illustrationsaudit und zwölf Browser-/Viewport-Fälle bestanden.
 - Browser-Druckregeln: in den zwölf lokalen Browserfällen bleiben Kopf und
   Inhalt der Visualisierung sichtbar; die Seitennavigation wird ausgeblendet.
+- Geschützte Deploy-Preview #617: Am 04.10.2026 wurde der Netlify-Deploy
+  `6ac2186bb2199f0008a2bd85` zum Commit
+  `445bdc6d2eadd3f1b83f245a87ba99e471a0d5f7` nach Anmeldung interaktiv
+  geprüft. Alle drei Textseiten zeigen die V3-Inhalte und verlinken Öffnen und
+  Herunterladen direkt auf das jeweilige V3-PDF. Alle drei PDF-Ansichten wurden
+  ohne Fehlermeldung geladen; alle drei Download-Aktionen starteten. Die drei
+  bisherigen API-Routen leiten auf die korrekten statischen V3-PDFs weiter.
+  «Download derzeit nicht verfügbar» trat nicht mehr auf.
 
 ### Weiterhin offen
 
 - unabhängiger redaktioneller Gesamtentscheid für den V3-Stand;
 - verantwortete institutionelle Fachfreigabe;
-- erneute Auslieferungsprüfung im geschützten Netlify-Deploy nach Bereitstellung
-  dieses Commits;
 - reale Screenreader- und Nutzendentests;
 - PDF-UA-/Matterhorn-Prüfung und Prüfung der semantischen PDF-Lesereihenfolge;
 - unabhängige Prüfung im nativen Browser-Druckdialog sowie auf realen Druckern.

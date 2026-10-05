@@ -73,6 +73,7 @@ type NodeSelector = {
   take?: number;
   prefix?: string;
   collapse?: boolean;
+  cardTitles?: string[];
 };
 
 type HandoutSpec = {
@@ -83,6 +84,7 @@ type HandoutSpec = {
   nodeSections: NodeSelector[];
   keySection: string;
   actionSection?: string;
+  actionTake?: number;
   safetySection?: string;
 };
 
@@ -122,6 +124,7 @@ const specs: HandoutSpec[] = [
     ],
     keySection: "Kernaussage",
     actionSection: "Was können Sie tun?",
+    actionTake: 4,
   },
   {
     id: "5-faktoren-genesung",
@@ -140,7 +143,7 @@ const specs: HandoutSpec[] = [
     nodeSections: [
       {
         section: "Was Sie freiwillig anbieten können",
-        take: 3,
+        cardTitles: ["Absprachen", "Eigene Grenzen", "Information anbieten"],
         prefix: "Anbieten",
       },
       {
@@ -301,7 +304,18 @@ function extractNodes(handout: HandoutTextVersion, selectors: NodeSelector[]) {
     const section = requireSection(handout, selector.section);
     const prefix = selector.prefix ? `${selector.prefix} · ` : "";
     if (section.cards?.length) {
-      return section.cards.slice(0, selector.take).map(card => ({
+      const selectedCards = selector.cardTitles
+        ? selector.cardTitles.map(title => {
+            const card = section.cards?.find(item => item.title === title);
+            if (!card) {
+              throw new Error(
+                `Missing card for ${handout.id}/${section.title}: ${title}`
+              );
+            }
+            return card;
+          })
+        : section.cards;
+      return selectedCards.slice(0, selector.take).map(card => ({
         title: `${prefix}${card.title}`,
         text: card.text,
       }));
@@ -329,13 +343,15 @@ function extractNodes(handout: HandoutTextVersion, selectors: NodeSelector[]) {
   });
 }
 
-function extractActions(handout: HandoutTextVersion, title?: string) {
+function extractActions(handout: HandoutTextVersion, title?: string, take = 3) {
   if (!title) return [];
   const section = requireSection(handout, title);
   if (section.cards?.length) {
-    return section.cards.slice(0, 3).map(card => `${card.title}: ${card.text}`);
+    return section.cards
+      .slice(0, take)
+      .map(card => `${card.title}: ${card.text}`);
   }
-  if (section.bullets?.length) return section.bullets.slice(0, 3);
+  if (section.bullets?.length) return section.bullets.slice(0, take);
   return [sectionText(section)];
 }
 
@@ -356,7 +372,7 @@ function metadataDate(standLine: string) {
 function renderHtml(spec: HandoutSpec, handout: HandoutTextVersion) {
   const nodes = extractNodes(handout, spec.nodeSections);
   const key = requireSection(handout, spec.keySection);
-  const actions = extractActions(handout, spec.actionSection);
+  const actions = extractActions(handout, spec.actionSection, spec.actionTake);
   const safety = spec.safetySection
     ? requireSection(handout, spec.safetySection)
     : null;

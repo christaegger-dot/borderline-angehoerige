@@ -1,6 +1,6 @@
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { promisify } from "node:util";
 import sharp from "sharp";
@@ -40,6 +40,21 @@ const retiredPublicVersions = [
   "manus-grenzen-erkennen-v1",
   "manus-lmk-v1",
 ];
+
+const requiredSourceText: Record<string, string[]> = {
+  "remission-heilung": [
+    "Achten Sie zugleich auf Ihre eigenen Grenzen und Ihren Unterstützungsbedarf.",
+    "Kap. 7.2.",
+  ],
+  "rolle-genesungsprozess": [
+    "Über Behandlung entscheidet die betroffene Person gemeinsam mit den Behandelnden.",
+  ],
+  "grenzen-erkennen": [
+    "Neue, starke oder anhaltende körperliche Beschwerden sollten medizinisch abgeklärt werden.",
+    "WHO, Stress – Questions and Answers (30. März 2026)",
+  ],
+  lmk: ["Diese Schutzregel gilt diagnoseunabhängig in jeder Beziehung."],
+};
 
 type Asset = {
   path: string;
@@ -89,6 +104,25 @@ function fail(message: string): never {
 
 function sha256(filePath: string) {
   return createHash("sha256").update(readFileSync(filePath)).digest("hex");
+}
+
+function normalizeText(value: string) {
+  return value.normalize("NFKC").replace(/\s+/gu, " ").trim();
+}
+
+function assertExactInventory(
+  directory: string,
+  extension: string,
+  expected: string[],
+  label: string
+) {
+  const actual = readdirSync(directory)
+    .filter(name => name.endsWith(extension))
+    .sort();
+  const wanted = [...expected].sort();
+  if (actual.join("|") !== wanted.join("|")) {
+    fail(`${label} inventory differs from the manifest`);
+  }
 }
 
 function resolveInsideRepo(relativePath: string) {
@@ -147,6 +181,10 @@ if (
 ) {
   fail("stylesheet is missing or changed after export");
 }
+const stylesheetText = readFileSync(stylesheet, "utf8");
+if (!/\.footer\s*\{[^}]*font-size:\s*8pt\s*;/su.test(stylesheetText)) {
+  fail("footer minimum size is not locked to 8pt");
+}
 
 for (const entry of manifest.entries) {
   const source = resolveInsideRepo(entry.sourceHtml);
@@ -163,6 +201,11 @@ for (const entry of manifest.entries) {
   ]) {
     if (!sourceHtml.includes(required)) {
       fail(`${entry.id} source misses ${required}`);
+    }
+  }
+  for (const required of requiredSourceText[entry.id] ?? []) {
+    if (!normalizeText(sourceHtml).includes(normalizeText(required))) {
+      fail(`${entry.id} source misses approved correction: ${required}`);
     }
   }
   const handout = versions.find(item => item.id === entry.id);
@@ -202,16 +245,23 @@ for (const entry of manifest.entries) {
     }
   }
 
-  const [{ stdout: pdfInfo }, webpMeta, thumbnailMeta] = await Promise.all([
-    execFileAsync("pdfinfo", [resolveInsideRepo(entry.pdf.path)]),
-    sharp(resolveInsideRepo(entry.webp.path)).metadata(),
-    sharp(resolveInsideRepo(entry.thumbnail.path)).metadata(),
-  ]);
+  const [{ stdout: pdfInfo }, { stdout: pdfText }, webpMeta, thumbnailMeta] =
+    await Promise.all([
+      execFileAsync("pdfinfo", [resolveInsideRepo(entry.pdf.path)]),
+      execFileAsync("pdftotext", [resolveInsideRepo(entry.pdf.path), "-"]),
+      sharp(resolveInsideRepo(entry.webp.path)).metadata(),
+      sharp(resolveInsideRepo(entry.thumbnail.path)).metadata(),
+    ]);
   if (!/^Pages:\s+1$/mu.test(pdfInfo) || !/^Tagged:\s+yes$/mu.test(pdfInfo)) {
     fail(`${entry.id} is not a one-page tagged PDF candidate`);
   }
   if (!/^Metadata Stream:\s+yes$/mu.test(pdfInfo)) {
     fail(`${entry.id} PDF has no XMP metadata stream`);
+  }
+  for (const required of requiredSourceText[entry.id] ?? []) {
+    if (!normalizeText(pdfText).includes(normalizeText(required))) {
+      fail(`${entry.id} PDF misses approved correction: ${required}`);
+    }
   }
   if (webpMeta.width !== 1600 || webpMeta.height !== 2263) {
     fail(`${entry.id} full WebP dimensions are wrong`);
@@ -220,6 +270,34 @@ for (const entry of manifest.entries) {
     fail(`${entry.id} thumbnail dimensions are wrong`);
   }
 }
+
+assertExactInventory(
+  path.join(repoRoot, "handouts/issue-615-refresh/sources"),
+  ".html",
+  manifest.entries.map(entry => path.basename(entry.sourceHtml)),
+  "HTML source"
+);
+const withheldOutputRoot = path.dirname(
+  resolveInsideRepo(manifest.entries[0].pdf.path)
+);
+assertExactInventory(
+  withheldOutputRoot,
+  ".pdf",
+  manifest.entries.map(entry => path.basename(entry.pdf.path)),
+  "PDF"
+);
+assertExactInventory(
+  withheldOutputRoot,
+  ".webp",
+  manifest.entries.map(entry => path.basename(entry.webp.path)),
+  "full WebP"
+);
+assertExactInventory(
+  path.join(withheldOutputRoot, "extras/thumbnails"),
+  ".webp",
+  manifest.entries.map(entry => path.basename(entry.thumbnail.path)),
+  "thumbnail"
+);
 
 console.log(
   `Issue 615 handout audit passed: ${manifest.entries.length} withheld families, no public draft assets.`

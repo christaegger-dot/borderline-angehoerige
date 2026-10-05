@@ -34,6 +34,8 @@ Paketbezogenes Protokoll:
 - `p1-gehirn-und-zustandslandkarte-2026-10-05.md` — fachlich begründeter
   Textentwurf für ein funktionales Stressmodell und eine nicht-lineare
   Zustands-Landkarte; noch ohne Visual-, PDF- oder Publikationsfreigabe.
+- `issue-615-fach-und-perspektivenpruefung-2026-10-05.md` — commitgebundener
+  Prüfauftrag und Freigabegrenzen für fünf zurückgehaltene Handouts.
 
 ## Grundsatz
 

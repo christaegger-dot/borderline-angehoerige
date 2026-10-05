@@ -5,7 +5,7 @@
 - interne ID / Version: `lmk` / `puk-grenze-in-handlung-v2`
 - sichtbarer Titel enthält **kein** «LMK»; die interne Alt-ID darf nicht publiziert werden
 - Dokumenttyp: Praxisblatt
-- Basis-Commit: `2fb83676c946489713ac23b53fb11226aa300ed5` (Reviewrunde 3)
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3` (Reviewrunde 3)
 - Text-Hash: `a992a3f3fe3cabcbc12fe806744375aab8a15b0b5d61bf6d0c421bc067fad9a5`
 - HTML-Hash: `8034c656c1d3eafcaeb346fd1d3cb3d532492fdb8d6a643b3033af02082d55ee`
 - PDF-Hash: `dc5990fd79ba7dda9d4b47bd8b8aef16365bd3b47adab7d6b8cdc1670710f6be`
@@ -111,8 +111,10 @@ Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte t
 
 ## Nachprüfung Reviewrunde 3 (KI-Simulation)
 
-Die Korrekturen sind in `2fb8367` umgesetzt und in `review-basis.json` als
-Reviewrunde 3 gesperrt; die Prüfsummen oben gelten für diesen Stand. Die
+Die Korrekturen sind in `2fb8367` umgesetzt, zwei Nachbesserungen aus dem
+Codex-Review zu #626 in `1b806c2`. Der Stand ist mit Basis-Commit `1b806c2`
+in `review-basis.json` als Reviewrunde 3 gesperrt; die Prüfsummen oben
+gelten für diesen Stand. Die
 Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
 Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
 hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von

@@ -4,12 +4,12 @@
 
 - ID / Version: `rolle-genesungsprozess` / `puk-rolle-genesungsprozess-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `2fb83676c946489713ac23b53fb11226aa300ed5` (Reviewrunde 3)
-- Text-Hash: `8e65aac186f0ece00638e1caa32eab2456956b6b5ecf21580a60454169c7c81f`
-- HTML-Hash: `07c2b42d71b01e81121e7c0a829863b9e2d7254b1a13dbe0c303e12bfca6c251`
-- PDF-Hash: `3399d813b4898d1bfc8f70ff8ad1288cb7a3d01878f4b515b943d4320af88316`
-- WebP-Hash: `c29c256de2390105aff2d9a311f6ff7249252375cf84b24f678951a9b1093ddd`
-- Thumbnail-Hash: `35d297107d04220bc0e5fbfd3c4649b6479efbcc6714b6c55b16d6bf846a746a`
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3` (Reviewrunde 3)
+- Text-Hash: `4d7b1368a3f1a528f240408c9bfa46d12655d9fa40f70991bbf1072619dca2e6`
+- HTML-Hash: `9409fe1b1dc8e27ad5598533d3f055cdd8d86a6d8a8d93ccfc0b84a0bb021362`
+- PDF-Hash: `d5e6e140459eeef7031a60b67abdb0805f0c63236c8cee9cbb0f05e0409498f4`
+- WebP-Hash: `f4d98d1d61f01756a7773490665b8b8c803380e0e4da300222ddb2dfc046183a`
+- Thumbnail-Hash: `bcb6a17381f5fdeba7f91e243f335b320def53c1e3a2a41cd9f1a3fe601b3c44`
 
 Zweck: freiwillige, gewünschte und tragbare Unterstützung von
 Überverantwortung trennen und die eigene Gesundheit von Angehörigen als
@@ -109,24 +109,27 @@ Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte t
 
 ## Nachprüfung Reviewrunde 3 (KI-Simulation)
 
-Die Korrekturen sind in `2fb8367` umgesetzt und in `review-basis.json` als
-Reviewrunde 3 gesperrt; die Prüfsummen oben gelten für diesen Stand. Die
+Die Korrekturen sind in `2fb8367` umgesetzt, zwei Nachbesserungen aus dem
+Codex-Review zu #626 in `1b806c2`. Der Stand ist mit Basis-Commit `1b806c2`
+in `review-basis.json` als Reviewrunde 3 gesperrt; die Prüfsummen oben
+gelten für diesen Stand. Die
 Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
 Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
 hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von
 Webtext und PDF-Textebene sowie Sichtkontrolle des WebP-Vollbilds.
 
-| Befund | Umsetzung                                                                                                                                  | geprüfte Fassungen  | Ergebnis                                       |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ---------------------------------------------- |
-| AR-01  | «Urteilsfähige Erwachsene entscheiden selbst über ihre Behandlung, gemeinsam mit den Behandelnden.»                                        | Web, PDF-Text, WebP | geschlossen (P1; nicht juristisch geprüft)     |
-| AR-03  | Allgemeine Beratung ohne Zustimmung möglich, Auskünfte nur mit Zustimmung; Sonderregeln bei Minderjährigen oder fehlender Urteilsfähigkeit | Web, PDF-Text, WebP | geschlossen                                    |
-| AR-04  | «… müssen sie nicht koordinieren – ausser etwa als Eltern Minderjähriger oder Beistand.»                                                   | Web, PDF-Text, WebP | geschlossen                                    |
-| AR-05  | Geltungsbereich im Webtext: «… richtet sich an Angehörige erwachsener Personen …»                                                          | Web                 | geschlossen (Webtext; im PDF über AR-03/AR-04) |
-| AR-07  | «Eine Pause ist kein Beziehungsabbruch.»                                                                                                   | Web, PDF-Text, WebP | geschlossen                                    |
-| AR-08  | Karte «Absprachen»: «… und fragen, was gewünscht ist.»                                                                                     | Web, PDF-Text, WebP | geschlossen                                    |
-| AR-09  | «Ihre Gesundheit zählt für sich – nicht erst als Beitrag …»                                                                                | Web, PDF-Text, WebP | geschlossen                                    |
-| AR-10  | Kartentitel «Genesung bewirken»                                                                                                            | Web, PDF-Text, WebP | geschlossen                                    |
-| G-01   | Überschrift «Mögliche nächste Schritte»                                                                                                    | Web, PDF-Text, WebP | geschlossen                                    |
+| Befund | Umsetzung                                                                                                                                                                                  | geprüfte Fassungen  | Ergebnis                                          |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ------------------------------------------------- |
+| AR-01  | «Urteilsfähige Erwachsene entscheiden selbst über ihre Behandlung, gemeinsam mit den Behandelnden.»                                                                                        | Web, PDF-Text, WebP | geschlossen (P1; nicht juristisch geprüft)        |
+| AR-03  | Allgemeine Beratung ohne Zustimmung möglich; Auskünfte grundsätzlich nur mit Zustimmung (siehe AR-11)                                                                                      | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-11  | Codex-Review zu #626: Zustimmungsregel nicht mehr absolut – «grundsätzlich nur mit ihrer Zustimmung; gesetzliche Ausnahmen gelten etwa bei Minderjährigen oder fehlender Urteilsfähigkeit» | Web, PDF-Text, WebP | geschlossen (`1b806c2`; nicht juristisch geprüft) |
+| AR-04  | «… müssen sie nicht koordinieren – ausser etwa als Eltern Minderjähriger oder Beistand.»                                                                                                   | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-05  | Geltungsbereich im Webtext: «… richtet sich an Angehörige erwachsener Personen …»                                                                                                          | Web                 | geschlossen (Webtext; im PDF über AR-03/AR-04)    |
+| AR-07  | «Eine Pause ist kein Beziehungsabbruch.»                                                                                                                                                   | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-08  | Karte «Absprachen»: «… und fragen, was gewünscht ist.»                                                                                                                                     | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-09  | «Ihre Gesundheit zählt für sich – nicht erst als Beitrag …»                                                                                                                                | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-10  | Kartentitel «Genesung bewirken»                                                                                                                                                            | Web, PDF-Text, WebP | geschlossen                                       |
+| G-01   | Überschrift «Mögliche nächste Schritte»                                                                                                                                                    | Web, PDF-Text, WebP | geschlossen                                       |
 
 Weiterhin offen:
 

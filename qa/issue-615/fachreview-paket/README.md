@@ -7,7 +7,7 @@ sind nicht als öffentliche Website-Assets freigegeben.
 
 ## Verbindlicher Prüfstand
 
-- Basis-Commit: `2fb83676c946489713ac23b53fb11226aa300ed5`
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3`
 - Reviewrunde: 3
 - ersetzt Reviewrunde 2 (`79091246f78411e283e48fdabba3ac4f751b3f6b`). Zu
   Runde 2 liegt eine KI-Simulation aller drei Perspektiven vor (Issue 625);

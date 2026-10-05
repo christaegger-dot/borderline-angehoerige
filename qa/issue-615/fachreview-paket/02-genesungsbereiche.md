@@ -4,7 +4,7 @@
 
 - ID / Version: `5-faktoren-genesung` / `puk-genesungsbedingungen-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `2fb83676c946489713ac23b53fb11226aa300ed5` (Reviewrunde 3)
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3` (Reviewrunde 3)
 - Text-Hash: `d163d19108d8109c8b2867986a74120bd1d5fba890ca00d5381ed502b783465a`
 - HTML-Hash: `d2d7cff49a7b2c7e5fcd92dd24e427260b1937aaf14f8f97fffca5110775058f`
 - PDF-Hash: `eced66e38863c64e368ae230964334922ba74acff850bdf79c77fa8dd3e628fe`
@@ -107,8 +107,10 @@ Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte t
 
 ## Nachprüfung Reviewrunde 3 (KI-Simulation)
 
-Die Korrekturen sind in `2fb8367` umgesetzt und in `review-basis.json` als
-Reviewrunde 3 gesperrt; die Prüfsummen oben gelten für diesen Stand. Die
+Die Korrekturen sind in `2fb8367` umgesetzt, zwei Nachbesserungen aus dem
+Codex-Review zu #626 in `1b806c2`. Der Stand ist mit Basis-Commit `1b806c2`
+in `review-basis.json` als Reviewrunde 3 gesperrt; die Prüfsummen oben
+gelten für diesen Stand. Die
 Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
 Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
 hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von

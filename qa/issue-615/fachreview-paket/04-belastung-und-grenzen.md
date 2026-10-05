@@ -4,7 +4,7 @@
 
 - ID / Version: `grenzen-erkennen` / `puk-grenzen-ueberlastung-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `2fb83676c946489713ac23b53fb11226aa300ed5` (Reviewrunde 3)
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3` (Reviewrunde 3)
 - Text-Hash: `620d7ed3d638db6e1a630af9c7c03712b1a1d33aa6fe57b90608fd258bd6c03f`
 - HTML-Hash: `0038373e21565ffc6e7d0ca0589e77b769dd14fad9fa951bda0e67702a9ecbd7`
 - PDF-Hash: `98dbed3bcf17cfe6aedfb914c82be130d03ed1206c7faaedaa5d869cbb9325af`
@@ -106,8 +106,10 @@ Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte t
 
 ## Nachprüfung Reviewrunde 3 (KI-Simulation)
 
-Die Korrekturen sind in `2fb8367` umgesetzt und in `review-basis.json` als
-Reviewrunde 3 gesperrt; die Prüfsummen oben gelten für diesen Stand. Die
+Die Korrekturen sind in `2fb8367` umgesetzt, zwei Nachbesserungen aus dem
+Codex-Review zu #626 in `1b806c2`. Der Stand ist mit Basis-Commit `1b806c2`
+in `review-basis.json` als Reviewrunde 3 gesperrt; die Prüfsummen oben
+gelten für diesen Stand. Die
 Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
 Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
 hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von

@@ -7,7 +7,7 @@ liegen unter
 
 ## Prüfstand und Geltungsbereich
 
-- Basis-Commit: `2fb83676c946489713ac23b53fb11226aa300ed5`
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3`
 - Reviewrunde: 3; sie ersetzt Runde 2
   (`79091246f78411e283e48fdabba3ac4f751b3f6b`) und setzt die angenommenen
   Befunde der KI-Simulation aus Issue 625 um

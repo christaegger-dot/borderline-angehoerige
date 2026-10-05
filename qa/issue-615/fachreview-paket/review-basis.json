@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "package": "issue-615-fachreview-paket",
-  "baselineCommit": "2fb83676c946489713ac23b53fb11226aa300ed5",
+  "baselineCommit": "1b806c27c8a52cbbabd7560c17f2f250a77256c3",
   "reviewRound": 3,
   "supersedesBaselineCommit": "79091246f78411e283e48fdabba3ac4f751b3f6b",
   "manifest": "handouts/issue-615-refresh/manifest.json",
@@ -17,22 +17,22 @@
       "documentType": "ORIENTIERUNGSBLATT",
       "visualKind": "lenses",
       "sourceHtml": "handouts/issue-615-refresh/sources/puk-remission-recovery-v2.html",
-      "sourceHtmlSha256": "d136bb950f4291f8536c24b413594d850527d98b6fe80a71e2f3a12fee6639fe",
-      "sourceTextSha256": "216b6f6df0eacc3c3de34026efe67547d504734ee2c2f9634a28cb17eccae921",
+      "sourceHtmlSha256": "7627521f5dbedc0ac8ba7d4987d94f16af806fcaeb587a1c14e612e593f97050",
+      "sourceTextSha256": "670a36d7fa2cf9965ab023fd7a45a3050ec283e2fc67b10b0bb7b79842fa6080",
       "pdf": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-remission-recovery-v2.pdf",
-        "bytes": 85723,
-        "sha256": "a4a8b6d3583d18b911c9cf27fa16a7f66e010d59149d6fe9a75906be6d3732e2"
+        "bytes": 85937,
+        "sha256": "129632ee0ff82238e8b00412b387d0710691ea93e9729fa1b666ded467dd52a6"
       },
       "webp": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-remission-recovery-v2.webp",
-        "bytes": 322944,
-        "sha256": "93e47c1f209a14fdb83293ec192e6626a213c9493b5b91f03714d3197f52cf4d"
+        "bytes": 327034,
+        "sha256": "245d12bbc42b517d2fcb30bba14e7f35dd004478b2b1f3a1e2a337fa4b660218"
       },
       "thumbnail": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/extras/thumbnails/puk-remission-recovery-v2.webp",
-        "bytes": 71152,
-        "sha256": "65223a3537218e190f6727e4032b3892441bdc4fc3dd9ea1ac9bb84e57b6b297"
+        "bytes": 71652,
+        "sha256": "9bae22b8a01bf8ecff5b642101f41684011b5d490507b6b9401eb3bfa857265b"
       }
     },
     {
@@ -67,22 +67,22 @@
       "documentType": "ORIENTIERUNGSBLATT",
       "visualKind": "boundary",
       "sourceHtml": "handouts/issue-615-refresh/sources/puk-rolle-genesungsprozess-v2.html",
-      "sourceHtmlSha256": "07c2b42d71b01e81121e7c0a829863b9e2d7254b1a13dbe0c303e12bfca6c251",
-      "sourceTextSha256": "8e65aac186f0ece00638e1caa32eab2456956b6b5ecf21580a60454169c7c81f",
+      "sourceHtmlSha256": "9409fe1b1dc8e27ad5598533d3f055cdd8d86a6d8a8d93ccfc0b84a0bb021362",
+      "sourceTextSha256": "4d7b1368a3f1a528f240408c9bfa46d12655d9fa40f70991bbf1072619dca2e6",
       "pdf": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-rolle-genesungsprozess-v2.pdf",
-        "bytes": 69716,
-        "sha256": "3399d813b4898d1bfc8f70ff8ad1288cb7a3d01878f4b515b943d4320af88316"
+        "bytes": 69667,
+        "sha256": "d5e6e140459eeef7031a60b67abdb0805f0c63236c8cee9cbb0f05e0409498f4"
       },
       "webp": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-rolle-genesungsprozess-v2.webp",
-        "bytes": 277862,
-        "sha256": "c29c256de2390105aff2d9a311f6ff7249252375cf84b24f678951a9b1093ddd"
+        "bytes": 281028,
+        "sha256": "f4d98d1d61f01756a7773490665b8b8c803380e0e4da300222ddb2dfc046183a"
       },
       "thumbnail": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/extras/thumbnails/puk-rolle-genesungsprozess-v2.webp",
-        "bytes": 60484,
-        "sha256": "35d297107d04220bc0e5fbfd3c4649b6479efbcc6714b6c55b16d6bf846a746a"
+        "bytes": 61166,
+        "sha256": "bcb6a17381f5fdeba7f91e243f335b320def53c1e3a2a41cd9f1a3fe601b3c44"
       }
     },
     {

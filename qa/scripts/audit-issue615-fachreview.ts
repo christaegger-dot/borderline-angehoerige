@@ -70,7 +70,7 @@ if (basis.reviewRound !== 3) {
   fail("active review basis must identify review round 3");
 }
 if (
-  basis.baselineCommit !== "2fb83676c946489713ac23b53fb11226aa300ed5" ||
+  basis.baselineCommit !== "1b806c27c8a52cbbabd7560c17f2f250a77256c3" ||
   basis.supersedesBaselineCommit !== "79091246f78411e283e48fdabba3ac4f751b3f6b"
 ) {
   fail("review-round lineage is not locked to the issue 625 correction commit");

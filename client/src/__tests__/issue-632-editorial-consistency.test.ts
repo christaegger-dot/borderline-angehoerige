@@ -64,7 +64,7 @@ describe("Issue 632 redaktionelle Konsistenz", () => {
     );
 
     expect(stufenleiter).toContain(
-      "«Wenn ich dich richtig verstehe, hast du dich heute allein gelassen gefühlt.»"
+      "«Du hast gesagt, dass du dich heute allein gelassen gefühlt hast.»"
     );
     expect(stufenleiter).not.toContain(
       "«Wenn ich dich richtig verstehe, hast du Angst, verlassen zu werden.»"

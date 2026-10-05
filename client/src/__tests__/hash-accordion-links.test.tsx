@@ -117,8 +117,7 @@ const HASH_CASES = [
   {
     route: "/verstehen/diagnostik#anbieter",
     loadPage: () => import("@/pages/Diagnostik"),
-    buttonName:
-      /Abschnitt Wo eine Diagnose im Kanton Zürich gestellt werden kann/i,
+    buttonName: /Abschnitt Wo eine Abklärung im Kanton Zürich möglich ist/i,
     contentText: /Psychiatrische Universitätsklinik Zürich \(PUK\)/i,
   },
 ] as const;
@@ -146,15 +145,16 @@ describe("hash-linked content sections", () => {
     const { default: Page } = await import("@/pages/Begleiterkrankungen");
     renderWithRoute(<Page />, "/verstehen/begleiterkrankungen#depression");
 
-    // «Depression bei Borderline» ist jetzt offene Prosa (collapsible={false}):
+    // «Depressive Erkrankungen als mögliche Begleiterkrankung» ist offene
+    // Prosa (collapsible={false}):
     // kein Toggle-Button, Inhalt direkt sichtbar, Deep-Link scrollt trotzdem.
     expect(
       screen.queryByRole("button", {
-        name: /Abschnitt Depression bei Borderline/i,
+        name: /Abschnitt Depressive Erkrankungen als mögliche Begleiterkrankung/i,
       })
     ).toBeNull();
     expect(
-      screen.getByText(/Forschung zeigt, dass im Lebenszeitverlauf/i)
+      screen.getByText(/Depressive Erkrankungen werden in klinischen Studien/i)
     ).toBeInTheDocument();
     await waitFor(() => expect(window.scrollTo).toHaveBeenCalled());
   });

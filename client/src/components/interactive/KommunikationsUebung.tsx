@@ -118,13 +118,13 @@ const SCENARIOS: Scenario[] = [
       "Bei einer unklaren Aussage über die eigene Sicherheit hat die direkte Gefährdungsabklärung Vorrang vor einer Kommunikationsmethode. Fragen Sie direkt und ruhig nach Suizidgedanken und unmittelbarer Gefahr. Bei möglicher unmittelbarer Lebensgefahr 144 rufen; sonst professionelle psychiatrische Einschätzung einholen. 143 bietet zusätzliche Gesprächsentlastung, ersetzt aber keinen Notruf. Eigene Grenzen und Sicherheit bleiben wichtig.",
   },
 
-  // ─── DEAR MAN scenarios ─────────────────────────────
+  // ─── DEAR scenarios ─────────────────────────────────
   {
     id: "dear-1",
     title: "Eigene Bedürfnisse ansprechen",
     technique: "DEAR",
     context:
-      "Ihr Angehöriger hat zum dritten Mal einen gemeinsamen Termin kurzfristig abgesagt. Sie möchten das Thema mit DEAR MAN ansprechen: Describe, Express, Assert, Reinforce.",
+      "Ihr Angehöriger hat zum dritten Mal einen gemeinsamen Termin kurzfristig abgesagt. Sie möchten das Thema mit DEAR ansprechen: Describe, Express, Assert, Reinforce.",
     statement:
       "Sie bereiten ein ruhiges Gespräch vor. Welche Formulierung nutzen Sie?",
     options: [
@@ -149,12 +149,12 @@ const SCENARIOS: Scenario[] = [
         text: "«Es ist okay, ich verstehe, dass es dir manchmal nicht gut geht. Mach dir keinen Stress.»",
         correct: false,
         feedback:
-          "Das ist verständnisvoll, aber Ihre eigenen Bedürfnisse kommen nicht vor. DEAR MAN bedeutet, die eigene Position freundlich, aber klar zu vertreten – auch das gehört zur Beziehungspflege.",
+          "Das ist verständnisvoll, aber Ihre eigenen Bedürfnisse kommen nicht vor. DEAR bedeutet, die eigene Position freundlich, aber klar zu formulieren – auch das gehört zur Beziehungspflege.",
         techniqueHint: "Nur Empathie, ohne A und R",
       },
     ],
     learnNote:
-      "DEAR MAN hilft, eigene Bedürfnisse klar und respektvoll auszudrücken. D = Beschreiben (Fakten), E = Ausdrücken (Ich-Gefühl), A = Bitten (konkreter Wunsch), R = Verstärken (positive Folge).",
+      "DEAR umfasst die ersten vier inhaltlichen Schritte von DEAR MAN und hilft, eigene Bedürfnisse klar und respektvoll auszudrücken. D = Beschreiben (Fakten), E = Ausdrücken (Ich-Gefühl), A = Bitten (konkreter Wunsch), R = Verstärken (positive Folgen benennen). Mindful, Appear confident und Negotiate werden in dieser Übung nicht trainiert.",
   },
   {
     id: "dear-2",
@@ -174,10 +174,10 @@ const SCENARIOS: Scenario[] = [
       },
       {
         id: "b",
-        text: "«Vor zwei Monaten hast du eine mögliche Therapieplatzsuche erwähnt. Ich merke, dass ich mir Sorgen mache. Möchtest du darüber sprechen – und gibt es eine Unterstützung von mir, die du dir wünschst? Ob du eine Therapie suchst, entscheidest du.»",
+        text: "«Vor zwei Monaten hast du eine mögliche Therapieplatzsuche erwähnt. Ich merke, dass ich mir Sorgen mache. Möchtest du darüber sprechen – und gibt es eine Unterstützung von mir, die du dir wünschst? Ob du eine Therapie suchst, entscheidest du. Wenn du mir sagst, was du möchtest, kann ich meine Unterstützung passend und realistisch anbieten.»",
         correct: true,
         feedback:
-          "D: Die frühere Äusserung wird sachlich erinnert. E: Die Sorge bleibt eine Ich-Botschaft. A: Das Gespräch und mögliche Unterstützung werden mit Einverständnis angeboten. Die Behandlungsentscheidung bleibt ausdrücklich bei der betroffenen Person.",
+          "D: Die frühere Äusserung wird sachlich erinnert. E: Die Sorge bleibt eine Ich-Botschaft. A: Das Gespräch und mögliche Unterstützung werden mit Einverständnis angeboten. R: Der mögliche Nutzen für eine passende, realistische Unterstützung wird benannt. Die Behandlungsentscheidung bleibt ausdrücklich bei der betroffenen Person.",
         techniqueHint: "D → E → A → R",
       },
       {
@@ -190,7 +190,7 @@ const SCENARIOS: Scenario[] = [
       },
     ],
     learnNote:
-      "DEAR MAN kann helfen, Sorge und einen eigenen Wunsch ohne Vorwurf auszudrücken. Unterstützung wird angeboten, nicht vorausgesetzt; die betroffene Person darf sie ablehnen und entscheidet selbst über Behandlung. Bei akuter Gefahr gelten die Soforthilfewege.",
+      "DEAR – die ersten vier inhaltlichen Schritte von DEAR MAN – kann helfen, Sorge und einen eigenen Wunsch ohne Vorwurf auszudrücken. Unterstützung wird angeboten, nicht vorausgesetzt; die betroffene Person darf sie ablehnen und entscheidet selbst über Behandlung. Mindful, Appear confident und Negotiate werden hier nicht trainiert. Bei akuter Gefahr gelten die Soforthilfewege.",
   },
 
   // ─── Validierungs-Szenarien ─────────────────────────
@@ -286,7 +286,7 @@ const TECHNIQUE_META: Record<
     icon: Heart,
   },
   DEAR: {
-    label: "DEAR MAN",
+    label: "DEAR",
     tintVar: "--color-sand-mid",
     icon: Scale,
   },
@@ -309,7 +309,11 @@ const TECHNIQUE_STEPS: Partial<
     { letter: "D", label: "Describe", desc: "Situation beschreiben" },
     { letter: "E", label: "Express", desc: "Gefühl ausdrücken" },
     { letter: "A", label: "Assert", desc: "Wunsch benennen" },
-    { letter: "R", label: "Reinforce", desc: "Positive Folge" },
+    {
+      letter: "R",
+      label: "Verstärken",
+      desc: "Positive Folgen benennen",
+    },
   ],
 };
 

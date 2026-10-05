@@ -32,6 +32,11 @@ export default function LearningGuide({
       <div className="learning-tool__intro">
         <h2 id={`${uid}-title`}>{guide.title}</h2>
         <p>{guide.summary}</p>
+        {guide.intro.map(paragraph => (
+          <p key={paragraph} className="mt-2 text-sm">
+            {paragraph}
+          </p>
+        ))}
         {kind === "garten" && (
           <p className="mt-2 text-sm">
             Der Garten ist eine Metapher, keine Vorhersage eines
@@ -90,6 +95,7 @@ export default function LearningGuide({
           ))}
         </ol>
       </details>
+      <p className="learning-tool__source text-sm">{guide.sourceLine}</p>
       <div className="learning-tool__links">
         <AppLink href={meta.path} className="editorial-link">
           Vollständige Textfassung

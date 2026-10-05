@@ -1,6 +1,5 @@
 export interface WarningSignalGroup {
   title: string;
-  icon: "brain" | "heart" | "users";
   items: string[];
 }
 
@@ -22,36 +21,49 @@ export interface RoleNote {
 
 export const warningSignalGroups: WarningSignalGroup[] = [
   {
-    title: "Emotional",
-    icon: "brain",
+    title: "Körper",
+    items: [
+      "Anspannung",
+      "Schlafprobleme",
+      "Magenbeschwerden",
+      "Kopf- oder andere Schmerzen",
+      "Ungewöhnliche Müdigkeit",
+    ],
+  },
+  {
+    title: "Gefühle",
     items: [
       "Gereiztheit",
-      "Hoffnungslosigkeit",
-      "Emotionale Taubheit",
-      "Schuldgefühle",
-      "Kontrollverlust-Angst",
+      "Angst",
+      "Niedergeschlagenheit",
+      "Das Gefühl, kaum noch etwas aufnehmen zu können",
     ],
   },
   {
-    title: "Körperlich",
-    icon: "heart",
+    title: "Gedanken",
     items: [
-      "Erschöpfung",
-      "Schlafprobleme",
-      "Appetitveränderung",
-      "Kopfschmerzen",
-      "Infektanfälligkeit",
+      "Ständiges Grübeln oder Sorgen",
+      "Konzentrationsprobleme",
+      "Das Gefühl, für alles verantwortlich zu sein",
     ],
   },
   {
-    title: "Sozial",
-    icon: "users",
+    title: "Verhalten",
     items: [
+      "Dauernde Erreichbarkeit",
       "Rückzug",
-      "Hobbys vernachlässigt",
-      "Isolationsgefühl",
-      "Vermeidung",
-      "Nur noch Angehöriger",
+      "Aufschieben eigener Bedürfnisse",
+      "Häufigere Konflikte",
+    ],
+  },
+  {
+    title: "Erholungsbedarf",
+    items: [
+      "Mehr Ruhe",
+      "Mehr Abstand",
+      "Mehr Schlaf",
+      "Ein Gespräch",
+      "Praktische Entlastung",
     ],
   },
 ];

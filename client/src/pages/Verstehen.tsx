@@ -583,14 +583,15 @@ export default function Verstehen() {
                 «Borderline ist dasselbe wie Trauma.»
               </h3>
               <p>
-                Viele Menschen mit Borderline haben traumatische Erfahrungen
-                gemacht — das ist dokumentiert und klinisch relevant. Borderline
-                und PTBS sind aber eigenständige Diagnosen mit unterschiedlichen
-                Kernmerkmalen und Behandlungsansätzen. Eine PTBS-Diagnose allein
-                erklärt nicht die emotionale Dysregulation, das instabile
-                Selbstbild oder die Beziehungsmuster, die für Borderline
-                charakteristisch sind. Beide Diagnosen können gleichzeitig
-                vorliegen.{" "}
+                In klinischen Studien berichten viele, aber nicht alle Menschen
+                mit Borderline von Misshandlung, Vernachlässigung oder anderen
+                belastenden Kindheitserfahrungen. Solche Erfahrungen können
+                Risikofaktoren sein; sie sind weder notwendig noch hinreichend
+                für eine Borderline-Diagnose. Borderline, PTBS und komplexe PTBS
+                sind unterschiedliche diagnostische Einordnungen. Einzelne
+                Merkmale können sich überschneiden; eine Borderline-Diagnose
+                kann zusammen mit einer PTBS oder einer komplexen PTBS
+                auftreten. Die Abgrenzung gehört in eine fachliche Diagnostik.{" "}
                 <Link
                   href="/verstehen/begleiterkrankungen"
                   className="editorial-link"
@@ -611,10 +612,11 @@ export default function Verstehen() {
                 «Suizid direkt anzusprechen macht es schlimmer.»
               </h3>
               <p>
-                Bei konkreter Sorge ist das Gegenteil hilfreicher: ruhig, klar
-                und direkt fragen. Offenes Ansprechen erhöht das Risiko nicht,
-                sondern zeigt, dass Sie die Lage ernst nehmen und Hilfe
-                einbeziehen. Mehr dazu auf{" "}
+                Wenn Sie sich konkret sorgen, fragen Sie ruhig und direkt, ob
+                die Person Suizidgedanken oder einen Plan hat. Solche Fragen
+                lösen nach heutigem Wissensstand keine suizidale Handlung aus;
+                sie können helfen, die Lage zu verstehen und passende
+                professionelle Hilfe einzubeziehen. Mehr dazu auf{" "}
                 <Link href="/soforthilfe" className="editorial-link">
                   Soforthilfe
                 </Link>
@@ -651,17 +653,19 @@ export default function Verstehen() {
                 «Borderline betrifft nur Frauen.»
               </h3>
               <p>
-                Borderline kommt bei allen Geschlechtern vor — klinisch werden
-                Frauen häufiger diagnostiziert. Männer suchen teilweise später
-                Hilfe oder werden mit anderen Problembildern gelesen, etwa
-                Substanzkonsum, Wut oder Rückzug. Angehörige männlicher
-                Betroffener sind hier ausdrücklich mit gemeint.
+                Borderline wird bei Frauen und Männern diagnostiziert. In
+                klinischen Kontexten wird die Störung häufig als frauendominiert
+                wahrgenommen; bevölkerungsbezogene Studien berichten teils keine
+                signifikanten Unterschiede. Unterschiede in Symptompräsentation,
+                Begleiterkrankungen und Behandlungswegen sind beschrieben, die
+                Forschung ist jedoch heterogen. Menschen aller Geschlechter und
+                ihre Angehörigen sind hier mit gemeint.
               </p>
             </EditorialProse>
             <EvidenceNote
               variant="editorial"
               title="Quellen zu Mythen, Verlauf und Geschlecht"
-              definition="Die Einordnungen stützen sich auf Behandlungsforschung, Verlaufsstudien, eine Komorbidität-Studie und eine Übersichtsarbeit zu Geschlechtsunterschieden."
+              definition="Die Einordnungen stützen sich auf Behandlungs- und Verlaufsforschung, eine Metaanalyse zu Kindheitsbelastungen, eine WHO-Einordnung zur Suizidansprache und eine Übersichtsarbeit zu Geschlechtsunterschieden. Zusammenhänge sind keine einfachen Ursachen und erlauben keine individuelle Vorhersage."
               sources={[
                 {
                   label:
@@ -677,8 +681,25 @@ export default function Verstehen() {
                 },
                 {
                   label:
-                    "Lamberti (2023) – Geschlechtsunterschiede bei Borderline (Scoping Review)",
-                  href: quellenLinks.lamberti2023,
+                    "Porter et al. (2020) – Kindheitsbelastungen und Borderline (Metaanalyse)",
+                  href: quellenLinks.porter2020,
+                  type: "wissenschaft",
+                },
+                {
+                  label:
+                    "WHO (2024) – ICD-11: diagnostische Anforderungen für Borderline, PTBS und komplexe PTBS",
+                  href: quellenLinks.icd11,
+                  type: "versorgung",
+                },
+                {
+                  label: "WHO (2026) – Direktes Fragen nach Suizidgedanken",
+                  href: quellenLinks.whoSuicide2026,
+                  type: "versorgung",
+                },
+                {
+                  label:
+                    "Qian et al. (2022) – Geschlechtsunterschiede bei Borderline (Scoping Review)",
+                  href: quellenLinks.qian2022,
                   type: "wissenschaft",
                 },
               ]}

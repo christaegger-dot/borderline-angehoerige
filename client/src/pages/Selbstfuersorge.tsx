@@ -18,6 +18,7 @@ import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
+import { quellenLinks } from "@/content/quellenLinks";
 import { permissionList } from "@/content/selbstfuersorge-page";
 import revisedHandouts from "@/content/revisedHandouts.json";
 import SelbstfuersorgeInfografikenSection from "@/sections/SelbstfuersorgeInfografikenSection";
@@ -557,22 +558,27 @@ export default function Selbstfuersorge() {
           <EvidenceNote
             variant="editorial"
             title="Worauf stützt sich das?"
-            definition="Die Hinweise auf dieser Seite verbinden Forschung zu Belastung und Regeneration mit klinischer Erfahrung aus der Angehörigenarbeit."
+            definition="Die Hinweise auf dieser Seite verbinden eine systematische Übersicht zur Belastung von Angehörigen mit Forschung zu kurzer körperlicher Regulation und einer Leitlinie zur Unterstützung erwachsener unbezahlter Betreuungspersonen. Die Übertragung in konkrete Alltagsschritte ist eine redaktionelle Orientierung, keine Wirkungsgarantie."
             sources={[
               {
                 label:
-                  "Angehörige von Menschen mit BPS berichten in Studien häufig von erhöhter Belastung und Erschöpfung (u. a. Hoffman et al., 2005)",
+                  "Bailey & Grenyer (2013) – Systematische Übersicht zu Belastung und Unterstützungsbedarf von Angehörigen",
+                href: quellenLinks.baileyGrenyer2013,
+                type: "wissenschaft",
+                note: "Sechs eingeschlossene Studien; die Autor:innen benennen deutliche Forschungslücken.",
+              },
+              {
+                label:
+                  "Langsames Atmen kann körperliche Regulationsprozesse und akute Anspannung beeinflussen (Zaccaro et al., 2018); daraus folgt keine Wirkungsgarantie für jede Person",
+                href: quellenLinks.zaccaro2018,
                 type: "wissenschaft",
               },
               {
                 label:
-                  "Atemübungen und andere kurze Regulationsübungen können helfen, akute Anspannung im Körper zu senken (u. a. Zaccaro et al., 2018)",
-                type: "wissenschaft",
-              },
-              {
-                label:
-                  "Soziale Unterstützung gilt als wichtiger Schutzfaktor gegen Überlastung und Erschöpfung (u. a. Maslach & Leiter, 2016)",
-                type: "wissenschaft",
+                  "NICE (2020) – Supporting adult carers: Information, praktische, emotionale und soziale Unterstützung",
+                href: quellenLinks.niceNg150,
+                type: "versorgung",
+                note: "Britische Leitlinie für erwachsene unbezahlte Betreuungspersonen; nicht Borderline-spezifisch.",
               },
             ]}
           />

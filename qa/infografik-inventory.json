@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-05T10:19:06.597Z",
+  "generatedAt": "2026-10-05T22:18:55.671Z",
   "summary": {
-    "totalFiles": 27,
-    "totalSizeMb": 5.37,
-    "activeReferencedFiles": 27,
-    "activeReferencedSizeMb": 5.37,
+    "totalFiles": 21,
+    "totalSizeMb": 3.8,
+    "activeReferencedFiles": 21,
+    "activeReferencedSizeMb": 3.8,
     "supportFiles": 0,
     "supportFilesSizeMb": 0,
     "unreferencedCandidates": 0,
@@ -26,22 +26,6 @@
         {
           "source": "genesung",
           "id": "genesung-zahlen",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v2-thumb.png",
-      "sizeBytes": 482811,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "grenzen-spickzettel",
-          "field": "thumbnailUrl"
-        },
-        {
-          "source": "grenzen",
-          "id": "grenzen-spickzettel",
           "field": "thumbnailUrl"
         }
       ]
@@ -132,22 +116,6 @@
       ]
     },
     {
-      "path": "/infografiken/extras/thumbnails/puk-dear-v1.webp",
-      "sizeBytes": 29978,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "dear",
-          "field": "thumbnailUrl"
-        },
-        {
-          "source": "grenzen",
-          "id": "dear",
-          "field": "thumbnailUrl"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/extras/thumbnails/puk-garten-v1.webp",
       "sizeBytes": 30386,
       "usages": [
@@ -192,38 +160,6 @@
           "source": "genesung",
           "id": "genesung-zahlen",
           "field": "img"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/manus-grenzen-spickzettel-v2.pdf",
-      "sizeBytes": 678714,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "grenzen-spickzettel",
-          "field": "downloadUrl"
-        },
-        {
-          "source": "grenzen",
-          "id": "grenzen-spickzettel",
-          "field": "pdfUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/manus-grenzen-spickzettel-v2.webp",
-      "sizeBytes": 312908,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "grenzen-spickzettel",
-          "field": "url"
-        },
-        {
-          "source": "grenzen",
-          "id": "grenzen-spickzettel",
-          "field": "url"
         }
       ]
     },
@@ -378,38 +314,6 @@
       ]
     },
     {
-      "path": "/infografiken/puk-dear-v1.pdf",
-      "sizeBytes": 26598,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "dear",
-          "field": "downloadUrl"
-        },
-        {
-          "source": "grenzen",
-          "id": "dear",
-          "field": "pdfUrl"
-        }
-      ]
-    },
-    {
-      "path": "/infografiken/puk-dear-v1.webp",
-      "sizeBytes": 112932,
-      "usages": [
-        {
-          "source": "materials",
-          "id": "dear",
-          "field": "url"
-        },
-        {
-          "source": "grenzen",
-          "id": "dear",
-          "field": "url"
-        }
-      ]
-    },
-    {
       "path": "/infografiken/puk-garten-v1.pdf",
       "sizeBytes": 26182,
       "usages": [
@@ -476,16 +380,6 @@
       "legacyCandidateFiles": []
     },
     {
-      "family": "/infografiken/extras/thumbnails/puk-dear",
-      "availableFiles": [
-        "/infografiken/extras/thumbnails/puk-dear-v1.webp"
-      ],
-      "referencedFiles": [
-        "/infografiken/extras/thumbnails/puk-dear-v1.webp"
-      ],
-      "legacyCandidateFiles": []
-    },
-    {
       "family": "/infografiken/extras/thumbnails/puk-garten",
       "availableFiles": [
         "/infografiken/extras/thumbnails/puk-garten-v1.webp"
@@ -504,18 +398,6 @@
       "referencedFiles": [
         "/infografiken/manus-genesung-zahlen-v3.pdf",
         "/infografiken/manus-genesung-zahlen-v3.webp"
-      ],
-      "legacyCandidateFiles": []
-    },
-    {
-      "family": "/infografiken/manus-grenzen-spickzettel",
-      "availableFiles": [
-        "/infografiken/manus-grenzen-spickzettel-v2.pdf",
-        "/infografiken/manus-grenzen-spickzettel-v2.webp"
-      ],
-      "referencedFiles": [
-        "/infografiken/manus-grenzen-spickzettel-v2.pdf",
-        "/infografiken/manus-grenzen-spickzettel-v2.webp"
       ],
       "legacyCandidateFiles": []
     },
@@ -576,18 +458,6 @@
       "referencedFiles": [
         "/infografiken/puk-4-arten-von-grenzen-v1.pdf",
         "/infografiken/puk-4-arten-von-grenzen-v1.webp"
-      ],
-      "legacyCandidateFiles": []
-    },
-    {
-      "family": "/infografiken/puk-dear",
-      "availableFiles": [
-        "/infografiken/puk-dear-v1.pdf",
-        "/infografiken/puk-dear-v1.webp"
-      ],
-      "referencedFiles": [
-        "/infografiken/puk-dear-v1.pdf",
-        "/infografiken/puk-dear-v1.webp"
       ],
       "legacyCandidateFiles": []
     },

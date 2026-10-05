@@ -1,6 +1,6 @@
 # Handout Asset Blocker Report
 
-Stand: 2026-10-05
+Stand: 2026-10-06
 Quelle der Wahrheit: `client/src/content/handoutGovernance.ts`
 
 ## Zweck
@@ -35,6 +35,11 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   `erlaubnis-karte`, `grenzen-erkennen` und `lmk` wurden kontrolliert nach
   `qa/archived-handouts/issue-615-legacy-v1-2026-10-05/` verschoben. Ihre alten
   Direktpfade existieren nicht mehr.
+- Die überholten Druckgrafiken zu `dear` und `grenzen-spickzettel` wurden im
+  Rahmen von Issue #633 aus `client/public` entfernt. Sie liegen zur
+  Nachvollziehbarkeit unter
+  `qa/withheld-handouts/issue-633-fachquellen-2026-10-05/`; die korrigierten
+  HTML-Textversionen bleiben erreichbar.
 - Die Notfallplan-Textversion ist aktuell; die ältere PDF- und Bildfassung ist
   wegen fehlender Schutzklauseln vorläufig zurückgezogen.
 - Die aktuelle Notfallkarte bleibt unter `/notfallkarte` verfügbar und wird
@@ -52,7 +57,6 @@ die automatischen und manuellen Freigabegates grün bleiben:
 | ID                         | Freigegebene Version                |
 | -------------------------- | ----------------------------------- |
 | `kinder`                   | `manus-kinder-v3`                   |
-| `dear`                     | `puk-dear-v1`                       |
 | `spiegeln-statt-aufsaugen` | `manus-spiegeln-statt-aufsaugen-v3` |
 | `4-arten-von-grenzen`      | `puk-4-arten-von-grenzen-v1`        |
 | `garten`                   | `puk-garten-v1`                     |
@@ -79,8 +83,8 @@ oder direkt ausgeliefert:
 - Angehörigenrolle und Alltag: `rolle-klaeren`, `drei-saeulen`,
   `konsistenz-prinzip`, `beziehungs-achtsamkeit`, `6-leitlinien`,
   `4-alltags-tipps`, `grenzen-erkennen`, `lmk`, `energie-konto`,
-  `erlaubnis-karte`, `schuld-verantwortung`, `sauerstoffmaske` und
-  `wenn-worte-treffen`.
+  `erlaubnis-karte`, `schuld-verantwortung`, `sauerstoffmaske`, `dear`,
+  `grenzen-spickzettel` und `wenn-worte-treffen`.
 
 `4-phasen` und `im-krisenmodus` sind zusätzlich vollständig `withdrawn` und
 erscheinen auch nicht mehr als aktive Textversion.

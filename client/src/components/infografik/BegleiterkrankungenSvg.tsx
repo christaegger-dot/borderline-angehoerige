@@ -240,8 +240,8 @@ export function BegleiterkrankungenSvg() {
         textAnchor="start"
         opacity="0.9"
       >
-        Quellen: S3-Leitlinie Borderline-Persönlichkeitsstörung (DGPPN 2022,
-        AWMF 038-015) · Shah &amp; Zanarini (2018)
+        Quellen: Shah &amp; Zanarini (2018) · Weiner, Perroud &amp; Weibel
+        (2019)
       </text>
       <text
         x="64"

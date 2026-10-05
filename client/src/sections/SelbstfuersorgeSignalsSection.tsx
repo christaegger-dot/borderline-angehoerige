@@ -1,4 +1,6 @@
 import ContentSection from "@/components/ContentSection";
+import EvidenceNote from "@/components/EvidenceNote";
+import { quellenLinks } from "@/content/quellenLinks";
 import { warningSignalGroups } from "@/content/selbstfuersorge-page";
 
 interface SelbstfuersorgeSignalsSectionProps {
@@ -23,10 +25,12 @@ export function SelbstfuersorgeSignalsSection({
       <p className="editorial-small-copy mb-6">
         Diese Anzeichen sind unspezifisch: Sie können bei Überlastung auftreten,
         aber auch andere körperliche oder psychische Ursachen haben. Sie sind
-        keine Diagnose und kein Beweis, dass Sie «zu wenig» für sich tun.
+        keine Diagnose und kein Beweis, dass Sie «zu wenig» für sich tun. Die
+        folgenden Beispiele sind eine redaktionelle Zusammenstellung zur
+        Selbstbeobachtung, kein validiertes Testinstrument.
       </p>
 
-      <div className="grid gap-8 sm:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {warningSignalGroups.map(group => {
           return (
             <article
@@ -46,6 +50,25 @@ export function SelbstfuersorgeSignalsSection({
           );
         })}
       </div>
+
+      <EvidenceNote
+        variant="editorial"
+        title="Fachlicher Bezug"
+        definition="Die körperlichen, emotionalen und gedanklichen Beispiele orientieren sich an Beschreibungen möglicher Stressreaktionen der WHO. Beispiele zu Verhalten und Erholungsbedarf übertragen zusätzlich die NICE-Empfehlungen zur Wahrnehmung und Unterstützung unbezahlter erwachsener Betreuungspersonen. Die fünf Bereiche sind eine eigene didaktische Ordnung."
+        sources={[
+          {
+            label: "WHO (2026) – Stress: Questions and answers",
+            href: quellenLinks.whoStress2026,
+            type: "versorgung",
+          },
+          {
+            label: "NICE (2020) – Supporting adult carers (NG150)",
+            href: quellenLinks.niceNg150,
+            type: "versorgung",
+          },
+        ]}
+        reviewDate="05.10.2026"
+      />
 
       <div
         className="mt-8 border-t pt-5"

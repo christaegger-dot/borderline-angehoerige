@@ -601,10 +601,11 @@ export default function Selbstfuersorge() {
         <EditorialSection.Body>
           <EditorialProse>
             <p>
-              Selbstfürsorge ist kein Soloprojekt — sie wird tragfähiger, wenn
-              Materialien und Beratung mitgedacht sind:{" "}
-              <Link href="/materialien" className="editorial-link">
-                alle Materialien ansehen
+              Selbstfürsorge schafft Raum für das eigene Leben. Ein Blick auf
+              Genesung kann zusätzlich entlasten und verdeutlichen, wobei Sie
+              unterstützen können – und was nicht in Ihrer Hand liegt:{" "}
+              <Link href="/genesung" className="editorial-link">
+                weiter zu Genesung
               </Link>
               . Zurück geht es zu{" "}
               <Link href="/grenzen" className="editorial-link">

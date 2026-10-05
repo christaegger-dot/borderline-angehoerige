@@ -230,7 +230,10 @@ const results: Result[] = [
     primaryText: "Diagnostik verstehen",
     secondaryLinks: [
       { href: "/verstehen", text: "Borderline verstehen" },
-      { href: "/kommunizieren", text: "Über Diagnose sprechen" },
+      {
+        href: "/verstehen/diagnostik#ablehnung",
+        text: "Über Diagnose sprechen",
+      },
     ],
   },
   {
@@ -277,7 +280,7 @@ const results: Result[] = [
     id: "unterstuetzen",
     title: "Unterstützung frei wählen",
     description:
-      "Sie können Unterstützung anbieten, soweit sie gewollt, sicher und für Sie tragbar ist. Behandlung und Genesung bleiben nicht Ihre Verantwortung.",
+      "Sie können Unterstützung anbieten, soweit sie gewollt, sicher und für Sie tragbar ist. Behandlung und Genesung sind nicht Ihre Verantwortung.",
     primaryLink: "/unterstuetzen/uebersicht",
     primaryText: "Unterstützungsstrategien entdecken",
     secondaryLinks: [

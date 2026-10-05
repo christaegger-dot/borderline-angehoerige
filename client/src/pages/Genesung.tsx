@@ -54,12 +54,27 @@ const beitragenItems = [
   },
 ] as const;
 
-const foerderfaktoren = [
-  "spezialisierte Psychotherapie",
-  "Zeit und Geduld",
-  "sichere, respektvolle Beziehungen mit freiwillig vereinbarten Grenzen",
-  "alltagsbezogene Struktur",
-  "Behandlung von Begleiterkrankungen",
+const einflussbereiche = [
+  {
+    title: "Strukturierte Behandlung",
+    desc: "Ein personenzentrierter Behandlungsplan und eine strukturierte Psychotherapie können zentrale Bestandteile der Behandlung sein.",
+  },
+  {
+    title: "Körperliche und psychische Gesundheit",
+    desc: "Körperliche Beschwerden und weitere psychische Erkrankungen werden eigenständig behandelt, bei Bedarf auch mit Medikamenten. Für Borderline selbst sind Medikamente keine Kernbehandlung; Änderungen nur mit der behandelnden Fachperson.",
+  },
+  {
+    title: "Gewählte Beziehungen und Unterstützung",
+    desc: "Soziale, praktische oder Peer-Unterstützung kann hilfreich sein, wenn sie gewünscht ist. Angehörige müssen Genesung nicht absichern.",
+  },
+  {
+    title: "Lebensbedingungen und Teilhabe",
+    desc: "Wohnen, finanzielle Sicherheit, Ausbildung oder Arbeit, sinnvolle Tätigkeiten und der Zugang zu Hilfe können entlasten oder belasten.",
+  },
+  {
+    title: "Zeit und individueller Verlauf",
+    desc: "Veränderung hat keinen festen Zeitplan und verläuft nicht nach einer vorgeschriebenen Reihenfolge.",
+  },
 ] as const;
 
 export default function Genesung() {
@@ -255,7 +270,7 @@ export default function Genesung() {
               className="border-t pt-6"
               style={{ borderColor: "var(--rule-color)" }}
             >
-              <dt style={versalStyle}>Jahre</dt>
+              <dt style={versalStyle}>10 Jahre</dt>
               <dd className="mt-3" style={bodyStyle}>
                 beschreiben den Beobachtungszeitraum der Forschung. Daraus lässt
                 sich keine feste Wartezeit bis zu einer Besserung ableiten.
@@ -515,33 +530,35 @@ export default function Genesung() {
             </div>
           </ContentSection>
 
-          {/* ── ContentSection 5: faktoren ── */}
+          {/* ── ContentSection 5: mögliche Einflussbereiche ── */}
           <ContentSection
             variant="editorial"
             collapsible={false}
-            title="Was Entwicklung eher fördert"
+            title="Mögliche Einflussbereiche rund um Genesung"
             id="faktoren"
           >
-            <ol className="mt-2 space-y-4">
-              {foerderfaktoren.map((item, index) => (
-                <li key={item} className="flex items-start gap-4">
-                  <span
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
-                    style={{
-                      backgroundColor: "var(--accent-primary)",
-                      color: "var(--bg-primary)",
-                      fontSize: "var(--text-sm)",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {index + 1}
-                  </span>
-                  <p className="pt-1.5" style={bodyStyle}>
-                    {item}
+            <EditorialProse>
+              <p>
+                Die folgenden Bereiche sind eine redaktionelle Orientierung ohne
+                Reihenfolge, keine Formel und keine persönliche Prognose. Welche
+                Bereiche wichtig sind und welche Unterstützung passt, bestimmt
+                die betroffene Person selbst.
+              </p>
+            </EditorialProse>
+            <ul className="mt-6 space-y-6">
+              {einflussbereiche.map(item => (
+                <li
+                  key={item.title}
+                  className="border-t pt-5"
+                  style={{ borderColor: "var(--rule-color)" }}
+                >
+                  <h3 style={h4Style}>{item.title}</h3>
+                  <p className="mt-2" style={bodyStyle}>
+                    {item.desc}
                   </p>
                 </li>
               ))}
-            </ol>
+            </ul>
             <EditorialProse>
               <p className="mt-6">
                 Bei vielen, nicht allen Menschen bestehen zusätzlich andere

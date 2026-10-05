@@ -84,6 +84,9 @@ Druckprüfungen sowie die institutionelle Publikationsfreigabe separat offen.
 
 - [x] Reviewpaket technisch vorbereitet
 - [x] KI-gestützte Prüfhypothesen dokumentiert
+- [x] KI-Simulation aller drei Perspektiven dokumentiert (05.10.2026, privater
+      Gebrauch, ersetzt kein menschliches Review; siehe
+      [`06-befundauswertung.md`](../../qa/issue-615/fachreview-paket/06-befundauswertung.md))
 - [ ] verantwortete Fachprüfung abgeschlossen
 - [ ] unabhängige Perspektive Borderline-Erfahrung abgeschlossen
 - [ ] unabhängige Angehörigenperspektive abgeschlossen
@@ -91,4 +94,6 @@ Druckprüfungen sowie die institutionelle Publikationsfreigabe separat offen.
 - [ ] nachgelagerte technische und reale Prüfungen abgeschlossen
 - [ ] institutionelle Publikationsfreigabe erteilt
 
-**Gesamtstatus: zurückgehalten; menschliches Review ausstehend.**
+**Gesamtstatus: zurückgehalten; menschliches Review ausstehend.** Die
+KI-Simulation empfiehlt Korrekturen an allen fünf Blättern; acht P1-Befunde
+sind offen.

@@ -11,6 +11,7 @@ export const HANDOUT_TEXT_VERSION_IDS = [
   "4-alltags-tipps",
   "eisberg",
   "spaltung",
+  "zustands-landkarte",
   "krisenkommunikation",
   "anspannungskurve",
   "alarm-modus",

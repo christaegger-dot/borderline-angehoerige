@@ -784,17 +784,36 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "gehirn" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Das Gehirn verstehen/i,
+        name: /Hohe Anspannung verstehen/i,
       })
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Hohe Anspannung kann Denken verengen\. Daraus lässt sich keine Absicht ablesen/i
+        /Hohe Anspannung kann Verhalten beeinflussen, hebt die Verantwortung für eigenes Verhalten aber nicht auf/i
       )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Verstehen/i })
     ).toHaveAttribute("href", "/verstehen");
+  });
+
+  it("HandoutTextPage: rendert die nicht-lineare Zustands-Landkarte", async () => {
+    const { default: HandoutTextPage } =
+      await import("@/pages/HandoutTextPage");
+    withRouter(
+      <HandoutTextPage params={{ handoutId: "zustands-landkarte" }} />
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /Anspannung, Kontakt und Handlungsspielraum/i,
+      })
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByText(/Die drei Dimensionen sind keine Stufen/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("Entwurf – fachlich-redaktionelle Freigabe ausstehend.")
+    ).toBeInTheDocument();
   });
 
   it("HandoutTextPage: rendert Eisberg-Textversion", async () => {
@@ -962,7 +981,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(screen.queryByText(/Der 4-Phasen-Zyklus/i)).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Das Gehirn verstehen/i,
+        name: /Textversion lesen: Anspannung, Kontakt und Handlungsspielraum/i,
+      })
+    ).toHaveAttribute("href", "/materialien/text/zustands-landkarte");
+    expect(
+      screen.getByRole("link", {
+        name: /Textversion lesen: Hohe Anspannung verstehen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/gehirn");
     expect(
@@ -972,7 +996,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/kinder");
     expect(
       screen.queryByRole("link", {
-        name: /PDF öffnen: Das Gehirn verstehen/i,
+        name: /PDF öffnen: Hohe Anspannung verstehen/i,
       })
     ).not.toBeInTheDocument();
   });

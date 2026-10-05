@@ -54,6 +54,18 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
     alt: "Pendel-Metapher: Bewertungen können unter Stress einseitiger werden",
   },
   {
+    id: "zustands-landkarte",
+    title: "Anspannung, Kontakt und Handlungsspielraum",
+    description:
+      "Eine persönliche Zustands-Landkarte als Momentaufnahme – ohne festen Phasenablauf, Vorhersage oder Regulierungsauftrag für Angehörige.",
+    category: "grundlagen",
+    webpUrl: "/infografiken/puk-zustands-landkarte-v1.webp",
+    thumbnailUrl:
+      "/infografiken/extras/thumbnails/puk-zustands-landkarte-v1.webp",
+    pdfUrl: "/infografiken/puk-zustands-landkarte-v1.pdf",
+    alt: "Drei getrennt betrachtete Dimensionen: Anspannung, Kontaktwunsch und Handlungsspielraum",
+  },
+  {
     id: "alarm-modus",
     title: "Alarm-Modus vs. Denk-Modus",
     description:
@@ -78,14 +90,14 @@ export const verstehenInfografiken: VerstehenInfografik[] = [
   },
   {
     id: "gehirn",
-    title: "Das Gehirn verstehen",
+    title: "Hohe Anspannung verstehen",
     description:
-      "Vereinfachtes Stressmodell mit freiwilligen Schritten zur eigenen Orientierung – ohne Regulationsauftrag für Angehörige.",
+      "Ein funktionales Stressmodell zu Aufmerksamkeit, Einordnung und Handlungsspielraum – kein Abbild eines «Borderline-Gehirns».",
     category: "neurobiologie",
-    webpUrl: "/infografiken/manus-gehirn-v1.webp",
-    thumbnailUrl: "/infografiken/extras/thumbnails/manus-gehirn-v1.webp",
-    pdfUrl: "/infografiken/manus-gehirn-v1.pdf",
-    alt: "Das Gehirn verstehen",
+    webpUrl: "/infografiken/puk-hohe-anspannung-v1.webp",
+    thumbnailUrl: "/infografiken/extras/thumbnails/puk-hohe-anspannung-v1.webp",
+    pdfUrl: "/infografiken/puk-hohe-anspannung-v1.pdf",
+    alt: "Funktionales Stressmodell: Was mitwirkt, was schwerer werden und was Handlungsspielraum erweitern kann",
   },
 ];
 

@@ -33,7 +33,7 @@ const verstehenCategories = [
   },
   {
     id: "neurobiologie",
-    label: "Stress & Gehirn",
+    label: "Stress & Anspannung",
     count: verstehenInfografiken.filter(i => i.category === "neurobiologie")
       .length,
   },
@@ -101,7 +101,7 @@ export default function VerstehenMaterialsSection() {
         <div className="mx-auto max-w-page">
           <div
             className="flex flex-wrap items-baseline gap-x-1 gap-y-2 overflow-x-auto pb-3"
-            role="tablist"
+            role="group"
             aria-label="Filter Verstehen-Materialien"
           >
             {verstehenCategories.map(cat => (
@@ -162,7 +162,7 @@ export default function VerstehenMaterialsSection() {
                     <p className="material-library-card__kicker">
                       {item.category === "grundlagen"
                         ? "Grundlagen"
-                        : "Stress & Gehirn"}
+                        : "Stress & Anspannung"}
                     </p>
                     <h3 className="material-library-card__title">
                       {item.title}

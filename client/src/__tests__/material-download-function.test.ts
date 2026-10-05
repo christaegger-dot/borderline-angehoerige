@@ -40,6 +40,7 @@ describe("material-download netlify function adapter", () => {
     "4-alltags-tipps",
     "sauerstoffmaske",
     "gehirn",
+    "zustands-landkarte",
     "remission-heilung",
     "5-faktoren-genesung",
     "rolle-genesungsprozess",

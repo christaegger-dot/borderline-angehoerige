@@ -128,7 +128,7 @@ export function Breadcrumbs() {
               </Link>
             </li>
             {parent && (
-              <li className="flex items-center gap-1.5">
+              <li className="hidden items-center gap-1.5 sm:flex">
                 <ChevronRight
                   className="breadcrumb-shell__separator"
                   aria-hidden="true"

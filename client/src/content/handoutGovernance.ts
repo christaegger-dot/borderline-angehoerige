@@ -112,11 +112,20 @@ export const handoutGovernance = {
     visualAssetStatus: "text-only",
     publicationStatus: "withdrawn",
   },
+  "zustands-landkarte": {
+    id: "zustands-landkarte",
+    documentType: "ORIENTIERUNGSBLATT",
+    assetVersion: "puk-zustands-landkarte-v1",
+    approvalStatus: "draft-editorial-review-pending",
+    visualAssetStatus: "text-only",
+  },
   gehirn: {
     id: "gehirn",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-gehirn-v1",
+    assetVersion: "puk-hohe-anspannung-v1",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: ["/infografiken/manus-gehirn-v1.pdf"],
   },
   kinder: {
     id: "kinder",

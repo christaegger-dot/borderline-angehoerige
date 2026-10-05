@@ -247,7 +247,7 @@ export default function MaterialienLibrarySection() {
         <div className="mx-auto max-w-page">
           <div
             className="material-filter-bar"
-            role="tablist"
+            role="group"
             aria-label="Filter Materialien nach Kategorie"
           >
             {categoryMeta.map(cat => {

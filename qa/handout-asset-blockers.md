@@ -58,7 +58,8 @@ oder direkt ausgeliefert:
 - sicherheits- oder krisenbezogen: `notfallplan-krise`, `alarm-modus`,
   `krisenkommunikation`, `anspannungskurve`, `grenzen-ohne-eskalation`,
   `pause-statt-streit`, `zuhoeren-ohne-zustimmen` und `bruecke-gelaender`;
-- erklärende Modelle: `leuchtturm`, `eisberg`, `spaltung`, `gehirn`,
+- erklärende Modelle: `leuchtturm`, `eisberg`, `spaltung`,
+  `zustands-landkarte`, `gehirn`,
   `fortschritt-paradox`, `remission-heilung`, `5-faktoren-genesung`,
   `rolle-genesungsprozess`;
 - Angehörigenrolle und Alltag: `rolle-klaeren`, `drei-saeulen`,
@@ -82,6 +83,8 @@ kennzeichnet diesen Stand ausdrücklich und verlinkt nur die Webfassung.
 | `radikale-akzeptanz` | `puk-radikale-akzeptanz-v3` | redaktioneller Entwurf, nicht publiziert |
 | `gespraeche-kippen`  | `puk-gespraeche-kippen-v3`  | redaktioneller Entwurf, nicht publiziert |
 | `beispiel-dialog`    | `puk-beispiel-dialog-v3`    | redaktioneller Entwurf, nicht publiziert |
+| `zustands-landkarte` | `puk-zustands-landkarte-v1` | Textentwurf; Visual noch nicht erstellt  |
+| `gehirn`             | `puk-hohe-anspannung-v1`    | Textentwurf; Visual noch nicht erstellt  |
 
 ## Operative Regeln
 

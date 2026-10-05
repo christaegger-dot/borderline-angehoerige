@@ -117,6 +117,7 @@ describe("handout governance", () => {
     const textOnlyIds = [
       "notfallplan-krise",
       "gehirn",
+      "zustands-landkarte",
       "leuchtturm",
       "eisberg",
       "spaltung",
@@ -157,6 +158,16 @@ describe("handout governance", () => {
     );
     expect(verstehenTextVersions.some(item => item.id === "4-phasen")).toBe(
       false
+    );
+    expect(HANDOUT_TEXT_VERSION_IDS).toContain("zustands-landkarte");
+    expect(
+      verstehenInfografiken.some(item => item.id === "zustands-landkarte")
+    ).toBe(true);
+    expect(getHandoutApprovalStatus("zustands-landkarte")).toBe(
+      "draft-editorial-review-pending"
+    );
+    expect(getHandoutApprovalStatus("gehirn")).toBe(
+      "draft-editorial-review-pending"
     );
 
     expect(getHandoutGovernance("im-krisenmodus")?.publicationStatus).toBe(

@@ -31,6 +31,9 @@ Paketbezogenes Protokoll:
 - `p1-sicherheits-und-kohaerenzpaket-2026-10-05.md` — Nachweis des
   redaktionell-technischen P1-Pakets zu Krisenlogik, Anti-Stigma,
   Publikationshygiene und Barrierefreiheit; ausdrücklich keine Fachfreigabe.
+- `p1-gehirn-und-zustandslandkarte-2026-10-05.md` — fachlich begründeter
+  Textentwurf für ein funktionales Stressmodell und eine nicht-lineare
+  Zustands-Landkarte; noch ohne Visual-, PDF- oder Publikationsfreigabe.
 
 ## Grundsatz
 

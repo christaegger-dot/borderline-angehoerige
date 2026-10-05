@@ -77,7 +77,7 @@ ist die aktuelle Datenschutzerklärung im Produkt.
 
 ## Gültige Projektzuordnung
 
-- **Öffentliche Website:** [https://borderline-angehoerige.netlify.app/](https://borderline-angehoerige.netlify.app/)
+- **Geschützte Arbeitswebsite:** [https://borderline-angehoerige.netlify.app/](https://borderline-angehoerige.netlify.app/) – nicht als öffentlich freigegebene Website behandeln
 - **Netlify-Site:** `borderline-angehoerige`
 - **Kanonische Arbeitsgrundlage:** Branch `main` dieses Repositories
 

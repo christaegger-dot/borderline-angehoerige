@@ -4,6 +4,7 @@ import LearningGuide, {
   type LearningGuideKind,
 } from "@/components/interactive/LearningGuide";
 import guides from "@/content/learningGuides.json";
+import { isHandoutVisualPublished } from "@/content/handoutGovernance";
 
 describe("interactive learning guides", () => {
   for (const kind of Object.keys(guides) as LearningGuideKind[]) {
@@ -25,9 +26,15 @@ describe("interactive learning guides", () => {
       const expected = guides[kind].sections[0].cards!.at(-1)!;
       expect(within(region).getByText(expected.text)).toBeVisible();
       expect(within(region).getByText(expected.example)).toBeVisible();
-      expect(
-        screen.getByRole("link", { name: "Druckfassung als PDF" })
-      ).toHaveAttribute("href", expect.stringMatching(/^\/.*\.pdf$/));
+      if (isHandoutVisualPublished(kind)) {
+        expect(
+          screen.getByRole("link", { name: "Druckfassung als PDF" })
+        ).toHaveAttribute("href", expect.stringMatching(/^\/.*\.pdf$/));
+      } else {
+        expect(
+          screen.queryByRole("link", { name: "Druckfassung als PDF" })
+        ).not.toBeInTheDocument();
+      }
       expect(
         screen.getByRole("link", { name: "Vollständige Textfassung" })
       ).toHaveAttribute("href", `/materialien/text/${kind}`);

@@ -159,7 +159,7 @@ export const materials: MaterialItem[] = [
       "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v2-thumb.png",
     downloadUrl: "/infografiken/manus-grenzen-spickzettel-v2.pdf",
     priority: "core",
-    verifiedAt: "Mai 2026",
+    verifiedAt: "05.10.2026 (Textversion; Druckfassung in Überarbeitung)",
   },
   {
     id: "bruecke-gelaender",
@@ -256,7 +256,7 @@ export const materials: MaterialItem[] = [
     thumbnailUrl: "/infografiken/extras/thumbnails/puk-dear-v1.webp",
     downloadUrl: "/infografiken/puk-dear-v1.pdf",
     priority: "secondary",
-    verifiedAt: "23.09.2026 (Text und Druckfassung)",
+    verifiedAt: "05.10.2026 (Textversion; Druckfassung in Überarbeitung)",
   },
   {
     id: "radikale-akzeptanz",

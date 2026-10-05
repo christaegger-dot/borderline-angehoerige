@@ -276,6 +276,9 @@
     font-size: 0.9375rem;
     border-top: 1px solid var(--rule-color);
   }
+  .learning-tool__source {
+    overflow-wrap: anywhere;
+  }
   .learning-tool__links {
     display: flex;
     flex-wrap: wrap;

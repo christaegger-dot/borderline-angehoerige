@@ -105,7 +105,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Remission",
     category: "therapie",
     definition:
-      "In der Borderline-Forschung bedeutet Remission, dass eine Person nicht mehr genügend Kriterien für die Diagnose erfüllt. Studien zeigen, dass 85–93% der Betroffenen innerhalb von 10 Jahren eine Remission erreichen (u.a. Zanarini et al., 2010). Diese Zahlen stammen aus Spezialzentren und sind nicht direkt auf die Allgemeinbevölkerung übertragbar.",
+      "In der Borderline-Forschung bedeutet symptomatische Remission, dass eine Person während eines festgelegten Zeitraums nicht mehr genügend Kriterien für die Diagnose erfüllt. In der zehnjährigen Studie von Zanarini et al. (2010) erreichten 93% der 290 zu Beginn stationär behandelten Erwachsenen mindestens einmal eine zweijährige Remission. Das ist eine Gruppenbeobachtung aus einer spezialisierten Stichprobe, keine individuelle Prognose.",
     relatedPage: "/genesung",
     relatedPageTitle: "Genesung ist möglich",
   },
@@ -113,7 +113,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: "Recovery",
     category: "therapie",
     definition:
-      "Recovery geht über Remission hinaus und meint eine umfassendere alltagsbezogene Genesung, also mehr funktionelle Stabilität in Beziehungen, Arbeit oder Ausbildung und im eigenen Leben. Etwa 50% der Betroffenen erreichen nach 10 Jahren eine solche umfassendere Genesung (Zanarini et al., 2012).",
+      "In der zehnjährigen Studie von Zanarini et al. (2010) bezeichnete Recovery eine mindestens zweijährige symptomatische Remission zusammen mit gutem sozialem und beruflichem Funktionieren; 50% der 290 zu Beginn stationär behandelten Erwachsenen erreichten diesen Studienendpunkt mindestens einmal. Persönliche Recovery ist weiter gefasst und kann auch Hoffnung, Verbundenheit, Sinn und Selbstbestimmung umfassen. Die Zahl ist keine individuelle Prognose.",
     relatedPage: "/genesung",
     relatedPageTitle: "Genesung ist möglich",
   },
@@ -138,10 +138,10 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedPageTitle: "Kommunizieren",
   },
   {
-    term: "DEARMAN",
+    term: "DEAR MAN",
     category: "kommunikation",
     definition:
-      "DEARMAN ist eine DBT-Struktur für klare Bitten und Grenzen: Describe (beschreiben), Express (ausdrücken), Assert (klar benennen), Reinforce (verstärken), Mindful (achtsam bleiben), Appear confident (klar auftreten), Negotiate (verhandeln).",
+      "DEAR MAN ist eine DBT-Struktur für klare Bitten und Grenzen: Describe (beschreiben), Express (ausdrücken), Assert (klar benennen), Reinforce (verstärken und positive Folgen benennen), Mindful (achtsam beim Ziel bleiben), Appear confident (klar auftreten), Negotiate (verhandeln). DEAR bezeichnet darin die ersten vier inhaltlichen Schritte.",
     example:
       "Statt 'Du hörst mir nie zu!' → 'Wenn ich spreche und du aufs Handy schaust (D), fühle ich mich unwichtig (E). Ich wünsche mir, dass du das Handy weglegst (A).'",
     relatedPage: "/kommunizieren",

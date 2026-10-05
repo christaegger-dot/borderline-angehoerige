@@ -136,9 +136,13 @@ export const meaningForRelativesCards = [
 ];
 
 export const diagnosticOverviewItems = [
-  "starke Angst vor Verlassenwerden oder Bindungsverlust",
-  "instabile, intensive Beziehungen",
-  "ein schwankendes oder unsicheres Selbstbild",
-  "Impulsivität oder selbstschädigendes Verhalten",
-  "affektive Instabilität, Leere, Wut oder dissoziative Symptome",
+  "starke Bemühungen, ein tatsächliches oder befürchtetes Verlassenwerden zu vermeiden",
+  "instabile, intensive Beziehungen mit stark wechselnden Bewertungen",
+  "ein deutlich und anhaltend unsicheres Selbstbild oder Selbstgefühl",
+  "Impulsivität in mindestens zwei potenziell selbstschädigenden Bereichen",
+  "wiederkehrendes suizidales Verhalten, Suizidankündigungen oder Selbstverletzung",
+  "ausgeprägte Stimmungsschwankungen mit raschen emotionalen Wechseln",
+  "anhaltende Gefühle innerer Leere",
+  "starke Wut oder Schwierigkeiten, Wut zu steuern",
+  "vorübergehendes misstrauisches Erleben oder ausgeprägte Dissoziation unter Stress",
 ];

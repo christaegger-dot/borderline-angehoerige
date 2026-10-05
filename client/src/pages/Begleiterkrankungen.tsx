@@ -36,9 +36,9 @@ const haeufigeKomorbiditaeten = [
   "depressive Erkrankungen",
   "Angststörungen",
   "posttraumatische Belastungsstörung (PTBS)",
-  "Essstörungen",
   "Substanzgebrauchsstörungen",
-  "weitere Persönlichkeitsstörungen",
+  "Essstörungen",
+  "Aufmerksamkeitsdefizit-/Hyperaktivitätsstörung (ADHS)",
 ] as const;
 
 const depressionsZeichen = [
@@ -59,12 +59,16 @@ const andereKomorbiditaeten = [
     desc: "PTBS kann gleichzeitig bestehen oder bei der fachlichen Differenzialdiagnostik geprüft werden. Die Diagnose und eine mögliche traumafokussierte Behandlung werden individuell mit Fachpersonen geplant.",
   },
   {
+    title: "Substanzgebrauchsstörungen",
+    desc: "Manche Menschen berichten von problematischem Alkohol-, Cannabis- oder anderem Substanzgebrauch. Gründe und Funktionen unterscheiden sich und lassen sich nicht aus einer Diagnose ableiten. Eine fachliche Abklärung kann passende Behandlungsschritte klären.",
+  },
+  {
     title: "Essstörungen",
     desc: "Essstörungen können bei Menschen verschiedener Geschlechter und Altersgruppen gleichzeitig bestehen. Bei körperlicher Gefährdung braucht es rasch eine fachliche und medizinische Einschätzung.",
   },
   {
-    title: "Substanzgebrauchsstörungen",
-    desc: "Manche Menschen berichten von problematischem Alkohol-, Cannabis- oder anderem Substanzgebrauch. Gründe und Funktionen unterscheiden sich und lassen sich nicht aus einer Diagnose ableiten. Eine fachliche Abklärung kann passende Behandlungsschritte klären.",
+    title: "ADHS",
+    desc: "ADHS kann gleichzeitig bestehen. Einzelne Merkmale wie Impulsivität oder Schwierigkeiten mit der Emotionsregulation können sich überschneiden. Eine fachliche Abklärung berücksichtigt deshalb unter anderem Entwicklungsgeschichte, Beginn und situationsübergreifendes Auftreten; aus der Borderline-Diagnose allein lässt sich ADHS nicht ableiten.",
   },
 ] as const;
 
@@ -93,12 +97,12 @@ export default function Begleiterkrankungen() {
     <Layout>
       <SEO
         title="Begleiterkrankungen"
-        description="Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert."
+        description="Komorbidität bei Borderline: welche Begleiterkrankungen in klinischen Studien beschrieben werden, was das für Angehörige bedeutet und wie Behandlung individuell geplant wird."
         path="/verstehen/begleiterkrankungen"
       />
       <MedicalPageSchema
         title="Begleiterkrankungen"
-        description="Komorbidität bei Borderline: warum Depression so oft dazukommt, was das für Angehörige bedeutet, und wie Behandlung sich dadurch verändert."
+        description="Komorbidität bei Borderline: welche Begleiterkrankungen in klinischen Studien beschrieben werden, was das für Angehörige bedeutet und wie Behandlung individuell geplant wird."
         path="/verstehen/begleiterkrankungen"
       />
       <TableOfContents />
@@ -112,9 +116,10 @@ export default function Begleiterkrankungen() {
           </DisplayHeading>
           <Lede className="mt-6">
             Bei vielen Menschen mit Borderline bestehen zusätzlich Depression,
-            Angststörungen, PTBS, Essstörungen oder problematischer
-            Substanzgebrauch. Was das für Angehörige bedeuten kann — und was
-            sich nur fachlich beurteilen lässt.
+            Angststörungen, PTBS, Substanzgebrauchsstörungen, Essstörungen oder
+            ADHS. Diese Beispiele haben keine diagnostische Rangfolge. Was sie
+            für Angehörige bedeuten können — und was sich nur fachlich
+            beurteilen lässt.
           </Lede>
           <p
             className="mt-4"
@@ -137,9 +142,8 @@ export default function Begleiterkrankungen() {
             <p>
               Diese Seite ordnet ein, welche Begleiterkrankungen in Studien bei
               vielen, aber nicht allen Menschen mit Borderline beschrieben
-              werden, was eine zusätzliche Depression für Alltag und Behandlung
-              bedeuten kann und wie Angehörige unterstützen können, ohne
-              Diagnosen selbst zuzuordnen.
+              werden, was sie für Alltag und Behandlung bedeuten können und wie
+              Angehörige unterstützen können, ohne Diagnosen selbst zuzuordnen.
             </p>
             <p>
               Sie können auch direkt zu{" "}
@@ -164,7 +168,7 @@ export default function Begleiterkrankungen() {
                 className="editorial-link"
                 onClick={e => handleAnchorClick(e, "andere")}
               >
-                «Andere häufige Begleiterkrankungen»
+                «Weitere mögliche Begleiterkrankungen»
               </a>{" "}
               oder{" "}
               <a
@@ -194,7 +198,11 @@ export default function Begleiterkrankungen() {
               Borderline kommen weitere psychische Diagnosen häufig vor. Wie sie
               zusammenhängen, ist individuell verschieden.
             </p>
-            <p>Besonders häufig kommen folgende Erkrankungen dazu:</p>
+            <p>
+              In klinischen Studien werden unter anderem folgende
+              Begleiterkrankungen beschrieben. Die Reihenfolge ist keine
+              Häufigkeitsrangliste:
+            </p>
             <ul className="ml-6 list-disc space-y-1">
               {haeufigeKomorbiditaeten.map(item => (
                 <li key={item}>{item}</li>
@@ -245,22 +253,42 @@ export default function Begleiterkrankungen() {
           >
             <BegleiterkrankungenSvg />
           </EditorialFigure>
+          <EvidenceNote
+            variant="editorial"
+            title="Quellen zur Einordnung der Begleiterkrankungen"
+            definition="Die Übersicht fasst Diagnosen zusammen, die in Fachliteratur zu Borderline beschrieben werden. Sie leitet daraus weder eine Rangfolge noch eine individuelle Wahrscheinlichkeit ab."
+            sources={[
+              {
+                label:
+                  "Shah & Zanarini (2018). Comorbidity of Borderline Personality Disorder: Current Status and Future Directions.",
+                href: quellenLinks.shahZanarini2018,
+                type: "wissenschaft",
+              },
+              {
+                label:
+                  "Weiner, Perroud & Weibel (2019). Attention deficit hyperactivity disorder and borderline personality disorder in adults: a review of their links and risks.",
+                href: quellenLinks.weinerPerroudWeibel2019,
+                type: "wissenschaft",
+              },
+            ]}
+          />
         </ContentSection>
 
         {/* ── 2: Depression bei Borderline ── */}
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Depression bei Borderline — die häufigste Begleiterkrankung"
+          title="Depressive Erkrankungen als mögliche Begleiterkrankung"
           id="depression"
         >
           <EditorialProse>
             <p>
-              Forschung zeigt, dass im Lebenszeitverlauf bei einem grossen Teil
-              der Borderline-Patient:innen mindestens eine depressive Episode
-              auftritt. Studien zur Verlaufsforschung — allen voran
-              Zanarini-Verlaufsstudien — belegen sehr hohe Komorbiditätsraten
-              zur Major Depression.
+              Depressive Erkrankungen werden in klinischen Studien zu Borderline
+              häufig beschrieben. Die älteren Zanarini-Untersuchungen beruhen
+              auf einer spezialisierten, zunächst stationär behandelten
+              Stichprobe und betrachten Diagnosen im Lebenszeit- und
+              Langzeitverlauf. Ihre Befunde sind keine Prävalenzschätzung für
+              alle Menschen mit Borderline und keine individuelle Prognose.
             </p>
             <p>
               <strong>
@@ -428,19 +456,20 @@ export default function Begleiterkrankungen() {
           </EditorialProse>
         </ContentSection>
 
-        {/* ── 5: Andere häufige Komorbiditäten ── */}
+        {/* ── 5: Weitere mögliche Komorbiditäten ── */}
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Andere häufige Begleiterkrankungen — knapp"
+          title="Weitere mögliche Begleiterkrankungen — knapp"
           id="andere"
         >
           <EditorialProse>
             <p>
-              Neben der Depression treten weitere Erkrankungen häufig parallel
-              zur Borderline-Diagnose auf. Diese Übersicht ist bewusst knapp —
-              wer in einem dieser Bereiche tiefere Information sucht, findet sie
-              über die Fachstellen oder über vertiefende Literatur.
+              Neben depressiven Erkrankungen können weitere Diagnosen parallel
+              zur Borderline-Diagnose bestehen. Diese Übersicht ist bewusst
+              knapp und ohne Häufigkeitsrangfolge — wer in einem dieser Bereiche
+              tiefere Information sucht, findet sie über die Fachstellen oder
+              über vertiefende Literatur.
             </p>
           </EditorialProse>
           <div className="mt-6 space-y-6">
@@ -493,7 +522,7 @@ export default function Begleiterkrankungen() {
           <EvidenceNote
             variant="editorial"
             title="Quellen zu Komorbidität und Medikation"
-            definition="Hohe Komorbiditätsraten bei Borderline sind gut belegt. Leitlinien empfehlen zugleich, Borderline selbst nicht primär medikamentös zu behandeln, Medikation aber bei Begleiterkrankungen gezielt einzusetzen."
+            definition="Begleiterkrankungen werden in klinischen Studien zu Borderline häufig beschrieben; Vorkommen und Behandlungsrelevanz müssen individuell beurteilt werden. Leitlinien empfehlen zugleich, Borderline selbst nicht primär medikamentös zu behandeln, Medikation aber bei Begleiterkrankungen gezielt einzusetzen."
             sources={[
               {
                 label:
@@ -599,7 +628,7 @@ export default function Begleiterkrankungen() {
               href: "/genesung",
               title: "Genesung",
               description:
-                "Verlauf und Recovery bei Borderline. Begleiterkrankungen nehmen über Zeit oft ab — siehe Zanarini-Verlaufsstudien.",
+                "Verlauf und Recovery bei Borderline. Begleiterkrankungen können sich im Langzeitverlauf unterschiedlich entwickeln.",
             },
             {
               href: "/selbstfuersorge",

@@ -1382,7 +1382,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Glossar",
   },
   {
-    title: "DEARMAN",
+    title: "DEAR MAN",
     description:
       "DBT-Struktur für klare Bitten und Grenzen in schwierigen Gesprächen",
     keywords: ["dearman", "kommunikation", "dbt", "technik", "glossar"],
@@ -1809,7 +1809,7 @@ export const searchableContent: SearchEntry[] = [
   {
     title: "Kommunikations-Übungen",
     description:
-      "Offene Fragen, klare Grenzen, DEAR MAN und Validierung interaktiv üben – mit anpassbaren Szenarien und Feedback",
+      "Offene Fragen, klare Grenzen, die vier DEAR-Schritte und Validierung interaktiv üben – mit anpassbaren Szenarien und Feedback",
     keywords: [
       "üben",
       "szenarien",

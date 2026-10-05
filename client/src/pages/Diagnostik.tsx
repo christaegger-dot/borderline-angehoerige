@@ -59,7 +59,7 @@ const ablaufSchritte = [
   },
   {
     title: "Klassifikation",
-    desc: "Zuordnung nach ICD-11 («Borderline-Muster», Code 6D11.5) oder DSM-5-TR (mehrere Merkmale aus einer Liste, in der Regel über längere Zeit erfüllt).",
+    desc: "Das DSM-5-TR beschreibt neun Kriterien; mindestens fünf müssen als anhaltendes, situationsübergreifendes Muster erfüllt sein. Die ICD-11 bestimmt zuerst den Schweregrad einer Persönlichkeitsstörung und kann ergänzend das Borderline-Muster 6D11.5 ausweisen.",
   },
   {
     title: "Verlauf statt Momentaufnahme",
@@ -126,12 +126,12 @@ export default function Diagnostik() {
     <Layout>
       <SEO
         title="Diagnostik"
-        description="Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
+        description="Wie eine Borderline-Abklärung typischerweise abläuft, wer daran beteiligt sein kann, was die Diagnose für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
         path="/verstehen/diagnostik"
       />
       <MedicalPageSchema
         title="Diagnostik"
-        description="Wie eine Borderline-Diagnose entsteht: wer sie stellen darf, wie sie abläuft, was sie für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
+        description="Wie eine Borderline-Abklärung typischerweise abläuft, wer daran beteiligt sein kann, was die Diagnose für Angehörige bedeutet — und wo im Kanton Zürich eine Abklärung möglich ist."
         path="/verstehen/diagnostik"
       />
       <TableOfContents />
@@ -144,10 +144,11 @@ export default function Diagnostik() {
             Wie eine Borderline-Diagnose entsteht
           </DisplayHeading>
           <Lede className="mt-6">
-            Was eine Diagnose bedeutet, wer sie stellen darf, wie sie abläuft —
-            und was sie für Sie als Angehörige verändert. Nicht als Anleitung,
-            jemanden zur Diagnose zu drängen, sondern als Orientierung in einer
-            Phase, in der vieles unklar ist.
+            Was eine Diagnose bedeutet, wer eine Borderline-Abklärung
+            üblicherweise durchführt, wie sie abläuft — und was sie für Sie als
+            Angehörige verändert. Nicht als Anleitung, jemanden zur Diagnose zu
+            drängen, sondern als Orientierung in einer Phase, in der vieles
+            unklar ist.
           </Lede>
           <p
             className="mt-4"
@@ -182,7 +183,7 @@ export default function Diagnostik() {
                 className="editorial-link"
                 onClick={e => handleAnchorClick(e, "wer")}
               >
-                «Wer stellt eine Diagnose»
+                «Wer klärt üblicherweise ab»
               </a>
               ,{" "}
               <a
@@ -206,36 +207,28 @@ export default function Diagnostik() {
                 className="editorial-link"
                 onClick={e => handleAnchorClick(e, "anbieter")}
               >
-                «Wo eine Diagnose gestellt werden kann»
+                «Wo eine Abklärung möglich ist»
               </a>{" "}
               springen.
             </p>
           </EditorialProse>
         </EditorialSectionBlock>
 
-        {/* ── 1: Wer stellt eine Diagnose ── */}
+        {/* ── 1: Wer klärt üblicherweise ab ── */}
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Wer stellt eine Borderline-Diagnose?"
+          title="Wer führt eine Borderline-Abklärung üblicherweise durch?"
           id="wer"
         >
           <EditorialProse>
             <p>
-              Eine vertiefte Borderline-Abklärung wird in der Schweiz häufig von
-              Fachpersonen aus zwei Berufsgruppen durchgeführt:
+              Je nach Fragestellung und Versorgungsweg findet eine vertiefte
+              Abklärung zum Beispiel in psychiatrisch-psychotherapeutischen
+              Praxen, Ambulatorien, spezialisierten Angeboten oder Kliniken
+              statt. Beteiligt sein können ärztliche und psychologische
+              Fachpersonen mit entsprechender diagnostischer Erfahrung.
             </p>
-            <ul className="ml-6 list-disc space-y-2">
-              <li>
-                <strong>Psychiater:innen</strong> mit FMH-Anerkennung
-                Psychiatrie und Psychotherapie.
-              </li>
-              <li>
-                <strong>Psychologische Psychotherapeut:innen</strong> mit
-                Berufsausübungsbewilligung Psychotherapie und entsprechender
-                klinischer Qualifikation.
-              </li>
-            </ul>
             <p>
               <strong>Hausärzt:innen</strong> oder andere Fachärzt:innen können
               Beschwerden einordnen, andere Ursachen mitprüfen und an eine
@@ -253,7 +246,7 @@ export default function Diagnostik() {
                 className="editorial-link"
                 onClick={e => handleAnchorClick(e, "anbieter")}
               >
-                «Wo eine Diagnose gestellt werden kann»
+                «Wo eine Abklärung möglich ist»
               </a>
               .
             </p>
@@ -311,8 +304,8 @@ export default function Diagnostik() {
                   </li>
                   <li>
                     <strong>Fachliche Abklärung</strong> – Die Abklärung machen
-                    Fachpersonen: Fachärzt:innen für Psychiatrie und
-                    Psychotherapie oder klinische Psycholog:innen.
+                    dafür qualifizierte Fachpersonen, je nach Versorgungsweg in
+                    Praxis, Ambulatorium oder Klinik.
                   </li>
                   <li>
                     <strong>Mehrere Gespräche</strong> – Eine Abklärung entsteht
@@ -332,10 +325,10 @@ export default function Diagnostik() {
                   </li>
                 </ol>
                 <p className="mt-2">
-                  Bei Jugendlichen erfolgt die Abklärung in der Kinder- und
-                  Jugendpsychiatrie. Wie Eltern oder andere Bezugspersonen
-                  einbezogen werden, hängt unter anderem von Alter,
-                  Urteilsfähigkeit, Einwilligung, Behandlungsrahmen und
+                  Bei Jugendlichen kann die Abklärung in der Kinder- und
+                  Jugendpsychiatrie erfolgen. Wie Eltern oder andere
+                  Bezugspersonen einbezogen werden, hängt unter anderem von
+                  Alter, Urteilsfähigkeit, Einwilligung, Behandlungsrahmen und
                   Schutzbedarf ab. Auch urteilsfähige Minderjährige haben ein
                   Recht auf Vertraulichkeit; konkrete Fragen sollten mit der
                   zuständigen Fachperson geklärt werden.
@@ -351,6 +344,27 @@ export default function Diagnostik() {
               Stempel aus einem einzelnen Gespräch.
             </EditorialPullQuote>
           </div>
+          <EditorialProse>
+            <p className="mt-8">
+              <strong>
+                DSM-5-TR und ICD-11 beschreiben nicht dasselbe Modell:
+              </strong>{" "}
+              Im DSM-5-TR werden neun Kriterien geprüft; mindestens fünf müssen
+              als anhaltendes und situationsübergreifendes Muster vorliegen. In
+              der ICD-11 wird zuerst der Schweregrad einer
+              Persönlichkeitsstörung bestimmt; das Borderline-Muster kann
+              anschliessend mit dem Zusatzcode 6D11.5 beschrieben werden.
+            </p>
+            <p>
+              <strong>Schweizer Kodierkontext:</strong> Für die stationäre
+              medizinische Statistik gilt in der Schweiz 2026 weiterhin die
+              ICD-10-GM 2024. Deshalb kann in entsprechenden Unterlagen der Code
+              F60.31 erscheinen. Das ist eine begrenzte Vorgabe für die
+              stationäre Kodierung und bedeutet nicht, dass ICD-10-GM, DSM-5-TR
+              und ICD-11 inhaltlich gleich aufgebaut sind oder in jedem
+              Versorgungssetting identisch verwendet werden.
+            </p>
+          </EditorialProse>
           <EvidenceNote
             variant="editorial"
             title="Klassifikations- und Verfahrens-Quellen"
@@ -377,6 +391,18 @@ export default function Diagnostik() {
                   "Loranger (1999). IPDE — International Personality Disorder Examination. WHO / Cambridge University Press.",
                 href: quellenLinks.ipde1999,
                 type: "wissenschaft",
+              },
+              {
+                label:
+                  "Bundesamt für Statistik (2026). Medizinisches Kodierungshandbuch: ICD-10-GM 2024 für stationäre Fälle.",
+                href: quellenLinks.bfsKodierung2026,
+                type: "versorgung",
+              },
+              {
+                label:
+                  "Bundesamt für Gesundheit (BAG). Berufs- oder Arztgeheimnis, Abschnitt zu urteilsfähigen Minderjährigen.",
+                href: quellenLinks.bagBerufsgeheimnis,
+                type: "versorgung",
               },
             ]}
           />
@@ -613,7 +639,7 @@ export default function Diagnostik() {
         {/* ── 9: Anbieter-Box ── */}
         <ContentSection
           variant="editorial"
-          title="Wo eine Diagnose im Kanton Zürich gestellt werden kann"
+          title="Wo eine Abklärung im Kanton Zürich möglich ist"
           id="anbieter"
           preview="Eine Auswahl spezialisierter Anlaufstellen für Diagnostik-Abklärung im Kanton Zürich."
         >

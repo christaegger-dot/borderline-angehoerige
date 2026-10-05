@@ -18,13 +18,12 @@ export function DiagnostikWegSvg() {
       <desc id="a1d">
         Fünf Schritte, wie Angehörige eine Abklärung begleiten können, entlang
         einer Zeitachse von oben nach unten. 1: Erste Anlaufstelle anregen oder
-        begleiten – anbieten ja, erzwingen nein. 2: Die fachliche Abklärung
-        machen Fachpersonen – Fachärztinnen und Fachärzte für Psychiatrie und
-        Psychotherapie oder klinische Psychologinnen und Psychologen. 3: Eine
-        Abklärung entsteht aus einem Muster über die Zeit, nicht aus einem
-        einzelnen Moment. 4: Die Fachperson ordnet ein und grenzt ab; ob
-        Angehörige einbezogen werden, hängt vom Einverständnis ab. 5: Es
-        entsteht ein Behandlungsplan, oft eine störungsspezifische
+        begleiten – anbieten ja, erzwingen nein. 2: Dafür qualifizierte
+        Fachpersonen klären je nach Versorgungsweg in Praxis, Ambulatorium oder
+        Klinik ab. 3: Eine Abklärung entsteht aus einem Muster über die Zeit,
+        nicht aus einem einzelnen Moment. 4: Die Fachperson ordnet ein und
+        grenzt ab; ob Angehörige einbezogen werden, hängt vom Einverständnis ab.
+        5: Es entsteht ein Behandlungsplan, oft eine störungsspezifische
         Psychotherapie wie DBT. Eine Diagnose ist ein Anfang, kein Etikett.
       </desc>
       <rect width="760" height="1045" fill="var(--bg-primary)" />
@@ -193,7 +192,7 @@ export function DiagnostikWegSvg() {
         fontStyle="normal"
         textAnchor="start"
       >
-        Die Abklärung machen Fachpersonen – Fachärzt:innen für Psychiatrie
+        Qualifizierte Fachpersonen klären je nach Versorgungsweg
       </text>
       <text
         x="178.00"
@@ -204,7 +203,7 @@ export function DiagnostikWegSvg() {
         fontStyle="normal"
         textAnchor="start"
       >
-        und Psychotherapie oder klinische Psycholog:innen.
+        in Praxis, Ambulatorium oder Klinik ab.
       </text>
       <circle cx="120" cy="506" r="23" fill="var(--accent-primary)" />
       <text
@@ -385,8 +384,8 @@ export function DiagnostikWegSvg() {
         fontStyle="normal"
         textAnchor="start"
       >
-        Bei Jugendlichen läuft die Abklärung über die Kinder- und
-        Jugendpsychiatrie (KJPP)
+        Bei Jugendlichen kann die Abklärung in der Kinder- und Jugendpsychiatrie
+        erfolgen.
       </text>
       <text
         x="64.00"
@@ -397,7 +396,7 @@ export function DiagnostikWegSvg() {
         fontStyle="normal"
         textAnchor="start"
       >
-        – hier ist die Familie meist von Anfang an Teil des Prozesses.
+        Wie Bezugspersonen einbezogen werden, hängt von der Situation ab.
       </text>
       <line
         x1="64"

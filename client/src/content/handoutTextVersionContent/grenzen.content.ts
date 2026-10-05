@@ -72,7 +72,7 @@ export const handoutTextVersions = [
     ],
     sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 05.10.2026 | Erneute fachliche Prüfung ausstehend.",
   }),
   createHandoutTextVersion("bruecke-gelaender", {
     kicker: "Textversion",
@@ -294,8 +294,8 @@ export const handoutTextVersions = [
             text: "Was brauche ich? Klar sagen. Ich wünsche mir...",
           },
           {
-            title: "R – Verstärken",
-            text: "Was ist der Gewinn? Positiv. Das würde mir helfen, weil...",
+            title: "R – Verstärken (positive Folgen benennen)",
+            text: "Was könnte für die andere Person oder das Miteinander hilfreich sein? Entgegenkommen würdigen – ohne Drohung oder Wirkungsgarantie.",
           },
         ],
       },
@@ -334,8 +334,8 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Mason, P. T. & Kreger, R. (2014); Linehan, M. M. (1993), DBT.",
+      "Quelle: Linehan, M. M. (2015), DBT Skills Training Manual, 2. Auflage, DEAR MAN; deutschsprachige redaktionelle Anpassung.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Redaktionell aktualisiert: 05.10.2026. Erneute fachliche Prüfung ausstehend.",
   }),
 ];

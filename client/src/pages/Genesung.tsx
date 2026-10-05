@@ -265,6 +265,15 @@ export default function Genesung() {
                 zweijährige Recovery: Remission zusammen mit guter sozialer und
                 beruflicher Funktionsfähigkeit nach der Studiendefinition.
               </dd>
+              <dd
+                className="mt-1"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  color: "var(--fg-tertiary)",
+                }}
+              >
+                (Zanarini et al., 2010)
+              </dd>
             </div>
             <div
               className="border-t pt-6"
@@ -282,15 +291,16 @@ export default function Genesung() {
             <EvidenceNote
               variant="editorial"
               title="Quellen zu Prognose- und Remissionsaussagen"
+              definition="Die Werte 93 % und 50 % sowie der Zeitraum von zehn Jahren stammen aus Zanarini et al. (2010). Die Studie von 2012 berichtet ein separates 16-Jahres-Follow-up zu anhaltender Remission und Recovery."
               sources={[
                 {
                   label:
-                    "Zanarini et al. (2010) – McLean Study of Adult Development",
+                    "Zanarini et al. (2010) – Zehnjährige McLean-Verlaufsstudie",
                   href: quellenLinks.zanarini2010,
                 },
                 {
                   label:
-                    "Zanarini et al. (2012) – Sustained remission and recovery in BPD",
+                    "Zanarini et al. (2012) – 16-Jahres-Follow-up zu anhaltender Remission und Recovery",
                   href: quellenLinks.zanarini2012,
                 },
                 {
@@ -559,6 +569,31 @@ export default function Genesung() {
                 </li>
               ))}
             </ul>
+            <EvidenceNote
+              variant="editorial"
+              title="Fachlicher Bezug"
+              definition="Die fünf Bereiche sind eine eigene redaktionelle Synthese der Fachstelle, kein validiertes Fünf-Faktoren-Modell und keine individuelle Prognose. Sie ordnen Aussagen aus Behandlungsleitlinien und einem leitliniengestützten Recovery-Rahmen für diese Website. Eine verantwortete fachliche Freigabe bleibt davon getrennt."
+              sources={[
+                {
+                  label:
+                    "American Psychiatric Association (2024) – Practice Guideline for BPD",
+                  href: quellenLinks.apa2024,
+                },
+                {
+                  label:
+                    "NICE (2009, geprüft 2024) – Borderline personality disorder (CG78)",
+                  href: quellenLinks.niceCg78,
+                  type: "versorgung",
+                },
+                {
+                  label:
+                    "AWMF (2025) – S3-Leitlinie Psychosoziale Therapien, Kapitel 7.2",
+                  href: quellenLinks.awmfPsychosozial2025,
+                  type: "versorgung",
+                },
+              ]}
+              reviewDate="05.10.2026"
+            />
             <EditorialProse>
               <p className="mt-6">
                 Bei vielen, nicht allen Menschen bestehen zusätzlich andere

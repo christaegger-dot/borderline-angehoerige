@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   AlertTriangle,
 } from "lucide-react";
+import { Link } from "wouter";
 
 interface Stufe {
   level: number;
@@ -32,7 +33,7 @@ const stufen: Stufe[] = [
     subtitle: "«Ich bin jetzt wirklich da.»",
     icon: Eye,
     tintVar: "--accent-primary",
-    ziel: "Sicherheit durch Präsenz.",
+    ziel: "Zugewandtheit und Aufmerksamkeit zeigen.",
     soGehts: [
       "Kurz innehalten, Blick und Körper zuwenden",
       "Handy weg, nicht nebenbei argumentieren",
@@ -60,8 +61,8 @@ const stufen: Stufe[] = [
       "Ohne Bewertung, ohne Ironie",
     ],
     beispielsaetze: [
-      "«Du fühlst dich gerade sehr verletzt.»",
-      "«Wenn ich dich richtig verstehe, hast du dich heute allein gelassen gefühlt.»",
+      "«Du sagst, dass du dich gerade sehr verletzt fühlst.»",
+      "«Du hast gesagt, dass du dich heute allein gelassen gefühlt hast.»",
     ],
     typischerFehler: "Spiegeln sofort mit einem «aber» zurücknehmen.",
     dialog: {
@@ -94,20 +95,21 @@ const stufen: Stufe[] = [
   },
   {
     level: 4,
-    title: "Nachvollziehen",
-    subtitle: "«Es macht Sinn, dass dich das trifft.»",
+    title: "Im biografischen Kontext verstehen",
+    subtitle: "«Mit dieser Erfahrung ist deine Vorsicht nachvollziehbar.»",
     icon: History,
     tintVar: "--accent-primary",
-    ziel: "Bedeutung geben, ohne zu bewerten.",
+    ziel: "Eine bekannte Vorgeschichte einbeziehen, ohne Verhalten zu entschuldigen.",
     soGehts: [
-      "Stress, Vorgeschichte oder Überforderung mitdenken",
-      "Sinn machen statt recht haben",
+      "Nur bekannte Lernerfahrungen, Vorgeschichte oder körperliche Faktoren einbeziehen",
+      "Zusammenhang anbieten, ohne eine Ursache zu behaupten",
     ],
     beispielsaetze: [
-      "«Bei dem Stress heute ist nachvollziehbar, dass deine Nerven dünn sind.»",
-      "«Wenn du dich schnell verlassen fühlst, kann Warten sehr belastend sein.»",
+      "«Nachdem Absprachen früher öfter kurzfristig weggefallen sind, ist verständlich, dass du diesmal vorsichtig bist.»",
+      "«Nach dem, was du mir über frühere Erfahrungen erzählt hast, verstehe ich besser, warum dir das schwerfällt.»",
     ],
-    typischerFehler: "Bagatellisieren.",
+    typischerFehler:
+      "Eine unbekannte Biografie deuten oder einen Zusammenhang als Ursache behaupten.",
     dialog: {
       betroffener: "Ich kann einfach niemandem vertrauen!",
       angehoeriger:
@@ -116,29 +118,30 @@ const stufen: Stufe[] = [
   },
   {
     level: 5,
-    title: "Das Gültige anerkennen",
-    subtitle: "«Diesen Teil kann ich gut nachvollziehen.»",
+    title: "Im aktuellen Kontext nachvollziehen",
+    subtitle: "«Unter diesen Umständen ist die Reaktion verständlich.»",
     icon: Users,
     tintVar: "--accent-label",
-    ziel: "Den verständlichen Kern benennen, ohne alles zu billigen.",
+    ziel: "Den verständlichen Kern der aktuellen Situation benennen, ohne alles zu billigen.",
     soGehts: [
       "Gefühl oder Bedürfnis anerkennen",
       "Verhalten und Grenze bei Bedarf getrennt ansprechen",
     ],
     beispielsaetze: [
-      "«Dass du dir Nähe wünschst, ist verständlich.»",
-      "«Ich sehe deine Angst und bleibe trotzdem bei meinem Nein.»",
+      "«Nach dieser öffentlichen Kritik ist verständlich, dass du verletzt bist.»",
+      "«Nachdem unser Termin erneut kurzfristig geändert wurde, sehe ich deine Enttäuschung. Ich bleibe trotzdem bei meinem Nein.»",
     ],
     typischerFehler: "Validierung mit Nachgeben verwechseln.",
     dialog: {
-      betroffener: "Bin ich verrückt, dass mich das so trifft?",
+      betroffener:
+        "Mein Chef hat mich vor allen kritisiert. Bin ich verrückt, dass mich das so trifft?",
       angehoeriger:
-        "Nein. Dass dich das trifft, ist verständlich. Und ich sage dir auch ehrlich, wo meine Grenze ist.",
+        "Nein. Nach einer öffentlichen Kritik verletzt und aufgewühlt zu sein, ist nachvollziehbar.",
     },
   },
   {
     level: 6,
-    title: "Auf Augenhöhe bleiben",
+    title: "Radikale Echtheit: auf Augenhöhe bleiben",
     subtitle: "«Wir sind zwei gleichwertige Menschen.»",
     icon: Star,
     tintVar: "--fg-secondary",
@@ -149,7 +152,7 @@ const stufen: Stufe[] = [
     ],
     beispielsaetze: [
       "«Ich nehme dich ernst. Und ich sage dir auch ehrlich, wie es bei mir ankommt.»",
-      "«Wir suchen einen Weg, der für uns beide passt.»",
+      "«Du hast recht: Ich kann nicht ganz wissen, wie es für dich ist. Ich möchte dir trotzdem ehrlich zuhören.»",
     ],
     typischerFehler: "In eine Therapeutenrolle rutschen.",
     dialog: {
@@ -164,12 +167,17 @@ export default function ValidierungsStufenleiter() {
   return (
     <div className="mt-6 space-y-6">
       <p className="text-sm text-muted-foreground">
-        Diese sechs Stufen sind eine fachlich adaptierte Gesprächshilfe, kein
-        universelles Rezept und keine garantierte Reihenfolge. Sie helfen eher
-        dabei, den eigenen Ton zu klären: zuerst Präsenz und Verstehen, dann bei
-        Bedarf mehr Einordnung und Grenze. Formulierungen dürfen angepasst oder
-        weggelassen werden; das Gegenüber kann eine Vermutung jederzeit
-        korrigieren.
+        Die sechs Stufen lehnen sich an Linehans Validierungsstufen der
+        Dialektisch-Behavioralen Therapie (DBT) an. Linehan beschreibt fünf
+        aufeinander aufbauende Formen und als sechste Form radikale Echtheit.
+        Hier sind sie für Angehörige vereinfacht. Sie sind keine Pflichtfolge,
+        und nicht jeder Schritt passt in jedes Gespräch. Formulierungen dürfen
+        angepasst oder weggelassen werden; das Gegenüber kann eine Vermutung
+        jederzeit korrigieren. Grundlage:{" "}
+        <Link href="/quellen#src-linehan-1997" className="editorial-link">
+          Linehan (1997), «Validation and psychotherapy»
+        </Link>
+        .
       </p>
 
       {stufen.map(stufe => {

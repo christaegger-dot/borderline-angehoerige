@@ -17,7 +17,7 @@ export default function Uebungsszenarien() {
     <Layout>
       <SEO
         title="Kommunikations-Übungen"
-        description="Üben Sie offene Fragen, klare Grenzen, DEAR MAN und Validierung anhand anpassbarer Szenarien – interaktiv, mit Feedback und Erklärungen."
+        description="Üben Sie offene Fragen, klare Grenzen, die vier DEAR-Schritte und Validierung anhand anpassbarer Szenarien – interaktiv, mit Feedback und Erklärungen."
         path="/uebungen"
       />
 
@@ -41,7 +41,8 @@ export default function Uebungsszenarien() {
           <Lede className="mt-6">
             Realistische Situationen, verschiedene Antwortmöglichkeiten und
             sofortiges Feedback. Probieren Sie aus, wie begrenzte Zugewandtheit,
-            offene Fragen, DEAR MAN und Validierung klingen können.
+            offene Fragen, die vier DEAR-Schritte und Validierung klingen
+            können.
           </Lede>
 
           <p

@@ -493,10 +493,7 @@ async function runFlow(page, profile) {
   });
 
   await step("Release-PDF-Routen direkt prüfen", async () => {
-    const pdfRoutes = [
-      "/infografiken/manus-kinder-v3.pdf",
-      "/infografiken/manus-grenzen-spickzettel-v2.pdf",
-    ];
+    const pdfRoutes = ["/infografiken/manus-kinder-v3.pdf"];
 
     for (const route of pdfRoutes) {
       const response = await fetch(routeUrl(route), { redirect: "follow" });
@@ -510,7 +507,7 @@ async function runFlow(page, profile) {
   });
 
   await step(
-    "Zurückgezogene und ausgemusterte Krisen-Dateien bleiben gesperrt",
+    "Zurückgezogene und ausgemusterte Dateien bleiben gesperrt",
     async () => {
       const routes = [
         "/api/material-download/notfallplan-krise?disposition=inline",
@@ -520,6 +517,14 @@ async function runFlow(page, profile) {
         "/api/material-download/notfallkarte-zuerich?disposition=inline",
         "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
         "/notfallkarte-preview.webp",
+        "/api/material-download/dear?disposition=inline",
+        "/infografiken/puk-dear-v1.pdf",
+        "/infografiken/puk-dear-v1.webp",
+        "/infografiken/extras/thumbnails/puk-dear-v1.webp",
+        "/api/material-download/grenzen-spickzettel?disposition=inline",
+        "/infografiken/manus-grenzen-spickzettel-v2.pdf",
+        "/infografiken/manus-grenzen-spickzettel-v2.webp",
+        "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v2-thumb.png",
       ];
 
       for (const route of routes) {
@@ -536,10 +541,6 @@ async function runFlow(page, profile) {
       {
         route: "/api/material-download/kinder",
         target: "/infografiken/manus-kinder-v3.pdf",
-      },
-      {
-        route: "/api/material-download/grenzen-spickzettel",
-        target: "/infografiken/manus-grenzen-spickzettel-v2.pdf",
       },
     ];
 

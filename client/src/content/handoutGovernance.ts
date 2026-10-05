@@ -263,6 +263,12 @@ export const handoutGovernance = {
     id: "dear",
     documentType: "PRAXISBLATT",
     approvedVersion: "puk-dear-v1",
+    visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/puk-dear-v1.pdf",
+      "/infografiken/puk-dear-v1.webp",
+      "/infografiken/extras/thumbnails/puk-dear-v1.webp",
+    ],
   },
   "bruecke-gelaender": {
     id: "bruecke-gelaender",
@@ -308,6 +314,12 @@ export const handoutGovernance = {
     id: "grenzen-spickzettel",
     documentType: "PRAXISBLATT",
     approvedVersion: "manus-grenzen-spickzettel-v2",
+    visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-grenzen-spickzettel-v2.pdf",
+      "/infografiken/manus-grenzen-spickzettel-v2.webp",
+      "/infografiken/extras/thumbnails/manus-grenzen-spickzettel-v2-thumb.png",
+    ],
   },
   warnsignale: {
     id: "warnsignale",

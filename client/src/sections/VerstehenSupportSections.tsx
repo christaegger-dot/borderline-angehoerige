@@ -124,9 +124,12 @@ export function VerstehenDiagnosticSection() {
     >
       <EditorialProse>
         <p>
-          Für eine Diagnose müssen Fachpersonen mehrere Merkmale über längere
-          Zeit und in verschiedenen Lebensbereichen beurteilen. Entscheidend ist
-          nicht ein einzelnes Verhalten, sondern das Gesamtbild.
+          Klassifikationssysteme ordnen Borderline unterschiedlich ein. Das
+          DSM-5-TR beschreibt neun Kriterien; für eine Diagnose müssen davon
+          mindestens fünf als überdauerndes Muster vorliegen und zu relevantem
+          Leiden oder Beeinträchtigungen beitragen. Die folgende Liste ist eine
+          gekürzte Orientierung, keine Checkliste zur Selbst- oder
+          Fremddiagnose.
         </p>
       </EditorialProse>
 
@@ -137,6 +140,34 @@ export function VerstehenDiagnosticSection() {
           </li>
         ))}
       </ul>
+
+      <p className="editorial-small-copy mt-6">
+        Die ICD-11 verwendet ein anderes Modell: Zuerst werden Vorliegen und
+        Schweregrad einer Persönlichkeitsstörung beurteilt; ein
+        Borderline-Muster kann zusätzlich angegeben werden. Mehr zu den beiden
+        Systemen und zum Schweizer Kodierkontext finden Sie unter{" "}
+        <Link href="/verstehen/diagnostik#wie" className="editorial-link">
+          Diagnostik
+        </Link>
+        .
+      </p>
+
+      <EvidenceNote
+        variant="editorial"
+        title="Klassifikationsgrundlagen"
+        sources={[
+          {
+            label: "DSM-5-TR (American Psychiatric Association, 2022)",
+            href: quellenLinks.apa2022,
+            type: "wissenschaft",
+          },
+          {
+            label: "ICD-11 CDDR (World Health Organization, 2024)",
+            href: quellenLinks.icd11,
+            type: "wissenschaft",
+          },
+        ]}
+      />
 
       <p className="editorial-small-copy mt-6">
         Mehr zum Diagnostik-Prozess (wer stellt wie eine Diagnose, was sie für
@@ -152,11 +183,12 @@ export function VerstehenDiagnosticSection() {
 
 export function VerstehenBegleitOverviewSection() {
   const komorbiditaeten = [
-    "Depression (häufigste Komorbidität, ca. 75–80 %)",
+    "Depressive Erkrankungen (in klinischen Stichproben häufig beschrieben)",
     "Angststörungen (Panik, soziale Phobie, generalisierte Angst)",
     "Posttraumatische Belastungsstörung (PTBS)",
     "Essstörungen (Bulimie, Binge-Eating)",
     "Substanzgebrauch (Alkohol, Medikamente, illegale Substanzen)",
+    "Aufmerksamkeitsdefizit-/Hyperaktivitätsstörung (ADHS)",
   ] as const;
 
   return (
@@ -183,6 +215,12 @@ export function VerstehenBegleitOverviewSection() {
           </li>
         ))}
       </ul>
+
+      <p className="editorial-small-copy mt-6">
+        Häufigkeitsangaben unterscheiden sich je nach Stichprobe,
+        Erhebungszeitraum und Diagnoseverfahren. Die Liste sagt deshalb nichts
+        über die Wahrscheinlichkeit bei einer einzelnen Person aus.
+      </p>
 
       <p className="editorial-small-copy mt-6">
         Mehr zu den einzelnen Komorbiditäten (Depression, Suizidrisiko,

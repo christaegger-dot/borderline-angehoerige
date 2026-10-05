@@ -164,7 +164,7 @@ export const handoutTextVersions = [
       "Körperliche, emotionale und gedankliche Veränderungen können Anlass sein, innezuhalten und die eigene Belastung zu prüfen. Sie beweisen keine Grenzverletzung.",
     intro: [
       "Stress und Überlastung können sich sehr unterschiedlich zeigen. Manche Menschen bemerken körperliche Anspannung, andere veränderte Gefühle, Gedanken, Verhalten oder ein stärkeres Erholungsbedürfnis.",
-      "Die Beispiele sind eine Einladung zur Selbstbeobachtung, kein Test und keine Diagnose. Neue, starke oder anhaltende körperliche Beschwerden sollten medizinisch abgeklärt werden.",
+      "Die Beispiele sind eine Einladung zur Selbstbeobachtung, kein Test und keine Diagnose.",
     ],
     sections: [
       {
@@ -202,11 +202,11 @@ export const handoutTextVersions = [
         title: "Abschluss",
         calloutTitle: "Frage zur Selbstbeobachtung",
         calloutText:
-          "Was beobachten Sie, in welchem Zusammenhang tritt es auf, und was würde Sie jetzt entlasten? Signale sind Hinweise, keine Diagnose – und Erschöpfung ist kein persönliches Versagen.",
+          "Was beobachten Sie, in welchem Zusammenhang tritt es auf, und was würde Sie jetzt entlasten? Signale sind Hinweise, keine Diagnose – und Erschöpfung ist kein persönliches Versagen. Neue, starke oder anhaltende körperliche Beschwerden sollten medizinisch abgeklärt werden.",
       },
     ],
     sourceLine:
-      "Fachliche Bezugspunkte: WHO, Stress – Questions and Answers (2023); NICE NG150, Supporting adult carers (2020, aktualisiert). Eigene didaktische Zusammenstellung zur Selbstbeobachtung; kein diagnostisches Instrument.",
+      "Fachliche Bezugspunkte: WHO, Stress – Questions and Answers (30. März 2026); NICE NG150, Supporting adult carers (2020, aktualisiert). Eigene didaktische Zusammenstellung zur Selbstbeobachtung; kein diagnostisches Instrument.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
@@ -255,7 +255,7 @@ export const handoutTextVersions = [
         title: "Sicherheit",
         calloutTitle: "Wenn Schutz wichtiger ist als ein Gespräch",
         calloutText:
-          "Bei Gewalt, Bedrohung oder unmittelbarer Gefahr geht es nicht um eine Kommunikationsformel. Bringen Sie sich in Sicherheit und holen Sie passende professionelle Hilfe. Sie müssen keine unsichere Situation aushalten.",
+          "Diese Schutzregel gilt diagnoseunabhängig in jeder Beziehung. Bei Gewalt, Bedrohung oder unmittelbarer Gefahr geht es nicht um eine Kommunikationsformel. Bringen Sie sich in Sicherheit und holen Sie passende professionelle Hilfe. Sie müssen keine unsichere Situation aushalten.",
       },
     ],
     sourceLine:

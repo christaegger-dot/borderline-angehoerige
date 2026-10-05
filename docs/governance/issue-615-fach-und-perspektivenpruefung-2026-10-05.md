@@ -7,7 +7,10 @@ liegen unter
 
 ## Prüfstand und Geltungsbereich
 
-- Basis-Commit: `6ae32c08e6841650537ea4a644f63c31fe54153f`
+- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
+- Reviewrunde: 2; sie ersetzt den technisch vorgeprüften Stand aus
+  `6ae32c08e6841650537ea4a644f63c31fe54153f`, zu dem noch keine menschlichen
+  Entscheide dokumentiert waren
 - Kandidatenstatus: Entwurf, fachlich-redaktionelle Freigabe ausstehend
 - öffentliche Assets geschrieben: nein
 - Publikation autorisiert: nein
@@ -52,6 +55,12 @@ anderem folgende Fragen für den menschlichen Entscheid:
   Schweizer Rechts- und Sicherheitsprüfung;
 - Übereinstimmung von Volltext und verdichteter PDF-Darstellung;
 - Format- und Lesbarkeitsabweichungen vom Handoutprofil.
+
+Vor Reviewrunde 2 wurden nur unstrittige Vorbereitungen umgesetzt:
+Footer-Mindestgrösse 8 pt, korrigierte Quellenangaben, die bereits im Volltext
+vorhandenen Sicherheits- und Autonomiehinweise in den PDF-Fassungen sowie die
+diagnoseunabhängige Schutzregel. Diese technische Umsetzung ersetzt keine
+menschliche Bestätigung ihrer fachlichen und emotionalen Wirkung.
 
 Diese Punkte sind in den Einzelbögen genauer beschrieben und bleiben offen,
 bis eine verantwortete Person sie entschieden hat.

@@ -367,11 +367,22 @@ h1 {
   border: 0.35mm solid var(--line);
 }
 
+.sheet[data-id="remission-heilung"] .next ul {
+  margin: 0;
+  padding-left: 5mm;
+  font-size: 8.5pt;
+  line-height: 1.28;
+}
+
+.sheet[data-id="remission-heilung"] .next li + li {
+  margin-top: 0.8mm;
+}
+
 .footer {
-  padding: 3mm 12mm 5mm;
+  padding: 2mm 12mm 3mm;
   border-top: 0.35mm solid var(--ink);
   color: var(--muted);
-  font-size: 7.2pt;
+  font-size: 8pt;
   line-height: 1.28;
 }
 
@@ -380,9 +391,14 @@ h1 {
 }
 
 .footer__meta {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54mm;
+  align-items: start;
   gap: 8mm;
+}
+
+.footer__meta > * {
+  min-width: 0;
 }
 
 .footer__draft {

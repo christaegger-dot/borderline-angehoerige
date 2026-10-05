@@ -7,7 +7,11 @@ sind nicht als öffentliche Website-Assets freigegeben.
 
 ## Verbindlicher Prüfstand
 
-- Basis-Commit: `6ae32c08e6841650537ea4a644f63c31fe54153f`
+- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
+- Reviewrunde: 2
+- ersetzt den technisch vorgeprüften Stand aus Commit
+  `6ae32c08e6841650537ea4a644f63c31fe54153f`; menschliche Entscheide lagen
+  für diesen Stand noch nicht vor
 - maschinenlesbare Sperrdatei: `review-basis.json`
 - Status: `human-review-pending`
 - Veröffentlichung durch dieses Paket: **nein**
@@ -17,6 +21,12 @@ Die Sperrdatei hält je Blatt die Text-, HTML-, PDF-, WebP- und
 Thumbnail-Prüfsummen fest. Ändert sich eine davon, gelten frühere Entscheide
 für das betroffene Blatt nicht mehr. Das Audit
 `pnpm audit:issue615-fachreview` bricht dann absichtlich ab.
+
+Vor Reviewrunde 2 wurden ausschliesslich die freigegebenen Vorbereinigungen
+umgesetzt: Mindestschriftgrösse 8 pt im Footer, präzisierte WHO- und
+AWMF-Angaben, Web–PDF-Parität für vier bereits vorhandene Hinweise sowie die
+diagnoseunabhängige Einordnung der Schutzregel. Die weitergehenden fachlichen,
+rechtlichen und didaktischen Prüfhypothesen bleiben offen.
 
 ## Prüfreihenfolge
 

@@ -112,7 +112,7 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quellen: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78; Zanarini et al. (2012, 2024); AWMF-S3 Psychosoziale Therapien bei schweren psychischen Erkrankungen (2025), Kap. 7.1.",
+      "Quellen: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78; Zanarini et al. (2012, 2024); AWMF-S3 Psychosoziale Therapien bei schweren psychischen Erkrankungen (2025), Kap. 7.2.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),

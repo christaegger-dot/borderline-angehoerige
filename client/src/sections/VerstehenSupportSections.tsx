@@ -187,7 +187,7 @@ export function VerstehenBegleitOverviewSection() {
     "Angststörungen (Panik, soziale Phobie, generalisierte Angst)",
     "Posttraumatische Belastungsstörung (PTBS)",
     "Essstörungen (Bulimie, Binge-Eating)",
-    "Substanzgebrauch (Alkohol, Medikamente, illegale Substanzen)",
+    "Substanzgebrauchsstörungen (Alkohol, Medikamente, illegale Substanzen)",
     "Aufmerksamkeitsdefizit-/Hyperaktivitätsstörung (ADHS)",
   ] as const;
 

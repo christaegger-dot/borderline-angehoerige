@@ -12,10 +12,10 @@ import {
 } from "@/components/editorial";
 import EvidenceNote from "@/components/EvidenceNote";
 import { AufgangIllustration } from "@/components/illustrations";
-import LastVerifiedBadge from "@/components/LastVerifiedBadge";
 import HandoutVisualPlaceholder from "@/components/HandoutVisualPlaceholder";
 import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
+import ReviewBadge from "@/components/ReviewBadge";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import { TableOfContents } from "@/components/UXEnhancements";
 import { genesungItems as genesungMaterialItems } from "@/content/genesung";
@@ -168,7 +168,7 @@ export default function Genesung() {
             <EyebrowLabel spacing="compact">
               Grundtext ca. 8 Min · Mit Vertiefungen länger
             </EyebrowLabel>
-            <LastVerifiedBadge path="/genesung" className="mt-3" />
+            <ReviewBadge path="/genesung" className="mt-3" />
           </div>
         </EditorialSection.Body>
         <EditorialSection.Aside>

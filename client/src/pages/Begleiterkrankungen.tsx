@@ -433,10 +433,10 @@ export default function Begleiterkrankungen() {
               </li>
             </ul>
             <p>
-              Eine wichtige Klarstellung: Eine depressive Episode ist keine
-              «Verstärkung» der Borderline-Symptome durch Beziehungsfaktoren.
-              Sie ist eine eigenständige Erkrankungs-Komponente — Sie können sie
-              nicht durch Ihr Verhalten verursachen oder verhindern.
+              Eine wichtige Klarstellung: Depressive Episoden entstehen durch
+              ein Zusammenspiel biologischer, psychischer und sozialer Faktoren.
+              Ihr Verhalten ist nicht die alleinige Ursache; ebenso können Sie
+              eine Episode nicht allein verhindern.
             </p>
             <p>
               Manche Angehörige erleben depressive Phasen als besonders

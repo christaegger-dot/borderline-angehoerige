@@ -74,6 +74,12 @@ describe("Issue 633 fachliche Quellen und Tatsachen", () => {
     expect(begleiterkrankungen).not.toContain(
       "die häufigste Begleiterkrankung"
     );
+    expect(begleiterkrankungen).not.toContain(
+      "nicht durch Ihr Verhalten verursachen oder verhindern"
+    );
+    expect(begleiterkrankungen).toContain(
+      "Ihr Verhalten ist nicht die alleinige Ursache"
+    );
   });
 
   it("weist die sechs Validierungsstufen Linehan zu und trennt die Kontexte", () => {
@@ -142,10 +148,16 @@ describe("Issue 633 fachliche Quellen und Tatsachen", () => {
     const recovery = normalizedSource("client/src/pages/Genesung.tsx");
 
     expect(selfcare).toContain("Bailey & Grenyer (2013)");
+    expect(selfcare).toContain("Langsames Atmen");
+    expect(selfcare).not.toContain(
+      "Atemübungen und andere kurze Regulationsübungen"
+    );
     expect(selfcare).not.toContain("Hoffman et al., 2005");
     expect(recovery).toContain("(Zanarini et al., 2010)");
     expect(recovery).toContain("16-Jahres-Follow-up");
     expect(recovery).toContain("kein validiertes Fünf-Faktoren-Modell");
+    expect(recovery).toContain("ReviewBadge");
+    expect(recovery).not.toContain("LastVerifiedBadge");
   });
 
   it("hält die veraltete DEAR-Druckgrafik bis zur Neugestaltung zurück", () => {

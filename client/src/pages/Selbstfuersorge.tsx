@@ -569,7 +569,7 @@ export default function Selbstfuersorge() {
               },
               {
                 label:
-                  "Atemübungen und andere kurze Regulationsübungen können helfen, akute Anspannung im Körper zu senken (u. a. Zaccaro et al., 2018)",
+                  "Langsames Atmen kann körperliche Regulationsprozesse und akute Anspannung beeinflussen (Zaccaro et al., 2018); daraus folgt keine Wirkungsgarantie für jede Person",
                 href: quellenLinks.zaccaro2018,
                 type: "wissenschaft",
               },

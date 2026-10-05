@@ -435,8 +435,10 @@ export default function Begleiterkrankungen() {
             <p>
               Eine wichtige Klarstellung: Depressive Episoden entstehen durch
               ein Zusammenspiel biologischer, psychischer und sozialer Faktoren.
-              Ihr Verhalten ist nicht die alleinige Ursache; ebenso können Sie
-              eine Episode nicht allein verhindern.
+              Angehörige sind nicht für die Erkrankung verantwortlich und müssen
+              sie nicht verhindern können. Beziehungen können das Befinden
+              dennoch beeinflussen; Veränderungen im Miteinander sind deshalb
+              kein Beleg für Schuld oder Ursache.
             </p>
             <p>
               Manche Angehörige erleben depressive Phasen als besonders

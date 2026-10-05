@@ -78,7 +78,10 @@ describe("Issue 633 fachliche Quellen und Tatsachen", () => {
       "nicht durch Ihr Verhalten verursachen oder verhindern"
     );
     expect(begleiterkrankungen).toContain(
-      "Ihr Verhalten ist nicht die alleinige Ursache"
+      "Angehörige sind nicht für die Erkrankung verantwortlich"
+    );
+    expect(begleiterkrankungen).toContain(
+      "Beziehungen können das Befinden dennoch beeinflussen"
     );
   });
 

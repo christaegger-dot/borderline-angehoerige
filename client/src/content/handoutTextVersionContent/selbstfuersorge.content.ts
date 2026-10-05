@@ -195,116 +195,119 @@ export const handoutTextVersions = [
   createHandoutTextVersion("energie-konto", {
     kicker: "Textversion",
     summary:
-      "Ihre Energie ist begrenzt. Wenn Sie im Blick behalten, was auftankt und was Energie kostet, können Sie früher gegensteuern statt erst im Leerlauf zu reagieren.",
+      "Was Kraft kostet oder entlastet, ist individuell und kann sich verändern. Die Metapher hilft beim Beobachten; sie misst keine Energie und verlangt keine perfekte Balance.",
     intro: [
-      "Das Energie-Konto macht sichtbar, was Kraft gibt und was Kraft kostet. Die Batterie-Metapher hilft, Belastung früher zu bemerken, bevor Erschöpfung zum Dauerzustand wird.",
-      "Die Grundidee ist bewusst praktisch. Statt nur über Belastung nachzudenken, hilft die Gegenüberstellung von Energiegebern und Energiefressern dabei, konkrete Veränderungen im Alltag zu planen.",
+      "Angehörigen- oder Sorgearbeit kann psychisch, körperlich, sozial und finanziell belasten.",
+      "Nicht jede Belastung lässt sich durch persönliche Selbstfürsorge ausgleichen. Auch praktische Entlastung und Unterstützung von aussen gehören in den Blick.",
     ],
     sections: [
       {
         title: "Kernaussage",
-        calloutTitle: "Worum es beim Energie-Konto geht",
+        calloutTitle: "Eine Metapher, keine Bilanz",
         calloutText:
-          "Ihre Energie ist begrenzt. Das Energie-Konto ist eine Selbstbeobachtungsmetapher, kein Messinstrument. Es geht nicht um perfekte Balance, sondern um frühes Bemerken.",
+          "Das Energie-Konto ist eine Reflexionsmetapher, keine Skala, Diagnose oder Leistungsaufgabe. Ein niedriger Stand ist kein persönliches Versagen.",
       },
       {
-        title: "Was füllt",
+        title: "Was entlasten kann",
         intro:
-          "Die linke Spalte nennt typische Energiegeber, die das Konto wieder auffüllen können.",
+          "Die Beispiele sind Möglichkeiten, keine allgemeingültigen Energiegeber.",
         cards: [
           {
-            title: "Bewegung und Sport",
-            text: "Körperliche Aktivität kann spürbar Energie zurückgeben.",
+            title: "Pausen und Erholung",
+            text: "Verlässliche Pausen oder Ruhezeiten können manchen Menschen Entlastung ermöglichen.",
           },
           {
-            title: "Soziale Kontakte pflegen",
-            text: "Tragender Kontakt kann entlasten und verbinden.",
+            title: "Gewählte Kontakte",
+            text: "Kontakt mit vertrauten Menschen oder einer Peer-Gruppe kann unterstützend sein, wenn er guttut.",
           },
           {
-            title: "Hobbys und Interessen",
-            text: "Eigene Interessen erinnern daran, dass Ihr Leben mehr umfasst als Belastung.",
+            title: "Eigene Interessen",
+            text: "Angenehme Tätigkeiten, Bewegung oder Natur können Raum ausserhalb der Belastung schaffen, wenn sie zur Person passen.",
           },
           {
-            title: "Natur und Ruhe",
-            text: "Rückzug, Stille und Natur können Nervensystem und Gedanken beruhigen.",
+            title: "Praktische Entlastung",
+            text: "Aufgaben zu teilen oder Unterstützung im Alltag zu erhalten, kann Belastung verringern.",
           },
           {
-            title: "Professionelle Unterstützung",
-            text: "Begleitung von aussen kann entlasten und strukturieren.",
+            title: "Beratung und Unterstützung",
+            text: "Professionelle oder gemeinschaftliche Angebote können Information, Austausch oder Entlastung bieten.",
           },
           {
-            title: "Schlaf und Erholung",
-            text: "Regeneration ist kein Luxus, sondern Grundversorgung.",
+            title: "Zeit für das eigene Leben",
+            text: "Eigene Beziehungen, Arbeit, Interessen und Erholung dürfen einen eigenständigen Platz behalten.",
           },
         ],
       },
       {
-        title: "Was leert",
+        title: "Was belasten kann",
         intro:
-          "Die rechte Spalte zeigt typische Belastungen, die das Energie-Konto nach unten ziehen.",
+          "Auch diese Beispiele sind individuell und keine vollständige Liste.",
         cards: [
           {
-            title: "Krisen begleiten",
-            text: "Akute Belastung kostet Kraft, auch wenn Hilfe nötig und sinnvoll ist.",
+            title: "Krisen und Unsicherheit",
+            text: "Unvorhersehbare oder belastende Situationen können viel Aufmerksamkeit und Kraft beanspruchen.",
           },
           {
             title: "Ständige Erreichbarkeit",
-            text: "Dauerbereitschaft verhindert echte Erholung.",
+            text: "Wenig planbare Unterbrechungen und fehlende Pausen können Erholung erschweren.",
           },
           {
-            title: "Schuldgefühle und Grübeln",
-            text: "Innere Kreise ohne Lösung verbrauchen viel Energie.",
+            title: "Konflikte und Sorgen",
+            text: "Wiederkehrende Auseinandersetzungen, Sorgen oder Grübeln können belastend sein.",
           },
           {
-            title: "Konflikte und Vorwürfe",
-            text: "Wiederholte Auseinandersetzungen ziehen Kraft und Ruhe ab.",
+            title: "Isolation",
+            text: "Mit Belastungen allein zu bleiben oder Kontakte zu verlieren, kann zusätzliche Kraft kosten.",
           },
           {
-            title: "Isolation und Rückzug",
-            text: "Allein mit allem zu bleiben entlastet selten dauerhaft.",
+            title: "Arbeit, Wohnen und Finanzen",
+            text: "Materielle und organisatorische Belastungen können Sorgearbeit zusätzlich erschweren.",
           },
           {
-            title: "Eigene Bedürfnisse ignorieren",
-            text: "Wer sich selbst ständig übergeht, leert das Konto weiter.",
+            title: "Zu viele Aufgaben, zu wenig Unterstützung",
+            text: "Wenn Verantwortung dauerhaft nicht geteilt werden kann, kann der eigene Spielraum kleiner werden.",
           },
         ],
       },
       {
-        title: "Orientierung",
-        calloutTitle: "Die einfache Prüffrage",
-        calloutText:
-          "Fragen Sie nicht nur, was Kraft kostet, sondern auch, was Ihr Energie-Konto verlässlich wieder auffüllt.",
+        title: "Fragen zur Selbstbeobachtung",
+        bullets: [
+          "Was hat heute Kraft gekostet?",
+          "Was hat etwas entlastet – auch wenn es nur wenig war?",
+          "Was kann ich selbst verändern?",
+          "Wofür brauche ich Unterstützung oder Entlastung von aussen?",
+        ],
       },
       {
         title: "Was können Sie tun?",
         cards: [
           {
-            title: "1. Stand ehrlich einschätzen",
-            text: "Fragen Sie sich ohne Beschönigung: Wie voll ist mein Energie-Konto gerade?",
+            title: "1. Beobachten",
+            text: "Notieren Sie auf Wunsch eine Belastung und eine kleine Entlastung, ohne sich dafür zu bewerten.",
           },
           {
-            title: "2. Einen Energiegeber terminieren",
-            text: "Planen Sie diese Woche eine konkrete Auftank-Aktivität fest ein.",
+            title: "2. Einen machbaren Schritt wählen",
+            text: "Wählen Sie nur eine Veränderung, die im Moment realistisch und freiwillig ist.",
           },
           {
-            title: "3. Einen Energiefresser begrenzen",
-            text: "Wählen Sie genau eine Belastung, die Sie diese Woche verkleinern oder unterbrechen.",
+            title: "3. Unterstützungsbedarf benennen",
+            text: "Prüfen Sie, welche Belastung nicht allein durch Selbstfürsorge lösbar ist und wo Unterstützung nötig wäre.",
           },
         ],
       },
     ],
     sourceLine:
-      "Quelle: Maslach, C. & Leiter, M. P. (2016), allgemeine Burnout-Prävention; Selbstfürsorge-orientierte Angehörigenarbeit.",
+      "Quellen: NICE NG150, Supporting adult carers; WHO Europa, Caring for yourself while caring for others (2025); Bundesamt für Gesundheit, Psychische Gesundheit. Redaktionelle Reflexionsmetapher.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("erlaubnis-karte", {
     kicker: "Textversion",
     summary:
-      "Die Erlaubnis-Karte bündelt neun Sätze, die Angehörigen oft guttun: eigene Bedürfnisse ernst nehmen, Grenzen setzen und ein eigenes Leben behalten.",
+      "Die Erlaubnis-Karte bündelt neun freiwillige Sätze zu eigenen Bedürfnissen, Grenzen und einem eigenen Leben.",
     intro: [
-      "Die Erlaubnis-Karte sammelt Sätze, die Angehörige oft erst wieder lernen müssen. Sie ist nicht als Pflichtliste gemeint, sondern als entlastende Zusage zum Auswählen.",
-      "Der Fokus ist entlastend. Die Grafik erinnert daran, dass Selbstfürsorge, Grenzen und eigene Gefühle nicht gegen die Beziehung stehen, sondern zu gesunder Angehörigenarbeit dazugehören.",
+      "Die Sätze sind Angebote zum Auswählen, keine Pflichtliste.",
+      "Selbstfürsorge, Grenzen und eigene Gefühle dürfen einen eigenständigen Platz haben.",
     ],
     sections: [
       {
@@ -318,7 +321,7 @@ export const handoutTextVersions = [
           "Hilfe annehmen und um Hilfe bitten.",
           "Wütend, traurig oder überfordert sein.",
           "Grenzen setzen, auch wenn es Widerstand gibt.",
-          "Sich kurz zurückziehen und später erklären, wenn wieder mehr Ruhe da ist.",
+          "Sich zurückziehen, ohne eine spätere Erklärung oder Gesprächsfortsetzung versprechen zu müssen.",
           "Freude empfinden, auch wenn es dem Angehörigen schlecht geht.",
           "Ihr eigenes Leben leben.",
         ],
@@ -353,9 +356,9 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Selbstfürsorge-orientierte Angehörigenarbeit, nach Mason, P. T. & Kreger, R. (2014).",
+      "Fachlicher Rahmen: NICE NG150; WHO Europa, Caring for yourself while caring for others (2025). Redaktionelle Reflexionskarte, kein validiertes Instrument.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("schuld-verantwortung", {
     kicker: "Textversion",

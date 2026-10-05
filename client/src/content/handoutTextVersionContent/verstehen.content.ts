@@ -63,7 +63,7 @@ export const handoutTextVersions = [
     sourceLine:
       "Eigene didaktische Metapher zur Selbstorientierung von Angehörigen; recovery- und rechteorientiert überarbeitet.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 04.10.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("eisberg", {
     kicker: "Textversion",

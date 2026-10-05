@@ -39,8 +39,8 @@ export const genesungItems: GenesungItem[] = [
   },
   {
     id: "remission-heilung",
-    title: "Remission vs. Heilung",
-    desc: "Was Besserung wirklich bedeutet",
+    title: "Remission, Alltag und persönliche Recovery",
+    desc: "Unterschiedliche Blickwinkel auf Veränderung – ohne Heilungsversprechen oder feste Prognose",
     img: "/infografiken/manus-remission-heilung-v1.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/manus-remission-heilung-v1.webp",
@@ -49,8 +49,8 @@ export const genesungItems: GenesungItem[] = [
   },
   {
     id: "5-faktoren-genesung",
-    title: "5 Faktoren, die Genesung fördern",
-    desc: "Säulen-Modell: Was positiv beeinflusst",
+    title: "Fünf Bereiche rund um Genesung",
+    desc: "Eine nicht abschliessende Orientierung zu Behandlung, Gesundheit, Beziehungen, Lebensbedingungen und Verlauf",
     img: "/infografiken/manus-5-faktoren-genesung-v1.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/manus-5-faktoren-genesung-v1.webp",

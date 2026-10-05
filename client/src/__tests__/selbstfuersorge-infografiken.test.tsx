@@ -31,7 +31,7 @@ describe("SelbstfuersorgeInfografikenSection", () => {
     ).toHaveAttribute("href", "/materialien/text/stopp-technik");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Ihr Energie-Konto/i,
+        name: /Textversion lesen: Energie-Konto: Belastungen und Ressourcen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/energie-konto");
     expect(
@@ -40,7 +40,7 @@ describe("SelbstfuersorgeInfografikenSection", () => {
       })
     ).not.toBeInTheDocument();
     expect(
-      screen.getByText(/Druckgrafik und das PDF werden fachlich/i)
-    ).toBeInTheDocument();
+      screen.getAllByText(/Druckgrafik und das PDF werden fachlich/i)
+    ).not.toHaveLength(0);
   });
 });

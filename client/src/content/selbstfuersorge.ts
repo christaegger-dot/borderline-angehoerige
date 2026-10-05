@@ -58,8 +58,8 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
   },
   {
     id: "energie-konto",
-    title: "Ihr Energie-Konto",
-    desc: "Stock-&-Flow-Diagramm: Was füllt Ihre Batterie auf, was leert sie? Achten Sie auf die Balance.",
+    title: "Energie-Konto: Belastungen und Ressourcen",
+    desc: "Eine Reflexionshilfe für persönliche Belastungen, Entlastung und Unterstützungsbedarf – keine Bilanz.",
     category: "ressourcen",
     webp: "/infografiken/manus-energie-konto-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-energie-konto-v1.webp",
@@ -68,7 +68,7 @@ export const selbstfuersorgeInfografiken: SelbstfuersorgeInfografik[] = [
   {
     id: "erlaubnis-karte",
     title: "Erlaubnis-Karte",
-    desc: "9 Erlaubnisse, die sich Angehörige oft nicht geben – gültig ab sofort, unbefristet.",
+    desc: "9 freiwillige Sätze zu eigenen Bedürfnissen, Grenzen und Entlastung.",
     category: "ressourcen",
     webp: "/infografiken/manus-erlaubnis-karte-v1.webp",
     thumbnailUrl:

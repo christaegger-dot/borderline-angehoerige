@@ -188,13 +188,13 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/soforthilfe");
   });
 
-  it("HandoutTextPage: rendert Drei-Säulen-Textversion", async () => {
+  it("HandoutTextPage: rendert Textversion mit drei Fragen zur Selbstklärung", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(<HandoutTextPage params={{ handoutId: "drei-saeulen" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Drei Säulen hilfreicher Unterstützung/i,
+        name: /Drei Fragen zur Selbstklärung/i,
       })
     ).toBeInTheDocument();
     expect(
@@ -207,7 +207,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
   });
 
-  it("HandoutTextPage: rendert Konsistenz-Prinzip-Textversion", async () => {
+  it("HandoutTextPage: rendert Textversion zu klaren und anpassbaren Absprachen", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(
@@ -215,7 +215,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     );
     expect(
       screen.getByRole("heading", {
-        name: /Konsistenz-Prinzip/i,
+        name: /Klare und anpassbare Absprachen/i,
         level: 1,
       })
     ).toBeInTheDocument();
@@ -242,22 +242,22 @@ describe("Smoke Tests – Kritische Seiten", () => {
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
+      await screen.findAllByText(
         /Innehalten, beobachten, Unsicherheit anerkennen und bewusst wählen/i
       )
-    ).toBeInTheDocument();
+    ).not.toHaveLength(0);
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Unterstützen/i })
     ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
   });
 
-  it("HandoutTextPage: rendert 6-Leitlinien-Textversion", async () => {
+  it("HandoutTextPage: rendert Textversion mit sechs Orientierungspunkten", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(<HandoutTextPage params={{ handoutId: "6-leitlinien" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /6 Leitlinien für Angehörige/i,
+        name: /6 Orientierungspunkte für Angehörige/i,
         level: 1,
       })
     ).toBeInTheDocument();
@@ -271,13 +271,13 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/unterstuetzen/uebersicht");
   });
 
-  it("HandoutTextPage: rendert 4-Alltags-Tipps-Textversion", async () => {
+  it("HandoutTextPage: rendert Textversion mit vier Fragen für den Alltag", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(<HandoutTextPage params={{ handoutId: "4-alltags-tipps" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /4 Alltags-Tipps/i,
+        name: /4 Fragen für den Alltag/i,
         level: 1,
       })
     ).toBeInTheDocument();
@@ -350,14 +350,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "energie-konto" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Ihr Energie-Konto/i,
+        name: /Energie-Konto: Belastungen und Ressourcen/i,
         level: 1,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(
-        /Das Energie-Konto ist eine Selbstbeobachtungsmetapher/i
-      )
+      await screen.findByText(/Das Energie-Konto ist eine Reflexionsmetapher/i)
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Selbstfürsorge/i })
@@ -636,12 +634,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "grenzen-erkennen" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Grenzen erkennen/i,
+        name: /Belastung wahrnehmen, Grenzen prüfen/i,
       })
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Ihr Körper weiss oft vor Ihrem Kopf, dass eine Grenze überschritten wurde\./i
+        /Ein Signal sagt nicht automatisch, was die Ursache ist\./i
       )
     ).toBeInTheDocument();
     expect(
@@ -649,18 +647,18 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/grenzen");
   });
 
-  it("HandoutTextPage: rendert LMK-Textversion", async () => {
+  it("HandoutTextPage: rendert Textversion zum Benennen und Schützen einer Grenze", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(<HandoutTextPage params={{ handoutId: "lmk" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Wenn Grenzen nicht respektiert werden/i,
+        name: /Grenze benennen – eigenen Schritt wählen/i,
       })
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Sie können Grenzen setzen\. Sie können Konsequenzen umsetzen\./i
+        /Eine Grenze schützt den eigenen Handlungsspielraum\./i
       )
     ).toBeInTheDocument();
     expect(
@@ -710,12 +708,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     withRouter(<HandoutTextPage params={{ handoutId: "remission-heilung" }} />);
     expect(
       screen.getByRole("heading", {
-        name: /Remission vs\. Heilung/i,
+        name: /Remission, Alltag und persönliche Recovery/i,
       })
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Symptome können deutlich zurückgehen; Funktionsfähigkeit/i
+        /Symptome, Funktionsfähigkeit, Lebensqualität und persönliche Recovery können sich unterschiedlich entwickeln\./i
       )
     ).toBeInTheDocument();
     expect(
@@ -723,7 +721,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/genesung");
   });
 
-  it("HandoutTextPage: rendert 5-Faktoren-Genesung-Textversion", async () => {
+  it("HandoutTextPage: rendert Textversion zu fünf Bereichen rund um Genesung", async () => {
     const { default: HandoutTextPage } =
       await import("@/pages/HandoutTextPage");
     withRouter(
@@ -731,11 +729,13 @@ describe("Smoke Tests – Kritische Seiten", () => {
     );
     expect(
       screen.getByRole("heading", {
-        name: /5 Faktoren, die Genesung fördern/i,
+        name: /Fünf Bereiche rund um Genesung/i,
       })
     ).toBeInTheDocument();
     expect(
-      await screen.findByText(/Verantwortung liegt nicht bei Angehörigen/i)
+      await screen.findByText(
+        /Angehörige müssen keinen dieser Bereiche herstellen oder absichern\./i
+      )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Zum Themenbereich Genesung/i })
@@ -895,7 +895,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/4-arten-von-grenzen");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Grenzen erkennen/i,
+        name: /Textversion lesen: Belastung wahrnehmen, Grenzen prüfen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/grenzen-erkennen");
     expect(
@@ -945,12 +945,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/fortschritt-paradox");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Remission vs\. Heilung/i,
+        name: /Textversion lesen: Remission, Alltag und persönliche Recovery/i,
       })
     ).toHaveAttribute("href", "/materialien/text/remission-heilung");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: 5 Faktoren, die Genesung fördern/i,
+        name: /Textversion lesen: Fünf Bereiche rund um Genesung/i,
       })
     ).toHaveAttribute("href", "/materialien/text/5-faktoren-genesung");
     expect(
@@ -960,12 +960,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/rolle-genesungsprozess");
     expect(
       screen.queryByRole("link", {
-        name: /PDF öffnen: Remission vs\. Heilung/i,
+        name: /PDF öffnen: Remission, Alltag und persönliche Recovery/i,
       })
     ).not.toBeInTheDocument();
     expect(
       screen.queryByRole("link", {
-        name: /PDF öffnen: 5 Faktoren, die Genesung fördern/i,
+        name: /PDF öffnen: Fünf Bereiche rund um Genesung/i,
       })
     ).not.toBeInTheDocument();
     expect(
@@ -1012,12 +1012,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Drei Säulen hilfreicher Unterstützung/i,
+        name: /Textversion lesen: Drei Fragen zur Selbstklärung/i,
       })
     ).toHaveAttribute("href", "/materialien/text/drei-saeulen");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Konsistenz-Prinzip/i,
+        name: /Textversion lesen: Klare und anpassbare Absprachen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/konsistenz-prinzip");
     expect(
@@ -1027,12 +1027,12 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/beziehungs-achtsamkeit");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: 6 Leitlinien für Angehörige/i,
+        name: /Textversion lesen: 6 Orientierungspunkte für Angehörige/i,
       })
     ).toHaveAttribute("href", "/materialien/text/6-leitlinien");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: 4 Alltags-Tipps/i,
+        name: /Textversion lesen: 4 Fragen für den Alltag/i,
       })
     ).toHaveAttribute("href", "/materialien/text/4-alltags-tipps");
   });
@@ -1060,7 +1060,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toHaveAttribute("href", "/materialien/text/stopp-technik");
     expect(
       screen.getByRole("link", {
-        name: /Textversion lesen: Ihr Energie-Konto/i,
+        name: /Textversion lesen: Energie-Konto: Belastungen und Ressourcen/i,
       })
     ).toHaveAttribute("href", "/materialien/text/energie-konto");
   });

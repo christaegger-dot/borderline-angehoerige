@@ -161,40 +161,40 @@ export const handoutTextVersions = [
   createHandoutTextVersion("grenzen-erkennen", {
     kicker: "Textversion",
     summary:
-      "Oft meldet sich eine Grenzverletzung zuerst im Körper. Wer die eigenen Warnsignale kennt, kann früher gegensteuern.",
+      "Körperliche, emotionale und gedankliche Veränderungen können Anlass sein, innezuhalten und die eigene Belastung zu prüfen. Sie beweisen keine Grenzverletzung.",
     intro: [
-      "Körper und Seele melden oft früh, wenn eine Grenze überschritten ist. Die fünf Warnsignale unterstützen Angehörige dabei, Überlastung ernster zu nehmen.",
-      "Sie finden eine Kernaussage, fünf typische Warnsignale und eine kurze Abschlussfrage zur Selbstbeobachtung.",
+      "Stress und Überlastung können sich sehr unterschiedlich zeigen. Manche Menschen bemerken körperliche Anspannung, andere veränderte Gefühle, Gedanken, Verhalten oder ein stärkeres Erholungsbedürfnis.",
+      "Die Beispiele sind eine Einladung zur Selbstbeobachtung, kein Test und keine Diagnose. Neue, starke oder anhaltende körperliche Beschwerden sollten medizinisch abgeklärt werden.",
     ],
     sections: [
       {
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Ihr Körper weiss oft vor Ihrem Kopf, dass eine Grenze überschritten wurde. Lernen Sie, auf ihn zu hören.",
+          "Ein Signal sagt nicht automatisch, was die Ursache ist. Es kann ein guter Anlass sein, innezuhalten: Was belastet mich, was brauche ich, und welcher nächste Schritt ist für mich möglich?",
       },
       {
-        title: "Die 5 Warnsignale",
+        title: "Mögliche Signale",
         cards: [
           {
-            title: "Der Knoten im Bauch",
-            text: "Magenschmerzen oder Übelkeit. Oft begleitet von dem klaren inneren Signal: Irgendetwas stimmt hier nicht.",
+            title: "Körper",
+            text: "Zum Beispiel Anspannung, flache Atmung, Magenbeschwerden, Kopfschmerzen oder ungewöhnliche Müdigkeit.",
           },
           {
-            title: "Die Enge in der Brust",
-            text: "Druck, flache Atmung oder Herzrasen. Häufig ein Zeichen dafür, dass Sie mehr Raum oder Abstand brauchen.",
+            title: "Gefühle",
+            text: "Zum Beispiel Gereiztheit, Angst, Traurigkeit, innere Leere oder das Gefühl, kaum noch etwas aufnehmen zu können.",
           },
           {
-            title: "Die Anspannung im Nacken",
-            text: "Verspannte Schultern oder Kopfschmerzen. Der Körper meldet: Das ist gerade zu viel Last.",
+            title: "Gedanken",
+            text: "Zum Beispiel ständiges Kreisen, Katastrophengedanken, Konzentrationsprobleme oder das Gefühl, für alles verantwortlich zu sein.",
           },
           {
-            title: "Die Erschöpfung ohne Grund",
-            text: "Ständige Müdigkeit oder plötzliche Leere. Oft ein Hinweis, dass Ihre Grenzen schon länger übergangen werden.",
+            title: "Verhalten",
+            text: "Zum Beispiel dauernde Erreichbarkeit, Rückzug, Aufschieben eigener Bedürfnisse oder häufigere Konflikte.",
           },
           {
-            title: "Der Impuls zu fliehen",
-            text: "Unruhe, Zappeligkeit oder der starke Impuls, sofort weg zu wollen. Auch das kann ein Warnsignal sein.",
+            title: "Erholung",
+            text: "Zum Beispiel das Bedürfnis nach Ruhe, Abstand, Schlaf, einem Gespräch oder praktischer Entlastung.",
           },
         ],
       },
@@ -202,93 +202,66 @@ export const handoutTextVersions = [
         title: "Abschluss",
         calloutTitle: "Frage zur Selbstbeobachtung",
         calloutText:
-          "Welches Signal kennen Sie am besten und in welchen Situationen taucht es immer wieder auf? Warnsignale sind Hinweise, keine Diagnose – und Erschöpfung ist kein persönliches Versagen.",
+          "Was beobachten Sie, in welchem Zusammenhang tritt es auf, und was würde Sie jetzt entlasten? Signale sind Hinweise, keine Diagnose – und Erschöpfung ist kein persönliches Versagen.",
       },
     ],
     sourceLine:
-      "Quelle: Mason, P. T. & Kreger, R. (2014), Angehörigen-Psychoedukation.",
+      "Fachliche Bezugspunkte: WHO, Stress – Questions and Answers (2023); NICE NG150, Supporting adult carers (2020, aktualisiert). Eigene didaktische Zusammenstellung zur Selbstbeobachtung; kein diagnostisches Instrument.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("lmk", {
     kicker: "Textversion",
     summary:
-      "Wenn Grenzen ignoriert werden, reicht eine Bitte oft nicht. Eine wirksame Konsequenz ist logisch, machbar und wird ruhig umgesetzt.",
+      "Eine Grenze beschreibt, was für Sie sicher, möglich und tragbar ist. Übersetzen Sie sie in einen Schritt, den Sie selbst umsetzen können – nicht in eine Strafe oder Wirkungsgarantie.",
     intro: [
-      "Dieses Vorgehen hilft, nach wiederholten Grenzverletzungen konsequent zu bleiben, ohne in Drohlogik zu geraten.",
-      "Sie finden drei Stufen: Grenze setzen, die eigene Kontrolle klären, logische Konsequenz ankündigen und bei Bedarf handeln. Dazu kommen eine kurze Merkhilfe und drei Hinweise für die Umsetzung.",
+      "Benennen Sie knapp Ihre Grenze und einen Schritt, den Sie selbst umsetzen können. Die andere Person muss der Grenze nicht zustimmen; ihre Reaktion lässt sich jedoch nicht steuern.",
+      "Die neue Orientierung verbindet eine klare Grenze mit einer selbst steuerbaren Schutzhandlung. Sie schreibt weder ein Gespräch noch eine spätere Rückkehr vor und muss an Abhängigkeiten, Minderjährigkeit und Sicherheit angepasst werden.",
     ],
     sections: [
       {
-        title: "Stufe 1: Grenze setzen",
-        cards: [
-          {
-            title: "Beispiel",
-            text: "Ich kann so nicht weiterreden. Pause 10 Minuten.",
-          },
-          {
-            title: "Wenn die Grenze respektiert wird",
-            text: "Gespräch wird fortgesetzt. Grenze hält.",
-          },
-          {
-            title: "Wenn die Grenze nicht respektiert wird",
-            text: "Grenze wird ignoriert oder übertreten.",
-          },
-        ],
-      },
-      {
-        title: "Dichotomie der Kontrolle",
-        cards: [
-          {
-            title: "Was ich kontrollieren kann",
-            text: "Meine Reaktion, meine Grenzen, mein Verhalten.",
-          },
-          {
-            title: "Was ich nicht kontrollieren kann",
-            text: "Das Verhalten meines Angehörigen.",
-          },
-        ],
-      },
-      {
-        title: "Stufe 2: Logische, machbare Konsequenz",
-        intro:
-          "Eine logische, machbare Konsequenz ist eine Folge, die Sie ruhig ankündigen und wirklich umsetzen können.",
-        bullets: [
-          "«Wenn du weiter schreist, gehe ich in mein Zimmer.»",
-          "«Wenn das nochmals passiert, schlafe ich heute woanders.»",
-        ],
-      },
-      {
-        title: "Stufe 3: Handeln",
-        calloutTitle: "Umsetzung",
+        title: "1. Grenze benennen",
+        calloutTitle: "Klar und beim eigenen Erleben bleiben",
         calloutText:
-          "Setzen Sie die Konsequenz ruhig und ohne Vorwurf um. Nicht drohen, sondern tun.",
+          "Benennen Sie, was für Sie gerade nicht mehr tragbar ist: «Ich möchte dieses Gespräch so nicht weiterführen.» Eine Begründung kann helfen, ist aber keine Voraussetzung für eine Grenze.",
+      },
+      {
+        title: "2. Eigenen Spielraum klären",
+        calloutTitle: "Selbst steuerbar statt kontrollierend",
+        calloutText:
+          "Wählen Sie einen Schritt, den Sie selbst umsetzen können und der keine Grundversorgung, Sicherheit oder Betreuungspflicht entzieht: Pause, Raum verlassen, Gespräch beenden oder Unterstützung holen.",
+      },
+      {
+        title: "3. Schutzschritt umsetzen",
+        calloutTitle: "Ohne Strafe und ohne Wirkungsgarantie",
+        calloutText:
+          "Kündigen Sie den eigenen Schritt kurz an und setzen Sie ihn um, wenn das sicher möglich ist: «Ich beende das Gespräch jetzt.» Sie müssen keine Verhaltensänderung erreichen und keine spätere Fortsetzung versprechen.",
       },
       {
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Sie können Grenzen setzen. Sie können Konsequenzen umsetzen. Sie können nicht das Verhalten des anderen ändern.",
-      },
-      {
-        title: "Merkhilfe",
-        calloutTitle: "Der Drehpunkt",
-        calloutText:
-          "Sie kontrollieren nicht das Verhalten der anderen Person, sondern nur Ihre Grenze und die Konsequenz, die Sie danach wirklich umsetzen.",
+          "Eine Grenze schützt den eigenen Handlungsspielraum. Sie ist kein Mittel, einen anderen Menschen zu bestrafen, zu erziehen oder zu einer bestimmten Reaktion zu bringen.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Definieren Sie vorab zwei oder drei logische, machbare Konsequenzen.",
-          "Besprechen Sie diese möglichst in einem ruhigen Moment.",
-          "Setzen Sie die Konsequenz ruhig um, ohne danach in eine neue Diskussion einzusteigen.",
-          "Bei Gewalt oder Bedrohung ist keine Kommunikationsformel gefragt, sondern Schutz und Hilfe.",
+          "Formulieren Sie eine Grenze und genau einen eigenen, machbaren Schutzschritt.",
+          "Prüfen Sie Abhängigkeiten und Pflichten: Bei Minderjährigen, Betreuung oder gemeinsamer Versorgung darf der Schritt notwendige Unterstützung nicht entziehen.",
+          "Sie dürfen die Situation neu beurteilen und einen anderen Schritt wählen. Verlässlichkeit bedeutet nicht Starrheit.",
         ],
       },
+      {
+        title: "Sicherheit",
+        calloutTitle: "Wenn Schutz wichtiger ist als ein Gespräch",
+        calloutText:
+          "Bei Gewalt, Bedrohung oder unmittelbarer Gefahr geht es nicht um eine Kommunikationsformel. Bringen Sie sich in Sicherheit und holen Sie passende professionelle Hilfe. Sie müssen keine unsichere Situation aushalten.",
+      },
     ],
-    sourceLine: "Quelle: Mason, P. T. & Kreger, R. (2014).",
+    sourceLine:
+      "Fachliche Bezugspunkte: NICE CG78 zu gemeinsamer Krisenplanung, Wahlfreiheit und Angehörigeneinbezug mit Zustimmung; AWMF-S3 Borderline-Persönlichkeitsstörung (2022, seit 31.05.2026 abgelaufen), Empfehlungen 38–39; SA Health, What is BPD? (2025). Eigene didaktische Orientierung, keine standardisierte Methode.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("grenzen-spickzettel", {
     kicker: "Textversion",

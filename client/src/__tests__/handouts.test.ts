@@ -34,18 +34,16 @@ describe("handout delivery helpers", () => {
     expect(getHandoutAssetBySource(sourceUrl)).toBeNull();
   });
 
-  it.each([
-    "4-arten-von-grenzen",
-    "grenzen-erkennen",
-    "stopp-technik",
-    "energie-konto",
-  ])("keeps the public material id %s resolvable", id => {
-    expect(resolveHandoutAsset(id)).toMatchObject({
-      id,
-      sourceKind: "local",
-      textLayer: "present",
-    });
-  });
+  it.each(["4-arten-von-grenzen", "stopp-technik"])(
+    "keeps the public material id %s resolvable",
+    id => {
+      expect(resolveHandoutAsset(id)).toMatchObject({
+        id,
+        sourceKind: "local",
+        textLayer: "present",
+      });
+    }
+  );
 
   it("keeps local pdf paths on the same protected deploy", () => {
     expect(
@@ -115,6 +113,10 @@ describe("handout delivery helpers", () => {
       "/infografiken/validierung-die-validierungs-treppe-v10.pdf",
     ],
     ["bruecke-gelaender", "/infografiken/manus-bruecke-gelaender-v2.pdf"],
+    ["grenzen-erkennen", "/infografiken/manus-grenzen-erkennen-v1.pdf"],
+    ["lmk", "/infografiken/manus-lmk-v1.pdf"],
+    ["energie-konto", "/infografiken/manus-energie-konto-v1.pdf"],
+    ["erlaubnis-karte", "/infografiken/manus-erlaubnis-karte-v1.pdf"],
     ["rolle-klaeren", "/infografiken/manus-rolle-klaeren-v3.pdf"],
     ["drei-saeulen", "/infografiken/manus-drei-saeulen-v1.pdf"],
     ["konsistenz-prinzip", "/infografiken/manus-konsistenz-prinzip-v1.pdf"],

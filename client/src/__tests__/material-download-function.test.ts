@@ -32,6 +32,10 @@ describe("material-download netlify function adapter", () => {
     "pause-statt-streit",
     "zuhoeren-ohne-zustimmen",
     "bruecke-gelaender",
+    "grenzen-erkennen",
+    "lmk",
+    "energie-konto",
+    "erlaubnis-karte",
     "rolle-klaeren",
     "drei-saeulen",
     "konsistenz-prinzip",
@@ -71,20 +75,18 @@ describe("material-download netlify function adapter", () => {
     expect(response.headers.get("Content-Disposition")).toContain("inline;");
   });
 
-  it.each([
-    "4-arten-von-grenzen",
-    "grenzen-erkennen",
-    "stopp-technik",
-    "energie-konto",
-  ])("serves the public material alias %s", async id => {
-    const response = await handler(
-      new Request(`https://example.com/api/material-download/${id}`),
-      { params: { id } }
-    );
+  it.each(["4-arten-von-grenzen", "stopp-technik"])(
+    "serves the public material alias %s",
+    async id => {
+      const response = await handler(
+        new Request(`https://example.com/api/material-download/${id}`),
+        { params: { id } }
+      );
 
-    expect(response.status).toBe(200);
-    expect(response.headers.get("Content-Type")).toBe("application/pdf");
-  });
+      expect(response.status).toBe(200);
+      expect(response.headers.get("Content-Type")).toBe("application/pdf");
+    }
+  );
 
   it("falls back to attachment for non-inline disposition values", async () => {
     const response = await handler(

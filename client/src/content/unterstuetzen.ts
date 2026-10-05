@@ -21,7 +21,7 @@ export const unterstuetzenItems = [
   },
   {
     id: "drei-saeulen",
-    title: "Drei Säulen hilfreicher Unterstützung",
+    title: "Drei Fragen zur Selbstklärung",
     description:
       "Präsenz, Selbstorientierung, Pause und Grenze als freiwillige Wahlmöglichkeiten.",
     url: "/infografiken/manus-drei-saeulen-v1.webp",
@@ -31,7 +31,7 @@ export const unterstuetzenItems = [
   },
   {
     id: "konsistenz-prinzip",
-    title: "Konsistenz-Prinzip",
+    title: "Klare und anpassbare Absprachen",
     description:
       "Transparente, anpassbare Absprachen ohne starre Einheitsreaktion oder Wirkungsgarantie.",
     url: "/infografiken/manus-konsistenz-prinzip-v1.webp",
@@ -53,7 +53,7 @@ export const unterstuetzenItems = [
   },
   {
     id: "6-leitlinien",
-    title: "6 Leitlinien für Angehörige",
+    title: "6 Orientierungspunkte für Angehörige",
     description:
       "Sechs freiwillige Orientierungspunkte zu Autonomie, Sicherheit, Absprachen und Selbstschutz.",
     url: "/infografiken/manus-6-leitlinien-v1.webp",
@@ -63,7 +63,7 @@ export const unterstuetzenItems = [
   },
   {
     id: "4-alltags-tipps",
-    title: "4 Alltags-Tipps",
+    title: "4 Fragen für den Alltag",
     description:
       "Vier Fragen dazu, ob Hilfe gewünscht ist, was möglich ist und wo eigene Grenzen liegen.",
     url: "/infografiken/manus-4-alltags-tipps-v1.webp",

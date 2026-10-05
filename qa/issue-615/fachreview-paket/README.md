@@ -7,11 +7,12 @@ sind nicht als öffentliche Website-Assets freigegeben.
 
 ## Verbindlicher Prüfstand
 
-- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
-- Reviewrunde: 2
-- ersetzt den technisch vorgeprüften Stand aus Commit
-  `6ae32c08e6841650537ea4a644f63c31fe54153f`; menschliche Entscheide lagen
-  für diesen Stand noch nicht vor
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3`
+- Reviewrunde: 3
+- ersetzt Reviewrunde 2 (`79091246f78411e283e48fdabba3ac4f751b3f6b`). Zu
+  Runde 2 liegt eine KI-Simulation aller drei Perspektiven vor (Issue 625);
+  ihre angenommenen Befunde sind in Runde 3 umgesetzt. Menschliche Entscheide
+  liegen weiterhin nicht vor.
 - maschinenlesbare Sperrdatei: `review-basis.json`
 - Status: `human-review-pending`
 - Veröffentlichung durch dieses Paket: **nein**

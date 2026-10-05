@@ -74,6 +74,17 @@ type NodeSelector = {
   prefix?: string;
   collapse?: boolean;
   cardTitles?: string[];
+  // Unnummerierter, visuell abgesetzter Begriffshinweis statt gleichrangiger Ebene.
+  aside?: boolean;
+  // Abschnittstitel ohne Nummer als Knotentitel, Callout-Titel als Untertitel.
+  stepTitle?: boolean;
+};
+
+type VisualNode = {
+  title: string;
+  subtitle?: string;
+  text: string;
+  aside?: boolean;
 };
 
 type HandoutSpec = {
@@ -86,6 +97,12 @@ type HandoutSpec = {
   actionSection?: string;
   actionTake?: number;
   safetySection?: string;
+  // Ohne Nummerierung, wenn Reihenfolge oder Rangfolge missverständlich wäre.
+  numbered?: boolean;
+  nextTitle?: string;
+  // Handlungshinweise im Hauptinhalt statt in der Fusszeile, wenn ein
+  // Sicherheitsabschnitt den «next»-Bereich belegt.
+  actionsInMain?: boolean;
 };
 
 const specs: HandoutSpec[] = [
@@ -115,25 +132,28 @@ const specs: HandoutSpec[] = [
     id: "remission-heilung",
     version: "puk-remission-recovery-v2",
     visualKind: "lenses",
-    visualTitle: "Vier Begriffe – unterschiedliche Blickwinkel",
+    visualTitle: "Drei Blickwinkel – und ein Begriff zur Einordnung",
     nodeSections: [
-      { section: "Diagnostische Remission", collapse: true },
+      { section: "Symptomatische Remission", collapse: true },
       { section: "Alltag und Teilhabe", collapse: true },
       { section: "Persönliche Recovery", collapse: true },
-      { section: "Zum Begriff «Heilung»", collapse: true },
+      { section: "Zum Begriff «Heilung»", collapse: true, aside: true },
     ],
     keySection: "Kernaussage",
     actionSection: "Was können Sie tun?",
     actionTake: 4,
+    nextTitle: "Mögliche nächste Schritte",
   },
   {
     id: "5-faktoren-genesung",
     version: "puk-genesungsbedingungen-v2",
     visualKind: "constellation",
-    visualTitle: "Mögliche Bedingungen – keine Genesungsformel",
+    visualTitle: "Mögliche Einflussbereiche – keine Reihenfolge, keine Formel",
     nodeSections: [{ section: "Fünf mögliche Bereiche" }],
     keySection: "Kernaussage",
     actionSection: "Was können Sie tun?",
+    numbered: false,
+    nextTitle: "Mögliche nächste Schritte",
   },
   {
     id: "rolle-genesungsprozess",
@@ -154,6 +174,7 @@ const specs: HandoutSpec[] = [
     ],
     keySection: "Orientierung",
     actionSection: "Was können Sie tun?",
+    nextTitle: "Mögliche nächste Schritte",
   },
   {
     id: "leuchtturm",
@@ -200,13 +221,14 @@ const specs: HandoutSpec[] = [
     visualKind: "decision",
     visualTitle: "Eine Grenze in eigenes Handeln übersetzen",
     nodeSections: [
-      { section: "1. Grenze benennen" },
-      { section: "2. Eigenen Spielraum klären" },
-      { section: "3. Schutzschritt umsetzen" },
+      { section: "1. Grenze benennen", stepTitle: true },
+      { section: "2. Eigenen Spielraum klären", stepTitle: true },
+      { section: "3. Schutzschritt umsetzen", stepTitle: true },
     ],
     keySection: "Kernaussage",
     actionSection: "Was können Sie tun?",
     safetySection: "Sicherheit",
+    actionsInMain: true,
   },
   {
     id: "drei-saeulen",
@@ -299,8 +321,11 @@ function sectionText(section: HandoutTextSection) {
   return section.title;
 }
 
-function extractNodes(handout: HandoutTextVersion, selectors: NodeSelector[]) {
-  return selectors.flatMap(selector => {
+function extractNodes(
+  handout: HandoutTextVersion,
+  selectors: NodeSelector[]
+): VisualNode[] {
+  return selectors.flatMap((selector): VisualNode[] => {
     const section = requireSection(handout, selector.section);
     const prefix = selector.prefix ? `${selector.prefix} · ` : "";
     if (section.cards?.length) {
@@ -326,6 +351,7 @@ function extractNodes(handout: HandoutTextVersion, selectors: NodeSelector[]) {
           {
             title: `${prefix}${section.title}`,
             text: section.bullets.join(" "),
+            aside: selector.aside,
           },
         ];
       }
@@ -333,6 +359,15 @@ function extractNodes(handout: HandoutTextVersion, selectors: NodeSelector[]) {
         title: `${prefix}${item}`,
         text: "",
       }));
+    }
+    if (selector.stepTitle) {
+      return [
+        {
+          title: `${prefix}${section.title.replace(/^\d+\.\s*/u, "")}`,
+          subtitle: section.calloutTitle,
+          text: sectionText(section),
+        },
+      ];
     }
     return [
       {
@@ -396,6 +431,23 @@ function renderHtml(spec: HandoutSpec, handout: HandoutTextVersion) {
         handout.intro.find(item => !item.startsWith("Dieses Blatt ersetzt")) ??
           handout.summary
       )}</p>`;
+  const numbered = spec.numbered ?? true;
+  const actionsInMain = Boolean(spec.actionsInMain && safety && actions.length);
+  let nodeNumber = 0;
+  const renderNode = (node: VisualNode) => {
+    const showNumber = numbered && !node.aside;
+    if (showNumber) nodeNumber += 1;
+    const attributes = showNumber
+      ? `class="node" data-index="${nodeNumber}"`
+      : `class="node node--unnumbered${node.aside ? " node--aside" : ""}"`;
+    const subtitle = node.subtitle
+      ? `\n                  <p class="node__subtitle">${escapeHtml(node.subtitle)}</p>`
+      : "";
+    return `<section ${attributes}>
+                  <h3>${escapeHtml(node.title)}</h3>${subtitle}
+                  ${node.text ? `<p>${escapeHtml(node.text)}</p>` : ""}
+                </section>`;
+  };
 
   return `<!doctype html>
 <html lang="de-CH">
@@ -416,35 +468,33 @@ function renderHtml(spec: HandoutSpec, handout: HandoutTextVersion) {
         <h1>${escapeHtml(handout.title)}</h1>
         <p class="lead">${escapeHtml(handout.summary)}</p>
       </header>
-      <main class="main">
+      <main class="${actionsInMain ? "main main--with-actions" : "main"}">
         <section class="visual" data-visual="${spec.visualKind}" aria-labelledby="visual-title">
           <h2 id="visual-title">${escapeHtml(spec.visualTitle)}</h2>
           <div class="visual__nodes" style="--columns: ${columns}">
-            ${nodes
-              .map(
-                (
-                  node,
-                  index
-                ) => `<section class="node" data-index="${index + 1}">
-                  <h3>${escapeHtml(node.title)}</h3>
-                  ${node.text ? `<p>${escapeHtml(node.text)}</p>` : ""}
-                </section>`
-              )
-              .join("")}
+            ${nodes.map(renderNode).join("")}
           </div>
         </section>
         <aside class="key" role="note" aria-labelledby="key-title">
           <h2 id="key-title">${escapeHtml(key.calloutTitle ?? key.title)}</h2>
           <p>${escapeHtml(sectionText(key))}</p>
-        </aside>
+        </aside>${
+          actionsInMain
+            ? `
+        <section class="next next--actions" aria-labelledby="actions-title">
+          <h2 id="actions-title">${escapeHtml(spec.nextTitle ?? "Mögliche nächste Schritte")}</h2>
+          ${actionText}
+        </section>`
+            : ""
+        }
         <section class="next" aria-labelledby="next-title">
-          <h2 id="next-title">${safety ? escapeHtml(safety.calloutTitle ?? safety.title) : "Ein nächster Schritt"}</h2>
+          <h2 id="next-title">${safety ? escapeHtml(safety.calloutTitle ?? safety.title) : escapeHtml(spec.nextTitle ?? "Ein nächster Schritt")}</h2>
           ${safety ? `<p>${escapeHtml(sectionText(safety))}</p>` : actionText}
         </section>
       </main>
       <footer class="footer">
         ${
-          safety && actions.length
+          safety && actions.length && !actionsInMain
             ? `<p><strong>Handlungsmöglichkeiten:</strong> ${escapeHtml(actions.join(" · "))}</p>`
             : ""
         }
@@ -471,7 +521,37 @@ function atomicCopy(source: string, target: string) {
   renameSync(temporary, target);
 }
 
+type ManifestEntry = { id: string } & Record<string, unknown>;
+
+function mergedEntries(rendered: ManifestEntry[], complete: boolean) {
+  if (complete) return rendered;
+  const previous = JSON.parse(readFileSync(manifestPath, "utf8")) as {
+    entries: ManifestEntry[];
+  };
+  return specs.map(spec => {
+    const entry =
+      rendered.find(item => item.id === spec.id) ??
+      previous.entries.find(item => item.id === spec.id);
+    if (!entry) throw new Error(`Missing manifest entry: ${spec.id}`);
+    return entry;
+  });
+}
+
+// Optional: nur ausgewählte Blätter neu erzeugen, z. B.
+// ISSUE615_ONLY=lmk,grenzen-erkennen. Übrige Manifest-Einträge bleiben
+// unverändert, damit nicht betroffene Blätter nicht neu gerendert werden.
+function selectedSpecs() {
+  const only = process.env.ISSUE615_ONLY?.split(",")
+    .map(id => id.trim())
+    .filter(Boolean);
+  if (!only?.length) return specs;
+  const unknown = only.filter(id => !specs.some(spec => spec.id === id));
+  if (unknown.length) throw new Error(`Unknown handout IDs: ${unknown}`);
+  return specs.filter(spec => only.includes(spec.id));
+}
+
 async function render() {
+  const renderSpecs = selectedSpecs();
   mkdirSync(sourceRoot, { recursive: true });
   mkdirSync(outputRoot, { recursive: true });
   mkdirSync(thumbnailRoot, { recursive: true });
@@ -512,9 +592,9 @@ async function render() {
     );
   }
 
-  const entries = [];
+  const entries: ManifestEntry[] = [];
   try {
-    for (const spec of specs) {
+    for (const spec of renderSpecs) {
       const handout = requireVersion(spec.id);
       const stagedHtml = path.join(stagedSources, `${spec.version}.html`);
       const stagedPdf = path.join(stagedOutput, `${spec.version}.pdf`);
@@ -724,7 +804,7 @@ async function render() {
       fullWebp: "1600 x 2263 px",
       thumbnailWebp: "600 x 849 px",
     },
-    entries,
+    entries: mergedEntries(entries, renderSpecs.length === specs.length),
   };
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 }

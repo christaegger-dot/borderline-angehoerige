@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "package": "issue-615-fachreview-paket",
-  "baselineCommit": "79091246f78411e283e48fdabba3ac4f751b3f6b",
-  "reviewRound": 2,
-  "supersedesBaselineCommit": "6ae32c08e6841650537ea4a644f63c31fe54153f",
+  "baselineCommit": "1b806c27c8a52cbbabd7560c17f2f250a77256c3",
+  "reviewRound": 3,
+  "supersedesBaselineCommit": "79091246f78411e283e48fdabba3ac4f751b3f6b",
   "manifest": "handouts/issue-615-refresh/manifest.json",
   "status": "human-review-pending",
   "publicationAuthorized": false,
@@ -17,22 +17,22 @@
       "documentType": "ORIENTIERUNGSBLATT",
       "visualKind": "lenses",
       "sourceHtml": "handouts/issue-615-refresh/sources/puk-remission-recovery-v2.html",
-      "sourceHtmlSha256": "3e25370c7b14dfb294505f23d9d1ec6cbcb9f2fcfcd06717bda0c2345303f9dc",
-      "sourceTextSha256": "0b545d2b1215bcf3d709fc92732639b713c46154e6cc31345cb2a0faf4442751",
+      "sourceHtmlSha256": "7627521f5dbedc0ac8ba7d4987d94f16af806fcaeb587a1c14e612e593f97050",
+      "sourceTextSha256": "670a36d7fa2cf9965ab023fd7a45a3050ec283e2fc67b10b0bb7b79842fa6080",
       "pdf": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-remission-recovery-v2.pdf",
-        "bytes": 64798,
-        "sha256": "c76e92d3a32526f30edb416d477e91d057b54b974cc67b9eb11ea3bca8495148"
+        "bytes": 85937,
+        "sha256": "129632ee0ff82238e8b00412b387d0710691ea93e9729fa1b666ded467dd52a6"
       },
       "webp": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-remission-recovery-v2.webp",
-        "bytes": 319308,
-        "sha256": "1db99364ff13e2e3bf716016cf6ccb030d0c40da8a6701e87bccd439a99eed27"
+        "bytes": 327034,
+        "sha256": "245d12bbc42b517d2fcb30bba14e7f35dd004478b2b1f3a1e2a337fa4b660218"
       },
       "thumbnail": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/extras/thumbnails/puk-remission-recovery-v2.webp",
-        "bytes": 70044,
-        "sha256": "bc4778800d8569048d95389f36d807c98d643cd756b15cf9853e339db48c1ae1"
+        "bytes": 71652,
+        "sha256": "9bae22b8a01bf8ecff5b642101f41684011b5d490507b6b9401eb3bfa857265b"
       }
     },
     {
@@ -42,22 +42,22 @@
       "documentType": "ORIENTIERUNGSBLATT",
       "visualKind": "constellation",
       "sourceHtml": "handouts/issue-615-refresh/sources/puk-genesungsbedingungen-v2.html",
-      "sourceHtmlSha256": "dd59c8de48465b23c2cb9e883a2b27530d37907ee7ff5af01dbb7865901345ea",
-      "sourceTextSha256": "eada20794a0f7ee1a67839a9be7670791deac17dcd5c19f1dd667312d93b63df",
+      "sourceHtmlSha256": "d2d7cff49a7b2c7e5fcd92dd24e427260b1937aaf14f8f97fffca5110775058f",
+      "sourceTextSha256": "d163d19108d8109c8b2867986a74120bd1d5fba890ca00d5381ed502b783465a",
       "pdf": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-genesungsbedingungen-v2.pdf",
-        "bytes": 65635,
-        "sha256": "4d11d61c1e3909ac6cfa168f2af9c98920883c2d21089e5ecae3c9fc5e413564"
+        "bytes": 70320,
+        "sha256": "eced66e38863c64e368ae230964334922ba74acff850bdf79c77fa8dd3e628fe"
       },
       "webp": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-genesungsbedingungen-v2.webp",
-        "bytes": 256948,
-        "sha256": "aff282d1be184b7504ffc6cb84a5e906e9b9182329e0ee6a26faa01db83e4500"
+        "bytes": 276920,
+        "sha256": "90eb8beb1bf612237f3e41f341099009e151b73e6ad6888a6352d3e3a493fcf6"
       },
       "thumbnail": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/extras/thumbnails/puk-genesungsbedingungen-v2.webp",
-        "bytes": 58118,
-        "sha256": "e6030cd7dc7c7385c992eb649f3008c4699190eabd739062119f4b8c20af4183"
+        "bytes": 62582,
+        "sha256": "ba0191da361012caa4565aa2f2cca9f70a1be8c5cc97c9a6b631b98a96a042f1"
       }
     },
     {
@@ -67,22 +67,22 @@
       "documentType": "ORIENTIERUNGSBLATT",
       "visualKind": "boundary",
       "sourceHtml": "handouts/issue-615-refresh/sources/puk-rolle-genesungsprozess-v2.html",
-      "sourceHtmlSha256": "0eed19d788b5c5637c827912ccc103c830dd648bcb82ef9b6eff833f752c8d7f",
-      "sourceTextSha256": "ff2a0d8baa6f9e8ef7358f6b064ed0c7bae4cdca8914a937b78c4474a9b15b4b",
+      "sourceHtmlSha256": "9409fe1b1dc8e27ad5598533d3f055cdd8d86a6d8a8d93ccfc0b84a0bb021362",
+      "sourceTextSha256": "4d7b1368a3f1a528f240408c9bfa46d12655d9fa40f70991bbf1072619dca2e6",
       "pdf": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-rolle-genesungsprozess-v2.pdf",
-        "bytes": 59553,
-        "sha256": "f056a9b2020220f64f80676e10ad535cae8cbf9b07e70454b9a01902cb236c5a"
+        "bytes": 69667,
+        "sha256": "d5e6e140459eeef7031a60b67abdb0805f0c63236c8cee9cbb0f05e0409498f4"
       },
       "webp": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-rolle-genesungsprozess-v2.webp",
-        "bytes": 257486,
-        "sha256": "04b63242ad2ceac5c4bfe4c9339a413f6a332d39dc973c220e0f4698ee0ba77d"
+        "bytes": 281028,
+        "sha256": "f4d98d1d61f01756a7773490665b8b8c803380e0e4da300222ddb2dfc046183a"
       },
       "thumbnail": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/extras/thumbnails/puk-rolle-genesungsprozess-v2.webp",
-        "bytes": 57756,
-        "sha256": "ac8820ec5e74244e8479c26ebda991ce4f32dddb2a8de4e59577eb2cfc25a779"
+        "bytes": 61166,
+        "sha256": "bcb6a17381f5fdeba7f91e243f335b320def53c1e3a2a41cd9f1a3fe601b3c44"
       }
     },
     {
@@ -92,22 +92,22 @@
       "documentType": "ORIENTIERUNGSBLATT",
       "visualKind": "signals",
       "sourceHtml": "handouts/issue-615-refresh/sources/puk-grenzen-ueberlastung-v2.html",
-      "sourceHtmlSha256": "5cc36eef988437f7e4942d5d9426e4240163a79adb86d81514e86a333725c1b6",
-      "sourceTextSha256": "ab00c58bdabc3d941026227a1617071bedeb2f5e327dab97e990faa0a03883dc",
+      "sourceHtmlSha256": "0038373e21565ffc6e7d0ca0589e77b769dd14fad9fa951bda0e67702a9ecbd7",
+      "sourceTextSha256": "620d7ed3d638db6e1a630af9c7c03712b1a1d33aa6fe57b90608fd258bd6c03f",
       "pdf": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-grenzen-ueberlastung-v2.pdf",
-        "bytes": 57080,
-        "sha256": "086d550c686b59e16d747ddabc981b13f729b427e972858c935023cb8f56105c"
+        "bytes": 67385,
+        "sha256": "98dbed3bcf17cfe6aedfb914c82be130d03ed1206c7faaedaa5d869cbb9325af"
       },
       "webp": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-grenzen-ueberlastung-v2.webp",
-        "bytes": 230868,
-        "sha256": "469f9e5b593c38864dc89923d9d8bc135b72cf814fbd0916ffb126d078c5550f"
+        "bytes": 260826,
+        "sha256": "0643218d50815f530606eb37cd8bbe6dfd403e54c25b729d472058395a1f9a1c"
       },
       "thumbnail": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/extras/thumbnails/puk-grenzen-ueberlastung-v2.webp",
-        "bytes": 51958,
-        "sha256": "622d464d5fbefb02fc7d6ebf7c693361a1daae496b201e9385f462140f19638b"
+        "bytes": 58734,
+        "sha256": "69bd8f514791348760d8e65193af75d74faf3c67a34fbe0c472674457726a64b"
       }
     },
     {
@@ -117,22 +117,22 @@
       "documentType": "PRAXISBLATT",
       "visualKind": "decision",
       "sourceHtml": "handouts/issue-615-refresh/sources/puk-grenze-in-handlung-v2.html",
-      "sourceHtmlSha256": "ee43226ef291caeaebe379842b3b166d319bad4ebe4d4528990d65f57a3aa693",
-      "sourceTextSha256": "b5a5b818d04a1fc163eb7869fe80c89f00182efae8ef6d38c588a1d3ed2decee",
+      "sourceHtmlSha256": "8034c656c1d3eafcaeb346fd1d3cb3d532492fdb8d6a643b3033af02082d55ee",
+      "sourceTextSha256": "a992a3f3fe3cabcbc12fe806744375aab8a15b0b5d61bf6d0c421bc067fad9a5",
       "pdf": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-grenze-in-handlung-v2.pdf",
-        "bytes": 97324,
-        "sha256": "77b3c7e3c0f8542ff4ea4125ef69f22d3f9e8e237b56741df627f1bfbbe4eb69"
+        "bytes": 68209,
+        "sha256": "dc5990fd79ba7dda9d4b47bd8b8aef16365bd3b47adab7d6b8cdc1670710f6be"
       },
       "webp": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/puk-grenze-in-handlung-v2.webp",
-        "bytes": 276184,
-        "sha256": "05546d34d77f96b2443d0be1ceec95a95a7c06aa4e9f9a77a79d50b9a28a51b6"
+        "bytes": 325590,
+        "sha256": "2ccc46531bc6639eeba1f3e3fbc35f650f47f60dff47f383fa19eacf46cb8182"
       },
       "thumbnail": {
         "path": "qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/infografiken/extras/thumbnails/puk-grenze-in-handlung-v2.webp",
-        "bytes": 60082,
-        "sha256": "6cb8e3fcbf3407d5b2409ba0e04a4d6cebe91016eab17c16bc3b7aaab27c4551"
+        "bytes": 70922,
+        "sha256": "b237821c47830c5f2043b6e8b3aca567d739ae141eb6eca0f04f0cfdbaa5da40"
       }
     }
   ]

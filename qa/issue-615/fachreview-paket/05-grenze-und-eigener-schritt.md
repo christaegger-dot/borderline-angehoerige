@@ -5,12 +5,12 @@
 - interne ID / Version: `lmk` / `puk-grenze-in-handlung-v2`
 - sichtbarer Titel enthält **kein** «LMK»; die interne Alt-ID darf nicht publiziert werden
 - Dokumenttyp: Praxisblatt
-- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
-- Text-Hash: `b5a5b818d04a1fc163eb7869fe80c89f00182efae8ef6d38c588a1d3ed2decee`
-- HTML-Hash: `ee43226ef291caeaebe379842b3b166d319bad4ebe4d4528990d65f57a3aa693`
-- PDF-Hash: `77b3c7e3c0f8542ff4ea4125ef69f22d3f9e8e237b56741df627f1bfbbe4eb69`
-- WebP-Hash: `05546d34d77f96b2443d0be1ceec95a95a7c06aa4e9f9a77a79d50b9a28a51b6`
-- Thumbnail-Hash: `6cb8e3fcbf3407d5b2409ba0e04a4d6cebe91016eab17c16bc3b7aaab27c4551`
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3` (Reviewrunde 3)
+- Text-Hash: `a992a3f3fe3cabcbc12fe806744375aab8a15b0b5d61bf6d0c421bc067fad9a5`
+- HTML-Hash: `8034c656c1d3eafcaeb346fd1d3cb3d532492fdb8d6a643b3033af02082d55ee`
+- PDF-Hash: `dc5990fd79ba7dda9d4b47bd8b8aef16365bd3b47adab7d6b8cdc1670710f6be`
+- WebP-Hash: `2ccc46531bc6639eeba1f3e3fbc35f650f47f60dff47f383fa19eacf46cb8182`
+- Thumbnail-Hash: `b237821c47830c5f2043b6e8b3aca567d739ae141eb6eca0f04f0cfdbaa5da40`
 
 Zweck: eine Grenze in einen selbst steuerbaren Schutzschritt übersetzen,
 ohne Strafe, Erziehungslogik, Wirkungsgarantie oder Pflicht zur späteren
@@ -107,4 +107,39 @@ stehen in der Tabelle «Offene KI-Prüfhypothesen».
 | GS-10 | Borderline-Erfahrung (KI-Simulation); Divergenz zur Angehörigenperspektive | P2        | Schritt 3, alle Fassungen                                              | Ein abruptes Gesprächsende ohne Hinweis kann Verlassenheitsangst auslösen. Die Angehörigenperspektive lehnt jedes Rückkehrversprechen ab.                                                                                                              | Beispielsatz der Website übernehmen: «Ich beende das Gespräch jetzt und entscheide später, ob und wann ich wieder ansprechbar bin.» Das signalisiert keinen Abbruch und verspricht keine Rückkehr.                                                                                           | annehmen (Vorschlag); Divergenz dokumentiert | Web/PDF-Abgleich                                          |
 | GS-11 | Angehörige (KI-Simulation)                                                 | P3        | Intro, nur Webtext                                                     | «Die neue Orientierung» ist ohne Vorgeschichte unverständlich; «Die andere Person muss der Grenze nicht zustimmen» ist mehrdeutig.                                                                                                                     | «Eine Grenze gilt auch ohne Zustimmung der anderen Person; deren Reaktion können Sie nicht steuern.» und «Diese Orientierung verbindet …»                                                                                                                                                    | annehmen (Vorschlag)                         | Webtext                                                   |
 
-Blattstatus (KI-Simulation): [ ] bereit für nachgelagerte technische Prüfungen [ ] erst nach Auflagen bereit [x] nicht bereit
+Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte technische Prüfungen [ ] erst nach Auflagen bereit [x] nicht bereit
+
+## Nachprüfung Reviewrunde 3 (KI-Simulation)
+
+Die Korrekturen sind in `2fb8367` umgesetzt, zwei Nachbesserungen aus dem
+Codex-Review zu #626 in `1b806c2`. Der Stand ist mit Basis-Commit `1b806c2`
+in `review-basis.json` als Reviewrunde 3 gesperrt; die Prüfsummen oben
+gelten für diesen Stand. Die
+Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
+Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
+hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von
+Webtext und PDF-Textebene sowie Sichtkontrolle des WebP-Vollbilds.
+
+| Befund   | Umsetzung                                                                                                                                                                         | geprüfte Fassungen  | Ergebnis                                   |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------ |
+| GS-01/07 | Quellenzeile ohne abgelaufene AWMF-BPS-Leitlinie; «Eigene didaktische Orientierung der Fachstelle, keine standardisierte oder wissenschaftlich geprüfte Methode»                  | Web, PDF-Text, WebP | geschlossen (P1)                           |
+| GS-02/06 | «Betreuungspflicht» ersetzt durch Versorgung, «für die Sie tatsächlich zuständig sind, etwa minderjährigen Kindern»                                                               | Web, PDF-Text, WebP | geschlossen (P1; nicht juristisch geprüft) |
+| GS-03    | Handlungshinweise aus der 8-pt-Fusszeile als «Mögliche nächste Schritte» in den Hauptinhalt verschoben                                                                            | Web, PDF-Text, WebP | geschlossen (P1)                           |
+| GS-04    | «… ohne etwas anzukündigen oder zu erklären»                                                                                                                                      | Web, PDF-Text, WebP | geschlossen (P1)                           |
+| GS-08    | Schutzregel mit Website-Wortlaut: 117 bei Gewalt oder Bedrohung, 144 bei unmittelbarer Gefahr durch Selbstgefährdung; Blatt als handlungsnahe Ausnahme im Governance-Test erfasst | Web, PDF-Text, WebP | geschlossen (P1)                           |
+| GS-09    | Schrittnamen als Kartentitel, bisherige Titel als Untertitel                                                                                                                      | Web, PDF-Text, WebP | geschlossen                                |
+| GS-10    | Beispielsatz «… und entscheide später, ob und wann ich wieder ansprechbar bin.»                                                                                                   | Web, PDF-Text, WebP | geschlossen; Divergenz aufgelöst           |
+| GS-11    | Webtext-Intro präzisiert                                                                                                                                                          | Web                 | geschlossen                                |
+
+Weiterhin offen:
+
+- keine
+
+Perspektiven-Nachprüfung:
+
+- Fach (Simulation): Alle P1 geschlossen; Rechtsfragen nur KI-eingeschätzt.
+- Borderline-Erfahrung (Simulation): Gesprächsende signalisiert keinen Abbruch; Sicherheit aller Beteiligten berücksichtigt.
+- Angehörige (Simulation): Unter Belastung lesbar; kein Rückkehrversprechen verlangt.
+
+Blattstatus Runde 3 (KI-Simulation): [x] bereit für nachgelagerte technische
+Prüfungen [ ] erst nach Auflagen bereit [ ] nicht bereit

@@ -4,12 +4,12 @@
 
 - ID / Version: `rolle-genesungsprozess` / `puk-rolle-genesungsprozess-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
-- Text-Hash: `ff2a0d8baa6f9e8ef7358f6b064ed0c7bae4cdca8914a937b78c4474a9b15b4b`
-- HTML-Hash: `0eed19d788b5c5637c827912ccc103c830dd648bcb82ef9b6eff833f752c8d7f`
-- PDF-Hash: `f056a9b2020220f64f80676e10ad535cae8cbf9b07e70454b9a01902cb236c5a`
-- WebP-Hash: `04b63242ad2ceac5c4bfe4c9339a413f6a332d39dc973c220e0f4698ee0ba77d`
-- Thumbnail-Hash: `ac8820ec5e74244e8479c26ebda991ce4f32dddb2a8de4e59577eb2cfc25a779`
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3` (Reviewrunde 3)
+- Text-Hash: `4d7b1368a3f1a528f240408c9bfa46d12655d9fa40f70991bbf1072619dca2e6`
+- HTML-Hash: `9409fe1b1dc8e27ad5598533d3f055cdd8d86a6d8a8d93ccfc0b84a0bb021362`
+- PDF-Hash: `d5e6e140459eeef7031a60b67abdb0805f0c63236c8cee9cbb0f05e0409498f4`
+- WebP-Hash: `f4d98d1d61f01756a7773490665b8b8c803380e0e4da300222ddb2dfc046183a`
+- Thumbnail-Hash: `bcb6a17381f5fdeba7f91e243f335b320def53c1e3a2a41cd9f1a3fe601b3c44`
 
 Zweck: freiwillige, gewünschte und tragbare Unterstützung von
 Überverantwortung trennen und die eigene Gesundheit von Angehörigen als
@@ -105,4 +105,41 @@ stehen in der Tabelle «Offene KI-Prüfhypothesen».
 | AR-09 | Angehörige (KI-Simulation)           | P3        | Handlungshinweis 3, alle Fassungen           | «Ihre Gesundheit ist kein Beitrag, den Sie einer anderen Person schulden» ist schwer verständlich.                                                                               | «Ihre Gesundheit zählt für sich – nicht erst als Beitrag zur Genesung einer anderen Person.» | annehmen (Vorschlag) | Web/PDF-Abgleich                   |
 | AR-10 | Angehörige (KI-Simulation)           | P3        | Kartentitel «Veränderung erzwingen»          | Der Titel legt nahe, Erzwingen wäre sonst jemandes Aufgabe.                                                                                                                      | «Veränderung bewirken müssen»                                                                | annehmen (Vorschlag) | Web/PDF-Abgleich                   |
 
-Blattstatus (KI-Simulation): [ ] bereit für nachgelagerte technische Prüfungen [ ] erst nach Auflagen bereit [x] nicht bereit
+Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte technische Prüfungen [ ] erst nach Auflagen bereit [x] nicht bereit
+
+## Nachprüfung Reviewrunde 3 (KI-Simulation)
+
+Die Korrekturen sind in `2fb8367` umgesetzt, zwei Nachbesserungen aus dem
+Codex-Review zu #626 in `1b806c2`. Der Stand ist mit Basis-Commit `1b806c2`
+in `review-basis.json` als Reviewrunde 3 gesperrt; die Prüfsummen oben
+gelten für diesen Stand. Die
+Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
+Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
+hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von
+Webtext und PDF-Textebene sowie Sichtkontrolle des WebP-Vollbilds.
+
+| Befund | Umsetzung                                                                                                                                                                                  | geprüfte Fassungen  | Ergebnis                                          |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ------------------------------------------------- |
+| AR-01  | «Urteilsfähige Erwachsene entscheiden selbst über ihre Behandlung, gemeinsam mit den Behandelnden.»                                                                                        | Web, PDF-Text, WebP | geschlossen (P1; nicht juristisch geprüft)        |
+| AR-03  | Allgemeine Beratung ohne Zustimmung möglich; Auskünfte grundsätzlich nur mit Zustimmung (siehe AR-11)                                                                                      | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-11  | Codex-Review zu #626: Zustimmungsregel nicht mehr absolut – «grundsätzlich nur mit ihrer Zustimmung; gesetzliche Ausnahmen gelten etwa bei Minderjährigen oder fehlender Urteilsfähigkeit» | Web, PDF-Text, WebP | geschlossen (`1b806c2`; nicht juristisch geprüft) |
+| AR-04  | «… müssen sie nicht koordinieren – ausser etwa als Eltern Minderjähriger oder Beistand.»                                                                                                   | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-05  | Geltungsbereich im Webtext: «… richtet sich an Angehörige erwachsener Personen …»                                                                                                          | Web                 | geschlossen (Webtext; im PDF über AR-03/AR-04)    |
+| AR-07  | «Eine Pause ist kein Beziehungsabbruch.»                                                                                                                                                   | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-08  | Karte «Absprachen»: «… und fragen, was gewünscht ist.»                                                                                                                                     | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-09  | «Ihre Gesundheit zählt für sich – nicht erst als Beitrag …»                                                                                                                                | Web, PDF-Text, WebP | geschlossen                                       |
+| AR-10  | Kartentitel «Genesung bewirken»                                                                                                                                                            | Web, PDF-Text, WebP | geschlossen                                       |
+| G-01   | Überschrift «Mögliche nächste Schritte»                                                                                                                                                    | Web, PDF-Text, WebP | geschlossen                                       |
+
+Weiterhin offen:
+
+- keine
+
+Perspektiven-Nachprüfung:
+
+- Fach (Simulation): P1 geschlossen; Rechtsaussagen bleiben eine KI-Einschätzung.
+- Borderline-Erfahrung (Simulation): Pause klar vom Beziehungsabbruch getrennt; Nachfragen im PDF sichtbar.
+- Angehörige (Simulation): Vertraulichkeit und Beratungsmöglichkeit sind jetzt verständlich.
+
+Blattstatus Runde 3 (KI-Simulation): [x] bereit für nachgelagerte technische
+Prüfungen [ ] erst nach Auflagen bereit [ ] nicht bereit

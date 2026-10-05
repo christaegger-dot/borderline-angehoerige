@@ -171,30 +171,30 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Zentraler Satz des Handouts",
         calloutText:
-          "Ein Signal sagt nicht automatisch, was die Ursache ist. Es kann ein guter Anlass sein, innezuhalten: Was belastet mich, was brauche ich, und welcher nächste Schritt ist für mich möglich?",
+          "Ein Signal sagt nicht automatisch, was die Ursache ist. Belastung hat oft mehrere Quellen, etwa auch Arbeit, Finanzen oder die eigene Gesundheit. Es kann ein guter Anlass sein, innezuhalten: Was belastet mich, was brauche ich, und welcher nächste Schritt ist für mich möglich?",
       },
       {
         title: "Mögliche Signale",
         cards: [
           {
             title: "Körper",
-            text: "Zum Beispiel Anspannung, flache Atmung, Magenbeschwerden, Kopfschmerzen oder ungewöhnliche Müdigkeit.",
+            text: "Zum Beispiel Anspannung, Schlafprobleme, Magenbeschwerden, Kopf- oder andere Schmerzen oder ungewöhnliche Müdigkeit.",
           },
           {
             title: "Gefühle",
-            text: "Zum Beispiel Gereiztheit, Angst, Traurigkeit, innere Leere oder das Gefühl, kaum noch etwas aufnehmen zu können.",
+            text: "Zum Beispiel Gereiztheit, Angst, Niedergeschlagenheit oder das Gefühl, kaum noch etwas aufnehmen zu können.",
           },
           {
             title: "Gedanken",
-            text: "Zum Beispiel ständiges Kreisen, Katastrophengedanken, Konzentrationsprobleme oder das Gefühl, für alles verantwortlich zu sein.",
+            text: "Zum Beispiel ständiges Grübeln oder Sorgen, Konzentrationsprobleme oder das Gefühl, für alles verantwortlich zu sein.",
           },
           {
             title: "Verhalten",
             text: "Zum Beispiel dauernde Erreichbarkeit, Rückzug, Aufschieben eigener Bedürfnisse oder häufigere Konflikte.",
           },
           {
-            title: "Erholung",
-            text: "Zum Beispiel das Bedürfnis nach Ruhe, Abstand, Schlaf, einem Gespräch oder praktischer Entlastung.",
+            title: "Erholungsbedarf",
+            text: "Zum Beispiel ein stärkeres Bedürfnis nach Ruhe, Abstand, Schlaf, einem Gespräch oder praktischer Entlastung.",
           },
         ],
       },
@@ -202,7 +202,7 @@ export const handoutTextVersions = [
         title: "Abschluss",
         calloutTitle: "Frage zur Selbstbeobachtung",
         calloutText:
-          "Was beobachten Sie, in welchem Zusammenhang tritt es auf, und was würde Sie jetzt entlasten? Signale sind Hinweise, keine Diagnose – und Erschöpfung ist kein persönliches Versagen. Neue, starke oder anhaltende körperliche Beschwerden sollten medizinisch abgeklärt werden.",
+          "Was beobachten Sie, in welchem Zusammenhang tritt es auf, und was würde Sie jetzt entlasten? Signale sind Hinweise, keine Diagnose – und Erschöpfung ist kein persönliches Versagen. Neue, starke oder anhaltende körperliche Beschwerden sollten medizinisch abgeklärt werden. Unterstützung finden Sie z. B. bei einer Angehörigenberatung oder in der Hausarztpraxis; in einer akuten Krise nutzen Sie die separat ausgewiesenen Krisen- und Notfallwege.",
       },
     ],
     sourceLine:
@@ -215,8 +215,8 @@ export const handoutTextVersions = [
     summary:
       "Eine Grenze beschreibt, was für Sie sicher, möglich und tragbar ist. Übersetzen Sie sie in einen Schritt, den Sie selbst umsetzen können – nicht in eine Strafe oder Wirkungsgarantie.",
     intro: [
-      "Benennen Sie knapp Ihre Grenze und einen Schritt, den Sie selbst umsetzen können. Die andere Person muss der Grenze nicht zustimmen; ihre Reaktion lässt sich jedoch nicht steuern.",
-      "Die neue Orientierung verbindet eine klare Grenze mit einer selbst steuerbaren Schutzhandlung. Sie schreibt weder ein Gespräch noch eine spätere Rückkehr vor und muss an Abhängigkeiten, Minderjährigkeit und Sicherheit angepasst werden.",
+      "Benennen Sie knapp Ihre Grenze und einen Schritt, den Sie selbst umsetzen können. Eine Grenze gilt auch ohne Zustimmung der anderen Person; deren Reaktion können Sie nicht steuern.",
+      "Diese Orientierung verbindet eine klare Grenze mit einer selbst steuerbaren Schutzhandlung. Sie schreibt weder ein Gespräch noch eine spätere Rückkehr vor und muss an Abhängigkeiten, Minderjährigkeit und Sicherheit angepasst werden.",
     ],
     sections: [
       {
@@ -229,13 +229,13 @@ export const handoutTextVersions = [
         title: "2. Eigenen Spielraum klären",
         calloutTitle: "Selbst steuerbar statt kontrollierend",
         calloutText:
-          "Wählen Sie einen Schritt, den Sie selbst umsetzen können und der keine Grundversorgung, Sicherheit oder Betreuungspflicht entzieht: Pause, Raum verlassen, Gespräch beenden oder Unterstützung holen.",
+          "Wählen Sie einen Schritt, den Sie selbst umsetzen können: Pause, Raum verlassen, Gespräch beenden oder Unterstützung holen. Der Schritt darf niemandem Versorgung oder Sicherheit entziehen, für die Sie tatsächlich zuständig sind, etwa minderjährigen Kindern.",
       },
       {
         title: "3. Schutzschritt umsetzen",
         calloutTitle: "Ohne Strafe und ohne Wirkungsgarantie",
         calloutText:
-          "Kündigen Sie den eigenen Schritt kurz an und setzen Sie ihn um, wenn das sicher möglich ist: «Ich beende das Gespräch jetzt.» Sie müssen keine Verhaltensänderung erreichen und keine spätere Fortsetzung versprechen.",
+          "Kündigen Sie den eigenen Schritt kurz an und setzen Sie ihn um, wenn das sicher möglich ist: «Ich beende das Gespräch jetzt und entscheide später, ob und wann ich wieder ansprechbar bin.» Sie müssen keine Verhaltensänderung erreichen und keine spätere Fortsetzung versprechen.",
       },
       {
         title: "Kernaussage",
@@ -247,7 +247,7 @@ export const handoutTextVersions = [
         title: "Was können Sie tun?",
         bullets: [
           "Formulieren Sie eine Grenze und genau einen eigenen, machbaren Schutzschritt.",
-          "Prüfen Sie Abhängigkeiten und Pflichten: Bei Minderjährigen, Betreuung oder gemeinsamer Versorgung darf der Schritt notwendige Unterstützung nicht entziehen.",
+          "Prüfen Sie Abhängigkeiten: Wenn Kinder oder andere Personen auf Ihre Versorgung angewiesen sind, darf der Schritt notwendige Unterstützung nicht entziehen.",
           "Sie dürfen die Situation neu beurteilen und einen anderen Schritt wählen. Verlässlichkeit bedeutet nicht Starrheit.",
         ],
       },
@@ -255,11 +255,11 @@ export const handoutTextVersions = [
         title: "Sicherheit",
         calloutTitle: "Wenn Schutz wichtiger ist als ein Gespräch",
         calloutText:
-          "Diese Schutzregel gilt diagnoseunabhängig in jeder Beziehung. Bei Gewalt, Bedrohung oder unmittelbarer Gefahr geht es nicht um eine Kommunikationsformel. Bringen Sie sich in Sicherheit und holen Sie passende professionelle Hilfe. Sie müssen keine unsichere Situation aushalten.",
+          "Diese Schutzregel gilt diagnoseunabhängig in jeder Beziehung. Bei Gewalt oder Bedrohung schaffen Sie Abstand und bringen sich in Sicherheit, ohne etwas anzukündigen oder zu erklären; im Notfall rufen Sie 117. Bei vermuteter unmittelbarer Selbstgefährdung der anderen Person holen Sie umgehend professionelle Hilfe, bei unmittelbarer Gefahr 144. Bleiben Sie nur bei der Person, soweit dies für Sie sicher möglich ist. Sie müssen keine unsichere Situation aushalten.",
       },
     ],
     sourceLine:
-      "Fachliche Bezugspunkte: NICE CG78 zu gemeinsamer Krisenplanung, Wahlfreiheit und Angehörigeneinbezug mit Zustimmung; AWMF-S3 Borderline-Persönlichkeitsstörung (2022, seit 31.05.2026 abgelaufen), Empfehlungen 38–39; SA Health, What is BPD? (2025). Eigene didaktische Orientierung, keine standardisierte Methode.",
+      "Fachliche Bezugspunkte: NICE CG78 zu Wahlfreiheit und Angehörigeneinbezug mit Zustimmung; Opferhilfe Schweiz und Eidgenössisches Büro für die Gleichstellung von Frau und Mann (EBG) zu Schutz bei Gewalt. Eigene didaktische Orientierung der Fachstelle, keine standardisierte oder wissenschaftlich geprüfte Methode.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),

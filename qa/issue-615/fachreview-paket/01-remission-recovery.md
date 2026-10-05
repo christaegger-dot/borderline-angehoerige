@@ -4,12 +4,12 @@
 
 - ID / Version: `remission-heilung` / `puk-remission-recovery-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
-- Text-Hash: `0b545d2b1215bcf3d709fc92732639b713c46154e6cc31345cb2a0faf4442751`
-- HTML-Hash: `3e25370c7b14dfb294505f23d9d1ec6cbcb9f2fcfcd06717bda0c2345303f9dc`
-- PDF-Hash: `c76e92d3a32526f30edb416d477e91d057b54b974cc67b9eb11ea3bca8495148`
-- WebP-Hash: `1db99364ff13e2e3bf716016cf6ccb030d0c40da8a6701e87bccd439a99eed27`
-- Thumbnail-Hash: `bc4778800d8569048d95389f36d807c98d643cd756b15cf9853e339db48c1ae1`
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3` (Reviewrunde 3)
+- Text-Hash: `670a36d7fa2cf9965ab023fd7a45a3050ec283e2fc67b10b0bb7b79842fa6080`
+- HTML-Hash: `7627521f5dbedc0ac8ba7d4987d94f16af806fcaeb587a1c14e612e593f97050`
+- PDF-Hash: `129632ee0ff82238e8b00412b387d0710691ea93e9729fa1b666ded467dd52a6`
+- WebP-Hash: `245d12bbc42b517d2fcb30bba14e7f35dd004478b2b1f3a1e2a337fa4b660218`
+- Thumbnail-Hash: `9bae22b8a01bf8ecff5b642101f41684011b5d490507b6b9401eb3bfa857265b`
 
 Zweck: unterschiedliche Bedeutungen von Remission, Alltag/Teilhabe und
 persönlicher Recovery verständlich trennen, Hoffnung ermöglichen und weder
@@ -54,7 +54,7 @@ Häkchen = Kriterium aus Sicht der Simulation erfüllt; Kurzbegründung nach dem
 - [x] Recovery bleibt selbstbestimmt; es gibt kein vorgeschriebenes Ziel oder Tempo. → ausdrücklich in Intro, Recovery-Karte und Handlungshinweisen
 - [x] Rückschritte werden weder als Scheitern noch als Beleg fehlenden Willens gedeutet. → «Erneute Beschwerden … machen bereits erreichte Veränderungen nicht ungeschehen»
 - [ ] Quellen tragen jede zentrale Aussage in der behaupteten Reichweite. → Begriff «diagnostische Remission» (RR-01) und Heilungsaussage (RR-03) offen; Kapitelangabe nicht online verifiziert (RR-02)
-- [x] PDF und Bildfassungen bewahren alle wesentlichen Einschränkungen des Volltexts. → PDF-Text entspricht dem Webtext vollständig
+- [ ] PDF und Bildfassungen bewahren alle wesentlichen Einschränkungen des Volltexts. → Korrektur nach Codex-Review zu #626: Die ursprüngliche Angabe «PDF-Text entspricht dem Webtext vollständig» war falsch. Der Intro-Satz «Keiner dieser Begriffe bewertet den Wert eines Menschen …» fehlte im PDF; in Runde 3 als RR-08 behoben
 
 Fachentscheid (KI-Simulation): [ ] freigegeben wie vorliegend [x] mit Auflagen [ ] Korrekturen erforderlich [ ] ausserhalb der Zuständigkeit
 
@@ -104,4 +104,38 @@ stehen in der Tabelle «Offene KI-Prüfhypothesen».
 | ----- | ------------------------------------ | --------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | -------------------- | ---------------------------------------- |
 | RR-07 | Borderline-Erfahrung (KI-Simulation) | P3        | Handlungshinweis 2, alle Fassungen | Wiederholtes Nachfragen nach «bedeutsamen Veränderungen» kann selbst als Kontrolle oder Druck erlebt werden. | «Fragen Sie – wenn die Person darüber sprechen möchte –, welche Veränderungen für sie selbst bedeutsam sind …» | annehmen (Vorschlag) | nach Neuerzeugung Text- und PDF-Abgleich |
 
-Blattstatus (KI-Simulation): [ ] bereit für nachgelagerte technische Prüfungen [x] erst nach Auflagen bereit [ ] nicht bereit
+Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte technische Prüfungen [x] erst nach Auflagen bereit [ ] nicht bereit
+
+## Nachprüfung Reviewrunde 3 (KI-Simulation)
+
+Die Korrekturen sind in `2fb8367` umgesetzt, zwei Nachbesserungen aus dem
+Codex-Review zu #626 in `1b806c2`. Der Stand ist mit Basis-Commit `1b806c2`
+in `review-basis.json` als Reviewrunde 3 gesperrt; die Prüfsummen oben
+gelten für diesen Stand. Die
+Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
+Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
+hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von
+Webtext und PDF-Textebene sowie Sichtkontrolle des WebP-Vollbilds.
+
+| Befund | Umsetzung                                                                                                                                        | geprüfte Fassungen  | Ergebnis                |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ----------------------- |
+| RR-01  | Titel und Definition «Symptomatische Remission»                                                                                                  | Web, PDF-Text, WebP | geschlossen             |
+| RR-03  | Heilung quellennah: «Studien und Leitlinien sprechen meist nicht von «Heilung» …»                                                                | Web, PDF-Text, WebP | geschlossen             |
+| RR-05  | Kastentitel «Drei Blickwinkel – und ein Begriff zur Einordnung»; Heilung unnummeriert, gestrichelt abgesetzt                                     | Web, PDF-Text, WebP | geschlossen             |
+| RR-06  | «Funktionsfähigkeit» durch «Alltag und Teilhabe» ersetzt; Kernsatz vereinheitlicht                                                               | Web, PDF-Text, WebP | geschlossen             |
+| RR-07  | «Fragen Sie – wenn die Person darüber sprechen möchte – …»                                                                                       | Web, PDF-Text, WebP | geschlossen             |
+| G-01   | Überschrift «Mögliche nächste Schritte»                                                                                                          | Web, PDF-Text, WebP | geschlossen             |
+| RR-08  | Codex-Review zu #626: Kernsatz ergänzt um «… oder bewertet den Wert eines Menschen», damit die Einschränkung aus dem Web-Intro auch im PDF steht | Web, PDF-Text, WebP | geschlossen (`1b806c2`) |
+
+Weiterhin offen:
+
+- RR-02 (P2, zurückgestellt): Kapitelangabe AWMF 7.2 bei Quellenzugriff abgleichen.
+
+Perspektiven-Nachprüfung:
+
+- Fach (Simulation): Auflagen erfüllt; RR-02 bleibt als Quellenabgleich offen.
+- Borderline-Erfahrung (Simulation): «Funktionsfähigkeit» entfernt; Nachfragen ausdrücklich freiwillig.
+- Angehörige (Simulation): Überschrift passt jetzt zu mehreren Hinweisen.
+
+Blattstatus Runde 3 (KI-Simulation): [x] bereit für nachgelagerte technische
+Prüfungen [ ] erst nach Auflagen bereit [ ] nicht bereit

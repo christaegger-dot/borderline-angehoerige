@@ -4,12 +4,12 @@
 
 - ID / Version: `grenzen-erkennen` / `puk-grenzen-ueberlastung-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
-- Text-Hash: `ab00c58bdabc3d941026227a1617071bedeb2f5e327dab97e990faa0a03883dc`
-- HTML-Hash: `5cc36eef988437f7e4942d5d9426e4240163a79adb86d81514e86a333725c1b6`
-- PDF-Hash: `086d550c686b59e16d747ddabc981b13f729b427e972858c935023cb8f56105c`
-- WebP-Hash: `469f9e5b593c38864dc89923d9d8bc135b72cf814fbd0916ffb126d078c5550f`
-- Thumbnail-Hash: `622d464d5fbefb02fc7d6ebf7c693361a1daae496b201e9385f462140f19638b`
+- Basis-Commit: `1b806c27c8a52cbbabd7560c17f2f250a77256c3` (Reviewrunde 3)
+- Text-Hash: `620d7ed3d638db6e1a630af9c7c03712b1a1d33aa6fe57b90608fd258bd6c03f`
+- HTML-Hash: `0038373e21565ffc6e7d0ca0589e77b769dd14fad9fa951bda0e67702a9ecbd7`
+- PDF-Hash: `98dbed3bcf17cfe6aedfb914c82be130d03ed1206c7faaedaa5d869cbb9325af`
+- WebP-Hash: `0643218d50815f530606eb37cd8bbe6dfd403e54c25b729d472058395a1f9a1c`
+- Thumbnail-Hash: `69bd8f514791348760d8e65193af75d74faf3c67a34fbe0c472674457726a64b`
 
 Zweck: unspezifische Anzeichen eigener Belastung wahrnehmen, ohne Diagnose,
 Ursachenzuschreibung oder Beweis einer Grenzverletzung, und einen passenden
@@ -102,4 +102,37 @@ stehen in der Tabelle «Offene KI-Prüfhypothesen».
 | BG-07 | Fach und Angehörige (KI-Simulation)  | P2        | Abschnitt «Ein nächster Schritt», alle Fassungen | Kein Hinweis auf Unterstützungsangebote für Angehörige und kein Krisenkontakt, obwohl das Blatt Erschöpfung thematisiert. | Ergänzen: «Unterstützung finden Sie z. B. bei einer Angehörigenberatung oder in der Hausarztpraxis. In einer akuten Krise: Die Dargebotene Hand, Telefon 143.» | annehmen (Vorschlag)              | Web/PDF-Abgleich; Nummer mit Notfallseite der Website abgleichen |
 | BG-08 | Borderline-Erfahrung (KI-Simulation) | P3        | Titel                                            | Der Titel kann auf einer Borderline-Seite die Ursache der Belastung bei der erkrankten Person verorten.                   | Durch BG-04 ausreichend abgedeckt; Titel beibehalten.                                                                                                          | verwerfen (durch BG-04 abgedeckt) | –                                                                |
 
-Blattstatus (KI-Simulation): [ ] bereit für nachgelagerte technische Prüfungen [x] erst nach Auflagen bereit [ ] nicht bereit
+Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte technische Prüfungen [x] erst nach Auflagen bereit [ ] nicht bereit
+
+## Nachprüfung Reviewrunde 3 (KI-Simulation)
+
+Die Korrekturen sind in `2fb8367` umgesetzt, zwei Nachbesserungen aus dem
+Codex-Review zu #626 in `1b806c2`. Der Stand ist mit Basis-Commit `1b806c2`
+in `review-basis.json` als Reviewrunde 3 gesperrt; die Prüfsummen oben
+gelten für diesen Stand. Die
+Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
+Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
+hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von
+Webtext und PDF-Textebene sowie Sichtkontrolle des WebP-Vollbilds.
+
+| Befund | Umsetzung                                                                                                                                            | geprüfte Fassungen  | Ergebnis               |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ---------------------- |
+| BG-02  | Signalliste näher an den WHO-Beispielen (Schlafprobleme, Schmerzen, Grübeln oder Sorgen)                                                             | Web, PDF-Text, WebP | geschlossen            |
+| BG-03  | «innere Leere» gestrichen, «Niedergeschlagenheit» ergänzt                                                                                            | Web, PDF-Text, WebP | geschlossen            |
+| BG-04  | Kernsatz: «Belastung hat oft mehrere Quellen, etwa auch Arbeit, Finanzen oder die eigene Gesundheit.»                                                | Web, PDF-Text, WebP | geschlossen            |
+| BG-05  | Karte «Erholungsbedarf»                                                                                                                              | Web, PDF-Text, WebP | geschlossen            |
+| BG-07  | Angehörigenberatung und Hausarztpraxis genannt; Krisenhinweis ohne Nummer, weil nicht-akute Handouts laut Governance-Test keine Notrufnummern tragen | Web, PDF-Text, WebP | geschlossen, angepasst |
+
+Weiterhin offen:
+
+- BG-06 (P2, zurückgestellt): Datum der WHO-Seite bei Quellenzugriff abgleichen.
+- BG-09 (P3, neu, zurückgestellt): «separat ausgewiesene Krisen- und Notfallwege» sagt im Ausdruck nicht, wo diese stehen; ein Verweis wie «Website, Bereich Soforthilfe» wäre konkreter.
+
+Perspektiven-Nachprüfung:
+
+- Fach (Simulation): Auflagen erfüllt; BG-06 bleibt als Quellenabgleich offen.
+- Borderline-Erfahrung (Simulation): Kein Diagnosekriterium mehr in der Liste; Ursachen werden offen benannt.
+- Angehörige (Simulation): Anlaufstellen sichtbar; Krisenverweis bleibt allgemein (BG-09).
+
+Blattstatus Runde 3 (KI-Simulation): [x] bereit für nachgelagerte technische
+Prüfungen [ ] erst nach Auflagen bereit [ ] nicht bereit

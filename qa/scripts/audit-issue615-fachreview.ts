@@ -66,14 +66,14 @@ const expectedIds = [
 if (basis.status !== "human-review-pending") {
   fail("review basis must remain human-review-pending");
 }
-if (basis.reviewRound !== 2) {
-  fail("active review basis must identify review round 2");
+if (basis.reviewRound !== 3) {
+  fail("active review basis must identify review round 3");
 }
 if (
-  basis.baselineCommit !== "79091246f78411e283e48fdabba3ac4f751b3f6b" ||
-  basis.supersedesBaselineCommit !== "6ae32c08e6841650537ea4a644f63c31fe54153f"
+  basis.baselineCommit !== "1b806c27c8a52cbbabd7560c17f2f250a77256c3" ||
+  basis.supersedesBaselineCommit !== "79091246f78411e283e48fdabba3ac4f751b3f6b"
 ) {
-  fail("review-round lineage is not locked to the approved pre-cleanup commit");
+  fail("review-round lineage is not locked to the issue 625 correction commit");
 }
 if (basis.publicationAuthorized !== false) {
   fail("review package must not authorize publication");

@@ -101,8 +101,8 @@ const HEADER_CASES = [
     requiredHeaders: SECURITY_HEADERS,
   },
   {
-    id: "withheld-notfallkarte-api",
-    title: "Zurückgehaltene Notfallkarte über API",
+    id: "retired-notfallkarte-api",
+    title: "Dauerhaft nicht angebotene Notfallkarte über API",
     kind: "header",
     route: "/api/material-download/notfallkarte-zuerich?disposition=inline",
     expectedStatus: 404,
@@ -110,8 +110,8 @@ const HEADER_CASES = [
     requiredHeaders: SECURITY_HEADERS,
   },
   {
-    id: "withheld-notfallkarte-static",
-    title: "Zurückgehaltene Notfallkarte als Direktdatei",
+    id: "retired-notfallkarte-static",
+    title: "Ausgemusterte statische Notfallkarte als Direktdatei",
     kind: "header",
     route: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
     expectedStatus: 404,
@@ -119,8 +119,8 @@ const HEADER_CASES = [
     requiredHeaders: SECURITY_HEADERS,
   },
   {
-    id: "withheld-notfallkarte-preview",
-    title: "Zurückgehaltene Notfallkarten-Vorschau",
+    id: "retired-notfallkarte-preview",
+    title: "Ausgemusterte Notfallkarten-Vorschau",
     kind: "header",
     route: "/notfallkarte-preview.webp",
     expectedStatus: 404,

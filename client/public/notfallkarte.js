@@ -20,13 +20,6 @@
       scale < 1 ? `${297 * 3.7795 * scale - 297 * 3.7795}px` : "0";
   }
 
-  const printButton = document.getElementById("print-notfallkarte");
-  if (printButton) {
-    printButton.addEventListener("click", () => {
-      window.print();
-    });
-  }
-
   scaleToFit();
   window.addEventListener("resize", scaleToFit);
 })();

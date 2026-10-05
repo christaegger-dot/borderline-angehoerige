@@ -35,12 +35,12 @@ describe("MaterialienLibrarySection", () => {
     ).toHaveAttribute("href", "/notfallkarte");
     expect(
       screen.getByText(
-        /Die Webfassung ist aktuell\. Die statische Vorschau und das PDF werden sicherheitsbezogen überarbeitet/i
+        /Diese Notfallkarte wird ausschliesslich als Webfassung angeboten\. Eine separate PDF- oder Bildfassung gibt es nicht/i
       )
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "Materialstand: Webfassung aktuell · Druckfassung in Überarbeitung"
+        "Materialformat: Webfassung · keine separate PDF- oder Bildfassung"
       )
     ).toBeInTheDocument();
     expect(
@@ -50,10 +50,10 @@ describe("MaterialienLibrarySection", () => {
     ).not.toBeInTheDocument();
     expect(
       screen.getByRole("img", {
-        name: /Notfallkarte Zürich – Psychische Krise: aktuelle Webfassung verfügbar; statische Vorschau und PDF in Überarbeitung/i,
+        name: /Notfallkarte Zürich – Psychische Krise: Webfassung verfügbar; keine separate PDF- oder Bildfassung/i,
       })
     ).toBeInTheDocument();
-    expect(screen.getByText("Aktuelle Webfassung")).toBeInTheDocument();
+    expect(screen.getByText("Webfassung")).toBeInTheDocument();
     expect(
       screen.getAllByRole("link", {
         name: /Textversion lesen: Notfallplan Krise – Suizidgedanken & Selbstverletzung/i,

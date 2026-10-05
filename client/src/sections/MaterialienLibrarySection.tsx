@@ -23,7 +23,7 @@ import {
 } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 import {
-  HANDOUT_WEB_REFRESH_NOTE,
+  HANDOUT_WEB_ONLY_NOTE,
   HANDOUT_VISUAL_REFRESH_NOTE,
   isHandoutVisualPublished,
   isHandoutWebVersionPublished,
@@ -117,17 +117,13 @@ function MaterialEntry({
       ) : (
         <HandoutVisualPlaceholder
           title={item.title}
-          readingLabel={
-            currentHtmlAvailable ? "Aktuelle Webfassung" : undefined
-          }
+          readingLabel={currentHtmlAvailable ? "Webfassung" : undefined}
           statusText={
-            currentHtmlAvailable
-              ? "Statische Vorschau und PDF werden sicherheitsbezogen überarbeitet."
-              : undefined
+            currentHtmlAvailable ? "Nur als Webfassung verfügbar." : undefined
           }
           ariaDescription={
             currentHtmlAvailable
-              ? "aktuelle Webfassung verfügbar; statische Vorschau und PDF in Überarbeitung"
+              ? "Webfassung verfügbar; keine separate PDF- oder Bildfassung"
               : undefined
           }
         />
@@ -143,9 +139,7 @@ function MaterialEntry({
         <h3 className="material-library-card__title">{item.title}</h3>
         <p className="material-library-card__description">{item.description}</p>
         {!visualPublished && currentHtmlAvailable ? (
-          <p className="material-library-card__note">
-            {HANDOUT_WEB_REFRESH_NOTE}
-          </p>
+          <p className="material-library-card__note">{HANDOUT_WEB_ONLY_NOTE}</p>
         ) : !visualPublished && textVersionHref ? (
           <p className="material-library-card__note">
             {HANDOUT_VISUAL_REFRESH_NOTE}
@@ -191,7 +185,7 @@ function MaterialEntry({
         </p>
         {!visualPublished && currentHtmlAvailable ? (
           <p className="material-library-card__verified">
-            Materialstand: Webfassung aktuell · Druckfassung in Überarbeitung
+            Materialformat: Webfassung · keine separate PDF- oder Bildfassung
           </p>
         ) : !visualPublished ? (
           <p className="material-library-card__verified">
@@ -330,7 +324,7 @@ export default function MaterialienLibrarySection() {
                 href: "/notfallkarte",
                 title: "Notfallkarte",
                 description:
-                  "Persönliche Notfallkarte zum Ausdrucken — Kontakte, Skills und Anker für die Krise.",
+                  "Webfassung mit Krisenkontakten und Zugang zum getrennten Werkzeug für persönliche Einträge.",
               },
             ]}
           />

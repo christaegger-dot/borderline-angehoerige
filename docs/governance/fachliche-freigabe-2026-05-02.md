@@ -1,5 +1,11 @@
 # Fachliche Freigabe 2026-05-02
 
+> **Historischer Stand:** Die hier noch aufgeführte statische Notfallkarten-PDF
+> wurde mit dem Web-only-Entscheid vom 05.10.2026 dauerhaft ausgemustert. Der
+> aktuelle Entscheid ist unter
+> `docs/governance/p1-sicherheits-und-kohaerenzpaket-2026-10-05.md`
+> dokumentiert.
+
 Vorbereiteter Sign-off-Entwurf fuer das Release-Gate
 `Fach- und Kontakt-Audit`.
 

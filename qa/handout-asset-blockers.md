@@ -23,11 +23,12 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   `qa/withheld-handouts/p1-illustrations-v3-2026-10-04/`.
 - Die Notfallplan-Textversion ist aktuell; die ältere PDF- und Bildfassung ist
   wegen fehlender Schutzklauseln vorläufig zurückgezogen.
-- Die aktuelle interaktive Notfallkarte bleibt unter `/notfallkarte`
-  verfügbar. Ihre frühere statische PDF- und WebP-Fassung liegt wegen
-  überholter Sicherheitsformulierungen unter
-  `qa/withheld-handouts/notfallkarte-safety-refresh-2026-10-05/` und wird
-  weder in der Bibliothek noch über die Download-Funktion ausgeliefert.
+- Die aktuelle Notfallkarte bleibt unter `/notfallkarte` verfügbar und wird
+  dauerhaft ausschliesslich als Webfassung geführt. Die frühere PDF- und
+  WebP-Fassung ist aus dem aktuellen Projektbestand entfernt; ihre Prüfsummen
+  und Herkunft sind unter
+  `qa/retired-handouts/notfallkarte-static-2026-10-05/` dokumentiert. Die alten
+  Direktpfade bleiben dauerhaft gesperrt.
 
 ## Weiterhin freigegebene Visuals
 
@@ -56,8 +57,7 @@ oder direkt ausgeliefert:
 
 - sicherheits- oder krisenbezogen: `notfallplan-krise`, `alarm-modus`,
   `krisenkommunikation`, `anspannungskurve`, `grenzen-ohne-eskalation`,
-  `pause-statt-streit`, `zuhoeren-ohne-zustimmen`, `bruecke-gelaender` sowie
-  die statischen Assets von `notfallkarte-zuerich`;
+  `pause-statt-streit`, `zuhoeren-ohne-zustimmen` und `bruecke-gelaender`;
 - erklärende Modelle: `leuchtturm`, `eisberg`, `spaltung`, `gehirn`,
   `fortschritt-paradox`, `remission-heilung`, `5-faktoren-genesung`,
   `rolle-genesungsprozess`;
@@ -69,10 +69,11 @@ oder direkt ausgeliefert:
 `4-phasen` und `im-krisenmodus` sind zusätzlich vollständig `withdrawn` und
 erscheinen auch nicht mehr als aktive Textversion.
 
-`notfallkarte-zuerich` ist ein Sonderfall: Die gepflegte HTML-Webfassung ist
-weiterhin aktiv; `text-only` sperrt hier ausschliesslich die veraltete
-statische Vorschau und das PDF. Die Materialbibliothek kennzeichnet diesen
-Stand ausdrücklich und bietet weiterhin den Link zur Webfassung an.
+`notfallkarte-zuerich` ist kein vorläufiger Text-only-Blocker. Der Status
+`web-only` ist eine dauerhafte Formatentscheidung: Die gepflegte
+HTML-Webfassung bleibt aktiv, während keine separate PDF-, WebP- oder
+Thumbnail-Fassung angeboten oder neu erstellt wird. Die Materialbibliothek
+kennzeichnet diesen Stand ausdrücklich und verlinkt nur die Webfassung.
 
 ## Entwürfe ohne Publikationsfreigabe
 
@@ -94,6 +95,8 @@ Stand ausdrücklich und bietet weiterhin den Link zur Webfassung an.
    `published` setzen.
 5. Danach Registry, Suchindex, Materialbibliothek, direkte Asset-URLs,
    Download-Funktion, Responsive Layout und Tastaturbedienung erneut prüfen.
+6. Für `web-only`-Materialien keine statischen Download-Assets erzeugen; alte
+   Pfade dauerhaft fail-closed halten.
 
 ## Mindestverifikation
 

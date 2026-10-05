@@ -123,7 +123,7 @@ function createId() {
   return Math.random().toString(36).slice(2, 9);
 }
 
-const CARD_ROT = ROT.filter(k => k.id !== "ROT_118");
+const CARD_ROT = ROT;
 const CARD_GELB = GELB;
 const CARD_GRUEN = GRUEN.filter(k => k.id === "GRUEN_143");
 

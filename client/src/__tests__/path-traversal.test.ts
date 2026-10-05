@@ -64,7 +64,7 @@ describe("resolveLocalPdfPath end-to-end", () => {
     expect(result).toMatch(/[/\\]client[/\\]public[/\\]/);
   });
 
-  it("liefert null fuer die sicherheitsbezogen zurueckgehaltene Notfallkarte", () => {
+  it("liefert null fuer die dauerhaft ausgemusterte statische Notfallkarte", () => {
     expect(
       resolveLocalPdfPath("/Notfallkarte-Zuerich-Psychische-Krise.pdf")
     ).toBeNull();

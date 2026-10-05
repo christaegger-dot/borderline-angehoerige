@@ -74,7 +74,7 @@ describe("netlify material-download function adapter", () => {
   });
 
   it.each(["notfallplan-krise", "notfallkarte-zuerich"])(
-    "returns 404 for the text-only handout %s",
+    "returns 404 when no static download is published for %s",
     async id => {
       const req = new Request(
         `https://example.com/api/material-download/${id}`

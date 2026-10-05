@@ -69,7 +69,7 @@ describe("security headers", () => {
     );
   });
 
-  it("withholds stale static notfallkarte downloads with shared security headers", async () => {
+  it("rejects retired static notfallkarte downloads with shared security headers", async () => {
     const response = await createMaterialDownloadResponse(
       "notfallkarte-zuerich",
       "attachment"

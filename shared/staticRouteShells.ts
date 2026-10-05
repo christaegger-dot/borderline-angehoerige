@@ -57,7 +57,7 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
     path: "/notfallkarte",
     title: "Notfallkarte Zürich – Psychische Krise v07",
     description:
-      "Notfallkarte Zürich: Alle wichtigen Nummern bei psychischen Krisen auf einer A4-Seite – für Angehörige.",
+      "Notfallkarte Zürich: Wichtige Nummern und Orientierung bei psychischen Krisen – für Angehörige, direkt im Browser.",
     includeMedicalSchema: true,
     medicalTitle: "Notfallkarte Zürich – Psychische Krise",
   },

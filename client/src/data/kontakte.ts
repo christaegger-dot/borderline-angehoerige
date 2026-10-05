@@ -13,7 +13,6 @@
  * - INFO enthält nur Einträge, die im Forensik-Kontaktregister verifiziert sind
  *   (Fundstelle + Quelle). sourceRef ist Pflichtfeld.
  * - Kategorien: ROT (Notruf), GELB (PUK 24/7), GRUEN (Entlastung), INFO (Beratung)
- * - 118 nur auf Notfallkarte (PDF), nicht auf der Website
  * - 145 Tox Info Suisse: auf Website (Soforthilfe Block 4) UND Notfallkarte
  * - 143 ist GRUEN, niemals ROT. Niemals gleichrangig neben 144/117.
  * - UI-Trennung: ROT/GELB/GRUEN = Ampel. INFO immer separat als
@@ -76,8 +75,6 @@ export interface Kontakt {
   verfuegbarkeit?: string;
   /** Zielgruppe, z. B. "bis 18 Jahre" */
   fuerWen?: string;
-  /** Nur auf Notfallkarte (PDF), nicht auf Website */
-  nurPdf?: boolean;
 }
 
 export interface EmailKontakt {
@@ -147,17 +144,6 @@ export const ROT: Kontakt[] = [
     hinweis: "Bei Vergiftungsverdacht oder Medikamentenüberdosierung",
     sourceRef: "Notfallkarte v05 (HTML), public/soforthilfe/index.html",
     verfuegbarkeit: "24/7",
-  },
-  {
-    id: "ROT_118",
-    kategorie: "rot",
-    nummer: "118",
-    tel: "118",
-    label: "Feuerwehr",
-    hinweis: "Feuer, Elementarschäden",
-    sourceRef: "Notfallkarte v05 (HTML)",
-    verfuegbarkeit: "24/7",
-    nurPdf: true,
   },
 ];
 
@@ -534,18 +520,13 @@ export const TEXTE = {
 
 // ─── Hilfsfunktionen ─────────────────────────────────────
 
-/** Alle Website-Kontakte (ohne nurPdf), flach über alle Kategorien */
-export const WEBSITE_KONTAKTE: Kontakt[] = [
-  ...ROT,
-  ...GELB,
-  ...GRUEN,
-  ...INFO,
-].filter(k => !k.nurPdf);
+/** Alle Website-Kontakte, flach über alle Kategorien */
+export const WEBSITE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO];
 
-/** Website-ROT: Haupt-Notfallnummern (ohne 118 nur PDF, ohne 145 Spezialnummer) */
-export const WEBSITE_ROT = ROT.filter(k => !k.nurPdf && k.id !== "ROT_145");
+/** Website-ROT: Haupt-Notfallnummern (ohne 145 Spezialnummer) */
+export const WEBSITE_ROT = ROT.filter(k => k.id !== "ROT_145");
 
-/** Alle Kontakte flach (inkl. nurPdf) */
+/** Alle Kontakte flach */
 export const ALLE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO];
 
 /** Kontakt nach ID finden */
@@ -623,15 +604,6 @@ export function validateKontakte(): void {
     }
     if (k.id === "GRUEN_143" && k.kategorie !== "gruen") {
       throw new Error("143 muss gruen sein");
-    }
-    if (k.id === "ROT_118" && !k.nurPdf) {
-      throw new Error("118 muss nurPdf=true sein");
-    }
-  }
-  // Prüfe, dass nurPdf-Einträge nicht in WEBSITE_KONTAKTE auftauchen
-  for (const k of WEBSITE_KONTAKTE) {
-    if (k.nurPdf) {
-      throw new Error(`nurPdf-Eintrag in WEBSITE_KONTAKTE: ${k.id}`);
     }
   }
 }

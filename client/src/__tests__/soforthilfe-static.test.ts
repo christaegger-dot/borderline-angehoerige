@@ -112,7 +112,7 @@ describe("static soforthilfe page", () => {
     expect(html).not.toContain('href="/notfallplan-krise-v04.pdf"');
   });
 
-  it("links to the current notfallkarte web page without exposing stale static assets", () => {
+  it("links only to the notfallkarte web page and does not promise new static assets", () => {
     const html = readSoforthilfeDirectPage();
 
     expect(html).toContain('href="/notfallkarte"');
@@ -120,8 +120,8 @@ describe("static soforthilfe page", () => {
       'href="/Notfallkarte-Zuerich-Psychische-Krise.pdf"'
     );
     expect(html).not.toContain("/notfallkarte-preview.webp");
-    expect(html).toContain(
-      "sicherheitsbezogen überarbeitet und nach fachlicher Prüfung"
-    );
+    expect(html).toContain("ausschliesslich als Webfassung angeboten");
+    expect(html).not.toContain("neu bereitgestellt");
+    expect(html).not.toContain("in Überarbeitung");
   });
 });

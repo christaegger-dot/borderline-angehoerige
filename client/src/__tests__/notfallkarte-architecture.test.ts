@@ -122,7 +122,7 @@ describe("notfallkarte architecture", () => {
     expect(soforthilfeDirect).toMatch(/Gewalt, Bedrohung oder Übergriff/);
   });
 
-  it("keeps stale static notfallkarte assets out of maintained crisis pages", () => {
+  it("keeps retired static notfallkarte assets and future promises out of maintained crisis pages", () => {
     const browserCard = fs.readFileSync(
       path.join(repoRoot, "client/public/notfallkarte.html"),
       "utf8"
@@ -140,12 +140,16 @@ describe("notfallkarte architecture", () => {
     }
 
     expect(browserCard).toContain(
-      "Statische PDF-Fassung in fachlicher Prüfung"
+      "Webfassung · keine separate PDF- oder Bildfassung"
     );
+    expect(browserCard).not.toContain('id="print-notfallkarte"');
+    expect(browserCard).not.toContain("Drucken / PDF");
     expect(soforthilfeDirect).toContain('href="/notfallkarte"');
     expect(soforthilfeDirect).toContain(
-      "Die statische Vorschau und das PDF der Notfallkarte werden"
+      "Die Notfallkarte wird ausschliesslich als Webfassung angeboten"
     );
+    expect(soforthilfeDirect).not.toContain("neu bereitgestellt");
+    expect(soforthilfeDirect).not.toContain("in fachlicher Prüfung");
   });
 
   it("keeps unsafe crisis guarantees out of all maintained static variants", () => {

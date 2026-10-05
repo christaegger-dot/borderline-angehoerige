@@ -57,17 +57,13 @@ export const materials: MaterialItem[] = [
     id: "notfallkarte-zuerich",
     title: "Notfallkarte Zürich – Psychische Krise",
     description:
-      "Alle wichtigen Nummern für Angehörige auf einer A4-Seite. Für akute Orientierung, wenn rasches Handeln nötig ist.",
+      "Wichtige Nummern und Orientierung für Angehörige bei psychischen Krisen – direkt im Browser.",
     category: "soforthilfe",
     kind: "Notfallkarte",
     url: "/notfallkarte",
-    previewUrl: "/notfallkarte-preview.webp",
-    downloadUrl: "/notfallkarte",
-    pdfUrl: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
     isHtml: true,
     priority: "core",
     showInLibrary: true,
-    verifiedAt: "April 2026",
   },
   {
     id: "notfallplan-krise",

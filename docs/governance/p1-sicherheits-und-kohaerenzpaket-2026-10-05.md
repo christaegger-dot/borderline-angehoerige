@@ -37,13 +37,18 @@ abgrenzbare Barrierefreiheits- und Reflow-Probleme.
 ### Publikationshygiene der Notfallkarte
 
 - Die aktuelle Webfassung unter `/notfallkarte` bleibt zugänglich.
-- Das überholte PDF und die zugehörige WebP-Vorschau sind aus dem öffentlich
-  ausgelieferten Verzeichnis entfernt und unter
-  `qa/withheld-handouts/notfallkarte-safety-refresh-2026-10-05/` zur
-  nachvollziehbaren Überarbeitung zurückbehalten.
-- Bibliothek, Downloadlogik und Prüfskripte behandeln diese statischen Dateien
-  bis zu ihrer Neuerstellung nach dem Fail-closed-Prinzip als nicht
-  veröffentlicht.
+- Die Notfallkarte wird dauerhaft ohne separat veröffentlichte PDF- oder
+  Bildfassung geführt. Damit soll verhindert werden, dass ausserhalb der
+  Website gespeicherte Kriseninformationen unbemerkt veralten und später
+  weitergegeben werden.
+- Das überholte PDF und die zugehörige WebP-Vorschau sind aus dem aktuellen
+  Projektbestand und aus dem öffentlich ausgelieferten Verzeichnis entfernt.
+  Prüfsummen und Herkunft sind unter
+  `qa/retired-handouts/notfallkarte-static-2026-10-05/` dokumentiert; die
+  Binärdateien bleiben ausschliesslich über die Git-Historie rekonstruierbar.
+- Governance, Bibliothek, Downloadlogik und Prüfskripte behandeln
+  `notfallkarte-zuerich` ausdrücklich als `web-only`. Die früheren Asset-Pfade
+  bleiben dauerhaft gesperrt und werden automatisiert auf HTTP 404 geprüft.
 - Datumsangaben unterscheiden nun zwischen redaktionellem Arbeitsstand,
   letzter dokumentierter Fachprüfung und der seit 31.07.2026 ausstehenden
   erneuten Fachprüfung.
@@ -93,11 +98,9 @@ Automatisierte Prüfungen ersetzen keine reale assistive oder fachliche Prüfung
 
 1. Verantwortete fachliche Prüfung der geänderten Krisen- und
    Soforthilfeformulierungen einschliesslich lokaler Versorgungspfade.
-2. Neuerstellung und gemeinsame Prüfung von Web, PDF, WebP und Thumbnail der
-   Notfallkarte, bevor statische Fassungen wieder veröffentlicht werden.
-3. Reale VoiceOver- und NVDA-Prüfung sowie Tests mit betroffenen Menschen und
+2. Reale VoiceOver- und NVDA-Prüfung sowie Tests mit betroffenen Menschen und
    Angehörigen.
-4. Prüfung der Deployment-Vorschau und der Release-HTTP-Gates im tatsächlichen
+3. Prüfung der Deployment-Vorschau und der Release-HTTP-Gates im tatsächlichen
    Netlify-Kontext.
-5. Ausdrücklicher Merge- und Publikationsentscheid durch die verantwortlichen
+4. Ausdrücklicher Merge- und Publikationsentscheid durch die verantwortlichen
    Personen.

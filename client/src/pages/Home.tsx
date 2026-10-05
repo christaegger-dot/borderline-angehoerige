@@ -119,8 +119,8 @@ export default function Home() {
             <p>
               Sie können Unterstützung anbieten und zugleich entscheiden, was
               für Sie tragbar ist. Grenzen, eigene Beratung und Kontaktpausen
-              dürfen dazugehören. Sie sind nicht allein für die Genesung eines
-              anderen Menschen verantwortlich.
+              dürfen dazugehören. Sie sind nicht für die Genesung eines anderen
+              Menschen verantwortlich.
             </p>
             <p>
               <AppLink href="/genesung#garten">

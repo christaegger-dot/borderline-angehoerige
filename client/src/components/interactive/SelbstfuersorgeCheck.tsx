@@ -119,8 +119,8 @@ export default function SelbstfuersorgeCheck() {
       </details>
       <p className="mt-5 text-base leading-relaxed">
         Eigene Beratung darf unabhängig davon beginnen, ob die andere Person
-        Hilfe möchte. Die PUK-Angehörigenberatung ist kostenlos, ohne Vollmacht
-        und nach Voranmeldung möglich.
+        Hilfe möchte. Die Fachstelle Angehörigenarbeit der PUK berät kostenlos,
+        ohne Vollmacht und nach Voranmeldung.
       </p>
       <Link
         href="/fachstelle"

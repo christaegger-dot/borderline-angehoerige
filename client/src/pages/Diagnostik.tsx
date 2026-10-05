@@ -83,7 +83,7 @@ const unterschiedlicheEinordnungWasMoeglich = [
   "fragen, was unklar ist oder sich für die Person nicht stimmig anfühlt",
   "konkrete Erfahrungen und beobachtbares Verhalten ansprechen statt ein Etikett",
   "offene Fragen mit der behandelnden Fachperson klären oder eine zweite fachliche Einschätzung einholen — sofern die Person das möchte",
-  "Beratung der Fachstelle Angehörigenarbeit in Anspruch nehmen — auch ohne Diagnose-Stellung",
+  "Beratung der Fachstelle Angehörigenarbeit der PUK in Anspruch nehmen — auch ohne Diagnose-Stellung",
 ] as const;
 
 const vermutungSchritte = [
@@ -92,7 +92,7 @@ const vermutungSchritte = [
     desc: "Eine mögliche erste Anlaufstelle für Einschätzung, erste Abklärungen und Überweisung. Welche Aufgaben die Hausärzt:in selbst übernimmt, hängt von Qualifikation, Situation und Versorgungsweg ab.",
   },
   {
-    title: "Fachstelle Angehörigenarbeit kontaktieren",
+    title: "Fachstelle Angehörigenarbeit der PUK kontaktieren",
     desc: "Beratung für Angehörige ist auch möglich, wenn keine Diagnose vorliegt oder die betroffene Person nicht in Behandlung ist.",
   },
   {
@@ -169,11 +169,11 @@ export default function Diagnostik() {
           <EditorialProse>
             <p>
               Diese Seite gliedert den Diagnostik-Prozess für Angehörige: wer
-              befugt ist, eine Borderline-Persönlichkeitsstörung zu
-              diagnostizieren, wie eine Abklärung typischerweise abläuft, was
-              die Diagnose für Sie verändert — und welche Möglichkeiten es gibt,
-              wenn die Einordnung nicht geteilt wird, Fragen offenbleiben oder
-              noch keine Diagnose gestellt wurde.
+              eine Borderline-Abklärung üblicherweise durchführt, wie eine
+              Abklärung typischerweise abläuft, was die Diagnose für Sie
+              verändert — und welche Möglichkeiten es gibt, wenn die Einordnung
+              nicht geteilt wird, Fragen offenbleiben oder noch keine Diagnose
+              gestellt wurde.
             </p>
             <p>
               Sie können auch direkt zu{" "}
@@ -529,7 +529,8 @@ export default function Diagnostik() {
                 <Link href="/beratung" className="editorial-link">
                   Beratung &amp; Netzwerke
                 </Link>{" "}
-                — Fachstelle Angehörigenarbeit, Stand By You, VASK Zürich.
+                — Fachstelle Angehörigenarbeit der PUK, Stand By You, VASK
+                Zürich.
               </li>
               <li>
                 Eigene Hausärzt:in oder Psychotherapeut:in — keine Pflicht, aber
@@ -551,13 +552,13 @@ export default function Diagnostik() {
               Wenn Sie Verhaltensweisen oder Erfahrungen aus den Beschreibungen
               auf dieser Website wiedererkennen, kann das ein Anlass sein,
               Beobachtungen zu benennen und Beratung zu suchen. Es erlaubt aber
-              keine Diagnose der anderen Person. Der{" "}
+              keine Diagnose der anderen Person. Die Seite{" "}
               <Link href="/selbsttest" className="editorial-link">
-                Passende Inhalte finden
+                «Passende Inhalte finden»
               </Link>{" "}
-              auf dieser Site ist eine Orientierungshilfe für Angehörige — er
-              sagt etwas darüber aus, wo Sie selbst stehen, nicht ob die andere
-              Person Borderline hat.
+              ist eine Orientierungshilfe für Angehörige — sie sagt etwas
+              darüber aus, wo Sie selbst stehen, nicht ob die andere Person
+              Borderline hat.
             </p>
           </EditorialProse>
           <div className="mt-6 space-y-6">
@@ -735,8 +736,8 @@ export default function Diagnostik() {
           >
             Ob und unter welchen Voraussetzungen die Grundversicherung Kosten
             übernimmt, hängt von Leistung, Zuweisung und Versicherungsmodell ab.
-            Klären Sie die Kostenübernahme bei der Fachstelle und Ihrer
-            Versicherung vorab.
+            Klären Sie die Kostenübernahme bei der abklärenden Stelle und bei
+            Ihrer Krankenversicherung vorab.
           </p>
         </ContentSection>
 
@@ -779,8 +780,8 @@ export default function Diagnostik() {
         >
           <EditorialProse>
             <p>
-              Die Fachstelle Angehörigenarbeit der PUK Zürich berät auch dann,
-              wenn keine Diagnose vorliegt — und auch unabhängig davon, ob die
+              Die Fachstelle Angehörigenarbeit der PUK berät auch dann, wenn
+              keine Diagnose vorliegt — und auch unabhängig davon, ob die
               erkrankte Person bereits in Behandlung ist. Beratung kostet nichts
               und wird nicht an Krankenkassen weitergegeben.
             </p>

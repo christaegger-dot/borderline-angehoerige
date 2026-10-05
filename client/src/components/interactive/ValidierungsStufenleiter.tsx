@@ -61,7 +61,7 @@ const stufen: Stufe[] = [
     ],
     beispielsaetze: [
       "«Du fühlst dich gerade sehr verletzt.»",
-      "«Wenn ich dich richtig verstehe, hast du Angst, verlassen zu werden.»",
+      "«Wenn ich dich richtig verstehe, hast du dich heute allein gelassen gefühlt.»",
     ],
     typischerFehler: "Spiegeln sofort mit einem «aber» zurücknehmen.",
     dialog: {

@@ -332,9 +332,9 @@ export default function Kommunizieren() {
               },
               {
                 href: "/materialien",
-                title: "Materialien & Handouts",
+                title: "Materialien zur Kommunikation",
                 description:
-                  "Infografiken und Spickzettel zur Kommunikation – als PDF zum Mitnehmen.",
+                  "Als Textversion; die Druckfassungen werden überarbeitet.",
               },
               {
                 href: "/selbstfuersorge",

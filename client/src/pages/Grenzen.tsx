@@ -29,7 +29,7 @@ const grenzsaetzeBeispiele = [
     situation: "Häufige Anrufe spät abends oder an Wochenenden",
     falsch: "«Du rufst immer zur falschen Zeit an. Das nervt mich.»",
     richtig:
-      "«Ich bin unter der Woche bis 21 Uhr erreichbar. Danach bin ich offline. Bei echten Notfällen gibt es die Krisentelefone.»",
+      "«Ich bin unter der Woche bis 21 Uhr erreichbar. Danach bin ich offline. Für Krisen nutzen wir die vereinbarten professionellen Hilfewege.»",
     hinweis:
       "Zeitgrenzen wirken am besten, wenn Sie sie in einer ruhigen Situation ankündigen — nicht mitten in einem Konflikt.",
   },
@@ -47,7 +47,7 @@ const grenzsaetzeBeispiele = [
     situation: "Beschimpfungen, Vorwürfe oder persönliche Angriffe im Gespräch",
     falsch: "«Du bist unmöglich. So rede ich nicht mit dir.»",
     richtig:
-      "«Wenn du mich so ansprichst, beende ich dieses Gespräch. Wir können es später weiterführen, wenn beide ruhiger sind.»",
+      "«Wenn du mich so ansprichst, beende ich dieses Gespräch. Ob und wann ich weiterreden möchte, entscheide ich später.»",
     hinweis:
       "Wählen Sie einen Schritt, der für Sie sicher und umsetzbar ist. Wenn Sie das Gespräch nicht verlassen können, holen Sie Unterstützung; das ist kein persönliches Versagen.",
   },
@@ -261,6 +261,13 @@ export default function Grenzen() {
 
           {/* ── ContentSection 2: arten ── */}
           <span id="arten" />
+          <EditorialProse>
+            <p>
+              Die folgenden vier Arten sind eine redaktionelle Ordnungshilfe.
+              Sie sind keine fachliche Klassifikation, können sich überschneiden
+              und legen nicht fest, welche Grenze für Sie richtig ist.
+            </p>
+          </EditorialProse>
           <LearningGuide kind="4-arten-von-grenzen" id="grenzen-arten" />
         </EditorialSection.Body>
       </EditorialSection>
@@ -309,6 +316,11 @@ export default function Grenzen() {
                 Wenn eine Grenze nicht umsetzbar ist, sind Anpassung und
                 Unterstützung sinnvoll – kein Selbstvorwurf.
               </p>
+              <p>
+                Das folgende Raster ist eine redaktionelle Orientierungshilfe,
+                keine fachliche Einstufung. Dringlichkeit und Belastung können
+                sich je nach Situation verändern.
+              </p>
             </EditorialProse>
             <aside
               aria-labelledby="grenzen-schutz-title"
@@ -356,10 +368,10 @@ export default function Grenzen() {
                   Dringend · Emotional hoch
                 </p>
                 <h3 className="mt-2" style={h4Style}>
-                  Sofort begrenzen
+                  Eigene Gesundheit schützen
                 </h3>
                 <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
-                  <li>Eigene Gesundheit</li>
+                  <li>Belastungen, die Ihre Gesundheit beeinträchtigen</li>
                   <li>Beschimpfungen / persönliche Angriffe</li>
                   <li>Nicht tragbare Verfügbarkeit</li>
                 </ul>
@@ -659,7 +671,8 @@ export default function Grenzen() {
             Grenzen fühlen sich anfangs oft unangenehm an. Das bedeutet nicht
             automatisch, dass sie falsch sind. In belasteten Beziehungen braucht
             gute Begrenzung meist Wiederholung, innere Festigkeit und die
-            Erlaubnis, auch Schuldgefühle zu überstehen.
+            Erlaubnis, an einer Grenze festzuhalten, auch wenn Schuldgefühle
+            bleiben.
           </EditorialPullQuote>
         </EditorialSection.Body>
       </EditorialSection>
@@ -846,7 +859,8 @@ export default function Grenzen() {
             <p>
               Grenzen sind der Schutzraum — Selbstfürsorge ist das, was Sie
               darin aufbauen. Wer weiss, wo er aufhört und der andere anfängt,
-              kann sich erholen, ohne sich schuldig zu fühlen —{" "}
+              kann sich eher erholen. Schuldgefühle können dabei trotzdem
+              bleiben —{" "}
               <Link href="/selbstfuersorge" className="editorial-link">
                 weiter zu Selbstfürsorge
               </Link>
@@ -893,7 +907,7 @@ export default function Grenzen() {
                 href: "/kommunizieren",
                 title: "Kommunizieren",
                 description:
-                  "Grenzen ruhig und klar formulieren: Validierung, DEAR-Technik und Deeskalation.",
+                  "Grenzen ruhig und klar formulieren: Validierung, verständliche Anliegen und Deeskalation.",
               },
               {
                 href: "/materialien",

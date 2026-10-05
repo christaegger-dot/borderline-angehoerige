@@ -26,6 +26,11 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   editierbare HTML-Quelle liegen als gemeinsamer, manifestierter Entwurfsstand
   unter `qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/` und werden
   bis zur verantworteten Freigabe nicht öffentlich ausgeliefert.
+- Für die fünf fachlich oder ethisch sensiblen Kandidaten ist ein
+  commit- und hashgebundenes Fach- und Perspektivenreview unter
+  `qa/issue-615/fachreview-paket/` vorbereitet. Es erteilt keine Freigabe und
+  hält die Kandidaten bis zu drei unabhängigen menschlichen Entscheiden sowie
+  den nachgelagerten technischen und realen Prüfungen zurück.
 - Die noch öffentlich erreichbaren V1-Dateien zu `energie-konto`,
   `erlaubnis-karte`, `grenzen-erkennen` und `lmk` wurden kontrolliert nach
   `qa/archived-handouts/issue-615-legacy-v1-2026-10-05/` verschoben. Ihre alten

@@ -22,6 +22,7 @@
     "audit:infografiken": "pnpm exec tsx qa/scripts/audit-infografik-inventory.ts --write",
     "generate:issue615-handouts": "pnpm exec tsx scripts/generate-issue615-handouts.ts",
     "audit:issue615-handouts": "pnpm exec tsx qa/scripts/audit-issue615-handouts.ts",
+    "audit:issue615-fachreview": "pnpm exec tsx qa/scripts/audit-issue615-fachreview.ts",
     "generate:p1-illustrations": "pnpm exec tsx scripts/generate-p1-illustrations.ts",
     "audit:p1-illustrations": "pnpm exec tsx qa/scripts/audit-p1-illustrations.ts",
     "audit:p1-web": "node qa/scripts/audit-p1-web.mjs",

@@ -4,12 +4,12 @@
 
 - ID / Version: `remission-heilung` / `puk-remission-recovery-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `6ae32c08e6841650537ea4a644f63c31fe54153f`
-- Text-Hash: `a09ffaba6685c26bfbb5c48b3549ea8b675534fffb8a9bf5ca9db47220f3069f`
-- HTML-Hash: `9259055d83537bb3c67514cced98c8e7e1b708c6ea1526d69e8fd0ebc74e83a3`
-- PDF-Hash: `e4eaed0d6e6daa04ecf2be440e62270f553c82e830c6a9487bea2aab98d5b4f9`
-- WebP-Hash: `1224dce7a17674201c37e3db652ce280aab5b432e72a723df9a1aa77be03ec7d`
-- Thumbnail-Hash: `52abb73b8eecd9d1a4a26a0ff52ecdc0fa83152f764e592ffe961a60e561096a`
+- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
+- Text-Hash: `0b545d2b1215bcf3d709fc92732639b713c46154e6cc31345cb2a0faf4442751`
+- HTML-Hash: `3e25370c7b14dfb294505f23d9d1ec6cbcb9f2fcfcd06717bda0c2345303f9dc`
+- PDF-Hash: `c76e92d3a32526f30edb416d477e91d057b54b974cc67b9eb11ea3bca8495148`
+- WebP-Hash: `1db99364ff13e2e3bf716016cf6ccb030d0c40da8a6701e87bccd439a99eed27`
+- Thumbnail-Hash: `bc4778800d8569048d95389f36d807c98d643cd756b15cf9853e339db48c1ae1`
 
 Zweck: unterschiedliche Bedeutungen von Remission, Alltag/Teilhabe und
 persönlicher Recovery verständlich trennen, Hoffnung ermöglichen und weder
@@ -20,14 +20,14 @@ eine individuelle Prognose noch ein vorgeschriebenes Genesungsziel erzeugen.
 Diese Einträge sind **keine bestätigten Befunde**. Jede Perspektive entscheidet
 sie eigenständig.
 
-| ID    | vorgeschlagene Priorität | Stelle                    | Prüfhypothese                                                                                                                                    | Menschlicher Entscheid |
-| ----- | ------------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| RR-01 | P2                       | «Diagnostische Remission» | Zanarini verwendet «symptomatische Remission». Prüfen, ob der Begriff quellennäher formuliert werden muss.                                       | offen                  |
-| RR-02 | P2                       | Quellenzeile              | Die CHIME-/Recovery-Stelle der AWMF-Leitlinie liegt in Kapitel 7.2, nicht 7.1.                                                                   | offen                  |
-| RR-03 | P2                       | «Heilung»                 | Die Aussage zum uneinheitlichen wissenschaftlichen Endpunkt ist eine redaktionelle Einordnung und braucht Kennzeichnung oder spezifische Quelle. | offen                  |
-| RR-04 | P2                       | PDF gegenüber Volltext    | Im PDF fehlt die Handlungsorientierung zu eigenen Grenzen und Unterstützungsbedarf. Prüfen, ob die Verdichtung den Sinn verschiebt.              | offen                  |
-| RR-05 | P3                       | Visualisierung            | Vier gleichwertige Felder können «Heilung» als vierte fachliche Ebene erscheinen lassen; drei Ebenen plus separater Begriffshinweis prüfen.      | offen                  |
-| RR-06 | P2                       | Wortwahl                  | Prüfen, ob «Funktionsfähigkeit» unnötig defizitorientiert wirkt und «Alltag und Teilhabe» genügt.                                                | offen                  |
+| ID    | vorgeschlagene Priorität | Stelle                    | Prüfhypothese                                                                                                                                    | Menschlicher Entscheid                     |
+| ----- | ------------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------ |
+| RR-01 | P2                       | «Diagnostische Remission» | Zanarini verwendet «symptomatische Remission». Prüfen, ob der Begriff quellennäher formuliert werden muss.                                       | offen                                      |
+| RR-02 | P2                       | Quellenzeile              | Die CHIME-/Recovery-Stelle der AWMF-Leitlinie liegt in Kapitel 7.2, nicht 7.1.                                                                   | in Runde 2 korrigiert; fachlich bestätigen |
+| RR-03 | P2                       | «Heilung»                 | Die Aussage zum uneinheitlichen wissenschaftlichen Endpunkt ist eine redaktionelle Einordnung und braucht Kennzeichnung oder spezifische Quelle. | offen                                      |
+| RR-04 | P2                       | PDF gegenüber Volltext    | Im PDF fehlte die Handlungsorientierung zu eigenen Grenzen und Unterstützungsbedarf. Prüfen, ob sie in Runde 2 den Sinn des Volltexts bewahrt.   | in Runde 2 ergänzt; Wirkung bestätigen     |
+| RR-05 | P3                       | Visualisierung            | Vier gleichwertige Felder können «Heilung» als vierte fachliche Ebene erscheinen lassen; drei Ebenen plus separater Begriffshinweis prüfen.      | offen                                      |
+| RR-06 | P2                       | Wortwahl                  | Prüfen, ob «Funktionsfähigkeit» unnötig defizitorientiert wirkt und «Alltag und Teilhabe» genügt.                                                | offen                                      |
 
 ## Verantwortete Fachprüfung
 

@@ -4,12 +4,12 @@
 
 - ID / Version: `rolle-genesungsprozess` / `puk-rolle-genesungsprozess-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `6ae32c08e6841650537ea4a644f63c31fe54153f`
+- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
 - Text-Hash: `ff2a0d8baa6f9e8ef7358f6b064ed0c7bae4cdca8914a937b78c4474a9b15b4b`
-- HTML-Hash: `902e122ed84d9c15058dbe1a8bc03d54e1c293bf612e4b8500fcbde38b980cd1`
-- PDF-Hash: `532ad1bb0b4252ebe7b17727b66c0a654792ce0f8f2f19375ebe3441f8e70a23`
-- WebP-Hash: `faf2f5ef958953923644f3d325bed746bcf30decddbb44dec2b74927ac3857bd`
-- Thumbnail-Hash: `cca92fbc1d6dca529d93bfa28e1c903afb3786bd8dfb909e8e80695b564e1114`
+- HTML-Hash: `0eed19d788b5c5637c827912ccc103c830dd648bcb82ef9b6eff833f752c8d7f`
+- PDF-Hash: `f056a9b2020220f64f80676e10ad535cae8cbf9b07e70454b9a01902cb236c5a`
+- WebP-Hash: `04b63242ad2ceac5c4bfe4c9339a413f6a332d39dc973c220e0f4698ee0ba77d`
+- Thumbnail-Hash: `ac8820ec5e74244e8479c26ebda991ce4f32dddb2a8de4e59577eb2cfc25a779`
 
 Zweck: freiwillige, gewünschte und tragbare Unterstützung von
 Überverantwortung trennen und die eigene Gesundheit von Angehörigen als
@@ -17,14 +17,14 @@ eigenständigen Wert sichtbar machen.
 
 ## Offene KI-Prüfhypothesen
 
-| ID    | vorgeschlagene Priorität | Stelle                  | Prüfhypothese                                                                                                                                                                                  | Menschlicher Entscheid |
-| ----- | ------------------------ | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| AR-01 | P1                       | Behandlungsentscheidung | Der Satz «Über Behandlung entscheidet die betroffene Person gemeinsam mit den Behandelnden» ist ohne Differenzierung nach Minderjährigkeit, Urteilsfähigkeit und akuter Gefährdung zu absolut. | offen                  |
-| AR-02 | P1                       | PDF gegenüber Volltext  | Die zentrale Autonomieaussage zur Behandlungsentscheidung fehlt in der verdichteten PDF-Fassung.                                                                                               | offen                  |
-| AR-03 | P1                       | Beratung/Fachpersonen   | «Sprechen Sie mit Fachpersonen» muss allgemeine Beratung von fallbezogenen, zustimmungsabhängigen Auskünften unterscheiden.                                                                    | offen                  |
-| AR-04 | P2                       | «nicht koordinieren»    | Bei Eltern, Beistandschaften oder ausdrücklich vereinbarten Rollen kann die Aussage zu absolut sein.                                                                                           | offen                  |
-| AR-05 | P2                       | Quellenbereich          | NICE NG150 gilt für erwachsene Angehörige von Menschen ab 16 Jahren; Reichweite für Eltern jüngerer Kinder klären.                                                                             | offen                  |
-| AR-06 | P2                       | Quellenstatus           | Die entlastende Rollenklärung ist teilweise normativ/redaktionell und darf nicht als wörtliche Leitlinienaussage erscheinen.                                                                   | offen                  |
+| ID    | vorgeschlagene Priorität | Stelle                  | Prüfhypothese                                                                                                                                                                                  | Menschlicher Entscheid                  |
+| ----- | ------------------------ | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| AR-01 | P1                       | Behandlungsentscheidung | Der Satz «Über Behandlung entscheidet die betroffene Person gemeinsam mit den Behandelnden» ist ohne Differenzierung nach Minderjährigkeit, Urteilsfähigkeit und akuter Gefährdung zu absolut. | offen                                   |
+| AR-02 | P1                       | PDF gegenüber Volltext  | Die zentrale Autonomieaussage fehlte in der verdichteten PDF-Fassung. Prüfen, ob sie in Runde 2 korrekt und kontextsensibel wiedergegeben ist.                                                 | in Runde 2 ergänzt; fachlich bestätigen |
+| AR-03 | P1                       | Beratung/Fachpersonen   | «Sprechen Sie mit Fachpersonen» muss allgemeine Beratung von fallbezogenen, zustimmungsabhängigen Auskünften unterscheiden.                                                                    | offen                                   |
+| AR-04 | P2                       | «nicht koordinieren»    | Bei Eltern, Beistandschaften oder ausdrücklich vereinbarten Rollen kann die Aussage zu absolut sein.                                                                                           | offen                                   |
+| AR-05 | P2                       | Quellenbereich          | NICE NG150 gilt für erwachsene Angehörige von Menschen ab 16 Jahren; Reichweite für Eltern jüngerer Kinder klären.                                                                             | offen                                   |
+| AR-06 | P2                       | Quellenstatus           | Die entlastende Rollenklärung ist teilweise normativ/redaktionell und darf nicht als wörtliche Leitlinienaussage erscheinen.                                                                   | offen                                   |
 
 ## Verantwortete Fachprüfung
 

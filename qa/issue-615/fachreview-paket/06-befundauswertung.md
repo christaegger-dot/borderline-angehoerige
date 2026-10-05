@@ -26,17 +26,22 @@ Erfahrung wird nicht als «falsch» gelöscht.
 
 ## Nachweis allfälliger Korrekturen
 
-- neuer Kandidaten-Commit:
-- neue Sperrdatei / Manifest:
-- betroffene Handouts:
-- Webtext, HTML, PDF, WebP und Thumbnail neu erzeugt: [ ] ja [ ] nein
-- alte Entscheide als historisch gekennzeichnet: [ ] ja [ ] nein
+- neuer Kandidaten-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
+- neue Sperrdatei / Manifest: `review-basis.json`, Reviewrunde 2 /
+  `handouts/issue-615-refresh/manifest.json`
+- betroffene Handouts: alle fünf Reviewkandidaten; die gemeinsame
+  Footerkorrektur wurde für das gesamte zurückgehaltene Exportpaket neu erzeugt
+- Webtext, HTML, PDF, WebP und Thumbnail neu erzeugt: [x] ja [ ] nein
+- alte Entscheide als historisch gekennzeichnet: [x] nicht anwendbar; zum
+  ersetzten Stand lagen noch keine menschlichen Entscheide vor
 - P1-Befunde erneut geprüft: [ ] ja [ ] nein
 - angenommene P2-Befunde erneut geprüft: [ ] ja [ ] nein
 
 ## Übergreifende Design- und Formatfragen
 
-- [ ] Sämtlicher Text ist mindestens 8 pt; der bisherige 7,2-pt-Footer ist korrigiert.
+- [x] Sämtlicher Text ist mindestens 8 pt; der bisherige 7,2-pt-Footer ist
+      technisch korrigiert und digital visuell kontrolliert. Realer Ausdruck
+      bleibt offen.
 - [ ] Für jedes Orientierungsblatt ist A4 quer als bevorzugter Standard geprüft; eine Hochformat-Ausnahme ist mit vertikaler Visualisierungs- oder Leselogik begründet.
 - [ ] Jedes Blatt hat einen echten visuellen Erkenntnisanker, nicht nur Textkarten.
 - [ ] Sicherheits-, Autonomie- und Rechtehinweise stehen lesbar im Hauptinhalt.

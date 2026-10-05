@@ -4,12 +4,12 @@
 
 - ID / Version: `5-faktoren-genesung` / `puk-genesungsbedingungen-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `6ae32c08e6841650537ea4a644f63c31fe54153f`
+- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
 - Text-Hash: `eada20794a0f7ee1a67839a9be7670791deac17dcd5c19f1dd667312d93b63df`
 - HTML-Hash: `dd59c8de48465b23c2cb9e883a2b27530d37907ee7ff5af01dbb7865901345ea`
-- PDF-Hash: `72e3a9cb16d0e993c42a4d0d56452db50917ee19600e68f780abf29105f0550b`
-- WebP-Hash: `dac0e0d0a30c4fcaf47a0758cad1254e8f17b856f565f7382b647bb642beb1fc`
-- Thumbnail-Hash: `583da034e5f17c9f13363ee3138b2c94b2ae70e5dc7735c8ef6a89b4c88d8c27`
+- PDF-Hash: `4d11d61c1e3909ac6cfa168f2af9c98920883c2d21089e5ecae3c9fc5e413564`
+- WebP-Hash: `aff282d1be184b7504ffc6cb84a5e906e9b9182329e0ee6a26faa01db83e4500`
+- Thumbnail-Hash: `e6030cd7dc7c7385c992eb649f3008c4699190eabd739062119f4b8c20af4183`
 
 Zweck: mögliche professionelle, persönliche, soziale und materielle
 Einflussbereiche sichtbar machen, ohne ein validiertes, kausales oder

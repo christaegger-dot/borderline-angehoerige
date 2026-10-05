@@ -7,10 +7,10 @@ liegen unter
 
 ## Prüfstand und Geltungsbereich
 
-- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
-- Reviewrunde: 2; sie ersetzt den technisch vorgeprüften Stand aus
-  `6ae32c08e6841650537ea4a644f63c31fe54153f`, zu dem noch keine menschlichen
-  Entscheide dokumentiert waren
+- Basis-Commit: `2fb83676c946489713ac23b53fb11226aa300ed5`
+- Reviewrunde: 3; sie ersetzt Runde 2
+  (`79091246f78411e283e48fdabba3ac4f751b3f6b`) und setzt die angenommenen
+  Befunde der KI-Simulation aus Issue 625 um
 - Kandidatenstatus: Entwurf, fachlich-redaktionelle Freigabe ausstehend
 - öffentliche Assets geschrieben: nein
 - Publikation autorisiert: nein
@@ -87,6 +87,8 @@ Druckprüfungen sowie die institutionelle Publikationsfreigabe separat offen.
 - [x] KI-Simulation aller drei Perspektiven dokumentiert (05.10.2026, privater
       Gebrauch, ersetzt kein menschliches Review; siehe
       [`06-befundauswertung.md`](../../qa/issue-615/fachreview-paket/06-befundauswertung.md))
+- [x] angenommene Befunde der KI-Simulation umgesetzt und als Reviewrunde 3
+      gesperrt; Nachprüfung ebenfalls durch KI-Simulation
 - [ ] verantwortete Fachprüfung abgeschlossen
 - [ ] unabhängige Perspektive Borderline-Erfahrung abgeschlossen
 - [ ] unabhängige Angehörigenperspektive abgeschlossen
@@ -95,5 +97,5 @@ Druckprüfungen sowie die institutionelle Publikationsfreigabe separat offen.
 - [ ] institutionelle Publikationsfreigabe erteilt
 
 **Gesamtstatus: zurückgehalten; menschliches Review ausstehend.** Die
-KI-Simulation empfiehlt Korrekturen an allen fünf Blättern; acht P1-Befunde
-sind offen.
+KI-Simulation hat in Runde 2 acht P1-Befunde erfasst. In Runde 3 sind alle
+umgesetzt und durch die KI nachgeprüft.

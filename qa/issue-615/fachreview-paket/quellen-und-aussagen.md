@@ -81,3 +81,25 @@ gedeckt**
 - Belastungssignale: Quellenjahr und Reichweite der Symptomliste korrigieren.
 - Grenze → Schritt: vor Freigabe Quellenzeile neu fassen und Schweizer Rechts-
   und Sicherheitsprüfung durchführen.
+
+## Nachtrag Reviewrunde 3 (KI-Simulation, Issue 625)
+
+Die Tabellen oben beschreiben den Stand der Runde 2. In Runde 3 (`2fb8367`)
+geändert:
+
+- Remission/Recovery: Begriff «symptomatische Remission» wie in den
+  Verlaufsstudien; die Aussage zu «Heilung» ist jetzt als Beobachtung zum
+  Sprachgebrauch von Studien und Leitlinien formuliert.
+- Fünf Genesungsbereiche: Quellenzeile um AWMF-S3 Psychosoziale Therapien
+  (2025), Kap. 7.2 ergänzt und als «Redaktionelle Orientierung und Synthese»
+  gekennzeichnet; der Medikamentensatz unterscheidet Kernbehandlung und
+  Begleiterkrankungen.
+- Belastungssignale: Liste an die WHO-Beispiele angenähert; «innere Leere»,
+  «flache Atmung» und «Katastrophengedanken» entfernt.
+- Grenze → Schritt: Die abgelaufene AWMF-BPS-Leitlinie wird nicht mehr zitiert.
+  Die Technik ist als eigene didaktische Orientierung ohne wissenschaftliche
+  Prüfung ausgewiesen; für den Schutz bei Gewalt stehen Opferhilfe Schweiz und
+  EBG.
+
+Weiterhin nicht online verifiziert: Kapitelangabe AWMF 7.2 (RR-02, GB-03) und
+das Datum der WHO-Seite (BG-06).

@@ -4,12 +4,12 @@
 
 - ID / Version: `5-faktoren-genesung` / `puk-genesungsbedingungen-v2`
 - Dokumenttyp: Orientierungsblatt
-- Basis-Commit: `79091246f78411e283e48fdabba3ac4f751b3f6b`
-- Text-Hash: `eada20794a0f7ee1a67839a9be7670791deac17dcd5c19f1dd667312d93b63df`
-- HTML-Hash: `dd59c8de48465b23c2cb9e883a2b27530d37907ee7ff5af01dbb7865901345ea`
-- PDF-Hash: `4d11d61c1e3909ac6cfa168f2af9c98920883c2d21089e5ecae3c9fc5e413564`
-- WebP-Hash: `aff282d1be184b7504ffc6cb84a5e906e9b9182329e0ee6a26faa01db83e4500`
-- Thumbnail-Hash: `e6030cd7dc7c7385c992eb649f3008c4699190eabd739062119f4b8c20af4183`
+- Basis-Commit: `2fb83676c946489713ac23b53fb11226aa300ed5` (Reviewrunde 3)
+- Text-Hash: `d163d19108d8109c8b2867986a74120bd1d5fba890ca00d5381ed502b783465a`
+- HTML-Hash: `d2d7cff49a7b2c7e5fcd92dd24e427260b1937aaf14f8f97fffca5110775058f`
+- PDF-Hash: `eced66e38863c64e368ae230964334922ba74acff850bdf79c77fa8dd3e628fe`
+- WebP-Hash: `90eb8beb1bf612237f3e41f341099009e151b73e6ad6888a6352d3e3a493fcf6`
+- Thumbnail-Hash: `ba0191da361012caa4565aa2f2cca9f70a1be8c5cc97c9a6b631b98a96a042f1`
 
 Zweck: mögliche professionelle, persönliche, soziale und materielle
 Einflussbereiche sichtbar machen, ohne ein validiertes, kausales oder
@@ -103,4 +103,36 @@ stehen in der Tabelle «Offene KI-Prüfhypothesen».
 | GB-08 | Angehörige (KI-Simulation)           | P3        | PDF gegenüber Webtext                        | Der Merksatz «Genesung ist individuell und keine Leistung der Familie» fehlt im PDF; Karte 3 deckt den Kern ab.                             | Nur aufnehmen, wenn nach GB-01 Platz frei wird.                                                                                                                                  | zurückgestellt       | –                                  |
 | GB-09 | Angehörige (KI-Simulation)           | P3        | Handlungshinweis 3, alle Fassungen           | «Behalten Sie … im Blick» kann als Beobachtungsauftrag gelesen werden; es fehlt, wo es Hilfe gibt.                                          | «Praktische oder strukturelle Belastungen (z. B. Wohnen, Finanzen) lassen sich oft nicht innerhalb der Familie lösen; Sozialberatungen können unterstützen.»                     | annehmen (Vorschlag) | Web/PDF-Abgleich nach Neuerzeugung |
 
-Blattstatus (KI-Simulation): [ ] bereit für nachgelagerte technische Prüfungen [ ] erst nach Auflagen bereit [x] nicht bereit
+Blattstatus Runde 2 (KI-Simulation, historisch): [ ] bereit für nachgelagerte technische Prüfungen [ ] erst nach Auflagen bereit [x] nicht bereit
+
+## Nachprüfung Reviewrunde 3 (KI-Simulation)
+
+Die Korrekturen sind in `2fb8367` umgesetzt und in `review-basis.json` als
+Reviewrunde 3 gesperrt; die Prüfsummen oben gelten für diesen Stand. Die
+Entscheide der Runde 2 bleiben als Verlauf stehen. Auf Wunsch des
+Repository-Inhabers wurden die angenommenen Befunde umgesetzt. Nachgeprüft
+hat erneut die KI-Simulation, kein Mensch: automatisierter Abgleich von
+Webtext und PDF-Textebene sowie Sichtkontrolle des WebP-Vollbilds.
+
+| Befund   | Umsetzung                                                                                                                                       | geprüfte Fassungen  | Ergebnis                                              |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------------------------------------------------- |
+| GB-01    | Nummerierung entfernt; Kastentitel «Mögliche Einflussbereiche – keine Reihenfolge, keine Formel»; Kernsatz «Orientierung ohne Reihenfolge»      | Web, PDF-Text, WebP | geschlossen (P1)                                      |
+| GB-02    | Medikamentensatz differenziert: Begleiterkrankungen bei Bedarf medikamentös, für Borderline keine Kernbehandlung, Änderungen nur mit Fachperson | Web, PDF-Text, WebP | geschlossen (P1)                                      |
+| GB-03/04 | Quellenzeile um AWMF-S3 Psychosoziale Therapien (2025), Kap. 7.2 ergänzt; «Redaktionelle Orientierung und Synthese»                             | Web, PDF-Text, WebP | geschlossen; Fundstelle bei Quellenzugriff bestätigen |
+| GB-06    | «Einflussbereiche» statt «Bedingungen»                                                                                                          | Web, PDF-Text, WebP | geschlossen                                           |
+| GB-07    | Kernsatz aktiv: «… bestimmt die betroffene Person selbst»; Karte 3 nennt Peer-Unterstützung                                                     | Web, PDF-Text, WebP | geschlossen                                           |
+| GB-09    | Hinweis auf Sozialberatungen statt «im Blick behalten»                                                                                          | Web, PDF-Text, WebP | geschlossen                                           |
+| G-01     | Überschrift «Mögliche nächste Schritte»                                                                                                         | Web, PDF-Text, WebP | geschlossen                                           |
+
+Weiterhin offen:
+
+- GB-08 (P3, zurückgestellt): Merksatz «keine Leistung der Familie» steht weiterhin nur im Webtext.
+
+Perspektiven-Nachprüfung:
+
+- Fach (Simulation): P1 geschlossen; Modellstatus ist jetzt ohne Widerspruch zur Gestaltung.
+- Borderline-Erfahrung (Simulation): Keine Checklistenwirkung mehr; Selbstbestimmung sichtbar.
+- Angehörige (Simulation): Konkrete Anlaufstelle statt Beobachtungsauftrag.
+
+Blattstatus Runde 3 (KI-Simulation): [x] bereit für nachgelagerte technische
+Prüfungen [ ] erst nach Auflagen bereit [ ] nicht bereit

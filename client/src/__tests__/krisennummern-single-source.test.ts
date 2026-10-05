@@ -57,10 +57,10 @@ describe("Krisennummern — Single Source (kontakte.ts)", () => {
 
   it("ordnet 143 als Gesprächsunterstützung und nicht als Einsatzdienst ein", () => {
     expect(soforthilfeText).toContain(
-      "Entlastendes Gespräch für Angehörige und Betroffene. Kein Einsatzdienst."
+      "Entlastendes Gespräch für Angehörige und Betroffene. Bei akuter Gefahr kein Ersatz für den Notruf."
     );
     expect(soforthilfeText).toContain(
-      "Entlastendes Gespräch, anonym und 24/7. Kein Einsatzdienst."
+      "Entlastendes Gespräch, anonym und 24/7. Bei akuter Gefahr kein Ersatz für den Notruf."
     );
   });
 

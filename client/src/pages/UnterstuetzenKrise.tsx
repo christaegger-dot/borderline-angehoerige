@@ -421,7 +421,11 @@ export default function UnterstuetzenKrise() {
             title="Was Sie in der Krise vermeiden sollten"
             id="vermeiden"
           >
-            <aside className="mt-2 border border-[--color-sos-amber-border] border-l-2 border-l-[--color-sos-amber-text] bg-[--color-sos-amber-wash] p-6">
+            <div
+              role="note"
+              aria-label="Sicherheitshinweise"
+              className="mt-2 border border-[--color-sos-amber-border] border-l-2 border-l-[--color-sos-amber-text] bg-[--color-sos-amber-wash] p-6"
+            >
               <ul className="space-y-2.5" style={bodyStyle}>
                 <li className="flex items-start gap-2">
                   <span
@@ -466,9 +470,8 @@ export default function UnterstuetzenKrise() {
                   >
                     ✗
                   </span>
-                  Die Person ohne Hilfe, Notfallplan oder professionelle
-                  Einschätzung allein lassen – sofern Sie selbst sicher bleiben
-                  können
+                  Versuchen, die Gefahr allein zu beurteilen oder die Person
+                  ohne professionelle Hilfe zu überwachen
                 </li>
                 <li className="flex items-start gap-2">
                   <span
@@ -480,7 +483,7 @@ export default function UnterstuetzenKrise() {
                   Sich selbst in Gefahr bringen
                 </li>
               </ul>
-            </aside>
+            </div>
           </ContentSection>
         </EditorialSection.Body>
       </EditorialSection>

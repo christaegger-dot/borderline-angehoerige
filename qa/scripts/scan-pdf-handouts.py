@@ -21,7 +21,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = REPO_ROOT / "client" / "src" / "content"
 MATERIALS_FILE = CONTENT_DIR / "materialien.ts"
 LOCAL_PDFS = [
-    REPO_ROOT / "client" / "public" / "Notfallkarte-Zuerich-Psychische-Krise.pdf",
+    REPO_ROOT / "client" / "public" / "infografiken" / "manus-kinder-v3.pdf",
 ]
 REMOTE_PDF_RE = re.compile(r'https://files\.manuscdn\.com[^"\']+\.pdf')
 

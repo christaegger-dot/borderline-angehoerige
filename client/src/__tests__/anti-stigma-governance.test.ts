@@ -86,6 +86,8 @@ describe("anti-stigma governance", () => {
   });
 
   it.each([
+    "Notfallkarte-Zuerich-Psychische-Krise.pdf",
+    "notfallkarte-preview.webp",
     "infografiken/manus-4-phasen-v1.pdf",
     "infografiken/ampel-das-ampel-system-v4.pdf",
     "infografiken/pendel-das-bewertungs-pendel-v16.pdf",
@@ -268,7 +270,7 @@ describe("anti-stigma governance", () => {
     );
     expect(exerciseSource).toContain("Bei akuter Gefahr rufen wir jetzt 144");
     expect(exerciseSource).toContain(
-      "143 bietet zusätzliche Gesprächsentlastung, ist aber kein Einsatzdienst"
+      "143 bietet zusätzliche Gesprächsentlastung, ersetzt aber keinen Notruf"
     );
   });
 

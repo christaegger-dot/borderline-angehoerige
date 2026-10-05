@@ -280,6 +280,14 @@
     min-width: 0;
   }
 
+  /* Grid-Items dürfen bei grosser Nutzerschrift nicht ihre Spalte auf
+     Min-Content-Breite aufziehen. Das hält einspaltige Reflow-Layouts bis
+     200 % Textgrösse innerhalb des Viewports. */
+  .grid,
+  .grid > * {
+    min-width: 0;
+  }
+
   @media (min-width: 640px) {
     .container {
       padding-left: 1.5rem;

@@ -1,6 +1,6 @@
 # Handout Asset Blocker Report
 
-Stand: 2026-10-04
+Stand: 2026-10-05
 Quelle der Wahrheit: `client/src/content/handoutGovernance.ts`
 
 ## Zweck
@@ -23,22 +23,26 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   `qa/withheld-handouts/p1-illustrations-v3-2026-10-04/`.
 - Die Notfallplan-Textversion ist aktuell; die ältere PDF- und Bildfassung ist
   wegen fehlender Schutzklauseln vorläufig zurückgezogen.
+- Die aktuelle interaktive Notfallkarte bleibt unter `/notfallkarte`
+  verfügbar. Ihre frühere statische PDF- und WebP-Fassung liegt wegen
+  überholter Sicherheitsformulierungen unter
+  `qa/withheld-handouts/notfallkarte-safety-refresh-2026-10-05/` und wird
+  weder in der Bibliothek noch über die Download-Funktion ausgeliefert.
 
 ## Weiterhin freigegebene Visuals
 
 Diese Familien bleiben als Visual, PDF und Textversion auslieferbar, solange
 die automatischen und manuellen Freigabegates grün bleiben:
 
-| ID                         | Freigegebene Version                    |
-| -------------------------- | --------------------------------------- |
-| `notfallkarte-zuerich`     | `Notfallkarte-Zuerich-Psychische-Krise` |
-| `kinder`                   | `manus-kinder-v3`                       |
-| `dear`                     | `puk-dear-v1`                           |
-| `spiegeln-statt-aufsaugen` | `manus-spiegeln-statt-aufsaugen-v3`     |
-| `4-arten-von-grenzen`      | `puk-4-arten-von-grenzen-v1`            |
-| `garten`                   | `puk-garten-v1`                         |
-| `genesung-zahlen`          | `manus-genesung-zahlen-v3`              |
-| `stopp-technik`            | `manus-stopp-technik-v3`                |
+| ID                         | Freigegebene Version                |
+| -------------------------- | ----------------------------------- |
+| `kinder`                   | `manus-kinder-v3`                   |
+| `dear`                     | `puk-dear-v1`                       |
+| `spiegeln-statt-aufsaugen` | `manus-spiegeln-statt-aufsaugen-v3` |
+| `4-arten-von-grenzen`      | `puk-4-arten-von-grenzen-v1`        |
+| `garten`                   | `puk-garten-v1`                     |
+| `genesung-zahlen`          | `manus-genesung-zahlen-v3`          |
+| `stopp-technik`            | `manus-stopp-technik-v3`            |
 
 Weitere in der Governance als publiziert geführte P2-Handouts bleiben
 freigegeben, sofern ihre referenzierten Dateien vorhanden sind. Die Tabelle ist
@@ -52,7 +56,8 @@ oder direkt ausgeliefert:
 
 - sicherheits- oder krisenbezogen: `notfallplan-krise`, `alarm-modus`,
   `krisenkommunikation`, `anspannungskurve`, `grenzen-ohne-eskalation`,
-  `pause-statt-streit`, `zuhoeren-ohne-zustimmen`, `bruecke-gelaender`;
+  `pause-statt-streit`, `zuhoeren-ohne-zustimmen`, `bruecke-gelaender` sowie
+  die statischen Assets von `notfallkarte-zuerich`;
 - erklärende Modelle: `leuchtturm`, `eisberg`, `spaltung`, `gehirn`,
   `fortschritt-paradox`, `remission-heilung`, `5-faktoren-genesung`,
   `rolle-genesungsprozess`;
@@ -63,6 +68,11 @@ oder direkt ausgeliefert:
 
 `4-phasen` und `im-krisenmodus` sind zusätzlich vollständig `withdrawn` und
 erscheinen auch nicht mehr als aktive Textversion.
+
+`notfallkarte-zuerich` ist ein Sonderfall: Die gepflegte HTML-Webfassung ist
+weiterhin aktiv; `text-only` sperrt hier ausschliesslich die veraltete
+statische Vorschau und das PDF. Die Materialbibliothek kennzeichnet diesen
+Stand ausdrücklich und bietet weiterhin den Link zur Webfassung an.
 
 ## Entwürfe ohne Publikationsfreigabe
 

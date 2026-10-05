@@ -113,7 +113,7 @@ export const ROT: Kontakt[] = [
     tel: "144",
     label: "Rettungsdienst",
     hinweis:
-      "Bei akuter Lebensgefahr, Selbstverletzung oder akuter Suizidgefahr",
+      "Bei unmittelbarer Lebensgefahr, laufender Selbstgefährdung, schwerer Verletzung oder wenn sofort medizinische Hilfe nötig ist",
     sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
@@ -133,7 +133,8 @@ export const ROT: Kontakt[] = [
     nummer: "112",
     tel: "112",
     label: "Notruf (wenn unsicher)",
-    hinweis: "Wenn Sie unsicher sind, welche Nummer – funktioniert immer.",
+    hinweis:
+      "Europäische Notrufnummer. Eine Verbindung ohne SIM-Karte ist nicht gewährleistet.",
     sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
@@ -212,7 +213,7 @@ export const GRUEN: Kontakt[] = [
     tel: "143",
     label: "Dargebotene Hand (24/7)",
     hinweis:
-      "Anonymes Gesprächs- und Krisenangebot, vertraulich. Es kommt niemand vorbei.",
+      "Anonymes Gesprächs- und Krisenangebot. Bei akuter Gefahr kein Ersatz für 144 oder 117.",
     sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
@@ -526,7 +527,7 @@ export const TEXTE = {
   pukTriage:
     "Am Telefon wird kurz eingeschätzt (Triage), was jetzt am besten hilft – z. B. Beratung, weiteres Vorgehen oder Notfallaufnahme.",
   gruenGefahrenhinweis:
-    "Bei akuter Gefahr für sich oder andere: Immer zuerst 144 / 117 / 112 rufen. Die Nummern oben sind Sorgentelefone – es kommt niemand vorbei.",
+    "Bei akuter medizinischer Gefahr zuerst 144, bei Gewalt oder Bedrohung 117 wählen. Gesprächsangebote ersetzen keinen Notruf. Ob eine Beratungsstelle bei unmittelbarer Gefahr weitere Hilfe beizieht, richtet sich nach dem jeweiligen Dienst und der konkreten Situation.",
   pukLabel:
     "PUK Zürich (24/7) – psychiatrische Krise, wenn keine unmittelbare Lebensgefahr besteht.",
 } as const;

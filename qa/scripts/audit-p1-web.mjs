@@ -132,12 +132,25 @@ async function run() {
         const figure = page.locator(".handout-visual");
         await figure.waitFor({ state: "visible" });
         assert(
-          (await figure.locator('[role="note"]').count()) === 1,
+          (await figure
+            .locator('.handout-visual__safety[role="note"]')
+            .count()) === 1,
           `${route} ${viewport.width}px: safety note missing or duplicated`
         );
         assert(
-          (await page.getByRole("link", { name: "PDF öffnen" }).count()) === 1,
-          `${route} ${viewport.width}px: PDF link missing`
+          (await page.getByRole("link", { name: "PDF öffnen" }).count()) === 0,
+          `${route} ${viewport.width}px: unapproved PDF link must stay withheld`
+        );
+        assert(
+          (await page
+            .getByText(
+              "Entwurf – fachlich-redaktionelle Freigabe ausstehend.",
+              {
+                exact: true,
+              }
+            )
+            .count()) === 1,
+          `${route} ${viewport.width}px: editorial draft status missing`
         );
 
         await inspectLayout(page, route, viewport);

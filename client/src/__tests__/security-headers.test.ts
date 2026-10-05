@@ -69,26 +69,20 @@ describe("security headers", () => {
     );
   });
 
-  it("applies the shared security headers to local material download responses", async () => {
+  it("withholds stale static notfallkarte downloads with shared security headers", async () => {
     const response = await createMaterialDownloadResponse(
       "notfallkarte-zuerich",
       "attachment"
     );
 
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(404);
     for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
       expect(response.headers.get(header)).toBe(value);
     }
-    expect(response.headers.get("Content-Type")).toBe("application/pdf");
-    expect(response.headers.get("Cache-Control")).toBe(
-      "public, max-age=0, must-revalidate"
+    expect(response.headers.get("Content-Type")).toBe(
+      "text/plain; charset=utf-8"
     );
-    expect(response.headers.get("Content-Disposition")).toContain(
-      'attachment; filename="Notfallkarte-Zuerich-Psychische-Krise.pdf"'
-    );
-    expect(Number(response.headers.get("Content-Length"))).toBeGreaterThan(
-      1000
-    );
+    await expect(response.text()).resolves.toBe("Material nicht gefunden.");
   });
 
   it("redirects to the relative public asset url when a local pdf is not on disk", async () => {

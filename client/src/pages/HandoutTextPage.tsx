@@ -363,7 +363,10 @@ export default function HandoutTextPage({
             ))}
 
             <EditorialSectionBlock label="Quelle & Stand" rule>
-              <p style={bodyStyle}>
+              <p
+                className="break-words"
+                style={{ ...bodyStyle, overflowWrap: "anywhere" }}
+              >
                 {handout.sourceLine}{" "}
                 <AppLink href="/quellen" className="editorial-link">
                   Vollbibliographie

@@ -1,7 +1,10 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
-import { isHandoutVisualPublished } from "@/content/handoutGovernance";
+import {
+  isHandoutVisualPublished,
+  isHandoutWebVersionPublished,
+} from "@/content/handoutGovernance";
 import { getHandoutDownloadHref, getHandoutOpenHref } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 import { materials } from "@/content/materialien";
@@ -36,8 +39,10 @@ describe("Soforthilfe-Quellen-Synchronisation", () => {
         .filter(m => m.category === "soforthilfe")
         .flatMap(item => {
           const pdfSource = item.pdfUrl ?? item.downloadUrl;
-          const visualPublished =
-            item.isHtml || isHandoutVisualPublished(item.id);
+          const visualPublished = isHandoutVisualPublished(item.id);
+          const currentHtmlAvailable = Boolean(
+            item.isHtml && isHandoutWebVersionPublished(item.id)
+          );
           const openHref = item.isHtml
             ? (item.downloadUrl ?? item.url)
             : getHandoutOpenHref(pdfSource);
@@ -47,7 +52,7 @@ describe("Soforthilfe-Quellen-Synchronisation", () => {
             : getHandoutTextVersionHrefBySource(pdfSource);
 
           return [
-            visualPublished ? openHref : null,
+            currentHtmlAvailable || visualPublished ? openHref : null,
             visualPublished ? downloadHref : null,
             textVersionHref,
           ];

@@ -19,6 +19,7 @@ interface Book {
   description: string;
   forWhom: string;
   highlight?: boolean;
+  classification?: "critical";
   /**
    * Schweizer Bezugs-Link auf die konkrete Produktseite (Ex Libris, per
    * ISBN/EAN). Konvention: nur gesetzt, wenn eine verifizierte CH-Produktseite
@@ -49,7 +50,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Ein historisch einflussreicher Ratgeber für Angehörige. Er enthält Ideen zu Kommunikation und Selbstschutz, verallgemeinert aber stellenweise Beziehungsmuster und Motive. Krisenhinweise nicht als heutige Notfallanleitung verwenden; mit kritischer Distanz lesen.",
         forWhom: "Partner, Familienmitglieder, enge Freunde",
-        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783867390057",
+        classification: "critical",
       },
       {
         title: "Ich hasse dich – verlass mich nicht",
@@ -59,7 +60,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Ein historisch einflussreicher Ratgeber, der Begriffe und Beziehungserleben anschaulich macht. Einige Aussagen und Motiverklärungen verallgemeinern; deshalb nicht als diagnostische Grundlage und nur mit kritischer Distanz lesen.",
         forWhom: "Alle Angehörigen, auch Betroffene selbst",
-        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783466347841",
+        classification: "critical",
       },
       {
         title: "Die Kunst, mit einem Vulkan zu sprechen",
@@ -69,8 +70,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Ein Ratgeber zur SET-UP-Methode. Schon die Vulkanmetapher kann Menschen mit Borderline-Erfahrung als unberechenbar oder gefährlich darstellen; auch Motive und Beziehungsmuster werden teilweise verallgemeinert. Deshalb nur mit kritischer Distanz lesen und nicht als heutige Krisen- oder Gesprächsanleitung verwenden.",
         forWhom: "Angehörige, Partner",
-        bezugsUrl:
-          "https://www.exlibris.ch/de/buecher-buch/deutschsprachige-buecher/jerold-j-kreisman/die-kunst-mit-einem-vulkan-zu-sprechen/id/9783466347568/",
+        classification: "critical",
       },
       {
         title: "Borderline – Das Selbsthilfe-Buch für Angehörige",
@@ -223,7 +223,7 @@ const bookCategories: BookCategory[] = [
         description:
           "Für erwachsene Kinder, die belastende Kindheitserfahrungen einordnen möchten. Die typologischen Mutterbilder können jedoch stigmatisieren und individuelle Menschen auf Rollen reduzieren; nicht zur Diagnose einer Mutter verwenden und nur mit kritischer Distanz lesen.",
         forWhom: "Erwachsene Kinder von Betroffenen",
-        bezugsUrl: "https://www.exlibris.ch/de/suche/?query=9783837928235",
+        classification: "critical",
       },
       {
         title: "Borderline-Störung: Wie mir die DBT geholfen hat",
@@ -276,6 +276,17 @@ const bookCategories: BookCategory[] = [
   },
 ];
 
+const currentBookCategories = bookCategories
+  .map(category => ({
+    ...category,
+    books: category.books.filter(book => book.classification !== "critical"),
+  }))
+  .filter(category => category.books.length > 0);
+
+const criticallyClassifiedBooks = bookCategories.flatMap(category =>
+  category.books.filter(book => book.classification === "critical")
+);
+
 /** Slugifiziert Buchtitel für stabile Anker-IDs. */
 function slugifyTitle(title: string): string {
   return title
@@ -307,6 +318,11 @@ export default function Buchempfehlungen() {
     letterSpacing: "var(--tracking-tight)",
   };
 
+  const categoryHeadingStyle = {
+    ...titleStyle,
+    fontSize: "var(--text-xl)",
+  };
+
   const authorStyle = {
     fontSize: "var(--text-md)",
     color: "var(--fg-secondary)",
@@ -319,6 +335,53 @@ export default function Buchempfehlungen() {
     color: "var(--fg-tertiary)",
     fontWeight: 500,
   } as const;
+
+  const renderBook = (book: Book, headingLevel: 3 | 4) => {
+    const bookId = "book-" + slugifyTitle(book.title);
+    const BookHeading = headingLevel === 3 ? "h3" : "h4";
+
+    return (
+      <li
+        key={book.title}
+        id={bookId}
+        className="border-t pt-8 space-y-3"
+        style={{ borderColor: "var(--rule-color)" }}
+      >
+        {(book.highlight || book.classification === "critical") && (
+          <p className="uppercase" style={labelStyle}>
+            {book.classification === "critical"
+              ? "Kritisch einzuordnen"
+              : "Empfehlung"}
+          </p>
+        )}
+        <BookHeading style={titleStyle}>{book.title}</BookHeading>
+        <p style={authorStyle}>{book.author}</p>
+        <p className="uppercase" style={labelStyle}>
+          {book.publisher}
+          {book.year && ", " + book.year}
+        </p>
+        <EditorialBody>{book.description}</EditorialBody>
+        <p
+          className="flex flex-wrap items-baseline gap-x-5 gap-y-1 pt-1"
+          style={{ fontSize: "var(--text-sm)" }}
+        >
+          <span style={labelStyle} className="uppercase">
+            Für: {book.forWhom}
+          </span>
+          {book.classification !== "critical" && book.bezugsUrl && (
+            <a
+              href={book.bezugsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="editorial-link"
+            >
+              Bei Ex Libris (CH)
+            </a>
+          )}
+        </p>
+      </li>
+    );
+  };
 
   return (
     <Layout>
@@ -339,7 +402,9 @@ export default function Buchempfehlungen() {
             Kuratierte, überwiegend deutschsprachige Bücher für Angehörige. Die
             Auswahl verbindet Grundwissen, Beziehungsperspektiven,
             Selbstfürsorge und Erfahrungsnähe, ohne Anspruch auf
-            Vollständigkeit.
+            Vollständigkeit. Aktuell empfohlene Titel stehen getrennt von
+            Büchern, die historisch einflussreich oder wegen Verallgemeinerungen
+            kritisch einzuordnen sind.
           </Lede>
         </header>
 
@@ -353,6 +418,13 @@ export default function Buchempfehlungen() {
             className="flex flex-wrap gap-x-5 gap-y-2 uppercase"
             style={labelStyle}
           >
+            <a
+              href="#aktuell-empfohlen"
+              className="editorial-link"
+              onClick={e => handleAnchorClick(e, "aktuell-empfohlen")}
+            >
+              Aktuell empfohlen
+            </a>
             {bookCategories.map(category => (
               <a
                 key={category.id}
@@ -363,85 +435,85 @@ export default function Buchempfehlungen() {
                 {category.title.replace(/^Für /, "")}
               </a>
             ))}
+            <a
+              href="#kritisch-eingeordnet"
+              className="editorial-link"
+              onClick={e => handleAnchorClick(e, "kritisch-eingeordnet")}
+            >
+              Kritisch eingeordnet
+            </a>
           </p>
         </nav>
 
-        {/* ── Bücher gruppiert nach Kategorie ── */}
-        <div className="mt-16 space-y-20">
-          {bookCategories.map(category => (
-            <section
-              key={category.id}
-              id={`cat-${category.id}`}
-              className="space-y-8"
-            >
-              {/* Kategorie-Kopf */}
-              <div className="space-y-2">
-                <DisplayHeading level={2} spacing="compact">
-                  {category.title}
-                </DisplayHeading>
-                <EditorialBody>{category.subtitle}</EditorialBody>
-              </div>
+        {/* ── Aktuelle Empfehlungen, gruppiert nach Kategorie ── */}
+        <section id="aktuell-empfohlen" className="mt-16 space-y-12">
+          <div className="space-y-3">
+            <DisplayHeading level={2} spacing="compact">
+              Aktuell empfohlen
+            </DisplayHeading>
+            <EditorialBody>
+              Die Titel sind nach Zielgruppen und Verwendungszweck geordnet.
+              Kritisch eingeordnete Bücher folgen bewusst in einem getrennten
+              Abschnitt.
+            </EditorialBody>
+          </div>
+          <div className="space-y-20">
+            {currentBookCategories.map(category => (
+              <section
+                key={category.id}
+                id={`cat-${category.id}`}
+                className="space-y-8"
+              >
+                {/* Kategorie-Kopf */}
+                <div className="space-y-2">
+                  <h3 style={categoryHeadingStyle}>{category.title}</h3>
+                  <EditorialBody>{category.subtitle}</EditorialBody>
+                </div>
 
-              {/* Bücher-Liste */}
-              <ul className="space-y-12">
-                {category.books.map(book => {
-                  const bookId = `book-${slugifyTitle(book.title)}`;
-                  return (
-                    <li
-                      key={book.title}
-                      id={bookId}
-                      className="border-t pt-8 space-y-3"
-                      style={{ borderColor: "var(--rule-color)" }}
-                    >
-                      {book.highlight && (
-                        <p className="uppercase" style={labelStyle}>
-                          Empfehlung
-                        </p>
-                      )}
-                      <h3 style={titleStyle}>{book.title}</h3>
-                      <p style={authorStyle}>{book.author}</p>
-                      <p className="uppercase" style={labelStyle}>
-                        {book.publisher}
-                        {book.year && `, ${book.year}`}
-                      </p>
-                      <EditorialBody>{book.description}</EditorialBody>
-                      <p
-                        className="flex flex-wrap items-baseline gap-x-5 gap-y-1 pt-1"
-                        style={{ fontSize: "var(--text-sm)" }}
-                      >
-                        <span style={labelStyle} className="uppercase">
-                          Für: {book.forWhom}
-                        </span>
-                        {book.bezugsUrl && (
-                          <a
-                            href={book.bezugsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="editorial-link"
-                          >
-                            Bei Ex Libris (CH)
-                          </a>
-                        )}
-                      </p>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-          ))}
-        </div>
+                {/* Bücher-Liste */}
+                <ul className="space-y-12">
+                  {category.books.map(book => renderBook(book, 4))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Historisch einflussreiche oder kritisch einzuordnende Titel ── */}
+        <section
+          id="kritisch-eingeordnet"
+          className="mt-20 space-y-8 border-t pt-12"
+          style={{ borderColor: "var(--rule-color)" }}
+        >
+          <div className="space-y-3">
+            <DisplayHeading level={2} spacing="compact">
+              Historisch einflussreich oder kritisch einzuordnen
+            </DisplayHeading>
+            <EditorialBody>
+              Diese Titel werden nicht als gleichwertige aktuelle Empfehlungen
+              geführt. Die bisherigen Einordnungen zu Verallgemeinerungen,
+              stigmatisierender Sprache oder veralteten Krisenhinweisen bleiben
+              sichtbar. Auf Bezugslinks wird in diesem Abschnitt bewusst
+              verzichtet.
+            </EditorialBody>
+          </div>
+          <ul className="space-y-12">
+            {criticallyClassifiedBooks.map(book => renderBook(book, 3))}
+          </ul>
+        </section>
 
         {/* ── Hinweis ── */}
         <EditorialSectionBlock label="Hinweis" title="Zu den Empfehlungen" rule>
           <EditorialProse>
             <p>
               Diese Liste ist eine persönliche Auswahl und erhebt keinen
-              Anspruch auf Vollständigkeit. Die Auswahl enthält aktuelle Fach-
-              und Praxisbücher sowie historisch einflussreiche ältere Ratgeber.
-              Ältere Titel sind keine wissenschaftlichen Evidenzquellen; ihre
-              Sprache, Verallgemeinerungen und Krisenhinweise müssen kritisch
-              eingeordnet werden. Das Label «Empfehlung» bezeichnet eine
-              redaktionelle Auswahl, keine wissenschaftliche Bewertung.
+              Anspruch auf Vollständigkeit. Aktuelle Fach- und Praxisbücher
+              stehen getrennt von historisch einflussreichen oder kritisch
+              einzuordnenden Titeln. Solche Titel sind keine wissenschaftlichen
+              Evidenzquellen; ihre Sprache, Verallgemeinerungen und
+              Krisenhinweise müssen kritisch eingeordnet werden. Das Label
+              «Empfehlung» bezeichnet eine redaktionelle Auswahl, keine
+              wissenschaftliche Bewertung.
             </p>
             <p>
               Viele Bücher sind auch in Bibliotheken verfügbar oder können über

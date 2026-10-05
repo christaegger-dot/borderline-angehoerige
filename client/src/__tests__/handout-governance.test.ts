@@ -9,6 +9,7 @@ import {
   getHandoutGovernance,
   HANDOUT_STANDARD_DISCLAIMER,
   isHandoutVisualPublished,
+  isHandoutWebVersionPublished,
 } from "@/content/handoutGovernance";
 import { HANDOUT_TEXT_VERSION_IDS } from "@/content/handoutTextMetas";
 import { handoutTextVersions as genesungTextVersions } from "@/content/handoutTextVersionContent/genesung.content";
@@ -176,6 +177,27 @@ describe("handout governance", () => {
     }
   });
 
+  it("withholds the stale static notfallkarte while keeping its current html route separate", () => {
+    expect(isHandoutVisualPublished("notfallkarte-zuerich")).toBe(false);
+    expect(isHandoutWebVersionPublished("notfallkarte-zuerich")).toBe(true);
+    expect(isHandoutWebVersionPublished("kinder")).toBe(false);
+    expect(isHandoutWebVersionPublished("nicht-registriert")).toBe(false);
+    expect(
+      getHandoutGovernance("notfallkarte-zuerich")?.visualAssetStatus
+    ).toBe("text-only");
+    expect(
+      getHandoutGovernance("notfallkarte-zuerich")?.webVersionPublished
+    ).toBe(true);
+    expect(HANDOUT_TEXT_VERSION_IDS).not.toContain("notfallkarte-zuerich");
+    expect(
+      materials.find(item => item.id === "notfallkarte-zuerich")
+    ).toMatchObject({
+      isHtml: true,
+      url: "/notfallkarte",
+      downloadUrl: "/notfallkarte",
+    });
+  });
+
   it("requires document type, asset version and an explicit approval state for every text version", () => {
     for (const id of HANDOUT_TEXT_VERSION_IDS) {
       const governance = getHandoutGovernance(id);
@@ -231,12 +253,13 @@ describe("handout governance", () => {
     }
   });
 
-  it("keeps crisis numbers out of non-acute handouts and limits the two handlungsnahe exceptions", () => {
+  it("keeps crisis numbers out of non-acute handouts and limits the safety-critical exceptions", () => {
     const crisisNumberPattern =
       /\b(?:112|117|143|144|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i;
     const handlungsnaheExceptions = new Set([
       "gespraeche-kippen",
       "beispiel-dialog",
+      "pause-statt-streit",
     ]);
 
     for (const version of allTextVersions) {

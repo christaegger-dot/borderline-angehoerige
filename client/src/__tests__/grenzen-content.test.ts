@@ -22,4 +22,19 @@ describe("Grenzen content", () => {
     expect(pageSource).toContain('kontaktByIdStrict("INFO_OPFERBERATUNG_ZH")');
     expect(pageSource).not.toContain("0800 040 080");
   });
+
+  it("separates violence and threats from ordinary boundary prioritisation", () => {
+    const pageSource = fs.readFileSync(
+      path.join(repoRoot, "client/src/pages/Grenzen.tsx"),
+      "utf8"
+    );
+
+    expect(pageSource).toContain("Sofort schützen / Hilfe holen");
+    expect(pageSource).toContain(
+      "Bei Bedrohung oder Gewalt setzen Sie eine Grenze nicht im"
+    );
+    expect(pageSource).toContain('href="#gewalt"');
+    expect(pageSource).not.toContain("Sofort setzen");
+    expect(pageSource).not.toContain("<li>Bedrohungen / Übergriffe</li>");
+  });
 });

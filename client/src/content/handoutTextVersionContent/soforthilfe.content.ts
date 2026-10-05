@@ -28,7 +28,7 @@ const AKUT_TEXT_LANG: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
   GELB_PUK_KJP: "Psychiatrische Krise bis 18 Jahre, 24/7.",
   GELB_PUK_65: "Psychiatrische Krise ab 65 Jahren, 24/7.",
   GRUEN_143:
-    "Entlastendes Gespräch für Angehörige und Betroffene. Kein Einsatzdienst.",
+    "Entlastendes Gespräch für Angehörige und Betroffene. Bei akuter Gefahr kein Ersatz für den Notruf.",
 };
 
 // Kurze Beschreibungen (Liste «Kontaktübersicht – Kurzreferenz»).
@@ -39,7 +39,8 @@ const AKUT_TEXT_KURZ: Record<(typeof AKUT_KONTAKT_IDS)[number], string> = {
   GELB_PUK_ERW: "Psychiatrischer Notfall, 24/7.",
   GELB_PUK_KJP: "Bis 18 Jahre, 24/7.",
   GELB_PUK_65: "Ab 65 Jahren, 24/7.",
-  GRUEN_143: "Entlastendes Gespräch, anonym und 24/7. Kein Einsatzdienst.",
+  GRUEN_143:
+    "Entlastendes Gespräch, anonym und 24/7. Bei akuter Gefahr kein Ersatz für den Notruf.",
 };
 
 const akutCards = (texts: Record<(typeof AKUT_KONTAKT_IDS)[number], string>) =>
@@ -60,9 +61,9 @@ export const handoutTextVersions = [
     sections: [
       {
         title: "Akute Gefahr? Sofort handeln.",
-        intro: `Sofort ${nr("ROT_144")} anrufen, wenn medizinische Hilfe oder Rettung vor Ort nötig ist, zum Beispiel wenn die Person:`,
+        intro: `Sofort ${nr("ROT_144")} anrufen, wenn unmittelbare Lebensgefahr besteht oder medizinische Hilfe vor Ort nötig ist, zum Beispiel wenn die Person:`,
         bullets: [
-          "sich gerade verletzt",
+          "sich weiter selbst verletzt, eine schwere Verletzung hat, stark blutet oder dringend medizinisch versorgt werden muss",
           "eine Überdosis eingenommen hat oder eine schwere Intoxikation vermutet wird",
           "bewusstlos ist",
           "einen konkreten Suizidplan äussert oder unmittelbar in Gefahr ist",
@@ -76,7 +77,7 @@ export const handoutTextVersions = [
         title: "Wichtiger Soforthinweis",
         calloutTitle: "Sicherheit vor Diskussion",
         calloutText:
-          "Die Person nach Möglichkeit nicht ohne Hilfe, Notfallplan oder professionelle Einschätzung allein lassen – sofern Sie selbst sicher bleiben können. Begrenzen Sie den Zugang zu Medikamenten, Alkohol oder gefährlichen Gegenständen nur ohne Eigengefährdung, möglichst gemeinsam und nach Anleitung der Leitstelle. Nehmen Sie nichts gegen Widerstand weg und greifen Sie nicht körperlich ein. Bei Unsicherheit lieber einmal zu viel Hilfe holen als einmal zu wenig.",
+          "Holen Sie bei möglicher unmittelbarer Gefahr zuerst professionelle Hilfe und folgen Sie den Anweisungen der Leitstelle. Bleiben Sie nur bei der Person oder in Kontakt, soweit dies für Sie sicher und möglich ist; daraus entsteht keine alleinige Überwachungs- oder Sicherungspflicht. Begrenzen Sie den Zugang zu Medikamenten, Alkohol oder gefährlichen Gegenständen nur ohne Eigengefährdung, möglichst gemeinsam und nach Anleitung der Leitstelle. Nehmen Sie nichts gegen Widerstand weg und greifen Sie nicht körperlich ein.",
       },
       {
         title:
@@ -96,7 +97,7 @@ export const handoutTextVersions = [
           },
           {
             title: "4. Professionelle Hilfe einbeziehen",
-            text: "Sie müssen diese Situation nicht allein tragen. Ziehen Sie frühzeitig professionelle Hilfe bei. Informieren Sie wenn möglich die behandelnde Fachperson oder nutzen Sie die Notfallnummern. Suizidgedanken und akute Selbstgefährdung sollten nicht als Geheimnis mitgetragen werden.",
+            text: "Sie müssen diese Situation nicht allein tragen oder beurteilen. Ziehen Sie frühzeitig professionelle Hilfe bei, und folgen Sie in der Akutsituation den Anweisungen der Leitstelle. Informieren Sie wenn möglich die behandelnde Fachperson oder nutzen Sie die Notfallnummern. Suizidgedanken und akute Selbstgefährdung sollten nicht als Geheimnis mitgetragen werden.",
           },
         ],
       },
@@ -104,7 +105,7 @@ export const handoutTextVersions = [
         title: "Das hilft",
         bullets: [
           "früh professionelle Hilfe holen und klare Beobachtungen weitergeben",
-          "nur wenn es für Sie sicher ist und Sie es möchten, bis zum Eintreffen von Hilfe dableiben",
+          "den Anweisungen der Leitstelle folgen und nur dann dableiben, wenn es für Sie sicher und möglich ist",
           "direkt und klar nachfragen",
           "Gefühle ernst nehmen und anerkennen",
           "die professionelle Einschätzung einer möglichen Gefährdung veranlassen",
@@ -119,7 +120,7 @@ export const handoutTextVersions = [
           "lange Diskussionen, warum das Leben doch schön sei",
           "argumentieren oder überzeugen wollen",
           "drohen oder bestrafen",
-          "die Person trotz akuter Gefahr ohne Hilfe, Sicherheitsplan oder professionelle Einschätzung allein lassen",
+          "versuchen, die Gefahr allein zu beurteilen oder die Person ohne professionelle Hilfe zu überwachen",
           "selbst in einer unsicheren oder bedrohlichen Situation bleiben",
           "Suizidgedanken als Geheimnis für sich behalten",
         ],

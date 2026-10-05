@@ -50,7 +50,10 @@ describe("handout delivery helpers", () => {
   it("keeps local pdf paths on the same protected deploy", () => {
     expect(
       getHandoutOpenHref("/Notfallkarte-Zuerich-Psychische-Krise.pdf")
-    ).toBe("/Notfallkarte-Zuerich-Psychische-Krise.pdf");
+    ).toBeNull();
+    expect(
+      getHandoutDownloadHref("/Notfallkarte-Zuerich-Psychische-Krise.pdf")
+    ).toBeNull();
     expect(
       getHandoutDownloadHref("/infografiken/puk-4-arten-von-grenzen-v1.pdf")
     ).toBe("/infografiken/puk-4-arten-von-grenzen-v1.pdf");
@@ -88,6 +91,7 @@ describe("handout delivery helpers", () => {
   });
 
   it.each([
+    ["notfallkarte-zuerich", "/Notfallkarte-Zuerich-Psychische-Krise.pdf"],
     ["4-phasen", "/infografiken/manus-4-phasen-v1.pdf"],
     ["im-krisenmodus", "/infografiken/ampel-das-ampel-system-v4.pdf"],
     ["notfallplan-krise", "/notfallplan-krise-v04.pdf"],

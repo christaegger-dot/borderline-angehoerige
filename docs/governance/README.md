@@ -28,6 +28,9 @@ Paketbezogenes Protokoll:
 - `../../qa/p1-illustrations/editorial-review-follow-up-2026-10-04.md` —
   dokumentierte Einordnung und Nachbearbeitung des KI-gestützten
   redaktionellen Reviews; ausdrücklich keine Fachfreigabe.
+- `p1-sicherheits-und-kohaerenzpaket-2026-10-05.md` — Nachweis des
+  redaktionell-technischen P1-Pakets zu Krisenlogik, Anti-Stigma,
+  Publikationshygiene und Barrierefreiheit; ausdrücklich keine Fachfreigabe.
 
 ## Grundsatz
 

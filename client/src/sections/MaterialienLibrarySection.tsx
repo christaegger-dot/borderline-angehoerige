@@ -23,8 +23,10 @@ import {
 } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 import {
+  HANDOUT_WEB_REFRESH_NOTE,
   HANDOUT_VISUAL_REFRESH_NOTE,
   isHandoutVisualPublished,
+  isHandoutWebVersionPublished,
 } from "@/content/handoutGovernance";
 import { cn } from "@/lib/utils";
 
@@ -74,7 +76,10 @@ function MaterialEntry({
     ? null
     : getHandoutTextVersionHrefBySource(pdfSource);
   const textVersionPreferred = prefersHandoutTextVersion(pdfSource);
-  const visualPublished = item.isHtml || isHandoutVisualPublished(item.id);
+  const visualPublished = isHandoutVisualPublished(item.id);
+  const currentHtmlAvailable = Boolean(
+    item.isHtml && isHandoutWebVersionPublished(item.id)
+  );
   const openLabel = item.isHtml ? "Öffnen" : "PDF öffnen";
 
   return (
@@ -110,7 +115,22 @@ function MaterialEntry({
           />
         </button>
       ) : (
-        <HandoutVisualPlaceholder title={item.title} />
+        <HandoutVisualPlaceholder
+          title={item.title}
+          readingLabel={
+            currentHtmlAvailable ? "Aktuelle Webfassung" : undefined
+          }
+          statusText={
+            currentHtmlAvailable
+              ? "Statische Vorschau und PDF werden sicherheitsbezogen überarbeitet."
+              : undefined
+          }
+          ariaDescription={
+            currentHtmlAvailable
+              ? "aktuelle Webfassung verfügbar; statische Vorschau und PDF in Überarbeitung"
+              : undefined
+          }
+        />
       )}
 
       <div className="material-library-card__content">
@@ -122,7 +142,11 @@ function MaterialEntry({
 
         <h3 className="material-library-card__title">{item.title}</h3>
         <p className="material-library-card__description">{item.description}</p>
-        {!visualPublished && textVersionHref ? (
+        {!visualPublished && currentHtmlAvailable ? (
+          <p className="material-library-card__note">
+            {HANDOUT_WEB_REFRESH_NOTE}
+          </p>
+        ) : !visualPublished && textVersionHref ? (
           <p className="material-library-card__note">
             {HANDOUT_VISUAL_REFRESH_NOTE}
           </p>
@@ -143,7 +167,7 @@ function MaterialEntry({
               Textversion lesen
             </Link>
           )}
-          {visualPublished && (
+          {(currentHtmlAvailable || visualPublished) && (
             <a
               href={openHref}
               target="_blank"
@@ -165,7 +189,11 @@ function MaterialEntry({
             </a>
           )}
         </p>
-        {!visualPublished ? (
+        {!visualPublished && currentHtmlAvailable ? (
+          <p className="material-library-card__verified">
+            Materialstand: Webfassung aktuell · Druckfassung in Überarbeitung
+          </p>
+        ) : !visualPublished ? (
           <p className="material-library-card__verified">
             Materialstand: Textversion aktuell · Druckfassung in Überarbeitung
           </p>

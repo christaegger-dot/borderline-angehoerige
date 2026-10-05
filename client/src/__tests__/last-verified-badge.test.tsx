@@ -30,4 +30,25 @@ describe("LastVerifiedBadge", () => {
 
     expect(screen.getByText("Stand: 24.03.2026")).toBeInTheDocument();
   });
+
+  it("makes an overdue review visible without changing the verified date", () => {
+    pageGovernance["/genesung"] = {
+      riskLevel: "high",
+      contactCheck: {
+        date: "2026-09-22",
+        scope: "Kontaktweg",
+        source: "https://example.com",
+      },
+      lastReviewed: "2026-04-30",
+      nextReviewDue: "2026-09-24",
+    };
+
+    render(<LastVerifiedBadge path="/genesung" />);
+
+    expect(
+      screen.getByText(
+        "Kontaktabgleich: 22.09.2026 · erneute Prüfung ausstehend seit 24.09.2026"
+      )
+    ).toBeInTheDocument();
+  });
 });

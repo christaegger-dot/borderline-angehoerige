@@ -103,7 +103,7 @@ const TREE: TreeNode[] = [
         id: "s3",
         text: "Bis zur Hilfe die eigene Sicherheit beachten",
         detail:
-          "Bleiben Sie bei der Person oder in Kontakt, soweit dies für Sie sicher möglich ist. Nehmen Sie gefährliche Gegenstände nicht gegen Widerstand weg und greifen Sie nicht körperlich ein.",
+          "Folgen Sie den Anweisungen der Leitstelle. Bleiben Sie nur bei der Person oder in Kontakt, soweit dies für Sie sicher und möglich ist; Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung. Nehmen Sie gefährliche Gegenstände nicht gegen Widerstand weg und greifen Sie nicht körperlich ein.",
         link: { href: "/soforthilfe", label: "Alle Notfallkontakte" },
       },
     ],
@@ -123,9 +123,9 @@ const TREE: TreeNode[] = [
       },
       {
         id: "s2",
-        text: "Bleiben Sie bei der Person, soweit Sie selbst sicher sind",
+        text: "Folgen Sie den Anweisungen der Leitstelle",
         detail:
-          "Bleiben Sie bis zum Eintreffen professioneller Hilfe bei der Person oder in Kontakt, soweit dies ohne Eigengefährdung möglich ist. Bei Bedrohung bringen Sie sich in Sicherheit und informieren die Leitstelle.",
+          "Bleiben Sie nur bei der Person oder in Kontakt, soweit dies für Sie sicher und möglich ist. Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung. Bei Bedrohung bringen Sie sich in Sicherheit und informieren die Leitstelle.",
       },
       {
         id: "s3",
@@ -222,7 +222,7 @@ const TREE: TreeNode[] = [
         id: "s2",
         text: "Folgen Sie den Anweisungen der Leitstelle",
         detail:
-          "Leisten Sie Erste Hilfe nach deren Anleitung und nur ohne Eigengefährdung. Bleiben Sie bei der Person oder in Kontakt, soweit dies für Sie sicher möglich ist.",
+          "Leisten Sie Erste Hilfe nach deren Anleitung und nur ohne Eigengefährdung. Bleiben Sie nur bei der Person oder in Kontakt, soweit dies für Sie sicher und möglich ist; Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung.",
       },
       {
         id: "s3",

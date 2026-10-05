@@ -27,14 +27,14 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/wegweiser": {
-    editorialUpdated: "2026-09-23",
+    editorialUpdated: "2026-10-05",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",
     owner: DEFAULT_OWNER,
   },
   "/soforthilfe": {
-    editorialUpdated: "2026-09-23",
+    editorialUpdated: "2026-10-05",
     contactCheck: {
       date: "2026-09-22",
       scope: "Die drei PUK-Notfallnummern (Kinder, Erwachsene, ab 65)",
@@ -47,6 +47,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/notfallkarte": {
+    editorialUpdated: "2026-10-05",
     contactCheck: {
       date: "2026-09-22",
       scope: "Die drei PUK-Notfallnummern (Kinder, Erwachsene, ab 65)",
@@ -72,7 +73,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/unterstuetzen/krise": {
-    editorialUpdated: "2026-10-02",
+    editorialUpdated: "2026-10-05",
     riskLevel: "high",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2026-10-31",

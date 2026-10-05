@@ -13,6 +13,12 @@ export interface HandoutGovernanceEntry {
   id: string;
   documentType: HandoutDocumentType;
   /**
+   * Eine eigenständig gepflegte HTML-Webfassung darf auch dann aktiv bleiben,
+   * wenn die zugehörigen statischen Visual-/PDF-Assets zurückgehalten werden.
+   * Ohne explizites `true` gilt die Webfassung als nicht freigegeben.
+   */
+  webVersionPublished?: boolean;
+  /**
    * Freigegebener Asset-Dateistamm ohne Erweiterung.
    * Nicht automatisch die hoechste vorhandene Version: alte Assets koennen
    * bewusst gelockt bleiben, bis sie fachlich/designseitig freigegeben sind.
@@ -27,8 +33,9 @@ export interface HandoutGovernanceEntry {
   approvalStatus?: HandoutApprovalStatus;
   /**
    * `text-only` zieht eine fachlich oder visuell veraltete Druckgrafik aus den
-   * Empfehlungsflächen zurück. Die aktuelle HTML-Textversion bleibt verfügbar.
-   * Ohne Angabe gilt das freigegebene Asset als publiziert.
+   * Empfehlungsflächen zurück. Eine aktuelle HTML-Text- oder Webfassung bleibt
+   * verfügbar, wenn sie separat gepflegt wird. Ohne Angabe gilt das
+   * freigegebene Asset als publiziert.
    */
   visualAssetStatus?: HandoutVisualAssetStatus;
   /**
@@ -44,6 +51,9 @@ export const HANDOUT_STANDARD_DISCLAIMER =
 export const HANDOUT_VISUAL_REFRESH_NOTE =
   "Die Druckgrafik und das PDF werden fachlich und visuell überarbeitet. Nutzen Sie bis dahin die aktuelle Textversion.";
 
+export const HANDOUT_WEB_REFRESH_NOTE =
+  "Die Webfassung ist aktuell. Die statische Vorschau und das PDF werden sicherheitsbezogen überarbeitet und nach fachlicher Prüfung neu bereitgestellt.";
+
 export const HANDOUT_EDITORIAL_DRAFT_NOTE =
   "Entwurf – fachlich-redaktionelle Freigabe ausstehend.";
 
@@ -52,6 +62,8 @@ export const handoutGovernance = {
     id: "notfallkarte-zuerich",
     documentType: "KRISEN-HANDOUT",
     approvedVersion: "Notfallkarte-Zuerich-Psychische-Krise",
+    webVersionPublished: true,
+    visualAssetStatus: "text-only",
   },
   "notfallplan-krise": {
     id: "notfallplan-krise",
@@ -343,6 +355,16 @@ export function isHandoutVisualPublished(id: string | undefined) {
     governance &&
     governance.publicationStatus !== "withdrawn" &&
     governance.visualAssetStatus !== "text-only" &&
+    getHandoutApprovalStatus(governance.id) === "approved"
+  );
+}
+
+export function isHandoutWebVersionPublished(id: string | undefined) {
+  const governance = getHandoutGovernance(id);
+  return Boolean(
+    governance &&
+    governance.publicationStatus !== "withdrawn" &&
+    governance.webVersionPublished === true &&
     getHandoutApprovalStatus(governance.id) === "approved"
   );
 }

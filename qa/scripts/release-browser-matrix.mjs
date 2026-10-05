@@ -509,24 +509,24 @@ async function runFlow(page, profile) {
     }
   });
 
-  await step(
-    "Zurückgezogene Notfallplan-Dateien bleiben gesperrt",
-    async () => {
-      const routes = [
-        "/api/material-download/notfallplan-krise?disposition=inline",
-        "/notfallplan-krise-v04.pdf",
-        "/notfallplan-krise-v04-preview.webp",
-        "/notfallplan-krise-v04-preview.png",
-      ];
+  await step("Zurückgezogene Krisen-Dateien bleiben gesperrt", async () => {
+    const routes = [
+      "/api/material-download/notfallplan-krise?disposition=inline",
+      "/notfallplan-krise-v04.pdf",
+      "/notfallplan-krise-v04-preview.webp",
+      "/notfallplan-krise-v04-preview.png",
+      "/api/material-download/notfallkarte-zuerich?disposition=inline",
+      "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
+      "/notfallkarte-preview.webp",
+    ];
 
-      for (const route of routes) {
-        const response = await fetch(routeUrl(route), { redirect: "manual" });
-        if (response.status !== 404) {
-          throw new Error(`${route} liefert ${response.status}; erwartet 404`);
-        }
+    for (const route of routes) {
+      const response = await fetch(routeUrl(route), { redirect: "manual" });
+      if (response.status !== 404) {
+        throw new Error(`${route} liefert ${response.status}; erwartet 404`);
       }
     }
-  );
+  });
 
   await step("Legacy-PDF-Routen leiten mit 307 auf Assets um", async () => {
     const redirectCases = [

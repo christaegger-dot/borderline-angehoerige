@@ -4,6 +4,7 @@ import {
   getHandoutAssetVersion,
   handoutGovernance,
   isHandoutVisualPublished,
+  type HandoutGovernanceEntry,
 } from "./handoutGovernance";
 import { kommItems } from "./kommunizieren";
 import { materials } from "./materialien";
@@ -31,8 +32,14 @@ const REMOTE_ASSET_RE = /^https?:\/\//i;
 const LOCAL_PDF_RE = /^\/.+\.pdf(?:[?#].*)?$/i;
 const withheldHandoutSources = new Set<string>();
 
-for (const governance of Object.values(handoutGovernance)) {
+for (const governanceValue of Object.values(handoutGovernance)) {
+  const governance: HandoutGovernanceEntry = governanceValue;
+  for (const source of governance.retiredAssetSources ?? []) {
+    withheldHandoutSources.add(source);
+  }
+
   if (isHandoutVisualPublished(governance.id)) continue;
+  if (governance.visualAssetStatus === "web-only") continue;
   const version = getHandoutAssetVersion(governance);
   if (version) withheldHandoutSources.add(`/infografiken/${version}.pdf`);
 }

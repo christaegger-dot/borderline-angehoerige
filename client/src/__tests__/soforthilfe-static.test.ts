@@ -64,8 +64,28 @@ describe("static soforthilfe page", () => {
 
     expect(html).toContain("Entlastung und Gespräch");
     expect(html).toMatch(/<a href="tel:143">143<\/a>/);
-    expect(html).toContain("schicken aber keinen");
-    expect(html).toContain("Einsatzdienst");
+    expect(html).toContain("ersetzen aber keinen");
+    expect(html).toContain("Notruf");
+    expect(html).toContain("je nach Dienst weitere");
+    expect(html).not.toMatch(/kommt niemand vorbei|keine Konsequenzen/i);
+  });
+
+  it("does not promise that 112 always connects or works without a SIM card", () => {
+    const html = readSoforthilfeDirectPage();
+    const contact = kontaktByIdStrict("ROT_112");
+
+    expect(contact.hinweis).toContain("ohne SIM-Karte ist nicht gewährleistet");
+    expect(contact.hinweis).not.toMatch(/funktioniert immer|auch ohne SIM/i);
+    expect(html).not.toMatch(/funktioniert immer|auch ohne SIM/i);
+  });
+
+  it("routes self-harm by immediate danger and medical urgency instead of the label alone", () => {
+    const rescue = kontaktByIdStrict("ROT_144");
+
+    expect(rescue.hinweis).toContain("unmittelbarer Lebensgefahr");
+    expect(rescue.hinweis).toContain("schwerer Verletzung");
+    expect(rescue.hinweis).toContain("sofort medizinische Hilfe nötig");
+    expect(rescue.hinweis).not.toMatch(/Lebensgefahr, Selbstverletzung/i);
   });
 
   it("separates medical emergencies from police protection", () => {
@@ -90,5 +110,18 @@ describe("static soforthilfe page", () => {
     expect(html).toContain('href="/materialien/text/notfallplan-krise"');
     expect(html).toContain("Notfallplan im Browser");
     expect(html).not.toContain('href="/notfallplan-krise-v04.pdf"');
+  });
+
+  it("links only to the notfallkarte web page and does not promise new static assets", () => {
+    const html = readSoforthilfeDirectPage();
+
+    expect(html).toContain('href="/notfallkarte"');
+    expect(html).not.toContain(
+      'href="/Notfallkarte-Zuerich-Psychische-Krise.pdf"'
+    );
+    expect(html).not.toContain("/notfallkarte-preview.webp");
+    expect(html).toContain("ausschliesslich als Webfassung angeboten");
+    expect(html).not.toContain("neu bereitgestellt");
+    expect(html).not.toContain("in Überarbeitung");
   });
 });

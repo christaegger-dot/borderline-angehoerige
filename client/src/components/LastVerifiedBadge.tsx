@@ -23,6 +23,10 @@ export default function LastVerifiedBadge({
   const meta = path ? pageGovernance[path] : undefined;
   const governanceDate = meta?.contactCheck?.date ?? meta?.lastReviewed;
   const resolvedDate = governanceDate ? formatDate(governanceDate) : date;
+  const reviewOverdue = Boolean(
+    meta?.nextReviewDue &&
+    meta.nextReviewDue < new Date().toISOString().slice(0, 10)
+  );
 
   if (!resolvedDate) return null;
 
@@ -37,6 +41,9 @@ export default function LastVerifiedBadge({
           ? "Dokumentierte Fachprüfung"
           : "Stand"}
       : {resolvedDate}
+      {reviewOverdue && meta?.nextReviewDue
+        ? ` · erneute Prüfung ausstehend seit ${formatDate(meta.nextReviewDue)}`
+        : ""}
     </p>
   );
 }

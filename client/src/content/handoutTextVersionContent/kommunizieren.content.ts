@@ -402,7 +402,7 @@ export const handoutTextVersions = [
         title: "Zusatzhinweis",
         calloutTitle: "Bei Gefahr",
         calloutText:
-          "Bei Gewalt, akuter Selbstgefährdung oder unmittelbarer Gefahr keine Pausenverhandlung führen, sondern Hilfe holen. Lassen Sie eine akut gefährdete Person nicht ohne Hilfe oder professionelle Einschätzung allein, sofern Sie selbst sicher bleiben können.",
+          "Bei Gewalt oder Bedrohung schaffen Sie Abstand und bringen sich in Sicherheit; im Notfall rufen Sie 117. Bei vermuteter unmittelbarer Selbstgefährdung holen Sie umgehend professionelle Hilfe, bei unmittelbarer Gefahr 144. Folgen Sie den Anweisungen der Leitstelle. Bleiben Sie nur bei der Person oder in Kontakt, soweit dies für Sie sicher und möglich ist; Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung.",
       },
       {
         title: "Orientierung",

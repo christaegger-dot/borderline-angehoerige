@@ -57,11 +57,17 @@ describe("isPathInsidePublicRoot — Pure-Helper-Tests", () => {
 describe("resolveLocalPdfPath end-to-end", () => {
   it("loest existierende PDF-Quelle korrekt auf", () => {
     const result = resolveLocalPdfPath(
-      "/Notfallkarte-Zuerich-Psychische-Krise.pdf"
+      "/infografiken/puk-4-arten-von-grenzen-v1.pdf"
     );
     expect(result, "echte PDF muss aufloesbar sein").not.toBeNull();
-    expect(result).toMatch(/Notfallkarte-Zuerich-Psychische-Krise\.pdf$/);
+    expect(result).toMatch(/puk-4-arten-von-grenzen-v1\.pdf$/);
     expect(result).toMatch(/[/\\]client[/\\]public[/\\]/);
+  });
+
+  it("liefert null fuer die dauerhaft ausgemusterte statische Notfallkarte", () => {
+    expect(
+      resolveLocalPdfPath("/Notfallkarte-Zuerich-Psychische-Krise.pdf")
+    ).toBeNull();
   });
 
   it("liefert null fuer Traversal-Versuche", () => {
@@ -76,7 +82,7 @@ describe("resolveLocalPdfPath end-to-end", () => {
 
   it("normalisiert mehrfache Slash-Prefixe", () => {
     const result = resolveLocalPdfPath(
-      "///Notfallkarte-Zuerich-Psychische-Krise.pdf"
+      "///infografiken/puk-4-arten-von-grenzen-v1.pdf"
     );
     expect(
       result,

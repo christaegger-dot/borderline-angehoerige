@@ -42,9 +42,9 @@ export default function EnergieHaushaltVisualisierung() {
       className="my-6 border-y border-border py-5"
       aria-label="Belastung und Entlastung im Alltag"
     >
-      <h3 className="text-xl font-medium">
+      <h2 className="text-xl font-medium">
         Was braucht im Alltag Veränderung?
-      </h3>
+      </h2>
       <p className="mt-3 text-base leading-relaxed text-muted-foreground">
         Diese Beispiele können beim Sortieren helfen. Was wie schwer wiegt, ist
         persönlich. Eine Pause gleicht dauerhafte Überlastung nicht automatisch
@@ -53,7 +53,7 @@ export default function EnergieHaushaltVisualisierung() {
       <div className="mt-5 grid gap-6 md:grid-cols-2">
         {bereiche.map(bereich => (
           <div key={bereich.title} className="border-t-2 border-primary pt-4">
-            <h4 className="text-lg font-medium">{bereich.title}</h4>
+            <h3 className="text-lg font-medium">{bereich.title}</h3>
             <ul className="mt-3 space-y-4">
               {bereich.items.map(([title, text]) => (
                 <li key={title} className="text-base leading-relaxed">

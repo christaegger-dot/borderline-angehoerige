@@ -310,6 +310,38 @@ export default function Grenzen() {
                 Unterstützung sinnvoll – kein Selbstvorwurf.
               </p>
             </EditorialProse>
+            <aside
+              aria-labelledby="grenzen-schutz-title"
+              className="mt-6 border-l-4 p-5"
+              style={{
+                borderColor: "var(--color-alert)",
+                backgroundColor: "var(--color-alert-wash)",
+              }}
+            >
+              <p
+                className="uppercase"
+                style={{
+                  fontSize: "var(--text-xs)",
+                  letterSpacing: "var(--tracking-caps)",
+                  color: "var(--accent-label)",
+                  fontWeight: 500,
+                }}
+              >
+                Bedrohung oder Gewalt
+              </p>
+              <h3 id="grenzen-schutz-title" className="mt-2" style={h4Style}>
+                Sofort schützen / Hilfe holen
+              </h3>
+              <p className="mt-2" style={bodyStyle}>
+                Bei Bedrohung oder Gewalt setzen Sie eine Grenze nicht im
+                direkten Gespräch durch. Bringen Sie sich in Sicherheit und
+                holen Sie Hilfe. Die konkreten{" "}
+                <a href="#gewalt" className="editorial-link">
+                  Schutz- und Hilfewege
+                </a>{" "}
+                finden Sie weiter unten.
+              </p>
+            </aside>
             <div className="mt-6 grid gap-8 sm:grid-cols-2">
               <div>
                 <p
@@ -324,12 +356,12 @@ export default function Grenzen() {
                   Dringend · Emotional hoch
                 </p>
                 <h3 className="mt-2" style={h4Style}>
-                  Sofort setzen
+                  Sofort begrenzen
                 </h3>
                 <ul className="mt-2 ml-5 list-disc space-y-1" style={bodyStyle}>
-                  <li>Körperliche Sicherheit</li>
-                  <li>Bedrohungen / Übergriffe</li>
                   <li>Eigene Gesundheit</li>
+                  <li>Beschimpfungen / persönliche Angriffe</li>
+                  <li>Nicht tragbare Verfügbarkeit</li>
                 </ul>
               </div>
               <div>

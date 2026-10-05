@@ -13,7 +13,6 @@
  * - INFO enthält nur Einträge, die im Forensik-Kontaktregister verifiziert sind
  *   (Fundstelle + Quelle). sourceRef ist Pflichtfeld.
  * - Kategorien: ROT (Notruf), GELB (PUK 24/7), GRUEN (Entlastung), INFO (Beratung)
- * - 118 nur auf Notfallkarte (PDF), nicht auf der Website
  * - 145 Tox Info Suisse: auf Website (Soforthilfe Block 4) UND Notfallkarte
  * - 143 ist GRUEN, niemals ROT. Niemals gleichrangig neben 144/117.
  * - UI-Trennung: ROT/GELB/GRUEN = Ampel. INFO immer separat als
@@ -76,8 +75,6 @@ export interface Kontakt {
   verfuegbarkeit?: string;
   /** Zielgruppe, z. B. "bis 18 Jahre" */
   fuerWen?: string;
-  /** Nur auf Notfallkarte (PDF), nicht auf Website */
-  nurPdf?: boolean;
 }
 
 export interface EmailKontakt {
@@ -113,7 +110,7 @@ export const ROT: Kontakt[] = [
     tel: "144",
     label: "Rettungsdienst",
     hinweis:
-      "Bei akuter Lebensgefahr, Selbstverletzung oder akuter Suizidgefahr",
+      "Bei unmittelbarer Lebensgefahr, laufender Selbstgefährdung, schwerer Verletzung oder wenn sofort medizinische Hilfe nötig ist",
     sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
@@ -133,7 +130,8 @@ export const ROT: Kontakt[] = [
     nummer: "112",
     tel: "112",
     label: "Notruf (wenn unsicher)",
-    hinweis: "Wenn Sie unsicher sind, welche Nummer – funktioniert immer.",
+    hinweis:
+      "Europäische Notrufnummer. Eine Verbindung ohne SIM-Karte ist nicht gewährleistet.",
     sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
@@ -146,17 +144,6 @@ export const ROT: Kontakt[] = [
     hinweis: "Bei Vergiftungsverdacht oder Medikamentenüberdosierung",
     sourceRef: "Notfallkarte v05 (HTML), public/soforthilfe/index.html",
     verfuegbarkeit: "24/7",
-  },
-  {
-    id: "ROT_118",
-    kategorie: "rot",
-    nummer: "118",
-    tel: "118",
-    label: "Feuerwehr",
-    hinweis: "Feuer, Elementarschäden",
-    sourceRef: "Notfallkarte v05 (HTML)",
-    verfuegbarkeit: "24/7",
-    nurPdf: true,
   },
 ];
 
@@ -212,7 +199,7 @@ export const GRUEN: Kontakt[] = [
     tel: "143",
     label: "Dargebotene Hand (24/7)",
     hinweis:
-      "Anonymes Gesprächs- und Krisenangebot, vertraulich. Es kommt niemand vorbei.",
+      "Anonymes Gesprächs- und Krisenangebot. Bei akuter Gefahr kein Ersatz für 144 oder 117.",
     sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     verfuegbarkeit: "24/7",
   },
@@ -526,25 +513,20 @@ export const TEXTE = {
   pukTriage:
     "Am Telefon wird kurz eingeschätzt (Triage), was jetzt am besten hilft – z. B. Beratung, weiteres Vorgehen oder Notfallaufnahme.",
   gruenGefahrenhinweis:
-    "Bei akuter Gefahr für sich oder andere: Immer zuerst 144 / 117 / 112 rufen. Die Nummern oben sind Sorgentelefone – es kommt niemand vorbei.",
+    "Bei akuter medizinischer Gefahr zuerst 144, bei Gewalt oder Bedrohung 117 wählen. Gesprächsangebote ersetzen keinen Notruf. Ob eine Beratungsstelle bei unmittelbarer Gefahr weitere Hilfe beizieht, richtet sich nach dem jeweiligen Dienst und der konkreten Situation.",
   pukLabel:
     "PUK Zürich (24/7) – psychiatrische Krise, wenn keine unmittelbare Lebensgefahr besteht.",
 } as const;
 
 // ─── Hilfsfunktionen ─────────────────────────────────────
 
-/** Alle Website-Kontakte (ohne nurPdf), flach über alle Kategorien */
-export const WEBSITE_KONTAKTE: Kontakt[] = [
-  ...ROT,
-  ...GELB,
-  ...GRUEN,
-  ...INFO,
-].filter(k => !k.nurPdf);
+/** Alle Website-Kontakte, flach über alle Kategorien */
+export const WEBSITE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO];
 
-/** Website-ROT: Haupt-Notfallnummern (ohne 118 nur PDF, ohne 145 Spezialnummer) */
-export const WEBSITE_ROT = ROT.filter(k => !k.nurPdf && k.id !== "ROT_145");
+/** Website-ROT: Haupt-Notfallnummern (ohne 145 Spezialnummer) */
+export const WEBSITE_ROT = ROT.filter(k => k.id !== "ROT_145");
 
-/** Alle Kontakte flach (inkl. nurPdf) */
+/** Alle Kontakte flach */
 export const ALLE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO];
 
 /** Kontakt nach ID finden */
@@ -622,15 +604,6 @@ export function validateKontakte(): void {
     }
     if (k.id === "GRUEN_143" && k.kategorie !== "gruen") {
       throw new Error("143 muss gruen sein");
-    }
-    if (k.id === "ROT_118" && !k.nurPdf) {
-      throw new Error("118 muss nurPdf=true sein");
-    }
-  }
-  // Prüfe, dass nurPdf-Einträge nicht in WEBSITE_KONTAKTE auftauchen
-  for (const k of WEBSITE_KONTAKTE) {
-    if (k.nurPdf) {
-      throw new Error(`nurPdf-Eintrag in WEBSITE_KONTAKTE: ${k.id}`);
     }
   }
 }

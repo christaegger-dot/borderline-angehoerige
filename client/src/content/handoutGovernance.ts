@@ -3,7 +3,7 @@ export type HandoutDocumentType =
   | "PRAXISBLATT"
   | "KRISEN-HANDOUT";
 
-export type HandoutVisualAssetStatus = "published" | "text-only";
+export type HandoutVisualAssetStatus = "published" | "text-only" | "web-only";
 export type HandoutPublicationStatus = "active" | "withdrawn";
 export type HandoutApprovalStatus =
   | "approved"
@@ -12,6 +12,12 @@ export type HandoutApprovalStatus =
 export interface HandoutGovernanceEntry {
   id: string;
   documentType: HandoutDocumentType;
+  /**
+   * Eine eigenständig gepflegte HTML-Webfassung darf auch dann aktiv bleiben,
+   * wenn die zugehörigen statischen Visual-/PDF-Assets zurückgehalten werden.
+   * Ohne explizites `true` gilt die Webfassung als nicht freigegeben.
+   */
+  webVersionPublished?: boolean;
   /**
    * Freigegebener Asset-Dateistamm ohne Erweiterung.
    * Nicht automatisch die hoechste vorhandene Version: alte Assets koennen
@@ -27,10 +33,18 @@ export interface HandoutGovernanceEntry {
   approvalStatus?: HandoutApprovalStatus;
   /**
    * `text-only` zieht eine fachlich oder visuell veraltete Druckgrafik aus den
-   * Empfehlungsflächen zurück. Die aktuelle HTML-Textversion bleibt verfügbar.
-   * Ohne Angabe gilt das freigegebene Asset als publiziert.
+   * Empfehlungsflächen zurück, bis ein freigegebenes Folge-Asset vorliegt.
+   * `web-only` ist dagegen eine dauerhafte Formatentscheidung ohne separates
+   * PDF-, Bild- oder Thumbnail-Asset. Eine HTML-Text- oder Webfassung bleibt
+   * verfügbar, wenn sie separat gepflegt wird. Ohne Angabe gilt das
+   * freigegebene Asset als publiziert.
    */
   visualAssetStatus?: HandoutVisualAssetStatus;
+  /**
+   * Frühere Asset-Pfade, die nicht mehr publiziert werden dürfen. Sie bleiben
+   * explizit gesperrt, auch wenn die zugehörige Webfassung aktiv ist.
+   */
+  retiredAssetSources?: readonly string[];
   /**
    * `withdrawn` hält eine veraltete Fassung für die Historie im Register,
    * entfernt sie aber aus den produktiven Katalogen und Textversionen.
@@ -44,6 +58,9 @@ export const HANDOUT_STANDARD_DISCLAIMER =
 export const HANDOUT_VISUAL_REFRESH_NOTE =
   "Die Druckgrafik und das PDF werden fachlich und visuell überarbeitet. Nutzen Sie bis dahin die aktuelle Textversion.";
 
+export const HANDOUT_WEB_ONLY_NOTE =
+  "Diese Notfallkarte wird ausschliesslich als Webfassung angeboten. Eine separate PDF- oder Bildfassung gibt es nicht, damit veraltete Kriseninformationen nicht weitergegeben werden.";
+
 export const HANDOUT_EDITORIAL_DRAFT_NOTE =
   "Entwurf – fachlich-redaktionelle Freigabe ausstehend.";
 
@@ -51,7 +68,12 @@ export const handoutGovernance = {
   "notfallkarte-zuerich": {
     id: "notfallkarte-zuerich",
     documentType: "KRISEN-HANDOUT",
-    approvedVersion: "Notfallkarte-Zuerich-Psychische-Krise",
+    webVersionPublished: true,
+    visualAssetStatus: "web-only",
+    retiredAssetSources: [
+      "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
+      "/notfallkarte-preview.webp",
+    ],
   },
   "notfallplan-krise": {
     id: "notfallplan-krise",
@@ -342,7 +364,18 @@ export function isHandoutVisualPublished(id: string | undefined) {
   return Boolean(
     governance &&
     governance.publicationStatus !== "withdrawn" &&
-    governance.visualAssetStatus !== "text-only" &&
+    (governance.visualAssetStatus === undefined ||
+      governance.visualAssetStatus === "published") &&
+    getHandoutApprovalStatus(governance.id) === "approved"
+  );
+}
+
+export function isHandoutWebVersionPublished(id: string | undefined) {
+  const governance = getHandoutGovernance(id);
+  return Boolean(
+    governance &&
+    governance.publicationStatus !== "withdrawn" &&
+    governance.webVersionPublished === true &&
     getHandoutApprovalStatus(governance.id) === "approved"
   );
 }

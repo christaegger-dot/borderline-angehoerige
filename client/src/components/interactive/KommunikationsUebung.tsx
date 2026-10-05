@@ -115,7 +115,7 @@ const SCENARIOS: Scenario[] = [
       },
     ],
     learnNote:
-      "Bei einer unklaren Aussage über die eigene Sicherheit hat die direkte Gefährdungsabklärung Vorrang vor einer Kommunikationsmethode. Fragen Sie direkt und ruhig nach Suizidgedanken und unmittelbarer Gefahr. Bei möglicher unmittelbarer Lebensgefahr 144 rufen; sonst professionelle psychiatrische Einschätzung einholen. 143 bietet zusätzliche Gesprächsentlastung, ist aber kein Einsatzdienst. Eigene Grenzen und Sicherheit bleiben wichtig.",
+      "Bei einer unklaren Aussage über die eigene Sicherheit hat die direkte Gefährdungsabklärung Vorrang vor einer Kommunikationsmethode. Fragen Sie direkt und ruhig nach Suizidgedanken und unmittelbarer Gefahr. Bei möglicher unmittelbarer Lebensgefahr 144 rufen; sonst professionelle psychiatrische Einschätzung einholen. 143 bietet zusätzliche Gesprächsentlastung, ersetzt aber keinen Notruf. Eigene Grenzen und Sicherheit bleiben wichtig.",
   },
 
   // ─── DEAR MAN scenarios ─────────────────────────────

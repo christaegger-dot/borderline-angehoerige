@@ -9,6 +9,7 @@ import {
   getHandoutGovernance,
   HANDOUT_STANDARD_DISCLAIMER,
   isHandoutVisualPublished,
+  isHandoutWebVersionPublished,
 } from "@/content/handoutGovernance";
 import { HANDOUT_TEXT_VERSION_IDS } from "@/content/handoutTextMetas";
 import { handoutTextVersions as genesungTextVersions } from "@/content/handoutTextVersionContent/genesung.content";
@@ -176,6 +177,66 @@ describe("handout governance", () => {
     }
   });
 
+  it("keeps the notfallkarte web-only and permanently blocks its retired assets", () => {
+    expect(isHandoutVisualPublished("notfallkarte-zuerich")).toBe(false);
+    expect(isHandoutWebVersionPublished("notfallkarte-zuerich")).toBe(true);
+    expect(isHandoutWebVersionPublished("kinder")).toBe(false);
+    expect(isHandoutWebVersionPublished("nicht-registriert")).toBe(false);
+    expect(
+      getHandoutGovernance("notfallkarte-zuerich")?.visualAssetStatus
+    ).toBe("web-only");
+    expect(
+      getHandoutGovernance("notfallkarte-zuerich")?.webVersionPublished
+    ).toBe(true);
+    expect(HANDOUT_TEXT_VERSION_IDS).not.toContain("notfallkarte-zuerich");
+    expect(
+      getHandoutGovernance("notfallkarte-zuerich")?.approvedVersion
+    ).toBeUndefined();
+    expect(
+      getHandoutGovernance("notfallkarte-zuerich")?.retiredAssetSources
+    ).toEqual([
+      "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
+      "/notfallkarte-preview.webp",
+    ]);
+    expect(
+      materials.find(item => item.id === "notfallkarte-zuerich")
+    ).toMatchObject({
+      isHtml: true,
+      url: "/notfallkarte",
+    });
+    expect(
+      materials.find(item => item.id === "notfallkarte-zuerich")?.downloadUrl
+    ).toBeUndefined();
+    expect(
+      materials.find(item => item.id === "notfallkarte-zuerich")?.pdfUrl
+    ).toBeUndefined();
+    expect(
+      materials.find(item => item.id === "notfallkarte-zuerich")?.previewUrl
+    ).toBeUndefined();
+  });
+
+  it("keeps retired notfallkarte binaries out of the current project tree", () => {
+    const retiredRoot = path.resolve(
+      process.cwd(),
+      "qa/retired-handouts/notfallkarte-static-2026-10-05"
+    );
+    const oldWithheldRoot = path.resolve(
+      process.cwd(),
+      "qa/withheld-handouts/notfallkarte-safety-refresh-2026-10-05"
+    );
+
+    expect(fs.existsSync(path.join(retiredRoot, "README.md"))).toBe(true);
+    expect(
+      fs.existsSync(
+        path.join(retiredRoot, "Notfallkarte-Zuerich-Psychische-Krise.pdf")
+      )
+    ).toBe(false);
+    expect(
+      fs.existsSync(path.join(retiredRoot, "notfallkarte-preview.webp"))
+    ).toBe(false);
+    expect(fs.existsSync(oldWithheldRoot)).toBe(false);
+  });
+
   it("requires document type, asset version and an explicit approval state for every text version", () => {
     for (const id of HANDOUT_TEXT_VERSION_IDS) {
       const governance = getHandoutGovernance(id);
@@ -231,12 +292,13 @@ describe("handout governance", () => {
     }
   });
 
-  it("keeps crisis numbers out of non-acute handouts and limits the two handlungsnahe exceptions", () => {
+  it("keeps crisis numbers out of non-acute handouts and limits the safety-critical exceptions", () => {
     const crisisNumberPattern =
       /\b(?:112|117|143|144|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i;
     const handlungsnaheExceptions = new Set([
       "gespraeche-kippen",
       "beispiel-dialog",
+      "pause-statt-streit",
     ]);
 
     for (const version of allTextVersions) {

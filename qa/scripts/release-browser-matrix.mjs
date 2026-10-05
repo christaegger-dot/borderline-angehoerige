@@ -510,13 +510,16 @@ async function runFlow(page, profile) {
   });
 
   await step(
-    "Zurückgezogene Notfallplan-Dateien bleiben gesperrt",
+    "Zurückgezogene und ausgemusterte Krisen-Dateien bleiben gesperrt",
     async () => {
       const routes = [
         "/api/material-download/notfallplan-krise?disposition=inline",
         "/notfallplan-krise-v04.pdf",
         "/notfallplan-krise-v04-preview.webp",
         "/notfallplan-krise-v04-preview.png",
+        "/api/material-download/notfallkarte-zuerich?disposition=inline",
+        "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
+        "/notfallkarte-preview.webp",
       ];
 
       for (const route of routes) {

@@ -3,14 +3,20 @@ import { cn } from "@/lib/utils";
 export default function HandoutVisualPlaceholder({
   title,
   className,
+  readingLabel = "Aktuelle Lesefassung",
+  statusText = "Druckgrafik wird fachlich und visuell überarbeitet.",
+  ariaDescription = "aktuelle Textversion verfügbar; Druckgrafik in Überarbeitung",
 }: {
   title: string;
   className?: string;
+  readingLabel?: string;
+  statusText?: string;
+  ariaDescription?: string;
 }) {
   return (
     <div
       role="img"
-      aria-label={`${title}: aktuelle Textversion verfügbar; Druckgrafik in Überarbeitung`}
+      aria-label={`${title}: ${ariaDescription}`}
       className={cn(
         "flex aspect-[3/4] w-full flex-col justify-between rounded-md border p-5",
         className
@@ -28,7 +34,7 @@ export default function HandoutVisualPlaceholder({
           letterSpacing: "var(--tracking-caps)",
         }}
       >
-        Aktuelle Lesefassung
+        {readingLabel}
       </span>
       <div>
         <p
@@ -41,7 +47,7 @@ export default function HandoutVisualPlaceholder({
           className="mt-3 text-sm leading-relaxed"
           style={{ color: "var(--fg-secondary)" }}
         >
-          Druckgrafik wird fachlich und visuell überarbeitet.
+          {statusText}
         </p>
       </div>
     </div>

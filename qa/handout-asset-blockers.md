@@ -1,6 +1,6 @@
 # Handout Asset Blocker Report
 
-Stand: 2026-10-04
+Stand: 2026-10-05
 Quelle der Wahrheit: `client/src/content/handoutGovernance.ts`
 
 ## Zweck
@@ -23,22 +23,27 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   `qa/withheld-handouts/p1-illustrations-v3-2026-10-04/`.
 - Die Notfallplan-Textversion ist aktuell; die ältere PDF- und Bildfassung ist
   wegen fehlender Schutzklauseln vorläufig zurückgezogen.
+- Die aktuelle Notfallkarte bleibt unter `/notfallkarte` verfügbar und wird
+  dauerhaft ausschliesslich als Webfassung geführt. Die frühere PDF- und
+  WebP-Fassung ist aus dem aktuellen Projektbestand entfernt; ihre Prüfsummen
+  und Herkunft sind unter
+  `qa/retired-handouts/notfallkarte-static-2026-10-05/` dokumentiert. Die alten
+  Direktpfade bleiben dauerhaft gesperrt.
 
 ## Weiterhin freigegebene Visuals
 
 Diese Familien bleiben als Visual, PDF und Textversion auslieferbar, solange
 die automatischen und manuellen Freigabegates grün bleiben:
 
-| ID                         | Freigegebene Version                    |
-| -------------------------- | --------------------------------------- |
-| `notfallkarte-zuerich`     | `Notfallkarte-Zuerich-Psychische-Krise` |
-| `kinder`                   | `manus-kinder-v3`                       |
-| `dear`                     | `puk-dear-v1`                           |
-| `spiegeln-statt-aufsaugen` | `manus-spiegeln-statt-aufsaugen-v3`     |
-| `4-arten-von-grenzen`      | `puk-4-arten-von-grenzen-v1`            |
-| `garten`                   | `puk-garten-v1`                         |
-| `genesung-zahlen`          | `manus-genesung-zahlen-v3`              |
-| `stopp-technik`            | `manus-stopp-technik-v3`                |
+| ID                         | Freigegebene Version                |
+| -------------------------- | ----------------------------------- |
+| `kinder`                   | `manus-kinder-v3`                   |
+| `dear`                     | `puk-dear-v1`                       |
+| `spiegeln-statt-aufsaugen` | `manus-spiegeln-statt-aufsaugen-v3` |
+| `4-arten-von-grenzen`      | `puk-4-arten-von-grenzen-v1`        |
+| `garten`                   | `puk-garten-v1`                     |
+| `genesung-zahlen`          | `manus-genesung-zahlen-v3`          |
+| `stopp-technik`            | `manus-stopp-technik-v3`            |
 
 Weitere in der Governance als publiziert geführte P2-Handouts bleiben
 freigegeben, sofern ihre referenzierten Dateien vorhanden sind. Die Tabelle ist
@@ -52,7 +57,7 @@ oder direkt ausgeliefert:
 
 - sicherheits- oder krisenbezogen: `notfallplan-krise`, `alarm-modus`,
   `krisenkommunikation`, `anspannungskurve`, `grenzen-ohne-eskalation`,
-  `pause-statt-streit`, `zuhoeren-ohne-zustimmen`, `bruecke-gelaender`;
+  `pause-statt-streit`, `zuhoeren-ohne-zustimmen` und `bruecke-gelaender`;
 - erklärende Modelle: `leuchtturm`, `eisberg`, `spaltung`, `gehirn`,
   `fortschritt-paradox`, `remission-heilung`, `5-faktoren-genesung`,
   `rolle-genesungsprozess`;
@@ -63,6 +68,12 @@ oder direkt ausgeliefert:
 
 `4-phasen` und `im-krisenmodus` sind zusätzlich vollständig `withdrawn` und
 erscheinen auch nicht mehr als aktive Textversion.
+
+`notfallkarte-zuerich` ist kein vorläufiger Text-only-Blocker. Der Status
+`web-only` ist eine dauerhafte Formatentscheidung: Die gepflegte
+HTML-Webfassung bleibt aktiv, während keine separate PDF-, WebP- oder
+Thumbnail-Fassung angeboten oder neu erstellt wird. Die Materialbibliothek
+kennzeichnet diesen Stand ausdrücklich und verlinkt nur die Webfassung.
 
 ## Entwürfe ohne Publikationsfreigabe
 
@@ -84,6 +95,8 @@ erscheinen auch nicht mehr als aktive Textversion.
    `published` setzen.
 5. Danach Registry, Suchindex, Materialbibliothek, direkte Asset-URLs,
    Download-Funktion, Responsive Layout und Tastaturbedienung erneut prüfen.
+6. Für `web-only`-Materialien keine statischen Download-Assets erzeugen; alte
+   Pfade dauerhaft fail-closed halten.
 
 ## Mindestverifikation
 

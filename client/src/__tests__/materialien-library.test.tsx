@@ -13,7 +13,9 @@ describe("MaterialienLibrarySection", () => {
 
     expect(screen.getByText("Alle Materialien")).toBeInTheDocument();
     expect(
-      screen.getAllByText("Notfallkarte Zürich – Psychische Krise")
+      screen.getAllByRole("heading", {
+        name: "Notfallkarte Zürich – Psychische Krise",
+      })
     ).toHaveLength(1);
     expect(screen.getByText("Genesung in Zahlen")).toBeInTheDocument();
     expect(
@@ -22,20 +24,36 @@ describe("MaterialienLibrarySection", () => {
       })
     ).not.toBeInTheDocument();
 
-    const notfallkarteDownloadLinks = screen.getAllByRole("link", {
+    const notfallkarteDownloadLinks = screen.queryAllByRole("link", {
       name: /Notfallkarte Zürich – Psychische Krise herunterladen/i,
     });
-    expect(notfallkarteDownloadLinks).toHaveLength(1);
-    expect(notfallkarteDownloadLinks[0]).toHaveAttribute(
-      "href",
-      "/Notfallkarte-Zuerich-Psychische-Krise.pdf"
-    );
-    expect(notfallkarteDownloadLinks[0]).toHaveAttribute("download", "");
+    expect(notfallkarteDownloadLinks).toHaveLength(0);
     expect(
       screen.getAllByRole("link", {
         name: /Notfallkarte Zürich – Psychische Krise öffnen/i,
       })[0]
     ).toHaveAttribute("href", "/notfallkarte");
+    expect(
+      screen.getByText(
+        /Diese Notfallkarte wird ausschliesslich als Webfassung angeboten\. Eine separate PDF- oder Bildfassung gibt es nicht/i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Materialformat: Webfassung · keine separate PDF- oder Bildfassung"
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", {
+        name: /Notfallkarte Zürich – Psychische Krise öffnen/i,
+      })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("img", {
+        name: /Notfallkarte Zürich – Psychische Krise: Webfassung verfügbar; keine separate PDF- oder Bildfassung/i,
+      })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Webfassung")).toBeInTheDocument();
     expect(
       screen.getAllByRole("link", {
         name: /Textversion lesen: Notfallplan Krise – Suizidgedanken & Selbstverletzung/i,

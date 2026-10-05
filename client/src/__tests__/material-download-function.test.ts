@@ -17,6 +17,7 @@ describe("material-download netlify function adapter", () => {
   });
 
   it.each([
+    "notfallkarte-zuerich",
     "4-phasen",
     "im-krisenmodus",
     "notfallplan-krise",

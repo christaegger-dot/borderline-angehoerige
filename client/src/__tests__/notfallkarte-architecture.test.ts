@@ -122,6 +122,132 @@ describe("notfallkarte architecture", () => {
     expect(soforthilfeDirect).toMatch(/Gewalt, Bedrohung oder Übergriff/);
   });
 
+  it("keeps retired static notfallkarte assets and future promises out of maintained crisis pages", () => {
+    const browserCard = fs.readFileSync(
+      path.join(repoRoot, "client/public/notfallkarte.html"),
+      "utf8"
+    );
+    const soforthilfeDirect = fs.readFileSync(
+      path.join(repoRoot, "client/public/soforthilfe/index.html"),
+      "utf8"
+    );
+
+    for (const source of [browserCard, soforthilfeDirect]) {
+      expect(source).not.toContain(
+        "/Notfallkarte-Zuerich-Psychische-Krise.pdf"
+      );
+      expect(source).not.toContain("/notfallkarte-preview.webp");
+    }
+
+    expect(browserCard).toContain(
+      "Webfassung · keine separate PDF- oder Bildfassung"
+    );
+    expect(browserCard).not.toContain('id="print-notfallkarte"');
+    expect(browserCard).not.toContain("Drucken / PDF");
+    expect(soforthilfeDirect).toContain('href="/notfallkarte"');
+    expect(soforthilfeDirect).toContain(
+      "Die Notfallkarte wird ausschliesslich als Webfassung angeboten"
+    );
+    expect(soforthilfeDirect).not.toContain("neu bereitgestellt");
+    expect(soforthilfeDirect).not.toContain("in fachlicher Prüfung");
+  });
+
+  it("keeps unsafe crisis guarantees out of all maintained static variants", () => {
+    const variants = [
+      fs.readFileSync(
+        path.join(repoRoot, "client/public/notfallkarte.html"),
+        "utf8"
+      ),
+      fs.readFileSync(
+        path.join(repoRoot, "client/public/notfallkarte-print.html"),
+        "utf8"
+      ),
+      fs.readFileSync(
+        path.join(repoRoot, "client/public/soforthilfe-print.html"),
+        "utf8"
+      ),
+      fs.readFileSync(
+        path.join(repoRoot, "client/public/soforthilfe/index.html"),
+        "utf8"
+      ),
+    ];
+
+    for (const source of variants) {
+      expect(source).not.toMatch(
+        /funktioniert immer|auch ohne SIM-Karte|es kommt niemand vorbei|keine Konsequenzen/i
+      );
+    }
+
+    expect(variants[0]).toContain("ohne SIM nicht");
+    expect(variants[1]).toContain("ohne SIM-Karte ist");
+    expect(variants[2]).toContain("ohne SIM-Karte ist");
+  });
+
+  it("does not assign relatives sole monitoring or safety responsibility", () => {
+    const crisisPage = fs.readFileSync(
+      path.join(repoRoot, "client/src/pages/UnterstuetzenKrise.tsx"),
+      "utf8"
+    );
+    const textVersion = fs.readFileSync(
+      path.join(
+        repoRoot,
+        "client/src/content/handoutTextVersionContent/soforthilfe.content.ts"
+      ),
+      "utf8"
+    );
+    const wayfinder = fs.readFileSync(
+      path.join(
+        repoRoot,
+        "client/src/components/interactive/SituationsWegweiser.tsx"
+      ),
+      "utf8"
+    );
+    const communicationTextVersions = fs.readFileSync(
+      path.join(
+        repoRoot,
+        "client/src/content/handoutTextVersionContent/kommunizieren.content.ts"
+      ),
+      "utf8"
+    );
+    const crisisHandoutGenerator = fs.readFileSync(
+      path.join(
+        repoRoot,
+        "qa/handout-render-sources/notfallplan-krise-v04.html"
+      ),
+      "utf8"
+    );
+
+    expect(crisisPage).toContain("die Gefahr allein zu beurteilen");
+    expect(crisisPage).toContain("ohne professionelle Hilfe zu überwachen");
+    expect(textVersion).toContain("keine alleinige Überwachungs-");
+    expect(textVersion).toContain("Anweisungen der Leitstelle");
+    expect(wayfinder).toContain(
+      "Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung"
+    );
+    expect(wayfinder).toContain("Folgen Sie den Anweisungen der Leitstelle");
+    expect(communicationTextVersions).toContain(
+      "Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung"
+    );
+    expect(communicationTextVersions).toContain(
+      "Folgen Sie den Anweisungen der Leitstelle"
+    );
+    expect(crisisHandoutGenerator).toContain(
+      "keine alleinige Überwachungs- oder"
+    );
+    expect(crisisHandoutGenerator).toContain(
+      "den Anweisungen der Leitstelle folgen"
+    );
+    expect(textVersion).not.toMatch(
+      /trotz akuter Gefahr ohne Hilfe, Sicherheitsplan oder professionelle Einschätzung allein lassen/
+    );
+    expect(communicationTextVersions).not.toMatch(
+      /Lassen Sie eine akut gefährdete Person nicht ohne Hilfe oder professionelle Einschätzung allein/
+    );
+    expect(crisisHandoutGenerator).not.toMatch(
+      /die Person nach Möglichkeit nicht ohne Hilfe, Notfallplan oder professionelle Einschätzung allein lassen/i
+    );
+  });
+
   it("keeps the static browser card responsive without scaled mobile hitboxes", () => {
     const browserCardStyles = fs.readFileSync(
       path.join(repoRoot, "client/public/notfallkarte.css"),
@@ -148,11 +274,13 @@ describe("notfallkarte architecture", () => {
 
     expect(governance).toBeDefined();
     expect(browserCard).toContain(
-      `Fachlich geprüft am: ${formatDate(governance?.lastReviewed)}`
+      `Letzte dokumentierte Fachprüfung: ${formatDate(governance?.lastReviewed)}`
     );
     expect(browserCard).toContain(
-      `Nächste Prüfung: ${formatDate(governance?.nextReviewDue)}`
+      `Erneute Fachprüfung ausstehend (fällig seit ${formatDate(governance?.nextReviewDue)})`
     );
+    expect(browserCard).toContain("redaktioneller Arbeitsstand");
+    expect(browserCard).toContain(formatDate(governance?.editorialUpdated));
     expect(browserCard).toContain(`Verantwortlich: ${governance?.owner ?? ""}`);
   });
 });

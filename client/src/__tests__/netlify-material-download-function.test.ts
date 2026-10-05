@@ -73,15 +73,18 @@ describe("netlify material-download function adapter", () => {
     );
   });
 
-  it("returns 404 for a text-only handout", async () => {
-    const req = new Request(
-      "https://example.com/api/material-download/notfallplan-krise"
-    );
+  it.each(["notfallplan-krise", "notfallkarte-zuerich"])(
+    "returns 404 when no static download is published for %s",
+    async id => {
+      const req = new Request(
+        `https://example.com/api/material-download/${id}`
+      );
 
-    const response = await materialDownloadFunction(req, {
-      params: { id: "notfallplan-krise" },
-    });
+      const response = await materialDownloadFunction(req, {
+        params: { id },
+      });
 
-    expect(response.status).toBe(404);
-  });
+      expect(response.status).toBe(404);
+    }
+  );
 });

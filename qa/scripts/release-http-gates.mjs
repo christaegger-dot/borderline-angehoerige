@@ -1,7 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { getHandoutDownloadHref } from "../../client/src/content/handouts.ts";
-import { isHandoutVisualPublished } from "../../client/src/content/handoutGovernance.ts";
+import {
+  isHandoutVisualPublished,
+  isHandoutWebVersionPublished,
+} from "../../client/src/content/handoutGovernance.ts";
 import { materials } from "../../client/src/content/materialien.ts";
 import { handoutTextVersionMetas } from "../../client/src/content/handoutTextMetas.ts";
 import { SECURITY_HEADERS } from "../../shared/securityHeaders.ts";
@@ -97,6 +100,33 @@ const HEADER_CASES = [
     redirect: "manual",
     requiredHeaders: SECURITY_HEADERS,
   },
+  {
+    id: "retired-notfallkarte-api",
+    title: "Dauerhaft nicht angebotene Notfallkarte über API",
+    kind: "header",
+    route: "/api/material-download/notfallkarte-zuerich?disposition=inline",
+    expectedStatus: 404,
+    redirect: "manual",
+    requiredHeaders: SECURITY_HEADERS,
+  },
+  {
+    id: "retired-notfallkarte-static",
+    title: "Ausgemusterte statische Notfallkarte als Direktdatei",
+    kind: "header",
+    route: "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
+    expectedStatus: 404,
+    redirect: "manual",
+    requiredHeaders: SECURITY_HEADERS,
+  },
+  {
+    id: "retired-notfallkarte-preview",
+    title: "Ausgemusterte Notfallkarten-Vorschau",
+    kind: "header",
+    route: "/notfallkarte-preview.webp",
+    expectedStatus: 404,
+    redirect: "manual",
+    requiredHeaders: SECURITY_HEADERS,
+  },
 ];
 
 function nowIso() {
@@ -140,7 +170,7 @@ function materialPdfCases() {
   const casesById = new Map();
 
   for (const item of materials) {
-    if (!item.isHtml && !isHandoutVisualPublished(item.id)) {
+    if (!isHandoutVisualPublished(item.id)) {
       continue;
     }
 
@@ -192,7 +222,7 @@ function materialPreviewCases() {
   const casesByRoute = new Map();
 
   for (const item of materials) {
-    if (!item.isHtml && !isHandoutVisualPublished(item.id)) {
+    if (!isHandoutVisualPublished(item.id)) {
       continue;
     }
 
@@ -243,7 +273,7 @@ function textVersionCases() {
   return [
     ...cases,
     ...materials
-      .filter(item => item.isHtml)
+      .filter(item => item.isHtml && isHandoutWebVersionPublished(item.id))
       .map(item => {
         return {
           id: item.id,

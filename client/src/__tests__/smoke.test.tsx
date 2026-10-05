@@ -713,7 +713,7 @@ describe("Smoke Tests – Kritische Seiten", () => {
     ).toBeInTheDocument();
     expect(
       await screen.findByText(
-        /Symptome, Funktionsfähigkeit, Lebensqualität und persönliche Recovery können sich unterschiedlich entwickeln\./i
+        /Beschwerden, Alltag und Teilhabe, Lebensqualität und persönliche Recovery können sich unterschiedlich entwickeln\./i
       )
     ).toBeInTheDocument();
     expect(

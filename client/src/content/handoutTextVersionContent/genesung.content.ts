@@ -57,16 +57,16 @@ export const handoutTextVersions = [
   createHandoutTextVersion("remission-heilung", {
     kicker: "Textversion",
     summary:
-      "Besserung ist möglich. Diagnostische Remission, Alltag und Teilhabe sowie persönliche Recovery beschreiben unterschiedliche Aspekte und müssen sich nicht gleichzeitig verändern.",
+      "Besserung ist möglich. Symptomatische Remission, Alltag und Teilhabe sowie persönliche Recovery beschreiben unterschiedliche Aspekte und müssen sich nicht gleichzeitig verändern.",
     intro: [
-      "Forschung und Versorgung verwenden unterschiedliche Begriffe für Veränderung. Dieses Blatt trennt diagnostische Remission, Alltag und Teilhabe sowie persönliche Recovery.",
+      "Forschung und Versorgung verwenden unterschiedliche Begriffe für Veränderung. Dieses Blatt trennt symptomatische Remission, Alltag und Teilhabe sowie persönliche Recovery.",
       "Keiner dieser Begriffe bewertet den Wert eines Menschen oder schreibt ein bestimmtes Ziel oder Tempo vor.",
     ],
     sections: [
       {
-        title: "Diagnostische Remission",
+        title: "Symptomatische Remission",
         bullets: [
-          "In Verlaufsstudien bedeutet Remission, dass die Diagnosekriterien während eines festgelegten Zeitraums nicht mehr erfüllt sind.",
+          "In Verlaufsstudien bedeutet symptomatische Remission, dass die Diagnosekriterien während eines festgelegten Zeitraums nicht mehr erfüllt sind.",
           "Die genaue Definition und die verlangte Dauer unterscheiden sich zwischen Studien.",
           "Remission bedeutet nicht automatisch, dass alle Beschwerden verschwunden sind oder keine Unterstützung mehr nötig ist.",
         ],
@@ -90,8 +90,8 @@ export const handoutTextVersions = [
       {
         title: "Zum Begriff «Heilung»",
         bullets: [
-          "«Heilung» wird unterschiedlich verstanden und ist bei Borderline kein einheitlich definierter wissenschaftlicher Endpunkt.",
-          "Für sachliche Informationen sind präzisere Begriffe wie Remission, Funktionsfähigkeit, Lebensqualität und persönliche Recovery hilfreicher.",
+          "«Heilung» wird unterschiedlich verstanden.",
+          "Studien und Leitlinien sprechen meist nicht von «Heilung», sondern genauer von Remission, Alltag und Teilhabe, Lebensqualität oder persönlicher Recovery.",
           "Eine Einteilung in «geheilt» oder «für immer krank» wird individuellen Verläufen nicht gerecht.",
         ],
       },
@@ -99,13 +99,13 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Veränderung hat mehrere Seiten",
         calloutText:
-          "Symptome, Funktionsfähigkeit, Lebensqualität und persönliche Recovery können sich unterschiedlich entwickeln. Ein einzelner Begriff beschreibt nicht den ganzen Genesungsweg.",
+          "Beschwerden, Alltag und Teilhabe, Lebensqualität und persönliche Recovery können sich unterschiedlich entwickeln. Ein einzelner Begriff beschreibt nicht den ganzen Genesungsweg.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Vermeiden Sie Vorgaben von aussen dazu, wie schnell oder wie weit Veränderung gehen soll.",
-          "Fragen Sie die Person, welche Veränderungen für sie selbst bedeutsam sind, statt Fortschritt von aussen festzulegen.",
+          "Fragen Sie – wenn die Person darüber sprechen möchte –, welche Veränderungen für sie selbst bedeutsam sind, statt Fortschritt von aussen festzulegen.",
           "Nehmen Sie erneute Belastungen ernst, ohne sie als persönliches Scheitern zu deuten.",
           "Achten Sie zugleich auf Ihre eigenen Grenzen und Ihren Unterstützungsbedarf.",
         ],
@@ -122,7 +122,7 @@ export const handoutTextVersions = [
       "Behandlung, körperliche und psychische Gesundheit, gewünschte Beziehungen, Lebensbedingungen und der individuelle Verlauf können bedeutsam sein. Ihre Bedeutung ist von Person zu Person verschieden.",
     intro: [
       "Die fünf Bereiche sind eine redaktionelle Orientierung, kein validiertes Vorhersagemodell und keine Rangliste.",
-      "Sie beschreiben mögliche persönliche, soziale und professionelle Bedingungen. Angehörige müssen keinen dieser Bereiche herstellen oder absichern.",
+      "Sie beschreiben mögliche persönliche, soziale und professionelle Einflussbereiche. Angehörige müssen keinen dieser Bereiche herstellen oder absichern.",
     ],
     sections: [
       {
@@ -134,11 +134,11 @@ export const handoutTextVersions = [
           },
           {
             title: "Körperliche und psychische Gesundheit",
-            text: "Körperliche Beschwerden und weitere psychische Erkrankungen werden als eigenständige Themen berücksichtigt. Medikamente sind kein allgemeiner Genesungsfaktor.",
+            text: "Körperliche Beschwerden und weitere psychische Erkrankungen werden eigenständig behandelt, bei Bedarf auch mit Medikamenten. Für Borderline selbst sind Medikamente keine Kernbehandlung; Änderungen nur mit der behandelnden Fachperson.",
           },
           {
             title: "Gewählte Beziehungen und Unterstützung",
-            text: "Soziale oder praktische Unterstützung kann hilfreich sein, wenn sie gewünscht ist. Angehörige müssen Genesung nicht absichern.",
+            text: "Soziale, praktische oder Peer-Unterstützung kann hilfreich sein, wenn sie gewünscht ist. Angehörige müssen Genesung nicht absichern.",
           },
           {
             title: "Lebensbedingungen und Teilhabe",
@@ -154,20 +154,20 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Keine Fünf-Punkte-Formel",
         calloutText:
-          "Die fünf Bereiche sind eine Orientierung. Ziele, Prioritäten und gewünschte Unterstützung werden mit der betroffenen Person geklärt.",
+          "Die fünf Bereiche sind eine Orientierung ohne Reihenfolge. Welche Bereiche wichtig sind und welche Unterstützung passt, bestimmt die betroffene Person selbst.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Fragen Sie, ob und welche Unterstützung überhaupt gewünscht ist.",
           "Bieten Sie nur an, was für Sie freiwillig, möglich und sicher ist.",
-          "Behalten Sie auch praktische oder strukturelle Belastungen im Blick; nicht alles lässt sich innerhalb einer Familie lösen.",
+          "Praktische oder strukturelle Belastungen (z. B. Wohnen, Finanzen) lassen sich oft nicht innerhalb der Familie lösen; Sozialberatungen können unterstützen.",
           "Erinnern Sie sich: Genesung ist individuell und keine Leistung der Familie.",
         ],
       },
     ],
     sourceLine:
-      "Quellen: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78. Redaktionelle Orientierung, kein validiertes Fünf-Faktoren-Modell.",
+      "Quellen: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78; AWMF-S3 Psychosoziale Therapien bei schweren psychischen Erkrankungen (2025), Kap. 7.2. Redaktionelle Orientierung und Synthese, kein validiertes Fünf-Faktoren-Modell.",
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
@@ -178,6 +178,7 @@ export const handoutTextVersions = [
     intro: [
       "Beziehungen können Genesungswege berühren, doch es gibt keine einheitliche Angehörigenrolle. Diese Orientierung trennt freiwillige Angebote von Erwartungen und Überverantwortung.",
       "Sie finden mögliche Angebote, klare Nicht-Aufgaben und drei kurze Selbstchecks für den Alltag.",
+      "Dieses Blatt richtet sich an Angehörige erwachsener Personen. Eltern Minderjähriger und Personen mit Beistandschaft oder ausdrücklich übernommenen Aufgaben klären ihre Rolle mit den Fachpersonen.",
     ],
     sections: [
       {
@@ -185,7 +186,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Absprachen",
-            text: "Gemeinsame Absprachen anbieten, soweit Sie diese einhalten können.",
+            text: "Absprachen anbieten, soweit Sie diese einhalten können, und fragen, was gewünscht ist.",
           },
           {
             title: "Zuversicht",
@@ -201,7 +202,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Information anbieten",
-            text: "Auf Wunsch Informationen oder Begleitung anbieten. Über Behandlung entscheidet die betroffene Person gemeinsam mit den Behandelnden.",
+            text: "Auf Wunsch Informationen oder Begleitung anbieten. Urteilsfähige Erwachsene entscheiden selbst über ihre Behandlung, gemeinsam mit den Behandelnden.",
           },
         ],
       },
@@ -210,15 +211,15 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Fachliche Behandlung übernehmen",
-            text: "Angehörige ersetzen keine Behandlung und müssen sie nicht koordinieren.",
+            text: "Angehörige ersetzen keine Behandlung und müssen sie nicht koordinieren – ausser etwa als Eltern Minderjähriger oder Beistand.",
           },
           {
-            title: "Veränderung erzwingen",
+            title: "Genesung bewirken",
             text: "Genesung lässt sich nicht erzwingen und hängt von persönlichen, sozialen, materiellen und professionellen Bedingungen ab. Ein schwieriger Verlauf ist kein Beleg für fehlenden Willen.",
           },
           {
             title: "Immer verfügbar sein",
-            text: "Sie brauchen auch Pausen.",
+            text: "Sie brauchen auch Pausen. Eine Pause ist kein Beziehungsabbruch.",
           },
           {
             title: "Eigene Bedürfnisse zurückstellen",
@@ -253,8 +254,8 @@ export const handoutTextVersions = [
         title: "Was können Sie tun?",
         bullets: [
           "Prüfen Sie regelmässig: Ist das, was ich anbiete, gewünscht, freiwillig, sicher und für mich tragbar?",
-          "Sprechen Sie mit Fachpersonen, wenn Sie bei Zuständigkeiten oder Grenzen unsicher sind.",
-          "Erinnern Sie sich: Ihre Gesundheit ist kein Beitrag, den Sie einer anderen Person schulden.",
+          "Allgemeine Beratung ist auch ohne Zustimmung der betroffenen Person möglich; Auskünfte über ihre Behandlung nur mit ihrer Zustimmung. Bei Minderjährigen oder fehlender Urteilsfähigkeit gelten besondere Regeln.",
+          "Erinnern Sie sich: Ihre Gesundheit zählt für sich – nicht erst als Beitrag zur Genesung einer anderen Person.",
         ],
       },
     ],

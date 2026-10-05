@@ -314,6 +314,9 @@ describe("handout governance", () => {
       "gespraeche-kippen",
       "beispiel-dialog",
       "pause-statt-streit",
+      // Issue 625, Befund GS-08: Praxisblatt zum Beenden eines Gesprächs
+      // braucht dieselbe Schutzregel bei Gewalt und Selbstgefährdung.
+      "lmk",
     ]);
 
     for (const version of allTextVersions) {

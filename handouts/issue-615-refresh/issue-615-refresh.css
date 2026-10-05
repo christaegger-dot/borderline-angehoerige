@@ -344,6 +344,20 @@ h1 {
   transform: translateY(-2mm);
 }
 
+.node.node--unnumbered::before {
+  display: none;
+}
+
+.node.node--aside {
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.node__subtitle {
+  margin: 0 0 1.2mm;
+  font-weight: 500;
+}
+
 .key {
   display: grid;
   grid-template-columns: 36mm 1fr;
@@ -367,14 +381,31 @@ h1 {
   border: 0.35mm solid var(--line);
 }
 
-.sheet[data-id="remission-heilung"] .next ul {
+.sheet[data-id="remission-heilung"] .next ul,
+.sheet[data-id="rolle-genesungsprozess"] .next ul {
   margin: 0;
   padding-left: 5mm;
   font-size: 8.5pt;
   line-height: 1.28;
 }
 
-.sheet[data-id="remission-heilung"] .next li + li {
+.sheet[data-id="remission-heilung"] .next li + li,
+.sheet[data-id="rolle-genesungsprozess"] .next li + li {
+  margin-top: 0.8mm;
+}
+
+.main.main--with-actions {
+  grid-template-rows: minmax(60mm, 1fr) auto auto auto;
+}
+
+.next.next--actions ul {
+  margin: 0;
+  padding-left: 5mm;
+  font-size: 9.2pt;
+  line-height: 1.3;
+}
+
+.next.next--actions li + li {
   margin-top: 0.8mm;
 }
 

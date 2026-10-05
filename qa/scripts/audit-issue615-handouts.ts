@@ -45,15 +45,27 @@ const requiredSourceText: Record<string, string[]> = {
   "remission-heilung": [
     "Achten Sie zugleich auf Ihre eigenen Grenzen und Ihren Unterstützungsbedarf.",
     "Kap. 7.2.",
+    "Symptomatische Remission",
+  ],
+  "5-faktoren-genesung": [
+    "Für Borderline selbst sind Medikamente keine Kernbehandlung; Änderungen nur mit der behandelnden Fachperson.",
+    "Die fünf Bereiche sind eine Orientierung ohne Reihenfolge.",
   ],
   "rolle-genesungsprozess": [
-    "Über Behandlung entscheidet die betroffene Person gemeinsam mit den Behandelnden.",
+    "Urteilsfähige Erwachsene entscheiden selbst über ihre Behandlung, gemeinsam mit den Behandelnden.",
+    "Auskünfte über ihre Behandlung nur mit ihrer Zustimmung.",
   ],
   "grenzen-erkennen": [
     "Neue, starke oder anhaltende körperliche Beschwerden sollten medizinisch abgeklärt werden.",
     "WHO, Stress – Questions and Answers (30. März 2026)",
+    "Unterstützung finden Sie z. B. bei einer Angehörigenberatung oder in der Hausarztpraxis",
   ],
-  lmk: ["Diese Schutzregel gilt diagnoseunabhängig in jeder Beziehung."],
+  lmk: [
+    "Diese Schutzregel gilt diagnoseunabhängig in jeder Beziehung.",
+    "ohne etwas anzukündigen oder zu erklären",
+    "Bei vermuteter unmittelbarer Selbstgefährdung der anderen Person",
+    "Wenn Kinder oder andere Personen auf Ihre Versorgung angewiesen sind",
+  ],
 };
 
 type Asset = {

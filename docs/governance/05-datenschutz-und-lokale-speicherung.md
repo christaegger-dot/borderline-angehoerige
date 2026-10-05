@@ -16,7 +16,8 @@ Lokale Speicherung im Browser ist nur dort zulässig, wo sie einen klaren Nutzwe
 
 Besonders relevant:
 
-- Notfallkarte
+- persönliche Notfallkarte, falls das Werkzeug nach separater Prüfung
+  veröffentlicht wird
 - Theme- oder Komforteinstellungen
 
 ## Anforderungen an lokale Speicherung
@@ -26,9 +27,17 @@ Besonders relevant:
 - Möglichkeit, lokale Daten wieder zu löschen
 - vorsichtiger Umgang mit gemeinsam genutzten Geräten
 
-## Hochrisiko-Fall Notfallkarte
+## Unveröffentlichtes Hochrisiko-Werkzeug Notfallkarte
 
-Für die Notfallkarte gilt zusätzlich:
+`/notfallkarte/erstellen` bleibt gemäss
+`12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md` aus der öffentlichen
+Produktionsauslieferung ausgeschlossen und gibt dort `404` zurück, bis eine
+separate klinische, datenschutzrechtliche und nutzungsbezogene Prüfung
+abgeschlossen ist. In einer geschützten Prüfumgebung darf es direkt erreichbar
+sein. Es gibt keine bereits gespeicherten Krisenpläne, für die eine Migration
+behauptet oder vorgesehen werden müsste.
+
+Falls das Werkzeug später freigegeben wird, gilt zusätzlich:
 
 - persönliche Einträge verlassen das Gerät nicht
 - ein Löschpfad für lokale Daten muss vorhanden sein
@@ -40,6 +49,8 @@ Für die Notfallkarte gilt zusätzlich:
   Einverständnis eingetragen
 - gemeinsam genutzte Geräte, Ausdrucke und die Weitergabe einer Karte werden
   als eigenständige Vertraulichkeitsrisiken benannt
+- Standardkontakte werden nicht als zweite, möglicherweise veraltete Kopie der
+  zentralen Seite `/soforthilfe` geführt
 
 ## Release-Regel
 

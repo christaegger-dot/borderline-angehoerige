@@ -1,5 +1,12 @@
 # P1-Sicherheits- und Kohärenzpaket vom 05.10.2026
 
+> **Historischer Stand:** Dieses Protokoll bleibt als Nachweis des damaligen
+> Pakets erhalten. Soweit es `/notfallkarte`, verteilte Notfallkontakte oder
+> die Platzierung von Soforthilfe beschreibt, ist es für die weitere
+> Projektarbeit durch
+> `12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md` vorläufig ausser
+> Kraft gesetzt. Der institutionelle Grundsatzentscheid bleibt offen.
+
 ## Status und Zweck
 
 Dieses Protokoll dokumentiert ein KI-gestütztes redaktionelles und technisches
@@ -13,6 +20,9 @@ abgrenzbare Barrierefreiheits- und Reflow-Probleme.
 ## Umgesetzte Änderungen
 
 ### Krisen- und Soforthilfe
+
+> Die folgenden Punkte dokumentieren den Stand vom 05.10.2026 und sind keine
+> aktuelle Platzierungs- oder Veröffentlichungsregel.
 
 - Unbelegte Garantien zu Notrufverbindungen ohne SIM-Karte wurden entfernt.
 - Aussagen zu Beratungsangeboten versprechen weder absolute Vertraulichkeit
@@ -35,6 +45,12 @@ abgrenzbare Barrierefreiheits- und Reflow-Probleme.
   Empfehlungen getrennt und nicht mit Kaufaufrufen versehen.
 
 ### Publikationshygiene der Notfallkarte
+
+> Der Zielzustand des Arbeitsentscheids vom 06.10.2026 sieht für die Webfassung
+> `/notfallkarte` eine dauerhafte Umleitung auf `/soforthilfe` vor; sie darf
+> nicht als zweite operative Kontaktquelle bestehen. Der separat bestätigte
+> dauerhafte Verzicht auf statische PDF-, WebP- und Thumbnail-Fassungen bleibt
+> gültig.
 
 - Die aktuelle Webfassung unter `/notfallkarte` bleibt zugänglich.
 - Die Notfallkarte wird dauerhaft ohne separat veröffentlichte PDF- oder

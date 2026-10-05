@@ -36,7 +36,13 @@ Der verbindliche Prüfmassstab steht in
 
 ## Grenzen des Angebots
 
-Die Website ersetzt keine medizinische, psychotherapeutische, juristische oder notfallpsychiatrische Abklärung. Bei akuter Gefahr verweist sie konsequent auf Soforthilfe und lokale Notfalldienste.
+Die Website ersetzt keine medizinische, psychotherapeutische, juristische oder
+notfallpsychiatrische Abklärung. Die Fachstelle bietet Beratung und
+Orientierung, aber keine Krisenintervention. Ein stabiler, nummernfreier und
+visuell nachgeordneter Zugang führt zur zentral gepflegten Seite
+`/soforthilfe`; operative Kontakte werden nicht in psychoedukativen Inhalten
+wiederholt. Der verbindliche Wortlaut und die Ausnahmen stehen in
+`12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md`.
 
 ## Sprachregeln
 

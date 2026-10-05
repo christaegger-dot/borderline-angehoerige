@@ -25,7 +25,8 @@ Bei jedem Review prüfen:
 - Anti-Stigma- und Perspektivenstandard in allen Fassungen
 - Autonomie, Einwilligung und Vertraulichkeit der erkrankten Person
 - keine Herstellungsverantwortung oder Schuldzuweisung an Angehörige
-- Krisenlogik (wird klar auf Soforthilfe verwiesen?)
+- Krisenlogik (ist der zentrale, nummernfreie Sicherheitsweg konsistent und
+  werden operative Kontakte nicht ausserhalb von `/soforthilfe` dupliziert?)
 - Quellenlage
 - lokale Relevanz (Schweiz / Zürich)
 
@@ -34,7 +35,8 @@ Bei jedem Review prüfen:
 Änderungen an Hochrisiko-Seiten dürfen nur erfolgen, wenn:
 
 - fachliche Aussage geprüft wurde
-- Soforthilfe-Logik intakt ist
+- die zentrale Soforthilfe-Logik intakt ist und keine verteilten Kontaktkopien
+  entstehen
 - keine missverständlichen Formulierungen entstehen
 - keine Diagnose zur Erklärung von Motiven, Gewalt oder Gefährlichkeit
   verwendet wird

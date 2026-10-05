@@ -42,9 +42,11 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   HTML-Textversionen bleiben erreichbar.
 - Die Notfallplan-Textversion ist aktuell; die ältere PDF- und Bildfassung ist
   wegen fehlender Schutzklauseln vorläufig zurückgezogen.
-- Die aktuelle Notfallkarte bleibt unter `/notfallkarte` verfügbar und wird
-  dauerhaft ausschliesslich als Webfassung geführt. Die frühere PDF- und
-  WebP-Fassung ist aus dem aktuellen Projektbestand entfernt; ihre Prüfsummen
+- Die allgemeine Notfallkarte wird gemäss
+  `docs/governance/12-krisenwege-und-soforthilfe-entscheid-2026-10-06.md`
+  dauerhaft auf `/soforthilfe` umgeleitet und darf nicht als zweite operative
+  Kontaktquelle bestehen. Die
+  frühere PDF- und WebP-Fassung bleibt dauerhaft ausgemustert; ihre Prüfsummen
   und Herkunft sind unter
   `qa/retired-handouts/notfallkarte-static-2026-10-05/` dokumentiert. Die alten
   Direktpfade bleiben dauerhaft gesperrt.
@@ -89,11 +91,9 @@ oder direkt ausgeliefert:
 `4-phasen` und `im-krisenmodus` sind zusätzlich vollständig `withdrawn` und
 erscheinen auch nicht mehr als aktive Textversion.
 
-`notfallkarte-zuerich` ist kein vorläufiger Text-only-Blocker. Der Status
-`web-only` ist eine dauerhafte Formatentscheidung: Die gepflegte
-HTML-Webfassung bleibt aktiv, während keine separate PDF-, WebP- oder
-Thumbnail-Fassung angeboten oder neu erstellt wird. Die Materialbibliothek
-kennzeichnet diesen Stand ausdrücklich und verlinkt nur die Webfassung.
+`notfallkarte-zuerich` bleibt dauerhaft ohne PDF-, WebP- oder
+Thumbnail-Fassung. Die frühere HTML-Webfassung wird nicht mehr als eigenes
+Material angeboten; ihr Pfad leitet auf `/soforthilfe` um.
 
 ## Entwürfe ohne Publikationsfreigabe
 

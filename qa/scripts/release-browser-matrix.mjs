@@ -390,7 +390,7 @@ async function runFlow(page, profile) {
       .getByRole("heading", { level: 1, name: /Materialien/i })
       .waitFor();
     await page
-      .getByRole("tab", { name: /Verstehen/i })
+      .getByRole("button", { name: /Verstehen/i })
       .first()
       .click();
     await page.locator("article").first().waitFor();

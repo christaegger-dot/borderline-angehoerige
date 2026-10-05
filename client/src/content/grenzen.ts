@@ -49,8 +49,9 @@ export const grenzenItems: GrenzenItem[] = [
   },
   {
     id: "grenzen-erkennen",
-    title: "Grenzen erkennen",
-    description: "5 Warnsignale Ihres Körpers",
+    title: "Belastung wahrnehmen, Grenzen prüfen",
+    description:
+      "Mögliche Stresszeichen beobachten, ohne ihre Ursache vorwegzunehmen",
     url: "/infografiken/manus-grenzen-erkennen-v1.webp",
     thumbnailUrl:
       "/infografiken/extras/thumbnails/manus-grenzen-erkennen-v1.webp",
@@ -59,8 +60,9 @@ export const grenzenItems: GrenzenItem[] = [
   },
   {
     id: "lmk",
-    title: "Wenn Grenzen nicht respektiert werden",
-    description: "Grenze setzen, Konsequenz ankündigen, ruhig handeln",
+    title: "Grenze benennen – eigenen Schritt wählen",
+    description:
+      "Den eigenen Handlungsspielraum klar mitteilen und schützen, ohne Strafe oder Wirkungsgarantie",
     url: "/infografiken/manus-lmk-v1.webp",
     thumbnailUrl: "/infografiken/extras/thumbnails/manus-lmk-v1.webp",
     pdfUrl: "/infografiken/manus-lmk-v1.pdf",

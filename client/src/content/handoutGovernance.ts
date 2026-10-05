@@ -84,8 +84,14 @@ export const handoutGovernance = {
   leuchtturm: {
     id: "leuchtturm",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-leuchtturm-v1",
+    assetVersion: "puk-leuchtturm-orientierung-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-leuchtturm-v1.pdf",
+      "/infografiken/manus-leuchtturm-v1.webp",
+      "/infografiken/extras/thumbnails/manus-leuchtturm-v1.webp",
+    ],
   },
   eisberg: {
     id: "eisberg",
@@ -148,32 +154,62 @@ export const handoutGovernance = {
   "drei-saeulen": {
     id: "drei-saeulen",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-drei-saeulen-v1",
+    assetVersion: "puk-drei-orientierungspunkte-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-drei-saeulen-v1.pdf",
+      "/infografiken/manus-drei-saeulen-v1.webp",
+      "/infografiken/extras/thumbnails/manus-drei-saeulen-v1.webp",
+    ],
   },
   "konsistenz-prinzip": {
     id: "konsistenz-prinzip",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-konsistenz-prinzip-v1",
+    assetVersion: "puk-verlaessliche-absprachen-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-konsistenz-prinzip-v1.pdf",
+      "/infografiken/manus-konsistenz-prinzip-v1.webp",
+      "/infografiken/extras/thumbnails/manus-konsistenz-prinzip-v1.webp",
+    ],
   },
   "beziehungs-achtsamkeit": {
     id: "beziehungs-achtsamkeit",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-beziehungs-achtsamkeit-v1",
+    assetVersion: "puk-beziehungs-achtsamkeit-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-beziehungs-achtsamkeit-v1.pdf",
+      "/infografiken/manus-beziehungs-achtsamkeit-v1.webp",
+      "/infografiken/extras/thumbnails/manus-beziehungs-achtsamkeit-v1.webp",
+    ],
   },
   "6-leitlinien": {
     id: "6-leitlinien",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-6-leitlinien-v1",
+    assetVersion: "puk-sechs-leitlinien-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-6-leitlinien-v1.pdf",
+      "/infografiken/manus-6-leitlinien-v1.webp",
+      "/infografiken/extras/thumbnails/manus-6-leitlinien-v1.webp",
+    ],
   },
   "4-alltags-tipps": {
     id: "4-alltags-tipps",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-4-alltags-tipps-v1",
+    assetVersion: "puk-vier-alltagsfragen-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-4-alltags-tipps-v1.pdf",
+      "/infografiken/manus-4-alltags-tipps-v1.webp",
+      "/infografiken/extras/thumbnails/manus-4-alltags-tipps-v1.webp",
+    ],
   },
   krisenkommunikation: {
     id: "krisenkommunikation",
@@ -247,12 +283,26 @@ export const handoutGovernance = {
   "grenzen-erkennen": {
     id: "grenzen-erkennen",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-grenzen-erkennen-v1",
+    assetVersion: "puk-grenzen-ueberlastung-v2",
+    approvalStatus: "draft-editorial-review-pending",
+    visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-grenzen-erkennen-v1.pdf",
+      "/infografiken/manus-grenzen-erkennen-v1.webp",
+      "/infografiken/extras/thumbnails/manus-grenzen-erkennen-v1.webp",
+    ],
   },
   lmk: {
     id: "lmk",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-lmk-v1",
+    assetVersion: "puk-grenze-in-handlung-v2",
+    approvalStatus: "draft-editorial-review-pending",
+    visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-lmk-v1.pdf",
+      "/infografiken/manus-lmk-v1.webp",
+      "/infografiken/extras/thumbnails/manus-lmk-v1.webp",
+    ],
   },
   "grenzen-spickzettel": {
     id: "grenzen-spickzettel",
@@ -278,12 +328,26 @@ export const handoutGovernance = {
   "energie-konto": {
     id: "energie-konto",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-energie-konto-v1",
+    assetVersion: "puk-energie-konto-v2",
+    approvalStatus: "draft-editorial-review-pending",
+    visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-energie-konto-v1.pdf",
+      "/infografiken/manus-energie-konto-v1.webp",
+      "/infografiken/extras/thumbnails/manus-energie-konto-v1.webp",
+    ],
   },
   "erlaubnis-karte": {
     id: "erlaubnis-karte",
     documentType: "PRAXISBLATT",
-    approvedVersion: "manus-erlaubnis-karte-v1",
+    assetVersion: "puk-erlaubnis-karte-v2",
+    approvalStatus: "draft-editorial-review-pending",
+    visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-erlaubnis-karte-v1.pdf",
+      "/infografiken/manus-erlaubnis-karte-v1.webp",
+      "/infografiken/extras/thumbnails/manus-erlaubnis-karte-v1.webp",
+    ],
   },
   "schuld-verantwortung": {
     id: "schuld-verantwortung",
@@ -316,20 +380,38 @@ export const handoutGovernance = {
   "remission-heilung": {
     id: "remission-heilung",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-remission-heilung-v1",
+    assetVersion: "puk-remission-recovery-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-remission-heilung-v1.pdf",
+      "/infografiken/manus-remission-heilung-v1.webp",
+      "/infografiken/extras/thumbnails/manus-remission-heilung-v1.webp",
+    ],
   },
   "5-faktoren-genesung": {
     id: "5-faktoren-genesung",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-5-faktoren-genesung-v1",
+    assetVersion: "puk-genesungsbedingungen-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-5-faktoren-genesung-v1.pdf",
+      "/infografiken/manus-5-faktoren-genesung-v1.webp",
+      "/infografiken/extras/thumbnails/manus-5-faktoren-genesung-v1.webp",
+    ],
   },
   "rolle-genesungsprozess": {
     id: "rolle-genesungsprozess",
     documentType: "ORIENTIERUNGSBLATT",
-    approvedVersion: "manus-rolle-genesungsprozess-v1",
+    assetVersion: "puk-rolle-genesungsprozess-v2",
+    approvalStatus: "draft-editorial-review-pending",
     visualAssetStatus: "text-only",
+    retiredAssetSources: [
+      "/infografiken/manus-rolle-genesungsprozess-v1.pdf",
+      "/infografiken/manus-rolle-genesungsprozess-v1.webp",
+      "/infografiken/extras/thumbnails/manus-rolle-genesungsprozess-v1.webp",
+    ],
   },
 } as const satisfies Record<string, HandoutGovernanceEntry>;
 

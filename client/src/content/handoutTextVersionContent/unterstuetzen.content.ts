@@ -114,10 +114,11 @@ export const handoutTextVersions = [
     intro: [
       "Die drei Bereiche Präsenz, Selbstorientierung und Grenze sind Wahlmöglichkeiten, keine Pflicht zu einer bestimmten Angehörigen-Haltung.",
       "Sie dürfen je nach Beziehung, Situation und eigener Kraft unterschiedlich gewichtet werden. Abstand, ein Gesprächsende oder professionelle Unterstützung können ebenfalls passende Schritte sein.",
+      "Die drei Fragen sind eine redaktionelle Reflexionshilfe, kein vollständiges oder validiertes Angehörigenmodell.",
     ],
     sections: [
       {
-        title: "Die drei Säulen",
+        title: "Drei Fragen zur Selbstklärung",
         intro:
           "Die Textversion beschreibt drei mögliche Orientierungspunkte. Keiner davon muss in jeder Situation erfüllt sein.",
         cards: [
@@ -137,7 +138,7 @@ export const handoutTextVersions = [
       },
       {
         title: "Kernaussage",
-        calloutTitle: "Worum es bei den drei Säulen geht",
+        calloutTitle: "Worum es bei den drei Fragen geht",
         calloutText:
           "Die drei Bereiche helfen bei der Selbstklärung. Sie messen weder die Qualität einer Beziehung noch, ob Sie genug unterstützen.",
       },
@@ -160,16 +161,16 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Mason, P. T. & Kreger, R. (2014); Gunderson, J. G. et al. (2011).",
+      "Fachlicher Bezug: NICE CG78; NICE NG150. Redaktionelle Reflexionshilfe, kein validiertes Drei-Säulen-Modell.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("konsistenz-prinzip", {
     kicker: "Textversion",
     summary:
       "Transparente, wiedererkennbare Absprachen können Orientierung geben. Sie dürfen an Situation, Sicherheit und Möglichkeiten der Beteiligten angepasst werden.",
     intro: [
-      "Das Konsistenz-Prinzip zeigt, wie transparente und wiedererkennbare Absprachen Orientierung geben können. Es vergleicht mögliche Folgen klarer und unklarer Kommunikation, ohne eine bestimmte Reaktion vorherzusagen.",
+      "Klare und anpassbare Absprachen können Orientierung geben. Die Gegenüberstellung zeigt mögliche Erfahrungen, ohne eine bestimmte Reaktion vorherzusagen.",
       "Es geht nicht darum, dass alle immer gleich reagieren. Absprachen sollten die betroffene Person einbeziehen, soweit sie das möchte, und sich an Situation, Sicherheit und Möglichkeiten anpassen lassen.",
     ],
     sections: [
@@ -180,7 +181,7 @@ export const handoutTextVersions = [
         cards: [
           {
             title: "Konsistenz",
-            text: "Transparenz, Verlässlichkeit und ein hilfreicher Beziehungskreislauf.",
+            text: "Absprachen sind leichter nachvollziehbar, wenn sie klar ausgesprochen und bei Änderungen neu geklärt werden.",
           },
           {
             title: "Gemeinsame Grenze",
@@ -194,15 +195,15 @@ export const handoutTextVersions = [
       },
       {
         title: "Merksatz",
-        calloutTitle: "Worum es beim Konsistenz-Prinzip geht",
+        calloutTitle: "Worum es bei Absprachen geht",
         calloutText:
           "Wiedererkennbare Absprachen können Orientierung geben. Konsistenz bedeutet keine starre Einheitsreaktion und keine Garantie für eine bestimmte Wirkung.",
       },
       {
         title: "Merkhilfe",
-        calloutTitle: "Worum es bei Konsistenz wirklich geht",
+        calloutTitle: "Klar und anpassbar",
         calloutText:
-          "Nicht Härte macht den Unterschied, sondern transparente Abstimmung. Vereinbarungen dürfen verändert werden, wenn Bedürfnisse, Möglichkeiten oder Sicherheit es erfordern. Bei Gefahr oder Krise hat das Hilfeholen Vorrang.",
+          "Es geht nicht um Härte oder Gleichförmigkeit. Transparente Absprachen können Orientierung geben; ihre Wirkung lässt sich nicht vorhersagen. Vereinbarungen dürfen verändert werden, wenn Bedürfnisse, Möglichkeiten oder Sicherheit es erfordern.",
       },
       {
         title: "Was können Sie tun?",
@@ -222,16 +223,17 @@ export const handoutTextVersions = [
         ],
       },
     ],
-    sourceLine: "Quelle: Familienleitlinien und Angehörigen-Psychoedukation.",
+    sourceLine:
+      "Fachlicher Bezug: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78. Redaktionelle Übertragung auf Alltagsabsprachen, keine validierte Methode.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("beziehungs-achtsamkeit", {
     kicker: "Textversion",
     summary:
       "Innehalten, beobachten, Unsicherheit anerkennen und bewusst wählen können helfen, aus automatischen Reaktionen auszusteigen.",
     intro: [
-      "Beziehungs-Achtsamkeit übersetzt Achtsamkeit in vier freiwillige Schritte für angespannte Situationen: innehalten, beobachten, Deutungen offenlassen und einen nächsten Schritt wählen.",
+      "Diese redaktionelle Reflexionshilfe bietet vier mögliche Schritte für angespannte Situationen: innehalten, beobachten, Unsicherheit anerkennen und bewusst wählen.",
       "Die Struktur ist ein Angebot, kein Auftrag zur Beruhigung oder zum Beziehungserhalt. Auch Abstand, ein Gesprächsende oder Hilfeholen können passende Entscheidungen sein.",
     ],
     sections: [
@@ -266,7 +268,7 @@ export const handoutTextVersions = [
       },
       {
         title: "Merkhilfe",
-        calloutTitle: "Achtsamkeit als Reihenfolge",
+        calloutTitle: "Eine mögliche Reihenfolge",
         calloutText:
           "Die vier Schritte können Tempo aus automatischen Reaktionen nehmen: erst stoppen, dann beobachten, Deutungen offenlassen und eine Option wählen.",
       },
@@ -289,16 +291,16 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Achtsamkeitsbasierte Angehörigenarbeit, nach DBT (Linehan, M. M., 1993).",
+      "Fachlicher Bezug: WHO, Doing What Matters in Times of Stress; APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024). Redaktionelle Reflexionshilfe, kein DBT-Protokoll.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("6-leitlinien", {
     kicker: "Textversion",
     summary:
       "Sechs freiwillige Orientierungspunkte können helfen, Erwartungen, Kommunikation, Sicherheit, Absprachen und eigene Grenzen zu klären.",
     intro: [
-      "Die sechs Leitlinien übersetzen familienbezogene Empfehlungen in Wahlmöglichkeiten für den Alltag. Sie schreiben Angehörigen weder Ruhe noch Einigkeit oder ständige Verfügbarkeit vor.",
+      "Die sechs Orientierungspunkte bündeln ausgewählte Themen aus Leitlinien in freiwillige Fragen für den Alltag.",
       "Welche Orientierung passt, hängt von Beziehung, Einwilligung, eigener Kraft und Sicherheit ab. Unterschiedliche Angehörige dürfen unterschiedliche Grenzen haben.",
     ],
     sections: [
@@ -320,8 +322,8 @@ export const handoutTextVersions = [
             text: "Sie können zuhören, nachfragen, widersprechen, pausieren oder ein Gespräch beenden. Respekt gilt für alle Beteiligten.",
           },
           {
-            title: "4. Selbstverletzung ernst nehmen",
-            text: "Direkt nach Sicherheit fragen und bei unmittelbarer Gefahr den Notruf nutzen. Sie müssen die Situation nicht allein beurteilen oder absichern.",
+            title: "4. Sicherheit ernst nehmen",
+            text: "Bei akuter Gefahr gelten die vorhandenen Sicherheits- und Notfallwege. Angehörige müssen die Situation nicht allein beurteilen oder absichern.",
           },
           {
             title: "5. Zuständigkeiten besprechen",
@@ -346,7 +348,7 @@ export const handoutTextVersions = [
           "Es gibt keine Garantie für eine bestimmte Wirkung. Sicherheit und die Autonomie aller Beteiligten haben Vorrang.",
       },
       {
-        title: "Action",
+        title: "Mögliche nächste Schritte",
         cards: [
           {
             title: "1. Passung prüfen",
@@ -364,9 +366,9 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: Berkowitz, C. & Gunderson, J. G., Family Guidelines for Borderline Personality Disorder.",
+      "Quellen: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78; NICE NG225. Redaktionelle Zusammenstellung, keine wörtlich übernommene Leitlinie.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("4-alltags-tipps", {
     kicker: "Textversion",
@@ -378,7 +380,7 @@ export const handoutTextVersions = [
     ],
     sections: [
       {
-        title: "4 Alltags-Tipps",
+        title: "4 Fragen für den Alltag",
         intro:
           "Die Textversion bündelt vier Fragen für den Alltag mit einer nahestehenden Person.",
         cards: [
@@ -425,8 +427,8 @@ export const handoutTextVersions = [
       },
     ],
     sourceLine:
-      "Quelle: DBT-orientierte Angehörigenarbeit; Fruzzetti, A. E. (2006), Family Psychoeducation.",
+      "Fachlicher Bezug: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78; NICE NG150. Redaktionelle Fragen, kein DBT-Protokoll.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
 ];

@@ -471,7 +471,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Drei Säulen hilfreicher Unterstützung",
+    title: "Textversion: Drei Fragen zur Selbstklärung",
     description:
       "Lesbare Web-Version zu freiwilliger Präsenz, Selbstorientierung, Pause, Grenze und zusätzlicher Hilfe",
     keywords: [
@@ -489,7 +489,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Konsistenz-Prinzip",
+    title: "Textversion: Klare und anpassbare Absprachen",
     description:
       "Lesbare Web-Version zu transparenten, freiwilligen Absprachen ohne feste Wirkung oder einheitliche Angehörigenrolle",
     keywords: [
@@ -525,7 +525,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: 6 Leitlinien für Angehörige",
+    title: "Textversion: 6 Orientierungspunkte für Angehörige",
     description:
       "Lesbare Web-Version mit sechs freiwilligen Orientierungspunkten zu Autonomie, Sicherheit, Absprachen und eigenen Grenzen",
     keywords: [
@@ -543,7 +543,7 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: 4 Alltags-Tipps",
+    title: "Textversion: 4 Fragen für den Alltag",
     description:
       "Lesbare Web-Version zu vier Fragen: Ist Hilfe gewünscht, was ist freiwillig möglich und wo liegen eigene Grenzen?",
     keywords: [
@@ -737,9 +737,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Ihr Energie-Konto",
+    title: "Textversion: Energie-Konto: Belastungen und Ressourcen",
     description:
-      "Lesbare Web-Version zu Energiegebern, Energiefressern, Batteriestand und drei Auftank-Schritten",
+      "Lesbare Web-Version zu individuellen Belastungen, Entlastung und Unterstützungsbedarf – ohne Mess- oder Balanceversprechen",
     keywords: [
       "textversion",
       "energie-konto",
@@ -978,9 +978,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Grenzen erkennen",
+    title: "Textversion: Belastung wahrnehmen, Grenzen prüfen",
     description:
-      "Lesbare Web-Version zu fünf Warnsignalen des Körpers bei Grenzverletzungen und Überlastung",
+      "Lesbare Web-Version zu möglichen Stresszeichen, Selbstbeobachtung und Grenzen – ohne ihre Ursache vorwegzunehmen",
     keywords: [
       "textversion",
       "grenzen erkennen",
@@ -995,16 +995,15 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Wenn Grenzen nicht respektiert werden",
+    title: "Textversion: Grenze benennen – eigenen Schritt wählen",
     description:
-      "Lesbare Web-Version zu logischen, machbaren Konsequenzen, wenn gesetzte Grenzen nicht respektiert werden",
+      "Lesbare Web-Version zum eigenen Handlungsspielraum – ohne Strafe, Verhaltenssteuerung oder Wirkungsgarantie",
     keywords: [
       "textversion",
-      "lmk",
-      "lebe mit konsequenzen",
-      "konsequenzen",
       "grenzen",
-      "dichotomie der kontrolle",
+      "eigener schritt",
+      "handlungsspielraum",
+      "selbstschutz",
       "handout",
       "pdf",
     ],
@@ -1064,9 +1063,9 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: Remission vs. Heilung",
+    title: "Textversion: Remission, Alltag und persönliche Recovery",
     description:
-      "Lesbare Web-Version zur Unterscheidung von Remission, Heilung, realistischer Besserung und alltagsbezogener Stabilität",
+      "Lesbare Web-Version zu diagnostischer Remission, Alltag und Teilhabe, persönlicher Recovery und dem ungenauen Heilungsbegriff",
     keywords: [
       "textversion",
       "remission",
@@ -1081,16 +1080,16 @@ export const searchableContent: SearchEntry[] = [
     section: "Materialien",
   },
   {
-    title: "Textversion: 5 Faktoren, die Genesung fördern",
+    title: "Textversion: Fünf Bereiche rund um Genesung",
     description:
-      "Lesbare Web-Version zu Therapie, Medikation, sozialem Netz, Lebensqualität und Zeit als günstige Faktoren der Genesung",
+      "Lesbare Web-Version zu Behandlung, Gesundheit, gewünschten Beziehungen, Lebensbedingungen und individuellem Verlauf – ohne Kausalmodell",
     keywords: [
       "textversion",
       "5 faktoren",
-      "genesung fördern",
+      "genesung",
       "therapie",
-      "medikation",
-      "soziales netz",
+      "lebensbedingungen",
+      "teilhabe",
       "handout",
       "pdf",
     ],

@@ -21,6 +21,15 @@ vorhandene Datei gilt nicht automatisch als publizierbar.
   `beispiel-dialog` bleibt als HTML-Textversion lesbar. Seine V3-Visuals liegen
   bis zur verantworteten institutionellen Freigabe unter
   `qa/withheld-handouts/p1-illustrations-v3-2026-10-04/`.
+- Für Issue #615 wurden weitere 15 Visualfamilien quellbasiert aus den
+  synchronen HTML-Textversionen neu erzeugt. PDF, Vollbild-WebP, Thumbnail und
+  editierbare HTML-Quelle liegen als gemeinsamer, manifestierter Entwurfsstand
+  unter `qa/withheld-handouts/issue-615-visual-refresh-2026-10-05/` und werden
+  bis zur verantworteten Freigabe nicht öffentlich ausgeliefert.
+- Die noch öffentlich erreichbaren V1-Dateien zu `energie-konto`,
+  `erlaubnis-karte`, `grenzen-erkennen` und `lmk` wurden kontrolliert nach
+  `qa/archived-handouts/issue-615-legacy-v1-2026-10-05/` verschoben. Ihre alten
+  Direktpfade existieren nicht mehr.
 - Die Notfallplan-Textversion ist aktuell; die ältere PDF- und Bildfassung ist
   wegen fehlender Schutzklauseln vorläufig zurückgezogen.
 - Die aktuelle Notfallkarte bleibt unter `/notfallkarte` verfügbar und wird
@@ -64,7 +73,8 @@ oder direkt ausgeliefert:
   `rolle-genesungsprozess`;
 - Angehörigenrolle und Alltag: `rolle-klaeren`, `drei-saeulen`,
   `konsistenz-prinzip`, `beziehungs-achtsamkeit`, `6-leitlinien`,
-  `4-alltags-tipps`, `schuld-verantwortung`, `sauerstoffmaske`,
+  `4-alltags-tipps`, `grenzen-erkennen`, `lmk`, `energie-konto`,
+  `erlaubnis-karte`, `schuld-verantwortung`, `sauerstoffmaske` und
   `wenn-worte-treffen`.
 
 `4-phasen` und `im-krisenmodus` sind zusätzlich vollständig `withdrawn` und
@@ -78,13 +88,34 @@ kennzeichnet diesen Stand ausdrücklich und verlinkt nur die Webfassung.
 
 ## Entwürfe ohne Publikationsfreigabe
 
+Die drei V3-P1-Blätter bleiben in ihrem separaten, bereits geprüften Paket:
+
 | ID                   | Asset-Version               | Status                                   |
 | -------------------- | --------------------------- | ---------------------------------------- |
 | `radikale-akzeptanz` | `puk-radikale-akzeptanz-v3` | redaktioneller Entwurf, nicht publiziert |
 | `gespraeche-kippen`  | `puk-gespraeche-kippen-v3`  | redaktioneller Entwurf, nicht publiziert |
 | `beispiel-dialog`    | `puk-beispiel-dialog-v3`    | redaktioneller Entwurf, nicht publiziert |
-| `zustands-landkarte` | `puk-zustands-landkarte-v1` | Textentwurf; Visual noch nicht erstellt  |
-| `gehirn`             | `puk-hohe-anspannung-v1`    | Textentwurf; Visual noch nicht erstellt  |
+
+Das reproduzierbare Issue-615-Paket enthält folgende 15 neu erzeugte
+Visualfamilien. Alle bleiben `draft-editorial-review-pending` und `text-only`:
+
+| ID                       | Asset-Version                     |
+| ------------------------ | --------------------------------- |
+| `zustands-landkarte`     | `puk-zustands-landkarte-v1`       |
+| `gehirn`                 | `puk-hohe-anspannung-v1`          |
+| `remission-heilung`      | `puk-remission-recovery-v2`       |
+| `5-faktoren-genesung`    | `puk-genesungsbedingungen-v2`     |
+| `rolle-genesungsprozess` | `puk-rolle-genesungsprozess-v2`   |
+| `leuchtturm`             | `puk-leuchtturm-orientierung-v2`  |
+| `konsistenz-prinzip`     | `puk-verlaessliche-absprachen-v2` |
+| `energie-konto`          | `puk-energie-konto-v2`            |
+| `grenzen-erkennen`       | `puk-grenzen-ueberlastung-v2`     |
+| `lmk`                    | `puk-grenze-in-handlung-v2`       |
+| `drei-saeulen`           | `puk-drei-orientierungspunkte-v2` |
+| `beziehungs-achtsamkeit` | `puk-beziehungs-achtsamkeit-v2`   |
+| `6-leitlinien`           | `puk-sechs-leitlinien-v2`         |
+| `4-alltags-tipps`        | `puk-vier-alltagsfragen-v2`       |
+| `erlaubnis-karte`        | `puk-erlaubnis-karte-v2`          |
 
 ## Operative Regeln
 
@@ -107,6 +138,8 @@ kennzeichnet diesen Stand ausdrücklich und verlinkt nur die Webfassung.
 pnpm test -- handout-governance
 pnpm test -- anti-stigma-governance
 pnpm test -- material-download-function
+pnpm audit:issue615-handouts
+pnpm audit:infografiken
 pnpm build
 pnpm audit:release-http-gates
 ```

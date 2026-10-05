@@ -57,109 +57,119 @@ export const handoutTextVersions = [
   createHandoutTextVersion("remission-heilung", {
     kicker: "Textversion",
     summary:
-      "Symptome können deutlich zurückgehen, und Alltag, Beziehungen sowie Lebensqualität können stabiler werden. Remission, Recovery und Heilung bedeuten nicht dasselbe.",
+      "Besserung ist möglich. Diagnostische Remission, Alltag und Teilhabe sowie persönliche Recovery beschreiben unterschiedliche Aspekte und müssen sich nicht gleichzeitig verändern.",
     intro: [
-      "Remission und Heilung werden im Alltag oft vermischt. Diese Einordnung hilft, Besserung differenzierter und weniger schwarz-weiss zu verstehen.",
-      "Heilung und Remission werden bewusst gegenübergestellt und mit einer knappen Kernaussage sowie drei alltagsnahen Hinweisen ergänzt.",
+      "Forschung und Versorgung verwenden unterschiedliche Begriffe für Veränderung. Dieses Blatt trennt diagnostische Remission, Alltag und Teilhabe sowie persönliche Recovery.",
+      "Keiner dieser Begriffe bewertet den Wert eines Menschen oder schreibt ein bestimmtes Ziel oder Tempo vor.",
     ],
     sections: [
       {
-        title: "Heilung",
+        title: "Diagnostische Remission",
         bullets: [
-          "Wird im Alltag oft als «alles ist weg» verstanden.",
-          "Ist bei Borderline kein einheitlich definierter Forschungsbegriff.",
-          "Sollte nicht als Versprechen oder als Gegenpol zu «für immer krank» verwendet werden.",
+          "In Verlaufsstudien bedeutet Remission, dass die Diagnosekriterien während eines festgelegten Zeitraums nicht mehr erfüllt sind.",
+          "Die genaue Definition und die verlangte Dauer unterscheiden sich zwischen Studien.",
+          "Remission bedeutet nicht automatisch, dass alle Beschwerden verschwunden sind oder keine Unterstützung mehr nötig ist.",
         ],
       },
       {
-        title: "Remission",
+        title: "Alltag und Teilhabe",
         bullets: [
-          "Symptome deutlich reduziert.",
-          "Krisen werden seltener oder weniger intensiv.",
-          "Der Alltag wird besser handhabbar.",
+          "Beziehungen, Arbeit oder Ausbildung, Wohnen und Alltag sind eigene Lebensbereiche.",
+          "Sie können sich anders und in einem anderen Tempo verändern als Symptome.",
+          "Erneute Beschwerden oder Belastungen machen bereits erreichte Veränderungen nicht ungeschehen.",
         ],
       },
       {
-        title: "Recovery",
+        title: "Persönliche Recovery",
         bullets: [
-          "Symptomverbesserung plus mehr Funktionsfähigkeit.",
-          "Mehr Stabilität in Beziehungen, Arbeit, Ausbildung oder Alltag.",
-          "Ein individueller Prozess, nicht nur eine Zahl.",
+          "Persönliche Recovery beschreibt einen individuellen Weg zu einem selbstbestimmten und als sinnvoll erlebten Leben.",
+          "Dazu können Hoffnung, Verbundenheit, Identität, Teilhabe und eigene Handlungsmöglichkeiten gehören.",
+          "Welche Ziele bedeutsam sind, bestimmt die betroffene Person selbst.",
+        ],
+      },
+      {
+        title: "Zum Begriff «Heilung»",
+        bullets: [
+          "«Heilung» wird unterschiedlich verstanden und ist bei Borderline kein einheitlich definierter wissenschaftlicher Endpunkt.",
+          "Für sachliche Informationen sind präzisere Begriffe wie Remission, Funktionsfähigkeit, Lebensqualität und persönliche Recovery hilfreicher.",
+          "Eine Einteilung in «geheilt» oder «für immer krank» wird individuellen Verläufen nicht gerecht.",
         ],
       },
       {
         title: "Kernaussage",
-        calloutTitle: "Zentraler Satz des Handouts",
+        calloutTitle: "Veränderung hat mehrere Seiten",
         calloutText:
-          "Symptome können deutlich zurückgehen; Funktionsfähigkeit und Lebensqualität können sich verbessern. Welche Veränderungen bedeutsam sind, bestimmt die betroffene Person selbst.",
+          "Symptome, Funktionsfähigkeit, Lebensqualität und persönliche Recovery können sich unterschiedlich entwickeln. Ein einzelner Begriff beschreibt nicht den ganzen Genesungsweg.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Vermeiden Sie Vorgaben von aussen dazu, wie schnell oder wie weit Veränderung gehen soll.",
           "Fragen Sie die Person, welche Veränderungen für sie selbst bedeutsam sind, statt Fortschritt von aussen festzulegen.",
-          "Verläufe unterscheiden sich. Anhaltende Beschwerden können mit Fachpersonen besprochen werden, wenn die betroffene Person das möchte.",
+          "Nehmen Sie erneute Belastungen ernst, ohne sie als persönliches Scheitern zu deuten.",
+          "Achten Sie zugleich auf Ihre eigenen Grenzen und Ihren Unterstützungsbedarf.",
         ],
       },
     ],
     sourceLine:
-      "Quelle: Zanarini, M. C. et al. (2012); in Anlehnung an Paris, J. (2020).",
+      "Quellen: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78; Zanarini et al. (2012, 2024); AWMF-S3 Psychosoziale Therapien bei schweren psychischen Erkrankungen (2025), Kap. 7.1.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("5-faktoren-genesung", {
     kicker: "Textversion",
     summary:
-      "Behandlung, körperliche Gesundheit, Beziehungen, Lebensbedingungen und Zeit können Genesungswege beeinflussen. Welche Faktoren wichtig sind, ist individuell.",
+      "Behandlung, körperliche und psychische Gesundheit, gewünschte Beziehungen, Lebensbedingungen und der individuelle Verlauf können bedeutsam sein. Ihre Bedeutung ist von Person zu Person verschieden.",
     intro: [
-      "Die fünf Bereiche sind eine vereinfachte Orientierung, keine Formel für Genesung und keine Rangliste von Verantwortlichkeiten.",
+      "Die fünf Bereiche sind eine redaktionelle Orientierung, kein validiertes Vorhersagemodell und keine Rangliste.",
       "Sie beschreiben mögliche persönliche, soziale und professionelle Bedingungen. Angehörige müssen keinen dieser Bereiche herstellen oder absichern.",
     ],
     sections: [
       {
-        title: "Die fünf Faktoren",
+        title: "Fünf mögliche Bereiche",
         cards: [
           {
-            title: "Therapie",
-            text: "Professionelle Behandlung als Säule.",
+            title: "Strukturierte Behandlung",
+            text: "Ein personenzentrierter Behandlungsplan und eine strukturierte Psychotherapie können zentrale Bestandteile der Behandlung sein.",
           },
           {
-            title: "Körperliche und medikamentöse Behandlung",
-            text: "Je nach Situation und gemeinsamer fachlicher Entscheidung.",
+            title: "Körperliche und psychische Gesundheit",
+            text: "Körperliche Beschwerden und weitere psychische Erkrankungen werden als eigenständige Themen berücksichtigt. Medikamente sind kein allgemeiner Genesungsfaktor.",
           },
           {
-            title: "Soziales Umfeld",
-            text: "Gewünschte Beziehungen, Gemeinschaft und praktische Unterstützung.",
+            title: "Gewählte Beziehungen und Unterstützung",
+            text: "Soziale oder praktische Unterstützung kann hilfreich sein, wenn sie gewünscht ist. Angehörige müssen Genesung nicht absichern.",
           },
           {
-            title: "Lebensqualität",
-            text: "Sinnvolle Aktivitäten und Struktur.",
+            title: "Lebensbedingungen und Teilhabe",
+            text: "Wohnen, finanzielle Sicherheit, Ausbildung oder Arbeit, sinnvolle Tätigkeiten und der Zugang zu Hilfe können entlasten oder belasten.",
           },
           {
-            title: "Zeit",
-            text: "Verläufe und Zeiträume sind individuell.",
+            title: "Zeit und individueller Verlauf",
+            text: "Veränderung hat keinen festen Zeitplan und verläuft nicht nach einer vorgeschriebenen Reihenfolge.",
           },
         ],
       },
       {
         title: "Kernaussage",
-        calloutTitle: "Zentraler Satz des Handouts",
+        calloutTitle: "Keine Fünf-Punkte-Formel",
         calloutText:
-          "Genesung ist ein individueller Prozess. Behandlungssystem, Lebensbedingungen und soziale Beziehungen können mitwirken; die Verantwortung liegt nicht bei Angehörigen.",
+          "Die fünf Bereiche sind eine Orientierung. Ziele, Prioritäten und gewünschte Unterstützung werden mit der betroffenen Person geklärt.",
       },
       {
         title: "Was können Sie tun?",
         bullets: [
           "Fragen Sie, ob und welche Unterstützung überhaupt gewünscht ist.",
           "Bieten Sie nur an, was für Sie freiwillig, möglich und sicher ist.",
+          "Behalten Sie auch praktische oder strukturelle Belastungen im Blick; nicht alles lässt sich innerhalb einer Familie lösen.",
           "Erinnern Sie sich: Genesung ist individuell und keine Leistung der Familie.",
         ],
       },
     ],
     sourceLine:
-      "Quelle: Zanarini, M. C. et al. (2012); in Anlehnung an Paris, J. (2020).",
+      "Quellen: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78. Redaktionelle Orientierung, kein validiertes Fünf-Faktoren-Modell.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("rolle-genesungsprozess", {
     kicker: "Textversion",
@@ -191,7 +201,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Information anbieten",
-            text: "Auf Wunsch Informationen oder Begleitung zu Angeboten bereitstellen; Behandlung bleibt die Entscheidung der Person und des Fachteams.",
+            text: "Auf Wunsch Informationen oder Begleitung anbieten. Über Behandlung entscheidet die betroffene Person gemeinsam mit den Behandelnden.",
           },
         ],
       },
@@ -199,8 +209,8 @@ export const handoutTextVersions = [
         title: "Was nicht Ihre Aufgabe ist",
         cards: [
           {
-            title: "Therapie ersetzen",
-            text: "Das ist Aufgabe der Fachpersonen.",
+            title: "Fachliche Behandlung übernehmen",
+            text: "Angehörige ersetzen keine Behandlung und müssen sie nicht koordinieren.",
           },
           {
             title: "Veränderung erzwingen",
@@ -229,7 +239,7 @@ export const handoutTextVersions = [
           },
           {
             title: "Kernaussage",
-            text: "Sie können unterstützen. Sie müssen nicht retten.",
+            text: "Sie können freiwillig unterstützen. Für den Genesungsweg sind Sie nicht verantwortlich.",
           },
         ],
       },
@@ -242,15 +252,15 @@ export const handoutTextVersions = [
       {
         title: "Was können Sie tun?",
         bullets: [
-          "Prüfen Sie regelmässig: Bin ich noch in meiner Rolle oder rutsche ich in Überverantwortung?",
+          "Prüfen Sie regelmässig: Ist das, was ich anbiete, gewünscht, freiwillig, sicher und für mich tragbar?",
           "Sprechen Sie mit Fachpersonen, wenn Sie bei Zuständigkeiten oder Grenzen unsicher sind.",
           "Erinnern Sie sich: Ihre Gesundheit ist kein Beitrag, den Sie einer anderen Person schulden.",
         ],
       },
     ],
     sourceLine:
-      "Quelle: Berkowitz, C. & Gunderson, J. G., Family Guidelines; Mason, P. T. & Kreger, R. (2014).",
+      "Quellen: APA Practice Guideline for the Treatment of Patients With Borderline Personality Disorder (2024); NICE CG78; NICE NG150.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
 ];

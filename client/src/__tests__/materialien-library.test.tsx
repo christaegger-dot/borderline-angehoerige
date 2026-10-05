@@ -148,7 +148,15 @@ describe("MaterialienLibrarySection", () => {
       )
     ).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("tab", { name: /Genesung\s*·?\s*2/ }));
+    const genesungFilter = screen.getByRole("button", {
+      name: /Genesung\s*·?\s*2/,
+    });
+    expect(genesungFilter).toHaveAttribute("aria-pressed", "false");
+    expect(screen.queryByRole("tablist")).not.toBeInTheDocument();
+
+    fireEvent.click(genesungFilter);
+
+    expect(genesungFilter).toHaveAttribute("aria-pressed", "true");
 
     expect(screen.getByText("Genesung in Zahlen")).toBeInTheDocument();
     expect(

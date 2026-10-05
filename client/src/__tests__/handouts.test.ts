@@ -126,6 +126,8 @@ describe("handout delivery helpers", () => {
     ["4-alltags-tipps", "/infografiken/manus-4-alltags-tipps-v1.pdf"],
     ["sauerstoffmaske", "/infografiken/sauerstoff-die-sauerstoffmaske-v5.pdf"],
     ["gehirn", "/infografiken/manus-gehirn-v1.pdf"],
+    ["gehirn", "/infografiken/puk-hohe-anspannung-v1.pdf"],
+    ["zustands-landkarte", "/infografiken/puk-zustands-landkarte-v1.pdf"],
     ["remission-heilung", "/infografiken/manus-remission-heilung-v1.pdf"],
     ["5-faktoren-genesung", "/infografiken/manus-5-faktoren-genesung-v1.pdf"],
     [

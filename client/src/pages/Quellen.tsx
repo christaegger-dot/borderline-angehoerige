@@ -149,6 +149,51 @@ const quellen: QuelleKategorie[] = [
           "Grundlagenwerk zur Dialektisch-Behavioralen Therapie (DBT). Beschreibt das bio-soziale Modell und Behandlungsansätze.",
       },
       {
+        autoren: "Degasperi, G. et al.",
+        jahr: "2021",
+        titel:
+          "Parsing variability in borderline personality disorder: a meta-analysis of neuroimaging studies",
+        quelle: "Translational Psychiatry",
+        hinweis:
+          "Metaanalyse von 52 fMRT-Studien. Über unterschiedliche Aufgaben hinweg zeigte sich kein konsistentes Aktivierungsmuster; die begrenzten Befunde bei Emotionsaufgaben waren in Sensitivitätsanalysen nicht robust. Grundlage dafür, auf ein anatomisch festgeschriebenes «Borderline-Gehirn» zu verzichten.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/34031363/",
+        linkLabel: "PubMed",
+      },
+      {
+        autoren: "Baranger, D. A. A. et al.",
+        jahr: "2020",
+        titel:
+          "Borderline Personality Traits Are Not Correlated With Brain Structure in Two Large Samples",
+        quelle:
+          "Biological Psychiatry: Cognitive Neuroscience and Neuroimaging 5(7), 669–677",
+        hinweis:
+          "In zwei grossen Stichproben mit zusammen 2'398 Personen waren Borderline-Merkmale mit keinem der 152 untersuchten Strukturmasse nach Korrektur für multiples Testen verbunden. Das stützt eine zurückhaltende, nicht essentialistische Darstellung neurobiologischer Befunde.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/32312691/",
+        linkLabel: "PubMed",
+      },
+      {
+        autoren: "Shields, G. S., Sazma, M. A. & Yonelinas, A. P.",
+        jahr: "2016",
+        titel:
+          "The effects of acute stress on core executive functions: A meta-analysis and comparison with cortisol",
+        quelle: "Neuroscience & Biobehavioral Reviews 68, 651–668",
+        hinweis:
+          "Metaanalyse zu akutem Stress, Arbeitsgedächtnis, Inhibition und kognitiver Flexibilität. Sie begründet vorsichtige Kann-Aussagen über vorübergehend erschwertes Abwägen, nicht die Lokalisierung eines individuellen Zustands in einzelnen Hirnregionen.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/27371161/",
+        linkLabel: "PubMed",
+      },
+      {
+        autoren: "Santangelo, P., Bohus, M. & Ebner-Priemer, U. W.",
+        jahr: "2014",
+        titel:
+          "Ecological momentary assessment in borderline personality disorder: a review of recent findings and methodological challenges",
+        quelle: "Journal of Personality Disorders 28(4), 555–576",
+        hinweis:
+          "Übersichtsarbeit zu wiederholten Erhebungen im Alltag. Sie ordnet affektive und zwischenmenschliche Veränderungen als dynamische, kontextabhängige Prozesse ein; daraus lässt sich kein allgemeingültiger Vier-Phasen-Ablauf ableiten.",
+        link: "https://pubmed.ncbi.nlm.nih.gov/22984853/",
+        linkLabel: "PubMed",
+      },
+      {
         autoren: "Skodol, A. E. et al.",
         jahr: "2005",
         titel:
@@ -439,7 +484,7 @@ const quellen: QuelleKategorie[] = [
           "The Emotional Brain: The Mysterious Underpinnings of Emotional Life",
         quelle: "Simon & Schuster, New York",
         hinweis:
-          "Grundlegendes Werk zum furchtverarbeitenden Schaltkreis des Gehirns, insbesondere zur Rolle der Amygdala als Bedrohungs- und Alarmsystem. Als didaktisches Modell für das Blatt «Das Gehirn verstehen» (Amygdala, Hippocampus und präfrontaler Kortex bei emotionaler Überflutung) verwendet, nicht BPS-spezifisch.",
+          "Historisches Grundlagenwerk zur Angst- und Bedrohungsverarbeitung, nicht BPS-spezifisch. Wegen der uneinheitlichen heutigen Neuroimaging-Evidenz wird es nicht mehr als zentrale Begründung für ein lokalisierendes Gehirnmodell verwendet.",
       },
       {
         autoren: "Sotomo",

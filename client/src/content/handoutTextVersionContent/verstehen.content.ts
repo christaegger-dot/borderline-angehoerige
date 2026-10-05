@@ -255,6 +255,73 @@ export const handoutTextVersions = [
     standLine:
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 04.10.2026.",
   }),
+  createHandoutTextVersion("zustands-landkarte", {
+    kicker: "Entwurf · Textversion",
+    summary:
+      "Anspannung, Kontaktwunsch und Handlungsspielraum können sich verändern, ohne einem festen Ablauf zu folgen. Die Landkarte beschreibt einen Moment – nicht eine Person.",
+    intro: [
+      "Gefühle, Körperreaktionen, Gedanken und das Bedürfnis nach Nähe oder Abstand können sich rasch verändern. Menschen erleben dabei unterschiedliche Auslöser, Verläufe und hilfreiche Reaktionen.",
+      "Diese Zustands-Landkarte ist eine freiwillige Orientierungshilfe. Sie stellt keine Diagnose, misst keine Gefährdung und sagt nicht voraus, was als Nächstes geschieht. Sie soll weder die betroffene Person noch Angehörige festlegen.",
+    ],
+    sections: [
+      {
+        title: "Drei getrennt betrachtete Dimensionen",
+        intro:
+          "Die drei Dimensionen sind keine Stufen und nicht automatisch gekoppelt. Sie können sich unterschiedlich verändern und müssen von aussen nicht erkennbar sein.",
+        cards: [
+          {
+            title: "Innere Anspannung",
+            text: "Eher ruhig · merklich angespannt · sehr stark angespannt. Innere Anspannung kann sichtbar sein – muss es aber nicht.",
+          },
+          {
+            title: "Kontaktwunsch",
+            text: "Kontakt gewünscht · gerade unsicher oder wechselnd · Abstand gewünscht. Der Wunsch nach Kontakt oder Abstand darf sich verändern.",
+          },
+          {
+            title: "Handlungsspielraum",
+            text: "Mehrere Möglichkeiten erreichbar · eingeschränkt · gerade kaum erreichbar. Das ist eine Momentaufnahme, keine Bewertung der Person.",
+          },
+        ],
+      },
+      {
+        title: "Freiwillige Fragen zur eigenen Orientierung",
+        bullets: [
+          "Woran merke ich, wie es mir gerade geht?",
+          "Was hilft mir – und was macht es eher schwieriger?",
+          "Wünsche ich Kontakt, praktische Unterstützung oder Abstand?",
+          "Was kann die andere Person freiwillig anbieten, und wo liegt ihre Grenze?",
+        ],
+      },
+      {
+        title: "Absprachen und Zustimmung",
+        calloutTitle: "Unterstützung gemeinsam klären",
+        calloutText:
+          "Unterstützende Absprachen werden möglichst in ruhigeren Zeiten gemeinsam getroffen. Die Wünsche und Entscheidungen der betroffenen Person zählen. Angehörige werden nur mit Zustimmung der betroffenen Person in einen Krisenplan einbezogen; beide Seiten dürfen ihre Möglichkeiten und Grenzen benennen.",
+      },
+      {
+        title: "Orientierung für Angehörige",
+        calloutTitle: "Ein Angebot, kein Regulierungsauftrag",
+        calloutText:
+          "Sie können Interesse, klare Worte, praktische Hilfe oder Abstand anbieten. Sie müssen eine Eskalation nicht verhindern, die Gefühle eines anderen Menschen nicht regulieren und keine unsichere Situation aushalten. Ihre eigenen Grenzen und Ihr Schutz bleiben wichtig.",
+      },
+      {
+        title: "Sicherheit ist keine Phase",
+        calloutTitle: "Gefahr lässt sich nicht aus der Landkarte ablesen",
+        calloutText:
+          "Wenn eine Person möglicherweise unmittelbar in Gefahr ist oder wenn Sie sich bedroht fühlen, nutzen Sie die separat gepflegte Soforthilfe der Website und holen Sie professionelle Hilfe. Ein Beziehungsgespräch kann warten. Versuchen Sie nicht, Gefahr aus einer Position auf dieser Landkarte abzuleiten oder allein zu beurteilen.",
+      },
+      {
+        title: "Einordnung des Modells",
+        calloutTitle: "Kein festes Phasenmodell",
+        calloutText:
+          "Die Landkarte kennt keine nummerierten Stufen, keine vorgeschriebene Reihenfolge und keine unvermeidliche Eskalation. Sie beschreibt Möglichkeiten in einem aktuellen Moment und ist kein validiertes Messinstrument.",
+      },
+    ],
+    sourceLine:
+      "Eigene didaktische Darstellung. Fachliche Bezugspunkte: Santangelo et al. (2014) zu dynamischen, kontextabhängigen Verläufen; NICE CG78 zum personenzentrierten Krisenmanagement; AWMF-S3-BPS (2022, Gültigkeit 2026 abgelaufen) als datierte Quelle zu Zustimmung und Angehörigeneinbezug. Kein validiertes Messinstrument oder allgemeingültiges Verlaufsmodell.",
+    standLine:
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
+  }),
   createHandoutTextVersion("alarm-modus", {
     kicker: "Textversion",
     summary:
@@ -325,84 +392,76 @@ export const handoutTextVersions = [
       "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
   }),
   createHandoutTextVersion("gehirn", {
-    kicker: "Textversion",
+    kicker: "Entwurf · Textversion",
     summary:
-      "Unter hoher Anspannung kann Denken enger werden. Das vereinfachte Modell bietet Einordnung, weist Angehörigen aber keine Beruhigungs- oder Regulationsaufgabe zu.",
+      "Hohe Anspannung kann Aufmerksamkeit, Einordnung und den Zugang zu Handlungsmöglichkeiten vorübergehend verändern. Das funktionale Stressmodell beschreibt Möglichkeiten – kein «Borderline-Gehirn».",
     intro: [
-      "Das Gehirn-Modell vereinfacht mögliche Vorgänge bei hoher Anspannung. Es bildet kein einzelnes Gehirn ab und erklärt das Verhalten einer konkreten Person nicht vollständig.",
-      "Für Angehörige ist die Textversion eine Einordnungshilfe: Wenn ein Gespräch enger wird, dürfen Sie weniger Druck machen, pausieren, Abstand nehmen oder es beenden. Sie müssen den inneren Zustand einer anderen Person weder erkennen noch verändern.",
+      "Unter Stress arbeiten Körper, Aufmerksamkeit, Erinnerung, Bewertung und Handeln zusammen. Bei hoher Anspannung kann es vorübergehend schwerer werden, mehrere Informationen im Blick zu behalten oder flexibel zwischen Deutungen zu wechseln.",
+      "Was eine konkrete Person gerade erlebt, lässt sich von aussen nicht sicher erkennen. Diese Vorgänge sind nicht auf Borderline beschränkt und verlaufen je nach Mensch und Situation unterschiedlich. Das Modell beschreibt Möglichkeiten, keine feststehende Ursache und kein «typisches Borderline-Gehirn».",
     ],
     sections: [
       {
-        title: "Die drei Bereiche der Grafik",
+        title: "Was gerade mitwirken kann",
         intro:
-          "Die Infografik nutzt drei Bereiche als vereinfachte Orientierung dafür, was unter Stress oft schwerer zugänglich wird.",
+          "Hohe Anspannung hat selten nur einen Grund. Mehrere körperliche, persönliche und soziale Bedingungen können gleichzeitig mitwirken.",
+        bullets: [
+          "die aktuelle Situation und zwischenmenschliche Erfahrungen",
+          "Schlaf, Schmerzen, körperliche Belastung oder Substanzen",
+          "frühere Erfahrungen, Erwartungen und die persönliche Bedeutung einer Situation",
+          "verfügbare Unterstützung, Sicherheit und materielle Lebensbedingungen",
+        ],
+      },
+      {
+        title: "Was vorübergehend schwerer werden kann",
         cards: [
           {
-            title: "Alarm",
-            text: "Der Körper reagiert auf Bedrohung, Stress oder Überforderung. Impulse können schneller und stärker werden.",
+            title: "Aufmerksamkeit verteilen",
+            text: "Einzelne Signale können dringlicher wirken, während anderes weniger erreichbar ist.",
           },
           {
-            title: "Einordnen",
-            text: "Erinnern, Sortieren und Gegenwart von früheren Erfahrungen unterscheiden kann unter Stress schwerer werden.",
+            title: "Informationen im Blick behalten",
+            text: "Mehrere Informationen oder Ziele gleichzeitig präsent zu halten, kann unter akutem Stress schwerer sein.",
           },
           {
-            title: "Abwägen",
-            text: "Planen, Perspektivwechsel und Impulskontrolle sind bei hoher Anspannung oft weniger gut erreichbar.",
+            title: "Flexibel abwägen",
+            text: "Zwischen Deutungen zu wechseln und eine Situation neu zu bewerten, kann vorübergehend schwerer fallen.",
           },
         ],
       },
       {
-        title: "Was unter Stress möglich ist",
+        title: "Was Handlungsspielraum erweitern kann",
         cards: [
           {
-            title: "Überflutet",
-            text: "Die Anspannung ist hoch, und der innere Spielraum wird klein.",
+            title: "Zeit und weniger Reize",
+            text: "Eine Pause, ein ruhigerer Ort oder weniger gleichzeitige Anforderungen können entlasten.",
           },
           {
-            title: "Anspannung bleibt hoch",
-            text: "Zeit, Sicherheit, weniger Reize oder selbst gewählte Unterstützung können fehlen oder noch nicht wirksam sein.",
+            title: "Selbst gewählte Strategien",
+            text: "Erlernte Fertigkeiten, Bewegung, Sinnesreize oder andere persönliche Strategien können helfen – aber nicht immer und nicht jeder Person gleich.",
           },
           {
-            title: "Mehr Spielraum kann zurückkehren",
-            text: "Wenn Anspannung sinkt, können Abwägen und Gespräch wieder leichter werden. Der Verlauf ist individuell.",
+            title: "Unterstützung oder Abstand",
+            text: "Kontakt, praktische Hilfe, professionelle Unterstützung oder Abstand können passend sein. Die betroffene Person und Angehörige dürfen ihre Wünsche und Grenzen benennen; Angehörige müssen keine Beruhigung erreichen.",
           },
         ],
       },
       {
-        title: "Kernaussage",
-        calloutTitle: "Worum es bei der Überflutung geht",
+        title: "Verstehen ist nicht entschuldigen",
+        calloutTitle: "Verantwortung, Grenzen und Sicherheit bleiben bestehen",
         calloutText:
-          "Hohe Anspannung kann Denken verengen. Daraus lässt sich keine Absicht ablesen. Zeit, weniger Druck oder selbst gewählte Unterstützung können helfen; Angehörige müssen keine Beruhigung erreichen.",
+          "Hohe Anspannung kann Verhalten beeinflussen, hebt die Verantwortung für eigenes Verhalten aber nicht auf. Sie erklärt keine Absicht und macht verletzendes Verhalten nicht in Ordnung. Selbstbestimmung, klare Grenzen und Sicherheit bleiben wichtig.",
       },
       {
-        title: "Orientierung",
-        calloutTitle: "Was die Grafik verständlich machen will",
+        title: "Einordnung des Modells",
+        calloutTitle: "Funktional, nicht anatomisch",
         calloutText:
-          "Wenn ein Gespräch unter Stress enger wird, können Pause, Abstand und der eigene Schutz sinnvoller sein als weitere Argumente. Ein späteres Gespräch ist nur eine Möglichkeit, keine Pflicht.",
-      },
-      {
-        title: "3 freiwillige Schritte zur eigenen Orientierung",
-        cards: [
-          {
-            title: "1. Atmen und Wahrnehmen",
-            text: "Wenn es Ihnen guttut: langsamer ausatmen und wahrnehmen, was Sie selbst gerade brauchen.",
-          },
-          {
-            title: "2. Pausieren und Bewegen",
-            text: "Raum wechseln, kurz gehen, Wasser trinken oder Abstand schaffen – soweit dies sicher möglich ist.",
-          },
-          {
-            title: "3. Fokus und Einordnen",
-            text: "Später neu entscheiden, ob überhaupt und unter welchen Bedingungen ein Gespräch möglich ist.",
-          },
-        ],
+          "Die geplante Darstellung zeigt veränderliche Zusammenhänge zwischen Situation, Anspannung und Handlungsspielraum. Sie bildet keine Hirnregionen ab, ist kein diagnostisches Modell und erlaubt keine Aussage darüber, wie das Gehirn einer einzelnen Person funktioniert.",
       },
     ],
     sourceLine:
-      "Quelle: Stress- und Emotionsregulation in Anlehnung an Linehan, M. M. (1993/2015); LeDoux (1996) als Hintergrund zur Angst- und Stressverarbeitung.",
+      "Eigene didaktische Darstellung. Fachliche Bezugspunkte: Shields et al. (2016) zu akutem Stress und Exekutivfunktionen; Degasperi et al. (2021) zur uneinheitlichen fMRT-Evidenz bei BPS; Baranger et al. (2020) zu grossen strukturellen Stichproben. Kein anatomisches oder diagnostisches Modell.",
     standLine:
-      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Stand: 03.02.2026.",
+      "Für Angehörige – Fachstelle Angehörigenarbeit, PUK Zürich – Ch. Egger | Entwurf – fachlich-redaktionelle Freigabe ausstehend | Stand: 05.10.2026.",
   }),
   createHandoutTextVersion("kinder", revisedHandouts["kinder"]),
 ];

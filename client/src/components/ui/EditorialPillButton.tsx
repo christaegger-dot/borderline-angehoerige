@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils";
 //   primary  — filled accent (Notfallkarte Drucken-Button)
 //   secondary — border + bg-elevated + hover (NavPillButton, SecondaryButton)
 //   choice   — full-width block + border + hover (ChoiceButton, OptionButton)
-//   filter   — Sage-Caps tab in tablist; aktiv = 2px Aubergine-Hairline unten
-//              (Phase 2 typografische Veredelung). Container muss role="tablist"
-//              haben — der Button selbst trägt role="tab" + aria-selected.
+//   filter   — Sage-Caps Filterbutton; aktiv = 2px Aubergine-Hairline unten
+//              (Phase 2 typografische Veredelung). Der Button trägt
+//              aria-pressed, da er eine Liste filtert und kein Tabpanel steuert.
 
 export type EditorialPillButtonVariant =
   | "primary"
@@ -131,11 +131,10 @@ export function EditorialPillButton({
         }
       : onMouseLeave;
 
-  // A11y: Filter-Variant impliziert role="tab" innerhalb eines tablists,
-  // mit aria-selected. Konsumenten überschreiben role/aria-selected via
-  // {...props} falls nötig.
-  const filterA11y =
-    variant === "filter" ? { role: "tab", "aria-selected": selected } : {};
+  // A11y: Filter steuern die sichtbare Ergebnismenge. aria-pressed bildet
+  // diesen Zustand ehrlicher ab als das Tab-Muster, das roving tabindex,
+  // Pfeiltastensteuerung und ein zugeordnetes Tabpanel voraussetzen würde.
+  const filterA11y = variant === "filter" ? { "aria-pressed": selected } : {};
 
   return (
     <button

@@ -137,7 +137,7 @@ test("materialien filter and first cards match baseline", async ({ page }) => {
   });
 
   const filterBar = page.locator(
-    "div[role='tablist'][aria-label='Filter Materialien nach Kategorie']"
+    "div[role='group'][aria-label='Filter Materialien nach Kategorie']"
   );
   await expect(filterBar).toHaveScreenshot("materialien-filterbar.png");
 

@@ -298,11 +298,11 @@ export function TableOfContents() {
       {floatingMode === "content" && showFloatingButton && (
         <m.button
           onClick={() => setIsOpen(true)}
-          className="fixed right-4 bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 items-center gap-2 rounded-full border border-border/70 bg-background px-4 text-sm font-medium text-foreground shadow-[0_10px_24px_-24px_rgba(15,23,42,0.34)]"
+          className="fixed right-px bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))] z-40 flex h-11 w-11 items-center justify-center gap-0 rounded-full border border-border/70 bg-background px-0 text-sm font-medium text-foreground shadow-[0_10px_24px_-24px_rgba(15,23,42,0.34)] lg:right-4 lg:w-auto lg:gap-2 lg:px-4"
           aria-label="Inhaltsverzeichnis öffnen"
         >
           <List className="w-4 h-4" />
-          <span>Inhalt</span>
+          <span className="sr-only lg:not-sr-only">Inhalt</span>
         </m.button>
       )}
 

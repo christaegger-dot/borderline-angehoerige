@@ -83,6 +83,28 @@ describe("handout release content guardrails", () => {
     expect(alarmUndGehirn).not.toContain("präfrontale Kortex");
     expect(alarmUndGehirn).not.toContain("vorübergehend offline");
     expect(alarmUndGehirn).not.toContain("Polyvagal");
+    expect(textFor("gehirn")).toContain("kein «typisches Borderline-Gehirn»");
+    expect(textFor("gehirn")).toContain("Verstehen ist nicht entschuldigen");
+    expect(textFor("gehirn")).toContain(
+      "Mehrere Informationen oder Ziele gleichzeitig präsent zu halten"
+    );
+    expect(textFor("gehirn")).not.toMatch(
+      /Impulse zu steuern|Impulskontrolle/i
+    );
+    expect(textFor("gehirn")).not.toContain("Orientierung für Angehörige");
+  });
+
+  it("replaces the fixed four-phase cycle with a non-linear state map", () => {
+    const stateMap = textFor("zustands-landkarte");
+
+    expect(stateMap).toContain("keine nummerierten Stufen");
+    expect(stateMap).toContain("keine vorgeschriebene Reihenfolge");
+    expect(stateMap).toContain("keine unvermeidliche Eskalation");
+    expect(stateMap).toContain("kein Regulierungsauftrag");
+    expect(stateMap).toContain("nicht automatisch gekoppelt");
+    expect(stateMap).toContain("Kontakt gewünscht");
+    expect(stateMap).not.toMatch(/voneinander unabhäng|Nähe hilfreich/i);
+    expect(stateMap).not.toMatch(/Phase 1|Phase 2|Phase 3|Phase 4|Explosion/);
   });
 
   it("does not connect Family Connections to the invalid PubMed entry", () => {

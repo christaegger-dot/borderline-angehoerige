@@ -46,6 +46,7 @@ const requiredSourceText: Record<string, string[]> = {
     "Achten Sie zugleich auf Ihre eigenen Grenzen und Ihren Unterstützungsbedarf.",
     "Kap. 7.2.",
     "Symptomatische Remission",
+    "bewertet den Wert eines Menschen",
   ],
   "5-faktoren-genesung": [
     "Für Borderline selbst sind Medikamente keine Kernbehandlung; Änderungen nur mit der behandelnden Fachperson.",
@@ -53,7 +54,7 @@ const requiredSourceText: Record<string, string[]> = {
   ],
   "rolle-genesungsprozess": [
     "Urteilsfähige Erwachsene entscheiden selbst über ihre Behandlung, gemeinsam mit den Behandelnden.",
-    "Auskünfte über ihre Behandlung nur mit ihrer Zustimmung.",
+    "Auskünfte über ihre Behandlung gibt es grundsätzlich nur mit ihrer Zustimmung; gesetzliche Ausnahmen gelten",
   ],
   "grenzen-erkennen": [
     "Neue, starke oder anhaltende körperliche Beschwerden sollten medizinisch abgeklärt werden.",

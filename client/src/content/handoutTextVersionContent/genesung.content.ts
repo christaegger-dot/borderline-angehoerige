@@ -99,7 +99,7 @@ export const handoutTextVersions = [
         title: "Kernaussage",
         calloutTitle: "Veränderung hat mehrere Seiten",
         calloutText:
-          "Beschwerden, Alltag und Teilhabe, Lebensqualität und persönliche Recovery können sich unterschiedlich entwickeln. Ein einzelner Begriff beschreibt nicht den ganzen Genesungsweg.",
+          "Beschwerden, Alltag und Teilhabe, Lebensqualität und persönliche Recovery können sich unterschiedlich entwickeln. Kein einzelner Begriff beschreibt den ganzen Genesungsweg oder bewertet den Wert eines Menschen.",
       },
       {
         title: "Was können Sie tun?",
@@ -254,7 +254,7 @@ export const handoutTextVersions = [
         title: "Was können Sie tun?",
         bullets: [
           "Prüfen Sie regelmässig: Ist das, was ich anbiete, gewünscht, freiwillig, sicher und für mich tragbar?",
-          "Allgemeine Beratung ist auch ohne Zustimmung der betroffenen Person möglich; Auskünfte über ihre Behandlung nur mit ihrer Zustimmung. Bei Minderjährigen oder fehlender Urteilsfähigkeit gelten besondere Regeln.",
+          "Allgemeine Beratung ist auch ohne Zustimmung der betroffenen Person möglich; Auskünfte über ihre Behandlung gibt es grundsätzlich nur mit ihrer Zustimmung; gesetzliche Ausnahmen gelten etwa bei Minderjährigen oder fehlender Urteilsfähigkeit.",
           "Erinnern Sie sich: Ihre Gesundheit zählt für sich – nicht erst als Beitrag zur Genesung einer anderen Person.",
         ],
       },

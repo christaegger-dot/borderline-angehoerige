@@ -118,38 +118,35 @@ describe("Selbsttest", () => {
     render(<Selbsttest />);
     fireEvent.click(screen.getByRole("button", { name: answer, exact: true }));
 
-    const heading = screen.getByRole("heading", { name: "Sofortige Hilfe" });
+    const heading = screen.getByRole("heading", {
+      name: "Akute Hilfe und Notfallkontakte",
+    });
     expect(heading).toHaveFocus();
     expect(screen.queryByRole("progressbar")).not.toBeInTheDocument();
     expect(
       screen.queryByText("Was beschäftigt Sie gerade am meisten?")
     ).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /^144/ })).toHaveAttribute(
-      "href",
-      "tel:144"
-    );
-    expect(screen.getByRole("link", { name: /^117/ })).toHaveAttribute(
-      "href",
-      "tel:117"
-    );
-    expect(screen.getByRole("link", { name: /058 384 20 00/ })).toHaveAttribute(
-      "href",
-      "tel:+41583842000"
-    );
-    expect(screen.getByRole("link", { name: /058 384 66 66/ })).toHaveAttribute(
-      "href",
-      "tel:+41583846666"
-    );
-    expect(screen.getByRole("link", { name: /058 384 46 82/ })).toHaveAttribute(
-      "href",
-      "tel:+41583844682"
-    );
+    expect(
+      screen
+        .getAllByRole("link")
+        .some(link => link.getAttribute("href") === "/soforthilfe")
+    ).toBe(true);
+    expect(screen.queryByRole("link", { name: /^Telefon / })).toBeNull();
+    expect(screen.queryByText(/058 384|144|117/)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Warum dieser Einstieg erscheint")
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Weitere relevante Themen")
+    ).not.toBeInTheDocument();
 
     act(() => {
       vi.runAllTimers();
     });
     expect(
-      screen.getByRole("heading", { name: "Sofortige Hilfe" })
+      screen.getByRole("heading", {
+        name: "Akute Hilfe und Notfallkontakte",
+      })
     ).toBeInTheDocument();
     expect(screen.queryByText("Frage 2 von 5")).not.toBeInTheDocument();
   });

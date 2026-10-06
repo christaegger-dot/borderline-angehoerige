@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "../../..");
 
 // Statische Direktseiten ohne SPA-Route - zaehlen trotzdem als Audit-Target.
-const STATIC_DIRECT_PAGES = ["/soforthilfe", "/notfallkarte"];
+const STATIC_DIRECT_PAGES = ["/soforthilfe"];
 
 function extractScriptArray(scriptSrc: string, name: string): string[] {
   const match = scriptSrc.match(

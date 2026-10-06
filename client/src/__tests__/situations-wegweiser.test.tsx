@@ -69,10 +69,10 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     expect(
       screen.getByRole("heading", { name: "Ihre Sicherheit hat Vorrang" })
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Telefon 117/ })).toHaveAttribute(
-      "href",
-      "tel:117"
-    );
+    expect(
+      screen.getByRole("link", { name: /Akute Hilfe und Notfallkontakte/ })
+    ).toHaveAttribute("href", "/soforthilfe");
+    expect(screen.queryByRole("link", { name: /^Telefon / })).toBeNull();
     expect(
       screen.getByText(/Bedrohung, Einschüchterung, Stalking, Zwang und Gewalt/)
     ).toHaveTextContent(/kein Motiv beurteilen/);
@@ -109,7 +109,7 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     ).toHaveFocus();
   });
 
-  it("bietet bei unklaren körperlichen Folgen sofort Rettungsdienst und Vergiftungsberatung an", () => {
+  it("leitet bei körperlichen Sorgen zur zentralen Seite mit Anlaufstellen", () => {
     vi.useFakeTimers();
     render(<SituationsWegweiser />);
     fireEvent.click(screen.getByRole("button", { name: "Selbstverletzung" }));
@@ -119,14 +119,10 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     expect(
       screen.getByRole("heading", { name: "Jetzt medizinische Hilfe holen" })
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Telefon 144/ })).toHaveAttribute(
-      "href",
-      "tel:144"
-    );
-    expect(screen.getByRole("link", { name: /Telefon 145/ })).toHaveAttribute(
-      "href",
-      "tel:145"
-    );
+    expect(
+      screen.getByRole("link", { name: /Akute Hilfe und Notfallkontakte/ })
+    ).toHaveAttribute("href", "/soforthilfe");
+    expect(screen.queryByRole("link", { name: /^Telefon / })).toBeNull();
     expect(screen.getByText(/nur ohne Eigengefährdung/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Eine Frage zurück" }));
     expect(
@@ -147,19 +143,11 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     expect(
       screen.getByText(/Warten Sie nicht auf eine Wiederholung/)
     ).toBeInTheDocument();
-    for (const nummer of [
-      "144",
-      "145",
-      "058 384 66 66",
-      "058 384 20 00",
-      "058 384 46 82",
-    ]) {
-      expect(
-        screen.getByRole("link", {
-          name: new RegExp("Telefon " + nummer + " –"),
-        })
-      ).toBeInTheDocument();
-    }
+    expect(
+      screen.getAllByRole("link", { name: /Akute Hilfe und Notfallkontakte/ })
+        .length
+    ).toBeGreaterThan(0);
+    expect(screen.queryByRole("link", { name: /^Telefon / })).toBeNull();
     expect(
       screen.queryByText(/Eiswürfel|kalte Dusche|intensive Reize/)
     ).not.toBeInTheDocument();
@@ -168,26 +156,19 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
     ).toHaveAttribute("href", "/fachstelle");
   });
 
-  it("zeigt auch bei Druck durch Suizidankündigungen direkt die Notfallkontakte", () => {
+  it("zeigt auch bei Druck durch Suizidankündigungen den zentralen Soforthilfeweg", () => {
     vi.useFakeTimers();
     render(<SituationsWegweiser />);
     fireEvent.click(
       screen.getByRole("button", { name: "Druck, Vorwürfe oder Drohungen" })
     );
-    expect(screen.getByRole("link", { name: /Telefon 144/ })).toHaveAttribute(
-      "href",
-      "tel:144"
-    );
-    expect(screen.getByRole("link", { name: /Telefon 117/ })).toHaveAttribute(
-      "href",
-      "tel:117"
-    );
+    expect(
+      screen.getByRole("link", { name: /Akute Hilfe und Notfallkontakte/ })
+    ).toHaveAttribute("href", "/soforthilfe");
     expect(
       screen.getByText(/ohne eine Forderung zu erfüllen/)
     ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /Telefon 058 384 66 66/ })
-    ).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /^Telefon / })).toBeNull();
   });
 
   it("führt Unsicherheit direkt zu professioneller Hilfe und erlaubt Rücknavigation", () => {
@@ -206,19 +187,10 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
         name: "Unsicherheit – jetzt Unterstützung holen",
       })
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Telefon 144/ })).toHaveAttribute(
-      "href",
-      "tel:144"
-    );
     expect(
-      screen.getByRole("link", { name: /Telefon 058 384 20 00/ })
-    ).toHaveAttribute("href", "tel:+41583842000");
-    expect(
-      screen.getByRole("link", { name: /Telefon 058 384 66 66/ })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /Telefon 058 384 46 82/ })
-    ).toBeInTheDocument();
+      screen.getByRole("link", { name: /Akute Hilfe und Notfallkontakte/ })
+    ).toHaveAttribute("href", "/soforthilfe");
+    expect(screen.queryByRole("link", { name: /^Telefon / })).toBeNull();
     expect(
       screen.getByText(
         /Nehmen Sie gefährliche Gegenstände nicht gegen Widerstand weg/
@@ -253,13 +225,9 @@ describe("Situations-Wegweiser: Unsicherheit und Sicherheitsgrenzen", () => {
       screen.getByText(/Keine sichtbare Handlung bedeutet keine Entwarnung/)
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /Telefon 144/ })
-    ).toBeInTheDocument();
-    for (const nummer of ["058 384 66 66", "058 384 20 00", "058 384 46 82"]) {
-      expect(
-        screen.getByRole("link", { name: new RegExp("Telefon " + nummer) })
-      ).toBeInTheDocument();
-    }
+      screen.getByRole("link", { name: /Akute Hilfe und Notfallkontakte/ })
+    ).toHaveAttribute("href", "/soforthilfe");
+    expect(screen.queryByRole("link", { name: /^Telefon / })).toBeNull();
   });
 
   it("nennt Eigengefährdung und Widerstand direkt bei der Handlung zur Umgebungssicherung", () => {

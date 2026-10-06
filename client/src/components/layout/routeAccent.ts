@@ -41,10 +41,7 @@ function matches(path: string, prefixes: string[]) {
 export function getRouteAccent(pathOrHref: string): RouteAccent {
   const path = normalizePath(pathOrHref);
 
-  if (
-    matches(path, ["/soforthilfe", "/notfallkarte"]) ||
-    path === "/unterstuetzen/krise"
-  ) {
+  if (matches(path, ["/soforthilfe"]) || path === "/unterstuetzen/krise") {
     return alertAccent;
   }
 

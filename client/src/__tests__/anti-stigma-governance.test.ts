@@ -285,10 +285,10 @@ describe("anti-stigma governance", () => {
     expect(exerciseSource).not.toMatch(
       /Gefühl, erpresst|nicht ernst nehmen.*nicht drängen|ich gehe nicht weg/
     );
-    expect(exerciseSource).toContain("Bei akuter Gefahr rufen wir jetzt 144");
     expect(exerciseSource).toContain(
-      "143 bietet zusätzliche Gesprächsentlastung, ersetzt aber keinen Notruf"
+      "Diese Kommunikationsübung nimmt keine Risikoeinschätzung vor"
     );
+    expect(exerciseSource).not.toMatch(/\b(?:143|144|117)\b|tel:/);
   });
 
   it("keeps the Eisberg metaphor tentative instead of reading hidden causes", () => {

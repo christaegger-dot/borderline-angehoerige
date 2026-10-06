@@ -15,12 +15,12 @@ const pagesDir = path.resolve(__dirname, "..", "pages");
 // die werden hier explizit ausgeklammert.
 const DYNAMIC_PATH_PAGES = new Set([
   "HandoutTextPage.tsx", // path={handoutMeta.path} - dynamisch pro Handout
+  "Notfallkarte.tsx", // bewusst nicht mehr als öffentliche Route registriert
 ]);
 
 // Konstanten- oder Variable-basierte Paths: Mapping auf den Laufzeitwert.
 const ALIASED_PATH_PAGES: Record<string, string> = {
   "Selbsthilfegruppen.tsx": "/beratung", // path={currentPath}, canonical=/beratung
-  "Notfallkarte.tsx": "/notfallkarte/erstellen", // PERSONAL_NOTFALLKARTE_PATH
 };
 
 function extractMedicalSchemaPath(src: string): string | null {

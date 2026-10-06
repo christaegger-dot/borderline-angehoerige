@@ -23,7 +23,6 @@ import {
 } from "@/content/handouts";
 import { getHandoutTextVersionHrefBySource } from "@/content/handoutTextVersions";
 import {
-  HANDOUT_WEB_ONLY_NOTE,
   HANDOUT_VISUAL_REFRESH_NOTE,
   isHandoutVisualPublished,
   isHandoutWebVersionPublished,
@@ -138,9 +137,7 @@ function MaterialEntry({
 
         <h3 className="material-library-card__title">{item.title}</h3>
         <p className="material-library-card__description">{item.description}</p>
-        {!visualPublished && currentHtmlAvailable ? (
-          <p className="material-library-card__note">{HANDOUT_WEB_ONLY_NOTE}</p>
-        ) : !visualPublished && textVersionHref ? (
+        {!visualPublished && textVersionHref ? (
           <p className="material-library-card__note">
             {HANDOUT_VISUAL_REFRESH_NOTE}
           </p>
@@ -310,21 +307,15 @@ export default function MaterialienLibrarySection() {
             links={[
               {
                 href: "/soforthilfe",
-                title: "Soforthilfe & Notfallnummern",
+                title: "Akute Hilfe und Notfallkontakte",
                 description:
-                  "Akute Notfall-Kontakte, Krisenkarten und 24/7-Hotlines.",
+                  "Die zentrale Seite mit Anlaufstellen für akute Situationen.",
               },
               {
                 href: "/wegweiser",
                 title: "Situations-Wegweiser",
                 description:
-                  "Schritt-für-Schritt-Hilfe für konkrete Krisenszenarien.",
-              },
-              {
-                href: "/notfallkarte",
-                title: "Notfallkarte",
-                description:
-                  "Webfassung mit Krisenkontakten und Zugang zum getrennten Werkzeug für persönliche Einträge.",
+                  "Eine Orientierung zu Situationen und passenden nächsten Schritten.",
               },
             ]}
           />

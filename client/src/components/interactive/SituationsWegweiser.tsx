@@ -1,7 +1,7 @@
 /* Decision tree for acute situations; crisis highlighting remains intentional. */
 import { useCallback, useRef, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
-import { kontaktByIdStrict } from "@/data/kontakte";
+import AppLink from "@/components/AppLink";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
 
 interface Step {
@@ -117,7 +117,7 @@ const TREE: TreeNode[] = [
         id: "s1",
         text: "Rufen Sie sofort den Rettungsdienst",
         detail:
-          "Bei Lebensgefahr rufen Sie 144, bei Gewalt oder Bedrohung 117. Bleiben Sie am Telefon und folgen Sie den Anweisungen der Leitstelle.",
+          "Wenden Sie sich an den zuständigen Notfalldienst. Folgen Sie den Anweisungen der Leitstelle.",
         emergency: true,
         kontakte: ["ROT_144", "ROT_117"],
       },
@@ -214,7 +214,7 @@ const TREE: TreeNode[] = [
         id: "s1",
         text: "Rufen Sie den Rettungsdienst",
         detail:
-          "Bei starker Blutung, Bewusstseinsstörung, Atemproblemen oder möglicher unmittelbarer Lebensgefahr rufen Sie 144. Auch wenn Sie nicht wissen, ob die Verletzung lebensbedrohlich ist: Beschreiben Sie der Leitstelle, was Sie beobachten.",
+          "Bei starker Blutung, Bewusstseinsstörung, Atemproblemen oder möglicher unmittelbarer Lebensgefahr wenden Sie sich an den zuständigen Notfalldienst. Beschreiben Sie, was Sie beobachten.",
         emergency: true,
         kontakte: ["ROT_144"],
       },
@@ -310,7 +310,7 @@ const TREE: TreeNode[] = [
         id: "s2",
         text: "Rufen Sie bei Bedarf die Polizei",
         detail:
-          "Bei akuter Bedrohung oder Gewalt rufen Sie 117. Beschreiben Sie, was Sie erleben oder beobachten; Sie müssen kein Motiv beurteilen.",
+          "Bei akuter Bedrohung oder Gewalt wenden Sie sich an den zuständigen Notfalldienst. Beschreiben Sie, was Sie erleben oder beobachten; Sie müssen kein Motiv beurteilen.",
         emergency: true,
         kontakte: ["ROT_117"],
       },
@@ -413,7 +413,7 @@ const TREE: TreeNode[] = [
         id: "s6",
         text: "Wenn Sie sich Sorgen machen",
         detail:
-          "Beschreiben Sie dem psychiatrischen Notfalldienst, was Sie beobachtet haben und was Sie befürchten. Bei möglicher unmittelbarer Lebensgefahr rufen Sie den Rettungsdienst.",
+          "Beschreiben Sie dem zuständigen Notfalldienst, was Sie beobachtet haben und was Sie befürchten.",
         kontakte: ["ROT_144", "GELB_PUK_KJP", "GELB_PUK_ERW", "GELB_PUK_65"],
       },
     ],
@@ -455,7 +455,7 @@ const TREE: TreeNode[] = [
         id: "s5",
         text: "Hilfe holen, wenn Sie sich sorgen oder Entlastung brauchen",
         detail:
-          "Der psychiatrische Notfalldienst hilft bei dringender Einschätzung; bei möglicher unmittelbarer Lebensgefahr rufen Sie 144. Für Ihre eigene Entlastung im Gespräch ist auch die Dargebotene Hand da. Sie ersetzt keine medizinische Abklärung.",
+          "Bei Sorge um die Sicherheit oder wenn Sie Entlastung brauchen, holen Sie professionelle Unterstützung. Sie müssen die Dringlichkeit nicht allein beurteilen.",
         kontakte: [
           "ROT_144",
           "GELB_PUK_KJP",
@@ -473,7 +473,7 @@ const TREE: TreeNode[] = [
     question: "Mit Druck und Drohungen umgehen",
     safetyCritical: true,
     subtitle:
-      "Eine Suizidankündigung braucht professionelle Einschätzung – auch in einem Konflikt. Bei möglicher unmittelbarer Lebensgefahr rufen Sie 144; bei Gewalt oder Bedrohung 117.",
+      "Eine Suizidankündigung braucht professionelle Einschätzung – auch in einem Konflikt. Bei akuter Gefahr oder Unsicherheit nutzen Sie die zentrale Soforthilfe-Seite.",
     steps: [
       {
         id: "s1",
@@ -497,7 +497,7 @@ const TREE: TreeNode[] = [
         id: "s4",
         text: "Professionelle Hilfe hinzuziehen",
         detail:
-          "Bei möglicher Lebensgefahr den Rettungsdienst rufen, bei Bedrohung die Polizei. Für eine dringende psychiatrische Einschätzung erreichen Sie die PUK-Notfalldienste nach Altersgruppe.",
+          "Bei akuter Gefahr oder Unsicherheit wenden Sie sich an den zuständigen Notfalldienst. Die Website nimmt keine Risikoeinschätzung vor.",
         kontakte: [
           "ROT_144",
           "ROT_117",
@@ -561,19 +561,6 @@ const detailStyle = {
 };
 
 // ─── Sub-components ──────────────────────────────────────
-
-function KontaktInline({ kontaktId }: { kontaktId: string }) {
-  const k = kontaktByIdStrict(kontaktId);
-  return (
-    <a
-      href={`tel:${k.tel}`}
-      className="editorial-link"
-      style={{ fontSize: "var(--text-sm)" }}
-    >
-      Telefon {k.nummer} – {k.label}
-    </a>
-  );
-}
 
 function ChoiceButton({
   label,
@@ -782,13 +769,6 @@ export default function SituationsWegweiser() {
                           {step.detail && (
                             <p style={detailStyle}>{step.detail}</p>
                           )}
-                          {step.kontakte && step.kontakte.length > 0 && (
-                            <p className="flex flex-wrap gap-x-5 gap-y-1 pt-1">
-                              {step.kontakte.map(kId => (
-                                <KontaktInline key={kId} kontaktId={kId} />
-                              ))}
-                            </p>
-                          )}
                           {step.link && (
                             <p
                               className="pt-1"
@@ -807,6 +787,13 @@ export default function SituationsWegweiser() {
                     </li>
                   ))}
                 </ol>
+              )}
+              {node.steps?.some(step => step.kontakte?.length) && (
+                <p className="mt-6" style={{ fontSize: "var(--text-sm)" }}>
+                  <AppLink href="/soforthilfe" className="editorial-link">
+                    Akute Hilfe und Notfallkontakte
+                  </AppLink>
+                </p>
               )}
             </div>
           </m.div>

@@ -1,6 +1,5 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { kontaktByIdStrict } from "@/data/kontakte";
 import { handoutTextVersions as genesungTextVersions } from "@/content/handoutTextVersionContent/genesung.content";
 import { handoutTextVersions as grenzenTextVersions } from "@/content/handoutTextVersionContent/grenzen.content";
 import { handoutTextVersions as kommunizierenTextVersions } from "@/content/handoutTextVersionContent/kommunizieren.content";
@@ -43,23 +42,17 @@ describe("handout release content guardrails", () => {
     }
   });
 
-  it("keeps crisis communication and emergency plan numbers synced to kontakte.ts", () => {
+  it("keeps operational contact details out of crisis handout text versions", () => {
     const krisenkommunikation = textFor("krisenkommunikation");
     const notfallplan = textFor("notfallplan-krise");
+    const contactNumberPattern =
+      /\b(?:112|117|143|144|145)\b|058\s*384|0800\s*33\s*66\s*55|0848\s*800\s*858/i;
 
-    for (const id of [
-      "ROT_144",
-      "ROT_117",
-      "GELB_PUK_ERW",
-      "GELB_PUK_KJP",
-      "GELB_PUK_65",
-      "GRUEN_143",
-    ]) {
-      const nummer = kontaktByIdStrict(id).nummer;
-      expect(`${krisenkommunikation} ${notfallplan}`).toContain(nummer);
-    }
-
-    expect(krisenkommunikation).toContain("kein akuter Einsatzdienst");
+    expect(krisenkommunikation).toContain("Akute Hilfe und Notfallkontakte");
+    expect(notfallplan).toContain("zentrale Soforthilfe-Seite");
+    expect(`${krisenkommunikation} ${notfallplan}`).not.toMatch(
+      contactNumberPattern
+    );
     expect(allHandoutText).not.toContain("044 384 21 11");
   });
 

@@ -17,7 +17,7 @@ describe("static route shells", () => {
     const routes = getGeneratedStaticRouteHeadMetadata().map(meta => meta.path);
 
     expect(routes).toContain("/verstehen/diagnostik");
-    expect(routes).toContain("/notfallkarte/erstellen");
+    expect(routes).not.toContain("/notfallkarte/erstellen");
     expect(routes).toContain("/materialien/text/leuchtturm");
     expect(routes).not.toContain("/soforthilfe");
   });

@@ -1,5 +1,3 @@
-import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
-
 export type SearchEntry = {
   title: string;
   description: string;
@@ -1823,25 +1821,6 @@ export const searchableContent: SearchEntry[] = [
       "interaktiv",
     ],
     href: "/uebungen",
-    section: "Tools",
-  },
-
-  // Notfallkarte
-  {
-    title: "Notfallkarte erstellen",
-    description:
-      "Persönliche Notfallkarte für Krisenmomente: Notfallkontakte, Warnsignale und Deeskalationsschritte festhalten",
-    keywords: [
-      "notfallkarte",
-      "notfall",
-      "karte",
-      "krisenplan",
-      "kontakte",
-      "warnsignale",
-      "deeskalation",
-      "vorbereitung",
-    ],
-    href: PERSONAL_NOTFALLKARTE_PATH,
     section: "Tools",
   },
 

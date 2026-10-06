@@ -479,8 +479,11 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
     ).toHaveTextContent(
-      /Bei Bedrohung oder Gewalt.*117.*Bei vermuteter unmittelbarer Selbstgefährdung.*144/i
+      /Bei Bedrohung oder Gewalt.*Akute Hilfe und Notfallkontakte/i
     );
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).not.toHaveTextContent(/\b(?:117|144)\b/);
     expect(screen.queryByText(/Worum es in diesem Handout geht/i)).toBeNull();
   });
 
@@ -567,8 +570,11 @@ describe("Smoke Tests – Kritische Seiten", () => {
     expect(
       screen.getByRole("note", { name: /Sicherheitshinweis/i })
     ).toHaveTextContent(
-      /Bei Bedrohung oder Gewalt.*117.*Bei vermuteter unmittelbarer Selbstgefährdung.*144/i
+      /Bei Bedrohung oder Gewalt.*Akute Hilfe und Notfallkontakte/i
     );
+    expect(
+      screen.getByRole("note", { name: /Sicherheitshinweis/i })
+    ).not.toHaveTextContent(/\b(?:117|144)\b/);
   });
 
   it("HandoutTextPage: rendert DEAR-Textversion", async () => {

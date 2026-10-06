@@ -13,10 +13,10 @@ describe("MaterialienLibrarySection", () => {
 
     expect(screen.getByText("Alle Materialien")).toBeInTheDocument();
     expect(
-      screen.getAllByRole("heading", {
+      screen.queryByRole("heading", {
         name: "Notfallkarte Zürich – Psychische Krise",
       })
-    ).toHaveLength(1);
+    ).not.toBeInTheDocument();
     expect(screen.getByText("Genesung in Zahlen")).toBeInTheDocument();
     expect(
       screen.queryByRole("link", {
@@ -24,36 +24,16 @@ describe("MaterialienLibrarySection", () => {
       })
     ).not.toBeInTheDocument();
 
-    const notfallkarteDownloadLinks = screen.queryAllByRole("link", {
-      name: /Notfallkarte Zürich – Psychische Krise herunterladen/i,
-    });
-    expect(notfallkarteDownloadLinks).toHaveLength(0);
     expect(
-      screen.getAllByRole("link", {
-        name: /Notfallkarte Zürich – Psychische Krise öffnen/i,
-      })[0]
-    ).toHaveAttribute("href", "/notfallkarte");
-    expect(
-      screen.getByText(
-        /Diese Notfallkarte wird ausschliesslich als Webfassung angeboten\. Eine separate PDF- oder Bildfassung gibt es nicht/i
-      )
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        "Materialformat: Webfassung · keine separate PDF- oder Bildfassung"
-      )
-    ).toBeInTheDocument();
-    expect(
-      screen.queryByRole("button", {
-        name: /Notfallkarte Zürich – Psychische Krise öffnen/i,
+      screen.queryByRole("link", {
+        name: /Notfallkarte Zürich – Psychische Krise/i,
       })
     ).not.toBeInTheDocument();
     expect(
-      screen.getByRole("img", {
-        name: /Notfallkarte Zürich – Psychische Krise: Webfassung verfügbar; keine separate PDF- oder Bildfassung/i,
-      })
-    ).toBeInTheDocument();
-    expect(screen.getByText("Webfassung")).toBeInTheDocument();
+      screen.getAllByRole("link", {
+        name: "Akute Hilfe und Notfallkontakte",
+      })[0]
+    ).toHaveAttribute("href", "/soforthilfe");
     expect(
       screen.getAllByRole("link", {
         name: /Textversion lesen: Notfallplan Krise – Suizidgedanken & Selbstverletzung/i,

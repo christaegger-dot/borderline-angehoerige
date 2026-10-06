@@ -10,10 +10,6 @@ import Layout from "@/components/Layout";
 import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import SEO, { MedicalPageSchema } from "@/components/SEO";
 import SituationsWegweiser from "@/components/interactive/SituationsWegweiser";
-import { kontaktByIdStrict } from "@/data/kontakte";
-import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
-
-const rot144 = kontaktByIdStrict("ROT_144");
 
 export default function Wegweiser() {
   return (
@@ -56,16 +52,14 @@ export default function Wegweiser() {
           </p>
           <EditorialCallout
             variant="achtung"
-            title="Bei akuter Lebensgefahr"
+            title="Akute Hilfe und Notfallkontakte"
             className="mt-6"
           >
-            Rufen Sie sofort{" "}
-            <a href={`tel:${rot144.tel}`} className="editorial-link">
-              {rot144.nummer}
-            </a>{" "}
-            an. Dieser Wegweiser ersetzt keinen Notruf —{" "}
+            Dieser Wegweiser nimmt keine Risikoeinschätzung oder Triage vor. Bei
+            akuter Gefahr oder wenn Sie die Dringlichkeit nicht sicher
+            einschätzen können, nutzen Sie die zentrale Soforthilfe-Seite:{" "}
             <AppLink href="/soforthilfe" className="editorial-link">
-              alle Notfallnummern
+              Akute Hilfe und Notfallkontakte
             </AppLink>
             .
           </EditorialCallout>
@@ -95,11 +89,6 @@ export default function Wegweiser() {
               href: "/soforthilfe",
               title: "Soforthilfe",
               description: "Alle Notfallnummern.",
-            },
-            {
-              href: PERSONAL_NOTFALLKARTE_PATH,
-              title: "Notfallkarte",
-              description: "Persönliche Karte erstellen.",
             },
             {
               href: "/selbstfuersorge#eigene-unterstuetzung",

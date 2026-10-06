@@ -108,7 +108,7 @@ const wasHilft = [
       },
       {
         sprecher: "Person B",
-        text: "Für ein entlastendes Gespräch ist 143 rund um die Uhr da. Bei medizinischer Lebensgefahr rufst du 144, bei Gewalt oder Bedrohung 117. Morgen früh melde ich mich.",
+        text: "Bei Sorge um Sicherheit finden wir passende professionelle Hilfe unter «Akute Hilfe und Notfallkontakte». Morgen früh melde ich mich.",
       },
     ],
   },

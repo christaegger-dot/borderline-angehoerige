@@ -29,7 +29,6 @@ export const STATIC_ROUTE_REDIRECTS = APP_REDIRECTS;
 
 export const SOURCE_STATIC_HTML_ROUTES = new Map<string, string>([
   ["/soforthilfe", "soforthilfe/index.html"],
-  ["/notfallkarte", "notfallkarte.html"],
 ]);
 
 const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
@@ -52,21 +51,6 @@ const BASE_ROUTE_HEAD_METADATA: StaticRouteHeadMetadata[] = [
       "Notfallnummern und Anlaufstellen für akute Krisen in der Schweiz. Robuste Direktseite für Soforthilfe, auch wenn die App nicht lädt.",
     includeMedicalSchema: true,
     medicalLastReviewed: "2026-04-30",
-  },
-  {
-    path: "/notfallkarte",
-    title: "Notfallkarte Zürich – Psychische Krise v07",
-    description:
-      "Notfallkarte Zürich: Wichtige Nummern und Orientierung bei psychischen Krisen – für Angehörige, direkt im Browser.",
-    includeMedicalSchema: true,
-    medicalTitle: "Notfallkarte Zürich – Psychische Krise",
-  },
-  {
-    path: "/notfallkarte/erstellen",
-    title: "Persönliche Notfallkarte",
-    description:
-      "Erstellen Sie Ihre persönliche Notfallkarte mit den wichtigsten Nummern, Kontaktpersonen und Beruhigungsstrategien – zum Ausdrucken oder Speichern.",
-    includeMedicalSchema: true,
   },
   {
     path: "/verstehen",

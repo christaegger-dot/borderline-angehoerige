@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import AppLink from "@/components/AppLink";
 import { m, AnimatePresence } from "framer-motion";
 import { EditorialPillButton } from "@/components/ui/EditorialPillButton";
-import { kontaktByIdStrict } from "@/data/kontakte";
 
 const immediateHelpAnswers = new Set(["akut", "unsicher"]);
 
@@ -25,8 +24,6 @@ interface Result {
   primaryLink: string;
   primaryText: string;
   secondaryLinks: { href: string; text: string }[];
-  /** Sicherheits-kritisches Resultat: alert-border-l + alert-wash bg */
-  safetyCritical?: boolean;
 }
 
 const concernReasonLabels: Record<string, string> = {
@@ -208,18 +205,12 @@ const intensityReflections: Record<string, string> = {
 const results: Result[] = [
   {
     id: "notfall",
-    title: "Sofortige Hilfe",
+    title: "Akute Hilfe und Notfallkontakte",
     description:
-      "In einer akuten Krise ist schnelles Handeln wichtig. Hier finden Sie Notfallnummern und Anlaufstellen.",
+      "Diese Website nimmt keine Risikoeinschätzung vor. Bei akuter Gefahr oder wenn Sie die Dringlichkeit nicht sicher einschätzen können, finden Sie hier passende Anlaufstellen.",
     primaryLink: "/soforthilfe",
-    primaryText: "Zu den Notfallressourcen",
-    secondaryLinks: [
-      {
-        href: "/unterstuetzen/krise",
-        text: "Krise einordnen und eigenen nächsten Schritt wählen",
-      },
-    ],
-    safetyCritical: true,
+    primaryText: "Akute Hilfe und Notfallkontakte",
+    secondaryLinks: [],
   },
   {
     id: "diagnostik",
@@ -527,13 +518,14 @@ export default function Selbsttest() {
   // ── Resultat-Anzeige ──
   if (showResult) {
     const result = getTopResult();
-    const isSafetyCritical = result.safetyCritical === true;
     const diagnosisStatus = answers[4];
     const reflection = immediateHelpAnswers.has(answers[1])
-      ? "Sie müssen keine weiteren Fragen beantworten. Holen Sie jetzt Unterstützung, wenn Sie sich um die Sicherheit sorgen."
+      ? "Sie müssen keine weiteren Fragen beantworten. Bei Sorgen um die Sicherheit oder Unsicherheit können Sie passende Anlaufstellen auf der Soforthilfe-Seite finden."
       : (intensityReflections[answers[3]] ?? null);
     const secondaryLinks =
-      diagnosisStatus && diagnosisNeedsGuidance.has(diagnosisStatus)
+      result.id !== "notfall" &&
+      diagnosisStatus &&
+      diagnosisNeedsGuidance.has(diagnosisStatus)
         ? [
             ...result.secondaryLinks,
             ...(result.primaryLink === "/verstehen/diagnostik" ||
@@ -549,33 +541,23 @@ export default function Selbsttest() {
                 ]),
           ]
         : result.secondaryLinks;
-    const reasons = isSafetyCritical
-      ? []
-      : [
-          concernReasonLabels[answers[2]],
-          wellbeingReasonLabels[answers[5]],
-        ].filter((reason): reason is string => Boolean(reason));
+    const reasons =
+      result.id === "notfall"
+        ? []
+        : [
+            concernReasonLabels[answers[2]],
+            wellbeingReasonLabels[answers[5]],
+          ].filter((reason): reason is string => Boolean(reason));
 
     return (
       <m.div
-        initial={isSafetyCritical ? false : { opacity: 0, scale: 0.97 }}
+        initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         aria-live="polite"
         role="status"
       >
-        <div
-          className={isSafetyCritical ? "border-l-4 pl-6 py-4" : ""}
-          style={
-            isSafetyCritical
-              ? {
-                  borderColor: "var(--color-alert)",
-                  backgroundColor:
-                    "var(--color-alert-wash, rgba(197,95,61,0.05))",
-                }
-              : undefined
-          }
-        >
+        <div>
           <p className="uppercase" style={labelStyle}>
             Redaktionelle Orientierung
           </p>
@@ -616,57 +598,6 @@ export default function Selbsttest() {
             </div>
           )}
 
-          {isSafetyCritical && (
-            <div className="mt-6 space-y-6" style={bodyStyle}>
-              <section aria-label="Bei unmittelbarer Gefahr">
-                <h3 className="font-semibold">Bei unmittelbarer Gefahr</h3>
-                <p>
-                  Bei akuter Suizidgefahr oder medizinischem Notfall den
-                  Rettungsdienst rufen. Bei Gewalt oder Bedrohung die Polizei
-                  kontaktieren. Bringen Sie sich selbst nicht in Gefahr.
-                </p>
-                <p className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
-                  {["ROT_144", "ROT_117"].map(id => {
-                    const k = kontaktByIdStrict(id);
-                    return (
-                      <a
-                        key={id}
-                        href={`tel:${k.tel}`}
-                        className="editorial-link"
-                      >
-                        {k.nummer} – {k.label}
-                      </a>
-                    );
-                  })}
-                </p>
-              </section>
-              <section aria-label="Bei einer psychischen Krise oder Unsicherheit">
-                <h3 className="font-semibold">
-                  Bei einer psychischen Krise oder Unsicherheit
-                </h3>
-                <p>
-                  Sie müssen die Dringlichkeit nicht allein beurteilen. Wenn
-                  keine unmittelbare Gefahr erkennbar ist oder Sie unsicher
-                  sind, kontaktieren Sie jetzt den psychiatrischen
-                  Notfalldienst. Bei möglicher unmittelbarer Lebensgefahr wählen
-                  Sie den Rettungsdienst.
-                </p>
-                <ul className="mt-2 space-y-2">
-                  {["GELB_PUK_KJP", "GELB_PUK_ERW", "GELB_PUK_65"].map(id => {
-                    const k = kontaktByIdStrict(id);
-                    return (
-                      <li key={id}>
-                        <a href={`tel:${k.tel}`} className="editorial-link">
-                          {k.nummer} – {k.label}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </section>
-            </div>
-          )}
-
           {/* Primary CTA — bleibt echter Button (Tier-1-Navigation) */}
           <p
             className="mt-8 flex flex-wrap gap-x-5 gap-y-1"
@@ -687,7 +618,7 @@ export default function Selbsttest() {
           </p>
 
           {/* Secondary Links */}
-          {!isSafetyCritical && secondaryLinks.length > 0 && (
+          {result.id !== "notfall" && secondaryLinks.length > 0 && (
             <div
               className="mt-8 border-t pt-6"
               style={{ borderColor: "var(--rule-color)" }}

@@ -1,5 +1,4 @@
 import { lazy } from "react";
-import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import type { RouteComponentProps } from "wouter";
 import { APP_REDIRECTS } from "@shared/redirects";
 
@@ -40,7 +39,6 @@ const Buchempfehlungen = lazy(() => import("@/pages/Buchempfehlungen"));
 const FAQ = lazy(() => import("@/pages/FAQ"));
 const UeberUns = lazy(() => import("@/pages/UeberUns"));
 const Fachstelle = lazy(() => import("@/pages/Fachstelle"));
-const Notfallkarte = lazy(() => import("@/pages/Notfallkarte"));
 const Wegweiser = lazy(() => import("@/pages/Wegweiser"));
 const Uebungsszenarien = lazy(() => import("@/pages/Uebungsszenarien"));
 const Quellen = lazy(() => import("@/pages/Quellen"));
@@ -108,7 +106,6 @@ export const routes: AppRoute[] = [
   { path: "/faq", component: FAQ, requiresMotion: true },
   { path: "/ueber-uns", component: UeberUns, requiresMotion: true },
   { path: "/fachstelle", component: Fachstelle, requiresMotion: true },
-  { path: PERSONAL_NOTFALLKARTE_PATH, component: Notfallkarte },
   { path: "/wegweiser", component: Wegweiser, requiresMotion: true },
   { path: "/uebungen", component: Uebungsszenarien, requiresMotion: true },
   { path: "/quellen", component: Quellen, requiresMotion: true },

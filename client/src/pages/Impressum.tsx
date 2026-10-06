@@ -16,9 +16,6 @@ import { emailByIdStrict, kontaktByIdStrict } from "@/data/kontakte";
 
 const fachstelle = kontaktByIdStrict("INFO_FACHSTELLE");
 const emailAngehoerigen = emailByIdStrict("EMAIL_ANGEHOERIGEN");
-const rot144 = kontaktByIdStrict("ROT_144");
-const rot117 = kontaktByIdStrict("ROT_117");
-const gruen143 = kontaktByIdStrict("GRUEN_143");
 
 export default function Impressum() {
   return (
@@ -140,10 +137,15 @@ export default function Impressum() {
                 Diese Website ersetzt keine professionelle Beratung, Diagnose
                 oder Behandlung.
               </strong>{" "}
-              Bei psychischen Krisen oder Notfällen wenden Sie sich bitte
-              umgehend an die entsprechenden Notfallnummern ({rot144.nummer} /{" "}
-              {rot117.nummer}) oder den psychiatrischen Notdienst. Zur
-              Entlastung: {gruen143.label} ({gruen143.nummer}).
+              Die Fachstelle Angehörigenarbeit bietet keine Krisenintervention.
+              Bei akuter Gefahr oder wenn Sie die Dringlichkeit nicht sicher
+              einschätzen können, wenden Sie sich an den zuständigen
+              Notfalldienst. Hinweise zu passenden Anlaufstellen finden Sie
+              unter{" "}
+              <AppLink href="/soforthilfe" className="editorial-link">
+                Akute Hilfe und Notfallkontakte
+              </AppLink>
+              .
             </p>
             <p>
               Für externe Links wird keine Haftung übernommen. Für den Inhalt

@@ -11,8 +11,6 @@ const governanceBackedBadgePaths = [
   "/faq",
   "/genesung",
   "/grenzen",
-  "/notfallkarte",
-  "/notfallkarte/erstellen",
   "/quellen",
   "/unterstuetzen/alltag",
   "/unterstuetzen/krise",

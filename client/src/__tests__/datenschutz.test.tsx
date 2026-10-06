@@ -2,7 +2,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import type { ElementType, HTMLAttributes, ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
 import { pageGovernance } from "@/data/pageGovernance";
-import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 import Datenschutz from "@/pages/Datenschutz";
 
 const MOTION_PROPS = new Set([
@@ -62,43 +61,42 @@ vi.mock("framer-motion", () => {
 });
 
 describe("Datenschutz", () => {
-  it("explains local browser storage for the personal notfallkarte", () => {
+  it("explains that the retired personal tool may leave local browser data", () => {
     render(<Datenschutz />);
 
     const sectionToggle = screen.getByRole("button", {
-      name: /Persönliche Notfallkarte und lokale Speicherung/i,
+      name: /Frühere persönliche Notfallkarte und lokale Daten/i,
     });
     expect(sectionToggle).toBeInTheDocument();
     fireEvent.click(sectionToggle);
     expect(document.body).toHaveTextContent(
-      /lokal im Browser auf Ihrem Gerät/i
+      /lokal im Browser auf diesem Gerät liegen/i
     );
     expect(document.body).toHaveTextContent(
-      /nicht an einen Server dieser Website übertragen/i
+      /nicht an Server dieser Website übertragen/i
     );
     expect(
-      screen.getByText(/gemeinsam genutzten Geräten/i)
+      screen.getByText(/Einstellungen Ihres Browsers/i)
     ).toBeInTheDocument();
-    expect(screen.getByText(/«Daten löschen»/i)).toBeInTheDocument();
 
     const cookiesToggle = screen.getByRole("button", {
       name: /Cookies/i,
     });
     fireEvent.click(cookiesToggle);
     expect(document.body).toHaveTextContent(
-      /verwendet sie für ihre Einträge kein Cookie/i
+      /keine Tracking- oder Werbe-Cookies/i
     );
   });
 
-  it("links the related card to the personal notfallkarte and keeps the stand in sync", () => {
+  it("links to current emergency contacts and keeps the stand in sync", () => {
     render(<Datenschutz />);
 
     const lastReviewed = pageGovernance["/datenschutz"]?.lastReviewed;
     const expectedDate = lastReviewed?.split("-").reverse().join(".");
 
     expect(
-      screen.getByRole("link", { name: /persönliche notfallkarte/i })
-    ).toHaveAttribute("href", PERSONAL_NOTFALLKARTE_PATH);
+      screen.getByRole("link", { name: /Akute Hilfe und Notfallkontakte/i })
+    ).toHaveAttribute("href", "/soforthilfe");
     expect(
       screen.getByText(new RegExp(`Stand der Erklärung: ${expectedDate}`))
     ).toBeInTheDocument();

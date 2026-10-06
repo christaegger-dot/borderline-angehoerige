@@ -54,18 +54,6 @@ const P1_MATERIAL_STAND =
 
 export const materials: MaterialItem[] = [
   {
-    id: "notfallkarte-zuerich",
-    title: "Notfallkarte Zürich – Psychische Krise",
-    description:
-      "Wichtige Nummern und Orientierung für Angehörige bei psychischen Krisen – direkt im Browser.",
-    category: "soforthilfe",
-    kind: "Notfallkarte",
-    url: "/notfallkarte",
-    isHtml: true,
-    priority: "core",
-    showInLibrary: true,
-  },
-  {
     id: "notfallplan-krise",
     title: "Notfallplan Krise – Suizidgedanken & Selbstverletzung",
     description:

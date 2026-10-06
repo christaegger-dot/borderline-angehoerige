@@ -12,7 +12,6 @@ import RelatedLinksEditorial from "@/components/RelatedLinksEditorial";
 import ReviewBadge from "@/components/ReviewBadge";
 import SEO from "@/components/SEO";
 import { pageGovernance } from "@/data/pageGovernance";
-import { PERSONAL_NOTFALLKARTE_PATH } from "@/domain/notfallkarte";
 
 export default function Datenschutz() {
   const lastReviewed = pageGovernance["/datenschutz"]?.lastReviewed;
@@ -167,36 +166,22 @@ export default function Datenschutz() {
 
         <ContentSection
           variant="editorial"
-          title="Persönliche Notfallkarte und lokale Speicherung"
+          title="Frühere persönliche Notfallkarte und lokale Daten"
           id="notfallkarte-lokal"
-          preview="Persönliche Einträge bleiben lokal im Browser und werden nicht an Server dieser Website übertragen."
+          preview="Das persönliche Werkzeug wird derzeit nicht angeboten; ältere Einträge können noch lokal im Browser liegen."
         >
           <EditorialProse>
             <p>
-              Die persönliche Notfallkarte kann personenbezogene Angaben
-              enthalten, zum Beispiel Namen, Telefonnummern, Beziehungen,
-              Beruhigungsstrategien oder freie Notizen.
+              Das persönliche Notfallkarten-Werkzeug wird auf dieser Website
+              derzeit nicht angeboten. Falls Sie es früher genutzt haben, können
+              dabei gespeicherte Einträge noch lokal im Browser auf diesem Gerät
+              liegen.
             </p>
             <p>
-              Standardmässig werden neue Einträge nicht dauerhaft gespeichert.
-              Sie bleiben nur erhalten, solange die Seite geöffnet ist. Wenn Sie
-              «Auf diesem Gerät speichern» aktivieren, werden die Angaben{" "}
-              <strong>lokal im Browser auf Ihrem Gerät</strong> gespeichert, bis
-              Sie sie löschen oder die Browserdaten entfernen. Die Einträge
-              werden dabei{" "}
-              <strong>nicht an einen Server dieser Website übertragen</strong>.
-            </p>
-            <p>
-              Bei aktivierter Speicherung können andere Personen auf gemeinsam
-              genutzten Geräten die Einträge sehen, wenn sie denselben Browser
-              verwenden. Sie können die Speicherung wieder deaktivieren oder in
-              der Notfallkarte über <strong>«Daten löschen»</strong> sämtliche
-              Einträge entfernen.
-            </p>
-            <p>
-              Für die Druckansicht wird zusätzlich kurzfristig lokaler
-              Browser-Speicher verwendet. Auch diese Daten werden nicht an
-              unsere Server übertragen.
+              Diese Website bietet für ältere Einträge keine Löschfunktion mehr
+              an. Sie können gespeicherte Website-Daten in den Einstellungen
+              Ihres Browsers entfernen. Die früheren Einträge wurden lokal
+              gespeichert und nicht an Server dieser Website übertragen.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -205,7 +190,7 @@ export default function Datenschutz() {
           variant="editorial"
           title="Cookies"
           id="cookies"
-          preview="Die Website setzt selbst keine Tracking- oder Werbe-Cookies; eine optional gespeicherte Notfallkarte liegt im localStorage."
+          preview="Die Website setzt selbst keine Tracking- oder Werbe-Cookies."
         >
           <EditorialProse>
             <p>
@@ -213,13 +198,6 @@ export default function Datenschutz() {
               <strong>keine Tracking- oder Werbe-Cookies</strong>. Beim
               geprüften Seitenaufruf wurde auch kein Cookie durch den
               Hosting-Dienst gesetzt.
-            </p>
-            <p>
-              Wenn Sie das dauerhafte Speichern der persönlichen Notfallkarte
-              aktivieren, verwendet sie für ihre Einträge{" "}
-              <strong>kein Cookie</strong>, sondern lokalen Browser-Speicher
-              (`localStorage`). Dieser unterscheidet sich von Cookies und liegt
-              in diesem Browser auf Ihrem Gerät.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -270,9 +248,8 @@ export default function Datenschutz() {
             <p>
               Die auf dieser Website angebotenen Infografiken und Handouts
               können heruntergeladen werden. Beim Download werden keine
-              persönlichen Inhalte aus der Notfallkarte oder anderen lokalen
-              Eingaben an uns übertragen. Die Materialien werden über die
-              Website und ihren Hosting-Anbieter bereitgestellt.
+              persönlichen Eingaben an uns übertragen. Die Materialien werden
+              über die Website und ihren Hosting-Anbieter bereitgestellt.
             </p>
           </EditorialProse>
         </ContentSection>
@@ -318,11 +295,10 @@ export default function Datenschutz() {
           </ul>
 
           <p className="secondary-page-body mt-6">
-            Auf unseren Servern speichern wir grundsätzlich keine persönlichen
-            Inhalte aus der Notfallkarte. Falls Sie die persönliche Notfallkarte
-            verwenden, können solche Angaben lokal auf Ihrem Gerät gespeichert
-            sein. Diese Einträge können Sie direkt über{" "}
-            <strong>«Daten löschen»</strong> entfernen.
+            Auf unseren Servern speichern wir keine persönlichen Inhalte aus dem
+            früheren Notfallkarten-Werkzeug. Ältere Einträge können noch lokal
+            auf Ihrem Gerät liegen; entfernen können Sie diese in den
+            Einstellungen Ihres Browsers.
           </p>
         </ContentSection>
 
@@ -361,10 +337,10 @@ export default function Datenschutz() {
               description: "Wie die Website zugänglich gestaltet wird.",
             },
             {
-              href: PERSONAL_NOTFALLKARTE_PATH,
-              title: "Persönliche Notfallkarte",
+              href: "/soforthilfe",
+              title: "Akute Hilfe und Notfallkontakte",
               description:
-                "Wie lokale Speicherung und Löschfunktion praktisch funktionieren.",
+                "Die zentrale Seite mit Anlaufstellen für akute Situationen.",
             },
           ]}
         />

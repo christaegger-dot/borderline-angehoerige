@@ -2,285 +2,69 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { INFO } from "@/data/kontakte";
-import { pageGovernance } from "@/data/pageGovernance";
+import { APP_REDIRECTS } from "../../../shared/redirects";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "../../..");
 
-const KIZ = INFO.find(kontakt => kontakt.id === "INFO_KIZ");
-const FACHSTELLE = INFO.find(kontakt => kontakt.id === "INFO_FACHSTELLE");
-const AERZTEFON = INFO.find(kontakt => kontakt.id === "INFO_AERZTEFON");
-const OPFERHILFE = INFO.find(kontakt => kontakt.id === "INFO_OPFERHILFE_142");
-const OPFERHILFE_ZH = INFO.find(
-  kontakt => kontakt.id === "INFO_OPFERHILFE_ZH_24_7"
-);
-const FORENSIC_NURSES = INFO.find(
-  kontakt => kontakt.id === "INFO_FORENSIC_NURSES"
-);
-const OPFERBERATUNG_ZH = INFO.find(
-  kontakt => kontakt.id === "INFO_OPFERBERATUNG_ZH"
-);
+describe("retired emergency card", () => {
+  it("redirects the legacy overview and excludes personal and print routes", () => {
+    expect(APP_REDIRECTS).toContainEqual({
+      from: "/notfallkarte",
+      to: "/soforthilfe",
+      status: 301,
+    });
+    expect(APP_REDIRECTS).toContainEqual({
+      from: "/notfallkarte.html",
+      to: "/soforthilfe",
+      status: 301,
+    });
 
-function formatDate(date?: string) {
-  if (!date) return null;
-
-  const [year, month, day] = date.split("-");
-  if (!year || !month || !day) return date;
-
-  return `${day}.${month}.${year}`;
-}
-
-describe("notfallkarte architecture", () => {
-  it("keeps the personal tool off the static /notfallkarte URL", () => {
-    const routesIndex = fs.readFileSync(
+    const routes = fs.readFileSync(
       path.join(repoRoot, "client/src/app/routes.ts"),
       "utf8"
     );
+    const netlify = fs.readFileSync(
+      path.join(repoRoot, "netlify.toml"),
+      "utf8"
+    );
 
-    expect(routesIndex).not.toContain('path: "/notfallkarte", component');
-    expect(routesIndex).toContain("PERSONAL_NOTFALLKARTE_PATH");
+    expect(routes).not.toContain("PERSONAL_NOTFALLKARTE_PATH");
+    expect(netlify).toMatch(
+      /from = "\/notfallkarte\/erstellen"[\s\S]*?status = 404[\s\S]*?force = true/
+    );
+    expect(netlify).toMatch(
+      /from = "\/notfallkarte-print\.html"[\s\S]*?status = 404[\s\S]*?force = true/
+    );
+    expect(netlify).toMatch(
+      /from = "\/soforthilfe-print\.html"[\s\S]*?status = 404[\s\S]*?force = true/
+    );
   });
 
-  it("keeps both persisted and direct print handoff paths available", () => {
-    const pageSource = fs.readFileSync(
-      path.join(repoRoot, "client/src/pages/Notfallkarte.tsx"),
-      "utf8"
-    );
-    const printTemplate = fs.readFileSync(
-      path.join(repoRoot, "client/public/notfallkarte-print.html"),
-      "utf8"
-    );
-    const printScript = fs.readFileSync(
-      path.join(repoRoot, "client/public/notfallkarte-print.js"),
-      "utf8"
-    );
-
-    expect(pageSource).toMatch(/savePrintData\(data\)/);
-    expect(pageSource).toMatch(
-      /printWindow\.postMessage\(\s*payload,\s*window\.location\.origin\s*\)/
-    );
-    expect(printTemplate).toContain(
-      '<script src="/notfallkarte-print.js"></script>'
-    );
-    expect(printScript).toContain(
-      'localStorage.getItem("notfallkarte-print-data")'
-    );
-    expect(printScript).toContain('window.addEventListener("message"');
-    expect(printScript).toContain(
-      'localStorage.removeItem("notfallkarte-print-data")'
-    );
-    expect(printScript).toContain('typeof s.text === "string"');
-    expect(printScript).toContain("sEl.value = strategyText");
+  it("does not package retired browser-card or print assets", () => {
+    for (const asset of [
+      "client/public/notfallkarte.html",
+      "client/public/notfallkarte.js",
+      "client/public/notfallkarte.css",
+      "client/public/notfallkarte-print.html",
+      "client/public/notfallkarte-print.js",
+      "client/public/soforthilfe-print.html",
+    ]) {
+      expect(fs.existsSync(path.join(repoRoot, asset)), asset).toBe(false);
+    }
   });
 
-  it("keeps static crisis pages aligned with the canonical contact register", () => {
-    const browserCard = fs.readFileSync(
-      path.join(repoRoot, "client/public/notfallkarte.html"),
-      "utf8"
-    );
-    const soforthilfePrint = fs.readFileSync(
-      path.join(repoRoot, "client/public/soforthilfe-print.html"),
-      "utf8"
-    );
-    const soforthilfeDirect = fs.readFileSync(
+  it("keeps the independent Soforthilfe page and its overdue review status visible", () => {
+    const directPage = fs.readFileSync(
       path.join(repoRoot, "client/public/soforthilfe/index.html"),
       "utf8"
     );
 
-    expect(AERZTEFON).toBeDefined();
-    expect(KIZ).toBeDefined();
-    expect(FACHSTELLE).toBeDefined();
-    expect(OPFERHILFE).toBeDefined();
-    expect(OPFERHILFE_ZH).toBeDefined();
-    expect(FORENSIC_NURSES).toBeDefined();
-    expect(OPFERBERATUNG_ZH).toBeDefined();
-
-    expect(browserCard).toContain(AERZTEFON!.nummer);
-    expect(browserCard).not.toContain("044 360 44 44");
-    expect(browserCard).toMatch(
-      /Nicht lebensbedrohlicher medizinischer oder psychiatrischer\s+Notfall\?/
+    expect(directPage).toContain("Soforthilfe bei akuter Gefahr");
+    expect(directPage).toContain(
+      "Erneute Fachprüfung ausstehend (fällig seit 31.07.2026)"
     );
-
-    const lifeThreatSection = browserCard.split(
-      "<!-- BLOCK 2: PSYCHIATRISCHE KRISE -->"
-    )[0];
-
-    expect(lifeThreatSection).not.toContain(AERZTEFON!.nummer);
-    expect(lifeThreatSection).not.toContain("Ärztedienst Zürich");
-
-    expect(soforthilfePrint).toContain(KIZ!.nummer);
-    expect(soforthilfePrint).toContain(FACHSTELLE!.nummer);
-    expect(soforthilfePrint).not.toContain("044 296 73 00");
-    expect(soforthilfePrint).not.toContain("058 384 27 00");
-
-    expect(soforthilfeDirect).toContain(OPFERHILFE!.nummer);
-    expect(soforthilfeDirect).toContain(OPFERHILFE_ZH!.nummer);
-    expect(soforthilfeDirect).toContain(FORENSIC_NURSES!.nummer);
-    expect(soforthilfeDirect).toContain(OPFERBERATUNG_ZH!.nummer);
-    expect(soforthilfeDirect).toMatch(/Gewalt, Bedrohung oder Übergriff/);
-  });
-
-  it("keeps retired static notfallkarte assets and future promises out of maintained crisis pages", () => {
-    const browserCard = fs.readFileSync(
-      path.join(repoRoot, "client/public/notfallkarte.html"),
-      "utf8"
-    );
-    const soforthilfeDirect = fs.readFileSync(
-      path.join(repoRoot, "client/public/soforthilfe/index.html"),
-      "utf8"
-    );
-
-    for (const source of [browserCard, soforthilfeDirect]) {
-      expect(source).not.toContain(
-        "/Notfallkarte-Zuerich-Psychische-Krise.pdf"
-      );
-      expect(source).not.toContain("/notfallkarte-preview.webp");
-    }
-
-    expect(browserCard).toContain(
-      "Webfassung · keine separate PDF- oder Bildfassung"
-    );
-    expect(browserCard).not.toContain('id="print-notfallkarte"');
-    expect(browserCard).not.toContain("Drucken / PDF");
-    expect(soforthilfeDirect).toContain('href="/notfallkarte"');
-    expect(soforthilfeDirect).toContain(
-      "Die Notfallkarte wird ausschliesslich als Webfassung angeboten"
-    );
-    expect(soforthilfeDirect).not.toContain("neu bereitgestellt");
-    expect(soforthilfeDirect).not.toContain("in fachlicher Prüfung");
-  });
-
-  it("keeps unsafe crisis guarantees out of all maintained static variants", () => {
-    const variants = [
-      fs.readFileSync(
-        path.join(repoRoot, "client/public/notfallkarte.html"),
-        "utf8"
-      ),
-      fs.readFileSync(
-        path.join(repoRoot, "client/public/notfallkarte-print.html"),
-        "utf8"
-      ),
-      fs.readFileSync(
-        path.join(repoRoot, "client/public/soforthilfe-print.html"),
-        "utf8"
-      ),
-      fs.readFileSync(
-        path.join(repoRoot, "client/public/soforthilfe/index.html"),
-        "utf8"
-      ),
-    ];
-
-    for (const source of variants) {
-      expect(source).not.toMatch(
-        /funktioniert immer|auch ohne SIM-Karte|es kommt niemand vorbei|keine Konsequenzen/i
-      );
-    }
-
-    expect(variants[0]).toContain("ohne SIM nicht");
-    expect(variants[1]).toContain("ohne SIM-Karte ist");
-    expect(variants[2]).toContain("ohne SIM-Karte ist");
-  });
-
-  it("does not assign relatives sole monitoring or safety responsibility", () => {
-    const crisisPage = fs.readFileSync(
-      path.join(repoRoot, "client/src/pages/UnterstuetzenKrise.tsx"),
-      "utf8"
-    );
-    const textVersion = fs.readFileSync(
-      path.join(
-        repoRoot,
-        "client/src/content/handoutTextVersionContent/soforthilfe.content.ts"
-      ),
-      "utf8"
-    );
-    const wayfinder = fs.readFileSync(
-      path.join(
-        repoRoot,
-        "client/src/components/interactive/SituationsWegweiser.tsx"
-      ),
-      "utf8"
-    );
-    const communicationTextVersions = fs.readFileSync(
-      path.join(
-        repoRoot,
-        "client/src/content/handoutTextVersionContent/kommunizieren.content.ts"
-      ),
-      "utf8"
-    );
-    const crisisHandoutGenerator = fs.readFileSync(
-      path.join(
-        repoRoot,
-        "qa/handout-render-sources/notfallplan-krise-v04.html"
-      ),
-      "utf8"
-    );
-
-    expect(crisisPage).toContain("die Gefahr allein zu beurteilen");
-    expect(crisisPage).toContain("ohne professionelle Hilfe zu überwachen");
-    expect(textVersion).toContain("keine alleinige Überwachungs-");
-    expect(textVersion).toContain("Anweisungen der Leitstelle");
-    expect(wayfinder).toContain(
-      "Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung"
-    );
-    expect(wayfinder).toContain("Folgen Sie den Anweisungen der Leitstelle");
-    expect(communicationTextVersions).toContain(
-      "Sie tragen nicht allein die Verantwortung für Überwachung oder Sicherung"
-    );
-    expect(communicationTextVersions).toContain(
-      "Folgen Sie den Anweisungen der Leitstelle"
-    );
-    expect(crisisHandoutGenerator).toContain(
-      "keine alleinige Überwachungs- oder"
-    );
-    expect(crisisHandoutGenerator).toContain(
-      "den Anweisungen der Leitstelle folgen"
-    );
-    expect(textVersion).not.toMatch(
-      /trotz akuter Gefahr ohne Hilfe, Sicherheitsplan oder professionelle Einschätzung allein lassen/
-    );
-    expect(communicationTextVersions).not.toMatch(
-      /Lassen Sie eine akut gefährdete Person nicht ohne Hilfe oder professionelle Einschätzung allein/
-    );
-    expect(crisisHandoutGenerator).not.toMatch(
-      /die Person nach Möglichkeit nicht ohne Hilfe, Notfallplan oder professionelle Einschätzung allein lassen/i
-    );
-  });
-
-  it("keeps the static browser card responsive without scaled mobile hitboxes", () => {
-    const browserCardStyles = fs.readFileSync(
-      path.join(repoRoot, "client/public/notfallkarte.css"),
-      "utf8"
-    );
-    const browserCardScript = fs.readFileSync(
-      path.join(repoRoot, "client/public/notfallkarte.js"),
-      "utf8"
-    );
-
-    expect(browserCardStyles).toContain("@media (max-width: 860px)");
-    expect(browserCardStyles).toContain("transform: none !important;");
-    expect(browserCardStyles).toContain("grid-template-columns: 1fr;");
-    expect(browserCardScript).toContain("RESPONSIVE_BREAKPOINT = 860");
-    expect(browserCardScript).toContain('pageWrapper.style.transform = "";');
-  });
-
-  it("shows the same review metadata on the static browser card as in governance", () => {
-    const browserCard = fs.readFileSync(
-      path.join(repoRoot, "client/public/notfallkarte.html"),
-      "utf8"
-    );
-    const governance = pageGovernance["/notfallkarte"];
-
-    expect(governance).toBeDefined();
-    expect(browserCard).toContain(
-      `Letzte dokumentierte Fachprüfung: ${formatDate(governance?.lastReviewed)}`
-    );
-    expect(browserCard).toContain(
-      `Erneute Fachprüfung ausstehend (fällig seit ${formatDate(governance?.nextReviewDue)})`
-    );
-    expect(browserCard).toContain("redaktioneller Arbeitsstand");
-    expect(browserCard).toContain(formatDate(governance?.editorialUpdated));
-    expect(browserCard).toContain(`Verantwortlich: ${governance?.owner ?? ""}`);
+    expect(directPage).not.toContain('href="/notfallkarte"');
   });
 });

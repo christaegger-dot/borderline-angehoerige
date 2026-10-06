@@ -19,9 +19,11 @@ describe("route registry", () => {
     expect(routes.some(route => route.path === "/faq")).toBe(true);
     expect(routes.some(route => route.path === "/materialien")).toBe(true);
     expect(routes.some(route => route.path === "/notfallkarte/erstellen")).toBe(
-      true
+      false
     );
-    expect(routes.some(route => route.path === "/notfallkarte")).toBe(false);
+    expect(
+      routes.find(route => route.path === "/notfallkarte")?.redirectTo
+    ).toBe("/soforthilfe");
   });
 
   it("keeps known redirects configured", () => {

@@ -17,22 +17,13 @@
 import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown, Compass } from "lucide-react";
-import { kontaktByIdStrict } from "@/data/kontakte";
+import AppLink from "@/components/AppLink";
 import {
   belastungLead,
   handlungsraeume,
   keineSicherheitsbewertung,
   wichtigeAbgrenzung,
 } from "@/content/belastungHandlungsraeume";
-
-// Krisennummern aus Single Source (kontakte.ts)
-const k144 = kontaktByIdStrict("ROT_144");
-const k117 = kontaktByIdStrict("ROT_117");
-const krisendienste = [
-  kontaktByIdStrict("GELB_PUK_KJP"),
-  kontaktByIdStrict("GELB_PUK_ERW"),
-  kontaktByIdStrict("GELB_PUK_65"),
-] as const;
 
 export default function BelastungHandlungsraeume() {
   const [aktiv, setAktiv] = useState<string | null>(null);
@@ -144,37 +135,15 @@ export default function BelastungHandlungsraeume() {
       {/* Sicherheitsausgang — gilt für jeden Bereich, ausserhalb der Einteilung */}
       <div className="mt-4 border-t border-border/55 pt-4 text-xs text-muted-foreground">
         <p>
-          Unabhängig von dieser Einteilung: bei akuter Lebensgefahr sofort{" "}
-          <a
-            href={`tel:${k144.tel}`}
-            className="font-semibold text-[var(--color-sos-rot)] underline underline-offset-2"
-          >
-            {k144.nummer}
-          </a>
-          , bei Gewalt oder Bedrohung{" "}
-          <a
-            href={`tel:${k117.tel}`}
-            className="font-semibold text-[var(--color-sos-rot)] underline underline-offset-2"
-          >
-            {k117.nummer}
-          </a>
-          . Bei akuter psychischer Krise ohne unmittelbare Lebensgefahr den
-          Dienst der passenden Altersgruppe kontaktieren:
+          Diese Einteilung ersetzt keine professionelle Krisenberatung. Bei
+          akuter Gefahr oder Unsicherheit finden Sie passende Anlaufstellen
+          unabhängig von der ausgewählten Situation unter{" "}
+          <AppLink href="/soforthilfe" className="font-semibold underline">
+            Akute Hilfe und Notfallkontakte
+          </AppLink>
+          .
         </p>
-        <ul className="mt-2 space-y-1">
-          {krisendienste.map(kontakt => (
-            <li key={kontakt.id}>
-              <a
-                href={`tel:${kontakt.tel}`}
-                className="font-semibold text-foreground underline underline-offset-2"
-              >
-                {kontakt.label} {kontakt.nummer}
-              </a>
-            </li>
-          ))}
-        </ul>
         <p className="mt-2">
-          Diese Orientierung ersetzt keine professionelle Krisenberatung.
           Grundlage: NICE NG225 und CG78; redaktionelle Freigabeprüfung vom
           20.09.2026.
         </p>

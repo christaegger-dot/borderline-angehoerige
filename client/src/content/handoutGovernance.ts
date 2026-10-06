@@ -58,9 +58,6 @@ export const HANDOUT_STANDARD_DISCLAIMER =
 export const HANDOUT_VISUAL_REFRESH_NOTE =
   "Die Druckgrafik und das PDF werden fachlich und visuell überarbeitet. Nutzen Sie bis dahin die aktuelle Textversion.";
 
-export const HANDOUT_WEB_ONLY_NOTE =
-  "Diese Notfallkarte wird ausschliesslich als Webfassung angeboten. Eine separate PDF- oder Bildfassung gibt es nicht, damit veraltete Kriseninformationen nicht weitergegeben werden.";
-
 export const HANDOUT_EDITORIAL_DRAFT_NOTE =
   "Entwurf – fachlich-redaktionelle Freigabe ausstehend.";
 
@@ -68,8 +65,8 @@ export const handoutGovernance = {
   "notfallkarte-zuerich": {
     id: "notfallkarte-zuerich",
     documentType: "KRISEN-HANDOUT",
-    webVersionPublished: true,
-    visualAssetStatus: "web-only",
+    webVersionPublished: false,
+    publicationStatus: "withdrawn",
     retiredAssetSources: [
       "/Notfallkarte-Zuerich-Psychische-Krise.pdf",
       "/notfallkarte-preview.webp",

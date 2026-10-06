@@ -15,7 +15,7 @@ export default function SelbsttestPage() {
     <Layout>
       <SEO
         title="Passende Inhalte finden"
-        description="Finden Sie passende Informationen für Ihre Situation. Fünf Orientierungsfragen, keine Diagnose oder Risikoeinschätzung. Bei Krisensignalen direkt zu Hilfekontakten."
+        description="Finden Sie passende Informationen für Ihre Situation. Fünf Orientierungsfragen, keine Diagnose oder Risikoeinschätzung. Bei Sorgen um Sicherheit finden Sie hier einen Weg zu passenden Anlaufstellen."
         path="/selbsttest"
       />
 
@@ -30,7 +30,8 @@ export default function SelbsttestPage() {
             Fünf kurze Fragen helfen Ihnen, passende Inhalte zu finden. Dies ist
             eine redaktionelle Navigation, kein psychologischer Test, keine
             Behandlungsempfehlung und keine Einschätzung Ihrer Sicherheit. Bei
-            Krisensignalen erhalten Sie sofort Hilfekontakte.
+            Sorgen um Sicherheit oder Unsicherheit finden Sie passende
+            Anlaufstellen unter «Akute Hilfe und Notfallkontakte».
           </Lede>
         </header>
 
@@ -48,10 +49,11 @@ export default function SelbsttestPage() {
         {/* ── Hinweis ── */}
         <EditorialCallout variant="hinweis" className="mt-12 md:mt-16">
           Diese Orientierungshilfe ersetzt keine professionelle Beratung und
-          kann keine Diagnose oder Gefährdung beurteilen. Bei akuten Krisen
-          wenden Sie sich bitte an die{" "}
+          kann keine Diagnose oder Gefährdung beurteilen. Bei akuter Gefahr oder
+          wenn Sie die Dringlichkeit nicht sicher einschätzen können, wenden Sie
+          sich bitte an die{" "}
           <AppLink href="/soforthilfe" className="editorial-link">
-            Notfallressourcen
+            Akute Hilfe und Notfallkontakte
           </AppLink>
           .
         </EditorialCallout>

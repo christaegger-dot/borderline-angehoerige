@@ -30,7 +30,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/unterstuetzen/uebersicht": {
-    editorialUpdated: "2026-09-23",
+    editorialUpdated: "2026-10-06",
     riskLevel: "medium",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2027-04-30",
@@ -71,7 +71,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/verstehen/beziehungen": {
-    editorialUpdated: "2026-10-02",
+    editorialUpdated: "2026-10-06",
     riskLevel: "high",
     lastReviewed: "2026-09-20",
     nextReviewDue: "2027-03-31",
@@ -155,21 +155,21 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/verstehen": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "medium",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2027-04-30",
     owner: DEFAULT_OWNER,
   },
   "/genesung": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "medium",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2027-04-30",
     owner: DEFAULT_OWNER,
   },
   "/kommunizieren": {
-    editorialUpdated: "2026-10-05",
+    editorialUpdated: "2026-10-06",
     riskLevel: "medium",
     lastReviewed: "2026-04-30",
     nextReviewDue: "2027-04-30",
@@ -183,7 +183,7 @@ export const pageGovernance: Record<string, PageGovernance> = {
     owner: DEFAULT_OWNER,
   },
   "/unterstuetzen/alltag": {
-    editorialUpdated: "2026-09-23",
+    editorialUpdated: "2026-10-06",
     riskLevel: "medium",
     lastReviewed: "2026-04-16",
     nextReviewDue: "2027-04-16",

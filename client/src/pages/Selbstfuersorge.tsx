@@ -1,3 +1,4 @@
+import { LearningGoal, LearningPathNav } from "@/components/LearningPath";
 import AngehoerigenBeratung from "@/components/AngehoerigenBeratung";
 import AngehoerigenIllustration from "@/components/AngehoerigenIllustration";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
@@ -99,6 +100,7 @@ export default function Selbstfuersorge() {
             Selbstfürsorge kann eine Pause bedeuten – oder eine konkrete
             Veränderung bei Aufgaben, Grenzen und Unterstützung.
           </Lede>
+          <LearningGoal path="/selbstfuersorge" />
           <TopicQuickLinks
             items={[
               { href: "#eigene-unterstuetzung", label: "Entlastung für mich" },
@@ -209,8 +211,11 @@ export default function Selbstfuersorge() {
                   color: "var(--fg-secondary)",
                 }}
               >
-                Fünf Dinge sehen, vier hören, drei spüren, zwei riechen, eins
-                schmecken. Holt Sie zurück in den Raum, wenn Gedanken kreisen.{" "}
+                Wenn es angenehm ist: fünf Dinge sehen, vier hören, drei spüren,
+                zwei riechen, eins schmecken. Die Übung bietet eine Möglichkeit,
+                Ihre Aufmerksamkeit auf aktuelle Sinneseindrücke zu richten.
+                Passen Sie die Schritte an oder lassen Sie Sinne aus, die nicht
+                passen. Bei Unwohlsein beenden Sie die Übung.{" "}
                 <a
                   href="#sofort-uebungen"
                   className="editorial-link"
@@ -585,44 +590,6 @@ export default function Selbstfuersorge() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 12 Weiter-Hinweis ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Selbstfürsorge schafft Raum für das eigene Leben. Ein Blick auf
-              Genesung kann zusätzlich entlasten und verdeutlichen, wobei Sie
-              unterstützen können – und was nicht in Ihrer Hand liegt:{" "}
-              <Link href="/genesung" className="editorial-link">
-                weiter zu Genesung
-              </Link>
-              . Zurück geht es zu{" "}
-              <Link href="/grenzen" className="editorial-link">
-                Grenzen setzen
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 13 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
@@ -668,6 +635,7 @@ export default function Selbstfuersorge() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningPathNav path="/selbstfuersorge" />
     </Layout>
   );
 }

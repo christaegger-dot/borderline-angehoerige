@@ -1,3 +1,4 @@
+import { LearningGoal, LearningExtensionNav } from "@/components/LearningPath";
 import { useCallback, useRef, useState } from "react";
 import ContentSection from "@/components/ContentSection";
 import AngehoerigenIllustration from "@/components/AngehoerigenIllustration";
@@ -104,6 +105,7 @@ export default function VerstehenBeziehungen() {
               Seite zeigt mögliche Zusammenhänge — ohne Motive zu unterstellen
               oder Schuld zu verteilen.
             </Lede>
+            <LearningGoal path="/verstehen/beziehungen" />
             <p
               className="mt-4"
               style={{
@@ -548,6 +550,7 @@ export default function VerstehenBeziehungen() {
           ]}
         />
       </EditorialLayout>
+      <LearningExtensionNav path="/verstehen/beziehungen" />
     </Layout>
   );
 }

@@ -255,8 +255,9 @@ export const INFO: Kontakt[] = [
     kategorie: "info",
     nummer: "058 384 65 00",
     tel: "+41583846500",
-    label: "Kriseninterventionszentrum (KIZ)",
-    hinweis: "Ambulante Krisenintervention für Erwachsene",
+    label: "Krisenintervention Zürich (KIZ, PUK)",
+    hinweis:
+      "Ambulante und kurze stationäre Krisenintervention; Durchwahlnummer 4 wählen",
     sourceRef: "public/soforthilfe/index.html, Notfallkarte v05 (HTML)",
     fuerWen: "Erwachsene",
   },
@@ -325,8 +326,9 @@ export const INFO: Kontakt[] = [
     kategorie: "info",
     nummer: "058 384 66 00",
     tel: "+41583846600",
-    label: "KJPP HYPE-Programm",
-    hinweis: "Spezialisiertes Programm für Jugendliche",
+    label: "KJPP Ambulatorium Zürich",
+    hinweis:
+      "Allgemeiner Kontakt; keine bestätigte direkte HYPE-Programmnummer",
     sourceRef: "UnterstuetzenTherapie.tsx:251",
   },
   {
@@ -416,10 +418,11 @@ export const EMAILS: EmailKontakt[] = [
   },
   {
     id: "EMAIL_KJPP",
-    adresse: "kjpp.ambizh@pukzh.ch",
-    label: "KJPP Ambulanz Zürich",
+    adresse: "ambulatorium.zuerich@pukzh.ch",
+    label: "KJPP Ambulatorium Zürich (allgemeiner Kontakt)",
     hinweis: "Ambulante Kinder- und Jugendpsychiatrie",
-    sourceRef: "UnterstuetzenTherapie.tsx:254",
+    sourceRef:
+      "qa/contact-verification-followup-2026-10-06.md, Ambulatorium Zürich",
   },
   {
     id: "EMAIL_HARD",
@@ -547,20 +550,6 @@ export const WEBSITE_ROT = ROT.filter(k => k.id !== "ROT_145");
 /** Alle Kontakte flach */
 export const ALLE_KONTAKTE: Kontakt[] = [...ROT, ...GELB, ...GRUEN, ...INFO];
 
-function pendingKontaktNachweis(
-  region: string,
-  primarySourceUrl: string | null = null
-): KontaktNachweis {
-  return {
-    region,
-    primarySourceUrl,
-    independentCheckDate: null,
-    independentCheckScope: null,
-    namedOwner: null,
-    status: "pending",
-  };
-}
-
 const pukPrimarySourceUrl = urlByIdStrict("URL_PUK").url;
 
 /**
@@ -612,9 +601,33 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     namedOwner: null,
     status: "number-confirmed",
   },
-  GELB_PUK_KJP: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
-  GELB_PUK_ERW: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
-  GELB_PUK_65: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  GELB_PUK_KJP: {
+    region: "Kanton Zürich",
+    primarySourceUrl: pukPrimarySourceUrl,
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Notfallnummer +41 58 384 66 66 für Kinder und Jugendliche in der Notfallanzeige der Anbieterhomepage bestätigt; keine Prüfung der tatsächlichen Erreichbarkeit, Aufnahmezuständigkeit oder fachlichen Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  GELB_PUK_ERW: {
+    region: "Kanton Zürich",
+    primarySourceUrl: pukPrimarySourceUrl,
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Notfallnummer +41 58 384 20 00 für Erwachsene ab 18 in der Notfallanzeige der Anbieterhomepage bestätigt; keine Prüfung der tatsächlichen Erreichbarkeit, Aufnahmezuständigkeit oder fachlichen Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  GELB_PUK_65: {
+    region: "Kanton Zürich",
+    primarySourceUrl: pukPrimarySourceUrl,
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Notfallnummer +41 58 384 46 82 für Erwachsene ab 65 in der Notfallanzeige der Anbieterhomepage bestätigt; keine Prüfung der tatsächlichen Erreichbarkeit, Aufnahmezuständigkeit oder fachlichen Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   GRUEN_143: {
     region: "Schweiz",
     primarySourceUrl: "https://www.143.ch/",
@@ -642,7 +655,16 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     namedOwner: null,
     status: "number-confirmed",
   },
-  INFO_KIZ: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  INFO_KIZ: {
+    region: "Kanton Zürich",
+    primarySourceUrl:
+      "https://www.pukzh.ch/unsere-angebote/erwachsenenpsychiatrie/behandlungsschwerpunkte/krisenintervention-kiz/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Direkte Anbieterpublikation der PUK-Krisenintervention Zürich (KIZ): +41 58 384 65 00 mit Durchwahlnummer 4 bestätigt. Die abweichende kantonale Angabe 044 296 73 10 bleibt ungeklärt; keine Bestätigung einer Weiterleitung, tatsächlichen Erreichbarkeit, Telefonöffnungszeiten oder fachlichen Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   INFO_AERZTEFON: {
     region: "Kanton Zürich",
     primarySourceUrl: "https://www.aerztefon.ch/",
@@ -689,15 +711,35 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     namedOwner: null,
     status: "number-confirmed",
   },
-  INFO_PUK_ZENTRALE: pendingKontaktNachweis(
-    "Kanton Zürich",
-    pukPrimarySourceUrl
-  ),
-  INFO_PUK_KJPP_HYPE: pendingKontaktNachweis(
-    "Kanton Zürich",
-    urlByIdStrict("URL_PUK_KJP_PERSOENLICHKEITSSTOERUNGEN").url
-  ),
-  INFO_FACHSTELLE: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
+  INFO_PUK_ZENTRALE: {
+    region: "Kanton Zürich",
+    primarySourceUrl: "https://www.pukzh.ch/ueber-uns/kontakt/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte allgemeine Zentralennummer +41 58 384 21 11 auf der Anbieter-Kontaktseite bestätigt; dort ausdrücklich von den Notfallnummern getrennt. Keine Prüfung der tatsächlichen Erreichbarkeit oder fachlichen Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  INFO_PUK_KJPP_HYPE: {
+    region: "Kanton Zürich",
+    primarySourceUrl:
+      "https://www.pukzh.ch/standorte/zentrum-fuer-jugendpsychiatrie-ambulatorium-zuerich/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte allgemeine Telefonnummer +41 58 384 66 00 des KJPP Ambulatoriums Zürich auf der offiziellen Standortseite bestätigt. Die historische ID bleibt erhalten; keine bestätigte direkte HYPE-Programmnummer. Keine Prüfung der tatsächlichen Erreichbarkeit, Aufnahmebedingungen oder fachlichen Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  INFO_FACHSTELLE: {
+    region: "Kanton Zürich",
+    primarySourceUrl:
+      "https://www.pukzh.ch/patienten-angehoerige/informationen-fuer-angehoerige/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer +41 58 384 38 00 der Fachstelle Angehörigenarbeit auf der konkreten Anbieter-Seite bestätigt; kein abschliessender Abgleich von E-Mail, Adresse, Zugangsbedingungen, Kosten, Vertraulichkeit oder fachlicher Publikationsfreigabe. Die tatsächliche Erreichbarkeit wurde nicht geprüft.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   INFO_STANDBYYOU: {
     region: "Schweiz",
     primarySourceUrl: "https://stand-by-you.ch/",
@@ -735,11 +777,26 @@ export const KONTAKT_NACHWEISE: Record<string, KontaktNachweis> = {
     namedOwner: null,
     status: "number-confirmed",
   },
-  INFO_PUK_DBT: pendingKontaktNachweis("Kanton Zürich", pukPrimarySourceUrl),
-  INFO_IPW: pendingKontaktNachweis(
-    "Kanton Zürich",
-    urlByIdStrict("URL_IPW").url
-  ),
+  INFO_PUK_DBT: {
+    region: "Kanton Zürich",
+    primarySourceUrl:
+      "https://www.pukzh.ch/unsere-angebote/erwachsenenpsychiatrie/behandlungsschwerpunkte/persoenlichkeitsstoerungen/station-fuer-dialektisch-behaviorale-therapie/",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Fragen-/Anmeldungsnummer +41 58 384 94 91 im Abschnitt Anmeldung der konkreten DBT-Stationsseite bestätigt; von der dort zusätzlich genannten Kontakt-/Notfallnummer +41 58 384 20 00 unterschieden. Keine Prüfung der tatsächlichen Erreichbarkeit, Zertifizierung, Aufnahmebedingungen oder fachlichen Publikationsfreigabe.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
+  INFO_IPW: {
+    region: "Winterthur / Zürcher Unterland, Kanton Zürich",
+    primarySourceUrl:
+      "https://ipw.ch/angebot/kinder-jugendliche-junge-erwachsene/psychotherapiestation-fuer-junge-erwachsene",
+    independentCheckDate: "2026-10-06",
+    independentCheckScope:
+      "Veröffentlichte Telefonnummer +41 52 264 34 00 im Kontaktblock der Psychotherapiestation für junge Erwachsene bestätigt; keine Prüfung der tatsächlichen Erreichbarkeit, Öffnungszeiten, Alters-/Aufnahmebedingungen oder fachlichen Publikationsfreigabe. Die Quelle nennt unterschiedliche Altersgrenzen, die damit nicht als geklärt übernommen werden.",
+    namedOwner: null,
+    status: "number-confirmed",
+  },
   INFO_SANATORIUM_KILCHBERG: {
     region: "Kanton Zürich",
     primarySourceUrl: "https://www.sanatorium-kilchberg.ch/kontakt/",
@@ -858,9 +915,9 @@ export const fachstellenProfil = {
   zugangHinweis:
     "Klären Sie direkt bei der Fachstelle, wer das Angebot nutzen kann, ob Kosten entstehen, wie ein Termin vereinbart wird und wie mit vertraulichen Informationen umgegangen wird.",
   pruefHinweis:
-    "Telefon, E-Mail und Adresse sind aus bisherigen Angaben übernommen. Ihr aktueller Abgleich und die Prüfung der Angebotsbedingungen sind offen.",
+    "Die veröffentlichte Telefonnummer ist am 06.10.2026 auf der Anbieterwebsite abgeglichen. E-Mail, Adresse und Angebotsbedingungen sind damit nicht abschliessend geprüft.",
   suchBeschreibung:
-    "Kontakt zur Fachstelle Angehörigenarbeit: Zugang, mögliche Kosten und Termin direkt klären. Aktueller Abgleich der Kontaktangaben und Angebotsbedingungen offen.",
+    "Kontakt zur Fachstelle Angehörigenarbeit: Telefonnummer anhand der Anbieterwebsite abgeglichen; Zugang, mögliche Kosten und Termin direkt klären. Prüfung der übrigen Angaben und Angebotsbedingungen offen.",
   klaerungsfragen: [
     "Ist Beratung zu Ihrer Situation möglich, auch wenn keine Diagnose oder Behandlung an der PUK vorliegt?",
     "Entstehen Kosten, und werden Informationen an eine Krankenkasse weitergegeben?",

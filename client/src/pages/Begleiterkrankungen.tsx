@@ -1,3 +1,4 @@
+import { LearningGoal, LearningExtensionNav } from "@/components/LearningPath";
 import { useCallback } from "react";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -46,7 +47,7 @@ const depressionsZeichen = [
   "deutlich verminderter Antrieb, oft auch bei Aktivitäten, die früher Freude machten",
   "anhaltende Hoffnungslosigkeit, die sich nicht durch äussere Anlässe verändert",
   "körperliche Symptome wie Schlafstörungen oder Appetitveränderungen",
-  "erhöhtes Suizidrisiko (siehe nächste Sektion)",
+  "Suizidgedanken oder entsprechende Aussagen (siehe nächste Sektion)",
 ] as const;
 
 const andereKomorbiditaeten = [
@@ -121,6 +122,7 @@ export default function Begleiterkrankungen() {
             für Angehörige bedeuten können — und was sich nur fachlich
             beurteilen lässt.
           </Lede>
+          <LearningGoal path="/verstehen/begleiterkrankungen" />
           <p
             className="mt-4"
             style={{
@@ -348,17 +350,21 @@ export default function Begleiterkrankungen() {
         <ContentSection
           variant="editorial"
           collapsible={false}
-          title="Erhöhtes Suizidrisiko bei zusätzlicher Depression"
+          title="Depression und Suizidgedanken"
           id="suizidrisiko"
         >
           <EditorialProse>
             <p>
-              Eine schwere depressive Episode zusätzlich zur Borderline-
-              Erkrankung kann das Suizidrisiko erhöhen. Suizidale Aussagen oder
-              Hinweise auf konkrete Pläne brauchen unabhängig von ihrer
-              diagnostischen Zuordnung eine professionelle Einschätzung. Nehmen
-              Sie auch anhaltende Hoffnungslosigkeit oder deutliche
-              Veränderungen ernst.
+              Die NICE-Vollleitlinie (2009) beschreibt einen beobachteten
+              Zusammenhang zwischen Borderline mit zusätzlicher Major Depression
+              und Suizidversuchen. Dieser Gruppenbefund erlaubt keine Vorhersage
+              für eine einzelne Person.
+            </p>
+            <p>
+              Suizidale Aussagen oder Hinweise auf konkrete Pläne brauchen
+              unabhängig von ihrer diagnostischen Zuordnung eine professionelle
+              Einschätzung. Nehmen Sie auch anhaltende Hoffnungslosigkeit oder
+              deutliche Veränderungen ernst.
             </p>
             <p>
               Bei akuter Gefahr oder Hinweisen auf konkrete suizidale Absicht:
@@ -381,19 +387,21 @@ export default function Begleiterkrankungen() {
           </EditorialProse>
           <EvidenceNote
             variant="editorial"
-            title="Quellen zu Krisenhinweisen und Angehörigen-Einordnung"
+            title="Quellen zu Suizidversuchen und professioneller Einschätzung"
             sources={[
               {
                 label:
-                  "APA Practice Guideline (2024) zur klinischen Einordnung von Borderline und Krisenbehandlung",
-                href: quellenLinks.apa2024,
+                  "NICE CG78: Vollleitlinie (2009), Kapitel 8.3.5 und 8.3.9, S. 317–319",
+                href: "https://www.nice.org.uk/guidance/cg78/evidence/full-guideline-pdf-242147197",
                 type: "wissenschaft",
+                note: "Beobachteter Zusammenhang zu Suizidversuchen bei komorbider Major Depression; keine individuelle Risikoprognose und keine Aussage über Suizidmortalität.",
               },
               {
                 label:
-                  "Project Air Strategy: Understanding Self-Harm & Suicidal Thinking for Families & Carers",
-                href: quellenLinks.projectAir,
+                  "NICE NG222 (2022): Depression in adults, Empfehlungen 1.2.8–1.2.11",
+                href: "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations#risk-assessment-and-management",
                 type: "versorgung",
+                note: "Suizidgedanken und -absicht fachlich klären; bei unmittelbarer Gefahr dringliche professionelle Hilfe.",
               },
             ]}
           />
@@ -509,11 +517,13 @@ export default function Begleiterkrankungen() {
               individuell abgestimmt.
             </p>
             <p>
-              <strong>Medikation:</strong> Die Borderline-Erkrankung selbst ist
-              nicht primär medikamentös behandelbar — das ist langjähriger
-              fachlicher Konsens (siehe APA Practice Guideline 2024). Bei
-              komorbiden Erkrankungen wie einer Depression kann Medikation aber
-              Teil der Behandlung sein.
+              <strong>Medikation:</strong> Nach NICE sollen Medikamente nicht
+              gezielt zur Behandlung von Borderline selbst oder ihrer einzelnen
+              Kernsymptome eingesetzt werden. Bei einer zusätzlichen Depression
+              kann eine Kombination aus einem Antidepressivum und
+              psychologischer Behandlung erwogen werden. Ob Medikation passt,
+              wird individuell mit der behandelnden ärztlichen Fachperson
+              geklärt.
             </p>
           </EditorialProse>
           <div className="mt-4">
@@ -526,19 +536,20 @@ export default function Begleiterkrankungen() {
           <EvidenceNote
             variant="editorial"
             title="Quellen zu Komorbidität und Medikation"
-            definition="Begleiterkrankungen werden in klinischen Studien zu Borderline häufig beschrieben; Vorkommen und Behandlungsrelevanz müssen individuell beurteilt werden. Leitlinien empfehlen zugleich, Borderline selbst nicht primär medikamentös zu behandeln, Medikation aber bei Begleiterkrankungen gezielt einzusetzen."
+            definition="Begleiterkrankungen müssen individuell berücksichtigt werden. NICE empfiehlt keine gezielte medikamentöse Behandlung von Borderline selbst oder einzelner Kernsymptome; bei einer zusätzlichen Depression kann Medikation gemeinsam mit psychologischer Behandlung erwogen werden. Das ist eine Behandlungsempfehlung, keine individuelle Verordnung."
             sources={[
               {
-                label:
-                  "APA Practice Guideline (2024) – Behandlung von Borderline-Persönlichkeitsstörung",
-                href: quellenLinks.apa2024,
+                label: "NICE CG78: Empfehlungen 1.3.5.1–1.3.5.3 und 1.3.6.2",
+                href: quellenLinks.niceCg78,
                 type: "wissenschaft",
+                note: "Medikation bei Kernstörung und Begleiterkrankungen getrennt beurteilen; komorbide Depression im strukturierten Behandlungsprogramm berücksichtigen.",
               },
               {
                 label:
-                  "AWMF S3-Leitlinie Borderline-Persönlichkeitsstörung (2022; Gültigkeit abgelaufen)",
-                href: quellenLinks.awmf2022,
+                  "NICE NG222 (2022): Empfehlung 1.11.2 zu Depression bei Persönlichkeitsstörung",
+                href: "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations#depression-in-people-with-a-diagnosis-of-personality-disorder",
                 type: "wissenschaft",
+                note: "Antidepressivum zusammen mit psychologischer Behandlung erwägen; individuell ärztlich entscheiden.",
               },
               {
                 label:
@@ -643,6 +654,7 @@ export default function Begleiterkrankungen() {
           ]}
         />
       </EditorialLayout>
+      <LearningExtensionNav path="/verstehen/begleiterkrankungen" />
     </Layout>
   );
 }

@@ -1,3 +1,7 @@
+import LearningPath, {
+  LearningGoal,
+  LearningPathNav,
+} from "@/components/LearningPath";
 import {
   DisplayHeading,
   EditorialProse,
@@ -35,6 +39,7 @@ export default function Home() {
               eigene Entlastung.
             </p>
           </div>
+          <LearningGoal path="/" />
           <nav className="home-puk__paths" aria-label="Welcher Einstieg passt?">
             <AppLink href="/verstehen" className="home-puk__path">
               <strong>Borderline verstehen</strong>
@@ -50,11 +55,6 @@ export default function Home() {
             </AppLink>
           </nav>
           <p className="home-puk__more">
-            <strong>Ein möglicher Lernweg:</strong> verstehen → Situationen
-            einordnen → Warnzeichen erkennen → passend unterstützen →
-            kommunizieren und Grenzen setzen → eigene Entlastung finden.
-          </p>
-          <p className="home-puk__more">
             Noch unsicher, wo anfangen?{" "}
             <AppLink href="/selbsttest" className="editorial-link">
               Passende Inhalte finden
@@ -69,6 +69,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <LearningPath />
       <section
         className="home-practical"
         aria-labelledby="home-practical-title"
@@ -125,7 +126,7 @@ export default function Home() {
               Menschen verantwortlich.
             </p>
             <p>
-              <AppLink href="/genesung#garten">
+              <AppLink href="/unterstuetzen/uebersicht#rolle">
                 Was Sie beitragen können – und was nicht in Ihrer Hand liegt
               </AppLink>
               {" · "}
@@ -134,6 +135,7 @@ export default function Home() {
           </EditorialProse>
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningPathNav path="/" />
     </Layout>
   );
 }

@@ -1,3 +1,4 @@
+import { LearningGoal, LearningPathNav } from "@/components/LearningPath";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -20,7 +21,6 @@ import {
   KommunizierenRolesSection,
   KommunizierenSituationsSection,
 } from "@/sections/KommunizierenPatternSections";
-import { Link } from "wouter";
 
 export default function Kommunizieren() {
   return (
@@ -66,6 +66,7 @@ export default function Kommunizieren() {
             Konkrete Sätze können Gespräche erleichtern. Sie dürfen dabei Ihre
             Sicht vertreten, Pausen machen und Grenzen setzen.
           </Lede>
+          <LearningGoal path="/kommunizieren" />
           <TopicQuickLinks
             items={[
               { href: "#eskalation", label: "Wenn ein Gespräch kippt" },
@@ -264,43 +265,6 @@ export default function Kommunizieren() {
 
       <KommunizierenMaterialsSection />
 
-      {/* ── 4 Weiter-Hinweis ── EditorialSection mit «Weiter»-MarginNote */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Wenn Kommunikation als Beziehungsregulation gelesen wird, wird
-              sichtbar, wo Validierung hilft und wo Begrenzung nötig ist —{" "}
-              <Link href="/grenzen" className="editorial-link">
-                weiter zu Grenzen setzen
-              </Link>
-              . Zurück geht es zur{" "}
-              <Link href="/unterstuetzen/uebersicht" className="editorial-link">
-                Unterstützen-Übersicht
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 5 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
@@ -346,6 +310,7 @@ export default function Kommunizieren() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningPathNav path="/kommunizieren" />
     </Layout>
   );
 }

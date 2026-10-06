@@ -1,7 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { createElement } from "react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import { LearningPathNav } from "@/components/LearningPath";
+import { roleCommunicationCards } from "@/content/kommunizieren";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -121,6 +125,12 @@ describe("Issue 632 redaktionelle Konsistenz", () => {
 
   it("erhält Wahlfreiheit, belastungsfreie Krisensprache und realistische Schuldgefühle", () => {
     const grenzen = normalizedSource("client/src/pages/Grenzen.tsx");
+    const selbstfuersorge = normalizedSource(
+      "client/src/pages/Selbstfuersorge.tsx"
+    );
+    const erwachsenesKind = roleCommunicationCards.find(
+      item => item.title === "Als erwachsenes Kind"
+    )!.text;
 
     expect(grenzen).toContain(
       "Für Krisen nutzen wir die vereinbarten professionellen Hilfewege."
@@ -132,13 +142,26 @@ describe("Issue 632 redaktionelle Konsistenz", () => {
       "Erlaubnis, an einer Grenze festzuhalten, auch wenn Schuldgefühle bleiben."
     );
     expect(grenzen).toContain(
-      "kann sich eher erholen. Schuldgefühle können dabei trotzdem bleiben"
+      "Manche erwachsene Kinder erleben Schuldgefühle, wenn sie einem Elternteil Grenzen setzen. Andere erleben Erleichterung oder beides zugleich."
     );
     expect(grenzen).not.toContain("Bei echten Notfällen");
     expect(grenzen).not.toContain(
       "Wir können es später weiterführen, wenn beide ruhiger sind."
     );
     expect(grenzen).not.toContain("ohne sich schuldig zu fühlen");
+    expect(erwachsenesKind).toContain("Emotionale Unterstützung");
+    expect(erwachsenesKind).not.toContain(
+      "familiäre Zugehörigkeit begründet keine Pflicht"
+    );
+    expect(selbstfuersorge).toContain(
+      "Passen Sie die Schritte an oder lassen Sie Sinne aus, die nicht passen."
+    );
+    expect(selbstfuersorge).toContain("Bei Unwohlsein beenden Sie die Übung.");
+    expect(selbstfuersorge).not.toContain("Holt Sie zurück in den Raum");
+    expect(grenzen).toContain(
+      "Fragen Sie eine spezialisierte Fachstelle direkt nach Dokumentation und Spurensicherung"
+    );
+    expect(grenzen).not.toContain("auch ohne sofortige Strafanzeige");
   });
 
   it("ordnet DEAR nicht mehr dem Kommunizieren-Teaser zu", () => {
@@ -165,10 +188,21 @@ describe("Issue 632 redaktionelle Konsistenz", () => {
     );
 
     expect(selbstfuersorge).toContain(
-      '<Link href="/genesung" className="editorial-link"> weiter zu Genesung'
+      '<LearningPathNav path="/selbstfuersorge" />'
     );
-    expect(selbstfuersorge).toContain(
-      '<Link href="/grenzen" className="editorial-link"> Grenzen setzen'
-    );
+    render(createElement(LearningPathNav, { path: "/selbstfuersorge" }));
+    const navigation = screen.getByRole("navigation", {
+      name: "Im Lernweg weitergehen",
+    });
+    expect(
+      within(navigation).getByRole("link", {
+        name: "Weiter: Genesung einordnen",
+      })
+    ).toHaveAttribute("href", "/genesung");
+    expect(
+      within(navigation).getByRole("link", {
+        name: "Zurück: Grenzen und Sicherheit wahren",
+      })
+    ).toHaveAttribute("href", "/grenzen");
   });
 });

@@ -1,4 +1,10 @@
 import {
+  LearningGoal,
+  LearningMaterials,
+  LearningPathNav,
+  ModelCatalogue,
+} from "@/components/LearningPath";
+import {
   DisplayHeading,
   EditorialSection,
   EyebrowLabel,
@@ -41,10 +47,14 @@ export default function Materialien() {
             Handouts und Infografiken zum Lesen, Ausdrucken und Mitnehmen.
             Wählen Sie unten das Thema, das Sie gerade beschäftigt.
           </Lede>
+          <LearningGoal path="/materialien" />
         </EditorialSection.Body>
       </EditorialSection>
 
+      <LearningMaterials />
       <MaterialienLibrarySection />
+      <ModelCatalogue />
+      <LearningPathNav path="/materialien" />
     </Layout>
   );
 }

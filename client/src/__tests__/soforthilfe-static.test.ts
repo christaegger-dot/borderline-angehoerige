@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { kontaktByIdStrict } from "@/data/kontakte";
+import { kontaktByIdStrict, kontaktNachweisByIdStrict } from "@/data/kontakte";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,6 +26,7 @@ const REQUIRED_CONTACT_IDS = [
   "GELB_PUK_ERW",
   "GELB_PUK_KJP",
   "GELB_PUK_65",
+  "INFO_KIZ",
   "INFO_OPFERHILFE_142",
   "INFO_OPFERHILFE_ZH_24_7",
   "INFO_FORENSIC_NURSES",
@@ -41,25 +42,35 @@ describe("static soforthilfe page", () => {
     }
   });
 
-  it("withholds the disputed KIZ phone link and points to official information", () => {
+  it("uses the directly published PUK-KIZ number and extension while preserving the source conflict", () => {
     const page = new DOMParser().parseFromString(
       readSoforthilfeDirectPage(),
       "text/html"
     );
     const kizCard = [...page.querySelectorAll("li")].find(item =>
-      item.textContent?.includes("Kriseninterventionszentrum Zürich (KIZ)")
+      item.textContent?.includes("Krisenintervention Zürich (KIZ)")
     );
-
+    const kiz = kontaktByIdStrict("INFO_KIZ");
+    const nachweis = kontaktNachweisByIdStrict(kiz.id);
     expect(kizCard).toBeDefined();
     expect(kizCard?.textContent?.replace(/\s+/g, " ")).toContain(
-      "Telefonangabe derzeit nicht geklärt"
+      "Durchwahlnummer 4 wählen"
     );
-    expect(kizCard?.querySelector('a[href^="tel:"]')).toBeNull();
-    expect(kizCard?.querySelector("a")?.getAttribute("href")).toBe(
-      "https://www.zh.ch/de/gesundheit/notfall-rettung.html"
+    expect(
+      kizCard?.querySelector('a[href^="tel:"]')?.getAttribute("href")
+    ).toBe(`tel:${kiz.tel}`);
+    expect(
+      kizCard?.querySelector('a[href^="https:"]')?.getAttribute("href")
+    ).toBe(nachweis.primarySourceUrl);
+    expect(kizCard?.textContent).toContain(
+      "abweichende Kantonsangabe bleibt ungeklärt"
     );
-    expect(page.querySelector('a[href="tel:+41583846500"]')).toBeNull();
     expect(page.querySelector('a[href="tel:+41442967310"]')).toBeNull();
+    const sources = page.querySelector('[aria-labelledby="kontaktpruefung"]');
+    const sourceText = sources?.textContent?.replace(/\s+/g, " ");
+    expect(sourceText).toContain("weiterhin 044 296 73 10");
+    expect(sourceText).toContain("Weiterleitung sind nicht geklärt");
+    expect(sourceText).toContain("nicht als gleichwertige Kontaktwege");
   });
 
   it("documents the official general emergency numbers with a limited verification scope", () => {

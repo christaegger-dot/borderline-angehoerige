@@ -1,3 +1,4 @@
+import { LearningGoal, LearningPathNav } from "@/components/LearningPath";
 import LearningGuide from "@/components/interactive/LearningGuide";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
@@ -150,6 +151,7 @@ export default function Genesung() {
             von Veränderung sind individuell; weder eine Diagnose noch eine
             einzelne Phase legt den weiteren Verlauf fest.
           </Lede>
+          <LearningGoal path="/genesung" />
           <TopicQuickLinks
             items={[
               { href: "#remission", label: "Remission und Genesung" },
@@ -225,7 +227,9 @@ export default function Genesung() {
         </EditorialSection.MarginNote>
         <EditorialSection.Body>
           <EyebrowLabel>Forschung</EyebrowLabel>
-          <DisplayHeading level={2}>Was die Forschung zeigt</DisplayHeading>
+          <DisplayHeading level={2} id="prognose-studien">
+            Was die Forschung zeigt
+          </DisplayHeading>
           <EditorialProse>
             <p>
               Langzeitstudien sprechen klar gegen das alte Bild einer
@@ -530,6 +534,19 @@ export default function Genesung() {
             title="Was Angehörige freiwillig anbieten können"
             id="beitragen"
           >
+            <EditorialProse>
+              <p>
+                Diese Beispiele wenden die{" "}
+                <Link
+                  href="/unterstuetzen/uebersicht#rolle"
+                  className="editorial-link"
+                >
+                  Einordnung der eigenen Rolle
+                </Link>{" "}
+                auf Genesung an. Die betroffene Person entscheidet mit; Sie
+                dürfen Unterstützung anbieten, begrenzen oder ablehnen.
+              </p>
+            </EditorialProse>
             <div className="mt-2 grid gap-8 sm:grid-cols-2">
               {beitragenItems.map(item => (
                 <article key={item.title} className="space-y-2">
@@ -729,48 +746,6 @@ export default function Genesung() {
         </div>
       </section>
 
-      {/* ── 7 Weiter-Hinweis ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Unterstützung heisst nicht, Entwicklung herzustellen. Sie kann
-              freiwillig angeboten und gemeinsam geklärt werden; die eigene
-              Gesundheit und eigene Grenzen zählen unabhängig davon —{" "}
-              <Link href="/unterstuetzen/uebersicht" className="editorial-link">
-                Unterstützung klären
-              </Link>
-              ,{" "}
-              <Link href="/unterstuetzen/therapie" className="editorial-link">
-                Therapie und Angehörigenrolle
-              </Link>{" "}
-              oder{" "}
-              <Link href="/selbstfuersorge" className="editorial-link">
-                Selbstfürsorge
-              </Link>{" "}
-              vertiefen.
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 8 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
@@ -816,6 +791,7 @@ export default function Genesung() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningPathNav path="/genesung" />
     </Layout>
   );
 }

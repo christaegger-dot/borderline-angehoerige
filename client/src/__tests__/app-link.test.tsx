@@ -1,4 +1,10 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { Router } from "wouter";
 import AppLink, { isHardNavigationHref } from "@/components/AppLink";
@@ -55,5 +61,45 @@ describe("AppLink", () => {
 
     expect(pushStateSpy).toHaveBeenCalledWith(null, "", "/verstehen");
     expect(window.location.pathname).toBe("/verstehen");
+  });
+
+  it("uses a native fragment change for a same-page link instead of a silent Wouter pushState", async () => {
+    window.history.replaceState(null, "", "/kommunizieren");
+    const pushStateSpy = vi.spyOn(window.history, "pushState");
+    const hashChange = vi.fn();
+    window.addEventListener("hashchange", hashChange);
+    render(
+      <Router>
+        <AppLink href="/kommunizieren#validierung">Grundlage nachlesen</AppLink>
+      </Router>
+    );
+    fireEvent.click(screen.getByRole("link", { name: "Grundlage nachlesen" }));
+    expect(window.location.pathname).toBe("/kommunizieren");
+    expect(window.location.hash).toBe("#validierung");
+    expect(pushStateSpy).not.toHaveBeenCalled();
+    await waitFor(() => expect(hashChange).toHaveBeenCalled());
+    window.removeEventListener("hashchange", hashChange);
+  });
+
+  it("scrolls a repeated same-page fragment and preserves a caller's prevented click", () => {
+    window.history.replaceState(null, "", "/materialien#modell-eisberg");
+    const scroll = vi.fn();
+    const { container } = render(
+      <Router>
+        <div id="modell-eisberg">Modell</div>
+        <AppLink href="/materialien#modell-eisberg">Modell nachlesen</AppLink>
+        <AppLink
+          href="/materialien#anderes"
+          onClick={event => event.preventDefault()}
+        >
+          Eigener Klick
+        </AppLink>
+      </Router>
+    );
+    container.querySelector("#modell-eisberg")!.scrollIntoView = scroll;
+    fireEvent.click(screen.getByRole("link", { name: "Modell nachlesen" }));
+    expect(scroll).toHaveBeenCalledWith({ behavior: "auto", block: "start" });
+    fireEvent.click(screen.getByRole("link", { name: "Eigener Klick" }));
+    expect(window.location.hash).toBe("#modell-eisberg");
   });
 });

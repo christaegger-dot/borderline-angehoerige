@@ -35,7 +35,7 @@ export function isHardNavigationHref(href: string) {
 }
 
 const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(function AppLink(
-  { className, href, ...props },
+  { className, href, onClick, ...props },
   ref
 ) {
   if (isHardNavigationHref(href)) {
@@ -47,11 +47,60 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(function AppLink(
           typeof className === "function" ? className(false) : className
         }
         {...props}
+        onClick={onClick}
       />
     );
   }
 
-  return <Link ref={ref} href={href} className={className} {...props} />;
+  return (
+    <Link
+      ref={ref}
+      href={href}
+      className={className}
+      {...props}
+      onClick={event => {
+        onClick?.(event);
+        if (
+          event.defaultPrevented ||
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey ||
+          (props.target && props.target !== "_self")
+        )
+          return;
+
+        const target = new URL(href, window.location.href);
+        if (
+          !target.hash ||
+          target.pathname !== window.location.pathname ||
+          target.search !== window.location.search
+        )
+          return;
+
+        // Wouter observes pathname, so a same-page pushState fragment would
+        // neither scroll nor notify the existing ContentSection hash listener.
+        // Keep this local: native fragment navigation plus its existing opener.
+        event.preventDefault();
+        let sectionId = target.hash.slice(1);
+        try {
+          sectionId = decodeURIComponent(sectionId);
+        } catch {
+          /* Keep malformed fragments usable without crashing. */
+        }
+        window.dispatchEvent(
+          new CustomEvent("open-section", { detail: { sectionId } })
+        );
+        if (window.location.hash !== target.hash)
+          window.location.hash = target.hash;
+        else
+          document
+            .getElementById(sectionId)
+            ?.scrollIntoView?.({ behavior: "auto", block: "start" });
+      }}
+    />
+  );
 });
 
 export default AppLink;

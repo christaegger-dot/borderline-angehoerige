@@ -1,3 +1,5 @@
+import { LearningGoal, LearningExtensionNav } from "@/components/LearningPath";
+import AppLink from "@/components/AppLink";
 import TopicQuickLinks from "@/components/TopicQuickLinks";
 import ContentSection from "@/components/ContentSection";
 import {
@@ -15,7 +17,6 @@ import SEO, { MedicalPageSchema } from "@/components/SEO";
 import UnterstuetzenSubNav from "@/components/UnterstuetzenSubNav";
 import { TableOfContents } from "@/components/UXEnhancements";
 import EnergieHaushaltVisualisierung from "@/components/visualizations/EnergieHaushaltVisualisierung";
-import { Link } from "wouter";
 
 const wasHilft = [
   {
@@ -284,6 +285,7 @@ export default function UnterstuetzenAlltag() {
             Seite bietet freiwillige Möglichkeiten für den Alltag und nimmt
             zugleich Ihre eigenen Grenzen ernst.
           </Lede>
+          <LearningGoal path="/unterstuetzen/alltag" />
           <TopicQuickLinks
             items={[
               { href: "#alltagsspannung", label: "Alltagsspannung" },
@@ -804,10 +806,10 @@ export default function UnterstuetzenAlltag() {
             <EditorialProse>
               <p>
                 Bei unmittelbarer Selbst- oder Fremdgefährdung oder bei Gewalt
-                geht es nicht mehr um Alltagsbegleitung, sondern um{" "}
-                <Link href="/unterstuetzen/krise" className="editorial-link">
-                  Krisenbegleitung
-                </Link>
+                holen Sie Hilfe und schützen sich. Der direkte Zugang führt zu{" "}
+                <AppLink href="/soforthilfe" className="editorial-link">
+                  Akute Hilfe und Notfallkontakte
+                </AppLink>
                 .
               </p>
               <p>
@@ -959,43 +961,6 @@ export default function UnterstuetzenAlltag() {
         </EditorialSection.Body>
       </EditorialSection>
 
-      {/* ── 9 Weiter-Hinweis ── */}
-      <EditorialSection variant="cream">
-        <EditorialSection.MarginNote>
-          <span
-            className="block text-[13px] font-medium uppercase"
-            style={{
-              color: "var(--accent-label)",
-              letterSpacing: "var(--tracking-caps)",
-              lineHeight: 1.3,
-            }}
-          >
-            Weiter
-          </span>
-          <div
-            aria-hidden="true"
-            className="mt-3 border-t"
-            style={{ borderColor: "var(--rule-color)" }}
-          />
-        </EditorialSection.MarginNote>
-        <EditorialSection.Body>
-          <EditorialProse>
-            <p>
-              Wenn Spannung in akute Eskalation kippt, wird aus
-              Alltagsbegleitung Krisenbegleitung —{" "}
-              <Link href="/unterstuetzen/krise" className="editorial-link">
-                weiter: Krisen begleiten
-              </Link>
-              . Zurück geht es zur{" "}
-              <Link href="/unterstuetzen/uebersicht" className="editorial-link">
-                Übersicht
-              </Link>
-              .
-            </p>
-          </EditorialProse>
-        </EditorialSection.Body>
-      </EditorialSection>
-
       {/* ── 10 Querverweise ── EditorialSection variant="cream-deep" */}
       <EditorialSection variant="cream-deep">
         <EditorialSection.MarginNote>
@@ -1041,6 +1006,7 @@ export default function UnterstuetzenAlltag() {
           />
         </EditorialSection.Body>
       </EditorialSection>
+      <LearningExtensionNav path="/unterstuetzen/alltag" />
     </Layout>
   );
 }

@@ -47,6 +47,9 @@ jobs:
       - name: Audit handout asset register
         run: pnpm audit:handout-assets
 
+      - name: Audit claim source register
+        run: pnpm exec tsx qa/scripts/audit-claim-sources.ts --check
+
       - name: Build
         run: pnpm build
 

@@ -82,6 +82,11 @@ jobs:
         env:
           GUARD_URL: http://127.0.0.1:4173
 
+      - name: Check learning paths and visible FAQ evidence
+        run: node qa/scripts/audit-sources-learning-web.mjs
+        env:
+          AUDIT_BASE_URL: http://127.0.0.1:4173
+
       - name: Upload audit report on failure
         if: failure()
         uses: actions/upload-artifact@v7

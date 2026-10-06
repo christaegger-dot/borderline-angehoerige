@@ -126,6 +126,9 @@ nachvollziehbar.
 - P1-Illustrationsaudit bestanden: drei zurückgehaltene V3-Pakete und neun
   Entwurfsassets weiterhin ausserhalb öffentlicher Auslieferung.
 - Audit-Smoke: alle zehn Prüfstufen bestanden, null Issues.
+- Lokaler Voll-Audit des gebauten Stands: alle 29 Routen im oben beschriebenen
+  Prüfumfang bestanden, null Issues. Prüfprotokoll:
+  `audit-results/followup-full-built-2026-10-06/report.md`.
 - `qa/scripts/audit-followup-web.mjs`: 62 Fälle bestanden gegen den gebauten
   Express-Server. 15 geänderte Routen bei 360 × 800, 768 × 900 und
   1440 × 1000 Pixeln, zusätzliche initiale und zurückgesetzte Übungszustände,

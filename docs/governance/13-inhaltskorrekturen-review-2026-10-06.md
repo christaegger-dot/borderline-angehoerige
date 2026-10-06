@@ -82,12 +82,10 @@ Plätze oder feste Wartezeiten.
 
 ## Technische Prüfung
 
-Die folgenden Ergebnisse dokumentieren den Korrekturstand vor der Integration
-des inzwischen aktualisierten `main` aus PR #652. Der zusammengeführte Stand
-muss erneut geprüft werden; diese historischen Ergebnisse behaupten keinen
-Prüferfolg für den Stand nach der Integration.
+Die folgenden Ergebnisse gelten für den mit `main` aus PR #652
+(`8982d7b`) zusammengeführten Stand.
 
-- Gesamte Vitest-Suite: 592 Tests in 65 Dateien bestanden.
+- Gesamte Vitest-Suite: 574 Tests in 65 Dateien bestanden.
 - ESLint, TypeScript, vollständige Prettier-Prüfung und Produktionsbuild bestanden.
 - Kontakt-Nachweisvalidierung nach Anpassung an das TypeScript-Ziel erneut geprüft.
 - SEO- und Static-Route-Tests bestätigen, dass offene Fachprüfung nicht durch
@@ -98,6 +96,15 @@ Prüferfolg für den Stand nach der Integration.
 - Kein horizontaler Überlauf bei 375 px auf Diagnostik, Glossar und Soforthilfe;
   Soforthilfe-Notruflinks auch ohne JavaScript erreichbar. Keine JavaScript-
   Laufzeitfehler in diesen Browserprüfungen.
+- Visuelle Regression: 33 Tests mit Playwright 1.56.1 / Chromium 141 bestanden.
+  Die beabsichtigten Text- und Statusänderungen wurden anhand der Differenzbilder
+  geprüft und 22 betroffene Vergleichsbilder aktualisiert. Testschwellen bleiben
+  unverändert.
+- Audit-Smoke: alle zehn Prüfstufen bestanden, keine Issues. Der bereits vorher
+  veraltete Tab-Selektor wurde auf die vorhandene semantische Materialfiltergruppe
+  angepasst; geprüft werden alle acht nativen Filterbuttons.
+- P1-Illustrationsaudit bestanden: drei zurückgehaltene V3-Pakete geprüft,
+  neun Entwurfsassets weiterhin aus der öffentlichen Auslieferung ausgeschlossen.
 
 Technische Prüfungen belegen die Funktionsfähigkeit und Konsistenz des Codes;
 sie ersetzen die ausstehenden fachlichen und institutionellen Entscheidungen
